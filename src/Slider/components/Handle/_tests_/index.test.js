@@ -58,6 +58,9 @@ describe("Handle in Slider", () => {
     expect(renderedHandle.prop("aria-label")).toBe(ariaLabel[index]);
     expect(renderedHandle.prop("aria-valuetext")).toBe(ariaValueText);
   });
+  it("should match snapshot", () => {
+    expect(component).toMatchSnapshot();
+  });
 });
 
 describe("Handle in Slider: calculateLeftPosition", () => {

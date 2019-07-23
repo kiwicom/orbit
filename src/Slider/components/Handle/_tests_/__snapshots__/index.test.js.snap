@@ -1,8 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Range Slider in render should match snapshot 1`] = `
-<Slider__StyledSlider
-  data-test="test"
+exports[`Handle in Slider should match snapshot 1`] = `
+<Handle__StyledHandle
+  aria-label="Label 1"
+  aria-valuemax={24}
+  aria-valuemin={1}
+  aria-valuenow={6}
+  aria-valuetext="Lorem ipsum dolor sit amet"
+  left={20.8}
+  onFocus={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onMouseDown={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onTop={false}
+  onTouchStart={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  role="slider"
+  tabIndex="0"
   theme={
     Object {
       "orbit": Object {
@@ -463,75 +510,5 @@ exports[`Range Slider in render should match snapshot 1`] = `
       "rtl": false,
     }
   }
->
-  <Stack
-    direction="row"
-    spaceAfter="medium"
-    spacing="none"
-  >
-    <Stack
-      basis="60%"
-      direction="column"
-      grow={true}
-      spacing="none"
-    >
-      <Heading
-        element="div"
-        type="title4"
-      >
-        Depart from Prague
-      </Heading>
-    </Stack>
-  </Stack>
-  <Slider__StyledSliderInput>
-    <Bar
-      hasHistogram={false}
-      max={24}
-      min={1}
-      onMouseDown={[Function]}
-      value={
-        Array [
-          1,
-          24,
-        ]
-      }
-    />
-    <Handle
-      hasHistogram={false}
-      index={0}
-      key="0"
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onTop={false}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      value={
-        Array [
-          1,
-          24,
-        ]
-      }
-      valueMax={24}
-      valueMin={1}
-    />
-    <Handle
-      hasHistogram={false}
-      index={1}
-      key="1"
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onTop={false}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      value={
-        Array [
-          1,
-          24,
-        ]
-      }
-      valueMax={24}
-      valueMin={1}
-    />
-  </Slider__StyledSliderInput>
-</Slider__StyledSlider>
+/>
 `;

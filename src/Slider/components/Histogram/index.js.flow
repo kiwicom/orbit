@@ -8,6 +8,7 @@ export type Props = {|
   data: ?Data,
   value: Value,
   min: number,
+  step: number,
   loading?: boolean,
   loadingText?: Translation,
 |};

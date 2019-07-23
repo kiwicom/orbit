@@ -30,6 +30,9 @@ describe("Bar in Slider", () => {
   it("should have ref", () => {
     expect(ref.current).toBeDefined();
   });
+  it("should match snapshot", () => {
+    expect(component).toMatchSnapshot();
+  });
 });
 describe("Bar in Slider: calculateBarPosition", () => {
   it("simple Slider without Histogram, should return proper left and width", () => {

@@ -135,7 +135,108 @@ describe("Range Slider", () => {
       onChange={onChange}
       onChangeBefore={onChangeBefore}
       onChangeAfter={onChangeAfter}
-      histogramData={[10, 20, 30]}
+      histogramData={[
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+      ]}
     />,
   );
   const instance = component.instance();
@@ -152,6 +253,9 @@ describe("Range Slider", () => {
     expect(instance.calculateValueFromPosition(140, true)).toEqual(28);
     instance.setState({ handleIndex: 1 });
     expect(instance.calculateValueFromPosition(140, true)).toEqual(28);
+  });
+  test("should have Hide component", () => {
+    expect(component.find("Hide").exists()).toBe(true);
   });
   test("moveValueByStep should return proper value", () => {
     instance.setState({ handleIndex: 0 });
@@ -351,16 +455,12 @@ describe("Range Slider in render", () => {
       max={max}
       defaultValue={[1, 24]}
       label="Depart from Prague"
-      histogramData={[10, 20, 30]}
       dataTest={dataTest}
     />,
   );
   const slider = component.find("Slider__StyledSlider");
   test("should have data-test", () => {
     expect(slider.render().prop("data-test")).toBe(dataTest);
-  });
-  test("should have Hide component", () => {
-    expect(slider.find("Hide").exists()).toBe(true);
   });
   test("calculateValueFromPosition should return null", () => {
     expect(component.instance().calculateValueFromPosition(52)).toBe(null);

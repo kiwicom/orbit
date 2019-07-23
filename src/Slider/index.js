@@ -481,6 +481,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
               data={histogramData}
               value={sortedValue}
               min={min}
+              step={step}
               loading={histogramLoading}
               loadingText={histogramLoadingText}
             />

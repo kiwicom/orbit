@@ -60,7 +60,7 @@ StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const Histogram = ({ data, value, min, loading = false, loadingText }: Props) => {
+const Histogram = ({ data, value, min, loading = false, loadingText, step }: Props) => {
   const maxValue = !!data && Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
@@ -73,11 +73,11 @@ const Histogram = ({ data, value, min, loading = false, loadingText }: Props) =>
       ) : (
         data &&
         data.map((column, index) => {
-          const properIndex = index + min;
+          const properIndex = (index + min) * step;
           return (
             <StyledHistogramColumn
               key={encodeURIComponent(properIndex.toString())}
-              height={maxValue && Math.round((column / maxValue) * 100)}
+              height={maxValue && +((column / maxValue) * 100).toFixed(1)}
               active={properIndex >= highlightFrom && properIndex <= highlightTo}
             />
           );

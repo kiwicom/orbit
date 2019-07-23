@@ -1,6 +1,6 @@
 // @flow
 
-import type { Value } from "../../index";
+import type { Value, AriaLabel } from "../../index";
 
 type Callback<A> = (event: A) => void;
 
@@ -16,6 +16,27 @@ export type Props = {|
   index: ?number,
   hasHistogram: boolean,
   value: Value,
+  ariaLabel: AriaLabel,
+  ariaValueText: string,
 |};
 
 declare export default React$ComponentType<Props>;
+
+export type CalculateLeftPosition = (
+  valueNow: number,
+  valueMin: number,
+  valueMax: number,
+  isFirst: boolean,
+  isSimple: boolean,
+) => number;
+
+declare export var calculateLeftPosition: CalculateLeftPosition;
+
+export type IsFirst = (
+  value: Value,
+  valueNow: number,
+  index: ?number,
+  hasHistogram: boolean,
+) => boolean;
+
+declare export var isFirst: IsFirst;

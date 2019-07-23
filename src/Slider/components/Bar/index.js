@@ -6,7 +6,7 @@ import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import type { Ref } from "../../../common/common.js.flow";
 
-import type { Props } from "./index";
+import type { CalculateBarPosition, Props } from "./index";
 
 const StyledBar = styled.div`
   display: block;
@@ -17,17 +17,17 @@ const StyledBar = styled.div`
   -webkit-tap-highlight-color: transparent;
 `;
 
-const calculateBarPosition = (value, max, min, hasHistogram) => {
+export const calculateBarPosition: CalculateBarPosition = (value, max, min, hasHistogram) => {
   if (Array.isArray(value)) {
     return {
-      left: ((value[0] - min) / (max - min + 1)) * 100,
-      width: ((value[value.length - 1] - value[0] + 1) / (max - min + 1)) * 100,
+      left: +(((value[0] - min) / (max - min + 1)) * 100).toFixed(1),
+      width: +(((value[value.length - 1] - value[0] + 1) / (max - min + 1)) * 100).toFixed(1),
     };
   }
   const addition = hasHistogram ? 1 : 0;
   return {
     left: 0,
-    width: ((value - min + addition) / (max - min + addition)) * 100,
+    width: +(((value - min + addition) / (max - min + addition)) * 100).toFixed(1),
   };
 };
 
@@ -36,8 +36,8 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
 )).attrs(({ width, left, theme }) => {
   return {
     style: {
-      width: `${width.toFixed(2)}%`,
-      [leftRight({ theme })]: `${left.toFixed(2)}%`,
+      width: `${width}%`,
+      [leftRight({ theme })]: `${left}%`,
     },
   };
 })`

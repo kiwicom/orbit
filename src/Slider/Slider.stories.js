@@ -15,7 +15,7 @@ storiesOf("Slider", module)
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const min = number("min", 1);
-      const max = number("max", 24);
+      const max = number("max", 100);
       return (
         <Slider
           onChange={action("onChange")}

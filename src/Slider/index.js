@@ -378,6 +378,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       max = DEFAULT_VALUES.MAX,
       histogramData,
       histogramLoading,
+      ariaValueText,
+      ariaLabel,
     } = this.props;
     const { handleIndex, value } = this.state;
     const key = i && encodeURIComponent(i.toString());
@@ -387,11 +389,12 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         onTop={handleIndex === i}
         valueMax={max}
         valueMin={min}
-        valueNow={valueNow}
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
         value={value}
+        ariaValueText={ariaValueText}
+        ariaLabel={ariaLabel}
         hasHistogram={histogramLoading || !!histogramData}
         index={i}
         key={key}

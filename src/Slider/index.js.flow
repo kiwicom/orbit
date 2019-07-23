@@ -7,6 +7,8 @@ export type Value = number | number[];
 
 export type SliderCallback = (value: Value) => void | Promise<any>;
 
+export type AriaLabel = string | string[];
+
 export type Props = {|
   ...Globals,
   min?: number,
@@ -18,6 +20,8 @@ export type Props = {|
   onChangeAfter?: SliderCallback,
   label?: Translation,
   valueDescription?: Translation,
+  ariaLabel?: AriaLabel,
+  ariaValueText?: string,
   histogramData?: Data,
   histogramDescription?: Translation,
   histogramLoading?: boolean,

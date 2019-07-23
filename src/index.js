@@ -33,6 +33,8 @@ export { default as ModalHeader } from "./Modal/ModalHeader";
 export { default as ModalSection } from "./Modal/ModalSection";
 export { default as ModalFooter } from "./Modal/ModalFooter";
 
+export { default as Slider } from "./Slider";
+
 // Table
 export { default as Table } from "./Table";
 export { default as TableBody } from "./Table/TableBody";

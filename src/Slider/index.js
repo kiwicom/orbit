@@ -18,20 +18,6 @@ import type { ThemeProps } from "../defaultTheme";
 
 import type { State, SliderCallback, Props, Value } from "./index";
 
-const getBoundingClientRect = ref => {
-  if (ref && ref.current) {
-    return ref.current.getBoundingClientRect();
-  }
-  return null;
-};
-
-const sort = (arr: Value) => {
-  if (Array.isArray(arr)) {
-    return arr.slice().sort((a, b) => a - b);
-  }
-  return arr;
-};
-
 const StyledSlider = styled.div`
   position: relative;
 `;
@@ -82,13 +68,6 @@ const StyledSliderInput = styled.div`
   height: 24px;
 `;
 
-const isNotEqual = (a: Value, b: Value) => {
-  if (Array.isArray(a) && Array.isArray(b)) {
-    return a.toString() !== b.toString();
-  }
-  return a !== b;
-};
-
 export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   static defaultProps = {
     theme: defaultTheme,
@@ -104,7 +83,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   componentDidUpdate(prevProps: Props) {
     const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
-    if (isNotEqual(prevProps.defaultValue || DEFAULT_VALUES.VALUE, defaultValue)) {
+    if (this.isNotEqual(prevProps.defaultValue || DEFAULT_VALUES.VALUE, defaultValue)) {
       const newValue = Array.isArray(defaultValue)
         ? defaultValue.map(item => Number(item))
         : Number(defaultValue);
@@ -116,12 +95,19 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   pauseEvent = (
     event: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticMouseEvent<HTMLDivElement>,
   ) => {
-    if (event.stopPropagation) event.stopPropagation();
-    if (event.preventDefault) event.preventDefault();
+    if (typeof event.stopPropagation === "function") event.stopPropagation();
+    if (typeof event.preventDefault === "function") event.preventDefault();
   };
 
   stopPropagation = (event: SyntheticTouchEvent<HTMLDivElement>) => {
-    if (event.stopPropagation) event.stopPropagation();
+    if (typeof event.stopPropagation === "function") event.stopPropagation();
+  };
+
+  isNotEqual = (a: Value, b: Value) => {
+    if (Array.isArray(a) && Array.isArray(b)) {
+      return a.toString() !== b.toString();
+    }
+    return a !== b;
   };
 
   calculateValue = (ratio: number, addition?: boolean, deduction?: boolean) => {
@@ -130,14 +116,15 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
-    const barRect = getBoundingClientRect(this.bar);
-    const {
-      histogramData,
-      histogramLoading,
-      theme: { rtl },
-    } = this.props;
-    const { handleIndex, value } = this.state;
-    if (barRect) {
+    const { bar } = this;
+    if (bar && bar.current && typeof bar.current.getBoundingClientRect === "function") {
+      const barRect = bar.current.getBoundingClientRect();
+      const {
+        histogramData,
+        histogramLoading,
+        theme: { rtl },
+      } = this.props;
+      const { handleIndex, value } = this.state;
       const mousePosition = (rtl ? barRect.right : pageX) - (rtl ? pageX : barRect.left);
       const positionRatio = mousePosition / barRect.width;
       const hasHistogram = histogramLoading || !!histogramData;
@@ -149,13 +136,16 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
           }
           return this.calculateValue(positionRatio, true);
         }
-        if (isNotEqual(sort(value), value)) {
+        if (this.isNotEqual(this.sortArray(value), value)) {
           if (handleIndex === 0) {
             return this.calculateValue(positionRatio, true, true);
           }
           return this.calculateValue(positionRatio, true);
         }
-        const closestKey = this.findClosestKey(this.calculateValue(positionRatio), sort(value));
+        const closestKey = this.findClosestKey(
+          this.calculateValue(positionRatio),
+          this.sortArray(value),
+        );
         // when first handle of range slider or when clicked and it should move the first handle
         if (handleIndex === 0 || (throughClick && closestKey === 0)) {
           return this.calculateValue(positionRatio, true);
@@ -170,6 +160,13 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return null;
   };
 
+  sortArray = (arr: Value): Value => {
+    if (Array.isArray(arr)) {
+      return arr.slice().sort((a, b) => a - b);
+    }
+    return arr;
+  };
+
   findClosestKey = (goal: number, value: Value) => {
     return Array.isArray(value)
       ? value.reduce((acc, curr, index) => {
@@ -180,15 +177,15 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       : null;
   };
 
-  moveValueByStep = (step: number) => {
+  moveValueByStep = (step: number, forcedValue?: number) => {
     const { value, handleIndex } = this.state;
     if (Array.isArray(value)) {
       return this.replaceValue(
-        this.alignValue(value[Number(handleIndex)] + step),
+        forcedValue || this.alignValue(value[Number(handleIndex)] + step),
         Number(handleIndex),
       );
     }
-    return this.alignValue(value + step);
+    return forcedValue || this.alignValue(value + step);
   };
 
   handleKeyDown = (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
@@ -219,11 +216,11 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
     if (event.keyCode === KEY_CODE_MAP.HOME) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, min);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, min));
     }
     if (event.keyCode === KEY_CODE_MAP.END) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, max);
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, max));
     }
   };
 
@@ -242,7 +239,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     this.pauseEvent(event);
     window.addEventListener("keydown", this.handleKeyDown);
     window.addEventListener("focusout", this.handleBlur);
-    this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
+    this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
   };
 
   handleMove = (newValue: ?number) => {
@@ -280,10 +277,10 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   ) => {
     const { value } = this.state;
     if (newValue != null) {
-      if (isNotEqual(newValue, value) || forced) {
+      if (this.isNotEqual(newValue, value) || forced) {
         this.setState({ value: newValue });
         if (callback) {
-          callback(sort(newValue));
+          callback(this.sortArray(newValue));
         }
       }
     }
@@ -312,7 +309,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
+      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
     }
   };
 
@@ -325,6 +322,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   handleTouchEnd = () => {
     const { value } = this.state;
+    this.setState({ focused: false });
     window.removeEventListener("touchmove", this.handleOnTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
     this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
@@ -338,7 +336,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       window.addEventListener("touchmove", this.handleOnTouchMove);
       window.addEventListener("touchend", this.handleTouchEnd);
       this.stopPropagation(event);
-      this.injectCallbackAndSetState(this.props.onBeforeChange, value, true);
+      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
     }
   };
 
@@ -396,7 +394,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         ariaValueText={ariaValueText}
         ariaLabel={ariaLabel}
         hasHistogram={histogramLoading || !!histogramData}
-        index={i}
+        index={i || 0}
         key={key}
       />
     );
@@ -457,12 +455,13 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       histogramData,
       histogramLoading = false,
       histogramLoadingText,
+      dataTest,
     } = this.props;
     const { value, focused } = this.state;
-    const sortedValue = sort(value);
+    const sortedValue = this.sortArray(value);
     const hasHistogram = histogramLoading || !!histogramData;
     return (
-      <StyledSlider>
+      <StyledSlider data-test={dataTest}>
         {this.renderHeading(hasHistogram)}
         {hasHistogram && (
           <StyledSliderContent focused={focused}>

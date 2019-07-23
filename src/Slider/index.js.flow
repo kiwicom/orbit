@@ -16,7 +16,7 @@ export type Props = {|
   step?: number,
   defaultValue?: Value,
   onChange?: SliderCallback,
-  onBeforeChange?: SliderCallback,
+  onChangeBefore?: SliderCallback,
   onChangeAfter?: SliderCallback,
   label?: Translation,
   valueDescription?: Translation,

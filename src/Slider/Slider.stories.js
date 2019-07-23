@@ -16,11 +16,13 @@ storiesOf("Slider", module)
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const min = number("min", 1);
       const max = number("max", 100);
+      const dataTest = text("dataTest", "01:00 PM – 11:59 PM");
       return (
         <Slider
           onChange={action("onChange")}
           label={label}
           valueDescription={valueDescription}
+          dataTest={dataTest}
           min={min}
           max={max}
         />

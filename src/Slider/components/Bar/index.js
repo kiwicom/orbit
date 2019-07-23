@@ -64,4 +64,6 @@ const Bar = React.forwardRef(({ onMouseDown, value, max, min, hasHistogram }: Pr
   );
 });
 
+Bar.displayName = "Bar";
+
 export default Bar;

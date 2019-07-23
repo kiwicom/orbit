@@ -77,12 +77,12 @@ describe("Handle in Slider: calculateLeftPosition", () => {
 
 describe("Handle in Slider: isFirst", () => {
   it("simple Slider without Histogram", () => {
-    expect(isFirst(1, 1, null, false)).toBe(true);
-    expect(isFirst(1, 12, null, false)).toBe(true);
+    expect(isFirst(1, 1, 0, false)).toBe(true);
+    expect(isFirst(1, 12, 0, false)).toBe(true);
   });
   it("simple Slider with Histogram", () => {
-    expect(isFirst(1, 1, null, true)).toBe(false);
-    expect(isFirst(1, 12, null, true)).toBe(false);
+    expect(isFirst(1, 1, 0, true)).toBe(false);
+    expect(isFirst(1, 12, 0, true)).toBe(false);
   });
   it("range Slider with or without Histogram", () => {
     expect(isFirst([12, 24], 12, 0, false)).toBe(true);

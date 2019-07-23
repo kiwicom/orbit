@@ -6,7 +6,6 @@ const countValues = (data, [from, to], min) => {
   return data.reduce(
     ([selected, totalCount], curr, index) => {
       return [
-        // 11 + 1 >= 12 && 23 + 1 <= 24
         index + min >= from && index + min <= to ? selected + curr : selected,
         totalCount + curr,
       ];

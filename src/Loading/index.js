@@ -10,11 +10,6 @@ import type { Props } from "./index";
 
 const getHeight = ({ type }) => {
   const tokens = {
-    [TYPE_OPTIONS.BUTTON_LOADER]: "center",
-    [TYPE_OPTIONS.SEARCH_LOADER]: "start",
-    [TYPE_OPTIONS.BOX_LOADER]: "center",
-    [TYPE_OPTIONS.PAGE_LOADER]: "center",
-    [TYPE_OPTIONS.INLINE_LOADER]: "center",
     [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
     [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
     [TYPE_OPTIONS.BOX_LOADER]: "80px",

@@ -229,6 +229,107 @@ storiesOf("Slider", module)
     },
   )
   .add(
+    "Slider playground",
+    () => {
+      const ariaLabel = text("ariaLabel", "Label of handle");
+      const ariaValueText = text("ariaValueText", "Text alternative of actual value");
+      const dataTest = text("dataTest", "test");
+      const defaultValue = number("defaultValue", 12);
+      const label = text("label", "Depart from Prague");
+      const max = number("max", 24);
+      const min = number("min", 1);
+      const step = number("step", 1);
+      const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+      return (
+        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+          <Slider
+            ariaLabel={ariaLabel}
+            ariaValueText={ariaValueText}
+            dataTest={dataTest}
+            defaultValue={defaultValue}
+            label={label}
+            max={max}
+            min={min}
+            step={step}
+            onChange={action("onChange")}
+            valueDescription={valueDescription}
+          />
+        </div>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Range Slider playground",
+    () => {
+      const ariaLabel = array("ariaLabel", ["First handle", "Second handle"]);
+      const ariaValueText = text("ariaValueText", "Text alternative of actual value");
+      const dataTest = text("dataTest", "test");
+      const defaultValue = number("defaultValue", [1, 12]);
+      const histogramData = array("histogramData", [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+      ]);
+      const histogramDescription = text("histogramDescription", "28 of 90 flights");
+      const histogramLoading = boolean("histogramLoading", false);
+      const histogramLoadingText = text("histogramLoadingText", undefined);
+      const label = text("label", "Depart from Prague");
+      const max = number("max", 24);
+      const min = number("min", 1);
+      const step = number("step", 1);
+      const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+      return (
+        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+          <Slider
+            ariaLabel={ariaLabel}
+            ariaValueText={ariaValueText}
+            dataTest={dataTest}
+            defaultValue={defaultValue}
+            histogramData={histogramData}
+            histogramDescription={histogramDescription}
+            histogramLoading={histogramLoading}
+            histogramLoadingText={histogramLoadingText}
+            label={label}
+            max={max}
+            min={min}
+            step={step}
+            onChange={action("onChange")}
+            valueDescription={valueDescription}
+          />
+        </div>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "RTL default Slider",
     () => {
       return (

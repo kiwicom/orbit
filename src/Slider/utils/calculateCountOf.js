@@ -2,8 +2,8 @@
 
 import type { CalculateCountOf } from "./calculateCountOf";
 
-const countValues = (data, [from, to], min) => {
-  return data.reduce(
+const countValues = (data, [from, to], min) =>
+  data.reduce(
     ([selected, totalCount], curr, index) => {
       return [
         index + min >= from && index + min <= to ? selected + curr : selected,
@@ -12,7 +12,6 @@ const countValues = (data, [from, to], min) => {
     },
     [0, 0],
   );
-};
 
 const calculateCountOf: CalculateCountOf = (data, value, min) => {
   if (Array.isArray(value)) {

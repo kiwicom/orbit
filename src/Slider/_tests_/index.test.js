@@ -5,6 +5,17 @@ import { mount, shallow } from "enzyme";
 
 import { PureSlider as Slider } from "../index";
 
+function testKeyTriggeringEvent(instance, expect, initialState, keyCode, stateValue, onHandler) {
+  instance.setState(initialState);
+  instance.handleKeyDown({
+    stopPropagation: () => {},
+    preventDefault: () => {},
+    keyCode,
+  });
+  expect(instance.state.value).toEqual(stateValue);
+  expect(onHandler).toHaveBeenCalled();
+}
+
 describe("Slider", () => {
   beforeEach(() => {
     // $FlowExpected
@@ -48,6 +59,7 @@ describe("Slider", () => {
     expect(instance.findClosestKey(20, [1, 12, 24])).toEqual(2);
   });
   test("moveValueByStep should return proper value", () => {
+    component.setProps({ step: 1 });
     expect(instance.moveValueByStep(1)).toEqual(2);
     expect(instance.moveValueByStep(-1)).toEqual(1);
     expect(instance.moveValueByStep(5)).toEqual(6);
@@ -87,7 +99,7 @@ describe("Slider", () => {
     instance.injectCallbackAndSetState(onChangeAfter, 90, true);
     expect(onChangeAfter).toHaveBeenCalled();
   });
-  it("handleBarMouseDown execute onChange", () => {
+  test("handleBarMouseDown execute onChange", () => {
     instance.setState({ value: 50 });
     component.setProps({ step: 1 });
     instance.handleBarMouseDown({ pageX: 52 });
@@ -270,83 +282,83 @@ describe("Range Slider", () => {
     component.setProps({ defaultValue: [1, 100] });
     expect(instance.state.value).toEqual([1, 100]);
   });
-  it("should execute keyDown event with arrow up", () => {
-    instance.setState({ handleIndex: 0, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 38,
-    });
-    expect(instance.state.value).toEqual([51, 60]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with arrow up", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 0, value: [50, 60] },
+      38,
+      [51, 60],
+      onChange,
+    );
   });
-  it("should execute keyDown event with arrow right", () => {
-    instance.setState({ handleIndex: 0, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 39,
-    });
-    expect(instance.state.value).toEqual([51, 60]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with arrow right", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 0, value: [50, 60] },
+      39,
+      [51, 60],
+      onChange,
+    );
   });
-  it("should execute keyDown event with arrow down", () => {
-    instance.setState({ handleIndex: 1, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 40,
-    });
-    expect(instance.state.value).toEqual([50, 59]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with arrow down", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 1, value: [50, 60] },
+      40,
+      [50, 59],
+      onChange,
+    );
   });
-  it("should execute keyDown event with arrow left", () => {
-    instance.setState({ handleIndex: 1, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 37,
-    });
-    expect(instance.state.value).toEqual([50, 59]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with arrow left", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 1, value: [50, 60] },
+      37,
+      [50, 59],
+      onChange,
+    );
   });
-  it("should execute keyDown event with home key", () => {
-    instance.setState({ handleIndex: 0, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 36,
-    });
-    expect(instance.state.value).toEqual([1, 60]);
-    expect(onChange).toHaveBeenCalled();
-    instance.setState({ handleIndex: 1, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 36,
-    });
-    expect(instance.state.value).toEqual([50, 1]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with home key", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 0, value: [50, 60] },
+      36,
+      [1, 60],
+      onChange,
+    );
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 1, value: [50, 60] },
+      36,
+      [50, 1],
+      onChange,
+    );
   });
-  it("should execute keyDown event with end key", () => {
-    instance.setState({ handleIndex: 0, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 35,
-    });
-    expect(instance.state.value).toEqual([100, 60]);
-    expect(onChange).toHaveBeenCalled();
-    instance.setState({ handleIndex: 1, value: [50, 60] });
-    instance.handleKeyDown({
-      stopPropagation: () => {},
-      preventDefault: () => {},
-      keyCode: 35,
-    });
-    expect(instance.state.value).toEqual([50, 100]);
-    expect(onChange).toHaveBeenCalled();
+  test("should execute keyDown event with end key", () => {
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 0, value: [50, 60] },
+      35,
+      [100, 60],
+      onChange,
+    );
+    testKeyTriggeringEvent(
+      instance,
+      expect,
+      { handleIndex: 1, value: [50, 60] },
+      35,
+      [50, 100],
+      onChange,
+    );
   });
-  it("handleKeyDown should not change the state when ctrl, shift or alt key", () => {
+  test("handleKeyDown should not change the state when ctrl, shift or alt key", () => {
     instance.setState({ value: [50, 60] });
     instance.handleKeyDown({
       keyCode: 35,
@@ -370,13 +382,13 @@ describe("Range Slider", () => {
     });
     expect(instance.state.value).toEqual([50, 60]);
   });
-  it("handleBarMouseDown should execute onChange", () => {
+  test("handleBarMouseDown should execute onChange", () => {
     instance.setState({ value: [50, 60] });
     instance.handleBarMouseDown({ pageX: 52 });
     expect(instance.state.value).toEqual([7, 60]);
     expect(onChange).toHaveBeenCalled();
   });
-  it("handleOnFocus should execute onChangeBefore and add listeners", () => {
+  test("handleOnFocus should execute onChangeBefore and add listeners", () => {
     instance.setState({ value: [50, 60] });
     instance.handleOnFocus(0)({});
     expect(typeof eventMap.keydown === "function").toBe(true);
@@ -384,13 +396,13 @@ describe("Range Slider", () => {
     expect(instance.state.focused).toBe(true);
     expect(onChangeBefore).toHaveBeenCalled();
   });
-  it("handleBlur should call onChangeAfter and remove listeners", () => {
+  test("handleBlur should call onChangeAfter and remove listeners", () => {
     instance.handleBlur();
     expect(typeof eventMap.keydown !== "function").toBe(true);
     expect(typeof eventMap.focusout !== "function").toBe(true);
     expect(onChangeAfter).toHaveBeenCalled();
   });
-  it("handleOnTouchStart should execute onChangeBefore and add listeners", () => {
+  test("handleOnTouchStart should execute onChangeBefore and add listeners", () => {
     instance.setState({ value: [50, 60] });
     instance.handleOnTouchStart(0)({ touches: [{ pageX: 109 }] });
     expect(typeof eventMap.touchmove === "function").toBe(true);
@@ -398,27 +410,27 @@ describe("Range Slider", () => {
     expect(instance.state.focused).toBe(true);
     expect(onChangeBefore).toHaveBeenCalled();
   });
-  it("handleTouchEnd should call onChangeAfter and remove listeners", () => {
+  test("handleTouchEnd should call onChangeAfter and remove listeners", () => {
     instance.handleTouchEnd();
     expect(typeof eventMap.touchmove !== "function").toBe(true);
     expect(typeof eventMap.touchend !== "function").toBe(true);
     expect(instance.state.focused).toBe(false);
     expect(onChangeAfter).toHaveBeenCalled();
   });
-  it("handleTouchMove should call onChange and set value", () => {
+  test("handleTouchMove should call onChange and set value", () => {
     instance.setState({ value: [50, 60], handleIndex: 0 });
     instance.handleOnTouchMove({ stopPropagation: () => {}, touches: [{ pageX: 109 }] });
     expect(instance.state.value).toEqual([21, 60]);
     expect(onChange).toHaveBeenCalled();
   });
-  it("handleTouchMove should not set value when touches > 1", () => {
+  test("handleTouchMove should not set value when touches > 1", () => {
     instance.setState({ value: [50, 60] });
     instance.handleOnTouchMove({
       touches: [{ pageX: 109 }, { pageX: 110 }],
     });
     expect(instance.state.value).toEqual([50, 60]);
   });
-  it("handleMouseDown should execute onChangeBefore and add listeners", () => {
+  test("handleMouseDown should execute onChangeBefore and add listeners", () => {
     instance.setState({ value: [50, 60] });
     instance.handleMouseDown(0)({ button: 0, buttons: 1 });
     expect(typeof eventMap.mousemove === "function").toBe(true);
@@ -426,14 +438,14 @@ describe("Range Slider", () => {
     expect(instance.state.focused).toBe(true);
     expect(onChangeBefore).toHaveBeenCalled();
   });
-  it("handleMouseUp should call onChangeAfter and remove listeners", () => {
+  test("handleMouseUp should call onChangeAfter and remove listeners", () => {
     instance.handleMouseUp();
     expect(typeof eventMap.mousemove !== "function").toBe(true);
     expect(typeof eventMap.mouseup !== "function").toBe(true);
     expect(instance.state.focused).toBe(false);
     expect(onChangeAfter).toHaveBeenCalled();
   });
-  it("handleMouseMove should call onChange and set value", () => {
+  test("handleMouseMove should call onChange and set value", () => {
     instance.setState({ value: [50, 60], handleIndex: 0 });
     instance.handleMouseMove({ pageX: 152 });
     expect(instance.state.value).toEqual([32, 60]);
@@ -482,7 +494,7 @@ describe("Range Slider in render", () => {
       expect(node.prop("value")).toEqual([1, 24]);
     });
   });
-  it("should match snapshot", () => {
+  test("should match snapshot", () => {
     expect(component).toMatchSnapshot();
   });
 });

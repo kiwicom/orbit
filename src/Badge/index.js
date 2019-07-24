@@ -80,9 +80,7 @@ IconContainer.defaultProps = {
 
 const StyledBadgeContent = styled.div`
   padding: 5px 0;
-  > span {
-    line-height: 14px;
-  }
+  line-height: 1;
 `;
 
 StyledBadgeContent.defaultProps = {

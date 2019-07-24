@@ -1,7 +1,6 @@
 // @flow
 
 import type { Value, AriaLabel } from "../../index";
-import type { Translation } from "../../../common/common.js.flow";
 
 type Callback<A> = (event: A) => void;
 
@@ -17,7 +16,7 @@ export type Props = {|
   hasHistogram: boolean,
   value: Value,
   ariaLabel: ?AriaLabel,
-  ariaValueText: ?Translation,
+  ariaValueText: ?string,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -14,8 +14,8 @@ Table below contains all types of the props available in the Slider component.
 
 | Name                  | Type                                  | Default         | Description                     |
 | :-------------------- | :------------------------------------ | :-------------- | :------------------------------ |
-| ariaLabel             | `Translation or Translation[]`        |                 | `aria-label` attribute or attributes for handles. See [functional specs](#functional-specs).
-| ariaValueText         | `Translation`                         |                 | Readable text alternative of current value (aria-valueNow).
+| ariaLabel             | `string or string[]`                  |                 | `aria-label` attribute or attributes for handles. See [functional specs](#functional-specs).
+| ariaValueText         | `string`                              |                 | Readable text alternative of current value. See [accessibility](#accessibility).
 | dataTest              | `string`                              |                 | Optional prop for testing purposes.
 | defaultValue          | [`Value`](#value)                     | `1`             | Initial value of the Slider when it mounts. See [value type](#value) for advanced usage.
 | histogramData         | `number[]`                            |                 | Property for passing the histogram's data. See [Histogram](#histogram) for more info.
@@ -46,9 +46,9 @@ The exact same type will be then returned with all callbacks. e.g.:
 ```
 
 ## Histogram
-* If you need to use `Slider` component together will `Histogram`, use property `histogramData` for that.
+* If you need to use `Slider` component together with `Histogram`, use property `histogramData` for that.
 * You need pass the same amount of data that is possible to select by definition of `min`, `max` and `step` property. The total count of columns should be `(max - min + step) / step`.
-* The Histogram won't be visible on desktop devices until the user will focus one of the handles. On mobile devices is the Histogram always shown.
+* The Histogram won't be visible on desktop devices until the user focuses one of the handles. On mobile devices is the Histogram always shown.
 * By default, the `histogramLoadingText` is null and only glyph of `inlineLoader` will appear.
 * With Histogram, it's recommended to use also `histogramDescription` property, where you should display the total count of selected data from the array. For it, you can use the [`calculateCountOf`](#calculatecountof) function.
 
@@ -57,7 +57,7 @@ The exact same type will be then returned with all callbacks. e.g.:
 * In every case of using the `Slider` component on **mobile devices**, the `Slider` should be wrapped in the [`Popover`](../Popover). For instance like this:
 ```jsx
 const MobileSlider = () => {
-  const [value, setValue] = React.useState(null);
+  const [value, setValue] = React.useState([1, 24]);
   return (
     <Popover
       content={
@@ -67,6 +67,16 @@ const MobileSlider = () => {
       <Tag selected={!!value}>Time of departure</Tag>
     </Popover>
   )
+}
+```
+
+## Accessibility
+* You should use `ariaValueText` only for cases when the value cannot be accurately represented as a number. For instance, when you use the Slider for selection of time range, you should dynamically change the `ariaValueText` to current selection e.g. `00:00 to 13:00` every time when `onChange` triggers.
+```jsx
+const SliderExample = () => {
+  const [value, setValue] = React.useState(12);
+  const ariaValueText = React.useMemo(() => `from midnight to ${value}`, [value]);
+  return <Slider defaultValue={12} min={1} max={24} onChange={val => setValue(val)} ariaValueText={ariaValueText} />
 }
 ```
 

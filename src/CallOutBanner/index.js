@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
+import mq from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
 import Stack from "../Stack";
@@ -12,11 +13,12 @@ import type { Props } from "./index";
 
 const StyledCallOutBanner = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background: ${({ theme }) => theme.orbit.paletteWhite}
+  background: ${({ theme }) => theme.orbit.paletteWhite};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   ${({ onClick }) =>
     onClick
       ? css`
@@ -37,6 +39,10 @@ const StyledCallOutBanner = styled.div`
       : css`
           border: 1px solid rgb(232, 237, 241);
         `};
+  ${mq.largeMobile(css`
+    flex-direction: row;
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+  `)};
 `;
 
 StyledCallOutBanner.defaultProps = {
@@ -44,7 +50,11 @@ StyledCallOutBanner.defaultProps = {
 };
 
 const StyledIllustration = styled.div`
-  padding-right: ${({ theme }) => theme.orbit.spaceLarge};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  ${mq.largeMobile(css`
+    padding-right: ${({ theme }) => theme.orbit.spaceLarge};
+    padding-bottom: 0;
+  `)};
 `;
 
 StyledIllustration.defaultProps = {

@@ -1,0 +1,7 @@
+// @flow
+import type { Data } from "../components/Histogram/index";
+import type { Value } from "../index";
+
+export type CalculateCountOf = (data: Data, value: Value, min: number) => [number, number];
+
+declare export default CalculateCountOf;

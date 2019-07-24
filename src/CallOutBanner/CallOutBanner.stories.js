@@ -107,7 +107,9 @@ storiesOf("CallOutBanner", module)
           description={description}
           dataTest={dataTest}
           onClick={onClick ? action("onClick") : undefined}
-          illustration={<Illustration size="small" name={illustration} />}
+          illustration={
+            illustration ? <Illustration size="small" name={illustration} /> : undefined
+          }
           actions={
             actions ? (
               <Button

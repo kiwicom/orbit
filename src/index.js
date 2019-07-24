@@ -11,6 +11,7 @@ export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
+export { default as CallOutBanner } from "./CallOutBanner";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";

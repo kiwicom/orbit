@@ -12,6 +12,7 @@ import TextLink from "../TextLink";
 import List from "../List";
 import ListItem from "../List/ListItem";
 import Heading from "../Heading";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tooltip from "./index";
 
@@ -27,7 +28,7 @@ storiesOf("Tooltip", module)
         <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
           eget mollis sed, tempor sed magna.
-          <Tooltip content={content}>
+          <Tooltip content={content} preferredPosition="left">
             <TextLink>Cras elementum.</TextLink>
           </Tooltip>{" "}
           Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
@@ -155,6 +156,33 @@ storiesOf("Tooltip", module)
         >
           <Icon />
         </Tooltip>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "RTL ",
+    () => {
+      return (
+        <RenderInRtl>
+          <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
+            eget mollis sed, tempor sed magna.
+            <Tooltip content="Write your text here." preferredPosition="left">
+              <TextLink>Cras elementum.</TextLink>
+            </Tooltip>{" "}
+            Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
+            congue. Sed vel lectus.{" "}
+            <Tooltip content="Write your text here.">
+              <Text>Another Tooltip.</Text>
+            </Tooltip>{" "}
+            Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
+          </Alert>
+        </RenderInRtl>
       );
     },
     {

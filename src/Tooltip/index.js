@@ -7,6 +7,7 @@ import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import {
   ALIGNS,
   POSITIONS,
+  RTL_POSITIONS,
   SIZE_OPTIONS,
   TOOLTIP_ARROW_SIZE,
   TOOLTIP_TOTAL_PADDING,
@@ -403,14 +404,37 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
+  switchPreferredPosition = () => {
+    const {
+      preferredPosition,
+      theme: { rtl },
+    } = this.props;
+    if (rtl) {
+      if (preferredPosition === RTL_POSITIONS.LEFT) {
+        return RTL_POSITIONS.RIGHT;
+      }
+      if (preferredPosition === RTL_POSITIONS.RIGHT) {
+        return RTL_POSITIONS.LEFT;
+      }
+    }
+    return preferredPosition;
+  };
+
   handleIn = () => {
     this.setState({ render: true });
     setTimeout(() => {
-      const { preferredPosition } = this.props;
-      const positions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
+      const {
+        theme: { rtl },
+      } = this.props;
+      const positionsObject = rtl ? RTL_POSITIONS : POSITIONS;
+      const positions = Object.keys(positionsObject).map(k => positionsObject[k]);
       this.getDimensions();
-      if (preferredPosition) {
-        this.setPosition([preferredPosition, ...positions.filter(p => p !== preferredPosition)]);
+      const realPreferredPosition = this.switchPreferredPosition();
+      if (realPreferredPosition) {
+        this.setPosition([
+          realPreferredPosition,
+          ...positions.filter(p => p !== realPreferredPosition),
+        ]);
       } else {
         this.setPosition(positions);
       }

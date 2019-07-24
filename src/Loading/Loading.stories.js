@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-import { TYPE_OPTIONS } from "./consts";
+import TYPE_OPTIONS from "./consts";
 import * as Icons from "../icons";
 import CardHeader from "../Card/CardHeader";
 import CardSection from "../Card/CardSection";

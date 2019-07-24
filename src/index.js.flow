@@ -56,6 +56,7 @@ import typeof ModalType from "./Modal";
 import typeof ModalHeaderType from "./Modal/ModalHeader";
 import typeof ModalSectionType from "./Modal/ModalSection";
 import typeof ModalFooterType from "./Modal/ModalFooter";
+import typeof SliderType from "./Slider";
 import typeof ClickOutsideType from "./ClickOutside";
 import typeof TagType from "./Tag";
 import typeof TableType from "./Table";
@@ -111,6 +112,8 @@ declare export var Modal: ModalType;
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;
 declare export var ModalFooter: ModalFooterType;
+
+declare export var Slider: SliderType;
 
 declare export var Tag: TagType;
 

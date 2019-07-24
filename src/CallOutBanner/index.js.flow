@@ -1,0 +1,16 @@
+// @flow
+import type { Translation, Globals } from "../common/common.js.flow";
+import Illustration from "../Illustration/index";
+
+export type Props = {|
+  tabIndex?: string,
+  onClick?: () => void | Promise<any>,
+  title: Translation,
+  description?: Translation,
+  illustration?: React$Element<typeof Illustration>,
+  actions?: React$Node,
+  children?: React$Node,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

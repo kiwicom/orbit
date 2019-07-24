@@ -1,0 +1,16 @@
+// @flow
+import type { Value } from "../../index";
+import type { Translation } from "../../../common/common.js.flow";
+
+export type Data = number[];
+
+export type Props = {|
+  data: ?Data,
+  value: Value,
+  min: number,
+  step: number,
+  loading?: boolean,
+  loadingText?: Translation,
+|};
+
+declare export default React$ComponentType<Props>;

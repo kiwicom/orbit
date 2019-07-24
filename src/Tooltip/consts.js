@@ -13,6 +13,14 @@ export const POSITIONS = {
   BOTTOM: "bottom",
 };
 
+// the default order on RTL needs to be changed
+export const RTL_POSITIONS = {
+  LEFT: "left",
+  RIGHT: "right",
+  TOP: "top",
+  BOTTOM: "bottom",
+};
+
 export const ALIGNS = {
   CENTER: "center",
   START: "start",

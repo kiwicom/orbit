@@ -1,0 +1,22 @@
+// @flow
+
+import type { Value } from "../../index";
+
+export type Props = {|
+  value: Value,
+  max: number,
+  min: number,
+  onMouseDown: (event: SyntheticMouseEvent<HTMLDivElement>) => void,
+  hasHistogram: boolean,
+|};
+
+declare export default React$ComponentType<Props>;
+
+export type CalculateBarPosition = (
+  value: Value,
+  max: number,
+  min: number,
+  hasHistogram: boolean,
+) => { left: number, width: number };
+
+declare export var calculateBarPosition: CalculateBarPosition;

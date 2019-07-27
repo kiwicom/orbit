@@ -17,7 +17,7 @@ describe(`InputGroup - Phone number`, () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
   const spaceAfter = SPACINGS_AFTER.NORMAL;
-
+  const ref = React.createRef();
   const selectOptions = [{ value: 1, label: "+420" }, { value: 2, label: "+421" }];
   const selectValue = 1;
 
@@ -45,6 +45,7 @@ describe(`InputGroup - Phone number`, () => {
         options={selectOptions}
         value={selectValue}
         prefix={<CountryFlag code={countryFlagCode} />}
+        ref={ref}
       />
       <InputField placeholder={inputPlaceholder} maxLength={inputMaxLength} value={inputValue} />
     </InputGroup>,
@@ -52,6 +53,10 @@ describe(`InputGroup - Phone number`, () => {
   const input = component.find("InputField");
   const select = component.find("Select");
   const group = component.find("InputGroup__StyledInputGroup");
+
+  it("Select should have ref", () => {
+    expect(ref.current).toBeDefined();
+  });
 
   it("should contain a label", () => {
     expect(

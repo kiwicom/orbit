@@ -76,11 +76,18 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   bar: { current: React$ElementRef<*> } = React.createRef();
 
+  barRect: ?{ width: number, left: number, right: number } = null;
+
   state = {
     value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
     handleIndex: null,
     focused: false,
   };
+
+  componentDidMount() {
+    this.barRectTimeout = setTimeout(this.calculateBarPosition, 50);
+    window.addEventListener("resize", this.calculateBarPosition);
+  }
 
   componentDidUpdate(prevProps: Props) {
     const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
@@ -93,11 +100,28 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.calculateBarPosition);
+    if (this.barRectTimeout) {
+      clearTimeout(this.barRectTimeout);
+    }
+  }
+
   pauseEvent = (
-    event: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticMouseEvent<HTMLDivElement>,
+    event:
+      | SyntheticKeyboardEvent<HTMLDivElement>
+      | SyntheticMouseEvent<HTMLDivElement>
+      | SyntheticTouchEvent<HTMLDivElement>,
   ) => {
-    if (typeof event.stopPropagation === "function") event.stopPropagation();
-    if (typeof event.preventDefault === "function") event.preventDefault();
+    if (typeof event.stopPropagation === "function") {
+      event.stopPropagation();
+    }
+    if (
+      typeof event.preventDefault === "function" &&
+      (typeof event.cancelable !== "boolean" || event.cancelable)
+    ) {
+      event.preventDefault();
+    }
   };
 
   stopPropagation = (event: SyntheticTouchEvent<HTMLDivElement>) => {
@@ -116,10 +140,17 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return Math.round((max - min + (addition ? 1 : 0)) * ratio + min - (deduction ? 1 : 0));
   };
 
-  calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
+  calculateBarPosition = () => {
     const { bar } = this;
     if (bar && bar.current && typeof bar.current.getBoundingClientRect === "function") {
-      const barRect = bar.current.getBoundingClientRect();
+      const { width, left, right } = bar.current.getBoundingClientRect();
+      this.barRect = { width, left, right };
+    }
+  };
+
+  calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
+    const { barRect } = this;
+    if (barRect) {
       const {
         histogramData,
         histogramLoading,
@@ -317,7 +348,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   handleOnTouchMove = (event: SyntheticTouchEvent<HTMLDivElement>) => {
     if (event.touches.length > 1) return;
     const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
-    this.stopPropagation(event);
+    this.pauseEvent(event);
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
@@ -334,7 +365,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       this.setState({ focused: true });
       const { value } = this.state;
       if (typeof i === "number") this.setState({ handleIndex: i });
-      window.addEventListener("touchmove", this.handleOnTouchMove);
+      window.addEventListener("touchmove", this.handleOnTouchMove, {
+        passive: false,
+      });
       window.addEventListener("touchend", this.handleTouchEnd);
       this.stopPropagation(event);
       this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
@@ -370,6 +403,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     if (index == null || !Array.isArray(value)) return newValue;
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
+
+  barRectTimeout: TimeoutID;
 
   renderHandle = (valueNow: number, i: ?number) => {
     const {

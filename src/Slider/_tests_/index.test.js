@@ -44,6 +44,7 @@ describe("Slider", () => {
     expect(instance.calculateValue(0.52, true, true)).toEqual(52);
   });
   test("calculateValueFromPosition should return proper value", () => {
+    instance.calculateBarPosition();
     expect(instance.calculateValueFromPosition(52)).toEqual(7);
     expect(instance.calculateValueFromPosition(352)).toEqual(81);
     expect(instance.calculateValueFromPosition(400)).toEqual(93);
@@ -253,6 +254,7 @@ describe("Range Slider", () => {
   );
   const instance = component.instance();
   test("calculateValueFromPosition should return proper value", () => {
+    instance.calculateBarPosition();
     expect(instance.calculateValueFromPosition(52)).toEqual(7);
     expect(instance.calculateValueFromPosition(150)).toEqual(31);
     instance.setState({ value: [15, 12], handleIndex: 0 });

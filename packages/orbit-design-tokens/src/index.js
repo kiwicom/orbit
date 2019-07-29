@@ -431,6 +431,13 @@ export const getTokens: GetTokens = customFoundation => {
     // description:
     lineHeightText: theme.base.lineHeight,
     lineHeightHeading: "1.2",
+    lineHeightHeadingDisplay: "44px",
+    lineHeightHeadingDisplaySubtitle: "28px",
+    lineHeightHeadingTitle1: "36px",
+    lineHeightHeadingTitle2: "28px",
+    lineHeightHeadingTitle3: "24px",
+    lineHeightHeadingTitle4: "20px",
+    lineHeightHeadingTitle5: "20px",
     // category:Text decoration
     // description:
     textDecorationTextLinkPrimary: "underline",

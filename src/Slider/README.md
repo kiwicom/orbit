@@ -26,10 +26,10 @@ Table below contains all types of the props available in the Slider component.
 | max                   | `number`                              | `100`           | The maximum value of the Slider.
 | min                   | `number`                              | `1`             | The minimum value of the Slider.
 | onChange              | `Value => void \| Promise`            |                 | Callback for handling onChange event. See [functional specs](#functional-specs) for advanced usage.
-| onChangeBefore        | `Value => void \| Promise`            |                 | Callback for handling onChangeBefore event. See [functional specs](#functional-specs) for advanced usage.
 | onChangeAfter         | `Value => void \| Promise`            |                 | Calback for handling onChangeAfter event. See [functional specs](#functional-specs) for advanced usage.
+| onChangeBefore        | `Value => void \| Promise`            |                 | Callback for handling onChangeBefore event. See [functional specs](#functional-specs) for advanced usage.
 | step                  | `number`                              | `1`             | Value that should be added or subtracted when Handle moves. The `max` and `min` should be divisible by this number and it should be integer.
-| valueDescription      | `Translation`                         |                 | Text property where you should display the select value range.
+| valueDescription      | `Translation`                         |                 | Text property where you should display the selected value range.
 
 ## Value
 The `Slider` component supports usage with one handle and also with multiple handles.

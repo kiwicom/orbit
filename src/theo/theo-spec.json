@@ -1560,7 +1560,7 @@
         "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
-    "fontSizeHeadingSubDisplay": {
+    "fontSizeHeadingDisplaySubtitle": {
       "value": "22px",
       "type": "size",
       "category": "Font size",
@@ -2564,7 +2564,7 @@
         "categoryDescription": "Use this for setting basic font weights."
       }
     },
-    "fontWeightHeadingSubDisplay": {
+    "fontWeightHeadingDisplaySubtitle": {
       "value": "400",
       "type": "string",
       "category": "Font weight",

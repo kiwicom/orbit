@@ -13,35 +13,38 @@ const foundation = {
       light: "#ECF8F7",
       lightHover: "#D6F0EE",
       lightActive: "#C0E8E4",
-      normal: "#00a991",
+      normal: "#00A991",
       normalHover: "#009882",
-      normalActive: "#008f7b",
+      normalActive: "#008F7B",
       dark: "#007F6D",
       darkHover: "#007060",
-      darkActive: "#006657"
+      darkActive: "#006657",
+      darker: "#005C4E",
     },
     white: {
-      normal: "#fff"
+      normal: "#FFFFFF",
+      normalHover: "#F1F4F7",
+      normalActive: "#E7ECF1",
     },
     cloud: {
-      light: "#f5f7f9",
-      lightHover: "#e5eaef",
-      lightActive: "#d6dee6",
-      normal: "#e8edf1",
-      normalHover: "#d9e1e8",
-      normalActive: "#cad5df"
+      light: "#F5F7F9",
+      lightHover: "#E5EAEF",
+      lightActive: "#D6DEE6",
+      normal: "#EFF2F5",
+      normalHover: "#DCE3E9",
+      normalActive: "#CAD4DE",
+      dark: "#E8EDF1",
     },
     ink: {
-      lighter: "#bac7d5",
-      lighterHover: "#a6b6c8",
-      lighterActive: "#94a8be",
+      lighter: "#BAC7D5",
+      lighterHover: "#A6B6C8",
+      lighterActive: "#94A8BE",
       light: "#5F738C",
       lightHover: "#52647A",
       lightActive: "#465567",
       normal: "#252A31",
       normalHover: "#181B20",
       normalActive: "#0B0C0F",
-      dark: "#171b1e"
     },
     orange: {
       light: "#FDF0E3",
@@ -50,9 +53,10 @@ const foundation = {
       normal: "#F9971E",
       normalHover: "#F38906",
       normalActive: "#D67906",
-      dark: "#8E2A06",
-      darkHover: "#712105",
-      darkActive: "#531904"
+      dark: "#AB3307",
+      darkHover: "#972C07",
+      darkActive: "#7A2405",
+      darker: "#842706",
     },
     red: {
       light: "#FAEAEA",
@@ -61,9 +65,10 @@ const foundation = {
       normal: "#D21C1C",
       normalHover: "#B91919",
       normalActive: "#9D1515",
-      dark: "#760909",
-      darkHover: "#5A0707",
-      darkActive: "#3E0505"
+      dark: "#970C0C",
+      darkHover: "#890B0B",
+      darkActive: "#6D0909",
+      darker: "#760909",
     },
     green: {
       light: "#EBF4EC",
@@ -72,9 +77,10 @@ const foundation = {
       normal: "#28A138",
       normalHover: "#238B31",
       normalActive: "#1D7228",
-      dark: "#235C2B",
-      darkHover: "#1B4621",
-      darkActive: "#123016"
+      dark: "#2D7738",
+      darkHover: "#276831",
+      darkActive: "#1F5126",
+      darker: "#235C2B",
     },
     blue: {
       light: "#E5F7FF",
@@ -83,14 +89,15 @@ const foundation = {
       normal: "#0172CB",
       normalHover: "#0161AC",
       normalActive: "#01508E",
-      dark: "#004680",
-      darkHover: "#003561",
-      darkActive: "#002442"
+      dark: "#005AA3",
+      darkHover: "#004F8F",
+      darkActive: "#003E70",
+      darker: "#004680",
     },
     social: {
-      facebook: "#3b5998",
-      facebookHover: "#385490",
-      facebookActive: "#354f88"
+      facebook: "#1778F2",
+      facebookHover: "#0C69DE",
+      facebookActive: "#0B5CC1",
     },
   },
   base: {

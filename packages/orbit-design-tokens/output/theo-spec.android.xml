@@ -128,7 +128,6 @@
   <color name="COLORTEXTBUTTONFACEBOOK" category="Colors">#ffffffff</color>
   <dimen name="BORDERWIDTHINPUTFOCUS" category="Border style">2dp</dimen>
   <color name="COLORTEXTBADGEDARK" category="Colors">#ffffffff</color>
-  <dimen name="LINEHEIGHTHEADINGSUBDISPLAY" category="Line height">28dp</dimen>
   <color name="BORDERCOLORINPUTHOVER" category="Border color">#ffa6b6c8</color>
   <dimen name="PADDINGTAG" category="Spacing">6 8dp</dimen>
   <color name="COLORTEXTBADGEWARNING" category="Colors">#fff9971e</color>
@@ -293,6 +292,7 @@
   <color name="PALETTEPRODUCTDARKHOVER" category="Color palette">#ff007060</color>
   <string name="BACKGROUNDSERVICELOGO" category="Background colors">transparent</string>
   <string name="FONTFAMILY" category="Font family">&quot;Roboto&quot;, -apple-system, &quot;.SFNSText-Regular&quot;, &quot;San Francisco&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, sans-serif</string>
+  <dimen name="LINEHEIGHTHEADINGDISPLAYSUBTITLE" category="Line height">28dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEHOVER" category="Background colors">#fff5f7f9</color>
   <color name="BORDERCOLORBUTTONCRITICALBORDERED" category="Border color">#ffd21c1c</color>
   <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff3b5998</color>

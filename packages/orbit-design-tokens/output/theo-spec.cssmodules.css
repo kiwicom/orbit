@@ -128,7 +128,6 @@
 @value color-text-button-facebook: rgb(255, 255, 255);
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
-@value line-height-heading-sub-display: 28px;
 @value border-color-input-hover: rgb(166, 182, 200);
 @value padding-tag: 6px 8px;
 @value color-text-badge-warning: rgb(249, 151, 30);
@@ -295,6 +294,7 @@
 @value palette-product-dark-hover: rgb(0, 112, 96);
 @value background-service-logo: "transparent";
 @value font-family: ""Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif";
+@value line-height-heading-display-subtitle: 28px;
 @value background-button-white-hover: rgb(245, 247, 249);
 @value border-color-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-button-facebook-bordered: rgb(59, 89, 152);

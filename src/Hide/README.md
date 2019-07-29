@@ -20,7 +20,7 @@ Table below contains all types of the props available in the Hide component.
 | Name          | Type              | Description                     |
 | :------------ | :---------------- |:------------------------------- |
 | **children**  | `React.Node`      | The children to hide. 
-| **on**        | [`enum`](#enum)   | Array of devices - viewports to hide the children on.
+| **on**        | [`enum[]`](#enum) | Array of devices - viewports to hide the children on.
 | **block**     | `boolean`         | If `true`, the Hide component will be `display: block` when visible.
   
 ### enum

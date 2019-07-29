@@ -17,7 +17,7 @@
       }
     },
     "colorTextAttention": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -65,7 +65,7 @@
       }
     },
     "colorTextWhite": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -89,7 +89,7 @@
       }
     },
     "colorIconAttention": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -97,7 +97,7 @@
       }
     },
     "colorIconTertiary": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -137,7 +137,7 @@
       }
     },
     "colorHeading": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -145,7 +145,7 @@
       }
     },
     "colorHeadingInverted": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -161,7 +161,7 @@
       }
     },
     "colorTextLinkPrimaryHover": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -169,7 +169,7 @@
       }
     },
     "colorTextLinkSecondary": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -177,7 +177,7 @@
       }
     },
     "colorTextLinkSecondaryHover": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -249,7 +249,7 @@
       }
     },
     "colorTextAlertLink": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -257,7 +257,7 @@
       }
     },
     "colorTextButtonFilled": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -265,7 +265,7 @@
       }
     },
     "colorTextButtonFilledHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -273,7 +273,7 @@
       }
     },
     "colorTextButtonFilledActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -281,7 +281,7 @@
       }
     },
     "colorTextButtonPrimary": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -289,7 +289,7 @@
       }
     },
     "colorTextButtonPrimaryHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -297,7 +297,7 @@
       }
     },
     "colorTextButtonPrimaryActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -329,7 +329,7 @@
       }
     },
     "colorTextButtonInfo": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -337,7 +337,7 @@
       }
     },
     "colorTextButtonInfoHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -345,7 +345,7 @@
       }
     },
     "colorTextButtonInfoActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -353,7 +353,7 @@
       }
     },
     "colorTextButtonSuccess": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -361,7 +361,7 @@
       }
     },
     "colorTextButtonSuccessHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -369,7 +369,7 @@
       }
     },
     "colorTextButtonSuccessActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -377,7 +377,7 @@
       }
     },
     "colorTextButtonWarning": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -385,7 +385,7 @@
       }
     },
     "colorTextButtonWarningHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -393,7 +393,7 @@
       }
     },
     "colorTextButtonWarningActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -401,7 +401,7 @@
       }
     },
     "colorTextButtonCritical": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -409,7 +409,7 @@
       }
     },
     "colorTextButtonCriticalHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -417,7 +417,7 @@
       }
     },
     "colorTextButtonCriticalActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -425,7 +425,7 @@
       }
     },
     "colorTextButtonFacebook": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -433,7 +433,7 @@
       }
     },
     "colorTextButtonFacebookHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -441,7 +441,7 @@
       }
     },
     "colorTextButtonFacebookActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -497,7 +497,7 @@
       }
     },
     "colorTextButtonPrimaryBordered": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -513,7 +513,7 @@
       }
     },
     "colorTextButtonPrimaryBorderedActive": {
-      "value": "#008f7b",
+      "value": "#008F7B",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -641,7 +641,7 @@
       }
     },
     "colorTextButtonFacebookBordered": {
-      "value": "#3b5998",
+      "value": "#3B5998",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -657,7 +657,7 @@
       }
     },
     "colorTextButtonFacebookBorderedActive": {
-      "value": "#354f88",
+      "value": "#354F88",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -689,7 +689,7 @@
       }
     },
     "colorTextButtonWhiteBordered": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -697,7 +697,7 @@
       }
     },
     "colorTextButtonWhiteBorderedHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -705,7 +705,7 @@
       }
     },
     "colorTextButtonWhiteBorderedActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -713,7 +713,7 @@
       }
     },
     "colorTextButtonLinkPrimary": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -729,7 +729,7 @@
       }
     },
     "colorTextButtonLinkPrimaryActive": {
-      "value": "#008f7b",
+      "value": "#008F7B",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -777,7 +777,7 @@
       }
     },
     "colorTextInputDisabled": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -785,7 +785,7 @@
       }
     },
     "colorTextBadgeNeutral": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -825,7 +825,7 @@
       }
     },
     "colorTextBadgeDark": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -833,7 +833,7 @@
       }
     },
     "colorTextBadgeWhite": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -841,7 +841,7 @@
       }
     },
     "colorTextLoading": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -865,7 +865,7 @@
       }
     },
     "colorTextTagSelected": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -873,7 +873,7 @@
       }
     },
     "colorIconInput": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -881,7 +881,7 @@
       }
     },
     "colorPlaceholderInput": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -937,7 +937,7 @@
       }
     },
     "colorIconCheckboxRadio": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -945,7 +945,7 @@
       }
     },
     "colorIconCheckboxRadioDisabled": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -953,7 +953,7 @@
       }
     },
     "colorIconRadioButton": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -961,7 +961,7 @@
       }
     },
     "colorIconRadioButtonDisabled": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -985,7 +985,7 @@
       }
     },
     "backgroundBody": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -993,7 +993,7 @@
       }
     },
     "backgroundModal": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1001,7 +1001,7 @@
       }
     },
     "backgroundCard": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1025,7 +1025,7 @@
       }
     },
     "backgroundButtonPrimary": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1041,7 +1041,7 @@
       }
     },
     "backgroundButtonPrimaryActive": {
-      "value": "#008f7b",
+      "value": "#008F7B",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1049,7 +1049,7 @@
       }
     },
     "backgroundButtonSecondary": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1057,7 +1057,7 @@
       }
     },
     "backgroundButtonSecondaryHover": {
-      "value": "#d9e1e8",
+      "value": "#D9E1E8",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1065,7 +1065,7 @@
       }
     },
     "backgroundButtonSecondaryActive": {
-      "value": "#cad5df",
+      "value": "#CAD5DF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1073,7 +1073,7 @@
       }
     },
     "backgroundButtonFacebook": {
-      "value": "#3b5998",
+      "value": "#3B5998",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1089,7 +1089,7 @@
       }
     },
     "backgroundButtonFacebookActive": {
-      "value": "#354f88",
+      "value": "#354F88",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1097,7 +1097,7 @@
       }
     },
     "backgroundButtonGoogle": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1105,7 +1105,7 @@
       }
     },
     "backgroundButtonGoogleHover": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1113,7 +1113,7 @@
       }
     },
     "backgroundButtonGoogleActive": {
-      "value": "#d6dee6",
+      "value": "#D6DEE6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1217,7 +1217,7 @@
       }
     },
     "backgroundButtonWhite": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1225,7 +1225,7 @@
       }
     },
     "backgroundButtonWhiteHover": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1233,7 +1233,7 @@
       }
     },
     "backgroundButtonWhiteActive": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1249,7 +1249,7 @@
       }
     },
     "backgroundButtonBorderedHover": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1257,7 +1257,7 @@
       }
     },
     "backgroundButtonBorderedActive": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1297,7 +1297,7 @@
       }
     },
     "backgroundButtonLinkPrimaryHover": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1305,7 +1305,7 @@
       }
     },
     "backgroundButtonLinkPrimaryActive": {
-      "value": "#d6dee6",
+      "value": "#D6DEE6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1321,7 +1321,7 @@
       }
     },
     "backgroundButtonLinkSecondaryHover": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1329,7 +1329,7 @@
       }
     },
     "backgroundButtonLinkSecondaryActive": {
-      "value": "#d6dee6",
+      "value": "#D6DEE6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1337,7 +1337,7 @@
       }
     },
     "backgroundInput": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1345,7 +1345,7 @@
       }
     },
     "backgroundInputDisabled": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1385,7 +1385,7 @@
       }
     },
     "backgroundBadgeNeutral": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1433,7 +1433,7 @@
       }
     },
     "backgroundBadgeWhite": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1457,7 +1457,7 @@
       }
     },
     "backgroundSeparator": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1481,7 +1481,7 @@
       }
     },
     "backgroundTable": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1489,7 +1489,7 @@
       }
     },
     "backgroundTableEven": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1497,7 +1497,7 @@
       }
     },
     "backgroundTableHover": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1505,7 +1505,7 @@
       }
     },
     "backgroundTag": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1521,7 +1521,7 @@
       }
     },
     "backgroundTagHover": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1537,7 +1537,7 @@
       }
     },
     "backgroundTagActive": {
-      "value": "#d6dee6",
+      "value": "#D6DEE6",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -2085,7 +2085,7 @@
       }
     },
     "borderColorInput": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2093,7 +2093,7 @@
       }
     },
     "borderColorInputHover": {
-      "value": "#a6b6c8",
+      "value": "#A6B6C8",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2101,7 +2101,7 @@
       }
     },
     "borderColorInputActive": {
-      "value": "#94a8be",
+      "value": "#94A8BE",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2141,7 +2141,7 @@
       }
     },
     "borderColorTableCell": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2149,7 +2149,7 @@
       }
     },
     "borderColorCard": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2157,7 +2157,7 @@
       }
     },
     "borderColorModal": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2165,7 +2165,7 @@
       }
     },
     "borderColorButtonPrimaryBordered": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2181,7 +2181,7 @@
       }
     },
     "borderColorButtonPrimaryBorderedActive": {
-      "value": "#008f7b",
+      "value": "#008F7B",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2213,7 +2213,7 @@
       }
     },
     "borderColorButtonFacebookBordered": {
-      "value": "#3b5998",
+      "value": "#3B5998",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2229,7 +2229,7 @@
       }
     },
     "borderColorButtonFacebookBorderedActive": {
-      "value": "#354f88",
+      "value": "#354F88",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2357,7 +2357,7 @@
       }
     },
     "borderColorButtonWhiteBordered": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2365,7 +2365,7 @@
       }
     },
     "borderColorButtonWhiteBorderedHover": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2373,7 +2373,7 @@
       }
     },
     "borderColorButtonWhiteBorderedActive": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2381,7 +2381,7 @@
       }
     },
     "borderColorCheckboxRadio": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2421,7 +2421,7 @@
       }
     },
     "borderColorTable": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2429,7 +2429,7 @@
       }
     },
     "borderColorTableHead": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2437,7 +2437,7 @@
       }
     },
     "borderColorTag": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -3133,7 +3133,7 @@
       }
     },
     "paletteProductNormal": {
-      "value": "#00a991",
+      "value": "#00A991",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3149,7 +3149,7 @@
       }
     },
     "paletteProductNormalActive": {
-      "value": "#008f7b",
+      "value": "#008F7B",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3181,7 +3181,7 @@
       }
     },
     "paletteWhite": {
-      "value": "#fff",
+      "value": "#FFFFFF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3189,7 +3189,7 @@
       }
     },
     "paletteWhiteHover": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3197,7 +3197,7 @@
       }
     },
     "paletteWhiteActive": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3205,7 +3205,7 @@
       }
     },
     "paletteCloudLight": {
-      "value": "#f5f7f9",
+      "value": "#F5F7F9",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3213,7 +3213,7 @@
       }
     },
     "paletteCloudLightHover": {
-      "value": "#e5eaef",
+      "value": "#E5EAEF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3221,7 +3221,7 @@
       }
     },
     "paletteCloudLightActive": {
-      "value": "#d6dee6",
+      "value": "#D6DEE6",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3229,7 +3229,7 @@
       }
     },
     "paletteCloudNormal": {
-      "value": "#e8edf1",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3237,7 +3237,7 @@
       }
     },
     "paletteCloudNormalHover": {
-      "value": "#d9e1e8",
+      "value": "#D9E1E8",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3245,7 +3245,7 @@
       }
     },
     "paletteCloudNormalActive": {
-      "value": "#cad5df",
+      "value": "#CAD5DF",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3253,7 +3253,7 @@
       }
     },
     "paletteInkLighter": {
-      "value": "#bac7d5",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3261,7 +3261,7 @@
       }
     },
     "paletteInkLighterHover": {
-      "value": "#a6b6c8",
+      "value": "#A6B6C8",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3269,7 +3269,7 @@
       }
     },
     "paletteInkLighterActive": {
-      "value": "#94a8be",
+      "value": "#94A8BE",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3325,7 +3325,7 @@
       }
     },
     "paletteInkDark": {
-      "value": "#171b1e",
+      "value": "#171B1E",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3621,7 +3621,7 @@
       }
     },
     "paletteSocialFacebook": {
-      "value": "#3b5998",
+      "value": "#3B5998",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3637,7 +3637,7 @@
       }
     },
     "paletteSocialFacebookActive": {
-      "value": "#354f88",
+      "value": "#354F88",
       "type": "color",
       "category": "Color palette",
       "meta": {

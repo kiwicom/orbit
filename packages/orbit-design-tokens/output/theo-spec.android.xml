@@ -13,6 +13,7 @@
   <color name="PALETTECLOUDLIGHTHOVER" category="Color palette">#ffe5eaef</color>
   <color name="COLORTEXTBUTTONWARNINGACTIVE" category="Colors">#ffffffff</color>
   <color name="PALETTEREDLIGHT" category="Color palette">#fffaeaea</color>
+  <dimen name="LINEHEIGHTHEADINGTITLE1" category="Line height">36dp</dimen>
   <color name="BACKGROUNDTABLE" category="Background colors">#ffffffff</color>
   <color name="COLORALERTICONINFO" category="Colors">#ff0172cb</color>
   <color name="PALETTEBLUENORMALHOVER" category="Color palette">#ff0161ac</color>
@@ -30,6 +31,7 @@
   <dimen name="FONTSIZEINPUTNORMAL" category="Font size">14dp</dimen>
   <color name="COLORTEXTBUTTONGOOGLEHOVER" category="Colors">#ff181b20</color>
   <color name="PALETTEPRODUCTNORMALACTIVE" category="Color palette">#ff008f7b</color>
+  <dimen name="LINEHEIGHTHEADINGTITLE2" category="Line height">28dp</dimen>
   <color name="COLORTEXTBUTTONINFOBORDEREDACTIVE" category="Colors">#ff01508e</color>
   <color name="COLORTEXTBUTTONSUCCESS" category="Colors">#ffffffff</color>
   <dimen name="SPACESMALL" category="Spacing">12dp</dimen>
@@ -41,6 +43,7 @@
   <color name="COLORTEXTBUTTONWARNINGHOVER" category="Colors">#ffffffff</color>
   <dimen name="BOXSHADOWMODAL" category="Box shadow">0 20px 60px 0 rgba(23, 27, 30, 0.4)</dimen>
   <color name="PALETTECLOUDLIGHTACTIVE" category="Color palette">#ffd6dee6</color>
+  <dimen name="LINEHEIGHTHEADINGTITLE3" category="Line height">24dp</dimen>
   <color name="PALETTEPRODUCTLIGHT" category="Color palette">#ffecf8f7</color>
   <dimen name="HEIGHTBUTTONLARGE" category="Size (width, height)">52dp</dimen>
   <color name="BACKGROUNDBUTTONWARNINGACTIVE" category="Background colors">#ffd67906</color>
@@ -54,6 +57,7 @@
   <color name="BACKGROUNDBUTTONSUCCESS" category="Background colors">#ff28a138</color>
   <color name="PALETTEREDNORMALACTIVE" category="Color palette">#ff9d1515</color>
   <color name="COLORTEXTBUTTONSECONDARYBORDEREDACTIVE" category="Colors">#ff0b0c0f</color>
+  <dimen name="LINEHEIGHTHEADINGTITLE4" category="Line height">20dp</dimen>
   <color name="BORDERCOLORINPUTERRORFOCUS" category="Border color">#ffd21c1c</color>
   <dimen name="PADDINGBUTTONSMALL" category="Spacing">0 12dp</dimen>
   <color name="COLORTEXTSECONDARY" category="Colors">#ff5f738c</color>
@@ -65,6 +69,7 @@
   <color name="BORDERCOLORBUTTONPRIMARYBORDERED" category="Border color">#ff00a991</color>
   <color name="BORDERCOLORBUTTONWARNINGBORDEREDACTIVE" category="Border color">#ffd67906</color>
   <color name="COLORTEXTBUTTONFILLED" category="Colors">#ffffffff</color>
+  <dimen name="LINEHEIGHTHEADINGTITLE5" category="Line height">20dp</dimen>
   <dimen name="HEIGHTINPUTSMALL" category="Size (width, height)">32dp</dimen>
   <color name="BORDERCOLORINPUTFOCUS" category="Border color">#ff0172cb</color>
   <dimen name="PADDINGBUTTONNORMALWITHRIGHTICON" category="Spacing">0 12 0 16dp</dimen>
@@ -123,6 +128,7 @@
   <color name="COLORTEXTBUTTONFACEBOOK" category="Colors">#ffffffff</color>
   <dimen name="BORDERWIDTHINPUTFOCUS" category="Border style">2dp</dimen>
   <color name="COLORTEXTBADGEDARK" category="Colors">#ffffffff</color>
+  <dimen name="LINEHEIGHTHEADINGSUBDISPLAY" category="Line height">28dp</dimen>
   <color name="BORDERCOLORINPUTHOVER" category="Border color">#ffa6b6c8</color>
   <dimen name="PADDINGTAG" category="Spacing">6 8dp</dimen>
   <color name="COLORTEXTBADGEWARNING" category="Colors">#fff9971e</color>
@@ -303,6 +309,7 @@
   <string name="BACKGROUNDCOUNTRYFLAG" category="Background colors">transparent</string>
   <color name="COLORTEXTBUTTONFACEBOOKHOVER" category="Colors">#ffffffff</color>
   <string name="BACKGROUNDBUTTONWHITEBORDERED" category="Background colors">transparent</string>
+  <dimen name="FONTSIZEHEADINGSUBDISPLAY" category="Font size">22dp</dimen>
   <dimen name="WIDTHMODALLARGE" category="Size (width, height)">1280dp</dimen>
   <color name="PALETTEWHITEACTIVE" category="Color palette">#ffe5eaef</color>
   <color name="BACKGROUNDBUTTONSECONDARY" category="Background colors">#ffe8edf1</color>
@@ -401,6 +408,7 @@
   <string name="ZINDEXONTHETOP" category="Z Index">900</string>
   <color name="COLORTEXTBUTTONSUCCESSHOVER" category="Colors">#ffffffff</color>
   <color name="COLORTEXTBUTTONGOOGLE" category="Colors">#ff252a31</color>
+  <dimen name="LINEHEIGHTHEADINGDISPLAY" category="Line height">44dp</dimen>
   <string name="DURATIONNORMAL" category="Duration">0.3s</string>
   <color name="PALETTECLOUDNORMALHOVER" category="Color palette">#ffd9e1e8</color>
   <color name="PALETTEPRODUCTNORMAL" category="Color palette">#ff00a991</color>
@@ -424,6 +432,7 @@
   <color name="PALETTEREDNORMAL" category="Color palette">#ffd21c1c</color>
   <color name="PALETTEORANGEDARKHOVER" category="Color palette">#ff712105</color>
   <color name="COLORTEXTBUTTONSECONDARYBORDERED" category="Colors">#ff252a31</color>
+  <string name="FONTWEIGHTHEADINGSUBDISPLAY" category="Font weight">400</string>
   <dimen name="BORDERRADIUSLARGE" category="Border radius">6dp</dimen>
   <dimen name="PADDINGTABLE" category="Spacing">12 16dp</dimen>
   <color name="BACKGROUNDBUTTONCRITICALHOVER" category="Background colors">#ffb91919</color>

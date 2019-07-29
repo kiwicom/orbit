@@ -79,6 +79,12 @@
       "name": "paletteRedLight"
     },
     {
+      "value": "36px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingTitle1"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Background colors",
@@ -181,6 +187,12 @@
       "name": "paletteProductNormalActive"
     },
     {
+      "value": "28px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingTitle2"
+    },
+    {
       "value": "rgb(1, 80, 142)",
       "type": "color",
       "category": "Colors",
@@ -245,6 +257,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteCloudLightActive"
+    },
+    {
+      "value": "24px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingTitle3"
     },
     {
       "value": "rgb(236, 248, 247)",
@@ -325,6 +343,12 @@
       "name": "colorTextButtonSecondaryBorderedActive"
     },
     {
+      "value": "20px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingTitle4"
+    },
+    {
       "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Border color",
@@ -389,6 +413,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonFilled"
+    },
+    {
+      "value": "20px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingTitle5"
     },
     {
       "value": "32px",
@@ -738,6 +768,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextBadgeDark"
+    },
+    {
+      "value": "28px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingSubDisplay"
     },
     {
       "value": "rgb(166, 182, 200)",
@@ -1822,6 +1858,12 @@
       "name": "backgroundButtonWhiteBordered"
     },
     {
+      "value": "22px",
+      "type": "size",
+      "category": "Font size",
+      "name": "fontSizeHeadingSubDisplay"
+    },
+    {
       "value": "1280px",
       "type": "size",
       "category": "Size (width, height)",
@@ -2410,6 +2452,12 @@
       "name": "colorTextButtonGoogle"
     },
     {
+      "value": "44px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightHeadingDisplay"
+    },
+    {
       "value": "0.3s",
       "type": "string",
       "category": "Duration",
@@ -2546,6 +2594,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonSecondaryBordered"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "Font weight",
+      "name": "fontWeightHeadingSubDisplay"
     },
     {
       "value": "6px",

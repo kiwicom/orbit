@@ -10,6 +10,7 @@ export type ProductColor = {|
   dark: string,
   darkHover: string,
   darkActive: string,
+  darker: string,
 |};
 
 export type StatusColor = {|
@@ -22,10 +23,13 @@ export type StatusColor = {|
   dark: string,
   darkHover: string,
   darkActive: string,
+  darker: string,
 |};
 
 export type WhiteColor = {|
   normal: string,
+  normalHover: string,
+  normalActive: string,
 |};
 
 export type CloudColor = {|
@@ -35,6 +39,7 @@ export type CloudColor = {|
   normal: string,
   normalHover: string,
   normalActive: string,
+  dark: string,
 |};
 
 export type InkColor = {|
@@ -47,7 +52,6 @@ export type InkColor = {|
   normal: string,
   normalHover: string,
   normalActive: string,
-  dark: string,
 |};
 
 export type SocialColor = {|

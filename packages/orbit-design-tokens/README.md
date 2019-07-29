@@ -48,6 +48,7 @@ const foundation = {
       dark: "#990000",
       darkHover: "#720000",
       darkActive: "#630000",
+      darker: "#530000"
     },
   },
   base: {
@@ -78,6 +79,9 @@ const palette = {
   productNormalHover: "#e50000",
   productNormalActive: "#cc0000",
   productDark: "#990000",
+  productDarkHover: "#890000",
+  productDarkActive: "#7a0000",
+  productDarker: "#5b0000",
 };
 
 const theme = fromPlainObject(theme);

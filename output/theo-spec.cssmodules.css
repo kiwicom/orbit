@@ -12,6 +12,7 @@
 @value palette-cloud-light-hover: rgb(229, 234, 239);
 @value color-text-button-warning-active: rgb(255, 255, 255);
 @value palette-red-light: rgb(250, 234, 234);
+@value line-height-heading-title1: 36px;
 @value background-table: rgb(255, 255, 255);
 @value color-alert-icon-info: rgb(1, 114, 203);
 @value palette-blue-normal-hover: rgb(1, 97, 172);
@@ -29,6 +30,7 @@
 @value font-size-input-normal: 14px;
 @value color-text-button-google-hover: rgb(24, 27, 32);
 @value palette-product-normal-active: rgb(0, 143, 123);
+@value line-height-heading-title2: 28px;
 @value color-text-button-info-bordered-active: rgb(1, 80, 142);
 @value color-text-button-success: rgb(255, 255, 255);
 @value space-small: 12px;
@@ -40,6 +42,7 @@
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value box-shadow-modal: 0 20px 60px 0 rgba(23, 27, 30, 0.4);
 @value palette-cloud-light-active: rgb(214, 222, 230);
+@value line-height-heading-title3: 24px;
 @value palette-product-light: rgb(236, 248, 247);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(214, 121, 6);
@@ -53,6 +56,7 @@
 @value background-button-success: rgb(40, 161, 56);
 @value palette-red-normal-active: rgb(157, 21, 21);
 @value color-text-button-secondary-bordered-active: rgb(11, 12, 15);
+@value line-height-heading-title4: 20px;
 @value border-color-input-error-focus: rgb(210, 28, 28);
 @value padding-button-small: 0 12px;
 @value color-text-secondary: rgb(95, 115, 140);
@@ -64,6 +68,7 @@
 @value border-color-button-primary-bordered: rgb(0, 169, 145);
 @value border-color-button-warning-bordered-active: rgb(214, 121, 6);
 @value color-text-button-filled: rgb(255, 255, 255);
+@value line-height-heading-title5: 20px;
 @value height-input-small: 32px;
 @value border-color-input-focus: rgb(1, 114, 203);
 @value padding-button-normal-with-right-icon: 0 12px 0 16px;
@@ -123,6 +128,7 @@
 @value color-text-button-facebook: rgb(255, 255, 255);
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
+@value line-height-heading-sub-display: 28px;
 @value border-color-input-hover: rgb(166, 182, 200);
 @value padding-tag: 6px 8px;
 @value color-text-badge-warning: rgb(249, 151, 30);
@@ -305,6 +311,7 @@
 @value background-country-flag: "transparent";
 @value color-text-button-facebook-hover: rgb(255, 255, 255);
 @value background-button-white-bordered: "transparent";
+@value font-size-heading-sub-display: 22px;
 @value width-modal-large: 1280px;
 @value palette-white-active: rgb(229, 234, 239);
 @value background-button-secondary: rgb(232, 237, 241);
@@ -403,6 +410,7 @@
 @value z-index-on-the-top: "900";
 @value color-text-button-success-hover: rgb(255, 255, 255);
 @value color-text-button-google: rgb(37, 42, 49);
+@value line-height-heading-display: 44px;
 @value duration-normal: "0.3s";
 @value palette-cloud-normal-hover: rgb(217, 225, 232);
 @value palette-product-normal: rgb(0, 169, 145);
@@ -426,6 +434,7 @@
 @value palette-red-normal: rgb(210, 28, 28);
 @value palette-orange-dark-hover: rgb(113, 33, 5);
 @value color-text-button-secondary-bordered: rgb(37, 42, 49);
+@value font-weight-heading-sub-display: "400";
 /* use for big elements like modal and large buttons */
 @value border-radius-large: 6px;
 @value padding-table: 12px 16px;

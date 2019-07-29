@@ -3044,6 +3044,62 @@
         "categoryDescription": ""
       }
     },
+    "lineHeightHeadingDisplay": {
+      "value": "44px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingDisplaySubtitle": {
+      "value": "28px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle1": {
+      "value": "36px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle2": {
+      "value": "28px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle3": {
+      "value": "24px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle4": {
+      "value": "20px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle5": {
+      "value": "20px",
+      "type": "size",
+      "category": "Line height",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "textDecorationTextLinkPrimary": {
       "value": "underline",
       "type": "string",

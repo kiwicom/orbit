@@ -93,6 +93,9 @@ const Collapse = ({
   const handleClick = React.useCallback(
     event => {
       if (!isControlledComponent) {
+        if (onClick) {
+          onClick(event, !expanded);
+        }
         setExpandedState(!expanded);
       }
       if (onClick) {

@@ -18,12 +18,11 @@ const getHeightToken = ({ theme, size }) => {
 
 export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) => {
   const height = parseInt(getHeightToken({ theme, size }), 10);
-
+  const illustrationPath = `${illustrationName}-Q85.png`;
   return {
-    src: `${baseURL}/illustrations/0x${height}/${illustrationName}.png`,
+    src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
     srcSet: `${baseURL}/illustrations/0x${height *
-      2}/${illustrationName}.png 2x, ${baseURL}/illustrations/0x${height *
-      3}/${illustrationName}.png 3x`,
+      2}/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
   };
 })`
   display: inline-block;

@@ -2,6 +2,7 @@
 
 exports[`RatingStars should match snapshot 1`] = `
 <RatingStars__StyledRatingStars
+  aria-label="Rating 2 out of 5"
   data-test="test"
   size="large"
   theme={

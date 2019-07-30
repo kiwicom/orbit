@@ -11,6 +11,7 @@ export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
+export { default as CallOutBanner } from "./CallOutBanner";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
@@ -32,6 +33,8 @@ export { default as Modal } from "./Modal";
 export { default as ModalHeader } from "./Modal/ModalHeader";
 export { default as ModalSection } from "./Modal/ModalSection";
 export { default as ModalFooter } from "./Modal/ModalFooter";
+
+export { default as Slider } from "./Slider";
 
 // Table
 export { default as Table } from "./Table";

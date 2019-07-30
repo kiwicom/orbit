@@ -243,18 +243,24 @@ class InputGroup extends React.PureComponent<Props, State> {
               Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
             return (
               <StyledChild flex={childFlex}>
-                {
-                  <item.type
-                    {...item.props}
-                    size={size}
-                    label={undefined}
-                    help={undefined}
-                    error={undefined}
-                    onChange={this.handleChange}
-                    onBlur={this.handleBlur}
-                    onFocus={this.handleFocus}
-                  />
-                }
+                {React.cloneElement(item, {
+                  ref: node => {
+                    // Call the original ref, if any
+                    const { ref } = item;
+                    if (typeof ref === "function") {
+                      ref(node);
+                    } else if (ref !== null) {
+                      ref.current = node;
+                    }
+                  },
+                  size,
+                  label: undefined,
+                  help: undefined,
+                  error: undefined,
+                  onChange: this.handleChange,
+                  onBlur: this.handleBlur,
+                  onFocus: this.handleFocus,
+                })}
               </StyledChild>
             );
           })}

@@ -1,5 +1,5 @@
 // @flow
-export const TYPE_OPTIONS = {
+const TYPE_OPTIONS = {
   BUTTON_LOADER: "buttonLoader",
   SEARCH_LOADER: "searchLoader",
   BOX_LOADER: "boxLoader",
@@ -7,7 +7,4 @@ export const TYPE_OPTIONS = {
   INLINE_LOADER: "inlineLoader",
 };
 
-export const TOKENS = {
-  ALIGN: "align",
-  HEIGHT: "height",
-};
+export default TYPE_OPTIONS;

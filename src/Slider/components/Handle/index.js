@@ -66,7 +66,6 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   cursor: pointer;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   -webkit-tap-highlight-color: transparent;
-  will-change: ${leftRight};
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   :after {

@@ -2,6 +2,7 @@
 
 exports[`slide util should match snapshot 1`] = `
 <Slide__StyledSlide
+  aria-hidden={false}
   expanded={true}
   maxHeight={20}
   theme={
@@ -478,6 +479,8 @@ exports[`slide util should match snapshot 1`] = `
       "rtl": false,
     }
   }
+  transitionFinished={true}
+  visible={true}
 >
   <div>
     Expanded content

@@ -619,7 +619,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "fePqwC",
+            "lastClassName": "kbbbgd",
             "rules": Array [
               "font-family:",
               [Function],

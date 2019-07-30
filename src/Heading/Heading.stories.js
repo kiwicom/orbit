@@ -43,7 +43,7 @@ storiesOf("Heading", module)
       const customTitle = text("Title", "Orbit design system");
       const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
       return (
-        <Heading type="display" element={element}>
+        <Heading type="displaySubtitle" element={element}>
           {customTitle}
         </Heading>
       );

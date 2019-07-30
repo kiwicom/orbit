@@ -61,7 +61,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
+  box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 10)};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   cursor: pointer;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -78,15 +78,15 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
     border-radius: 8px;
   }
   :hover {
-    box-shadow: 0 2px 6px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
+    box-shadow: 0 2px 6px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 10)};
   }
   :focus {
     outline: none;
-    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)},
+    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 10)},
       0 0 0 2px ${({ theme }) => convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
   }
   :active {
-    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)},
+    box-shadow: 0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 10)},
       0 0 0 4px ${({ theme }) => convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
   }
 `;

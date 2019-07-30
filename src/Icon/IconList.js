@@ -32,7 +32,7 @@ const IconImport = styled.div`
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
   line-height: ${defaultTokens.lineHeightText};
-  color: ${defaultTokens.paletteInkDark};
+  color: ${defaultTokens.paletteInkNormal};
   background-color: ${defaultTokens.paletteCloudLight};
   border: ${defaultTokens.borderWidthCard} ${defaultTokens.borderStyleCard}
     ${defaultTokens.paletteCloudNormal};

@@ -2,13 +2,17 @@
 import { ReactComponentStyled } from "styled-components";
 
 export type State = {|
-  maxHeight: number | null
-|}
+  maxHeight: number | null,
+  transitionFinished: boolean,
+  visible: boolean,
+|};
 
 export type Props = {|
   +children: React$Node,
-  +maxHeight: number,
+  +maxHeight: ?number,
   +expanded?: boolean,
+  +ariaLabelledBy?: string,
+  +id?: string,
 |};
 
 declare export var StyledSlide: ReactComponentStyled<any>;

@@ -1,0 +1,13 @@
+// @flow
+import type { Translation, Globals } from "../common/common.js.flow";
+
+export type Props = {|
+  initialExpanded?: boolean,
+  expanded?: boolean,
+  label: Translation,
+  children: React$Node,
+  onClick?: (e: SyntheticEvent<HTMLDivElement>, state: boolean) => void | Promise<any>,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

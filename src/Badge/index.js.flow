@@ -15,7 +15,9 @@ export type Type =
   | "critical"
   | "white"
   | "infoInverted"
-  | "criticalInverted";
+  | "criticalInverted"
+  | "successInverted"
+  | "warningInverted";
 
 export type Props = {|
   +children?: React$Node,

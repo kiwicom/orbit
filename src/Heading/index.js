@@ -59,7 +59,7 @@ export const StyledHeading = styled(
   font-weight: ${getHeadingToken(TOKENS.weightHeading)};
   color: ${({ theme, inverted }) =>
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
-  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
+  line-height: ${getHeadingToken(TOKENS.lineHeight)};
   text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && "uppercase"};
   margin: 0;
   margin-bottom: ${getSpacingToken};

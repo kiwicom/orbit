@@ -6,7 +6,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
   font-size: 12px;
   font-weight: 700;
   color: #252A31;
-  line-height: 1.2;
+  line-height: 20px;
   text-transform: uppercase;
   margin: 0;
 }
@@ -503,7 +503,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Heading__StyledHeading-sc-1b8cso5-0",
             "isStatic": false,
-            "lastClassName": "eLFQUp",
+            "lastClassName": "jRupvf",
             "rules": Array [
               "font-family:",
               [Function],

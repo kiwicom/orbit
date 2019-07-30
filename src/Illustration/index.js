@@ -18,7 +18,7 @@ const getHeightToken = ({ theme, size }) => {
 
 export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) => {
   const height = parseInt(getHeightToken({ theme, size }), 10);
-  const illustrationPath = `${illustrationName}-q85.png`;
+  const illustrationPath = `${illustrationName}-Q85.png`;
   return {
     src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
     srcSet: `${baseURL}/illustrations/0x${height *

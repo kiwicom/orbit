@@ -11,8 +11,8 @@ const size = SIZE_OPTIONS.SMALL;
 const name = "Accommodation";
 const dataTest = "test";
 
-const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-q85.png";
-const URL_RETINA = "//images.kiwi.com/illustrations/0x180/Accommodation-q85.png 2x";
+const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png";
+const URL_RETINA = "//images.kiwi.com/illustrations/0x180/Accommodation-Q85.png 2x";
 
 describe(`Illustration of ${name}`, () => {
   const component = shallow(

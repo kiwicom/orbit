@@ -83,11 +83,39 @@ storiesOf("Badge", module)
     },
   )
   .add(
+    "Success Inverted",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.SUCCESS_INVERTED} icon={<Icons.CheckCircle />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Warning",
     () => {
       const content = text("Content", "Badge");
       return (
         <Badge type={TYPE_OPTIONS.WARNING} icon={<Icons.Clock />}>
+          {content}
+        </Badge>
+      );
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Warning Inverted",
+    () => {
+      const content = text("Content", "Badge");
+      return (
+        <Badge type={TYPE_OPTIONS.WARNING_INVERTED} icon={<Icons.Clock />}>
           {content}
         </Badge>
       );

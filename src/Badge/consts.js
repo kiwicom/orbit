@@ -9,6 +9,8 @@ export const TYPE_OPTIONS = {
   WHITE: "white",
   INFO_INVERTED: "infoInverted",
   CRITICAL_INVERTED: "criticalInverted",
+  SUCCESS_INVERTED: "successInverted",
+  WARNING_INVERTED: "warningInverted",
 };
 
 export const TOKENS = {

@@ -22,4 +22,5 @@ export const TYPE_OPTIONS = {
 export const TOKENS = {
   weightHeading: "weightHeading",
   sizeHeading: "sizeHeading",
+  lineHeight: "lineHeight",
 };

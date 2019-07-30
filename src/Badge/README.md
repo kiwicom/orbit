@@ -30,6 +30,8 @@ Table below contains all types of the props available in Badge component.
 | `"critical"`          |
 | `"infoInverted"`      |
 | `"criticalInverted"`  |
+| `"successInverted"`   |
+| `"warningInverted"`    |
 
 ## Functional specs
 

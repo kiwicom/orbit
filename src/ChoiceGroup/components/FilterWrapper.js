@@ -17,7 +17,7 @@ const StyledContentWrapper = styled.div`
 
   &:hover,
   &:focus-within {
-    background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
+    background-color: ${({ theme }) => theme.orbit.paletteProductLight};
 
     ${StyledOnlyButton} {
       visibility: visible;

@@ -1,0 +1,9 @@
+// @flow
+import type { PositionsCore, DimensionsCore } from "../index";
+
+export type CalculateVerticalPosition = (
+  desiredPositions: PositionsCore[],
+  positions: DimensionsCore,
+) => ?PositionsCore;
+
+declare export default CalculateVerticalPosition;

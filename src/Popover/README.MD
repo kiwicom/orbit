@@ -18,9 +18,9 @@ Table below contains all types of the props available in the Popover component.
 | **content**       | `React.Node`           |                 | The content to display in the Popover.
 | **children**      | `React.Node`           |                 | The reference element where the Popover will appear.
 | dataTest          | `string`               |                 | Optional prop for testing purposes.
-| noPadding        | `boolean`              | `true`          | Adds or removes padding around popover's content.
-| opened            | `boolean`              |                 | Prop for programatically controling Popover inner state. If `opened` is present open triggers are ignored
-| preferredPosition | [`enum`](#enum)        | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs)
+| noPadding         | `boolean`              | `true`          | Adds or removes padding around popover's content.
+| opened            | `boolean`              |                 | Prop for programmatically controlling Popover inner state. If `opened` is present open triggers are ignored.
+| preferredPosition | [`enum`](#enum)        | `"bottom"`      | The preferred position to choose [See Functional specs](#functional-specs).
 | width             | `string`               |                 | Width of popover, if not set the with is set to `auto`.
 | onClose           | `() => void \| Promise`|                 | Function for handling onClose.
 | onOpen            | `() => void \| Promise`|                 | Function for handling onOpen.

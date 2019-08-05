@@ -480,7 +480,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     }
   />
   <ContentWrapper__StyledPopoverParent
-    anchor="start"
+    anchor="end"
     containerHeight={0}
     containerLeft={0}
     containerTop={0}
@@ -488,7 +488,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     onClick={[Function]}
     popoverHeight={0}
     popoverWidth={0}
-    position="bottom"
+    position={null}
     role="tooltip"
     tabIndex="0"
     theme={
@@ -1474,7 +1474,11 @@ exports[`Popover it should match snapshot 1`] = `
     element="popovers"
   >
     <PopoverContentWrapper
-      containerRef={null}
+      containerRef={
+        Object {
+          "current": null,
+        }
+      }
       onClose={[Function]}
       preferredPosition="bottom"
     >

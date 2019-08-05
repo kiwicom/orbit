@@ -81,12 +81,16 @@ const StyledTooltipWrapper = styled.div`
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
 
   img {
     max-width: 100%;
   }
 
   ${media.largeMobile(css`
+    max-height: none;
+    overflow: visible;
     width: auto;
     max-width: ${tooltipSize};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

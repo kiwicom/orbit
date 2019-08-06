@@ -13,9 +13,47 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
+import Card, { CardHeader, CardSection } from "../Card";
 
 import Popover from "./index";
 
+const MyPopover = () => {
+  const [isOpened, setOpened] = React.useState(false);
+
+  const handleClick = () => {
+    console.log("eval");
+    setOpened(true);
+  };
+  const handleCancel = React.useCallback(() => {
+    console.log("eval");
+    setOpened(false);
+  }, []);
+
+  const handleConfirm = React.useCallback(() => {
+    setOpened(false);
+  }, []);
+
+  const content = (
+    <Card>
+      <CardHeader title="Reset bag transfer" />
+      <CardSection>Are you sure you want to reset transfer?</CardSection>
+      <Stack direction="row">
+        <Button type="secondary" onClick={handleCancel}>
+          Cancel
+        </Button>
+        <Button type="critical" onClick={handleConfirm}>
+          Reset
+        </Button>
+      </Stack>
+    </Card>
+  );
+
+  return (
+    <Popover content={content} opened={isOpened} onClose={handleCancel}>
+      <Button onClick={handleClick}>Reset</Button>
+    </Popover>
+  );
+};
 const content = (
   <div>
     <Stack>
@@ -43,13 +81,7 @@ storiesOf("Popover", module)
   .add(
     "Default",
     () => {
-      return (
-        <Popover content={content}>
-          <Button type="secondary" iconRight={<ChevronDown />}>
-            Open popover
-          </Button>
-        </Popover>
-      );
+      return <MyPopover />;
     },
     {
       info:

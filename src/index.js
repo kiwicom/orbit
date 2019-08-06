@@ -86,6 +86,7 @@ export { default as TripSegment } from "./TripSegment";
 export { default as TripSector } from "./TripSector";
 export { default as TripDate } from "./TripSector/TripDate";
 export { default as TripLayover } from "./TripSector/TripLayover";
+export { default as Truncate } from "./Truncate";
 
 // tokens
 export { default as defaultTheme } from "./defaultTheme";

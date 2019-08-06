@@ -34,7 +34,7 @@ const Popover = ({
     if (typeof opened === "undefined") {
       setShown(false);
       resolveCallback();
-    }
+    } else if (onClose) onClose();
   };
 
   const handleClick = () => {
@@ -42,7 +42,7 @@ const Popover = ({
     if (typeof opened === "undefined") {
       setShown(!shown);
       resolveCallback();
-    }
+    } else if (onOpen) onOpen();
   };
 
   return (

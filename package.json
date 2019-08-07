@@ -51,6 +51,8 @@
     "lib",
     "umd",
     "orbit-icons-font",
+    "orbit-icons-font.zip",
+    "orbit-svgs.zip",
     ".babelrc",
     ".eslintrc",
     ".flowconfig",

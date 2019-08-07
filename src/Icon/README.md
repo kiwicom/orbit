@@ -40,3 +40,11 @@ Table below contains all types of the props available for icons in general.
 ## Accessibility
 * If an icon is used standalone meaning it conveys information by itself use `ariaLabel` to help screen readers understand the content.
 * If an icon is marked or already labeled by surrounding content, use `ariaHidden`to hide icon from screen readers.
+
+
+## iconFont
+Icon font is available in `@kiwicom/orbit-components/orbit-icons-font/orbit-icons` folder in these formats `ttf`, `woff2`, `svg`
+
+```javascript
+import iconFont from "@kiwicom/orbit-components/orbit-icons-font/orbit-icons.woff2"
+```

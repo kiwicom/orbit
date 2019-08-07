@@ -16,6 +16,7 @@ import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import type { ThemeProps } from "../defaultTheme";
+import boundingClientRect from "../utils/boundingClientRect";
 
 import type { State, SliderCallback, Props, Value } from "./index";
 
@@ -127,29 +128,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
-    const { bar } = this;
-    const boundingClientRect = ref => {
-      if (
-        ref &&
-        ref.current &&
-        typeof ref.current.getBoundingClientRect === "function" &&
-        typeof window !== "undefined"
-      ) {
-        const { height, width, top, left, right, bottom } = ref.current.getBoundingClientRect();
-        console.log("top", top, window.scrollY + top);
-        console.log("window, x", window.scrollY)
-        return {
-          top: top + window.scrollY,
-          right: right + window.scrollX,
-          bottom: bottom + window.scrollY,
-          left: left + window.scrollX,
-          height,
-          width,
-        };
-      }
-      return null;
-    };
-    const barRect = boundingClientRect(bar);
+    const barRect = boundingClientRect(this.bar);
     if (barRect) {
       const {
         histogramData,

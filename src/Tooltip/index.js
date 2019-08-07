@@ -329,7 +329,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     // set the first valid position
     // ordering in POSITIONS const is important
     const position = possiblePositions[0];
-    if (typeof position === "string" && this.state.position !== position) {
+    if (typeof position === "string") {
       this.setState({ position });
       this.setAlign(position);
     }
@@ -447,11 +447,11 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     // https://github.com/facebook/flow/issues/2221
   };
 
-  handleOut = () => {
+  /*  handleOut = () => {
     setTimeout(() => {
       this.setState({ shown: false });
     }, 15);
-  };
+  }; */
 
   handleOpen = () => {
     this.getDimensions();
@@ -495,7 +495,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipWidth,
       contentHeight,
     } = this;
-
+    console.log(this.state);
     return (
       <React.Fragment>
         <StyledTooltipChildren

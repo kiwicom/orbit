@@ -16,6 +16,7 @@ import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import type { ThemeProps } from "../defaultTheme";
+import boundingClientRect from "../utils/boundingClientRect";
 
 import type { State, SliderCallback, Props, Value } from "./index";
 
@@ -94,10 +95,20 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   }
 
   pauseEvent = (
-    event: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticMouseEvent<HTMLDivElement>,
+    event:
+      | SyntheticKeyboardEvent<HTMLDivElement>
+      | SyntheticMouseEvent<HTMLDivElement>
+      | SyntheticTouchEvent<HTMLDivElement>,
   ) => {
-    if (typeof event.stopPropagation === "function") event.stopPropagation();
-    if (typeof event.preventDefault === "function") event.preventDefault();
+    if (typeof event.stopPropagation === "function") {
+      event.stopPropagation();
+    }
+    if (
+      typeof event.preventDefault === "function" &&
+      (typeof event.cancelable !== "boolean" || event.cancelable)
+    ) {
+      event.preventDefault();
+    }
   };
 
   stopPropagation = (event: SyntheticTouchEvent<HTMLDivElement>) => {
@@ -117,9 +128,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
-    const { bar } = this;
-    if (bar && bar.current && typeof bar.current.getBoundingClientRect === "function") {
-      const barRect = bar.current.getBoundingClientRect();
+    const barRect = boundingClientRect(this.bar);
+    if (barRect) {
       const {
         histogramData,
         histogramLoading,
@@ -317,7 +327,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   handleOnTouchMove = (event: SyntheticTouchEvent<HTMLDivElement>) => {
     if (event.touches.length > 1) return;
     const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
-    this.stopPropagation(event);
+    this.pauseEvent(event);
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
@@ -334,7 +344,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       this.setState({ focused: true });
       const { value } = this.state;
       if (typeof i === "number") this.setState({ handleIndex: i });
-      window.addEventListener("touchmove", this.handleOnTouchMove);
+      window.addEventListener("touchmove", this.handleOnTouchMove, {
+        passive: false,
+      });
       window.addEventListener("touchend", this.handleTouchEnd);
       this.stopPropagation(event);
       this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);

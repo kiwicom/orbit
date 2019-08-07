@@ -162,6 +162,29 @@ storiesOf("Popover", module)
     },
   )
   .add(
+    "Overlapped",
+    () => {
+      const overlapped = boolean("overlapped", true);
+
+      return (
+        <Popover
+          overlapped={overlapped}
+          content={content}
+          onOpen={action("open")}
+          onClose={action("close")}
+        >
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
+        </Popover>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const dataTest = text("dataTest", "test");
@@ -172,6 +195,7 @@ storiesOf("Popover", module)
       );
       const width = text("width", "350px");
       const noPadding = boolean("noPadding", false);
+      const overlapped = boolean("overlapped", false);
 
       return (
         <Popover
@@ -180,6 +204,7 @@ storiesOf("Popover", module)
           content={content}
           preferredPosition={preferredPosition}
           noPadding={noPadding}
+          overlapped={overlapped}
           onOpen={action("open")}
           onClose={action("close")}
         >

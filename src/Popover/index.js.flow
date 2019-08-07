@@ -18,6 +18,7 @@ export type DimensionsCore = {|
 
 export type Position = {|
   position: PositionsCore,
+  overlapped: boolean,
 |};
 
 export type Anchor = {|
@@ -32,6 +33,7 @@ export type Props = {|
   +opened?: boolean,
   +width?: string,
   +noPadding?: boolean,
+  +overlapped?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

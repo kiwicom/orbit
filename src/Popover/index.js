@@ -18,6 +18,7 @@ const Popover = ({
   opened,
   width,
   noPadding,
+  overlapped,
   onClose,
   onOpen,
 }: Props) => {
@@ -59,6 +60,7 @@ const Popover = ({
             onClose={handleOut}
             dataTest={dataTest}
             noPadding={noPadding}
+            overlapped={overlapped}
           >
             {content}
           </PopoverContentWrapper>

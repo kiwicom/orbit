@@ -8,10 +8,10 @@ import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
+import calculateVerticalPosition from "../helpers/calculateVerticalPosition";
+import calculateHorizontalPosition from "../helpers/calculateHorizontalPosition";
 import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
-import useVerticalPosition from "../hooks/useVerticalPosition";
-import useHorizontalPosition from "../hooks/useHorizontalPosition";
 import Translate from "../../Translate";
 
 const showAnimation = keyframes`
@@ -121,21 +121,27 @@ const PopoverContentWrapper = ({
   const overlay: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition);
   const dimensions = useDimensions({ containerRef, popover, content });
-  const verticalPosition = useVerticalPosition(position[0], dimensions);
-  const horizontalPosition = useHorizontalPosition(position[1], dimensions);
+  const verticalPosition = calculateVerticalPosition(position[0], dimensions);
+  const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
 
-  const handleClick = (ev: SyntheticEvent<HTMLElement>) => {
-    ev.stopPropagation();
+  const handleClick = React.useCallback(
+    (ev: SyntheticEvent<HTMLElement>) => {
+      ev.stopPropagation();
 
-    if (ev.target === overlay.current) {
-      onClose();
-    }
-  };
+      if (ev.target === overlay.current) {
+        onClose();
+      }
+    },
+    [onClose],
+  );
 
   useEffect(() => {
-    if (popover.current) {
-      popover.current.focus();
-    }
+    const timer = setTimeout(() => {
+      if (popover.current) {
+        popover.current.focus();
+      }
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

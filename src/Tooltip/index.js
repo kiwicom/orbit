@@ -447,11 +447,11 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     // https://github.com/facebook/flow/issues/2221
   };
 
-  /*  handleOut = () => {
+  handleOut = () => {
     setTimeout(() => {
       this.setState({ shown: false });
     }, 15);
-  }; */
+  };
 
   handleOpen = () => {
     this.getDimensions();

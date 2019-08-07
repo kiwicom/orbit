@@ -76,18 +76,11 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   bar: { current: React$ElementRef<*> } = React.createRef();
 
-  barRect: ?{ width: number, left: number, right: number } = null;
-
   state = {
     value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
     handleIndex: null,
     focused: false,
   };
-
-  componentDidMount() {
-    this.barRectTimeout = setTimeout(this.calculateBarPosition, 50);
-    window.addEventListener("resize", this.calculateBarPosition);
-  }
 
   componentDidUpdate(prevProps: Props) {
     const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
@@ -97,13 +90,6 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         : Number(defaultValue);
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ value: newValue });
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.calculateBarPosition);
-    if (this.barRectTimeout) {
-      clearTimeout(this.barRectTimeout);
     }
   }
 
@@ -140,16 +126,30 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return Math.round((max - min + (addition ? 1 : 0)) * ratio + min - (deduction ? 1 : 0));
   };
 
-  calculateBarPosition = () => {
-    const { bar } = this;
-    if (bar && bar.current && typeof bar.current.getBoundingClientRect === "function") {
-      const { width, left, right } = bar.current.getBoundingClientRect();
-      this.barRect = { width, left, right };
-    }
-  };
-
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
-    const { barRect } = this;
+    const { bar } = this;
+    const boundingClientRect = ref => {
+      if (
+        ref &&
+        ref.current &&
+        typeof ref.current.getBoundingClientRect === "function" &&
+        typeof window !== "undefined"
+      ) {
+        const { height, width, top, left, right, bottom } = ref.current.getBoundingClientRect();
+        console.log("top", top, window.scrollY + top);
+        console.log("window, x", window.scrollY)
+        return {
+          top: top + window.scrollY,
+          right: right + window.scrollX,
+          bottom: bottom + window.scrollY,
+          left: left + window.scrollX,
+          height,
+          width,
+        };
+      }
+      return null;
+    };
+    const barRect = boundingClientRect(bar);
     if (barRect) {
       const {
         histogramData,
@@ -403,8 +403,6 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     if (index == null || !Array.isArray(value)) return newValue;
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
-
-  barRectTimeout: TimeoutID;
 
   renderHandle = (valueNow: number, i: ?number) => {
     const {

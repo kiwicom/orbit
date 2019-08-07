@@ -495,7 +495,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipWidth,
       contentHeight,
     } = this;
-    console.log(this.state);
     return (
       <React.Fragment>
         <StyledTooltipChildren

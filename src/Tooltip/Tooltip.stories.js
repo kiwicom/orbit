@@ -130,7 +130,7 @@ storiesOf("Tooltip", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
-  .add(
+  .lokiSkip(
     "With long content",
     () => {
       const content = text(

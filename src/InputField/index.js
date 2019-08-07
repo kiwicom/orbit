@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -278,12 +278,16 @@ const FormLabel = ({
   label,
   isFilled,
   required,
+  error,
+  help,
 }: {
   label: Translation,
   isFilled: boolean,
   required?: boolean,
+  error?: boolean,
+  help?: boolean,
 }) => (
-  <DefaultFormLabel filled={isFilled} required={required}>
+  <DefaultFormLabel filled={isFilled} required={required} error={error} help={help}>
     {label}
   </DefaultFormLabel>
 );
@@ -330,12 +334,26 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       spaceAfter={spaceAfter}
       htmlFor={label ? forID : undefined}
     >
-      {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
+      {label && !inlineLabel && (
+        <FormLabel
+          label={label}
+          isFilled={!!value}
+          required={required}
+          error={!!error}
+          help={!!help}
+        />
+      )}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
         {label && inlineLabel && (
           <StyledInlineLabel size={size}>
-            <FormLabel label={label} isFilled={!!value} required={required} />
+            <FormLabel
+              label={label}
+              isFilled={!!value}
+              required={required}
+              error={!!error}
+              help={!!help}
+            />
           </StyledInlineLabel>
         )}
         {tags && <InputTags>{tags}</InputTags>}

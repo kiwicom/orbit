@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
+import AlertCircle from "../icons/AlertCircle";
+import InformationCircle from "../icons/InformationCircle";
 
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
@@ -16,17 +18,49 @@ StyledAsterisk.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormLabel = styled(({ className, children, required, filled, dataTest, id }) => (
-  <span className={className} data-test={dataTest} id={id}>
-    {required && (
-      <StyledAsterisk aria-hidden="true" filled={filled}>
-        *{" "}
-      </StyledAsterisk>
-    )}
-    <span>{children}</span>
-  </span>
-))`
-  display: block;
+const StyledInputErrorIcWrapper = styled.span`
+  margin-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+  display: inline-flex;
+`;
+
+StyledInputErrorIcWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+const FormLabel = styled(
+  ({
+    className,
+    children,
+    required,
+    filled,
+    dataTest,
+    id,
+    error,
+    help,
+    onMouseEnter,
+    onMouseLeave,
+  }) => (
+    <span className={className} data-test={dataTest} id={id}>
+      {error && (
+        <StyledInputErrorIcWrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <AlertCircle color="critical" size="small" />
+        </StyledInputErrorIcWrapper>
+      )}
+      {!error && help && (
+        <StyledInputErrorIcWrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <InformationCircle color="secondary" size="small" />
+        </StyledInputErrorIcWrapper>
+      )}
+      {required && (
+        <StyledAsterisk aria-hidden="true" filled={filled}>
+          *{" "}
+        </StyledAsterisk>
+      )}
+      <span>{children}</span>
+    </span>
+  ),
+)`
+  display: flex;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme, filled, disabled }) =>

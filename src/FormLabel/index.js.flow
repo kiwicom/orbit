@@ -7,6 +7,10 @@ export type Props = {
   disabled?: boolean,
   required?: boolean,
   id?: string,
+  error?: boolean,
+  help?: boolean,
+  onMouseEnter?: () => void | Promise<any>,
+  onMouseLeave?: () => void | Promise<any>,
   ...Globals,
 };
 

@@ -45,6 +45,6 @@ Table below contains all types of the props available for icons in general.
 ## iconFont
 Icon font is available in `@kiwicom/orbit-components/orbit-icons-font/orbit-icons` folder in these formats `ttf`, `woff2`, `svg`
 
-```javascript
+```jsx
 import iconFont from "@kiwicom/orbit-components/orbit-icons-font/orbit-icons.woff2"
 ```

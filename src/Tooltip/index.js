@@ -420,23 +420,25 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     return preferredPosition;
   };
 
-  handleIn = () => {
+  handleIn = (onContent?: boolean) => () => {
     this.setState({ render: true });
     setTimeout(() => {
-      const {
-        theme: { rtl },
-      } = this.props;
-      const positionsObject = rtl ? RTL_POSITIONS : POSITIONS;
-      const positions = Object.keys(positionsObject).map(k => positionsObject[k]);
-      this.getDimensions();
-      const realPreferredPosition = this.switchPreferredPosition();
-      if (realPreferredPosition) {
-        this.setPosition([
-          realPreferredPosition,
-          ...positions.filter(p => p !== realPreferredPosition),
-        ]);
-      } else {
-        this.setPosition(positions);
+      if (!onContent) {
+        const {
+          theme: { rtl },
+        } = this.props;
+        const positionsObject = rtl ? RTL_POSITIONS : POSITIONS;
+        const positions = Object.keys(positionsObject).map(k => positionsObject[k]);
+        this.getDimensions();
+        const realPreferredPosition = this.switchPreferredPosition();
+        if (realPreferredPosition) {
+          this.setPosition([
+            realPreferredPosition,
+            ...positions.filter(p => p !== realPreferredPosition),
+          ]);
+        } else {
+          this.setPosition(positions);
+        }
       }
       this.setState({ shown: true });
     }, 15);
@@ -496,9 +498,9 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       <React.Fragment>
         <StyledTooltipChildren
           onClick={this.handleOpen}
-          onMouseEnter={this.handleIn}
+          onMouseEnter={this.handleIn(false)}
           onMouseLeave={this.handleOut}
-          onFocus={this.handleIn}
+          onFocus={this.handleIn(false)}
           onBlur={this.handleOut}
           ref={this.container}
           aria-describedby={this.tooltipId}
@@ -522,7 +524,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
                 align={align}
                 size={size}
                 ref={this.tooltip}
-                onMouseEnter={this.handleIn}
+                onMouseEnter={this.handleIn(true)}
                 onClick={this.handleClickOutside}
                 onMouseLeave={this.handleOut}
                 containerTop={containerTop}

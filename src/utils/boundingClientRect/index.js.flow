@@ -1,0 +1,13 @@
+// @flow
+type Dimensions = {|
+  top: number,
+  right: number,
+  bottom: number,
+  left: number,
+  height: number,
+  width: number,
+|};
+
+export type BoundingClientRect = (ref: ?{ current: ?HTMLElement }) => ?Dimensions;
+
+declare export default BoundingClientRect;

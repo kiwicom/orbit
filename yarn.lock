@@ -1449,7 +1449,7 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.9.0.tgz#67032574d8ee318cd747001a7b4c87013214327a"
   integrity sha512-CwDiWwLWE0iWzCrL08x7jdEySAIVdmcmF/rik8gjK5oW4jA5G9fOBxsSSVm2bLtq8HG9KIz4YHDbtWO1K7LIiQ==
 
-"@kiwicom/orbit-design-tokens@^0.6.5":
+"@kiwicom/orbit-design-tokens@~0.6.5":
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.6.5.tgz#f795314cc37664ee31f29f1193617ae60e634555"
   integrity sha512-hGEiYJwiAL3OscVxAejR8fKhg6aQJuaGWCjlCo3LYBvEOwJsF0L3K3Uaf6JGgdoO3Xx1ciN/yzGNGGk7MpAD+A==

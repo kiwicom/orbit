@@ -3837,18 +3837,24 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
             </Text>
           </TripSegment__StyledTripSegmentOverviewTime>
         </TripSegment__StyledTripSegmentOverviewColumn>
-        <TripSegment__StyledTripSegmentOverviewColumn>
+        <TripSegment__StyledTripSegmentOverviewColumn
+          grow={true}
+        >
           <Text
             element="div"
             type="primary"
           >
-            Berlin TXL
+            <Truncate>
+              Berlin TXL
+            </Truncate>
           </Text>
           <Text
             element="div"
             type="primary"
           >
-            Moscow VKO
+            <Truncate>
+              Moscow VKO
+            </Truncate>
           </Text>
         </TripSegment__StyledTripSegmentOverviewColumn>
       </TripSegment__StyledTripSegmentOverview>

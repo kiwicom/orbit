@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
@@ -13,8 +13,9 @@ import Text, { StyledText } from "../Text";
 import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
 import { getSize } from "../Icon";
 import { ICON_SIZES } from "../Icon/consts";
-import { left, right, rtlSpacing } from "../utils/rtl";
+import { right, rtlSpacing } from "../utils/rtl";
 import KEY_CODE_MAP from "../common/keyMaps";
+import Truncate from "../Truncate";
 
 import type { Props, State, ExpandedType } from "./index";
 
@@ -118,6 +119,8 @@ const Chevrons = ({ expanded }: ExpandedType) => (
 
 const StyledTripSegmentOverview = styled.div`
   display: flex;
+  flex: 0 1 calc(100% - 96px);
+  min-width: 0;
   ${StyledText} {
     line-height: 1.2;
   }
@@ -130,8 +133,8 @@ StyledTripSegmentOverview.defaultProps = {
 const StyledTripSegmentCarrier = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
-  ${left}: ${({ theme }) => theme.orbit.spaceMedium};
+  position: absolute;
+  ${right}: ${({ theme }) => `-${theme.orbit.spaceXSmall}`};
 `;
 
 StyledTripSegmentCarrier.defaultProps = {
@@ -145,6 +148,7 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.orbit.spaceXSmall};
   cursor: pointer;
+  position: relative;
 
   ${StyledCarrierLogo} {
     margin: ${({ theme }) =>
@@ -160,6 +164,12 @@ StyledTripSegmentOverviewWrapper.defaultProps = {
 const StyledTripSegmentOverviewColumn = styled.div`
   display: flex;
   flex-direction: column;
+  ${({ grow }) =>
+    grow &&
+    css`
+      min-width: 0;
+      flex: 1;
+    `};
 `;
 
 const StyledTripSegmentOverviewTime = styled.div`
@@ -347,12 +357,12 @@ class TripSegment extends React.PureComponent<Props, State> {
                   </Text>
                 </StyledTripSegmentOverviewTime>
               </StyledTripSegmentOverviewColumn>
-              <StyledTripSegmentOverviewColumn>
+              <StyledTripSegmentOverviewColumn grow>
                 <Text element="div" type="primary">
-                  {departure}
+                  <Truncate>{departure}</Truncate>
                 </Text>
                 <Text element="div" type="primary">
-                  {arrival}
+                  <Truncate>{arrival}</Truncate>
                 </Text>
               </StyledTripSegmentOverviewColumn>
             </StyledTripSegmentOverview>

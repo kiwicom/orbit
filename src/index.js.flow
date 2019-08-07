@@ -37,6 +37,7 @@ import typeof TripSegmentType from "./TripSegment";
 import typeof TripSectorType from "./TripSector";
 import typeof TripDateType from "./TripSector/TripDate";
 import typeof TripLayoverType from "./TripSector/TripLayover";
+import typeof TruncateType from "./Truncate";
 import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SelectType from "./Select";
@@ -160,6 +161,7 @@ declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
+declare export var Truncate: TruncateType;
 
 declare export var ThemeProvider: ThemeProviderType;
 declare export var Translate: TranslateType;

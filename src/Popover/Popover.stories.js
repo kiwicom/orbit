@@ -13,6 +13,7 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
+import Separator from "../Separator";
 
 import Popover from "./index";
 
@@ -32,6 +33,34 @@ const content = (
           <Text type="secondary">2-11</Text>
         </Stack>
         <Stepper minValue={0} />
+      </Stack>
+    </Stack>
+  </div>
+);
+
+const overlappedContent = (
+  <div>
+    <Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Adult</Text>
+          <Text type="secondary">11+</Text>
+        </Stack>
+        <Stepper minValue={0} />
+      </Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Child</Text>
+          <Text type="secondary">2-11</Text>
+        </Stack>
+        <Stepper minValue={0} />
+      </Stack>
+      <Separator />
+      <Stack direction="row" justify="between">
+        <Button type="secondary" size="small">
+          Cancel
+        </Button>
+        <Button size="small">Done</Button>
       </Stack>
     </Stack>
   </div>
@@ -169,7 +198,7 @@ storiesOf("Popover", module)
       return (
         <Popover
           overlapped={overlapped}
-          content={content}
+          content={overlappedContent}
           onOpen={action("open")}
           onClose={action("close")}
         >

@@ -32,7 +32,7 @@ import {
 } from "./helpers/isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
 import tooltipPadding from "./helpers/tooltipPadding";
-import RandomID from "../utils/randomID";
+import randomID from "../utils/randomID";
 import type { ThemeProps } from "../defaultTheme";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import Translate from "../Translate";
@@ -245,9 +245,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   overlay: { current: any | HTMLDivElement } = React.createRef();
 
-  componentDidMount() {
-    this.tooltipId = RandomID("tooltip");
-  }
+  tooltipId = randomID("tooltipID");
 
   componentDidUpdate(prevProps: Props) {
     if (this.props !== prevProps) {

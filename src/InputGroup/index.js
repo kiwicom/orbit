@@ -157,7 +157,7 @@ class InputGroup extends React.PureComponent<Props, State> {
     filled: false,
   };
 
-  inputID: string = randomID("InputGroup");
+  inputID: string = randomID("inputGroupID");
 
   componentDidMount() {
     this.isFilled();

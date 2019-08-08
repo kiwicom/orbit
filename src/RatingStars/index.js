@@ -10,7 +10,6 @@ import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
-import { TYPE_OPTIONS } from "../Text/consts";
 
 import type { Props } from "./index";
 

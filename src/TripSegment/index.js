@@ -347,12 +347,12 @@ class TripSegment extends React.PureComponent<Props, State> {
             <StyledTripSegmentOverview>
               <StyledTripSegmentOverviewColumn>
                 <StyledTripSegmentOverviewTime>
-                  <Text element="div" type="attention" align="right">
+                  <Text element="div" align="right">
                     {departureTime}
                   </Text>
                 </StyledTripSegmentOverviewTime>
                 <StyledTripSegmentOverviewTime>
-                  <Text element="div" type="attention" align="right">
+                  <Text element="div" align="right">
                     {arrivalTime}
                   </Text>
                 </StyledTripSegmentOverviewTime>

@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { warning } from "@kiwicom/js";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
@@ -75,7 +76,10 @@ const OrbitIcon = (props: Props) => {
     reverseOnRtl,
     ariaLabel,
   } = props;
-
+  warning(
+    color === ICON_COLORS.ATTENTION,
+    "Warning: attention color of all Icon components is deprecated. Please use primary color instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
+  );
   return (
     <StyledIcon
       viewBox={viewBox}

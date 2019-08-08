@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -87,21 +88,27 @@ const Text = ({
   spaceAfter,
   children,
   id,
-}: Props) => (
-  <StyledText
-    id={id}
-    type={type}
-    size={size}
-    weight={weight}
-    align={align}
-    element={element}
-    uppercase={uppercase}
-    italic={italic}
-    dataTest={dataTest}
-    spaceAfter={spaceAfter}
-  >
-    {children}
-  </StyledText>
-);
+}: Props) => {
+  warning(
+    type === TYPE_OPTIONS.ATTENTION,
+    "Warning: attention type of Text component is deprecated. Please use primary type instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
+  );
+  return (
+    <StyledText
+      id={id}
+      type={type}
+      size={size}
+      weight={weight}
+      align={align}
+      element={element}
+      uppercase={uppercase}
+      italic={italic}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+    >
+      {children}
+    </StyledText>
+  );
+};
 
 export default Text;

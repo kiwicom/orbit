@@ -91,6 +91,7 @@ export { default as Truncate } from "./Truncate";
 // tokens
 export { default as defaultTheme } from "./defaultTheme";
 export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
+export { default as convertHexToRgba } from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";

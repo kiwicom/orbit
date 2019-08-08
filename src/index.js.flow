@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
+import type { ConvertHexToRgba } from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import typeof AlertType from "./Alert";
 import typeof BadgeType from "./Badge";
@@ -169,5 +170,6 @@ declare export var Translate: TranslateType;
 declare export var defaultTheme: Theme;
 declare export var geTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
+declare export var convertHexToRgba: ConvertHexToRgba;
 
 declare export var mediaQueries: mediaQueriesType;

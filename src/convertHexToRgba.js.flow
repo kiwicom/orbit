@@ -1,0 +1,4 @@
+// @flow
+import type { ConvertHexToRgba } from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+
+declare export default ConvertHexToRgba;

@@ -360,7 +360,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   focusTriggered = false;
 
-  modalID: string = randomID("modaID");
+  modalID: string = randomID("modalID");
 
   componentDidMount() {
     this.timeout = setTimeout(() => {

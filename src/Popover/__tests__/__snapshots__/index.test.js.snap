@@ -1476,6 +1476,7 @@ exports[`Popover it should match snapshot 1`] = `
     <PopoverContentWrapper
       containerRef={null}
       onClose={[Function]}
+      overlapped={true}
       preferredPosition="bottom"
     >
       Message for a user

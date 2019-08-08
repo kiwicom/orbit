@@ -90,7 +90,7 @@ const Text = ({
   id,
 }: Props) => {
   warning(
-    type === TYPE_OPTIONS.ATTENTION,
+    type !== TYPE_OPTIONS.ATTENTION,
     "Warning: attention type of Text component is deprecated. Please use primary type instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
   );
   return (

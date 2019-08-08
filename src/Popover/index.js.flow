@@ -14,6 +14,7 @@ export type DimensionsCore = {|
   contentHeight: number,
   windowHeight: number,
   windowWidth: number,
+  windowScrollTop: number,
 |};
 
 export type Position = {|

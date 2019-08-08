@@ -130,6 +130,24 @@ storiesOf("Tooltip", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
+  .lokiSkip(
+    "With long content",
+    () => {
+      const content = text(
+        "content",
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Ut tempus purus at lorem. Quisque porta. Sed convallis magna eu sem. Duis viverra diam non justo. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Praesent id justo in neque elementum ultrices. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Curabitur vitae diam non enim vestibulum interdum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Maecenas lorem. Phasellus rhoncus. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Etiam posuere lacus quis dolor. Curabitur vitae diam non enim vestibulum interdum. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus",
+      );
+      return (
+        <Tooltip size="medium" content={content}>
+          <Icons.Airplane />
+        </Tooltip>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
   .add(
     "Playground",
     () => {

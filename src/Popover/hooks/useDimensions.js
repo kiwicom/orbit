@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 
 import type { UseDimensions } from "./useDimensions.js.flow";
+import boundingClientRect from "../../utils/boundingClientRect";
 
 const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
   const [positions, setPositions] = useState({
@@ -11,6 +12,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
     containerWidth: 0,
     popoverHeight: 0,
     popoverWidth: 0,
+    windowScrollTop: 0,
     windowWidth: 0,
     windowHeight: 0,
     contentHeight: 0,
@@ -18,12 +20,15 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
 
   useEffect(() => {
     const calculate = () => {
-      if (containerRef && popover && content && typeof window !== "undefined") {
-        const containerDimensions = containerRef.getBoundingClientRect(); // props.containerRef is passed with .current
-        const popoverDimensions = popover.current.getBoundingClientRect();
-
-        const contentHeight = content.current && content.current.getBoundingClientRect().height;
-
+      const containerDimensions = boundingClientRect(containerRef);
+      const popoverDimensions = boundingClientRect(popover);
+      const contentDimensions = boundingClientRect(content);
+      if (
+        containerDimensions &&
+        popoverDimensions &&
+        contentDimensions &&
+        typeof window !== "undefined"
+      ) {
         setPositions({
           containerTop: containerDimensions.top,
           containerLeft: containerDimensions.left,
@@ -31,9 +36,10 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
           containerWidth: containerDimensions.width,
           popoverHeight: popoverDimensions.height,
           popoverWidth: popoverDimensions.width,
+          windowScrollTop: window.scrollY,
           windowWidth: window.innerWidth,
           windowHeight: window.innerHeight,
-          contentHeight,
+          contentHeight: contentDimensions.height,
         });
       }
     };

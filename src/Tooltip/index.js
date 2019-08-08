@@ -81,12 +81,16 @@ const StyledTooltipWrapper = styled.div`
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
 
   img {
     max-width: 100%;
   }
 
   ${media.largeMobile(css`
+    max-height: none;
+    overflow: visible;
     width: auto;
     max-width: ${tooltipSize};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -325,7 +329,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     // set the first valid position
     // ordering in POSITIONS const is important
     const position = possiblePositions[0];
-    if (typeof position === "string" && this.state.position !== position) {
+    if (typeof position === "string") {
       this.setState({ position });
       this.setAlign(position);
     }
@@ -491,7 +495,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       tooltipWidth,
       contentHeight,
     } = this;
-
     return (
       <React.Fragment>
         <StyledTooltipChildren

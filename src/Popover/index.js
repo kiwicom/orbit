@@ -25,10 +25,10 @@ const Popover = ({
   const [shown, setShown] = useState<boolean>(false);
   const container: { current: React$ElementRef<*> } = useRef(null);
 
-  const resolveCallback = () => {
+  const resolveCallback = React.useCallback(() => {
     if (onClose && shown) onClose();
     if (onOpen && !shown) onOpen();
-  };
+  }, [onClose, onOpen, shown]);
 
   const handleOut = () => {
     // If open prop is present ignore custom handler
@@ -55,7 +55,7 @@ const Popover = ({
         <Portal element="popovers">
           <PopoverContentWrapper
             width={width}
-            containerRef={container.current}
+            containerRef={container}
             preferredPosition={preferredPosition}
             onClose={handleOut}
             dataTest={dataTest}

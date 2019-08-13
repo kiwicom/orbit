@@ -7,8 +7,10 @@ import { StyledTableCell } from "../TableCell/index";
 
 import type { Props } from ".";
 
-const StyledTableHead = styled(({ children, className }) => (
-  <thead className={className}>{children}</thead>
+const StyledTableHead = styled(({ children, className, dataTest }) => (
+  <thead className={className} data-test={dataTest}>
+    {children}
+  </thead>
 ))`
   border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTableHead};
   width: 100%;
@@ -21,6 +23,8 @@ const StyledTableHead = styled(({ children, className }) => (
 StyledTableHead.defaultProps = {
   theme: defaultTheme,
 };
-const TableHead = (props: Props) => <StyledTableHead>{props.children}</StyledTableHead>;
+const TableHead = ({ children, dataTest }: Props) => (
+  <StyledTableHead dataTest={dataTest}>{children}</StyledTableHead>
+);
 
 export default TableHead;

@@ -16,6 +16,7 @@
     "copy:module": "copyfiles -u 1 'src/**/*.md' es && copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.json' es",
     "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
     "prepare": "npm run build",
+    "release": "npm publish --tag develop",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint": "eslint .",
     "flow:check": "flow check",

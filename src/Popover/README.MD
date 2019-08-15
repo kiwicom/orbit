@@ -26,7 +26,7 @@ Table below contains all types of the props available in the Popover component.
 | noPadding         | `boolean`               | `true`     | Adds or removes padding around popover's content.                                                            |
 | opened            | `boolean`               |            | Prop for programmatically controlling Popover inner state. If `opened` is present open triggers are ignored. |
 | preferredPosition | [`enum`](#enum)         | `"bottom"` | The preferred position to choose [See Functional specs](#functional-specs).                                  |
-| overlapped        | `boolean`               | `false`    | The content of Popover will overlap the trigger Button.                                                      |
+| overlapped        | `boolean`               | `false`    | If `true`, the content of Popover will overlap the trigger children.                                         |
 | width             | `string`                |            | Width of popover, if not set the with is set to `auto`.                                                      |
 | onClose           | `() => void \| Promise` |            | Function for handling onClose.                                                                               |
 | onOpen            | `() => void \| Promise` |            | Function for handling onOpen.                                                                                |

@@ -2,11 +2,14 @@
 
 import type { ReactComponentStyled } from "styled-components";
 
+import type { Globals } from "../../common/common.js.flow";
+
 type Align = "left" | "center" | "right";
 
 export type Props = {|
   +children?: React$Node,
   +align?: Align,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

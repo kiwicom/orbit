@@ -6,8 +6,10 @@ import defaultTheme from "../../defaultTheme";
 
 import type { Props } from ".";
 
-export const StyledTableBody = styled(({ children, className }) => (
-  <tbody className={className}>{children}</tbody>
+export const StyledTableBody = styled(({ children, className, dataTest }) => (
+  <tbody className={className} data-test={dataTest}>
+    {children}
+  </tbody>
 ))`
   width: 100%;
   white-space: nowrap;
@@ -20,6 +22,8 @@ StyledTableBody.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableBody = (props: Props) => <StyledTableBody>{props.children}</StyledTableBody>;
+const TableBody = ({ children, dataTest }: Props) => (
+  <StyledTableBody dataTest={dataTest}>{children}</StyledTableBody>
+);
 
 export default TableBody;

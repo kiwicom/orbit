@@ -149,8 +149,8 @@ const illustrationsJSON = Object.assign(
   {},
   ...ILLUSTRATION_NAMES.map(illustration => ({
     [illustration]: {
-      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}.png`,
-      original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
+      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}-Q85.png`,
+      original: `https://images.kiwi.com/illustrations/originals/${illustration}-Q85.png`,
     },
   })),
 );

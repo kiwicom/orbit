@@ -19,27 +19,27 @@ import Tooltip from "./index";
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
+const App = () => {
+  const [show, setShow] = React.useState(false);
+  return (
+    <div onClick={() => setShow(prev => !prev)}>
+      Test:{" "}
+      <Tooltip
+        preferredPosition="bottom"
+        content={show ? <Text>Sample text text...</Text> : <Icons.Airplane />}
+      >
+        Click Here!
+      </Tooltip>
+    </div>
+  );
+};
+
 storiesOf("Tooltip", module)
   .add(
     "Tooltip on inline element",
     () => {
       const content = text("content", "Write your text here.");
-      return (
-        <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
-          eget mollis sed, tempor sed magna.
-          <Tooltip content={content} preferredPosition="left">
-            <TextLink>Cras elementum.</TextLink>
-          </Tooltip>{" "}
-          Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
-          Sed vel lectus.{" "}
-          <Tooltip content={content}>
-            <Text>Another Tooltip.</Text>
-          </Tooltip>{" "}
-          Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
-        </Alert>
-      );
+      return <App />;
     },
     {
       info:

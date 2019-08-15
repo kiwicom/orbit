@@ -253,9 +253,6 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     if (this.props !== prevProps) {
       this.getDimensions();
     }
-    if (this.props.content !== prevProps.content) {
-      this.setShown();
-    }
   }
 
   getDimensions = () => {
@@ -427,29 +424,25 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     return preferredPosition;
   };
 
-  setShown = () => {
-    const {
-      theme: { rtl },
-    } = this.props;
-    const positionsObject = rtl ? RTL_POSITIONS : POSITIONS;
-    const positions = Object.keys(positionsObject).map(k => positionsObject[k]);
-    this.getDimensions();
-    const realPreferredPosition = this.switchPreferredPosition();
-    if (realPreferredPosition) {
-      this.setPosition([
-        realPreferredPosition,
-        ...positions.filter(p => p !== realPreferredPosition),
-      ]);
-    } else {
-      this.setPosition(positions);
-    }
-    this.setState({ shown: true });
-  };
-
   handleIn = () => {
     this.setState({ render: true });
     setTimeout(() => {
-      this.setShown();
+      const {
+        theme: { rtl },
+      } = this.props;
+      const positionsObject = rtl ? RTL_POSITIONS : POSITIONS;
+      const positions = Object.keys(positionsObject).map(k => positionsObject[k]);
+      this.getDimensions();
+      const realPreferredPosition = this.switchPreferredPosition();
+      if (realPreferredPosition) {
+        this.setPosition([
+          realPreferredPosition,
+          ...positions.filter(p => p !== realPreferredPosition),
+        ]);
+      } else {
+        this.setPosition(positions);
+      }
+      this.setState({ shown: true });
     }, 15);
     // https://github.com/facebook/flow/issues/2221
   };

@@ -115,6 +115,7 @@ const PopoverContentWrapper = ({
   preferredPosition,
   containerRef,
   noPadding,
+  overlapped,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
@@ -162,6 +163,7 @@ const PopoverContentWrapper = ({
         tabIndex="0"
         data-test={dataTest}
         noPadding={noPadding}
+        overlapped={overlapped}
         role="tooltip"
       >
         <StyledPopoverContent ref={content}>

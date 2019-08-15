@@ -1480,6 +1480,7 @@ exports[`Popover it should match snapshot 1`] = `
         }
       }
       onClose={[Function]}
+      overlapped={true}
       preferredPosition="bottom"
     >
       Message for a user

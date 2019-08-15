@@ -53,3 +53,55 @@ describe("Table", () => {
     expect(component).toMatchSnapshot();
   });
 });
+
+describe("TableHead", () => {
+  const dataTest = "test";
+  const component = shallow(
+    <TableHead dataTest={dataTest}>
+      <TableRow>
+        <TableCell>Content</TableCell>
+      </TableRow>
+    </TableHead>,
+  );
+  it("should have rendered dataTest", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+});
+
+describe("TableBody", () => {
+  const dataTest = "test";
+  const component = shallow(
+    <TableBody dataTest={dataTest}>
+      <TableRow>
+        <TableCell>Content</TableCell>
+      </TableRow>
+    </TableBody>,
+  );
+  it("should have rendered dataTest", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+});
+
+describe("TableRow", () => {
+  const dataTest = "test";
+  const component = shallow(
+    <TableRow dataTest={dataTest}>
+      <TableCell>Content</TableCell>
+    </TableRow>,
+  );
+  it("should have rendered dataTest", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+});
+
+describe("TableCell", () => {
+  const dataTest = "test";
+  const children = "content";
+  const component = shallow(<TableCell dataTest={dataTest}>{children}</TableCell>);
+  it("should have rendered dataTest", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have content", () => {
+    expect(component.children().text()).toBe(children);
+  });
+});

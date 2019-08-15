@@ -486,9 +486,7 @@ exports[`TripDate should match snapshot 1`] = `
     <Calendar
       size="small"
     />
-    <Text
-      type="attention"
-    >
+    <Text>
       Fri 13 Nov
     </Text>
   </Stack>

@@ -42,6 +42,7 @@ Table below contains all types of the props in TableHead component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :-------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the TableHead, normally [`TableRow`](#tablerow).
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ### TableBody
 ```jsx
@@ -54,6 +55,7 @@ Table below contains all types of the props in TableBody component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :-------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the TableBody, normally [`TableRow`](#tablerow).
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ### TableRow
 ```jsx
@@ -66,6 +68,7 @@ Table below contains all types of the props in TableRow component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :-------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`          |                 | The content of the TableRow, normally [`TableCell`](#tablecell).
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 ### TableCell
 ```jsx
@@ -79,6 +82,7 @@ Table below contains all types of the props in TableCell component.
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | align         | [`enum`](#enum)       | `"left"`        | The align of text in the TableCell.
 | children      | `React.Node`          |                 | The content of the TableCell.
+| dataTest      | `string`              |                 | Optional prop for testing purposes.
 
 #### enum
 

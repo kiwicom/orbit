@@ -13,6 +13,8 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
+import Separator from "../Separator";
+import Hide from "../Hide";
 
 import Popover from "./index";
 
@@ -33,6 +35,36 @@ const content = (
         </Stack>
         <Stepper minValue={0} />
       </Stack>
+    </Stack>
+  </div>
+);
+
+const overlappedContent = (
+  <div>
+    <Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Adult</Text>
+          <Text type="secondary">11+</Text>
+        </Stack>
+        <Stepper minValue={0} />
+      </Stack>
+      <Stack align="center">
+        <Stack spacing="none">
+          <Text>Child</Text>
+          <Text type="secondary">2-11</Text>
+        </Stack>
+        <Stepper minValue={0} />
+      </Stack>
+      <Hide on={["smallMobile", "mediumMobile"]} block>
+        <Separator />
+        <Stack direction="row" justify="between">
+          <Button type="secondary" size="small">
+            Cancel
+          </Button>
+          <Button size="small">Done</Button>
+        </Stack>
+      </Hide>
     </Stack>
   </div>
 );
@@ -162,6 +194,29 @@ storiesOf("Popover", module)
     },
   )
   .add(
+    "Overlapped",
+    () => {
+      const overlapped = boolean("overlapped", true);
+
+      return (
+        <Popover
+          overlapped={overlapped}
+          content={overlappedContent}
+          onOpen={action("open")}
+          onClose={action("close")}
+        >
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
+        </Popover>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const dataTest = text("dataTest", "test");
@@ -172,6 +227,7 @@ storiesOf("Popover", module)
       );
       const width = text("width", "350px");
       const noPadding = boolean("noPadding", false);
+      const overlapped = boolean("overlapped", false);
 
       return (
         <Popover
@@ -180,6 +236,7 @@ storiesOf("Popover", module)
           content={content}
           preferredPosition={preferredPosition}
           noPadding={noPadding}
+          overlapped={overlapped}
           onOpen={action("open")}
           onClose={action("close")}
         >

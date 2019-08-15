@@ -10,6 +10,7 @@ export type Props = {|
   +containerRef: React$ElementRef<*>,
   +width?: string,
   +noPadding?: boolean,
+  +overlapped?: boolean,
   +onClose: () => void,
 |};
 

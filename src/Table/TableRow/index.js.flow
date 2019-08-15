@@ -1,8 +1,11 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
+import type { Globals } from "../../common/common.js.flow";
+
 export type Props = {|
   +children: React$Node,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

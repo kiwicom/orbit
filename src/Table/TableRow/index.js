@@ -4,14 +4,18 @@ import styled from "styled-components";
 
 import type { Props } from ".";
 
-export const StyledTableRow = styled(({ children, className }) => (
-  <tr className={className}>{children}</tr>
+export const StyledTableRow = styled(({ children, className, dataTest }) => (
+  <tr className={className} data-test={dataTest}>
+    {children}
+  </tr>
 ))`
   box-sizing: border-box;
   width: 100%;
   white-space: nowrap;
 `;
 
-const TableRow = (props: Props) => <StyledTableRow>{props.children}</StyledTableRow>;
+const TableRow = ({ dataTest, children }: Props) => (
+  <StyledTableRow dataTest={dataTest}>{children}</StyledTableRow>
+);
 
 export default TableRow;

@@ -44,18 +44,6 @@ storiesOf("Text", module)
     },
   )
   .add(
-    "Attention text",
-    () => {
-      const children = text("Text", customText);
-
-      return <Text type="attention">{children}</Text>;
-    },
-    {
-      info:
-        "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
     "Status text",
     () => {
       const children = text("Text", customText);

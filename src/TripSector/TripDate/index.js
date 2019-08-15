@@ -33,7 +33,7 @@ const TripDate = ({ children, dataTest, duration }: Props) => (
   <StyledTripDate data-test={dataTest}>
     <Stack direction="row" spacing="condensed" shrink>
       <Calendar size="small" />
-      <Text type="attention">{children}</Text>
+      <Text>{children}</Text>
     </Stack>
     {duration && <Badge icon={<Clock />}>{duration}</Badge>}
   </StyledTripDate>

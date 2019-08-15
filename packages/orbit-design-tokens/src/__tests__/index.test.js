@@ -100,6 +100,7 @@ describe("fromPlainObject should create full theme", () => {
   it("tokens should have default darkHover and darkActive", () => {
     expect(theme.paletteProductDarkHover).toBe(foundation.palette.product.darkHover);
     expect(theme.paletteProductDarkActive).toBe(foundation.palette.product.darkActive);
+    expect(theme.paletteProductDarker).toBe(foundation.palette.product.darker);
   });
 });
 
@@ -114,11 +115,13 @@ describe("fromPlainObject with full object should create full theme", () => {
     productDark: "#990000",
     productDarkHover: "#820000",
     productDarkActive: "#720000",
+    productDarker: "#620000",
   };
   const theme = fromPlainObject(palette);
   it("tokens should have exact darkHover and darkActive", () => {
     expect(theme.paletteProductDarkHover).toBe(palette.productDarkHover);
     expect(theme.paletteProductDarkActive).toBe(palette.productDarkActive);
+    expect(theme.paletteProductDarker).toBe(palette.productDarker);
   });
 });
 

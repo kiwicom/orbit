@@ -542,6 +542,7 @@ export const fromPlainObject: FromPlainObject = themePaletteColors => {
         dark: themePaletteColors.productDark,
         darkHover: themePaletteColors.productDarkHover || foundation.palette.product.darkHover,
         darkActive: themePaletteColors.productDarkActive || foundation.palette.product.darkActive,
+        darker: themePaletteColors.productDarker || foundation.palette.product.darker,
       },
     },
   };

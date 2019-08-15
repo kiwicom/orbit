@@ -88,9 +88,9 @@ const palette = {
     darker: "#004680",
   },
   social: {
-    facebook: "#1778F2",
-    facebookHover: "#0C69DE",
-    facebookActive: "#0B5CC1",
+    facebook: "#3B5998",
+    facebookHover: "#385490",
+    facebookActive: "#354F88",
   },
 };
 

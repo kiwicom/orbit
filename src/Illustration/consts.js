@@ -10,6 +10,7 @@ export const NAMES = [
   "BGYFastTrack",
   "Boarding",
   "BoardingPass",
+  "BUDFastTrack",
   "BusinessTravel",
   "CabinBaggage",
   "DesktopSearch",

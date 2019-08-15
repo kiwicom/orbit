@@ -10,8 +10,9 @@ describe("Popover", () => {
   const content = "Message for a user";
   const position = "bottom";
   const opened = true;
+  const overlapped = true;
   const component = shallow(
-    <Popover content={content} preferredPosition={position} opened={opened}>
+    <Popover content={content} preferredPosition={position} opened={opened} overlapped={overlapped}>
       <Button>Open</Button>
     </Popover>,
   );
@@ -29,6 +30,7 @@ describe("Popover", () => {
         .exists(),
     ).toBe(true);
     expect(component.find("PopoverContentWrapper").prop("preferredPosition")).toBe(position);
+    expect(component.find("PopoverContentWrapper").prop("overlapped")).toBe(true);
   });
 
   it("it should match snapshot", () => {

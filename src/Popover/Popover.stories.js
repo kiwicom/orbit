@@ -14,6 +14,7 @@ import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
 import Separator from "../Separator";
+import Hide from "../Hide";
 
 import Popover from "./index";
 
@@ -55,13 +56,15 @@ const overlappedContent = (
         </Stack>
         <Stepper minValue={0} />
       </Stack>
-      <Separator />
-      <Stack direction="row" justify="between">
-        <Button type="secondary" size="small">
-          Cancel
-        </Button>
-        <Button size="small">Done</Button>
-      </Stack>
+      <Hide on={["smallMobile", "mediumMobile"]} block>
+        <Separator />
+        <Stack direction="row" justify="between">
+          <Button type="secondary" size="small">
+            Cancel
+          </Button>
+          <Button size="small">Done</Button>
+        </Stack>
+      </Hide>
     </Stack>
   </div>
 );

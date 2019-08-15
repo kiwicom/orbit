@@ -24,7 +24,8 @@
     "fetch-translations": "babel-node config/fetchTranslations.js",
     "deploy:storybook": "storybook-to-ghpages",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
-    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
+    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
+    "prettier": "prettier --write '**/*.{js,json,md,html}'"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",

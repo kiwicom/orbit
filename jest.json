@@ -1,9 +1,5 @@
 {
-  "setupFiles": [
-    "raf/polyfill",
-    "./config/enzymeConfig",
-    "./config/registerContext"
-  ],
+  "setupFiles": ["raf/polyfill", "./config/enzymeConfig", "./config/registerContext"],
   "setupFilesAfterEnv": ["./config/jestSetupFramework"],
   "snapshotSerializers": ["enzyme-to-json/serializer"]
 }

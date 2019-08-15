@@ -42,7 +42,7 @@ StyledButtonGroup.defaultProps = {
 const ButtonGroup = ({ children, connected, dataTest }: Props) => {
   warning(
     !connected,
-    "Warning: connected property of ButtonGroup component is deprecated. In the next major release, the connected variant will be the default. For unconnected variant, please use Stack component. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#buttongroup-component for more information",
+    "Warning: connected property of ButtonGroup component is deprecated. In the next major release, the connected variant will be the default. For unconnected variant, please use Stack component. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
   );
   return (
     <StyledButtonGroup connected={connected} data-test={dataTest}>

@@ -12,6 +12,8 @@ export type Dimensions = {|
   tooltipHeight: number,
   tooltipWidth: number,
   contentHeight: number,
+  windowWidth: number,
+  windowHeight: number,
 |};
 
 export type Aligns = "center" | "start" | "end";
@@ -26,15 +28,17 @@ export type Position = {|
   position: Positions,
 |};
 
+export type Sizes = "small" | "medium";
+
 export type Size = {|
-  size: "small" | "medium",
+  size: Sizes,
 |};
 
 export type Props = {|
   ...Globals,
   +children: React$Node,
   +content: React$Node,
-  +size?: "small" | "medium",
+  +size?: Sizes,
   +preferredPosition?: Positions,
   +enabled?: boolean,
   +tabIndex?: string,

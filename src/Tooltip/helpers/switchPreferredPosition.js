@@ -1,7 +1,8 @@
 // @flow
 import { RTL_POSITIONS } from "../consts";
+import type { SwitchPreferredPosition } from "./switchPreferredPosition";
 
-const switchPreferredPosition = ({ rtl }, preferredPosition) => {
+const switchPreferredPosition: SwitchPreferredPosition = ({ rtl }, preferredPosition) => {
   if (rtl) {
     if (preferredPosition === RTL_POSITIONS.LEFT) {
       return RTL_POSITIONS.RIGHT;

@@ -20,6 +20,7 @@ import calculateTooltipPosition from "../helpers/calculateTooltipPosition";
 import calculateTooltipAlign from "../helpers/calculateTooltipAlign";
 import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
 import useDimensions from "../hooks/useDimensions";
+import type { Props } from "./TooltipContent";
 
 const StyledTooltip = styled.div`
   width: 100%;
@@ -182,7 +183,7 @@ const TooltipContent = ({
   onEnter,
   preferredPosition,
   containerRef,
-}) => {
+}: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
   const tooltip = useRef(null);
@@ -191,7 +192,7 @@ const TooltipContent = ({
     preferredPosition,
     theme,
   ]);
-  const dimensions = useDimensions({ containerRef, tooltip, content });
+  const dimensions = useDimensions({ containerRef, tooltip, content }, children);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,

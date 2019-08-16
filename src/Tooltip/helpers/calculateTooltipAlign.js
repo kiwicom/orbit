@@ -2,6 +2,7 @@
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./isAlign";
 import { isHorizontal, isVertical } from "./isPosition";
 import { ALIGNS, TOOLTIP_TOTAL_PADDING } from "../consts";
+import type { CalculateTooltipAlign } from "./calculateTooltipAlign";
 
 const ALIGNS_COMBINATION = {
   VERTICAL_START: "verticalStart",
@@ -38,11 +39,12 @@ const isInside = (p, a, canBe) => {
 };
 
 const getAlign = (p, aligns, canBe) =>
-  Object.keys(aligns)
-    .map(a => isInside(p, aligns[a], canBe))
-    .filter(a => typeof a === "string");
+  aligns.map(a => isInside(p, a, canBe)).find(a => typeof a === "string");
 
-const calculateTooltipAlign = (position, aligns, dimensions) => {
+const calculateTooltipAlign: CalculateTooltipAlign = (position, aligns, dimensions) => {
+  if (!position) {
+    return null;
+  }
   const {
     containerLeft,
     containerTop,
@@ -76,9 +78,8 @@ const calculateTooltipAlign = (position, aligns, dimensions) => {
   };
 
   const possibleAligns = getAlign(position, aligns, canBe);
-  const align = possibleAligns[0];
-  if (typeof align === "string") {
-    return align;
+  if (possibleAligns) {
+    return possibleAligns;
   }
   return null;
 };

@@ -1,8 +1,10 @@
 // @flow
 import { isPositionBottom, isPositionLeft, isPositionRight, isPositionTop } from "./isPosition";
 import { POSITIONS, TOOLTIP_ARROW_SIZE } from "../consts";
+import type { CalculateTooltipPosition } from "./calculateTooltipPosition";
+import type { Positions } from "../index";
 
-const isInside = (p, canBe) => {
+const isInside = (p: Positions, canBe) => {
   if (isPositionTop(p) && canBe[p]) {
     return POSITIONS.TOP;
   }
@@ -18,7 +20,7 @@ const isInside = (p, canBe) => {
   return false;
 };
 
-const calculateTooltipPosition = (positions, dimensions) => {
+const calculateTooltipPosition: CalculateTooltipPosition = (positions, dimensions) => {
   const {
     containerTop,
     containerLeft,
@@ -38,13 +40,10 @@ const calculateTooltipPosition = (positions, dimensions) => {
     [POSITIONS.BOTTOM]: containerTop + containerHeight + tooltipHeight < windowHeight,
   };
 
-  const possiblePositions = positions
-    .map(p => isInside(p, canBe))
-    .filter(p => typeof p === "string");
+  const possiblePositions = positions.map(p => isInside(p, canBe)).find(p => typeof p === "string");
 
-  const position = possiblePositions[0];
-  if (typeof position === "string") {
-    return position;
+  if (possiblePositions) {
+    return possiblePositions;
   }
   return null;
 };

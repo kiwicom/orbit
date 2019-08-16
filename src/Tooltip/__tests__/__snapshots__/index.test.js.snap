@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip it should match snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Fragment>
+  <Tooltip__StyledTooltipChildren
+    aria-describedby="tooltip50000-id-50000"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex="0"
+  >
+    <Airplane />
+  </Tooltip__StyledTooltipChildren>
+</Fragment>
 `;

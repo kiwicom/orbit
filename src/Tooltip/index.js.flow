@@ -40,12 +40,4 @@ export type Props = {|
   +tabIndex?: string,
 |};
 
-export type State = {|
-  ...Align,
-  ...Position,
-  shown: boolean,
-  shownMobile: boolean,
-  render: boolean,
-|};
-
 declare export default React$ComponentType<Props>;

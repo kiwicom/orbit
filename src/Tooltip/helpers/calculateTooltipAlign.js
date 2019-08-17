@@ -55,7 +55,6 @@ const calculateTooltipAlign: CalculateTooltipAlign = (position, aligns, dimensio
     windowWidth,
     windowHeight,
   } = dimensions;
-
   const canBe = {
     [ALIGNS_COMBINATION.VERTICAL_START]:
       containerLeft + containerWidth / 2 - TOOLTIP_TOTAL_PADDING > 0 &&

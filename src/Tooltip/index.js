@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useMemo, useEffect } from "react";
+import React, { useState, useRef, useMemo, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 import { getBreakpointWidth } from "../utils/mediaQuery";
@@ -47,49 +47,55 @@ const Tooltip = ({
   const [shownMobile, setShownMobile] = useState(false);
   const tooltipId = useMemo(() => RandomID("tooltip"), []);
   const container = useRef(null);
-  const timeoutRef = useRef(null);
+  const renderRef = useRef(null);
 
-  const handleIn = () => {
-    setRender(true);
-    setShown(true);
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleOut = () => {
-    setShown(false);
-    timeoutRef.current = setTimeout(() => {
-      timeoutRef.current = null;
+  const setRenderTimeout = useCallback(() => {
+    renderRef.current = setTimeout(() => {
+      renderRef.current = null;
       setRender(false);
     }, 200);
-  };
+  }, []);
 
-  const handleInMobile = () => {
+  const clearRenderTimeout = useCallback(() => {
+    if (renderRef.current !== null) {
+      clearTimeout(renderRef.current);
+    }
+  }, []);
+
+  const handleIn = useCallback(() => {
+    if (window.innerWidth > +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
+      setRender(true);
+      setShown(true);
+      clearRenderTimeout();
+    }
+  }, [clearRenderTimeout, theme]);
+
+  const handleOut = useCallback(() => {
+    if (window.innerWidth > +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
+      setShown(false);
+      setRenderTimeout();
+    }
+  }, [setRenderTimeout, theme]);
+
+  const handleInMobile = useCallback(() => {
     if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
       setRender(true);
       setShownMobile(true);
-      if (timeoutRef.current !== null) {
-        clearTimeout(timeoutRef.current);
-      }
+      clearRenderTimeout();
     }
-  };
+  }, [clearRenderTimeout, theme]);
 
-  const handleOutMobile = () => {
+  const handleOutMobile = useCallback(() => {
     setShownMobile(false);
-    timeoutRef.current = setTimeout(() => {
-      timeoutRef.current = null;
-      setRender(false);
-    }, 200);
-  };
+    setRenderTimeout();
+  }, [setRenderTimeout]);
 
   useEffect(() => {
     return () => {
-      if (timeoutRef.current !== null) {
-        clearTimeout(timeoutRef.current);
-      }
+      clearRenderTimeout();
     };
-  }, []);
+  }, [clearRenderTimeout]);
+
   return (
     <React.Fragment>
       <StyledTooltipChildren

@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import useTheme from "../../hooks/useTheme";
@@ -202,12 +202,15 @@ const TooltipContent = ({
     dimensions,
     position,
   ]);
-  const handleClickOutside = ev => {
-    ev.stopPropagation();
-    if (ev.target === overlay.current) {
-      onCloseMobile();
-    }
-  };
+  const handleClickOutside = useCallback(
+    ev => {
+      ev.stopPropagation();
+      if (ev.target === overlay.current) {
+        onCloseMobile();
+      }
+    },
+    [onCloseMobile],
+  );
   return (
     <StyledTooltip data-test={dataTest}>
       <StyledTooltipOverlay shownMobile={shownMobile} ref={overlay} onClick={handleClickOutside} />

@@ -27,8 +27,8 @@
     "@babel/core": "^7.5.5",
     "@kiwicom/babel-preset-kiwicom": "^3.5.0",
     "@kiwicom/eslint-config": "^6.5.2",
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.2.1",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.2.2",
     "jest": "^24.9.0"
   },
   "files": [

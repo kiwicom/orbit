@@ -50,7 +50,7 @@ describe('Card', () => {
 
     expect(ButtonLink.prop('dataTest')).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate('click');
-    expect(onClose).toHaveBeenCalledWith();
+    expect(onClose).toHaveBeenCalled();
   });
 });
 
@@ -74,6 +74,6 @@ describe('CardSection', () => {
 
   it('should have callback onExpand', () => {
     component.find('CardSectionHeader__StyledCardSectionHeader').simulate('click');
-    expect(onExpand).toHaveBeenCalledWith();
+    expect(onExpand).toHaveBeenCalled();
   });
 });

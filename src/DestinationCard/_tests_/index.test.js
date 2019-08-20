@@ -75,7 +75,7 @@ describe('DestinationCard one-way', () => {
   });
   it('should execute onClick method', () => {
     component.simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

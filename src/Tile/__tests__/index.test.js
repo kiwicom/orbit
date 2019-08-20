@@ -54,7 +54,7 @@ describe('Tile Default', () => {
 
   it('should execute onClick method', () => {
     shallowedComponent.find('TileHeader').simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
 });
 
@@ -91,7 +91,7 @@ describe('Tile Expandable', () => {
 
   it('should call onClick on Expandable Tile', () => {
     shallowednotDefaultExpandedTile.find('TileHeader').simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('should render proper element', () => {

@@ -108,16 +108,16 @@ describe(`InputField with help, prefix and suffix`, () => {
   });
   it('should execute onChange method', () => {
     input.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('should execute onFocus method', () => {
     input.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('should execute onBlur method', () => {
     input.simulate('focus');
     input.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

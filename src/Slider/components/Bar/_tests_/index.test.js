@@ -18,7 +18,7 @@ describe('Bar in Slider', () => {
   const bar = component.find('Bar__StyledBar');
   it('should execute onMouseDown', () => {
     bar.simulate('mousedown');
-    expect(onMouseDown).toHaveBeenCalledWith();
+    expect(onMouseDown).toHaveBeenCalled();
   });
   it('each bar should have proper width and left', () => {
     const positions = [{ left: 0, width: 100 }, calculateBarPosition(value, max, min, true)];

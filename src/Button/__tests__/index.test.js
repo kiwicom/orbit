@@ -39,7 +39,7 @@ describe('Button', () => {
   });
   it('should execute onClick method', () => {
     button.simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
   it('should have ref', () => {
     expect(ref.current).toBeDefined();

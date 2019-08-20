@@ -32,7 +32,7 @@ describe('Breadcrumbs', () => {
   });
   it('should execute onGoBack', () => {
     component.find('GoBackButton').simulate('click');
-    expect(onGoBack).toHaveBeenCalledWith();
+    expect(onGoBack).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

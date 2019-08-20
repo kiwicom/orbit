@@ -76,7 +76,7 @@ describe('TextLink', () => {
   });
   it('should execute onClick method', () => {
     component.simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
   it('should not have tabindex and role', () => {
     expect(component.render().prop('tabindex')).toBe('-1');

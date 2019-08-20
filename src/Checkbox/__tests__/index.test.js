@@ -52,7 +52,7 @@ describe(`Default CheckBox`, () => {
   });
   it('should execute onChange method', () => {
     checkbox.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

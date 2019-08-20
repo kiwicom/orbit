@@ -51,7 +51,7 @@ describe(`Default Radio`, () => {
   });
   it('should execute onChange method', () => {
     radio.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

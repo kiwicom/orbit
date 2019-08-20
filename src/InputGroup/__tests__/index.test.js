@@ -87,29 +87,29 @@ describe(`InputGroup - Phone number`, () => {
   });
   it('input should execute onChange method', () => {
     input.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('select should execute onChange method', () => {
     select.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('input should execute onFocus method', () => {
     input.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('select should execute onFocus method', () => {
     select.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('input should execute onBlur method', () => {
     input.simulate('focus');
     input.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
   it('select should execute onBlur method', () => {
     select.simulate('focus');
     select.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     component.setState({ inputID: '123' });

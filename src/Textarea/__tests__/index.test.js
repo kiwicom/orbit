@@ -77,16 +77,16 @@ describe(`Textarea with help`, () => {
   });
   it('should execute onChange method', () => {
     area.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('should execute onFocus method', () => {
     area.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('should execute onBlur method', () => {
     area.simulate('focus');
     area.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

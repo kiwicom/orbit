@@ -28,7 +28,7 @@ describe('DestinationHeader', () => {
   });
   it('should execute onGoBack method', () => {
     button.simulate('click');
-    expect(goBack).toHaveBeenCalledWith();
+    expect(goBack).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

@@ -40,7 +40,7 @@ describe('Alert', () => {
     const ButtonLink = component.find('AlertCloseButton');
     expect(ButtonLink.prop('dataTest')).toBe(CLOSE_BUTTON_DATA_TEST);
     ButtonLink.simulate('click');
-    expect(onClose).toHaveBeenCalledWith();
+    expect(onClose).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     const component = shallow(<Alert>{message}</Alert>);

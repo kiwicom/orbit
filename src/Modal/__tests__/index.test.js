@@ -83,7 +83,7 @@ describe('Large Modal', () => {
   it('close button should have dataTest', () => {
     expect(closeButton.prop('dataTest')).toBe(CLOSE_BUTTON_DATA_TEST);
     closeButton.simulate('click');
-    expect(onClose).toHaveBeenCalledWith();
+    expect(onClose).toHaveBeenCalled();
   });
 
   it('should match snapshot', () => {

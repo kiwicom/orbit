@@ -85,7 +85,7 @@ describe(`InputFile with help`, () => {
   });
   it('should execute onChange method', () => {
     input.simulate('change');
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   // we can not check if onFocus has been called on input[type="file"]
   // we also need to convert it
@@ -94,11 +94,11 @@ describe(`InputFile with help`, () => {
   });
   it('should execute onBlur method', () => {
     input.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
   it('should have onRemoveFile method', () => {
     closeButton.simulate('click', { preventDefault() {} });
-    expect(onRemoveFile).toHaveBeenCalledWith();
+    expect(onRemoveFile).toHaveBeenCalled();
   });
   it('should match snapshot', () => {
     expect(component).toMatchSnapshot();

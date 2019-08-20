@@ -13,7 +13,7 @@ function testKeyTriggeringEvent(instance, expect, initialState, keyCode, stateVa
     keyCode,
   });
   expect(instance.state.value).toEqual(stateValue);
-  expect(onHandler).toHaveBeenCalledWith();
+  expect(onHandler).toHaveBeenCalled();
 }
 
 describe('Slider', () => {
@@ -93,18 +93,18 @@ describe('Slider', () => {
   });
   test('injectCallbackAndSetState should call', () => {
     instance.injectCallbackAndSetState(onChange, 95);
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
     instance.injectCallbackAndSetState(onChangeBefore, 90);
-    expect(onChangeBefore).toHaveBeenCalledWith();
+    expect(onChangeBefore).toHaveBeenCalled();
     instance.injectCallbackAndSetState(onChangeAfter, 90, true);
-    expect(onChangeAfter).toHaveBeenCalledWith();
+    expect(onChangeAfter).toHaveBeenCalled();
   });
   test('handleBarMouseDown execute onChange', () => {
     instance.setState({ value: 50 });
     component.setProps({ step: 1 });
     instance.handleBarMouseDown({ pageX: 52 });
     expect(instance.state.value).toEqual(7);
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   test('defaultValue changes the value state', () => {
     component.setProps({ defaultValue: 20 });
@@ -386,7 +386,7 @@ describe('Range Slider', () => {
     instance.setState({ value: [50, 60] });
     instance.handleBarMouseDown({ pageX: 52 });
     expect(instance.state.value).toEqual([7, 60]);
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   test('handleOnFocus should execute onChangeBefore and add listeners', () => {
     instance.setState({ value: [50, 60] });
@@ -394,13 +394,13 @@ describe('Range Slider', () => {
     expect(typeof eventMap.keydown === 'function').toBe(true);
     expect(typeof eventMap.focusout === 'function').toBe(true);
     expect(instance.state.focused).toBe(true);
-    expect(onChangeBefore).toHaveBeenCalledWith();
+    expect(onChangeBefore).toHaveBeenCalled();
   });
   test('handleBlur should call onChangeAfter and remove listeners', () => {
     instance.handleBlur();
     expect(typeof eventMap.keydown !== 'function').toBe(true);
     expect(typeof eventMap.focusout !== 'function').toBe(true);
-    expect(onChangeAfter).toHaveBeenCalledWith();
+    expect(onChangeAfter).toHaveBeenCalled();
   });
   test('handleOnTouchStart should execute onChangeBefore and add listeners', () => {
     instance.setState({ value: [50, 60] });
@@ -408,20 +408,20 @@ describe('Range Slider', () => {
     expect(typeof eventMap.touchmove === 'function').toBe(true);
     expect(typeof eventMap.touchend === 'function').toBe(true);
     expect(instance.state.focused).toBe(true);
-    expect(onChangeBefore).toHaveBeenCalledWith();
+    expect(onChangeBefore).toHaveBeenCalled();
   });
   test('handleTouchEnd should call onChangeAfter and remove listeners', () => {
     instance.handleTouchEnd();
     expect(typeof eventMap.touchmove !== 'function').toBe(true);
     expect(typeof eventMap.touchend !== 'function').toBe(true);
     expect(instance.state.focused).toBe(false);
-    expect(onChangeAfter).toHaveBeenCalledWith();
+    expect(onChangeAfter).toHaveBeenCalled();
   });
   test('handleTouchMove should call onChange and set value', () => {
     instance.setState({ value: [50, 60], handleIndex: 0 });
     instance.handleOnTouchMove({ stopPropagation: () => {}, touches: [{ pageX: 109 }] });
     expect(instance.state.value).toEqual([21, 60]);
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   test('handleTouchMove should not set value when touches > 1', () => {
     instance.setState({ value: [50, 60] });
@@ -436,20 +436,20 @@ describe('Range Slider', () => {
     expect(typeof eventMap.mousemove === 'function').toBe(true);
     expect(typeof eventMap.mouseup === 'function').toBe(true);
     expect(instance.state.focused).toBe(true);
-    expect(onChangeBefore).toHaveBeenCalledWith();
+    expect(onChangeBefore).toHaveBeenCalled();
   });
   test('handleMouseUp should call onChangeAfter and remove listeners', () => {
     instance.handleMouseUp();
     expect(typeof eventMap.mousemove !== 'function').toBe(true);
     expect(typeof eventMap.mouseup !== 'function').toBe(true);
     expect(instance.state.focused).toBe(false);
-    expect(onChangeAfter).toHaveBeenCalledWith();
+    expect(onChangeAfter).toHaveBeenCalled();
   });
   test('handleMouseMove should call onChange and set value', () => {
     instance.setState({ value: [50, 60], handleIndex: 0 });
     instance.handleMouseMove({ pageX: 152 });
     expect(instance.state.value).toEqual([32, 60]);
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   test('replaceValue should return number or array number', () => {
     instance.setState({ value: [50, 60] });

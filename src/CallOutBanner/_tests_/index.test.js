@@ -62,5 +62,5 @@ describe('CallOutBanner - actionable', () => {
     expect(banner.render().prop('tabindex')).toBe('0');
   });
   banner.simulate('click');
-  expect(onClick).toHaveBeenCalledWith();
+  expect(onClick).toHaveBeenCalled();
 });

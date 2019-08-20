@@ -67,16 +67,16 @@ describe('Stepper', () => {
   it('should execute onChange method', () => {
     const instance = component.instance();
     instance.incrementCounter();
-    expect(onChange).toHaveBeenCalledWith();
+    expect(onChange).toHaveBeenCalled();
   });
   it('should execute onFocus method', () => {
     input.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('should execute onBlur method', () => {
     input.simulate('focus');
     input.simulate('blur');
-    expect(onBlur).toHaveBeenCalledWith();
+    expect(onBlur).toHaveBeenCalled();
   });
 
   it('should match snapshot', () => {

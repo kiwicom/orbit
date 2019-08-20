@@ -49,6 +49,6 @@ describe('Collapse - controlled', () => {
   );
   it('should execute onClick method', () => {
     component.find('Collapse__StyledCollapseLabel').simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
 });

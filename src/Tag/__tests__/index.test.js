@@ -22,12 +22,12 @@ describe('Tag', () => {
   it('the onRemove should be called', () => {
     const CloseContainer = component.find('Tag__CloseContainer');
     CloseContainer.simulate('click', { stopPropagation() {} });
-    expect(onRemove).toHaveBeenCalledWith();
+    expect(onRemove).toHaveBeenCalled();
   });
 
   it('the onClick should be called', () => {
     component.simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('should have passed props', () => {

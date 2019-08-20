@@ -36,15 +36,15 @@ describe('Handle in Slider', () => {
   const handle = component.find('Handle__StyledHandle');
   it('should execute onMouseDown', () => {
     handle.simulate('mousedown');
-    expect(onMouseDown).toHaveBeenCalledWith();
+    expect(onMouseDown).toHaveBeenCalled();
   });
   it('should execute onFocus', () => {
     handle.simulate('focus');
-    expect(onFocus).toHaveBeenCalledWith();
+    expect(onFocus).toHaveBeenCalled();
   });
   it('should execute onTouchStart', () => {
     handle.simulate('touchstart');
-    expect(onTouchStart).toHaveBeenCalledWith();
+    expect(onTouchStart).toHaveBeenCalled();
   });
   it('should have correct left', () => {
     expect(handle.prop('left')).toBe(20.8);

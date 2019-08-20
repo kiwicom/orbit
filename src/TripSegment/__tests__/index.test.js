@@ -67,7 +67,7 @@ describe(`TripSegment with List as children`, () => {
 
   it('should execute onClick method', () => {
     StyledTripSegmentOverviewWrapper.simulate('click');
-    expect(onClick).toHaveBeenCalledWith();
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('children should have list', () => {

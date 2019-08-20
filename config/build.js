@@ -96,7 +96,7 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
 });
 
 const index = names
-  .map(({ functionName }) => `export { default as ${functionName} } from "./${functionName}";\n`)
+  .map(({ functionName }) => `export { default as ${functionName} } from './${functionName}';\n`)
   .join('');
 fs.writeFileSync(path.join(componentPath, 'index.js'), index);
 

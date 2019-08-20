@@ -1,2 +1,3 @@
 // @flow
-export { getTokens as default } from "@kiwicom/orbit-design-tokens";
+
+export { getTokens as default } from '@kiwicom/orbit-design-tokens';

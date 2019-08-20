@@ -1,13 +1,13 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { rtlSpacing, left, right } from "../utils/rtl";
-import CloseCircle from "../icons/CloseCircle";
-import { SIZES, STATES } from "./consts";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { rtlSpacing, left, right } from '../utils/rtl';
+import CloseCircle from '../icons/CloseCircle';
+import { SIZES, STATES } from './consts';
+import type { Props } from './index.js.flow';
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {

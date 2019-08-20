@@ -1,15 +1,16 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 
-import Heading from "../Heading";
-import Text from "../Text";
-import TextLink from "../TextLink";
-import Card, { CardHeader, CardSection } from "../Card";
-import Stack from "../Stack";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-import SkipNavigation from ".";
+import Heading from '../Heading';
+import Text from '../Text';
+import TextLink from '../TextLink';
+import Card, { CardHeader, CardSection } from '../Card';
+import Stack from '../Stack';
+
+import SkipNavigation from '.';
 
 const Content = (
   <Stack>
@@ -24,7 +25,7 @@ const Content = (
           Lorem ipsum dolor sit &nbsp;
           <TextLink external={false} href="https://kiwi.com" type="primary">
             efficitur
-          </TextLink>{" "}
+          </TextLink>{' '}
           nulla. Ut convallis fermentum efficitur. Pellentesque habitant morbi tristique senectus et
           netus et malesuada fames. convallis.
         </Text>
@@ -39,7 +40,7 @@ const Content = (
             Lorem ipsum dolor sit amet &nbsp;
             <TextLink external={false} href="https://kiwi.com" type="primary">
               fermentum
-            </TextLink>{" "}
+            </TextLink>{' '}
             ulla. Ut convallis fermentum efficitur.
           </Text>
           <Heading element="h2" type="title3" dataA11ySection="subheading">
@@ -49,7 +50,7 @@ const Content = (
             Lorem ipsum dolor sit amet &nbsp;
             <TextLink external={false} href="https://kiwi.com" type="primary">
               habitant
-            </TextLink>{" "}
+            </TextLink>{' '}
             ulla. Ut convallis fermentum efficitur. Ut convallis fermentum efficitur. Pellentesque
             habitant morbi tristique senectus et netus et malesuada fames. convallis.
           </Text>
@@ -59,9 +60,9 @@ const Content = (
   </Stack>
 );
 
-storiesOf("SkipNavigation", module)
+storiesOf('SkipNavigation', module)
   .add(
-    "Default",
+    'Default',
     () => {
       return (
         <div>
@@ -72,27 +73,27 @@ storiesOf("SkipNavigation", module)
     },
     {
       info:
-        "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+        'Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
       return (
         <div>
           <SkipNavigation
             actions={[
               {
-                link: "https://www.kiwi.com/cz/pages/content/terms",
-                name: "Got to terms and condition",
+                link: 'https://www.kiwi.com/cz/pages/content/terms',
+                name: 'Got to terms and condition',
               },
               {
-                name: "Add baggage",
-                onClick: action("Add baggage"),
+                name: 'Add baggage',
+                onClick: action('Add baggage'),
               },
               {
-                name: "Reguest refund",
-                onClick: action("Reguest refund"),
+                name: 'Reguest refund',
+                onClick: action('Reguest refund'),
               },
             ]}
             feedbackUrl="#"
@@ -104,6 +105,6 @@ storiesOf("SkipNavigation", module)
     },
     {
       info:
-        "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+        'All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.',
     },
   );

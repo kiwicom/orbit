@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { left as leftRight } from "../../../utils/rtl";
-import defaultTheme from "../../../defaultTheme";
+import * as React from 'react';
+import styled from 'styled-components';
+import convertHexToRgba from '@kiwicom/orbit-design-tokens/lib/convertHexToRgba';
 
-import type { Props, CalculateLeftPosition, IsFirst } from "./index";
+import { left as leftRight } from '../../../utils/rtl';
+import defaultTheme from '../../../defaultTheme';
+import type { Props, CalculateLeftPosition, IsFirst } from './index.js.flow';
 
 export const calculateLeftPosition: CalculateLeftPosition = (
   valueNow,
@@ -69,7 +69,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   :after {
-    content: "";
+    content: '';
     display: block;
     width: 8px;
     height: 8px;
@@ -124,7 +124,7 @@ const Handle = ({
       aria-valuemin={valueMin}
       aria-valuenow={valueNow}
       aria-label={
-        Array.isArray(ariaLabel) && typeof index !== "undefined" ? ariaLabel[index] : ariaLabel
+        Array.isArray(ariaLabel) && typeof index !== 'undefined' ? ariaLabel[index] : ariaLabel
       }
       aria-valuetext={ariaValueText}
       left={left}

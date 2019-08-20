@@ -1,12 +1,13 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import Button from "../../Button";
-import Minus from "../../icons/Minus";
-import Plus from "../../icons/Plus";
-import defaultTheme from "../../defaultTheme";
-import type { StateLessProps } from "./index.js.flow";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import Button from '../../Button';
+import Minus from '../../icons/Minus';
+import Plus from '../../icons/Plus';
+import defaultTheme from '../../defaultTheme';
+import type { StateLessProps } from './index.js.flow';
 
 const StyledStepper = styled.div`
   display: flex;
@@ -61,7 +62,7 @@ const StepperStateless = ({
     <StyledStepper data-test={dataTest}>
       <Button
         disabled={
-          disabled || disabledDecrement || (typeof value === "number" && value <= +minValue)
+          disabled || disabledDecrement || (typeof value === 'number' && value <= +minValue)
         }
         iconLeft={<Minus />}
         type="secondary"
@@ -91,7 +92,7 @@ const StepperStateless = ({
       />
       <Button
         disabled={
-          disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue)
+          disabled || disabledIncrement || (typeof value === 'number' && value >= +maxValue)
         }
         iconLeft={<Plus />}
         type="secondary"

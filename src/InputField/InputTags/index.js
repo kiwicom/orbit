@@ -1,12 +1,12 @@
 // @flow
-import React, { useEffect } from "react";
-import styled from "styled-components";
 
-import { rtlSpacing } from "../../utils/rtl";
-import defaultTheme from "../../defaultTheme";
-import { StyledTag } from "../../Tag";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import { rtlSpacing } from '../../utils/rtl';
+import defaultTheme from '../../defaultTheme';
+import { StyledTag } from '../../Tag';
+import type { Props } from './index.js.flow';
 
 const StyledInputTags = styled.div`
   position: relative;
@@ -63,15 +63,15 @@ const InputTags = ({ children }: Props) => {
     };
 
     if (tagsRef && tagsRef.current) {
-      tagsRef.current.addEventListener("mousemove", handleMouseMove);
-      tagsRef.current.addEventListener("mouseup", handleMouseUp);
+      tagsRef.current.addEventListener('mousemove', handleMouseMove);
+      tagsRef.current.addEventListener('mouseup', handleMouseUp);
     }
 
     return () => {
       const tagsNode = tagsRef.current;
       if (tagsNode) {
-        tagsNode.removeEventListener("mousemove", handleMouseMove);
-        tagsNode.removeEventListener("mouseup", handleMouseUp);
+        tagsNode.removeEventListener('mousemove', handleMouseMove);
+        tagsNode.removeEventListener('mouseup', handleMouseUp);
       }
     };
   }, [tagsRef]);

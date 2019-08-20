@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../../defaultTheme";
-import Loading from "../../../Loading";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../../../defaultTheme';
+import Loading from '../../../Loading';
+import type { Props } from './index.js.flow';
 
 const StyledHistogram = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
     display: block;
     position: absolute;
     bottom: -3px;
-    content: " ";
+    content: ' ';
     width: 100%;
     height: 1px;
     border-radius: 1px;

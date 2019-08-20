@@ -1,12 +1,13 @@
 // @flow
-import type { BoundingClientRect } from "./index";
+
+import type { BoundingClientRect } from './index.js.flow';
 
 const boundingClientRect: BoundingClientRect = ref => {
   if (
     ref &&
     ref.current &&
-    typeof ref.current.getBoundingClientRect === "function" &&
-    typeof window !== "undefined"
+    typeof ref.current.getBoundingClientRect === 'function' &&
+    typeof window !== 'undefined'
   ) {
     const { height, width, top, left, right, bottom } = ref.current.getBoundingClientRect();
     return {

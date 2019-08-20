@@ -1,11 +1,11 @@
 // @flow
-import React from "react";
-import styled from "styled-components";
 
-import KEY_CODE_MAP from "../common/keyMaps";
-import defaultTheme from "../defaultTheme";
+import React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import KEY_CODE_MAP from '../common/keyMaps';
+import defaultTheme from '../defaultTheme';
+import type { Props } from './index.js.flow';
 
 const StyledNavigation = styled.nav``;
 
@@ -65,8 +65,8 @@ const SkipLink = ({ links, description }: Props) => {
             <StyledLink
               key={encodeURIComponent(name + index)}
               href={href}
-              tabIndex={href ? "" : "0"}
-              role={href ? "" : "Button"}
+              tabIndex={href ? '' : '0'}
+              role={href ? '' : 'Button'}
               onClick={onClick}
               onKeyDown={ev => {
                 if (ev.keyCode === KEY_CODE_MAP.ENTER && onClick) {

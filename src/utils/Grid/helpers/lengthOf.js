@@ -1,6 +1,7 @@
 // @flow
-import splitToWords from "./splitToWords";
-import type { LengthOf } from "./lengthOf";
+
+import splitToWords from './splitToWords';
+import type { LengthOf } from './lengthOf.js.flow';
 
 /*
   This function just gives us a count of cells (columns or rows).

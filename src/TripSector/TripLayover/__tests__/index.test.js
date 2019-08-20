@@ -1,13 +1,14 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import Layover from "../index";
-import List from "../../../List";
-import ListItem from "../../../List/ListItem";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-describe("Layover", () => {
-  const dataTest = "test";
+import Layover from '../index';
+import List from '../../../List';
+import ListItem from '../../../List/ListItem';
+
+describe('Layover', () => {
+  const dataTest = 'test';
 
   const component = shallow(
     <Layover dataTest={dataTest}>
@@ -19,15 +20,15 @@ describe("Layover", () => {
     </Layover>,
   );
 
-  it("should contain children", () => {
-    expect(component.find("List").exists()).toBe(true);
+  it('should contain children', () => {
+    expect(component.find('List').exists()).toBe(true);
   });
 
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it('should have data-test', () => {
+    expect(component.render().prop('data-test')).toBe(dataTest);
   });
 
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

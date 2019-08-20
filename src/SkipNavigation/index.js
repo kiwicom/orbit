@@ -1,14 +1,14 @@
 // @flow
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
 
-import Select from "../Select";
-import Stack from "../Stack";
-import ButtonLink from "../Button";
-import defaultTheme from "../defaultTheme";
-import Translate from "../Translate";
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, MappedOptions } from "./index";
+import Select from '../Select';
+import Stack from '../Stack';
+import ButtonLink from '../Button';
+import defaultTheme from '../defaultTheme';
+import Translate from '../Translate';
+import type { Props, MappedOptions } from './index.js.flow';
 
 const StyledNavigation = styled.div`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */
@@ -51,7 +51,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
     const selected = links[index - 1];
 
     if (selected) {
-      selected.setAttribute("tabindex", "-1");
+      selected.setAttribute('tabindex', '-1');
       selected.focus();
     }
   };
@@ -71,11 +71,11 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
 
   const handleFocus = () => {
     if (links.length === 0) {
-      const selectedLinks = document.querySelectorAll("[data-a11y-section]");
+      const selectedLinks = document.querySelectorAll('[data-a11y-section]');
       const mappedSections = [
         {
           value: 0,
-          label: "Jump to section", // TODO: Dictionary
+          label: 'Jump to section', // TODO: Dictionary
         },
         ...Object.keys(selectedLinks).map(key => ({
           value: Number(key) + 1,
@@ -93,7 +93,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
         const mappedPages = [
           {
             value: 0,
-            label: "Common actions", // TODO: Dictionary
+            label: 'Common actions', // TODO: Dictionary
           },
           ...actions.map((el, i) => {
             return { value: i + 1, label: el.name };

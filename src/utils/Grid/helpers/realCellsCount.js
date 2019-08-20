@@ -1,6 +1,6 @@
 // @flow
 
-import type { RealCellsCount } from "./realCellsCount";
+import type { RealCellsCount } from './realCellsCount.js.flow';
 /*
   Function to calculate the real count of cells (columns or rows).
   It's needed for calculating proper auto placement in IE.

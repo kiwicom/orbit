@@ -1,23 +1,23 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
-import Airplane from "../icons/Airplane";
-import ShowMore from "../icons/ShowMore";
-import ShowLess from "../icons/ShowLess";
-import Bus from "../icons/Bus";
-import Train from "../icons/Train";
-import Text, { StyledText } from "../Text";
-import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
-import { getSize } from "../Icon";
-import { ICON_SIZES } from "../Icon/consts";
-import { right, rtlSpacing } from "../utils/rtl";
-import KEY_CODE_MAP from "../common/keyMaps";
-import Truncate from "../Truncate";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State, ExpandedType } from "./index";
+import defaultTheme from '../defaultTheme';
+import CarrierLogo, { StyledCarrierLogo } from '../CarrierLogo';
+import Airplane from '../icons/Airplane';
+import ShowMore from '../icons/ShowMore';
+import ShowLess from '../icons/ShowLess';
+import Bus from '../icons/Bus';
+import Train from '../icons/Train';
+import Text, { StyledText } from '../Text';
+import { CARRIER_TYPE_OPTIONS } from '../CarrierLogo/consts';
+import { getSize } from '../Icon';
+import { ICON_SIZES } from '../Icon/consts';
+import { right, rtlSpacing } from '../utils/rtl';
+import KEY_CODE_MAP from '../common/keyMaps';
+import Truncate from '../Truncate';
+import type { Props, State, ExpandedType } from './index.js.flow';
 
 export const StyledTripSegmentMilestone = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
   &:before,
   &:after {
     position: absolute;
-    content: " ";
+    content: ' ';
     width: 0;
     height: 0;
     border-style: solid;
@@ -182,7 +182,7 @@ StyledTripSegmentOverviewTime.defaultProps = {
 
 const StyledTripSegmentChildren = styled.div`
   width: 100%;
-  padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceXSmall} 0` : "0")};
+  padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceXSmall} 0` : '0')};
   margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall}`};
   border-top: ${({ theme, expanded }) =>
     expanded
@@ -248,11 +248,11 @@ StyledTripSegment.defaultProps = {
 
 const MilestoneIcon = ({ type }) => {
   switch (type) {
-    case "airline":
+    case 'airline':
       return <Airplane size="small" color="secondary" />;
-    case "train":
+    case 'train':
       return <Train size="small" color="secondary" />;
-    case "bus":
+    case 'bus':
       return <Bus size="small" color="secondary" />;
     default:
       return <Airplane size="small" color="secondary" />;
@@ -261,6 +261,7 @@ const MilestoneIcon = ({ type }) => {
 
 class TripSegment extends React.PureComponent<Props, State> {
   node = React.createRef<HTMLDivElement>();
+  timeout: TimeoutID;
 
   constructor(props: Props) {
     super(props);
@@ -314,8 +315,6 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  timeout: TimeoutID;
-
   render() {
     const {
       children,
@@ -326,7 +325,7 @@ class TripSegment extends React.PureComponent<Props, State> {
       duration,
       carrier,
       dataTest,
-      tabIndex = "0",
+      tabIndex = '0',
     } = this.props;
     const { expanded, initialExpanded, contentHeight } = this.state;
 

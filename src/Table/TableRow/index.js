@@ -1,8 +1,9 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import type { Props } from ".";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import type { Props } from './index.js.flow';
 
 export const StyledTableRow = styled(({ children, className }) => (
   <tr className={className}>{children}</tr>

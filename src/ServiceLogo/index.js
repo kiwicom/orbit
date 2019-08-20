@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SIZE_OPTIONS, baseURL } from "./consts";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { SIZE_OPTIONS, baseURL } from './consts';
+import type { Props } from './index.js.flow';
 
 const getHeight = (theme, size) => {
   const tokens = {
@@ -18,7 +18,7 @@ const getHeight = (theme, size) => {
   return tokens.height[size];
 };
 
-const getColor = greyScale => (greyScale ? "logos-grayscale" : "logos");
+const getColor = greyScale => (greyScale ? 'logos-grayscale' : 'logos');
 
 export const StyledServiceLogo = styled(({ className, name, size, grayScale, theme, dataTest }) => (
   <img

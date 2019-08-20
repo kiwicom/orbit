@@ -1,5 +1,6 @@
 // @flow
-import type { ShouldUseFlex } from "./shouldUseFlex";
+
+import type { ShouldUseFlex } from './shouldUseFlex.js.flow';
 
 const shouldUseFlex: ShouldUseFlex = props =>
   props.flex ||
@@ -7,10 +8,10 @@ const shouldUseFlex: ShouldUseFlex = props =>
     .map(
       item =>
         !(
-          item === "children" ||
-          item === "spaceAfter" ||
-          item === "spacing" ||
-          item === "dataTest"
+          item === 'children' ||
+          item === 'spaceAfter' ||
+          item === 'spacing' ||
+          item === 'dataTest'
         ),
     )
     .indexOf(true) !== -1;

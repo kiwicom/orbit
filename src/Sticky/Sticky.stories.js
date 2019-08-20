@@ -1,23 +1,24 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { select, number } from "@storybook/addon-knobs/react";
 
-import * as Icons from "../icons";
-import Card from "../Card";
-import CardHeader from "../Card/CardHeader";
-import CardSection from "../Card/CardSection";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { select, number } from '@storybook/addon-knobs/react';
 
-import FloatingCard from "./index";
+import * as Icons from '../icons';
+import Card from '../Card';
+import CardHeader from '../Card/CardHeader';
+import CardSection from '../Card/CardSection';
 
-const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
+import FloatingCard from './index';
+
+const getIcons = defaultIcon => select('Icon', Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Sticky", module).add("Playground", () => {
-  const Icon = getIcon(getIcons("Airplane"));
-  const offset = number("offset", 0);
+storiesOf('Sticky', module).add('Playground', () => {
+  const Icon = getIcon(getIcons('Airplane'));
+  const offset = number('offset', 0);
   return (
-    <div style={{ height: "800px" }}>
+    <div style={{ height: '800px' }}>
       <FloatingCard offset={offset}>
         <Card>
           <CardHeader

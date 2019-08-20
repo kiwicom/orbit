@@ -1,132 +1,133 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { text, select } from "@storybook/addon-knobs";
 
-import { TYPE_OPTIONS } from "../Badge/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import * as Icons from "../icons/index";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text, select } from '@storybook/addon-knobs';
 
-import NotificationBadge from "./index";
+import { TYPE_OPTIONS } from '../Badge/consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import * as Icons from '../icons/index';
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+import NotificationBadge from './index';
+
+const getIcons = defaultIcon => select('Icon', [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("NotificationBadge", module)
+storiesOf('NotificationBadge', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       const Icon = getIcon(getIcons(null));
       return <NotificationBadge icon={Icon && <Icon />}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
 
   .add(
-    "Neutral",
+    'Neutral',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.NEUTRAL}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Info",
+    'Info',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.INFO}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Info Inverted",
+    'Info Inverted',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.INFO_INVERTED}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Success",
+    'Success',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.SUCCESS}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Warning",
+    'Warning',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.WARNING}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Critical",
+    'Critical',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.CRITICAL}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Critical Inverted",
+    'Critical Inverted',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_INVERTED}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Dark",
+    'Dark',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return <NotificationBadge type={TYPE_OPTIONS.DARK}>{content}</NotificationBadge>;
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "White",
+    'White',
     () => {
-      const content = text("Content", "10");
+      const content = text('Content', '10');
       return (
-        <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
+        <div style={{ backgroundColor: '#46515e', padding: '10px' }}>
           <NotificationBadge type={TYPE_OPTIONS.WHITE}>{content}</NotificationBadge>
         </div>
       );
     },
     {
-      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+      info: 'Check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const content = text("Content", "10");
-      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
-      const dataTest = text("dataTest", "test");
-      const ariaLabel = text("ariaLabel", "additional information for screen readers");
-      const Icon = getIcon(getIcons("Airplane"));
+      const content = text('Content', '10');
+      const type = select('Type', Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
+      const dataTest = text('dataTest', 'test');
+      const ariaLabel = text('ariaLabel', 'additional information for screen readers');
+      const Icon = getIcon(getIcons('Airplane'));
 
       return (
         <NotificationBadge
@@ -141,14 +142,14 @@ storiesOf("NotificationBadge", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Accessibility",
+    'Accessibility',
     () => {
-      const content = text("Content", "10");
-      const ariaLabel = text("ariaLabel", "additional information for screen readers");
+      const content = text('Content', '10');
+      const ariaLabel = text('ariaLabel', 'additional information for screen readers');
 
       return (
         <NotificationBadge type="info" ariaLabel={ariaLabel}>
@@ -157,17 +158,17 @@ storiesOf("NotificationBadge", module)
       );
     },
     {
-      info: "This is a preview of component accessibility props",
+      info: 'This is a preview of component accessibility props',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <NotificationBadge type="info">10</NotificationBadge>
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

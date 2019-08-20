@@ -1,60 +1,61 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, array, select } from "@storybook/addon-knobs";
 
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, array, select } from '@storybook/addon-knobs';
 
-import InputFile from "./index";
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
 
-storiesOf("InputFile", module)
+import InputFile from './index';
+
+storiesOf('InputFile', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const label = text("Label", "Label");
+      const label = text('Label', 'Label');
       return (
         <InputFile
           label={label}
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-          onRemoveFile={action("removeFile")}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onRemoveFile={action('removeFile')}
         />
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Filled with file",
+    'Filled with file',
     () => {
-      const label = text("Label", "Label");
-      const fileName = text("fileName", "file.png");
+      const label = text('Label', 'Label');
+      const fileName = text('fileName', 'file.png');
 
       return (
         <InputFile
           label={label}
           fileName={fileName}
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-          onRemoveFile={action("removeFile")}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onRemoveFile={action('removeFile')}
         />
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "With help",
+    'With help',
     () => {
-      const label = text("Label", "Label");
+      const label = text('Label', 'Label');
 
       return (
         <InputFile
@@ -64,53 +65,53 @@ storiesOf("InputFile", module)
               Supported files: <strong>PNG, JPG, PDF</strong>
             </div>
           }
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-          onRemoveFile={action("removeFile")}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onRemoveFile={action('removeFile')}
         />
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "With error",
+    'With error',
     () => {
-      const label = text("Label", "Label");
-      const error = text("Error", "Error message (explain how to solve it)");
+      const label = text('Label', 'Label');
+      const error = text('Error', 'Error message (explain how to solve it)');
 
       return (
         <InputFile
           label={label}
           error={error}
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-          onRemoveFile={action("removeFile")}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onRemoveFile={action('removeFile')}
         />
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const label = text("Label", "Label");
-      const title = text("Title", "Please select file");
-      const name = text("Name", "fileInput");
-      const placeholder = text("Placeholder", "No file has been selected yet");
-      const fileName = text("fileName", undefined);
-      const error = text("Error", "No file has been selected yet");
-      const help = text("Help", undefined);
-      const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
-      const dataTest = text("dataTest", "test");
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const label = text('Label', 'Label');
+      const title = text('Title', 'Please select file');
+      const name = text('Name', 'fileInput');
+      const placeholder = text('Placeholder', 'No file has been selected yet');
+      const fileName = text('fileName', undefined);
+      const error = text('Error', 'No file has been selected yet');
+      const help = text('Help', undefined);
+      const allowedFileTypes = array('allowedFileTypes', ['media/*', 'image/*']);
+      const dataTest = text('dataTest', 'test');
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <InputFile
@@ -123,27 +124,27 @@ storiesOf("InputFile", module)
           help={help}
           dataTest={dataTest}
           allowedFileTypes={allowedFileTypes}
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-          onRemoveFile={action("removeFile")}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onRemoveFile={action('removeFile')}
           spaceAfter={spaceAfter}
         />
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <InputFile label="My label" />
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

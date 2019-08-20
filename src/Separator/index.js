@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import getSpacingToken from "../common/getSpacingToken";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import getSpacingToken from '../common/getSpacingToken';
+import type { Props } from './index.js.flow';
 
 const StyledSeparator = styled.hr`
   width: 100%;

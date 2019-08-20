@@ -1,63 +1,64 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { boolean, select, object, text } from "@storybook/addon-knobs";
 
-import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "./consts";
-import Edit from "../icons/Edit";
-import Button from "../Button";
-import InputField from "../InputField";
-import InputStepper from "../InputStepper";
-import Text from "../Text";
-import TextLink from "../TextLink";
-import Airplane from "../icons/Airplane";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
-import ButtonGroup from "../ButtonGroup";
-import Card from "../Card";
-import Checkbox from "../Checkbox";
-import Alert from "../Alert";
-import Badge from "../Badge";
-import ButtonLink from "../ButtonLink";
-import CardHeader from "../Card/CardHeader";
-import CarrierLogo from "../CarrierLogo";
-import Radio from "../Radio";
-import CountryFlag from "../CountryFlag";
-import Illustration from "../Illustration";
-import ServiceLogo from "../ServiceLogo";
-import Heading from "../Heading";
-import Select from "../Select";
-import InputGroup from "../InputGroup";
-import Table from "../Table";
-import TableHead from "../Table/TableHead";
-import TableRow from "../Table/TableRow";
-import TableCell from "../Table/TableCell";
-import TableBody from "../Table/TableBody";
-import Textarea from "../Textarea";
-import Tile from "../Tile";
-import CardSection from "../Card/CardSection";
-import RatingStars from "../RatingStars";
-import StopoverArrow from "../StopoverArrow";
-import List from "../List";
-import ListItem from "../List/ListItem";
-import TripLayover from "../TripSector/TripLayover";
-import InformationCircle from "../icons/InformationCircle";
-import TripSegment from "../TripSegment";
-import TripDate from "../TripSector/TripDate";
-import TripSector from "../TripSector";
-import Clock from "../icons/Clock";
-import Check from "../icons/Check";
-import FlightReturn from "../icons/FlightReturn";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import ChoiceGroup from "../ChoiceGroup";
-import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
-import CardSectionContent from "../Card/CardSection/CardSectionContent";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { boolean, select, object, text } from '@storybook/addon-knobs';
 
-import Stack from "./index";
+import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from './consts';
+import Edit from '../icons/Edit';
+import Button from '../Button';
+import InputField from '../InputField';
+import InputStepper from '../InputStepper';
+import Text from '../Text';
+import TextLink from '../TextLink';
+import Airplane from '../icons/Airplane';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
+import ButtonGroup from '../ButtonGroup';
+import Card from '../Card';
+import Checkbox from '../Checkbox';
+import Alert from '../Alert';
+import Badge from '../Badge';
+import ButtonLink from '../ButtonLink';
+import CardHeader from '../Card/CardHeader';
+import CarrierLogo from '../CarrierLogo';
+import Radio from '../Radio';
+import CountryFlag from '../CountryFlag';
+import Illustration from '../Illustration';
+import ServiceLogo from '../ServiceLogo';
+import Heading from '../Heading';
+import Select from '../Select';
+import InputGroup from '../InputGroup';
+import Table from '../Table';
+import TableHead from '../Table/TableHead';
+import TableRow from '../Table/TableRow';
+import TableCell from '../Table/TableCell';
+import TableBody from '../Table/TableBody';
+import Textarea from '../Textarea';
+import Tile from '../Tile';
+import CardSection from '../Card/CardSection';
+import RatingStars from '../RatingStars';
+import StopoverArrow from '../StopoverArrow';
+import List from '../List';
+import ListItem from '../List/ListItem';
+import TripLayover from '../TripSector/TripLayover';
+import InformationCircle from '../icons/InformationCircle';
+import TripSegment from '../TripSegment';
+import TripDate from '../TripSector/TripDate';
+import TripSector from '../TripSector';
+import Clock from '../icons/Clock';
+import Check from '../icons/Check';
+import FlightReturn from '../icons/FlightReturn';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import ChoiceGroup from '../ChoiceGroup';
+import CardSectionHeader from '../Card/CardSection/CardSectionHeader';
+import CardSectionContent from '../Card/CardSection/CardSectionContent';
 
-storiesOf("Stack", module)
+import Stack from './index';
+
+storiesOf('Stack', module)
   .add(
-    "Default",
+    'Default',
     () => (
       <Stack>
         <Button type="success" iconLeft={<Airplane />}>
@@ -68,22 +69,22 @@ storiesOf("Stack", module)
     ),
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Mobile properties",
+    'Mobile properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)]);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)]);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)]);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)]);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
         <Stack
@@ -107,22 +108,22 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "MediumMobile properties",
+    'MediumMobile properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)], ALIGNS.END);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       const mediumMobile = {
         inline,
         direction,
@@ -145,22 +146,22 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "LargeMobile properties",
+    'LargeMobile properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)], ALIGNS.END);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       const largeMobile = {
         inline,
         direction,
@@ -183,22 +184,22 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Tablet properties",
+    'Tablet properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)], ALIGNS.END);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       const tablet = {
         inline,
         direction,
@@ -221,22 +222,22 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Desktop properties",
+    'Desktop properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)], ALIGNS.END);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       const desktop = {
         inline,
         direction,
@@ -259,22 +260,22 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "LargeDesktop properties",
+    'LargeDesktop properties',
     () => {
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", "auto");
-      const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)]);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', 'auto');
+      const align = select('Align', [null, ...Object.values(ALIGNS)], ALIGNS.END);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       const largeDesktop = {
         inline,
         direction,
@@ -297,11 +298,11 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Nested example",
+    'Nested example',
     () => (
       <Stack spacing="comfy" direction="column" align="start">
         <Stack spacing="condensed" direction="row" inline>
@@ -319,39 +320,39 @@ storiesOf("Stack", module)
     ),
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const dataTest = text("dataTest", "test");
-      const flex = boolean("flex", false);
-      const inline = boolean("Inline", false);
-      const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
-      const wrap = boolean("Wrap", false);
-      const grow = boolean("Grow", true);
-      const shrink = boolean("Shrink", false);
-      const basis = text("Basis", undefined);
-      const align = select("Align", [null, ...Object.values(ALIGNS)]);
-      const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      const mediumMobile = object("mediumMobile", {
+      const dataTest = text('dataTest', 'test');
+      const flex = boolean('flex', false);
+      const inline = boolean('Inline', false);
+      const direction = select('Direction', [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
+      const wrap = boolean('Wrap', false);
+      const grow = boolean('Grow', true);
+      const shrink = boolean('Shrink', false);
+      const basis = text('Basis', undefined);
+      const align = select('Align', [null, ...Object.values(ALIGNS)]);
+      const justify = select('Justify', [null, ...Object.values(JUSTIFY)]);
+      const spacing = select('Spacing', [null, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
+      const mediumMobile = object('mediumMobile', {
         direction: DIRECTIONS.COLUMN,
       });
-      const largeMobile = object("largeMobile", {
+      const largeMobile = object('largeMobile', {
         align: JUSTIFY.END,
       });
-      const tablet = object("tablet", {
+      const tablet = object('tablet', {
         spacing: SPACINGS.CONDENSED,
       });
-      const desktop = object("desktop", {
+      const desktop = object('desktop', {
         justify: JUSTIFY.BETWEEN,
         direction: DIRECTIONS.ROW,
         align: ALIGNS.START,
       });
-      const largeDesktop = object("largeDesktop", {
+      const largeDesktop = object('largeDesktop', {
         spacing: SPACINGS.LOOSE,
       });
 
@@ -382,11 +383,11 @@ storiesOf("Stack", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Components preview",
+    'Components preview',
     () => (
       <Stack direction="column">
         <Stack direction="row" align="center">
@@ -474,16 +475,16 @@ storiesOf("Stack", module)
         <Stack direction="row" justify="between">
           <CarrierLogo
             carriers={[
-              { code: "YO", name: "Lorem ipsum", type: "bus" },
-              { code: "LAL", name: "Lorem ipsum", type: "train" },
-              { code: "KEK", name: "Lorem ipsum", type: "airline" },
+              { code: 'YO', name: 'Lorem ipsum', type: 'bus' },
+              { code: 'LAL', name: 'Lorem ipsum', type: 'train' },
+              { code: 'KEK', name: 'Lorem ipsum', type: 'airline' },
             ]}
           />
           <CarrierLogo
             carriers={[
-              { code: "YO", name: "Lorem ipsum", type: "bus" },
-              { code: "LAL", name: "Lorem ipsum", type: "train" },
-              { code: "KEK", name: "Lorem ipsum", type: "airline" },
+              { code: 'YO', name: 'Lorem ipsum', type: 'bus' },
+              { code: 'LAL', name: 'Lorem ipsum', type: 'train' },
+              { code: 'KEK', name: 'Lorem ipsum', type: 'airline' },
             ]}
           />
         </Stack>
@@ -500,7 +501,7 @@ storiesOf("Stack", module)
             label="What was the reason for your cancellation?"
             labelSize="normal"
             labelElement="h4"
-            onChange={action("onChange")}
+            onChange={action('onChange')}
           >
             <Checkbox label="Reason one" value="one" />
             <Checkbox label="Reason two" value="two" />
@@ -510,7 +511,7 @@ storiesOf("Stack", module)
             label="What was the reason for your cancellation?"
             labelSize="normal"
             labelElement="h4"
-            onChange={action("onChange")}
+            onChange={action('onChange')}
           >
             <Checkbox label="Reason one" value="one" />
             <Checkbox label="Reason two" value="two" />
@@ -558,9 +559,9 @@ storiesOf("Stack", module)
           <Select
             label="My label"
             options={[
-              { value: 1, label: "First item" },
-              { value: 2, label: "Second item" },
-              { value: 3, label: "Third item" },
+              { value: 1, label: 'First item' },
+              { value: 2, label: 'Second item' },
+              { value: 3, label: 'Third item' },
             ]}
           />
           <InputGroup label="My label">
@@ -568,9 +569,9 @@ storiesOf("Stack", module)
             <Select
               label="My label"
               options={[
-                { value: 1, label: "First item" },
-                { value: 2, label: "Second item" },
-                { value: 3, label: "Third item" },
+                { value: 1, label: 'First item' },
+                { value: 2, label: 'Second item' },
+                { value: 3, label: 'Third item' },
               ]}
             />
           </InputGroup>
@@ -580,9 +581,9 @@ storiesOf("Stack", module)
           <Select
             label="My label"
             options={[
-              { value: 1, label: "First item" },
-              { value: 2, label: "Second item" },
-              { value: 3, label: "Third item" },
+              { value: 1, label: 'First item' },
+              { value: 2, label: 'Second item' },
+              { value: 3, label: 'Third item' },
             ]}
           />
           <InputGroup label="My label" flex="1 1 100%">
@@ -590,9 +591,9 @@ storiesOf("Stack", module)
             <Select
               label="My label"
               options={[
-                { value: 1, label: "First item" },
-                { value: 2, label: "Second item" },
-                { value: 3, label: "Third item" },
+                { value: 1, label: 'First item' },
+                { value: 2, label: 'Second item' },
+                { value: 3, label: 'Third item' },
               ]}
             />
           </InputGroup>
@@ -822,9 +823,9 @@ storiesOf("Stack", module)
             <TripDate duration="15h 10m">Mon 22 Oct</TripDate>
             <TripSegment
               carrier={{
-                code: "FR",
-                type: "airline",
-                name: "Ryanair",
+                code: 'FR',
+                type: 'airline',
+                name: 'Ryanair',
               }}
               duration="2h"
               departure="Barcelona BCN"
@@ -833,7 +834,7 @@ storiesOf("Stack", module)
               arrivalTime="8:30"
             >
               <List size="small" type="secondary">
-                <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+                <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
                   Airline: Ryanair
                 </ListItem>
                 <ListItem icon={<InformationCircle color="secondary" />}>
@@ -855,9 +856,9 @@ storiesOf("Stack", module)
             </TripLayover>
             <TripSegment
               carrier={{
-                code: "REGIOJETT",
-                type: "bus",
-                name: "RegioJet",
+                code: 'REGIOJETT',
+                type: 'bus',
+                name: 'RegioJet',
               }}
               duration="3h"
               departure="Paris CDG"
@@ -882,9 +883,9 @@ storiesOf("Stack", module)
             </TripLayover>
             <TripSegment
               carrier={{
-                code: "FLIXBUS",
-                type: "bus",
-                name: "FLIXBUS",
+                code: 'FLIXBUS',
+                type: 'bus',
+                name: 'FLIXBUS',
               }}
               duration="1h 30m"
               departure="Lille XDB"
@@ -913,9 +914,9 @@ storiesOf("Stack", module)
             <TripDate>Tue 23 Oct</TripDate>
             <TripSegment
               carrier={{
-                code: "UA",
-                type: "airline",
-                name: "United Airlines",
+                code: 'UA',
+                type: 'airline',
+                name: 'United Airlines',
               }}
               duration="10h 55m"
               departure="City of Brussels BRU"
@@ -934,9 +935,9 @@ storiesOf("Stack", module)
             <TripDate>Mon 22 Oct</TripDate>
             <TripSegment
               carrier={{
-                code: "FR",
-                type: "airline",
-                name: "Ryanair",
+                code: 'FR',
+                type: 'airline',
+                name: 'Ryanair',
               }}
               duration="2h"
               departure="Barcelona BCN"
@@ -945,7 +946,7 @@ storiesOf("Stack", module)
               arrivalTime="8:30"
             >
               <List size="small" type="secondary">
-                <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+                <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
                   Airline: Ryanair
                 </ListItem>
                 <ListItem icon={<InformationCircle color="secondary" />}>
@@ -967,9 +968,9 @@ storiesOf("Stack", module)
             </TripLayover>
             <TripSegment
               carrier={{
-                code: "REGIOJETT",
-                type: "bus",
-                name: "RegioJet",
+                code: 'REGIOJETT',
+                type: 'bus',
+                name: 'RegioJet',
               }}
               duration="3h"
               departure="Paris CDG"
@@ -989,11 +990,11 @@ storiesOf("Stack", module)
     ),
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Stack spacing="comfy" direction="column" align="start">
@@ -1012,6 +1013,6 @@ storiesOf("Stack", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

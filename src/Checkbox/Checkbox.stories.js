@@ -1,44 +1,44 @@
 // @flow
 
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean } from '@storybook/addon-knobs';
 
-import Text from "../Text";
-import TextLink from "../TextLink";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Text from '../Text';
+import TextLink from '../TextLink';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-import Checkbox from "./index";
+import Checkbox from './index';
 
-storiesOf("CheckBox", module)
+storiesOf('CheckBox', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const label = text("Label", "Label");
-      const checked = boolean("Checked", false);
-      return <Checkbox label={label} checked={checked} onChange={action("changed")} />;
+      const label = text('Label', 'Label');
+      const checked = boolean('Checked', false);
+      return <Checkbox label={label} checked={checked} onChange={action('changed')} />;
     },
     {
-      info: "Checkbox needs only label and onChange by default.",
+      info: 'Checkbox needs only label and onChange by default.',
     },
   )
   .add(
-    "With help",
+    'With help',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "value");
-      const info = text("Info", "Additional information to this choice");
-      return <Checkbox label={label} value={value} info={info} onChange={action("changed")} />;
+      const label = text('Label', 'Label');
+      const value = text('Value', 'value');
+      const info = text('Info', 'Additional information to this choice');
+      return <Checkbox label={label} value={value} info={info} onChange={action('changed')} />;
     },
     {
-      info: "Additionally you can add info to this component.",
+      info: 'Additionally you can add info to this component.',
     },
   )
   .add(
-    "With TextLink in label",
+    'With TextLink in label',
     () => {
-      const checked = boolean("checked", true);
+      const checked = boolean('checked', true);
       return (
         <Checkbox
           label={
@@ -50,25 +50,25 @@ storiesOf("CheckBox", module)
           }
           checked={checked}
           value="value"
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       );
     },
     {
-      info: "Additionally you can add info to this component.",
+      info: 'Additionally you can add info to this component.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "value");
-      const checked = boolean("Checked", true);
-      const disabled = boolean("Disabled", true);
-      const hasError = boolean("hasError", false);
-      const info = text("Info", "Additional information for this choice");
-      const dataTest = text("dataTest", "test");
-      const name = text("name", "name");
+      const label = text('Label', 'Label');
+      const value = text('Value', 'value');
+      const checked = boolean('Checked', true);
+      const disabled = boolean('Disabled', true);
+      const hasError = boolean('hasError', false);
+      const info = text('Info', 'Additional information for this choice');
+      const dataTest = text('dataTest', 'test');
+      const name = text('name', 'name');
       return (
         <Checkbox
           label={label}
@@ -79,16 +79,16 @@ storiesOf("CheckBox", module)
           hasError={hasError}
           dataTest={dataTest}
           info={info}
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       );
     },
     {
-      info: "Playground of Checkbox",
+      info: 'Playground of Checkbox',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Checkbox
@@ -101,11 +101,11 @@ storiesOf("CheckBox", module)
           }
           checked
           value="value"
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

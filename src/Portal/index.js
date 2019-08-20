@@ -1,18 +1,23 @@
 // @flow
-import * as React from "react";
-import ReactDOM from "react-dom";
 
-import type { Props } from "./index";
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+import type { Props } from './index.js.flow';
 
 export default class Portal extends React.Component<Props> {
+  node: ?HTMLElement;
+
+  el: ?HTMLElement;
+
   constructor(props: Props) {
     super(props);
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       this.node =
         this.props.element && document.getElementById(this.props.element)
           ? document.getElementById(this.props.element)
           : document.body;
-      this.el = document.createElement("div");
+      this.el = document.createElement('div');
     }
   }
 
@@ -28,13 +33,9 @@ export default class Portal extends React.Component<Props> {
     }
   }
 
-  node: ?HTMLElement;
-
-  el: ?HTMLElement;
-
   render() {
     const { children } = this.props;
-    if (typeof window !== "undefined" && this.el) {
+    if (typeof window !== 'undefined' && this.el) {
       return ReactDOM.createPortal(children, this.el);
     }
     return null;

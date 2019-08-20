@@ -1,20 +1,21 @@
 // @flow
-import { css } from "styled-components";
 
-import mediaQueries from "../../utils/mediaQuery/index";
-import { DEVICES } from "../../utils/mediaQuery/consts";
-import type { GetViewportHideStyles } from "./getViewportHideStyles";
+import { css } from 'styled-components';
 
-const getViewportHideStyles: GetViewportHideStyles = (on, resolveDisplayProp = () => "block") =>
+import mediaQueries from '../../utils/mediaQuery/index';
+import { DEVICES } from '../../utils/mediaQuery/consts';
+import type { GetViewportHideStyles } from './getViewportHideStyles.js.flow';
+
+const getViewportHideStyles: GetViewportHideStyles = (on, resolveDisplayProp = () => 'block') =>
   DEVICES.map(viewport =>
     viewport in mediaQueries
       ? css`
           ${mediaQueries[viewport](css`
-            display: ${on.indexOf(viewport) !== -1 ? "none" : resolveDisplayProp()};
+            display: ${on.indexOf(viewport) !== -1 ? 'none' : resolveDisplayProp()};
           `)};
         `
       : // "smallMobile" is not media query so we need to check it explicitly
-        viewport === "smallMobile" &&
+        viewport === 'smallMobile' &&
         on.indexOf(viewport) !== -1 &&
         css`
           display: none;

@@ -1,18 +1,19 @@
 // @flow
-import * as React from "react";
-import { shallow, mount } from "enzyme";
 
-import Tile from "../index";
-import Airplane from "../../icons/Airplane";
+import * as React from 'react';
+import { shallow, mount } from 'enzyme';
 
-const title = "Tile title";
-const description = "Description";
-const href = "https://www.kiwi.com/";
+import Tile from '../index';
+import Airplane from '../../icons/Airplane';
+
+const title = 'Tile title';
+const description = 'Description';
+const href = 'https://www.kiwi.com/';
 const external = true;
 const onClick = jest.fn();
-const dataTest = "test";
+const dataTest = 'test';
 
-describe("Tile Default", () => {
+describe('Tile Default', () => {
   const component = (
     <Tile
       icon={<Airplane />}
@@ -27,38 +28,38 @@ describe("Tile Default", () => {
   const shallowedComponent = shallow(component);
   const mountedComponent = mount(component);
 
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(shallowedComponent).toMatchSnapshot();
   });
 
-  it("should contain icon, title and description", () => {
-    const tileHeader = mountedComponent.find("TileHeader");
-    expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);
-    expect(tileHeader.find("TileHeader__StyledTileDescription").exists()).toBe(true);
+  it('should contain icon, title and description', () => {
+    const tileHeader = mountedComponent.find('TileHeader');
+    expect(tileHeader.find('TileHeader__StyledTileTitle').exists()).toBe(true);
+    expect(tileHeader.find('TileHeader__StyledTileDescription').exists()).toBe(true);
     expect(
       tileHeader
-        .find("Icon__StyledIcon")
-        .find("svg")
+        .find('Icon__StyledIcon')
+        .find('svg')
         .exists(),
     ).toBe(true);
   });
 
-  it("should render rel when external", () => {
-    expect(shallowedComponent.render().prop("rel")).toBe("noopener noreferrer");
+  it('should render rel when external', () => {
+    expect(shallowedComponent.render().prop('rel')).toBe('noopener noreferrer');
   });
 
-  it("should render proper element", () => {
-    expect(shallowedComponent.render().prop("name")).toBe("a");
+  it('should render proper element', () => {
+    expect(shallowedComponent.render().prop('name')).toBe('a');
   });
 
-  it("should execute onClick method", () => {
-    shallowedComponent.find("TileHeader").simulate("click");
-    expect(onClick).toHaveBeenCalled();
+  it('should execute onClick method', () => {
+    shallowedComponent.find('TileHeader').simulate('click');
+    expect(onClick).toHaveBeenCalledWith();
   });
 });
 
-describe("Tile Expandable", () => {
-  const children = "This is sample content of expandable tile";
+describe('Tile Expandable', () => {
+  const children = 'This is sample content of expandable tile';
 
   const notDefaultExpandedTile = (
     <Tile
@@ -88,27 +89,27 @@ describe("Tile Expandable", () => {
     </Tile>
   );
 
-  it("should call onClick on Expandable Tile", () => {
-    shallowednotDefaultExpandedTile.find("TileHeader").simulate("click");
-    expect(onClick).toHaveBeenCalled();
+  it('should call onClick on Expandable Tile', () => {
+    shallowednotDefaultExpandedTile.find('TileHeader').simulate('click');
+    expect(onClick).toHaveBeenCalledWith();
   });
 
-  it("should render proper element", () => {
-    expect(shallowednotDefaultExpandedTile.render().prop("name")).toBe("div");
+  it('should render proper element', () => {
+    expect(shallowednotDefaultExpandedTile.render().prop('name')).toBe('div');
   });
 
-  it("should contain children", () => {
-    expect(shallowednotDefaultExpandedTile.find("TileExpandable").exists()).toBe(true);
+  it('should contain children', () => {
+    expect(shallowednotDefaultExpandedTile.find('TileExpandable').exists()).toBe(true);
   });
 
-  it("is default expanded children visible", () => {
+  it('is default expanded children visible', () => {
     const shallowedDefaultExpandedTile = mount(defaultExpandedTile);
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "max-height",
+    expect(shallowedDefaultExpandedTile.find('TileExpandable')).toHaveStyleRule(
+      'max-height',
       undefined,
     );
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "animation",
+    expect(shallowedDefaultExpandedTile.find('TileExpandable')).toHaveStyleRule(
+      'animation',
       undefined,
     );
   });

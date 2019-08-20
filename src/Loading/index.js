@@ -1,34 +1,34 @@
 // @flow
-import * as React from "react";
-import styled, { keyframes, css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import TYPE_OPTIONS from "./consts";
-import { left, right } from "../utils/rtl";
+import * as React from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import TYPE_OPTIONS from './consts';
+import { left, right } from '../utils/rtl';
+import type { Props } from './index.js.flow';
 
 const getHeight = ({ type }) => {
   const tokens = {
-    [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
-    [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
-    [TYPE_OPTIONS.BOX_LOADER]: "80px",
-    [TYPE_OPTIONS.PAGE_LOADER]: "120px",
-    [TYPE_OPTIONS.INLINE_LOADER]: "19px",
+    [TYPE_OPTIONS.BUTTON_LOADER]: '100%',
+    [TYPE_OPTIONS.SEARCH_LOADER]: '40px',
+    [TYPE_OPTIONS.BOX_LOADER]: '80px',
+    [TYPE_OPTIONS.PAGE_LOADER]: '120px',
+    [TYPE_OPTIONS.INLINE_LOADER]: '19px',
   };
 
   return css`
-    ${type === TYPE_OPTIONS.INLINE_LOADER ? "min-height" : "height"}: ${tokens[type]}
+    ${type === TYPE_OPTIONS.INLINE_LOADER ? 'min-height' : 'height'}: ${tokens[type]}
   `;
 };
 
 const getAlign = ({ type }) => {
   const tokens = {
-    [TYPE_OPTIONS.BUTTON_LOADER]: "center",
-    [TYPE_OPTIONS.SEARCH_LOADER]: "start",
-    [TYPE_OPTIONS.BOX_LOADER]: "center",
-    [TYPE_OPTIONS.PAGE_LOADER]: "center",
-    [TYPE_OPTIONS.INLINE_LOADER]: "center",
+    [TYPE_OPTIONS.BUTTON_LOADER]: 'center',
+    [TYPE_OPTIONS.SEARCH_LOADER]: 'start',
+    [TYPE_OPTIONS.BOX_LOADER]: 'center',
+    [TYPE_OPTIONS.PAGE_LOADER]: 'center',
+    [TYPE_OPTIONS.INLINE_LOADER]: 'center',
   };
 
   return tokens[type];
@@ -51,15 +51,15 @@ export const StyledLoading = styled(({ children, className, dataTest }) => (
     {children}
   </div>
 ))`
-  position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
-  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
+  position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && 'absolute'};
+  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && '0'};
+  ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && '0'};
+  width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && '100%'};
   ${getHeight};
   padding: ${({ theme, type }) =>
     type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
-  display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
-  flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
+  display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? 'inline-flex' : 'flex')};
+  flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? 'column' : 'row')};
   justify-content: ${getAlign};
   align-items: center;
   overflow: hidden;
@@ -93,7 +93,7 @@ export const StyledSpinner = styled.svg`
 const StyledSpinnerCircle = styled.circle`
   fill: transparent;
   stroke: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteInkLighter};
+    type === TYPE_OPTIONS.BUTTON_LOADER ? 'currentColor' : theme.orbit.paletteInkLighter};
   stroke-width: 3px;
   stroke-linecap: round;
   stroke-dasharray: 128px;
@@ -156,6 +156,6 @@ const Loading = (props: Props) => {
     </StyledLoading>
   );
 };
-Loading.displayName = "Loading";
+Loading.displayName = 'Loading';
 
 export default Loading;

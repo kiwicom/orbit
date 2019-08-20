@@ -1,20 +1,20 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import Button from "../Button";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
-import FormLabel from "../FormLabel";
-import FormFeedback from "../FormFeedback";
-import Attachment from "../icons/Attachment";
-import CloseCircle from "../icons/CloseCircle";
-import type { Ref } from "../common/common.js.flow";
-import { rtlSpacing } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import getFieldDataState from "../common/getFieldDataState";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import Button from '../Button';
+import ButtonLink, { StyledButtonLink } from '../ButtonLink';
+import FormLabel from '../FormLabel';
+import FormFeedback from '../FormFeedback';
+import Attachment from '../icons/Attachment';
+import CloseCircle from '../icons/CloseCircle';
+import type { Ref } from '../common/common.js.flow';
+import { rtlSpacing } from '../utils/rtl';
+import getSpacingToken from '../common/getSpacingToken';
+import getFieldDataState from '../common/getFieldDataState';
+import type { Props } from './index.js.flow';
 
 const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontfamily};
@@ -119,8 +119,8 @@ CloseButton.defaultProps = {
 // $FlowExpected
 const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const {
-    placeholder = "No file selected",
-    title = "Select file",
+    placeholder = 'No file selected',
+    title = 'Select file',
     onRemoveFile,
     dataTest,
     spaceAfter,
@@ -169,6 +169,6 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-InputFile.displayName = "InputFile";
+InputFile.displayName = 'InputFile';
 
 export default InputFile;

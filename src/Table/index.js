@@ -1,13 +1,13 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import { StyledTableRow } from "./TableRow";
-import { StyledTableCell } from "./TableCell";
-import { StyledTableBody } from "./TableBody";
-import defaultTheme from "../defaultTheme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State } from "./index";
+import { StyledTableRow } from './TableRow';
+import { StyledTableCell } from './TableCell';
+import { StyledTableBody } from './TableBody';
+import defaultTheme from '../defaultTheme';
+import type { Props, State } from './index.js.flow';
 
 const StyledTableOuter = styled.div`
   max-width: 100%;
@@ -16,8 +16,8 @@ const StyledTableOuter = styled.div`
 
   &::after,
   &::before {
-    content: " ";
-    display: ${({ showShadows }) => (showShadows ? "block" : "none")};
+    content: ' ';
+    display: ${({ showShadows }) => (showShadows ? 'block' : 'none')};
     position: absolute;
     width: 16px;
     height: 100%;
@@ -26,13 +26,13 @@ const StyledTableOuter = styled.div`
   }
 
   &::after {
-    opacity: ${({ showRight }) => (showRight ? "1" : "0")};
+    opacity: ${({ showRight }) => (showRight ? '1' : '0')};
     background-image: ${({ theme }) => theme.orbit.backgroundTableShadowRight};
     right: 0;
   }
 
   &::before {
-    opacity: ${({ showLeft }) => (showLeft ? "1" : "0")};
+    opacity: ${({ showLeft }) => (showLeft ? '1' : '0')};
     left: 0;
     background-image: ${({ theme }) => theme.orbit.backgroundTableShadowLeft};
   }
@@ -74,7 +74,7 @@ const StyledTable = styled.table`
     }
   }
   & ${StyledTableCell} {
-    min-height: ${({ compact }) => (compact ? "24px" : "48px")};
+    min-height: ${({ compact }) => (compact ? '24px' : '48px')};
     padding: ${({ theme, compact }) =>
       compact ? theme.orbit.paddingTableCompact : theme.orbit.paddingTable};
   }
@@ -91,19 +91,19 @@ class Table extends React.PureComponent<Props, State> {
     showLeft: false,
   };
 
-  outer: { current: any | HTMLElement } = React.createRef();
+  outer: {| current: any | HTMLElement |} = React.createRef();
 
-  inner: { current: any | HTMLElement } = React.createRef();
+  inner: {| current: any | HTMLElement |} = React.createRef();
 
-  table: { current: any | HTMLElement } = React.createRef();
+  table: {| current: any | HTMLElement |} = React.createRef();
 
   componentDidMount() {
-    window.addEventListener("resize", this.handleResize);
+    window.addEventListener('resize', this.handleResize);
     this.handleResize();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleResize = () => {
@@ -149,7 +149,7 @@ class Table extends React.PureComponent<Props, State> {
 
 export default Table;
 
-export { default as TableHead } from "./TableHead";
-export { default as TableBody } from "./TableBody";
-export { default as TableRow } from "./TableRow";
-export { default as TableCell } from "./TableCell";
+export { default as TableHead } from './TableHead';
+export { default as TableBody } from './TableBody';
+export { default as TableRow } from './TableRow';
+export { default as TableCell } from './TableCell';

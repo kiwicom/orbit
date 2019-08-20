@@ -1,16 +1,17 @@
 // @flow
-import { css } from "styled-components";
 
-import { isPositionBottom, isPositionLeft, isPositionRight, isPositionTop } from "./isPosition";
-import type { Props } from "./resolveTooltipArrowPosition";
-import { TOOLTIP_ARROW_SIZE } from "../consts";
+import { css } from 'styled-components';
+
+import { isPositionBottom, isPositionLeft, isPositionRight, isPositionTop } from './isPosition';
+import type { Props } from './resolveTooltipArrowPosition.js.flow';
+import { TOOLTIP_ARROW_SIZE } from '../consts';
 
 const resolveTooltipArrowPosition = ({ position }: Props) => {
   const cssPosition =
-    (isPositionTop(position) && "bottom") ||
-    (isPositionBottom(position) && "top") ||
-    (isPositionLeft(position) && "right") ||
-    (isPositionRight(position) && "left");
+    (isPositionTop(position) && 'bottom') ||
+    (isPositionBottom(position) && 'top') ||
+    (isPositionLeft(position) && 'right') ||
+    (isPositionRight(position) && 'left');
   return css`
     ${cssPosition}: -${parseFloat(TOOLTIP_ARROW_SIZE)}px; // TODO: use token sizeTooltipArrow
   `;

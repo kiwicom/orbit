@@ -1,10 +1,11 @@
 // @flow
-import React, { useState, useRef } from "react";
-import styled from "styled-components";
 
-import Portal from "../Portal";
-import PopoverContentWrapper from "./components/ContentWrapper";
-import type { Props } from "./index.js.flow";
+import React, { useState, useRef } from 'react';
+import styled from 'styled-components';
+
+import Portal from '../Portal';
+import PopoverContentWrapper from './components/ContentWrapper';
+import type { Props } from './index.js.flow';
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -13,7 +14,7 @@ const StyledPopoverChild = styled.div`
 const Popover = ({
   children,
   content,
-  preferredPosition = "bottom",
+  preferredPosition = 'bottom',
   dataTest,
   opened,
   width,
@@ -22,7 +23,7 @@ const Popover = ({
   onOpen,
 }: Props) => {
   const [shown, setShown] = useState<boolean>(false);
-  const container: { current: React$ElementRef<*> } = useRef(null);
+  const container: {| current: React$ElementRef<any> |} = useRef(null);
 
   const resolveCallback = React.useCallback(() => {
     if (onClose && shown) onClose();
@@ -31,7 +32,7 @@ const Popover = ({
 
   const handleOut = () => {
     // If open prop is present ignore custom handler
-    if (typeof opened === "undefined") {
+    if (typeof opened === 'undefined') {
       setShown(false);
       resolveCallback();
     } else if (onClose) onClose();
@@ -39,7 +40,7 @@ const Popover = ({
 
   const handleClick = () => {
     // If open prop is present ignore custom handler
-    if (typeof opened === "undefined") {
+    if (typeof opened === 'undefined') {
       setShown(!shown);
       resolveCallback();
     } else if (onOpen) onOpen();

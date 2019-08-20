@@ -1,13 +1,13 @@
 // @flow
-import React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../../defaultTheme";
-import { CardSectionContext } from "../index";
-import Slide, { StyledSlide } from "../../../utils/Slide";
-import media from "../../../utils/mediaQuery";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme from '../../../defaultTheme';
+import { CardSectionContext } from '../index';
+import Slide, { StyledSlide } from '../../../utils/Slide';
+import media from '../../../utils/mediaQuery';
+import type { Props, State } from './index.js.flow';
 
 const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible || !expandable;
 
@@ -31,7 +31,7 @@ export const StyledCardSectionContent = styled.div`
   `)}
 
   ${StyledSlide} {
-    max-height: ${({ expandable, visible }) => expandable && visible && "none"};
+    max-height: ${({ expandable, visible }) => expandable && visible && 'none'};
   }
 `;
 
@@ -59,7 +59,7 @@ class CardSectionContent extends React.Component<Props, State> {
   componentDidMount() {
     const { expandable } = this.props;
     if (expandable) {
-      window.addEventListener("resize", this.setHeight);
+      window.addEventListener('resize', this.setHeight);
       setTimeout(this.setHeight, 10);
     }
   }
@@ -83,7 +83,7 @@ class CardSectionContent extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setHeight);
+    window.removeEventListener('resize', this.setHeight);
   }
 
   setHeight = () => {
@@ -115,6 +115,6 @@ class CardSectionContent extends React.Component<Props, State> {
 }
 
 const DecoratedComponent = withConsumer(CardSectionContent);
-DecoratedComponent.displayName = "CardSectionContent";
+DecoratedComponent.displayName = 'CardSectionContent';
 
 export default DecoratedComponent;

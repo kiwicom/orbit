@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import StarEmpty from "../icons/StarEmpty";
-import StarFull from "../icons/StarFull";
-import defaultTheme from "../defaultTheme";
-import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import StarEmpty from '../icons/StarEmpty';
+import StarFull from '../icons/StarFull';
+import defaultTheme from '../defaultTheme';
+import MAX_STARS from './consts';
+import { ICON_COLORS, ICON_SIZES } from '../Icon/consts';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props } from './index.js.flow';
 
 const StyledRatingStars = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const RatingStars = ({
     <StyledRatingStars
       data-test={dataTest}
       size={size}
-      aria-label={pureTranslate(dictionary, "ratingstar_description", {
+      aria-label={pureTranslate(dictionary, 'ratingstar_description', {
         number: ratingRounded,
         total: starsCount,
       })}

@@ -1,18 +1,19 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import TextLink from "../index";
-import ChevronRight from "../../icons/ChevronRight";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-describe("TextLink", () => {
-  const title = "My text link";
-  const href = "https://kiwi.com";
+import TextLink from '../index';
+import ChevronRight from '../../icons/ChevronRight';
+
+describe('TextLink', () => {
+  const title = 'My text link';
+  const href = 'https://kiwi.com';
   const onClick = jest.fn();
-  const type = "primary";
-  const tabIndex = "-1";
-  const dataTest = "test";
-  const rel = "nofollow";
+  const type = 'primary';
+  const tabIndex = '-1';
+  const dataTest = 'test';
+  const rel = 'nofollow';
 
   const component = shallow(
     <TextLink
@@ -31,64 +32,61 @@ describe("TextLink", () => {
 
   const componentWithoutHref = shallow(<TextLink>{title}</TextLink>);
 
-  it("should contain a children", () => {
+  it('should contain a children', () => {
     expect(component.children().exists()).toBe(true);
   });
-  it("should contain an href", () => {
-    expect(component.render().prop("href")).toBe(href);
+  it('should contain an href', () => {
+    expect(component.render().prop('href')).toBe(href);
   });
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it('should have data-test', () => {
+    expect(component.render().prop('data-test')).toBe(dataTest);
   });
-  it("should have noopener in attribute", () => {
+  it('should have noopener in attribute', () => {
     expect(
       component
         .render()
-        .prop("rel")
-        .split(" ")
-        .includes("noopener"),
-    ).toBe(true);
+        .prop('rel')
+        .split(' '),
+    ).toContain('noopener');
   });
-  it("should have noreferrer in attribute", () => {
+  it('should have noreferrer in attribute', () => {
     expect(
       component
         .render()
-        .prop("rel")
-        .split(" ")
-        .includes("noreferrer"),
-    ).toBe(true);
+        .prop('rel')
+        .split(' '),
+    ).toContain('noreferrer');
   });
-  it("should have rel values in the rel attribute", () => {
+  it('should have rel values in the rel attribute', () => {
     expect(
       component
         .render()
-        .prop("rel")
-        .split(" ")
-        .includes(rel),
-    ).toBe(true);
+        .prop('rel')
+        .split(' '),
+    ).toContain(rel);
   });
-  it("should have tabindex", () => {
-    expect(component.render().prop("tabindex")).toBe(tabIndex);
+  it('should have tabindex', () => {
+    expect(component.render().prop('tabindex')).toBe(tabIndex);
   });
-  it("should contain an external href", () => {
-    expect(component.render().prop("target")).toBe("_blank");
+  it('should contain an external href', () => {
+    expect(component.render().prop('target')).toBe('_blank');
   });
-  it("should contain SVG", () => {
-    expect(component.find("ChevronRight").exists()).toBe(true);
+  it('should contain SVG', () => {
+    expect(component.find('ChevronRight').exists()).toBe(true);
   });
-  it("should execute onClick method", () => {
-    component.simulate("click");
-    expect(onClick).toHaveBeenCalled();
+  it('should execute onClick method', () => {
+    component.simulate('click');
+    expect(onClick).toHaveBeenCalledWith();
   });
-  it("should not have tabindex and role", () => {
-    expect(component.render().prop("tabindex")).toBe("-1");
-    expect(component.render().prop("role")).toBe(undefined);
+  it('should not have tabindex and role', () => {
+    expect(component.render().prop('tabindex')).toBe('-1');
+    expect(component.render().prop('role')).toBeUndefined();
   });
-  it("should have tabindex and role", () => {
-    expect(componentWithoutHref.render().prop("tabindex")).toBe("0");
-    expect(componentWithoutHref.render().prop("role")).toBe("button");
+  it('should have tabindex and role', () => {
+    expect(componentWithoutHref.render().prop('tabindex')).toBe('0');
+    expect(componentWithoutHref.render().prop('role')).toBe('button');
   });
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

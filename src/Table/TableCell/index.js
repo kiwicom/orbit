@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import ALIGN_OPTIONS from "./consts";
-import { textAlign } from "../../utils/rtl";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from ".";
+import defaultTheme from '../../defaultTheme';
+import ALIGN_OPTIONS from './consts';
+import { textAlign } from '../../utils/rtl';
+import type { Props } from './index.js.flow';
 
 export const StyledTableCell = styled(({ children, className }) => (
   <td className={className}>{children}</td>

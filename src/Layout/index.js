@@ -1,13 +1,13 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import Grid from "../utils/Grid";
-import { LAYOUT_SETTINGS } from "./consts";
-import mq from "../utils/mediaQuery";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import Grid from '../utils/Grid';
+import { LAYOUT_SETTINGS } from './consts';
+import mq from '../utils/mediaQuery';
+import type { Props } from './index.js.flow';
 
 const getChildrenProps = (type, key) => {
   if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {
@@ -43,4 +43,4 @@ const Layout = ({ children, type, dataTest }: Props) => (
 
 export default Layout;
 
-export { default as LayoutColumn } from "./LayoutColumn";
+export { default as LayoutColumn } from './LayoutColumn';

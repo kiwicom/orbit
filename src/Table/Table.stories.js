@@ -1,16 +1,17 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { boolean, text, select } from "@storybook/addon-knobs";
 
-import ALIGN_OPTIONS from "./TableCell/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { boolean, text, select } from '@storybook/addon-knobs';
 
-import Table, { TableHead, TableBody, TableRow, TableCell } from "./index";
+import ALIGN_OPTIONS from './TableCell/consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-storiesOf("Table", module)
+import Table, { TableHead, TableBody, TableRow, TableCell } from './index';
+
+storiesOf('Table', module)
   .add(
-    "Default Table",
+    'Default Table',
     () => (
       <Table>
         <TableHead>
@@ -39,11 +40,11 @@ storiesOf("Table", module)
     ),
     {
       info:
-        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+        'This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Compact Table",
+    'Compact Table',
     () => (
       <Table compact>
         <TableHead>
@@ -72,16 +73,16 @@ storiesOf("Table", module)
     ),
     {
       info:
-        "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+        'This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const compact = boolean("compact", false);
-      const children = text("children", "Lorem ipsum dolor sit amet");
-      const dataTest = text("dataTest", "test");
-      const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
+      const compact = boolean('compact', false);
+      const children = text('children', 'Lorem ipsum dolor sit amet');
+      const dataTest = text('dataTest', 'test');
+      const align = select('align', Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
       return (
         <Table compact={compact} dataTest={dataTest}>
           <TableHead>
@@ -111,11 +112,11 @@ storiesOf("Table", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Table>
@@ -162,6 +163,6 @@ storiesOf("Table", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

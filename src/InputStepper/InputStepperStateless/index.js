@@ -1,20 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import { SIZE_OPTIONS } from "../../InputField/consts";
-import PlusCircle from "../../icons/PlusCircle";
-import MinusCircle from "../../icons/MinusCircle";
-import ButtonLink from "../../ButtonLink";
-import InputField, { Input, Prefix } from "../../InputField";
-import defaultTheme from "../../defaultTheme";
-import getSpacingToken from "../../common/getSpacingToken";
-import type { StateLessProps } from "./index.js.flow";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import { SIZE_OPTIONS } from '../../InputField/consts';
+import PlusCircle from '../../icons/PlusCircle';
+import MinusCircle from '../../icons/MinusCircle';
+import ButtonLink from '../../ButtonLink';
+import InputField, { Input, Prefix } from '../../InputField';
+import defaultTheme from '../../defaultTheme';
+import getSpacingToken from '../../common/getSpacingToken';
+import type { StateLessProps } from './index.js.flow';
 
 const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   flex-shrink: 0;
   z-index: 3;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
+  cursor: ${({ disabled }) => disabled && 'not-allowed'};
 `;
 
 PrefixSuffix.defaultProps = {
@@ -90,7 +91,7 @@ const InputStepperStateless = ({
         name={name}
         error={error}
         help={help}
-        type={typeof value === "number" ? "number" : "text"}
+        type={typeof value === 'number' ? 'number' : 'text'}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -104,7 +105,7 @@ const InputStepperStateless = ({
           <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onDecrement}>
             <ButtonLink
               disabled={
-                disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
+                disabledDecrement || disabled || (typeof value === 'number' && value <= +minValue)
               }
               iconLeft={<MinusCircle color="secondary" />}
               size={size}
@@ -119,7 +120,7 @@ const InputStepperStateless = ({
           <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onIncrement}>
             <ButtonLink
               disabled={
-                disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
+                disabledIncrement || disabled || (typeof value === 'number' && value >= +maxValue)
               }
               iconLeft={<PlusCircle color="secondary" />}
               size={size}

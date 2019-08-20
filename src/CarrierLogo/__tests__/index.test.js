@@ -1,94 +1,95 @@
 // @flow
-import * as React from "react";
-import { mount, shallow } from "enzyme";
 
-import CarrierLogo from "../index";
-import { SIZE_OPTIONS } from "../consts";
+import * as React from 'react';
+import { mount, shallow } from 'enzyme';
+
+import CarrierLogo from '../index';
+import { SIZE_OPTIONS } from '../consts';
 
 const carriers = [
-  { code: "FR", name: "Ryanair" },
-  { code: "TO", name: "Transavia France" },
-  { code: "VY", name: "Vueling" },
-  { code: "OK", name: "Czech Airlines" },
+  { code: 'FR', name: 'Ryanair' },
+  { code: 'TO', name: 'Transavia France' },
+  { code: 'VY', name: 'Vueling' },
+  { code: 'OK', name: 'Czech Airlines' },
 ];
 
-describe("CarrierLogo images", () => {
-  it("should contains correct image", () => {
+describe('CarrierLogo images', () => {
+  it('should contains correct image', () => {
     const component = shallow(
-      <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size={SIZE_OPTIONS.LARGE} />,
+      <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size={SIZE_OPTIONS.LARGE} />,
     );
     expect(
       component
         .render()
         .children()
-        .attr("src"),
-    ).toContain("//images.kiwi.com/airlines/32/FR.png?default=airline.png");
+        .attr('src'),
+    ).toContain('//images.kiwi.com/airlines/32/FR.png?default=airline.png');
 
     expect(
       component
         .render()
         .children()
-        .attr("srcset"),
-    ).toContain("//images.kiwi.com/airlines/64/FR.png?default=airline.png");
+        .attr('srcset'),
+    ).toContain('//images.kiwi.com/airlines/64/FR.png?default=airline.png');
   });
 });
 
-describe("CarrierLogo fallback", () => {
-  it("should have proper fallback: airline", () => {
+describe('CarrierLogo fallback', () => {
+  it('should have proper fallback: airline', () => {
     const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "airline" }]} />,
+      <CarrierLogo carriers={[{ code: 'LOL', name: 'LOL', type: 'airline' }]} />,
     );
 
     expect(
       component
         .render()
         .children()
-        .attr("src"),
-    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=airline.png");
+        .attr('src'),
+    ).toContain('//images.kiwi.com/airlines/32/LOL.png?default=airline.png');
   });
 
-  it("should have proper fallback: bus", () => {
+  it('should have proper fallback: bus', () => {
     const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "bus" }]} />,
+      <CarrierLogo carriers={[{ code: 'LOL', name: 'LOL', type: 'bus' }]} />,
     );
 
     expect(
       component
         .render()
         .children()
-        .attr("src"),
-    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=bus.png");
+        .attr('src'),
+    ).toContain('//images.kiwi.com/airlines/32/LOL.png?default=bus.png');
   });
 
-  it("should have proper fallback: train", () => {
+  it('should have proper fallback: train', () => {
     const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "train" }]} />,
+      <CarrierLogo carriers={[{ code: 'LOL', name: 'LOL', type: 'train' }]} />,
     );
 
     expect(
       component
         .render()
         .children()
-        .attr("src"),
-    ).toContain("//images.kiwi.com/airlines/32/LOL.png?default=train.png");
+        .attr('src'),
+    ).toContain('//images.kiwi.com/airlines/32/LOL.png?default=train.png');
   });
 });
 
-describe("Multiple CarrierLogo with DefaultProp", () => {
-  const dataTest = "test";
+describe('Multiple CarrierLogo with DefaultProp', () => {
+  const dataTest = 'test';
   const component = mount(<CarrierLogo carriers={carriers} dataTest={dataTest} />);
   carriers.map(carrier =>
-    it("should contain an image of carrier", () => {
-      expect(component.find(`img[alt="${carrier.name}"]`).prop("alt")).toBe(carrier.name);
+    it('should contain an image of carrier', () => {
+      expect(component.find(`img[alt="${carrier.name}"]`).prop('alt')).toBe(carrier.name);
     }),
   );
-  it("should contain a div", () => {
-    expect(component.find("div").exists()).toBe(true);
+  it('should contain a div', () => {
+    expect(component.find('div').exists()).toBe(true);
   });
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it('should have data-test', () => {
+    expect(component.render().prop('data-test')).toBe(dataTest);
   });
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

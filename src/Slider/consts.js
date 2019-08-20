@@ -1,4 +1,5 @@
 // @flow
+
 const DEFAULT_VALUES = {
   MAX: 100,
   MIN: 1,

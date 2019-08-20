@@ -1,52 +1,52 @@
 // @flow
 
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean, select, number } from "@storybook/addon-knobs";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean, select, number } from '@storybook/addon-knobs';
 
-import * as Icons from "../icons";
-import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
-import { NAME_OPTIONS } from "../ServiceLogo/consts";
-import ButtonLink from "../ButtonLink";
-import TextLink from "../TextLink";
-import ServiceLogo from "../ServiceLogo";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Tag from "../Tag";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import * as Icons from '../icons';
+import { SIZE_OPTIONS, TYPE_OPTIONS } from './consts';
+import { NAME_OPTIONS } from '../ServiceLogo/consts';
+import ButtonLink from '../ButtonLink';
+import TextLink from '../TextLink';
+import ServiceLogo from '../ServiceLogo';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import Tag from '../Tag';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
 
-import InputField from "./index";
+import InputField from './index';
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("InputField", module)
+storiesOf('InputField', module)
   .add(
-    "Default input",
+    'Default input',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
 
       return (
         <InputField
           label={label}
           value={value}
           placeholder={placeholder}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Small input",
+    'Small input',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
 
       return (
         <InputField
@@ -54,22 +54,22 @@ storiesOf("InputField", module)
           label={label}
           value={value}
           placeholder={placeholder}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Number input",
+    'Number input',
     () => {
-      const label = text("Label", "Number");
-      const value = text("Value", 2);
-      const placeholder = text("Placeholder", "Number");
-      const maxValue = number("maxValue", 3);
-      const minValue = number("minValue", 1);
+      const label = text('Label', 'Number');
+      const value = text('Value', 2);
+      const placeholder = text('Placeholder', 'Number');
+      const maxValue = number('maxValue', 3);
+      const minValue = number('minValue', 1);
 
       return (
         <InputField
@@ -79,20 +79,20 @@ storiesOf("InputField", module)
           placeholder={placeholder}
           maxValue={maxValue}
           minValue={minValue}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Password input",
+    'Password input',
     () => {
-      const label = text("Label", "Password");
-      const value = text("Value", "p422W0rd");
-      const placeholder = text("Placeholder", "Password");
+      const label = text('Label', 'Password');
+      const value = text('Value', 'p422W0rd');
+      const placeholder = text('Placeholder', 'Password');
 
       return (
         <InputField
@@ -100,39 +100,39 @@ storiesOf("InputField", module)
           label={label}
           value={value}
           placeholder={placeholder}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Passport or ID Input",
+    'Passport or ID Input',
     () => {
-      const label = text("Label", "Passport or ID number");
-      const placeholder = text("Placeholder", "588539238");
+      const label = text('Label', 'Passport or ID number');
+      const placeholder = text('Placeholder', '588539238');
 
       return (
         <InputField
           type="passportid"
           label={label}
           placeholder={placeholder}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Email input",
+    'Email input',
     () => {
-      const label = text("Label", "Email");
-      const value = text("Value", "name@example.co");
-      const placeholder = text("Placeholder", "Email");
+      const label = text('Label', 'Email');
+      const value = text('Value', 'name@example.co');
+      const placeholder = text('Placeholder', 'Email');
 
       return (
         <InputField
@@ -140,27 +140,27 @@ storiesOf("InputField", module)
           label={label}
           value={value}
           placeholder={placeholder}
-          onChange={action("change")}
+          onChange={action('change')}
           help={
             <div>
               Did you mean&nbsp;
-              <TextLink onClick={action("clicked")}>name@example.com</TextLink>?
+              <TextLink onClick={action('clicked')}>name@example.com</TextLink>?
             </div>
           }
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "With text prefix",
+    'With text prefix',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const prefix = text("Prefix", "$");
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const prefix = text('Prefix', '$');
 
       return (
         <InputField
@@ -168,45 +168,45 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           prefix={prefix}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "With text suffix",
+    'With text suffix',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const suffix = text("Suffix", "Some long text");
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const suffix = text('Suffix', 'Some long text');
 
       return (
         <InputField
           label={label}
           value={value}
           placeholder={placeholder}
-          suffix={<div style={{ paddingRight: "12px" }}>{suffix}</div>}
-          onChange={action("change")}
+          suffix={<div style={{ paddingRight: '12px' }}>{suffix}</div>}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
 
   .add(
-    "Compact input",
+    'Compact input',
     () => {
-      const value = text("Value", "");
-      const label = text("Label", "Label");
-      const placeholder = text("Placeholder", "Placeholder");
-      const required = boolean("required", false);
-      const error = text("Error", undefined);
+      const value = text('Value', '');
+      const label = text('Label', 'Label');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const required = boolean('required', false);
+      const error = text('Error', undefined);
 
       return (
         <InputField
@@ -216,22 +216,22 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           required={required}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Compact input with FormLabel as prefix",
+      info: 'Compact input with FormLabel as prefix',
     },
   )
   .add(
-    "Compact input with tags",
+    'Compact input with tags',
     () => {
-      const value = text("Value", "");
-      const label = text("Label", "Label");
-      const placeholder = text("Placeholder", "Placeholder");
-      const required = boolean("required", false);
-      const error = text("Error", undefined);
+      const value = text('Value', '');
+      const label = text('Label', 'Label');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const required = boolean('required', false);
+      const error = text('Error', undefined);
 
       return (
         <InputField
@@ -239,49 +239,49 @@ storiesOf("InputField", module)
           inlineLabel
           tags={
             <div>
-              <Tag selected onRemove={action("onRemove")}>
+              <Tag selected onRemove={action('onRemove')}>
                 Brno
               </Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
-              <Tag onRemove={action("onRemove")}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
+              <Tag onRemove={action('onRemove')}>Praha</Tag>
             </div>
           }
           error={error}
           value={value}
           placeholder={placeholder}
           required={required}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Compact input with FormLabel as prefix",
+      info: 'Compact input with FormLabel as prefix',
     },
   )
   .add(
-    "Required field",
+    'Required field',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const required = boolean("required", true);
-      const placeholder = text("Placeholder", "Placeholder");
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const required = boolean('required', true);
+      const placeholder = text('Placeholder', 'Placeholder');
 
       return (
         <InputField
@@ -289,21 +289,21 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           required={required}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "With Icon prefix",
+    'With Icon prefix',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const Prefix = getIcon(getIcons("Prefix", "Search"));
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const Prefix = getIcon(getIcons('Prefix', 'Search'));
 
       return (
         <InputField
@@ -311,21 +311,21 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           prefix={Prefix && <Prefix />}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "With ButtonLink suffix",
+    'With ButtonLink suffix',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const Suffix = getIcon(getIcons('Suffix', 'Visibility'));
 
       return (
         <InputField
@@ -333,24 +333,24 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           suffix={
-            Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
+            Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action('clicked')} />
           }
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "With ServiceLogo prefix",
+    'With ServiceLogo prefix',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
-      const grayScale = boolean("GrayScale", false);
+      const label = text('Label', 'Label');
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const name = select('Type', Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
+      const grayScale = boolean('GrayScale', false);
 
       return (
         <InputField
@@ -358,39 +358,39 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           suffix={<ServiceLogo name={name} grayScale={grayScale} />}
-          onChange={action("change")}
+          onChange={action('change')}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
-      const name = text("Name", "input");
-      const label = text("Label", "Label");
-      const inlineLabel = boolean("inline label", false);
-      const value = text("Value", "");
-      const placeholder = text("Placeholder", "Placeholder");
-      const Prefix = getIcon(getIcons("Prefix", "Search"));
-      const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-      const help = text("Help", undefined);
-      const error = text("Error", undefined);
-      const disabled = boolean("Disabled", false);
-      const maxValue = number("maxValue", undefined);
-      const minValue = number("minValue", undefined);
-      const required = boolean("required", false);
-      const maxLength = number("maxLength", undefined);
-      const minLength = number("minLength", undefined);
-      const readOnly = boolean("readOnly", false);
-      const autoComplete = text("autoComplete", "off");
-      const dataTest = text("dataTest", "test");
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      const id = text("id", "ID");
+      const size = select('Size', Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const type = select('Type', Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
+      const name = text('Name', 'input');
+      const label = text('Label', 'Label');
+      const inlineLabel = boolean('inline label', false);
+      const value = text('Value', '');
+      const placeholder = text('Placeholder', 'Placeholder');
+      const Prefix = getIcon(getIcons('Prefix', 'Search'));
+      const Suffix = getIcon(getIcons('Suffix', 'Visibility'));
+      const help = text('Help', undefined);
+      const error = text('Error', undefined);
+      const disabled = boolean('Disabled', false);
+      const maxValue = number('maxValue', undefined);
+      const minValue = number('minValue', undefined);
+      const required = boolean('required', false);
+      const maxLength = number('maxLength', undefined);
+      const minLength = number('minLength', undefined);
+      const readOnly = boolean('readOnly', false);
+      const autoComplete = text('autoComplete', 'off');
+      const dataTest = text('dataTest', 'test');
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
+      const id = text('id', 'ID');
 
       return (
         <InputField
@@ -410,7 +410,7 @@ storiesOf("InputField", module)
                 transparent
                 icon={<Suffix />}
                 size={size}
-                onClick={action("clicked")}
+                onClick={action('clicked')}
                 disabled={disabled}
               />
             )
@@ -424,20 +424,20 @@ storiesOf("InputField", module)
           minLength={minLength}
           readOnly={readOnly}
           autoComplete={autoComplete}
-          onChange={action("change")}
-          onFocus={action("focus")}
-          onBlur={action("blur")}
+          onChange={action('change')}
+          onFocus={action('focus')}
+          onBlur={action('blur')}
           spaceAfter={spaceAfter}
           id={id}
         />
       );
     },
     {
-      info: "Some description about this type of InputField in general.",
+      info: 'Some description about this type of InputField in general.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <InputField
@@ -449,6 +449,6 @@ storiesOf("InputField", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

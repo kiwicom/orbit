@@ -1,38 +1,39 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import SkipLink from "..";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-describe("SkipLink", () => {
+import SkipLink from '..';
+
+describe('SkipLink', () => {
   const links = [
     {
-      href: "https://www.kiwi.com/cz/pages/content/terms",
-      name: "Got to terms and condition",
+      href: 'https://www.kiwi.com/cz/pages/content/terms',
+      name: 'Got to terms and condition',
     },
     {
-      name: "Reguest refund",
-      href: "#link",
+      name: 'Reguest refund',
+      href: '#link',
     },
   ];
-  const description = "https://www.kiwi.com/en/";
+  const description = 'https://www.kiwi.com/en/';
 
   const component = shallow(<SkipLink links={links} description={description} />);
 
-  it("Should contain description block", () => {
-    expect(component.find("SkipLink__StyledDescription").exists()).toEqual(true);
+  it('Should contain description block', () => {
+    expect(component.find('SkipLink__StyledDescription').exists()).toEqual(true);
   });
 
-  it("Should have 2 Links", () => {
+  it('Should have 2 Links', () => {
     expect(
       component
-        .find("SkipLink__StyledLink")
+        .find('SkipLink__StyledLink')
         .at(1)
         .exists(),
     ).toEqual(true);
   });
 
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

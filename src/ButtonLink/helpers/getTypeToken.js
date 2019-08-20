@@ -1,6 +1,7 @@
 // @flow
-import { TOKENS, TYPES } from "../consts";
-import type { GetTypeToken } from "./getTypeToken";
+
+import { TOKENS, TYPES } from '../consts';
+import type { GetTypeToken } from './getTypeToken.js.flow';
 
 const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
   const tokens = {

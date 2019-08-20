@@ -3,3 +3,4 @@ umd
 flow-typed
 lib
 node_modules
+config

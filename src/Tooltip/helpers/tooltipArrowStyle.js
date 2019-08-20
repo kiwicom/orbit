@@ -1,7 +1,8 @@
 // @flow
-import { css } from "styled-components";
 
-import type { Props } from "./tooltipArrowStyle";
+import { css } from 'styled-components';
+
+import type { Props } from './tooltipArrowStyle.js.flow';
 
 const tooltipArrowStyle = ({ position, theme }: Props) => {
   const arrows = {

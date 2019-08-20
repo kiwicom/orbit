@@ -1,23 +1,24 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { array, text } from "@storybook/addon-knobs";
 
-import Heading from "../Heading";
-import Text from "../Text";
-import Card, { CardSection } from "../Card";
-import Stack from "../Stack";
-import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
-import Button from "../Button";
-import Illustration from "../Illustration";
-import ChevronLeft from "../icons/ChevronLeft";
-import FlightDirect from "../icons/FlightDirect";
-import { CarrierLogo } from "../index";
-import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
-import Tooltip from "../Tooltip";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { array, text } from '@storybook/addon-knobs';
 
-import SkipLink from ".";
+import Heading from '../Heading';
+import Text from '../Text';
+import Card, { CardSection } from '../Card';
+import Stack from '../Stack';
+import Modal, { ModalHeader, ModalSection, ModalFooter } from '../Modal';
+import Button from '../Button';
+import Illustration from '../Illustration';
+import ChevronLeft from '../icons/ChevronLeft';
+import FlightDirect from '../icons/FlightDirect';
+import { CarrierLogo } from '../index';
+import CardSectionHeader from '../Card/CardSection/CardSectionHeader';
+import Tooltip from '../Tooltip';
+
+import SkipLink from '.';
 
 const Content = (
   <Stack>
@@ -40,27 +41,27 @@ const Content = (
   </Stack>
 );
 
-storiesOf("SkipLink", module)
+storiesOf('SkipLink', module)
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const links = array("links", [
+      const links = array('links', [
         {
-          href: "#guarantee",
-          name: "Got to kiwi guarantee informations",
+          href: '#guarantee',
+          name: 'Got to kiwi guarantee informations',
         },
         {
-          href: "#cancelation",
-          name: "Got to cancelation informations",
+          href: '#cancelation',
+          name: 'Got to cancelation informations',
         },
         {
-          name: "Reguest a refund",
-          onClick: action("Reguest a refund"),
+          name: 'Reguest a refund',
+          onClick: action('Reguest a refund'),
         },
       ]);
       const description = text(
-        "description",
-        "Description for screen readers about where the user currently is or describing a more complex component.",
+        'description',
+        'Description for screen readers about where the user currently is or describing a more complex component.',
       );
 
       return (
@@ -72,22 +73,22 @@ storiesOf("SkipLink", module)
     },
     {
       info:
-        "All possible options for SkipLink. SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+        'All possible options for SkipLink. SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.',
     },
   )
   .add(
-    "Within Modal",
+    'Within Modal',
     () => (
-      <Modal onClose={action("onClose")} fixedFooter>
+      <Modal onClose={action('onClose')} fixedFooter>
         <SkipLink
           links={[
             {
-              name: "Go to outbound",
-              href: "#outbound",
+              name: 'Go to outbound',
+              href: '#outbound',
             },
             {
-              name: "Go to inbound",
-              href: "#inbound",
+              name: 'Go to inbound',
+              href: '#inbound',
             },
           ]}
           description="Description"
@@ -114,7 +115,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -137,7 +138,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -160,7 +161,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -192,7 +193,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -215,7 +216,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -238,7 +239,7 @@ storiesOf("SkipLink", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -255,7 +256,7 @@ storiesOf("SkipLink", module)
             </Card>
           </Stack>
         </ModalSection>
-        <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+        <ModalFooter flex={['0 0 auto', '1 1 100%']}>
           <Button icon={<ChevronLeft />} type="secondary">
             Back
           </Button>
@@ -264,6 +265,6 @@ storiesOf("SkipLink", module)
       </Modal>
     ),
     {
-      info: "SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+      info: 'SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.',
     },
   );

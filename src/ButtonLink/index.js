@@ -1,24 +1,24 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
 
-import defaultTheme from "../defaultTheme";
-import { TYPES, SIZES, TOKENS, BUTTON_STATES } from "./consts";
-import { ICON_SIZES } from "../Icon/consts";
-import { getSize } from "../Icon";
-import type { Ref } from "../common/common.js.flow";
-import getSpacingToken from "../common/getSpacingToken";
-import getIconSpacing from "./helpers/getIconSpacing";
-import getSizeToken from "./helpers/getSizeToken";
-import getTypeToken from "./helpers/getTypeToken";
-import getButtonSpacing from "./helpers/getButtonLinkSpacing";
-import getButtonLinkBoxShadow from "./helpers/getButtonLinkBoxShadow";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import { warning } from '@kiwicom/js';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { TYPES, SIZES, TOKENS, BUTTON_STATES } from './consts';
+import { ICON_SIZES } from '../Icon/consts';
+import { getSize } from '../Icon';
+import type { Ref } from '../common/common.js.flow';
+import getSpacingToken from '../common/getSpacingToken';
+import getIconSpacing from './helpers/getIconSpacing';
+import getSizeToken from './helpers/getSizeToken';
+import getTypeToken from './helpers/getTypeToken';
+import getButtonSpacing from './helpers/getButtonLinkSpacing';
+import getButtonLinkBoxShadow from './helpers/getButtonLinkBoxShadow';
+import type { Props } from './index.js.flow';
 
 // media query only for IE 10+, not Edge
-const onlyIE = (style, breakpoint = "all") =>
+const onlyIE = (style, breakpoint = 'all') =>
   css`
     @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       ${style};
@@ -70,9 +70,9 @@ export const StyledButtonLink = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
-    const buttonType = submit ? "submit" : "button";
+    const isButtonWithHref = component === 'button' && props.href;
+    const Component = isButtonWithHref ? 'a' : component;
+    const buttonType = submit ? 'submit' : 'button';
     return (
       <Component
         data-test={dataTest}
@@ -96,9 +96,9 @@ export const StyledButtonLink = styled(
   align-items: center;
   width: ${({ block, width, onlyIcon }) =>
     block
-      ? "100%"
-      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
-  flex: ${({ block }) => (block ? "1 1 auto" : "0 0 auto")};
+      ? '100%'
+      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || 'auto'};
+  flex: ${({ block }) => (block ? '1 1 auto' : '0 0 auto')};
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${getTypeToken(TOKENS.backgroundButton)};
   color: ${getTypeToken(TOKENS.colorTextButton)}!important;
@@ -108,8 +108,8 @@ export const StyledButtonLink = styled(
   padding: ${getButtonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : "1")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : '1')};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
   text-decoration: none;
@@ -167,7 +167,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   const {
     external,
     children,
-    component = "button",
+    component = 'button',
     href,
     size = SIZES.NORMAL,
     icon,
@@ -197,7 +197,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
 
   warning(
     !(!children && !title),
-    "Warning: children or title property is missing on ButtonLink. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/buttonlink/#accessibility",
+    'Warning: children or title property is missing on ButtonLink. Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/buttonlink/#accessibility',
   );
 
   return (
@@ -209,8 +209,8 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       sizeIcon={sizeIcon}
       type={type}
       href={!disabled ? href : null}
-      target={!disabled && href && external ? "_blank" : undefined}
-      rel={!disabled && href && external ? "noopener noreferrer" : undefined}
+      target={!disabled && href && external ? '_blank' : undefined}
+      rel={!disabled && href && external ? 'noopener noreferrer' : undefined}
       iconLeft={iconLeft}
       iconRight={iconRight}
       buttonRef={ref}
@@ -246,6 +246,6 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-ButtonLink.displayName = "ButtonLink";
+ButtonLink.displayName = 'ButtonLink';
 
 export default ButtonLink;

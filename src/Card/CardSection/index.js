@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import ChevronDown from "../../icons/ChevronDown";
-import { getSize } from "../../Icon";
-import { ICON_SIZES } from "../../Icon/consts";
-import media from "../../utils/mediaQuery";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { ContextType, Props } from "./index";
+import defaultTheme from '../../defaultTheme';
+import ChevronDown from '../../icons/ChevronDown';
+import { getSize } from '../../Icon';
+import { ICON_SIZES } from '../../Icon/consts';
+import media from '../../utils/mediaQuery';
+import type { ContextType, Props } from './index.js.flow';
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;
@@ -125,5 +125,5 @@ class CardSection extends React.Component<any, Props> {
 
 export default CardSection;
 
-export { default as CardSectionHeader } from "./CardSectionHeader";
-export { default as CardSectionContent } from "./CardSectionContent";
+export { default as CardSectionHeader } from './CardSectionHeader';
+export { default as CardSectionContent } from './CardSectionContent';

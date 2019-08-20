@@ -1,46 +1,47 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import Stack from "../Stack";
-import Text from "../Text";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../TripSector";
-import TripSegment from "../TripSegment";
-import List, { ListItem } from "../List";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, select, boolean } from '@storybook/addon-knobs';
 
-import Tile from "./index";
+import * as Icons from '../icons';
+import Stack from '../Stack';
+import Text from '../Text';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import TripSector, { TripDate } from '../TripSector';
+import TripSegment from '../TripSegment';
+import List, { ListItem } from '../List';
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+import Tile from './index';
+
+const getIcons = defaultIcon => select('Icon', [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Tile", module)
+storiesOf('Tile', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const title = text("Title", "Default");
-      return <Tile onClick={action("clicked")} title={title} />;
+      const title = text('Title', 'Default');
+      return <Tile onClick={action('clicked')} title={title} />;
     },
     {
-      info: "This is the default configuration of this component.",
+      info: 'This is the default configuration of this component.',
     },
   )
 
   .add(
-    "Expandable",
+    'Expandable',
     () => {
-      const title = text("Title", "Expandable");
+      const title = text('Title', 'Expandable');
       const description = text(
-        "Description",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+        'Description',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
       );
-      const Icon = getIcon(getIcons("Airplane"));
+      const Icon = getIcon(getIcons('Airplane'));
       return (
         <Tile
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           icon={Icon && <Icon />}
           title={title}
           description={description}
@@ -50,11 +51,11 @@ storiesOf("Tile", module)
       );
     },
     {
-      info: "This is the default configuration of this component.",
+      info: 'This is the default configuration of this component.',
     },
   )
   .add(
-    "TripSector Tile",
+    'TripSector Tile',
     () => (
       <Tile
         title="Dynamic Tile height"
@@ -63,7 +64,7 @@ storiesOf("Tile", module)
         <TripSector dataTest="test">
           <TripDate>Mon 22 Oct</TripDate>
           <TripSegment
-            carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
+            carrier={{ code: 'FR', type: 'airline', name: 'Ryanair' }}
             duration="2h"
             departure="Barcelona BCN"
             departureTime="6:30"
@@ -79,17 +80,17 @@ storiesOf("Tile", module)
       </Tile>
     ),
     {
-      info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
+      info: 'TripSector in expandable Card to test if Whole TripSector is visible after expand',
     },
   )
   .add(
-    "Expandable with custom description",
+    'Expandable with custom description',
     () => {
-      const showMore = boolean("showMore", false);
+      const showMore = boolean('showMore', false);
 
       return (
         <Tile
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           description={
             <Stack justify="between" direction="row">
               <Text>Mr. John Smith</Text>
@@ -111,26 +112,26 @@ storiesOf("Tile", module)
       );
     },
     {
-      info: "This is the playground configuration of this component.",
+      info: 'This is the playground configuration of this component.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const href = text("Href", "https://www.kiwi.com/");
-      const title = text("Title", "Tile with title");
-      const external = boolean("External", false);
-      const Icon = getIcon(getIcons("Airplane"));
+      const href = text('Href', 'https://www.kiwi.com/');
+      const title = text('Title', 'Tile with title');
+      const external = boolean('External', false);
+      const Icon = getIcon(getIcons('Airplane'));
       const description = text(
-        "Description",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+        'Description',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
       );
-      const dataTest = text("dataTest", "test");
+      const dataTest = text('dataTest', 'test');
 
       return (
         <Tile
           href={href}
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           icon={Icon && <Icon />}
           title={title}
           description={description}
@@ -140,15 +141,15 @@ storiesOf("Tile", module)
       );
     },
     {
-      info: "This is the default configuration of this component.",
+      info: 'This is the default configuration of this component.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Tile
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           description={
             <Stack justify="between" direction="row">
               <Text>Mr. John Smith</Text>
@@ -161,6 +162,6 @@ storiesOf("Tile", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

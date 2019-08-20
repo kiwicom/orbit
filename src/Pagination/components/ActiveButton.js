@@ -1,10 +1,11 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import Button from "../../Button";
-import defaultTheme from "../../defaultTheme";
-import type { Props } from "./ActiveButton";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+
+import Button from '../../Button';
+import defaultTheme from '../../defaultTheme';
+import type { Props } from './ActiveButton.js.flow';
 
 const StyledButton = styled.div`
   &:hover,

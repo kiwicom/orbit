@@ -1,25 +1,26 @@
 // @flow
-import * as React from "react";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import ThemeProvider from "../../ThemeProvider";
+import * as React from 'react';
+import { defaultTokens } from '@kiwicom/orbit-design-tokens';
+
+import ThemeProvider from '../../ThemeProvider';
 
 type Props = {|
   +children: React.Node,
 |};
 
 class RenderInRtl extends React.PureComponent<Props> {
-  html = document.querySelector("html");
+  html = document.querySelector('html');
 
   componentDidMount() {
     if (this.html) {
-      this.html.setAttribute("dir", "rtl");
+      this.html.setAttribute('dir', 'rtl');
     }
   }
 
   componentWillUnmount() {
     if (this.html) {
-      this.html.removeAttribute("dir");
+      this.html.removeAttribute('dir');
     }
   }
 

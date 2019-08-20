@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import Heading, { StyledHeading } from "../../Heading";
-import Text from "../../Text";
-import { rtlSpacing } from "../../utils/rtl";
-import media from "../../utils/mediaQuery";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../../defaultTheme';
+import Heading, { StyledHeading } from '../../Heading';
+import Text from '../../Text';
+import { rtlSpacing } from '../../utils/rtl';
+import media from '../../utils/mediaQuery';
+import type { Props } from './index.js.flow';
 
 export const StyledCardHeader = styled.div`
   position: relative;
@@ -71,5 +71,5 @@ const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection 
     )}
   </StyledCardHeader>
 );
-CardHeader.displayName = "CardHeader";
+CardHeader.displayName = 'CardHeader';
 export default CardHeader;

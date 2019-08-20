@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import Heading from "../Heading";
-import Stack from "../Stack";
-import ButtonLink from "../ButtonLink";
-import ChevronDown from "../icons/ChevronDown";
-import Slide from "../utils/Slide";
-import defaultTheme from "../defaultTheme";
-import randomID from "../utils/randomID";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import Heading from '../Heading';
+import Stack from '../Stack';
+import ButtonLink from '../ButtonLink';
+import ChevronDown from '../icons/ChevronDown';
+import Slide from '../utils/Slide';
+import defaultTheme from '../defaultTheme';
+import randomID from '../utils/randomID';
+import type { Props } from './index.js.flow';
 
 const AnimatedIcon = styled(ChevronDown)`
   transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -81,14 +81,14 @@ const Collapse = ({
 
     calculateHeight();
 
-    window.addEventListener("resize", calculateHeight);
+    window.addEventListener('resize', calculateHeight);
     return () => {
-      window.removeEventListener("resize", calculateHeight);
+      window.removeEventListener('resize', calculateHeight);
     };
   }, []);
 
-  const slideID = React.useMemo(() => randomID("slideID"), []);
-  const labelID = React.useMemo(() => randomID("labelID"), []);
+  const slideID = React.useMemo(() => randomID('slideID'), []);
+  const labelID = React.useMemo(() => randomID('labelID'), []);
 
   const handleClick = React.useCallback(
     event => {

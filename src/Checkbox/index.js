@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import TOKENS from "./consts";
-import Check from "../icons/Check";
-import { StyledText } from "../Text";
-import { rtlSpacing } from "../utils/rtl";
-import type { Ref } from "../common/common.js.flow";
-import getFieldDataState from "../common/getFieldDataState";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import TOKENS from './consts';
+import Check from '../icons/Check';
+import { StyledText } from '../Text';
+import { rtlSpacing } from '../utils/rtl';
+import type { Ref } from '../common/common.js.flow';
+import getFieldDataState from '../common/getFieldDataState';
+import type { Props } from './index.js.flow';
 
 const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const tokens = {
@@ -137,8 +137,8 @@ export const Label = styled(({ className, children, dataTest }) => (
   width: 100%;
   flex-direction: row;
   align-items: self-start;
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : '1')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   position: relative;
 
   ${IconContainer} {
@@ -200,6 +200,6 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-Checkbox.displayName = "Checkbox";
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;

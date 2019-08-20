@@ -1,13 +1,13 @@
 // @flow
-import * as React from "react";
 
-import { SIZE_OPTIONS } from "../InputField/consts";
-import KEY_CODE_MAP from "../common/keyMaps";
-import InputStepperStateless from "./InputStepperStateless";
-import validateIncrement from "../utils/validateIncrement";
-import validateDecrement from "../utils/validateDecrement";
+import * as React from 'react';
 
-import type { Props, State, ForwardedRef } from "./index";
+import { SIZE_OPTIONS } from '../InputField/consts';
+import KEY_CODE_MAP from '../common/keyMaps';
+import InputStepperStateless from './InputStepperStateless';
+import validateIncrement from '../utils/validateIncrement';
+import validateDecrement from '../utils/validateDecrement';
+import type { Props, State, ForwardedRef } from './index.js.flow';
 
 class InputStepper extends React.Component<Props & ForwardedRef, State> {
   state = {
@@ -38,10 +38,10 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   handleIncrementCounter = (
     ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
   ) => {
-    if (ev && ev.type === "click") {
+    if (ev && ev.type === 'click') {
       this.incrementCounter();
     }
-    if (ev && ev.type === "keydown") {
+    if (ev && ev.type === 'keydown') {
       if (ev.keyCode === KEY_CODE_MAP.SPACE) {
         ev.preventDefault();
         this.incrementCounter();
@@ -54,10 +54,10 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
   handleDecrementCounter = (
     ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
   ) => {
-    if (ev && ev.type === "click") {
+    if (ev && ev.type === 'click') {
       this.decrementCounter();
     }
-    if (ev && ev.type === "keydown") {
+    if (ev && ev.type === 'keydown') {
       if (ev.keyCode === KEY_CODE_MAP.SPACE) {
         ev.preventDefault();
         this.decrementCounter();
@@ -147,7 +147,7 @@ const ForwardedInputStepper = React.forwardRef((props, ref) => (
   <InputStepper forwardedRef={ref} {...props} />
 ));
 
-ForwardedInputStepper.displayName = "InputStepper";
+ForwardedInputStepper.displayName = 'InputStepper';
 
 export default ForwardedInputStepper;
-export { default as InputStepperStateless } from "./InputStepperStateless";
+export { default as InputStepperStateless } from './InputStepperStateless';

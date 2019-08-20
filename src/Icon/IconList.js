@@ -1,9 +1,10 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import * as Icons from "../icons";
+import * as React from 'react';
+import styled from 'styled-components';
+import { defaultTokens } from '@kiwicom/orbit-design-tokens';
+
+import * as Icons from '../icons';
 
 const List = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const Container = styled.div`
 `;
 
 const IconImport = styled.div`
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 12px;
   line-height: ${defaultTokens.lineHeightText};
   color: ${defaultTokens.paletteInkNormal};

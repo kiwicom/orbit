@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SIZE_OPTIONS, baseURL } from "./consts";
-import getSpacingToken from "../common/getSpacingToken";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { SIZE_OPTIONS, baseURL } from './consts';
+import getSpacingToken from '../common/getSpacingToken';
+import type { Props } from './index.js.flow';
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {

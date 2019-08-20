@@ -1,10 +1,12 @@
 // @flow
+/* eslint-disable */
+
 module.exports = {
   output: {
     path: `${__dirname}/umd`,
-    library: "Orbit",
-    libraryTarget: "umd",
-    filename: "orbit-components.min.js",
+    library: 'Orbit',
+    libraryTarget: 'umd',
+    filename: 'orbit-components.min.js',
   },
 
   performance: {
@@ -17,14 +19,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
     ],
   },
 
   externals: {
-    react: "React",
-    "react-dom": "reactDOM",
+    react: 'React',
+    'react-dom': 'reactDOM',
   },
 };

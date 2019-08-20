@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
-import defaultTheme from "../defaultTheme";
-import { left, right } from "../utils/rtl";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import { StyledTripSegment, StyledTripSegmentMilestone } from '../TripSegment';
+import defaultTheme from '../defaultTheme';
+import { left, right } from '../utils/rtl';
+import type { Props } from './index.js.flow';
 
 const StyledTripSector = styled.div`
   display: flex;
@@ -54,5 +54,5 @@ const TripSector = ({ children, dataTest }: Props) => (
 
 export default TripSector;
 
-export { default as TripDate } from "./TripDate";
-export { default as TripLayover } from "./TripLayover";
+export { default as TripDate } from './TripDate';
+export { default as TripLayover } from './TripLayover';

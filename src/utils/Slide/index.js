@@ -1,10 +1,10 @@
 // @flow
-import React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
+import React from 'react';
+import styled from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme from '../../defaultTheme';
+import type { Props, State } from './index.js.flow';
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;
@@ -16,8 +16,8 @@ export const StyledSlide = styled.div`
   position: relative;
   transition: max-height ${({ theme }) => theme.orbit.durationFast} linear;
   max-height: ${getMaxHeight};
-  overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
-  visibility: ${({ visible }) => !visible && "hidden"};
+  overflow: ${({ transitionFinished }) => !transitionFinished && 'hidden'};
+  visibility: ${({ visible }) => !visible && 'hidden'};
 `;
 
 StyledSlide.defaultProps = {
@@ -46,12 +46,17 @@ class Slide extends React.Component<Props, State> {
     }
   }
 
+  getSnapshotBeforeUpdate(prevProps: Props) {
+    if (this.props.expanded === prevProps.expanded) return null;
+    return true;
+  }
+
   componentDidUpdate(prevProps: Props, prevState: State, snapshot: null | true) {
     if (snapshot) {
       if (this.props.expanded) {
         this.setMaxHeight();
-        if (typeof setTimeout === "function") {
-          if (this.visibleTimeout && typeof clearTimeout === "function") {
+        if (typeof setTimeout === 'function') {
+          if (this.visibleTimeout && typeof clearTimeout === 'function') {
             clearTimeout(this.visibleTimeout);
             this.visibleTimeout = null;
           }
@@ -62,8 +67,8 @@ class Slide extends React.Component<Props, State> {
         if (this.state.maxHeight !== this.props.maxHeight) {
           this.setMaxHeight();
         }
-        if (typeof setTimeout === "function") {
-          if (this.expandTimeout && typeof clearTimeout === "function") {
+        if (typeof setTimeout === 'function') {
+          if (this.expandTimeout && typeof clearTimeout === 'function') {
             clearTimeout(this.expandTimeout);
             this.expandTimeout = null;
           }
@@ -74,7 +79,7 @@ class Slide extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
-    if (typeof clearTimeout === "function") {
+    if (typeof clearTimeout === 'function') {
       if (this.expandTimeout) {
         clearTimeout(this.expandTimeout);
       }
@@ -88,11 +93,6 @@ class Slide extends React.Component<Props, State> {
         clearTimeout(this.visibleTimeout);
       }
     }
-  }
-
-  getSnapshotBeforeUpdate(prevProps: Props) {
-    if (this.props.expanded === prevProps.expanded) return null;
-    return true;
   }
 
   setVisible = (visible: boolean) => () => {
@@ -120,7 +120,7 @@ class Slide extends React.Component<Props, State> {
     });
     this.visibleTimeout = setTimeout(this.setVisible(false), 150);
 
-    if (this.transitionFinishedTimeout && typeof clearTimeout === "function") {
+    if (this.transitionFinishedTimeout && typeof clearTimeout === 'function') {
       clearTimeout(this.transitionFinishedTimeout);
       this.transitionFinishedTimeout = null;
     }

@@ -1,8 +1,9 @@
 // @flow
-import React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import React from 'react';
+import styled from 'styled-components';
+
+import defaultTheme from '../defaultTheme';
 
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
@@ -20,7 +21,7 @@ const FormLabel = styled(({ className, children, required, filled, dataTest, id 
   <span className={className} data-test={dataTest} id={id}>
     {required && (
       <StyledAsterisk aria-hidden="true" filled={filled}>
-        *{" "}
+        *{' '}
       </StyledAsterisk>
     )}
     <span>{children}</span>

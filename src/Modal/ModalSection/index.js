@@ -1,13 +1,13 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import { StyledModalFooter } from "../ModalFooter";
-import { withModalContext } from "../ModalContext";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../../defaultTheme';
+import media from '../../utils/mediaQuery';
+import { StyledModalFooter } from '../ModalFooter';
+import { withModalContext } from '../ModalContext';
+import type { Props } from './index.js.flow';
 
 export const StyledModalSection = styled.section`
   width: 100%;
@@ -21,19 +21,19 @@ export const StyledModalSection = styled.section`
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
     border-top-left-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && '9px'}; // TODO: create token
     border-top-right-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && '9px'}; // TODO: create token
     margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
     border-bottom: ${({ suppressed, theme }) =>
-      suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
+      suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : '0'};
     border-bottom-left-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && '9px'}; // TODO: create token
     border-bottom-right-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && '9px'}; // TODO: create token
     & ~ ${StyledModalFooter} {
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }
@@ -50,7 +50,7 @@ export const StyledModalSection = styled.section`
     }
     &:last-of-type {
       & ~ ${StyledModalFooter} {
-        padding-top: ${({ suppressed }) => !suppressed && "0"};
+        padding-top: ${({ suppressed }) => !suppressed && '0'};
         margin-top: 0;
       }
     }
@@ -120,5 +120,5 @@ class ModalSection extends React.PureComponent<Props> {
 const DecoratedComponent = withModalContext(ModalSection);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalSection";
+DecoratedComponent.displayName = 'ModalSection';
 export default DecoratedComponent;

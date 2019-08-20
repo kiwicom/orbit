@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import Badge, { StyledBadge } from "../Badge";
-import defaultTheme from "../defaultTheme";
-import { TYPE_OPTIONS } from "../Badge/consts";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import Badge, { StyledBadge } from '../Badge';
+import defaultTheme from '../defaultTheme';
+import { TYPE_OPTIONS } from '../Badge/consts';
+import type { Props } from './index.js.flow';
 
 const StyledNotificationBadge = styled.div`
   ${StyledBadge} {

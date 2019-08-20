@@ -1,10 +1,10 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from ".";
+import defaultTheme from '../../defaultTheme';
+import type { Props } from './index.js.flow';
 
 export const StyledTableBody = styled(({ children, className }) => (
   <tbody className={className}>{children}</tbody>

@@ -1,19 +1,20 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import DestinationCard from "../index";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-describe("DestinationCard one-way", () => {
-  const dataTest = "test";
-  const departureCity = "Prague";
-  const destinationCity = "Dubai";
-  const destinationCountry = "United Arab Emirates";
-  const image = "dubai_ae";
+import DestinationCard from '../index';
+
+describe('DestinationCard one-way', () => {
+  const dataTest = 'test';
+  const departureCity = 'Prague';
+  const destinationCity = 'Dubai';
+  const destinationCountry = 'United Arab Emirates';
+  const image = 'dubai_ae';
   const height = 500;
-  const price = "5,563 Kč";
+  const price = '5,563 Kč';
   const onClick = jest.fn();
-  const outbound = { text: "One-way", type: "Direct", duration: "6h 10m" };
+  const outbound = { text: 'One-way', type: 'Direct', duration: '6h 10m' };
   const component = shallow(
     <DestinationCard
       dataTest={dataTest}
@@ -28,55 +29,55 @@ describe("DestinationCard one-way", () => {
     />,
   );
 
-  const departure = component.find("DestinationCard__StyledDestinationCardHeader");
-  const destination = component.find("DestinationCard__StyledDestination");
+  const departure = component.find('DestinationCard__StyledDestinationCardHeader');
+  const destination = component.find('DestinationCard__StyledDestination');
 
-  it("should have props", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.prop("height")).toBe(height);
+  it('should have props', () => {
+    expect(component.render().prop('data-test')).toBe(dataTest);
+    expect(component.prop('height')).toBe(height);
   });
 
-  it("should render departure", () => {
+  it('should render departure', () => {
     expect(
       departure
-        .find("Heading")
+        .find('Heading')
         .first()
         .children()
         .text(),
     ).toBe(departureCity);
-    expect(departure.find("DestinationCard__ArrowUp").exists()).toBe(true);
+    expect(departure.find('DestinationCard__ArrowUp').exists()).toBe(true);
   });
-  it("should render destination city and country", () => {
+  it('should render destination city and country', () => {
     expect(
       destination
-        .find("Heading")
+        .find('Heading')
         .children()
         .text(),
     ).toBe(destinationCity);
     expect(
       component
-        .find("DestinationCard__Shown")
-        .find("Heading")
+        .find('DestinationCard__Shown')
+        .find('Heading')
         .at(1)
         .children()
         .text(),
     ).toBe(destinationCountry);
   });
-  it("should render price", () => {
+  it('should render price', () => {
     expect(
       component
-        .find("DestinationCard__StyledDestinationCardContent")
-        .find("Heading")
+        .find('DestinationCard__StyledDestinationCardContent')
+        .find('Heading')
         .at(3)
         .children()
         .text(),
     ).toBe(price);
   });
-  it("should execute onClick method", () => {
-    component.simulate("click");
-    expect(onClick).toHaveBeenCalled();
+  it('should execute onClick method', () => {
+    component.simulate('click');
+    expect(onClick).toHaveBeenCalledWith();
   });
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

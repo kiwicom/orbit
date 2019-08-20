@@ -1,28 +1,29 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { number, text, select, boolean } from "@storybook/addon-knobs";
 
-import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { number, text, select, boolean } from '@storybook/addon-knobs';
 
-import RatingStars from ".";
+import MAX_STARS from './consts';
+import { ICON_COLORS, ICON_SIZES } from '../Icon/consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-storiesOf("RatingStars", module)
+import RatingStars from '.';
+
+storiesOf('RatingStars', module)
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
-      const size = select("size", [null, ...Object.values(ICON_SIZES)]);
-      const color = select("color", [
+      const rating = number('rating', 4.4, { min: 0, max: MAX_STARS });
+      const size = select('size', [null, ...Object.values(ICON_SIZES)]);
+      const color = select('color', [
         null,
         ICON_COLORS.PRIMARY,
         ICON_COLORS.SECONDARY,
         ICON_COLORS.ATTENTION,
       ]);
-      const showEmpty = boolean("showEmpty", true);
-      const dataTest = text("dataTest", "test");
+      const showEmpty = boolean('showEmpty', true);
+      const dataTest = text('dataTest', 'test');
 
       return (
         <RatingStars
@@ -35,17 +36,17 @@ storiesOf("RatingStars", module)
       );
     },
     {
-      info: "Playground of RatingStars",
+      info: 'Playground of RatingStars',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <RatingStars rating={3.3} />
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

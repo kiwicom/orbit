@@ -1,10 +1,11 @@
 // @flow
-import * as React from "react";
 
-import Pages from "./Pages";
-import PageButtonLink from "./PageButtonLink";
-import MenuMeatballs from "../../icons/MenuMeatballs";
-import type { Props } from "./CompactPages";
+import * as React from 'react';
+
+import Pages from './Pages';
+import PageButtonLink from './PageButtonLink';
+import MenuMeatballs from '../../icons/MenuMeatballs';
+import type { Props } from './CompactPages.js.flow';
 
 const MeatBalls = () => <MenuMeatballs size="small" color="attention" />;
 

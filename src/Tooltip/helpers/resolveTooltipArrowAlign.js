@@ -1,10 +1,11 @@
 // @flow
-import { css } from "styled-components";
 
-import { isHorizontal, isVertical } from "./isPosition";
-import { isAlignCenter, isAlignEnd, isAlignStart } from "./isAlign";
-import type { Props } from "./resolveTooltipArrowAlign";
-import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from "../consts";
+import { css } from 'styled-components';
+
+import { isHorizontal, isVertical } from './isPosition';
+import { isAlignCenter, isAlignEnd, isAlignStart } from './isAlign';
+import type { Props } from './resolveTooltipArrowAlign.js.flow';
+import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from '../consts';
 
 // TODO: use tokens for 12px and 7px - paddings and sizeTooltipArrow
 const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight }: Props) => {

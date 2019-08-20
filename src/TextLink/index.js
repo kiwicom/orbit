@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, GetLinkStyleProps } from "./index";
+import defaultTheme from '../defaultTheme';
+import { TYPE_OPTIONS, SIZE_OPTIONS } from './consts';
+import type { Props, GetLinkStyleProps } from './index.js.flow';
 
 const getColor = ({ theme, type }) => {
   const tokens = {
@@ -115,15 +115,15 @@ const TextLink = ({
   tabIndex,
   component = DefaultComponent,
 }: Props) => {
-  const relValues = rel ? rel.split(" ") : [];
+  const relValues = rel ? rel.split(' ') : [];
 
   // add noopener and noreferrer whenever external
   if (relValues && external) {
-    if (!relValues.includes("noopener")) {
-      relValues.push("noopener");
+    if (!relValues.includes('noopener')) {
+      relValues.push('noopener');
     }
-    if (!relValues.includes("noreferrer")) {
-      relValues.push("noreferrer");
+    if (!relValues.includes('noreferrer')) {
+      relValues.push('noreferrer');
     }
   }
 
@@ -132,12 +132,12 @@ const TextLink = ({
       type={type}
       size={size}
       href={href}
-      target={external ? "_blank" : undefined}
-      rel={relValues && relValues.join(" ")}
+      target={external ? '_blank' : undefined}
+      rel={relValues && relValues.join(' ')}
       onClick={onClick}
       data-test={dataTest}
-      tabIndex={tabIndex || (!href ? "0" : undefined)}
-      role={!href ? "button" : undefined}
+      tabIndex={tabIndex || (!href ? '0' : undefined)}
+      role={!href ? 'button' : undefined}
       component={component}
     >
       {children}

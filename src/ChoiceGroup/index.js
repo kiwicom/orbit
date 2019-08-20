@@ -1,21 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import Heading from "../Heading";
-import Stack from "../Stack";
-import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
-import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
-import defaultTheme from "../defaultTheme";
-import FilterWrapper from "./components/FilterWrapper";
-import randomID from "../utils/randomID";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import Heading from '../Heading';
+import Stack from '../Stack';
+import { LABEL_SIZES, LABEL_ELEMENTS } from './consts';
+import FormFeedback, { StyledFormFeedback } from '../FormFeedback';
+import defaultTheme from '../defaultTheme';
+import FilterWrapper from './components/FilterWrapper';
+import randomID from '../utils/randomID';
+import type { Props } from './index.js.flow';
 
 const getHeadingSize = size => {
   const SIZES = {
-    [LABEL_SIZES.NORMAL]: "title3",
-    [LABEL_SIZES.LARGE]: "title2",
+    [LABEL_SIZES.NORMAL]: 'title3',
+    [LABEL_SIZES.LARGE]: 'title2',
   };
   return SIZES[size];
 };
@@ -37,7 +37,7 @@ StyledChoiceGroup.defaultProps = {
 };
 
 class ChoiceGroup extends React.PureComponent<Props> {
-  groupID = randomID("ChoiceGroup");
+  groupID = randomID('ChoiceGroup');
 
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
@@ -71,7 +71,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
             {label}
           </Heading>
         )}
-        <Stack direction="column" spacing={filter ? "none" : "condensed"}>
+        <Stack direction="column" spacing={filter ? 'none' : 'condensed'}>
           {React.Children.map(children, child => {
             return !filter ? (
               <React.Fragment>

@@ -1,8 +1,9 @@
 // @flow
-import { useState, useEffect } from "react";
 
-import type { UseDimensions } from "./useDimensions.js.flow";
-import boundingClientRect from "../../utils/boundingClientRect";
+import { useState, useEffect } from 'react';
+
+import type { UseDimensions } from './useDimensions.js.flow';
+import boundingClientRect from '../../utils/boundingClientRect';
 
 const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
   const [positions, setPositions] = useState({
@@ -27,7 +28,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
         containerDimensions &&
         popoverDimensions &&
         contentDimensions &&
-        typeof window !== "undefined"
+        typeof window !== 'undefined'
       ) {
         setPositions({
           containerTop: containerDimensions.top,
@@ -46,9 +47,9 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
 
     calculate();
 
-    window.addEventListener("resize", calculate);
+    window.addEventListener('resize', calculate);
     return () => {
-      window.removeEventListener("resize", calculate);
+      window.removeEventListener('resize', calculate);
     };
   }, [containerRef, content, popover]);
 

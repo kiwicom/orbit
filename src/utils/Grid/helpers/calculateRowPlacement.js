@@ -1,6 +1,6 @@
 // @flow
 
-import type { CalculateRowPlacement } from "./calculateRowPlacement";
+import type { CalculateRowPlacement } from './calculateRowPlacement.js.flow';
 
 const calculateRowPlacement: CalculateRowPlacement = (childIndex, columnsCount, rowsCount) => {
   if (rowsCount === 1) {

@@ -1,7 +1,8 @@
 // @flow
-import * as React from "react";
 
-import type { WithModalContextType, ModalContextType } from "./ModalContext";
+import * as React from 'react';
+
+import type { WithModalContextType, ModalContextType } from './ModalContext.js.flow';
 
 export const ModalContext: ModalContextType = React.createContext({
   setDimensions: () => {},

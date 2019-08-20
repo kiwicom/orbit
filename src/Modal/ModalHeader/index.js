@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import Text from "../../Text";
-import Heading, { StyledHeading } from "../../Heading";
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import { StyledModalSection } from "../ModalSection";
-import { left, right, rtlSpacing } from "../../utils/rtl";
-import { withModalContext } from "../ModalContext";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import Text from '../../Text';
+import Heading, { StyledHeading } from '../../Heading';
+import defaultTheme from '../../defaultTheme';
+import media from '../../utils/mediaQuery';
+import { StyledModalSection } from '../ModalSection';
+import { left, right, rtlSpacing } from '../../utils/rtl';
+import { withModalContext } from '../ModalContext';
+import type { Props } from './index.js.flow';
 
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
@@ -59,9 +59,9 @@ export const StyledModalHeader = styled.div`
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -71,7 +71,7 @@ export const StyledModalHeader = styled.div`
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    margin-top: ${({ suppressed }) => suppressed && "0!important"};
+    margin-top: ${({ suppressed }) => suppressed && '0!important'};
   }
 
   ${media.largeMobile(css`
@@ -79,10 +79,10 @@ export const StyledModalHeader = styled.div`
       rtlSpacing(
         illustration
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge} ${
-              suppressed ? theme.orbit.spaceXXLarge : "0"
+              suppressed ? theme.orbit.spaceXXLarge : '0'
             } ${theme.orbit.spaceXXLarge}`
           : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
-              suppressed ? theme.orbit.spaceXXLarge : "0"
+              suppressed ? theme.orbit.spaceXXLarge : '0'
             } ${theme.orbit.spaceXXLarge}`,
       )};
 
@@ -106,7 +106,7 @@ export const MobileHeader = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   // TODO use token for 52px
-  top: ${({ isMobileFullPage }) => (isMobileFullPage ? "0" : "16px")};
+  top: ${({ isMobileFullPage }) => (isMobileFullPage ? '0' : '16px')};
   ${right}: 48px;
   ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -136,7 +136,7 @@ MobileHeader.defaultProps = {
 };
 
 const StyledModalHeaderContent = styled.div`
-  margin-top: ${({ description }) => (description ? "32px" : "16px")};
+  margin-top: ${({ description }) => (description ? '32px' : '16px')};
 `;
 
 class ModalHeader extends React.PureComponent<Props> {
@@ -210,5 +210,5 @@ class ModalHeader extends React.PureComponent<Props> {
 const DecoratedComponent = withModalContext(ModalHeader);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalHeader";
+DecoratedComponent.displayName = 'ModalHeader';
 export default DecoratedComponent;

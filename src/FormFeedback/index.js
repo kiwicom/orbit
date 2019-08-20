@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import TYPE_OPTIONS from "./consts";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import TYPE_OPTIONS from './consts';
+import type { Props } from './index.js.flow';
 
 export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>

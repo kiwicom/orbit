@@ -1,35 +1,36 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import Heading from "../Heading";
-import Text from "../Text";
-import Loading from "../Loading";
-import Button from "../Button";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Clock from "../icons/Clock";
-import CarrierLogo from "../CarrierLogo";
-import Stack from "../Stack";
-import Badge from "../Badge";
-import TripSector, { TripDate } from "../TripSector";
-import TripSegment from "../TripSegment";
-import List, { ListItem } from "../List";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean, select } from '@storybook/addon-knobs';
 
-import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";
+import * as Icons from '../icons';
+import Heading from '../Heading';
+import Text from '../Text';
+import Loading from '../Loading';
+import Button from '../Button';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import Clock from '../icons/Clock';
+import CarrierLogo from '../CarrierLogo';
+import Stack from '../Stack';
+import Badge from '../Badge';
+import TripSector, { TripDate } from '../TripSector';
+import TripSegment from '../TripSegment';
+import List, { ListItem } from '../List';
 
-const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
+import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from './index';
+
+const getIcons = defaultIcon => select('Icon', Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Card", module)
+storiesOf('Card', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const title = text("Title", "Card with title");
-      const description = text("Description");
+      const title = text('Title', 'Card with title');
+      const description = text('Description');
       return (
         <Card>
           <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
@@ -37,14 +38,14 @@ storiesOf("Card", module)
       );
     },
     {
-      info: "This is the default configuration of this component.",
+      info: 'This is the default configuration of this component.',
     },
   )
   .add(
-    "Card with description",
+    'Card with description',
     () => {
-      const title = text("Title", "Card with title & description");
-      const description = text("Description", "This is a description of the card.");
+      const title = text('Title', 'Card with title & description');
+      const description = text('Description', 'This is a description of the card.');
       return (
         <Card>
           <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
@@ -53,13 +54,13 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card component is a simple container for grouping some relevant information. It’s possible to add title and description. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card component is a simple container for grouping some relevant information. It’s possible to add title and description. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Card with only section",
+    'Card with only section',
     () => {
-      const content = text("Content", "This is a content of the card.");
+      const content = text('Content', 'This is a content of the card.');
       return (
         <Card>
           <CardSection>
@@ -70,14 +71,14 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card component is a simple container for grouping some relevant information. You can add a content to Card. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card component is a simple container for grouping some relevant information. You can add a content to Card. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Card with sections",
+    'Card with sections',
     () => {
-      const title = text("Title", "Card with sections");
-      const description = text("Description", "This is a description of the card.");
+      const title = text('Title', 'Card with sections');
+      const description = text('Description', 'This is a description of the card.');
       return (
         <Card>
           <CardSection>
@@ -103,14 +104,14 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Card with expandable sections",
+    'Card with expandable sections',
     () => {
-      const title = text("Title", "Card with sections");
-      const description = text("Description", "This is a description of the card.");
+      const title = text('Title', 'Card with sections');
+      const description = text('Description', 'This is a description of the card.');
       return (
         <Card>
           <CardHeader title={title} subTitle={description} />
@@ -150,20 +151,20 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Card with default expanded",
+    'Card with default expanded',
     () => {
-      const initialExpanded = boolean("initialExpended", true);
+      const initialExpanded = boolean('initialExpended', true);
       return (
         <Card>
           <CardSection expandable>
             <CardSectionHeader>
               <Stack direction="row" align="center" justify="between">
                 <div>
-                  <CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />
+                  <CarrierLogo size="large" carriers={[{ code: 'FR', name: 'Ryanair' }]} />
                 </div>
                 <div>
                   <Stack direction="row" align="center">
@@ -180,8 +181,8 @@ storiesOf("Card", module)
           <CardSection
             expandable
             initialExpanded={initialExpanded}
-            onExpand={action("onExpand")}
-            onClose={action("onClose")}
+            onExpand={action('onExpand')}
+            onClose={action('onClose')}
           >
             <CardSectionHeader
               actions={
@@ -194,7 +195,7 @@ storiesOf("Card", module)
             >
               <Stack direction="row" align="center" justify="between">
                 <div>
-                  <CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />
+                  <CarrierLogo size="large" carriers={[{ code: 'FR', name: 'Ryanair' }]} />
                 </div>
                 <div>
                   <Stack direction="row" align="center">
@@ -210,14 +211,14 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Card with mixed sections",
+    'Card with mixed sections',
     () => {
-      const title = text("Title", "Card with sections");
-      const description = text("Description", "This is a description of the card.");
+      const title = text('Title', 'Card with sections');
+      const description = text('Description', 'This is a description of the card.');
       return (
         <Card>
           <CardHeader
@@ -251,11 +252,11 @@ storiesOf("Card", module)
     },
     {
       info:
-        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Loading Card",
+    'Loading Card',
     () => (
       <Card>
         <Loading type="boxLoader" loading>
@@ -270,11 +271,11 @@ storiesOf("Card", module)
     ),
     {
       info:
-        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "TripSector Card",
+    'TripSector Card',
     () => (
       <Card>
         <CardSection expandable initialExpanded>
@@ -283,7 +284,7 @@ storiesOf("Card", module)
             <TripSector dataTest="test">
               <TripDate>Mon 22 Oct</TripDate>
               <TripSegment
-                carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
+                carrier={{ code: 'FR', type: 'airline', name: 'Ryanair' }}
                 duration="2h"
                 departure="Barcelona BCN"
                 departureTime="6:30"
@@ -301,22 +302,22 @@ storiesOf("Card", module)
       </Card>
     ),
     {
-      info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
+      info: 'TripSector in expandable Card to test if Whole TripSector is visible after expand',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const title = text("Title", "Customisable card title");
-      const description = text("Description", "This is a customisable description of the card.");
-      const Icon = getIcon(getIcons("Airplane"));
-      const closable = boolean("Closable", false);
-      const dataTest = text("dataTest", "test");
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const title = text('Title', 'Customisable card title');
+      const description = text('Description', 'This is a customisable description of the card.');
+      const Icon = getIcon(getIcons('Airplane'));
+      const closable = boolean('Closable', false);
+      const dataTest = text('dataTest', 'test');
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Card
           closable={closable}
-          onClose={action("Close")}
+          onClose={action('Close')}
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
@@ -338,14 +339,14 @@ storiesOf("Card", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Accessibility",
+    'Accessibility',
     () => {
-      const title = text("Title", "Card with title");
-      const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
+      const title = text('Title', 'Card with title');
+      const dataA11ySection = text('dataA11ySection', 'ID-OF-CARD');
       return (
         <Card>
           <CardHeader dataA11ySection={dataA11ySection} title={title} />
@@ -353,14 +354,14 @@ storiesOf("Card", module)
       );
     },
     {
-      info: "This is a preview of component accessibility props",
+      info: 'This is a preview of component accessibility props',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
-        <Card closable onClose={action("Close")}>
+        <Card closable onClose={action('Close')}>
           <CardHeader
             icon={<Icons.Airplane />}
             title="Title of the CardHeader"
@@ -405,6 +406,6 @@ storiesOf("Card", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

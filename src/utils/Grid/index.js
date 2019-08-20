@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import mediaQueries from "../mediaQuery";
-import { DEVICES } from "../mediaQuery/consts";
-import getViewportGridStyles from "./helpers/getViewportGridStyles";
-import isDefined from "../../Stack/helpers/isDefined";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from ".";
+import defaultTheme from '../../defaultTheme';
+import mediaQueries from '../mediaQuery';
+import { DEVICES } from '../mediaQuery/consts';
+import getViewportGridStyles from './helpers/getViewportGridStyles';
+import isDefined from '../../Stack/helpers/isDefined';
+import type { Props } from './index.js.flow';
 
 const StyledGrid = styled(({ className, children, dataTest }) => (
   <div className={className} data-test={dataTest}>
@@ -25,7 +25,7 @@ const StyledGrid = styled(({ className, children, dataTest }) => (
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportGridStyles({ viewport, index, devices })};
           `)
-        : viewport === "smallMobile" &&
+        : viewport === 'smallMobile' &&
           css`
             ${getViewportGridStyles({ viewport, index, devices })};
           `,
@@ -42,15 +42,15 @@ StyledGrid.defaultProps = {
 
 const Grid = ({
   inline,
-  rows = "1fr",
-  columns = "1fr",
+  rows = '1fr',
+  columns = '1fr',
   gap,
   rowGap,
   columnGap,
   maxWidth,
   children,
   dataTest,
-  element = "div",
+  element = 'div',
   ...props
 }: Props) => {
   const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth };

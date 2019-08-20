@@ -1,21 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import defaultTheme from '../defaultTheme';
 import {
   TYPE_OPTIONS,
   WEIGHT_OPTIONS,
   ELEMENT_OPTIONS,
   ALIGN_OPTIONS,
   SIZE_OPTIONS,
-} from "./consts";
-import getSpacingToken from "../common/getSpacingToken";
-import { textAlign } from "../utils/rtl";
-import { getLinkStyle, StyledTextLink } from "../TextLink";
-import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from "../TextLink/consts";
-
-import type { Props } from "./index";
+} from './consts';
+import getSpacingToken from '../common/getSpacingToken';
+import { textAlign } from '../utils/rtl';
+import { getLinkStyle, StyledTextLink } from '../TextLink';
+import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from '../TextLink/consts';
+import type { Props } from './index.js.flow';
 
 const getTypeToken = () => ({ theme, type }) => {
   const typeTokens = {

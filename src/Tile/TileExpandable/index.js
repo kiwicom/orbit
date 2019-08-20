@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import Slide from "../../utils/Slide";
-import defaultTheme from "../../defaultTheme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State } from "./index";
+import Slide from '../../utils/Slide';
+import defaultTheme from '../../defaultTheme';
+import type { Props, State } from './index.js.flow';
 
 const StyledTileExpandable = styled.div`
   border-top: ${({ theme, expanded }) =>
@@ -31,6 +31,10 @@ StyledTileExpandable.defaultProps = {
 };
 
 class TileExpandable extends React.PureComponent<Props, State> {
+  timeout: TimeoutID;
+
+  node: {| current: any | HTMLDivElement |};
+
   constructor(props: Props) {
     super(props);
     this.node = React.createRef();
@@ -41,7 +45,7 @@ class TileExpandable extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     this.timeout = setTimeout(this.setHeight, 250); // Prevent showing children on initial render
-    window.addEventListener("resize", this.setHeight);
+    window.addEventListener('resize', this.setHeight);
   }
 
   componentDidUpdate() {
@@ -53,17 +57,13 @@ class TileExpandable extends React.PureComponent<Props, State> {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
-    window.removeEventListener("resize", this.setHeight);
+    window.removeEventListener('resize', this.setHeight);
   }
 
   setHeight = () => {
     const contentHeight = this.node.current?.clientHeight;
     this.setState({ contentHeight });
   };
-
-  timeout: TimeoutID;
-
-  node: { current: any | HTMLDivElement };
 
   render() {
     const { expanded, children, initialExpanded } = this.props;

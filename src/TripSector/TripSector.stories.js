@@ -1,32 +1,33 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
 
-import TripSegment from "../TripSegment";
-import List from "../List";
-import ListItem from "../List/ListItem";
-import CarrierLogo from "../CarrierLogo";
-import InformationCircle from "../icons/InformationCircle";
-import TextLink from "../TextLink";
-import FlightReturn from "../icons/FlightReturn";
-import Clock from "../icons/Clock";
-import Check from "../icons/Check";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 
-import TripSector, { TripLayover, TripDate } from ".";
+import TripSegment from '../TripSegment';
+import List from '../List';
+import ListItem from '../List/ListItem';
+import CarrierLogo from '../CarrierLogo';
+import InformationCircle from '../icons/InformationCircle';
+import TextLink from '../TextLink';
+import FlightReturn from '../icons/FlightReturn';
+import Clock from '../icons/Clock';
+import Check from '../icons/Check';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-storiesOf("TripSector", module)
+import TripSector, { TripLayover, TripDate } from '.';
+
+storiesOf('TripSector', module)
   .add(
-    "Multiple days",
+    'Multiple days',
     () => (
       <TripSector>
         <TripDate>Mon 22 Oct</TripDate>
         <TripSegment
           carrier={{
-            code: "FR",
-            type: "airline",
-            name: "Ryanair",
+            code: 'FR',
+            type: 'airline',
+            name: 'Ryanair',
           }}
           duration="2h"
           departure="Barcelona BCN"
@@ -35,7 +36,7 @@ storiesOf("TripSector", module)
           arrivalTime="8:30"
         >
           <List size="small" type="secondary">
-            <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+            <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
               Airline: Ryanair
             </ListItem>
             <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
@@ -53,9 +54,9 @@ storiesOf("TripSector", module)
         </TripLayover>
         <TripSegment
           carrier={{
-            code: "REGIOJETT",
-            type: "bus",
-            name: "RegioJet",
+            code: 'REGIOJETT',
+            type: 'bus',
+            name: 'RegioJet',
           }}
           duration="3h"
           departure="Paris CDG"
@@ -78,9 +79,9 @@ storiesOf("TripSector", module)
         </TripLayover>
         <TripSegment
           carrier={{
-            code: "FLIXBUS",
-            type: "bus",
-            name: "FLIXBUS",
+            code: 'FLIXBUS',
+            type: 'bus',
+            name: 'FLIXBUS',
           }}
           duration="1h 30m"
           departure="Lille XDB"
@@ -105,9 +106,9 @@ storiesOf("TripSector", module)
         <TripDate>Tue 23 Oct</TripDate>
         <TripSegment
           carrier={{
-            code: "UA",
-            type: "airline",
-            name: "United Airlines",
+            code: 'UA',
+            type: 'airline',
+            name: 'United Airlines',
           }}
           duration="10h 55m"
           departure="City of Brussels BRU"
@@ -122,23 +123,23 @@ storiesOf("TripSector", module)
       </TripSector>
     ),
     {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+      info: 'Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const date = text("date", "Mon 22 Oct");
-      const dataTest = text("dataTest", "test");
-      const duration = text("duration", "15h 10m");
+      const date = text('date', 'Mon 22 Oct');
+      const dataTest = text('dataTest', 'test');
+      const duration = text('duration', '15h 10m');
       return (
         <TripSector dataTest={dataTest}>
           <TripDate duration={duration}>{date}</TripDate>
           <TripSegment
             carrier={{
-              code: "FR",
-              type: "airline",
-              name: "Ryanair",
+              code: 'FR',
+              type: 'airline',
+              name: 'Ryanair',
             }}
             duration="2h"
             departure="Barcelona BCN"
@@ -147,7 +148,7 @@ storiesOf("TripSector", module)
             arrivalTime="8:30"
           >
             <List size="small" type="secondary">
-              <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+              <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
                 Airline: Ryanair
               </ListItem>
               <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
@@ -157,20 +158,20 @@ storiesOf("TripSector", module)
       );
     },
     {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+      info: 'Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <TripSector>
           <TripDate>Mon 22 Oct</TripDate>
           <TripSegment
             carrier={{
-              code: "FR",
-              type: "airline",
-              name: "Ryanair",
+              code: 'FR',
+              type: 'airline',
+              name: 'Ryanair',
             }}
             duration="2h"
             departure="Barcelona BCN"
@@ -179,7 +180,7 @@ storiesOf("TripSector", module)
             arrivalTime="8:30"
           >
             <List size="small" type="secondary">
-              <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+              <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
                 Airline: Ryanair
               </ListItem>
               <ListItem icon={<InformationCircle color="secondary" />}>Flight no: D8 1762</ListItem>
@@ -197,9 +198,9 @@ storiesOf("TripSector", module)
           </TripLayover>
           <TripSegment
             carrier={{
-              code: "REGIOJETT",
-              type: "bus",
-              name: "RegioJet",
+              code: 'REGIOJETT',
+              type: 'bus',
+              name: 'RegioJet',
             }}
             duration="3h"
             departure="Paris CDG"
@@ -222,9 +223,9 @@ storiesOf("TripSector", module)
           </TripLayover>
           <TripSegment
             carrier={{
-              code: "FLIXBUS",
-              type: "bus",
-              name: "FLIXBUS",
+              code: 'FLIXBUS',
+              type: 'bus',
+              name: 'FLIXBUS',
             }}
             duration="1h 30m"
             departure="Lille XDB"
@@ -249,9 +250,9 @@ storiesOf("TripSector", module)
           <TripDate>Tue 23 Oct</TripDate>
           <TripSegment
             carrier={{
-              code: "UA",
-              type: "airline",
-              name: "United Airlines",
+              code: 'UA',
+              type: 'airline',
+              name: 'United Airlines',
             }}
             duration="10h 55m"
             departure="City of Brussels BRU"
@@ -267,6 +268,6 @@ storiesOf("TripSector", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

@@ -1,13 +1,14 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import DestinationHeader from "../index";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-describe("DestinationHeader", () => {
-  const destinationName = "Dubai";
-  const image = "dubai_ae";
-  const dataTest = "test";
+import DestinationHeader from '../index';
+
+describe('DestinationHeader', () => {
+  const destinationName = 'Dubai';
+  const image = 'dubai_ae';
+  const dataTest = 'test';
   const goBack = jest.fn();
 
   const component = shallow(
@@ -19,17 +20,17 @@ describe("DestinationHeader", () => {
     />,
   );
 
-  const button = component.find("DestinationHeaderGoBackButton");
-  const heading = component.find("Heading");
-  it("should have passed props", () => {
+  const button = component.find('DestinationHeaderGoBackButton');
+  const heading = component.find('Heading');
+  it('should have passed props', () => {
     expect(heading.children().text()).toBe(destinationName);
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(component.render().prop('data-test')).toBe(dataTest);
   });
-  it("should execute onGoBack method", () => {
-    button.simulate("click");
-    expect(goBack).toHaveBeenCalled();
+  it('should execute onGoBack method', () => {
+    button.simulate('click');
+    expect(goBack).toHaveBeenCalledWith();
   });
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

@@ -1,8 +1,9 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import type { Props } from "./index";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import type { Props } from './index.js.flow';
 
 const Inner = styled.div`
   width: 100%;
@@ -12,11 +13,11 @@ class ClickOutside extends React.PureComponent<Props> {
   node = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
-    document.addEventListener("click", this.handleClickOutside, true);
+    document.addEventListener('click', this.handleClickOutside, true);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("click", this.handleClickOutside, true);
+    document.removeEventListener('click', this.handleClickOutside, true);
   }
 
   handleClickOutside = (ev: MouseEvent) => {

@@ -1,10 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import type { FilterWrapperType } from "./FilterWrapper.js.flow";
-import defaultTheme from "../../defaultTheme";
-import ButtonLink from "../../ButtonLink";
+import * as React from 'react';
+import styled from 'styled-components';
+
+import type { FilterWrapperType } from './FilterWrapper.js.flow';
+import defaultTheme from '../../defaultTheme';
+import ButtonLink from '../../ButtonLink';
 
 const StyledOnlyButton = styled(ButtonLink)``;
 

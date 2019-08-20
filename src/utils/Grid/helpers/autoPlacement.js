@@ -1,12 +1,13 @@
 // @flow
-import { css } from "styled-components";
 
-import applyGap from "./applyGap";
-import lengthOf from "./lengthOf";
-import realCellsCount from "./realCellsCount";
-import calculateColumnPlacement from "./calculateColumnPlacement";
-import calculateRowPlacement from "./calculateRowPlacement";
-import type { AutoPlacement } from "./autoPlacement";
+import { css } from 'styled-components';
+
+import applyGap from './applyGap';
+import lengthOf from './lengthOf';
+import realCellsCount from './realCellsCount';
+import calculateColumnPlacement from './calculateColumnPlacement';
+import calculateRowPlacement from './calculateRowPlacement';
+import type { AutoPlacement } from './autoPlacement.js.flow';
 
 /*
   This functions is applying a proper -ms-grid-column and -ms-grid-row

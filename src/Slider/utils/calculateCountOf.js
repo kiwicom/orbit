@@ -1,6 +1,6 @@
 // @flow
 
-import type { CalculateCountOf } from "./calculateCountOf";
+import type { CalculateCountOf } from './calculateCountOf.js.flow';
 
 const countValues = (data, [from, to], min) =>
   data.reduce(

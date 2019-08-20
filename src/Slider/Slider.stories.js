@@ -1,25 +1,26 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { array, text, number, boolean } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
 
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { array, text, number, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
-import Slider from "./index";
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-storiesOf("Slider", module)
+import Slider from './index';
+
+storiesOf('Slider', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const label = text("label", "Depart from Prague");
-      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const min = number("min", 1);
-      const max = number("max", 100);
-      const dataTest = text("dataTest", "01:00 PM – 11:59 PM");
+      const label = text('label', 'Depart from Prague');
+      const valueDescription = text('valueDescription', '01:00 PM – 11:59 PM');
+      const min = number('min', 1);
+      const max = number('max', 100);
+      const dataTest = text('dataTest', '01:00 PM – 11:59 PM');
       return (
         <Slider
-          onChange={action("onChange")}
+          onChange={action('onChange')}
           label={label}
           valueDescription={valueDescription}
           dataTest={dataTest}
@@ -30,18 +31,18 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Slider with Histogram",
+    'Slider with Histogram',
     () => {
-      const label = text("label", "Depart from Prague");
-      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const defaultValue = number("defaultValue", 12);
-      const min = number("min", 1);
-      const max = number("max", 24);
-      const histogramData = array("histogramData", [
+      const label = text('label', 'Depart from Prague');
+      const valueDescription = text('valueDescription', '01:00 PM – 11:59 PM');
+      const defaultValue = number('defaultValue', 12);
+      const min = number('min', 1);
+      const max = number('max', 24);
+      const histogramData = array('histogramData', [
         11,
         25,
         37,
@@ -67,11 +68,11 @@ storiesOf("Slider", module)
         22,
         2,
       ]);
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
+      const histogramDescription = text('histogramDescription', '20 of 133 flights');
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             label={label}
             valueDescription={valueDescription}
             histogramDescription={histogramDescription}
@@ -85,21 +86,21 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Range Slider",
+    'Range Slider',
     () => {
-      const label = text("label", "Depart from Prague");
-      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [1, 5]);
-      const min = number("min", 1);
-      const max = number("max", 24);
-      const step = number("step", 1);
+      const label = text('label', 'Depart from Prague');
+      const valueDescription = text('valueDescription', '01:00 PM – 11:59 PM');
+      const defaultValue = array('defaultValue', [1, 5]);
+      const min = number('min', 1);
+      const max = number('max', 24);
+      const step = number('step', 1);
       return (
         <Slider
-          onChange={action("onChange")}
+          onChange={action('onChange')}
           label={label}
           valueDescription={valueDescription}
           defaultValue={defaultValue}
@@ -111,19 +112,19 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Range Slider with Histogram",
+    'Range Slider with Histogram',
     () => {
-      const label = text("label", "Depart from Prague");
-      const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const defaultValue = array("defaultValue", [0, 24]);
-      const min = number("min", 0);
-      const max = number("max", 48);
-      const step = number("step", 2);
-      const histogramData = array("histogramData", [
+      const label = text('label', 'Depart from Prague');
+      const valueDescription = text('valueDescription', '01:00 PM – 11:59 PM');
+      const defaultValue = array('defaultValue', [0, 24]);
+      const min = number('min', 0);
+      const max = number('max', 48);
+      const step = number('step', 2);
+      const histogramData = array('histogramData', [
         11,
         25,
         37,
@@ -150,11 +151,11 @@ storiesOf("Slider", module)
         2,
         11,
       ]);
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
+      const histogramDescription = text('histogramDescription', '20 of 133 flights');
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             label={label}
             valueDescription={valueDescription}
             histogramDescription={histogramDescription}
@@ -169,20 +170,20 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Slider with loading Histogram",
+    'Slider with loading Histogram',
     () => {
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
-      const histogramLoading = boolean("histogramLoading", true);
-      const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
+      const histogramDescription = text('histogramDescription', '20 of 133 flights');
+      const histogramLoading = boolean('histogramLoading', true);
+      const histogramLoadingText = text('histogramLoadingText', 'Loading connection data...');
 
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             label="Depart from Prague"
             valueDescription="01:00 PM – 11:59 PM"
             histogramDescription={histogramDescription}
@@ -197,20 +198,20 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Range Slider with loading Histogram",
+    'Range Slider with loading Histogram',
     () => {
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
-      const histogramLoading = boolean("histogramLoading", true);
-      const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
+      const histogramDescription = text('histogramDescription', '20 of 133 flights');
+      const histogramLoading = boolean('histogramLoading', true);
+      const histogramLoadingText = text('histogramLoadingText', 'Loading connection data...');
 
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             label="Depart from Prague"
             valueDescription="01:00 PM – 11:59 PM"
             histogramDescription={histogramDescription}
@@ -225,23 +226,23 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Slider playground",
+    'Slider playground',
     () => {
-      const ariaLabel = text("ariaLabel", "Label of handle");
-      const ariaValueText = text("ariaValueText", "Text alternative of actual value");
-      const dataTest = text("dataTest", "test");
-      const defaultValue = number("defaultValue", 12);
-      const label = text("label", "Depart from Prague");
-      const max = number("max", 24);
-      const min = number("min", 1);
-      const step = number("step", 1);
-      const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+      const ariaLabel = text('ariaLabel', 'Label of handle');
+      const ariaValueText = text('ariaValueText', 'Text alternative of actual value');
+      const dataTest = text('dataTest', 'test');
+      const defaultValue = number('defaultValue', 12);
+      const label = text('label', 'Depart from Prague');
+      const max = number('max', 24);
+      const min = number('min', 1);
+      const step = number('step', 1);
+      const valueDescription = text('valueDescription', 'From midnight to 12:00 pm');
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
             ariaLabel={ariaLabel}
             ariaValueText={ariaValueText}
@@ -251,7 +252,7 @@ storiesOf("Slider", module)
             max={max}
             min={min}
             step={step}
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             valueDescription={valueDescription}
           />
         </div>
@@ -259,17 +260,17 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Range Slider playground",
+    'Range Slider playground',
     () => {
-      const ariaLabel = array("ariaLabel", ["First handle", "Second handle"]);
-      const ariaValueText = text("ariaValueText", "Text alternative of actual value");
-      const dataTest = text("dataTest", "test");
-      const defaultValue = number("defaultValue", [1, 12]);
-      const histogramData = array("histogramData", [
+      const ariaLabel = array('ariaLabel', ['First handle', 'Second handle']);
+      const ariaValueText = text('ariaValueText', 'Text alternative of actual value');
+      const dataTest = text('dataTest', 'test');
+      const defaultValue = number('defaultValue', [1, 12]);
+      const histogramData = array('histogramData', [
         1,
         2,
         3,
@@ -295,16 +296,16 @@ storiesOf("Slider", module)
         23,
         24,
       ]);
-      const histogramDescription = text("histogramDescription", "28 of 90 flights");
-      const histogramLoading = boolean("histogramLoading", false);
-      const histogramLoadingText = text("histogramLoadingText", undefined);
-      const label = text("label", "Depart from Prague");
-      const max = number("max", 24);
-      const min = number("min", 1);
-      const step = number("step", 1);
-      const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+      const histogramDescription = text('histogramDescription', '28 of 90 flights');
+      const histogramLoading = boolean('histogramLoading', false);
+      const histogramLoadingText = text('histogramLoadingText', undefined);
+      const label = text('label', 'Depart from Prague');
+      const max = number('max', 24);
+      const min = number('min', 1);
+      const step = number('step', 1);
+      const valueDescription = text('valueDescription', 'From midnight to 12:00 pm');
       return (
-        <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+        <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
           <Slider
             ariaLabel={ariaLabel}
             ariaValueText={ariaValueText}
@@ -318,7 +319,7 @@ storiesOf("Slider", module)
             max={max}
             min={min}
             step={step}
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             valueDescription={valueDescription}
           />
         </div>
@@ -326,16 +327,16 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL default Slider",
+    'RTL default Slider',
     () => {
       return (
         <RenderInRtl>
           <Slider
-            onChange={action("onChange")}
+            onChange={action('onChange')}
             label="Depart from Prague"
             valueDescription="01:00 PM – 11:59 PM"
             defaultValue={50}
@@ -345,17 +346,17 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL Slider with Histogram",
+    'RTL Slider with Histogram',
     () => {
       return (
         <RenderInRtl>
-          <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+          <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
             <Slider
-              onChange={action("onChange")}
+              onChange={action('onChange')}
               label="Depart from Prague"
               valueDescription="01:00 PM – 11:59 PM"
               histogramDescription="20 of 133 flights"
@@ -395,17 +396,17 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL Range Slider with Histogram",
+    'RTL Range Slider with Histogram',
     () => {
       return (
         <RenderInRtl>
-          <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+          <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
             <Slider
-              onChange={action("onChange")}
+              onChange={action('onChange')}
               label="Depart from Prague"
               valueDescription="01:00 PM – 11:59 PM"
               histogramDescription="20 of 133 flights"
@@ -445,21 +446,21 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL Slider with loading Histogram",
+    'RTL Slider with loading Histogram',
     () => {
-      const histogramDescription = text("histogramDescription", "20 of 133 flights");
-      const histogramLoading = boolean("histogramLoading", true);
-      const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
+      const histogramDescription = text('histogramDescription', '20 of 133 flights');
+      const histogramLoading = boolean('histogramLoading', true);
+      const histogramLoadingText = text('histogramLoadingText', 'Loading connection data...');
 
       return (
         <RenderInRtl>
-          <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
+          <div style={{ backgroundColor: '#f1f5f7', padding: '24px' }}>
             <Slider
-              onChange={action("onChange")}
+              onChange={action('onChange')}
               label="Depart from Prague"
               valueDescription="01:00 PM – 11:59 PM"
               histogramDescription={histogramDescription}
@@ -475,6 +476,6 @@ storiesOf("Slider", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   );

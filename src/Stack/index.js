@@ -1,17 +1,17 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import mediaQueries from "../utils/mediaQuery";
-import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
-import { DEVICES } from "../utils/mediaQuery/consts";
-import isDefined from "./helpers/isDefined";
-import shouldUseFlex from "./helpers/shouldUseFlex";
-import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-import getChildrenMargin from "./helpers/getChildrenMargin";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import mediaQueries from '../utils/mediaQuery';
+import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from './consts';
+import { DEVICES } from '../utils/mediaQuery/consts';
+import isDefined from './helpers/isDefined';
+import shouldUseFlex from './helpers/shouldUseFlex';
+import getViewportFlexStyles from './helpers/getViewportFlexStyles';
+import getChildrenMargin from './helpers/getChildrenMargin';
+import type { Props } from './index.js.flow';
 
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>
@@ -27,7 +27,7 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
             ${getChildrenMargin({ viewport, index, devices })}
           `)
-        : viewport === "smallMobile" &&
+        : viewport === 'smallMobile' &&
           css`
             ${getViewportFlexStyles(viewport)};
             ${getChildrenMargin({ viewport, index, devices })}
@@ -57,7 +57,7 @@ const Stack = (props: Props) => {
     tablet,
     desktop,
     largeDesktop,
-    element = "div",
+    element = 'div',
   } = props;
 
   // turn on FLEX automatically or manually with prop flex

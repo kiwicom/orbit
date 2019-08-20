@@ -1,9 +1,10 @@
 // @flow
-import { css } from "styled-components";
 
-import { isPositionBottom, isPositionTop, isPositionRight, isPositionLeft } from "./isPosition";
-import type { Props } from "./resolveContainerPosition";
-import { TOOLTIP_ARROW_SIZE } from "../consts";
+import { css } from 'styled-components';
+
+import { isPositionBottom, isPositionTop, isPositionRight, isPositionLeft } from './isPosition';
+import type { Props } from './resolveContainerPosition.js.flow';
+import { TOOLTIP_ARROW_SIZE } from '../consts';
 
 const resolveContainerPosition = ({
   position,

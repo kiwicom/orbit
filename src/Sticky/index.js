@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../utils/scroll";
-import defaultTheme from "../defaultTheme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State } from "./index";
+import { addScrollHandler, removeScrollHandler, getScrollingElement } from '../utils/scroll';
+import defaultTheme from '../defaultTheme';
+import type { Props, State } from './index.js.flow';
 
 const StyledSticky = styled.div``;
 
@@ -32,24 +32,24 @@ class Sticky extends React.Component<Props, State> {
     width: 0,
   };
 
-  content: {
+  content: {|
     current: any | HTMLDivElement,
-  } = React.createRef();
+  |} = React.createRef();
 
-  sticky: {
+  sticky: {|
     current: any | HTMLDivElement,
-  } = React.createRef();
+  |} = React.createRef();
 
   componentDidMount() {
     this.handleTop();
     addScrollHandler(this.handleScroll);
-    window.addEventListener("resize", this.handleTop);
-    window.addEventListener("resize", this.handleScroll);
+    window.addEventListener('resize', this.handleTop);
+    window.addEventListener('resize', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleTop);
-    window.removeEventListener("resize", this.handleScroll);
+    window.removeEventListener('resize', this.handleTop);
+    window.removeEventListener('resize', this.handleScroll);
     removeScrollHandler(this.handleScroll);
   }
 

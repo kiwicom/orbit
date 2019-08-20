@@ -1,12 +1,13 @@
 // @flow strict
-import * as React from "react";
-import { mount } from "enzyme";
 
-import Portal from "../index";
+import * as React from 'react';
+import { mount } from 'enzyme';
 
-describe("Portal with element", () => {
-  const target = document.createElement("div");
-  target.setAttribute("id", "portal");
+import Portal from '../index';
+
+describe('Portal with element', () => {
+  const target = document.createElement('div');
+  target.setAttribute('id', 'portal');
 
   // $FlowIssue
   document.body.appendChild(target);
@@ -15,29 +16,29 @@ describe("Portal with element", () => {
       <p>Content</p>
     </Portal>,
   );
-  it("should match snapshot", () => {
-    expect(document.getElementById("portal")).toMatchSnapshot();
+  it('should match snapshot', () => {
+    expect(document.getElementById('portal')).toMatchSnapshot();
     expect(component).toMatchSnapshot();
   });
-  it("unmouted, should match snapshot", () => {
+  it('unmouted, should match snapshot', () => {
     component.unmount();
-    expect(document.getElementById("portal")).toMatchSnapshot();
+    expect(document.getElementById('portal')).toMatchSnapshot();
     expect(component).toMatchSnapshot();
   });
 });
-describe("Portal without element", () => {
+describe('Portal without element', () => {
   const component = mount(
     <Portal>
       <p>Content</p>
     </Portal>,
   );
-  it("should match snapshot", () => {
-    expect(document.getElementById("modal")).toMatchSnapshot();
+  it('should match snapshot', () => {
+    expect(document.getElementById('modal')).toMatchSnapshot();
     expect(component).toMatchSnapshot();
   });
-  it("unmouted, should match snapshot", () => {
+  it('unmouted, should match snapshot', () => {
     component.unmount();
-    expect(document.getElementById("modal")).toMatchSnapshot();
+    expect(document.getElementById('modal')).toMatchSnapshot();
     expect(component).toMatchSnapshot();
   });
 });

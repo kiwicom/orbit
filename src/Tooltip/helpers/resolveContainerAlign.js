@@ -1,10 +1,11 @@
 // @flow
-import { css } from "styled-components";
 
-import { isHorizontal, isVertical } from "./isPosition";
-import { isAlignCenter, isAlignEnd, isAlignStart } from "./isAlign";
-import type { Props } from "./resolveContainerAlign";
-import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from "../consts";
+import { css } from 'styled-components';
+
+import { isHorizontal, isVertical } from './isPosition';
+import { isAlignCenter, isAlignEnd, isAlignStart } from './isAlign';
+import type { Props } from './resolveContainerAlign.js.flow';
+import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from '../consts';
 
 const resolveContainerAlign = ({
   align,

@@ -1,19 +1,19 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import ChevronLeft from "../icons/ChevronLeft";
-import Heading, { StyledHeading, getHeadingToken } from "../Heading";
-import { TYPE_OPTIONS, TOKENS } from "../Heading/consts";
-import ButtonLink, { StyledButton } from "../Button";
-import BASE_URL from "./consts";
-import defaultTheme from "../defaultTheme";
-import LazyImage from "../LazyImage";
-import mq from "../utils/mediaQuery";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import ChevronLeft from '../icons/ChevronLeft';
+import Heading, { StyledHeading, getHeadingToken } from '../Heading';
+import { TYPE_OPTIONS, TOKENS } from '../Heading/consts';
+import ButtonLink, { StyledButton } from '../Button';
+import BASE_URL from './consts';
+import defaultTheme from '../defaultTheme';
+import LazyImage from '../LazyImage';
+import mq from '../utils/mediaQuery';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props } from './index.js.flow';
 
 const StyledDestinationHeader = styled.div`
   width: 100%;
@@ -104,7 +104,7 @@ const DestinationHeaderGoBackButton = ({ onClick }) => {
       size="small"
       iconLeft={<ChevronLeft />}
       onClick={onClick}
-      title={pureTranslate(dictionary, "breadcrumbs_back")}
+      title={pureTranslate(dictionary, 'breadcrumbs_back')}
     />
   );
 };

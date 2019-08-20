@@ -1,9 +1,9 @@
 // @flow
-import { css } from "styled-components";
 
-import { QUERIES } from "./consts";
+import { css } from 'styled-components';
 
-import type { MediaQueries, GetBreakpointWidth } from ".";
+import { QUERIES } from './consts';
+import type { MediaQueries, GetBreakpointWidth } from './index.js.flow';
 
 export const getBreakpointWidth: GetBreakpointWidth = (name, theme, pure) => {
   const tokens = {

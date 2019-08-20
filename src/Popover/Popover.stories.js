@@ -1,20 +1,21 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
 
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { POSITIONS } from "./consts";
-import Stack from "../Stack";
-import Button from "../Button";
-import Stepper from "../Stepper";
-import ListChoice from "../ListChoice";
-import Text from "../Text";
-import * as Icons from "../icons";
-import ChevronDown from "../icons/ChevronDown";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
-import Popover from "./index";
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import { POSITIONS } from './consts';
+import Stack from '../Stack';
+import Button from '../Button';
+import Stepper from '../Stepper';
+import ListChoice from '../ListChoice';
+import Text from '../Text';
+import * as Icons from '../icons';
+import ChevronDown from '../icons/ChevronDown';
+
+import Popover from './index';
 
 const content = (
   <div>
@@ -37,11 +38,11 @@ const content = (
   </div>
 );
 
-storiesOf("Popover", module)
+storiesOf('Popover', module)
   .addDecorator(withKnobs)
 
   .add(
-    "Default",
+    'Default',
     () => {
       return (
         <Popover content={content}>
@@ -53,14 +54,14 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Prefered Position",
+    'Prefered Position',
     () => {
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.TOP,
       );
@@ -74,7 +75,7 @@ storiesOf("Popover", module)
                 description="Further description"
                 selectable
                 icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
+                onClick={action('onClick')}
               />
             </div>
           }
@@ -88,13 +89,13 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "With ListChoice",
+    'With ListChoice',
     () => {
-      const width = text("width", "250px");
+      const width = text('width', '250px');
       return (
         <Popover
           noPadding
@@ -106,7 +107,7 @@ storiesOf("Popover", module)
                 description="Further description"
                 selectable
                 icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
+                onClick={action('onClick')}
               />
               <ListChoice
                 title="Choice Title"
@@ -114,14 +115,14 @@ storiesOf("Popover", module)
                 selectable
                 selected
                 icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
+                onClick={action('onClick')}
               />
               <ListChoice
                 title="Choice Title"
                 description="Further description"
                 selectable
                 icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
+                onClick={action('onClick')}
               />
             </div>
           }
@@ -135,20 +136,20 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Opened by prop",
+    'Opened by prop',
     () => {
-      const opened = boolean("opened", false);
+      const opened = boolean('opened', false);
 
       return (
         <Popover
           opened={opened}
           content={content}
-          onOpen={action("open")}
-          onClose={action("close")}
+          onOpen={action('open')}
+          onClose={action('close')}
         >
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
@@ -158,20 +159,20 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const dataTest = text("dataTest", "test");
+      const dataTest = text('dataTest', 'test');
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
-      const width = text("width", "350px");
-      const noPadding = boolean("noPadding", false);
+      const width = text('width', '350px');
+      const noPadding = boolean('noPadding', false);
 
       return (
         <Popover
@@ -180,8 +181,8 @@ storiesOf("Popover", module)
           content={content}
           preferredPosition={preferredPosition}
           noPadding={noPadding}
-          onOpen={action("open")}
-          onClose={action("close")}
+          onOpen={action('open')}
+          onClose={action('close')}
         >
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
@@ -191,15 +192,15 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => {
-      const dataTest = text("dataTest", "test");
+      const dataTest = text('dataTest', 'test');
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
@@ -216,6 +217,6 @@ storiesOf("Popover", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   );

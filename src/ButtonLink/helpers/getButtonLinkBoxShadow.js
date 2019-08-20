@@ -1,9 +1,10 @@
 // @flow
-import { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { BUTTON_STATES } from "../consts";
-import type { GetButtonLinkBoxShadow } from "./getButtonLinkBoxShadow";
+import { css } from 'styled-components';
+import convertHexToRgba from '@kiwicom/orbit-design-tokens/lib/convertHexToRgba';
+
+import { BUTTON_STATES } from '../consts';
+import type { GetButtonLinkBoxShadow } from './getButtonLinkBoxShadow.js.flow';
 
 const getButtonLinkBoxShadow: GetButtonLinkBoxShadow = state => ({
   disabled,

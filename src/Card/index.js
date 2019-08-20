@@ -1,21 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import Close from "../icons/Close";
-import ButtonLink from "../ButtonLink";
-import CardSection, { StyledCardSection } from "./CardSection";
-import CardHeader, { StyledCardHeader } from "./CardHeader";
-import { StyledCardSectionContent } from "./CardSection/CardSectionContent";
-import Loading, { StyledLoading } from "../Loading";
-import getSpacingToken from "../common/getSpacingToken";
-import { right } from "../utils/rtl";
-import CLOSE_BUTTON_DATA_TEST from "./consts";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme from '../defaultTheme';
+import Close from '../icons/Close';
+import ButtonLink from '../ButtonLink';
+import CardSection, { StyledCardSection } from './CardSection';
+import CardHeader, { StyledCardHeader } from './CardHeader';
+import { StyledCardSectionContent } from './CardSection/CardSectionContent';
+import Loading, { StyledLoading } from '../Loading';
+import getSpacingToken from '../common/getSpacingToken';
+import { right } from '../utils/rtl';
+import CLOSE_BUTTON_DATA_TEST from './consts';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props, State } from './index.js.flow';
 
 const getBorder = ({ theme }) =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
@@ -114,7 +114,7 @@ const CardCloseButton = ({ onClick, dataTest }) => {
         icon={<Close />}
         onClick={onClick}
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={pureTranslate(dictionary, 'button_close')}
       />
     </StyledCloseContainer>
   );
@@ -146,7 +146,7 @@ class Card extends React.Component<Props, State> {
       return [];
     }
     if (
-      Loading.name !== "" &&
+      Loading.name !== '' &&
       children[0].type?.name === Loading.name &&
       !children[0].props?.loading
     ) {
@@ -243,7 +243,7 @@ class Card extends React.Component<Props, State> {
 
 export default Card;
 
-export { default as CardHeader } from "./CardHeader";
-export { default as CardSection } from "./CardSection";
-export { default as CardSectionHeader } from "./CardSection/CardSectionHeader";
-export { default as CardSectionContent } from "./CardSection/CardSectionContent";
+export { default as CardHeader } from './CardHeader';
+export { default as CardSection } from './CardSection';
+export { default as CardSectionHeader } from './CardSection/CardSectionHeader';
+export { default as CardSectionContent } from './CardSection/CardSectionContent';

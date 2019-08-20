@@ -1,8 +1,9 @@
 // @flow
-import { TOKENS } from "../consts";
-import { SIZE_OPTIONS } from "../../Button/consts";
-import { rtlSpacing } from "../../utils/rtl";
-import type { GetButtonLinkSpacing } from "./getButtonLinkSpacing";
+
+import { TOKENS } from '../consts';
+import { SIZE_OPTIONS } from '../../Button/consts';
+import { rtlSpacing } from '../../utils/rtl';
+import type { GetButtonLinkSpacing } from './getButtonLinkSpacing.js.flow';
 
 const getButtonLinkSpacing: GetButtonLinkSpacing = () => ({
   theme,

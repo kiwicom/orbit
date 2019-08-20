@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State, PictureProps } from ".";
+import defaultTheme from '../defaultTheme';
+import type { Props, State, PictureProps } from './index.js.flow';
 
 const FORMATS = {
-  WEBP: "webp",
-  JPEG: "jpg",
+  WEBP: 'webp',
+  JPEG: 'jpg',
 };
 
 export const StyledLazyImage = styled.div`
@@ -18,7 +18,7 @@ export const StyledLazyImage = styled.div`
 `;
 
 const Image = styled.img`
-  z-index: ${({ visible }) => (visible ? "1" : "0")};
+  z-index: ${({ visible }) => (visible ? '1' : '0')};
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,7 +26,7 @@ const Image = styled.img`
   transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  opacity: ${({ visible }) => (visible ? "1" : "0")};
+  opacity: ${({ visible }) => (visible ? '1' : '0')};
   transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   ${({ lowRes }) =>
     lowRes &&
@@ -41,8 +41,8 @@ Image.defaultProps = {
 
 const getPictureType = picture => {
   const TYPES = {
-    [FORMATS.WEBP]: "image/webp",
-    [FORMATS.JPEG]: "image/jpg",
+    [FORMATS.WEBP]: 'image/webp',
+    [FORMATS.JPEG]: 'image/jpg',
   };
   return TYPES[picture];
 };
@@ -52,7 +52,7 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
     {Object.keys(pictures).map(picture => (
       <React.Fragment key={picture}>
         <source srcSet={pictures[picture]} type={getPictureType(picture)} />
-        {picture === "jpg" && (
+        {picture === 'jpg' && (
           <Image
             onLoad={onLoad}
             src={pictures[picture]}

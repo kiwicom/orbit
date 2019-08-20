@@ -1,15 +1,15 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import Calendar from "../../icons/Calendar";
-import defaultTheme from "../../defaultTheme";
-import Text, { StyledText } from "../../Text";
-import Clock from "../../icons/Clock";
-import Stack from "../../Stack";
-import Badge from "../../Badge";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import Calendar from '../../icons/Calendar';
+import defaultTheme from '../../defaultTheme';
+import Text, { StyledText } from '../../Text';
+import Clock from '../../icons/Clock';
+import Stack from '../../Stack';
+import Badge from '../../Badge';
+import type { Props } from './index.js.flow';
 
 const StyledTripDate = styled.div`
   display: flex;

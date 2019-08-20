@@ -1,24 +1,24 @@
 // @flow
 
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { text, select } from "@storybook/addon-knobs";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text, select } from '@storybook/addon-knobs';
 
-import * as Icons from "../icons";
-import { SIZES, TYPES } from "./consts";
-import { ICON_COLORS } from "../Icon/consts";
-import CarrierLogo from "../CarrierLogo";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as Icons from '../icons';
+import { SIZES, TYPES } from './consts';
+import { ICON_COLORS } from '../Icon/consts';
+import CarrierLogo from '../CarrierLogo';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-import List, { ListItem } from "./index";
+import List, { ListItem } from './index';
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+const getIcons = defaultIcon => select('Icon', [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("List", module)
+storiesOf('List', module)
   .add(
-    "Default",
+    'Default',
     () => (
       <List>
         <ListItem>24,000 locations around the globe</ListItem>
@@ -30,14 +30,14 @@ storiesOf("List", module)
     ),
     {
       info:
-        "List groups related information together and make content more scalable and organized.",
+        'List groups related information together and make content more scalable and organized.',
     },
   )
   .add(
-    "Different type and size",
+    'Different type and size',
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.SMALL);
-      const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
+      const size = select('Size', Object.values(SIZES), SIZES.SMALL);
+      const type = select('Type', Object.values(TYPES), TYPES.SECONDARY);
 
       return (
         <List size={size} type={type}>
@@ -53,18 +53,18 @@ storiesOf("List", module)
     },
     {
       info:
-        "List groups related information together and make content more scalable and organized.",
+        'List groups related information together and make content more scalable and organized.',
     },
   )
   .add(
-    "With carrier",
+    'With carrier',
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.SMALL);
-      const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
+      const size = select('Size', Object.values(SIZES), SIZES.SMALL);
+      const type = select('Type', Object.values(TYPES), TYPES.SECONDARY);
 
       return (
         <List size={size} type={type}>
-          <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+          <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
             Airline: Ryanair
           </ListItem>
           <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
@@ -75,19 +75,19 @@ storiesOf("List", module)
     },
     {
       info:
-        "List groups related information together and make content more scalable and organized.",
+        'List groups related information together and make content more scalable and organized.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-      const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
-      const Icon = getIcon(getIcons("Check"));
-      const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
-      const content = text("Content", "24,000 locations around the globe");
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      const dataTest = text("dataTest", "test");
+      const size = select('Size', Object.values(SIZES), SIZES.NORMAL);
+      const type = select('Type', Object.values(TYPES), TYPES.PRIMARY);
+      const Icon = getIcon(getIcons('Check'));
+      const iconColor = select('iconColor', Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
+      const content = text('Content', '24,000 locations around the globe');
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
+      const dataTest = text('dataTest', 'test');
 
       return (
         <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
@@ -99,15 +99,15 @@ storiesOf("List", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <List size="small" type="secondary">
-          <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+          <ListItem icon={<CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} />}>
             Airline: Ryanair
           </ListItem>
           <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
@@ -117,6 +117,6 @@ storiesOf("List", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

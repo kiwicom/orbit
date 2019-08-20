@@ -1,5 +1,6 @@
 // @flow
-import type { Props } from "./tooltipPadding";
+
+import type { Props } from './tooltipPadding.js.flow';
 
 const tooltipPadding = ({ contentHeight, theme }: Props) => {
   // one-line text should have smaller top/bottom padding

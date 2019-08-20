@@ -1,49 +1,50 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean, select, array } from "@storybook/addon-knobs";
 
-import Button from "../Button";
-import { SIZES } from "./consts";
-import Illustration from "../Illustration";
-import Text from "../Text";
-import { NAMES } from "../Illustration/consts";
-import ChevronLeft from "../icons/ChevronLeft";
-import FlightDirect from "../icons/FlightDirect";
-import Stack from "../Stack";
-import ButtonLink from "../ButtonLink";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Card from "../Card";
-import { CarrierLogo } from "../index";
-import CardSection from "../Card/CardSection";
-import CardHeader from "../Card/CardHeader";
-import InputField from "../InputField";
-import Select from "../Select";
-import CountryFlag from "../CountryFlag";
-import InputGroup from "../InputGroup";
-import Airplane from "../icons/Airplane";
-import TextLink from "../TextLink";
-import Checkbox from "../Checkbox";
-import Radio from "../Radio";
-import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
-import Tooltip from "../Tooltip";
-import Tile from "../Tile";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean, select, array } from '@storybook/addon-knobs';
 
-import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
+import Button from '../Button';
+import { SIZES } from './consts';
+import Illustration from '../Illustration';
+import Text from '../Text';
+import { NAMES } from '../Illustration/consts';
+import ChevronLeft from '../icons/ChevronLeft';
+import FlightDirect from '../icons/FlightDirect';
+import Stack from '../Stack';
+import ButtonLink from '../ButtonLink';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import Card from '../Card';
+import { CarrierLogo } from '../index';
+import CardSection from '../Card/CardSection';
+import CardHeader from '../Card/CardHeader';
+import InputField from '../InputField';
+import Select from '../Select';
+import CountryFlag from '../CountryFlag';
+import InputGroup from '../InputGroup';
+import Airplane from '../icons/Airplane';
+import TextLink from '../TextLink';
+import Checkbox from '../Checkbox';
+import Radio from '../Radio';
+import CardSectionHeader from '../Card/CardSection/CardSectionHeader';
+import Tooltip from '../Tooltip';
+import Tile from '../Tile';
 
-storiesOf("Modal", module)
+import Modal, { ModalHeader, ModalSection, ModalFooter } from './index';
+
+storiesOf('Modal', module)
   .add(
-    "Sizes",
+    'Sizes',
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-      const title = text("Title", "Orbit design system");
-      const description = text("Title", "I'm lovely description");
+      const size = select('Size', Object.values(SIZES), SIZES.NORMAL);
+      const title = text('Title', 'Orbit design system');
+      const description = text('Title', "I'm lovely description");
 
-      const onClose = action("onClose");
+      const onClose = action('onClose');
       const content = text(
-        "Content",
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'Content',
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
       );
       return (
         <Modal onClose={onClose} size={size}>
@@ -65,13 +66,13 @@ storiesOf("Modal", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Short Modal",
+    'Short Modal',
     () => (
-      <Modal onClose={action("onClose")} fixedFooter>
+      <Modal onClose={action('onClose')} fixedFooter>
         <ModalSection>
           <Stack>
             <Text uppercase weight="bold">
@@ -80,7 +81,7 @@ storiesOf("Modal", module)
             <Tile
               title={
                 <Stack direction="row" align="center" justify="between" spacing="condensed">
-                  <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                  <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                   <Stack spacing="tight">
                     <Text size="small" type="secondary">
                       Sat, Mar 31 Trip length: 1h55m
@@ -102,15 +103,15 @@ storiesOf("Modal", module)
     ),
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Without section",
+    'Without section',
     () => {
       const showMore = boolean(false);
       return (
-        <Modal onClose={action("onClose")} fixedFooter>
+        <Modal onClose={action('onClose')} fixedFooter>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -121,7 +122,7 @@ storiesOf("Modal", module)
               <Text>Lorem ipsum dolor sit amet</Text>
             </ModalSection>
           )}
-          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+          <ModalFooter flex={['0 0 auto', '1 1 100%']}>
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
@@ -132,15 +133,15 @@ storiesOf("Modal", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Removable sections",
+    'Removable sections',
     () => {
       const showMore = boolean(false);
       return (
-        <Modal onClose={action("onClose")} fixedFooter>
+        <Modal onClose={action('onClose')} fixedFooter>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -154,7 +155,7 @@ storiesOf("Modal", module)
           <ModalSection suppressed>
             <Text>Lorem ipsum dolor sit amet</Text>
           </ModalSection>
-          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+          <ModalFooter flex={['0 0 auto', '1 1 100%']}>
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
@@ -165,15 +166,15 @@ storiesOf("Modal", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "With Form",
+    'With Form',
     () => {
       const showMore = boolean(false);
       return (
-        <Modal onClose={action("onClose")} fixedFooter>
+        <Modal onClose={action('onClose')} fixedFooter>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -185,12 +186,12 @@ storiesOf("Modal", module)
               </Text>
               <InputField label="E-mail" placeholder="Your email" />
               <InputGroup
-                flex={["0 0 120px", "1 1 100%"]}
-                onChange={action("onChange")}
+                flex={['0 0 120px', '1 1 100%']}
+                onChange={action('onChange')}
                 label="Mobile phone"
               >
                 <Select
-                  options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                  options={[{ value: 1, label: '+420' }, { value: 2, label: '+421' }]}
                   value={1}
                   prefix={<CountryFlag code="cz" />}
                 />
@@ -211,7 +212,7 @@ storiesOf("Modal", module)
               )}
             </Stack>
           </ModalSection>
-          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+          <ModalFooter flex={['0 0 auto', '1 1 100%']}>
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
@@ -222,13 +223,13 @@ storiesOf("Modal", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "With fixedFooter",
+    'With fixedFooter',
     () => (
-      <Modal onClose={action("onClose")} fixedFooter>
+      <Modal onClose={action('onClose')} fixedFooter>
         <ModalHeader
           title="Enjoy something to eat while you fly"
           illustration={<Illustration name="Meal" size="small" />}
@@ -251,7 +252,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -274,7 +275,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -297,7 +298,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -329,7 +330,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -352,7 +353,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -375,7 +376,7 @@ storiesOf("Modal", module)
                   }
                 >
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                    <CarrierLogo carriers={[{ code: 'FR', name: 'Ryanair' }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -392,7 +393,7 @@ storiesOf("Modal", module)
             </Card>
           </Stack>
         </ModalSection>
-        <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+        <ModalFooter flex={['0 0 auto', '1 1 100%']}>
           <Button icon={<ChevronLeft />} type="secondary">
             Back
           </Button>
@@ -402,27 +403,27 @@ storiesOf("Modal", module)
     ),
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Full preview",
+    'Full preview',
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-      const title = text("Title", "Orbit design system");
-      const description = text("Description", "Lorem ispum dolor sit amet");
-      const illustration = select("Illustration", [null, ...Object.values(NAMES)], "Accommodation");
-      const onClose = action("onClose");
-      const fixed = boolean("fixedFooter", false);
-      const suppressed = boolean("suppressed", false);
+      const size = select('Size', Object.values(SIZES), SIZES.NORMAL);
+      const title = text('Title', 'Orbit design system');
+      const description = text('Description', 'Lorem ispum dolor sit amet');
+      const illustration = select('Illustration', [null, ...Object.values(NAMES)], 'Accommodation');
+      const onClose = action('onClose');
+      const fixed = boolean('fixedFooter', false);
+      const suppressed = boolean('suppressed', false);
       const content = text(
-        "Text",
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'Text',
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
       );
-      const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
-      const dataTest = text("dataTest", "test");
-      const isMobileFullPage = boolean("isMobileFullPage", false);
-      const showBack = boolean("showBackButton", true);
+      const flex = array('Flex', ['0 0 auto', '1 1 100%']);
+      const dataTest = text('dataTest', 'test');
+      const isMobileFullPage = boolean('isMobileFullPage', false);
+      const showBack = boolean('showBackButton', true);
       return (
         <Modal
           onClose={onClose}
@@ -462,14 +463,14 @@ storiesOf("Modal", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
-        <Modal onClose={action("onClose")} fixedFooter>
+        <Modal onClose={action('onClose')} fixedFooter>
           <ModalHeader
             title="The title of the ModalHeader"
             illustration={<Illustration name="Accommodation" size="small" />}
@@ -488,7 +489,7 @@ storiesOf("Modal", module)
               for more detailed design guidelines.
             </Text>
           </ModalSection>
-          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+          <ModalFooter flex={['0 0 auto', '1 1 100%']}>
             <Button type="secondary" iconLeft={<ChevronLeft />}>
               Back
             </Button>
@@ -498,6 +499,6 @@ storiesOf("Modal", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

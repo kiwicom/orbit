@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import Button from "../Button";
-import ChevronLeft from "../icons/ChevronLeft";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import Button from '../Button';
+import ChevronLeft from '../icons/ChevronLeft';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props } from './index.js.flow';
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -46,7 +46,7 @@ const GoBackButton = ({ onClick }) => {
         type="secondary"
         size="small"
         onClick={onClick}
-        title={pureTranslate(dictionary, "breadcrumbs_back")}
+        title={pureTranslate(dictionary, 'breadcrumbs_back')}
       />
     </StyledBackButtonWrapper>
   );
@@ -68,4 +68,4 @@ const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
 
 export default Breadcrumbs;
 
-export { default as BreadcrumbsItem } from "./BreadcrumbsItem";
+export { default as BreadcrumbsItem } from './BreadcrumbsItem';

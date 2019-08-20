@@ -1,43 +1,44 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
-import Text from "../Text";
-import TextLink from "../TextLink";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean } from '@storybook/addon-knobs';
 
-import Radio from "./index";
+import Text from '../Text';
+import TextLink from '../TextLink';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-storiesOf("Radio", module)
+import Radio from './index';
+
+storiesOf('Radio', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const label = text("Label", "Label");
-      const checked = boolean("Checked", false);
-      return <Radio label={label} checked={checked} onChange={action("changed")} />;
+      const label = text('Label', 'Label');
+      const checked = boolean('Checked', false);
+      return <Radio label={label} checked={checked} onChange={action('changed')} />;
     },
     {
-      info: "Radio needs only label and onChange by default.",
+      info: 'Radio needs only label and onChange by default.',
     },
   )
   .add(
-    "With help",
+    'With help',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "value");
-      const info = text("Info", "Additional information to this choice");
-      return <Radio label={label} value={value} info={info} onChange={action("changed")} />;
+      const label = text('Label', 'Label');
+      const value = text('Value', 'value');
+      const info = text('Info', 'Additional information to this choice');
+      return <Radio label={label} value={value} info={info} onChange={action('changed')} />;
     },
     {
-      info: "Additionally you can add info to this component.",
+      info: 'Additionally you can add info to this component.',
     },
   )
   .add(
-    "With TextLink in label",
+    'With TextLink in label',
     () => {
-      const checked = boolean("checked", true);
+      const checked = boolean('checked', true);
       return (
         <Radio
           label={
@@ -48,25 +49,25 @@ storiesOf("Radio", module)
           }
           checked={checked}
           value="value"
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       );
     },
     {
-      info: "Additionally you can add info to this component.",
+      info: 'Additionally you can add info to this component.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const label = text("Label", "Label");
-      const value = text("Value", "value");
-      const checked = boolean("Checked", true);
-      const disabled = boolean("Disabled", true);
-      const hasError = boolean("hasError", false);
-      const info = text("Info", "Additional information for this choice");
-      const name = text("Name", "name");
-      const dataTest = text("dataTest", "test");
+      const label = text('Label', 'Label');
+      const value = text('Value', 'value');
+      const checked = boolean('Checked', true);
+      const disabled = boolean('Disabled', true);
+      const hasError = boolean('hasError', false);
+      const info = text('Info', 'Additional information for this choice');
+      const name = text('Name', 'name');
+      const dataTest = text('dataTest', 'test');
 
       return (
         <Radio
@@ -78,16 +79,16 @@ storiesOf("Radio", module)
           name={name}
           info={info}
           dataTest={dataTest}
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       );
     },
     {
-      info: "Playground of Radio",
+      info: 'Playground of Radio',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Radio
@@ -99,11 +100,11 @@ storiesOf("Radio", module)
           }
           checked
           value="value"
-          onChange={action("changed")}
+          onChange={action('changed')}
         />
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

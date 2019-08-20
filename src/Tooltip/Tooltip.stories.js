@@ -1,57 +1,58 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import { POSITIONS, SIZE_OPTIONS } from "./consts";
-import Stack from "../Stack";
-import Alert from "../Alert";
-import Text from "../Text";
-import TextLink from "../TextLink";
-import List from "../List";
-import ListItem from "../List/ListItem";
-import Heading from "../Heading";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 
-import Tooltip from "./index";
+import * as Icons from '../icons';
+import { POSITIONS, SIZE_OPTIONS } from './consts';
+import Stack from '../Stack';
+import Alert from '../Alert';
+import Text from '../Text';
+import TextLink from '../TextLink';
+import List from '../List';
+import ListItem from '../List/ListItem';
+import Heading from '../Heading';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
 
-const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
+import Tooltip from './index';
+
+const getIcons = defaultIcon => select('Icon', Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Tooltip", module)
+storiesOf('Tooltip', module)
   .add(
-    "Tooltip on inline element",
+    'Tooltip on inline element',
     () => {
-      const content = text("content", "Write your text here.");
+      const content = text('content', 'Write your text here.');
       return (
         <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
           eget mollis sed, tempor sed magna.
           <Tooltip content={content} preferredPosition="left">
             <TextLink>Cras elementum.</TextLink>
-          </Tooltip>{" "}
+          </Tooltip>{' '}
           Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
           officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
-          Sed vel lectus.{" "}
+          Sed vel lectus.{' '}
           <Tooltip content={content}>
             <Text>Another Tooltip.</Text>
-          </Tooltip>{" "}
+          </Tooltip>{' '}
           Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
         </Alert>
       );
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Tooltip on block element",
+    'Tooltip on block element',
     () => {
       const content = text(
-        "content",
-        "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
+        'content',
+        'Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.',
       );
       return (
         <Tooltip content={content}>
@@ -61,19 +62,19 @@ storiesOf("Tooltip", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Preferred position",
+    'Preferred position',
     () => {
-      const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
+      const size = select('size', Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
-      const content = text("content", "Write your text here.");
+      const content = text('content', 'Write your text here.');
       return (
         <Stack justify="center">
           <Tooltip preferredPosition={preferredPosition} size={size} content={content}>
@@ -88,11 +89,11 @@ storiesOf("Tooltip", module)
     },
   )
   .add(
-    "With image inside",
+    'With image inside',
     () => {
-      const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
+      const size = select('size', Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
@@ -127,15 +128,15 @@ storiesOf("Tooltip", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .lokiSkip(
-    "With long content",
+    'With long content',
     () => {
       const content = text(
-        "content",
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Ut tempus purus at lorem. Quisque porta. Sed convallis magna eu sem. Duis viverra diam non justo. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Praesent id justo in neque elementum ultrices. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Curabitur vitae diam non enim vestibulum interdum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Maecenas lorem. Phasellus rhoncus. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Etiam posuere lacus quis dolor. Curabitur vitae diam non enim vestibulum interdum. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus",
+        'content',
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Ut tempus purus at lorem. Quisque porta. Sed convallis magna eu sem. Duis viverra diam non justo. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Praesent id justo in neque elementum ultrices. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Curabitur vitae diam non enim vestibulum interdum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Maecenas lorem. Phasellus rhoncus. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Etiam posuere lacus quis dolor. Curabitur vitae diam non enim vestibulum interdum. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus',
       );
       return (
         <Tooltip size="medium" content={content}>
@@ -145,20 +146,20 @@ storiesOf("Tooltip", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const content = text("content", "Write your text here.");
-      const dataTest = text("dataTest", "test");
-      const Icon = getIcon(getIcons("Airplane"));
-      const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-      const tabIndex = text("TabIndex", "0");
-      const enabled = boolean("enabled", true);
+      const content = text('content', 'Write your text here.');
+      const dataTest = text('dataTest', 'test');
+      const Icon = getIcon(getIcons('Airplane'));
+      const size = select('size', Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const tabIndex = text('TabIndex', '0');
+      const enabled = boolean('enabled', true);
       const preferredPosition = select(
-        "preferredPosition",
+        'preferredPosition',
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
@@ -178,11 +179,11 @@ storiesOf("Tooltip", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "RTL ",
+    'RTL ',
     () => {
       return (
         <RenderInRtl>
@@ -191,13 +192,13 @@ storiesOf("Tooltip", module)
             eget mollis sed, tempor sed magna.
             <Tooltip content="Write your text here." preferredPosition="left">
               <TextLink>Cras elementum.</TextLink>
-            </Tooltip>{" "}
+            </Tooltip>{' '}
             Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
-            congue. Sed vel lectus.{" "}
+            congue. Sed vel lectus.{' '}
             <Tooltip content="Write your text here.">
               <Text>Another Tooltip.</Text>
-            </Tooltip>{" "}
+            </Tooltip>{' '}
             Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
           </Alert>
         </RenderInRtl>
@@ -205,6 +206,6 @@ storiesOf("Tooltip", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   );

@@ -1,10 +1,10 @@
 // @flow
-import React from "react";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
-import Dictionary from "../Dictionary";
+import React from 'react';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import type { Props } from "./index";
+import Dictionary from '../Dictionary';
+import type { Props } from './index.js.flow';
 
 const ThemeProvider = ({ theme, dictionary, children }: Props) => (
   <StyledThemeProvider theme={theme}>

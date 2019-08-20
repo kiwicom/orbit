@@ -1,6 +1,7 @@
 // @flow
-import { DIRECTIONS } from "../consts";
-import type { GetDirection } from "./getDirection";
+
+import { DIRECTIONS } from '../consts';
+import type { GetDirection } from './getDirection.js.flow';
 
 const getDirection: GetDirection = direction => {
   if (!direction) {

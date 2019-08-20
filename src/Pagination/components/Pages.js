@@ -1,9 +1,10 @@
 // @flow
-import * as React from "react";
 
-import ActiveButton from "./ActiveButton";
-import PageButtonLink from "./PageButtonLink";
-import type { Props } from "./Pages";
+import * as React from 'react';
+
+import ActiveButton from './ActiveButton';
+import PageButtonLink from './PageButtonLink';
+import type { Props } from './Pages.js.flow';
 
 const Pages = ({
   pageCount,

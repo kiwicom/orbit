@@ -1,8 +1,9 @@
 // @flow
-import * as React from "react";
 
-import ButtonLink from "../../ButtonLink";
-import type { Props } from "./PageButtonLink";
+import * as React from 'react';
+
+import ButtonLink from '../../ButtonLink';
+import type { Props } from './PageButtonLink.js.flow';
 
 const PageButtonLink = ({ children, onPageChange, size }: Props) => (
   <ButtonLink onClick={() => onPageChange(children)} type="secondary" size={size}>

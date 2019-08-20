@@ -1,5 +1,6 @@
 // @flow
-import type { GetProperty } from "./getProperty";
+
+import type { GetProperty } from './getProperty.js.flow';
 
 const getProperty: GetProperty = (property, { index, devices }, props) => {
   const viewport = props && props[devices[index]];

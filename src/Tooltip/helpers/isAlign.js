@@ -1,5 +1,6 @@
 // @flow
-import { ALIGNS } from "../consts";
+
+import { ALIGNS } from '../consts';
 
 export const isAlignCenter = (a: string) => a === ALIGNS.CENTER;
 

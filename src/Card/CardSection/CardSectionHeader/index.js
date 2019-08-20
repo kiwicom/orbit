@@ -1,16 +1,16 @@
 // @flow
-import React from "react";
-import styled, { css } from "styled-components";
 
-import { CardSectionContext } from "../index";
-import { getSize } from "../../../Icon/index";
-import { ICON_SIZES } from "../../../Icon/consts";
-import defaultTheme from "../../../defaultTheme";
-import ChevronDown from "../../../icons/ChevronDown";
-import { left } from "../../../utils/rtl/index";
-import media from "../../../utils/mediaQuery";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props } from "./index";
+import { CardSectionContext } from '../index';
+import { getSize } from '../../../Icon/index';
+import { ICON_SIZES } from '../../../Icon/consts';
+import defaultTheme from '../../../defaultTheme';
+import ChevronDown from '../../../icons/ChevronDown';
+import { left } from '../../../utils/rtl/index';
+import media from '../../../utils/mediaQuery';
+import type { Props } from './index.js.flow';
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;
@@ -26,7 +26,7 @@ export const StyledCardSectionHeader = styled.div`
   flex-direction: row;
   align-items: center;
   transition: margin ${({ theme }) => theme.orbit.durationFast} linear;
-  cursor: ${({ expandable }) => expandable && "pointer"};
+  cursor: ${({ expandable }) => expandable && 'pointer'};
   position: relative;
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
   margin: ${({ theme }) => `-${theme.orbit.spaceMedium}`};
@@ -45,7 +45,7 @@ export const StyledCardSectionHeader = styled.div`
   }
 
   ${StyledCardSectionIconRight} {
-    transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
+    transform: ${({ expanded }) => expanded && 'rotate(-180deg)'};
     margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
   }
   &:focus {
@@ -84,8 +84,8 @@ const CardSectionHeader = ({ children, actions }: Props) => (
         expanded={expanded}
         onClick={expandable && handleToggleSection}
         aria-expanded={expandable && expanded}
-        role={expandable && "button"}
-        tabIndex={expandable && "0"}
+        role={expandable && 'button'}
+        tabIndex={expandable && '0'}
         onKeyDown={onKeyDownHandler}
       >
         <StyledCardSectionHeaderContent expandable={expandable}>

@@ -1,15 +1,16 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import Pagination from "../index";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-const dataTest = "test";
+import Pagination from '../index';
+
+const dataTest = 'test';
 const pageCount = 9;
 const selectedPage = 3;
 const onPageChange = jest.fn();
 
-describe("Pagination", () => {
+describe('Pagination', () => {
   const component = shallow(
     <Pagination
       dataTest={dataTest}
@@ -18,10 +19,10 @@ describe("Pagination", () => {
       onPageChange={onPageChange}
     />,
   );
-  it("Stack should have passed dataTest", () => {
-    expect(component.prop("dataTest")).toBe(dataTest);
+  it('Stack should have passed dataTest', () => {
+    expect(component.prop('dataTest')).toBe(dataTest);
   });
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

@@ -1,21 +1,20 @@
 // @noflow
-/* eslint-disable import/no-extraneous-dependencies */
 
-import path from "path";
-import fs from "fs";
-import { JSDOM } from "jsdom";
-import capitalize from "capitalize";
-import camelcase from "camelcase";
-import mkdirp from "mkdirp";
-import glob from "glob";
-import svgr from "@svgr/core";
+import path from 'path';
+import fs from 'fs';
+import { JSDOM } from 'jsdom';
+import capitalize from 'capitalize';
+import camelcase from 'camelcase';
+import mkdirp from 'mkdirp';
+import glob from 'glob';
+import svgr from '@svgr/core';
 
-import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
+import { NAMES as ILLUSTRATION_NAMES } from '../src/Illustration/consts';
 
-const files = glob.sync("src/icons/**/*.svg");
+const files = glob.sync('src/icons/**/*.svg');
 
 const names = files.map(inputFileName => {
-  const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
+  const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, '');
   const functionName = capitalize(camelcase(baseName));
   const outputComponentFileName = `${functionName}.js`;
 
@@ -27,24 +26,24 @@ const names = files.map(inputFileName => {
   };
 });
 
-const componentPath = path.join(__dirname, "..", "src", "icons");
+const componentPath = path.join(__dirname, '..', 'src', 'icons');
 mkdirp(componentPath);
 
 function getViewBox(attributes) {
   for (let i = attributes.length - 1; i >= 0; i -= 1) {
-    if (attributes[i].name === "viewBox") {
+    if (attributes[i].name === 'viewBox') {
       return attributes[i].value;
     }
   }
-  return "0 0 24 24";
+  return '0 0 24 24';
 }
 
 const template = (code, config, state) => `
 // @flow
 /* eslint-disable */
-    import * as React from "react";
-    import OrbitIcon from "../Icon";
-    import type { Props } from "./${state.componentName}.js.flow";
+    import * as React from 'react';
+    import OrbitIcon from '../Icon';
+    import type { Props } from './${state.componentName}.js.flow';
 
     export default function ${state.componentName}(props: Props) {
       const { color, size, customColor, className, dataTest, ariaHidden, ariaLabel, reverseOnRtl } = props;
@@ -83,7 +82,7 @@ declare export default React$ComponentType<Props>;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
-  const content = dom.window.document.querySelector("svg");
+  const content = dom.window.document.querySelector('svg');
   svgr(
     content.outerHTML,
     { svgAttributes: { viewBox: getViewBox(content.attributes) }, template },
@@ -98,48 +97,48 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
 
 const index = names
   .map(({ functionName }) => `export { default as ${functionName} } from "./${functionName}";\n`)
-  .join("");
-fs.writeFileSync(path.join(componentPath, "index.js"), index);
+  .join('');
+fs.writeFileSync(path.join(componentPath, 'index.js'), index);
 
 const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const flowTypes = names
   .map(({ functionName }) => `import typeof ${functionName}Type from "./${functionName}";\n`)
-  .join("");
+  .join('');
 
 const flowDeclares = names
   .map(({ functionName }) => `declare export var ${functionName}: ${functionName}Type;\n`)
-  .join("");
+  .join('');
 
-fs.writeFileSync(path.join(componentPath, "index.js.flow"), flow + flowTypes + flowDeclares);
+fs.writeFileSync(path.join(componentPath, 'index.js.flow'), flow + flowTypes + flowDeclares);
 
 // create icons json file
 Promise.all(
   names.map(
     ({ inputFileName, baseName }) =>
       new Promise((resolve, reject) => {
-        fs.readFile(inputFileName, "utf8", (err, content) => {
+        fs.readFile(inputFileName, 'utf8', (err, content) => {
           if (err) reject();
           // only get the HTML comments
           const comments = content.match(/<!--([\s\S]*?)-->/gm).map(item => {
             // remove HTML comments and split by colon
-            const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+            const items = item.replace(/<!--([\s\S]*?)-->/gm, '$1').split(':');
             // one icon has color as character
-            const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+            const value = items[1] === '' && items[2] === '' ? ':' : items[1];
             return { [items[0]]: value };
           });
           const commentsObject = Object.assign({}, ...comments);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
-          const svg = dom.querySelector("svg").outerHTML;
+          const svg = dom.querySelector('svg').outerHTML;
           resolve({ [baseName]: { ...commentsObject, svg, url } });
         });
       }),
   ),
 ).then(data =>
   fs.writeFileSync(
-    path.join(__dirname, "..", "src", "data", "icons.json"),
+    path.join(__dirname, '..', 'src', 'data', 'icons.json'),
     JSON.stringify(Object.assign({}, ...data)),
   ),
 );
@@ -156,6 +155,6 @@ const illustrationsJSON = Object.assign(
 );
 
 fs.writeFileSync(
-  path.join(__dirname, "..", "src", "data", "illustrations.json"),
+  path.join(__dirname, '..', 'src', 'data', 'illustrations.json'),
   JSON.stringify(illustrationsJSON),
 );

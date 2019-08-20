@@ -1,9 +1,9 @@
 // @flow
-import * as React from "react";
 
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
 
-import type { DictionaryContextType, Props } from "./index";
+import { pureTranslate } from '../Translate';
+import type { DictionaryContextType, Props } from './index.js.flow';
 
 export const DictionaryContext: DictionaryContextType = React.createContext({});
 

@@ -1,20 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
-import { storiesOf } from "@storybook/react";
 
-import Card, { CardSection } from "../Card";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import * as React from 'react';
+import styled from 'styled-components';
+import { storiesOf } from '@storybook/react';
 
-import Layout, { LayoutColumn } from "./index";
+import Card, { CardSection } from '../Card';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+
+import Layout, { LayoutColumn } from './index';
 
 const CustomDiv = styled.div`
   height: 400px;
   background: rgba(0, 169, 145, 0.2);
 `;
 
-storiesOf("Layout", module)
-  .add("Search", () => (
+storiesOf('Layout', module)
+  .add('Search', () => (
     <Layout type="Search">
       <LayoutColumn>
         <Card>
@@ -39,7 +40,7 @@ storiesOf("Layout", module)
       </LayoutColumn>
     </Layout>
   ))
-  .add("Booking", () => {
+  .add('Booking', () => {
     return (
       <Layout type="Booking">
         <LayoutColumn>
@@ -59,7 +60,7 @@ storiesOf("Layout", module)
       </Layout>
     );
   })
-  .add("MMB", () => {
+  .add('MMB', () => {
     return (
       <Layout type="MMB">
         <LayoutColumn>
@@ -72,7 +73,7 @@ storiesOf("Layout", module)
       </Layout>
     );
   })
-  .add("RTL", () => (
+  .add('RTL', () => (
     <RenderInRtl>
       <Layout type="Search">
         <LayoutColumn>

@@ -1,16 +1,17 @@
 // @flow
-import { css } from "styled-components";
 
-import getJustify from "./getJustify";
-import getDirection from "./getDirection";
-import getWidth from "./getWidth";
-import getDisplay from "./getDisplay";
-import getShrink from "./getShrink";
-import getWrap from "./getWrap";
-import getGrow from "./getGrow";
-import getAlign from "./getAlign";
-import getSpacingToken from "../../common/getSpacingToken/index";
-import type { GetViewportFlexStyles } from "./getViewportFlexStyles";
+import { css } from 'styled-components';
+
+import getJustify from './getJustify';
+import getDirection from './getDirection';
+import getWidth from './getWidth';
+import getDisplay from './getDisplay';
+import getShrink from './getShrink';
+import getWrap from './getWrap';
+import getGrow from './getGrow';
+import getAlign from './getAlign';
+import getSpacingToken from '../../common/getSpacingToken/index';
+import type { GetViewportFlexStyles } from './getViewportFlexStyles.js.flow';
 
 const getViewportFlexStyles: GetViewportFlexStyles = viewport => props => {
   const { flex, theme } = props;

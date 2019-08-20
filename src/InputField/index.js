@@ -1,21 +1,21 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
-import FormFeedback from "../FormFeedback";
-import DefaultFormLabel from "../FormLabel";
-import { StyledServiceLogo } from "../ServiceLogo";
-import { rtlSpacing } from "../utils/rtl";
-import InputTags from "./InputTags";
-import type { Ref, Translation } from "../common/common.js.flow";
-import getSpacingToken from "../common/getSpacingToken";
-import getFieldDataState from "../common/getFieldDataState";
-import { StyledButtonLink } from "../ButtonLink/index";
-import randomID from "../utils/randomID";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from './consts';
+import FormFeedback from '../FormFeedback';
+import DefaultFormLabel from '../FormLabel';
+import { StyledServiceLogo } from '../ServiceLogo';
+import { rtlSpacing } from '../utils/rtl';
+import InputTags from './InputTags';
+import type { Ref, Translation } from '../common/common.js.flow';
+import getSpacingToken from '../common/getSpacingToken';
+import getFieldDataState from '../common/getFieldDataState';
+import { StyledButtonLink } from '../ButtonLink/index';
+import randomID from '../utils/randomID';
+import type { Props } from './index.js.flow';
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -113,7 +113,7 @@ export const InputContainer = styled(({ children, className }) => (
   color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   font-size: ${getToken(TOKENS.fontSizeInput)};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
 
   &:hover > ${FakeInput} {
     ${({ disabled, theme, error }) =>
@@ -183,7 +183,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  pointer-events: ${({ disabled }) => disabled && "none"};
+  pointer-events: ${({ disabled }) => disabled && 'none'};
   z-index: 3;
 
   & svg {
@@ -206,7 +206,7 @@ export const Input = styled(
   )),
 )`
   appearance: none;
-  -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
+  -webkit-text-fill-color: ${({ disabled }) => disabled && 'inherit'};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};
@@ -226,8 +226,8 @@ export const Input = styled(
   // FIREFOX flexbox bug: the input doesn't shrink properly
   min-width: 0;
 
-  font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
-  letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};
+  font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && 'tabular-nums'};
+  letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && '2px'};
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
@@ -278,11 +278,11 @@ const FormLabel = ({
   label,
   isFilled,
   required,
-}: {
+}: {|
   label: Translation,
   isFilled: boolean,
   required?: boolean,
-}) => (
+|}) => (
   <DefaultFormLabel filled={isFilled} required={required}>
     {label}
   </DefaultFormLabel>
@@ -322,11 +322,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     id,
   } = props;
 
-  const forID = id || (label ? randomID("inputField") : undefined);
+  const forID = id || (label ? randomID('inputField') : undefined);
 
   return (
     <Field
-      component={label ? "label" : "div"}
+      component={label ? 'label' : 'div'}
       spaceAfter={spaceAfter}
       htmlFor={label ? forID : undefined}
     >
@@ -374,6 +374,6 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-InputField.displayName = "InputField";
+InputField.displayName = 'InputField';
 
 export default InputField;

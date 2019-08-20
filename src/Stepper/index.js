@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
 
-import StepperStateless from "./StepperStateless";
-import validateIncrement from "../utils/validateIncrement";
-import validateDecrement from "../utils/validateDecrement";
+import * as React from 'react';
 
-import type { Props, State } from "./index";
+import StepperStateless from './StepperStateless';
+import validateIncrement from '../utils/validateIncrement';
+import validateDecrement from '../utils/validateDecrement';
+import type { Props, State } from './index.js.flow';
 
 class Stepper extends React.PureComponent<Props, State> {
   state = {
@@ -79,4 +79,4 @@ class Stepper extends React.PureComponent<Props, State> {
 }
 
 export default Stepper;
-export { default as StepperStateless } from "./StepperStateless";
+export { default as StepperStateless } from './StepperStateless';

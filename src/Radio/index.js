@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { StyledText } from "../Text";
-import type { Ref } from "../common/common.js.flow";
-import { rtlSpacing } from "../utils/rtl";
-import getFieldDataState from "../common/getFieldDataState";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { StyledText } from '../Text';
+import type { Ref } from '../common/common.js.flow';
+import { rtlSpacing } from '../utils/rtl';
+import getFieldDataState from '../common/getFieldDataState';
+import type { Props } from './index.js.flow';
 
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) =>
   hasError && !disabled && !checked
@@ -122,8 +122,8 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   width: 100%;
   flex-direction: row;
   align-items: self-start;
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : '1')};
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   position: relative;
 
   ${IconContainer} {
@@ -190,6 +190,6 @@ const Radio = React.forwardRef((props: Props, ref: Ref) => {
   );
 });
 
-Radio.displayName = "Radio";
+Radio.displayName = 'Radio';
 
 export default Radio;

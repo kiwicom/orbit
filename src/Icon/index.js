@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import { ICON_SIZES, ICON_COLORS } from "./consts";
-import defaultTheme from "../defaultTheme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { GetSize, Props } from "./index";
+import { ICON_SIZES, ICON_COLORS } from './consts';
+import defaultTheme from '../defaultTheme';
+import type { GetSize, Props } from './index.js.flow';
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {
@@ -43,7 +43,7 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden,
     viewBox={viewBox}
     data-test={dataTest}
     preserveAspectRatio="xMidYMid meet"
-    aria-hidden={ariaHidden ? "true" : undefined}
+    aria-hidden={ariaHidden ? 'true' : undefined}
     aria-label={ariaLabel}
   >
     {children}

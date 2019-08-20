@@ -1,7 +1,8 @@
 // @flow
-import type { PositionsCore } from "../index";
-import { POSITIONS } from "../consts";
-import type { CalculateVerticalPosition } from "./calculateVerticalPosition";
+
+import type { PositionsCore } from '../index';
+import { POSITIONS } from '../consts';
+import type { CalculateVerticalPosition } from './calculateVerticalPosition.js.flow';
 
 const isInside = (p: PositionsCore, canBe) => {
   if (p === POSITIONS.TOP && canBe[p]) {
@@ -22,11 +23,11 @@ const calculateVerticalPosition: CalculateVerticalPosition = (desiredPositions, 
   };
   const possiblePositions = desiredPositions
     .map(p => isInside(p, canBe))
-    .filter(p => typeof p === "string");
+    .filter(p => typeof p === 'string');
 
   // ordering in POSITIONS const is important
   const posPosition = possiblePositions[0];
-  if (typeof posPosition === "string") {
+  if (typeof posPosition === 'string') {
     return posPosition;
   }
   return null;

@@ -1,7 +1,8 @@
 // @flow
-import { SIZES, TOKENS } from "../consts";
-import { rtlSpacing } from "../../utils/rtl";
-import type { GetIconSpacing } from "./getIconSpacing";
+
+import { SIZES, TOKENS } from '../consts';
+import { rtlSpacing } from '../../utils/rtl';
+import type { GetIconSpacing } from './getIconSpacing.js.flow';
 
 const getIconSpacing: GetIconSpacing = () => ({ theme, right, size, onlyIcon }) => {
   if (onlyIcon) {

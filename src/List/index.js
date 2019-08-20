@@ -1,14 +1,14 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SIZES, TYPES } from "./consts";
-import { StyledCarrierLogo } from "../CarrierLogo";
-import getSpacingToken from "../common/getSpacingToken";
-import { IconContainer } from "./ListItem";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { SIZES, TYPES } from './consts';
+import { StyledCarrierLogo } from '../CarrierLogo';
+import getSpacingToken from '../common/getSpacingToken';
+import { IconContainer } from './ListItem';
+import type { Props } from './index.js.flow';
 
 const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
@@ -86,4 +86,4 @@ const List = ({
 
 export default List;
 
-export { default as ListItem } from "./ListItem";
+export { default as ListItem } from './ListItem';

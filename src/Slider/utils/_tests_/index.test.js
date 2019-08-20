@@ -1,8 +1,8 @@
 // @flow
 
-import calculateCountOf from "../calculateCountOf";
+import calculateCountOf from '../calculateCountOf';
 
-describe("calculateCountOf", () => {
+describe('calculateCountOf', () => {
   const data = [
     11,
     25,
@@ -30,7 +30,7 @@ describe("calculateCountOf", () => {
     3,
   ];
   const min = 1;
-  it("should count proper values", () => {
+  it('should count proper values', () => {
     expect(calculateCountOf(data, [1, 24], min)).toEqual([489, 489]);
     expect(calculateCountOf(data, [1, 12], min)).toEqual([244, 489]);
     expect(calculateCountOf(data, [12, 24], min)).toEqual([247, 489]);

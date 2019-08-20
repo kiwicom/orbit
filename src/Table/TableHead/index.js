@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import { StyledTableCell } from "../TableCell/index";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from ".";
+import defaultTheme from '../../defaultTheme';
+import { StyledTableCell } from '../TableCell/index';
+import type { Props } from './index.js.flow';
 
 const StyledTableHead = styled(({ children, className }) => (
   <thead className={className}>{children}</thead>

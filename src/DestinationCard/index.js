@@ -1,19 +1,19 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import Heading from "../Heading";
-import Stack from "../Stack";
-import ArrowUpIcon from "../icons/ArrowUp";
-import defaultTheme from "../defaultTheme";
-import FlightDirectIcon from "../icons/FlightDirect";
-import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
-import LazyImage from "../LazyImage";
-import Text from "../Text";
-import randomID from "../utils/randomID";
-import KEY_CODE_MAP from "../common/keyMaps";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import type { Props, State } from "./index";
+import Heading from '../Heading';
+import Stack from '../Stack';
+import ArrowUpIcon from '../icons/ArrowUp';
+import defaultTheme from '../defaultTheme';
+import FlightDirectIcon from '../icons/FlightDirect';
+import { BASE_URL, SMALLEST_HEIGHT } from './consts';
+import LazyImage from '../LazyImage';
+import Text from '../Text';
+import randomID from '../utils/randomID';
+import KEY_CODE_MAP from '../common/keyMaps';
+import type { Props, State } from './index.js.flow';
 
 type SmallHeadingType = {|
   children: React.Node,
@@ -85,7 +85,7 @@ const Shown = styled.div`
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   opacity: 0;
   position: relative;
-  top: "-50%";
+  top: '-50%';
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
@@ -112,7 +112,7 @@ StyledDestinationCardHiddenContent.defaultProps = {
 };
 
 const FlightDirect = styled(FlightDirectIcon)`
-  transform: ${({ isReturn }) => isReturn && "rotate(180deg)"};
+  transform: ${({ isReturn }) => isReturn && 'rotate(180deg)'};
 `;
 
 const StyledDestination = styled.div`
@@ -127,7 +127,7 @@ StyledDestination.defaultProps = {
 
 const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => <div {...props} />)`
   width: 100%;
-  height: ${({ height }) => (height ? `${height}px` : "100%")};
+  height: ${({ height }) => (height ? `${height}px` : '100%')};
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -175,11 +175,12 @@ class DestinationCard extends React.PureComponent<Props, State> {
     hiddenContentHeight: 0,
   };
 
-  hiddenContent: { current: any | HTMLDivElement } = React.createRef();
+  hiddenContent: {| current: any | HTMLDivElement |} = React.createRef();
+  cardID: string;
 
   componentDidMount() {
     this.setHeight();
-    this.cardID = randomID("DestinationCard");
+    this.cardID = randomID('DestinationCard');
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -210,8 +211,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
-  cardID: string;
-
   render() {
     const {
       dataTest,
@@ -224,7 +223,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       inbound,
       height = 300,
       onClick,
-      tabIndex = "0",
+      tabIndex = '0',
     } = this.props;
     const { hiddenContentHeight } = this.state;
 

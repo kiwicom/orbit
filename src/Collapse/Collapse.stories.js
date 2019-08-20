@@ -1,21 +1,22 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
-import ChoiceGroup from "../ChoiceGroup";
-import Checkbox from "../Checkbox";
-import Slider from "../Slider";
-import Stack from "../Stack";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean } from '@storybook/addon-knobs';
 
-import Collapse from "./index";
+import ChoiceGroup from '../ChoiceGroup';
+import Checkbox from '../Checkbox';
+import Slider from '../Slider';
+import Stack from '../Stack';
 
-storiesOf("Collapse", module)
+import Collapse from './index';
+
+storiesOf('Collapse', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const label = text("label", "Duration");
+      const label = text('label', 'Duration');
       return (
         <Collapse label={label}>
           <Slider
@@ -56,13 +57,13 @@ storiesOf("Collapse", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Opened by default",
+    'Opened by default',
     () => {
-      const label = text("label", "Duration");
+      const label = text('label', 'Duration');
       return (
         <Collapse label={label} initialExpanded>
           <Slider
@@ -103,20 +104,20 @@ storiesOf("Collapse", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Multiple Collapses",
+    'Multiple Collapses',
     () => {
-      const label = text("label", "Transportation");
+      const label = text('label', 'Transportation');
       return (
         <Stack spacing="none">
           <Collapse label={label}>
             <ChoiceGroup
               filter
-              onChange={action("onChange")}
-              onOnlySelection={action("onOnlySelection")}
+              onChange={action('onChange')}
+              onOnlySelection={action('onOnlySelection')}
             >
               <Checkbox label="Flight" value="one" />
               <Checkbox label="Bus" value="two" />
@@ -126,8 +127,8 @@ storiesOf("Collapse", module)
           <Collapse label={label} initialExpanded>
             <ChoiceGroup
               filter
-              onChange={action("onChange")}
-              onOnlySelection={action("onOnlySelection")}
+              onChange={action('onChange')}
+              onOnlySelection={action('onOnlySelection')}
             >
               <Checkbox label="Flight" value="one" />
               <Checkbox label="Bus" value="two" />
@@ -137,8 +138,8 @@ storiesOf("Collapse", module)
           <Collapse label={label}>
             <ChoiceGroup
               filter
-              onChange={action("onChange")}
-              onOnlySelection={action("onOnlySelection")}
+              onChange={action('onChange')}
+              onOnlySelection={action('onOnlySelection')}
             >
               <Checkbox label="Flight" value="one" />
               <Checkbox label="Bus" value="two" />
@@ -150,16 +151,16 @@ storiesOf("Collapse", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   )
   .add(
-    "Uncontrolled",
+    'Uncontrolled',
     () => {
-      const label = text("label", "Duration");
-      const expanded = boolean("expanded", true);
+      const label = text('label', 'Duration');
+      const expanded = boolean('expanded', true);
       return (
-        <Collapse label={label} expanded={expanded} onClick={action("onClick")}>
+        <Collapse label={label} expanded={expanded} onClick={action('onClick')}>
           <Slider
             label="Max travel time"
             valueDescription="00:00 - 24:00"
@@ -172,6 +173,6 @@ storiesOf("Collapse", module)
     },
     {
       info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+        'You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.',
     },
   );

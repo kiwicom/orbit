@@ -1,26 +1,26 @@
 // @flow
-import * as React from "react";
-import styled, { css, withTheme } from "styled-components";
 
-import defaultTheme, { type ThemeProps } from "../defaultTheme";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
-import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
-import KEY_CODE_MAP from "../common/keyMaps";
-import media, { getBreakpointWidth } from "../utils/mediaQuery";
-import { StyledModalFooter } from "./ModalFooter";
-import { MobileHeader, StyledModalHeader } from "./ModalHeader";
-import { StyledModalSection } from "./ModalSection";
-import { StyledHeading } from "../Heading";
-import { right } from "../utils/rtl";
-import transition from "../utils/transition";
-import { ModalContext } from "./ModalContext";
-import { QUERIES } from "../utils/mediaQuery/consts";
-import randomID from "../utils/randomID";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled, { css, withTheme } from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme, { type ThemeProps } from '../defaultTheme';
+import ButtonLink, { StyledButtonLink } from '../ButtonLink';
+import Close from '../icons/Close';
+import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from './consts';
+import KEY_CODE_MAP from '../common/keyMaps';
+import media, { getBreakpointWidth } from '../utils/mediaQuery';
+import { StyledModalFooter } from './ModalFooter';
+import { MobileHeader, StyledModalHeader } from './ModalHeader';
+import { StyledModalSection } from './ModalSection';
+import { StyledHeading } from '../Heading';
+import { right } from '../utils/rtl';
+import transition from '../utils/transition';
+import { ModalContext } from './ModalContext';
+import { QUERIES } from '../utils/mediaQuery/consts';
+import randomID from '../utils/randomID';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props, State } from './index.js.flow';
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
@@ -34,7 +34,7 @@ const getSizeToken = () => ({ size, theme }) => {
 };
 
 // media query only for IE 10+, not Edge
-const onlyIE = (style, breakpoint = "all") =>
+const onlyIE = (style, breakpoint = 'all') =>
   css`
     @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       ${style};
@@ -79,11 +79,11 @@ const ModalWrapper = styled.div`
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
-  transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
+    !isMobileFullPage && '9px'}; // TODO: create token
+  transition: ${transition(['top'], 'normal', 'ease-in-out')};
+  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && '32px' : '100%')};
 
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
@@ -120,9 +120,9 @@ const CloseContainer = styled.div`
       : css`
           position: absolute;
         `};
-  position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
+  position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? 'fixed' : 'absolute')};
   top: ${({ scrolled, fixedClose, isMobileFullPage }) =>
-    !isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
+    !isMobileFullPage && (fixedClose || scrolled) ? '32px' : '0'};
   right: 0;
   z-index: 800;
   justify-content: flex-end;
@@ -135,14 +135,14 @@ const CloseContainer = styled.div`
   box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
-  transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+    !isMobileFullPage && '9px'}; // TODO: create token
+  transition: ${transition(['box-shadow', 'background-color'], 'fast', 'ease-in-out')};
   
   ${media.largeMobile(css`
-    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
-    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
+    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && '0'};
+    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && 'auto'};
   `)};
   
   & + ${StyledModalSection}:first-of-type {
@@ -155,7 +155,7 @@ const CloseContainer = styled.div`
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {
-      transition: ${transition(["color"], "fast", "ease-in-out")};
+      transition: ${transition(['color'], 'fast', 'ease-in-out')};
       color: ${({ theme }) => theme.orbit.paletteInkLight};
     }
     &:hover svg {
@@ -176,9 +176,9 @@ const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && '9px'}; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
@@ -212,7 +212,7 @@ const ModalWrapperContent = styled.div`
           ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
           : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
         position: fixed;
-        transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
+        transition: ${transition(['box-shadow'], 'fast', 'ease-in-out')};
       }
       ${StyledModalSection}:last-of-type {
         padding-bottom: ${theme.orbit.spaceLarge};
@@ -223,8 +223,8 @@ const ModalWrapperContent = styled.div`
   ${MobileHeader} {
     top: ${({ scrolled, theme, isMobileFullPage }) =>
       !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
-    opacity: ${({ scrolled }) => scrolled && "1"};
-    visibility: ${({ scrolled }) => scrolled && "visible"};
+    opacity: ${({ scrolled }) => scrolled && '1'};
+    visibility: ${({ scrolled }) => scrolled && 'visible'};
     transition: ${({ scrolled, theme }) =>
       scrolled &&
       `top ${theme.orbit.durationNormal} ease-in-out,
@@ -247,7 +247,7 @@ const ModalWrapperContent = styled.div`
   ${media.largeMobile(css`
     position: relative;
     bottom: auto;
-    border-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
+    border-radius: ${({ isMobileFullPage }) => !isMobileFullPage && '9px'};
     padding-bottom: 0;
     height: auto;
     overflow: visible;
@@ -255,14 +255,14 @@ const ModalWrapperContent = styled.div`
     ${StyledModalSection}:last-of-type {
       padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
       margin-bottom: ${({ fixedFooter, footerHeight }) =>
-        fixedFooter ? `${footerHeight}px` : "0"};
+        fixedFooter ? `${footerHeight}px` : '0'};
       &::after {
         content: none;
       }
     }
     ${StyledModalHeader} {
       margin-bottom: ${({ hasModalSection, fixedFooter, footerHeight }) =>
-        !hasModalSection && fixedFooter ? `${footerHeight}px` : "0"};
+        !hasModalSection && fixedFooter ? `${footerHeight}px` : '0'};
     }
     ${StyledModalFooter} {
       padding: ${({ theme, fixedFooter }) =>
@@ -270,11 +270,11 @@ const ModalWrapperContent = styled.div`
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
           : theme.orbit.spaceXXLarge};
       max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
-      position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
-      box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
+      position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && 'absolute'};
+      box-shadow: ${({ fullyScrolled }) => fullyScrolled && 'none'};
     }
     ${MobileHeader} {
-      top: ${({ scrolled, theme }) => (scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`)};
+      top: ${({ scrolled, theme }) => (scrolled ? '0' : `-${theme.orbit.spaceXXLarge}`)};
       width: ${({ modalWidth, theme }) =>
         `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
     }
@@ -284,7 +284,7 @@ const ModalWrapperContent = styled.div`
     css`
       ${StyledModalFooter} {
         // -ms-page must be used for mobile devices
-        position: ${({ fixedFooter }) => fixedFooter && "-ms-page"};
+        position: ${({ fixedFooter }) => fixedFooter && '-ms-page'};
       }
     `,
   )};
@@ -296,7 +296,7 @@ const ModalWrapperContent = styled.div`
           // we need to apply static position for IE only when fullyScrolled and fixedFooter
           // or fixed when fixedFooter (overwrite -ms-page)
           position: ${({ fullyScrolled, fixedFooter }) =>
-            (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
+            (fullyScrolled && fixedFooter && 'static') || (fixedFooter && 'fixed')};
           // for IE there's need to be added inset box-shadow with same background as footer has
           box-shadow: ${({ fixedFooter }) =>
             !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
@@ -310,7 +310,7 @@ const ModalWrapperContent = styled.div`
               margin-bottom: 0;
             }
             ${StyledModalHeader} {
-              margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
+              margin-bottom: ${({ hasModalSection }) => !hasModalSection && '0'};
             }
           `};
       `,
@@ -332,7 +332,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       icon={<Close />}
       transparent
       dataTest={dataTest}
-      title={pureTranslate(dictionary, "button_close")}
+      title={pureTranslate(dictionary, 'button_close')}
     />
   );
 };
@@ -352,13 +352,21 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     hasModalSection: false,
   };
 
-  modalContent: { current: any | HTMLElement } = React.createRef();
+  modalContent: {| current: any | HTMLElement |} = React.createRef();
 
-  modalBody: { current: any | HTMLElement } = React.createRef();
+  modalBody: {| current: any | HTMLElement |} = React.createRef();
 
   offset = 40;
 
   focusTriggered = false;
+
+  firstFocusableEl: HTMLElement;
+
+  lastFocusableEl: HTMLElement;
+
+  timeout: TimeoutID;
+
+  modalID: string;
 
   componentDidMount() {
     this.timeout = setTimeout(() => {
@@ -369,8 +377,8 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       this.setDimensions();
       this.setFirstFocus();
     }, 15);
-    this.modalID = randomID("modal-");
-    window.addEventListener("resize", this.handleResize);
+    this.modalID = randomID('modal-');
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -381,7 +389,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener('resize', this.handleResize);
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
@@ -465,7 +473,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     const { onClose } = this.props;
-    if (onClose && ev.key === "Escape") {
+    if (onClose && ev.key === 'Escape') {
       ev.stopPropagation();
       onClose(ev);
     }
@@ -522,14 +530,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       }
     }
   };
-
-  firstFocusableEl: HTMLElement;
-
-  lastFocusableEl: HTMLElement;
-
-  timeout: TimeoutID;
-
-  modalID: string;
 
   render() {
     const {
@@ -613,9 +613,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 }
 
 const ThemedModal = withTheme(PureModal);
-ThemedModal.displayName = "Modal";
+ThemedModal.displayName = 'Modal';
 export default ThemedModal;
 
-export { default as ModalHeader } from "./ModalHeader";
-export { default as ModalSection } from "./ModalSection";
-export { default as ModalFooter } from "./ModalFooter";
+export { default as ModalHeader } from './ModalHeader';
+export { default as ModalSection } from './ModalSection';
+export { default as ModalFooter } from './ModalFooter';

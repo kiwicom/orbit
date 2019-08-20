@@ -1,8 +1,9 @@
 // @flow
-import { css } from "styled-components";
 
-import type { ResolvePopoverHorizontal } from "./resolvePopoverHorizontal.js.flow";
-import { ANCHORS } from "../consts";
+import { css } from 'styled-components';
+
+import type { ResolvePopoverHorizontal } from './resolvePopoverHorizontal.js.flow';
+import { ANCHORS } from '../consts';
 
 const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   anchor,

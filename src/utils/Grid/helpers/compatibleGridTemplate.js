@@ -1,7 +1,8 @@
 // @flow
-import splitToWords from "./splitToWords";
-import type { CompatibleGridTemplate } from "./compatibleGridTemplate";
-import insertGap from "./insertGap";
+
+import splitToWords from './splitToWords';
+import type { CompatibleGridTemplate } from './compatibleGridTemplate.js.flow';
+import insertGap from './insertGap';
 
 /*
   This function is firstly converting "repeat(3, 1fr) 2fr" to plain format that is compatible with IE
@@ -21,12 +22,12 @@ const compatibleGridTemplate: CompatibleGridTemplate = (cells, gap) => {
             values &&
             Array(...Array(Number(values[1])))
               .map(() => values[2])
-              .join(" ")
+              .join(' ')
           );
         }
         return item;
       })
-      .join(" ");
+      .join(' ');
   if (!gap) {
     return plainCells;
   }

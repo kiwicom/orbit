@@ -1,15 +1,15 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import mq from "../utils/mediaQuery";
-import defaultTheme from "../defaultTheme";
-import Heading from "../Heading";
-import Stack from "../Stack";
-import Text from "../Text";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import convertHexToRgba from '@kiwicom/orbit-design-tokens/lib/convertHexToRgba';
 
-import type { Props } from "./index";
+import mq from '../utils/mediaQuery';
+import defaultTheme from '../defaultTheme';
+import Heading from '../Heading';
+import Stack from '../Stack';
+import Text from '../Text';
+import type { Props } from './index.js.flow';
 
 const StyledCallOutBanner = styled.div`
   display: flex;

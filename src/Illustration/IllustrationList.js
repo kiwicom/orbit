@@ -1,12 +1,13 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
 
-import { NAMES } from "./consts";
-import defaultTheme from "../defaultTheme";
-import mq from "../utils/mediaQuery";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import Illustration from "./index";
+import { NAMES } from './consts';
+import defaultTheme from '../defaultTheme';
+import mq from '../utils/mediaQuery';
+
+import Illustration from './index';
 
 const List = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ Container.defaultProps = {
 };
 
 const IllustrationJSX = styled.div`
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 12px;
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.paletteInkDark};

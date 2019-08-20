@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
-import getSpacingToken from "../common/getSpacingToken";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { GetHeadingToken, Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from './consts';
+import getSpacingToken from '../common/getSpacingToken';
+import type { GetHeadingToken, Props } from './index.js.flow';
 
 export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   const tokens = {
@@ -60,7 +60,7 @@ export const StyledHeading = styled(
   color: ${({ theme, inverted }) =>
     inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
   line-height: ${getHeadingToken(TOKENS.lineHeight)};
-  text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && "uppercase"};
+  text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && 'uppercase'};
   margin: 0;
   margin-bottom: ${getSpacingToken};
 `;

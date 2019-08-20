@@ -1,6 +1,7 @@
 // @flow
-import { SIZE_OPTIONS, TOKENS } from "../consts";
-import type { GetSizeToken } from "./getSizeToken";
+
+import { SIZE_OPTIONS, TOKENS } from '../consts';
+import type { GetSizeToken } from './getSizeToken.js.flow';
 
 const getSizeToken: GetSizeToken = name => ({ theme, size }) => {
   const tokens = {

@@ -1,9 +1,10 @@
 // @flow
-import * as React from "react";
-import styled, { css, withTheme } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import media, { getBreakpointWidth } from "../utils/mediaQuery";
+import * as React from 'react';
+import styled, { css, withTheme } from 'styled-components';
+
+import defaultTheme from '../defaultTheme';
+import media, { getBreakpointWidth } from '../utils/mediaQuery';
 import {
   ALIGNS,
   POSITIONS,
@@ -11,17 +12,17 @@ import {
   SIZE_OPTIONS,
   TOOLTIP_ARROW_SIZE,
   TOOLTIP_TOTAL_PADDING,
-} from "./consts";
-import { StyledText } from "../Text";
-import { Item } from "../List/ListItem";
-import Portal from "../Portal";
-import resolveContainerPosition from "./helpers/resolveContainerPosition";
-import resolveContainerAlign from "./helpers/resolveContainerAlign";
-import resolveTooltipArrowAlign from "./helpers/resolveTooltipArrowAlign";
-import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
-import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
-import tooltipSize from "./helpers/tooltipSize";
-import Button from "../Button";
+} from './consts';
+import { StyledText } from '../Text';
+import { Item } from '../List/ListItem';
+import Portal from '../Portal';
+import resolveContainerPosition from './helpers/resolveContainerPosition';
+import resolveContainerAlign from './helpers/resolveContainerAlign';
+import resolveTooltipArrowAlign from './helpers/resolveTooltipArrowAlign';
+import resolveTooltipArrowPosition from './helpers/resolveTooltipArrowPosition';
+import tooltipArrowStyle from './helpers/tooltipArrowStyle';
+import tooltipSize from './helpers/tooltipSize';
+import Button from '../Button';
 import {
   isHorizontal,
   isPositionBottom,
@@ -29,15 +30,14 @@ import {
   isPositionRight,
   isPositionTop,
   isVertical,
-} from "./helpers/isPosition";
-import { isAlignCenter, isAlignEnd, isAlignStart } from "./helpers/isAlign";
-import tooltipPadding from "./helpers/tooltipPadding";
-import RandomID from "../utils/randomID";
-import type { ThemeProps } from "../defaultTheme";
-import { QUERIES } from "../utils/mediaQuery/consts";
-import Translate from "../Translate";
-
-import type { Props, State, Aligns, Positions } from "./index";
+} from './helpers/isPosition';
+import { isAlignCenter, isAlignEnd, isAlignStart } from './helpers/isAlign';
+import tooltipPadding from './helpers/tooltipPadding';
+import RandomID from '../utils/randomID';
+import type { ThemeProps } from '../defaultTheme';
+import { QUERIES } from '../utils/mediaQuery/consts';
+import Translate from '../Translate';
+import type { Props, State, Aligns, Positions } from './index.js.flow';
 
 const StyledTooltipChildren = styled.span`
   &:focus:active {
@@ -50,7 +50,7 @@ const StyledTooltipChildren = styled.span`
       display: block;
       border-bottom: 1px dotted currentColor;
       position: relative;
-      content: " ";
+      content: ' ';
       width: 100%;
       height: 0;
       top: -1px;
@@ -72,13 +72,13 @@ const StyledTooltipWrapper = styled.div`
   background-color: ${({ theme }) => theme.orbit.paletteWhite}; // TODO: use token backgroundTooltip
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
-  visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
-  opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
+  visibility: ${({ shownMobile }) => (shownMobile ? 'visible' : 'hidden')};
+  opacity: ${({ shownMobile }) => (shownMobile ? '1' : '0')};
   transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     visibility ${({ theme }) => theme.orbit.durationFast} linear
       ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
   z-index: 10012; // TODO: use some good value
-  bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
+  bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? '0' : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
@@ -97,8 +97,8 @@ const StyledTooltipWrapper = styled.div`
     padding: ${tooltipPadding};
     background-color: ${({ theme }) =>
       theme.orbit.paletteBlueDark}; // TODO: use token backgroundTooltip
-    visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
-    opacity: ${({ shown }) => (shown ? "1" : "0")};
+    visibility: ${({ shown }) => (shown ? 'visible' : 'hidden')};
+    opacity: ${({ shown }) => (shown ? '1' : '0')};
     transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
       visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -117,7 +117,7 @@ const StyledTooltipWrapper = styled.div`
     width: 0;
     height: 0;
     border-style: solid;
-    content: " ";
+    content: ' ';
     display: none;
     position: absolute;
 
@@ -182,7 +182,7 @@ StyledTooltipClose.defaultProps = {
 const StyledTooltipOverlay = styled.div`
   position: fixed;
   display: block;
-  visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
+  visibility: ${({ shownMobile }) => (shownMobile ? 'visible' : 'hidden')};
   width: 100%;
   height: 100%;
   top: 0;
@@ -191,7 +191,7 @@ const StyledTooltipOverlay = styled.div`
   left: 0;
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
   z-index: 10011; // TODO: use some good value
-  opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
+  opacity: ${({ shownMobile }) => (shownMobile ? '1' : '0')};
   transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     visibility ${({ theme }) => theme.orbit.durationFast} linear
       ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
@@ -237,16 +237,18 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 
   contentHeight: number = 0;
 
-  container: { current: any | HTMLDivElement } = React.createRef();
+  container: {| current: any | HTMLDivElement |} = React.createRef();
 
-  tooltip: { current: any | HTMLDivElement } = React.createRef();
+  tooltip: {| current: any | HTMLDivElement |} = React.createRef();
 
-  content: { current: any | HTMLDivElement } = React.createRef();
+  content: {| current: any | HTMLDivElement |} = React.createRef();
 
-  overlay: { current: any | HTMLDivElement } = React.createRef();
+  overlay: {| current: any | HTMLDivElement |} = React.createRef();
+
+  tooltipId: string;
 
   componentDidMount() {
-    this.tooltipId = RandomID("tooltip");
+    this.tooltipId = RandomID('tooltip');
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -262,7 +264,7 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       this.tooltip &&
       this.tooltip.current &&
       this.content &&
-      typeof window !== "undefined"
+      typeof window !== 'undefined'
     ) {
       const containerDimensions = this.container.current.getBoundingClientRect();
       const tooltipDimensions = this.tooltip.current.getBoundingClientRect();
@@ -324,12 +326,12 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     const possiblePositions = desiredPositions
       .map(p => isInside(p))
       // filter all non string values
-      .filter(p => typeof p === "string");
+      .filter(p => typeof p === 'string');
 
     // set the first valid position
     // ordering in POSITIONS const is important
     const position = possiblePositions[0];
-    if (typeof position === "string") {
+    if (typeof position === 'string') {
       this.setState({ position });
       this.setAlign(position);
     }
@@ -397,11 +399,11 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
       Object.keys(ALIGNS)
         .map(a => isInside(p, ALIGNS[a]))
         // filter all non string values
-        .filter(a => typeof a === "string");
+        .filter(a => typeof a === 'string');
     const possibleAligns = getAlign(position);
     if (
       possibleAligns.length > 0 &&
-      typeof possibleAligns[0] === "string" &&
+      typeof possibleAligns[0] === 'string' &&
       this.state.align !== possibleAligns[0]
     ) {
       this.setState({ align: possibleAligns[0] });
@@ -474,15 +476,13 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  tooltipId: string;
-
   render() {
     const {
       content,
       children,
       size = SIZE_OPTIONS.SMALL,
       dataTest,
-      tabIndex = "0",
+      tabIndex = '0',
       enabled = true,
     } = this.props;
     const { shown, shownMobile, position, align, render } = this.state;
@@ -555,5 +555,5 @@ class Tooltip extends React.PureComponent<Props & ThemeProps, State> {
 }
 
 const ThemedTooltip = withTheme(Tooltip);
-ThemedTooltip.displayName = "Tooltip";
+ThemedTooltip.displayName = 'Tooltip';
 export default ThemedTooltip;

@@ -1,18 +1,19 @@
 // @flow
-import * as React from "react";
-import { shallow } from "enzyme";
 
-import TripSegment from "../../TripSegment";
-import List from "../../List";
-import ListItem from "../../List/ListItem";
-import TripDate from "../TripDate";
-import TripLayover from "../TripLayover";
-import Clock from "../../icons/Clock";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import TripSector from "..";
+import TripSegment from '../../TripSegment';
+import List from '../../List';
+import ListItem from '../../List/ListItem';
+import TripDate from '../TripDate';
+import TripLayover from '../TripLayover';
+import Clock from '../../icons/Clock';
 
-describe("TripSector", () => {
-  const dataTest = "test";
+import TripSector from '..';
+
+describe('TripSector', () => {
+  const dataTest = 'test';
 
   const component = shallow(
     <TripSector dataTest={dataTest}>
@@ -25,8 +26,8 @@ describe("TripSector", () => {
         duration="3h"
         onClick={jest.fn()}
         carrier={{
-          code: "FR",
-          name: "Rayanair",
+          code: 'FR',
+          name: 'Rayanair',
         }}
       >
         <List>
@@ -41,16 +42,16 @@ describe("TripSector", () => {
     </TripSector>,
   );
 
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it('should have data-test', () => {
+    expect(component.render().prop('data-test')).toBe(dataTest);
   });
-  it("should contain children", () => {
-    expect(component.find("TripDate").exists()).toBe(true);
-    expect(component.find("TripSegment").exists()).toBe(true);
-    expect(component.find("TripLayover").exists()).toBe(true);
+  it('should contain children', () => {
+    expect(component.find('TripDate').exists()).toBe(true);
+    expect(component.find('TripSegment').exists()).toBe(true);
+    expect(component.find('TripLayover').exists()).toBe(true);
   });
 
-  it("should match snapshot", () => {
+  it('should match snapshot', () => {
     expect(component).toMatchSnapshot();
   });
 });

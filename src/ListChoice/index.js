@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import Heading, { StyledHeading } from "../Heading";
-import Checkbox, { Label } from "../Checkbox";
-import Text from "../Text";
-import defaultTheme from "../defaultTheme";
-import { getSize } from "../Icon";
-import { right } from "../utils/rtl";
-import KEY_CODE_MAP from "../common/keyMaps";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import Heading, { StyledHeading } from '../Heading';
+import Checkbox, { Label } from '../Checkbox';
+import Text from '../Text';
+import defaultTheme from '../defaultTheme';
+import { getSize } from '../Icon';
+import { right } from '../utils/rtl';
+import KEY_CODE_MAP from '../common/keyMaps';
+import type { Props } from './index.js.flow';
 
 const StyledListChoiceIcon = styled.div`
   display: flex;
@@ -19,8 +19,8 @@ const StyledListChoiceIcon = styled.div`
   margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
 
   svg {
-    width: ${getSize("small")};
-    height: ${getSize("small")};
+    width: ${getSize('small')};
+    height: ${getSize('small')};
     color: ${({ theme }) => theme.orbit.colorIconPrimary};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }

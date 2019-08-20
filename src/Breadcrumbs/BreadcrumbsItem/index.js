@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import ChevronRight from "../../icons/ChevronRight";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../../defaultTheme';
+import ChevronRight from '../../icons/ChevronRight';
+import type { Props } from './index.js.flow';
 
 const StyledBreadcrumbsItem = styled.li`
   display: flex;
@@ -54,7 +54,7 @@ const BreadcrumbsItem = ({
 }: Props) => (
   <StyledBreadcrumbsItem
     data-test={dataTest}
-    aria-current={active ? "page" : undefined}
+    aria-current={active ? 'page' : undefined}
     property="itemListElement"
     typeof="ListItem"
   >

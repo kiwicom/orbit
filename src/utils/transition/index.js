@@ -1,10 +1,11 @@
 // @flow
-import type { Transition } from "./index";
+
+import type { Transition } from './index.js.flow';
 
 const DURATIONS = {
-  SLOW: "slow",
-  NORMAL: "normal",
-  FAST: "fast",
+  SLOW: 'slow',
+  NORMAL: 'normal',
+  FAST: 'fast',
 };
 
 const transition: Transition = (properties, duration, timingFunction) => ({ theme }) => {
@@ -14,7 +15,7 @@ const transition: Transition = (properties, duration, timingFunction) => ({ them
     [DURATIONS.FAST]: theme.orbit.durationFast,
   };
   return `
-    ${properties.map(property => `${property} ${tokens[duration]} ${timingFunction}`).join(",")};
+    ${properties.map(property => `${property} ${tokens[duration]} ${timingFunction}`).join(',')};
   `;
 };
 

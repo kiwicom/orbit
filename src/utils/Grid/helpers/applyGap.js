@@ -1,5 +1,6 @@
 // @flow
-import type { ApplyGap } from "./applyGap";
+
+import type { ApplyGap } from './applyGap.js.flow';
 /*
   If gap is not defined or cellIndex is 1 just return cellIndex.
   If not, we need to add all previous gaps (cellIndex - 1).

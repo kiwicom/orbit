@@ -1,63 +1,64 @@
 // @flow
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, number, boolean, select } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Stack from "../Stack";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { text, number, boolean, select } from '@storybook/addon-knobs';
 
-import Button from "./index";
+import * as Icons from '../icons';
+import { TYPE_OPTIONS, SIZE_OPTIONS } from './consts';
+import RenderInRtl from '../utils/rtl/RenderInRtl';
+import Stack from '../Stack';
+import SPACINGS_AFTER from '../common/getSpacingToken/consts';
+
+import Button from './index';
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Button", module)
+storiesOf('Button', module)
   .add(
-    "Default",
+    'Default',
     () => {
-      const children = text("Children", "Default button");
-      return <Button onClick={action("clicked")}>{children}</Button>;
+      const children = text('Children', 'Default button');
+      return <Button onClick={action('clicked')}>{children}</Button>;
     },
     {
       info:
-        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+        'This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Basic buttons",
+    'Basic buttons',
     () => {
-      const children = text("Children", "Button");
-      const block = boolean("Block", false);
-      const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
-      const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+      const children = text('Children', 'Button');
+      const block = boolean('Block', false);
+      const type = select('Type', [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], 'primary');
+      const size = select('Size', Object.values(SIZE_OPTIONS), 'normal');
 
       return (
-        <Button onClick={action("clicked")} block={block} type={type} size={size}>
+        <Button onClick={action('clicked')} block={block} type={type} size={size}>
           {children}
         </Button>
       );
     },
     {
       info:
-        "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
+        'Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Button with icons",
+    'Button with icons',
     () => {
-      const children = text("Children", "Button");
-      const block = boolean("Block", false);
-      const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
-      const size = select("Size", Object.values(SIZE_OPTIONS), "small");
-      const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
-      const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+      const children = text('Children', 'Button');
+      const block = boolean('Block', false);
+      const type = select('Type', [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], 'primary');
+      const size = select('Size', Object.values(SIZE_OPTIONS), 'small');
+      const IconLeft = getIcon(getIcons('iconLeft', 'PlusCircle'));
+      const IconRight = getIcon(getIcons('iconRight', 'ChevronDown'));
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           block={block}
           type={type}
           size={size}
@@ -74,37 +75,37 @@ storiesOf("Button", module)
     },
   )
   .add(
-    "Facebook button",
+    'Facebook button',
     () => (
-      <Button onClick={action("clicked")} type="facebook" iconLeft={<Icons.Facebook />} bordered>
+      <Button onClick={action('clicked')} type="facebook" iconLeft={<Icons.Facebook />} bordered>
         Sign in with Facebook
       </Button>
     ),
     {
-      info: "We use social buttons only in normal size.",
+      info: 'We use social buttons only in normal size.',
     },
   )
   .add(
-    "Google button",
+    'Google button',
     () => (
-      <Button onClick={action("clicked")} type="google" iconLeft={<Icons.Google />} bordered>
+      <Button onClick={action('clicked')} type="google" iconLeft={<Icons.Google />} bordered>
         Sign in with Google
       </Button>
     ),
     {
-      info: "We use social buttons only in normal size.",
+      info: 'We use social buttons only in normal size.',
     },
   )
   .add(
-    "Status buttons",
+    'Status buttons',
     () => {
-      const children = text("Children", "Button");
-      const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
+      const children = text('Children', 'Button');
+      const IconLeft = getIcon(getIcons('iconLeft', 'CloseCircle'));
 
       return (
         <Stack>
           <Button
-            onClick={action("clicked")}
+            onClick={action('clicked')}
             type="info"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
@@ -112,7 +113,7 @@ storiesOf("Button", module)
             {children}
           </Button>
           <Button
-            onClick={action("clicked")}
+            onClick={action('clicked')}
             type="success"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
@@ -120,7 +121,7 @@ storiesOf("Button", module)
             {children}
           </Button>
           <Button
-            onClick={action("clicked")}
+            onClick={action('clicked')}
             type="warning"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
@@ -128,7 +129,7 @@ storiesOf("Button", module)
             {children}
           </Button>
           <Button
-            onClick={action("clicked")}
+            onClick={action('clicked')}
             type="critical"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
@@ -140,23 +141,23 @@ storiesOf("Button", module)
     },
     {
       info:
-        "We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.",
+        'We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.',
     },
   )
   .add(
-    "Circled button",
+    'Circled button',
     () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+      const size = select('Size', Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
       const type = select(
-        "Type",
+        'Type',
         [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY],
         TYPE_OPTIONS.PRIMARY,
       );
-      const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+      const IconLeft = getIcon(getIcons('iconLeft', 'Airplane'));
 
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           size={size}
           type={type}
           iconLeft={IconLeft && <IconLeft />}
@@ -167,19 +168,19 @@ storiesOf("Button", module)
     },
     {
       info:
-        "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children. Use title prop to ensure accessibility.",
+        'Button can be also rendered in circled shape, but only when it does have iconLeft and not have children. Use title prop to ensure accessibility.',
     },
   )
   .add(
-    "Destructive buttons",
+    'Destructive buttons',
     () => {
-      const children = text("Children", "Destructive button");
-      const bordered = boolean("Bordered", false);
-      const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+      const children = text('Children', 'Destructive button');
+      const bordered = boolean('Bordered', false);
+      const size = select('Size', Object.values(SIZE_OPTIONS), 'normal');
 
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           bordered={bordered}
           type="critical"
           size={size}
@@ -195,17 +196,17 @@ storiesOf("Button", module)
     },
   )
   .add(
-    "Button as a link",
+    'Button as a link',
     () => {
-      const children = text("Children", "I am a link");
-      const href = text("Href", "https://kiwi.com");
-      const external = boolean("External", false);
-      const disabled = boolean("Disabled", false);
-      const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+      const children = text('Children', 'I am a link');
+      const href = text('Href', 'https://kiwi.com');
+      const external = boolean('External', false);
+      const disabled = boolean('Disabled', false);
+      const size = select('Size', Object.values(SIZE_OPTIONS), 'normal');
 
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           href={href}
           external={external}
           size={size}
@@ -219,37 +220,37 @@ storiesOf("Button", module)
     },
     {
       info:
-        "If you need to, you can pass some href to this component and it will automatically render into anchor.",
+        'If you need to, you can pass some href to this component and it will automatically render into anchor.',
     },
   )
   .add(
-    "Playground",
+    'Playground',
     () => {
-      const children = text("Children", "Button");
-      const href = text("Href", undefined);
-      const external = boolean("External", false);
-      const component = text("Component", "button");
-      const disabled = boolean("Disabled", false);
-      const block = boolean("Block", false);
-      const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
-      const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-      const width = number("Width", 0);
-      const bordered = boolean("Bordered", false);
-      const circled = boolean("Circled", false);
-      const loading = boolean("Loading", false);
-      const submit = boolean("Submit", false);
-      const dataTest = text("dataTest", "test");
-      const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
-      const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
-      const ariaExpanded = boolean("Aria expanded", false);
-      const ariaControls = text("Aria controls", "element ID");
-      const tabIndex = text("tabIndex", "0");
-      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      const title = text("Title", "Additional information for accessibility");
+      const children = text('Children', 'Button');
+      const href = text('Href', undefined);
+      const external = boolean('External', false);
+      const component = text('Component', 'button');
+      const disabled = boolean('Disabled', false);
+      const block = boolean('Block', false);
+      const type = select('Type', Object.values(TYPE_OPTIONS), 'primary');
+      const size = select('Size', Object.values(SIZE_OPTIONS), 'normal');
+      const width = number('Width', 0);
+      const bordered = boolean('Bordered', false);
+      const circled = boolean('Circled', false);
+      const loading = boolean('Loading', false);
+      const submit = boolean('Submit', false);
+      const dataTest = text('dataTest', 'test');
+      const IconLeft = getIcon(getIcons('iconLeft', 'Airplane'));
+      const IconRight = getIcon(getIcons('iconRight', 'ChevronDown'));
+      const ariaExpanded = boolean('Aria expanded', false);
+      const ariaControls = text('Aria controls', 'element ID');
+      const tabIndex = text('tabIndex', '0');
+      const spaceAfter = select('spaceAfter', [null, ...Object.values(SPACINGS_AFTER)]);
+      const title = text('Title', 'Additional information for accessibility');
 
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           component={component}
           href={href}
           external={external}
@@ -276,20 +277,20 @@ storiesOf("Button", module)
       );
     },
     {
-      info: "Some description about this type of component. ",
+      info: 'Some description about this type of component. ',
     },
   )
   .add(
-    "Accessibility",
+    'Accessibility',
     () => {
-      const children = text("Children", "Button");
-      const ariaExpanded = boolean("Aria expanded", false);
-      const ariaControls = text("Aria controls", "element ID");
-      const title = text("Title", "Additional information for accessibility");
+      const children = text('Children', 'Button');
+      const ariaExpanded = boolean('Aria expanded', false);
+      const ariaControls = text('Aria controls', 'element ID');
+      const title = text('Title', 'Additional information for accessibility');
 
       return (
         <Button
-          onClick={action("clicked")}
+          onClick={action('clicked')}
           ariaControls={ariaControls}
           ariaExpanded={ariaExpanded}
           title={title}
@@ -299,11 +300,11 @@ storiesOf("Button", module)
       );
     },
     {
-      info: "This is a preview of component accessibility props",
+      info: 'This is a preview of component accessibility props',
     },
   )
   .add(
-    "RTL",
+    'RTL',
     () => (
       <RenderInRtl>
         <Button type="info" icon={<Icons.Airplane />}>
@@ -312,6 +313,6 @@ storiesOf("Button", module)
       </RenderInRtl>
     ),
     {
-      info: "This is a preview of this component in RTL setup.",
+      info: 'This is a preview of this component in RTL setup.',
     },
   );

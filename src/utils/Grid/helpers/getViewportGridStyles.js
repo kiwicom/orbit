@@ -1,10 +1,11 @@
 // @flow
-import * as React from "react";
-import { css } from "styled-components";
 
-import getViewportIEGridStyles from "./getViewportIEGridStyles";
-import getDisplay from "./getDisplay";
-import type { GetViewportGridStyles } from "./getViewportGridStyles";
+import * as React from 'react';
+import { css } from 'styled-components';
+
+import getViewportIEGridStyles from './getViewportIEGridStyles';
+import getDisplay from './getDisplay';
+import type { GetViewportGridStyles } from './getViewportGridStyles.js.flow';
 /*
   We need to get gap, rowGap and columnGap recursively because someone can change row or columns
   in some mediaQuery, so we need to render IE compatible format once again and we need to know to gaps
@@ -20,7 +21,7 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
       props,
     );
     return css`
-      ${getDisplay(inline, viewport === "smallMobile")};
+      ${getDisplay(inline, viewport === 'smallMobile')};
       max-width: ${maxWidth};
       grid-template-columns: ${columns};
       grid-template-rows: ${rows};

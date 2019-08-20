@@ -1,16 +1,16 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import TileHeader, { StyledIconRight } from "./TileHeader";
-import TileExpandable from "./TileExpandable";
-import KEY_CODE_MAP from "../common/keyMaps";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme from '../defaultTheme';
+import TileHeader, { StyledIconRight } from './TileHeader';
+import TileExpandable from './TileExpandable';
+import KEY_CODE_MAP from '../common/keyMaps';
+import type { Props, State } from './index.js.flow';
 
 export const StyledTile = styled(({ theme, icon, title, external, ...props }) => {
-  const Component = props.href ? "a" : "div";
+  const Component = props.href ? 'a' : 'div';
   return <Component {...props}>{props.children}</Component>;
 })`
   display: block;
@@ -95,13 +95,13 @@ class Tile extends React.PureComponent<Props, State> {
     const isExpanded = this.state.expanded;
     return (
       <StyledTile
-        target={!isExpandable && external ? "_blank" : undefined}
-        rel={!isExpandable && external ? "noopener noreferrer" : undefined}
+        target={!isExpandable && external ? '_blank' : undefined}
+        rel={!isExpandable && external ? 'noopener noreferrer' : undefined}
         href={!isExpandable ? href : undefined}
         data-test={dataTest}
         onKeyDown={this.handleKeyDown}
-        tabIndex={href ? undefined : "0"}
-        role={href ? undefined : "button"}
+        tabIndex={href ? undefined : '0'}
+        role={href ? undefined : 'button'}
       >
         <TileHeader
           icon={icon}

@@ -1,18 +1,18 @@
 // @flow
-import * as React from "react";
 
-import ButtonLink from "../ButtonLink";
-import Stack from "../Stack";
-import Hide from "../Hide";
-import ChevronLeft from "../icons/ChevronLeft";
-import ChevronRight from "../icons/ChevronRight";
-import { MAXIMUM_PAGES, SIZES } from "./consts";
-import Pages from "./components/Pages";
-import CompactPages from "./components/CompactPages";
-import ActiveButton from "./components/ActiveButton";
-import Translate from "../Translate";
+import * as React from 'react';
 
-import type { Props } from "./index";
+import ButtonLink from '../ButtonLink';
+import Stack from '../Stack';
+import Hide from '../Hide';
+import ChevronLeft from '../icons/ChevronLeft';
+import ChevronRight from '../icons/ChevronRight';
+import { MAXIMUM_PAGES, SIZES } from './consts';
+import Pages from './components/Pages';
+import CompactPages from './components/CompactPages';
+import ActiveButton from './components/ActiveButton';
+import Translate from '../Translate';
+import type { Props } from './index.js.flow';
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {
@@ -34,7 +34,7 @@ const Pagination = ({
     <Stack direction="row" spacing="tight" align="center" dataTest={dataTest} element="nav">
       {selectedPage !== 1 && (
         <>
-          <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+          <Hide on={['smallMobile', 'mediumMobile', 'largeMobile']}>
             <ButtonLink
               onClick={() => pageChanged(selectedPage - 1)}
               iconLeft={<ChevronLeft />}
@@ -44,7 +44,7 @@ const Pagination = ({
               {!hideLabels && <Translate tKey="pagination_label_prev" />}
             </ButtonLink>
           </Hide>
-          <Hide on={["tablet", "desktop", "largeDesktop"]}>
+          <Hide on={['tablet', 'desktop', 'largeDesktop']}>
             <ButtonLink
               onClick={() => pageChanged(selectedPage - 1)}
               iconLeft={<ChevronLeft />}
@@ -54,7 +54,7 @@ const Pagination = ({
           </Hide>
         </>
       )}
-      <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+      <Hide on={['smallMobile', 'mediumMobile', 'largeMobile']}>
         <Stack direction="row" spacing="tight" align="center">
           {pageCount <= MAXIMUM_PAGES ? (
             <Pages
@@ -73,14 +73,14 @@ const Pagination = ({
           )}
         </Stack>
       </Hide>
-      <Hide on={["tablet", "desktop", "largeDesktop"]}>
+      <Hide on={['tablet', 'desktop', 'largeDesktop']}>
         <ActiveButton transparent size={size}>
           {selectedPage} of {pageCount}
         </ActiveButton>
       </Hide>
       {pageCount !== selectedPage && (
         <>
-          <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+          <Hide on={['smallMobile', 'mediumMobile', 'largeMobile']}>
             <ButtonLink
               onClick={() => pageChanged(selectedPage + 1)}
               iconRight={!hideLabels && <ChevronRight />}
@@ -91,7 +91,7 @@ const Pagination = ({
               {!hideLabels && <Translate tKey="pagination_label_next" />}
             </ButtonLink>
           </Hide>
-          <Hide on={["tablet", "desktop", "largeDesktop"]}>
+          <Hide on={['tablet', 'desktop', 'largeDesktop']}>
             <ButtonLink
               onClick={() => pageChanged(selectedPage + 1)}
               iconLeft={<ChevronRight />}

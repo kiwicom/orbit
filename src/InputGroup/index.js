@@ -1,18 +1,18 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import FormLabel from "../FormLabel";
-import { FakeInput, Input, InputContainer } from "../InputField";
-import { SelectContainer } from "../Select";
-import FormFeedback from "../FormFeedback";
-import { SIZE_OPTIONS, TOKENS } from "./consts";
-import { right, rtlSpacing } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import randomID from "../utils/randomID";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props, State } from "./index";
+import defaultTheme from '../defaultTheme';
+import FormLabel from '../FormLabel';
+import { FakeInput, Input, InputContainer } from '../InputField';
+import { SelectContainer } from '../Select';
+import FormFeedback from '../FormFeedback';
+import { SIZE_OPTIONS, TOKENS } from './consts';
+import { right, rtlSpacing } from '../utils/rtl';
+import getSpacingToken from '../common/getSpacingToken';
+import randomID from '../utils/randomID';
+import type { Props, State } from './index.js.flow';
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -21,8 +21,8 @@ const getToken = name => ({ theme, size }) => {
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
     },
     [TOKENS.heightLine]: {
-      [SIZE_OPTIONS.SMALL]: "16px",
-      [SIZE_OPTIONS.NORMAL]: "24px",
+      [SIZE_OPTIONS.SMALL]: '16px',
+      [SIZE_OPTIONS.NORMAL]: '24px',
     },
   };
 
@@ -54,7 +54,7 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: ${({ label }) => label && "23px"};
+  margin-top: ${({ label }) => label && '23px'};
 
   &:hover {
     box-shadow: inset 0 0 0
@@ -139,7 +139,7 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
   }
 
   ${StyledChild} ${FormLabel} {
-    display: ${({ label }) => label && "none"};
+    display: ${({ label }) => label && 'none'};
   }
 
   ${Input}:focus ~ ${FakeInput} {
@@ -155,12 +155,12 @@ class InputGroup extends React.PureComponent<Props, State> {
   state = {
     active: false,
     filled: false,
-    inputID: "",
+    inputID: '',
   };
 
   componentDidMount() {
     this.isFilled();
-    this.setState({ inputID: randomID("InputGroup") });
+    this.setState({ inputID: randomID('InputGroup') });
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -173,7 +173,7 @@ class InputGroup extends React.PureComponent<Props, State> {
     this.setState({
       filled: !React.Children.map(
         this.props.children,
-        child => child.props.value !== undefined && child.props.value !== "",
+        child => child.props.value !== undefined && child.props.value !== '',
       ).includes(false),
     });
 
@@ -209,7 +209,7 @@ class InputGroup extends React.PureComponent<Props, State> {
     const {
       children,
       label,
-      flex = "0 1 auto",
+      flex = '0 1 auto',
       size = SIZE_OPTIONS.NORMAL,
       help,
       error,
@@ -247,7 +247,7 @@ class InputGroup extends React.PureComponent<Props, State> {
                   ref: node => {
                     // Call the original ref, if any
                     const { ref } = item;
-                    if (typeof ref === "function") {
+                    if (typeof ref === 'function') {
                       ref(node);
                     } else if (ref !== null) {
                       ref.current = node;

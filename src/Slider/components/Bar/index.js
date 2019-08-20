@@ -1,12 +1,12 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import { left as leftRight } from "../../../utils/rtl";
-import defaultTheme from "../../../defaultTheme";
-import type { Ref } from "../../../common/common.js.flow";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { CalculateBarPosition, Props } from "./index";
+import { left as leftRight } from '../../../utils/rtl';
+import defaultTheme from '../../../defaultTheme';
+import type { Ref } from '../../../common/common.js.flow';
+import type { CalculateBarPosition, Props } from './index.js.flow';
 
 const StyledBar = styled.div`
   display: block;
@@ -66,6 +66,6 @@ const Bar = React.forwardRef(({ onMouseDown, value, max, min, hasHistogram }: Pr
   );
 });
 
-Bar.displayName = "Bar";
+Bar.displayName = 'Bar';
 
 export default Bar;

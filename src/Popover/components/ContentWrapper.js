@@ -1,18 +1,19 @@
 // @flow
-import React, { useRef, useEffect } from "react";
-import styled, { css, keyframes } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import Button from "../../Button";
-import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
-import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
-import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
-import calculateVerticalPosition from "../helpers/calculateVerticalPosition";
-import calculateHorizontalPosition from "../helpers/calculateHorizontalPosition";
-import type { Props } from "./ContentWrapper.js.flow";
-import useDimensions from "../hooks/useDimensions";
-import Translate from "../../Translate";
+import React, { useRef, useEffect } from 'react';
+import styled, { css, keyframes } from 'styled-components';
+
+import defaultTheme from '../../defaultTheme';
+import media from '../../utils/mediaQuery';
+import Button from '../../Button';
+import resolvePopoverPosition from '../helpers/resolvePopoverPosition';
+import resolvePopoverHorizontal from '../helpers/resolvePopoverHorizontal';
+import calculatePopoverPosition from '../helpers/calculatePopoverPosition';
+import calculateVerticalPosition from '../helpers/calculateVerticalPosition';
+import calculateHorizontalPosition from '../helpers/calculateHorizontalPosition';
+import type { Props } from './ContentWrapper.js.flow';
+import useDimensions from '../hooks/useDimensions';
+import Translate from '../../Translate';
 
 const showAnimation = keyframes`
   from {
@@ -58,7 +59,7 @@ const StyledPopoverParent = styled.div`
     left: auto;
     right: auto;
     bottom: auto;
-    width: ${({ width }) => (width ? `${width}` : "auto")};
+    width: ${({ width }) => (width ? `${width}` : 'auto')};
     animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
@@ -116,9 +117,9 @@ const PopoverContentWrapper = ({
   containerRef,
   noPadding,
 }: Props) => {
-  const popover: { current: React$ElementRef<*> } = useRef(null);
-  const content: { current: React$ElementRef<*> } = useRef(null);
-  const overlay: { current: React$ElementRef<*> } = useRef(null);
+  const popover: {| current: React$ElementRef<any> |} = useRef(null);
+  const content: {| current: React$ElementRef<any> |} = useRef(null);
+  const overlay: {| current: React$ElementRef<any> |} = useRef(null);
   const position = calculatePopoverPosition(preferredPosition);
   const dimensions = useDimensions({ containerRef, popover, content });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);

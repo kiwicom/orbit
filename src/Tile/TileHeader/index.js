@@ -1,15 +1,15 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import Heading from "../../Heading/index";
-import NewWindow from "../../icons/NewWindow";
-import ChevronRight from "../../icons/ChevronRight";
-import ChevronDown from "../../icons/ChevronDown";
-import { right, rtlSpacing } from "../../utils/rtl";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props, IconProps, IconRightProps } from "./index";
+import defaultTheme from '../../defaultTheme';
+import Heading from '../../Heading/index';
+import NewWindow from '../../icons/NewWindow';
+import ChevronRight from '../../icons/ChevronRight';
+import ChevronDown from '../../icons/ChevronDown';
+import { right, rtlSpacing } from '../../utils/rtl';
+import type { Props, IconProps, IconRightProps } from './index.js.flow';
 
 const StyledTileHeader = styled.div`
   display: block;
@@ -72,7 +72,7 @@ export const StyledIconRight = styled.div`
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   svg {
-    transform: ${({ isExpanded }) => isExpanded && "rotate(-180deg)"};
+    transform: ${({ isExpanded }) => isExpanded && 'rotate(-180deg)'};
     transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }
 `;

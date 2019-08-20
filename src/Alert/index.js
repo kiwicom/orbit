@@ -1,29 +1,29 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import InformationCircle from "../icons/InformationCircle";
-import Check from "../icons/Check";
-import AlertTriangle from "../icons/Alert";
-import AlertCircle from "../icons/AlertCircle";
-import Close from "../icons/Close";
-import ButtonLink from "../ButtonLink";
-import { StyledTextLink } from "../TextLink";
-import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import { rtlSpacing, right } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import { Item } from "../List/ListItem";
-import { StyledText } from "../Text";
-import { DictionaryContext } from "../Dictionary";
-import { pureTranslate } from "../Translate";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import InformationCircle from '../icons/InformationCircle';
+import Check from '../icons/Check';
+import AlertTriangle from '../icons/Alert';
+import AlertCircle from '../icons/AlertCircle';
+import Close from '../icons/Close';
+import ButtonLink from '../ButtonLink';
+import { StyledTextLink } from '../TextLink';
+import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from './consts';
+import { rtlSpacing, right } from '../utils/rtl';
+import getSpacingToken from '../common/getSpacingToken';
+import { Item } from '../List/ListItem';
+import { StyledText } from '../Text';
+import { DictionaryContext } from '../Dictionary';
+import { pureTranslate } from '../Translate';
+import type { Props } from './index.js.flow';
 
-type IconProps = {
+type IconProps = {|
   icon: React.Node,
   type: string,
-};
+|};
 
 const getTypeToken = name => ({ theme, type }) => {
   const tokens = {
@@ -59,7 +59,7 @@ const getTypeToken = name => ({ theme, type }) => {
 
 const Icon = ({ icon, type }: IconProps) => {
   // Icon should be boolean and TRUE
-  if (typeof icon === "boolean" && icon) {
+  if (typeof icon === 'boolean' && icon) {
     if (type === TYPE_OPTIONS.INFO) {
       return <InformationCircle />;
     }
@@ -80,11 +80,11 @@ const StyledDiv = ({
   className,
   children,
   dataTest,
-}: {
+}: {|
   className: string,
   children: React.Node,
   dataTest: string,
-}) => (
+|}) => (
   <div className={className} data-test={dataTest}>
     {children}
   </div>
@@ -127,8 +127,8 @@ const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
-  display: ${({ inlineActions }) => inlineActions && "flex"};
-  align-items: ${({ inlineActions }) => inlineActions && "center"};
+  display: ${({ inlineActions }) => inlineActions && 'flex'};
+  align-items: ${({ inlineActions }) => inlineActions && 'center'};
 `;
 
 IconContainer.defaultProps = {
@@ -138,16 +138,16 @@ IconContainer.defaultProps = {
 const ContentWrapper = styled(StyledDiv)`
   flex: 1; // IE wrapping fix
   display: flex;
-  flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? "row" : "column")};
-  align-items: ${({ title }) => !title && "center"};
-  justify-content: ${({ inlineActions }) => inlineActions && "space-between"};
+  flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? 'row' : 'column')};
+  align-items: ${({ title }) => !title && 'center'};
+  justify-content: ${({ inlineActions }) => inlineActions && 'space-between'};
 `;
 
 const Title = styled(StyledDiv)`
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
-    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
+    hasChildren && (inlineActions ? '0' : theme.orbit.spaceXSmall)};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
@@ -160,7 +160,7 @@ Title.defaultProps = {
 const Content = styled(StyledDiv)`
   display: block;
   margin-bottom: ${({ theme, title, inlineActions }) =>
-    title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
+    title && (inlineActions ? '0' : theme.orbit.spaceXXSmall)};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a,
@@ -185,7 +185,7 @@ Content.defaultProps = {
 
 const CloseContainer = styled(StyledDiv)`
   position: absolute;
-  top: ${({ hasChildren }) => (hasChildren ? 0 : "50%")};
+  top: ${({ hasChildren }) => (hasChildren ? 0 : '50%')};
   margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
   ${right}: 0;
   margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
@@ -206,7 +206,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         size="small"
         icon={icon}
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={pureTranslate(dictionary, 'button_close')}
       />
     </CloseContainer>
   );

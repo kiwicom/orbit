@@ -1,19 +1,19 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import FormLabel from "../FormLabel";
-import ChevronDown from "../icons/ChevronDown";
-import FormFeedback from "../FormFeedback";
-import TYPE_OPTIONS from "../FormFeedback/consts";
-import SIZE_OPTIONS from "./consts";
-import type { Ref } from "../common/common.js.flow";
-import { right, rtlSpacing } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import getFieldDataState from "../common/getFieldDataState";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import FormLabel from '../FormLabel';
+import ChevronDown from '../icons/ChevronDown';
+import FormFeedback from '../FormFeedback';
+import TYPE_OPTIONS from '../FormFeedback/consts';
+import SIZE_OPTIONS from './consts';
+import type { Ref } from '../common/common.js.flow';
+import { right, rtlSpacing } from '../utils/rtl';
+import getSpacingToken from '../common/getSpacingToken';
+import getFieldDataState from '../common/getFieldDataState';
+import type { Props } from './index.js.flow';
 
 const getSelectSize = ({ theme, size }) => {
   const tokens = {
@@ -227,7 +227,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     prefix,
     spaceAfter,
   } = props;
-  const filled = !(value == null || value === "");
+  const filled = !(value == null || value === '');
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
@@ -246,7 +246,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           size={size}
           disabled={disabled}
           error={error}
-          value={value == null ? "" : value}
+          value={value == null ? '' : value}
           prefix={prefix}
           name={name}
           onFocus={onFocus}
@@ -278,6 +278,6 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
 });
 
 // otherwise Unknown in storybook
-Select.displayName = "Select";
+Select.displayName = 'Select';
 
 export default Select;

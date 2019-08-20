@@ -1,5 +1,6 @@
 // @flow
-import { POSITIONS } from "../consts";
+
+import { POSITIONS } from '../consts';
 
 export const isPositionLeft = (p: string) => p === POSITIONS.LEFT;
 

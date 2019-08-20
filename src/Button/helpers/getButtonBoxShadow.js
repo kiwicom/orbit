@@ -1,10 +1,11 @@
 // @flow
-import { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { TOKENS, TYPE_OPTIONS, BUTTON_STATES } from "../consts";
-import getTypeToken from "./getTypeToken";
-import type { GetButtonBoxShadow } from "./getButtonBoxShadow";
+import { css } from 'styled-components';
+import convertHexToRgba from '@kiwicom/orbit-design-tokens/lib/convertHexToRgba';
+
+import { TOKENS, TYPE_OPTIONS, BUTTON_STATES } from '../consts';
+import getTypeToken from './getTypeToken';
+import type { GetButtonBoxShadow } from './getButtonBoxShadow.js.flow';
 
 const opacity = {
   default: {

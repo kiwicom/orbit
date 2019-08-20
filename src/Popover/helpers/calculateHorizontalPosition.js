@@ -1,7 +1,8 @@
 // @flow
-import { ANCHORS } from "../consts";
-import type { AnchorsCore } from "../index";
-import type { CalculateHorizontalPosition } from "./calculateHorizontalPosition";
+
+import { ANCHORS } from '../consts';
+import type { AnchorsCore } from '../index';
+import type { CalculateHorizontalPosition } from './calculateHorizontalPosition.js.flow';
 
 const isInside = (p: AnchorsCore, canBe) => {
   if (p === ANCHORS.START && canBe[p]) {
@@ -21,10 +22,10 @@ const calculateHorizontalPosition: CalculateHorizontalPosition = (desiredAnchor,
 
   const possibleAnchor = desiredAnchor
     .map(p => isInside(p, canBe))
-    .filter(p => typeof p === "string");
+    .filter(p => typeof p === 'string');
 
   const posAnchor = possibleAnchor[0];
-  if (typeof posAnchor === "string") {
+  if (typeof posAnchor === 'string') {
     return posAnchor;
   }
   return null;

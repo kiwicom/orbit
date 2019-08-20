@@ -1,11 +1,11 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SIZE_OPTIONS, BASE_URL } from "./consts";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import type { Props } from "./index";
+import defaultTheme from '../defaultTheme';
+import { SIZE_OPTIONS, BASE_URL } from './consts';
+import type { Props } from './index.js.flow';
 
 const getRenderSize = ({ theme, size }) => {
   const renderSizes = {
@@ -44,7 +44,7 @@ const getURLSizes = ({ size }) => {
   };
 };
 
-const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength, size, code }) => {
+const StyledImage = styled.img.attrs(({ carrierType = 'airline', carriersLength, size, code }) => {
   const urlSizes =
     carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
   return {
@@ -72,8 +72,8 @@ export const StyledCarrierLogo = styled.div`
   width: ${({ theme, carriers, size }) =>
     carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
   display: flex;
-  flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
-  flex-wrap: ${({ carriers }) => carriers.length > 2 && "wrap"};
+  flex-direction: ${({ carriers }) => (carriers.length > 1 ? 'column' : 'row')};
+  flex-wrap: ${({ carriers }) => carriers.length > 2 && 'wrap'};
   align-content: space-between;
   justify-content: space-between;
 `;

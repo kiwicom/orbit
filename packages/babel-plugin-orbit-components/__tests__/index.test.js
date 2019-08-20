@@ -1,7 +1,8 @@
-const test = require("tape");
-const babel = require("@babel/core");
+// @flow
 
-const plugin = require("..");
+const babel = require('@babel/core');
+
+const plugin = require('..');
 
 const single = `
 import { Alert } from "@kiwicom/orbit-components";
@@ -70,30 +71,36 @@ import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
 import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
 `;
 
-test(t => {
-  const resSingle = babel.transform(single, { plugins: [plugin] });
-  t.equals(resSingle.code, singleWant.trim());
+function transform(input) {
+  return babel.transform(input, {
+    plugins: [plugin],
+    root: __dirname,
+    rootMode: 'root',
+  });
+}
 
-  const resMulti = babel.transform(multi, { plugins: [plugin] });
-  t.equals(resMulti.code, multiWant.trim());
+it('works as exepcted', () => {
+  const resSingle = transform(single);
+  expect(resSingle.code).toEqual(singleWant.trim());
 
-  const resFromLib = babel.transform(fromLib, { plugins: [plugin] });
-  t.equals(resFromLib.code, resFromLib.code.trim());
+  const resMulti = transform(multi);
+  expect(resMulti.code).toEqual(multiWant.trim());
 
-  const resNested = babel.transform(nested, { plugins: [plugin] });
-  t.equals(resNested.code, nestedWant.trim());
+  const resFromLib = transform(fromLib);
+  expect(resFromLib.code).toEqual(resFromLib.code.trim());
 
-  const resNestedMulti = babel.transform(nestedMulti, { plugins: [plugin] });
-  t.equals(resNestedMulti.code, nestedMultiWant.trim());
+  const resNested = transform(nested);
+  expect(resNested.code).toEqual(nestedWant.trim());
 
-  const resIcon = babel.transform(icon, { plugins: [plugin] });
-  t.equals(resIcon.code, iconWant.trim());
+  const resNestedMulti = transform(nestedMulti);
+  expect(resNestedMulti.code).toEqual(nestedMultiWant.trim());
 
-  const resUtils = babel.transform(utils, { plugins: [plugin] });
-  t.equals(resUtils.code, utilsWant.trim());
+  const resIcon = transform(icon);
+  expect(resIcon.code).toEqual(iconWant.trim());
 
-  const resMixed = babel.transform(mixed, { plugins: [plugin] });
-  t.equals(resMixed.code, mixedWant.trim());
+  const resUtils = transform(utils);
+  expect(resUtils.code).toEqual(utilsWant.trim());
 
-  t.end();
+  const resMixed = transform(mixed);
+  expect(resMixed.code).toEqual(mixedWant.trim());
 });

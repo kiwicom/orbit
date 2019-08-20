@@ -1,7 +1,9 @@
 {
   "name": "@kiwicom/babel-plugin-orbit-components",
-  "version": "1.1.0",
+  "description": "A babel plugin for transforming destructured imports to granular ones.",
+  "version": "1.2.0",
   "author": "kiwicom",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiwicom/babel-plugin-orbit-components"
@@ -18,22 +20,22 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
-    "test": "tape tests/*.spec.js",
+    "test": "jest __tests__/*.test.js",
     "test:coverage": "nyc --reporter=lcov > coverage.lcov npm test",
     "prepare": "yarn lint && yarn test"
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.53",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "@babel/core": "^7.5.5",
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
     "faucet": "^0.0.1",
-    "nyc": "^12.0.2",
-    "prettier": "^1.13.7",
-    "tape": "^4.9.1"
+    "jest": "^24.9.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2"
   },
   "files": [
     "index.js",

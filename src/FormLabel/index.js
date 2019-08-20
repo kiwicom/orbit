@@ -39,8 +39,9 @@ const FormLabel = styled(
     help,
     onMouseEnter,
     onMouseLeave,
+    domRef,
   }) => (
-    <span className={className} data-test={dataTest} id={id}>
+    <span ref={domRef} className={className} data-test={dataTest} id={id}>
       {error && (
         <StyledInputErrorIcWrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <AlertCircle color="critical" size="small" />

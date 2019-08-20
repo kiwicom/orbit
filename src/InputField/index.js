@@ -1,5 +1,5 @@
 // @flow
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback, useState } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -14,6 +14,8 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
+import boundingClientRect from "../utils/boundingClientRect";
+import FormFeedbackTooltip from "../FormFeedbackTooltip";
 
 import type { Props } from "./index";
 
@@ -292,6 +294,8 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
+const StyledLabelWrapper = styled.div``;
+
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -328,6 +332,15 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
 
   const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
 
+  const [bounding, setBounding] = useState({});
+
+  const tooltipRef = useCallback(node => {
+    console.log(node);
+    if (node !== null) {
+      setBounding(boundingClientRect(node));
+    }
+  }, []);
+
   return (
     <Field
       component={label ? "label" : "div"}
@@ -335,13 +348,15 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       htmlFor={label ? forID : undefined}
     >
       {label && !inlineLabel && (
-        <FormLabel
-          label={label}
-          isFilled={!!value}
-          required={required}
-          error={!!error}
-          help={!!help}
-        />
+        <StyledLabelWrapper ref={tooltipRef}>
+          <FormLabel
+            label={label}
+            isFilled={!!value}
+            required={required}
+            error={!!error}
+            help={!!help}
+          />
+        </StyledLabelWrapper>
       )}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
@@ -386,8 +401,8 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      {help && !error && <FormFeedback type="help">{help}</FormFeedback>}
-      {error && <FormFeedback type="error">{error}</FormFeedback>}
+      {/* {help && !error && <FormFeedback type="help">{help}</FormFeedback>} */}
+      {error && <FormFeedbackTooltip bounding={bounding}>{error}</FormFeedbackTooltip>}
     </Field>
   );
 });

@@ -1,7 +1,8 @@
-/* eslint-disable vars-on-top, no-param-reassign */
-var Modal = "Modal";
-var Card = "Card";
-var Table = "Table";
+/* eslint-disable vars-on-top, no-param-reassign, flowtype/require-valid-file-annotation */
+
+var Modal = 'Modal';
+var Card = 'Card';
+var Table = 'Table';
 
 var NEST_RESOLVES = {
   ModalHeader: Modal,
@@ -13,17 +14,14 @@ var NEST_RESOLVES = {
   TableHead: Table,
   TableBody: Table,
   TableRow: Table,
-  TableCell: Table
+  TableCell: Table,
 };
 
 var UTILS_RESOLVES = {
-  mediaQueries: "mediaQuery"
+  mediaQueries: 'mediaQuery',
 };
 
-var parsedImportPaths = [
-  "@kiwicom/orbit-components",
-  "@kiwicom/orbit-components/lib/icons"
-];
+var parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];
 
 module.exports = function orbitComponents(babel) {
   var t = babel.types;
@@ -46,27 +44,24 @@ module.exports = function orbitComponents(babel) {
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
 
             // icons will already have /lib in the name, this adds the /lib to normal components
-            if (importedPath.indexOf("/lib") === -1) {
-              importedPath += "/lib";
+            if (importedPath.indexOf('/lib') === -1) {
+              importedPath += '/lib';
             }
 
             if (NEST_RESOLVES[importedName]) {
-              importedPath +=
-                "/" + NEST_RESOLVES[importedName] + "/" + importedName;
+              importedPath += `/${NEST_RESOLVES[importedName]}/${importedName}`;
             } else if (UTILS_RESOLVES[importedName]) {
-              importedPath += "/utils/" + UTILS_RESOLVES[importedName];
+              importedPath += `/utils/${UTILS_RESOLVES[importedName]}`;
             } else {
-              importedPath += "/" + importedName;
+              importedPath += `/${importedName}`;
             }
           }
 
-          path.insertAfter(
-            t.importDeclaration([spec], t.stringLiteral(importedPath))
-          );
+          path.insertAfter(t.importDeclaration([spec], t.stringLiteral(importedPath)));
         });
 
         path.remove();
-      }
-    }
+      },
+    },
   };
 };

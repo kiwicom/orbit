@@ -27,6 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@kiwicom/eslint-config": "^6.5.2",
     "eslint": "^6.2.1",
     "jest": "^24.9.0",
     "nyc": "^14.1.1"

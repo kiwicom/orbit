@@ -30,10 +30,12 @@ Table below contains all types of the props available in Illustration component.
 | `"Boarding"`                  |
 | `"BoardingPass"`              |
 | `"BusinessTravel"`            |
+| `"BUDFastTrack"`              |
 | `"CabinBaggage"`              |
 | `"DesktopSearch"`             |
 | `"EnjoyApp"`                  |
 | `"Error"`                     |
+| `"Error404"`                  |
 | `"FastTrack"`                 |
 | `"Feedback"`                  |
 | `"Help"`                      |

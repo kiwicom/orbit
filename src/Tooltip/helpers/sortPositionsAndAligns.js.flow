@@ -1,0 +1,12 @@
+// @flow
+import type { Aligns, Positions } from "../index";
+import type { Theme } from "../../defaultTheme";
+
+type PositionsAndAligns = [Positions[], Aligns[]];
+
+export type SortPositionsAndAligns = (
+  preferredPosition: ?Positions,
+  theme: Theme,
+) => PositionsAndAligns;
+
+declare export default SortPositionsAndAligns;

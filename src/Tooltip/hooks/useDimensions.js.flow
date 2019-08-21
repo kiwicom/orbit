@@ -1,0 +1,13 @@
+// @flow
+import type { Dimensions } from "../index";
+
+export type UseDimensions = (
+  {
+    containerRef: ?React$ElementRef<*>,
+    tooltip: ?React$ElementRef<*>,
+    content: ?React$ElementRef<*>,
+  },
+  children: React$Node,
+) => Dimensions;
+
+declare export default UseDimensions;

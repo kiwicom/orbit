@@ -25,18 +25,18 @@ Then just add `@kiwicom/orbit-components` to the list of babel plugins, e.g. to 
 
 ```js
 // Input:
-import { Alert } from "@kiwicom/orbit-components";
+import { Alert } from '@kiwicom/orbit-components';
 
 // Output:
-import Alert from "@kiwicom/orbit-components/lib/Alert";
+import Alert from '@kiwicom/orbit-components/lib/Alert';
 ```
 
 ```js
 // Input
-import { Passengers } from "@kiwicom/orbit-components/lib/icons";
+import { Passengers } from '@kiwicom/orbit-components/lib/icons';
 
 // Output
-import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
+import Passengers from '@kiwicom/orbit-components/lib/icons/Passengers';
 ```
 
 ## License

@@ -10,10 +10,10 @@ const boundingClientRect: BoundingClientRect = ref => {
   ) {
     const { height, width, top, left, right, bottom } = ref.current.getBoundingClientRect();
     return {
-      top: top + window.scrollY,
-      right: right + window.scrollX,
-      bottom: bottom + window.scrollY,
-      left: left + window.scrollX,
+      top: top + (window.scrollY || window.pageYOffset),
+      right: right + (window.scrollX || window.pageXOffset),
+      bottom: bottom + (window.scrollY || window.pageYOffset),
+      left: left + (window.scrollX || window.pageXOffset),
       height,
       width,
     };

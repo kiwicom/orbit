@@ -1,10 +1,10 @@
-/* eslint-disable vars-on-top, no-param-reassign, flowtype/require-valid-file-annotation */
+/* eslint-disable no-param-reassign, flowtype/require-valid-file-annotation */
 
-var Modal = 'Modal';
-var Card = 'Card';
-var Table = 'Table';
+const Modal = 'Modal';
+const Card = 'Card';
+const Table = 'Table';
 
-var NEST_RESOLVES = {
+const NEST_RESOLVES = {
   ModalHeader: Modal,
   ModalSection: Modal,
   ModalFooter: Modal,
@@ -17,14 +17,14 @@ var NEST_RESOLVES = {
   TableCell: Table,
 };
 
-var UTILS_RESOLVES = {
+const UTILS_RESOLVES = {
   mediaQueries: 'mediaQuery',
 };
 
-var parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];
+const parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];
 
 module.exports = function orbitComponents(babel) {
-  var t = babel.types;
+  const t = babel.types;
 
   return {
     visitor: {
@@ -37,10 +37,10 @@ module.exports = function orbitComponents(babel) {
           return;
         }
         path.node.specifiers.forEach(function specFn(spec) {
-          var importedPath = path.node.source.value;
+          let importedPath = path.node.source.value;
 
           if (t.isImportSpecifier(spec)) {
-            var importedName = spec.imported.name;
+            const importedName = spec.imported.name;
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
 
             // icons will already have /lib in the name, this adds the /lib to normal components

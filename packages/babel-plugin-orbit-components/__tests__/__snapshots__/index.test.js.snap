@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transform imports as expected 0 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Alert } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+`;
+
+exports[`transform imports as expected 1 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Alert, Button } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import Button from "@kiwicom/orbit-components/lib/Button";
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+`;
+
+exports[`transform imports as expected 2 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+`;
+
+exports[`transform imports as expected 3 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { ModalSection } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
+`;
+
+exports[`transform imports as expected 4 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Alert, ModalSection } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+`;
+
+exports[`transform imports as expected 5 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Passengers } from "@kiwicom/orbit-components/lib/icons";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
+`;
+
+exports[`transform imports as expected 6 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { mediaQueries } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
+`;
+
+exports[`transform imports as expected 7 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
+import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
+import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
+import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
+`;

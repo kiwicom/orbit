@@ -48,6 +48,7 @@ const Tooltip = ({
   const tooltipId = useMemo(() => RandomID("tooltip"), []);
   const container = useRef(null);
   const renderRef = useRef(null);
+  const shownMobileRef = useRef(null);
 
   const setRenderTimeout = useCallback(() => {
     renderRef.current = setTimeout(() => {
@@ -56,9 +57,22 @@ const Tooltip = ({
     }, 200);
   }, []);
 
+  const setShownMobileTimeout = useCallback(() => {
+    shownMobileRef.current = setTimeout(() => {
+      shownMobileRef.current = null;
+      setShownMobile(true);
+    }, 200);
+  }, []);
+
   const clearRenderTimeout = useCallback(() => {
     if (renderRef.current !== null) {
       clearTimeout(renderRef.current);
+    }
+  }, []);
+
+  const clearShownMobileTimeout = useCallback(() => {
+    if (shownMobileRef.current !== null) {
+      clearTimeout(shownMobileRef.current);
     }
   }, []);
 
@@ -80,10 +94,10 @@ const Tooltip = ({
   const handleInMobile = useCallback(() => {
     if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
       setRender(true);
-      setShownMobile(true);
+      setShownMobileTimeout();
       clearRenderTimeout();
     }
-  }, [clearRenderTimeout, theme]);
+  }, [clearRenderTimeout, setShownMobileTimeout, theme]);
 
   const handleOutMobile = useCallback(() => {
     setShownMobile(false);
@@ -93,8 +107,9 @@ const Tooltip = ({
   useEffect(() => {
     return () => {
       clearRenderTimeout();
+      clearShownMobileTimeout();
     };
-  }, [clearRenderTimeout]);
+  }, [clearRenderTimeout, clearShownMobileTimeout]);
 
   return (
     <React.Fragment>

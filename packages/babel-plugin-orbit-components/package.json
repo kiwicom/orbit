@@ -20,17 +20,16 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
-    "test": "jest __tests__/*.test.js",
-    "test:coverage": "nyc --reporter=lcov > coverage.lcov npm test",
-    "prepare": "yarn lint && yarn test"
+    "test": "jest __tests__/*.test.js"
   },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@kiwicom/babel-preset-kiwicom": "^3.5.0",
     "@kiwicom/eslint-config": "^6.5.2",
+    "babel-eslint": "^10.0.2",
     "eslint": "^6.2.1",
-    "jest": "^24.9.0",
-    "nyc": "^14.1.1"
+    "jest": "^24.9.0"
   },
   "files": [
     "index.js",

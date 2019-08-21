@@ -5,8 +5,5 @@ node_js:
   - 'lts/*'
 
 script:
-  - yarn test:coverage
   - yarn lint
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - yarn test

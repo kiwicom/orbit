@@ -1,24 +1,29 @@
 /* eslint-disable no-param-reassign, flowtype/require-valid-file-annotation */
 
-const Modal = 'Modal';
-const Card = 'Card';
-const Table = 'Table';
-
-const NEST_RESOLVES = {
-  ModalHeader: Modal,
-  ModalSection: Modal,
-  ModalFooter: Modal,
-  CardHeader: Card,
-  CardContent: Card,
-  CardSection: Card,
-  TableHead: Table,
-  TableBody: Table,
-  TableRow: Table,
-  TableCell: Table,
-};
-
-const UTILS_RESOLVES = {
-  mediaQueries: 'mediaQuery',
+/**
+ * Usually, we take the destructed component name and append it after `/libs/` like so:
+ *
+ *     import { Alert } from "@kiwicom/orbit-components";
+ *          ↓ ↓ ↓ ↓ ↓ ↓
+ *     import Alert from "@kiwicom/orbit-components/lib/Alert";
+ *
+ * However, there are some exceptions which we have to handle manually and change the resulting
+ * output. The following configuration maps destructed component to the new path (appended to libs).
+ */
+const pathOverwrites = {
+  CardContent: 'Card/CardContent', // TODO: doesn't exist anymore (?)
+  CardHeader: 'Card/CardHeader',
+  CardSection: 'Card/CardSection',
+  Grid: 'utils/Grid',
+  Icons: 'icons',
+  mediaQueries: 'utils/mediaQuery',
+  ModalFooter: 'Modal/ModalFooter',
+  ModalHeader: 'Modal/ModalHeader',
+  ModalSection: 'Modal/ModalSection',
+  TableBody: 'Table/TableBody',
+  TableCell: 'Table/TableCell',
+  TableHead: 'Table/TableHead',
+  TableRow: 'Table/TableRow',
 };
 
 const parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];
@@ -30,12 +35,14 @@ module.exports = function orbitComponents(babel) {
     visitor: {
       ImportDeclaration: function ImportDeclaration(path) {
         if (parsedImportPaths.indexOf(path.node.source.value) === -1) {
+          // ignore unknown paths
           return;
         }
 
         if (path.node.specifiers.filter(t.isImportSpecifier).length === 0) {
           return;
         }
+
         path.node.specifiers.forEach(function specFn(spec) {
           let importedPath = path.node.source.value;
 
@@ -48,10 +55,8 @@ module.exports = function orbitComponents(babel) {
               importedPath += '/lib';
             }
 
-            if (NEST_RESOLVES[importedName]) {
-              importedPath += `/${NEST_RESOLVES[importedName]}/${importedName}`;
-            } else if (UTILS_RESOLVES[importedName]) {
-              importedPath += `/utils/${UTILS_RESOLVES[importedName]}`;
+            if (pathOverwrites[importedName]) {
+              importedPath += `/${pathOverwrites[importedName]}`;
             } else {
               importedPath += `/${importedName}`;
             }

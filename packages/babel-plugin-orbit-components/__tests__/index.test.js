@@ -22,19 +22,29 @@ function transform(input) {
   }).code;
 }
 
+// TODO: verify the generated output against the actual Orbit components somehow
+
 test.each([
+  [
+    // This import path is unknown for this plugin is it's being ignored (returned as is).
+    'import { Whatever } from "@kiwicom/orbit-components/unknown/import";',
+  ],
   ['import { Alert } from "@kiwicom/orbit-components";'], // single
   ['import { Alert, Button } from "@kiwicom/orbit-components";'], // multi
   ['import Alert from "@kiwicom/orbit-components/lib/Alert";'], // from lib (stays as is)
   ['import { ModalSection } from "@kiwicom/orbit-components";'], // nested
   ['import { Alert, ModalSection } from "@kiwicom/orbit-components";'], // nested multi
   ['import { Passengers } from "@kiwicom/orbit-components/lib/icons";'], // icon
-  ['import { mediaQueries } from "@kiwicom/orbit-components";'], // utils
   [
     // mixed
     `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";`,
   ],
+
+  // REPORTED ISSUES:
+  ['import { mediaQueries } from "@kiwicom/orbit-components";'], // https://github.com/kiwicom/babel-plugin-orbit-components/pull/4
+  ["import { Text, Stack, Grid } from '@kiwicom/orbit-components';"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/5
+  ["import { Icon, Icons } from '@kiwicom/orbit-components'"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/6
 ])('transform imports as expected %#', rawInput => {
   const input = rawInput.trim();
   expect({

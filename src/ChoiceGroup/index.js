@@ -37,7 +37,7 @@ StyledChoiceGroup.defaultProps = {
 };
 
 class ChoiceGroup extends React.PureComponent<Props> {
-  groupID = randomID("ChoiceGroup");
+  groupID = randomID("choiceGroupID");
 
   handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();

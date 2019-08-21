@@ -1,0 +1,19 @@
+// @flow
+import type { Globals } from "../../common/common.js.flow";
+import type { Positions, Sizes } from "../index";
+
+export type Props = {|
+  shownMobile: boolean,
+  shown: boolean,
+  size: Sizes,
+  tooltipId: string,
+  children: React$Node,
+  onClose: () => void,
+  onCloseMobile: () => void,
+  onEnter: () => void,
+  preferredPosition: ?Positions,
+  containerRef: React$ElementRef<*>,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

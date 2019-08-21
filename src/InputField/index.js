@@ -282,6 +282,7 @@ const FormLabel = ({
   required,
   error,
   help,
+  iconRef,
 }: {
   label: Translation,
   isFilled: boolean,
@@ -289,7 +290,13 @@ const FormLabel = ({
   error?: boolean,
   help?: boolean,
 }) => (
-  <DefaultFormLabel filled={isFilled} required={required} error={error} help={help}>
+  <DefaultFormLabel
+    iconRef={iconRef}
+    filled={isFilled}
+    required={required}
+    error={error}
+    help={help}
+  >
     {label}
   </DefaultFormLabel>
 );
@@ -333,11 +340,25 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
   const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
 
   const [bounding, setBounding] = useState({});
+  const [iconBounding, setIconBounding] = useState({});
 
   const tooltipRef = useCallback(node => {
-    console.log(node);
     if (node !== null) {
-      setBounding(boundingClientRect(node));
+      // Hacky should fix boundingClieentRect function to count with element rather then ref.
+      const emulateRef = {
+        current: node,
+      };
+      setBounding(boundingClientRect(emulateRef));
+    }
+  }, []);
+
+  const iconRef = useCallback(node => {
+    if (node !== null) {
+      // Hacky should fix boundingClieentRect function to count with element rather then ref.
+      const emulateRef = {
+        current: node,
+      };
+      setIconBounding(node.getBoundingClientRect());
     }
   }, []);
 
@@ -355,6 +376,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             required={required}
             error={!!error}
             help={!!help}
+            iconRef={iconRef}
           />
         </StyledLabelWrapper>
       )}
@@ -402,7 +424,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
       {/* {help && !error && <FormFeedback type="help">{help}</FormFeedback>} */}
-      {error && <FormFeedbackTooltip bounding={bounding}>{error}</FormFeedbackTooltip>}
+      {error && (
+        <FormFeedbackTooltip bounding={bounding} iconBounding={iconBounding}>
+          {error}
+        </FormFeedbackTooltip>
+      )}
     </Field>
   );
 });

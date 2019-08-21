@@ -139,12 +139,12 @@ const CloseContainer = styled.div`
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "9px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
-  
+
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
   `)};
-  
+
   & + ${StyledModalSection}:first-of-type {
     padding-top: 52px;
     border-top: 0;
@@ -360,6 +360,8 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   focusTriggered = false;
 
+  modalID: string = randomID("modalID");
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -369,7 +371,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       this.setDimensions();
       this.setFirstFocus();
     }, 15);
-    this.modalID = randomID("modal-");
     window.addEventListener("resize", this.handleResize);
   }
 
@@ -528,8 +529,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   lastFocusableEl: HTMLElement;
 
   timeout: TimeoutID;
-
-  modalID: string;
 
   render() {
     const {

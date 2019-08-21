@@ -322,7 +322,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     id,
   } = props;
 
-  const forID = id || (label ? randomID("inputField") : undefined);
+  const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
 
   return (
     <Field

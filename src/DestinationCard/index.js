@@ -177,9 +177,10 @@ class DestinationCard extends React.PureComponent<Props, State> {
 
   hiddenContent: { current: any | HTMLDivElement } = React.createRef();
 
+  cardID: string = randomID("destinationCardID");
+
   componentDidMount() {
     this.setHeight();
-    this.cardID = randomID("DestinationCard");
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -209,8 +210,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
       }
     }
   };
-
-  cardID: string;
 
   render() {
     const {

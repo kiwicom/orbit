@@ -1,5 +1,7 @@
 # Unreleased
 
+- Added support for mediaQueries: https://github.com/kiwicom/babel-plugin-orbit-components/pull/4
+
 # 1.2.0
 
 - ???

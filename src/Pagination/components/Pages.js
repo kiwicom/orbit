@@ -15,9 +15,11 @@ const Pages = ({
   Array(...Array(pageCount)).map((_, index) => {
     const key = index + enlargement;
     return selectedPage === key ? (
-      <ActiveButton size={size}>{key}</ActiveButton>
+      <ActiveButton key={key} size={size}>
+        {key}
+      </ActiveButton>
     ) : (
-      <PageButtonLink onPageChange={onPageChange} size={size}>
+      <PageButtonLink key={key} onPageChange={onPageChange} size={size}>
         {key}
       </PageButtonLink>
     );

@@ -3,7 +3,7 @@
 exports[`InputGroup - Phone number should match snapshot 1`] = `
 <InputGroup__StyledInputGroup
   active={false}
-  ariaLabelledby="InputGroup50000-id-50000"
+  ariaLabelledby="inputGroupID50000-id-50000"
   dataTest="test"
   label="Phone number"
   role="group"
@@ -486,7 +486,7 @@ exports[`InputGroup - Phone number should match snapshot 1`] = `
 >
   <FormLabel
     filled={true}
-    id="InputGroup50000-id-50000"
+    id="inputGroupID50000-id-50000"
     theme={
       Object {
         "orbit": Object {

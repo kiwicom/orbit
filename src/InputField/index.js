@@ -358,7 +358,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       const emulateRef = {
         current: node,
       };
-      setIconBounding(node.getBoundingClientRect());
+      setIconBounding(boundingClientRect(emulateRef));
     }
   }, []);
 
@@ -383,13 +383,14 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}
         {label && inlineLabel && (
-          <StyledInlineLabel size={size}>
+          <StyledInlineLabel ref={tooltipRef} size={size}>
             <FormLabel
               label={label}
               isFilled={!!value}
               required={required}
               error={!!error}
               help={!!help}
+              iconRef={iconRef}
             />
           </StyledInlineLabel>
         )}
@@ -423,7 +424,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      {/* {help && !error && <FormFeedback type="help">{help}</FormFeedback>} */}
+      {help && !error && (
+        <FormFeedbackTooltip isHelp bounding={bounding} iconBounding={iconBounding}>
+          {help}
+        </FormFeedbackTooltip>
+      )}
       {error && (
         <FormFeedbackTooltip bounding={bounding} iconBounding={iconBounding}>
           {error}

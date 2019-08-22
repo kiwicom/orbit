@@ -367,7 +367,7 @@ storiesOf("InputField", module)
     },
   )
   .add(
-    "InputField with an error",
+    "With error",
     () => {
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);

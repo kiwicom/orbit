@@ -27,6 +27,11 @@ export const ALIGNS = {
   END: "end",
 };
 
+export const POSITION_DIRECTIONS = {
+  VERTICAL: "vertical",
+  HORIZONTAL: "horizontal",
+};
+
 export const TOOLTIP_PADDING = 12;
 
 export const TOOLTIP_ARROW_SIZE = 7;

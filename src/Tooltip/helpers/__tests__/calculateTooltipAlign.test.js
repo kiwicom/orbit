@@ -12,10 +12,38 @@ const dimensionsShared = {
   containerWidth: 24,
 };
 describe("calculateTooltipAlign", () => {
+  it("scrolled Y", () => {
+    const dimensions = {
+      containerLeft: 28,
+      containerLeftPure: 28,
+      containerTop: 1671,
+      containerTopPure: 150,
+      ...dimensionsShared,
+    };
+    expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("start");
+    expect(calculateTooltipAlign("right", aligns, dimensions)).toEqual("center");
+    expect(calculateTooltipAlign("bottom", aligns, dimensions)).toEqual("start");
+    expect(calculateTooltipAlign("left", aligns, dimensions)).toEqual("center");
+  });
+  it("scrolled X", () => {
+    const dimensions = {
+      containerLeftPure: 28,
+      containerLeft: 828,
+      containerTop: 150,
+      containerTopPure: 150,
+      ...dimensionsShared,
+    };
+    expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("start");
+    expect(calculateTooltipAlign("right", aligns, dimensions)).toEqual("center");
+    expect(calculateTooltipAlign("bottom", aligns, dimensions)).toEqual("start");
+    expect(calculateTooltipAlign("left", aligns, dimensions)).toEqual("center");
+  });
   it("top left corner dimensions", () => {
     const dimensions = {
       containerLeft: 28,
+      containerLeftPure: 28,
       containerTop: 150,
+      containerTopPure: 150,
       ...dimensionsShared,
     };
     expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("start");
@@ -26,7 +54,9 @@ describe("calculateTooltipAlign", () => {
   it("top right corner dimensions", () => {
     const dimensions = {
       containerLeft: 691,
+      containerLeftPure: 691,
       containerTop: 150,
+      containerTopPure: 150,
       ...dimensionsShared,
     };
     expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("end");
@@ -37,7 +67,9 @@ describe("calculateTooltipAlign", () => {
   it("bottom left corner dimensions", () => {
     const dimensions = {
       containerLeft: 28,
+      containerLeftPure: 28,
       containerTop: 718,
+      containerTopPure: 718,
       ...dimensionsShared,
     };
     expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("start");
@@ -48,7 +80,9 @@ describe("calculateTooltipAlign", () => {
   it("bottom right corner dimensions", () => {
     const dimensions = {
       containerLeft: 691,
+      containerLeftPure: 691,
       containerTop: 718,
+      containerTopPure: 718,
       ...dimensionsShared,
     };
     expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("end");
@@ -59,7 +93,9 @@ describe("calculateTooltipAlign", () => {
   it("center dimensions", () => {
     const dimensions = {
       containerLeft: 359,
+      containerLeftPure: 359,
       containerTop: 150,
+      containerTopPure: 150,
       ...dimensionsShared,
     };
     expect(calculateTooltipAlign("top", aligns, dimensions)).toEqual("center");
@@ -70,7 +106,9 @@ describe("calculateTooltipAlign", () => {
   it("null position or dimensions", () => {
     const dimensions = {
       containerLeft: 0,
+      containerLeftPure: 0,
       containerTop: 0,
+      containerTopPure: 0,
       windowHeight: 0,
       windowWidth: 0,
       tooltipHeight: 0,

@@ -10,7 +10,9 @@ const dimensions = {
   containerHeight: 24,
   containerWidth: 24,
   containerLeft: 28,
+  containerLeftPure: 28,
   containerTop: 20,
+  containerTopPure: 20,
 };
 
 const params = (align, position) => ({ align, position, ...dimensions });

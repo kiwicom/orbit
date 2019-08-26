@@ -7,6 +7,7 @@ export const NAME_OPTIONS = {
   CHINAUNIONPAY: "ChinaUnionPay",
   DINERSCLUB: "DinersClub",
   DISCOVER: "Discover",
+  IATA: "IATA",
   JCB: "JCB",
   MAESTRO: "Maestro",
   MASTERCARD: "MasterCard",

@@ -1,10 +1,9 @@
 // @flow
-import React, { useMemo, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
-import FormFeedback from "../FormFeedback";
 import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
@@ -16,6 +15,8 @@ import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import boundingClientRect from "../utils/boundingClientRect";
 import FormFeedbackTooltip from "../FormFeedbackTooltip";
+import AlertCircle from "../icons/AlertCircle";
+import InformationCircle from "../icons/InformationCircle";
 
 import type { Props } from "./index";
 
@@ -155,8 +156,10 @@ StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Prefix = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+export const Prefix = styled(({ children, className, iconRef }) => (
+  <div className={className} ref={iconRef}>
+    {children}
+  </div>
 ))`
   height: 100%;
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
@@ -168,9 +171,12 @@ export const Prefix = styled(({ children, className }) => (
   z-index: 3;
 
   & > svg {
+    color: ${({ theme }) => theme.orbit.colorIconInput};
+  }
+
+  & * svg {
     width: ${getToken(TOKENS.iconSize)};
     height: ${getToken(TOKENS.iconSize)};
-    color: ${({ theme }) => theme.orbit.colorIconInput};
   }
 `;
 
@@ -283,12 +289,18 @@ const FormLabel = ({
   error,
   help,
   iconRef,
+  inlineLabel,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   label: Translation,
   isFilled: boolean,
   required?: boolean,
   error?: boolean,
   help?: boolean,
+  inlineLabel?: boolean,
+  onMouseEnter?: () => void | Promise<any>,
+  onMouseLeave?: () => void | Promise<any>,
 }) => (
   <DefaultFormLabel
     iconRef={iconRef}
@@ -296,12 +308,25 @@ const FormLabel = ({
     required={required}
     error={error}
     help={help}
+    inlineLabel={inlineLabel}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
   >
     {label}
   </DefaultFormLabel>
 );
 
 const StyledLabelWrapper = styled.div``;
+const StyledIconWrapper = styled.span`
+  display: flex;
+`;
+
+const useWindowEvent = (event, callback) => {
+  useEffect(() => {
+    window.addEventListener(event, callback);
+    return () => window.removeEventListener(event, callback);
+  }, [event, callback]);
+};
 
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {
@@ -341,6 +366,8 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
 
   const [bounding, setBounding] = useState({});
   const [iconBounding, setIconBounding] = useState({});
+  const [tooltipShown, setTooltipShown] = useState(false);
+  const [tooltipShownHover, setTooltipShownHover] = useState(false);
 
   const tooltipRef = useCallback(node => {
     if (node !== null) {
@@ -377,11 +404,34 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             error={!!error}
             help={!!help}
             iconRef={iconRef}
+            inlineLabel={inlineLabel}
+            onMouseEnter={() => {
+              setTooltipShownHover(true);
+            }}
+            onMouseLeave={() => {
+              setTooltipShownHover(false);
+            }}
           />
         </StyledLabelWrapper>
       )}
       <InputContainer size={size} disabled={disabled} error={error}>
-        {prefix && <Prefix size={size}>{prefix}</Prefix>}
+        {prefix &&
+          (inlineLabel && (error || help) ? (
+            <Prefix size={size}>
+              {help && !error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <InformationCircle color="secondary" size="small" />
+                </StyledIconWrapper>
+              )}
+              {error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <AlertCircle color="critical" size="small" />
+                </StyledIconWrapper>
+              )}
+            </Prefix>
+          ) : (
+            <Prefix size={size}>{prefix}</Prefix>
+          ))}
         {label && inlineLabel && (
           <StyledInlineLabel ref={tooltipRef} size={size}>
             <FormLabel
@@ -390,7 +440,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
               required={required}
               error={!!error}
               help={!!help}
-              iconRef={iconRef}
+              inlineLabel={inlineLabel}
             />
           </StyledInlineLabel>
         )}
@@ -399,8 +449,18 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           data-test={dataTest}
           data-state={getFieldDataState(!!error)}
           onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={e => {
+            if (onFocus) {
+              onFocus(e);
+            }
+            setTooltipShown(true);
+          }}
+          onBlur={e => {
+            if (onBlur) {
+              onBlur(e);
+            }
+            setTooltipShown(false);
+          }}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
           name={name}
@@ -424,13 +484,22 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      {help && !error && (
-        <FormFeedbackTooltip isHelp bounding={bounding} iconBounding={iconBounding}>
+      {(tooltipShown || tooltipShownHover) && help && !error && (
+        <FormFeedbackTooltip
+          isHelp
+          shown={tooltipShown || tooltipShownHover}
+          bounding={bounding}
+          iconBounding={iconBounding}
+        >
           {help}
         </FormFeedbackTooltip>
       )}
-      {error && (
-        <FormFeedbackTooltip bounding={bounding} iconBounding={iconBounding}>
+      {(tooltipShown || tooltipShownHover) && error && (
+        <FormFeedbackTooltip
+          shown={tooltipShown || tooltipShownHover}
+          bounding={bounding}
+          iconBounding={iconBounding}
+        >
           {error}
         </FormFeedbackTooltip>
       )}

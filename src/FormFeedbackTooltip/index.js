@@ -7,6 +7,7 @@ import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
+import CloseIc from "../icons/Close";
 
 const ARROW_SIZE = 7;
 const SIDE_NUDGE = 15;
@@ -33,7 +34,7 @@ const tooltipArrowStyle = ({ position }) => {
   return arrows[position];
 };
 
-const resolveTooltipArrowPosition = ({ position, contentBounding, iconBounding, bounding }) => {
+const resolveTooltipArrowPosition = ({ position, contentBounding, iconBounding }) => {
   const leftPos = iconBounding.left - contentBounding.left || SIDE_NUDGE;
   const pos = {
     top: css`
@@ -63,15 +64,16 @@ const resolveTooltipPosition = ({ position, contentBounding, bounding, iconBound
 };
 
 const StyledFormFeedbackTooltip = styled.div`
-  display: block;
+  display: flex;
   position: absolute;
   width: 100%;
   box-sizing: border-box;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite}; // TODO: use token backgroundTooltip
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-right: ${({ theme, isHelp }) => isHelp && theme.orbit.spaceSmall};
   z-index: 10012; // TODO: use some good value
 
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
@@ -107,7 +109,6 @@ const StyledFormFeedbackTooltip = styled.div`
 
     ${tooltipArrowStyle};
     ${resolveTooltipArrowPosition};
-    ${resolveTooltipArrowPosition};
   }
 
   ${resolveTooltipPosition}
@@ -124,7 +125,7 @@ const StyledTooltipContent = styled.div`
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   color: ${({ theme }) => theme.orbit.paletteWhite};
 
-  & ${StyledText}, ${Item} {
+  & ${StyledText}, ${Item}, a {
     color: ${({ theme }) => theme.orbit.paletteWhite};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
     color: ${({ theme }) => theme.orbit.paletteInkNormal};
@@ -134,14 +135,29 @@ const StyledTooltipContent = styled.div`
     font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
 
-    & ${StyledText}, ${Item} {
+    & ${StyledText}, ${Item}, a {
+      color: ${({ theme }) => theme.orbit.paletteWhite};
       font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
       font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+    }
+    & a:hover {
+      color: ${({ theme }) => theme.orbit.paletteWhite};
     }
   `)};
 `;
 
 StyledTooltipContent.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledCloseButton = styled.a`
+  color: #fff;
+  cursor: pointer;
+  margin-left: ${({ theme }) => theme.orbit.spaceSmall};
+  display: flex;
+`;
+
+StyledCloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -151,12 +167,13 @@ const FormFeedbackTooltip = ({
   shown = true,
   children,
   isHelp = false,
+  onClick,
 }) => {
   const [contentBounding, setContentBounding] = useState({});
 
   const conentRef = useCallback(node => {
     if (node !== null) {
-      // Hacky should fix boundingClieentRect function to count with element rather then ref.
+      // Hacky should fix boundingClientRect function to count with element rather then ref.
       const emulateRef = {
         current: node,
       };
@@ -165,6 +182,8 @@ const FormFeedbackTooltip = ({
   }, []);
 
   const preferedPosition = bounding.top - contentBounding.height > 0 ? "top" : "bottom";
+
+  console.log(contentBounding, bounding, iconBounding);
 
   return (
     <StyledFormFeedbackTooltip
@@ -177,6 +196,11 @@ const FormFeedbackTooltip = ({
       isHelp={isHelp}
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>
+      {isHelp && (
+        <StyledCloseButton onClick={onClick}>
+          <CloseIc size="small" />
+        </StyledCloseButton>
+      )}
     </StyledFormFeedbackTooltip>
   );
 };

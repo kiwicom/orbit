@@ -373,7 +373,7 @@ storiesOf("InputField", module)
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
       const name = text("Name", "input");
       const label = text("Label", "Label");
-      const inlineLabel = boolean("inline label", false);
+      const inlineLabel = boolean("inline label", true);
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
       const Prefix = getIcon(getIcons("Prefix", "Search"));

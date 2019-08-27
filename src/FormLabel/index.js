@@ -40,26 +40,20 @@ const FormLabel = styled(
     onMouseEnter,
     onMouseLeave,
     iconRef,
+    inlineLabel,
   }) => (
     <span className={className} data-test={dataTest} id={id}>
-      {error && (
+      {!inlineLabel && (error || help) && (
         <StyledInputErrorIcWrapper
           ref={iconRef}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <AlertCircle color="critical" size="small" />
+          {error && <AlertCircle color="critical" size="small" />}
+          {!error && help && <InformationCircle color="secondary" size="small" />}
         </StyledInputErrorIcWrapper>
       )}
-      {!error && help && (
-        <StyledInputErrorIcWrapper
-          ref={iconRef}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <InformationCircle color="secondary" size="small" />
-        </StyledInputErrorIcWrapper>
-      )}
+
       {required && (
         <StyledAsterisk aria-hidden="true" filled={filled}>
           *{" "}

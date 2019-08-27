@@ -164,25 +164,16 @@ storiesOf("Tooltip", module)
       );
 
       return (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            marginTop: "1000px",
-            marginBottom: "1000px",
-          }}
+        <Tooltip
+          preferredPosition={preferredPosition}
+          size={size}
+          content={content}
+          dataTest={dataTest}
+          tabIndex={tabIndex}
+          enabled={enabled}
         >
-          <Tooltip
-            preferredPosition={preferredPosition}
-            size={size}
-            content={content}
-            dataTest={dataTest}
-            tabIndex={tabIndex}
-            enabled={enabled}
-          >
-            <Icon />
-          </Tooltip>
-        </div>
+          <Icon />
+        </Tooltip>
       );
     },
     {

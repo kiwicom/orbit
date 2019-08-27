@@ -7,7 +7,9 @@ import type { UseDimensions } from "./useDimensions";
 const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, children) => {
   const [dimensions, setDimensions] = useState({
     containerTop: 0,
+    containerTopPure: 0,
     containerLeft: 0,
+    containerLeftPure: 0,
     containerHeight: 0,
     containerWidth: 0,
     tooltipWidth: 0,
@@ -30,7 +32,9 @@ const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, childr
       ) {
         setDimensions({
           containerTop: containerDimensions.top,
+          containerTopPure: containerDimensions.top - (window.scrollY || window.pageYOffset),
           containerLeft: containerDimensions.left,
+          containerLeftPure: containerDimensions.left - (window.scrollX || window.pageXOffset),
           containerHeight: containerDimensions.height,
           containerWidth: containerDimensions.width,
           tooltipWidth: tooltipDimensions.width,
@@ -45,8 +49,10 @@ const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, childr
     calculateDimensions();
 
     window.addEventListener("resize", calculateDimensions);
+    window.addEventListener("scroll", calculateDimensions);
     return () => {
       window.removeEventListener("resize", calculateDimensions);
+      window.removeEventListener("scroll", calculateDimensions);
     };
   }, [containerRef, content, tooltip, children]);
 

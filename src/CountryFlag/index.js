@@ -61,8 +61,7 @@ export function getCountryProps(code: ?string, name: ?string): { code: string, n
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = (props: Props) => {
-  const { dataTest } = props;
+const CountryFlag = ({ dataTest, ...props }: Props) => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
     <StyledCountryFlag>

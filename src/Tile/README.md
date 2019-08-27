@@ -12,6 +12,7 @@ Table below contains all types of the props available in Tile component.
 
 | Name          | Type                          | Default         | Description                      |
 | :------------ | :---------------------------- | :-------------- | :------------------------------- |
+| dataTest      | `string`                      |                 | Optional prop for testing purposes.
 | description   | `string`                      |                 | The content of the Tile.
 | external      | `boolean`                     | `false`         | If `true`, the Tile opens link in a new tab.  [See Functional specs](#functional-specs)
 | href          | `string`                      |                 | The URL of the link to open when Tile is clicked. [See Functional specs](#functional-specs)

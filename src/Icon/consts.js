@@ -13,4 +13,5 @@ export const ICON_COLORS = {
   SUCCESS: "success",
   WARNING: "warning",
   CRITICAL: "critical",
+  PRODUCT: "product",
 };

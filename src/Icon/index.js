@@ -25,6 +25,7 @@ const getColor = () => ({ theme, color }) => {
     [ICON_COLORS.SUCCESS]: theme.orbit.colorIconSuccess,
     [ICON_COLORS.WARNING]: theme.orbit.colorIconWarning,
     [ICON_COLORS.CRITICAL]: theme.orbit.colorIconCritical,
+    [ICON_COLORS.PRODUCT]: theme.orbit.paletteProductNormal,
   };
   return tokens[color];
 };

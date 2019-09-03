@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import transition from "../utils/transition";
 import { right } from "../utils/rtl";
@@ -103,7 +102,7 @@ const StyledNavigationLinkWrapper = styled.div`
 `;
 
 const StyledNavigationLinkIcon = styled.div`
-  margin-${right}: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-${right}: ${({ theme, hasMargin }) => hasMargin && theme.orbit.spaceXSmall};
 `;
 
 StyledNavigationLinkIcon.defaultProps = {
@@ -139,7 +138,7 @@ const NavigationLink = ({
     >
       <StyledNavigationLinkWrapper>
         {icon && (
-          <StyledNavigationLinkIcon>
+          <StyledNavigationLinkIcon hasMargin={!!children}>
             {React.cloneElement(icon, { color: iconColor })}
           </StyledNavigationLinkIcon>
         )}

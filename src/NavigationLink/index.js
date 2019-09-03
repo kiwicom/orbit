@@ -1,52 +1,57 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { right, rtlSpacing } from "../utils/rtl";
+import transition from "../utils/transition";
+import { right } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
 import { ICON_COLORS } from "../Icon/consts";
+import TYPES from "./consts";
+import getPadding from "./helpers/getPadding";
+import getLineStyles from "./helpers/getLineStyles";
 
-const TYPES = {
-  HORIZONTAL: "horizontal",
-  VERTICAL: "vertical",
+const getHeight = ({ type, selectable }) => {
+  if (type === TYPES.HORIZONTAL) {
+    if (selectable) {
+      return "64px";
+    }
+    return "44px";
+  }
+  return null;
 };
 
-const getLineStyles = ({ type }) => {
-  if (type === TYPES.HORIZONTAL) {
+const getBorderRadius = ({ type, selectable, theme }) => {
+  if (type === TYPES.HORIZONTAL && !selectable) {
+    return theme.orbit.borderRadiusNormal;
+  }
+  return null;
+};
+
+const STATES = {
+  HOVER: "hover",
+  FOCUS: "focus",
+};
+const getState = state => ({ theme, selectable }) => {
+  if (state === STATES.HOVER) {
     return css`
-      width: 100%;
-      height: 3px;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      background-color: ${theme.orbit.paletteCloudLightHover};
     `;
   }
-  if (type === TYPES.VERTICAL) {
+  if (state === STATES.FOCUS) {
     return css`
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
+      background-color: ${theme.orbit.paletteCloudLightHover};
+      ${!selectable &&
+        css`
+          box-shadow: 0 0 0 2px ${theme.orbit.paletteCloudLightActive};
+        `};
     `;
   }
   return null;
 };
 
-const getPadding = ({ type, theme }) => {
-  if (type === TYPES.HORIZONTAL) {
-    return "0 8px";
-  }
-  if (type === TYPES.VERTICAL) {
-    return rtlSpacing(
-      `${theme.orbit.spaceXXXSmall} ${theme.orbit.spaceXSmall} ${theme.orbit.spaceXXXSmall} ${
-        theme.orbit.spaceXXLarge
-      }`,
-    );
-  }
-  return null;
-};
 const StyledNavigationLink = styled(
-  ({ selected, type, theme, asComponent, dataTest, ...props }) => {
+  ({ selected, type, theme, asComponent, dataTest, selectable, ...props }) => {
     const Component = props.href ? "a" : asComponent;
     return <Component data-test={dataTest} {...props} />;
   },
@@ -63,9 +68,12 @@ const StyledNavigationLink = styled(
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: pointer;
   border: 0;
+  outline: none;
   background-color: transparent;
-  height: ${({ type }) => type === TYPES.HORIZONTAL && "64px"};
+  height: ${getHeight};
   padding: ${getPadding};
+  border-radius: ${getBorderRadius};
+  transition: ${transition(["background-color", "box-shadow"], "fast", "ease-in-out")};
   ${({ theme, selected }) =>
     selected &&
     css`
@@ -77,6 +85,12 @@ const StyledNavigationLink = styled(
         ${getLineStyles};
       }
     `};
+  &:hover {
+    ${getState(STATES.HOVER)};
+  }
+  &:focus {
+    ${getState(STATES.FOCUS)};
+  }
 `;
 
 StyledNavigationLink.defaultProps = {
@@ -99,11 +113,12 @@ StyledNavigationLinkIcon.defaultProps = {
 const NavigationLink = ({
   icon,
   children,
+  selectable = false,
   selected,
   href,
   external,
   onClick,
-  asComponent = "div",
+  asComponent = "button",
   dataTest,
   type = TYPES.HORIZONTAL,
 }) => {
@@ -114,6 +129,7 @@ const NavigationLink = ({
     <StyledNavigationLink
       onClick={onClick}
       selected={selected}
+      selectable={selectable}
       asComponent={asComponent}
       href={href}
       dataTest={dataTest}

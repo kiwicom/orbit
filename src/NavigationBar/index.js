@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
+import ButtonLink from "../ButtonLink";
 import MenuHamburger from "../icons/MenuHamburger";
 import Stack from "../Stack";
 
@@ -26,22 +27,11 @@ StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const Hamburger = styled.button`
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  padding: 12px;
-`;
-
 const NavigationBar = ({ onOpen, children }) => (
   <StyledNavigationBar>
     {children}
     <Stack grow={false} align="center" justify="end" shrink basis="0%">
-      {onOpen && (
-        <Hamburger onClick={onOpen}>
-          <MenuHamburger />
-        </Hamburger>
-      )}
+      {onOpen && <ButtonLink type="secondary" onClick={onOpen} iconLeft={<MenuHamburger />} />}
     </Stack>
   </StyledNavigationBar>
 );

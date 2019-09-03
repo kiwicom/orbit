@@ -18,7 +18,12 @@ storiesOf("NavigationLink", module).add(
     const Icon = getIcon(getIcons("iconLeft", "PlusCircle"));
     const selected = boolean("selected", false);
     return (
-      <NavigationLink onClick={action("clicked")} icon={<Icon />} selected={selected}>
+      <NavigationLink
+        onClick={action("clicked")}
+        icon={<Icon />}
+        selected={selected}
+        type="vertical"
+      >
         {children}
       </NavigationLink>
     );

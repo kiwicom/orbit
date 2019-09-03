@@ -18,14 +18,20 @@ storiesOf("NavigationBar", module).add(
       <div style={{ marginTop: "1000px" }}>
         <NavigationBar onOpen={action("onOpen")}>
           <Stack direction="row" spacing="none" shrink>
-            <NavigationLink type="horizontal" selected>
+            <NavigationLink type="horizontal" selectable selected>
               Travel
             </NavigationLink>
-            <NavigationLink type="horizontal">Rooms</NavigationLink>
-            <NavigationLink type="horizontal">Cars</NavigationLink>
-            <NavigationLink type="horizontal">Stories</NavigationLink>
+            <NavigationLink type="horizontal" selectable>
+              Rooms
+            </NavigationLink>
+            <NavigationLink type="horizontal" selectable>
+              Cars
+            </NavigationLink>
+            <NavigationLink type="horizontal" selectable>
+              Stories
+            </NavigationLink>
           </Stack>
-          <Stack direction="row" spacing="none" shrink justify="end">
+          <Stack direction="row" spacing="tight" shrink justify="end">
             <NavigationLink type="horizontal" icon={<CountryFlag code="gb" name="English" />}>
               English
             </NavigationLink>

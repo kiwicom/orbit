@@ -15,7 +15,12 @@ const StyledTileHeader = styled.div`
   display: block;
   cursor: pointer;
   position: relative;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
+  padding: ${({ theme }) =>
+    rtlSpacing(
+      `${theme.orbit.spaceMedium} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${
+        theme.orbit.spaceMedium
+      }`,
+    )}}; //TODO Create token paddingTile
 `;
 
 StyledTileHeader.defaultProps = {

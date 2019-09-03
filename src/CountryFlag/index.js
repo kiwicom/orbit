@@ -26,6 +26,7 @@ const StyledImage = styled.img`
   display: block;
   height: 100%;
   width: 100%;
+  flex-shrink: 0;
 `;
 
 StyledImage.defaultProps = {

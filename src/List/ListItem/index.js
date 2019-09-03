@@ -39,7 +39,7 @@ IconContainer.defaultProps = {
 const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
-    {children}
+    <span>{children}</span>
   </Item>
 );
 

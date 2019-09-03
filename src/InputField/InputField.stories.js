@@ -515,6 +515,7 @@ storiesOf("InputField", module)
           label="My label"
           prefix="$"
           suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
+          error="Error"
         />
       </RenderInRtl>
     ),

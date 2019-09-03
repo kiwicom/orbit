@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import boundingClientRect from "../utils/boundingClientRect";
@@ -34,8 +34,17 @@ const tooltipArrowStyle = ({ position }) => {
   return arrows[position];
 };
 
-const resolveTooltipArrowPosition = ({ position, contentBounding, iconBounding }) => {
+const resolveTooltipArrowPosition = ({
+  theme: { rtl },
+  position,
+  contentBounding,
+  iconBounding,
+}) => {
   const leftPos = iconBounding.left - contentBounding.left || SIDE_NUDGE;
+  const rightPos = iconBounding.right - contentBounding.right || SIDE_NUDGE;
+
+  console.log(rtl);
+
   const pos = {
     top: css`
       bottom: ${-ARROW_SIZE}px;
@@ -46,10 +55,28 @@ const resolveTooltipArrowPosition = ({ position, contentBounding, iconBounding }
       left: ${leftPos <= contentBounding.width ? leftPos : 0}px;
     `,
   };
-  return pos[position];
+
+  const rtlPos = {
+    top: css`
+      bottom: ${-ARROW_SIZE}px;
+      right: ${rightPos}px;
+    `,
+    bottom: css`
+      top: ${-ARROW_SIZE}px;
+      right: ${rightPos}px;
+    `,
+  };
+
+  return rtl ? rtlPos[position] : pos[position];
 };
 
-const resolveTooltipPosition = ({ position, contentBounding, bounding, iconBounding }) => {
+const resolveTooltipPosition = ({
+  theme: { rtl },
+  position,
+  contentBounding,
+  bounding,
+  iconBounding,
+}) => {
   const pos = {
     top: css`
       top: ${-contentBounding.height - 7}px;
@@ -60,7 +87,19 @@ const resolveTooltipPosition = ({ position, contentBounding, bounding, iconBound
       left: 0;
     `,
   };
-  return pos[position];
+
+  const rtlPos = {
+    top: css`
+      top: ${-contentBounding.height - 7}px;
+      right: ${() => (bounding.left - iconBounding.left === 0 ? `-${SIDE_NUDGE}px` : "0")};
+    `,
+    bottom: css`
+      bottom: ${-contentBounding.height - 7}px;
+      right: 0;
+    `,
+  };
+
+  return rtl ? rtlPos[position] : pos[position];
 };
 
 const StyledFormFeedbackTooltip = styled.div`
@@ -161,38 +200,80 @@ StyledCloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
+const useDimensions = ({ boundingRef, contentRef, iconBoundingRef }, children, inlineLabel) => {
+  const [dimensions, setDimensions] = useState({
+    set: false,
+    bounding: {
+      bottom: 0,
+      height: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      width: 0,
+    },
+    contentBounding: {
+      bottom: 0,
+      height: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      width: 0,
+    },
+    iconBounding: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
+  });
+
+  useEffect(() => {
+    const calculateDimensions = () => {
+      const bounding = boundingClientRect(boundingRef);
+      const contentBounding = boundingClientRect(contentRef);
+      const iconBounding = boundingClientRect(iconBoundingRef);
+      if (bounding && contentBounding && iconBounding && typeof window !== "undefined") {
+        setDimensions({
+          set: true,
+          bounding,
+          contentBounding,
+          iconBounding,
+        });
+      }
+    };
+
+    calculateDimensions();
+
+    window.addEventListener("resize", calculateDimensions);
+    return () => {
+      window.removeEventListener("resize", calculateDimensions);
+    };
+  }, [boundingRef, contentRef, iconBoundingRef, children, inlineLabel]);
+
+  return dimensions;
+};
+
 const FormFeedbackTooltip = ({
-  bounding,
-  iconBounding,
+  boundingRef,
+  iconBoundingRef,
   shown = true,
   children,
   isHelp = false,
+  inlineLabel,
   onClick,
 }) => {
-  const [contentBounding, setContentBounding] = useState({});
-
-  const conentRef = useCallback(node => {
-    if (node !== null) {
-      // Hacky should fix boundingClientRect function to count with element rather then ref.
-      const emulateRef = {
-        current: node,
-      };
-      setContentBounding(boundingClientRect(emulateRef));
-    }
-  }, []);
-
-  const preferedPosition = bounding.top - contentBounding.height > 0 ? "top" : "bottom";
-
-  console.log(contentBounding, bounding, iconBounding);
+  const contentRef = useRef(null);
+  const dimensions = useDimensions(
+    { boundingRef, contentRef, iconBoundingRef },
+    children,
+    inlineLabel,
+  );
+  const preferedPosition =
+    dimensions.bounding.top - dimensions.contentBounding.height > 0 ? "top" : "bottom";
 
   return (
     <StyledFormFeedbackTooltip
-      ref={conentRef}
-      contentBounding={contentBounding}
-      bounding={bounding}
-      iconBounding={iconBounding}
+      ref={contentRef}
+      contentBounding={dimensions.contentBounding}
+      bounding={dimensions.bounding}
+      iconBounding={dimensions.iconBounding}
       position={preferedPosition}
-      shown={shown}
+      shown={shown && dimensions.set}
       isHelp={isHelp}
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>

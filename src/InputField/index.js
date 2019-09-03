@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -364,30 +364,11 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
 
   const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
 
-  const [bounding, setBounding] = useState({});
-  const [iconBounding, setIconBounding] = useState({});
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
 
-  const tooltipRef = useCallback(node => {
-    if (node !== null) {
-      // Hacky should fix boundingClieentRect function to count with element rather then ref.
-      const emulateRef = {
-        current: node,
-      };
-      setBounding(boundingClientRect(emulateRef));
-    }
-  }, []);
-
-  const iconRef = useCallback(node => {
-    if (node !== null) {
-      // Hacky should fix boundingClieentRect function to count with element rather then ref.
-      const emulateRef = {
-        current: node,
-      };
-      setIconBounding(boundingClientRect(emulateRef));
-    }
-  }, []);
+  const tooltipRef = useRef(null);
+  const iconRef = useRef(null);
 
   return (
     <Field
@@ -488,8 +469,9 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         <FormFeedbackTooltip
           isHelp
           shown={tooltipShown || tooltipShownHover}
-          bounding={bounding}
-          iconBounding={iconBounding}
+          boundingRef={tooltipRef}
+          iconBoundingRef={iconRef}
+          inlineLabel={inlineLabel}
         >
           {help}
         </FormFeedbackTooltip>
@@ -497,8 +479,9 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       {(tooltipShown || tooltipShownHover) && error && (
         <FormFeedbackTooltip
           shown={tooltipShown || tooltipShownHover}
-          bounding={bounding}
-          iconBounding={iconBounding}
+          boundingRef={tooltipRef}
+          iconBoundingRef={iconRef}
+          inlineLabel={inlineLabel}
         >
           {error}
         </FormFeedbackTooltip>

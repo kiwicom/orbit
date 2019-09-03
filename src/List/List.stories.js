@@ -26,7 +26,7 @@ storiesOf("List", module)
           24,000 locations <TextLink href="#">around</TextLink> the globe
         </ListItem>
         <ListItem>
-          Lowest price car rental in <strong>&nbsp;Warsaw</strong>
+          Lowest price car rental in <strong>Warsaw</strong>
         </ListItem>
         <ListItem>From 3 star budget to 5 star luxury</ListItem>
       </List>

@@ -10,6 +10,7 @@ import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import TextLink from "../TextLink";
 
 import List, { ListItem } from "./index";
 
@@ -21,7 +22,9 @@ storiesOf("List", module)
     "Default",
     () => (
       <List>
-        <ListItem>24,000 locations around the globe</ListItem>
+        <ListItem>
+          24,000 locations <TextLink href="#">around</TextLink> the globe
+        </ListItem>
         <ListItem>
           Lowest price car rental in <strong>&nbsp;Warsaw</strong>
         </ListItem>

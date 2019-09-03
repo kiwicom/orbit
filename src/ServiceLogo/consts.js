@@ -3,6 +3,7 @@ export const NAME_OPTIONS = {
   AIRHELP: "AirHelp",
   ALIPAY: "Alipay",
   AMEX: "Amex",
+  AXA: "Axa",
   AXAASSISTANCE: "AxaAssistance",
   CHINAUNIONPAY: "ChinaUnionPay",
   DINERSCLUB: "DinersClub",

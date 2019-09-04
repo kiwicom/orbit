@@ -2,10 +2,8 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { text, number, boolean, select } from "@storybook/addon-knobs";
 
 import Stack from "../Stack";
-import Airplane from "../icons/Airplane";
 import NavigationLink from "../NavigationLink";
 import CountryFlag from "../CountryFlag";
 

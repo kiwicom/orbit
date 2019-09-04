@@ -102,6 +102,7 @@ StyledNavigationLinkIcon.defaultProps = {
   theme: defaultTheme,
 };
 
+// eslint-disable-next-line react/button-has-type
 const DefaultComponent = props => <button {...props} />;
 const NavigationLink = ({
   icon,

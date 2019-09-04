@@ -1915,6 +1915,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
     }
   >
     <TripSegment__StyledTripSegmentOverviewWrapper
+      aria-controls="tripSegmentID50000-id-50000"
       onClick={[Function]}
       theme={
         Object {
@@ -4358,6 +4359,7 @@ exports[`TripSegment with List as children should match snapshot 1`] = `
     </TripSegment__StyledTripSegmentOverviewWrapper>
     <Slide
       expanded={true}
+      id="tripSegmentID50000-id-50000"
     >
       <TripSegment__StyledTripSegmentChildren
         expanded={true}

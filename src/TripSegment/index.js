@@ -17,6 +17,7 @@ import { right, rtlSpacing } from "../utils/rtl";
 import KEY_CODE_MAP from "../common/keyMaps";
 import Slide from "../utils/Slide";
 import Truncate from "../Truncate";
+import randomID from "../utils/randomID";
 
 import type { Props, State, ExpandedType } from "./index";
 
@@ -258,6 +259,8 @@ const MilestoneIcon = ({ type }) => {
 class TripSegment extends React.PureComponent<Props, State> {
   node = React.createRef<HTMLDivElement>();
 
+  tripSegmentID: string = randomID("tripSegmentID");
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -329,7 +332,10 @@ class TripSegment extends React.PureComponent<Props, State> {
           <StyledTripSegmentMilestoneArrow />
         </StyledTripSegmentMilestone>
         <StyledTripSegmentContent>
-          <StyledTripSegmentOverviewWrapper onClick={this.handleToggle}>
+          <StyledTripSegmentOverviewWrapper
+            onClick={this.handleToggle}
+            aria-controls={this.tripSegmentID}
+          >
             <StyledTripSegmentOverview>
               <StyledTripSegmentOverviewColumn>
                 <StyledTripSegmentOverviewTime>
@@ -360,7 +366,7 @@ class TripSegment extends React.PureComponent<Props, State> {
               <Chevrons expanded={expanded} />
             </StyledTripSegmentCarrier>
           </StyledTripSegmentOverviewWrapper>
-          <Slide maxHeight={contentHeight} expanded={expanded}>
+          <Slide maxHeight={contentHeight} expanded={expanded} id={this.tripSegmentID}>
             <StyledTripSegmentChildren expanded={expanded}>
               <div ref={this.node}>{children}</div>
             </StyledTripSegmentChildren>

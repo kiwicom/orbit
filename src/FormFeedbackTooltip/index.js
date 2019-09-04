@@ -41,7 +41,7 @@ const resolveTooltipArrowPosition = ({
   iconBounding,
 }) => {
   const leftPos = iconBounding.left - contentBounding.left || SIDE_NUDGE;
-  const rightPos = iconBounding.right - contentBounding.right || SIDE_NUDGE;
+  const rightPos = contentBounding.right - iconBounding.right || SIDE_NUDGE;
 
   console.log(rtl);
 
@@ -91,7 +91,7 @@ const resolveTooltipPosition = ({
   const rtlPos = {
     top: css`
       top: ${-contentBounding.height - 7}px;
-      right: ${() => (bounding.left - iconBounding.left === 0 ? `-${SIDE_NUDGE}px` : "0")};
+      right: ${() => (bounding.right - iconBounding.right === 0 ? `-${SIDE_NUDGE}px` : "0")};
     `,
     bottom: css`
       bottom: ${-contentBounding.height - 7}px;

@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";

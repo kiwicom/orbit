@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -22,7 +21,6 @@ const getTypeToken = () => ({ theme, type }) => {
   const typeTokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
-    [TYPE_OPTIONS.ATTENTION]: theme.orbit.colorTextAttention,
     [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
     [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
     [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,

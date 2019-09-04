@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import StarEmpty from "../icons/StarEmpty";
 import StarFull from "../icons/StarFull";

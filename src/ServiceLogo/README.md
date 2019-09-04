@@ -19,27 +19,32 @@ Table below contains all types of the props available in ServiceLogo component.
 
 ### enum
 
-| code              | size        |
-| :---------------- | :---------- |
-| `"AirHelp"`       | `"small"`   |
-| `"Alipay"`        | `"medium"`  |
-| `"Amex"`          | `"large"`   |
-| `"AxaAssistance"` |
-| `"ChinaUnionPay"` |
-| `"DinersClub"`    |
-| `"Discover"`      |
-| `"JCB"`           |
-| `"Maestro"`       |
-| `"MasterCard"`    |
-| `"MIR"`           |
-| `"NewYorkTimes"`  |
-| `"NortonSecured"` |
-| `"PayPal"`        |
-| `"Sofort"`        |
-| `"TravelPulse"`   |
-| `"Trustly"`       |
-| `"UsaToday"`      |
-| `"Visa"`          |
-| `"VisaHQ"`        |
-| `"Zooz"`          |
+| code                | size        |
+| :------------------ | :---------- |
+| `"AirHelp"`         | `"small"`   |
+| `"Alipay"`          | `"medium"`  |
+| `"Amex"`            | `"large"`   |
+| `"Axa"`             |
+| `"AxaAssistance"`   |
+| `"BusinessInsider"` |
+| `"ChinaUnionPay"`   |
+| `"DailyExpress"`    |
+| `"DinersClub"`      |
+| `"Discover"`        |
+| `"JCB"`             |
+| `"MailOnline"`      |
+| `"Maestro"`         |
+| `"MasterCard"`      |
+| `"MIR"`             |
+| `"Mirror"`          |
+| `"NewYorkTimes"`    |
+| `"NortonSecured"`   |
+| `"PayPal"`          |
+| `"Sofort"`          |
+| `"TravelPulse"`     |
+| `"Trustly"`         |
+| `"UsaToday"`        |
+| `"Visa"`            |
+| `"VisaHQ"`          |
+| `"Zooz"`            |
 

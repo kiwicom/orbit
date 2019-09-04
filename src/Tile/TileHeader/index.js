@@ -8,8 +8,7 @@ import Stack from "../../Stack";
 import NewWindow from "../../icons/NewWindow";
 import ChevronRight from "../../icons/ChevronRight";
 import ChevronDown from "../../icons/ChevronDown";
-import { right, rtlSpacing } from "../../utils/rtl";
-import transition from "../../utils/transition";
+import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props, IconRightProps } from "./index";
 

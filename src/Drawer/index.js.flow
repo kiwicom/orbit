@@ -1,0 +1,15 @@
+// @flow
+
+export type Type = "box" | "navigation";
+
+export type OnClose = () => void | Promise<any>;
+
+export type Props = {|
+  +children: React$Node,
+  +type?: Type,
+  +onClose?: OnClose,
+  +shown: boolean,
+  +width?: string,
+|};
+
+declare export default React$ComponentType<Props>;

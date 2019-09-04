@@ -1,0 +1,6 @@
+// @flow
+import type { Type } from "../index";
+
+export type GetHeight = ({ type: Type, selectable: boolean }) => ?string;
+
+declare export default GetHeight;

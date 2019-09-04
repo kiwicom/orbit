@@ -1,0 +1,19 @@
+// @flow
+import type { Component, Globals } from "../common/common.js.flow";
+
+export type Type = "horizontal" | "vertical";
+
+export type Props = {|
+  +icon?: React$Element<any>,
+  +children?: React$Node,
+  +selectable?: boolean,
+  +selected?: boolean,
+  +href?: string,
+  +external?: boolean,
+  +onClick?: () => void | Promise<any>,
+  +asComponent?: Component,
+  +type?: Type,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

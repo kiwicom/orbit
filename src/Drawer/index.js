@@ -3,14 +3,11 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import mq from "../utils/mediaQuery";
-import ChevronRight from "../icons/ChevronRight";
-import ButtonLink from "../ButtonLink";
 import defaultTheme from "../defaultTheme";
+import DrawerClose from "./components/DrawerClose";
+import TYPES from "./consts";
 
-const TYPES = {
-  BOX: "box",
-  NAVIGATION: "navigation",
-};
+import type { Props } from ".";
 
 const animateTransition = ({ width, shown }) =>
   css`
@@ -31,14 +28,14 @@ const StyledDrawer = styled.div`
 `;
 
 const StyledDrawerSide = styled.aside`
-  diplay: block;
+  display: block;
   position: absolute;
   box-sizing: border-box;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: 700;
-  width: 320px;
+  width: ${({ width }) => width};
   height: 100%;
   font-weight: 500;
   font-size: 14px;
@@ -65,32 +62,23 @@ StyledDrawerContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerNavigationClose = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  background: rgb(245, 247, 249);
-  height: 64px;
-  width: 320px;
-`;
-
-const CloseComponent = ({ type, onClose }) => {
-  if (type === TYPES.NAVIGATION) {
-    return (
-      <StyledDrawerNavigationClose>
-        <ButtonLink iconRight={<ChevronRight reverseOnRtl />}>Hide</ButtonLink>
-      </StyledDrawerNavigationClose>
-    );
-  }
-  return null;
-};
-
-const Drawer = ({ children, type, onClose, shown, width = "320px" }) => {
+const Drawer = ({ children, type = TYPES.BOX, onClose, shown, width = "320px" }: Props) => {
+  const sideRef = React.useRef(null);
+  const handleOnClose = React.useCallback(
+    ev => {
+      if (sideRef.current && sideRef.current.contains(ev.target)) {
+        return;
+      }
+      if (onClose) {
+        onClose();
+      }
+    },
+    [onClose],
+  );
   return (
-    <StyledDrawer role="button" shown={shown}>
-      <StyledDrawerSide shown={shown} width={width}>
-        <CloseComponent type={type} onClose={onClose} />
+    <StyledDrawer role="button" shown={shown} onClose={handleOnClose}>
+      <StyledDrawerSide shown={shown} width={width} ref={sideRef}>
+        <DrawerClose type={type} onClick={onClose} />
         <StyledDrawerContent>{children}</StyledDrawerContent>
       </StyledDrawerSide>
     </StyledDrawer>

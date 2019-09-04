@@ -9,23 +9,10 @@ import { ICON_COLORS } from "../Icon/consts";
 import TYPES from "./consts";
 import getPadding from "./helpers/getPadding";
 import getLineStyles from "./helpers/getLineStyles";
+import getHeight from "./helpers/getHeight";
+import getBorderRadius from "./helpers/getBorderRadius";
 
-const getHeight = ({ type, selectable }) => {
-  if (type === TYPES.HORIZONTAL) {
-    if (selectable) {
-      return "64px";
-    }
-    return "44px";
-  }
-  return null;
-};
-
-const getBorderRadius = ({ type, selectable, theme }) => {
-  if (type === TYPES.HORIZONTAL && !selectable) {
-    return theme.orbit.borderRadiusNormal;
-  }
-  return null;
-};
+import type { Props } from ".";
 
 const STATES = {
   HOVER: "hover",
@@ -57,7 +44,7 @@ const StyledNavigationLink = styled(
 )`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
@@ -72,6 +59,7 @@ const StyledNavigationLink = styled(
   height: ${getHeight};
   padding: ${getPadding};
   border-radius: ${getBorderRadius};
+  width: ${({ type }) => type === TYPES.VERTICAL && "100%"};
   transition: ${transition(["background-color", "box-shadow"], "fast", "ease-in-out")};
   ${({ theme, selected }) =>
     selected &&
@@ -103,12 +91,18 @@ const StyledNavigationLinkWrapper = styled.div`
 
 const StyledNavigationLinkIcon = styled.div`
   margin-${right}: ${({ theme, hasMargin }) => hasMargin && theme.orbit.spaceXSmall};
+  
+  svg {
+    height: ${({ theme }) => theme.orbit.widthIconSmall};
+    width: ${({ theme }) => theme.orbit.heightIconSmall};
+  }
 `;
 
 StyledNavigationLinkIcon.defaultProps = {
   theme: defaultTheme,
 };
 
+const DefaultComponent = props => <button {...props} />;
 const NavigationLink = ({
   icon,
   children,
@@ -117,10 +111,10 @@ const NavigationLink = ({
   href,
   external,
   onClick,
-  asComponent = "button",
+  asComponent = DefaultComponent,
   dataTest,
   type = TYPES.HORIZONTAL,
-}) => {
+}: Props) => {
   const iconColor = React.useMemo(() => (selected ? ICON_COLORS.PRODUCT : ICON_COLORS.PRIMARY), [
     selected,
   ]);
@@ -142,7 +136,7 @@ const NavigationLink = ({
             {React.cloneElement(icon, { color: iconColor })}
           </StyledNavigationLinkIcon>
         )}
-        {children}
+        <div>{children}</div>
       </StyledNavigationLinkWrapper>
     </StyledNavigationLink>
   );

@@ -7,6 +7,8 @@ import MenuHamburger from "../icons/MenuHamburger";
 import Stack from "../Stack";
 import NavigationLink from "../NavigationLink";
 
+import type { Props } from ".";
+
 const StyledNavigationBar = styled.nav`
   position: fixed;
   top: 0;
@@ -27,7 +29,7 @@ StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationBar = ({ onOpen, children }) => (
+const NavigationBar = ({ onOpen, children }: Props) => (
   <StyledNavigationBar>
     {children}
     <Stack grow={false} align="center" justify="end" shrink basis="0%">

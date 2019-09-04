@@ -1,0 +1,4 @@
+// @flow
+export type Props = {| onOpen: () => void, children: React$Node |};
+
+declare export default React$ComponentType<Props>;

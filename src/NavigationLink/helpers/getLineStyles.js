@@ -2,8 +2,9 @@
 import { css } from "styled-components";
 
 import TYPES from "../consts";
+import type { GetLineStyles } from "./getLineStyles";
 
-const getLineStyles = ({ type }) => {
+const getLineStyles: GetLineStyles = ({ type }) => {
   if (type === TYPES.HORIZONTAL) {
     return css`
       width: 100%;

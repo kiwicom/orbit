@@ -13,6 +13,7 @@ import Separator from "../Separator";
 import Illustration from "../Illustration";
 import NewWindow from "../icons/NewWindow";
 import NavigationLink from "../NavigationLink";
+import AccountCircle from "../icons/AccountCircle";
 
 import Drawer from "./index";
 
@@ -22,10 +23,14 @@ storiesOf("Drawer", module)
     () => {
       const shown = boolean("shown", true);
       return (
-        <Drawer type="navigation" shown={shown}>
+        <Drawer type="navigation" shown={shown} onClose={action("onClose")}>
           <Stack>
-            <NavigationLink type="vertical">Sign in</NavigationLink>
-            <NavigationLink type="vertical">Register</NavigationLink>
+            <NavigationLink type="vertical" icon={<AccountCircle />} selectable selected>
+              Sign in
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<AccountCircle />}>
+              Register
+            </NavigationLink>
             <Heading type="title5" element="div">
               Connect with us
             </Heading>
@@ -61,8 +66,9 @@ storiesOf("Drawer", module)
   .add(
     "SmartFAQs",
     () => {
+      const shown = boolean("shown", true);
       return (
-        <Drawer>
+        <Drawer shown={shown} width="480px" onClose={action("onClose")} type="box">
           <Stack>
             <Illustration name="Accommodation" />
             <Heading element="h2">Need help?</Heading>

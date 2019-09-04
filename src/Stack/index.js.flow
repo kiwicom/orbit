@@ -4,12 +4,15 @@
 */
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
+import type { Theme } from "../defaultTheme";
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 
 export type Align = "start" | "end" | "center";
 
 export type Justify = "start" | "end" | "center" | "between" | "around";
+
+export type Basis = string | ((theme: Theme) => string);
 
 export type Spacing =
   | "none"
@@ -29,7 +32,7 @@ export type MediaQuery = {|
   +wrap?: boolean,
   +grow?: boolean,
   +shrink?: boolean,
-  +basis?: string,
+  +basis?: Basis,
   +align?: Align,
   +justify?: Justify,
   +spacing?: Spacing,
@@ -48,7 +51,7 @@ export type Props = {|
   +wrap?: boolean,
   +grow?: boolean,
   +shrink?: boolean,
-  +basis?: string,
+  +basis?: Basis,
   +align?: Align,
   +justify?: Justify,
   +spacing?: Spacing,

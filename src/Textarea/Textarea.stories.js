@@ -112,6 +112,7 @@ storiesOf("Textarea", module)
       const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
       const maxLength = number("maxLength", undefined);
       const dataTest = text("dataTest", "test");
+      const rows = number("rows", 3);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
@@ -123,6 +124,7 @@ storiesOf("Textarea", module)
           placeholder={placeholder}
           help={help}
           error={error}
+          rows={rows}
           disabled={disabled}
           maxLength={maxLength}
           resize={resize}

@@ -68,6 +68,7 @@ const StyledTextArea = styled.textarea`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  min-height: 44px; // TODO: create token
 
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
@@ -122,6 +123,7 @@ const Textarea = React.forwardRef((props: Props, ref: Ref) => {
         data-test={dataTest}
         name={props.name}
         value={props.value}
+        rows={props.rows}
         size={size}
         fullHeight={props.fullHeight}
         disabled={disabled}

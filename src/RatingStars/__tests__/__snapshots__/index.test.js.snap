@@ -481,27 +481,27 @@ exports[`RatingStars should match snapshot 1`] = `
   }
 >
   <StarFull
-    color="attention"
+    color="primary"
     key="star-0"
     size="large"
   />
   <StarFull
-    color="attention"
+    color="primary"
     key="star-1"
     size="large"
   />
   <StarEmpty
-    color="attention"
+    color="primary"
     key="star-2"
     size="large"
   />
   <StarEmpty
-    color="attention"
+    color="primary"
     key="star-3"
     size="large"
   />
   <StarEmpty
-    color="attention"
+    color="primary"
     key="star-4"
     size="large"
   />

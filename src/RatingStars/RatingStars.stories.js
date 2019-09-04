@@ -15,12 +15,7 @@ storiesOf("RatingStars", module)
     () => {
       const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
       const size = select("size", [null, ...Object.values(ICON_SIZES)]);
-      const color = select("color", [
-        null,
-        ICON_COLORS.PRIMARY,
-        ICON_COLORS.SECONDARY,
-        ICON_COLORS.ATTENTION,
-      ]);
+      const color = select("color", [null, ICON_COLORS.PRIMARY, ICON_COLORS.SECONDARY]);
       const showEmpty = boolean("showEmpty", true);
       const dataTest = text("dataTest", "test");
 

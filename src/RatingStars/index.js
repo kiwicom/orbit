@@ -35,10 +35,6 @@ const RatingStars = ({
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
 }: Props) => {
-  warning(
-    color !== ICON_COLORS.ATTENTION,
-    "Warning: attention color of RatingStars component is deprecated. Please use primary color instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
-  );
   const dictionary = React.useContext(DictionaryContext);
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;

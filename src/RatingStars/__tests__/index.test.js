@@ -11,7 +11,7 @@ import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
 describe("RatingStars", () => {
   const dataTest = "test";
   const rating = 2.4;
-  const color = ICON_COLORS.ATTENTION;
+  const color = ICON_COLORS.PRIMARY;
   const size = ICON_SIZES.LARGE;
   const component = shallow(
     <RatingStars rating={rating} size={size} color={color} showEmpty dataTest={dataTest} />,

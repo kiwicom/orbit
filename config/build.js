@@ -61,7 +61,6 @@ import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   +color?:
-    | "attention"
     | "primary"
     | "secondary"
     | "tertiary"

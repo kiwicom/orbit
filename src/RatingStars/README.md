@@ -5,7 +5,7 @@ import RatingStars from "@kiwicom/orbit-components/lib/RatingStars";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<RatingStars rating={3} size="medium" color="attention" showEmpty />
+<RatingStars rating={3} size="medium" color="secondary" showEmpty />
 ```
 ## Props
 Table below contains all types of the props available in RatingStars component.
@@ -25,4 +25,4 @@ Table below contains all types of the props available in RatingStars component.
 | :--------- | :------------- |
 | `"small"`  | `"primary"`    |
 | `"medium"` | `"secondary"`  |
-| `"large"`  | `"attention"`  |
+| `"large"`  |                |

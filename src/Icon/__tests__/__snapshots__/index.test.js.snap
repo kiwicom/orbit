@@ -13,15 +13,15 @@ exports[`Icon should match snapshot 1`] = `
 }
 
 <Accommodation
-  color="attention"
+  color="primary"
 >
   <OrbitIcon
-    color="attention"
+    color="primary"
     size="medium"
     viewBox="0 0 24 24"
   >
     <Icon__StyledIcon
-      color="attention"
+      color="primary"
       size="medium"
       theme={
         Object {
@@ -500,7 +500,7 @@ exports[`Icon should match snapshot 1`] = `
       viewBox="0 0 24 24"
     >
       <StyledComponent
-        color="attention"
+        color="primary"
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
@@ -1485,7 +1485,7 @@ exports[`Icon should match snapshot 1`] = `
       >
         <Component
           className="c0"
-          color="attention"
+          color="primary"
           size="medium"
           theme={
             Object {

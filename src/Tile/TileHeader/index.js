@@ -1,26 +1,22 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import Heading from "../../Heading/index";
+import Heading from "../../Heading";
+import Stack from "../../Stack";
 import NewWindow from "../../icons/NewWindow";
 import ChevronRight from "../../icons/ChevronRight";
 import ChevronDown from "../../icons/ChevronDown";
-import { right, rtlSpacing } from "../../utils/rtl";
+import { rtlSpacing } from "../../utils/rtl";
 
-import type { Props, IconProps, IconRightProps } from "./index";
+import type { Props, IconRightProps } from "./index";
 
 const StyledTileHeader = styled.div`
   display: block;
   cursor: pointer;
   position: relative;
-  padding: ${({ theme }) =>
-    rtlSpacing(
-      `${theme.orbit.spaceMedium} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${
-        theme.orbit.spaceMedium
-      }`,
-    )}}; //TODO Create token paddingTile
+  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
 `;
 
 StyledTileHeader.defaultProps = {
@@ -41,6 +37,7 @@ const StyledTileIcon = styled.div`
   display: flex;
   flex-shrink: 0;
   align-items: center;
+  align-self: flex-start;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
@@ -53,31 +50,24 @@ const StyledTileDescription = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  margin: ${({ theme, hasIcon, hasTitle }) =>
-    rtlSpacing(
-      `${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXLarge} 0 ${
-        hasIcon && hasTitle ? theme.orbit.spaceXLarge : 0
-      }`,
-    )};
+  width: 100%;
 `;
 
 StyledTileDescription.defaultProps = {
   theme: defaultTheme,
 };
 
-const Icon = ({ icon }: IconProps) => <StyledTileIcon>{icon}</StyledTileIcon>;
-
 export const StyledIconRight = styled.div`
-  position: absolute;
-  ${right}: 0;
-  top: 50%;
-  transform: translateY(-50%);
   color: ${({ theme }) => theme.orbit.paletteInkLight};
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 0`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   svg {
-    transform: ${({ isExpanded }) => isExpanded && "rotate(-180deg)"};
+    ${({ isExpanded }) =>
+      isExpanded &&
+      css`
+        transform: rotate(-180deg);
+      `};
     transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }
 `;
@@ -112,20 +102,24 @@ const TileHeader = ({
   isExpanded,
 }: Props) => (
   <StyledTileHeader onClick={onClick}>
-    {title && (
-      <StyledTileTitle>
-        {icon && <Icon icon={icon} />}
-        <Heading type="title3" element="h3">
-          {title}
-        </Heading>
-      </StyledTileTitle>
-    )}
-    {description && (
-      <StyledTileDescription hasIcon={!!icon} hasTitle={!!title}>
-        {description}
-      </StyledTileDescription>
-    )}
-    <IconRight external={external} isExpandable={isExpandable} isExpanded={isExpanded} />
+    <Stack align="center" shrink spacing="none">
+      {icon && <StyledTileIcon>{icon}</StyledTileIcon>}
+      <Stack spacing="none" direction="column" shrink>
+        {title && (
+          <StyledTileTitle>
+            <Heading type="title3" element="h3">
+              {title}
+            </Heading>
+          </StyledTileTitle>
+        )}
+        {description && (
+          <StyledTileDescription hasIcon={!!icon} hasTitle={!!title}>
+            {description}
+          </StyledTileDescription>
+        )}
+      </Stack>
+      <IconRight external={external} isExpandable={isExpandable} isExpanded={isExpanded} />
+    </Stack>
   </StyledTileHeader>
 );
 

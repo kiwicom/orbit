@@ -51,6 +51,11 @@ const StyledTileDescription = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
   width: 100%;
+  ${({ hasTitle, theme }) =>
+    hasTitle &&
+    css`
+      margin-top: ${theme.orbit.spaceXXSmall};
+    `};
 `;
 
 StyledTileDescription.defaultProps = {
@@ -113,9 +118,7 @@ const TileHeader = ({
           </StyledTileTitle>
         )}
         {description && (
-          <StyledTileDescription hasIcon={!!icon} hasTitle={!!title}>
-            {description}
-          </StyledTileDescription>
+          <StyledTileDescription hasTitle={!!title}>{description}</StyledTileDescription>
         )}
       </Stack>
       <IconRight external={external} isExpandable={isExpandable} isExpanded={isExpanded} />

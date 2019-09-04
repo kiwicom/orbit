@@ -10,6 +10,7 @@ export type Props = {|
   ...spaceAfter,
   +size?: "small" | "normal",
   +name?: string,
+  +rows?: number,
   +label?: Translation,
   +value?: string,
   +fullHeight?: boolean,

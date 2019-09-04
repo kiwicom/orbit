@@ -16,6 +16,7 @@ const StyledCountryFlag = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
   overflow: hidden;
+  flex-shrink: 0;
 `;
 
 StyledCountryFlag.defaultProps = {

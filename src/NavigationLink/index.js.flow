@@ -1,9 +1,13 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/navigationlink/
+*/
 import type { Component, Globals } from "../common/common.js.flow";
 
 export type Type = "horizontal" | "vertical";
 
 export type Props = {|
+  +ariaLabel?: string,
   +icon?: React$Element<any>,
   +children?: React$Node,
   +selectable?: boolean,
@@ -12,6 +16,7 @@ export type Props = {|
   +external?: boolean,
   +onClick?: () => void | Promise<any>,
   +asComponent?: Component,
+  +tabIndex?: string,
   +type?: Type,
   ...Globals,
 |};

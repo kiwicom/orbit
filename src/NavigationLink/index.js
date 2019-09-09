@@ -1,40 +1,20 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { warning } from "@kiwicom/js";
 
 import transition from "../utils/transition";
 import { right, left } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
 import { ICON_COLORS } from "../Icon/consts";
-import TYPES from "./consts";
+import { TYPES, STATES } from "./consts";
 import getPadding from "./helpers/getPadding";
 import getLineStyles from "./helpers/getLineStyles";
 import getHeight from "./helpers/getHeight";
 import getBorderRadius from "./helpers/getBorderRadius";
+import getState from "./helpers/getState";
 
 import type { Props } from ".";
-
-const STATES = {
-  HOVER: "hover",
-  FOCUS: "focus",
-};
-const getState = state => ({ theme, selectable, type }) => {
-  if (state === STATES.HOVER) {
-    return css`
-      background-color: ${theme.orbit.paletteCloudLightHover};
-    `;
-  }
-  if (state === STATES.FOCUS) {
-    return css`
-      background-color: ${theme.orbit.paletteCloudLightHover};
-      ${(!selectable || type !== TYPES.VERTICAL) &&
-        css`
-          box-shadow: 0 0 0 2px ${theme.orbit.paletteCloudLightActive};
-        `};
-    `;
-  }
-  return null;
-};
 
 const StyledNavigationLink = styled(
   ({ selected, type, theme, asComponent, dataTest, selectable, ...props }) => {
@@ -43,8 +23,8 @@ const StyledNavigationLink = styled(
   },
 )`
   position: relative;
-  color: ${({ theme, selected }) =>
-    selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
+  color: ${({ theme, selected, selectable }) =>
+    selectable && selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
   cursor: pointer;
   border: 0;
   outline: none;
@@ -54,7 +34,8 @@ const StyledNavigationLink = styled(
   border-radius: ${getBorderRadius};
   width: ${({ type }) => type === TYPES.VERTICAL && "100%"};
   transition: ${transition(["background-color", "box-shadow"], "fast", "ease-in-out")};
-  ${({ theme, selected }) =>
+  ${({ theme, selected, selectable }) =>
+    selectable &&
     selected &&
     css`
       :after {
@@ -103,7 +84,9 @@ const StyledNavigationLinkContent = styled.div`
   line-height: 20px;
 `;
 
-StyledNavigationLinkContent.defaultProps = { theme: defaultTheme };
+StyledNavigationLinkContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 // eslint-disable-next-line react/button-has-type
 const DefaultComponent = props => <button {...props} />;
@@ -111,6 +94,7 @@ const DefaultComponent = props => <button {...props} />;
 const NavigationLink = ({
   icon,
   children,
+  ariaLabel,
   selectable = false,
   selected,
   href,
@@ -118,13 +102,21 @@ const NavigationLink = ({
   onClick,
   asComponent = DefaultComponent,
   dataTest,
+  tabIndex,
   type = TYPES.HORIZONTAL,
 }: Props) => {
-  const iconColor = React.useMemo(() => (selected ? ICON_COLORS.PRODUCT : ICON_COLORS.PRIMARY), [
-    selected,
-  ]);
+  const iconColor = React.useMemo(
+    () => (selectable && selected ? ICON_COLORS.PRODUCT : ICON_COLORS.PRIMARY),
+    [selectable, selected],
+  );
+  warning(
+    !(!children && !ariaLabel),
+    "Warning: children or ariaLabel property is missing on NavigationLink. Use ariaLabel property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/navigationlink/",
+  );
   return (
     <StyledNavigationLink
+      tabIndex={tabIndex}
+      aria-label={ariaLabel}
       onClick={onClick}
       selected={selected}
       selectable={selectable}
@@ -141,7 +133,7 @@ const NavigationLink = ({
             {React.cloneElement(icon, { color: iconColor })}
           </StyledNavigationLinkIcon>
         )}
-        <StyledNavigationLinkContent>{children}</StyledNavigationLinkContent>
+        {children && <StyledNavigationLinkContent>{children}</StyledNavigationLinkContent>}
       </StyledNavigationLinkWrapper>
     </StyledNavigationLink>
   );

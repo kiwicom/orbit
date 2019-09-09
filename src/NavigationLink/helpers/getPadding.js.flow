@@ -2,6 +2,6 @@
 import type { Type } from "../index";
 import type { Theme } from "../../defaultTheme";
 
-export type GetPadding = ({ type: Type, theme: Theme }) => ?string;
+export type GetPadding = ({ type: Type, theme: Theme }) => string;
 
 declare export default GetPadding;

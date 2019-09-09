@@ -1,8 +1,12 @@
 // @flow
 
+import type { Globals } from "../common/common.js.flow";
+
 export type Type = "box" | "navigation";
 
 export type OnClose = () => void | Promise<any>;
+
+export type Position = "left" | "right";
 
 export type Props = {|
   +children: React$Node,
@@ -10,6 +14,8 @@ export type Props = {|
   +onClose?: OnClose,
   +shown: boolean,
   +width?: string,
+  +position?: Position,
+  ...Globals,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import TYPES from "../consts";
+import { TYPES } from "../consts";
 import type { GetLineStyles } from "./getLineStyles";
 
 const getLineStyles: GetLineStyles = ({ type }) => {
@@ -14,15 +14,12 @@ const getLineStyles: GetLineStyles = ({ type }) => {
       bottom: 0;
     `;
   }
-  if (type === TYPES.VERTICAL) {
-    return css`
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
-    `;
-  }
-  return null;
+  return css`
+    height: 100%;
+    width: 3px;
+    top: 0;
+    left: 0;
+  `;
 };
 
 export default getLineStyles;

@@ -1,6 +1,7 @@
 // @flow
 import { TYPES } from "../consts";
+import type { IsBox, IsNavigation } from "./isType";
 
-export const isBox = type => type === TYPES.BOX;
+export const isBox: IsBox = type => type === TYPES.BOX;
 
-export const isNavigation = type => type === TYPES.NAVIGATION;
+export const isNavigation: IsNavigation = type => type === TYPES.NAVIGATION;

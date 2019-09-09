@@ -3,16 +3,9 @@ import { css } from "styled-components";
 
 import { POSITIONS } from "../consts";
 import { left, right } from "../../utils/rtl/index";
+import type { GetPosition } from "./getPosition";
 
-const getPosition = ({ position }) => {
-  if (position === POSITIONS.RIGHT) {
-    return css`
-      ${right}: 0;
-    `;
-  }
-  return css`
-    ${left}: 0;
-  `;
-};
-
+const getPosition: GetPosition = ({ position, theme }) => css`
+  ${position === POSITIONS.RIGHT ? right({ theme }) : left({ theme })}: 0;
+`;
 export default getPosition;

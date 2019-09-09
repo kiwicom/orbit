@@ -8,9 +8,9 @@ const computedWidth = (width, isPrefixed) => `${isPrefixed ? "-" : ""}${width}`;
 
 const transitionCss = ({ width, shown }) => isPrefixed => {
   return css`
-    transform: translate3d(${shown ? "0" : `${computedWidth("100%", isPrefixed)} , 0, 0`});
+    transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth("100%", isPrefixed)} , 0, 0`});
     ${mq.largeMobile(css`
-      transform: translate3d(${shown ? "0" : `${computedWidth(width, isPrefixed)} , 0, 0`});
+      transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth(width, isPrefixed)} , 0, 0`});
     `)};
   `;
 };

@@ -1,5 +1,5 @@
 // @flow
-import TYPES from "../consts";
+import { TYPES } from "../consts";
 import type { GetHeight } from "./getHeight";
 
 const getHeight: GetHeight = ({ type, selectable }) => {

@@ -1,0 +1,11 @@
+// @flow
+
+import type { Type } from "../index";
+
+export type IsBox = (type: Type) => boolean;
+
+export type IsNavigation = (type: Type) => boolean;
+
+declare export var isBox: IsBox;
+
+declare export var isNavigation: IsNavigation;

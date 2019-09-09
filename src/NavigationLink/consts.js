@@ -1,7 +1,10 @@
 // @flow
-const TYPES = {
+export const TYPES = {
   HORIZONTAL: "horizontal",
   VERTICAL: "vertical",
 };
 
-export default TYPES;
+export const STATES = {
+  HOVER: "hover",
+  FOCUS: "focus",
+};

@@ -1,5 +1,5 @@
 // @flow
-import TYPES from "../consts";
+import { TYPES } from "../consts";
 import type { GetBorderRadius } from "./getBorderRadius";
 
 const getBorderRadius: GetBorderRadius = ({ type, selectable, theme }) => {

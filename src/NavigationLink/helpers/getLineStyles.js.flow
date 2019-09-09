@@ -3,6 +3,6 @@ import { Interpolation } from "styled-components";
 
 import type { Type } from "../index";
 
-export type GetLineStyles = ({ type: Type }) => ?Interpolation;
+export type GetLineStyles = ({ type: Type }) => Interpolation;
 
 declare export default GetLineStyles;

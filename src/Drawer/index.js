@@ -88,6 +88,7 @@ const Drawer = ({
   shown,
   width = "320px",
   position = POSITIONS.RIGHT,
+  dataTest,
 }: Props) => {
   const theme = useTheme();
   const sideRef = useRef(null);
@@ -109,10 +110,10 @@ const Drawer = ({
   }, []);
   const handleOnClose = useCallback(
     ev => {
-      if (sideRef.current && sideRef.current.contains(ev.target)) {
-        return;
-      }
       if (onClose) {
+        if (sideRef.current && sideRef.current.contains(ev.target)) {
+          return;
+        }
         onClose();
       }
     },
@@ -131,9 +132,22 @@ const Drawer = ({
     };
   }, [clearOverlayTimeout, hideOverlayTimeout, overlayShown, shown]);
   return (
-    <StyledDrawer role="button" overlayShown={overlayShown} shown={shown} onClick={handleOnClose}>
-      <StyledDrawerSide shown={shown} width={width} position={position} ref={sideRef}>
-        <DrawerClose type={type} onClick={onClose} />
+    <StyledDrawer
+      role="button"
+      overlayShown={overlayShown}
+      shown={shown}
+      onClick={handleOnClose}
+      data-test={dataTest}
+      aria-hidden={!shown}
+    >
+      <StyledDrawerSide
+        shown={shown}
+        width={width}
+        position={position}
+        ref={sideRef}
+        role="navigation"
+      >
+        {onClose && <DrawerClose type={type} onClick={onClose} />}
         <StyledDrawerContent type={type}>{children}</StyledDrawerContent>
       </StyledDrawerSide>
     </StyledDrawer>

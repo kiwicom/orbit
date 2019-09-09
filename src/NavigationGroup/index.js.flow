@@ -1,9 +1,9 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 export type Props = {|
-  +onOpen?: () => void | Promise<any>,
   +children: React$Node,
+  +title: Translation,
   ...Globals,
 |};
 

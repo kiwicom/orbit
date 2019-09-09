@@ -6,11 +6,14 @@ import mq from "../utils/mediaQuery";
 import Text from "../Text";
 import defaultTheme from "../defaultTheme";
 import Separator from "../Separator";
+import { rtlSpacing } from "../utils/rtl";
+
+import type { Props } from ".";
 
 const StyledNavigationGroupSeparator = styled.div`
-  padding: 0 16px;
+  padding: 0 ${({ theme }) => theme.orbit.spaceMedium};
   ${mq.tablet(css`
-    padding: 0 32px;
+    padding: 0 ${({ theme }) => theme.orbit.spaceXLarge};
   `)};
 `;
 
@@ -19,7 +22,7 @@ StyledNavigationGroupSeparator.defaultProps = {
 };
 
 const StyledNavigationGroupContent = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
 StyledNavigationGroupContent.defaultProps = {
@@ -30,9 +33,9 @@ const StyledNavigationGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 0 20px 0;
+  padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
   :first-child {
-    padding-top: 20px;
+    padding-top: ${({ theme }) => theme.orbit.spaceLarge};
   }
   :last-child {
     padding-bottom: 0;
@@ -50,9 +53,9 @@ StyledNavigationGroup.defaultProps = {
 };
 
 const StyledNavigationGroupTitle = styled.div`
-  padding: 0 16px;
+  padding: 0 ${({ theme }) => theme.orbit.spaceMedium};
   ${mq.tablet(css`
-    padding: 0 32px;
+    padding: 0 ${({ theme }) => theme.orbit.spaceXLarge};
   `)};
 `;
 
@@ -60,8 +63,8 @@ StyledNavigationGroupTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationGroup = ({ children, title }) => (
-  <StyledNavigationGroup>
+const NavigationGroup = ({ children, title, dataTest }: Props) => (
+  <StyledNavigationGroup data-test={dataTest}>
     {title && (
       <StyledNavigationGroupTitle>
         <Text type="secondary" weight="bold" uppercase size="small" spaceAfter="normal">

@@ -6,7 +6,8 @@
   "breadcrumbs_back": "戻る",
   "button_close": "閉じる",
   "choicegroup_only": "のみ",
+  "loading": "読み込み中",
   "pagination_label_next": "次へ",
   "pagination_label_prev": "戻る",
-  "ratingstar_description": "__number__点中__number__点の評価"
+  "ratingstar_description": "__total__点中__number__点の評価"
 }

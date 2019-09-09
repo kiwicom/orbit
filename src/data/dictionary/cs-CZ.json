@@ -6,7 +6,8 @@
   "breadcrumbs_back": "Zpět",
   "button_close": "Zavřít",
   "choicegroup_only": "Pouze",
+  "loading": "Načítá se",
   "pagination_label_next": "Další",
   "pagination_label_prev": "Předchozí",
-  "ratingstar_description": "Hodnocení __number__ z __number__"
+  "ratingstar_description": "Hodnocení __number__ z __total__"
 }

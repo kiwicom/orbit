@@ -2,8 +2,8 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/orbit-components",
-    "packages/orbit-design-tokens"
+    "src/orbit-components",
+    "src/orbit-design-tokens"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",

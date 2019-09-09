@@ -1,6 +1,6 @@
 import * as React from "react"
-import Heading from "../src/Heading"
-import Text from "../src/Text"
+import Heading from "../src/orbit-components/src/Heading"
+import Text from "../src/orbit-components/src/Text"
 import Node from "@storybook/addon-info/dist/components/Node"
 import Pre from "@storybook/addon-info/dist/components/markdown/pre/pre"
 

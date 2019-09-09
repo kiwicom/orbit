@@ -8,22 +8,39 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
-    "test": "lerna exec yarn test"
+    "test": "lerna exec yarn test",
+    "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/parser": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-env": "^7.3.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.5.5",
-    "babel-eslint": "^10.0.2",
-    "lerna": "^3.16.1"
+    "@babel/runtime": "^7.3.4",
+    "@emotion/core": "^10.0.7",
+    "@octokit/rest": "^15.13.1",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-info": "5.0.6",
+    "@storybook/addon-knobs": "^5.0.6",
+    "@storybook/addons": "5.0.6",
+    "@storybook/react": "^5.0.6",
+    "@storybook/storybook-deployer": "^2.3.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.5.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "flow-bin": "^0.99.1",
+    "lerna": "^3.16.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   }
 }

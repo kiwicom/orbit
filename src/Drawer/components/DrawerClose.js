@@ -5,23 +5,28 @@ import styled from "styled-components";
 import ButtonLink from "../../ButtonLink/index";
 import ChevronRight from "../../icons/ChevronRight";
 import Close from "../../icons/Close";
-import TYPES from "../consts";
 import type { Props } from "./DrawerClose";
+import { isNavigation } from "../helpers/isType";
+import defaultTheme from "../../defaultTheme";
 
 const StyledDrawerNavigationClose = styled.div`
   display: flex;
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-end;
-  background: rgb(245, 247, 249);
-  width: 320px;
-  padding: 16px 24px;
+  background: ${({ theme, type }) => isNavigation(type) && theme.orbit.paletteCloudLight};
+  width: 100%;
+  padding: ${({ theme }) => `${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge}`};
 `;
 
+StyledDrawerNavigationClose.defaultProps = {
+  theme: defaultTheme,
+};
+
 const DrawerClose = ({ type, onClick }: Props) => {
-  if (type === TYPES.NAVIGATION) {
+  if (isNavigation(type)) {
     return (
-      <StyledDrawerNavigationClose>
+      <StyledDrawerNavigationClose type={type}>
         <ButtonLink iconRight={<ChevronRight reverseOnRtl />} size="small" onClick={onClick}>
           Hide
         </ButtonLink>

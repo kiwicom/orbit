@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../utils/transition";
-import { right } from "../utils/rtl";
+import { right, left } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
 import { ICON_COLORS } from "../Icon/consts";
 import TYPES from "./consts";
@@ -18,7 +18,7 @@ const STATES = {
   HOVER: "hover",
   FOCUS: "focus",
 };
-const getState = state => ({ theme, selectable }) => {
+const getState = state => ({ theme, selectable, type }) => {
   if (state === STATES.HOVER) {
     return css`
       background-color: ${theme.orbit.paletteCloudLightHover};
@@ -27,7 +27,7 @@ const getState = state => ({ theme, selectable }) => {
   if (state === STATES.FOCUS) {
     return css`
       background-color: ${theme.orbit.paletteCloudLightHover};
-      ${!selectable &&
+      ${(!selectable || type !== TYPES.VERTICAL) &&
         css`
           box-shadow: 0 0 0 2px ${theme.orbit.paletteCloudLightActive};
         `};
@@ -43,15 +43,8 @@ const StyledNavigationLink = styled(
   },
 )`
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   color: ${({ theme, selected }) =>
     selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
   cursor: pointer;
   border: 0;
   outline: none;
@@ -67,6 +60,7 @@ const StyledNavigationLink = styled(
       :after {
         display: block;
         position: absolute;
+        ${left}: 0;
         content: "";
         background-color: ${theme.orbit.paletteProductNormal};
         ${getLineStyles};
@@ -102,8 +96,18 @@ StyledNavigationLinkIcon.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledNavigationLinkContent = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+  line-height: 20px;
+`;
+
+StyledNavigationLinkContent.defaultProps = { theme: defaultTheme };
+
 // eslint-disable-next-line react/button-has-type
 const DefaultComponent = props => <button {...props} />;
+
 const NavigationLink = ({
   icon,
   children,
@@ -137,7 +141,7 @@ const NavigationLink = ({
             {React.cloneElement(icon, { color: iconColor })}
           </StyledNavigationLinkIcon>
         )}
-        <div>{children}</div>
+        <StyledNavigationLinkContent>{children}</StyledNavigationLinkContent>
       </StyledNavigationLinkWrapper>
     </StyledNavigationLink>
   );

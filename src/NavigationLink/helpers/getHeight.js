@@ -9,7 +9,7 @@ const getHeight: GetHeight = ({ type, selectable }) => {
     }
     return "44px";
   }
-  return "28px";
+  return "32px";
 };
 
 export default getHeight;

@@ -1,7 +1,7 @@
 // @flow
-const TYPES = {
+export const TYPES = {
   BOX: "box",
   NAVIGATION: "navigation",
 };
 
-export default TYPES;
+export const POSITIONS = { RIGHT: "right", LEFT: "left" };

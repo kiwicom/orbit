@@ -14,6 +14,20 @@ import Illustration from "../Illustration";
 import NewWindow from "../icons/NewWindow";
 import NavigationLink from "../NavigationLink";
 import AccountCircle from "../icons/AccountCircle";
+import NavigationGroup from "../NavigationGroup";
+import Deals from "../icons/Deals";
+import Settings from "../icons/Settings";
+import KiwicomCare from "../icons/KiwicomCare";
+import Code from "../icons/Code";
+import KiwicomGuarantee from "../icons/KiwicomGuarantee";
+import Kiwicom from "../icons/Kiwicom";
+import ContactEmail from "../icons/ContactEmail";
+import Security from "../icons/Security";
+import TermsAndConditions from "../icons/TermsAndConditions";
+import Suitcase from "../icons/Suitcase";
+import Trip from "../icons/Trip";
+import City from "../icons/City";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Drawer from "./index";
 
@@ -23,48 +37,72 @@ storiesOf("Drawer", module)
     () => {
       const shown = boolean("shown", true);
       return (
-        <Drawer type="navigation" shown={shown} onClose={action("onClose")}>
-          <Stack>
-            <NavigationLink type="vertical" icon={<AccountCircle />} selectable selected>
+        <Drawer type="navigation" shown={shown} onClose={action("onClose")} position="right">
+          <NavigationGroup>
+            <NavigationLink type="vertical" icon={<AccountCircle />}>
               Sign in
             </NavigationLink>
             <NavigationLink type="vertical" icon={<AccountCircle />}>
               Register
             </NavigationLink>
-            <Heading type="title5" element="div">
-              Connect with us
-            </Heading>
-            <NavigationLink type="vertical">Refer a Friend</NavigationLink>
-            <NavigationLink type="vertical">Subscribe to Newsletter</NavigationLink>
-            <NavigationLink type="vertical">Stories</NavigationLink>
-            <Heading type="title5" element="div">
-              Company
-            </Heading>
-            <NavigationLink type="vertical">About Kiwi.com</NavigationLink>
-            <NavigationLink type="vertical">Careers</NavigationLink>
-            <NavigationLink type="vertical">Care Kiwi.com</NavigationLink>
-            <NavigationLink type="vertical">Code Kiwi.com</NavigationLink>
-            <NavigationLink type="vertical">Kiwi.com Guarantee</NavigationLink>
-            <NavigationLink type="vertical">Press kit</NavigationLink>
-            <Heading type="title5" element="div">
+          </NavigationGroup>
+          <NavigationGroup title="Connect with us">
+            <NavigationLink type="vertical" icon={<Deals />}>
+              Refer a Friend
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<ContactEmail />}>
+              Subscribe to Newsletter
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Trip />}>
+              Stories
+            </NavigationLink>
+          </NavigationGroup>
+          <NavigationGroup title="Company">
+            <NavigationLink type="vertical" icon={<City />} selectable selected>
+              About Kiwi.com
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Suitcase />}>
+              Careers
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<KiwicomCare />}>
+              Care Kiwi.com
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Code />}>
+              Code Kiwi.com
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<KiwicomGuarantee />}>
+              Kiwi.com Guarantee
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Kiwicom />}>
+              Press kit
+            </NavigationLink>
+          </NavigationGroup>
+          <NavigationGroup title="Terms & Conditions">
+            <NavigationLink type="vertical" icon={<TermsAndConditions />}>
               Terms & Conditions
-            </Heading>
-            <NavigationLink type="vertical">Terms & Conditions</NavigationLink>
-            <NavigationLink type="vertical">Terms of Use</NavigationLink>
-            <NavigationLink type="vertical">Privacy Policy</NavigationLink>
-            <NavigationLink type="vertical">Security</NavigationLink>
-            <NavigationLink type="vertical">Cookies settings</NavigationLink>
-          </Stack>
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<TermsAndConditions />}>
+              Terms of Use
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Security />}>
+              Privacy Policy
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Security />}>
+              Security
+            </NavigationLink>
+            <NavigationLink type="vertical" icon={<Settings />}>
+              Cookies settings
+            </NavigationLink>
+          </NavigationGroup>
         </Drawer>
       );
     },
     {
-      info:
-        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
     },
   )
   .add(
-    "SmartFAQs",
+    "SmartFAQ",
     () => {
       const shown = boolean("shown", true);
       return (
@@ -88,7 +126,107 @@ storiesOf("Drawer", module)
       );
     },
     {
-      info:
-        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
+    "Side Navigation in RTL",
+    () => {
+      const shown = boolean("shown", true);
+      return (
+        <RenderInRtl>
+          <Drawer type="navigation" shown={shown} onClose={action("onClose")}>
+            <NavigationGroup>
+              <NavigationLink type="vertical" icon={<AccountCircle />}>
+                Sign in
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<AccountCircle />}>
+                Register
+              </NavigationLink>
+            </NavigationGroup>
+            <NavigationGroup title="Connect with us">
+              <NavigationLink type="vertical" icon={<Deals />}>
+                Refer a Friend
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<ContactEmail />}>
+                Subscribe to Newsletter
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Trip />}>
+                Stories
+              </NavigationLink>
+            </NavigationGroup>
+            <NavigationGroup title="Company">
+              <NavigationLink type="vertical" icon={<City />} selectable selected>
+                About Kiwi.com
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Suitcase />}>
+                Careers
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<KiwicomCare />}>
+                Care Kiwi.com
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Code />}>
+                Code Kiwi.com
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<KiwicomGuarantee />}>
+                Kiwi.com Guarantee
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Kiwicom />}>
+                Press kit
+              </NavigationLink>
+            </NavigationGroup>
+            <NavigationGroup title="Terms & Conditions">
+              <NavigationLink type="vertical" icon={<TermsAndConditions />}>
+                Terms & Conditions
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<TermsAndConditions />}>
+                Terms of Use
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Security />}>
+                Privacy Policy
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Security />}>
+                Security
+              </NavigationLink>
+              <NavigationLink type="vertical" icon={<Settings />}>
+                Cookies settings
+              </NavigationLink>
+            </NavigationGroup>
+          </Drawer>
+        </RenderInRtl>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
+    "SmartFAQ in RTL",
+    () => {
+      const shown = boolean("shown", true);
+      return (
+        <RenderInRtl>
+          <Drawer shown={shown} width="480px" onClose={action("onClose")} type="box">
+            <Stack>
+              <Illustration name="Accommodation" />
+              <Heading element="h2">Need help?</Heading>
+              <Text type="secondary">
+                We are here for you. First, let is narrow down your request.
+              </Text>
+              <Button>I have an existing booking</Button>
+              <Button type="secondary">I do not have booking</Button>
+              <Separator />
+              <Text align="center">
+                <TextLink icon={<NewWindow />} type="secondary">
+                  Full FAQ site
+                </TextLink>
+              </Text>
+            </Stack>
+          </Drawer>
+        </RenderInRtl>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
     },
   );

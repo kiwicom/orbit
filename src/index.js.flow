@@ -76,6 +76,10 @@ import typeof StopoverArrowType from "./StopoverArrow";
 import typeof ThemeProviderType from "./ThemeProvider";
 import typeof TranslateType from "./Translate";
 import type { Theme } from "./defaultTheme";
+import typeof NavigationBarType from "./NavigationBar";
+import typeof NavigationGroupType from "./NavigationGroup";
+import typeof NavigationLinkType from "./NavigationLink";
+import typeof DrawerType from "./Drawer";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -117,6 +121,11 @@ declare export var ModalSection: ModalSectionType;
 declare export var ModalFooter: ModalFooterType;
 
 declare export var Slider: SliderType;
+
+declare export var NavigationBar: NavigationBarType;
+declare export var NavigationGroup: NavigationGroupType;
+declare export var NavigationLink: NavigationLinkType;
+declare export var DrawerType: DrawerType;
 
 declare export var Tag: TagType;
 

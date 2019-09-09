@@ -31,7 +31,7 @@ const DrawerClose = ({ type, onClick }: Props) => {
     return (
       <StyledDrawerNavigationClose type={type}>
         <ButtonLink iconRight={<ChevronRight reverseOnRtl />} size="small" onClick={onClick}>
-          Hide
+          <Translate tKey="drawer_hide" />
         </ButtonLink>
       </StyledDrawerNavigationClose>
     );
@@ -40,9 +40,9 @@ const DrawerClose = ({ type, onClick }: Props) => {
     <StyledDrawerNavigationClose type={type}>
       <ButtonLink
         onClick={onClick}
-        icon={<Close />}
+        iconLeft={<Close />}
         type="secondary"
-        title={pureTranslate(dictionary, "button_close")}
+        title={pureTranslate(dictionary, "drawer_hide")}
       />
     </StyledDrawerNavigationClose>
   );

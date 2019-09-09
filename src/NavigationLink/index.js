@@ -19,7 +19,7 @@ import type { Props } from ".";
 const StyledNavigationLink = styled(
   ({ selected, type, theme, asComponent, dataTest, selectable, ...props }) => {
     const Component = props.href ? "a" : asComponent;
-    return <Component data-test={dataTest} type={!props.href && "button"} {...props} />;
+    return <Component data-test={dataTest} type={!props.href ? "button" : undefined} {...props} />;
   },
 )`
   position: relative;

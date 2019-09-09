@@ -3,7 +3,7 @@ import type { Globals, Translation } from "../common/common.js.flow";
 
 export type Props = {|
   +children: React$Node,
-  +title: Translation,
+  +title?: Translation,
   ...Globals,
 |};
 

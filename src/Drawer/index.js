@@ -35,7 +35,9 @@ StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerSide = styled(({ theme, width, position, ...props }) => <aside {...props} />)`
+const StyledDrawerSide = styled(({ theme, width, position, shown, ...props }) => (
+  <aside {...props} />
+))`
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -85,13 +87,13 @@ const Drawer = ({
   children,
   type = TYPES.BOX,
   onClose,
-  shown,
+  shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,
   dataTest,
 }: Props) => {
   const theme = useTheme();
-  const sideRef = useRef(null);
+  const overlayRef = useRef(null);
   const shownRef = useRef(null);
   const [overlayShown, setOverlayShown] = useState(shown);
   const timeoutLength = useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
@@ -110,10 +112,7 @@ const Drawer = ({
   }, []);
   const handleOnClose = useCallback(
     ev => {
-      if (onClose) {
-        if (sideRef.current && sideRef.current.contains(ev.target)) {
-          return;
-        }
+      if (onClose && ev.target === overlayRef.current) {
         onClose();
       }
     },
@@ -139,14 +138,9 @@ const Drawer = ({
       onClick={handleOnClose}
       data-test={dataTest}
       aria-hidden={!shown}
+      ref={overlayRef}
     >
-      <StyledDrawerSide
-        shown={shown}
-        width={width}
-        position={position}
-        ref={sideRef}
-        role="navigation"
-      >
+      <StyledDrawerSide shown={shown} width={width} position={position} role="navigation">
         {onClose && <DrawerClose type={type} onClick={onClose} />}
         <StyledDrawerContent type={type}>{children}</StyledDrawerContent>
       </StyledDrawerSide>

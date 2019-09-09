@@ -86,7 +86,7 @@ storiesOf("NavigationLink", module)
     },
   )
   .add(
-    "Vertical variant",
+    "Multiple vertical",
     () => {
       const children = text("Children", "Content");
       const Icon = getIcon(getIcons("iconLeft", "PlusCircle"));

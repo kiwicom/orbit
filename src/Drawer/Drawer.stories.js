@@ -2,7 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { boolean } from "@storybook/addon-knobs";
+import { boolean, text, select } from "@storybook/addon-knobs";
 
 import Stack from "../Stack";
 import Heading from "../Heading";
@@ -28,6 +28,7 @@ import Suitcase from "../icons/Suitcase";
 import Trip from "../icons/Trip";
 import City from "../icons/City";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import { POSITIONS } from "./consts";
 
 import Drawer from "./index";
 
@@ -36,8 +37,16 @@ storiesOf("Drawer", module)
     "Side Navigation",
     () => {
       const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const width = text("width", "320px");
       return (
-        <Drawer type="navigation" shown={shown} onClose={action("onClose")} position="right">
+        <Drawer
+          type="navigation"
+          dataTest={dataTest}
+          width={width}
+          shown={shown}
+          onClose={action("onClose")}
+        >
           <NavigationGroup>
             <NavigationLink type="vertical" icon={<AccountCircle />}>
               Sign in
@@ -105,8 +114,18 @@ storiesOf("Drawer", module)
     "SmartFAQ",
     () => {
       const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
+      const width = text("width", "480px");
       return (
-        <Drawer shown={shown} width="480px" onClose={action("onClose")} type="box">
+        <Drawer
+          shown={shown}
+          width={width}
+          position={position}
+          dataTest={dataTest}
+          onClose={action("onClose")}
+          type="box"
+        >
           <Stack>
             <Illustration name="Accommodation" />
             <Heading element="h2">Need help?</Heading>
@@ -133,9 +152,17 @@ storiesOf("Drawer", module)
     "Side Navigation in RTL",
     () => {
       const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const width = text("width", "320px");
       return (
         <RenderInRtl>
-          <Drawer type="navigation" shown={shown} onClose={action("onClose")}>
+          <Drawer
+            type="navigation"
+            dataTest={dataTest}
+            width={width}
+            shown={shown}
+            onClose={action("onClose")}
+          >
             <NavigationGroup>
               <NavigationLink type="vertical" icon={<AccountCircle />}>
                 Sign in
@@ -204,9 +231,19 @@ storiesOf("Drawer", module)
     "SmartFAQ in RTL",
     () => {
       const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
+      const width = text("width", "480px");
       return (
         <RenderInRtl>
-          <Drawer shown={shown} width="480px" onClose={action("onClose")} type="box">
+          <Drawer
+            shown={shown}
+            width={width}
+            position={position}
+            dataTest={dataTest}
+            onClose={action("onClose")}
+            type="box"
+          >
             <Stack>
               <Illustration name="Accommodation" />
               <Heading element="h2">Need help?</Heading>

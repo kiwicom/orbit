@@ -35,7 +35,7 @@ StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerSide = styled.aside`
+const StyledDrawerSide = styled(({ theme, width, position, ...props }) => <aside {...props} />)`
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -61,7 +61,7 @@ StyledDrawerSide.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerContent = styled.div`
+const StyledDrawerContent = styled(({ theme, type, ...props }) => <div {...props} />)`
   ${({ type }) =>
     isBox(type) &&
     css`

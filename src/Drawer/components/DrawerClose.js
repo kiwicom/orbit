@@ -8,8 +8,10 @@ import Close from "../../icons/Close";
 import type { Props } from "./DrawerClose";
 import { isNavigation } from "../helpers/isType";
 import defaultTheme from "../../defaultTheme";
+import Translate, { pureTranslate } from "../../Translate";
+import { DictionaryContext } from "../../Dictionary/index";
 
-const StyledDrawerNavigationClose = styled.div`
+const StyledDrawerNavigationClose = styled(({ type, theme, ...props }) => <div {...props} />)`
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -24,6 +26,7 @@ StyledDrawerNavigationClose.defaultProps = {
 };
 
 const DrawerClose = ({ type, onClick }: Props) => {
+  const dictionary = React.useContext(DictionaryContext);
   if (isNavigation(type)) {
     return (
       <StyledDrawerNavigationClose type={type}>
@@ -35,7 +38,12 @@ const DrawerClose = ({ type, onClick }: Props) => {
   }
   return (
     <StyledDrawerNavigationClose type={type}>
-      <ButtonLink onClick={onClick} icon={<Close />} type="secondary" />
+      <ButtonLink
+        onClick={onClick}
+        icon={<Close />}
+        type="secondary"
+        title={pureTranslate(dictionary, "button_close")}
+      />
     </StyledDrawerNavigationClose>
   );
 };

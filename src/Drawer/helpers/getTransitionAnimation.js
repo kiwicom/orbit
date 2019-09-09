@@ -17,16 +17,10 @@ const transitionCss = ({ width, shown }) => isPrefixed => {
 
 const getTransitionAnimation = ({ width, shown, position, theme }) => {
   const resultCss = transitionCss({ width, shown });
-  if (position === POSITIONS.LEFT) {
-    if (theme.rtl) {
-      return resultCss(false);
-    }
-    return resultCss(true);
+  if ((position === POSITIONS.RIGHT && !theme.rtl) || (position === POSITIONS.LEFT && theme.rtl)) {
+    return resultCss(false);
   }
-  if (theme.rtl) {
-    return resultCss(true);
-  }
-  return resultCss(false);
+  return resultCss(true);
 };
 
 export default getTransitionAnimation;

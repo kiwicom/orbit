@@ -6,7 +6,8 @@
   "breadcrumbs_back": "Anterior",
   "button_close": "Fechar",
   "choicegroup_only": "Apenas",
+  "loading": "A carregar",
   "pagination_label_next": "Seguinte",
   "pagination_label_prev": "Anterior",
-  "ratingstar_description": "Classificação: __number__ de __number__"
+  "ratingstar_description": "Classificação: __number__ de __total__"
 }

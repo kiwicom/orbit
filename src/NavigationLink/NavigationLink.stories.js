@@ -98,7 +98,13 @@ storiesOf("NavigationLink", module)
           <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">
             {children}
           </NavigationLink>
-          <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">
+          <NavigationLink
+            onClick={action("clicked")}
+            icon={<Icon />}
+            type="vertical"
+            selected
+            selectable
+          >
             {children}
           </NavigationLink>
           <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">

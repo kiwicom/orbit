@@ -6,7 +6,6 @@ import { warning } from "@kiwicom/js";
 import transition from "../utils/transition";
 import { right, left } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
-import { ICON_COLORS } from "../Icon/consts";
 import { TYPES, STATES } from "./consts";
 import getPadding from "./helpers/getPadding";
 import getLineStyles from "./helpers/getLineStyles";
@@ -105,10 +104,6 @@ const NavigationLink = ({
   tabIndex,
   type = TYPES.HORIZONTAL,
 }: Props) => {
-  const iconColor = React.useMemo(
-    () => (selectable && selected ? ICON_COLORS.PRODUCT : ICON_COLORS.PRIMARY),
-    [selectable, selected],
-  );
   warning(
     !(!children && !ariaLabel),
     "Warning: children or ariaLabel property is missing on NavigationLink. Use ariaLabel property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/navigationlink/",
@@ -128,11 +123,7 @@ const NavigationLink = ({
       type={type}
     >
       <StyledNavigationLinkWrapper>
-        {icon && (
-          <StyledNavigationLinkIcon hasMargin={!!children}>
-            {React.cloneElement(icon, { color: iconColor })}
-          </StyledNavigationLinkIcon>
-        )}
+        {icon && <StyledNavigationLinkIcon hasMargin={!!children}>{icon}</StyledNavigationLinkIcon>}
         {children && <StyledNavigationLinkContent>{children}</StyledNavigationLinkContent>}
       </StyledNavigationLinkWrapper>
     </StyledNavigationLink>

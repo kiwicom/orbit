@@ -1,13 +1,10 @@
 // @flow
 import { Interpolation } from "styled-components";
 
-import type { Type } from "../index";
 import type { Theme } from "../../defaultTheme";
 
 type States = "hover" | "focus";
 
-export type GetState = (
-  state: States,
-) => ({ theme: Theme, selectable: boolean, type: Type }) => ?Interpolation;
+export type GetState = (state: States) => ({ theme: Theme, selectable: boolean }) => ?Interpolation;
 
 declare export default GetState;

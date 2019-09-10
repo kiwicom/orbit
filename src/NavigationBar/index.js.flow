@@ -2,7 +2,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +onOpen?: () => void | Promise<any>,
+  +onMenuOpen?: () => void | Promise<any>,
   +children: React$Node,
   ...Globals,
 |};

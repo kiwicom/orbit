@@ -50,24 +50,3 @@ describe("NavigationLink horizontal", () => {
     expect(navigationLink.render().prop("tabindex")).toBe(tabIndex);
   });
 });
-describe("NavigationLink vertical", () => {
-  const children = "Content";
-  const href = "https://kiwi.com";
-  const external = true;
-  const component = shallow(
-    <NavigationLink icon={<Airplane />} type="vertical" href={href} external={external}>
-      {children}
-    </NavigationLink>,
-  );
-  const navigationLink = component.find("NavigationLink__StyledNavigationLink");
-  it("should have href", () => {
-    expect(navigationLink.render().prop("href")).toBe(href);
-  });
-  it("should have target blank", () => {
-    expect(navigationLink.render().prop("target")).toBe("_blank");
-  });
-  it("should have rel with noopener and noreferrer", () => {
-    expect(navigationLink.render().prop("rel")).toContain("noopener");
-    expect(navigationLink.render().prop("rel")).toContain("noreferrer");
-  });
-});

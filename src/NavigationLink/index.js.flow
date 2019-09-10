@@ -4,8 +4,6 @@
 */
 import type { Component, Globals } from "../common/common.js.flow";
 
-export type Type = "horizontal" | "vertical";
-
 export type Props = {|
   +ariaLabel?: string,
   +icon?: React$Element<any>,
@@ -17,7 +15,6 @@ export type Props = {|
   +onClick?: () => void | Promise<any>,
   +asComponent?: Component,
   +tabIndex?: string,
-  +type?: Type,
   ...Globals,
 |};
 

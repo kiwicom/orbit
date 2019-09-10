@@ -12,8 +12,8 @@ import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props, State } from "./index";
 
@@ -103,7 +103,7 @@ const StyledCloseContainer = styled.div`
 `;
 
 const CardCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <StyledCloseContainer>

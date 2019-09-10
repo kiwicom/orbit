@@ -6,22 +6,22 @@ import { shallow } from "enzyme";
 import NavigationBar from "../index";
 
 describe("NavigationBar", () => {
-  const onOpen = jest.fn();
+  const onMenuOpen = jest.fn();
   const children = "Content";
   const dataTest = "test";
   const component = shallow(
-    <NavigationBar onOpen={onOpen} dataTest={dataTest}>
+    <NavigationBar onMenuOpen={onMenuOpen} dataTest={dataTest}>
       {children}
     </NavigationBar>,
   );
   const bar = component.find("NavigationBar__StyledNavigationBar");
-  const hamburgerMenu = component.find("NavigationLink");
+  const hamburgerMenu = component.find("ButtonLink");
   it("should contain the children", () => {
     expect(bar.render().text()).toBe(children);
   });
   it("should execute onClick callback", () => {
     hamburgerMenu.simulate("click");
-    expect(onOpen).toHaveBeenCalled();
+    expect(onMenuOpen).toHaveBeenCalled();
   });
   it("should have data-test", () => {
     expect(bar.render().prop("data-test")).toBe(dataTest);

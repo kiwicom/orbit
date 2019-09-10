@@ -4,10 +4,23 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
-import Stack from "../Stack";
-import NavigationLink from "../NavigationLink";
+import ButtonLink, { StyledButtonLink } from "../ButtonLink";
+import getTypeToken from "../ButtonLink/helpers/getTypeToken";
+import { TOKENS, TYPES } from "../ButtonLink/consts";
+import useDictionary from "../hooks/useDictionary";
+import { pureTranslate } from "../Translate";
 
 import type { Props } from ".";
+
+const StyledNavigationBarContent = styled.div`
+  display: block;
+  width: 100%;
+  margin-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+`;
+
+StyledNavigationBarContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledNavigationBar = styled.nav`
   position: fixed;
@@ -23,21 +36,36 @@ const StyledNavigationBar = styled.nav`
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   z-index: 700;
+
+  ${StyledButtonLink} {
+    padding: 0 8px;
+    :hover {
+      color: ${({ theme }) =>
+        getTypeToken(TOKENS.colorTextButtonHover)({ theme, type: TYPES.PRIMARY })}!important;
+    }
+  }
 `;
 
 StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationBar = ({ onOpen, children, dataTest }: Props) => (
-  <StyledNavigationBar data-test={dataTest}>
-    {children}
-    {onOpen && (
-      <Stack grow={false} align="center" justify="end" shrink basis="0%">
-        <NavigationLink type="horizontal" onClick={onOpen} icon={<MenuHamburger />} />
-      </Stack>
-    )}
-  </StyledNavigationBar>
-);
+const NavigationBar = ({ onMenuOpen, children, dataTest }: Props) => {
+  const dictionary = useDictionary();
+  return (
+    <StyledNavigationBar data-test={dataTest}>
+      <StyledNavigationBarContent>{children}</StyledNavigationBarContent>
+      {onMenuOpen && (
+        <ButtonLink
+          type="secondary"
+          onClick={onMenuOpen}
+          iconLeft={<MenuHamburger />}
+          transparent
+          title={pureTranslate(dictionary, "navigationbar_open_menu")}
+        />
+      )}
+    </StyledNavigationBar>
+  );
+};
 
 export default NavigationBar;

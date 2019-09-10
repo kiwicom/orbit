@@ -6,7 +6,6 @@ import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Stack from "../Stack";
-import { TYPES } from "./consts";
 
 import NavigationLink from "./index";
 
@@ -15,20 +14,12 @@ const getIcon = source => Icons[source];
 
 storiesOf("NavigationLink", module)
   .add(
-    "Horizontal variant",
+    "Default",
     () => {
       const children = text("Children", "Content");
       const Icon = getIcon(getIcons("iconLeft", "PlusCircle"));
-      const selectable = boolean("selectable", true);
-      const selected = boolean("selected", true);
       return (
-        <NavigationLink
-          onClick={action("clicked")}
-          icon={<Icon />}
-          selectable={selectable}
-          selected={selected}
-          type="horizontal"
-        >
+        <NavigationLink onClick={action("clicked")} icon={<Icon />}>
           {children}
         </NavigationLink>
       );
@@ -38,76 +29,21 @@ storiesOf("NavigationLink", module)
     },
   )
   .add(
-    "Multiple horizontal",
+    "Multiple links",
     () => {
       const children = text("Children", "Content");
-      return (
-        <Stack direction="row" shrink spacing="none">
-          <NavigationLink onClick={action("clicked")} selectable type="horizontal">
-            {children}
-          </NavigationLink>
-          <NavigationLink onClick={action("clicked")} selectable selected type="horizontal">
-            {children}
-          </NavigationLink>
-          <NavigationLink onClick={action("clicked")} selectable type="horizontal">
-            {children}
-          </NavigationLink>
-          <NavigationLink onClick={action("clicked")} selectable type="horizontal">
-            {children}
-          </NavigationLink>
-        </Stack>
-      );
-    },
-    {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Vertical variant",
-    () => {
-      const children = text("Children", "Content");
-      const Icon = getIcon(getIcons("iconLeft", "PlusCircle"));
-      const selectable = boolean("selectable", true);
-      const selected = boolean("selected", false);
-      return (
-        <NavigationLink
-          onClick={action("clicked")}
-          icon={<Icon />}
-          selectable={selectable}
-          selected={selected}
-          type="vertical"
-        >
-          {children}
-        </NavigationLink>
-      );
-    },
-    {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Multiple vertical",
-    () => {
-      const children = text("Children", "Content");
-      const Icon = getIcon(getIcons("iconLeft", "PlusCircle"));
       return (
         <Stack direction="column" shrink spacing="none">
-          <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">
+          <NavigationLink onClick={action("clicked")} selectable>
             {children}
           </NavigationLink>
-          <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">
+          <NavigationLink onClick={action("clicked")} selectable selected>
             {children}
           </NavigationLink>
-          <NavigationLink
-            onClick={action("clicked")}
-            icon={<Icon />}
-            type="vertical"
-            selected
-            selectable
-          >
+          <NavigationLink onClick={action("clicked")} selectable>
             {children}
           </NavigationLink>
-          <NavigationLink onClick={action("clicked")} icon={<Icon />} type="vertical">
+          <NavigationLink onClick={action("clicked")} selectable>
             {children}
           </NavigationLink>
         </Stack>
@@ -129,10 +65,8 @@ storiesOf("NavigationLink", module)
       const href = text("href", null);
       const external = boolean("external", false);
       const tabIndex = text("tabIndex", null);
-      const type = select("type", Object.values(TYPES), TYPES.HORIZONTAL);
       return (
         <NavigationLink
-          type={type}
           onClick={action("clicked")}
           icon={<Icon />}
           ariaLabel={ariaLabel}

@@ -2,14 +2,15 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import ButtonLink from "../../ButtonLink/index";
+import ButtonLink from "../../ButtonLink";
+import Hide from "../../Hide";
 import ChevronRight from "../../icons/ChevronRight";
 import Close from "../../icons/Close";
 import type { Props } from "./DrawerClose";
 import { isNavigation } from "../helpers/isType";
 import defaultTheme from "../../defaultTheme";
 import Translate, { pureTranslate } from "../../Translate";
-import { DictionaryContext } from "../../Dictionary/index";
+import useDictionary from "../../hooks/useDictionary";
 
 const StyledDrawerNavigationClose = styled(({ type, theme, ...props }) => <div {...props} />)`
   display: flex;
@@ -18,7 +19,8 @@ const StyledDrawerNavigationClose = styled(({ type, theme, ...props }) => <div {
   justify-content: flex-end;
   background: ${({ theme, type }) => isNavigation(type) && theme.orbit.paletteCloudLight};
   width: 100%;
-  padding: ${({ theme }) => `${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge}`};
+  padding: ${({ theme }) => `0 ${theme.orbit.spaceLarge}`};
+  height: 64px;
 `;
 
 StyledDrawerNavigationClose.defaultProps = {
@@ -26,13 +28,30 @@ StyledDrawerNavigationClose.defaultProps = {
 };
 
 const DrawerClose = ({ type, onClick }: Props) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
   if (isNavigation(type)) {
     return (
       <StyledDrawerNavigationClose type={type}>
-        <ButtonLink iconRight={<ChevronRight reverseOnRtl />} size="small" onClick={onClick}>
-          <Translate tKey="drawer_hide" />
-        </ButtonLink>
+        <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+          <ButtonLink
+            iconRight={<ChevronRight reverseOnRtl />}
+            size="small"
+            type="secondary"
+            onClick={onClick}
+          >
+            <Translate tKey="drawer_hide" />
+          </ButtonLink>
+        </Hide>
+        <Hide on={["tablet", "desktop", "largeDesktop"]}>
+          <ButtonLink
+            iconRight={<ChevronRight reverseOnRtl />}
+            size="normal"
+            type="secondary"
+            onClick={onClick}
+          >
+            <Translate tKey="drawer_hide" />
+          </ButtonLink>
+        </Hide>
       </StyledDrawerNavigationClose>
     );
   }

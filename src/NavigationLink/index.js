@@ -4,19 +4,16 @@ import styled, { css } from "styled-components";
 import { warning } from "@kiwicom/js";
 
 import transition from "../utils/transition";
-import { right, left } from "../utils/rtl";
+import { right, left, rtlSpacing } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
-import { TYPES, STATES } from "./consts";
-import getPadding from "./helpers/getPadding";
-import getLineStyles from "./helpers/getLineStyles";
-import getHeight from "./helpers/getHeight";
-import getBorderRadius from "./helpers/getBorderRadius";
+import STATES from "./consts";
+import mq from "../utils/mediaQuery";
 import getState from "./helpers/getState";
 
 import type { Props } from ".";
 
 const StyledNavigationLink = styled(
-  ({ selected, type, theme, asComponent, dataTest, selectable, ...props }) => {
+  ({ selected, theme, asComponent, dataTest, selectable, ...props }) => {
     const Component = props.href ? "a" : asComponent;
     return <Component data-test={dataTest} type={!props.href ? "button" : undefined} {...props} />;
   },
@@ -28,11 +25,14 @@ const StyledNavigationLink = styled(
   border: 0;
   outline: none;
   background-color: transparent;
-  height: ${getHeight};
-  padding: ${getPadding};
-  border-radius: ${getBorderRadius};
-  width: ${({ type }) => type === TYPES.VERTICAL && "100%"};
-  transition: ${transition(["background-color", "box-shadow"], "fast", "ease-in-out")};
+  height: 44px;
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
+  ${mq.largeMobile(css`
+    height: 32px;
+    padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXXLarge}`)};
+  `)};
+  width: 100%;
+  transition: ${transition(["background-color", "box-shadow", "color"], "fast", "ease-in-out")};
   ${({ theme, selected, selectable }) =>
     selectable &&
     selected &&
@@ -43,7 +43,9 @@ const StyledNavigationLink = styled(
         ${left}: 0;
         content: "";
         background-color: ${theme.orbit.paletteProductNormal};
-        ${getLineStyles};
+        height: 100%;
+        width: 3px;
+        top: 0;
       }
     `};
   &:hover {
@@ -102,7 +104,6 @@ const NavigationLink = ({
   asComponent = DefaultComponent,
   dataTest,
   tabIndex,
-  type = TYPES.HORIZONTAL,
 }: Props) => {
   warning(
     !(!children && !ariaLabel),
@@ -120,7 +121,6 @@ const NavigationLink = ({
       dataTest={dataTest}
       rel={href && external ? "noopener noreferrer" : undefined}
       target={href && external ? "_blank" : undefined}
-      type={type}
     >
       <StyledNavigationLinkWrapper>
         {icon && <StyledNavigationLinkIcon hasMargin={!!children}>{icon}</StyledNavigationLinkIcon>}

@@ -1,7 +1,0 @@
-// @flow
-import type { Type } from "../index";
-import type { Theme } from "../../defaultTheme";
-
-export type GetBorderRadius = ({ type: Type, selectable: boolean, theme: Theme }) => ?string;
-
-declare export default GetBorderRadius;

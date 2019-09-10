@@ -23,21 +23,8 @@ Table below contains all types of the props available in the NavigationLink comp
 | selectable    | `boolean`                         | `false`         | If `true`, the NavigationLink will be selectable and it will be possible to use `selected` property.
 | selected      | `boolean`                         |                 | If `true`, the NavigationLink will be selected visually.
 | tabIndex      | `string`                          |                 | Specifies the tab order of an element.
-| type          | [`enum`](#enum)                   | `"horizontal"`  | The type of the NavigationLink. [See Functional specs](#functional-specs)
-
-### enum
-
-| type            |
-| :-------------- |
-| `"horizontal"`  |
-| `"vertical"`    |
 
 ## Functional specs
 * When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
 
 * By passing the `href` prop into Button, it will render into `a` element. If you pass `component` prop it will override this logic.
-
-* The NavigationLink supports two usage types: `horizontal` and `vertical`.
-
-  * The `horizontal` type should be used always when it's necessary to render it as tabs inside `NavigationBar` component`.
-  * The `vertical` type should be used always inside `Drawer` component.

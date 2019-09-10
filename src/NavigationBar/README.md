@@ -5,7 +5,7 @@ import NavigationBar from "@kiwicom/orbit-components/lib/NavigationBar";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<NavigationBar>
+<NavigationBar onMenuOpen={handleDrawerOpen}>
   <NavigationLink>About us</NavigationLink>
 </NavigationLink>
 ```
@@ -16,4 +16,4 @@ Table below contains all types of the props available in the NavigationBar compo
 | :------------ | :-------------------------------- | :-------------- | :------------------------------- |
 | **children**  | `React.Node`                      |                 | The content of the NavigationBar.
 | dataTest      | `string`                          |                 | Optional prop for testing purposes.
-| onOpen        | `() => void \| Promise`           |                 | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear.
+| onMenuOpen    | `() => void \| Promise`           |                 | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear.

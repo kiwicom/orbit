@@ -7,6 +7,7 @@ import Text from "../Text";
 import defaultTheme from "../defaultTheme";
 import Separator from "../Separator";
 import { rtlSpacing } from "../utils/rtl";
+import TYPES from "./consts";
 
 import type { Props } from ".";
 
@@ -21,8 +22,10 @@ StyledNavigationGroupSeparator.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledNavigationGroupContent = styled.div`
-  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
+const StyledNavigationGroupContent = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
 `;
 
 StyledNavigationGroupContent.defaultProps = {
@@ -31,9 +34,18 @@ StyledNavigationGroupContent.defaultProps = {
 
 const StyledNavigationGroup = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ type }) => (type === TYPES.NAVIGATION_BOX ? "column" : "row")};
   width: 100%;
   padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
+
+  ${StyledNavigationGroupSeparator} {
+    ${({ type }) =>
+      type === TYPES.NAVIGATION_BOX &&
+      css`
+        display: block;
+      `};
+  }
+
   :first-child {
     padding-top: ${({ theme }) => theme.orbit.spaceLarge};
   }
@@ -63,7 +75,9 @@ StyledNavigationGroupTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationGroup = ({ children, title, dataTest }: Props) => (
+const StyledNavigationGroupChild = styled.li``;
+
+const NavigationGroup = ({ children, title, dataTest, type = TYPES.NAVIGATION_BOX }: Props) => (
   <StyledNavigationGroup data-test={dataTest}>
     {title && (
       <StyledNavigationGroupTitle>
@@ -72,7 +86,11 @@ const NavigationGroup = ({ children, title, dataTest }: Props) => (
         </Text>
       </StyledNavigationGroupTitle>
     )}
-    <StyledNavigationGroupContent>{children}</StyledNavigationGroupContent>
+    <StyledNavigationGroupContent>
+      {React.Children.map(children, item => (
+        <StyledNavigationGroupChild>{React.cloneElement(item)}</StyledNavigationGroupChild>
+      ))}
+    </StyledNavigationGroupContent>
     <StyledNavigationGroupSeparator>
       <Separator spaceAfter="none" />
     </StyledNavigationGroupSeparator>

@@ -4,9 +4,9 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import Stack from "../Stack";
-import NavigationLink from "../NavigationLink";
+import NavigationGroup from "../NavigationGroup";
 import CountryFlag from "../CountryFlag";
+import ButtonLink from "../ButtonLink";
 
 import NavigationBar from "./index";
 
@@ -15,30 +15,28 @@ storiesOf("NavigationBar", module).add(
   () => {
     const dataTest = text("dataTest", "test");
     return (
-      <NavigationBar onOpen={action("onOpen")} dataTest={dataTest}>
-        <Stack direction="row" spacing="none" shrink>
-          <NavigationLink type="horizontal" selectable selected>
-            Travel
-          </NavigationLink>
-          <NavigationLink type="horizontal" selectable>
-            Rooms
-          </NavigationLink>
-          <NavigationLink type="horizontal" selectable>
-            Cars
-          </NavigationLink>
-          <NavigationLink type="horizontal" selectable>
-            Stories
-          </NavigationLink>
-        </Stack>
-        <Stack direction="row" spacing="tight" shrink justify="end">
-          <NavigationLink type="horizontal" icon={<CountryFlag code="gb" name="English" />}>
+      <NavigationBar onMenuOpen={action("onMenuOpen")} dataTest={dataTest}>
+        <NavigationGroup type="inline">
+          <ButtonLink
+            iconLeft={<CountryFlag code="gb" name="English" />}
+            type="secondary"
+            transparent
+          >
             English
-          </NavigationLink>
-          <NavigationLink type="horizontal">EUR - €</NavigationLink>
-          <NavigationLink type="horizontal">Help</NavigationLink>
-          <NavigationLink type="horizontal">Starred</NavigationLink>
-          <NavigationLink type="horizontal">My Bookings</NavigationLink>
-        </Stack>
+          </ButtonLink>
+          <ButtonLink type="secondary" transparent>
+            EUR - €
+          </ButtonLink>
+          <ButtonLink type="secondary" transparent>
+            Help
+          </ButtonLink>
+          <ButtonLink type="secondary" transparent>
+            Starred
+          </ButtonLink>
+          <ButtonLink type="secondary" transparent>
+            My Bookings
+          </ButtonLink>
+        </NavigationGroup>
       </NavigationBar>
     );
   },

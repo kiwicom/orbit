@@ -15,7 +15,7 @@ describe("NavigationGroup", () => {
     </NavigationGroup>,
   );
   const groupTitle = component.find("NavigationGroup__StyledNavigationGroupTitle");
-  const content = component.find("NavigationGroup__StyledNavigationGroupContent");
+  const content = component.find("NavigationGroup__StyledNavigationGroupChild");
   it("should contain the children", () => {
     expect(content.render().text()).toBe(children);
   });

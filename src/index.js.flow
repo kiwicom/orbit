@@ -125,7 +125,7 @@ declare export var Slider: SliderType;
 declare export var NavigationBar: NavigationBarType;
 declare export var NavigationGroup: NavigationGroupType;
 declare export var NavigationLink: NavigationLinkType;
-declare export var DrawerType: DrawerType;
+declare export var Drawer: DrawerType;
 
 declare export var Tag: TagType;
 

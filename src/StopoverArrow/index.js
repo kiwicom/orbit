@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
@@ -13,6 +13,11 @@ const StyledArrow = styled.svg`
   color: ${({ theme }) => theme.orbit.colorStopoverArrow};
   width: ${({ theme }) => theme.orbit.widthStopoverArrow};
   height: ${({ theme }) => theme.orbit.heightStopoverArrow};
+  ${({ theme }) =>
+    theme.rtl &&
+    css`
+      transform: scale(-1, 1);
+    `};
 `;
 
 StyledArrow.defaultProps = {

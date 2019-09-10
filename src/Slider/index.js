@@ -36,7 +36,6 @@ const StyledSliderContent = styled.div`
 
   ${mq.tablet(css`
     width: calc(100% + 48px);
-    z-index: 10;
     position: absolute;
     bottom: -16px;
     left: -24px;
@@ -85,7 +84,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   componentDidUpdate(prevProps: Props) {
     const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
-    if (this.isNotEqual(prevProps.defaultValue || DEFAULT_VALUES.VALUE, defaultValue)) {
+    const { defaultValue: prevDefaultValue = DEFAULT_VALUES.VALUE } = prevProps;
+    if (this.isNotEqual(prevDefaultValue, defaultValue)) {
       const newValue = Array.isArray(defaultValue)
         ? defaultValue.map(item => Number(item))
         : Number(defaultValue);

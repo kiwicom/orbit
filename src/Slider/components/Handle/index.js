@@ -45,7 +45,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
       style: {
         // TODO: use token for deducting the half size of the Handle
         [leftRight({ theme })]: `calc(${left}% - 12px)`,
-        zIndex: onTop ? 40 : 30,
+        zIndex: onTop ? 20 : undefined,
       },
     };
   },

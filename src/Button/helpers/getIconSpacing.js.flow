@@ -3,7 +3,7 @@ import type { Size } from "../index";
 import type { ThemeProps } from "../../defaultTheme";
 
 export type GetIconSpacing = () => ({
-  right: boolean,
+  iconRight: boolean,
   size: Size,
   onlyIcon: boolean,
   ...ThemeProps,

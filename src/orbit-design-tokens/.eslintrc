@@ -1,0 +1,32 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype"
+  ],
+  "plugins": [
+    "import",
+    "flowtype",
+    "prettier",
+    "jest"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-absolute-path": "error",
+    "flowtype/require-valid-file-annotation": ["error", "always"],
+    "import/no-self-import": "off"
+  }
+}

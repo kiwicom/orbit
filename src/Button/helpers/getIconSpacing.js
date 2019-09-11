@@ -3,7 +3,7 @@ import { SIZE_OPTIONS, TOKENS } from "../consts";
 import { rtlSpacing } from "../../utils/rtl/index";
 import type { GetIconSpacing } from "./getIconSpacing";
 
-const getIconSpacing: GetIconSpacing = () => ({ theme, right, size, onlyIcon }) => {
+const getIconSpacing: GetIconSpacing = () => ({ theme, iconRight, size, onlyIcon }) => {
   if (onlyIcon) {
     return null;
   }
@@ -17,7 +17,7 @@ const getIconSpacing: GetIconSpacing = () => ({ theme, right, size, onlyIcon }) 
   };
 
   return rtlSpacing(
-    right
+    iconRight
       ? `0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`
       : `0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`,
   )({ theme });

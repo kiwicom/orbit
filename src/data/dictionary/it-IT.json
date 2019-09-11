@@ -1,12 +1,13 @@
 {
   "a11ymenu_jump_to": "Vai a",
-  "a11ymenu_page_actions": "Azioni comuni per questa pagina",
+  "a11ymenu_page_actions": "Azioni comuni su questa pagina",
   "a11ymenu_page_sections": "Sezioni di questa pagina",
   "a11ymenu_send_feedback": "Invia un feedback",
   "breadcrumbs_back": "Indietro",
   "button_close": "Chiudi",
   "choicegroup_only": "Solo",
+  "loading": "Caricamento in corso",
   "pagination_label_next": "Avanti",
   "pagination_label_prev": "Indietro",
-  "ratingstar_description": "Valutazione __number__ su __number__"
+  "ratingstar_description": "Valutazione __number__ su __total__"
 }

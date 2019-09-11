@@ -34,7 +34,7 @@ jobs:
 
       - run:
           name: Tests
-          command: yarn test --ci --maxWorkers=2
+          command: yarn test:ci --ci --maxWorkers=2
 
   deploy:
     docker:

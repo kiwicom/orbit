@@ -1,46 +1,46 @@
 {
   "env": {
-    "browser": true,
+  "browser": true,
     "jest": true
-  },
+},
   "root": true,
   "parser": "babel-eslint",
   "extends": [
-    "airbnb",
-    "plugin:flowtype/recommended",
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react"
-  ],
+  "airbnb",
+  "plugin:flowtype/recommended",
+  "prettier",
+  "prettier/flowtype",
+  "prettier/react"
+],
   "plugins": [
-    "import",
-    "flowtype",
-    "prettier",
-    "jest",
-    "react-hooks"
-  ],
+  "import",
+  "flowtype",
+  "prettier",
+  "jest",
+  "react-hooks"
+],
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+  "no-console": ["error", { "allow": ["warn", "error"] }],
     "prettier/prettier": "error",
     "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/*.spec.js",
-          "**/*.stories.js",
-          "**/stories/**",
-          "/config/**"
-        ]
-      }
-    ],
+    "error",
+    {
+      "devDependencies": [
+        "**/*.test.js",
+        "**/*.spec.js",
+        "**/*.stories.js",
+        "**/stories/**",
+        "/config/**"
+      ]
+    }
+  ],
     "import/order": [
-      "error",
-      {
-        "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
-        "newlines-between": "always"
-      }
-    ],
+    "error",
+    {
+      "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
+      "newlines-between": "always"
+    }
+  ],
     "import/newline-after-import": "error",
     "import/no-mutable-exports": "error",
     "import/no-absolute-path": "error",
@@ -60,5 +60,5 @@
     "no-await-in-loop": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-  }
+}
 }

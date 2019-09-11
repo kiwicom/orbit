@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
+import { rtlSpacing } from "../utils/rtl";
 
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
@@ -19,7 +20,7 @@ StyledAsterisk.defaultProps = {
 };
 
 const StyledInputErrorIcWrapper = styled.span`
-  margin-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
   display: inline-flex;
 `;
 

@@ -969,6 +969,8 @@ exports[`InputField number with error and help should match snapshot 1`] = `
       }
       max={5}
       min={1}
+      onBlur={[Function]}
+      onFocus={[Function]}
       size="normal"
       theme={
         Object {
@@ -1929,13 +1931,6 @@ exports[`InputField number with error and help should match snapshot 1`] = `
       }
     />
   </InputField__InputContainer>
-  <FormFeedback
-    type="error"
-  >
-    <div>
-      Something went wrong.
-    </div>
-  </FormFeedback>
 </InputField__Field>
 `;
 
@@ -2419,10 +2414,21 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
     }
   }
 >
-  <FormLabel
-    isFilled={true}
-    label="Label"
-  />
+  <InputField__StyledLabelWrapper>
+    <FormLabel
+      error={false}
+      help={true}
+      iconRef={
+        Object {
+          "current": null,
+        }
+      }
+      isFilled={true}
+      label="Label"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    />
+  </InputField__StyledLabelWrapper>
   <InputField__InputContainer
     size="normal"
     theme={
@@ -3387,19 +3393,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       maxLength={10}
       minLength={1}
       name="name"
-      onBlur={
-        [MockFunction] {
-          "calls": Array [
-            Array [],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      onBlur={[Function]}
       onChange={
         [MockFunction] {
           "calls": Array [
@@ -3413,24 +3407,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           ],
         }
       }
-      onFocus={
-        [MockFunction] {
-          "calls": Array [
-            Array [],
-            Array [],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      onFocus={[Function]}
       placeholder="placeholder"
       readOnly={true}
       size="normal"
@@ -4872,16 +4849,5 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       }
     />
   </InputField__InputContainer>
-  <FormFeedback
-    type="help"
-  >
-    <div>
-      Did you mean 
-      <TextLink>
-        something
-      </TextLink>
-      ?
-    </div>
-  </FormFeedback>
 </InputField__Field>
 `;

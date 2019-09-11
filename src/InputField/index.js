@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -8,17 +8,16 @@ import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
-import type { Ref, Translation } from "../common/common.js.flow";
+import type { Ref } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
-import boundingClientRect from "../utils/boundingClientRect";
 import FormFeedbackTooltip from "../FormFeedbackTooltip";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 
-import type { Props } from "./index";
+import type { Props, FormLabelProps } from "./index";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -292,16 +291,7 @@ const FormLabel = ({
   inlineLabel,
   onMouseEnter,
   onMouseLeave,
-}: {
-  label: Translation,
-  isFilled: boolean,
-  required?: boolean,
-  error?: boolean,
-  help?: boolean,
-  inlineLabel?: boolean,
-  onMouseEnter?: () => void | Promise<any>,
-  onMouseLeave?: () => void | Promise<any>,
-}) => (
+}: FormLabelProps) => (
   <DefaultFormLabel
     iconRef={iconRef}
     filled={isFilled}
@@ -320,13 +310,6 @@ const StyledLabelWrapper = styled.div``;
 const StyledIconWrapper = styled.span`
   display: flex;
 `;
-
-const useWindowEvent = (event, callback) => {
-  useEffect(() => {
-    window.addEventListener(event, callback);
-    return () => window.removeEventListener(event, callback);
-  }, [event, callback]);
-};
 
 // $FlowExpected
 const InputField = React.forwardRef((props: Props, ref: Ref) => {

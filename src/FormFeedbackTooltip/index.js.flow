@@ -1,0 +1,15 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+
+export type Props = {
+  children: React$Node,
+  shown?: boolean,
+  isHelp?: boolean,
+  boundingRef?: { current: ?HTMLElement },
+  iconBoundingRef?: { current: ?HTMLElement },
+  inlineLabel?: React$Node,
+  onClick?: () => void | Promise<any>,
+  ...Globals,
+};
+
+declare export default React$ComponentType<Props>;

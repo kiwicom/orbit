@@ -9,11 +9,11 @@ exports[`FormLabel should match snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "FormLabel-sc-1927civ-1",
+        "componentId": "FormLabel-sc-1927civ-2",
         "isStatic": false,
-        "lastClassName": "iCiBkL",
+        "lastClassName": "rdnor",
         "rules": Array [
-          "display:block;font-family:",
+          "display:flex;font-family:",
           [Function],
           ";font-size:",
           [Function],
@@ -503,7 +503,7 @@ exports[`FormLabel should match snapshot 1`] = `
       "displayName": "FormLabel",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "FormLabel-sc-1927civ-1",
+      "styledComponentId": "FormLabel-sc-1927civ-2",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

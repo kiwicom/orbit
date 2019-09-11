@@ -103,7 +103,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(component.find("InputField__FakeInput").exists()).toBe(true);
   });
   it("should contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);
+    expect(component.find(`FormFeedbackTooltip`).exists()).toBe(true);
   });
   it("should execute onChange method", () => {
     input.simulate("change");
@@ -170,10 +170,10 @@ describe(`InputField number with error and help`, () => {
     expect(component.find("InputField__Input").prop("max")).toBe(maxValue);
   });
   it("should NOT contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(false);
+    expect(component.find(`FormFeedbackTooltip`).exists()).toBe(false);
   });
   it("should contain FeedBack error", () => {
-    expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
+    expect(component.find(`FormFeedbackTooltip`).exists()).toBe(true);
   });
   it("should has data-state error", () => {
     expect(

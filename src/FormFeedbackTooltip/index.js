@@ -8,9 +8,9 @@ import media from "../utils/mediaQuery";
 import { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
 import CloseIc from "../icons/Close";
+import { ARROW_SIZE, SIDE_NUDGE } from "./consts";
 
-const ARROW_SIZE = 7;
-const SIDE_NUDGE = 15;
+import type { Props } from "./index";
 
 const resolveColor = ({ isHelp, theme }) => {
   return isHelp ? theme.orbit.paletteBlueDark : theme.orbit.paletteRedNormal;
@@ -23,11 +23,11 @@ resolveColor.defaultProps = {
 const tooltipArrowStyle = ({ position }) => {
   const arrows = {
     top: css`
-      border-width: 7px 7px 0 7px;
+      border-width: ${ARROW_SIZE}px ${ARROW_SIZE}px 0 ${ARROW_SIZE}px;
       border-color: ${resolveColor} transparent transparent transparent;
     `,
     bottom: css`
-      border-width: 0 7px 7px 7px;
+      border-width: 0 ${ARROW_SIZE}px ${ARROW_SIZE}px ${ARROW_SIZE}px;
       border-color: transparent transparent ${resolveColor} transparent;
     `,
   };
@@ -39,67 +39,46 @@ const resolveTooltipArrowPosition = ({
   position,
   contentBounding,
   iconBounding,
+  inlineLabel,
 }) => {
-  const leftPos = iconBounding.left - contentBounding.left || SIDE_NUDGE;
-  const rightPos = contentBounding.right - iconBounding.right || SIDE_NUDGE;
+  const cssPosition = rtl ? "right" : "left";
 
-  console.log(rtl);
+  const whenInline = SIDE_NUDGE + iconBounding.width / 2 - ARROW_SIZE;
+  const leftPos = iconBounding.left - contentBounding.left + iconBounding.width / 2 - ARROW_SIZE;
+  const rightPos = contentBounding.right - iconBounding.right + iconBounding.width / 2 - ARROW_SIZE;
+
+  const rtlPosition = rtl ? rightPos : leftPos;
+  const postionToApply = inlineLabel ? rtlPosition : whenInline;
 
   const pos = {
     top: css`
       bottom: ${-ARROW_SIZE}px;
-      left: ${leftPos <= contentBounding.width ? leftPos : 0}px;
+      ${cssPosition}: ${postionToApply}px;
     `,
     bottom: css`
       top: ${-ARROW_SIZE}px;
-      left: ${leftPos <= contentBounding.width ? leftPos : 0}px;
+      ${cssPosition}: ${postionToApply}px;
     `,
   };
 
-  const rtlPos = {
-    top: css`
-      bottom: ${-ARROW_SIZE}px;
-      right: ${rightPos}px;
-    `,
-    bottom: css`
-      top: ${-ARROW_SIZE}px;
-      right: ${rightPos}px;
-    `,
-  };
-
-  return rtl ? rtlPos[position] : pos[position];
+  return pos[position];
 };
 
-const resolveTooltipPosition = ({
-  theme: { rtl },
-  position,
-  contentBounding,
-  bounding,
-  iconBounding,
-}) => {
+const resolveTooltipPosition = ({ theme: { rtl }, position, contentBounding, inlineLabel }) => {
+  const cssPosition = rtl ? "right" : "left";
+
   const pos = {
     top: css`
       top: ${-contentBounding.height - 7}px;
-      left: ${() => (bounding.left - iconBounding.left === 0 ? `-${SIDE_NUDGE}px` : "0")};
+      ${cssPosition}: ${() => (inlineLabel ? "0" : `-${SIDE_NUDGE}px`)};
     `,
     bottom: css`
       bottom: ${-contentBounding.height - 7}px;
-      left: 0;
+      ${cssPosition}: 0;
     `,
   };
 
-  const rtlPos = {
-    top: css`
-      top: ${-contentBounding.height - 7}px;
-      right: ${() => (bounding.right - iconBounding.right === 0 ? `-${SIDE_NUDGE}px` : "0")};
-    `,
-    bottom: css`
-      bottom: ${-contentBounding.height - 7}px;
-      right: 0;
-    `,
-  };
-
-  return rtl ? rtlPos[position] : pos[position];
+  return pos[position];
 };
 
 const StyledFormFeedbackTooltip = styled.div`
@@ -256,7 +235,7 @@ const FormFeedbackTooltip = ({
   isHelp = false,
   inlineLabel,
   onClick,
-}) => {
+}: Props) => {
   const contentRef = useRef(null);
   const dimensions = useDimensions(
     { boundingRef, contentRef, iconBoundingRef },
@@ -275,6 +254,7 @@ const FormFeedbackTooltip = ({
       position={preferedPosition}
       shown={shown && dimensions.set}
       isHelp={isHelp}
+      inlineLabel={inlineLabel}
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>
       {isHelp && (

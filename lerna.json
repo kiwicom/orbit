@@ -1,6 +1,7 @@
 {
   "packages": [
-    "src/*"
+    "src/orbit-components",
+    "src/orbit-design-tokens"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,

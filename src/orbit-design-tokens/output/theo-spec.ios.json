@@ -31,7 +31,7 @@
       "name": "colorTextButtonPrimary"
     },
     {
-      "value": "rgb(11, 92, 193)",
+      "value": "rgb(53, 79, 136)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonFacebookBorderedActive"
@@ -295,7 +295,7 @@
       "name": "backgroundButtonPrimary"
     },
     {
-      "value": "rgb(12, 105, 222)",
+      "value": "rgb(56, 84, 144)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonFacebookBorderedHover"
@@ -512,7 +512,7 @@
       "name": "colorTextButtonLinkPrimary"
     },
     {
-      "value": "rgb(23, 120, 242)",
+      "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonFacebook"
@@ -818,7 +818,7 @@
       "name": "widthCheckbox"
     },
     {
-      "value": "rgb(12, 105, 222)",
+      "value": "rgb(56, 84, 144)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonFacebookBorderedHover"
@@ -1155,7 +1155,7 @@
       "name": "backgroundTag"
     },
     {
-      "value": "rgb(11, 92, 193)",
+      "value": "rgb(53, 79, 136)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonFacebookActive"
@@ -1263,7 +1263,7 @@
       "name": "paletteGreenLight"
     },
     {
-      "value": "rgb(23, 120, 242)",
+      "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteSocialFacebook"
@@ -1275,7 +1275,7 @@
       "name": "marginBadgeIcon"
     },
     {
-      "value": "rgb(12, 105, 222)",
+      "value": "rgb(56, 84, 144)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteSocialFacebookHover"
@@ -1792,7 +1792,7 @@
       "name": "borderColorButtonCriticalBordered"
     },
     {
-      "value": "rgb(23, 120, 242)",
+      "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonFacebookBordered"
@@ -1840,7 +1840,7 @@
       "name": "paletteGreenLightActive"
     },
     {
-      "value": "rgb(11, 92, 193)",
+      "value": "rgb(53, 79, 136)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteSocialFacebookActive"
@@ -2080,7 +2080,7 @@
       "name": "colorTextInputDisabled"
     },
     {
-      "value": "rgb(12, 105, 222)",
+      "value": "rgb(56, 84, 144)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonFacebookHover"
@@ -2308,7 +2308,7 @@
       "name": "borderColorButtonCriticalBorderedActive"
     },
     {
-      "value": "rgb(11, 92, 193)",
+      "value": "rgb(53, 79, 136)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonFacebookBorderedActive"
@@ -2338,7 +2338,7 @@
       "name": "backgroundButtonLinkSecondary"
     },
     {
-      "value": "rgb(23, 120, 242)",
+      "value": "rgb(59, 89, 152)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonFacebookBordered"

@@ -6,9 +6,10 @@
     "src/orbit-design-tokens"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
-    "test": "lerna exec yarn test",
+    "bootstrap": "npx lerna bootstrap --use-workspaces",
+    "build": "npx lerna exec --parallel -- yarn build",
+    "orbit-components:start": "npx lerna exec --scope @kiwicom/orbit-components -- yarn storybook",
+    "test": "npx lerna exec --parallel -- yarn test",
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static"
   },
   "devDependencies": {
@@ -37,8 +38,9 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.8.0",
+    "core-js": "^2.5.7",
     "flow-bin": "^0.99.1",
-    "lerna": "^3.16.1",
+    "lerna": "^3.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   }

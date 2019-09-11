@@ -5,7 +5,7 @@
   <dimen name="WIDTHMODALSMALL" category="Size (width, height)">540dp</dimen>
   <color name="BACKGROUNDBUTTONWARNINGHOVER" category="Background colors">#fff38906</color>
   <color name="COLORTEXTBUTTONPRIMARY" category="Colors">#ffffffff</color>
-  <color name="BORDERCOLORBUTTONFACEBOOKBORDEREDACTIVE" category="Border color">#ff0b5cc1</color>
+  <color name="BORDERCOLORBUTTONFACEBOOKBORDEREDACTIVE" category="Border color">#ff354f88</color>
   <dimen name="MARGINBUTTONICONNORMAL" category="Spacing">8dp</dimen>
   <dimen name="HEIGHTBUTTONNORMAL" category="Size (width, height)">44dp</dimen>
   <color name="COLORICONWARNING" category="Colors">#fff9971e</color>
@@ -49,7 +49,7 @@
   <dimen name="MARGINBUTTONICONLARGE" category="Spacing">12dp</dimen>
   <color name="BORDERCOLORBUTTONINFOBORDERED" category="Border color">#ff0172cb</color>
   <color name="BACKGROUNDBUTTONPRIMARY" category="Background colors">#ff00a991</color>
-  <color name="BORDERCOLORBUTTONFACEBOOKBORDEREDHOVER" category="Border color">#ff0c69de</color>
+  <color name="BORDERCOLORBUTTONFACEBOOKBORDEREDHOVER" category="Border color">#ff385490</color>
   <color name="BACKGROUNDBUTTONGOOGLEHOVER" category="Background colors">#ffe5eaef</color>
   <color name="BACKGROUNDBADGEINFO" category="Background colors">#ffe5f7ff</color>
   <color name="BORDERCOLORTAG" category="Border color">#ffeff2f5</color>
@@ -85,7 +85,7 @@
   <color name="PALETTEORANGEDARKACTIVE" category="Color palette">#ff7a2405</color>
   <color name="COLORTEXTBUTTONPRIMARYACTIVE" category="Colors">#ffffffff</color>
   <color name="COLORTEXTBUTTONLINKPRIMARY" category="Colors">#ff00a991</color>
-  <color name="BACKGROUNDBUTTONFACEBOOK" category="Background colors">#ff1778f2</color>
+  <color name="BACKGROUNDBUTTONFACEBOOK" category="Background colors">#ff3b5998</color>
   <integer name="WIDTHBREAKPOINTLARGEMOBILE" category="Breakpoints">576</integer>
   <color name="BORDERCOLORBUTTONSECONDARYBORDEREDHOVER" category="Border color">#ff181b20</color>
   <color name="PALETTEREDLIGHTACTIVE" category="Color palette">#ffeeb9b9</color>
@@ -136,7 +136,7 @@
   <string name="ZINDEXDEFAULT" category="Z Index">1</string>
   <color name="BACKGROUNDBUTTONSUCCESSACTIVE" category="Background colors">#ff1d7228</color>
   <dimen name="WIDTHCHECKBOX" category="Size (width, height)">20dp</dimen>
-  <color name="COLORTEXTBUTTONFACEBOOKBORDEREDHOVER" category="Colors">#ff0c69de</color>
+  <color name="COLORTEXTBUTTONFACEBOOKBORDEREDHOVER" category="Colors">#ff385490</color>
   <color name="BORDERCOLORBUTTONCRITICALBORDEREDHOVER" category="Border color">#ffb91919</color>
   <dimen name="SPACEXXXLARGE" category="Spacing">52dp</dimen>
   <dimen name="FONTSIZEBUTTONNORMAL" category="Font size">14dp</dimen>
@@ -192,7 +192,7 @@
   <string name="FONTWEIGHTBOLD" category="Font weight">700</string>
   <color name="COLORTEXTBUTTONLINKPRIMARYACTIVE" category="Colors">#ff008f7b</color>
   <color name="BACKGROUNDTAG" category="Background colors">#fff5f7f9</color>
-  <color name="BACKGROUNDBUTTONFACEBOOKACTIVE" category="Background colors">#ff0b5cc1</color>
+  <color name="BACKGROUNDBUTTONFACEBOOKACTIVE" category="Background colors">#ff354f88</color>
   <color name="COLORTEXTLOADING" category="Colors">#ffbac7d5</color>
   <dimen name="HEIGHTSTOPOVERARROW" category="Size (width, height)">7dp</dimen>
   <color name="BORDERCOLORBUTTONGOOGLEBORDERED" category="Border color">#ff252a31</color>
@@ -210,9 +210,9 @@
   <integer name="WIDTHBREAKPOINTMEDIUMMOBILE" category="Breakpoints">414</integer>
   <color name="COLORTEXTBUTTONFACEBOOKACTIVE" category="Colors">#ffffffff</color>
   <color name="PALETTEGREENLIGHT" category="Color palette">#ffebf4ec</color>
-  <color name="PALETTESOCIALFACEBOOK" category="Color palette">#ff1778f2</color>
+  <color name="PALETTESOCIALFACEBOOK" category="Color palette">#ff3b5998</color>
   <dimen name="MARGINBADGEICON" category="Spacing">0 4px 0 0</dimen>
-  <color name="PALETTESOCIALFACEBOOKHOVER" category="Color palette">#ff0c69de</color>
+  <color name="PALETTESOCIALFACEBOOKHOVER" category="Color palette">#ff385490</color>
   <color name="PALETTEGREENLIGHTHOVER" category="Color palette">#ffd7ead9</color>
   <dimen name="HEIGHTBUTTONSMALL" category="Size (width, height)">32dp</dimen>
   <dimen name="MARGINBUTTONICONSMALL" category="Spacing">8dp</dimen>
@@ -298,7 +298,7 @@
   <dimen name="LINEHEIGHTHEADINGDISPLAYSUBTITLE" category="Line height">28dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEHOVER" category="Background colors">#fff5f7f9</color>
   <color name="BORDERCOLORBUTTONCRITICALBORDERED" category="Border color">#ffd21c1c</color>
-  <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff1778f2</color>
+  <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff3b5998</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDACTIVE" category="Border color">#ff0b0c0f</color>
   <color name="COLORTEXTSUCCESS" category="Colors">#ff28a138</color>
   <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>
@@ -306,7 +306,7 @@
   <string name="FONTWEIGHTHEADINGTITLE1" category="Font weight">700</string>
   <color name="COLORHEADINGINVERTED" category="Colors">#ffffffff</color>
   <color name="PALETTEGREENLIGHTACTIVE" category="Color palette">#ffc3dfc7</color>
-  <color name="PALETTESOCIALFACEBOOKACTIVE" category="Color palette">#ff0b5cc1</color>
+  <color name="PALETTESOCIALFACEBOOKACTIVE" category="Color palette">#ff354f88</color>
   <color name="BACKGROUNDBADGECRITICAL" category="Background colors">#fffaeaea</color>
   <color name="BACKGROUNDBADGEWHITE" category="Background colors">#ffffffff</color>
   <string name="BACKGROUNDCOUNTRYFLAG" category="Background colors">transparent</string>
@@ -346,7 +346,7 @@
   <color name="BORDERCOLORMODAL" category="Border color">#ffeff2f5</color>
   <color name="COLORTEXTBUTTONGOOGLEBORDEREDHOVER" category="Colors">#ff181b20</color>
   <color name="COLORTEXTINPUTDISABLED" category="Colors">#ffbac7d5</color>
-  <color name="BACKGROUNDBUTTONFACEBOOKHOVER" category="Background colors">#ff0c69de</color>
+  <color name="BACKGROUNDBUTTONFACEBOOKHOVER" category="Background colors">#ff385490</color>
   <color name="BORDERCOLORCHECKBOXRADIOFOCUS" category="Border color">#ff0172cb</color>
   <dimen name="FONTSIZEMESSAGE" category="Font size">14dp</dimen>
   <string name="FONTWEIGHTHEADINGTITLE4" category="Font weight">500</string>
@@ -384,12 +384,12 @@
   <color name="BORDERCOLORTABLECELL" category="Border color">#ffbac7d5</color>
   <dimen name="FONTSIZEFORMFEEDBACK" category="Font size">12dp</dimen>
   <color name="BORDERCOLORBUTTONCRITICALBORDEREDACTIVE" category="Border color">#ff9d1515</color>
-  <color name="COLORTEXTBUTTONFACEBOOKBORDEREDACTIVE" category="Colors">#ff0b5cc1</color>
+  <color name="COLORTEXTBUTTONFACEBOOKBORDEREDACTIVE" category="Colors">#ff354f88</color>
   <color name="PALETTEREDDARKER" category="Color palette">#ff760909</color>
   <color name="COLORTEXTWHITE" category="Colors">#ffffffff</color>
   <color name="BACKGROUNDTABLEEVEN" category="Background colors">#fff5f7f9</color>
   <string name="BACKGROUNDBUTTONLINKSECONDARY" category="Background colors">transparent</string>
-  <color name="BORDERCOLORBUTTONFACEBOOKBORDERED" category="Border color">#ff1778f2</color>
+  <color name="BORDERCOLORBUTTONFACEBOOKBORDERED" category="Border color">#ff3b5998</color>
   <color name="BACKGROUNDBUTTONPRIMARYHOVER" category="Background colors">#ff009882</color>
   <color name="COLORTEXTINPUT" category="Colors">#ff252a31</color>
   <color name="BORDERCOLORBUTTONINFOBORDEREDHOVER" category="Border color">#ff0161ac</color>

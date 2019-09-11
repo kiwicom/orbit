@@ -1,15 +1,15 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.60.0",
+  "version": "0.59.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
     "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:flowFiles && yarn build:lib && yarn build:module && yarn build:umd",
     "build:lib": "babel --out-dir lib --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js src && yarn copy:lib",
     "build:module": "babel --presets @babel/react,@babel/flow --plugins babel-plugin-styled-components,@babel/plugin-proposal-nullish-coalescing-operator,@babel/plugin-proposal-optional-chaining,@babel/plugin-proposal-class-properties,@babel/plugin-proposal-object-rest-spread --no-babelrc --out-dir es --ignore **/*.stories.js,**/*.test.js,**/*.storyshot src && yarn copy:module",
-    "build:icons": "babel-node config/build.js --config-file ../../.babelrc",
-    "build:flowFiles": "babel-node config/flowFiles.js --config-file ../../.babelrc",
-    "build:iconFont": "babel-node config/createSVGFont.js --config-file ../../.babelrc && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
+    "build:icons": "babel-node config/build.js",
+    "build:flowFiles": "babel-node config/flowFiles.js",
+    "build:iconFont": "babel-node config/createSVGFont.js && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
     "build:storybook": "build-storybook -c .storybook -o .out -s ./static",
     "build:umd": "webpack --mode=production",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiwicom/orbit-components.git"
+    "url": "git+https://github.com/kiwicom/orbit-components.git"
   },
   "keywords": [
     "orbit",
@@ -84,7 +84,7 @@
   },
   "dependencies": {
     "@kiwicom/js": "^0.9.0",
-    "@kiwicom/orbit-design-tokens": "^0.6.7"
+    "@kiwicom/orbit-design-tokens": "^0.6.6"
   },
   "devDependencies": {
     "@svgr/core": "^2.0.0",
@@ -125,6 +125,15 @@
     "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "bugs": {
+    "url": "https://github.com/kiwicom/orbit-components/issues"
+  },
+  "homepage": "https://github.com/kiwicom/orbit-components#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
   }
 }

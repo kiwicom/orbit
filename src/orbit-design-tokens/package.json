@@ -22,7 +22,7 @@
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
+    "build:lib": "babel --config-file ./.babelrc --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
     "build": "yarn run build:lib && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
     "ci-publish": "ci-publish",

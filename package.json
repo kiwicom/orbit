@@ -9,7 +9,9 @@
     "bootstrap": "npx lerna bootstrap --use-workspaces",
     "build": "npx lerna exec --parallel -- yarn build",
     "orbit-components:start": "npx lerna exec --scope @kiwicom/orbit-components -- yarn storybook",
-    "test": "npx lerna exec --parallel -- yarn test",
+    "test": "jest",
+    "test:ci": "jest --colors --coverage",
+    "flow": "npx lerna run flow",
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static"
   },
   "devDependencies": {
@@ -34,12 +36,13 @@
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.5.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.8.0",
     "core-js": "^2.5.7",
     "flow-bin": "^0.99.1",
+    "jest": "^24.5.0",
     "lerna": "^3.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"

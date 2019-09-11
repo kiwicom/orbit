@@ -1,26 +1,10 @@
 [ignore]
-<PROJECT_ROOT>/es/.*
-<PROJECT_ROOT>/etc/.*
-<PROJECT_ROOT>/lib/.*
-
-.*/node_modules/immutable/.*
-.*/node_modules/radium/.*
-.*/node_modules/styled-components/.*
-.*/node_modules/devtools-timeline-model/.*
-.*/node_modules/chrome-devtools-frontend/.*
+<PROJECT_ROOT>/src/*
 
 [include]
 
 [libs]
-types/
 
 [lints]
-unnecessary-optional-chain=error
 
 [options]
-emoji=true
-esproposal.optional_chaining=enable
-suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
-suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
-suppress_comment=\\(.\\|\n\\)*\\$FlowExpected
-server.max_workers=2

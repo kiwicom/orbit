@@ -641,7 +641,7 @@
       }
     },
     "colorTextButtonFacebookBordered": {
-      "value": "#1778F2",
+      "value": "#3B5998",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -649,7 +649,7 @@
       }
     },
     "colorTextButtonFacebookBorderedHover": {
-      "value": "#0C69DE",
+      "value": "#385490",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -657,7 +657,7 @@
       }
     },
     "colorTextButtonFacebookBorderedActive": {
-      "value": "#0B5CC1",
+      "value": "#354F88",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1073,7 +1073,7 @@
       }
     },
     "backgroundButtonFacebook": {
-      "value": "#1778F2",
+      "value": "#3B5998",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1081,7 +1081,7 @@
       }
     },
     "backgroundButtonFacebookHover": {
-      "value": "#0C69DE",
+      "value": "#385490",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1089,7 +1089,7 @@
       }
     },
     "backgroundButtonFacebookActive": {
-      "value": "#0B5CC1",
+      "value": "#354F88",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -2213,7 +2213,7 @@
       }
     },
     "borderColorButtonFacebookBordered": {
-      "value": "#1778F2",
+      "value": "#3B5998",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2221,7 +2221,7 @@
       }
     },
     "borderColorButtonFacebookBorderedHover": {
-      "value": "#0C69DE",
+      "value": "#385490",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2229,7 +2229,7 @@
       }
     },
     "borderColorButtonFacebookBorderedActive": {
-      "value": "#0B5CC1",
+      "value": "#354F88",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -3717,7 +3717,7 @@
       }
     },
     "paletteSocialFacebook": {
-      "value": "#1778F2",
+      "value": "#3B5998",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3725,7 +3725,7 @@
       }
     },
     "paletteSocialFacebookHover": {
-      "value": "#0C69DE",
+      "value": "#385490",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3733,7 +3733,7 @@
       }
     },
     "paletteSocialFacebookActive": {
-      "value": "#0B5CC1",
+      "value": "#354F88",
       "type": "color",
       "category": "Color palette",
       "meta": {

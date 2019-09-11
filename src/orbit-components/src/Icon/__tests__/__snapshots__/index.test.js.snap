@@ -504,24 +504,7 @@ exports[`Icon should match snapshot 1`] = `
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
-              "isStatic": false,
-              "lastClassName": "cpFVtF",
-              "rules": Array [
-                "width:",
-                [Function],
-                ";height:",
-                [Function],
-                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
-                [Function],
-                ";",
-                [Function],
-                ";",
-              ],
-            },
-            "defaultProps": Object {
+            "_foldedDefaultProps": Object {
               "theme": Object {
                 "orbit": Object {
                   "backgroundAlertCritical": "#FAEAEA",
@@ -994,6 +977,23 @@ exports[`Icon should match snapshot 1`] = `
                 },
                 "rtl": false,
               },
+            },
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
+              "isStatic": false,
+              "lastClassName": "cpFVtF",
+              "rules": Array [
+                "width:",
+                [Function],
+                ";height:",
+                [Function],
+                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
+                [Function],
+                ";",
+                [Function],
+                ";",
+              ],
             },
             "displayName": "Icon__StyledIcon",
             "foldedComponentIds": Array [],
@@ -1969,7 +1969,7 @@ exports[`Icon should match snapshot 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 00-4-4zM7 13a3 3 0 100-6 3 3 0 000 6z"
             />
           </svg>
         </Component>
@@ -2496,24 +2496,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
-              "isStatic": false,
-              "lastClassName": "c0",
-              "rules": Array [
-                "width:",
-                [Function],
-                ";height:",
-                [Function],
-                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
-                [Function],
-                ";",
-                [Function],
-                ";",
-              ],
-            },
-            "defaultProps": Object {
+            "_foldedDefaultProps": Object {
               "theme": Object {
                 "orbit": Object {
                   "backgroundAlertCritical": "#FAEAEA",
@@ -2986,6 +2969,23 @@ exports[`Icon with custom props should match snapshot 1`] = `
                 },
                 "rtl": false,
               },
+            },
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
+              "isStatic": false,
+              "lastClassName": "c0",
+              "rules": Array [
+                "width:",
+                [Function],
+                ";height:",
+                [Function],
+                ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
+                [Function],
+                ";",
+                [Function],
+                ";",
+              ],
             },
             "displayName": "Icon__StyledIcon",
             "foldedComponentIds": Array [],
@@ -3967,7 +3967,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 00-4-4zM7 13a3 3 0 100-6 3 3 0 000 6z"
             />
           </svg>
         </Component>

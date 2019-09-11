@@ -583,26 +583,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "CarrierLogo__StyledCarrierLogo-d4doc9-1",
-            "isStatic": false,
-            "lastClassName": "gRdVDN",
-            "rules": Array [
-              "background-color:",
-              [Function],
-              ";height:",
-              [Function],
-              ";width:",
-              [Function],
-              ";display:flex;flex-direction:",
-              [Function],
-              ";flex-wrap:",
-              [Function],
-              ";align-content:space-between;justify-content:space-between;",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -1075,6 +1056,25 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "CarrierLogo__StyledCarrierLogo-d4doc9-1",
+            "isStatic": false,
+            "lastClassName": "gRdVDN",
+            "rules": Array [
+              "background-color:",
+              [Function],
+              ";height:",
+              [Function],
+              ";width:",
+              [Function],
+              ";display:flex;flex-direction:",
+              [Function],
+              ";flex-wrap:",
+              [Function],
+              ";align-content:space-between;justify-content:space-between;",
+            ],
           },
           "displayName": "CarrierLogo__StyledCarrierLogo",
           "foldedComponentIds": Array [],
@@ -2057,26 +2057,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [
-                  [Function],
-                ],
-                "componentStyle": ComponentStyle {
-                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
-                  "isStatic": false,
-                  "lastClassName": "ejWWtn",
-                  "rules": Array [
-                    "background-color:",
-                    [Function],
-                    ";border-radius:",
-                    [Function],
-                    ";height:",
-                    [Function],
-                    ";width:",
-                    [Function],
-                    ";&:last-child{align-self:flex-end;}",
-                  ],
-                },
-                "defaultProps": Object {
+                "_foldedDefaultProps": Object {
                   "theme": Object {
                     "orbit": Object {
                       "backgroundAlertCritical": "#FAEAEA",
@@ -2549,6 +2530,25 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                     },
                     "rtl": false,
                   },
+                },
+                "attrs": Array [
+                  [Function],
+                ],
+                "componentStyle": ComponentStyle {
+                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
+                  "isStatic": false,
+                  "lastClassName": "ejWWtn",
+                  "rules": Array [
+                    "background-color:",
+                    [Function],
+                    ";border-radius:",
+                    [Function],
+                    ";height:",
+                    [Function],
+                    ";width:",
+                    [Function],
+                    ";&:last-child{align-self:flex-end;}",
+                  ],
                 },
                 "displayName": "CarrierLogo__StyledImage",
                 "foldedComponentIds": Array [],
@@ -3537,26 +3537,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [
-                  [Function],
-                ],
-                "componentStyle": ComponentStyle {
-                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
-                  "isStatic": false,
-                  "lastClassName": "ejWWtn",
-                  "rules": Array [
-                    "background-color:",
-                    [Function],
-                    ";border-radius:",
-                    [Function],
-                    ";height:",
-                    [Function],
-                    ";width:",
-                    [Function],
-                    ";&:last-child{align-self:flex-end;}",
-                  ],
-                },
-                "defaultProps": Object {
+                "_foldedDefaultProps": Object {
                   "theme": Object {
                     "orbit": Object {
                       "backgroundAlertCritical": "#FAEAEA",
@@ -4029,6 +4010,25 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                     },
                     "rtl": false,
                   },
+                },
+                "attrs": Array [
+                  [Function],
+                ],
+                "componentStyle": ComponentStyle {
+                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
+                  "isStatic": false,
+                  "lastClassName": "ejWWtn",
+                  "rules": Array [
+                    "background-color:",
+                    [Function],
+                    ";border-radius:",
+                    [Function],
+                    ";height:",
+                    [Function],
+                    ";width:",
+                    [Function],
+                    ";&:last-child{align-self:flex-end;}",
+                  ],
                 },
                 "displayName": "CarrierLogo__StyledImage",
                 "foldedComponentIds": Array [],
@@ -5017,26 +5017,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [
-                  [Function],
-                ],
-                "componentStyle": ComponentStyle {
-                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
-                  "isStatic": false,
-                  "lastClassName": "ejWWtn",
-                  "rules": Array [
-                    "background-color:",
-                    [Function],
-                    ";border-radius:",
-                    [Function],
-                    ";height:",
-                    [Function],
-                    ";width:",
-                    [Function],
-                    ";&:last-child{align-self:flex-end;}",
-                  ],
-                },
-                "defaultProps": Object {
+                "_foldedDefaultProps": Object {
                   "theme": Object {
                     "orbit": Object {
                       "backgroundAlertCritical": "#FAEAEA",
@@ -5509,6 +5490,25 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                     },
                     "rtl": false,
                   },
+                },
+                "attrs": Array [
+                  [Function],
+                ],
+                "componentStyle": ComponentStyle {
+                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
+                  "isStatic": false,
+                  "lastClassName": "ejWWtn",
+                  "rules": Array [
+                    "background-color:",
+                    [Function],
+                    ";border-radius:",
+                    [Function],
+                    ";height:",
+                    [Function],
+                    ";width:",
+                    [Function],
+                    ";&:last-child{align-self:flex-end;}",
+                  ],
                 },
                 "displayName": "CarrierLogo__StyledImage",
                 "foldedComponentIds": Array [],
@@ -6497,26 +6497,7 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [
-                  [Function],
-                ],
-                "componentStyle": ComponentStyle {
-                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
-                  "isStatic": false,
-                  "lastClassName": "ejWWtn",
-                  "rules": Array [
-                    "background-color:",
-                    [Function],
-                    ";border-radius:",
-                    [Function],
-                    ";height:",
-                    [Function],
-                    ";width:",
-                    [Function],
-                    ";&:last-child{align-self:flex-end;}",
-                  ],
-                },
-                "defaultProps": Object {
+                "_foldedDefaultProps": Object {
                   "theme": Object {
                     "orbit": Object {
                       "backgroundAlertCritical": "#FAEAEA",
@@ -6989,6 +6970,25 @@ exports[`Multiple CarrierLogo with DefaultProp should match snapshot 1`] = `
                     },
                     "rtl": false,
                   },
+                },
+                "attrs": Array [
+                  [Function],
+                ],
+                "componentStyle": ComponentStyle {
+                  "componentId": "CarrierLogo__StyledImage-d4doc9-0",
+                  "isStatic": false,
+                  "lastClassName": "ejWWtn",
+                  "rules": Array [
+                    "background-color:",
+                    [Function],
+                    ";border-radius:",
+                    [Function],
+                    ";height:",
+                    [Function],
+                    ";width:",
+                    [Function],
+                    ";&:last-child{align-self:flex-end;}",
+                  ],
                 },
                 "displayName": "CarrierLogo__StyledImage",
                 "foldedComponentIds": Array [],

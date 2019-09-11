@@ -615,48 +615,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
-            "isStatic": false,
-            "lastClassName": "kbbbgd",
-            "rules": Array [
-              "font-family:",
-              [Function],
-              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
-              [Function],
-              ";flex:",
-              [Function],
-              ";height:",
-              [Function],
-              ";background:",
-              [Function],
-              ";color:",
-              [Function],
-              "!important;border:0;border-radius:",
-              [Function],
-              ";padding:",
-              [Function],
-              ";font-weight:",
-              [Function],
-              "!important;font-size:",
-              [Function],
-              ";cursor:",
-              [Function],
-              ";opacity:",
-              [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
-              [Function],
-              ";&:hover{",
-              [Function],
-              ";}&:active{",
-              [Function],
-              ";}&:focus{",
-              [Function],
-              ";}",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -1129,6 +1088,47 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
+            "isStatic": false,
+            "lastClassName": "kbbbgd",
+            "rules": Array [
+              "font-family:",
+              [Function],
+              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              [Function],
+              ";flex:",
+              [Function],
+              ";height:",
+              [Function],
+              ";background:",
+              [Function],
+              ";color:",
+              [Function],
+              "!important;border:0;border-radius:",
+              [Function],
+              ";padding:",
+              [Function],
+              ";font-weight:",
+              [Function],
+              "!important;font-size:",
+              [Function],
+              ";cursor:",
+              [Function],
+              ";opacity:",
+              [Function],
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
+              [Function],
+              ";&:hover{",
+              [Function],
+              ";}&:active{",
+              [Function],
+              ";}&:focus{",
+              [Function],
+              ";}",
+            ],
           },
           "displayName": "ButtonLink__StyledButtonLink",
           "foldedComponentIds": Array [],
@@ -2875,48 +2875,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
-            "isStatic": false,
-            "lastClassName": "c0",
-            "rules": Array [
-              "font-family:",
-              [Function],
-              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
-              [Function],
-              ";flex:",
-              [Function],
-              ";height:",
-              [Function],
-              ";background:",
-              [Function],
-              ";color:",
-              [Function],
-              "!important;border:0;border-radius:",
-              [Function],
-              ";padding:",
-              [Function],
-              ";font-weight:",
-              [Function],
-              "!important;font-size:",
-              [Function],
-              ";cursor:",
-              [Function],
-              ";opacity:",
-              [Function],
-              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
-              [Function],
-              ";&:hover{",
-              [Function],
-              ";}&:active{",
-              [Function],
-              ";}&:focus{",
-              [Function],
-              ";}",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -3389,6 +3348,47 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "font-family:",
+              [Function],
+              ";box-sizing:border-box;appearance:none;display:inline-flex;justify-content:center;align-items:center;width:",
+              [Function],
+              ";flex:",
+              [Function],
+              ";height:",
+              [Function],
+              ";background:",
+              [Function],
+              ";color:",
+              [Function],
+              "!important;border:0;border-radius:",
+              [Function],
+              ";padding:",
+              [Function],
+              ";font-weight:",
+              [Function],
+              "!important;font-size:",
+              [Function],
+              ";cursor:",
+              [Function],
+              ";opacity:",
+              [Function],
+              ";transition:all 0.15s ease-in-out !important;outline:0;text-decoration:none;margin-bottom:",
+              [Function],
+              ";&:hover{",
+              [Function],
+              ";}&:active{",
+              [Function],
+              ";}&:focus{",
+              [Function],
+              ";}",
+            ],
           },
           "displayName": "ButtonLink__StyledButtonLink",
           "foldedComponentIds": Array [],
@@ -4902,22 +4902,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     forwardedComponent={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
-                          "isStatic": false,
-                          "lastClassName": "c5",
-                          "rules": Array [
-                            "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
-                            [Function],
-                            ";> *{width:",
-                            [Function],
-                            ";height:",
-                            [Function],
-                            ";}",
-                          ],
-                        },
-                        "defaultProps": Object {
+                        "_foldedDefaultProps": Object {
                           "theme": Object {
                             "orbit": Object {
                               "backgroundAlertCritical": "#FAEAEA",
@@ -5390,6 +5375,21 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             },
                             "rtl": false,
                           },
+                        },
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
+                          "isStatic": false,
+                          "lastClassName": "c5",
+                          "rules": Array [
+                            "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
+                            [Function],
+                            ";> *{width:",
+                            [Function],
+                            ";height:",
+                            [Function],
+                            ";}",
+                          ],
                         },
                         "displayName": "ButtonLink__IconContainer",
                         "foldedComponentIds": Array [],
@@ -6852,24 +6852,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
-                                      "isStatic": false,
-                                      "lastClassName": "c3",
-                                      "rules": Array [
-                                        "width:",
-                                        [Function],
-                                        ";height:",
-                                        [Function],
-                                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
-                                        [Function],
-                                        ";",
-                                        [Function],
-                                        ";",
-                                      ],
-                                    },
-                                    "defaultProps": Object {
+                                    "_foldedDefaultProps": Object {
                                       "theme": Object {
                                         "orbit": Object {
                                           "backgroundAlertCritical": "#FAEAEA",
@@ -7342,6 +7325,23 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                         },
                                         "rtl": false,
                                       },
+                                    },
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
+                                      "isStatic": false,
+                                      "lastClassName": "c3",
+                                      "rules": Array [
+                                        "width:",
+                                        [Function],
+                                        ";height:",
+                                        [Function],
+                                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
+                                        [Function],
+                                        ";",
+                                        [Function],
+                                        ";",
+                                      ],
                                     },
                                     "displayName": "Icon__StyledIcon",
                                     "foldedComponentIds": Array [],
@@ -8316,7 +8316,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                     viewBox="0 0 24 24"
                                   >
                                     <path
-                                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 012.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                                     />
                                   </svg>
                                 </Component>
@@ -8846,22 +8846,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                     forwardedComponent={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
-                          "isStatic": false,
-                          "lastClassName": "c5",
-                          "rules": Array [
-                            "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
-                            [Function],
-                            ";> *{width:",
-                            [Function],
-                            ";height:",
-                            [Function],
-                            ";}",
-                          ],
-                        },
-                        "defaultProps": Object {
+                        "_foldedDefaultProps": Object {
                           "theme": Object {
                             "orbit": Object {
                               "backgroundAlertCritical": "#FAEAEA",
@@ -9334,6 +9319,21 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                             },
                             "rtl": false,
                           },
+                        },
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "ButtonLink__IconContainer-sc-14jv5cl-0",
+                          "isStatic": false,
+                          "lastClassName": "c5",
+                          "rules": Array [
+                            "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
+                            [Function],
+                            ";> *{width:",
+                            [Function],
+                            ";height:",
+                            [Function],
+                            ";}",
+                          ],
                         },
                         "displayName": "ButtonLink__IconContainer",
                         "foldedComponentIds": Array [],
@@ -10798,24 +10798,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                 forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
-                                      "isStatic": false,
-                                      "lastClassName": "c3",
-                                      "rules": Array [
-                                        "width:",
-                                        [Function],
-                                        ";height:",
-                                        [Function],
-                                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
-                                        [Function],
-                                        ";",
-                                        [Function],
-                                        ";",
-                                      ],
-                                    },
-                                    "defaultProps": Object {
+                                    "_foldedDefaultProps": Object {
                                       "theme": Object {
                                         "orbit": Object {
                                           "backgroundAlertCritical": "#FAEAEA",
@@ -11288,6 +11271,23 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                                         },
                                         "rtl": false,
                                       },
+                                    },
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
+                                      "isStatic": false,
+                                      "lastClassName": "c3",
+                                      "rules": Array [
+                                        "width:",
+                                        [Function],
+                                        ";height:",
+                                        [Function],
+                                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
+                                        [Function],
+                                        ";",
+                                        [Function],
+                                        ";",
+                                      ],
                                     },
                                     "displayName": "Icon__StyledIcon",
                                     "foldedComponentIds": Array [],

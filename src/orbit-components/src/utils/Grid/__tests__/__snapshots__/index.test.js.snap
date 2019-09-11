@@ -541,17 +541,7 @@ exports[`Grid with basic props should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "Grid__StyledGrid-cj22hw-0",
-            "isStatic": false,
-            "lastClassName": "iSeuxh",
-            "rules": Array [
-              [Function],
-              ";& > *{display:block;}",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -1024,6 +1014,16 @@ exports[`Grid with basic props should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Grid__StyledGrid-cj22hw-0",
+            "isStatic": false,
+            "lastClassName": "iSeuxh",
+            "rules": Array [
+              [Function],
+              ";& > *{display:block;}",
+            ],
           },
           "displayName": "Grid__StyledGrid",
           "foldedComponentIds": Array [],

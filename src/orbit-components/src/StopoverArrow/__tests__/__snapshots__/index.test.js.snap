@@ -497,22 +497,7 @@ exports[`StopoverArrow should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "StopoverArrow__StyledArrow-sc-19ccrmh-0",
-            "isStatic": false,
-            "lastClassName": "c0",
-            "rules": Array [
-              "vertical-align:middle;fill:currentColor;color:",
-              [Function],
-              ";width:",
-              [Function],
-              ";height:",
-              [Function],
-              ";",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -985,6 +970,21 @@ exports[`StopoverArrow should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "StopoverArrow__StyledArrow-sc-19ccrmh-0",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "vertical-align:middle;fill:currentColor;color:",
+              [Function],
+              ";width:",
+              [Function],
+              ";height:",
+              [Function],
+              ";",
+            ],
           },
           "displayName": "StopoverArrow__StyledArrow",
           "foldedComponentIds": Array [],

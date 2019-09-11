@@ -499,30 +499,7 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "Heading__StyledHeading-sc-1b8cso5-0",
-            "isStatic": false,
-            "lastClassName": "jRupvf",
-            "rules": Array [
-              "font-family:",
-              [Function],
-              ";font-size:",
-              [Function],
-              ";font-weight:",
-              [Function],
-              ";color:",
-              [Function],
-              ";line-height:",
-              [Function],
-              ";text-transform:",
-              [Function],
-              ";margin:0;margin-bottom:",
-              [Function],
-              ";",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -995,6 +972,29 @@ exports[`Heading in DIV, type Title5 should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Heading__StyledHeading-sc-1b8cso5-0",
+            "isStatic": false,
+            "lastClassName": "jRupvf",
+            "rules": Array [
+              "font-family:",
+              [Function],
+              ";font-size:",
+              [Function],
+              ";font-weight:",
+              [Function],
+              ";color:",
+              [Function],
+              ";line-height:",
+              [Function],
+              ";text-transform:",
+              [Function],
+              ";margin:0;margin-bottom:",
+              [Function],
+              ";",
+            ],
           },
           "displayName": "Heading__StyledHeading",
           "foldedComponentIds": Array [],

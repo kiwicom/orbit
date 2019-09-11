@@ -7,26 +7,7 @@ exports[`FormLabel should match snapshot 1`] = `
   forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "FormLabel-sc-1927civ-1",
-        "isStatic": false,
-        "lastClassName": "iCiBkL",
-        "rules": Array [
-          "display:block;font-family:",
-          [Function],
-          ";font-size:",
-          [Function],
-          ";color:",
-          [Function],
-          ";line-height:",
-          [Function],
-          ";margin-bottom:",
-          [Function],
-          ";",
-        ],
-      },
-      "defaultProps": Object {
+      "_foldedDefaultProps": Object {
         "theme": Object {
           "orbit": Object {
             "backgroundAlertCritical": "#FAEAEA",
@@ -499,6 +480,25 @@ exports[`FormLabel should match snapshot 1`] = `
           },
           "rtl": false,
         },
+      },
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "FormLabel-sc-1927civ-1",
+        "isStatic": false,
+        "lastClassName": "iCiBkL",
+        "rules": Array [
+          "display:block;font-family:",
+          [Function],
+          ";font-size:",
+          [Function],
+          ";color:",
+          [Function],
+          ";line-height:",
+          [Function],
+          ";margin-bottom:",
+          [Function],
+          ";",
+        ],
       },
       "displayName": "FormLabel",
       "foldedComponentIds": Array [],

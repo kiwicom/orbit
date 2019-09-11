@@ -528,17 +528,7 @@ exports[`Hide should match snapshot 1`] = `
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "Hide__StyledHide-ji2pgq-0",
-            "isStatic": false,
-            "lastClassName": "c0",
-            "rules": Array [
-              [Function],
-              ";",
-            ],
-          },
-          "defaultProps": Object {
+          "_foldedDefaultProps": Object {
             "theme": Object {
               "orbit": Object {
                 "backgroundAlertCritical": "#FAEAEA",
@@ -1011,6 +1001,16 @@ exports[`Hide should match snapshot 1`] = `
               },
               "rtl": false,
             },
+          },
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Hide__StyledHide-ji2pgq-0",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              [Function],
+              ";",
+            ],
           },
           "displayName": "Hide__StyledHide",
           "foldedComponentIds": Array [],
@@ -1989,24 +1989,7 @@ exports[`Hide should match snapshot 1`] = `
                 forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
-                      "isStatic": false,
-                      "lastClassName": "c1",
-                      "rules": Array [
-                        "width:",
-                        [Function],
-                        ";height:",
-                        [Function],
-                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
-                        [Function],
-                        ";",
-                        [Function],
-                        ";",
-                      ],
-                    },
-                    "defaultProps": Object {
+                    "_foldedDefaultProps": Object {
                       "theme": Object {
                         "orbit": Object {
                           "backgroundAlertCritical": "#FAEAEA",
@@ -2479,6 +2462,23 @@ exports[`Hide should match snapshot 1`] = `
                         },
                         "rtl": false,
                       },
+                    },
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Icon__StyledIcon-sc-1pnzn3g-0",
+                      "isStatic": false,
+                      "lastClassName": "c1",
+                      "rules": Array [
+                        "width:",
+                        [Function],
+                        ";height:",
+                        [Function],
+                        ";flex-shrink:0;vertical-align:middle;fill:currentColor;color:",
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
                     },
                     "displayName": "Icon__StyledIcon",
                     "foldedComponentIds": Array [],
@@ -3453,7 +3453,7 @@ exports[`Hide should match snapshot 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 0 1 2.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
+                      d="M17.178 21l-4.104-7.835-4.104 4.104.373 2.612L8.223 21l-1.865-3.358L3 15.777l1.12-1.12 2.611.373 4.104-4.104L3 6.822 4.492 5.33l9.7 2.239 4.105-4.104a1.58 1.58 0 012.238 0c.62.619.62 1.619 0 2.238l-4.104 4.104 2.239 9.7L17.178 21z"
                     />
                   </svg>
                 </Component>

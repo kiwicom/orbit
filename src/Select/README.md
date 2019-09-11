@@ -50,7 +50,7 @@ Table below contains all types of the props available for object in Option array
 ## Functional specs
 * The `error` prop overwrites the `help` prop, due to higher priority.
 
-* When you have limited space of `Select`, you can use `customValueText` property where you can pass text alternative of the current value. For instance, when label of selected options has `Czech Republic (+420)`, you can only `+420` into the property and the labels will be visually hidden.
+* When you have limited space of `Select`, you can use `customValueText` property where you can pass text alternative of the current value. For instance, when label of selected option has `Czech Republic (+420)`, you can pass only `+420` into this property and the original label will be visually hidden.
 
 * `ref` can be used for example auto-focus the elements immediately after render.
 ```jsx

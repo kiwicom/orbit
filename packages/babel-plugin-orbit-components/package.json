@@ -17,7 +17,7 @@
     "url": "https://github.com/kiwicom/babel-plugin-orbit-components/issues"
   },
   "homepage": "https://github.com/kiwicom/babel-plugin-orbit-components",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "lint": "eslint index.js",
     "test": "jest __tests__/*.test.js"

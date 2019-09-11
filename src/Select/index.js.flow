@@ -33,6 +33,7 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +options: Option[],
   +prefix?: React$Node,
+  +customValueText?: Translation,
 |};
 
 declare export var SelectContainer: ReactComponentStyled<any>;

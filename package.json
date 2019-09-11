@@ -12,10 +12,9 @@
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/parser": "^7.5.5",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",

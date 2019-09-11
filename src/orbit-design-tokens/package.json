@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiwicom/orbit-design-tokens.git"
+    "url": "git+https://github.com/kiwicom/orbit-design-tokens.git"
   },
   "files": [
     "lib/*",
@@ -67,5 +67,13 @@
   },
   "dependencies": {
     "ramda": "^0.26.1"
+  },
+  "bugs": {
+    "url": "https://github.com/kiwicom/orbit-design-tokens/issues"
+  },
+  "homepage": "https://github.com/kiwicom/orbit-design-tokens#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
   }
 }

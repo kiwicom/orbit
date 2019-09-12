@@ -65,16 +65,20 @@ storiesOf("InputGroup", module)
   .add(
     "Phone number",
     () => {
-      const flex = array("Flex", ["0 0 130px", "1 1 100%"]);
+      const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
       const error = text("Error", "error");
       const help = text("Help", undefined);
-
-      const selectOptions = [{ value: 1, label: "+420" }, { value: 2, label: "+421" }];
+      const selectOptions = [
+        { value: 0, label: "Czech Republic (+420)" },
+        { value: 1, label: "Slovak Republic (+421)" },
+        { value: 2, label: "United States (+1)" },
+      ];
       const selectValue = select(
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
+        selectOptions[0].value,
       );
-
+      const customValueText = text("customValueText", "+420");
       const placeholder = text("Input Placeholder", "e.g. 123 456 789");
       const inputValue = text("Input Value", undefined);
 
@@ -87,7 +91,12 @@ storiesOf("InputGroup", module)
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
         >
-          <Select options={selectOptions} value={selectValue} prefix={<CountryFlag code="cz" />} />
+          <Select
+            options={selectOptions}
+            value={selectValue}
+            customValueText={customValueText}
+            prefix={<CountryFlag code="cz" />}
+          />
           <InputField placeholder={placeholder} maxLength={11} value={inputValue} />
         </InputGroup>
       );

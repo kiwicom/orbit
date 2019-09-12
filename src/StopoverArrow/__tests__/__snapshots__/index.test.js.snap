@@ -510,6 +510,8 @@ exports[`StopoverArrow should match snapshot 1`] = `
               ";height:",
               [Function],
               ";",
+              [Function],
+              ";",
             ],
           },
           "defaultProps": Object {

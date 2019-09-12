@@ -11,6 +11,7 @@ export type Props = {|
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
+  +shown: boolean,
   +onClose: () => void,
 |};
 

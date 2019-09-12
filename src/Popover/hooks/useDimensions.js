@@ -36,7 +36,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
           containerWidth: containerDimensions.width,
           popoverHeight: popoverDimensions.height,
           popoverWidth: popoverDimensions.width,
-          windowScrollTop: window.scrollY,
+          windowScrollTop: window.scrollY || window.pageYOffset,
           windowWidth: window.innerWidth,
           windowHeight: window.innerHeight,
           contentHeight: contentDimensions.height,

@@ -45,17 +45,13 @@ export const StyledModalHeader = styled.div`
     rtlSpacing(
       (illustration &&
         suppressed &&
-        `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${
-          theme.orbit.spaceMedium
-        }`) ||
+        `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`) ||
         (illustration &&
           !suppressed &&
           `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`) ||
         (!illustration &&
           suppressed &&
-          `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${
-            theme.orbit.spaceMedium
-          }`) ||
+          `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`) ||
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
   border-top-left-radius: ${({ isMobileFullPage }) =>

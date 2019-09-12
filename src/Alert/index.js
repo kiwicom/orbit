@@ -98,16 +98,10 @@ const StyledAlert = styled(StyledDiv)`
     rtlSpacing(
       closable
         ? (icon &&
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`) ||
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`) ||
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`
         : (icon &&
-            `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`) ||
+            `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`) ||
             `${theme.orbit.paddingAlert}`,
     )};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

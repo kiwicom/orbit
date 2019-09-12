@@ -475,9 +475,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       const properHistogramLength = (max - min + step) / step;
       warning(
         histogramData.length === properHistogramLength,
-        `Warning: Length of histogramData array is ${
-          histogramData.length
-        }, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
+        `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
       );
     }
     const { value, focused } = this.state;

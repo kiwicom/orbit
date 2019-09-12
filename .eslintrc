@@ -59,6 +59,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-cycle": "off"
   }
 }

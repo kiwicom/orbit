@@ -362,6 +362,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   modalID: string = randomID("modalID");
 
+  firstFocusableEl: HTMLElement;
+
+  lastFocusableEl: HTMLElement;
+
+  timeout: TimeoutID;
+
   componentDidMount() {
     this.timeout = setTimeout(() => {
       this.setState({
@@ -523,12 +529,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       }
     }
   };
-
-  firstFocusableEl: HTMLElement;
-
-  lastFocusableEl: HTMLElement;
-
-  timeout: TimeoutID;
 
   render() {
     const {

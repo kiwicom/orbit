@@ -42,14 +42,10 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
   box-shadow: ${({ theme, error }) =>
     error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-      theme.orbit.borderColorInputError
-    }`}; // Error state
+    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
   box-shadow: ${({ theme, active }) =>
     active &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInputFocus} ${
-      theme.orbit.borderColorInputFocus
-    }`}; // Active state
+    `inset 0 0 0 ${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`}; // Active state
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};

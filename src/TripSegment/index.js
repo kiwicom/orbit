@@ -85,9 +85,7 @@ const StyledTripSegmentContent = styled.div`
   background: ${({ theme }) => theme.orbit.paletteWhite};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border: ${({ theme }) =>
-    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${
-      theme.orbit.paletteCloudNormal
-    }`};
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.paletteCloudNormal}`};
   transition: border-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
 

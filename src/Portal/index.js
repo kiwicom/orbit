@@ -5,6 +5,10 @@ import ReactDOM from "react-dom";
 import type { Props } from "./index";
 
 export default class Portal extends React.Component<Props> {
+  node: ?HTMLElement;
+
+  el: ?HTMLElement;
+
   constructor(props: Props) {
     super(props);
     if (typeof window !== "undefined") {
@@ -27,10 +31,6 @@ export default class Portal extends React.Component<Props> {
       this.node.removeChild(this.el);
     }
   }
-
-  node: ?HTMLElement;
-
-  el: ?HTMLElement;
 
   render() {
     const { children } = this.props;

@@ -1,7 +1,7 @@
 // @flow
-import transition from "..";
-
 import defaultTheme from "../../../defaultTheme";
+
+import transition from "..";
 
 const theme = {
   theme: {
@@ -17,9 +17,7 @@ describe("transition", () => {
   });
   it("should return transition for more properties", () => {
     expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme)).toMatch(
-      `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${
-        defaultTheme.orbit.durationSlow
-      } ease-in-out;`,
+      `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out;`,
     );
   });
 });

@@ -128,6 +128,7 @@ storiesOf("Select", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
       const disabled = boolean("Disabled", false);
       const name = text("Name", "name");
+      const customValueText = text("customValueText", null);
       const option = object("Options", objectOptions);
       const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
       const dataTest = text("dataTest", "test");
@@ -146,6 +147,7 @@ storiesOf("Select", module)
           onFocus={action("onFocus")}
           dataTest={dataTest}
           value={value}
+          customValueText={customValueText}
           spaceAfter={spaceAfter}
         />
       );

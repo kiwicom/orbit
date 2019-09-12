@@ -11,7 +11,7 @@ import type { StateLessProps } from "./index.js.flow";
 const StyledStepper = styled.div`
   display: flex;
   width: 100%;
-  flex: 1 1 100%;
+  flex: 1 1 auto;
 `;
 
 const StyledStepperInput = styled.input`

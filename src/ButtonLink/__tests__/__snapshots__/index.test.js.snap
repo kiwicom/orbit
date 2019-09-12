@@ -79,21 +79,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
@@ -2178,7 +2164,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
                           "isStatic": true,
                           "lastClassName": "c2",
                           "rules": Array [
-                            "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                            "display:inline-block;",
                           ],
                         },
                         "displayName": "ButtonLink__StyledButtonLinkContentChildren",
@@ -2346,21 +2332,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
@@ -8339,7 +8311,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "isStatic": true,
                           "lastClassName": "c4",
                           "rules": Array [
-                            "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                            "display:inline-block;",
                           ],
                         },
                         "displayName": "ButtonLink__StyledButtonLinkContentChildren",

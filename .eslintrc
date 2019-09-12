@@ -1,8 +1,8 @@
 {
   "env": {
-  "browser": true,
-    "jest": true
-},
+    "browser": true,
+      "jest": true
+  },
   "root": true,
   "parser": "babel-eslint",
   "extends": [

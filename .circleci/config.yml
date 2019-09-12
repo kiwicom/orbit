@@ -26,7 +26,7 @@ jobs:
 
       - run:
           name: Flow
-          command: yarn flow:check
+          command: yarn flow
 
       - run:
           name: Eslint

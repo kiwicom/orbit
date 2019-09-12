@@ -9,6 +9,7 @@
     "build": "npx lerna exec --parallel -- yarn build",
     "orbit-components:start": "npx lerna exec --scope @kiwicom/orbit-components -- yarn storybook",
     "test": "jest",
+    "eslint": "eslint . --color",
     "test:ci": "jest --colors --coverage",
     "flow": "npx flow check"
   },

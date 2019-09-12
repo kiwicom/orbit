@@ -203,10 +203,7 @@ StyledButtonContent.defaultProps = {
 };
 
 const StyledButtonContentChildren = styled.div`
-  display: flex;
-  flex-basis: auto;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 `;
 
 // $FlowExpected

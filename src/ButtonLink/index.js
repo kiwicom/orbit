@@ -156,10 +156,7 @@ const StyledButtonLinkContent = styled.div`
 `;
 
 const StyledButtonLinkContentChildren = styled.div`
-  display: flex;
-  flex-basis: auto;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 `;
 
 // $FlowExpected

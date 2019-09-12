@@ -2,11 +2,12 @@
   "a11ymenu_jump_to": "Passer à",
   "a11ymenu_page_actions": "Actions courantes sur cette page",
   "a11ymenu_page_sections": "Sections de cette page",
-  "a11ymenu_send_feedback": "Envoyer mes commentaires",
+  "a11ymenu_send_feedback": "Envoyer des commentaires",
   "breadcrumbs_back": "Retour",
   "button_close": "Fermer",
   "choicegroup_only": "Seulement",
+  "loading": "Chargement",
   "pagination_label_next": "Suivant",
   "pagination_label_prev": "Précédent",
-  "ratingstar_description": "Notation __number__ sur __number__"
+  "ratingstar_description": "Notation __number__ sur __total__"
 }

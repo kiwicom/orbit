@@ -6,7 +6,8 @@
   "breadcrumbs_back": "חזרה",
   "button_close": "סגירה",
   "choicegroup_only": "רק",
+  "loading": "המערכת טוענת נתונים",
   "pagination_label_next": "הבא",
   "pagination_label_prev": "הקודם",
-  "ratingstar_description": "דירוג של __number__ מתוך __number__"
+  "ratingstar_description": "דירוג של __number__ מתוך __total__"
 }

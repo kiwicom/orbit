@@ -1,0 +1,22 @@
+[ignore]
+<PROJECT_ROOT>/src/.*/es
+<PROJECT_ROOT>/src/.*/lib
+<PROJECT_ROOT>/src/.*/etc
+<PROJECT_ROOT>/src/.*/build
+
+[include]
+
+[libs]
+
+[lints]
+unnecessary-optional-chain=error
+
+[options]
+emoji=true
+esproposal.optional_chaining=enable
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
+suppress_type=$FlowFixMe
+suppress_type=$FlowSubtype
+module.name_mapper='^@kiwicom\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/src/\1/src/index'

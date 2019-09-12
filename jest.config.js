@@ -1,3 +1,4 @@
+// @flow
 module.exports = {
-  projects: ['<rootDir>/src/*'],
-}
+  projects: ["<rootDir>/src/*"],
+};

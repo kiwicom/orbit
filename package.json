@@ -1,18 +1,16 @@
 {
-  "name": "root",
+  "name": "orbit",
   "private": true,
   "workspaces": [
-    "src/orbit-components",
-    "src/orbit-design-tokens"
+    "src/*"
   ],
   "scripts": {
-    "bootstrap": "npx lerna bootstrap && yarn prepare",
-    "prepare": "lerna run prepare",
+    "bootstrap": "npx lerna bootstrap",
     "build": "npx lerna exec --parallel -- yarn build",
     "orbit-components:start": "npx lerna exec --scope @kiwicom/orbit-components -- yarn storybook",
     "test": "jest",
     "test:ci": "jest --colors --coverage",
-    "flow": "npx lerna run flow"
+    "flow": "npx flow check"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -26,14 +24,6 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.3.4",
-    "@emotion/core": "^10.0.7",
-    "@octokit/rest": "^15.13.1",
-    "@storybook/addon-actions": "^5.0.6",
-    "@storybook/addon-info": "5.0.6",
-    "@storybook/addon-knobs": "^5.0.6",
-    "@storybook/addons": "5.0.6",
-    "@storybook/react": "^5.0.6",
-    "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.9.0",
@@ -41,11 +31,19 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.8.0",
     "core-js": "^2.5.7",
-    "flow-bin": "^0.99.1",
-    "flow-mono-cli": "^1.5.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "flow-bin": "^0.101.1",
+    "flow-typed": "^2.6.1",
     "jest": "^24.5.0",
-    "lerna": "^3.16.4",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "lerna": "^3.16.4"
   }
 }

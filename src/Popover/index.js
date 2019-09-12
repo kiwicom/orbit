@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useCallback, useMemo, useEffect } from "react";
+import React, { useRef, useCallback, useMemo, useEffect } from "react";
 import styled from "styled-components";
 
 import Portal from "../Portal";

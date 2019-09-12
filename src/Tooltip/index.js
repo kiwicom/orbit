@@ -14,6 +14,7 @@ import TooltipContent from "./components/TooltipContent";
 import type { Props } from "./index";
 
 const StyledTooltipChildren = styled.span`
+  display: inline-block;
   &:focus:active {
     outline: none;
   }

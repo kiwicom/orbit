@@ -239,6 +239,32 @@ storiesOf("Slider", module)
       const max = number("max", 24);
       const min = number("min", 1);
       const step = number("step", 1);
+      const histogramData = array("histogramData", [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+      ]);
       const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
       return (
         <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
@@ -253,6 +279,19 @@ storiesOf("Slider", module)
             step={step}
             onChange={action("onChange")}
             valueDescription={valueDescription}
+          />
+          <Slider
+            ariaLabel={ariaLabel}
+            ariaValueText={ariaValueText}
+            dataTest={dataTest}
+            defaultValue={defaultValue}
+            label={label}
+            max={max}
+            min={min}
+            step={step}
+            onChange={action("onChange")}
+            valueDescription={valueDescription}
+            histogramData={histogramData}
           />
         </div>
       );

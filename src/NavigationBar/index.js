@@ -1,12 +1,10 @@
 // @flow
-import * as React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
-import getTypeToken from "../ButtonLink/helpers/getTypeToken";
-import { TOKENS, TYPES } from "../ButtonLink/consts";
+import ButtonLink from "../ButtonLink";
 import useDictionary from "../hooks/useDictionary";
 import { pureTranslate } from "../Translate";
 
@@ -36,13 +34,6 @@ const StyledNavigationBar = styled.nav`
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   z-index: 700;
-
-  ${StyledButtonLink} {
-    padding: 0 8px;
-    :hover {
-      color: ${({ theme }) =>
-        getTypeToken(TOKENS.colorTextButtonHover)({ theme, type: TYPES.PRIMARY })}!important;
-    }
   }
 `;
 
@@ -52,6 +43,22 @@ StyledNavigationBar.defaultProps = {
 
 const NavigationBar = ({ onMenuOpen, children, dataTest }: Props) => {
   const dictionary = useDictionary();
+  const prevScrollPosition =
+  const prevScrollpos = window.pageYOffset;
+  const handleNavigationBarPosition = useCallback(() => {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+  }, [prevScrollpos]);
+  useEffect(() => {
+    window.addEventListener("scroll", handleNavigationBarPosition);
+    return () => {
+      window.removeEventListener("scroll", handleNavigationBarPosition);
+    };
+  });
   return (
     <StyledNavigationBar data-test={dataTest}>
       <StyledNavigationBarContent>{children}</StyledNavigationBarContent>

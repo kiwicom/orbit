@@ -3,16 +3,16 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { warning } from "@kiwicom/js";
 
-import transition from "../utils/transition";
-import { right, left, rtlSpacing } from "../utils/rtl";
-import defaultTheme from "../defaultTheme";
+import transition from "../../utils/transition";
+import { right, left, rtlSpacing } from "../../utils/rtl";
+import defaultTheme from "../../defaultTheme";
 import STATES from "./consts";
-import mq from "../utils/mediaQuery";
+import mq from "../../utils/mediaQuery";
 import getState from "./helpers/getState";
 
 import type { Props } from ".";
 
-const StyledNavigationLink = styled(
+const StyledNavigationListItem = styled(
   ({ selected, theme, asComponent, dataTest, selectable, ...props }) => {
     const Component = props.href ? "a" : asComponent;
     return <Component data-test={dataTest} type={!props.href ? "button" : undefined} {...props} />;
@@ -56,16 +56,16 @@ const StyledNavigationLink = styled(
   }
 `;
 
-StyledNavigationLink.defaultProps = {
+StyledNavigationListItem.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledNavigationLinkWrapper = styled.div`
+const StyledNavigationListItemWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const StyledNavigationLinkIcon = styled.div`
+const StyledNavigationListItemIcon = styled.div`
   margin-${right}: ${({ theme, hasMargin }) => hasMargin && theme.orbit.spaceXSmall};
   
   svg {
@@ -74,25 +74,25 @@ const StyledNavigationLinkIcon = styled.div`
   }
 `;
 
-StyledNavigationLinkIcon.defaultProps = {
+StyledNavigationListItemIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledNavigationLinkContent = styled.div`
+const StyledNavigationListItemContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   line-height: 20px;
 `;
 
-StyledNavigationLinkContent.defaultProps = {
+StyledNavigationListItemContent.defaultProps = {
   theme: defaultTheme,
 };
 
 // eslint-disable-next-line react/button-has-type
 const DefaultComponent = props => <button {...props} />;
 
-const NavigationLink = ({
+const NavigationListItem = ({
   icon,
   children,
   ariaLabel,
@@ -107,10 +107,10 @@ const NavigationLink = ({
 }: Props) => {
   warning(
     !(!children && !ariaLabel),
-    "Warning: children or ariaLabel property is missing on NavigationLink. Use ariaLabel property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/navigationlink/",
+    "Warning: children or ariaLabel property is missing on NavigationListItem. Use ariaLabel property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/NavigationListItem/",
   );
   return (
-    <StyledNavigationLink
+    <StyledNavigationListItem
       tabIndex={tabIndex}
       aria-label={ariaLabel}
       onClick={onClick}
@@ -122,12 +122,14 @@ const NavigationLink = ({
       rel={href && external ? "noopener noreferrer" : undefined}
       target={href && external ? "_blank" : undefined}
     >
-      <StyledNavigationLinkWrapper>
-        {icon && <StyledNavigationLinkIcon hasMargin={!!children}>{icon}</StyledNavigationLinkIcon>}
-        {children && <StyledNavigationLinkContent>{children}</StyledNavigationLinkContent>}
-      </StyledNavigationLinkWrapper>
-    </StyledNavigationLink>
+      <StyledNavigationListItemWrapper>
+        {icon && (
+          <StyledNavigationListItemIcon hasMargin={!!children}>{icon}</StyledNavigationListItemIcon>
+        )}
+        {children && <StyledNavigationListItemContent>{children}</StyledNavigationListItemContent>}
+      </StyledNavigationListItemWrapper>
+    </StyledNavigationListItem>
   );
 };
 
-export default NavigationLink;
+export default NavigationListItem;

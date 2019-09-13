@@ -3,19 +3,19 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import NavigationGroup from "../index";
+import NavigationList from "../index";
 
-describe("NavigationGroup", () => {
+describe("NavigationList", () => {
   const children = "Content";
   const dataTest = "test";
   const title = "Hello World";
   const component = shallow(
-    <NavigationGroup title={title} dataTest={dataTest}>
+    <NavigationList title={title} dataTest={dataTest}>
       {children}
-    </NavigationGroup>,
+    </NavigationList>,
   );
-  const groupTitle = component.find("NavigationGroup__StyledNavigationGroupTitle");
-  const content = component.find("NavigationGroup__StyledNavigationGroupChild");
+  const groupTitle = component.find("NavigationList__StyledNavigationListTitle");
+  const content = component.find("NavigationList__StyledNavigationListChild");
   it("should contain the children", () => {
     expect(content.render().text()).toBe(children);
   });

@@ -7,7 +7,7 @@ After adding import into your project you can use it simply like:
 ```jsx
 <Drawer shown>
   Content to show
-</NavigationGroup>
+</NavigationList>
 ```
 ## Props
 Table below contains all types of the props available in the Drawer component.

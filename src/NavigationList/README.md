@@ -1,5 +1,27 @@
-# NavigationLink
-To implement NavigationLink component into your project you'll need to add the import:
+# NavigationList
+To implement NavigationList component into your project you'll need to add the import:
+```jsx
+import NavigationList from "@kiwicom/orbit-components/lib/NavigationList";
+```
+After adding import into your project you can use it simply like:
+```jsx
+<NavigationList>
+  <NavigationLink>About us</NavigationLink>
+  <NavigationLink>Careers</NavigationLink>
+</NavigationList>
+```
+## Props
+Table below contains all types of the props available in the NavigationList component.
+
+| Name          | Type                              | Default         | Description                      |
+| :------------ | :-------------------------------- | :-------------- | :------------------------------- |
+| **children**  | `React.Node`                      |                 | The content of the NavigationList.
+| dataTest      | `string`                          |                 | Optional prop for testing purposes.
+| title         | `Translation`                     |                 | Additional title of the NavigationList that will appear above its children.
+
+## Subcomponents
+
+### NavigationListItem
 ```jsx
 import NavigationLink from "@kiwicom/orbit-components/lib/NavigationLink";
 ```

@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/navigationlink/
 */
-import type { Component, Globals } from "../common/common.js.flow";
+import type { Component, Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +ariaLabel?: string,

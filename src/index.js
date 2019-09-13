@@ -38,8 +38,8 @@ export { default as Slider } from "./Slider";
 
 // Navigation components
 export { default as NavigationBar } from "./NavigationBar";
-export { default as NavigationGroup } from "./NavigationGroup";
-export { default as NavigationLink } from "./NavigationLink";
+export { default as NavigationList } from "./NavigationList";
+export { default as NavigationListItem } from "./NavigationList/NavigationListItem";
 export { default as NavigationDrawer } from "./Drawer";
 
 // Table

@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useEffect, useState, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -11,6 +11,7 @@ import getPosition from "./helpers/getPosition";
 import getTransitionAnimation from "./helpers/getTransitionAnimation";
 import { isBox, isNavigation } from "./helpers/isType";
 import useTheme from "../hooks/useTheme";
+import useStateWithTimeout from "../hooks/useStateWithTimeout";
 
 import type { Props } from ".";
 
@@ -94,22 +95,13 @@ const Drawer = ({
 }: Props) => {
   const theme = useTheme();
   const overlayRef = useRef(null);
-  const shownRef = useRef(null);
-  const [overlayShown, setOverlayShown] = useState(shown);
   const timeoutLength = useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,
   ]);
-  const hideOverlayTimeout = useCallback(() => {
-    shownRef.current = setTimeout(() => {
-      shownRef.current = null;
-      setOverlayShown(false);
-    }, timeoutLength);
-  }, [timeoutLength]);
-  const clearOverlayTimeout = useCallback(() => {
-    if (shownRef.current !== null && typeof clearTimeout === "function") {
-      clearTimeout(shownRef.current);
-    }
-  }, []);
+  const [overlayShown, setOverlayShown, setOverlayShownWithTimeout] = useStateWithTimeout<boolean>(
+    shown,
+    timeoutLength,
+  );
   const handleOnClose = useCallback(
     ev => {
       if (onClose && ev.target === overlayRef.current) {
@@ -123,13 +115,10 @@ const Drawer = ({
       if (shown) {
         setOverlayShown(true);
       } else if (!shown) {
-        hideOverlayTimeout();
+        setOverlayShownWithTimeout(false);
       }
     }
-    return () => {
-      clearOverlayTimeout();
-    };
-  }, [clearOverlayTimeout, hideOverlayTimeout, overlayShown, shown]);
+  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown]);
   return (
     <StyledDrawer
       role="button"

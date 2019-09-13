@@ -12,9 +12,8 @@ import TextLink from "../TextLink";
 import Separator from "../Separator";
 import Illustration from "../Illustration";
 import NewWindow from "../icons/NewWindow";
-import NavigationLink from "../NavigationLink";
 import AccountCircle from "../icons/AccountCircle";
-import NavigationGroup from "../NavigationGroup";
+import NavigationList, { NavigationListItem } from "../NavigationList";
 import Deals from "../icons/Deals";
 import Settings from "../icons/Settings";
 import KiwicomCare from "../icons/KiwicomCare";
@@ -47,32 +46,34 @@ storiesOf("Drawer", module)
           shown={shown}
           onClose={action("onClose")}
         >
-          <NavigationGroup>
-            <NavigationLink icon={<AccountCircle />}>Sign in</NavigationLink>
-            <NavigationLink icon={<AccountCircle />}>Register</NavigationLink>
-          </NavigationGroup>
-          <NavigationGroup title="Connect with us">
-            <NavigationLink icon={<Deals />}>Refer a Friend</NavigationLink>
-            <NavigationLink icon={<ContactEmail />}>Subscribe to Newsletter</NavigationLink>
-            <NavigationLink icon={<Trip />}>Stories</NavigationLink>
-          </NavigationGroup>
-          <NavigationGroup title="Company">
-            <NavigationLink icon={<City />} selectable selected>
+          <NavigationList>
+            <NavigationListItem icon={<AccountCircle />}>Sign in</NavigationListItem>
+            <NavigationListItem icon={<AccountCircle />}>Register</NavigationListItem>
+          </NavigationList>
+          <NavigationList title="Connect with us">
+            <NavigationListItem icon={<Deals />}>Refer a Friend</NavigationListItem>
+            <NavigationListItem icon={<ContactEmail />}>Subscribe to Newsletter</NavigationListItem>
+            <NavigationListItem icon={<Trip />}>Stories</NavigationListItem>
+          </NavigationList>
+          <NavigationList title="Company">
+            <NavigationListItem icon={<City />} selectable selected>
               About Kiwi.com
-            </NavigationLink>
-            <NavigationLink icon={<Suitcase />}>Careers</NavigationLink>
-            <NavigationLink icon={<KiwicomCare />}>Care Kiwi.com</NavigationLink>
-            <NavigationLink icon={<Code />}>Code Kiwi.com</NavigationLink>
-            <NavigationLink icon={<KiwicomGuarantee />}>Kiwi.com Guarantee</NavigationLink>
-            <NavigationLink icon={<Kiwicom />}>Press kit</NavigationLink>
-          </NavigationGroup>
-          <NavigationGroup title="Terms & Conditions">
-            <NavigationLink icon={<TermsAndConditions />}>Terms & Conditions</NavigationLink>
-            <NavigationLink icon={<TermsAndConditions />}>Terms of Use</NavigationLink>
-            <NavigationLink icon={<Security />}>Privacy Policy</NavigationLink>
-            <NavigationLink icon={<Security />}>Security</NavigationLink>
-            <NavigationLink icon={<Settings />}>Cookies settings</NavigationLink>
-          </NavigationGroup>
+            </NavigationListItem>
+            <NavigationListItem icon={<Suitcase />}>Careers</NavigationListItem>
+            <NavigationListItem icon={<KiwicomCare />}>Care Kiwi.com</NavigationListItem>
+            <NavigationListItem icon={<Code />}>Code Kiwi.com</NavigationListItem>
+            <NavigationListItem icon={<KiwicomGuarantee />}>Kiwi.com Guarantee</NavigationListItem>
+            <NavigationListItem icon={<Kiwicom />}>Press kit</NavigationListItem>
+          </NavigationList>
+          <NavigationList title="Terms & Conditions">
+            <NavigationListItem icon={<TermsAndConditions />}>
+              Terms & Conditions
+            </NavigationListItem>
+            <NavigationListItem icon={<TermsAndConditions />}>Terms of Use</NavigationListItem>
+            <NavigationListItem icon={<Security />}>Privacy Policy</NavigationListItem>
+            <NavigationListItem icon={<Security />}>Security</NavigationListItem>
+            <NavigationListItem icon={<Settings />}>Cookies settings</NavigationListItem>
+          </NavigationList>
         </Drawer>
       );
     },
@@ -133,32 +134,38 @@ storiesOf("Drawer", module)
             shown={shown}
             onClose={action("onClose")}
           >
-            <NavigationGroup>
-              <NavigationLink icon={<AccountCircle />}>Sign in</NavigationLink>
-              <NavigationLink icon={<AccountCircle />}>Register</NavigationLink>
-            </NavigationGroup>
-            <NavigationGroup title="Connect with us">
-              <NavigationLink icon={<Deals />}>Refer a Friend</NavigationLink>
-              <NavigationLink icon={<ContactEmail />}>Subscribe to Newsletter</NavigationLink>
-              <NavigationLink icon={<Trip />}>Stories</NavigationLink>
-            </NavigationGroup>
-            <NavigationGroup title="Company">
-              <NavigationLink icon={<City />} selectable selected>
+            <NavigationList>
+              <NavigationListItem icon={<AccountCircle />}>Sign in</NavigationListItem>
+              <NavigationListItem icon={<AccountCircle />}>Register</NavigationListItem>
+            </NavigationList>
+            <NavigationList title="Connect with us">
+              <NavigationListItem icon={<Deals />}>Refer a Friend</NavigationListItem>
+              <NavigationListItem icon={<ContactEmail />}>
+                Subscribe to Newsletter
+              </NavigationListItem>
+              <NavigationListItem icon={<Trip />}>Stories</NavigationListItem>
+            </NavigationList>
+            <NavigationList title="Company">
+              <NavigationListItem icon={<City />} selectable selected>
                 About Kiwi.com
-              </NavigationLink>
-              <NavigationLink icon={<Suitcase />}>Careers</NavigationLink>
-              <NavigationLink icon={<KiwicomCare />}>Care Kiwi.com</NavigationLink>
-              <NavigationLink icon={<Code />}>Code Kiwi.com</NavigationLink>
-              <NavigationLink icon={<KiwicomGuarantee />}>Kiwi.com Guarantee</NavigationLink>
-              <NavigationLink icon={<Kiwicom />}>Press kit</NavigationLink>
-            </NavigationGroup>
-            <NavigationGroup title="Terms & Conditions">
-              <NavigationLink icon={<TermsAndConditions />}>Terms & Conditions</NavigationLink>
-              <NavigationLink icon={<TermsAndConditions />}>Terms of Use</NavigationLink>
-              <NavigationLink icon={<Security />}>Privacy Policy</NavigationLink>
-              <NavigationLink icon={<Security />}>Security</NavigationLink>
-              <NavigationLink icon={<Settings />}>Cookies settings</NavigationLink>
-            </NavigationGroup>
+              </NavigationListItem>
+              <NavigationListItem icon={<Suitcase />}>Careers</NavigationListItem>
+              <NavigationListItem icon={<KiwicomCare />}>Care Kiwi.com</NavigationListItem>
+              <NavigationListItem icon={<Code />}>Code Kiwi.com</NavigationListItem>
+              <NavigationListItem icon={<KiwicomGuarantee />}>
+                Kiwi.com Guarantee
+              </NavigationListItem>
+              <NavigationListItem icon={<Kiwicom />}>Press kit</NavigationListItem>
+            </NavigationList>
+            <NavigationList title="Terms & Conditions">
+              <NavigationListItem icon={<TermsAndConditions />}>
+                Terms & Conditions
+              </NavigationListItem>
+              <NavigationListItem icon={<TermsAndConditions />}>Terms of Use</NavigationListItem>
+              <NavigationListItem icon={<Security />}>Privacy Policy</NavigationListItem>
+              <NavigationListItem icon={<Security />}>Security</NavigationListItem>
+              <NavigationListItem icon={<Settings />}>Cookies settings</NavigationListItem>
+            </NavigationList>
           </Drawer>
         </RenderInRtl>
       );

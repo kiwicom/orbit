@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import Select from "../Select";
@@ -46,30 +46,36 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
   const [innerPages, setPages] = useState([]);
   const [show, setShow] = useState(false);
 
-  const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
-    const index = Number(ev.target.value);
-    const selected = links[index - 1];
-
-    if (selected) {
-      selected.setAttribute("tabindex", "-1");
-      selected.focus();
-    }
-  };
-
-  const handlePageClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
-    if (actions) {
+  const handleLinksClick = useCallback(
+    (ev: SyntheticInputEvent<HTMLSelectElement>) => {
       const index = Number(ev.target.value);
-      const selected = actions[index - 1];
+      const selected = links[index - 1];
 
-      if (selected.onClick) {
-        selected.onClick();
-      } else if (selected.link) {
-        window.location.href = selected.link;
+      if (selected) {
+        selected.setAttribute("tabindex", "-1");
+        selected.focus();
       }
-    }
-  };
+    },
+    [links],
+  );
 
-  const handleFocus = () => {
+  const handlePageClick = useCallback(
+    (ev: SyntheticInputEvent<HTMLSelectElement>) => {
+      if (actions) {
+        const index = Number(ev.target.value);
+        const selected = actions[index - 1];
+
+        if (selected.onClick) {
+          selected.onClick();
+        } else if (selected.link) {
+          window.location.href = selected.link;
+        }
+      }
+    },
+    [actions],
+  );
+
+  const handleFocus = useCallback(() => {
     if (links.length === 0) {
       const selectedLinks = document.querySelectorAll("[data-a11y-section]");
       const mappedSections = [
@@ -104,17 +110,14 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
       }
     }
     setShow(true);
-  };
+  }, [actions, links.length]);
+
+  const handleBlur = useCallback(() => {
+    setShow(false);
+  }, []);
 
   return (
-    <StyledNavigation
-      tabIndex="-1"
-      onFocus={handleFocus}
-      onBlur={() => {
-        setShow(false);
-      }}
-      show={show}
-    >
+    <StyledNavigation tabIndex="-1" onFocus={handleFocus} onBlur={handleBlur} show={show}>
       <Stack justify="between">
         <StyledSelectWrapper>
           <Stack align="center">

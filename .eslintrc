@@ -44,7 +44,13 @@
     "import/newline-after-import": "error",
     "import/no-mutable-exports": "error",
     "import/no-absolute-path": "error",
-    "react/jsx-no-bind": "error",
+    "react/jsx-no-bind": ["error", {
+      "ignoreDOMComponents": false,
+      "ignoreRefs": false,
+      "allowArrowFunctions": false,
+      "allowFunctions": false,
+      "allowBind": false
+    }],
     "react/no-multi-comp": "off",
     "react/prop-types":  "off",
     "react/require-default-props": "off", // Optional props can be undefined.

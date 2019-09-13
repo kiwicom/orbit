@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import Heading, { StyledHeading } from "../Heading";
@@ -79,19 +79,28 @@ StyledListChoiceContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListChoice = (props: Props) => {
-  const { dataTest, icon, title, description, selectable, onClick, selected } = props;
-
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick(ev);
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick(ev);
+const ListChoice = ({
+  dataTest,
+  icon,
+  title,
+  description,
+  selectable,
+  onClick,
+  selected,
+}: Props) => {
+  const handleKeyDown = useCallback(
+    (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+      if (onClick) {
+        if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+          onClick(ev);
+        } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+          ev.preventDefault();
+          onClick(ev);
+        }
       }
-    }
-  };
+    },
+    [onClick],
+  );
 
   return (
     <StyledListChoice onClick={onClick} data-test={dataTest} onKeyDown={handleKeyDown} tabIndex="0">

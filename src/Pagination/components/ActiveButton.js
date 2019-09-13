@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useMemo } from "react";
 import styled, { css } from "styled-components";
 
 import Button from "../../Button";
@@ -30,12 +30,12 @@ StyledButton.defaultProps = {
 };
 
 const ActiveButton = ({ children, transparent, size }: Props) => {
+  const Component = useMemo(
+    () => props => <StyledButton {...props} type={undefined} transparent={transparent} />,
+    [transparent],
+  );
   return (
-    <Button
-      type="secondary"
-      size={size}
-      component={props => <StyledButton {...props} type={undefined} transparent={transparent} />}
-    >
+    <Button type="secondary" size={size} component={Component}>
       {children}
     </Button>
   );

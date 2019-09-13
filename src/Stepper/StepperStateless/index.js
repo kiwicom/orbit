@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import Button from "../../Button";
@@ -57,6 +57,30 @@ const StepperStateless = ({
   disabledIncrement,
   disabledDecrement,
 }: StateLessProps) => {
+  const handleDecrement = useCallback(
+    ev => {
+      if (onDecrement) {
+        onDecrement(ev);
+      }
+    },
+    [onDecrement],
+  );
+  const handleIncrement = useCallback(
+    ev => {
+      if (onIncrement) {
+        onIncrement(ev);
+      }
+    },
+    [onIncrement],
+  );
+  const handleKeyDown = useCallback(
+    ev => {
+      if (onKeyDown) {
+        onKeyDown(ev);
+      }
+    },
+    [onKeyDown],
+  );
   return (
     <StyledStepper data-test={dataTest}>
       <Button
@@ -66,11 +90,7 @@ const StepperStateless = ({
         iconLeft={<Minus />}
         type="secondary"
         size="small"
-        onClick={ev => {
-          if (onDecrement) {
-            onDecrement(ev);
-          }
-        }}
+        onClick={handleDecrement}
         title={titleDecrement}
       />
       <StyledStepperInput
@@ -80,11 +100,7 @@ const StepperStateless = ({
         value={value || 0}
         min={minValue}
         max={maxValue}
-        onKeyDown={ev => {
-          if (onKeyDown) {
-            onKeyDown(ev);
-          }
-        }}
+        onKeyDown={handleKeyDown}
         onBlur={onBlur}
         onFocus={onFocus}
         readOnly
@@ -96,11 +112,7 @@ const StepperStateless = ({
         iconLeft={<Plus />}
         type="secondary"
         size="small"
-        onClick={ev => {
-          if (onIncrement) {
-            onIncrement(ev);
-          }
-        }}
+        onClick={handleIncrement}
         title={titleIncrement}
       />
     </StyledStepper>

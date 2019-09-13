@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
@@ -14,12 +14,6 @@ import Translate from "../Translate";
 
 import type { Props } from "./index";
 
-const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
-  if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {
-    onPageChange(nextPageIndex);
-  }
-};
-
 const Pagination = ({
   pageCount,
   selectedPage = 1,
@@ -28,15 +22,21 @@ const Pagination = ({
   hideLabels = true,
   size = SIZES.NORMAL,
 }: Props) => {
-  const pageChanged = handlePageChange(onPageChange, pageCount);
-
+  const handlePageChange = useCallback(
+    nextPageIndex => () => {
+      if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {
+        onPageChange(nextPageIndex);
+      }
+    },
+    [onPageChange, pageCount],
+  );
   return (
     <Stack direction="row" spacing="tight" align="center" dataTest={dataTest} element="nav">
       {selectedPage !== 1 && (
         <>
           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
             <ButtonLink
-              onClick={() => pageChanged(selectedPage - 1)}
+              onClick={handlePageChange(selectedPage - 1)}
               iconLeft={<ChevronLeft />}
               type="secondary"
               size={size}
@@ -46,7 +46,7 @@ const Pagination = ({
           </Hide>
           <Hide on={["tablet", "desktop", "largeDesktop"]}>
             <ButtonLink
-              onClick={() => pageChanged(selectedPage - 1)}
+              onClick={handlePageChange(selectedPage - 1)}
               iconLeft={<ChevronLeft />}
               type="secondary"
               size={size}
@@ -82,7 +82,7 @@ const Pagination = ({
         <>
           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
             <ButtonLink
-              onClick={() => pageChanged(selectedPage + 1)}
+              onClick={handlePageChange(selectedPage + 1)}
               iconRight={!hideLabels && <ChevronRight />}
               iconLeft={hideLabels && <ChevronRight />}
               type="secondary"
@@ -93,7 +93,7 @@ const Pagination = ({
           </Hide>
           <Hide on={["tablet", "desktop", "largeDesktop"]}>
             <ButtonLink
-              onClick={() => pageChanged(selectedPage + 1)}
+              onClick={handlePageChange(selectedPage + 1)}
               iconLeft={<ChevronRight />}
               type="secondary"
               size={size}

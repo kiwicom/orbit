@@ -1,13 +1,16 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 
 import ButtonLink from "../../ButtonLink";
 import type { Props } from "./PageButtonLink";
 
-const PageButtonLink = ({ children, onPageChange, size }: Props) => (
-  <ButtonLink onClick={() => onPageChange(children)} type="secondary" size={size}>
-    {children}
-  </ButtonLink>
-);
+const PageButtonLink = ({ children, onPageChange, size }: Props) => {
+  const handleClick = useCallback(() => onPageChange(children), [children, onPageChange]);
+  return (
+    <ButtonLink onClick={handleClick} type="secondary" size={size}>
+      {children}
+    </ButtonLink>
+  );
+};
 
 export default PageButtonLink;

@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -128,7 +128,15 @@ StyledClose.defaultProps = {
 
 const Tag = (props: Props) => {
   const { icon, selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
-
+  const handleOnClick = useCallback(
+    ev => {
+      ev.stopPropagation();
+      if (onRemove) {
+        onRemove();
+      }
+    },
+    [onRemove],
+  );
   return (
     <StyledTag
       data-test={dataTest}
@@ -141,14 +149,7 @@ const Tag = (props: Props) => {
       {icon && <IconContainer>{icon}</IconContainer>}
       {children}
       {(!!onRemove || selected) && (
-        <CloseContainer
-          onClick={ev => {
-            ev.stopPropagation();
-            if (onRemove) {
-              onRemove();
-            }
-          }}
-        >
+        <CloseContainer onClick={handleOnClick}>
           <StyledClose tabIndex="0" role="button">
             <CloseCircle size="small" />
           </StyledClose>

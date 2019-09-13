@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import KEY_CODE_MAP from "../common/keyMaps";
@@ -56,6 +56,14 @@ const StyledDescription = styled.p`
 `;
 
 const SkipLink = ({ links, description }: Props) => {
+  const handleKeyDown = useCallback(
+    onClick => ev => {
+      if (ev.keyCode === KEY_CODE_MAP.ENTER && onClick) {
+        onClick();
+      }
+    },
+    [],
+  );
   return (
     <StyledNavigation>
       {description && <StyledDescription>{description}</StyledDescription>}
@@ -68,11 +76,7 @@ const SkipLink = ({ links, description }: Props) => {
               tabIndex={href ? "" : "0"}
               role={href ? "" : "Button"}
               onClick={onClick}
-              onKeyDown={ev => {
-                if (ev.keyCode === KEY_CODE_MAP.ENTER && onClick) {
-                  onClick();
-                }
-              }}
+              onKeyDown={handleKeyDown(onClick)}
             >
               {name}
             </StyledLink>

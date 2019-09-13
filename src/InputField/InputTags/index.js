@@ -1,5 +1,5 @@
 // @flow
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, createRef } from "react";
 import styled from "styled-components";
 
 import { rtlSpacing } from "../../utils/rtl";
@@ -44,7 +44,13 @@ StyledInputTagsInner.defaultProps = {
 };
 
 const InputTags = ({ children }: Props) => {
-  const tagsRef = React.createRef();
+  const tagsRef = createRef();
+
+  const handleMouseDown = useCallback(() => {
+    if (tagsRef && tagsRef.current) {
+      tagsRef.current.isDragging = true;
+    }
+  }, [tagsRef]);
 
   useEffect(() => {
     const handleMouseMove = event => {
@@ -78,14 +84,7 @@ const InputTags = ({ children }: Props) => {
 
   return (
     <StyledInputTags>
-      <StyledInputTagsInner
-        ref={tagsRef}
-        onMouseDown={() => {
-          if (tagsRef && tagsRef.current) {
-            tagsRef.current.isDragging = true;
-          }
-        }}
-      >
+      <StyledInputTagsInner ref={tagsRef} onMouseDown={handleMouseDown}>
         {children}
       </StyledInputTagsInner>
     </StyledInputTags>

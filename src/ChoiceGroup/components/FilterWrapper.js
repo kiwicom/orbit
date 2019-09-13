@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import type { FilterWrapperType } from "./FilterWrapper.js.flow";
@@ -36,18 +36,17 @@ StyledContentWrapper.defaultProps = {
 };
 
 const FilterWrapper: FilterWrapperType = ({ child, children, onOnlySelection }) => {
+  const handleOnClick = useCallback(
+    ev => {
+      onOnlySelection(ev, { value: child.props.value, label: child.props.label });
+    },
+    [child.props.label, child.props.value, onOnlySelection],
+  );
   return (
     <StyledContentWrapper>
       {children}
       {onOnlySelection && (
-        <StyledOnlyButton
-          type="secondary"
-          size="small"
-          onClick={ev => {
-            onOnlySelection(ev, { value: child.props.value, label: child.props.label });
-          }}
-          transparent
-        >
+        <StyledOnlyButton type="secondary" size="small" onClick={handleOnClick} transparent>
           Only {/* TODO: Dictionary */}
         </StyledOnlyButton>
       )}

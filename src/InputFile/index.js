@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -125,7 +125,15 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
     dataTest,
     spaceAfter,
   } = props;
-
+  const handleRemoveFile = useCallback(
+    ev => {
+      ev.preventDefault();
+      if (onRemoveFile) {
+        onRemoveFile();
+      }
+    },
+    [onRemoveFile],
+  );
   return (
     <Field spaceAfter={spaceAfter}>
       <Input
@@ -154,12 +162,7 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
             type="secondary"
             transparent
             icon={<CloseCircle />}
-            onClick={ev => {
-              ev.preventDefault();
-              if (onRemoveFile) {
-                onRemoveFile();
-              }
-            }}
+            onClick={handleRemoveFile}
           />
         )}
       </FakeInput>

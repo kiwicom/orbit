@@ -217,6 +217,29 @@ storiesOf("Popover", module)
     },
   )
   .add(
+    "Multiple Popovers",
+    () => {
+      return (
+        <Stack flex>
+          <Popover content={overlappedContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+          <Popover content={overlappedContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+        </Stack>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const dataTest = text("dataTest", "test");

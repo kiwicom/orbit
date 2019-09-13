@@ -5,6 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
+import Text from "../../Text";
 
 import type { Props } from "./index";
 
@@ -36,10 +37,17 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (
+const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
-    <span>{children}</span>
+    <span>
+      {label && (
+        <Text element="div" size="small" type="secondary">
+          {label}
+        </Text>
+      )}
+      {children}
+    </span>
   </Item>
 );
 

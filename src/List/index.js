@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import { StyledCarrierLogo } from "../CarrierLogo";
 import getSpacingToken from "../common/getSpacingToken";
-import { IconContainer } from "./ListItem";
+import { Item, IconContainer } from "./ListItem";
 
 import type { Props } from "./index";
 
@@ -66,6 +66,18 @@ const StyledList = styled(({ className, children, dataTest }) => (
       width: ${({ theme }) => theme.orbit.widthIconSmall};
     }
   }
+
+  ${({ type, theme }) =>
+    type === TYPES.LISTITEM &&
+    css`
+      ${Item} {
+        border-bottom: 1px solid #e8edf1;
+        padding: ${theme.orbit.spaceXSmall};
+      }
+      ${Item}:last-child {
+        border-bottom: none;
+      }
+    `}
 `;
 
 StyledList.defaultProps = {

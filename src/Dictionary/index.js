@@ -1,11 +1,11 @@
 // @flow
-import React, { useCallback, createContext } from "react";
+import * as React from "react";
 
 import { pureTranslate } from "../Translate";
 
 import type { DictionaryContextType, Props } from "./index";
 
-export const DictionaryContext: DictionaryContextType = createContext({});
+export const DictionaryContext: DictionaryContextType = React.createContext({});
 
 const Dictionary = ({ values, children }: Props) => (
   <DictionaryContext.Provider value={values}>{children}</DictionaryContext.Provider>
@@ -13,7 +13,7 @@ const Dictionary = ({ values, children }: Props) => (
 
 export function withDictionary(Component: React.ComponentType<any>) {
   return function DictionaryComponent(props: any) {
-    const memoTranslate = useCallback(
+    const memoTranslate = React.useCallback(
       dictionary => (tKey, values) => pureTranslate(dictionary, tKey, values),
       [],
     );

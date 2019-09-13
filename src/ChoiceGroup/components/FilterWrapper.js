@@ -38,7 +38,9 @@ StyledContentWrapper.defaultProps = {
 const FilterWrapper: FilterWrapperType = ({ child, children, onOnlySelection }) => {
   const handleOnClick = useCallback(
     ev => {
-      onOnlySelection(ev, { value: child.props.value, label: child.props.label });
+      if (onOnlySelection) {
+        onOnlySelection(ev, { value: child.props.value, label: child.props.label });
+      }
     },
     [child.props.label, child.props.value, onOnlySelection],
   );

@@ -16,7 +16,12 @@ storiesOf("NavigationBar", module).add(
     const dataTest = text("dataTest", "test");
     return (
       <div style={{ height: "1000px" }}>
-        <NavigationBar onMenuOpen={action("onMenuOpen")} dataTest={dataTest}>
+        <NavigationBar
+          onMenuOpen={action("onMenuOpen")}
+          onShow={action("onShow")}
+          onHide={action("onHide")}
+          dataTest={dataTest}
+        >
           <NavigationList type="inline">
             <ButtonLink
               iconLeft={<CountryFlag code="gb" name="English" />}

@@ -1,7 +1,7 @@
 // @flow
 import { Interpolation } from "styled-components";
 
-import type { Theme } from "../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
 
 type States = "hover" | "focus";
 

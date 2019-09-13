@@ -1,0 +1,7 @@
+// @flow
+export type Return<S> = [S, (S) => void];
+
+declare export default function useStateWithCallback<S>(
+  defaultValue: S,
+  callback: (S) => void,
+): Return<S>;

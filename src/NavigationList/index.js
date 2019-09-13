@@ -13,14 +13,14 @@ import TYPES from "./consts";
 import NavigationListSeparator, {
   StyledNavigationListSeparator,
 } from "./components/NavigationListSeparator";
-import { isNavigationBox, isInline } from "./helpers/isType";
+import { isNavigation, isInline } from "./helpers/isType";
 
 import type { Props } from ".";
 
 const StyledNavigationListContent = styled(({ type, theme, ...props }) => <ul {...props} />)`
   display: flex;
   width: 100%;
-  flex-direction: ${({ type }) => (isNavigationBox(type) ? "column" : "row")};
+  flex-direction: ${({ type }) => (isNavigation(type) ? "column" : "row")};
   list-style: none;
   padding: 0;
   ${({ type }) =>
@@ -38,7 +38,7 @@ const StyledNavigationListContent = styled(({ type, theme, ...props }) => <ul {.
       }
     `};
   ${({ type }) =>
-    isNavigationBox(type)
+    isNavigation(type)
       ? css`
           margin: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
         `
@@ -57,7 +57,7 @@ const StyledNavigationList = styled(({ theme, type, ...props }) => <div {...prop
   width: 100%;
 
   ${({ type }) =>
-    isNavigationBox(type) &&
+    isNavigation(type) &&
     css`
       padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
       :first-child {
@@ -92,7 +92,7 @@ StyledNavigationListTitle.defaultProps = {
 
 const StyledNavigationListChild = styled.li``;
 
-const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION_BOX }: Props) => (
+const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION }: Props) => (
   <StyledNavigationList data-test={dataTest} type={type}>
     {title && (
       <StyledNavigationListTitle>
@@ -106,7 +106,7 @@ const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION_BOX
         <StyledNavigationListChild>{React.cloneElement(item)}</StyledNavigationListChild>
       ))}
     </StyledNavigationListContent>
-    {isNavigationBox(type) && <NavigationListSeparator />}
+    {isNavigation(type) && <NavigationListSeparator />}
   </StyledNavigationList>
 );
 

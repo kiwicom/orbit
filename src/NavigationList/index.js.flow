@@ -2,9 +2,12 @@
 import type { Globals, Translation } from "../common/common.js.flow";
 import type { Props as ItemProps } from "./NavigationListItem";
 
+export type Types = "navigation" | "inline";
+
 export type Props = {|
   +children: React$Node,
   +title?: Translation,
+  +type?: Types,
   ...Globals,
 |};
 

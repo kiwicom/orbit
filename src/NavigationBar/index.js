@@ -7,6 +7,7 @@ import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
 import useDictionary from "../hooks/useDictionary";
 import { pureTranslate } from "../Translate";
+import useStateWithCallback from "../hooks/useStateWithCallback";
 
 import type { Props } from ".";
 
@@ -34,25 +35,39 @@ const StyledNavigationBar = styled.nav`
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   z-index: 700;
-  }
+  transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transform: translate3d(0, ${({ shown }) => (shown ? "0" : "-64px")}, 0);
 `;
 
 StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationBar = ({ onMenuOpen, children, dataTest }: Props) => {
+const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props) => {
   const dictionary = useDictionary();
-  const prevScrollPosition =
-  const prevScrollpos = window.pageYOffset;
+  const resolveCallback = useCallback(
+    state => {
+      if (onHide && !state) onHide();
+      if (onShow && state) onShow();
+    },
+    [onHide, onShow],
+  );
+  const [shown, setShown] = useStateWithCallback<boolean>(true, resolveCallback);
+
+  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const handleNavigationBarPosition = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
+    const currentScrollPosition =
+      window.scrollY ||
+      window.pageYOffset ||
+      (document.documentElement && document.documentElement.scrollTop);
+    if (prevScrollPosition < currentScrollPosition && currentScrollPosition > 64) {
+      setShown(false);
     } else {
-      document.getElementById("navbar").style.top = "-50px";
+      setShown(true);
     }
-  }, [prevScrollpos]);
+    setPrevScrollPosition(currentScrollPosition);
+  }, [prevScrollPosition, setShown]);
+
   useEffect(() => {
     window.addEventListener("scroll", handleNavigationBarPosition);
     return () => {
@@ -60,7 +75,7 @@ const NavigationBar = ({ onMenuOpen, children, dataTest }: Props) => {
     };
   });
   return (
-    <StyledNavigationBar data-test={dataTest}>
+    <StyledNavigationBar data-test={dataTest} shown={shown}>
       <StyledNavigationBarContent>{children}</StyledNavigationBarContent>
       {onMenuOpen && (
         <ButtonLink

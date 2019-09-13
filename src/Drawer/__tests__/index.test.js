@@ -3,7 +3,7 @@ import * as React from "react";
 import { mount } from "enzyme";
 
 import Drawer from "../index";
-import NavigationLink from "../../NavigationLink";
+import NavigationList, { NavigationListItem } from "../../NavigationList";
 
 describe("Drawer", () => {
   const dataTest = "test";
@@ -12,7 +12,9 @@ describe("Drawer", () => {
   const width = "400px";
   const component = mount(
     <Drawer dataTest={dataTest} onClose={onClose} shown={shown} width={width}>
-      <NavigationLink onClick={jest.fn()}>Hello world!</NavigationLink>
+      <NavigationList>
+        <NavigationListItem onClick={jest.fn()}>Hello world!</NavigationListItem>
+      </NavigationList>
     </Drawer>,
   );
   const wrapper = component.find("Drawer__StyledDrawer");

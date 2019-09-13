@@ -4,7 +4,7 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import NavigationLink from "../index";
-import Airplane from "../../icons/Airplane";
+import Airplane from "../../../icons/Airplane";
 
 describe("NavigationLink horizontal", () => {
   const onClick = jest.fn();

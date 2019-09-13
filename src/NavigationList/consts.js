@@ -1,7 +1,7 @@
 // @flow
 const TYPES = {
   INLINE: "inline",
-  NAVIGATION_BOX: "navigationBox",
+  NAVIGATION: "navigation",
 };
 
 export default TYPES;

@@ -1,0 +1,7 @@
+// @flow
+export type Return<S> = [S, (S) => void, (S) => void, () => void];
+
+declare export default function useStateWithTimeout<S>(
+  defaultValue: S,
+  timeout?: number,
+): Return<S>;

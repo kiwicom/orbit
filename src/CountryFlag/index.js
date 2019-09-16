@@ -84,7 +84,7 @@ export function getCountryProps(code: ?string, name: ?string): { code: string, n
 const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props) => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
-    <StyledCountryFlag>
+    <StyledCountryFlag size={size}>
       <StyledImage
         key={code}
         alt={name}

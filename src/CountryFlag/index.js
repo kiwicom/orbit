@@ -5,14 +5,26 @@ import { warning } from "@kiwicom/js";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
-import { baseURL, CODES } from "./consts";
+import { baseURL, CODES, SIZES, TOKENS } from "./consts";
 
-import type { Props } from "./index";
+const getSizeToken = name => ({ theme, size }) => {
+  const tokens = {
+    [TOKENS.WIDTH]: {
+      [SIZES.SMALL]: "16px",
+      [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
+    },
+    [TOKENS.HEIGHT]: {
+      [SIZES.SMALL]: "8px",
+      [SIZES.MEDIUM]: "13px",
+    },
+  };
+  return tokens[name][size];
+};
 
 const StyledCountryFlag = styled.div`
   position: relative;
-  height: 13px; // TODO: change token heightCountryFlag
-  width: ${({ theme }) => theme.orbit.widthCountryFlag};
+  height: ${getSizeToken(TOKENS.HEIGHT)};
+  width: ${getSizeToken(TOKENS.WIDTH)};
   background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
   overflow: hidden;
@@ -23,7 +35,13 @@ StyledCountryFlag.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledImage = styled.img`
+export const StyledImage = styled.img.attrs(({ theme, size, code }) => {
+  const width = parseInt(getSizeToken(TOKENS.WIDTH)({ theme, size }), 10);
+  return {
+    src: `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`,
+    srcSet: `${baseURL}/flags/${width * 2}x0/flag-${code.toLowerCase()}.jpg 2x`,
+  };
+})`
   display: block;
   height: 100%;
   width: 100%;
@@ -63,17 +81,17 @@ export function getCountryProps(code: ?string, name: ?string): { code: string, n
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = ({ dataTest, ...props }: Props) => {
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props) => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
     <StyledCountryFlag>
       <StyledImage
         key={code}
-        src={`${baseURL}/flags/24x0/flag-${code.toLowerCase()}.jpg`}
-        srcSet={`${baseURL}/flags/48x0/flag-${code.toLowerCase()}.jpg 2x`}
         alt={name}
         title={name}
+        code={code}
         data-test={dataTest}
+        size={size}
       />
       <StyledShadow />
     </StyledCountryFlag>

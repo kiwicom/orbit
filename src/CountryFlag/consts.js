@@ -260,3 +260,13 @@ export const CODES = {
   ZM: "zm",
   ZW: "zw",
 };
+
+export const SIZES = {
+  SMALL: "small",
+  MEDIUM: "medium",
+};
+
+export const TOKENS = {
+  WIDTH: "width",
+  HEIGHT: "height",
+};

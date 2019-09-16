@@ -138,7 +138,7 @@ const StyledSelect = styled(
   &:disabled {
     color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
     background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
-    cursor: default;
+    cursor: not-allowed;
 
     &:hover {
       box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};

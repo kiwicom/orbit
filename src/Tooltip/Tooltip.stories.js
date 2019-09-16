@@ -35,9 +35,12 @@ storiesOf("Tooltip", module)
           officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
           Sed vel lectus.{" "}
           <Tooltip content={content}>
-            <Text>Another Tooltip.</Text>
-          </Tooltip>{" "}
-          Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
+            <Text>
+              Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
+              congue. Sed vel lectus.
+            </Text>
+          </Tooltip>
         </Alert>
       );
     },

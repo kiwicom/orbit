@@ -92,11 +92,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
             );
           })}
         </Stack>
-        {error && (
-          <FormFeedback type="error" fixed>
-            {error}
-          </FormFeedback>
-        )}
+        {error && <FormFeedback type="error">{error}</FormFeedback>}
       </StyledChoiceGroup>
     );
   }

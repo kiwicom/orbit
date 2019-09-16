@@ -94,7 +94,13 @@ const ListChoice = (props: Props) => {
   };
 
   return (
-    <StyledListChoice onClick={onClick} data-test={dataTest} onKeyDown={handleKeyDown} tabIndex="0">
+    <StyledListChoice
+      onClick={onClick}
+      data-test={dataTest}
+      onKeyDown={handleKeyDown}
+      tabIndex="0"
+      role="button"
+    >
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
         <Heading type="title4" element="div">

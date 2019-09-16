@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -172,6 +172,9 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
     tabIndex,
   } = props;
 
+  const preventOnClick = useCallback(ev => {
+    ev.preventDefault();
+  }, []);
   return (
     <Label disabled={disabled} hasError={hasError} checked={checked}>
       <Input
@@ -187,7 +190,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
         ref={ref}
         readOnly={readOnly}
       />
-      <IconContainer>
+      <IconContainer onClick={readOnly ? preventOnClick : null}>
         <Check />
       </IconContainer>
       {(label || info) && (

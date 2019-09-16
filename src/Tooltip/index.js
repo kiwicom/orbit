@@ -15,21 +15,13 @@ import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import type { Props } from "./index";
 
 const StyledTooltipChildren = styled.span`
+  display: inline-block;
   &:focus:active {
     outline: none;
   }
   ${StyledText} {
-    position: relative;
     display: inline-block;
-    :after {
-      display: block;
-      border-bottom: 1px dotted currentColor;
-      position: relative;
-      content: " ";
-      width: 100%;
-      height: 0;
-      top: -1px;
-    }
+    text-decoration: underline currentColor dotted;
   }
 `;
 

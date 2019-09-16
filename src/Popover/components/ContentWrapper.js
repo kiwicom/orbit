@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -14,6 +14,7 @@ import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -69,7 +70,7 @@ const StyledOverlay = styled.div`
   z-index: 999;
 
   ${media.largeMobile(css`
-    background-color: transparent;
+    display: none;
   `)};
 `;
 StyledOverlay.defaultProps = {
@@ -109,17 +110,6 @@ const PopoverContentWrapper = ({
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
 
-  const handleClick = useCallback(
-    (ev: SyntheticEvent<HTMLElement>) => {
-      ev.stopPropagation();
-
-      if (ev.target === overlay.current) {
-        onClose();
-      }
-    },
-    [onClose],
-  );
-
   useEffect(() => {
     const timer = setTimeout(() => {
       if (popover.current) {
@@ -129,9 +119,11 @@ const PopoverContentWrapper = ({
     return () => clearTimeout(timer);
   }, []);
 
+  useClickOutside(popover, onClose);
+
   return (
     <React.Fragment>
-      <StyledOverlay ref={overlay} onClick={handleClick} shown={shown} />
+      <StyledOverlay ref={overlay} shown={shown} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}
@@ -145,7 +137,6 @@ const PopoverContentWrapper = ({
         popoverWidth={dimensions.popoverWidth}
         width={width}
         ref={popover}
-        onClick={handleClick}
         tabIndex="0"
         data-test={dataTest}
         noPadding={noPadding}

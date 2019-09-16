@@ -17,6 +17,7 @@ exports[`ListChoice should match snapshot 1`] = `
     }
   }
   onKeyDown={[Function]}
+  role="button"
   tabIndex="0"
   theme={
     Object {

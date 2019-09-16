@@ -38,7 +38,63 @@ const content = (
 
 storiesOf("PricingTable", module)
   .addDecorator(withKnobs)
-
+  .add(
+    "Compact",
+    () => {
+      return (
+        <PricingTable>
+          <PricingTableItem
+            name="Limited Services"
+            priceBadge={<Badge type="info">Included</Badge>}
+            action={
+              <Button type="secondary" block>
+                Don't upgrade
+              </Button>
+            }
+            mobileDescription="Basic ticket fare includes:"
+            onClick={() => {
+              action("onClick");
+            }}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            name="Plus Services"
+            priceBadge={<Badge type="info">+ 10</Badge>}
+            promoIcon=""
+            badge="Popular"
+            action={<Button block>Upgrade and continue</Button>}
+            mobileDescription="Flexi ticket fare includes:"
+            onClick={() => {
+              action("onClick");
+            }}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            name="Premium Services"
+            priceBadge={<Badge type="info">+ 20</Badge>}
+            promoIcon=""
+            action={
+              <Button type="secondary" block>
+                Upgrade and continue
+              </Button>
+            }
+            mobileDescription="Premium ticket fare includes:"
+            onClick={() => {
+              action("onClick");
+            }}
+          >
+            {content}
+          </PricingTableItem>
+        </PricingTable>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
   .add(
     "Playground",
     () => {

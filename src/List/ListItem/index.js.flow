@@ -14,4 +14,6 @@ declare export default React$ComponentType<Props>;
 
 declare export var IconContainer: ReactComponentStyled<any>;
 
+declare export var StyledLabel: ReactComponentStyled<any>;
+
 declare export var Item: ReactComponentStyled<any>;

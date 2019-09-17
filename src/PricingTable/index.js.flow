@@ -9,6 +9,7 @@ import type { Globals } from "../common/common.js.flow";
 export type Props = {|
   ...Globals,
   +children: any, // TODO: Type this propperly
+  +defaultActiveElement?: number,
 |};
 
 declare export default React$ComponentType<Props>;

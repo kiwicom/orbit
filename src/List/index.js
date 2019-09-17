@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import { StyledCarrierLogo } from "../CarrierLogo";
 import getSpacingToken from "../common/getSpacingToken";
-import { Item, IconContainer } from "./ListItem";
+import { Item, IconContainer, StyledLabel } from "./ListItem";
 
 import type { Props } from "./index";
 
@@ -15,6 +15,15 @@ const getSizeToken = ({ theme, size }) => {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
+  };
+  return sizeTokens[size];
+};
+
+const getSizeTokenLabel = ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeTextSmall,
+    [SIZES.LARGE]: theme.orbit.fontSizeTextNormal,
   };
   return sizeTokens[size];
 };
@@ -68,7 +77,7 @@ const StyledList = styled(({ className, children, dataTest }) => (
   }
 
   ${({ type, theme }) =>
-    type === TYPES.LISTITEM &&
+    type === TYPES.SEPARATED &&
     css`
       ${Item} {
         border-bottom: 1px solid #e8edf1;
@@ -78,6 +87,10 @@ const StyledList = styled(({ className, children, dataTest }) => (
         border-bottom: none;
       }
     `}
+
+  ${StyledLabel} {
+    font-size: ${getSizeTokenLabel};
+  }
 `;
 
 StyledList.defaultProps = {

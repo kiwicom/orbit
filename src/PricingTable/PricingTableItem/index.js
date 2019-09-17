@@ -1,12 +1,13 @@
 // @flow
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Stack from "../../Stack";
 import Text from "../../Text";
 import Radio from "../../Radio";
 import Badge from "../../Badge";
+import media from "../../utils/mediaQuery";
 import type { Props } from "./index.js.flow";
 
 const StyledPricingTableItem = styled.div`
@@ -24,6 +25,21 @@ const StyledPricingTableItem = styled.div`
   &:hover {
     box-shadow: 0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12);
   }
+
+  ${({ basis }) =>
+    basis &&
+    css`
+      flex-basis: ${basis}%;
+    `}
+
+  ${({ featureIcon }) =>
+    featureIcon &&
+    css`
+      ${media.tablet(css`
+        padding-top: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
+        padding-bottom: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
+      `)}
+    `}
 `;
 
 StyledPricingTableItem.defaultProps = {
@@ -47,13 +63,14 @@ const PricingTableItem = ({
   name,
   price,
   priceBadge,
-  promoIcon,
+  featureIcon,
   badge,
   action,
   active = false,
   compact = false,
   children,
   onClick,
+  basis,
 }: Props) => {
   const onClickHandler = () => {
     if (onClick) {
@@ -62,20 +79,17 @@ const PricingTableItem = ({
   };
 
   return (
-    <StyledPricingTableItem
-      onClick={() => {
-        onClickHandler();
-      }}
-    >
+    <StyledPricingTableItem onClick={onClickHandler} basis={basis} featureIcon={!!featureIcon}>
       {badge && (
         <StyledBadge>
           {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
         </StyledBadge>
       )}
-      <Stack spacing="compact">
-        <Stack spacing="extraTight">
+      <Stack flex direction="column" spacing="condensed" tablet={{ spacing: "natural" }}>
+        {featureIcon && <Stack justify="center">{featureIcon}</Stack>}
+        <Stack spacing="tight">
           {name && (
-            <Text type="primary" align="center" weight={promoIcon ? "normal" : "bold"}>
+            <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
               {name}
             </Text>
           )}
@@ -91,12 +105,7 @@ const PricingTableItem = ({
         {compact && (
           <Stack justify="center" align="center">
             <Item>
-              <Radio
-                checked={active}
-                onChange={() => {
-                  onClickHandler();
-                }}
-              />
+              <Radio checked={active} onChange={onClickHandler} />
             </Item>
           </Stack>
         )}

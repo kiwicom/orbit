@@ -8,12 +8,13 @@ export type Props = {|
   +price?: Translation,
   +mobileDescription?: Translation,
   +priceBadge?: React$Node,
-  +promoIcon?: React$Node,
+  +featureIcon?: React$Node,
   +badge?: React$Node,
   +children?: React$Node,
   +active?: boolean,
   +compact?: boolean,
   +action?: React$Node,
+  +basis?: number,
   +onClick?: () => void | Promise<any>,
 |};
 

@@ -60,9 +60,9 @@ storiesOf("List", module)
     },
   )
   .add(
-    "ListItem type",
+    "ListItem",
     () => {
-      const type = select("Type", Object.values(TYPES), TYPES.LISTITEM);
+      const type = select("Type", Object.values(TYPES), TYPES.SEPARATED);
       const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
       const Icon = getIcon(getIcons("Check"));
       const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);

@@ -5,7 +5,6 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
-import Text from "../../Text";
 
 import type { Props } from "./index";
 
@@ -37,15 +36,20 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
+export const StyledLabel = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  color: ${({ theme }) => theme.orbit.colorTextSecondary};
+`;
+
+StyledLabel.defaultProps = {
+  theme: defaultTheme,
+};
+
 const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
     <span>
-      {label && (
-        <Text element="div" size="small" type="secondary">
-          {label}
-        </Text>
-      )}
+      {label && <StyledLabel>{label}</StyledLabel>}
       {children}
     </span>
   </Item>

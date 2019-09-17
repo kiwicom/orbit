@@ -8,5 +8,5 @@ export const SIZES = {
 export const TYPES = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
-  LISTITEM: "listItem",
+  SEPARATED: "separated",
 };

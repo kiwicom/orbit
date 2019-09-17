@@ -9,18 +9,27 @@ import type { Props } from "./index.js.flow";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children }: Props) => {
+const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
   const { isTablet } = useMediaQuery();
-  const [activeElement, setActiveElement] = useState(0);
+  const [activeElement, setActiveElement] = useState(defaultActiveElement);
   return (
     <StyledPricingTable>
-      <Stack flex grow spaceAfter="medium">
+      <Stack
+        flex
+        grow
+        spaceAfter="medium"
+        spacing="condensed"
+        // TODO: Add stretch
+        align="start"
+        tablet={{ spacing: "natural", spaceAfter: "none" }}
+      >
         {isTablet
           ? children
           : React.Children.map(children, (child, i) =>
               React.cloneElement(child, {
                 active: activeElement === i,
                 compact: true,
+                basis: Math.floor(100 / children.length),
                 onClick: () => {
                   if (!isTablet) {
                     setActiveElement(i);
@@ -29,7 +38,7 @@ const PricingTable = ({ children }: Props) => {
               }),
             )}
       </Stack>
-      {!isTablet && (
+      {!isTablet && children[activeElement] && (
         <Stack spacing="condensed">
           <Text weight="bold" size="normal">
             {children[activeElement].props.mobileDescription}

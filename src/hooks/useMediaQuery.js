@@ -4,6 +4,16 @@ import { useState, useEffect } from "react";
 import type { UseMediaQuery } from "./useMediaQuery";
 import useTheme from "./useTheme";
 
+const debounce = (callback, time) => {
+  let interval;
+  return (...args) => {
+    clearTimeout(interval);
+    interval = setTimeout(() => {
+      callback(...args);
+    }, time);
+  };
+};
+
 const useMediaQuery: UseMediaQuery = () => {
   const theme = useTheme().orbit;
   const [breakpointList, setBreakpointList] = useState([
@@ -63,7 +73,7 @@ const useMediaQuery: UseMediaQuery = () => {
     updateMatch();
 
     // Tie listener to all MediaQueryList items
-    mediaList.forEach(mediaListItem => mediaListItem.addListener(updateListener));
+    mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateListener, 150)));
 
     return () => {
       // cleanup

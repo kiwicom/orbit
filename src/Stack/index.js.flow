@@ -7,7 +7,7 @@ import type { Globals } from "../common/common.js.flow";
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 
-export type Align = "start" | "end" | "center";
+export type Align = "start" | "end" | "center" | "stretch";
 
 export type Justify = "start" | "end" | "center" | "between" | "around";
 

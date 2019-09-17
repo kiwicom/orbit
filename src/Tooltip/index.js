@@ -80,7 +80,10 @@ const Tooltip = ({
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
-        onClick={handleInMobile}
+        onClick={ev => {
+          ev.stopPropagation();
+          handleInMobile();
+        }}
         onFocus={handleIn}
         onBlur={handleOut}
         ref={container}

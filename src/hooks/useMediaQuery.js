@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import type { UseMediaQuery } from "./useMediaQuery";
 import useTheme from "./useTheme";
+import { getBreakpointWidth } from "../utils/mediaQuery/index";
 
 const debounce = (callback, time) => {
   let interval;
@@ -15,30 +16,30 @@ const debounce = (callback, time) => {
 };
 
 const useMediaQuery: UseMediaQuery = () => {
-  const theme = useTheme().orbit;
+  const theme = useTheme();
   const [breakpointList, setBreakpointList] = useState([
     {
-      media: `(min-width: ${theme.widthBreakpointLargeDesktop}px)`,
+      media: getBreakpointWidth("largeDesktop", theme),
       mapping: "isLargeDesktop",
       matches: null,
     },
     {
-      media: `(min-width: ${theme.widthBreakpointDesktop}px)`,
+      media: getBreakpointWidth("desktop", theme),
       mapping: "isDesktop",
       matches: null,
     },
     {
-      media: `(min-width: ${theme.widthBreakpointLargeMobile}px)`,
+      media: getBreakpointWidth("largeMobile", theme),
       mapping: "isLargeMobile",
       matches: null,
     },
     {
-      media: `(min-width: ${theme.widthBreakpointMediumMobile}px)`,
+      media: getBreakpointWidth("mediumMobile", theme),
       mapping: "isMediumMobile",
       matches: null,
     },
     {
-      media: `(min-width: ${theme.widthBreakpointTablet}px)`,
+      media: getBreakpointWidth("tablet", theme),
       mapping: "isTablet",
       matches: null,
     },
@@ -48,9 +49,11 @@ const useMediaQuery: UseMediaQuery = () => {
   const mediaList = breakpointList.map(breakpoint => window.matchMedia(breakpoint.media));
 
   const findMatch = (mediaToMatch, list) => {
-    const res = list.filter(el => el.media === mediaToMatch);
-
-    return res[0].matches;
+    const res = list.find(el => el.media === mediaToMatch);
+    if (res) {
+      return res.matches;
+    }
+    return null;
   };
 
   const updateMatch = () => {
@@ -64,20 +67,16 @@ const useMediaQuery: UseMediaQuery = () => {
     );
   };
 
-  const updateListener = () => {
-    updateMatch();
-  };
-
   useEffect(() => {
     // Initial value
     updateMatch();
 
     // Tie listener to all MediaQueryList items
-    mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateListener, 150)));
+    mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateMatch, 150)));
 
     return () => {
       // cleanup
-      mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateListener));
+      mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
     };
   }, []);
 

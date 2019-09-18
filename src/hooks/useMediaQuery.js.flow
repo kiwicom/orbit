@@ -1,11 +1,11 @@
 // @flow
 
 type Media = {|
-  +isLargeDesktop: null | number,
-  +isDesktop: null | number,
-  +isLargeMobile: null | number,
-  +isMediumMobile: null | number,
-  +isTablet: null | number,
+  +isLargeDesktop: ?number,
+  +isDesktop: ?number,
+  +isLargeMobile: ?number,
+  +isMediumMobile: ?number,
+  +isTablet: ?number,
 |};
 
 export type UseMediaQuery = () => Media;

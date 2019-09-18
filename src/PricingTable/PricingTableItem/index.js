@@ -14,12 +14,11 @@ const StyledPricingTableItem = styled.div`
   display: flex;
   flex-grow: 1;
   position: relative;
-  background: #ffffff;
+  background: ${({ theme }) => theme.orbit.paletteWhite};
   box-shadow: 0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12); /* TODO: Add elevation token */
   transition: ${({ theme }) => theme.orbit.durationNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal}; /* TODO: Add token */
   padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
-  background: #ffffff;
   cursor: pointer;
 
   &:hover {

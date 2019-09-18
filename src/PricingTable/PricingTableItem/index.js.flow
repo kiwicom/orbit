@@ -9,7 +9,7 @@ export type Props = {|
   +mobileDescription?: Translation,
   +priceBadge?: React$Node,
   +featureIcon?: React$Node,
-  +badge?: React$Node,
+  +badge?: string | React$Node,
   +children?: React$Node,
   +active?: boolean,
   +compact?: boolean,

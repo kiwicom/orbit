@@ -12,6 +12,13 @@ const StyledPricingTable = styled.div``;
 const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
   const { isTablet } = useMediaQuery();
   const [activeElement, setActiveElement] = useState(defaultActiveElement);
+  const handleOnClick = i => {
+    return () => {
+      if (!isTablet) {
+        setActiveElement(i);
+      }
+    };
+  };
   return (
     <StyledPricingTable>
       <Stack
@@ -30,23 +37,17 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
                 active: activeElement === i,
                 compact: true,
                 basis: Math.floor(100 / children.length),
-                onClick: () => {
-                  if (!isTablet) {
-                    setActiveElement(i);
-                  }
-                },
+                onClick: handleOnClick(i),
               }),
             )}
       </Stack>
-      {!isTablet && children[activeElement] && (
-        <Stack spacing="condensed">
-          <Text weight="bold" size="normal">
-            {children[activeElement].props.mobileDescription}
-          </Text>
-          {children[activeElement].props.children}
-          {children[activeElement].props.action}
-        </Stack>
-      )}
+      <Stack spacing="condensed">
+        <Text weight="bold" size="normal">
+          {children[activeElement].props.mobileDescription}
+        </Text>
+        {children[activeElement].props.children}
+        {children[activeElement].props.action}
+      </Stack>
     </StyledPricingTable>
   );
 };

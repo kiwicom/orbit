@@ -82,9 +82,10 @@ const StyledList = styled(({ className, children, dataTest }) => (
       ${Item} {
         border-bottom: 1px solid #e8edf1;
         padding: ${theme.orbit.spaceXSmall};
-      }
-      ${Item}:last-child {
-        border-bottom: none;
+
+        :last-child {
+          border-bottom: none;
+        }
       }
     `}
 

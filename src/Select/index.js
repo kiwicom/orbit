@@ -50,10 +50,14 @@ const StyledSelect = styled(
         onChange,
         onFocus,
         onBlur,
+        id,
+        required,
       },
       ref,
     ) => (
       <select
+        id={id}
+        required={required}
         data-test={dataTest}
         data-state={getFieldDataState(error)}
         value={value}
@@ -244,6 +248,8 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     onFocus,
     options,
     tabIndex,
+    id,
+    required,
     dataTest,
     prefix,
     spaceAfter,
@@ -282,6 +288,8 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           filled={filled}
           customValueText={customValueText}
           tabIndex={tabIndex}
+          id={id}
+          required={required}
           ref={ref}
         >
           {placeholder && (

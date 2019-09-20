@@ -27,7 +27,7 @@ exports[`PricingTable should match snapshot 1`] = `
           Badge
         </Badge>
       }
-      basis={100}
+      basis="100%"
       compact={true}
       dataTest="test"
       featureIcon={
@@ -57,7 +57,7 @@ exports[`PricingTable should match snapshot 1`] = `
           Badge
         </Badge>
       }
-      basis={100}
+      basis="100%"
       compact={true}
       dataTest="test"
       featureIcon={
@@ -86,7 +86,7 @@ exports[`PricingTable should match snapshot 1`] = `
           Badge
         </Badge>
       }
-      basis={100}
+      basis="100%"
       compact={true}
       dataTest="test"
       featureIcon={

@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
+import { SIZE_OPTIONS, TYPE_OPTIONS, INPUTMODE } from "./consts";
 import { NAME_OPTIONS } from "../ServiceLogo/consts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
@@ -391,6 +391,7 @@ storiesOf("InputField", module)
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("id", "ID");
+      const inputMode = select("inputMode", [null, ...Object.values(INPUTMODE)]);
 
       return (
         <InputField
@@ -429,6 +430,7 @@ storiesOf("InputField", module)
           onBlur={action("blur")}
           spaceAfter={spaceAfter}
           id={id}
+          inputMode={inputMode}
         />
       );
     },

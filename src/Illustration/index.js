@@ -12,6 +12,7 @@ const getHeightToken = ({ theme, size }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.heightIllustrationSmall,
     [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightIllustrationMedium,
+    [SIZE_OPTIONS.LARGE]: "280px", // TODO: create token heightIllustrationLarge
   };
   return tokens[size];
 };

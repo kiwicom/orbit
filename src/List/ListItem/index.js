@@ -41,6 +41,10 @@ export const StyledLabel = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextSecondary};
 `;
 
+const StyledSpan = styled.StyledSpan`
+  width: 100%;
+`;
+
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
@@ -48,10 +52,10 @@ StyledLabel.defaultProps = {
 const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
-    <span>
+    <StyledSpan>
       {label && <StyledLabel>{label}</StyledLabel>}
       {children}
-    </span>
+    </StyledSpan>
   </Item>
 );
 

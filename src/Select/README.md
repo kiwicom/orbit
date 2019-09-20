@@ -17,6 +17,7 @@ Table below contains all types of the props available in the Select component.
 | disabled          | `boolean`                         | `false`    | If `true`, the Select will be disabled.
 | error             | `React.Node`                      |            | The error message for the Select. [See Functional specs](#functional-specs)
 | help              | `React.Node`                      |            | The help message for the Select.
+| id                | `string`                          |            | Adds `id` HTML attribute to an element.
 | label             | `Translation`                     |            | The label for the Select.
 | name              | `string`                          |            | The name for the Select.
 | onBlur            | `event => void \| Promise`        |            | Function for handling onBlur event.
@@ -26,6 +27,7 @@ Table below contains all types of the props available in the Select component.
 | placeholder       | `Translation`                     |            | The placeholder for the Select. 
 | prefix            | `React.Node`                      |            | The prefix component for the Select. [See Functional specs](#functional-specs)
 | ref               | `func`                            |            | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)
+| required          | `boolean`                         | `false`    | If true, the label is displayed as required.
 | size              | [`enum`](#enum)                   | `"normal"` | The size of the Select.
 | spaceAfter        | `enum`                            |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | tabIndex          | `string`                          |            | Specifies the tab order of an element

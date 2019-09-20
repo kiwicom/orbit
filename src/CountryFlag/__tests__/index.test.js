@@ -13,8 +13,8 @@ describe(`CountryFlag of ${name}`, () => {
   const component = shallow(<CountryFlag code={code} name={name} dataTest={dataTest} />);
   const flag = component.find("CountryFlag__StyledImage");
   it("should have passed props", () => {
-    expect(flag.prop("src")).toContain(code);
-    expect(flag.prop("srcSet")).toContain(code);
+    expect(flag.render().prop("src")).toContain(code);
+    expect(flag.render().prop("srcset")).toContain(code);
     expect(flag.prop("alt")).toBe(name);
     expect(flag.prop("title")).toBe(name);
     expect(flag.render().prop("data-test")).toBe(dataTest);

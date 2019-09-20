@@ -8,7 +8,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 type Name =%NAMES%
 
 export type Props = {|
-  +size?: "small" | "medium",
+  +size?: "small" | "medium" | "large",
   +name: Name,
   ...Globals,
   ...spaceAfter,

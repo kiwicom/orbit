@@ -48,25 +48,49 @@ const Popover = ({
     [onClose, onOpen],
   );
 
-  const handleOut = useCallback(() => {
-    // If open prop is present ignore custom handler
-    if (typeof opened === "undefined") {
-      setShown(false);
-      clearShownTimeout();
-      setRenderWithTimeout(false);
-      resolveCallback(false);
-    } else if (onClose) onClose();
-  }, [clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout, setShown]);
+  const handleOut = useCallback(
+    ev => {
+      // If open prop is present ignore custom handler
+      if (container.current && !container.current.contains(ev.target)) {
+        if (typeof opened === "undefined") {
+          setShown(false);
+          clearShownTimeout();
+          setRenderWithTimeout(false);
+          resolveCallback(false);
+        } else if (onClose) onClose();
+      }
+    },
+    [clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout, setShown],
+  );
 
   const handleClick = useCallback(() => {
     // If open prop is present ignore custom handler
     if (typeof opened === "undefined") {
-      setRender(true);
-      clearRenderTimeout();
-      setShownWithTimeout(true);
-      resolveCallback(true);
-    } else if (onOpen) onOpen();
-  }, [clearRenderTimeout, onOpen, opened, resolveCallback, setRender, setShownWithTimeout]);
+      if (shown) {
+        setShown(false);
+        clearShownTimeout();
+        setRenderWithTimeout(false);
+        resolveCallback(false);
+      } else {
+        setRender(true);
+        clearRenderTimeout();
+        setShownWithTimeout(true);
+        resolveCallback(true);
+      }
+    } else {
+      resolveCallback(!shown);
+    }
+  }, [
+    clearRenderTimeout,
+    clearShownTimeout,
+    opened,
+    resolveCallback,
+    setRender,
+    setRenderWithTimeout,
+    setShown,
+    setShownWithTimeout,
+    shown,
+  ]);
 
   useEffect(() => {
     if (typeof opened !== "undefined") {

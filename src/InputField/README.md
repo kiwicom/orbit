@@ -54,6 +54,8 @@ Table below contains all types of the props available in InputField component.
 | `"email"`       | `"password"`   |
 | `"url"`         | `"passportid"` |
 | `"search"`      |
+| `"text"`        |
+| `"none"`        |
 
 
 ## Functional specs

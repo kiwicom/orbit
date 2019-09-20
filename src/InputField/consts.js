@@ -26,4 +26,6 @@ export const INPUTMODE = {
   EMAIL: "email",
   URL: "url",
   SEARCH: "search",
+  TEXT: "text",
+  NONE: "none",
 };

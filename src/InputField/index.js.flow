@@ -9,7 +9,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal";
 
-type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search";
+type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
 
 export type Props = {|
   ...Globals,

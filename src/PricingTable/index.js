@@ -41,13 +41,17 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
               }),
             )}
       </Stack>
-      <Stack spacing="condensed">
-        <Text weight="bold" size="normal">
-          {children[activeElement].props.mobileDescription}
-        </Text>
-        {children[activeElement].props.children}
-        {children[activeElement].props.action}
-      </Stack>
+      {!isTablet && children[activeElement] && (
+        <Stack spacing="condensed">
+          {children[activeElement].props.mobileDescription && (
+            <Text weight="bold" size="normal">
+              {children[activeElement].props.mobileDescription}
+            </Text>
+          )}
+          {children[activeElement].props.children}
+          {children[activeElement].props.action}
+        </Stack>
+      )}
     </StyledPricingTable>
   );
 };

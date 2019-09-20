@@ -21,7 +21,7 @@ Table below contains all types of the props available in the PricingTable compon
 
 | Name                  | Type                        | Default         | Description                      |
 | :-------------------- | :-------------------------- | :-------------- | :------------------------------- |
-| children              | `React.Node`                |                 | The content of the PricingTable. [See Subcomponents](#sub-components)
+| children              | `React.Node`                |                 | The content of the PricingTable. [See Subcomponents](#subcomponents)
 | dataTest              | `string`                    |                 | Optional prop for testing purposes.
 | defaultActiveElement  | `number`                    | `0`             | Sets default active element on mobile view 
 
@@ -39,27 +39,22 @@ import PricingTable, { PricingTableItem } from "@kiwicom/orbit-components/lib/Pr
 #### Props
 Table below contains all types of the props in the PricingTableItem component.
 
-| Name          | Type                  | Default         | Description                      |
-| :------------ | :---------------------| :-------------- | :------------------------------- |
-| action        | `React$Node`          |                 | Area for action elements, like Button.
-| badge         | `string | React$Node`|                 | Area for action elements, like Button.
+| Name              | Type                   | Default     | Description                      |
+| :---------------- | :--------------------- | :---------- | :------------------------------- |
+| action            | `React$Node`           |             | Area for action elements, like Button.
+| badge             | `string | React$Node`  |             | Badge above the PricingTableItem, works with Orbit Badge
+| **children**      | `React.Node`           |             | Content of the PricingTableItem component.
+| dataTest          | `string`               |             | Optional prop for testing purposes.
+| featureIcon       | `React$Node`           |             | Feature Icon displayed at top of the PricingTableItem
+| mobileDescription | `Translation`          |             | Description of PricingTableItem, displayed on mobile
+| name              | `Translation`          |             | Name of PricingTableItem
+| onClick           | `() => void \| Promise`|             | Function for handling the onClick event.
+| price             | `Translation`          |             | Price of item
+| priceBadge        | `React$Node`           |             | Badge instead of `price`, works with Orbit Badge
 
-| **children**  | `React.Node`          |                 | Content of the PricingTableItem component.
-| dataTest      | `string`              |                 | Optional prop for testing purposes.
-| action        | `React$Node`          |                 | 
 
 
-?? +active?: boolean,
 
-  +badge?: React$Node,
-  +basis?: number,
 
-  +compact?: boolean,
-  +featureIcon?: React$Node,
-  +mobileDescription?: Translation,
-  +name?: Translation,
-  +onClick?: () => void | Promise<any>,
-  +price?: Translation,
-  +priceBadge?: React$Node,
 
 

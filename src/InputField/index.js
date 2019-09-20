@@ -365,7 +365,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           readOnly={readOnly}
           autoComplete={autoComplete}
           id={forID}
-          inputmode={inputMode}
+          inputMode={inputMode}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

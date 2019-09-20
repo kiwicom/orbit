@@ -27,7 +27,7 @@ Table below contains all types of the props available in the Select component.
 | placeholder       | `Translation`                     |            | The placeholder for the Select. 
 | prefix            | `React.Node`                      |            | The prefix component for the Select. [See Functional specs](#functional-specs)
 | ref               | `func`                            |            | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)
-| required          | `boolean`                         | `false`    | When present, it specifies the user is required to select a value before submitting the form.
+| required          | `boolean`                         | `false`    | If true, the label is displayed as required.
 | size              | [`enum`](#enum)                   | `"normal"` | The size of the Select.
 | spaceAfter        | `enum`                            |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | tabIndex          | `string`                          |            | Specifies the tab order of an element

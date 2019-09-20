@@ -962,7 +962,6 @@ exports[`Select should match snapshot 1`] = `
       id="test-id"
       name="name"
       onChange={[MockFunction]}
-      required={true}
       size="normal"
       tabIndex="-1"
       theme={

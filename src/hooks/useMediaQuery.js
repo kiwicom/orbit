@@ -44,9 +44,13 @@ const useMediaQuery: UseMediaQuery = () => {
       matches: null,
     },
   ]);
+  let mediaList = [];
 
   // TODO: Check if window exists
-  const mediaList = breakpointList.map(breakpoint => window.matchMedia(breakpoint.media));
+  if (typeof window !== "undefined") {
+    // Tie listener to all MediaQueryList items
+    mediaList = breakpointList.map(breakpoint => window.matchMedia(breakpoint.media));
+  }
 
   const findMatch = (mediaToMatch, list) => {
     const res = list.find(el => el.media === mediaToMatch);
@@ -68,15 +72,19 @@ const useMediaQuery: UseMediaQuery = () => {
   };
 
   useEffect(() => {
-    // Initial value
-    updateMatch();
+    if (typeof window !== "undefined") {
+      // Initial value
+      updateMatch();
 
-    // Tie listener to all MediaQueryList items
-    mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateMatch, 150)));
+      // Tie listener to all MediaQueryList items
+      mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateMatch, 150)));
+    }
 
     return () => {
-      // cleanup
-      mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
+      if (typeof window !== "undefined") {
+        // cleanup
+        mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
+      }
     };
   }, []);
 

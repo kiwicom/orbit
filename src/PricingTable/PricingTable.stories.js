@@ -43,6 +43,34 @@ const content = (
   </List>
 );
 
+const longerContent = (
+  <List type="separated">
+    <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service">
+        <Text>Extended.</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Calleer priority" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service">
+        <Text>Medium</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Email support" icon={<Check size="small" color="success" />}>
+      <Text>Yes</Text>
+    </ListItem>
+    <ListItem label="Additional Services" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service">
+        <Text>$10 processing fee</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Additional Services" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service">
+        <Text>$10 processing fee</Text>
+      </Tooltip>
+    </ListItem>
+  </List>
+);
+
 storiesOf("PricingTable", module)
   .addDecorator(withKnobs)
   .add(
@@ -86,7 +114,7 @@ storiesOf("PricingTable", module)
             mobileDescription="Flexi ticket fare includes:"
             onClick={action("onClick")}
           >
-            {content}
+            {longerContent}
           </PricingTableItem>
           <PricingTableItem
             name="Premium Services"
@@ -157,7 +185,7 @@ storiesOf("PricingTable", module)
             mobileDescription="Flexi ticket fare includes:"
             onClick={action("onClick")}
           >
-            {content}
+            {longerContent}
           </PricingTableItem>
           <PricingTableItem
             name="Premium"

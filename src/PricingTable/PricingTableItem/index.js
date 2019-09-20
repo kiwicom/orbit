@@ -86,28 +86,38 @@ const PricingTableItem = ({
       )}
       <Stack flex direction="column" spacing="condensed" tablet={{ spacing: "natural" }}>
         {featureIcon && <Stack justify="center">{featureIcon}</Stack>}
-        <Stack spacing="tight">
-          {name && (
-            <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
-              {name}
-            </Text>
-          )}
-          {price && (
-            <Text size="large" weight="bold" type="primary" align="center">
-              {price}
-            </Text>
-          )}
-          {priceBadge && <Stack justify="center"> {priceBadge} </Stack>}
-        </Stack>
-        {!compact && children}
-        {!compact && action && <Stack justify="center">{action}</Stack>}
-        {compact && (
-          <Stack justify="center" align="center">
-            <Item>
-              <Radio checked={active} onChange={onClickHandler} />
-            </Item>
+        <Stack justify="between" direction="column">
+          <Stack spacing="tight">
+            {name && (
+              <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
+                {name}
+              </Text>
+            )}
+            {price && (
+              <Text size="large" weight="bold" type="primary" align="center">
+                {price}
+              </Text>
+            )}
+            {priceBadge && <Stack justify="center"> {priceBadge} </Stack>}
           </Stack>
-        )}
+          {!compact && (
+            <Stack justify="between" direction="column">
+              {!compact && children}
+              {!compact && action && (
+                <Stack justify="center" grow={false}>
+                  {action}
+                </Stack>
+              )}
+            </Stack>
+          )}
+          {compact && (
+            <Stack justify="center" align="center" grow={false}>
+              <Item>
+                <Radio checked={active} onChange={onClickHandler} />
+              </Item>
+            </Stack>
+          )}
+        </Stack>
       </Stack>
     </StyledPricingTableItem>
   );

@@ -26,8 +26,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
         grow
         spaceAfter="medium"
         spacing="condensed"
-        // TODO: Add stretch
-        align="start"
+        align="stretch"
         tablet={{ spacing: "natural", spaceAfter: "none" }}
       >
         {isTablet

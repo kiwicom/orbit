@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Select from "../index";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
@@ -11,6 +11,7 @@ const placeholder = "Default placeholder";
 const dataTest = "test";
 const tabIndex = "-1";
 const name = "name";
+const id = "test-id";
 const objectOptions = [
   { value: "1", label: "One" },
   { value: "2", label: "Two" },
@@ -24,6 +25,7 @@ const spaceAfter = SPACINGS_AFTER.NORMAL;
 describe("Select", () => {
   const component = shallow(
     <Select
+      id={id}
       value="1"
       name={name}
       placeholder={placeholder}
@@ -56,5 +58,18 @@ describe("Select", () => {
   });
   it("should have placeholder", () => {
     expect(select.childAt(0).text()).toBe(placeholder);
+  });
+  it("should have placeholder", () => {
+    expect(select.render().prop("id")).toBe(id);
+  });
+});
+
+describe(`Required field`, () => {
+  const label = "Label";
+  const component = mount(
+    <Select options={objectOptions} label={label} required onChange={mockChange} />,
+  );
+  it("should render asterisk", () => {
+    expect(component.find("FormLabel__StyledAsterisk").exists()).toBe(true);
   });
 });

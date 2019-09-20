@@ -16,7 +16,7 @@ const getSizeToken = name => ({ theme, size }) => {
       [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
     },
     [TOKENS.HEIGHT]: {
-      [SIZES.SMALL]: "8px",
+      [SIZES.SMALL]: "9px",
       [SIZES.MEDIUM]: "13px",
     },
   };

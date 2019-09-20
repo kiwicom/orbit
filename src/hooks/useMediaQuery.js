@@ -46,14 +46,15 @@ const useMediaQuery: UseMediaQuery = () => {
   ]);
   let mediaList = [];
 
-  // TODO: Check if window exists
   if (typeof window !== "undefined") {
     // Tie listener to all MediaQueryList items
     mediaList = breakpointList.map(breakpoint => window.matchMedia(breakpoint.media));
   }
 
   const findMatch = (mediaToMatch, list) => {
-    const res = list.find(el => el.media === mediaToMatch);
+    const regex = /\d+/;
+    // $FlowFixMe
+    const res = list.find(el => el.media.match(regex)[0] === mediaToMatch.match(regex)[0]);
     if (res) {
       return res.matches;
     }

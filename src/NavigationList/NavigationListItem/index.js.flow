@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/navigationlink/
+  DOCUMENTATION: https://orbit.kiwi/components/navigationlist/
 */
 import type { Component, Globals } from "../../common/common.js.flow";
 

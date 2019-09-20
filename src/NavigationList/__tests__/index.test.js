@@ -16,11 +16,15 @@ describe("NavigationList", () => {
   );
   const groupTitle = component.find("NavigationList__StyledNavigationListTitle");
   const content = component.find("NavigationList__StyledNavigationListChild");
+  const separator = component.find("NavigationListSeparator");
   it("should contain the children", () => {
     expect(content.render().text()).toBe(children);
   });
   it("should contain the title", () => {
     expect(groupTitle.render().text()).toBe(title);
+  });
+  it("should have separator", () => {
+    expect(separator.exists()).toBe(true);
   });
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);

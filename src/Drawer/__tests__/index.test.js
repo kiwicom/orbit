@@ -20,7 +20,7 @@ describe("Drawer", () => {
   const wrapper = component.find("Drawer__StyledDrawer");
   const side = component.find("Drawer__StyledDrawerSide");
   it("should not execute onClose method", () => {
-    const link = side.find("NavigationLink");
+    const link = side.find("NavigationListItem");
     link.simulate("click");
     expect(onClose).not.toHaveBeenCalled();
   });

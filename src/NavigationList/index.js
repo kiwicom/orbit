@@ -103,7 +103,9 @@ const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION }: 
     )}
     <StyledNavigationListContent type={type}>
       {React.Children.map(children, item => (
-        <StyledNavigationListChild>{React.cloneElement(item)}</StyledNavigationListChild>
+        <StyledNavigationListChild>
+          {React.isValidElement(item) ? React.cloneElement(item) : item}
+        </StyledNavigationListChild>
       ))}
     </StyledNavigationListContent>
     {isNavigation(type) && <NavigationListSeparator />}

@@ -3,10 +3,10 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import NavigationLink from "../index";
+import NavigationListItem from "../index";
 import Airplane from "../../../icons/Airplane";
 
-describe("NavigationLink horizontal", () => {
+describe("NavigationListItem horizontal", () => {
   const onClick = jest.fn();
   const children = "Content";
   const dataTest = "test";
@@ -15,7 +15,7 @@ describe("NavigationLink horizontal", () => {
   const selectable = true;
   const selected = true;
   const component = shallow(
-    <NavigationLink
+    <NavigationListItem
       onClick={onClick}
       icon={<Airplane />}
       tabIndex={tabIndex}
@@ -25,11 +25,11 @@ describe("NavigationLink horizontal", () => {
       dataTest={dataTest}
     >
       {children}
-    </NavigationLink>,
+    </NavigationListItem>,
   );
-  const navigationLink = component.find("NavigationLink__StyledNavigationLink");
-  const icon = component.find("NavigationLink__StyledNavigationLinkIcon");
-  const content = component.find("NavigationLink__StyledNavigationLinkContent");
+  const listItem = component.find("NavigationListItem__StyledNavigationListItem");
+  const icon = component.find("NavigationListItem__StyledNavigationListItemIcon");
+  const content = component.find("NavigationListItem__StyledNavigationListItemContent");
   it("should contain the children", () => {
     expect(content.render().text()).toBe(children);
   });
@@ -37,16 +37,16 @@ describe("NavigationLink horizontal", () => {
     expect(icon.find("Airplane").exists()).toBe(true);
   });
   it("should execute onClick callback", () => {
-    navigationLink.simulate("click");
+    listItem.simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
   it("should have data-test", () => {
-    expect(navigationLink.render().prop("data-test")).toBe(dataTest);
+    expect(listItem.render().prop("data-test")).toBe(dataTest);
   });
   it("should have aria-label", () => {
-    expect(navigationLink.render().prop("aria-label")).toBe(ariaLabel);
+    expect(listItem.render().prop("aria-label")).toBe(ariaLabel);
   });
   it("should have data-test", () => {
-    expect(navigationLink.render().prop("tabindex")).toBe(tabIndex);
+    expect(listItem.render().prop("tabindex")).toBe(tabIndex);
   });
 });

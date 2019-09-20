@@ -19,8 +19,9 @@ Table below contains all types of the props available in InputField component.
 | tags          | `React.Node`                  |              | Here you can pass <Tag /> component for render tags [See Functional specs](#functional-specs)
 | help          | `React.Node`                  |              | The help to display beneath the InputField.
 | label         | `Translation`                 |              | The label for the InputField. [See Functional specs](#functional-specs)
-| inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input
 | id            | `string`                      |              | HTML `id` attribute for input.[See Accessibility specs](#accessibility)
+| inlineLabel   | `boolean`                     |              | If true the label renders on the left side of input
+| inputMode     | [`enum`](#enum)               |              | The type of data that might be entered by the user. [See more here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
 | maxLength     | `number`                      |              | Specifies the maximum number of characters allowed.
 | maxValue      | `number`                      |              | Specifies the maximum value for the InputField.
 | minLength     | `number`                      |              | Specifies the minimum number of characters allowed.
@@ -45,13 +46,16 @@ Table below contains all types of the props available in InputField component.
 
 ### enum
 
-| type            | size        |
-| :-------------- | :---------- |
-| `"text"`        | `"small"`   |
-| `"number"`      | `"normal"`  |
-| `"email"`       |
-| `"password"`    |
-| `"passportid"`  |
+| inputMode       | type           | size        |
+| :-------------- | :------------- | :---------- |
+| `"numeric"`     | `"text"`       | `"small"`   |
+| `"tel"`         | `"number"`     | `"normal"`  |
+| `"decimal"`     | `"email"`      |
+| `"email"`       | `"password"`   |
+| `"url"`         | `"passportid"` |
+| `"search"`      |
+| `"text"`        |
+| `"none"`        |
 
 
 ## Functional specs

@@ -36,10 +36,14 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledListItemContent = styled.span`
+  width: 100%;
+`;
+
 const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
-    <span>{children}</span>
+    <StyledListItemContent>{children}</StyledListItemContent>
   </Item>
 );
 

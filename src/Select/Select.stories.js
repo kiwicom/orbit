@@ -133,9 +133,13 @@ storiesOf("Select", module)
       const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const id = text("ID", "select-id");
+      const required = boolean("Required", false);
 
       return (
         <Select
+          id={id}
+          required={required}
           placeholder={placeholder}
           size={size}
           options={option}

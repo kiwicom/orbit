@@ -41,7 +41,7 @@ export const StyledLabel = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextSecondary};
 `;
 
-const StyledSpan = styled.StyledSpan`
+const StyledSpan = styled.span`
   width: 100%;
 `;
 

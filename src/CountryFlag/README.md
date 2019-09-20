@@ -15,14 +15,15 @@ Table below contains all types of the props available in CountryFlag component.
 | code          | [`enum`](#enum)                  | `"anywhere"`    | Code for the displayed country flag.
 | dataTest      | `string`                         |                 | Optional prop for testing purposes.
 | name          | `string`                         |                 | The name for the flag.
+| size          | [`enum`](#enum)                  | `"medium"`      | The size of the CountryFlag.
 
 ### enum
 If code doesn't exist "anywhere" will be used
 
-| code            |
-| :-------------- |
-| `"ad"`          |
-| `"ae"`          |
+| code            | size        |
+| :-------------- | :---------- |
+| `"ad"`          | `"small"`   |
+| `"ae"`          | `"medium"`  |
 | `"af"`          |
 | `"ag"`          |
 | `"ai"`          |

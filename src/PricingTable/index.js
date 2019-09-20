@@ -19,6 +19,12 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
       }
     };
   };
+  const resolveBasis = item => {
+    if (item.length) {
+      return Math.floor(100 / item.length);
+    }
+    return 100;
+  };
   return (
     <StyledPricingTable>
       <Stack
@@ -35,20 +41,29 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
               React.cloneElement(child, {
                 active: activeElement === i,
                 compact: true,
-                basis: Math.floor(100 / children.length),
+                basis: resolveBasis(child),
                 onClick: handleOnClick(i),
               }),
             )}
       </Stack>
-      {!isTablet && children[activeElement] && (
+      {!isTablet && children && (
         <Stack spacing="condensed">
-          {children[activeElement].props.mobileDescription && (
-            <Text weight="bold" size="normal">
-              {children[activeElement].props.mobileDescription}
-            </Text>
-          )}
-          {children[activeElement].props.children}
-          {children[activeElement].props.action}
+          {React.Children.map(children, (child, i) => {
+            if (i === activeElement) {
+              return (
+                <>
+                  {child.props.mobileDescription && (
+                    <Text weight="bold" size="normal">
+                      {child.props.mobileDescription}
+                    </Text>
+                  )}
+                  {child.props.children && React.cloneElement(child.props.children)}
+                  {child.props.action && React.cloneElement(child.props.action)}
+                </>
+              );
+            }
+            return null;
+          })}
         </Stack>
       )}
     </StyledPricingTable>

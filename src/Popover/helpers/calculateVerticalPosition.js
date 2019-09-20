@@ -29,7 +29,7 @@ const calculateVerticalPosition: CalculateVerticalPosition = (desiredPositions, 
   if (typeof posPosition === "string") {
     return posPosition;
   }
-  return null;
+  return POSITIONS.BOTTOM;
 };
 
 export default calculateVerticalPosition;

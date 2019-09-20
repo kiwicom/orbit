@@ -9,12 +9,15 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal";
 
+type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search";
+
 export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
   +size?: Size,
   +type?: "text" | "number" | "email" | "password" | "passportid",
+  +inputMode?: InputMode,
   +name?: string,
   +label?: Translation,
   +inlineLabel?: boolean,

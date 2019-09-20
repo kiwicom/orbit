@@ -18,3 +18,12 @@ export const TOKENS = {
   paddingInput: "paddingInput",
   iconSize: "iconSize",
 };
+
+export const INPUTMODE = {
+  NUMERIC: "numeric",
+  TEL: "tel",
+  DECIMAL: "decimal",
+  EMAIL: "email",
+  URL: "url",
+  SEARCH: "search",
+};

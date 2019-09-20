@@ -16,13 +16,14 @@ Table below contains all types of the props available in Illustration component.
 | **name**      | [`enum`](#enum)                  |                 | Name for the displayed illustration.
 | size          | [`enum`](#enum)                  | `"medium"`      | The size of the Illustration.
 | spaceAfter    | `enum`                           |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
+
 ### enum
 
 | name                          | size           |
 | :---------------------------- | :------------- |
 | `"Accommodation"`             | `"small"`      |
 | `"AirHelp"`                   | `"medium"`     |
-| `"AirportTransport"`          |
+| `"AirportTransport"`          | `"large"`      |
 | `"AirportTransportTaxi"`      |
 | `"AirportShuttle"`            |
 | `"BaggageDrop"`               |

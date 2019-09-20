@@ -3,7 +3,6 @@
 exports[`ContentWrapper it should match snapshot 1`] = `
 <Fragment>
   <ContentWrapper__StyledOverlay
-    onClick={[Function]}
     shown={true}
     theme={
       Object {
@@ -486,12 +485,11 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     containerLeft={0}
     containerTop={0}
     containerWidth={0}
-    onClick={[Function]}
     popoverHeight={0}
     popoverWidth={0}
-    position={null}
+    position="bottom"
     role="tooltip"
-    shown={null}
+    shown="end"
     shownMobile={true}
     tabIndex="0"
     theme={

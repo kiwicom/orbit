@@ -65,7 +65,7 @@ All this properties - objects have the some own properties and none is required.
 | `"start"`   | `"row"`             | `"start"`   |
 | `"end"`     | `"column"`          | `"end"`     | 
 | `"center"`  | `"row-reverse"`     | `"center"`  |
-| `"between"` | `"column-reverse"`  |
+| `"between"` | `"column-reverse"`  | `"stretch"` |
 | `"around"`  |
 
 ### spacing

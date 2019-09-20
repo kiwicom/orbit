@@ -959,6 +959,7 @@ exports[`Select should match snapshot 1`] = `
       dataTest="test"
       disabled={false}
       filled={true}
+      id="test-id"
       name="name"
       onChange={[MockFunction]}
       size="normal"

@@ -978,6 +978,7 @@ exports[`Default CheckBox should match snapshot 1`] = `
     value="option"
   />
   <Checkbox__IconContainer
+    onClick={null}
     theme={
       Object {
         "orbit": Object {

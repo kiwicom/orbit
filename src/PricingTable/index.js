@@ -21,9 +21,9 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
   };
   const resolveBasis = item => {
     if (item.length) {
-      return Math.floor(100 / item.length);
+      return `${Math.floor(100 / item.length)}%`;
     }
-    return 100;
+    return `100%`;
   };
   return (
     <StyledPricingTable>

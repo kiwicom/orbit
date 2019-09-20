@@ -28,7 +28,7 @@ const StyledPricingTableItem = styled.div`
   ${({ basis }) =>
     basis &&
     css`
-      flex-basis: ${basis}%;
+      flex-basis: ${basis};
     `}
 
   ${({ featureIcon }) =>

@@ -14,7 +14,7 @@ export type Props = {|
   +active?: boolean,
   +compact?: boolean,
   +action?: React$Node,
-  +basis?: number,
+  +basis?: string,
   +onClick?: () => void | Promise<any>,
 |};
 

@@ -68,6 +68,7 @@ export const NAMES = [
 export const SIZE_OPTIONS = {
   SMALL: "small",
   MEDIUM: "medium",
+  LARGE: "large",
 };
 
 export const baseURL = "//images.kiwi.com";

@@ -43,6 +43,9 @@ export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
 
+export { default as PricingTable } from "./PricingTable";
+export { default as PricingTableItem } from "./PricingTable/PricingTableItem";
+
 // Layout & Grid
 export { default as Layout } from "./Layout";
 export { default as LayoutColumn } from "./Layout/LayoutColumn";

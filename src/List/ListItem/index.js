@@ -36,14 +36,26 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledListItemContent = styled.span`
+export const StyledLabel = styled.div`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  color: ${({ theme }) => theme.orbit.colorTextSecondary};
+`;
+
+const StyledSpan = styled.span`
   width: 100%;
 `;
 
-const ListItem = ({ children, icon = <CircleSmall />, dataTest }: Props) => (
+StyledLabel.defaultProps = {
+  theme: defaultTheme,
+};
+
+const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => (
   <Item data-test={dataTest}>
     <IconContainer>{icon}</IconContainer>
-    <StyledListItemContent>{children}</StyledListItemContent>
+    <StyledSpan>
+      {label && <StyledLabel>{label}</StyledLabel>}
+      {children}
+    </StyledSpan>
   </Item>
 );
 

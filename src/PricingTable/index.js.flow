@@ -1,0 +1,17 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/PricingTable/
+*/
+
+import typeof PricingTableItemType from "./PricingTableItem";
+import type { Globals } from "../common/common.js.flow";
+
+export type Props = {|
+  ...Globals,
+  +children: React$Node, // TODO: Type this propperly
+  +defaultActiveElement?: number,
+|};
+
+declare export default React$ComponentType<Props>;
+
+declare export var PricingTableItem: PricingTableItemType;

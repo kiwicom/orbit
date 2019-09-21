@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import { StyledCarrierLogo } from "../CarrierLogo";
 import getSpacingToken from "../common/getSpacingToken";
-import { IconContainer } from "./ListItem";
+import { Item, IconContainer, StyledLabel } from "./ListItem";
 
 import type { Props } from "./index";
 
@@ -15,6 +15,15 @@ const getSizeToken = ({ theme, size }) => {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
+  };
+  return sizeTokens[size];
+};
+
+const getSizeTokenLabel = ({ theme, size }) => {
+  const sizeTokens = {
+    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeTextSmall,
+    [SIZES.LARGE]: theme.orbit.fontSizeTextNormal,
   };
   return sizeTokens[size];
 };
@@ -65,6 +74,23 @@ const StyledList = styled(({ className, children, dataTest }) => (
       height: ${({ theme }) => theme.orbit.heightIconSmall};
       width: ${({ theme }) => theme.orbit.widthIconSmall};
     }
+  }
+
+  ${({ type, theme }) =>
+    type === TYPES.SEPARATED &&
+    css`
+      ${Item} {
+        border-bottom: 1px solid #e8edf1;
+        padding: ${theme.orbit.spaceXSmall};
+
+        :last-child {
+          border-bottom: none;
+        }
+      }
+    `}
+
+  ${StyledLabel} {
+    font-size: ${getSizeTokenLabel};
   }
 `;
 

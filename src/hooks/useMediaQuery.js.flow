@@ -1,0 +1,13 @@
+// @flow
+
+type Media = {|
+  +isLargeDesktop: ?number,
+  +isDesktop: ?number,
+  +isLargeMobile: ?number,
+  +isMediumMobile: ?number,
+  +isTablet: ?number,
+|};
+
+export type UseMediaQuery = () => Media;
+
+declare export default UseMediaQuery;

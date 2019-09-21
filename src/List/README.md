@@ -30,6 +30,14 @@ Table below contains all types of the props in ListItem component.
 | icon          | `React.Node`          | `"CircleSmall"` | The displayed Icon or CarrierLogo component. [See Functional specs](#functional-specs)
 | label         | `Translation`         |                 | Adds a label to ListItem
 
+### enum
+
+| size          | type          |
+| :------------ | :------------ |
+| `"small"`     | `"primary"`   |
+| `"normal"`    | `"secondary"` |
+| `"large"`     | `"separated"` |
+
 
 #### Functional specs
 * You can color your icon if you pass some value into `color` or `customColor` prop of the [Icon](./Icon). Be aware of using other components, because they are not styled by default.

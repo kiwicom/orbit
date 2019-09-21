@@ -100,17 +100,16 @@ const PricingTableItem = ({
             )}
             {priceBadge && <Stack justify="center"> {priceBadge} </Stack>}
           </Stack>
-          {!compact && (
+          {!compact ? (
             <Stack justify="between" direction="column">
-              {!compact && children}
-              {!compact && action && (
+              {children && children}
+              {action && (
                 <Stack justify="center" grow={false}>
                   {action}
                 </Stack>
               )}
             </Stack>
-          )}
-          {compact && (
+          ) : (
             <Stack justify="center" align="center" grow={false}>
               <Item>
                 <Radio checked={active} onChange={onClickHandler} />

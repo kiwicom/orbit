@@ -85,7 +85,11 @@ const PricingTableItem = ({
         </StyledBadge>
       )}
       <Stack flex direction="column" spacing="condensed" tablet={{ spacing: "natural" }}>
-        {featureIcon && <Stack justify="center">{featureIcon}</Stack>}
+        {featureIcon && (
+          <Stack justify="center" grow={false}>
+            {featureIcon}
+          </Stack>
+        )}
         <Stack justify="between" direction="column">
           <Stack spacing="tight">
             {name && (

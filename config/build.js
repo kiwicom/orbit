@@ -12,7 +12,7 @@ import svgr from "@svgr/core";
 
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
 
-const files = glob.sync("src/icons/**/*.svg");
+const files = glob.sync("src/icons/svg/*.svg");
 
 const names = files.map(inputFileName => {
   const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");

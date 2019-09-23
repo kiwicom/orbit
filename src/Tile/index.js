@@ -46,8 +46,8 @@ class Tile extends React.PureComponent<Props, State> {
   };
 
   componentDidMount() {
-    const { expanded } = this.props;
-    this.setExpanded({ expanded, initialExpanded: expanded });
+    const { initialExpanded } = this.props;
+    this.setExpanded({ expanded: initialExpanded, initialExpanded });
   }
 
   setExpanded = ({ expanded, initialExpanded }: State) => {

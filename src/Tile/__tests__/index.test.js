@@ -82,7 +82,7 @@ describe("Tile Expandable", () => {
       description={description}
       onClick={onClick}
       dataTest={dataTest}
-      expanded
+      initialExpanded
     >
       {children}
     </Tile>

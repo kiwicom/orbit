@@ -53,7 +53,7 @@ describe("Large Modal", () => {
         <Button icon={<ChevronLeft />} type="secondary">
           Back
         </Button>
-        <Button block>Continue to Payment</Button>
+        <Button fullWidth>Continue to Payment</Button>
       </ModalFooter>
     </Modal>,
   );
@@ -120,7 +120,7 @@ describe("Modal without ModalSection", () => {
     <Modal>
       <ModalHeader title={title} />
       <ModalFooter>
-        <Button block>Continue to Payment</Button>
+        <Button fullWidth>Continue to Payment</Button>
       </ModalFooter>
     </Modal>,
   );

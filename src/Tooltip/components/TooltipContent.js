@@ -236,7 +236,7 @@ const TooltipContent = ({
       >
         <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
         <StyledTooltipClose>
-          <Button type="secondary" block onClick={onCloseMobile}>
+          <Button type="secondary" fullWidth onClick={onCloseMobile}>
             <Translate tKey="button_close" />
           </Button>
         </StyledTooltipClose>

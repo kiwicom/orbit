@@ -93,7 +93,7 @@ const Tooltip = ({
         {children}
       </StyledTooltipChildren>
       {enabled && render && (
-        <Portal element="tooltips">
+        <Portal renderInto="tooltips">
           <TooltipContent
             dataTest={dataTest}
             shownMobile={shownMobile}

@@ -499,7 +499,7 @@ storiesOf("Stack", module)
           <ChoiceGroup
             label="What was the reason for your cancellation?"
             labelSize="normal"
-            labelElement="h4"
+            labelAs="h4"
             onChange={action("onChange")}
           >
             <Checkbox label="Reason one" value="one" />
@@ -509,7 +509,7 @@ storiesOf("Stack", module)
           <ChoiceGroup
             label="What was the reason for your cancellation?"
             labelSize="normal"
-            labelElement="h4"
+            labelAs="h4"
             onChange={action("onChange")}
           >
             <Checkbox label="Reason one" value="one" />

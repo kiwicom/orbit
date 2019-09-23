@@ -233,7 +233,7 @@ storiesOf("Button", module)
       const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-      const width = number("Width", 0);
+      const width = text("Width", null);
       const bordered = boolean("Bordered", false);
       const circled = boolean("Circled", false);
       const loading = boolean("Loading", false);

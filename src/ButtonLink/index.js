@@ -97,7 +97,7 @@ export const StyledButtonLink = styled(
   width: ${({ fullWidth, width, onlyIcon }) =>
     fullWidth
       ? "100%"
-      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
+      : width || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
   flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};
   max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};
@@ -170,7 +170,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
     iconRight,
     type = TYPES.PRIMARY,
     onClick,
-    width = 0,
+    width,
     role,
     disabled,
     circled,

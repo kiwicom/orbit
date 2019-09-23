@@ -23,7 +23,7 @@ export type Props = {|
   +type?: Type,
   +size?: Size,
   +href?: string,
-  +width?: number,
+  +width?: string,
   +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,

@@ -37,7 +37,7 @@ export type Props = {|
   +loading?: boolean,
   +type?: Type,
   +size?: Size,
-  +width?: number,
+  +width?: string,
   +submit?: boolean,
   +icon?: React.Node,
   +iconLeft?: React.Node,

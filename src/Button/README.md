@@ -42,7 +42,7 @@ Table below contains all types of the props available in Button component.
 | tabIndex     | `string`                   |             | Specifies the tab order of an element.                                                                                                          |
 | title        | `string`                   |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)            | `"primary"` | The type of Button.                                                                                                                             |
-| width        | `number`                   | `0`         | The width of the Button. Number is defined in `px`.                                                                                             |
+| width        | `string`                   | `0`         | The width of the Button. Number is defined in `px`.                                                                                             |
 
 ### enum
 

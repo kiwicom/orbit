@@ -64,7 +64,7 @@ storiesOf("ButtonLink", module)
       const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
       const size = select("Size", Object.values(SIZES), SIZES.LARGE);
-      const width = number("Width", 0);
+      const width = text("Width", null);
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
       const href = text("Href", "");

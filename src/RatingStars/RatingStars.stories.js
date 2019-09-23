@@ -19,7 +19,6 @@ storiesOf("RatingStars", module)
         null,
         ICON_COLORS.PRIMARY,
         ICON_COLORS.SECONDARY,
-        ICON_COLORS.ATTENTION,
       ]);
       const showEmpty = boolean("showEmpty", true);
       const dataTest = text("dataTest", "test");

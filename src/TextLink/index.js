@@ -71,7 +71,7 @@ export const getLinkStyle = ({
       };
 `;
 
-export const StyledTextLink = styled(({ theme, type, component: Component, ...props }) => (
+export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...props }) => (
   <Component {...props}>{props.children}</Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -113,7 +113,7 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
-  component = DefaultComponent,
+  asComponent = DefaultComponent,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -138,7 +138,7 @@ const TextLink = ({
       data-test={dataTest}
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
-      component={component}
+      asComponent={asComponent}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

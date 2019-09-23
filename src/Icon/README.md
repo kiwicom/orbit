@@ -25,10 +25,9 @@ Table below contains all types of the props available for icons in general.
 
 | color         | size       |
 | :------------ | :--------- |
-| `"attention"` | `"small"`  |
-| `"primary"`   | `"medium"` |
-| `"secondary"` | `"large"`  |
-| `"tertiary"`  |            |
+| `"primary"`   | `"small"`  |
+| `"secondary"` | `"medium"` |
+| `"tertiary"`  | `"large"`  |
 | `"info"`      |            |
 | `"success"`   |            |
 | `"warning"`   |            |

@@ -102,7 +102,7 @@ storiesOf("InputFile", module)
     "Playground",
     () => {
       const label = text("Label", "Label");
-      const title = text("Title", "Please select file");
+      const buttonLabel = text("buttonLabel", "Please select file");
       const name = text("Name", "fileInput");
       const placeholder = text("Placeholder", "No file has been selected yet");
       const fileName = text("fileName", undefined);
@@ -115,7 +115,7 @@ storiesOf("InputFile", module)
       return (
         <InputFile
           label={label}
-          title={title}
+          buttonLabel={buttonLabel}
           name={name}
           placeholder={placeholder}
           fileName={fileName}

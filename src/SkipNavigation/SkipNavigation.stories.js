@@ -16,7 +16,7 @@ const Content = (
     <Card>
       <CardHeader
         title="Focusable Card Heading"
-        subTitle="Buy this trip with us and you'll get exclusive premium services at Milano Bergamo Airport for free."
+        description="Buy this trip with us and you'll get exclusive premium services at Milano Bergamo Airport for free."
         dataA11ySection="focusable-card-id"
       />
       <CardSection>

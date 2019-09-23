@@ -449,7 +449,7 @@ storiesOf("Stack", module)
             <CardHeader title="Hola amigo" />
           </Card>
           <Card>
-            <CardHeader title="Insert your title here..." subTitle="subtitle" />
+            <CardHeader title="Insert your title here..." description="subtitle" />
             <CardSection>
               <CardSectionHeader>
                 <Heading type="title3">Insert your title here...</Heading>

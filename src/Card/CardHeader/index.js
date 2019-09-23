@@ -35,12 +35,12 @@ const StyledHeadingWrapper = styled.div`
   }
 `;
 
-const StyledSubTitle = styled.div`
+const StyledCardHeaderDescription = styled.div`
   display: flex;
   margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
-StyledSubTitle.defaultProps = {
+StyledCardHeaderDescription.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -55,7 +55,7 @@ StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection }: Props) => (
+const CardHeader = ({ icon, title, description, actions, dataTest, dataA11ySection }: Props) => (
   <StyledCardHeader data-test={dataTest}>
     <StyledHeadingWrapper>
       {icon && <StyledIcon>{icon}</StyledIcon>}
@@ -64,10 +64,10 @@ const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection 
       </Heading>
       {actions}
     </StyledHeadingWrapper>
-    {subTitle && (
-      <StyledSubTitle>
-        <Text>{subTitle}</Text>
-      </StyledSubTitle>
+    {description && (
+      <StyledCardHeaderDescription>
+        <Text>{description}</Text>
+      </StyledCardHeaderDescription>
     )}
   </StyledCardHeader>
 );

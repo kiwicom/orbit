@@ -23,7 +23,7 @@ storiesOf("Sticky", module).add("Playground", () => {
           <CardHeader
             icon={<Icon />}
             title="FloatingCard title"
-            subTitle="This is a floating card"
+            description="This is a floating card"
           />
           <CardSection>Card</CardSection>
           <CardSection>Card</CardSection>

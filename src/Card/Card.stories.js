@@ -32,7 +32,7 @@ storiesOf("Card", module)
       const description = text("Description");
       return (
         <Card>
-          <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
+          <CardHeader icon={<Icons.Airplane />} title={title} description={description} />
         </Card>
       );
     },
@@ -47,7 +47,7 @@ storiesOf("Card", module)
       const description = text("Description", "This is a description of the card.");
       return (
         <Card>
-          <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
+          <CardHeader icon={<Icons.Airplane />} title={title} description={description} />
         </Card>
       );
     },
@@ -113,7 +113,7 @@ storiesOf("Card", module)
       const description = text("Description", "This is a description of the card.");
       return (
         <Card>
-          <CardHeader title={title} subTitle={description} />
+          <CardHeader title={title} description={description} />
           <CardSection expandable>
             <CardSectionHeader>
               <Heading type="title3" element="h3">
@@ -222,7 +222,7 @@ storiesOf("Card", module)
         <Card>
           <CardHeader
             title={title}
-            subTitle={description}
+            description={description}
             actions={<Button size="small">Button</Button>}
           />
           <CardSection>
@@ -320,7 +320,7 @@ storiesOf("Card", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <CardHeader icon={<Icon />} title={title} subTitle={description} dataTest={dataTest} />
+          <CardHeader icon={<Icon />} title={title} description={description} dataTest={dataTest} />
           <CardSection dataTest={dataTest}>
             <Heading type="title3" element="h3">
               Content with Heading and text
@@ -364,7 +364,7 @@ storiesOf("Card", module)
           <CardHeader
             icon={<Icons.Airplane />}
             title="Title of the CardHeader"
-            subTitle="Description of the CardHeader"
+            description="Description of the CardHeader"
           />
           <CardSection>
             <Heading type="title3" element="h3">

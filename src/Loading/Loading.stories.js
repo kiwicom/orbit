@@ -33,7 +33,7 @@ storiesOf("Loading", module)
       return (
         <Card>
           <Loading loading={loading} type="boxLoader" text={loadingText}>
-            <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
+            <CardHeader icon={<Icons.Airplane />} title={title} description={description} />
             <CardSection>
               <Illustration name="EnjoyApp" size="medium" />
             </CardSection>

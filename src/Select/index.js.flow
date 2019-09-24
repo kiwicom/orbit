@@ -19,6 +19,8 @@ export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
+  +id?: string,
+  +required?: boolean,
   +size?: Size,
   +label?: Translation,
   +placeholder?: Translation,
@@ -33,6 +35,7 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +options: Option[],
   +prefix?: React$Node,
+  +customValueText?: Translation,
 |};
 
 declare export var SelectContainer: ReactComponentStyled<any>;

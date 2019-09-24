@@ -272,21 +272,7 @@ exports[`Default Stack should match snapshot 1`] = `
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media (min-width:992px) {
@@ -17976,7 +17962,7 @@ exports[`Default Stack should match snapshot 1`] = `
                                     "isStatic": true,
                                     "lastClassName": "c10",
                                     "rules": Array [
-                                      "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                      "display:inline-block;",
                                     ],
                                   },
                                   "displayName": "Button__StyledButtonContentChildren",
@@ -18316,21 +18302,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media (min-width:992px) {
@@ -36119,7 +36091,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                                       "isStatic": true,
                                       "lastClassName": "c10",
                                       "rules": Array [
-                                        "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                        "display:inline-block;",
                                       ],
                                     },
                                     "displayName": "Button__StyledButtonContentChildren",
@@ -36456,21 +36428,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media (min-width:992px) {
@@ -54156,7 +54114,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                                     "isStatic": true,
                                     "lastClassName": "c10",
                                     "rules": Array [
-                                      "display:flex;flex-basis:auto;justify-content:center;align-items:center;",
+                                      "display:inline-block;",
                                     ],
                                   },
                                   "displayName": "Button__StyledButtonContentChildren",

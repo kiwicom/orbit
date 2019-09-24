@@ -3,7 +3,7 @@
 exports[`ContentWrapper it should match snapshot 1`] = `
 <Fragment>
   <ContentWrapper__StyledOverlay
-    onClick={[Function]}
+    shown={true}
     theme={
       Object {
         "orbit": Object {
@@ -485,11 +485,12 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     containerLeft={0}
     containerTop={0}
     containerWidth={0}
-    onClick={[Function]}
     popoverHeight={0}
     popoverWidth={0}
-    position={null}
+    position="bottom"
     role="tooltip"
+    shown="end"
+    shownMobile={true}
     tabIndex="0"
     theme={
       Object {
@@ -1470,21 +1471,5 @@ exports[`Popover it should match snapshot 1`] = `
       Open
     </Button>
   </Popover__StyledPopoverChild>
-  <Portal
-    element="popovers"
-  >
-    <PopoverContentWrapper
-      containerRef={
-        Object {
-          "current": null,
-        }
-      }
-      onClose={[Function]}
-      overlapped={true}
-      preferredPosition="bottom"
-    >
-      Message for a user
-    </PopoverContentWrapper>
-  </Portal>
 </Fragment>
 `;

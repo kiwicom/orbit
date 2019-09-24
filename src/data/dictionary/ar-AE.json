@@ -6,7 +6,8 @@
   "breadcrumbs_back": "رجوع",
   "button_close": "إغلاق",
   "choicegroup_only": "فقط",
+  "loading": "جارٍ التحميل",
   "pagination_label_next": "التالي",
   "pagination_label_prev": "السابق",
-  "ratingstar_description": "تقييم __number__ من __number__"
+  "ratingstar_description": "تقييم __number__ من __total__"
 }

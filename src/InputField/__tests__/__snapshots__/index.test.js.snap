@@ -3384,6 +3384,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
       data-state="ok"
       data-test="test"
       id="id"
+      inputMode="numeric"
       maxLength={10}
       minLength={1}
       name="name"

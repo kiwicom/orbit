@@ -66,6 +66,7 @@ storiesOf("CheckBox", module)
       const checked = boolean("Checked", true);
       const disabled = boolean("Disabled", true);
       const hasError = boolean("hasError", false);
+      const readOnly = boolean("readOnly", false);
       const info = text("Info", "Additional information for this choice");
       const dataTest = text("dataTest", "test");
       const name = text("name", "name");
@@ -79,7 +80,8 @@ storiesOf("CheckBox", module)
           hasError={hasError}
           dataTest={dataTest}
           info={info}
-          onChange={action("changed")}
+          readOnly={readOnly}
+          onChange={!readOnly ? action("changed") : undefined}
         />
       );
     },

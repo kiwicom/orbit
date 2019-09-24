@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 import styled from "styled-components";
 
 import { getBreakpointWidth } from "../utils/mediaQuery";
@@ -10,25 +10,18 @@ import RandomID from "../utils/randomID";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import useTheme from "../hooks/useTheme";
 import TooltipContent from "./components/TooltipContent";
+import useStateWithTimeout from "../hooks/useStateWithTimeout";
 
 import type { Props } from "./index";
 
 const StyledTooltipChildren = styled.span`
+  display: inline-block;
   &:focus:active {
     outline: none;
   }
   ${StyledText} {
-    position: relative;
     display: inline-block;
-    :after {
-      display: block;
-      border-bottom: 1px dotted currentColor;
-      position: relative;
-      content: " ";
-      width: 100%;
-      height: 0;
-      top: -1px;
-    }
+    text-decoration: underline currentColor dotted;
   }
 `;
 
@@ -43,80 +36,54 @@ const Tooltip = ({
 }: Props) => {
   const theme = useTheme();
   const [shown, setShown] = useState(false);
-  const [render, setRender] = useState(false);
-  const [shownMobile, setShownMobile] = useState(false);
+  const [
+    render,
+    setRender,
+    setRenderWithTimeout,
+    clearRenderTimeout,
+  ] = useStateWithTimeout<boolean>(false, 200);
+  const [shownMobile, setShownMobile, setShownMobileWithTimeout] = useStateWithTimeout<boolean>(
+    false,
+    200,
+  );
   const tooltipId = useMemo(() => RandomID("tooltip"), []);
   const container = useRef(null);
-  const renderRef = useRef(null);
-  const shownMobileRef = useRef(null);
-
-  const setRenderTimeout = useCallback(() => {
-    renderRef.current = setTimeout(() => {
-      renderRef.current = null;
-      setRender(false);
-    }, 200);
-  }, []);
-
-  const setShownMobileTimeout = useCallback(() => {
-    shownMobileRef.current = setTimeout(() => {
-      shownMobileRef.current = null;
-      setShownMobile(true);
-    }, 200);
-  }, []);
-
-  const clearRenderTimeout = useCallback(() => {
-    if (renderRef.current !== null) {
-      clearTimeout(renderRef.current);
-    }
-  }, []);
-
-  const clearShownMobileTimeout = useCallback(() => {
-    if (shownMobileRef.current !== null) {
-      clearTimeout(shownMobileRef.current);
-    }
-  }, []);
-
   const handleIn = useCallback(() => {
     if (window.innerWidth > +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
       setRender(true);
       setShown(true);
       clearRenderTimeout();
     }
-  }, [clearRenderTimeout, theme]);
+  }, [clearRenderTimeout, setRender, theme]);
 
   const handleOut = useCallback(() => {
     if (window.innerWidth > +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
       setShown(false);
-      setRenderTimeout();
+      setRenderWithTimeout(false);
     }
-  }, [setRenderTimeout, theme]);
+  }, [setRenderWithTimeout, theme]);
 
   const handleInMobile = useCallback(() => {
     if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
       setRender(true);
-      setShownMobileTimeout();
+      setShownMobileWithTimeout(true);
       clearRenderTimeout();
     }
-  }, [clearRenderTimeout, setShownMobileTimeout, theme]);
+  }, [clearRenderTimeout, setRender, setShownMobileWithTimeout, theme]);
 
   const handleOutMobile = useCallback(() => {
     setShownMobile(false);
-    setRenderTimeout();
-  }, [setRenderTimeout]);
-
-  useEffect(() => {
-    return () => {
-      clearRenderTimeout();
-      clearShownMobileTimeout();
-    };
-  }, [clearRenderTimeout, clearShownMobileTimeout]);
-
+    setRenderWithTimeout(false);
+  }, [setRenderWithTimeout, setShownMobile]);
   return (
     <React.Fragment>
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
-        onClick={handleInMobile}
+        onClick={ev => {
+          ev.stopPropagation();
+          handleInMobile();
+        }}
         onFocus={handleIn}
         onBlur={handleOut}
         ref={container}

@@ -1,12 +1,13 @@
 {
   "a11ymenu_jump_to": "Siirry:",
   "a11ymenu_page_actions": "Tavalliset toiminnot tällä sivulla",
-  "a11ymenu_page_sections": "Tämän sivu osiot",
+  "a11ymenu_page_sections": "Tämän sivun osiot",
   "a11ymenu_send_feedback": "Lähetä palautetta",
   "breadcrumbs_back": "Takaisin",
   "button_close": "Sulje",
   "choicegroup_only": "Vain",
+  "loading": "Ladataan",
   "pagination_label_next": "Seuraava",
   "pagination_label_prev": "Edellinen",
-  "ratingstar_description": "Arvostelu __number__ / __number__"
+  "ratingstar_description": "Arvostelu __number__/__total__"
 }

@@ -6,7 +6,8 @@
   "breadcrumbs_back": "Назад",
   "button_close": "Затвори",
   "choicegroup_only": "Само",
+  "loading": "Зареждане",
   "pagination_label_next": "Напред",
   "pagination_label_prev": "Назад",
-  "ratingstar_description": "Оценка __number__ от __number__"
+  "ratingstar_description": "Оценка __number__ от __total__"
 }

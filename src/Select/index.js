@@ -9,7 +9,7 @@ import FormFeedback from "../FormFeedback";
 import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
-import { right, rtlSpacing } from "../utils/rtl";
+import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 
@@ -50,10 +50,12 @@ const StyledSelect = styled(
         onChange,
         onFocus,
         onBlur,
+        id,
       },
       ref,
     ) => (
       <select
+        id={id}
         data-test={dataTest}
         data-state={getFieldDataState(error)}
         value={value}
@@ -96,7 +98,7 @@ const StyledSelect = styled(
   width: 100%;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
-
+  color: ${({ customValueText }) => customValueText && "transparent"};
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
   }
@@ -110,6 +112,8 @@ const StyledSelect = styled(
     background: transparent;
     color: ${({ theme, filled }) =>
       filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    // needs to rgba, transparent is not allow in IE
+    color: ${({ customValueText }) => customValueText && "rgba(255, 255, 255, 0)"};
   }
 
   /* Based on state of select */
@@ -136,7 +140,7 @@ const StyledSelect = styled(
   &:disabled {
     color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
     background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
-    cursor: default;
+    cursor: not-allowed;
 
     &:hover {
       box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
@@ -207,6 +211,25 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledCustomValue = styled(({ prefix, theme, size, filled, ...props }) => <div {...props} />)`
+  color: ${({ theme, filled }) =>
+    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${({ theme, size }) =>
+    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
+  z-index: 3;
+  position: absolute;
+  height: 100%;
+  line-height: ${getSelectSize};
+  top: 0;
+  ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceSmall)};
+  bottom: 0;
+`;
+
+StyledCustomValue.defaultProps = {
+  theme: defaultTheme,
+};
+
 // $FlowExpected
 const Select = React.forwardRef((props: Props, ref: Ref) => {
   const {
@@ -223,15 +246,18 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     onFocus,
     options,
     tabIndex,
+    id,
+    required,
     dataTest,
     prefix,
     spaceAfter,
+    customValueText,
   } = props;
   const filled = !(value == null || value === "");
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
-        <FormLabel filled={filled} disabled={disabled}>
+        <FormLabel filled={filled} disabled={disabled} required={required}>
           {label}
         </FormLabel>
       )}
@@ -240,6 +266,11 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           <SelectPrefix prefix={prefix} size={size}>
             {prefix}
           </SelectPrefix>
+        )}
+        {customValueText && (
+          <StyledCustomValue filled={filled} size={size} prefix={prefix}>
+            {customValueText}
+          </StyledCustomValue>
         )}
         <StyledSelect
           dataTest={dataTest}
@@ -253,7 +284,10 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           onBlur={onBlur}
           onChange={onChange}
           filled={filled}
+          customValueText={customValueText}
           tabIndex={tabIndex}
+          id={id}
+          required={required}
           ref={ref}
         >
           {placeholder && (

@@ -11,7 +11,8 @@ export type Props = {|
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
-  +onClose: () => void,
+  +shown: boolean,
+  +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -340,27 +340,27 @@ class TripSegment extends React.PureComponent<Props, State> {
             <StyledTripSegmentOverview>
               <StyledTripSegmentOverviewColumn>
                 <StyledTripSegmentOverviewTime>
-                  <Text element="div" align="right">
+                  <Text as="div" align="right">
                     {departureTime}
                   </Text>
                 </StyledTripSegmentOverviewTime>
                 <StyledTripSegmentOverviewTime>
-                  <Text element="div" align="right">
+                  <Text as="div" align="right">
                     {arrivalTime}
                   </Text>
                 </StyledTripSegmentOverviewTime>
               </StyledTripSegmentOverviewColumn>
               <StyledTripSegmentOverviewColumn grow>
-                <Text element="div" type="primary">
+                <Text as="div" type="primary">
                   <Truncate>{departure}</Truncate>
                 </Text>
-                <Text element="div" type="primary">
+                <Text as="div" type="primary">
                   <Truncate>{arrival}</Truncate>
                 </Text>
               </StyledTripSegmentOverviewColumn>
             </StyledTripSegmentOverview>
             <StyledTripSegmentCarrier>
-              <Text element="div" type="secondary" size="small">
+              <Text as="div" type="secondary" size="small">
                 {duration}
               </Text>
               <CarrierLogo size="medium" carriers={[carrier]} />

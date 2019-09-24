@@ -35,7 +35,7 @@ Table below contains all types of the props available in the LayoutColumn compon
 | :----------- | :----------- | :------ | :-------------------------------------------------------------------------------------------- |
 | **children** | `React.Node` |         | The children of the LayoutColumn.                                                             |
 | dataTest     | `string`     |         | Optional prop for testing purposes.                                                           |
-| element      | `string`     | `"div"` | The HTML element in which item will be rendered                                               |
+| as      | `string`     | `"div"` | The HTML element in which item will be rendered                                               |
 | hideOn       | `Devices[]`  |         | Array of devices - viewports to hide the children on. For more info check **Hide** component. |
 
 ## Layouts

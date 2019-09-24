@@ -25,9 +25,9 @@ storiesOf("Heading", module)
     "Title Display",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
       return (
-        <Heading type="display" element={element}>
+        <Heading type="display" as={as}>
           {customTitle}
         </Heading>
       );
@@ -41,9 +41,9 @@ storiesOf("Heading", module)
     "Title displaySubtitle",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
       return (
-        <Heading type="displaySubtitle" element={element}>
+        <Heading type="displaySubtitle" as={as}>
           {customTitle}
         </Heading>
       );
@@ -57,9 +57,9 @@ storiesOf("Heading", module)
     "Title 1",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
       return (
-        <Heading type="title1" element={element}>
+        <Heading type="title1" as={as}>
           {customTitle}
         </Heading>
       );
@@ -73,9 +73,9 @@ storiesOf("Heading", module)
     "Title 2",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
       return (
-        <Heading type="title2" element={element}>
+        <Heading type="title2" as={as}>
           {customTitle}
         </Heading>
       );
@@ -89,9 +89,9 @@ storiesOf("Heading", module)
     "Title 3",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H3);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H3);
       return (
-        <Heading type="title3" element={element}>
+        <Heading type="title3" as={as}>
           {customTitle}
         </Heading>
       );
@@ -105,9 +105,9 @@ storiesOf("Heading", module)
     "Title 4",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H4);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H4);
       return (
-        <Heading type="title4" element={element}>
+        <Heading type="title4" as={as}>
           {customTitle}
         </Heading>
       );
@@ -121,9 +121,9 @@ storiesOf("Heading", module)
     "Title 5",
     () => {
       const customTitle = text("Title", "Orbit design system");
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H5);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H5);
       return (
-        <Heading type="title5" element={element}>
+        <Heading type="title5" as={as}>
           {customTitle}
         </Heading>
       );
@@ -136,14 +136,14 @@ storiesOf("Heading", module)
   .add(
     "Inverted heading",
     () => {
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
       const inverted = boolean("Inverted", true);
       const customTitle = text("Title", "Orbit design system");
 
       return (
         <div style={{ padding: 20, backgroundColor: "#46515E" }}>
-          <Heading type={type} element={element} inverted={inverted}>
+          <Heading type={type} as={as} inverted={inverted}>
             {customTitle}
           </Heading>
         </div>
@@ -157,7 +157,7 @@ storiesOf("Heading", module)
   .add(
     "Playground",
     () => {
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+      const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
       const dataTest = text("dataTest", "test");
       const id = text("ID", "ID-OF-A-ELEMENT");
@@ -167,7 +167,7 @@ storiesOf("Heading", module)
       return (
         <Heading
           id={id}
-          element={element}
+          as={as}
           dataA11ySection={dataA11ySection}
           type={type}
           dataTest={dataTest}

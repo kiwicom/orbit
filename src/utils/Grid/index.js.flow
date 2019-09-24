@@ -19,7 +19,7 @@ export type MediaQuery = {|
 export type Props = {
   ...BasicProps,
   ...Globals,
-  +element?: string,
+  +as?: string,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

@@ -3432,6 +3432,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
           ],
         }
       }
+      pattern=".{6,}"
       placeholder="placeholder"
       readOnly={true}
       size="normal"

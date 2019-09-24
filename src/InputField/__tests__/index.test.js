@@ -29,6 +29,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const id = "id";
   const inputMode = INPUTMODE.NUMERIC;
+  const pattern = ".{6,}";
 
   const component = shallow(
     <InputField
@@ -47,6 +48,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       autoComplete={autoComplete}
       spaceAfter={spaceAfter}
       inputMode={inputMode}
+      pattern={pattern}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -94,6 +96,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("minLength")).toBe(minLength);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
+    expect(input.render().prop("pattern")).toBe(pattern);
     expect(input.render().prop("data-state")).toBe("ok");
     expect(input.render().prop("inputmode")).toBe(inputMode);
     expect(input.render().prop("autocomplete")).toBe(autoComplete);

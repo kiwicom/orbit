@@ -41,6 +41,7 @@ export type Props = {|
   +children: React$Node,
   +content: React$Node,
   +size?: Sizes,
+  +stopPropagation?: boolean,
   +preferredPosition?: Positions,
   +enabled?: boolean,
   +tabIndex?: string,

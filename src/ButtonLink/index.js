@@ -99,6 +99,7 @@ export const StyledButtonLink = styled(
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
   flex: ${({ block }) => (block ? "1 1 auto" : "0 0 auto")};
+  max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${getTypeToken(TOKENS.backgroundButton)};
   color: ${getTypeToken(TOKENS.colorTextButton)}!important;

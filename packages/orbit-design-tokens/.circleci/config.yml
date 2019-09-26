@@ -25,9 +25,6 @@ jobs:
       - run:
           name: Run all tests
           command: npm run test-ci
-      - run:
-          name: Publish to NPM
-          command: npm run ci-publish || true
 
 workflows:
   version: 2

@@ -437,6 +437,76 @@ storiesOf("InputField", module)
     },
   )
   .add(
+    "With help",
+    () => {
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
+      const name = text("Name", "input");
+      const label = text("Label", "Label");
+      const inlineLabel = boolean("inline label", true);
+      const value = text("Value", "");
+      const placeholder = text("Placeholder", "Placeholder");
+      const Prefix = getIcon(getIcons("Prefix", "Search"));
+      const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+      const help = text("Help", "Please fill out as you have on your passport");
+      const error = text("Error", undefined);
+      const disabled = boolean("Disabled", false);
+      const maxValue = number("maxValue", undefined);
+      const minValue = number("minValue", undefined);
+      const required = boolean("required", false);
+      const maxLength = number("maxLength", undefined);
+      const minLength = number("minLength", undefined);
+      const readOnly = boolean("readOnly", false);
+      const autoComplete = text("autoComplete", "off");
+      const dataTest = text("dataTest", "test");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const id = text("id", "ID");
+
+      return (
+        <InputField
+          size={size}
+          type={type}
+          name={name}
+          label={label}
+          inlineLabel={inlineLabel}
+          value={value}
+          dataTest={dataTest}
+          placeholder={placeholder}
+          required={required}
+          prefix={Prefix && <Prefix />}
+          suffix={
+            Suffix && (
+              <ButtonLink
+                transparent
+                icon={<Suffix />}
+                size={size}
+                onClick={action("clicked")}
+                disabled={disabled}
+              />
+            )
+          }
+          help={help}
+          error={error}
+          disabled={disabled}
+          maxValue={maxValue}
+          minValue={minValue}
+          maxLength={maxLength}
+          minLength={minLength}
+          readOnly={readOnly}
+          autoComplete={autoComplete}
+          onChange={action("change")}
+          onFocus={action("focus")}
+          onBlur={action("blur")}
+          spaceAfter={spaceAfter}
+          id={id}
+        />
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);

@@ -6,6 +6,7 @@ export type Globals = {|
 |};
 
 export type RefType = () => { current: ?HTMLElement };
+export type UseRef = { current: ?HTMLElement };
 
 export type Ref = {|
   +ref?: RefType,

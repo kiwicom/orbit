@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -124,7 +124,22 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
     onRemoveFile,
     dataTest,
     spaceAfter,
+    help,
+    error,
+    onFocus,
+    onBlur,
+    name,
+    label,
+    onChange,
+    allowedFileTypes,
+    tabIndex,
+    fileName,
   } = props;
+
+  const [tooltipShown, setTooltipShown] = useState(false);
+  const [tooltipShownHover, setTooltipShownHover] = useState(false);
+  const labelRef = useRef(null);
+  const iconRef = useRef(null);
 
   return (
     <Field spaceAfter={spaceAfter}>
@@ -132,24 +147,46 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
         data-test={dataTest}
         data-state={getFieldDataState(!!props.error)}
         type="file"
-        name={props.name}
-        error={props.error}
-        onChange={props.onChange}
-        onFocus={props.onChange}
-        onBlur={props.onBlur}
-        accept={props.allowedFileTypes}
+        name={name}
+        error={error}
+        onChange={onChange}
+        onFocus={e => {
+          if (onFocus) {
+            onFocus(e);
+          }
+          setTooltipShown(true);
+        }}
+        onBlur={e => {
+          if (onBlur) {
+            onBlur(e);
+          }
+          setTooltipShown(false);
+        }}
+        accept={allowedFileTypes}
         ref={ref}
-        tabIndex={props.tabIndex}
+        tabIndex={tabIndex}
       />
-      {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
-      <FakeInput error={props.error}>
+      {label && (
+        <FormLabel
+          isFilled={!!fileName}
+          error={!!error}
+          help={!!help}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
+          {label}
+        </FormLabel>
+      )}
+      <FakeInput error={error}>
         <InputButton type="secondary" size="small" icon={<Attachment />} component="div">
           {title}
         </InputButton>
-        <StyledFileInput fileName={props.fileName} error={props.error}>
-          {props.fileName || placeholder}
+        <StyledFileInput fileName={fileName} error={error}>
+          {fileName || placeholder}
         </StyledFileInput>
-        {props.fileName && (
+        {fileName && (
           <CloseButton
             type="secondary"
             transparent
@@ -163,8 +200,14 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
           />
         )}
       </FakeInput>
-      {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
-      {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
+      <FormFeedback
+        help={help}
+        error={error}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        tooltipShown={tooltipShown}
+        tooltipShownHover={tooltipShownHover}
+      />
     </Field>
   );
 });

@@ -1,12 +1,12 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, UseRef } from "../common/common.js.flow";
 
 export type Props = {
   children: React$Node,
   shown?: boolean,
   isHelp?: boolean,
-  boundingRef?: { current: ?HTMLElement },
-  iconBoundingRef?: { current: ?HTMLElement },
+  boundingRef?: UseRef,
+  iconBoundingRef?: UseRef,
   inlineLabel?: React$Node,
   onClick?: () => void | Promise<any>,
   ...Globals,

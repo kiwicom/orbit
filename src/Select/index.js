@@ -1,12 +1,11 @@
 // @flow
-import * as React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
-import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import type { Ref } from "../common/common.js.flow";
 import { right, rtlSpacing } from "../utils/rtl";
@@ -228,10 +227,25 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     spaceAfter,
   } = props;
   const filled = !(value == null || value === "");
+
+  const [tooltipShown, setTooltipShown] = useState(false);
+  const [tooltipShownHover, setTooltipShownHover] = useState(false);
+  const labelRef = useRef(null);
+  const iconRef = useRef(null);
+
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
-        <FormLabel filled={filled} disabled={disabled}>
+        <FormLabel
+          filled={!!filled}
+          error={!!error}
+          help={!!help}
+          disabled={disabled}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
           {label}
         </FormLabel>
       )}
@@ -249,8 +263,18 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           value={value == null ? "" : value}
           prefix={prefix}
           name={name}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={e => {
+            if (onFocus) {
+              onFocus(e);
+            }
+            setTooltipShown(true);
+          }}
+          onBlur={e => {
+            if (onBlur) {
+              onBlur(e);
+            }
+            setTooltipShown(false);
+          }}
           onChange={onChange}
           filled={filled}
           tabIndex={tabIndex}
@@ -271,8 +295,14 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           <ChevronDown />
         </SelectSuffix>
       </SelectContainer>
-      {help && !error && <FormFeedback type={TYPE_OPTIONS.HELP}>{help}</FormFeedback>}
-      {error && <FormFeedback type={TYPE_OPTIONS.ERROR}>{error}</FormFeedback>}
+      <FormFeedback
+        help={help}
+        error={error}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        tooltipShown={tooltipShown}
+        tooltipShownHover={tooltipShownHover}
+      />
     </Label>
   );
 });

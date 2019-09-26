@@ -4,7 +4,7 @@
 */
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref, Translation } from "../common/common.js.flow";
+import type { Globals, Ref, Translation, UseRef } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal";
@@ -43,13 +43,14 @@ export type Props = {|
 |};
 
 export type FormLabelProps = {|
-  +label: Translation,
+  +children: React$Node,
   +isFilled: boolean,
   +required?: boolean,
   +error?: boolean,
   +help?: boolean,
   +inlineLabel?: boolean,
-  +iconRef?: { current: ?HTMLElement },
+  +iconRef?: UseRef,
+  +labelRef?: UseRef,
   +onMouseEnter?: () => void | Promise<any>,
   +onMouseLeave?: () => void | Promise<any>,
 |};

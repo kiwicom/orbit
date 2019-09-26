@@ -1,7 +1,8 @@
 // @flow
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, UseRef } from "../common/common.js.flow";
 
 export type Props = {
+  className?: string,
   children: React$Node,
   filled?: boolean,
   disabled?: boolean,
@@ -9,6 +10,9 @@ export type Props = {
   id?: string,
   error?: boolean,
   help?: boolean,
+  inlineLabel?: boolean,
+  iconRef?: UseRef,
+  labelRef?: UseRef,
   onMouseEnter?: () => void | Promise<any>,
   onMouseLeave?: () => void | Promise<any>,
   ...Globals,

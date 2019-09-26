@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
-import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
@@ -13,11 +12,12 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
-import FormFeedbackTooltip from "../FormFeedbackTooltip";
+import FormFeedback from "../FormFeedback";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
+import FormLabel from "../FormLabel";
 
-import type { Props, FormLabelProps } from "./index";
+import type { Props } from "./index";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -142,7 +142,7 @@ const StyledInlineLabel = styled.div`
   justify-content: center;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 
-  ${DefaultFormLabel} {
+  ${FormLabel} {
     margin-bottom: 0;
     font-size: ${getToken(TOKENS.fontSizeInput)};
     line-height: normal;
@@ -281,32 +281,6 @@ Input.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormLabel = ({
-  label,
-  isFilled,
-  required,
-  error,
-  help,
-  iconRef,
-  inlineLabel,
-  onMouseEnter,
-  onMouseLeave,
-}: FormLabelProps) => (
-  <DefaultFormLabel
-    iconRef={iconRef}
-    filled={isFilled}
-    required={required}
-    error={error}
-    help={help}
-    inlineLabel={inlineLabel}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    {label}
-  </DefaultFormLabel>
-);
-
-const StyledLabelWrapper = styled.div``;
 const StyledIconWrapper = styled.span`
   display: flex;
 `;
@@ -349,8 +323,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
 
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
-
-  const tooltipRef = useRef(null);
+  const labelRef = useRef(null);
   const iconRef = useRef(null);
 
   return (
@@ -360,23 +333,19 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
       htmlFor={label ? forID : undefined}
     >
       {label && !inlineLabel && (
-        <StyledLabelWrapper ref={tooltipRef}>
-          <FormLabel
-            label={label}
-            isFilled={!!value}
-            required={required}
-            error={!!error}
-            help={!!help}
-            iconRef={iconRef}
-            inlineLabel={inlineLabel}
-            onMouseEnter={() => {
-              setTooltipShownHover(true);
-            }}
-            onMouseLeave={() => {
-              setTooltipShownHover(false);
-            }}
-          />
-        </StyledLabelWrapper>
+        <FormLabel
+          inlineLabel={inlineLabel}
+          filled={!!value}
+          required={required}
+          error={!!error}
+          help={!!help}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
+          {label}
+        </FormLabel>
       )}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix &&
@@ -397,15 +366,16 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             <Prefix size={size}>{prefix}</Prefix>
           ))}
         {label && inlineLabel && (
-          <StyledInlineLabel ref={tooltipRef} size={size}>
+          <StyledInlineLabel ref={labelRef} size={size}>
             <FormLabel
-              label={label}
-              isFilled={!!value}
+              filled={!!value}
               required={required}
               error={!!error}
               help={!!help}
               inlineLabel={inlineLabel}
-            />
+            >
+              {label}
+            </FormLabel>
           </StyledInlineLabel>
         )}
         {tags && <InputTags>{tags}</InputTags>}
@@ -448,27 +418,14 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      {(tooltipShown || tooltipShownHover) && help && !error && (
-        <FormFeedbackTooltip
-          isHelp
-          shown={tooltipShown || tooltipShownHover}
-          boundingRef={tooltipRef}
-          iconBoundingRef={iconRef}
-          inlineLabel={inlineLabel}
-        >
-          {help}
-        </FormFeedbackTooltip>
-      )}
-      {(tooltipShown || tooltipShownHover) && error && (
-        <FormFeedbackTooltip
-          shown={tooltipShown || tooltipShownHover}
-          boundingRef={tooltipRef}
-          iconBoundingRef={iconRef}
-          inlineLabel={inlineLabel}
-        >
-          {error}
-        </FormFeedbackTooltip>
-      )}
+      <FormFeedback
+        help={help}
+        error={error}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        tooltipShown={tooltipShown}
+        tooltipShownHover={tooltipShownHover}
+      />
     </Field>
   );
 });

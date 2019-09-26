@@ -1,12 +1,11 @@
 // @flow
-import * as React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
-import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -69,13 +68,13 @@ const StyledTextArea = styled.textarea`
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  // for usage with Stack
+  /* for usage with Stack */
   flex: ${({ fullHeight }) => fullHeight && "1"};
 
-  // IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden
+  /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
   border: 1px solid transparent;
 
-  // IE 11 bug fix, hide scrollbar by default (shown only when scrollable)
+  /* IE 11 bug fix, hide scrollbar by default (shown only when scrollable) */
   overflow: auto;
 
   &::placeholder {
@@ -102,44 +101,87 @@ StyledTextArea.defaultProps = {
 };
 
 // $FlowExpected
-const Textarea = React.forwardRef((props: Props, ref: Ref) => {
-  const {
+const Textarea = React.forwardRef(
+  ({
     size = SIZE_OPTIONS.NORMAL,
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
     dataTest,
     spaceAfter,
-  } = props;
+    ref,
+    fullHeight,
+    value,
+    label,
+    name,
+    error,
+    placeholder,
+    maxLength,
+    onChange,
+    onFocus,
+    onBlur,
+    tabIndex,
+    help,
+  }: Props) => {
+    const [tooltipShown, setTooltipShown] = useState(false);
+    const [tooltipShownHover, setTooltipShownHover] = useState(false);
+    const labelRef = useRef(null);
+    const iconRef = useRef(null);
 
-  return (
-    <Field fullHeight={props.fullHeight} spaceAfter={spaceAfter}>
-      {props.label && (
-        <FormLabel filled={!!props.value} disabled={disabled}>
-          {props.label}
-        </FormLabel>
-      )}
-      <StyledTextArea
-        data-test={dataTest}
-        name={props.name}
-        value={props.value}
-        size={size}
-        fullHeight={props.fullHeight}
-        disabled={disabled}
-        error={props.error}
-        placeholder={props.placeholder}
-        maxLength={props.maxLength}
-        onChange={props.onChange}
-        onFocus={props.onFocus}
-        onBlur={props.onBlur}
-        resize={resize}
-        tabIndex={props.tabIndex}
-        ref={ref}
-      />
-      {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
-      {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
-    </Field>
-  );
-});
+    return (
+      <Field fullHeight={fullHeight} spaceAfter={spaceAfter}>
+        {label && (
+          <FormLabel
+            filled={!!value}
+            error={!!error}
+            help={!!help}
+            labelRef={labelRef}
+            iconRef={iconRef}
+            onMouseEnter={() => setTooltipShownHover(true)}
+            onMouseLeave={() => setTooltipShownHover(false)}
+          >
+            {label}
+          </FormLabel>
+        )}
+
+        <StyledTextArea
+          data-test={dataTest}
+          name={name}
+          value={value}
+          size={size}
+          fullHeight={fullHeight}
+          disabled={disabled}
+          error={error}
+          placeholder={placeholder}
+          maxLength={maxLength}
+          onChange={onChange}
+          onFocus={e => {
+            if (onFocus) {
+              onFocus(e);
+            }
+            setTooltipShown(true);
+          }}
+          onBlur={e => {
+            if (onBlur) {
+              onBlur(e);
+            }
+            setTooltipShown(false);
+          }}
+          resize={resize}
+          tabIndex={tabIndex}
+          ref={ref}
+        />
+        <FormFeedback
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          tooltipShown={tooltipShown}
+          tooltipShownHover={tooltipShownHover}
+        />
+      </Field>
+    );
+  },
+);
 
 Textarea.displayName = "Textarea";
 

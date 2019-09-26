@@ -2,12 +2,13 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/textarea/
 */
-import type { Globals, Translation } from "../common/common.js.flow";
+import type { Globals, Translation, Ref } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
   ...spaceAfter,
+  ...Ref,
   +size?: "small" | "normal",
   +name?: string,
   +label?: Translation,

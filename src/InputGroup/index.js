@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -12,7 +12,7 @@ import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
 
-import type { Props, State } from "./index";
+import type { Props } from "./index";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -151,126 +151,133 @@ StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-class InputGroup extends React.PureComponent<Props, State> {
-  state = {
-    active: false,
-    filled: false,
-  };
+const InputGroup = ({
+  children,
+  label,
+  flex = "0 1 auto",
+  size = SIZE_OPTIONS.NORMAL,
+  help,
+  error,
+  dataTest,
+  spaceAfter,
+  onFocus,
+  onBlur,
+  onChange,
+}: Props) => {
+  const [active, setActive] = useState(false);
+  const [filled, setFilled] = useState(false);
+  const [tooltipShown, setTooltipShown] = useState(false);
+  const [tooltipShownHover, setTooltipShownHover] = useState(false);
+  const labelRef = useRef(null);
+  const iconRef = useRef(null);
+  const inputID: string = useMemo(() => randomID("inputFieldID"), []);
 
-  inputID: string = randomID("inputGroupID");
+  const isFilled = useCallback(() => {
+    return () => {
+      setFilled(
+        !React.Children.map(
+          children,
+          child => child.props.value !== undefined && child.props.value !== "",
+        ).includes(false),
+      );
+    };
+  }, [children]);
 
-  componentDidMount() {
-    this.isFilled();
-  }
+  useEffect(() => {
+    isFilled();
+  }, [isFilled, children]);
 
-  componentDidUpdate(prevProps: Props) {
-    if (this.props.children !== prevProps.children) {
-      this.isFilled();
-    }
-  }
-
-  isFilled = () =>
-    this.setState({
-      filled: !React.Children.map(
-        this.props.children,
-        child => child.props.value !== undefined && child.props.value !== "",
-      ).includes(false),
-    });
-
-  handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onFocus } = this.props;
-
-    this.setState({ active: true });
+  const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    setActive(true);
+    setTooltipShown(true);
     if (onFocus) {
       onFocus(ev);
     }
   };
 
-  handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onBlur } = this.props;
-    this.isFilled();
-
-    this.setState({ active: false });
+  const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    isFilled();
+    setActive(false);
+    setTooltipShown(false);
     if (onBlur) {
       onBlur(ev);
     }
   };
 
-  handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onChange } = this.props;
-    this.isFilled();
+  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    isFilled();
 
     if (onChange) {
       onChange(ev);
     }
   };
 
-  render() {
-    const {
-      children,
-      label,
-      flex = "0 1 auto",
-      size = SIZE_OPTIONS.NORMAL,
-      help,
-      error,
-      dataTest,
-      spaceAfter,
-    } = this.props;
+  return (
+    <StyledInputGroup
+      label={label}
+      error={error}
+      active={active}
+      size={size}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+      role="group"
+      ariaLabelledby={label && inputID}
+    >
+      {label && (
+        <FormLabel
+          filled={filled}
+          id={inputID}
+          error={!!error}
+          help={!!help}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
+          {label}
+        </FormLabel>
+      )}
 
-    const { active, filled } = this.state;
-
-    return (
-      <StyledInputGroup
-        label={label}
+      <StyledChildren>
+        {React.Children.map(children, (item, key) => {
+          // either array, array with one length or string
+          // if it's not defined, use the first or string
+          const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+          return (
+            <StyledChild flex={childFlex}>
+              {React.cloneElement(item, {
+                ref: node => {
+                  // Call the original ref, if any
+                  const { ref } = item;
+                  if (typeof ref === "function") {
+                    ref(node);
+                  } else if (ref !== null) {
+                    ref.current = node;
+                  }
+                },
+                size,
+                label: undefined,
+                help: undefined,
+                error: undefined,
+                onChange: handleChange,
+                onBlur: handleBlur,
+                onFocus: handleFocus,
+              })}
+            </StyledChild>
+          );
+        })}
+      </StyledChildren>
+      <FakeGroup label={label} error={error} active={active} size={size} />
+      <FormFeedback
+        help={help}
         error={error}
-        active={active}
-        size={size}
-        dataTest={dataTest}
-        spaceAfter={spaceAfter}
-        role="group"
-        ariaLabelledby={label && this.inputID}
-      >
-        {label && (
-          <FormLabel filled={filled} id={this.inputID}>
-            {label}
-          </FormLabel>
-        )}
-        <StyledChildren>
-          {React.Children.map(children, (item, key) => {
-            // either array, array with one length or string
-            // if it's not defined, use the first or string
-            const childFlex =
-              Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-            return (
-              <StyledChild flex={childFlex}>
-                {React.cloneElement(item, {
-                  ref: node => {
-                    // Call the original ref, if any
-                    const { ref } = item;
-                    if (typeof ref === "function") {
-                      ref(node);
-                    } else if (ref !== null) {
-                      ref.current = node;
-                    }
-                  },
-                  size,
-                  label: undefined,
-                  help: undefined,
-                  error: undefined,
-                  onChange: this.handleChange,
-                  onBlur: this.handleBlur,
-                  onFocus: this.handleFocus,
-                })}
-              </StyledChild>
-            );
-          })}
-        </StyledChildren>
-        <FakeGroup label={label} error={error} active={active} size={size} />
-        {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
-        {error && <FormFeedback type="error">{error}</FormFeedback>}
-      </StyledInputGroup>
-    );
-  }
-}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        tooltipShown={tooltipShown}
+        tooltipShownHover={tooltipShownHover}
+      />
+    </StyledInputGroup>
+  );
+};
 
 export default InputGroup;

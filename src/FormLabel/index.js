@@ -7,6 +7,8 @@ import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import { rtlSpacing } from "../utils/rtl";
 
+import type { Props } from "./index";
+
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   color: ${({ theme, filled }) =>
@@ -42,8 +44,9 @@ const FormLabel = styled(
     onMouseLeave,
     iconRef,
     inlineLabel,
-  }) => (
-    <span className={className} data-test={dataTest} id={id}>
+    labelRef,
+  }: Props) => (
+    <span className={className} data-test={dataTest} id={id} ref={labelRef}>
       {!inlineLabel && (error || help) && (
         <StyledInputErrorIcWrapper
           ref={iconRef}

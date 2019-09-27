@@ -46,8 +46,15 @@ describe("ContentWrapper", () => {
   const handleClose = jest.fn();
   const ref = React.createRef();
   const position = "bottom";
+  const align = "start";
   const component = shallow(
-    <ContentWrapper containerRef={ref} preferredPosition={position} onClose={handleClose} shown>
+    <ContentWrapper
+      containerRef={ref}
+      preferredPosition={position}
+      preferredAlign={align}
+      onClose={handleClose}
+      shown
+    >
       {content}
     </ContentWrapper>,
   );

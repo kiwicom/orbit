@@ -1,9 +1,9 @@
 // @flow
 import { ALIGNS } from "../consts";
-import type { AnchorsCore } from "../index";
+import type { AlignsCore } from "../index";
 import type { CalculateHorizontalPosition } from "./calculateHorizontalPosition";
 
-const isInside = (p: AnchorsCore, canBe) => {
+const isInside = (p: AlignsCore, canBe) => {
   if (p === ALIGNS.START && canBe[p]) {
     return ALIGNS.START;
   }

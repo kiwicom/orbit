@@ -2,7 +2,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type PositionsCore = "top" | "bottom";
-export type AnchorsCore = "start" | "end";
+export type AlignsCore = "start" | "end";
 
 export type DimensionsCore = {|
   containerTop: number,
@@ -23,7 +23,7 @@ export type Position = {|
 |};
 
 export type Anchor = {|
-  anchor: AnchorsCore,
+  anchor: AlignsCore,
 |};
 
 export type Props = {|
@@ -31,6 +31,7 @@ export type Props = {|
   +children: React$Node,
   +content: React$Node,
   +preferredPosition?: PositionsCore,
+  +preferredAlign?: AlignsCore,
   +opened?: boolean,
   +width?: string,
   +noPadding?: boolean,

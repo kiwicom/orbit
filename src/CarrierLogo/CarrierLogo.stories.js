@@ -6,6 +6,8 @@ import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import customCarrierLogo from "../../static/customCarrierLogo.png";
+import customCarrierLogo2x from "../../static/customCarrierLogo@2x.png";
 
 import CarrierLogo from "./index";
 
@@ -86,6 +88,26 @@ storiesOf("CarrierLogo", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), "large");
       const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
       const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
+      const carriersObject = object(carriersLabel, carrier);
+
+      return <CarrierLogo size={size} carriers={carriersObject} />;
+    },
+    {
+      info:
+        "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
+    },
+  )
+  .add(
+    "Custom carrier logo",
+    () => {
+      const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+      const carrier = [
+        {
+          name: "Angry penguin airline",
+          customSrc: customCarrierLogo,
+          costomSrcSet: `${customCarrierLogo2x} 2x`,
+        },
+      ];
       const carriersObject = object(carriersLabel, carrier);
 
       return <CarrierLogo size={size} carriers={carriersObject} />;

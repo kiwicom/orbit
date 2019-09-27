@@ -44,14 +44,22 @@ const getURLSizes = ({ size }) => {
   };
 };
 
-const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength, size, code }) => {
-  const urlSizes =
-    carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
-  return {
-    src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
-    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
-  };
-})`
+const StyledImage = styled.img.attrs(
+  ({ carrierType = "airline", carriersLength, size, code, customSrc, customSrcSet }) => {
+    if (!customSrc && !customSrcSet) {
+      const urlSizes =
+        carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+      return {
+        src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
+        srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+      };
+    }
+    return {
+      src: customSrc,
+      srcSet: customSrcSet,
+    };
+  },
+)`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   height: ${getCarrierLogoSize};
@@ -84,17 +92,21 @@ StyledCarrierLogo.defaultProps = {
 
 const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
-    {carriers.slice(0, 4).map(carrierImage => (
-      <StyledImage
-        key={carrierImage.code}
-        carrierType={carrierImage.type}
-        carriersLength={carriers.length}
-        code={carrierImage.code}
-        size={size}
-        alt={carrierImage.name}
-        title={carrierImage.name}
-      />
-    ))}
+    {carriers.slice(0, 4).map(carrierImage => {
+      return (
+        <StyledImage
+          key={carrierImage.code}
+          carrierType={carrierImage.type}
+          carriersLength={carriers.length}
+          code={carrierImage.code}
+          size={size}
+          alt={carrierImage.name}
+          title={carrierImage.name}
+          customSrc={carrierImage.customSrc}
+          customSrcSet={carrierImage.customSrcSet}
+        />
+      );
+    })}
   </StyledCarrierLogo>
 );
 export default CarrierLogo;

@@ -6,7 +6,13 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type Carrier = { code: string, name: string, type?: "airline" | "bus" | "train" };
+export type Carrier = {
+  code: string,
+  name: string,
+  type?: "airline" | "bus" | "train",
+  customSrc?: string,
+  customSrcSet?: string,
+};
 
 type Size = "small" | "medium" | "large";
 

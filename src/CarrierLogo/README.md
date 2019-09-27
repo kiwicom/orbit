@@ -19,11 +19,13 @@ Table below contains all types of the props available in CarrierLogo component.
 ### Carrier
 Table below contains all types of the props available for object in Carrier array.
 
-| Name     | Type             | Description                      |
-| :------- | :--------------- | :------------------------------- |
-| **code** | `string`         | The code of the Carrier, defines which logo will be rendered.
-| name     | `string`         | The name of the Carrier, mainly for information.
-| type     | [`enum`](#enum)  | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs)
+| Name         | Type             | Description                      |
+| :----------- | :--------------- | :------------------------------- |
+| **code**     | `string`         | The code of the Carrier, defines which logo will be rendered.
+| name         | `string`         | The name of the Carrier, mainly for information.
+| type         | [`enum`](#enum)  | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs)
+| customSrc    | `string`         | Specifies src for custom Carrier logos, use it only when there is not already a logo provided by `code`. 
+| customSrcSet | `string`         | Specifies srcSet for custom Carrier logos, use it only when there is not already a logo provided by `code`.
 
 ### enum
 

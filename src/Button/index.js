@@ -71,6 +71,7 @@ export const StyledButton = styled(
     buttonRef,
     ariaControls,
     ariaExpanded,
+    ariaLabelledBy,
     spaceAfter,
     title,
     ...props
@@ -84,6 +85,7 @@ export const StyledButton = styled(
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
         aria-label={title}
+        aria-labelledby={ariaLabelledBy}
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
         ref={buttonRef}
@@ -231,6 +233,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     ariaExpanded,
     className,
     ariaControls,
+    ariaLabelledBy,
     spaceAfter,
     dataTest,
     title,
@@ -271,6 +274,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       tabIndex={tabIndex}
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
+      ariaLabelledBy={ariaLabelledBy}
       dataTest={dataTest}
       spaceAfter={spaceAfter}
       title={title}

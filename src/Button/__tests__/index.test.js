@@ -53,6 +53,7 @@ describe("Button with icon", () => {
   const ariaControls = "element";
   const role = "button";
   const title = "With left and right icon";
+  const ariaLabelledBy = "my-aria-span";
   const component = shallow(
     <Button
       size="normal"
@@ -67,6 +68,7 @@ describe("Button with icon", () => {
       ariaControls={ariaControls}
       role={role}
       title={title}
+      ariaLabelledBy={ariaLabelledBy}
     >
       {children}
     </Button>,
@@ -87,6 +89,7 @@ describe("Button with icon", () => {
     expect(component.render().prop("aria-controls")).toBe(ariaControls);
     expect(component.render().prop("aria-expanded")).toBe(String(ariaExpanded));
     expect(component.render().prop("aria-label")).toBe(title);
+    expect(component.render().prop("aria-labelledby")).toBe(ariaLabelledBy);
   });
   it("should have role", () => {
     expect(component.render().prop("role")).toBe(role);

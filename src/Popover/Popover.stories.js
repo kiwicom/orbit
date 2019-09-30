@@ -21,11 +21,10 @@ import Popover from "./index";
 
 const FixedNav = styled.div`
   position: fixed;
-  background-color: red;
-  top: 0;
+  top: 100px;
   left: 0;
 
-  width: 100px;
+  width: 200px;
   padding: 30px;
 `;
 
@@ -273,7 +272,7 @@ storiesOf("Popover", module)
       return (
         <>
           <FixedNav>
-            <Popover fixed content={longContent} onOpen={action("open")} onClose={action("close")}>
+            <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
               <Button type="secondary" iconRight={<ChevronDown />}>
                 Open popover
               </Button>

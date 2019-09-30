@@ -8,8 +8,8 @@ export type Props = {
   +help?: React$Node,
   +tooltipShown?: boolean,
   +tooltipShownHover?: boolean,
-  +labelRef: UseRef,
-  +iconRef: UseRef,
+  +labelRef?: UseRef,
+  +iconRef?: UseRef,
   ...Globals,
 };
 

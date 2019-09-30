@@ -7,6 +7,7 @@ import ChoiceGroup from "..";
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 import Checkbox from "../../Checkbox";
+import FormFeedback from "../components/Feedback";
 
 const label = "Label";
 const labelSize = LABEL_SIZES.LARGE;
@@ -98,6 +99,18 @@ describe("RadioGroup Filters", () => {
     const ev = { persist: () => {}, target: <button type="button">Only</button> };
     instance.handleChange(ev);
     expect(onChange).toHaveBeenCalled();
+  });
+  it("should match snapshot", () => {
+    expect(component).toMatchSnapshot();
+  });
+});
+
+describe("FormFeedback", () => {
+  const dataTest = "test";
+  const component = shallow(<FormFeedback dataTest={dataTest}>FormFeedback</FormFeedback>);
+
+  it("should have data-test", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

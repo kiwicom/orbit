@@ -4,11 +4,13 @@
 */
 import type { Globals } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
   children: React$Node,
   onGoBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

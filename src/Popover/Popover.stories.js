@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -17,6 +18,20 @@ import Separator from "../Separator";
 import Hide from "../Hide";
 
 import Popover from "./index";
+
+const FixedNav = styled.div`
+  position: fixed;
+  background-color: red;
+  top: 0;
+  left: 0;
+
+  width: 100px;
+  padding: 30px;
+`;
+
+const Content = styled.div`
+  height: 2000px;
+`;
 
 const selects = (
   <>
@@ -245,6 +260,28 @@ storiesOf("Popover", module)
             Open popover
           </Button>
         </Popover>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Scrolling content",
+    () => {
+      return (
+        <>
+          <FixedNav>
+            <Popover fixed content={longContent} onOpen={action("open")} onClose={action("close")}>
+              <Button type="secondary" iconRight={<ChevronDown />}>
+                Open popover
+              </Button>
+            </Popover>
+          </FixedNav>
+
+          <Content />
+        </>
       );
     },
     {

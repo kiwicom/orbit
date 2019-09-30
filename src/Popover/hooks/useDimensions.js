@@ -7,6 +7,7 @@ import boundingClientRect from "../../utils/boundingClientRect";
 const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
+    containerPureTop: 0,
     containerLeft: 0,
     containerHeight: 0,
     containerWidth: 0,
@@ -34,6 +35,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
           containerLeft: containerDimensions.left,
           containerHeight: containerDimensions.height,
           containerWidth: containerDimensions.width,
+          containerPureTop: containerDimensions.pureTop,
           popoverHeight: popoverDimensions.height,
           popoverWidth: popoverDimensions.width,
           windowScrollTop: window.scrollY || window.pageYOffset,
@@ -47,6 +49,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
     calculate();
 
     window.addEventListener("resize", calculate);
+
     return () => {
       window.removeEventListener("resize", calculate);
     };

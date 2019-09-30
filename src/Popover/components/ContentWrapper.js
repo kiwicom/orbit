@@ -107,7 +107,7 @@ const PopoverContentWrapper = ({
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition);
-  const dimensions = useDimensions({ containerRef, popover, content });
+  const dimensions = useDimensions({ containerRef, popover, content, fixed });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
 

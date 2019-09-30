@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import type { UseDimensions } from "./useDimensions.js.flow";
 import boundingClientRect from "../../utils/boundingClientRect";
 
-const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
+const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed }) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
     containerPureTop: 0,
@@ -49,11 +49,12 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
     calculate();
 
     window.addEventListener("resize", calculate);
-
+    if (fixed) window.addEventListener("scroll", calculate);
     return () => {
       window.removeEventListener("resize", calculate);
+      if (fixed) window.addEventListener("scroll", calculate);
     };
-  }, [containerRef, content, popover]);
+  }, [containerRef, content, popover, fixed]);
 
   return positions;
 };

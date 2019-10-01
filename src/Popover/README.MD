@@ -20,6 +20,7 @@ Table below contains all types of the props available in the Popover component.
 
 | Name              | Type                    | Default    | Description                                                                                                  |
 | :---------------- | :---------------------- | :--------- | :----------------------------------------------------------------------------------------------------------- |
+| actions           | `React.Node`            |            | Actions to display in the Popover [See Functional specs](#functional-specs).                                 |
 | **content**       | `React.Node`            |            | The content to display in the Popover.                                                                       |
 | **children**      | `React.Node`            |            | The reference element where the Popover will appear.                                                         |
 | dataTest          | `string`                |            | Optional prop for testing purposes.                                                                          |
@@ -44,6 +45,8 @@ Table below contains all types of the props available in the Popover component.
 - Whenever event `onClick` fires, the script inside this component will calculate possible positions that can be applied and the first possible will be applied.
 
 - You can prefer one position that will be used if possible, otherwise the default order in [`enum`](#enum) table will be used.
+
+- Actions are a way to override default close behavior with your own actions, mainly `Buttons` keep in mind that one of the actions should close the popover.
 
 - The Popover component supports rendering of many different components inside its children. You can use combination of e.g. Text, Stack, ListChoice for example:
 

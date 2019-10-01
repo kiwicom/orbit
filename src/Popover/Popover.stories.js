@@ -16,17 +16,10 @@ import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
 import Separator from "../Separator";
 import Hide from "../Hide";
+import Sticky from "../Sticky";
+import Card from "../Card";
 
 import Popover from "./index";
-
-const FixedNav = styled.div`
-  position: fixed;
-  top: 100px;
-  left: 0;
-
-  width: 200px;
-  padding: 30px;
-`;
 
 const Content = styled.div`
   height: 2000px;
@@ -271,13 +264,15 @@ storiesOf("Popover", module)
     () => {
       return (
         <>
-          <FixedNav>
-            <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
-              <Button type="secondary" iconRight={<ChevronDown />}>
-                Open popover
-              </Button>
-            </Popover>
-          </FixedNav>
+          <Sticky>
+            <Card>
+              <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
+                <Button type="secondary" iconRight={<ChevronDown />} block>
+                  Open popover
+                </Button>
+              </Popover>
+            </Card>
+          </Sticky>
 
           <Content />
         </>

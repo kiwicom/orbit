@@ -52,7 +52,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
     if (fixed) window.addEventListener("scroll", calculate);
     return () => {
       window.removeEventListener("resize", calculate);
-      if (fixed) window.addEventListener("scroll", calculate);
+      if (fixed) window.removeEventListener("scroll", calculate);
     };
   }, [containerRef, content, popover, fixed]);
 

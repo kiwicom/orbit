@@ -36,7 +36,7 @@ const StyledPopoverParent = styled.div`
     outline: 0;
   }
   ${media.largeMobile(css`
-    position: fixed;
+    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
     left: auto;
     right: auto;
     bottom: auto;

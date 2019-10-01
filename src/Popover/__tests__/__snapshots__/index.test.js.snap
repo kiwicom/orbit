@@ -483,6 +483,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     anchor="end"
     containerHeight={0}
     containerLeft={0}
+    containerPureTop={0}
     containerTop={0}
     containerWidth={0}
     popoverHeight={0}

@@ -6,6 +6,10 @@ type Dimensions = {|
   left: number,
   height: number,
   width: number,
+  pureTop: number,
+  pureLeft: number,
+  pureRight: number,
+  pureBottom: number,
 |};
 
 export type BoundingClientRect = (ref: ?{ current: ?HTMLElement }) => ?Dimensions;

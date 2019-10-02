@@ -5,6 +5,7 @@ export type Params = {|
   containerRef: ?React$ElementRef<*>,
   popover: ?React$ElementRef<*>,
   content: ?React$ElementRef<*>,
+  +fixed?: boolean,
 |};
 
 export type UseDimensions = Params => DimensionsCore;

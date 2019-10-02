@@ -25,6 +25,7 @@ const Popover = ({
   overlapped,
   onClose,
   onOpen,
+  fixed,
 }: Props) => {
   const theme = useTheme();
   const transitionLength = useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
@@ -132,6 +133,7 @@ const Popover = ({
             dataTest={dataTest}
             noPadding={noPadding}
             overlapped={overlapped}
+            fixed={fixed}
           >
             {content}
           </PopoverContentWrapper>

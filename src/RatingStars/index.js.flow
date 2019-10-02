@@ -8,7 +8,7 @@ import type { Size } from "../Icon";
 export type Props = {
   +rating: number,
   +size?: Size,
-  +color?: "attention" | "primary" | "secondary",
+  +color?: "primary" | "secondary",
   +showEmpty?: boolean,
   ...Globals,
 };

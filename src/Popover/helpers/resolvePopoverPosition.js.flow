@@ -6,6 +6,7 @@ import type { Position, DimensionsCore } from "../index.js.flow";
 export type StyledPosition = {|
   ...Position,
   ...DimensionsCore,
+  +fixed?: boolean,
 |};
 
 export type ResolvePopoverPosition = StyledPosition => ?Interpolation;

@@ -13,6 +13,7 @@ export type Props = {|
   +noPadding?: boolean,
   +overlapped?: boolean,
   +shown: boolean,
+  +fixed?: boolean,
   +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
 |};
 

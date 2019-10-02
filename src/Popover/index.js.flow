@@ -6,6 +6,7 @@ export type AlignsCore = "start" | "end";
 
 export type DimensionsCore = {|
   containerTop: number,
+  containerPureTop: number,
   containerLeft: number,
   containerHeight: number,
   containerWidth: number,
@@ -15,6 +16,7 @@ export type DimensionsCore = {|
   windowHeight: number,
   windowWidth: number,
   windowScrollTop: number,
+  documentHeight: number,
 |};
 
 export type Position = {|
@@ -36,6 +38,7 @@ export type Props = {|
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
+  +fixed?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

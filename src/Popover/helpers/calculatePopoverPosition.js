@@ -1,15 +1,21 @@
 // @flow
 
 import type { CalculatePopoverPosition } from "./calculatePopoverPosition.js.flow";
-import { POSITIONS, ANCHORS } from "../consts";
+import { POSITIONS, ALIGNS } from "../consts";
 
-const calculatePopoverPosition: CalculatePopoverPosition = preferredPosition => {
+const calculatePopoverPosition: CalculatePopoverPosition = (
+  preferredPosition,
+  preferredHoriznotalPosition,
+) => {
   const mappedPositions = Object.keys(POSITIONS).map(k => POSITIONS[k]);
-  const mappedAnchors = Object.keys(ANCHORS).map(k => ANCHORS[k]);
+  const mappedAlignPositions = Object.keys(ALIGNS).map(k => ALIGNS[k]);
 
   return [
     [preferredPosition, ...mappedPositions.filter(p => p !== preferredPosition)],
-    mappedAnchors,
+    [
+      preferredHoriznotalPosition,
+      ...mappedAlignPositions.filter(p => p !== preferredHoriznotalPosition),
+    ],
   ];
 };
 

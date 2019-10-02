@@ -7,6 +7,7 @@ import PopoverContentWrapper from "./components/ContentWrapper";
 import type { Props } from "./index.js.flow";
 import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
+import { POSITIONS, ALIGNS } from "./consts";
 import Separator from "../Separator";
 import defaultTheme from "../defaultTheme";
 
@@ -25,7 +26,8 @@ StyledActions.defaultProps = {
 const Popover = ({
   children,
   content,
-  preferredPosition = "bottom",
+  preferredPosition = POSITIONS.BOTTOM,
+  preferredAlign = ALIGNS.START,
   dataTest,
   opened,
   width,
@@ -137,6 +139,7 @@ const Popover = ({
             width={width}
             containerRef={container}
             preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
             onClose={handleOut}
             dataTest={dataTest}
             noPadding={noPadding}

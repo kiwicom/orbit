@@ -18019,9 +18019,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: 550px;
-  -ms-flex-preferred-size: 550px;
-  flex-basis: 550px;
+  -webkit-flex-basis: calc(25% - 24px);
+  -ms-flex-preferred-size: calc(25% - 24px);
+  flex-basis: calc(25% - 24px);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -18357,7 +18357,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 
 <Stack
   align="center"
-  basis="550px"
+  basis={[Function]}
   desktop={
     Object {
       "align": "start",
@@ -18401,7 +18401,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
     smallMobile={
       Object {
         "align": "center",
-        "basis": "550px",
+        "basis": [Function],
         "direction": "row",
         "grow": false,
         "inline": false,
@@ -19405,7 +19405,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
       smallMobile={
         Object {
           "align": "center",
-          "basis": "550px",
+          "basis": [Function],
           "direction": "row",
           "grow": false,
           "inline": false,
@@ -19912,7 +19912,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
         smallMobile={
           Object {
             "align": "center",
-            "basis": "550px",
+            "basis": [Function],
             "direction": "row",
             "grow": false,
             "inline": false,

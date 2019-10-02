@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -22,7 +21,6 @@ const getTypeToken = () => ({ theme, type }) => {
   const typeTokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
-    [TYPE_OPTIONS.ATTENTION]: theme.orbit.colorTextAttention,
     [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
     [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
     [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,
@@ -89,10 +87,6 @@ const Text = ({
   children,
   id,
 }: Props) => {
-  warning(
-    type !== TYPE_OPTIONS.ATTENTION,
-    "Warning: attention type of Text component is deprecated. Please use primary type instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
-  );
   return (
     <StyledText
       id={id}

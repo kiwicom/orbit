@@ -250,11 +250,19 @@ storiesOf("Popover", module)
     "Long content",
     () => {
       return (
-        <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
-          <Button type="secondary" iconRight={<ChevronDown />}>
-            Open popover
-          </Button>
-        </Popover>
+        <>
+          <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+          <Content />
+          <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+        </>
       );
     },
     {

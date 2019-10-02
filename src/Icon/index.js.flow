@@ -4,15 +4,7 @@ import defaultTheme from "../defaultTheme";
 
 export type Size = "small" | "medium" | "large";
 
-type Color =
-  | "attention"
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "info"
-  | "success"
-  | "warning"
-  | "critical";
+type Color = "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical";
 
 export type Props = {|
   ...Globals,

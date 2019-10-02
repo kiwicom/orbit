@@ -103,6 +103,7 @@ const PopoverContentWrapper = ({
   overlapped,
   shown,
   fixed,
+  actions,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
@@ -149,11 +150,13 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledPopoverClose noPadding={noPadding}>
-            <Button type="secondary" block onClick={onClose}>
-              <Translate tKey="button_close" />
-            </Button>
-          </StyledPopoverClose>
+          {!actions && (
+            <StyledPopoverClose noPadding={noPadding}>
+              <Button type="secondary" block onClick={onClose}>
+                <Translate tKey="button_close" />
+              </Button>
+            </StyledPopoverClose>
+          )}
         </StyledPopoverContent>
       </StyledPopoverParent>
     </React.Fragment>

@@ -14,6 +14,7 @@ export type Props = {|
   +overlapped?: boolean,
   +shown: boolean,
   +fixed?: boolean,
+  +actions?: React$Node,
   +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
 |};
 

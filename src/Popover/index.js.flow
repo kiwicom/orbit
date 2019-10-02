@@ -39,6 +39,7 @@ export type Props = {|
   +noPadding?: boolean,
   +overlapped?: boolean,
   +fixed?: boolean,
+  +actions?: React$Node,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

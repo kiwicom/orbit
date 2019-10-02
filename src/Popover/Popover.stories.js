@@ -6,7 +6,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { POSITIONS } from "./consts";
+import { POSITIONS, ALIGNS } from "./consts";
 import Stack from "../Stack";
 import Button from "../Button";
 import Stepper from "../Stepper";
@@ -303,6 +303,7 @@ storiesOf("Popover", module)
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
+      const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
       const width = text("width", "350px");
       const noPadding = boolean("noPadding", false);
       const overlapped = boolean("overlapped", false);
@@ -313,6 +314,7 @@ storiesOf("Popover", module)
           dataTest={dataTest}
           content={content}
           preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
           noPadding={noPadding}
           actions={
             <Stack direction="row" justify="between">

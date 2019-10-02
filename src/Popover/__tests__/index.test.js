@@ -86,11 +86,13 @@ describe("ContentWrapper", () => {
     </Stack>
   );
   const position = "bottom";
+  const align = "start";
   const component = shallow(
     <ContentWrapper
-      actions={actions}
       containerRef={ref}
       preferredPosition={position}
+      preferredAlign={align}
+      actions={actions}
       onClose={handleClose}
       shown
     >

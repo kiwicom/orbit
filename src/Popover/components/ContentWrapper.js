@@ -54,6 +54,24 @@ StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledChildrenWrapper = styled.div`
+  height: 400px;
+  height: 60vh;
+  max-height: 400px;
+  max-height: 60vh;
+  overflow-y: scroll;
+
+  ${media.largeMobile(css`
+    height: auto;
+    max-height: initial;
+    overflow-y: auto;
+  `)}
+`;
+
+StyledChildrenWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledPopoverContent = styled.div``;
 
 const StyledOverlay = styled.div`
@@ -147,7 +165,7 @@ const PopoverContentWrapper = ({
         fixed={fixed}
       >
         <StyledPopoverContent ref={content}>
-          {children}
+          <StyledChildrenWrapper>{children}</StyledChildrenWrapper>
           <StyledPopoverClose noPadding={noPadding}>
             <Button type="secondary" block onClick={onClose}>
               <Translate tKey="button_close" />

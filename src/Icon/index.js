@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
@@ -19,7 +18,6 @@ export const getSize: GetSize = size => ({ theme }) => {
 
 const getColor = () => ({ theme, color }) => {
   const tokens = {
-    [ICON_COLORS.ATTENTION]: theme.orbit.colorIconAttention,
     [ICON_COLORS.PRIMARY]: theme.orbit.colorIconPrimary,
     [ICON_COLORS.SECONDARY]: theme.orbit.colorIconSecondary,
     [ICON_COLORS.TERTIARY]: theme.orbit.colorIconTertiary,
@@ -76,10 +74,6 @@ const OrbitIcon = (props: Props) => {
     reverseOnRtl,
     ariaLabel,
   } = props;
-  warning(
-    color !== ICON_COLORS.ATTENTION,
-    "Warning: attention color of all Icon components is deprecated. Please use primary color instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
-  );
   return (
     <StyledIcon
       viewBox={viewBox}

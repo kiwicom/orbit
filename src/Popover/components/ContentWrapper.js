@@ -99,16 +99,18 @@ const PopoverContentWrapper = ({
   width,
   dataTest,
   preferredPosition,
+  preferredAlign,
   containerRef,
   noPadding,
   overlapped,
   shown,
   fixed,
+  actions,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
-  const position = calculatePopoverPosition(preferredPosition);
+  const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const dimensions = useDimensions({ containerRef, popover, content, fixed });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
@@ -150,11 +152,13 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledPopoverClose noPadding={noPadding}>
-            <Button type="secondary" block onClick={onClose}>
-              <Translate tKey="button_close" />
-            </Button>
-          </StyledPopoverClose>
+          {!actions && (
+            <StyledPopoverClose noPadding={noPadding}>
+              <Button type="secondary" block onClick={onClose}>
+                <Translate tKey="button_close" />
+              </Button>
+            </StyledPopoverClose>
+          )}
         </StyledPopoverContent>
       </StyledPopoverParent>
     </React.Fragment>

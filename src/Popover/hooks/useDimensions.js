@@ -17,6 +17,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
     windowWidth: 0,
     windowHeight: 0,
     contentHeight: 0,
+    documentHeight: 0,
   });
 
   useEffect(() => {
@@ -24,12 +25,15 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
       const containerDimensions = boundingClientRect(containerRef);
       const popoverDimensions = boundingClientRect(popover);
       const contentDimensions = boundingClientRect(content);
+
       if (
         containerDimensions &&
         popoverDimensions &&
         contentDimensions &&
         typeof window !== "undefined"
       ) {
+        const documentDimensions = window.document.body.getBoundingClientRect();
+
         setPositions({
           containerTop: containerDimensions.top,
           containerLeft: containerDimensions.left,
@@ -42,6 +46,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
           windowWidth: window.innerWidth,
           windowHeight: window.innerHeight,
           contentHeight: contentDimensions.height,
+          documentHeight: documentDimensions.height,
         });
       }
     };

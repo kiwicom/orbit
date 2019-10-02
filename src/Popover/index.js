@@ -15,7 +15,7 @@ const StyledPopoverChild = styled.div`
 `;
 
 const StyledActions = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-top: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
 StyledActions.defaultProps = {
@@ -147,7 +147,7 @@ const Popover = ({
             {content}
             {actions && (
               <StyledActions>
-                <Separator /> {actions}
+                <Separator spaceAfter="normal" /> {actions}
               </StyledActions>
             )}
           </PopoverContentWrapper>

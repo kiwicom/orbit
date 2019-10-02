@@ -32,6 +32,8 @@ const StyledPopoverParent = styled.div`
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
   &:focus {
     outline: 0;
   }

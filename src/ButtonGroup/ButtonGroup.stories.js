@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { boolean, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -15,10 +15,9 @@ storiesOf("ButtonGroup", module)
   .add(
     "With Buttons",
     () => {
-      const connected = boolean("Connected", true);
       const dataTest = text("dataTest", "test");
       return (
-        <ButtonGroup connected={connected} dataTest={dataTest}>
+        <ButtonGroup dataTest={dataTest}>
           <Button icon={<Icons.Airplane />}>Button</Button>
           <Button icon={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
@@ -32,10 +31,9 @@ storiesOf("ButtonGroup", module)
   .add(
     "With ButtonLinks",
     () => {
-      const connected = boolean("Connected", true);
       const dataTest = text("dataTest", "test");
       return (
-        <ButtonGroup connected={connected} dataTest={dataTest}>
+        <ButtonGroup dataTest={dataTest}>
           <ButtonLink type="secondary" icon={<Icons.Airplane />}>
             Button
           </ButtonLink>
@@ -52,7 +50,7 @@ storiesOf("ButtonGroup", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <ButtonGroup connected>
+        <ButtonGroup>
           <Button icon={<Icons.Airplane />}>Button</Button>
           <Button icon={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>

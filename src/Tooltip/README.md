@@ -15,12 +15,13 @@ Table below contains all types of the props available in the Tooltip component.
 
 | Name              | Type                  | Default         | Description                      |
 | :---------------- | :-------------------- | :-------------- | :------------------------------- |
-| dataTest          | `string`              |                 | Optional prop for testing purposes.
 | **children**      | `React.Node`          |                 | The reference element where the Tooltip will appear.
 | **content**       | `React.Node`          |                 | The content to display in the Tooltip.
+| dataTest          | `string`              |                 | Optional prop for testing purposes.
+| enabled           | `boolean`             | `true`          | Enable render of tooltip
 | preferredPosition | [`enum`](#enum)       |                 | The preferred position to choose [See Functional specs](#functional-specs)
 | size              | [`enum`](#enum)       |                 | The maximum possible size of the Tooltip.
-| enabled           | `boolean`             | `true`          | Enable render of tooltip
+| stopPropagation   | `boolean`             |                 | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element.
 | tabIndex          | `string`              | `"0"`           | Specifies the tab order of an element
 
 ## enum

@@ -224,6 +224,7 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, ...props }) => 
   top: 0;
   ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceSmall)};
   bottom: 0;
+  pointer-events: none;
 `;
 
 StyledCustomValue.defaultProps = {

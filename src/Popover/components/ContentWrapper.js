@@ -32,6 +32,8 @@ const StyledPopoverParent = styled.div`
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
   &:focus {
     outline: 0;
   }
@@ -51,24 +53,6 @@ const StyledPopoverParent = styled.div`
 `;
 
 StyledPopoverParent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledChildrenWrapper = styled.div`
-  height: 400px;
-  height: 60vh;
-  max-height: 400px;
-  max-height: 60vh;
-  overflow-y: scroll;
-
-  ${media.largeMobile(css`
-    height: auto;
-    max-height: initial;
-    overflow-y: auto;
-  `)}
-`;
-
-StyledChildrenWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -165,7 +149,7 @@ const PopoverContentWrapper = ({
         fixed={fixed}
       >
         <StyledPopoverContent ref={content}>
-          <StyledChildrenWrapper>{children}</StyledChildrenWrapper>
+          {children}
           <StyledPopoverClose noPadding={noPadding}>
             <Button type="secondary" block onClick={onClose}>
               <Translate tKey="button_close" />

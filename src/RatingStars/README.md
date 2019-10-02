@@ -25,4 +25,4 @@ Table below contains all types of the props available in RatingStars component.
 | :--------- | :------------- |
 | `"small"`  | `"primary"`    |
 | `"medium"` | `"secondary"`  |
-| `"large"`  | `"attention"`  |
+| `"large"`  |

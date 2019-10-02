@@ -17,6 +17,7 @@ Table below contains all types of the props available in Breadcrumbs component.
 | dataTest      | `string`                                |                 | Optional prop for testing purposes.
 | **children**  | `React.Node`                            |                 | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).
 | onGoBack      | `event => void \| Promise`              |                 | Callback for handling back button action. If present the back button is visible
+| spaceAfter    | `enum`                                  |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-comp onents/tree/master/src/common/getSpacingToken)
 
 ## Functional specs
 * The last BreadcrumbsItem will have stronger `font-weight` automatically. Also, all meta information are automatically render too, so you don't have to specify it explicitly.

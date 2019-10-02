@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -15,8 +16,14 @@ import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
 import Separator from "../Separator";
 import Hide from "../Hide";
+import Sticky from "../Sticky";
+import Card from "../Card";
 
 import Popover from "./index";
+
+const Content = styled.div`
+  height: 2000px;
+`;
 
 const selects = (
   <>
@@ -240,11 +247,43 @@ storiesOf("Popover", module)
     "Long content",
     () => {
       return (
-        <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
-          <Button type="secondary" iconRight={<ChevronDown />}>
-            Open popover
-          </Button>
-        </Popover>
+        <>
+          <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+          <Content />
+          <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+        </>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Scrolling content",
+    () => {
+      return (
+        <>
+          <Sticky>
+            <Card>
+              <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
+                <Button type="secondary" iconRight={<ChevronDown />} block>
+                  Open popover
+                </Button>
+              </Popover>
+            </Card>
+          </Sticky>
+
+          <Content />
+        </>
       );
     },
     {

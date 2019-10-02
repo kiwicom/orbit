@@ -14,18 +14,30 @@ const isInside = (p: PositionsCore, canBe) => {
 };
 
 const calculateVerticalPosition: CalculateVerticalPosition = (desiredPositions, pos) => {
-  const canBe = {
+  const canBeInWindow = {
     [POSITIONS.TOP]: pos.containerTop - pos.popoverHeight > pos.windowScrollTop,
     [POSITIONS.BOTTOM]:
       pos.containerTop - pos.windowScrollTop + pos.containerHeight + pos.popoverHeight <
       pos.windowHeight,
   };
-  const possiblePositions = desiredPositions
-    .map(p => isInside(p, canBe))
+
+  const canBeInDocument = {
+    [POSITIONS.TOP]: pos.containerTop - pos.popoverHeight >= 0,
+    [POSITIONS.BOTTOM]:
+      pos.containerTop + pos.containerHeight + pos.popoverHeight < pos.documentHeight,
+  };
+
+  const possibleWindowPositions = desiredPositions
+    .map(p => isInside(p, canBeInWindow))
+    .filter(p => typeof p === "string");
+
+  const possibleDocumentPositions = desiredPositions
+    .map(p => isInside(p, canBeInDocument))
     .filter(p => typeof p === "string");
 
   // ordering in POSITIONS const is important
-  const posPosition = possiblePositions[0];
+  const posPosition = possibleWindowPositions[0] || possibleDocumentPositions[0];
+
   if (typeof posPosition === "string") {
     return posPosition;
   }

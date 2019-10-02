@@ -6,6 +6,7 @@ export type AnchorsCore = "start" | "end";
 
 export type DimensionsCore = {|
   containerTop: number,
+  containerPureTop: number,
   containerLeft: number,
   containerHeight: number,
   containerWidth: number,
@@ -35,6 +36,7 @@ export type Props = {|
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
+  +fixed?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

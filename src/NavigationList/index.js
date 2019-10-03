@@ -8,7 +8,7 @@ import { StyledButtonLink } from "../ButtonLink";
 import { TOKENS, TYPES as BUTTON_TYPES } from "../ButtonLink/consts";
 import getTypeToken from "../ButtonLink/helpers/getTypeToken";
 import defaultTheme from "../defaultTheme";
-import { rtlSpacing } from "../utils/rtl";
+import { rtlSpacing, right } from "../utils/rtl";
 import TYPES from "./consts";
 import NavigationListSeparator, {
   StyledNavigationListSeparator,
@@ -27,7 +27,7 @@ const StyledNavigationListContent = styled(({ type, theme, ...props }) => <ul {.
     isInline(type) &&
     css`
       ${StyledButtonLink} {
-        padding: 0 8px;
+        padding: 0 ${({ theme }) => theme.orbit.spaceXSmall};
         :hover {
           color: ${({ theme }) =>
             getTypeToken(TOKENS.colorTextButtonHover)({
@@ -57,22 +57,27 @@ const StyledNavigationList = styled(({ theme, type, ...props }) => <div {...prop
   width: 100%;
 
   ${({ type }) =>
-    isNavigation(type) &&
-    css`
-      padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
-      :first-child {
-        padding-top: ${({ theme }) => theme.orbit.spaceLarge};
-      }
-      :last-child {
-        padding-bottom: 0;
-        ${StyledNavigationListSeparator} {
-          display: none;
-        }
-        ${StyledNavigationListContent} {
-          margin: 0;
-        }
-      }
-    `};
+    isNavigation(type)
+      ? css`
+          padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
+          :first-child {
+            padding-top: ${({ theme }) => theme.orbit.spaceLarge};
+          }
+          :last-child {
+            padding-bottom: 0;
+            ${StyledNavigationListSeparator} {
+              display: none;
+            }
+            ${StyledNavigationListContent} {
+              margin: 0;
+            }
+          }
+        `
+      : css`
+          > * {
+            margin-${right}: 4px;
+          }
+        `};
 `;
 
 StyledNavigationList.defaultProps = {

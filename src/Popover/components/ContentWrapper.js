@@ -154,7 +154,7 @@ const PopoverContentWrapper = ({
           {children}
           {!actions && (
             <StyledPopoverClose noPadding={noPadding}>
-              <Button type="secondary" block onClick={onClose}>
+              <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>
             </StyledPopoverClose>

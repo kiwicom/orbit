@@ -1,6 +1,6 @@
 // @flow
 import React, { useState, useRef, useMemo, useCallback } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { getBreakpointWidth } from "../utils/mediaQuery";
 import { SIZE_OPTIONS } from "./consts";
@@ -19,10 +19,15 @@ const StyledTooltipChildren = styled.span`
   &:focus:active {
     outline: none;
   }
-  ${StyledText} {
-    display: inline-block;
-    text-decoration: underline currentColor dotted;
-  }
+  ${({ enabled }) =>
+    enabled &&
+    css`
+      ${StyledText} {
+        display: inline-block;
+        text-decoration: underline; // fallback for IE 10+
+        text-decoration: underline currentColor dotted;
+      }
+    `};
 `;
 
 const Tooltip = ({
@@ -91,8 +96,9 @@ const Tooltip = ({
         onFocus={handleIn}
         onBlur={handleOut}
         ref={container}
-        aria-describedby={tooltipId}
+        aria-describedby={enabled ? tooltipId : undefined}
         tabIndex={enabled && tabIndex}
+        enabled={enabled}
       >
         {children}
       </StyledTooltipChildren>

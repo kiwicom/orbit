@@ -9,8 +9,8 @@ export default class Portal extends React.Component<Props> {
     super(props);
     if (typeof window !== "undefined") {
       this.node =
-        this.props.element && document.getElementById(this.props.element)
-          ? document.getElementById(this.props.element)
+        this.props.renderInto && document.getElementById(this.props.renderInto)
+          ? document.getElementById(this.props.renderInto)
           : document.body;
       this.el = document.createElement("div");
     }

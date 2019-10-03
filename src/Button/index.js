@@ -64,7 +64,7 @@ export const StyledButton = styled(
     bordered,
     loading,
     onlyIcon,
-    block,
+    fullWidth,
     style,
     dataTest,
     submit,
@@ -100,11 +100,12 @@ export const StyledButton = styled(
   box-sizing: border-box;
   appearance: none;
   text-decoration: none;
-  width: ${({ block, width, onlyIcon }) =>
-    block
+  width: ${({ fullWidth, width, onlyIcon }) =>
+    fullWidth
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
-  flex: ${({ block }) => (block ? "1 1 auto" : "0 0 auto")};
+  flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};
+  max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${({ bordered }) =>
     bordered
@@ -219,7 +220,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
     iconRight,
     external,
     type = TYPE_OPTIONS.PRIMARY,
-    block,
+    fullWidth,
     loading = false,
     width = 0,
     role,
@@ -250,7 +251,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       iconLeft={iconLeft}
       iconRight={iconRight}
       bordered={bordered}
-      block={block}
+      fullWidth={fullWidth}
       component={component}
       disabled={isDisabled}
       loading={loading}

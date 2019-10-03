@@ -7,7 +7,7 @@ import { ICON_SIZES, ICON_COLORS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 
 describe("Icon", () => {
-  const color = ICON_COLORS.ATTENTION;
+  const color = ICON_COLORS.PRIMARY;
   const component = mount(<Accommodation color={color} />);
   const svg = component.find("svg");
   it("should render SVG", () => {
@@ -18,7 +18,7 @@ describe("Icon", () => {
     expect(svg).toHaveStyleRule("width", defaultTheme.orbit.widthIconMedium);
   });
   it("should have selected color", () => {
-    expect(svg).toHaveStyleRule("color", defaultTheme.orbit.colorIconAttention);
+    expect(svg).toHaveStyleRule("color", defaultTheme.orbit.colorIconPrimary);
   });
   it("should have CSS properties", () => {
     expect(svg).toHaveStyleRule("vertical-align", "middle");

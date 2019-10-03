@@ -33,6 +33,7 @@ const Tooltip = ({
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
+  stopPropagation = false,
 }: Props) => {
   const theme = useTheme();
   const [shown, setShown] = useState(false);
@@ -63,13 +64,19 @@ const Tooltip = ({
     }
   }, [setRenderWithTimeout, theme]);
 
-  const handleInMobile = useCallback(() => {
-    if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
-      setRender(true);
-      setShownMobileWithTimeout(true);
-      clearRenderTimeout();
-    }
-  }, [clearRenderTimeout, setRender, setShownMobileWithTimeout, theme]);
+  const handleInMobile = useCallback(
+    ev => {
+      if (stopPropagation) {
+        ev.stopPropagation();
+      }
+      if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
+        setRender(true);
+        setShownMobileWithTimeout(true);
+        clearRenderTimeout();
+      }
+    },
+    [clearRenderTimeout, setRender, setShownMobileWithTimeout, stopPropagation, theme],
+  );
 
   const handleOutMobile = useCallback(() => {
     setShownMobile(false);
@@ -80,10 +87,7 @@ const Tooltip = ({
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
-        onClick={ev => {
-          ev.stopPropagation();
-          handleInMobile();
-        }}
+        onClick={handleInMobile}
         onFocus={handleIn}
         onBlur={handleOut}
         ref={container}
@@ -93,7 +97,7 @@ const Tooltip = ({
         {children}
       </StyledTooltipChildren>
       {enabled && render && (
-        <Portal element="tooltips">
+        <Portal renderInto="tooltips">
           <TooltipContent
             dataTest={dataTest}
             shownMobile={shownMobile}

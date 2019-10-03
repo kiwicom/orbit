@@ -48,8 +48,8 @@ storiesOf("Collapse", module)
               22,
               2,
             ]}
-            min={1}
-            max={24}
+            minValue={1}
+            maxValue={24}
           />
         </Collapse>
       );
@@ -95,8 +95,8 @@ storiesOf("Collapse", module)
               22,
               2,
             ]}
-            min={1}
-            max={24}
+            minValue={1}
+            maxValue={24}
           />
         </Collapse>
       );
@@ -164,8 +164,8 @@ storiesOf("Collapse", module)
             label="Max travel time"
             valueDescription="00:00 - 24:00"
             defaultValue={[1, 12]}
-            min={1}
-            max={24}
+            minValue={1}
+            maxValue={24}
           />
         </Collapse>
       );

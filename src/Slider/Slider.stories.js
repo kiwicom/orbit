@@ -14,8 +14,8 @@ storiesOf("Slider", module)
     () => {
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-      const min = number("min", 1);
-      const max = number("max", 100);
+      const minValue = number("minValue", 1);
+      const maxValue = number("maxValue", 100);
       const dataTest = text("dataTest", "01:00 PM – 11:59 PM");
       return (
         <Slider
@@ -23,8 +23,8 @@ storiesOf("Slider", module)
           label={label}
           valueDescription={valueDescription}
           dataTest={dataTest}
-          min={min}
-          max={max}
+          minValue={minValue}
+          maxValue={maxValue}
         />
       );
     },
@@ -39,8 +39,8 @@ storiesOf("Slider", module)
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = number("defaultValue", 12);
-      const min = number("min", 1);
-      const max = number("max", 24);
+      const minValue = number("minValue", 1);
+      const maxValue = number("maxValue", 24);
       const histogramData = array("histogramData", [
         11,
         25,
@@ -76,8 +76,8 @@ storiesOf("Slider", module)
             valueDescription={valueDescription}
             histogramDescription={histogramDescription}
             defaultValue={defaultValue}
-            max={max}
-            min={min}
+            maxValue={maxValue}
+            minValue={minValue}
             histogramData={histogramData}
           />
         </div>
@@ -94,8 +94,8 @@ storiesOf("Slider", module)
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = array("defaultValue", [1, 5]);
-      const min = number("min", 1);
-      const max = number("max", 24);
+      const minValue = number("minValue", 1);
+      const maxValue = number("maxValue", 24);
       const step = number("step", 1);
       return (
         <Slider
@@ -103,8 +103,8 @@ storiesOf("Slider", module)
           label={label}
           valueDescription={valueDescription}
           defaultValue={defaultValue}
-          min={min}
-          max={max}
+          minValue={minValue}
+          maxValue={maxValue}
           step={step}
         />
       );
@@ -120,8 +120,8 @@ storiesOf("Slider", module)
       const label = text("label", "Depart from Prague");
       const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
       const defaultValue = array("defaultValue", [0, 24]);
-      const min = number("min", 0);
-      const max = number("max", 48);
+      const minValue = number("minValue", 0);
+      const maxValue = number("maxValue", 48);
       const step = number("step", 2);
       const histogramData = array("histogramData", [
         11,
@@ -160,8 +160,8 @@ storiesOf("Slider", module)
             histogramDescription={histogramDescription}
             defaultValue={defaultValue}
             histogramData={histogramData}
-            min={min}
-            max={max}
+            minValue={minValue}
+            maxValue={maxValue}
             step={step}
           />
         </div>
@@ -189,8 +189,8 @@ storiesOf("Slider", module)
             defaultValue={5}
             histogramLoading={histogramLoading}
             histogramLoadingText={histogramLoadingText}
-            min={1}
-            max={24}
+            minValue={1}
+            maxValue={24}
           />
         </div>
       );
@@ -217,8 +217,8 @@ storiesOf("Slider", module)
             defaultValue={[1, 10]}
             histogramLoading={histogramLoading}
             histogramLoadingText={histogramLoadingText}
-            min={1}
-            max={24}
+            minValue={1}
+            maxValue={24}
           />
         </div>
       );
@@ -236,8 +236,8 @@ storiesOf("Slider", module)
       const dataTest = text("dataTest", "test");
       const defaultValue = number("defaultValue", 12);
       const label = text("label", "Depart from Prague");
-      const max = number("max", 24);
-      const min = number("min", 1);
+      const maxValue = number("maxValue", 24);
+      const minValue = number("minValue", 1);
       const step = number("step", 1);
       const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
       return (
@@ -248,8 +248,8 @@ storiesOf("Slider", module)
             dataTest={dataTest}
             defaultValue={defaultValue}
             label={label}
-            max={max}
-            min={min}
+            maxValue={maxValue}
+            minValue={minValue}
             step={step}
             onChange={action("onChange")}
             valueDescription={valueDescription}
@@ -299,8 +299,8 @@ storiesOf("Slider", module)
       const histogramLoading = boolean("histogramLoading", false);
       const histogramLoadingText = text("histogramLoadingText", undefined);
       const label = text("label", "Depart from Prague");
-      const max = number("max", 24);
-      const min = number("min", 1);
+      const maxValue = number("maxValue", 24);
+      const minValue = number("minValue", 1);
       const step = number("step", 1);
       const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
       return (
@@ -315,8 +315,8 @@ storiesOf("Slider", module)
             histogramLoading={histogramLoading}
             histogramLoadingText={histogramLoadingText}
             label={label}
-            max={max}
-            min={min}
+            maxValue={maxValue}
+            minValue={minValue}
             step={step}
             onChange={action("onChange")}
             valueDescription={valueDescription}
@@ -360,8 +360,8 @@ storiesOf("Slider", module)
               valueDescription="01:00 PM – 11:59 PM"
               histogramDescription="20 of 133 flights"
               defaultValue={1}
-              max={24}
-              min={1}
+              maxValue={24}
+              minValue={1}
               histogramData={[
                 11,
                 25,
@@ -436,8 +436,8 @@ storiesOf("Slider", module)
                 22,
                 2,
               ]}
-              min={1}
-              max={24}
+              minValue={1}
+              maxValue={24}
             />
           </div>
         </RenderInRtl>
@@ -466,8 +466,8 @@ storiesOf("Slider", module)
               defaultValue={5}
               histogramLoading={histogramLoading}
               histogramLoadingText={histogramLoadingText}
-              min={1}
-              max={24}
+              minValue={1}
+              maxValue={24}
             />
           </div>
         </RenderInRtl>

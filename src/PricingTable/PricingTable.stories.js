@@ -23,12 +23,12 @@ const icon = (
 const content = (
   <List type="separated">
     <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Extended.</Text>
       </Tooltip>
     </ListItem>
     <ListItem label="Calleer priority" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Medium</Text>
       </Tooltip>
     </ListItem>
@@ -36,7 +36,7 @@ const content = (
       <Text>Yes</Text>
     </ListItem>
     <ListItem label="Additional Services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>$10 processing fee</Text>
       </Tooltip>
     </ListItem>
@@ -46,12 +46,12 @@ const content = (
 const longerContent = (
   <List type="separated">
     <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Extended.</Text>
       </Tooltip>
     </ListItem>
     <ListItem label="Calleer priority" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Medium</Text>
       </Tooltip>
     </ListItem>
@@ -59,12 +59,12 @@ const longerContent = (
       <Text>Yes</Text>
     </ListItem>
     <ListItem label="Additional Services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>$10 processing fee</Text>
       </Tooltip>
     </ListItem>
     <ListItem label="Additional Services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service">
+      <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>$10 processing fee</Text>
       </Tooltip>
     </ListItem>
@@ -87,7 +87,7 @@ storiesOf("PricingTable", module)
                   ev.stopPropagation();
                 }}
                 type="secondary"
-                block
+                fullWidth
               >
                 Don&#39;t upgrade
               </Button>
@@ -106,7 +106,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Upgrade and continue
               </Button>
@@ -125,7 +125,7 @@ storiesOf("PricingTable", module)
                   ev.stopPropagation();
                 }}
                 type="secondary"
-                block
+                fullWidth
               >
                 Upgrade and continue
               </Button>
@@ -157,7 +157,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>
@@ -177,7 +177,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>
@@ -196,7 +196,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>

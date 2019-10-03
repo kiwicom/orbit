@@ -9,7 +9,7 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
   +label?: Translation,
-  +title?: React$Node,
+  +buttonLabel?: React$Node,
   +name?: string,
   +placeholder?: Translation,
   +fileName?: string,

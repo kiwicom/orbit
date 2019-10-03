@@ -87,7 +87,7 @@ storiesOf("PricingTable", module)
                   ev.stopPropagation();
                 }}
                 type="secondary"
-                block
+                fullWidth
               >
                 Don&#39;t upgrade
               </Button>
@@ -106,7 +106,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Upgrade and continue
               </Button>
@@ -125,7 +125,7 @@ storiesOf("PricingTable", module)
                   ev.stopPropagation();
                 }}
                 type="secondary"
-                block
+                fullWidth
               >
                 Upgrade and continue
               </Button>
@@ -157,7 +157,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>
@@ -177,7 +177,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>
@@ -196,7 +196,7 @@ storiesOf("PricingTable", module)
                 onClick={ev => {
                   ev.stopPropagation();
                 }}
-                block
+                fullWidth
               >
                 Continue with Basic
               </Button>

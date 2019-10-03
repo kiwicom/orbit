@@ -278,7 +278,7 @@ storiesOf("Popover", module)
           <Sticky>
             <Card>
               <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
-                <Button type="secondary" iconRight={<ChevronDown />} block>
+                <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
                   Open popover
                 </Button>
               </Popover>

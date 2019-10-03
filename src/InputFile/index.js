@@ -120,7 +120,7 @@ CloseButton.defaultProps = {
 const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const {
     placeholder = "No file selected",
-    title = "Select file",
+    buttonLabel = "Select file",
     onRemoveFile,
     dataTest,
     spaceAfter,
@@ -144,7 +144,7 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
       {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
       <FakeInput error={props.error}>
         <InputButton type="secondary" size="small" icon={<Attachment />} component="div">
-          {title}
+          {buttonLabel}
         </InputButton>
         <StyledFileInput fileName={props.fileName} error={props.error}>
           {props.fileName || placeholder}

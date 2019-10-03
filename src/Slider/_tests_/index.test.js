@@ -140,8 +140,8 @@ describe("Range Slider", () => {
   const onChangeAfter = jest.fn();
   const component = mount(
     <Slider
-      min={min}
-      max={max}
+      minValue={min}
+      maxValue={max}
       defaultValue={[12, 12]}
       label="Depart from Prague"
       onChange={onChange}
@@ -463,8 +463,8 @@ describe("Range Slider in render", () => {
   const dataTest = "test";
   const component = shallow(
     <Slider
-      min={min}
-      max={max}
+      minValue={min}
+      maxValue={max}
       defaultValue={[1, 24]}
       label="Depart from Prague"
       dataTest={dataTest}

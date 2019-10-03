@@ -32,11 +32,13 @@ const StyledPopoverParent = styled.div`
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
   &:focus {
     outline: 0;
   }
   ${media.largeMobile(css`
-    position: absolute;
+    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
     left: auto;
     right: auto;
     bottom: auto;
@@ -97,16 +99,19 @@ const PopoverContentWrapper = ({
   width,
   dataTest,
   preferredPosition,
+  preferredAlign,
   containerRef,
   noPadding,
   overlapped,
   shown,
+  fixed,
+  actions,
 }: Props) => {
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
-  const position = calculatePopoverPosition(preferredPosition);
-  const dimensions = useDimensions({ containerRef, popover, content });
+  const position = calculatePopoverPosition(preferredPosition, preferredAlign);
+  const dimensions = useDimensions({ containerRef, popover, content, fixed });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
 
@@ -131,6 +136,7 @@ const PopoverContentWrapper = ({
         position={verticalPosition}
         containerTop={dimensions.containerTop}
         containerLeft={dimensions.containerLeft}
+        containerPureTop={dimensions.containerPureTop}
         containerHeight={dimensions.containerHeight}
         containerWidth={dimensions.containerWidth}
         popoverHeight={dimensions.popoverHeight}
@@ -142,14 +148,17 @@ const PopoverContentWrapper = ({
         noPadding={noPadding}
         overlapped={overlapped}
         role="tooltip"
+        fixed={fixed}
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledPopoverClose noPadding={noPadding}>
-            <Button type="secondary" block onClick={onClose}>
-              <Translate tKey="button_close" />
-            </Button>
-          </StyledPopoverClose>
+          {!actions && (
+            <StyledPopoverClose noPadding={noPadding}>
+              <Button type="secondary" fullWidth onClick={onClose}>
+                <Translate tKey="button_close" />
+              </Button>
+            </StyledPopoverClose>
+          )}
         </StyledPopoverContent>
       </StyledPopoverParent>
     </React.Fragment>

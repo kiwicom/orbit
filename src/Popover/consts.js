@@ -6,7 +6,7 @@ export const POSITIONS = {
   TOP: "top",
 };
 
-export const ANCHORS = {
+export const ALIGNS = {
   START: "start",
   END: "end",
 };

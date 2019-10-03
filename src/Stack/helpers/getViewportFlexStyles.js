@@ -9,6 +9,7 @@ import getShrink from "./getShrink";
 import getWrap from "./getWrap";
 import getGrow from "./getGrow";
 import getAlign from "./getAlign";
+import getBasis from "./getBasis";
 import getSpacingToken from "../../common/getSpacingToken/index";
 import type { GetViewportFlexStyles } from "./getViewportFlexStyles";
 
@@ -26,7 +27,7 @@ const getViewportFlexStyles: GetViewportFlexStyles = viewport => props => {
         flex-wrap: ${getWrap(wrap)};
         flex-grow: ${getGrow(grow)};
         flex-shrink: ${getShrink(shrink)};
-        flex-basis: ${basis};
+        flex-basis: ${getBasis(basis)};
         justify-content: ${getJustify(justify)};
         align-content: ${getAlign(align)};
         align-items: ${getAlign(align)};

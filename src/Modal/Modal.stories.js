@@ -125,7 +125,7 @@ storiesOf("Modal", module)
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
-            <Button block>Proceed to Payment (23.98€)</Button>
+            <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
       );
@@ -158,7 +158,7 @@ storiesOf("Modal", module)
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
-            <Button block>Proceed to Payment (23.98€)</Button>
+            <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
       );
@@ -215,7 +215,7 @@ storiesOf("Modal", module)
             <Button icon={<ChevronLeft />} type="secondary">
               Back
             </Button>
-            <Button block>Proceed to Payment (23.98€)</Button>
+            <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
       );
@@ -396,7 +396,7 @@ storiesOf("Modal", module)
           <Button icon={<ChevronLeft />} type="secondary">
             Back
           </Button>
-          <Button block>Proceed to Payment (23.98€)</Button>
+          <Button fullWidth>Proceed to Payment (23.98€)</Button>
         </ModalFooter>
       </Modal>
     ),
@@ -455,7 +455,7 @@ storiesOf("Modal", module)
                 <ButtonLink type="secondary">Button</ButtonLink>
               </Stack>
             )}
-            <Button block>Continue to Payment</Button>
+            <Button fullWidth>Continue to Payment</Button>
           </ModalFooter>
         </Modal>
       );
@@ -492,7 +492,7 @@ storiesOf("Modal", module)
             <Button type="secondary" iconLeft={<ChevronLeft />}>
               Back
             </Button>
-            <Button block>Continue to Payment</Button>
+            <Button fullWidth>Continue to Payment</Button>
           </ModalFooter>
         </Modal>
       </RenderInRtl>

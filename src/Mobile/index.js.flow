@@ -1,0 +1,11 @@
+// @flow strict
+
+/*
+  DOCUMENTATION: https://orbit.kiwi/layout/Mobile/
+*/
+
+export type Props = {|
+  +children: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

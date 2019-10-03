@@ -10,7 +10,7 @@ import Checkbox from "../../Checkbox";
 
 const label = "Label";
 const labelSize = LABEL_SIZES.LARGE;
-const labelElement = LABEL_ELEMENTS.H5;
+const labelAs = LABEL_ELEMENTS.H5;
 const onChange = jest.fn();
 const onOnlySelection = jest.fn();
 const filter = true;
@@ -28,7 +28,7 @@ describe("RadioGroup", () => {
       label={label}
       onChange={onChange}
       labelSize={labelSize}
-      labelElement={labelElement}
+      labelAs={labelAs}
     >
       <Radio value="one" label="Reason one" />
       <Radio value="two" label="Reason two" />
@@ -69,7 +69,7 @@ describe("RadioGroup Filters", () => {
       label={label}
       onChange={onChange}
       labelSize={labelSize}
-      labelElement={labelElement}
+      labelAs={labelAs}
       filter={filter}
       onOnlySelection={onOnlySelection}
     >

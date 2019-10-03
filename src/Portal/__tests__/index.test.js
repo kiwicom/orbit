@@ -4,14 +4,14 @@ import { mount } from "enzyme";
 
 import Portal from "../index";
 
-describe("Portal with element", () => {
+describe("Portal with renderInto", () => {
   const target = document.createElement("div");
   target.setAttribute("id", "portal");
 
   // $FlowIssue
   document.body.appendChild(target);
   const component = mount(
-    <Portal element="portal">
+    <Portal renderInto="portal">
       <p>Content</p>
     </Portal>,
   );
@@ -25,7 +25,7 @@ describe("Portal with element", () => {
     expect(component).toMatchSnapshot();
   });
 });
-describe("Portal without element", () => {
+describe("Portal without renderInto", () => {
   const component = mount(
     <Portal>
       <p>Content</p>

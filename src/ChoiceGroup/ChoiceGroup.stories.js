@@ -70,7 +70,7 @@ storiesOf("ChoiceGroup", module)
       const dataTest = text("dataTest", "test");
       const label = text("Label", "What was the reason for your cancellation?");
       const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
-      const labelElement = select("labelElement", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
+      const labelAs = select("labelAs", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
       const error = text("error", "Something is wrong");
       const filter = boolean("Filter", false);
       return (
@@ -78,7 +78,7 @@ storiesOf("ChoiceGroup", module)
           dataTest={dataTest}
           label={label}
           labelSize={labelSize}
-          labelElement={labelElement}
+          labelAs={labelAs}
           error={error}
           filter={filter}
           onOnlySelection={action("onOnlySelection")}

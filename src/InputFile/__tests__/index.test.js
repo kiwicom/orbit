@@ -7,7 +7,7 @@ import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe(`InputFile with help`, () => {
   const label = "Select file";
-  const title = "Click on me";
+  const buttonLabel = "Click on me";
   const name = "name";
   const placeholder = "Not file has been selected";
   const fileName = "fileName.png";
@@ -24,7 +24,7 @@ describe(`InputFile with help`, () => {
     <InputFile
       name={name}
       label={label}
-      title={title}
+      buttonLabel={buttonLabel}
       placeholder={placeholder}
       fileName={fileName}
       dataTest={dataTest}

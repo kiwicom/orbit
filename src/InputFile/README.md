@@ -13,6 +13,7 @@ Table below contains all types of the props available in the InputFile component
 | Name                | Type                        | Default              | Description                      |
 | :------------------ | :-------------------------- | :------------------- | :------------------------------- |
 | allowedFileTypes    | `string \| string[]`        |                      | You can specify allow file types. [See MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers)
+| buttonLabel         | `Translation`               | `"Select file"`      | The label for the Button inside InputFile. [See Functional specs](#functional-specs)
 | dataTest            | `string`                    |                      | Optional prop for testing purposes.
 | error               | `React.Node`                |                      | The error message for the Select. [See Functional specs](#functional-specs)
 | fileName            | `string`                    |                      | The name of selected file.
@@ -27,14 +28,13 @@ Table below contains all types of the props available in the InputFile component
 | ref                 | `func`                      |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)
 | spaceAfter          | `enum`                      |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | tabIndex            | `string`                    |                      | Specifies the tab order of an element
-| title               | `Translation`               | `"Select file"`      | The title for the InputFile. [See Functional specs](#functional-specs)
 
 ## Functional specs
 * The `error` prop overwrites the `help` prop, due to higher priority.
 
 * If you pass some `string` into **placeholder** it will be used as its placeholder.
 
-* If you pass some `string` into **title** it will be used for button content.
+* If you pass some `string` into **buttonLabel** it will be used for button content.
 
 * `ref` can be used for example auto-focus the elements immediately after render.
 ```jsx

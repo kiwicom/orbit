@@ -4,7 +4,7 @@
 */
 
 export type Props = {|
-  +element?: string,
+  +renderInto?: string,
   +children: React$Node,
 |};
 

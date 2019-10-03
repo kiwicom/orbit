@@ -98,7 +98,7 @@ const PricingTableItem = ({
               </Text>
             )}
             {price && (
-              <Text size="large" weight="bold" type="primary" align="end">
+              <Text size="large" weight="bold" type="primary" align="center">
                 {price}
               </Text>
             )}

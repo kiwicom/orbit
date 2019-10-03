@@ -21,10 +21,10 @@ Table below contains all types of the props available in the ChoiceGroup compone
 | **children**        | `React.Node`               |             | The content of the ChoiceGroup, normally [`Radio`](../Radio) or [`Checkbox`](../Checkbox).
 | error               | `Translation`              |             | The error to display beneath the ChoiceGroup. Also, the Checkboxes/Radios will turn red when you pass some valuue.
 | label               | `Translation`              |             | Heading text of `<ChoiceGroup />`
+| labelAs             | [`enum`](#enum)            | `"h4"`      | The element used to render the label into.
 | labelSize           | [`enum`](#enum)            | `"normal"`  | The size type of Heading.
-| labelElement        | [`enum`](#enum)            | `"h4"`      | The element used to render the label into.
 | **onChange**        | `event => void \| Promise` |             | Function for handling onChange event. [See Functional specs](#functional-specs)
-| filter              | `boolean`                  | `false`     | Changes visual appearence of child components, to contain background on hover and updates padding.
+| filter              | `boolean`                  | `false`     | Changes visual appearance of child components, to contain background on hover and updates padding.
 | onOnlySelection     | `(event, {value: string, label: string}) => void \| Promise<any>`| | Function for handling onOnlySelection, read more in Functional specs.
 
 

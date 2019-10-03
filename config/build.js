@@ -60,15 +60,7 @@ const flowTemplate = `// @flow
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +color?:
-    | "attention"
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "info"
-    | "success"
-    | "warning"
-    | "critical",
+  +color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
   +size?: "small" | "medium" | "large",
   +customColor?: string,
   +className?: string,

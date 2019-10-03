@@ -23,6 +23,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  max-width: 100%;
   height: 44px;
   background: transparent;
   color: #00A991!important;
@@ -605,7 +606,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "kbbbgd",
+            "lastClassName": "fNCtQO",
             "rules": Array [
               "font-family:",
               [Function],
@@ -613,7 +614,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               [Function],
               ";flex:",
               [Function],
-              ";height:",
+              ";max-width:100%;height:",
               [Function],
               ";background:",
               [Function],
@@ -2277,6 +2278,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  max-width: 100%;
   height: 44px;
   background: transparent;
   color: #00A991!important;
@@ -2859,7 +2861,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               [Function],
               ";flex:",
               [Function],
-              ";height:",
+              ";max-width:100%;height:",
               [Function],
               ";background:",
               [Function],

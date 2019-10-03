@@ -7,15 +7,27 @@ import PopoverContentWrapper from "./components/ContentWrapper";
 import type { Props } from "./index.js.flow";
 import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
+import { POSITIONS, ALIGNS } from "./consts";
+import Separator from "../Separator";
+import defaultTheme from "../defaultTheme";
 
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
 
+const StyledActions = styled.div`
+  margin-top: ${({ theme }) => theme.orbit.spaceSmall};
+`;
+
+StyledActions.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Popover = ({
   children,
   content,
-  preferredPosition = "bottom",
+  preferredPosition = POSITIONS.BOTTOM,
+  preferredAlign = ALIGNS.START,
   dataTest,
   opened,
   width,
@@ -23,6 +35,8 @@ const Popover = ({
   overlapped,
   onClose,
   onOpen,
+  fixed,
+  actions,
 }: Props) => {
   const theme = useTheme();
   const transitionLength = useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
@@ -125,12 +139,20 @@ const Popover = ({
             width={width}
             containerRef={container}
             preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
             onClose={handleOut}
             dataTest={dataTest}
             noPadding={noPadding}
             overlapped={overlapped}
+            fixed={fixed}
+            actions={actions}
           >
             {content}
+            {actions && (
+              <StyledActions>
+                <Separator spaceAfter="normal" /> {actions}
+              </StyledActions>
+            )}
           </PopoverContentWrapper>
         </Portal>
       )}

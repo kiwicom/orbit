@@ -121,7 +121,8 @@ const Chevrons = ({ expanded }: ExpandedType) => (
 
 const StyledTripSegmentOverview = styled.div`
   display: flex;
-  flex: 0 1 calc(100% - 96px);
+  flex: 0 1 auto;
+  width: calc(100% - 96px);
   min-width: 0;
   ${StyledText} {
     line-height: 1.2;
@@ -137,6 +138,8 @@ const StyledTripSegmentCarrier = styled.div`
   align-items: center;
   position: absolute;
   ${right}: ${({ theme }) => `-${theme.orbit.spaceXSmall}`};
+  top: 0;
+  height: 100%;
 `;
 
 StyledTripSegmentCarrier.defaultProps = {

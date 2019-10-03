@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import defaultTheme from "../defaultTheme";
 import { StyledButtonLink } from "../ButtonLink";
@@ -13,22 +12,17 @@ import type { Props } from "./index";
 const StyledButtonGroup = styled.div`
   display: flex;
 
-  & ${StyledButtonLink}, & ${StyledButton} {
-    border-radius: ${({ connected }) => connected && "0"};
-    margin: ${({ theme, connected }) =>
-      rtlSpacing(
-        connected ? theme.orbit.marginButtonGroupConnected : theme.orbit.marginButtonGroup,
-      )};
+  ${StyledButtonLink}, ${StyledButton} {
+    border-radius: 0;
+    margin: ${({ theme }) => rtlSpacing(theme.orbit.marginButtonGroupConnected)};
 
-    &:first-child {
-      border-radius: ${({ connected, theme }) =>
-        connected &&
+    :first-child {
+      border-radius: ${({ theme }) =>
         borderRadius(`${theme.orbit.borderRadiusNormal} 0 0 ${theme.orbit.borderRadiusNormal}`)};
     }
 
-    &:last-child {
-      border-radius: ${({ connected, theme }) =>
-        connected &&
+    :last-child {
+      border-radius: ${({ theme }) =>
         borderRadius(`0 ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusNormal} 0`)};
       margin: 0;
     }
@@ -39,16 +33,8 @@ StyledButtonGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonGroup = ({ children, connected, dataTest }: Props) => {
-  warning(
-    !connected,
-    "Warning: connected property of ButtonGroup component is deprecated. In the next major release, the connected variant will be the default. For unconnected variant, please use Stack component. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
-  );
-  return (
-    <StyledButtonGroup connected={connected} data-test={dataTest}>
-      {children}
-    </StyledButtonGroup>
-  );
-};
+const ButtonGroup = ({ children, dataTest }: Props) => (
+  <StyledButtonGroup data-test={dataTest}>{children}</StyledButtonGroup>
+);
 
 export default ButtonGroup;

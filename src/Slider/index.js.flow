@@ -11,8 +11,8 @@ export type AriaLabel = string | string[];
 
 export type Props = {|
   ...Globals,
-  min?: number,
-  max?: number,
+  minValue?: number,
+  maxValue?: number,
   step?: number,
   defaultValue?: Value,
   onChange?: SliderCallback,

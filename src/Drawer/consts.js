@@ -1,7 +1,4 @@
 // @flow
-export const TYPES = {
-  BOX: "box",
-  NAVIGATION: "navigation",
-};
+const POSITIONS = { RIGHT: "right", LEFT: "left" };
 
-export const POSITIONS = { RIGHT: "right", LEFT: "left" };
+export default POSITIONS;

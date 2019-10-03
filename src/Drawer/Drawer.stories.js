@@ -27,7 +27,10 @@ import Suitcase from "../icons/Suitcase";
 import Trip from "../icons/Trip";
 import City from "../icons/City";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { POSITIONS } from "./consts";
+import POSITIONS from "./consts";
+import InputField from "../InputField";
+import Search from "../icons/Search";
+import Tile from "../Tile";
 
 import Drawer from "./index";
 
@@ -40,10 +43,10 @@ storiesOf("Drawer", module)
       const width = text("width", "320px");
       return (
         <Drawer
-          type="navigation"
           dataTest={dataTest}
           width={width}
           shown={shown}
+          noPadding
           onClose={action("onClose")}
         >
           <NavigationList>
@@ -95,7 +98,6 @@ storiesOf("Drawer", module)
           position={position}
           dataTest={dataTest}
           onClose={action("onClose")}
-          type="box"
         >
           <Stack>
             <Illustration name="Accommodation" />
@@ -120,6 +122,38 @@ storiesOf("Drawer", module)
     },
   )
   .add(
+    "SmartFAQ Search",
+    () => {
+      const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
+      const width = text("width", "480px");
+      return (
+        <Drawer
+          shown={shown}
+          width={width}
+          position={position}
+          dataTest={dataTest}
+          onClose={action("onClose")}
+          suppressed
+          title="Help"
+          actions={<Button type="primary">Sign In</Button>}
+        >
+          <Stack>
+            <InputField placeholder="Search" prefix={<Search />} />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+          </Stack>
+        </Drawer>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "Side Navigation in RTL",
     () => {
       const shown = boolean("shown", true);
@@ -128,10 +162,10 @@ storiesOf("Drawer", module)
       return (
         <RenderInRtl>
           <Drawer
-            type="navigation"
             dataTest={dataTest}
             width={width}
             shown={shown}
+            noPadding
             onClose={action("onClose")}
           >
             <NavigationList>
@@ -189,7 +223,6 @@ storiesOf("Drawer", module)
             position={position}
             dataTest={dataTest}
             onClose={action("onClose")}
-            type="box"
           >
             <Stack>
               <Illustration name="Accommodation" />

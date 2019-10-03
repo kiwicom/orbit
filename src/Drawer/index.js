@@ -6,14 +6,27 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 import mq from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
 import DrawerClose from "./components/DrawerClose";
-import { TYPES, POSITIONS } from "./consts";
+import POSITIONS from "./consts";
 import getPosition from "./helpers/getPosition";
 import getTransitionAnimation from "./helpers/getTransitionAnimation";
-import { isBox, isNavigation } from "./helpers/isType";
 import useTheme from "../hooks/useTheme";
+import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
+import Heading from "../Heading";
 
 import type { Props } from ".";
+
+const getPadding = ({ noPadding, theme }) => {
+  return (
+    !noPadding &&
+    css`
+      padding: ${theme.orbit.spaceMedium};
+      ${mq.largeMobile(css`
+        padding: ${theme.orbit.spaceXLarge};
+      `)};
+    `
+  );
+};
 
 const StyledDrawer = styled.div`
   display: flex;
@@ -50,7 +63,10 @@ const StyledDrawerSide = styled(({ theme, width, position, shown, ...props }) =>
   // TODO: use new elevation levels
   box-shadow: 0 4px 8px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 16)},
     0 8px 24px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 24)};
-  background: ${({ theme }) => theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
+  background: ${({ theme, suppressed }) =>
+    suppressed
+      ? theme.orbit.paletteCloudLight
+      : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
   transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   width: 100%;
   ${mq.largeMobile(css`
@@ -65,33 +81,38 @@ StyledDrawerSide.defaultProps = {
 };
 
 const StyledDrawerContent = styled(({ theme, type, ...props }) => <div {...props} />)`
-  ${({ type }) =>
-    isBox(type) &&
-    css`
-      padding: ${({ theme }) => theme.orbit.spaceMedium};
-      ${mq.largeMobile(css`
-        padding: ${({ theme }) => theme.orbit.spaceXLarge};
-      `)};
-    `};
-  ${({ type }) =>
-    isNavigation(type) &&
-    css`
-      margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
-    `};
+  ${getPadding};
+  margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceLarge};
+  margin-top: ${({ hasClose, theme, noPadding }) =>
+    !hasClose && noPadding && theme.orbit.spaceLarge};
 `;
 
 StyledDrawerContent.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledDrawerHeader = styled.div`
+  display: flex;
+  background: white;
+  height: 64px;
+  ${getPadding};
+`;
+
+StyledDrawerHeader.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Drawer = ({
   children,
-  type = TYPES.BOX,
   onClose,
   shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,
   dataTest,
+  noPadding,
+  suppressed,
+  title,
+  actions,
 }: Props) => {
   const theme = useTheme();
   const overlayRef = useRef(null);
@@ -129,9 +150,27 @@ const Drawer = ({
       aria-hidden={!shown}
       ref={overlayRef}
     >
-      <StyledDrawerSide shown={shown} width={width} position={position} role="navigation">
-        {onClose && <DrawerClose type={type} onClick={onClose} />}
-        <StyledDrawerContent type={type}>{children}</StyledDrawerContent>
+      <StyledDrawerSide
+        shown={shown}
+        width={width}
+        position={position}
+        role="navigation"
+        suppressed={suppressed}
+      >
+        {(title || actions || onClose) && (
+          <StyledDrawerHeader>
+            {title && <Heading type="title2">{title}</Heading>}
+            {actions && (
+              <Stack spacing="none" flex shrink>
+                {actions}
+              </Stack>
+            )}
+            {onClose && <DrawerClose onClick={onClose} />}
+          </StyledDrawerHeader>
+        )}
+        <StyledDrawerContent noPadding={noPadding} hasClose={!!onClose}>
+          {children}
+        </StyledDrawerContent>
       </StyledDrawerSide>
     </StyledDrawer>
   );

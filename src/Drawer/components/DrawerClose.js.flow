@@ -1,6 +1,6 @@
 // @flow
-import type { OnClose, Type } from "../index";
+import type { OnClose } from "../index";
 
-export type Props = {| +type: Type, +onClick?: OnClose |};
+export type Props = {| +onClick?: OnClose |};
 
 declare export default React$ComponentType<Props>;

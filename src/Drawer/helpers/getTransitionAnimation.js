@@ -2,7 +2,7 @@
 import { css } from "styled-components";
 
 import mq from "../../utils/mediaQuery";
-import { POSITIONS } from "../consts";
+import POSITIONS from "../consts";
 import type { GetTransitionAnimation } from "./getTransitionAnimation";
 
 const computedWidth = (width, isPrefixed) => `${isPrefixed ? "-" : ""}${width}`;

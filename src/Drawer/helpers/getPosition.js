@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import { POSITIONS } from "../consts";
+import POSITIONS from "../consts";
 import { left, right } from "../../utils/rtl/index";
 import type { GetPosition } from "./getPosition";
 

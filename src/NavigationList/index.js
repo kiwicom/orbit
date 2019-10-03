@@ -60,9 +60,6 @@ const StyledNavigationList = styled(({ theme, type, ...props }) => <div {...prop
     isNavigation(type)
       ? css`
           padding: ${({ theme }) => rtlSpacing(`0 0 ${theme.orbit.spaceLarge} 0`)};
-          :first-child {
-            padding-top: ${({ theme }) => theme.orbit.spaceLarge};
-          }
           :last-child {
             padding-bottom: 0;
             ${StyledNavigationListSeparator} {

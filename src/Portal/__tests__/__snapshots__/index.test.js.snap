@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Portal with element should match snapshot 1`] = `
+exports[`Portal with renderInto should match snapshot 1`] = `
 <div
   id="portal"
 >
@@ -12,9 +12,9 @@ exports[`Portal with element should match snapshot 1`] = `
 </div>
 `;
 
-exports[`Portal with element should match snapshot 2`] = `
+exports[`Portal with renderInto should match snapshot 2`] = `
 <Portal
-  element="portal"
+  renderInto="portal"
 >
   <Portal
     containerInfo={
@@ -32,17 +32,17 @@ exports[`Portal with element should match snapshot 2`] = `
 </Portal>
 `;
 
-exports[`Portal with element unmouted, should match snapshot 1`] = `
+exports[`Portal with renderInto unmouted, should match snapshot 1`] = `
 <div
   id="portal"
 />
 `;
 
-exports[`Portal with element unmouted, should match snapshot 2`] = `null`;
+exports[`Portal with renderInto unmouted, should match snapshot 2`] = `null`;
 
-exports[`Portal without element should match snapshot 1`] = `null`;
+exports[`Portal without renderInto should match snapshot 1`] = `null`;
 
-exports[`Portal without element should match snapshot 2`] = `
+exports[`Portal without renderInto should match snapshot 2`] = `
 <Portal>
   <Portal
     containerInfo={
@@ -60,6 +60,6 @@ exports[`Portal without element should match snapshot 2`] = `
 </Portal>
 `;
 
-exports[`Portal without element unmouted, should match snapshot 1`] = `null`;
+exports[`Portal without renderInto unmouted, should match snapshot 1`] = `null`;
 
-exports[`Portal without element unmouted, should match snapshot 2`] = `null`;
+exports[`Portal without renderInto unmouted, should match snapshot 2`] = `null`;

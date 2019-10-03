@@ -6,7 +6,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { POSITIONS } from "./consts";
+import { POSITIONS, ALIGNS } from "./consts";
 import Stack from "../Stack";
 import Button from "../Button";
 import Stepper from "../Stepper";
@@ -14,8 +14,6 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
-import Separator from "../Separator";
-import Hide from "../Hide";
 import Sticky from "../Sticky";
 import Card from "../Card";
 
@@ -46,18 +44,12 @@ const selects = (
 
 const content = <Stack>{selects}</Stack>;
 
-const overlappedContent = (
-  <Stack>
-    {selects}
-    <Hide on={["smallMobile", "mediumMobile"]} block>
-      <Separator />
-      <Stack direction="row" justify="between">
-        <Button type="secondary" size="small">
-          Cancel
-        </Button>
-        <Button size="small">Done</Button>
-      </Stack>
-    </Hide>
+const actions = (
+  <Stack direction="row" justify="between">
+    <Button type="secondary" size="small">
+      Cancel
+    </Button>
+    <Button size="small">Done</Button>
   </Stack>
 );
 
@@ -205,7 +197,8 @@ storiesOf("Popover", module)
       return (
         <Popover
           overlapped={overlapped}
-          content={overlappedContent}
+          content={content}
+          actions={actions}
           onOpen={action("open")}
           onClose={action("close")}
         >
@@ -225,12 +218,22 @@ storiesOf("Popover", module)
     () => {
       return (
         <Stack flex>
-          <Popover content={overlappedContent} onOpen={action("open")} onClose={action("close")}>
+          <Popover
+            content={content}
+            actions={actions}
+            onOpen={action("open")}
+            onClose={action("close")}
+          >
             <Button type="secondary" iconRight={<ChevronDown />}>
               Open popover
             </Button>
           </Popover>
-          <Popover content={overlappedContent} onOpen={action("open")} onClose={action("close")}>
+          <Popover
+            content={content}
+            actions={actions}
+            onOpen={action("open")}
+            onClose={action("close")}
+          >
             <Button type="secondary" iconRight={<ChevronDown />}>
               Open popover
             </Button>
@@ -268,14 +271,14 @@ storiesOf("Popover", module)
     },
   )
   .add(
-    "Scrolling content",
+    "Scrolling page",
     () => {
       return (
         <>
           <Sticky>
             <Card>
               <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
-                <Button type="secondary" iconRight={<ChevronDown />} block>
+                <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
                   Open popover
                 </Button>
               </Popover>
@@ -300,6 +303,7 @@ storiesOf("Popover", module)
         Object.values(POSITIONS),
         POSITIONS.BOTTOM,
       );
+      const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
       const width = text("width", "350px");
       const noPadding = boolean("noPadding", false);
       const overlapped = boolean("overlapped", false);
@@ -310,7 +314,16 @@ storiesOf("Popover", module)
           dataTest={dataTest}
           content={content}
           preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
           noPadding={noPadding}
+          actions={
+            <Stack direction="row" justify="between">
+              <Button type="secondary" size="small">
+                Cancel
+              </Button>
+              <Button size="small">Done</Button>
+            </Stack>
+          }
           overlapped={overlapped}
           onOpen={action("open")}
           onClose={action("close")}

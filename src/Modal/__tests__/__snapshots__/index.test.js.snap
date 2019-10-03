@@ -2005,7 +2005,7 @@ exports[`Large Modal should match snapshot 1`] = `
             Back
           </Button>
           <Button
-            block={true}
+            fullWidth={true}
           >
             Continue to Payment
           </Button>

@@ -87,7 +87,7 @@ const useMediaQuery: UseMediaQuery = () => {
         mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
       }
     };
-  }, []);
+  }, [mediaList, updateMatch]);
 
   // Flatten to object and return
   const exportObj = Object.assign(

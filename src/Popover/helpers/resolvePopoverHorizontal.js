@@ -2,7 +2,7 @@
 import { css } from "styled-components";
 
 import type { ResolvePopoverHorizontal } from "./resolvePopoverHorizontal.js.flow";
-import { ANCHORS } from "../consts";
+import { ALIGNS } from "../consts";
 
 const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   anchor,
@@ -11,14 +11,14 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   popoverWidth,
   theme,
 }) => {
-  if (anchor === ANCHORS.START) {
+  if (anchor === ALIGNS.START) {
     return css`
       left: ${theme.rtl
         ? Math.floor(containerLeft + containerWidth - popoverWidth)
         : Math.floor(containerLeft)}px;
     `;
   }
-  if (anchor === ANCHORS.END) {
+  if (anchor === ALIGNS.END) {
     return css`
       left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; /* TODO: use token */
     `;

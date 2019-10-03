@@ -1,22 +1,22 @@
 // @flow
-import { ANCHORS } from "../consts";
-import type { AnchorsCore } from "../index";
+import { ALIGNS } from "../consts";
+import type { AlignsCore } from "../index";
 import type { CalculateHorizontalPosition } from "./calculateHorizontalPosition";
 
-const isInside = (p: AnchorsCore, canBe) => {
-  if (p === ANCHORS.START && canBe[p]) {
-    return ANCHORS.START;
+const isInside = (p: AlignsCore, canBe) => {
+  if (p === ALIGNS.START && canBe[p]) {
+    return ALIGNS.START;
   }
-  if (p === ANCHORS.END && canBe[p]) {
-    return ANCHORS.END;
+  if (p === ALIGNS.END && canBe[p]) {
+    return ALIGNS.END;
   }
   return false;
 };
 
 const calculateHorizontalPosition: CalculateHorizontalPosition = (desiredAnchor, positions) => {
   const canBe = {
-    [ANCHORS.START]: positions.containerLeft + positions.popoverWidth < positions.windowWidth,
-    [ANCHORS.END]: positions.containerLeft + positions.containerWidth >= positions.popoverWidth,
+    [ALIGNS.START]: positions.containerLeft + positions.popoverWidth < positions.windowWidth,
+    [ALIGNS.END]: positions.containerLeft + positions.containerWidth >= positions.popoverWidth,
   };
 
   const possibleAnchor = desiredAnchor

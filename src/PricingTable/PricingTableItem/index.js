@@ -91,18 +91,22 @@ const PricingTableItem = ({
           </Stack>
         )}
         <Stack justify="between" direction="column">
-          <Stack spacing="tight">
+          <Stack spacing="tight" direction="column" flex align="stretch" tablet={{ grow: false }}>
             {name && (
               <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
                 {name}
               </Text>
             )}
             {price && (
-              <Text size="large" weight="bold" type="primary" align="center">
+              <Text size="large" weight="bold" type="primary" align="end">
                 {price}
               </Text>
             )}
-            {priceBadge && <Stack justify="center"> {priceBadge} </Stack>}
+            {priceBadge && (
+              <Stack justify="center" align="end" tablet={{ grow: false }}>
+                {priceBadge}
+              </Stack>
+            )}
           </Stack>
           {!compact ? (
             <Stack justify="between" direction="column">

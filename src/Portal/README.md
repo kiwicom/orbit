@@ -16,7 +16,7 @@ Table below contains all types of the props available in the Portal component.
 | Name          | Type                  | Default         | Description                      |
 | :------------ | :---------------------| :-------------- | :------------------------------- |
 | children      | `React.Node`          |                 | The content of the Portal to render. [See Functional specs](#functional-specs)
-| element       | `string`              | `"modal"`       | The string name of element to be used for the render.
+| renderInto    | `string`              |                 | The string name of element to be used for the render.
 
 ## Functional specs
-* `<Portal />` component will render passed children into a DOM node that exists outside the DOM hierarchy of the parent component. It means that you have to create `div` element with id `modal` (or whatever you want) in root `html` file. For more info, see [React Portal docs](https://reactjs.org/docs/portals.html).
+* `<Portal />` component with property `renderInto="modal"` will render its children into a DOM node that exists outside the DOM hierarchy of the parent component. It means that you have to create `div` element with id `modal` (or whatever you want) in root `html` file. For more info, see [React Portal docs](https://reactjs.org/docs/portals.html).

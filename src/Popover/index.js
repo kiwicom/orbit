@@ -133,7 +133,7 @@ const Popover = ({
         {children}
       </StyledPopoverChild>
       {render && (
-        <Portal element="popovers">
+        <Portal renderInto="popovers">
           <PopoverContentWrapper
             shown={shown}
             width={width}

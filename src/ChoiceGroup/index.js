@@ -52,7 +52,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
       dataTest,
       label,
       labelSize = LABEL_SIZES.NORMAL,
-      labelElement = LABEL_ELEMENTS.H4,
+      labelAs = LABEL_ELEMENTS.H4,
       error,
       children,
       filter,
@@ -65,7 +65,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
           <Heading
             id={this.groupID}
             type={getHeadingSize(labelSize)}
-            element={labelElement}
+            element={labelAs}
             spaceAfter="medium"
           >
             {label}

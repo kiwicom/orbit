@@ -45,6 +45,7 @@ export type Props = {|
   +preferredPosition?: Positions,
   +enabled?: boolean,
   +tabIndex?: string,
+  +removeUnderlinedText?: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

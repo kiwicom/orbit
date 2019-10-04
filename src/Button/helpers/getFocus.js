@@ -18,6 +18,7 @@ const getFocus: GetFocus = () => ({ bordered }) => {
         ? getTypeToken(TOKENS.backgroundButtonBordered)
         : getTypeToken(TOKENS.backgroundButton)};
     }
+    :-moz-focusring,
     :focus-visible {
       ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
       background: ${bordered && getTypeToken(TOKENS.backgroundButtonFocus)};

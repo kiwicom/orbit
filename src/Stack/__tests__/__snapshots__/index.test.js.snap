@@ -241,7 +241,7 @@ exports[`Default Stack should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
 .c8:focus:active {
@@ -253,10 +253,12 @@ exports[`Default Stack should match snapshot 1`] = `
   background: #00A991;
 }
 
+.c8:-moz-focusring,
 .c8:focus-visible {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
+.c8:-moz-focusring:active,
 .c8:focus-visible:active {
   box-shadow: inset 0 0 6px 3px rgba(37,42,49,0.15);
 }
@@ -18285,7 +18287,7 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
 .c8:focus:active {
@@ -18297,10 +18299,12 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
   background: #00A991;
 }
 
+.c8:-moz-focusring,
 .c8:focus-visible {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
+.c8:-moz-focusring:active,
 .c8:focus-visible:active {
   box-shadow: inset 0 0 6px 3px rgba(37,42,49,0.15);
 }
@@ -36425,7 +36429,7 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
 .c8:focus:active {
@@ -36437,10 +36441,12 @@ exports[`Stack with flex prop should match snapshot 1`] = `
   background: #00A991;
 }
 
+.c8:-moz-focusring,
 .c8:focus-visible {
-  box-shadow: 0 0 0 2px rgba(0,169,145,0.4);
+  box-shadow: 0 0 0 3px rgba(0,169,145,0.5);
 }
 
+.c8:-moz-focusring:active,
 .c8:focus-visible:active {
   box-shadow: inset 0 0 6px 3px rgba(37,42,49,0.15);
 }

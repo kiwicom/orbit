@@ -62,7 +62,7 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
     return css`
       ${!bordered &&
         css`
-          box-shadow: 0 0 0 2px ${getTypeToken(TOKENS.borderColorButtonFocus)};
+          box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus)};
         `}
       &:active {
         ${bordered

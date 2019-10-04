@@ -37,7 +37,7 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
   }
   if (state === BUTTON_STATES.DEFAULT && bordered) {
     return css`
-      box-shadow: inset 0 0 0 2px ${getTypeToken(TOKENS.borderColorButton)};
+      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)};
     `;
   }
   if (state === BUTTON_STATES.HOVER && bordered) {

@@ -27,6 +27,7 @@ const DrawerClose = ({ onClick }: Props) => {
         iconLeft={<Close />}
         type="secondary"
         title={pureTranslate(dictionary, "drawer_hide")}
+        transparent
       />
     </StyledDrawerClose>
   );

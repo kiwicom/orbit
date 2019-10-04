@@ -92,7 +92,16 @@ StyledNavigationListTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledNavigationListChild = styled.li``;
+const StyledNavigationListChild = styled(({ theme, type, ...props }) => <li {...props} />)`
+  ${({ type }) =>
+    isInline(type) &&
+    css`
+      margin-${right}: 4px;
+      :last-child {
+        margin: 0;
+      }
+  `};
+`;
 
 const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION }: Props) => (
   <StyledNavigationList data-test={dataTest} type={type}>
@@ -105,7 +114,7 @@ const NavigationList = ({ children, title, dataTest, type = TYPES.NAVIGATION }: 
     )}
     <StyledNavigationListContent type={type}>
       {React.Children.map(children, item => (
-        <StyledNavigationListChild>
+        <StyledNavigationListChild type={type}>
           {React.isValidElement(item) ? React.cloneElement(item) : item}
         </StyledNavigationListChild>
       ))}

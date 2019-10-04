@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
@@ -16,25 +15,12 @@ import Button from "./index";
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-const StyledDarkBackground = styled.div`
-  padding: 20px;
-  background-color: #000;
-  display: inline-block;
-  margin: 20px 0;
-`;
-
 storiesOf("Button", module)
   .add(
     "Default",
     () => {
       const children = text("Children", "Default button");
-      const button = <Button onClick={action("clicked")}>{children}</Button>;
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
-      );
+      return <Button onClick={action("clicked")}>{children}</Button>;
     },
     {
       info:
@@ -48,16 +34,11 @@ storiesOf("Button", module)
       const fullWidth = boolean("fullWidth", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-      const button = (
+
+      return (
         <Button onClick={action("clicked")} fullWidth={fullWidth} type={type} size={size}>
           {children}
         </Button>
-      );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
       );
     },
     {
@@ -74,7 +55,7 @@ storiesOf("Button", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), "small");
       const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
-      const button = (
+      return (
         <Button
           onClick={action("clicked")}
           fullWidth={fullWidth}
@@ -85,12 +66,6 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
-      );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
       );
     },
     {
@@ -125,7 +100,8 @@ storiesOf("Button", module)
     () => {
       const children = text("Children", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
-      const button = (
+
+      return (
         <Stack>
           <Button
             onClick={action("clicked")}
@@ -161,12 +137,6 @@ storiesOf("Button", module)
           </Button>
         </Stack>
       );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
-      );
     },
     {
       info:
@@ -183,7 +153,8 @@ storiesOf("Button", module)
         TYPE_OPTIONS.PRIMARY,
       );
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
-      const button = (
+
+      return (
         <Button
           onClick={action("clicked")}
           size={size}
@@ -192,12 +163,6 @@ storiesOf("Button", module)
           circled
           title="Button"
         />
-      );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
       );
     },
     {
@@ -211,7 +176,8 @@ storiesOf("Button", module)
       const children = text("Children", "Destructive button");
       const bordered = boolean("Bordered", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-      const button = (
+
+      return (
         <Button
           onClick={action("clicked")}
           bordered={bordered}
@@ -221,12 +187,6 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
-      );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
       );
     },
     {
@@ -243,7 +203,7 @@ storiesOf("Button", module)
       const disabled = boolean("Disabled", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
-      const button = (
+      return (
         <Button
           onClick={action("clicked")}
           href={href}
@@ -255,13 +215,6 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
-      );
-      return (
-        <>
-          {button}
-          <br />
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
       );
     },
     {
@@ -294,7 +247,7 @@ storiesOf("Button", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const title = text("Title", "Additional information for accessibility");
 
-      const button = (
+      return (
         <Button
           onClick={action("clicked")}
           component={component}
@@ -321,13 +274,6 @@ storiesOf("Button", module)
           {children}
         </Button>
       );
-
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
-      );
     },
     {
       info: "Some description about this type of component. ",
@@ -341,7 +287,7 @@ storiesOf("Button", module)
       const ariaControls = text("Aria controls", "element ID");
       const title = text("Title", "Additional information for accessibility");
 
-      const button = (
+      return (
         <Button
           onClick={action("clicked")}
           ariaControls={ariaControls}
@@ -351,12 +297,6 @@ storiesOf("Button", module)
           {children}
         </Button>
       );
-      return (
-        <>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </>
-      );
     },
     {
       info: "This is a preview of component accessibility props",
@@ -364,20 +304,13 @@ storiesOf("Button", module)
   )
   .add(
     "RTL",
-    () => {
-      const button = (
+    () => (
+      <RenderInRtl>
         <Button type="info" icon={<Icons.Airplane />}>
           Button
         </Button>
-      );
-
-      return (
-        <RenderInRtl>
-          {button}
-          <StyledDarkBackground>{button}</StyledDarkBackground>
-        </RenderInRtl>
-      );
-    },
+      </RenderInRtl>
+    ),
     {
       info: "This is a preview of this component in RTL setup.",
     },

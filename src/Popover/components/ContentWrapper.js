@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -15,6 +15,7 @@ import useDimensions from "../hooks/useDimensions";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
+import { ModalContext } from "../../Modal/ModalContext";
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -38,6 +39,7 @@ const StyledPopoverParent = styled.div`
     outline: 0;
   }
   ${media.largeMobile(css`
+    z-index: ${({ isInsideModal }) => (isInsideModal ? "1000" : "600")};
     position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
     left: auto;
     right: auto;
@@ -73,6 +75,7 @@ const StyledOverlay = styled.div`
 
   ${media.largeMobile(css`
     display: none;
+    z-index: ${({ isInsideModal }) => (isInsideModal ? "999" : "599")};
   `)};
 `;
 StyledOverlay.defaultProps = {
@@ -107,6 +110,7 @@ const PopoverContentWrapper = ({
   fixed,
   actions,
 }: Props) => {
+  const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
@@ -128,7 +132,7 @@ const PopoverContentWrapper = ({
 
   return (
     <React.Fragment>
-      <StyledOverlay ref={overlay} shown={shown} />
+      <StyledOverlay ref={overlay} shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}
@@ -149,6 +153,7 @@ const PopoverContentWrapper = ({
         overlapped={overlapped}
         role="tooltip"
         fixed={fixed}
+        isInsideModal={isInsideModal}
       >
         <StyledPopoverContent ref={content}>
           {children}

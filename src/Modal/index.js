@@ -332,6 +332,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       icon={<Close />}
       transparent
       dataTest={dataTest}
+      type="secondary"
       title={pureTranslate(dictionary, "button_close")}
     />
   );

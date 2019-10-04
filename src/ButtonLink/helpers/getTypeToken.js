@@ -31,7 +31,7 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
       [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
     },
     [TOKENS.backgroundButtonFocus]: {
-      [TYPES.PRIMARY]: "rgba(0, 169, 145, 0.1)", // TODO: Fix convert HexToRgba and tokenize
+      [TYPES.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 10),
       [TYPES.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
     },
   };

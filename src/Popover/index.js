@@ -91,8 +91,10 @@ const Popover = ({
         setShownWithTimeout(true);
         resolveCallback(true);
       }
-    } else {
-      resolveCallback(!shown);
+    } else if (opened) {
+      resolveCallback(false);
+    } else if (!opened) {
+      resolveCallback(true);
     }
   }, [
     clearRenderTimeout,

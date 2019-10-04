@@ -171,6 +171,11 @@ export const StyledButton = styled(
   }
 
   &:focus {
+    ${({ bordered }) =>
+      bordered &&
+      css`
+        background: ${getTypeToken(TOKENS.backgroundButtonFocus)};
+      `};
     ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
   }
 

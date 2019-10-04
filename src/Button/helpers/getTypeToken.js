@@ -1,4 +1,6 @@
 // @flow
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetTypeToken } from "./getTypeToken";
 
@@ -36,6 +38,17 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.backgroundButtonFacebookActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.backgroundButtonGoogleActive,
       [TYPE_OPTIONS.WHITE]: theme.orbit.backgroundButtonWhiteActive,
+    },
+    [TOKENS.backgroundButtonFocus]: {
+      [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.backgroundButtonPrimary, 10),
+      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.backgroundButtonSecondary, 10),
+      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.backgroundButtonInfo, 10),
+      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.backgroundButtonSuccess, 10),
+      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.backgroundButtonWarning, 10),
+      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.backgroundButtonCritical, 10),
+      [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.backgroundButtonFacebook, 10),
+      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.backgroundButtonGoogle, 10),
+      [TYPE_OPTIONS.WHITE]: "#EFF1F3",
     },
     [TOKENS.backgroundButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBordered,
@@ -168,6 +181,17 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.borderColorButtonFacebookBorderedActive,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.borderColorButtonGoogleBorderedActive,
       [TYPE_OPTIONS.WHITE]: theme.orbit.borderColorButtonWhiteBorderedActive,
+    },
+    [TOKENS.borderColorButtonFocus]: {
+      [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.backgroundButtonPrimary, 40),
+      [TYPE_OPTIONS.SECONDARY]: "#D9E1E8", //TODO: add Token
+      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.backgroundButtonInfo, 40),
+      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.backgroundButtonSuccess, 40),
+      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.backgroundButtonWarning, 40),
+      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.backgroundButtonCritical, 40),
+      [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.backgroundButtonFacebook, 40),
+      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.backgroundButtonGoogle, 40),
+      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.backgroundButtonWhite, 40),
     },
   };
   return tokens[name][type];

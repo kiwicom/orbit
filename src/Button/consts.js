@@ -32,6 +32,7 @@ export const TOKENS = {
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",
   backgroundButtonActive: "backgroundButtonActive",
+  backgroundButtonFocus: "backgroundButtonFocus",
   backgroundButtonBordered: "backgroundButtonBordered",
   backgroundButtonBorderedHover: "backgroundButtonBorderedHover",
   backgroundButtonBorderedActive: "backgroundButtonBorderedActive",
@@ -44,6 +45,7 @@ export const TOKENS = {
   borderColorButton: "borderColorButton",
   borderColorButtonHover: "borderColorButtonHover",
   borderColorButtonActive: "borderColorButtonActive",
+  borderColorButtonFocus: "borderColorButtonFocus",
 };
 
 export const BUTTON_STATES = {

@@ -3,6 +3,7 @@
 exports[`ContentWrapper it should match snapshot 1`] = `
 <Fragment>
   <ContentWrapper__StyledOverlay
+    isInsideModal={false}
     shown={true}
     theme={
       Object {
@@ -486,6 +487,7 @@ exports[`ContentWrapper it should match snapshot 1`] = `
     containerPureTop={0}
     containerTop={0}
     containerWidth={0}
+    isInsideModal={false}
     popoverHeight={0}
     popoverWidth={0}
     position="top"

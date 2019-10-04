@@ -11,6 +11,7 @@ import type { Props, ListContextType, GetSizeToken } from "./index";
 export const ListContext: ListContextType = React.createContext({
   size: null,
   type: null,
+
 });
 
 export const getSizeToken: GetSizeToken = ({ theme, size }) => {

@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
@@ -14,6 +15,13 @@ import Button from "./index";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
+
+const StyledDarkBackground = styled.div`
+  padding: 20px;
+  background-color: #000;
+  display: inline-block;
+  margin: 20px 0;
+`;
 
 storiesOf("Button", module)
   .add(
@@ -247,7 +255,7 @@ storiesOf("Button", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const title = text("Title", "Additional information for accessibility");
 
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           component={component}
@@ -273,6 +281,13 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
+      );
+
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {

@@ -170,7 +170,24 @@ export const StyledButton = styled(
       `};
   }
 
-  &:focus {
+  :focus {
+    ${({ bordered }) =>
+      bordered &&
+      css`
+        background: ${getTypeToken(TOKENS.backgroundButtonFocus)};
+      `};
+    ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
+  }
+
+  :focus:not(:focus-visible) {
+    box-shadow: none;
+    background: ${({ bordered }) =>
+      bordered
+        ? getTypeToken(TOKENS.backgroundButtonBordered)
+        : getTypeToken(TOKENS.backgroundButton)};
+  }
+
+  :focus-visible {
     ${({ bordered }) =>
       bordered &&
       css`

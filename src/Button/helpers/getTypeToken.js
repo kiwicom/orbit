@@ -41,14 +41,14 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
     },
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.backgroundButtonPrimary, 10),
-      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.backgroundButtonSecondary, 10),
+      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 40),
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.backgroundButtonInfo, 10),
       [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.backgroundButtonSuccess, 10),
       [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.backgroundButtonWarning, 10),
       [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.backgroundButtonCritical, 10),
       [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.backgroundButtonFacebook, 10),
-      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.backgroundButtonGoogle, 10),
-      [TYPE_OPTIONS.WHITE]: "#EFF1F3",
+      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.paletteInkLight, 40),
+      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.backgroundButtonWhite, 20),
     },
     [TOKENS.backgroundButtonBordered]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonBordered,
@@ -184,7 +184,7 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
     },
     [TOKENS.borderColorButtonFocus]: {
       [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.backgroundButtonPrimary, 40),
-      [TYPE_OPTIONS.SECONDARY]: "#D9E1E8", //TODO: add Token
+      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 40),
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.backgroundButtonInfo, 40),
       [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.backgroundButtonSuccess, 40),
       [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.backgroundButtonWarning, 40),

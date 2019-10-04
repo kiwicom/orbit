@@ -32,6 +32,7 @@ const opacity = {
 };
 
 const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, theme, type }) => {
+  console.log(state);
   if (disabled) {
     return null;
   }
@@ -64,7 +65,6 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
         css`
           box-shadow: 0 0 0 2px ${getTypeToken(TOKENS.borderColorButtonFocus)};
         `}
-
       &:active {
         ${bordered
           ? css`

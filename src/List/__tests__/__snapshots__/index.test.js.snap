@@ -481,35 +481,44 @@ exports[`List with custom colored icons should match snapshot 1`] = `
   }
   type="secondary"
 >
-  <ListItem
-    dataTest="test"
-    icon={
-      <Check
-        color="success"
-      />
+  <ContextProvider
+    value={
+      Object {
+        "size": "small",
+        "type": "secondary",
+      }
     }
   >
-    This contains a nice sentence
-  </ListItem>
-  <ListItem
-    dataTest="test"
-    icon={
-      <Check
-        color="success"
-      />
-    }
-  >
-    This contains a nice sentence
-  </ListItem>
-  <ListItem
-    dataTest="test"
-    icon={
-      <Check
-        color="success"
-      />
-    }
-  >
-    This contains a nice sentence
-  </ListItem>
+    <ListItem
+      dataTest="test"
+      icon={
+        <Check
+          color="success"
+        />
+      }
+    >
+      This contains a nice sentence
+    </ListItem>
+    <ListItem
+      dataTest="test"
+      icon={
+        <Check
+          color="success"
+        />
+      }
+    >
+      This contains a nice sentence
+    </ListItem>
+    <ListItem
+      dataTest="test"
+      icon={
+        <Check
+          color="success"
+        />
+      }
+    >
+      This contains a nice sentence
+    </ListItem>
+  </ContextProvider>
 </List__StyledList>
 `;

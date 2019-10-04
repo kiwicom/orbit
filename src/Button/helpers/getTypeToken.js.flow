@@ -9,6 +9,7 @@ type TokenName =
   | "backgroundButtonBordered"
   | "backgroundButtonBorderedHover"
   | "backgroundButtonBorderedActive"
+  | "backgroundButtonFocus"
   | "colorTextButton"
   | "colorTextButtonBordered"
   | "colorTextButtonHover"
@@ -17,7 +18,8 @@ type TokenName =
   | "colorTextButtonBorderedActive"
   | "borderColorButton"
   | "borderColorButtonHover"
-  | "borderColorButtonActive";
+  | "borderColorButtonActive"
+  | "borderColorButtonFocus";
 
 export type GetTypeToken = (name: TokenName) => ({ ...ThemeProps, type: Type }) => string;
 

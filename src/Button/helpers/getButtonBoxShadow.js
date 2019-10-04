@@ -32,7 +32,6 @@ const opacity = {
 };
 
 const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, theme, type }) => {
-  console.log(state);
   if (disabled) {
     return null;
   }

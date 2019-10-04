@@ -1,0 +1,9 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+
+export type GetFocus = () => ({
+  bordered: boolean,
+  ...ThemeProps,
+}) => ?string;
+
+declare export default GetFocus;

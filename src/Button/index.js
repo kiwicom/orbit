@@ -15,6 +15,7 @@ import getTypeToken from "./helpers/getTypeToken";
 import getButtonSpacing from "./helpers/getButtonSpacing";
 import getIconSpacing from "./helpers/getIconSpacing";
 import getButtonBoxShadow from "./helpers/getButtonBoxShadow";
+import getFocus from "./helpers/getFocus";
 
 import type { Props } from "./index";
 
@@ -170,31 +171,7 @@ export const StyledButton = styled(
       `};
   }
 
-  :focus {
-    ${({ bordered }) =>
-      bordered &&
-      css`
-        background: ${getTypeToken(TOKENS.backgroundButtonFocus)};
-      `};
-    ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
-  }
-
-  :focus:not(:focus-visible) {
-    box-shadow: none;
-    background: ${({ bordered }) =>
-      bordered
-        ? getTypeToken(TOKENS.backgroundButtonBordered)
-        : getTypeToken(TOKENS.backgroundButton)};
-  }
-
-  :focus-visible {
-    ${({ bordered }) =>
-      bordered &&
-      css`
-        background: ${getTypeToken(TOKENS.backgroundButtonFocus)};
-      `};
-    ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
-  }
+  ${getFocus()}
 
   ${StyledSpinner} {
     width: ${getSizeToken(TOKENS.loadingWidth)};

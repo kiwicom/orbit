@@ -41,7 +41,7 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
     },
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.backgroundButtonPrimary, 10),
-      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 40),
+      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.backgroundButtonInfo, 10),
       [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.backgroundButtonSuccess, 10),
       [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.backgroundButtonWarning, 10),

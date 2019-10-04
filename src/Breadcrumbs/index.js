@@ -5,9 +5,9 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
 import getSpacingToken from "../common/getSpacingToken";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
@@ -38,7 +38,7 @@ StyledBackButtonWrapper.defaultProps = {
 };
 
 const GoBackButton = ({ onClick }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <StyledBackButtonWrapper>

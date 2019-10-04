@@ -601,6 +601,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                 manageFocus: this.manageFocus,
                 hasModalSection,
                 isMobileFullPage,
+                isInsideModal: true,
               }}
             >
               {children}

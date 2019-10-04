@@ -45,11 +45,11 @@ storiesOf("Button", module)
     "Basic buttons",
     () => {
       const children = text("Children", "Button");
-      const block = boolean("Block", false);
+      const fullWidth = boolean("fullWidth", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
       const button = (
-        <Button onClick={action("clicked")} block={block} type={type} size={size}>
+        <Button onClick={action("clicked")} fullWidth={fullWidth} type={type} size={size}>
           {children}
         </Button>
       );
@@ -69,7 +69,7 @@ storiesOf("Button", module)
     "Button with icons",
     () => {
       const children = text("Children", "Button");
-      const block = boolean("Block", false);
+      const fullWidth = boolean("fullWidth", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "small");
       const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
@@ -77,7 +77,7 @@ storiesOf("Button", module)
       const button = (
         <Button
           onClick={action("clicked")}
-          block={block}
+          fullWidth={fullWidth}
           type={type}
           size={size}
           iconLeft={IconLeft && <IconLeft />}
@@ -277,7 +277,7 @@ storiesOf("Button", module)
       const external = boolean("External", false);
       const component = text("Component", "button");
       const disabled = boolean("Disabled", false);
-      const block = boolean("Block", false);
+      const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
       const width = number("Width", 0);
@@ -302,7 +302,7 @@ storiesOf("Button", module)
           external={external}
           disabled={disabled}
           circled={circled}
-          block={block}
+          fullWidth={fullWidth}
           bordered={bordered}
           loading={loading}
           dataTest={dataTest}

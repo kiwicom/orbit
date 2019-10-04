@@ -87,10 +87,12 @@ const useMediaQuery: UseMediaQuery = () => {
         mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
       }
     };
+    // can't have dependencies
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Flatten to object and return
-  const exportObj = Object.assign(
+  return Object.assign(
     {
       isDesktop: null,
       isLargeDesktop: null,
@@ -100,7 +102,6 @@ const useMediaQuery: UseMediaQuery = () => {
     },
     ...breakpointList.map(item => ({ [item.mapping]: item.matches })),
   );
-  return exportObj;
 };
 
 export default useMediaQuery;

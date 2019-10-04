@@ -23,12 +23,12 @@ Table below contains all types of the props available in the Slider component.
 | histogramLoading      | `boolean`                             | `false`         | If `true` the Loading component will replace the Histogram. See [Histogram](#histogram) for more info.
 | histogramLoadingText  | `Translation`                         |                 | The text of the Histogram when it's loading. See [Histogram](#histogram) for more info.
 | label                 | `Translation`                         |                 | The label of the Slider. Should communicate what is the purpose of it.
-| max                   | `number`                              | `100`           | The maximum value of the Slider.
-| min                   | `number`                              | `1`             | The minimum value of the Slider.
+| maxValue              | `number`                              | `100`           | The maximum value of the Slider.
+| minValue              | `number`                              | `1`             | The minimum value of the Slider.
 | onChange              | `Value => void \| Promise`            |                 | Callback for handling onChange event. See [functional specs](#functional-specs) for advanced usage.
 | onChangeAfter         | `Value => void \| Promise`            |                 | Calback for handling onChangeAfter event. See [functional specs](#functional-specs) for advanced usage.
 | onChangeBefore        | `Value => void \| Promise`            |                 | Callback for handling onChangeBefore event. See [functional specs](#functional-specs) for advanced usage.
-| step                  | `number`                              | `1`             | Value that should be added or subtracted when Handle moves. The `max` and `min` should be divisible by this number and it should be integer.
+| step                  | `number`                              | `1`             | Value that should be added or subtracted when Handle moves. The `maxValue` and `minValue` should be divisible by this number and it should be integer.
 | valueDescription      | `Translation`                         |                 | Text property where you should display the selected value range.
 
 ## Value
@@ -47,7 +47,7 @@ The exact same type will be then returned with all callbacks. e.g.:
 
 ## Histogram
 * If you need to use `Slider` component together with `Histogram`, use property `histogramData` for that.
-* You need pass the same amount of data that is possible to select by definition of `min`, `max` and `step` property. The total count of columns should be `(max - min + step) / step`.
+* You need pass the same amount of data that is possible to select by definition of `minValue`, `maxValue` and `step` property. The total count of columns should be `(maxValue - minValue + step) / step`.
 * The Histogram won't be visible on desktop devices until the user focuses one of the handles. On mobile devices is the Histogram always shown.
 * By default, the `histogramLoadingText` is null and only glyph of `inlineLoader` will appear.
 * With Histogram, it's recommended to use also `histogramDescription` property, where you should display the total count of selected data from the array. For it, you can use the [`calculateCountOf`](#calculatecountof) function.
@@ -61,7 +61,7 @@ const MobileSlider = () => {
   return (
     <Popover
       content={
-        <Slider defaultValue={[1, 24]} min={1} max={24} onChange={val => setValue(val)} />
+        <Slider defaultValue={[1, 24]} minValue={1} maxValue={24} onChange={val => setValue(val)} />
       }
     >
       <Tag selected={!!value}>Time of departure</Tag>
@@ -76,7 +76,7 @@ const MobileSlider = () => {
 const SliderExample = () => {
   const [value, setValue] = React.useState(12);
   const ariaValueText = React.useMemo(() => `from midnight to ${value}`, [value]);
-  return <Slider defaultValue={12} min={1} max={24} onChange={val => setValue(val)} ariaValueText={ariaValueText} />
+  return <Slider defaultValue={12} minValue={1} maxValue={24} onChange={val => setValue(val)} ariaValueText={ariaValueText} />
 }
 ```
 

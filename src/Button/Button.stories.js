@@ -28,7 +28,13 @@ storiesOf("Button", module)
     "Default",
     () => {
       const children = text("Children", "Default button");
-      return <Button onClick={action("clicked")}>{children}</Button>;
+      const button = <Button onClick={action("clicked")}>{children}</Button>;
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
+      );
     },
     {
       info:
@@ -42,11 +48,16 @@ storiesOf("Button", module)
       const block = boolean("Block", false);
       const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-
-      return (
+      const button = (
         <Button onClick={action("clicked")} block={block} type={type} size={size}>
           {children}
         </Button>
+      );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {
@@ -63,7 +74,7 @@ storiesOf("Button", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), "small");
       const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           block={block}
@@ -74,6 +85,12 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
+      );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {
@@ -108,8 +125,7 @@ storiesOf("Button", module)
     () => {
       const children = text("Children", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
-
-      return (
+      const button = (
         <Stack>
           <Button
             onClick={action("clicked")}
@@ -145,6 +161,12 @@ storiesOf("Button", module)
           </Button>
         </Stack>
       );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
+      );
     },
     {
       info:
@@ -161,8 +183,7 @@ storiesOf("Button", module)
         TYPE_OPTIONS.PRIMARY,
       );
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
-
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           size={size}
@@ -171,6 +192,12 @@ storiesOf("Button", module)
           circled
           title="Button"
         />
+      );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {
@@ -184,8 +211,7 @@ storiesOf("Button", module)
       const children = text("Children", "Destructive button");
       const bordered = boolean("Bordered", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
-
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           bordered={bordered}
@@ -195,6 +221,12 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
+      );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {
@@ -211,7 +243,7 @@ storiesOf("Button", module)
       const disabled = boolean("Disabled", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           href={href}
@@ -223,6 +255,13 @@ storiesOf("Button", module)
         >
           {children}
         </Button>
+      );
+      return (
+        <>
+          {button}
+          <br />
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
       );
     },
     {
@@ -302,7 +341,7 @@ storiesOf("Button", module)
       const ariaControls = text("Aria controls", "element ID");
       const title = text("Title", "Additional information for accessibility");
 
-      return (
+      const button = (
         <Button
           onClick={action("clicked")}
           ariaControls={ariaControls}
@@ -312,6 +351,12 @@ storiesOf("Button", module)
           {children}
         </Button>
       );
+      return (
+        <>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </>
+      );
     },
     {
       info: "This is a preview of component accessibility props",
@@ -319,13 +364,20 @@ storiesOf("Button", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
+    () => {
+      const button = (
         <Button type="info" icon={<Icons.Airplane />}>
           Button
         </Button>
-      </RenderInRtl>
-    ),
+      );
+
+      return (
+        <RenderInRtl>
+          {button}
+          <StyledDarkBackground>{button}</StyledDarkBackground>
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

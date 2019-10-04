@@ -136,7 +136,7 @@ export const StyledButtonLink = styled(
       `};
   }
 
-  ${getFocus()}
+  ${getFocus}
 `;
 
 StyledButtonLink.defaultProps = {

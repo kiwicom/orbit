@@ -6,7 +6,7 @@ import getTypeToken from "./getTypeToken";
 import getButtonBoxShadow from "./getButtonBoxShadow";
 import type { GetFocus } from "./getFocus";
 
-const getFocus: GetFocus = () => ({ bordered }) => {
+const getFocus: GetFocus = ({ bordered }) => {
   return css`
     :focus {
       ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};

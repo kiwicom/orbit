@@ -171,7 +171,7 @@ export const StyledButton = styled(
       `};
   }
 
-  ${getFocus()}
+  ${getFocus}
 
   ${StyledSpinner} {
     width: ${getSizeToken(TOKENS.loadingWidth)};

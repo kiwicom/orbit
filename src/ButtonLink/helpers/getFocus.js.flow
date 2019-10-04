@@ -1,7 +1,7 @@
 // @flow
 import type { ThemeProps } from "../../defaultTheme";
 
-export type GetFocus = () => ({
+export type GetFocus = ({
   ...ThemeProps,
 }) => ?string;
 

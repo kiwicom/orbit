@@ -5,7 +5,7 @@ import { TOKENS } from "../consts";
 import getTypeToken from "./getTypeToken";
 import type { GetFocus } from "./getFocus";
 
-const getFocus: GetFocus = () => () => {
+const getFocus: GetFocus = () => {
   return css`
     :focus {
       background: ${getTypeToken(TOKENS.backgroundButtonFocus)};

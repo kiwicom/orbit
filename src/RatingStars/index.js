@@ -7,8 +7,8 @@ import StarFull from "../icons/StarFull";
 import defaultTheme from "../defaultTheme";
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
@@ -34,7 +34,7 @@ const RatingStars = ({
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
 }: Props) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;
   return (

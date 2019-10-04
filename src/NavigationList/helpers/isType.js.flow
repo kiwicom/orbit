@@ -1,0 +1,7 @@
+// @flow
+import type { Types } from "../index";
+
+export type IsType = (type: Types) => boolean;
+
+declare export var isNavigation: IsType;
+declare export var isInline: IsType;

@@ -8,8 +8,7 @@ import type { GetFocus } from "./getFocus";
 
 const getFocus: GetFocus = () => ({ bordered }) => {
   return css`
-    :focus,
-    :focus-visible {
+    :focus {
       ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
       background: ${bordered && getTypeToken(TOKENS.backgroundButtonFocus)};
     }
@@ -18,6 +17,10 @@ const getFocus: GetFocus = () => ({ bordered }) => {
       background: ${bordered
         ? getTypeToken(TOKENS.backgroundButtonBordered)
         : getTypeToken(TOKENS.backgroundButton)};
+    }
+    :focus-visible {
+      ${getButtonBoxShadow(BUTTON_STATES.FOCUS)};
+      background: ${bordered && getTypeToken(TOKENS.backgroundButtonFocus)};
     }
   `;
 };

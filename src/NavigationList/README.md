@@ -57,4 +57,4 @@ Table below contains all types of the props available in the NavigationListItem 
 ## Functional specs
 * When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
 
-* By passing the `href` prop into Button, it will render into `a` element. If you pass `component` prop it will override this logic.
+* By passing the `href` prop into NavigationListItem, it will render into `a` element. If you pass `component` prop it will override this logic.

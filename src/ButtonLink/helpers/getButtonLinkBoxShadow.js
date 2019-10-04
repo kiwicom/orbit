@@ -21,8 +21,6 @@ const getButtonLinkBoxShadow: GetButtonLinkBoxShadow = state => ({
   }
   if (state === BUTTON_STATES.FOCUS) {
     return css`
-      box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
-        0 0 1px 3px ${convertHexToRgba(theme.orbit.paletteBlueNormal, 60)}; // TODO: Create token
       ${!transparent &&
         css`
           &:active {
@@ -33,5 +31,4 @@ const getButtonLinkBoxShadow: GetButtonLinkBoxShadow = state => ({
   }
   return null;
 };
-
 export default getButtonLinkBoxShadow;

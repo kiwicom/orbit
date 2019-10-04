@@ -205,6 +205,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         onClick={onClick}
         size="small"
         icon={icon}
+        type="secondary"
         transparent
         title={pureTranslate(dictionary, "button_close")}
       />

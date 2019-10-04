@@ -14,6 +14,7 @@ export const TOKENS = {
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",
   backgroundButtonActive: "backgroundButtonActive",
+  backgroundButtonFocus: "backgroundButtonFocus",
   colorTextButton: "colorTextButton",
   colorTextButtonHover: "colorTextButtonHover",
   colorTextButtonActive: "colorTextButtonActive",

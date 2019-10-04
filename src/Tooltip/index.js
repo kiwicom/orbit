@@ -19,8 +19,9 @@ const StyledTooltipChildren = styled.span`
   &:focus:active {
     outline: none;
   }
-  ${({ enabled }) =>
+  ${({ enabled, removeUnderlinedText }) =>
     enabled &&
+    !removeUnderlinedText &&
     css`
       ${StyledText} {
         display: inline-block;
@@ -39,6 +40,7 @@ const Tooltip = ({
   content,
   preferredPosition,
   stopPropagation = false,
+  removeUnderlinedText,
 }: Props) => {
   const theme = useTheme();
   const [shown, setShown] = useState(false);
@@ -99,6 +101,7 @@ const Tooltip = ({
         aria-describedby={enabled ? tooltipId : undefined}
         tabIndex={enabled && tabIndex}
         enabled={enabled}
+        removeUnderlinedText={removeUnderlinedText}
       >
         {children}
       </StyledTooltipChildren>

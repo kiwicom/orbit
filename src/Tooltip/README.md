@@ -13,16 +13,18 @@ After adding import into your project you can use it simply like:
 ## Props
 Table below contains all types of the props available in the Tooltip component.
 
-| Name              | Type                  | Default         | Description                      |
-| :---------------- | :-------------------- | :-------------- | :------------------------------- |
-| **children**      | `React.Node`          |                 | The reference element where the Tooltip will appear.
-| **content**       | `React.Node`          |                 | The content to display in the Tooltip.
-| dataTest          | `string`              |                 | Optional prop for testing purposes.
-| enabled           | `boolean`             | `true`          | Enable render of tooltip
-| preferredPosition | [`enum`](#enum)       |                 | The preferred position to choose [See Functional specs](#functional-specs)
-| size              | [`enum`](#enum)       |                 | The maximum possible size of the Tooltip.
-| stopPropagation   | `boolean`             |                 | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element.
-| tabIndex          | `string`              | `"0"`           | Specifies the tab order of an element
+| Name                  | Type                  | Default         | Description                      |
+| :-------------------- | :-------------------- | :-------------- | :------------------------------- |
+| **children**          | `React.Node`          |                 | The reference element where the Tooltip will appear.
+| **content**           | `React.Node`          |                 | The content to display in the Tooltip.
+| dataTest              | `string`              |                 | Optional prop for testing purposes.
+| enabled               | `boolean`             | `true`          | Enable render of tooltip
+| preferredPosition     | [`enum`](#enum)       |                 | The preferred position to choose [See Functional specs](#functional-specs)
+| removeUnderlinedText  | `boolean`             |                 | Removes underline on child component, when underline is not desired.
+| size                  | [`enum`](#enum)       |                 | The maximum possible size of the Tooltip.
+| stopPropagation       | `boolean`             |                 | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element.
+| tabIndex              | `string`              | `"0"`           | Specifies the tab order of an element
+
 
 ## enum
 | preferredPosition | size        |

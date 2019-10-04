@@ -5,6 +5,8 @@ import type { Theme } from "../../../defaultTheme";
 
 type States = "hover" | "focus";
 
-export type GetState = (state: States) => ({ theme: Theme, selectable: boolean }) => ?Interpolation;
+export type GetCssState = (
+  state: States,
+) => ({ theme: Theme, selectable: boolean }) => ?Interpolation;
 
-declare export default GetState;
+declare export default GetCssState;

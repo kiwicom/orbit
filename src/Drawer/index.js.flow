@@ -1,6 +1,6 @@
 // @flow
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 
 export type OnClose = () => void | Promise<any>;
 
@@ -14,6 +14,8 @@ export type Props = {|
   +position?: Position,
   +noPadding?: boolean,
   +suppressed?: boolean,
+  +title?: Translation,
+  +actions?: React$Node,
   ...Globals,
 |};
 

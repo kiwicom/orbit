@@ -2,9 +2,9 @@
 import { css } from "styled-components";
 
 import STATES from "../consts";
-import type { GetState } from "./getState";
+import type { GetCssState } from "./getCssState";
 
-const getState: GetState = state => ({ theme }) => {
+const getCssState: GetCssState = state => ({ theme }) => {
   if (state === STATES.HOVER) {
     return css`
       background-color: ${theme.orbit.paletteCloudLightHover};
@@ -18,4 +18,4 @@ const getState: GetState = state => ({ theme }) => {
   return null;
 };
 
-export default getState;
+export default getCssState;

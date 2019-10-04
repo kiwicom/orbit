@@ -13,16 +13,18 @@ import useTheme from "../hooks/useTheme";
 import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from ".";
 
-const getPadding = ({ noPadding, theme }) => {
+const getPadding = ({ noPadding, theme, hasTopPadding }) => {
+  const padding = space => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
   return (
     !noPadding &&
     css`
-      padding: ${theme.orbit.spaceMedium};
+      padding: ${padding(theme.orbit.spaceMedium)};
       ${mq.largeMobile(css`
-        padding: ${theme.orbit.spaceXLarge};
+        padding: ${padding(theme.orbit.spaceXLarge)};
       `)};
     `
   );
@@ -80,7 +82,9 @@ StyledDrawerSide.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerContent = styled(({ theme, type, ...props }) => <div {...props} />)`
+const StyledDrawerContent = styled(({ theme, type, hasTopPadding, ...props }) => (
+  <div {...props} />
+))`
   ${getPadding};
   margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceLarge};
   margin-top: ${({ hasClose, theme, noPadding }) =>
@@ -93,9 +97,25 @@ StyledDrawerContent.defaultProps = {
 
 const StyledDrawerHeader = styled.div`
   display: flex;
-  background: white;
+  justify-content: flex-end;
+  align-items: center;
+  background: ${({ suppressed, bordered, theme }) =>
+    suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
   height: 64px;
-  ${getPadding};
+  box-sizing: border-box;
+  ${({ bordered, theme }) =>
+    bordered &&
+    css`
+      border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
+    `};
+  ${({ noPadding, theme }) =>
+    !noPadding &&
+    css`
+      padding: 0 ${theme.orbit.spaceMedium};
+      ${mq.largeMobile(css`
+        padding: 0 ${theme.orbit.spaceXLarge};
+      `)};
+    `};
 `;
 
 StyledDrawerHeader.defaultProps = {
@@ -158,17 +178,21 @@ const Drawer = ({
         suppressed={suppressed}
       >
         {(title || actions || onClose) && (
-          <StyledDrawerHeader>
+          <StyledDrawerHeader bordered={title || actions} suppressed={suppressed}>
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (
-              <Stack spacing="none" flex shrink>
+              <Stack spacing="none" justify="end" flex shrink>
                 {actions}
               </Stack>
             )}
             {onClose && <DrawerClose onClick={onClose} />}
           </StyledDrawerHeader>
         )}
-        <StyledDrawerContent noPadding={noPadding} hasClose={!!onClose}>
+        <StyledDrawerContent
+          noPadding={noPadding}
+          hasClose={!!onClose}
+          hasTopPadding={title || actions}
+        >
           {children}
         </StyledDrawerContent>
       </StyledDrawerSide>

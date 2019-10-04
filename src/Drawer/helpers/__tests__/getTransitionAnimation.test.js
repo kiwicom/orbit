@@ -1,7 +1,7 @@
 // @flow
 import getTransitionAnimation from "../getTransitionAnimation";
 import theme from "../../../defaultTheme";
-import { POSITIONS } from "../../consts";
+import POSITIONS from "../../consts";
 
 /*
   It's very hard to match returned values from function, that returns deeply nested interpolation.

@@ -8,7 +8,7 @@ import { right, left, rtlSpacing } from "../../utils/rtl";
 import defaultTheme from "../../defaultTheme";
 import STATES from "./consts";
 import mq from "../../utils/mediaQuery";
-import getState from "./helpers/getState";
+import getCssState from "./helpers/getCssState";
 
 import type { Props } from ".";
 
@@ -49,10 +49,10 @@ const StyledNavigationListItem = styled(
       }
     `};
   &:hover {
-    ${getState(STATES.HOVER)};
+    ${getCssState(STATES.HOVER)};
   }
   &:focus {
-    ${getState(STATES.FOCUS)};
+    ${getCssState(STATES.FOCUS)};
   }
 `;
 

@@ -122,12 +122,13 @@ storiesOf("Drawer", module)
     },
   )
   .add(
-    "SmartFAQ Search",
+    "Suppressed",
     () => {
       const shown = boolean("shown", true);
       const dataTest = text("dataTest", "test");
       const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
       const width = text("width", "480px");
+      const suppressed = boolean("suppressed", true);
       return (
         <Drawer
           shown={shown}
@@ -135,12 +136,86 @@ storiesOf("Drawer", module)
           position={position}
           dataTest={dataTest}
           onClose={action("onClose")}
-          suppressed
+          suppressed={suppressed}
+        >
+          <Stack>
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+          </Stack>
+        </Drawer>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
+    "SmartFAQ Search",
+    () => {
+      const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
+      const width = text("width", "480px");
+      const suppressed = boolean("suppressed", true);
+      return (
+        <Drawer
+          shown={shown}
+          width={width}
+          position={position}
+          dataTest={dataTest}
+          onClose={action("onClose")}
+          suppressed={suppressed}
           title="Help"
-          actions={<Button type="primary">Sign In</Button>}
+          actions={
+            <Button type="secondary" size="small">
+              Sign In
+            </Button>
+          }
         >
           <Stack>
             <InputField placeholder="Search" prefix={<Search />} />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
+            <Tile
+              title="Cabin baggage"
+              description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+            />
             <Tile
               title="Cabin baggage"
               description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
@@ -238,6 +313,65 @@ storiesOf("Drawer", module)
                   Full FAQ site
                 </TextLink>
               </Text>
+            </Stack>
+          </Drawer>
+        </RenderInRtl>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
+    "SmartFAQ Search in RTL",
+    () => {
+      const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
+      const width = text("width", "480px");
+      const suppressed = boolean("suppressed", true);
+      return (
+        <RenderInRtl>
+          <Drawer
+            shown={shown}
+            width={width}
+            position={position}
+            dataTest={dataTest}
+            onClose={action("onClose")}
+            suppressed={suppressed}
+            title="Help"
+            actions={
+              <Button type="secondary" size="small">
+                Sign In
+              </Button>
+            }
+          >
+            <Stack>
+              <InputField placeholder="Search" prefix={<Search />} />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
+              <Tile
+                title="Cabin baggage"
+                description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
+              />
             </Stack>
           </Drawer>
         </RenderInRtl>

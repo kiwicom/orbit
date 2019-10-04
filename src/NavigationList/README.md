@@ -1,13 +1,13 @@
 # NavigationList
 To implement NavigationList component into your project you'll need to add the import:
 ```jsx
-import NavigationList from "@kiwicom/orbit-components/lib/NavigationList";
+import NavigationList, { NavigationListItem } from "@kiwicom/orbit-components/lib/NavigationList";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
 <NavigationList>
-  <NavigationLink>About us</NavigationLink>
-  <NavigationLink>Careers</NavigationLink>
+  <NavigationListItem>About us</NavigationListItem>
+  <NavigationListItem>Careers</NavigationListItem>
 </NavigationList>
 ```
 ## Props
@@ -18,19 +18,27 @@ Table below contains all types of the props available in the NavigationList comp
 | **children**  | `React.Node`                      |                 | The content of the NavigationList.
 | dataTest      | `string`                          |                 | Optional prop for testing purposes.
 | title         | `Translation`                     |                 | Additional title of the NavigationList that will appear above its children.
+| type          | [`enum`](#enum)                   | `"navigation"`  | Additional title of the NavigationList that will appear above its children.
+
+### enum
+
+| position          |
+| :---------------- |
+| `"navigation"`    |
+| `"inline"`        |
 
 ## Subcomponents
 
 ### NavigationListItem
 ```jsx
-import NavigationLink from "@kiwicom/orbit-components/lib/NavigationLink";
+import NavigationListItem from "@kiwicom/orbit-components/lib/NavigationListItem";
 ```
 After adding import into your project you can use it simply like:
 ```jsx
-<NavigationLink>About us</NavigationLink>
+<NavigationListItem>About us</NavigationListItem>
 ```
 ## Props
-Table below contains all types of the props available in the NavigationLink component.
+Table below contains all types of the props available in the NavigationListItem component.
 
 | Name          | Type                              | Default         | Description                      |
 | :------------ | :-------------------------------- | :-------------- | :------------------------------- |

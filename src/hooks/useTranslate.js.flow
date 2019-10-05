@@ -1,0 +1,8 @@
+// @flow
+import type { Values } from "../Translate/index";
+
+type TranslateFunction = (key: string, values?: Values) => string;
+
+export type UseTranslate = () => TranslateFunction;
+
+declare export default UseTranslate;

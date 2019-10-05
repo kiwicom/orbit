@@ -1,7 +1,7 @@
 // @flow
-import type { Values } from "../Translate/index";
+import type { Values, Key } from "../Translate/index";
 
-type TranslateFunction = (key: string, values?: Values) => string;
+type TranslateFunction = (key: Key, values?: Values) => string;
 
 export type UseTranslate = () => TranslateFunction;
 

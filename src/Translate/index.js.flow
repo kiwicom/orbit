@@ -2,7 +2,7 @@
 
 import type { Translations } from "../Dictionary/index";
 
-type Key = string;
+export type Key = string;
 
 export type Values = {
   [key: Key]: string | number,

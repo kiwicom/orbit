@@ -11,30 +11,9 @@ jobs:
       - run:
           name: Run all tests
           command: npm run test-ci
-  release:
-    docker:
-      - image: circleci/node:9.1
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: npm i
-      - run:
-          name: Build
-          command: npm run build
-      - run:
-          name: Run all tests
-          command: npm run test-ci
 
 workflows:
   version: 2
   test_branch:
     jobs:
       - test
-  release:
-    jobs:
-      - release:
-          filters:
-            branches:
-              only:
-                - master

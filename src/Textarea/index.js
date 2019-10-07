@@ -122,6 +122,7 @@ const Textarea = React.forwardRef(
     onBlur,
     tabIndex,
     help,
+    rows,
   }: Props) => {
     const [tooltipShown, setTooltipShown] = useState(false);
     const [tooltipShownHover, setTooltipShownHover] = useState(false);
@@ -156,7 +157,7 @@ const Textarea = React.forwardRef(
           placeholder={placeholder}
           maxLength={maxLength}
           onChange={onChange}
-          rows={props.rows}
+          rows={rows}
           onFocus={e => {
             if (onFocus) {
               onFocus(e);

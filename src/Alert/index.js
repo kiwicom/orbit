@@ -15,8 +15,8 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
@@ -196,7 +196,7 @@ CloseContainer.defaultProps = {
 };
 
 const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <CloseContainer hasChildren={hasChildren}>
@@ -205,6 +205,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         onClick={onClick}
         size="small"
         icon={icon}
+        type="secondary"
         transparent
         title={pureTranslate(dictionary, "button_close")}
       />

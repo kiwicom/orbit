@@ -5,8 +5,9 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  +code?: string,
+  +code?: ?string,
   +name?: string,
+  +size?: "small" | "medium",
   ...Globals,
 |};
 

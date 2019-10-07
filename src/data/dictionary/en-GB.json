@@ -6,7 +6,9 @@
   "breadcrumbs_back": "Back",
   "button_close": "Close",
   "choicegroup_only": "Only",
+  "drawer_hide": "Hide",
   "loading": "Loading",
+  "navigationbar_open_menu": "Open navigation menu",
   "pagination_label_next": "Next",
   "pagination_label_prev": "Previous",
   "ratingstar_description": "Rating __number__ out of __total__"

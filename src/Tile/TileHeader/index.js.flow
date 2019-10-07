@@ -12,10 +12,6 @@ export type Props = {
   +isExpanded?: boolean,
 };
 
-export type IconProps = {
-  icon: React$Node,
-};
-
 export type IconRightProps = {
   external?: boolean,
   isExpandable?: boolean,

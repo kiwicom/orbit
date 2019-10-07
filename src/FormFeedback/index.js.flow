@@ -11,7 +11,7 @@ export type Props = {
   +labelRef?: UseRef,
   +iconRef?: UseRef,
   ...Globals,
-};
+|};
 
 declare export default React$ComponentType<Props>;
 

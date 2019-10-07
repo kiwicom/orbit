@@ -2,6 +2,7 @@
 
 exports[`CountryFlag of Anywhere should match snapshot 1`] = `
 <CountryFlag__StyledCountryFlag
+  size="medium"
   theme={
     Object {
       "orbit": Object {
@@ -479,10 +480,10 @@ exports[`CountryFlag of Anywhere should match snapshot 1`] = `
 >
   <CountryFlag__StyledImage
     alt="Anywhere"
+    code="anywhere"
     data-test="test"
     key="anywhere"
-    src="//images.kiwi.com/flags/24x0/flag-anywhere.jpg"
-    srcSet="//images.kiwi.com/flags/48x0/flag-anywhere.jpg 2x"
+    size="medium"
     theme={
       Object {
         "orbit": Object {

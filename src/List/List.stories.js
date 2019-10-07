@@ -10,6 +10,7 @@ import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import TextLink from "../TextLink";
 
 import List, { ListItem } from "./index";
 
@@ -21,9 +22,11 @@ storiesOf("List", module)
     "Default",
     () => (
       <List>
-        <ListItem>24,000 locations around the globe</ListItem>
         <ListItem>
-          Lowest price car rental in <strong>&nbsp;Warsaw</strong>
+          24,000 locations <TextLink href="#">around</TextLink> the globe
+        </ListItem>
+        <ListItem>
+          Lowest price car rental in <strong>Warsaw</strong>
         </ListItem>
         <ListItem>From 3 star budget to 5 star luxury</ListItem>
       </List>
@@ -47,6 +50,45 @@ storiesOf("List", module)
           <ListItem>Customise your coverage to suit your needs and your budget.</ListItem>
           <ListItem>
             Feel safe in the hands of AXA Assistance, the travel insurance experts.
+          </ListItem>
+        </List>
+      );
+    },
+    {
+      info:
+        "List groups related information together and make content more scalable and organized.",
+    },
+  )
+  .add(
+    "ListItem",
+    () => {
+      const type = select("Type", Object.values(TYPES), TYPES.SEPARATED);
+      const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
+      const Icon = getIcon(getIcons("Check"));
+      const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
+      const content = text("Content", "24,000 locations around the globe");
+      const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+      const dataTest = text("dataTest", "test");
+
+      return (
+        <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
+          <ListItem
+            label="Kiwi.com services"
+            icon={Icon && <Icon size="small" color={iconColor} />}
+          >
+            {content}
+          </ListItem>
+          <ListItem
+            label="Kiwi.com services"
+            icon={Icon && <Icon size="small" color={iconColor} />}
+          >
+            {content}
+          </ListItem>
+          <ListItem
+            label="Kiwi.com services"
+            icon={Icon && <Icon size="small" color={iconColor} />}
+          >
+            {content}
           </ListItem>
         </List>
       );

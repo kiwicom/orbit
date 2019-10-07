@@ -12,9 +12,8 @@ export type ExpandedType = {|
 |};
 
 export type State = {|
+  contentHeight: number | null,
   ...ExpandedType,
-  contentHeight: number,
-  initialExpanded: boolean,
 |};
 
 export type Props = {|

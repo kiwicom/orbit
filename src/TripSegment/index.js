@@ -15,7 +15,9 @@ import { getSize } from "../Icon";
 import { ICON_SIZES } from "../Icon/consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import KEY_CODE_MAP from "../common/keyMaps";
+import Slide from "../utils/Slide";
 import Truncate from "../Truncate";
+import randomID from "../utils/randomID";
 
 import type { Props, State, ExpandedType } from "./index";
 
@@ -119,7 +121,8 @@ const Chevrons = ({ expanded }: ExpandedType) => (
 
 const StyledTripSegmentOverview = styled.div`
   display: flex;
-  flex: 0 1 calc(100% - 96px);
+  flex: 0 1 auto;
+  width: calc(100% - 96px);
   min-width: 0;
   ${StyledText} {
     line-height: 1.2;
@@ -135,6 +138,8 @@ const StyledTripSegmentCarrier = styled.div`
   align-items: center;
   position: absolute;
   ${right}: ${({ theme }) => `-${theme.orbit.spaceXSmall}`};
+  top: 0;
+  height: 100%;
 `;
 
 StyledTripSegmentCarrier.defaultProps = {
@@ -181,19 +186,14 @@ StyledTripSegmentOverviewTime.defaultProps = {
 };
 
 const StyledTripSegmentChildren = styled.div`
-  width: 100%;
   padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceXSmall} 0` : "0")};
   margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall}`};
   border-top: ${({ theme, expanded }) =>
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  max-height: ${({ initialExpanded, contentHeight, expanded }) =>
-    initialExpanded && (expanded ? `${contentHeight}px` : `0`)};
-  transition: max-height ${({ theme }) => theme.orbit.durationFast} linear,
-    padding ${({ theme }) => theme.orbit.durationFast} linear,
+  transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
-  overflow: hidden;
 `;
 
 StyledTripSegmentChildren.defaultProps = {
@@ -262,28 +262,23 @@ const MilestoneIcon = ({ type }) => {
 class TripSegment extends React.PureComponent<Props, State> {
   node = React.createRef<HTMLDivElement>();
 
+  tripSegmentID: string = randomID("tripSegmentID");
+
   constructor(props: Props) {
     super(props);
     this.state = {
-      contentHeight: 0,
+      contentHeight: this.props.initialExpanded ? null : 0,
       expanded: this.props.initialExpanded || false,
-      initialExpanded: !this.props.initialExpanded,
     };
   }
 
   componentDidMount() {
-    this.timeout = setTimeout(this.setHeight, 10);
+    this.setHeight();
   }
 
   componentDidUpdate(prevProps: Props) {
     if (this.props.children !== prevProps.children) {
       this.setHeight();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
     }
   }
 
@@ -297,7 +292,6 @@ class TripSegment extends React.PureComponent<Props, State> {
     const { onClick } = this.props;
     this.setState(prevState => ({
       expanded: !prevState.expanded,
-      initialExpanded: true,
     }));
 
     if (onClick) {
@@ -314,8 +308,6 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  timeout: TimeoutID;
-
   render() {
     const {
       children,
@@ -328,7 +320,7 @@ class TripSegment extends React.PureComponent<Props, State> {
       dataTest,
       tabIndex = "0",
     } = this.props;
-    const { expanded, initialExpanded, contentHeight } = this.state;
+    const { expanded, contentHeight } = this.state;
 
     return (
       <StyledTripSegment
@@ -343,7 +335,10 @@ class TripSegment extends React.PureComponent<Props, State> {
           <StyledTripSegmentMilestoneArrow />
         </StyledTripSegmentMilestone>
         <StyledTripSegmentContent>
-          <StyledTripSegmentOverviewWrapper onClick={this.handleToggle}>
+          <StyledTripSegmentOverviewWrapper
+            onClick={this.handleToggle}
+            aria-controls={this.tripSegmentID}
+          >
             <StyledTripSegmentOverview>
               <StyledTripSegmentOverviewColumn>
                 <StyledTripSegmentOverviewTime>
@@ -374,14 +369,11 @@ class TripSegment extends React.PureComponent<Props, State> {
               <Chevrons expanded={expanded} />
             </StyledTripSegmentCarrier>
           </StyledTripSegmentOverviewWrapper>
-          <StyledTripSegmentChildren
-            expanded={expanded}
-            contentHeight={contentHeight}
-            initialExpanded={initialExpanded}
-            aria-hidden={expanded}
-          >
-            <div ref={this.node}>{children}</div>
-          </StyledTripSegmentChildren>
+          <Slide maxHeight={contentHeight} expanded={expanded} id={this.tripSegmentID}>
+            <StyledTripSegmentChildren expanded={expanded}>
+              <div ref={this.node}>{children}</div>
+            </StyledTripSegmentChildren>
+          </Slide>
         </StyledTripSegmentContent>
       </StyledTripSegment>
     );

@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import type { UseDimensions } from "./useDimensions.js.flow";
 import boundingClientRect from "../../utils/boundingClientRect";
 
-const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
+const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed }) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
+    containerPureTop: 0,
     containerLeft: 0,
     containerHeight: 0,
     containerWidth: 0,
@@ -16,6 +17,7 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
     windowWidth: 0,
     windowHeight: 0,
     contentHeight: 0,
+    documentHeight: 0,
   });
 
   useEffect(() => {
@@ -23,23 +25,28 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
       const containerDimensions = boundingClientRect(containerRef);
       const popoverDimensions = boundingClientRect(popover);
       const contentDimensions = boundingClientRect(content);
+
       if (
         containerDimensions &&
         popoverDimensions &&
         contentDimensions &&
         typeof window !== "undefined"
       ) {
+        const documentDimensions = window.document.body.getBoundingClientRect();
+
         setPositions({
           containerTop: containerDimensions.top,
           containerLeft: containerDimensions.left,
           containerHeight: containerDimensions.height,
           containerWidth: containerDimensions.width,
+          containerPureTop: containerDimensions.pureTop,
           popoverHeight: popoverDimensions.height,
           popoverWidth: popoverDimensions.width,
-          windowScrollTop: window.scrollY,
+          windowScrollTop: window.scrollY || window.pageYOffset,
           windowWidth: window.innerWidth,
           windowHeight: window.innerHeight,
           contentHeight: contentDimensions.height,
+          documentHeight: documentDimensions.height,
         });
       }
     };
@@ -47,10 +54,12 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content }) => {
     calculate();
 
     window.addEventListener("resize", calculate);
+    if (fixed) window.addEventListener("scroll", calculate);
     return () => {
       window.removeEventListener("resize", calculate);
+      if (fixed) window.removeEventListener("scroll", calculate);
     };
-  }, [containerRef, content, popover]);
+  }, [containerRef, content, popover, fixed]);
 
   return positions;
 };

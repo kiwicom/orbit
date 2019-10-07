@@ -1,4 +1,6 @@
 // @flow
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+
 import { TOKENS, TYPES } from "../consts";
 import type { GetTypeToken } from "./getTypeToken";
 
@@ -27,6 +29,10 @@ const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
     [TOKENS.colorTextButtonActive]: {
       [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
       [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
+    },
+    [TOKENS.backgroundButtonFocus]: {
+      [TYPES.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 10),
+      [TYPES.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
     },
   };
 

@@ -11,6 +11,7 @@ export const ModalContext: ModalContextType = React.createContext({
   manageFocus: () => {},
   hasModalSection: false,
   isMobileFullPage: false,
+  isInsideModal: false,
 });
 
 export const withModalContext: WithModalContextType = Component => props => (

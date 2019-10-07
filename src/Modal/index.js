@@ -17,8 +17,8 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props, State } from "./index";
 
@@ -323,7 +323,7 @@ ModalWrapperContent.defaultProps = {
 };
 
 const ModalCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <ButtonLink
@@ -332,6 +332,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       icon={<Close />}
       transparent
       dataTest={dataTest}
+      type="secondary"
       title={pureTranslate(dictionary, "button_close")}
     />
   );
@@ -600,6 +601,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                 manageFocus: this.manageFocus,
                 hasModalSection,
                 isMobileFullPage,
+                isInsideModal: true,
               }}
             >
               {children}

@@ -1,0 +1,22 @@
+// @flow
+
+import type { Globals, Translation } from "../common/common.js.flow";
+
+export type OnClose = () => void | Promise<any>;
+
+export type Position = "left" | "right";
+
+export type Props = {|
+  +children: React$Node,
+  +onClose?: OnClose,
+  +shown: boolean,
+  +width?: string,
+  +position?: Position,
+  +noPadding?: boolean,
+  +suppressed?: boolean,
+  +title?: Translation,
+  +actions?: React$Node,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

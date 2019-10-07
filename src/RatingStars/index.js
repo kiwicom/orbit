@@ -1,15 +1,14 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
 
 import StarEmpty from "../icons/StarEmpty";
 import StarFull from "../icons/StarFull";
 import defaultTheme from "../defaultTheme";
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
@@ -35,11 +34,7 @@ const RatingStars = ({
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
 }: Props) => {
-  warning(
-    color !== ICON_COLORS.ATTENTION,
-    "Warning: attention color of RatingStars component is deprecated. Please use primary color instead. Check https://orbit.kiwi/roadmap/road-to-1-0-0/#planned-breaking-changes for more information",
-  );
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;
   return (

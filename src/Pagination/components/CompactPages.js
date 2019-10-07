@@ -6,7 +6,7 @@ import PageButtonLink from "./PageButtonLink";
 import MenuMeatballs from "../../icons/MenuMeatballs";
 import type { Props } from "./CompactPages";
 
-const MeatBalls = () => <MenuMeatballs size="small" color="attention" />;
+const MeatBalls = () => <MenuMeatballs size="small" color="primary" />;
 
 const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) => {
   if (selectedPage > pageCount - 4) {

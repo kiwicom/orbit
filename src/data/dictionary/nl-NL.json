@@ -6,7 +6,8 @@
   "breadcrumbs_back": "Terug",
   "button_close": "Sluiten",
   "choicegroup_only": "Alleen",
+  "loading": "Laden",
   "pagination_label_next": "Volgende",
   "pagination_label_prev": "Vorige",
-  "ratingstar_description": "gerangschikt op plaats __number__ van de __number__"
+  "ratingstar_description": "Gerangschikt op plaats __number__ van de __total__"
 }

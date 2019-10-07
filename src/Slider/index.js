@@ -36,7 +36,6 @@ const StyledSliderContent = styled.div`
 
   ${mq.tablet(css`
     width: calc(100% + 48px);
-    z-index: 10;
     position: absolute;
     bottom: -16px;
     left: -24px;
@@ -85,7 +84,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   componentDidUpdate(prevProps: Props) {
     const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
-    if (this.isNotEqual(prevProps.defaultValue || DEFAULT_VALUES.VALUE, defaultValue)) {
+    const { defaultValue: prevDefaultValue = DEFAULT_VALUES.VALUE } = prevProps;
+    if (this.isNotEqual(prevDefaultValue, defaultValue)) {
       const newValue = Array.isArray(defaultValue)
         ? defaultValue.map(item => Number(item))
         : Number(defaultValue);
@@ -123,8 +123,10 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   calculateValue = (ratio: number, addition?: boolean, deduction?: boolean) => {
-    const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
-    return Math.round((max - min + (addition ? 1 : 0)) * ratio + min - (deduction ? 1 : 0));
+    const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
+    return Math.round(
+      (maxValue - minValue + (addition ? 1 : 0)) * ratio + minValue - (deduction ? 1 : 0),
+    );
   };
 
   calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
@@ -203,8 +205,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     if (event.ctrlKey || event.shiftKey || event.altKey) return;
     const {
       step = DEFAULT_VALUES.STEP,
-      min = DEFAULT_VALUES.MIN,
-      max = DEFAULT_VALUES.MAX,
+      minValue = DEFAULT_VALUES.MIN,
+      maxValue = DEFAULT_VALUES.MAX,
       theme: { rtl },
     } = this.props;
     if (event.keyCode === KEY_CODE_MAP.ARROW_UP) {
@@ -227,11 +229,11 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
     if (event.keyCode === KEY_CODE_MAP.HOME) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, min));
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, minValue));
     }
     if (event.keyCode === KEY_CODE_MAP.END) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, max));
+      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, maxValue));
     }
   };
 
@@ -365,12 +367,12 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   alignValueToMaxMin = (value: number) => {
-    const { max = DEFAULT_VALUES.MAX, min = DEFAULT_VALUES.MIN } = this.props;
-    if (value > max) {
-      return max;
+    const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
+    if (value > maxValue) {
+      return maxValue;
     }
-    if (value < min) {
-      return min;
+    if (value < minValue) {
+      return minValue;
     }
     return value;
   };
@@ -385,8 +387,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   renderHandle = (valueNow: number, i: ?number) => {
     const {
-      min = DEFAULT_VALUES.MIN,
-      max = DEFAULT_VALUES.MAX,
+      minValue = DEFAULT_VALUES.MIN,
+      maxValue = DEFAULT_VALUES.MAX,
       histogramData,
       histogramLoading,
       ariaValueText,
@@ -398,8 +400,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       <Handle
         tabIndex="0"
         onTop={handleIndex === i}
-        valueMax={max}
-        valueMin={min}
+        valueMax={maxValue}
+        valueMin={minValue}
         onMouseDown={this.handleMouseDown(i)}
         onFocus={this.handleOnFocus(i)}
         onTouchStart={this.handleOnTouchStart(i)}
@@ -463,8 +465,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
 
   render() {
     const {
-      min = DEFAULT_VALUES.MIN,
-      max = DEFAULT_VALUES.MAX,
+      minValue = DEFAULT_VALUES.MIN,
+      maxValue = DEFAULT_VALUES.MAX,
       histogramData,
       histogramLoading = false,
       histogramLoadingText,
@@ -472,7 +474,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       step = DEFAULT_VALUES.STEP,
     } = this.props;
     if (histogramData) {
-      const properHistogramLength = (max - min + step) / step;
+      const properHistogramLength = (maxValue - minValue + step) / step;
       warning(
         histogramData.length === properHistogramLength,
         `Warning: Length of histogramData array is ${
@@ -492,7 +494,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
             <Histogram
               data={histogramData}
               value={sortedValue}
-              min={min}
+              min={minValue}
               step={step}
               loading={histogramLoading}
               loadingText={histogramLoadingText}
@@ -504,8 +506,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
             ref={this.bar}
             onMouseDown={this.handleBarMouseDown}
             value={sortedValue}
-            max={max}
-            min={min}
+            max={maxValue}
+            min={minValue}
             hasHistogram={hasHistogram}
           />
           {this.renderHandles()}

@@ -959,8 +959,11 @@ exports[`Select should match snapshot 1`] = `
       dataTest="test"
       disabled={false}
       filled={true}
+      id="test-id"
       name="name"
+      onBlur={[Function]}
       onChange={[MockFunction]}
+      onFocus={[Function]}
       size="normal"
       tabIndex="-1"
       theme={
@@ -1964,5 +1967,19 @@ exports[`Select should match snapshot 1`] = `
       <ChevronDown />
     </Select__SelectSuffix>
   </Select__SelectContainer>
+  <FormFeedback
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    tooltipShown={false}
+    tooltipShownHover={false}
+  />
 </Select__Label>
 `;

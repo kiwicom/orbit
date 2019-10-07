@@ -407,21 +407,21 @@ storiesOf("Stack", module)
           <Badge type="dark">Hola amigo</Badge>
         </Stack>
         <Stack direction="column" align="center">
-          <ButtonGroup connected>
+          <ButtonGroup>
             <Button>Hola amigo</Button>
             <Button>Hola amigo</Button>
           </ButtonGroup>
-          <ButtonGroup connected>
+          <ButtonGroup>
             <Button type="secondary">Hola amigo</Button>
             <Button type="secondary">Hola amigo</Button>
           </ButtonGroup>
         </Stack>
         <Stack direction="row" justify="center">
-          <ButtonGroup connected>
+          <ButtonGroup>
             <Button>Hola amigo</Button>
             <Button>Hola amigo</Button>
           </ButtonGroup>
-          <ButtonGroup connected>
+          <ButtonGroup>
             <Button type="secondary">Hola amigo</Button>
             <Button type="secondary">Hola amigo</Button>
           </ButtonGroup>
@@ -499,7 +499,7 @@ storiesOf("Stack", module)
           <ChoiceGroup
             label="What was the reason for your cancellation?"
             labelSize="normal"
-            labelElement="h4"
+            labelAs="h4"
             onChange={action("onChange")}
           >
             <Checkbox label="Reason one" value="one" />
@@ -509,7 +509,7 @@ storiesOf("Stack", module)
           <ChoiceGroup
             label="What was the reason for your cancellation?"
             labelSize="normal"
-            labelElement="h4"
+            labelAs="h4"
             onChange={action("onChange")}
           >
             <Checkbox label="Reason one" value="one" />

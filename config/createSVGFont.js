@@ -31,9 +31,9 @@ const createSVG = () =>
       });
 
     Object.keys(iconList).forEach(iconName => {
-      const icon = fs.createReadStream(
-        path.join(__dirname, "../src/icons/svg/", `${iconName}.svg`),
-      );
+      const iconPath =
+        iconList[iconName].iconFont === "false" ? "../src/icons/svg/mobile/" : "../src/icons/svg/";
+      const icon = fs.createReadStream(path.join(__dirname, iconPath, `${iconName}.svg`));
 
       // $FlowFixMe
       icon.metadata = {

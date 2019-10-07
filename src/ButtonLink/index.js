@@ -14,6 +14,7 @@ import getSizeToken from "./helpers/getSizeToken";
 import getTypeToken from "./helpers/getTypeToken";
 import getButtonSpacing from "./helpers/getButtonLinkSpacing";
 import getButtonLinkBoxShadow from "./helpers/getButtonLinkBoxShadow";
+import getFocus from "./helpers/getFocus";
 
 import type { Props } from "./index";
 
@@ -99,6 +100,7 @@ export const StyledButtonLink = styled(
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
   flex: ${({ block }) => (block ? "1 1 auto" : "0 0 auto")};
+  max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${getTypeToken(TOKENS.backgroundButton)};
   color: ${getTypeToken(TOKENS.colorTextButton)}!important;
@@ -134,9 +136,7 @@ export const StyledButtonLink = styled(
       `};
   }
 
-  &:focus {
-    ${getButtonLinkBoxShadow(BUTTON_STATES.FOCUS)};
-  }
+  ${getFocus}
 `;
 
 StyledButtonLink.defaultProps = {
@@ -156,10 +156,7 @@ const StyledButtonLinkContent = styled.div`
 `;
 
 const StyledButtonLinkContentChildren = styled.div`
-  display: flex;
-  flex-basis: auto;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 `;
 
 // $FlowExpected

@@ -13,15 +13,15 @@ exports[`Icon should match snapshot 1`] = `
 }
 
 <Accommodation
-  color="attention"
+  color="primary"
 >
   <OrbitIcon
-    color="attention"
+    color="primary"
     size="medium"
     viewBox="0 0 24 24"
   >
     <Icon__StyledIcon
-      color="attention"
+      color="primary"
       size="medium"
       theme={
         Object {
@@ -500,7 +500,7 @@ exports[`Icon should match snapshot 1`] = `
       viewBox="0 0 24 24"
     >
       <StyledComponent
-        color="attention"
+        color="primary"
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
@@ -1485,7 +1485,7 @@ exports[`Icon should match snapshot 1`] = `
       >
         <Component
           className="c0"
-          color="attention"
+          color="primary"
           size="medium"
           theme={
             Object {
@@ -1969,7 +1969,7 @@ exports[`Icon should match snapshot 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M6.167 13.252a1.667 1.667 0 1 1 0-3.334 1.667 1.667 0 0 1 0 3.334zm3.333 0a.417.417 0 0 1-.417-.417V9.787a.694.694 0 0 1 .674-.694c3.993-.115 7.437 1.075 9.151 3.004a.694.694 0 0 1-.519 1.155H9.5zM21.167 8.46a.833.833 0 0 1 .833.833v7.917a.833.833 0 1 1-1.667 0v-.833a.417.417 0 0 0-.416-.417H4.083a.417.417 0 0 0-.416.417v.833a.833.833 0 0 1-1.667 0V6.793a.833.833 0 1 1 1.667 0v7.084c0 .23.186.416.416.416h15.834a.417.417 0 0 0 .416-.416V9.293a.833.833 0 0 1 .834-.833z"
             />
           </svg>
         </Component>
@@ -3967,7 +3967,7 @@ exports[`Icon with custom props should match snapshot 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zM7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+              d="M6.167 13.252a1.667 1.667 0 1 1 0-3.334 1.667 1.667 0 0 1 0 3.334zm3.333 0a.417.417 0 0 1-.417-.417V9.787a.694.694 0 0 1 .674-.694c3.993-.115 7.437 1.075 9.151 3.004a.694.694 0 0 1-.519 1.155H9.5zM21.167 8.46a.833.833 0 0 1 .833.833v7.917a.833.833 0 1 1-1.667 0v-.833a.417.417 0 0 0-.416-.417H4.083a.417.417 0 0 0-.416.417v.833a.833.833 0 0 1-1.667 0V6.793a.833.833 0 1 1 1.667 0v7.084c0 .23.186.416.416.416h15.834a.417.417 0 0 0 .416-.416V9.293a.833.833 0 0 1 .834-.833z"
             />
           </svg>
         </Component>

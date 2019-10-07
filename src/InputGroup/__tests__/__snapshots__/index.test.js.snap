@@ -3,7 +3,7 @@
 exports[`InputGroup - Phone number should match snapshot 1`] = `
 <InputGroup__StyledInputGroup
   active={false}
-  ariaLabelledby="inputGroupID50000-id-50000"
+  ariaLabelledby="inputFieldID50000-id-50000"
   dataTest="test"
   label="Phone number"
   role="group"
@@ -485,8 +485,22 @@ exports[`InputGroup - Phone number should match snapshot 1`] = `
   }
 >
   <FormLabel
-    filled={true}
-    id="inputGroupID50000-id-50000"
+    error={false}
+    filled={false}
+    help={true}
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    id="inputFieldID50000-id-50000"
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     theme={
       Object {
         "orbit": Object {
@@ -2437,14 +2451,26 @@ exports[`InputGroup - Phone number should match snapshot 1`] = `
     }
   />
   <FormFeedback
-    type="help"
-  >
-    <div>
-      Enter your 
-      <strong>
-        phone number
-      </strong>
-    </div>
-  </FormFeedback>
+    help={
+      <div>
+        Enter your 
+        <strong>
+          phone number
+        </strong>
+      </div>
+    }
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    tooltipShown={false}
+    tooltipShownHover={false}
+  />
 </InputGroup__StyledInputGroup>
 `;

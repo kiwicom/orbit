@@ -484,6 +484,8 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
         Error message (explain how to solve it)
       </div>
     }
+    onBlur={[Function]}
+    onFocus={[Function]}
     theme={
       Object {
         "orbit": Object {
@@ -1934,12 +1936,24 @@ exports[`InputFiInputFile with error should match snapshot 1`] = `
     </InputFile__StyledFileInput>
   </InputFile__FakeInput>
   <FormFeedback
-    type="error"
-  >
-    <div>
-      Error message (explain how to solve it)
-    </div>
-  </FormFeedback>
+    error={
+      <div>
+        Error message (explain how to solve it)
+      </div>
+    }
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    tooltipShown={false}
+    tooltipShownHover={false}
+  />
 </InputFile__Field>
 `;
 
@@ -2432,19 +2446,7 @@ exports[`InputFile with help should match snapshot 1`] = `
     data-state="ok"
     data-test="test"
     name="name"
-    onBlur={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    onBlur={[Function]}
     onChange={
       [MockFunction] {
         "calls": Array [
@@ -2458,19 +2460,7 @@ exports[`InputFile with help should match snapshot 1`] = `
         ],
       }
     }
-    onFocus={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    onFocus={[Function]}
     tabIndex="-1"
     theme={
       Object {
@@ -2949,7 +2939,21 @@ exports[`InputFile with help should match snapshot 1`] = `
     type="file"
   />
   <FormLabel
-    filled={true}
+    error={false}
+    help={true}
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    isFilled={true}
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     theme={
       Object {
         "orbit": Object {
@@ -4872,14 +4876,26 @@ exports[`InputFile with help should match snapshot 1`] = `
     />
   </InputFile__FakeInput>
   <FormFeedback
-    type="help"
-  >
-    <div>
-      Supported files: 
-      <strong>
-        PNG, JPG, PDF
-      </strong>
-    </div>
-  </FormFeedback>
+    help={
+      <div>
+        Supported files: 
+        <strong>
+          PNG, JPG, PDF
+        </strong>
+      </div>
+    }
+    iconRef={
+      Object {
+        "current": null,
+      }
+    }
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
+    tooltipShown={false}
+    tooltipShownHover={false}
+  />
 </InputFile__Field>
 `;

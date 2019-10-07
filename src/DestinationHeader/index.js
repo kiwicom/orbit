@@ -10,8 +10,8 @@ import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
@@ -97,7 +97,7 @@ StyledHeader.defaultProps = {
 };
 
 const DestinationHeaderGoBackButton = ({ onClick }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <ButtonLink

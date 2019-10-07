@@ -259,7 +259,7 @@ storiesOf("SkipLink", module)
           <Button icon={<ChevronLeft />} type="secondary">
             Back
           </Button>
-          <Button block>Proceed to Payment (23.98€)</Button>
+          <Button fullWidth>Proceed to Payment (23.98€)</Button>
         </ModalFooter>
       </Modal>
     ),

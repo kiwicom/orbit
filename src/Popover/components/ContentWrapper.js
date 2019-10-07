@@ -1,6 +1,6 @@
 // @flow
-import React, { useRef, useEffect } from "react";
-import styled, { css, keyframes } from "styled-components";
+import React, { useRef, useEffect, useContext } from "react";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
@@ -13,26 +13,9 @@ import calculateHorizontalPosition from "../helpers/calculateHorizontalPosition"
 import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
 import Translate from "../../Translate";
-
-const showAnimation = keyframes`
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-`;
-
-const opacityAnimation = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`;
+import transition from "../../utils/transition";
+import useClickOutside from "../../hooks/useClickOutside";
+import { ModalContext } from "../../Modal/ModalContext";
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -43,23 +26,27 @@ const StyledPopoverParent = styled.div`
   box-sizing: border-box;
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
-  animation: ${showAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   overflow: hidden;
   z-index: 1000;
-
+  transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
+  transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  overflow-y: scroll;
   &:focus {
     outline: 0;
   }
   ${media.largeMobile(css`
-    position: absolute;
+    z-index: ${({ isInsideModal }) => (isInsideModal ? "1000" : "600")};
+    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
     left: auto;
     right: auto;
     bottom: auto;
     width: ${({ width }) => (width ? `${width}` : "auto")};
-    animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} linear;
+    opacity: ${({ shown }) => (shown ? "1" : "0")};
+    transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 
     ${resolvePopoverPosition}
@@ -76,17 +63,19 @@ const StyledPopoverContent = styled.div``;
 const StyledOverlay = styled.div`
   display: block;
   position: fixed;
+  opacity: ${({ shown }) => (shown ? "1" : "0")};
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
-  animation: ${opacityAnimation} ${({ theme }) => theme.orbit.durationFast} ease-in;
+  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   z-index: 999;
 
   ${media.largeMobile(css`
-    background-color: transparent;
+    display: none;
+    z-index: ${({ isInsideModal }) => (isInsideModal ? "999" : "599")};
   `)};
 `;
 StyledOverlay.defaultProps = {
@@ -113,28 +102,22 @@ const PopoverContentWrapper = ({
   width,
   dataTest,
   preferredPosition,
+  preferredAlign,
   containerRef,
   noPadding,
   overlapped,
+  shown,
+  fixed,
+  actions,
 }: Props) => {
+  const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
-  const position = calculatePopoverPosition(preferredPosition);
-  const dimensions = useDimensions({ containerRef, popover, content });
+  const position = calculatePopoverPosition(preferredPosition, preferredAlign);
+  const dimensions = useDimensions({ containerRef, popover, content, fixed });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-
-  const handleClick = React.useCallback(
-    (ev: SyntheticEvent<HTMLElement>) => {
-      ev.stopPropagation();
-
-      if (ev.target === overlay.current) {
-        onClose();
-      }
-    },
-    [onClose],
-  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -145,34 +128,42 @@ const PopoverContentWrapper = ({
     return () => clearTimeout(timer);
   }, []);
 
+  useClickOutside(popover, onClose);
+
   return (
     <React.Fragment>
-      <StyledOverlay ref={overlay} onClick={handleClick} />
+      <StyledOverlay ref={overlay} shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
+        shownMobile={shown}
+        shown={shown && verticalPosition && horizontalPosition}
         anchor={horizontalPosition}
         position={verticalPosition}
         containerTop={dimensions.containerTop}
         containerLeft={dimensions.containerLeft}
+        containerPureTop={dimensions.containerPureTop}
         containerHeight={dimensions.containerHeight}
         containerWidth={dimensions.containerWidth}
         popoverHeight={dimensions.popoverHeight}
         popoverWidth={dimensions.popoverWidth}
         width={width}
         ref={popover}
-        onClick={handleClick}
         tabIndex="0"
         data-test={dataTest}
         noPadding={noPadding}
         overlapped={overlapped}
         role="tooltip"
+        fixed={fixed}
+        isInsideModal={isInsideModal}
       >
         <StyledPopoverContent ref={content}>
           {children}
-          <StyledPopoverClose noPadding={noPadding}>
-            <Button type="secondary" block onClick={onClose}>
-              <Translate tKey="button_close" />
-            </Button>
-          </StyledPopoverClose>
+          {!actions && (
+            <StyledPopoverClose noPadding={noPadding}>
+              <Button type="secondary" fullWidth onClick={onClose}>
+                <Translate tKey="button_close" />
+              </Button>
+            </StyledPopoverClose>
+          )}
         </StyledPopoverContent>
       </StyledPopoverParent>
     </React.Fragment>

@@ -10,7 +10,9 @@ const dimensions = {
   containerHeight: 24,
   containerWidth: 24,
   containerLeft: 28,
+  containerLeftPure: 28,
   containerTop: 150,
+  containerTopPure: 150,
 };
 
 const params = contentHeight => ({ ...dimensions, contentHeight, theme: defaultTheme });

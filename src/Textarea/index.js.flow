@@ -11,6 +11,7 @@ export type Props = {|
   ...Ref,
   +size?: "small" | "normal",
   +name?: string,
+  +rows?: number,
   +label?: Translation,
   +value?: string,
   +fullHeight?: boolean,

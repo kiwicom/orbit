@@ -317,6 +317,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     autoComplete,
     spaceAfter,
     id,
+    inputMode,
   } = props;
 
   const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
@@ -414,6 +415,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           readOnly={readOnly}
           autoComplete={autoComplete}
           id={forID}
+          inputMode={inputMode}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

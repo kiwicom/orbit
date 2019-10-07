@@ -67,6 +67,7 @@ const StyledTextArea = styled.textarea`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  min-height: 44px; // TODO: create token
 
   /* for usage with Stack */
   flex: ${({ fullHeight }) => fullHeight && "1"};
@@ -134,6 +135,7 @@ const Textarea = React.forwardRef(
             filled={!!value}
             error={!!error}
             help={!!help}
+            disabled={disabled}
             labelRef={labelRef}
             iconRef={iconRef}
             onMouseEnter={() => setTooltipShownHover(true)}
@@ -154,6 +156,7 @@ const Textarea = React.forwardRef(
           placeholder={placeholder}
           maxLength={maxLength}
           onChange={onChange}
+          rows={props.rows}
           onFocus={e => {
             if (onFocus) {
               onFocus(e);

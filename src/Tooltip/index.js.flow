@@ -14,6 +14,8 @@ export type Dimensions = {|
   contentHeight: number,
   windowWidth: number,
   windowHeight: number,
+  containerTopPure: number,
+  containerLeftPure: number,
 |};
 
 export type Aligns = "center" | "start" | "end";
@@ -39,9 +41,11 @@ export type Props = {|
   +children: React$Node,
   +content: React$Node,
   +size?: Sizes,
+  +stopPropagation?: boolean,
   +preferredPosition?: Positions,
   +enabled?: boolean,
   +tabIndex?: string,
+  +removeUnderlinedText?: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -8,6 +8,7 @@ import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { INPUTMODE } from "../consts";
 
 describe(`InputField with help, prefix and suffix`, () => {
   const size = "normal";
@@ -27,6 +28,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onBlur = jest.fn();
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const id = "id";
+  const inputMode = INPUTMODE.NUMERIC;
 
   const component = shallow(
     <InputField
@@ -44,6 +46,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       readOnly={readOnly}
       autoComplete={autoComplete}
       spaceAfter={spaceAfter}
+      inputMode={inputMode}
       prefix={<Search />}
       suffix={<ButtonLink transparent icon={<Visibility />} />}
       help={
@@ -92,6 +95,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
     expect(input.render().prop("data-state")).toBe("ok");
+    expect(input.render().prop("inputmode")).toBe(inputMode);
     expect(input.render().prop("autocomplete")).toBe(autoComplete);
     expect(input.prop("readOnly")).toBe(readOnly);
     expect(input.prop("id")).toBe(id);

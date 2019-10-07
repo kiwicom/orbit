@@ -1,0 +1,12 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+
+export type Props = {|
+  +onMenuOpen?: () => void | Promise<any>,
+  +onShow?: () => void | Promise<any>,
+  +onHide?: () => void | Promise<any>,
+  +children: React$Node,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

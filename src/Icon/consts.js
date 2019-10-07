@@ -6,7 +6,6 @@ export const ICON_SIZES = {
 };
 
 export const ICON_COLORS = {
-  ATTENTION: "attention",
   PRIMARY: "primary",
   SECONDARY: "secondary",
   TERTIARY: "tertiary",

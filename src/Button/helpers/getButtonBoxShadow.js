@@ -60,8 +60,10 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
   }
   if (state === BUTTON_STATES.FOCUS) {
     return css`
-      box-shadow: 0 0 1px 1px ${theme.orbit.colorTextButtonWhiteBordered},
-        0 0 1px 3px ${convertHexToRgba(theme.orbit.paletteBlueNormal, 60)}; // TODO: Create token
+      ${!bordered &&
+        css`
+          box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus)};
+        `}
       &:active {
         ${bordered
           ? css`

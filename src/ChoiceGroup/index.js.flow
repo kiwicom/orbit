@@ -6,7 +6,7 @@ import type { Globals, Translation } from "../common/common.js.flow";
 
 type LabelSize = "normal" | "large";
 
-type LabelElement = "h2" | "h3" | "h4" | "h5" | "h6";
+type LabelAs = "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type Filters = { label: string, value: string };
 export type Props = {|
@@ -14,7 +14,7 @@ export type Props = {|
   children: React$Node,
   label?: Translation,
   labelSize?: LabelSize,
-  labelElement?: LabelElement,
+  labelAs?: LabelAs,
   error?: Translation,
   filter?: boolean,
   onOnlySelection?: (SyntheticEvent<HTMLButtonElement>, {}) => void | Promise<any>,

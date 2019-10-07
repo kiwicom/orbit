@@ -24,6 +24,8 @@ storiesOf("Tooltip", module)
     "Tooltip on inline element",
     () => {
       const content = text("content", "Write your text here.");
+      const removeUnderlinedText = boolean("removeUnderlinedText", false);
+
       return (
         <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
@@ -34,10 +36,13 @@ storiesOf("Tooltip", module)
           Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
           officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
           Sed vel lectus.{" "}
-          <Tooltip content={content}>
-            <Text>Another Tooltip.</Text>
-          </Tooltip>{" "}
-          Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
+          <Tooltip content={content} removeUnderlinedText={removeUnderlinedText}>
+            <Text>
+              Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
+              congue. Sed vel lectus.
+            </Text>
+          </Tooltip>
         </Alert>
       );
     },
@@ -157,6 +162,7 @@ storiesOf("Tooltip", module)
       const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
       const tabIndex = text("TabIndex", "0");
       const enabled = boolean("enabled", true);
+      const removeUnderlinedText = boolean("removeUnderlinedText", false);
       const preferredPosition = select(
         "preferredPosition",
         Object.values(POSITIONS),
@@ -171,6 +177,7 @@ storiesOf("Tooltip", module)
           dataTest={dataTest}
           tabIndex={tabIndex}
           enabled={enabled}
+          removeUnderlinedText={removeUnderlinedText}
         >
           <Icon />
         </Tooltip>

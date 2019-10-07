@@ -49,7 +49,6 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
   border-radius: 4px;
   background-color: ${({ theme, active }) =>
     active ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkLighter};
-  z-index: ${({ active }) => (active ? 30 : 20)};
 `;
 
 StyledBarPart.defaultProps = {

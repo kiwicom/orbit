@@ -5,14 +5,16 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
-import { DictionaryContext } from "../Dictionary";
 import { pureTranslate } from "../Translate";
+import getSpacingToken from "../common/getSpacingToken";
+import useDictionary from "../hooks/useDictionary";
 
 import type { Props } from "./index";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  margin-bottom: ${getSpacingToken};
 `;
 
 StyledBreadcrumbs.defaultProps = {
@@ -36,7 +38,7 @@ StyledBackButtonWrapper.defaultProps = {
 };
 
 const GoBackButton = ({ onClick }) => {
-  const dictionary = React.useContext(DictionaryContext);
+  const dictionary = useDictionary();
 
   return (
     <StyledBackButtonWrapper>
@@ -52,8 +54,13 @@ const GoBackButton = ({ onClick }) => {
   );
 };
 
-const Breadcrumbs = ({ children, dataTest, onGoBack }: Props) => (
-  <StyledBreadcrumbs aria-label="Breadcrumb" role="navigation" data-test={dataTest}>
+const Breadcrumbs = ({ children, dataTest, onGoBack, spaceAfter }: Props) => (
+  <StyledBreadcrumbs
+    aria-label="Breadcrumb"
+    role="navigation"
+    data-test={dataTest}
+    spaceAfter={spaceAfter}
+  >
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
       {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {

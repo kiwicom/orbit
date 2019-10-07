@@ -32,7 +32,7 @@ export type Props = {|
   +circled?: boolean,
   +bordered?: boolean,
   +disabled?: boolean,
-  +block?: boolean,
+  +fullWidth?: boolean,
   +loading?: boolean,
   +type?: Type,
   +size?: Size,

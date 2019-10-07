@@ -7,6 +7,7 @@ const getAlign: GetAlign = align => {
     [ALIGNS.START]: "flex-start",
     [ALIGNS.END]: "flex-end",
     [ALIGNS.CENTER]: "center",
+    [ALIGNS.STRETCH]: "stretch",
   };
   return align && tokens[align];
 };

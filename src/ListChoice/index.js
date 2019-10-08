@@ -49,7 +49,7 @@ const StyledListChoice = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
     ${StyledListChoiceIcon} svg {
-      color: ${({ theme }) => theme.orbit.colorIconAttention};
+      color: ${({ theme }) => theme.orbit.colorIconPrimary};
     }
     outline: none;
   }

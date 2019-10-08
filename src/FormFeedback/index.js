@@ -27,7 +27,7 @@ export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {..
 
   & a {
     color: ${({ theme, type }) =>
-      type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextAttention};
+      type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextPrimary};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     text-decoration: underline;
     cursor: pointer;

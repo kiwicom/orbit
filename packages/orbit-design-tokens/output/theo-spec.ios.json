@@ -229,12 +229,6 @@
       "name": "paletteBlueNormalActive"
     },
     {
-      "value": "rgb(37, 42, 49)",
-      "type": "color",
-      "category": "Colors",
-      "name": "colorIconAttention"
-    },
-    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "Colors",
@@ -1406,12 +1400,6 @@
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonLinkPrimaryActive"
-    },
-    {
-      "value": "rgb(37, 42, 49)",
-      "type": "color",
-      "category": "Colors",
-      "name": "colorTextAttention"
     },
     {
       "value": "rgb(95, 115, 140)",

@@ -16,14 +16,6 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
-    "colorTextAttention": {
-      "value": "#252A31",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
     "colorTextError": {
       "value": "#D21C1C",
       "type": "color",
@@ -82,14 +74,6 @@
     },
     "colorIconSecondary": {
       "value": "#5F738C",
-      "type": "color",
-      "category": "Colors",
-      "meta": {
-        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
-      }
-    },
-    "colorIconAttention": {
-      "value": "#252A31",
       "type": "color",
       "category": "Colors",
       "meta": {

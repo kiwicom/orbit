@@ -1049,7 +1049,7 @@
       }
     },
     "backgroundButtonSecondary": {
-      "value": "#EFF2F5",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "Background colors",
       "meta": {

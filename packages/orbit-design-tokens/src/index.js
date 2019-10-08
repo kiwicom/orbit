@@ -147,7 +147,7 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundButtonPrimary: theme.palette.product.normal,
     backgroundButtonPrimaryHover: theme.palette.product.normalHover,
     backgroundButtonPrimaryActive: theme.palette.product.normalActive,
-    backgroundButtonSecondary: theme.palette.cloud.normal,
+    backgroundButtonSecondary: theme.palette.cloud.dark,
     backgroundButtonSecondaryHover: theme.palette.cloud.normalHover,
     backgroundButtonSecondaryActive: theme.palette.cloud.normalActive,
     backgroundButtonFacebook: theme.palette.social.facebook,

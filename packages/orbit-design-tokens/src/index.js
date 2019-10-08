@@ -14,7 +14,6 @@ export const getTokens: GetTokens = customFoundation => {
     // description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
     colorTextPrimary: theme.palette.ink.normal,
     colorTextSecondary: theme.palette.ink.light,
-    colorTextAttention: theme.palette.ink.normal,
     colorTextError: theme.palette.red.normal,
     colorTextInfo: theme.palette.blue.normal,
     colorTextSuccess: theme.palette.green.normal,
@@ -23,7 +22,6 @@ export const getTokens: GetTokens = customFoundation => {
     colorTextWhite: theme.palette.white.normal,
     colorIconPrimary: theme.palette.ink.normal,
     colorIconSecondary: theme.palette.ink.light,
-    colorIconAttention: theme.palette.ink.normal,
     colorIconTertiary: theme.palette.ink.lighter,
     colorIconInfo: theme.palette.blue.normal,
     colorIconSuccess: theme.palette.green.normal,

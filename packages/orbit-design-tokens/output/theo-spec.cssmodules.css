@@ -37,7 +37,6 @@
 @value height-service-logo-large: 48px;
 @value background-button-link-secondary-hover: rgb(229, 234, 239);
 @value palette-blue-normal-active: rgb(1, 80, 142);
-@value color-icon-attention: rgb(37, 42, 49);
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value palette-cloud-light-active: rgb(214, 222, 230);
 @value line-height-heading-title3: 24px;
@@ -236,7 +235,6 @@
 @value palette-white-hover: rgb(245, 247, 249);
 @value font-weight-normal: "400";
 @value background-button-link-primary-active: rgb(214, 222, 230);
-@value color-text-attention: rgb(37, 42, 49);
 @value color-form-label-filled: rgb(95, 115, 140);
 @value palette-green-normal: rgb(40, 161, 56);
 @value border-color-button-google-bordered-hover: rgb(24, 27, 32);

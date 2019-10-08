@@ -12,7 +12,6 @@ import type {
 export type Tokens = {|
   colorTextPrimary: string,
   colorTextSecondary: string,
-  colorTextAttention: string,
   colorTextError: string,
   colorTextInfo: string,
   colorTextSuccess: string,
@@ -21,7 +20,6 @@ export type Tokens = {|
   colorTextWhite: string,
   colorIconPrimary: string,
   colorIconSecondary: string,
-  colorIconAttention: string,
   colorIconTertiary: string,
   colorIconInfo: string,
   colorIconSuccess: string,

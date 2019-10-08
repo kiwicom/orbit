@@ -38,7 +38,6 @@
   <dimen name="HEIGHTSERVICELOGOLARGE" category="Size (width, height)">48dp</dimen>
   <color name="BACKGROUNDBUTTONLINKSECONDARYHOVER" category="Background colors">#ffe5eaef</color>
   <color name="PALETTEBLUENORMALACTIVE" category="Color palette">#ff01508e</color>
-  <color name="COLORICONATTENTION" category="Colors">#ff252a31</color>
   <color name="COLORTEXTBUTTONWARNINGHOVER" category="Colors">#ffffffff</color>
   <color name="PALETTECLOUDLIGHTACTIVE" category="Color palette">#ffd6dee6</color>
   <dimen name="LINEHEIGHTHEADINGTITLE3" category="Line height">24dp</dimen>
@@ -234,7 +233,6 @@
   <color name="PALETTEWHITEHOVER" category="Color palette">#fff5f7f9</color>
   <string name="FONTWEIGHTNORMAL" category="Font weight">400</string>
   <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="Background colors">#ffd6dee6</color>
-  <color name="COLORTEXTATTENTION" category="Colors">#ff252a31</color>
   <color name="COLORFORMLABELFILLED" category="Colors">#ff5f738c</color>
   <color name="PALETTEGREENNORMAL" category="Color palette">#ff28a138</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDHOVER" category="Border color">#ff181b20</color>

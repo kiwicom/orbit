@@ -12,6 +12,7 @@ const FormFeedback = ({
   tooltipShownHover,
   labelRef,
   iconRef,
+  inlineLabel,
 }: Props) => {
   const [helpClosed, setHelpClosed] = useState(false);
 
@@ -25,6 +26,7 @@ const FormFeedback = ({
           boundingRef={labelRef}
           iconBoundingRef={iconRef}
           onClick={() => setHelpClosed(true)}
+          inlineLabel={inlineLabel}
         >
           {help}
         </FormFeedbackTooltip>
@@ -34,6 +36,7 @@ const FormFeedback = ({
           shown={tooltipShown || tooltipShownHover}
           boundingRef={labelRef}
           iconBoundingRef={iconRef}
+          inlineLabel={inlineLabel}
         >
           {error}
         </FormFeedbackTooltip>

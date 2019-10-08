@@ -10,6 +10,7 @@ export type Props = {
   +tooltipShownHover?: boolean,
   +labelRef?: UseRef,
   +iconRef?: UseRef,
+  +inlineLabel?: boolean,
   ...Globals,
 };
 

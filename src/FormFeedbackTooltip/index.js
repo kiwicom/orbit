@@ -70,7 +70,7 @@ const resolveTooltipPosition = ({ theme: { rtl }, position, contentBounding, inl
   const pos = {
     top: css`
       top: ${-contentBounding.height - 7}px;
-      ${cssPosition}: ${() => (inlineLabel ? "0" : `-${SIDE_NUDGE}px`)};
+      ${cssPosition}: ${inlineLabel ? "0" : `-${SIDE_NUDGE}px`};
     `,
     bottom: css`
       bottom: ${-contentBounding.height - 7}px;

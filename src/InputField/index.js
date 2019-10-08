@@ -426,6 +426,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         iconRef={iconRef}
         labelRef={labelRef}
         tooltipShown={tooltipShown}
+        inlineLabel={inlineLabel}
         tooltipShownHover={tooltipShownHover}
       />
     </Field>

@@ -102,14 +102,6 @@ export type Base = {|
   durationSlow: string,
   transitionDefault: string,
   lineHeight: string,
-  boxShadowStatic: string,
-  boxShadowActionable: string,
-  boxShadowElevated: string,
-  boxShadowModal: string,
-  boxShadowColorStatic: string,
-  boxShadowColorActionable: string,
-  boxShadowColorElevated: string,
-  boxShadowColorModal: string,
 |};
 
 export type Foundation = {|

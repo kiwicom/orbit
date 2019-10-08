@@ -3140,24 +3140,56 @@
         "categoryDescription": ""
       }
     },
-    "boxShadowActionable": {
-      "value": "0 2px 4px 0 rgba(37, 42, 49, 0.1)",
+    "boxShadowAction": {
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "Box shadow",
       "meta": {
         "categoryDescription": ""
       }
     },
-    "boxShadowElevatedLevel1": {
-      "value": "0 4px 12px 0 rgba(37, 42, 49, 0.3)",
+    "boxShadowActionActive": {
+      "value": "0px 1px 4px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "Box shadow",
       "meta": {
         "categoryDescription": ""
       }
     },
-    "boxShadowModal": {
-      "value": "0 20px 60px 0 rgba(37, 42, 49, 0.4)",
+    "boxShadowFixed": {
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowFixedReverse": {
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowRaised": {
+      "value": "0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowRaisedReverse": {
+      "value": "0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)",
+      "type": "size",
+      "category": "Box shadow",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "boxShadowOverlay": {
+      "value": "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
       "type": "size",
       "category": "Box shadow",
       "meta": {

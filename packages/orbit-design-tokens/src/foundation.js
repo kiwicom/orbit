@@ -1,5 +1,4 @@
 // @flow
-import convertHexToRgba from "./convertHexToRgba";
 
 const palette = {
   product: {
@@ -125,14 +124,6 @@ const base = {
   durationSlow: "0.4s",
   transitionDefault: "ease-in-out",
   lineHeight: "1.4",
-  boxShadowStatic: "0px 0px 3px 1px",
-  boxShadowActionable: "0 2px 4px 0",
-  boxShadowElevated: "0 4px 12px 0",
-  boxShadowModal: "0 20px 60px 0",
-  boxShadowColorStatic: convertHexToRgba(palette.blue.normal, 30),
-  boxShadowColorActionable: convertHexToRgba(palette.ink.normal, 10),
-  boxShadowColorElevated: convertHexToRgba(palette.ink.normal, 30),
-  boxShadowColorModal: convertHexToRgba(palette.ink.normal, 40),
 };
 
 const foundation = { palette, base };

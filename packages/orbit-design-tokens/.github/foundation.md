@@ -131,14 +131,6 @@ const foundation = {
     durationSlow: "0.4s",
     transitionDefault: "ease-in-out",
     lineHeight: "1.4",
-    boxShadowStatic: "0px 0px 3px 1px",
-    boxShadowActionable: "0 2px 4px 0",
-    boxShadowElevated: "0 4px 12px 0",
-    boxShadowModal: "0 20px 60px 0",
-    boxShadowColorStatic: "rgba(1, 118, 210, 0.3)",
-    boxShadowColorActionable: "rgba(23, 27, 30, 0.1)",
-    boxShadowColorElevated: "rgba(23, 27, 30, 0.15)",
-    boxShadowColorModal: "rgba(23, 27, 30, 0.4)",
   },
 };
 ```

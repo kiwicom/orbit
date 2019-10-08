@@ -446,10 +446,35 @@ export const getTokens: GetTokens = customFoundation => {
     textDecorationTextLinkSecondaryHover: "none",
     // category:Box shadow
     // description:
-    boxShadowButtonFocus: `0 0 4px 1px ${theme.base.boxShadowColorStatic}`,
-    boxShadowActionable: `${theme.base.boxShadowActionable} ${theme.base.boxShadowColorActionable}`,
-    boxShadowElevatedLevel1: `${theme.base.boxShadowElevated} ${theme.base.boxShadowColorElevated}`,
-    boxShadowModal: `${theme.base.boxShadowModal} ${theme.base.boxShadowColorModal}`,
+    boxShadowButtonFocus: `0 0 4px 1px ${convertHexToRgba(theme.palette.blue.normal, 30)}`,
+    boxShadowAction: `0px 0px 2px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px 1px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
+    boxShadowActionActive: `0px 1px 4px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px 4px 8px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
+    boxShadowFixed: `0px 0px 2px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px 2px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
+    boxShadowFixedReverse: `0px 0px 2px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px -2px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
+    boxShadowRaised: `0px 4px 8px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px 8px 24px 0px ${convertHexToRgba(theme.palette.ink.normal, 24)}`,
+    boxShadowRaisedReverse: `0px -4px 8px 0px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      16,
+    )}, 0px -8px 24px 0px ${convertHexToRgba(theme.palette.ink.normal, 24)}`,
+    boxShadowOverlay: `0px 12px 24px -4px ${convertHexToRgba(
+      theme.palette.ink.normal,
+      24,
+    )}, 0px 8px 60px 0px ${convertHexToRgba(theme.palette.ink.normal, 32)}`,
     // category:Color palette
     // description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette.
     paletteProductLight: theme.palette.product.light,

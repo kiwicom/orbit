@@ -909,12 +909,6 @@
       "name": "heightInputNormal"
     },
     {
-      "value": "0 1px 0 0",
-      "type": "size",
-      "category": "Spacing",
-      "name": "marginButtonGroupConnected"
-    },
-    {
       "value": "20px",
       "type": "size",
       "category": "Size (width, height)",
@@ -2825,7 +2819,7 @@
       "name": "paletteOrangeDark"
     },
     {
-      "value": "0 8px 0 0",
+      "value": "0 1px 0 0",
       "type": "size",
       "category": "Spacing",
       "name": "marginButtonGroup"

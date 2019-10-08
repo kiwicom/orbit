@@ -152,7 +152,6 @@ module.exports = {
   paddingButtonNormal: "0 16px",
   opacityCheckboxDisabled: "0.5",
   heightInputNormal: "44px",
-  marginButtonGroupConnected: "0 1px 0 0",
   heightCheckbox: "20px",
   borderColorButtonPrimaryBorderedActive: "rgb(0, 143, 123)",
   paddingButtonSmallWithLeftIcon: "0 12px 0 8px",
@@ -473,5 +472,5 @@ module.exports = {
   colorTextButtonSecondaryBorderedHover: "rgb(24, 27, 32)",
   paletteRedNormalHover: "rgb(185, 25, 25)",
   paletteOrangeDark: "rgb(171, 51, 7)",
-  marginButtonGroup: "0 8px 0 0",
+  marginButtonGroup: "0 1px 0 0",
 };

@@ -360,7 +360,6 @@ export type Tokens = {|
   marginButtonIconSmall: string,
   marginButtonIconNormal: string,
   marginButtonIconLarge: string,
-  marginButtonGroupConnected: string,
   marginButtonGroup: string,
   marginTopFormFeedback: string,
   marginBottomSelectSuffix: string,

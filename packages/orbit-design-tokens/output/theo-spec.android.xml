@@ -151,7 +151,6 @@
   <dimen name="PADDINGBUTTONNORMAL" category="Spacing">0 16dp</dimen>
   <string name="OPACITYCHECKBOXDISABLED" category="Opacity">0.5</string>
   <dimen name="HEIGHTINPUTNORMAL" category="Size (width, height)">44dp</dimen>
-  <dimen name="MARGINBUTTONGROUPCONNECTED" category="Spacing">0 1px 0 0</dimen>
   <dimen name="HEIGHTCHECKBOX" category="Size (width, height)">20dp</dimen>
   <color name="BORDERCOLORBUTTONPRIMARYBORDEREDACTIVE" category="Border color">#ff008f7b</color>
   <dimen name="PADDINGBUTTONSMALLWITHLEFTICON" category="Spacing">0 12 0 8dp</dimen>
@@ -470,5 +469,5 @@
   <color name="COLORTEXTBUTTONSECONDARYBORDEREDHOVER" category="Colors">#ff181b20</color>
   <color name="PALETTEREDNORMALHOVER" category="Color palette">#ffb91919</color>
   <color name="PALETTEORANGEDARK" category="Color palette">#ffab3307</color>
-  <dimen name="MARGINBUTTONGROUP" category="Spacing">0 8px 0 0</dimen>
+  <dimen name="MARGINBUTTONGROUP" category="Spacing">0 1px 0 0</dimen>
 </resources>

@@ -152,7 +152,6 @@
 @value padding-button-normal: 0 16px;
 @value opacity-checkbox-disabled: "0.5";
 @value height-input-normal: 44px;
-@value margin-button-group-connected: 0 1px 0 0;
 @value height-checkbox: 20px;
 @value border-color-button-primary-bordered-active: rgb(0, 143, 123);
 @value padding-button-small-with-left-icon: 0 12px 0 8px;
@@ -473,4 +472,4 @@
 @value color-text-button-secondary-bordered-hover: rgb(24, 27, 32);
 @value palette-red-normal-hover: rgb(185, 25, 25);
 @value palette-orange-dark: rgb(171, 51, 7);
-@value margin-button-group: 0 8px 0 0;
+@value margin-button-group: 0 1px 0 0;

@@ -16,7 +16,7 @@
     "pages/*"
   ],
   "scripts": {
-    "prepare": "yarn build && node ./src/theo/generate-theo-parser",
+    "generate-json": "yarn run ./src/theo/generate-theo-parser",
     "flow:check": "flow check",
     "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
@@ -24,7 +24,7 @@
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
     "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
-    "build": "yarn run build:lib && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
+    "build": "yarn run generate-json && yarn run build:lib && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es",
     "test": "jest",

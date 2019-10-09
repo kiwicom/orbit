@@ -1414,6 +1414,12 @@
       "name": "paletteGreenNormal"
     },
     {
+      "value": "20px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightTextNormal"
+    },
+    {
       "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "Border color",
@@ -1802,6 +1808,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorButtonGoogleBorderedActive"
+    },
+    {
+      "value": "22px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightTextLarge"
     },
     {
       "value": "rgb(40, 161, 56)",
@@ -2805,6 +2817,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteOrangeDark"
+    },
+    {
+      "value": "16px",
+      "type": "size",
+      "category": "Line height",
+      "name": "lineHeightTextSmall"
     },
     {
       "value": "0 1px 0 0",

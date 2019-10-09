@@ -235,6 +235,7 @@
   <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="Background colors">#ffd6dee6</color>
   <color name="COLORFORMLABELFILLED" category="Colors">#ff5f738c</color>
   <color name="PALETTEGREENNORMAL" category="Color palette">#ff28a138</color>
+  <dimen name="LINEHEIGHTTEXTNORMAL" category="Line height">20dp</dimen>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDHOVER" category="Border color">#ff181b20</color>
   <dimen name="FONTSIZEHEADINGTITLE5" category="Font size">12dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEACTIVE" category="Background colors">#ffe5eaef</color>
@@ -300,6 +301,7 @@
   <color name="BORDERCOLORBUTTONCRITICALBORDERED" category="Border color">#ffd21c1c</color>
   <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff3b5998</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDACTIVE" category="Border color">#ff0b0c0f</color>
+  <dimen name="LINEHEIGHTTEXTLARGE" category="Line height">22dp</dimen>
   <color name="COLORTEXTSUCCESS" category="Colors">#ff28a138</color>
   <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>
   <color name="PALETTEORANGELIGHTACTIVE" category="Color palette">#fff8d3ab</color>
@@ -467,5 +469,6 @@
   <color name="COLORTEXTBUTTONSECONDARYBORDEREDHOVER" category="Colors">#ff181b20</color>
   <color name="PALETTEREDNORMALHOVER" category="Color palette">#ffb91919</color>
   <color name="PALETTEORANGEDARK" category="Color palette">#ffab3307</color>
+  <dimen name="LINEHEIGHTTEXTSMALL" category="Line height">16dp</dimen>
   <dimen name="MARGINBUTTONGROUP" category="Spacing">0 1px 0 0</dimen>
 </resources>

@@ -6,6 +6,7 @@ import FormFeedbackTooltip from "../FormFeedbackTooltip";
 import type { Props } from "./index";
 
 const FormFeedback = ({
+  dataTest,
   error,
   help,
   tooltipShown,
@@ -21,6 +22,7 @@ const FormFeedback = ({
     <>
       {help && !helpClosed && !error && (
         <FormFeedbackTooltip
+          dataTest={dataTest}
           isHelp
           shown={!helpClosed}
           boundingRef={labelRef}
@@ -33,6 +35,7 @@ const FormFeedback = ({
       )}
       {(tooltipShown || tooltipShownHover) && error && (
         <FormFeedbackTooltip
+          dataTest={dataTest}
           shown={tooltipShown || tooltipShownHover}
           boundingRef={labelRef}
           iconBoundingRef={iconRef}

@@ -142,7 +142,7 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const iconRef = useRef(null);
 
   return (
-    <Field spaceAfter={spaceAfter}>
+    <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
         data-test={dataTest}
         data-state={getFieldDataState(!!props.error)}

@@ -151,8 +151,10 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
+export const SelectContainer = styled(({ className, children, labelRef }) => (
+  <div ref={labelRef} className={className}>
+    {children}
+  </div>
 ))`
   position: relative;
   display: flex;
@@ -277,7 +279,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           {label}
         </FormLabel>
       )}
-      <SelectContainer disabled={disabled}>
+      <SelectContainer disabled={disabled} labelRef={label ? null : labelRef}>
         {prefix && (
           <SelectPrefix prefix={prefix} size={size}>
             {prefix}

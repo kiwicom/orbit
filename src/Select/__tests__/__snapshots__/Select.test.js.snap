@@ -480,6 +480,11 @@ exports[`Select should match snapshot 1`] = `
 >
   <Select__SelectContainer
     disabled={false}
+    labelRef={
+      Object {
+        "current": null,
+      }
+    }
     theme={
       Object {
         "orbit": Object {

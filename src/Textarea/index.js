@@ -103,34 +103,36 @@ StyledTextArea.defaultProps = {
 
 // $FlowExpected
 const Textarea = React.forwardRef(
-  ({
-    size = SIZE_OPTIONS.NORMAL,
-    disabled,
-    resize = RESIZE_OPTIONS.VERTICAL,
-    dataTest,
-    spaceAfter,
+  (
+    {
+      size = SIZE_OPTIONS.NORMAL,
+      disabled,
+      resize = RESIZE_OPTIONS.VERTICAL,
+      dataTest,
+      spaceAfter,
+      fullHeight,
+      value,
+      label,
+      name,
+      error,
+      placeholder,
+      maxLength,
+      onChange,
+      onFocus,
+      onBlur,
+      tabIndex,
+      help,
+      rows,
+    }: Props,
     ref,
-    fullHeight,
-    value,
-    label,
-    name,
-    error,
-    placeholder,
-    maxLength,
-    onChange,
-    onFocus,
-    onBlur,
-    tabIndex,
-    help,
-    rows,
-  }: Props) => {
+  ) => {
     const [tooltipShown, setTooltipShown] = useState(false);
     const [tooltipShownHover, setTooltipShownHover] = useState(false);
     const labelRef = useRef(null);
     const iconRef = useRef(null);
 
     return (
-      <Field fullHeight={fullHeight} spaceAfter={spaceAfter}>
+      <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={label ? null : labelRef}>
         {label && (
           <FormLabel
             filled={!!value}

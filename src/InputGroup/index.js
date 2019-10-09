@@ -85,11 +85,19 @@ StyledChild.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabelledby }) => (
-  <div className={className} data-test={dataTest} role={role} aria-labelledby={ariaLabelledby}>
-    {children}
-  </div>
-))`
+const StyledInputGroup = styled(
+  ({ children, className, dataTest, role, ariaLabelledby, labelRef }) => (
+    <div
+      ref={labelRef}
+      className={className}
+      data-test={dataTest}
+      role={role}
+      aria-labelledby={ariaLabelledby}
+    >
+      {children}
+    </div>
+  ),
+)`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -222,6 +230,7 @@ const InputGroup = ({
       spaceAfter={spaceAfter}
       role="group"
       ariaLabelledby={label && inputID}
+      labelRef={label ? null : labelRef}
     >
       {label && (
         <FormLabel

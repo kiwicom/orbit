@@ -108,7 +108,7 @@ storiesOf("Textarea", module)
       const placeholder = text("Placeholder", "Placeholder");
       const help = text("Help", undefined);
       const error = text("Error", "Something went wrong.");
-      const disabled = boolean("Disabled", true);
+      const disabled = boolean("Disabled", false);
       const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
       const maxLength = number("maxLength", undefined);
       const dataTest = text("dataTest", "test");

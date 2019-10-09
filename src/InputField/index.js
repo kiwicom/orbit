@@ -101,8 +101,10 @@ FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const InputContainer = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+export const InputContainer = styled(({ children, className, labelRef }) => (
+  <div ref={labelRef} className={className}>
+    {children}
+  </div>
 ))`
   display: flex;
   position: relative;
@@ -348,7 +350,12 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           {label}
         </FormLabel>
       )}
-      <InputContainer size={size} disabled={disabled} error={error}>
+      <InputContainer
+        size={size}
+        disabled={disabled}
+        error={error}
+        lableRef={label ? null : labelRef}
+      >
         {prefix &&
           (inlineLabel && (error || help) ? (
             <Prefix size={size}>

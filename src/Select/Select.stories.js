@@ -135,6 +135,9 @@ storiesOf("Select", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("ID", "select-id");
       const required = boolean("Required", false);
+      const label = text("Label", "Label");
+      const error = text("Error", "");
+      const help = text("Help", "");
 
       return (
         <Select
@@ -145,7 +148,9 @@ storiesOf("Select", module)
           options={option}
           disabled={disabled}
           name={name}
-          label={text("Label")}
+          label={label}
+          error={error}
+          help={help}
           onChange={action("onChange")}
           onBlur={action("onBlur")}
           onFocus={action("onFocus")}

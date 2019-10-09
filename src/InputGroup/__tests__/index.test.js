@@ -82,7 +82,7 @@ describe(`InputGroup - Phone number`, () => {
     expect(component.find("InputGroup__FakeGroup").exists()).toBe(true);
   });
   it("should contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);
+    expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
   it("input should execute onChange method", () => {
     input.simulate("change");

@@ -72,7 +72,7 @@ describe(`Textarea with help`, () => {
     ).toBe(name);
   });
   it("should contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);
+    expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
   it("should execute onChange method", () => {
     area.simulate("change");
@@ -113,11 +113,8 @@ describe(`Textarea number with error and help`, () => {
   it("should have size prop", () => {
     expect(component.find("Textarea__StyledTextArea").prop("resize")).toBe(resize);
   });
-  it("should NOT contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(false);
-  });
-  it("should contain FeedBack error", () => {
-    expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
+  it("should contain FeedBack", () => {
+    expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
   it("should match snapshot", () => {
     expect(component).toMatchSnapshot();

@@ -52,8 +52,7 @@ const StyledSliderContent = styled.div`
         visibility: visible;
         opacity: 1;
         background: ${theme.orbit.paletteWhite};
-        box-shadow: 0 2px 4px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 24)},
-          0 4px 12px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 32)};
+        box-shadow: ${theme.orbit.boxShadowRaised};
       `};
   `)};
 `;

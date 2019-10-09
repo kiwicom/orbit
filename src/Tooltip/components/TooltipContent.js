@@ -34,7 +34,7 @@ const StyledTooltipWrapper = styled.div`
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
   background-color: ${({ theme }) => theme.orbit.paletteWhite}; // TODO: use token backgroundTooltip
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
@@ -66,6 +66,7 @@ const StyledTooltipWrapper = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
       visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     // prevent position, IEs don't have initial YAY
     top: auto;

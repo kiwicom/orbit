@@ -34,7 +34,6 @@ export const StyledModalFooter = styled.div`
   // TODO: create token paddingModalFooter
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
   box-sizing: border-box;
-  // TODO: create token boxShadowActionableInverted
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   @media (max-width: ${({ theme }) =>

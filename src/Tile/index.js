@@ -21,13 +21,13 @@ export const StyledTile = styled(({ theme, icon, title, external, ...props }) =>
   background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border: solid 1px ${({ theme }) => theme.orbit.paletteCloudNormal}; //TODO Create token borderWidthTile, borderColorTile
-  box-shadow: 0 2px 4px 0 rgba(23, 27, 30, 0.1); //TODO Create token boxShadowTile
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover,
   &:focus {
     outline: 0;
-    box-shadow: 0 4px 12px 0 rgba(23, 27, 30, 0.1); //TODO Create token boxShadowTileHover
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
   }
 
   &:hover ${StyledIconRight} {

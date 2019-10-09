@@ -34,8 +34,7 @@ const StyledChildWrapper = styled.div`
       roundedBottomBorders && getBorderRadius};
     border-bottom-right-radius: ${({ roundedBottomBorders }) =>
       roundedBottomBorders && getBorderRadius};
-    box-shadow: ${({ expanded }) =>
-      expanded && `0 4px 12px 0 rgba(23, 27, 30, 0.1)`}; //TODO Create token boxShadowCard
+    box-shadow: ${({ expanded, theme }) => expanded && theme.orbit.boxShadowActionActive};
     border-left: ${getBorder};
     border-right: ${getBorder};
     border-bottom: ${getBorder};

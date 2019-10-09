@@ -17,6 +17,7 @@ export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
+export { default as FeatureIcon } from "./FeatureIcon";
 
 // Card
 export { default as Card } from "./Card";

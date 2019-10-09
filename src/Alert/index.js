@@ -15,7 +15,9 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
+import { pureTranslate } from "../Translate";
 import useTranslate from "../hooks/useTranslate";
+import { StyledHeading } from "../Heading";
 
 import type { Props } from "./index";
 
@@ -173,7 +175,7 @@ const Content = styled(StyledDiv)`
       color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
     }
   }
-  & ${Item}, ${StyledText} {
+  & ${Item}, ${StyledText}, ${StyledHeading} {
     color: ${getTypeToken(TOKENS.colorTextAlert)};
   }
 `;

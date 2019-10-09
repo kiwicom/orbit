@@ -28,8 +28,8 @@ const StyledCollapse = styled.div`
   width: 100%;
   display: block;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXLarge};
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXLarge};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
   :last-child,
   :only-child {
     border: 0;
@@ -55,6 +55,19 @@ StyledCollapseChildren.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledActionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  > * {
+    margin-left: ${({ theme }) => theme.orbit.spaceSmall};
+  }
+`;
+
+StyledActionsWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Collapse = ({
   initialExpanded = false,
   expanded: expandedProp,
@@ -62,6 +75,7 @@ const Collapse = ({
   children,
   dataTest,
   onClick,
+  actions,
 }: Props) => {
   const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
   const [expandedState, setExpandedState] = React.useState(
@@ -119,12 +133,19 @@ const Collapse = ({
             {label}
           </Heading>
           {/* TODO: dictionary for title */}
-          <ButtonLink
-            iconLeft={<AnimatedIcon expanded={expanded} />}
-            transparent
-            size="small"
-            type="secondary"
-          />
+          <StyledActionsWrapper
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+          >
+            {actions}
+            <ButtonLink
+              iconLeft={<AnimatedIcon expanded={expanded} />}
+              transparent
+              size="small"
+              type="secondary"
+            />
+          </StyledActionsWrapper>
         </Stack>
       </StyledCollapseLabel>
       <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>

@@ -5,9 +5,8 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
-import { pureTranslate } from "../Translate";
 import getSpacingToken from "../common/getSpacingToken";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
 
@@ -38,8 +37,7 @@ StyledBackButtonWrapper.defaultProps = {
 };
 
 const GoBackButton = ({ onClick }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <StyledBackButtonWrapper>
       <Button
@@ -48,7 +46,7 @@ const GoBackButton = ({ onClick }) => {
         type="secondary"
         size="small"
         onClick={onClick}
-        title={pureTranslate(dictionary, "breadcrumbs_back")}
+        title={translate("breadcrumbs_back")}
       />
     </StyledBackButtonWrapper>
   );

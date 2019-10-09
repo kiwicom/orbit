@@ -3,13 +3,11 @@ import React from "react";
 
 import { DictionaryContext } from "../Dictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
-import type { Translations } from "../Dictionary";
 
-import type { Props, Values } from "./index";
+import type { Props, PureTranslate } from "./index";
 
-export function pureTranslate(translations: Translations, key: string, values: Values = {}) {
+export const pureTranslate: PureTranslate = (translations, key, values = {}) => {
   const translation = translations[key] || DEFAULT_DICTIONARY[key];
-
   if (!translation) {
     return key;
   }
@@ -19,7 +17,7 @@ export function pureTranslate(translations: Translations, key: string, values: V
       acc.replace(new RegExp(`__${placeholder}__`, "g"), String(values[placeholder])),
     translation,
   );
-}
+};
 
 const Translate = ({ tKey, values }: Props) => (
   <DictionaryContext.Consumer>

@@ -5,9 +5,8 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
-import useDictionary from "../hooks/useDictionary";
-import { pureTranslate } from "../Translate";
 import useStateWithCallback from "../hooks/useStateWithCallback";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from ".";
 
@@ -46,7 +45,7 @@ StyledNavigationBar.defaultProps = {
 };
 
 const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props) => {
-  const dictionary = useDictionary();
+  const translate = useTranslate();
   const resolveCallback = useCallback(
     state => {
       if (onHide && !state) onHide();
@@ -85,7 +84,7 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
           transparent
-          title={pureTranslate(dictionary, "navigationbar_open_menu")}
+          title={translate("navigationbar_open_menu")}
         />
       )}
     </StyledNavigationBar>

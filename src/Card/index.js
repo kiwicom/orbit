@@ -12,8 +12,7 @@ import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props, State } from "./index";
 
@@ -103,8 +102,7 @@ const StyledCloseContainer = styled.div`
 `;
 
 const CardCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <StyledCloseContainer>
       <ButtonLink
@@ -114,7 +112,7 @@ const CardCloseButton = ({ onClick, dataTest }) => {
         icon={<Close />}
         onClick={onClick}
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={translate("button_close")}
       />
     </StyledCloseContainer>
   );

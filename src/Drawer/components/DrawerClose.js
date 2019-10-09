@@ -5,10 +5,9 @@ import styled from "styled-components";
 import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
 import type { Props } from "./DrawerClose";
-import { pureTranslate } from "../../Translate";
-import useDictionary from "../../hooks/useDictionary";
 import defaultTheme from "../../defaultTheme";
 import { left } from "../../utils/rtl";
+import useTranslate from "../../hooks/useTranslate";
 
 const StyledDrawerClose = styled.div`
   margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
@@ -19,14 +18,14 @@ StyledDrawerClose.defaultProps = {
 };
 
 const DrawerClose = ({ onClick }: Props) => {
-  const dictionary = useDictionary();
+  const translate = useTranslate();
   return (
     <StyledDrawerClose>
       <ButtonLink
         onClick={onClick}
         iconLeft={<Close />}
         type="secondary"
-        title={pureTranslate(dictionary, "drawer_hide")}
+        title={translate("drawer_hide")}
         transparent
       />
     </StyledDrawerClose>

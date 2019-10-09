@@ -2,7 +2,6 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/list/
 */
-import type { Interpolation } from "styled-components";
 import * as React from "react";
 
 import typeof ListItemType from "./ListItem";
@@ -33,8 +32,8 @@ type ListContextProps = {|
 
 export type ListContextType = React.Context<ListContextProps>;
 
-export type GetSizeToken = ({ theme: Theme, size: Size }) => Interpolation;
+export type GetLineHeightToken = ({ theme: Theme, size: Size }) => string;
 
 declare export var ListContext: ListContextType;
 
-declare export var getSizeToken: GetSizeToken;
+declare export var getLineHeightToken: GetLineHeightToken;

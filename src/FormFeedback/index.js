@@ -14,13 +14,12 @@ export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {..
   font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
   font-weight: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
   width: 100%;
   margin-top: 2px;
   position: absolute;
   top: 100%;
-  max-height: ${({ theme }) =>
-    Math.floor(theme.orbit.lineHeightText * parseInt(theme.orbit.fontSizeFormFeedback, 10))}px;
+  max-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
-import { ListContext, getSizeToken } from "../index";
+import { ListContext, getLineHeightToken } from "../index";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
@@ -20,9 +20,6 @@ const getSizeTokenLabel = ({ theme, size }) => {
   };
   return sizeTokens[size];
 };
-
-const calculateIconHeightFromLineHeight = ({ theme, size }) =>
-  `${Math.floor(parseInt(getSizeToken({ theme, size }), 10) * theme.orbit.lineHeightText)}px`;
 
 const getIconSizeFromType = ({ theme, type }) => {
   const tokens = {
@@ -80,7 +77,7 @@ const IconContainer = styled.div`
   align-items: center;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
   flex: 0 0 auto;
-  height: ${calculateIconHeightFromLineHeight};
+  height: ${getLineHeightToken};
   ${StyledCarrierLogo} {
     ${getIconSizeFromType};
     img {

@@ -14,7 +14,7 @@ const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible
 export const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
   border-top: ${({ theme, expanded }) =>
     expanded

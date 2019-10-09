@@ -6,20 +6,29 @@ import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { Props, ListContextType, GetSizeToken } from "./index";
+import type { Props, ListContextType, GetLineHeightToken } from "./index";
 
 export const ListContext: ListContextType = React.createContext({
   size: null,
   type: null,
 });
 
-export const getSizeToken: GetSizeToken = ({ theme, size }) => {
+const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
   };
   return sizeTokens[size];
+};
+
+export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
+  const lineHeightTokens = {
+    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
+  };
+  return lineHeightTokens[size];
 };
 
 const getTypeToken = ({ theme, type }) => {
@@ -41,7 +50,7 @@ const StyledList = styled(({ className, children, dataTest }) => (
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontfamily};
   font-size: ${getSizeToken};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${getLineHeightToken};
   color: ${getTypeToken};
   list-style: none;
   padding: 0;

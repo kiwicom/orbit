@@ -120,6 +120,7 @@
   <color name="PALETTEPRODUCTLIGHTACTIVE" category="Color palette">#ffc0e8e4</color>
   <color name="BORDERCOLORBUTTONINFOBORDEREDACTIVE" category="Border color">#ff01508e</color>
   <color name="BACKGROUNDBUTTONPRIMARYACTIVE" category="Background colors">#ff008f7b</color>
+  <color name="BACKGROUNDTOOLTIPLARGEMOBILE" category="Background colors">#ff005aa3</color>
   <dimen name="FONTSIZEHEADINGDISPLAYSUBTITLE" category="Font size">22dp</dimen>
   <string name="LINEHEIGHTTEXT" category="Line height">1.4</string>
   <color name="BACKGROUNDBUTTONSECONDARYHOVER" category="Background colors">#ffdce3e9</color>
@@ -335,6 +336,7 @@
   <color name="BORDERCOLORINPUTERROR" category="Border color">#ffd21c1c</color>
   <string name="BACKGROUNDCARRIERLOGO" category="Background colors">transparent</string>
   <color name="COLORTEXTBUTTONWHITEHOVER" category="Colors">#ff181b20</color>
+  <color name="BACKGROUNDTOOLTIP" category="Background colors">#ffffffff</color>
   <color name="BACKGROUNDTAGSELECTEDHOVER" category="Background colors">#ff181b20</color>
   <color name="BACKGROUNDALERTSUCCESS" category="Background colors">#ffebf4ec</color>
   <dimen name="PADDINGINPUTFILE" category="Spacing">0 0 0 6dp</dimen>

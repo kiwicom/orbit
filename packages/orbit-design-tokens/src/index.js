@@ -214,6 +214,8 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundTagSelectedHover: theme.palette.ink.normalHover,
     backgroundTagActive: theme.palette.cloud.lightActive,
     backgroundTagSelectedActive: theme.palette.ink.normalActive,
+    backgroundTooltip: theme.palette.white.normal,
+    backgroundTooltipLargeMobile: theme.palette.blue.dark,
     // category:Font size
     // description:Use these sizing tokens for font sizes.
     fontSizeHeadingDisplay: "40px",

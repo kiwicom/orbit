@@ -33,7 +33,7 @@ generateFlowFile(path.join(__dirname, "..", "src", "ServiceLogo", "FLOW_TEMPLATE
     .join("")};`,
 });
 
-// ServiceLogos
+// FeatureIcons
 
 generateFlowFile(path.join(__dirname, "..", "src", "FeatureIcon", "FLOW_TEMPLATE.flow"), {
   NAMES: `${Object.values(FEATURE_ICONS_NAMES)

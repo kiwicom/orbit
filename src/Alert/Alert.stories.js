@@ -13,6 +13,8 @@ import List from "../List";
 import ListItem from "../List/ListItem";
 import Text from "../Text";
 import Stack from "../Stack";
+import Heading from "../Heading";
+import CountryFlag from "../CountryFlag";
 
 import Alert from "./index";
 
@@ -193,15 +195,18 @@ storiesOf("Alert", module)
           onClose={action("Close")}
         >
           <Stack spacing="compact">
-            <div>Message of the Alert</div>
+            <Text>
+              Requirements found here are for reference purposes only. Contact the embassy or your
+              foreign ministry for more information.
+            </Text>
+            <Heading type="title4">
+              Make sure you know your visa requirements for these countries:
+            </Heading>
             <List>
-              <ListItem>
-                <Text type="info">623 Kč will be refunded by your payment card</Text>
-              </ListItem>
-              <ListItem>623 Kč will be refunded by your payment card</ListItem>
+              <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
             </List>
-            <Button type="info" size="small" href="#">
-              Click on me
+            <Button type="warning" size="small">
+              Check Visa Requirements
             </Button>
           </Stack>
         </Alert>

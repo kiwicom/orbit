@@ -237,6 +237,7 @@ module.exports = {
   backgroundButtonLinkPrimaryActive: "rgb(214, 222, 230)",
   colorFormLabelFilled: "rgb(95, 115, 140)",
   paletteGreenNormal: "rgb(40, 161, 56)",
+  lineHeightTextNormal: "20px",
   borderColorButtonGoogleBorderedHover: "rgb(24, 27, 32)",
   fontSizeHeadingTitle5: "12px",
   backgroundButtonWhiteActive: "rgb(229, 234, 239)",
@@ -302,6 +303,7 @@ module.exports = {
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
   colorTextButtonFacebookBordered: "rgb(59, 89, 152)",
   borderColorButtonGoogleBorderedActive: "rgb(11, 12, 15)",
+  lineHeightTextLarge: "22px",
   colorTextSuccess: "rgb(40, 161, 56)",
   borderColorInput: "rgb(186, 199, 213)",
   paletteOrangeLightActive: "rgb(248, 211, 171)",
@@ -470,5 +472,6 @@ module.exports = {
   colorTextButtonSecondaryBorderedHover: "rgb(24, 27, 32)",
   paletteRedNormalHover: "rgb(185, 25, 25)",
   paletteOrangeDark: "rgb(171, 51, 7)",
+  lineHeightTextSmall: "16px",
   marginButtonGroup: "0 1px 0 0",
 };

@@ -427,6 +427,9 @@ export const getTokens: GetTokens = customFoundation => {
     // category:Line height
     // description:
     lineHeightText: theme.base.lineHeight,
+    lineHeightTextSmall: "16px",
+    lineHeightTextNormal: "20px",
+    lineHeightTextLarge: "22px",
     lineHeightHeading: "1.2",
     lineHeightHeadingDisplay: "44px",
     lineHeightHeadingDisplaySubtitle: "28px",

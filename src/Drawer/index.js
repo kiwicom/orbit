@@ -51,7 +51,7 @@ StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerSide = styled(({ theme, width, position, shown, ...props }) => (
+const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ...props }) => (
   <aside {...props} />
 ))`
   display: block;
@@ -82,9 +82,9 @@ StyledDrawerSide.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerContent = styled(({ theme, type, hasTopPadding, ...props }) => (
-  <div {...props} />
-))`
+const StyledDrawerContent = styled(
+  ({ theme, type, hasTopPadding, noPadding, hasClose, ...props }) => <div {...props} />,
+)`
   ${getPadding};
   margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceLarge};
   margin-top: ${({ hasClose, theme, noPadding }) =>
@@ -113,7 +113,7 @@ const StyledDrawerHeader = styled.div`
     css`
       padding: 0 ${theme.orbit.spaceMedium};
       ${mq.largeMobile(css`
-        padding: 0 ${theme.orbit.spaceXLarge};
+        padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceXLarge}`)};
       `)};
     `};
 `;

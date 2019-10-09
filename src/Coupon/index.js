@@ -12,7 +12,7 @@ const StyledCoupon = styled.span`
   text-transform: uppercase;
   border: 1px dashed ${({ theme }) => theme.orbit.paletteInkLighter};
   padding: 0 ${({ theme }) => theme.orbit.spaceXXSmall};
-  line-height: 24px;
+  line-height: 22px;
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};

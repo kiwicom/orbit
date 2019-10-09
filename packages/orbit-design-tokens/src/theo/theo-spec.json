@@ -1536,6 +1536,22 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
+    "backgroundTooltip": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundTooltipLargeMobile": {
+      "value": "#005AA3",
+      "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
     "fontSizeHeadingDisplay": {
       "value": "40px",
       "type": "size",

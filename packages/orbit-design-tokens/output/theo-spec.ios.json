@@ -722,6 +722,12 @@
       "name": "backgroundButtonPrimaryActive"
     },
     {
+      "value": "rgb(0, 90, 163)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTooltipLargeMobile"
+    },
+    {
       "value": "22px",
       "type": "size",
       "category": "Font size",
@@ -2012,6 +2018,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonWhiteHover"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "Background colors",
+      "name": "backgroundTooltip"
     },
     {
       "value": "rgb(24, 27, 32)",

@@ -120,6 +120,7 @@
 @value palette-product-light-active: rgb(192, 232, 228);
 @value border-color-button-info-bordered-active: rgb(1, 80, 142);
 @value background-button-primary-active: rgb(0, 143, 123);
+@value background-tooltip-large-mobile: rgb(0, 90, 163);
 @value font-size-heading-display-subtitle: 22px;
 @value line-height-text: "1.4";
 @value background-button-secondary-hover: rgb(220, 227, 233);
@@ -337,6 +338,7 @@
 @value border-color-input-error: rgb(210, 28, 28);
 @value background-carrier-logo: "transparent";
 @value color-text-button-white-hover: rgb(24, 27, 32);
+@value background-tooltip: rgb(255, 255, 255);
 @value background-tag-selected-hover: rgb(24, 27, 32);
 @value background-alert-success: rgb(235, 244, 236);
 @value padding-input-file: 0 0 0 6px;

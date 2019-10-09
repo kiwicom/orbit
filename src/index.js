@@ -23,6 +23,7 @@ export { default as FeatureIcon } from "./FeatureIcon";
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";
 export { default as CardSection } from "./Card/CardSection";
+export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
 export { default as DestinationCard } from "./DestinationCard";
 

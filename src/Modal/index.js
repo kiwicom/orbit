@@ -442,9 +442,15 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     this.decideFixedFooter();
   };
 
-  resolveAndSetStates = (target: HTMLElement, fullScrollOffset: number, fixCloseOffset: number) => {
+  resolveAndSetStates = (
+    target: HTMLElement,
+    fullScrollOffset: number,
+    fixCloseOffset: number,
+    scrollBegin: ?number,
+    mobile?: boolean,
+  ) => {
     this.setState({
-      scrolled: target.scrollTop >= this.offset,
+      scrolled: target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0),
       fixedClose: target.scrollTop >= fixCloseOffset,
       fullyScrolled:
         this.props.fixedFooter &&
@@ -453,15 +459,32 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     });
   };
 
+  getScrollTopPoint = (mobile?: boolean) => {
+    const content = this.modalContent.current;
+    if (content) {
+      const headingEl = content.querySelector(`${StyledHeading}`);
+      if (headingEl) {
+        const { top } = headingEl.getBoundingClientRect();
+        return top;
+      }
+      if (mobile) {
+        return 40;
+      }
+      const { top } = content.getBoundingClientRect();
+      return top;
+    }
+    return null;
+  };
+
   handleMobileScroll = (ev: Event) => {
     if (ev.target instanceof HTMLDivElement && ev.target === this.modalContent.current) {
-      this.resolveAndSetStates(ev.target, 10, 1);
+      this.resolveAndSetStates(ev.target, 10, 1, this.getScrollTopPoint(true), true);
     }
   };
 
   handleScroll = (ev: Event) => {
     if (ev.target instanceof HTMLDivElement && ev.target === this.modalBody.current) {
-      this.resolveAndSetStates(ev.target, 40, 40);
+      this.resolveAndSetStates(ev.target, 40, 40, this.getScrollTopPoint());
     }
   };
 

@@ -9,7 +9,6 @@
   },
   "files": [
     "lib/*",
-    "es/*",
     "package.json",
     "README.md",
     "output/*",

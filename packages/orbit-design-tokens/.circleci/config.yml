@@ -2,15 +2,24 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:9.1
+      - image: circleci/node:10
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run: yarn
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
       - run:
           name: Install dependencies
-          command: npm i
+          command: yarn
       - run:
           name: Run all tests
-          command: npm run test-ci
+          command: yarn test-ci
 
 workflows:
   version: 2

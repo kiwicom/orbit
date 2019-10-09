@@ -31,7 +31,7 @@ const StyledPopoverParent = styled.div`
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   overflow: hidden;
-  z-index: 1000;
+  z-index: ${({ theme }) => theme.orbit.zIndexPopover};
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
@@ -40,7 +40,8 @@ const StyledPopoverParent = styled.div`
     outline: 0;
   }
   ${media.largeMobile(css`
-    z-index: ${({ isInsideModal }) => (isInsideModal ? "1000" : "600")};
+    z-index: ${({ isInsideModal, theme }) =>
+      isInsideModal ? theme.orbit.zIndexPopover : theme.orbit.zIndexFloatingAction};
     position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
     left: auto;
     right: auto;
@@ -74,11 +75,12 @@ const StyledOverlay = styled.div`
   height: 100%;
   background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
   transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  z-index: 999;
+  z-index: ${({ theme }) => theme.orbit.zIndexPopoverOverlay};
 
   ${media.largeMobile(css`
     display: none;
-    z-index: ${({ isInsideModal }) => (isInsideModal ? "999" : "599")};
+    z-index: ${({ isInsideModal, theme }) =>
+      isInsideModal ? theme.orbit.zIndexPopoverOverlay : parseFloat(theme.orbit.zIndexPopover) - 1};
   `)};
 `;
 StyledOverlay.defaultProps = {

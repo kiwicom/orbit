@@ -62,7 +62,7 @@ const StyledBadge = styled.div`
   top: -${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
   left: 50%;
   transform: translate(-50%, 3px);
-  z-index: 10; // TODO: change for z-index framework
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
 `;
 
 StyledBadge.defaultProps = {

@@ -13,7 +13,7 @@ import type { StateLessProps } from "./index.js.flow";
 
 const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
   flex-shrink: 0;
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
   cursor: ${({ disabled }) => disabled && "not-allowed"};
 `;
 

@@ -123,7 +123,7 @@ const CloseContainer = styled.div`
   top: ${({ scrolled, fixedClose, isMobileFullPage }) =>
     !isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
   right: 0;
-  z-index: 800;
+  z-index: ${({ theme }) => theme.orbit.zIndexModal};
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;

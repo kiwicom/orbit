@@ -34,7 +34,7 @@ const StyledLink = styled.a`
     overflow: visible;
     padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: ADD TOKEN */
     background-color: ${({ theme }) => theme.orbit.paletteWhite}; /* TODO: ADD TOKEN */
-    z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop}; /* TODO: ADD TOKEN */
+    z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop}; /* TODO: What values should we use? */
   }
 `;
 

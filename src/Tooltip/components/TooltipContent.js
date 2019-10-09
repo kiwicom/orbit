@@ -41,7 +41,7 @@ const StyledTooltipWrapper = styled.div`
   transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     visibility ${({ theme }) => theme.orbit.durationFast} linear
       ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
-  z-index: 10012; // TODO: use some good value
+  z-index: ${({ theme }) => theme.orbit.zIndexTooltip};
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
   left: 0;
   right: 0;
@@ -155,7 +155,7 @@ const StyledTooltipOverlay = styled.div`
   bottom: 0;
   left: 0;
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
-  z-index: 10011; // TODO: use some good value
+  z-index: ${({ theme }) => theme.orbit.zIndexTooltipOverlay};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
   transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
     visibility ${({ theme }) => theme.orbit.durationFast} linear

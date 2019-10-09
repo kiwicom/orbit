@@ -97,7 +97,7 @@ const StyledSelect = styled(
   outline: none;
   width: 100%;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
   color: ${({ customValueText }) => customValueText && "transparent"};
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
@@ -176,7 +176,7 @@ const SelectPrefix = styled(({ className, children }) => (
   position: absolute;
   padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
   pointer-events: none;
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
   top: 0;
   height: ${getSelectSize};
 `;
@@ -197,7 +197,7 @@ const SelectSuffix = styled(({ children, className }) => (
   color: ${({ theme, disabled }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   pointer-events: none;
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
   height: 100%;
 
   & > * {
@@ -217,7 +217,7 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, ...props }) => 
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
   position: absolute;
   height: 100%;
   line-height: ${getSelectSize};

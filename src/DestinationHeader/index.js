@@ -38,7 +38,8 @@ const StyledOverlay = styled.div`
   left: 0;
   top: 0;
   background-image: linear-gradient(to top, rgba(16, 19, 21, 0.75), rgba(0, 0, 0, 0));
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
+
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
@@ -48,7 +49,7 @@ StyledOverlay.defaultProps = {
 
 const StyledContent = styled.div`
   position: relative;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
   display: flex;
   height: 100%;
   flex-direction: column;

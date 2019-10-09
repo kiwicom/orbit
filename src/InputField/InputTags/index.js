@@ -15,7 +15,7 @@ const StyledInputTags = styled.div`
   align-items: center;
   flex: 0 1 auto;
   height: 100%;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
   min-width: 50px;
   overflow: hidden;
 `;

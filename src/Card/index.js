@@ -97,8 +97,12 @@ const StyledCloseContainer = styled.div`
   position: absolute;
   top: 0;
   ${right}: 0;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
 `;
+
+StyledCloseContainer.defaultProps = {
+  theme: defaultTheme,
+};
 
 const CardCloseButton = ({ onClick, dataTest }) => {
   const translate = useTranslate();

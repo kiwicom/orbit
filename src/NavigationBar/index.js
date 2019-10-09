@@ -35,7 +35,7 @@ const StyledNavigationBar = styled.nav`
   box-shadow: ${({ theme }) => theme.orbit.boxShadowFixed};
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
-  z-index: 700;
+  z-index: ${({ theme }) => theme.orbit.zIndexNavBar};
   transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT}px`)}, 0);
 `;

@@ -34,7 +34,8 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
+
   box-sizing: border-box;
   height: ${getToken(TOKENS.height)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -128,7 +129,7 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
         error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
       transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
       display: block;
-      z-index: 2;
+        z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
     }
 
     &:last-child {

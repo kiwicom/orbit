@@ -18,7 +18,8 @@ export const StyledLazyImage = styled.div`
 `;
 
 const Image = styled.img`
-  z-index: ${({ visible }) => (visible ? "1" : "0")};
+  z-index: ${({ visible, theme }) =>
+    visible ? theme.orbit.zIndexLevelOne : theme.orbit.zIndexLevelTwo};
   position: absolute;
   top: 50%;
   left: 50%;

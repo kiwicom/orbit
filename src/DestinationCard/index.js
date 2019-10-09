@@ -23,7 +23,8 @@ const overlayCss = css`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
+
   width: 100%;
   height: 100%;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -59,7 +60,7 @@ StyledOverlayHover.defaultProps = {
 
 const StyledDestinationCardContent = styled.div`
   position: relative;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
   display: flex;
   flex-direction: column;
   padding: ${({ theme }) => theme.orbit.spaceSmall};

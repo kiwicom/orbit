@@ -17,7 +17,7 @@ const StyledTripDate = styled.div`
   margin-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
   padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
   background: ${({ theme }) => theme.orbit.paletteWhite};
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
 
   ${StyledText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};

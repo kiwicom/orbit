@@ -29,10 +29,10 @@ export const StyledTripSegmentMilestone = styled.div`
   justify-content: space-between;
   flex: 0 0 auto;
   cursor: pointer;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
 
   > svg {
-    z-index: 1;
+    z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
     height: ${getSize(ICON_SIZES.MEDIUM)};
     background: ${({ theme }) => theme.orbit.paletteWhite};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -48,7 +48,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
   width: 6px;
   height: 12px;
   ${right}: -1px;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
   transform: ${({ theme }) => theme.rtl && `rotate(180deg)`};
   &:before,
   &:after {

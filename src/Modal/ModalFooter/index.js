@@ -28,7 +28,7 @@ StyledChild.defaultProps = {
 
 export const StyledModalFooter = styled.div`
   display: flex;
-  z-index: 800; // TODO: use z-index framework
+  z-index: ${({ theme }) => theme.orbit.zIndexModal};
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   // TODO: create token paddingModalFooter

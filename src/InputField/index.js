@@ -63,7 +63,7 @@ const Field = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
   flex: 1 1 100%;
   width: 100%;
   margin-bottom: ${getSpacingToken};
@@ -78,7 +78,7 @@ export const FakeInput = styled(({ children, className }) => (
 ))`
   width: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelOne};
   top: 0;
   left: 0;
   box-sizing: border-box;
@@ -144,7 +144,7 @@ const StyledInlineLabel = styled.div`
     margin-bottom: 0;
     font-size: ${getToken(TOKENS.fontSizeInput)};
     line-height: normal;
-    z-index: 3;
+    z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
     white-space: nowrap;
   }
 `;
@@ -163,7 +163,7 @@ export const Prefix = styled(({ children, className }) => (
   pointer-events: none;
   justify-content: center;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
 
   & > svg {
     width: ${getToken(TOKENS.iconSize)};
@@ -184,7 +184,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   align-items: center;
   justify-content: center;
   pointer-events: ${({ disabled }) => disabled && "none"};
-  z-index: 3;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelThree};
 
   & svg {
     color: ${({ theme }) => theme.orbit.colorIconSecondary};
@@ -221,7 +221,7 @@ export const Input = styled(
   height: 100%;
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  z-index: 2;
+  z-index: ${({ theme }) => theme.orbit.zIndexLevelTwo};
 
   // FIREFOX flexbox bug: the input doesn't shrink properly
   min-width: 0;

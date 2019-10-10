@@ -40,7 +40,7 @@ const IconContainer = styled(({ className, children }) => (
   transition: background ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  > * {
+  > svg {
     width: ${({ sizeIcon }) => getSize(sizeIcon)};
     height: ${({ sizeIcon }) => getSize(sizeIcon)};
   }

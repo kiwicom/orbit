@@ -2231,7 +2231,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   margin: 0 8px 0 0;
 }
 
-.c2 > * {
+.c2 > svg {
   width: 24px;
   height: 24px;
 }
@@ -2255,7 +2255,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
   margin: 0 0 0 8px;
 }
 
-.c5 > * {
+.c5 > svg {
   width: 24px;
   height: 24px;
 }
@@ -4892,7 +4892,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "rules": Array [
                             "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                             [Function],
-                            ";> *{width:",
+                            ";> svg{width:",
                             [Function],
                             ";height:",
                             [Function],
@@ -8836,7 +8836,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
                           "rules": Array [
                             "display:flex;flex-direction:row;align-items:center;justify-content:center;margin:",
                             [Function],
-                            ";> *{width:",
+                            ";> svg{width:",
                             [Function],
                             ";height:",
                             [Function],

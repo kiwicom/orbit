@@ -20,7 +20,6 @@ export const StyledTile = styled(({ theme, icon, title, external, ...props }) =>
   text-decoration: none;
   background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  border: solid 1px ${({ theme }) => theme.orbit.paletteCloudNormal}; //TODO Create token borderWidthTile, borderColorTile
   box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 

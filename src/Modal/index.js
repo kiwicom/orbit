@@ -17,8 +17,7 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props, State } from "./index";
 
@@ -323,8 +322,7 @@ ModalWrapperContent.defaultProps = {
 };
 
 const ModalCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <ButtonLink
       onClick={onClick}
@@ -333,7 +331,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       transparent
       dataTest={dataTest}
       type="secondary"
-      title={pureTranslate(dictionary, "button_close")}
+      title={translate("button_close")}
     />
   );
 };

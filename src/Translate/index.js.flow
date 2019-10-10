@@ -1,15 +1,19 @@
 // @flow
 
+import type { Translations } from "../Dictionary/index";
+
+export type Key = string;
+
 export type Values = {
-  [key: string]: string | number,
+  [key: Key]: string | number,
 };
 
-export type Props = {
-  tKey: string,
+export type Props = {|
+  tKey: Key,
   values?: Values,
-};
+|};
 
-type PureTranslate = (dictionary: any, tKey: string, values?: Values) => string;
+export type PureTranslate = (dictionary: Translations, key: Key, values?: Values) => string;
 
 export type Translate = {
   translate: (tKey: string, values?: Values) => string,

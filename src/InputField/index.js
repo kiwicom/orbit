@@ -354,7 +354,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         size={size}
         disabled={disabled}
         error={error}
-        lableRef={label ? null : labelRef}
+        labelRef={label ? null : labelRef}
       >
         {prefix &&
           (inlineLabel && (error || help) ? (

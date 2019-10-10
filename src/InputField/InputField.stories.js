@@ -580,17 +580,27 @@ storiesOf("InputField", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <InputField
-          placeholder="Placeholder"
-          label="My label"
-          prefix="$"
-          suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
-          error="Error"
-        />
-      </RenderInRtl>
-    ),
+    () => {
+      const help = text("Help", "Please fill out as you have on your passport");
+      const error = text("Error", undefined);
+      const inlineLabel = boolean("inline label", false);
+      const label = text("Label", "Label");
+
+      return (
+        <RenderInRtl>
+          <InputField
+            label={label}
+            inlineLabel={inlineLabel}
+            help={help}
+            error={error}
+            placeholder="Placeholder"
+            prefix="$"
+            suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
+          />
+        </RenderInRtl>
+      );
+    },
+
     {
       info: "This is a preview of this component in RTL setup.",
     },

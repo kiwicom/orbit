@@ -49,9 +49,9 @@ const getSizeToken = ({ theme, size }) => {
 
 const getLineHeightToken = ({ theme, size }) => {
   const lineHeightTokens = {
-    [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextSmall,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextLarge,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
   };
   return lineHeightTokens[size];
 };

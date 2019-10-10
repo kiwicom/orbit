@@ -322,8 +322,10 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     inputMode,
   } = props;
 
-  const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
-
+  const forID = React.useMemo(() => {
+    if (id) return id;
+    return label ? randomID("inputFieldID") : undefined;
+  }, [id, label]);
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
   const labelRef = useRef(null);

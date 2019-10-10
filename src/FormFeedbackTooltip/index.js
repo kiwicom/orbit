@@ -9,6 +9,7 @@ import { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
 import CloseIc from "../icons/Close";
 import { ARROW_SIZE, SIDE_NUDGE } from "./consts";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -192,7 +193,7 @@ StyledTooltipContent.defaultProps = {
 const StyledCloseButton = styled.a`
   color: #fff;
   cursor: pointer;
-  margin-left: ${({ theme }) => theme.orbit.spaceSmall};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   display: flex;
 `;
 

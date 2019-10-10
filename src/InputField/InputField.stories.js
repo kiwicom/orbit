@@ -584,7 +584,7 @@ storiesOf("InputField", module)
       const help = text("Help", "Please fill out as you have on your passport");
       const error = text("Error", undefined);
       const inlineLabel = boolean("inline label", false);
-      const label = text("Label", "Label");
+      const label = text("Label", null);
 
       return (
         <RenderInRtl>

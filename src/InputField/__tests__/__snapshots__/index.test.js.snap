@@ -484,7 +484,7 @@ exports[`InputField number with error and help should match snapshot 1`] = `
         Something went wrong.
       </div>
     }
-    lableRef={
+    labelRef={
       Object {
         "current": null,
       }
@@ -2937,7 +2937,7 @@ exports[`InputField with help, prefix and suffix should match snapshot 1`] = `
     Label
   </FormLabel>
   <InputField__InputContainer
-    lableRef={null}
+    labelRef={null}
     size="normal"
     theme={
       Object {

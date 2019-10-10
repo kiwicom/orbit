@@ -168,11 +168,23 @@ storiesOf("Select", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <Select placeholder="My placeholder" options={objectOptions} label="My label" />
-      </RenderInRtl>
-    ),
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "");
+      const help = text("Help", "");
+
+      return (
+        <RenderInRtl>
+          <Select
+            label={label}
+            error={error}
+            help={help}
+            placeholder="My placeholder"
+            options={objectOptions}
+          />
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

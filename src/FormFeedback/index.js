@@ -24,7 +24,7 @@ const FormFeedback = ({
         <FormFeedbackTooltip
           dataTest={dataTest}
           isHelp
-          shown={!helpClosed}
+          shown
           boundingRef={labelRef}
           iconBoundingRef={iconRef}
           onClick={() => setHelpClosed(true)}
@@ -36,7 +36,7 @@ const FormFeedback = ({
       {(tooltipShown || tooltipShownHover) && error && (
         <FormFeedbackTooltip
           dataTest={dataTest}
-          shown={tooltipShown || tooltipShownHover}
+          shown
           boundingRef={labelRef}
           iconBoundingRef={iconRef}
           inlineLabel={inlineLabel}

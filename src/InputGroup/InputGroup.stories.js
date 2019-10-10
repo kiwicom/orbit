@@ -170,14 +170,20 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
+      const error = text("Error", undefined);
+      const help = text("Help", undefined);
+      const label = text("Label", "Phone number");
+
       return (
         <RenderInRtl>
           <InputGroup
             flex={flex}
-            label="My label"
             onChange={action("onChange")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
+            error={error}
+            help={help}
+            label={label}
           >
             <InputField placeholder="DD" />
             <Select options={selectOptions} value={selectValue} placeholder="Month" />

@@ -9,7 +9,7 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
   +label?: Translation,
-  +flex?: string | Array<string>,
+  +flex?: any | string | Array<string>, // TODO: Remove any
   +size?: "small" | "normal",
   +help?: React$Node,
   +children: React$Node,

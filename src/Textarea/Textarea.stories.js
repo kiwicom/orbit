@@ -142,11 +142,22 @@ storiesOf("Textarea", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <Textarea placeholder="My placeholder" value="Content of the Textarea" />
-      </RenderInRtl>
-    ),
+    () => {
+      const label = text("Label", "Label");
+      const help = text("Help", undefined);
+      const error = text("Error", "Something went wrong.");
+      return (
+        <RenderInRtl>
+          <Textarea
+            label={label}
+            help={help}
+            error={error}
+            placeholder="My placeholder"
+            value="Content of the Textarea"
+          />
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

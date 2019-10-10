@@ -14,7 +14,7 @@ const StyledButtonGroup = styled.div`
 
   ${StyledButtonLink}, ${StyledButton} {
     border-radius: 0;
-    margin: ${({ theme }) => rtlSpacing(theme.orbit.marginButtonGroupConnected)};
+    margin: ${({ theme }) => rtlSpacing(theme.orbit.marginButtonGroup)};
 
     :first-child {
       border-radius: ${({ theme }) =>

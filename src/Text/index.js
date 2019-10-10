@@ -17,7 +17,7 @@ import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from "../TextLink/consts";
 
 import type { Props } from "./index";
 
-const getTypeToken = () => ({ theme, type }) => {
+const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
@@ -30,7 +30,7 @@ const getTypeToken = () => ({ theme, type }) => {
   return typeTokens[type];
 };
 
-const getWeightToken = () => ({ theme, weight }) => {
+const getWeightToken = ({ theme, weight }) => {
   const weightTokens = {
     [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
     [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
@@ -38,7 +38,7 @@ const getWeightToken = () => ({ theme, weight }) => {
   return weightTokens[weight];
 };
 
-const getSizeToken = () => ({ theme, size }) => {
+const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
@@ -47,16 +47,25 @@ const getSizeToken = () => ({ theme, size }) => {
   return sizeTokens[size];
 };
 
+const getLineHeightToken = ({ theme, size }) => {
+  const lineHeightTokens = {
+    [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextLarge,
+  };
+  return lineHeightTokens[size];
+};
+
 export const StyledText = styled(({ element: TextElement, children, className, dataTest, id }) => (
   <TextElement className={className} data-test={dataTest} id={id}>
     {children}
   </TextElement>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${getSizeToken()};
-  font-weight: ${getWeightToken()};
-  color: ${getTypeToken()};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  font-size: ${getSizeToken};
+  font-weight: ${getWeightToken};
+  color: ${getTypeToken};
+  line-height: ${getLineHeightToken};
   text-align: ${({ align }) => textAlign(align)};
   text-transform: ${({ uppercase }) => uppercase && `uppercase`};
   font-style: ${({ italic }) => italic && `italic`};

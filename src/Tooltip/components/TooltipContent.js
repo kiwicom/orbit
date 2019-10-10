@@ -33,8 +33,8 @@ const StyledTooltipWrapper = styled.div`
   box-sizing: border-box;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite}; // TODO: use token backgroundTooltip
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  background-color: ${({ theme }) => theme.orbit.backgroundTooltip};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
@@ -60,12 +60,12 @@ const StyledTooltipWrapper = styled.div`
     max-width: ${tooltipSize};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding: ${tooltipPadding};
-    background-color: ${({ theme }) =>
-      theme.orbit.paletteBlueDark}; // TODO: use token backgroundTooltip
+    background-color: ${({ theme }) => theme.orbit.backgroundTooltipLargeMobile};
     visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
       visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     // prevent position, IEs don't have initial YAY
     top: auto;
@@ -105,7 +105,7 @@ const StyledTooltipContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
   margin-bottom: 16px;
 

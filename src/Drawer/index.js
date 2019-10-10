@@ -62,9 +62,7 @@ const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ..
   height: 100%;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   overflow-y: auto;
-  // TODO: use new elevation levels
-  box-shadow: 0 4px 8px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 16)},
-    0 8px 24px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 24)};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
   background: ${({ theme, suppressed }) =>
     suppressed
       ? theme.orbit.paletteCloudLight

@@ -31,7 +31,7 @@ const FormLabel = styled(({ className, children, required, filled, dataTest, id 
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   color: ${({ theme, filled, disabled }) =>
     !filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 

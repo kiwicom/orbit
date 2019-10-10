@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Heading, { StyledHeading } from "../Heading";
+import Heading from "../Heading";
 import Checkbox, { Label } from "../Checkbox";
 import Text from "../Text";
 import defaultTheme from "../defaultTheme";
@@ -17,8 +17,10 @@ const StyledListChoiceIcon = styled.div`
   align-self: flex-start;
   flex: 0 0 auto;
   margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
 
   svg {
+    align-self: center;
     width: ${getSize("small")};
     height: ${getSize("small")};
     color: ${({ theme }) => theme.orbit.colorIconPrimary};
@@ -49,7 +51,7 @@ const StyledListChoice = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
     ${StyledListChoiceIcon} svg {
-      color: ${({ theme }) => theme.orbit.colorIconAttention};
+      color: ${({ theme }) => theme.orbit.colorIconPrimary};
     }
     outline: none;
   }
@@ -69,10 +71,6 @@ const StyledListChoiceContent = styled.div`
   justify-content: center;
   width: 100%;
   padding-${right}: ${({ theme }) => theme.orbit.spaceSmall};
-
-  ${StyledHeading} {
-    line-height: ${({ theme }) => theme.orbit.lineHeightText};
-  }
 `;
 
 StyledListChoiceContent.defaultProps = {

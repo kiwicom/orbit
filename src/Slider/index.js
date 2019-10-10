@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 import { warning } from "@kiwicom/js";
 
 import Text from "../Text";
@@ -52,8 +51,7 @@ const StyledSliderContent = styled.div`
         visibility: visible;
         opacity: 1;
         background: ${theme.orbit.paletteWhite};
-        box-shadow: 0 2px 4px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 24)},
-          0 4px 12px 0 ${convertHexToRgba(theme.orbit.paletteInkLight, 32)};
+        box-shadow: ${theme.orbit.boxShadowRaised};
       `};
   `)};
 `;

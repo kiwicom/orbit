@@ -8,6 +8,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import { ListContext, getSizeToken } from "../index";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
+import { StyledText } from "../../Text";
 
 import type { Props } from "./index";
 
@@ -58,7 +59,11 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
     css`
       border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
       padding: ${theme.orbit.spaceXSmall};
-      font-weight: ${theme.orbit.fontWeightMedium};
+
+      &,
+      ${StyledText} {
+        font-weight: ${theme.orbit.fontWeightMedium};
+      }
 
       :last-child {
         border-bottom: none;

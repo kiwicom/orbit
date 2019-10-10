@@ -15,8 +15,8 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
+import { StyledHeading } from "../Heading";
 
 import type { Props } from "./index";
 
@@ -174,7 +174,7 @@ const Content = styled(StyledDiv)`
       color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
     }
   }
-  & ${Item}, ${StyledText} {
+  & ${Item}, ${StyledText}, ${StyledHeading} {
     color: ${getTypeToken(TOKENS.colorTextAlert)};
   }
 `;
@@ -196,8 +196,7 @@ CloseContainer.defaultProps = {
 };
 
 const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <CloseContainer hasChildren={hasChildren}>
       <ButtonLink
@@ -207,7 +206,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         icon={icon}
         type="secondary"
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={translate("button_close")}
       />
     </CloseContainer>
   );

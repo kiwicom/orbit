@@ -6,8 +6,9 @@ import defaultTheme from "../defaultTheme";
 
 import type { Props } from ".";
 
-const StyledCoupon = styled.span`
+const StyledCoupon = styled.mark`
   display: inline-block;
+  background: none;
   font-size: inherit;
   text-transform: uppercase;
   border: 1px dashed ${({ theme }) => theme.orbit.paletteInkLighter};

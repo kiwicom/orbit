@@ -48,6 +48,7 @@ const StyledPopoverParent = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    overflow: auto;
 
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}

@@ -8,6 +8,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import { ListContext, getSizeToken } from "../index";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
+import { StyledText } from "../../Text";
 
 import type { Props } from "./index";
 
@@ -59,6 +60,11 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
       border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
       padding: ${theme.orbit.spaceXSmall};
 
+      &,
+      ${StyledText} {
+        font-weight: ${theme.orbit.fontWeightMedium};
+      }
+
       :last-child {
         border-bottom: none;
       }
@@ -93,6 +99,7 @@ IconContainer.defaultProps = {
 
 const StyledLabel = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   color: ${({ theme }) => theme.orbit.colorTextSecondary};
   font-size: ${getSizeTokenLabel};
 `;

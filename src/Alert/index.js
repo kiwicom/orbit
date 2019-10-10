@@ -115,6 +115,7 @@ const StyledAlert = styled(StyledDiv)`
   color: ${getTypeToken(TOKENS.colorTextAlert)};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   box-sizing: border-box;
   margin-bottom: ${getSpacingToken};
 `;
@@ -161,7 +162,6 @@ const Content = styled(StyledDiv)`
   display: block;
   margin-bottom: ${({ theme, title, inlineActions }) =>
     title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a,
   & ${StyledTextLink} {

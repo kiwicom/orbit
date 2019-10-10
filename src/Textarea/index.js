@@ -28,7 +28,7 @@ Field.defaultProps = {
   theme: defaultTheme,
 };
 
-const getFontSize = () => ({ theme, size }) => {
+const getFontSize = ({ theme, size }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
@@ -37,7 +37,15 @@ const getFontSize = () => ({ theme, size }) => {
   return tokens[size];
 };
 
-const getPadding = () => ({ theme, size }) => {
+const getLineHeight = ({ theme, size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
+  };
+  return tokens[size];
+};
+
+const getPadding = ({ theme, size }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
@@ -51,7 +59,7 @@ const StyledTextArea = styled.textarea`
   display: block;
   width: 100%;
   height: ${({ fullHeight }) => fullHeight && "100%"};
-  padding: ${getPadding()};
+  padding: ${getPadding};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
@@ -62,8 +70,8 @@ const StyledTextArea = styled.textarea`
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${getFontSize()};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  font-size: ${getFontSize};
+  line-height: ${getLineHeight};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   resize: ${({ resize }) => resize};

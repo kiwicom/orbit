@@ -12,17 +12,16 @@ import type { Props } from "./index.js.flow";
 import STATES from "./consts";
 
 const getBoxShadow = state => ({ theme, active }) => {
-  const getActive = array => {
-    const copy = array;
-    if (active) copy.push(`inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`);
-    return copy.join(", ");
+  const getActive = shadow => {
+    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`;
+    return shadow;
   };
   if (state === STATES.HOVER) {
-    /* TODO: Add elevation token */
-    return getActive(["0 1px 4px 0 rgba(37, 42, 49, 0.16)", "0 4px 8px 0 rgba(37, 42, 49, 0.12)"]);
+    return getActive(theme.orbit.boxShadowActionActive);
   }
-  return getActive(["0 0 2px 0 rgba(37, 42, 49, 0.16)", "0 1px 4px 0 rgba(37, 42, 49, 0.12)"]);
+  return getActive(theme.orbit.boxShadowAction);
 };
+
 const StyledPricingTableItem = styled.div`
   display: flex;
   flex-grow: 1;

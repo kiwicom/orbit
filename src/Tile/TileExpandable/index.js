@@ -22,7 +22,7 @@ const StyledTileExpandable = styled.div`
         border-top ${theme.orbit.durationFast} ease-in-out;
     `};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
 `;
 

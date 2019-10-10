@@ -32,7 +32,7 @@ const StyledNavigationBar = styled.nav`
   display: flex;
   align-items: center;
   background: ${({ theme }) => theme.orbit.paletteWhite};
-  box-shadow: 0 0 2px 0 rgba(37, 42, 49, 0.16), 0 2px 4px 0 rgba(37, 42, 49, 0.12); // TODO: use elevation levels
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowFixed};
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   z-index: 700;

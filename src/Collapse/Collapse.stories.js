@@ -9,6 +9,7 @@ import Checkbox from "../Checkbox";
 import Slider from "../Slider";
 import Stack from "../Stack";
 import TextLink from "../TextLink";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Collapse from "./index";
 
@@ -199,6 +200,38 @@ storiesOf("Collapse", module)
             maxValue={24}
           />
         </Collapse>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "RTL",
+    () => {
+      const label = text("label", "Transportation");
+      return (
+        <RenderInRtl>
+          <Collapse
+            label={label}
+            actions={
+              <TextLink type="secondary" size="small">
+                Clear
+              </TextLink>
+            }
+          >
+            <ChoiceGroup
+              filter
+              onChange={action("onChange")}
+              onOnlySelection={action("onOnlySelection")}
+            >
+              <Checkbox label="Flight" value="one" />
+              <Checkbox label="Bus" value="two" />
+              <Checkbox label="Train" value="three" />
+            </ChoiceGroup>
+          </Collapse>
+        </RenderInRtl>
       );
     },
     {

@@ -9,6 +9,7 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -60,7 +61,7 @@ const StyledActionsWrapper = styled.div`
   align-items: center;
 
   > * {
-    margin-left: ${({ theme }) => theme.orbit.spaceSmall};
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   }
 `;
 

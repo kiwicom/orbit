@@ -17,7 +17,7 @@ Table below contains all types of the props available in the FeatureIcon compone
 
 ### enum
 
-| code                |
+| name                |
 | :------------------ |
 | `"TicketFlexi"`     |
 | `"TicketSaver"`     |

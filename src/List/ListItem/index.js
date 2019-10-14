@@ -75,9 +75,13 @@ Item.defaultProps = {
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme, type }) =>
+    rtlSpacing(
+      `${type === TYPES.SEPARATED ? theme.orbit.spaceXXSmall : 0} ${theme.orbit.spaceXSmall} 0 0`,
+    )};
   flex: 0 0 auto;
   height: ${getLineHeightToken};
+
   ${StyledCarrierLogo} {
     ${getIconSizeFromType};
     img {
@@ -113,7 +117,7 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
   const { size, type } = useContext(ListContext);
   return (
     <Item data-test={dataTest} type={type}>
-      <IconContainer size={size} type={type}>
+      <IconContainer type={type} size={size}>
         {icon}
       </IconContainer>
       <StyledSpan>

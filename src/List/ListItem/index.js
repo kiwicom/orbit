@@ -5,12 +5,21 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
-import { ListContext, getLineHeightToken } from "../index";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
+import { ListContext } from "../index";
 
-import type { Props } from "./index";
+import type { GetLineHeightToken, Props } from "./index";
+
+export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
+  const lineHeightTokens = {
+    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
+  };
+  return lineHeightTokens[size];
+};
 
 const getSizeTokenLabel = ({ theme, size }) => {
   const sizeTokens = {
@@ -80,7 +89,8 @@ const IconContainer = styled.div`
       `${type === TYPES.SEPARATED ? theme.orbit.spaceXXSmall : 0} ${theme.orbit.spaceXSmall} 0 0`,
     )};
   flex: 0 0 auto;
-  height: ${getLineHeightToken};
+  height: ${({ theme, type, size }) =>
+    type === TYPES.SEPARATED ? theme.heightIconLarge : getLineHeightToken({ theme, size })};
 
   ${StyledCarrierLogo} {
     ${getIconSizeFromType};

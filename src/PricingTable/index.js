@@ -10,11 +10,11 @@ import type { Props } from "./index.js.flow";
 const StyledPricingTable = styled.div``;
 
 const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
-  const { isTablet } = useMediaQuery();
+  const { isDesktop } = useMediaQuery();
   const [activeElement, setActiveElement] = useState(defaultActiveElement);
   const handleOnClick = i => {
     return () => {
-      if (!isTablet) {
+      if (!isDesktop) {
         setActiveElement(i);
       }
     };
@@ -35,7 +35,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
         align="stretch"
         tablet={{ spacing: "natural", spaceAfter: "none" }}
       >
-        {isTablet
+        {isDesktop
           ? children
           : React.Children.map(children, (child, i) =>
               React.cloneElement(child, {
@@ -46,7 +46,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
               }),
             )}
       </Stack>
-      {!isTablet && children && (
+      {!isDesktop && children && (
         <Stack spacing="condensed">
           {React.Children.map(children, (child, i) => {
             if (i === activeElement) {

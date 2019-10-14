@@ -17,12 +17,23 @@ import Tag from "../Tag";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputField from "../InputField";
+import Textarea from "../Textarea";
+import Select from "../Select";
+import InputFile from "../InputFile";
+import InputGroup from "../InputGroup";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
+const objectOptions = [
+  { value: 0, label: "Zero-th item" },
+  { value: 1, label: "First item" },
+  { value: 2, label: "Second item" },
+  { value: 3, label: "Third item" },
+];
+
 storiesOf("FormErrors Kitchensink", module).add(
-  "Default input",
+  "Error",
   () => {
     const label = text("Label", "Label");
     const error = text("Label", "Something went wrong.");
@@ -90,7 +101,6 @@ storiesOf("FormErrors Kitchensink", module).add(
           error={error}
           value={value}
           placeholder={placeholder}
-          onChange={action("change")}
         />
         <InputField
           label={label}
@@ -98,8 +108,29 @@ storiesOf("FormErrors Kitchensink", module).add(
           placeholder={placeholder}
           required={required}
           error={error}
-          onChange={action("change")}
         />
+        <Textarea label={label} placeholder={placeholder} error={error} value={value} />
+        <Textarea placeholder={placeholder} error={error} value={value} />
+        <Select
+          label={label}
+          options={objectOptions}
+          value={1}
+          error={error}
+          onChange={action("onChange")}
+        />
+        <Select options={objectOptions} error={error} value={1} onChange={action("onChange")} />
+        <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
+        <InputFile error={error} onRemoveFile={action("removeFile")} />
+        <InputGroup error={error} help={help} label={label}>
+          <InputField placeholder="DD" />
+          <Select options={objectOptions} value={1} placeholder="Month" />
+          <InputField placeholder="YYYY" />
+        </InputGroup>
+        <InputGroup error={error} help={help}>
+          <InputField placeholder="DD" />
+          <Select options={objectOptions} value={1} placeholder="Month" />
+          <InputField placeholder="YYYY" />
+        </InputGroup>
       </Stack>
     );
   },

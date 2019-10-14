@@ -5,8 +5,9 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import { getLineHeightToken } from "./ListItem";
 
-import type { Props, ListContextType, GetLineHeightToken } from "./index";
+import type { Props, ListContextType } from "./index";
 
 export const ListContext: ListContextType = React.createContext({
   size: null,
@@ -20,15 +21,6 @@ const getSizeToken = ({ theme, size }) => {
     [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
   };
   return sizeTokens[size];
-};
-
-export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
-  const lineHeightTokens = {
-    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
-    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
-    [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
-  };
-  return lineHeightTokens[size];
 };
 
 const getTypeToken = ({ theme, type }) => {

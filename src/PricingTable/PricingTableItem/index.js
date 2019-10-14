@@ -46,7 +46,7 @@ const StyledPricingTableItem = styled.div`
   ${({ featureIcon }) =>
     featureIcon &&
     css`
-      ${media.tablet(css`
+      ${media.desktop(css`
         padding-top: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
         padding-bottom: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
       `)}
@@ -62,7 +62,7 @@ const StyledBadge = styled.div`
   top: -${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
   left: 50%;
   transform: translate(-50%, 3px);
-  z-index: 10; // TODO: change for z-index framework
+  z-index: 10; /* TODO: change for z-index framework */
 `;
 
 StyledBadge.defaultProps = {
@@ -102,14 +102,14 @@ const PricingTableItem = ({
           {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
         </StyledBadge>
       )}
-      <Stack flex direction="column" spacing="condensed" tablet={{ spacing: "natural" }}>
+      <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
         {featureIcon && (
           <Stack justify="center" grow={false}>
             {featureIcon}
           </Stack>
         )}
         <Stack justify="between" direction="column">
-          <Stack spacing="tight" direction="column" flex align="stretch" tablet={{ grow: false }}>
+          <Stack spacing="tight" direction="column" flex align="stretch" desktop={{ grow: false }}>
             {name && (
               <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
                 {name}
@@ -121,7 +121,7 @@ const PricingTableItem = ({
               </Text>
             )}
             {priceBadge && (
-              <Stack justify="center" align="end" tablet={{ grow: false }}>
+              <Stack justify="center" align="end" desktop={{ grow: false }}>
                 {priceBadge}
               </Stack>
             )}

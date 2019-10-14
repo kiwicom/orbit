@@ -4,16 +4,16 @@ exports[`PricingTable should match snapshot 1`] = `
 <PricingTable__StyledPricingTable>
   <Stack
     align="stretch"
-    flex={true}
-    grow={true}
-    spaceAfter="medium"
-    spacing="condensed"
-    tablet={
+    desktop={
       Object {
         "spaceAfter": "none",
         "spacing": "natural",
       }
     }
+    flex={true}
+    grow={true}
+    spaceAfter="medium"
+    spacing="condensed"
   >
     <PricingTableItem
       action={

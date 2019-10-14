@@ -11,6 +11,8 @@ import Tooltip from "../Tooltip";
 import Text from "../Text";
 import Check from "../icons/Check";
 import FeatureIcon from "../FeatureIcon";
+import Layout, { LayoutColumn } from "../Layout";
+import Card, { CardSection } from "../Card";
 
 import PricingTable, { PricingTableItem } from "./index";
 
@@ -137,6 +139,82 @@ storiesOf("PricingTable", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
+  .add("Booking", () => {
+    return (
+      <Layout type="Booking">
+        <LayoutColumn>
+          <Card>
+            <CardSection>
+              <PricingTable defaultActiveElement={1}>
+                <PricingTableItem
+                  name="Limited Services"
+                  priceBadge={<Badge type="info">Included</Badge>}
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      type="secondary"
+                      fullWidth
+                    >
+                      Don&#39;t upgrade
+                    </Button>
+                  }
+                  mobileDescription="Basic ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {content}
+                </PricingTableItem>
+                <PricingTableItem
+                  name="Plus Services"
+                  priceBadge={<Badge type="info">+ 10</Badge>}
+                  badge="Popular"
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      fullWidth
+                    >
+                      Upgrade and continue
+                    </Button>
+                  }
+                  mobileDescription="Flexi ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {longerContent}
+                </PricingTableItem>
+                <PricingTableItem
+                  name="Premium Services"
+                  priceBadge={<Badge type="info">+ 20</Badge>}
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      type="secondary"
+                      fullWidth
+                    >
+                      Upgrade and continue
+                    </Button>
+                  }
+                  mobileDescription="Premium ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {content}
+                </PricingTableItem>
+              </PricingTable>
+            </CardSection>
+          </Card>
+        </LayoutColumn>
+        <LayoutColumn>
+          <Card>
+            <CardSection>Test</CardSection>
+          </Card>
+        </LayoutColumn>
+      </Layout>
+    );
+  })
   .add(
     "With FeatureIcon",
     () => {

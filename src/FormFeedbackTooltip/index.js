@@ -9,7 +9,7 @@ import { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
 import CloseIc from "../icons/Close";
 import { ARROW_SIZE, SIDE_NUDGE } from "./consts";
-import { rtlSpacing } from "../utils/rtl";
+import { rtlSpacing, right } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -106,20 +106,24 @@ const resolveTooltipPosition = ({
 const StyledFormFeedbackTooltip = styled.div`
   display: flex;
   position: absolute;
-  width: 100%;
   box-sizing: border-box;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
   padding: ${({ theme }) => theme.orbit.spaceMedium};
-  padding-right: ${({ theme, isHelp }) => isHelp && theme.orbit.spaceSmall};
-  z-index: 10012; // TODO: use some good value
+  padding-${right}: ${({ theme, isHelp }) => isHelp && theme.orbit.spaceSmall};
 
-  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
-  overflow-y: scroll;
+  z-index: 10012; /* TODO: use some good value */
 
-  // prevent position, IEs don't have initial YAY
+  max-height: none;
+  overflow: visible;
+  width: auto;
+  background-color: ${resolveColor};
+  visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
+  opacity: ${({ shown }) => (shown ? "1" : "0")};
+  transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
+    visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  /* prevent position, IEs don't have initial YAY */
   top: auto;
   right: auto;
   bottom: auto;
@@ -128,16 +132,6 @@ const StyledFormFeedbackTooltip = styled.div`
   img {
     max-width: 100%;
   }
-
-  max-height: none;
-  overflow: visible;
-  width: auto;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  background-color: ${resolveColor};
-  visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
-  opacity: ${({ shown }) => (shown ? "1" : "0")};
-  transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &::after {
     width: 0;

@@ -2,6 +2,8 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
+import type { Size } from "../index";
+import type { Theme } from "../../defaultTheme";
 
 export type Props = {|
   +children: React$Node,
@@ -13,3 +15,7 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var Item: ReactComponentStyled<any>;
+
+export type GetLineHeightToken = ({ theme: Theme, size: Size }) => string;
+
+declare export var getLineHeightToken: GetLineHeightToken;

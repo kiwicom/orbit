@@ -139,6 +139,7 @@ IconContainer.defaultProps = {
 const ContentWrapper = styled(StyledDiv)`
   flex: 1; // IE wrapping fix
   display: flex;
+  width: 100%;
   flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? "row" : "column")};
   align-items: ${({ title }) => !title && "center"};
   justify-content: ${({ inlineActions }) => inlineActions && "space-between"};

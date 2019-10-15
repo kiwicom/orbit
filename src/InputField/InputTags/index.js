@@ -18,6 +18,8 @@ const StyledInputTags = styled.div`
   z-index: 2;
   min-width: 50px;
   overflow: hidden;
+
+  order: -1;
 `;
 
 StyledInputTags.defaultProps = {
@@ -29,11 +31,11 @@ const StyledInputTagsInner = styled.div`
   white-space: nowrap;
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
-  
-  &::-webkit-scrollbar { 
-    display: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-  
+
   ${StyledTag} + ${StyledTag} {
     margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
   }

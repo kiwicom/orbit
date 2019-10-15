@@ -388,7 +388,6 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
             </FormLabel>
           </StyledInlineLabel>
         )}
-        {tags && <InputTags>{tags}</InputTags>}
         <Input
           data-test={dataTest}
           data-state={getFieldDataState(!!error)}
@@ -426,6 +425,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           id={forID}
           inputMode={inputMode}
         />
+        {tags && <InputTags>{tags}</InputTags>}
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>

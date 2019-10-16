@@ -69,7 +69,10 @@ StyledRightContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledActionsWrapper = styled.div``;
+const StyledActionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 const Collapse = ({
   initialExpanded = false,

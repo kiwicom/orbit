@@ -10,30 +10,10 @@ import { Item } from "../List/ListItem";
 import CloseIc from "../icons/Close";
 import { ARROW_SIZE, SIDE_NUDGE } from "./consts";
 import { rtlSpacing, right } from "../utils/rtl";
+import resolveColor from "./helpers/resolveColor";
+import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
 
 import type { Props } from "./index";
-
-const resolveColor = ({ isHelp, theme }) => {
-  return isHelp ? theme.orbit.paletteBlueDark : theme.orbit.paletteRedNormal;
-};
-
-resolveColor.defaultProps = {
-  theme: defaultTheme,
-};
-
-const tooltipArrowStyle = ({ position }) => {
-  const arrows = {
-    top: css`
-      border-width: ${ARROW_SIZE}px ${ARROW_SIZE}px 0 ${ARROW_SIZE}px;
-      border-color: ${resolveColor} transparent transparent transparent;
-    `,
-    bottom: css`
-      border-width: 0 ${ARROW_SIZE}px ${ARROW_SIZE}px ${ARROW_SIZE}px;
-      border-color: transparent transparent ${resolveColor} transparent;
-    `,
-  };
-  return arrows[position];
-};
 
 const resolveTooltipArrowPosition = ({
   theme: { rtl },
@@ -88,6 +68,7 @@ const resolveTooltipPosition = ({
   iconBounding,
   inlineLabel,
 }) => {
+  console.log(iconBounding);
   const cssPosition = rtl ? "right" : "left";
   const pos = {
     top: css`

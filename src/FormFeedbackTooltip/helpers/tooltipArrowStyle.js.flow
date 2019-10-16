@@ -1,0 +1,6 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+export type TooltipArrowStyle = ({ position: string }) => Interpolation[];
+
+declare export default TooltipArrowStyle;

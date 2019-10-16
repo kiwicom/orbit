@@ -27,8 +27,8 @@ const FormFeedback = ({
           shown
           boundingRef={labelRef}
           iconBoundingRef={iconRef}
-          onClick={() => setHelpClosed(true)}
           inlineLabel={inlineLabel}
+          onClick={() => setHelpClosed(true)}
         >
           {help}
         </FormFeedbackTooltip>

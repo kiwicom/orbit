@@ -1,0 +1,15 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Theme } from "../../defaultTheme";
+import type { UseRef } from "../../common/common.js.flow";
+
+export type ResolveTooltipArrowPosition = ({
+  theme: Theme,
+  position: string,
+  inlineLabel: boolean,
+  contentBounding: UseRef,
+  iconBounding: UseRef,
+}) => Interpolation[];
+
+declare export default ResolveTooltipArrowPosition;

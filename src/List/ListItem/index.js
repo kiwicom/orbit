@@ -59,6 +59,10 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
   &:last-of-type {
     margin: 0;
   }
+  
+  ${StyledText} {
+    line-height: inherit;
+  }
 
   ${({ type, theme }) =>
     type === TYPES.SEPARATED &&

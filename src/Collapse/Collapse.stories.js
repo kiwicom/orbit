@@ -116,7 +116,7 @@ storiesOf("Collapse", module)
         <Collapse
           label={label}
           actions={
-            <TextLink type="secondary" size="small">
+            <TextLink type="secondary" size="small" onClick={action("clear")}>
               Clear
             </TextLink>
           }
@@ -216,7 +216,7 @@ storiesOf("Collapse", module)
           <Collapse
             label={label}
             actions={
-              <TextLink type="secondary" size="small">
+              <TextLink type="secondary" size="small" onClick={action("clear")}>
                 Clear
               </TextLink>
             }

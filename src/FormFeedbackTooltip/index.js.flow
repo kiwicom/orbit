@@ -1,13 +1,29 @@
 // @flow
 import type { Globals, UseRef } from "../common/common.js.flow";
 
+export type PositionRaw = {
+  bottom: number,
+  height: number,
+  left: number,
+  right: number,
+  top: number,
+  width: number,
+};
+
+export type Dimensions = {
+  set: boolean,
+  bounding: PositionRaw,
+  contentBounding: PositionRaw,
+  iconBounding: ?PositionRaw,
+};
+
 export type Props = {
   children: React$Node,
   shown?: boolean,
   isHelp?: boolean,
   boundingRef?: UseRef,
   iconBoundingRef?: UseRef,
-  inlineLabel?: React$Node,
+  inlineLabel?: boolean,
   onClick?: () => void | Promise<any>,
   ...Globals,
 };

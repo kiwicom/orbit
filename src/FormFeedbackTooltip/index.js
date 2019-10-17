@@ -1,88 +1,20 @@
 // @flow
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import styled, { css } from "styled-components";
 
-import boundingClientRect from "../utils/boundingClientRect";
 import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import { StyledText } from "../Text";
 import { Item } from "../List/ListItem";
 import CloseIc from "../icons/Close";
-import { ARROW_SIZE, SIDE_NUDGE } from "./consts";
 import { rtlSpacing, right } from "../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
 import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
+import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
+import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
+import useDimensions from "./hooks/useDimensions";
 
 import type { Props } from "./index";
-
-const resolveTooltipArrowPosition = ({
-  theme: { rtl },
-  position,
-  contentBounding,
-  iconBounding,
-  inlineLabel,
-}) => {
-  const cssPosition = rtl ? "right" : "left";
-
-  if (iconBounding) {
-    const whenInline = SIDE_NUDGE + iconBounding.width / 2 - ARROW_SIZE;
-    const leftPos = iconBounding.left - contentBounding.left + iconBounding.width / 2 - ARROW_SIZE;
-    const rightPos =
-      contentBounding.right - iconBounding.right + iconBounding.width / 2 - ARROW_SIZE;
-
-    const rtlPosition = rtl ? rightPos : leftPos;
-    const postionToApply = inlineLabel ? rtlPosition : whenInline;
-
-    const pos = {
-      top: css`
-        bottom: ${-ARROW_SIZE}px;
-        ${cssPosition}: ${postionToApply}px;
-      `,
-      bottom: css`
-        top: ${-ARROW_SIZE}px;
-        ${cssPosition}: ${postionToApply}px;
-      `,
-    };
-
-    return pos[position];
-  }
-
-  const pos = {
-    top: css`
-      bottom: ${-ARROW_SIZE}px;
-      ${cssPosition}: ${ARROW_SIZE}px;
-    `,
-    bottom: css`
-      top: ${-ARROW_SIZE}px;
-      ${cssPosition}: ${ARROW_SIZE}px;
-    `,
-  };
-
-  return pos[position];
-};
-
-const resolveTooltipPosition = ({
-  theme: { rtl },
-  position,
-  contentBounding,
-  iconBounding,
-  inlineLabel,
-}) => {
-  console.log(iconBounding);
-  const cssPosition = rtl ? "right" : "left";
-  const pos = {
-    top: css`
-      top: ${-contentBounding.height - 7}px;
-      ${cssPosition}: ${inlineLabel || !iconBounding ? "0" : `-${SIDE_NUDGE}px`};
-    `,
-    bottom: css`
-      bottom: ${-contentBounding.height - 7}px;
-      ${cssPosition}: 0;
-    `,
-  };
-
-  return pos[position];
-};
 
 const StyledFormFeedbackTooltip = styled.div`
   display: flex;
@@ -174,54 +106,6 @@ const StyledCloseButton = styled.a`
 
 StyledCloseButton.defaultProps = {
   theme: defaultTheme,
-};
-
-const useDimensions = ({ boundingRef, contentRef, iconBoundingRef }, children, inlineLabel) => {
-  const [dimensions, setDimensions] = useState({
-    set: false,
-    bounding: {
-      bottom: 0,
-      height: 0,
-      left: 0,
-      right: 0,
-      top: 0,
-      width: 0,
-    },
-    contentBounding: {
-      bottom: 0,
-      height: 0,
-      left: 0,
-      right: 0,
-      top: 0,
-      width: 0,
-    },
-    iconBounding: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
-  });
-
-  useEffect(() => {
-    const calculateDimensions = () => {
-      const bounding = boundingClientRect(boundingRef);
-      const contentBounding = boundingClientRect(contentRef);
-      const iconBounding = boundingClientRect(iconBoundingRef);
-      if (bounding && contentBounding && typeof window !== "undefined") {
-        setDimensions({
-          set: true,
-          bounding,
-          contentBounding,
-          iconBounding,
-        });
-      }
-    };
-
-    calculateDimensions();
-
-    window.addEventListener("resize", calculateDimensions);
-    return () => {
-      window.removeEventListener("resize", calculateDimensions);
-    };
-  }, [boundingRef, contentRef, iconBoundingRef, children, inlineLabel]);
-
-  return dimensions;
 };
 
 const FormFeedbackTooltip = ({

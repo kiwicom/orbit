@@ -4,7 +4,7 @@ import type { Interpolation } from "styled-components";
 import type { Theme } from "../../defaultTheme";
 import type { PositionRaw } from "../index";
 
-export type ResolveTooltipArrowPosition = ({
+export type ResolveTooltipPosition = ({
   theme: Theme,
   position: string,
   inlineLabel: boolean,
@@ -12,4 +12,4 @@ export type ResolveTooltipArrowPosition = ({
   iconBounding: PositionRaw,
 }) => Interpolation[];
 
-declare export default ResolveTooltipArrowPosition;
+declare export default ResolveTooltipPosition;

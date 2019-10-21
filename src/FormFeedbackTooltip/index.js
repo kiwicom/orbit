@@ -140,7 +140,14 @@ const FormFeedbackTooltip = ({
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>
       {isHelp && (
-        <StyledCloseButton onClick={onClick}>
+        <StyledCloseButton
+          onClick={ev => {
+            ev.preventDefault();
+            if (onClick) {
+              onClick();
+            }
+          }}
+        >
           <CloseIc size="small" />
         </StyledCloseButton>
       )}

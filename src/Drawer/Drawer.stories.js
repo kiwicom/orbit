@@ -50,7 +50,7 @@ storiesOf("Drawer", module)
           onClose={action("onClose")}
         >
           <NavigationList>
-            <NavigationListItem icon={<AccountCircle />}>Sign in</NavigationListItem>
+            <NavigationListItem icon={<AccountCircle />} href="https://kiwi.com" external>Sign in</NavigationListItem>
             <NavigationListItem icon={<AccountCircle />}>Register</NavigationListItem>
           </NavigationList>
           <NavigationList title="Connect with us">

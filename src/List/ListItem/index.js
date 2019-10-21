@@ -62,6 +62,7 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
 
   ${StyledText} {
     line-height: inherit;
+    font-size: inherit;
   }
 
   ${({ type, theme }) =>

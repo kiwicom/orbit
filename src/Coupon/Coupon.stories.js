@@ -1,10 +1,11 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
+import { select, text } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import List, { ListItem } from "../List";
+import { SIZES } from "../List/consts";
 
 import Coupon from "./index";
 
@@ -13,8 +14,9 @@ storiesOf("Coupon", module)
     "Default",
     () => {
       const content = text("content", "PROMOTIONCODE");
+      const size = select("Size", Object.values(SIZES), SIZES.SMALL);
       return (
-        <List>
+        <List size={size}>
           <ListItem>
             <Text>
               Lorem ipsum dolor sit amet, consectetuer <Coupon>{content}</Coupon> elit. Proin pede

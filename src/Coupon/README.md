@@ -1,4 +1,4 @@
-# ServiceLogo
+# Coupon
 To implement Coupon component into your project you'll need to add the import:
 ```jsx
 import Coupon from "@kiwicom/orbit-components/lib/Coupon";

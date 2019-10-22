@@ -7,7 +7,7 @@ import { StyledTableCell } from "./TableCell";
 import { StyledTableBody } from "./TableBody";
 import defaultTheme from "../defaultTheme";
 
-import type { Props, State } from "./index";
+import type { Props } from "./index";
 
 const StyledTableOuter = styled.div`
   max-width: 100%;
@@ -84,68 +84,57 @@ StyledTable.defaultProps = {
   theme: defaultTheme,
 };
 
-class Table extends React.PureComponent<Props, State> {
-  state = {
-    showShadows: false,
-    showRight: false,
-    showLeft: false,
+const Table = ({ children, compact = false, dataTest }: Props) => {
+  const [shadows, setShadows] = React.useState(false);
+  const [right, setRight] = React.useState(false);
+  const [left, setLeft] = React.useState(false);
+
+  const outer: { current: any | HTMLElement } = React.useRef(null);
+  const inner: { current: any | HTMLElement } = React.useRef(null);
+  const table: { current: any | HTMLElement } = React.useRef(null);
+
+  const handleScroll = () => {
+    if (shadows && inner && table && outer) {
+      setLeft(inner.current?.scrollLeft >= 5);
+      setRight(
+        inner.current?.scrollLeft + outer.current?.clientWidth <= table.current?.clientWidth,
+      );
+    }
   };
 
-  outer: { current: any | HTMLElement } = React.createRef();
-
-  inner: { current: any | HTMLElement } = React.createRef();
-
-  table: { current: any | HTMLElement } = React.createRef();
-
-  componentDidMount() {
-    window.addEventListener("resize", this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-  }
-
-  handleResize = () => {
-    const { table, outer } = this;
+  const handleResize = React.useCallback(() => {
     if (table && outer) {
       const showShadows = table.current?.clientWidth > outer.current?.clientWidth;
-      this.setState({ showShadows, showRight: showShadows });
+      setShadows(showShadows);
+      setRight(showShadows);
     }
-  };
+  }, []);
 
-  handleScroll = () => {
-    const { inner, table, outer } = this;
-    const { showShadows } = this.state;
-    if (showShadows && inner && table && outer) {
-      this.setState({
-        showLeft: inner.current?.scrollLeft >= 5,
-        showRight:
-          inner.current?.scrollLeft + outer.current?.clientWidth <= table.current?.clientWidth,
-      });
-    }
-  };
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
-  render() {
-    const { children, compact = false, dataTest } = this.props;
-    const { showShadows, showLeft, showRight } = this.state;
-    return (
-      <StyledTableOuter
-        ref={this.outer}
-        showShadows={showShadows}
-        showLeft={showLeft}
-        showRight={showRight}
-        data-test={dataTest}
-      >
-        <StyledTableInner ref={this.inner} onScroll={this.handleScroll} showShadows={showShadows}>
-          <StyledTable compact={compact} ref={this.table}>
-            {children}
-          </StyledTable>
-        </StyledTableInner>
-      </StyledTableOuter>
-    );
-  }
-}
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
+  return (
+    <StyledTableOuter
+      ref={outer}
+      showShadows={shadows}
+      showLeft={left}
+      showRight={right}
+      data-test={dataTest}
+    >
+      <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
+        <StyledTable compact={compact} ref={table}>
+          {children}
+        </StyledTable>
+      </StyledTableInner>
+    </StyledTableOuter>
+  );
+};
 
 export default Table;
 

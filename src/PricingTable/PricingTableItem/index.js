@@ -25,6 +25,7 @@ const getBoxShadow = state => ({ theme, active }) => {
 const StyledPricingTableItem = styled.div`
   display: flex;
   flex-grow: 1;
+  width: 100%;
   position: relative;
   background: ${({ theme }) => theme.orbit.paletteWhite};
   box-shadow: ${getBoxShadow()};

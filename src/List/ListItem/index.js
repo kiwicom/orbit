@@ -60,6 +60,11 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
     margin: 0;
   }
 
+  ${StyledText} {
+    line-height: inherit;
+    font-size: inherit;
+  }
+
   ${({ type, theme }) =>
     type === TYPES.SEPARATED &&
     css`

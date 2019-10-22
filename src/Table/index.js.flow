@@ -14,12 +14,6 @@ export type Props = {|
   ...Globals,
 |};
 
-export type State = {|
-  showShadows: boolean,
-  showLeft: boolean,
-  showRight: boolean,
-|};
-
 declare export default React$ComponentType<Props>;
 
 declare export var TableBody: TableBodyType;

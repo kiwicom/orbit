@@ -42,9 +42,6 @@ describe("Heading in H2, type Title1, not inverted", () => {
     const mounted = mount(<Heading spaceAfter={SPACINGS_AFTER.NORMAL}>{children}</Heading>);
     expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 describe("Heading in DIV, type Title5", () => {
   const element = ELEMENT_OPTIONS.DIV;
@@ -61,8 +58,5 @@ describe("Heading in DIV, type Title5", () => {
   });
   it("should have text-transform uppercase", () => {
     expect(component).toHaveStyleRule("text-transform", "uppercase");
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

@@ -43,8 +43,4 @@ describe(`slide util`, () => {
   //
   //   jest.runAllTimers();
   // });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

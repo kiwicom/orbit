@@ -72,8 +72,4 @@ describe(`TripSegment with List as children`, () => {
   it("children should have list", () => {
     expect(children.find("List").exists()).toBe(true);
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

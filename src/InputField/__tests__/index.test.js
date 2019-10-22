@@ -122,9 +122,6 @@ describe(`InputField with help, prefix and suffix`, () => {
     input.simulate("blur");
     expect(onBlur).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe(`Compact input`, () => {
@@ -186,8 +183,5 @@ describe(`InputField number with error and help`, () => {
         .render()
         .prop("data-state"),
     ).toBe("error");
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

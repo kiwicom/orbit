@@ -60,7 +60,4 @@ describe(`List with custom colored icons`, () => {
       expect(node.render().text()).toBe(content);
     });
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

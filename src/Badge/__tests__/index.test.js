@@ -29,7 +29,4 @@ describe("Badge", () => {
   it("should contain a icon", () => {
     expect(component.find("Sightseeing").exists()).toBe(true);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

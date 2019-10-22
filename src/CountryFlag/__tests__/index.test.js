@@ -19,9 +19,6 @@ describe(`CountryFlag of ${name}`, () => {
     expect(flag.prop("title")).toBe(name);
     expect(flag.render().prop("data-test")).toBe(dataTest);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("CountryFlag props", () => {

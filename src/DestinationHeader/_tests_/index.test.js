@@ -29,7 +29,4 @@ describe("DestinationHeader", () => {
     button.simulate("click");
     expect(goBack).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

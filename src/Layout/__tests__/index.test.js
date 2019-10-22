@@ -26,7 +26,4 @@ describe("Button with icon", () => {
       );
     });
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

@@ -77,8 +77,4 @@ describe("Stepper", () => {
     input.simulate("blur");
     expect(onBlur).toHaveBeenCalled();
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

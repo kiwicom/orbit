@@ -36,7 +36,4 @@ describe(`Illustration of ${name}`, () => {
   it("should have margin-bottom", () => {
     expect(mountedComponent).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

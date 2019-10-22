@@ -99,9 +99,6 @@ describe(`InputFile with help`, () => {
     closeButton.simulate("click", { preventDefault() {} });
     expect(onRemoveFile).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 describe(`InputFiInputFile with error`, () => {
   const component = shallow(
@@ -122,9 +119,5 @@ describe(`InputFiInputFile with error`, () => {
         .render()
         .prop("data-state"),
     ).toBe("error");
-  });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

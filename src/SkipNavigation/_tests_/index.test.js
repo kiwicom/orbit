@@ -25,8 +25,4 @@ describe("SkipNavigation", () => {
     expect(component.find("Button").exists()).toEqual(true);
     expect(component.find("Select").exists()).toEqual(true);
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

@@ -51,7 +51,4 @@ describe("Hide", () => {
       media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     });
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

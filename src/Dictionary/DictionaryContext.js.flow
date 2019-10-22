@@ -1,0 +1,8 @@
+// @flow
+import * as React from "react";
+
+import type { Translations } from "./index";
+
+export type DictionaryContextType = React.Context<Translations>;
+
+declare export default DictionaryContextType;

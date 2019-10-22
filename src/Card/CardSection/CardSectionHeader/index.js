@@ -2,7 +2,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { CardSectionContext } from "../index";
+import CardSectionContext from "../CardSectionContext";
 import { getSize } from "../../../Icon/index";
 import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";

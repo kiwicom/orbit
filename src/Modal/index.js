@@ -337,10 +337,6 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
 };
 
 export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
-  static defaultProps = {
-    theme: defaultTheme,
-  };
-
   state = {
     scrolled: false,
     loaded: false,
@@ -360,6 +356,16 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   focusTriggered = false;
 
   modalID: string = randomID("modalID");
+
+  firstFocusableEl: HTMLElement;
+
+  lastFocusableEl: HTMLElement;
+
+  timeout: TimeoutID;
+
+  static defaultProps = {
+    theme: defaultTheme,
+  };
 
   componentDidMount() {
     this.timeout = setTimeout(() => {
@@ -545,12 +551,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       }
     }
   };
-
-  firstFocusableEl: HTMLElement;
-
-  lastFocusableEl: HTMLElement;
-
-  timeout: TimeoutID;
 
   render() {
     const {

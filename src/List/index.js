@@ -6,13 +6,9 @@ import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import { getLineHeightToken } from "./ListItem";
+import ListContext from "./ListContext";
 
-import type { Props, ListContextType } from "./index";
-
-export const ListContext: ListContextType = React.createContext({
-  size: null,
-  type: null,
-});
+import type { Props } from "./index";
 
 const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {

@@ -1,5 +1,4 @@
 // @flow
-import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
@@ -16,15 +15,6 @@ export type Props = {|
 |};
 
 declare export var StyledCardSection: ReactComponentStyled<any>;
-
-export type ContextType = {|
-  +expandable: boolean,
-  +expanded: boolean,
-  +handleToggleSection: () => void,
-  +onKeyDownHandler: (ev: SyntheticKeyboardEvent<HTMLDivElement>) => void | Promise<any>,
-|};
-
-declare export var CardSectionContext: React.Context<ContextType>;
 
 declare export default React$ComponentType<Props>;
 

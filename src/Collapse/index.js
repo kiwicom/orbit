@@ -56,7 +56,7 @@ StyledCollapseChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledActionsWrapper = styled.div`
+const StyledRightContentWrapper = styled.div`
   display: flex;
   align-items: center;
 
@@ -65,9 +65,14 @@ const StyledActionsWrapper = styled.div`
   }
 `;
 
-StyledActionsWrapper.defaultProps = {
+StyledRightContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
+
+const StyledActionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 const Collapse = ({
   initialExpanded = false,
@@ -134,19 +139,21 @@ const Collapse = ({
             {label}
           </Heading>
           {/* TODO: dictionary for title */}
-          <StyledActionsWrapper
-            onClick={ev => {
-              ev.stopPropagation();
-            }}
-          >
-            {actions}
+          <StyledRightContentWrapper>
+            <StyledActionsWrapper
+              onClick={ev => {
+                ev.stopPropagation();
+              }}
+            >
+              {actions}
+            </StyledActionsWrapper>
             <ButtonLink
               iconLeft={<AnimatedIcon expanded={expanded} />}
               transparent
               size="small"
               type="secondary"
             />
-          </StyledActionsWrapper>
+          </StyledRightContentWrapper>
         </Stack>
       </StyledCollapseLabel>
       <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>

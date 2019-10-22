@@ -160,6 +160,7 @@ Title.defaultProps = {
 
 const Content = styled(StyledDiv)`
   display: block;
+  width: ${({ inlineActions }) => !inlineActions && "100%"};
   margin-bottom: ${({ theme, title, inlineActions }) =>
     title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
 

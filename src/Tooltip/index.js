@@ -99,7 +99,7 @@ const Tooltip = ({
         onBlur={handleOut}
         ref={container}
         aria-describedby={enabled ? tooltipId : undefined}
-        tabIndex={enabled && tabIndex}
+        tabIndex={enabled ? tabIndex : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
       >

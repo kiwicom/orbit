@@ -37,7 +37,4 @@ describe("RatingStars", () => {
   it("should render only 2 full stars", () => {
     expect(hotel.children()).toHaveLength(Math.round(rating));
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

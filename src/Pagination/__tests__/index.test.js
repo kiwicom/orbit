@@ -21,7 +21,4 @@ describe("Pagination", () => {
   it("Stack should have passed dataTest", () => {
     expect(component.prop("dataTest")).toBe(dataTest);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

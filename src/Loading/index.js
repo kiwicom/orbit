@@ -74,7 +74,7 @@ const StyledLoadingText = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextLoading};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
   margin-${left}: ${({ theme, type }) =>
   type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};

@@ -15,8 +15,8 @@ import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
+import { StyledHeading } from "../Heading";
 
 import type { Props } from "./index";
 
@@ -115,6 +115,7 @@ const StyledAlert = styled(StyledDiv)`
   color: ${getTypeToken(TOKENS.colorTextAlert)};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   box-sizing: border-box;
   margin-bottom: ${getSpacingToken};
 `;
@@ -159,9 +160,9 @@ Title.defaultProps = {
 
 const Content = styled(StyledDiv)`
   display: block;
+  width: ${({ inlineActions }) => !inlineActions && "100%"};
   margin-bottom: ${({ theme, title, inlineActions }) =>
     title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
 
   & a,
   & ${StyledTextLink} {
@@ -174,7 +175,7 @@ const Content = styled(StyledDiv)`
       color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
     }
   }
-  & ${Item}, ${StyledText} {
+  & ${Item}, ${StyledText}, ${StyledHeading} {
     color: ${getTypeToken(TOKENS.colorTextAlert)};
   }
 `;
@@ -196,8 +197,7 @@ CloseContainer.defaultProps = {
 };
 
 const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <CloseContainer hasChildren={hasChildren}>
       <ButtonLink
@@ -207,7 +207,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         icon={icon}
         type="secondary"
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={translate("button_close")}
       />
     </CloseContainer>
   );

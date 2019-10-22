@@ -45,9 +45,6 @@ describe("CallOutBanner - flat", () => {
         .text(),
     ).toBe(description);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("CallOutBanner - actionable", () => {

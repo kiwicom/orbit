@@ -24,9 +24,6 @@ describe("Icon", () => {
     expect(svg).toHaveStyleRule("vertical-align", "middle");
     expect(svg).toHaveStyleRule("fill", "currentColor");
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("Icon with custom props", () => {
@@ -59,8 +56,5 @@ describe("Icon with custom props", () => {
   });
   it("should have selected color", () => {
     expect(svg).toHaveStyleRule("color", customColor);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

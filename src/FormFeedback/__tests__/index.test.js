@@ -15,7 +15,4 @@ describe("FormFeedback", () => {
   it("should have data-test", () => {
     expect(component.find("FormFeedbackTooltip").prop("dataTest")).toBe(dataTest);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

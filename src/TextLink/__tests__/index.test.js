@@ -88,7 +88,4 @@ describe("TextLink", () => {
     expect(componentWithoutHref.render().prop("tabindex")).toBe("0");
     expect(componentWithoutHref.render().prop("role")).toBe("button");
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

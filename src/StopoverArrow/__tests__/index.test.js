@@ -20,7 +20,4 @@ describe("StopoverArrow", () => {
   it("should have styles", () => {
     expect(component).toHaveStyleRule("color", defaultTheme.orbit.paletteInkLight);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

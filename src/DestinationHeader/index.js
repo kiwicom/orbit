@@ -10,8 +10,7 @@ import BASE_URL from "./consts";
 import defaultTheme from "../defaultTheme";
 import LazyImage from "../LazyImage";
 import mq from "../utils/mediaQuery";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
 
@@ -97,14 +96,13 @@ StyledHeader.defaultProps = {
 };
 
 const DestinationHeaderGoBackButton = ({ onClick }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <ButtonLink
       size="small"
       iconLeft={<ChevronLeft />}
       onClick={onClick}
-      title={pureTranslate(dictionary, "breadcrumbs_back")}
+      title={translate("breadcrumbs_back")}
     />
   );
 };

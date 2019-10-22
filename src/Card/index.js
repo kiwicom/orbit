@@ -12,8 +12,7 @@ import Loading, { StyledLoading } from "../Loading";
 import getSpacingToken from "../common/getSpacingToken";
 import { right } from "../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props, State } from "./index";
 
@@ -35,8 +34,7 @@ const StyledChildWrapper = styled.div`
       roundedBottomBorders && getBorderRadius};
     border-bottom-right-radius: ${({ roundedBottomBorders }) =>
       roundedBottomBorders && getBorderRadius};
-    box-shadow: ${({ expanded }) =>
-      expanded && `0 4px 12px 0 rgba(23, 27, 30, 0.1)`}; //TODO Create token boxShadowCard
+    box-shadow: ${({ expanded, theme }) => expanded && theme.orbit.boxShadowActionActive};
     border-left: ${getBorder};
     border-right: ${getBorder};
     border-bottom: ${getBorder};
@@ -103,8 +101,7 @@ const StyledCloseContainer = styled.div`
 `;
 
 const CardCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <StyledCloseContainer>
       <ButtonLink
@@ -114,7 +111,7 @@ const CardCloseButton = ({ onClick, dataTest }) => {
         icon={<Close />}
         onClick={onClick}
         transparent
-        title={pureTranslate(dictionary, "button_close")}
+        title={translate("button_close")}
       />
     </StyledCloseContainer>
   );

@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import mq from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
@@ -22,22 +21,19 @@ const StyledCallOutBanner = styled.div`
   ${({ onClick }) =>
     onClick
       ? css`
-          box-shadow: 0 0 2px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 16)},
-            0 1px 4px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 12)};
+          box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
           transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
           cursor: pointer;
           :focus,
           :active,
           :hover {
-            box-shadow: 0 1px 4px 0
-                ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 16)},
-              0 4px 8px 0 ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 12)};
+            box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
             outline: none;
           }
           border: 1px solid transparent;
         `
       : css`
-          border: 1px solid rgb(232, 237, 241);
+          border: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
         `};
   ${mq.largeMobile(css`
     flex-direction: row;

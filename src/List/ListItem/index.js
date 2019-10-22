@@ -5,11 +5,21 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
-import { ListContext, getSizeToken } from "../index";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
+import { StyledText } from "../../Text";
+import { ListContext } from "../index";
 
-import type { Props } from "./index";
+import type { GetLineHeightToken, Props } from "./index";
+
+export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
+  const lineHeightTokens = {
+    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
+  };
+  return lineHeightTokens[size];
+};
 
 const getSizeTokenLabel = ({ theme, size }) => {
   const sizeTokens = {
@@ -19,9 +29,6 @@ const getSizeTokenLabel = ({ theme, size }) => {
   };
   return sizeTokens[size];
 };
-
-const calculateIconHeightFromLineHeight = ({ theme, size }) =>
-  `${Math.floor(parseInt(getSizeToken({ theme, size }), 10) * theme.orbit.lineHeightText)}px`;
 
 const getIconSizeFromType = ({ theme, type }) => {
   const tokens = {
@@ -53,11 +60,21 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
     margin: 0;
   }
 
+  ${StyledText} {
+    line-height: inherit;
+    font-size: inherit;
+  }
+
   ${({ type, theme }) =>
     type === TYPES.SEPARATED &&
     css`
       border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
       padding: ${theme.orbit.spaceXSmall};
+
+      &,
+      ${StyledText} {
+        font-weight: ${theme.orbit.fontWeightMedium};
+      }
 
       :last-child {
         border-bottom: none;
@@ -72,9 +89,14 @@ Item.defaultProps = {
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme, type }) =>
+    rtlSpacing(
+      `${type === TYPES.SEPARATED ? theme.orbit.spaceXXSmall : 0} ${theme.orbit.spaceXSmall} 0 0`,
+    )};
   flex: 0 0 auto;
-  height: ${calculateIconHeightFromLineHeight};
+  height: ${({ theme, type, size }) =>
+    type === TYPES.SEPARATED ? theme.heightIconLarge : getLineHeightToken({ theme, size })};
+
   ${StyledCarrierLogo} {
     ${getIconSizeFromType};
     img {
@@ -93,6 +115,7 @@ IconContainer.defaultProps = {
 
 const StyledLabel = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   color: ${({ theme }) => theme.orbit.colorTextSecondary};
   font-size: ${getSizeTokenLabel};
 `;
@@ -109,7 +132,7 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
   const { size, type } = useContext(ListContext);
   return (
     <Item data-test={dataTest} type={type}>
-      <IconContainer size={size} type={type}>
+      <IconContainer type={type} size={size}>
         {icon}
       </IconContainer>
       <StyledSpan>

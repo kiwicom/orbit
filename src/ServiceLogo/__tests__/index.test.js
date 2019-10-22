@@ -22,10 +22,6 @@ describe(`ServiceLogo: ${name}`, () => {
     expect(component.prop("srcSet")).toBe(`${IMAGE_PATH_RETINA} 2x`);
     expect(component.prop("alt")).toBe(name);
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe(`ServiceLogo: ${name}`, () => {
@@ -42,9 +38,5 @@ describe(`ServiceLogo: ${name}`, () => {
     expect(component.prop("srcSet")).toBe(`${IMAGE_PATH_RETINA} 2x`);
     expect(component.prop("alt")).toBe(name);
     expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

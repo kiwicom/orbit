@@ -5,15 +5,16 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import { getLineHeightToken } from "./ListItem";
 
-import type { Props, ListContextType, GetSizeToken } from "./index";
+import type { Props, ListContextType } from "./index";
 
 export const ListContext: ListContextType = React.createContext({
   size: null,
   type: null,
 });
 
-export const getSizeToken: GetSizeToken = ({ theme, size }) => {
+const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
@@ -41,7 +42,7 @@ const StyledList = styled(({ className, children, dataTest }) => (
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontfamily};
   font-size: ${getSizeToken};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${getLineHeightToken};
   color: ${getTypeToken};
   list-style: none;
   padding: 0;

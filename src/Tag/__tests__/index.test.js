@@ -38,7 +38,4 @@ describe("Tag", () => {
   it("should contain a icon", () => {
     expect(component.find("Bus").exists()).toBe(true);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

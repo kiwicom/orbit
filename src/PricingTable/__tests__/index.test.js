@@ -204,7 +204,4 @@ describe("PricingTable", () => {
         .text(),
     ).toBe(mobileDescription);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

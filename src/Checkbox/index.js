@@ -68,7 +68,7 @@ TextContainer.defaultProps = {
 const Info = styled.span`
   font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
   color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
 `;
 
 Info.defaultProps = {

@@ -6,6 +6,7 @@ export type Props = {|
   expanded?: boolean,
   label: Translation,
   children: React$Node,
+  actions?: React$Node,
   onClick?: (e: SyntheticEvent<HTMLDivElement>, state: boolean) => void | Promise<any>,
   ...Globals,
 |};

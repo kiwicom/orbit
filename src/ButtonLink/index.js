@@ -35,7 +35,7 @@ const IconContainer = styled(({ className, children }) => (
   justify-content: center;
   margin: ${getIconSpacing()};
 
-  > * {
+  > svg {
     width: ${({ sizeIcon }) => getSize(sizeIcon)};
     height: ${({ sizeIcon }) => getSize(sizeIcon)};
   }

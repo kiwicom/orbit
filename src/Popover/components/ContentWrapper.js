@@ -1,6 +1,7 @@
 // @flow
 import React, { useRef, useEffect, useContext } from "react";
 import styled, { css } from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
@@ -28,7 +29,7 @@ const StyledPopoverParent = styled.div`
   border-top-right-radius: 9px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   overflow: hidden;
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
@@ -48,6 +49,8 @@ const StyledPopoverParent = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    overflow: auto;
+    box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}
@@ -69,7 +72,7 @@ const StyledOverlay = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(23, 27, 30, 0.6); // TODO: token
+  background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
   transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   z-index: 999;
 

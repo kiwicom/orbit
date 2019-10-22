@@ -12,20 +12,20 @@ import type { Props } from "./index.js.flow";
 import STATES from "./consts";
 
 const getBoxShadow = state => ({ theme, active }) => {
-  const getActive = array => {
-    const copy = array;
-    if (active) copy.push(`inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`);
-    return copy.join(", ");
+  const getActive = shadow => {
+    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`;
+    return shadow;
   };
   if (state === STATES.HOVER) {
-    /* TODO: Add elevation token */
-    return getActive(["0 1px 4px 0 rgba(37, 42, 49, 0.16)", "0 4px 8px 0 rgba(37, 42, 49, 0.12)"]);
+    return getActive(theme.orbit.boxShadowActionActive);
   }
-  return getActive(["0 0 2px 0 rgba(37, 42, 49, 0.16)", "0 1px 4px 0 rgba(37, 42, 49, 0.12)"]);
+  return getActive(theme.orbit.boxShadowAction);
 };
+
 const StyledPricingTableItem = styled.div`
   display: flex;
   flex-grow: 1;
+  width: 100%;
   position: relative;
   background: ${({ theme }) => theme.orbit.paletteWhite};
   box-shadow: ${getBoxShadow()};
@@ -47,7 +47,7 @@ const StyledPricingTableItem = styled.div`
   ${({ featureIcon }) =>
     featureIcon &&
     css`
-      ${media.tablet(css`
+      ${media.desktop(css`
         padding-top: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
         padding-bottom: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
       `)}
@@ -63,7 +63,7 @@ const StyledBadge = styled.div`
   top: -${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
   left: 50%;
   transform: translate(-50%, 3px);
-  z-index: 10; // TODO: change for z-index framework
+  z-index: 10; /* TODO: change for z-index framework */
 `;
 
 StyledBadge.defaultProps = {
@@ -103,14 +103,14 @@ const PricingTableItem = ({
           {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
         </StyledBadge>
       )}
-      <Stack flex direction="column" spacing="condensed" tablet={{ spacing: "natural" }}>
+      <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
         {featureIcon && (
           <Stack justify="center" grow={false}>
             {featureIcon}
           </Stack>
         )}
         <Stack justify="between" direction="column">
-          <Stack spacing="tight" direction="column" flex align="stretch" tablet={{ grow: false }}>
+          <Stack spacing="tight" direction="column" flex align="stretch" desktop={{ grow: false }}>
             {name && (
               <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
                 {name}
@@ -122,7 +122,7 @@ const PricingTableItem = ({
               </Text>
             )}
             {priceBadge && (
-              <Stack justify="center" align="end" tablet={{ grow: false }}>
+              <Stack justify="center" align="end" desktop={{ grow: false }}>
                 {priceBadge}
               </Stack>
             )}

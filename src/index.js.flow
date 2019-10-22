@@ -16,6 +16,7 @@ import typeof CountryFlagType from "./CountryFlag";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof DestinationHeaderType from "./DestinationHeader";
 import typeof DestinationCardType from "./DestinationCard";
+import typeof FeatureIconType from "./FeatureIcon";
 import typeof HeadingType from "./Heading";
 import typeof HideType from "./Hide";
 import typeof InputFieldType from "./InputField";
@@ -52,6 +53,7 @@ import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
 import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
+import typeof CouponType from "./Coupon";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
 import typeof PaginationType from "./Pagination";
@@ -103,6 +105,7 @@ declare export var ChoiceGroup: ChoiceGroupType;
 declare export var CountryFlag: CountryFlagType;
 declare export var DestinationHeader: DestinationHeaderType;
 declare export var DestinationCard: DestinationCardType;
+declare export var FeatureIcon: FeatureIconType;
 
 declare export var List: ListType;
 declare export var ListItem: ListItemType;
@@ -111,6 +114,8 @@ declare export var ListChoice: ListChoiceType;
 declare export var Card: CardType;
 declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
+
+declare export var Coupon: CouponType;
 
 declare export var Sticky: StickyType;
 declare export var Portal: PortalType;

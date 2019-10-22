@@ -17,8 +17,7 @@ import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
-import { pureTranslate } from "../Translate";
-import useDictionary from "../hooks/useDictionary";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props, State } from "./index";
 
@@ -132,7 +131,7 @@ const CloseContainer = styled.div`
   height: 52px;
   width: 100%;
   max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
-  box-shadow: ${({ scrolled }) => scrolled && `0 2px 4px 0 rgba(23, 27, 30, 0.1)`};
+  box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.boxShadowFixed};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
   border-top-left-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "9px"}; // TODO: create token
@@ -197,7 +196,7 @@ const ModalWrapperContent = styled.div`
   bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
     `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
       (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowModal};
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -209,8 +208,8 @@ const ModalWrapperContent = styled.div`
         bottom: 0;
         padding: ${theme.orbit.spaceMedium};
         box-shadow: ${fullyScrolled
-          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, 0 -2px 4px 0 rgba(23, 27, 30, 0)`
-          : `inset 0 0 0 transparent, 0 -2px 4px 0 rgba(23, 27, 30, 0.1)`};
+          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.boxShadowFixedReverse}`
+          : `inset 0 0 0 transparent, ${theme.orbit.boxShadowFixedReverse}`};
         position: fixed;
         transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
       }
@@ -323,8 +322,7 @@ ModalWrapperContent.defaultProps = {
 };
 
 const ModalCloseButton = ({ onClick, dataTest }) => {
-  const dictionary = useDictionary();
-
+  const translate = useTranslate();
   return (
     <ButtonLink
       onClick={onClick}
@@ -333,7 +331,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       transparent
       dataTest={dataTest}
       type="secondary"
-      title={pureTranslate(dictionary, "button_close")}
+      title={translate("button_close")}
     />
   );
 };
@@ -442,9 +440,15 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     this.decideFixedFooter();
   };
 
-  resolveAndSetStates = (target: HTMLElement, fullScrollOffset: number, fixCloseOffset: number) => {
+  resolveAndSetStates = (
+    target: HTMLElement,
+    fullScrollOffset: number,
+    fixCloseOffset: number,
+    scrollBegin: ?number,
+    mobile?: boolean,
+  ) => {
     this.setState({
-      scrolled: target.scrollTop >= this.offset,
+      scrolled: target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0),
       fixedClose: target.scrollTop >= fixCloseOffset,
       fullyScrolled:
         this.props.fixedFooter &&
@@ -453,15 +457,32 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     });
   };
 
+  getScrollTopPoint = (mobile?: boolean) => {
+    const content = this.modalContent.current;
+    if (content) {
+      const headingEl = content.querySelector(`${StyledHeading}`);
+      if (headingEl) {
+        const { top } = headingEl.getBoundingClientRect();
+        return top;
+      }
+      if (mobile) {
+        return 40;
+      }
+      const { top } = content.getBoundingClientRect();
+      return top;
+    }
+    return null;
+  };
+
   handleMobileScroll = (ev: Event) => {
     if (ev.target instanceof HTMLDivElement && ev.target === this.modalContent.current) {
-      this.resolveAndSetStates(ev.target, 10, 1);
+      this.resolveAndSetStates(ev.target, 10, 1, this.getScrollTopPoint(true), true);
     }
   };
 
   handleScroll = (ev: Event) => {
     if (ev.target instanceof HTMLDivElement && ev.target === this.modalBody.current) {
-      this.resolveAndSetStates(ev.target, 40, 40);
+      this.resolveAndSetStates(ev.target, 40, 40, this.getScrollTopPoint());
     }
   };
 

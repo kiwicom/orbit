@@ -17,13 +17,7 @@ describe("ButtonGroup", () => {
       <Button icon={<Airplane />}>{children}</Button>
     </ButtonGroup>,
   );
-  it("first child should match snapshot", () => {
-    expect(component.find("Button").first()).toMatchSnapshot();
-  });
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

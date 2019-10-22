@@ -17,11 +17,13 @@ export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
+export { default as FeatureIcon } from "./FeatureIcon";
 
 // Card
 export { default as Card } from "./Card";
 export { default as CardHeader } from "./Card/CardHeader";
 export { default as CardSection } from "./Card/CardSection";
+export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
 export { default as DestinationCard } from "./DestinationCard";
 

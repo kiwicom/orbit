@@ -33,24 +33,13 @@ describe("Table", () => {
       </TableBody>
     </Table>,
   );
+
   it("should have props", () => {
     expect(component.find("Table__StyledTable").prop("compact")).toBe(compact);
   });
+
   it("should have rendered dataTest", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should change states display shadows", () => {
-    const showShadows = true;
-    const showLeft = true;
-    const showRight = true;
-    const instance = component.instance();
-    instance.setState({ showShadows, showLeft, showRight });
-    expect(component.state("showShadows")).toEqual(showShadows);
-    expect(component.state("showLeft")).toEqual(showLeft);
-    expect(component.state("showRight")).toEqual(showRight);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });
 

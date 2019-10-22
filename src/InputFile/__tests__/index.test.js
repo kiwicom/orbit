@@ -99,9 +99,6 @@ describe(`InputFile with help`, () => {
     closeButton.simulate("click", { preventDefault() {} });
     expect(onRemoveFile).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 describe(`InputFiInputFile with error`, () => {
   const component = shallow(
@@ -113,9 +110,5 @@ describe(`InputFiInputFile with error`, () => {
   });
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback`).exists()).toBe(true);
-  });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

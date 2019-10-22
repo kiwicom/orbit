@@ -79,9 +79,6 @@ describe("Grid with basic props", () => {
       modifier: "& > *:nth-child(4)",
     });
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("Grid with mediaQueries", () => {

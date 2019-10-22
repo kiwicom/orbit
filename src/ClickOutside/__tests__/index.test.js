@@ -72,11 +72,4 @@ describe("ClickOutside shallow", () => {
 
     expect(onClickOutside).not.toBeCalled();
   });
-  it("should match snapshot", () => {
-    const onClickOutside = jest.fn();
-    const wrapper = shallow(
-      <ClickOutside onClickOutside={onClickOutside}>Lorem ipsum</ClickOutside>,
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
 });

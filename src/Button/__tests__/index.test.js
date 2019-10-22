@@ -96,7 +96,4 @@ describe("Button with icon", () => {
     expect(button.find("Airplane").exists()).toBe(true);
     expect(button.find("ChevronDown").exists()).toBe(true);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

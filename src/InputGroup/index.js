@@ -29,6 +29,11 @@ const getToken = name => ({ theme, size }) => {
   return tokens[name][size];
 };
 
+const getFakeGroupMarginTop = ({ label, theme }) => {
+  if (!label) return false;
+  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
+};
+
 const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
   width: 100%;
   position: absolute;
@@ -54,7 +59,7 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: ${({ label }) => label && "23px"};
+  margin-top: ${getFakeGroupMarginTop};
 
   &:hover {
     box-shadow: inset 0 0 0

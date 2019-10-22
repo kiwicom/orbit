@@ -18,7 +18,7 @@ Table below contains all types of the props available in the NavigationList comp
 | **children**  | `React.Node`                      |                 | The content of the NavigationList.
 | dataTest      | `string`                          |                 | Optional prop for testing purposes.
 | title         | `Translation`                     |                 | Additional title of the NavigationList that will appear above its children.
-| type          | [`enum`](#enum)                   | `"navigation"`  | Additional title of the NavigationList that will appear above its children.
+| type          | [`enum`](#enum)                   | `"navigation"`  | Visual type of the NavigationList.
 
 ### enum
 

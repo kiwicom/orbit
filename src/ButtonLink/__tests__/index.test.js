@@ -71,9 +71,6 @@ describe("ButtonLink with Icon", () => {
   it("should be role", () => {
     expect(button.prop("role")).toBe(role);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("ButtonLink with Icon", () => {
@@ -107,8 +104,5 @@ describe("ButtonLink with Icon", () => {
   it("should contain icons", () => {
     expect(button.find("Airplane").exists()).toBe(true);
     expect(button.find("ChevronDown").exists()).toBe(true);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

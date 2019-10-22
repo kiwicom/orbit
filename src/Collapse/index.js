@@ -9,6 +9,7 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
+import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -28,8 +29,8 @@ const StyledCollapse = styled.div`
   width: 100%;
   display: block;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXLarge};
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXLarge};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
   :last-child,
   :only-child {
     border: 0;
@@ -55,6 +56,24 @@ StyledCollapseChildren.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledRightContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  > * {
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  }
+`;
+
+StyledRightContentWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledActionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Collapse = ({
   initialExpanded = false,
   expanded: expandedProp,
@@ -62,6 +81,7 @@ const Collapse = ({
   children,
   dataTest,
   onClick,
+  actions,
 }: Props) => {
   const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
   const [expandedState, setExpandedState] = React.useState(
@@ -119,12 +139,21 @@ const Collapse = ({
             {label}
           </Heading>
           {/* TODO: dictionary for title */}
-          <ButtonLink
-            iconLeft={<AnimatedIcon expanded={expanded} />}
-            transparent
-            size="small"
-            type="secondary"
-          />
+          <StyledRightContentWrapper>
+            <StyledActionsWrapper
+              onClick={ev => {
+                ev.stopPropagation();
+              }}
+            >
+              {actions}
+            </StyledActionsWrapper>
+            <ButtonLink
+              iconLeft={<AnimatedIcon expanded={expanded} />}
+              transparent
+              size="small"
+              type="secondary"
+            />
+          </StyledRightContentWrapper>
         </Stack>
       </StyledCollapseLabel>
       <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>

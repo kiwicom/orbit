@@ -1,0 +1,7 @@
+// @flow
+import type { Theme } from "../../defaultTheme";
+import type { Spacing } from "../index";
+
+export type GetStackSpacingToken = (Theme, spacing: ?Spacing) => ?string;
+
+declare export default GetStackSpacingToken;

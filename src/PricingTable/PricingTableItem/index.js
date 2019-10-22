@@ -103,14 +103,20 @@ const PricingTableItem = ({
           {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
         </StyledBadge>
       )}
-      <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
+      <Stack flex direction="column" spacing="XSmall" desktop={{ spacing: "medium" }}>
         {featureIcon && (
           <Stack justify="center" grow={false}>
             {featureIcon}
           </Stack>
         )}
         <Stack justify="between" direction="column">
-          <Stack spacing="tight" direction="column" flex align="stretch" desktop={{ grow: false }}>
+          <Stack
+            spacing="XXSmall"
+            direction="column"
+            flex
+            align="stretch"
+            desktop={{ grow: false }}
+          >
             {name && (
               <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
                 {name}

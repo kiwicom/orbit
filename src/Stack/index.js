@@ -43,7 +43,7 @@ const Stack = (props: Props) => {
   const {
     dataTest,
     inline = false,
-    spacing = SPACINGS.NATURAL,
+    spacing = SPACINGS.MEDIUM,
     align = ALIGNS.START,
     justify = JUSTIFY.START,
     grow = true,

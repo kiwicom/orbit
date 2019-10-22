@@ -121,7 +121,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", "auto");
       const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const mediumMobile = {
         inline,
@@ -159,7 +159,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", "auto");
       const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const largeMobile = {
         inline,
@@ -197,7 +197,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", "auto");
       const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const tablet = {
         inline,
@@ -235,7 +235,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", "auto");
       const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const desktop = {
         inline,
@@ -273,7 +273,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", "auto");
       const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.COMFY);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const largeDesktop = {
         inline,
@@ -303,8 +303,8 @@ storiesOf("Stack", module)
   .add(
     "Nested example",
     () => (
-      <Stack spacing="comfy" direction="column" align="start">
-        <Stack spacing="condensed" direction="row" inline>
+      <Stack spacing="large" direction="column" align="start">
+        <Stack spacing="XSmall" direction="row" inline>
           <Text weight="bold">email@gmail.com</Text>
           <Edit size="small" color="success" />
         </Stack>
@@ -335,7 +335,7 @@ storiesOf("Stack", module)
       const basis = text("Basis", undefined);
       const align = select("Align", [null, ...Object.values(ALIGNS)]);
       const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.EXTRATIGHT);
+      const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXS);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const mediumMobile = object("mediumMobile", {
         direction: DIRECTIONS.COLUMN,
@@ -344,7 +344,7 @@ storiesOf("Stack", module)
         align: JUSTIFY.END,
       });
       const tablet = object("tablet", {
-        spacing: SPACINGS.CONDENSED,
+        spacing: SPACINGS.XS,
       });
       const desktop = object("desktop", {
         justify: JUSTIFY.BETWEEN,
@@ -352,7 +352,7 @@ storiesOf("Stack", module)
         align: ALIGNS.START,
       });
       const largeDesktop = object("largeDesktop", {
-        spacing: SPACINGS.LOOSE,
+        spacing: SPACINGS.XL,
       });
 
       return (
@@ -996,8 +996,8 @@ storiesOf("Stack", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Stack spacing="comfy" direction="column" align="start">
-          <Stack spacing="condensed" direction="row" inline>
+        <Stack spacing="large" direction="column" align="start">
+          <Stack spacing="XSmall" direction="row" inline>
             <Text weight="bold">email@gmail.com</Text>
             <Edit size="small" color="success" />
           </Stack>

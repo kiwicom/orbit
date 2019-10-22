@@ -20,12 +20,12 @@ const defaultValues = {
   justify: "start",
   shrink: false,
   spaceAfter: undefined,
-  spacing: "natural",
+  spacing: "medium",
   wrap: false,
 };
 
 describe("Default Stack", () => {
-  const spacing = SPACINGS.EXTRALOOSE;
+  const spacing = SPACINGS.XXL;
   const spaceAfter = SPACINGS_AFTER.LARGE;
   const dataTest = "test";
   const component = mount(
@@ -59,15 +59,11 @@ describe("Default Stack", () => {
   it("should contain styles", () => {
     expect(stack).toHaveStyleRule("width", "100%");
     expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceLarge);
-    expect(stack).toHaveStyleRule("margin", "0 0 36px 0!important", {
+    expect(stack).toHaveStyleRule("margin", "0 0 40px 0!important", {
       modifier: "& > *",
     });
     expect(stack).toHaveStyleRule("margin", "0 !important", {
       modifier: "& > *:last-child",
-    });
-    expect(stack).toHaveStyleRule("margin", "0 0 40px 0!important", {
-      media: getBreakpointWidth(QUERIES.DESKTOP, defaultTheme),
-      modifier: "& > *",
     });
   });
 });
@@ -110,7 +106,7 @@ describe("Stack with enabled flex", () => {
   const align = ALIGNS.CENTER;
   const justify = JUSTIFY.CENTER;
   const spaceAfter = SPACINGS_AFTER.LARGE;
-  const spacing = SPACINGS.NATURAL;
+  const spacing = SPACINGS.MEDIUM;
   const desktop = {
     inline: true,
     direction: DIRECTIONS.COLUMN,
@@ -121,7 +117,7 @@ describe("Stack with enabled flex", () => {
     align: ALIGNS.START,
     justify: JUSTIFY.END,
     spaceAfter: SPACINGS_AFTER.SMALL,
-    spacing: SPACINGS.COMPACT,
+    spacing: SPACINGS.SMALL,
   };
 
   const component = mount(
@@ -228,7 +224,7 @@ describe("Stack with only desktop properties", () => {
     align: ALIGNS.START,
     justify: JUSTIFY.END,
     spaceAfter: SPACINGS_AFTER.SMALL,
-    spacing: SPACINGS.COMPACT,
+    spacing: SPACINGS.SMALL,
   };
 
   const component = mount(
@@ -293,11 +289,11 @@ describe("Stack with mobile and some desktop properties", () => {
   const align = ALIGNS.END;
   const justify = JUSTIFY.END;
   const spaceAfter = SPACINGS_AFTER.LARGE;
-  const spacing = SPACINGS.EXTRALOOSE;
+  const spacing = SPACINGS.XXL;
   const desktop = {
     shrink: false,
     direction: DIRECTIONS.COLUMN,
-    spacing: SPACINGS.LOOSE,
+    spacing: SPACINGS.XL,
     basis: theme => `calc(25% - ${theme.orbit.spaceLarge})`,
   };
 
@@ -334,7 +330,7 @@ describe("Stack with mobile and some desktop properties", () => {
     expect(stack).toHaveStyleRule("align-items", "flex-end");
     expect(stack).toHaveStyleRule("align-content", "flex-end");
     expect(stack).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceLarge);
-    expect(stack).toHaveStyleRule("margin", "0 36px 0 0!important", {
+    expect(stack).toHaveStyleRule("margin", "0 40px 0 0!important", {
       modifier: "& > *",
     });
   });
@@ -360,9 +356,9 @@ describe("Stack with every media query", () => {
       direction={DIRECTIONS.ROW}
       spacing={SPACINGS.NONE}
       mediumMobile={{ direction: DIRECTIONS.COLUMN }}
-      largeMobile={{ spacing: SPACINGS.LOOSE }}
+      largeMobile={{ spacing: SPACINGS.XL }}
       tablet={{ direction: DIRECTIONS.ROW }}
-      desktop={{ spacing: SPACINGS.EXTRATIGHT }}
+      desktop={{ spacing: SPACINGS.XXXS }}
       largeDesktop={{ direction: DIRECTIONS.COLUMN }}
     >
       <InputField type="password" label="Password" help="You need some help!" />
@@ -386,7 +382,7 @@ describe("Stack with every media query", () => {
     });
   });
   it("should contain largeMobile styles", () => {
-    expect(stack).toHaveStyleRule("margin", "0 0 28px 0!important", {
+    expect(stack).toHaveStyleRule("margin", "0 0 32px 0!important", {
       media: getBreakpointWidth(QUERIES.LARGEMOBILE, defaultTheme),
       modifier: "& > *",
     });
@@ -420,11 +416,11 @@ describe("Stack with every media query and reverse directions", () => {
   const component = mount(
     <Stack
       direction={DIRECTIONS.ROW}
-      spacing={SPACINGS.TIGHT}
+      spacing={SPACINGS.XXS}
       mediumMobile={{ direction: DIRECTIONS.COLUMNREVERSE }}
-      largeMobile={{ spacing: SPACINGS.LOOSE }}
+      largeMobile={{ spacing: SPACINGS.XL }}
       tablet={{ direction: DIRECTIONS.ROWREVERSE }}
-      desktop={{ spacing: SPACINGS.EXTRATIGHT }}
+      desktop={{ spacing: SPACINGS.XXXS }}
       largeDesktop={{ direction: DIRECTIONS.COLUMN }}
     >
       <InputField type="password" label="Password" help="You need some help!" />
@@ -448,7 +444,7 @@ describe("Stack with every media query and reverse directions", () => {
     });
   });
   it("should contain largeMobile styles", () => {
-    expect(stack).toHaveStyleRule("margin", "28px 0 0 0!important", {
+    expect(stack).toHaveStyleRule("margin", "32px 0 0 0!important", {
       media: getBreakpointWidth(QUERIES.LARGEMOBILE, defaultTheme),
       modifier: "& > *",
     });

@@ -2,10 +2,12 @@
 import type { Direction, Props, Spacing, SmallMobile } from "../index";
 import type { Devices } from "../../utils/mediaQuery/index";
 
-export type GetProperty = (
-  property: "spacing" | "direction",
-  {| index: number, devices: Devices[] |},
-  { ...Props, ...SmallMobile },
-) => ?Direction | ?Spacing;
+type GetProperty<S> = ({| index: number, devices: Devices[] |}, { ...Props, ...SmallMobile }) => ?S;
 
-declare export default GetProperty;
+export type GetDirectionProperty = GetProperty<Direction>;
+
+export type GetSpacingProperty = GetProperty<Spacing>;
+
+declare export var getDirectionProperty: GetDirectionProperty;
+
+declare export var getSpacingProperty: GetSpacingProperty;

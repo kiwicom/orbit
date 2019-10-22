@@ -31,9 +31,9 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
         flex
         grow
         spaceAfter="medium"
-        spacing="condensed"
+        spacing="XSmall"
         align="stretch"
-        desktop={{ spacing: "natural", spaceAfter: "none" }}
+        desktop={{ spacing: "medium", spaceAfter: "none" }}
       >
         {isDesktop
           ? children
@@ -47,7 +47,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
             )}
       </Stack>
       {!isDesktop && children && (
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           {React.Children.map(children, (child, i) => {
             if (i === activeElement) {
               return (

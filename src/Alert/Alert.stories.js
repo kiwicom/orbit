@@ -163,7 +163,7 @@ storiesOf("Alert", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <div>{message}</div>
             <List>
               <ListItem>
@@ -194,7 +194,7 @@ storiesOf("Alert", module)
           closable
           onClose={action("Close")}
         >
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <Text>
               Requirements found here are for reference purposes only. Contact the embassy or your
               foreign ministry for more information.

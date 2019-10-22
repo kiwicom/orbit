@@ -1,4 +1,0 @@
-// @flow
-export type GetMobileSpacing = () => { [key: string]: string };
-
-declare export default GetMobileSpacing;

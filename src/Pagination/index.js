@@ -31,7 +31,7 @@ const Pagination = ({
   const pageChanged = handlePageChange(onPageChange, pageCount);
 
   return (
-    <Stack direction="row" spacing="tight" align="center" dataTest={dataTest} element="nav">
+    <Stack direction="row" spacing="XXSmall" align="center" dataTest={dataTest} element="nav">
       {selectedPage !== 1 && (
         <>
           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
@@ -55,7 +55,7 @@ const Pagination = ({
         </>
       )}
       <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-        <Stack direction="row" spacing="tight" align="center">
+        <Stack direction="row" spacing="XXSmall" align="center">
           {pageCount <= MAXIMUM_PAGES ? (
             <Pages
               pageCount={pageCount}

@@ -1,27 +1,25 @@
 // @flow
 import { css } from "styled-components";
 
-import getDesktopSpacing from "./getDesktopSpacing";
 import { rtlSpacing } from "../../utils/rtl";
 import { SPACINGS } from "../consts";
 import isMobileViewport from "./isMobileViewport";
-import getMobileSpacing from "./getMobileSpacing";
-import getProperty from "./getProperty";
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import getStackSpacingToken from "./getStackSpacingToken";
+import { getDirectionProperty, getSpacingProperty } from "./getProperty";
 import type { GetChildrenMargin } from "./getChildrenMargin";
 import getDirectionSpacingTemplate from "./getDirectionSpacingTemplate";
 
 const getChildrenMargin: GetChildrenMargin = ({ viewport, index, devices }) => props => {
-  if (props[viewport] || viewport === QUERIES.DESKTOP) {
-    const spacing = getProperty("spacing", { index, devices }, props);
-    if (spacing === SPACINGS.NONE) return false;
+  if (props[viewport]) {
+    const spacing = getSpacingProperty({ index, devices }, props);
+    if (spacing === SPACINGS.NONE) return null;
+    const spacingToken = getStackSpacingToken(props.theme, spacing);
     const isMobile = isMobileViewport(viewport);
-    const spacingTokens = isMobile ? getMobileSpacing() : getDesktopSpacing();
-    const direction = getProperty("direction", { index, devices }, props);
+    const direction = getDirectionProperty({ index, devices }, props);
     const margin =
-      spacing &&
+      spacingToken &&
       direction &&
-      String(getDirectionSpacingTemplate(direction)).replace("__spacing__", spacingTokens[spacing]);
+      String(getDirectionSpacingTemplate(direction)).replace("__spacing__", spacingToken);
     return css`
       & > * {
         margin: ${margin && rtlSpacing(margin)}!important;
@@ -34,7 +32,7 @@ const getChildrenMargin: GetChildrenMargin = ({ viewport, index, devices }) => p
       }
     `;
   }
-  return false;
+  return null;
 };
 
 export default getChildrenMargin;

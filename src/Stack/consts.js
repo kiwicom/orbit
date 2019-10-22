@@ -24,12 +24,12 @@ export const JUSTIFY = {
 
 export const SPACINGS = {
   NONE: "none",
-  EXTRATIGHT: "extraTight",
-  TIGHT: "tight",
-  CONDENSED: "condensed",
-  COMPACT: "compact",
-  NATURAL: "natural",
-  COMFY: "comfy",
-  LOOSE: "loose",
-  EXTRALOOSE: "extraLoose",
+  XXXS: "XXXSmall",
+  XXS: "XXSmall",
+  XS: "XSmall",
+  SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
+  XL: "XLarge",
+  XXL: "XXLarge",
 };

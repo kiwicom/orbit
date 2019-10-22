@@ -1,15 +1,24 @@
 // @flow
-import type { GetProperty } from "./getProperty";
+import type { GetDirectionProperty, GetSpacingProperty } from "./getProperty";
 
-const getProperty: GetProperty = (property, { index, devices }, props) => {
+export const getDirectionProperty: GetDirectionProperty = ({ index, devices }, props) => {
   const viewport = props && props[devices[index]];
-  if (viewport && viewport[property]) {
-    return viewport[property];
+  if (viewport && viewport.direction) {
+    return viewport.direction;
   }
   if (index !== 0) {
-    return getProperty(property, { index: index - 1, devices }, props);
+    return getDirectionProperty({ index: index - 1, devices }, props);
   }
   return null;
 };
 
-export default getProperty;
+export const getSpacingProperty: GetSpacingProperty = ({ index, devices }, props) => {
+  const viewport = props && props[devices[index]];
+  if (viewport && viewport.spacing) {
+    return viewport.spacing;
+  }
+  if (index !== 0) {
+    return getSpacingProperty({ index: index - 1, devices }, props);
+  }
+  return null;
+};

@@ -18,6 +18,8 @@ const StyledNavigationListItem = styled(
     return <Component data-test={dataTest} type={!props.href ? "button" : undefined} {...props} />;
   },
 )`
+  display: flex;
+  text-decoration: none;
   position: relative;
   color: ${({ theme, selected, selectable }) =>
     selectable && selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};

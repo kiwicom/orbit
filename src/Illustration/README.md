@@ -26,6 +26,7 @@ Table below contains all types of the props available in Illustration component.
 | `"AirportTransport"`          | `"large"`      |
 | `"AirportTransportTaxi"`      |
 | `"AirportShuttle"`            |
+| `"AppQRCode"`                 |
 | `"BaggageDrop"`               |
 | `"BGYFastTrack"`              |
 | `"Boarding"`                  |

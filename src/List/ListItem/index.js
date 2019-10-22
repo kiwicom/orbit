@@ -8,7 +8,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
-import { ListContext } from "../index";
+import ListContext from "../ListContext";
 
 import type { GetLineHeightToken, Props } from "./index";
 

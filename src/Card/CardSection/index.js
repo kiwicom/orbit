@@ -7,8 +7,9 @@ import ChevronDown from "../../icons/ChevronDown";
 import { getSize } from "../../Icon";
 import { ICON_SIZES } from "../../Icon/consts";
 import media from "../../utils/mediaQuery";
+import CardSectionContext from "./CardSectionContext";
 
-import type { ContextType, Props } from "./index";
+import type { Props } from "./index";
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;
@@ -64,13 +65,6 @@ const StyledCardSectionHeader = styled.div`
 StyledCardSectionHeader.defaultProps = {
   theme: defaultTheme,
 };
-
-export const CardSectionContext: React.Context<ContextType> = React.createContext({
-  expandable: false,
-  expanded: false,
-  handleToggleSection: () => {},
-  onKeyDownHandler: () => {},
-});
 
 class CardSection extends React.Component<any, Props> {
   componentDidMount() {

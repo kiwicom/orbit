@@ -3,7 +3,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
-import { CardSectionContext } from "../index";
+import CardSectionContext from "../CardSectionContext";
 import Slide, { StyledSlide } from "../../../utils/Slide";
 import media from "../../../utils/mediaQuery";
 

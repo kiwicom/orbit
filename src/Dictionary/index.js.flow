@@ -5,8 +5,6 @@ export type Translations = {
   [key: string]: string,
 };
 
-export type DictionaryContextType = React.Context<Translations>;
-
 export type Props = {
   +values: Translations,
   +children: React$Node,
@@ -15,7 +13,5 @@ export type Props = {
 type WithDictionary<A, B> = (a: React.ComponentType<A>) => React.ComponentType<B>;
 
 declare export default React$ComponentType<Props>;
-
-declare export var DictionaryContext: DictionaryContextType;
 
 declare export var withDictionary: WithDictionary<any, any>;

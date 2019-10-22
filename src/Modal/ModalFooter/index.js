@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -8,7 +8,7 @@ import defaultTheme from "../../defaultTheme";
 import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
-import { withModalContext } from "../ModalContext";
+import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
@@ -46,9 +46,12 @@ export const StyledModalFooter = styled.div`
 
   ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
-    // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
-    border-bottom-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
+    ${({ isMobileFullPage }) =>
+      !isMobileFullPage &&
+      css`
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+      `};
   `)};
 
   ${StyledChild}:last-of-type {
@@ -60,74 +63,57 @@ StyledModalFooter.defaultProps = {
   theme: defaultTheme,
 };
 
-class ModalFooter extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.callContextFunctions();
-  }
+const getChildFlex = (flex, key) =>
+  Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
-  componentDidUpdate(prevProps: Props) {
-    if (prevProps !== this.props) {
-      this.callContextFunctions();
-
-      const { manageFocus } = this.props;
-
-      if (manageFocus) {
-        manageFocus();
-      }
+/*
+  Until flow-bin@0.104.0 it's impossible to assign default values to union types,
+  therefore, it's bypassed via declaring it in on this component
+ */
+const WrappedChildren = ({ children, flex = "0 1 auto" }) => {
+  if (!Array.isArray(children)) return children;
+  return React.Children.map(children, (child, key) => {
+    if (child) {
+      return (
+        <StyledChild flex={getChildFlex(flex, key)}>
+          {React.cloneElement(child, {
+            ref: child.ref ? node => {
+              // Call the original ref, if any
+              const { ref } = child;
+              if (typeof ref === "function") {
+                ref(node);
+              } else if (ref !== null) {
+                ref.current = node;
+              }
+            } : null,
+          })}
+        </StyledChild>
+      );
     }
-  }
+    return null;
+  });
+};
 
-  callContextFunctions = () => {
-    const { setDimensions, decideFixedFooter } = this.props;
-    if (setDimensions) {
-      setDimensions();
-    }
-    if (decideFixedFooter) {
-      decideFixedFooter();
-    }
-  };
+const ModalFooter = ({ dataTest, children, flex }: Props) => {
+  const { setDimensions, decideFixedFooter, manageFocus, isMobileFullPage } = useContext(
+    ModalContext,
+  );
 
-  renderWrappedChildren = () => {
-    const { children, flex = "0 1 auto" } = this.props;
+  const callContextFunctions = useCallback(() => {
+    if (setDimensions) setDimensions();
+    if (decideFixedFooter) decideFixedFooter();
+  }, [decideFixedFooter, setDimensions]);
 
-    const getChildFlex = key =>
-      Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-    return React.Children.map(children, (child, key) => {
-      if (child) {
-        return (
-          <StyledChild flex={getChildFlex(key)}>
-            {React.cloneElement(child, {
-              ref: child.ref
-                ? node => {
-                    // Call the original ref, if any
-                    const { ref } = child;
-                    if (typeof ref === "function") {
-                      ref(node);
-                    } else if (ref !== null) {
-                      ref.current = node;
-                    }
-                  }
-                : null,
-            })}
-          </StyledChild>
-        );
-      }
-      return null;
-    });
-  };
+  useEffect(() => {
+    callContextFunctions();
+    if (manageFocus) manageFocus();
+  }, [callContextFunctions, manageFocus]);
 
-  render() {
-    const { children, dataTest, isMobileFullPage } = this.props;
-    return (
-      <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
-        {Array.isArray(children) ? this.renderWrappedChildren() : children}
-      </StyledModalFooter>
-    );
-  }
-}
+  return (
+    <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
+      <WrappedChildren flex={flex}>{children}</WrappedChildren>
+    </StyledModalFooter>
+  );
+};
 
-const DecoratedComponent = withModalContext<Props>(ModalFooter);
-
-// $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalFooter";
-export default DecoratedComponent;
+export default ModalFooter;

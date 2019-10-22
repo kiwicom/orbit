@@ -52,7 +52,4 @@ describe("ListChoice", () => {
     component.simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

@@ -87,9 +87,6 @@ describe(`Textarea with help`, () => {
     area.simulate("blur");
     expect(onBlur).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 describe(`Textarea number with error and help`, () => {
   const size = SIZE_OPTIONS.SMALL;
@@ -118,8 +115,5 @@ describe(`Textarea number with error and help`, () => {
   });
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

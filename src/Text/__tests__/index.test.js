@@ -35,7 +35,4 @@ describe("Text", () => {
     const mounted = mount(<Text spaceAfter={spaceAfter}>{text}</Text>);
     expect(mounted).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import InputStepper from "../index";
 import { SIZE_OPTIONS } from "../../InputField/consts";
@@ -64,27 +64,5 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     expect(input.prop("minValue")).toBe(minValue);
     expect(input.prop("required")).toBe(required);
     expect(inputFieldInput.render().prop("tabindex")).toBe(tabIndex);
-  });
-  const shallowed = shallow(
-    <InputStepper
-      size={size}
-      label={label}
-      defaultValue={defaultValue}
-      step={step}
-      help={help}
-      error={error}
-      name={name}
-      disabled={disabled}
-      maxValue={maxValue}
-      minValue={minValue}
-      tabIndex={tabIndex}
-      required={required}
-      onChange={onChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-    />,
-  );
-  it("should match snapshot", () => {
-    expect(shallowed).toMatchSnapshot();
   });
 });

@@ -84,10 +84,6 @@ describe("Large Modal", () => {
     closeButton.simulate("click");
     expect(onClose).toHaveBeenCalled();
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("Modal with ModalSection", () => {

@@ -70,9 +70,6 @@ describe("Default Stack", () => {
       modifier: "& > *",
     });
   });
-  it("should match snapshot", () => {
-    expect(stack).toMatchSnapshot();
-  });
 });
 
 describe("Stack with flex prop", () => {
@@ -100,9 +97,6 @@ describe("Stack with flex prop", () => {
     expect(stack).toHaveStyleRule("margin", "0 16px 0 0!important", {
       modifier: "& > *",
     });
-  });
-  it("should match snapshot", () => {
-    expect(stack).toMatchSnapshot();
   });
 });
 
@@ -220,9 +214,6 @@ describe("Stack with enabled flex", () => {
       media: getBreakpointWidth(QUERIES.DESKTOP, defaultTheme),
       modifier: "& > *",
     });
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });
 

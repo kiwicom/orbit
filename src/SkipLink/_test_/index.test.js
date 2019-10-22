@@ -31,8 +31,4 @@ describe("SkipLink", () => {
         .exists(),
     ).toEqual(true);
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

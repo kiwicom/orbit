@@ -29,9 +29,6 @@ describe("Histogram in Slider", () => {
       expect(node.prop("active")).toBe(dataActive[index]);
     });
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
   it("should render loading", () => {
     component.setProps({ data: undefined, loading: true, loadingText: "Loading..." });
     expect(

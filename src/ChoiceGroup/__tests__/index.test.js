@@ -56,9 +56,6 @@ describe("RadioGroup", () => {
     instance.handleChange(ev);
     expect(onChange).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("RadioGroup Filters", () => {
@@ -98,8 +95,5 @@ describe("RadioGroup Filters", () => {
     const ev = { persist: () => {}, target: <button type="button">Only</button> };
     instance.handleChange(ev);
     expect(onChange).toHaveBeenCalled();
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

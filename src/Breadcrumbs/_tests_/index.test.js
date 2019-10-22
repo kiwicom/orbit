@@ -34,9 +34,6 @@ describe("Breadcrumbs", () => {
     component.find("GoBackButton").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });
 
 describe("Breadcrumbs", () => {
@@ -88,8 +85,5 @@ describe("Breadcrumbs", () => {
         .find("meta")
         .prop("content"),
     ).toBe(2);
-  });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

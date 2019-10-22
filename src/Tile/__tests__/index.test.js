@@ -27,10 +27,6 @@ describe("Tile Default", () => {
   const shallowedComponent = shallow(component);
   const mountedComponent = mount(component);
 
-  it("should match snapshot", () => {
-    expect(shallowedComponent).toMatchSnapshot();
-  });
-
   it("should contain icon, title and description", () => {
     const tileHeader = mountedComponent.find("TileHeader");
     expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);

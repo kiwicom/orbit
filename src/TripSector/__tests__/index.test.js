@@ -49,8 +49,4 @@ describe("TripSector", () => {
     expect(component.find("TripSegment").exists()).toBe(true);
     expect(component.find("TripLayover").exists()).toBe(true);
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

@@ -7,10 +7,6 @@ import TYPE_OPTIONS from "../consts";
 
 describe("Loading", () => {
   const dataTest = "test";
-  it("should match snapshot", () => {
-    const component = shallow(<Loading />);
-    expect(component).toMatchSnapshot();
-  });
   it("should render type", () => {
     const type = TYPE_OPTIONS.BOX_LOADER;
     const component = shallow(<Loading type={type} />);

@@ -494,7 +494,4 @@ describe("Range Slider in render", () => {
       expect(node.prop("value")).toEqual([1, 24]);
     });
   });
-  test("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

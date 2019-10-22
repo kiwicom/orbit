@@ -54,7 +54,4 @@ describe(`Default CheckBox`, () => {
     checkbox.simulate("change");
     expect(onChange).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

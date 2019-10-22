@@ -24,7 +24,4 @@ describe("NotificationBadge", () => {
     expect(component.prop("type")).toBe(type);
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

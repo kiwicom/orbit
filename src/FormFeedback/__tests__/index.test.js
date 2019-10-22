@@ -11,7 +11,4 @@ describe("FormFeedback", () => {
   it("should have data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
 });

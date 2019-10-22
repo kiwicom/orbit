@@ -50,9 +50,6 @@ describe("Select", () => {
   it("should have spaceAfter", () => {
     expect(label.prop("spaceAfter")).toBe(spaceAfter);
   });
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
   it("should have tabindex", () => {
     expect(select.render().prop("tabindex")).toBe(tabIndex);
   });

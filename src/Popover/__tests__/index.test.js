@@ -57,22 +57,6 @@ describe("Popover", () => {
   });
 });
 
-describe("Popover Shallow", () => {
-  const content = "Message for a user";
-  const position = "bottom";
-  const opened = true;
-  const overlapped = true;
-  const component = shallow(
-    <Popover content={content} preferredPosition={position} opened={opened} overlapped={overlapped}>
-      <Button>Open</Button>
-    </Popover>,
-  );
-
-  it("it should match snapshot", () => {
-    expect(component).toMatchSnapshot();
-  });
-});
-
 describe("ContentWrapper", () => {
   const content = <Button>Content</Button>;
   const handleClose = jest.fn();
@@ -106,9 +90,5 @@ describe("ContentWrapper", () => {
 
   it("should be hidden", () => {
     expect(component.find("ContentWrapper__StyledPopoverClose").exists()).toBe(false);
-  });
-
-  it("it should match snapshot", () => {
-    expect(component).toMatchSnapshot();
   });
 });

@@ -41,8 +41,4 @@ describe("Alert", () => {
     ButtonLink.simulate("click");
     expect(onClose).toHaveBeenCalled();
   });
-  it("should match snapshot", () => {
-    const component = shallow(<Alert>{message}</Alert>);
-    expect(component).toMatchSnapshot();
-  });
 });

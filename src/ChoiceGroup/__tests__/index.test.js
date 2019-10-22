@@ -2,11 +2,11 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import ChoiceGroup from "..";
-
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 import Checkbox from "../../Checkbox";
+
+import ChoiceGroup from "..";
 
 const label = "Label";
 const labelSize = LABEL_SIZES.LARGE;

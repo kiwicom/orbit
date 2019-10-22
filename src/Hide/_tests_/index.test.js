@@ -2,12 +2,12 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import Hide from "..";
-
 import Airplane from "../../icons/Airplane";
 import { DEVICES, QUERIES } from "../../utils/mediaQuery/consts";
 import { getBreakpointWidth } from "../../utils/mediaQuery/index";
 import theme from "../../defaultTheme";
+
+import Hide from "..";
 
 describe("Hide", () => {
   const on = ["smallMobile", "largeMobile", "largeDesktop"];

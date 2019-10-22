@@ -2,11 +2,11 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import Grid from "..";
-
 import theme from "../../../defaultTheme";
 import { QUERIES } from "../../mediaQuery/consts";
 import { getBreakpointWidth } from "../../mediaQuery/index";
+
+import Grid from "..";
 
 describe("Grid with basic props", () => {
   const inline = true;

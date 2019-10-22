@@ -1,0 +1,4 @@
+// @flow strict
+export type UseToggle = (initial: boolean) => [boolean, () => void];
+
+declare export default UseToggle;

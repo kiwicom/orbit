@@ -67,6 +67,34 @@ const longerContent = (
   </List>
 );
 
+const germanContent = (
+  <List type="separated">
+    <ListItem label="Verfügbarkeit Support" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service" stopPropagation>
+        <Text>Begrenzt</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Anruferpriorität" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service" stopPropagation>
+        <Text>Gering</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Email support" icon={<Check size="small" color="success" />}>
+      <Text>Yes</Text>
+    </ListItem>
+    <ListItem label="E-Mail-Support" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service" stopPropagation>
+        <Text>Nein</Text>
+      </Tooltip>
+    </ListItem>
+    <ListItem label="Zusatzleistungen" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service" stopPropagation>
+        <Text>$10 Rückerstattung</Text>
+      </Tooltip>
+    </ListItem>
+  </List>
+);
+
 storiesOf("PricingTable", module)
   .addDecorator(withKnobs)
   .add(
@@ -202,6 +230,82 @@ storiesOf("PricingTable", module)
                   onClick={action("onClick")}
                 >
                   {content}
+                </PricingTableItem>
+              </PricingTable>
+            </CardSection>
+          </Card>
+        </LayoutColumn>
+        <LayoutColumn>
+          <Card>
+            <CardSection>Test</CardSection>
+          </Card>
+        </LayoutColumn>
+      </Layout>
+    );
+  })
+  .add("Translated", () => {
+    return (
+      <Layout type="Booking">
+        <LayoutColumn>
+          <Card>
+            <CardSection>
+              <PricingTable defaultActiveElement={1}>
+                <PricingTableItem
+                  name="Basic Service"
+                  priceBadge={<Badge type="info">Inbegriffen</Badge>}
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      type="secondary"
+                      fullWidth
+                    >
+                      Mit Basic fortfahren{" "}
+                    </Button>
+                  }
+                  mobileDescription="Basic ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {germanContent}
+                </PricingTableItem>
+                <PricingTableItem
+                  name="Plus Service"
+                  priceBadge={<Badge type="info">+ 10</Badge>}
+                  badge="Popular"
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      fullWidth
+                    >
+                      Upgrade vornehmen und fortfahren
+                    </Button>
+                  }
+                  mobileDescription="Flexi ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {germanContent}
+                </PricingTableItem>
+                <PricingTableItem
+                  name="Premium Service"
+                  priceBadge={<Badge type="info">+ 20</Badge>}
+                  action={
+                    <Button
+                      onClick={ev => {
+                        ev.stopPropagation();
+                      }}
+                      type="secondary"
+                      fullWidth
+                    >
+                      Auswählen und fortfahren
+                    </Button>
+                  }
+                  mobileDescription="Premium ticket fare includes:"
+                  onClick={action("onClick")}
+                >
+                  {germanContent}
                 </PricingTableItem>
               </PricingTable>
             </CardSection>

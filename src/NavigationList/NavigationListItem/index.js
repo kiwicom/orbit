@@ -68,7 +68,10 @@ const StyledNavigationListItemWrapper = styled.div`
 `;
 
 const StyledNavigationListItemIcon = styled.div`
+  display: flex;
+  align-items: center;
   margin-${right}: ${({ theme, hasMargin }) => hasMargin && theme.orbit.spaceXSmall};
+  height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import type { UseDimensions } from "./useDimensions.js.flow";
 import boundingClientRect from "../../utils/boundingClientRect";
+import getScrollableParent from "../helpers/getScrollableParent";
 
 const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed }) => {
   const [positions, setPositions] = useState({
@@ -50,14 +51,20 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
         });
       }
     };
+    const scrollableParrent = getScrollableParent(containerRef.current);
 
     calculate();
 
     window.addEventListener("resize", calculate);
     if (fixed) window.addEventListener("scroll", calculate);
+    if (scrollableParrent !== document.body && scrollableParrent)
+      scrollableParrent.addEventListener("scroll", calculate);
+
     return () => {
       window.removeEventListener("resize", calculate);
       if (fixed) window.removeEventListener("scroll", calculate);
+      if (scrollableParrent !== document.body && scrollableParrent)
+        scrollableParrent.removeEventListener("scroll", calculate);
     };
   }, [containerRef, content, popover, fixed]);
 

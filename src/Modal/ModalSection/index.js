@@ -84,19 +84,15 @@ const ModalSection = ({ children, suppressed, dataTest }: Props) => {
     closable,
   } = useContext(ModalContext);
 
-  const callContextFunctions = useCallback(() => {
+  useEffect(() => {
     if (setDimensions) setDimensions();
     if (decideFixedFooter) decideFixedFooter();
-  }, [decideFixedFooter, setDimensions]);
-
-  useEffect(() => {
-    callContextFunctions();
     if (manageFocus) manageFocus();
     if (setHasModalSection) setHasModalSection();
     return () => {
       if (removeHasModalSection) removeHasModalSection();
     };
-  }, [callContextFunctions, manageFocus, removeHasModalSection, setHasModalSection]);
+  }, [decideFixedFooter, manageFocus, removeHasModalSection, setDimensions, setHasModalSection]);
 
   return (
     <StyledModalSection

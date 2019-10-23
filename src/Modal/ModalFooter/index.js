@@ -99,15 +99,11 @@ const ModalFooter = ({ dataTest, children, flex }: Props) => {
     ModalContext,
   );
 
-  const callContextFunctions = useCallback(() => {
+  useEffect(() => {
     if (setDimensions) setDimensions();
     if (decideFixedFooter) decideFixedFooter();
-  }, [decideFixedFooter, setDimensions]);
-
-  useEffect(() => {
-    callContextFunctions();
     if (manageFocus) manageFocus();
-  }, [callContextFunctions, manageFocus]);
+  }, [decideFixedFooter, manageFocus, setDimensions]);
 
   return (
     <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>

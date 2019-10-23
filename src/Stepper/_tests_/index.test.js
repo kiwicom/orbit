@@ -2,12 +2,10 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Stepper from "../index";
 import StepperStateless from "../StepperStateless";
 
 describe("Stepper", () => {
   const defaultValue = 1;
-  const step = 2;
   const name = "name";
   const disabled = false;
   const maxValue = 100;
@@ -16,21 +14,6 @@ describe("Stepper", () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
-
-  const component = shallow(
-    <Stepper
-      defaultValue={defaultValue}
-      step={step}
-      name={name}
-      maxValue={maxValue}
-      minValue={minValue}
-      disabled={disabled}
-      dataTest={dataTest}
-      onChange={onChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-    />,
-  );
 
   const statelessCompoennt = shallow(
     <StepperStateless
@@ -63,11 +46,7 @@ describe("Stepper", () => {
         .prop("data-test"),
     ).toBe(dataTest);
   });
-  it("should execute onChange method", () => {
-    const instance = component.instance();
-    instance.incrementCounter();
-    expect(onChange).toHaveBeenCalled();
-  });
+
   it("should execute onFocus method", () => {
     input.simulate("focus");
     expect(onFocus).toHaveBeenCalled();

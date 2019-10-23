@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useCallback, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";

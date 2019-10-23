@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useEffect, useCallback } from "react";
+import React, { useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";

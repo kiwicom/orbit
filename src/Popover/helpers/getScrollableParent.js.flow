@@ -1,5 +1,5 @@
 // @flow
 
-export type GetScrollableParent = (node: React.node) => React.node;
+export type GetScrollableParent = (node: ?Node) => ?Node;
 
 declare export default GetScrollableParent;

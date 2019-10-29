@@ -6,7 +6,7 @@ import { array, text } from "@storybook/addon-knobs";
 
 import Heading from "../Heading";
 import Text from "../Text";
-import Card, { CardSection } from "../Card";
+import Card, { CardSection } from "../deprecated/Card";
 import Stack from "../Stack";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
 import Button from "../Button";
@@ -14,7 +14,7 @@ import Illustration from "../Illustration";
 import ChevronLeft from "../icons/ChevronLeft";
 import FlightDirect from "../icons/FlightDirect";
 import { CarrierLogo } from "../index";
-import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
+import CardSectionHeader from "../deprecated/Card/CardSection/CardSectionHeader";
 import Tooltip from "../Tooltip";
 
 import SkipLink from ".";

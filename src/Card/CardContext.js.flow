@@ -1,0 +1,22 @@
+// @flow
+
+type RoundedBorders = {|
+  top: boolean,
+  bottom: boolean,
+|};
+
+export type Context = {|
+  +onToggle: () => void,
+  +setExpandedSections: (arr: number[]) => void,
+  +roundedBorders: RoundedBorders,
+  +index: number,
+  +noBorderTop: boolean,
+|};
+
+declare export var cardDefault: Context;
+
+declare export var context: React.Context<Context>;
+
+declare export function useCard(): Context;
+
+export const { Consumer, Provider } = context;

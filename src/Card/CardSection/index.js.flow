@@ -2,21 +2,24 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
-import typeof CardSectionHeaderType from "./CardSectionHeader/index.js.flow";
-import typeof CardSectionContentType from "./CardSectionContent/index.js.flow";
 
 export type Props = {|
-  +children: React$Node,
+  +title?: React$Node,
+  +icon?: React$Node,
+  +description?: React$Node,
+  +dataA11ySection?: string,
+  +children?: React$Node,
   +expandable?: boolean,
   +initialExpanded?: boolean,
+  +actions?: React$Node,
+  +expanded?: boolean,
+  +noSeparator?: boolean,
   +onClose?: () => void | Promise<any>,
   +onExpand?: () => void | Promise<any>,
+  +header?: React$Node,
   ...Globals,
 |};
 
 declare export var StyledCardSection: ReactComponentStyled<any>;
 
 declare export default React$ComponentType<Props>;
-
-declare export var CardSectionHeader: CardSectionHeaderType;
-declare export var CardSectionContent: CardSectionContentType;

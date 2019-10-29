@@ -1,123 +1,109 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import ChevronDown from "../../icons/ChevronDown";
-import { getSize } from "../../Icon";
-import { ICON_SIZES } from "../../Icon/consts";
-import media from "../../utils/mediaQuery";
-import CardSectionContext from "./CardSectionContext";
+import KEY_CODE_MAP from "../../common/keyMaps";
+import CardWrapper from "../components/CardWrapper";
+import { useCard } from "../CardContext";
+import SectionHeader from "./components/SectionHeader";
+import SectionContent from "./components/SectionContent";
 
 import type { Props } from "./index";
 
-const StyledCardSectionIconRight = styled(ChevronDown)`
-  align-self: center;
-  transition: ${({ theme }) => theme.orbit.durationFast};
-`;
+const CardSection = ({
+  title,
+  icon,
+  description,
+  children,
+  expandable = false,
+  expanded,
+  initialExpanded = false,
+  onClose,
+  header,
+  onExpand,
+  dataTest,
+  actions,
+  noSeparator,
+  dataA11ySection,
+}: Props) => {
+  const [opened, setOpened] = React.useState(initialExpanded || expanded);
 
-StyledCardSectionIconRight.defaultProps = {
-  theme: defaultTheme,
-};
+  const { onToggle, setExpandedSections, index, roundedBorders, noBorderTop } = useCard();
 
-const StyledCardSectionContent = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  border-top: ${({ theme, expanded }) =>
-    expanded
-      ? `1px solid ${theme.orbit.paletteCloudNormal}`
-      : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  padding-top: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium}`};
-  overflow: hidden;
-`;
-
-StyledCardSectionContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const StyledCardSection = styled.div`
-  width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
-  box-sizing: border-box;
-  position: relative;
-  background: ${({ theme }) => theme.orbit.backgroundCard};
-
-  ${media.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-  `)}
-`;
-
-StyledCardSection.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledCardSectionHeader = styled.div`
-  margin-bottom: ${({ theme, expanded }) => expanded && theme.orbit.spaceMedium};
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-  position: relative;
-  min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
-`;
-
-StyledCardSectionHeader.defaultProps = {
-  theme: defaultTheme,
-};
-
-class CardSection extends React.Component<any, Props> {
-  componentDidMount() {
-    const { handleToggleSection, initialExpanded, setInitialExpandedSection } = this.props;
-
-    if (initialExpanded) {
-      handleToggleSection();
-      setInitialExpandedSection();
+  React.useEffect(() => {
+    if (expandable && (initialExpanded || expanded)) {
+      setExpandedSections([index]);
     }
-  }
 
-  injectCallbackAndToggleSection = () => {
-    const { handleToggleSection, onClose, onExpand, expanded } = this.props;
-    handleToggleSection(); // First do toggle
+    if (!initialExpanded) {
+      setOpened(expanded);
+    }
 
-    if (expanded && onClose) {
-      // If is expanded -> action is closing
+    return () => {
+      setExpandedSections([]);
+    };
+  }, [expandable, expanded, index, initialExpanded, setExpandedSections]);
+
+  const handleClick = () => {
+    if (expanded == null) {
+      onToggle();
+      setOpened(state => !state);
+    }
+
+    if (opened && onClose) {
       onClose();
     }
-    if (!expanded && onExpand) {
-      // if is closed > action is expanding
+
+    if (!opened && onExpand) {
       onExpand();
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    if (ev.keyCode === 13 || ev.keyCode === 32) {
+  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
       ev.preventDefault();
+    }
 
-      this.injectCallbackAndToggleSection();
+    if (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) {
+      handleClick();
     }
   };
 
-  render() {
-    const { children, dataTest, expandable, expanded } = this.props;
-    return (
-      <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>
-        <CardSectionContext.Provider
-          value={{
-            expandable,
-            expanded,
-            handleToggleSection: this.injectCallbackAndToggleSection,
-            onKeyDownHandler: this.handleKeyDown,
-          }}
+  return (
+    <CardWrapper
+      dataTest={dataTest}
+      roundedTop={roundedBorders.top}
+      roundedBottom={roundedBorders.bottom}
+      expanded={opened}
+      expandable={expandable}
+      noBorderTop={noBorderTop}
+    >
+      {(title || header) && (
+        <SectionHeader
+          title={title}
+          icon={icon}
+          header={header}
+          expandable={expandable}
+          expanded={opened}
+          actions={actions}
+          onClick={expandable ? handleClick : undefined}
+          description={description}
+          handleKeyDown={handleKeyDown}
+          dataA11ySection={dataA11ySection}
+        />
+      )}
+
+      {children ? (
+        <SectionContent
+          expanded={opened}
+          hasPaddingTop={!!(title != null || header != null || expanded)}
+          noSeparator={noSeparator}
+          expandable={expandable}
         >
           {children}
-        </CardSectionContext.Provider>
-      </StyledCardSection>
-    );
-  }
-}
+        </SectionContent>
+      ) : null}
+    </CardWrapper>
+  );
+};
 
 export default CardSection;
-
-export { default as CardSectionHeader } from "./CardSectionHeader";
-export { default as CardSectionContent } from "./CardSectionContent";

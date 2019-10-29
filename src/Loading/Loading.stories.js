@@ -5,9 +5,8 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 
 import TYPE_OPTIONS from "./consts";
 import * as Icons from "../icons";
-import CardHeader from "../Card/CardHeader";
-import CardSection from "../Card/CardSection";
 import Card from "../Card";
+import CardSection from "../Card/CardSection";
 import Illustration from "../Illustration";
 import Button from "../Button";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -31,9 +30,8 @@ storiesOf("Loading", module)
       const loading = boolean("Loading", true);
       const loadingText = text("Text", "Please wait, Card content is loading...");
       return (
-        <Card>
+        <Card loading={loading} icon={<Icons.Airplane />} title={title} description={description}>
           <Loading loading={loading} type="boxLoader" text={loadingText}>
-            <CardHeader icon={<Icons.Airplane />} title={title} subTitle={description} />
             <CardSection>
               <Illustration name="EnjoyApp" size="medium" />
             </CardSection>

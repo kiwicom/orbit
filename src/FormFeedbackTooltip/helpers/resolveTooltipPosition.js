@@ -1,25 +1,24 @@
 // @flow
 import { css } from "styled-components";
 
-import { SIDE_NUDGE } from "../consts";
+import { SIDE_NUDGE, ARROW_SIZE } from "../consts";
 import type { ResolveTooltipPosition } from "./resolveTooltipPosition.js.flow";
+import { left } from "../../utils/rtl";
 
 const resolveTooltipPosition: ResolveTooltipPosition = ({
-  theme: { rtl },
   position,
   contentBounding,
   iconBounding,
   inlineLabel,
 }) => {
-  const cssPosition = rtl ? "right" : "left";
   const pos = {
     top: css`
-      top: ${-contentBounding.height - 7}px;
-      ${cssPosition}: ${inlineLabel || !iconBounding ? "0" : `-${SIDE_NUDGE}px`};
+      top: ${-contentBounding.height - ARROW_SIZE}px;
+      ${left}: ${inlineLabel || !iconBounding ? "0" : `-${SIDE_NUDGE}px`};
     `,
     bottom: css`
-      bottom: ${-contentBounding.height - 7}px;
-      ${cssPosition}: 0;
+      bottom: ${-contentBounding.height - ARROW_SIZE}px;
+      ${left}: 0;
     `,
   };
 

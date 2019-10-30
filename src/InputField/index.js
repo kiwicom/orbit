@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -175,7 +175,8 @@ export const Prefix = styled(({ children, className, iconRef }) => (
     color: ${({ theme }) => theme.orbit.colorIconInput};
   }
 
-  & * svg {
+  & * svg,
+  & > svg {
     width: ${getToken(TOKENS.iconSize)};
     height: ${getToken(TOKENS.iconSize)};
   }
@@ -324,12 +325,28 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
 
   const forID = React.useMemo(() => {
     if (id) return id;
-    return label ? randomID("inputFieldID") : undefined;
-  }, [id, label]);
+    return randomID("inputFieldID");
+  }, [id]);
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
   const labelRef = useRef(null);
   const iconRef = useRef(null);
+
+  const handleFocus = useCallback(
+    ev => {
+      if (onFocus) onFocus(ev);
+      setTooltipShown(true);
+    },
+    [onFocus],
+  );
+
+  const handleBlur = useCallback(
+    ev => {
+      if (onBlur) onBlur(ev);
+      setTooltipShown(false);
+    },
+    [onBlur],
+  );
 
   return (
     <Field
@@ -392,18 +409,8 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
           data-test={dataTest}
           data-state={getFieldDataState(!!error)}
           onChange={onChange}
-          onFocus={e => {
-            if (onFocus) {
-              onFocus(e);
-            }
-            setTooltipShown(true);
-          }}
-          onBlur={e => {
-            if (onBlur) {
-              onBlur(e);
-            }
-            setTooltipShown(false);
-          }}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
           name={name}

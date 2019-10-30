@@ -185,16 +185,16 @@ const InputGroup = ({
   const iconRef = useRef(null);
   const inputID: string = useMemo(() => randomID("inputFieldID"), []);
 
-  const isFilled = useCallback(() => {
-    return () => {
+  const isFilled = useCallback(
+    () =>
       setFilled(
         !React.Children.map(
           children,
           child => child.props.value !== undefined && child.props.value !== "",
         ).includes(false),
-      );
-    };
-  }, [children]);
+      ),
+    [children],
+  );
 
   useEffect(() => {
     isFilled();

@@ -3,6 +3,7 @@ import { css } from "styled-components";
 
 import { ARROW_SIZE, SIDE_NUDGE } from "../consts";
 import type { ResolveTooltipArrowPosition } from "./resolveTooltipArrowPosition.js.flow";
+import { left } from "../../utils/rtl";
 
 const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   theme: { rtl },
@@ -11,8 +12,6 @@ const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   iconBounding,
   inlineLabel,
 }) => {
-  const cssPosition = rtl ? "right" : "left";
-
   if (iconBounding) {
     const whenInline = SIDE_NUDGE + iconBounding.width / 2 - ARROW_SIZE;
     const leftPos = iconBounding.left - contentBounding.left + iconBounding.width / 2 - ARROW_SIZE;
@@ -25,11 +24,11 @@ const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
     const pos = {
       top: css`
         bottom: ${-ARROW_SIZE}px;
-        ${cssPosition}: ${postionToApply}px;
+        ${left}: ${postionToApply}px;
       `,
       bottom: css`
         top: ${-ARROW_SIZE}px;
-        ${cssPosition}: ${postionToApply}px;
+        ${left}: ${postionToApply}px;
       `,
     };
 
@@ -39,11 +38,11 @@ const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   const pos = {
     top: css`
       bottom: ${-ARROW_SIZE}px;
-      ${cssPosition}: ${ARROW_SIZE}px;
+      ${left}: ${ARROW_SIZE}px;
     `,
     bottom: css`
       top: ${-ARROW_SIZE}px;
-      ${cssPosition}: ${ARROW_SIZE}px;
+      ${left}: ${ARROW_SIZE}px;
     `,
   };
 

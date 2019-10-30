@@ -35,7 +35,7 @@ const useDimensions: UseDimensions = (
       const bounding = boundingClientRect(boundingRef);
       const contentBounding = boundingClientRect(contentRef);
       const iconBounding = boundingClientRect(iconBoundingRef);
-      if (bounding && contentBounding && typeof window !== "undefined") {
+      if (bounding && contentBounding) {
         setDimensions({
           set: true,
           bounding,

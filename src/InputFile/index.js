@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -141,6 +141,22 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
   const labelRef = useRef(null);
   const iconRef = useRef(null);
 
+  const handleFocus = useCallback(
+    ev => {
+      if (onFocus) onFocus(ev);
+      setTooltipShown(true);
+    },
+    [onFocus],
+  );
+
+  const handleBlur = useCallback(
+    ev => {
+      if (onBlur) onBlur(ev);
+      setTooltipShown(false);
+    },
+    [onBlur],
+  );
+
   return (
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
@@ -150,25 +166,15 @@ const InputFile = React.forwardRef((props: Props, ref: Ref) => {
         name={name}
         error={error}
         onChange={onChange}
-        onFocus={e => {
-          if (onFocus) {
-            onFocus(e);
-          }
-          setTooltipShown(true);
-        }}
-        onBlur={e => {
-          if (onBlur) {
-            onBlur(e);
-          }
-          setTooltipShown(false);
-        }}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         accept={allowedFileTypes}
         ref={ref}
         tabIndex={tabIndex}
       />
       {label && (
         <FormLabel
-          isFilled={!!fileName}
+          filled={!!fileName}
           error={!!error}
           help={!!help}
           labelRef={labelRef}

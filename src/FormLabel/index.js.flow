@@ -1,7 +1,7 @@
 // @flow
 import type { Globals, UseRef } from "../common/common.js.flow";
 
-export type Props = {
+export type Props = {|
   className?: string,
   children: React$Node,
   filled?: boolean,
@@ -16,6 +16,6 @@ export type Props = {
   onMouseEnter?: () => void | Promise<any>,
   onMouseLeave?: () => void | Promise<any>,
   ...Globals,
-};
+|};
 
 declare export default React$ComponentType<Props>;

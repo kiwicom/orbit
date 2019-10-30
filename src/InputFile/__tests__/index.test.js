@@ -111,4 +111,13 @@ describe(`InputFiInputFile with error`, () => {
   it("should contain FeedBack error", () => {
     expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
+
+  it("should has data-state error", () => {
+    expect(
+      component
+        .find("InputFile__Input")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
+  });
 });

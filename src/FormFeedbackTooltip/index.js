@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -13,6 +13,7 @@ import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
 import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "./hooks/useDimensions";
+import { POSITIONS } from "./consts";
 
 import type { Props } from "./index";
 
@@ -22,7 +23,7 @@ const StyledFormFeedbackTooltip = styled.div`
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowElevatedLevel1};
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceSmall};
   padding-${right}: ${({ theme, isHelp }) => isHelp && theme.orbit.spaceSmall};
 
   z-index: 10012; /* TODO: use some good value */
@@ -98,7 +99,7 @@ StyledTooltipContent.defaultProps = {
 };
 
 const StyledCloseButton = styled.a`
-  color: #fff;
+  color: ${({ theme }) => theme.orbit.paletteWhite};
   cursor: pointer;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   display: flex;
@@ -124,8 +125,13 @@ const FormFeedbackTooltip = ({
     inlineLabel,
   );
 
-  const preferedPosition =
-    dimensions.bounding.top - dimensions.contentBounding.height > 0 ? "top" : "bottom";
+  const preferedPosition = useMemo(
+    () =>
+      dimensions.bounding.top - dimensions.contentBounding.height > 0
+        ? POSITIONS.TOP
+        : POSITIONS.BOTTOM,
+    [dimensions.bounding.top, dimensions.contentBounding.height],
+  );
 
   return (
     <StyledFormFeedbackTooltip

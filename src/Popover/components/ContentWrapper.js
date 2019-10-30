@@ -30,7 +30,7 @@ const StyledPopoverParent = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  overflow: hidden;
+  overflow: auto;
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
@@ -78,7 +78,6 @@ const StyledOverlay = styled.div`
 
   ${media.largeMobile(css`
     display: none;
-    z-index: ${({ isInsideModal }) => (isInsideModal ? "999" : "599")};
   `)};
 `;
 StyledOverlay.defaultProps = {

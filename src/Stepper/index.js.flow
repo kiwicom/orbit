@@ -22,8 +22,4 @@ export type Props = {|
   +step?: number,
 |};
 
-export type State = {|
-  value: number,
-|};
-
 declare export default React$ComponentType<Props>;

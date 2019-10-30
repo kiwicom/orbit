@@ -22,7 +22,7 @@ Add them to your project by running:
 ```bash
 // with npm
 npm install @kiwicom/orbit-components
-
+    
 // with yarn
 yarn add @kiwicom/orbit-components
 ```
@@ -45,7 +45,7 @@ Or via CSS:
 
 ```jsx
 import Alert from "@kiwicom/orbit-components/lib/Alert"
-
+    
 <Alert>Hello World!</Alert>
 ```
 

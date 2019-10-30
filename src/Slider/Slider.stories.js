@@ -252,6 +252,8 @@ storiesOf("Slider", module)
             minValue={minValue}
             step={step}
             onChange={action("onChange")}
+            onChangeBefore={action("onChangeBefore")}
+            onChangeAfter={action("onChangeAfter")}
             valueDescription={valueDescription}
           />
         </div>
@@ -319,6 +321,8 @@ storiesOf("Slider", module)
             minValue={minValue}
             step={step}
             onChange={action("onChange")}
+            onChangeBefore={action("onChangeBefore")}
+            onChangeAfter={action("onChangeAfter")}
             valueDescription={valueDescription}
           />
         </div>

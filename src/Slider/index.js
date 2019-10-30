@@ -271,12 +271,15 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     if (newValue) {
       if (Array.isArray(value)) {
         const index = this.findClosestKey(newValue, value);
-        this.injectCallbackAndSetState(
-          this.props.onChange,
-          this.replaceValue(this.alignValue(newValue), index),
-        );
+        const replacedValue = this.replaceValue(this.alignValue(newValue), index);
+        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+        this.injectCallbackAndSetState(this.props.onChange, replacedValue);
+        this.injectCallbackAndSetState(this.props.onChangeAfter, replacedValue);
       } else {
-        this.injectCallbackAndSetState(this.props.onChange, this.alignValue(newValue));
+        const alignedValue = this.alignValue(newValue);
+        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+        this.injectCallbackAndSetState(this.props.onChange, alignedValue);
+        this.injectCallbackAndSetState(this.props.onChangeAfter, alignedValue);
       }
     }
   };

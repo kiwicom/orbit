@@ -4,79 +4,66 @@ import * as React from "react";
 import StepperStateless from "./StepperStateless";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
+import useStateWithCallback from "../hooks/useStateWithCallback";
 
-import type { Props, State } from "./index";
+import type { Props } from "./index";
 
-class Stepper extends React.PureComponent<Props, State> {
-  state = {
-    value: this.props.defaultValue || 0,
+const Stepper = ({ onChange, defaultValue = 0, ...props }: Props) => {
+  const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
+
+  const incrementCounter = () => {
+    const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = props;
+
+    setValue(validateIncrement({ value, maxValue, step }));
   };
 
-  setValueAndInjectCallback = (value: number) => {
-    const { onChange } = this.props;
-    if (onChange) {
-      onChange(value);
-    }
-    this.setState({ value });
+  const decrementCounter = () => {
+    const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = props;
+
+    setValue(validateDecrement({ value, minValue, step }));
   };
 
-  incrementCounter = () => {
-    const { value } = this.state;
-    const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
-
-    this.setValueAndInjectCallback(validateIncrement({ value, maxValue, step }));
-  };
-
-  decrementCounter = () => {
-    const { value } = this.state;
-    const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
-
-    this.setValueAndInjectCallback(validateDecrement({ value, minValue, step }));
-  };
-
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
     if (ev.keyCode === 40) {
       ev.preventDefault();
-      this.decrementCounter();
+      decrementCounter();
     }
     if (ev.keyCode === 38) {
       ev.preventDefault();
-      this.incrementCounter();
+      incrementCounter();
     }
   };
 
-  render() {
-    const {
-      onBlur,
-      onFocus,
-      disabled,
-      name,
-      dataTest,
-      maxValue,
-      minValue,
-      titleIncrement,
-      titleDecrement,
-    } = this.props;
-    const { value } = this.state;
-    return (
-      <StepperStateless
-        disabled={disabled}
-        dataTest={dataTest}
-        value={value}
-        name={name}
-        minValue={minValue}
-        maxValue={maxValue}
-        onKeyDown={this.handleKeyDown}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        onIncrement={this.incrementCounter}
-        onDecrement={this.decrementCounter}
-        titleIncrement={titleIncrement}
-        titleDecrement={titleDecrement}
-      />
-    );
-  }
-}
+  const {
+    onBlur,
+    onFocus,
+    disabled,
+    name,
+    dataTest,
+    minValue,
+    maxValue,
+    titleIncrement,
+    titleDecrement,
+  } = props;
+  return (
+    <StepperStateless
+      disabled={disabled}
+      dataTest={dataTest}
+      value={value}
+      name={name}
+      minValue={minValue}
+      maxValue={maxValue}
+      onKeyDown={handleKeyDown}
+      onBlur={onBlur}
+      onFocus={onFocus}
+      onIncrement={incrementCounter}
+      onDecrement={decrementCounter}
+      titleIncrement={titleIncrement}
+      titleDecrement={titleDecrement}
+    />
+  );
+};
 
 export default Stepper;
+
 export { default as StepperStateless } from "./StepperStateless";

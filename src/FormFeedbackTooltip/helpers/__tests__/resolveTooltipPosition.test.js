@@ -1,6 +1,7 @@
 // @flow
 import resolveTooltipPosition from "../resolveTooltipPosition";
 import defaultTheme from "../../../defaultTheme";
+import { right } from "../../../utils/rtl";
 
 const contentBoundingRaw = {
   bottom: 0,
@@ -19,6 +20,8 @@ const iconBoundingRaw = {
   top: 0,
   width: 0,
 };
+
+const resolveWithRTLFunction = string => string.replace("__position__", right.toString());
 
 const params = ({ position, contentBounding, iconBounding, inlineLabel }) => ({
   position,
@@ -39,7 +42,7 @@ describe("resolveTooltipPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual("top:-7px;left:-15px;");
+    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:-15px;"));
   });
   it("bottom position", () => {
     expect(
@@ -51,6 +54,6 @@ describe("resolveTooltipPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual("bottom:-7px;left:0;");
+    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:0;"));
   });
 });

@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -139,6 +139,22 @@ const Textarea = React.forwardRef(
     const labelRef = useRef(null);
     const iconRef = useRef(null);
 
+    const handleFocus = useCallback(
+      ev => {
+        if (onFocus) onFocus(ev);
+        setTooltipShown(true);
+      },
+      [onFocus],
+    );
+
+    const handleBlur = useCallback(
+      ev => {
+        if (onBlur) onBlur(ev);
+        setTooltipShown(false);
+      },
+      [onBlur],
+    );
+
     return (
       <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={label ? null : labelRef}>
         {label && (
@@ -168,18 +184,8 @@ const Textarea = React.forwardRef(
           maxLength={maxLength}
           onChange={onChange}
           rows={rows}
-          onFocus={e => {
-            if (onFocus) {
-              onFocus(e);
-            }
-            setTooltipShown(true);
-          }}
-          onBlur={e => {
-            if (onBlur) {
-              onBlur(e);
-            }
-            setTooltipShown(false);
-          }}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           resize={resize}
           tabIndex={tabIndex}
           ref={ref}

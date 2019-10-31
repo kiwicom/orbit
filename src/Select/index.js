@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -262,6 +262,22 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
   const labelRef = useRef(null);
   const iconRef = useRef(null);
 
+  const handleFocus = useCallback(
+    ev => {
+      if (onFocus) onFocus(ev);
+      setTooltipShown(true);
+    },
+    [onFocus],
+  );
+
+  const handleBlur = useCallback(
+    ev => {
+      if (onBlur) onBlur(ev);
+      setTooltipShown(false);
+    },
+    [onBlur],
+  );
+
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
@@ -298,18 +314,8 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
           value={value == null ? "" : value}
           prefix={prefix}
           name={name}
-          onFocus={e => {
-            if (onFocus) {
-              onFocus(e);
-            }
-            setTooltipShown(true);
-          }}
-          onBlur={e => {
-            if (onBlur) {
-              onBlur(e);
-            }
-            setTooltipShown(false);
-          }}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onChange={onChange}
           filled={filled}
           customValueText={customValueText}

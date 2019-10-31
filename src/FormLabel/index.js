@@ -24,6 +24,7 @@ StyledAsterisk.defaultProps = {
 const StyledInputErrorIcWrapper = styled.span`
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
   display: inline-flex;
+  align-items: center;
 `;
 
 StyledInputErrorIcWrapper.defaultProps = {

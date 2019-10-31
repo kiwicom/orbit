@@ -1,6 +1,7 @@
 // @flow
 import resolveTooltipArrowPosition from "../resolveTooltipArrowPosition";
 import defaultTheme from "../../../defaultTheme";
+import { left } from "../../../utils/rtl";
 
 const contentBoundingRaw = {
   bottom: 0,
@@ -19,6 +20,8 @@ const iconBoundingRaw = {
   top: 0,
   width: 0,
 };
+
+const resolveWithRTLFunction = string => string.replace("__position__", left.toString());
 
 const params = ({ position, contentBounding, iconBounding, inlineLabel }) => ({
   position,
@@ -39,7 +42,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual("bottom:-7px;left:8px;");
+    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:8px;"));
   });
   it("bottom position", () => {
     expect(
@@ -51,7 +54,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual("top:-7px;left:8px;");
+    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:8px;"));
   });
   it("bottom position with inline label", () => {
     expect(
@@ -63,7 +66,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual("top:-7px;left:-7px;");
+    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:-7px;"));
   });
   it("top position with inline label", () => {
     expect(
@@ -75,7 +78,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual("bottom:-7px;left:-7px;");
+    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:-7px;"));
   });
   it("top position with inline label", () => {
     expect(
@@ -87,7 +90,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual("bottom:-7px;left:7px;");
+    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:7px;"));
   });
   it("bottom position with inline label", () => {
     expect(
@@ -99,6 +102,6 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual("top:-7px;left:7px;");
+    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:7px;"));
   });
 });

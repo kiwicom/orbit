@@ -200,30 +200,34 @@ const InputGroup = ({
     isFilled();
   }, [isFilled, children]);
 
-  const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    setActive(true);
-    setTooltipShown(true);
-    if (onFocus) {
-      onFocus(ev);
-    }
-  };
+  const handleFocus = useCallback(
+    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+      setActive(true);
+      setTooltipShown(true);
+      if (onFocus) onFocus(ev);
+    },
+    [onFocus],
+  );
 
-  const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    isFilled();
-    setActive(false);
-    setTooltipShown(false);
-    if (onBlur) {
-      onBlur(ev);
-    }
-  };
+  const handleBlur = useCallback(
+    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+      isFilled();
+      setActive(false);
+      setTooltipShown(false);
+      if (onBlur) onBlur(ev);
+    },
+    [onBlur, isFilled],
+  );
 
-  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    isFilled();
-
-    if (onChange) {
-      onChange(ev);
-    }
-  };
+  const handleChange = useCallback(
+    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+      isFilled();
+      if (onChange) {
+        onChange(ev);
+      }
+    },
+    [onChange, isFilled],
+  );
 
   return (
     <StyledInputGroup

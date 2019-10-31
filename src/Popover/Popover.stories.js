@@ -23,6 +23,16 @@ const Content = styled.div`
   height: 2000px;
 `;
 
+const ScrolledPage = styled.div`
+  height: 2000px;
+  padding-top: 800px;
+`;
+const ScrollWrapper = styled.div`
+  height: 50vh;
+  overflow: scroll;
+  background: gray;
+`;
+
 const selects = (
   <>
     <Stack align="center">
@@ -287,6 +297,29 @@ storiesOf("Popover", module)
 
           <Content />
         </>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Scrolling content",
+    () => {
+      return (
+        <ScrollWrapper>
+          <ScrolledPage>
+            <Card>
+              <Popover content={content} onOpen={action("open")} onClose={action("close")}>
+                <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
+                  Open popover
+                </Button>
+              </Popover>
+            </Card>
+            <Content />
+          </ScrolledPage>
+        </ScrollWrapper>
       );
     },
     {

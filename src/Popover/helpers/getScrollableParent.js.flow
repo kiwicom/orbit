@@ -1,0 +1,5 @@
+// @flow
+
+export type GetScrollableParent = (node: ?Node) => ?Node;
+
+declare export default GetScrollableParent;

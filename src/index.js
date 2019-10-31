@@ -15,6 +15,7 @@ export { default as CallOutBanner } from "./CallOutBanner";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
+export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
 export { default as FeatureIcon } from "./FeatureIcon";

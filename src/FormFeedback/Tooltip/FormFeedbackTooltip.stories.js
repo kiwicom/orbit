@@ -5,15 +5,15 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 
-import { SIZE_OPTIONS } from "../InputField/consts";
-import Stack from "../Stack";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Tag from "../Tag";
-import InputField from "../InputField";
-import Textarea from "../Textarea";
-import Select from "../Select";
-import InputFile from "../InputFile";
-import InputGroup from "../InputGroup";
+import { SIZE_OPTIONS } from "../../InputField/consts";
+import Stack from "../../Stack";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
+import Tag from "../../Tag";
+import InputField from "../../InputField";
+import Textarea from "../../Textarea";
+import Select from "../../Select";
+import InputFile from "../../InputFile";
+import InputGroup from "../../InputGroup";
 
 const objectOptions = [
   { value: 0, label: "Zero-th item" },

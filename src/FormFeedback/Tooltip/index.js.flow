@@ -1,5 +1,5 @@
 // @flow
-import type { Globals, UseRef } from "../common/common.js.flow";
+import type { Globals, RefType } from "../../common/common.js.flow";
 
 export type PositionRaw = {
   bottom: number,
@@ -21,8 +21,8 @@ export type Props = {
   children: React$Node,
   shown?: boolean,
   isHelp?: boolean,
-  boundingRef?: UseRef,
-  iconBoundingRef?: UseRef,
+  boundingRef?: RefType,
+  iconBoundingRef?: RefType,
   inlineLabel?: boolean,
   onClick?: () => void | Promise<any>,
   ...Globals,

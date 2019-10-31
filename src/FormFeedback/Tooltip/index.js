@@ -2,12 +2,12 @@
 import React, { useRef, useMemo } from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import media from "../utils/mediaQuery";
-import { StyledText } from "../Text";
-import { Item } from "../List/ListItem";
-import CloseIc from "../icons/Close";
-import { rtlSpacing, right } from "../utils/rtl";
+import defaultTheme from "../../defaultTheme";
+import media from "../../utils/mediaQuery";
+import { StyledText } from "../../Text";
+import { Item } from "../../List/ListItem";
+import CloseIc from "../../icons/Close";
+import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
 import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
 import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";

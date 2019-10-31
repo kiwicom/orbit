@@ -1,15 +1,15 @@
 // @flow
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, UseRef } from "../common/common.js.flow";
+import type { Globals, RefType } from "../common/common.js.flow";
 
 export type Props = {
   +error?: React$Node,
   +help?: React$Node,
   +tooltipShown?: boolean,
   +tooltipShownHover?: boolean,
-  +labelRef?: UseRef,
-  +iconRef?: UseRef,
+  +labelRef?: RefType,
+  +iconRef?: RefType,
   +inlineLabel?: boolean,
   ...Globals,
 };

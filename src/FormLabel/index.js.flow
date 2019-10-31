@@ -1,5 +1,5 @@
 // @flow
-import type { Globals, UseRef } from "../common/common.js.flow";
+import type { Globals, RefType } from "../common/common.js.flow";
 
 export type Props = {|
   className?: string,
@@ -11,8 +11,8 @@ export type Props = {|
   error?: boolean,
   help?: boolean,
   inlineLabel?: boolean,
-  iconRef?: UseRef,
-  labelRef?: UseRef,
+  iconRef?: RefType,
+  labelRef?: RefType,
   onMouseEnter?: () => void | Promise<any>,
   onMouseLeave?: () => void | Promise<any>,
   ...Globals,

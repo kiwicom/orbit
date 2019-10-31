@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 import { ARROW_SIZE, SIDE_NUDGE } from "../consts";
 import type { ResolveTooltipArrowPosition } from "./resolveTooltipArrowPosition.js.flow";
-import { left } from "../../utils/rtl";
+import { left } from "../../../utils/rtl";
 
 const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   theme: { rtl },

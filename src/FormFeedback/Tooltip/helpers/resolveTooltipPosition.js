@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 import { SIDE_NUDGE, ARROW_SIZE } from "../consts";
 import type { ResolveTooltipPosition } from "./resolveTooltipPosition.js.flow";
-import { left } from "../../utils/rtl";
+import { left } from "../../../utils/rtl";
 
 const resolveTooltipPosition: ResolveTooltipPosition = ({
   position,

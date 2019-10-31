@@ -1,6 +1,6 @@
 // @flow
 import resolveColor from "../resolveColor";
-import defaultTheme from "../../../defaultTheme";
+import defaultTheme from "../../../../defaultTheme";
 
 const params = isHelp => ({
   isHelp,

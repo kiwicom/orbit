@@ -1,7 +1,7 @@
 // @flow
 import { useEffect, useState } from "react";
 
-import boundingClientRect from "../../utils/boundingClientRect";
+import boundingClientRect from "../../../utils/boundingClientRect";
 import type { UseDimensions } from "./useDimensions.js.flow";
 
 const useDimensions: UseDimensions = (

@@ -6,93 +6,83 @@ import KEY_CODE_MAP from "../common/keyMaps";
 import InputStepperStateless from "./InputStepperStateless";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
+import useStateWithCallback from "../hooks/useStateWithCallback";
 
-import type { Props, State, ForwardedRef } from "./index";
+import type { Props } from "./index";
 
-class InputStepper extends React.Component<Props & ForwardedRef, State> {
-  state = {
-    value: this.props.defaultValue || 0,
-  };
+const InputStepper = React.forwardRef<Props, HTMLElement>(
+  ({ onChange, defaultValue = 0, ...props }: Props, ref) => {
+    const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
-  setValueAndInjectCallback = (value: number) => {
-    const { onChange } = this.props;
-    if (onChange) {
-      onChange(value);
-    }
-    this.setState({ value });
-  };
+    const incrementCounter = () => {
+      const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = props;
 
-  incrementCounter = () => {
-    const { value } = this.state;
-    const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = this.props;
-    this.setValueAndInjectCallback(validateIncrement({ value, maxValue, step }));
-  };
+      setValue(validateIncrement({ value, maxValue, step }));
+    };
 
-  decrementCounter = () => {
-    const { value } = this.state;
-    const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = this.props;
+    const decrementCounter = () => {
+      const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = props;
+      setValue(validateDecrement({ value, minValue, step }));
+    };
 
-    this.setValueAndInjectCallback(validateDecrement({ value, minValue, step }));
-  };
-
-  handleIncrementCounter = (
-    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
-  ) => {
-    if (ev && ev.type === "click") {
-      this.incrementCounter();
-    }
-    if (ev && ev.type === "keydown") {
-      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        this.incrementCounter();
-      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        this.incrementCounter();
+    const handleIncrementCounter = (
+      ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+    ) => {
+      if (ev && ev.type === "click") {
+        incrementCounter();
       }
-    }
-  };
-
-  handleDecrementCounter = (
-    ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
-  ) => {
-    if (ev && ev.type === "click") {
-      this.decrementCounter();
-    }
-    if (ev && ev.type === "keydown") {
-      if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        this.decrementCounter();
-      } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        this.decrementCounter();
+      if (ev && ev.type === "keydown") {
+        if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+          ev.preventDefault();
+          incrementCounter();
+        } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+          incrementCounter();
+        }
       }
-    }
-  };
+    };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
-      ev.preventDefault();
-      this.decrementCounter();
-    }
-    if (ev.keyCode === KEY_CODE_MAP.ARROW_UP) {
-      ev.preventDefault();
-      this.incrementCounter();
-    }
-  };
+    const handleDecrementCounter = (
+      ev?: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+    ) => {
+      if (ev && ev.type === "click") {
+        decrementCounter();
+      }
+      if (ev && ev.type === "keydown") {
+        if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+          ev.preventDefault();
+          decrementCounter();
+        } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+          decrementCounter();
+        }
+      }
+    };
 
-  handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { minValue = Number.NEGATIVE_INFINITY, maxValue = Number.POSITIVE_INFINITY } = this.props;
-    const value = ev && parseInt(ev.target.value, 10);
-    const prevValue = this.state.value;
+    const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+      if (ev.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
+        ev.preventDefault();
+        decrementCounter();
+      }
+      if (ev.keyCode === KEY_CODE_MAP.ARROW_UP) {
+        ev.preventDefault();
+        incrementCounter();
+      }
+    };
 
-    if (prevValue <= value) {
-      this.setState({ value: validateIncrement({ value, maxValue, step: 0 }) });
-    }
+    const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+      const eventValue = ev && parseInt(ev.target.value, 10);
+      const prevValue = value;
 
-    if (prevValue >= value) {
-      this.setState({ value: validateDecrement({ value, minValue, step: 0 }) });
-    }
-  };
+      const { maxValue, minValue } = props;
 
-  render() {
+      if (prevValue <= eventValue) {
+        setValue(validateIncrement({ value, maxValue, step: 0 }));
+      }
+
+      if (prevValue >= eventValue) {
+        setValue(validateDecrement({ value, minValue, step: 0 }));
+      }
+    };
+
     const {
       label,
       error,
@@ -103,16 +93,15 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
       name,
       dataTest,
       size = SIZE_OPTIONS.NORMAL,
-      maxValue,
-      minValue,
       required,
+      minValue,
+      maxValue,
       tabIndex,
-      forwardedRef,
       spaceAfter,
       titleIncrement,
       titleDecrement,
-    } = this.props;
-    const { value } = this.state;
+    } = props;
+
     return (
       <InputStepperStateless
         dataTest={dataTest}
@@ -123,31 +112,27 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
         name={name}
         error={error}
         help={help}
-        onChange={this.handleChange}
+        onChange={handleChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        onKeyDown={this.handleKeyDown}
+        onKeyDown={handleKeyDown}
         value={value || 0}
         minValue={minValue}
         maxValue={maxValue}
         tabIndex={tabIndex}
-        forwardedRef={forwardedRef}
+        forwardedRef={ref}
         spaceAfter={spaceAfter}
-        onDecrement={this.handleDecrementCounter}
-        onIncrement={this.handleIncrementCounter}
+        onDecrement={handleDecrementCounter}
+        onIncrement={handleIncrementCounter}
         titleIncrement={titleIncrement}
         titleDecrement={titleDecrement}
       />
     );
-  }
-}
+  },
+);
 
-// $FlowExpected
-const ForwardedInputStepper = React.forwardRef((props, ref) => (
-  <InputStepper forwardedRef={ref} {...props} />
-));
+InputStepper.displayName = "InputStepper";
 
-ForwardedInputStepper.displayName = "InputStepper";
+export default InputStepper;
 
-export default ForwardedInputStepper;
 export { default as InputStepperStateless } from "./InputStepperStateless";

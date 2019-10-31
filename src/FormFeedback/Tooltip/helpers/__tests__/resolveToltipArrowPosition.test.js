@@ -1,7 +1,7 @@
 // @flow
 import resolveTooltipArrowPosition from "../resolveTooltipArrowPosition";
-import defaultTheme from "../../../defaultTheme";
-import { left } from "../../../utils/rtl";
+import defaultTheme from "../../../../defaultTheme";
+import { left } from "../../../../utils/rtl";
 
 const contentBoundingRaw = {
   bottom: 0,

@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from "react";
 
-import FormFeedbackTooltip from "../FormFeedbackTooltip";
+import FormFeedbackTooltip from "./Tooltip";
 
 import type { Props } from "./index";
 
@@ -17,7 +17,6 @@ const FormFeedback = ({
 }: Props) => {
   const [helpClosed, setHelpClosed] = useState(false);
 
-  // TODO: Get rid of those ugly conditions
   return (
     <>
       {help && !helpClosed && !error && (

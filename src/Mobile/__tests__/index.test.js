@@ -1,14 +1,13 @@
 // @flow strict
 
 import * as React from "react";
-
-import Mobile from "..";
-
 import { mount } from "enzyme";
 
 import { getBreakpointWidth } from "../../utils/mediaQuery/index";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import theme from "../../defaultTheme";
+
+import Mobile from "..";
 
 describe("Mobile", () => {
   const component = mount(<Mobile>kek</Mobile>);

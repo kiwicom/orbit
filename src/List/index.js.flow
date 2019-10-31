@@ -2,16 +2,14 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/list/
 */
-import * as React from "react";
 
 import typeof ListItemType from "./ListItem";
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
-import type { Theme } from "../defaultTheme";
 
 export type Size = "small" | "normal" | "large";
 
-type Type = "primary" | "secondary" | "separated";
+export type Type = "primary" | "secondary" | "separated";
 
 export type Props = {|
   +children: React$Node,
@@ -24,13 +22,3 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var ListItem: ListItemType;
-
-type ListContextProps = {|
-  +size: ?Size,
-  +type: ?Type,
-|};
-
-export type ListContextType = React.Context<ListContextProps>;
-
-declare export var ListContext: ListContextType;
-

@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-import { DictionaryContext } from "../Dictionary";
+import DictionaryContext from "../Dictionary/DictionaryContext";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
 
 import type { Props, PureTranslate } from "./index";

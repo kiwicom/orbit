@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/inputstepper/
 */
-import type { Globals, Ref, RefType, Translation } from "../common/common.js.flow";
+import type { Globals, Ref, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
@@ -32,13 +32,5 @@ export type Props = {|
   +defaultValue?: number,
   +onChange?: number => void | Promise<any>,
 |};
-
-export type State = {|
-  value: number,
-|};
-
-export type ForwardedRef = {
-  +forwardedRef: RefType,
-};
 
 declare export default React$ComponentType<Props>;

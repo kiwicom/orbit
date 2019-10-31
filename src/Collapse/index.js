@@ -9,7 +9,6 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
-import { rtlSpacing } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -53,19 +52,6 @@ const StyledCollapseChildren = styled.div`
 `;
 
 StyledCollapseChildren.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledRightContentWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  > * {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  }
-`;
-
-StyledRightContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -116,9 +102,9 @@ const Collapse = ({
         if (onClick) {
           onClick(event, !expanded);
         }
+
         setExpandedState(!expanded);
-      }
-      if (onClick) {
+      } else if (onClick) {
         onClick(event, !expanded);
       }
     },
@@ -134,12 +120,12 @@ const Collapse = ({
         aria-controls={slideID}
         id={labelID}
       >
-        <Stack direction="row" justify="between" align="center">
+        <Stack justify="between" align="center">
           <Heading type="title4" element="div">
             {label}
           </Heading>
           {/* TODO: dictionary for title */}
-          <StyledRightContentWrapper>
+          <Stack inline grow={false} align="center" spacing="compact">
             <StyledActionsWrapper
               onClick={ev => {
                 ev.stopPropagation();
@@ -153,7 +139,7 @@ const Collapse = ({
               size="small"
               type="secondary"
             />
-          </StyledRightContentWrapper>
+          </Stack>
         </Stack>
       </StyledCollapseLabel>
       <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>

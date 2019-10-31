@@ -3,9 +3,9 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Layout, { LayoutColumn } from "..";
-
 import { LAYOUT_OPTIONS, LAYOUT_SETTINGS } from "../consts";
+
+import Layout, { LayoutColumn } from "..";
 
 describe("Button with icon", () => {
   const dataTest = "test";

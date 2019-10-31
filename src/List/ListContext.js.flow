@@ -1,0 +1,13 @@
+// @flow
+import * as React from "react";
+
+import type { Size, Type } from "./index";
+
+type ListContextProps = {|
+  +size: ?Size,
+  +type: ?Type,
+|};
+
+export type ListContextType = React.Context<ListContextProps>;
+
+declare export default ListContextType;

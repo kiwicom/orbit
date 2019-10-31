@@ -1,7 +1,7 @@
 // @flow
-import transition from "..";
-
 import defaultTheme from "../../../defaultTheme";
+
+import transition from "..";
 
 const theme = {
   theme: {

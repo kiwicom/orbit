@@ -1,0 +1,15 @@
+// @flow
+import type { TileOnClick } from "../../index";
+
+export type Props = {|
+  initialExpanded: boolean,
+  noPadding: boolean,
+  children?: React$Node,
+  onClick?: TileOnClick,
+  title?: React$Node,
+  description?: React$Node,
+  header?: React$Node,
+  icon?: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

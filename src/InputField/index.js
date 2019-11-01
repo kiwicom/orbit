@@ -375,23 +375,22 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
         error={error}
         labelRef={label ? null : labelRef}
       >
-        {prefix &&
-          (inlineLabel && (error || help) ? (
-            <Prefix size={size}>
-              {help && !error && (
-                <StyledIconWrapper ref={iconRef}>
-                  <InformationCircle color="secondary" size="small" />
-                </StyledIconWrapper>
-              )}
-              {error && (
-                <StyledIconWrapper ref={iconRef}>
-                  <AlertCircle color="critical" size="small" />
-                </StyledIconWrapper>
-              )}
-            </Prefix>
-          ) : (
-            <Prefix size={size}>{prefix}</Prefix>
-          ))}
+        {inlineLabel && !tags && (error || help) ? (
+          <Prefix size={size}>
+            {help && !error && (
+              <StyledIconWrapper ref={iconRef}>
+                <InformationCircle color="secondary" size="small" />
+              </StyledIconWrapper>
+            )}
+            {error && (
+              <StyledIconWrapper ref={iconRef}>
+                <AlertCircle color="critical" size="small" />
+              </StyledIconWrapper>
+            )}
+          </Prefix>
+        ) : (
+          prefix && <Prefix size={size}>{prefix}</Prefix>
+        )}
         {label && inlineLabel && (
           <StyledInlineLabel ref={labelRef} size={size}>
             <FormLabel

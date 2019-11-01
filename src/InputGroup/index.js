@@ -164,13 +164,18 @@ StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
 
+const findPropInChild = (propToFind, children) => {
+  return React.Children.map(children, el => {
+    if (el.props && el.props[propToFind]) return el.props[propToFind];
+    return null;
+  }).filter(el => el != null);
+};
+
 const InputGroup = ({
   children,
   label,
-  flex = "0 1 auto",
+  flex,
   size = SIZE_OPTIONS.NORMAL,
-  help,
-  error,
   dataTest,
   spaceAfter,
   onFocus,
@@ -184,6 +189,11 @@ const InputGroup = ({
   const labelRef = useRef(null);
   const iconRef = useRef(null);
   const inputID: string = useMemo(() => randomID("inputFieldID"), []);
+  const foundErrors = useMemo(() => findPropInChild("error", children), [children]);
+  const foundHelp = useMemo(() => findPropInChild("help", children), [children]);
+
+  const error = foundErrors.length > 0 && foundErrors[0];
+  const help = foundHelp.length > 0 && foundHelp[0];
 
   const isFilled = useCallback(
     () =>
@@ -262,7 +272,9 @@ const InputGroup = ({
           // if it's not defined, use the first or string
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (
-            <StyledChild flex={childFlex}>
+            /* Until flow-bin@0.104.0 it's impossible to assign default values to
+            union types therefore, it's bypassed via declaring it here */
+            <StyledChild flex={childFlex || "0 1 auto"}>
               {React.cloneElement(item, {
                 ref: node => {
                   // Call the original ref, if any

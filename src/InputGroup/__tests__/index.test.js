@@ -30,11 +30,6 @@ describe(`InputGroup - Phone number`, () => {
     <InputGroup
       label={label}
       flex={flex}
-      help={
-        <div>
-          Enter your <strong>phone number</strong>
-        </div>
-      }
       onChange={onChange}
       dataTest={dataTest}
       onFocus={onFocus}
@@ -46,6 +41,11 @@ describe(`InputGroup - Phone number`, () => {
         value={selectValue}
         prefix={<CountryFlag code={countryFlagCode} />}
         ref={ref}
+        help={
+          <div>
+            Enter your <strong>phone number</strong>
+          </div>
+        }
       />
       <InputField placeholder={inputPlaceholder} maxLength={inputMaxLength} value={inputValue} />
     </InputGroup>,

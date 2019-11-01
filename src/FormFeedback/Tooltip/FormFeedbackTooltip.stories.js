@@ -111,13 +111,13 @@ storiesOf("FormErrors Kitchensink", module)
           <Select options={objectOptions} error={error} value={1} onChange={action("onChange")} />
           <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
           <InputFile error={error} onRemoveFile={action("removeFile")} />
-          <InputGroup error={error} label={label}>
-            <InputField placeholder="DD" />
+          <InputGroup label={label}>
+            <InputField error={error} placeholder="DD" />
             <Select options={objectOptions} value={1} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>
-          <InputGroup error={error}>
-            <InputField placeholder="DD" />
+          <InputGroup>
+            <InputField error={error} placeholder="DD" />
             <Select options={objectOptions} value={1} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>
@@ -216,13 +216,13 @@ storiesOf("FormErrors Kitchensink", module)
           <Select options={objectOptions} help={help} value={1} onChange={action("onChange")} />
           <InputFile label={label} help={help} onRemoveFile={action("removeFile")} />
           <InputFile help={help} onRemoveFile={action("removeFile")} />
-          <InputGroup help={help} label={label}>
-            <InputField placeholder="DD" />
+          <InputGroup label={label}>
+            <InputField help={help} placeholder="DD" />
             <Select options={objectOptions} value={1} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>
-          <InputGroup help={help}>
-            <InputField placeholder="DD" />
+          <InputGroup>
+            <InputField help={help} placeholder="DD" />
             <Select options={objectOptions} value={1} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>
@@ -322,13 +322,13 @@ storiesOf("FormErrors Kitchensink", module)
             <Select options={objectOptions} error={error} value={1} onChange={action("onChange")} />
             <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
             <InputFile error={error} onRemoveFile={action("removeFile")} />
-            <InputGroup error={error} label={label}>
-              <InputField placeholder="DD" />
+            <InputGroup label={label}>
+              <InputField error={error} placeholder="DD" />
               <Select options={objectOptions} value={1} placeholder="Month" />
               <InputField placeholder="YYYY" />
             </InputGroup>
-            <InputGroup error={error}>
-              <InputField placeholder="DD" />
+            <InputGroup>
+              <InputField error={error} placeholder="DD" />
               <Select options={objectOptions} value={1} placeholder="Month" />
               <InputField placeholder="YYYY" />
             </InputGroup>

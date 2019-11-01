@@ -11,7 +11,7 @@ describe("FormFeedbackTooltip", () => {
   it("should have children", () => {
     expect(
       component
-        .find("FormFeedbackTooltip__StyledTooltipContent")
+        .find("Tooltip__StyledTooltipContent")
         .render()
         .text(),
     ).toBe(content);

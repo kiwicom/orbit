@@ -46,13 +46,11 @@ storiesOf("InputGroup", module)
         <InputGroup
           label={label}
           flex={flex}
-          error={error}
-          help={help}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
         >
-          <InputField placeholder="DD" />
+          <InputField placeholder="DD" error={error} help={help} />
           <Select options={selectOptions} value={selectValue} placeholder="Month" />
           <InputField placeholder="YYYY" />
         </InputGroup>
@@ -85,8 +83,6 @@ storiesOf("InputGroup", module)
       return (
         <InputGroup
           flex={flex}
-          error={error}
-          help={help}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
@@ -96,8 +92,61 @@ storiesOf("InputGroup", module)
             value={selectValue}
             customValueText={customValueText}
             prefix={<CountryFlag code="cz" />}
+            error={error}
+            help={help}
           />
           <InputField placeholder={placeholder} maxLength={11} value={inputValue} />
+        </InputGroup>
+      );
+    },
+    {
+      info: "Some description about this type of InputGroup in general.",
+    },
+  )
+  .add(
+    "Error",
+    () => {
+      const label = text("Label", "Error");
+      const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
+      const error = text("Error", "Something went wrong on day field");
+      const help = text("Help", undefined);
+
+      const selectOptions = [
+        { value: "January", label: "January" },
+        { value: "February", label: "February" },
+        { value: "March", label: "March" },
+        { value: "April", label: "April" },
+        { value: "May", label: "May" },
+        { value: "June", label: "June" },
+        { value: "July", label: "July" },
+        { value: "August", label: "August" },
+        { value: "September", label: "September" },
+        { value: "October", label: "October" },
+        { value: "November", label: "November" },
+        { value: "December", label: "December" },
+      ];
+      const selectValue = select(
+        "Select Value",
+        [null].concat(...selectOptions.map(opt => opt.value)),
+      );
+
+      return (
+        <InputGroup
+          label={label}
+          flex={flex}
+          onChange={action("onChange")}
+          onFocus={action("onFocus")}
+          onBlur={action("onBlur")}
+        >
+          <InputField placeholder="DD" error={error} help={help} />
+          <Select
+            options={selectOptions}
+            value={selectValue}
+            placeholder="Month"
+            error="Something went wrong on month field"
+            help={help}
+          />
+          <InputField placeholder="YYYY" error="Something went wrong on year field" help={help} />
         </InputGroup>
       );
     },
@@ -128,8 +177,6 @@ storiesOf("InputGroup", module)
         <InputGroup
           label={label}
           flex={flex}
-          error={error}
-          help={help}
           size={size}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
@@ -137,7 +184,7 @@ storiesOf("InputGroup", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Select options={selectOptions} value={selectValue} />
+          <Select options={selectOptions} value={selectValue} error={error} help={help} />
           <InputField placeholder={placeholder} value={inputValue} />
           <Select options={selectOptions} value={selectValue} />
           <InputField placeholder={placeholder} value={inputValue} />
@@ -181,11 +228,9 @@ storiesOf("InputGroup", module)
             onChange={action("onChange")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
-            error={error}
-            help={help}
             label={label}
           >
-            <InputField placeholder="DD" />
+            <InputField placeholder="DD" help={help} error={error} />
             <Select options={selectOptions} value={selectValue} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>

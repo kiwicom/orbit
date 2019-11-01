@@ -42,7 +42,7 @@ describe("resolveTooltipPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:-15px;"));
+    ).toEqual(resolveWithRTLFunction("top:-8px;__position__:-15px;"));
   });
   it("bottom position", () => {
     expect(
@@ -54,6 +54,6 @@ describe("resolveTooltipPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:0;"));
+    ).toEqual(resolveWithRTLFunction("bottom:-8px;__position__:0;"));
   });
 });

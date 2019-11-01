@@ -19,9 +19,7 @@ Table below contains all types of the props available in InputGroup component.
 | :------------ | :---------------------------- | :----------- | :------------------------------- |
 | **children**  | `React.Node`                  |              | The content of the InputGroup, normally [`InputField`](../InputField) or [`Select`](../Select).
 | dataTest      | `string`                      |              | Optional prop for testing purposes.
-| error         | `React.Node`                  |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)
 | flex          | `string` or `Array<string>`   | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)
-| help          | `React.Node`                  |              | The help to display beneath the InputGroup.
 | label         | `Translation`                 |              | The label for the InputGroup. [See Functional specs](#functional-specs)
 | onChange      | `event => void \| Promise`    |              | Function for handling onClick event. [See Functional specs](#functional-specs)
 | onFocus       | `event => void \| Promise`    |              | Function for handling onFocus event. [See Functional specs](#functional-specs)
@@ -38,9 +36,7 @@ Table below contains all types of the props available in InputGroup component.
 
 
 ## Functional specs
-* The `error` prop overwrites the `help` prop, due to higher priority.
-
-* Define `error` or `help` only for the **InputGroup**. Any `error` or `help` in InputField or Select won't be displayed.
+* `error` or `help` defined on children will be displayed to user from left to right, only one error at a time will be displayed until resolved.
 
 * You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
 

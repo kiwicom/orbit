@@ -24,18 +24,17 @@ const StyledPopoverParent = styled.div`
   left: 0;
   right: 0;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  overflow: auto;
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
-  overflow-y: scroll;
   &:focus {
     outline: 0;
   }
@@ -49,7 +48,6 @@ const StyledPopoverParent = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    overflow: auto;
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     ${resolvePopoverPosition}
@@ -61,7 +59,9 @@ StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverContent = styled.div``;
+const StyledPopoverContent = styled.div`
+  height: 100%;
+`;
 
 const StyledOverlay = styled.div`
   display: block;

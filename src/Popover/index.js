@@ -23,6 +23,11 @@ StyledActions.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledContentWrapper = styled.div`
+  overflow: auto;
+  height: calc(100% - 60px);
+`;
+
 const Popover = ({
   children,
   content,
@@ -149,7 +154,8 @@ const Popover = ({
             fixed={fixed}
             actions={actions}
           >
-            {content}
+            <StyledContentWrapper>{content}</StyledContentWrapper>
+
             {actions && (
               <StyledActions>
                 <Separator spaceAfter="normal" /> {actions}

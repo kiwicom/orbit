@@ -49,7 +49,6 @@ const StyledPopoverParent = styled.div`
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
-    max-height: ${({ theme }) => `calc(90% - ${theme.orbit.spaceXLarge})`};
 
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}

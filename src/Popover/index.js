@@ -25,7 +25,7 @@ StyledActions.defaultProps = {
 
 const StyledContentWrapper = styled.div`
   overflow: auto;
-  height: calc(100% - 60px);
+  max-height: calc(100vh - 120px);
 `;
 
 const Popover = ({

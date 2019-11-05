@@ -261,7 +261,19 @@ storiesOf("Popover", module)
     () => {
       return (
         <>
-          <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+          <Popover
+            content={longContent}
+            actions={
+              <Stack direction="row" justify="between">
+                <Button type="secondary" size="small">
+                  Cancel
+                </Button>
+                <Button size="small">Done</Button>
+              </Stack>
+            }
+            onOpen={action("open")}
+            onClose={action("close")}
+          >
             <Button type="secondary" iconRight={<ChevronDown />}>
               Open popover
             </Button>

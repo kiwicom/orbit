@@ -24,7 +24,7 @@ const StyledPopoverParent = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   box-sizing: border-box;
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
@@ -49,6 +49,7 @@ const StyledPopoverParent = styled.div`
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
+    max-height: ${({ theme }) => `calc(90% - ${theme.orbit.spaceXLarge})`};
 
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}
@@ -59,9 +60,7 @@ StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverContent = styled.div`
-  height: 100%;
-`;
+const StyledPopoverContent = styled.div``;
 
 const StyledOverlay = styled.div`
   display: block;

@@ -36,6 +36,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
             spacing="condensed"
             align="stretch"
             desktop={{ spacing: "natural", spaceAfter: "none" }}
+            justify="center"
           >
             {isDesktop
               ? children

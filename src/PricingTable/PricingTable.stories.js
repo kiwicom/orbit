@@ -270,25 +270,6 @@ storiesOf("PricingTable", module)
                   {germanContent}
                 </PricingTableItem>
                 <PricingTableItem
-                  name="Plus Service"
-                  priceBadge={<Badge type="info">+ 10</Badge>}
-                  badge="Popular"
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      fullWidth
-                    >
-                      Upgrade vornehmen und fortfahren
-                    </Button>
-                  }
-                  mobileDescription="Flexi ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {germanContent}
-                </PricingTableItem>
-                <PricingTableItem
                   name="Premium Service"
                   priceBadge={<Badge type="info">+ 20</Badge>}
                   action={
@@ -342,26 +323,6 @@ storiesOf("PricingTable", module)
             onClick={action("onClick")}
           >
             {content}
-          </PricingTableItem>
-          <PricingTableItem
-            name="Plus Services"
-            price="$749"
-            featureIcon={<FeatureIcon name="TicketStandard" />}
-            badge={<Badge type="warningInverted">Popular</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Flexi ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {longerContent}
           </PricingTableItem>
           <PricingTableItem
             name="Premium"

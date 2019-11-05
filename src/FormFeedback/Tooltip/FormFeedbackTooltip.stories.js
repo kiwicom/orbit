@@ -14,6 +14,17 @@ import Textarea from "../../Textarea";
 import Select from "../../Select";
 import InputFile from "../../InputFile";
 import InputGroup from "../../InputGroup";
+import Button from "../../Button";
+import Text from "../../Text";
+import ChevronLeft from "../../icons/ChevronLeft";
+import Card from "../../Card";
+import CardHeader from "../../Card/CardHeader";
+import CountryFlag from "../../CountryFlag";
+import Airplane from "../../icons/Airplane";
+import TextLink from "../../TextLink";
+import Checkbox from "../../Checkbox";
+import Radio from "../../Radio";
+import Modal, { ModalHeader, ModalSection, ModalFooter } from "../../Modal";
 
 const objectOptions = [
   { value: 0, label: "Zero-th item" },
@@ -334,6 +345,68 @@ storiesOf("FormErrors Kitchensink", module)
             </InputGroup>
           </Stack>
         </RenderInRtl>
+      );
+    },
+    {
+      info: "Some description about this type of InputField in general.",
+    },
+  )
+  .add(
+    "Modal",
+    () => {
+      const label = text("Label", "Label");
+      const error = text(
+        "Label",
+        "Something is not quite right, Something is not quite right Something is not quite right Something is not quite right",
+      );
+      const showMore = boolean("required", true);
+
+      return (
+        <Modal onClose={action("onClose")} fixedFooter>
+          <ModalHeader title="Refund" description="Reservation number: 123456789" />
+          <ModalSection>
+            <Stack>
+              <Card>
+                <CardHeader title="Cancellation" icon={<Airplane />} />
+              </Card>
+              <Text size="small" weight="bold">
+                Contact information
+              </Text>
+              <InputField error={error} label="E-mail" placeholder="Your email" />
+              <InputGroup
+                flex={["0 0 120px", "1 1 100%"]}
+                onChange={action("onChange")}
+                label={label}
+              >
+                <Select
+                  options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                  value={1}
+                  prefix={<CountryFlag code="cz" />}
+                />
+                <InputField placeholder="111 222 333" />
+              </InputGroup>
+              {showMore && (
+                <React.Fragment>
+                  <Text weight="bold" size="small">
+                    Options
+                  </Text>
+                  <Radio label="Option one" checked />
+                  <Radio label="Option two" />
+                  <Text size="small" type="secondary" spaceAfter="large">
+                    These are the most favorite. <TextLink href="#">Show more</TextLink>
+                  </Text>
+                  <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
+                </React.Fragment>
+              )}
+            </Stack>
+          </ModalSection>
+          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+            <Button icon={<ChevronLeft />} type="secondary">
+              Back
+            </Button>
+            <Button fullWidth>Proceed to Payment (23.98€)</Button>
+          </ModalFooter>
+        </Modal>
       );
     },
     {

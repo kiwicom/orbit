@@ -24,7 +24,7 @@ Table below contains all types of the props available in Illustration component.
 | `"Accommodation"`             | `"small"`      |
 | `"AirHelp"`                   | `"medium"`     |
 | `"AirportTransport"`          | `"large"`      |
-| `"AirportTransportTaxi"`      |
+| `"AirportTransportTaxi"`      | `"display"`    |
 | `"AirportShuttle"`            |
 | `"AppQRCode"`                 |
 | `"BaggageDrop"`               |
@@ -56,6 +56,7 @@ Table below contains all types of the props available in Illustration component.
 | `"NoBookings"`                |
 | `"NoFavoriteFlights"`         |
 | `"Nomad"`                     |
+| `"NomadNeutral"`              |
 | `"NoNotification"`            |
 | `"NoResults"`                 |
 | `"Offline"`                   |

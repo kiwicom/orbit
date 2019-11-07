@@ -110,6 +110,7 @@ export const StyledButtonLink = styled(
   padding: ${getButtonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
+  line-height: 1.4; // preventing inheriting with safe value
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : "1")};
   transition: all 0.15s ease-in-out !important;

@@ -36,6 +36,7 @@ export const NAMES = [
   "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",
   "Nomad",
+  "NomadNeutral",
   "NoNotification",
   "NoResults",
   "Offline",

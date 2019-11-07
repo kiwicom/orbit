@@ -13,12 +13,13 @@ import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
 import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "./hooks/useDimensions";
-import { POSITIONS } from "./consts";
+import { POSITIONS, SIDE_NUDGE } from "./consts";
 
 import type { Props } from "./index";
 
 const StyledFormFeedbackTooltip = styled.div`
   display: flex;
+  justify-content: space-between;
   position: absolute;
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -30,7 +31,7 @@ const StyledFormFeedbackTooltip = styled.div`
 
   max-height: none;
   overflow: visible;
-  width: auto;
+  width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
   background-color: ${resolveColor};
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
   opacity: ${({ shown }) => (shown ? "1" : "0")};
@@ -58,6 +59,10 @@ const StyledFormFeedbackTooltip = styled.div`
     ${tooltipArrowStyle};
     ${resolveTooltipArrowPosition};
   }
+
+  ${media.largeMobile(css`
+    width: auto;
+  `)};
 
   ${resolveTooltipPosition}
 `;

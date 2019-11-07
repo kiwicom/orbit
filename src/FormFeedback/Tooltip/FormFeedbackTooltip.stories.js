@@ -355,10 +355,7 @@ storiesOf("FormErrors Kitchensink", module)
     "Modal",
     () => {
       const label = text("Label", "Label");
-      const error = text(
-        "Label",
-        "Something is not quite right, Something is not quite right Something is not quite right Something is not quite right",
-      );
+      const error = text("Label", "Something is not quite right");
       const showMore = boolean("required", true);
 
       return (
@@ -372,6 +369,7 @@ storiesOf("FormErrors Kitchensink", module)
               <Text size="small" weight="bold">
                 Contact information
               </Text>
+              <InputField help={error} label="E-mail" placeholder="Your email" />
               <InputField error={error} label="E-mail" placeholder="Your email" />
               <InputGroup
                 flex={["0 0 120px", "1 1 100%"]}

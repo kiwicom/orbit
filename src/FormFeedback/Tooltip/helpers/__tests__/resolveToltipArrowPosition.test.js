@@ -90,7 +90,7 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:7px;"));
+    ).toEqual(resolveWithRTLFunction("bottom:-7px;__position__:22px;"));
   });
   it("bottom position with inline label", () => {
     expect(
@@ -102,6 +102,6 @@ describe("resolveTooltipArrowPosition", () => {
           inlineLabel: true,
         }),
       ).join(""),
-    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:7px;"));
+    ).toEqual(resolveWithRTLFunction("top:-7px;__position__:22px;"));
   });
 });

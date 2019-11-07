@@ -7,9 +7,7 @@ import type { PositionRaw } from "../index";
 export type ResolveTooltipPosition = ({
   theme: Theme,
   position: string,
-  inlineLabel: boolean,
   contentBounding: PositionRaw,
-  iconBounding: PositionRaw,
 }) => Interpolation[];
 
 declare export default ResolveTooltipPosition;

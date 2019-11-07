@@ -38,11 +38,11 @@ const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   const pos = {
     top: css`
       bottom: ${-ARROW_SIZE}px;
-      ${left}: ${ARROW_SIZE}px;
+      ${left}: ${ARROW_SIZE + SIDE_NUDGE}px;
     `,
     bottom: css`
       top: ${-ARROW_SIZE}px;
-      ${left}: ${ARROW_SIZE}px;
+      ${left}: ${ARROW_SIZE + SIDE_NUDGE}px;
     `,
   };
 

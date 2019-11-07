@@ -54,6 +54,6 @@ describe("resolveTooltipPosition", () => {
           inlineLabel: false,
         }),
       ).join(""),
-    ).toEqual(resolveWithRTLFunction("bottom:-8px;__position__:0;"));
+    ).toEqual(resolveWithRTLFunction("bottom:-8px;__position__:-15px;"));
   });
 });

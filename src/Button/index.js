@@ -123,6 +123,7 @@ export const StyledButton = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
+  line-height: 1.4; // preventing inheriting with safe value
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;

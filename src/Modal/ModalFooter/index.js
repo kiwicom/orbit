@@ -97,15 +97,17 @@ class ModalFooter extends React.PureComponent<Props> {
         return (
           <StyledChild flex={getChildFlex(key)}>
             {React.cloneElement(child, {
-              ref: node => {
-                // Call the original ref, if any
-                const { ref } = child;
-                if (typeof ref === "function") {
-                  ref(node);
-                } else if (ref !== null) {
-                  ref.current = node;
-                }
-              },
+              ref: child.ref
+                ? node => {
+                    // Call the original ref, if any
+                    const { ref } = child;
+                    if (typeof ref === "function") {
+                      ref(node);
+                    } else if (ref !== null) {
+                      ref.current = node;
+                    }
+                  }
+                : null,
             })}
           </StyledChild>
         );

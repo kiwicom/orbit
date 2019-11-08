@@ -195,16 +195,9 @@ const InputGroup = ({
   const error = foundErrors.length > 0 && foundErrors[0];
   const help = foundHelp.length > 0 && foundHelp[0];
 
-  const isFilled = useCallback(
-    () =>
-      setFilled(
-        !React.Children.map(
-          children,
-          child => child.props.value !== undefined && child.props.value !== "",
-        ).includes(false),
-      ),
-    [children],
-  );
+  const isFilled = useCallback(() => setFilled(findPropInChild("value", children).length > 0), [
+    children,
+  ]);
 
   useEffect(() => {
     isFilled();
@@ -276,15 +269,17 @@ const InputGroup = ({
             union types therefore, it's bypassed via declaring it here */
             <StyledChild flex={childFlex || "0 1 auto"}>
               {React.cloneElement(item, {
-                ref: node => {
-                  // Call the original ref, if any
-                  const { ref } = item;
-                  if (typeof ref === "function") {
-                    ref(node);
-                  } else if (ref !== null) {
-                    ref.current = node;
-                  }
-                },
+                ref: item.ref
+                  ? node => {
+                      // Call the original ref, if any
+                      const { ref } = item;
+                      if (typeof ref === "function") {
+                        ref(node);
+                      } else if (ref !== null) {
+                        ref.current = node;
+                      }
+                    }
+                  : null,
                 size,
                 label: undefined,
                 help: undefined,

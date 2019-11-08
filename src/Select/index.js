@@ -7,7 +7,6 @@ import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
 import SIZE_OPTIONS from "./consts";
-import type { Ref } from "../common/common.js.flow";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
@@ -232,8 +231,7 @@ StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const Select = React.forwardRef((props: Props, ref: Ref) => {
+const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,
@@ -254,7 +252,7 @@ const Select = React.forwardRef((props: Props, ref: Ref) => {
     prefix,
     spaceAfter,
     customValueText,
-  } = props;
+  }: Props = props;
   const filled = !(value == null || value === "");
 
   const [tooltipShown, setTooltipShown] = useState(false);

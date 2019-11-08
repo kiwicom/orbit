@@ -7,7 +7,6 @@ import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
-import type { Ref } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
@@ -288,8 +287,7 @@ const StyledIconWrapper = styled.span`
   display: flex;
 `;
 
-// $FlowExpected
-const InputField = React.forwardRef((props: Props, ref: Ref) => {
+const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,
@@ -321,7 +319,7 @@ const InputField = React.forwardRef((props: Props, ref: Ref) => {
     spaceAfter,
     id,
     inputMode,
-  } = props;
+  }: Props = props;
 
   const forID = React.useMemo(() => {
     if (id) return id;

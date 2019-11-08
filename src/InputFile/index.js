@@ -116,8 +116,7 @@ CloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const InputFile = React.forwardRef((props: Props, ref: Ref) => {
+const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     placeholder = "No file selected",
     buttonLabel = "Select file",

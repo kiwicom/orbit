@@ -19,16 +19,21 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import Separator from "../../Separator";
 import boundingClientRect from "../../utils/boundingClientRect";
-import { MOBILE_TOP_SPACE, POPOVER_PADDING, ACTIONS_SPACE } from "../consts";
+
+const mobileTop = theme => theme.orbit.spaceXLarge;
+const popoverPadding = theme => theme.orbit.spaceMedium;
+const actionsSpace = theme => theme.orbit.spaceSmall;
+
+const allSpacing = theme =>
+  parseFloat(popoverPadding(theme)) * 2 +
+  parseFloat(mobileTop(theme)) +
+  parseFloat(actionsSpace(theme));
 
 const StyledContentWrapper = styled.div`
   overflow: auto;
-  max-height: ${({ actionsHeight }) =>
+  max-height: ${({ actionsHeight, theme }) =>
     // Calculates all the spacing relative to viewport to get space for action box
-    `calc(100vh - ${parseFloat(POPOVER_PADDING) * 2 +
-      parseFloat(MOBILE_TOP_SPACE) +
-      parseFloat(ACTIONS_SPACE) +
-      actionsHeight}px)`};
+    `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
 
   ${media.largeMobile(css`
     max-height: 100%;
@@ -40,8 +45,12 @@ StyledContentWrapper.defaultProps = {
 };
 
 const StyledActions = styled.div`
-  margin-top: ${ACTIONS_SPACE};
+  margin-top: ${({ theme }) => actionsSpace(theme)};
 `;
+
+StyledActions.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -54,12 +63,12 @@ const StyledPopoverParent = styled.div`
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ noPadding }) => (noPadding ? 0 : POPOVER_PADDING)};
+  padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
-  max-height: ${() => `calc(100% - ${MOBILE_TOP_SPACE})`};
+  max-height: ${({ theme }) => `calc(100% - ${mobileTop(theme)})`};
   &:focus {
     outline: 0;
   }
@@ -108,8 +117,8 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledPopoverClose = styled.div`
-  padding: ${({ noPadding }) => (noPadding ? POPOVER_PADDING : 0)};
-  padding-top: ${POPOVER_PADDING};
+  padding: ${({ noPadding, theme }) => (noPadding ? popoverPadding(theme) : 0)};
+  padding-top: ${({ theme }) => popoverPadding(theme)};
 
   ${media.largeMobile(css`
     display: none;

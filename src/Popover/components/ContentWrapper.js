@@ -17,12 +17,11 @@ import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
-import Separator from "../../Separator";
 import boundingClientRect from "../../utils/boundingClientRect";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
-const actionsSpace = theme => theme.orbit.spaceSmall;
+const actionsSpace = theme => theme.orbit.spaceMedium;
 
 const allSpacing = theme =>
   parseFloat(popoverPadding(theme)) * 2 +
@@ -196,10 +195,7 @@ const PopoverContentWrapper = ({
             {children}
           </StyledContentWrapper>
           {actions ? (
-            <StyledActions ref={actionsRef}>
-              <Separator spaceAfter="normal" />
-              {actions}
-            </StyledActions>
+            <StyledActions ref={actionsRef}>{actions}</StyledActions>
           ) : (
             <StyledPopoverClose ref={actionsRef} noPadding={noPadding}>
               <Button type="secondary" fullWidth onClick={onClose}>

@@ -17,7 +17,40 @@ import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
+import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
+
+const mobileTop = theme => theme.orbit.spaceXLarge;
+const popoverPadding = theme => theme.orbit.spaceMedium;
+const actionsSpace = theme => theme.orbit.spaceMedium;
+
+const allSpacing = theme =>
+  parseFloat(popoverPadding(theme)) * 2 +
+  parseFloat(mobileTop(theme)) +
+  parseFloat(actionsSpace(theme));
+
+const StyledContentWrapper = styled.div`
+  overflow: auto;
+  max-height: ${({ actionsHeight, theme }) =>
+    // Calculates all the spacing relative to viewport to get space for action box
+    `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
+
+  ${media.largeMobile(css`
+    max-height: 100%;
+  `)}
+`;
+
+StyledContentWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledActions = styled.div`
+  margin-top: ${({ theme }) => actionsSpace(theme)};
+`;
+
+StyledActions.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -25,18 +58,17 @@ const StyledPopoverParent = styled.div`
   left: 0;
   right: 0;
   width: 100%;
+  height: auto;
   box-sizing: border-box;
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ theme, noPadding }) => (noPadding ? 0 : theme.orbit.spaceMedium)};
+  padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  overflow: auto;
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
-  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
-  overflow-y: scroll;
+  max-height: ${({ theme }) => `calc(100% - ${mobileTop(theme)})`};
   &:focus {
     outline: 0;
   }
@@ -50,9 +82,8 @@ const StyledPopoverParent = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    overflow: auto;
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
-
+    max-height: none;
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}
   `)}
@@ -86,8 +117,8 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledPopoverClose = styled.div`
-  padding: ${({ theme, noPadding }) => (noPadding ? theme.orbit.spaceMedium : 0)};
-  padding-top: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ noPadding, theme }) => (noPadding ? popoverPadding(theme) : 0)};
+  padding-top: ${({ theme }) => popoverPadding(theme)};
 
   ${media.largeMobile(css`
     display: none;
@@ -117,11 +148,13 @@ const PopoverContentWrapper = ({
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
+  const actionsRef: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
   const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
+  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -160,9 +193,13 @@ const PopoverContentWrapper = ({
         isInsideModal={isInsideModal}
       >
         <StyledPopoverContent ref={content}>
-          {children}
-          {!actions && (
-            <StyledPopoverClose noPadding={noPadding}>
+          <StyledContentWrapper actionsHeight={actionsDimensions && actionsDimensions.height}>
+            {children}
+          </StyledContentWrapper>
+          {actions ? (
+            <StyledActions ref={actionsRef}>{actions}</StyledActions>
+          ) : (
+            <StyledPopoverClose ref={actionsRef} noPadding={noPadding}>
               <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>

@@ -146,6 +146,7 @@
     "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.3",
     "rimraf": "^2.6.2",
+    "sharp": "^0.23.2",
     "styled-components": "^4.2.0",
     "surge": "^0.20.1",
     "svg2ttf": "^4.2.0",

@@ -8,20 +8,10 @@ import type { Props } from "./index.js.flow";
 import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { POSITIONS, ALIGNS } from "./consts";
-import Separator from "../Separator";
-import defaultTheme from "../defaultTheme";
 
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
-
-const StyledActions = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceSmall};
-`;
-
-StyledActions.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Popover = ({
   children,
@@ -150,11 +140,6 @@ const Popover = ({
             actions={actions}
           >
             {content}
-            {actions && (
-              <StyledActions>
-                <Separator spaceAfter="normal" /> {actions}
-              </StyledActions>
-            )}
           </PopoverContentWrapper>
         </Portal>
       )}

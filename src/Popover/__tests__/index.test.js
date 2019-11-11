@@ -53,7 +53,7 @@ describe("Popover", () => {
   });
 
   it("should have actions", () => {
-    expect(component.find("Popover__StyledActions").exists()).toBe(true);
+    expect(component.find("ContentWrapper__StyledActions").exists()).toBe(true);
   });
 });
 

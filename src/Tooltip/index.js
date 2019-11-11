@@ -15,7 +15,7 @@ import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import type { Props } from "./index";
 
 const StyledTooltipChildren = styled.span`
-  display: inline-block;
+  display: inline-flex;
   &:focus:active {
     outline: none;
   }

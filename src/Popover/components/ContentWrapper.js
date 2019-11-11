@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext, useMemo } from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -17,6 +17,7 @@ import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
+import getScrollableParent from "../helpers/getScrollableParent";
 
 const StyledPopoverParent = styled.div`
   position: fixed;
@@ -117,7 +118,8 @@ const PopoverContentWrapper = ({
   const content: { current: React$ElementRef<*> } = useRef(null);
   const overlay: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
-  const dimensions = useDimensions({ containerRef, popover, content, fixed });
+  const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
+  const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
 

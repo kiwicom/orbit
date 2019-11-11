@@ -18,6 +18,7 @@ import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
+import getScrollableParent from "../helpers/getScrollableParent";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -149,7 +150,8 @@ const PopoverContentWrapper = ({
   const overlay: { current: React$ElementRef<*> } = useRef(null);
   const actionsRef: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
-  const dimensions = useDimensions({ containerRef, popover, content, fixed });
+  const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
+  const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);

@@ -3,9 +3,14 @@ import { useState, useEffect } from "react";
 
 import type { UseDimensions } from "./useDimensions.js.flow";
 import boundingClientRect from "../../utils/boundingClientRect";
-import getScrollableParent from "../helpers/getScrollableParent";
 
-const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed }) => {
+const useDimensions: UseDimensions = ({
+  containerRef,
+  popover,
+  content,
+  fixed,
+  scrollableParent,
+}) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
     containerPureTop: 0,
@@ -51,22 +56,21 @@ const useDimensions: UseDimensions = ({ containerRef, popover, content, fixed })
         });
       }
     };
-    const scrollableparent = getScrollableParent(containerRef.current);
 
     calculate();
 
     window.addEventListener("resize", calculate);
     if (fixed) window.addEventListener("scroll", calculate);
-    if (scrollableparent !== document.body && scrollableparent)
-      scrollableparent.addEventListener("scroll", calculate);
+    if (scrollableParent !== document.body && scrollableParent)
+      scrollableParent.addEventListener("scroll", calculate);
 
     return () => {
       window.removeEventListener("resize", calculate);
       if (fixed) window.removeEventListener("scroll", calculate);
-      if (scrollableparent !== document.body && scrollableparent)
-        scrollableparent.removeEventListener("scroll", calculate);
+      if (scrollableParent !== document.body && scrollableParent)
+        scrollableParent.removeEventListener("scroll", calculate);
     };
-  }, [containerRef, content, popover, fixed]);
+  }, [containerRef, content, popover, fixed, scrollableParent]);
 
   return positions;
 };

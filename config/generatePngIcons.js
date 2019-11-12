@@ -50,11 +50,15 @@ async function generateIcon(pathToFile, size, color, extraDir) {
     file.toString().replace(`<svg `, `<svg fill="${color}" `),
     "utf8",
   );
-  await sharp(updateBuffer)
+  await sharp(updateBuffer, { density: 300 })
     .resize(size, size)
     .toFile(`${DIR}/${extraDir}/${size}/${name}.png`);
-
+  console.log(`${DIR}/${extraDir}/${size}/${name}.png`);
   return `${DIR}/${extraDir}/${size}/${name}.png`;
+}
+
+function filterOutElements(e) {
+  return this.indexOf(e) < 0;
 }
 
 (async () => {
@@ -78,10 +82,17 @@ async function generateIcon(pathToFile, size, color, extraDir) {
 
   const files = await readDir("./src/icons/svg/");
 
+  const filtered = files.filter(filterOutElements, [
+    "facebook.svg",
+    "google.svg",
+    "linkedin.svg",
+    "twitter.svg",
+  ]);
+
   const promises = [];
 
   // Generate every variant
-  files.forEach(file => {
+  filtered.forEach(file => {
     colors.forEach(color => {
       sizesToGenerate.forEach(size => {
         promises.push(generateIcon(file, size, color[1], color[0]));

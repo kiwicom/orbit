@@ -20,7 +20,6 @@ const colors = [
 
 async function readFile(pathToFile) {
   return new Promise((resolve, reject) => {
-    // eslint-disable-next-line func-names
     fs.readFile(pathToFile, "utf8", (err, data) => {
       if (err) {
         reject(err);
@@ -63,7 +62,6 @@ async function generateIcon(pathToFile, size, color, extraDir) {
   return false;
 }
 
-// Resursively generates path
 function generatePath(targetDir) {
   const { sep } = path;
   const initDir = path.isAbsolute(targetDir) ? sep : "";

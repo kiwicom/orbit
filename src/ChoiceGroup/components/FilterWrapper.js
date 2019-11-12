@@ -23,6 +23,7 @@ const StyledContentWrapper = styled.div`
   display: flex;
   align-items: center;
 
+  /* NOTE: Combined selector &:hover, &:focus-within is not ussable here as it renders incorectly in IE and EDGE */
   &:hover {
     ${hoverAndFocus}
   }

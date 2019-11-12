@@ -44,61 +44,63 @@ async function readDir(pathToDir) {
 async function generateIcon(pathToFile, size, color, extraDir) {
   const nameSplit = pathToFile.split("/");
   const name = nameSplit[nameSplit.length - 1].replace(".svg", "");
+  const file =
+    fs.lstatSync(`./src/icons/svg/${pathToFile}`).isFile() &&
+    (await readFile(`./src/icons/svg/${pathToFile}`));
 
-  const file = await readFile(`./src/icons/svg/${pathToFile}`);
-  const updateBuffer = Buffer.from(
-    file.toString().replace(`<svg `, `<svg fill="${color}" `),
-    "utf8",
-  );
-  await sharp(updateBuffer, { density: 300 })
-    .resize(size, size)
-    .toFile(`${DIR}/${extraDir}/${size}/${name}.png`);
-  console.log(`${DIR}/${extraDir}/${size}/${name}.png`);
-  return `${DIR}/${extraDir}/${size}/${name}.png`;
+  if (file) {
+    const updateBuffer = Buffer.from(
+      file.toString().replace(`<svg `, `<svg fill="${color}" `),
+      "utf8",
+    );
+
+    await sharp(updateBuffer, { density: 300 })
+      .resize(size, size)
+      .toFile(`${DIR}/${extraDir}/${size}/${name}.png`);
+
+    return `${DIR}/${extraDir}/${size}/${name}.png`;
+  }
+  return false;
 }
 
-function filterOutElements(e) {
-  return this.indexOf(e) < 0;
+// Resursively generates path
+function generatePath(targetDir) {
+  const { sep } = path;
+  const initDir = path.isAbsolute(targetDir) ? sep : "";
+  targetDir.split(sep).reduce((parentDir, childDir) => {
+    const curDir = path.resolve(parentDir, childDir);
+    if (!fs.existsSync(curDir)) {
+      fs.mkdirSync(curDir);
+    }
+    return curDir;
+  }, initDir);
 }
 
 (async () => {
-  // Sync paths
-  // TODO: make it nice and should be also awaited, can cause error of not being created before it want's to write.
-  if (!fs.existsSync(DIR)) {
-    fs.mkdirSync(DIR);
-  }
-  colors.forEach(el => {
-    if (!fs.existsSync(`${DIR}/${el[0]}`)) {
-      fs.mkdirSync(`${DIR}/${el[0]}`);
-    }
-  });
-  sizesToGenerate.forEach(size => {
-    colors.forEach(color => {
-      if (!fs.existsSync(`${DIR}/${color[0]}/${size}`)) {
-        fs.mkdirSync(`${DIR}/${color[0]}/${size}`);
-      }
-    });
-  });
-
-  const files = await readDir("./src/icons/svg/");
-
-  const filtered = files.filter(filterOutElements, [
-    "facebook.svg",
-    "google.svg",
-    "linkedin.svg",
-    "twitter.svg",
-  ]);
-
-  const promises = [];
-
-  // Generate every variant
-  filtered.forEach(file => {
-    colors.forEach(color => {
-      sizesToGenerate.forEach(size => {
-        promises.push(generateIcon(file, size, color[1], color[0]));
+  try {
+    // Sync paths
+    sizesToGenerate.forEach(size => {
+      colors.forEach(color => {
+        generatePath(`${DIR}/${color[0]}/${size}`);
       });
     });
-  });
 
-  await Promise.all(promises);
+    // Find all icons
+    const files = await readDir("./src/icons/svg/");
+
+    const promises = [];
+
+    // Generate every variant
+    files.forEach(file => {
+      colors.forEach(color => {
+        sizesToGenerate.forEach(size => {
+          promises.push(generateIcon(file, size, color[1], color[0]));
+        });
+      });
+    });
+
+    await Promise.all(promises);
+  } catch (error) {
+    console.error(error);
+  }
 })();

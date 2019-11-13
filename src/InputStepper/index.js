@@ -11,7 +11,7 @@ import useStateWithCallback from "../hooks/useStateWithCallback";
 import type { Props } from "./index";
 
 const InputStepper = React.forwardRef<Props, HTMLElement>(
-  ({ onChange, defaultValue = 0, ...props }: Props, ref) => {
+  ({ onChange, defaultValue = 0, ...props }, ref) => {
     const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
     const incrementCounter = () => {

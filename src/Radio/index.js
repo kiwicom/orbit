@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
-import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 
@@ -147,8 +146,7 @@ Label.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const Radio = React.forwardRef((props: Props, ref: Ref) => {
+const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     label,
     value,

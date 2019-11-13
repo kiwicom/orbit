@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import type { FilterWrapperType } from "./FilterWrapper.js.flow";
 import defaultTheme from "../../defaultTheme";
@@ -8,6 +8,14 @@ import ButtonLink from "../../ButtonLink";
 
 const StyledOnlyButton = styled(ButtonLink)``;
 
+const hoverAndFocus = () => css`
+  background-color: ${({ theme }) => theme.orbit.paletteProductLight};
+
+  ${StyledOnlyButton} {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
 const StyledContentWrapper = styled.div`
   width: 100%;
   padding: 0px 4px;
@@ -15,14 +23,12 @@ const StyledContentWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  &:hover,
+  /* NOTE: Combined selector &:hover, &:focus-within is not ussable here as it renders incorectly in IE and EDGE */
+  &:hover {
+    ${hoverAndFocus}
+  }
   &:focus-within {
-    background-color: ${({ theme }) => theme.orbit.paletteProductLight};
-
-    ${StyledOnlyButton} {
-      visibility: visible;
-      opacity: 1;
-    }
+    ${hoverAndFocus}
   }
 
   ${StyledOnlyButton} {

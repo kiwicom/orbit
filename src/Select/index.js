@@ -146,6 +146,10 @@ const StyledSelect = styled(
       box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
     }
   }
+
+  &:-internal-autofill-selected {
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 StyledSelect.defaultProps = {

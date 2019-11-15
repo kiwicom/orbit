@@ -147,6 +147,7 @@ const StyledSelect = styled(
     }
   }
 
+  &:-webkit-autofill,
   &:-internal-autofill-selected {
     -webkit-text-fill-color: transparent;
   }

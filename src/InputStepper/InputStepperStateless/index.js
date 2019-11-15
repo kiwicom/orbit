@@ -101,34 +101,30 @@ const InputStepperStateless = ({
         tabIndex={tabIndex}
         ref={forwardedRef}
         prefix={
-          <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onDecrement}>
-            <ButtonLink
-              disabled={
-                disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
-              }
-              iconLeft={<MinusCircle color="secondary" />}
-              size={size}
-              onClick={onDecrement}
-              transparent
-              component={PrefixSuffix}
-              title={titleDecrement}
-            />
-          </StyledButtonWrapper>
+          <ButtonLink
+            disabled={
+              disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
+            }
+            iconLeft={<MinusCircle color="secondary" />}
+            size={size}
+            onClick={onDecrement}
+            transparent
+            component={PrefixSuffix}
+            title={titleDecrement}
+          />
         }
         suffix={
-          <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onIncrement}>
-            <ButtonLink
-              disabled={
-                disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
-              }
-              iconLeft={<PlusCircle color="secondary" />}
-              size={size}
-              onClick={onIncrement}
-              transparent
-              component={PrefixSuffix}
-              title={titleIncrement}
-            />
-          </StyledButtonWrapper>
+          <ButtonLink
+            disabled={
+              disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
+            }
+            iconLeft={<PlusCircle color="secondary" />}
+            size={size}
+            onClick={onIncrement}
+            transparent
+            component={PrefixSuffix}
+            title={titleIncrement}
+          />
         }
       />
     </StyledInputStepper>

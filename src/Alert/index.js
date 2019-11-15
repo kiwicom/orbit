@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
@@ -51,6 +52,13 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
       [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
+    },
+    // TODO: create token
+    [TOKENS.colorTextLinkAlertFocus]: {
+      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueDarkHover, 10),
+      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenDarkHover, 10),
+      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeDarkHover, 10),
+      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
     },
   };
 
@@ -173,6 +181,20 @@ const Content = styled(StyledDiv)`
     &:focus,
     &:active {
       color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
+    }
+
+    :focus {
+      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
+      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
+    }
+    :focus:not(:focus-visible) {
+      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
+      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
+    }
+    :-moz-focusring,
+    :focus-visible {
+      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
+      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
     }
   }
   & ${Item}, ${StyledText}, ${StyledHeading} {

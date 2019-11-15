@@ -11,16 +11,6 @@ import defaultTheme from "../../defaultTheme";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { StateLessProps } from "./index.js.flow";
 
-const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
-  flex-shrink: 0;
-  z-index: 3;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
-`;
-
-PrefixSuffix.defaultProps = {
-  theme: defaultTheme,
-};
-
 const StyledInputStepper = styled.div`
   width: 100%;
   margin-bottom: ${getSpacingToken};
@@ -102,6 +92,7 @@ const InputStepperStateless = ({
         ref={forwardedRef}
         prefix={
           <ButtonLink
+            type="secondary"
             disabled={
               disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
             }
@@ -109,8 +100,8 @@ const InputStepperStateless = ({
             size={size}
             onClick={onDecrement}
             transparent
-            component={PrefixSuffix}
             title={titleDecrement}
+            component="div"
           />
         }
         suffix={
@@ -118,12 +109,13 @@ const InputStepperStateless = ({
             disabled={
               disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
             }
+            type="secondary"
             iconLeft={<PlusCircle color="secondary" />}
             size={size}
             onClick={onIncrement}
             transparent
-            component={PrefixSuffix}
             title={titleIncrement}
+            component="div"
           />
         }
       />

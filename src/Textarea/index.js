@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -8,6 +8,7 @@ import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 
 import type { Props } from "./index";
 
@@ -131,26 +132,15 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
     rows,
   }: Props = props;
 
-  const [tooltipShown, setTooltipShown] = useState(false);
-  const [tooltipShownHover, setTooltipShownHover] = useState(false);
-  const labelRef = useRef(null);
-  const iconRef = useRef(null);
-
-  const handleFocus = useCallback(
-    ev => {
-      if (onFocus) onFocus(ev);
-      setTooltipShown(true);
-    },
-    [onFocus],
-  );
-
-  const handleBlur = useCallback(
-    ev => {
-      if (onBlur) onBlur(ev);
-      setTooltipShown(false);
-    },
-    [onBlur],
-  );
+  const [
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+    handleBlur,
+  ] = useErrorTooltip(onFocus, onBlur);
 
   return (
     <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={label ? null : labelRef}>

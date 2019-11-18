@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useState, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -15,6 +15,7 @@ import FormFeedback from "../FormFeedback";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
+import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 
 import type { Props } from "./index";
 
@@ -325,26 +326,16 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     if (id) return id;
     return randomID("inputFieldID");
   }, [id]);
-  const [tooltipShown, setTooltipShown] = useState(false);
-  const [tooltipShownHover, setTooltipShownHover] = useState(false);
-  const labelRef = useRef(null);
-  const iconRef = useRef(null);
 
-  const handleFocus = useCallback(
-    ev => {
-      if (onFocus) onFocus(ev);
-      setTooltipShown(true);
-    },
-    [onFocus],
-  );
-
-  const handleBlur = useCallback(
-    ev => {
-      if (onBlur) onBlur(ev);
-      setTooltipShown(false);
-    },
-    [onBlur],
-  );
+  const [
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+    handleBlur,
+  ] = useErrorTooltip(onFocus, onBlur);
 
   return (
     <Field

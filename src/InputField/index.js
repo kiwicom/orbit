@@ -327,7 +327,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     return randomID("inputFieldID");
   }, [id]);
 
-  const [
+  const {
     tooltipShown,
     tooltipShownHover,
     setTooltipShownHover,
@@ -335,7 +335,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     iconRef,
     handleFocus,
     handleBlur,
-  ] = useErrorTooltip(onFocus, onBlur);
+  } = useErrorTooltip({ onFocus, onBlur });
 
   return (
     <Field

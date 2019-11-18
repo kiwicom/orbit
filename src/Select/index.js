@@ -256,7 +256,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
   }: Props = props;
   const filled = !(value == null || value === "");
 
-  const [
+  const {
     tooltipShown,
     tooltipShownHover,
     setTooltipShownHover,
@@ -264,7 +264,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
     iconRef,
     handleFocus,
     handleBlur,
-  ] = useErrorTooltip(onFocus, onBlur);
+  } = useErrorTooltip({ onFocus, onBlur });
 
   return (
     <Label spaceAfter={spaceAfter}>

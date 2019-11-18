@@ -1,25 +1,31 @@
 // @flow
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 
 import type { UseErrorTooltip } from "./useErrorTooltip.js.flow";
 
-const useErrorTooltip: UseErrorTooltip = (onFocus, onBlur) => {
+const useErrorTooltip: UseErrorTooltip = ({ onFocus, onBlur }) => {
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
   const labelRef = useRef(null);
   const iconRef = useRef(null);
 
-  const handleFocus = ev => {
-    if (onFocus) onFocus(ev);
-    setTooltipShown(true);
-  };
+  const handleFocus = useCallback(
+    ev => {
+      if (onFocus) onFocus(ev);
+      setTooltipShown(true);
+    },
+    [onFocus],
+  );
 
-  const handleBlur = ev => {
-    if (onBlur) onBlur(ev);
-    setTooltipShown(false);
-  };
+  const handleBlur = useCallback(
+    ev => {
+      if (onBlur) onBlur(ev);
+      setTooltipShown(false);
+    },
+    [onBlur],
+  );
 
-  return [
+  return {
     tooltipShown,
     tooltipShownHover,
     setTooltipShownHover,
@@ -27,7 +33,7 @@ const useErrorTooltip: UseErrorTooltip = (onFocus, onBlur) => {
     iconRef,
     handleFocus,
     handleBlur,
-  ];
+  };
 };
 
 export default useErrorTooltip;

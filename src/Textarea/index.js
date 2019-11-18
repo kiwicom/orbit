@@ -132,7 +132,7 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
     rows,
   }: Props = props;
 
-  const [
+  const {
     tooltipShown,
     tooltipShownHover,
     setTooltipShownHover,
@@ -140,7 +140,7 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
     iconRef,
     handleFocus,
     handleBlur,
-  ] = useErrorTooltip(onFocus, onBlur);
+  } = useErrorTooltip({ onFocus, onBlur });
 
   return (
     <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={label ? null : labelRef}>

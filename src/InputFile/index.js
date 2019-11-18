@@ -135,7 +135,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     fileName,
   } = props;
 
-  const [
+  const {
     tooltipShown,
     tooltipShownHover,
     setTooltipShownHover,
@@ -143,7 +143,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     iconRef,
     handleFocus,
     handleBlur,
-  ] = useErrorTooltip(onFocus, onBlur);
+  } = useErrorTooltip({ onFocus, onBlur });
 
   return (
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>

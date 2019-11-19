@@ -1,6 +1,7 @@
 // @flow
 import React, { useCallback } from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
@@ -111,8 +112,16 @@ const Input = styled.input`
   }
 
   &:focus + ${IconContainer} {
-    border: ${({ theme }) =>
-      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+    border: ${({ theme, error }) =>
+      `2px ${theme.orbit.borderStyleInput} ${
+        error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+      }`};
+    box-shadow: 0px 0px 0px 3px
+      ${({ theme, error }) =>
+        convertHexToRgba(
+          error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+          15,
+        )};
   }
 
   &:active + ${IconContainer} {
@@ -149,6 +158,7 @@ export const Label = styled(({ className, children, dataTest }) => (
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
+    box-shadow: none;
   }
 `;
 
@@ -189,6 +199,7 @@ const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
         onChange={onChange}
         ref={ref}
         readOnly={readOnly}
+        error={hasError}
       />
       <IconContainer onClick={readOnly ? preventOnClick : null}>
         <Check />

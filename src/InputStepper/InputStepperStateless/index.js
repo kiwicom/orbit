@@ -27,22 +27,6 @@ StyledInputStepper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonWrapper = styled.div`
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
-  }
-
-  &:focus:active {
-    box-shadow: none;
-  }
-`;
-
-StyledButtonWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
 const InputStepperStateless = ({
   label,
   error,

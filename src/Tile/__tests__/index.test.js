@@ -1,111 +1,114 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 
+import KEY_CODE_MAP from "../../common/keyMaps";
 import Tile from "../index";
+import TileContent from "../components/TileContent";
+import TileHeader from "../components/TileHeader";
+import TileExpandable from "../components/TileExpandable";
+import Text from "../../Text";
+import Stack from "../../Stack";
 import Airplane from "../../icons/Airplane";
 
-const title = "Tile title";
-const description = "Description";
-const href = "https://www.kiwi.com/";
-const external = true;
-const onClick = jest.fn();
-const dataTest = "test";
-
-describe("Tile Default", () => {
-  const component = (
+describe("Tile clickable", () => {
+  const dataTest = "test";
+  const title = "Lorem ipsum dolor sit amet";
+  const description = "Lorem ipsum dolor sit amet";
+  const onClick = jest.fn();
+  const component = shallow(
     <Tile
+      dataTest={dataTest}
       icon={<Airplane />}
       title={title}
       description={description}
-      href={href}
-      external={external}
       onClick={onClick}
-      dataTest={dataTest}
-    />
+    />,
   );
-  const shallowedComponent = shallow(component);
-  const mountedComponent = mount(component);
-
-  it("should contain icon, title and description", () => {
-    const tileHeader = mountedComponent.find("TileHeader");
-    expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);
-    expect(tileHeader.find("TileHeader__StyledTileDescription").exists()).toBe(true);
-    expect(
-      tileHeader
-        .find("Icon__StyledIcon")
-        .find("svg")
-        .exists(),
-    ).toBe(true);
+  it("should render proper attributes", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(component.render().prop("role")).toBe("button");
+    expect(component.prop("as")).toBe("div");
   });
-
-  it("should render rel when external", () => {
-    expect(shallowedComponent.render().prop("rel")).toBe("noopener noreferrer");
+  it("should return TileHeader with props", () => {
+    const header = component.find(TileHeader);
+    expect(header.exists()).toBe(true);
+    expect(header.prop("title")).toBe(title);
+    expect(header.prop("description")).toBe(description);
+    expect(header.prop("icon")).toBeDefined();
+    expect(header.prop("onClick")).toBe(onClick);
+    expect(header.prop("tabIndex")).toBe("0");
   });
+});
 
-  it("should render proper element", () => {
-    expect(shallowedComponent.render().prop("name")).toBe("a");
+describe("Tile as anchor with custom header", () => {
+  const href = "https://kiwi.com";
+  const header = (
+    <Stack>
+      <Text>Lorem ipsum dolor sit amet</Text>
+    </Stack>
+  );
+  const component = shallow(<Tile href={href} external header={header} />);
+  it("should render proper attributes", () => {
+    expect(component.prop("as")).toBe("a");
+    expect(component.prop("href")).toBe(href);
+    expect(component.prop("target")).toBe("_blank");
+    expect(component.prop("rel")).toBe("noopener noreferrer");
   });
+  it("should return TileHeader with props", () => {
+    const headerComponent = component.find(TileHeader);
+    expect(headerComponent.exists()).toBe(true);
+    expect(headerComponent.prop("header")).toBe(header);
+    expect(headerComponent.prop("tabIndex")).toBe(undefined);
+  });
+});
 
+describe("Tile just with children", () => {
+  const children = "Lorem ipsum dolor sit amet";
+  const onClick = jest.fn();
+  const noPadding = true;
+  const component = shallow(
+    <Tile onClick={onClick} noPadding={noPadding}>
+      {children}
+    </Tile>,
+  );
+  it("should return TileContent with props", () => {
+    const headerComponent = component.find(TileContent);
+    expect(headerComponent.exists()).toBe(true);
+    expect(headerComponent.prop("noPadding")).toBe(noPadding);
+    expect(headerComponent.prop("withPointer")).toBe(true);
+    expect(headerComponent.prop("withBorder")).toBe(false);
+  });
   it("should execute onClick method", () => {
-    shallowedComponent.find("TileHeader").simulate("click");
+    component.simulate("click");
+    expect(onClick).toHaveBeenCalled();
+  });
+  it("should execute onClick method onKeyDown ENTER", () => {
+    component.simulate("keydown", { keyCode: KEY_CODE_MAP.ENTER });
+    expect(onClick).toHaveBeenCalled();
+  });
+  it("should execute onClick method onKeyDown SPACE", () => {
+    component.simulate("keydown", { keyCode: KEY_CODE_MAP.SPACE, preventDefault: () => {} });
     expect(onClick).toHaveBeenCalled();
   });
 });
 
-describe("Tile Expandable", () => {
-  const children = "This is sample content of expandable tile";
-
-  const notDefaultExpandedTile = (
-    <Tile
-      icon={<Airplane />}
-      title={title}
-      href={undefined}
-      description={description}
-      onClick={onClick}
-      dataTest={dataTest}
-    >
-      {children}
-    </Tile>
+describe("Tile expandable with header and children", () => {
+  const children = "Lorem ipsum dolor sit amet";
+  const header = (
+    <Stack>
+      <Text>Lorem ipsum dolor sit amet</Text>
+    </Stack>
   );
-
-  const shallowednotDefaultExpandedTile = shallow(notDefaultExpandedTile);
-
-  const defaultExpandedTile = (
-    <Tile
-      icon={<Airplane />}
-      title={title}
-      description={description}
-      onClick={onClick}
-      dataTest={dataTest}
-      initialExpanded
-    >
+  const component = shallow(
+    <Tile header={header} expandable initialExpanded>
       {children}
-    </Tile>
+    </Tile>,
   );
-
-  it("should call onClick on Expandable Tile", () => {
-    shallowednotDefaultExpandedTile.find("TileHeader").simulate("click");
-    expect(onClick).toHaveBeenCalled();
-  });
-
-  it("should render proper element", () => {
-    expect(shallowednotDefaultExpandedTile.render().prop("name")).toBe("div");
-  });
-
-  it("should contain children", () => {
-    expect(shallowednotDefaultExpandedTile.find("TileExpandable").exists()).toBe(true);
-  });
-
-  it("is default expanded children visible", () => {
-    const shallowedDefaultExpandedTile = mount(defaultExpandedTile);
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "max-height",
-      undefined,
-    );
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "animation",
-      undefined,
-    );
+  it("should return TileExpandable with props", () => {
+    const headerComponent = component.find(TileExpandable);
+    expect(headerComponent.exists()).toBe(true);
+    expect(headerComponent.prop("header")).toBe(header);
+    expect(headerComponent.prop("initialExpanded")).toBe(true);
   });
 });

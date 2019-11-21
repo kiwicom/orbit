@@ -6,6 +6,7 @@ import TileHeader, { StyledIconRight } from "./components/TileHeader";
 import defaultTheme from "../defaultTheme";
 import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import { type Props } from ".";
 
@@ -65,6 +66,18 @@ const Tile = ({
     );
   }
   const hasHeader = !!(title || description || icon || header);
+  const handleKeyDown = ev => {
+    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+      if (onClick) {
+        onClick(ev);
+      }
+    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      if (onClick) {
+        onClick(ev);
+      }
+    }
+  };
   return (
     <StyledTile
       target={href && external ? "_blank" : undefined}
@@ -73,7 +86,9 @@ const Tile = ({
       data-test={dataTest}
       role={!href ? "button" : undefined}
       onClick={!hasHeader ? onClick : undefined}
+      onKeyDown={!hasHeader ? handleKeyDown : undefined}
       as={href ? "a" : "div"}
+      tabIndex={!hasHeader ? "0" : undefined}
     >
       {hasHeader && (
         <TileHeader

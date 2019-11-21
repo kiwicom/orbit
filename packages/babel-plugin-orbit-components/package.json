@@ -23,7 +23,7 @@
     "test": "jest __tests__/*.test.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.7.2",
     "@kiwicom/babel-preset-kiwicom": "^3.5.0",
     "@kiwicom/eslint-config": "^8.0.0",
     "babel-eslint": "^10.0.3",

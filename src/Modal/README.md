@@ -4,7 +4,7 @@ To implement Modal component into your project you'll need to the import at leas
 import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 ```
 
-> You might need the Portal also. See it's [docs](../Portal).
+> You might need the Portal also. See it's [docs](https://orbit.kiwi/utilities/portal/).
 
 After adding import into your project you can use it simply like:
 ```jsx
@@ -21,7 +21,7 @@ Table below contains all types of the props available in the Modal component.
 
 | Name              | Type                        | Default         | Description                      |
 | :---------------- | :-------------------------- | :-------------- | :------------------------------- |
-| children          | `React.Node`                |                 | The content of the Modal. [See Subcomponents](#sub-components)
+| children          | `React.Node`                |                 | The content of the Modal. [See Subcomponents](#subcomponents)
 | dataTest          | `string`                    |                 | Optional prop for testing purposes.
 | fixedFooter       | `boolean`                   | `false`         | If `true` the ModalFooter will be fixed to the bottom of window.
 | isMobileFullPage  | `boolean`                   | `false`         | If `true` the Modal will look like a page on mobile devices.

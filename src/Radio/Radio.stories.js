@@ -7,6 +7,9 @@ import { text, boolean } from "@storybook/addon-knobs";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Stack from "../Stack";
+import Tooltip from "../Tooltip";
+import Airplane from "../icons/Airplane";
 
 import Radio from "./index";
 
@@ -48,6 +51,32 @@ storiesOf("Radio", module)
           }
           checked={checked}
           value="value"
+          onChange={action("changed")}
+        />
+      );
+    },
+    {
+      info: "Additionally you can add info to this component.",
+    },
+  )
+  .add(
+    "With stack and icon",
+    () => {
+      const label = text("Label", "Label");
+      const value = text("Value", "value");
+      const info = text("Info", "Additional information to this choice");
+      return (
+        <Radio
+          label={
+            <Stack align="center">
+              <Text size="small">{label}</Text>
+              <Tooltip content="Tooltip content">
+                <Airplane size="small" />
+              </Tooltip>
+            </Stack>
+          }
+          value={value}
+          info={info}
           onChange={action("changed")}
         />
       );

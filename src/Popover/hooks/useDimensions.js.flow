@@ -6,6 +6,7 @@ export type Params = {|
   popover: ?React$ElementRef<*>,
   content: ?React$ElementRef<*>,
   +fixed?: boolean,
+  scrollableParent: ?Node,
 |};
 
 export type UseDimensions = Params => DimensionsCore;

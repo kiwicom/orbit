@@ -34,6 +34,6 @@ export type State = {|
   focused: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
-declare export var PureSlider: React$ComponentType<Props>;
+declare export var PureSlider: React.ComponentType<Props>;

@@ -24,7 +24,7 @@ export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
-  +children?: React$Node,
+  +children?: React.Node,
   +component?: Component,
   +href?: string,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
@@ -38,9 +38,9 @@ export type Props = {|
   +size?: Size,
   +width?: number,
   +submit?: boolean,
-  +icon?: React$Node,
-  +iconLeft?: React$Node,
-  +iconRight?: React$Node,
+  +icon?: React.Node,
+  +iconLeft?: React.Node,
+  +iconRight?: React.Node,
   +tabIndex?: string,
   +ariaExpanded?: boolean,
   +ariaControls?: string,
@@ -52,4 +52,4 @@ export type Props = {|
 
 declare export var StyledButton: ReactComponentStyled<Props>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

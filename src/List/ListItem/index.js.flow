@@ -6,13 +6,13 @@ import type { Size } from "../index";
 import type { Theme } from "../../defaultTheme";
 
 export type Props = {|
-  +children: React$Node,
+  +children: React.Node,
   +label?: Translation,
-  +icon?: React$Element<any>,
+  +icon?: React.Element<any>,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var Item: ReactComponentStyled<any>;
 

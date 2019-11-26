@@ -2,7 +2,7 @@
 
 export type Props = {|
   +offset?: number,
-  +children: React$Node,
+  +children: React.Node,
 |};
 
 export type State = {|
@@ -13,4 +13,4 @@ export type State = {|
   initialWidth: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

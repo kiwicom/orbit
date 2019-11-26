@@ -2,9 +2,9 @@
 import type { DimensionsCore } from "../index.js.flow";
 
 export type Params = {|
-  containerRef: React$ElementRef<*>,
-  popover: ?React$ElementRef<*>,
-  content: ?React$ElementRef<*>,
+  containerRef: React.ElementRef<*>,
+  popover: ?React.ElementRef<*>,
+  content: ?React.ElementRef<*>,
   +fixed?: boolean,
   scrollableParent: ?Node,
 |};

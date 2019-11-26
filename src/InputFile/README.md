@@ -44,7 +44,7 @@ class Component extends React.PureComponent<Props> {
     this.ref.current && this.ref.current.focus();
   }
 
-  ref: { current: React$ElementRef<*> | null } = React.createRef();
+  ref: { current: React.ElementRef<*> | null } = React.createRef();
 
   render() {
     return (

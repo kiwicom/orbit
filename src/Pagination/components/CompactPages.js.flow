@@ -8,4 +8,4 @@ export type Props = {|
   size: Sizes,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

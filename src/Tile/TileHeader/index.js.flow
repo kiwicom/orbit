@@ -3,9 +3,9 @@
 import type { ReactComponentStyled } from "styled-components";
 
 export type Props = {
-  +icon?: React$Node,
-  +title?: React$Node,
-  +description?: React$Node,
+  +icon?: React.Node,
+  +title?: React.Node,
+  +description?: React.Node,
   +external?: boolean,
   +onClick?: (ev: SyntheticEvent<HTMLDivElement>) => void,
   +isExpandable?: boolean,
@@ -20,4 +20,4 @@ export type IconRightProps = {
 
 declare export var StyledIconRight: ReactComponentStyled<IconRightProps>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

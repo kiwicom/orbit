@@ -10,10 +10,10 @@ export type Props = {|
   +description?: Translation,
   +selectable?: boolean,
   +selected?: boolean,
-  +icon: React$Node,
+  +icon: React.Node,
   +onClick?: (
     e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
   ) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

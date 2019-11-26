@@ -19,7 +19,7 @@ export type Props = {|
   ariaValueText: ?string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 export type CalculateLeftPosition = (
   valueNow: number,

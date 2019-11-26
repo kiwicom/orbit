@@ -30,4 +30,4 @@ export type Props = {|
   +onClick?: () => void,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -22,4 +22,4 @@ export type Props = {|
   +step?: number,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

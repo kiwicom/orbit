@@ -9,7 +9,7 @@ import type { Globals, Translation } from "../common/common.js.flow";
 type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
 export type Props = {|
-  +children?: React$Node,
+  +children?: React.Node,
   +loading?: boolean,
   +type?: Type,
   +text?: Translation,
@@ -19,4 +19,4 @@ export type Props = {|
 declare export var StyledSpinner: ReactComponentStyled<any>;
 declare export var StyledLoading: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -5,12 +5,12 @@ import type { Props as ItemProps } from "./NavigationListItem";
 export type Types = "navigation" | "inline";
 
 export type Props = {|
-  +children: React$Node,
+  +children: React.Node,
   +title?: Translation,
   +type?: Types,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
-declare export var NavigationListItem: React$ComponentType<ItemProps>;
+declare export var NavigationListItem: React.ComponentType<ItemProps>;

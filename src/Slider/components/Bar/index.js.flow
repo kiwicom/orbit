@@ -10,7 +10,7 @@ export type Props = {|
   hasHistogram: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 export type CalculateBarPosition = (
   value: Value,

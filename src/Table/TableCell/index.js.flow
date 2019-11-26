@@ -7,11 +7,11 @@ import type { Globals } from "../../common/common.js.flow";
 type Align = "left" | "center" | "right";
 
 export type Props = {|
-  +children?: React$Node,
+  +children?: React.Node,
   +align?: Align,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var StyledTableCell: ReactComponentStyled<Props>;

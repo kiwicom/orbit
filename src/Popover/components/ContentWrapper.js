@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useContext, useMemo } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -144,19 +144,21 @@ const PopoverContentWrapper = ({
   fixed,
   actions,
 }: Props) => {
-  const { isInsideModal } = useContext(ModalContext);
-  const popover: { current: React$ElementRef<*> } = useRef(null);
-  const content: { current: React$ElementRef<*> } = useRef(null);
-  const overlay: { current: React$ElementRef<*> } = useRef(null);
-  const actionsRef: { current: React$ElementRef<*> } = useRef(null);
+  const { isInsideModal } = React.useContext(ModalContext);
+  const popover: { current: React.ElementRef<*> } = React.useRef(null);
+  const content: { current: React.ElementRef<*> } = React.useRef(null);
+  const overlay: { current: React.ElementRef<*> } = React.useRef(null);
+  const actionsRef: { current: React.ElementRef<*> } = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
-  const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
+  const scrollableParent = React.useMemo(() => getScrollableParent(containerRef.current), [
+    containerRef,
+  ]);
   const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);
+  const actionsDimensions = React.useMemo(() => boundingClientRect(actionsRef), []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => {
       if (popover.current) {
         popover.current.focus();

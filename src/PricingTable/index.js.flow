@@ -8,10 +8,10 @@ import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   ...Globals,
-  +children: React$Node, // TODO: Type this propperly
+  +children: React.Node, // TODO: Type this propperly
   +defaultActiveElement?: number,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var PricingTableItem: PricingTableItemType;

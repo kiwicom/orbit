@@ -5,7 +5,7 @@
 
 export type Props = {|
   +renderInto?: string,
-  +children: React$Node,
+  +children: React.Node,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

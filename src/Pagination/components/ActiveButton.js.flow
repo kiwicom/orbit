@@ -3,9 +3,9 @@
 import type { Sizes } from "../index";
 
 export type Props = {|
-  children: React$Node,
+  children: React.Node,
   transparent?: boolean,
   size?: Sizes,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

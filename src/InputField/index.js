@@ -201,7 +201,7 @@ Suffix.defaultProps = {
 
 export const Input = styled(
   React.forwardRef<Props, HTMLInputElement>(
-    ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
+    ({ type, size, error, help, inlineLabel, ...props }, ref) => (
       <input type={getDOMType(type)} {...props} ref={ref} />
     ),
   ),

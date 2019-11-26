@@ -8,7 +8,7 @@ export type State = {|
 |};
 
 export type Props = {|
-  +children: React$Node,
+  +children: React.Node,
   +maxHeight: ?number,
   +expanded?: boolean,
   +ariaLabelledBy?: string,
@@ -17,4 +17,4 @@ export type Props = {|
 
 declare export var StyledSlide: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

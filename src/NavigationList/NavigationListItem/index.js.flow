@@ -6,8 +6,8 @@ import type { Component, Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +ariaLabel?: string,
-  +icon?: React$Element<any>,
-  +children?: React$Node,
+  +icon?: React.Element<any>,
+  +children?: React.Node,
   +selectable?: boolean,
   +selected?: boolean,
   +href?: string,
@@ -18,4 +18,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

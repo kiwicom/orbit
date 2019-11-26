@@ -19,4 +19,4 @@ declare export var getCountryProps: (
   +name: string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

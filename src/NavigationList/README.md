@@ -48,7 +48,7 @@ Table below contains all types of the props available in the NavigationListItem 
 | dataTest      | `string`                          |                 | Optional prop for testing purposes.
 | external      | `boolean`                         |                 | If `true`, the Navigation opens link in a new tab. [See Functional specs](#functional-specs)
 | href          | `string`                          |                 | The URL of the link to open when the NavigationLink is clicked. [See Functional specs](#functional-specs)
-| icon          | `React$Element`                   |                 | The displayed icon on the left.
+| icon          | `React.Element`                   |                 | The displayed icon on the left.
 | onClick       | `() => void \| Promise`           |                 | Function for handling onClick event.
 | selectable    | `boolean`                         | `false`         | If `true`, the NavigationLink will be selectable and it will be possible to use `selected` property.
 | selected      | `boolean`                         |                 | If `true`, the NavigationLink will be selected visually.

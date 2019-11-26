@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useCallback, useMemo, useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import Portal from "../Portal";
@@ -29,7 +29,7 @@ const Popover = ({
   actions,
 }: Props) => {
   const theme = useTheme();
-  const transitionLength = useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
+  const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
   ]);
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
@@ -42,9 +42,9 @@ const Popover = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, transitionLength);
-  const container: { current: React$ElementRef<*> } = useRef(null);
+  const container: { current: React.ElementRef<*> } = React.useRef(null);
 
-  const resolveCallback = useCallback(
+  const resolveCallback = React.useCallback(
     state => {
       if (onClose && !state) onClose();
       if (onOpen && state) onOpen();
@@ -52,7 +52,7 @@ const Popover = ({
     [onClose, onOpen],
   );
 
-  const handleOut = useCallback(
+  const handleOut = React.useCallback(
     ev => {
       // If open prop is present ignore custom handler
       if (container.current && !container.current.contains(ev.target)) {
@@ -67,7 +67,7 @@ const Popover = ({
     [clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout, setShown],
   );
 
-  const handleClick = useCallback(() => {
+  const handleClick = React.useCallback(() => {
     // If open prop is present ignore custom handler
     if (typeof opened === "undefined") {
       if (shown) {
@@ -98,7 +98,7 @@ const Popover = ({
     shown,
   ]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof opened !== "undefined") {
       if (opened) {
         setRender(true);

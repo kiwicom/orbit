@@ -10,11 +10,11 @@ import typeof TableRowType from "./TableRow/index.js.flow";
 
 export type Props = {|
   +compact?: boolean,
-  +children: React$Node,
+  +children: React.Node,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var TableBody: TableBodyType;
 declare export var TableCell: TableCellType;

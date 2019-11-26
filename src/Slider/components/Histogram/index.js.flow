@@ -13,4 +13,4 @@ export type Props = {|
   loadingText?: Translation,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -11,4 +11,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -25,16 +25,16 @@ export type onClose = (
 
 export type Props = {|
   +size?: Size,
-  +children: React$Node,
+  +children: React.Node,
   +onClose?: onClose,
   +fixedFooter?: boolean,
   +isMobileFullPage?: boolean,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
-declare export var PureModal: React$ComponentType<Props>;
+declare export var PureModal: React.ComponentType<Props>;
 
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;

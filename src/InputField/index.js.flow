@@ -23,11 +23,11 @@ export type Props = {|
   +inlineLabel?: boolean,
   +value?: (() => string | number) | string | number,
   +placeholder?: Translation,
-  +prefix?: React$Node,
-  +suffix?: React$Node,
-  +help?: React$Node,
-  +error?: React$Node,
-  +tags?: React$Node,
+  +prefix?: React.Node,
+  +suffix?: React.Node,
+  +help?: React.Node,
+  +error?: React.Node,
+  +tags?: React.Node,
   +disabled?: boolean,
   +maxValue?: number,
   +minValue?: number,
@@ -53,4 +53,4 @@ declare export var Prefix: ReactComponentStyled<any>;
 
 declare export var InputContainer: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

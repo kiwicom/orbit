@@ -16,7 +16,7 @@ export type Props = {|
   ...spaceAfter,
   +element?: Element,
   +type?: Type,
-  +children: React$Node,
+  +children: React.Node,
   +inverted?: boolean,
   +dataA11ySection?: string,
   +id?: string,
@@ -24,7 +24,7 @@ export type Props = {|
 
 export type GetHeadingToken = (name: string) => ({ ...ThemeProps, type: Type }) => string;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var StyledHeading: ReactComponentStyled<any>;
 

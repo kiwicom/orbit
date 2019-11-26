@@ -61,7 +61,7 @@ export type Props = {|
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
   +element?: string,
-  +children: React$Node,
+  +children: React.Node,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

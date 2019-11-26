@@ -11,6 +11,6 @@ export type Ref = {|
   +ref?: RefType,
 |};
 
-export type Translation = React$Element<React$ComponentType<any>> | string;
+export type Translation = React.Element<React.ComponentType<any>> | string;
 
 export type Component = React.ComponentType<{ className: string }>;

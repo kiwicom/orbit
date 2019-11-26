@@ -12,9 +12,9 @@ type Type = "primary" | "secondary";
 type Size = "large" | "normal" | "small";
 
 export type Props = {|
-  +children: React$Node,
+  +children: React.Node,
   +href?: string,
-  +icon?: React$Node,
+  +icon?: React.Node,
   +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
   +external?: boolean,
   +type?: Type,
@@ -40,4 +40,4 @@ export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
 declare export var getLinkStyle: GetLinkStyle;
 declare export var StyledTextLink: ReactComponentStyled<styledTextLink>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

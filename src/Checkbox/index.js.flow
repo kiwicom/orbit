@@ -7,13 +7,13 @@ import type { ReactComponentStyled } from "styled-components";
 import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Props = {|
-  +label?: React$Node,
+  +label?: React.Node,
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,
   +checked?: boolean,
   +name?: string,
-  +info?: React$Node,
+  +info?: React.Node,
   +tabIndex?: string,
   +readOnly?: boolean,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
@@ -21,6 +21,6 @@ export type Props = {|
   ...Ref,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var Label: ReactComponentStyled<any>;

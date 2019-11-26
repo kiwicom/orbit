@@ -7,15 +7,15 @@ export type Props = {|
   +name?: Translation,
   +price?: Translation,
   +mobileDescription?: Translation,
-  +priceBadge?: React$Node,
-  +featureIcon?: React$Node,
-  +badge?: string | React$Node,
-  +children?: React$Node,
+  +priceBadge?: React.Node,
+  +featureIcon?: React.Node,
+  +badge?: string | React.Node,
+  +children?: React.Node,
   +active?: boolean,
   +compact?: boolean,
-  +action?: React$Node,
+  +action?: React.Node,
   +basis?: string,
   +onClick?: () => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

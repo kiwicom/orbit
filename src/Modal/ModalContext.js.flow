@@ -14,8 +14,8 @@ export type ModalContextProps = {|
 
 export type ModalContextType = React.Context<ModalContextProps>;
 
-// TODO: write better type
-export type WithModalContextType = (React$ComponentType<any>) => ({ [key: string]: any }) => any;
+export type WithModalContextType =
+  <Config: {}>(React.AbstractComponent<Config>) => React.AbstractComponent<Config>;
 
 declare export var ModalContext: ModalContextType;
 

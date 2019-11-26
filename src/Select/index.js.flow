@@ -27,17 +27,17 @@ export type Props = {|
   +value?: string | number,
   +disabled?: boolean,
   +name?: string,
-  +error?: React$Node,
-  +help?: React$Node,
+  +error?: React.Node,
+  +help?: React.Node,
   tabIndex?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +options: Option[],
-  +prefix?: React$Node,
+  +prefix?: React.Node,
   +customValueText?: Translation,
 |};
 
 declare export var SelectContainer: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -15,8 +15,8 @@ export type Props = {|
   +value?: string,
   +fullHeight?: boolean,
   +placeholder?: Translation,
-  +help?: React$Node,
-  +error?: React$Node,
+  +help?: React.Node,
+  +error?: React.Node,
   +resize?: "vertical" | "none",
   +disabled?: boolean,
   +maxLength?: number,
@@ -26,4 +26,4 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

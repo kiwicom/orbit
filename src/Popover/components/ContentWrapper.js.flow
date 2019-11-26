@@ -4,18 +4,18 @@ import type { PositionsCore, AlignsCore } from "../index.js.flow";
 
 export type Props = {|
   ...Globals,
-  +children: React$Node,
+  +children: React.Node,
   +closeText?: Translation,
   +preferredPosition: PositionsCore,
   +preferredAlign: AlignsCore,
-  +containerRef: React$ElementRef<*>,
+  +containerRef: React.ElementRef<*>,
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
   +shown: boolean,
   +fixed?: boolean,
-  +actions?: React$Node,
+  +actions?: React.Node,
   +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

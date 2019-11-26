@@ -9,13 +9,13 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
   +label?: Translation,
-  +buttonLabel?: React$Node,
+  +buttonLabel?: React.Node,
   +name?: string,
   +placeholder?: Translation,
   +fileName?: string,
   +allowedFileTypes?: string | string[],
-  +help?: React$Node,
-  +error?: React$Node,
+  +help?: React.Node,
+  +error?: React.Node,
   tabIndex?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
@@ -24,4 +24,4 @@ export type Props = {|
   ref?: Ref,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

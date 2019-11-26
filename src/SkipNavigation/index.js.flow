@@ -19,4 +19,4 @@ export type Props = {|
   feedbackUrl?: string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

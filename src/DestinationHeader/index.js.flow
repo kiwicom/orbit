@@ -8,4 +8,4 @@ export type Props = {|
   +goBack?: () => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

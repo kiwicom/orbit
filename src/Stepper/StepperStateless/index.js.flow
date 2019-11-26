@@ -17,4 +17,4 @@ export type StateLessProps = {|
   +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<StateLessProps>;
+declare export default React.ComponentType<StateLessProps>;

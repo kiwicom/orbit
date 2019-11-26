@@ -25,6 +25,6 @@ export type PictureProps = {|
   lowRes?: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var StyledLazyImage: ReactComponentStyled<any>;

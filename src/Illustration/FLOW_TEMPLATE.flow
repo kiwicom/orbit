@@ -14,4 +14,4 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

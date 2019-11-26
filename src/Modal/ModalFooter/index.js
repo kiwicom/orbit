@@ -126,7 +126,7 @@ class ModalFooter extends React.PureComponent<Props> {
   }
 }
 
-const DecoratedComponent = withModalContext(ModalFooter);
+const DecoratedComponent = withModalContext<Props>(ModalFooter);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalFooter";

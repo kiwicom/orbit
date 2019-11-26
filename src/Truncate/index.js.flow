@@ -2,9 +2,9 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  children: React$Node,
+  children: React.Node,
   maxWidth?: string,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

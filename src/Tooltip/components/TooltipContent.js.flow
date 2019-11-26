@@ -7,13 +7,13 @@ export type Props = {|
   shown: boolean,
   size: Sizes,
   tooltipId: string,
-  children: React$Node,
+  children: React.Node,
   onClose: () => void,
   onCloseMobile: () => void,
   onEnter: () => void,
   preferredPosition: ?Positions,
-  containerRef: React$ElementRef<*>,
+  containerRef: React.ElementRef<*>,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -42,7 +42,7 @@ Table below contains all types of the props available in the Modal component.
 * If you need to set scrollTop position of the Modal component, you can use instance of the component and method `setScrollPosition` like this:
 ```jsx
 class Component extends React.Component {
-  modalRef: { current: null | React$ElementRef<*> } = React.createRef();
+  modalRef: { current: null | React.ElementRef<*> } = React.createRef();
 
   setScroll = () => {
     if(modalRef.current) {

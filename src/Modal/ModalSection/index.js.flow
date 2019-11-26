@@ -7,10 +7,10 @@ import type { ModalContextProps } from "../ModalContext";
 export type Props = {|
   ...Globals,
   ...ModalContextProps,
-  +children: React$Node,
+  +children: React.Node,
   +suppressed?: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var StyledModalSection: ReactComponentStyled<any>;

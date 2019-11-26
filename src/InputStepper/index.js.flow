@@ -13,8 +13,8 @@ export type SharedProps = {|
   +size?: Size,
   +label?: Translation,
   +step?: number,
-  +help?: React$Node,
-  +error?: React$Node,
+  +help?: React.Node,
+  +error?: React.Node,
   +name?: string,
   +disabled?: boolean,
   +maxValue?: number,
@@ -33,4 +33,4 @@ export type Props = {|
   +onChange?: number => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

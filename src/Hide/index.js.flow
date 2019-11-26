@@ -5,9 +5,9 @@
 import type { Devices } from "../utils/mediaQuery/index";
 
 export type Props = {|
-  +children: React$Node,
+  +children: React.Node,
   +on: Devices[],
   +block?: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

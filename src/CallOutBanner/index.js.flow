@@ -7,10 +7,10 @@ export type Props = {|
   onClick?: () => void | Promise<any>,
   title: Translation,
   description?: Translation,
-  illustration?: React$Element<typeof Illustration>,
-  actions?: React$Node,
-  children?: React$Node,
+  illustration?: React.Element<typeof Illustration>,
+  actions?: React.Node,
+  children?: React.Node,
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

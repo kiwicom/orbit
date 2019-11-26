@@ -21,12 +21,12 @@ export type Props = {|
   +italic?: boolean,
   +uppercase?: boolean,
   +element?: Element,
-  +children: React$Node,
+  +children: React.Node,
   +id?: string,
   ...Globals,
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var StyledText: ReactComponentStyled<any>;

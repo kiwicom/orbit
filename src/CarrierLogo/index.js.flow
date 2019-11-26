@@ -23,4 +23,4 @@ type styledCarrierLogo = {
 
 declare export var StyledCarrierLogo: ReactComponentStyled<styledCarrierLogo>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

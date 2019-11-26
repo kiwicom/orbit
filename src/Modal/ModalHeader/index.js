@@ -207,7 +207,7 @@ class ModalHeader extends React.PureComponent<Props> {
     );
   }
 }
-const DecoratedComponent = withModalContext(ModalHeader);
+const DecoratedComponent = withModalContext<Props>(ModalHeader);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalHeader";

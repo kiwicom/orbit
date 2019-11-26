@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
+import { warning } from "@adeira/js";
 
 import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS, BUTTON_STATES } from "./consts";

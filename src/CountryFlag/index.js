@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { warning } from "@kiwicom/js";
+import { warning } from "@adeira/js";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";

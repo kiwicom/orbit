@@ -74,6 +74,7 @@ StyledBadge.defaultProps = {
 const Item = styled.div``;
 
 const PricingTableItem = ({
+  dataTest,
   name,
   price,
   priceBadge,
@@ -98,6 +99,7 @@ const PricingTableItem = ({
       basis={basis}
       featureIcon={!!featureIcon}
       active={active}
+      dataTest={dataTest}
     >
       {badge && (
         <StyledBadge>

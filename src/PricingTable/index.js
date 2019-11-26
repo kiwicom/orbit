@@ -9,7 +9,7 @@ import type { Props } from "./index.js.flow";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
+const PricingTable = ({ children, defaultActiveElement = 0, dataTest }: Props) => {
   const { isDesktop } = useMediaQuery();
   const [activeElement, setActiveElement] = useState(defaultActiveElement);
   const handleOnClick = i => {
@@ -28,7 +28,7 @@ const PricingTable = ({ children, defaultActiveElement = 0 }: Props) => {
   return (
     <>
       {isDesktop !== null && (
-        <StyledPricingTable>
+        <StyledPricingTable dataTest="dataTest">
           <Stack
             flex
             grow

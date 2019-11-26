@@ -6,7 +6,6 @@ import defaultTheme from "../defaultTheme";
 import FormFeedback from "../FormFeedback";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
-import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -110,8 +109,7 @@ StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const Textarea = React.forwardRef((props: Props, ref: Ref) => {
+const Textarea = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     disabled,

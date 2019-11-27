@@ -187,7 +187,7 @@ declare export var ThemeProvider: ThemeProviderType;
 declare export var Translate: TranslateType;
 
 declare export var defaultTheme: Theme;
-declare export var geTokens: GetTokens;
+declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;

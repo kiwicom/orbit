@@ -1,14 +1,13 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
+import { warning } from "@adeira/js";
 
 import defaultTheme from "../defaultTheme";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS, BUTTON_STATES } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
 import { getSize } from "../Icon";
-import type { Ref } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getSizeToken from "./helpers/getSizeToken";
 import getTypeToken from "./helpers/getTypeToken";
@@ -207,8 +206,7 @@ const StyledButtonContentChildren = styled.div`
   display: inline-block;
 `;
 
-// $FlowExpected
-const Button = React.forwardRef((props: Props, ref: Ref) => {
+const Button = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
     component = "button",
     children,

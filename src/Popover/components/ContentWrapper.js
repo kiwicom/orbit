@@ -126,7 +126,6 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ noPadding, theme }) => (noPadding ? popoverPadding(theme) : 0)};
-  /* padding-top: ${({ theme }) => popoverPadding(theme)}; */
 
   ${media.largeMobile(css`
     display: none;
@@ -206,7 +205,9 @@ const PopoverContentWrapper = ({
           </StyledContentWrapper>
 
           {actions ? (
-            <StyledActions ref={actionsRef}>{actions}</StyledActions>
+            <StyledActions noPadding={noPadding} ref={actionsRef}>
+              {actions}
+            </StyledActions>
           ) : (
             <StyledPopoverClose ref={actionsRef} noPadding={noPadding}>
               <Button type="secondary" fullWidth onClick={onClose}>

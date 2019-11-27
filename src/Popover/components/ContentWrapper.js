@@ -45,7 +45,8 @@ StyledContentWrapper.defaultProps = {
 };
 
 const StyledActions = styled.div`
-  padding: ${({ noPadding, theme }) => (noPadding ? 0 : actionsSpace(theme))};
+  padding: ${({ theme }) => popoverPadding(theme)};
+  padding-top: 0;
 `;
 
 StyledActions.defaultProps = {
@@ -94,7 +95,6 @@ StyledPopoverParent.defaultProps = {
 
 const StyledPopoverPadding = styled.div`
   padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
-  padding-bottom: 0;
 `;
 
 StyledPopoverPadding.defaultProps = {
@@ -125,7 +125,8 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledPopoverClose = styled.div`
-  padding: ${({ noPadding, theme }) => (noPadding ? popoverPadding(theme) : 0)};
+  padding: ${({ theme }) => popoverPadding(theme)};
+  padding-top: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -205,11 +206,9 @@ const PopoverContentWrapper = ({
           </StyledContentWrapper>
 
           {actions ? (
-            <StyledActions noPadding={noPadding} ref={actionsRef}>
-              {actions}
-            </StyledActions>
+            <StyledActions ref={actionsRef}>{actions}</StyledActions>
           ) : (
-            <StyledPopoverClose ref={actionsRef} noPadding={noPadding}>
+            <StyledPopoverClose ref={actionsRef}>
               <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>

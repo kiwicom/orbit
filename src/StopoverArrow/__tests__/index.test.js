@@ -14,7 +14,7 @@ describe("StopoverArrow", () => {
   it("should have passed props", () => {
     expect(component.find("Stops").prop("stops")).toBe(stops);
     expect(component.render().prop("preserveAspectRatio")).toBe("xMidYMid meet");
-    expect(component.render().prop("viewBox")).toBe("0 0 36 7");
+    expect(component.render().prop("viewBox")).toBe("0 0 28 8");
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should have styles", () => {

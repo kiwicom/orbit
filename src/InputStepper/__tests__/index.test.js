@@ -42,6 +42,8 @@ describe(`InputStepper with help, prefix and suffix`, () => {
       onFocus={onFocus}
       onBlur={onBlur}
       spaceAfter={spaceAfter}
+      titleIncrement="Add"
+      titleDecrement="Remove"
     />,
   );
   const input = component.find("InputField");

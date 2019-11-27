@@ -9,7 +9,7 @@ import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
-import type { Ref, Translation } from "../common/common.js.flow";
+import type { Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
@@ -200,10 +200,11 @@ Suffix.defaultProps = {
 };
 
 export const Input = styled(
-  // $FlowExpected
-  React.forwardRef(({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
-    <input type={getDOMType(type)} {...props} ref={ref} />
-  )),
+  React.forwardRef<Props, HTMLInputElement>(
+    ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
+      <input type={getDOMType(type)} {...props} ref={ref} />
+    ),
+  ),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
@@ -288,8 +289,7 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-// $FlowExpected
-const InputField = React.forwardRef((props: Props, ref: Ref) => {
+const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,

@@ -101,9 +101,9 @@ storiesOf("PricingTable", module)
     "Compact",
     () => {
       return (
-        <PricingTable defaultActiveElement={1} dataTest="PrcingTable">
+        <PricingTable defaultActiveElement={1} dataTest="PricingTable">
           <PricingTableItem
-            dataTest="PrcingTableItem"
+            dataTest="PricingTableItem"
             name="Limited Services"
             priceBadge={<Badge type="info">Included</Badge>}
             action={
@@ -123,7 +123,7 @@ storiesOf("PricingTable", module)
             {content}
           </PricingTableItem>
           <PricingTableItem
-            dataTest="PrcingTableItem"
+            dataTest="PricingTableItem"
             name="Plus Services"
             priceBadge={<Badge type="info">+ 10</Badge>}
             badge="Popular"
@@ -143,7 +143,7 @@ storiesOf("PricingTable", module)
             {longerContent}
           </PricingTableItem>
           <PricingTableItem
-            dataTest="PrcingTableItem"
+            dataTest="PricingTableItem"
             name="Premium Services"
             priceBadge={<Badge type="info">+ 20</Badge>}
             action={

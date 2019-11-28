@@ -2,6 +2,7 @@
   "name": "@kiwicom/orbit-components",
   "version": "0.68.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
+  "sideEffects": false,
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
     "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:flowFiles && yarn build:lib && yarn build:module && yarn build:umd",

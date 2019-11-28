@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
@@ -17,6 +17,7 @@ import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
 import useTranslate from "../hooks/useTranslate";
 import { StyledHeading } from "../Heading";
+import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -51,6 +52,12 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
       [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
+    },
+    [TOKENS.colorBorderAlert]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLightHover,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
     },
   };
 
@@ -94,23 +101,8 @@ const StyledAlert = styled(StyledDiv)`
   position: relative;
   display: flex;
   width: 100%;
-  padding: ${({ theme, icon, closable }) =>
-    rtlSpacing(
-      closable
-        ? (icon &&
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`) ||
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`
-        : (icon &&
-            `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`) ||
-            `${theme.orbit.paddingAlert}`,
-    )};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
   background: ${getTypeToken(TOKENS.backgroundAlert)};
   color: ${getTypeToken(TOKENS.colorTextAlert)};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -118,6 +110,27 @@ const StyledAlert = styled(StyledDiv)`
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   box-sizing: border-box;
   margin-bottom: ${getSpacingToken};
+
+  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+
+  ${media.tablet(css`
+    padding: ${({ theme, icon, closable }) =>
+      rtlSpacing(
+        closable
+          ? (icon &&
+              `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${
+                theme.orbit.paddingAlert
+              } ${theme.orbit.paddingAlert}`) ||
+              `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${
+                theme.orbit.paddingAlert
+              } ${theme.orbit.paddingAlert}`
+          : (icon &&
+              `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
+                theme.orbit.paddingAlert
+              } ${theme.orbit.paddingAlert}`) ||
+              `${theme.orbit.paddingAlert}`,
+      )};
+  `)}
 `;
 
 StyledAlert.defaultProps = {
@@ -126,10 +139,14 @@ StyledAlert.defaultProps = {
 
 const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
   display: ${({ inlineActions }) => inlineActions && "flex"};
   align-items: ${({ inlineActions }) => inlineActions && "center"};
+
+  ${media.tablet(css`
+    margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+  `)}
 `;
 
 IconContainer.defaultProps = {
@@ -148,10 +165,15 @@ const Title = styled(StyledDiv)`
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
-    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
+    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
+
+  ${media.tablet(css`
+    margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
+      hasChildren && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
+  `)}
 `;
 
 Title.defaultProps = {

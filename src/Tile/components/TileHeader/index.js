@@ -58,6 +58,7 @@ const StyledTileDescription = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  -webkit-text-size-adjust: 100%;
   width: 100%;
   ${({ hasTitle, theme }) =>
     hasTitle &&

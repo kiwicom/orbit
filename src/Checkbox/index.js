@@ -7,7 +7,6 @@ import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
-import type { Ref } from "../common/common.js.flow";
 import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
@@ -156,8 +155,7 @@ Label.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const Checkbox = React.forwardRef((props: Props, ref: Ref) => {
+const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     label,
     value,

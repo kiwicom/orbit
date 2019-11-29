@@ -45,6 +45,8 @@ export type Props = {|
   +ariaExpanded?: boolean,
   +ariaControls?: string,
   +role?: string,
+  // Don't use, it's deprecated and will be removed in the major version
+  +className?: string,
   +title?: string | (any => string),
 |};
 

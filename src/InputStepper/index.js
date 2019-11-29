@@ -7,11 +7,13 @@ import InputStepperStateless from "./InputStepperStateless";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
 
 const InputStepper = React.forwardRef<Props, HTMLElement>(
-  ({ onChange, defaultValue = 0, ...props }: Props, ref) => {
+  ({ onChange, defaultValue = 0, ...props }, ref) => {
+    const translate = useTranslate();
     const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
     const incrementCounter = () => {
@@ -124,8 +126,8 @@ const InputStepper = React.forwardRef<Props, HTMLElement>(
         spaceAfter={spaceAfter}
         onDecrement={handleDecrementCounter}
         onIncrement={handleIncrementCounter}
-        titleIncrement={titleIncrement}
-        titleDecrement={titleDecrement}
+        titleIncrement={titleIncrement || translate("increment_value")}
+        titleDecrement={titleDecrement || translate("decrement_value")}
       />
     );
   },

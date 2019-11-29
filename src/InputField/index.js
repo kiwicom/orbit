@@ -210,10 +210,11 @@ Suffix.defaultProps = {
 };
 
 export const Input = styled(
-  // $FlowExpected
-  React.forwardRef(({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
-    <input type={getDOMType(type)} {...props} ref={ref} />
-  )),
+  React.forwardRef<Props, HTMLInputElement>(
+    ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
+      <input type={getDOMType(type)} {...props} ref={ref} />
+    ),
+  ),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};

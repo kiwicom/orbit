@@ -8,14 +8,14 @@ const { defaultTokens } = require("@kiwicom/orbit-design-tokens");
 const DIR = path.join(__dirname, "../orbit-email-icons");
 const sizesToGenerate = [32, 48];
 const colors = [
-  ["paletteWhite", defaultTokens.paletteWhite],
-  ["paletteInkLight", defaultTokens.paletteInkLight],
-  ["paletteInkLighter", defaultTokens.paletteInkLighter],
-  ["paletteInkNormal", defaultTokens.paletteInkNormal],
-  ["paletteOrangeNormal", defaultTokens.paletteOrangeNormal],
-  ["paletteRedNormal", defaultTokens.paletteRedNormal],
-  ["paletteGreenNormal", defaultTokens.paletteGreenNormal],
-  ["paletteBlueNormal", defaultTokens.paletteBlueNormal],
+  ["white", defaultTokens.paletteWhite],
+  ["secondary", defaultTokens.paletteInkLight],
+  ["tertiary", defaultTokens.paletteInkLighter],
+  ["primary", defaultTokens.paletteInkNormal],
+  ["warning", defaultTokens.paletteOrangeNormal],
+  ["error", defaultTokens.paletteRedNormal],
+  ["success", defaultTokens.paletteGreenNormal],
+  ["info", defaultTokens.paletteBlueNormal],
 ];
 
 async function readFile(pathToFile) {
@@ -55,9 +55,9 @@ async function generateIcon(pathToFile, size, color, extraDir) {
 
     await sharp(updateBuffer, { density: 300 })
       .resize(size, size)
-      .toFile(`${DIR}/${extraDir}/${size}/${name}.png`);
+      .toFile(`${DIR}/${extraDir}/${size}x${size}/${name}.png`);
 
-    return `${DIR}/${extraDir}/${size}/${name}.png`;
+    return `${DIR}/${extraDir}/${size}x${size}/${name}.png`;
   }
   return false;
 }
@@ -79,7 +79,7 @@ function generatePath(targetDir) {
     // Sync paths
     sizesToGenerate.forEach(size => {
       colors.forEach(color => {
-        generatePath(`${DIR}/${color[0]}/${size}`);
+        generatePath(`${DIR}/${color[0]}/${size}x${size}`);
       });
     });
 

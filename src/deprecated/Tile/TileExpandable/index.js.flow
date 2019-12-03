@@ -1,0 +1,13 @@
+// @flow
+
+export type State = {|
+  contentHeight: number,
+|};
+
+export type Props = {
+  +expanded?: boolean,
+  +initialExpanded?: boolean,
+  +children: React$Node,
+};
+
+declare export default React$ComponentType<Props>;

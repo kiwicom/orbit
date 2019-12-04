@@ -26,9 +26,7 @@ storiesOf("Breadcrumbs", module)
         <BreadcrumbsItem href="#3" onClick={action("clicked")}>
           3. Level
         </BreadcrumbsItem>
-        <BreadcrumbsItem onClick={action("clicked")}>
-          4. Level
-        </BreadcrumbsItem>
+        <BreadcrumbsItem onClick={action("clicked")}>4. Level</BreadcrumbsItem>
       </Breadcrumbs>
     ),
     {

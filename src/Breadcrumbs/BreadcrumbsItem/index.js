@@ -21,6 +21,7 @@ const StyledBreadcrumbsItemAnchor = styled(
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   text-decoration: none;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  cursor: pointer;
 
   &:hover,
   &:focus {

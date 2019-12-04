@@ -60,7 +60,6 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
     },
   };
-
   return tokens[name][type];
 };
 
@@ -161,6 +160,7 @@ const ContentWrapper = styled(StyledDiv)`
 `;
 
 const Title = styled(StyledDiv)`
+  color: ${getTypeToken(TOKENS.colorIconAlert)};
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
@@ -168,7 +168,6 @@ const Title = styled(StyledDiv)`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
-  color: ${getTypeToken(TOKENS.colorIconAlert)};
 
   ${media.tablet(css`
     margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
@@ -260,7 +259,7 @@ const Alert = (props: Props) => {
       )}
       <ContentWrapper title={title} inlineActions={inlineActions}>
         {title && (
-          <Title hasChildren={children} inlineActions={inlineActions}>
+          <Title type={type} hasChildren={children} inlineActions={inlineActions}>
             {title}
           </Title>
         )}

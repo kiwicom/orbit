@@ -29,10 +29,10 @@ type IconProps = {
 const getTypeToken = name => ({ theme, type }) => {
   const tokens = {
     [TOKENS.colorIconAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorAlertIconInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorAlertIconSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorAlertIconWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorAlertIconCritical,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
     },
     [TOKENS.backgroundAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
@@ -168,6 +168,7 @@ const Title = styled(StyledDiv)`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
+  color: ${getTypeToken(TOKENS.colorIconAlert)};
 
   ${media.tablet(css`
     margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
@@ -182,8 +183,6 @@ Title.defaultProps = {
 const Content = styled(StyledDiv)`
   display: block;
   width: ${({ inlineActions }) => !inlineActions && "100%"};
-  margin-bottom: ${({ theme, title, inlineActions }) =>
-    title && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
 
   & a,
   & ${StyledTextLink} {

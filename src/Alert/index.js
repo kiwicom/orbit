@@ -111,25 +111,24 @@ const StyledAlert = styled(StyledDiv)`
   box-sizing: border-box;
   margin-bottom: ${getSpacingToken};
 
-  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding: ${({ theme, closable }) =>
+    closable
+      ? rtlSpacing(
+          `${theme.orbit.spaceXSmall} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceXSmall} ${
+            theme.orbit.spaceXSmall
+          }`,
+        )
+      : theme.orbit.spaceXSmall};
 
   ${media.tablet(css`
-    padding: ${({ theme, icon, closable }) =>
-      rtlSpacing(
-        closable
-          ? (icon &&
-              `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${
-                theme.orbit.paddingAlert
-              } ${theme.orbit.paddingAlert}`) ||
-              `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${
-                theme.orbit.paddingAlert
-              } ${theme.orbit.paddingAlert}`
-          : (icon &&
-              `${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert} ${
-                theme.orbit.paddingAlert
-              } ${theme.orbit.paddingAlert}`) ||
-              `${theme.orbit.paddingAlert}`,
-      )};
+    padding: ${({ theme, closable }) =>
+      closable
+        ? rtlSpacing(
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
+              theme.orbit.paddingAlert
+            }`,
+          )
+        : theme.orbit.paddingAlert};
   `)}
 `;
 

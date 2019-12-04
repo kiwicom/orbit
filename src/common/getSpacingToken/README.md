@@ -1,7 +1,9 @@
 # getSpacingToken
+
 The function `getSpacingToken` is used for additional `margin-bottom` for some components.
 
 ## Usage with styled-components
+
 ```jsx
 import styled from "styled-components";
 
@@ -21,22 +23,24 @@ const App = () => <MyComponent spaceAfter="small" />
 ```
 
 ## Parameter
-This function receives one parameter - object. With usage in `styled-components` it can receive it *automatically*.
 
-| Name         | Type                     | Default       | Description                      |
-| :-------     | :----------------------- | :------------ | :------------------------------- |
-| spaceAfter   | [`enum`](#enum)          | `"none"`      | The value to be applied.
-| theme        | `typeof defaultTheme`    |               | Theme object with tokens and rtl.
+This function receives one parameter - object. With usage in `styled-components` it can receive it _automatically_.
 
-> Please note that the *token value* in the documentation may not be up to date. Check [orbit.kiwi](https://orbit.kiwi/design-tokens/).
+| Name       | Type                  | Default  | Description                       |
+| :--------- | :-------------------- | :------- | :-------------------------------- |
+| spaceAfter | [`enum`](#enum)       | `"none"` | The value to be applied.          |
+| theme      | `typeof defaultTheme` |          | Theme object with tokens and rtl. |
+
+> Please note that the _token value_ in the documentation may not be up to date. Check [orbit.kiwi](https://orbit.kiwi/design-tokens/).
 
 ### enum
-| name              | used token      | token value |
-| :---------------- | :-------------- | :---------- |
-| `"none"`          | `spaceXXSmall`  | `null`      |
-| `"smallest"`      | `spaceXXSmall`  | `4px`       |
-| `"small"`         | `spaceXSmall`   | `8px`       |
-| `"normal"`        | `spaceSmall`    | `12px`      |
-| `"medium"`        | `spaceMedium`   | `16px`      |
-| `"large"`         | `spaceLarge`    | `24px`      |
-| `"largest"`       | `spaceXLarge`   | `32px`      |
+
+| name         | used token     | token value |
+| :----------- | :------------- | :---------- |
+| `"none"`     | `spaceXXSmall` | `null`      |
+| `"smallest"` | `spaceXXSmall` | `4px`       |
+| `"small"`    | `spaceXSmall`  | `8px`       |
+| `"normal"`   | `spaceSmall`   | `12px`      |
+| `"medium"`   | `spaceMedium`  | `16px`      |
+| `"large"`    | `spaceLarge`   | `24px`      |
+| `"largest"`  | `spaceXLarge`  | `32px`      |

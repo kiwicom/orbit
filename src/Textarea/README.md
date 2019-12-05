@@ -29,7 +29,7 @@ Table below contains all types of the props available in Textarea component.
 | onChange    | `event => void \| Promise` |              | Function for handling onClick event.                                                                                                            |
 | onFocus     | `event => void \| Promise` |              | Function for handling onFocus event.                                                                                                            |
 | onBlur      | `event => void \| Promise` |              | Function for handling onBlur event.                                                                                                             |
-| placeholder | `Translation`              |              | The placeholder of the Textarea.                                                                                                                |
+| placeholder | `TranslationString`        |              | The placeholder of the Textarea.                                                                                                                |
 | ref         | `func`                     |              | Prop for forwarded ref of the Textarea. [See Functional specs](#functional-specs)                                                               |
 | resize      | [`enum`](#enum)            | `"vertical"` | The resize option for Textarea.                                                                                                                 |
 | rows        | `number`                   |              | Specifies the height of the text area (in lines).                                                                                               |

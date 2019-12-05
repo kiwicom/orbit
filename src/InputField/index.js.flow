@@ -4,8 +4,8 @@
 */
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref, Translation } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { Globals, Ref, Translation, TranslationString } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken";
 
 export type Size = "small" | "normal";
 
@@ -22,7 +22,7 @@ export type Props = {|
   +label?: Translation,
   +inlineLabel?: boolean,
   +value?: (() => string | number) | string | number,
-  +placeholder?: Translation,
+  +placeholder?: TranslationString,
   +prefix?: React$Node,
   +suffix?: React$Node,
   +help?: React$Node,

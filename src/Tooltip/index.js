@@ -77,6 +77,7 @@ const Tooltip = ({
         ev.stopPropagation();
       }
       if (window.innerWidth <= +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
+        ev.preventDefault();
         setRender(true);
         setShownMobileWithTimeout(true);
         clearRenderTimeout();

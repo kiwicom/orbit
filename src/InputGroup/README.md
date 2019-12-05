@@ -52,6 +52,6 @@ Table below contains all types of the props available in InputGroup component.
 
 - The color of the label will turn into cloud shade when all children have some filled value.
 
-- Define `onChange`, `onFocus` and `onBlur` only for the **InputGroup**, everything will be passed to children automatically.
+- If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
 
 - Define `size` only for the **InputGroup**, it will set up the proper styling for everything automatically.

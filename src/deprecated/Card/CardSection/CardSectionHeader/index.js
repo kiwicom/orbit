@@ -3,12 +3,12 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import CardSectionContext from "../CardSectionContext";
-import { getSize } from "../../../Icon/index";
-import { ICON_SIZES } from "../../../Icon/consts";
-import defaultTheme from "../../../defaultTheme";
-import ChevronDown from "../../../icons/ChevronDown";
-import { left } from "../../../utils/rtl/index";
-import media from "../../../utils/mediaQuery";
+import { getSize } from "../../../../Icon/index";
+import { ICON_SIZES } from "../../../../Icon/consts";
+import defaultTheme from "../../../../defaultTheme";
+import ChevronDown from "../../../../icons/ChevronDown";
+import { left } from "../../../../utils/rtl/index";
+import media from "../../../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -32,7 +32,7 @@ export const StyledCardSectionHeader = styled.div`
   margin: ${({ theme }) => `-${theme.orbit.spaceMedium}`};
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   margin-bottom: ${({ expanded }) => expanded && 0};
-  
+
   ${media.desktop(css`
     padding: ${({ theme }) => theme.orbit.spaceLarge};
     margin: ${({ theme }) => `-${theme.orbit.spaceLarge}`};
@@ -53,7 +53,7 @@ export const StyledCardSectionHeader = styled.div`
     outline: none;
   }
 
- 
+
 `;
 
 StyledCardSectionHeader.defaultProps = {

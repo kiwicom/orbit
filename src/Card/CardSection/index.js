@@ -25,35 +25,44 @@ const CardSection = ({
   noSeparator,
   dataA11ySection,
 }: Props) => {
-  const [opened, setOpened] = React.useState(initialExpanded || expanded);
+  const {
+    toggleSection,
+    addSection,
+    removeSection,
+    index,
+    roundedBorders,
+    noBorderTop,
+    isOpened,
+  } = useCard();
 
-  const { onToggle, setExpandedSections, index, roundedBorders, noBorderTop } = useCard();
+  const isControlled = React.useMemo(() => expanded != null, [expanded]);
 
   React.useEffect(() => {
-    if (expandable && (initialExpanded || expanded)) {
-      setExpandedSections([index]);
+    if (isControlled) {
+      if (expanded) {
+        addSection(index);
+      } else {
+        removeSection(index);
+      }
     }
+  }, [addSection, expanded, index, isControlled, removeSection, toggleSection]);
 
-    if (!initialExpanded) {
-      setOpened(expanded);
+  React.useEffect(() => {
+    if (initialExpanded) {
+      addSection(index);
     }
-
-    return () => {
-      setExpandedSections([]);
-    };
-  }, [expandable, expanded, index, initialExpanded, setExpandedSections]);
+  }, [addSection, index, initialExpanded]);
 
   const handleClick = () => {
-    if (expanded == null) {
-      onToggle();
-      setOpened(state => !state);
+    if (!isControlled) {
+      toggleSection(index);
     }
 
-    if (opened && onClose) {
+    if (isOpened && onClose) {
       onClose();
     }
 
-    if (!opened && onExpand) {
+    if (!isOpened && onExpand) {
       onExpand();
     }
   };
@@ -73,7 +82,7 @@ const CardSection = ({
       dataTest={dataTest}
       roundedTop={roundedBorders.top}
       roundedBottom={roundedBorders.bottom}
-      expanded={opened}
+      expanded={isOpened}
       expandable={expandable}
       noBorderTop={noBorderTop}
     >
@@ -83,7 +92,7 @@ const CardSection = ({
           icon={icon}
           header={header}
           expandable={expandable}
-          expanded={opened}
+          expanded={isOpened}
           actions={actions}
           onClick={expandable ? handleClick : undefined}
           description={description}
@@ -94,7 +103,7 @@ const CardSection = ({
 
       {children ? (
         <SectionContent
-          expanded={opened}
+          expanded={isOpened}
           hasPaddingTop={!!(title != null || header != null || expanded)}
           noSeparator={noSeparator}
           expandable={expandable}

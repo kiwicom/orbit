@@ -38,11 +38,21 @@ const Card = ({
   const [expandedSections, setExpandedSections] = React.useState([]);
 
   // handles array of expanded sections
-  const onToggle = (index: number) => {
-    return expandedSections.indexOf(index) === -1
-      ? setExpandedSections(prevExpandeds => [...prevExpandeds, index])
-      : setExpandedSections(prevExpandeds => prevExpandeds.filter(val => val !== index));
-  };
+  const toggleSection = React.useCallback((index: number) => {
+    setExpandedSections(prev =>
+      prev.indexOf(index) === -1 ? [...prev, index] : prev.filter(val => val !== index),
+    );
+  }, []);
+
+  const addSection = React.useCallback((index: number) => {
+    setExpandedSections(prev => (prev.indexOf(index) === -1 ? [...prev, index] : prev));
+  }, []);
+
+  const removeSection = React.useCallback((index: number) => {
+    setExpandedSections(prev =>
+      prev.indexOf(index) !== -1 ? prev.filter(val => val !== index) : prev,
+    );
+  }, []);
 
   // Currently disable that code, becuase of IE 11, where it does not work
   // It will be fixed later, when we'll find solution
@@ -61,6 +71,7 @@ const Card = ({
     return null;
   };
 
+  console.log(expandedSections);
   return (
     <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
       {title && !loading && (
@@ -86,14 +97,16 @@ const Card = ({
             return (
               <SectionProvider
                 value={{
-                  onToggle: () => onToggle(index),
+                  toggleSection,
+                  addSection,
+                  removeSection,
                   roundedBorders: {
                     top: topRoundedBorder,
                     bottom: bottomRounderBorder,
                   },
-                  setExpandedSections,
                   index,
                   noBorderTop: index === 0 && title,
+                  isOpened: expandedSections.indexOf(index) !== -1,
                 }}
               >
                 {loading ? (

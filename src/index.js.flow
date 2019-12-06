@@ -52,8 +52,10 @@ import typeof SkipNavigationType from "./SkipNavigation";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof TextareaType from "./Textarea";
 import typeof CardType from "./Card";
-import typeof CardHeaderType from "./Card/CardHeader";
 import typeof CardSectionType from "./Card/CardSection";
+import typeof DeprecatedCardType from "./deprecated/Card";
+import typeof DeprecatedCardCardHeaderType from "./deprecated/Card/CardHeader";
+import typeof DeprecatedCardSectionType from "./deprecated/Card/CardSection";
 import typeof CouponType from "./Coupon";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
@@ -114,8 +116,10 @@ declare export var ListItem: ListItemType;
 declare export var ListChoice: ListChoiceType;
 
 declare export var Card: CardType;
-declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
+declare export var DeprecatedCard: DeprecatedCardType;
+declare export var DeprecatedCardHeader: DeprecatedCardCardHeaderType;
+declare export var DeprecatedCardSection: DeprecatedCardSectionType;
 
 declare export var Coupon: CouponType;
 

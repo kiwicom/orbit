@@ -38,12 +38,6 @@ const Card = ({
   const [expandedSections, setExpandedSections] = React.useState([]);
 
   // handles array of expanded sections
-  const toggleSection = React.useCallback((index: number) => {
-    setExpandedSections(prev =>
-      prev.indexOf(index) === -1 ? [...prev, index] : prev.filter(val => val !== index),
-    );
-  }, []);
-
   const addSection = React.useCallback((index: number) => {
     setExpandedSections(prev => (prev.indexOf(index) === -1 ? [...prev, index] : prev));
   }, []);
@@ -71,7 +65,6 @@ const Card = ({
     return null;
   };
 
-  console.log(expandedSections);
   return (
     <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
       {title && !loading && (
@@ -88,16 +81,19 @@ const Card = ({
       )}
 
       {children
-        ? React.Children.map(children, (item, index) => {
+        ? React.Children.map(children, (item, key) => {
             const topRoundedBorder =
-              expandedSections.indexOf(index - 1) !== -1 || expandedSections.indexOf(index) !== -1;
+              expandedSections.indexOf(key - 1) !== -1 || expandedSections.indexOf(key) !== -1;
             const bottomRounderBorder =
-              expandedSections.indexOf(index + 1) !== -1 || expandedSections.indexOf(index) !== -1;
+              expandedSections.indexOf(key + 1) !== -1 || expandedSections.indexOf(key) !== -1;
+
+            // This is used for the case when user wants to map sections and change their order
+            // related issue: #1005
+            const index = Number(item.key) || key;
 
             return (
               <SectionProvider
                 value={{
-                  toggleSection,
                   addSection,
                   removeSection,
                   roundedBorders: {
@@ -106,7 +102,7 @@ const Card = ({
                   },
                   index,
                   noBorderTop: index === 0 && title,
-                  isOpened: expandedSections.indexOf(index) !== -1,
+                  isOpened: expandedSections.some(val => val === index),
                 }}
               >
                 {loading ? (

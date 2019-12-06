@@ -57,6 +57,9 @@ describe("#Wrapper", () => {
 
   it("should't have border-top", () => {
     expect(componentNoBorderTop.find("StyledComponent").prop("noBorderTop")).toBe(true);
-    expect(componentNoBorderTop.find("StyledComponent")).toHaveStyleRule("border-top", "0");
+    expect(componentNoBorderTop.find("StyledComponent")).toHaveStyleRule(
+      "border-top",
+      "1px solid transparent",
+    );
   });
 });

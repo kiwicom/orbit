@@ -4,8 +4,10 @@ import * as React from "react";
 import type { Context } from "./CardContext";
 
 export const cardDefault: Context = {
-  onToggle: () => {},
   setExpandedSections: () => {},
+  addSection: () => {},
+  isOpened: false,
+  removeSection: () => {},
   roundedBorders: {
     top: false,
     bottom: false,

@@ -6,6 +6,7 @@ import CardWrapper from "../components/CardWrapper";
 import { useCard } from "../CardContext";
 import SectionHeader from "./components/SectionHeader";
 import SectionContent from "./components/SectionContent";
+import randomID from "../../utils/randomID";
 
 import type { Props } from "./index";
 
@@ -23,46 +24,49 @@ const CardSection = ({
   dataTest,
   actions,
   noSeparator,
-  dataA11ySection,
 }: Props) => {
-  const {
-    toggleSection,
-    addSection,
-    removeSection,
-    index,
-    roundedBorders,
-    noBorderTop,
-    isOpened,
-  } = useCard();
+  const { addSection, removeSection, index, roundedBorders, noBorderTop, isOpened } = useCard();
+  const [opened, setOpened] = React.useState(isOpened || initialExpanded);
 
   const isControlled = React.useMemo(() => expanded != null, [expanded]);
 
+  // effect that solves controlled component
   React.useEffect(() => {
     if (isControlled) {
       if (expanded) {
         addSection(index);
+        setOpened(true);
       } else {
         removeSection(index);
+        setOpened(false);
       }
     }
-  }, [addSection, expanded, index, isControlled, removeSection, toggleSection]);
+  }, [addSection, expanded, index, isControlled, removeSection]);
 
+  // effect that solves initialExpanded behavior
   React.useEffect(() => {
     if (initialExpanded) {
       addSection(index);
+      setOpened(true);
     }
   }, [addSection, index, initialExpanded]);
 
   const handleClick = () => {
     if (!isControlled) {
-      toggleSection(index);
+      if (!opened) {
+        addSection(index);
+        setOpened(true);
+      } else {
+        removeSection(index);
+        setOpened(false);
+      }
     }
 
-    if (isOpened && onClose) {
+    if (opened && onClose) {
       onClose();
     }
 
-    if (!isOpened && onExpand) {
+    if (!opened && onExpand) {
       onExpand();
     }
   };
@@ -77,12 +81,15 @@ const CardSection = ({
     }
   };
 
+  const slideID = React.useMemo(() => randomID("slideID"), []);
+  const labelID = React.useMemo(() => randomID("labelID"), []);
+
   return (
     <CardWrapper
       dataTest={dataTest}
       roundedTop={roundedBorders.top}
       roundedBottom={roundedBorders.bottom}
-      expanded={isOpened}
+      expanded={opened}
       expandable={expandable}
       noBorderTop={noBorderTop}
     >
@@ -90,20 +97,23 @@ const CardSection = ({
         <SectionHeader
           title={title}
           icon={icon}
+          slideID={slideID}
+          labelID={labelID}
           header={header}
           expandable={expandable}
-          expanded={isOpened}
+          expanded={opened}
           actions={actions}
           onClick={expandable ? handleClick : undefined}
           description={description}
           handleKeyDown={handleKeyDown}
-          dataA11ySection={dataA11ySection}
         />
       )}
 
       {children ? (
         <SectionContent
-          expanded={isOpened}
+          expanded={opened}
+          slideID={slideID}
+          labelID={labelID}
           hasPaddingTop={!!(title != null || header != null || expanded)}
           noSeparator={noSeparator}
           expandable={expandable}

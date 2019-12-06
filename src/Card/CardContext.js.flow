@@ -6,10 +6,12 @@ type RoundedBorders = {|
 |};
 
 export type Context = {|
-  +onToggle: () => void,
   +setExpandedSections: (arr: number[]) => void,
   +roundedBorders: RoundedBorders,
+  +addSection: (index: number) => void,
+  +removeSection: (index: number) => void,
   +index: number,
+  +isOpened: boolean,
   +noBorderTop: boolean,
 |};
 

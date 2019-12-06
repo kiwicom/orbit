@@ -7,7 +7,6 @@ export type Props = {|
   +title?: React$Node,
   +icon?: React$Node,
   +description?: React$Node,
-  +dataA11ySection?: string,
   +children?: React$Node,
   +expandable?: boolean,
   +initialExpanded?: boolean,

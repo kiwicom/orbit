@@ -43,13 +43,13 @@ const StyledCardWrapper = styled.div`
     (roundedBottom || bottomBorder) && getBorder};
   transition: margin ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   ${({ noBorderTop, expandable }) =>
-    noBorderTop && !expandable && `border-top: 0; padding-top: 0 !important;`};
+    noBorderTop && !expandable && `border-top: 1px solid transparent; padding-top: 0 !important;`};
 
   ${({ expanded }) =>
     expanded &&
     css`
       margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
-      border: 0px;
+      border: 1px solid transparent;
     `};
 
   ${({ roundedTop }) => roundedTop && topBorderRadius};

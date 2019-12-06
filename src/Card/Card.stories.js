@@ -4,6 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TripSector, { TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
 import CarrierLogo from "../CarrierLogo";
@@ -243,6 +244,41 @@ storiesOf("Card", module)
     ),
     {
       info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
+    },
+  )
+  .add(
+    "RTL",
+    () => (
+      <RenderInRtl>
+        <Card
+          title="Title of the CardHeader"
+          icon={<Icons.Airplane />}
+          description="Description of the CardHeader"
+        >
+          <CardSection title="Content with Heading and text">
+            <Text>Text in content</Text>
+          </CardSection>
+          <CardSection title="Content with Heading and text">
+            <Text>Text in content</Text>
+          </CardSection>
+          <CardSection title="Content with Heading and text" expandable>
+            Text in content
+          </CardSection>
+
+          <CardSection
+            expandable
+            title="Content with Heading and text"
+            initialExpanded
+            actions={<Button size="small">Action</Button>}
+          >
+            <Text>Text in content</Text>
+          </CardSection>
+        </Card>
+      </RenderInRtl>
+    ),
+    {
+      info:
+        "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
     },
   )
   .add(

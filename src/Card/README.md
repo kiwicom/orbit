@@ -21,14 +21,14 @@ Table below contains all types of the props available in the Card component.
 | Name        | Type         | Default | Description                                                                                                                                     |
 | :---------- | :----------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | actions     | `React.Node` |         | Optional prop for Action components in header of Card                                                                                           |
-| children    | `React.Node` |         | The content of the Card.                                                                                                                        |
-| dataTest    | `string`     |         | Optional prop for testing purposes.                                                                                                             |
-| description | `React.Node` |         | Optional prop to add description                                                                                                                |
-| header      | `React.Node` |         | Optional prop for custom header                                                                                                                 |
-| icon        | `React.Node` |         | Optional prop to add Icon in Card header                                                                                                        |
-| loading     | `boolean`    |         | Optional prop to turn on Loading component inside                                                                                               |
+| children    | `React.Node` |         | The content of the Card. You can use only [CardSection](#cardsection)                                                                           |
+| dataTest    | `string`     |         | Optional prop for testing purposes                                                                                                              |
+| description | `React.Node` |         | The description of the Card                                                                                                                     |
+| header      | `React.Node` |         | The header of the Card. Useful when you need different layout then combination of eg `title` and `description`                                  |
+| icon        | `React.Node` |         | Display icon on the left                                                                                                                        |
+| loading     | `boolean`    |         | If `true` `Loading` will be rendered                                                                                                            |
 | spaceAfter  | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
-| title       | `React.Node` |         | Optional prop to add title                                                                                                                      |
+| title       | `React.Node` |         | The title of the Card                                                                                                                           |
 
 ### CardSection
 
@@ -48,16 +48,16 @@ import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 
 | Name            | Type                    | Default | Description                                                                                                                                                |
 | :-------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children**    | `React.Node`            |         | Optional prop. The content of the CardSection.                                                                                                             |
-| actions         | `React.Node`            |         | Optional prop for Action components in header of Card                                                                                                      |
+| actions         | `React.Node`            |         | Actions which will be rendered on the right side                                                                                                           |
+| children        | `React.Node`            |         | The content of the CardSection.                                                                                                                            |
 | dataTest        | `string`                |         | Optional prop for testing purposes.                                                                                                                        |
-| description     | `React.Node`            |         | Optional prop to add description                                                                                                                           |
-| expandable      | `boolean`               |         | Optional prop, CardSection could be expandable                                                                                                             |
+| description     | `React.Node`            |         | The description of the CardSection                                                                                                                         |
+| expandable      | `boolean`               | `false` | If `true`, the CardSection will be expandable.                                                                                                             |
 | expanded        | `boolean`               |         | If you pass either `true` or `false` the CardSection component will controlled component and you will have to manage the state via `onExpand` or `onClose` |
-| header          | `React.Node`            |         | Optional prop for custom header                                                                                                                            |
-| icon            | `React.Node`            |         | Optional prop to add Icon                                                                                                                                  |
-| initialExpanded | `React.Node`            |         | Optional prop, sets CardSection open with first render                                                                                                     |
-| noSeparator     | `Boolean`               |         | Optional prop to turn off Separator between Header and Content                                                                                             |
-| onClose         | `() => void \| Promise` |         | Callback after close                                                                                                                                       |
-| onExpand        | `() => void \| Promise` |         | Callback after expand                                                                                                                                      |
-| title           | `React.Node`            |         | Optional prop to add title                                                                                                                                 |
+| header          | `React.Node`            |         | The header of the CardSection. Useful when you need different layout than combination of e.g. `title` and `description` properties.                        |
+| icon            | `React.Node`            |         | Displayed icon on the left side of the CardSection.                                                                                                        |
+| initialExpanded | `boolean`               | `false` | Initial state of expandable CardSection when it mounts in uncontrolled variant                                                                             |
+| noSeparator     | `Boolean`               |         | Optional prop to turn off Separator between `header` and `children`                                                                                        |
+| onClose         | `() => void \| Promise` |         | Callback that is triggered when section is closing                                                                                                         |
+| onExpand        | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                                       |
+| title           | `React.Node`            |         | The title of the CardSection                                                                                                                               |

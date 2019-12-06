@@ -5,7 +5,6 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import Slide from "../../../utils/Slide";
 import mq from "../../../utils/mediaQuery";
-import randomID from "../../../utils/randomID";
 
 const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -36,9 +35,19 @@ type Props = {|
   children?: React.Node,
   noSeparator?: boolean,
   hasPaddingTop: boolean,
+  slideID: string,
+  labelID: string,
 |};
 
-const SectionContent = ({ expandable, expanded, children, noSeparator, hasPaddingTop }: Props) => {
+const SectionContent = ({
+  expandable,
+  expanded,
+  children,
+  noSeparator,
+  hasPaddingTop,
+  slideID,
+  labelID,
+}: Props) => {
   const ref: { current: any | HTMLElement } = React.useRef(null);
   const [contentHeight, setContentHeight] = React.useState(expanded ? null : 0);
 
@@ -57,9 +66,6 @@ const SectionContent = ({ expandable, expanded, children, noSeparator, hasPaddin
       window.removeEventListener("resize", calculateHeight);
     };
   }, []);
-
-  const slideID = React.useMemo(() => randomID("slideID"), []);
-  const labelID = React.useMemo(() => randomID("labelID"), []);
 
   return (
     <>

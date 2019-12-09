@@ -1,16 +1,17 @@
 // @flow
 import React, { useState, useEffect, useCallback } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
-const NAVBAR_HEIGHT = 64;
+const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 
 const StyledNavigationBarContent = styled.div`
   display: block;
@@ -27,7 +28,7 @@ const StyledNavigationBar = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: ${NAVBAR_HEIGHT}px; // TODO: create token
+  height: ${NAVBAR_HEIGHT.MOBILE}px; // TODO: create token
   width: 100%;
   display: flex;
   align-items: center;
@@ -38,6 +39,9 @@ const StyledNavigationBar = styled.nav`
   z-index: 700;
   transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT}px`)}, 0);
+  ${mq.tablet(css`
+    height: ${NAVBAR_HEIGHT.DESKTOP}px; // TODO: create token
+  `)};
 `;
 
 StyledNavigationBar.defaultProps = {
@@ -84,6 +88,7 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
           transparent
+          size="small"
           title={translate("navigationbar_open_menu")}
         />
       )}

@@ -12,25 +12,14 @@ import TextLink from "../TextLink";
 import Separator from "../Separator";
 import Illustration from "../Illustration";
 import NewWindow from "../icons/NewWindow";
-import AccountCircle from "../icons/AccountCircle";
-import NavigationList, { NavigationListItem } from "../NavigationList";
-import Deals from "../icons/Deals";
-import Settings from "../icons/Settings";
-import KiwicomCare from "../icons/KiwicomCare";
-import Code from "../icons/Code";
-import KiwicomGuarantee from "../icons/KiwicomGuarantee";
-import Kiwicom from "../icons/Kiwicom";
-import ContactEmail from "../icons/ContactEmail";
-import Security from "../icons/Security";
-import TermsAndConditions from "../icons/TermsAndConditions";
-import Suitcase from "../icons/Suitcase";
-import Trip from "../icons/Trip";
-import City from "../icons/City";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import POSITIONS from "./consts";
 import InputField from "../InputField";
 import Search from "../icons/Search";
 import Tile from "../Tile";
+import ButtonLink from "../ButtonLink";
+import Collapse from "../Collapse";
+import LinkStack from "../LinkStack";
 
 import Drawer from "./index";
 
@@ -46,39 +35,44 @@ storiesOf("Drawer", module)
           dataTest={dataTest}
           width={width}
           shown={shown}
-          noPadding
           onClose={action("onClose")}
+          actions={
+            <Stack direction="row" justify="between" spacing="condensed">
+              <Button type="secondary" size="small">
+                Manage my bookings
+              </Button>
+            </Stack>
+          }
         >
-          <NavigationList>
-            <NavigationListItem icon={<AccountCircle />} href="https://kiwi.com" external>
-              Sign in
-            </NavigationListItem>
-            <NavigationListItem icon={<AccountCircle />}>Register</NavigationListItem>
-          </NavigationList>
-          <NavigationList title="Connect with us">
-            <NavigationListItem icon={<Deals />}>Refer a Friend</NavigationListItem>
-            <NavigationListItem icon={<ContactEmail />}>Subscribe to Newsletter</NavigationListItem>
-            <NavigationListItem icon={<Trip />}>Stories</NavigationListItem>
-          </NavigationList>
-          <NavigationList title="Company">
-            <NavigationListItem icon={<City />} selectable selected>
-              About Kiwi.com
-            </NavigationListItem>
-            <NavigationListItem icon={<Suitcase />}>Careers</NavigationListItem>
-            <NavigationListItem icon={<KiwicomCare />}>Care Kiwi.com</NavigationListItem>
-            <NavigationListItem icon={<Code />}>Code Kiwi.com</NavigationListItem>
-            <NavigationListItem icon={<KiwicomGuarantee />}>Kiwi.com Guarantee</NavigationListItem>
-            <NavigationListItem icon={<Kiwicom />}>Press kit</NavigationListItem>
-          </NavigationList>
-          <NavigationList title="Terms & Conditions">
-            <NavigationListItem icon={<TermsAndConditions />}>
-              Terms & Conditions
-            </NavigationListItem>
-            <NavigationListItem icon={<TermsAndConditions />}>Terms of Use</NavigationListItem>
-            <NavigationListItem icon={<Security />}>Privacy Policy</NavigationListItem>
-            <NavigationListItem icon={<Security />}>Security</NavigationListItem>
-            <NavigationListItem icon={<Settings />}>Cookies settings</NavigationListItem>
-          </NavigationList>
+          <Collapse label="Discover" initialExpanded>
+            <LinkStack>
+              <TextLink type="secondary">Refer a Friend</TextLink>
+              <TextLink type="secondary">Subscribe to newsletter</TextLink>
+              <TextLink type="secondary">Kiwi.com Stories</TextLink>
+            </LinkStack>
+          </Collapse>
+          <Collapse label="Guidelines">
+            <LinkStack>
+              <TextLink type="secondary">Terms & Conditions</TextLink>
+              <TextLink type="secondary">Terms of Use</TextLink>
+              <TextLink type="secondary">Privacy Policy</TextLink>
+              <TextLink type="secondary">Security</TextLink>
+              <TextLink type="secondary">Cookies settings</TextLink>
+            </LinkStack>
+          </Collapse>
+          <Collapse label="Company" spaceAfter="medium">
+            <LinkStack>
+              <TextLink type="secondary">About Kiwi.com</TextLink>
+              <TextLink type="secondary">Careers</TextLink>
+              <TextLink type="secondary">Care Kiwi.com</TextLink>
+              <TextLink type="secondary">Code Kiwi.com</TextLink>
+              <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+              <TextLink type="secondary">Press kit</TextLink>
+            </LinkStack>
+          </Collapse>
+          <LinkStack>
+            <TextLink type="secondary">Sign out</TextLink>
+          </LinkStack>
         </Drawer>
       );
     },
@@ -242,41 +236,44 @@ storiesOf("Drawer", module)
             dataTest={dataTest}
             width={width}
             shown={shown}
-            noPadding
             onClose={action("onClose")}
+            actions={
+              <Stack direction="row" justify="between" spacing="condensed">
+                <Button type="secondary" size="small">
+                  Manage my bookings
+                </Button>
+              </Stack>
+            }
           >
-            <NavigationList>
-              <NavigationListItem icon={<AccountCircle />}>Sign in</NavigationListItem>
-              <NavigationListItem icon={<AccountCircle />}>Register</NavigationListItem>
-            </NavigationList>
-            <NavigationList title="Connect with us">
-              <NavigationListItem icon={<Deals />}>Refer a Friend</NavigationListItem>
-              <NavigationListItem icon={<ContactEmail />}>
-                Subscribe to Newsletter
-              </NavigationListItem>
-              <NavigationListItem icon={<Trip />}>Stories</NavigationListItem>
-            </NavigationList>
-            <NavigationList title="Company">
-              <NavigationListItem icon={<City />} selectable selected>
-                About Kiwi.com
-              </NavigationListItem>
-              <NavigationListItem icon={<Suitcase />}>Careers</NavigationListItem>
-              <NavigationListItem icon={<KiwicomCare />}>Care Kiwi.com</NavigationListItem>
-              <NavigationListItem icon={<Code />}>Code Kiwi.com</NavigationListItem>
-              <NavigationListItem icon={<KiwicomGuarantee />}>
-                Kiwi.com Guarantee
-              </NavigationListItem>
-              <NavigationListItem icon={<Kiwicom />}>Press kit</NavigationListItem>
-            </NavigationList>
-            <NavigationList title="Terms & Conditions">
-              <NavigationListItem icon={<TermsAndConditions />}>
-                Terms & Conditions
-              </NavigationListItem>
-              <NavigationListItem icon={<TermsAndConditions />}>Terms of Use</NavigationListItem>
-              <NavigationListItem icon={<Security />}>Privacy Policy</NavigationListItem>
-              <NavigationListItem icon={<Security />}>Security</NavigationListItem>
-              <NavigationListItem icon={<Settings />}>Cookies settings</NavigationListItem>
-            </NavigationList>
+            <Collapse label="Discover" initialExpanded>
+              <LinkStack>
+                <TextLink type="secondary">Refer a Friend</TextLink>
+                <TextLink type="secondary">Subscribe to newsletter</TextLink>
+                <TextLink type="secondary">Kiwi.com Stories</TextLink>
+              </LinkStack>
+            </Collapse>
+            <Collapse label="Guidelines">
+              <LinkStack>
+                <TextLink type="secondary">Terms & Conditions</TextLink>
+                <TextLink type="secondary">Terms of Use</TextLink>
+                <TextLink type="secondary">Privacy Policy</TextLink>
+                <TextLink type="secondary">Security</TextLink>
+                <TextLink type="secondary">Cookies settings</TextLink>
+              </LinkStack>
+            </Collapse>
+            <Collapse label="Company" spaceAfter="medium">
+              <LinkStack>
+                <TextLink type="secondary">About Kiwi.com</TextLink>
+                <TextLink type="secondary">Careers</TextLink>
+                <TextLink type="secondary">Care Kiwi.com</TextLink>
+                <TextLink type="secondary">Code Kiwi.com</TextLink>
+                <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+                <TextLink type="secondary">Press kit</TextLink>
+              </LinkStack>
+            </Collapse>
+            <LinkStack>
+              <TextLink type="secondary">Sign out</TextLink>
+            </LinkStack>
           </Drawer>
         </RenderInRtl>
       );

@@ -18,13 +18,14 @@ import { rtlSpacing } from "../utils/rtl";
 import type { Props } from ".";
 
 const getPadding = ({ noPadding, theme, hasTopPadding }) => {
-  const padding = space => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
+  const padding = space =>
+    !hasTopPadding ? rtlSpacing(`0 ${space[0]} ${space[1]}`) : `${space[0]} ${space[1]}`;
   return (
     !noPadding &&
     css`
-      padding: ${padding(theme.orbit.spaceMedium)};
+      padding: ${padding(["0", theme.orbit.spaceMedium])};
       ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)};
+        padding: ${padding([theme.orbit.spaceXLarge, theme.orbit.spaceXLarge])};
       `)};
     `
   );
@@ -111,7 +112,7 @@ const StyledDrawerHeader = styled.div`
     css`
       padding: 0 ${theme.orbit.spaceMedium};
       ${mq.largeMobile(css`
-        padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceXLarge}`)};
+        padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
       `)};
     `};
 `;

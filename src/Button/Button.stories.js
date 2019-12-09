@@ -228,7 +228,7 @@ storiesOf("Button", module)
       const children = text("Children", "Button");
       const href = text("Href", undefined);
       const external = boolean("External", false);
-      const component = text("Component", "button");
+      const asComponent = text("asComponent", "button");
       const disabled = boolean("Disabled", false);
       const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
@@ -250,7 +250,7 @@ storiesOf("Button", module)
       return (
         <Button
           onClick={action("clicked")}
-          component={component}
+          asComponent={asComponent}
           href={href}
           external={external}
           disabled={disabled}

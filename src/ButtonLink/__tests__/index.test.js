@@ -83,6 +83,7 @@ describe("ButtonLink with Icon", () => {
       iconRight={<ChevronDown />}
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
+      asComponent={props => <span {...props} />}
       href={href}
       title={title}
     >
@@ -92,6 +93,9 @@ describe("ButtonLink with Icon", () => {
   const button = component.find("ButtonLink__StyledButtonLink");
   it("should contain a title ", () => {
     expect(button.render().text()).toBe(children);
+  });
+  it("should have been rendered in span", () => {
+    expect(component.render().prop("name")).toBe("span");
   });
   it("should have href", () => {
     expect(button.render().prop("href")).toBe(href);

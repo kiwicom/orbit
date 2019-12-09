@@ -47,7 +47,7 @@ IconContainer.defaultProps = {
 export const StyledButtonLink = styled(
   ({
     onlyIcon,
-    component,
+    asComponent,
     circled,
     external,
     block,
@@ -70,8 +70,8 @@ export const StyledButtonLink = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
+    const isButtonWithHref = asComponent === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
     return (
       <Component
@@ -163,7 +163,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
     external,
     children,
-    component = "button",
+    asComponent = "button",
     href,
     size = SIZES.NORMAL,
     icon,
@@ -199,7 +199,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   return (
     <StyledButtonLink
       onClick={onClick}
-      component={component}
+      asComponent={asComponent}
       size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}

@@ -52,7 +52,7 @@ IconContainer.defaultProps = {
 export const StyledButton = styled(
   ({
     theme,
-    component,
+    asComponent,
     circled,
     external,
     type,
@@ -75,8 +75,8 @@ export const StyledButton = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
+    const isButtonWithHref = asComponent === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
     return (
       <Component
@@ -94,7 +94,7 @@ export const StyledButton = styled(
   },
 )`
   position: relative;
-  display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
+  display: ${({ href, asComponent }) => (href || asComponent === "a" ? "inline-flex" : "flex")};
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -208,7 +208,7 @@ const StyledButtonContentChildren = styled.div`
 
 const Button = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
-    component = "button",
+    asComponent = "button",
     children,
     bordered,
     disabled,
@@ -250,7 +250,7 @@ const Button = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
       iconRight={iconRight}
       bordered={bordered}
       fullWidth={fullWidth}
-      component={component}
+      asComponent={asComponent}
       disabled={isDisabled}
       loading={loading}
       onlyIcon={onlyIcon}

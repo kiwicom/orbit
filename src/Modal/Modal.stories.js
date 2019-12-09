@@ -17,7 +17,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Card from "../Card";
 import { CarrierLogo } from "../index";
 import CardSection from "../Card/CardSection";
-import CardHeader from "../Card/CardHeader";
 import InputField from "../InputField";
 import Select from "../Select";
 import CountryFlag from "../CountryFlag";
@@ -26,7 +25,6 @@ import Airplane from "../icons/Airplane";
 import TextLink from "../TextLink";
 import Checkbox from "../Checkbox";
 import Radio from "../Radio";
-import CardSectionHeader from "../Card/CardSection/CardSectionHeader";
 import Tooltip from "../Tooltip";
 import Tile from "../Tile";
 
@@ -177,9 +175,7 @@ storiesOf("Modal", module)
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
-              <Card>
-                <CardHeader title="Cancellation" icon={<Airplane />} />
-              </Card>
+              <Card title="Cancellation" icon={<Airplane />} />
               <Text size="small" weight="bold">
                 Contact information
               </Text>
@@ -242,16 +238,12 @@ storiesOf("Modal", module)
               </Text>
             </Tooltip>
             <Card>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+              <CardSection
+                expandable
+                noSeparator
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -263,18 +255,19 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+              />
+              <CardSection
+                expandable
+                noSeparator
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -286,18 +279,18 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+              />
+              <CardSection
+                expandable
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -309,8 +302,13 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+              />
             </Card>
           </Stack>
         </ModalSection>
@@ -320,16 +318,10 @@ storiesOf("Modal", module)
               INBOUND
             </Text>
             <Card>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+              <CardSection
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -341,18 +333,19 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+                expandable
+              />
+              <CardSection
+                expandable
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -364,18 +357,18 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
-              <CardSection expandable>
-                <CardSectionHeader
-                  actions={
-                    <Button type="secondary" size="small">
-                      Edit
-                    </Button>
-                  }
-                >
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+              />
+              <CardSection
+                expandable
+                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                title={
                   <Stack direction="row" align="center" justify="between" spacing="condensed">
-                    <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
                     <Stack spacing="tight">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
@@ -387,8 +380,13 @@ storiesOf("Modal", module)
                       </Stack>
                     </Stack>
                   </Stack>
-                </CardSectionHeader>
-              </CardSection>
+                }
+                actions={
+                  <Button type="secondary" size="small">
+                    Edit
+                  </Button>
+                }
+              />
             </Card>
           </Stack>
         </ModalSection>

@@ -110,7 +110,7 @@ const InputStepperStateless = ({
               size={size}
               onClick={onDecrement}
               transparent
-              component={PrefixSuffix}
+              asComponent={PrefixSuffix}
               title={titleDecrement}
             />
           </StyledButtonWrapper>
@@ -125,7 +125,7 @@ const InputStepperStateless = ({
               size={size}
               onClick={onIncrement}
               transparent
-              component={PrefixSuffix}
+              asComponent={PrefixSuffix}
               title={titleIncrement}
             />
           </StyledButtonWrapper>

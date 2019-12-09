@@ -16,19 +16,19 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in TextLink component.
 
-| Name      | Type                       | Default     | Description                                                                                |
-| :-------- | :------------------------- | :---------- | :----------------------------------------------------------------------------------------- |
-| children  | `React.Node`               |             | The content of the TextLink.                                                               |
-| component | `string \| React.Node`     | `"a"`       | The component used for the root node. Either a string to use a DOM element or a component. |
-| dataTest  | `string`                   |             | Optional prop for testing purposes.                                                        |
-| external  | `boolean`                  | `false`     | If `true`, the TextLink opens link in a new tab.                                           |
-| href      | `string`                   |             | The URL to link when the TextLink is clicked.                                              |
-| icon      | `React.Node`               |             | The displayed icon.                                                                        |
-| onClick   | `event => void \| Promise` |             | Function for handling onClick event.                                                       |
-| rel       | `string`                   |             | The rel of the TextLink. [See Functional specs](#functional-specs)                         |
-| size      | [`enum`](#enum)            |             | The size of the TextLink. [See Functional specs](#functional-specs)                        |
-| tabIndex  | `string`                   |             | Specifies the tab order of an element                                                      |
-| **type**  | [`enum`](#enum)            | `"primary"` | The color type of the TextLink.                                                            |
+| Name        | Type                       | Default     | Description                                                                                |
+| :---------- | :------------------------- | :---------- | :----------------------------------------------------------------------------------------- |
+| asComponent | `string \| React.Node`     | `"a"`       | The component used for the root node. Either a string to use a DOM element or a component. |
+| children    | `React.Node`               |             | The content of the TextLink.                                                               |
+| dataTest    | `string`                   |             | Optional prop for testing purposes.                                                        |
+| external    | `boolean`                  | `false`     | If `true`, the TextLink opens link in a new tab.                                           |
+| href        | `string`                   |             | The URL to link when the TextLink is clicked.                                              |
+| icon        | `React.Node`               |             | The displayed icon.                                                                        |
+| onClick     | `event => void \| Promise` |             | Function for handling onClick event.                                                       |
+| rel         | `string`                   |             | The rel of the TextLink. [See Functional specs](#functional-specs)                         |
+| size        | [`enum`](#enum)            |             | The size of the TextLink. [See Functional specs](#functional-specs)                        |
+| tabIndex    | `string`                   |             | Specifies the tab order of an element                                                      |
+| **type**    | [`enum`](#enum)            | `"primary"` | The color type of the TextLink.                                                            |
 
 ### enum
 

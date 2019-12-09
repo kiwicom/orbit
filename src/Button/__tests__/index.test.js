@@ -66,6 +66,7 @@ describe("Button with icon", () => {
       ariaExpanded={ariaExpanded}
       ariaControls={ariaControls}
       role={role}
+      asComponent={props => <span {...props} />}
       title={title}
     >
       {children}
@@ -82,6 +83,9 @@ describe("Button with icon", () => {
   });
   it("should have href", () => {
     expect(component.render().prop("href")).toBe(href);
+  });
+  it("should have been rendered in span", () => {
+    expect(component.render().prop("name")).toBe("span");
   });
   it("should have aria attributes", () => {
     expect(component.render().prop("aria-controls")).toBe(ariaControls);

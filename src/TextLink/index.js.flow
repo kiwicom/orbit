@@ -21,7 +21,7 @@ export type Props = {|
   +size?: Size,
   +rel?: string,
   +tabIndex?: string,
-  +component?: Component,
+  +asComponent?: Component,
   ...Globals,
 |};
 

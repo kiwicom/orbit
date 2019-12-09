@@ -23,6 +23,7 @@ describe("NavigationListItem horizontal", () => {
       selectable={selectable}
       selected={selected}
       dataTest={dataTest}
+      asComponent={props => <span {...props} />}
     >
       {children}
     </NavigationListItem>,
@@ -39,6 +40,9 @@ describe("NavigationListItem horizontal", () => {
   it("should execute onClick callback", () => {
     listItem.simulate("click");
     expect(onClick).toHaveBeenCalled();
+  });
+  it("should have been rendered in span", () => {
+    expect(component.render().prop("name")).toBe("span");
   });
   it("should have data-test", () => {
     expect(listItem.render().prop("data-test")).toBe(dataTest);

@@ -17,7 +17,7 @@ import typeof CountryFlagType from "./CountryFlag";
 import typeof CollapseType from "./Collapse";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof DestinationHeaderType from "./DestinationHeader";
-import typeof DestinationCardType from "./DestinationCard";
+import typeof DestinationCardType from "./deprecatedDestinationCard";
 import typeof DialogType from "./Dialog";
 import typeof FeatureIconType from "./FeatureIcon";
 import typeof HeadingType from "./Heading";

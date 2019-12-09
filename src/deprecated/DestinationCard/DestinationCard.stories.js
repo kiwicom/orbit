@@ -5,7 +5,7 @@ import { storiesOf } from "@storybook/react";
 import { text, object, number } from "@storybook/addon-knobs/react";
 import { action } from "@storybook/addon-actions";
 
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
 import DestinationCard from "./index";
 

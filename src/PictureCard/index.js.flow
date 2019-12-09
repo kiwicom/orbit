@@ -1,0 +1,28 @@
+// @flow
+
+import type { Globals } from "../common/common.js.flow";
+
+type Image = {|
+  +original: string,
+  +placeholder: string,
+  +name: string,
+  +code: string,
+|};
+
+export type Props = {|
+  ...Globals,
+  +actions?: React$Node,
+  +children?: React$Node,
+  +label?: React$Node,
+  +title?: React$Node,
+  +subTitle?: React$Node,
+  +image: Image,
+  +height?: string,
+  +width?: string,
+  +href?: string,
+  +external?: boolean,
+  +tabIndex?: string,
+  +onClick?: () => void,
+|};
+
+declare export default React$ComponentType<Props>;

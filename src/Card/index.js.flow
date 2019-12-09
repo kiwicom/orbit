@@ -2,29 +2,23 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/card/
 */
-import type { spaceAfter } from "../common/getSpacingToken/index";
+
+import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
 import typeof CardSectionType from "./CardSection/index.js.flow";
-import typeof CardSectionHeaderType from "./CardSection/CardSectionHeader/index.js.flow";
-import typeof CardSectionContentType from "./CardSection/CardSectionContent/index.js.flow";
-import typeof CardHeaderType from "./CardHeader/index.js.flow";
 
 export type Props = {|
   +children?: React$Node,
-  +closable?: boolean,
-  +onClose?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +title?: React$Node,
+  +description?: React$Node,
+  +icon?: React$Node,
+  +actions?: React$Node,
+  +loading?: boolean,
+  +header?: React$Node,
+  +dataA11ySection?: string,
   ...Globals,
   ...spaceAfter,
 |};
 
-export type State = {|
-  expandedSections: Array<number>,
-  initialExpandedSections: Array<number>,
-|};
-
 declare export default React$ComponentType<Props>;
-
-declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
-declare export var CardSectionHeader: CardSectionHeaderType;
-declare export var CardSectionContent: CardSectionContentType;

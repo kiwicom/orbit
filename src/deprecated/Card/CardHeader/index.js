@@ -2,11 +2,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import Heading, { StyledHeading } from "../../Heading";
-import Text from "../../Text";
-import { rtlSpacing } from "../../utils/rtl";
-import media from "../../utils/mediaQuery";
+import defaultTheme from "../../../defaultTheme";
+import Heading, { StyledHeading } from "../../../Heading";
+import Text from "../../../Text";
+import { rtlSpacing } from "../../../utils/rtl";
+import media from "../../../utils/mediaQuery";
 
 import type { Props } from "./index";
 

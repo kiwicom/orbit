@@ -63,14 +63,9 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
 
 const LazyImage = ({ placeholder, original, name }: Props) => {
   const [loaded, setLoaded] = useState(false);
-
-  const fullResLoaded = () => {
-    setLoaded(true);
-  };
-
   return (
     <StyledLazyImage>
-      <Picture pictures={original} name={name} loaded={loaded} onLoad={fullResLoaded} />
+      <Picture pictures={original} name={name} loaded={loaded} onLoad={() => setLoaded(true)} />
       {placeholder && <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />}
     </StyledLazyImage>
   );

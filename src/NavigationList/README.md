@@ -54,7 +54,7 @@ Table below contains all types of the props available in the NavigationListItem 
 | Name        | Type                    | Default    | Description                                                                                               |
 | :---------- | :---------------------- | :--------- | :-------------------------------------------------------------------------------------------------------- |
 | ariaLabel   | `string`                |            | Adds prop adds `aria-label` to an element, useful for screen readers.                                     |
-| asComponent | `string \| React.Node`  | `"button"` | The component used for the root node. Either a string to use a DOM element or a component.                |
+| asComponent | `() => React.Element`   | `"button"` | The component used for the root node. Either a string to use a DOM element or a component.                |
 | children    | `React.Node`            |            | The content of the NavigationLink.                                                                        |
 | dataTest    | `string`                |            | Optional prop for testing purposes.                                                                       |
 | external    | `boolean`               |            | If `true`, the Navigation opens link in a new tab. [See Functional specs](#functional-specs)              |

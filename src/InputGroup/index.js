@@ -259,9 +259,9 @@ class InputGroup extends React.PureComponent<Props, State> {
                   label: undefined,
                   help: undefined,
                   error: undefined,
-                  onChange: this.handleChange,
-                  onBlur: this.handleBlur,
-                  onFocus: this.handleFocus,
+                  onChange: item.props.onChange != null ? item.props.onChange : this.handleChange,
+                  onBlur: item.props.onBlur != null ? item.props.onChange : this.handleBlur,
+                  onFocus: item.props.onFocus != null ? item.props.onFocus : this.handleFocus,
                 })}
               </StyledChild>
             );

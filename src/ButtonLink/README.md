@@ -20,7 +20,7 @@ Table below contains all types of the props available in ButtonLink component.
 | :----------- | :------------------------- | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                          |
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                      |
-| asComponent  | `() => React.Element`      | `"button"`  | The component used for the root node. Either a string to use a DOM element or a component.                                                      |
+| asComponent  | `() => React.Element`      | `"button"`  | The component used for the root node.                                                                                                           |
 | block        | `boolean`                  | `false`     | If `true`, the ButtonLink will grow up to the full width of its container.                                                                      |
 | circled      | `boolean`                  | `false`     | If `true`, the ButtonLink will have circular shape.                                                                                             |
 | children     | `React.Node`               |             | The content of the ButtonLink. [See Functional specs](#functional-specs)                                                                        |

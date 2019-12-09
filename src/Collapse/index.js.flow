@@ -1,5 +1,6 @@
 // @flow
 import type { Translation, Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   initialExpanded?: boolean,
@@ -9,6 +10,7 @@ export type Props = {|
   actions?: React$Node,
   onClick?: (e: SyntheticEvent<HTMLDivElement>, state: boolean) => void | Promise<any>,
   ...Globals,
+  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

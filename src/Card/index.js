@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Loading from "../Loading";
 import CardWrapper from "./components/CardWrapper";
-import { Provider as SectionProvider } from "./CardContext";
+import { Provider } from "./CardContext";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import Header from "./components/Header";
@@ -53,12 +53,9 @@ const Card = ({
   // eslint-disable-next-line no-unused-vars
   const renderSection = (item, index) => {
     if (React.isValidElement(item)) {
-      // if (item.props.children && item.type.name !== "CardSection") {
-      //   return React.createElement(CardSection, {
-      //     ...item.props.children.props,
-      //     key: index,
-      //   });
-      // }
+      if (item.props.children && item.type.name !== "CardSection") {
+        return React.cloneElement(item.props.children);
+      }
       return React.cloneElement(item);
     }
 
@@ -92,7 +89,7 @@ const Card = ({
             const index = Number(item.key) || key;
 
             return (
-              <SectionProvider
+              <Provider
                 value={{
                   addSection,
                   removeSection,
@@ -114,7 +111,7 @@ const Card = ({
                 ) : (
                   renderSection(item, index)
                 )}
-              </SectionProvider>
+              </Provider>
             );
           })
         : null}

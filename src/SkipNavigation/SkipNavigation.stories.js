@@ -6,19 +6,18 @@ import { action } from "@storybook/addon-actions";
 import Heading from "../Heading";
 import Text from "../Text";
 import TextLink from "../TextLink";
-import Card, { CardHeader, CardSection } from "../Card";
+import Card, { CardSection } from "../Card";
 import Stack from "../Stack";
 
 import SkipNavigation from ".";
 
 const Content = (
   <Stack>
-    <Card>
-      <CardHeader
-        title="Focusable Card Heading"
-        subTitle="Buy this trip with us and you'll get exclusive premium services at Milano Bergamo Airport for free."
-        dataA11ySection="focusable-card-id"
-      />
+    <Card
+      title="Focusable Card Heading"
+      dataA11ySection="focusable-card-id"
+      description="Buy this trip with us and you'll get exclusive premium services at Milano Bergamo Airport for free"
+    >
       <CardSection>
         <Text>
           Lorem ipsum dolor sit &nbsp;
@@ -31,8 +30,7 @@ const Content = (
       </CardSection>
     </Card>
 
-    <Card>
-      <CardHeader title="Booking" dataA11ySection="booking" />
+    <Card title="Booking" dataA11ySection="booking">
       <CardSection>
         <Stack>
           <Text>

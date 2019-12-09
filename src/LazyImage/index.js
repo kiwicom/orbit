@@ -1,10 +1,10 @@
 // @flow
-import * as React from "react";
-import styled, { css } from "styled-components";
+import React, { useState } from "react";
+import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 
-import type { Props, State, PictureProps } from ".";
+import type { Props, PictureProps } from ".";
 
 const FORMATS = {
   WEBP: "webp",
@@ -22,17 +22,12 @@ const Image = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
   opacity: ${({ visible }) => (visible ? "1" : "0")};
   transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  ${({ lowRes }) =>
-    lowRes &&
-    css`
-      filter: blur(3px);
-    `};
+  filter: ${({ lowRes }) => lowRes && "blur(3px)"};
 `;
 
 Image.defaultProps = {
@@ -66,26 +61,19 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
   </picture>
 );
 
-class LazyImage extends React.PureComponent<Props, State> {
-  state = {
-    loaded: false,
+const LazyImage = ({ placeholder, original, name }: Props) => {
+  const [loaded, setLoaded] = useState(false);
+
+  const fullResLoaded = () => {
+    setLoaded(true);
   };
 
-  fullResLoaded = () => {
-    this.setState({ loaded: true });
-  };
-
-  render() {
-    const { placeholder, original, name } = this.props;
-    const { loaded } = this.state;
-
-    return (
-      <StyledLazyImage>
-        <Picture pictures={original} name={name} loaded={loaded} onLoad={this.fullResLoaded} />
-        {placeholder && <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />}
-      </StyledLazyImage>
-    );
-  }
-}
+  return (
+    <StyledLazyImage>
+      <Picture pictures={original} name={name} loaded={loaded} onLoad={fullResLoaded} />
+      {placeholder && <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />}
+    </StyledLazyImage>
+  );
+};
 
 export default LazyImage;

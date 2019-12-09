@@ -13,10 +13,6 @@ export type Props = {|
   name: Translation,
 |};
 
-export type State = {|
-  loaded: boolean,
-|};
-
 export type PictureProps = {|
   pictures: ImageObject,
   name: string,

@@ -106,6 +106,39 @@ storiesOf("InputGroup", module)
     },
   )
   .add(
+    "onChange behaviour",
+    () => {
+      const inputValue = text("Input Value", undefined);
+
+      return (
+        <div>
+          <InputGroup label="Change in group" onChange={action("onChange a+b")}>
+            <InputField placeholder="a" maxLength={11} value={inputValue} />
+            <InputField placeholder="b" maxLength={11} value={inputValue} />
+          </InputGroup>
+
+          <InputGroup label="Change in inner inputs">
+            <InputField
+              placeholder="c"
+              maxLength={11}
+              value={inputValue}
+              onChange={action("onChange c")}
+            />
+            <InputField
+              placeholder="d"
+              maxLength={11}
+              value={inputValue}
+              onChange={action("onChange d")}
+            />
+          </InputGroup>
+        </div>
+      );
+    },
+    {
+      info: "Some description about this type of InputGroup in general.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const label = text("Label", "Phone number");

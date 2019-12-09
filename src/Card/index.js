@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import CardSection from "./CardSection";
 import Loading from "../Loading";
 import CardWrapper from "./components/CardWrapper";
 import { Provider as SectionProvider } from "./CardContext";
@@ -53,12 +54,12 @@ const Card = ({
   // eslint-disable-next-line no-unused-vars
   const renderSection = (item, index) => {
     if (React.isValidElement(item)) {
-      // if (item.props.children && item.type.name !== "CardSection") {
-      //   return React.createElement(CardSection, {
-      //     ...item.props.children.props,
-      //     key: index,
-      //   });
-      // }
+      if (item.props.children && item.type.name !== "CardSection") {
+        return React.createElement(
+          CardSection,
+          Object.assign({}, item.props.children.props, { key: index }),
+        );
+      }
       return React.cloneElement(item);
     }
 

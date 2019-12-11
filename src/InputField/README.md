@@ -39,7 +39,7 @@ Table below contains all types of the props available in InputField component.
 | onFocus      | `event => void \| Promise` |            | Function for handling onFocus event.                                                                                                                |
 | onKeyDown    | `event => void \| Promise` |            | Function for handling onKeyDown event.                                                                                                              |
 | onKeyUp      | `event => void \| Promise` |            | Function for handling onKeyUp event.                                                                                                                |
-| placeholder  | `Translation`              |            | The placeholder of the InputField.                                                                                                                  |
+| placeholder  | `TranslationString`        |            | The placeholder of the InputField.                                                                                                                  |
 | **prefix**   | `React.Node`               |            | The prefix component for the InputField.                                                                                                            |
 | readOnly     | `boolean`                  | `"false"`  | If `true`, the InputField be readOnly.                                                                                                              |
 | ref          | `func`                     |            | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)                                                                 |

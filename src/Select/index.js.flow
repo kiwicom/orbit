@@ -4,7 +4,7 @@
 */
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref, Translation } from "../common/common.js.flow";
+import type { Globals, Ref, Translation, TranslationString } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Option = {|
@@ -23,7 +23,7 @@ export type Props = {|
   +required?: boolean,
   +size?: Size,
   +label?: Translation,
-  +placeholder?: Translation,
+  +placeholder?: TranslationString,
   +value?: string | number,
   +disabled?: boolean,
   +name?: string,

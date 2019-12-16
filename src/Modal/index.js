@@ -502,7 +502,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   };
 
   handleClickOutside = (ev: MouseEvent) => {
-    const { onClose, preventOverlayClose } = this.props;
+    const { onClose, preventOverlayClose = false } = this.props;
     if (
       onClose &&
       preventOverlayClose === false &&

@@ -1,21 +1,24 @@
 // @flow
-
 import styled from "styled-components";
 import React from "react";
 
 import useTheme from "../hooks/useTheme";
+import { TYPES, SIZE_OPTIONS } from "./consts";
+
+import type { Props } from "./index";
+
+const getSize = ({ size }) => {
+  const tokens = {
+    [SIZE_OPTIONS.SMALL]: "20px",
+    [SIZE_OPTIONS.MEDIUM]: "40px",
+  };
+  return `width: ${tokens[size]}; height: ${tokens[size]}`;
+};
 
 const StyledSeat = styled.svg`
-  height: 200px;
-  width: 200px;
+  flex-shrink: 0;
+  ${getSize}
 `;
-
-const TYPES = {
-  DEFAULT: "default",
-  LEGROOM: "legroom",
-  SELECTED: "selected",
-  UNAVAILABLE: "unavailable",
-};
 
 const SeatType = ({ type }) => {
   const theme = useTheme();
@@ -87,7 +90,7 @@ const SeatType = ({ type }) => {
   }
 };
 
-const Seat = ({ type, size, dataTest }) => {
+const Seat = ({ type, size = SIZE_OPTIONS.MEDIUM, dataTest }: Props) => {
   return (
     <StyledSeat
       preserveAspectRatio="xMidYMid meet"

@@ -62,10 +62,14 @@ const Breadcrumbs = ({ children, dataTest, onGoBack, spaceAfter }: Props) => (
     <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
       {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {
-        return React.cloneElement(item, {
-          active: key === React.Children.count(children) - 1,
-          contentKey: key + 1,
-        });
+        if (React.isValidElement(item)) {
+          return React.cloneElement(item, {
+            active: key === React.Children.count(children) - 1,
+            contentKey: key + 1,
+          });
+        }
+
+        return null;
       })}
     </StyledBreadcrumbsList>
   </StyledBreadcrumbs>

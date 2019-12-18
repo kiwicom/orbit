@@ -1,0 +1,16 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/radio/
+*/
+import type { Globals } from "../common/common.js.flow";
+
+export type Type = "default" | "legroom" | "selected" | "unavailable";
+export type Size = "medium" | "small";
+
+export type Props = {|
+  +type?: Type,
+  +size?: Size,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

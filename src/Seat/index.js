@@ -12,12 +12,12 @@ const getSize = ({ size }) => {
     [SIZE_OPTIONS.SMALL]: "20px",
     [SIZE_OPTIONS.MEDIUM]: "40px",
   };
-  return `width: ${tokens[size]}; height: ${tokens[size]}`;
+  return `width: ${tokens[size]}; height: ${tokens[size]};`;
 };
 
 const StyledSeat = styled.svg`
   flex-shrink: 0;
-  ${getSize}
+  ${getSize};
 `;
 
 const SeatType = ({ type }) => {

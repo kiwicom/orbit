@@ -1,0 +1,12 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+
+export type Props = {|
+  +title: React$Node,
+  +description?: React$Node,
+  +primaryAction: React$Node,
+  +secondaryAction?: React$Node,
+  ...Globals,
+|};
+
+declare export default React$ComponentType<Props>;

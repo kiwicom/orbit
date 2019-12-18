@@ -19,6 +19,7 @@ export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
+export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 
 // Card

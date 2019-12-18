@@ -421,6 +421,8 @@ storiesOf("Modal", module)
       const dataTest = text("dataTest", "test");
       const isMobileFullPage = boolean("isMobileFullPage", false);
       const showBack = boolean("showBackButton", true);
+      const preventOverlayClose = boolean("preventOverlayClose", false);
+
       return (
         <Modal
           onClose={onClose}
@@ -428,6 +430,7 @@ storiesOf("Modal", module)
           fixedFooter={fixed}
           dataTest={dataTest}
           isMobileFullPage={isMobileFullPage}
+          preventOverlayClose={preventOverlayClose}
         >
           <ModalHeader
             title={title}

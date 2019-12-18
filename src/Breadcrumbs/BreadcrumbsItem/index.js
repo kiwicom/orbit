@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import ChevronRight from "../../icons/ChevronRight";
@@ -13,22 +13,28 @@ const StyledBreadcrumbsItem = styled.li`
 `;
 
 const StyledBreadcrumbsItemAnchor = styled(
-  ({ active, component: Component, children, theme, ...props }) => (
-    <Component {...props}>{children}</Component>
-  ),
+  ({ active, component, children, isClickable, theme, ...props }) => {
+    const Component = isClickable ? component : "div";
+    return <Component {...props}>{children}</Component>;
+  },
 )`
   font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightBold};
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   text-decoration: none;
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  cursor: pointer;
 
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
-    outline: none;
-    text-decoration: underline;
-  }
+  ${({ isClickable }) =>
+    isClickable &&
+    css`
+      transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+        outline: none;
+        text-decoration: underline;
+      }
+    `};
 `;
 
 StyledBreadcrumbsItemAnchor.defaultProps = {
@@ -43,14 +49,17 @@ StyledBreadcrumbsItemIcon.defaultProps = {
   theme: defaultTheme,
 };
 
+// eslint-disable-next-line jsx-a11y/anchor-has-content
+const DefaultComponent = props => <a {...props} />;
+
 const BreadcrumbsItem = ({
   active,
   children,
   dataTest,
   onClick,
+  href,
   contentKey,
-  // eslint-disable-next-line jsx-a11y/anchor-has-content
-  component = props => <a {...props} />,
+  component = DefaultComponent,
   ...props
 }: Props) => (
   <StyledBreadcrumbsItem
@@ -60,6 +69,8 @@ const BreadcrumbsItem = ({
     typeof="ListItem"
   >
     <StyledBreadcrumbsItemAnchor
+      isClickable={href || onClick}
+      href={href}
       component={component}
       active={active}
       onClick={onClick}

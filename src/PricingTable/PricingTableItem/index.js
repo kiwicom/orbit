@@ -68,7 +68,7 @@ const StyledBadgeWrapper = styled.div`
 
 const StyledBadgeWrapperContent = styled.div`
   /*
-    This is a big ugly and unnecessarily complex,
+    This is a bit ugly and unnecessarily complex,
     but due how IE works with flex and absolute positioning
     it has to be like this.  
   */

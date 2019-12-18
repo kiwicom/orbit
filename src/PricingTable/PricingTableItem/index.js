@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import Stack from "../../Stack";
 import Text from "../../Text";
 import Radio from "../../Radio";
-import Badge from "../../Badge";
+import Badge, { StyledBadge } from "../../Badge";
 import media from "../../utils/mediaQuery";
 import type { Props } from "./index.js.flow";
 import STATES from "./consts";
@@ -24,6 +24,7 @@ const getBoxShadow = state => ({ theme, active }) => {
 
 const StyledPricingTableItem = styled.div`
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   width: 100%;
   max-width: 33%;
@@ -59,17 +60,30 @@ StyledPricingTableItem.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledBadge = styled.div`
-  position: absolute;
-  top: -${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
-  left: 50%;
-  transform: translate(-50%, 3px);
-  z-index: 10; /* TODO: change for z-index framework */
+const StyledBadgeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
-StyledBadge.defaultProps = {
-  theme: defaultTheme,
-};
+const StyledBadgeWrapperContent = styled.div`
+  /*
+    This is a bit ugly and unnecessarily complex,
+    but due how IE works with flex and absolute positioning
+    it has to be like this.  
+  */
+  position: absolute;
+  bottom: calc(100% + 3px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  ${StyledBadge} {
+    align-self: center;
+    max-width: 100%;
+  }
+`;
 
 const Item = styled.div``;
 
@@ -102,9 +116,11 @@ const PricingTableItem = ({
       dataTest={dataTest}
     >
       {badge && (
-        <StyledBadge>
-          {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
-        </StyledBadge>
+        <StyledBadgeWrapper>
+          <StyledBadgeWrapperContent>
+            {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
+          </StyledBadgeWrapperContent>
+        </StyledBadgeWrapper>
       )}
       <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
         {featureIcon && (

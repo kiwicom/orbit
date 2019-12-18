@@ -68,7 +68,9 @@ describe("PricingTableItem mobile", () => {
     expect(pricingTableItem.find("img").exists()).toBe(true);
   });
   it("should have badge", () => {
-    expect(pricingTableItem.find("PricingTableItem__StyledBadge").exists()).toBe(true);
+    expect(pricingTableItem.find("PricingTableItem__StyledBadgeWrapperContent").exists()).toBe(
+      true,
+    );
   });
   it("shouldn't have actions", () => {
     expect(pricingTableItem.find("Button").exists()).toBe(false);
@@ -128,7 +130,9 @@ describe("PricingTableItem desktrop", () => {
     expect(pricingTableItem.find("img").exists()).toBe(true);
   });
   it("should have badge", () => {
-    expect(pricingTableItem.find("PricingTableItem__StyledBadge").exists()).toBe(true);
+    expect(pricingTableItem.find("PricingTableItem__StyledBadgeWrapperContent").exists()).toBe(
+      true,
+    );
   });
   it("should have actions", () => {
     expect(pricingTableItem.find("Button").exists()).toBe(true);

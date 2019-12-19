@@ -24,6 +24,7 @@ const pathOverwrites = {
   TableCell: 'Table/TableCell',
   TableHead: 'Table/TableHead',
   TableRow: 'Table/TableRow',
+  LayoutColumn: 'Layout/LayoutColumn',
 };
 
 const parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];

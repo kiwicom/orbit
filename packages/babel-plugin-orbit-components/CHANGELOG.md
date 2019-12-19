@@ -1,5 +1,9 @@
 # Unreleased
 
+# 1.4.0
+
+- Fixed import of `LayoutColumn`
+
 # 1.3.0
 
 This is a first release after we migrate the codebase into Universe monorepo. The whole release process changed so there is a chance that it won't work as expected right away. Please let us know in case of any issues! :)

@@ -35,6 +35,7 @@ test.each([
   ['import { ModalSection } from "@kiwicom/orbit-components";'], // nested
   ['import { Alert, ModalSection } from "@kiwicom/orbit-components";'], // nested multi
   ['import { Passengers } from "@kiwicom/orbit-components/lib/icons";'], // icon
+  ['import { LayoutColumn } from "@kiwicom/orbit-components";'],
   [
     // mixed
     `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";

@@ -8,6 +8,7 @@ export { default as Alert } from "./Alert";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
+export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";

@@ -1,5 +1,7 @@
 # Unreleased
 
+- Fixed import of `BreadcrumbsItem`
+
 # 1.4.0
 
 - Fixed import of `LayoutColumn`

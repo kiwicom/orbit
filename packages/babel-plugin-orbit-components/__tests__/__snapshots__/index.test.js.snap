@@ -60,6 +60,13 @@ import LayoutColumn from "@kiwicom/orbit-components/lib/Layout/LayoutColumn";
 
 exports[`transform imports as expected 8 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { BreadcrumbsItem } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import BreadcrumbsItem from "@kiwicom/orbit-components/lib/Breadcrumbs/BreadcrumbsItem";
+`;
+
+exports[`transform imports as expected 9 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
@@ -70,14 +77,14 @@ import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
 import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
 `;
 
-exports[`transform imports as expected 9 1`] = `
+exports[`transform imports as expected 10 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { mediaQueries } from "@kiwicom/orbit-components";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 `;
 
-exports[`transform imports as expected 10 1`] = `
+exports[`transform imports as expected 11 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Text, Stack, Grid } from '@kiwicom/orbit-components';
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
@@ -86,7 +93,7 @@ import Stack from "@kiwicom/orbit-components/lib/Stack";
 import Text from "@kiwicom/orbit-components/lib/Text";
 `;
 
-exports[`transform imports as expected 11 1`] = `
+exports[`transform imports as expected 12 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Icon, Icons } from '@kiwicom/orbit-components'
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~

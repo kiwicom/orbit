@@ -22,15 +22,15 @@ The Modal component has big variety of usage, please check examples for usage [b
 
 Table below contains all types of the props available in the Modal component.
 
-| Name                | Type                       | Default    | Description                                                                                                                                                                                          |
-| :------------------ | :------------------------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children            | `React.Node`               |            | The content of the Modal. [See Subcomponents](#subcomponents)                                                                                                                                        |
-| dataTest            | `string`                   |            | Optional prop for testing purposes.                                                                                                                                                                  |
-| fixedFooter         | `boolean`                  | `false`    | If `true` the ModalFooter will be fixed to the bottom of window.                                                                                                                                     |
-| isMobileFullPage    | `boolean`                  | `false`    | If `true` the Modal will look like a page on mobile devices.                                                                                                                                         |
-| size                | [`enum`](#modal-enum)      | `"normal"` | The maximum width of the Modal on desktop viewport.                                                                                                                                                  |
-| onClose             | `event => void \| Promise` |            | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs) |
-| preventOverlayClose | `boolean`                  |            | Property for preventing closing of modal when there is a action on overlay. BEWARE: This should be used only in very specials edge-cases! It breaks user experience.                                 |
+| Name                | Type                       | Default    | Description                                                                                                                                                          |
+| :------------------ | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children            | `React.Node`               |            | The content of the Modal. [See Subcomponents](#subcomponents)                                                                                                        |
+| dataTest            | `string`                   |            | Optional prop for testing purposes.                                                                                                                                  |
+| fixedFooter         | `boolean`                  | `false`    | If `true` the ModalFooter will be fixed to the bottom of window.                                                                                                     |
+| isMobileFullPage    | `boolean`                  | `false`    | If `true` the Modal will look like a page on mobile devices.                                                                                                         |
+| size                | [`enum`](#modal-enum)      | `"normal"` | The maximum width of the Modal on desktop viewport.                                                                                                                  |
+| onClose             | `event => void \| Promise` |            | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal.           |
+| preventOverlayClose | `boolean`                  |            | Property for preventing closing of modal when there is a action on overlay. BEWARE: This should be used only in very specials edge-cases! It breaks user experience. |
 
 ### Modal enum
 
@@ -39,36 +39,6 @@ Table below contains all types of the props available in the Modal component.
 | `"small"`  |
 | `"normal"` |
 | `"large`   |
-
-### Functional specs
-
-- Also, if you want to select the Close Button element for testing purposes, use [data-test="ModalCloseButton"] selector.
-
-- If you need to set scrollTop position of the Modal component, you can use instance of the component and method `setScrollPosition` like this:
-
-```jsx
-class Component extends React.Component {
-  modalRef: { current: null | React$ElementRef<*> } = React.createRef();
-
-  setScroll = () => {
-    if (modalRef.current) {
-      modalRef.current.setScrollPosition(100);
-    }
-  };
-  render() {
-    return (
-      <Modal ref={modalRef}>
-        <ModalSection>Example usage of setting up the scrollTop position</ModalSection>
-        <ModalFooter>
-          <Button onClick={this.setScroll}>Change scrollTop</Button>
-        </ModalFooter>
-      </Modal>
-    );
-  }
-}
-```
-
----
 
 ## Subcomponents
 
@@ -156,49 +126,3 @@ Table below contains all types of the props in the ModalFooter component.
 | **children** | `React.Node`                |             | The content of the ModalFooter.                                                                  |
 | dataTest     | `string`                    |             | Optional prop for testing purposes.                                                              |
 | flex         | `string` or `Array<string>` | `"0 1 auto` | The flex attribute(s) for children of the ModalFooter. [See Functional specs](#functional-specs) |
-
-#### ModalFooter Functional specs
-
-- You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
-
-## Use cases
-
-Although this component offers good flexibility of usage, there are tiny limitations for usage.
-
-### Wrapper ModalSections
-
-If you need to wrap the children into custom component, wrap all of the children into **one wrapper**, e.g.:
-
-```jsx
-// good
-<Modal fixedFooter>
-  <CustomWrapper>
-    <ModalHeader />
-      <ModalSection>
-        My content
-      </ModalSection>
-      <ModalSection>
-        My content
-      </ModalSection>
-    <ModalFooter />
-  </CustomWrapper>
-</Modal>
-
-// bad, the CSS styles will be broken
-<Modal fixedFooter>
-  <ModalHeader />
-  <CustomWrapper>
-    <ModalSection>
-      My content
-    </ModalSection>
-    <ModalSection>
-      My content
-    </ModalSection>
-  </CustomWrapper>
-  <ModalFooter />
-</Modal>
-```
-
-## Accessibility
-
-- When Modal is closed return focus to the element that opened the modal. You can use `onClose` callback function to achieve this.

@@ -16,25 +16,30 @@ const hoverAndFocus = () => css`
     opacity: 1;
   }
 `;
+
 const StyledContentWrapper = styled.div`
   width: 100%;
-  padding: 0px 4px;
+  padding: 0 4px;
   border-radius: 4px;
   display: flex;
   align-items: center;
-
-  /* NOTE: Combined selector &:hover, &:focus-within is not ussable here as it renders incorectly in IE and EDGE */
-  &:hover {
-    ${hoverAndFocus}
-  }
-  &:focus-within {
-    ${hoverAndFocus}
-  }
 
   ${StyledOnlyButton} {
     visibility: hidden;
     opacity: 0;
   }
+
+  ${({ disabled }) =>
+    !disabled &&
+    css`
+      /* NOTE: Combined selector &:hover, &:focus-within is not ussable here as it renders incorectly in IE and EDGE */
+      &:hover {
+        ${hoverAndFocus}
+      }
+      &:focus-within {
+        ${hoverAndFocus}
+      }
+    `};
 `;
 
 StyledContentWrapper.defaultProps = {
@@ -42,15 +47,16 @@ StyledContentWrapper.defaultProps = {
 };
 
 const FilterWrapper: FilterWrapperType = ({ child, children, onOnlySelection }) => {
+  const { value, label, disabled } = child.props;
   return (
-    <StyledContentWrapper>
+    <StyledContentWrapper disabled={disabled}>
       {children}
-      {onOnlySelection && (
+      {onOnlySelection && !disabled && (
         <StyledOnlyButton
           type="secondary"
           size="small"
           onClick={ev => {
-            onOnlySelection(ev, { value: child.props.value, label: child.props.label });
+            onOnlySelection(ev, { value, label });
           }}
           transparent
         >

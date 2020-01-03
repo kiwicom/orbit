@@ -25,10 +25,11 @@ const PricingTable = ({ children, defaultActiveElement = 0, dataTest }: Props) =
     }
     return `100%`;
   };
+  console.log(dataTest);
   return (
     <>
       {isDesktop !== null && (
-        <StyledPricingTable dataTest={dataTest}>
+        <StyledPricingTable data-test={dataTest}>
           <Stack
             flex
             grow

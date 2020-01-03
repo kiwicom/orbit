@@ -62,11 +62,9 @@ storiesOf("Card", module)
     () => {
       return (
         <Card title={title} description={description}>
-          <>
-            <CardSection expandable title={sectionTitle}>
-              This is a section content
-            </CardSection>
-          </>
+          <CardSection expandable title={sectionTitle}>
+            This is a section content
+          </CardSection>
           <CardSection expandable title={sectionTitle}>
             This is a section content
           </CardSection>

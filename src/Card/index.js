@@ -67,7 +67,7 @@ const Card = ({
 
   return (
     <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
-      {title && !loading && (
+      {(title || header) && !loading && (
         <CardWrapper bottomBorder={!children || expandedSections.some(val => val === 0)}>
           <Header
             icon={icon}

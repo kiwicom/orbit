@@ -58,7 +58,7 @@ const Card = ({
       //     ...item.props.children.props,
       //     key: index,
       //   });
-      // }
+
       return React.cloneElement(item);
     }
 

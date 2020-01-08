@@ -22,13 +22,13 @@ const StyledCardSectionHeader = styled.div`
   position: relative;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   margin: -${SpacingMobile};
-  margin-bottom: ${({ expanded }) => expanded && 0};
+  margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
 
   ${mq.tablet(css`
     margin: -${SpacingDesktop};
     padding: ${({ theme }) => theme.orbit.spaceLarge};
-    margin-bottom: ${({ expanded }) => expanded && 0};
+    margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   `)}
 
   &:hover {
@@ -57,6 +57,7 @@ type Props = {|
   handleKeyDown: (ev: SyntheticKeyboardEvent<HTMLDivElement>) => void,
   onClick?: () => void,
   slideID: string,
+  isContent: boolean,
   labelID: string,
 |};
 
@@ -64,6 +65,7 @@ const CardSectionHeader = ({
   title,
   description,
   icon,
+  isContent,
   expandable,
   expanded,
   onClick,
@@ -85,6 +87,7 @@ const CardSectionHeader = ({
       role={expandable ? "button" : undefined}
       onKeyDown={handleKeyDown}
       tabIndex={expandable ? "0" : undefined}
+      isContent={isContent}
     >
       <Header
         title={title}

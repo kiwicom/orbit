@@ -103,6 +103,7 @@ const CardSection = ({
           expandable={expandable}
           expanded={opened}
           actions={actions}
+          isContent={!!children}
           onClick={expandable ? handleClick : undefined}
           description={description}
           handleKeyDown={handleKeyDown}

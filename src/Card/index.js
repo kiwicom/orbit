@@ -2,7 +2,6 @@
 import * as React from "react";
 import styled from "styled-components";
 
-// import CardSection from "./CardSection";
 import Loading from "../Loading";
 import CardWrapper from "./components/CardWrapper";
 import { Provider as SectionProvider } from "./CardContext";

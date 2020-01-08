@@ -1,7 +1,7 @@
 // @flow
 import { useState, useCallback } from "react";
 
-import type { Return } from "./useStateWithCallback";
+import type { Return } from ".";
 
 export default function useStateWithCallback<S>(
   defaultValue: S,

@@ -1,9 +1,10 @@
 // @flow
 import { useState, useEffect } from "react";
 
-import type { UseMediaQuery } from "./useMediaQuery";
-import useTheme from "./useTheme";
-import { getBreakpointWidth } from "../utils/mediaQuery/index";
+import useTheme from "../useTheme";
+import { getBreakpointWidth } from "../../utils/mediaQuery/index";
+
+import type { UseMediaQuery } from ".";
 
 const debounce = (callback, time) => {
   let interval;
@@ -17,7 +18,7 @@ const debounce = (callback, time) => {
 
 const useMediaQuery: UseMediaQuery = () => {
   const theme = useTheme();
-  const [breakpointList, setBreakpointList] = useState([
+  const [breakpointList, setBreakpointList] = useState(() => [
     {
       media: getBreakpointWidth("largeDesktop", theme),
       mapping: "isLargeDesktop",

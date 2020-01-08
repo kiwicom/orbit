@@ -113,7 +113,7 @@ const PricingTableItem = ({
       basis={basis}
       featureIcon={!!featureIcon}
       active={active}
-      dataTest={dataTest}
+      data-test={dataTest}
     >
       {badge && (
         <StyledBadgeWrapper>

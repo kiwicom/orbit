@@ -21,7 +21,7 @@ Table below contains all types of the props available in Button component.
 | ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                          |
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                      |
 | asComponent  | `() => React.Element`      | `"button"`  | The component used for the root node.                                                                                                           |
-| block        | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                          |
+| fullWidth    | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                          |
 | bordered     | `boolean`                  | `false`     | If `true`, the Button will have a lighter version, with border and light background.                                                            |
 | circled      | `boolean`                  | `false`     | If `true`, the Button will have circular shape.                                                                                                 |
 | children     | `React.Node`               |             | The content of the Button. [See Functional specs](#functional-specs)                                                                            |

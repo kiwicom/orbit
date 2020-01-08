@@ -1,7 +1,7 @@
 // @flow
 import { useEffect } from "react";
 
-import type { UseClickOutside } from "./useClickOutside";
+import type { UseClickOutside } from ".";
 
 const useClickOutside: UseClickOutside = (ref, handler) => {
   useEffect(() => {

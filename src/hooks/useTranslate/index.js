@@ -1,9 +1,10 @@
 // @flow
 import { useCallback } from "react";
 
-import useDictionary from "./useDictionary";
-import { pureTranslate } from "../Translate";
-import type { UseTranslate } from "./useTranslate";
+import useDictionary from "../useDictionary";
+import { pureTranslate } from "../../Translate";
+
+import type { UseTranslate } from ".";
 
 const useTranslate: UseTranslate = () => {
   const dictionary = useDictionary();

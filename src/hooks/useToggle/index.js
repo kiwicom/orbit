@@ -1,7 +1,7 @@
 // @flow strict
 import * as React from "react";
 
-import type { UseToggle } from "./useToggle";
+import type { UseToggle } from ".";
 
 const useToggle: UseToggle = (initial = false) => {
   const [open, setOpen] = React.useState(initial);

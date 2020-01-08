@@ -25,7 +25,6 @@ const PricingTable = ({ children, defaultActiveElement = 0, dataTest }: Props) =
     }
     return `100%`;
   };
-  console.log(dataTest);
   return (
     <>
       {isDesktop !== null && (

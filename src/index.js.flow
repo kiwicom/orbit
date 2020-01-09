@@ -84,9 +84,8 @@ import typeof ThemeProviderType from "./ThemeProvider";
 import typeof TranslateType from "./Translate";
 import type { Theme } from "./defaultTheme";
 import typeof NavigationBarType from "./NavigationBar";
-import typeof NavigationListType from "./NavigationList";
-import typeof NavigationListItemType from "./NavigationList/NavigationListItem";
 import typeof DrawerType from "./Drawer";
+import typeof LinkListType from "./LinkList";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -137,9 +136,8 @@ declare export var ModalFooter: ModalFooterType;
 declare export var Slider: SliderType;
 
 declare export var NavigationBar: NavigationBarType;
-declare export var NavigationList: NavigationListType;
-declare export var NavigationListItem: NavigationListItemType;
 declare export var Drawer: DrawerType;
+declare export var LinkList: LinkListType;
 
 declare export var Tag: TagType;
 

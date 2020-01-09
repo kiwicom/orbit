@@ -4,11 +4,9 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import CountryFlag from "../CountryFlag";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
-import LinkStack from "../LinkStack";
-import Airplane from "../icons/Airplane";
+import LinkStack from "../LinkList";
 import ChevronDown from "../icons/ChevronDown";
 import StarFull from "../icons/StarFull";
 import QuestionCircle from "../icons/QuestionCircle";

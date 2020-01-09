@@ -38,9 +38,10 @@ const StyledNavigationBar = styled.nav`
   box-sizing: border-box;
   z-index: 700;
   transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT}px`)}, 0);
+  transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT.MOBILE}px`)}, 0);
   ${mq.tablet(css`
     height: ${NAVBAR_HEIGHT.DESKTOP}px; // TODO: create token
+    transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT.DESKTOP}px`)}, 0);
   `)};
 `;
 

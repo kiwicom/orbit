@@ -203,16 +203,13 @@ const Content = styled(StyledDiv)`
     }
 
     :focus {
-      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
       box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
     }
     :focus:not(:focus-visible) {
-      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
       box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
     }
     :-moz-focusring,
     :focus-visible {
-      background: ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
       box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
     }
   }

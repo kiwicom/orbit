@@ -86,6 +86,7 @@ const StyledBadgeWrapperContent = styled.div`
   ${StyledBadge} {
     align-self: center;
     max-width: 100%;
+    word-break: break-all;
   }
 
   ${media.desktop(css`

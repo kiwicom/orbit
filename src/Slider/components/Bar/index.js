@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
-import type { Ref } from "../../../common/common.js.flow";
 
 import type { CalculateBarPosition, Props } from "./index";
 
@@ -54,16 +53,18 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
 StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
-// $FlowExpected
-const Bar = React.forwardRef(({ onMouseDown, value, max, min, hasHistogram }: Props, ref: Ref) => {
-  const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
-  return (
-    <StyledBar ref={ref} onMouseDown={onMouseDown}>
-      <StyledBarPart width={100} left={0} />
-      <StyledBarPart active left={left} width={width} />
-    </StyledBar>
-  );
-});
+
+const Bar = React.forwardRef<Props, HTMLElement>(
+  ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
+    const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
+    return (
+      <StyledBar ref={ref} onMouseDown={onMouseDown}>
+        <StyledBarPart width={100} left={0} />
+        <StyledBarPart active left={left} width={width} />
+      </StyledBar>
+    );
+  },
+);
 
 Bar.displayName = "Bar";
 

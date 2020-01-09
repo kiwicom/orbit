@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/inputfile/
 */
-import type { Globals, Translation, Ref } from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString, Ref } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
@@ -11,7 +11,7 @@ export type Props = {|
   +label?: Translation,
   +buttonLabel?: React$Node,
   +name?: string,
-  +placeholder?: Translation,
+  +placeholder?: TranslationString,
   +fileName?: string,
   +allowedFileTypes?: string | string[],
   +help?: React$Node,

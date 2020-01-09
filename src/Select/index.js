@@ -8,7 +8,6 @@ import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
 import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
-import type { Ref } from "../common/common.js.flow";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
@@ -36,7 +35,6 @@ Label.defaultProps = {
 };
 
 const StyledSelect = styled(
-  // $FlowExpected
   React.forwardRef(
     (
       {
@@ -146,6 +144,11 @@ const StyledSelect = styled(
       box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
     }
   }
+
+  &:-webkit-autofill,
+  &:-internal-autofill-selected {
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 StyledSelect.defaultProps = {
@@ -231,8 +234,7 @@ StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const Select = React.forwardRef((props: Props, ref: Ref) => {
+const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,

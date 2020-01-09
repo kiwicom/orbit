@@ -9,7 +9,6 @@ import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
-import type { Ref } from "../common/common.js.flow";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
@@ -116,8 +115,7 @@ CloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowExpected
-const InputFile = React.forwardRef((props: Props, ref: Ref) => {
+const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     placeholder = "No file selected",
     buttonLabel = "Select file",

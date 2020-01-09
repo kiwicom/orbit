@@ -1,13 +1,12 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
+import { warning } from "@adeira/js";
 
 import defaultTheme from "../defaultTheme";
 import { TYPES, SIZES, TOKENS, BUTTON_STATES } from "./consts";
 import { ICON_SIZES } from "../Icon/consts";
 import { getSize } from "../Icon";
-import type { Ref } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getIconSpacing from "./helpers/getIconSpacing";
 import getSizeToken from "./helpers/getSizeToken";
@@ -48,7 +47,7 @@ IconContainer.defaultProps = {
 export const StyledButtonLink = styled(
   ({
     onlyIcon,
-    component,
+    asComponent,
     circled,
     external,
     block,
@@ -71,8 +70,8 @@ export const StyledButtonLink = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
+    const isButtonWithHref = asComponent === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
     return (
       <Component
@@ -160,12 +159,11 @@ const StyledButtonLinkContentChildren = styled.div`
   display: inline-block;
 `;
 
-// $FlowExpected
-const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
+const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
     external,
     children,
-    component = "button",
+    asComponent = "button",
     href,
     size = SIZES.NORMAL,
     icon,
@@ -201,7 +199,7 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
   return (
     <StyledButtonLink
       onClick={onClick}
-      component={component}
+      asComponent={asComponent}
       size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}

@@ -34,7 +34,7 @@ const ActiveButton = ({ children, transparent, size }: Props) => {
     <Button
       type="secondary"
       size={size}
-      component={props => <StyledButton {...props} type={undefined} transparent={transparent} />}
+      asComponent={props => <StyledButton {...props} type={undefined} transparent={transparent} />}
     >
       {children}
     </Button>

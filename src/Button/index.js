@@ -1,14 +1,13 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@kiwicom/js";
+import { warning } from "@adeira/js";
 
 import defaultTheme from "../defaultTheme";
 import { ICON_SIZES } from "../Icon/consts";
 import { TYPE_OPTIONS, SIZE_OPTIONS, TOKENS, BUTTON_STATES } from "./consts";
 import Loading, { StyledSpinner } from "../Loading";
 import { getSize } from "../Icon";
-import type { Ref } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getSizeToken from "./helpers/getSizeToken";
 import getTypeToken from "./helpers/getTypeToken";
@@ -53,7 +52,7 @@ IconContainer.defaultProps = {
 export const StyledButton = styled(
   ({
     theme,
-    component,
+    asComponent,
     circled,
     external,
     type,
@@ -76,8 +75,8 @@ export const StyledButton = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
+    const isButtonWithHref = asComponent === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
     return (
       <Component
@@ -95,7 +94,7 @@ export const StyledButton = styled(
   },
 )`
   position: relative;
-  display: ${({ href, component }) => (href || component === "a" ? "inline-flex" : "flex")};
+  display: ${({ href, asComponent }) => (href || asComponent === "a" ? "inline-flex" : "flex")};
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -207,10 +206,9 @@ const StyledButtonContentChildren = styled.div`
   display: inline-block;
 `;
 
-// $FlowExpected
-const Button = React.forwardRef((props: Props, ref: Ref) => {
+const Button = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
-    component = "button",
+    asComponent = "button",
     children,
     bordered,
     disabled,
@@ -252,7 +250,7 @@ const Button = React.forwardRef((props: Props, ref: Ref) => {
       iconRight={iconRight}
       bordered={bordered}
       fullWidth={fullWidth}
-      component={component}
+      asComponent={asComponent}
       disabled={isDisabled}
       loading={loading}
       onlyIcon={onlyIcon}

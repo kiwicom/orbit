@@ -1,126 +1,63 @@
 # Card
+
 To implement Card component into your project you'll need to the import at least the Card and the [CardSection](#cardsection):
+
 ```jsx
 import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 ```
+
 After adding import into your project you can use it simply like:
+
 ```jsx
 <Card>
-  <CardSection>
-    Hello World!
-  </CardSection>
+  <CardSection>Hello World!</CardSection>
 </Card>
 ```
+
 ## Props
+
 Table below contains all types of the props available in the Card component.
 
-| Name          | Type                          | Default         | Description                      |
-| :------------ | :---------------------------- | :-------------- | :------------------------------- |
-| children      | `React.Node`                  |                 | The content of the Card. [See Subcomponents](#sub-components)
-| closable      | `boolean`                     | `false`         | If `true`, the Close icon will be displayed. [See Functional specs](#functional-specs)
-| dataTest      | `string`                      |                 | Optional prop for testing purposes.
-| onClose       | `event => void \| Promise`    |                 | Function for handling onClick event.
-| spaceAfter    | `enum`                        |                 | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
-
-## Functional specs
-* By passing the `closable` prop into Card, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="CardCloseButton"] selector.
-
-## Subcomponents
-Card component offers a good flexibility and many variations in its usage. There are four subcomponents which you may use.
-
-### CardHeader
-```jsx
-import Card, { CardHeader } from "@kiwicom/orbit-components/lib/Card";
-```
-#### Usage:
-```jsx
-<Card>
-  <CardHeader title="Hello World!" />
-</Card>
-```
-
-#### Props
-Table below contains all types of the props in CardHeader component.
-
-| Name          | Type                    | Default         | Description                      |
-| :------------ | :---------------------- | :-------------- | :------------------------------- |
-| dataA11ySection | `string`              |                 | ID for a `<SkipNavigation>` component. 
-| dataTest        | `string`              |                 | Optional prop for testing purposes.
-| icon            | `React.Node`          |                 | Displayed icon.
-| **title**       | `React.Node`          |                 | The title of the CardHeader.
-| subTitle        | `React.Node`          |                 | The description of the CardHeader.
-| actions         | `React.Node`          |                 | Actions in CardHeader especially Buttons
-
+| Name        | Type         | Default | Description                                                                                                                                     |
+| :---------- | :----------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| actions     | `React.Node` |         | Optional prop for Action components in header of Card                                                                                           |
+| children    | `React.Node` |         | The content of the Card. You can use only [CardSection](#cardsection)                                                                           |
+| dataTest    | `string`     |         | Optional prop for testing purposes                                                                                                              |
+| description | `React.Node` |         | The description of the Card                                                                                                                     |
+| header      | `React.Node` |         | The header of the Card. Useful when you need different layout then combination of eg `title` and `description`                                  |
+| icon        | `React.Node` |         | Display icon on the left                                                                                                                        |
+| loading     | `boolean`    |         | If `true` `Loading` will be rendered                                                                                                            |
+| spaceAfter  | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
+| title       | `React.Node` |         | The title of the Card                                                                                                                           |
 
 ### CardSection
+
 ```jsx
 import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 ```
+
 #### Usage:
+
 ```jsx
 <Card>
-  <CardSection>
-    Hello World!
-  </CardSection>
+  <CardSection>Hello World!</CardSection>
 </Card>
 ```
 
 #### Props
-Table below contains all types of the props in CardSection component.
 
-| Name            | Type                   | Default         | Description                      |
-| :---------------| :--------------------- | :-------------- | :------------------------------- |
-| **children**    | `React.Node`           |                 | The content of the CardSection.
-| expandable      | `boolean`              |                 | CardSection could be expandable
-| initialExpanded | `boolean`              |                 | CardSection is expanded by default
-| onClose         | `() => void \| Promise`|                 | Callback after close
-| onExpand        | `() => void \| Promise`|                 | Callback after expand
-| dataTest        | `string`               |                 | Optional prop for testing purposes.
-
-
-### CardSectionHeader
-```jsx
-import Card, { CardSection, CardSectionHeader } from "@kiwicom/orbit-components/lib/Card";
-```
-#### Usage:
-```jsx
-<Card>
-  <CardSection>
-    <CardSectionHeader>
-      Hello World!
-    </CardSectionHeader>
-  </CardSection>
-</Card>
-```
-
-#### Props
-Table below contains all types of the props in CardSectionHeader component.
-
-| Name            | Type                  | Default         | Description                      |
-| :---------------| :---------------------| :-------------- | :------------------------------- |
-| **children**    | `React.Node`          |                 | The content of the CardSection.
-| actions         | `React.Node`          |                 | Actions in CardSectionHeader especially Buttons 
-
-
-### CardSectionContent
-```jsx
-import Card, { CardSection, CardSectionContent } from "@kiwicom/orbit-components/lib/Card";
-```
-#### Usage:
-```jsx
-<Card>
-  <CardSection>
-    <CardSectionContent>
-      Hello World!
-    </CardSectionContent>
-  </CardSection>
-</Card>
-```
-
-#### Props
-Table below contains all types of the props in CardSectionContent component.
-
-| Name            | Type                  | Default         | Description                      |
-| :---------------| :---------------------| :-------------- | :------------------------------- |
-| **children**    | `React.Node`          |                 | The content of the CardSection.
-| visible         | `boolean`             |                 | If visible is passed and CardSection is expandable, the content will be always shown
+| Name            | Type                    | Default | Description                                                                                                                                                |
+| :-------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| actions         | `React.Node`            |         | Actions which will be rendered on the right side                                                                                                           |
+| children        | `React.Node`            |         | The content of the CardSection.                                                                                                                            |
+| dataTest        | `string`                |         | Optional prop for testing purposes.                                                                                                                        |
+| description     | `React.Node`            |         | The description of the CardSection                                                                                                                         |
+| expandable      | `boolean`               | `false` | If `true`, the CardSection will be expandable.                                                                                                             |
+| expanded        | `boolean`               |         | If you pass either `true` or `false` the CardSection component will controlled component and you will have to manage the state via `onExpand` or `onClose` |
+| header          | `React.Node`            |         | The header of the CardSection. Useful when you need different layout than combination of e.g. `title` and `description` properties.                        |
+| icon            | `React.Node`            |         | Displayed icon on the left side of the CardSection.                                                                                                        |
+| initialExpanded | `boolean`               | `false` | Initial state of expandable CardSection when it mounts in uncontrolled variant                                                                             |
+| noSeparator     | `Boolean`               |         | Optional prop to turn off Separator between `header` and `children`                                                                                        |
+| onClose         | `() => void \| Promise` |         | Callback that is triggered when section is closing                                                                                                         |
+| onExpand        | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                                       |
+| title           | `React.Node`            |         | The title of the CardSection                                                                                                                               |

@@ -85,7 +85,7 @@ const InputStepperStateless = ({
             onClick={onDecrement}
             transparent
             title={titleDecrement}
-            component="div"
+            asComponent="div"
           />
         }
         suffix={
@@ -99,7 +99,7 @@ const InputStepperStateless = ({
             onClick={onIncrement}
             transparent
             title={titleIncrement}
-            component="div"
+            asComponent="div"
           />
         }
       />

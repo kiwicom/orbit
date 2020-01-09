@@ -9,6 +9,7 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
 
@@ -76,6 +77,7 @@ const Collapse = ({
   const expanded = isControlledComponent ? expandedProp : expandedState;
   const [contentHeight, setContentHeight] = React.useState(expanded ? null : 0);
   const node = React.useRef(null);
+  const translate = useTranslate();
 
   React.useEffect(() => {
     const calculateHeight = () => {
@@ -138,6 +140,7 @@ const Collapse = ({
               transparent
               size="small"
               type="secondary"
+              title={translate("drawer_hide")}
             />
           </Stack>
         </Stack>

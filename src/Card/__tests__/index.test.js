@@ -1,78 +1,56 @@
 // @flow
+
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 
-import Card from "../index";
-import CardSection from "../CardSection";
-import Heading from "../../Heading";
-import Text from "../../Text";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
-import defaultTheme from "../../defaultTheme";
-import CardSectionHeader from "../CardSection/CardSectionHeader";
-import CardSectionContent from "../CardSection/CardSectionContent";
-import CLOSE_BUTTON_DATA_TEST from "../consts";
+import Card, { CardSection } from "../index";
 
-const text = "Text for testing";
+describe("#Card", () => {
+  const dataTest = "test";
+  const component = shallow(
+    <Card
+      title="kek"
+      icon="icon"
+      description="description"
+      dataTest={dataTest}
+      actions="actions"
+    />,
+  );
 
-describe("Card", () => {
-  it("should contain CardSection", () => {
-    const component = shallow(
-      <Card dataTest="test">
-        <CardSection>
-          <Heading type="title3" element="h3">
-            {text}
-          </Heading>
-          <Text>{text}</Text>
-        </CardSection>
-      </Card>,
-    );
-
-    expect(component.find("CardSection").exists()).toBe(true);
-  });
-
-  it("should have margin-bottom", () => {
-    const component = mount(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
-    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
-  });
-
-  it("should have data-test", () => {
-    const dataTest = "test";
-    const component = shallow(<Card dataTest={dataTest} />);
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-
-  it("should be closable", () => {
-    const onClose = jest.fn();
-    const component = shallow(<Card onClose={onClose} closable />);
-
-    const ButtonLink = component.find("CardCloseButton");
-
-    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
-    ButtonLink.simulate("click");
-    expect(onClose).toHaveBeenCalled();
-  });
-});
-
-describe("CardSection", () => {
-  const onExpand = jest.fn();
-  const onClose = jest.fn();
-
-  const component = mount(
-    <Card>
-      <CardSection expandable onExpand={onExpand} onClose={onClose}>
-        <CardSectionHeader>
-          <Heading type="title3" element="h3">
-            Title
-          </Heading>
-          <Text>Description</Text>
-        </CardSectionHeader>
-        <CardSectionContent>Content</CardSectionContent>
-      </CardSection>
+  const withLoading = shallow(
+    <Card loading>
+      <CardSection>Section</CardSection>
     </Card>,
   );
 
-  it("should have callback onExpand", () => {
-    component.find("CardSectionHeader__StyledCardSectionHeader").simulate("click");
-    expect(onExpand).toHaveBeenCalled();
+  const header = component.find("Header");
+
+  it("should have data-test", () => {
+    expect(component.prop("data-test")).toBe(dataTest);
+  });
+
+  it("should have header component", () => {
+    expect(header.exists()).toBe(true);
+  });
+
+  it("should have title", () => {
+    expect(header.prop("title")).toBe("kek");
+  });
+
+  it("should have icon", () => {
+    expect(header.prop("icon")).toBe("icon");
+  });
+
+  it("should have description", () => {
+    expect(header.prop("description")).toBe("description");
+  });
+
+  it("should have actions", () => {
+    expect(header.prop("actions")).toBe("actions");
+  });
+
+  it("should have Loading", () => {
+    expect(withLoading.find("Loading").exists()).toBe(true);
+    expect(withLoading.find("Loading").prop("loading")).toBe(true);
   });
 });

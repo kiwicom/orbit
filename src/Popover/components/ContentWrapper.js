@@ -45,7 +45,8 @@ StyledContentWrapper.defaultProps = {
 };
 
 const StyledActions = styled.div`
-  margin-top: ${({ theme }) => actionsSpace(theme)};
+  padding: ${({ theme }) => popoverPadding(theme)};
+  padding-top: 0;
 `;
 
 StyledActions.defaultProps = {
@@ -63,7 +64,6 @@ const StyledPopoverParent = styled.div`
   border-top-left-radius: 9px; /* TODO: Add token */
   border-top-right-radius: 9px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
@@ -93,6 +93,14 @@ StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledPopoverPadding = styled.div`
+  padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
+`;
+
+StyledPopoverPadding.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledPopoverContent = styled.div``;
 
 const StyledOverlay = styled.div`
@@ -117,8 +125,8 @@ StyledOverlay.defaultProps = {
 };
 
 const StyledPopoverClose = styled.div`
-  padding: ${({ noPadding, theme }) => (noPadding ? popoverPadding(theme) : 0)};
-  padding-top: ${({ theme }) => popoverPadding(theme)};
+  padding: ${({ theme }) => popoverPadding(theme)};
+  padding-top: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -194,12 +202,13 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           <StyledContentWrapper actionsHeight={actionsDimensions && actionsDimensions.height}>
-            {children}
+            <StyledPopoverPadding noPadding={noPadding}>{children}</StyledPopoverPadding>
           </StyledContentWrapper>
+
           {actions ? (
             <StyledActions ref={actionsRef}>{actions}</StyledActions>
           ) : (
-            <StyledPopoverClose ref={actionsRef} noPadding={noPadding}>
+            <StyledPopoverClose ref={actionsRef}>
               <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>

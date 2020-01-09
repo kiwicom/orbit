@@ -212,7 +212,7 @@ const TooltipContent = ({
     [onCloseMobile],
   );
   return (
-    <StyledTooltip data-test={dataTest}>
+    <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
       <StyledTooltipOverlay shownMobile={shownMobile} ref={overlay} onClick={handleClickOutside} />
       <StyledTooltipWrapper
         shown={shown && position && align}
@@ -230,7 +230,6 @@ const TooltipContent = ({
         contentHeight={dimensions.contentHeight}
         role="tooltip"
         aria-hidden={!shown && !shownMobile}
-        id={tooltipId}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
       >

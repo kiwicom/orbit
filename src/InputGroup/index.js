@@ -30,13 +30,11 @@ const getToken = name => ({ theme, size }) => {
   return tokens[name][size];
 };
 
-const getFakeGroupMarginTop = ({ label, theme }) => {
-  if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
-};
-
-const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
+const FakeGroup = styled(({ children, className }) => (
+  <span className={className}>{children}</span>
+))`
   width: 100%;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -56,7 +54,6 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: ${getFakeGroupMarginTop};
 
   &:hover {
     box-shadow: inset 0 0 0
@@ -133,7 +130,7 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
       z-index: 2;
     }
 
-    &:last-child {
+    &:last-of-type {
       ${InputContainer}:after, ${SelectContainer}:after {
         content: none;
       }
@@ -259,15 +256,15 @@ class InputGroup extends React.PureComponent<Props, State> {
                   label: undefined,
                   help: undefined,
                   error: undefined,
-                  onChange: this.handleChange,
-                  onBlur: this.handleBlur,
-                  onFocus: this.handleFocus,
+                  onChange: item.props.onChange != null ? item.props.onChange : this.handleChange,
+                  onBlur: item.props.onBlur != null ? item.props.onChange : this.handleBlur,
+                  onFocus: item.props.onFocus != null ? item.props.onFocus : this.handleFocus,
                 })}
               </StyledChild>
             );
           })}
+          <FakeGroup label={label} error={error} active={active} size={size} />
         </StyledChildren>
-        <FakeGroup label={label} error={error} active={active} size={size} />
         {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
         {error && <FormFeedback type="error">{error}</FormFeedback>}
       </StyledInputGroup>

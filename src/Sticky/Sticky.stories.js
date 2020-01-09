@@ -5,8 +5,8 @@ import { select, number } from "@storybook/addon-knobs/react";
 
 import * as Icons from "../icons";
 import Card from "../Card";
-import CardHeader from "../Card/CardHeader";
-import CardSection from "../Card/CardSection";
+import CardHeader from "../deprecated/Card/CardHeader";
+import CardSection from "../deprecated/Card/CardSection";
 
 import FloatingCard from "./index";
 

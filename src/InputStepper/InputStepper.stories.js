@@ -15,15 +15,7 @@ storiesOf("InputStepper", module)
   .add(
     "Default",
     () => {
-      const titleIncrement = text("Title increment", "Add a passenger");
-      const titleDecrement = text("Title decrement", "Remove a passenger");
-      return (
-        <InputStepper
-          titleIncrement={titleIncrement}
-          titleDecrement={titleDecrement}
-          onChange={action("onChange")}
-        />
-      );
+      return <InputStepper onChange={action("onChange")} />;
     },
     {
       info: "Some description about this type of InputStepper in general.",
@@ -180,16 +172,9 @@ storiesOf("InputStepper", module)
   .add(
     "RTL",
     () => {
-      const titleIncrement = text("Title increment", "Add a passenger");
-      const titleDecrement = text("Title decrement", "Remove a passenger");
-
       return (
         <RenderInRtl>
-          <InputStepper
-            titleIncrement={titleIncrement}
-            titleDecrement={titleDecrement}
-            label="My label"
-          />
+          <InputStepper label="My label" />
         </RenderInRtl>
       );
     },

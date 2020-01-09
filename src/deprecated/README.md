@@ -1,0 +1,3 @@
+### Deprecated components
+
+- Card

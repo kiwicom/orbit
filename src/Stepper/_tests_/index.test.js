@@ -26,6 +26,8 @@ describe("Stepper", () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      titleIncrement="Add"
+      titleDecrement="Remove"
     />,
   );
   const input = statelessCompoennt.find("StepperStateless__StyledStepperInput");

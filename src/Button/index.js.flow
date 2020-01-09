@@ -25,7 +25,7 @@ export type Props = {|
   ...Ref,
   ...spaceAfter,
   +children?: React$Node,
-  +component?: Component,
+  +asComponent?: Component,
   +href?: string,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +external?: boolean,
@@ -45,6 +45,8 @@ export type Props = {|
   +ariaExpanded?: boolean,
   +ariaControls?: string,
   +role?: string,
+  // Don't use, it's deprecated and will be removed in the major version
+  +className?: string,
   +title?: string | (any => string),
 |};
 

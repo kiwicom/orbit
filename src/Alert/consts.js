@@ -12,6 +12,7 @@ export const TOKENS = {
   colorTextAlert: "colorTextAlert",
   colorTextLinkAlertHover: "colorTextLinkAlertHover",
   colorTextLinkAlertFocus: "colorTextLinkAlertFocus",
+  colorBorderAlert: "colorBorderAlert",
 };
 
 export const CLOSE_BUTTON_DATA_TEST = "AlertCloseButton";

@@ -331,6 +331,26 @@ storiesOf("PricingTable", module)
             name="Premium"
             price="$1,095"
             featureIcon={<FeatureIcon name="TicketFlexi" />}
+            badge={<Badge>Recommended two liner</Badge>}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                fullWidth
+              >
+                Continue with Basic
+              </Button>
+            }
+            mobileDescription="Premium ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            name="Premium"
+            price="$1,095"
+            featureIcon={<FeatureIcon name="TicketFlexi" />}
             action={
               <Button
                 onClick={ev => {

@@ -17,9 +17,8 @@ import POSITIONS from "./consts";
 import InputField from "../InputField";
 import Search from "../icons/Search";
 import Tile from "../Tile";
-import ButtonLink from "../ButtonLink";
 import Collapse from "../Collapse";
-import LinkStack from "../LinkStack";
+import LinkList from "../LinkList";
 
 import Drawer from "./index";
 
@@ -45,34 +44,34 @@ storiesOf("Drawer", module)
           }
         >
           <Collapse label="Discover" initialExpanded>
-            <LinkStack>
+            <LinkList>
               <TextLink type="secondary">Refer a Friend</TextLink>
               <TextLink type="secondary">Subscribe to newsletter</TextLink>
               <TextLink type="secondary">Kiwi.com Stories</TextLink>
-            </LinkStack>
+            </LinkList>
           </Collapse>
           <Collapse label="Guidelines">
-            <LinkStack>
+            <LinkList>
               <TextLink type="secondary">Terms & Conditions</TextLink>
               <TextLink type="secondary">Terms of Use</TextLink>
               <TextLink type="secondary">Privacy Policy</TextLink>
               <TextLink type="secondary">Security</TextLink>
               <TextLink type="secondary">Cookies settings</TextLink>
-            </LinkStack>
+            </LinkList>
           </Collapse>
           <Collapse label="Company" spaceAfter="medium">
-            <LinkStack>
+            <LinkList>
               <TextLink type="secondary">About Kiwi.com</TextLink>
               <TextLink type="secondary">Careers</TextLink>
               <TextLink type="secondary">Care Kiwi.com</TextLink>
               <TextLink type="secondary">Code Kiwi.com</TextLink>
               <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
               <TextLink type="secondary">Press kit</TextLink>
-            </LinkStack>
+            </LinkList>
           </Collapse>
-          <LinkStack>
+          <LinkList>
             <TextLink type="secondary">Sign out</TextLink>
-          </LinkStack>
+          </LinkList>
         </Drawer>
       );
     },
@@ -246,34 +245,34 @@ storiesOf("Drawer", module)
             }
           >
             <Collapse label="Discover" initialExpanded>
-              <LinkStack>
+              <LinkList>
                 <TextLink type="secondary">Refer a Friend</TextLink>
                 <TextLink type="secondary">Subscribe to newsletter</TextLink>
                 <TextLink type="secondary">Kiwi.com Stories</TextLink>
-              </LinkStack>
+              </LinkList>
             </Collapse>
             <Collapse label="Guidelines">
-              <LinkStack>
+              <LinkList>
                 <TextLink type="secondary">Terms & Conditions</TextLink>
                 <TextLink type="secondary">Terms of Use</TextLink>
                 <TextLink type="secondary">Privacy Policy</TextLink>
                 <TextLink type="secondary">Security</TextLink>
                 <TextLink type="secondary">Cookies settings</TextLink>
-              </LinkStack>
+              </LinkList>
             </Collapse>
             <Collapse label="Company" spaceAfter="medium">
-              <LinkStack>
+              <LinkList>
                 <TextLink type="secondary">About Kiwi.com</TextLink>
                 <TextLink type="secondary">Careers</TextLink>
                 <TextLink type="secondary">Care Kiwi.com</TextLink>
                 <TextLink type="secondary">Code Kiwi.com</TextLink>
                 <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
                 <TextLink type="secondary">Press kit</TextLink>
-              </LinkStack>
+              </LinkList>
             </Collapse>
-            <LinkStack>
+            <LinkList>
               <TextLink type="secondary">Sign out</TextLink>
-            </LinkStack>
+            </LinkList>
           </Drawer>
         </RenderInRtl>
       );

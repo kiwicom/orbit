@@ -4,11 +4,9 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import CountryFlag from "../CountryFlag";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
-import LinkStack from "../LinkStack";
-import Airplane from "../icons/Airplane";
+import LinkList from "../LinkList";
 import ChevronDown from "../icons/ChevronDown";
 import StarFull from "../icons/StarFull";
 import QuestionCircle from "../icons/QuestionCircle";
@@ -31,25 +29,13 @@ storiesOf("NavigationBar", module)
             dataTest={dataTest}
           >
             <Stack justify="between">
-              <LinkStack direction="row" spacing="tight">
-                <ButtonLink iconRight={<ChevronDown />} type="secondary" transparent size="small">
-                  Flights
-                </ButtonLink>
-              </LinkStack>
+              <ButtonLink iconRight={<ChevronDown />} type="secondary" transparent>
+                Flights
+              </ButtonLink>
               <Stack direction="row" spacing="tight" justify="end" shrink>
-                <ButtonLink iconLeft={<StarFull />} type="secondary" transparent size="small" />
-                <ButtonLink
-                  iconLeft={<QuestionCircle />}
-                  type="secondary"
-                  transparent
-                  size="small"
-                />
-                <ButtonLink
-                  iconLeft={<AccountCircle />}
-                  type="secondary"
-                  transparent
-                  size="small"
-                />
+                <ButtonLink iconLeft={<StarFull />} type="secondary" transparent />
+                <ButtonLink iconLeft={<QuestionCircle />} type="secondary" transparent />
+                <ButtonLink iconLeft={<AccountCircle />} type="secondary" transparent />
               </Stack>
             </Stack>
           </NavigationBar>
@@ -72,13 +58,13 @@ storiesOf("NavigationBar", module)
             onHide={action("onHide")}
             dataTest={dataTest}
           >
-            <Stack justify="between">
-              <Stack direction="row" spacing="tight" shrink align="center">
+            <Stack flex align="center" justify="between">
+              <LinkList direction="row">
                 <TextLink type="secondary">Flights</TextLink>
                 <TextLink type="secondary">Flights</TextLink>
                 <TextLink type="secondary">Flights</TextLink>
                 <TextLink type="secondary">Flights</TextLink>
-              </Stack>
+              </LinkList>
               <Stack direction="row" spacing="tight" justify="end" shrink>
                 <ButtonLink type="secondary" transparent>
                   Starred

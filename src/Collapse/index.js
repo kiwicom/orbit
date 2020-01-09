@@ -9,7 +9,6 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
-import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
 
@@ -47,11 +46,15 @@ const StyledCollapseLabel = styled.div`
   width: 100%;
   display: block;
   cursor: pointer;
-  padding: 12px 0;
+  padding: ${({ theme }) => theme.orbit.spaceSmall} 0;
 `;
 
+StyledCollapseLabel.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledCollapseChildren = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
 StyledCollapseChildren.defaultProps = {

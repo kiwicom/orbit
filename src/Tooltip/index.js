@@ -90,7 +90,7 @@ const Tooltip = ({
     setShownMobile(false);
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout, setShownMobile]);
-  if(!enabled) return children;
+  if (!enabled) return children;
   return (
     <React.Fragment>
       <StyledTooltipChildren

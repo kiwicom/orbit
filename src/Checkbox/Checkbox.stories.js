@@ -8,6 +8,7 @@ import { text, boolean } from "@storybook/addon-knobs";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Tooltip from "../Tooltip";
 
 import Checkbox from "./index";
 
@@ -56,6 +57,27 @@ storiesOf("CheckBox", module)
     },
     {
       info: "Additionally you can add info to this component.",
+    },
+  )
+  .add(
+    "With Tooltip",
+    () => {
+      return (
+        <Checkbox
+          label="Direct"
+          value="one"
+          disabled
+          tooltip={
+            <Tooltip
+              content="There are no results available with this option"
+              preferredPosition="top"
+            />
+          }
+        />
+      );
+    },
+    {
+      info: "Additionally you can add tooltip to this component.",
     },
   )
   .add(

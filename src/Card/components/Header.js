@@ -42,7 +42,7 @@ const Header = ({
 }: Props) => (
   <Stack align={actions && !header ? "start" : "center"} spacing={header ? "compact" : "none"}>
     {(title || description || icon) && !header && (
-      <Stack inline direction="column" spacing={isSection ? "none" : "tight"}>
+      <Stack flex shrink direction="column" spacing={isSection ? "none" : "tight"}>
         <Stack inline spacing="compact">
           {icon}
 

@@ -58,7 +58,7 @@ const Card = ({
       //     ...item.props.children.props,
       //     key: index,
       //   });
-      // }
+
       return React.cloneElement(item);
     }
 
@@ -67,7 +67,7 @@ const Card = ({
 
   return (
     <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
-      {title && !loading && (
+      {(title || header) && !loading && (
         <CardWrapper bottomBorder={!children || expandedSections.some(val => val === 0)}>
           <Header
             icon={icon}

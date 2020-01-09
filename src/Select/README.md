@@ -30,7 +30,7 @@ Table below contains all types of the props available in the Select component.
 | onChange        | `event => void \| Promise` |            | Function for handling onChange event.                                                                                                           |
 | onFocus         | `event => void \| Promise` |            | Function for handling onFocus event.                                                                                                            |
 | **options**     | [`Option[]`](#option)      |            | The content of the Select, passed as array of objects.                                                                                          |
-| placeholder     | `Translation`              |            | The placeholder for the Select.                                                                                                                 |
+| placeholder     | `TranslationString`        |            | The placeholder for the Select.                                                                                                                 |
 | prefix          | `React.Node`               |            | The prefix component for the Select. [See Functional specs](#functional-specs)                                                                  |
 | ref             | `func`                     |            | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)                                                                 |
 | required        | `boolean`                  | `false`    | If true, the label is displayed as required.                                                                                                    |

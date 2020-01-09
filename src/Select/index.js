@@ -34,7 +34,6 @@ Label.defaultProps = {
 };
 
 const StyledSelect = styled(
-  // $FlowExpected
   React.forwardRef(
     (
       {

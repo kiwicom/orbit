@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/textarea/
 */
-import type { Globals, Translation } from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
@@ -14,7 +14,7 @@ export type Props = {|
   +label?: Translation,
   +value?: string,
   +fullHeight?: boolean,
-  +placeholder?: Translation,
+  +placeholder?: TranslationString,
   +help?: React$Node,
   +error?: React$Node,
   +resize?: "vertical" | "none",

@@ -1,7 +1,7 @@
 // @flow
 import { useState, useEffect, useCallback, useRef } from "react";
 
-import type { Return } from "./useStateWithTimeout";
+import type { Return } from ".";
 
 export default function useStateWithTimeout<S>(defaultValue: S, timeout?: number): Return<S> {
   const [state, setState] = useState(defaultValue);

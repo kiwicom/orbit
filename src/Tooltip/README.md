@@ -24,6 +24,7 @@ Table below contains all types of the props available in the Tooltip component.
 | **content**          | `React.Node`    |         | The content to display in the Tooltip.                                                                            |
 | dataTest             | `string`        |         | Optional prop for testing purposes.                                                                               |
 | enabled              | `boolean`       | `true`  | Enable render of tooltip                                                                                          |
+| preferredAlign       | [`enum`](#enum) |         | The preferred align to choose [See Functional specs](#functional-specs)                                           |
 | preferredPosition    | [`enum`](#enum) |         | The preferred position to choose [See Functional specs](#functional-specs)                                        |
 | removeUnderlinedText | `boolean`       |         | Removes underline on child component, when underline is not desired.                                              |
 | size                 | [`enum`](#enum) |         | The maximum possible size of the Tooltip.                                                                         |
@@ -32,18 +33,18 @@ Table below contains all types of the props available in the Tooltip component.
 
 ## enum
 
-| preferredPosition | size       |
-| :---------------- | :--------- |
-| `"right"`         | `"small"`  |
-| `"left"`          | `"medium"` |
-| `"top"`           |
+| preferredPosition | preferredAlign | size       |
+| :---------------- | :------------- | :--------- |
+| `"right"`         | `"center"`     | `"small"`  |
+| `"left"`          | `"start"`      | `"medium"` |
+| `"top"`           | `"end"`        |
 | `"bottom"`        |
 
 ## Functional specs
 
 - Whenever event `onMouseEnter`, `onFocus` or `onClick` fires, the script inside this component will calculate possible positions that can be applied and the first possible will be applied.
 
-- You can prefer one position that will be used if possible, otherwise the default order in [`enum`](#enum) table will be used.
+- You can prefer one position and one align that will be used if possible, otherwise the default order in [`enum`](#enum) table will be used for both position and align.
 
 - For mobile devices, the user needs to click on the children to open the Tooltip.
 

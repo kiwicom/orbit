@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { POSITIONS, SIZE_OPTIONS } from "./consts";
+import { POSITIONS, SIZE_OPTIONS, ALIGNS } from "./consts";
 import Stack from "../Stack";
 import Alert from "../Alert";
 import Text from "../Text";
@@ -163,6 +163,7 @@ storiesOf("Tooltip", module)
       const tabIndex = text("TabIndex", "0");
       const enabled = boolean("enabled", true);
       const removeUnderlinedText = boolean("removeUnderlinedText", false);
+      const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
       const preferredPosition = select(
         "preferredPosition",
         Object.values(POSITIONS),
@@ -172,6 +173,7 @@ storiesOf("Tooltip", module)
       return (
         <Tooltip
           preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
           size={size}
           content={content}
           dataTest={dataTest}

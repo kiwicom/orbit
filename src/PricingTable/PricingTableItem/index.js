@@ -86,7 +86,15 @@ const StyledBadgeWrapperContent = styled.div`
     align-self: center;
     max-width: 100%;
   }
+
+  ${media.desktop(css`
+    bottom: calc(100% + 11px);
+  `)}
 `;
+
+StyledBadgeWrapperContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const Item = styled.div``;
 

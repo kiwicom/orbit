@@ -331,7 +331,7 @@ storiesOf("PricingTable", module)
             name="Premium"
             price="$1,095"
             featureIcon={<FeatureIcon name="TicketFlexi" />}
-            badge={<Badge>Recommended two liner</Badge>}
+            badge={<Badge type="info">Recommended two liner</Badge>}
             action={
               <Button
                 onClick={ev => {

@@ -373,4 +373,76 @@ storiesOf("PricingTable", module)
       info:
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
+  )
+  .add(
+    "Badges",
+    () => {
+      return (
+        <PricingTable>
+          <PricingTableItem
+            name="Basic"
+            price="$749"
+            featureIcon={<FeatureIcon name="TicketSaver" />}
+            badge={<Badge type="info">Recommended</Badge>}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                fullWidth
+              >
+                Continue with Basic
+              </Button>
+            }
+            mobileDescription="Basic ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            name="Premium"
+            price="$1,095"
+            featureIcon={<FeatureIcon name="TicketFlexi" />}
+            badge={<Badge type="info">Lorem ipsum dolor sit amet</Badge>}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                fullWidth
+              >
+                Continue with Basic
+              </Button>
+            }
+            mobileDescription="Premium ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            name="Premium"
+            price="$1,095"
+            featureIcon={<FeatureIcon name="TicketFlexi" />}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                fullWidth
+              >
+                Continue with Basic
+              </Button>
+            }
+            mobileDescription="Premium ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+        </PricingTable>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
   );

@@ -67,6 +67,7 @@ const StyledBadgeWrapper = styled.div`
   width: 100%;
   left: 0;
   right: 0;
+  text-align: center;
 `;
 
 const StyledBadgeWrapperContent = styled.div`

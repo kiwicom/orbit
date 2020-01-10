@@ -220,12 +220,21 @@ const PictureCard = ({
           </Stack>
 
           {children && (
-            <Stack spaceAfter="small">
-              <Heading type="title3" element="div" inverted>
+            <>
+              <Heading
+                type="title3"
+                element="div"
+                inverted
+                spaceAfter={actions ? "normal" : undefined}
+              >
                 {children}
               </Heading>
-              {actions && <Shown ref={ref}>{actions}</Shown>}
-            </Stack>
+              {actions && (
+                <Shown ref={ref} tabIndex={onClick || href ? undefined : "-1"}>
+                  {actions}
+                </Shown>
+              )}
+            </>
           )}
         </Stack>
       </StyledPictureCardContent>

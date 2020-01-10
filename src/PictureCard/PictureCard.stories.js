@@ -69,6 +69,7 @@ storiesOf("PictureCard", module)
       const title = text("title", "Paris");
       const dataTest = text("dataTest", "test");
       const height = text("height", "300px");
+      const width = text("width", "100%");
       const subTitle = text("subTitle", "Prague");
       const children = text("children", "5,563 Kč");
       const tabIndex = text("TabIndex", "0");
@@ -88,6 +89,7 @@ storiesOf("PictureCard", module)
           external={external}
           actions={actions ? <Button type="secondary">Action</Button> : null}
           height={height}
+          width={width}
           onClick={action("onClick")}
           tabIndex={tabIndex}
         >

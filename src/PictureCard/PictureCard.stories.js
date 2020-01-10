@@ -12,8 +12,8 @@ import PictureCard from "./index";
 
 const image = object("image", {
   original: "385x320",
-  code: "dubai_ae",
-  name: "dubai_ae",
+  code: "moscow_ru",
+  name: "moscow_ru",
   placeholder: "385x320",
 });
 
@@ -24,9 +24,10 @@ storiesOf("PictureCard", module)
       return (
         <PictureCard
           subTitle="Prague"
-          title="Dubai"
+          title="Moscow"
           label="Family Fun"
           image={image}
+          width="328px"
           onClick={action("onClick")}
         >
           from 2,563 Kč
@@ -46,10 +47,11 @@ storiesOf("PictureCard", module)
       return (
         <PictureCard
           subTitle="Prague"
-          title="Dubai"
-          href="link"
+          title="Moscow"
           tabIndex={tabIndex}
           label="Family Fun"
+          href="link"
+          width="400px"
           actions={<Button type="secondary">Action</Button>}
           image={image}
           onClick={action("onClick")}
@@ -64,12 +66,22 @@ storiesOf("PictureCard", module)
     },
   )
   .add(
+    "Plain",
+    () => {
+      return <PictureCard image={image} />;
+    },
+    {
+      info:
+        "PictureCard is a component which is used on the landing page and also on the search page.",
+    },
+  )
+  .add(
     "Playground",
     () => {
-      const title = text("title", "Paris");
+      const title = text("title", "Moscow");
       const dataTest = text("dataTest", "test");
       const height = text("height", "300px");
-      const width = text("width", "100%");
+      const width = text("width", "400px");
       const subTitle = text("subTitle", "Prague");
       const children = text("children", "5,563 Kč");
       const tabIndex = text("TabIndex", "0");

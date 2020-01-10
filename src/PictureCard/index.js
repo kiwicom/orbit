@@ -7,7 +7,7 @@ import Heading from "../Heading";
 import Stack from "../Stack";
 import defaultTheme from "../defaultTheme";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
-import LazyImage from "../LazyImage";
+import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../utils/rtl";
 import randomID from "../utils/randomID";
 import KEY_CODE_MAP from "../common/keyMaps";
@@ -15,10 +15,12 @@ import KEY_CODE_MAP from "../common/keyMaps";
 import type { Props } from "./index";
 
 const Shown = styled.div`
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  position: absolute;
   opacity: 0;
-  position: relative;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  z-index: 5;
+  padding: ${({ theme }) => `0 0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
+  ${({ contentHeight }) => (contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`)};
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
 
 Shown.defaultProps = {
@@ -38,6 +40,8 @@ const overlayCss = css`
 
 const StyledLabel = styled.div`
   z-index: 2;
+  position: absolute;
+  top: 0;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
 `;
 
@@ -52,8 +56,8 @@ const StyledOverlay = styled.div`
     to bottom ${left},
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.1) 16%,
-    rgba(0, 0, 0, 0.4) 44%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.3) 55%,
+    rgba(0, 0, 0, 0.7) 100%
   );
 `;
 
@@ -77,15 +81,51 @@ StyledOverlayHover.defaultProps = {
   theme: defaultTheme,
 };
 
+type Content = {|
+  title?: React.Node,
+  subTitle?: React.Node,
+  children?: React.Node,
+  cardID: string,
+|};
+
+const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
+  return (
+    <StyledPictureCardContent aria-labelledby={cardID}>
+      <Stack flex direction="column" justify="end" spacing="none">
+        <Stack spaceAfter="small" spacing="none">
+          {subTitle && (
+            <Heading type="title3" element="div" inverted>
+              {subTitle}
+            </Heading>
+          )}
+
+          {title && (
+            <Heading type="title1" element="div" inverted>
+              {title}
+            </Heading>
+          )}
+        </Stack>
+
+        {children && (
+          <>
+            <Heading type="title3" element="div" inverted>
+              {children}
+            </Heading>
+          </>
+        )}
+      </Stack>
+    </StyledPictureCardContent>
+  );
+};
+
 const StyledPictureCardContent = styled.div`
-  position: relative;
+  position: absolute;
   z-index: 2;
   display: flex;
   flex-grow: 1;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  bottom: ${({ contentHeight, theme }) =>
-    contentHeight && `-${contentHeight + parseInt(theme.orbit.spaceMedium, 10)}px`};
+  bottom: 0;
 `;
 
 StyledPictureCardContent.defaultProps = {
@@ -99,35 +139,44 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   height: ${({ height }) => (height ? `${height}` : "100%")};
   width: ${({ width }) => (width ? `${width}` : `100%`)};
   display: flex;
-  justify-content: space-between;
-  align-content: flex-end;
-  flex-direction: column;
   position: relative;
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   overflow: hidden;
   cursor: pointer;
   box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowAction};
+  transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
 
-  &:hover {
-    box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowActionActive};
-    ${StyledOverlayHover} {
-      opacity: 1;
-    }
-
-    ${StyledPictureCardContent} {
-      bottom: 0;
-    }
-
-    ${Shown} {
-      opacity: 1;
-    }
+  ${StyledLazyImage} {
+    transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
-  }
+  ${({ isPlain, theme, shadows }) =>
+    !isPlain &&
+    css`
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: ${shadows && theme.orbit.boxShadowActionActive};
+
+        ${StyledOverlayHover} {
+          opacity: 1;
+        }
+
+        ${StyledLazyImage} {
+          transform: scale(1.05);
+        }
+
+        ${StyledPictureCardContent} {
+          bottom: ${({ contentHeight }) => contentHeight && `${contentHeight}px`};
+        }
+
+        ${Shown} {
+          opacity: 1;
+          bottom: 0;
+        }
+      }
+    `}
 `;
 
 StyledPictureCard.defaultProps = {
@@ -172,6 +221,7 @@ const PictureCard = ({
   };
 
   const { name, original, placeholder, code } = image;
+  const isPlain = !(title || subTitle || children || actions);
 
   return (
     <StyledPictureCard
@@ -185,6 +235,8 @@ const PictureCard = ({
       shadows={onClick || href}
       tabIndex={href ? tabIndex : 0}
       role="link"
+      contentHeight={contentHeight}
+      isPlain={isPlain}
       aria-labelledby={cardID}
     >
       <LazyImage
@@ -194,13 +246,13 @@ const PictureCard = ({
         }}
         placeholder={{
           webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
-          jpg: `${BASE_URL}/photos/${placeholder}${code}.jpg`,
+          jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,
         }}
         name={name}
       />
 
-      <StyledOverlay />
-      <StyledOverlayHover />
+      {!isPlain && <StyledOverlay />}
+      {!isPlain && <StyledOverlayHover />}
 
       {label && (
         <StyledLabel>
@@ -209,42 +261,15 @@ const PictureCard = ({
           </Text>
         </StyledLabel>
       )}
+      <PictureCardContent cardID={cardID} title={title} subTitle={subTitle}>
+        {children}
+      </PictureCardContent>
 
-      <StyledPictureCardContent contentHeight={actions ? contentHeight : undefined}>
-        <Stack flex direction="column" justify="end" spacing="none">
-          <Stack spaceAfter="small" spacing="none">
-            {subTitle && (
-              <Heading type="title3" element="div" inverted>
-                {subTitle}
-              </Heading>
-            )}
-
-            {title && (
-              <Heading type="title1" element="div" inverted>
-                {title}
-              </Heading>
-            )}
-          </Stack>
-
-          {children && (
-            <>
-              <Heading
-                type="title3"
-                element="div"
-                inverted
-                spaceAfter={actions ? "normal" : undefined}
-              >
-                {children}
-              </Heading>
-              {actions && (
-                <Shown ref={ref} tabIndex={onClick || href ? undefined : "-1"}>
-                  {actions}
-                </Shown>
-              )}
-            </>
-          )}
-        </Stack>
-      </StyledPictureCardContent>
+      {actions && (
+        <Shown ref={ref} contentHeight={contentHeight}>
+          {actions}
+        </Shown>
+      )}
     </StyledPictureCard>
   );
 };

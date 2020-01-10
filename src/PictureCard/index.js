@@ -48,6 +48,13 @@ StyledLabel.defaultProps = {
 const StyledOverlay = styled.div`
   ${overlayCss};
   opacity: 1;
+  background: linear-gradient(
+    to bottom ${left},
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 16%,
+    rgba(0, 0, 0, 0.4) 44%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 `;
 
 StyledOverlay.defaultProps = {
@@ -58,11 +65,11 @@ const StyledOverlayHover = styled.div`
   ${overlayCss};
   opacity: 0;
   background: linear-gradient(
-    to ${left},
+    to bottom ${left},
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 16%,
-    rgba(0, 0, 0, 0.4) 44%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.4) 36%,
+    rgb(0, 0, 0) 100%
   );
 `;
 

@@ -14,7 +14,7 @@ After adding import into your project you can use it simply like:
     original: "385x320",
     code: "dubai_ae",
     name: "dubai_ae",
-    placeholder: "jpg"
+    placeholder: "jpg",
   }}
   subTitle="Prague"
   title="Dubai"
@@ -25,22 +25,21 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in PictureCard component.
 
-| Name      | Type             | Default | Description                                                                               |
-| :-------- | :--------------- | :------ | :---------------------------------------------------------------------------------------- |
-| dataTest  | `string`         |         | Optional prop for testing purposes.                                                       |
-| title     | `string`         |         | The title of PictureCard                                                                  |
-| subTitle  | `string`         |         | The subTitle of PictureCard                                                               |
-| label     | `string`         |         | The label of PictureCard                                                                  |
-| children  | `React.Node`     |         | The content of PictureCard                                                                |
-| actions   | `React.Node`     |         | Actions - especially Buttons that will be rendered on the bottom.                         |
-| height    | `string`         | `"300"` | The height of PictureCard. [See Functional specs](#functional-specs)                      |
-| width     | `string`         |         | The width of PictureCard. [See Functional specs](#functional-specs)                       |
-| href      | `string`         |         | The link of PictureCard.                                                                  |
-| external  | `boolean`        | `false` | If `true`, PictureCard opens link in a new tab. [See Functional specs](#functional-specs) |
-| **image** | `Image`(#image)` |         | Image of PictureCard  [See Functional specs](#functional-specs)                           |
-| onClick   | `onClick`        |         | Function for handling onClick event.                                                      |
-| tabIndex  | `string`         | `"0"`   | Specifies the tab order of an element                                                     |
-
+| Name      | Type                                                                                | Default | Description                                                                               |
+| :-------- | :---------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------- |
+| dataTest  | `string`                                                                            |         | Optional prop for testing purposes.                                                       |
+| title     | `string`                                                                            |         | The title of PictureCard                                                                  |
+| subTitle  | `string`                                                                            |         | The subTitle of PictureCard                                                               |
+| label     | `string`                                                                            |         | The label of PictureCard                                                                  |
+| children  | `React.Node`                                                                        |         | The content of PictureCard                                                                |
+| actions   | `React.Node`                                                                        |         | Actions - especially Buttons that will be rendered on the bottom.                         |
+| height    | `string`                                                                            | `"300"` | The height of PictureCard. [See Functional specs](#functional-specs)                      |
+| width     | `string`                                                                            |         | The width of PictureCard. [See Functional specs](#functional-specs)                       |
+| href      | `string`                                                                            |         | The link of PictureCard.                                                                  |
+| external  | `boolean`                                                                           | `false` | If `true`, PictureCard opens link in a new tab. [See Functional specs](#functional-specs) |
+| **image** | `Image`(#image)` | | Image of PictureCard [See Functional specs](#functional-specs) |
+| onClick   | `onClick`                                                                           |         | Function for handling onClick event.                                                      |
+| tabIndex  | `string`                                                                            | `"0"`   | Specifies the tab order of an element                                                     |
 
 ### Image
 

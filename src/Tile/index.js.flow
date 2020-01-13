@@ -4,22 +4,22 @@
 */
 import type { Globals } from "../common/common.js.flow";
 
-export type State = {
-  expanded?: boolean,
-  initialExpanded?: boolean,
-};
+export type TileOnClick = (
+  e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
+) => void | Promise<any>;
 
 export type Props = {|
   +title?: React$Node,
   +description?: React$Node,
   +icon?: React$Node,
+  +header?: React$Node,
   +children?: React$Node,
   +external?: boolean,
   +href?: string,
-  +onClick?: (
-    e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
-  ) => void | Promise<any>,
-  expanded?: boolean,
+  +onClick?: TileOnClick,
+  +expandable?: boolean,
+  +initialExpanded?: boolean,
+  +noPadding?: boolean,
   ...Globals,
 |};
 

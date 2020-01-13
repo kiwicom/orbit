@@ -2,13 +2,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import Heading from "../../Heading";
-import Stack from "../../Stack";
-import NewWindow from "../../icons/NewWindow";
-import ChevronRight from "../../icons/ChevronRight";
-import ChevronDown from "../../icons/ChevronDown";
-import { rtlSpacing } from "../../utils/rtl";
+import defaultTheme from "../../../defaultTheme";
+import Heading from "../../../Heading";
+import Stack from "../../../Stack";
+import NewWindow from "../../../icons/NewWindow";
+import ChevronRight from "../../../icons/ChevronRight";
+import ChevronDown from "../../../icons/ChevronDown";
+import { rtlSpacing } from "../../../utils/rtl";
 
 import type { Props, IconRightProps } from "./index";
 

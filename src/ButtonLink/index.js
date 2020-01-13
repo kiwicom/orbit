@@ -50,7 +50,7 @@ export const StyledButtonLink = styled(
     asComponent,
     circled,
     external,
-     fullWidth,
+    fullWidth,
     type,
     icon,
     iconLeft,
@@ -95,7 +95,7 @@ export const StyledButtonLink = styled(
   justify-content: center;
   align-items: center;
   width: ${({ fullWidth, width, onlyIcon }) =>
-  fullWidth
+    fullWidth
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
   flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};

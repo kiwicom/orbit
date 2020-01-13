@@ -60,6 +60,27 @@ storiesOf("Radio", module)
     },
   )
   .add(
+    "With Tooltip",
+    () => {
+      return (
+        <Radio
+          label="Direct"
+          value="one"
+          disabled
+          tooltip={
+            <Tooltip
+              content="There are no results available with this option"
+              preferredPosition="top"
+            />
+          }
+        />
+      );
+    },
+    {
+      info: "Additionally you can add tooltip to this component.",
+    },
+  )
+  .add(
     "With stack and icon",
     () => {
       const label = text("Label", "Label");

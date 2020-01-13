@@ -1,0 +1,7 @@
+// @flow
+export type CloneWithTooltip = (
+  tooltip: ?React$Element<any>,
+  children: React$Element<any>,
+) => React$Element<any>;
+
+declare export default CloneWithTooltip;

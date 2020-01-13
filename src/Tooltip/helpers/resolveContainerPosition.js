@@ -12,12 +12,20 @@ const resolveContainerPosition = ({
   containerHeight,
   containerWidth,
   tooltipHeight,
+  contentHeight,
   tooltipWidth,
+  theme,
 }: Props) => {
   if (isPositionTop(position)) {
+    /*
+      Needed, otherwise the top position is incorrectly positioned due to missing 8 pixels.
+      It's produced by tooltipPadding.js helper that changes the padding based on the actual height -
+      if it's one-line or multi-line.
+     */
+    const isMultiline = contentHeight > Math.floor(parseFloat(theme.orbit.lineHeightTextNormal));
     return css`
       top: ${Math.floor(
-        containerTop - tooltipHeight - parseFloat(TOOLTIP_ARROW_SIZE),
+        containerTop - tooltipHeight - parseFloat(TOOLTIP_ARROW_SIZE) - (isMultiline ? 8 : 0),
       )}px; // TODO: use token
     `;
   }

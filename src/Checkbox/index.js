@@ -8,6 +8,7 @@ import Check from "../icons/Check";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
+import cloneWithTooltip from "../utils/cloneWithTooltip";
 
 import type { Props } from "./index";
 
@@ -168,6 +169,7 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
     info,
     readOnly,
     tabIndex,
+    tooltip,
   } = props;
 
   const preventOnClick = useCallback(ev => {
@@ -188,9 +190,12 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
         ref={ref}
         readOnly={readOnly}
       />
-      <IconContainer onClick={readOnly ? preventOnClick : null}>
-        <Check />
-      </IconContainer>
+      {cloneWithTooltip(
+        tooltip,
+        <IconContainer onClick={readOnly ? preventOnClick : null}>
+          <Check />
+        </IconContainer>,
+      )}
       {(label || info) && (
         <TextContainer>
           {label && <LabelText>{label}</LabelText>}

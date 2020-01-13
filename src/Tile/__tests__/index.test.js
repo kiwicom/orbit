@@ -10,6 +10,7 @@ import TileExpandable from "../components/TileExpandable";
 import Text from "../../Text";
 import Stack from "../../Stack";
 import Airplane from "../../icons/Airplane";
+import TileWrapper from "../components/TileWrapper";
 
 describe("Tile clickable", () => {
   const dataTest = "test";
@@ -36,8 +37,10 @@ describe("Tile clickable", () => {
     expect(header.prop("title")).toBe(title);
     expect(header.prop("description")).toBe(description);
     expect(header.prop("icon")).toBeDefined();
-    expect(header.prop("onClick")).toBe(onClick);
-    expect(header.prop("tabIndex")).toBe("0");
+  });
+  it("should execute onClick method", () => {
+    component.find(TileWrapper).simulate("click");
+    expect(onClick).toHaveBeenCalled();
   });
 });
 
@@ -52,8 +55,6 @@ describe("Tile as anchor with custom header", () => {
   it("should render proper attributes", () => {
     expect(component.prop("as")).toBe("a");
     expect(component.prop("href")).toBe(href);
-    expect(component.prop("target")).toBe("_blank");
-    expect(component.prop("rel")).toBe("noopener noreferrer");
   });
   it("should return TileHeader with props", () => {
     const headerComponent = component.find(TileHeader);

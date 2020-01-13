@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Slide from "../../../utils/Slide/index";
 import randomID from "../../../utils/randomID/index";
 import TileContent from "../TileContent";
+import TileWrapper from "../TileWrapper";
 import TileHeader from "../TileHeader";
 import KEY_CODE_MAP from "../../../common/keyMaps";
 
@@ -18,6 +19,7 @@ const TileExpandable = ({
   description,
   header,
   icon,
+  dataTest,
 }: Props) => {
   const [expanded, setExpanded] = useState(initialExpanded);
   const [contentHeight, setContentHeight] = useState(initialExpanded ? null : 0);
@@ -66,21 +68,23 @@ const TileExpandable = ({
   const slideID = React.useMemo(() => randomID("slideID"), []);
   const labelID = React.useMemo(() => randomID("labelID"), []);
   return (
-    <>
+    <TileWrapper
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      ariaExpanded={expanded}
+      ariaControls={slideID}
+      tabIndex="0"
+      id={labelID}
+      dataTest={dataTest}
+    >
       {hasHeader && (
         <TileHeader
           title={title}
           description={description}
           icon={icon}
           header={header}
-          onClick={handleClick}
-          onKeyDown={handleKeyDown}
           expanded={expanded}
-          role="button"
-          ariaExpanded={expanded}
-          ariaControls={slideID}
-          tabIndex="0"
-          id={labelID}
           expandable
         />
       )}
@@ -89,7 +93,7 @@ const TileExpandable = ({
           {children}
         </TileContent>
       </Slide>
-    </>
+    </TileWrapper>
   );
 };
 

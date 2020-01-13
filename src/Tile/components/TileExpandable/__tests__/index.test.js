@@ -5,6 +5,7 @@ import { shallow } from "enzyme";
 import TileExpandable from "../index";
 import TileHeader from "../../TileHeader/index";
 import KEY_CODE_MAP from "../../../../common/keyMaps";
+import TileWrapper from "../../TileWrapper";
 
 describe("TileExpandable", () => {
   const children = "Lorem ipsum dolor sit amet";
@@ -23,23 +24,22 @@ describe("TileExpandable", () => {
     </TileExpandable>,
   );
   const header = component.find(TileHeader);
+  const wrapper = component.find(TileWrapper);
   it("should return TileHeader with props", () => {
     expect(header.exists()).toBe(true);
     expect(header.prop("title")).toBe(title);
     expect(header.prop("description")).toBe(description);
-    expect(header.prop("tabIndex")).toBe("0");
-    expect(header.prop("role")).toBe("button");
   });
   it("should execute onClick method", () => {
-    header.simulate("click");
+    wrapper.simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
   it("should execute onClick method onKeyDown ENTER", () => {
-    header.simulate("keydown", { keyCode: KEY_CODE_MAP.ENTER });
+    wrapper.simulate("keydown", { keyCode: KEY_CODE_MAP.ENTER });
     expect(onClick).toHaveBeenCalled();
   });
   it("should execute onClick method onKeyDown SPACE", () => {
-    header.simulate("keydown", { keyCode: KEY_CODE_MAP.SPACE, preventDefault: () => {} });
+    wrapper.simulate("keydown", { keyCode: KEY_CODE_MAP.SPACE, preventDefault: () => {} });
     expect(onClick).toHaveBeenCalled();
   });
 });

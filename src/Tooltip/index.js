@@ -39,6 +39,7 @@ const Tooltip = ({
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
+  preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
 }: Props) => {
@@ -118,6 +119,7 @@ const Tooltip = ({
             onCloseMobile={handleOutMobile}
             onEnter={handleIn}
             preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
             containerRef={container}
           >
             {content}

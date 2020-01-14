@@ -21,12 +21,12 @@ Table below contains all types of the props available in ButtonLink component.
 | ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                          |
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                      |
 | asComponent  | `() => React.Element`      | `"button"`  | The component used for the root node.                                                                                                           |
-| block        | `boolean`                  | `false`     | If `true`, the ButtonLink will grow up to the full width of its container.                                                                      |
 | circled      | `boolean`                  | `false`     | If `true`, the ButtonLink will have circular shape.                                                                                             |
 | children     | `React.Node`               |             | The content of the ButtonLink. [See Functional specs](#functional-specs)                                                                        |
 | disabled     | `boolean`                  | `false`     | If `true`, the ButtonLink will be disabled.                                                                                                     |
 | dataTest     | `string`                   |             | Optional prop for testing purposes.                                                                                                             |
 | external     | `boolean`                  | `false`     | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)                                                    |
+| fullWidth    | `boolean`                  | `false`     | If `true`, the ButtonLink will grow up to the full width of its container.                                                                      |
 | href         | `string`                   |             | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)                                                   |
 | icon         | `React.Node`               |             | The displayed icon on the left (will be removed in the future, use iconLeft instead).                                                           |
 | iconLeft     | `React.Node`               |             | The displayed icon on the left.                                                                                                                 |

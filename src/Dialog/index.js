@@ -134,7 +134,7 @@ const Dialog = ({
   return (
     <Portal renderInto="modals">
       <StyledDialog
-        dataTest={dataTest}
+        data-test={dataTest}
         shown={shown}
         onClick={handleClose}
         tabIndex="0"

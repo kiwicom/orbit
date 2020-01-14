@@ -10,6 +10,8 @@ import Text from "../Text";
 import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
 import { StyledButton } from "../Button";
+import KEY_CODE_MAP from "../common/keyMaps";
+import randomID from "../utils/randomID";
 
 import type { Props } from ".";
 
@@ -22,7 +24,7 @@ const StyledDialog = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 800;
+  z-index: ${({ theme }) => theme.orbit.zIndexModalOverlay};
   box-sizing: border-box;
   outline: none;
   overflow-x: hidden;
@@ -45,16 +47,17 @@ const StyledDialogContent = styled.div`
   width: 100%;
   position: fixed;
   box-sizing: border-box;
-  padding: 16px;
-  background: white;
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  background: ${({ theme }) => theme.orbit.paletteWhite};
   border-radius: 9px 9px 0 0;
   bottom: ${({ shown }) => (shown ? "0" : "-100%")};
   transition: bottom ${({ theme }) => theme.orbit.durationFast} linear;
+  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   ${mq.largeMobile(css`
     bottom: auto;
-    max-width: 540px;
+    max-width: ${({ theme }) => theme.orbit.widthModalSmall};
     border-radius: 9px;
-    padding: 24px;
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
   `)};
 `;
 
@@ -63,7 +66,7 @@ StyledDialogContent.defaultProps = {
 };
 
 const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
-  width: calc(100% * ${({ width }) => Math.floor(width * 100)});
+  width: calc(100% * ${({ width }) => width});
   ${StyledButton} {
     width: 100%;
     flex: 1 1 auto;
@@ -83,7 +86,17 @@ StyledAction.defaultProps = {
   theme: defaultTheme,
 };
 
-const Dialog = ({ title, description, primaryAction, secondaryAction }: Props) => {
+const getButtonWidth = width => Math.floor(width * 100);
+
+const Dialog = ({
+  dataTest,
+  title,
+  description,
+  primaryAction,
+  secondaryAction,
+  onClose,
+}: Props) => {
+  const ref = React.useRef(null);
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
@@ -93,21 +106,52 @@ const Dialog = ({ title, description, primaryAction, secondaryAction }: Props) =
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setShown(true);
+      if (ref.current) {
+        ref.current.focus();
+      }
     }, transitionLength);
     return () => clearTimeout(timer);
   }, [transitionLength]);
 
+  const handleClose = ev => {
+    if (ref.current && onClose) {
+      if (ref.current && !ref.current.contains(ev.target)) onClose();
+    }
+  };
+
+  React.useEffect(() => {
+    const handleKeyDown = ev => {
+      if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  const dialogID = React.useMemo(() => randomID("dialog"), []);
+
   return (
     <Portal renderInto="modals">
-      <StyledDialog shown={shown}>
-        <StyledDialogContent shown={shown}>
+      <StyledDialog
+        dataTest={dataTest}
+        shown={shown}
+        onClick={handleClose}
+        tabIndex="0"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={dialogID}
+      >
+        <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
           <Stack spacing="tight" spaceAfter="medium">
             {title && <Heading type="title3">{title}</Heading>}
             {description && <Text type="secondary">{description}</Text>}
           </Stack>
           <Stack direction="row" largeMobile={{ justify: "end" }}>
-            {secondaryAction && <StyledAction width={1 / 3}>{secondaryAction}</StyledAction>}
-            <StyledAction width={2 / 3}>{primaryAction}</StyledAction>
+            {secondaryAction && (
+              <StyledAction width={getButtonWidth(1 / 3)}>{secondaryAction}</StyledAction>
+            )}
+            <StyledAction width={getButtonWidth(2 / 3)}>{primaryAction}</StyledAction>
           </Stack>
         </StyledDialogContent>
       </StyledDialog>

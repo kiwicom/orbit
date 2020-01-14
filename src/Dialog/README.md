@@ -19,10 +19,11 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in Dialog component.
 
-| Name              | Type         | Description                                                                                          |
-| :---------------- | :----------- | :--------------------------------------------------------------------------------------------------- |
-| dataTest          | `string`     | Optional prop for testing purposes.                                                                  |
-| description       | `React.Node` | Optional description of the main action that Dialog performs.                                        |
-| **primaryAction** | `React.Node` | Primary and required action that user can do with the Dialog.                                        |
-| secondaryAction   | `React.Node` | Optional, secondary action that user can perform - possibility to close the Dialog most of the time. |
-| **title**         | `React.Node` | The title of the Dialog - preferably the purpose of the main action.                                 |
+| Name              | Type                    | Description                                                                                          |
+| :---------------- | :---------------------- | :--------------------------------------------------------------------------------------------------- |
+| dataTest          | `string`                | Optional prop for testing purposes.                                                                  |
+| description       | `React.Node`            | Optional description of the main action that Dialog performs.                                        |
+| **primaryAction** | `React.Node`            | Primary and required action that user can do with the Dialog.                                        |
+| secondaryAction   | `React.Node`            | Optional, secondary action that user can perform - possibility to close the Dialog most of the time. |
+| onClose           | `() => void \| Promise` | The title of the Dialog - preferably the purpose of the main action.                                 |
+| **title**         | `React.Node`            | The title of the Dialog - preferably the purpose of the main action.                                 |

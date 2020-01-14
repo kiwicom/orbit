@@ -3,6 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
 
@@ -39,6 +40,7 @@ storiesOf("Dialog", module)
           title={title}
           description={description}
           dataTest={dataTest}
+          onClose={action("onClose")}
           primaryAction={<Button type="critical">Log out</Button>}
           secondaryAction={<Button type="secondary">Cancel</Button>}
         />

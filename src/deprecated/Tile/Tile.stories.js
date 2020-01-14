@@ -4,33 +4,28 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import Stack from "../Stack";
-import Text from "../Text";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../TripSector";
-import TripSegment from "../TripSegment";
-import List, { ListItem } from "../List";
-import Badge from "../Badge";
-import Heading from "../Heading";
-import CountryFlag from "../CountryFlag";
+import * as Icons from "../../icons";
+import Stack from "../../Stack";
+import Text from "../../Text";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
+import TripSector, { TripDate } from "../../TripSector";
+import TripSegment from "../../TripSegment";
+import List, { ListItem } from "../../List";
+import Badge from "../../Badge";
+import Heading from "../../Heading";
+import CountryFlag from "../../CountryFlag";
 
 import Tile from "./index";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Tile", module)
+storiesOf("Deprecated Tile", module)
   .add(
-    "Default - just wrapper",
+    "Default",
     () => {
-      const content = text("content", "Lorem ipsum dolor sit amet");
-      const noPadding = boolean("noPadding", false);
-      return (
-        <Tile onClick={action("clicked")} noPadding={noPadding}>
-          {content}
-        </Tile>
-      );
+      const title = text("Title", "Default");
+      return <Tile onClick={action("clicked")} title={title} />;
     },
     {
       info: "This is the default configuration of this component.",
@@ -38,7 +33,7 @@ storiesOf("Tile", module)
   )
 
   .add(
-    "Default - with header props",
+    "Expandable",
     () => {
       const title = text("Title", "Expandable");
       const description = text(
@@ -52,32 +47,9 @@ storiesOf("Tile", module)
           icon={Icon && <Icon />}
           title={title}
           description={description}
-        />
-      );
-    },
-    {
-      info: "This is the default configuration of this component.",
-    },
-  )
-  .add(
-    "Default - with header props, as href",
-    () => {
-      const title = text("Title", "Expandable");
-      const description = text(
-        "Description",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      );
-      const Icon = getIcon(getIcons("Airplane"));
-      const href = text("href", "#");
-      const external = boolean("external", false);
-      return (
-        <Tile
-          icon={Icon && <Icon />}
-          title={title}
-          description={description}
-          href={href}
-          external={external}
-        />
+        >
+          This is example of expanded content
+        </Tile>
       );
     },
     {
@@ -90,7 +62,6 @@ storiesOf("Tile", module)
       <Tile
         title="Dynamic Tile height"
         description="This is a example of dynamic Tile height with TripSector"
-        expandable
       >
         <TripSector dataTest="test">
           <TripDate>Mon 22 Oct</TripDate>
@@ -124,9 +95,8 @@ storiesOf("Tile", module)
         <Tile
           icon={Icon && <Icon />}
           onClick={action("clicked")}
-          expandable
-          header={
-            <Stack justify="between" align="center" direction="row" shrink>
+          description={
+            <Stack justify="between" align="center" direction="row">
               <Stack spacing="none" direction="column" shrink>
                 <Stack direction="row" align="center" spacing="condensed">
                   <Heading type="title4" element="h4">
@@ -170,12 +140,8 @@ storiesOf("Tile", module)
         "Description",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       );
-      const header = text("header", null);
-      const expandable = boolean("expandable", false);
-      const initialExpanded = boolean("initialExpanded", false);
-      const noPadding = boolean("noPadding", false);
       const dataTest = text("dataTest", "test");
-      const children = text("children", null);
+
       return (
         <Tile
           href={href}
@@ -183,15 +149,9 @@ storiesOf("Tile", module)
           icon={Icon && <Icon />}
           title={title}
           description={description}
-          header={header}
           external={external}
-          expandable={expandable}
-          initialExpanded={initialExpanded}
-          noPadding={noPadding}
           dataTest={dataTest}
-        >
-          {children}
-        </Tile>
+        />
       );
     },
     {

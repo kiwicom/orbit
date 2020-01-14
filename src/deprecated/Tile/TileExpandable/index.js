@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import Slide from "../../utils/Slide";
-import defaultTheme from "../../defaultTheme";
+import Slide from "../../../utils/Slide";
+import defaultTheme from "../../../defaultTheme";
 
 import type { Props, State } from "./index";
 

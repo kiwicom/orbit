@@ -54,6 +54,7 @@ const StyledDialogContent = styled.div`
   transition: bottom ${({ theme }) => theme.orbit.durationFast} linear;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   ${mq.largeMobile(css`
+    position: relative;
     bottom: auto;
     max-width: ${({ theme }) => theme.orbit.widthModalSmall};
     border-radius: 9px;

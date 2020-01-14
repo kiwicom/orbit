@@ -15,8 +15,9 @@ import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
+import type { Theme } from "../defaultTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -201,7 +202,7 @@ Suffix.defaultProps = {
 };
 
 export const Input = styled(
-  React.forwardRef<Props, HTMLInputElement>(
+  React.forwardRef<{| ...Props, theme: Theme |}, HTMLInputElement>(
     ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
       <input type={getDOMType(type)} {...props} ref={ref} />
     ),

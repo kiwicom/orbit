@@ -55,7 +55,7 @@ const Grid = ({
 }: Props) => {
   const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth };
   return (
-    <StyledGrid smallMobile={smallMobile} data-test={dataTest} as={element} {...props}>
+    <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={element}>
       {children}
     </StyledGrid>
   );

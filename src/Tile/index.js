@@ -1,124 +1,84 @@
 // @flow
-import * as React from "react";
-import styled from "styled-components";
+import React from "react";
 
-import defaultTheme from "../defaultTheme";
-import TileHeader, { StyledIconRight } from "./TileHeader";
-import TileExpandable from "./TileExpandable";
+import TileHeader from "./components/TileHeader";
+import TileContent from "./components/TileContent";
+import TileExpandable from "./components/TileExpandable";
+import TileWrapper from "./components/TileWrapper";
 import KEY_CODE_MAP from "../common/keyMaps";
 
-import type { Props, State } from "./index";
+import { type Props } from ".";
 
-export const StyledTile = styled(({ theme, icon, title, external, ...props }) => {
-  const Component = props.href ? "a" : "div";
-  return <Component {...props}>{props.children}</Component>;
-})`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  text-decoration: none;
-  background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  &:hover,
-  &:focus {
-    outline: 0;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+const Tile = ({
+  href,
+  external = false,
+  dataTest,
+  icon,
+  title,
+  description,
+  header,
+  children,
+  noPadding = false,
+  expandable = false,
+  initialExpanded = false,
+  onClick,
+}: Props) => {
+  if (expandable) {
+    return (
+      <TileExpandable
+        dataTest={dataTest}
+        icon={icon}
+        title={title}
+        description={description}
+        header={header}
+        noPadding={noPadding}
+        initialExpanded={initialExpanded}
+        onClick={onClick}
+      >
+        {children}
+      </TileExpandable>
+    );
   }
-
-  &:hover ${StyledIconRight} {
-    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
-  }
-`;
-
-StyledTile.defaultProps = {
-  theme: defaultTheme,
-};
-
-class Tile extends React.PureComponent<Props, State> {
-  state = {
-    expanded: false,
-    initialExpanded: false,
-  };
-
-  componentDidMount() {
-    const { expanded } = this.props;
-    this.setExpanded({ expanded, initialExpanded: expanded });
-  }
-
-  setExpanded = ({ expanded, initialExpanded }: State) => {
-    this.setState({ expanded, initialExpanded });
-  };
-
-  isExpandable = () => {
-    const { href, children } = this.props;
-    return !!(!href && children); // Tile is expandable if - not href && children are passed
-  };
-
-  toggleExpandable = () => {
-    if (this.isExpandable()) {
-      this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
-    }
-  };
-
-  handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
-    const { onClick } = this.props;
-    this.toggleExpandable();
-    if (onClick) {
-      onClick(ev);
-    }
-  };
-
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    const { onClick } = this.props;
+  const hasHeader = !!(title || description || icon || header);
+  const handleKeyDown = ev => {
     if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      this.toggleExpandable();
       if (onClick) {
         onClick(ev);
       }
     } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
       ev.preventDefault();
-      this.toggleExpandable();
       if (onClick) {
         onClick(ev);
       }
     }
   };
-
-  render() {
-    const { href, external, icon, title, description, children, dataTest } = this.props;
-    const isExpandable = this.isExpandable();
-    const isExpanded = this.state.expanded;
-    return (
-      <StyledTile
-        target={!isExpandable && external ? "_blank" : undefined}
-        rel={!isExpandable && external ? "noopener noreferrer" : undefined}
-        href={!isExpandable ? href : undefined}
-        data-test={dataTest}
-        onKeyDown={this.handleKeyDown}
-        tabIndex={href ? undefined : "0"}
-        role={href ? undefined : "button"}
-      >
+  return (
+    <TileWrapper
+      href={href}
+      external={external}
+      dataTest={dataTest}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      as={href ? "a" : "div"}
+      tabIndex={!href ? "0" : undefined}
+      role={!href ? "button" : undefined}
+    >
+      {hasHeader && (
         <TileHeader
-          icon={icon}
           title={title}
           description={description}
-          external={external}
-          onClick={this.handleClick}
-          isExpandable={isExpandable}
-          isExpanded={isExpanded}
+          icon={icon}
+          header={header}
+          expandable={expandable}
         />
-        {isExpandable && children && (
-          <TileExpandable expanded={isExpanded} initialExpanded={this.state.initialExpanded}>
-            {children}
-          </TileExpandable>
-        )}
-      </StyledTile>
-    );
-  }
-}
+      )}
+      {children && (
+        <TileContent noPadding={noPadding} withPointer withBorder={hasHeader}>
+          {children}
+        </TileContent>
+      )}
+    </TileWrapper>
+  );
+};
 
 export default Tile;

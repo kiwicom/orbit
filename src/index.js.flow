@@ -18,6 +18,7 @@ import typeof CollapseType from "./Collapse";
 import typeof CarrierLogoType from "./CarrierLogo";
 import typeof DestinationHeaderType from "./DestinationHeader";
 import typeof DestinationCardType from "./DestinationCard";
+import typeof DialogType from "./Dialog";
 import typeof FeatureIconType from "./FeatureIcon";
 import typeof HeadingType from "./Heading";
 import typeof HideType from "./Hide";
@@ -112,6 +113,7 @@ declare export var Collapse: CollapseType;
 declare export var CountryFlag: CountryFlagType;
 declare export var DestinationHeader: DestinationHeaderType;
 declare export var DestinationCard: DestinationCardType;
+declare export var Dialog: DialogType;
 declare export var FeatureIcon: FeatureIconType;
 
 declare export var List: ListType;

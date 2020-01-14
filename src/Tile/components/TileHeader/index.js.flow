@@ -1,0 +1,29 @@
+// @flow
+import type { TileOnClick } from "../../index";
+
+export type Props = {|
+  icon?: React$Node,
+  title?: React$Node,
+  description?: React$Node,
+  expandable?: boolean,
+  expanded?: boolean,
+  external?: boolean,
+  onClick?: TileOnClick,
+  onKeyDown?: TileOnClick,
+  header?: React$Node,
+  role?: string,
+  ariaExpanded?: boolean,
+  ariaControls?: string,
+  id?: string,
+  tabIndex?: string,
+|};
+
+type IconProps = {|
+  external: boolean,
+  expandable: boolean,
+  expanded: boolean,
+|};
+
+declare export var StyledIconRight: React$ComponentType<IconProps>;
+
+declare export default React$ComponentType<Props>;

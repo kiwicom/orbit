@@ -21,6 +21,7 @@ export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
+export { default as PictureCard } from "./PictureCard";
 
 // Card
 export { default as Card } from "./Card";
@@ -30,7 +31,7 @@ export { default as DepreacatedCardHeader } from "./deprecated/Card/CardHeader";
 export { default as DeprecatedCardSection } from "./deprecated/Card/CardSection";
 export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
-export { default as DestinationCard } from "./DestinationCard";
+export { default as DestinationCard } from "./deprecated/DestinationCard";
 
 // Modal
 export { default as Portal } from "./Portal";

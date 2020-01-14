@@ -1,6 +1,6 @@
 // @flow
 
-import type { Globals, Translation, TranslationString } from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString } from "../../common/common.js.flow";
 
 export type State = {|
   hiddenContentHeight: number,

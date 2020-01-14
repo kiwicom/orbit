@@ -62,7 +62,7 @@ const useMediaQuery: UseMediaQuery = () => {
     return null;
   };
 
-  const updateMatch = () => {
+  const updateMatch = debounce(() => {
     setBreakpointList(
       breakpointList.map(breakpoint => {
         return {
@@ -71,15 +71,14 @@ const useMediaQuery: UseMediaQuery = () => {
         };
       }),
     );
-  };
+  }, 150);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Initial value
       updateMatch();
-
       // Tie listener to all MediaQueryList items
-      mediaList.forEach(mediaListItem => mediaListItem.addListener(debounce(updateMatch, 150)));
+      mediaList.forEach(mediaListItem => mediaListItem.addListener(updateMatch));
     }
 
     return () => {

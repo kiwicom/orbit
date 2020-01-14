@@ -28,7 +28,7 @@ storiesOf("NavigationBar", module)
             onHide={action("onHide")}
             dataTest={dataTest}
           >
-            <Stack justify="between">
+            <Stack justify="between" spacing="none">
               <ButtonLink iconRight={<ChevronDown />} type="secondary" transparent>
                 Flights
               </ButtonLink>
@@ -58,7 +58,7 @@ storiesOf("NavigationBar", module)
             onHide={action("onHide")}
             dataTest={dataTest}
           >
-            <Stack flex align="center" justify="between">
+            <Stack flex align="center" justify="between" spacing="none">
               <LinkList direction="row">
                 <TextLink type="secondary">Flights</TextLink>
                 <TextLink type="secondary">Flights</TextLink>

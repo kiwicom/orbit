@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useEffect, useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -16,7 +16,7 @@ const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 const StyledNavigationBarContent = styled.div`
   display: block;
   width: 100%;
-  margin-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
 StyledNavigationBarContent.defaultProps = {
@@ -51,7 +51,7 @@ StyledNavigationBar.defaultProps = {
 
 const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props) => {
   const translate = useTranslate();
-  const resolveCallback = useCallback(
+  const resolveCallback = React.useCallback(
     state => {
       if (onHide && !state) onHide();
       if (onShow && state) onShow();
@@ -60,26 +60,33 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
   );
   const [shown, setShown] = useStateWithCallback<boolean>(true, resolveCallback);
 
-  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-  const handleNavigationBarPosition = useCallback(() => {
+  const [prevScrollPosition, setPrevScrollPosition] = React.useState(0);
+
+  const handleNavigationBarPosition = React.useCallback(() => {
     const currentScrollPosition =
       window.scrollY ||
       window.pageYOffset ||
       (document.documentElement && document.documentElement.scrollTop);
-    if (prevScrollPosition < currentScrollPosition && currentScrollPosition > NAVBAR_HEIGHT) {
+
+    if (
+      prevScrollPosition < currentScrollPosition &&
+      currentScrollPosition > NAVBAR_HEIGHT.DESKTOP
+    ) {
       setShown(false);
     } else {
       setShown(true);
     }
+
     setPrevScrollPosition(currentScrollPosition);
   }, [prevScrollPosition, setShown]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("scroll", handleNavigationBarPosition);
     return () => {
       window.removeEventListener("scroll", handleNavigationBarPosition);
     };
   });
+
   return (
     <StyledNavigationBar data-test={dataTest} shown={shown}>
       <StyledNavigationBarContent>{children}</StyledNavigationBarContent>
@@ -89,7 +96,6 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
           transparent
-          size="small"
           title={translate("navigationbar_open_menu")}
         />
       )}

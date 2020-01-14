@@ -47,7 +47,7 @@ storiesOf("Modal", module)
         <Modal onClose={onClose} size={size}>
           <ModalHeader title={title}>{description}</ModalHeader>
           <ModalSection>
-            <ButtonLink transparent>asdaddas</ButtonLink>
+            <Text>{content}</Text>
           </ModalSection>
           <ModalSection>
             <Text>{content}</Text>

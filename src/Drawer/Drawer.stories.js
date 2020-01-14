@@ -44,14 +44,14 @@ storiesOf("Drawer", module)
           }
         >
           <Collapse label="Discover" initialExpanded>
-            <LinkList>
+            <LinkList indent>
               <TextLink type="secondary">Refer a Friend</TextLink>
               <TextLink type="secondary">Subscribe to newsletter</TextLink>
               <TextLink type="secondary">Kiwi.com Stories</TextLink>
             </LinkList>
           </Collapse>
           <Collapse label="Guidelines">
-            <LinkList>
+            <LinkList indent>
               <TextLink type="secondary">Terms & Conditions</TextLink>
               <TextLink type="secondary">Terms of Use</TextLink>
               <TextLink type="secondary">Privacy Policy</TextLink>
@@ -60,7 +60,7 @@ storiesOf("Drawer", module)
             </LinkList>
           </Collapse>
           <Collapse label="Company" spaceAfter="medium">
-            <LinkList>
+            <LinkList indent>
               <TextLink type="secondary">About Kiwi.com</TextLink>
               <TextLink type="secondary">Careers</TextLink>
               <TextLink type="secondary">Care Kiwi.com</TextLink>

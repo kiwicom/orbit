@@ -18,14 +18,13 @@ import { rtlSpacing } from "../utils/rtl";
 import type { Props } from ".";
 
 const getPadding = ({ noPadding, theme, hasTopPadding }) => {
-  const padding = space =>
-    !hasTopPadding ? rtlSpacing(`0 ${space[0]} ${space[1]}`) : `${space[0]} ${space[1]}`;
+  const padding = space => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
   return (
     !noPadding &&
     css`
-      padding: ${padding(["0", theme.orbit.spaceMedium])};
+      padding: ${padding(theme.orbit.spaceMedium)};
       ${mq.largeMobile(css`
-        padding: ${padding([theme.orbit.spaceXLarge, theme.orbit.spaceXLarge])};
+        padding: ${padding(theme.orbit.spaceXLarge)}};
       `)};
     `
   );

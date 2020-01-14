@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import { left } from "../utils/rtl";
 import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
 import { StyledTextLink } from "../TextLink";
@@ -14,6 +15,7 @@ const StyledLinkList = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
+  padding-${left}: ${({ indent, theme }) => indent && theme.orbit.spaceXXSmall};
   list-style: none;
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
 `;
@@ -46,8 +48,14 @@ StyledNavigationLinkListChild.defaultProps = {
   theme: defaultTheme,
 };
 
-const LinkList = ({ direction = "column", spacing = "natural", children, dataTest }: Props) => (
-  <StyledLinkList data-test={dataTest}>
+const LinkList = ({
+  direction = "column",
+  indent,
+  spacing = "natural",
+  children,
+  dataTest,
+}: Props) => (
+  <StyledLinkList indent={indent} data-test={dataTest}>
     <Stack direction={direction} spacing={spacing}>
       {React.Children.map(children, item => {
         if (React.isValidElement(item)) {

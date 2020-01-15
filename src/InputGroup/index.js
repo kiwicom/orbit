@@ -11,6 +11,7 @@ import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props, State } from "./index";
 
@@ -48,11 +49,7 @@ const FakeGroup = styled(({ children, className }) => (
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
       theme.orbit.borderColorInputError
     }`}; // Error state
-  box-shadow: ${({ theme, active }) =>
-    active &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInputFocus} ${
-      theme.orbit.borderColorInputFocus
-    }`}; // Active state
+  ${({ active }) => active && formElementFocus}; // Active state
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};

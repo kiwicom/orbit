@@ -8,6 +8,7 @@ import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -80,7 +81,7 @@ const StyledTextArea = styled.textarea`
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
 
-  // IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden
+  /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
   border: 1px solid transparent;
 
   // IE 11 bug fix, hide scrollbar by default (shown only when scrollable)
@@ -99,8 +100,7 @@ const StyledTextArea = styled.textarea`
   }
 
   &:focus {
-    box-shadow: ${({ theme, disabled }) =>
-      !disabled && `inset 0 0 0 2px ${theme.orbit.borderColorInputFocus}`};
+    ${formElementFocus}
     outline: none;
   }
 `;

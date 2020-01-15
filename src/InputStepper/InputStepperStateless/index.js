@@ -11,16 +11,6 @@ import defaultTheme from "../../defaultTheme";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { StateLessProps } from "./index.js.flow";
 
-const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
-  flex-shrink: 0;
-  z-index: 3;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
-`;
-
-PrefixSuffix.defaultProps = {
-  theme: defaultTheme,
-};
-
 const StyledInputStepper = styled.div`
   width: 100%;
   margin-bottom: ${getSpacingToken};
@@ -34,22 +24,6 @@ const StyledInputStepper = styled.div`
 `;
 
 StyledInputStepper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledButtonWrapper = styled.div`
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
-      0 0 1px 3px rgba(1, 118, 210, 0.6); //TODO: Create token
-  }
-
-  &:focus:active {
-    box-shadow: none;
-  }
-`;
-
-StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -101,34 +75,32 @@ const InputStepperStateless = ({
         tabIndex={tabIndex}
         ref={forwardedRef}
         prefix={
-          <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onDecrement}>
-            <ButtonLink
-              disabled={
-                disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
-              }
-              iconLeft={<MinusCircle color="secondary" />}
-              size={size}
-              onClick={onDecrement}
-              transparent
-              asComponent={PrefixSuffix}
-              title={titleDecrement}
-            />
-          </StyledButtonWrapper>
+          <ButtonLink
+            type="secondary"
+            disabled={
+              disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
+            }
+            iconLeft={<MinusCircle color="secondary" />}
+            size={size}
+            onClick={onDecrement}
+            transparent
+            title={titleDecrement}
+            asComponent={props => <div {...props} />}
+          />
         }
         suffix={
-          <StyledButtonWrapper role="button" tabIndex="0" onKeyDown={onIncrement}>
-            <ButtonLink
-              disabled={
-                disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
-              }
-              iconLeft={<PlusCircle color="secondary" />}
-              size={size}
-              onClick={onIncrement}
-              transparent
-              asComponent={PrefixSuffix}
-              title={titleIncrement}
-            />
-          </StyledButtonWrapper>
+          <ButtonLink
+            disabled={
+              disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
+            }
+            type="secondary"
+            iconLeft={<PlusCircle color="secondary" />}
+            size={size}
+            onClick={onIncrement}
+            transparent
+            title={titleIncrement}
+            asComponent={props => <div {...props} />}
+          />
         }
       />
     </StyledInputStepper>

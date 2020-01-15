@@ -12,6 +12,7 @@ import CloseCircle from "../icons/CloseCircle";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -66,8 +67,7 @@ const Input = styled.input`
   height: 0;
 
   &:focus ~ ${FakeInput} {
-    box-shadow: ${({ theme }) =>
-      `inset 0 0 0 ${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
+    ${formElementFocus}
   }
 `;
 

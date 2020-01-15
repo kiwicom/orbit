@@ -55,7 +55,8 @@ export const StyledTag = styled.div`
   font-size: ${getFontSize};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-
+  box-shadow: ${({ theme, selected }) =>
+    !selected && `inset 0 0 0 1px ${theme.orbit.borderColorTag}`};
   padding: ${getSpacing};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
@@ -73,7 +74,7 @@ export const StyledTag = styled.div`
 
   &:focus {
     box-shadow: ${({ theme, selected }) =>
-      ` 0 0 0 3px ${
+      `0 0 0 3px ${
         selected
           ? convertHexToRgba(theme.orbit.paletteInkLighter, 100)
           : theme.orbit.paletteCloudNormalHover

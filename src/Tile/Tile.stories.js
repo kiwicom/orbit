@@ -210,6 +210,7 @@ storiesOf("Tile", module)
               <Text>20 kg</Text>
             </Stack>
           }
+          expandable
         >
           This is example of expanded content
         </Tile>

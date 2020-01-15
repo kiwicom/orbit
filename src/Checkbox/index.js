@@ -112,7 +112,7 @@ const Input = styled.input`
 
   &:focus + ${IconContainer} {
     border: ${({ theme, error }) =>
-      `2px ${theme.orbit.borderStyleInput} ${
+      `1px ${theme.orbit.borderStyleInput} ${
         error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
     box-shadow: 0px 0px 0px 3px

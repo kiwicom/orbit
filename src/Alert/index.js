@@ -201,17 +201,6 @@ const Content = styled(StyledDiv)`
     &:active {
       color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
     }
-
-    :focus {
-      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
-    }
-    :focus:not(:focus-visible) {
-      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
-    }
-    :-moz-focusring,
-    :focus-visible {
-      box-shadow: 0px 0px 0px 4px ${getTypeToken(TOKENS.colorTextLinkAlertFocus)};
-    }
   }
   & ${Item}, ${StyledText}, ${StyledHeading} {
     color: ${getTypeToken(TOKENS.colorTextAlert)};

@@ -90,7 +90,7 @@ const StyledBadgeWrapperContent = styled.div`
   }
 
   ${media.desktop(css`
-    bottom: calc(100% + 5px);
+    bottom: calc(100% + ${({ hasIcon }) => (hasIcon ? "11px" : "5px")});
   `)}
 `;
 
@@ -130,7 +130,7 @@ const PricingTableItem = ({
     >
       {badge && (
         <StyledBadgeWrapper>
-          <StyledBadgeWrapperContent>
+          <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
             {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
           </StyledBadgeWrapperContent>
         </StyledBadgeWrapper>

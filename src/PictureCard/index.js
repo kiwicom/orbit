@@ -143,7 +143,7 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   overflow: hidden;
-  cursor: pointer;
+
   box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowAction};
   transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
 
@@ -154,6 +154,7 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   ${({ isPlain, theme, shadows }) =>
     !isPlain &&
     css`
+      cursor: pointer;
       &:hover,
       &:focus {
         outline: none;
@@ -175,6 +176,14 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
           opacity: 1;
           bottom: 0;
         }
+      }
+    `}
+
+  ${({ isPlain }) =>
+    isPlain &&
+    css`
+      &:focus {
+        outline: none;
       }
     `}
 `;
@@ -222,6 +231,7 @@ const PictureCard = ({
 
   const { name, original, placeholder, code } = image;
   const isPlain = !(title || subTitle || children || actions);
+  const isFocus = isPlain ? undefined : 0;
 
   return (
     <StyledPictureCard
@@ -233,11 +243,11 @@ const PictureCard = ({
       href={href}
       external={external}
       shadows={onClick || href}
-      tabIndex={href ? tabIndex : 0}
-      role="link"
+      tabIndex={href ? tabIndex : isFocus}
+      role={isPlain ? undefined : "link"}
       contentHeight={contentHeight}
       isPlain={isPlain}
-      aria-labelledby={cardID}
+      aria-labelledby={isPlain ? undefined : cardID}
     >
       <LazyImage
         original={{

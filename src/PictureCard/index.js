@@ -143,7 +143,7 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   overflow: hidden;
-  cursor: pointer;
+
   box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowAction};
   transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
 
@@ -154,6 +154,7 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   ${({ isPlain, theme, shadows }) =>
     !isPlain &&
     css`
+      cursor: pointer;
       &:hover,
       &:focus {
         outline: none;
@@ -175,6 +176,14 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
           opacity: 1;
           bottom: 0;
         }
+      }
+    `}
+
+  ${({ isPlain }) =>
+    isPlain &&
+    css`
+      &:focus {
+        outline: none;
       }
     `}
 `;

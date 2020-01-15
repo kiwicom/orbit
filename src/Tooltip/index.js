@@ -39,6 +39,7 @@ const Tooltip = ({
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
+  preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
 }: Props) => {
@@ -90,6 +91,7 @@ const Tooltip = ({
     setShownMobile(false);
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout, setShownMobile]);
+  if (!enabled) return children;
   return (
     <React.Fragment>
       <StyledTooltipChildren
@@ -118,6 +120,7 @@ const Tooltip = ({
             onCloseMobile={handleOutMobile}
             onEnter={handleIn}
             preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
             containerRef={container}
           >
             {content}

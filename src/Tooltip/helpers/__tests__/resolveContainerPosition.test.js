@@ -1,5 +1,6 @@
 // @flow
 import resolveContainerPosition from "../resolveContainerPosition";
+import defaultTheme from "../../../defaultTheme";
 
 const dimensions = {
   windowHeight: 789,
@@ -13,6 +14,7 @@ const dimensions = {
   containerLeftPure: 28,
   containerTop: 20,
   containerTopPure: 20,
+  theme: defaultTheme,
 };
 
 const params = position => ({ position, ...dimensions });

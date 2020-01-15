@@ -6,6 +6,7 @@ type PositionsAndAligns = [Positions[], Aligns[]];
 
 export type SortPositionsAndAligns = (
   preferredPosition: ?Positions,
+  preferredAlign: ?Aligns,
   theme: Theme,
 ) => PositionsAndAligns;
 

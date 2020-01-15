@@ -10,4 +10,5 @@ export default {
   ARROW_RIGHT: 39,
   HOME: 36,
   END: 35,
+  ESC: 27,
 };

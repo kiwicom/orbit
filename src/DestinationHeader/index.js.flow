@@ -1,9 +1,9 @@
 // @flow
-import type { Globals, Translation } from "../common/common.js.flow";
+import type { Globals, TranslationString } from "../common/common.js.flow";
 
 export type Props = {|
   ...Globals,
-  +destinationName: Translation,
+  +destinationName: TranslationString,
   +image: string,
   +goBack?: () => void | Promise<any>,
 |};

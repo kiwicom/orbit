@@ -63,14 +63,18 @@ StyledPricingTableItem.defaultProps = {
 const StyledBadgeWrapper = styled.div`
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
 `;
 
 const StyledBadgeWrapperContent = styled.div`
   /*
     This is a bit ugly and unnecessarily complex,
     but due how IE works with flex and absolute positioning
-    it has to be like this.  
+    it has to be like this.
   */
   position: absolute;
   bottom: calc(100% + 3px);
@@ -82,8 +86,17 @@ const StyledBadgeWrapperContent = styled.div`
   ${StyledBadge} {
     align-self: center;
     max-width: 100%;
+    word-break: break-all;
   }
+
+  ${media.desktop(css`
+    bottom: calc(100% + 11px);
+  `)}
 `;
+
+StyledBadgeWrapperContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const Item = styled.div``;
 

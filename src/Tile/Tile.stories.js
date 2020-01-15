@@ -22,10 +22,15 @@ const getIcon = source => Icons[source];
 
 storiesOf("Tile", module)
   .add(
-    "Default",
+    "Default - just wrapper",
     () => {
-      const title = text("Title", "Default");
-      return <Tile onClick={action("clicked")} title={title} />;
+      const content = text("content", "Lorem ipsum dolor sit amet");
+      const noPadding = boolean("noPadding", false);
+      return (
+        <Tile onClick={action("clicked")} noPadding={noPadding}>
+          {content}
+        </Tile>
+      );
     },
     {
       info: "This is the default configuration of this component.",
@@ -33,7 +38,7 @@ storiesOf("Tile", module)
   )
 
   .add(
-    "Expandable",
+    "Default - with header props",
     () => {
       const title = text("Title", "Expandable");
       const description = text(
@@ -47,9 +52,32 @@ storiesOf("Tile", module)
           icon={Icon && <Icon />}
           title={title}
           description={description}
-        >
-          This is example of expanded content
-        </Tile>
+        />
+      );
+    },
+    {
+      info: "This is the default configuration of this component.",
+    },
+  )
+  .add(
+    "Default - with header props, as href",
+    () => {
+      const title = text("Title", "Expandable");
+      const description = text(
+        "Description",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      );
+      const Icon = getIcon(getIcons("Airplane"));
+      const href = text("href", "#");
+      const external = boolean("external", false);
+      return (
+        <Tile
+          icon={Icon && <Icon />}
+          title={title}
+          description={description}
+          href={href}
+          external={external}
+        />
       );
     },
     {
@@ -62,6 +90,7 @@ storiesOf("Tile", module)
       <Tile
         title="Dynamic Tile height"
         description="This is a example of dynamic Tile height with TripSector"
+        expandable
       >
         <TripSector dataTest="test">
           <TripDate>Mon 22 Oct</TripDate>
@@ -95,8 +124,9 @@ storiesOf("Tile", module)
         <Tile
           icon={Icon && <Icon />}
           onClick={action("clicked")}
-          description={
-            <Stack justify="between" align="center" direction="row">
+          expandable
+          header={
+            <Stack justify="between" align="center" direction="row" shrink>
               <Stack spacing="none" direction="column" shrink>
                 <Stack direction="row" align="center" spacing="condensed">
                   <Heading type="title4" element="h4">
@@ -140,8 +170,12 @@ storiesOf("Tile", module)
         "Description",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       );
+      const header = text("header", null);
+      const expandable = boolean("expandable", false);
+      const initialExpanded = boolean("initialExpanded", false);
+      const noPadding = boolean("noPadding", false);
       const dataTest = text("dataTest", "test");
-
+      const children = text("children", null);
       return (
         <Tile
           href={href}
@@ -149,9 +183,15 @@ storiesOf("Tile", module)
           icon={Icon && <Icon />}
           title={title}
           description={description}
+          header={header}
           external={external}
+          expandable={expandable}
+          initialExpanded={initialExpanded}
+          noPadding={noPadding}
           dataTest={dataTest}
-        />
+        >
+          {children}
+        </Tile>
       );
     },
     {

@@ -1,6 +1,6 @@
 // @flow
 import type { Globals } from "../../common/common.js.flow";
-import type { Positions, Sizes } from "../index";
+import type { Aligns, Positions, Sizes } from "../index";
 
 export type Props = {|
   shownMobile: boolean,
@@ -12,6 +12,7 @@ export type Props = {|
   onCloseMobile: () => void,
   onEnter: () => void,
   preferredPosition: ?Positions,
+  preferredAlign: ?Aligns,
   containerRef: React$ElementRef<*>,
   ...Globals,
 |};

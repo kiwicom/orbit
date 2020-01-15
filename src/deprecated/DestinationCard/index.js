@@ -2,16 +2,16 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import Heading from "../Heading";
-import Stack from "../Stack";
-import ArrowUpIcon from "../icons/ArrowUp";
-import defaultTheme from "../defaultTheme";
-import FlightDirectIcon from "../icons/FlightDirect";
+import Heading from "../../Heading";
+import Stack from "../../Stack";
+import ArrowUpIcon from "../../icons/ArrowUp";
+import defaultTheme from "../../defaultTheme";
+import FlightDirectIcon from "../../icons/FlightDirect";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
-import LazyImage from "../LazyImage";
-import Text from "../Text";
-import randomID from "../utils/randomID";
-import KEY_CODE_MAP from "../common/keyMaps";
+import LazyImage from "../../LazyImage";
+import Text from "../../Text";
+import randomID from "../../utils/randomID";
+import KEY_CODE_MAP from "../../common/keyMaps";
 
 import type { Props, State } from "./index";
 

@@ -61,7 +61,7 @@ storiesOf("ButtonLink", module)
     () => {
       const children = text("Children", "ButtonLink");
       const disabled = boolean("Disabled", false);
-      const block = boolean("Block", false);
+      const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
       const size = select("Size", Object.values(SIZES), SIZES.LARGE);
       const width = number("Width", 0);
@@ -81,7 +81,7 @@ storiesOf("ButtonLink", module)
       return (
         <ButtonLink
           disabled={disabled}
-          block={block}
+          fullWidth={fullWidth}
           type={type}
           size={size}
           href={href}

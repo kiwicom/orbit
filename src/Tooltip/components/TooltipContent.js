@@ -182,16 +182,17 @@ const TooltipContent = ({
   onCloseMobile,
   onEnter,
   preferredPosition,
+  preferredAlign,
   containerRef,
 }: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
   const tooltip = useRef(null);
   const content = useRef(null);
-  const [positions, aligns] = useMemo(() => sortPositionsAndAligns(preferredPosition, theme), [
-    preferredPosition,
-    theme,
-  ]);
+  const [positions, aligns] = useMemo(
+    () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
+    [preferredAlign, preferredPosition, theme],
+  );
   const dimensions = useDimensions({ containerRef, tooltip, content }, children);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,

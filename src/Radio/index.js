@@ -7,6 +7,7 @@ import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
+import cloneWithTooltip from "../utils/cloneWithTooltip";
 
 import type { Props } from "./index";
 
@@ -168,6 +169,7 @@ const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
     readOnly,
     tabIndex,
     dataTest,
+    tooltip,
   } = props;
   return (
     <Label disabled={disabled} hasError={hasError} checked={checked}>
@@ -185,9 +187,12 @@ const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
         readOnly={readOnly}
         hasError={hasError}
       />
-      <IconContainer>
-        <Glyph disabled={disabled} />
-      </IconContainer>
+      {cloneWithTooltip(
+        tooltip,
+        <IconContainer>
+          <Glyph disabled={disabled} />
+        </IconContainer>,
+      )}
       {(label || info) && (
         <TextContainer>
           {label && <LabelText>{label}</LabelText>}

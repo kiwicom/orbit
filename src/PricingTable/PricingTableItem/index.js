@@ -90,7 +90,7 @@ const StyledBadgeWrapperContent = styled.div`
   }
 
   ${media.desktop(css`
-    bottom: calc(100% + 11px);
+    bottom: calc(100% + 5px);
   `)}
 `;
 

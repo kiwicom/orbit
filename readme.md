@@ -30,7 +30,15 @@ npm install @kiwicom/orbit-components
 yarn add @kiwicom/orbit-components
 ```
 
-Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
+You need to also install [styled-components](https://github.com/styled-components/styled-components/) >=`^5.0.0` and [react, react-dom & react-is](https://github.com/facebook/react/) >= `16.8.0`.
+
+```bash
+// with npm
+npm install styled-components@^5.0.0 react@^16.8 react-dom@^16.8 react-is@^16.8
+
+// with yarn
+yarn add styled-components@^5.0.0 react@^16.8 react-dom@^16.8 react-is@^16.8
+```
 
 ## Usage
 

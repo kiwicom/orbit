@@ -11,6 +11,7 @@ import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -131,8 +132,7 @@ const StyledSelect = styled(
   }
 
   &:focus {
-    box-shadow: inset 0 0 0
-      ${({ theme }) => `${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
+    ${formElementFocus}
   }
 
   &:disabled {

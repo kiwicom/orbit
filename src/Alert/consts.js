@@ -11,6 +11,7 @@ export const TOKENS = {
   colorIconAlert: "colorIconAlert",
   colorTextAlert: "colorTextAlert",
   colorTextLinkAlertHover: "colorTextLinkAlertHover",
+  colorTextLinkAlertFocus: "colorTextLinkAlertFocus",
   colorBorderAlert: "colorBorderAlert",
 };
 

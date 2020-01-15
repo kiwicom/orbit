@@ -14,6 +14,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
+import formElementFocus from "./helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -243,9 +244,7 @@ export const Input = styled(
   &:focus {
     outline: none;
     & ~ ${FakeInput} {
-      box-shadow: inset 0 0 0
-        ${({ theme }) =>
-          `${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
+      ${formElementFocus}
     }
   }
 

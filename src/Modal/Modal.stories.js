@@ -76,6 +76,7 @@ storiesOf("Modal", module)
               OUTBOUND
             </Text>
             <Tile
+              expandable
               title={
                 <Stack direction="row" align="center" justify="between" spacing="condensed">
                   <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />

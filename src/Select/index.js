@@ -11,6 +11,7 @@ import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -34,7 +35,6 @@ Label.defaultProps = {
 };
 
 const StyledSelect = styled(
-  // $FlowExpected
   React.forwardRef(
     (
       {
@@ -132,8 +132,7 @@ const StyledSelect = styled(
   }
 
   &:focus {
-    box-shadow: inset 0 0 0
-      ${({ theme }) => `${theme.orbit.borderWidthInputFocus} ${theme.orbit.borderColorInputFocus}`};
+    ${formElementFocus}
   }
 
   &:disabled {

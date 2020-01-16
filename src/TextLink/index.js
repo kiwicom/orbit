@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
@@ -11,6 +12,15 @@ const getColor = ({ theme, type }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
+  };
+
+  return tokens[type];
+};
+
+const getFocusColor = ({ theme, type }) => {
+  const tokens = {
+    [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 10),
+    [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
   };
 
   return tokens[type];
@@ -71,7 +81,7 @@ export const getLinkStyle = ({
       };
 `;
 
-export const StyledTextLink = styled(({ theme, type, component: Component, ...props }) => (
+export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...props }) => (
   <Component {...props}>{props.children}</Component>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -90,8 +100,19 @@ export const StyledTextLink = styled(({ theme, type, component: Component, ...pr
         : theme.orbit.colorTextLinkPrimaryHover};
   }
   }
-  &:focus {
-    outline-width: 3px;
+  :focus {
+    outline: none;
+    background: ${getFocusColor};
+    box-shadow: 0px 0px 0px 4px ${getFocusColor};
+  }
+  :focus:not(:focus-visible) {
+    background: ${getFocusColor};
+    box-shadow: 0px 0px 0px 4px ${getFocusColor}
+  }
+  :-moz-focusring,
+  :focus-visible {
+    background: ${getFocusColor};
+    box-shadow: 0px 0px 0px 4px ${getFocusColor};
   }
 `;
 
@@ -113,7 +134,7 @@ const TextLink = ({
   onClick,
   dataTest,
   tabIndex,
-  component = DefaultComponent,
+  asComponent = DefaultComponent,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -138,7 +159,7 @@ const TextLink = ({
       data-test={dataTest}
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
-      component={component}
+      asComponent={asComponent}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

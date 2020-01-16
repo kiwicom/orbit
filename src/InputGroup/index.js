@@ -11,6 +11,7 @@ import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -29,13 +30,11 @@ const getToken = name => ({ theme, size }) => {
   return tokens[name][size];
 };
 
-const getFakeGroupMarginTop = ({ label, theme }) => {
-  if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
-};
-
-const FakeGroup = styled(({ children, className }) => <div className={className}>{children}</div>)`
+const FakeGroup = styled(({ children, className }) => (
+  <span className={className}>{children}</span>
+))`
   width: 100%;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -50,16 +49,11 @@ const FakeGroup = styled(({ children, className }) => <div className={className}
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
       theme.orbit.borderColorInputError
     }`}; // Error state
-  box-shadow: ${({ theme, active }) =>
-    active &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInputFocus} ${
-      theme.orbit.borderColorInputFocus
-    }`}; // Active state
+  ${({ active }) => active && formElementFocus}; // Active state
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: ${getFakeGroupMarginTop};
 
   &:hover {
     box-shadow: inset 0 0 0
@@ -144,7 +138,7 @@ const StyledInputGroup = styled(
       z-index: 2;
     }
 
-    &:last-child {
+    &:last-of-type {
       ${InputContainer}:after, ${SelectContainer}:after {
         content: none;
       }
@@ -284,9 +278,9 @@ const InputGroup = ({
                 label: undefined,
                 help: undefined,
                 error: undefined,
-                onChange: handleChange,
-                onBlur: handleBlur,
-                onFocus: handleFocus,
+                onChange: item.props.onChange != null ? item.props.onChange : handleChange,
+                onBlur: item.props.onBlur != null ? item.props.onChange : handleBlur,
+                onFocus: item.props.onFocus != null ? item.props.onFocus : handleFocus,
               })}
             </StyledChild>
           );

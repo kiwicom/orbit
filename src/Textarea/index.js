@@ -9,6 +9,7 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import formElementFocus from "../InputField/helpers/formElementFocus";
 
 import type { Props } from "./index";
 
@@ -100,8 +101,7 @@ const StyledTextArea = styled.textarea`
   }
 
   &:focus {
-    box-shadow: ${({ theme, disabled }) =>
-      !disabled && `inset 0 0 0 2px ${theme.orbit.borderColorInputFocus}`};
+    ${formElementFocus}
     outline: none;
   }
 `;

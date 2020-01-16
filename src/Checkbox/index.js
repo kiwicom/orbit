@@ -1,6 +1,7 @@
 // @flow
 import React, { useCallback } from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
@@ -8,6 +9,7 @@ import Check from "../icons/Check";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
+import cloneWithTooltip from "../utils/cloneWithTooltip";
 
 import type { Props } from "./index";
 
@@ -110,8 +112,16 @@ const Input = styled.input`
   }
 
   &:focus + ${IconContainer} {
-    border: ${({ theme }) =>
-      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+    border: ${({ theme, error }) =>
+      `1px ${theme.orbit.borderStyleInput} ${
+        error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+      }`};
+    box-shadow: 0px 0px 0px 3px
+      ${({ theme, error }) =>
+        convertHexToRgba(
+          error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+          15,
+        )};
   }
 
   &:active + ${IconContainer} {
@@ -148,6 +158,7 @@ export const Label = styled(({ className, children, dataTest }) => (
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       !disabled && theme.orbit.borderColorCheckboxRadioHover};
+    box-shadow: none;
   }
 `;
 
@@ -168,6 +179,7 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
     info,
     readOnly,
     tabIndex,
+    tooltip,
   } = props;
 
   const preventOnClick = useCallback(ev => {
@@ -187,10 +199,14 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
         onChange={onChange}
         ref={ref}
         readOnly={readOnly}
+        error={hasError}
       />
-      <IconContainer onClick={readOnly ? preventOnClick : null}>
-        <Check />
-      </IconContainer>
+      {cloneWithTooltip(
+        tooltip,
+        <IconContainer onClick={readOnly ? preventOnClick : null}>
+          <Check />
+        </IconContainer>,
+      )}
       {(label || info) && (
         <TextContainer>
           {label && <LabelText>{label}</LabelText>}

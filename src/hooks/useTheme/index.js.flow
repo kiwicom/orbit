@@ -1,0 +1,6 @@
+// @flow
+import type { Theme } from "../../defaultTheme";
+
+export type UseTheme = () => Theme;
+
+declare export default UseTheme;

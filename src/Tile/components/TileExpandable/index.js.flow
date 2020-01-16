@@ -1,0 +1,17 @@
+// @flow
+import type { TileOnClick } from "../../index";
+import type { Globals } from "../../../common/common.js.flow";
+
+export type Props = {|
+  ...Globals,
+  initialExpanded: boolean,
+  noPadding: boolean,
+  children?: React$Node,
+  onClick?: TileOnClick,
+  title?: React$Node,
+  description?: React$Node,
+  header?: React$Node,
+  icon?: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

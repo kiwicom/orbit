@@ -47,10 +47,10 @@ IconContainer.defaultProps = {
 export const StyledButtonLink = styled(
   ({
     onlyIcon,
-    component,
+    asComponent,
     circled,
     external,
-    block,
+    fullWidth,
     type,
     icon,
     iconLeft,
@@ -70,8 +70,8 @@ export const StyledButtonLink = styled(
     title,
     ...props
   }) => {
-    const isButtonWithHref = component === "button" && props.href;
-    const Component = isButtonWithHref ? "a" : component;
+    const isButtonWithHref = asComponent === "button" && props.href;
+    const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
     return (
       <Component
@@ -94,11 +94,11 @@ export const StyledButtonLink = styled(
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: ${({ block, width, onlyIcon }) =>
-    block
+  width: ${({ fullWidth, width, onlyIcon }) =>
+    fullWidth
       ? "100%"
       : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
-  flex: ${({ block }) => (block ? "1 1 auto" : "0 0 auto")};
+  flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};
   max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};
   background: ${getTypeToken(TOKENS.backgroundButton)};
@@ -163,7 +163,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
     external,
     children,
-    component = "button",
+    asComponent = "button",
     href,
     size = SIZES.NORMAL,
     icon,
@@ -182,7 +182,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
     dataTest,
     tabIndex,
     title,
-    block,
+    fullWidth,
     className,
   } = props;
 
@@ -199,7 +199,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   return (
     <StyledButtonLink
       onClick={onClick}
-      component={component}
+      asComponent={asComponent}
       size={size}
       onlyIcon={onlyIcon}
       sizeIcon={sizeIcon}
@@ -214,7 +214,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
       className={className}
       role={role}
       disabled={disabled}
-      block={block}
+      fullWidth={fullWidth}
       circled={circled}
       submit={submit}
       transparent={transparent}

@@ -182,16 +182,17 @@ const TooltipContent = ({
   onCloseMobile,
   onEnter,
   preferredPosition,
+  preferredAlign,
   containerRef,
 }: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
   const tooltip = useRef(null);
   const content = useRef(null);
-  const [positions, aligns] = useMemo(() => sortPositionsAndAligns(preferredPosition, theme), [
-    preferredPosition,
-    theme,
-  ]);
+  const [positions, aligns] = useMemo(
+    () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
+    [preferredAlign, preferredPosition, theme],
+  );
   const dimensions = useDimensions({ containerRef, tooltip, content }, children);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
@@ -212,7 +213,7 @@ const TooltipContent = ({
     [onCloseMobile],
   );
   return (
-    <StyledTooltip data-test={dataTest}>
+    <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
       <StyledTooltipOverlay shownMobile={shownMobile} ref={overlay} onClick={handleClickOutside} />
       <StyledTooltipWrapper
         shown={shown && position && align}
@@ -230,7 +231,6 @@ const TooltipContent = ({
         contentHeight={dimensions.contentHeight}
         role="tooltip"
         aria-hidden={!shown && !shownMobile}
-        id={tooltipId}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
       >

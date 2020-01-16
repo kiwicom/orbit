@@ -38,11 +38,12 @@ export type Size = {|
 
 export type Props = {|
   ...Globals,
-  +children: React$Node,
+  +children?: React$Node,
   +content: React$Node,
   +size?: Sizes,
   +stopPropagation?: boolean,
   +preferredPosition?: Positions,
+  +preferredAlign?: Aligns,
   +enabled?: boolean,
   +tabIndex?: string,
   +removeUnderlinedText?: boolean,

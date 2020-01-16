@@ -1,11 +1,13 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import { rtlSpacing, left, right } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
 import { SIZES, STATES } from "./consts";
+import KEY_CODE_MAP from "../common/keyMaps";
 
 import type { Props } from "./index";
 
@@ -71,7 +73,12 @@ export const StyledTag = styled.div`
   }
 
   &:focus {
-    box-shadow: ${({ theme }) => `inset 0 0 0 2px ${theme.orbit.borderColorTagFocus}`};
+    box-shadow: ${({ theme, selected }) =>
+      `0 0 0 3px ${
+        selected
+          ? convertHexToRgba(theme.orbit.paletteInkLighter, 100)
+          : theme.orbit.paletteCloudNormalHover
+      }`};
     outline: 0;
   }
 `;
@@ -100,7 +107,7 @@ const CloseContainer = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLighter};
   cursor: pointer;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  
+
   &:hover {
     color: ${({ theme }) => theme.orbit.paletteInkLighterHover};
   }
@@ -119,11 +126,20 @@ const StyledClose = styled.div`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteCloudNormalActive};
+    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteInkLighter};
   }
 `;
 StyledClose.defaultProps = {
   theme: defaultTheme,
+};
+
+const buttonClickEmulation = (ev, callback) => {
+  if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
+    ev.preventDefault();
+    if (callback) callback();
+  } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+    if (callback) callback();
+  }
 };
 
 const Tag = (props: Props) => {
@@ -137,6 +153,9 @@ const Tag = (props: Props) => {
       removable={!!onRemove}
       selected={selected}
       icon={!!icon}
+      tabIndex="0"
+      role="button"
+      onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >
       {icon && <IconContainer>{icon}</IconContainer>}
       {children}
@@ -149,7 +168,14 @@ const Tag = (props: Props) => {
             }
           }}
         >
-          <StyledClose tabIndex="0" role="button">
+          <StyledClose
+            tabIndex="0"
+            role="button"
+            onKeyDown={ev => {
+              ev.stopPropagation();
+              buttonClickEmulation(ev, onRemove);
+            }}
+          >
             <CloseCircle size="small" />
           </StyledClose>
         </CloseContainer>

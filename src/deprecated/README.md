@@ -1,0 +1,4 @@
+### Deprecated components
+
+- Card
+- DestinatinonCard

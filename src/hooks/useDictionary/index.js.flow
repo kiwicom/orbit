@@ -1,0 +1,7 @@
+// @flow
+
+import type { Translations } from "../../Dictionary";
+
+export type UseDictionary = () => Translations;
+
+declare export default UseDictionary;

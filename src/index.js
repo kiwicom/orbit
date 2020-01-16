@@ -8,6 +8,7 @@ export { default as Alert } from "./Alert";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
+export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
@@ -18,15 +19,19 @@ export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as DestinationHeader } from "./DestinationHeader";
+export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
+export { default as PictureCard } from "./PictureCard";
 
 // Card
 export { default as Card } from "./Card";
-export { default as CardHeader } from "./Card/CardHeader";
 export { default as CardSection } from "./Card/CardSection";
+export { default as DeprecatedCard } from "./deprecated/Card";
+export { default as DepreacatedCardHeader } from "./deprecated/Card/CardHeader";
+export { default as DeprecatedCardSection } from "./deprecated/Card/CardSection";
 export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
-export { default as DestinationCard } from "./DestinationCard";
+export { default as DestinationCard } from "./deprecated/DestinationCard";
 
 // Modal
 export { default as Portal } from "./Portal";
@@ -79,6 +84,7 @@ export { default as TextLink } from "./TextLink";
 export { default as Pagination } from "./Pagination";
 export { default as Radio } from "./Radio";
 export { default as RatingStars } from "./RatingStars";
+export { default as Seat } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";

@@ -1,11 +1,13 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
+import cloneWithTooltip from "../utils/cloneWithTooltip";
 
 import type { Props } from "./index";
 
@@ -104,8 +106,16 @@ const Input = styled.input`
 
   &:focus + ${IconContainer} {
     outline: 0;
-    border: ${({ theme }) =>
-      `2px ${theme.orbit.borderStyleInput} ${theme.orbit.borderColorCheckboxRadioFocus}`};
+    border: ${({ theme, hasError }) =>
+      `1px ${theme.orbit.borderStyleInput} ${
+        hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+      }`};
+    box-shadow: 0px 0px 0px 3px
+      ${({ theme, hasError }) =>
+        convertHexToRgba(
+          hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+          15,
+        )};
   }
 `;
 
@@ -159,6 +169,7 @@ const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
     readOnly,
     tabIndex,
     dataTest,
+    tooltip,
   } = props;
   return (
     <Label disabled={disabled} hasError={hasError} checked={checked}>
@@ -174,10 +185,14 @@ const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
         tabIndex={tabIndex}
         ref={ref}
         readOnly={readOnly}
+        hasError={hasError}
       />
-      <IconContainer>
-        <Glyph disabled={disabled} />
-      </IconContainer>
+      {cloneWithTooltip(
+        tooltip,
+        <IconContainer>
+          <Glyph disabled={disabled} />
+        </IconContainer>,
+      )}
       {(label || info) && (
         <TextContainer>
           {label && <LabelText>{label}</LabelText>}

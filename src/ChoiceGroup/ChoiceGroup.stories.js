@@ -54,7 +54,7 @@ storiesOf("ChoiceGroup", module)
           onChange={action("onChange")}
           onOnlySelection={action("onOnlySelection")}
         >
-          <Checkbox label="Reason one" value="one" />
+          <Checkbox label="Reason one" value="one" disabled />
           <Checkbox label="Reason two" value="two" />
           <Checkbox label="Reason three" value="three" />
         </ChoiceGroup>

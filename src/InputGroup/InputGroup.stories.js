@@ -103,51 +103,78 @@ storiesOf("InputGroup", module)
       info: "Some description about this type of InputGroup in general.",
     },
   )
-  .add(
-    "Error",
-    () => {
-      const label = text("Label", "Error");
-      const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
-      const error = text("Error", "Something went wrong on day field");
-      const help = text("Help", undefined);
+  .add("Error", () => {
+    const label = text("Label", "Error");
+    const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
+    const error = text("Error", "Something went wrong on day field");
+    const help = text("Help", undefined);
 
-      const selectOptions = [
-        { value: "January", label: "January" },
-        { value: "February", label: "February" },
-        { value: "March", label: "March" },
-        { value: "April", label: "April" },
-        { value: "May", label: "May" },
-        { value: "June", label: "June" },
-        { value: "July", label: "July" },
-        { value: "August", label: "August" },
-        { value: "September", label: "September" },
-        { value: "October", label: "October" },
-        { value: "November", label: "November" },
-        { value: "December", label: "December" },
-      ];
-      const selectValue = select(
-        "Select Value",
-        [null].concat(...selectOptions.map(opt => opt.value)),
-      );
+    const selectOptions = [
+      { value: "January", label: "January" },
+      { value: "February", label: "February" },
+      { value: "March", label: "March" },
+      { value: "April", label: "April" },
+      { value: "May", label: "May" },
+      { value: "June", label: "June" },
+      { value: "July", label: "July" },
+      { value: "August", label: "August" },
+      { value: "September", label: "September" },
+      { value: "October", label: "October" },
+      { value: "November", label: "November" },
+      { value: "December", label: "December" },
+    ];
+    const selectValue = select(
+      "Select Value",
+      [null].concat(...selectOptions.map(opt => opt.value)),
+    );
+
+    return (
+      <InputGroup
+        label={label}
+        flex={flex}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+      >
+        <InputField placeholder="DD" error={error} help={help} />
+        <Select
+          options={selectOptions}
+          value={selectValue}
+          placeholder="Month"
+          error="Something went wrong on month field"
+          help={help}
+        />
+        <InputField placeholder="YYYY" error="Something went wrong on year field" help={help} />
+      </InputGroup>
+    );
+  })
+  .add(
+    "onChange behaviour",
+    () => {
+      const inputValue = text("Input Value", undefined);
 
       return (
-        <InputGroup
-          label={label}
-          flex={flex}
-          onChange={action("onChange")}
-          onFocus={action("onFocus")}
-          onBlur={action("onBlur")}
-        >
-          <InputField placeholder="DD" error={error} help={help} />
-          <Select
-            options={selectOptions}
-            value={selectValue}
-            placeholder="Month"
-            error="Something went wrong on month field"
-            help={help}
-          />
-          <InputField placeholder="YYYY" error="Something went wrong on year field" help={help} />
-        </InputGroup>
+        <div>
+          <InputGroup label="Change in group" onChange={action("onChange a+b")}>
+            <InputField placeholder="a" maxLength={11} value={inputValue} />
+            <InputField placeholder="b" maxLength={11} value={inputValue} />
+          </InputGroup>
+
+          <InputGroup label="Change in inner inputs">
+            <InputField
+              placeholder="c"
+              maxLength={11}
+              value={inputValue}
+              onChange={action("onChange c")}
+            />
+            <InputField
+              placeholder="d"
+              maxLength={11}
+              value={inputValue}
+              onChange={action("onChange d")}
+            />
+          </InputGroup>
+        </div>
       );
     },
     {

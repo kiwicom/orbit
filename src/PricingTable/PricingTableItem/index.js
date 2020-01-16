@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import Stack from "../../Stack";
 import Text from "../../Text";
 import Radio from "../../Radio";
-import Badge from "../../Badge";
+import Badge, { StyledBadge } from "../../Badge";
 import media from "../../utils/mediaQuery";
 import type { Props } from "./index.js.flow";
 import STATES from "./consts";
@@ -24,6 +24,7 @@ const getBoxShadow = state => ({ theme, active }) => {
 
 const StyledPricingTableItem = styled.div`
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   width: 100%;
   max-width: 33%;
@@ -59,15 +60,41 @@ StyledPricingTableItem.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledBadge = styled.div`
+const StyledBadgeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   position: absolute;
-  top: -${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
-  left: 50%;
-  transform: translate(-50%, 3px);
-  z-index: 10; /* TODO: change for z-index framework */
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
 `;
 
-StyledBadge.defaultProps = {
+const StyledBadgeWrapperContent = styled.div`
+  /*
+    This is a bit ugly and unnecessarily complex,
+    but due how IE works with flex and absolute positioning
+    it has to be like this.
+  */
+  position: absolute;
+  bottom: calc(100% + 3px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  ${StyledBadge} {
+    align-self: center;
+    max-width: 100%;
+    word-break: break-all;
+  }
+
+  ${media.desktop(css`
+    bottom: calc(100% + ${({ hasIcon }) => (hasIcon ? "11px" : "5px")});
+  `)}
+`;
+
+StyledBadgeWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -99,12 +126,14 @@ const PricingTableItem = ({
       basis={basis}
       featureIcon={!!featureIcon}
       active={active}
-      dataTest={dataTest}
+      data-test={dataTest}
     >
       {badge && (
-        <StyledBadge>
-          {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
-        </StyledBadge>
+        <StyledBadgeWrapper>
+          <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
+            {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
+          </StyledBadgeWrapperContent>
+        </StyledBadgeWrapper>
       )}
       <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
         {featureIcon && (

@@ -1,5 +1,7 @@
 # Unreleased
 
+# 1.5.0
+
 - Fixed import of `BreadcrumbsItem`
 
 # 1.4.0

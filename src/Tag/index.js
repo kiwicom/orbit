@@ -73,12 +73,8 @@ export const StyledTag = styled.div`
   }
 
   &:focus {
-    box-shadow: ${({ theme, selected }) =>
-      `0 0 0 3px ${
-        selected
-          ? convertHexToRgba(theme.orbit.paletteInkLighter, 100)
-          : theme.orbit.paletteCloudNormalHover
-      }`};
+    background: ${getBackgroundColor(STATES.HOVER)};
+    box-shadow: none;
     outline: 0;
   }
 `;

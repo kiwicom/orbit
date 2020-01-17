@@ -18,7 +18,6 @@ import Button from "../../Button";
 import Text from "../../Text";
 import ChevronLeft from "../../icons/ChevronLeft";
 import Card from "../../Card";
-import CardHeader from "../../Card/CardHeader";
 import CountryFlag from "../../CountryFlag";
 import Airplane from "../../icons/Airplane";
 import TextLink from "../../TextLink";
@@ -363,14 +362,11 @@ storiesOf("FormErrors Kitchensink", module)
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
-              <Card>
-                <CardHeader title="Cancellation" icon={<Airplane />} />
-              </Card>
+              <Card title="Cancellation" icon={<Airplane />} />
               <Text size="small" weight="bold">
                 Contact information
               </Text>
-              <InputField help={error} label="E-mail" placeholder="Your email" />
-              <InputField error={error} label="E-mail" placeholder="Your email" />
+              <InputField label="E-mail" placeholder="Your email" />
               <InputGroup
                 flex={["0 0 120px", "1 1 100%"]}
                 onChange={action("onChange")}
@@ -380,6 +376,7 @@ storiesOf("FormErrors Kitchensink", module)
                   options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
                   value={1}
                   prefix={<CountryFlag code="cz" />}
+                  error={error}
                 />
                 <InputField placeholder="111 222 333" />
               </InputGroup>

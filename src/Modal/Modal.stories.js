@@ -34,30 +34,67 @@ storiesOf("Modal", module)
   .add(
     "Sizes",
     () => {
-      const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-      const title = text("Title", "Orbit design system");
-      const description = text("Title", "I'm lovely description");
+      const regularBoxStyle = {
+        position: "relative",
+        width: 100,
+        height: 30,
+        backgroundColor: "#00FF00",
+      };
+      const absoluteBoxStyle = {
+        position: "absolute",
+        top: 5,
+        left: 5,
+        width: 100,
+        height: 500,
+        backgroundColor: "#FF0000",
+        zIndex: 1000,
+        marginBottom: 10,
+      };
 
-      const onClose = action("onClose");
-      const content = text(
-        "Content",
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-      );
       return (
-        <Modal onClose={onClose} size={size}>
-          <ModalHeader title={title}>{description}</ModalHeader>
-          <ModalSection>
-            <Text>{content}</Text>
+        <Modal
+          onClose={() => {}}
+          size="normal"
+          fixedFooter
+          dataTest="test"
+          isMobileFullPage={false}
+          preventOverlayClose={false}
+        >
+          <ModalHeader
+            title="Orbit design system"
+            description="Lorem ispum dolor sit amet"
+            suppressed={false}
+          />
+          <ModalSection suppressed={false}>
+            <Text>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+              <p>Blah blah</p>
+            </Text>
+            <div style={regularBoxStyle}>
+              <div style={absoluteBoxStyle} />
+            </div>
           </ModalSection>
-          <ModalSection>
-            <Text>{content}</Text>
-          </ModalSection>
-          <ModalSection>
-            <Text>{content}</Text>
-          </ModalSection>
-          <ModalSection>
-            <Text>{content}</Text>
-          </ModalSection>
+          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+            <Stack direction="row">
+              <Button type="secondary">Back</Button>
+              <ButtonLink type="secondary">Button</ButtonLink>
+            </Stack>
+            <Button fullWidth>Continue to Payment</Button>
+          </ModalFooter>
         </Modal>
       );
     },

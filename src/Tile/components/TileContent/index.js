@@ -7,8 +7,8 @@ import defaultTheme from "../../../defaultTheme";
 import type { Props } from ".";
 
 const getPadding = ({ noPadding, useMargins, theme }) => {
-  if (!noPadding) return null;
-  if (useMargins) {
+  if (noPadding) return null;
+  if (!useMargins) {
     return css`
       padding: ${theme.orbit.spaceMedium};
     `;

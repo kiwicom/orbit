@@ -20,6 +20,8 @@
     "react-hooks"
   ],
   "rules": {
+    "no-unused-expressions": "off",
+    "flowtype/no-unused-expressions": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "prettier/prettier": "error",
     "import/no-extraneous-dependencies": [
@@ -30,7 +32,8 @@
           "**/*.spec.js",
           "**/*.stories.js",
           "**/stories/**",
-          "/config/**"
+          "/config/**",
+          "Gulpfile.js"
         ]
       }
     ],

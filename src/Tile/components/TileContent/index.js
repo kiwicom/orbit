@@ -6,6 +6,18 @@ import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";
 
+const getPadding = ({ noPadding, useMargins, theme }) => {
+  if (!noPadding) return null;
+  if (useMargins) {
+    return css`
+      padding: ${theme.orbit.spaceMedium};
+    `;
+  }
+  return css`
+    padding: ${theme.orbit.spaceMedium} 0;
+    margin: 0 ${theme.orbit.spaceMedium};
+  `;
+};
 const StyledTileContent = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
@@ -14,17 +26,12 @@ const StyledTileContent = styled.div`
     css`
       cursor: pointer;
     `};
-  ${({ noPadding, theme }) =>
-    !noPadding &&
-    css`
-      padding: ${theme.orbit.spaceMedium} 0;
-      margin: 0 ${theme.orbit.spaceMedium};
-    `};
   ${({ withBorder, theme }) =>
     withBorder &&
     css`
       border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     `};
+  ${getPadding};
 `;
 
 StyledTileContent.defaultProps = {
@@ -32,13 +39,17 @@ StyledTileContent.defaultProps = {
 };
 
 const TileContent = forwardRef<Props, HTMLElement>(
-  ({ children, noPadding, withPointer = false, withBorder = false }: Props, ref) => {
+  (
+    { children, noPadding, withPointer = false, withBorder = false, useMargins = true }: Props,
+    ref,
+  ) => {
     return (
       <StyledTileContent
         noPadding={noPadding}
         ref={ref}
         withPointer={withPointer}
         withBorder={withBorder}
+        useMargins={useMargins}
       >
         {children}
       </StyledTileContent>

@@ -4,6 +4,7 @@ export type Props = {|
   noPadding: boolean,
   withPointer?: boolean,
   withBorder?: boolean,
+  useMargins?: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

@@ -4,3 +4,5 @@ update_configs:
     directory: '/'
     update_schedule: 'live'
     version_requirement_updates: 'increase_versions'
+    commit_message:
+      prefix: 'DEV'

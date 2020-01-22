@@ -12293,9 +12293,9 @@ surge-ignore@0.2.0:
   integrity sha1-Wn+KIKcRiM+edaLP6OsYLekNrzs=
 
 surge@^0.20.1:
-  version "0.20.5"
-  resolved "https://registry.yarnpkg.com/surge/-/surge-0.20.5.tgz#4ab16b83faffd5890379f9c594f5a373639c9f8f"
-  integrity sha512-iv7W7s1EjpXCJr/RjatFMozMjexiPQoD+S5OBrHRQBG/x6Hj7G9O3FzA63YM2z7qIgngc0X35QYSj5ONF/HHoA==
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/surge/-/surge-0.20.3.tgz#1612abc0e62a044837f0e73ea28ab7aafa1ffcd7"
+  integrity sha512-Cej7EeFhJoEt8LfHEbgsfUU532a4f4I4ubAW5CIfvIv6LR/o3c9M/F5tfIb0DadM4jFeMmJ4uCzuvUMBhgJ8eg==
   dependencies:
     cli-table3 "^0.5.1"
     fstream-ignore "^1.0.5"

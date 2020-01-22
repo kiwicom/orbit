@@ -26,7 +26,7 @@ storiesOf("TileGroup", module)
 
       const content = text("content", "Lorem ipsum dolor sit amet");
       return (
-        <TileGroup dataTest={dataTestP}>
+        <TileGroup dataTest={dataTest}>
           <Tile onClick={action("clicked")}>{content}</Tile>
           <Tile onClick={action("clicked")}>{content}</Tile>
           <Tile onClick={action("clicked")}>{content}</Tile>

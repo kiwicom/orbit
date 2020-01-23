@@ -117,7 +117,7 @@ class ModalSection extends React.PureComponent<Props> {
   }
 }
 
-const DecoratedComponent = withModalContext(ModalSection);
+const DecoratedComponent = withModalContext<Props>(ModalSection);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalSection";

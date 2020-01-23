@@ -1,5 +1,5 @@
 // @flow
-import React, { useEffect, useRef, useState } from "react";
+import * as React from "react";
 
 import Slide from "../../../utils/Slide/index";
 import randomID from "../../../utils/randomID/index";
@@ -21,9 +21,9 @@ const TileExpandable = ({
   icon,
   dataTest,
 }: Props) => {
-  const [expanded, setExpanded] = useState(initialExpanded);
-  const [contentHeight, setContentHeight] = useState(initialExpanded ? null : 0);
-  const node = useRef(null);
+  const [expanded, setExpanded] = React.useState(initialExpanded);
+  const [contentHeight, setContentHeight] = React.useState(initialExpanded ? null : 0);
+  const node = React.useRef<?HTMLDivElement>(null);
 
   const handleClick = event => {
     if (onClick) {
@@ -47,7 +47,7 @@ const TileExpandable = ({
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     const calculateHeight = () => {
       if (node && node.current) {
         const { height } = node.current.getBoundingClientRect();

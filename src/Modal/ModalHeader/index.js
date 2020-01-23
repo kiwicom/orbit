@@ -15,7 +15,7 @@ import type { Props } from "./index";
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
   margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
-  
+
   ${StyledHeading} {
     padding-${right}: ${({ theme }) => theme.orbit.spaceXLarge};
   }
@@ -207,7 +207,7 @@ class ModalHeader extends React.PureComponent<Props> {
     );
   }
 }
-const DecoratedComponent = withModalContext(ModalHeader);
+const DecoratedComponent = withModalContext<Props>(ModalHeader);
 
 // $FlowFixMe flow doesn't recognize displayName for functions
 DecoratedComponent.displayName = "ModalHeader";

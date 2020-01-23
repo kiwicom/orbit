@@ -1,4 +1,4 @@
-{
+module.exports = {
   "env": {
     "browser": true,
     "jest": true
@@ -19,6 +19,7 @@
     "jest",
     "react-hooks"
   ],
+  "reportUnusedDisableDirectives": true,
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "prettier/prettier": "error",
@@ -62,4 +63,4 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
-}
+};

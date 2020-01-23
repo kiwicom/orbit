@@ -100,6 +100,8 @@ const useMediaQuery: UseMediaQuery = () => {
       isLargeMobile: null,
       isMediumMobile: null,
     },
+    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+     * v0.115.0. To view the error, delete this comment and run Flow. */
     ...breakpointList.map(item => ({ [item.mapping]: item.matches })),
   );
 };

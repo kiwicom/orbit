@@ -73,7 +73,7 @@ const Tile = ({
         />
       )}
       {children && (
-        <TileContent noPadding={noPadding} withPointer withBorder={hasHeader}>
+        <TileContent noPadding={noPadding} withPointer withBorder={hasHeader} useMargins={false}>
           {children}
         </TileContent>
       )}

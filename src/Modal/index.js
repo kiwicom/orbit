@@ -605,15 +605,17 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             hasModalSection={hasModalSection}
             isMobileFullPage={isMobileFullPage}
           >
-            <CloseContainer
-              modalWidth={modalWidth}
-              size={size}
-              scrolled={scrolled}
-              fixedClose={fixedClose}
-              isMobileFullPage={isMobileFullPage}
-            >
-              {onClose && <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />}
-            </CloseContainer>
+            {onClose && (
+              <CloseContainer
+                modalWidth={modalWidth}
+                size={size}
+                scrolled={scrolled}
+                fixedClose={fixedClose}
+                isMobileFullPage={isMobileFullPage}
+              >
+                <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />
+              </CloseContainer>
+            )}
             <ModalContext.Provider
               value={{
                 setDimensions: this.setDimensions,
@@ -623,6 +625,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
                 manageFocus: this.manageFocus,
                 hasModalSection,
                 isMobileFullPage,
+                closable: !!onClose,
                 isInsideModal: true,
               }}
             >

@@ -12,6 +12,7 @@ export const ModalContext: ModalContextType = React.createContext({
   hasModalSection: false,
   isMobileFullPage: false,
   isInsideModal: false,
+  closable: false,
 });
 
 export const withModalContext: WithModalContextType = Component => props => (

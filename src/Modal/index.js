@@ -453,14 +453,27 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     scrollBegin: ?number,
     mobile?: boolean,
   ) => {
-    this.setState({
-      scrolled: target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0),
-      fixedClose: target.scrollTop >= fixCloseOffset,
-      fullyScrolled:
-        this.props.fixedFooter &&
-        // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
-        target.scrollTop >= target.scrollHeight - target.clientHeight - fullScrollOffset,
-    });
+    const content = this.modalContent.current;
+    if (content) {
+      const { height: contentHeight } = content.getBoundingClientRect();
+      /*
+        Only for desktop, we need to check if the scrollHeight of content is bigger than actual height
+        if so, we need to you use the contentHeight + padding as bottom scroll point,
+        otherwise actual scrollHeight of the target is enough.
+       */
+      const scrollHeight =
+        !mobile && target.scrollHeight > contentHeight + 80
+          ? contentHeight + 80
+          : target.scrollHeight;
+      this.setState({
+        scrolled: target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0),
+        fixedClose: target.scrollTop >= fixCloseOffset,
+        fullyScrolled:
+          this.props.fixedFooter &&
+          // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
+          target.scrollTop >= scrollHeight - target.clientHeight - fullScrollOffset,
+      });
+    }
   };
 
   getScrollTopPoint = (mobile?: boolean) => {

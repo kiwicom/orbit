@@ -191,54 +191,56 @@ storiesOf("TileGroup", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Tile
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" direction="row">
-              <Text>Mr. John Smith</Text>
-              <Text>20 kg</Text>
-            </Stack>
-          }
-          expandable
-        >
-          This is example of expanded content
-        </Tile>
-        <Tile
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" direction="row">
-              <Text>Mr. John Smith</Text>
-              <Text>20 kg</Text>
-            </Stack>
-          }
-          expandable
-        >
-          This is example of expanded content
-        </Tile>
-        <Tile
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" direction="row">
-              <Text>Mr. John Smith</Text>
-              <Text>20 kg</Text>
-            </Stack>
-          }
-          expandable
-        >
-          This is example of expanded content
-        </Tile>
-        <Tile
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" direction="row">
-              <Text>Mr. John Smith</Text>
-              <Text>20 kg</Text>
-            </Stack>
-          }
-          expandable
-        >
-          This is example of expanded content
-        </Tile>
+        <TileGroup>
+          <Tile
+            onClick={action("clicked")}
+            description={
+              <Stack justify="between" direction="row">
+                <Text>Mr. John Smith</Text>
+                <Text>20 kg</Text>
+              </Stack>
+            }
+            expandable
+          >
+            This is example of expanded content
+          </Tile>
+          <Tile
+            onClick={action("clicked")}
+            description={
+              <Stack justify="between" direction="row">
+                <Text>Mr. John Smith</Text>
+                <Text>20 kg</Text>
+              </Stack>
+            }
+            expandable
+          >
+            This is example of expanded content
+          </Tile>
+          <Tile
+            onClick={action("clicked")}
+            description={
+              <Stack justify="between" direction="row">
+                <Text>Mr. John Smith</Text>
+                <Text>20 kg</Text>
+              </Stack>
+            }
+            expandable
+          >
+            This is example of expanded content
+          </Tile>
+          <Tile
+            onClick={action("clicked")}
+            description={
+              <Stack justify="between" direction="row">
+                <Text>Mr. John Smith</Text>
+                <Text>20 kg</Text>
+              </Stack>
+            }
+            expandable
+          >
+            This is example of expanded content
+          </Tile>
+        </TileGroup>
       </RenderInRtl>
     ),
     {

@@ -30,6 +30,7 @@ export type Props = {|
   +error?: React$Node,
   +help?: React$Node,
   tabIndex?: string,
+  insideInputGroup?: boolean,
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,

@@ -37,7 +37,7 @@ storiesOf("FormErrors Kitchensink", module)
     "Error",
     () => {
       const label = text("Label", "Label");
-      const error = text("Label", "Something went wrong.");
+      const error = text("Error", "Something went wrong.");
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
       const prefix = text("Prefix", "$");
@@ -142,7 +142,7 @@ storiesOf("FormErrors Kitchensink", module)
     "Help",
     () => {
       const label = text("Label", "Label");
-      const help = text("Label", "Something is not quite right");
+      const help = text("Error", "Something is not quite right");
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
       const prefix = text("Prefix", "$");
@@ -247,7 +247,7 @@ storiesOf("FormErrors Kitchensink", module)
     "RTL error",
     () => {
       const label = text("Label", "Label");
-      const error = text("Label", "Something is not quite right");
+      const error = text("Error", "Something is not quite right");
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
       const prefix = text("Prefix", "$");
@@ -354,7 +354,7 @@ storiesOf("FormErrors Kitchensink", module)
     "Modal",
     () => {
       const label = text("Label", "Label");
-      const error = text("Label", "Something is not quite right");
+      const error = text("Error", "Something is not quite right");
       const showMore = boolean("required", true);
 
       return (

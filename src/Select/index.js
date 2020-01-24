@@ -50,13 +50,14 @@ const StyledSelect = styled(
         onFocus,
         onBlur,
         id,
+        insideInputGroup,
       },
       ref,
     ) => (
       <select
         id={id}
         data-test={dataTest}
-        data-state={getFieldDataState(error)}
+        data-state={insideInputGroup ? undefined : getFieldDataState(error)}
         value={value}
         className={className}
         onChange={onChange}
@@ -257,6 +258,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
     prefix,
     spaceAfter,
     customValueText,
+    insideInputGroup,
   }: Props = props;
   const filled = !(value == null || value === "");
 
@@ -315,6 +317,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           id={id}
           required={required}
           ref={ref}
+          insideInputGroup={insideInputGroup}
         >
           {placeholder && (
             <option label={placeholder} value="">

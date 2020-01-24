@@ -133,6 +133,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     allowedFileTypes,
     tabIndex,
     fileName,
+    insideInputGroup,
   } = props;
 
   const {
@@ -149,7 +150,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
         data-test={dataTest}
-        data-state={getFieldDataState(!!props.error)}
+        data-state={insideInputGroup ? undefined : getFieldDataState(!!props.error)}
         type="file"
         name={name}
         error={error}

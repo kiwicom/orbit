@@ -12,6 +12,7 @@ import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -91,8 +92,9 @@ StyledChild.defaultProps = {
 };
 
 const StyledInputGroup = styled(
-  ({ children, className, dataTest, role, ariaLabelledby, labelRef }) => (
+  ({ children, className, dataTest, role, ariaLabelledby, labelRef, dataState }) => (
     <div
+      date-state={dataState}
       ref={labelRef}
       className={className}
       data-test={dataTest}
@@ -239,6 +241,7 @@ const InputGroup = ({
       active={active}
       size={size}
       dataTest={dataTest}
+      dataState={getFieldDataState(error)}
       spaceAfter={spaceAfter}
       role="group"
       ariaLabelledby={label && inputID}
@@ -283,10 +286,11 @@ const InputGroup = ({
                 size,
                 label: undefined,
                 help: undefined,
-                error: undefined,
+                error: null,
                 onChange: item.props.onChange != null ? item.props.onChange : handleChange,
                 onBlur: item.props.onBlur != null ? item.props.onChange : handleBlur,
                 onFocus: item.props.onFocus != null ? item.props.onFocus : handleFocus,
+                insideInputGroup: true,
               })}
             </StyledChild>
           );

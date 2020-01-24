@@ -320,6 +320,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     spaceAfter,
     id,
     inputMode,
+    insideInputGroup,
   }: Props = props;
 
   const forID = React.useMemo(() => {
@@ -336,7 +337,6 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     handleFocus,
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
-
   return (
     <Field
       component={label ? "label" : "div"}
@@ -395,7 +395,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         )}
         <Input
           data-test={dataTest}
-          data-state={getFieldDataState(!!error)}
+          data-state={insideInputGroup ? undefined : getFieldDataState(!!error)}
           onChange={onChange}
           onFocus={handleFocus}
           onBlur={handleBlur}

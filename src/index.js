@@ -112,3 +112,6 @@ export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";
+
+// primitives
+export { default as BadgePrimitive } from "./primitives/BadgePrimitive";

@@ -4,7 +4,7 @@
 */
 
 import type { Globals } from "../common/common.js.flow";
-import type { Type } from "../Badge/index.js.flow";
+import type { Type } from "../primitives/BadgePrimitive/index.js.flow";
 
 export type Props = {|
   +children?: React$Node,

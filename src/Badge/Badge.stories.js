@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { text, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { TYPE_OPTIONS } from "./consts";
+import { TYPE_OPTIONS } from "../primitives/BadgePrimitive/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Badge from "./index";

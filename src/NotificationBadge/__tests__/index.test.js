@@ -18,7 +18,7 @@ describe("NotificationBadge", () => {
     </NotificationBadge>,
   );
 
-  const component = wrapped.find("Badge");
+  const component = wrapped.find("BadgePrimitive");
 
   it("should have passed props", () => {
     expect(component.prop("type")).toBe(type);

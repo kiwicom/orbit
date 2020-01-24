@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { text, select } from "@storybook/addon-knobs";
 
-import { TYPE_OPTIONS } from "../Badge/consts";
+import { TYPE_OPTIONS } from "../primitives/BadgePrimitive/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import * as Icons from "../icons/index";
 

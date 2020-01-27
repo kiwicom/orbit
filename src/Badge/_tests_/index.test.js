@@ -5,6 +5,7 @@ import { shallow } from "enzyme";
 
 import Badge from "../index";
 import Sightseeing from "../../icons/Sightseeing";
+import defaultTheme from "../../defaultTheme";
 
 describe("Badge", () => {
   const content = "badge";
@@ -20,8 +21,8 @@ describe("Badge", () => {
   );
 
   it("should have passed props", () => {
-    expect(component.prop("background")).toBe("#E5F7FF");
-    expect(component.prop("foregroundColor")).toBe("#0172CB");
+    expect(component.prop("background")).toBe(defaultTheme.orbit.backgroundBadgeInfo);
+    expect(component.prop("foregroundColor")).toBe(defaultTheme.orbit.colorTextBadgeInfo);
     expect(component.render().prop("data-test")).toBe(dataTest);
     expect(component.render().prop("aria-label")).toBe(ariaLabel);
     expect(component.prop("icon")).toBe(icon);

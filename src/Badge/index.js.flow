@@ -18,7 +18,6 @@ export type Type =
   | "criticalInverted"
   | "successInverted"
   | "warningInverted";
-
 export type Props = {|
   +children?: React$Node,
   +type?: Type,

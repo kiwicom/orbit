@@ -162,7 +162,7 @@ const PopoverContentWrapper = ({
   const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);
+  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), []);
 
   useEffect(() => {
     const timer = setTimeout(() => {

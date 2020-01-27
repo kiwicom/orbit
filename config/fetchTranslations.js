@@ -66,7 +66,7 @@ const flatten = (obj = {}, keyPrefix = "") =>
       await writeJSON(path.join(LOCALES_DATA, `${locale.code}.json`), flatten(translation.orbit));
     }
   } catch (error) {
-    console.error(error); // eslint-disable-line no-console
+    console.error(error);
     process.exit(1);
   }
 })();

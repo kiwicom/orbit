@@ -38,6 +38,7 @@ import typeof PricingTableItemType from "./PricingTable/PricingTableItem";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
+import typeof TileGroupType from "./TileGroup";
 import typeof TooltipType from "./Tooltip";
 import typeof TripSegmentType from "./TripSegment";
 import typeof TripSectorType from "./TripSector";
@@ -89,6 +90,7 @@ import typeof NavigationListType from "./NavigationList";
 import typeof NavigationListItemType from "./NavigationList/NavigationListItem";
 import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
+import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -187,6 +189,7 @@ declare export var PricingTable: PricingTableType;
 declare export var PricingTableItem: PricingTableItemType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
+declare export var TileGroup: TileGroupType;
 declare export var Tooltip: TooltipType;
 declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
@@ -202,3 +205,5 @@ declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
+
+declare export var BadgePrimitive: BadgePrimitiveType;

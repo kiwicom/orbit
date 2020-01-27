@@ -1,14 +1,13 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import BadgePrimitive from "../primitives/BadgePrimitive";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
-import { rtlSpacing } from "../utils/rtl";
+import useTheme from "../hooks/useTheme";
 
 import type { Props } from "./index";
 
-const getTypeToken = name => ({ theme, type }) => {
+const getTypeToken = ({ name, theme, type }) => {
   const tokens = {
     [TOKENS.background]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.backgroundBadgeNeutral,
@@ -40,69 +39,20 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
-  <div className={className} data-test={dataTest} aria-label={ariaLabel}>
-    {children}
-  </div>
-))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: inline-flex;
-  flex: 0 0 auto;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  min-height: ${({ theme }) => theme.orbit.heightBadge};
-  line-height: 14px;
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-  background-color: ${getTypeToken(TOKENS.background)};
-  color: ${getTypeToken(TOKENS.color)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
-  padding: ${({ theme }) => theme.orbit.paddingBadge};
-`;
-
-StyledBadge.defaultProps = {
-  theme: defaultTheme,
-};
-
-const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  display: flex;
-  flex-shrink: 0;
-  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
-
-  svg {
-    height: ${({ theme }) => theme.orbit.widthIconSmall};
-    width: ${({ theme }) => theme.orbit.heightIconSmall};
-  }
-`;
-
-IconContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledBadgeContent = styled.div`
-  padding: 5px 0;
-  line-height: 1;
-`;
-
-StyledBadgeContent.defaultProps = {
-  theme: defaultTheme,
-};
-
 const Badge = (props: Props) => {
+  const theme = useTheme();
   const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;
 
   return (
-    <StyledBadge type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
-      {icon && (
-        <IconContainer type={type} hasContent={!!children}>
-          {icon}
-        </IconContainer>
-      )}
-      <StyledBadgeContent>{children}</StyledBadgeContent>
-    </StyledBadge>
+    <BadgePrimitive
+      background={getTypeToken({ name: TOKENS.background, theme, type })}
+      foregroundColor={getTypeToken({ name: TOKENS.color, theme, type })}
+      icon={icon}
+      ariaLabel={ariaLabel}
+      dataTest={dataTest}
+    >
+      {children}
+    </BadgePrimitive>
   );
 };
 

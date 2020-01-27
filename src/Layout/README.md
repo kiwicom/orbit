@@ -31,12 +31,12 @@ LayoutColumn component gives us a possibility how to control all accessibility a
 
 Table below contains all types of the props available in the LayoutColumn component.
 
-| Name         | Type         | Default | Description                                                                                          |
-| :----------- | :----------- | :------ | :--------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node` |         | The children of the LayoutColumn.                                                                    |
-| element      | `string`     | `"div"` | The children of the LayoutColumn.                                                                    |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                                                                  |
-| hideOn       | `Devices[]`  |         | Array of devices - viewports to hide the children on. For more info check [Hide](../Hide) component. |
+| Name         | Type         | Default | Description                                                                                   |
+| :----------- | :----------- | :------ | :-------------------------------------------------------------------------------------------- |
+| **children** | `React.Node` |         | The children of the LayoutColumn.                                                             |
+| element      | `string`     | `"div"` | The children of the LayoutColumn.                                                             |
+| dataTest     | `string`     |         | Optional prop for testing purposes.                                                           |
+| hideOn       | `Devices[]`  |         | Array of devices - viewports to hide the children on. For more info check **Hide** component. |
 
 ## Layouts
 

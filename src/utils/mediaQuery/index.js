@@ -20,8 +20,12 @@ export const getBreakpointWidth: GetBreakpointWidth = (name, theme, pure) => {
 };
 
 const mediaQueries: MediaQueries = Object.keys(QUERIES).reduce(
+  /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+   * v0.115.0. To view the error, delete this comment and run Flow. */
   (o, name) => ({
     ...o,
+    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+     * v0.115.0. To view the error, delete this comment and run Flow. */
     [QUERIES[name]]: style =>
       css`
         @media ${({ theme }) => getBreakpointWidth(QUERIES[name], theme)} {

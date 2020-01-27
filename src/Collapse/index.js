@@ -46,6 +46,10 @@ const StyledCollapseLabel = styled.div`
   width: 100%;
   display: block;
   cursor: pointer;
+<<<<<<< HEAD
+=======
+  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall} 0;
+>>>>>>> references
 `;
 
 StyledCollapseLabel.defaultProps = {

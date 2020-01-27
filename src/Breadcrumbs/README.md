@@ -23,7 +23,7 @@ Table below contains all types of the props available in Breadcrumbs component.
 | dataTest     | `string`                   |         | Optional prop for testing purposes.                                                                                                              |
 | **children** | `React.Node`               |         | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).                                                                  |
 | onGoBack     | `event => void \| Promise` |         | Callback for handling back button action. If present the back button is visible                                                                  |
-| spaceAfter   | `enum`                     |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-comp onents/tree/master/src/common/getSpacingToken) |
+| spaceAfter   | `enum`                     |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 
 ## Functional specs
 

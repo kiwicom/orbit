@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/badge/
+  DOCUMENTATION: https://orbit.kiwi/primitives/badgePrimitive/
 */
 import { ReactComponentStyled } from "styled-components";
 

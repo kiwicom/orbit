@@ -28,7 +28,7 @@ Table below contains all types of the props available in TripSector component.
 
 ## Subcomponents
 
-There are three components you may use. [TripDate](#tripdate), [TripLayover](#triplayover) and [TripSegment](../TripSegment) also.
+There are three components you may use. [TripDate](#tripdate), [TripLayover](#triplayover) and **TripSegment**also.
 
 ### TripDate
 

@@ -9,7 +9,6 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
-import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
@@ -30,12 +29,13 @@ const StyledCollapse = styled.div`
   width: 100%;
   display: block;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
   :last-child,
   :only-child {
     border: 0;
     margin: 0;
   }
-  margin-bottom: ${getSpacingToken};
 `;
 
 StyledCollapse.defaultProps = {
@@ -46,7 +46,6 @@ const StyledCollapseLabel = styled.div`
   width: 100%;
   display: block;
   cursor: pointer;
-  padding: ${({ theme }) => theme.orbit.spaceSmall} 0;
 `;
 
 StyledCollapseLabel.defaultProps = {
@@ -54,7 +53,7 @@ StyledCollapseLabel.defaultProps = {
 };
 
 const StyledCollapseChildren = styled.div`
-  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
+  margin: ${({ theme }) => theme.orbit.spaceSmall} 0;
 `;
 
 StyledCollapseChildren.defaultProps = {
@@ -74,7 +73,6 @@ const Collapse = ({
   dataTest,
   onClick,
   actions,
-  spaceAfter,
 }: Props) => {
   const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
   const [expandedState, setExpandedState] = React.useState(
@@ -120,7 +118,7 @@ const Collapse = ({
   );
 
   return (
-    <StyledCollapse data-test={dataTest} spaceAfter={spaceAfter}>
+    <StyledCollapse data-test={dataTest}>
       <StyledCollapseLabel
         onClick={handleClick}
         role="button"

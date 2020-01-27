@@ -10,7 +10,6 @@ export type Props = {|
   actions?: React$Node,
   onClick?: (e: SyntheticEvent<HTMLDivElement>, state: boolean) => void | Promise<any>,
   ...Globals,
-  ...spaceAfter,
 |};
 
 declare export default React$ComponentType<Props>;

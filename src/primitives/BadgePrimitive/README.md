@@ -21,23 +21,7 @@ Table below contains all types of the props available in Badge component.
 | background      | `string`        |             | Background of a Badge. Can use gradients and images                  |
 | foregroundColor | `string`        |             | Foreground color, controling color of a text and icon.               |
 | children        | `React.Node`    |             | The content of the Badge.                                            |
-| children        | `React.Node`    |             | The content of the Badge.                                            |
 | dataTest        | `string`        |             | Optional prop for testing purposes.                                  |
 | icon            | `React.Node`    |             | The displayed icon on the left.                                      |
-| type            | [`enum`](#enum) | `"neutral"` | The color type of the Badge.                                         |
 | ariaLabel       | `string`        |             | Adds prop adds `aria-label` to an element, useful for screenreaders. |
 
-### enum
-
-| type                 |
-| :------------------- |
-| `"neutral"`          |
-| `"dark"`             |
-| `"info"`             |
-| `"success"`          |
-| `"warning"`          |
-| `"critical"`         |
-| `"infoInverted"`     |
-| `"criticalInverted"` |
-| `"successInverted"`  |
-| `"warningInverted"`  |

@@ -3,42 +3,9 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import { TYPE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
-
-const getTypeToken = name => ({ theme, type }) => {
-  const tokens = {
-    [TOKENS.background]: {
-      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.backgroundBadgeNeutral,
-      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundBadgeInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundBadgeSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundBadgeWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundBadgeCritical,
-      [TYPE_OPTIONS.DARK]: theme.orbit.backgroundBadgeDark,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.backgroundBadgeWhite,
-      [TYPE_OPTIONS.INFO_INVERTED]: theme.orbit.paletteBlueNormal,
-      [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteRedNormal,
-      [TYPE_OPTIONS.SUCCESS_INVERTED]: theme.orbit.paletteGreenNormal,
-      [TYPE_OPTIONS.WARNING_INVERTED]: theme.orbit.paletteOrangeNormal,
-    },
-    [TOKENS.color]: {
-      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.colorTextBadgeNeutral,
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextBadgeInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextBadgeSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextBadgeWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextBadgeCritical,
-      [TYPE_OPTIONS.DARK]: theme.orbit.colorTextBadgeDark,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextBadgeWhite,
-      [TYPE_OPTIONS.INFO_INVERTED]: theme.orbit.paletteWhite,
-      [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteWhite,
-      [TYPE_OPTIONS.SUCCESS_INVERTED]: theme.orbit.paletteWhite,
-      [TYPE_OPTIONS.WARNING_INVERTED]: theme.orbit.paletteWhite,
-    },
-  };
-  return tokens[name][type];
-};
 
 export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
   <div className={className} data-test={dataTest} aria-label={ariaLabel}>
@@ -55,8 +22,8 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel })
   line-height: 14px;
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-  background: ${({ background }) => background || getTypeToken(TOKENS.background)};
-  color: ${({ foregroundColor }) => foregroundColor || getTypeToken(TOKENS.color)};
+  background: ${({ background }) => background};
+  color: ${({ foregroundColor }) => foregroundColor};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
   padding: ${({ theme }) => theme.orbit.paddingBadge};
 `;
@@ -92,29 +59,16 @@ StyledBadgeContent.defaultProps = {
 };
 
 const BadgePrimitive = (props: Props) => {
-  const {
-    type = TYPE_OPTIONS.NEUTRAL,
-    icon,
-    children,
-    ariaLabel,
-    dataTest,
-    background,
-    foregroundColor,
-  } = props;
+  const { icon, children, ariaLabel, dataTest, background, foregroundColor } = props;
 
   return (
     <StyledBadge
-      type={type}
       background={background}
       foregroundColor={foregroundColor}
       dataTest={dataTest}
       ariaLabel={ariaLabel}
     >
-      {icon && (
-        <IconContainer type={type} hasContent={!!children}>
-          {icon}
-        </IconContainer>
-      )}
+      {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}
       <StyledBadgeContent>{children}</StyledBadgeContent>
     </StyledBadge>
   );

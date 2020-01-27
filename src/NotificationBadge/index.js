@@ -2,7 +2,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import BadgePrimitive, { StyledBadge } from "../primitives/BadgePrimitive";
+import Badge from "../Badge";
+import { StyledBadge } from "../primitives/BadgePrimitive";
 import defaultTheme from "../defaultTheme";
 
 import type { Props } from "./index";
@@ -23,9 +24,9 @@ const NotificationBadge = (props: Props) => {
 
   return (
     <StyledNotificationBadge>
-      <BadgePrimitive type={type} dataTest={dataTest} icon={icon} ariaLabel={ariaLabel}>
+      <Badge type={type} dataTest={dataTest} icon={icon} ariaLabel={ariaLabel}>
         {!icon && children}
-      </BadgePrimitive>
+      </Badge>
     </StyledNotificationBadge>
   );
 };

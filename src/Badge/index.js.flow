@@ -5,8 +5,19 @@
 import { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
-import type { Type } from "../primitives/BadgePrimitive";
 
+export type Type =
+  | "neutral"
+  | "dark"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white"
+  | "infoInverted"
+  | "criticalInverted"
+  | "successInverted"
+  | "warningInverted";
 export type Props = {|
   +children?: React$Node,
   +type?: Type,

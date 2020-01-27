@@ -90,6 +90,7 @@ import typeof NavigationListType from "./NavigationList";
 import typeof NavigationListItemType from "./NavigationList/NavigationListItem";
 import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
+import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -204,3 +205,5 @@ declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
+
+declare export var BadgePrimitive: BadgePrimitiveType;

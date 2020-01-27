@@ -7,7 +7,7 @@ import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";
 
-const StyledTileWrapper = styled.div`
+export const StyledTileWrapper = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;

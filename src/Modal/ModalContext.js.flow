@@ -10,11 +10,14 @@ export type ModalContextProps = {|
   +hasModalSection?: boolean,
   +isMobileFullPage?: boolean,
   +isInsideModal?: boolean,
+  +closable?: boolean,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;
 
-export type WithModalContextType = <Config: {}>(React.AbstractComponent<Config>) => React.AbstractComponent<Config>;
+export type WithModalContextType = <Config: {}>(
+  React.AbstractComponent<Config>,
+) => React.AbstractComponent<Config>;
 
 declare export var ModalContext: ModalContextType;
 

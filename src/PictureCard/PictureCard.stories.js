@@ -21,13 +21,17 @@ storiesOf("PictureCard", module)
   .add(
     "Default",
     () => {
+      const title = text("title", "Moscow");
+      const subTitle = text("title", "Prague");
+      const label = text("title", "Family fun");
+      const width = text("title", "328px");
       return (
         <PictureCard
-          subTitle="Prague"
-          title="Moscow"
-          label="Family Fun"
+          title={title}
+          subTitle={subTitle}
+          label={label}
           image={image}
-          width="328px"
+          width={width}
           onClick={action("onClick")}
         >
           from 2,563 Kč
@@ -43,15 +47,18 @@ storiesOf("PictureCard", module)
     "with Actions",
     () => {
       const tabIndex = text("TabIndex", "0");
-
+      const title = text("title", "Moscow");
+      const subTitle = text("title", "Prague");
+      const label = text("title", "Family fun");
+      const width = text("title", "328px");
       return (
         <PictureCard
-          subTitle="Prague"
-          title="Moscow"
+          title={title}
+          subTitle={subTitle}
           tabIndex={tabIndex}
-          label="Family Fun"
-          href="link"
-          width="400px"
+          label={label}
+          href="#"
+          width={width}
           actions={<Button type="secondary">Action</Button>}
           image={image}
           onClick={action("onClick")}

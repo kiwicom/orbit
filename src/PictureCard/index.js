@@ -132,12 +132,26 @@ StyledPictureCardContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...props }) => {
-  const Component = href ? "a" : "div";
-  return <Component {...props}>{props.children}</Component>;
-})`
+const StyledPictureCard = styled(
+  ({
+    height,
+    href,
+    theme,
+    external,
+    shadows,
+    contentHeight,
+    isPlain,
+    width,
+    isClickable,
+    ...props
+  }) => {
+    const Component = href ? "a" : "div";
+    return <Component {...props}>{props.children}</Component>;
+  },
+)`
   height: ${({ height }) => (height ? `${height}` : "100%")};
   width: ${({ width }) => (width ? `${width}` : `100%`)};
+  max-width: 100%;
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -150,11 +164,11 @@ const StyledPictureCard = styled(({ height, href, theme, external, shadows, ...p
   ${StyledLazyImage} {
     transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
   }
+  cursor: ${({ isClickable }) => isClickable && "pointer"};
 
   ${({ isPlain, theme, shadows }) =>
     !isPlain &&
     css`
-      cursor: pointer;
       &:hover,
       &:focus {
         outline: none;
@@ -231,6 +245,7 @@ const PictureCard = ({
 
   const { name, original, placeholder, code } = image;
   const isPlain = !(title || subTitle || children || actions);
+  const isClickable = href || onClick;
   const isFocus = isPlain ? undefined : 0;
 
   return (
@@ -241,12 +256,14 @@ const PictureCard = ({
       height={parseInt(height, 10) >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
       width={width}
       href={href}
-      external={external}
+      target={href && external ? "_blank" : undefined}
+      rel={href && external ? "noopener noreferrer" : undefined}
       shadows={onClick || href}
       tabIndex={href ? tabIndex : isFocus}
       role={isPlain ? undefined : "link"}
       contentHeight={contentHeight}
       isPlain={isPlain}
+      isClickable={isClickable}
       aria-labelledby={isPlain ? undefined : cardID}
     >
       <LazyImage

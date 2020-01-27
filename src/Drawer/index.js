@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -24,7 +24,7 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
     css`
       padding: ${padding(theme.orbit.spaceMedium)};
       ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)};
+        padding: ${padding(theme.orbit.spaceXLarge)}};
       `)};
     `
   );
@@ -111,7 +111,7 @@ const StyledDrawerHeader = styled.div`
     css`
       padding: 0 ${theme.orbit.spaceMedium};
       ${mq.largeMobile(css`
-        padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceXLarge}`)};
+        padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
       `)};
     `};
 `;
@@ -133,15 +133,15 @@ const Drawer = ({
   actions,
 }: Props) => {
   const theme = useTheme();
-  const overlayRef = useRef(null);
-  const timeoutLength = useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
+  const overlayRef = React.useRef(null);
+  const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,
   ]);
   const [overlayShown, setOverlayShown, setOverlayShownWithTimeout] = useStateWithTimeout<boolean>(
     shown,
     timeoutLength,
   );
-  const handleOnClose = useCallback(
+  const handleOnClose = React.useCallback(
     ev => {
       if (onClose && ev.target === overlayRef.current) {
         onClose();
@@ -149,7 +149,8 @@ const Drawer = ({
     },
     [onClose],
   );
-  useEffect(() => {
+
+  React.useEffect(() => {
     if (overlayShown !== shown) {
       if (shown) {
         setOverlayShown(true);

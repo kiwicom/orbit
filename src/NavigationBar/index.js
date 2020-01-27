@@ -1,21 +1,22 @@
 // @flow
-import React, { useState, useEffect, useCallback } from "react";
-import styled from "styled-components";
+import * as React from "react";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
-const NAVBAR_HEIGHT = 64;
+const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 
 const StyledNavigationBarContent = styled.div`
   display: block;
   width: 100%;
-  margin-right: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
 StyledNavigationBarContent.defaultProps = {
@@ -27,7 +28,7 @@ const StyledNavigationBar = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: ${NAVBAR_HEIGHT}px; // TODO: create token
+  height: ${NAVBAR_HEIGHT.MOBILE}px; // TODO: create token
   width: 100%;
   display: flex;
   align-items: center;
@@ -37,7 +38,11 @@ const StyledNavigationBar = styled.nav`
   box-sizing: border-box;
   z-index: 700;
   transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT}px`)}, 0);
+  transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT.MOBILE}px`)}, 0);
+  ${mq.tablet(css`
+    height: ${NAVBAR_HEIGHT.DESKTOP}px; // TODO: create token
+    transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT.DESKTOP}px`)}, 0);
+  `)};
 `;
 
 StyledNavigationBar.defaultProps = {
@@ -46,7 +51,7 @@ StyledNavigationBar.defaultProps = {
 
 const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props) => {
   const translate = useTranslate();
-  const resolveCallback = useCallback(
+  const resolveCallback = React.useCallback(
     state => {
       if (onHide && !state) onHide();
       if (onShow && state) onShow();
@@ -55,26 +60,33 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
   );
   const [shown, setShown] = useStateWithCallback<boolean>(true, resolveCallback);
 
-  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-  const handleNavigationBarPosition = useCallback(() => {
+  const [prevScrollPosition, setPrevScrollPosition] = React.useState(0);
+
+  const handleNavigationBarPosition = React.useCallback(() => {
     const currentScrollPosition =
       window.scrollY ||
       window.pageYOffset ||
       (document.documentElement && document.documentElement.scrollTop);
-    if (prevScrollPosition < currentScrollPosition && currentScrollPosition > NAVBAR_HEIGHT) {
+
+    if (
+      prevScrollPosition < currentScrollPosition &&
+      currentScrollPosition > NAVBAR_HEIGHT.DESKTOP
+    ) {
       setShown(false);
     } else {
       setShown(true);
     }
+
     setPrevScrollPosition(currentScrollPosition);
   }, [prevScrollPosition, setShown]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("scroll", handleNavigationBarPosition);
     return () => {
       window.removeEventListener("scroll", handleNavigationBarPosition);
     };
   });
+
   return (
     <StyledNavigationBar data-test={dataTest} shown={shown}>
       <StyledNavigationBarContent>{children}</StyledNavigationBarContent>

@@ -1,4 +1,6 @@
 ### Deprecated components
 
-- Card
+- Card (old API)
 - DestinatinonCard
+- DestinatinonHeader
+- Tile (old API)

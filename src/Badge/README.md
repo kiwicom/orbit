@@ -41,4 +41,4 @@ Table below contains all types of the props available in Badge component.
 
 ## Functional specs
 
-- If you want to use `circled` badge, please take a look on [NotificationBadge](../NotificationBadge)
+- If you want to use `circled` badge, please take a look on **NotificationBadge**.

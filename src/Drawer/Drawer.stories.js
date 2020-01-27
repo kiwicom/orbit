@@ -59,7 +59,7 @@ storiesOf("Drawer", module)
               <TextLink type="secondary">Cookies settings</TextLink>
             </LinkList>
           </Collapse>
-          <Collapse label="Company" spaceAfter="medium">
+          <Collapse label="Company">
             <LinkList indent>
               <TextLink type="secondary">About Kiwi.com</TextLink>
               <TextLink type="secondary">Careers</TextLink>
@@ -260,7 +260,7 @@ storiesOf("Drawer", module)
                 <TextLink type="secondary">Cookies settings</TextLink>
               </LinkList>
             </Collapse>
-            <Collapse label="Company" spaceAfter="medium">
+            <Collapse label="Company">
               <LinkList>
                 <TextLink type="secondary">About Kiwi.com</TextLink>
                 <TextLink type="secondary">Careers</TextLink>

@@ -2,10 +2,12 @@
 import styled, { css } from "styled-components";
 import * as React from "react";
 
-import mq from "../../utils/mediaQuery";
-import { CardElement } from "../helpers/mixins";
-import defaultTheme from "../../defaultTheme";
-import { getBorder, getBorderRadius, getBorderRadiusMobile } from "../helpers/borders";
+import mq from "../../../utils/mediaQuery";
+import { CardElement } from "../../helpers/mixins";
+import defaultTheme from "../../../defaultTheme";
+import { getBorder, getBorderRadius, getBorderRadiusMobile } from "../../helpers/borders";
+
+import type { Props } from ".";
 
 const topBorderRadius = css`
   border-top-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
@@ -79,19 +81,6 @@ const StyledCardWrapper = styled.div`
 StyledCardWrapper.defaultProps = {
   theme: defaultTheme,
 };
-
-type Props = {|
-  children: React.Node,
-  bottomBorder?: boolean,
-  roundedBottom?: boolean,
-  roundedTop?: boolean,
-  expanded?: boolean,
-  noPadding?: boolean,
-  dataTest?: string,
-  noBorderTop?: boolean,
-  expandable?: boolean,
-  initialExpanded?: boolean,
-|};
 
 const CardWrapper = ({
   children,

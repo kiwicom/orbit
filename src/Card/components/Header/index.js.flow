@@ -1,0 +1,14 @@
+// @flow
+export type Props = {|
+  description?: React$Node,
+  icon?: React$Node,
+  actions?: React$Node,
+  title?: React$Node,
+  isSection?: boolean,
+  dataA11ySection?: string,
+  expandable?: boolean,
+  expanded?: boolean,
+  header?: React$Node,
+|};
+
+declare export default React$ComponentType<Props>;

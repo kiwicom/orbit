@@ -2,15 +2,15 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import ChevronLeft from "../icons/ChevronLeft";
-import Heading, { StyledHeading, getHeadingToken } from "../Heading";
-import { TYPE_OPTIONS, TOKENS } from "../Heading/consts";
-import ButtonLink, { StyledButton } from "../Button";
+import ChevronLeft from "../../icons/ChevronLeft";
+import Heading, { StyledHeading, getHeadingToken } from "../../Heading";
+import { TYPE_OPTIONS, TOKENS } from "../../Heading/consts";
+import ButtonLink, { StyledButton } from "../../Button";
 import BASE_URL from "./consts";
-import defaultTheme from "../defaultTheme";
-import LazyImage from "../LazyImage";
-import mq from "../utils/mediaQuery";
-import useTranslate from "../hooks/useTranslate";
+import defaultTheme from "../../defaultTheme";
+import LazyImage from "../../LazyImage";
+import mq from "../../utils/mediaQuery";
+import useTranslate from "../../hooks/useTranslate";
 
 import type { Props } from "./index";
 

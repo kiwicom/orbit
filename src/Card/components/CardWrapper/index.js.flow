@@ -1,0 +1,15 @@
+// @flow
+export type Props = {|
+  children: React$Node,
+  bottomBorder?: boolean,
+  roundedBottom?: boolean,
+  roundedTop?: boolean,
+  expanded?: boolean,
+  noPadding?: boolean,
+  dataTest?: string,
+  noBorderTop?: boolean,
+  expandable?: boolean,
+  initialExpanded?: boolean,
+|};
+
+declare export default React$ComponentType<Props>;

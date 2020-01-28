@@ -29,7 +29,7 @@ Table below contains all types of the props available in Stack component.
 | direction    | [`enum`](#enum)            | `"row"`     | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)                                                                    |
 | element      | `string`                   | `"div"`     | The string used for the root node.                                                                                                              |
 | flex         | `boolean`                  | `false`     | If `true` or you specify some flex attribute, the Stack will use flex attributes.                                                               |
-| grow         | `boolean`                  | `false`     | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.                                                                |
+| grow         | `boolean`                  | `true`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.                                                                |
 | inline       | `boolean`                  | `false`     | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.                                                     |
 | justify      | [`enum`](#enum)            | `"start"`   | The `justify-content` of the Stack.                                                                                                             |
 | largeDesktop | [`Object`](#media-queries) |             | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries)                                             |
@@ -52,7 +52,7 @@ All this properties - objects have the some own properties and none is required.
 | align      | [`enum`](#enum)       | `"start"`   | The `align-items` and `align-content` of the Stack.                                                                                             |
 | basis      | `string`              | `auto`      | Specifies the basis value of `flex-basis`.                                                                                                      |
 | direction  | [`enum`](#enum)       | `"row"`     | The `flex-direction` of the Stack.                                                                                                              |
-| grow       | `boolean`             | `false`     | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.                                                                |
+| grow       | `boolean`             | `true`      | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.                                                                |
 | inline     | `boolean`             | `false`     | If `true`, the Stack will have `display` set to `inline-flex`, otherwise it will be `flex`.                                                     |
 | justify    | [`enum`](#enum)       | `"start"`   | The `justify-content` of the Stack.                                                                                                             |
 | shrink     | `boolean`             | `true`      | If `false`, the Stack will have `flex-shrink` set to `0`.                                                                                       |

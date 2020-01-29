@@ -1,6 +1,6 @@
 // @flow
 import type { Props, Size } from "../index";
-import type { ThemeProps } from "../../defaultTheme";
+import type { ThemeProps } from "../../../defaultTheme";
 
 export type GetButtonSpacing = () => ({
   ...ThemeProps,

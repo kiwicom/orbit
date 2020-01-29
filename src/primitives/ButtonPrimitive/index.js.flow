@@ -1,0 +1,54 @@
+// @flow
+
+import type { Globals, Ref, Component } from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken/index";
+
+export type Type =
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "facebook"
+  | "google"
+  | "white";
+
+export type Size = "small" | "normal" | "large";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  ...Ref,
+  +children?: React$Node,
+  +asComponent?: Component,
+  +href?: string | null,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +external?: boolean,
+  +disabled?: boolean,
+  +circled?: boolean,
+  +fullWidth?: boolean,
+  +rel?: string,
+  +target?: string,
+  +sizeIcon: "small" | "medium" | "large",
+  +type?: Type,
+  +size?: Size,
+  +width?: number,
+  +onlyIcon: boolean,
+  +loading?: boolean,
+  +icon?: React$Node,
+  +bordered?: boolean,
+  +buttonLink?: boolean,
+  +iconLeft?: React$Node,
+  +iconRight?: React$Node,
+  +submit?: boolean,
+  +tabIndex?: string,
+  +ariaExpanded?: boolean,
+  +ariaControls?: string,
+  +role?: string,
+  // Don't use, it's deprecated and will be removed in the major version
+  +className?: string,
+  +title?: string | (any => string),
+|};
+
+declare export default React$ComponentType<Props>;

@@ -1,6 +1,6 @@
 // @flow
 import { SIZE_OPTIONS, TOKENS } from "../consts";
-import { rtlSpacing } from "../../utils/rtl/index";
+import { rtlSpacing } from "../../../utils/rtl/index";
 import type { GetButtonSpacing } from "./getButtonSpacing";
 
 const getButtonSpacing: GetButtonSpacing = () => ({

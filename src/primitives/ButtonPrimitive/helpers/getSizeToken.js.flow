@@ -1,7 +1,7 @@
 // @flow
 
 import type { Size } from "../index";
-import type { ThemeProps } from "../../defaultTheme";
+import type { ThemeProps } from "../../../defaultTheme";
 
 type TokenName = "heightButton" | "loadingWidth" | "loadingHeight" | "fontSizeButton";
 

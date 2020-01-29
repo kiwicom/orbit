@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "../primitives/ButtonPrimitive/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Stack from "../Stack";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";

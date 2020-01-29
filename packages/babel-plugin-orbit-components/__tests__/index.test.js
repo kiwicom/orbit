@@ -37,6 +37,7 @@ test.each([
   ['import { Passengers } from "@kiwicom/orbit-components/lib/icons";'], // icon
   ['import { LayoutColumn } from "@kiwicom/orbit-components";'],
   ['import { BreadcrumbsItem } from "@kiwicom/orbit-components";'],
+  ['import { BadgePrimitive } from "@kiwicom/orbit-components";'],
   [
     // mixed
     `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";

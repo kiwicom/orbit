@@ -1,5 +1,7 @@
 # Unreleased
 
+# 1.6.0
+
 - Fixed import of `BadgePrimitive`
 
 # 1.5.0

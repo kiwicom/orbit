@@ -1,5 +1,7 @@
 # Unreleased
 
+- Fixed import of `BadgePrimitive`
+
 # 1.5.0
 
 - Fixed import of `BreadcrumbsItem`

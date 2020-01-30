@@ -51,7 +51,8 @@ Table below contains all types of the props available in BreadcrumbsItem compone
 
 | Name         | Type                       | Default | Description                                           |
 | :----------- | :------------------------- | :------ | :---------------------------------------------------- |
-| dataTest     | `string`                   |         | Optional prop for testing purposes.                   |
 | **children** | `string`                   |         | The content of the BreadcrumbsItem.                   |
+| dataTest     | `string`                   |         | Optional prop for testing purposes.                   |
 | **href**     | `string`                   |         | The URL to link when the BreadcrumbsItem is clicked.. |
+| id           | `string`                   |         | HTML `id` attribute for BreadcrumpsItem.              |
 | onClick      | `event => void \| Promise` |         | Function for handling the onClick event.              |

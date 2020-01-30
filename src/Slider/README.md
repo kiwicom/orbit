@@ -62,7 +62,7 @@ The exact same type will be then returned with all callbacks. e.g.:
 ## Functional specs
 
 - When you use range type of the `Slider` component, you should specify `ariaLabel` property as array of labels. For instance: `["First handle", "Second handle]`. If you use simple `Slider`, just one string (not array) is enough.
-- In every case of using the `Slider` component on **mobile devices**, the `Slider` should be wrapped in the [`Popover`](../Popover). For instance like this:
+- In every case of using the `Slider` component on **mobile devices**, the `Slider` should be wrapped in the **Popover**. For instance like this:
 
 ```jsx
 const MobileSlider = () => {

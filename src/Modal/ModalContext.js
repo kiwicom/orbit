@@ -12,10 +12,13 @@ export const ModalContext: ModalContextType = React.createContext({
   hasModalSection: false,
   isMobileFullPage: false,
   isInsideModal: false,
+  closable: false,
 });
 
 export const withModalContext: WithModalContextType = Component => props => (
   <ModalContext.Consumer>
-    {contextProps => <Component {...props} {...contextProps} />}
+    {/* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow
+     * to v0.115.0. To view the error, delete this comment and run Flow. */
+    contextProps => <Component {...props} {...contextProps} />}
   </ModalContext.Consumer>
 );

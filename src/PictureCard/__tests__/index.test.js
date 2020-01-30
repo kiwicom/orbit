@@ -46,6 +46,5 @@ describe("#PictureCard", () => {
   it("should render an anchor element if href is present", () => {
     expect(wrapper.find("a").exists()).toBe(true);
     expect(wrapper.find("PictureCard__StyledPictureCard").prop("href")).toBe(props.href);
-    expect(wrapper.find("PictureCard__StyledPictureCard").prop("external")).toBe(props.external);
   });
 });

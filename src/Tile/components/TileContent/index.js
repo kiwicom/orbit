@@ -38,7 +38,7 @@ StyledTileContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileContent = forwardRef<Props, HTMLElement>(
+const TileContent = forwardRef<Props, HTMLInputElement>(
   (
     { children, noPadding, withPointer = false, withBorder = false, useMargins = true }: Props,
     ref,

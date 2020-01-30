@@ -1,0 +1,20 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/primitives/badgePrimitive/
+*/
+import { ReactComponentStyled } from "styled-components";
+
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +children?: React$Node,
+  +icon?: React$Node,
+  +ariaLabel?: string,
+  +background?: string,
+  +foregroundColor?: string,
+  ...Globals,
+|};
+
+declare export var StyledBadge: ReactComponentStyled<Props>;
+
+declare export default React$ComponentType<Props>;

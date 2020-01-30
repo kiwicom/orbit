@@ -29,7 +29,7 @@ const StyledCollapse = styled.div`
   width: 100%;
   display: block;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall};
   margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
   :last-child,
   :only-child {
@@ -48,8 +48,12 @@ const StyledCollapseLabel = styled.div`
   cursor: pointer;
 `;
 
+StyledCollapseLabel.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledCollapseChildren = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin: ${({ theme }) => theme.orbit.spaceSmall} 0;
 `;
 
 StyledCollapseChildren.defaultProps = {

@@ -16,7 +16,7 @@ import typeof ChoiceGroupType from "./ChoiceGroup";
 import typeof CountryFlagType from "./CountryFlag";
 import typeof CollapseType from "./Collapse";
 import typeof CarrierLogoType from "./CarrierLogo";
-import typeof DestinationHeaderType from "./DestinationHeader";
+import typeof DestinationHeaderType from "./deprecated/DestinationHeader";
 import typeof DestinationCardType from "./deprecated/DestinationCard";
 import typeof DialogType from "./Dialog";
 import typeof FeatureIconType from "./FeatureIcon";
@@ -38,6 +38,7 @@ import typeof PricingTableItemType from "./PricingTable/PricingTableItem";
 import typeof TextType from "./Text";
 import typeof TextLinkType from "./TextLink";
 import typeof TileType from "./Tile";
+import typeof TileGroupType from "./TileGroup";
 import typeof TooltipType from "./Tooltip";
 import typeof TripSegmentType from "./TripSegment";
 import typeof TripSectorType from "./TripSector";
@@ -85,10 +86,10 @@ import typeof ThemeProviderType from "./ThemeProvider";
 import typeof TranslateType from "./Translate";
 import type { Theme } from "./defaultTheme";
 import typeof NavigationBarType from "./NavigationBar";
-import typeof NavigationListType from "./NavigationList";
-import typeof NavigationListItemType from "./NavigationList/NavigationListItem";
 import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
+import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
+import typeof LinkListType from "./LinkList";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -140,9 +141,8 @@ declare export var ModalFooter: ModalFooterType;
 declare export var Slider: SliderType;
 
 declare export var NavigationBar: NavigationBarType;
-declare export var NavigationList: NavigationListType;
-declare export var NavigationListItem: NavigationListItemType;
 declare export var Drawer: DrawerType;
+declare export var LinkList: LinkListType;
 
 declare export var Tag: TagType;
 
@@ -187,6 +187,7 @@ declare export var PricingTable: PricingTableType;
 declare export var PricingTableItem: PricingTableItemType;
 declare export var Textarea: TextareaType;
 declare export var Tile: TileType;
+declare export var TileGroup: TileGroupType;
 declare export var Tooltip: TooltipType;
 declare export var TripSegment: TripSegmentType;
 declare export var TripSector: TripSectorType;
@@ -202,3 +203,5 @@ declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
+
+declare export var BadgePrimitive: BadgePrimitiveType;

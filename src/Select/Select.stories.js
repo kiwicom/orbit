@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { object, select, text, boolean } from "@storybook/addon-knobs";
@@ -10,7 +10,6 @@ import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
-import InputField from "../InputField";
 
 import Select from "./index";
 
@@ -20,20 +19,6 @@ const objectOptions = [
   { value: 2, label: "Second item" },
   { value: 3, label: "Third item" },
 ];
-
-const SelectWithState = () => {
-  const [value, setValue] = useState("");
-  return (
-    <Select
-      label="Select box (with prefix)"
-      options={[{ value: "pl", label: "Poland" }, { value: "cz", label: "Czech Republic" }]}
-      prefix={<Airplane color="secondary" />}
-      name="nationality"
-      value={value}
-      onChange={ev => setValue(ev.target.value)}
-    />
-  );
-};
 
 storiesOf("Select", module)
   .add("Default", () => <Select options={objectOptions} onChange={action("onChange")} />, {
@@ -185,21 +170,5 @@ storiesOf("Select", module)
     ),
     {
       info: "This is a preview of this component in RTL setup.",
-    },
-  )
-  .add(
-    "Autofill",
-    () => (
-      <>
-        <form>
-          <InputField label="First name" name="firstname" placeholder="First name" />
-          <InputField label="Last name" name="lastname" placeholder="Last name" />
-          <SelectWithState />
-        </form>
-      </>
-    ),
-    {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
     },
   );

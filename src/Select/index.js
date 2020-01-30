@@ -145,6 +145,10 @@ const StyledSelect = styled(
     }
   }
 
+  /*
+    This fix is needed for case where Select has customValueText and it's autofilled by webkit based browser.
+    In that case autofilled value would be displayed, overflowing customValueText.
+  */
   ${({ customValueText }) =>
     customValueText &&
     `

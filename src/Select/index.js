@@ -145,10 +145,14 @@ const StyledSelect = styled(
     }
   }
 
-  &:-webkit-autofill,
-  &:-internal-autofill-selected {
-    -webkit-text-fill-color: transparent;
-  }
+  ${({ customValueText }) =>
+    customValueText &&
+    `
+    &:-webkit-autofill,
+    &:-internal-autofill-selected {
+      -webkit-text-fill-color: transparent;
+    }
+  `}
 `;
 
 StyledSelect.defaultProps = {

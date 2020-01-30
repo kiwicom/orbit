@@ -94,7 +94,7 @@ StyledChild.defaultProps = {
 const StyledInputGroup = styled(
   ({ children, className, dataTest, role, ariaLabelledby, labelRef, dataState }) => (
     <div
-      date-state={dataState}
+      data-state={dataState}
       ref={labelRef}
       className={className}
       data-test={dataTest}

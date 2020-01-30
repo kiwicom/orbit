@@ -148,6 +148,7 @@ const FormFeedbackTooltip = ({
       shown={shown && dimensions.set}
       isHelp={isHelp}
       inlineLabel={inlineLabel}
+      aria-live="polite"
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>
       {isHelp && (

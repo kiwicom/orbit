@@ -1,0 +1,4 @@
+// @flow
+export type UseFocusTrap = (ref: { current: ?HTMLElement }) => void;
+
+declare export default UseFocusTrap;

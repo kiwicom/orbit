@@ -91,16 +91,10 @@
     "@kiwicom/orbit-design-tokens": "~0.8.0"
   },
   "devDependencies": {
+    "@adeira/babel-preset-adeira": "^0.3.0",
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-flow": "^7.8.3",
-    "@babel/preset-react": "^7.8.3",
     "@babel/runtime": "^7.8.3",
     "@emotion/core": "^10.0.27",
     "@octokit/rest": "^15.13.1",

@@ -4,7 +4,7 @@
 
 - [Commit Message](#commit-message)
 - [Commit history](#commit-history)
-- [Developement Information](#development-information)
+- [Development Information](#development-information)
   - [Repository structure](#repository-structure)
   - [Requirements](#requirements)
   - [Testing](#testing)

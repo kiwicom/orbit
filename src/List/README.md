@@ -47,4 +47,4 @@ Table below contains all types of the props in ListItem component.
 
 #### Functional specs
 
-- You can color your icon if you pass some value into `color` or `customColor` prop of the [Icon](./Icon). Be aware of using other components, because they are not styled by default.
+- You can color your icon if you pass some value into `color` or `customColor` prop of the **Icon**. Be aware of using other components, because they are not styled by default.

@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import useFocusTrap from "../hooks/useFocusTrap";
 import Portal from "../Portal";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
@@ -103,6 +104,8 @@ const Dialog = ({
     theme.orbit.durationFast,
   ]);
   const [shown, setShown] = React.useState(false);
+
+  useFocusTrap(ref);
 
   React.useEffect(() => {
     const timer = setTimeout(() => {

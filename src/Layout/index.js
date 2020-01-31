@@ -33,11 +33,12 @@ StyledLayout.defaultProps = {
 
 const Layout = ({ children, type, dataTest }: Props) => (
   <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
-    {React.Children.map(children, (item, key) =>
-      React.cloneElement(item, {
+    {React.Children.map(children, (item, key) => {
+      return React.cloneElement(item, {
         ...getChildrenProps(type, key),
-      }),
-    )}
+        ...item.props,
+      });
+    })}
   </StyledLayout>
 );
 

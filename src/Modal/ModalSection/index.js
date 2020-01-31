@@ -24,7 +24,8 @@ export const StyledModalSection = styled.section`
       !isMobileFullPage && "9px"}; // TODO: create token
     border-top-right-radius: ${({ isMobileFullPage }) =>
       !isMobileFullPage && "9px"}; // TODO: create token
-    margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceLarge};
+    margin-top: ${({ suppressed, theme, closable }) =>
+      suppressed && closable && theme.orbit.spaceLarge};
   }
 
   &:last-of-type {
@@ -46,8 +47,10 @@ export const StyledModalSection = styled.section`
     padding: ${({ theme }) => theme.orbit.spaceXXLarge};
 
     &:first-of-type {
-      margin-top: ${({ suppressed, theme }) => suppressed && theme.orbit.spaceXXLarge};
+      margin-top: ${({ suppressed, theme, closable }) =>
+        suppressed && closable && theme.orbit.spaceXXLarge};
     }
+
     &:last-of-type {
       & ~ ${StyledModalFooter} {
         padding-top: ${({ suppressed }) => !suppressed && "0"};
@@ -104,11 +107,12 @@ class ModalSection extends React.PureComponent<Props> {
   };
 
   render() {
-    const { suppressed, children, dataTest, isMobileFullPage } = this.props;
+    const { suppressed, children, dataTest, isMobileFullPage, closable } = this.props;
     return (
       <StyledModalSection
         suppressed={suppressed}
         data-test={dataTest}
+        closable={closable}
         isMobileFullPage={isMobileFullPage}
       >
         {children}

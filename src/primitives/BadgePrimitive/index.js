@@ -1,0 +1,77 @@
+// @flow
+import * as React from "react";
+import styled from "styled-components";
+
+import defaultTheme from "../../defaultTheme";
+import { rtlSpacing } from "../../utils/rtl";
+
+import type { Props } from "./index";
+
+export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
+  <div className={className} data-test={dataTest} aria-label={ariaLabel}>
+    {children}
+  </div>
+))`
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  display: inline-flex;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  min-height: ${({ theme }) => theme.orbit.heightBadge};
+  line-height: 14px;
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+  background: ${({ background }) => background};
+  color: ${({ foregroundColor }) => foregroundColor};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
+  padding: ${({ theme }) => theme.orbit.paddingBadge};
+`;
+
+StyledBadge.defaultProps = {
+  theme: defaultTheme,
+};
+
+const IconContainer = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  display: flex;
+  flex-shrink: 0;
+  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
+
+  svg {
+    height: ${({ theme }) => theme.orbit.widthIconSmall};
+    width: ${({ theme }) => theme.orbit.heightIconSmall};
+  }
+`;
+
+IconContainer.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledBadgeContent = styled.div`
+  padding: 5px 0;
+  line-height: 1;
+`;
+
+StyledBadgeContent.defaultProps = {
+  theme: defaultTheme,
+};
+
+const BadgePrimitive = (props: Props) => {
+  const { icon, children, ariaLabel, dataTest, background, foregroundColor } = props;
+
+  return (
+    <StyledBadge
+      background={background}
+      foregroundColor={foregroundColor}
+      dataTest={dataTest}
+      ariaLabel={ariaLabel}
+    >
+      {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}
+      <StyledBadgeContent>{children}</StyledBadgeContent>
+    </StyledBadge>
+  );
+};
+
+export default BadgePrimitive;

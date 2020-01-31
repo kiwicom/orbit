@@ -18,7 +18,7 @@ export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
-export { default as DestinationHeader } from "./DestinationHeader";
+export { default as DestinationHeader } from "./deprecated/DestinationHeader";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as PictureCard } from "./PictureCard";
@@ -46,9 +46,8 @@ export { default as Slider } from "./Slider";
 
 // Navigation components
 export { default as NavigationBar } from "./NavigationBar";
-export { default as NavigationList } from "./NavigationList";
-export { default as NavigationListItem } from "./NavigationList/NavigationListItem";
 export { default as NavigationDrawer } from "./Drawer";
+export { default as LinkList } from "./LinkList";
 
 // Table
 export { default as Table } from "./Table";
@@ -96,6 +95,7 @@ export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
+export { default as TileGroup } from "./TileGroup";
 export { default as Tooltip } from "./Tooltip";
 export { default as Translate } from "./Translate";
 export { default as ThemeProvider } from "./ThemeProvider";
@@ -112,3 +112,6 @@ export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";
+
+// primitives
+export { default as BadgePrimitive } from "./primitives/BadgePrimitive";

@@ -41,8 +41,9 @@ describe("Breadcrumbs", () => {
   const url = "https://kiwi.com";
   const title = "Kiwi.com";
   const dataTest = "test";
+  const id = "id";
   const component = shallow(
-    <BreadcrumbsItem href={url} onClick={onClick} dataTest={dataTest} active contentKey={2}>
+    <BreadcrumbsItem id={id} href={url} onClick={onClick} dataTest={dataTest} active contentKey={2}>
       {title}
     </BreadcrumbsItem>,
   );
@@ -53,6 +54,7 @@ describe("Breadcrumbs", () => {
     expect(component.render().prop("attribs").property).toBe("itemListElement");
     expect(component.render().prop("attribs").typeof).toBe("ListItem");
     expect(component.render().prop("aria-current")).toBe("page");
+    expect(anchor.render().prop("id")).toBe(id);
   });
   it("anchor contains props", () => {
     expect(anchor.render().prop("href")).toBe(url);

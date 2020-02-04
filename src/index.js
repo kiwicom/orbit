@@ -100,10 +100,10 @@ export { default as Tooltip } from "./Tooltip";
 export { default as Translate } from "./Translate";
 export { default as ThemeProvider } from "./ThemeProvider";
 
-export { default as TripSegment } from "./TripSegment";
-export { default as TripSector } from "./TripSector";
-export { default as TripDate } from "./TripSector/TripDate";
-export { default as TripLayover } from "./TripSector/TripLayover";
+export { default as TripSegment } from "./deprecated/TripSegment";
+export { default as TripSector } from "./deprecated/TripSector";
+export { default as TripDate } from "./deprecated/TripSector/TripDate";
+export { default as TripLayover } from "./deprecated/TripSector/TripLayover";
 export { default as Truncate } from "./Truncate";
 
 // tokens

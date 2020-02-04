@@ -2,10 +2,10 @@
 import * as React from "react";
 import { shallow } from "enzyme";
 
-import Airplane from "../../icons/Airplane";
+import Airplane from "../../../icons/Airplane";
 import TripSegment from "../index";
-import List from "../../List";
-import ListItem from "../../List/ListItem";
+import List from "../../../List";
+import ListItem from "../../../List/ListItem";
 
 describe(`TripSegment with List as children`, () => {
   const duration = "2h";

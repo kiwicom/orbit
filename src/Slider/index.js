@@ -397,6 +397,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     } = this.props;
     const { handleIndex, value } = this.state;
     const key = i && encodeURIComponent(i.toString());
+    const index = i || 0;
     return (
       <Handle
         tabIndex="0"
@@ -410,8 +411,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         ariaValueText={ariaValueText}
         ariaLabel={ariaLabel}
         hasHistogram={histogramLoading || !!histogramData}
-        index={i || 0}
+        index={index}
         key={key}
+        dataTest={`SliderHandle-${index}`}
       />
     );
   };

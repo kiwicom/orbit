@@ -54,6 +54,9 @@ describe(`Textarea with help`, () => {
   it("should contain a textarea", () => {
     expect(area.exists()).toBe(true);
   });
+  it("should have data-state", () => {
+    expect(area.render().prop("data-state")).toBe("ok");
+  });
   it("should have passed props", () => {
     expect(area.prop("size")).toBe(size);
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
@@ -112,5 +115,13 @@ describe(`Textarea number with error and help`, () => {
   });
   it("should contain FeedBack", () => {
     expect(component.find(`FormFeedback`).exists()).toBe(true);
+  });
+  it("should have data-state", () => {
+    expect(
+      component
+        .find("Textarea__StyledTextArea")
+        .render()
+        .prop("data-state"),
+    ).toBe("error");
   });
 });

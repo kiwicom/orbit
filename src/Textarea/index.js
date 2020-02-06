@@ -10,6 +10,7 @@ import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import getFieldDataState from "../common/getFieldDataState";
 
 import type { Props } from "./index";
 
@@ -160,6 +161,7 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
       )}
 
       <StyledTextArea
+        data-state={getFieldDataState(!!error)}
         data-test={dataTest}
         name={name}
         value={value}

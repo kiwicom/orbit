@@ -19,7 +19,6 @@ const StyledButtonContent = styled(({ theme, loading, ...props }) => <div {...pr
   flex-basis: 100%;
   justify-content: center;
   align-items: center;
-
   // IE flexbox bug
   ${onlyIE(css`
     min-width: 100%;

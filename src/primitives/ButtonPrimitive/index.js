@@ -1,45 +1,29 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { warning } from "@adeira/js";
 
-import { ICON_SIZES } from "../../Icon/consts";
 import IconContainer from "./components/IconContainer";
 import defaultTheme from "../../defaultTheme";
-import { TOKENS, BUTTON_STATES } from "./consts";
-import { StyledSpinner } from "../../Loading";
+import Loading, { StyledSpinner } from "../../Loading";
 import getSpacingToken from "../../common/getSpacingToken";
-import getSizeToken from "./helpers/getSizeToken";
-import getTypeToken from "./helpers/getTypeToken";
-import getButtonSpacing from "./helpers/getButtonSpacing";
-import getButtonBoxShadow from "./helpers/getButtonBoxShadow";
-import getFocus from "./helpers/getFocus";
+import StyledButtonContent from "./components/ButtonContent";
 
 import type { Props } from "./index";
 
+const StyledButtonContentChildren = styled.div`
+  display: inline-block;
+`;
+
 export const StyledButton = styled(
   ({
-    theme,
     asComponent = "button",
-    circled,
-    external,
-    type,
-    icon,
-    sizeIcon,
-    width,
-    bordered,
-    loading,
-    onlyIcon,
-    fullWidth,
-    style,
     dataTest,
     submit,
-    ref,
+    disabled,
+    forwardedRef,
     ariaControls,
     ariaExpanded,
-    spaceAfter,
     title,
-    size,
     ...props
   }) => {
     const isButtonWithHref = asComponent === "button" && props.href;
@@ -54,136 +38,140 @@ export const StyledButton = styled(
         aria-label={title}
         type={!isButtonWithHref ? buttonType : undefined}
         {...props}
-        ref={ref}
+        ref={forwardedRef}
       >
         {props.children}
       </Component>
     );
   },
 )`
-  position: relative;
-  display: ${({ href, asComponent }) => (href || asComponent === "a" ? "inline-flex" : "flex")};
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  appearance: none;
-  text-decoration: none;
-  width: ${({ fullWidth, width, onlyIcon }) =>
-    fullWidth
-      ? "100%"
-      : (width && `${width}px`) || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
-  flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};
-  max-width: 100%; // to ensure that Buttons content wraps in IE
-  height: ${getSizeToken(TOKENS.heightButton)};
-  background: ${({ bordered }) =>
-    bordered
-      ? getTypeToken(TOKENS.backgroundButtonBordered)
-      : getTypeToken(TOKENS.backgroundButton)};
-  color: ${({ bordered }) =>
-    bordered
-      ? getTypeToken(TOKENS.colorTextButtonBordered)
-      : getTypeToken(TOKENS.colorTextButton)} !important;
-  border: 0;
-  border-radius: ${({ theme, circled }) =>
-    circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
-  padding: ${getButtonSpacing()};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
-  font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  line-height: 1.4; // preventing inheriting with safe value
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  transition: all 0.15s ease-in-out !important;
-  outline: 0;
-  opacity: ${({ disabled, theme }) => disabled && theme.orbit.opacityButtonDisabled};
-  margin-bottom: ${getSpacingToken};
-  ${getButtonBoxShadow(BUTTON_STATES.DEFAULT)};
+  ${({
+    foreground,
+    disabled,
+    fullWidth,
+    href,
+    theme,
+    asComponent,
+    circled,
+    padding,
+    iconColorHover,
+    iconColorActive,
+    background,
+    transition,
+    fontWeight,
+    fontSize,
+    height,
+    width,
+    onlyIcon,
+    spinner,
+    foregroundHover,
+    foregroundActive,
+    backgroundHover,
+    backgroundActive,
+    backgroundFocus,
+    boxShadow,
+    boxShadowHover,
+    boxShadowFocus,
+    boxShadowActive,
+  }) => css`
+    height: ${height};
+    position: relative;
+    display: ${href || asComponent === "a" ? "inline-flex" : "flex"};
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    appearance: none;
+    text-decoration: none;
+    width: ${fullWidth ? "100%" : (width && `${width}px`) || (onlyIcon && height) || "auto"};
+    flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
+    max-width: 100%; // to ensure that Buttons content wraps in IE
+    background: ${background};
+    color: ${foreground};
+    border: 0;
+    padding: ${padding};
+    border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${fontWeight || theme.orbit.fontWeightBold};
+    font-size: ${fontSize};
+    line-height: 1.4; // preventing inheriting with safe value
+    cursor: ${disabled ? "not-allowed" : "pointer"};
+    transition: ${transition};
+    outline: 0;
+    opacity: ${disabled && theme.orbit.opacityButtonDisabled};
+    margin-bottom: ${getSpacingToken};
+    ${boxShadow};
 
-  &:hover {
-    background: ${({ disabled, bordered }) =>
-      !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.backgroundButtonBorderedHover)
-        : getTypeToken(TOKENS.backgroundButtonHover))};
-    color: ${({ disabled, bordered }) =>
-      !disabled &&
-      (bordered
-        ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-        : getTypeToken(TOKENS.colorTextButtonHover))}!important;
-    ${getButtonBoxShadow(BUTTON_STATES.HOVER)};
+    &:hover {
+      ${backgroundHover};
+      color: ${foregroundHover};
+      ${boxShadowHover};
 
-    ${IconContainer} {
-      color: ${({ disabled, bordered }) =>
-        !disabled &&
-        (bordered
-          ? getTypeToken(TOKENS.colorTextButtonBorderedHover)
-          : getTypeToken(TOKENS.colorTextButtonHover))};
+      ${IconContainer} {
+        color: ${iconColorHover};
+      }
     }
-  }
 
-  &:active {
-    ${({ disabled, bordered }) =>
-      !disabled &&
-      css`
-        background: ${bordered
-          ? getTypeToken(TOKENS.backgroundButtonBorderedActive)
-          : getTypeToken(TOKENS.backgroundButtonActive)};
-        color: ${bordered
-          ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-          : getTypeToken(TOKENS.colorTextButtonActive)}!important;
-        ${getButtonBoxShadow(BUTTON_STATES.ACTIVE)};
-        & ${IconContainer} {
-          color: ${bordered
-            ? getTypeToken(TOKENS.colorTextButtonBorderedActive)
-            : getTypeToken(TOKENS.colorTextButtonActive)};
-        }
-      `};
-  }
+    &:active {
+      ${!disabled &&
+        css`
+          ${backgroundActive};
+          ${boxShadowActive};
+          color: ${foregroundActive};
+          & ${IconContainer} {
+            color: ${iconColorActive};
+          }
+        `};
 
-  ${getFocus}
+      ${StyledSpinner} {
+        width: ${spinner && spinner.width};
+        height: ${spinner && spinner.height};
+      }
 
-  ${StyledSpinner} {
-    width: ${getSizeToken(TOKENS.loadingWidth)};
-    height: ${getSizeToken(TOKENS.loadingHeight)};
-  }
+      ${backgroundFocus};
+    }
+
+    :focus {
+      ${boxShadowFocus};
+      ${backgroundFocus};
+    }
+
+    :focus:not(:focus-visible) {
+      box-shadow: none;
+      ${background};
+    }
+    :-moz-focusring,
+    :focus-visible {
+      ${boxShadowFocus};
+      ${backgroundFocus};
+    }
+  `}
 `;
 
 StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitive = (props: Props) => {
-  const {
-    children,
-    title,
-    size,
-    iconLeft,
-    loading,
-    onlyIcon,
-    disabled,
-    buttonLink,
-    ...properties
-  } = props;
+const ButtonPrimitive = ({ forwardedRef, ...props }: Props) => {
+  const { loading, disabled, children, iconLeft, iconRight, iconContainer, size } = props;
 
-  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
   const isDisabled = loading || disabled;
 
-  warning(
-    !(!children && !title),
-    `Warning: children or title property is missing on ${
-      buttonLink ? "ButtonLink" : "Button"
-    } . Use title property to add aria-label to be accessible for screen readers. More information https://orbit.kiwi/components/button/api/#accessibility`,
-  );
-
   return (
-    <StyledButton
-      sizeIcon={sizeIcon}
-      onlyIcon={onlyIcon}
-      disabled={isDisabled}
-      size={size}
-      title={title}
-      {...properties}
-    >
-      {children}
+    <StyledButton disabled={isDisabled} forwardedRef={forwardedRef} {...props}>
+      {loading && <Loading type="buttonLoader" />}
+      <StyledButtonContent loading={loading}>
+        {iconLeft && (
+          <IconContainer {...iconContainer} size={size}>
+            {iconLeft}
+          </IconContainer>
+        )}
+        {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
+        {iconRight && (
+          <IconContainer {...iconContainer} size={size} right>
+            {iconRight}
+          </IconContainer>
+        )}
+      </StyledButtonContent>
     </StyledButton>
   );
 };

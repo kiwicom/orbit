@@ -1,108 +1,54 @@
 // @flow
 import * as React from "react";
 
-import { ICON_SIZES } from "../Icon/consts";
-import { TYPE_OPTIONS, SIZE_OPTIONS } from "../primitives/ButtonPrimitive/consts";
-import Loading from "../Loading";
+import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
-import IconContainer from "../primitives/ButtonPrimitive/components/IconContainer";
-import StyledButtonContent from "../primitives/ButtonPrimitive/components/ButtonContent";
-import StyledButtonContentChildren from "../primitives/ButtonPrimitive/components/ButtonContentChildren";
+import getTypeToken from "./helpers/getTypeToken";
+import { ICON_SIZES } from "../Icon/consts";
+import unitedProps from "./helpers/unitedProps";
 
 import type { Props } from "./index";
 
-const Button = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
-  const {
-    asComponent,
-    children,
-    bordered,
-    disabled,
-    href,
-    size = SIZE_OPTIONS.NORMAL,
-    icon,
-    iconRight,
-    external,
-    type = TYPE_OPTIONS.PRIMARY,
-    fullWidth,
-    loading = false,
-    width = 0,
-    role,
-    onClick,
-    circled,
-    submit,
-    tabIndex,
-    ariaExpanded,
-    className,
-    ariaControls,
-    spaceAfter,
-    dataTest,
-    title,
-  } = props;
-  const iconLeft = props.iconLeft || icon;
+const Button = ({
+  asComponent = "button",
+  children,
+  loading,
+  size = SIZE_OPTIONS.NORMAL,
+  type = TYPE_OPTIONS.PRIMARY,
+  iconLeft,
+  width = 0,
+  title,
+  bordered,
+  fullWidth,
+  ...props
+}: Props) => {
+  const onlyIcon = Boolean(iconLeft && !children);
   const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
-  const onlyIcon = iconLeft && !children;
-  const isDisabled = loading || disabled;
+
+  const typeToken = React.useCallback(name => getTypeToken(name, type), [type]);
+
+  const ref = React.useRef(null);
 
   return (
     <ButtonPrimitive
-      onClick={onClick}
-      iconLeft={iconLeft}
-      iconRight={iconRight}
-      bordered={bordered}
-      fullWidth={fullWidth}
       asComponent={asComponent}
-      onlyIcon={iconLeft && !children}
-      disabled={isDisabled}
-      loading={loading}
-      size={size}
-      sizeIcon={sizeIcon}
-      href={!disabled ? href : null}
-      target={!disabled && href && external ? "_blank" : undefined}
-      rel={!disabled && href && external ? "noopener noreferrer" : undefined}
-      type={type}
       width={width}
-      className={className}
       ref={ref}
-      role={role}
-      circled={circled}
-      submit={submit}
-      tabIndex={tabIndex}
-      ariaExpanded={ariaExpanded}
-      ariaControls={ariaControls}
-      dataTest={dataTest}
-      spaceAfter={spaceAfter}
+      fullWidth={fullWidth}
+      onlyIcon={onlyIcon}
+      iconLeft={iconLeft}
+      loading={loading}
+      bordered={bordered}
       title={title}
+      size={size}
+      {...props}
+      // primitive specific props
+      {...unitedProps({ type, onlyIcon, typeToken, bordered, sizeIcon })}
     >
-      {loading && <Loading type="buttonLoader" />}
-      <StyledButtonContent loading={loading}>
-        {iconLeft && (
-          <IconContainer
-            bordered={bordered}
-            onlyIcon={onlyIcon}
-            size={size}
-            sizeIcon={sizeIcon}
-            type={type}
-          >
-            {iconLeft}
-          </IconContainer>
-        )}
-        {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
-        {iconRight && (
-          <IconContainer
-            bordered={bordered}
-            onlyIcon={onlyIcon}
-            size={size}
-            sizeIcon={sizeIcon}
-            type={type}
-            right
-          >
-            {iconRight}
-          </IconContainer>
-        )}
-      </StyledButtonContent>
+      {children}
     </ButtonPrimitive>
   );
-});
+};
 
 Button.displayName = "Button";
 

@@ -4,7 +4,7 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetTypeToken } from "./getTypeToken";
 
-const getTypeToken: GetTypeToken = name => ({ theme, type }) => {
+const getTypeToken: GetTypeToken = (name, type) => ({ theme }) => {
   const tokens = {
     [TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.backgroundButtonPrimary,

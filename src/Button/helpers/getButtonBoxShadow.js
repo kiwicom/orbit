@@ -31,24 +31,28 @@ const opacity = {
   },
 };
 
-const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, theme, type }) => {
+const getButtonBoxShadow: GetButtonBoxShadow = (state, type = "primary") => ({
+  disabled,
+  bordered,
+  theme,
+}) => {
   if (disabled) {
     return null;
   }
   if (state === BUTTON_STATES.DEFAULT && bordered) {
     return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)};
+      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton, type)};
     `;
   }
   if (state === BUTTON_STATES.HOVER && bordered) {
     return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)};
+      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover, type)};
     `;
   }
   if (state === BUTTON_STATES.ACTIVE) {
     if (bordered) {
       return css`
-        box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
+        box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive, type)},
           inset 0 0 6px 3px
             ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: Create token
       `;
@@ -61,13 +65,13 @@ const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, t
   if (state === BUTTON_STATES.FOCUS) {
     return css`
       ${!bordered &&
-      css`
-        box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus)};
-      `}
+        css`
+          box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus, type)};
+        `}
       &:active {
         ${bordered
           ? css`
-              box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
+              box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive, type)},
                 inset 0 0 6px 3px
                   ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: create token
             `

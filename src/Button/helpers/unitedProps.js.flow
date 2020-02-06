@@ -1,0 +1,15 @@
+// @flow
+import type { Type } from "../index";
+import type { PrimitiveTypes } from "../../primitives/ButtonPrimitive/index";
+import type { TokenName } from "./getTypeToken";
+import type { ThemeProps } from "../../defaultTheme";
+
+export type GetType = ({
+  typeToken: (name: TokenName) => (theme: ThemeProps) => string,
+  bordered?: boolean,
+  sizeIcon: "small" | "medium" | "large",
+  type: Type,
+  onlyIcon: boolean,
+}) => PrimitiveTypes;
+
+declare export default GetType;

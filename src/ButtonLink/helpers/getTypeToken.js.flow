@@ -11,6 +11,6 @@ type TokenName =
   | "colorTextButtonHover"
   | "colorTextButtonActive";
 
-export type GetTypeToken = (name: TokenName) => ({ ...ThemeProps, type: Type }) => string;
+export type GetTypeToken = (name: TokenName, type: Type) => ({ ...ThemeProps }) => string;
 
 declare export default GetTypeToken;

@@ -1,27 +1,14 @@
 // @flow
 
-import type { Globals, Ref, Component } from "../../common/common.js.flow";
+import type { Globals, RefType, Component } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";
-
-export type Type =
-  | "primary"
-  | "secondary"
-  | "info"
-  | "success"
-  | "warning"
-  | "critical"
-  | "facebook"
-  | "google"
-  | "white";
 
 export type Size = "small" | "normal" | "large";
 
-export type Props = {|
-  ...Globals,
-  ...spaceAfter,
-  ...Ref,
+type ButtonCommonProps = {|
+  +forwardedRef?: RefType,
   +children?: React$Node,
-  +asComponent?: Component,
+  +asComponent?: Component | string,
   +href?: string | null,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +external?: boolean,
@@ -30,15 +17,12 @@ export type Props = {|
   +fullWidth?: boolean,
   +rel?: string,
   +target?: string,
-  +sizeIcon: "small" | "medium" | "large",
-  +type?: Type,
   +size?: Size,
-  +width?: number,
-  +onlyIcon: boolean,
+  +onlyIcon?: boolean,
   +loading?: boolean,
   +icon?: React$Node,
   +bordered?: boolean,
-  +buttonLink?: boolean,
+  +transparent?: boolean,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +submit?: boolean,
@@ -49,6 +33,47 @@ export type Props = {|
   // Don't use, it's deprecated and will be removed in the major version
   +className?: string,
   +title?: string | (any => string),
+|};
+
+type PrimitiveElement = ((args: any) => any) | string;
+
+export type PrimitiveTypes = {|
+  +height?: ((args: any) => any) | number | string,
+  +width?: ((args: any) => any) | number | string,
+  +padding?: PrimitiveElement,
+  +spinner?: {| height?: PrimitiveElement, width?: PrimitiveElement |},
+  +background?: PrimitiveElement,
+  +backgroundHover?: PrimitiveElement,
+  +backgroundActive?: PrimitiveElement,
+  +backgroundFocus?: PrimitiveElement,
+  +iconColor?: PrimitiveElement,
+  +iconColorHover?: PrimitiveElement,
+  +iconColorActive?: PrimitiveElement,
+  +boxShadow?: PrimitiveElement,
+  +boxShadowHover?: PrimitiveElement,
+  +boxShadowActive?: PrimitiveElement,
+  +boxShadowFocus?: PrimitiveElement,
+  +foreground?: PrimitiveElement,
+  +foregroundHover?: PrimitiveElement,
+  +foregroundActive?: PrimitiveElement,
+  +foregroundFocus?: PrimitiveElement,
+  +fontWeight?: PrimitiveElement,
+  +fontSize?: PrimitiveElement,
+  +iconContainer?: {|
+    type?: PrimitiveElement,
+    width?: PrimitiveElement,
+    height?: PrimitiveElement,
+    onlyIcon: boolean,
+    color?: PrimitiveElement,
+    spacing?: PrimitiveElement,
+  |},
+|};
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  ...ButtonCommonProps,
+  ...PrimitiveTypes,
 |};
 
 declare export default React$ComponentType<Props>;

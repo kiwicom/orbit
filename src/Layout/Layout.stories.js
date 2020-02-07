@@ -72,6 +72,31 @@ storiesOf("Layout", module)
       </Layout>
     );
   })
+  .add("Customized", () => (
+    <Layout type="Search">
+      <LayoutColumn dataTest="test" element="span">
+        <Card>
+          <CardSection>
+            <CustomDiv />
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn hideOn={["largeMobile"]} element="span">
+        <Card>
+          <CardSection>
+            <CustomDiv />
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <CustomDiv />
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+    </Layout>
+  ))
   .add("RTL", () => (
     <RenderInRtl>
       <Layout type="Search">

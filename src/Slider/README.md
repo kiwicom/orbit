@@ -115,3 +115,7 @@ const [selectedCount, totalCount] = calculateCountOf(histogramData, value, minVa
 
 console.log(`Showing ${selectedCount} of ${totalCount}`); // Showing 24 of 75 flights
 ```
+
+## Data-test
+
+There is a `dataTest` prop for ability to test the component. There are also hardcoded `data-test` attribute on handlers in format `SliderHandle-${index}` where index starts from `0`.

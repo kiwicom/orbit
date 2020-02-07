@@ -100,6 +100,7 @@ const Handle = ({
   ariaValueText,
   ariaLabel,
   hasHistogram,
+  dataTest,
 }: Props) => {
   const valueNow = Array.isArray(value) ? value[index] : value;
   const first = isFirst(value, valueNow, index, hasHistogram);
@@ -107,6 +108,7 @@ const Handle = ({
   const left = calculateLeftPosition(valueNow, valueMin, valueMax, first, isSimple);
   return (
     <StyledHandle
+      data-test={dataTest}
       tabIndex={tabIndex}
       onTop={onTop}
       role="slider"

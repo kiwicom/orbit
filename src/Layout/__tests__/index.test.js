@@ -9,15 +9,23 @@ import Layout, { LayoutColumn } from "..";
 
 describe("Button with icon", () => {
   const dataTest = "test";
+  const element = "span";
   const component = shallow(
     <Layout type={LAYOUT_OPTIONS.SEARCH} dataTest={dataTest}>
-      <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
+      <LayoutColumn dataTest={dataTest} element={element}>
+        Lorem ipsum dolor sit amet
+      </LayoutColumn>
       <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
       <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
     </Layout>,
   );
+  const LayoutColumnEl = component.find("LayoutColumn").first();
   it("should render data-test", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(LayoutColumnEl.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should render props on LayoutColumn", () => {
+    expect(LayoutColumnEl.prop("element")).toBe(element);
   });
   it("columns should have hide props", () => {
     component.children().forEach((node, key) => {

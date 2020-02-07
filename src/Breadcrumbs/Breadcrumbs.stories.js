@@ -35,19 +35,19 @@ storiesOf("Breadcrumbs", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
         <Breadcrumbs onGoBack={action("onGoBack")} spaceAfter={spaceAfter}>
-          <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
+          <BreadcrumbsItem id="rocket" href="https://kiwi.com" onClick={action("clicked")}>
             Kiwi.com
           </BreadcrumbsItem>
-          <BreadcrumbsItem href="#1" onClick={action("clicked")}>
+          <BreadcrumbsItem id="rocket2" href="#1" onClick={action("clicked")}>
             1. Level
           </BreadcrumbsItem>
-          <BreadcrumbsItem href="#2" onClick={action("clicked")}>
+          <BreadcrumbsItem id="rocket3" href="#2" onClick={action("clicked")}>
             2. Level
           </BreadcrumbsItem>
-          <BreadcrumbsItem href="#3" onClick={action("clicked")}>
+          <BreadcrumbsItem id="rocket4" href="#3" onClick={action("clicked")}>
             3. Level
           </BreadcrumbsItem>
-          <BreadcrumbsItem href="#4" onClick={action("clicked")}>
+          <BreadcrumbsItem id="rocket5" href="#4" onClick={action("clicked")}>
             4. Level
           </BreadcrumbsItem>
         </Breadcrumbs>

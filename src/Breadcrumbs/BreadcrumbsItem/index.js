@@ -60,29 +60,33 @@ const BreadcrumbsItem = ({
   href,
   contentKey,
   component = DefaultComponent,
+  id,
   ...props
-}: Props) => (
-  <StyledBreadcrumbsItem
-    data-test={dataTest}
-    aria-current={active ? "page" : undefined}
-    property="itemListElement"
-    typeof="ListItem"
-  >
-    <StyledBreadcrumbsItemAnchor
-      isClickable={href || onClick}
-      href={href}
-      component={component}
-      active={active}
-      onClick={onClick}
-      property="item"
-      typeof="WebPage"
-      {...props}
+}: Props) => {
+  return (
+    <StyledBreadcrumbsItem
+      data-test={dataTest}
+      aria-current={active ? "page" : undefined}
+      property="itemListElement"
+      typeof="ListItem"
     >
-      <span property="name">{children}</span>
-    </StyledBreadcrumbsItemAnchor>
-    <meta property="position" content={contentKey} />
-    {!active && <StyledBreadcrumbsItemIcon ariaHidden size="small" color="tertiary" />}
-  </StyledBreadcrumbsItem>
-);
+      <StyledBreadcrumbsItemAnchor
+        isClickable={href || onClick}
+        href={href}
+        component={component}
+        active={active}
+        onClick={onClick}
+        property="item"
+        typeof="WebPage"
+        id={id}
+        {...props}
+      >
+        <span property="name">{children}</span>
+      </StyledBreadcrumbsItemAnchor>
+      <meta property="position" content={contentKey} />
+      {!active && <StyledBreadcrumbsItemIcon ariaHidden size="small" color="tertiary" />}
+    </StyledBreadcrumbsItem>
+  );
+};
 
 export default BreadcrumbsItem;

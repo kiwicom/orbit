@@ -5,7 +5,8 @@ import styled, { css, withTheme } from "styled-components";
 import defaultTheme, { type ThemeProps } from "../defaultTheme";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import Close from "../icons/Close";
-import { SIZES, CLOSE_BUTTON_DATA_TEST, FOCUSABLE_ELEMENT_SELECTORS } from "./consts";
+import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
+import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
@@ -436,8 +437,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
     const content = this.modalContent.current;
     const body = this.modalBody.current;
+    const contentHeight =
+      content?.scrollHeight > content?.offsetHeight + 40
+        ? content?.offsetHeight
+        : content?.scrollHeight;
     // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
-    const fullyScrolled = content?.scrollHeight + 40 - body?.scrollTop <= window.innerHeight;
+    const fullyScrolled = contentHeight + 40 - body?.scrollTop <= window.innerHeight;
     this.setState({ fullyScrolled });
   };
 

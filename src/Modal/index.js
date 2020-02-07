@@ -437,8 +437,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
     const content = this.modalContent.current;
     const body = this.modalBody.current;
+    const contentHeight =
+      content?.scrollHeight > content?.offsetHeight + 40
+        ? content?.offsetHeight + 40
+        : content?.scrollHeight;
     // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
-    const fullyScrolled = content?.scrollHeight + 40 - body?.scrollTop <= window.innerHeight;
+    const fullyScrolled = contentHeight - body?.scrollTop <= window.innerHeight;
     this.setState({ fullyScrolled });
   };
 

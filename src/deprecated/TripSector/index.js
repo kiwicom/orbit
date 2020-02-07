@@ -3,8 +3,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
-import defaultTheme from "../defaultTheme";
-import { left, right } from "../utils/rtl";
+import defaultTheme from "../../defaultTheme";
+import { left, right } from "../../utils/rtl";
 
 import type { Props } from "./index";
 

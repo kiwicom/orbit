@@ -3,8 +3,8 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Layover from "../index";
-import List from "../../../List";
-import ListItem from "../../../List/ListItem";
+import List from "../../../../List";
+import ListItem from "../../../../List/ListItem";
 
 describe("Layover", () => {
   const dataTest = "test";

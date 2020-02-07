@@ -4,15 +4,15 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, object, boolean } from "@storybook/addon-knobs";
 
-import List from "../List";
-import ListItem from "../List/ListItem";
-import CarrierLogo from "../CarrierLogo";
-import InformationCircle from "../icons/InformationCircle";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import List from "../../List";
+import ListItem from "../../List/ListItem";
+import CarrierLogo from "../../CarrierLogo";
+import InformationCircle from "../../icons/InformationCircle";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
 import TripSegment from "./index";
 
-storiesOf("TripSegment", module)
+storiesOf("Deprecated TripSegment", module)
   .add(
     "Default",
     () => (

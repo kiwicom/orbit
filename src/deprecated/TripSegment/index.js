@@ -2,22 +2,22 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import CarrierLogo, { StyledCarrierLogo } from "../CarrierLogo";
-import Airplane from "../icons/Airplane";
-import ShowMore from "../icons/ShowMore";
-import ShowLess from "../icons/ShowLess";
-import Bus from "../icons/Bus";
-import Train from "../icons/Train";
-import Text, { StyledText } from "../Text";
-import { CARRIER_TYPE_OPTIONS } from "../CarrierLogo/consts";
-import { getSize } from "../Icon";
-import { ICON_SIZES } from "../Icon/consts";
-import { right, rtlSpacing } from "../utils/rtl";
-import KEY_CODE_MAP from "../common/keyMaps";
-import Slide from "../utils/Slide";
-import Truncate from "../Truncate";
-import randomID from "../utils/randomID";
+import defaultTheme from "../../defaultTheme";
+import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
+import Airplane from "../../icons/Airplane";
+import ShowMore from "../../icons/ShowMore";
+import ShowLess from "../../icons/ShowLess";
+import Bus from "../../icons/Bus";
+import Train from "../../icons/Train";
+import Text, { StyledText } from "../../Text";
+import { CARRIER_TYPE_OPTIONS } from "../../CarrierLogo/consts";
+import { getSize } from "../../Icon";
+import { ICON_SIZES } from "../../Icon/consts";
+import { right, rtlSpacing } from "../../utils/rtl";
+import KEY_CODE_MAP from "../../common/keyMaps";
+import Slide from "../../utils/Slide";
+import Truncate from "../../Truncate";
+import randomID from "../../utils/randomID";
 
 import type { Props, State, ExpandedType } from "./index";
 

@@ -5,8 +5,8 @@ import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../TripSector";
-import TripSegment from "../TripSegment";
+import TripSector, { TripDate } from "../deprecated/TripSector";
+import TripSegment from "../deprecated/TripSegment";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Text from "../Text";

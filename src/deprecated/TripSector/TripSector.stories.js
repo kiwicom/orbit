@@ -4,19 +4,19 @@ import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
 
 import TripSegment from "../TripSegment";
-import List from "../List";
-import ListItem from "../List/ListItem";
-import CarrierLogo from "../CarrierLogo";
-import InformationCircle from "../icons/InformationCircle";
-import TextLink from "../TextLink";
-import FlightReturn from "../icons/FlightReturn";
-import Clock from "../icons/Clock";
-import Check from "../icons/Check";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import List from "../../List";
+import ListItem from "../../List/ListItem";
+import CarrierLogo from "../../CarrierLogo";
+import InformationCircle from "../../icons/InformationCircle";
+import TextLink from "../../TextLink";
+import FlightReturn from "../../icons/FlightReturn";
+import Clock from "../../icons/Clock";
+import Check from "../../icons/Check";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
 import TripSector, { TripLayover, TripDate } from ".";
 
-storiesOf("TripSector", module)
+storiesOf("Deprecated TripSector", module)
   .add(
     "Multiple days",
     () => (

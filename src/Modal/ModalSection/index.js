@@ -39,7 +39,8 @@ export const StyledModalSection = styled.section`
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }
     &:not(:last-child) {
-      border-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
 

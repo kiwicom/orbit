@@ -439,10 +439,10 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     const body = this.modalBody.current;
     const contentHeight =
       content?.scrollHeight > content?.offsetHeight + 40
-        ? content?.offsetHeight + 40
+        ? content?.offsetHeight
         : content?.scrollHeight;
     // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
-    const fullyScrolled = contentHeight - body?.scrollTop <= window.innerHeight;
+    const fullyScrolled = contentHeight + 40 - body?.scrollTop <= window.innerHeight;
     this.setState({ fullyScrolled });
   };
 

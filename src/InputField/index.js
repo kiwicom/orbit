@@ -67,7 +67,6 @@ const Field = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
-  z-index: 2;
   flex: 1 1 100%;
   width: 100%;
   margin-bottom: ${getSpacingToken};
@@ -235,6 +234,9 @@ export const Input = styled(
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
+
+  // FIREFOX Applies a box-shadow when err is present from HTML validation
+  box-shadow: none;
 
   // FIREFOX flexbox bug: the input doesn't shrink properly
   min-width: 0;

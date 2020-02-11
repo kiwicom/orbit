@@ -142,7 +142,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-element-to-jsx-string": "^14.3.0",
-    "react-test-renderer": "^16.8.3",
+    "react-test-renderer": "^16.12.0",
     "rimraf": "^2.6.2",
     "sharp": "^0.23.2",
     "styled-components": "^4.2.0",

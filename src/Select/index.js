@@ -97,7 +97,6 @@ const StyledSelect = styled(
   outline: none;
   width: 100%;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 2;
   color: ${({ customValueText }) => customValueText && "transparent"};
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};

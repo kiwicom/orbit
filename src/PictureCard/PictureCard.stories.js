@@ -17,6 +17,12 @@ const image = object("image", {
   placeholder: "385x320",
 });
 
+const imageWithoutPlaceholder = object("imageWithout", {
+  original: "385x320",
+  code: "moscow_ru",
+  name: "moscow_ru",
+});
+
 storiesOf("PictureCard", module)
   .add(
     "Default",
@@ -76,6 +82,16 @@ storiesOf("PictureCard", module)
     "Plain",
     () => {
       return <PictureCard image={image} />;
+    },
+    {
+      info:
+        "PictureCard is a component which is used on the landing page and also on the search page.",
+    },
+  )
+  .add(
+    "Plain without place holder (for SSR)",
+    () => {
+      return <PictureCard image={imageWithoutPlaceholder} />;
     },
     {
       info:

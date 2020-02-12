@@ -82,6 +82,7 @@ const Card = ({
 
       {children
         ? React.Children.map(children, (item, key) => {
+            if (!item) return null;
             const topRoundedBorder =
               expandedSections.indexOf(key - 1) !== -1 || expandedSections.indexOf(key) !== -1;
             const bottomRounderBorder =

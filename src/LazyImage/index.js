@@ -67,7 +67,7 @@ const LazyImage = ({ placeholder, original, name }: Props) => {
     <StyledLazyImage>
       {/*
         Placeholder made optional to prevent lazyloading due to SSR issue in react,
-        where onload is not fired on hydrataion of a client.
+        where onload is not fired on the hydration of a client.
         https://github.com/facebook/react/issues/15446
       */}
       {placeholder ? (

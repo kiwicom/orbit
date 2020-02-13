@@ -32,6 +32,18 @@ storiesOf("Tag", module)
     },
   )
   .add(
+    "Nonactionable",
+    () => {
+      const content = text("Content", "Brno");
+      const Icon = getIcon(getIcons("Airplane"));
+
+      return <Tag icon={Icon && <Icon />}>{content}</Tag>;
+    },
+    {
+      info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const content = text("Content", "Transport");

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { rtlSpacing, left, right } from "../utils/rtl";
@@ -47,7 +47,7 @@ export const StyledTag = styled.div`
     selected ? theme.orbit.colorTextTagSelected : theme.orbit.colorTextTag};
   background: ${getBackgroundColor(STATES.DEFAULT)};
   display: inline-flex;
-  cursor: pointer;
+
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -61,21 +61,31 @@ export const StyledTag = styled.div`
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     background ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
-  &:hover {
-    background: ${getBackgroundColor(STATES.HOVER)};
-    box-shadow: none;
-  }
-
-  &:active {
-    background: ${getBackgroundColor(STATES.ACTIVE)};
-    box-shadow: none;
-  }
-
   &:focus {
-    background: ${getBackgroundColor(STATES.HOVER)};
-    box-shadow: none;
     outline: 0;
   }
+
+  ${({ actionable }) =>
+    actionable &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        background: ${getBackgroundColor(STATES.HOVER)};
+        box-shadow: none;
+      }
+
+      &:active {
+        background: ${getBackgroundColor(STATES.ACTIVE)};
+        box-shadow: none;
+      }
+
+      &:focus {
+        background: ${getBackgroundColor(STATES.HOVER)};
+        box-shadow: none;
+        outline: 0;
+      }
+    `};
 `;
 
 StyledTag.defaultProps = {
@@ -142,6 +152,7 @@ const Tag = (props: Props) => {
 
   return (
     <StyledTag
+      actionable={onClick || onRemove}
       data-test={dataTest}
       size={size}
       onClick={onClick}

@@ -45,15 +45,17 @@ Table below contains all types of the props available in PictureCard component.
 
 Table below contains all types of the props available for object in Image
 
-| Name        | Type     | Description                                              |
-| :---------- | :------- | :------------------------------------------------------- |
-| original    | `string` | The size of image                                        |
-| name        | `string` | The name of image, defines alt prop for image            |
-| **code**    | `string` | The code of image, defines which image will be rendered. |
-| placeholder | `string` | The preferred placeholder size                           |
+| Name        | Type     | Description                                                              |
+| :---------- | :------- | :----------------------------------------------------------------------- |
+| original    | `string` | The size of image                                                        |
+| name        | `string` | The name of image, defines alt prop for image                            |
+| **code**    | `string` | The code of image, defines which image will be rendered.                 |
+| placeholder | `string` | The preferred placeholder size [See Functional specs](#functional-specs) |
 
 ## Functional specs
 
 - You don't have to pass entire src of the image. Just `dubai_ae`, `paris_fr` etc. is enough.
 
 - `OnClick` is also called on `Enter` and `Space` keypresses.
+
+- For usage with server-side rendering (SSR), a placeholder can be emitted for it to work correctly. This is a React issue see more on this https://github.com/facebook/react/issues/15446 and https://github.com/zeit/next.js/issues/7047

@@ -271,10 +271,14 @@ const PictureCard = ({
           webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
           jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
         }}
-        placeholder={{
-          webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
-          jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,
-        }}
+        placeholder={
+          placeholder
+            ? {
+                webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
+                jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,
+              }
+            : undefined
+        }
         name={name}
       />
 

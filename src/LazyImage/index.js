@@ -65,8 +65,19 @@ const LazyImage = ({ placeholder, original, name }: Props) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <StyledLazyImage>
-      <Picture pictures={original} name={name} loaded={loaded} onLoad={() => setLoaded(true)} />
-      {placeholder && <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />}
+      {/*
+        Placeholder made optional to prevent lazyloading due to SSR issue in react,
+        where onload is not fired on the hydration of a client.
+        https://github.com/facebook/react/issues/15446
+      */}
+      {placeholder ? (
+        <>
+          <Picture pictures={original} name={name} loaded={loaded} onLoad={() => setLoaded(true)} />
+          <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />
+        </>
+      ) : (
+        <Picture pictures={original} name={name} loaded />
+      )}
     </StyledLazyImage>
   );
 };

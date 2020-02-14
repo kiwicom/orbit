@@ -135,7 +135,13 @@ storiesOf("Popover", module)
   .add(
     "Default",
     () => {
-      return <PopoverState />;
+      return (
+        <Popover content={content}>
+          <Button type="secondary" iconRight={<ChevronDown />}>
+            Open popover
+          </Button>
+        </Popover>
+      );
     },
     {
       info:

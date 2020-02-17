@@ -18,6 +18,13 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
         : Math.floor(containerLeft)}px;
     `;
   }
+  if (anchor === ALIGNS.CENTER) {
+    return css`
+      left: ${Math.floor(
+        containerLeft + containerWidth / 2 - popoverWidth / 2,
+      )}px; /* TODO: use token */
+    `;
+  }
   if (anchor === ALIGNS.END) {
     return css`
       left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; /* TODO: use token */

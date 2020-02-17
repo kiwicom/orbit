@@ -146,7 +146,11 @@ const StyledPictureCard = styled(
     ...props
   }) => {
     const Component = href ? "a" : "div";
-    return <Component {...props}>{props.children}</Component>;
+    return (
+      <Component href={href} {...props}>
+        {props.children}
+      </Component>
+    );
   },
 )`
   height: ${({ height }) => (height ? `${height}` : "100%")};

@@ -2,7 +2,7 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type PositionsCore = "top" | "bottom";
-export type AlignsCore = "start" | "end";
+export type AlignsCore = "start" | "end" | "center";
 
 export type DimensionsCore = {|
   containerTop: number,

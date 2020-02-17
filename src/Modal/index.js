@@ -364,6 +364,8 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   timeout: TimeoutID;
 
+  clickedModalBody: boolean = false;
+
   static defaultProps = {
     theme: defaultTheme,
   };
@@ -524,6 +526,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     if (
       onClose &&
       preventOverlayClose === false &&
+      !this.clickedModalBody &&
       this.modalContent.current &&
       ev.target instanceof Element &&
       !this.modalContent.current.contains(ev.target) &&
@@ -532,6 +535,15 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       // If is clicked outside of modal
       onClose(ev);
     }
+    this.clickedModalBody = false;
+  };
+
+  handleMouseDown = () => {
+    /*
+      This is due to issue where it's was possible to close Modal,
+      even though click started (onKeyDown) in ModalWrapper.
+    */
+    this.clickedModalBody = true;
   };
 
   keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
@@ -607,6 +619,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
+          onMouseDown={this.handleMouseDown}
           fixedFooter={fixedFooter}
           id={this.modalID}
           isMobileFullPage={isMobileFullPage}

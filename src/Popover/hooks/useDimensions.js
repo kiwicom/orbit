@@ -10,6 +10,7 @@ const useDimensions: UseDimensions = ({
   content,
   fixed,
   scrollableParent,
+  children,
 }) => {
   const [positions, setPositions] = useState({
     containerTop: 0,
@@ -70,7 +71,7 @@ const useDimensions: UseDimensions = ({
       if (scrollableParent !== document.body && scrollableParent)
         scrollableParent.removeEventListener("scroll", calculate);
     };
-  }, [containerRef, content, popover, fixed, scrollableParent]);
+  }, [containerRef, content, popover, fixed, scrollableParent, children]);
 
   return positions;
 };

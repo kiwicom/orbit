@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
@@ -16,6 +16,7 @@ import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
 import Sticky from "../Sticky";
 import Card from "../Card";
+import Loading from "../Loading";
 
 import Popover from "./index";
 
@@ -74,6 +75,59 @@ const longContent = (
     {selects}
   </Stack>
 );
+
+const PopoverState = () => {
+  const [render, setRender] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!render) {
+        setRender(true);
+      }
+    }, 2000);
+  }, [render]);
+
+  return (
+    <Stack justify="start">
+      <Popover
+        preferredAlign="start"
+        preferredPosition="bottom"
+        content={
+          render ? (
+            <div>
+              <ListChoice
+                title="Choice Title"
+                description="Further description"
+                selectable
+                icon={<Icons.Accommodation />}
+                onClick={action("onClick")}
+              />
+              <ListChoice
+                title="Choice Title"
+                description="Further description"
+                selectable
+                selected
+                icon={<Icons.Accommodation />}
+                onClick={action("onClick")}
+              />
+              <ListChoice
+                title="Choice Title"
+                description="Further description"
+                selectable
+                icon={<Icons.Accommodation />}
+                onClick={action("onClick")}
+              />
+            </div>
+          ) : (
+            <Loading />
+          )
+        }
+      >
+        <Button>Test</Button>
+      </Popover>
+    </Stack>
+  );
+};
 
 storiesOf("Popover", module)
   .addDecorator(withKnobs)
@@ -422,6 +476,16 @@ storiesOf("Popover", module)
           </Popover>
         </RenderInRtl>
       );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "LazyContent - simlulated",
+    () => {
+      return <PopoverState />;
     },
     {
       info:

@@ -47,4 +47,8 @@ describe("#PictureCard", () => {
     expect(wrapper.find("a").exists()).toBe(true);
     expect(wrapper.find("PictureCard__StyledPictureCard").prop("href")).toBe(props.href);
   });
+
+  it("should have href", () => {
+    expect(wrapper.find("a").prop("href")).toBe("http://weslav.com");
+  });
 });

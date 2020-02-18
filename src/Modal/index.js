@@ -541,7 +541,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   handleMouseDown = () => {
     /*
       This is due to issue where it's was possible to close Modal,
-      even though click started (onKeyDown) in ModalWrapper.
+      even though click started (onMouseDown) in ModalWrapper.
     */
     this.clickedModalBody = true;
   };

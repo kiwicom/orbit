@@ -25,70 +25,81 @@ Table below contains all types of the props available in Illustration component.
 
 ### enum
 
-| name                       | size        |
-| :------------------------- | :---------- |
-| `"Accommodation"`          | `"small"`   |
-| `"AirHelp"`                | `"medium"`  |
-| `"AirportTransport"`       | `"large"`   |
-| `"AirportTransportTaxi"`   | `"display"` |
-| `"AirportShuttle"`         |
-| `"AppQRCode"`              |
-| `"BaggageDrop"`            |
-| `"BGYFastTrack"`           |
-| `"Boarding"`               |
-| `"BoardingPass"`           |
-| `"BusinessTravel"`         |
-| `"BUDFastTrack"`           |
-| `"CabinBaggage"`           |
-| `"DesktopSearch"`          |
-| `"EnjoyApp"`               |
-| `"Error"`                  |
-| `"Error404"`               |
-| `"FastTrack"`              |
-| `"Feedback"`               |
-| `"Help"`                   |
-| `"Improve"`                |
-| `"Insurance"`              |
-| `"InviteAFriend"`          |
-| `"Login"`                  |
-| `"Lounge"`                 |
-| `"Mailbox"`                |
-| `"Meal"`                   |
-| `"MobileApp"`              |
-| `"Money"`                  |
-| `"MusicalInstruments"`     |
-| `"NCEFastTrack"`           |
-| `"NetVerify"`              |
-| `"NoBookings"`             |
-| `"NoFavoriteFlights"`      |
-| `"Nomad"`                  |
-| `"NomadNeutral"`           |
-| `"NoNotification"`         |
-| `"NoResults"`              |
-| `"Offline"`                |
-| `"OnlineCheckIn"`          |
-| `"OpenSearch"`             |
-| `"Parking"`                |
-| `"Pets"`                   |
-| `"PlaceholderAirport"`     |
-| `"PlaceholderDestination"` |
-| `"PlaceholderHotel"`       |
-| `"PlaceholderTours"`       |
-| `"PlaneAndMoney"`          |
-| `"PriorityBoarding"`       |
-| `"Rating"`                 |
-| `"ReferAFriend"`           |
-| `"RentalCar"`              |
-| `"Seating"`                |
-| `"SpecialAssistance"`      |
-| `"SportsEquipment"`        |
-| `"Success"`                |
-| `"Time"`                   |
-| `"TimelineBoarding"`       |
-| `"TimelineDropBaggage"`    |
-| `"TimelineLeave"`          |
-| `"TimelinePick"`           |
-| `"Tours"`                  |
-| `"Train"`                  |
-| `"TransportBus"`           |
-| `"TransportTaxi"`          |
+| name                            | size        |
+| :------------------------------ | :---------- |
+| `"Accommodation"`               | `"small"`   |
+| `"AirHelp"`                     | `"medium"`  |
+| `"AirportTransport"`            | `"large"`   |
+| `"AirportTransportTaxi"`        | `"display"` |
+| `"AirportShuttle"`              |
+| `"AppQRCode"`                   |
+| `"BaggageDrop"`                 |
+| `"BGYFastTrack"`                |
+| `"Boarding"`                    |
+| `"BoardingPass"`                |
+| `"BusinessTravel"`              |
+| `"BUDFastTrack"`                |
+| `"CabinBaggage"`                |
+| `"CompassAdventurerHat"`        |
+| `"CompassCaptainHat"`           |
+| `"CompassDemoted"`              |
+| `"CompassEmailAdventurer"`      |
+| `"CompassEmailCaptain"`         |
+| `"CompassEmailPromoted"`        |
+| `"CompassEmailPromotedCaptain"` |
+| `"CompassEmailScout"`           |
+| `"CompassPoints"`               |
+| `"CompassScoutHat"`             |
+| `"CompassTravelPlan"`           |
+| `"DesktopSearch"`               |
+| `"EnjoyApp"`                    |
+| `"Error"`                       |
+| `"Error404"`                    |
+| `"FastTrack"`                   |
+| `"Feedback"`                    |
+| `"Help"`                        |
+| `"Improve"`                     |
+| `"Insurance"`                   |
+| `"InviteAFriend"`               |
+| `"Login"`                       |
+| `"Lounge"`                      |
+| `"Mailbox"`                     |
+| `"Meal"`                        |
+| `"MobileApp"`                   |
+| `"Money"`                       |
+| `"MusicalInstruments"`          |
+| `"NCEFastTrack"`                |
+| `"NetVerify"`                   |
+| `"NoBookings"`                  |
+| `"NoFavoriteFlights"`           |
+| `"Nomad"`                       |
+| `"NomadNeutral"`                |
+| `"NoNotification"`              |
+| `"NoResults"`                   |
+| `"Offline"`                     |
+| `"OnlineCheckIn"`               |
+| `"OpenSearch"`                  |
+| `"Parking"`                     |
+| `"Pets"`                        |
+| `"PlaceholderAirport"`          |
+| `"PlaceholderDestination"`      |
+| `"PlaceholderHotel"`            |
+| `"PlaceholderTours"`            |
+| `"PlaneAndMoney"`               |
+| `"PriorityBoarding"`            |
+| `"Rating"`                      |
+| `"ReferAFriend"`                |
+| `"RentalCar"`                   |
+| `"Seating"`                     |
+| `"SpecialAssistance"`           |
+| `"SportsEquipment"`             |
+| `"Success"`                     |
+| `"Time"`                        |
+| `"TimelineBoarding"`            |
+| `"TimelineDropBaggage"`         |
+| `"TimelineLeave"`               |
+| `"TimelinePick"`                |
+| `"Tours"`                       |
+| `"Train"`                       |
+| `"TransportBus"`                |
+| `"TransportTaxi"`               |

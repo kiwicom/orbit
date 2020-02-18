@@ -40,6 +40,7 @@ Table below contains all types of the props available in the Popover component.
 | :--------- | :--------- |
 | `"bottom"` | `"start"`  |
 | `"top"`    | `"end"`    |
+|     | `"center"`    |
 
 ## Functional specs
 

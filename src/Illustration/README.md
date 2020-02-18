@@ -103,4 +103,3 @@ Table below contains all types of the props available in Illustration component.
 | `"Train"`                       |
 | `"TransportBus"`                |
 | `"TransportTaxi"`               |
-

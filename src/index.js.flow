@@ -117,7 +117,7 @@ declare export var DestinationHeader: DestinationHeaderType;
 declare export var DestinationCard: DestinationCardType;
 declare export var Dialog: DialogType;
 declare export var FeatureIcon: FeatureIconType;
-declare export var PicutreCard: PictureCardType;
+declare export var PictureCard: PictureCardType;
 declare export var List: ListType;
 declare export var ListItem: ListItemType;
 declare export var ListChoice: ListChoiceType;

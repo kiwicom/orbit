@@ -83,9 +83,9 @@ StyledOverlayHover.defaultProps = {
 
 type Content = {|
   title?: React.Node,
-  subTitle?: React.Node,
-  children?: React.Node,
-  cardID: string,
+    subTitle ?: React.Node,
+    children ?: React.Node,
+    cardID: string,
 |};
 
 const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
@@ -236,7 +236,7 @@ const PictureCard = ({
     }
   };
 
-  const { name, original, placeholder, code } = image;
+  const { name, original, placeholder, code, src } = image;
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;
   const isFocus = isPlain ? undefined : 0;
@@ -260,10 +260,14 @@ const PictureCard = ({
       aria-labelledby={isPlain ? undefined : cardID}
     >
       <LazyImage
-        original={{
-          webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
-          jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
-        }}
+        original={
+          code
+            ? {
+                webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
+                jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
+              }
+            : { "*": src }
+        }
         placeholder={
           placeholder
             ? {

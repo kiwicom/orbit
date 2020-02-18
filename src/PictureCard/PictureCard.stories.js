@@ -23,6 +23,11 @@ const imageWithoutPlaceholder = object("imageWithout", {
   name: "moscow_ru",
 });
 
+const imageWithSrc = object("imageWith", {
+  src: "//images.kiwi.com/photos/385x320/moscow_ru.jpg",
+  name: "moscow_ru",
+});
+
 storiesOf("PictureCard", module)
   .add(
     "Default",
@@ -92,6 +97,16 @@ storiesOf("PictureCard", module)
     "Plain without place holder (for SSR)",
     () => {
       return <PictureCard image={imageWithoutPlaceholder} />;
+    },
+    {
+      info:
+        "PictureCard is a component which is used on the landing page and also on the search page.",
+    },
+  )
+  .add(
+    "Plain with an src defined instead of a code",
+    () => {
+      return <PictureCard image={imageWithSrc} />;
     },
     {
       info:

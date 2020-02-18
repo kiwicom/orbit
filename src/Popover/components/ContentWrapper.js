@@ -155,11 +155,17 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
-  const overlay: { current: React$ElementRef<*> } = useRef(null);
   const actionsRef: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
-  const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
+  const dimensions = useDimensions({
+    containerRef,
+    popover,
+    content,
+    fixed,
+    scrollableParent,
+    children,
+  });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), []);
@@ -177,7 +183,7 @@ const PopoverContentWrapper = ({
 
   return (
     <React.Fragment>
-      <StyledOverlay ref={overlay} shown={shown} isInsideModal={isInsideModal} />
+      <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}

@@ -133,20 +133,13 @@ StyledPictureCardContent.defaultProps = {
 };
 
 const StyledPictureCard = styled(
-  ({
-    height,
-    href,
-    theme,
-    external,
-    shadows,
-    contentHeight,
-    isPlain,
-    width,
-    isClickable,
-    ...props
-  }) => {
+  ({ height, href, theme, shadows, contentHeight, isPlain, width, isClickable, ...props }) => {
     const Component = href ? "a" : "div";
-    return <Component {...props}>{props.children}</Component>;
+    return (
+      <Component {...props} href={href}>
+        {props.children}
+      </Component>
+    );
   },
 )`
   height: ${({ height }) => (height ? `${height}` : "100%")};

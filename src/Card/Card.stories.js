@@ -29,7 +29,14 @@ storiesOf("Card", module)
     return <Card icon={<Icons.Airplane />} title={title} />;
   })
   .add("Card with description", () => {
-    return <Card icon={<Icons.Airplane />} title={title} description={description} />;
+    return (
+      <Card
+        icon={<Icons.Airplane />}
+        onClose={action("onClose")}
+        title={title}
+        description={description}
+      />
+    );
   })
   .add("Card with actions", () => {
     return (
@@ -61,7 +68,7 @@ storiesOf("Card", module)
     "Card with expandable sections",
     () => {
       return (
-        <Card title={title} description={description}>
+        <Card title={title} onClose={action("onClose")} description={description}>
           <CardSection expandable title={sectionTitle}>
             This is a section content
           </CardSection>

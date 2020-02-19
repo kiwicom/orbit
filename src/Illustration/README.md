@@ -40,6 +40,7 @@ Table below contains all types of the props available in Illustration component.
 | `"BusinessTravel"`              |
 | `"BUDFastTrack"`                |
 | `"CabinBaggage"`                |
+| `"CompassCollectPoints"`        |
 | `"CompassDemoted"`              |
 | `"CompassEmailAdventurer"`      |
 | `"CompassEmailCaptain"`         |
@@ -48,6 +49,7 @@ Table below contains all types of the props available in Illustration component.
 | `"CompassEmailScout"`           |
 | `"CompassPoints"`               |
 | `"CompassTravelPlan"`           |
+| `"CompassSaveOnBooking"`        |
 | `"DesktopSearch"`               |
 | `"EnjoyApp"`                    |
 | `"Error"`                       |

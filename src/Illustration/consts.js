@@ -13,8 +13,6 @@ export const NAMES = [
   "BoardingPass",
   "BUDFastTrack",
   "BusinessTravel",
-  "CompassAdventurerHat",
-  "CompassCaptainHat",
   "CompassDemoted",
   "CompassEmailAdventurer",
   "CompassEmailCaptain",
@@ -22,7 +20,6 @@ export const NAMES = [
   "CompassEmailPromotedCaptain",
   "CompassEmailScout",
   "CompassPoints",
-  "CompassScoutHat",
   "CompassTravelPlan",
   "CabinBaggage",
   "DesktopSearch",
@@ -77,6 +74,7 @@ export const NAMES = [
   "Train",
   "TransportBus",
   "TransportTaxi",
+  "WomanWithPhone",
 ];
 export const SIZE_OPTIONS = {
   SMALL: "small",

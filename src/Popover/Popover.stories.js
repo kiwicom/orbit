@@ -149,6 +149,25 @@ storiesOf("Popover", module)
     },
   )
   .add(
+    "Prefered Align",
+    () => {
+      const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
+      return (
+        <Stack justify="center">
+          <Popover content={content} preferredAlign={preferredAlign}>
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+        </Stack>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Prefered Position",
     () => {
       const preferredPosition = select(

@@ -55,7 +55,7 @@ jobs:
           command: yarn
       - run:
           name: Build and deploy
-          command: yarn cross-env BABEL_TARGET=\"storybook\" deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
+          command: yarn deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
   deploy-surge:
     docker:

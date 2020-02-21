@@ -30,6 +30,7 @@ const Card = ({
   description,
   children,
   dataTest,
+  onClose,
   loading,
   header,
   spaceAfter,
@@ -75,6 +76,7 @@ const Card = ({
             dataA11ySection={dataA11ySection}
             actions={actions}
             title={title}
+            onClose={onClose}
             header={header}
           />
         </CardWrapper>

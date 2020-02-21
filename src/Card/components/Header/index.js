@@ -2,11 +2,15 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import { right } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
 import Stack from "../../../Stack";
 import Heading from "../../../Heading";
 import Text from "../../../Text";
+import Close from "../../../icons/Close";
+import useTranslate from "../../../hooks/useTranslate";
+import ButtonLink from "../../../ButtonLink";
 
 import type { Props } from ".";
 
@@ -19,6 +23,27 @@ ChevronIcon.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledCloseContainer = styled.div`
+  position: absolute;
+  top: 0px;
+  ${right}: 0;
+  z-index: 1;
+`;
+
+const CardCloseButton = ({ onClick }) => {
+  const translate = useTranslate();
+  return (
+    <ButtonLink
+      type="secondary"
+      size="small"
+      icon={<Close />}
+      onClick={onClick}
+      transparent
+      title={translate("button_close")}
+    />
+  );
+};
+
 const Header = ({
   description,
   icon,
@@ -26,6 +51,7 @@ const Header = ({
   isSection,
   actions,
   dataA11ySection,
+  onClose,
   header,
   expandable,
   expanded,
@@ -51,6 +77,11 @@ const Header = ({
       <Stack inline grow={false} justify="end">
         {actions}
       </Stack>
+    )}
+    {onClose && !actions && (
+      <StyledCloseContainer>
+        <CardCloseButton onClick={onClose} />
+      </StyledCloseContainer>
     )}
   </Stack>
 );

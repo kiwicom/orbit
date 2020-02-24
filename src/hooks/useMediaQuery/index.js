@@ -7,8 +7,8 @@ import { getBreakpointWidth } from "../../utils/mediaQuery/index";
 import type { UseMediaQuery } from ".";
 
 const createBreakpoints = theme => ({
-  isDesktop: getBreakpointWidth("largeDesktop", theme),
-  isLargeDesktop: getBreakpointWidth("desktop", theme),
+  isDesktop: getBreakpointWidth("desktop", theme),
+  isLargeDesktop: getBreakpointWidth("largeDesktop", theme),
   isTablet: getBreakpointWidth("tablet", theme),
   isLargeMobile: getBreakpointWidth("largeMobile", theme),
   isMediumMobile: getBreakpointWidth("mediumMobile", theme),
@@ -49,7 +49,8 @@ const useMediaQuery: UseMediaQuery = () => {
 
   React.useEffect(() => {
     const handler = () => {
-      if (typeof setTimeout === "function") {
+      if (typeof setTimeout === "function" && typeof clearTimeout === "function") {
+        clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
           timeoutRef.current = null;
           setValue(getValue);

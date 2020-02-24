@@ -39,7 +39,12 @@ StyledImage.defaultProps = {
   theme: defaultTheme,
 };
 
-const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }: Props) => (
+const IllustrationPrimitive = ({
+  name,
+  size = SIZE_OPTIONS.MEDIUM,
+  dataTest,
+  spaceAfter,
+}: Props) => (
   <StyledImage
     illustrationName={name}
     alt={name}
@@ -49,4 +54,4 @@ const Illustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }
   />
 );
 
-export default Illustration;
+export default IllustrationPrimitive;

@@ -8,10 +8,8 @@ export const NAMES = [
   "AirportShuttle",
   "AppQRCode",
   "BaggageDrop",
-  "BGYFastTrack",
   "Boarding",
   "BoardingPass",
-  "BUDFastTrack",
   "BusinessTravel",
   "CabinBaggage",
   "CompassCollectPoints",
@@ -41,7 +39,6 @@ export const NAMES = [
   "MobileApp",
   "Money",
   "MusicalInstruments",
-  "NCEFastTrack",
   "NetVerify",
   "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",

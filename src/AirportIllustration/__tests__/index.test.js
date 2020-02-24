@@ -2,21 +2,21 @@
 import * as React from "react";
 import { shallow, mount } from "enzyme";
 
-import IllustrationPrimitive from "../index";
+import AirportIllustration from "../index";
 import { SIZE_OPTIONS } from "../consts";
-import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
-import defaultTheme from "../../../defaultTheme";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import defaultTheme from "../../defaultTheme";
 
 const size = SIZE_OPTIONS.SMALL;
-const name = "Accommodation";
+const name = "BGYFastTrack";
 const dataTest = "test";
 
-const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png";
-const URL_RETINA = "//images.kiwi.com/illustrations/0x180/Accommodation-Q85.png 2x";
+const URL = "//images.kiwi.com/illustrations/0x90/BGYFastTrack-Q85.png";
+const URL_RETINA = "//images.kiwi.com/illustrations/0x180/BGYFastTrack-Q85.png 2x";
 
-describe(`IllustrationPrimitive of ${name}`, () => {
+describe(`AirportIllustration of ${name}`, () => {
   const component = shallow(
-    <IllustrationPrimitive
+    <AirportIllustration
       size={size}
       name={name}
       dataTest={dataTest}
@@ -25,7 +25,7 @@ describe(`IllustrationPrimitive of ${name}`, () => {
   );
 
   const mountedComponent = mount(
-    <IllustrationPrimitive
+    <AirportIllustration
       size={size}
       name={name}
       dataTest={dataTest}

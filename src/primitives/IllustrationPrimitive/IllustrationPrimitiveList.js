@@ -2,11 +2,10 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { NAMES } from "./consts";
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 
-import Illustration from "./index";
+import IllustrationPrimitive from "./index";
 
 const List = styled.div`
   display: flex;
@@ -61,17 +60,21 @@ IllustrationJSX.defaultProps = {
   theme: defaultTheme,
 };
 
-const IllustrationList = () => (
-  <List>
-    {NAMES.map(illustration => {
-      return (
-        <Container key={illustration}>
-          <Illustration name={illustration} />
-          <IllustrationJSX>{`<Illustration name="${illustration}" />`}</IllustrationJSX>
-        </Container>
-      );
-    })}
-  </List>
-);
+const IllustrationPrimitiveList = (props: { images: Array<string>, nameOfComponent: string }) => {
+  return (
+    <List>
+      {props.images.map(illustration => {
+        return (
+          <Container key={illustration}>
+            <IllustrationPrimitive name={illustration} />
+            <IllustrationJSX>{`<${
+              props.nameOfComponent
+            } name="${illustration}" />`}</IllustrationJSX>
+          </Container>
+        );
+      })}
+    </List>
+  );
+};
 
-export default IllustrationList;
+export default IllustrationPrimitiveList;

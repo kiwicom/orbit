@@ -46,7 +46,7 @@ const useMediaQuery: UseMediaQuery = () => {
       },
       /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
        * v0.115.0. To view the error, delete this comment and run Flow. */
-      ...Object.keys(mediaQueryLists).map(q => ({ [q]: mediaQueryLists[q].matches })),
+      ...Object.keys(mediaQueryLists).map(q => ({ [q]: mediaQueryLists[q]?.matches })),
     );
   }, [mediaQueryLists]);
 

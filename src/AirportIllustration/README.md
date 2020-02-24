@@ -29,5 +29,7 @@ Table below contains all types of the props available in AirportIllustration com
 | :--------------- | :---------- |
 | `"BGYFastTrack"` | `"small"`   |
 | `"BUDFastTrack"` | `"medium"`  |
-| `"NCEFastTrack"` | `"large"`   |
-|                  | `"display"` |
+| `"MRSSmartPass"` | `"large"`   |
+| `"NCEFastTrack"` | `"display"` |
+| `"PRGSmartPass"` |
+| `"VCESmartPass"` |

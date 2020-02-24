@@ -5,7 +5,13 @@
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
-type Name = "BGYFastTrack" | "BUDFastTrack" | "NCEFastTrack";
+type Name =
+  | "BGYFastTrack"
+  | "BUDFastTrack"
+  | "MRSSmartPass"
+  | "NCEFastTrack"
+  | "PRGSmartPass"
+  | "VCESmartPass";
 
 export type Props = {|
   +size?: "small" | "medium" | "large" | "display",

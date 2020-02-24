@@ -27,7 +27,12 @@ const useMediaQuery: UseMediaQuery = () => {
     },
     /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
      * v0.115.0. To view the error, delete this comment and run Flow. */
-    ...Object.keys(breakpoints).map(q => ({ [q]: window.matchMedia(breakpoints[q]) })),
+    ...Object.keys(breakpoints).map(q => {
+      if (typeof window !== "undefined") {
+        return { [q]: window.matchMedia(breakpoints[q]) };
+      }
+      return {};
+    }),
   );
   const timeoutRef = React.useRef(null);
   const getValue = React.useCallback(() => {
@@ -48,6 +53,7 @@ const useMediaQuery: UseMediaQuery = () => {
   const [value, setValue] = React.useState(getValue);
 
   React.useEffect(() => {
+    setValue(getValue);
     const handler = () => {
       if (typeof setTimeout === "function" && typeof clearTimeout === "function") {
         clearTimeout(timeoutRef.current);

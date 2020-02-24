@@ -8,9 +8,9 @@ import { SIZE_OPTIONS, NAMES } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 
-import Illustration from "./index";
+import AirportIllustration from "./index";
 
-storiesOf("Illustration", module)
+storiesOf("AirportIllustration", module)
   .add(
     "Playground",
     () => {
@@ -18,18 +18,20 @@ storiesOf("Illustration", module)
       const name = select("Name", Object.values(NAMES), "Accommodation");
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      return <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />;
+      return (
+        <AirportIllustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />
+      );
     },
     {
-      info: "Explore our new set of illustrations for Kiwi.com.",
+      info: "Explore our new set of Airportillustrations for Kiwi.com.",
     },
   )
   .add(
-    "List of all Illustrations",
+    "List of all AirportIllustrations",
     () => {
-      return <IllustrationPrimitiveList nameOfComponent="Illustration" images={NAMES} />;
+      return <IllustrationPrimitiveList nameOfComponent="AirportIllustration" images={NAMES} />;
     },
     {
-      info: "Explore our new set of illustrations for Kiwi.com.",
+      info: "Explore our new set of Airportillustrations for Kiwi.com.",
     },
   );

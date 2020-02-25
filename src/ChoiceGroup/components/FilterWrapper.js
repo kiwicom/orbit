@@ -46,7 +46,12 @@ StyledContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const FilterWrapper: FilterWrapperType = ({ child, children, onOnlySelection }) => {
+const FilterWrapper: FilterWrapperType = ({
+  child,
+  children,
+  onOnlySelection,
+  onlySelectionText,
+}) => {
   const { value, label, disabled } = child.props;
   return (
     <StyledContentWrapper disabled={disabled}>
@@ -60,7 +65,7 @@ const FilterWrapper: FilterWrapperType = ({ child, children, onOnlySelection }) 
           }}
           transparent
         >
-          Only {/* TODO: Dictionary */}
+          {onlySelectionText}
         </StyledOnlyButton>
       )}
     </StyledContentWrapper>

@@ -13,6 +13,7 @@ export type Props = {|
   +description?: React$Node,
   +icon?: React$Node,
   +actions?: React$Node,
+  +onClose?: () => void | Promise<any>,
   +loading?: boolean,
   +header?: React$Node,
   +dataA11ySection?: string,

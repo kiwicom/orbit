@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/prefer-default-export
 export const NAMES = [
   "Accommodation",
   "AirHelp",
@@ -8,13 +9,11 @@ export const NAMES = [
   "AirportShuttle",
   "AppQRCode",
   "BaggageDrop",
-  "BGYFastTrack",
   "Boarding",
   "BoardingPass",
-  "BUDFastTrack",
   "BusinessTravel",
-  "CompassAdventurerHat",
-  "CompassCaptainHat",
+  "CabinBaggage",
+  "CompassCollectPoints",
   "CompassDemoted",
   "CompassEmailAdventurer",
   "CompassEmailCaptain",
@@ -22,9 +21,8 @@ export const NAMES = [
   "CompassEmailPromotedCaptain",
   "CompassEmailScout",
   "CompassPoints",
-  "CompassScoutHat",
   "CompassTravelPlan",
-  "CabinBaggage",
+  "CompassSaveOnBooking",
   "DesktopSearch",
   "EnjoyApp",
   "Error",
@@ -42,7 +40,6 @@ export const NAMES = [
   "MobileApp",
   "Money",
   "MusicalInstruments",
-  "NCEFastTrack",
   "NetVerify",
   "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",
@@ -77,12 +74,5 @@ export const NAMES = [
   "Train",
   "TransportBus",
   "TransportTaxi",
+  "WomanWithPhone",
 ];
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  MEDIUM: "medium",
-  LARGE: "large",
-  DISPLAY: "display",
-};
-
-export const baseURL = "//images.kiwi.com";

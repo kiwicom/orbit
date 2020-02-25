@@ -152,7 +152,7 @@ describe("PricingTableItem desktrop", () => {
 describe("PricingTable", () => {
   const mobileDescription = "Basic ticket fare includes:";
   const component = shallow(
-    <PricingTable dataTest={dataTest}>
+    <PricingTable activeElement={0} dataTest={dataTest}>
       <PricingTableItem
         dataTest={dataTest}
         name={name}

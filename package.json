@@ -97,7 +97,7 @@
     "@babel/node": "^7.8.3",
     "@babel/runtime": "^7.8.3",
     "@emotion/core": "^10.0.27",
-    "@octokit/rest": "^15.13.1",
+    "@octokit/rest": "^17.0.0",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-info": "5.3.13",
     "@storybook/addon-knobs": "^5.3.13",

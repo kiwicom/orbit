@@ -14,25 +14,31 @@ const createBreakpoints = theme => ({
   isMediumMobile: getBreakpointWidth("mediumMobile", theme),
 });
 
+const createMediaQueryList = breakpoints => {
+  if (typeof window !== "undefined") {
+    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+     * v0.115.0. To view the error, delete this comment and run Flow. */
+    return Object.keys(breakpoints).map(q => ({ [q]: window.matchMedia(breakpoints[q]) }));
+  }
+  return [];
+};
+
 const useMediaQuery: UseMediaQuery = () => {
   const theme = useTheme();
   const breakpoints = React.useMemo(() => createBreakpoints(theme), [theme]);
-  const mediaQueryLists = Object.assign(
-    {
-      isDesktop: {},
-      isLargeDesktop: {},
-      isTablet: {},
-      isLargeMobile: {},
-      isMediumMobile: {},
-    },
-    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
-     * v0.115.0. To view the error, delete this comment and run Flow. */
-    ...Object.keys(breakpoints).map(q => {
-      if (typeof window !== "undefined") {
-        return { [q]: window.matchMedia(breakpoints[q]) };
-      }
-      return {};
-    }),
+  const mediaQueryLists = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          isDesktop: {},
+          isLargeDesktop: {},
+          isTablet: {},
+          isLargeMobile: {},
+          isMediumMobile: {},
+        },
+        ...createMediaQueryList(breakpoints),
+      ),
+    [breakpoints],
   );
   const timeoutRef = React.useRef(null);
   const getValue = React.useCallback(() => {

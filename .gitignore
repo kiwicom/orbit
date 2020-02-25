@@ -71,6 +71,7 @@ es
 src/data/illustrations.json
 src/data/icons.json
 src/Illustration/index.js.flow
+src/AirportIllustration/index.js.flow
 src/ServiceLogo/index.js.flow
 src/FeatureIcon/index.js.flow
 orbit-icons-font

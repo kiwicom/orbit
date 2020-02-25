@@ -3,6 +3,7 @@ import path from "path";
 import fs from "fs";
 
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
+import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts";
 import { NAME_OPTIONS as SERVICE_LOGOS_NAMES } from "../src/ServiceLogo/consts";
 import { NAME_OPTIONS as FEATURE_ICONS_NAMES } from "../src/FeatureIcon/consts";
 
@@ -23,6 +24,14 @@ generateFlowFile(path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLAT
   NAMES: `${ILLUSTRATION_NAMES.map(illustrationName => `\n  | "${String(illustrationName)}"`).join(
     "",
   )};`,
+});
+
+// Airport Illustrations
+
+generateFlowFile(path.join(__dirname, "..", "src", "AirportIllustration", "FLOW_TEMPLATE.flow"), {
+  NAMES: `${AIRPORT_ILLUSTRATION_NAMES.map(
+    illustrationName => `\n  | "${String(illustrationName)}"`,
+  ).join("")};`,
 });
 
 // ServiceLogos

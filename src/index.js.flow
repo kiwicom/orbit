@@ -3,6 +3,7 @@ import * as React from "react";
 import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
 
 import typeof AlertType from "./Alert";
+import typeof AirportIllustrationType from "./AirportIllustration";
 import typeof BadgeType from "./Badge";
 import typeof NotificationBadgeType from "./NotificationBadge";
 import typeof BreadcrumbsType from "./Breadcrumbs";
@@ -89,6 +90,7 @@ import typeof NavigationBarType from "./NavigationBar";
 import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
 import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
+import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
 import typeof LinkListType from "./LinkList";
 
 declare export var InputText: any;
@@ -100,6 +102,7 @@ declare export var FieldFeedback: any;
 declare export var Typography: any;
 
 declare export var Alert: AlertType;
+declare export var AirportIllustration: AirportIllustrationType;
 declare export var Badge: BadgeType;
 declare export var NotificationBadge: NotificationBadgeType;
 declare export var Breadcrumbs: BreadcrumbsType;
@@ -205,3 +208,4 @@ declare export var fromPlainObject: FromPlainObject;
 declare export var mediaQueries: mediaQueriesType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
+declare export var IllustrationPrimitive: IllustrationPrimitiveType;

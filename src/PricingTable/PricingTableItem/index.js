@@ -12,8 +12,9 @@ import media from "../../utils/mediaQuery";
 import type { Props } from "./index.js.flow";
 import STATES from "./consts";
 
-const getBoxShadow = state => ({ theme, active }) => {
+const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
+    if (hasError) return `${shadow}, inset 0 0 0 1px ${theme.orbit.borderColorInputError}`;
     if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`;
     return shadow;
   };
@@ -114,6 +115,7 @@ const PricingTableItem = ({
   children,
   onClick,
   basis,
+  hasError,
 }: Props) => {
   const onClickHandler = () => {
     if (onClick) {
@@ -128,6 +130,7 @@ const PricingTableItem = ({
       featureIcon={!!featureIcon}
       active={active}
       data-test={dataTest}
+      hasError={hasError}
     >
       {badge && (
         <StyledBadgeWrapper>
@@ -172,7 +175,7 @@ const PricingTableItem = ({
           ) : (
             <Stack justify="center" align="center" grow={false}>
               <Item>
-                <Radio checked={active} onChange={onClickHandler} />
+                <Radio checked={active} onChange={onClickHandler} hasError={hasError} />
               </Item>
             </Stack>
           )}

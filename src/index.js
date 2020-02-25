@@ -5,6 +5,7 @@ import * as Icons from "./icons";
 export { Icons };
 
 export { default as Alert } from "./Alert";
+export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
@@ -115,3 +116,4 @@ export { default as mediaQueries } from "./utils/mediaQuery";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
+export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";

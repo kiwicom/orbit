@@ -1,109 +1,85 @@
 // @flow
-import { useState, useEffect } from "react";
+import * as React from "react";
 
 import useTheme from "../useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery/index";
 
 import type { UseMediaQuery } from ".";
 
-const debounce = (callback, time) => {
-  let interval;
-  return (...args) => {
-    clearTimeout(interval);
-    interval = setTimeout(() => {
-      callback(...args);
-    }, time);
-  };
+const createBreakpoints = theme => ({
+  isDesktop: getBreakpointWidth("desktop", theme),
+  isLargeDesktop: getBreakpointWidth("largeDesktop", theme),
+  isTablet: getBreakpointWidth("tablet", theme),
+  isLargeMobile: getBreakpointWidth("largeMobile", theme),
+  isMediumMobile: getBreakpointWidth("mediumMobile", theme),
+});
+
+const createMediaQueryList = breakpoints => {
+  if (typeof window !== "undefined") {
+    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+     * v0.115.0. To view the error, delete this comment and run Flow. */
+    return Object.keys(breakpoints).map(q => ({ [q]: window.matchMedia(breakpoints[q]) }));
+  }
+  return [];
 };
 
 const useMediaQuery: UseMediaQuery = () => {
   const theme = useTheme();
-  const [breakpointList, setBreakpointList] = useState(() => [
-    {
-      media: getBreakpointWidth("largeDesktop", theme),
-      mapping: "isLargeDesktop",
-      matches: null,
-    },
-    {
-      media: getBreakpointWidth("desktop", theme),
-      mapping: "isDesktop",
-      matches: null,
-    },
-    {
-      media: getBreakpointWidth("largeMobile", theme),
-      mapping: "isLargeMobile",
-      matches: null,
-    },
-    {
-      media: getBreakpointWidth("mediumMobile", theme),
-      mapping: "isMediumMobile",
-      matches: null,
-    },
-    {
-      media: getBreakpointWidth("tablet", theme),
-      mapping: "isTablet",
-      matches: null,
-    },
-  ]);
-  let mediaList = [];
-
-  if (typeof window !== "undefined") {
-    // Tie listener to all MediaQueryList items
-    mediaList = breakpointList.map(breakpoint => window.matchMedia(breakpoint.media));
-  }
-
-  const findMatch = (mediaToMatch, list) => {
-    const regex = /\d+/;
-    // $FlowFixMe
-    const res = list.find(el => el.media.match(regex)[0] === mediaToMatch.match(regex)[0]);
-    if (res) {
-      return res.matches;
-    }
-    return null;
-  };
-
-  const updateMatch = debounce(() => {
-    setBreakpointList(
-      breakpointList.map(breakpoint => {
-        return {
-          ...breakpoint,
-          matches: findMatch(breakpoint.media, mediaList),
-        };
-      }),
+  const breakpoints = React.useMemo(() => createBreakpoints(theme), [theme]);
+  const mediaQueryLists = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          isDesktop: {},
+          isLargeDesktop: {},
+          isTablet: {},
+          isLargeMobile: {},
+          isMediumMobile: {},
+        },
+        ...createMediaQueryList(breakpoints),
+      ),
+    [breakpoints],
+  );
+  const timeoutRef = React.useRef(null);
+  const getValue = React.useCallback(() => {
+    return Object.assign(
+      {
+        isDesktop: false,
+        isLargeDesktop: false,
+        isTablet: false,
+        isLargeMobile: false,
+        isMediumMobile: false,
+      },
+      /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+       * v0.115.0. To view the error, delete this comment and run Flow. */
+      ...Object.keys(mediaQueryLists).map(q => ({ [q]: mediaQueryLists[q]?.matches })),
     );
-  }, 150);
+  }, [mediaQueryLists]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Initial value
-      updateMatch();
-      // Tie listener to all MediaQueryList items
-      mediaList.forEach(mediaListItem => mediaListItem.addListener(updateMatch));
-    }
+  const [value, setValue] = React.useState(getValue);
 
-    return () => {
-      if (typeof window !== "undefined") {
-        // cleanup
-        mediaList.forEach(mediaListItem => mediaListItem.removeListener(updateMatch));
+  React.useEffect(() => {
+    setValue(getValue);
+    const handler = () => {
+      if (typeof setTimeout === "function" && typeof clearTimeout === "function") {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+          timeoutRef.current = null;
+          setValue(getValue);
+        }, 150);
       }
     };
-    // can't have dependencies
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Flatten to object and return
-  return Object.assign(
-    {
-      isDesktop: null,
-      isLargeDesktop: null,
-      isTablet: null,
-      isLargeMobile: null,
-      isMediumMobile: null,
-    },
-    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
-     * v0.115.0. To view the error, delete this comment and run Flow. */
-    ...breakpointList.map(item => ({ [item.mapping]: item.matches })),
-  );
+    Object.keys(mediaQueryLists).forEach(mql => {
+      mediaQueryLists[mql].addListener(handler);
+    });
+    return () => {
+      Object.keys(mediaQueryLists).forEach(mql => mediaQueryLists[mql].addListener(handler));
+      if (timeoutRef.current !== null && typeof clearTimeout === "function") {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [getValue, mediaQueryLists]);
+  return value;
 };
 
 export default useMediaQuery;

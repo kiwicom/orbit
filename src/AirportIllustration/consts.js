@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/prefer-default-export
 export const NAMES = [
   "BGYFastTrack",
   "BUDFastTrack",
@@ -8,11 +9,3 @@ export const NAMES = [
   "PRGSmartPass",
   "VCESmartPass",
 ];
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  MEDIUM: "medium",
-  LARGE: "large",
-  DISPLAY: "display",
-};
-
-export const baseURL = "//images.kiwi.com";

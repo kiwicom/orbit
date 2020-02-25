@@ -46,7 +46,10 @@ storiesOf("CheckBox", module)
             <Text>
               I instruct Kiwi.com to cancel this booking under the herein specified conditions and
               to process a refund in accordance with Kiwi.com&rsquo;&nbsp;
-              <TextLink>Terms and Conditions</TextLink>.
+              <TextLink stopPropagation href="https://kiwi.com" external>
+                Terms and Conditions
+              </TextLink>
+              .
             </Text>
           }
           checked={checked}

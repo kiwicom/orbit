@@ -2,25 +2,35 @@
 import * as React from "react";
 import { shallow, mount } from "enzyme";
 
-import Illustration from "../index";
+import AirportIllustration from "../index";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
 
 const size = SIZE_OPTIONS.SMALL;
-const name = "Accommodation";
+const name = "BGYFastTrack";
 const dataTest = "test";
 
-const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png";
-const URL_RETINA = "//images.kiwi.com/illustrations/0x180/Accommodation-Q85.png 2x";
+const URL = "//images.kiwi.com/illustrations/0x90/BGYFastTrack-Q85.png";
+const URL_RETINA = "//images.kiwi.com/illustrations/0x180/BGYFastTrack-Q85.png 2x";
 
-describe(`Illustration of ${name}`, () => {
+describe(`AirportIllustration of ${name}`, () => {
   const component = shallow(
-    <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL} />,
+    <AirportIllustration
+      size={size}
+      name={name}
+      dataTest={dataTest}
+      spaceAfter={SPACINGS_AFTER.NORMAL}
+    />,
   );
 
   const mountedComponent = mount(
-    <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL} />,
+    <AirportIllustration
+      size={size}
+      name={name}
+      dataTest={dataTest}
+      spaceAfter={SPACINGS_AFTER.NORMAL}
+    />,
   );
 
   it("should have passed props", () => {

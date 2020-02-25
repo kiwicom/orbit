@@ -57,6 +57,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
       children,
       filter,
       onOnlySelection,
+      onlySelectionText,
     } = this.props;
 
     return (
@@ -81,7 +82,11 @@ class ChoiceGroup extends React.PureComponent<Props> {
                 })}
               </React.Fragment>
             ) : (
-              <FilterWrapper child={child} onOnlySelection={onOnlySelection}>
+              <FilterWrapper
+                child={child}
+                onOnlySelection={onOnlySelection}
+                onlySelectionText={onlySelectionText}
+              >
                 <React.Fragment>
                   {React.cloneElement(child, {
                     onChange: this.handleChange,

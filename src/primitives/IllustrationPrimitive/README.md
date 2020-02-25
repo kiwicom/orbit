@@ -3,7 +3,7 @@
 To implement IllustrationPrimitive component into your project you'll need to add the import:
 
 ```jsx
-import IllustrationPrimitive from "@kiwicom/orbit-components/lib/IllustrationPrimitive";
+import IllustrationPrimitive from "@kiwicom/orbit-components/lib/primitives/IllustrationPrimitive";
 ```
 
 After adding import into your project you can use it simply like:

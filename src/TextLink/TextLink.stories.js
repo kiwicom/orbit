@@ -83,7 +83,7 @@ storiesOf("TextLink", module)
       const Icon = getIcon(getIcons("ChevronRight"));
       const dataTest = text("dataTest", "test");
       const tabIndex = text("tabIndex", "");
-
+      const stopPropagation = boolean("stopPropagation", false);
       return (
         <TextLink
           external={external}
@@ -95,6 +95,7 @@ storiesOf("TextLink", module)
           icon={Icon && <Icon />}
           dataTest={dataTest}
           tabIndex={tabIndex}
+          stopPropagation={stopPropagation}
         >
           {title}
         </TextLink>

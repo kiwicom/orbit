@@ -22,6 +22,7 @@ export type Props = {|
   +rel?: string,
   +tabIndex?: string,
   +asComponent?: Component,
+  +stopPropagation?: boolean,
   ...Globals,
 |};
 

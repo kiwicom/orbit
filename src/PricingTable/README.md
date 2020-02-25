@@ -19,11 +19,12 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the PricingTable component.
 
-| Name                 | Type         | Default | Description                                                          |
-| :------------------- | :----------- | :------ | :------------------------------------------------------------------- |
-| children             | `React.Node` |         | The content of the PricingTable. [See Subcomponents](#subcomponents) |
-| dataTest             | `string`     |         | Optional prop for testing purposes.                                  |
-| defaultActiveElement | `number`     | `0`     | Sets default active element on mobile view                           |
+| Name          | Type         | Default | Description                                                          |
+| :------------ | :----------- | :------ | :------------------------------------------------------------------- |
+| activeElement | `number`     |         | Sets default active element on mobile view                           |
+| children      | `React.Node` |         | The content of the PricingTable. [See Subcomponents](#subcomponents) |
+| dataTest      | `string`     |         | Optional prop for testing purposes.                                  |
+| hasError      | `boolean`    |         | Sets default active element on mobile view                           |
 
 ---
 

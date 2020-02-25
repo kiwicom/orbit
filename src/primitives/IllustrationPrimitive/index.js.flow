@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/illustration/
+  DOCUMENTATION: https://orbit.kiwi/primitives/illustrationprimitive/
 */
 import type { Globals } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";

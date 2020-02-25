@@ -4,7 +4,8 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { select, text } from "@storybook/addon-knobs";
 
-import { SIZE_OPTIONS, NAMES } from "./consts";
+import { NAMES } from "./consts";
+import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 

@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/prefer-default-export
 export const NAMES = [
   "Accommodation",
   "AirHelp",
@@ -75,9 +76,3 @@ export const NAMES = [
   "TransportTaxi",
   "WomanWithPhone",
 ];
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  MEDIUM: "medium",
-  LARGE: "large",
-  DISPLAY: "display",
-};

@@ -68,6 +68,7 @@ umd
 es
 .out
 .cache
+src/data/airportIllustrations.json
 src/data/illustrations.json
 src/data/icons.json
 src/Illustration/index.js.flow

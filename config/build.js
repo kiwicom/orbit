@@ -10,7 +10,6 @@ import glob from "glob";
 import svgr from "@svgr/core";
 
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
-
 import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts";
 
 const files = glob.sync("src/icons/svg/*.svg");

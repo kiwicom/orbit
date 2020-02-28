@@ -40,7 +40,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
       <ButtonPrimitive
         onlyIcon={onlyIcon}
         asComponent={asComponent}
-        forwardedRef={ref}
+        ref={ref}
         width={width}
         disabled={disabled}
         href={!disabled ? href : null}

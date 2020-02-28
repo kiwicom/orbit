@@ -7,12 +7,23 @@ import defaultTheme from "../../defaultTheme";
 import Loading, { StyledSpinner } from "../../Loading";
 import getSpacingToken from "../../common/getSpacingToken";
 import StyledButtonContent from "./components/ButtonContent";
+import mq from "../../utils/mediaQuery";
+import { left } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
 const StyledButtonContentChildren = styled.div`
   display: inline-block;
+  width: 100%;
+  text-align: ${left};
+  ${mq.tablet(css`
+    text-align: center;
+  `)};
 `;
+
+StyledButtonContentChildren.defaultProps = {
+  theme: defaultTheme,
+};
 
 export const StyledButton = styled(
   ({
@@ -24,9 +35,15 @@ export const StyledButton = styled(
     ariaControls,
     ariaExpanded,
     title,
+    className,
+    rel,
+    href,
+    target,
+    external,
+    tabIndex,
     ...props
   }) => {
-    const isButtonWithHref = asComponent === "button" && props.href;
+    const isButtonWithHref = asComponent === "button" && href;
     const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
 
@@ -37,8 +54,12 @@ export const StyledButton = styled(
         aria-expanded={ariaExpanded}
         aria-label={title}
         type={!isButtonWithHref ? buttonType : undefined}
-        {...props}
+        className={className}
         ref={forwardedRef}
+        href={!disabled ? href : null}
+        target={!disabled && href && external ? "_blank" : undefined}
+        rel={!disabled && href && external ? "noopener noreferrer" : undefined}
+        tabIndex={tabIndex}
       >
         {props.children}
       </Component>
@@ -82,16 +103,15 @@ export const StyledButton = styled(
     box-sizing: border-box;
     appearance: none;
     text-decoration: none;
-    width: ${fullWidth ? "100%" : (width && `${width}px`) || (onlyIcon && height) || "auto"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
     max-width: 100%; // to ensure that Buttons content wraps in IE
     background: ${background};
     color: ${foreground};
     border: 0;
     padding: ${padding};
-    border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    border-radius: ${circled ? height : "6px"};
     font-family: ${theme.orbit.fontFamily};
-    font-weight: ${fontWeight || theme.orbit.fontWeightBold};
+    font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
     line-height: 1.4; // preventing inheriting with safe value
     cursor: ${disabled ? "not-allowed" : "pointer"};
@@ -99,6 +119,7 @@ export const StyledButton = styled(
     outline: 0;
     opacity: ${disabled && theme.orbit.opacityButtonDisabled};
     margin-bottom: ${getSpacingToken};
+    width: 100%;
     ${boxShadow};
 
     &:hover {
@@ -144,20 +165,22 @@ export const StyledButton = styled(
       ${boxShadowFocus};
       ${backgroundFocus};
     }
-  `}
+    ${mq.tablet(css`
+      width: ${fullWidth ? "100%" : (width && `${width}px`) || (onlyIcon && height) || "auto"};
+      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    `)};
+  `}};
 `;
 
 StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitive = ({ forwardedRef, ...props }: Props) => {
+const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const { loading, disabled, children, iconLeft, iconRight, iconContainer, size } = props;
-
   const isDisabled = loading || disabled;
-
   return (
-    <StyledButton disabled={isDisabled} forwardedRef={forwardedRef} {...props}>
+    <StyledButton disabled={isDisabled} forwardedRef={ref} {...props}>
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>
         {iconLeft && (
@@ -174,6 +197,6 @@ const ButtonPrimitive = ({ forwardedRef, ...props }: Props) => {
       </StyledButtonContent>
     </StyledButton>
   );
-};
+});
 
 export default ButtonPrimitive;

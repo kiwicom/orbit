@@ -1,12 +1,11 @@
 // @flow
 
-import type { Globals, RefType, Component } from "../../common/common.js.flow";
+import type { Globals, Component } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";
 
 export type Size = "small" | "normal" | "large";
 
 type ButtonCommonProps = {|
-  +forwardedRef?: RefType,
   +children?: React$Node,
   +asComponent?: Component | string,
   +href?: string | null,
@@ -60,12 +59,12 @@ export type PrimitiveTypes = {|
   +fontWeight?: PrimitiveElement,
   +fontSize?: PrimitiveElement,
   +iconContainer?: {|
-    type?: PrimitiveElement,
-    width?: PrimitiveElement,
-    height?: PrimitiveElement,
-    onlyIcon: boolean,
-    color?: PrimitiveElement,
-    spacing?: PrimitiveElement,
+    +type?: PrimitiveElement,
+    +width?: PrimitiveElement,
+    +height?: PrimitiveElement,
+    +onlyIcon: boolean,
+    +color?: PrimitiveElement,
+    +spacing?: PrimitiveElement,
   |},
 |};
 

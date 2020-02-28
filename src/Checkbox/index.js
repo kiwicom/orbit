@@ -1,6 +1,6 @@
 // @flow
 import React, { useCallback } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
@@ -10,15 +10,24 @@ import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
+import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
 const getToken = name => ({ theme, hasError, disabled, checked }) => {
+  const resolveBorderColor = () => {
+    if (!hasError && checked) {
+      return theme.orbit.paletteBlueNormal;
+    }
+    if (hasError && !disabled && !checked) {
+      return theme.orbit.borderColorCheckboxRadioError;
+    }
+
+    return theme.orbit.borderColorCheckboxRadio;
+  };
+
   const tokens = {
-    [TOKENS.borderColor]:
-      hasError && !disabled && !checked
-        ? theme.orbit.borderColorCheckboxRadioError
-        : theme.orbit.borderColorCheckboxRadio,
+    [TOKENS.borderColor]: resolveBorderColor(),
     [TOKENS.iconColor]: disabled
       ? theme.orbit.colorIconCheckboxRadioDisabled
       : theme.orbit.colorIconCheckboxRadio,
@@ -34,10 +43,11 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.orbit.backgroundInput};
+  background-color: ${({ theme, checked }) =>
+    checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput};
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   transform: scale(1);
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -49,6 +59,15 @@ const IconContainer = styled.div`
     width: 16px;
     height: 16px;
   }
+
+  &:hover {
+    background-color: ${({ theme, checked }) =>
+      checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
+  }
+
+  ${media.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)}
 `;
 
 IconContainer.defaultProps = {
@@ -156,8 +175,10 @@ export const Label = styled(({ className, children, dataTest }) => (
   }
 
   &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      !disabled && theme.orbit.borderColorCheckboxRadioHover};
+    border-color: ${({ disabled, theme, checked }) =>
+      !disabled && checked
+        ? theme.orbit.paletteBlueDark
+        : theme.orbit.borderColorCheckboxRadioHover};
     box-shadow: none;
   }
 `;
@@ -203,8 +224,8 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
       />
       {cloneWithTooltip(
         tooltip,
-        <IconContainer onClick={readOnly ? preventOnClick : null}>
-          <Check />
+        <IconContainer checked={checked} onClick={readOnly ? preventOnClick : null}>
+          <Check customColor="white" />
         </IconContainer>,
       )}
       {(label || info) && (

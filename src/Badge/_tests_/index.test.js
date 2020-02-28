@@ -21,8 +21,8 @@ describe("Badge", () => {
   );
 
   it("should have passed props", () => {
-    expect(component.prop("background")).toBe(defaultTheme.orbit.backgroundBadgeInfo);
-    expect(component.prop("foregroundColor")).toBe(defaultTheme.orbit.colorTextBadgeInfo);
+    expect(component.prop("background")).toBe(defaultTheme.orbit.paletteBlueLight);
+    expect(component.prop("foregroundColor")).toBe(defaultTheme.orbit.paletteBlueDark);
     expect(component.render().prop("data-test")).toBe(dataTest);
     expect(component.render().prop("aria-label")).toBe(ariaLabel);
     expect(component.prop("icon")).toBe(icon);

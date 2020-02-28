@@ -21,7 +21,7 @@ const Glyph = styled.span`
   width: 12px;
   height: 12px;
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.colorIconCheckboxRadio};
+    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.paletteBlueNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
   flex-shrink: 0;
 `;

@@ -10,7 +10,7 @@ import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../utils/rtl";
 import randomID from "../utils/randomID";
-import KEY_CODE_MAP from "../common/keyMaps";
+import handleKeyDown from "../utils/handleKeyDown";
 
 import type { Props } from "./index";
 
@@ -225,17 +225,6 @@ const PictureCard = ({
 
   const cardID = React.useMemo(() => randomID("pictureCardID"), []);
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick();
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick();
-      }
-    }
-  };
-
   const { name, original, placeholder, code } = image;
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;
@@ -245,7 +234,7 @@ const PictureCard = ({
     <StyledPictureCard
       data-test={dataTest}
       onClick={onClick}
-      onKeyDown={handleKeyDown}
+      onKeyDown={ev => handleKeyDown(ev, onClick)}
       height={parseInt(height, 10) >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
       width={width}
       href={href}

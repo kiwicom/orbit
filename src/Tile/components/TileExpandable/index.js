@@ -6,7 +6,7 @@ import randomID from "../../../utils/randomID/index";
 import TileContent from "../TileContent";
 import TileWrapper from "../TileWrapper";
 import TileHeader from "../TileHeader";
-import KEY_CODE_MAP from "../../../common/keyMaps";
+import handleKeyDown from "../../../utils/handleKeyDown";
 
 import type { Props } from ".";
 
@@ -32,21 +32,6 @@ const TileExpandable = ({
     setExpanded(prevExpanded => !prevExpanded);
   };
 
-  const handleKeyDown = ev => {
-    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      setExpanded(prevExpanded => !prevExpanded);
-      if (onClick) {
-        onClick(ev);
-      }
-    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-      setExpanded(prevExpanded => !prevExpanded);
-      if (onClick) {
-        onClick(ev);
-      }
-    }
-  };
-
   React.useEffect(() => {
     const calculateHeight = () => {
       if (node && node.current) {
@@ -70,7 +55,7 @@ const TileExpandable = ({
   return (
     <TileWrapper
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
+      onKeyDown={ev => handleKeyDown(ev, onClick, setExpanded(prevExpanded => !prevExpanded))}
       role="button"
       ariaExpanded={expanded}
       ariaControls={slideID}

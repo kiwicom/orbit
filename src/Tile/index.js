@@ -5,7 +5,7 @@ import TileHeader from "./components/TileHeader";
 import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
-import KEY_CODE_MAP from "../common/keyMaps";
+import handleKeyDown from "../utils/handleKeyDown";
 
 import { type Props } from ".";
 
@@ -40,25 +40,14 @@ const Tile = ({
     );
   }
   const hasHeader = !!(title || description || icon || header);
-  const handleKeyDown = ev => {
-    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      if (onClick) {
-        onClick(ev);
-      }
-    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-      if (onClick) {
-        onClick(ev);
-      }
-    }
-  };
+
   return (
     <TileWrapper
       href={href}
       external={external}
       dataTest={dataTest}
       onClick={onClick}
-      onKeyDown={handleKeyDown}
+      onKeyDown={ev => handleKeyDown(ev, onClick)}
       as={href ? "a" : "div"}
       tabIndex={!href ? "0" : undefined}
       role={!href ? "button" : undefined}

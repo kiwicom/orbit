@@ -11,7 +11,7 @@ import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../../LazyImage";
 import Text from "../../Text";
 import randomID from "../../utils/randomID";
-import KEY_CODE_MAP from "../../common/keyMaps";
+import handleKeyDown from "../../utils/handleKeyDown";
 
 import type { Props, State } from "./index";
 
@@ -199,18 +199,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    const { onClick } = this.props;
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick();
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick();
-      }
-    }
-  };
-
   render() {
     const {
       dataTest,
@@ -233,7 +221,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
-        onKeyDown={this.handleKeyDown}
+        onKeyDown={ev => handleKeyDown(ev, onClick)}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
         tabIndex={tabIndex}
         role="link"

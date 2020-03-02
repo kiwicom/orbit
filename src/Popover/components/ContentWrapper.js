@@ -61,8 +61,8 @@ const StyledPopoverParent = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border-top-left-radius: 9px; /* TODO: Add token */
-  border-top-right-radius: 9px; /* TODO: Add token */
+  border-top-left-radius: 12px; /* TODO: Add token */
+  border-top-right-radius: 12px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;

@@ -151,6 +151,6 @@
     "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.11"
   }
 }

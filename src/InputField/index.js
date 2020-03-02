@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
@@ -16,6 +16,7 @@ import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
 import type { Theme } from "../defaultTheme";
+import media from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -85,16 +86,28 @@ export const FakeInput = styled(({ children, className }) => (
   left: 0;
   box-sizing: border-box;
   height: ${getToken(TOKENS.heightInput)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        error ? theme.orbit.borderColorInputError : theme.orbit.paletteCloudNormal
       }`};
   background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.paletteCloudNormal};
+
   font-size: ${getToken(TOKENS.fontSizeInput)};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+
+  ${media.largeMobile(css`
+    background-color: ${({ disabled, theme }) =>
+      disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    box-shadow: inset 0 0 0
+      ${({ theme, error }) =>
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        }`};
+  `)}
 `;
 
 FakeInput.defaultProps = {
@@ -170,8 +183,16 @@ export const Prefix = styled(({ children, className }) => (
   & > svg {
     width: ${getToken(TOKENS.iconSize)};
     height: ${getToken(TOKENS.iconSize)};
-    color: ${({ theme }) => theme.orbit.colorIconInput};
+    color: ${({ theme, disabled }) => {
+      return disabled ? theme.orbit.paletteInkLighter : theme.orbit.paletteInkLight;
+    }};
   }
+
+  ${media.largeMobile(css`
+    & svg {
+      color: ${({ theme }) => theme.orbit.colorIconInput};
+    }
+  `)}
 `;
 
 Prefix.defaultProps = {
@@ -189,12 +210,19 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   z-index: 3;
 
   & svg {
-    color: ${({ theme }) => theme.orbit.colorIconSecondary};
+    color: ${({ theme, disabled }) =>
+      disabled ? theme.orbit.colorIconSecondary : theme.orbit.paletteInkLight};
   }
   ${StyledServiceLogo} {
     height: 16px;
     padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
   }
+
+  ${media.largeMobile(css`
+    & svg {
+      color: ${({ theme }) => theme.orbit.colorIconSecondary};
+    }
+  `)}
 `;
 
 Suffix.defaultProps = {
@@ -250,25 +278,43 @@ export const Input = styled(
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.paletteInkLight};
     /* Firefox */
     opacity: 1;
   }
 
   /* Internet Explorer 10-11 */
   &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.paletteInkLight};
   }
 
   /* Microsoft Edge */
   &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.paletteInkLight};
   }
 
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
   }
+
+  ${media.largeMobile(css`
+    &::placeholder {
+      color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+      /* Firefox */
+      opacity: 1;
+    }
+
+    /* Internet Explorer 10-11 */
+    &:-ms-input-placeholder {
+      color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    }
+
+    /* Microsoft Edge */
+    &::-ms-input-placeholder {
+      color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    }
+  `)}
 `;
 
 Input.defaultProps = {
@@ -333,7 +379,11 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     >
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
-        {prefix && <Prefix size={size}>{prefix}</Prefix>}
+        {prefix && (
+          <Prefix disabled={disabled} size={size}>
+            {prefix}
+          </Prefix>
+        )}
         {label && inlineLabel && (
           <StyledInlineLabel size={size}>
             <FormLabel label={label} isFilled={!!value} required={required} />
@@ -367,7 +417,11 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           id={forID}
           inputMode={inputMode}
         />
-        {suffix && <Suffix size={size}>{suffix}</Suffix>}
+        {suffix && (
+          <Suffix disabled={disabled} size={size}>
+            {suffix}
+          </Suffix>
+        )}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
       {help && !error && <FormFeedback type="help">{help}</FormFeedback>}

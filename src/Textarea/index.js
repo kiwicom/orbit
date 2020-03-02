@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormFeedback from "../FormFeedback";
@@ -9,6 +9,7 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -60,14 +61,13 @@ const StyledTextArea = styled.textarea`
   width: 100%;
   height: ${({ fullHeight }) => fullHeight && "100%"};
   padding: ${getPadding};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        error ? theme.orbit.borderColorInputError : theme.orbit.paletteCloudNormal
       }`};
-  background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+  background-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
   color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
   font-size: ${getFontSize};
@@ -88,7 +88,7 @@ const StyledTextArea = styled.textarea`
   overflow: auto;
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.paletteInkLight};
   }
 
   &:hover {
@@ -103,6 +103,20 @@ const StyledTextArea = styled.textarea`
     ${formElementFocus}
     outline: none;
   }
+
+  ${media.largeMobile(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    background-color: ${({ disabled, theme }) =>
+      disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    box-shadow: inset 0 0 0
+      ${({ theme, error }) =>
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        }`};
+    &::placeholder {
+      color: ${({ theme }) => theme.orbit.paletteInkLight};
+    }
+  `)}
 `;
 
 StyledTextArea.defaultProps = {

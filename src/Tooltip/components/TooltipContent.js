@@ -31,8 +31,8 @@ const StyledTooltipWrapper = styled.div`
   position: fixed;
   width: 100%;
   box-sizing: border-box;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   background-color: ${({ theme }) => theme.orbit.backgroundTooltip};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip

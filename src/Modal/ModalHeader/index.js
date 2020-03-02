@@ -55,9 +55,9 @@ export const StyledModalHeader = styled.div`
         `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
     )};
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};

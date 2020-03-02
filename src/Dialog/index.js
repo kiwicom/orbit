@@ -7,12 +7,13 @@ import Portal from "../Portal";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
-import Text from "../Text";
+import Text, { StyledText } from "../Text";
 import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
 import { StyledButton } from "../Button";
 import KEY_CODE_MAP from "../common/keyMaps";
 import randomID from "../utils/randomID";
+import { left } from "../utils/rtl";
 
 import type { Props } from ".";
 
@@ -50,16 +51,24 @@ const StyledDialogContent = styled.div`
   box-sizing: border-box;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   background: ${({ theme }) => theme.orbit.paletteWhite};
-  border-radius: 9px 9px 0 0;
+  border-radius: 12px 12px 0 0;
   bottom: ${({ shown }) => (shown ? "0" : "-100%")};
   transition: bottom ${({ theme }) => theme.orbit.durationFast} linear;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
+  text-align: center;
+  ${StyledText} {
+    text-align: center;
+  }
   ${mq.largeMobile(css`
     position: relative;
     bottom: auto;
     max-width: ${({ theme }) => theme.orbit.widthModalSmall};
     border-radius: 9px;
     padding: ${({ theme }) => theme.orbit.spaceLarge};
+    text-align: ${left};
+    ${StyledText} {
+      text-align: ${left};
+    }
   `)};
 `;
 
@@ -68,7 +77,7 @@ StyledDialogContent.defaultProps = {
 };
 
 const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
-  width: calc(100% * ${({ width }) => width});
+  width: 100%;
   ${StyledButton} {
     width: 100%;
     flex: 1 1 auto;
@@ -88,7 +97,9 @@ StyledAction.defaultProps = {
   theme: defaultTheme,
 };
 
-const getButtonWidth = width => Math.floor(width * 100);
+const IllustrationContainer = styled.div`
+  margin-bottom: 16px;
+`;
 
 const Dialog = ({
   dataTest,
@@ -97,6 +108,7 @@ const Dialog = ({
   primaryAction,
   secondaryAction,
   onClose,
+  illustration,
 }: Props) => {
   const ref = React.useRef(null);
   const theme = useTheme();
@@ -147,15 +159,14 @@ const Dialog = ({
         aria-labelledby={dialogID}
       >
         <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
+          {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
           <Stack spacing="tight" spaceAfter="medium">
             {title && <Heading type="title3">{title}</Heading>}
             {description && <Text type="secondary">{description}</Text>}
           </Stack>
-          <Stack direction="row" largeMobile={{ justify: "end" }}>
-            {secondaryAction && (
-              <StyledAction width={getButtonWidth(1 / 3)}>{secondaryAction}</StyledAction>
-            )}
-            <StyledAction width={getButtonWidth(2 / 3)}>{primaryAction}</StyledAction>
+          <Stack flex direction="column" largeMobile={{ direction: "row", justify: "end" }}>
+            {secondaryAction && <StyledAction>{secondaryAction}</StyledAction>}
+            <StyledAction>{primaryAction}</StyledAction>
           </Stack>
         </StyledDialogContent>
       </StyledDialog>

@@ -34,11 +34,9 @@ Table below contains all types of the props available in Illustration component.
 | `"AirportShuttle"`              |
 | `"AppQRCode"`                   |
 | `"BaggageDrop"`                 |
-| `"BGYFastTrack"`                |
 | `"Boarding"`                    |
 | `"BoardingPass"`                |
 | `"BusinessTravel"`              |
-| `"BUDFastTrack"`                |
 | `"CabinBaggage"`                |
 | `"CompassCollectPoints"`        |
 | `"CompassDemoted"`              |
@@ -67,7 +65,6 @@ Table below contains all types of the props available in Illustration component.
 | `"MobileApp"`                   |
 | `"Money"`                       |
 | `"MusicalInstruments"`          |
-| `"NCEFastTrack"`                |
 | `"NetVerify"`                   |
 | `"NoBookings"`                  |
 | `"NoFavoriteFlights"`           |

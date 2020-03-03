@@ -16,10 +16,10 @@
     "@babel/preset-react" "^7.8.0"
     "@babel/runtime" "^7.8.0"
 
-"@adeira/js@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@adeira/js/-/js-0.1.0.tgz#c30444da2000cf545be7d3d99c800c3f3b234c12"
-  integrity sha512-yBDdU8r2HRu8KRv/ogJIqeIUsFO8qh3G7D9qfRmyxgzlNdZfE6TTKoW5BQ8bvmMNDkpJa+pQfSvd+U91CYSx5g==
+"@adeira/js@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@adeira/js/-/js-1.2.1.tgz#481f89770e81081725939dd24a0ff674f9950a63"
+  integrity sha512-+x5cz2AwIyeWPZBf4Z6oN1xwn8xnb7APkGn9txecjVqm/xU8Puzmv+xDReNjzCE6Fi9Hkdp0mqP5Oot3f+bkVQ==
 
 "@babel/cli@^7.8.3":
   version "7.8.3"

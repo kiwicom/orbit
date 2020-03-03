@@ -221,7 +221,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
-        onKeyDown={ev => handleKeyDown(ev, onClick)}
+        onKeyDown={handleKeyDown(onClick)}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
         tabIndex={tabIndex}
         role="link"

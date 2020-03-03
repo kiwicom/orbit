@@ -47,7 +47,7 @@ const Tile = ({
       external={external}
       dataTest={dataTest}
       onClick={onClick}
-      onKeyDown={ev => handleKeyDown(ev, onClick)}
+      onKeyDown={handleKeyDown(onClick)}
       as={href ? "a" : "div"}
       tabIndex={!href ? "0" : undefined}
       role={!href ? "button" : undefined}

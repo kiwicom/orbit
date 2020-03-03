@@ -1,9 +1,10 @@
 // @flow
 
-declare export default function handleKeyDown(
-  ev: SyntheticKeyboardEvent<HTMLElement>,
+export type HandleKeyDown = (
   onClick?: (
     e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
   ) => void | Promise<any>,
   action?: () => void,
-): void;
+) => (ev: SyntheticKeyboardEvent<HTMLElement>) => void;
+
+declare export default HandleKeyDown;

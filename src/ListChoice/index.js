@@ -84,7 +84,7 @@ const ListChoice = (props: Props) => {
     <StyledListChoice
       onClick={onClick}
       data-test={dataTest}
-      onKeyDown={ev => handleKeyDown(ev, onClick)}
+      onKeyDown={handleKeyDown(onClick)}
       tabIndex="0"
       role="button"
     >

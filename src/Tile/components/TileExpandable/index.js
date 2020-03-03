@@ -55,7 +55,7 @@ const TileExpandable = ({
   return (
     <TileWrapper
       onClick={handleClick}
-      onKeyDown={ev => handleKeyDown(ev, onClick, setExpanded(prevExpanded => !prevExpanded))}
+      onKeyDown={handleKeyDown(onClick, setExpanded(prevExpanded => !prevExpanded))}
       role="button"
       ariaExpanded={expanded}
       ariaControls={slideID}

@@ -1,16 +1,12 @@
 // @flow
 import KEY_CODE_MAP from "../../common/keyMaps";
 
-const handleKeyDown = (
-  ev: SyntheticKeyboardEvent<HTMLElement>,
-  onClick?: (
-    e?: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
-  ) => void | Promise<any>,
-  action?: () => void,
-) => {
+import type { HandleKeyDown } from ".";
+
+const handleKeyDown: HandleKeyDown = (onClick, action) => ev => {
   if (ev.keyCode === KEY_CODE_MAP.ENTER) {
     if (onClick) {
-      onClick();
+      onClick(ev);
     }
 
     if (action) {
@@ -19,7 +15,7 @@ const handleKeyDown = (
   } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
     ev.preventDefault();
     if (onClick) {
-      onClick();
+      onClick(ev);
     }
 
     if (action) {

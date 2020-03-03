@@ -234,7 +234,7 @@ const PictureCard = ({
     <StyledPictureCard
       data-test={dataTest}
       onClick={onClick}
-      onKeyDown={ev => handleKeyDown(ev, onClick)}
+      onKeyDown={handleKeyDown(onClick)}
       height={parseInt(height, 10) >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
       width={width}
       href={href}

@@ -93,7 +93,7 @@
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.3.0",
     "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.8.6",
     "@babel/node": "^7.8.3",
     "@babel/runtime": "^7.8.3",
     "@emotion/core": "^10.0.27",

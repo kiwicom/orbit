@@ -1991,10 +1991,10 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-"@storybook/storybook-deployer@^2.3.0":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@storybook/storybook-deployer/-/storybook-deployer-2.8.1.tgz#18018114d58d0c1e584d06b68e57900804469e51"
-  integrity sha512-tXgD7vpX2nRGpMZr4hzZ3J34Xt3h5sbk3HjnNrBM3bMMWYf5/pMfTtlpIzyzA+ljoI77ZjuFOWZfgPaUTxHeJw==
+"@storybook/storybook-deployer@^2.8.3":
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/@storybook/storybook-deployer/-/storybook-deployer-2.8.3.tgz#0bed6fef981ba4dc521b180627e8d68c7f7c1646"
+  integrity sha512-IDix3V37Ufbcu6XRNV+b/nUETeD86oo9ll3DEja3h9aDeydBFEfA60BO6q6L80IRejNMr8R+RaSNRFl5ddwqkQ==
   dependencies:
     git-url-parse "^8.1.0"
     glob "^7.1.3"

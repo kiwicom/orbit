@@ -1,14 +1,14 @@
 # useMediaQuery
 
-useMediaQuery hook makes it super easy to use media queries in your functional component and differentiate it's render for different viewports.
+The `useMediaQuery` hook lets you use media queries in your functional component and differentiate its render for different viewports.
 
-To implement useMediaQuery hook into your project you'll need to add the import:
+To implement the useMediaQuery hook into your project, add the import:
 
 ```jsx
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 ```
 
-After adding import, you can use it simply in your functional component:
+Then you can use it in your functional component:
 
 ```jsx
 const Component = () => {
@@ -17,11 +17,11 @@ const Component = () => {
 };
 ```
 
-Because Orbit aims to be mobile-first, you should consider your base return without conditional rendering as the mobile one. Therefore, `useMediaQuery` hook returns only object of booleans according to possible breakpoints you might know from normal CSS media queries or dynamic media properties on components.
+Because Orbit aims to be mobile-first, you should consider your base return without conditional rendering to be the mobile one. Therefore, the `useMediaQuery` hook returns only an object of booleans according to the possible breakpoints you might know from normal CSS media queries or dynamic media properties on components.
 
 ## Return
 
-useMediaQuery hook returns object of boolean values depending of which viewport is user currently on.
+The `useMediaQuery` hook returns an object with boolean values depending on which viewport the user is currently on.
 
 | Name           | Type      | Description                                        |
 | :------------- | :-------- | :------------------------------------------------- |

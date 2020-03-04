@@ -100,7 +100,7 @@
     "@octokit/rest": "^15.13.1",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-info": "5.3.13",
-    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addons": "5.3.13",
     "@storybook/react": "^5.3.12",
     "@storybook/storybook-deployer": "^2.3.0",

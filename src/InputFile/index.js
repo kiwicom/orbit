@@ -3,7 +3,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import Button from "../Button";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";

@@ -244,8 +244,8 @@ const Alert = (props: Props) => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,
-    closable,
     icon,
+    closable,
     onClose = () => {},
     children,
     dataTest,

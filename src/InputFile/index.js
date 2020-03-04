@@ -108,7 +108,7 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputButton = styled(Button)`
+const InputButton = styled(ButtonLink)`
   flex-shrink: 0;
 `;
 

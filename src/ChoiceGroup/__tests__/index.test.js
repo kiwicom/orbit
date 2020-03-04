@@ -69,6 +69,7 @@ describe("RadioGroup Filters", () => {
       labelAs={labelAs}
       filter={filter}
       onOnlySelection={onOnlySelection}
+      onlySelectionText="Only"
     >
       <Checkbox value="one" label="Reason one" />
       <Checkbox value="two" label="Reason two" />

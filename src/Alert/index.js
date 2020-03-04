@@ -23,7 +23,7 @@ import media from "../utils/mediaQuery";
 import type { Props } from "./index";
 
 type IconProps = {
-  icon: React.Node,
+  icon: any,
   type: string,
   className: string,
 };
@@ -88,8 +88,11 @@ const StyledIcon = styled(({ icon, type, className }: IconProps) => {
       return <AlertCircle className={className} size="small" />;
     }
   }
+  if (React.isValidElement(icon)) {
+    return React.cloneElement(icon, { className, size: "small" });
+  }
 
-  return React.cloneElement(icon, { className, size: "small" });
+  return icon;
 })``;
 
 const StyledDiv = ({

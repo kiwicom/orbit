@@ -84,7 +84,7 @@
   "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.4.1"
   },
   "dependencies": {
     "@adeira/js": "^1.2.1",
@@ -127,7 +127,7 @@
     "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "flow-bin": "^0.115.0",
     "fs-extra": "^8.1.0",
@@ -146,7 +146,7 @@
     "react-test-renderer": "^16.13.0",
     "rimraf": "^3.0.2",
     "sharp": "^0.24.1",
-    "styled-components": "^4.2.0",
+    "styled-components": "^4.4.1",
     "surge": "^0.20.1",
     "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",

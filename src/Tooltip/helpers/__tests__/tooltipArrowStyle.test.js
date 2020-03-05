@@ -6,7 +6,7 @@ const params = position => ({ position, theme: defaultTheme });
 const resultWithColor = (width, color) =>
   `border-width:${width};border-color:${color};`.replace(
     "__color__",
-    defaultTheme.orbit.paletteBlueDark,
+    defaultTheme.orbit.paletteInkNormal,
   );
 
 describe("tooltipArrowStyle", () => {

@@ -67,9 +67,7 @@ const IllustrationPrimitiveList = (props: { images: Array<string>, nameOfCompone
         return (
           <Container key={illustration}>
             <IllustrationPrimitive name={illustration} />
-            <IllustrationJSX>{`<${
-              props.nameOfComponent
-            } name="${illustration}" />`}</IllustrationJSX>
+            <IllustrationJSX>{`<${props.nameOfComponent} name="${illustration}" />`}</IllustrationJSX>
           </Container>
         );
       })}

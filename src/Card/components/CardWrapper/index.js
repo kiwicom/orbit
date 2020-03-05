@@ -13,7 +13,7 @@ const topBorderRadius = css`
   border-top-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
   border-top-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     border-top-left-radius: ${getBorderRadius};
     border-top-right-radius: ${getBorderRadius};
   `)}
@@ -27,7 +27,7 @@ const bottomBorderRadius = css`
   border-bottom-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
   border-bottom-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     border-bottom-left-radius: ${getBorderRadius};
     border-bottom-right-radius: ${getBorderRadius};
   `)}
@@ -65,7 +65,7 @@ const StyledCardWrapper = styled.div`
       `}
   }
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     &:first-of-type {
       ${topBorderRadius};
     }

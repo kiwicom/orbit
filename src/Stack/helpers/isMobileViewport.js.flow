@@ -1,5 +1,5 @@
 // @flow
-import type { Devices } from "../../utils/mediaQuery/index";
+import type { Devices } from "../../utils/mediaQuery/consts";
 
 export type IsMobileViewport = (viewport: Devices) => boolean;
 

@@ -55,7 +55,8 @@ const StyledDialogContent = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) =>
+    `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
   background: ${({ theme }) => theme.orbit.paletteWhite};
   border-radius: 12px;
   bottom: ${({ shown }) => (shown ? "0" : "-100%")};
@@ -170,7 +171,11 @@ const Dialog = ({
               {title && <Heading type="title3">{title}</Heading>}
               {description && <Text type="secondary">{description}</Text>}
             </Stack>
-            <Stack flex direction="column" largeMobile={{ direction: "row", justify: "end" }}>
+            <Stack
+              direction="column-reverse"
+              spacing="condensed"
+              largeMobile={{ direction: "row", justify: "end" }}
+            >
               {secondaryAction && <StyledAction>{secondaryAction}</StyledAction>}
               <StyledAction>{primaryAction}</StyledAction>
             </Stack>

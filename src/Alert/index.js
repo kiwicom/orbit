@@ -121,9 +121,7 @@ const StyledAlert = styled(StyledDiv)`
   padding: ${({ theme, closable }) =>
     closable
       ? rtlSpacing(
-          `${theme.orbit.spaceXSmall} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceXSmall} ${
-            theme.orbit.spaceXSmall
-          }`,
+          `${theme.orbit.spaceXSmall} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceXSmall} ${theme.orbit.spaceXSmall}`,
         )
       : theme.orbit.spaceXSmall};
 
@@ -131,9 +129,7 @@ const StyledAlert = styled(StyledDiv)`
     padding: ${({ theme, closable }) =>
       closable
         ? rtlSpacing(
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`,
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
           )
         : theme.orbit.paddingAlert};
   `)}

@@ -5,7 +5,7 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
-import Button from "../../Button";
+import Button, { StyledButton } from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
@@ -19,6 +19,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
+import { StyledButtonLink } from "../../ButtonLink";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -34,7 +35,8 @@ const StyledContentWrapper = styled.div`
   max-height: ${({ actionsHeight, theme }) =>
     // Calculates all the spacing relative to viewport to get space for action box
     `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
-
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   ${media.largeMobile(css`
     max-height: 100%;
   `)}
@@ -47,6 +49,16 @@ StyledContentWrapper.defaultProps = {
 const StyledActions = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
   padding-top: 0;
+  ${StyledButton}, ${StyledButtonLink} {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+  ${media.largeMobile(css`
+    ${StyledButton}, ${StyledButtonLink} {
+      width: auto;
+      flex-grow: 0;
+    }
+  `)};
 `;
 
 StyledActions.defaultProps = {

@@ -1,7 +1,7 @@
 // @flow
 import type { Interpolation } from "styled-components";
 
-import type { Devices } from "../../mediaQuery/index";
+import type { Devices } from "../../mediaQuery/consts";
 import type { Props, SmallMobile, BasicProps } from "../index";
 
 export type GetViewportIEGridStyles = (

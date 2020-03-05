@@ -23,8 +23,9 @@ import media from "../utils/mediaQuery";
 import type { Props } from "./index";
 
 type IconProps = {
-  icon: React.Node,
+  icon: any,
   type: string,
+  className: string,
 };
 
 const getTypeToken = name => ({ theme, type }) => {
@@ -71,24 +72,28 @@ const getTypeToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-const Icon = ({ icon, type }: IconProps) => {
+const StyledIcon = styled(({ icon, type, className }: IconProps) => {
   // Icon should be boolean and TRUE
   if (typeof icon === "boolean" && icon) {
     if (type === TYPE_OPTIONS.INFO) {
-      return <InformationCircle />;
+      return <InformationCircle className={className} size="small" />;
     }
     if (type === TYPE_OPTIONS.SUCCESS) {
-      return <Check />;
+      return <Check className={className} size="small" />;
     }
     if (type === TYPE_OPTIONS.WARNING) {
-      return <AlertTriangle />;
+      return <AlertTriangle className={className} size="small" />;
     }
     if (type === TYPE_OPTIONS.CRITICAL) {
-      return <AlertCircle />;
+      return <AlertCircle className={className} size="small" />;
     }
   }
+  if (React.isValidElement(icon)) {
+    return React.cloneElement(icon, { className, size: "small" });
+  }
+
   return icon;
-};
+})``;
 
 const StyledDiv = ({
   className,
@@ -108,7 +113,8 @@ const StyledAlert = styled(StyledDiv)`
   position: relative;
   display: flex;
   width: 100%;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
+
   border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
   background: ${getTypeToken(TOKENS.backgroundAlert)};
   color: ${getTypeToken(TOKENS.colorTextAlert)};
@@ -121,15 +127,16 @@ const StyledAlert = styled(StyledDiv)`
   padding: ${({ theme, closable }) =>
     closable
       ? rtlSpacing(
-          `${theme.orbit.spaceXSmall} ${theme.orbit.spaceXLarge} ${theme.orbit.spaceXSmall} ${theme.orbit.spaceXSmall}`,
+          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
         )
-      : theme.orbit.spaceXSmall};
+      : theme.orbit.spaceSmall};
 
   ${media.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding: ${({ theme, closable }) =>
       closable
         ? rtlSpacing(
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
           )
         : theme.orbit.paddingAlert};
   `)}
@@ -148,6 +155,11 @@ const IconContainer = styled(StyledDiv)`
 
   ${media.tablet(css`
     margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.orbit.widthIconMedium};
+      height: ${({ theme }) => theme.orbit.heightIconMedium};
+    }
   `)}
 `;
 
@@ -172,11 +184,6 @@ const Title = styled(StyledDiv)`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
-
-  ${media.tablet(css`
-    margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
-      hasChildren && (inlineActions ? "0" : theme.orbit.spaceXSmall)};
-  `)}
 `;
 
 Title.defaultProps = {
@@ -213,6 +220,10 @@ const CloseContainer = styled(StyledDiv)`
   margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
   ${right}: 0;
   margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
 `;
 
 CloseContainer.defaultProps = {
@@ -256,16 +267,18 @@ const Alert = (props: Props) => {
       dataTest={dataTest}
       spaceAfter={spaceAfter}
     >
-      {icon && (
-        <IconContainer type={type} inlineActions={inlineActions}>
-          <Icon type={type} icon={icon} />
-        </IconContainer>
-      )}
       <ContentWrapper title={title} inlineActions={inlineActions}>
         {title && (
-          <Title type={type} hasChildren={children} inlineActions={inlineActions}>
-            {title}
-          </Title>
+          <TitleWrapper>
+            {icon && (
+              <IconContainer type={type} inlineActions={inlineActions}>
+                <StyledIcon type={type} icon={icon} />
+              </IconContainer>
+            )}
+            <Title type={type} hasChildren={children} inlineActions={inlineActions}>
+              {title}
+            </Title>
+          </TitleWrapper>
         )}
         {children && !inlineActions && (
           <Content title={title} type={type}>

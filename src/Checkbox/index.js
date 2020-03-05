@@ -171,7 +171,7 @@ export const Label = styled(({ className, children, dataTest }) => (
 
   ${IconContainer} {
     color: ${getToken(TOKENS.iconColor)};
-    border: 1px solid ${getToken(TOKENS.borderColor)};
+    border: 2px solid ${getToken(TOKENS.borderColor)};
   }
 
   &:hover ${IconContainer} {
@@ -181,6 +181,12 @@ export const Label = styled(({ className, children, dataTest }) => (
         : theme.orbit.borderColorCheckboxRadioHover};
     box-shadow: none;
   }
+
+  ${media.largeMobile(css`
+    ${IconContainer} {
+      border-width: 1px;
+    }
+  `)};
 `;
 
 Label.defaultProps = {

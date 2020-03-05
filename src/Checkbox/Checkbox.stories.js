@@ -89,7 +89,7 @@ storiesOf("CheckBox", module)
       const label = text("Label", "Label");
       const value = text("Value", "value");
       const checked = boolean("Checked", true);
-      const disabled = boolean("Disabled", true);
+      const disabled = boolean("Disabled", false);
       const hasError = boolean("hasError", false);
       const readOnly = boolean("readOnly", false);
       const info = text("Info", "Additional information for this choice");

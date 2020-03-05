@@ -135,6 +135,7 @@ storiesOf("Select", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("ID", "select-id");
       const required = boolean("Required", false);
+      const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
       return (
         <Select
@@ -153,6 +154,7 @@ storiesOf("Select", module)
           value={value}
           customValueText={customValueText}
           spaceAfter={spaceAfter}
+          dataAttrs={dataAttrs}
         />
       );
     },

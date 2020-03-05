@@ -1,15 +1,8 @@
 // @flow
 import type { Interpolation } from "styled-components";
 
+import type { Devices } from "./consts";
 import type { Theme } from "../../defaultTheme";
-
-export type Devices =
-  | "largeDesktop"
-  | "desktop"
-  | "tablet"
-  | "largeMobile"
-  | "mediumMobile"
-  | "smallMobile";
 
 type QueryFunction = (style: Interpolation[]) => Interpolation[];
 

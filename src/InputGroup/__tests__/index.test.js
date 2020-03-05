@@ -18,7 +18,10 @@ describe(`InputGroup - Phone number`, () => {
   const onBlur = jest.fn();
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const ref = React.createRef();
-  const selectOptions = [{ value: 1, label: "+420" }, { value: 2, label: "+421" }];
+  const selectOptions = [
+    { value: 1, label: "+420" },
+    { value: 2, label: "+421" },
+  ];
   const selectValue = 1;
 
   const countryFlagCode = CODES.CZ;

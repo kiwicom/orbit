@@ -15,7 +15,7 @@ import type { Props } from "./index";
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
   box-sizing: border-box;
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} 0 0`)};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 
   ${media.largeMobile(css`
     flex: none;

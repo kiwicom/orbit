@@ -38,22 +38,23 @@ ModalDescription.defaultProps = {
   theme: defaultTheme,
 };
 
+const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
+  if (desktop) {
+    if (suppressed) {
+      return theme.orbit.spaceXXLarge;
+    }
+    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceXXLarge}`;
+  }
+  if (suppressed) {
+    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceMedium}`;
+  }
+  return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
+};
+
 export const StyledModalHeader = styled.div`
   width: 100%;
   display: block;
-  padding: ${({ theme, illustration, suppressed }) =>
-    rtlSpacing(
-      (illustration &&
-        suppressed &&
-        `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`) ||
-        (illustration &&
-          !suppressed &&
-          `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`) ||
-        (!illustration &&
-          suppressed &&
-          `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`) ||
-        `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`,
-    )};
+  padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
   border-top-left-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
@@ -71,16 +72,7 @@ export const StyledModalHeader = styled.div`
   }
 
   ${media.largeMobile(css`
-    padding: ${({ theme, illustration, suppressed }) =>
-      rtlSpacing(
-        illustration
-          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge} ${
-              suppressed ? theme.orbit.spaceXXLarge : "0"
-            } ${theme.orbit.spaceXXLarge}`
-          : `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} ${
-              suppressed ? theme.orbit.spaceXXLarge : "0"
-            } ${theme.orbit.spaceXXLarge}`,
-      )};
+    padding: ${props => rtlSpacing(getModalHeaderPadding(true)(props))};
 
     & ~ ${StyledModalSection}:first-of-type {
       border-top-left-radius: 0;

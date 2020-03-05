@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/hide/
 */
-import type { Devices } from "../utils/mediaQuery/index";
+import type { Devices } from "../utils/mediaQuery/consts";
 
 export type Props = {|
   +children: React$Node,

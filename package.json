@@ -84,7 +84,7 @@
   "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.4.1"
   },
   "dependencies": {
     "@adeira/js": "^1.2.1",
@@ -106,7 +106,7 @@
     "@storybook/storybook-deployer": "^2.3.0",
     "@svgr/core": "^2.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
@@ -127,7 +127,7 @@
     "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "flow-bin": "^0.115.0",
     "fs-extra": "^8.1.0",
@@ -139,14 +139,14 @@
     "loki": "^0.15.0",
     "make-runnable": "^1.3.6",
     "mkdirp": "^1.0.3",
-    "prettier": "^1.12.1",
+    "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-element-to-jsx-string": "^14.3.1",
     "react-test-renderer": "^16.13.0",
     "rimraf": "^3.0.2",
     "sharp": "^0.24.1",
-    "styled-components": "^4.2.0",
+    "styled-components": "^4.4.1",
     "surge": "^0.20.1",
     "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",

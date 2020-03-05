@@ -619,7 +619,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
-          onMouseDown={this.handleMouseDown}
           fixedFooter={fixedFooter}
           id={this.modalID}
           isMobileFullPage={isMobileFullPage}
@@ -635,6 +634,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
             isMobileFullPage={isMobileFullPage}
+            onMouseDown={this.handleMouseDown}
           >
             {onClose && (
               <CloseContainer

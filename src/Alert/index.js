@@ -127,9 +127,7 @@ const StyledAlert = styled(StyledDiv)`
   padding: ${({ theme, closable }) =>
     closable
       ? rtlSpacing(
-          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${
-            theme.orbit.spaceSmall
-          }`,
+          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
         )
       : theme.orbit.spaceSmall};
 
@@ -138,9 +136,7 @@ const StyledAlert = styled(StyledDiv)`
     padding: ${({ theme, closable }) =>
       closable
         ? rtlSpacing(
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${
-              theme.orbit.paddingAlert
-            }`,
+            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
           )
         : theme.orbit.paddingAlert};
   `)}
@@ -161,8 +157,8 @@ const IconContainer = styled(StyledDiv)`
     margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 
     ${StyledIcon} {
-      width: 24px;
-      height: 24px;
+      width: ${({ theme }) => theme.orbit.widthIconMedium};
+      height: ${({ theme }) => theme.orbit.heightIconMedium};
     }
   `)}
 `;

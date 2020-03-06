@@ -15,7 +15,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
-import type { Theme } from "../defaultTheme";
 
 import type { Props } from ".";
 
@@ -202,11 +201,9 @@ Suffix.defaultProps = {
 };
 
 export const Input = styled(
-  React.forwardRef<{| ...Props, theme: Theme |}, HTMLInputElement>(
-    ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
-      <input type={getDOMType(type)} {...props} ref={ref} />
-    ),
-  ),
+  React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
+    <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
+  )),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
@@ -321,9 +318,13 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     spaceAfter,
     id,
     inputMode,
+    dataAttrs,
   } = props;
 
-  const forID = id || (label ? React.useMemo(() => randomID("inputFieldID"), []) : undefined);
+  const forID = React.useMemo(() => id || (label ? randomID("inputFieldID") : undefined), [
+    id,
+    label,
+  ]);
 
   return (
     <Field
@@ -366,6 +367,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           autoComplete={autoComplete}
           id={forID}
           inputMode={inputMode}
+          dataAttrs={dataAttrs}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />

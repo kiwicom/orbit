@@ -79,9 +79,9 @@ const ModalWrapper = styled.div`
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["top"], "normal", "ease-in-out")};
   top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
 
@@ -135,9 +135,9 @@ const CloseContainer = styled.div`
   box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.boxShadowFixed};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
 
   ${media.largeMobile(css`
@@ -176,9 +176,9 @@ const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
@@ -619,7 +619,6 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
           size={size}
           loaded={loaded}
           onScroll={this.handleMobileScroll}
-          onMouseDown={this.handleMouseDown}
           fixedFooter={fixedFooter}
           id={this.modalID}
           isMobileFullPage={isMobileFullPage}
@@ -635,6 +634,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
             isMobileFullPage={isMobileFullPage}
+            onMouseDown={this.handleMouseDown}
           >
             {onClose && (
               <CloseContainer

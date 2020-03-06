@@ -50,6 +50,7 @@ const StyledSelect = styled(
         onFocus,
         onBlur,
         id,
+        dataAttrs,
       },
       ref,
     ) => (
@@ -66,6 +67,7 @@ const StyledSelect = styled(
         name={name}
         tabIndex={tabIndex}
         ref={ref}
+        {...dataAttrs}
       >
         {children}
       </select>
@@ -263,6 +265,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
     prefix,
     spaceAfter,
     customValueText,
+    dataAttrs,
   } = props;
   const filled = !(value == null || value === "");
   return (
@@ -300,6 +303,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           id={id}
           required={required}
           ref={ref}
+          dataAttrs={dataAttrs}
         >
           {placeholder && (
             <option label={placeholder} value="">

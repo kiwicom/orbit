@@ -3,7 +3,7 @@
 exports[`Tooltip it should match snapshot 1`] = `
 <Fragment>
   <Tooltip__StyledTooltipChildren
-    aria-describedby="tooltip50000-id-50000"
+    aria-describedby={null}
     enabled={true}
     onBlur={[Function]}
     onClick={[Function]}

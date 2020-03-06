@@ -4,7 +4,13 @@
 */
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref, Translation, TranslationString } from "../common/common.js.flow";
+import type {
+  Globals,
+  Ref,
+  Translation,
+  TranslationString,
+  DataAttrs,
+} from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Option = {|
@@ -19,6 +25,7 @@ export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
+  ...DataAttrs,
   +id?: string,
   +required?: boolean,
   +size?: Size,

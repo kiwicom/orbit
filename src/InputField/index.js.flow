@@ -58,6 +58,7 @@ declare export var FakeInput: ReactComponentStyled<any>;
 declare export var Input: ReactComponentStyled<any>;
 
 declare export var Prefix: ReactComponentStyled<any>;
+declare export var Suffix: ReactComponentStyled<any>;
 
 declare export var InputContainer: ReactComponentStyled<any>;
 

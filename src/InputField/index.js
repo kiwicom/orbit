@@ -198,7 +198,9 @@ Prefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
+export const Suffix = styled(({ children, className }) => (
+  <div className={className}>{children}</div>
+))`
   height: ${getToken(TOKENS.heightInput)};
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
   display: flex;

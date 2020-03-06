@@ -6,7 +6,7 @@ import { SIZE_OPTIONS } from "../../InputField/consts";
 import PlusCircle from "../../icons/PlusCircle";
 import MinusCircle from "../../icons/MinusCircle";
 import ButtonLink from "../../ButtonLink";
-import InputField, { Input, Prefix } from "../../InputField";
+import InputField, { Input, Prefix, Suffix } from "../../InputField";
 import defaultTheme from "../../defaultTheme";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { StateLessProps } from "./index.js.flow";
@@ -16,10 +16,25 @@ const StyledInputStepper = styled.div`
   margin-bottom: ${getSpacingToken};
   ${Input} {
     text-align: center;
+    font-size: ${({ customValueSize }) => customValueSize && `${customValueSize}px`};
   }
+
   ${Prefix} {
     padding: 0;
     pointer-events: auto;
+    svg {
+      ${({ customButtonSize }) =>
+        customButtonSize &&
+        `height: ${customButtonSize.height}px; width: ${customButtonSize.width}px`};
+    }
+  }
+
+  ${Suffix} {
+    svg {
+      ${({ customButtonSize }) =>
+        customButtonSize &&
+        `height: ${customButtonSize.height}px; width: ${customButtonSize.width}px`};
+    }
   }
 `;
 
@@ -37,6 +52,8 @@ const InputStepperStateless = ({
   help,
   disabled,
   name,
+  customButtonSize,
+  customValueSize,
   dataTest,
   size = SIZE_OPTIONS.NORMAL,
   maxValue,
@@ -54,7 +71,11 @@ const InputStepperStateless = ({
   titleDecrement,
 }: StateLessProps) => {
   return (
-    <StyledInputStepper spaceAfter={spaceAfter}>
+    <StyledInputStepper
+      spaceAfter={spaceAfter}
+      customButtonSize={customButtonSize}
+      customValueSize={customValueSize}
+    >
       <InputField
         dataTest={dataTest}
         size={size}

@@ -3,12 +3,19 @@
 import type { SharedProps } from "../index";
 import type { RefType } from "../../common/common.js.flow";
 
+type CustomButtonSize = {|
+  +height: number,
+  +width: number,
+|};
+
 export type StateLessProps = {|
   ...SharedProps,
   +value: number | string | (() => string | number),
   +forwardedRef?: RefType,
   +disabledIncrement?: boolean,
   +disabledDecrement?: boolean,
+  +customButtonSize?: CustomButtonSize,
+  +customValueSize?: number,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   +onDecrement?: (
     ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,

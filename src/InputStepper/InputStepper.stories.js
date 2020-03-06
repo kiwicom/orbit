@@ -2,7 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { text, number, select, boolean } from "@storybook/addon-knobs";
+import { text, number, select, boolean, object } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -90,6 +90,8 @@ storiesOf("InputStepper", module)
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const value = text("Value", "2 Adults");
+      const customButtonSize = object("customSize", { height: 24, width: 24 });
+      const customValueSize = number("customValueSize", 14);
 
       return (
         <InputStepperStateless
@@ -101,6 +103,8 @@ storiesOf("InputStepper", module)
           help={help}
           name={name}
           maxValue={max}
+          customButtonSize={customButtonSize}
+          customValueSize={customValueSize}
           minValue={min}
           disabled={disabled}
           disabledIncrement={disabledIncrement}

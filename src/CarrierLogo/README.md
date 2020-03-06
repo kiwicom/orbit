@@ -34,11 +34,13 @@ Table below contains all types of the props available for object in Carrier arra
 
 ### enum
 
-| size       | type (Carrier) |
-| :--------- | :------------- |
-| `"small"`  | `"airline"`    |
-| `"medium"` | `"bus"`        |
-| `"large"`  | `"train"`      |
+| size       | type (Carrier)       |
+| :--------- | :------------------- |
+| `"small"`  | `"airline"`          |
+| `"medium"` | `"bus"`              |
+| `"large"`  | `"train"`            |
+|            | `"ferry"`            |
+|            | `"private_transfer"` |
 
 ## Functional specs
 

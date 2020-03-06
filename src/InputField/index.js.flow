@@ -2,10 +2,16 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/inputfield/
 */
-import * as React from 'react';
+import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref, Translation, TranslationString } from "../common/common.js.flow";
+import type {
+  Globals,
+  Ref,
+  Translation,
+  TranslationString,
+  DataAttrs,
+} from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken";
 
 export type Size = "small" | "normal";
@@ -16,6 +22,7 @@ export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
+  ...DataAttrs,
   +size?: Size,
   +type?: "text" | "number" | "email" | "password" | "passportid",
   +inputMode?: InputMode,

@@ -13,7 +13,7 @@ export const CardElement = css`
   box-shadow: ${({ expanded, theme }) => expanded && theme.orbit.boxShadowActionActive};
   border-top: ${({ expanded }) => !expanded && getBorder};
   background: ${({ theme }) => theme.orbit.backgroundCard};
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     border-left: ${({ expanded }) => !expanded && getBorder};
     border-right: ${({ expanded }) => !expanded && getBorder};
   `)}

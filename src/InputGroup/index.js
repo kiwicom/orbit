@@ -49,9 +49,7 @@ const FakeGroup = styled(({ children, className }) => (
     }`}; // Normal state
   box-shadow: ${({ theme, error }) =>
     error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-      theme.orbit.borderColorInputError
-    }`}; // Error state
+    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
   ${({ active }) => active && formElementFocus}; // Active state
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.paletteCloudNormal};

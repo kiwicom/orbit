@@ -21,9 +21,9 @@ export const StyledModalSection = styled.section`
     border-top: ${({ suppressed, theme }) =>
       suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
     border-top-left-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && "12px"}; // TODO: create token
     border-top-right-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && "12px"}; // TODO: create token
     margin-top: ${({ suppressed, theme, closable }) =>
       suppressed && closable && theme.orbit.spaceLarge};
   }
@@ -32,9 +32,9 @@ export const StyledModalSection = styled.section`
     border-bottom: ${({ suppressed, theme }) =>
       suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
     border-bottom-left-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && "12px"}; // TODO: create token
     border-bottom-right-radius: ${({ isMobileFullPage }) =>
-      !isMobileFullPage && "9px"}; // TODO: create token
+      !isMobileFullPage && "12px"}; // TODO: create token
     & ~ ${StyledModalFooter} {
       margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
     }
@@ -50,9 +50,17 @@ export const StyledModalSection = styled.section`
     &:first-of-type {
       margin-top: ${({ suppressed, theme, closable }) =>
         suppressed && closable && theme.orbit.spaceXXLarge};
+      border-top-left-radius: ${({ isMobileFullPage }) =>
+        !isMobileFullPage && "9px"}; // TODO: create token
+      border-top-right-radius: ${({ isMobileFullPage }) =>
+        !isMobileFullPage && "9px"}; // TODO: create token
     }
 
     &:last-of-type {
+      border-bottom-left-radius: ${({ isMobileFullPage }) =>
+        !isMobileFullPage && "9px"}; // TODO: create token
+      border-bottom-right-radius: ${({ isMobileFullPage }) =>
+        !isMobileFullPage && "9px"}; // TODO: create token
       & ~ ${StyledModalFooter} {
         padding-top: ${({ suppressed }) => !suppressed && "0"};
         margin-top: 0;

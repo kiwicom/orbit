@@ -29,6 +29,9 @@ describe(`InputField with help, prefix and suffix`, () => {
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const id = "id";
   const inputMode = INPUTMODE.NUMERIC;
+  const dataAttrs = {
+    "data-recording-ignore": true,
+  };
 
   const component = shallow(
     <InputField
@@ -57,6 +60,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      dataAttrs={dataAttrs}
     />,
   );
   const prefix = component.find("InputField__Prefix");
@@ -92,6 +96,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("placeholder")).toBe(placeholder);
     expect(input.prop("maxLength")).toBe(maxLength);
     expect(input.prop("minLength")).toBe(minLength);
+    expect(input.render().prop("data-recording-ignore")).toBe("true");
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
     expect(input.render().prop("data-state")).toBe("ok");

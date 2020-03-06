@@ -66,8 +66,6 @@ const StyledDialogContent = styled.div`
     text-align: center;
   }
   ${mq.largeMobile(css`
-    position: relative;
-    bottom: auto;
     min-width: ${({ theme }) => theme.orbit.widthModalSmall};
     border-radius: 9px;
     padding: ${({ theme }) => theme.orbit.spaceLarge};

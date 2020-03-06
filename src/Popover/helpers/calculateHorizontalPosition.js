@@ -29,7 +29,7 @@ const calculateHorizontalPosition: CalculateHorizontalPosition = (desiredAnchor,
   const possibleAnchor = desiredAnchor
     .map(p => isInside(p, canBe))
     .filter(p => typeof p === "string");
-  const posAnchor = possibleAnchor[0];
+  const posAnchor = Object.values(ALIGNS).some(val => val === possibleAnchor[0]);
   if (typeof posAnchor === "string") {
     return posAnchor;
   }

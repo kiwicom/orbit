@@ -162,8 +162,7 @@ const StyledSelect = styled(
   `}
 
   ${media.largeMobile(css`
-    color: ${({ theme, filled }) =>
-      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    color: ${({ customValueText }) => customValueText && "transparent"}
     background-color: ${({ disabled, theme }) =>
       disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

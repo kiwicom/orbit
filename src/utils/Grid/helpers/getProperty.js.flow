@@ -1,6 +1,6 @@
 // @flow
 import type { Props, SmallMobile } from "../index";
-import type { Devices } from "../../mediaQuery/index";
+import type { Devices } from "../../mediaQuery/consts";
 
 export type GetProperty = (
   property: "rows" | "columns" | "gap" | "rowGap" | "columnGap",

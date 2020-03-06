@@ -31,9 +31,7 @@ describe("#Wrapper", () => {
     expect(StyledWrapper.prop("bottomBorder")).toBe(true);
     expect(StyledWrapper).toHaveStyleRule(
       "border-bottom",
-      `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${
-        theme.orbit.borderColorCard
-      }`,
+      `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`,
     );
   });
 

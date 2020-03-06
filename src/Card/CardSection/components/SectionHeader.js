@@ -25,7 +25,7 @@ const StyledCardSectionHeader = styled.div`
   margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     margin: -${SpacingDesktop};
     padding: ${({ theme }) => theme.orbit.spaceLarge};
     margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};

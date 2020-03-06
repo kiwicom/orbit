@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select, number } from "@storybook/addon-knobs";
+import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS, INPUTMODE } from "./consts";
@@ -392,6 +392,7 @@ storiesOf("InputField", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("id", "ID");
       const inputMode = select("inputMode", [null, ...Object.values(INPUTMODE)]);
+      const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
       return (
         <InputField
@@ -431,6 +432,7 @@ storiesOf("InputField", module)
           spaceAfter={spaceAfter}
           id={id}
           inputMode={inputMode}
+          dataAttrs={dataAttrs}
         />
       );
     },

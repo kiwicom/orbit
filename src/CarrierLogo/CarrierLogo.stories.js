@@ -32,7 +32,10 @@ storiesOf("CarrierLogo", module)
   .add(
     "Two carriers",
     () => {
-      const carrier = [{ code: "FR", name: "Ryanair" }, { code: "TO", name: "Transavia France" }];
+      const carrier = [
+        { code: "FR", name: "Ryanair" },
+        { code: "TO", name: "Transavia France" },
+      ];
 
       const carriersObject = object(carriersLabel, carrier);
 

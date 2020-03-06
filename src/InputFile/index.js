@@ -83,19 +83,10 @@ Input.defaultProps = {
   theme: defaultTheme,
 };
 
-const getFileInputColor = ({ error, fileName }, theme) => {
-  if (error) {
-    return theme.orbit.paletteRedNormal;
-  }
-  if (fileName) {
-    return theme.orbit.colorTextInput;
-  }
-  return theme.orbit.paletteInkLight;
-};
-
 const StyledFileInput = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
+  color: ${({ fileName, theme }) =>
+    fileName ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
   width: 100%;
   white-space: nowrap;
   overflow: hidden;

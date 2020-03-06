@@ -78,7 +78,7 @@ const StyledSelect = styled(
   border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   cursor: pointer;
   color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    filled ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -160,6 +160,8 @@ const StyledSelect = styled(
   `}
 
   ${media.largeMobile(css`
+    color: ${({ theme, filled }) =>
+      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
     background-color: ${({ disabled, theme }) =>
       disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

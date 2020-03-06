@@ -88,7 +88,8 @@ const StyledTextArea = styled.textarea`
   overflow: auto;
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
+    color: ${({ theme, disabled }) =>
+      disabled ? theme.orbit.paletteInkLighter : theme.orbit.paletteInkLight};
   }
 
   &:hover {

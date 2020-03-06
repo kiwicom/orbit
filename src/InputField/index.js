@@ -278,19 +278,22 @@ export const Input = styled(
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
+    color: ${({ theme, disabled }) =>
+      disabled ? theme.orbit.paletteInkLighter : theme.orbit.paletteInkLight};
     /* Firefox */
     opacity: 1;
   }
 
   /* Internet Explorer 10-11 */
   &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
+    color: ${({ theme, disabled }) =>
+      disabled ? theme.orbit.paletteInkLighter : theme.orbit.paletteInkLight};
   }
 
   /* Microsoft Edge */
   &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
+    color: ${({ theme, disabled }) =>
+      disabled ? theme.orbit.paletteInkLighter : theme.orbit.paletteInkLight};
   }
 
   &::-ms-clear,

@@ -187,7 +187,10 @@ storiesOf("Modal", module)
                 label="Mobile phone"
               >
                 <Select
-                  options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                  options={[
+                    { value: 1, label: "+420" },
+                    { value: 2, label: "+421" },
+                  ]}
                   value={1}
                   prefix={<CountryFlag code="cz" />}
                 />

@@ -20,6 +20,7 @@ Table below contains all types of the props available in InputField component.
 | :----------- | :------------------------- | :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
 | autoComplete | `string`                   |            | The autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                |
 | disabled     | `boolean`                  |            | If `true`, the InputField will be disabled.                                                                                                         |
+| dataAttrs    | `Object`                   |            | Optional prop for passing `data-*` attributes to the `input` DOM element.                                                                           |
 | dataTest     | `string`                   |            | Optional prop for testing purposes.                                                                                                                 |
 | error        | `React.Node`               |            | The error to display beneath the InputField. [See Functional specs](#functional-specs)                                                              |
 | tags         | `React.Node`               |            | Here you can pass <Tag /> component for render tags [See Functional specs](#functional-specs)                                                       |

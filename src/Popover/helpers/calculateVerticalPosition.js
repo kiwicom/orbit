@@ -36,7 +36,9 @@ const calculateVerticalPosition: CalculateVerticalPosition = (desiredPositions, 
     .filter(p => typeof p === "string");
 
   // ordering in POSITIONS const is important
-  const posPosition = possibleWindowPositions[0] || possibleDocumentPositions[0];
+  const posPosition = Object.values(POSITIONS).some(
+    val => val === possibleWindowPositions[0] || val === possibleDocumentPositions[0],
+  );
 
   if (typeof posPosition === "string") {
     return posPosition;

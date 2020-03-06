@@ -26,7 +26,7 @@ storiesOf("Alert", module)
     "Default",
     () => {
       const message = "The quick, brown fox jumps over a lazy dog.";
-      return <Alert>{message}</Alert>;
+      return <Alert icon title={message} />;
     },
     {
       info:
@@ -101,8 +101,16 @@ storiesOf("Alert", module)
   .add(
     "Only title",
     () => {
-      const message = "The quick, brown fox jumps over a lazy dog.";
-      return <Alert title={message} closable />;
+      const title = "The quick, brown fox jumps over a lazy dog.";
+      const message = text(
+        "Message",
+        "Also you can change the message by changing the Message knob",
+      );
+      return (
+        <Alert title={title} closable>
+          {message}
+        </Alert>
+      );
     },
     {
       info:
@@ -163,14 +171,16 @@ storiesOf("Alert", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Stack spacing="compact">
-            <div>{message}</div>
-            <List>
-              <ListItem>
-                <Text type={type}>623 Kč will be refunded by your payment card</Text>
-              </ListItem>
-              <ListItem>623 Kč will be refunded by your payment card</ListItem>
-            </List>
+          <Stack spacing="condensed">
+            <Stack spacing="tight">
+              <div>{message}</div>
+              <List>
+                <ListItem>
+                  <Text type={type}>623 Kč will be refunded by your payment card</Text>
+                </ListItem>
+                <ListItem>623 Kč will be refunded by your payment card</ListItem>
+              </List>
+            </Stack>
             <Button type={type} size="small" href="#">
               {button}
             </Button>
@@ -194,18 +204,20 @@ storiesOf("Alert", module)
           closable
           onClose={action("Close")}
         >
-          <Stack spacing="compact">
-            <Text>
-              Requirements found here are for reference purposes only. Contact the embassy or your
-              foreign ministry for more information.
-            </Text>
-            <Heading type="title4">
-              Make sure you know your visa requirements for these countries:
-            </Heading>
-            <List>
-              <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
-            </List>
-            <Button type="warning" size="small">
+          <Stack spacing="condensed">
+            <Stack spacing="tight">
+              <Text>
+                Requirements found here are for reference purposes only. Contact the embassy or your
+                foreign ministry for more information.
+              </Text>
+              <Heading type="title4">
+                Make sure you know your visa requirements for these countries:
+              </Heading>
+              <List>
+                <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
+              </List>
+            </Stack>
+            <Button type="info" size="small">
               Check Visa Requirements
             </Button>
           </Stack>

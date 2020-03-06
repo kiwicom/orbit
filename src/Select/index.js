@@ -98,9 +98,9 @@ const StyledSelect = styled(
     )};
   outline: none;
   width: 100%;
+  color: ${({ customValueText }) => customValueText && "transparent"} !important;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
-  color: ${({ customValueText }) => customValueText && "transparent"};
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
   }
@@ -160,6 +160,8 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
+  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+
 
   ${media.largeMobile(css`
     color: ${({ customValueText }) => customValueText && "transparent"};
@@ -237,9 +239,13 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ prefix, theme, size, filled, ...props }) => <div {...props} />)`
-  color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...props }) => (
+  <div {...props} />
+))`
+  color: ${({ theme, filled, disabled }) =>
+    (disabled && theme.orbit.paletteInkLighter) ||
+    (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
+
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -295,7 +301,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           </SelectPrefix>
         )}
         {customValueText && (
-          <StyledCustomValue filled={filled} size={size} prefix={prefix}>
+          <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
             {customValueText}
           </StyledCustomValue>
         )}

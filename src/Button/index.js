@@ -27,7 +27,7 @@ const onlyIE = (style, breakpoint = "all") =>
   `;
 
 const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
+  <span className={className}>{children}</span>
 ))`
   display: flex;
   flex-direction: row;
@@ -183,7 +183,7 @@ StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonContent = styled(({ theme, loading, ...props }) => <div {...props} />)`
+const StyledButtonContent = styled(({ theme, loading, ...props }) => <span {...props} />)`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
@@ -202,7 +202,7 @@ StyledButtonContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonContentChildren = styled.div`
+const StyledButtonContentChildren = styled.span`
   display: inline-block;
 `;
 

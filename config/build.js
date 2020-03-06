@@ -16,7 +16,7 @@ const files = glob.sync("src/icons/svg/*.svg");
 
 const names = files.map(inputFileName => {
   const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
-  const functionName = capitalize(camelcase(baseName));
+  const functionName = capitalize(camelcase(baseName), true);
   const outputComponentFileName = `${functionName}.js`;
 
   return {

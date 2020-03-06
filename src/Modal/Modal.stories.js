@@ -231,7 +231,7 @@ storiesOf("Modal", module)
       <Modal onClose={action("onClose")} fixedFooter>
         <ModalHeader
           title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="Meal" size="small" />}
+          illustration={<Illustration name="BaggageDrop" size="small" />}
           description="Select a flight below to see the menu (where available)"
         />
         <ModalSection suppressed>

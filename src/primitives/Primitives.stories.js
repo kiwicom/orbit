@@ -19,12 +19,14 @@ storiesOf("Primitives", module)
       const Icon = getIcon(getIcons("Airplane"));
       const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
       const foregroundColor = text("ForegroundColor", "#fff");
+      const borderColor = text("borderColor", null);
 
       return (
         <BadgePrimitive
           background={background}
           foregroundColor={foregroundColor}
           icon={Icon && <Icon />}
+          borderColor={borderColor}
         >
           BadgePrimitive
         </BadgePrimitive>

@@ -26,6 +26,7 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel })
   color: ${({ foregroundColor }) => foregroundColor};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
   padding: ${({ theme }) => theme.orbit.paddingBadge};
+  border: ${({ borderColor }) => borderColor && `1px solid ${borderColor}`};
 `;
 
 StyledBadge.defaultProps = {
@@ -59,7 +60,7 @@ StyledBadgeContent.defaultProps = {
 };
 
 const BadgePrimitive = (props: Props) => {
-  const { icon, children, ariaLabel, dataTest, background, foregroundColor } = props;
+  const { icon, children, ariaLabel, dataTest, background, foregroundColor, borderColor } = props;
 
   return (
     <StyledBadge
@@ -67,6 +68,7 @@ const BadgePrimitive = (props: Props) => {
       foregroundColor={foregroundColor}
       dataTest={dataTest}
       ariaLabel={ariaLabel}
+      borderColor={borderColor}
     >
       {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}
       <StyledBadgeContent>{children}</StyledBadgeContent>

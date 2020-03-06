@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -12,6 +12,7 @@ import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -75,11 +76,11 @@ const StyledSelect = styled(
   ),
 )`
   appearance: none;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  background: ${({ theme }) => theme.orbit.paletteCloudNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   cursor: pointer;
   color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    filled ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -122,7 +123,7 @@ const StyledSelect = styled(
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        error ? theme.orbit.borderColorInputError : theme.orbit.paletteCloudNormal
       }`};
 
   &:hover {
@@ -159,6 +160,19 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
+
+  ${media.largeMobile(css`
+    color: ${({ theme, filled }) =>
+      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    background-color: ${({ disabled, theme }) =>
+      disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    box-shadow: inset 0 0 0
+      ${({ theme, error }) =>
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        }`};
+  `)}
 `;
 
 StyledSelect.defaultProps = {

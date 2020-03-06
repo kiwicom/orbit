@@ -369,7 +369,7 @@ storiesOf("InputField", module)
   .add(
     "Playground",
     () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
       const name = text("Name", "input");
       const label = text("Label", "Label");

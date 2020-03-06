@@ -15,10 +15,18 @@ storiesOf("Textarea", module)
   .add(
     "Default",
     () => {
+      const label = text("Label", "Label");
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
 
-      return <Textarea placeholder={placeholder} onChange={action("change")} value={value} />;
+      return (
+        <Textarea
+          label={label}
+          placeholder={placeholder}
+          onChange={action("change")}
+          value={value}
+        />
+      );
     },
     {
       info: "Some description about this type of textarea in general.",
@@ -108,7 +116,7 @@ storiesOf("Textarea", module)
       const placeholder = text("Placeholder", "Placeholder");
       const help = text("Help", undefined);
       const error = text("Error", "Something went wrong.");
-      const disabled = boolean("Disabled", true);
+      const disabled = boolean("Disabled", false);
       const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
       const maxLength = number("maxLength", undefined);
       const dataTest = text("dataTest", "test");

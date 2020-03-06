@@ -44,9 +44,7 @@ const FakeGroup = styled(({ children, className }) => (
   height: ${getToken(TOKENS.height)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   box-shadow: ${({ theme }) =>
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-      theme.orbit.paletteCloudNormal
-    }`}; // Normal state
+    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.paletteCloudNormal}`}; // Normal state
   box-shadow: ${({ theme, error }) =>
     error &&
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state

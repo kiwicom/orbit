@@ -145,7 +145,7 @@
     "react-element-to-jsx-string": "^14.3.1",
     "react-test-renderer": "^16.13.0",
     "rimraf": "^3.0.2",
-    "sharp": "^0.24.1",
+    "sharp": "^0.25.0",
     "styled-components": "^4.4.1",
     "surge": "^0.20.1",
     "svg2ttf": "^4.2.0",

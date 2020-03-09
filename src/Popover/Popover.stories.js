@@ -306,6 +306,7 @@ storiesOf("Popover", module)
             actions={actions}
             onOpen={action("open")}
             onClose={action("close")}
+            preferredAlign="center"
           >
             <Button type="secondary" iconRight={<ChevronDown />}>
               Open popover

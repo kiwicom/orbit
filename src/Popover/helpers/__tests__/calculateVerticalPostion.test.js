@@ -2,7 +2,7 @@
 import calculateVerticalPosition from "../calculateVerticalPosition";
 
 describe("calculateVerticalPosition", () => {
-  it("Only bottom space available", () => {
+  it("space available", () => {
     const dimensions = {
       containerTop: 132,
       containerLeft: 404.6875,
@@ -18,8 +18,8 @@ describe("calculateVerticalPosition", () => {
       documentHeight: 464,
     };
 
-    expect(calculateVerticalPosition(["top"], dimensions)).toEqual("bottom");
-    expect(calculateVerticalPosition(["bottom"], dimensions)).toEqual("bottom");
+    expect(calculateVerticalPosition(["top", "bottom"], dimensions)).toEqual("top");
+    expect(calculateVerticalPosition(["bottom", "top"], dimensions)).toEqual("bottom");
   });
   it("left dimensions", () => {
     const dimensions = {
@@ -56,7 +56,6 @@ describe("calculateVerticalPosition", () => {
       contentHeight: 0,
       documentHeight: 0,
     };
-    expect(calculateVerticalPosition([], dimensions)).toEqual(null);
-    expect(calculateVerticalPosition(["top"], dimensions)).toEqual("bottom");
+    expect(calculateVerticalPosition([], dimensions)).toEqual("bottom");
   });
 });

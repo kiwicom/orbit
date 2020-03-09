@@ -16,7 +16,7 @@ const ButtonWithTranslation = () => {
 };
 
 storiesOf("ThemeProvider", module).add(
-  "Default",
+  "Dictionary context",
   () => {
     const dictionary = select("dictionary", Object.keys(languages));
     return (

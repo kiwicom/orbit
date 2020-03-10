@@ -13,6 +13,9 @@ const PHRASE_APP_ACCESS_TOKEN = env("PHRASE_APP_ACCESS_TOKEN");
 
 const LOCALES_URL = `${PHRASE_APP_BASE_URL}/projects/${PHRASE_APP_PROJECT_ID}/locales`;
 const FILE_FORMAT = "nested_json";
+const LOCALES_DATA = path.join(__dirname, "..", "src", "data", "dictionary");
+
+const INDEX_TEMPLATE = `// @flow\n__IMPORTS__\n\nexport default {\n__DECLARATIONS__\n};\n`;
 
 const fetchJSON = async url => {
   const options = {
@@ -25,9 +28,11 @@ const fetchJSON = async url => {
   return (await fetch(url, options)).json();
 };
 
-const writeJSON = (filename, obj) =>
+const getImport = (c, p) => `import ${c} from "./${p}.json";`;
+
+const writeFile = (filename, content) =>
   new Promise((resolve, reject) => {
-    fs.outputFile(filename, JSON.stringify(obj, null, 2), "utf8", err => {
+    fs.outputFile(filename, content, "utf8", err => {
       if (err) {
         reject(err);
       }
@@ -35,6 +40,21 @@ const writeJSON = (filename, obj) =>
       resolve();
     });
   });
+
+const writeIndexFile = async codes => {
+  const fullCodes = codes.map(code => {
+    const shortCode = code.match(/[A-Z]./g)[0];
+    const importPath = getImport(shortCode, code);
+    return { code, shortCode, importPath };
+  });
+  const imports = fullCodes.map(f => f.importPath).join("\n");
+  const declarations = fullCodes.map(f => `  "${f.code}": ${f.shortCode},`).join("\n");
+  const content = INDEX_TEMPLATE.replace("__IMPORTS__", imports).replace(
+    "__DECLARATIONS__",
+    declarations,
+  );
+  return writeFile(path.join(LOCALES_DATA, "index.js"), content);
+};
 
 const flatten = (obj = {}, keyPrefix = "") =>
   Object.entries(obj).reduce((result, [key, value]) => {
@@ -53,7 +73,6 @@ const flatten = (obj = {}, keyPrefix = "") =>
 (async () => {
   try {
     const allLocales = await fetchJSON(LOCALES_URL);
-    const LOCALES_DATA = path.join(__dirname, "..", "src", "data", "dictionary");
 
     // PhraseApp has limits on parallel requests
     // that's why we process requests in sequence
@@ -62,9 +81,12 @@ const flatten = (obj = {}, keyPrefix = "") =>
       const translation = await fetchJSON(
         `${LOCALES_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,
       );
-
-      await writeJSON(path.join(LOCALES_DATA, `${locale.code}.json`), flatten(translation.orbit));
+      await writeFile(
+        path.join(LOCALES_DATA, `${locale.code}.json`),
+        JSON.stringify(flatten(translation.orbit), null, 2),
+      );
     }
+    await writeIndexFile(Object.keys(allLocales).map(l => allLocales[l].code));
   } catch (error) {
     console.error(error);
     process.exit(1);

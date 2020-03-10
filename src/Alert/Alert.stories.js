@@ -36,7 +36,7 @@ storiesOf("Alert", module)
   .add(
     "Info alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Some additional information");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert title={title} icon>
@@ -52,7 +52,7 @@ storiesOf("Alert", module)
   .add(
     "Success alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "You did it!");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="success" title={title} icon>
@@ -69,7 +69,7 @@ storiesOf("Alert", module)
   .add(
     "Warning alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Be careful!");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="warning" title={title} icon>
@@ -85,7 +85,7 @@ storiesOf("Alert", module)
   .add(
     "Critical alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Something has gone horribly wrong");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="critical" title={title} icon>
@@ -101,16 +101,8 @@ storiesOf("Alert", module)
   .add(
     "Only title",
     () => {
-      const title = "The quick, brown fox jumps over a lazy dog.";
-      const message = text(
-        "Message",
-        "Also you can change the message by changing the Message knob",
-      );
-      return (
-        <Alert title={title} closable>
-          {message}
-        </Alert>
-      );
+      const title = text("Title", "The quick, brown fox jumps over a lazy dog.");
+      return <Alert title={title} closable />;
     },
     {
       info:

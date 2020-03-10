@@ -25,13 +25,12 @@ const calculateHorizontalPosition: CalculateHorizontalPosition = (desiredAnchor,
       positions.containerLeft + positions.containerWidth / 2 + positions.popoverWidth / 2 <
         positions.windowWidth,
   };
-
   const possibleAnchor = desiredAnchor
     .map(p => isInside(p, canBe))
     .filter(p => typeof p === "string");
-  const posAnchor = Object.values(ALIGNS).some(val => val === possibleAnchor[0]);
-  if (typeof posAnchor === "string") {
-    return posAnchor;
+
+  if (possibleAnchor[0]) {
+    return possibleAnchor[0];
   }
   return null;
 };

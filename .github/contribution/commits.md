@@ -2,17 +2,11 @@
 
 ## Commit Message
 
+We're using conventional commits to ensure consistency of commit messages.
+
 Always assign a prefix to your first commit in a new branch.
 
-We use these prefix keywords:
-
-```
-FIX: Commit message
-NEW: Commit message
-UPDATE: Commit message
-RELEASE: Commit message
-WIP: Commit message
-```
+For more information, check the [convention](https://www.conventionalcommits.org/en/v1.0.0/).
 
 Please see [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/) for information on how to write commit messages.
 

@@ -9,13 +9,10 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   containerLeft,
   containerWidth,
   popoverWidth,
-  theme,
 }) => {
   if (anchor === ALIGNS.START) {
     return css`
-      left: ${theme.rtl
-        ? Math.floor(containerLeft + containerWidth - popoverWidth)
-        : Math.floor(containerLeft)}px;
+      left: ${Math.floor(containerLeft)}px;
     `;
   }
   if (anchor === ALIGNS.CENTER) {

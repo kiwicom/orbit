@@ -428,29 +428,31 @@ storiesOf("Popover", module)
       const overlapped = boolean("overlapped", false);
 
       return (
-        <Popover
-          width={width}
-          dataTest={dataTest}
-          content={content}
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-          noPadding={noPadding}
-          actions={
-            <Stack direction="row" justify="between">
-              <Button type="secondary" size="small">
-                Cancel
-              </Button>
-              <Button size="small">Done</Button>
-            </Stack>
-          }
-          overlapped={overlapped}
-          onOpen={action("open")}
-          onClose={action("close")}
-        >
-          <Button type="secondary" iconRight={<ChevronDown />}>
-            Open popover
-          </Button>
-        </Popover>
+        <Stack justify="center">
+          <Popover
+            width={width}
+            dataTest={dataTest}
+            content={content}
+            preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
+            noPadding={noPadding}
+            actions={
+              <Stack direction="row" justify="between">
+                <Button type="secondary" size="small">
+                  Cancel
+                </Button>
+                <Button size="small">Done</Button>
+              </Stack>
+            }
+            overlapped={overlapped}
+            onOpen={action("open")}
+            onClose={action("close")}
+          >
+            <Button type="secondary" iconRight={<ChevronDown />}>
+              Open popover
+            </Button>
+          </Popover>
+        </Stack>
       );
     },
     {
@@ -470,11 +472,13 @@ storiesOf("Popover", module)
 
       return (
         <RenderInRtl>
-          <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
-            <Button type="secondary" iconRight={<ChevronDown />}>
-              Open popover
-            </Button>
-          </Popover>
+          <Stack flex>
+            <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
+              <Button type="secondary" iconRight={<ChevronDown />}>
+                Open popover
+              </Button>
+            </Popover>
+          </Stack>
         </RenderInRtl>
       );
     },
@@ -483,6 +487,38 @@ storiesOf("Popover", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
+  .add(
+    "RTL Reverse",
+    () => {
+      const preferredPosition = select(
+        "preferredPosition",
+        Object.values(POSITIONS),
+        POSITIONS.BOTTOM,
+      );
+      const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
+
+      return (
+        <RenderInRtl>
+          <Stack justify="end">
+            <Popover
+              content={content}
+              preferredPosition={preferredPosition}
+              preferredAlign={preferredAlign}
+            >
+              <Button type="secondary" iconRight={<ChevronDown />}>
+                Open popover
+              </Button>
+            </Popover>
+          </Stack>
+        </RenderInRtl>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+
   .add(
     "LazyContent - simlulated",
     () => {

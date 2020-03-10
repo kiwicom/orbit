@@ -118,7 +118,7 @@ export const StyledButton = styled(
   border: 0;
   border-radius: ${({ theme, circled }) =>
     circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
-  ${({ circled }) => circled && "min-width: 44px;"};
+  min-width: ${({ circled }) => circled && getSizeToken(TOKENS.heightButton)}};
   padding: ${getButtonSpacing()};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;

@@ -41,13 +41,14 @@ StyledImage.defaultProps = {
 
 const IllustrationPrimitive = ({
   name,
+  alt,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
   spaceAfter,
 }: Props) => (
   <StyledImage
     illustrationName={name}
-    alt={name}
+    alt={alt || name}
     size={size}
     data-test={dataTest}
     spaceAfter={spaceAfter}

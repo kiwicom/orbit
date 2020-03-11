@@ -6,8 +6,8 @@ import IllustrationPrimitive from "../primitives/IllustrationPrimitive";
 
 import type { Props } from "./index";
 
-const AirportIllustration = ({ name, size = SIZE_OPTIONS.MEDIUM, dataTest, spaceAfter }: Props) => (
-  <IllustrationPrimitive name={name} size={size} dataTest={dataTest} spaceAfter={spaceAfter} />
+const AirportIllustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props) => (
+  <IllustrationPrimitive {...props} size={size} />
 );
 
 export default AirportIllustration;

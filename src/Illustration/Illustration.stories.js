@@ -18,8 +18,17 @@ storiesOf("Illustration", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
       const name = select("Name", Object.values(NAMES), "Accommodation");
       const dataTest = text("dataTest", "test");
+      const alt = text("alt", null);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      return <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />;
+      return (
+        <Illustration
+          size={size}
+          name={name}
+          dataTest={dataTest}
+          spaceAfter={spaceAfter}
+          alt={alt}
+        />
+      );
     },
     {
       info: "Explore our new set of illustrations for Kiwi.com.",

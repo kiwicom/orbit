@@ -70,6 +70,7 @@ You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io
 - [Right to left languages](https://github.com/kiwicom/orbit-components/tree/master/src/utils/rtl/README.md)
 - [Theming](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md)
 - [Dictionary](https://github.com/kiwicom/orbit-components/tree/master/.github/dictionary.md)
+- [Changelog](https://github.com/kiwicom/orbit-components/tree/master/.github/CHANGELOG.md)
 
 ## Contributing
 

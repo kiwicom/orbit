@@ -235,7 +235,11 @@ const PictureCard = ({
       data-test={dataTest}
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
-      height={parseInt(height, 10) >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
+      height={
+        (isPlain && height) || parseInt(height, 10) >= SMALLEST_HEIGHT
+          ? height
+          : `${SMALLEST_HEIGHT}px`
+      }
       width={width}
       href={href}
       target={href && external ? "_blank" : undefined}

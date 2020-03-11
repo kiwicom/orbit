@@ -1,12 +1,5 @@
 // @flow
-
-type Media = {|
-  +isLargeDesktop: ?boolean,
-  +isDesktop: ?boolean,
-  +isLargeMobile: ?boolean,
-  +isMediumMobile: ?boolean,
-  +isTablet: ?boolean,
-|};
+import type { Media } from "../../ThemeProvider/QueryContext";
 
 export type UseMediaQuery = () => Media;
 

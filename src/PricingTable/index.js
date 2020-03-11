@@ -11,6 +11,7 @@ const StyledPricingTable = styled.div``;
 
 const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) => {
   const { isDesktop } = useMediaQuery();
+  console.log(useMediaQuery());
   const resolveBasis = item => {
     if (item.length) {
       return `${Math.floor(100 / item.length)}%`;

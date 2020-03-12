@@ -17,7 +17,6 @@ import ChevronDown from "../icons/ChevronDown";
 import Sticky from "../Sticky";
 import Card from "../Card";
 import Loading from "../Loading";
-import Tile from "../Tile";
 
 import Popover from "./index";
 
@@ -203,18 +202,6 @@ storiesOf("Popover", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
-  .add("With Tile", () => {
-    const title = text("Title", "Expandable");
-    const description = text(
-      "Description",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-    );
-    return (
-      <Popover content={content}>
-        <Tile title={title} description={description} />
-      </Popover>
-    );
-  })
   .add(
     "With ListChoice",
     () => {

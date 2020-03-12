@@ -3,7 +3,8 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Text from "../../Text";
-import Heading, { StyledHeading } from "../../Heading";
+import { getHeadingToken } from "../../Heading";
+import { TOKENS, TYPE_OPTIONS } from "../../Heading/consts";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
@@ -12,15 +13,35 @@ import { withModalContext } from "../ModalContext";
 
 import type { Props } from "./index";
 
+const getModalHeading = (type, token) => ({ theme }) => {
+  return getHeadingToken(token)({ theme, type });
+};
+
+export const ModalHeading = styled.div`
+  font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
+  font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
+  line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
+  color: ${({ theme }) => theme.orbit.colorHeading};
+  ${media.largeMobile(css`
+    font-size: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.sizeHeading)};
+    font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.weightHeading)};
+    line-height: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.lineHeight)};
+  `)};
+`;
+
+ModalHeading.defaultProps = {
+  theme: defaultTheme,
+};
+
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
   margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
 
-  ${StyledHeading} {
+  ${ModalHeading} {
     padding-${right}: ${({ theme }) => theme.orbit.spaceXLarge};
   }
   ${media.desktop(css`
-    ${StyledHeading} {
+    ${ModalHeading} {
       padding: 0;
     }
   `)};
@@ -175,7 +196,7 @@ class ModalHeader extends React.PureComponent<Props> {
         {illustration}
         {hasHeader && (
           <ModalTitle illustration={!!illustration}>
-            {title && <Heading type="title2">{title}</Heading>}
+            {title && <ModalHeading>{title}</ModalHeading>}
             {description && (
               <ModalDescription>
                 <Text size="large" element="div">

@@ -18,9 +18,16 @@ storiesOf("AirportIllustration", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
       const name = select("Name", Object.values(NAMES), "BGYFastTrack");
       const dataTest = text("dataTest", "test");
+      const alt = text("alt", null);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       return (
-        <AirportIllustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />
+        <AirportIllustration
+          size={size}
+          name={name}
+          dataTest={dataTest}
+          spaceAfter={spaceAfter}
+          alt={alt}
+        />
       );
     },
     {

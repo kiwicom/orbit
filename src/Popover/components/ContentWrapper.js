@@ -39,6 +39,7 @@ const StyledContentWrapper = styled.div`
   border-top-right-radius: 12px;
   ${media.largeMobile(css`
     max-height: 100%;
+    border-radius: 3px;
   `)}
 `;
 
@@ -138,7 +139,6 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: 0;
 
   ${media.largeMobile(css`
     display: none;

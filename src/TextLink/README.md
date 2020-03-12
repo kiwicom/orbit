@@ -29,6 +29,7 @@ Table below contains all types of the props available in TextLink component.
 | size            | [`enum`](#enum)            |             | The size of the TextLink. [See Functional specs](#functional-specs)                                                |
 | stopPropagation | `boolean`                  |             | If `true` the click event on children won't bubble. Useful when you use TextLink inside another clickable element. |
 | tabIndex        | `string`                   |             | Specifies the tab order of an element                                                                              |
+| title           | `string`                   |             | HTML attribute Title, used forclarification of a link, for screen readers.                                         |
 | **type**        | [`enum`](#enum)            | `"primary"` | The color type of the TextLink.                                                                                    |
 
 ### enum

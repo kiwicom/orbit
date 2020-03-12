@@ -149,7 +149,7 @@ storiesOf("Popover", module)
     },
   )
   .add(
-    "Prefered Align",
+    "Preferred Align",
     () => {
       const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
       return (
@@ -168,7 +168,7 @@ storiesOf("Popover", module)
     },
   )
   .add(
-    "Prefered Position",
+    "Preferred Position",
     () => {
       const preferredPosition = select(
         "preferredPosition",

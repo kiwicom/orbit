@@ -8,6 +8,7 @@ import type { Props } from "./index.js.flow";
 import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { POSITIONS, ALIGNS } from "./consts";
+import handleKeyDown from "../utils/handleKeyDown";
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -121,7 +122,11 @@ const Popover = ({
   ]);
   return (
     <React.Fragment>
-      <StyledPopoverChild onClick={handleClick} ref={container}>
+      <StyledPopoverChild
+        onClick={handleClick}
+        onKeyDown={handleKeyDown(handleClick)}
+        ref={container}
+      >
         {children}
       </StyledPopoverChild>
       {render && (

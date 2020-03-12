@@ -41,6 +41,6 @@ The table below contains all types of the props available in Alert component.
 
 - By passing the `closable` prop into Alert, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="AlertCloseButton"] selector.
 
-- If you set up `icon` props as `true`, Alert will have its own icon, based on selected `type`. If you want to use a different icon, just pass it to the `icon` prop as `React.Element`. Alert without `icon` prop doesn't have any icon.
+- When the Alert has a `title` prop, if you pass an `icon` prop as `true`, the Alert will have its own icon based on the selected `type`. If you want to use a different icon, just pass it to the `icon` prop as a `React.Element`. Alerts without a `title` or with a `title` but without an `icon` prop don't have an icon.
 
 - Passing a `inlineActions` will cause `children` to be ignored. `inlineActions` should be used for displaying buttons inside short alerts which only have a `title`.

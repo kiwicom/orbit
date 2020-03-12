@@ -9,6 +9,7 @@ import defaultTheme from "../../../defaultTheme";
 
 const size = SIZE_OPTIONS.SMALL;
 const name = "Accommodation";
+const alt = "Alternative text";
 const dataTest = "test";
 
 const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png";
@@ -19,6 +20,7 @@ describe(`IllustrationPrimitive of ${name}`, () => {
     <IllustrationPrimitive
       size={size}
       name={name}
+      alt={alt}
       dataTest={dataTest}
       spaceAfter={SPACINGS_AFTER.NORMAL}
     />,
@@ -35,7 +37,7 @@ describe(`IllustrationPrimitive of ${name}`, () => {
 
   it("should have passed props", () => {
     expect(component.prop("size")).toBe(size);
-    expect(component.render().prop("alt")).toBe(name);
+    expect(component.render().prop("alt")).toBe(alt);
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
 

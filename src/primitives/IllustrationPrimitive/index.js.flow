@@ -8,6 +8,7 @@ import type { spaceAfter } from "../../common/getSpacingToken/index";
 export type Props = {|
   +size?: "small" | "medium" | "large" | "display",
   +name: string,
+  +alt?: string,
   ...Globals,
   ...spaceAfter,
 |};

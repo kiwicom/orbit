@@ -10,9 +10,8 @@ import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
-import { MobileHeader, StyledModalHeader } from "./ModalHeader";
+import { MobileHeader, StyledModalHeader, ModalHeading } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
-import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
@@ -412,7 +411,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     if (content) {
       // added in 4.0.3, interpolation of styled component return static className
       const footerEl = content.querySelector(`${StyledModalFooter}`);
-      const headingEl = content.querySelector(`${StyledHeading}`);
+      const headingEl = content.querySelector(`${ModalHeading}`);
       this.offset = headingEl?.clientHeight + headingEl?.offsetTop;
       const contentDimensions = content.getBoundingClientRect();
       const modalWidth = contentDimensions.width;
@@ -486,7 +485,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   getScrollTopPoint = (mobile?: boolean) => {
     const content = this.modalContent.current;
     if (content) {
-      const headingEl = content.querySelector(`${StyledHeading}`);
+      const headingEl = content.querySelector(`${ModalHeading}`);
       if (headingEl) {
         const { top } = headingEl.getBoundingClientRect();
         return top;

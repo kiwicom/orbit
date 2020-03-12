@@ -136,6 +136,7 @@ const TextLink = ({
   tabIndex,
   asComponent = DefaultComponent,
   stopPropagation = false,
+  title,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -169,6 +170,7 @@ const TextLink = ({
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
       asComponent={asComponent}
+      title={title}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

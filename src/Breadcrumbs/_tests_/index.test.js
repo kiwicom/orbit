@@ -21,10 +21,9 @@ describe("Breadcrumbs", () => {
     expect(component.render().prop("aria-label")).toBe("Breadcrumb");
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
-  it("ol should contain vocab and typeof", () => {
+  it("ol should contain correct item type", () => {
     expect(list.render().prop("name")).toBe("ol");
-    expect(list.render().prop("attribs").vocab).toBe("http://schema.org/");
-    expect(list.render().prop("attribs").typeof).toBe("BreadcrumbList");
+    expect(list.render().prop("attribs").itemtype).toContain("BreadcrumbList");
   });
   it("children should contain active and contentKey", () => {
     expect(list.find("BreadcrumbsItem").prop("active")).toBe(true);
@@ -51,15 +50,15 @@ describe("Breadcrumbs", () => {
   it("li contains props", () => {
     expect(component.render().prop("name")).toBe("li");
     expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.render().prop("attribs").property).toBe("itemListElement");
-    expect(component.render().prop("attribs").typeof).toBe("ListItem");
+    expect(component.render().prop("attribs").itemprop).toBe("itemListElement");
+    expect(component.render().prop("attribs").itemtype).toContain("ListItem");
     expect(component.render().prop("aria-current")).toBe("page");
-    expect(anchor.render().prop("id")).toBe(id);
+    expect(anchor.render().prop("itemid")).toBe(id);
   });
   it("anchor contains props", () => {
     expect(anchor.render().prop("href")).toBe(url);
-    expect(anchor.render().prop("property")).toBe("item");
-    expect(anchor.render().prop("typeof")).toBe("WebPage");
+    expect(anchor.render().prop("itemprop")).toBe("item");
+    expect(anchor.render().prop("itemtype")).toContain("WebPage");
     expect(
       anchor
         .children()
@@ -87,5 +86,15 @@ describe("Breadcrumbs", () => {
         .find("meta")
         .prop("content"),
     ).toBe(2);
+  });
+  it("itemid defaults to href when no id attribute", () => {
+    const componentWithoutID = shallow(
+      <BreadcrumbsItem href={url} onClick={onClick} dataTest={dataTest} active contentKey={2}>
+        {title}
+      </BreadcrumbsItem>,
+    );
+    const anchorWithoutID = componentWithoutID.find("BreadcrumbsItem__StyledBreadcrumbsItemAnchor");
+
+    expect(anchorWithoutID.render().prop("itemid")).toBe(url);
   });
 });

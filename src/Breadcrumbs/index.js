@@ -59,7 +59,7 @@ const Breadcrumbs = ({ children, dataTest, onGoBack, spaceAfter }: Props) => (
     data-test={dataTest}
     spaceAfter={spaceAfter}
   >
-    <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
+    <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
       {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {
         if (React.isValidElement(item)) {

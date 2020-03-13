@@ -1,23 +1,24 @@
+// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-declare module '@kiwicom/orbit-components/lib/RatingStars'
+import * as React from "react";
+import * as Common from "@kiwicom/orbit-components/common";
 
-import * as React from 'react'
-import * as Common from '@kiwicom/orbit-components/common'
+declare module "@kiwicom/orbit-components/lib/RatingStars";
 
-export { RatingStars, RatingStars as default }
+export { RatingStars, RatingStars as default };
 
 declare namespace RatingStars {
-    type Size = "small" | "medium" | "large";
-    type Color = "attention" | "primary" | "secondary";
+  type Size = "small" | "medium" | "large";
+  type Color = "attention" | "primary" | "secondary";
 
-    interface Props extends Common.Global {
-        readonly rating: number;
-        readonly size?: Size;
-        readonly color?: Color;
-        readonly showEmpty?: boolean;
-    }
+  interface Props extends Common.Global {
+    readonly rating: number;
+    readonly size?: Size;
+    readonly color?: Color;
+    readonly showEmpty?: boolean;
+  }
 }
 
 declare class RatingStars extends React.Component<RatingStars.Props> {}

@@ -1,9 +1,10 @@
+// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-declare module '@kiwicom/orbit-components/common'
+import * as React from "react";
 
-import * as React from 'react';
+declare module "@kiwicom/orbit-components/common";
 
 /*
 Common types used in @kiwicom/orbit-component declarations
@@ -19,24 +20,23 @@ export type Size = "small" | "normal" | "large";
 export type InputSize = "small" | "normal";
 
 export type Carrier = {
-    code: string;
-    name: string;
-    type?: "airline" | "bus" | "train";
-}
-
-export type Translations = {
-    [key: string]: string;
+  code: string;
+  name: string;
+  type?: "airline" | "bus" | "train";
 };
 
+export type Translations = {
+  [key: string]: string;
+};
 
 export interface Global {
-    readonly dataTest?: string;
+  readonly dataTest?: string;
 }
 
 export interface Ref {
-    readonly ref?: () => { current: HTMLElement | null },
+  readonly ref?: () => { current: HTMLElement | null };
 }
 
 export interface SpaceAfter {
-    readonly spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest";
+  readonly spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest";
 }

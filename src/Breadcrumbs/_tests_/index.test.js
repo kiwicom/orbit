@@ -63,7 +63,8 @@ describe("Breadcrumbs", () => {
       anchor
         .children()
         .find("span")
-        .prop("property"),
+        .render()
+        .prop("itemprop"),
     ).toBe("name");
     expect(
       anchor
@@ -78,7 +79,8 @@ describe("Breadcrumbs", () => {
       component
         .children()
         .find("meta")
-        .prop("property"),
+        .render()
+        .prop("itemprop"),
     ).toBe("position");
     expect(
       component

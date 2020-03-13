@@ -6,7 +6,7 @@ export type Props = {|
   shownMobile: boolean,
   shown: boolean,
   size: Sizes,
-  tooltipId: string,
+  tooltipId: ?string,
   children: React$Node,
   onClose: () => void,
   onCloseMobile: () => void,

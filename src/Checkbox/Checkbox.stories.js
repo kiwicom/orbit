@@ -46,7 +46,10 @@ storiesOf("CheckBox", module)
             <Text>
               I instruct Kiwi.com to cancel this booking under the herein specified conditions and
               to process a refund in accordance with Kiwi.com&rsquo;&nbsp;
-              <TextLink>Terms and Conditions</TextLink>.
+              <TextLink stopPropagation href="https://kiwi.com" external>
+                Terms and Conditions
+              </TextLink>
+              .
             </Text>
           }
           checked={checked}
@@ -86,7 +89,7 @@ storiesOf("CheckBox", module)
       const label = text("Label", "Label");
       const value = text("Value", "value");
       const checked = boolean("Checked", true);
-      const disabled = boolean("Disabled", true);
+      const disabled = boolean("Disabled", false);
       const hasError = boolean("hasError", false);
       const readOnly = boolean("readOnly", false);
       const info = text("Info", "Additional information for this choice");

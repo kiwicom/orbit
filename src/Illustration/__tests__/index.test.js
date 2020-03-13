@@ -3,7 +3,7 @@ import * as React from "react";
 import { shallow, mount } from "enzyme";
 
 import Illustration from "../index";
-import { SIZE_OPTIONS } from "../consts";
+import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
 

@@ -143,6 +143,9 @@ class Slide extends React.Component<Props, State> {
         id={id}
         aria-labelledby={ariaLabelledBy}
         visible={visible}
+        onClick={ev => {
+          ev.stopPropagation();
+        }}
       >
         {children}
       </StyledSlide>

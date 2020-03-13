@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -12,6 +12,7 @@ import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -50,6 +51,7 @@ const StyledSelect = styled(
         onFocus,
         onBlur,
         id,
+        dataAttrs,
       },
       ref,
     ) => (
@@ -66,6 +68,7 @@ const StyledSelect = styled(
         name={name}
         tabIndex={tabIndex}
         ref={ref}
+        {...dataAttrs}
       >
         {children}
       </select>
@@ -73,11 +76,11 @@ const StyledSelect = styled(
   ),
 )`
   appearance: none;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  background: ${({ theme }) => theme.orbit.paletteCloudNormal};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
   cursor: pointer;
   color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    filled ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -95,9 +98,9 @@ const StyledSelect = styled(
     )};
   outline: none;
   width: 100%;
+  color: ${({ customValueText }) => customValueText && "transparent"} !important;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
-  color: ${({ customValueText }) => customValueText && "transparent"};
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
   }
@@ -120,7 +123,7 @@ const StyledSelect = styled(
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        error ? theme.orbit.borderColorInputError : theme.orbit.paletteCloudNormal
       }`};
 
   &:hover {
@@ -157,6 +160,20 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
+  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+
+
+  ${media.largeMobile(css`
+    color: ${({ customValueText }) => customValueText && "transparent"};
+    background-color: ${({ disabled, theme }) =>
+      disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+    box-shadow: inset 0 0 0
+      ${({ theme, error }) =>
+        `${theme.orbit.borderWidthInput} ${
+          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+        }`};
+  `)}
 `;
 
 StyledSelect.defaultProps = {
@@ -222,9 +239,13 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ prefix, theme, size, filled, ...props }) => <div {...props} />)`
-  color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...props }) => (
+  <div {...props} />
+))`
+  color: ${({ theme, filled, disabled }) =>
+    (disabled && theme.orbit.paletteInkLighter) ||
+    (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
+
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
@@ -263,6 +284,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
     prefix,
     spaceAfter,
     customValueText,
+    dataAttrs,
   } = props;
   const filled = !(value == null || value === "");
   return (
@@ -279,7 +301,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           </SelectPrefix>
         )}
         {customValueText && (
-          <StyledCustomValue filled={filled} size={size} prefix={prefix}>
+          <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
             {customValueText}
           </StyledCustomValue>
         )}
@@ -300,6 +322,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           id={id}
           required={required}
           ref={ref}
+          dataAttrs={dataAttrs}
         >
           {placeholder && (
             <option label={placeholder} value="">

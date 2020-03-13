@@ -5,6 +5,7 @@ import * as Icons from "./icons";
 export { Icons };
 
 export { default as Alert } from "./Alert";
+export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
@@ -100,10 +101,10 @@ export { default as Tooltip } from "./Tooltip";
 export { default as Translate } from "./Translate";
 export { default as ThemeProvider } from "./ThemeProvider";
 
-export { default as TripSegment } from "./TripSegment";
-export { default as TripSector } from "./TripSector";
-export { default as TripDate } from "./TripSector/TripDate";
-export { default as TripLayover } from "./TripSector/TripLayover";
+export { default as TripSegment } from "./deprecated/TripSegment";
+export { default as TripSector } from "./deprecated/TripSector";
+export { default as TripDate } from "./deprecated/TripSector/TripDate";
+export { default as TripLayover } from "./deprecated/TripSector/TripLayover";
 export { default as Truncate } from "./Truncate";
 
 // tokens
@@ -115,3 +116,4 @@ export { default as mediaQueries } from "./utils/mediaQuery";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
+export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";

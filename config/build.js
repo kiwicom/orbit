@@ -10,12 +10,13 @@ import glob from "glob";
 import svgr from "@svgr/core";
 
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
+import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts";
 
 const files = glob.sync("src/icons/svg/*.svg");
 
 const names = files.map(inputFileName => {
   const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
-  const functionName = capitalize(camelcase(baseName));
+  const functionName = capitalize(camelcase(baseName), true);
   const outputComponentFileName = `${functionName}.js`;
 
   return {
@@ -148,4 +149,20 @@ const illustrationsJSON = Object.assign(
 fs.writeFileSync(
   path.join(__dirname, "..", "src", "data", "illustrations.json"),
   JSON.stringify(illustrationsJSON),
+);
+
+// create airport illustrations json file
+const airportIllustrationsJSON = Object.assign(
+  {},
+  ...AIRPORT_ILLUSTRATION_NAMES.map(illustration => ({
+    [illustration]: {
+      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}-Q85.png`,
+      original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
+    },
+  })),
+);
+
+fs.writeFileSync(
+  path.join(__dirname, "..", "src", "data", "airportIllustrations.json"),
+  JSON.stringify(airportIllustrationsJSON),
 );

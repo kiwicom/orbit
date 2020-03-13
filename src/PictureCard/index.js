@@ -10,7 +10,7 @@ import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../utils/rtl";
 import randomID from "../utils/randomID";
-import KEY_CODE_MAP from "../common/keyMaps";
+import handleKeyDown from "../utils/handleKeyDown";
 
 import type { Props } from "./index";
 
@@ -133,20 +133,13 @@ StyledPictureCardContent.defaultProps = {
 };
 
 const StyledPictureCard = styled(
-  ({
-    height,
-    href,
-    theme,
-    external,
-    shadows,
-    contentHeight,
-    isPlain,
-    width,
-    isClickable,
-    ...props
-  }) => {
+  ({ height, href, theme, shadows, contentHeight, isPlain, width, isClickable, ...props }) => {
     const Component = href ? "a" : "div";
-    return <Component {...props}>{props.children}</Component>;
+    return (
+      <Component {...props} href={href}>
+        {props.children}
+      </Component>
+    );
   },
 )`
   height: ${({ height }) => (height ? `${height}` : "100%")};
@@ -232,17 +225,6 @@ const PictureCard = ({
 
   const cardID = React.useMemo(() => randomID("pictureCardID"), []);
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick();
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick();
-      }
-    }
-  };
-
   const { name, original, placeholder, code } = image;
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;
@@ -252,8 +234,12 @@ const PictureCard = ({
     <StyledPictureCard
       data-test={dataTest}
       onClick={onClick}
-      onKeyDown={handleKeyDown}
-      height={parseInt(height, 10) >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
+      onKeyDown={handleKeyDown(onClick)}
+      height={
+        (isPlain && height) || parseInt(height, 10) >= SMALLEST_HEIGHT
+          ? height
+          : `${SMALLEST_HEIGHT}px`
+      }
       width={width}
       href={href}
       target={href && external ? "_blank" : undefined}
@@ -271,10 +257,14 @@ const PictureCard = ({
           webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
           jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
         }}
-        placeholder={{
-          webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
-          jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,
-        }}
+        placeholder={
+          placeholder
+            ? {
+                webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
+                jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,
+              }
+            : undefined
+        }
         name={name}
       />
 

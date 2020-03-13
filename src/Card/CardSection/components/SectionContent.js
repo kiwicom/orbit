@@ -20,7 +20,7 @@ const StyledCardSectionContent = styled.div`
   transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceLarge};
   `)}
 `;

@@ -1,10 +1,11 @@
+// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-declare module '@kiwicom/orbit-components/lib/Table/TableBody'
+import TableBase from "../TableBase";
 
-import TableBase from '../TableBase'
+declare module "@kiwicom/orbit-components/lib/Table/TableBody";
 
-export { TableBody, TableBody as default }
+export { TableBody, TableBody as default };
 
 declare class TableBody extends TableBase {}

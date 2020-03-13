@@ -1,16 +1,17 @@
+// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-declare module '@kiwicom/orbit-components/lib/Illustration'
+import * as React from "react";
+import * as Common from "@kiwicom/orbit-components/common";
 
-import * as React from 'react'
-import * as Common from '@kiwicom/orbit-components/common'
+declare module "@kiwicom/orbit-components/lib/Illustration";
 
-export { Illustration, Illustration as default }
+export { Illustration, Illustration as default };
 
 declare namespace Illustration {
-    type Size = "small" | "medium";
-    type Name =
+  type Size = "small" | "medium";
+  type Name =
     | "Accommodation"
     | "AirHelp"
     | "AirportTransport"
@@ -73,10 +74,10 @@ declare namespace Illustration {
     | "TransportBus"
     | "TransportTaxi";
 
-    interface Props extends Common.Global, Common.SpaceAfter {
-        readonly size?: Size;
-        readonly name: Name;
-    }
+  interface Props extends Common.Global, Common.SpaceAfter {
+    readonly size?: Size;
+    readonly name: Name;
+  }
 }
 
 declare class Illustration extends React.Component<Illustration.Props> {}

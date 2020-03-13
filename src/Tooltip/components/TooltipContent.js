@@ -22,6 +22,7 @@ import calculateTooltipAlign from "../helpers/calculateTooltipAlign";
 import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
 import useDimensions from "../hooks/useDimensions";
 import type { Props } from "./TooltipContent";
+import transition from "../../utils/transition";
 
 const StyledTooltip = styled.div`
   width: 100%;
@@ -38,9 +39,11 @@ const StyledTooltipWrapper = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear
-      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
+  transition: ${({ theme, shownMobile }) =>
+    css`
+      ${transition(["bottom"], "normal", "ease-in-out")},
+      ${transition(["visibility"], "fast", "linear")},
+        ${!shownMobile && theme.orbit.durationNormal}`};
   z-index: 10012; // TODO: use some good value
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "16px" : `-${tooltipWidth}px`)};
   left: ${({ theme }) => theme.orbit.spaceMedium};
@@ -62,8 +65,8 @@ const StyledTooltipWrapper = styled.div`
     padding: ${tooltipPadding};
     visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
     opacity: ${({ shown }) => (shown ? "1" : "0")};
-    transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-      visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
+
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     // prevent position, IEs don't have initial YAY
@@ -158,9 +161,10 @@ const StyledTooltipOverlay = styled.div`
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
   z-index: 10011; // TODO: use some good value
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear
-      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
+  transition: ${({ theme, shownMobile }) => css`
+    ${transition(["opacity"], "normal", "ease-in-out")},
+    ${transition(["visibility"], "fast", "linear")},
+    ${!shownMobile && theme.orbit.durationNormal}`};
 
   ${media.largeMobile(css`
     display: none;

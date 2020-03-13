@@ -5,6 +5,7 @@ exports[`Separator should match snapshot 1`] = `
   spaceAfter="large"
   theme={
     Object {
+      "offTranslations": false,
       "orbit": Object {
         "backgroundAlertCritical": "#FAEAEA",
         "backgroundAlertInfo": "#E8F4FD",

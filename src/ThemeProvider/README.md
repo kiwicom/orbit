@@ -18,8 +18,9 @@ After adding import please wrap your application into `ThemeProvider` and you ca
 
 Table below contains all types of the props available in the ThemeProvider component.
 
-| Name         | Type         | Default | Description                                                                                       |
-| :----------- | :----------- | :------ | :------------------------------------------------------------------------------------------------ |
-| **children** | `React.Node` |         | Your app                                                                                          |
-| theme        | `[Object]`   |         | See [`theming`](https://github.com/kiwicom/orbit-components/blob/master/.github/theming.md)       |
-| dictionary   | `[Object]`   |         | See [`dictionary`](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md) |
+| Name           | Type         | Default | Description                                                                                       |
+| :------------- | :----------- | :------ | :------------------------------------------------------------------------------------------------ |
+| **children**   | `React.Node` |         | Your app                                                                                          |
+| theme          | `[Object]`   |         | See [`theming`](https://github.com/kiwicom/orbit-components/blob/master/.github/theming.md)       |
+| dictionary     | `[Object]`   |         | See [`dictionary`](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md) |
+| offTransitinos | `boolean`    | `false` | Turns off expensive transitions for http://m.kiwi.com                                             |

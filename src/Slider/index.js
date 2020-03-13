@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
 
+import transition from "../utils/transition";
 import Text from "../Text";
 import Heading from "../Heading";
 import Stack from "../Stack";
@@ -43,7 +44,8 @@ const StyledSliderContent = styled.div`
     visibility: hidden;
     padding: 12px 24px 48px 24px;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    transition: ${transition(["all"], "fast", "ease-in-out")};
+
     background: transparent;
     ${({ focused, theme }) =>
       focused &&

@@ -9,6 +9,7 @@ export type Props = {|
   +theme: any,
   +dictionary?: Translations,
   +children: React$Node,
+  +offTransitions?: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

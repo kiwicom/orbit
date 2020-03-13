@@ -20,7 +20,11 @@ storiesOf("ThemeProvider", module).add(
   () => {
     const dictionary = select("dictionary", Object.keys(languages));
     return (
-      <ThemeProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
+      <ThemeProvider
+        theme={{ orbit: getTokens() }}
+        offTransitions
+        dictionary={languages[dictionary]}
+      >
         <ButtonWithTranslation />
       </ThemeProvider>
     );

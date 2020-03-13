@@ -21,7 +21,7 @@ const StyledTileHeader = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  transition: background-color 0.15s ease-in-out;
+  transition: ${transition(["background-color"], "0.15s", "ease-in-out")};
   :focus {
     outline: none;
   }

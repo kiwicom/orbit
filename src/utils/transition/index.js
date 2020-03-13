@@ -13,9 +13,11 @@ const transition: Transition = (properties, duration, timingFunction) => ({ them
     [DURATIONS.NORMAL]: theme.orbit.durationNormal,
     [DURATIONS.FAST]: theme.orbit.durationFast,
   };
-  return `
-    ${properties.map(property => `${property} ${tokens[duration]} ${timingFunction}`).join(",")};
-  `;
+  return !theme.offTranslations
+    ? properties
+        .map(property => `${property} ${tokens[duration] || duration} ${timingFunction}`)
+        .join(",")
+    : null;
 };
 
 export default transition;

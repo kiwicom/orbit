@@ -2,6 +2,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
@@ -17,7 +18,7 @@ const SpacingDesktop = css`
 `;
 
 const StyledCardSectionHeader = styled.div`
-  transition: margin ${({ theme }) => theme.orbit.durationFast} linear;
+  transition: ${transition(["margin"], "fast", "linear")};
   cursor: ${({ expandable }) => expandable && "pointer"};
   position: relative;
   padding: ${({ theme }) => theme.orbit.spaceMedium};

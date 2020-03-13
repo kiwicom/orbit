@@ -10,9 +10,8 @@ import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { StyledModalFooter } from "./ModalFooter";
-import { MobileHeader, StyledModalHeader } from "./ModalHeader";
+import { MobileHeader, StyledModalHeader, ModalHeading } from "./ModalHeader";
 import { StyledModalSection } from "./ModalSection";
-import { StyledHeading } from "../Heading";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import { ModalContext } from "./ModalContext";
@@ -79,9 +78,9 @@ const ModalWrapper = styled.div`
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["top"], "normal", "ease-in-out")};
   top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
 
@@ -135,9 +134,9 @@ const CloseContainer = styled.div`
   box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.boxShadowFixed};
   background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
 
   ${media.largeMobile(css`
@@ -176,9 +175,9 @@ const ModalWrapperContent = styled.div`
   position: absolute;
   box-sizing: border-box;
   border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "9px"}; // TODO: create token
+    !isMobileFullPage && "12px"}; // TODO: create token
   background-color: ${({ theme }) => theme.orbit.backgroundModal};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
@@ -364,6 +363,8 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
 
   timeout: TimeoutID;
 
+  clickedModalBody: boolean = false;
+
   static defaultProps = {
     theme: defaultTheme,
   };
@@ -410,7 +411,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     if (content) {
       // added in 4.0.3, interpolation of styled component return static className
       const footerEl = content.querySelector(`${StyledModalFooter}`);
-      const headingEl = content.querySelector(`${StyledHeading}`);
+      const headingEl = content.querySelector(`${ModalHeading}`);
       this.offset = headingEl?.clientHeight + headingEl?.offsetTop;
       const contentDimensions = content.getBoundingClientRect();
       const modalWidth = contentDimensions.width;
@@ -437,8 +438,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
     const content = this.modalContent.current;
     const body = this.modalBody.current;
+    const contentHeight =
+      content?.scrollHeight > content?.offsetHeight + 40
+        ? content?.offsetHeight
+        : content?.scrollHeight;
     // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
-    const fullyScrolled = content?.scrollHeight + 40 - body?.scrollTop <= window.innerHeight;
+    const fullyScrolled = contentHeight + 40 - body?.scrollTop <= window.innerHeight;
     this.setState({ fullyScrolled });
   };
 
@@ -480,7 +485,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
   getScrollTopPoint = (mobile?: boolean) => {
     const content = this.modalContent.current;
     if (content) {
-      const headingEl = content.querySelector(`${StyledHeading}`);
+      const headingEl = content.querySelector(`${ModalHeading}`);
       if (headingEl) {
         const { top } = headingEl.getBoundingClientRect();
         return top;
@@ -520,6 +525,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     if (
       onClose &&
       preventOverlayClose === false &&
+      !this.clickedModalBody &&
       this.modalContent.current &&
       ev.target instanceof Element &&
       !this.modalContent.current.contains(ev.target) &&
@@ -528,6 +534,15 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       // If is clicked outside of modal
       onClose(ev);
     }
+    this.clickedModalBody = false;
+  };
+
+  handleMouseDown = () => {
+    /*
+      This is due to issue where it's was possible to close Modal,
+      even though click started (onMouseDown) in ModalWrapper.
+    */
+    this.clickedModalBody = true;
   };
 
   keyboardHandler = (e: SyntheticKeyboardEvent<HTMLElement>) => {
@@ -618,6 +633,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             footerHeight={footerHeight}
             hasModalSection={hasModalSection}
             isMobileFullPage={isMobileFullPage}
+            onMouseDown={this.handleMouseDown}
           >
             {onClose && (
               <CloseContainer

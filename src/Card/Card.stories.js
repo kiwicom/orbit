@@ -5,8 +5,8 @@ import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../TripSector";
-import TripSegment from "../TripSegment";
+import TripSector, { TripDate } from "../deprecated/TripSector";
+import TripSegment from "../deprecated/TripSegment";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Text from "../Text";
@@ -29,7 +29,14 @@ storiesOf("Card", module)
     return <Card icon={<Icons.Airplane />} title={title} />;
   })
   .add("Card with description", () => {
-    return <Card icon={<Icons.Airplane />} title={title} description={description} />;
+    return (
+      <Card
+        icon={<Icons.Airplane />}
+        onClose={action("onClose")}
+        title={title}
+        description={description}
+      />
+    );
   })
   .add("Card with actions", () => {
     return (
@@ -61,7 +68,7 @@ storiesOf("Card", module)
     "Card with expandable sections",
     () => {
       return (
-        <Card title={title} description={description}>
+        <Card title={title} onClose={action("onClose")} description={description}>
           <CardSection expandable title={sectionTitle}>
             This is a section content
           </CardSection>

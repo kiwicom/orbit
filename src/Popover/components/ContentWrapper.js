@@ -5,7 +5,7 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
-import Button from "../../Button";
+import Button, { StyledButton } from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
@@ -19,6 +19,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
+import { StyledButtonLink } from "../../ButtonLink";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -34,9 +35,11 @@ const StyledContentWrapper = styled.div`
   max-height: ${({ actionsHeight, theme }) =>
     // Calculates all the spacing relative to viewport to get space for action box
     `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
-
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   ${media.largeMobile(css`
     max-height: 100%;
+    border-radius: 3px;
   `)}
 `;
 
@@ -47,6 +50,16 @@ StyledContentWrapper.defaultProps = {
 const StyledActions = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
   padding-top: 0;
+  ${StyledButton}, ${StyledButtonLink} {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+  ${media.largeMobile(css`
+    ${StyledButton}, ${StyledButtonLink} {
+      width: auto;
+      flex-grow: 0;
+    }
+  `)};
 `;
 
 StyledActions.defaultProps = {
@@ -61,8 +74,8 @@ const StyledPopoverParent = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border-top-left-radius: 9px; /* TODO: Add token */
-  border-top-right-radius: 9px; /* TODO: Add token */
+  border-top-left-radius: 12px; /* TODO: Add token */
+  border-top-right-radius: 12px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;
@@ -126,7 +139,6 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -155,11 +167,17 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
-  const overlay: { current: React$ElementRef<*> } = useRef(null);
   const actionsRef: { current: React$ElementRef<*> } = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
-  const dimensions = useDimensions({ containerRef, popover, content, fixed, scrollableParent });
+  const dimensions = useDimensions({
+    containerRef,
+    popover,
+    content,
+    fixed,
+    scrollableParent,
+    children,
+  });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), []);
@@ -177,7 +195,7 @@ const PopoverContentWrapper = ({
 
   return (
     <React.Fragment>
-      <StyledOverlay ref={overlay} shown={shown} isInsideModal={isInsideModal} />
+      <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}

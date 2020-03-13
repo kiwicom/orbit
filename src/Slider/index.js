@@ -397,6 +397,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     } = this.props;
     const { handleIndex, value } = this.state;
     const key = i && encodeURIComponent(i.toString());
+    const index = i || 0;
     return (
       <Handle
         tabIndex="0"
@@ -410,8 +411,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         ariaValueText={ariaValueText}
         ariaLabel={ariaLabel}
         hasHistogram={histogramLoading || !!histogramData}
-        index={i || 0}
+        index={index}
         key={key}
+        dataTest={`SliderHandle-${index}`}
       />
     );
   };
@@ -478,9 +480,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       const properHistogramLength = (maxValue - minValue + step) / step;
       warning(
         histogramData.length === properHistogramLength,
-        `Warning: Length of histogramData array is ${
-          histogramData.length
-        }, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
+        `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
       );
     }
     const { value, focused } = this.state;

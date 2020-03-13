@@ -22,11 +22,11 @@ storiesOf("TextLink", module)
     () => {
       const href = text("Href", "https://kiwi.com");
       const external = boolean("External", false);
-      const title = text("Title", "Primary link");
+      const children = text("children", "Primary link");
 
       return (
         <TextLink external={external} onClick={action("clicked")} href={href} type="primary">
-          {title}
+          {children}
         </TextLink>
       );
     },
@@ -40,11 +40,11 @@ storiesOf("TextLink", module)
     () => {
       const href = text("Href", "https://kiwi.com");
       const external = boolean("External", false);
-      const title = text("Title", "Secondary link");
+      const children = text("children", "Secondary link");
 
       return (
         <TextLink external={external} onClick={action("clicked")} href={href} type="secondary">
-          {title}
+          {children}
         </TextLink>
       );
     },
@@ -57,12 +57,12 @@ storiesOf("TextLink", module)
     "Link with icon",
     () => {
       const href = text("Href", "https://kiwi.com");
-      const title = text("Title", "TextLink with icon");
+      const children = text("children", "TextLink with icon");
       const Icon = getIcon(getIcons("ChevronRight"));
 
       return (
         <TextLink onClick={action("clicked")} href={href} icon={Icon && <Icon />}>
-          {title}
+          {children}
         </TextLink>
       );
     },
@@ -78,12 +78,12 @@ storiesOf("TextLink", module)
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
       const external = boolean("External", true);
-      const title = text("Text", "Custom link");
+      const children = text("Text", "Custom link");
       const rel = text("Rel", undefined);
       const Icon = getIcon(getIcons("ChevronRight"));
       const dataTest = text("dataTest", "test");
       const tabIndex = text("tabIndex", "");
-
+      const stopPropagation = boolean("stopPropagation", false);
       return (
         <TextLink
           external={external}
@@ -95,8 +95,9 @@ storiesOf("TextLink", module)
           icon={Icon && <Icon />}
           dataTest={dataTest}
           tabIndex={tabIndex}
+          stopPropagation={stopPropagation}
         >
-          {title}
+          {children}
         </TextLink>
       );
     },
@@ -108,11 +109,12 @@ storiesOf("TextLink", module)
   .add(
     "Accessibility",
     () => {
-      const title = text("Title", "Primary link");
+      const children = text("children", "Primary link");
+      const title = text("title", "Clarify purpose of a link for screen readers");
 
       return (
-        <TextLink onClick={action("clicked")} type="primary">
-          {title}
+        <TextLink title={title} onClick={action("clicked")} type="primary">
+          {children}
         </TextLink>
       );
     },

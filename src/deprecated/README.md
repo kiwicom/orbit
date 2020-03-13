@@ -1,6 +1,8 @@
 ### Deprecated components
 
 - Card (old API)
-- DestinatinonCard
-- DestinatinonHeader
+- DestinationCard
+- DestinationHeader
 - Tile (old API)
+- TripSector
+- TripSegment

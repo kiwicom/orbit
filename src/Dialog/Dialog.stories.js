@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
+import Illustration from "../Illustration/index";
+import { NAMES } from "../Illustration/consts";
 
 import Dialog from "./index";
 
@@ -34,11 +36,13 @@ storiesOf("Dialog", module)
     () => {
       const title = text("title", "Log out");
       const description = text("description", "Are you sure you want to log out now?");
+      const illustration = select("illustration", NAMES, "NoNotification");
       const dataTest = text("dataTest", "test");
       return (
         <Dialog
           title={title}
           description={description}
+          illustration={<Illustration name={illustration} size="small" />}
           dataTest={dataTest}
           onClose={action("onClose")}
           primaryAction={<Button type="critical">Log out</Button>}

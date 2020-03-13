@@ -1,0 +1,14 @@
+// @flow
+import * as React from "react";
+
+export type Media = {|
+  +isLargeDesktop: ?boolean,
+  +isDesktop: ?boolean,
+  +isLargeMobile: ?boolean,
+  +isMediumMobile: ?boolean,
+  +isTablet: ?boolean,
+|};
+
+export type QueryContextType = React.Context<Media>;
+
+declare export default QueryContextType;

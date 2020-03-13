@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Badge from "../Badge";
@@ -100,8 +100,11 @@ storiesOf("PricingTable", module)
   .add(
     "Compact",
     () => {
+      const activeElement = number("activeElement", null);
+      const hasError = boolean("hasError", false);
+
       return (
-        <PricingTable defaultActiveElement={1} dataTest="PricingTable">
+        <PricingTable hasError={hasError} activeElement={activeElement} dataTest="PricingTable">
           <PricingTableItem
             dataTest="PricingTableItem"
             name="Limited Services"
@@ -171,12 +174,14 @@ storiesOf("PricingTable", module)
     },
   )
   .add("Booking", () => {
+    const activeElement = number("activeElement", 0);
+
     return (
       <Layout type="Booking">
         <LayoutColumn>
           <Card>
             <CardSection>
-              <PricingTable defaultActiveElement={1}>
+              <PricingTable activeElement={activeElement}>
                 <PricingTableItem
                   name="Limited Services"
                   priceBadge={<Badge type="info">Included</Badge>}
@@ -247,12 +252,14 @@ storiesOf("PricingTable", module)
     );
   })
   .add("Translated", () => {
+    const activeElement = number("activeElement", 0);
+
     return (
       <Layout type="Booking">
         <LayoutColumn>
           <Card>
             <CardSection>
-              <PricingTable defaultActiveElement={1}>
+              <PricingTable activeElement={activeElement}>
                 <PricingTableItem
                   name="Basic Service"
                   priceBadge={<Badge type="info">Inbegriffen</Badge>}

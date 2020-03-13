@@ -4,9 +4,10 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { select, text } from "@storybook/addon-knobs";
 
-import { SIZE_OPTIONS, NAMES } from "./consts";
+import { NAMES } from "./consts";
+import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
-import IllustrationList from "./IllustrationList";
+import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 
 import Illustration from "./index";
 
@@ -17,8 +18,17 @@ storiesOf("Illustration", module)
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
       const name = select("Name", Object.values(NAMES), "Accommodation");
       const dataTest = text("dataTest", "test");
+      const alt = text("alt", null);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
-      return <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} />;
+      return (
+        <Illustration
+          size={size}
+          name={name}
+          dataTest={dataTest}
+          spaceAfter={spaceAfter}
+          alt={alt}
+        />
+      );
     },
     {
       info: "Explore our new set of illustrations for Kiwi.com.",
@@ -27,7 +37,7 @@ storiesOf("Illustration", module)
   .add(
     "List of all Illustrations",
     () => {
-      return <IllustrationList />;
+      return <IllustrationPrimitiveList nameOfComponent="Illustration" images={NAMES} />;
     },
     {
       info: "Explore our new set of illustrations for Kiwi.com.",

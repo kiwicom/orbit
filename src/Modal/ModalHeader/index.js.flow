@@ -20,3 +20,5 @@ declare export default React$ComponentType<Props>;
 declare export var MobileHeader: ReactComponentStyled<any>;
 
 declare export var StyledModalHeader: ReactComponentStyled<any>;
+
+declare export var ModalHeading: ReactComponentStyled<any>;

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../defaultTheme";
@@ -8,20 +8,26 @@ import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
+import media from "../utils/mediaQuery/index";
 
 import type { Props } from "./index";
 
-const getBorderColor = () => ({ theme, hasError, disabled, checked }) =>
-  hasError && !disabled && !checked
-    ? theme.orbit.borderColorCheckboxRadioError
-    : theme.orbit.borderColorCheckboxRadio;
+const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
+  if (hasError && !disabled && !checked) {
+    return theme.orbit.borderColorCheckboxRadioError;
+  }
+  if (!hasError && !disabled && checked) {
+    return theme.orbit.paletteBlueNormal;
+  }
+  return theme.orbit.borderColorCheckboxRadio;
+};
 
 const Glyph = styled.span`
   visibility: hidden;
   width: 12px;
   height: 12px;
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.colorIconCheckboxRadio};
+    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.paletteBlueNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
   flex-shrink: 0;
 `;
@@ -107,7 +113,7 @@ const Input = styled.input`
   &:focus + ${IconContainer} {
     outline: 0;
     border: ${({ theme, hasError }) =>
-      `1px ${theme.orbit.borderStyleInput} ${
+      `2px ${theme.orbit.borderStyleInput} ${
         hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
     box-shadow: 0px 0px 0px 3px
@@ -116,6 +122,10 @@ const Input = styled.input`
           hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};
+
+    ${media.largeMobile(css`
+      border-width: 1px;
+    `)}
   }
 `;
 
@@ -136,7 +146,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   position: relative;
 
   ${IconContainer} {
-    border: 1px solid ${getBorderColor()};
+    border: 2px solid ${getBorderColor()};
   }
 
   &:hover ${IconContainer} {
@@ -150,6 +160,12 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
+
+  ${media.largeMobile(css`
+    ${IconContainer} {
+      border: 1px solid ${getBorderColor()};
+    }
+  `)}
 `;
 
 Label.defaultProps = {

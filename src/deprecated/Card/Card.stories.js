@@ -15,8 +15,8 @@ import Clock from "../../icons/Clock";
 import CarrierLogo from "../../CarrierLogo";
 import Stack from "../../Stack";
 import Badge from "../../Badge";
-import TripSector, { TripDate } from "../../TripSector";
-import TripSegment from "../../TripSegment";
+import TripSector, { TripDate } from "../TripSector";
+import TripSegment from "../TripSegment";
 import List, { ListItem } from "../../List";
 
 import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";

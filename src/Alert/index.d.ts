@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common";
+import * as Common from "../common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Alert";
 
@@ -24,4 +24,6 @@ declare namespace Alert {
   }
 }
 
-declare class Alert extends React.Component<Alert.Props> {}
+declare const Alert: React.FunctionComponent<Alert.Props>;
+
+export { Alert, Alert as default };

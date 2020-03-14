@@ -197,7 +197,7 @@ storiesOf("Modal", module)
                 <InputField placeholder="111 222 333" />
               </InputGroup>
               {showMore && (
-                <React.Fragment>
+                <>
                   <Text weight="bold" size="small">
                     Options
                   </Text>
@@ -207,7 +207,7 @@ storiesOf("Modal", module)
                     These are the most favorite. <TextLink href="#">Show more</TextLink>
                   </Text>
                   <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
-                </React.Fragment>
+                </>
               )}
             </Stack>
           </ModalSection>

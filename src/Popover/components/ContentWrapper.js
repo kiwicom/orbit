@@ -194,7 +194,7 @@ const PopoverContentWrapper = ({
   useClickOutside(popover, onClose);
 
   return (
-    <React.Fragment>
+    <>
       <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
@@ -234,7 +234,7 @@ const PopoverContentWrapper = ({
           )}
         </StyledPopoverContent>
       </StyledPopoverParent>
-    </React.Fragment>
+    </>
   );
 };
 

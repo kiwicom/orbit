@@ -52,6 +52,10 @@ module.exports = {
     "react/require-default-props": "off", // Optional props can be undefined.
     "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }], // Don't use jsx
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-fragments": ["error", "syntax"],
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
     "jsx-a11y/label-has-for": "off", // control is wrapped in a label
     "jsx-a11y/href-no-hash": "off", // broken rule
     "flowtype/require-valid-file-annotation": ["error", "always"],

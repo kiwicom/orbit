@@ -11,7 +11,7 @@ const MeatBalls = () => <MenuMeatballs size="small" color="primary" />;
 const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) => {
   if (selectedPage > pageCount - 4) {
     return (
-      <React.Fragment>
+      <>
         <PageButtonLink onPageChange={onPageChange} size={size}>
           {1}
         </PageButtonLink>
@@ -23,22 +23,22 @@ const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) =>
           enlargement={pageCount - 4}
           size={size}
         />
-      </React.Fragment>
+      </>
     );
   }
   if (selectedPage < 5) {
     return (
-      <React.Fragment>
+      <>
         <Pages pageCount={5} selectedPage={selectedPage} onPageChange={onPageChange} size={size} />
         <MeatBalls />
         <PageButtonLink onPageChange={onPageChange} size={size}>
           {pageCount}
         </PageButtonLink>
-      </React.Fragment>
+      </>
     );
   }
   return (
-    <React.Fragment>
+    <>
       <PageButtonLink onPageChange={onPageChange} size={size}>
         {1}
       </PageButtonLink>
@@ -54,7 +54,7 @@ const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) =>
       <PageButtonLink onPageChange={onPageChange} size={size}>
         {pageCount}
       </PageButtonLink>
-    </React.Fragment>
+    </>
   );
 };
 

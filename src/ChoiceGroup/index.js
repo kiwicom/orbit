@@ -75,24 +75,24 @@ class ChoiceGroup extends React.PureComponent<Props> {
         <Stack direction="column" spacing={filter ? "none" : "condensed"}>
           {React.Children.map(children, child => {
             return !filter ? (
-              <React.Fragment>
+              <>
                 {React.cloneElement(child, {
                   onChange: this.handleChange,
                   hasError: !!error,
                 })}
-              </React.Fragment>
+              </>
             ) : (
               <FilterWrapper
                 child={child}
                 onOnlySelection={onOnlySelection}
                 onlySelectionText={onlySelectionText}
               >
-                <React.Fragment>
+                <>
                   {React.cloneElement(child, {
                     onChange: this.handleChange,
                     hasError: !!error,
                   })}
-                </React.Fragment>
+                </>
               </FilterWrapper>
             );
           })}

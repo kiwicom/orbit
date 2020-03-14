@@ -277,10 +277,10 @@ class DestinationCard extends React.PureComponent<Props, State> {
                 {outbound.text ? (
                   outbound.text
                 ) : (
-                  <React.Fragment>
+                  <>
                     <FlightDirect size="small" />
                     {outbound.date}
-                  </React.Fragment>
+                  </>
                 )}
               </SmallHeading>
               <SmallHeading>

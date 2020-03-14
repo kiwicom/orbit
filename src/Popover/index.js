@@ -121,7 +121,7 @@ const Popover = ({
     setRenderWithTimeout,
   ]);
   return (
-    <React.Fragment>
+    <>
       <StyledPopoverChild
         onClick={handleClick}
         onKeyDown={handleKeyDown(handleClick)}
@@ -148,7 +148,7 @@ const Popover = ({
           </PopoverContentWrapper>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
 };
 

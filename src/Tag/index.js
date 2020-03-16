@@ -21,30 +21,21 @@ const getFontSize = ({ theme, size }) => {
 
 const getBackgroundColor = state => ({ selected, theme }) => {
   const states = {
-    [STATES.DEFAULT]: selected ? theme.orbit.backgroundTagSelected : theme.orbit.backgroundTag,
+    [STATES.DEFAULT]: selected ? theme.orbit.paletteBlueLightHover : theme.orbit.paletteCloudDark,
     [STATES.HOVER]: selected
-      ? theme.orbit.backgroundTagSelectedHover
-      : theme.orbit.backgroundTagHover,
+      ? theme.orbit.paletteBlueLightActive
+      : theme.orbit.paletteCloudNormalHover,
     [STATES.ACTIVE]: selected
-      ? theme.orbit.backgroundTagSelectedActive
-      : theme.orbit.backgroundTagActive,
+      ? theme.orbit.paletteBlueLightActive
+      : theme.orbit.paletteCloudNormalHover,
   };
   return states[state];
-};
-
-const getSpacing = ({ icon, removable, theme }) => {
-  const padding =
-    (removable && icon && theme.orbit.paddingTagRemovableWithIcon) ||
-    (removable && !icon && theme.orbit.paddingTagRemovable) ||
-    (!removable && icon && theme.orbit.paddingTagWithIcon) ||
-    (!removable && !icon && theme.orbit.paddingTag);
-  return rtlSpacing(padding);
 };
 
 export const StyledTag = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ theme, selected }) =>
-    selected ? theme.orbit.colorTextTagSelected : theme.orbit.colorTextTag};
+    selected ? theme.orbit.paletteBlueDarker : theme.orbit.colorTextTag};
   background: ${getBackgroundColor(STATES.DEFAULT)};
   display: inline-flex;
 
@@ -56,7 +47,7 @@ export const StyledTag = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme, selected }) =>
     !selected && `inset 0 0 0 1px ${theme.orbit.borderColorTag}`};
-  padding: ${getSpacing};
+  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingTag)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     background ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -94,7 +85,7 @@ StyledTag.defaultProps = {
 
 const IconContainer = styled.div`
   display: flex;
-  margin-${right}: 8px;
+  margin-${left}: 8px;
 
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};
@@ -108,16 +99,16 @@ IconContainer.defaultProps = {
 
 const CloseContainer = styled.div`
   display: flex;
-  margin-${left}: 8px;
-  color: ${({ theme }) => theme.orbit.paletteInkLighter};
+  margin-${right}: 8px;
+  color: ${({ theme }) => theme.orbit.paletteBlueDarker};
   cursor: pointer;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.orbit.paletteInkLighterHover};
+    color: ${({ theme }) => theme.orbit.paletteBlueDarker};
   }
   &:active {
-    color: ${({ theme }) => theme.orbit.paletteInkLighterActive};
+    color: ${({ theme }) => theme.orbit.paletteBlueDarker};
   }
 `;
 
@@ -131,7 +122,7 @@ const StyledClose = styled.div`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteInkLighter};
+    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteBlueDarker};
   }
 `;
 StyledClose.defaultProps = {
@@ -163,9 +154,7 @@ const Tag = (props: Props) => {
       role="button"
       onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >
-      {icon && <IconContainer>{icon}</IconContainer>}
-      {children}
-      {(!!onRemove || selected) && (
+      {!!onRemove && selected && (
         <CloseContainer
           onClick={ev => {
             ev.stopPropagation();
@@ -186,6 +175,8 @@ const Tag = (props: Props) => {
           </StyledClose>
         </CloseContainer>
       )}
+      {children}
+      {icon && <IconContainer>{icon}</IconContainer>}
     </StyledTag>
   );
 };

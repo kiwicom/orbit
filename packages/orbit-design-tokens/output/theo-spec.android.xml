@@ -296,7 +296,7 @@
   <color name="COLORPLACEHOLDERINPUTFILEERROR" category="Colors">#ffd21c1c</color>
   <color name="PALETTEPRODUCTDARKHOVER" category="Color palette">#ff007060</color>
   <string name="BACKGROUNDSERVICELOGO" category="Background colors">transparent</string>
-  <string name="FONTFAMILY" category="Font family">&quot;Roboto&quot;, -apple-system, &quot;.SFNSText-Regular&quot;, &quot;San Francisco&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, sans-serif</string>
+  <string name="FONTFAMILY" category="Font family">&apos;Roboto&apos;, -apple-system, &apos;.SFNSText-Regular&apos;, &apos;San Francisco&apos;, &apos;Segoe UI&apos;, &apos;Helvetica Neue&apos;, &apos;Lucida Grande&apos;, sans-serif</string>
   <dimen name="LINEHEIGHTHEADINGDISPLAYSUBTITLE" category="Line height">28dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEHOVER" category="Background colors">#fff5f7f9</color>
   <color name="BORDERCOLORBUTTONCRITICALBORDERED" category="Border color">#ffd21c1c</color>

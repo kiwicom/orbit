@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import transition from "../transition";
 import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from "./index";
@@ -15,7 +16,7 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   position: relative;
   width: 100%;
-  transition: max-height ${({ theme }) => theme.orbit.durationFast} linear;
+  transition: ${transition(["max-height"], "fast", "linear")};
   max-height: ${getMaxHeight};
   overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
   visibility: ${({ visible }) => !visible && "hidden"};

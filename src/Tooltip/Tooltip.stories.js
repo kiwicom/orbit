@@ -109,7 +109,8 @@ storiesOf("Tooltip", module)
             <Stack>
               <img
                 src="/tooltip_card_preview.png"
-                alt="Preview of card help in Tooltip component"
+                alt="Preview
+                of card help in Tooltip component"
               />
               <Text>
                 We take security very seriously. Especially when it comes to your personal and
@@ -120,7 +121,8 @@ storiesOf("Tooltip", module)
                   A common variant, especially in older software, is displaying a description.
                 </ListItem>
                 <ListItem>
-                  A common variant, especially in older software, is displaying a description.
+                  A common variant, especially in older software, is displaying a description.{" "}
+                  <TextLink href="#">More info.</TextLink>
                 </ListItem>
               </List>
             </Stack>

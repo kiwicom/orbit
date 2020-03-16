@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../utils/transition";
 import media, { getBreakpointWidth } from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
 import { StyledButton } from "../../Button";
@@ -34,8 +35,7 @@ export const StyledModalFooter = styled.div`
   // TODO: create token paddingModalFooter
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
   box-sizing: border-box;
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
+  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledButton}, ${StyledButtonLink} {

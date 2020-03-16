@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader/index";
 import defaultTheme from "../../../defaultTheme";
 
@@ -17,7 +18,7 @@ export const StyledTileWrapper = styled.div`
   background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
 
   :hover,
   :focus {

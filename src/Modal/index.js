@@ -139,6 +139,7 @@ const CloseContainer = styled.div`
     !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
 
+
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
@@ -224,20 +225,21 @@ const ModalWrapperContent = styled.div`
       !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
-    transition: ${({ scrolled, theme }) =>
+    transition: ${({ scrolled }) =>
       scrolled &&
-      `top ${theme.orbit.durationNormal} ease-in-out,
-    opacity ${theme.orbit.durationFast} ease-in-out,
-    visibility ${theme.orbit.durationFast} ease-in-out ${theme.orbit.durationFast}`};
-  }
+      css`
+        ${transition(["top"], "normal", "ease-in-out")},
+        ${transition(["opacity", "visibility"], "fast", "ease-in-out")}
+      `};
 
-  ${({ scrolled }) =>
-    scrolled &&
-    onlyIE(css`
-      ${MobileHeader} {
-        position: -ms-page;
-      }
-    `)}};
+    ${({ scrolled }) =>
+      scrolled &&
+      onlyIE(css`
+        ${MobileHeader} {
+          position: -ms-page;
+        }
+      `)}
+  }
 
   ${StyledModalHeader} {
     margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};

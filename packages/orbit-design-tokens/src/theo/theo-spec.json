@@ -41,7 +41,7 @@
       }
     },
     "colorTextWarning": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -105,7 +105,7 @@
       }
     },
     "colorIconWarning": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -177,7 +177,7 @@
       }
     },
     "colorTextAlertSuccess": {
-      "value": "#2D7738",
+      "value": "#2B7336",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -201,7 +201,7 @@
       }
     },
     "colorAlertIconWarning": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertWarning": {
-      "value": "#AB3307",
+      "value": "#A25100",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -577,7 +577,7 @@
       }
     },
     "colorTextButtonWarningBordered": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -585,7 +585,7 @@
       }
     },
     "colorTextButtonWarningBorderedHover": {
-      "value": "#F38906",
+      "value": "#DC7C05",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -593,7 +593,7 @@
       }
     },
     "colorTextButtonWarningBorderedActive": {
-      "value": "#D67906",
+      "value": "#CD7304",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -793,7 +793,7 @@
       }
     },
     "colorTextBadgeWarning": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1153,7 +1153,7 @@
       }
     },
     "backgroundButtonWarning": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1161,7 +1161,7 @@
       }
     },
     "backgroundButtonWarningHover": {
-      "value": "#F38906",
+      "value": "#DC7C05",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1169,7 +1169,7 @@
       }
     },
     "backgroundButtonWarningActive": {
-      "value": "#D67906",
+      "value": "#CD7304",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1345,7 +1345,7 @@
       }
     },
     "backgroundAlertInfo": {
-      "value": "#E5F7FF",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -1377,7 +1377,7 @@
       }
     },
     "backgroundBadgeInfo": {
-      "value": "#E5F7FF",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "Background colors",
       "meta": {
@@ -2309,7 +2309,7 @@
       }
     },
     "borderColorButtonWarningBordered": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2317,7 +2317,7 @@
       }
     },
     "borderColorButtonWarningBorderedHover": {
-      "value": "#F38906",
+      "value": "#DC7C05",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2325,7 +2325,7 @@
       }
     },
     "borderColorButtonWarningBorderedActive": {
-      "value": "#D67906",
+      "value": "#CD7304",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -3469,7 +3469,7 @@
       }
     },
     "paletteOrangeNormal": {
-      "value": "#F9971E",
+      "value": "#E98305",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3477,7 +3477,7 @@
       }
     },
     "paletteOrangeNormalHover": {
-      "value": "#F38906",
+      "value": "#DC7C05",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3485,7 +3485,7 @@
       }
     },
     "paletteOrangeNormalActive": {
-      "value": "#D67906",
+      "value": "#CD7304",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3493,7 +3493,7 @@
       }
     },
     "paletteOrangeDark": {
-      "value": "#AB3307",
+      "value": "#A25100",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3501,7 +3501,7 @@
       }
     },
     "paletteOrangeDarkHover": {
-      "value": "#972C07",
+      "value": "#8F4700",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3509,7 +3509,7 @@
       }
     },
     "paletteOrangeDarkActive": {
-      "value": "#7A2405",
+      "value": "#753A00",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3517,7 +3517,7 @@
       }
     },
     "paletteOrangeDarker": {
-      "value": "#842706",
+      "value": "#803F00",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3653,7 +3653,7 @@
       }
     },
     "paletteGreenDark": {
-      "value": "#2D7738",
+      "value": "#2B7336",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3661,7 +3661,7 @@
       }
     },
     "paletteGreenDarkHover": {
-      "value": "#276831",
+      "value": "#25642F",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3685,7 +3685,7 @@
       }
     },
     "paletteBlueLight": {
-      "value": "#E5F7FF",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3693,7 +3693,7 @@
       }
     },
     "paletteBlueLightHover": {
-      "value": "#C7EEFF",
+      "value": "#D0E9FB",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3701,7 +3701,7 @@
       }
     },
     "paletteBlueLightActive": {
-      "value": "#A8E5FF",
+      "value": "#B4DBF8",
       "type": "color",
       "category": "Color palette",
       "meta": {

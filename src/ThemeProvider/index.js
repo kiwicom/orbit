@@ -10,6 +10,7 @@ import type { Props } from "./index";
 
 const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   const media = useMediaQueryContext();
+
   return (
     <QueryContext.Provider value={media}>
       <StyledThemeProvider theme={theme}>

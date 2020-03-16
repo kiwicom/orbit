@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
@@ -63,7 +64,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   cursor: pointer;
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

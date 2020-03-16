@@ -25,7 +25,14 @@ const customTokens = getTokens({
 });
 
 const App = () => (
-  <ThemeProvider theme={{ yourCustomTheme: { black: "#000" }, orbit: customTokens, rtl: false, transitions: false }}>
+  <ThemeProvider
+    theme={{
+      yourCustomTheme: { black: "#000" },
+      orbit: customTokens,
+      rtl: false,
+      transitions: false,
+    }}
+  >
     <Button type="secondary" size="large" />
   </ThemeProvider>
 );

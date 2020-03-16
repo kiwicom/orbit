@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import transition from "../../../utils/transition";
 import { right } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
@@ -16,7 +17,7 @@ import type { Props } from ".";
 
 const ChevronIcon = styled(ChevronDown)`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
-  transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;
 
 ChevronIcon.defaultProps = {

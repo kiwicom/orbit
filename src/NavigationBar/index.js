@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../utils/transition";
 import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
@@ -37,7 +38,7 @@ const StyledNavigationBar = styled.nav`
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   box-sizing: border-box;
   z-index: 700;
-  transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transition: ${transition(["transform"], "normal", "ease-in-out")};
   transform: translate3d(0, ${({ shown }) => (shown ? "0" : `-${NAVBAR_HEIGHT.MOBILE}px`)}, 0);
   ${mq.tablet(css`
     height: ${NAVBAR_HEIGHT.DESKTOP}px; // TODO: create token

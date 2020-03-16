@@ -8,12 +8,12 @@ import useMediaQueryContext from "./QueryContext/useMediaQueryContext";
 
 import type { Props } from "./index";
 
-const ThemeProvider = ({ theme, dictionary, children, offTransitions }: Props) => {
+const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   const media = useMediaQueryContext();
 
   return (
     <QueryContext.Provider value={media}>
-      <StyledThemeProvider theme={{ ...theme, offTransitions }}>
+      <StyledThemeProvider theme={theme}>
         {dictionary ? (
           <Dictionary values={dictionary}>{React.Children.only(children)}</Dictionary>
         ) : (

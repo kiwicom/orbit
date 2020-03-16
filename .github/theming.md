@@ -25,8 +25,18 @@ const customTokens = getTokens({
 });
 
 const App = () => (
-  <ThemeProvider theme={{ yourCustomTheme: { black: "#000" }, orbit: customTokens }}>
+  <ThemeProvider theme={{ yourCustomTheme: { black: "#000" }, orbit: customTokens, rtl: false, transitions: false }}>
     <Button type="secondary" size="large" />
   </ThemeProvider>
 );
 ```
+
+## Theme
+
+Table below contains all types of the props available in the ThemeProvider component.
+
+| Name        | Type      | Default | Description                                                                                 |
+| :---------- | :-------- | :------ | :------------------------------------------------------------------------------------------ |
+| **orbit**   | `Object`  |         | Return of the `getTokens` function`.                                                        |
+| rtl         | `boolean` | `false` | If `true` functions inside `orbit-components` will return RTL compliant values.             |
+| transitions | `boolean` | `true`  | If `true` most of the components won't perform any transitions. Useful for low-end devices. |

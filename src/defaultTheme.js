@@ -3,6 +3,6 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export default {
   orbit: defaultTokens,
-  offTranslations: false,
+  transitions: true,
   rtl: false,
 };

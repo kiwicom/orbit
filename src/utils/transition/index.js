@@ -8,16 +8,15 @@ const DURATIONS = {
 };
 
 const transition: Transition = (properties, duration, timingFunction) => ({ theme }) => {
+  if (!theme.transitions) return null;
   const tokens = {
     [DURATIONS.SLOW]: theme.orbit.durationSlow,
     [DURATIONS.NORMAL]: theme.orbit.durationNormal,
     [DURATIONS.FAST]: theme.orbit.durationFast,
   };
-  return !theme.offTranslations
-    ? properties
-        .map(property => `${property} ${tokens[duration] || duration} ${timingFunction}`)
-        .join(",")
-    : null;
+  return properties
+    .map(property => `${property} ${tokens[duration] || duration} ${timingFunction}`)
+    .join(",");
 };
 
 export default transition;

@@ -47,7 +47,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-replace-import-path": "^0.5.0",
     "babylon": "^6.18.0",
-    "copyfiles": "^2.1.1",
+    "copyfiles": "^2.2.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-airbnb-base": "^13.2.0",

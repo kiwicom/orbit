@@ -3,7 +3,7 @@ import type { ThemeProps } from "../../defaultTheme";
 
 export type Transition = (
   properties: string[],
-  duration: string,
+  duration: "slow" | "normal" | "fast",
   timingFunction: string,
 ) => (theme: ThemeProps) => string | null;
 

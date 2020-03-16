@@ -95,7 +95,7 @@ const palette = {
 
 const base = {
   fontFamily:
-    '"Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+    "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
   fontSizeSm: "12px",
   fontSizeMd: "14px",
   fontSizeLg: "16px",

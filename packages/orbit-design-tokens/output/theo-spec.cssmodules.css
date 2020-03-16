@@ -298,7 +298,7 @@
 @value color-placeholder-input-file-error: rgb(210, 28, 28);
 @value palette-product-dark-hover: rgb(0, 112, 96);
 @value background-service-logo: "transparent";
-@value font-family: ""Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif";
+@value font-family: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif";
 @value line-height-heading-display-subtitle: 28px;
 @value background-button-white-hover: rgb(245, 247, 249);
 @value border-color-button-critical-bordered: rgb(210, 28, 28);

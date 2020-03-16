@@ -298,7 +298,7 @@ module.exports = {
   colorPlaceholderInputFileError: "rgb(210, 28, 28)",
   paletteProductDarkHover: "rgb(0, 112, 96)",
   backgroundServiceLogo: "transparent",
-  fontFamily: "\"Roboto\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif",
+  fontFamily: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
   lineHeightHeadingDisplaySubtitle: "28px",
   backgroundButtonWhiteHover: "rgb(245, 247, 249)",
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",

@@ -961,7 +961,7 @@
       }
     },
     "fontFamily": {
-      "value": "\"Roboto\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif",
+      "value": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
       "type": "string",
       "category": "Font family",
       "meta": {

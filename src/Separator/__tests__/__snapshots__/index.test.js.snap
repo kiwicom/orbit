@@ -481,6 +481,7 @@ exports[`Separator should match snapshot 1`] = `
         "zIndexSticky": "100",
       },
       "rtl": false,
+      "transitions": true,
     }
   }
 />

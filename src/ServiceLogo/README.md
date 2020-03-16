@@ -32,6 +32,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"Amex"`            | `"large"`  |
 | `"Axa"`             |
 | `"AxaAssistance"`   |
+| `"Booking"`         |
 | `"BusinessInsider"` |
 | `"ChinaUnionPay"`   |
 | `"DailyExpress"`    |
@@ -46,6 +47,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"NewYorkTimes"`    |
 | `"NortonSecured"`   |
 | `"PayPal"`          |
+| `"RentalCars"`      |
 | `"Sofort"`          |
 | `"TravelPulse"`     |
 | `"Trustly"`         |

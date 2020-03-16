@@ -10,10 +10,11 @@ describe("Tag", () => {
   const dataTest = "test";
   const onRemove = jest.fn();
   const onClick = jest.fn();
+  const selected = true;
   const icon = <Bus />;
 
   const component = shallow(
-    <Tag icon={icon} dataTest={dataTest} onRemove={onRemove} onClick={onClick}>
+    <Tag selected={selected} icon={icon} dataTest={dataTest} onRemove={onRemove} onClick={onClick}>
       {content}
     </Tag>,
   );

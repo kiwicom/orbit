@@ -32,15 +32,6 @@ const getBackgroundColor = state => ({ selected, theme }) => {
   return states[state];
 };
 
-const getSpacing = ({ icon, removable, theme }) => {
-  const padding =
-    (removable && icon && theme.orbit.paddingTagRemovableWithIcon) ||
-    (removable && !icon && theme.orbit.paddingTagRemovable) ||
-    (!removable && icon && theme.orbit.paddingTagWithIcon) ||
-    (!removable && !icon && theme.orbit.paddingTag);
-  return rtlSpacing(padding);
-};
-
 export const StyledTag = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ theme, selected }) =>
@@ -56,7 +47,7 @@ export const StyledTag = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme, selected }) =>
     !selected && `inset 0 0 0 1px ${theme.orbit.borderColorTag}`};
-  padding: ${getSpacing};
+  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingTag)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
     background ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -94,7 +85,7 @@ StyledTag.defaultProps = {
 
 const IconContainer = styled.div`
   display: flex;
-  margin-${right}: 8px;
+  margin-${left}: 8px;
 
   svg {
     height: ${({ theme }) => theme.orbit.widthIconSmall};
@@ -108,7 +99,7 @@ IconContainer.defaultProps = {
 
 const CloseContainer = styled.div`
   display: flex;
-  margin-${left}: 8px;
+  margin-${right}: 8px;
   color: ${({ theme }) => theme.orbit.paletteBlueDarker};
   cursor: pointer;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -163,8 +154,6 @@ const Tag = (props: Props) => {
       role="button"
       onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >
-      {icon && <IconContainer>{icon}</IconContainer>}
-      {children}
       {!!onRemove && selected && (
         <CloseContainer
           onClick={ev => {
@@ -186,6 +175,8 @@ const Tag = (props: Props) => {
           </StyledClose>
         </CloseContainer>
       )}
+      {children}
+      {icon && <IconContainer>{icon}</IconContainer>}
     </StyledTag>
   );
 };

@@ -81,7 +81,10 @@ storiesOf("PictureCard", module)
   .add(
     "Plain",
     () => {
-      return <PictureCard image={image} />;
+      const width = text("title", "100%");
+      const height = text("height", "150px");
+
+      return <PictureCard width={width} height={height} image={image} />;
     },
     {
       info:

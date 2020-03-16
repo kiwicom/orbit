@@ -67,8 +67,9 @@ const BreadcrumbsItem = ({
     <StyledBreadcrumbsItem
       data-test={dataTest}
       aria-current={active ? "page" : undefined}
-      property="itemListElement"
-      typeof="ListItem"
+      itemProp="itemListElement"
+      itemScope
+      itemType="http://schema.org/ListItem"
     >
       <StyledBreadcrumbsItemAnchor
         isClickable={href || onClick}
@@ -76,14 +77,15 @@ const BreadcrumbsItem = ({
         component={component}
         active={active}
         onClick={onClick}
-        property="item"
-        typeof="WebPage"
-        id={id}
+        itemScope
+        itemType="http://schema.org/WebPage"
+        itemProp="item"
+        itemID={id || href}
         {...props}
       >
-        <span property="name">{children}</span>
+        <span itemProp="name">{children}</span>
       </StyledBreadcrumbsItemAnchor>
-      <meta property="position" content={contentKey} />
+      <meta itemProp="position" content={contentKey} />
       {!active && <StyledBreadcrumbsItemIcon ariaHidden size="small" color="tertiary" />}
     </StyledBreadcrumbsItem>
   );

@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/button/
 */
+import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals, Ref, Component } from "../common/common.js.flow";
@@ -24,7 +25,7 @@ export type Props = {|
   ...Globals,
   ...Ref,
   ...spaceAfter,
-  +children?: React$Node,
+  +children?: React.Node,
   +asComponent?: Component,
   +href?: string,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
@@ -38,9 +39,9 @@ export type Props = {|
   +size?: Size,
   +width?: number,
   +submit?: boolean,
-  +icon?: React$Node,
-  +iconLeft?: React$Node,
-  +iconRight?: React$Node,
+  +icon?: React.Node,
+  +iconLeft?: React.Node,
+  +iconRight?: React.Node,
   +tabIndex?: string,
   +ariaExpanded?: boolean,
   +ariaControls?: string,
@@ -52,4 +53,4 @@ export type Props = {|
 
 declare export var StyledButton: ReactComponentStyled<Props>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

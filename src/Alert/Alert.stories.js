@@ -26,7 +26,7 @@ storiesOf("Alert", module)
     "Default",
     () => {
       const message = "The quick, brown fox jumps over a lazy dog.";
-      return <Alert>{message}</Alert>;
+      return <Alert icon title={message} />;
     },
     {
       info:
@@ -36,7 +36,7 @@ storiesOf("Alert", module)
   .add(
     "Info alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Some additional information");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert title={title} icon>
@@ -52,7 +52,7 @@ storiesOf("Alert", module)
   .add(
     "Success alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "You did it!");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="success" title={title} icon>
@@ -69,7 +69,7 @@ storiesOf("Alert", module)
   .add(
     "Warning alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Be careful!");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="warning" title={title} icon>
@@ -85,7 +85,7 @@ storiesOf("Alert", module)
   .add(
     "Critical alert",
     () => {
-      const title = text("Title");
+      const title = text("Title", "Something has gone horribly wrong");
       const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
       return (
         <Alert type="critical" title={title} icon>
@@ -101,8 +101,8 @@ storiesOf("Alert", module)
   .add(
     "Only title",
     () => {
-      const message = "The quick, brown fox jumps over a lazy dog.";
-      return <Alert title={message} closable />;
+      const title = text("Title", "The quick, brown fox jumps over a lazy dog.");
+      return <Alert title={title} closable />;
     },
     {
       info:
@@ -163,14 +163,16 @@ storiesOf("Alert", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Stack spacing="compact">
-            <div>{message}</div>
-            <List>
-              <ListItem>
-                <Text type={type}>623 Kč will be refunded by your payment card</Text>
-              </ListItem>
-              <ListItem>623 Kč will be refunded by your payment card</ListItem>
-            </List>
+          <Stack spacing="condensed">
+            <Stack spacing="tight">
+              <div>{message}</div>
+              <List>
+                <ListItem>
+                  <Text type={type}>623 Kč will be refunded by your payment card</Text>
+                </ListItem>
+                <ListItem>623 Kč will be refunded by your payment card</ListItem>
+              </List>
+            </Stack>
             <Button type={type} size="small" href="#">
               {button}
             </Button>
@@ -194,18 +196,20 @@ storiesOf("Alert", module)
           closable
           onClose={action("Close")}
         >
-          <Stack spacing="compact">
-            <Text>
-              Requirements found here are for reference purposes only. Contact the embassy or your
-              foreign ministry for more information.
-            </Text>
-            <Heading type="title4">
-              Make sure you know your visa requirements for these countries:
-            </Heading>
-            <List>
-              <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
-            </List>
-            <Button type="warning" size="small">
+          <Stack spacing="condensed">
+            <Stack spacing="tight">
+              <Text>
+                Requirements found here are for reference purposes only. Contact the embassy or your
+                foreign ministry for more information.
+              </Text>
+              <Heading type="title4">
+                Make sure you know your visa requirements for these countries:
+              </Heading>
+              <List>
+                <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
+              </List>
+            </Stack>
+            <Button type="info" size="small">
               Check Visa Requirements
             </Button>
           </Stack>

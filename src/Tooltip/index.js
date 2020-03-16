@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useMemo, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import { getBreakpointWidth } from "../utils/mediaQuery";
@@ -55,7 +55,7 @@ const Tooltip = ({
     false,
     200,
   );
-  const tooltipId = useMemo(() => RandomID("tooltip"), []);
+  const [tooltipId, setTooltipId] = useState(null);
   const container = useRef(null);
   const handleIn = useCallback(() => {
     if (window.innerWidth > +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
@@ -91,9 +91,13 @@ const Tooltip = ({
     setShownMobile(false);
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout, setShownMobile]);
+
+  useEffect(() => {
+    setTooltipId(RandomID("tooltip"));
+  }, []);
   if (!enabled) return children;
   return (
-    <React.Fragment>
+    <>
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
@@ -127,7 +131,7 @@ const Tooltip = ({
           </TooltipContent>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
 };
 

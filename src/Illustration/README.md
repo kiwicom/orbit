@@ -18,6 +18,7 @@ Table below contains all types of the props available in Illustration component.
 
 | Name       | Type            | Default    | Description                                                                                                                                     |
 | :--------- | :-------------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used.                    |
 | dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                                             |
 | **name**   | [`enum`](#enum) |            | Name for the displayed illustration.                                                                                                            |
 | size       | [`enum`](#enum) | `"medium"` | The size of the Illustration.                                                                                                                   |
@@ -34,11 +35,9 @@ Table below contains all types of the props available in Illustration component.
 | `"AirportShuttle"`              |
 | `"AppQRCode"`                   |
 | `"BaggageDrop"`                 |
-| `"BGYFastTrack"`                |
 | `"Boarding"`                    |
 | `"BoardingPass"`                |
 | `"BusinessTravel"`              |
-| `"BUDFastTrack"`                |
 | `"CabinBaggage"`                |
 | `"CompassCollectPoints"`        |
 | `"CompassDemoted"`              |
@@ -67,7 +66,6 @@ Table below contains all types of the props available in Illustration component.
 | `"MobileApp"`                   |
 | `"Money"`                       |
 | `"MusicalInstruments"`          |
-| `"NCEFastTrack"`                |
 | `"NetVerify"`                   |
 | `"NoBookings"`                  |
 | `"NoFavoriteFlights"`           |

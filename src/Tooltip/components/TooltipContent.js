@@ -16,6 +16,7 @@ import tooltipPadding from "../helpers/tooltipPadding";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../Button";
 import Translate from "../../Translate";
+import { StyledTextLink } from "../../TextLink";
 import calculateTooltipPosition from "../helpers/calculateTooltipPosition";
 import calculateTooltipAlign from "../helpers/calculateTooltipAlign";
 import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
@@ -110,6 +111,10 @@ const StyledTooltipContent = styled.div`
   & ${StyledText}, ${Item} {
     font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
+    color: ${({ theme }) => theme.orbit.paletteWhite};
+  }
+
+  & ${StyledTextLink} {
     color: ${({ theme }) => theme.orbit.paletteWhite};
   }
 

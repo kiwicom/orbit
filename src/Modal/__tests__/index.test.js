@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 
-import { PureModal as Modal } from "../index";
+import Modal from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";
@@ -13,9 +13,6 @@ import ListItem from "../../List/ListItem";
 import Wallet from "../../icons/Wallet";
 import Button from "../../Button";
 import ChevronLeft from "../../icons/ChevronLeft";
-
-// for testing purposes only
-const Div = (props: any) => <div>{props.children}</div>;
 
 describe("Large Modal", () => {
   const size = SIZES.LARGE;
@@ -83,45 +80,5 @@ describe("Large Modal", () => {
     expect(closeButton.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
     closeButton.simulate("click");
     expect(onClose).toHaveBeenCalled();
-  });
-});
-
-describe("Modal with ModalSection", () => {
-  const title = "My title";
-  const content = "My content";
-
-  const component = mount(
-    <Modal>
-      <ModalHeader title={title} />
-      <Div>
-        <Div>
-          <Div>
-            <ModalSection>{content}</ModalSection>
-          </Div>
-        </Div>
-      </Div>
-      <ModalFooter>It should render if needed</ModalFooter>
-    </Modal>,
-  );
-  it("should match snapshot", () => {
-    const instance = component.instance();
-    expect(instance.state.hasModalSection).toBe(true);
-  });
-});
-
-describe("Modal without ModalSection", () => {
-  const title = "My title";
-
-  const component = mount(
-    <Modal>
-      <ModalHeader title={title} />
-      <ModalFooter>
-        <Button fullWidth>Continue to Payment</Button>
-      </ModalFooter>
-    </Modal>,
-  );
-  it("should match snapshot", () => {
-    const instance = component.instance();
-    expect(instance.state.hasModalSection).toBe(false);
   });
 });

@@ -1,0 +1,6 @@
+// @flow
+type Ref = ?{ current: ?HTMLElement };
+
+export type IsFullyScrolled = (content: Ref, body: Ref) => ?boolean;
+
+declare export default IsFullyScrolled;

@@ -1,0 +1,12 @@
+// @flow
+import * as React from "react";
+
+import type { onClose } from "../index";
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +onClick: onClose,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

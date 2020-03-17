@@ -2,20 +2,12 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/modal/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 import typeof ModalSectionType from "./ModalSection";
 import typeof ModalHeaderType from "./ModalHeader";
 import typeof ModalFooterType from "./ModalFooter";
-
-export type State = {|
-  scrolled: boolean,
-  loaded: boolean,
-  fixedClose: boolean,
-  fullyScrolled: boolean,
-  modalWidth: number,
-  footerHeight: number,
-  hasModalSection: boolean,
-|};
 
 type Size = "small" | "normal" | "large";
 
@@ -33,9 +25,11 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+export type Handlers = {|
+  setScrollPosition: (value: number) => void,
+|};
 
-declare export var PureModal: React$ComponentType<Props>;
+declare export default React.AbstractComponent<Props, Handlers>;
 
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;

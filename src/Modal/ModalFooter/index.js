@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -10,6 +10,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import { StyledButtonLink } from "../../ButtonLink";
 import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
@@ -77,15 +78,17 @@ const WrappedChildren = ({ children, flex = "0 1 auto" }) => {
       return (
         <StyledChild flex={getChildFlex(flex, key)}>
           {React.cloneElement(child, {
-            ref: child.ref ? node => {
-              // Call the original ref, if any
-              const { ref } = child;
-              if (typeof ref === "function") {
-                ref(node);
-              } else if (ref !== null) {
-                ref.current = node;
-              }
-            } : null,
+            ref: child.ref
+              ? node => {
+                  // Call the original ref, if any
+                  const { ref } = child;
+                  if (typeof ref === "function") {
+                    ref(node);
+                  } else if (ref !== null) {
+                    ref.current = node;
+                  }
+                }
+              : null,
           })}
         </StyledChild>
       );
@@ -95,15 +98,9 @@ const WrappedChildren = ({ children, flex = "0 1 auto" }) => {
 };
 
 const ModalFooter = ({ dataTest, children, flex }: Props) => {
-  const { setDimensions, decideFixedFooter, manageFocus, isMobileFullPage } = useContext(
-    ModalContext,
-  );
+  const { isMobileFullPage } = useContext(ModalContext);
 
-  useEffect(() => {
-    if (setDimensions) setDimensions();
-    if (decideFixedFooter) decideFixedFooter();
-    if (manageFocus) manageFocus();
-  }, [decideFixedFooter, manageFocus, setDimensions]);
+  useModalContextFunctions();
 
   return (
     <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>

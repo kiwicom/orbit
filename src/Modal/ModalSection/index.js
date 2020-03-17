@@ -6,6 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
@@ -74,25 +75,24 @@ StyledModalSection.defaultProps = {
 };
 
 const ModalSection = ({ children, suppressed, dataTest }: Props) => {
-  const {
-    removeHasModalSection,
-    setHasModalSection,
-    manageFocus,
-    isMobileFullPage,
-    setDimensions,
-    decideFixedFooter,
-    closable,
-  } = useContext(ModalContext);
+  const { removeHasModalSection, setHasModalSection, isMobileFullPage, closable } = useContext(
+    ModalContext,
+  );
+
+  useModalContextFunctions();
+
+  /*
+    Run on every re-render to prevent setting hasModalSection to false when there's more sections
+   */
+  useEffect(() => {
+    if (setHasModalSection) setHasModalSection();
+  });
 
   useEffect(() => {
-    if (setDimensions) setDimensions();
-    if (decideFixedFooter) decideFixedFooter();
-    if (manageFocus) manageFocus();
-    if (setHasModalSection) setHasModalSection();
     return () => {
       if (removeHasModalSection) removeHasModalSection();
     };
-  }, [decideFixedFooter, manageFocus, removeHasModalSection, setDimensions, setHasModalSection]);
+  }, [removeHasModalSection]);
 
   return (
     <StyledModalSection

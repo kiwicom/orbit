@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -11,6 +11,7 @@ import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
@@ -155,15 +156,10 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props) => {
-  const { isMobileFullPage, setDimensions, decideFixedFooter, manageFocus } = useContext(
-    ModalContext,
-  );
+  const { isMobileFullPage } = useContext(ModalContext);
 
-  useEffect(() => {
-    if (setDimensions) setDimensions();
-    if (decideFixedFooter) decideFixedFooter();
-    if (manageFocus) manageFocus();
-  }, [callContextFunctions, manageFocus]);
+  useModalContextFunctions();
+
   const hasHeader = title || description;
   return (
     <StyledModalHeader

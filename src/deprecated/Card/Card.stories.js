@@ -260,10 +260,10 @@ storiesOf("Deprecated Card", module)
       <Card>
         <Loading type="boxLoader" loading>
           {true && (
-            <React.Fragment>
+            <>
               <CardHeader title="Test" />
               <CardSection>kek</CardSection>
-            </React.Fragment>
+            </>
           )}
         </Loading>
       </Card>

@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../utils/transition";
 import Text from "../../Text";
 import { getHeadingToken } from "../../Heading";
 import { TOKENS, TYPE_OPTIONS } from "../../Heading/consts";
@@ -128,9 +129,7 @@ export const MobileHeader = styled.div`
   box-sizing: border-box;
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
   opacity: 0;
-  transition: top ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["top", "opacity", "visibility"], "fast", "ease-in-out")};
   z-index: 800;
 
   ${media.largeMobile(css`

@@ -126,7 +126,7 @@ const StyledOverlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
-  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transition: ${transition(["opacity"], "normal", "ease-in-out")};
   z-index: 999;
 
   ${media.largeMobile(css`
@@ -194,7 +194,7 @@ const PopoverContentWrapper = ({
   useClickOutside(popover, onClose);
 
   return (
-    <React.Fragment>
+    <>
       <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
@@ -234,7 +234,7 @@ const PopoverContentWrapper = ({
           )}
         </StyledPopoverContent>
       </StyledPopoverParent>
-    </React.Fragment>
+    </>
   );
 };
 

@@ -97,7 +97,7 @@ const Tooltip = ({
   }, []);
   if (!enabled) return children;
   return (
-    <React.Fragment>
+    <>
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
@@ -131,7 +131,7 @@ const Tooltip = ({
           </TooltipContent>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
 };
 

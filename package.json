@@ -28,6 +28,7 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
     "fetch-translations": "babel-node config/fetchTranslations.js",
+    "build-storybook": "build-storybook -s ./static",
     "deploy:storybook": "cross-env BABEL_TARGET=\"storybook\" storybook-to-ghpages",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
@@ -90,7 +91,7 @@
   },
   "dependencies": {
     "@adeira/js": "^1.2.1",
-    "@kiwicom/orbit-design-tokens": "~0.8.0"
+    "@kiwicom/orbit-design-tokens": "~0.9.0"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.3.0",
@@ -100,11 +101,11 @@
     "@babel/runtime": "^7.8.7",
     "@emotion/core": "^10.0.28",
     "@octokit/rest": "^15.13.1",
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-info": "5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addons": "5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-info": "5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addons": "5.3.17",
+    "@storybook/react": "^5.3.17",
     "@storybook/storybook-deployer": "^2.3.0",
     "@svgr/core": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
@@ -124,7 +125,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.1",

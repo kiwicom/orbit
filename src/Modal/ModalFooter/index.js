@@ -71,7 +71,7 @@ const getChildFlex = (flex, key) =>
   Until flow-bin@0.104.0 it's impossible to assign default values to union types,
   therefore, it's bypassed via declaring it in on this component
  */
-const WrappedChildren = ({ children, flex = "0 1 auto" }) => {
+const wrappedChildren = (children, flex = "0 1 auto") => {
   if (!Array.isArray(children)) return children;
   return React.Children.map(children, (child, key) => {
     if (child) {
@@ -104,7 +104,7 @@ const ModalFooter = ({ dataTest, children, flex }: Props) => {
 
   return (
     <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
-      <WrappedChildren flex={flex}>{children}</WrappedChildren>
+      {wrappedChildren(children, flex)}
     </StyledModalFooter>
   );
 };

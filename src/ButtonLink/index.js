@@ -95,9 +95,7 @@ export const StyledButtonLink = styled(
   justify-content: center;
   align-items: center;
   width: ${({ fullWidth, width, onlyIcon }) =>
-    fullWidth
-      ? "100%"
-      : width || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
+    fullWidth ? "100%" : width || (onlyIcon && getSizeToken(TOKENS.heightButton)) || "auto"};
   flex: ${({ fullWidth }) => (fullWidth ? "1 1 auto" : "0 0 auto")};
   max-width: 100%; // to ensure that Buttons content wraps in IE
   height: ${getSizeToken(TOKENS.heightButton)};

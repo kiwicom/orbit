@@ -8,22 +8,17 @@ import * as Common from "../common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Alert";
 
-export { Alert, Alert as default };
+type Type = "info" | "success" | "warning" | "critical";
 
-declare namespace Alert {
-  type Type = "info" | "success" | "warning" | "critical";
-
-  interface Props extends Common.Global, Common.SpaceAfter {
-    readonly type?: Type;
-    readonly children?: React.ReactNode;
-    readonly title?: Common.Translation;
-    readonly icon?: boolean | React.ElementType;
-    readonly closable?: boolean;
-    readonly inlineActions?: React.ReactNode;
-    readonly onClose?: Common.Callback;
-  }
+export interface Props extends Common.Global, Common.SpaceAfter {
+  readonly type?: Type;
+  readonly children?: React.ReactNode;
+  readonly title?: Common.Translation;
+  readonly icon?: boolean | React.ElementType;
+  readonly closable?: boolean;
+  readonly inlineActions?: React.ReactNode;
+  readonly onClose?: Common.Callback;
 }
 
-declare const Alert: React.FunctionComponent<Alert.Props>;
-
+const Alert: React.FunctionComponent<Props>;
 export { Alert, Alert as default };

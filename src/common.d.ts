@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/common";
+declare module "../common.d.ts";
 
 /*
 Common types used in @kiwicom/orbit-component declarations

@@ -2,8 +2,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-import * as Common from "@kiwicom/orbit-components/common";
-
+import * as Common from "../common.d.ts";
 import { ModalContext } from "../ModalContext";
 
 declare module "@kiwicom/orbit-components/lib/Modal/ModalSection";

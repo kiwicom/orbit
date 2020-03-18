@@ -3,30 +3,30 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import * as Common from "@kiwicom/orbit-components/common";
+
+import * as Common from "../common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Badge";
 
-export { Badge, Badge as default };
+type Type =
+  | "neutral"
+  | "dark"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "white"
+  | "infoInverted"
+  | "criticalInverted"
+  | "successInverted"
+  | "warningInverted";
 
-declare namespace Badge {
-  type Type =
-    | "neutral"
-    | "dark"
-    | "info"
-    | "success"
-    | "warning"
-    | "critical"
-    | "white"
-    | "infoInverted"
-    | "criticalInverted";
-
-  interface Props extends Common.Global {
-    readonly children?: React.ReactNode;
-    readonly type?: Type;
-    readonly icon?: React.ReactNode;
-    readonly ariaLabel?: string;
-  }
+export interface Props extends Common.Global {
+  readonly children?: React.ReactNode;
+  readonly type?: Type;
+  readonly icon?: React.ReactNode;
+  readonly ariaLabel?: string;
 }
 
-declare class Badge extends React.Component<Badge.Props> {}
+const Badge: React.FunctionComponent<Props>;
+export { Badge, Badge as default };

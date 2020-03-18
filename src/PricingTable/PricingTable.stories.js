@@ -41,10 +41,8 @@ const content = (
 
 const longerContent = (
   <List type="separated">
-    <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
-      <Tooltip content="Extra info about provided service" stopPropagation>
-        <Text>Extended.</Text>
-      </Tooltip>
+    <ListItem icon={<Check size="small" color="success" />}>
+      <Text>Extended.</Text>
     </ListItem>
     <ListItem label="Calleer priority" icon={<Check size="small" color="success" />}>
       <Tooltip content="Extra info about provided service" stopPropagation>

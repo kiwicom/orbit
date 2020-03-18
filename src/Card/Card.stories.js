@@ -67,10 +67,19 @@ storiesOf("Card", module)
   .add(
     "Card with expandable sections",
     () => {
+      const moreContent = boolean("moreContent", false);
       return (
         <Card title={title} onClose={action("onClose")} description={description}>
           <CardSection expandable title={sectionTitle}>
-            This is a section content
+            <div>This is a section content</div>
+            {moreContent && (
+              <>
+                <div>This is a section content</div>
+                <div>This is a section content</div>
+                <div>This is a section content</div>
+                <div>This is a section content</div>
+              </>
+            )}
           </CardSection>
           <CardSection expandable title={sectionTitle}>
             This is a section content

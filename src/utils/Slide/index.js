@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 import transition from "../transition";
 import defaultTheme from "../../defaultTheme";
+import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
-import type { Props, State } from "./index";
+import type { Props } from "./index";
 
 const getMaxHeight = ({ maxHeight }) => {
-  if (maxHeight === 0) return `0px`;
+  if (maxHeight === 0) return "0px";
   if (!maxHeight) return undefined;
   return `${maxHeight}px`;
 };
@@ -26,132 +27,79 @@ StyledSlide.defaultProps = {
   theme: defaultTheme,
 };
 
-class Slide extends React.Component<Props, State> {
-  state = {
-    maxHeight: 0,
-    transitionFinished: false,
-    visible: false,
-  };
+const Slide = ({ expanded = false, id, ariaLabelledBy, children, maxHeight }: Props) => {
+  const [
+    maxHeightState,
+    setMaxHeightState,
+    setMaxHeightStateTimeout,
+    clearMaxHeight,
+  ] = useStateWithTimeout(() => (expanded ? null : 0), 150);
+  const [
+    transitionFinished,
+    setTransitionFinished,
+    setTransitionFinishedTimeout,
+    clearTransitionFinished,
+  ] = useStateWithTimeout(() => expanded, 250);
+  const [visible, setVisible, setVisibleTimeout, clearVisible] = useStateWithTimeout(
+    () => expanded,
+    150,
+  );
 
-  expandTimeout = null;
-
-  collapseTimeout = null;
-
-  transitionFinishedTimeout = null;
-
-  visibleTimeout = null;
-
-  componentDidMount() {
-    this.setMaxHeight();
-    if (this.props.expanded) {
-      this.setState({ transitionFinished: true, visible: true });
+  React.useEffect(() => {
+    if (expanded === true) {
+      setMaxHeightState(maxHeight);
+      clearVisible();
+      setVisible(true);
+      setMaxHeightStateTimeout(null);
+      setTransitionFinishedTimeout(true);
+    } else {
+      clearVisible();
+      clearMaxHeight();
+      clearTransitionFinished();
+      setTransitionFinishedTimeout(false, 150);
+      setMaxHeightStateTimeout(0);
+      setVisibleTimeout(false);
     }
-  }
+  }, [
+    maxHeight,
+    expanded,
+    clearVisible,
+    clearMaxHeight,
+    setVisible,
+    setMaxHeightState,
+    setMaxHeightStateTimeout,
+    setTransitionFinishedTimeout,
+    clearTransitionFinished,
+    setTransitionFinished,
+    setVisibleTimeout,
+  ]);
 
-  componentDidUpdate(prevProps: Props, prevState: State, snapshot: null | true) {
-    if (snapshot) {
-      if (this.props.expanded) {
-        this.setMaxHeight();
-        if (typeof setTimeout === "function") {
-          if (this.visibleTimeout && typeof clearTimeout === "function") {
-            clearTimeout(this.visibleTimeout);
-            this.visibleTimeout = null;
-          }
-          this.setVisible(true)();
-          this.expandTimeout = setTimeout(this.expandCallback, 150);
-        }
-      } else {
-        if (this.state.maxHeight !== this.props.maxHeight) {
-          this.setMaxHeight();
-        }
-        if (typeof setTimeout === "function") {
-          if (this.expandTimeout && typeof clearTimeout === "function") {
-            clearTimeout(this.expandTimeout);
-            this.expandTimeout = null;
-          }
-          this.collapseTimeout = setTimeout(this.collapseCallback, 1);
-        }
-      }
-    }
-  }
+  console.log(maxHeightState);
 
-  componentWillUnmount() {
-    if (typeof clearTimeout === "function") {
-      if (this.expandTimeout) {
-        clearTimeout(this.expandTimeout);
-      }
-      if (this.collapseTimeout) {
-        clearTimeout(this.collapseTimeout);
-      }
-      if (this.transitionFinishedTimeout) {
-        clearTimeout(this.transitionFinishedTimeout);
-      }
-      if (this.visibleTimeout) {
-        clearTimeout(this.visibleTimeout);
-      }
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps: Props) {
-    if (this.props.expanded === prevProps.expanded) return null;
-    return true;
-  }
-
-  setVisible = (visible: boolean) => () => {
-    this.setState({ visible });
-  };
-
-  setMaxHeight = () => {
-    const { maxHeight } = this.props;
-    this.setState({
-      maxHeight,
-    });
-  };
-
-  expandCallback = () => {
-    this.setState({
-      maxHeight: null,
-    });
-    this.transitionFinishedTimeout = setTimeout(this.transitionFinishedCallback(true), 100);
-  };
-
-  collapseCallback = () => {
-    this.setState({
-      maxHeight: 0,
-      transitionFinished: false,
-    });
-    this.visibleTimeout = setTimeout(this.setVisible(false), 150);
-
-    if (this.transitionFinishedTimeout && typeof clearTimeout === "function") {
-      clearTimeout(this.transitionFinishedTimeout);
-      this.transitionFinishedTimeout = null;
-    }
-  };
-
-  transitionFinishedCallback = (transitionFinished: boolean) => () => {
-    this.setState({ transitionFinished });
-  };
-
-  render() {
-    const { children, expanded = false, id, ariaLabelledBy } = this.props;
-    const { transitionFinished, maxHeight, visible } = this.state;
-    return (
-      <StyledSlide
-        maxHeight={maxHeight}
-        expanded={expanded}
-        transitionFinished={transitionFinished}
-        aria-hidden={!expanded}
-        id={id}
-        aria-labelledby={ariaLabelledBy}
-        visible={visible}
-        onClick={ev => {
-          ev.stopPropagation();
-        }}
-      >
-        {children}
-      </StyledSlide>
-    );
-  }
-}
+  React.useEffect(
+    () => () => {
+      clearTransitionFinished();
+      clearVisible();
+      clearMaxHeight();
+    },
+    [clearVisible, clearTransitionFinished, clearMaxHeight],
+  );
+  return (
+    <StyledSlide
+      maxHeight={maxHeightState}
+      expanded={expanded}
+      transitionFinished={transitionFinished}
+      aria-hidden={!expanded}
+      id={id}
+      aria-labelledby={ariaLabelledBy}
+      visible={visible}
+      onClick={ev => {
+        ev.stopPropagation();
+      }}
+    >
+      {children}
+    </StyledSlide>
+  );
+};
 
 export default Slide;

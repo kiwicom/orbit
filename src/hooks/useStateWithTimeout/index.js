@@ -7,12 +7,12 @@ export default function useStateWithTimeout<S>(defaultValue: S, timeout?: number
   const [state, setState] = useState(defaultValue);
   const timeoutRef = useRef(null);
   const setStateWithTimeout = useCallback(
-    value => {
+    (value, timeoutOverride) => {
       if (typeof setTimeout === "function") {
         timeoutRef.current = setTimeout(() => {
           timeoutRef.current = null;
           setState(value);
-        }, timeout);
+        }, timeoutOverride || timeout);
       }
     },
     [timeout],

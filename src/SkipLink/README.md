@@ -29,7 +29,7 @@ The table below contains all types of props available in the SkipLink component.
 
 | Name        | Type                | Description                            |
 | :---------- | :------------------ | :------------------------------------- |
-| description | `string`            | Description for screen readers.        |
+| buttonLabel | `string`            | Description for screen readers.        |
 | **links**   | [`links[]`](#links) | An array specifying links to point to. |
 
 ## links

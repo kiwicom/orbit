@@ -96,7 +96,7 @@ storiesOf("TileGroup", module)
               <Stack justify="between" align="center" direction="row" shrink>
                 <Stack spacing="none" direction="column" shrink>
                   <Stack direction="row" align="center" spacing="condensed">
-                    <Heading type="title4" element="h4">
+                    <Heading type="title4" as="h4">
                       Mr. Hot potato
                     </Heading>
                     <CountryFlag code="cz" />
@@ -119,7 +119,7 @@ storiesOf("TileGroup", module)
               <Stack justify="between" align="center" direction="row" shrink>
                 <Stack spacing="none" direction="column" shrink>
                   <Stack direction="row" align="center" spacing="condensed">
-                    <Heading type="title4" element="h4">
+                    <Heading type="title4" as="h4">
                       Mr. Hot potato
                     </Heading>
                     <CountryFlag code="cz" />
@@ -142,7 +142,7 @@ storiesOf("TileGroup", module)
               <Stack justify="between" align="center" direction="row" shrink>
                 <Stack spacing="none" direction="column" shrink>
                   <Stack direction="row" align="center" spacing="condensed">
-                    <Heading type="title4" element="h4">
+                    <Heading type="title4" as="h4">
                       Mr. Hot potato
                     </Heading>
                     <CountryFlag code="cz" />
@@ -165,7 +165,7 @@ storiesOf("TileGroup", module)
               <Stack justify="between" align="center" direction="row" shrink>
                 <Stack spacing="none" direction="column" shrink>
                   <Stack direction="row" align="center" spacing="condensed">
-                    <Heading type="title4" element="h4">
+                    <Heading type="title4" as="h4">
                       Mr. Hot potato
                     </Heading>
                     <CountryFlag code="cz" />

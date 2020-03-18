@@ -127,9 +127,7 @@ const Collapse = ({
         id={labelID}
       >
         <Stack justify="between" align="center">
-          <Heading type="title4">
-            {label}
-          </Heading>
+          <Heading type="title4">{label}</Heading>
           {/* TODO: dictionary for title */}
           <Stack inline grow={false} align="center" spacing="compact">
             <StyledActionsWrapper

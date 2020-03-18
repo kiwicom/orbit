@@ -135,7 +135,7 @@ const Input = styled.input`
       `1px ${theme.orbit.borderStyleInput} ${
         error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
-    box-shadow: 0px 0px 0px 3px
+    box-shadow: 0 0 0 3px
       ${({ theme, error }) =>
         convertHexToRgba(
           error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,

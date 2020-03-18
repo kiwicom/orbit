@@ -3,20 +3,25 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import * as Common from "@kiwicom/orbit-components/common";
+
+import * as Common from "../common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Card/CardSection";
 
-export { CardSection, CardSection as default };
-
-declare namespace CardSection {
-  interface Props extends Common.Global {
-    readonly children: React.ReactNode;
-    readonly expandable?: boolean;
-    readonly initialExpanded?: boolean;
-    readonly onClose?: Common.Callback;
-    readonly onExpand?: Common.Callback;
-  }
+export interface Props extends Common.Global {
+  readonly title?: React.ReactNode;
+  readonly icon?: React.ReactNode;
+  readonly description?: React.ReactNode;
+  readonly children?: React.ReactNode;
+  readonly expandable?: boolean;
+  readonly initialExpanded?: boolean;
+  readonly actions?: React.ReactNode;
+  readonly expanded?: boolean;
+  readonly noSeparator?: boolean;
+  readonly onClose?: Common.Callback;
+  readonly onExpand?: Common.Callback;
+  readonly header?: boolean;
 }
 
-declare class CardSection extends React.Component<CardSection.Props> {}
+const CardSection: React.FunctionComponent<Props>;
+export { CardSection, CardSection as default };

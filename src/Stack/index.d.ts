@@ -3,7 +3,8 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import * as Common from "@kiwicom/orbit-components/common";
+
+import * as Common from "../common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Stack";
 

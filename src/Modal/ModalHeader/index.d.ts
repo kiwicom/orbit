@@ -2,10 +2,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-import * as Common from "@kiwicom/orbit-components/common";
 import Illustration from "@kiwicom/orbit-components/lib/Illustration";
 import { ElementType } from "react";
 
+import * as Common from "../common.d.ts";
 import { ModalContext } from "../ModalContext";
 
 declare module "@kiwicom/orbit-components/lib/Modal/ModalHeader";

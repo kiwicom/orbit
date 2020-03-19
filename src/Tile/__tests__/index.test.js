@@ -17,6 +17,8 @@ describe("Tile clickable", () => {
   const title = "Lorem ipsum dolor sit amet";
   const description = "Lorem ipsum dolor sit amet";
   const onClick = jest.fn();
+  const htmlTitle = "Lorem ipsum dolor sit amet";
+
   const component = shallow(
     <Tile
       dataTest={dataTest}
@@ -24,12 +26,14 @@ describe("Tile clickable", () => {
       title={title}
       description={description}
       onClick={onClick}
+      htmlTitle={htmlTitle}
     />,
   );
   it("should render proper attributes", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
     expect(component.render().prop("role")).toBe("button");
     expect(component.prop("as")).toBe("div");
+    expect(component.render().prop("title")).toBe(htmlTitle);
   });
   it("should return TileHeader with props", () => {
     const header = component.find(TileHeader);

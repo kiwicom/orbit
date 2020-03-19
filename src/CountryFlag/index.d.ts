@@ -4,17 +4,15 @@
 
 import * as React from "react";
 
-import * as Common from "../common.d.ts";
+import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/CountryFlag";
 
-export { CountryFlag, CountryFlag as default };
-
-declare namespace CountryFlag {
-  interface Props extends Common.Global {
-    readonly code?: string | null;
-    readonly name?: string;
-  }
+export interface Props extends Common.Global {
+  readonly code?: string | null;
+  readonly name?: string;
+  readonly size?: "small" | "medium";
 }
 
-declare class CountryFlag extends React.Component<CountryFlag.Props> {}
+const CountryFlag: React.FunctionComponent<Props>;
+export { CountryFlag, CountryFlag as default };

@@ -4,19 +4,16 @@
 
 import * as React from "react";
 
-import * as Common from "../common.d.ts";
+import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/CarrierLogo";
 
-export { CarrierLogo, CarrierLogo as default };
+type Size = "small" | "medium" | "large";
 
-declare namespace CarrierLogo {
-  type Size = "small" | "medium" | "large";
-
-  interface Props extends Common.Global {
-    readonly size?: Size;
-    readonly carriers: Common.Carrier[];
-  }
+export interface Props extends Common.Global {
+  readonly size?: Size;
+  readonly carriers: Common.Carrier[];
 }
 
-declare class CarrierLogo extends React.Component<CarrierLogo.Props> {}
+const CarrierLogo: React.FunctionComponent<Props>;
+export { CarrierLogo, CarrierLogo as default };

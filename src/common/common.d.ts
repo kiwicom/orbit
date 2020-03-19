@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-declare module "../common.d.ts";
+declare module "../common/common.d.ts";
 
 /*
 Common types used in @kiwicom/orbit-component declarations
@@ -22,7 +22,7 @@ export type InputSize = "small" | "normal";
 export type Carrier = {
   code: string;
   name: string;
-  type?: "airline" | "bus" | "train";
+  type?: "airline" | "bus" | "train" | "ferry" | "private_transfer";
 };
 
 export type Translations = {

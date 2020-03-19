@@ -6,7 +6,7 @@ import * as React from "react";
 import ModalHeaderType from "@kiwicom/orbit-components/lib/Modal/ModalHeader";
 import ModalSectionType from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 
-import * as Common from "../common.d.ts";
+import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Modal";
 

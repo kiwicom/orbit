@@ -3,9 +3,9 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
 
-import * as Common from "../common.d.ts";
+import CardSection from "./CardSection";
+import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Card";
 

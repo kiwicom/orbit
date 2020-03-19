@@ -584,6 +584,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
+  callContextFunctions = () => {
+    if (this.setDimensions) this.setDimensions();
+    if (this.decideFixedFooter) this.decideFixedFooter();
+    if (this.manageFocus) this.manageFocus();
+  };
+
   render() {
     const {
       onClose,
@@ -650,11 +656,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             )}
             <ModalContext.Provider
               value={{
-                setDimensions: this.setDimensions,
-                decideFixedFooter: this.decideFixedFooter,
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
-                manageFocus: this.manageFocus,
+                callContextFunctions: this.callContextFunctions,
                 hasModalSection,
                 isMobileFullPage,
                 closable: !!onClose,

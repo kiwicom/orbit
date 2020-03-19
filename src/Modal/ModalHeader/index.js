@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -10,7 +10,8 @@ import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
-import { withModalContext } from "../ModalContext";
+import { ModalContext } from "../ModalContext";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
@@ -147,76 +148,45 @@ const StyledModalHeaderContent = styled.div`
   margin-top: ${({ description }) => (description ? "32px" : "16px")};
 `;
 
-class ModalHeader extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.callContextFunctions();
-  }
+const ModalHeader = ({
+  illustration,
+  suppressed,
+  children,
+  description,
+  title,
+  dataTest,
+}: Props) => {
+  const { isMobileFullPage } = useContext(ModalContext);
 
-  componentDidUpdate(prevProps: Props) {
-    if (prevProps !== this.props) {
-      this.callContextFunctions();
+  useModalContextFunctions();
 
-      const { manageFocus } = this.props;
+  const hasHeader = title || description;
+  return (
+    <StyledModalHeader
+      illustration={!!illustration}
+      suppressed={suppressed}
+      data-test={dataTest}
+      isMobileFullPage={isMobileFullPage}
+    >
+      {illustration}
+      {hasHeader && (
+        <ModalTitle illustration={!!illustration}>
+          {title && <ModalHeading>{title}</ModalHeading>}
+          {description && (
+            <ModalDescription>
+              <Text size="large" element="div">
+                {description}
+              </Text>
+            </ModalDescription>
+          )}
+        </ModalTitle>
+      )}
+      {children && (
+        <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
+      )}
+      {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
+    </StyledModalHeader>
+  );
+};
 
-      if (manageFocus) {
-        manageFocus();
-      }
-    }
-  }
-
-  callContextFunctions = () => {
-    const { setDimensions, decideFixedFooter } = this.props;
-    if (setDimensions) {
-      setDimensions();
-    }
-    if (decideFixedFooter) {
-      decideFixedFooter();
-    }
-  };
-
-  render() {
-    const {
-      title,
-      illustration,
-      description,
-      children,
-      suppressed,
-      dataTest,
-      isMobileFullPage,
-    } = this.props;
-    const hasHeader = title || description;
-    return (
-      <StyledModalHeader
-        illustration={!!illustration}
-        suppressed={suppressed}
-        data-test={dataTest}
-        isMobileFullPage={isMobileFullPage}
-      >
-        {illustration}
-        {hasHeader && (
-          <ModalTitle illustration={!!illustration}>
-            {title && <ModalHeading>{title}</ModalHeading>}
-            {description && (
-              <ModalDescription>
-                <Text size="large" element="div">
-                  {description}
-                </Text>
-              </ModalDescription>
-            )}
-          </ModalTitle>
-        )}
-        {children && (
-          <StyledModalHeaderContent description={!!description}>
-            {children}
-          </StyledModalHeaderContent>
-        )}
-        {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
-      </StyledModalHeader>
-    );
-  }
-}
-const DecoratedComponent = withModalContext<Props>(ModalHeader);
-
-// $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalHeader";
-export default DecoratedComponent;
+export default ModalHeader;

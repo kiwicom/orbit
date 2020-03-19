@@ -16,10 +16,10 @@
     "@babel/preset-react" "^7.8.0"
     "@babel/runtime" "^7.8.0"
 
-"@adeira/js@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@adeira/js/-/js-1.2.1.tgz#481f89770e81081725939dd24a0ff674f9950a63"
-  integrity sha512-+x5cz2AwIyeWPZBf4Z6oN1xwn8xnb7APkGn9txecjVqm/xU8Puzmv+xDReNjzCE6Fi9Hkdp0mqP5Oot3f+bkVQ==
+"@adeira/js@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adeira/js/-/js-1.2.2.tgz#bdaff8b4aba8f737cc4553ad3db7a682e5243fc0"
+  integrity sha512-NYjy0O5S4j0ksJ8pxNf9fxIFIl+/HaNyqTE1QrHaN2QjcKxtzHwVhDQ2rIJBQ5VbVZt9VES8ZcSCi3xoBX+R0Q==
 
 "@babel/cli@^7.8.4":
   version "7.8.4"
@@ -6111,10 +6111,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
-flow-bin@^0.120.1:
-  version "0.120.1"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.120.1.tgz#ab051d6df71829b70a26a2c90bb81f9d43797cae"
-  integrity sha512-KgE+d+rKzdXzhweYVJty1QIOOZTTbtnXZf+4SLnmArLvmdfeLreQOZpeLbtq5h79m7HhDzX/HkUkoyu/fmSC2A==
+flow-bin@^0.121.0:
+  version "0.121.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.121.0.tgz#e206bdc3d510277f9a847920540f72c49e87c130"
+  integrity sha512-QYRMs+AoMLj/OTaSo9+8c3kzM/u8YgvfrInp0qzhtzC02Sc2jb3BV/QZWZGjPo+XK3twyyqXrcI3s8MuL1UQRg==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"

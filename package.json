@@ -131,7 +131,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "flow-bin": "^0.121.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "glob": "^7.1.2",
     "isomorphic-unfetch": "^3.0.0",
     "jest": "^25.1.0",

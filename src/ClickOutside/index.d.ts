@@ -4,17 +4,14 @@
 
 import * as React from "react";
 
-import * as Common from "../common.d.ts";
+import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/ClickOutside";
 
-export { ClickOutside, ClickOutside as default };
-
-declare namespace ClickOutside {
-  interface Props {
-    readonly onClickOutside?: Common.Event<React.MouseEvent>;
-    readonly children: React.ReactNode | React.ReactNode[];
-  }
+export interface Props {
+  readonly onClickOutside?: Common.Event<React.MouseEvent>;
+  readonly children: React.ReactNode | React.ReactNode[];
 }
 
-declare class ClickOutside extends React.Component<ClickOutside.Props> {}
+const ClickOutside: React.FunctionComponent<Props>;
+export { ClickOutside, ClickOutside as default };

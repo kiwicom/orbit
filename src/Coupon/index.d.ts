@@ -6,11 +6,11 @@ import * as React from "react";
 
 import * as Common from "../common/common.d.ts";
 
-declare module "@kiwicom/orbit-components/lib/ButtonGroup";
+declare module "@kiwicom/orbit-components/lib/Coupon";
 
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
 }
 
-const ButtonGroup: React.FunctionComponent<Props>;
-export { ButtonGroup, ButtonGroup as default };
+const Coupon: React.FunctionComponent<Props>;
+export { Coupon, Coupon as default };

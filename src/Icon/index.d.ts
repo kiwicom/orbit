@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common.d.ts";
+import * as Common from "../common/common.d.ts";
 import IconBase from "./IconBase";
 
 declare module "@kiwicom/orbit-components/lib/Icon";

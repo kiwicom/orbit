@@ -9,6 +9,7 @@ import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
+import media from "../../utils/mediaQuery";
 
 import type { GetLineHeightToken, Props } from "./index";
 
@@ -52,7 +53,6 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 
   &:last-child,
@@ -69,7 +69,8 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
     type === TYPES.SEPARATED &&
     css`
       border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
-      padding: ${theme.orbit.spaceXSmall};
+      padding: ${theme.orbit.spaceSmall};
+      align-items: center;
 
       &,
       ${StyledText} {
@@ -79,6 +80,10 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
       :last-child {
         border-bottom: none;
       }
+
+      ${media.tablet(css`
+        padding: ${theme.orbit.spaceXSmall};
+      `)}
     `}
 `;
 

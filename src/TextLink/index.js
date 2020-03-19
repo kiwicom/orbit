@@ -103,16 +103,16 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
   :focus {
     outline: none;
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor};
+    box-shadow: 0 0 0 4px ${getFocusColor};
   }
   :focus:not(:focus-visible) {
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor}
+    box-shadow: 0 0 0 4px ${getFocusColor}
   }
   :-moz-focusring,
   :focus-visible {
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor};
+    box-shadow: 0 0 0 4px ${getFocusColor};
   }
 `;
 

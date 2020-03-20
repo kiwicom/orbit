@@ -21,6 +21,7 @@ const Tile = ({
   noPadding = false,
   expandable = false,
   initialExpanded = false,
+  htmlTitle,
   onClick,
 }: Props) => {
   if (expandable) {
@@ -34,6 +35,7 @@ const Tile = ({
         noPadding={noPadding}
         initialExpanded={initialExpanded}
         onClick={onClick}
+        htmlTitle={htmlTitle}
       >
         {children}
       </TileExpandable>
@@ -51,6 +53,7 @@ const Tile = ({
       as={href ? "a" : "div"}
       tabIndex={!href ? "0" : undefined}
       role={!href ? "button" : undefined}
+      htmlTitle={htmlTitle}
     >
       {hasHeader && (
         <TileHeader

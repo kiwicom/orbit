@@ -23,6 +23,7 @@ Table below contains all types of the props available in Tile component.
 | expandable      | `boolean`                  | `false` | If `true`, the Tile will be expandable.                                                                                      |
 | external        | `boolean`                  | `false` | If `true`, the Tile opens link in a new tab. [See Functional specs](#functional-specs)                                       |
 | href            | `string`                   |         | The URL of the link to open when Tile is clicked. [See Functional specs](#functional-specs)                                  |
+| htmlTitle       | `string`                   |         | HTML attribute title for adding extra piece of information.                                                                  |
 | icon            | `React.Node`               |         | Displayed icon on the left side of the Tile.                                                                                 |
 | onClick         | `event => void \| Promise` |         | Function for handling onClick event.                                                                                         |
 | title           | `React.Node`               |         | The title of the Tile.                                                                                                       |

@@ -26,7 +26,7 @@ ChevronIcon.defaultProps = {
 
 const StyledCloseContainer = styled.div`
   position: absolute;
-  top: 0px;
+  top: 0;
   ${right}: 0;
   z-index: 1;
 `;

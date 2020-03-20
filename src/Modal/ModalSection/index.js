@@ -1,11 +1,12 @@
 // @flow
-import * as React from "react";
+import React, { useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
-import { withModalContext } from "../ModalContext";
+import { ModalContext } from "../ModalContext";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
@@ -73,65 +74,36 @@ StyledModalSection.defaultProps = {
   theme: defaultTheme,
 };
 
-class ModalSection extends React.PureComponent<Props> {
-  componentDidMount() {
-    const { setHasModalSection } = this.props;
-    this.callContextFunctions();
-    if (setHasModalSection) {
-      setHasModalSection();
-    }
-  }
+const ModalSection = ({ children, suppressed, dataTest }: Props) => {
+  const { removeHasModalSection, setHasModalSection, isMobileFullPage, closable } = useContext(
+    ModalContext,
+  );
 
-  componentDidUpdate(prevProps: Props) {
-    if (prevProps !== this.props) {
-      this.callContextFunctions();
-      const { setHasModalSection, manageFocus } = this.props;
+  useModalContextFunctions();
 
-      if (setHasModalSection) {
-        setHasModalSection();
-      }
+  /*
+    Run on every re-render to prevent setting hasModalSection to false when there's more sections
+   */
+  useEffect(() => {
+    if (setHasModalSection) setHasModalSection();
+  });
 
-      if (manageFocus) {
-        manageFocus();
-      }
-    }
-  }
+  useEffect(() => {
+    return () => {
+      if (removeHasModalSection) removeHasModalSection();
+    };
+  }, [removeHasModalSection]);
 
-  componentWillUnmount() {
-    const { removeHasModalSection } = this.props;
-    this.callContextFunctions();
-    if (removeHasModalSection) {
-      removeHasModalSection();
-    }
-  }
+  return (
+    <StyledModalSection
+      suppressed={suppressed}
+      data-test={dataTest}
+      closable={closable}
+      isMobileFullPage={isMobileFullPage}
+    >
+      {children}
+    </StyledModalSection>
+  );
+};
 
-  callContextFunctions = () => {
-    const { setDimensions, decideFixedFooter } = this.props;
-    if (setDimensions) {
-      setDimensions();
-    }
-    if (decideFixedFooter) {
-      decideFixedFooter();
-    }
-  };
-
-  render() {
-    const { suppressed, children, dataTest, isMobileFullPage, closable } = this.props;
-    return (
-      <StyledModalSection
-        suppressed={suppressed}
-        data-test={dataTest}
-        closable={closable}
-        isMobileFullPage={isMobileFullPage}
-      >
-        {children}
-      </StyledModalSection>
-    );
-  }
-}
-
-const DecoratedComponent = withModalContext<Props>(ModalSection);
-
-// $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalSection";
-export default DecoratedComponent;
+export default ModalSection;

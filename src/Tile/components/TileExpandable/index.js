@@ -20,6 +20,7 @@ const TileExpandable = ({
   header,
   icon,
   dataTest,
+  htmlTitle,
 }: Props) => {
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const [contentHeight, setContentHeight] = React.useState(initialExpanded ? null : 0);
@@ -62,6 +63,7 @@ const TileExpandable = ({
       tabIndex="0"
       id={labelID}
       dataTest={dataTest}
+      htmlTitle={htmlTitle}
     >
       {hasHeader && (
         <TileHeader

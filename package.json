@@ -113,7 +113,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.7",
     "camelcase": "^5.3.1",
-    "capitalize": "^2.0.2",
+    "capitalize": "^2.0.3",
     "copyfiles": "^2.2.0",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",

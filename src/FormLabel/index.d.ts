@@ -8,7 +8,6 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/FormLabel";
 
-
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly filled?: boolean;

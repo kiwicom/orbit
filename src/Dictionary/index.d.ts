@@ -15,6 +15,5 @@ declare namespace Dictionary {
     readonly values: Common.Translations;
     readonly children: React.ReactNode;
   }
-}
 
 declare class Dictionary extends React.Component<Dictionary.Props> {}

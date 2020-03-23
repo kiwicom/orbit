@@ -8,16 +8,14 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/FormLabel";
 
-export { FormLabel, FormLabel as default };
 
-declare namespace FormLabel {
-  interface Props extends Common.Global {
-    readonly children: React.ReactNode;
-    readonly filled?: boolean;
-    readonly disabled?: boolean;
-    readonly required?: boolean;
-    readonly id?: string;
-  }
+export interface Props extends Common.Global {
+  readonly children: React.ReactNode;
+  readonly filled?: boolean;
+  readonly disabled?: boolean;
+  readonly required?: boolean;
+  readonly id?: string;
 }
 
-declare class FormLabel extends React.Component<FormLabel.Props> {}
+const FormLabel: React.FunctionComponent<Props>;
+export { FormLabel, FormLabel as default };

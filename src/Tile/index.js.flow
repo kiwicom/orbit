@@ -20,6 +20,7 @@ export type Props = {|
   +expandable?: boolean,
   +initialExpanded?: boolean,
   +noPadding?: boolean,
+  +htmlTitle?: string,
   ...Globals,
 |};
 

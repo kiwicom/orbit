@@ -176,6 +176,8 @@ storiesOf("Tile", module)
       const noPadding = boolean("noPadding", false);
       const dataTest = text("dataTest", "test");
       const children = text("children", null);
+      const htmlTitle = text("htmlTitle", "Title for more info");
+
       return (
         <Tile
           href={href}
@@ -189,6 +191,7 @@ storiesOf("Tile", module)
           initialExpanded={initialExpanded}
           noPadding={noPadding}
           dataTest={dataTest}
+          htmlTitle={htmlTitle}
         >
           {children}
         </Tile>

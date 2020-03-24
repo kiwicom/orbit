@@ -2,8 +2,10 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/breadcrumbs/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
-import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
+import type { BreadcrumbsItemType } from "./BreadcrumbsItem";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
@@ -13,6 +15,10 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+export type BreadcrumbsType = React.ComponentType<Props>;
+
+export type { BreadcrumbsItemType } from "./BreadcrumbsItem";
+
+declare export default BreadcrumbsType;
 
 declare export var BreadcrumbsItem: BreadcrumbsItemType;

@@ -53,4 +53,6 @@ export type Props = {|
 
 declare export var StyledButton: ReactComponentStyled<Props>;
 
-declare export default React.AbstractComponent<Props, HTMLButtonElement>;
+export type ButtonType = React.AbstractComponent<Props, HTMLButtonElement>;
+
+declare export default ButtonType;

@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/notificationbadge/
 */
+import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
 import type { Type } from "../Badge/index.js.flow";
@@ -14,4 +15,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+export type NotificationBadgeType = React.ComponentType<Props>;
+
+declare export default NotificationBadgeType;

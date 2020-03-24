@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/badge/
 */
+import * as React from "react";
 import { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
@@ -28,4 +29,6 @@ export type Props = {|
 
 declare export var StyledBadge: ReactComponentStyled<Props>;
 
-declare export default React$ComponentType<Props>;
+export type BadgeType = React.ComponentType<Props>;
+
+declare export default BadgeType;

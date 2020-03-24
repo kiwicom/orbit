@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/alert-message/
 */
+import * as React from "react";
+
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals, Translation } from "../common/common.js.flow";
 
@@ -19,4 +21,6 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+export type AlertType = React.ComponentType<Props>;
+
+declare export default AlertType;

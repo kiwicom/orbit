@@ -2,15 +2,14 @@
 import * as React from "react";
 import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
 
-import typeof AlertType from "./Alert";
-import typeof AirportIllustrationType from "./AirportIllustration";
-import typeof BadgeType from "./Badge";
-import typeof NotificationBadgeType from "./NotificationBadge";
-import typeof BreadcrumbsType from "./Breadcrumbs";
-import typeof BreadcrumbsItemType from "./Breadcrumbs/BreadcrumbsItem";
-import typeof ButtonType from "./Button";
-import typeof ButtonLinkType from "./ButtonLink";
-import typeof ButtonGroupType from "./ButtonGroup";
+import type { AlertType } from "./Alert";
+import type { AirportIllustrationType } from "./AirportIllustration";
+import type { BadgeType } from "./Badge";
+import type { NotificationBadgeType } from "./NotificationBadge";
+import type { BreadcrumbsType, BreadcrumbsItemType } from "./Breadcrumbs";
+import type { ButtonType } from "./Button";
+import type { ButtonLinkType } from "./ButtonLink";
+import type { ButtonGroupType } from "./ButtonGroup";
 import typeof CallOutBannerType from "./CallOutBanner";
 import typeof CheckboxType from "./Checkbox";
 import typeof ChoiceGroupType from "./ChoiceGroup";
@@ -92,14 +91,6 @@ import typeof PictureCardType from "./PictureCard";
 import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
 import typeof LinkListType from "./LinkList";
-
-declare export var InputText: any;
-declare export var InputTextarea: any;
-declare export var Header: any;
-declare export var Section: any;
-declare export var SystemMessage: any;
-declare export var FieldFeedback: any;
-declare export var Typography: any;
 
 declare export var Alert: AlertType;
 declare export var AirportIllustration: AirportIllustrationType;

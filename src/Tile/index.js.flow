@@ -21,6 +21,7 @@ export type Props = {|
   +initialExpanded?: boolean,
   +noPadding?: boolean,
   +htmlTitle?: string,
+  +noHeaderIcon?: boolean,
   ...Globals,
 |};
 

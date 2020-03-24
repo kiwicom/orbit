@@ -14,6 +14,7 @@ import type {
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Option = {|
+  +key?: string,
   +value: string | number,
   +label?: string,
   +disabled?: boolean,

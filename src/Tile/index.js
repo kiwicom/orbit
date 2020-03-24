@@ -21,6 +21,7 @@ const Tile = ({
   noPadding = false,
   expandable = false,
   initialExpanded = false,
+  noHeaderIcon = false,
   htmlTitle,
   onClick,
 }: Props) => {
@@ -62,6 +63,7 @@ const Tile = ({
           icon={icon}
           header={header}
           expandable={expandable}
+          noHeaderIcon={noHeaderIcon}
         />
       )}
       {children && (

@@ -111,6 +111,7 @@ const TileHeader = ({
   id,
   tabIndex,
   onKeyDown,
+  noHeaderIcon,
 }: Props) => (
   <StyledTileHeader
     onClick={onClick}
@@ -138,7 +139,9 @@ const TileHeader = ({
             )}
           </Stack>
         ))}
-      <StyledIconRight external={external} expandable={expandable} expanded={expanded} />
+      {!noHeaderIcon && (
+        <StyledIconRight external={external} expandable={expandable} expanded={expanded} />
+      )}
     </Stack>
   </StyledTileHeader>
 );

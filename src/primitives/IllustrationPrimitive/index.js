@@ -23,8 +23,9 @@ export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) 
   const illustrationPath = `${illustrationName}-Q85.png`;
   return {
     src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
-    srcSet: `${baseURL}/illustrations/0x${height *
-      2}/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
+    srcSet: `${baseURL}/illustrations/0x${
+      height * 2
+    }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
   };
 })`
   display: inline-block;

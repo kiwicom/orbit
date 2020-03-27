@@ -69,12 +69,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const field = component.find("InputField__Field");
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain a icon as prefix", () => {
     expect(prefix.find("Search").exists()).toBe(true);
@@ -86,12 +81,7 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("size")).toBe(size);
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.prop("type")).toBe(type);
-    expect(
-      component
-        .find("InputField__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(component.find("InputField__Input").render().prop("attribs").name).toBe(name);
     expect(input.prop("value")).toBe(value);
     expect(input.prop("placeholder")).toBe(placeholder);
     expect(input.prop("maxLength")).toBe(maxLength);
@@ -182,11 +172,6 @@ describe(`InputField number with error and help`, () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
   });
   it("should has data-state error", () => {
-    expect(
-      component
-        .find("InputField__Input")
-        .render()
-        .prop("data-state"),
-    ).toBe("error");
+    expect(component.find("InputField__Input").render().prop("data-state")).toBe("error");
   });
 });

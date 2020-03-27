@@ -71,10 +71,36 @@ By default, this Grid component solves:
 
 ## Templates known limitations
 
-One of the main focus of this component is to provide compatible solution for using CSS Grid in IE10+, therefore there is one limitation.
+One of the main focus of this component is to provide compatible solution for using CSS Grid in IE10+, therefore there are some limitations.
 
-Even that native `grid-template-columns` and `grid-template-rows` properties can contain `line-name`, this component does not support this. It means that only suitable format is `1fr 200px repeat(3, minmax(200px, 1fr))` without any names.
-Furthermore, it means that it's not possible to change the order of some column or row between some viewport.
+- Even that native `grid-template-columns` and `grid-template-rows` properties can contain `line-name`, this component does not support this. It means that only suitable format is `1fr 200px repeat(3, minmax(200px, 1fr))` without any names. Furthermore, it means that it's not possible to change the order of some column or row between some viewport.
+
+- Grid auto placement computation for IE 10+ relies on direct children count. It means it's not possible to use `React.Fragment` or any other e.g. HOC wrapper around your child component.
+
+```jsx
+import Grid from "@kiwicom/orbit-components/lib/utils/Grid";
+
+import Cell from "./Cell";
+
+const Wrapper = ({ children }) => {
+  // some magic
+  return children;
+};
+
+/*
+    The Grid will create auto placement only for one child - the Wrapper component and therefore the placement will be broken in IE 10+.
+*/
+const Example = () => (
+  <Grid columns="1fr 1fr" rows="1fr 1fr">
+    <Wrapper>
+      <Cell>First column, first row</Cell>
+      <Cell>Second column, first row</Cell>
+      <Cell>First column, second row</Cell>
+      <Cell>Second column, second row</Cell>
+    </Wrapper>
+  </Grid>
+);
+```
 
 ## Usage
 

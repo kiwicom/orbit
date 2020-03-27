@@ -37,30 +37,14 @@ describe("DestinationCard one-way", () => {
   });
 
   it("should render departure", () => {
-    expect(
-      departure
-        .find("Heading")
-        .first()
-        .children()
-        .text(),
-    ).toBe(departureCity);
+    expect(departure.find("Heading").first().children().text()).toBe(departureCity);
     expect(departure.find("DestinationCard__ArrowUp").exists()).toBe(true);
   });
   it("should render destination city and country", () => {
-    expect(
-      destination
-        .find("Heading")
-        .children()
-        .text(),
-    ).toBe(destinationCity);
-    expect(
-      component
-        .find("DestinationCard__Shown")
-        .find("Heading")
-        .at(1)
-        .children()
-        .text(),
-    ).toBe(destinationCountry);
+    expect(destination.find("Heading").children().text()).toBe(destinationCity);
+    expect(component.find("DestinationCard__Shown").find("Heading").at(1).children().text()).toBe(
+      destinationCountry,
+    );
   });
   it("should render price", () => {
     expect(

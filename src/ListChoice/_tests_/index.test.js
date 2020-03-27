@@ -32,18 +32,8 @@ describe("ListChoice", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should render title and description", () => {
-    expect(
-      content
-        .find("Heading")
-        .children()
-        .text(),
-    ).toBe(title);
-    expect(
-      content
-        .find("Text")
-        .children()
-        .text(),
-    ).toBe(description);
+    expect(content.find("Heading").children().text()).toBe(title);
+    expect(content.find("Text").children().text()).toBe(description);
   });
   it("should render checkbox with checked false", () => {
     expect(component.find("Checkbox").prop("checked")).toBe(true);

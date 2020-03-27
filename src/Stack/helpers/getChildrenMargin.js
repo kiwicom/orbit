@@ -26,11 +26,11 @@ const getChildrenMargin: GetChildrenMargin = ({ viewport, index, devices }) => p
       & > * {
         margin: ${margin && rtlSpacing(margin)}!important;
         ${isMobile &&
-          css`
-            &:last-child {
-              margin: 0 !important;
-            }
-          `};
+        css`
+          &:last-child {
+            margin: 0 !important;
+          }
+        `};
       }
     `;
   }

@@ -62,12 +62,7 @@ describe(`InputGroup - Phone number`, () => {
   });
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);

@@ -31,11 +31,6 @@ describe("Histogram in Slider", () => {
   });
   it("should render loading", () => {
     component.setProps({ data: undefined, loading: true, loadingText: "Loading..." });
-    expect(
-      component
-        .find("Histogram__StyledLoadingContainer")
-        .find("Loading")
-        .exists(),
-    ).toBe(true);
+    expect(component.find("Histogram__StyledLoadingContainer").find("Loading").exists()).toBe(true);
   });
 });

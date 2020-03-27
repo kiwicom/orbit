@@ -32,18 +32,8 @@ describe("CallOutBanner - flat", () => {
     expect(banner.find("CallOutBanner__StyledIllustration").exists()).toBe(true);
   });
   it("should have title and description", () => {
-    expect(
-      banner
-        .find("Heading")
-        .children()
-        .text(),
-    ).toBe(title);
-    expect(
-      banner
-        .find("Text")
-        .children()
-        .text(),
-    ).toBe(description);
+    expect(banner.find("Heading").children().text()).toBe(title);
+    expect(banner.find("Text").children().text()).toBe(description);
   });
 });
 

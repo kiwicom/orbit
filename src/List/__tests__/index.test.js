@@ -51,12 +51,7 @@ describe(`List with custom colored icons`, () => {
   it("should have children", () => {
     children.forEach(node => {
       expect(node.type()).toBe(ListItem);
-      expect(
-        node
-          .find("ListItem")
-          .render()
-          .prop("data-test"),
-      ).toBe(dataTest);
+      expect(node.find("ListItem").render().prop("data-test")).toBe(dataTest);
       expect(node.render().text()).toBe(content);
     });
   });

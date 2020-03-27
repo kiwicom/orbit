@@ -11,12 +11,7 @@ describe("TripDate", () => {
   const component = shallow(<TripDate dataTest={dataTest}>{children}</TripDate>);
 
   it("should contain children", () => {
-    expect(
-      component
-        .find("Text")
-        .children()
-        .text(),
-    ).toBe(children);
+    expect(component.find("Text").children().text()).toBe(children);
   });
 
   it("should contain Calendar icon", () => {

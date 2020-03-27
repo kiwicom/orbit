@@ -47,25 +47,13 @@ describe("PricingTableItem mobile", () => {
     expect(component.find("ul").exists()).toBe(false);
   });
   it("should have name", () => {
-    expect(
-      pricingTableItem
-        .find("Text")
-        .at(0)
-        .children()
-        .text(),
-    ).toBe(name);
+    expect(pricingTableItem.find("Text").at(0).children().text()).toBe(name);
   });
   it("should render data-test", () => {
     expect(pricingTableItem.render().prop("data-test")).toBe(dataTest);
   });
   it("should have price", () => {
-    expect(
-      pricingTableItem
-        .find("Text")
-        .at(1)
-        .children()
-        .text(),
-    ).toBe(price);
+    expect(pricingTableItem.find("Text").at(1).children().text()).toBe(price);
   });
   it("should have featureIcon", () => {
     expect(pricingTableItem.find("img").exists()).toBe(true);
@@ -79,12 +67,7 @@ describe("PricingTableItem mobile", () => {
     expect(pricingTableItem.find("Button").exists()).toBe(false);
   });
   it("should have Radio checked radio button", () => {
-    expect(
-      pricingTableItem
-        .find("Radio")
-        .render()
-        .prop("checked"),
-    ).toBe(true);
+    expect(pricingTableItem.find("Radio").render().prop("checked")).toBe(true);
   });
   it("should be actionable", () => {
     pricingTableItem.simulate("click");
@@ -112,22 +95,10 @@ describe("PricingTableItem desktrop", () => {
     expect(component.find("ul").exists()).toBe(true);
   });
   it("should have name", () => {
-    expect(
-      pricingTableItem
-        .find("Text")
-        .at(0)
-        .children()
-        .text(),
-    ).toBe(name);
+    expect(pricingTableItem.find("Text").at(0).children().text()).toBe(name);
   });
   it("should have price", () => {
-    expect(
-      pricingTableItem
-        .find("Text")
-        .at(1)
-        .children()
-        .text(),
-    ).toBe(price);
+    expect(pricingTableItem.find("Text").at(1).children().text()).toBe(price);
   });
   it("should have featureIcon", () => {
     expect(pricingTableItem.find("img").exists()).toBe(true);
@@ -205,12 +176,6 @@ describe("PricingTable", () => {
     expect(component.find("ul").exists()).toBe(true);
   });
   it("should render childrens mobileDescription", () => {
-    expect(
-      component
-        .find("Text")
-        .at(0)
-        .children()
-        .text(),
-    ).toBe(mobileDescription);
+    expect(component.find("Text").at(0).children().text()).toBe(mobileDescription);
   });
 });

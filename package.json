@@ -81,7 +81,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn prettier:fix"
+      "pre-push": "yarn prettier:fix"
     }
   },
   "main": "lib/index.js",

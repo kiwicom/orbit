@@ -5,7 +5,6 @@ import { mount } from "enzyme";
 import theme from "../../../defaultTheme";
 import { QUERIES } from "../../mediaQuery/consts";
 import { getBreakpointWidth } from "../../mediaQuery/index";
-
 import Grid from "..";
 
 describe("Grid with basic props", () => {

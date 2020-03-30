@@ -25,12 +25,7 @@ describe(`Default CheckBox`, () => {
   );
   const checkbox = component.find("Checkbox__Input");
   it("should contain a label", () => {
-    expect(
-      component
-        .find("Checkbox__LabelText")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("Checkbox__LabelText").render().text()).toBe(label);
   });
   it("inputs value should match", () => {
     expect(checkbox.prop("value")).toBe(value);

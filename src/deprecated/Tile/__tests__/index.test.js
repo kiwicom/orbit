@@ -31,12 +31,7 @@ describe("Deprecated Tile Default", () => {
     const tileHeader = mountedComponent.find("TileHeader");
     expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);
     expect(tileHeader.find("TileHeader__StyledTileDescription").exists()).toBe(true);
-    expect(
-      tileHeader
-        .find("Icon__StyledIcon")
-        .find("svg")
-        .exists(),
-    ).toBe(true);
+    expect(tileHeader.find("Icon__StyledIcon").find("svg").exists()).toBe(true);
   });
 
   it("should render rel when external", () => {

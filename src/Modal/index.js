@@ -196,8 +196,10 @@ const ModalWrapperContent = styled.div`
           );
         `};
   bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
-    `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
-      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+    `${
+      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)
+    }px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   overflow-y: auto;
   overflow-x: hidden;

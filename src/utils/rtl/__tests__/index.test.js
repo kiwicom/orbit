@@ -1,6 +1,5 @@
 // @flow
 import defaultTheme from "../../../defaultTheme";
-
 import * as rtl from "..";
 
 const disabledRTL = {

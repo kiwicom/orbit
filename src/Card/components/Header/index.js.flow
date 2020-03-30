@@ -1,10 +1,13 @@
 // @flow
+import type { Element } from "../../../Heading";
+
 export type Props = {|
   +description?: React$Node,
   +icon?: React$Node,
   +actions?: React$Node,
   +onClose?: () => void | Promise<any>,
   +title?: React$Node,
+  +titleAs?: Element,
   +isSection?: boolean,
   +dataA11ySection?: string,
   +expandable?: boolean,

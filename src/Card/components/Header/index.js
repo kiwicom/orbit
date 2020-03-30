@@ -49,6 +49,7 @@ const Header = ({
   description,
   icon,
   title,
+  titleAs,
   isSection,
   actions,
   dataA11ySection,
@@ -69,7 +70,7 @@ const Header = ({
         <Stack inline spacing="compact">
           {icon}
           {title && (
-            <Heading type="title3" element="h2" dataA11ySection={dataA11ySection}>
+            <Heading type="title3" element={titleAs} dataA11ySection={dataA11ySection}>
               {title}
             </Heading>
           )}

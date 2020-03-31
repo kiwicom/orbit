@@ -2,20 +2,32 @@
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
+import mq from "../../../utils/mediaQuery";
 import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";
 
 const getPadding = ({ noPadding, useMargins, theme }) => {
   if (noPadding) return null;
+
   if (!useMargins) {
     return css`
       padding: ${theme.orbit.spaceMedium};
+
+      ${mq.largeMobile(css`
+        padding: ${theme.orbit.spaceLarge};
+      `)}
     `;
   }
+
   return css`
     padding: ${theme.orbit.spaceMedium} 0;
     margin: 0 ${theme.orbit.spaceMedium};
+
+    ${mq.largeMobile(css`
+      padding: ${theme.orbit.spaceLarge} 0;
+      margin: 0 ${theme.orbit.spaceLarge};
+    `)}
   `;
 };
 const StyledTileContent = styled.div`

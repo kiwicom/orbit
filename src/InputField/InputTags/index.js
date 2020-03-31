@@ -29,11 +29,13 @@ const StyledInputTagsInner = styled.div`
   white-space: nowrap;
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
-  
-  &::-webkit-scrollbar { 
-    display: none; 
+  display: flex;
+  align-items: center;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-  
+
   ${StyledTag} + ${StyledTag} {
     margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
   }

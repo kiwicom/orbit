@@ -95,10 +95,7 @@
   },
   "dependencies": {
     "@adeira/js": "^1.2.2",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@kiwicom/orbit-design-tokens": "~0.9.0",
-    "husky": "^4.2.3"
+    "@kiwicom/orbit-design-tokens": "~0.9.0"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.3.0",
@@ -106,6 +103,8 @@
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/runtime": "^7.9.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@emotion/core": "^10.0.28",
     "@octokit/rest": "^15.13.1",
     "@storybook/addon-actions": "^5.3.17",
@@ -144,6 +143,7 @@
     "glob": "^7.1.2",
     "isomorphic-unfetch": "^3.0.0",
     "jest": "^25.2.4",
+    "husky": "^4.2.3",
     "jest-styled-components": "^6.2.1",
     "jsdom": "^16.2.2",
     "loki": "^0.15.0",

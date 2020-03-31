@@ -1,8 +1,9 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
+import Button from "../Button";
 import ButtonLink, { StyledButtonLink } from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
@@ -12,7 +13,6 @@ import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -34,22 +34,14 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   align-items: center;
   padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingInputFile)};
   height: ${({ theme }) => theme.orbit.heightInputNormal};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      `${error ? theme.orbit.borderColorInputError : theme.orbit.paletteCloudNormal}`};
-  background-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
+      `${theme.orbit.borderWidthInput} ${
+        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      }`};
+  background-color: ${({ theme }) => theme.backgroundInput};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  ${media.largeMobile(css`
-    background-color: ${({ theme }) => theme.orbit.backgroundInput};
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-        }`};
-  `)}
 
   &:hover {
     box-shadow: inset 0 0 0
@@ -83,10 +75,19 @@ Input.defaultProps = {
   theme: defaultTheme,
 };
 
+const getFileInputColor = ({ error, fileName }, theme) => {
+  if (error) {
+    return theme.orbit.paletteRedNormal;
+  }
+  if (fileName) {
+    return theme.orbit.colorTextInput;
+  }
+  return theme.orbit.paletteInkLight;
+};
+
 const StyledFileInput = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  color: ${({ fileName, theme }) =>
-    fileName ? theme.orbit.colorTextInput : theme.orbit.paletteInkLight};
+  color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -98,7 +99,7 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputButton = styled(ButtonLink)`
+const InputButton = styled(Button)`
   flex-shrink: 0;
 `;
 

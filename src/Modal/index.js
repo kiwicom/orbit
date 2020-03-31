@@ -138,11 +138,13 @@ const CloseContainer = styled.div`
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+  pointer-events: none;
 
 
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
+    border-radius: 0;
   `)};
 
   & + ${StyledModalSection}:first-of-type {
@@ -152,6 +154,7 @@ const CloseContainer = styled.div`
   }
 
   ${StyledButtonLink} {
+    pointer-events: auto;
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {

@@ -73,7 +73,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
     display: block;
     width: 8px;
     height: 8px;
-    background-color: ${({ theme }) => theme.orbit.paletteProductNormal};
+    background-color: ${({ theme }) => theme.orbit.paletteBlueNormal};
     border-radius: 8px;
   }
   :hover,

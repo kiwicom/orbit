@@ -30,7 +30,15 @@ storiesOf("Tooltip", module)
         <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
           eget mollis sed, tempor sed magna.
-          <Tooltip content={content} preferredPosition="left">
+          <Tooltip
+            content={
+              <div>
+                <div>Write your text here.</div>
+                <TextLink>Clickable element.</TextLink>
+              </div>
+            }
+            preferredPosition="left"
+          >
             <TextLink>Cras elementum.</TextLink>
           </Tooltip>{" "}
           Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui

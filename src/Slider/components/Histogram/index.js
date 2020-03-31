@@ -39,7 +39,7 @@ const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
   flex: 1 0 auto;
   border-radius: 1px;
   background-color: ${({ theme, active }) =>
-    active ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLight};
+    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLightActive};
   margin-right: 1px;
   :last-child {
     margin: 0;

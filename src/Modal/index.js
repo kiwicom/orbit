@@ -138,6 +138,7 @@ const CloseContainer = styled.div`
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+  pointer-events: none;
 
 
   ${media.largeMobile(css`
@@ -152,6 +153,7 @@ const CloseContainer = styled.div`
   }
 
   ${StyledButtonLink} {
+    pointer-events: auto;
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {

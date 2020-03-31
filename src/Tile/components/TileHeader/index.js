@@ -10,6 +10,7 @@ import ChevronDown from "../../../icons/ChevronDown";
 import NewWindow from "../../../icons/NewWindow";
 import ChevronRight from "../../../icons/ChevronRight";
 import transition from "../../../utils/transition";
+import mq from "../../../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -25,6 +26,9 @@ const StyledTileHeader = styled.div`
   :focus {
     outline: none;
   }
+  ${mq.largeMobile(css`
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+  `)}
 `;
 
 StyledTileHeader.defaultProps = {

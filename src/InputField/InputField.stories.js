@@ -238,7 +238,7 @@ storiesOf("InputField", module)
           label={label}
           inlineLabel
           tags={
-            <div>
+            <>
               <Tag selected onRemove={action("onRemove")}>
                 Brno
               </Tag>
@@ -261,7 +261,7 @@ storiesOf("InputField", module)
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
-            </div>
+            </>
           }
           error={error}
           value={value}

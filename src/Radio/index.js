@@ -164,13 +164,12 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   }
 
   &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      !disabled && theme.orbit.borderColorCheckboxRadioHover};
+    border-color: ${({ disabled, theme }) => !disabled && theme.orbit.paletteBlueLightActive};
   }
 
   &:active ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
-      disabled ? getBorderColor() : theme.orbit.borderColorCheckboxRadioActive};
+      disabled ? getBorderColor() : theme.orbit.paletteBlueNormal};
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }

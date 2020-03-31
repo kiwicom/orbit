@@ -155,13 +155,6 @@ const Input = styled.input`
           15,
         )};
   }
-
-  &:active + ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
 `;
 
 Input.defaultProps = {
@@ -189,10 +182,15 @@ export const Label = styled(({ className, children, dataTest }) => (
 
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme, checked }) =>
-      !disabled && checked
-        ? theme.orbit.paletteBlueDark
-        : theme.orbit.borderColorCheckboxRadioHover};
+      !disabled && checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive};
     box-shadow: none;
+  }
+
+  &:active ${IconContainer} {
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
+    transform: ${({ disabled, theme }) =>
+      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
 
   ${media.largeMobile(css`

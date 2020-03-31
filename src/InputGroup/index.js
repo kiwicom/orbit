@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -12,7 +12,6 @@ import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import media from "../utils/mediaQuery";
 
 import type { Props, State } from "./index";
 
@@ -42,15 +41,15 @@ const FakeGroup = styled(({ children, className }) => (
   z-index: 1;
   box-sizing: border-box;
   height: ${getToken(TOKENS.height)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
+  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) =>
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.paletteCloudNormal}`}; // Normal state
+    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
   box-shadow: ${({ theme, error }) =>
     error &&
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
   ${({ active }) => active && formElementFocus}; // Active state
   background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.paletteCloudNormal};
+    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
@@ -61,17 +60,6 @@ const FakeGroup = styled(({ children, className }) => (
           error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
         }`};
   }
-
-  ${media.largeMobile(css`
-    background-color: ${({ disabled, theme }) =>
-      disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-        }`};
-  `)}
 `;
 
 FakeGroup.defaultProps = {

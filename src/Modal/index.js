@@ -144,6 +144,7 @@ const CloseContainer = styled.div`
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
+    border-radius: 0;
   `)};
 
   & + ${StyledModalSection}:first-of-type {

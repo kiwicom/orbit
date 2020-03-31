@@ -10,6 +10,7 @@ import ChevronDown from "../../../icons/ChevronDown";
 import NewWindow from "../../../icons/NewWindow";
 import ChevronRight from "../../../icons/ChevronRight";
 import transition from "../../../utils/transition";
+import mq from "../../../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -21,10 +22,13 @@ const StyledTileHeader = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  transition: background-color 0.15s ease-in-out;
+  transition: ${transition(["background-color"], "fast", "ease-in-out")};
   :focus {
     outline: none;
   }
+  ${mq.largeMobile(css`
+    padding: ${({ theme }) => theme.orbit.spaceLarge};
+  `)}
 `;
 
 StyledTileHeader.defaultProps = {
@@ -111,6 +115,7 @@ const TileHeader = ({
   id,
   tabIndex,
   onKeyDown,
+  noHeaderIcon,
 }: Props) => (
   <StyledTileHeader
     onClick={onClick}
@@ -138,7 +143,9 @@ const TileHeader = ({
             )}
           </Stack>
         ))}
-      <StyledIconRight external={external} expandable={expandable} expanded={expanded} />
+      {!noHeaderIcon && (
+        <StyledIconRight external={external} expandable={expandable} expanded={expanded} />
+      )}
     </Stack>
   </StyledTileHeader>
 );

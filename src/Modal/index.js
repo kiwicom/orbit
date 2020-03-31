@@ -139,9 +139,11 @@ const CloseContainer = styled.div`
     !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
 
+
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
+    border-radius: 0;
   `)};
 
   & + ${StyledModalSection}:first-of-type {
@@ -194,8 +196,10 @@ const ModalWrapperContent = styled.div`
           );
         `};
   bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
-    `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
-      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+    `${
+      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)
+    }px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   overflow-y: auto;
   overflow-x: hidden;
@@ -224,20 +228,21 @@ const ModalWrapperContent = styled.div`
       !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
-    transition: ${({ scrolled, theme }) =>
+    transition: ${({ scrolled }) =>
       scrolled &&
-      `top ${theme.orbit.durationNormal} ease-in-out,
-    opacity ${theme.orbit.durationFast} ease-in-out,
-    visibility ${theme.orbit.durationFast} ease-in-out ${theme.orbit.durationFast}`};
-  }
+      css`
+        ${transition(["top"], "normal", "ease-in-out")},
+        ${transition(["opacity", "visibility"], "fast", "ease-in-out")}
+      `};
 
-  ${({ scrolled }) =>
-    scrolled &&
-    onlyIE(css`
-      ${MobileHeader} {
-        position: -ms-page;
-      }
-    `)}};
+    ${({ scrolled }) =>
+      scrolled &&
+      onlyIE(css`
+        ${MobileHeader} {
+          position: -ms-page;
+        }
+      `)}
+  }
 
   ${StyledModalHeader} {
     margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};
@@ -582,6 +587,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
+  callContextFunctions = () => {
+    if (this.setDimensions) this.setDimensions();
+    if (this.decideFixedFooter) this.decideFixedFooter();
+    if (this.manageFocus) this.manageFocus();
+  };
+
   render() {
     const {
       onClose,
@@ -648,11 +659,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             )}
             <ModalContext.Provider
               value={{
-                setDimensions: this.setDimensions,
-                decideFixedFooter: this.decideFixedFooter,
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
-                manageFocus: this.manageFocus,
+                callContextFunctions: this.callContextFunctions,
                 hasModalSection,
                 isMobileFullPage,
                 closable: !!onClose,

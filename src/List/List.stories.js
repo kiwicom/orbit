@@ -84,12 +84,7 @@ storiesOf("List", module)
           >
             {content}
           </ListItem>
-          <ListItem
-            label="Kiwi.com services"
-            icon={Icon && <Icon size="small" color={iconColor} />}
-          >
-            {content}
-          </ListItem>
+          <ListItem icon={Icon && <Icon size="small" color={iconColor} />}>{content}</ListItem>
         </List>
       );
     },

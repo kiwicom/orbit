@@ -16,6 +16,7 @@ export type Props = {|
   ariaControls?: string,
   id?: string,
   tabIndex?: string,
+  noHeaderIcon?: boolean,
 |};
 
 type IconProps = {|

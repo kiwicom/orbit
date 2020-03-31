@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import transition from "../../../utils/transition";
 import { right } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import ChevronDown from "../../../icons/ChevronDown";
@@ -16,7 +17,7 @@ import type { Props } from ".";
 
 const ChevronIcon = styled(ChevronDown)`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
-  transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;
 
 ChevronIcon.defaultProps = {
@@ -25,7 +26,7 @@ ChevronIcon.defaultProps = {
 
 const StyledCloseContainer = styled.div`
   position: absolute;
-  top: 0px;
+  top: 0;
   ${right}: 0;
   z-index: 1;
 `;
@@ -48,6 +49,7 @@ const Header = ({
   description,
   icon,
   title,
+  titleAs,
   isSection,
   actions,
   dataA11ySection,
@@ -68,7 +70,7 @@ const Header = ({
         <Stack inline spacing="compact">
           {icon}
           {title && (
-            <Heading type="title3" element="h2" dataA11ySection={dataA11ySection}>
+            <Heading type="title3" element={titleAs} dataA11ySection={dataA11ySection}>
               {title}
             </Heading>
           )}

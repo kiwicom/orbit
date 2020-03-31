@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../../utils/transition";
 import defaultTheme from "../../../defaultTheme";
 import Slide from "../../../utils/Slide";
 import mq from "../../../utils/mediaQuery";
@@ -17,8 +18,7 @@ const StyledCardSectionContent = styled.div`
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ hasPaddingTop, theme }) => hasPaddingTop && theme.orbit.spaceMedium};
-  transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
-    border-top ${({ theme }) => theme.orbit.durationFast} linear;
+  transition: ${transition(["padding", "border-top"], "fast", "linear")};
 
   ${mq.largeMobile(css`
     padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceLarge};

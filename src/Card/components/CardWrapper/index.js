@@ -2,6 +2,7 @@
 import styled, { css } from "styled-components";
 import * as React from "react";
 
+import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 import { CardElement } from "../../helpers/mixins";
 import defaultTheme from "../../../defaultTheme";
@@ -43,7 +44,7 @@ const StyledCardWrapper = styled.div`
   ${({ bottomBorder }) => bottomBorder && bottomBorderRadius};
   border-bottom: ${({ roundedBottom, bottomBorder }) =>
     (roundedBottom || bottomBorder) && getBorder};
-  transition: margin ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["margin"], "fast", "ease-in-out")};
   ${({ noBorderTop, expandable }) =>
     noBorderTop && !expandable && `border-top: 1px solid transparent; padding-top: 0 !important;`};
 

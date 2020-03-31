@@ -9,7 +9,7 @@ import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
 After adding import please wrap your application into `ThemeProvider` and you can provide your own [`theme`](https://github.com/kiwicom/orbit-components/blob/master/.github/theming.md) and [`dictionary`](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md)
 
 ```jsx
-<ThemeProvider theme={...} dictionary={...}>
+<ThemeProvider theme={ownTheme} dictionary={ownDictionary}>
   <App />
 </ThemeProvider>
 ```

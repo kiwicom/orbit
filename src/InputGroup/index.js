@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled  from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";

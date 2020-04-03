@@ -84,12 +84,13 @@ const template = (code, config, state) => `
     import * as React from "react";
     import OrbitIcon from "../Icon";
     import type { Props } from "./${state.componentName}.js.flow";
+    import whiteListProps from "../Icon/helpers/whiteListProps";
 
     export default function ${state.componentName}(props: Props) {
       return (
         ${code.replace(
           /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" size={props.size} color={props.color} customColor={props.customColor} className={props.className} dataTest={props.dataTest} ariaHidden={props.ariaHidden} reverseOnRtl={props.reverseOnRtl} ariaLabel={props.ariaLabel}>$2</OrbitIcon>`,
+          `<OrbitIcon viewBox="$1" {...whiteListProps(props)}>$2</OrbitIcon>`,
         )}
       );
     };`;

@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, HEIGHT } from "./consts";
-import AppStore from "./components/appStore";
-import GooglePlay from "./components/googlePlay";
 
 import type { Props } from "./index";
 
@@ -18,6 +16,13 @@ const StyledButtonMobileStore = styled(({ theme, type, ...props }) => (
 
 StyledButtonMobileStore.defaultProps = {
   theme: defaultTheme,
+};
+
+const src = {
+  appStore:
+    "https://images.kiwi.com/common/AppStoreGrayButton.png, https://images.kiwi.com/common/AppStoreGrayButton@2x.png 2x",
+  googlePlay:
+    "https://images.kiwi.com/common/GooglePlayGrayButton.png, https://images.kiwi.com/common/GooglePlayGrayButton@2x.png 2x",
 };
 
 const ButtonMobileStore = ({
@@ -43,8 +48,9 @@ const ButtonMobileStore = ({
       onClick={onClickHandler}
       data-test={dataTest}
     >
-      {type === TYPE_OPTIONS.APPSTORE ? <AppStore /> : <GooglePlay />}
+      <img srcSet={src[type]} height={HEIGHT} alt="" />
     </StyledButtonMobileStore>
   );
 };
+
 export default ButtonMobileStore;

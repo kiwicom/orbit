@@ -9,7 +9,7 @@ import ButtonLink from "../../ButtonLink";
 const StyledOnlyButton = styled(ButtonLink)``;
 
 const hoverAndFocus = () => css`
-  background-color: ${({ theme }) => theme.orbit.paletteProductLight};
+  background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
 
   ${StyledOnlyButton} {
     visibility: visible;

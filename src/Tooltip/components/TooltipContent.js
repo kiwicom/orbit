@@ -190,6 +190,7 @@ const TooltipContent = ({
   preferredPosition,
   preferredAlign,
   containerRef,
+  parent,
 }: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
@@ -199,7 +200,7 @@ const TooltipContent = ({
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
-  const dimensions = useDimensions({ containerRef, tooltip, content }, children);
+  const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,

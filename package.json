@@ -142,7 +142,7 @@
     "fs-extra": "^9.0.0",
     "glob": "^7.1.2",
     "isomorphic-unfetch": "^3.0.0",
-    "jest": "^25.2.4",
+    "jest": "^25.2.6",
     "husky": "^4.2.3",
     "jest-styled-components": "^6.2.1",
     "jsdom": "^16.2.2",

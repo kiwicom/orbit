@@ -58,7 +58,7 @@ function getViewBox(attributes) {
 function findFillAttributes(dom, content, name) {
   const comments = getHTMLComments(dom.serialize());
   // only check icons that don't have replacement for icon font
-  if (comments && comments.iconFont !== "false") {
+  if (comments && comments.iconFont !== "false" && comments.customColor == null) {
     const prohibitedAttributes = ["fill", "fill-rule"];
     const phrase = attrName =>
       `${attrName} attribute find on ${name} SVG icon. Please delete the ${attrName} or redraw the icon. Otherwise the icon font will be broken.`;

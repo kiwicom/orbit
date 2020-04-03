@@ -4,10 +4,15 @@ import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 
 import useDimensions from "../useDimensions";
+import Button from "../../../Button";
 
 const Component = ({ children }) => {
   const ref = useRef(null);
-  const dimensions = useDimensions({ containerRef: ref, tooltip: ref, content: ref }, children);
+  const dimensions = useDimensions(
+    { containerRef: ref, tooltip: ref, content: ref },
+    children,
+    parent,
+  );
   return (
     <div ref={ref}>
       {Object.keys(dimensions).map(key => (
@@ -41,7 +46,7 @@ describe("useDimensions", () => {
     eventMap[event] = null;
   });
   const wrapper = mount(
-    <Component>
+    <Component parent={<Button>Hello world</Button>}>
       <div>content</div>
     </Component>,
   );

@@ -224,10 +224,11 @@ const TooltipContent = ({
         const focusableElements = tooltip.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
         if (Object.values(focusableElements).some(v => v === ev.target)) {
           onClose();
+          onCloseMobile();
         }
       }
     },
-    [onClose],
+    [onClose, onCloseMobile],
   );
   return (
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>

@@ -1,4 +1,5 @@
 // @flow
+import type { WhiteListProps } from "./whiteListProps";
 
 const ALLOWED_PROPS = [
   "size",
@@ -9,11 +10,11 @@ const ALLOWED_PROPS = [
   "ariaHidden",
   "reverseOnRtl",
   "ariaLabel",
-  "viewBox",
   "dataTest",
 ];
 
-const whiteListProps = props =>
+const whiteListProps: WhiteListProps = props =>
+  // $FlowExpected
   Object.assign({}, ...ALLOWED_PROPS.map(k => (k in props ? { [k]: props[k] } : {})));
 
 export default whiteListProps;

@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
-import whiteListProps from "./helpers/whiteListProps";
 
 import type { GetSize, Props } from "./index";
 
@@ -62,8 +61,34 @@ StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const OrbitIcon = ({ children, ...props }: Props) => {
-  return <StyledIcon {...whiteListProps(props)}>{children}</StyledIcon>;
+const OrbitIcon = (props: Props) => {
+  const {
+    size,
+    color,
+    customColor,
+    className,
+    children,
+    viewBox,
+    dataTest,
+    ariaHidden,
+    reverseOnRtl,
+    ariaLabel,
+  } = props;
+  return (
+    <StyledIcon
+      viewBox={viewBox}
+      size={size}
+      className={className}
+      dataTest={dataTest}
+      customColor={customColor}
+      color={color}
+      ariaHidden={ariaHidden}
+      reverseOnRtl={reverseOnRtl}
+      ariaLabel={ariaLabel}
+    >
+      {children}
+    </StyledIcon>
+  );
 };
 
 OrbitIcon.defaultProps = {

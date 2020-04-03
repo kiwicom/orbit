@@ -5,6 +5,7 @@ export type Props = {|
   type: "appStore" | "googlePlay",
   stopPropagation?: boolean,
   href?: string,
+  alt?: string,
   onClick?: () => void | Promise<any>,
   ...Globals,
 |};

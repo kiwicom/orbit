@@ -30,6 +30,7 @@ const ButtonMobileStore = ({
   href,
   onClick,
   dataTest,
+  alt = "",
   stopPropagation = false,
 }: Props) => {
   const onClickHandler = ev => {
@@ -48,7 +49,7 @@ const ButtonMobileStore = ({
       onClick={onClickHandler}
       data-test={dataTest}
     >
-      <img srcSet={src[type]} height={HEIGHT} alt="" />
+      <img srcSet={src[type]} height={HEIGHT} alt={alt} />
     </StyledButtonMobileStore>
   );
 };

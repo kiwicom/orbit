@@ -222,10 +222,6 @@ const CloseContainer = styled(StyledDiv)`
   margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
 `;
 
-const TitleWrapper = styled.div`
-  display: flex;
-`;
-
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -267,18 +263,16 @@ const Alert = (props: Props) => {
       dataTest={dataTest}
       spaceAfter={spaceAfter}
     >
+      {icon && (
+        <IconContainer type={type} inlineActions={inlineActions}>
+          <StyledIcon type={type} icon={icon} />
+        </IconContainer>
+      )}
       <ContentWrapper title={title} inlineActions={inlineActions}>
         {title && (
-          <TitleWrapper>
-            {icon && (
-              <IconContainer type={type} inlineActions={inlineActions}>
-                <StyledIcon type={type} icon={icon} />
-              </IconContainer>
-            )}
-            <Title type={type} hasChildren={children} inlineActions={inlineActions}>
-              {title}
-            </Title>
-          </TitleWrapper>
+          <Title type={type} hasChildren={children} inlineActions={inlineActions}>
+            {title}
+          </Title>
         )}
         {children && !inlineActions && (
           <Content title={title} type={type}>

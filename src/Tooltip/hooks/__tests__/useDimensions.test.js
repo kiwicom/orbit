@@ -6,7 +6,7 @@ import { act } from "react-dom/test-utils";
 import useDimensions from "../useDimensions";
 import Button from "../../../Button";
 
-const Component = ({ children }) => {
+const Component = ({ children, parent }) => {
   const ref = useRef(null);
   const dimensions = useDimensions(
     { containerRef: ref, tooltip: ref, content: ref },

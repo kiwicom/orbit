@@ -115,6 +115,7 @@ const Tooltip = ({
       {enabled && render && (
         <Portal renderInto="tooltips">
           <TooltipContent
+            parent={children}
             dataTest={dataTest}
             shownMobile={shownMobile}
             shown={shown}

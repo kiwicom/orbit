@@ -112,7 +112,7 @@
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addons": "5.3.18",
     "@storybook/react": "^5.3.18",
-    "@storybook/storybook-deployer": "^2.3.0",
+    "@storybook/storybook-deployer": "^2.8.5",
     "@svgr/core": "^2.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",

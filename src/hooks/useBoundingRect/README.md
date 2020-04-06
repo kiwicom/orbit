@@ -1,6 +1,6 @@
 # useDimensionsRect
 
-`useDimensionsRect` hook is useful when you need to get the return of [`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) and have it up to date when the event `resize` happens on window object.
+The `useDimensionsRect` hook is useful when you need to get a returned value from [`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) and have it update when the `resize` event is fired on the `window` object.
 
 To implement the `useDimensionsRect` hook in your component, add the import:
 
@@ -16,7 +16,7 @@ const Component = (props: Props) => {
 
   console.log(dimensions);
   /*
-    Will return object with merged initial values before re-render:
+    Will return an object with merged initial values before re-render:
     {
         x: 0,
         y: 0,
@@ -29,7 +29,7 @@ const Component = (props: Props) => {
     }
   */
   /*
-    When useEffect run for the first time, it will return you result of getBoundingClientRect function:
+    When useEffect is called for the first time, it will return the result of the getBoundingClientRect function:
     {
         x: 53,
         y: 319,

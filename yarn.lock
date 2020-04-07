@@ -8180,10 +8180,10 @@ jest-snapshot@^25.2.7:
     pretty-format "^25.2.6"
     semver "^6.3.0"
 
-jest-styled-components@^6.2.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-6.3.1.tgz#fa21a89bfe8c20081c7c083cbaed2200854b60e3"
-  integrity sha512-zie3ajvJbwlbHCAq8/Bv5jdbcYCz0ZMRNNX6adL7wSRpkCVPQtiJigv1140JN1ZOJIODPn8VKrjeFCN+jlPa7w==
+jest-styled-components@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-7.0.1.tgz#a4072fbb0d4d0a528ea80fe0a500591670b9f3d2"
+  integrity sha512-/2/aBu6uOqnQQM3lyUA3zwgtLuox9FHwtuEt43sqIY+awOM4eeV9/9VMWbD/r29QXNsbsOdkheagbCL7nZgFvw==
   dependencies:
     css "^2.2.4"
 

@@ -8,22 +8,19 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Hide";
 
-export { Hide, Hide as default };
+type Device =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
 
-declare namespace Hide {
-  type Device =
-    | "largeDesktop"
-    | "desktop"
-    | "tablet"
-    | "largeMobile"
-    | "mediumMobile"
-    | "smallMobile";
-
-  interface Props {
-    readonly children: React.ReactNode;
-    readonly on: Device[];
-    readonly block?: boolean;
-  }
+export interface Props {
+  readonly children: React.ReactNode;
+  readonly on: Device[];
+  readonly block?: boolean;
 }
 
-declare class Hide extends React.Component<Hide.Props> {}
+const Hide: React.FunctionComponent<Props>;
+export { Hide, Hide as default };

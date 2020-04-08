@@ -25,6 +25,12 @@ export type Carrier = {
   type?: "airline" | "bus" | "train" | "ferry" | "private_transfer";
 };
 
+export type DataAttrs = {
+  readonly dataAttrs?: {
+    [key: string]: (string | null | undefined) | (boolean | null | undefined);
+  };
+};
+
 export type Translations = {
   [key: string]: string;
 };

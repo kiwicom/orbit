@@ -8,11 +8,8 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Heading";
 
-
-
 type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
 type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
-
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly element?: Element;

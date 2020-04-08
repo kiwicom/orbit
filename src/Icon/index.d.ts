@@ -9,13 +9,21 @@ import IconBase from "./IconBase";
 
 declare module "@kiwicom/orbit-components/lib/Icon";
 
-export { Icon, Icon as default };
+type Size = "small" | "medium" | "large";
 
-declare namespace Icon {
-  interface Props extends IconBase.Props {
-    readonly children: React.ReactNode;
-    readonly viewBox: string;
-  }
+type Color = "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical";
+
+export interface Props extends Common.Global {
+  readonly size?: Size;
+  readonly color?: Color;
+  readonly className?: string;
+  readonly customColor?: string;
+  readonly children: React.ReactNode;
+  readonly viewBox: string;
+  readonly ariaHidden?: boolean;
+  readonly reverseOnRtl?: boolean;
+  readonly ariaLabel?: string;
 }
 
-declare class Icon extends React.Component<Icon.Props> {}
+const Icon: React.FunctionComponent<Props>;
+export { Icon, Icon as default };

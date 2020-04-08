@@ -11,9 +11,9 @@ declare module "@kiwicom/orbit-components/lib/FormFeedback";
 type Type = "help" | "error";
 
 export interface Props extends Common.Global {
-    readonly children: React.ReactNode;
-    readonly type?: Type;
-  }
+  readonly children: React.ReactNode;
+  readonly type?: Type;
+}
 
-const CarrierLogo: React.FunctionComponent<Props>;
-export { CarrierLogo, CarrierLogo as default };
+const FormFeedback: React.FunctionComponent<Props>;
+export { FormFeedback, FormFeedback as default };

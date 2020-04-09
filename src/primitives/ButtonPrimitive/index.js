@@ -134,14 +134,14 @@ export const StyledButton = styled(
 
     &:active {
       ${!disabled &&
-        css`
-          ${backgroundActive};
-          ${boxShadowActive};
-          color: ${foregroundActive};
-          & ${IconContainer} {
-            color: ${iconColorActive};
-          }
-        `};
+      css`
+        ${backgroundActive};
+        ${boxShadowActive};
+        color: ${foregroundActive};
+        & ${IconContainer} {
+          color: ${iconColorActive};
+        }
+      `};
 
       ${StyledSpinner} {
         width: ${spinner && spinner.width};
@@ -184,15 +184,15 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
       {loading && <Loading type="buttonLoader" />}
       <StyledButtonContent loading={loading}>
         {iconLeft && (
-          <IconContainer {...iconContainer} size={size}>
+          <ButtonPrimitiveIconContainer {...leftIconContainer} size={size}>
             {iconLeft}
-          </IconContainer>
+          </ButtonPrimitiveIconContainer>
         )}
         {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
         {iconRight && (
-          <IconContainer {...iconContainer} size={size} right>
+          <ButtonPrimitiveIconContainer {...rightIconContainer} size={size}>
             {iconRight}
-          </IconContainer>
+          </ButtonPrimitiveIconContainer>
         )}
       </StyledButtonContent>
     </StyledButton>

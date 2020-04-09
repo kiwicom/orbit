@@ -6,6 +6,7 @@ import ButtonPrimitive from "../primitives/ButtonPrimitive";
 import getTypeToken from "./helpers/getTypeToken";
 import { ICON_SIZES } from "../Icon/consts";
 import unitedProps from "./helpers/unitedProps";
+import getIconSize from "../primitives/ButtonPrimitive/common/getIconSize";
 
 import type { Props } from "./index";
 
@@ -27,13 +28,13 @@ const Button = React.forwardRef<Props, HTMLButtonElement>(
     ref,
   ) => {
     const onlyIcon = Boolean(iconLeft && !children);
-    const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
+    const sizeIcon = getIconSize(size);
     const typeToken = React.useCallback(name => getTypeToken(name, type), [type]);
     return (
       <ButtonPrimitive
+        ref={ref}
         asComponent={asComponent}
         width={width}
-        ref={ref}
         fullWidth={fullWidth}
         onlyIcon={onlyIcon}
         iconLeft={iconLeft}

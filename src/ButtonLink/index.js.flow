@@ -23,7 +23,6 @@ export type Props = {|
   +size?: Size,
   +href?: string,
   +width?: number,
-  +icon?: React$Node,
   +iconLeft?: React$Node,
   +iconRight?: React$Node,
   +circled?: boolean,

@@ -43,7 +43,7 @@
     "@babel/core": "^7.8.7",
     "@babel/parser": "^7.9.4",
     "@babel/preset-env": "^7.8.7",
-    "@babel/preset-flow": "^7.8.3",
+    "@babel/preset-flow": "^7.9.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-replace-import-path": "^0.5.0",
     "babylon": "^6.18.0",

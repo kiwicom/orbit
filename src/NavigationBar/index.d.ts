@@ -1,19 +1,18 @@
 // @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
-
 import * as React from "react";
 
 import * as Common from "../common/common.d.ts";
 
-declare module "@kiwicom/orbit-components/lib/Layout";
-
-type Type = "Search" | "Booking" | "MMB";
+declare module "@kiwicom/orbit-components/lib/NavigationBar";
 
 export interface Props extends Common.Global {
-  readonly type: Type;
+  readonly onMenuOpen?: Common.Callback;
+  readonly onShow?: Common.Callback;
+  readonly onHide?: Common.Callback;
   readonly children: React.ReactNode;
 }
 
-const Layout: React.FunctionComponent<Props>;
-export { Layout, Layout as default };
+const NavigationBar: React.FunctionComponent<Props>;
+export { NavigationBar, NavigationBar as default };

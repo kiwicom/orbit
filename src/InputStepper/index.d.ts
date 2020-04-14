@@ -31,8 +31,8 @@ export interface SharedProps extends Common.Global, Common.Ref, Common.SpaceAfte
 }
 
 export interface Props extends SharedProps {
-  readonly defaultValue?: number,
-  readonly onChange?: number => void | Promise<any>,
+  readonly defaultValue?: number;
+  readonly onChange?: number => void | Promise<any>;
 }
 
 

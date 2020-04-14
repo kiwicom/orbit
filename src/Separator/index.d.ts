@@ -8,10 +8,7 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Separator";
 
+type Props = Common.SpaceAfter;
+
+const Separator: React.FunctionComponent<Props>;
 export { Separator, Separator as default };
-
-declare namespace Separator {
-  type Props = Common.SpaceAfter;
-}
-
-declare class Separator extends React.Component<Separator.Props> {}

@@ -8,7 +8,7 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Badge";
 
-type Type =
+export type Type =
   | "neutral"
   | "dark"
   | "info"

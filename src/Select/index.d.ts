@@ -8,34 +8,34 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Select";
 
-export { Select, Select as default };
+// InputEvent
+type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
 
-declare namespace Select {
-  // InputEvent
-  type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
-
-  interface Option {
-    readonly value: string | number;
-    readonly label?: string;
-    readonly disabled?: boolean;
-  }
-
-  interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
-    readonly size?: Common.InputSize;
-    readonly label?: Common.Translation;
-    readonly placeholder?: Common.Translation;
-    readonly value?: string | number;
-    readonly disabled?: boolean;
-    readonly name?: string;
-    readonly error?: React.ReactNode;
-    readonly help?: React.ReactNode;
-    readonly tabIndex?: string;
-    readonly onChange?: Event;
-    readonly onFocus?: Event;
-    readonly onBlur?: Event;
-    readonly options: Option[];
-    readonly prefix?: React.ReactNode;
-  }
+interface Option {
+  readonly value: string | number;
+  readonly label?: string;
+  readonly disabled?: boolean;
 }
 
-declare class Select extends React.Component<Select.Props> {}
+export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Common.DataAttrs {
+  readonly id?: string;
+  readonly required?: boolean;
+  readonly size?: Common.InputSize;
+  readonly label?: Common.Translation;
+  readonly placeholder?: Common.Translation;
+  readonly value?: string | number;
+  readonly disabled?: boolean;
+  readonly name?: string;
+  readonly error?: React.ReactNode;
+  readonly help?: React.ReactNode;
+  readonly tabIndex?: string;
+  readonly onChange?: Event;
+  readonly onFocus?: Event;
+  readonly onBlur?: Event;
+  readonly options: Option[];
+  readonly prefix?: React.ReactNode;
+  readonly customValueText?: Common.Translation;
+}
+
+const Select: React.forwardRef<Props, HTMLInputElement>;
+export { Select, Select as default };

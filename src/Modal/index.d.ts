@@ -3,40 +3,38 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import ModalHeaderType from "@kiwicom/orbit-components/lib/Modal/ModalHeader";
-import ModalSectionType from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 
+import { ModalHeaderType } from "./ModalHeader/index.d.ts";
+import { ModalSectionType, ModalFooterType } from "./ModalSection/index.d.ts";
 import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Modal";
 
-export { Modal, Modal as default, ModalHeader, ModalSection };
-
-declare namespace Modal {
-  interface Props extends Common.Global {
-    readonly size?: Common.Size;
-    readonly children: React.ReactNode;
-    readonly onClose?: Common.Event<
-      | React.KeyboardEvent<HTMLDivElement>
-      | React.SyntheticEvent<HTMLButtonElement>
-      | React.MouseEvent
-    >;
-    readonly fixedFooter?: boolean;
-    readonly isMobileFullPage?: boolean;
-  }
-
-  interface State {
-    scrolled: boolean;
-    loaded: boolean;
-    fixedClose: boolean;
-    fullyScrolled: boolean;
-    modalWidth: number;
-    footerHeight: number;
-    hasModalSection: boolean;
-  }
+export interface Props extends Common.Global {
+  readonly size?: Common.Size;
+  readonly children: React.ReactNode;
+  readonly onClose?: Common.Event<
+    React.KeyboardEvent<HTMLDivElement> | React.SyntheticEvent<HTMLButtonElement> | React.MouseEvent
+  >;
+  readonly fixedFooter?: boolean;
+  readonly isMobileFullPage?: boolean;
+  readonly preventOverlayClose?: boolean;
 }
 
-declare class Modal extends React.Component<Modal.Props> {}
+export interface State {
+  scrolled: boolean;
+  loaded: boolean;
+  fixedClose: boolean;
+  fullyScrolled: boolean;
+  modalWidth: number;
+  footerHeight: number;
+  hasModalSection: boolean;
+}
 
-declare let ModalHeader: ModalHeaderType;
-declare let ModalSection: ModalSectionType;
+declare class Modal extends React.Component<Props, State> {}
+
+declare const ModalHeader: ModalHeaderType;
+declare const ModalSection: ModalSectionType;
+declare const ModalFooter: ModalFooterType;
+
+export { Modal, Modal as default, ModalHeader, ModalSection, ModalFooter };

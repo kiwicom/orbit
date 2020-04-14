@@ -5,16 +5,17 @@
 import * as React from "react";
 
 import * as Common from "../common/common.d.ts";
-import { Type } from "../Badge/index.d.ts";
 
-declare module "@kiwicom/orbit-components/lib/NotificationBadge";
+declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
 
 export interface Props extends Common.Global {
   readonly children?: React.ReactNode;
-  readonly type?: Type;
   readonly icon?: React.ReactNode;
   readonly ariaLabel?: string;
+  readonly background?: string | undefined | null;
+  readonly foregroundColor?: string | undefined | null;
+  readonly borderColor?: string | undefined | null;
 }
 
-const NotificationBadge: React.FunctionComponent<Props>;
-export { NotificationBadge, NotificationBadge as default };
+const BadgePrimitive: React.FunctionComponent<Props>;
+export { BadgePrimitive, BadgePrimitive as default };

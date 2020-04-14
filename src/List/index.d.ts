@@ -8,16 +8,13 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/List";
 
-export { List, List as default };
+type Type = "primary" | "secondary" | "separated";
 
-declare namespace List {
-  type Type = "primary" | "secondary";
-
-  interface Props extends Common.Global, Common.SpaceAfter {
-    readonly children: React.ReactNode;
-    readonly size?: Common.Size;
-    readonly type?: Type;
-  }
+interface Props extends Common.Global, Common.SpaceAfter {
+  readonly children: React.ReactNode;
+  readonly size?: Common.Size;
+  readonly type?: Type;
 }
 
-declare class List extends React.Component<List.Props> {}
+const List: React.FunctionComponent<Props>;
+export { List, List as default };

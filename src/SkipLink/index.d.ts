@@ -8,19 +8,16 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/SkipLink";
 
-export { SkipLink, SkipLink as default };
-
-declare namespace SkipLink {
-  interface Action {
-    readonly name: string;
-    readonly href?: string;
-    readonly onClick?: () => {};
-  }
-
-  interface Props {
-    readonly links: Action[];
-    readonly description?: string;
-  }
+interface Action {
+  readonly name: string;
+  readonly href?: string;
+  readonly onClick?: () => {};
 }
 
-declare class SkipLink extends React.Component<SkipLink.Props> {}
+interface Props {
+  readonly links: Action[];
+  readonly description?: string;
+}
+
+const SkipLink: React.FunctionComponent<Props>;
+export { SkipLink, SkipLink as default };

@@ -8,19 +8,16 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/SkipNavigation";
 
-export { SkipNavigation, SkipNavigation as default };
-
-declare namespace SkipNavigation {
-  interface Action {
-    readonly name?: string;
-    readonly link?: string;
-    readonly onClick?: () => {};
-  }
-
-  interface Props {
-    readonly actions?: Action[];
-    readonly feedbackUrl?: string;
-  }
+interface Action {
+  readonly name?: string;
+  readonly link?: string;
+  readonly onClick?: () => {};
 }
 
-declare class SkipNavigation extends React.Component<SkipNavigation.Props> {}
+interface Props {
+  readonly actions?: Action[];
+  readonly feedbackUrl?: string;
+}
+
+const SkipNavigation: React.FunctionComponent<Props>;
+export { SkipNavigation, SkipNavigation as default };

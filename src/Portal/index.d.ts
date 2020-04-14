@@ -8,13 +8,10 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Portal";
 
-export { Portal, Portal as default };
-
-declare namespace Portal {
-  interface Props {
-    readonly element?: string;
-    readonly children: React.ReactNode;
-  }
+export interface Props {
+  readonly renderInto?: string;
+  readonly children: React.ReactNode;
 }
 
-declare class Portal extends React.Component<Portal.Props> {}
+const Portal: React.FunctionComponent<Props>;
+export { Portal, Portal as default };

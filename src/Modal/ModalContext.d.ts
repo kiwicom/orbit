@@ -3,30 +3,27 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import ModalHeaderType from "@kiwicom/orbit-components/lib/Modal/ModalHeader";
-import ModalSectionType from "@kiwicom/orbit-components/lib/Modal/ModalSection";
-
-import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Modal";
 
-export { ModalContext, ModalContextType, withModalContext, WithModalContextType };
-
-declare namespace ModalContext {
-  interface Props {
-    setDimensions?: () => void;
-    decideFixedFooter?: () => void;
-    setHasModalSection?: () => void;
-    removeHasModalSection?: () => void;
-    manageFocus?: () => void;
-    hasModalSection?: boolean;
-    isMobileFullPage?: boolean;
-  }
+export interface Props {
+  readonly setDimensions?: () => void;
+  readonly decideFixedFooter?: () => void;
+  readonly setHasModalSection?: () => void;
+  readonly removeHasModalSection?: () => void;
+  readonly manageFocus?: () => void;
+  readonly hasModalSection?: boolean;
+  readonly isMobileFullPage?: boolean;
+  readonly isInsideModal?: boolean;
+  readonly closable?: boolean;
 }
 
-type ModalContextType = React.Context<ModalContext.Props>;
+export type ModalContextType = React.Context<Props>;
 
-type WithModalContextType = (component: React.Component<infer U>) => (props: Partial<U>) => any;
+export type WithModalContextType = (
+  component: React.Component<infer U>,
+) => (props: Partial<U>) => any;
 
-declare let ModalContext: ModalContextType;
-declare let withModalContext: WithModalContextType;
+const ModalContext: ModalContextType;
+const withModalContext: WithModalContextType;
+export { ModalContext, ModalContextType, withModalContext, WithModalContextType };

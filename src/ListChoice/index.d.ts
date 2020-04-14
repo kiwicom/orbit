@@ -8,19 +8,16 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/ListChoice";
 
-export { ListChoice, ListChoice as default };
-
-declare namespace ListChoice {
-  interface Props extends Common.Global {
-    readonly title: Common.Translation;
-    readonly description?: Common.Translation;
-    readonly selectable?: boolean;
-    readonly selected?: boolean;
-    readonly icon: React.ReactNode;
-    readonly onClick?: Common.Event<
-      React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
-    >;
-  }
+export interface Props extends Common.Global {
+  readonly title: Common.Translation;
+  readonly description?: Common.Translation;
+  readonly selectable?: boolean;
+  readonly selected?: boolean;
+  readonly icon: React.ReactNode;
+  readonly onClick?: Common.Event<
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
+  >;
 }
 
-declare class ListChoice extends React.Component<ListChoice.Props> {}
+const ListChoice: React.FunctionComponent<Props>;
+export { ListChoice, ListChoice as default };

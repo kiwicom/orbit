@@ -8,18 +8,15 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/RatingStars";
 
-export { RatingStars, RatingStars as default };
+type Size = "small" | "medium" | "large";
+type Color = "primary" | "secondary";
 
-declare namespace RatingStars {
-  type Size = "small" | "medium" | "large";
-  type Color = "attention" | "primary" | "secondary";
-
-  interface Props extends Common.Global {
-    readonly rating: number;
-    readonly size?: Size;
-    readonly color?: Color;
-    readonly showEmpty?: boolean;
-  }
+interface Props extends Common.Global {
+  readonly rating: number;
+  readonly size?: Size;
+  readonly color?: Color;
+  readonly showEmpty?: boolean;
 }
 
-declare class RatingStars extends React.Component<RatingStars.Props> {}
+const RatingStars: React.FunctionComponent<Props>;
+export { RatingStars, RatingStars as default };

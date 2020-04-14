@@ -5,18 +5,15 @@
 import * as React from "react";
 
 import * as Common from "../common/common.d.ts";
+import { Spacing } from "../Stack/index.d.ts";
 
-declare module "@kiwicom/orbit-components/lib/LazyImage";
+declare module "@kiwicom/orbit-components/lib/LinkList";
 
-interface Image {
-  jpg: string;
-  webp: string;
-}
-
-export interface Props {
-  readonly placeholder?: Image;
-  readonly original: Image;
-  readonly name: Common.Translation;
+export interface Props extends Common.Global {
+  readonly direction?: "column" | "row";
+  readonly indent?: boolean;
+  readonly spacing?: Spacing;
+  readonly children: React.ReactNode;
 }
 
 const LazyImage: React.FunctionComponent<Props>;

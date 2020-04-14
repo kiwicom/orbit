@@ -8,21 +8,23 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Popover";
 
-export { Popover, Popover as default };
+type Position = "top" | "bottom";
+type Aligns = "start" | "end" | "center";
 
-declare namespace Popover {
-  type Position = "top" | "bottom";
-
-  interface Props extends Common.Global {
-    readonly children: React.ReactNode;
-    readonly content: React.ReactNode;
-    readonly preferredPosition?: Position;
-    readonly opened?: boolean;
-    readonly width?: string;
-    readonly noPadding?: boolean;
-    readonly onOpen?: Common.Callback;
-    readonly onClose?: Common.Callback;
-  }
+export interface Props extends Common.Global {
+  readonly children: React.ReactNode;
+  readonly content: React.ReactNode;
+  readonly preferredPosition?: Position;
+  readonly preferredAlign?: Aligns;
+  readonly opened?: boolean;
+  readonly width?: string;
+  readonly noPadding?: boolean;
+  readonly overlapped?: boolean;
+  readonly fixed?: boolean;
+  readonly actions?: React.ReactNode;
+  readonly onOpen?: Common.Callback;
+  readonly onClose?: Common.Callback;
 }
 
 declare class Popover extends React.Component<Popover.Props> {}
+export { Popover, Popover as default };

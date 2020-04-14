@@ -8,17 +8,14 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Loading";
 
-export { Loading, Loading as default };
+type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
-declare namespace Loading {
-  type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
-
-  interface Props extends Common.Global {
-    readonly children?: React.ReactNode;
-    readonly loading?: boolean;
-    readonly type?: Type;
-    readonly text?: Common.Translation;
-  }
+interface Props extends Common.Global {
+  readonly children?: React.ReactNode;
+  readonly loading?: boolean;
+  readonly type?: Type;
+  readonly text?: Common.Translation;
 }
 
-declare class Loading extends React.Component<Loading.Props> {}
+const Loading: React.FunctionComponent<Props>;
+export { Loading, Loading as default };

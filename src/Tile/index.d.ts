@@ -8,26 +8,21 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Tile";
 
-export { Tile, Tile as default };
-
-declare namespace Tile {
-  interface Props {
-    readonly title?: React.ReactNode;
-    readonly description?: React.ReactNode;
-    readonly icon?: React.ReactNode;
-    readonly children?: React.ReactNode;
-    readonly external?: boolean;
-    readonly href?: string;
-    readonly onClick?: Common.Event<
-      React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
-    >;
-    readonly expanded?: boolean;
-  }
-
-  interface State {
-    expanded?: boolean;
-    initialExpanded?: boolean;
-  }
+interface Props extends Common.Global {
+  readonly title?: React.ReactNode;
+  readonly description?: React.ReactNode;
+  readonly icon?: React.ReactNode;
+  readonly header?: React.ReactNode;
+  readonly children?: React.ReactNode;
+  readonly external?: boolean;
+  readonly href?: string;
+  readonly onClick?: Common.Event<
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
+  >;
+  readonly expandable?: boolean;
+  readonly initialExpanded?: boolean;
+  readonly noPadding?: boolean;
 }
 
-declare class Tile extends React.Component<Tile.Props> {}
+const Tile: React.FunctionComponent<Props>;
+export { Tile, Tile as default };

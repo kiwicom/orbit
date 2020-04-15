@@ -18,12 +18,7 @@ export interface Props {
   readonly closable?: boolean;
 }
 
-export type ModalContextType = React.Context<Props>;
+const ModalContext: React.Context<Props>;
+const withModalContext: (component: React.Component<infer U>) => (props: Partial<U>) => any;
 
-export type WithModalContextType = (
-  component: React.Component<infer U>,
-) => (props: Partial<U>) => any;
-
-const ModalContext: ModalContextType;
-const withModalContext: WithModalContextType;
-export { ModalContext, ModalContextType, withModalContext, WithModalContextType };
+export { ModalContext, withModalContext };

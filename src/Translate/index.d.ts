@@ -4,21 +4,16 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
-
 declare module "@kiwicom/orbit-components/lib/Translate";
 
-export { Translate, Translate as default };
-
-declare namespace Translate {
-  interface Values {
-    [key: string]: string | number;
-  }
-
-  interface Props {
-    readonly tKey: string;
-    readonly values?: Values;
-  }
+interface Values {
+  [key: string]: string | number;
 }
 
-declare class Translate extends React.Component<Translate.Props> {}
+interface Props {
+  readonly tKey: string;
+  readonly values?: Values;
+}
+
+const Translate: React.FunctionComponent<Props>;
+export { Translate, Translate as default };

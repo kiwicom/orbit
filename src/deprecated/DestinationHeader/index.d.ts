@@ -4,18 +4,14 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/DestinationHeader";
 
-export { DestinationHeader, DestinationHeader as default };
-
-declare namespace DestinationHeader {
-  interface Props extends Common.Global {
-    readonly destinationName: Common.Translation;
-    readonly image: string;
-    readonly goBack?: Common.Callback;
-  }
+interface Props extends Common.Global {
+  readonly destinationName: Common.Translation;
+  readonly image: string;
+  readonly goBack?: Common.Callback;
 }
-
-declare class DestinationHeader extends React.Component<DestinationHeader.Props> {}
+const DestinationHeader: React.FunctionComponent<Props>;
+export { DestinationHeader, DestinationHeader as default };

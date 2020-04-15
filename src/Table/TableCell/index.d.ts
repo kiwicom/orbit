@@ -2,19 +2,15 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-import * as Common from "../common/common.d.ts";
+import SharedProps from "../index.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Table/TableCell";
 
-export { TableCell, TableCell as default };
+type Align = "left" | "center" | "right";
 
-declare namespace TableCell {
-  type Align = "left" | "center" | "right";
-
-  interface Props {
-    readonly children?: React.ReactNode;
-    readonly align?: Align;
-  }
+interface Props extends SharedProps {
+  readonly align?: Align;
 }
 
-declare class TableCell extends React.Component<TableCell.Props> {}
+const TableCell: React.FunctionComponent<Props>;
+export { TableCell, TableCell as default };

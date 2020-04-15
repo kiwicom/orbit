@@ -12,6 +12,6 @@ export interface Props extends Common.Global, ModalContextProps {
   readonly type: "Search" | "Booking" | "MMB";
   readonly children: React.ReactNode;
 }
-
+// eslint-disable-next-line react/prefer-stateless-function
 declare class ModalFooter extends React.Component<Props> {}
 export { ModalFooter, ModalFooter as default };

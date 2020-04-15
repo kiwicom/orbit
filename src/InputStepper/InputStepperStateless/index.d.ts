@@ -4,11 +4,13 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../../common/common.d.ts";
 import { SharedProps, Event } from "../index.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/InputStepperStateless";
-export type ButtonEvent = Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+export type ButtonEvent = Common.Event<
+  React.SyntheticEvent<HTMLButtonElement> | React.SyntheticKeyboardEvent<HTMLButtonElement>
+>;
 
 interface Props extends SharedProps {
   readonly value: number | string | (() => string | number);
@@ -16,12 +18,8 @@ interface Props extends SharedProps {
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: Event;
-  readonly onDecrement?: (
-    ev: React.SyntheticEvent<HTMLButtonElement> | React.SyntheticKeyboardEvent<HTMLButtonElement>;
-  ) => void | Promise<void>;
-  readonly onIncrement?: (
-    ev: React.SyntheticEvent<HTMLButtonElement> | React.SyntheticKeyboardEvent<HTMLButtonElement>;
-  ) => void | Promise<void>;
+  readonly onDecrement?: ButtonEvent;
+  readonly onIncrement?: ButtonEvent;
   readonly onChange?: Event;
 }
 

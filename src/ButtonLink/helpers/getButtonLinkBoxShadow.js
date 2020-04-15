@@ -22,11 +22,11 @@ const getButtonLinkBoxShadow: GetButtonLinkBoxShadow = state => ({
   if (state === BUTTON_STATES.FOCUS) {
     return css`
       ${!transparent &&
-        css`
-          &:active {
-            box-shadow: inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkNormal, 8)};
-          }
-        `};
+      css`
+        &:active {
+          box-shadow: inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkNormal, 8)};
+        }
+      `};
     `;
   }
   return null;

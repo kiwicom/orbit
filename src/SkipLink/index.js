@@ -11,8 +11,8 @@ const StyledNavigation = styled.nav``;
 
 const StyledLink = styled.a`
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -46,8 +46,8 @@ const StyledDescription = styled.p`
   background-color: red;
   visibility: none;
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   padding: 0;
   margin: -1px;
   overflow: hidden;

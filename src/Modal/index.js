@@ -138,11 +138,13 @@ const CloseContainer = styled.div`
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+  pointer-events: none;
 
 
   ${media.largeMobile(css`
     top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
     right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
+    border-radius: 0;
   `)};
 
   & + ${StyledModalSection}:first-of-type {
@@ -152,6 +154,7 @@ const CloseContainer = styled.div`
   }
 
   ${StyledButtonLink} {
+    pointer-events: auto;
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
     & svg {
@@ -195,8 +198,10 @@ const ModalWrapperContent = styled.div`
           );
         `};
   bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
-    `${(!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
-      (fixedFooter && !!footerHeight ? footerHeight : 0)}px`};
+    `${
+      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (fixedFooter && !!footerHeight ? footerHeight : 0)
+    }px`};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
   overflow-y: auto;
   overflow-x: hidden;
@@ -584,6 +589,12 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
+  callContextFunctions = () => {
+    if (this.setDimensions) this.setDimensions();
+    if (this.decideFixedFooter) this.decideFixedFooter();
+    if (this.manageFocus) this.manageFocus();
+  };
+
   render() {
     const {
       onClose,
@@ -650,11 +661,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             )}
             <ModalContext.Provider
               value={{
-                setDimensions: this.setDimensions,
-                decideFixedFooter: this.decideFixedFooter,
                 setHasModalSection: this.setHasModalSection,
                 removeHasModalSection: this.removeHasModalSection,
-                manageFocus: this.manageFocus,
+                callContextFunctions: this.callContextFunctions,
                 hasModalSection,
                 isMobileFullPage,
                 closable: !!onClose,

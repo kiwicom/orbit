@@ -48,6 +48,7 @@ Table below contains all types of the props available for object in Option array
 | :-------- | :----------------- | :-------------------------------------- |
 | **value** | `string \| number` | The value of the Option.                |
 | label     | `string`           | The label for the Option.               |
+| key       | `string`           | The key of the Option.                  |
 | disabled  | `boolean`          | If `true`, the Option will be disabled. |
 
 ### enum

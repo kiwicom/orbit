@@ -2,11 +2,9 @@
 import * as React from "react";
 
 export type ModalContextProps = {|
-  +setDimensions?: () => void,
-  +decideFixedFooter?: () => void,
   +setHasModalSection?: () => void,
   +removeHasModalSection?: () => void,
-  +manageFocus?: () => void,
+  +callContextFunctions?: () => void,
   +hasModalSection?: boolean,
   +isMobileFullPage?: boolean,
   +isInsideModal?: boolean,

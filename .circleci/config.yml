@@ -40,10 +40,6 @@ jobs:
           name: Tests
           command: yarn test --ci --maxWorkers=2
 
-      - run:
-          name: Prettier test
-          command: yarn prettier:test
-
   deploy:
     docker:
       - image: circleci/node:10

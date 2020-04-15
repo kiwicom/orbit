@@ -23,6 +23,7 @@ import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
 import useDimensions from "../hooks/useDimensions";
 import type { Props } from "./TooltipContent";
 import transition from "../../utils/transition";
+import FOCUSABLE_ELEMENT_SELECTORS from "../../hooks/useFocusTrap/consts";
 
 const StyledTooltip = styled.div`
   width: 100%;
@@ -189,6 +190,7 @@ const TooltipContent = ({
   preferredPosition,
   preferredAlign,
   containerRef,
+  parent,
 }: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
@@ -198,7 +200,7 @@ const TooltipContent = ({
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
-  const dimensions = useDimensions({ containerRef, tooltip, content }, children);
+  const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,
@@ -216,6 +218,18 @@ const TooltipContent = ({
       }
     },
     [onCloseMobile],
+  );
+  const handleInnerClick = useCallback(
+    ev => {
+      if (tooltip.current) {
+        const focusableElements = tooltip.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
+        if (Object.values(focusableElements).some(v => v === ev.target)) {
+          onClose();
+          onCloseMobile();
+        }
+      }
+    },
+    [onClose, onCloseMobile],
   );
   return (
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
@@ -238,6 +252,7 @@ const TooltipContent = ({
         aria-hidden={!shown && !shownMobile}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
+        onClick={handleInnerClick}
       >
         <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
         <StyledTooltipClose>

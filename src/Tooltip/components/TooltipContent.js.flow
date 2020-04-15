@@ -8,6 +8,7 @@ export type Props = {|
   size: Sizes,
   tooltipId: ?string,
   children: React$Node,
+  parent: ?React$Node,
   onClose: () => void,
   onCloseMobile: () => void,
   onEnter: () => void,

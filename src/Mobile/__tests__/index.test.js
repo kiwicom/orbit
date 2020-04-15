@@ -6,7 +6,6 @@ import { mount } from "enzyme";
 import { getBreakpointWidth } from "../../utils/mediaQuery/index";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import theme from "../../defaultTheme";
-
 import Mobile from "..";
 
 describe("Mobile", () => {

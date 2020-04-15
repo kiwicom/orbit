@@ -21,12 +21,7 @@ describe("Heading in H2, type Title1, not inverted", () => {
     </Heading>,
   );
   it("should contain children", () => {
-    expect(
-      component
-        .find("Heading__StyledHeading")
-        .render()
-        .text(),
-    ).toBe(children);
+    expect(component.find("Heading__StyledHeading").render().text()).toBe(children);
   });
   it("should have passed props", () => {
     expect(component.prop("type")).toBe(type);

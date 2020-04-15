@@ -47,23 +47,13 @@ describe(`InputFile with help`, () => {
   const closeButton = component.find("InputFile__CloseButton");
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);
   });
   it("should have passed props", () => {
-    expect(
-      component
-        .find("InputFile__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(component.find("InputFile__Input").render().prop("attribs").name).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
@@ -113,11 +103,6 @@ describe(`InputFiInputFile with error`, () => {
   });
 
   it("should has data-state error", () => {
-    expect(
-      component
-        .find("InputFile__Input")
-        .render()
-        .prop("data-state"),
-    ).toBe("error");
+    expect(component.find("InputFile__Input").render().prop("data-state")).toBe("error");
   });
 });

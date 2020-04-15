@@ -30,13 +30,52 @@ const names = files.map(inputFileName => {
 const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
-function getViewBox(attributes) {
+function getHTMLComments(content) {
+  return Object.assign(
+    {},
+    ...content.match(/<!--([\s\S]*?)-->/gm).map(item => {
+      // remove HTML comments and split by colon
+      const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+      // one icon has color as character
+      const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+      return { [items[0]]: value };
+    }),
+  );
+}
+
+function getProperty(attributes, name, defaultValue = null) {
   for (let i = attributes.length - 1; i >= 0; i -= 1) {
-    if (attributes[i].name === "viewBox") {
+    if (attributes[i].name === name) {
       return attributes[i].value;
     }
   }
-  return "0 0 24 24";
+  return defaultValue;
+}
+function getViewBox(attributes) {
+  return getProperty(attributes, "viewBox", "0 0 24 24");
+}
+
+function findFillAttributes(dom, content, name) {
+  const comments = getHTMLComments(dom.serialize());
+  // only check icons that don't have replacement for icon font
+  if (comments && comments.iconFont !== "false" && comments.customColor == null) {
+    const prohibitedAttributes = ["fill", "fill-rule"];
+    const phrase = attrName =>
+      `${attrName} attribute find on ${name} SVG icon. Please delete the ${attrName} or redraw the icon. Otherwise the icon font will be broken.`;
+
+    const findAttrAndThrowErr = node => {
+      prohibitedAttributes.forEach(n => {
+        if (getProperty(node.attributes, n)) {
+          console.error(phrase(n));
+          process.exit(1);
+        }
+      });
+    };
+    // For the main DOM element
+    findAttrAndThrowErr(content);
+    // for all the children - paths
+    Object.values(content.children).forEach(node => findAttrAndThrowErr(node));
+  }
 }
 
 const template = (code, config, state) => `
@@ -45,12 +84,13 @@ const template = (code, config, state) => `
     import * as React from "react";
     import OrbitIcon from "../Icon";
     import type { Props } from "./${state.componentName}.js.flow";
+    import whiteListProps from "../Icon/helpers/whiteListProps";
 
     export default function ${state.componentName}(props: Props) {
       return (
         ${code.replace(
           /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" size={props.size} color={props.color} customColor={props.customColor} className={props.className} dataTest={props.dataTest} ariaHidden={props.ariaHidden} reverseOnRtl={props.reverseOnRtl} ariaLabel={props.ariaLabel}>$2</OrbitIcon>`,
+          `<OrbitIcon viewBox="$1" {...whiteListProps(props)}>$2</OrbitIcon>`,
         )}
       );
     };`;
@@ -75,6 +115,7 @@ declare export default React$ComponentType<Props>;
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const content = dom.window.document.querySelector("svg");
+  findFillAttributes(dom, content, inputFileName);
   svgr(
     content.outerHTML,
     { svgAttributes: { viewBox: getViewBox(content.attributes) }, template },
@@ -113,18 +154,11 @@ Promise.all(
         fs.readFile(inputFileName, "utf8", (err, content) => {
           if (err) reject();
           // only get the HTML comments
-          const comments = content.match(/<!--([\s\S]*?)-->/gm).map(item => {
-            // remove HTML comments and split by colon
-            const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
-            // one icon has color as character
-            const value = items[1] === "" && items[2] === "" ? ":" : items[1];
-            return { [items[0]]: value };
-          });
-          const commentsObject = Object.assign({}, ...comments);
+          const comments = getHTMLComments(content);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;
-          resolve({ [baseName]: { ...commentsObject, svg, url } });
+          resolve({ [baseName]: { ...comments, svg, url } });
         });
       }),
   ),

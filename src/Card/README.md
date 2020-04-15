@@ -30,6 +30,7 @@ Table below contains all types of the props available in the Card component.
 | onClose     | `() => void \| Promise` |         | Callback that is triggered when Card is closing                                                                                                 |
 | spaceAfter  | `enum`                  |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 | title       | `React.Node`            |         | The title of the Card                                                                                                                           |
+| titleAs     | [`enum`](#enum)         | `"h2"`  | The element used for the root node of the title of Card.                                                                                        |
 
 ### CardSection
 
@@ -62,3 +63,16 @@ import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 | onClose         | `() => void \| Promise` |         | Callback that is triggered when section is closing                                                                                                         |
 | onExpand        | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                                       |
 | title           | `React.Node`            |         | The title of the CardSection                                                                                                                               |
+| titleAs         | [`enum`](#enum)         | `"h2"`  | The element used for the root node of the title of CardSection.                                                                                            |
+
+### enum
+
+| titleAs |
+| :------ |
+| `"h1"`  |
+| `"h2"`  |
+| `"h3"`  |
+| `"h4"`  |
+| `"h5"`  |
+| `"h6"`  |
+| `"div"` |

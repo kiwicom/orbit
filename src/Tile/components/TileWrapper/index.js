@@ -47,6 +47,7 @@ const TileWrapper = ({
   ariaExpanded,
   ariaControls,
   id,
+  htmlTitle,
 }: Props) => (
   <StyledTileWrapper
     target={href && external ? "_blank" : undefined}
@@ -61,6 +62,7 @@ const TileWrapper = ({
     ariaExpanded={ariaExpanded}
     ariaControls={ariaControls}
     id={id}
+    title={htmlTitle}
   >
     {children}
   </StyledTileWrapper>

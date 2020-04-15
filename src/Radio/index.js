@@ -13,21 +13,35 @@ import media from "../utils/mediaQuery/index";
 import type { Props } from "./index";
 
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
+  if (disabled) {
+    return theme.orbit.paletteInkLighter;
+  }
+  if (checked) {
+    return theme.orbit.paletteBlueNormal;
+  }
   if (hasError && !disabled && !checked) {
     return theme.orbit.borderColorCheckboxRadioError;
   }
-  if (!hasError && !disabled && checked) {
-    return theme.orbit.paletteBlueNormal;
-  }
+
   return theme.orbit.borderColorCheckboxRadio;
+};
+
+const getBackground = () => ({ theme, disabled, checked }) => {
+  if (disabled && checked) {
+    return theme.orbit.paletteInkLighter;
+  }
+  if (disabled && !checked) {
+    return theme.orbit.paletteCloudNormal;
+  }
+  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
 };
 
 const Glyph = styled.span`
   visibility: hidden;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorIconCheckboxRadioDisabled : theme.orbit.paletteBlueNormal};
+    disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhite};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
   flex-shrink: 0;
 `;
@@ -43,7 +57,7 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.orbit.backgroundInput};
+  background-color: ${getBackground()};
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
@@ -116,7 +130,7 @@ const Input = styled.input`
       `2px ${theme.orbit.borderStyleInput} ${
         hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
-    box-shadow: 0px 0px 0px 3px
+    box-shadow: 0 0 0 3px
       ${({ theme, hasError }) =>
         convertHexToRgba(
           hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
@@ -150,13 +164,12 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   }
 
   &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      !disabled && theme.orbit.borderColorCheckboxRadioHover};
+    border-color: ${({ disabled, theme }) => !disabled && theme.orbit.paletteBlueLightActive};
   }
 
   &:active ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
-      disabled ? getBorderColor() : theme.orbit.borderColorCheckboxRadioActive};
+      disabled ? getBorderColor() : theme.orbit.paletteBlueNormal};
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
@@ -205,7 +218,7 @@ const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
       />
       {cloneWithTooltip(
         tooltip,
-        <IconContainer>
+        <IconContainer disabled={disabled} checked={checked}>
           <Glyph disabled={disabled} />
         </IconContainer>,
       )}

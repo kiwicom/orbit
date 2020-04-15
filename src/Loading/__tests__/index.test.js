@@ -11,12 +11,7 @@ describe("Loading", () => {
     const type = TYPE_OPTIONS.BOX_LOADER;
     const component = shallow(<Loading type={type} />);
     const loader = component.find("Loading__StyledLoader");
-    expect(
-      component
-        .find("Loading__StyledLoader")
-        .childAt(0)
-        .parent(),
-    ).toEqual(loader);
+    expect(component.find("Loading__StyledLoader").childAt(0).parent()).toEqual(loader);
   });
   it("should render type with text", () => {
     const text = "Test test";
@@ -24,12 +19,7 @@ describe("Loading", () => {
     const component = shallow(<Loading type={type} text={text} />);
     const loader = component.find("Loading__StyledLoader");
     const loadingText = component.find("Loading__StyledLoadingText").render();
-    expect(
-      component
-        .find("Loading__StyledLoader")
-        .childAt(0)
-        .parent(),
-    ).toEqual(loader);
+    expect(component.find("Loading__StyledLoader").childAt(0).parent()).toEqual(loader);
     expect(loadingText.text()).toBe(text);
   });
 

@@ -122,7 +122,7 @@ const StyledClose = styled.div`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0 0px 2px ${({ theme }) => theme.orbit.paletteBlueDarker};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.orbit.paletteBlueDarker};
   }
 `;
 StyledClose.defaultProps = {

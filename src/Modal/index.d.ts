@@ -5,7 +5,8 @@
 import * as React from "react";
 
 import { ModalHeaderType } from "./ModalHeader/index.d.ts";
-import { ModalSectionType, ModalFooterType } from "./ModalSection/index.d.ts";
+import { ModalSectionType } from "./ModalSection/index.d.ts";
+import { ModalFooterType } from "./ModalFooter/index.d.ts";
 import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Modal";
@@ -30,7 +31,7 @@ export interface State {
   footerHeight: number;
   hasModalSection: boolean;
 }
-
+// eslint-disable-next-line react/prefer-stateless-function
 declare class Modal extends React.Component<Props, State> {}
 
 declare const ModalHeader: ModalHeaderType;

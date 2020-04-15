@@ -32,9 +32,8 @@ export interface SharedProps extends Common.Global, Common.Ref, Common.SpaceAfte
 
 export interface Props extends SharedProps {
   readonly defaultValue?: number;
-  readonly onChange?: number => void | Promise<any>;
+  readonly onChange?: (number) => void | Promise<void>;
 }
-
 
 const InputStepper: React.FunctionComponent<Props>;
 export { InputStepper, InputStepper as default };

@@ -21,7 +21,7 @@ export interface Props extends Common.Global {
   readonly filter?: boolean;
   readonly onOnlySelection?: (
     event: React.SyntheticEvent<HTMLButtonElement>,
-    {},
+    { value: string, label: string },
   ) => void | Promise<void>;
   // InputEvent
   readonly onChange: Common.Event<React.SyntheticEvent<HTMLInputElement>>;

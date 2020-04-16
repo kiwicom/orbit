@@ -57,6 +57,7 @@ export { default as TableBody } from "./Table/TableBody";
 export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
+export { default as TableFooter } from "./Table/TableFooter";
 
 export { default as PricingTable } from "./PricingTable";
 export { default as PricingTableItem } from "./PricingTable/PricingTableItem";

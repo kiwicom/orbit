@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonPrimitive: getIconContainer function should match when left icon 1`] = `
+Object {
+  "height": "24px",
+  "margin": "0 12px 0 0",
+  "width": "24px",
+}
+`;
+
+exports[`ButtonPrimitive: getIconContainer function should match when right icon 1`] = `
+Object {
+  "height": "16px",
+  "margin": "0 0 0 8px",
+  "width": "16px",
+}
+`;

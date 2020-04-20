@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonPrimitive: getPadding function with both icons, should match snapshot 1`] = `"0 8px"`;
+
+exports[`ButtonPrimitive: getPadding function with left icon, should match snapshot 1`] = `"0 28px 0 16px"`;
+
+exports[`ButtonPrimitive: getPadding function with only icon, should match snapshot 1`] = `"0"`;
+
+exports[`ButtonPrimitive: getPadding function with right icon, should match snapshot 1`] = `"0 12px 0 16px"`;

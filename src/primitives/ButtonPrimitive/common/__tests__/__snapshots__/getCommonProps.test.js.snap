@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonPrimitive: getCommonProps function should match: dynamic width and static fontWeight and transition 1`] = `
+Object {
+  "fontSize": "14px",
+  "fontWeight": "700",
+  "height": "44px",
+  "padding": "0",
+  "spinner": Object {
+    "height": "24px",
+    "width": "24px",
+  },
+  "transition": "all 0.15s ease-in-out !important",
+  "width": 200,
+}
+`;
+
+exports[`ButtonPrimitive: getCommonProps function should match: null width and static fontWeight and transition 1`] = `
+Object {
+  "fontSize": "16px",
+  "fontWeight": "700",
+  "height": "52px",
+  "padding": "0 28px 0 16px",
+  "spinner": Object {
+    "height": "24px",
+    "width": "24px",
+  },
+  "transition": "all 0.15s ease-in-out !important",
+  "width": undefined,
+}
+`;

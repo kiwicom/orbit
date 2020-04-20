@@ -39,17 +39,11 @@ storiesOf("Breadcrumbs", module)
           <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
             Kiwi.com
           </BreadcrumbsItem>
-          <BreadcrumbsItem id="rocket2" href={href} onClick={action("clicked")}>
-            1. Level
+          <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
+            1. level
           </BreadcrumbsItem>
-          <BreadcrumbsItem id="rocket3" href={href} onClick={action("clicked")}>
-            2. Level
-          </BreadcrumbsItem>
-          <BreadcrumbsItem id="rocket4" href={href} onClick={action("clicked")}>
-            3. Level
-          </BreadcrumbsItem>
-          <BreadcrumbsItem id="rocket5" href={href} onClick={action("clicked")}>
-            4. Level
+          <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
+            2. level
           </BreadcrumbsItem>
         </Breadcrumbs>
       );

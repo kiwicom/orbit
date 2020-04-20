@@ -3,10 +3,10 @@ import { TOKENS } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import type { GetButtonLinkIconForeground } from "./getButtonLinkIconForeground";
 
-const getButtonLinkIconForeground: GetButtonLinkIconForeground = props => ({
-  foreground: getButtonLinkTypeToken({ name: TOKENS.foreground, ...props }),
-  foregroundHover: getButtonLinkTypeToken({ name: TOKENS.foregroundHover, ...props }),
-  foregroundActive: getButtonLinkTypeToken({ name: TOKENS.foregroundActive, ...props }),
+const getButtonLinkIconForeground: GetButtonLinkIconForeground = ({ type, theme }) => ({
+  foreground: getButtonLinkTypeToken({ name: TOKENS.foreground, type, theme }),
+  foregroundHover: getButtonLinkTypeToken({ name: TOKENS.foregroundHover, type, theme }),
+  foregroundActive: getButtonLinkTypeToken({ name: TOKENS.foregroundActive, type, theme }),
 });
 
 export default getButtonLinkIconForeground;

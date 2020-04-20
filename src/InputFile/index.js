@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
+import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
@@ -13,6 +13,7 @@ import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 
 import type { Props } from "./index";
 
@@ -51,7 +52,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
         }`};
   }
 
-  ${StyledButtonLink}:active {
+  ${StyledButtonPrimitive}:active {
     box-shadow: none;
   }
 `;

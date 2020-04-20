@@ -3,21 +3,26 @@ import { TOKENS } from "../consts";
 import getButtonTypeToken from "./getButtonTypeToken";
 import type { GetButtonIconForeground } from "./getButtonIconForeground";
 
-const getButtonIconForeground: GetButtonIconForeground = ({ bordered, ...props }) => {
+const getButtonIconForeground: GetButtonIconForeground = ({ bordered, theme, type }) => {
   if (bordered) {
     return {
-      foreground: getButtonTypeToken({ name: TOKENS.colorTextButtonBordered, ...props }),
-      foregroundHover: getButtonTypeToken({ name: TOKENS.colorTextButtonBorderedHover, ...props }),
-      foregroundActive: getButtonTypeToken({
+      iconForeground: getButtonTypeToken({ name: TOKENS.colorTextButtonBordered, theme, type }),
+      iconForegroundHover: getButtonTypeToken({
+        name: TOKENS.colorTextButtonBorderedHover,
+        theme,
+        type,
+      }),
+      iconForegroundActive: getButtonTypeToken({
         name: TOKENS.colorTextButtonBorderedActive,
-        ...props,
+        theme,
+        type,
       }),
     };
   }
   return {
-    foreground: getButtonTypeToken({ name: TOKENS.colorTextButton, ...props }),
-    foregroundHover: getButtonTypeToken({ name: TOKENS.colorTextButtonHover, ...props }),
-    foregroundActive: getButtonTypeToken({ name: TOKENS.colorTextButtonActive, ...props }),
+    iconForeground: getButtonTypeToken({ name: TOKENS.colorTextButton, theme, type }),
+    iconForegroundHover: getButtonTypeToken({ name: TOKENS.colorTextButtonHover, theme, type }),
+    iconForegroundActive: getButtonTypeToken({ name: TOKENS.colorTextButtonActive, theme, type }),
   };
 };
 

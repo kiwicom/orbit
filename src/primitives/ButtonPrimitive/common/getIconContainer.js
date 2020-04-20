@@ -21,19 +21,11 @@ const getIconSpacing = ({ theme, right, size, onlyIcon }) => {
   return rtlSpacing(`0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`)({ theme });
 };
 
-const getIconContainer: GetIconContainer = ({
-  onlyIcon,
-  theme,
-  right,
-  size,
-  sizeIcon,
-  iconForeground,
-}) => {
+const getIconContainer: GetIconContainer = ({ onlyIcon, theme, right, size, sizeIcon }) => {
   return {
     margin: getIconSpacing({ theme, right, size, onlyIcon }),
     height: getSize(sizeIcon)({ theme }),
     width: getSize(sizeIcon)({ theme }),
-    ...iconForeground,
   };
 };
 

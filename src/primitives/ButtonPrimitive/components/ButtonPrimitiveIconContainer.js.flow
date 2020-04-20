@@ -1,11 +1,10 @@
 // @flow
 import * as React from "react";
 
+import type { IconContainer } from "../index";
+
 export type Props = {|
-  margin: string,
-  foreground: string,
-  width: string,
-  height: string,
+  ...IconContainer,
   children: React.Node,
 |};
 

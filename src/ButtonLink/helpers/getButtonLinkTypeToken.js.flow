@@ -11,6 +11,6 @@ type Name =
   | "foregroundHover"
   | "foregroundActive";
 
-export type GetButtonLinkTypeToken = ({ name: Name, ...ThemeProps, type: Type }) => string;
+export type GetButtonLinkTypeToken = ({ name: Name, type: Type, ...ThemeProps }) => string;
 
 declare export default GetButtonLinkTypeToken;

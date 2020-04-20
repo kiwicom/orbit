@@ -1,18 +1,15 @@
 // @flow
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
+import type { GetCommonProps } from "./getCommonProps";
 
-const getTransition = ({ theme }) => `all ${theme.orbit.durationFast} ease-in-out !important`;
-
-const getFontWeight = ({ theme }) => theme.orbit.fontWeightBold;
-
-const getCommonProps = ({ width, ...props }) => {
+const getCommonProps: GetCommonProps = ({ width, size, theme, onlyIcon, iconRight, iconLeft }) => {
   return {
-    ...getSizeToken(props),
+    ...getSizeToken({ size, theme }),
     width,
-    padding: getPadding(props),
-    transition: getTransition(props),
-    fontWeight: getFontWeight(props),
+    padding: getPadding({ onlyIcon, iconRight, iconLeft, size, theme }),
+    transition: `all ${theme.orbit.durationFast} ease-in-out !important`,
+    fontWeight: theme.orbit.fontWeightBold,
   };
 };
 

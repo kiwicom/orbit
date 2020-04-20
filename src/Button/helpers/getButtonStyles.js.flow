@@ -1,9 +1,14 @@
 // @flow
 
 import type { ThemeProps } from "../../defaultTheme";
-import type { Props } from "../index";
+import type { Type } from "../index";
 
-export type GetButtonStyles = ({ ...ThemeProps, ...Props }) => {
+export type GetButtonStyles = ({
+  disabled: boolean,
+  bordered: boolean,
+  type: Type,
+  ...ThemeProps,
+}) => {|
   background: string,
   backgroundHover: string,
   backgroundActive: string,
@@ -15,6 +20,6 @@ export type GetButtonStyles = ({ ...ThemeProps, ...Props }) => {
   boxShadowHover: ?string,
   boxShadowActive: ?string,
   boxShadowFocus: ?string,
-};
+|};
 
 declare export default GetButtonStyles;

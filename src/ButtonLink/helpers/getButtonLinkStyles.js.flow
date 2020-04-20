@@ -1,9 +1,14 @@
 // @flow
 
 import type { ThemeProps } from "../../defaultTheme";
-import type { Props } from "../index";
+import type { Type } from "../index";
 
-export type GetButtonLinkStyles = ({ ...ThemeProps, ...Props }) => {
+export type GetButtonLinkStyles = ({
+  type: Type,
+  disabled: boolean,
+  transparent: boolean,
+  ...ThemeProps,
+}) => {|
   background: string,
   backgroundHover: string,
   backgroundActive: string,
@@ -14,6 +19,6 @@ export type GetButtonLinkStyles = ({ ...ThemeProps, ...Props }) => {
   foreground: string,
   foregroundHover: string,
   foregroundActive: string,
-};
+|};
 
 declare export default GetButtonLinkStyles;

@@ -21,7 +21,8 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
       size = SIZE_OPTIONS.NORMAL,
       type = TYPES.PRIMARY,
       iconLeft,
-      disabled,
+      disabled = false,
+      transparent = false,
       ...props
     },
     ref,
@@ -31,7 +32,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
     const sizeIcon = getIconSize(size);
 
     const iconForeground = getButtonLinkIconForeground({ type, theme });
-    const buttonLinkStyles = getButtonLinkStyles({ type, disabled, theme, ...props });
+    const buttonLinkStyles = getButtonLinkStyles({ type, disabled, transparent, theme });
     const commonProps = getCommonProps({ type, size, iconLeft, onlyIcon, theme, ...props });
     return (
       <ButtonPrimitive

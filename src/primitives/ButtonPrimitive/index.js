@@ -14,7 +14,7 @@ import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentC
 
 import type { Props } from "./index";
 
-export const StyledButton = styled(
+export const StyledButtonPrimitive = styled(
   ({
     asComponent = "button",
     dataTest,
@@ -64,8 +64,9 @@ export const StyledButton = styled(
     asComponent,
     circled,
     padding,
-    iconColorHover,
-    iconColorActive,
+    iconForeground,
+    iconForegroundHover,
+    iconForegroundActive,
     background,
     transition,
     fontWeight,
@@ -111,13 +112,17 @@ export const StyledButton = styled(
     width: 100%;
     box-shadow: ${boxShadow};
 
+    ${StyledButtonPrimitiveIconContainer} {
+      color: ${iconForeground};
+    }
+
     &:hover {
       background: ${backgroundHover};
       color: ${foregroundHover};
       box-shadow: ${boxShadowHover};
 
       ${StyledButtonPrimitiveIconContainer} {
-        color: ${iconColorHover};
+        color: ${iconForegroundHover};
       }
     }
 
@@ -127,8 +132,8 @@ export const StyledButton = styled(
         background: ${backgroundActive};
         box-shadow: ${boxShadowActive};
         color: ${foregroundActive};
-        & ${StyledButtonPrimitiveIconContainer} {
-          color: ${iconColorActive};
+        ${StyledButtonPrimitiveIconContainer} {
+          color: ${iconForegroundActive};
         }
       `};
 
@@ -159,7 +164,7 @@ export const StyledButton = styled(
   `}};
 `;
 
-StyledButton.defaultProps = {
+StyledButtonPrimitive.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -172,26 +177,25 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
     iconRight,
     leftIconContainer,
     rightIconContainer,
-    size,
   } = props;
   const isDisabled = loading || disabled;
   return (
-    <StyledButton disabled={isDisabled} forwardedRef={ref} {...props}>
+    <StyledButtonPrimitive disabled={isDisabled} forwardedRef={ref} {...props}>
       {loading && <Loading type="buttonLoader" />}
       <ButtonPrimitiveContent loading={loading}>
         {iconLeft && (
-          <ButtonPrimitiveIconContainer {...leftIconContainer} size={size}>
+          <ButtonPrimitiveIconContainer {...leftIconContainer}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
         {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
         {iconRight && (
-          <ButtonPrimitiveIconContainer {...rightIconContainer} size={size}>
+          <ButtonPrimitiveIconContainer {...rightIconContainer}>
             {iconRight}
           </ButtonPrimitiveIconContainer>
         )}
       </ButtonPrimitiveContent>
-    </StyledButton>
+    </StyledButtonPrimitive>
   );
 });
 

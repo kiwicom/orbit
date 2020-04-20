@@ -3,20 +3,16 @@
 import type { Size } from "../index";
 import type { ThemeProps } from "../../../defaultTheme";
 
-type IconForeground = { foreground: string, foregroundHover: string, foregroundActive: string };
-
 export type GetIconContainer = ({
   onlyIcon: boolean,
   right?: boolean,
   size: Size,
   sizeIcon: "small" | "medium",
   ...ThemeProps,
-  iconForeground: IconForeground,
-}) => {
+}) => {|
   margin: ?string,
   height: string,
   width: string,
-  ...IconForeground,
-};
+|};
 
 declare export default GetIconContainer;

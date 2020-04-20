@@ -70,10 +70,15 @@ storiesOf("Primitives", module)
     const width = text("width");
     const padding = text("padding", "20px");
     const spinner = object("spinner", { height: "20", width: "20" });
-    const iconContainer = object("iconContainer", {
+    const leftIconContainer = object("leftIconContainer", {
       width: "20px",
       height: "20px",
-      spacing: "0 0 0 8px",
+      margin: "0 0 0 8px",
+    });
+    const rightIconContainer = object("rightIconContainer", {
+      width: "20px",
+      height: "20px",
+      margin: "0 0 0 8px",
     });
     const IconLeft = getIcon(getIcons("iconLeft", ""));
     const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
@@ -99,7 +104,8 @@ storiesOf("Primitives", module)
         width={width}
         padding={padding}
         spinner={spinner}
-        iconContainer={iconContainer}
+        leftIconContainer={leftIconContainer}
+        rightIconContainer={rightIconContainer}
         iconLeft={IconLeft && <IconLeft />}
         iconRight={IconRight && <IconRight />}
       >

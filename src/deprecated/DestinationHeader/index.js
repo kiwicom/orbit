@@ -5,7 +5,8 @@ import styled, { css } from "styled-components";
 import ChevronLeft from "../../icons/ChevronLeft";
 import Heading, { StyledHeading, getHeadingToken } from "../../Heading";
 import { TYPE_OPTIONS, TOKENS } from "../../Heading/consts";
-import ButtonLink, { StyledButton } from "../../Button";
+import ButtonLink from "../../Button";
+import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import BASE_URL from "./consts";
 import defaultTheme from "../../defaultTheme";
 import LazyImage from "../../LazyImage";
@@ -54,13 +55,13 @@ const StyledContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  ${StyledButton} {
+  ${StyledButtonPrimitive} {
     align-self: flex-start;
     background: none;
   }
 
   ${mq.largeMobile(css`
-    ${StyledButton} {
+    ${StyledButtonPrimitive} {
       width: ${({ theme }) => theme.orbit.heightButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
 

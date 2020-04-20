@@ -16,18 +16,33 @@ const getButtonLinkBoxShadow = ({ state, disabled, theme, transparent }) => {
   return null;
 };
 
-const getButtonLinkStyles: GetButtonLinkStyles = props => {
+const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled, transparent }) => {
   return {
-    background: getButtonLinkTypeToken({ name: TOKENS.background, ...props }),
-    backgroundHover: getButtonLinkTypeToken({ name: TOKENS.backgroundHover, ...props }),
-    backgroundActive: getButtonLinkTypeToken({ name: TOKENS.backgroundActive, ...props }),
-    backgroundFocus: getButtonLinkTypeToken({ name: TOKENS.backgroundFocus, ...props }),
-    boxShadow: getButtonLinkBoxShadow({ state: BUTTON_STATES.DEFAULT, ...props }),
-    boxShadowHover: getButtonLinkBoxShadow({ state: BUTTON_STATES.HOVER, ...props }),
-    boxShadowActive: getButtonLinkBoxShadow({ state: BUTTON_STATES.ACTIVE, ...props }),
-    foreground: getButtonLinkTypeToken({ name: TOKENS.foreground, ...props }),
-    foregroundHover: getButtonLinkTypeToken({ name: TOKENS.foregroundHover, ...props }),
-    foregroundActive: getButtonLinkTypeToken({ name: TOKENS.foregroundActive, ...props }),
+    background: getButtonLinkTypeToken({ name: TOKENS.background, type, theme }),
+    backgroundHover: getButtonLinkTypeToken({ name: TOKENS.backgroundHover, type, theme }),
+    backgroundActive: getButtonLinkTypeToken({ name: TOKENS.backgroundActive, type, theme }),
+    backgroundFocus: getButtonLinkTypeToken({ name: TOKENS.backgroundFocus, type, theme }),
+    boxShadow: getButtonLinkBoxShadow({
+      state: BUTTON_STATES.DEFAULT,
+      disabled,
+      theme,
+      transparent,
+    }),
+    boxShadowHover: getButtonLinkBoxShadow({
+      state: BUTTON_STATES.HOVER,
+      disabled,
+      theme,
+      transparent,
+    }),
+    boxShadowActive: getButtonLinkBoxShadow({
+      state: BUTTON_STATES.ACTIVE,
+      disabled,
+      theme,
+      transparent,
+    }),
+    foreground: getButtonLinkTypeToken({ name: TOKENS.foreground, type, theme }),
+    foregroundHover: getButtonLinkTypeToken({ name: TOKENS.foregroundHover, type, theme }),
+    foregroundActive: getButtonLinkTypeToken({ name: TOKENS.foregroundActive, type, theme }),
   };
 };
 

@@ -19,6 +19,8 @@ const Button = React.forwardRef<Props, HTMLButtonElement>(
       children,
       size = SIZE_OPTIONS.NORMAL,
       type = TYPE_OPTIONS.PRIMARY,
+      bordered = false,
+      disabled = false,
       iconLeft,
       ...props
     },
@@ -27,9 +29,9 @@ const Button = React.forwardRef<Props, HTMLButtonElement>(
     const theme = useTheme();
     const onlyIcon = Boolean(iconLeft && !children);
     const sizeIcon = getIconSize(size);
-    const iconForeground = getButtonIconForeground({ type, theme, ...props });
+    const iconForeground = getButtonIconForeground({ type, theme, bordered });
     const commonProps = getCommonProps({ type, size, iconLeft, onlyIcon, theme, ...props });
-    const buttonStyles = getButtonStyles({ size, type, theme, ...props });
+    const buttonStyles = getButtonStyles({ size, type, theme, bordered, disabled });
 
     return (
       <ButtonPrimitive
@@ -40,13 +42,13 @@ const Button = React.forwardRef<Props, HTMLButtonElement>(
         {...props}
         {...buttonStyles}
         {...commonProps}
+        {...iconForeground}
         leftIconContainer={getIconContainer({
           onlyIcon,
           theme,
           size,
           sizeIcon,
           type,
-          iconForeground,
         })}
         rightIconContainer={getIconContainer({
           onlyIcon,
@@ -54,7 +56,6 @@ const Button = React.forwardRef<Props, HTMLButtonElement>(
           size,
           sizeIcon,
           right: true,
-          iconForeground,
         })}
       >
         {children}

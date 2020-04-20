@@ -17,7 +17,6 @@ type ButtonCommonProps = {|
   +fullWidth?: boolean,
   +rel?: string,
   +target?: string,
-  +size?: Size,
   +onlyIcon?: boolean,
   +loading?: boolean,
   +bordered?: boolean,
@@ -34,18 +33,25 @@ type ButtonCommonProps = {|
   +title?: string | (any => string),
 |};
 
-type IconContainer = {|
-  +width?: string,
-  +height?: string,
-  +foreground?: string,
-  +margin?: string,
+export type IconContainer = {|
+  +width?: ?string,
+  +height?: ?string,
+  +margin?: ?string,
 |};
+
+export type IconForeground = {|
+  iconForeground?: ?string,
+  iconForegroundHover?: ?string,
+  iconForegroundActive?: ?string,
+|};
+
+export type Spinner = {| height?: string, width?: string |};
 
 export type PrimitiveTypes = {|
   +height?: string,
   +width?: number,
   +padding?: string,
-  +spinner?: {| height?: string, width?: string |},
+  +spinner?: Spinner,
   +background?: ?string,
   +backgroundHover?: ?string,
   +backgroundActive?: ?string,
@@ -66,6 +72,7 @@ export type PrimitiveTypes = {|
   +leftIconContainer?: IconContainer,
   +rightIconContainer?: IconContainer,
   +transition?: string,
+  ...IconForeground,
 |};
 
 export type Props = {|
@@ -75,4 +82,6 @@ export type Props = {|
   ...PrimitiveTypes,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export var StyledButtonPrimitive: React.ComponentType<Props>;
+
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

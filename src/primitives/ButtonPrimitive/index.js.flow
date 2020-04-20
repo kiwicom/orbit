@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 
 import type { Globals, Component } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";
@@ -6,7 +7,7 @@ import type { spaceAfter } from "../../common/getSpacingToken/index";
 export type Size = "small" | "normal" | "large";
 
 type ButtonCommonProps = {|
-  +children?: React$Node,
+  +children?: React.Node,
   +asComponent?: Component | string,
   +href?: string | null,
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
@@ -19,11 +20,10 @@ type ButtonCommonProps = {|
   +size?: Size,
   +onlyIcon?: boolean,
   +loading?: boolean,
-  +icon?: React$Node,
   +bordered?: boolean,
   +transparent?: boolean,
-  +iconLeft?: React$Node,
-  +iconRight?: React$Node,
+  +iconLeft?: React.Node,
+  +iconRight?: React.Node,
   +submit?: boolean,
   +tabIndex?: string,
   +ariaExpanded?: boolean,
@@ -34,38 +34,38 @@ type ButtonCommonProps = {|
   +title?: string | (any => string),
 |};
 
-type PrimitiveElement = ((args: any) => any) | string;
+type IconContainer = {|
+  +width?: string,
+  +height?: string,
+  +foreground?: string,
+  +margin?: string,
+|};
 
 export type PrimitiveTypes = {|
-  +height?: ((args: any) => any) | number | string,
-  +width?: ((args: any) => any) | number | string,
-  +padding?: PrimitiveElement,
-  +spinner?: {| height?: PrimitiveElement, width?: PrimitiveElement |},
-  +background?: PrimitiveElement,
-  +backgroundHover?: PrimitiveElement,
-  +backgroundActive?: PrimitiveElement,
-  +backgroundFocus?: PrimitiveElement,
-  +iconColor?: PrimitiveElement,
-  +iconColorHover?: PrimitiveElement,
-  +iconColorActive?: PrimitiveElement,
-  +boxShadow?: PrimitiveElement,
-  +boxShadowHover?: PrimitiveElement,
-  +boxShadowActive?: PrimitiveElement,
-  +boxShadowFocus?: PrimitiveElement,
-  +foreground?: PrimitiveElement,
-  +foregroundHover?: PrimitiveElement,
-  +foregroundActive?: PrimitiveElement,
-  +foregroundFocus?: PrimitiveElement,
-  +fontWeight?: PrimitiveElement,
-  +fontSize?: PrimitiveElement,
-  +iconContainer?: {|
-    +type?: PrimitiveElement,
-    +width?: PrimitiveElement,
-    +height?: PrimitiveElement,
-    +onlyIcon: boolean,
-    +color?: PrimitiveElement,
-    +spacing?: PrimitiveElement,
-  |},
+  +height?: string,
+  +width?: number,
+  +padding?: string,
+  +spinner?: {| height?: string, width?: string |},
+  +background?: ?string,
+  +backgroundHover?: ?string,
+  +backgroundActive?: ?string,
+  +backgroundFocus?: ?string,
+  +iconColor?: ?string,
+  +iconColorHover?: ?string,
+  +iconColorActive?: ?string,
+  +boxShadow?: ?string,
+  +boxShadowHover?: ?string,
+  +boxShadowActive?: ?string,
+  +boxShadowFocus?: ?string,
+  +foreground?: ?string,
+  +foregroundHover?: ?string,
+  +foregroundActive?: ?string,
+  +foregroundFocus?: ?string,
+  +fontWeight?: ?string,
+  +fontSize?: ?string,
+  +leftIconContainer?: IconContainer,
+  +rightIconContainer?: IconContainer,
+  +transition?: string,
 |};
 
 export type Props = {|

@@ -1,0 +1,12 @@
+// @flow
+
+import type { ThemeProps } from "../../defaultTheme";
+import type { Props } from "../index";
+
+export type GetButtonLinkIconForeground = ({ ...ThemeProps, ...Props }) => {
+  foreground: string,
+  foregroundHover: string,
+  foregroundActive: string,
+};
+
+declare export default GetButtonLinkIconForeground;

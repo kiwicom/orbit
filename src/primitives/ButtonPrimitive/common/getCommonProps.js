@@ -1,21 +1,18 @@
 // @flow
+import getSizeToken from "./getSizeToken";
+import getPadding from "./getPadding";
 
-const getCommonProps = () => {
+const getTransition = ({ theme }) => `all ${theme.orbit.durationFast} ease-in-out !important`;
+
+const getFontWeight = ({ theme }) => theme.orbit.fontWeightBold;
+
+const getCommonProps = ({ width, ...props }) => {
   return {
-    height: true,
-    width: true,
-    padding: true,
-    spinner: true,
-    fontSize: true,
-    leftIconContainer: {
-      spacing: getIconSpacing(),
-      foreground: true,
-      type: true,
-      width: true,
-      height: true,
-      onlyIcon: true,
-    },
-    rightIconContainer: getIconContainer()
+    ...getSizeToken(props),
+    width,
+    padding: getPadding(props),
+    transition: getTransition(props),
+    fontWeight: getFontWeight(props),
   };
 };
 

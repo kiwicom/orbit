@@ -2,28 +2,17 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import IconContainer from "./components/IconContainer";
 import defaultTheme from "../../defaultTheme";
 import Loading, { StyledSpinner } from "../../Loading";
-import getSpacingToken from "../../common/getSpacingToken";
-import StyledButtonContent from "./components/ButtonContent";
 import mq from "../../utils/mediaQuery";
-import { left } from "../../utils/rtl";
+import getSpacingToken from "../../common/getSpacingToken";
+import ButtonPrimitiveContent from "./components/ButtonPrimitiveContent";
+import ButtonPrimitiveIconContainer, {
+  StyledButtonPrimitiveIconContainer,
+} from "./components/ButtonPrimitiveIconContainer";
+import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
 
 import type { Props } from "./index";
-
-const StyledButtonContentChildren = styled.div`
-  display: inline-block;
-  width: 100%;
-  text-align: ${left};
-  ${mq.tablet(css`
-    text-align: center;
-  `)};
-`;
-
-StyledButtonContentChildren.defaultProps = {
-  theme: defaultTheme,
-};
 
 export const StyledButton = styled(
   ({
@@ -120,14 +109,14 @@ export const StyledButton = styled(
     opacity: ${disabled && theme.orbit.opacityButtonDisabled};
     margin-bottom: ${getSpacingToken};
     width: 100%;
-    ${boxShadow};
+    box-shadow: ${boxShadow};
 
     &:hover {
-      ${backgroundHover};
+      background: ${backgroundHover};
       color: ${foregroundHover};
-      ${boxShadowHover};
+      box-shadow: ${boxShadowHover};
 
-      ${IconContainer} {
+      ${StyledButtonPrimitiveIconContainer} {
         color: ${iconColorHover};
       }
     }
@@ -135,10 +124,10 @@ export const StyledButton = styled(
     &:active {
       ${!disabled &&
       css`
-        ${backgroundActive};
-        ${boxShadowActive};
+        background: ${backgroundActive};
+        box-shadow: ${boxShadowActive};
         color: ${foregroundActive};
-        & ${IconContainer} {
+        & ${StyledButtonPrimitiveIconContainer} {
           color: ${iconColorActive};
         }
       `};
@@ -147,23 +136,21 @@ export const StyledButton = styled(
         width: ${spinner && spinner.width};
         height: ${spinner && spinner.height};
       }
-
-      ${backgroundFocus};
     }
 
     :focus {
-      ${boxShadowFocus};
-      ${backgroundFocus};
+      box-shadow: ${boxShadowFocus};
+      background: ${backgroundFocus};
     }
 
     :focus:not(:focus-visible) {
       box-shadow: none;
-      ${background};
+      background: ${background};
     }
     :-moz-focusring,
     :focus-visible {
-      ${boxShadowFocus};
-      ${backgroundFocus};
+      box-shadow: ${boxShadowFocus};
+      background: ${backgroundFocus};
     }
     ${mq.tablet(css`
       width: ${fullWidth ? "100%" : (width && `${width}px`) || (onlyIcon && height) || "auto"};
@@ -177,24 +164,33 @@ StyledButton.defaultProps = {
 };
 
 const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
-  const { loading, disabled, children, iconLeft, iconRight, iconContainer, size } = props;
+  const {
+    loading,
+    disabled,
+    children,
+    iconLeft,
+    iconRight,
+    leftIconContainer,
+    rightIconContainer,
+    size,
+  } = props;
   const isDisabled = loading || disabled;
   return (
     <StyledButton disabled={isDisabled} forwardedRef={ref} {...props}>
       {loading && <Loading type="buttonLoader" />}
-      <StyledButtonContent loading={loading}>
+      <ButtonPrimitiveContent loading={loading}>
         {iconLeft && (
           <ButtonPrimitiveIconContainer {...leftIconContainer} size={size}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
-        {children && <StyledButtonContentChildren>{children}</StyledButtonContentChildren>}
+        {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
         {iconRight && (
           <ButtonPrimitiveIconContainer {...rightIconContainer} size={size}>
             {iconRight}
           </ButtonPrimitiveIconContainer>
         )}
-      </StyledButtonContent>
+      </ButtonPrimitiveContent>
     </StyledButton>
   );
 });

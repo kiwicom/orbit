@@ -327,7 +327,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
     <ButtonLink
       onClick={onClick}
       size="normal"
-      icon={<Close />}
+      iconLeft={<Close />}
       transparent
       dataTest={dataTest}
       type="secondary"

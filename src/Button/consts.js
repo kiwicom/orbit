@@ -27,7 +27,6 @@ export const TOKENS = {
   paddingButtonWithIcons: "paddingButtonWithIcons",
   paddingButtonWithLeftIcon: "paddingButtonWithLeftIcon",
   paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
-  marginRightIcon: "marginRightIcon",
   // Type tokens
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",

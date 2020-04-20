@@ -4,18 +4,19 @@ import * as React from "react";
 
 import defaultTheme from "../../../defaultTheme";
 import transition from "../../../utils/transition";
+import type { Props } from "./ButtonPrimitiveIconContainer";
 
 export const StyledButtonPrimitiveIconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
-  ${({ spacing, foreground, width, height }) => css`
+  ${({ margin, foreground, width, height }) => css`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: ${spacing};
+    margin: ${margin};
     color: ${foreground};
-    transition: ${transition[("background", "box-shadow", "fast", "ease-in-out")]};
+    transition: ${transition(["background", "box-shadow"], "fast", "ease-in-out")};
     > svg {
       width: ${width};
       height: ${height};
@@ -27,9 +28,9 @@ StyledButtonPrimitiveIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveIconContainer = ({ spacing, foreground, width, height, children }) => (
+const ButtonPrimitiveIconContainer = ({ margin, foreground, width, height, children }: Props) => (
   <StyledButtonPrimitiveIconContainer
-    spacing={spacing}
+    margin={margin}
     foreground={foreground}
     width={width}
     height={height}

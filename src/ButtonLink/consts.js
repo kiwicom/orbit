@@ -12,6 +12,5 @@ export const TOKENS = {
   foreground: "foreground",
   foregroundHover: "foregroundHover",
   foregroundActive: "foregroundActive",
-  foregroundFocus: "foregroundFocus",
   marginRightIcon: "marginRightIcon",
 };

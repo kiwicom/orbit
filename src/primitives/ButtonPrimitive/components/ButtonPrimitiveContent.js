@@ -2,8 +2,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import mq from "../../../utils/mediaQuery";
 import defaultTheme from "../../../defaultTheme";
-
+import type { Props } from "./ButtonPrimitiveContent";
 // media query only for IE 10+, not Edge
 const onlyIE = (style, breakpoint = "all") =>
   css`
@@ -12,7 +13,7 @@ const onlyIE = (style, breakpoint = "all") =>
     }
   `;
 
-const StyledButtonContent = styled(({ theme, loading, ...props }) => <div {...props} />)`
+const StyledButtonPrimitiveContent = styled(({ theme, loading, ...props }) => <div {...props} />)`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
@@ -24,10 +25,17 @@ const StyledButtonContent = styled(({ theme, loading, ...props }) => <div {...pr
     min-width: 100%;
     max-width: 1px;
   `)};
+  ${mq.tablet(css`
+    justify-content: center;
+  `)};
 `;
 
-StyledButtonContent.defaultProps = {
+StyledButtonPrimitiveContent.defaultProps = {
   theme: defaultTheme,
 };
 
-export default StyledButtonContent;
+const ButtonPrimitiveContent = ({ children, loading }: Props) => (
+  <StyledButtonPrimitiveContent loading={loading}>{children}</StyledButtonPrimitiveContent>
+);
+
+export default ButtonPrimitiveContent;

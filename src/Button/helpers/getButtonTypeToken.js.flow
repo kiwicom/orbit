@@ -21,6 +21,6 @@ export type TokenName =
   | "borderColorButtonActive"
   | "borderColorButtonFocus";
 
-export type GetTypeToken = (name: TokenName, type: Type) => ({ ...ThemeProps }) => string;
+export type GetButtonTypeToken = ({ name: TokenName, type: Type, ...ThemeProps }) => string;
 
-declare export default GetTypeToken;
+declare export default GetButtonTypeToken;

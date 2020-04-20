@@ -1,0 +1,6 @@
+// @flow
+import type { Size } from "../index";
+
+export type GetIconSize = (size: Size) => "small" | "medium";
+
+declare export default GetIconSize;

@@ -1,8 +1,9 @@
 // @flow
 import { rtlSpacing } from "../../../utils/rtl";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
+import type { GetPadding } from "./getPadding";
 
-const getSpacing = ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
+const getSpacing: GetPadding = ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
   if (onlyIcon) return rtlSpacing(theme.orbit.paddingButtonWithoutText)({ theme });
   const tokens = {
     [TOKENS.paddingButton]: {

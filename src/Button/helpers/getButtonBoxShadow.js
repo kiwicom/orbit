@@ -32,28 +32,28 @@ const opacity = {
 };
 
 const getButtonBoxShadow: GetButtonBoxShadow = ({ state, disabled, bordered, theme, type }) => {
+  const wrappedButtonTypeToken = name =>
+    getButtonTypeToken({
+      name,
+      type,
+      theme,
+    });
   if (disabled) {
     return null;
   }
   if (state === BUTTON_STATES.DEFAULT && bordered) {
-    return `inset 0 0 0 1px ${getButtonTypeToken({ name: TOKENS.borderColorButton, type, theme })}`;
+    return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButton)}`;
   }
   if (state === BUTTON_STATES.HOVER && bordered) {
-    return `inset 0 0 0 1px ${getButtonTypeToken({
-      name: TOKENS.borderColorButtonHover,
-      type,
-      theme,
-    })}`;
+    return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButtonHover)}`;
   }
   if (state === BUTTON_STATES.ACTIVE) {
     if (bordered) {
-      return `inset 0 0 0 1px ${getButtonTypeToken({
-        name: TOKENS.borderColorButtonActive,
-        type,
-        theme,
-      })},
-          inset 0 0 6px 3px
-            ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}`;
+      return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButtonActive)},
+          inset 0 0 6px 3px ${convertHexToRgba(
+            theme.orbit.paletteInkNormal,
+            opacity.bordered[type],
+          )}`;
     }
     return `inset 0 0 6px 3px ${convertHexToRgba(
       theme.orbit.paletteInkNormal,
@@ -61,7 +61,7 @@ const getButtonBoxShadow: GetButtonBoxShadow = ({ state, disabled, bordered, the
     )};`;
   }
   if (state === BUTTON_STATES.FOCUS && !bordered) {
-    return `0 0 0 3px ${getButtonTypeToken({ name: TOKENS.borderColorButtonFocus, type, theme })}`;
+    return `0 0 0 3px ${wrappedButtonTypeToken(TOKENS.borderColorButtonFocus)}`;
   }
   return null;
 };

@@ -4,25 +4,18 @@ import getButtonTypeToken from "./getButtonTypeToken";
 import type { GetButtonIconForeground } from "./getButtonIconForeground";
 
 const getButtonIconForeground: GetButtonIconForeground = ({ bordered, theme, type }) => {
+  const wrappedTypeToken = name => getButtonTypeToken({ name, theme, type });
   if (bordered) {
     return {
-      iconForeground: getButtonTypeToken({ name: TOKENS.colorTextButtonBordered, theme, type }),
-      iconForegroundHover: getButtonTypeToken({
-        name: TOKENS.colorTextButtonBorderedHover,
-        theme,
-        type,
-      }),
-      iconForegroundActive: getButtonTypeToken({
-        name: TOKENS.colorTextButtonBorderedActive,
-        theme,
-        type,
-      }),
+      iconForeground: wrappedTypeToken(TOKENS.colorTextButtonBordered),
+      iconForegroundHover: wrappedTypeToken(TOKENS.colorTextButtonBorderedHover),
+      iconForegroundActive: wrappedTypeToken(TOKENS.colorTextButtonBorderedActive),
     };
   }
   return {
-    iconForeground: getButtonTypeToken({ name: TOKENS.colorTextButton, theme, type }),
-    iconForegroundHover: getButtonTypeToken({ name: TOKENS.colorTextButtonHover, theme, type }),
-    iconForegroundActive: getButtonTypeToken({ name: TOKENS.colorTextButtonActive, theme, type }),
+    iconForeground: wrappedTypeToken(TOKENS.colorTextButton),
+    iconForegroundHover: wrappedTypeToken(TOKENS.colorTextButtonHover),
+    iconForegroundActive: wrappedTypeToken(TOKENS.colorTextButtonActive),
   };
 };
 

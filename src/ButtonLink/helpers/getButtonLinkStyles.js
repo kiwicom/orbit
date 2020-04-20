@@ -17,32 +17,19 @@ const getButtonLinkBoxShadow = ({ state, disabled, theme, transparent }) => {
 };
 
 const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled, transparent }) => {
+  const wrappedTypeToken = name => getButtonLinkTypeToken({ name, type, theme });
+  const wrappedBoxShadow = state => getButtonLinkBoxShadow({ state, disabled, transparent, theme });
   return {
-    background: getButtonLinkTypeToken({ name: TOKENS.background, type, theme }),
-    backgroundHover: getButtonLinkTypeToken({ name: TOKENS.backgroundHover, type, theme }),
-    backgroundActive: getButtonLinkTypeToken({ name: TOKENS.backgroundActive, type, theme }),
-    backgroundFocus: getButtonLinkTypeToken({ name: TOKENS.backgroundFocus, type, theme }),
-    boxShadow: getButtonLinkBoxShadow({
-      state: BUTTON_STATES.DEFAULT,
-      disabled,
-      theme,
-      transparent,
-    }),
-    boxShadowHover: getButtonLinkBoxShadow({
-      state: BUTTON_STATES.HOVER,
-      disabled,
-      theme,
-      transparent,
-    }),
-    boxShadowActive: getButtonLinkBoxShadow({
-      state: BUTTON_STATES.ACTIVE,
-      disabled,
-      theme,
-      transparent,
-    }),
-    foreground: getButtonLinkTypeToken({ name: TOKENS.foreground, type, theme }),
-    foregroundHover: getButtonLinkTypeToken({ name: TOKENS.foregroundHover, type, theme }),
-    foregroundActive: getButtonLinkTypeToken({ name: TOKENS.foregroundActive, type, theme }),
+    background: wrappedTypeToken(TOKENS.background),
+    backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
+    backgroundActive: wrappedTypeToken(TOKENS.backgroundActive),
+    backgroundFocus: wrappedTypeToken(TOKENS.backgroundFocus),
+    boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
+    boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),
+    boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
+    foreground: wrappedTypeToken(TOKENS.foreground),
+    foregroundHover: wrappedTypeToken(TOKENS.foregroundHover),
+    foregroundActive: wrappedTypeToken(TOKENS.foregroundActive),
   };
 };
 

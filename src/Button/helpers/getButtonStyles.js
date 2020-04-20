@@ -6,133 +6,40 @@ import getButtonBoxShadow from "./getButtonBoxShadow";
 import type { GetButtonStyles } from "./getButtonStyles";
 
 const getButtonStyles: GetButtonStyles = ({ disabled, bordered, theme, type }) => {
+  const wrappedBoxShadow = state => getButtonBoxShadow({ state, disabled, bordered, theme, type });
+  const wrappedTypeToken = name =>
+    getButtonTypeToken({
+      name,
+      disabled,
+      bordered,
+      theme,
+      type,
+    });
   const boxShadow = {
-    boxShadow: getButtonBoxShadow({
-      state: BUTTON_STATES.DEFAULT,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    boxShadowHover: getButtonBoxShadow({
-      state: BUTTON_STATES.HOVER,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    boxShadowActive: getButtonBoxShadow({
-      state: BUTTON_STATES.ACTIVE,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    boxShadowFocus: getButtonBoxShadow({
-      state: BUTTON_STATES.FOCUS,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
+    boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
+    boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),
+    boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
+    boxShadowFocus: wrappedBoxShadow(BUTTON_STATES.FOCUS),
   };
   if (bordered) {
     return {
-      background: getButtonTypeToken({
-        name: TOKENS.backgroundButtonBordered,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      backgroundHover: getButtonTypeToken({
-        name: TOKENS.backgroundButtonBorderedHover,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      backgroundActive: getButtonTypeToken({
-        name: TOKENS.backgroundButtonBorderedActive,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      backgroundFocus: getButtonTypeToken({
-        name: TOKENS.backgroundButtonFocus,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      foreground: getButtonTypeToken({
-        name: TOKENS.colorTextButtonBordered,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      foregroundHover: getButtonTypeToken({
-        name: TOKENS.colorTextButtonBorderedHover,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
-      foregroundActive: getButtonTypeToken({
-        name: TOKENS.colorTextButtonBorderedActive,
-        disabled,
-        bordered,
-        theme,
-        type,
-      }),
+      background: wrappedTypeToken(TOKENS.backgroundButtonBordered),
+      backgroundHover: wrappedTypeToken(TOKENS.backgroundButtonBorderedHover),
+      backgroundActive: wrappedTypeToken(TOKENS.backgroundButtonBorderedActive),
+      backgroundFocus: wrappedTypeToken(TOKENS.backgroundButtonFocus),
+      foreground: wrappedTypeToken(TOKENS.colorTextButtonBordered),
+      foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonBorderedHover),
+      foregroundActive: wrappedTypeToken(TOKENS.colorTextButtonBorderedActive),
       ...boxShadow,
     };
   }
   return {
-    background: getButtonTypeToken({
-      name: TOKENS.backgroundButton,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    backgroundHover: getButtonTypeToken({
-      name: TOKENS.backgroundButtonHover,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    backgroundActive: getButtonTypeToken({
-      name: TOKENS.backgroundButtonActive,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    foreground: getButtonTypeToken({
-      name: TOKENS.colorTextButton,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    foregroundHover: getButtonTypeToken({
-      name: TOKENS.colorTextButtonHover,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
-    foregroundActive: getButtonTypeToken({
-      name: TOKENS.colorTextButtonActive,
-      disabled,
-      bordered,
-      theme,
-      type,
-    }),
+    background: wrappedTypeToken(TOKENS.backgroundButton),
+    backgroundHover: wrappedTypeToken(TOKENS.backgroundButtonHover),
+    backgroundActive: wrappedTypeToken(TOKENS.backgroundButtonActive),
+    foreground: wrappedTypeToken(TOKENS.colorTextButton),
+    foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonHover),
+    foregroundActive: wrappedTypeToken(TOKENS.colorTextButtonActive),
     backgroundFocus: null,
     ...boxShadow,
   };

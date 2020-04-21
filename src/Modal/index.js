@@ -18,6 +18,7 @@ import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
 import useTranslate from "../hooks/useTranslate";
+import onlyIE from "../utils/onlyIE";
 
 import type { Props, State } from "./index";
 
@@ -31,14 +32,6 @@ const getSizeToken = () => ({ size, theme }) => {
 
   return tokens[size];
 };
-
-// media query only for IE 10+, not Edge
-const onlyIE = (style, breakpoint = "all") =>
-  css`
-    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      ${style};
-    }
-  `;
 
 const ModalBody = styled.div`
   width: 100%;

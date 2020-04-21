@@ -19,4 +19,4 @@ export type Translation = React$Element<React$ComponentType<any>> | string;
 
 export type TranslationString = string;
 
-export type Component = () => React$Element<any>;
+export type Component = string | (() => React$Element<any>);

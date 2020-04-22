@@ -3,8 +3,9 @@ import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../../../utils/rtl";
 import { getSize } from "../../../Icon";
 import type { GetIconContainer } from "./getIconContainer";
+import { ICON_SIZES } from "../../../Icon/consts";
 
-const getIconSpacing = ({ theme, right, size, onlyIcon }) => {
+const getIconSpacing = (onlyIcon, size, theme) => {
   if (onlyIcon) {
     return null;
   }
@@ -15,17 +16,29 @@ const getIconSpacing = ({ theme, right, size, onlyIcon }) => {
       [SIZE_OPTIONS.SMALL]: theme.orbit.marginButtonIconSmall,
     },
   };
-  if (right) {
-    return rtlSpacing(`0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`)({ theme });
-  }
-  return rtlSpacing(`0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`)({ theme });
+  return {
+    leftMargin: rtlSpacing(`0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`)({ theme }),
+    rightMargin: rtlSpacing(`0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`)({ theme }),
+  };
 };
 
-const getIconContainer: GetIconContainer = ({ onlyIcon, theme, right, size, sizeIcon }) => {
+const getIconContainer: GetIconContainer = ({
+  iconLeft,
+  children,
+  theme,
+  size = SIZE_OPTIONS.NORMAL,
+  iconForeground,
+}) => {
+  const onlyIcon = Boolean(iconLeft && !children);
+  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
+  const computedSize = getSize(sizeIcon)({ theme });
   return {
-    margin: getIconSpacing({ theme, right, size, onlyIcon }),
-    height: getSize(sizeIcon)({ theme }),
-    width: getSize(sizeIcon)({ theme }),
+    icons: {
+      height: computedSize,
+      width: computedSize,
+      ...getIconSpacing(onlyIcon, size, theme),
+      ...iconForeground,
+    },
   };
 };
 

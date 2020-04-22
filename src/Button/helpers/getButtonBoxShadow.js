@@ -31,13 +31,8 @@ const opacity = {
   },
 };
 
-const getButtonBoxShadow: GetButtonBoxShadow = ({ state, disabled, bordered, theme, type }) => {
-  const wrappedButtonTypeToken = name =>
-    getButtonTypeToken({
-      name,
-      type,
-      theme,
-    });
+const getButtonBoxShadow: GetButtonBoxShadow = (state, disabled, bordered, theme, type) => {
+  const wrappedButtonTypeToken = name => getButtonTypeToken(name, type, theme);
   if (disabled) {
     return null;
   }

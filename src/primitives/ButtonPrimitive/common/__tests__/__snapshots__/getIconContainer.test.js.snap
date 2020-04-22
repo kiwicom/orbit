@@ -1,17 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonPrimitive: getIconContainer function should match when left icon 1`] = `
+exports[`ButtonPrimitive: getIconContainer function should match snapshot 1`] = `
 Object {
-  "height": "24px",
-  "margin": "0 12px 0 0",
-  "width": "24px",
+  "icons": Object {
+    "foreground": null,
+    "foregroundActive": null,
+    "foregroundHover": null,
+    "height": "16px",
+    "leftMargin": "0 8px 0 0",
+    "rightMargin": "0 0 0 8px",
+    "width": "16px",
+  },
 }
 `;
 
-exports[`ButtonPrimitive: getIconContainer function should match when right icon 1`] = `
+exports[`ButtonPrimitive: getIconContainer function should match snapshot 2`] = `
 Object {
-  "height": "16px",
-  "margin": "0 0 0 8px",
-  "width": "16px",
+  "icons": Object {
+    "foreground": null,
+    "foregroundActive": null,
+    "foregroundHover": null,
+    "height": "24px",
+    "leftMargin": "0 8px 0 0",
+    "rightMargin": "0 0 0 8px",
+    "width": "24px",
+  },
+}
+`;
+
+exports[`ButtonPrimitive: getIconContainer function should match snapshot 3`] = `
+Object {
+  "icons": Object {
+    "foreground": null,
+    "foregroundActive": null,
+    "foregroundHover": null,
+    "height": "24px",
+    "leftMargin": "0 12px 0 0",
+    "rightMargin": "0 0 0 12px",
+    "width": "24px",
+  },
+}
+`;
+
+exports[`ButtonPrimitive: getIconContainer function should match when only icon 1`] = `
+Object {
+  "icons": Object {
+    "foreground": null,
+    "foregroundActive": null,
+    "foregroundHover": null,
+    "height": "24px",
+    "width": "24px",
+  },
 }
 `;

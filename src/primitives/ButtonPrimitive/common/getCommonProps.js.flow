@@ -1,23 +1,21 @@
 // @flow
 import * as React from "react";
 
-import type { GetSizeTokenReturn } from "./getSizeToken";
-import type { Size } from "../index";
+import type { HeightProps, Size } from "../index";
 import type { ThemeProps } from "../../../defaultTheme";
 
 export type GetCommonProps = ({
-  width?: number,
-  size: Size,
-  onlyIcon: boolean,
+  width?: string,
+  size?: Size,
   iconRight?: React.Node,
   iconLeft?: React.Node,
+  children?: React.Node,
   ...ThemeProps,
 }) => {|
-  ...GetSizeTokenReturn,
-  width?: number,
+  width?: string,
   padding: string,
-  transition: string,
   fontWeight: string,
+  ...HeightProps,
 |};
 
 declare export default GetCommonProps;

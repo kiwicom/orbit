@@ -6,12 +6,7 @@ Object {
   "fontWeight": "700",
   "height": "44px",
   "padding": "0",
-  "spinner": Object {
-    "height": "24px",
-    "width": "24px",
-  },
-  "transition": "all 0.15s ease-in-out !important",
-  "width": 200,
+  "width": "200px",
 }
 `;
 
@@ -20,12 +15,7 @@ Object {
   "fontSize": "16px",
   "fontWeight": "700",
   "height": "52px",
-  "padding": "0 28px 0 16px",
-  "spinner": Object {
-    "height": "24px",
-    "width": "24px",
-  },
-  "transition": "all 0.15s ease-in-out !important",
+  "padding": "0",
   "width": undefined,
 }
 `;

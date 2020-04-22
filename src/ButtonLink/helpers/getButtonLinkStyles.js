@@ -6,7 +6,7 @@ import { TOKENS } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import type { GetButtonLinkStyles } from "./getButtonLinkStyles";
 
-const getButtonLinkBoxShadow = ({ state, disabled, theme, transparent }) => {
+const getButtonLinkBoxShadow = (state, disabled, transparent, theme) => {
   if (disabled) {
     return null;
   }
@@ -17,8 +17,8 @@ const getButtonLinkBoxShadow = ({ state, disabled, theme, transparent }) => {
 };
 
 const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled, transparent }) => {
-  const wrappedTypeToken = name => getButtonLinkTypeToken({ name, type, theme });
-  const wrappedBoxShadow = state => getButtonLinkBoxShadow({ state, disabled, transparent, theme });
+  const wrappedTypeToken = name => getButtonLinkTypeToken(name, type, theme);
+  const wrappedBoxShadow = state => getButtonLinkBoxShadow(state, disabled, transparent, theme);
   return {
     background: wrappedTypeToken(TOKENS.background),
     backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),

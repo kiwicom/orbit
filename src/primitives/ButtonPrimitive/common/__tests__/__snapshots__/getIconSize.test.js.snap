@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ButtonPrimitive: getIconSize function should match snapshot 1`] = `"small"`;
-
-exports[`ButtonPrimitive: getIconSize function should match snapshot 2`] = `"medium"`;
-
-exports[`ButtonPrimitive: getIconSize function should match snapshot 3`] = `"medium"`;

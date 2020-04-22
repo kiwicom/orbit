@@ -30,6 +30,8 @@ export const StyledButtonPrimitive = styled(
     target,
     external,
     tabIndex,
+    onClick,
+    role,
     ...props
   }) => {
     const isButtonWithHref = asComponent === "button" && href;
@@ -38,17 +40,19 @@ export const StyledButtonPrimitive = styled(
 
     return (
       <Component
+        ref={forwardedRef}
         data-test={dataTest}
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
         aria-label={title}
         type={!isButtonWithHref ? buttonType : undefined}
         className={className}
-        ref={forwardedRef}
         href={!disabled ? href : null}
         target={!disabled && href && external ? "_blank" : undefined}
         rel={!disabled && href && external ? "noopener noreferrer" : undefined}
         tabIndex={tabIndex}
+        onClick={onClick}
+        role={role}
       >
         {props.children}
       </Component>
@@ -64,17 +68,13 @@ export const StyledButtonPrimitive = styled(
     asComponent,
     circled,
     padding,
-    iconForeground,
-    iconForegroundHover,
-    iconForegroundActive,
     background,
-    transition,
     fontWeight,
     fontSize,
     height,
     width,
     onlyIcon,
-    spinner,
+    icons,
     foregroundHover,
     foregroundActive,
     backgroundHover,
@@ -105,7 +105,7 @@ export const StyledButtonPrimitive = styled(
     font-size: ${fontSize};
     line-height: 1.4; // preventing inheriting with safe value
     cursor: ${disabled ? "not-allowed" : "pointer"};
-    transition: ${transition};
+    transition: all ${theme.orbit.durationFast} ease-in-out !important;
     outline: 0;
     opacity: ${disabled && theme.orbit.opacityButtonDisabled};
     margin-bottom: ${getSpacingToken};
@@ -113,7 +113,12 @@ export const StyledButtonPrimitive = styled(
     box-shadow: ${boxShadow};
 
     ${StyledButtonPrimitiveIconContainer} {
-      color: ${iconForeground};
+      color: ${icons && icons.foreground};
+    }
+
+    ${StyledSpinner} {
+      width: ${icons && icons.width};
+      height: ${icons && icons.height};
     }
 
     &:hover {
@@ -122,7 +127,7 @@ export const StyledButtonPrimitive = styled(
       box-shadow: ${boxShadowHover};
 
       ${StyledButtonPrimitiveIconContainer} {
-        color: ${iconForegroundHover};
+        color: ${icons && icons.foregroundHover};
       }
     }
 
@@ -133,14 +138,9 @@ export const StyledButtonPrimitive = styled(
         box-shadow: ${boxShadowActive};
         color: ${foregroundActive};
         ${StyledButtonPrimitiveIconContainer} {
-          color: ${iconForegroundActive};
+          color: ${icons && icons.foregroundActive};
         }
       `};
-
-      ${StyledSpinner} {
-        width: ${spinner && spinner.width};
-        height: ${spinner && spinner.height};
-      }
     }
 
     :focus {
@@ -158,7 +158,7 @@ export const StyledButtonPrimitive = styled(
       background: ${backgroundFocus};
     }
     ${mq.tablet(css`
-      width: ${fullWidth ? "100%" : (width && `${width}px`) || (onlyIcon && height) || "auto"};
+      width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
       border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
     `)};
   `}};
@@ -169,28 +169,31 @@ StyledButtonPrimitive.defaultProps = {
 };
 
 const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
+  console.log(props);
   const {
     loading,
     disabled,
     children,
     iconLeft,
     iconRight,
-    leftIconContainer,
-    rightIconContainer,
+    // Need to setup null values so the object exits by default
+    icons = { width: null, height: null, leftMargin: null, rightMargin: null },
   } = props;
+  const { width, height, leftMargin, rightMargin } = icons;
   const isDisabled = loading || disabled;
+  const onlyIcon = Boolean(iconLeft && !children);
   return (
-    <StyledButtonPrimitive disabled={isDisabled} forwardedRef={ref} {...props}>
+    <StyledButtonPrimitive forwardedRef={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
       {loading && <Loading type="buttonLoader" />}
       <ButtonPrimitiveContent loading={loading}>
         {iconLeft && (
-          <ButtonPrimitiveIconContainer {...leftIconContainer}>
+          <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
         {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
         {iconRight && (
-          <ButtonPrimitiveIconContainer {...rightIconContainer}>
+          <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
             {iconRight}
           </ButtonPrimitiveIconContainer>
         )}
@@ -198,5 +201,7 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
     </StyledButtonPrimitive>
   );
 });
+
+ButtonPrimitive.displayName = "ButtonPrimitive";
 
 export default ButtonPrimitive;

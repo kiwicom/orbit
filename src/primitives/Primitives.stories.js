@@ -1,12 +1,13 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, select, object } from "@storybook/addon-knobs";
+import { text, select, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import ButtonPrimitive from "./ButtonPrimitive";
 import * as Icons from "../icons";
 import { SIZE_OPTIONS } from "./IllustrationPrimitive/consts";
+import { SIZE_OPTIONS as BUTTON_SIZES } from "./ButtonPrimitive/common/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import BadgePrimitive from "./BadgePrimitive";
 import Illustration from "./IllustrationPrimitive";
@@ -52,64 +53,93 @@ storiesOf("Primitives", module)
     },
   )
   .add("ButtonPrimitive", () => {
-    const background = text("Background", "#d63737");
-    const backgroundHover = text("BackgroundHover", "background: #da0a0a");
-    const backgroundActive = text("BackgroundActive", "background: #da0a0a");
-    const backgroundFocus = text("BackgroundFocus", "background: #da0a0a");
-    const foreground = text("Foreground", "#faf333");
-    const foregroundHover = text("ForegroundHover", "#faf333");
-    const foregroundActive = text("ForegroundActive", "#faf333");
-    const foregroundFocus = text("ForegroundFocus", "#faf333");
-    const boxShadow = text("boxShadow", "box-shadow: 0 8px 8px -6px rgba(0,0,0,.25)");
-    const boxShadowHover = text("boxShadow", "box-shadow: 0 8px 8px -6px rgba(0,0,0,.25)");
-    const boxShadowActive = text("boxShadow", "box-shadow: 0 8px 8px -6px rgba(0,0,0,.25)");
-    const boxShadowFocus = text("boxShadow", " box-shadow: 0 8px 8px -6px rgba(0,0,0,.25)");
-    const fontWeight = text("fontWeight", "bold");
+    const asComponent = text("asComponent", "button");
+    const ariaControls = text("ariaControls", null);
+    const ariaExpanded = boolean("ariaExpanded", false);
+    const background = text("background", "#d63737");
+    const backgroundHover = text("backgroundHover", "#da0a0a");
+    const backgroundActive = text("backgroundActive", "#da0a0a");
+    const backgroundFocus = text("backgroundFocus", "#da0a0a");
+    const boxShadow = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
+    const boxShadowHover = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
+    const boxShadowActive = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
+    const boxShadowFocus = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
+    const children = text("children", "ButtonPrimitive");
+    const circled = boolean("circled", false);
+    const dataTest = text("dataTest", "test");
+    const disabled = boolean("disabled", false);
+    const external = boolean("external", false);
     const fontSize = text("fontSize", "14px");
-    const height = text("height", 60);
-    const width = text("width");
-    const padding = text("padding", "20px");
-    const spinner = object("spinner", { height: "20", width: "20" });
-    const leftIconContainer = object("leftIconContainer", {
-      width: "20px",
-      height: "20px",
-      margin: "0 0 0 8px",
-    });
-    const rightIconContainer = object("rightIconContainer", {
-      width: "20px",
-      height: "20px",
-      margin: "0 0 0 8px",
-    });
+    const fontWeight = text("fontWeight", "bold");
+    const foreground = text("foreground", "#faf333");
+    const foregroundHover = text("foregroundHover", "#faf333");
+    const foregroundActive = text("foregroundActive", "#faf333");
+    const foregroundFocus = text("foregroundFocus", "#faf333");
+    const fullWidth = boolean("fullWidth", false);
+    const height = text("height", "46px");
+    const href = text("href", null);
     const IconLeft = getIcon(getIcons("iconLeft", ""));
-    const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+    const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
+    const icons = object("icons", {
+      width: "16px",
+      height: "16px",
+      leftMargin: "2px",
+      rightMargin: "2px",
+      foreground: "#faf333",
+      foregroundHover: "#faf333",
+      foregroundActive: "#faf333",
+    });
+    const loading = boolean("loading", false);
+    const padding = text("padding", "0 10px 0 10px");
+    const role = text("role", null);
+    const size = select("Size", Object.values(BUTTON_SIZES), BUTTON_SIZES.NORMAL);
+    const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+    const submit = boolean("submit", false);
+    const title = text("title", null);
+    const tabIndex = text("tabIndex", null);
+    const width = text("width", null);
 
     return (
       <ButtonPrimitive
+        asComponent={asComponent}
+        ariaControls={ariaControls}
+        ariaExpanded={ariaExpanded}
         background={background}
         backgroundHover={backgroundHover}
         backgroundActive={backgroundActive}
         backgroundFocus={backgroundFocus}
-        foreground={foreground}
-        foregroundHover={foregroundHover}
-        foregroundFocus={foregroundFocus}
-        foregroundActive={foregroundActive}
         boxShadow={boxShadow}
         boxShadowHover={boxShadowHover}
         boxShadowActive={boxShadowActive}
         boxShadowFocus={boxShadowFocus}
-        fontWeight={fontWeight}
+        circled={circled}
+        dataTest={dataTest}
+        disabled={disabled}
+        external={external}
         fontSize={fontSize}
+        fontWeight={fontWeight}
+        foreground={foreground}
+        foregroundHover={foregroundHover}
+        foregroundFocus={foregroundFocus}
+        foregroundActive={foregroundActive}
+        fullWidth={fullWidth}
         height={height}
-        onClick={action("onClick")}
-        width={width}
-        padding={padding}
-        spinner={spinner}
-        leftIconContainer={leftIconContainer}
-        rightIconContainer={rightIconContainer}
+        href={href}
         iconLeft={IconLeft && <IconLeft />}
         iconRight={IconRight && <IconRight />}
+        icons={icons}
+        loading={loading}
+        onClick={action("onClick")}
+        padding={padding}
+        role={role}
+        size={size}
+        spaceAfter={spaceAfter}
+        submit={submit}
+        title={title}
+        tabIndex={tabIndex}
+        width={width}
       >
-        ButtonPrimitive
+        {children}
       </ButtonPrimitive>
     );
   });

@@ -3,8 +3,9 @@ import { rtlSpacing } from "../../../utils/rtl";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import type { GetPadding } from "./getPadding";
 
-const getSpacing: GetPadding = ({ theme, onlyIcon, iconRight, iconLeft, size }) => {
-  if (onlyIcon) return rtlSpacing(theme.orbit.paddingButtonWithoutText)({ theme });
+const getSpacing: GetPadding = (onlyIcon, iconRight, iconLeft, size, theme) => {
+  const wrappedRtl = value => rtlSpacing(value)({ theme });
+  if (onlyIcon) return wrappedRtl(theme.orbit.paddingButtonWithoutText);
   const tokens = {
     [TOKENS.paddingButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
@@ -27,16 +28,10 @@ const getSpacing: GetPadding = ({ theme, onlyIcon, iconRight, iconLeft, size }) 
       [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithRightIcon,
     },
   };
-  if (iconLeft && iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithIcons][size])({ theme });
-  }
-  if (iconLeft && !iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithLeftIcon][size])({ theme });
-  }
-  if (!iconLeft && iconRight) {
-    return rtlSpacing(tokens[TOKENS.paddingButtonWithRightIcon][size])({ theme });
-  }
-  return rtlSpacing(tokens[TOKENS.paddingButton][size])({ theme });
+  if (iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithIcons][size]);
+  if (iconLeft && !iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithLeftIcon][size]);
+  if (!iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithRightIcon][size]);
+  return wrappedRtl(tokens[TOKENS.paddingButton][size]);
 };
 
 export default getSpacing;

@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeProps } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 import type { Type } from "../index";
 
 type Name =
@@ -11,6 +11,6 @@ type Name =
   | "foregroundHover"
   | "foregroundActive";
 
-export type GetButtonLinkTypeToken = ({ name: Name, type: Type, ...ThemeProps }) => string;
+export type GetButtonLinkTypeToken = (name: Name, type: Type, theme: Theme) => string;
 
 declare export default GetButtonLinkTypeToken;

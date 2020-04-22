@@ -1,9 +1,15 @@
 // @flow
-import type { Props, Type } from "../index";
-import type { ThemeProps } from "../../defaultTheme";
+import type { Type } from "../index";
+import type { Theme } from "../../defaultTheme";
 
 type State = "default" | "focus" | "active" | "hover";
 
-export type GetButtonBoxShadow = ({ state: State, ...Props, type: Type, ...ThemeProps }) => ?string;
+export type GetButtonBoxShadow = (
+  state: State,
+  disabled: boolean,
+  bordered: boolean,
+  theme: Theme,
+  type: Type,
+) => ?string;
 
 declare export default GetButtonBoxShadow;

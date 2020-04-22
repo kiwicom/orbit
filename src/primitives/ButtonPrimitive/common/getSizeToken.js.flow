@@ -1,14 +1,8 @@
 // @flow
 
-import type { Size, Spinner } from "../index";
-import type { ThemeProps } from "../../../defaultTheme";
+import type { Size, HeightProps } from "../index";
+import type { Theme } from "../../../defaultTheme";
 
-export type GetSizeTokenReturn = {|
-  height: string,
-  fontSize: string,
-  spinner: Spinner,
-|};
-
-export type GetSizeToken = ({ size: Size, ...ThemeProps }) => GetSizeTokenReturn;
+export type GetSizeToken = (size: Size, theme: Theme) => HeightProps;
 
 declare export default GetSizeToken;

@@ -4,35 +4,14 @@
 */
 import * as React from "react";
 
-import type { Globals, Component } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
-import type { Size } from "../primitives/ButtonPrimitive";
+import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
 export type Type = "primary" | "secondary";
 
 export type Props = {|
-  ...Globals,
-  ...spaceAfter,
-  +children?: React.Node,
-  +asComponent?: Component,
-  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
-  +disabled?: boolean,
-  +fullWidth?: boolean,
-  +external?: boolean,
-  +type?: Type,
-  +size?: Size,
-  +href?: string,
-  +width?: number,
-  +iconLeft?: React.Node,
-  +iconRight?: React.Node,
-  +circled?: boolean,
-  +submit?: boolean,
   +transparent?: boolean,
-  +tabIndex?: string,
-  +ariaExpanded?: boolean,
-  +ariaControls?: string,
-  +role?: string,
-  +title?: string | (any => string),
+  +type?: Type,
+  ...ButtonCommonProps,
 |};
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

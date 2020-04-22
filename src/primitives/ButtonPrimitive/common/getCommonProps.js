@@ -2,13 +2,21 @@
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
 import type { GetCommonProps } from "./getCommonProps";
+import { SIZE_OPTIONS } from "./consts";
 
-const getCommonProps: GetCommonProps = ({ width, size, theme, onlyIcon, iconRight, iconLeft }) => {
+const getCommonProps: GetCommonProps = ({
+  width,
+  size = SIZE_OPTIONS.NORMAL,
+  theme,
+  iconRight,
+  iconLeft,
+  children,
+}) => {
+  const onlyIcon = Boolean(iconLeft && !children);
   return {
-    ...getSizeToken({ size, theme }),
+    ...getSizeToken(size, theme),
     width,
-    padding: getPadding({ onlyIcon, iconRight, iconLeft, size, theme }),
-    transition: `all ${theme.orbit.durationFast} ease-in-out !important`,
+    padding: getPadding(onlyIcon, iconRight, iconLeft, size, theme),
     fontWeight: theme.orbit.fontWeightBold,
   };
 };

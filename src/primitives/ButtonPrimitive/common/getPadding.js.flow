@@ -1,15 +1,15 @@
 // @flow
 import * as React from "react";
 
-import type { ThemeProps } from "../../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
 import type { Size } from "../index";
 
-export type GetPadding = ({
-  ...ThemeProps,
+export type GetPadding = (
   onlyIcon: boolean,
   iconRight?: React.Node,
   iconLeft?: React.Node,
   size: Size,
-}) => string;
+  theme: Theme,
+) => string;
 
 declare export default GetPadding;

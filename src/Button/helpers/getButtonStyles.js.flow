@@ -2,6 +2,7 @@
 
 import type { ThemeProps } from "../../defaultTheme";
 import type { Type } from "../index";
+import type { Background, BoxShadow, Foreground } from "../../primitives/ButtonPrimitive";
 
 export type GetButtonStyles = ({
   disabled: boolean,
@@ -9,17 +10,9 @@ export type GetButtonStyles = ({
   type: Type,
   ...ThemeProps,
 }) => {|
-  background: string,
-  backgroundHover: string,
-  backgroundActive: string,
-  backgroundFocus: ?string,
-  foreground: string,
-  foregroundHover: string,
-  foregroundActive: string,
-  boxShadow: ?string,
-  boxShadowHover: ?string,
-  boxShadowActive: ?string,
-  boxShadowFocus: ?string,
+  ...Background,
+  ...Foreground,
+  ...BoxShadow,
 |};
 
 declare export default GetButtonStyles;

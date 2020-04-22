@@ -2,9 +2,7 @@
 import * as React from "react";
 
 import { TYPES } from "./consts";
-import { SIZE_OPTIONS } from "../primitives/ButtonPrimitive/common/consts";
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
-import getIconSize from "../primitives/ButtonPrimitive/common/getIconSize";
 import useTheme from "../hooks/useTheme";
 import getIconContainer from "../primitives/ButtonPrimitive/common/getIconContainer";
 import getButtonLinkStyles from "./helpers/getButtonLinkStyles";
@@ -14,51 +12,23 @@ import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps"
 import type { Props } from "./index";
 
 const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
-  (
-    {
-      children,
-      asComponent = "button",
-      size = SIZE_OPTIONS.NORMAL,
-      type = TYPES.PRIMARY,
-      iconLeft,
-      disabled = false,
-      transparent = false,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ children, type = TYPES.PRIMARY, disabled = false, transparent = false, ...props }, ref) => {
     const theme = useTheme();
-    const onlyIcon = Boolean(iconLeft && !children);
-    const sizeIcon = getIconSize(size);
-
-    const iconForeground = getButtonLinkIconForeground({ type, theme });
-    const buttonLinkStyles = getButtonLinkStyles({ type, disabled, transparent, theme });
-    const commonProps = getCommonProps({ type, size, iconLeft, onlyIcon, theme, ...props });
+    const propsWithTheme = { theme, ...props };
+    const commonProps = getCommonProps(propsWithTheme);
+    const buttonLinkStyles = getButtonLinkStyles({ type, theme, disabled, transparent });
+    const icons = getIconContainer({
+      ...propsWithTheme,
+      iconForeground: getButtonLinkIconForeground({ type, theme }),
+    });
     return (
       <ButtonPrimitive
-        asComponent={asComponent}
-        onlyIcon={onlyIcon}
-        iconLeft={iconLeft}
         ref={ref}
+        disabled={disabled}
         {...props}
         {...buttonLinkStyles}
         {...commonProps}
-        leftIconContainer={getIconContainer({
-          onlyIcon,
-          theme,
-          size,
-          sizeIcon,
-          type,
-          iconForeground,
-        })}
-        rightIconContainer={getIconContainer({
-          onlyIcon,
-          theme,
-          size,
-          sizeIcon,
-          right: true,
-          iconForeground,
-        })}
+        {...icons}
       >
         {children}
       </ButtonPrimitive>

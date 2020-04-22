@@ -4,10 +4,6 @@ exports[`ButtonPrimitive: getSizeToken function large size, should match snapsho
 Object {
   "fontSize": "16px",
   "height": "52px",
-  "spinner": Object {
-    "height": "24px",
-    "width": "24px",
-  },
 }
 `;
 
@@ -15,10 +11,6 @@ exports[`ButtonPrimitive: getSizeToken function normal size, should match snapsh
 Object {
   "fontSize": "14px",
   "height": "44px",
-  "spinner": Object {
-    "height": "24px",
-    "width": "24px",
-  },
 }
 `;
 
@@ -26,9 +18,5 @@ exports[`ButtonPrimitive: getSizeToken function small size, should match snapsho
 Object {
   "fontSize": "12px",
   "height": "32px",
-  "spinner": Object {
-    "height": "16px",
-    "width": "16px",
-  },
 }
 `;

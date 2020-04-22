@@ -2,7 +2,7 @@
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import type { GetSizeToken } from "./getSizeToken";
 
-const getSizeToken: GetSizeToken = ({ theme, size }) => {
+const getSizeToken: GetSizeToken = (size, theme) => {
   const tokens = {
     [TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
@@ -28,10 +28,6 @@ const getSizeToken: GetSizeToken = ({ theme, size }) => {
   return {
     height: tokens[TOKENS.heightButton][size],
     fontSize: tokens[TOKENS.fontSizeButton][size],
-    spinner: {
-      width: tokens[TOKENS.spinnerWidth][size],
-      height: tokens[TOKENS.spinnerHeight][size],
-    },
   };
 };
 

@@ -11,7 +11,7 @@ describe("ButtonPrimitive: getCommonProps function", () => {
     expect(getCommonProps({ size, onlyIcon, iconLeft, theme })).toMatchSnapshot();
   });
   it("should match: dynamic width and static fontWeight and transition", () => {
-    const width = 200;
+    const width = "200px";
     const size = SIZE_OPTIONS.NORMAL;
     const onlyIcon = true;
     const iconLeft = true;

@@ -1,6 +1,6 @@
 // @flow
 import type { Type } from "../index";
-import type { ThemeProps } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 
 export type TokenName =
   | "backgroundButton"
@@ -21,6 +21,6 @@ export type TokenName =
   | "borderColorButtonActive"
   | "borderColorButtonFocus";
 
-export type GetButtonTypeToken = ({ name: TokenName, type: Type, ...ThemeProps }) => string;
+export type GetButtonTypeToken = (name: TokenName, type: Type, theme: Theme) => string;
 
 declare export default GetButtonTypeToken;

@@ -1,83 +1,101 @@
 // @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/utilities/buttonprimitive/
+*/
 import * as React from "react";
 
 import type { Globals, Component } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";
 
+/*
+  Common properties used across all Button components. The very base.
+ */
+
 export type Size = "small" | "normal" | "large";
 
-type ButtonCommonProps = {|
+export type ButtonCommonProps = {|
+  +asComponent?: Component,
+  +ariaControls?: string,
+  +ariaExpanded?: boolean,
   +children?: React.Node,
-  +asComponent?: Component | string,
-  +href?: string | null,
-  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
-  +external?: boolean,
-  +disabled?: boolean,
   +circled?: boolean,
+  +disabled?: boolean,
+  +external?: boolean,
   +fullWidth?: boolean,
-  +rel?: string,
-  +target?: string,
-  +onlyIcon?: boolean,
-  +loading?: boolean,
-  +bordered?: boolean,
-  +transparent?: boolean,
+  +href?: string,
   +iconLeft?: React.Node,
   +iconRight?: React.Node,
-  +submit?: boolean,
-  +tabIndex?: string,
-  +ariaExpanded?: boolean,
-  +ariaControls?: string,
+  +loading?: boolean,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +role?: string,
-  // Don't use, it's deprecated and will be removed in the major version
-  +className?: string,
+  +size?: Size,
+  +submit?: boolean,
   +title?: string | (any => string),
+  +tabIndex?: string,
+  +width?: string,
+  ...Globals,
+  ...spaceAfter,
 |};
 
-export type IconContainer = {|
+/*
+  Icon properties used on other getter functions.
+ */
+export type IconForeground = {|
+  +foreground?: ?string,
+  +foregroundHover?: ?string,
+  +foregroundActive?: ?string,
+|};
+
+export type IconProps = {|
   +width?: ?string,
   +height?: ?string,
-  +margin?: ?string,
+  +leftMargin?: ?string,
+  +rightMargin?: ?string,
+  ...IconForeground,
 |};
 
-export type IconForeground = {|
-  iconForeground?: ?string,
-  iconForegroundHover?: ?string,
-  iconForegroundActive?: ?string,
-|};
+/*
+  Primitive - style props used only on ButtonPrimitive itself or it's common functions.
+ */
 
-export type Spinner = {| height?: string, width?: string |};
-
-export type PrimitiveTypes = {|
+export type HeightProps = {|
   +height?: string,
-  +width?: number,
-  +padding?: string,
-  +spinner?: Spinner,
-  +background?: ?string,
-  +backgroundHover?: ?string,
-  +backgroundActive?: ?string,
-  +backgroundFocus?: ?string,
-  +iconColor?: ?string,
-  +iconColorHover?: ?string,
-  +iconColorActive?: ?string,
-  +boxShadow?: ?string,
-  +boxShadowHover?: ?string,
-  +boxShadowActive?: ?string,
-  +boxShadowFocus?: ?string,
+  +fontSize?: ?string,
+|};
+
+export type Foreground = {|
   +foreground?: ?string,
   +foregroundHover?: ?string,
   +foregroundActive?: ?string,
   +foregroundFocus?: ?string,
+|};
+
+export type Background = {|
+  +background?: ?string,
+  +backgroundHover?: ?string,
+  +backgroundActive?: ?string,
+  +backgroundFocus?: ?string,
+|};
+
+export type BoxShadow = {|
+  +boxShadow?: ?string,
+  +boxShadowHover?: ?string,
+  +boxShadowActive?: ?string,
+  +boxShadowFocus?: ?string,
+|};
+
+export type PrimitiveTypes = {|
+  +padding?: string,
   +fontWeight?: ?string,
-  +fontSize?: ?string,
-  +leftIconContainer?: IconContainer,
-  +rightIconContainer?: IconContainer,
-  +transition?: string,
-  ...IconForeground,
+  +icons?: IconProps,
+  ...HeightProps,
+  ...Foreground,
+  ...Background,
+  ...BoxShadow,
 |};
 
 export type Props = {|
-  ...Globals,
-  ...spaceAfter,
+  ...$Diff<ButtonCommonProps, { +size?: Size, ... }>,
   ...ButtonCommonProps,
   ...PrimitiveTypes,
 |};

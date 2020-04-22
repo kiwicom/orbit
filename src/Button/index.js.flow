@@ -4,9 +4,7 @@
 */
 import * as React from "react";
 
-import type { Globals, Component } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
-import type { Size } from "../primitives/ButtonPrimitive";
+import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
 export type Type =
   | "primary"
@@ -20,29 +18,9 @@ export type Type =
   | "white";
 
 export type Props = {|
-  ...Globals,
-  ...spaceAfter,
-  +children?: React.Node,
-  +asComponent?: Component,
-  +href?: string,
-  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
-  +external?: boolean,
-  +circled?: boolean,
   +bordered?: boolean,
-  +disabled?: boolean,
-  +fullWidth?: boolean,
-  +loading?: boolean,
   +type?: Type,
-  +size?: Size,
-  +width?: number,
-  +submit?: boolean,
-  +iconLeft?: React.Node,
-  +iconRight?: React.Node,
-  +tabIndex?: string,
-  +ariaExpanded?: boolean,
-  +ariaControls?: string,
-  +role?: string,
-  +title?: string | (any => string),
+  ...ButtonCommonProps,
 |};
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

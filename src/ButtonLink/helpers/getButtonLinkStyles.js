@@ -19,17 +19,29 @@ const getButtonLinkBoxShadow = (state, disabled, transparent, theme) => {
 const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled, transparent }) => {
   const wrappedTypeToken = name => getButtonLinkTypeToken(name, type, theme);
   const wrappedBoxShadow = state => getButtonLinkBoxShadow(state, disabled, transparent, theme);
-  return {
-    background: wrappedTypeToken(TOKENS.background),
-    backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
-    backgroundActive: wrappedTypeToken(TOKENS.backgroundActive),
-    backgroundFocus: wrappedTypeToken(TOKENS.backgroundFocus),
+  const baseStyles = {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
     boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),
     boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
     foreground: wrappedTypeToken(TOKENS.foreground),
     foregroundHover: wrappedTypeToken(TOKENS.foregroundHover),
     foregroundActive: wrappedTypeToken(TOKENS.foregroundActive),
+  };
+  if (transparent) {
+    return {
+      background: wrappedTypeToken(TOKENS.background),
+      backgroundHover: null,
+      backgroundActive: null,
+      backgroundFocus: wrappedTypeToken(TOKENS.backgroundFocus),
+      ...baseStyles,
+    };
+  }
+  return {
+    background: wrappedTypeToken(TOKENS.background),
+    backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
+    backgroundActive: wrappedTypeToken(TOKENS.backgroundActive),
+    backgroundFocus: wrappedTypeToken(TOKENS.backgroundFocus),
+    ...baseStyles,
   };
 };
 

@@ -12,7 +12,7 @@ import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps"
 import type { Props } from "./index";
 
 const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
-  ({ children, type = TYPES.PRIMARY, disabled = false, transparent = false, ...props }, ref) => {
+  ({ type = TYPES.PRIMARY, disabled = false, transparent = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
     const commonProps = getCommonProps(propsWithTheme);
@@ -29,9 +29,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
         {...buttonLinkStyles}
         {...commonProps}
         {...icons}
-      >
-        {children}
-      </ButtonPrimitive>
+      />
     );
   },
 );

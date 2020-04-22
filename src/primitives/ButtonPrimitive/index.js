@@ -169,7 +169,6 @@ StyledButtonPrimitive.defaultProps = {
 };
 
 const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
-  console.log(props);
   const {
     loading,
     disabled,

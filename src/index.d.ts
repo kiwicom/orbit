@@ -42,6 +42,8 @@ export { Text } from "./Text/index.d.ts";
 export { TextLink } from "./TextLink/index.d.ts";
 export { Tile } from "./Tile/index.d.ts";
 export { TileGroup } from "./TileGroup/index.d.ts";
+export { Tile } from "./deprecated/Tile/index.d.ts";
+export { TileGroup } from "./deprecated/TileGroup/index.d.ts";
 export { Tooltip } from "./Tooltip/index.d.ts";
 export { TripSegment } from "./deprecated/TripSegment/index.d.ts";
 export { TripSector } from "./deprecated/TripSector/index.d.ts";

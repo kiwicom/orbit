@@ -10,6 +10,9 @@ import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
 import useTranslate from "../hooks/useTranslate";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
+import getSizeToken from "../primitives/ButtonPrimitive/common/getSizeToken";
+import { SIZE_OPTIONS } from "../primitives/ButtonPrimitive/common/consts";
 
 import type { Props } from "./index";
 

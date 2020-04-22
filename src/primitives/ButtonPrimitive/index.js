@@ -88,7 +88,7 @@ export const StyledButtonPrimitive = styled(
     height: ${height};
     position: relative;
     display: ${href || asComponent === "a" ? "inline-flex" : "flex"};
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     appearance: none;
@@ -96,10 +96,10 @@ export const StyledButtonPrimitive = styled(
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
     max-width: 100%; // to ensure that Buttons content wraps in IE
     background: ${background};
-    color: ${foreground};
+    color: ${foreground}!important;
     border: 0;
     padding: ${padding};
-    border-radius: ${circled ? height : "6px"};
+    border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
@@ -109,7 +109,7 @@ export const StyledButtonPrimitive = styled(
     outline: 0;
     opacity: ${disabled && theme.orbit.opacityButtonDisabled};
     margin-bottom: ${getSpacingToken};
-    width: 100%;
+    width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
     box-shadow: ${boxShadow};
 
     ${StyledButtonPrimitiveIconContainer} {
@@ -157,10 +157,6 @@ export const StyledButtonPrimitive = styled(
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
     }
-    ${mq.tablet(css`
-      width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
-      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
-    `)};
   `}};
 `;
 

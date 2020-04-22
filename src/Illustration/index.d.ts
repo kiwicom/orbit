@@ -8,7 +8,7 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Illustration";
 
-type Size = "small" | "medium";
+type Size = "small" | "medium" | "large" | "display";
 type Name =
   | "Accommodation"
   | "AirHelp"

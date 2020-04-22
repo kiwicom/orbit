@@ -18,10 +18,7 @@ export type Props = {|
   error?: Translation,
   onlySelectionText?: Translation,
   filter?: boolean,
-  onOnlySelection?: (
-    SyntheticEvent<HTMLButtonElement>,
-    { value: string, label: string },
-  ) => void | Promise<any>,
+  onOnlySelection?: (SyntheticEvent<HTMLButtonElement>, {}) => void | Promise<any>,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 

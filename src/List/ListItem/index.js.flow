@@ -15,6 +15,7 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var Item: ReactComponentStyled<any>;
+declare export var IconContainer: ReactComponentStyled<any>;
 
 export type GetLineHeightToken = ({ theme: Theme, size: Size }) => string;
 

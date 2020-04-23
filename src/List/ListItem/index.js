@@ -9,7 +9,6 @@ import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
-import media from "../../utils/mediaQuery";
 
 import type { GetLineHeightToken, Props } from "./index";
 
@@ -64,43 +63,18 @@ export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
     line-height: inherit;
     font-size: inherit;
   }
-
-  ${({ type, theme }) =>
-    type === TYPES.SEPARATED &&
-    css`
-      border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
-      padding: ${theme.orbit.spaceSmall};
-      align-items: center;
-
-      &,
-      ${StyledText} {
-        font-weight: ${theme.orbit.fontWeightMedium};
-      }
-
-      :last-child {
-        border-bottom: none;
-      }
-
-      ${media.tablet(css`
-        padding: ${theme.orbit.spaceXSmall};
-      `)}
-    `}
 `;
 
 Item.defaultProps = {
   theme: defaultTheme,
 };
 
-const IconContainer = styled.div`
+export const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: ${({ theme, type }) =>
-    rtlSpacing(
-      `${type === TYPES.SEPARATED ? theme.orbit.spaceXXSmall : 0} ${theme.orbit.spaceXSmall} 0 0`,
-    )};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
   flex: 0 0 auto;
-  height: ${({ theme, type, size }) =>
-    type === TYPES.SEPARATED ? theme.heightIconLarge : getLineHeightToken({ theme, size })};
+  height: ${({ theme, size }) => getLineHeightToken({ theme, size })};
 
   ${StyledCarrierLogo} {
     ${getIconSizeFromType};

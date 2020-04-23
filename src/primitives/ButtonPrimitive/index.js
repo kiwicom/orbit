@@ -36,7 +36,6 @@ export const StyledButtonPrimitive = styled(
     const isButtonWithHref = asComponent === "button" && href;
     const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
-
     return (
       <Component
         ref={forwardedRef}
@@ -177,7 +176,13 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
   return (
-    <StyledButtonPrimitive forwardedRef={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
+    <StyledButtonPrimitive
+      forwardedRef={ref}
+      onlyIcon={onlyIcon}
+      {...props}
+      disabled={isDisabled}
+      className={undefined}
+    >
       {loading && <Loading type="buttonLoader" />}
       <ButtonPrimitiveContent loading={loading}>
         {iconLeft && (

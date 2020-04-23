@@ -101,6 +101,7 @@ storiesOf("Primitives", module)
 
     return (
       <ButtonPrimitive
+        className="kokot"
         asComponent={asComponent}
         ariaControls={ariaControls}
         ariaExpanded={ariaExpanded}

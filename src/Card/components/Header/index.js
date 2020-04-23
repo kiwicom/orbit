@@ -37,7 +37,7 @@ const CardCloseButton = ({ onClick }) => {
     <ButtonLink
       type="secondary"
       size="small"
-      icon={<Close />}
+      iconLeft={<Close />}
       onClick={onClick}
       transparent
       title={translate("button_close")}

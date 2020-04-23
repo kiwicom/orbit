@@ -29,7 +29,6 @@ Table below contains all types of the props available in Button component.
 | disabled     | `boolean`                  | `false`     | If `true`, the Button will be disabled.                                                                                                         |
 | external     | `boolean`                  | `false`     | If `true`, the Button opens link in a new tab. [See Functional specs](#functional-specs)                                                        |
 | href         | `string`                   |             | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)                                                   |
-| icon         | `React.Node`               |             | The displayed icon (will be removed in the future, use iconLeft instead).                                                                       |
 | iconLeft     | `React.Node`               |             | The displayed icon on the left.                                                                                                                 |
 | iconRight    | `React.Node`               |             | The displayed icon on the right.                                                                                                                |
 | loading      | `boolean`                  | `false`     | If `true`, the loading glyph will be displayed.                                                                                                 |
@@ -42,7 +41,7 @@ Table below contains all types of the props available in Button component.
 | tabIndex     | `string`                   |             | Specifies the tab order of an element.                                                                                                          |
 | title        | `string`                   |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)            | `"primary"` | The type of Button.                                                                                                                             |
-| width        | `number`                   | `0`         | The width of the Button. Number is defined in `px`.                                                                                             |
+| width        | `string`                   |             | The width of the Button. Can be any string - `100px`, `20%`.                                                                                    |
 
 ### enum
 

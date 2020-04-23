@@ -40,7 +40,7 @@ Table below contains all types of the props available in ButtonLink component.
 | transparent  | `boolean`                      | `false`     | If `true`, the ButtonLink will not have `:hover` and `:active` state.                                                                           |
 | title        | `string`                       |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)                | `"primary"` | The type of ButtonLink.                                                                                                                         |
-| width        | `string`                       |             | The width of the ButtonPrimitive. Can be any string - `100px`, `20%`.                                                                           |
+| width        | `string`                       |             | The width of the ButtonLink. Can be any string - `100px`, `20%`.                                                                                |
 
 ### enum
 

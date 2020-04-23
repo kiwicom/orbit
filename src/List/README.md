@@ -43,7 +43,7 @@ Table below contains all types of the props in ListItem component.
 | :--------- | :------------ |
 | `"small"`  | `"primary"`   |
 | `"normal"` | `"secondary"` |
-| `"large"`  | `"separated"` |
+| `"large"`  |
 
 #### Functional specs
 

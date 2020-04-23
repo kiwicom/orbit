@@ -40,10 +40,6 @@ const getIconSizeFromType = ({ theme, type }) => {
       height: ${theme.orbit.heightIconSmall};
       width: ${theme.orbit.widthIconSmall};
     `,
-    [TYPES.SEPARATED]: css`
-      height: ${theme.orbit.heightIconMedium};
-      width: ${theme.orbit.widthIconMedium};
-    `,
   };
   return tokens[type];
 };

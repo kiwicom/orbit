@@ -19,7 +19,7 @@ storiesOf("Primitives", module)
   .add(
     "BadgePrimitive",
     () => {
-      const Icon = getIcon(getIcons("Airplane"));
+      const Icon = getIcon(getIcons("icon", "Airplane"));
       const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
       const foregroundColor = text("ForegroundColor", "#fff");
       const borderColor = text("borderColor", null);

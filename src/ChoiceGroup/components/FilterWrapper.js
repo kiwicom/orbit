@@ -6,7 +6,7 @@ import type { FilterWrapperType } from "./FilterWrapper.js.flow";
 import defaultTheme from "../../defaultTheme";
 import ButtonLink from "../../ButtonLink";
 
-const StyledOnlyButton = styled(ButtonLink)``;
+const StyledOnlyButton = styled.div``;
 
 const hoverAndFocus = () => css`
   background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
@@ -32,7 +32,7 @@ const StyledContentWrapper = styled.div`
   ${({ disabled }) =>
     !disabled &&
     css`
-      /* NOTE: Combined selector &:hover, &:focus-within is not ussable here as it renders incorectly in IE and EDGE */
+      /* NOTE: Combined selector &:hover, &:focus-within is not usable here as it renders incorrectly in IE and EDGE */
       &:hover {
         ${hoverAndFocus}
       }
@@ -57,15 +57,17 @@ const FilterWrapper: FilterWrapperType = ({
     <StyledContentWrapper disabled={disabled}>
       {children}
       {onOnlySelection && !disabled && (
-        <StyledOnlyButton
-          type="secondary"
-          size="small"
-          onClick={ev => {
-            onOnlySelection(ev, { value, label });
-          }}
-          transparent
-        >
-          {onlySelectionText}
+        <StyledOnlyButton>
+          <ButtonLink
+            type="secondary"
+            size="small"
+            onClick={ev => {
+              onOnlySelection(ev, { value, label });
+            }}
+            transparent
+          >
+            {onlySelectionText}
+          </ButtonLink>
         </StyledOnlyButton>
       )}
     </StyledContentWrapper>

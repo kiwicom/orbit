@@ -100,13 +100,7 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputButton = styled(Button)`
-  flex-shrink: 0;
-`;
-
-const CloseButton = styled(ButtonLink)`
-  flex-shrink: 0;
-
+const CloseButton = styled.div`
   & svg {
     color: ${({ theme }) => theme.orbit.paletteInkLight};
   }
@@ -142,24 +136,26 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
       />
       {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
       <FakeInput error={props.error}>
-        <InputButton type="secondary" size="small" icon={<Attachment />} component="div">
+        <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
           {buttonLabel}
-        </InputButton>
+        </Button>
         <StyledFileInput fileName={props.fileName} error={props.error}>
           {props.fileName || placeholder}
         </StyledFileInput>
         {props.fileName && (
-          <CloseButton
-            type="secondary"
-            transparent
-            icon={<CloseCircle />}
-            onClick={ev => {
-              ev.preventDefault();
-              if (onRemoveFile) {
-                onRemoveFile();
-              }
-            }}
-          />
+          <CloseButton>
+            <ButtonLink
+              type="secondary"
+              transparent
+              iconLeft={<CloseCircle />}
+              onClick={ev => {
+                ev.preventDefault();
+                if (onRemoveFile) {
+                  onRemoveFile();
+                }
+              }}
+            />
+          </CloseButton>
         )}
       </FakeInput>
       {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}

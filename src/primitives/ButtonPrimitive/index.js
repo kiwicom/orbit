@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Loading, { StyledSpinner } from "../../Loading";
-import mq from "../../utils/mediaQuery";
 import getSpacingToken from "../../common/getSpacingToken";
 import ButtonPrimitiveContent from "./components/ButtonPrimitiveContent";
 import ButtonPrimitiveIconContainer, {

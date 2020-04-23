@@ -7,8 +7,6 @@ import type { Props } from "./ButtonPrimitiveContentChildren";
 
 const StyledButtonPrimitiveContentChildren = styled.div`
   display: inline-block;
-  width: 100%;
-  text-align: center;
 `;
 
 StyledButtonPrimitiveContentChildren.defaultProps = {

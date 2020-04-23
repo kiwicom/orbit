@@ -14,7 +14,7 @@ describe("ButtonGroup", () => {
   const component = shallow(
     <ButtonGroup dataTest={dataTest}>
       <Button type="secondary">{children}</Button>
-      <Button icon={<Airplane />}>{children}</Button>
+      <Button iconLeft={<Airplane />}>{children}</Button>
     </ButtonGroup>,
   );
   it("should have data-test", () => {

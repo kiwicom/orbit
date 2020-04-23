@@ -28,7 +28,6 @@ Table below contains all types of the props available in ButtonLink component.
 | external     | `boolean`                      | `false`     | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)                                                    |
 | fullWidth    | `boolean`                      | `false`     | If `true`, the ButtonLink will grow up to the full width of its container.                                                                      |
 | href         | `string`                       |             | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)                                                   |
-| icon         | `React.Node`                   |             | The displayed icon on the left (will be removed in the future, use iconLeft instead).                                                           |
 | iconLeft     | `React.Node`                   |             | The displayed icon on the left.                                                                                                                 |
 | iconRight    | `React.Node`                   |             | The displayed icon on the right.                                                                                                                |
 | onClick      | `event => void \| Promise`     |             | Function for handling onClick event.                                                                                                            |
@@ -41,7 +40,7 @@ Table below contains all types of the props available in ButtonLink component.
 | transparent  | `boolean`                      | `false`     | If `true`, the ButtonLink will not have `:hover` and `:active` state.                                                                           |
 | title        | `string`                       |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)                | `"primary"` | The type of ButtonLink.                                                                                                                         |
-| width        | `number`                       | `0`         | The width of the ButtonLink. Number is defined in `px`.                                                                                         |
+| width        | `string`                       |             | The width of the ButtonLink. Can be any string - `100px`, `20%`.                                                                                |
 
 ### enum
 

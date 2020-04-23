@@ -1,0 +1,26 @@
+// @flow
+import type { Type } from "../index";
+import type { Theme } from "../../defaultTheme";
+
+export type TokenName =
+  | "backgroundButton"
+  | "backgroundButtonHover"
+  | "backgroundButtonActive"
+  | "backgroundButtonBordered"
+  | "backgroundButtonBorderedHover"
+  | "backgroundButtonBorderedActive"
+  | "backgroundButtonFocus"
+  | "colorTextButton"
+  | "colorTextButtonBordered"
+  | "colorTextButtonHover"
+  | "colorTextButtonBorderedHover"
+  | "colorTextButtonActive"
+  | "colorTextButtonBorderedActive"
+  | "borderColorButton"
+  | "borderColorButtonHover"
+  | "borderColorButtonActive"
+  | "borderColorButtonFocus";
+
+export type GetButtonTypeToken = (name: TokenName, type: Type, theme: Theme) => string;
+
+declare export default GetButtonTypeToken;

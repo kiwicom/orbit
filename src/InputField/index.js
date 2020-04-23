@@ -12,9 +12,9 @@ import InputTags from "./InputTags";
 import type { Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
-import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 
 import type { Props } from ".";
 
@@ -124,7 +124,7 @@ export const InputContainer = styled(({ children, className }) => (
       }`};
   }
 
-  ${StyledButtonLink}:active {
+  ${StyledButtonPrimitive}:active {
     box-shadow: none;
   }
 `;

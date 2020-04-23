@@ -1,9 +1,9 @@
 // @flow
-import { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { TOKENS, TYPE_OPTIONS, BUTTON_STATES } from "../consts";
-import getTypeToken from "./getTypeToken";
+import { TOKENS, TYPE_OPTIONS } from "../consts";
+import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
+import getButtonTypeToken from "./getButtonTypeToken";
 import type { GetButtonBoxShadow } from "./getButtonBoxShadow";
 
 const opacity = {
@@ -31,52 +31,32 @@ const opacity = {
   },
 };
 
-const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, theme, type }) => {
+const getButtonBoxShadow: GetButtonBoxShadow = (state, disabled, bordered, theme, type) => {
+  const wrappedButtonTypeToken = name => getButtonTypeToken(name, type, theme);
   if (disabled) {
     return null;
   }
   if (state === BUTTON_STATES.DEFAULT && bordered) {
-    return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)};
-    `;
+    return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButton)}`;
   }
   if (state === BUTTON_STATES.HOVER && bordered) {
-    return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)};
-    `;
+    return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButtonHover)}`;
   }
   if (state === BUTTON_STATES.ACTIVE) {
     if (bordered) {
-      return css`
-        box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
-          inset 0 0 6px 3px
-            ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: Create token
-      `;
+      return `inset 0 0 0 1px ${wrappedButtonTypeToken(TOKENS.borderColorButtonActive)},
+          inset 0 0 6px 3px ${convertHexToRgba(
+            theme.orbit.paletteInkNormal,
+            opacity.bordered[type],
+          )}`;
     }
-    return css`
-      box-shadow: inset 0 0 6px 3px
-        ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.default[type])}; // TODO: Create token
-    `;
+    return `inset 0 0 6px 3px ${convertHexToRgba(
+      theme.orbit.paletteInkNormal,
+      opacity.default[type],
+    )};`;
   }
-  if (state === BUTTON_STATES.FOCUS) {
-    return css`
-      ${!bordered &&
-      css`
-        box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus)};
-      `}
-      &:active {
-        ${bordered
-          ? css`
-              box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
-                inset 0 0 6px 3px
-                  ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: create token
-            `
-          : css`
-              box-shadow: inset 0 0 6px 3px
-                ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.default[type])}; // TODO: create token
-            `};
-      }
-    `;
+  if (state === BUTTON_STATES.FOCUS && !bordered) {
+    return `0 0 0 3px ${wrappedButtonTypeToken(TOKENS.borderColorButtonFocus)}`;
   }
   return null;
 };

@@ -32,6 +32,7 @@ Table below contains all types of the props available in IllustrationPrimitive c
 
 | size        |
 | :---------- |
+| `"extraSmall"`   |
 | `"small"`   |
 | `"medium"`  |
 | `"large"`   |

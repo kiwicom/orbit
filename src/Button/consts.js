@@ -27,7 +27,6 @@ export const TOKENS = {
   paddingButtonWithIcons: "paddingButtonWithIcons",
   paddingButtonWithLeftIcon: "paddingButtonWithLeftIcon",
   paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
-  marginRightIcon: "marginRightIcon",
   // Type tokens
   backgroundButton: "backgroundButton",
   backgroundButtonHover: "backgroundButtonHover",
@@ -46,11 +45,4 @@ export const TOKENS = {
   borderColorButtonHover: "borderColorButtonHover",
   borderColorButtonActive: "borderColorButtonActive",
   borderColorButtonFocus: "borderColorButtonFocus",
-};
-
-export const BUTTON_STATES = {
-  DEFAULT: "default",
-  HOVER: "hover",
-  ACTIVE: "active",
-  FOCUS: "focus",
 };

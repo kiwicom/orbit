@@ -118,3 +118,4 @@ export { default as mediaQueries } from "./utils/mediaQuery";
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
 export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
+export { default as ButtonPrimitive } from "./primitives/ButtonPrimitive";

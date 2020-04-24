@@ -3,7 +3,8 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 
 import defaultTheme, { type ThemeProps } from "../defaultTheme";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
+import ButtonLink from "../ButtonLink";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
@@ -146,7 +147,7 @@ const CloseContainer = styled.div`
     margin: 0;
   }
 
-  ${StyledButtonLink} {
+  ${StyledButtonPrimitive} {
     pointer-events: auto;
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
@@ -327,7 +328,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
     <ButtonLink
       onClick={onClick}
       size="normal"
-      icon={<Close />}
+      iconLeft={<Close />}
       transparent
       dataTest={dataTest}
       type="secondary"

@@ -306,7 +306,7 @@ storiesOf("Button", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Button type="info" icon={<Icons.Airplane />}>
+        <Button type="info" iconLeft={<Icons.Airplane />}>
           Button
         </Button>
       </RenderInRtl>

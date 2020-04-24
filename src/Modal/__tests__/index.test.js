@@ -50,7 +50,7 @@ describe("Large Modal", () => {
         {content}
       </ModalSection>
       <ModalFooter flex={flex} dataTest={dataTest}>
-        <Button icon={<ChevronLeft />} type="secondary">
+        <Button iconLeft={<ChevronLeft />} type="secondary">
           Back
         </Button>
         <Button fullWidth>Continue to Payment</Button>

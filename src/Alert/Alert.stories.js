@@ -162,7 +162,7 @@ storiesOf("Alert", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Stack spacing="condensed">
+          <Stack spacing="compact">
             <Stack spacing="tight">
               <div>{message}</div>
               <List>
@@ -172,7 +172,7 @@ storiesOf("Alert", module)
                 <ListItem>623 Kč will be refunded by your payment card</ListItem>
               </List>
             </Stack>
-            <Stack direction="row">
+            <Stack direction="row" spacing="condensed">
               <AlertButton type={type} size="small" href="#">
                 {button}
               </AlertButton>

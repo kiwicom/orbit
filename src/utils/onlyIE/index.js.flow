@@ -1,0 +1,7 @@
+// @flow
+
+import type { CSSConstructor } from "styled-components";
+
+export type OnlyIE = (style: CSSConstructor, breakpoint?: string) => CSSConstructor;
+
+declare export default OnlyIE;

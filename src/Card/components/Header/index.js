@@ -37,7 +37,7 @@ const CardCloseButton = ({ onClick }) => {
     <ButtonLink
       type="secondary"
       size="small"
-      icon={<Close />}
+      iconLeft={<Close />}
       onClick={onClick}
       transparent
       title={translate("button_close")}
@@ -70,7 +70,11 @@ const Header = ({
         <Stack inline spacing="compact">
           {icon}
           {title && (
-            <Heading type="title3" element={titleAs} dataA11ySection={dataA11ySection}>
+            <Heading
+              type={isSection ? "title4" : "title3"}
+              element={titleAs}
+              dataA11ySection={dataA11ySection}
+            >
               {title}
             </Heading>
           )}

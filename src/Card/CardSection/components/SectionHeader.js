@@ -102,6 +102,7 @@ const CardSectionHeader = ({
         header={header}
         expanded={expanded}
         actions={actions}
+        isSection
         dataA11ySection={dataA11ySection}
       />
     </StyledCardSectionHeader>

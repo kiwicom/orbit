@@ -10,7 +10,7 @@ import Heading from "../Heading";
 import Text, { StyledText } from "../Text";
 import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
-import { StyledButton } from "../Button";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
 import randomID from "../utils/randomID";
 import { left } from "../utils/rtl";
@@ -82,14 +82,14 @@ StyledDialogContent.defaultProps = {
 
 const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
   width: 100%;
-  ${StyledButton} {
+  ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
   }
   ${mq.largeMobile(
     css`
       width: auto;
-      ${StyledButton} {
+      ${StyledButtonPrimitive} {
         width: auto;
         flex: 0 0 auto;
       }

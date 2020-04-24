@@ -5,6 +5,7 @@ import styled, { css } from "styled-components";
 import { StyledTableRow } from "./TableRow";
 import { StyledTableCell } from "./TableCell";
 import { StyledTableBody } from "./TableBody";
+import TYPE_OPTIONS from "./consts";
 import defaultTheme from "../defaultTheme";
 
 import type { Props } from "./index";
@@ -76,7 +77,11 @@ const StyledTable = styled.table`
   & ${StyledTableCell} {
     min-height: ${({ compact }) => (compact ? "24px" : "48px")};
     padding: ${({ theme, compact }) =>
-      compact ? theme.orbit.paddingTableCompact : theme.orbit.paddingTable};
+      compact
+        ? `6px ${theme.orbit.spaceSmall}`
+        : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
+    line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+    color: ${({ type, theme }) => type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
   }
 `;
 
@@ -84,7 +89,7 @@ StyledTable.defaultProps = {
   theme: defaultTheme,
 };
 
-const Table = ({ children, compact = false, dataTest }: Props) => {
+const Table = ({ children, compact = false, dataTest, type = TYPE_OPTIONS.PRIMARY }: Props) => {
   const [shadows, setShadows] = React.useState(false);
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);
@@ -128,7 +133,7 @@ const Table = ({ children, compact = false, dataTest }: Props) => {
       data-test={dataTest}
     >
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <StyledTable compact={compact} ref={table}>
+        <StyledTable compact={compact} type={type} ref={table}>
           {children}
         </StyledTable>
       </StyledTableInner>
@@ -140,5 +145,6 @@ export default Table;
 
 export { default as TableHead } from "./TableHead";
 export { default as TableBody } from "./TableBody";
+export { default as TableFooter } from "./TableFooter";
 export { default as TableRow } from "./TableRow";
 export { default as TableCell } from "./TableCell";

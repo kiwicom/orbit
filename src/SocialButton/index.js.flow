@@ -1,16 +1,16 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/button/
+  DOCUMENTATION: https://orbit.kiwi/components/socialbutton/
 */
 import * as React from "react";
 
 import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
-export type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle";
+export type Type = "apple" | "facebook" | "google";
 
 export type Props = {|
   +type?: Type,
-  ...ButtonCommonProps,
+  ...$Diff<ButtonCommonProps, { +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean }>,
 |};
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

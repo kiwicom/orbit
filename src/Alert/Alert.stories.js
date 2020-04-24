@@ -5,7 +5,6 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import Button from "../Button";
 import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -16,7 +15,7 @@ import Stack from "../Stack";
 import Heading from "../Heading";
 import CountryFlag from "../CountryFlag";
 
-import Alert from "./index";
+import Alert, { AlertButton } from "./index";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
@@ -126,9 +125,9 @@ storiesOf("Alert", module)
           closable={closable}
           onClose={action("Close")}
           inlineActions={
-            <Button type={type} size="small" href="#">
+            <AlertButton type={type} size="small" href="#">
               {button}
-            </Button>
+            </AlertButton>
           }
         />
       );
@@ -173,9 +172,17 @@ storiesOf("Alert", module)
                 <ListItem>623 Kč will be refunded by your payment card</ListItem>
               </List>
             </Stack>
-            <Button type={type} size="small" href="#">
-              {button}
-            </Button>
+            <Stack direction="row">
+              <AlertButton type={type} size="small" href="#">
+                {button}
+              </AlertButton>
+              {/*
+               $FlowExpected
+               */}
+              <AlertButton type={`${type}Subtle`} size="small" href="#">
+                {button}
+              </AlertButton>
+            </Stack>
           </Stack>
         </Alert>
       );
@@ -209,9 +216,9 @@ storiesOf("Alert", module)
                 <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
               </List>
             </Stack>
-            <Button type="info" size="small">
+            <AlertButton type="info" size="small">
               Check Visa Requirements
-            </Button>
+            </AlertButton>
           </Stack>
         </Alert>
       </RenderInRtl>

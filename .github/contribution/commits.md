@@ -12,7 +12,7 @@ Please see [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/pos
 
 ## Commit History
 
-We are using merges with squashing commits.
+We are using merge to master with squashing commits.
 
 **Bad:**
 
@@ -27,11 +27,6 @@ We are using merges with squashing commits.
 **Good:**
 
 ```
-* Add React & React-Dom
-* Resolve peer dependencies of React
+* feat: adding React & React-Dom
+* fix: resolve peer dependencies of React
 ```
-
-## Things to remember during code reviews
-
-- Never click on the grey "Update branch" button on GitHub \* it merges master with the reviewed base branch, which leads to messed up history
-- Please make sure you’ve deleted the base branch by clicking on “Delete branch” which appears right after your merge is confirmed

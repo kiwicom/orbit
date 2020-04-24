@@ -1,0 +1,105 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/utilities/buttonprimitive/
+*/
+import * as React from "react";
+
+import type { Globals, Component } from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken/index";
+
+/*
+  Common properties used across all Button components. The very base.
+ */
+
+export type Size = "small" | "normal" | "large";
+
+export type ButtonCommonProps = {|
+  +asComponent?: Component,
+  +ariaControls?: string,
+  +ariaExpanded?: boolean,
+  +children?: React.Node,
+  +circled?: boolean,
+  +disabled?: boolean,
+  +external?: boolean,
+  +fullWidth?: boolean,
+  +href?: string,
+  +iconLeft?: React.Node,
+  +iconRight?: React.Node,
+  +loading?: boolean,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +role?: string,
+  +size?: Size,
+  +submit?: boolean,
+  +title?: string | (any => string),
+  +tabIndex?: string,
+  +width?: string,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+/*
+  Icon properties used on other getter functions.
+ */
+export type IconForeground = {|
+  +foreground?: ?string,
+  +foregroundHover?: ?string,
+  +foregroundActive?: ?string,
+|};
+
+export type IconProps = {|
+  +width?: ?string,
+  +height?: ?string,
+  +leftMargin?: ?string,
+  +rightMargin?: ?string,
+  ...IconForeground,
+|};
+
+/*
+  Primitive - style props used only on ButtonPrimitive itself or it's common functions.
+ */
+
+export type HeightProps = {|
+  +height?: string,
+  +fontSize?: ?string,
+|};
+
+export type Foreground = {|
+  +foreground?: ?string,
+  +foregroundHover?: ?string,
+  +foregroundActive?: ?string,
+  +foregroundFocus?: ?string,
+|};
+
+export type Background = {|
+  +background?: ?string,
+  +backgroundHover?: ?string,
+  +backgroundActive?: ?string,
+  +backgroundFocus?: ?string,
+|};
+
+export type BoxShadow = {|
+  +boxShadow?: ?string,
+  +boxShadowHover?: ?string,
+  +boxShadowActive?: ?string,
+  +boxShadowFocus?: ?string,
+|};
+
+export type PrimitiveTypes = {|
+  +padding?: string,
+  +fontWeight?: ?string,
+  +icons?: IconProps,
+  ...HeightProps,
+  ...Foreground,
+  ...Background,
+  ...BoxShadow,
+|};
+
+export type Props = {|
+  ...$Diff<ButtonCommonProps, { +size?: Size, ... }>,
+  ...ButtonCommonProps,
+  ...PrimitiveTypes,
+|};
+
+declare export var StyledButtonPrimitive: React.ComponentType<Props>;
+
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

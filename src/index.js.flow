@@ -92,6 +92,7 @@ import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
 import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
+import typeof ButtonPrimitiveType from "./primitives/ButtonPrimitive";
 import typeof LinkListType from "./LinkList";
 
 declare export var InputText: any;
@@ -211,3 +212,4 @@ declare export var mediaQueries: mediaQueriesType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;
+declare export var ButtonPrimitive: ButtonPrimitiveType;

@@ -1,0 +1,12 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Type } from "../index";
+import type { IconForeground } from "../../primitives/ButtonPrimitive";
+
+export type GetButtonIconForeground = ({
+  bordered: boolean,
+  type: Type,
+  ...ThemeProps,
+}) => IconForeground;
+
+declare export default GetButtonIconForeground;

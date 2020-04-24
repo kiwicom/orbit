@@ -5,7 +5,7 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
-import Button, { StyledButton } from "../../Button";
+import Button from "../../Button";
 import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
 import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
@@ -19,7 +19,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
-import { StyledButtonLink } from "../../ButtonLink";
+import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -50,12 +50,12 @@ StyledContentWrapper.defaultProps = {
 const StyledActions = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
   padding-top: 0;
-  ${StyledButton}, ${StyledButtonLink} {
+  ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
   }
   ${media.largeMobile(css`
-    ${StyledButton}, ${StyledButtonLink} {
+    ${StyledButtonPrimitive} {
       width: auto;
       flex-grow: 0;
     }

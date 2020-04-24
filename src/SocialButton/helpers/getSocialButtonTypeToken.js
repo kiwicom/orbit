@@ -13,13 +13,13 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
     },
     [TOKENS.backgroundButtonHover]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalHover,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudDark,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalHover,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalHover,
     },
     [TOKENS.backgroundButtonActive]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalActive,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudDark,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalActive,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalActive,
     },
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormal,

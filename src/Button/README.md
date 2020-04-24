@@ -44,14 +44,14 @@ Table below contains all types of the props available in Button component.
 
 ### enum
 
-| type          | size       |
-| :------------ | :--------- |
-| `"primary"`   | `"small"`  |
-| `"secondary"` | `"normal"` |
-| `"critical"`      | `"large"`  |
-| `"white"`   |            |
-| `"primarySubtle"`   |            |
-| `"criticalSubtle"`  |            |
+| type               | size       |
+| :----------------- | :--------- |
+| `"primary"`        | `"small"`  |
+| `"secondary"`      | `"normal"` |
+| `"critical"`       | `"large"`  |
+| `"white"`          |            |
+| `"primarySubtle"`  |            |
+| `"criticalSubtle"` |            |
 
 ## Functional specs
 

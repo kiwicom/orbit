@@ -48,7 +48,7 @@ Table below contains all types of the props available in ButtonLink component.
 | :------------ | :--------- |
 | `"primary"`   | `"small"`  |
 | `"secondary"` | `"normal"` |
-| `"critical"`              | `"large"`  |
+| `"critical"`  | `"large"`  |
 
 ## Functional specs
 

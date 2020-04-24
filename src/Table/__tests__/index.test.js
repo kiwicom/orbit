@@ -7,14 +7,16 @@ import TableHead from "../TableHead";
 import TableRow from "../TableRow";
 import TableBody from "../TableBody";
 import TableCell from "../TableCell";
+import TableFooter from "../TableFooter";
 
 describe("Table", () => {
   const compact = true;
   const children = "Lorem ipsum dolor sit amet";
   const dataTest = "test";
+  const type = "primary";
 
   const component = shallow(
-    <Table compact={compact} dataTest={dataTest}>
+    <Table type={type} compact={compact} dataTest={dataTest}>
       <TableHead>
         <TableRow>
           <TableCell>{children}</TableCell>
@@ -87,6 +89,18 @@ describe("TableCell", () => {
   const dataTest = "test";
   const children = "content";
   const component = shallow(<TableCell dataTest={dataTest}>{children}</TableCell>);
+  it("should have rendered dataTest", () => {
+    expect(component.render().prop("data-test")).toBe(dataTest);
+  });
+  it("should have content", () => {
+    expect(component.children().text()).toBe(children);
+  });
+});
+
+describe("TableFooter", () => {
+  const dataTest = "test";
+  const children = "content";
+  const component = shallow(<TableFooter dataTest={dataTest}>{children}</TableFooter>);
   it("should have rendered dataTest", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });

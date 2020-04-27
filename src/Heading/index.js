@@ -72,7 +72,7 @@ StyledHeading.defaultProps = {
 const Heading = ({
   children,
   type = TYPE_OPTIONS.TITLE1,
-  element = ELEMENT_OPTIONS.DIV,
+  as = ELEMENT_OPTIONS.DIV,
   dataTest,
   inverted = false,
   spaceAfter,
@@ -82,7 +82,7 @@ const Heading = ({
   <StyledHeading
     id={id}
     type={type}
-    element={element}
+    element={as}
     inverted={inverted}
     dataTest={dataTest}
     spaceAfter={spaceAfter}

@@ -90,9 +90,7 @@ const ListChoice = (props: Props) => {
     >
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
-        <Heading type="title4" element="div">
-          {title}
-        </Heading>
+        <Heading type="title4">{title}</Heading>
         {description && (
           <Text type="secondary" size="small">
             {description}

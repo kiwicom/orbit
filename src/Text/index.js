@@ -88,7 +88,7 @@ const Text = ({
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
-  element = ELEMENT_OPTIONS.P,
+  as = ELEMENT_OPTIONS.P,
   uppercase = false,
   italic = false,
   dataTest,
@@ -103,7 +103,7 @@ const Text = ({
       size={size}
       weight={weight}
       align={align}
-      element={element}
+      element={as}
       uppercase={uppercase}
       italic={italic}
       dataTest={dataTest}

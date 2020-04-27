@@ -8,7 +8,7 @@ import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import Header from "../../components/Header";
-import type { Element } from "../../../Heading";
+import type { As } from "../../../Heading";
 
 const SpacingMobile = css`
   ${({ theme }) => String(parseInt(theme.orbit.spaceMedium, 10) + 1)}px;
@@ -49,7 +49,7 @@ StyledCardSectionHeader.defaultProps = {
 
 type Props = {|
   title?: React$Node,
-  titleAs?: Element,
+  titleAs?: As,
   description?: React$Node,
   icon?: React$Node,
   actions?: React$Node,

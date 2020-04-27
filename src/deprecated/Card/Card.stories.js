@@ -81,19 +81,19 @@ storiesOf("Deprecated Card", module)
       return (
         <Card>
           <CardSection>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               {title}
             </Heading>
             <Text>{description}</Text>
           </CardSection>
           <CardSection>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               {title}
             </Heading>
             <Text>{description}</Text>
           </CardSection>
           <CardSection>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               {title}
             </Heading>
             <Text>{description}</Text>
@@ -116,7 +116,7 @@ storiesOf("Deprecated Card", module)
           <CardHeader title={title} subTitle={description} />
           <CardSection expandable>
             <CardSectionHeader>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 {title}
               </Heading>
             </CardSectionHeader>
@@ -126,7 +126,7 @@ storiesOf("Deprecated Card", module)
           </CardSection>
           <CardSection expandable>
             <CardSectionHeader>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 {title}
               </Heading>
             </CardSectionHeader>
@@ -136,7 +136,7 @@ storiesOf("Deprecated Card", module)
           </CardSection>
           <CardSection expandable>
             <CardSectionHeader>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 {title}
               </Heading>
               <Text>{description}</Text>
@@ -227,7 +227,7 @@ storiesOf("Deprecated Card", module)
           />
           <CardSection>
             <CardSectionHeader>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 {title}
               </Heading>
               <Text>Test</Text>
@@ -322,13 +322,13 @@ storiesOf("Deprecated Card", module)
         >
           <CardHeader icon={<Icon />} title={title} subTitle={description} dataTest={dataTest} />
           <CardSection dataTest={dataTest}>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               Content with Heading and text
             </Heading>
             <Text>Text in content</Text>
           </CardSection>
           <CardSection dataTest={dataTest}>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               Section with Heading and text
             </Heading>
             <Text>Text in section</Text>
@@ -367,20 +367,20 @@ storiesOf("Deprecated Card", module)
             subTitle="Description of the CardHeader"
           />
           <CardSection>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               Content with Heading and text
             </Heading>
             <Text>Text in content</Text>
           </CardSection>
           <CardSection>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               Section with Heading and text
             </Heading>
             <Text>Text in section</Text>
           </CardSection>
           <CardSection expandable>
             <CardSectionHeader>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 Content with Heading and text
               </Heading>
               <Text>Text in content</Text>
@@ -392,7 +392,7 @@ storiesOf("Deprecated Card", module)
 
           <CardSection expandable initialExpanded>
             <CardSectionHeader actions={<Button size="small">Action</Button>}>
-              <Heading type="title3" element="h3">
+              <Heading type="title3" as="h3">
                 Content with Heading and text
               </Heading>
               <Text>Text in content</Text>

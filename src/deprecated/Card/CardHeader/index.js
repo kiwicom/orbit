@@ -59,7 +59,7 @@ const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection 
   <StyledCardHeader data-test={dataTest}>
     <StyledHeadingWrapper>
       {icon && <StyledIcon>{icon}</StyledIcon>}
-      <Heading type="title3" element="h2" dataA11ySection={dataA11ySection}>
+      <Heading type="title3" as="h2" dataA11ySection={dataA11ySection}>
         {title}
       </Heading>
       {actions}

@@ -10,7 +10,8 @@ import type { Props } from "./index";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.heightIllustrationSmall,
+    [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.heightIllustrationSmall,
+    [SIZE_OPTIONS.SMALL]: "120px", // TODO: add token
     [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightIllustrationMedium,
     [SIZE_OPTIONS.LARGE]: "280px", // TODO: create token heightIllustrationLarge
     [SIZE_OPTIONS.DISPLAY]: "460px", // TODO: create token heightIllustrationDisplay

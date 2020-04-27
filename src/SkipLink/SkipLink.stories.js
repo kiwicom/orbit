@@ -94,7 +94,7 @@ storiesOf("SkipLink", module)
         />
         <ModalHeader
           title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="Meal" size="small" />}
+          illustration={<Illustration name="Meal" size="extraSmall" />}
           description="Select a flight below to see the menu (where available)"
         />
         <ModalSection suppressed>

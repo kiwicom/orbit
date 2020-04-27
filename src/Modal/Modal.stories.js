@@ -112,7 +112,7 @@ storiesOf("Modal", module)
         <Modal onClose={action("onClose")} fixedFooter>
           <ModalHeader
             title="Enjoy something to eat while you fly"
-            illustration={<Illustration name="Meal" size="small" />}
+            illustration={<Illustration name="Meal" size="extraSmall" />}
             description="Select a flight below to see the menu (where available)"
           />
           {showMore && (
@@ -142,7 +142,7 @@ storiesOf("Modal", module)
         <Modal onClose={action("onClose")} fixedFooter>
           <ModalHeader
             title="Enjoy something to eat while you fly"
-            illustration={<Illustration name="Meal" size="small" />}
+            illustration={<Illustration name="Meal" size="extraSmall" />}
             description="Select a flight below to see the menu (where available)"
           />
           {showMore && (
@@ -231,7 +231,7 @@ storiesOf("Modal", module)
       <Modal onClose={action("onClose")} fixedFooter>
         <ModalHeader
           title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="BaggageDrop" size="small" />}
+          illustration={<Illustration name="BaggageDrop" size="extraSmall" />}
           description="Select a flight below to see the menu (where available)"
         />
         <ModalSection suppressed>
@@ -438,7 +438,7 @@ storiesOf("Modal", module)
         >
           <ModalHeader
             title={title}
-            illustration={illustration && <Illustration name={illustration} size="small" />}
+            illustration={illustration && <Illustration name={illustration} size="extraSmall" />}
             description={description}
             suppressed={suppressed}
           />
@@ -477,7 +477,7 @@ storiesOf("Modal", module)
         <Modal onClose={action("onClose")} fixedFooter>
           <ModalHeader
             title="The title of the ModalHeader"
-            illustration={<Illustration name="Accommodation" size="small" />}
+            illustration={<Illustration name="Accommodation" size="extraSmall" />}
             description="The description of the ModalHeader"
             suppressed
           />

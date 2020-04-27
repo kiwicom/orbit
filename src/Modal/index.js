@@ -3,7 +3,8 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 
 import defaultTheme, { type ThemeProps } from "../defaultTheme";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
+import ButtonLink from "../ButtonLink";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import Close from "../icons/Close";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
@@ -18,6 +19,7 @@ import { ModalContext } from "./ModalContext";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import randomID from "../utils/randomID";
 import useTranslate from "../hooks/useTranslate";
+import onlyIE from "../utils/onlyIE";
 
 import type { Props, State } from "./index";
 
@@ -31,14 +33,6 @@ const getSizeToken = () => ({ size, theme }) => {
 
   return tokens[size];
 };
-
-// media query only for IE 10+, not Edge
-const onlyIE = (style, breakpoint = "all") =>
-  css`
-    @media ${breakpoint} and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      ${style};
-    }
-  `;
 
 const ModalBody = styled.div`
   width: 100%;
@@ -153,7 +147,7 @@ const CloseContainer = styled.div`
     margin: 0;
   }
 
-  ${StyledButtonLink} {
+  ${StyledButtonPrimitive} {
     pointer-events: auto;
     margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
 
@@ -334,7 +328,7 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
     <ButtonLink
       onClick={onClick}
       size="normal"
-      icon={<Close />}
+      iconLeft={<Close />}
       transparent
       dataTest={dataTest}
       type="secondary"

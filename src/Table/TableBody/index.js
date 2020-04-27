@@ -13,8 +13,6 @@ export const StyledTableBody = styled(({ children, className, dataTest }) => (
 ))`
   width: 100%;
   white-space: nowrap;
-  border-left: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
-  border-right: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
   border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
 `;
 

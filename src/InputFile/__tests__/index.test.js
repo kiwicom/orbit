@@ -44,7 +44,7 @@ describe(`InputFile with help`, () => {
   );
   const input = component.find("InputFile__Input");
   const field = component.find("InputFile__Field");
-  const closeButton = component.find("InputFile__CloseButton");
+  const closeButton = component.find("InputFile__CloseButton").find("ButtonLink");
 
   it("should contain a label", () => {
     expect(component.find("FormLabel").render().text()).toBe(label);
@@ -61,7 +61,7 @@ describe(`InputFile with help`, () => {
     expect(input.render().prop("data-state")).toBe("ok");
   });
   it("should contain a input Button", () => {
-    expect(component.find("InputFile__InputButton").exists()).toBe(true);
+    expect(component.find("InputFile__FakeInput").find("Button").exists()).toBe(true);
   });
   it("should contain a close Button", () => {
     expect(closeButton.exists()).toBe(true);

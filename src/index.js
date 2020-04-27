@@ -57,6 +57,7 @@ export { default as TableBody } from "./Table/TableBody";
 export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
+export { default as TableFooter } from "./Table/TableFooter";
 
 export { default as PricingTable } from "./PricingTable";
 export { default as PricingTableItem } from "./PricingTable/PricingTableItem";
@@ -118,3 +119,4 @@ export { default as mediaQueries } from "./utils/mediaQuery";
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
 export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
+export { default as ButtonPrimitive } from "./primitives/ButtonPrimitive";

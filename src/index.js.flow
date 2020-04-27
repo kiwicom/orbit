@@ -78,6 +78,7 @@ import typeof TableBodyType from "./Table/TableBody";
 import typeof TableCellType from "./Table/TableCell";
 import typeof TableHeadType from "./Table/TableHead";
 import typeof TableRowType from "./Table/TableRow";
+import typeof TableFooterType from "./Table/TableFooter";
 import typeof LayoutType from "./Layout";
 import typeof LayoutColumnType from "./Layout/LayoutColumn";
 import typeof GridType from "./utils/Grid";
@@ -92,6 +93,7 @@ import typeof DrawerType from "./Drawer";
 import typeof PictureCardType from "./PictureCard";
 import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
+import typeof ButtonPrimitiveType from "./primitives/ButtonPrimitive";
 import typeof LinkListType from "./LinkList";
 
 declare export var InputText: any;
@@ -156,6 +158,7 @@ declare export var TableBody: TableBodyType;
 declare export var TableCell: TableCellType;
 declare export var TableHead: TableHeadType;
 declare export var TableRow: TableRowType;
+declare export var TableFooter: TableFooterType;
 
 declare export var Layout: LayoutType;
 declare export var LayoutColumn: LayoutColumnType;
@@ -211,3 +214,4 @@ declare export var mediaQueries: mediaQueriesType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;
+declare export var ButtonPrimitive: ButtonPrimitiveType;

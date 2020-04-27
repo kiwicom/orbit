@@ -92,6 +92,7 @@ export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as SkipNavigation } from "./SkipNavigation";
+export { default as SocialButton } from "./SocialButton";
 export { default as Stepper } from "./Stepper";
 export { default as StepperStateless } from "./Stepper/StepperStateless";
 export { default as StopoverArrow } from "./StopoverArrow";

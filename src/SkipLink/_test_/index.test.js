@@ -24,11 +24,6 @@ describe("SkipLink", () => {
   });
 
   it("Should have 2 Links", () => {
-    expect(
-      component
-        .find("SkipLink__StyledLink")
-        .at(1)
-        .exists(),
-    ).toEqual(true);
+    expect(component.find("SkipLink__StyledLink").at(1).exists()).toEqual(true);
   });
 });

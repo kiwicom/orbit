@@ -238,7 +238,7 @@ storiesOf("InputField", module)
           label={label}
           inlineLabel
           tags={
-            <div>
+            <>
               <Tag selected onRemove={action("onRemove")}>
                 Brno
               </Tag>
@@ -261,7 +261,7 @@ storiesOf("InputField", module)
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
-            </div>
+            </>
           }
           error={error}
           value={value}
@@ -333,7 +333,7 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           suffix={
-            Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
+            Suffix && <ButtonLink transparent iconLeft={<Suffix />} onClick={action("clicked")} />
           }
           onChange={action("change")}
         />
@@ -410,7 +410,7 @@ storiesOf("InputField", module)
             Suffix && (
               <ButtonLink
                 transparent
-                icon={<Suffix />}
+                iconLeft={<Suffix />}
                 size={size}
                 onClick={action("clicked")}
                 disabled={disabled}

@@ -107,7 +107,7 @@ storiesOf("Modal", module)
   .add(
     "Without section",
     () => {
-      const showMore = boolean(false);
+      const showMore = boolean("showMore", false);
       return (
         <Modal onClose={action("onClose")} fixedFooter>
           <ModalHeader
@@ -121,7 +121,7 @@ storiesOf("Modal", module)
             </ModalSection>
           )}
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -154,7 +154,7 @@ storiesOf("Modal", module)
             <Text>Lorem ipsum dolor sit amet</Text>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -212,7 +212,7 @@ storiesOf("Modal", module)
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -395,7 +395,7 @@ storiesOf("Modal", module)
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button icon={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronLeft />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>

@@ -12,12 +12,7 @@ const message = "Alert message";
 describe("Alert", () => {
   it("should contain children", () => {
     const component = shallow(<Alert>{message}</Alert>);
-    expect(
-      component
-        .find("Alert__Content")
-        .children()
-        .exists(),
-    ).toBe(true);
+    expect(component.find("Alert__Content").children().exists()).toBe(true);
   });
   it("should have data-test", () => {
     const dataTest = "test";

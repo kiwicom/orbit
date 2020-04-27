@@ -59,35 +59,12 @@ describe("Breadcrumbs", () => {
     expect(anchor.render().prop("href")).toBe(url);
     expect(anchor.render().prop("itemprop")).toBe("item");
     expect(anchor.render().prop("itemtype")).toContain("WebPage");
-    expect(
-      anchor
-        .children()
-        .find("span")
-        .render()
-        .prop("itemprop"),
-    ).toBe("name");
-    expect(
-      anchor
-        .children()
-        .find("span")
-        .children()
-        .text(),
-    ).toBe(title);
+    expect(anchor.children().find("span").render().prop("itemprop")).toBe("name");
+    expect(anchor.children().find("span").children().text()).toBe(title);
   });
   it("meta contains props", () => {
-    expect(
-      component
-        .children()
-        .find("meta")
-        .render()
-        .prop("itemprop"),
-    ).toBe("position");
-    expect(
-      component
-        .children()
-        .find("meta")
-        .prop("content"),
-    ).toBe(2);
+    expect(component.children().find("meta").render().prop("itemprop")).toBe("position");
+    expect(component.children().find("meta").prop("content")).toBe(2);
   });
   it("itemid defaults to href when no id attribute", () => {
     const componentWithoutID = shallow(

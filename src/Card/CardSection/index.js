@@ -7,11 +7,13 @@ import { useCard } from "../CardContext";
 import SectionHeader from "./components/SectionHeader";
 import SectionContent from "./components/SectionContent";
 import randomID from "../../utils/randomID";
+import { ELEMENT_OPTIONS } from "../../Heading/consts";
 
 import type { Props } from "./index";
 
 const CardSection = ({
   title,
+  titleAs = ELEMENT_OPTIONS.DIV,
   icon,
   description,
   children,
@@ -96,6 +98,7 @@ const CardSection = ({
       {(title || header) && (
         <SectionHeader
           title={title}
+          titleAs={titleAs}
           icon={icon}
           slideID={slideID}
           labelID={labelID}

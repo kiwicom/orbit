@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import boundingClientRect from "../../utils/boundingClientRect/index";
 import type { UseDimensions } from "./useDimensions";
 
-const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, children) => {
+const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, children, parent) => {
   const [dimensions, setDimensions] = useState({
     containerTop: 0,
     containerTopPure: 0,
@@ -54,7 +54,7 @@ const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, childr
       window.removeEventListener("resize", calculateDimensions);
       window.removeEventListener("scroll", calculateDimensions);
     };
-  }, [containerRef, content, tooltip, children]);
+  }, [containerRef, content, tooltip, children, parent]);
 
   return dimensions;
 };

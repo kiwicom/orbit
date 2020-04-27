@@ -256,7 +256,7 @@ storiesOf("SkipLink", module)
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button icon={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronLeft />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>

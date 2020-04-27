@@ -46,12 +46,14 @@ storiesOf("Tile", module)
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       );
       const Icon = getIcon(getIcons("Airplane"));
+      const noHeaderIcon = boolean("noHeaderIcon", false);
       return (
         <Tile
           onClick={action("clicked")}
           icon={Icon && <Icon />}
           title={title}
           description={description}
+          noHeaderIcon={noHeaderIcon}
         />
       );
     },
@@ -176,6 +178,8 @@ storiesOf("Tile", module)
       const noPadding = boolean("noPadding", false);
       const dataTest = text("dataTest", "test");
       const children = text("children", null);
+      const htmlTitle = text("htmlTitle", "Title for more info");
+
       return (
         <Tile
           href={href}
@@ -189,6 +193,7 @@ storiesOf("Tile", module)
           initialExpanded={initialExpanded}
           noPadding={noPadding}
           dataTest={dataTest}
+          htmlTitle={htmlTitle}
         >
           {children}
         </Tile>

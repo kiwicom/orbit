@@ -25,12 +25,7 @@ describe(`Default Radio`, () => {
   );
   const radio = component.find("Radio__Input");
   it("should contain a label", () => {
-    expect(
-      component
-        .find("Radio__LabelText")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("Radio__LabelText").render().text()).toBe(label);
   });
   it("should have data-test", () => {
     expect(radio.render().prop("data-test")).toBe(dataTest);

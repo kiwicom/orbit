@@ -1,15 +1,15 @@
 // @flow
-import * as React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
 import media, { getBreakpointWidth } from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
-import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
-import { StyledButtonLink } from "../../ButtonLink";
-import { withModalContext } from "../ModalContext";
+import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import useModalContextFunctions from "../helpers/useModalContextFunctions";
+import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
 import type { Props } from "./index";
 
@@ -38,7 +38,7 @@ export const StyledModalFooter = styled.div`
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledButton}, ${StyledButtonLink} {
+    ${StyledButtonPrimitive} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
     }
@@ -46,9 +46,12 @@ export const StyledModalFooter = styled.div`
 
   ${media.largeMobile(css`
     justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
-    // TODO: create token paddingModalFooterDesktop
-    border-bottom-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
-    border-bottom-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
+    ${({ isMobileFullPage }) =>
+      !isMobileFullPage &&
+      css`
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+      `};
   `)};
 
   ${StyledChild}:last-of-type {
@@ -60,74 +63,49 @@ StyledModalFooter.defaultProps = {
   theme: defaultTheme,
 };
 
-class ModalFooter extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.callContextFunctions();
-  }
+const getChildFlex = (flex, key) =>
+  Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
-  componentDidUpdate(prevProps: Props) {
-    if (prevProps !== this.props) {
-      this.callContextFunctions();
-
-      const { manageFocus } = this.props;
-
-      if (manageFocus) {
-        manageFocus();
-      }
-    }
-  }
-
-  callContextFunctions = () => {
-    const { setDimensions, decideFixedFooter } = this.props;
-    if (setDimensions) {
-      setDimensions();
-    }
-    if (decideFixedFooter) {
-      decideFixedFooter();
-    }
-  };
-
-  renderWrappedChildren = () => {
-    const { children, flex = "0 1 auto" } = this.props;
-
-    const getChildFlex = key =>
-      Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-    return React.Children.map(children, (child, key) => {
-      if (child) {
-        return (
-          <StyledChild flex={getChildFlex(key)}>
-            {React.cloneElement(child, {
-              ref: child.ref
-                ? node => {
-                    // Call the original ref, if any
-                    const { ref } = child;
-                    if (typeof ref === "function") {
-                      ref(node);
-                    } else if (ref !== null) {
-                      ref.current = node;
-                    }
+/*
+  Until flow-bin@0.104.0 it's impossible to assign default values to union types,
+  therefore, it's bypassed via declaring it in on this component
+ */
+const wrappedChildren = (children, flex = "0 1 auto") => {
+  if (!Array.isArray(children)) return children;
+  return React.Children.map(children, (child, key) => {
+    if (child) {
+      return (
+        <StyledChild flex={getChildFlex(flex, key)}>
+          {React.cloneElement(child, {
+            ref: child.ref
+              ? node => {
+                  // Call the original ref, if any
+                  const { ref } = child;
+                  if (typeof ref === "function") {
+                    ref(node);
+                  } else if (ref !== null) {
+                    ref.current = node;
                   }
-                : null,
-            })}
-          </StyledChild>
-        );
-      }
-      return null;
-    });
-  };
+                }
+              : null,
+          })}
+        </StyledChild>
+      );
+    }
+    return null;
+  });
+};
 
-  render() {
-    const { children, dataTest, isMobileFullPage } = this.props;
-    return (
-      <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
-        {Array.isArray(children) ? this.renderWrappedChildren() : children}
-      </StyledModalFooter>
-    );
-  }
-}
+const ModalFooter = ({ dataTest, children, flex }: Props) => {
+  const { isMobileFullPage } = useContext(ModalContext);
 
-const DecoratedComponent = withModalContext<Props>(ModalFooter);
+  useModalContextFunctions();
 
-// $FlowFixMe flow doesn't recognize displayName for functions
-DecoratedComponent.displayName = "ModalFooter";
-export default DecoratedComponent;
+  return (
+    <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
+      {wrappedChildren(children, flex)}
+    </StyledModalFooter>
+  );
+};
+
+export default ModalFooter;

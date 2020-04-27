@@ -16,7 +16,10 @@ import type { Props } from "./index";
 
 const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const resolveBorderColor = () => {
-    if (!hasError && checked) {
+    if (disabled) {
+      return theme.orbit.paletteInkLighter;
+    }
+    if (checked) {
       return theme.orbit.paletteBlueNormal;
     }
     if (hasError && !disabled && !checked) {
@@ -26,10 +29,21 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
     return theme.orbit.borderColorCheckboxRadio;
   };
 
+  const getBackground = () => {
+    if (disabled && checked) {
+      return theme.orbit.paletteInkLighter;
+    }
+    if (disabled && !checked) {
+      return theme.orbit.paletteCloudNormal;
+    }
+    return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+  };
+
   const tokens = {
+    [TOKENS.background]: getBackground(),
     [TOKENS.borderColor]: resolveBorderColor(),
     [TOKENS.iconColor]: disabled
-      ? theme.orbit.colorIconCheckboxRadioDisabled
+      ? theme.orbit.paletteCloudNormal
       : theme.orbit.colorIconCheckboxRadio,
   };
 
@@ -43,8 +57,7 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme, checked }) =>
-    checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput};
+  background-color: ${getToken(TOKENS.background)};
   height: ${({ theme }) => theme.orbit.heightCheckbox};
   width: ${({ theme }) => theme.orbit.widthCheckbox};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
@@ -135,19 +148,12 @@ const Input = styled.input`
       `1px ${theme.orbit.borderStyleInput} ${
         error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
-    box-shadow: 0px 0px 0px 3px
+    box-shadow: 0 0 0 3px
       ${({ theme, error }) =>
         convertHexToRgba(
           error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};
-  }
-
-  &:active + ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.borderColorCheckboxRadioActive};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
 `;
 
@@ -176,10 +182,15 @@ export const Label = styled(({ className, children, dataTest }) => (
 
   &:hover ${IconContainer} {
     border-color: ${({ disabled, theme, checked }) =>
-      !disabled && checked
-        ? theme.orbit.paletteBlueDark
-        : theme.orbit.borderColorCheckboxRadioHover};
+      !disabled && checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive};
     box-shadow: none;
+  }
+
+  &:active ${IconContainer} {
+    border-color: ${({ disabled, theme }) =>
+      disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
+    transform: ${({ disabled, theme }) =>
+      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
 
   ${media.largeMobile(css`
@@ -230,7 +241,11 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
       />
       {cloneWithTooltip(
         tooltip,
-        <IconContainer checked={checked} onClick={readOnly ? preventOnClick : null}>
+        <IconContainer
+          disabled={disabled}
+          checked={checked}
+          onClick={readOnly ? preventOnClick : null}
+        >
           <Check customColor="white" />
         </IconContainer>,
       )}

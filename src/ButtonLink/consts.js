@@ -2,32 +2,16 @@
 export const TYPES = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
-};
-
-export const SIZES = {
-  SMALL: "small",
-  NORMAL: "normal",
-  LARGE: "large",
+  CRITICAL: "critical",
 };
 
 export const TOKENS = {
-  backgroundButton: "backgroundButton",
-  backgroundButtonHover: "backgroundButtonHover",
-  backgroundButtonActive: "backgroundButtonActive",
-  backgroundButtonFocus: "backgroundButtonFocus",
-  colorTextButton: "colorTextButton",
-  colorTextButtonHover: "colorTextButtonHover",
-  colorTextButtonActive: "colorTextButtonActive",
-  heightButton: "heightButton",
-  fontSizeButton: "fontSizeButton",
-  paddingButton: "paddingButton",
-  paddingButtonWithIcons: "paddingButtonWithIcons",
-  paddingButtonWithLeftIcon: "paddingButtonWithLeftIcon",
-  paddingButtonWithRightIcon: "paddingButtonWithRightIcon",
+  background: "background",
+  backgroundHover: "backgroundHover",
+  backgroundActive: "backgroundActive",
+  backgroundFocus: "backgroundFocus",
+  foreground: "foreground",
+  foregroundHover: "foregroundHover",
+  foregroundActive: "foregroundActive",
   marginRightIcon: "marginRightIcon",
-};
-
-export const BUTTON_STATES = {
-  ACTIVE: "active",
-  FOCUS: "focus",
 };

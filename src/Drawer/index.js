@@ -96,7 +96,7 @@ StyledDrawerContent.defaultProps = {
 
 const StyledDrawerHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${({ onlyIcon }) => (onlyIcon ? "flex-end" : "space-between")};
   align-items: center;
   background: ${({ suppressed, bordered, theme }) =>
     suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -178,7 +178,11 @@ const Drawer = ({
         suppressed={suppressed}
       >
         {(title || actions || onClose) && (
-          <StyledDrawerHeader bordered={title || actions} suppressed={suppressed}>
+          <StyledDrawerHeader
+            onlyIcon={!title && !actions}
+            bordered={title || actions}
+            suppressed={suppressed}
+          >
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (
               <Stack spacing="none" justify="end" flex shrink>

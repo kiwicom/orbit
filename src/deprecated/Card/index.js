@@ -108,7 +108,7 @@ const CardCloseButton = ({ onClick, dataTest }) => {
         dataTest={dataTest}
         type="secondary"
         size="small"
-        icon={<Close />}
+        iconLeft={<Close />}
         onClick={onClick}
         transparent
         title={translate("button_close")}

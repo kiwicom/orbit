@@ -6,7 +6,8 @@ import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { TYPES, SIZES } from "./consts";
+import { TYPES } from "./consts";
+import { SIZE_OPTIONS } from "../primitives/ButtonPrimitive/common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
@@ -33,11 +34,23 @@ storiesOf("ButtonLink", module)
     },
   )
   .add(
+    "Critical",
+    () => (
+      <ButtonLink onClick={action("onClick")} type="critical">
+        ButtonLink
+      </ButtonLink>
+    ),
+    {
+      info:
+        "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    },
+  )
+  .add(
     "Circled",
     () => {
       const circled = boolean("circled", true);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
-      const size = select("Size", Object.values(SIZES), SIZES.LARGE);
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
 
       return (
@@ -63,7 +76,7 @@ storiesOf("ButtonLink", module)
       const disabled = boolean("Disabled", false);
       const fullWidth = boolean("fullWidth", false);
       const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
-      const size = select("Size", Object.values(SIZES), SIZES.LARGE);
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
       const width = number("Width", 0);
       const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
       const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
@@ -130,7 +143,7 @@ storiesOf("ButtonLink", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <ButtonLink icon={<Icons.Airplane />}>ButtonLink</ButtonLink>
+        <ButtonLink iconLeft={<Icons.Airplane />}>ButtonLink</ButtonLink>
       </RenderInRtl>
     ),
     {

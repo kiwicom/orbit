@@ -234,7 +234,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         dataTest={dataTest}
         onClick={onClick}
         size="small"
-        icon={icon}
+        iconLeft={icon}
         type="secondary"
         transparent
         title={translate("button_close")}
@@ -296,5 +296,7 @@ const Alert = (props: Props) => {
     </StyledAlert>
   );
 };
+
+export { default as AlertButton } from "./AlertButton";
 
 export default Alert;

@@ -4,13 +4,15 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Stack from "../../Stack";
-import Text from "../../Text";
+import Text, { StyledText } from "../../Text";
 import Radio from "../../Radio";
 import Badge from "../../Badge";
 import { StyledBadge } from "../../primitives/BadgePrimitive";
 import media from "../../utils/mediaQuery";
 import type { Props } from "./index.js.flow";
 import STATES from "./consts";
+import { IconContainer, Item as ListItem } from "../../List/ListItem";
+import { rtlSpacing } from "../../utils/rtl";
 
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
@@ -102,6 +104,48 @@ StyledBadgeWrapperContent.defaultProps = {
 
 const Item = styled.div``;
 
+/*
+  This causes rewrite of a list so list is ussable in in PricingTable, this is not at all elegant solution.
+*/
+const StyledListWrapper = styled.div`
+  ${({ theme }) =>
+    css`
+      width: 100%;
+      ${ListItem} {
+        border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+        padding: ${theme.orbit.spaceSmall};
+        align-items: center;
+
+        &,
+        ${StyledText} {
+          font-weight: ${theme.orbit.fontWeightMedium};
+        }
+
+        :last-child {
+          border-bottom: none;
+        }
+
+        ${media.tablet(css`
+          padding: ${theme.orbit.spaceXSmall};
+        `)}
+      }
+
+      ${IconContainer} {
+        margin: ${rtlSpacing(`${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXSmall} 0 0`)};
+        height: ${theme.heightIconLarge};
+
+        svg {
+          height: ${theme.orbit.heightIconMedium};
+          width: ${theme.orbit.widthIconMedium};
+        }
+      }
+    `}
+`;
+
+StyledListWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
 const PricingTableItem = ({
   dataTest,
   name,
@@ -165,7 +209,7 @@ const PricingTableItem = ({
           </Stack>
           {!compact ? (
             <Stack justify="between" direction="column">
-              {children && children}
+              <StyledListWrapper>{children && children}</StyledListWrapper>
               {action && (
                 <Stack justify="center" grow={false}>
                   {action}

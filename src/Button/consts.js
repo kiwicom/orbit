@@ -2,13 +2,10 @@
 export const TYPE_OPTIONS = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
-  INFO: "info",
-  SUCCESS: "success",
-  WARNING: "warning",
   CRITICAL: "critical",
-  FACEBOOK: "facebook",
-  GOOGLE: "google",
   WHITE: "white",
+  PRIMARY_SUBTLE: "primarySubtle",
+  CRITICAL_SUBTLE: "criticalSubtle",
 };
 
 export const SIZE_OPTIONS = {
@@ -32,17 +29,8 @@ export const TOKENS = {
   backgroundButtonHover: "backgroundButtonHover",
   backgroundButtonActive: "backgroundButtonActive",
   backgroundButtonFocus: "backgroundButtonFocus",
-  backgroundButtonBordered: "backgroundButtonBordered",
-  backgroundButtonBorderedHover: "backgroundButtonBorderedHover",
-  backgroundButtonBorderedActive: "backgroundButtonBorderedActive",
   colorTextButton: "colorTextButton",
-  colorTextButtonBordered: "colorTextButtonBordered",
   colorTextButtonHover: "colorTextButtonHover",
-  colorTextButtonBorderedHover: "colorTextButtonBorderedHover",
   colorTextButtonActive: "colorTextButtonActive",
-  colorTextButtonBorderedActive: "colorTextButtonBorderedActive",
-  borderColorButton: "borderColorButton",
-  borderColorButtonHover: "borderColorButtonHover",
-  borderColorButtonActive: "borderColorButtonActive",
   borderColorButtonFocus: "borderColorButtonFocus",
 };

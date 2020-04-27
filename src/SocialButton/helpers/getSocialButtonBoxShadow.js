@@ -3,20 +3,17 @@ import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba"
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
-import getButtonTypeToken from "./getButtonTypeToken";
-import type { GetButtonBoxShadow } from "./getButtonBoxShadow";
+import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
+import type { GetSocialButtonBoxShadow } from "./getSocialButtonBoxShadow";
 
 const opacity = {
-  [TYPE_OPTIONS.PRIMARY]: 15,
-  [TYPE_OPTIONS.SECONDARY]: 8,
-  [TYPE_OPTIONS.CRITICAL]: 15,
-  [TYPE_OPTIONS.WHITE]: 8,
-  [TYPE_OPTIONS.PRIMARY_SUBTLE]: 8,
-  [TYPE_OPTIONS.CRITICAL_SUBTLE]: 8,
+  [TYPE_OPTIONS.APPLE]: 15,
+  [TYPE_OPTIONS.FACEBOOK]: 8,
+  [TYPE_OPTIONS.GOOGLE]: 8,
 };
 
-const getButtonBoxShadow: GetButtonBoxShadow = (state, disabled, theme, type) => {
-  const wrappedButtonTypeToken = name => getButtonTypeToken(name, type, theme);
+const getButtonBoxShadow: GetSocialButtonBoxShadow = (state, disabled, theme, type) => {
+  const wrappedButtonTypeToken = name => getSocialButtonTypeToken(name, type, theme);
   if (disabled) {
     return null;
   }

@@ -12,14 +12,14 @@ import getButtonIconForeground from "./helpers/getButtonIconForeground";
 import type { Props } from "./index";
 
 const Button = React.forwardRef<Props, HTMLButtonElement>(
-  ({ type = TYPE_OPTIONS.PRIMARY, bordered = false, disabled = false, ...props }, ref) => {
+  ({ type = TYPE_OPTIONS.PRIMARY, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
     const commonProps = getCommonProps(propsWithTheme);
-    const buttonStyles = getButtonStyles({ type, theme, bordered, disabled });
+    const buttonStyles = getButtonStyles({ type, theme, disabled });
     const icons = getIconContainer({
       ...propsWithTheme,
-      iconForeground: getButtonIconForeground({ bordered, type, theme }),
+      iconForeground: getButtonIconForeground({ type, theme }),
     });
     return (
       <ButtonPrimitive

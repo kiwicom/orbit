@@ -2,6 +2,7 @@
 export const TYPES = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
+  CRITICAL: "critical",
 };
 
 export const TOKENS = {

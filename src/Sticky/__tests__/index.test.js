@@ -14,7 +14,7 @@ const wrapper = shallow(
   <Sticky>
     <Card>
       <CardSection>
-        <Heading type="title3" element="h3">
+        <Heading type="title3" as="h3">
           {text}
         </Heading>
         <Text>{text}</Text>
@@ -27,7 +27,7 @@ const wrapperWithProps = mount(
   <Sticky offset={50}>
     <Card>
       <CardSection>
-        <Heading type="title3" element="h3">
+        <Heading type="title3" as="h3">
           {text}
         </Heading>
         <Text>{text}</Text>

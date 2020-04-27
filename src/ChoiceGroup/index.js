@@ -66,7 +66,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
           <Heading
             id={this.groupID}
             type={getHeadingSize(labelSize)}
-            element={labelAs}
+            as={labelAs}
             spaceAfter="medium"
           >
             {label}

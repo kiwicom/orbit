@@ -96,7 +96,7 @@ storiesOf("Drawer", module)
         >
           <Stack>
             <Illustration name="Accommodation" />
-            <Heading element="h2">Need help?</Heading>
+            <Heading as="h2">Need help?</Heading>
             <Text type="secondary">
               We are here for you. First, let is narrow down your request.
             </Text>
@@ -350,7 +350,7 @@ storiesOf("Drawer", module)
           >
             <Stack>
               <Illustration name="Accommodation" />
-              <Heading element="h2">Need help?</Heading>
+              <Heading as="h2">Need help?</Heading>
               <Text type="secondary">
                 We are here for you. First, let is narrow down your request.
               </Text>

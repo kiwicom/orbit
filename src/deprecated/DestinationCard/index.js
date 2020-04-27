@@ -165,7 +165,7 @@ StyledDestinationCard.defaultProps = {
 };
 
 const SmallHeading = ({ children }: SmallHeadingType) => (
-  <Text type="white" element="div" size="small" weight="bold">
+  <Text type="white" as="div" size="small" weight="bold">
     {children}
   </Text>
 );
@@ -244,29 +244,29 @@ class DestinationCard extends React.PureComponent<Props, State> {
           <StyledDestinationCardHeader id={this.cardID}>
             <Shown>
               <Stack flex align="center" justify="start" spacing="extraTight">
-                <Heading type="title3" element="div" inverted>
+                <Heading type="title3" inverted>
                   {departureCity}
                 </Heading>
                 <ArrowUp customColor="#fff" size="small" />
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" element="div" inverted>
+              <Heading type="title1" inverted>
                 {destinationCity}
               </Heading>
             </StyledDestination>
             <Shown>
-              <Heading type="title4" element="div" inverted>
+              <Heading type="title4" inverted>
                 {destinationCountry}
               </Heading>
             </Shown>
           </StyledDestinationCardHeader>
           <Stack flex justify="between" spaceAfter="small" align="end">
-            <Heading type="title3" element="div" inverted>
+            <Heading type="title3" inverted>
               {price}
             </Heading>
             {timeOfStay && (
-              <Heading type="title4" element="div" inverted>
+              <Heading type="title4" inverted>
                 {timeOfStay}
               </Heading>
             )}

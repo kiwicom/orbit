@@ -6,6 +6,7 @@ import Stack from "../Stack";
 import Text from "../Text";
 import useMediaQuery from "../hooks/useMediaQuery";
 import type { Props } from "./index.js.flow";
+import { StyledListWrapper } from "./PricingTableItem";
 
 const StyledPricingTable = styled.div``;
 
@@ -43,22 +44,24 @@ const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) =>
           </Stack>
           {!isDesktop && children && (
             <Stack spacing="condensed">
-              {React.Children.map(children, (child, i) => {
-                if (i === activeElement) {
-                  return (
-                    <>
-                      {child.props.mobileDescription && (
-                        <Text weight="bold" size="normal">
-                          {child.props.mobileDescription}
-                        </Text>
-                      )}
-                      {child.props.children && React.cloneElement(child.props.children)}
-                      {child.props.action && React.cloneElement(child.props.action)}
-                    </>
-                  );
-                }
-                return null;
-              })}
+              <StyledListWrapper>
+                {React.Children.map(children, (child, i) => {
+                  if (i === activeElement) {
+                    return (
+                      <>
+                        {child.props.mobileDescription && (
+                          <Text weight="bold" size="normal">
+                            {child.props.mobileDescription}
+                          </Text>
+                        )}
+                        {child.props.children && React.cloneElement(child.props.children)}
+                        {child.props.action && React.cloneElement(child.props.action)}
+                      </>
+                    );
+                  }
+                  return null;
+                })}
+              </StyledListWrapper>
             </Stack>
           )}
         </StyledPricingTable>

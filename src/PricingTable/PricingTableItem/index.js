@@ -107,7 +107,7 @@ const Item = styled.div``;
 /*
   This causes rewrite of a list so list is ussable in in PricingTable, this is not at all elegant solution.
 */
-const StyledListWrapper = styled.div`
+export const StyledListWrapper = styled.div`
   ${({ theme }) =>
     css`
       width: 100%;

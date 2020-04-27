@@ -8,6 +8,7 @@ import Table, {
   TableBody,
   TableRow,
   TableCell,
+  TableFooter,
 } from "@kiwicom/orbit-components/lib/Table";
 ```
 
@@ -17,7 +18,7 @@ After adding import into your project you can use it simply like:
 <Table>
   <TableHead>
     <TableRow>
-      <TableCell>Content</TableCell>
+      <TableCell>Header</TableCell>
     </TableRow>
   </TableHead>
   <TableBody>
@@ -25,6 +26,11 @@ After adding import into your project you can use it simply like:
       <TableCell>Content</TableCell>
     </TableRow>
   </TableBody>
+  <TableFooter>
+    <TableRow>
+      <TableCell>Footer</TableCell>
+    </TableRow>
+  </TableFooter>
 </Table>
 ```
 
@@ -32,11 +38,19 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Table component.
 
-| Name         | Type         | Default | Description                                                                                |
-| :----------- | :----------- | :------ | :----------------------------------------------------------------------------------------- |
-| **children** | `React.Node` |         | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead). |
-| compact      | `boolean`    | `false` | If `true`, the Table will have more compact styles.                                        |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                                                        |
+| Name         | Type            | Default     | Description                                                                                |
+| :----------- | :-------------- | :---------- | :----------------------------------------------------------------------------------------- |
+| **children** | `React.Node`    |             | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead). |
+| compact      | `boolean`       | `false`     | If `true`, the Table will have more compact styles.                                        |
+| dataTest     | `string`        |             | Optional prop for testing purposes.                                                        |
+| type         | [`enum`](#enum) | `"primary"` | The type of Table.                                                                         |
+
+### enum
+
+| type          |
+| :------------ |
+| `"primary"`   |
+| `"secondary"` |
 
 ## Subcomponents
 
@@ -110,3 +124,18 @@ Table below contains all types of the props in TableCell component.
 | `"left"`   |
 | `"center"` |
 | `"right"`  |
+
+### TableFooter
+
+```jsx
+import TableFooter from "@kiwicom/orbit-components/lib/Table/TableFooter";
+```
+
+#### Props
+
+Table below contains all types of the props in TableFooter component.
+
+| Name         | Type         | Default | Description                                                       |
+| :----------- | :----------- | :------ | :---------------------------------------------------------------- |
+| **children** | `React.Node` |         | The content of the TableFooter, normally [`TableRow`](#tablerow). |
+| dataTest     | `string`     |         | Optional prop for testing purposes.                               |

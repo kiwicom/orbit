@@ -10,6 +10,7 @@ import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
 import useTranslate from "../hooks/useTranslate";
+import useBoundingRect from "../hooks/useBoundingRect";
 
 import type { Props } from "./index";
 
@@ -79,25 +80,8 @@ const Collapse = ({
     isControlledComponent ? expandedProp : initialExpanded,
   );
   const expanded = isControlledComponent ? expandedProp : expandedState;
-  const [contentHeight, setContentHeight] = React.useState(expanded ? null : 0);
-  const node = React.useRef(null);
+  const [{ height }, node] = useBoundingRect({ height: expanded ? null : 0 });
   const translate = useTranslate();
-
-  React.useEffect(() => {
-    const calculateHeight = () => {
-      if (node && node.current) {
-        const { height } = node.current.getBoundingClientRect();
-        setContentHeight(height);
-      }
-    };
-
-    calculateHeight();
-
-    window.addEventListener("resize", calculateHeight);
-    return () => {
-      window.removeEventListener("resize", calculateHeight);
-    };
-  }, []);
 
   const slideID = React.useMemo(() => randomID("slideID"), []);
   const labelID = React.useMemo(() => randomID("labelID"), []);
@@ -147,7 +131,7 @@ const Collapse = ({
           </Stack>
         </Stack>
       </StyledCollapseLabel>
-      <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+      <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
         <StyledCollapseChildren ref={node}>{children}</StyledCollapseChildren>
       </Slide>
     </StyledCollapse>

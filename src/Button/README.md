@@ -22,7 +22,6 @@ Table below contains all types of the props available in Button component.
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                      |
 | asComponent  | `string \| React.Element`  | `"button"`  | The component used for the root node.                                                                                                           |
 | fullWidth    | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                          |
-| bordered     | `boolean`                  | `false`     | If `true`, the Button will have a lighter version, with border and light background.                                                            |
 | circled      | `boolean`                  | `false`     | If `true`, the Button will have circular shape.                                                                                                 |
 | children     | `React.Node`               |             | The content of the Button. [See Functional specs](#functional-specs)                                                                            |
 | dataTest     | `string`                   |             | Optional prop for testing purposes.                                                                                                             |
@@ -45,17 +44,14 @@ Table below contains all types of the props available in Button component.
 
 ### enum
 
-| type          | size       |
-| :------------ | :--------- |
-| `"primary"`   | `"small"`  |
-| `"secondary"` | `"normal"` |
-| `"info"`      | `"large"`  |
-| `"success"`   |            |
-| `"warning"`   |            |
-| `"critical"`  |            |
-| `"facebook"`  |            |
-| `"google"`    |            |
-| `"white"`     |            |
+| type               | size       |
+| :----------------- | :--------- |
+| `"primary"`        | `"small"`  |
+| `"secondary"`      | `"normal"` |
+| `"critical"`       | `"large"`  |
+| `"white"`          |            |
+| `"primarySubtle"`  |            |
+| `"criticalSubtle"` |            |
 
 ## Functional specs
 

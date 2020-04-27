@@ -55,7 +55,7 @@ export type IconProps = {|
 |};
 
 /*
-  Primitive - style props used only on ButtonPrimitive itself or it's common functions.
+  Primitive - style props used only on ButtonPrimitive itself or it's helpers functions.
  */
 
 export type HeightProps = {|

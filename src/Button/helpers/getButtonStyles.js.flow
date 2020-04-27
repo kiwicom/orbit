@@ -6,7 +6,6 @@ import type { Background, BoxShadow, Foreground } from "../../primitives/ButtonP
 
 export type GetButtonStyles = ({
   disabled: boolean,
-  bordered: boolean,
   type: Type,
   ...ThemeProps,
 }) => {|

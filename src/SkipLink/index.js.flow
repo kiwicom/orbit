@@ -16,7 +16,7 @@ export type MappedOptions = {|
 |};
 export type Props = {|
   links: Actions[],
-  description?: string,
+  buttonLabel?: string,
 |};
 
 declare export default React$ComponentType<Props>;

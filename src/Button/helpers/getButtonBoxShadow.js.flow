@@ -7,7 +7,6 @@ type State = "default" | "focus" | "active" | "hover";
 export type GetButtonBoxShadow = (
   state: State,
   disabled: boolean,
-  bordered: boolean,
   theme: Theme,
   type: Type,
 ) => ?string;

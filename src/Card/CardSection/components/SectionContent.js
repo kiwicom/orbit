@@ -6,6 +6,7 @@ import transition from "../../../utils/transition";
 import defaultTheme from "../../../defaultTheme";
 import Slide from "../../../utils/Slide";
 import mq from "../../../utils/mediaQuery";
+import useBoundingRect from "../../../hooks/useBoundingRect";
 
 const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -48,29 +49,12 @@ const SectionContent = ({
   slideID,
   labelID,
 }: Props) => {
-  const ref: { current: any | HTMLElement } = React.useRef(null);
-  const [contentHeight, setContentHeight] = React.useState(expanded ? null : 0);
-
-  React.useEffect(() => {
-    const calculateHeight = () => {
-      if (ref && ref.current) {
-        const { height } = ref.current.getBoundingClientRect();
-        setContentHeight(height);
-      }
-    };
-
-    calculateHeight();
-
-    window.addEventListener("resize", calculateHeight);
-    return () => {
-      window.removeEventListener("resize", calculateHeight);
-    };
-  }, []);
+  const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (
     <>
       {expandable ? (
-        <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+        <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
           <StyledCardSectionContent
             noSeparator={noSeparator}
             ref={ref}

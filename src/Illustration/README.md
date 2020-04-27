@@ -26,13 +26,13 @@ Table below contains all types of the props available in Illustration component.
 
 ### enum
 
-| name                            | size        |
-| :------------------------------ | :---------- |
-| `"Accommodation"`               | `"small"`   |
-| `"AirHelp"`                     | `"medium"`  |
-| `"AirportTransport"`            | `"large"`   |
-| `"AirportTransportTaxi"`        | `"display"` |
-| `"AirportShuttle"`              |
+| name                            | size           |
+| :------------------------------ | :------------- |
+| `"Accommodation"`               | `"extraSmall"` |
+| `"AirHelp"`                     | `"small"`      |
+| `"AirportTransport"`            | `"medium"`     |
+| `"AirportTransportTaxi"`        | `"large"`      |
+| `"AirportShuttle"`              | `"display"`    |
 | `"AppQRCode"`                   |
 | `"BaggageDrop"`                 |
 | `"Boarding"`                    |

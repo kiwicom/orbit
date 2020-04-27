@@ -7,7 +7,7 @@ import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
 
-const size = SIZE_OPTIONS.SMALL;
+const size = SIZE_OPTIONS.EXTRASMALL;
 const name = "BGYFastTrack";
 const dataTest = "test";
 

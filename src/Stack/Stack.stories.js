@@ -524,11 +524,11 @@ storiesOf("Stack", module)
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack>
-          <Illustration name="Accommodation" size="small" />
+          <Illustration name="Accommodation" size="extraSmall" />
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack direction="row" align="center">
-          <Illustration name="Accommodation" size="small" />
+          <Illustration name="Accommodation" size="extraSmall" />
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack direction="row">

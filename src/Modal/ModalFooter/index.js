@@ -5,12 +5,11 @@ import styled, { css } from "styled-components";
 import transition from "../../utils/transition";
 import media, { getBreakpointWidth } from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
-import { StyledButton } from "../../Button";
 import { rtlSpacing } from "../../utils/rtl";
-import { StyledButtonLink } from "../../ButtonLink";
 import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
+import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
 import type { Props } from "./index";
 
@@ -39,7 +38,7 @@ export const StyledModalFooter = styled.div`
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledButton}, ${StyledButtonLink} {
+    ${StyledButtonPrimitive} {
       font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
       height: ${({ theme }) => theme.orbit.heightButtonNormal};
     }

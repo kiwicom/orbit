@@ -4,9 +4,10 @@ import { storiesOf } from "@storybook/react";
 import { boolean, text, select } from "@storybook/addon-knobs";
 
 import ALIGN_OPTIONS from "./TableCell/consts";
+import TYPE_OPTIONS from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Table, { TableHead, TableBody, TableRow, TableCell } from "./index";
+import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from "./index";
 
 storiesOf("Table", module)
   .add(
@@ -76,14 +77,48 @@ storiesOf("Table", module)
     },
   )
   .add(
+    "Secondary type",
+    () => (
+      <Table type="secondary">
+        <TableHead>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    ),
+    {
+      info:
+        "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const compact = boolean("compact", false);
       const children = text("children", "Lorem ipsum dolor sit amet");
       const dataTest = text("dataTest", "test");
       const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
+      const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
       return (
-        <Table compact={compact} dataTest={dataTest}>
+        <Table type={type} compact={compact} dataTest={dataTest}>
           <TableHead>
             <TableRow>
               <TableCell align={align}>{children}</TableCell>
@@ -105,7 +140,21 @@ storiesOf("Table", module)
               <TableCell align={align}>{children}</TableCell>
               <TableCell align={align}>{children}</TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+            </TableRow>
           </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+              <TableCell align={align}>{children}</TableCell>
+            </TableRow>
+          </TableFooter>
         </Table>
       );
     },

@@ -1,0 +1,21 @@
+// @flow
+import * as React from "react";
+
+import type { HeightProps, Size } from "../index";
+import type { ThemeProps } from "../../../defaultTheme";
+
+export type GetCommonProps = ({
+  width?: string,
+  size?: Size,
+  iconRight?: React.Node,
+  iconLeft?: React.Node,
+  children?: React.Node,
+  ...ThemeProps,
+}) => {|
+  width?: string,
+  padding: string,
+  fontWeight: string,
+  ...HeightProps,
+|};
+
+declare export default GetCommonProps;

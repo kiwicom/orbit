@@ -7,6 +7,7 @@ import TileContent from "../TileContent";
 import TileWrapper from "../TileWrapper";
 import TileHeader from "../TileHeader";
 import handleKeyDown from "../../../utils/handleKeyDown";
+import useBoundingRect from "../../../hooks/useBoundingRect";
 
 import type { Props } from ".";
 
@@ -23,8 +24,7 @@ const TileExpandable = ({
   htmlTitle,
 }: Props) => {
   const [expanded, setExpanded] = React.useState(initialExpanded);
-  const [contentHeight, setContentHeight] = React.useState(initialExpanded ? null : 0);
-  const node = React.useRef<?HTMLDivElement>(null);
+  const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
 
   const handleClick = event => {
     if (onClick) {
@@ -32,22 +32,6 @@ const TileExpandable = ({
     }
     setExpanded(prevExpanded => !prevExpanded);
   };
-
-  React.useEffect(() => {
-    const calculateHeight = () => {
-      if (node && node.current) {
-        const { height } = node.current.getBoundingClientRect();
-        setContentHeight(height);
-      }
-    };
-
-    calculateHeight();
-
-    window.addEventListener("resize", calculateHeight);
-    return () => {
-      window.removeEventListener("resize", calculateHeight);
-    };
-  }, []);
 
   const hasHeader = !!(title || description || icon || header);
 
@@ -75,7 +59,7 @@ const TileExpandable = ({
           expandable
         />
       )}
-      <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+      <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
         <TileContent noPadding={noPadding} ref={node} withBorder={hasHeader}>
           {children}
         </TileContent>

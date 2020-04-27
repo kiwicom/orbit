@@ -58,14 +58,14 @@ storiesOf("SkipLink", module)
           onClick: action("Reguest a refund"),
         },
       ]);
-      const description = text(
-        "description",
+      const buttonLabel = text(
+        "buttonLabel",
         "Description for screen readers about where the user currently is or describing a more complex component.",
       );
 
       return (
         <div>
-          <SkipLink links={links} description={description} />
+          <SkipLink links={links} buttonLabel={buttonLabel} />
           {Content}
         </div>
       );
@@ -90,7 +90,7 @@ storiesOf("SkipLink", module)
               href: "#inbound",
             },
           ]}
-          description="Description"
+          buttonLabel="Description"
         />
         <ModalHeader
           title="Enjoy something to eat while you fly"

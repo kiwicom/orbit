@@ -5,8 +5,8 @@ import { TOKENS } from "../consts";
 import getButtonBoxShadow from "./getButtonBoxShadow";
 import type { GetButtonStyles } from "./getButtonStyles";
 
-const getButtonStyles: GetButtonStyles = ({ disabled, bordered, theme, type }) => {
-  const wrappedBoxShadow = state => getButtonBoxShadow(state, disabled, bordered, theme, type);
+const getButtonStyles: GetButtonStyles = ({ disabled, theme, type }) => {
+  const wrappedBoxShadow = state => getButtonBoxShadow(state, disabled, theme, type);
   const wrappedTypeToken = name => getButtonTypeToken(name, type, theme);
   const boxShadow = {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
@@ -14,18 +14,6 @@ const getButtonStyles: GetButtonStyles = ({ disabled, bordered, theme, type }) =
     boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
     boxShadowFocus: wrappedBoxShadow(BUTTON_STATES.FOCUS),
   };
-  if (bordered) {
-    return {
-      background: wrappedTypeToken(TOKENS.backgroundButtonBordered),
-      backgroundHover: wrappedTypeToken(TOKENS.backgroundButtonBorderedHover),
-      backgroundActive: wrappedTypeToken(TOKENS.backgroundButtonBorderedActive),
-      backgroundFocus: wrappedTypeToken(TOKENS.backgroundButtonFocus),
-      foreground: wrappedTypeToken(TOKENS.colorTextButtonBordered),
-      foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonBorderedHover),
-      foregroundActive: wrappedTypeToken(TOKENS.colorTextButtonBorderedActive),
-      ...boxShadow,
-    };
-  }
   return {
     background: wrappedTypeToken(TOKENS.backgroundButton),
     backgroundHover: wrappedTypeToken(TOKENS.backgroundButtonHover),

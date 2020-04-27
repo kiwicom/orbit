@@ -74,29 +74,7 @@ storiesOf("Button", module)
     },
   )
   .add(
-    "Facebook button",
-    () => (
-      <Button onClick={action("clicked")} type="facebook" iconLeft={<Icons.Facebook />} bordered>
-        Sign in with Facebook
-      </Button>
-    ),
-    {
-      info: "We use social buttons only in normal size.",
-    },
-  )
-  .add(
-    "Google button",
-    () => (
-      <Button onClick={action("clicked")} type="google" iconLeft={<Icons.Google />} bordered>
-        Sign in with Google
-      </Button>
-    ),
-    {
-      info: "We use social buttons only in normal size.",
-    },
-  )
-  .add(
-    "Status buttons",
+    "Subtle buttons",
     () => {
       const children = text("Children", "Button");
       const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
@@ -105,7 +83,7 @@ storiesOf("Button", module)
         <Stack>
           <Button
             onClick={action("clicked")}
-            type="info"
+            type="primarySubtle"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
@@ -113,23 +91,7 @@ storiesOf("Button", module)
           </Button>
           <Button
             onClick={action("clicked")}
-            type="success"
-            size="small"
-            iconLeft={IconLeft && <IconLeft />}
-          >
-            {children}
-          </Button>
-          <Button
-            onClick={action("clicked")}
-            type="warning"
-            size="small"
-            iconLeft={IconLeft && <IconLeft />}
-          >
-            {children}
-          </Button>
-          <Button
-            onClick={action("clicked")}
-            type="critical"
+            type="criticalSubtle"
             size="small"
             iconLeft={IconLeft && <IconLeft />}
           >
@@ -174,17 +136,10 @@ storiesOf("Button", module)
     "Destructive buttons",
     () => {
       const children = text("Children", "Destructive button");
-      const bordered = boolean("Bordered", false);
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
       return (
-        <Button
-          onClick={action("clicked")}
-          bordered={bordered}
-          type="critical"
-          size={size}
-          iconLeft={<Icons.Remove />}
-        >
+        <Button onClick={action("clicked")} type="critical" size={size} iconLeft={<Icons.Remove />}>
           {children}
         </Button>
       );
@@ -210,7 +165,6 @@ storiesOf("Button", module)
           external={external}
           size={size}
           disabled={disabled}
-          bordered
           iconLeft={<Icons.Airplane />}
         >
           {children}
@@ -234,7 +188,6 @@ storiesOf("Button", module)
       const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
       const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
       const width = number("Width", 0);
-      const bordered = boolean("Bordered", false);
       const circled = boolean("Circled", false);
       const loading = boolean("Loading", false);
       const submit = boolean("Submit", false);
@@ -256,7 +209,6 @@ storiesOf("Button", module)
           disabled={disabled}
           circled={circled}
           fullWidth={fullWidth}
-          bordered={bordered}
           loading={loading}
           dataTest={dataTest}
           type={type}
@@ -306,7 +258,7 @@ storiesOf("Button", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Button type="info" iconLeft={<Icons.Airplane />}>
+        <Button type="primary" iconLeft={<Icons.Airplane />}>
           Button
         </Button>
       </RenderInRtl>

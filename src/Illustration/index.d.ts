@@ -1,6 +1,6 @@
-// @flow
-// Type definitions for @kiwicom/orbit-components
-// Project: http://github.com/kiwicom/orbit-components
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/illustration/
+*/
 
 import * as React from "react";
 
@@ -8,7 +8,6 @@ import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Illustration";
 
-type Size = "small" | "medium" | "large" | "display";
 type Name =
   | "Accommodation"
   | "AirHelp"
@@ -85,7 +84,7 @@ type Name =
   | "WomanWithPhone";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
-  readonly size?: Size;
+  readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
   readonly alt?: string;
 }

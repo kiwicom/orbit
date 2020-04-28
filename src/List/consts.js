@@ -8,5 +8,4 @@ export const SIZES = {
 export const TYPES = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
-  SEPARATED: "separated",
 };

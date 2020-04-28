@@ -26,11 +26,11 @@ Table below contains all types of the props available in AirportIllustration com
 
 ### enum
 
-| name             | size        |
-| :--------------- | :---------- |
-| `"BGYFastTrack"` | `"small"`   |
-| `"BUDFastTrack"` | `"medium"`  |
-| `"MRSSmartPass"` | `"large"`   |
-| `"NCEFastTrack"` | `"display"` |
-| `"PRGSmartPass"` |
+| name             | size           |
+| :--------------- | :------------- |
+| `"BGYFastTrack"` | `"extraSmall"` |
+| `"BUDFastTrack"` | `"small"`      |
+| `"MRSSmartPass"` | `"medium"`     |
+| `"NCEFastTrack"` | `"large"`      |
+| `"PRGSmartPass"` | `"displays"`   |
 | `"VCESmartPass"` |

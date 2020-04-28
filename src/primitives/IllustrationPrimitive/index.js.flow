@@ -6,7 +6,7 @@ import type { Globals } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index";
 
 export type Props = {|
-  +size?: "small" | "medium" | "large" | "display",
+  +size?: "extraSmall" | "small" | "medium" | "large" | "display",
   +name: string,
   +alt?: string,
   ...Globals,

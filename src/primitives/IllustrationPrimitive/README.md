@@ -30,9 +30,10 @@ Table below contains all types of the props available in IllustrationPrimitive c
 
 ### enum
 
-| size        |
-| :---------- |
-| `"small"`   |
-| `"medium"`  |
-| `"large"`   |
-| `"display"` |
+| size           |
+| :------------- |
+| `"extraSmall"` |
+| `"small"`      |
+| `"medium"`     |
+| `"large"`      |
+| `"display"`    |

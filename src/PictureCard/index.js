@@ -94,13 +94,13 @@ const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
       <Stack flex direction="column" justify="end" spacing="none">
         <Stack spaceAfter="small" spacing="none">
           {subTitle && (
-            <Heading type="title3" element="div" inverted>
+            <Heading type="title3" as="div" inverted>
               {subTitle}
             </Heading>
           )}
 
           {title && (
-            <Heading type="title1" element="div" inverted>
+            <Heading type="title1" as="div" inverted>
               {title}
             </Heading>
           )}
@@ -108,7 +108,7 @@ const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
 
         {children && (
           <>
-            <Heading type="title3" element="div" inverted>
+            <Heading type="title3" as="div" inverted>
               {children}
             </Heading>
           </>

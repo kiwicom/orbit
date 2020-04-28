@@ -1,0 +1,8 @@
+// @flow
+import * as React from "react";
+
+import type { Type } from "../index";
+
+export type GetSocialButtonIcon = (type: Type) => ?React.Element<any>;
+
+declare export default GetSocialButtonIcon;

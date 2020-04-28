@@ -57,10 +57,10 @@ storiesOf("Stack", module)
     "Default",
     () => (
       <Stack>
-        <Button type="success" iconLeft={<Airplane />}>
+        <Button type="primary" iconLeft={<Airplane />}>
           Button
         </Button>
-        <Button type="warning">Button</Button>
+        <Button type="secondary">Button</Button>
       </Stack>
     ),
     {
@@ -95,10 +95,10 @@ storiesOf("Stack", module)
           spacing={spacing}
           spaceAfter={spaceAfter}
         >
-          <Button type="success" iconLeft={<Airplane />}>
+          <Button type="primary" iconLeft={<Airplane />}>
             Button
           </Button>
-          <Button type="warning">Button</Button>
+          <Button type="secondary">Button</Button>
         </Stack>
       );
     },
@@ -524,11 +524,11 @@ storiesOf("Stack", module)
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack>
-          <Illustration name="Accommodation" size="small" />
+          <Illustration name="Accommodation" size="extraSmall" />
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack direction="row" align="center">
-          <Illustration name="Accommodation" size="small" />
+          <Illustration name="Accommodation" size="extraSmall" />
           <Text>Hola Amigo</Text>
         </Stack>
         <Stack direction="row">

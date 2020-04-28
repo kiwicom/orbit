@@ -113,7 +113,7 @@ const TileHeader = ({
       <Stack spacing="none" direction="column" shrink>
         {title && (
           <StyledTileTitle>
-            <Heading type="title3" element="h3">
+            <Heading type="title3" as="h3">
               {title}
             </Heading>
           </StyledTileTitle>

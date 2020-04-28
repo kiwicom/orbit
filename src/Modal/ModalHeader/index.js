@@ -174,7 +174,7 @@ const ModalHeader = ({
           {title && <ModalHeading>{title}</ModalHeading>}
           {description && (
             <ModalDescription>
-              <Text size="large" element="div">
+              <Text size="large" as="div">
                 {description}
               </Text>
             </ModalDescription>

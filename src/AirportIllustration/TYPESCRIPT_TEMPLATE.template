@@ -1,12 +1,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/airportillustration/
 */
-
-declare export default React$ComponentType<Props>;
-
 import * as React from "react";
 import * as Common from "../common/common.d.ts";
-
 type Name =%NAMES%
 
 export interface Props extends Common.Global, Common.SpaceAfter {

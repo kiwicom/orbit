@@ -1,5 +1,5 @@
 // @flow
-import { Values } from "../../Translate/index";
+import { Values } from "../../Translate/index.d.ts";
 
 type TranslateFunction = (key: string, values?: Values) => string;
 

@@ -113,6 +113,7 @@ declare export default React$ComponentType<Props>;
 `;
 
 const typescriptTemplate = `
+// @flow
 import * as React from "react";
 
 import * as Common from "../common/common.d.ts";

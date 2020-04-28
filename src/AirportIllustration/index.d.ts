@@ -1,10 +1,9 @@
+// @flow
 /*
   DOCUMENTATION: https://orbit.kiwi/components/airportillustration/
 */
-
-declare export default React$ComponentType<Props>;
-
 import * as React from "react";
+
 import * as Common from "../common/common.d.ts";
 
 type Name =
@@ -21,5 +20,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly alt?: string;
 }
 
-const AirportIllustration: React.FunctionComponent<Props>
+const AirportIllustration: React.FunctionComponent<Props>;
 export { AirportIllustration, AirportIllustration as default };

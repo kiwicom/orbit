@@ -1,3 +1,4 @@
+// @flow
 /*
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
@@ -7,7 +8,6 @@ import * as React from "react";
 import * as Common from "../common/common.d.ts";
 
 declare module "@kiwicom/orbit-components/lib/Illustration";
-
 type Name =
   | "Accommodation"
   | "AirHelp"

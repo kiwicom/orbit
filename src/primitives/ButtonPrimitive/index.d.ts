@@ -3,9 +3,7 @@ import * as React from "react";
 
 import * as Common from "../../common/common.d.ts";
 
-
 type inexactString = string | null | undefined;
-
 
 export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
@@ -24,10 +22,10 @@ export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
   readonly role?: string;
   readonly size?: Common.Size;
   readonly submit?: boolean;
-  readonly title?: string | (any => string);
+  readonly title?: () => string | string;
   readonly tabIndex?: string;
   readonly width?: string;
-};
+}
 /*
   Icon properties used on other getter functions.
  */
@@ -82,3 +80,7 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
 export type Props = Diff<ButtonCommonProps, { readonly size?: Common.Size }> &
   ButtonCommonProps &
   PrimitiveTypes;
+
+const StyledButtonPrimitive: React.ComponentType<Props>;
+const Button: React.AbstractComponent<Props, HTMLButtonElement>;
+export { Button, Button as default, StyledButtonPrimitive };

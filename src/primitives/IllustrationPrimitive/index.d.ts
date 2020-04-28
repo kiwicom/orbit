@@ -9,7 +9,7 @@ import * as Common from "../../common/common.d.ts";
 declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
-  readonly size?: "small" | "medium" | "large" | "display";
+  readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: string;
   readonly alt?: string;
 }

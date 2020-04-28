@@ -112,6 +112,27 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 `;
 
+const typescriptTemplate = `
+import * as React from "react";
+
+import * as Common from "../common/common.d.ts";
+
+export interface Props extends Common.Global {
+  readonly size?: "small" | "medium" | "large";
+  readonly color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical";
+  readonly className?: string;
+  readonly customColor?: string;
+  readonly children: React.ReactNode;
+  readonly viewBox: string;
+  readonly ariaHidden?: boolean;
+  readonly reverseOnRtl?: boolean;
+  readonly ariaLabel?: string;
+}
+
+const Icon: React.FunctionComponent<Props>;
+export { Icon, Icon as default }
+`;
+
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const content = dom.window.document.querySelector("svg");
@@ -126,6 +147,8 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
 
   // write .js.flow for every icon
   fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
+  // write .d.ts for every icon
+  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.d.ts`), typescriptTemplate);
 });
 
 const index = names

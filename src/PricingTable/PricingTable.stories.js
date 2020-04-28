@@ -17,7 +17,7 @@ import Card, { CardSection } from "../Card";
 import PricingTable, { PricingTableItem } from "./index";
 
 const content = (
-  <List type="separated">
+  <List>
     <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
       <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Extended.</Text>
@@ -40,9 +40,11 @@ const content = (
 );
 
 const longerContent = (
-  <List type="separated">
-    <ListItem icon={<Check size="small" color="success" />}>
-      <Text>Extended.</Text>
+  <List>
+    <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
+      <Tooltip content="Extra info about provided service" stopPropagation>
+        <Text>Extended.</Text>
+      </Tooltip>
     </ListItem>
     <ListItem label="Calleer priority" icon={<Check size="small" color="success" />}>
       <Tooltip content="Extra info about provided service" stopPropagation>
@@ -66,7 +68,7 @@ const longerContent = (
 );
 
 const germanContent = (
-  <List type="separated">
+  <List>
     <ListItem label="Verfügbarkeit Support" icon={<Check size="small" color="success" />}>
       <Tooltip content="Extra info about provided service" stopPropagation>
         <Text>Begrenzt</Text>

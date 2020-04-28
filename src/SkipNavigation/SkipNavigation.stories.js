@@ -40,7 +40,7 @@ const Content = (
             </TextLink>{" "}
             ulla. Ut convallis fermentum efficitur.
           </Text>
-          <Heading element="h2" type="title3" dataA11ySection="subheading">
+          <Heading as="h2" type="title3" dataA11ySection="subheading">
             Focusable subheading
           </Heading>
           <Text>

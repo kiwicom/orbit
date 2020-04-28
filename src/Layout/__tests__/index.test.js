@@ -8,10 +8,10 @@ import Layout, { LayoutColumn } from "..";
 
 describe("Button with icon", () => {
   const dataTest = "test";
-  const element = "span";
+  const as = "span";
   const component = shallow(
     <Layout type={LAYOUT_OPTIONS.SEARCH} dataTest={dataTest}>
-      <LayoutColumn dataTest={dataTest} element={element}>
+      <LayoutColumn dataTest={dataTest} as={as}>
         Lorem ipsum dolor sit amet
       </LayoutColumn>
       <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
@@ -24,7 +24,7 @@ describe("Button with icon", () => {
     expect(LayoutColumnEl.render().prop("data-test")).toBe(dataTest);
   });
   it("should render props on LayoutColumn", () => {
-    expect(LayoutColumnEl.prop("element")).toBe(element);
+    expect(LayoutColumnEl.prop("as")).toBe(as);
   });
   it("columns should have hide props", () => {
     component.children().forEach((node, key) => {

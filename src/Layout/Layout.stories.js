@@ -74,14 +74,14 @@ storiesOf("Layout", module)
   })
   .add("Customized", () => (
     <Layout type="Search">
-      <LayoutColumn dataTest="test" element="span">
+      <LayoutColumn dataTest="test" as="span">
         <Card>
           <CardSection>
             <CustomDiv />
           </CardSection>
         </Card>
       </LayoutColumn>
-      <LayoutColumn hideOn={["largeMobile"]} element="span">
+      <LayoutColumn hideOn={["largeMobile"]} as="span">
         <Card>
           <CardSection>
             <CustomDiv />

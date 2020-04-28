@@ -7,7 +7,7 @@ import { SIZE_OPTIONS } from "../consts";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 import defaultTheme from "../../../defaultTheme";
 
-const size = SIZE_OPTIONS.SMALL;
+const size = SIZE_OPTIONS.EXTRASMALL;
 const name = "Accommodation";
 const alt = "Alternative text";
 const dataTest = "test";

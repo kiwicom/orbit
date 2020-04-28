@@ -42,7 +42,7 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDescription = styled.p`
+const StyledLabel = styled.p`
   background-color: red;
   visibility: none;
   position: absolute;
@@ -55,10 +55,10 @@ const StyledDescription = styled.p`
   border: 0;
 `;
 
-const SkipLink = ({ links, description }: Props) => {
+const SkipLink = ({ links, buttonLabel }: Props) => {
   return (
     <StyledNavigation>
-      {description && <StyledDescription>{description}</StyledDescription>}
+      {buttonLabel && <StyledLabel>{buttonLabel}</StyledLabel>}
       {links &&
         links.map(({ href, name, onClick }, index) => {
           return (

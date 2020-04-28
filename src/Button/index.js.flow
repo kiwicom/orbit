@@ -6,19 +6,9 @@ import * as React from "react";
 
 import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
-export type Type =
-  | "primary"
-  | "secondary"
-  | "info"
-  | "success"
-  | "warning"
-  | "critical"
-  | "facebook"
-  | "google"
-  | "white";
+export type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle";
 
 export type Props = {|
-  +bordered?: boolean,
   +type?: Type,
   ...ButtonCommonProps,
 |};

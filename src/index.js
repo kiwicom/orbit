@@ -57,6 +57,7 @@ export { default as TableBody } from "./Table/TableBody";
 export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
+export { default as TableFooter } from "./Table/TableFooter";
 
 export { default as PricingTable } from "./PricingTable";
 export { default as PricingTableItem } from "./PricingTable/PricingTableItem";
@@ -91,6 +92,7 @@ export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as SkipNavigation } from "./SkipNavigation";
+export { default as SocialButton } from "./SocialButton";
 export { default as Stepper } from "./Stepper";
 export { default as StepperStateless } from "./Stepper/StepperStateless";
 export { default as StopoverArrow } from "./StopoverArrow";

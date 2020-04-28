@@ -96,7 +96,7 @@ storiesOf("Drawer", module)
         >
           <Stack>
             <Illustration name="Accommodation" />
-            <Heading element="h2">Need help?</Heading>
+            <Heading as="h2">Need help?</Heading>
             <Text type="secondary">
               We are here for you. First, let is narrow down your request.
             </Text>
@@ -159,6 +159,57 @@ storiesOf("Drawer", module)
               description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
             />
           </Stack>
+        </Drawer>
+      );
+    },
+    {
+      info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
+    "With Title",
+    () => {
+      const shown = boolean("shown", true);
+      const dataTest = text("dataTest", "test");
+      const title = text("Title", "Title");
+      const width = text("width", "320px");
+      return (
+        <Drawer
+          title={title}
+          dataTest={dataTest}
+          width={width}
+          shown={shown}
+          onClose={action("onClose")}
+        >
+          <Collapse label="Discover" initialExpanded>
+            <LinkList indent>
+              <TextLink type="secondary">Refer a Friend</TextLink>
+              <TextLink type="secondary">Subscribe to newsletter</TextLink>
+              <TextLink type="secondary">Kiwi.com Stories</TextLink>
+            </LinkList>
+          </Collapse>
+          <Collapse label="Guidelines">
+            <LinkList indent>
+              <TextLink type="secondary">Terms & Conditions</TextLink>
+              <TextLink type="secondary">Terms of Use</TextLink>
+              <TextLink type="secondary">Privacy Policy</TextLink>
+              <TextLink type="secondary">Security</TextLink>
+              <TextLink type="secondary">Cookies settings</TextLink>
+            </LinkList>
+          </Collapse>
+          <Collapse label="Company">
+            <LinkList indent>
+              <TextLink type="secondary">About Kiwi.com</TextLink>
+              <TextLink type="secondary">Careers</TextLink>
+              <TextLink type="secondary">Care Kiwi.com</TextLink>
+              <TextLink type="secondary">Code Kiwi.com</TextLink>
+              <TextLink type="secondary">Kiwi.com Guarantee</TextLink>
+              <TextLink type="secondary">Press kit</TextLink>
+            </LinkList>
+          </Collapse>
+          <LinkList>
+            <TextLink type="secondary">Sign out</TextLink>
+          </LinkList>
         </Drawer>
       );
     },
@@ -299,7 +350,7 @@ storiesOf("Drawer", module)
           >
             <Stack>
               <Illustration name="Accommodation" />
-              <Heading element="h2">Need help?</Heading>
+              <Heading as="h2">Need help?</Heading>
               <Text type="secondary">
                 We are here for you. First, let is narrow down your request.
               </Text>

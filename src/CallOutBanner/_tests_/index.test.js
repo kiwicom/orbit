@@ -11,7 +11,7 @@ describe("CallOutBanner - flat", () => {
   const tabIndex = "1";
   const dataTest = "test";
   const description = "Lorem ipsum dolor sit amet";
-  const illustration = <Illustration name="Accommodation" size="small" />;
+  const illustration = <Illustration name="Accommodation" size="extraSmall" />;
   const component = shallow(
     <CallOutBanner
       dataTest={dataTest}

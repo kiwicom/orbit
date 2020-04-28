@@ -29,12 +29,12 @@ const templateFiles = [
     AIRPORT_ILLUSTRATION_NAMES,
   ],
   [
-    path.join(__dirname, "..", "src", "AirportIllustration", "TYPESCRIPT_TEMPLATE.d.ts"),
+    path.join(__dirname, "..", "src", "AirportIllustration", "TYPESCRIPT_TEMPLATE.template"),
     AIRPORT_ILLUSTRATION_NAMES,
   ],
   [path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLATE.flow"), ILLUSTRATION_NAMES],
   [
-    path.join(__dirname, "..", "src", "Illustration", "TYPESCRIPT_TEMPLATE.d.ts"),
+    path.join(__dirname, "..", "src", "Illustration", "TYPESCRIPT_TEMPLATE.template"),
     ILLUSTRATION_NAMES,
   ],
   [
@@ -42,7 +42,7 @@ const templateFiles = [
     Object.values(SERVICE_LOGOS_NAMES),
   ],
   [
-    path.join(__dirname, "..", "src", "ServiceLogo", "TYPESCRIPT_TEMPLATE.d.ts"),
+    path.join(__dirname, "..", "src", "ServiceLogo", "TYPESCRIPT_TEMPLATE.template"),
     Object.values(SERVICE_LOGOS_NAMES),
   ],
   [
@@ -50,7 +50,7 @@ const templateFiles = [
     Object.values(FEATURE_ICONS_NAMES),
   ],
   [
-    path.join(__dirname, "..", "src", "FeatureIcon", "TYPESCRIPT_TEMPLATE.d.ts"),
+    path.join(__dirname, "..", "src", "FeatureIcon", "TYPESCRIPT_TEMPLATE.template"),
     Object.values(FEATURE_ICONS_NAMES),
   ],
 ];

@@ -24,6 +24,7 @@ describe("ButtonPrimitive: default", () => {
       tabIndex={tabIndex}
       asComponent={props => <span {...props} />}
       onClick={onClick}
+      disabled
     >
       {children}
     </ButtonPrimitive>,
@@ -40,6 +41,7 @@ describe("ButtonPrimitive: default", () => {
     expect(primitive.prop("aria-controls")).toBe(ariaControls);
     expect(primitive.prop("aria-expanded")).toBe(String(ariaExpanded));
     expect(primitive.prop("aria-label")).toBe(title);
+    expect(primitive.prop("disabled")).toBeDefined();
     expect(primitive.prop("tabindex")).toBe(tabIndex);
     expect(primitive.prop("name")).toBe("span");
     expect(content.render().text()).toBe(children);

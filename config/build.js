@@ -112,15 +112,21 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 `;
 
-const typescriptTemplate = `
-// @flow
+const typescriptTemplate = `// @flow
 import * as React from "react";
 
 import * as Common from "../common/common.d.ts";
 
 export interface Props extends Common.Global {
   readonly size?: "small" | "medium" | "large";
-  readonly color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical";
+  readonly color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "info"
+    | "success"
+    | "warning"
+    | "critical";
   readonly className?: string;
   readonly customColor?: string;
   readonly children: React.ReactNode;
@@ -131,7 +137,7 @@ export interface Props extends Common.Global {
 }
 
 const Icon: React.FunctionComponent<Props>;
-export { Icon, Icon as default }
+export { Icon, Icon as default };
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {

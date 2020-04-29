@@ -45,6 +45,7 @@ export const StyledButtonPrimitive = styled(
         aria-label={title}
         type={!isButtonWithHref ? buttonType : undefined}
         className={className}
+        disabled={disabled}
         href={!disabled ? href : null}
         target={!disabled && href && external ? "_blank" : undefined}
         rel={!disabled && href && external ? "noopener noreferrer" : undefined}

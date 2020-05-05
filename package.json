@@ -106,7 +106,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@emotion/core": "^10.0.28",
-    "@octokit/rest": "^15.13.1",
+    "@octokit/rest": "^17.7.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-info": "5.3.18",
     "@storybook/addon-knobs": "^5.3.18",

@@ -15,7 +15,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
   ({ type = TYPES.PRIMARY, disabled = false, transparent = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps(propsWithTheme);
+    const { padding, ...commonProps } = getCommonProps(propsWithTheme);
     const buttonLinkStyles = getButtonLinkStyles({ type, theme, disabled, transparent });
     const icons = getIconContainer({
       ...propsWithTheme,
@@ -29,6 +29,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
         {...buttonLinkStyles}
         {...commonProps}
         {...icons}
+        padding={transparent ? "0" : padding}
       />
     );
   },

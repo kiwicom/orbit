@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Truncate";
 
@@ -13,5 +13,5 @@ interface Props extends Common.Global {
   readonly maxWidth?: string;
 }
 
-const Truncate: React.FunctionComponent<Props>;
+declare const Truncate: React.FunctionComponent<Props>;
 export { Truncate, Truncate as default };

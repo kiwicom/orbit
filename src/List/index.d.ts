@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/List";
 
@@ -16,5 +16,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;
 }
 
-const List: React.FunctionComponent<Props>;
+declare const List: React.FunctionComponent<Props>;
 export { List, List as default };

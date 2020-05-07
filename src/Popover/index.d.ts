@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Popover";
 
@@ -26,5 +26,5 @@ export interface Props extends Common.Global {
   readonly onClose?: Common.Callback;
 }
 // eslint-disable-next-line react/prefer-stateless-function
-declare class Popover extends React.Component<Popover.Props> {}
+declare class Popover extends React.Component<Props> {}
 export { Popover, Popover as default };

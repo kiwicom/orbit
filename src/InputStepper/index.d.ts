@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/InputStepper";
 
@@ -13,7 +13,7 @@ type Title = string | ((...params: any[]) => string);
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
 export interface SharedProps extends Common.Global, Common.Ref, Common.SpaceAfter {
-  readonly size?: Common.TextSize;
+  readonly size?: Common.InputSize;
   readonly label?: Common.Translation;
   readonly step?: number;
   readonly help?: React.ReactNode;
@@ -35,5 +35,5 @@ export interface Props extends SharedProps {
   readonly onChange?: (number) => void | Promise<void>;
 }
 
-const InputStepper: React.FunctionComponent<Props>;
+declare const InputStepper: React.FunctionComponent<Props>;
 export { InputStepper, InputStepper as default };

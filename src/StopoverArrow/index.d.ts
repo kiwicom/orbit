@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/StopoverArrow";
 
@@ -14,5 +14,5 @@ interface Props extends Common.Global {
   readonly stops: Stops;
 }
 
-const StopoverArrow: React.FunctionComponent<Props>;
+declare const StopoverArrow: React.FunctionComponent<Props>;
 export { StopoverArrow, StopoverArrow as default };

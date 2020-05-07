@@ -115,7 +115,7 @@ declare export default React$ComponentType<Props>;
 const typescriptTemplate = `// @flow
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 export interface Props extends Common.Global {
   readonly size?: "small" | "medium" | "large";
@@ -136,7 +136,7 @@ export interface Props extends Common.Global {
   readonly ariaLabel?: string;
 }
 
-const Icon: React.FunctionComponent<Props>;
+declare const Icon: React.FunctionComponent<Props>;
 export { Icon, Icon as default };
 `;
 

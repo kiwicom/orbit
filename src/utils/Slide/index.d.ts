@@ -14,5 +14,5 @@ interface Props {
   readonly id?: string;
 }
 
-const Slide: React.FunctionComponent<Props>;
+declare const Slide: React.FunctionComponent<Props>;
 export { Slide, Slide as default };

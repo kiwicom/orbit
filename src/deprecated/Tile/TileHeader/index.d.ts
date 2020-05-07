@@ -4,6 +4,8 @@
 
 import * as React from "react";
 
+import * as Common from "../../../common/common";
+
 declare module "@kiwicom/orbit-components/lib/deprecated/TileHeader";
 
 interface Props {
@@ -16,5 +18,5 @@ interface Props {
   readonly isExpanded?: boolean;
 }
 
-const TileHeader: React.FunctionComponent<Props>;
+declare const TileHeader: React.FunctionComponent<Props>;
 export { TileHeader, TileHeader as default };

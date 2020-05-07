@@ -4,13 +4,13 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index.d.ts";
+import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
 type Type = "apple" | "facebook" | "google";
 
-type OmittedButtonCommonProps = Diff<
+type OmittedButtonCommonProps = Exclude<
   ButtonCommonProps,
   {
     readonly iconLeft?: React.ReactNode;
@@ -19,9 +19,9 @@ type OmittedButtonCommonProps = Diff<
   }
 >;
 
-export interface Props extends OmittedButtonCommonProps {
+type Props = {
   readonly type?: Type;
-}
+} & OmittedButtonCommonProps;
 
-const SocialButton: React.AbstractComponent<Props, HTMLButtonElement>;
+declare const SocialButton: React.RefForwardingComponent<Props, HTMLButtonElement>;
 export { SocialButton, SocialButton as default };

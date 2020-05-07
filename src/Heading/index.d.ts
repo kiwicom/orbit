@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Heading";
 
@@ -20,5 +20,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly id?: string;
 }
 
-const Heading: React.FunctionComponent<Props>;
+declare const Heading: React.FunctionComponent<Props>;
 export { Heading, Heading as default };

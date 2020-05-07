@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Textarea";
 
@@ -31,5 +31,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onBlur?: Event;
 }
 
-const Textarea: React.FunctionComponent<Props>;
+declare const Textarea: React.FunctionComponent<Props>;
 export { Textarea, Textarea as default };

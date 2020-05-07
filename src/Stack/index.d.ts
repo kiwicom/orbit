@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Stack";
 
@@ -53,5 +53,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
 }
 
-const Stack: React.FunctionComponent<Props>;
+declare const Stack: React.FunctionComponent<Props>;
 export { Stack, Stack as default };

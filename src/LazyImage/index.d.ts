@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/LazyImage";
 
@@ -19,5 +19,5 @@ export interface Props {
   readonly name: Common.Translation;
 }
 
-const LazyImage: React.FunctionComponent<Props>;
+declare const LazyImage: React.FunctionComponent<Props>;
 export { LazyImage, LazyImage as default };

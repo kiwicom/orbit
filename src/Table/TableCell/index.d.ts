@@ -2,7 +2,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-import SharedProps from "../index.d.ts";
+import { SharedProps } from "../index";
 
 declare module "@kiwicom/orbit-components/lib/Table/TableCell";
 
@@ -12,5 +12,5 @@ interface Props extends SharedProps {
   readonly align?: Align;
 }
 
-const TableCell: React.FunctionComponent<Props>;
+declare const TableCell: React.FunctionComponent<Props>;
 export { TableCell, TableCell as default };

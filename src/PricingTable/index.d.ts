@@ -4,8 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
-import { PricingTableItemType } from "./PricingTableItem/index.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/PricingTable";
 
@@ -15,7 +14,5 @@ export interface Props extends Common.Global {
   readonly hasError?: boolean;
 }
 
-declare const PricingTableItem: PricingTableItemType;
-
-const PricingTable: React.FunctionComponent<Props>;
-export { PricingTable, PricingTable as default, PricingTableItem };
+export const PricingTable: React.FunctionComponent<Props>;
+export { PricingTableItem } from "./PricingTableItem/index";

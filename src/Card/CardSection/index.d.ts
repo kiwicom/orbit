@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Card/CardSection";
 
@@ -23,5 +23,5 @@ export interface Props extends Common.Global {
   readonly header?: boolean;
 }
 
-const CardSection: React.FunctionComponent<Props>;
+declare const CardSection: React.FunctionComponent<Props>;
 export { CardSection, CardSection as default };

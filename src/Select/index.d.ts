@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Select";
 
@@ -37,5 +37,5 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly customValueText?: Common.Translation;
 }
 
-const Select: React.forwardRef<Props, HTMLInputElement>;
+declare const Select: React.RefForwardingComponent<Props, HTMLInputElement>;
 export { Select, Select as default };

@@ -4,8 +4,8 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
-import Illustration from "../Illustration/index.d.ts";
+import * as Common from "../common/common";
+import Illustration from "../Illustration/index";
 
 declare module "@kiwicom/orbit-components/lib/CallOutBanner";
 
@@ -19,5 +19,5 @@ export interface Props {
   readonly children?: React.ReactNode;
 }
 
-const CallOutBanner: React.FunctionComponent<Props>;
+declare const CallOutBanner: React.FunctionComponent<Props>;
 export { CallOutBanner, CallOutBanner as default };

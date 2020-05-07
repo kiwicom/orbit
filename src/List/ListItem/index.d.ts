@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ListItem";
 
@@ -14,5 +14,5 @@ interface Props extends Common.Global {
   readonly icon?: React.ReactNode;
 }
 
-const ListItem: React.FunctionComponent<Props>;
+declare const ListItem: React.FunctionComponent<Props>;
 export { ListItem, ListItem as default };

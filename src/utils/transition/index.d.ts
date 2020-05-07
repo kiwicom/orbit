@@ -1,5 +1,5 @@
 // @flow
-import { ThemeProps } from "../../defaultTheme.d.ts";
+import { ThemeProps } from "../../defaultTheme";
 
 export declare const Transition: (
   properties: string[],

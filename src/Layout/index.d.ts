@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Layout";
 
@@ -15,5 +15,5 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
 }
 
-const Layout: React.FunctionComponent<Props>;
+declare const Layout: React.FunctionComponent<Props>;
 export { Layout, Layout as default };

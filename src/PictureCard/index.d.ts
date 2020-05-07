@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/PictureCard";
 
@@ -30,5 +30,5 @@ interface Props extends Common.Global {
   readonly onClick?: Common.Callback;
 }
 
-const PictureCard: React.FunctionComponent<Props>;
+declare const PictureCard: React.FunctionComponent<Props>;
 export { PictureCard, PictureCard as default };

@@ -4,11 +4,11 @@
 
 import * as React from "react";
 
-import * as Common from "../../../common/common.d.ts";
+import * as Common from "../../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/CardHeader";
+declare module "@kiwicom/orbit-components/lib/deprecated/CardHeader";
 
-export interface Props extends Common.Global {
+interface Props extends Common.Global {
   readonly icon?: React.ReactNode;
   readonly title?: React.ReactNode;
   readonly subTitle?: React.ReactNode;
@@ -16,5 +16,5 @@ export interface Props extends Common.Global {
   readonly dataA11ySection?: string;
 }
 
-const CardHeader: React.FunctionComponent<Props>;
-export { CardHeader, CardHeader as default };
+declare const DeprecatedCardHeader: React.FunctionComponent<Props>;
+export { DeprecatedCardHeader, DeprecatedCardHeader as default };

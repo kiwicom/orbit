@@ -4,8 +4,8 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
-import { Type } from "../Badge/index.d.ts";
+import * as Common from "../common/common";
+import { Type } from "../Badge/index";
 
 declare module "@kiwicom/orbit-components/lib/NotificationBadge";
 
@@ -16,5 +16,5 @@ export interface Props extends Common.Global {
   readonly ariaLabel?: string;
 }
 
-const NotificationBadge: React.FunctionComponent<Props>;
+declare const NotificationBadge: React.FunctionComponent<Props>;
 export { NotificationBadge, NotificationBadge as default };

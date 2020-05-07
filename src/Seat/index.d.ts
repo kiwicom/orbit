@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Seat";
 
@@ -16,5 +16,5 @@ interface Props extends Common.Global {
   readonly size?: Size;
 }
 
-const Seat: React.FunctionComponent<Props>;
+declare const Seat: React.FunctionComponent<Props>;
 export { Seat, Seat as default };

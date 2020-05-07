@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Tooltip";
 
@@ -21,5 +21,5 @@ interface Props extends Common.Global {
   readonly tabIndex?: string;
 }
 
-const Tooltip: React.FunctionComponent<Props>;
+declare const Tooltip: React.FunctionComponent<Props>;
 export { Tooltip, Tooltip as default };

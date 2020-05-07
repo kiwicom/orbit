@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 type inexactString = string | null | undefined;
 
@@ -77,10 +77,10 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
   readonly icons?: IconProps;
 }
 
-export type Props = Diff<ButtonCommonProps, { readonly size?: Common.Size }> &
+export type Props = Exclude<ButtonCommonProps, { readonly size?: Common.Size }> &
   ButtonCommonProps &
   PrimitiveTypes;
 
-const StyledButtonPrimitive: React.ComponentType<Props>;
-const Button: React.AbstractComponent<Props, HTMLButtonElement>;
+declare const StyledButtonPrimitive: React.ComponentType<Props>;
+declare const Button: React.RefForwardingComponent<Props, HTMLButtonElement>;
 export { Button, Button as default, StyledButtonPrimitive };

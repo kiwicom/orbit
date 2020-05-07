@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ChoiceGroup";
 
@@ -21,11 +21,11 @@ export interface Props extends Common.Global {
   readonly filter?: boolean;
   readonly onOnlySelection?: (
     event: React.SyntheticEvent<HTMLButtonElement>,
-    { value: string, label: string },
+    param2: { value: string; label: string },
   ) => void | Promise<void>;
   // InputEvent
   readonly onChange: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 }
 
-const Alert: React.FunctionComponent<Props>;
-export { Alert, Alert as default };
+declare const ChoiceGroup: React.FunctionComponent<Props>;
+export { ChoiceGroup, ChoiceGroup as default };

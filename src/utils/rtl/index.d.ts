@@ -1,5 +1,5 @@
 // @flow
-import { ThemeProps } from "../../defaultTheme.d.ts";
+import { ThemeProps } from "../../defaultTheme";
 
 export type LeftToRight = <T1, T2>(left: T1, right: T2) => (theme: ThemeProps) => T1 | T2;
 

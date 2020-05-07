@@ -4,12 +4,12 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Dialog";
 
 export interface Props extends Common.Global {
-  readonly title: React$Node;
+  readonly title: React.ReactNode;
   readonly description?: React.ReactNode;
   readonly illustration?: React.ReactNode;
   readonly primaryAction: React.ReactNode;
@@ -17,5 +17,5 @@ export interface Props extends Common.Global {
   readonly onClose?: Common.Callback;
 }
 
-const Dialog: React.FunctionComponent<Props>;
+declare const Dialog: React.FunctionComponent<Props>;
 export { Dialog, Dialog as default };

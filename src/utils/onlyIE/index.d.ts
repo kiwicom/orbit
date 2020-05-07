@@ -1,5 +1,5 @@
 // @flow
 
-const OnlyIE: (style: any, breakpoint?: string) => any;
+declare const OnlyIE: (style: any, breakpoint?: string) => any;
 
 export { OnlyIE, OnlyIE as default };

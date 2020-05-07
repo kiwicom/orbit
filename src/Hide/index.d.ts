@@ -20,5 +20,5 @@ export interface Props {
   readonly block?: boolean;
 }
 
-const Hide: React.FunctionComponent<Props>;
+declare const Hide: React.FunctionComponent<Props>;
 export { Hide, Hide as default };

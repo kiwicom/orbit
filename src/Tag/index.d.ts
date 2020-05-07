@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Tag";
 
@@ -17,5 +17,5 @@ interface Props extends Common.Global {
   readonly onClick?: Common.Callback;
 }
 
-const Tag: React.FunctionComponent<Props>;
+declare const Tag: React.FunctionComponent<Props>;
 export { Tag, Tag as default };

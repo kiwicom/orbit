@@ -11,5 +11,5 @@ export interface Props {
   readonly children: React.ReactNode;
 }
 
-const Portal: React.FunctionComponent<Props>;
+declare const Portal: React.FunctionComponent<Props>;
 export { Portal, Portal as default };

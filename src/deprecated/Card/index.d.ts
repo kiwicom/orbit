@@ -4,11 +4,9 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
-import { CardHeaderType } from "./CardHeader/index.d.ts";
-import { CardSectionType } from "./CardSection/index.d.ts";
+import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Card";
+declare module "@kiwicom/orbit-components/lib/deprecated/Card";
 
 interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
@@ -16,7 +14,6 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
 }
 
-const Card: React.FunctionComponent<Props>;
-declare const CardHeader: CardSectionType;
-declare const CardSection: CardHeaderType;
-export { Card, Card as default, CardHeader, CardSection };
+export const DeprecatedCard: React.FunctionComponent<Props>;
+export * from "./CardHeader/index";
+export * from "./CardSection/index";

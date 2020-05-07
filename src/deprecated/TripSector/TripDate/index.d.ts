@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../../common/common.d.ts";
+import * as Common from "../../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/TripDate";
 
@@ -13,5 +13,5 @@ interface Props extends Common.Global {
   readonly duration?: Common.Translation;
 }
 
-const TripDate: React.FunctionComponent<Props>;
+declare const TripDate: React.FunctionComponent<Props>;
 export { TripDate, TripDate as default };

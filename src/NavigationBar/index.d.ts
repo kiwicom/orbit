@@ -3,7 +3,7 @@
 // Project: http://github.com/kiwicom/orbit-components
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/NavigationBar";
 
@@ -14,5 +14,5 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
 }
 
-const NavigationBar: React.FunctionComponent<Props>;
+declare const NavigationBar: React.FunctionComponent<Props>;
 export { NavigationBar, NavigationBar as default };

@@ -4,17 +4,17 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
-import { SharedProps, Event } from "../index.d.ts";
+import * as Common from "../../common/common";
+import { SharedProps, Event } from "../index";
 
 declare module "@kiwicom/orbit-components/lib/InputStepperStateless";
 export type ButtonEvent = Common.Event<
-  React.SyntheticEvent<HTMLButtonElement> | React.SyntheticKeyboardEvent<HTMLButtonElement>
+  React.SyntheticEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
 >;
 
 interface Props extends SharedProps {
   readonly value: number | string | (() => string | number);
-  readonly forwardedRef?: RefType;
+  readonly forwardedRef?: Common.Ref;
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: Event;
@@ -23,5 +23,5 @@ interface Props extends SharedProps {
   readonly onChange?: Event;
 }
 
-const InputStepperStateless: React.FunctionComponent<Props>;
+declare const InputStepperStateless: React.FunctionComponent<Props>;
 export { InputStepperStateless, InputStepperStateless as default };

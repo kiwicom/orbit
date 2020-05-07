@@ -14,5 +14,5 @@ export interface Props {
   readonly isTablet: boolean | undefined | null;
 }
 
-const QueryContext: React.Context<Props>;
+declare const QueryContext: React.Context<Props>;
 export { QueryContext, QueryContext as default };

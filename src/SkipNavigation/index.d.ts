@@ -17,5 +17,5 @@ interface Props {
   readonly feedbackUrl?: string;
 }
 
-const SkipNavigation: React.FunctionComponent<Props>;
+declare const SkipNavigation: React.FunctionComponent<Props>;
 export { SkipNavigation, SkipNavigation as default };

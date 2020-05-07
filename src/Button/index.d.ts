@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index.d.ts";
+import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
@@ -14,5 +14,5 @@ export interface Props extends ButtonCommonProps {
   readonly type?: Type;
 }
 
-const Button: React.AbstractComponent<Props, HTMLButtonElement>;
+declare const Button: React.RefForwardingComponent<Props, HTMLButtonElement>;
 export { Button, Button as default };

@@ -75,7 +75,7 @@ const StyledTable = styled.table`
     }
   }
   & ${StyledTableCell} {
-    min-height: ${({ compact }) => (compact ? "24px" : "48px")};
+    height: ${({ compact }) => (compact ? "32px" : "40px")};
     padding: ${({ theme, compact }) =>
       compact
         ? `6px ${theme.orbit.spaceSmall}`

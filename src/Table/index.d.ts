@@ -22,3 +22,4 @@ export { TableBody } from "./TableBody/index";
 export { TableCell } from "./TableCell/index";
 export { TableHead } from "./TableHead/index";
 export { TableRow } from "./TableRow/index";
+export { TableFooter } from "./TableFooter/index";

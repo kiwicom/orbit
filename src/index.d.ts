@@ -5,6 +5,7 @@
 declare module "@kiwicom/orbit-components";
 
 export { Alert } from "./Alert/index";
+export { AlertButton } from "./Alert/AlertButton/index";
 export { AirportIllustration } from "./AirportIllustration/index";
 export { Badge } from "./Badge/index";
 export { NotificationBadge } from "./NotificationBadge/index";
@@ -79,6 +80,7 @@ export { TableBody } from "./Table/TableBody/index";
 export { TableCell } from "./Table/TableCell/index";
 export { TableHead } from "./Table/TableHead/index";
 export { TableRow } from "./Table/TableRow/index";
+export { TableFooter } from "./Table/TableFooter/index";
 export { Layout } from "./Layout/index";
 export { LayoutColumn } from "./Layout/LayoutColumn/index";
 export { Grid } from "./utils/Grid/index";

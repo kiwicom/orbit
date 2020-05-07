@@ -6,14 +6,14 @@ import * as React from "react";
 
 declare module "@kiwicom/orbit-components/lib/Translate";
 
-interface Values {
+type Values = {
   [key: string]: string | number;
-}
+};
 
 interface Props {
   readonly tKey: string;
   readonly values?: Values;
 }
 
-const Translate: React.FunctionComponent<Props>;
+declare const Translate: React.FunctionComponent<Props>;
 export { Translate, Translate as default };

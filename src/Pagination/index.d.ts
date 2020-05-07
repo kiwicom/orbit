@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Pagination";
 
@@ -16,5 +16,5 @@ interface Props extends Common.Global {
   readonly size?: Common.InputSize;
 }
 
-const Pagination: React.FunctionComponent<Props>;
+declare const Pagination: React.FunctionComponent<Props>;
 export { Pagination, Pagination as default };

@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/InputField";
 
@@ -44,5 +44,5 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly onKeyUp?: KeyboardEvent;
 }
 
-const InputField: React.forwardRef<Props, HTMLInputElement>;
+declare const InputField: React.RefForwardingComponent<Props, HTMLInputElement>;
 export { InputField, InputField as default };

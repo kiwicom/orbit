@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
 
@@ -14,5 +14,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly alt?: string;
 }
 
-const IllustrationPrimitive: React.FunctionComponent<Props>;
+declare const IllustrationPrimitive: React.FunctionComponent<Props>;
 export { IllustrationPrimitive, IllustrationPrimitive as default };

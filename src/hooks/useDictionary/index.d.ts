@@ -1,6 +1,6 @@
 // @flow
-import { Translations } from "../../Dictionary/index.d.ts";
+import Translations from "../../Dictionary/index";
 
-const useDictionary: () => Translations;
+declare const useDictionary: () => typeof Translations;
 
 export { useDictionary, useDictionary as default };

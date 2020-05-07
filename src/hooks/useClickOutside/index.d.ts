@@ -1,7 +1,7 @@
 // @flow
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
-const UseClickOutside: (
+declare const UseClickOutside: (
   ref: { current: HTMLElement | null | undefined },
   handler: (ev: React.SyntheticEvent<HTMLLinkElement>) => void,
 ) => void;

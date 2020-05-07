@@ -4,11 +4,11 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
-
-declare module "@kiwicom/orbit-components/lib/Alert";
+import * as Common from "../common/common";
 
 type Type = "info" | "success" | "warning" | "critical";
+
+declare module "@kiwicom/orbit-components/lib/Alert";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;
@@ -20,5 +20,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly onClose?: Common.Callback;
 }
 
-const Alert: React.FunctionComponent<Props>;
+declare const Alert: React.FunctionComponent<Props>;
 export { Alert, Alert as default };

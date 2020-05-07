@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ClickOutside";
 
@@ -13,5 +13,5 @@ export interface Props {
   readonly children: React.ReactNode | React.ReactNode[];
 }
 
-const ClickOutside: React.FunctionComponent<Props>;
+declare const ClickOutside: React.FunctionComponent<Props>;
 export { ClickOutside, ClickOutside as default };

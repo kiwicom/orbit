@@ -17,5 +17,5 @@ interface Props {
   readonly buttonLabel?: string;
 }
 
-const SkipLink: React.FunctionComponent<Props>;
+declare const SkipLink: React.FunctionComponent<Props>;
 export { SkipLink, SkipLink as default };

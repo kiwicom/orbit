@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/InputFile";
 
@@ -28,5 +28,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly ref?: Common.Ref;
 }
 
-const InputFile: React.forwardRef<Props, HTMLInputElement>;
+declare const InputFile: React.RefForwardingComponent<Props, HTMLInputElement>;
 export { InputFile, InputFile as default };

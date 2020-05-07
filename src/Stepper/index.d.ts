@@ -4,13 +4,13 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Stepper";
 
 type Title = string | ((param?: any) => string);
 // InputEvent
-type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
 export interface SharedProps extends Common.Global {
   readonly name?: string;
@@ -21,7 +21,6 @@ export interface SharedProps extends Common.Global {
   readonly titleIncrement?: Title;
   readonly titleDecrement?: Title;
   // Deviation from common event format onChange
-  readonly onChange?: (value: number) => void | Promise<void>;
   readonly onFocus?: Event;
   readonly onBlur?: Event;
 }
@@ -29,7 +28,8 @@ export interface SharedProps extends Common.Global {
 export interface Props extends SharedProps {
   readonly defaultValue?: number;
   readonly step?: number;
+  readonly onChange?: (value: number) => void | Promise<void>;
 }
 
-const Stepper: React.FunctionComponent<Props>;
+declare const Stepper: React.FunctionComponent<Props>;
 export { Stepper, Stepper as default };

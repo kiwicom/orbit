@@ -4,11 +4,11 @@
 
 import * as React from "react";
 
-import * as Common from "../../../common/common.d.ts";
+import * as Common from "../../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/CardSection";
+declare module "@kiwicom/orbit-components/lib/deprecated/CardSection";
 
-export interface Props extends Common.Global {
+interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly expandable?: boolean;
   readonly initialExpanded?: boolean;
@@ -16,5 +16,5 @@ export interface Props extends Common.Global {
   readonly onExpand?: Common.Callback;
 }
 
-const CardSection: React.FunctionComponent<Props>;
-export { CardSection, CardSection as default };
+declare const DeprecatedCardSection: React.FunctionComponent<Props>;
+export { DeprecatedCardSection, DeprecatedCardSection as default };

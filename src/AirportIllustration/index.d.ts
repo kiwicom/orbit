@@ -4,7 +4,7 @@
 */
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 type Name =
   | "BGYFastTrack"
@@ -20,5 +20,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly alt?: string;
 }
 
-const AirportIllustration: React.FunctionComponent<Props>;
+declare const AirportIllustration: React.FunctionComponent<Props>;
 export { AirportIllustration, AirportIllustration as default };

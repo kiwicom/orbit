@@ -1,8 +1,8 @@
 // @flow
-import { Values } from "../../Translate/index.d.ts";
+import Values from "../../Translate/index";
 
-type TranslateFunction = (key: string, values?: Values) => string;
+type TranslateFunction = (key: string, values?: typeof Values) => string;
 
-const UseTranslate: () => TranslateFunction;
+declare const UseTranslate: () => TranslateFunction;
 
 export { UseTranslate, UseTranslate as default };

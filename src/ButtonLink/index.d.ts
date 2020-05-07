@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ButtonLink";
 
@@ -34,5 +34,5 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly title?: string | ((param: any) => string);
 }
 
-const ButtonLink: React.FunctionComponent<Props>;
+declare const ButtonLink: React.FunctionComponent<Props>;
 export { ButtonLink, ButtonLink as default };

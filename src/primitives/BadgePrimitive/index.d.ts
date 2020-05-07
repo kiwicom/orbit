@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
 
@@ -17,5 +17,5 @@ export interface Props extends Common.Global {
   readonly borderColor?: string | undefined | null;
 }
 
-const BadgePrimitive: React.FunctionComponent<Props>;
+declare const BadgePrimitive: React.FunctionComponent<Props>;
 export { BadgePrimitive, BadgePrimitive as default };

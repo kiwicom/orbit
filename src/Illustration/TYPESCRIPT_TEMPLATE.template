@@ -5,7 +5,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Illustration";
 type Name =%NAMES%
@@ -16,5 +16,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly alt?: string;
 }
 
-const Illustration: React.FunctionComponent<Props>;
+declare const Illustration: React.FunctionComponent<Props>;
 export { Illustration, Illustration as default };

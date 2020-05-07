@@ -4,8 +4,8 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
-import { Devices } from "../../utils/mediaQuery/index.d.ts";
+import * as Common from "../../common/common";
+import { Devices } from "../../utils/mediaQuery/index";
 
 declare module "@kiwicom/orbit-components/lib/LayoutColumn";
 
@@ -15,5 +15,5 @@ export interface Props extends Common.Global {
   readonly hideOn?: Devices[];
 }
 
-const LayoutColumn: React.FunctionComponent<Props>;
+declare const LayoutColumn: React.FunctionComponent<Props>;
 export { LayoutColumn, LayoutColumn as default };

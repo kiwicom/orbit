@@ -2,9 +2,9 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
-import SharedProps from "../index.d.ts";
+import { SharedProps } from "../index";
 
 declare module "@kiwicom/orbit-components/lib/Table/TableBody";
 
-const TableBody: React.FunctionComponent<SharedProps>;
+declare const TableBody: React.FunctionComponent<SharedProps>;
 export { TableBody, TableBody as default };

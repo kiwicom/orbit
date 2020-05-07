@@ -6,6 +6,18 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
+  rules: {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
+  },
   plugins: ["import", "react"],
   parserOptions: {
     ecmaVersion: 2018,
@@ -14,6 +26,11 @@ module.exports = {
   settings: {
     react: {
       version: "detect",
+    },
+    "import/resolver": {
+      node: {
+        extensions: [".d.ts", ".ts", ".tsx"],
+      },
     },
   },
 };

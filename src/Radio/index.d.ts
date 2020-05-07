@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Radio";
 
@@ -18,10 +18,9 @@ export interface Props extends Common.Global, Common.Ref {
   readonly info?: React.ReactNode;
   readonly readOnly?: boolean;
   readonly tabIndex?: string;
-  readonly label?: React.ReactNode<any>;
   // InputEvent
   readonly onChange?: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 }
 
-const Radio: React.FunctionComponent<Props>;
+declare const Radio: React.FunctionComponent<Props>;
 export { Radio, Radio as default };

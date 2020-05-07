@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/utils/Grid";
 
@@ -25,8 +25,8 @@ interface Props extends Common.Global, BasicProps {
   readonly tablet?: BasicProps;
   readonly desktop?: BasicProps;
   readonly largeDesktop?: BasicProps;
-  readonly children: React$Node;
+  readonly children: React.ReactNode;
 }
 
-const Grid: React.FunctionComponent<Props>;
+declare const Grid: React.FunctionComponent<Props>;
 export { Grid, Grid as default };

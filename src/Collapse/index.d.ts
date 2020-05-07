@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Collapse";
 
@@ -20,5 +20,5 @@ export interface Props extends Common.Global {
   ) => void | Promise<void>;
 }
 
-const ClickOutside: React.FunctionComponent<Props>;
-export { ClickOutside, ClickOutside as default };
+declare const Collapse: React.FunctionComponent<Props>;
+export { Collapse, Collapse as default };

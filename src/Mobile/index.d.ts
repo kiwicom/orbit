@@ -10,5 +10,5 @@ export interface Props {
   readonly children: React.ReactNode;
 }
 
-const Mobile: React.FunctionComponent<Props>;
+declare const Mobile: React.FunctionComponent<Props>;
 export { Mobile, Mobile as default };

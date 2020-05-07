@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-const CloneWithTooltip: (
+declare const CloneWithTooltip: (
   tooltip: React.ReactElement<any> | undefined | null,
   children: React.ReactElement<any>,
 ) => React.ReactElement<any>;

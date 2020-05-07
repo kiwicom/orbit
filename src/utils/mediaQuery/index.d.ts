@@ -14,5 +14,5 @@ export type Devices =
   | "mediumMobile"
   | "smallMobile";
 
-const MediaQuery: { [key in Devices]: QueryFunction };
+declare const MediaQuery: { [key in Devices]: QueryFunction };
 export { MediaQuery, MediaQuery as default };

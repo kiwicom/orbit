@@ -1,13 +1,11 @@
 // @flow
-import * as Common from "../../common/common.d.ts";
+import * as Common from "../../common/common";
 
-type Event = Common.Event<
-  React.SyntheticEvent<HTMLDivElement> | React.SyntheticKeyboardEvent<HTMLElement>
->;
+type Event = Common.Event<React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>>;
 
-const HandleKeyDown: (
+declare const HandleKeyDown: (
   onClick?: Event,
   action?: () => void,
-) => (ev: React.SyntheticKeyboardEvent<HTMLElement>) => void;
+) => (ev: React.KeyboardEvent<HTMLElement>) => void;
 
 export { HandleKeyDown, HandleKeyDown as default };

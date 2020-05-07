@@ -12,5 +12,5 @@ interface Props {
   readonly children: React.ReactNode;
 }
 
-const TileExpandalbe: React.FunctionComponent<Props>;
+declare const TileExpandalbe: React.FunctionComponent<Props>;
 export { TileExpandalbe, TileExpandalbe as default };

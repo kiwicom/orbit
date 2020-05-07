@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Slider";
 
@@ -31,5 +31,5 @@ export interface Props extends Common.Global {
   readonly histogramLoadingText?: Common.Translation;
 }
 
-const Slider: React.FunctionComponent<Props>;
+declare const Slider: React.FunctionComponent<Props>;
 export { Slider, Slider as default };

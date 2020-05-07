@@ -1,5 +1,5 @@
 // @flow
-import { Params } from "../validateDecrement/index.d.ts";
+import { Params } from "../validateDecrement/index";
 
 declare const ValidateIncrement: (arg: Params) => number;
 

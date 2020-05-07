@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Coupon";
 
@@ -12,5 +12,5 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
 }
 
-const Coupon: React.FunctionComponent<Props>;
+declare const Coupon: React.FunctionComponent<Props>;
 export { Coupon, Coupon as default };

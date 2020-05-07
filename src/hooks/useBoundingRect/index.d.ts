@@ -12,7 +12,7 @@ type Dimensions = {
   left: inexactNumber;
 };
 
-const UseBoundingRect: (
+declare const UseBoundingRect: (
   initialValue: Partial<Dimensions> | undefined | null,
 ) => [Dimensions, { current: HTMLElement | undefined | null }];
 

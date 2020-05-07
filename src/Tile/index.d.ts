@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common.d.ts";
+import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Tile";
 
@@ -24,5 +24,5 @@ interface Props extends Common.Global {
   readonly noPadding?: boolean;
 }
 
-const Tile: React.FunctionComponent<Props>;
+declare const Tile: React.FunctionComponent<Props>;
 export { Tile, Tile as default };

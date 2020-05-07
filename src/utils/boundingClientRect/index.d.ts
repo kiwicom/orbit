@@ -13,7 +13,7 @@ type Dimensions = {
   pureBottom: number;
 };
 
-const BoundingClientRect: (
+declare const BoundingClientRect: (
   ref: { current: HTMLElement } | null | undefined,
 ) => Dimensions | null | undefined;
 

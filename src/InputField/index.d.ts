@@ -44,5 +44,5 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly onKeyUp?: KeyboardEvent;
 }
 
-declare const InputField: React.RefForwardingComponent<Props, HTMLInputElement>;
+declare const InputField: React.FunctionComponent<Props>;
 export { InputField, InputField as default };

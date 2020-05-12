@@ -3,8 +3,8 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
-import ListItem from "./ListItem";
 
+import ListItem from "./ListItem";
 import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/List";

@@ -7,6 +7,7 @@ import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
+import { right } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -29,7 +30,7 @@ const StyledBreadcrumbsList = styled.ol`
 `;
 
 const StyledBackButtonWrapper = styled.span`
-  margin-right: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
 StyledBackButtonWrapper.defaultProps = {
@@ -41,7 +42,7 @@ const GoBackButton = ({ onClick }) => {
   return (
     <StyledBackButtonWrapper>
       <Button
-        iconLeft={<ChevronLeft />}
+        iconLeft={<ChevronLeft reverseOnRtl />}
         circled
         type="secondary"
         size="small"

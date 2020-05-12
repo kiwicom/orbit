@@ -6,6 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { select, text } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Breadcrumbs, { BreadcrumbsItem } from "./index";
 
@@ -57,4 +58,28 @@ storiesOf("Breadcrumbs", module)
     {
       info: "Some description about this type of component. ",
     },
-  );
+  )
+  .add("RTL", () => {
+    const href = text("href", "https://kiwi.com");
+    return (
+      <RenderInRtl>
+        <Breadcrumbs onGoBack={action("onGoBack")}>
+          <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
+            Kiwi.com
+          </BreadcrumbsItem>
+          <BreadcrumbsItem id="rocket2" href={href} onClick={action("clicked")}>
+            1. Level
+          </BreadcrumbsItem>
+          <BreadcrumbsItem id="rocket3" href={href} onClick={action("clicked")}>
+            2. Level
+          </BreadcrumbsItem>
+          <BreadcrumbsItem id="rocket4" href={href} onClick={action("clicked")}>
+            3. Level
+          </BreadcrumbsItem>
+          <BreadcrumbsItem id="rocket5" href={href} onClick={action("clicked")}>
+            4. Level
+          </BreadcrumbsItem>
+        </Breadcrumbs>
+      </RenderInRtl>
+    );
+  });

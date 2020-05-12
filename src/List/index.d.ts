@@ -3,6 +3,7 @@
 // Project: http://github.com/kiwicom/orbit-components
 
 import * as React from "react";
+import ListItem from "./ListItem";
 
 import * as Common from "../common/common";
 
@@ -17,4 +18,4 @@ interface Props extends Common.Global, Common.SpaceAfter {
 }
 
 declare const List: React.FunctionComponent<Props>;
-export { List, List as default };
+export { List, List as default, ListItem };

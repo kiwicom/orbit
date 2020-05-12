@@ -1,6 +1,6 @@
 // @flow
-import Media from "../../ThemeProvider/QueryContext/index";
+import { Props as Media } from "../../ThemeProvider/QueryContext/index";
 
-declare const UseMediaQuery: () => typeof Media;
+declare const UseMediaQuery: () => Media
 
 export { UseMediaQuery, UseMediaQuery as default };

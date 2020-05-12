@@ -16,4 +16,5 @@ export interface Props extends Common.Global {
 }
 
 declare const Layout: React.FunctionComponent<Props>;
-export { Layout, Layout as default };
+export default Layout;
+export { LayoutColumn } from "./LayoutColumn/index";

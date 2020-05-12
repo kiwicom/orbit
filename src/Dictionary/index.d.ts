@@ -4,12 +4,14 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common";
-
 declare module "@kiwicom/orbit-components/lib/Dictionary";
 
+export type Translations = {
+  [key: string]: string,
+};
+
 export interface Props {
-  readonly values: Common.Translations;
+  readonly values: Translations;
   readonly children: React.ReactNode;
 }
 

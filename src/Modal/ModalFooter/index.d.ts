@@ -4,12 +4,11 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
-import { Props as ModalContextProps } from "../ModalContext";
 
 declare module "@kiwicom/orbit-components/lib/Modal/ModalFooter";
 
-export interface Props extends Common.Global, ModalContextProps {
-  readonly type: "Search" | "Booking" | "MMB";
+export interface Props extends Common.Global {
+  readonly flex?: string | Array<string>;
   readonly children: React.ReactNode;
 }
 // eslint-disable-next-line react/prefer-stateless-function

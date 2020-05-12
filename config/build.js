@@ -129,8 +129,6 @@ export interface Props extends Common.Global {
     | "critical";
   readonly className?: string;
   readonly customColor?: string;
-  readonly children: React.ReactNode;
-  readonly viewBox: string;
   readonly ariaHidden?: boolean;
   readonly reverseOnRtl?: boolean;
   readonly ariaLabel?: string;
@@ -155,7 +153,10 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   // write .js.flow for every icon
   fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
   // write .d.ts for every icon
-  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.d.ts`), typescriptTemplate);
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName.replace(".js", "")}.d.ts`),
+    typescriptTemplate,
+  );
 });
 
 const index = names

@@ -29,7 +29,8 @@ export interface State {
   hasModalSection: boolean;
 }
 // eslint-disable-next-line react/prefer-stateless-function
-export class Modal extends React.Component<Props, State> {}
+declare class Modal extends React.Component<Props, State> {}
+export default Modal;
 export { ModalHeader } from "./ModalHeader/index";
 export { ModalSection } from "./ModalSection/index";
 export { ModalFooter } from "./ModalFooter/index";

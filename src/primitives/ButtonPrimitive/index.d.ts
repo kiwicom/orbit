@@ -4,6 +4,7 @@ import * as React from "react";
 import * as Common from "../../common/common";
 
 type inexactString = string | null | undefined;
+type functionReturningString = () => string;
 
 export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
@@ -22,7 +23,7 @@ export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
   readonly role?: string;
   readonly size?: Common.Size;
   readonly submit?: boolean;
-  readonly title?: () => string | string;
+  readonly title?: string | functionReturningString;
   readonly tabIndex?: string;
   readonly width?: string;
 }

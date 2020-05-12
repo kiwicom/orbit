@@ -1,10 +1,11 @@
 // @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
+import { Interpolation } from "styled-components";
 
 declare module "@kiwicom/orbit-components/lib/utils/mediaQuery";
 
-type QueryFunction = (style: Array<any>) => Array<any>;
+type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
 export type Devices =
   | "largeDesktop"

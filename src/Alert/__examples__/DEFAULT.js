@@ -6,7 +6,7 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => (
-    <Alert icn={<Icons.ChevronRight />} title="The quick, brown fox jumps over a lazy dog." />
+    <Alert icon={<Icons.ChevronRight />} title="The quick, brown fox jumps over a lazy dog." />
   ),
   info: {
     title: "Default state",

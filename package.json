@@ -13,6 +13,7 @@
     "build:flowFiles": "babel-node config/flowFiles.js",
     "build:iconFont": "babel-node config/createSVGFont.js && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
     "build:storybook": "cross-env BABEL_TARGET=storybook build-storybook -c .storybook -o .out -s ./static",
+    "build:examples": "babel-node config/buildExample.js",
     "build:umd": "webpack --mode=production",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib",
     "copy:module": "copyfiles -u 1 'src/**/*.md' es && copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.json' es",

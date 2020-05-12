@@ -30,7 +30,7 @@ export interface State {
 }
 // eslint-disable-next-line react/prefer-stateless-function
 declare class Modal extends React.Component<Props, State> {}
-export default Modal;
+export { Modal, Modal as default };
 export { ModalHeader } from "./ModalHeader/index";
 export { ModalSection } from "./ModalSection/index";
 export { ModalFooter } from "./ModalFooter/index";

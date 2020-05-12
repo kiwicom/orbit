@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { select, text } from "@storybook/addon-knobs";
+import { select, text, boolean } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -35,8 +35,9 @@ storiesOf("Breadcrumbs", module)
     () => {
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const href = text("href", "https://kiwi.com");
+      const withGoBack = boolean("onGoBack", true);
       return (
-        <Breadcrumbs onGoBack={action("onGoBack")} spaceAfter={spaceAfter}>
+        <Breadcrumbs onGoBack={withGoBack ? action("onGoBack") : undefined} spaceAfter={spaceAfter}>
           <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
             Kiwi.com
           </BreadcrumbsItem>

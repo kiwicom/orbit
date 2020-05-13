@@ -13,5 +13,5 @@ interface Props {
   readonly dictionary?: Translations;
   readonly children: React.ReactNode;
 }
-declare const ThemeProvider: React.Component<Props>;
+declare const ThemeProvider: React.FunctionComponent<Props>;
 export { ThemeProvider, ThemeProvider as default };

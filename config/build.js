@@ -31,11 +31,11 @@ const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
 function getHTMLComments(content) {
-  const rowComments = content.match(/<!--([\s\S]*?)-->/gm);
-  if (rowComments) {
+  const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
+  if (rawComments) {
     return Object.assign(
       {},
-      ...rowComments.map(item => {
+      ...rawComments.map(item => {
         // remove HTML comments and split by colon
         const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
         // one icon has color as character

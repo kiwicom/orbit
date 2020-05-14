@@ -82,18 +82,12 @@ const template = (code, config, state) => `
 // @flow
 /* eslint-disable */
     import * as React from "react";
-    import OrbitIcon from "../Icon";
-    import type { Props } from "./${state.componentName}.js.flow";
-    import whiteListProps from "../Icon/helpers/whiteListProps";
+    import createIcon from "../Icon/createIcon";
 
-    export default function ${state.componentName}(props: Props) {
-      return (
-        ${code.replace(
-          /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" {...whiteListProps(props)}>$2</OrbitIcon>`,
-        )}
-      );
-    };`;
+    export default createIcon(${code.replace(
+      /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
+      `<>$2</>, "$1", "${state.componentName}"`,
+    )});`;
 
 const flowTemplate = `// @flow
 import type { Globals } from "../common/common.js.flow";

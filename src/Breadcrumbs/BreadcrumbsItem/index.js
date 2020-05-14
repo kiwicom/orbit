@@ -86,7 +86,9 @@ const BreadcrumbsItem = ({
         <span itemProp="name">{children}</span>
       </StyledBreadcrumbsItemAnchor>
       <meta itemProp="position" content={contentKey} />
-      {!active && <StyledBreadcrumbsItemIcon ariaHidden size="small" color="tertiary" />}
+      {!active && (
+        <StyledBreadcrumbsItemIcon ariaHidden reverseOnRtl size="small" color="tertiary" />
+      )}
     </StyledBreadcrumbsItem>
   );
 };

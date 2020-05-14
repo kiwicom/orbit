@@ -52,7 +52,7 @@ const Pagination = ({
           iconLeft={<ChevronLeft />}
           type="secondary"
           size={size}
-          disabled={selectedPage === 1}
+          disabled={selectedPage <= 1}
         >
           {!hideLabels && <Translate tKey="pagination_label_prev" />}
         </ButtonLink>
@@ -63,7 +63,7 @@ const Pagination = ({
           iconLeft={<ChevronLeft />}
           type="secondary"
           size={size}
-          disabled={selectedPage === 1}
+          disabled={selectedPage <= 1}
         />
       </Hide>
       <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
@@ -97,7 +97,7 @@ const Pagination = ({
           iconLeft={hideLabels && <ChevronRight />}
           type="secondary"
           size={size}
-          disabled={pageCount === selectedPage}
+          disabled={pageCount <= selectedPage}
         >
           {!hideLabels && <Translate tKey="pagination_label_next" />}
         </ButtonLink>
@@ -108,7 +108,7 @@ const Pagination = ({
           iconLeft={<ChevronRight />}
           type="secondary"
           size={size}
-          disabled={pageCount === selectedPage}
+          disabled={pageCount <= selectedPage}
         />
       </Hide>
     </Stack>

@@ -42,7 +42,7 @@ storiesOf("Dialog", module)
         <Dialog
           title={title}
           description={description}
-          illustration={<Illustration name={illustration} size="extraSmall" />}
+          illustration={<Illustration name={illustration} size="small" />}
           dataTest={dataTest}
           onClose={action("onClose")}
           primaryAction={<Button type="critical">Log out</Button>}

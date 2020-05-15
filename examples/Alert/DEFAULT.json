@@ -1,5 +1,5 @@
 {
-	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport ChevronRight from \"@kiwicom/orbit-components/lib/icons/ChevronRight\";",
+	"imports": "\nimport Alert from \"@kiwicom/orbit-components/lib/Alert\";\n\nimport ChevronRight from \"@kiwicom/orbit-components/lib/icons/ChevronRight\";",
 	"example": "() => <Alert icon={<Icons.ChevronRight />} title=\"The quick, brown fox jumps over a lazy dog.\" />",
 	"info": {
 		"title": "Default state",

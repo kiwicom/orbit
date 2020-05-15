@@ -30,21 +30,38 @@ async function writeFile(pathToFile, content) {
 }
 
 function collectImports(body) {
-  return body.slice().filter(node => {
-    if (node.type === "ImportDeclaration") {
-      if (node.specifiers[0].local.name !== "React") {
-        if (node.source.value === "../index") {
-          // eslint-disable-next-line no-param-reassign
-          node.source.value = `@kiwicom/orbit-components/lib/${node.specifiers[0].local.name}`;
+  const importFactory = (name, path, isNameSpace = false) => {
+    const fullPath = Array.isArray(path) ? path.join("/") : path;
+    const withNamespace = isNameSpace ? `{ ${name} }` : name;
+    return `import ${withNamespace} from "@kiwicom/orbit-components/lib/${fullPath}";`;
+  };
+  return body
+    .map(node => {
+      if (node.type === "ImportDeclaration") {
+        if (
+          !(
+            node.specifiers[0].type === "ImportNamespaceSpecifier" &&
+            node.specifiers[0].local.name === "Icons"
+          ) &&
+          node.specifiers[0].local.name !== "React"
+        ) {
+          if (node.specifiers[0].type === "ImportSpecifier") {
+            const componentName = node.specifiers[0].local.name;
+            const parentComponent = componentName.split(/(?<=[a-z])(?=[A-Z])/)[0];
+            return importFactory(componentName, [parentComponent, componentName], false);
+          }
+          if (
+            (node.source.value === "../index" || node.source.value.match(/\.+\/.+\w+/)) &&
+            node.specifiers[0].local.name !== "Icons"
+          ) {
+            return importFactory(node.specifiers[0].local.name, node.specifiers[0].local.name);
+          }
         }
-        return !(
-          node.specifiers[0].type === "ImportNamespaceSpecifier" &&
-          node.specifiers[0].local.name === "Icons"
-        );
+        return null;
       }
-    }
-    return false;
-  });
+      return null;
+    })
+    .join("\n");
 }
 
 function generateIconsImports(icons) {
@@ -66,9 +83,8 @@ async function findAllIcons(code) {
 
 async function generateImports(body, code) {
   const imports = collectImports(body);
-  const generatedImports = generate(Object.assign({}, ...imports), code).code;
   const icons = generateIconsImports(await findAllIcons(code));
-  return `${generatedImports}\n${icons}`;
+  return `${imports}${icons}`;
 }
 
 async function getObjectProperty(body, name) {
@@ -128,13 +144,7 @@ async function readFileAndCreateJSON(pathToFile) {
 
 (async () => {
   try {
-    const promises = [];
-    // Generate every variant
-    files.forEach(file => {
-      promises.push(readFileAndCreateJSON(file));
-    });
-
-    await Promise.all(promises);
+    await Promise.all(files.map(file => readFileAndCreateJSON(file)));
   } catch (error) {
     console.error(error);
   }

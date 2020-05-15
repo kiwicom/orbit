@@ -2,7 +2,10 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/stepper/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
+import type { StepperStatelessType } from "./StepperStateless/index";
 
 export type SharedProps = {|
   ...Globals,
@@ -16,10 +19,13 @@ export type SharedProps = {|
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
+
 export type Props = {|
   ...SharedProps,
   +defaultValue?: number,
   +step?: number,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export var StepperStateless: StepperStatelessType;
+
+declare export default React.ComponentType<Props>;

@@ -17,6 +17,7 @@
   "scripts": {
     "generate-json": "node ./src/theo/generate-theo-parser",
     "flow:check": "flow check",
+    "ts:check": "eslint . -c .eslintTS.js --ext .d.ts --report-unused-disable-directives",
     "release": "npm publish",
     "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
@@ -25,8 +26,8 @@
     "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
     "build": "yarn run generate-json && yarn run build:lib && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
-    "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib",
-    "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es",
+    "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
+    "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "test": "jest",
     "eslint": "eslint .",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci"
@@ -57,11 +58,14 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
     "flow-bin": "^0.122.0",
     "jest": "^25.3.0",
     "lodash": "^4.17.14",
     "prettier": "^1.18.2",
-    "theo": "^8.1.2"
+    "theo": "^8.1.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "ramda": "^0.27.0"

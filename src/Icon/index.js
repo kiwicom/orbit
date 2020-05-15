@@ -94,3 +94,5 @@ const OrbitIcon = (props: Props) => {
 OrbitIcon.defaultProps = {
   size: ICON_SIZES.MEDIUM,
 };
+
+export default OrbitIcon;

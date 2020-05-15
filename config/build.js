@@ -89,12 +89,14 @@ const template = (code, config, state) => `
       `<>$2</>, "$1", "${state.componentName}"`,
     )});`;
 
-const flowTemplate = `// @flow
+const flowTemplate = functionName => `// @flow
 import * as React from "react";
 
 import type { Props } from "../Icon/createIcon";
 
-declare export default React.ComponentType<Props>;
+export type ${functionName}Type = React.ComponentType<Props>;
+
+declare export default ${functionName}Type;
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
@@ -110,7 +112,10 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   });
 
   // write .js.flow for every icon
-  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName}.flow`),
+    flowTemplate(functionName),
+  );
 });
 
 const index = names
@@ -122,7 +127,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const flowTypes = names
-  .map(({ functionName }) => `import typeof ${functionName}Type from "./${functionName}";\n`)
+  .map(({ functionName }) => `import type { ${functionName}Type } from "./${functionName}";\n`)
   .join("");
 
 const flowDeclares = names

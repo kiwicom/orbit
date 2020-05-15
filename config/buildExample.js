@@ -30,8 +30,8 @@ async function writeFile(pathToFile, content) {
 }
 
 function collectImports(body) {
-  const importFactory = (name, path, isNameSpace = false) => {
-    const fullPath = Array.isArray(path) ? path.join("/") : path;
+  const importFactory = (name, importPath, isNameSpace = false) => {
+    const fullPath = Array.isArray(importPath) ? importPath.join("/") : importPath;
     const withNamespace = isNameSpace ? `{ ${name} }` : name;
     return `import ${withNamespace} from "@kiwicom/orbit-components/lib/${fullPath}";`;
   };

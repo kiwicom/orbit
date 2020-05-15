@@ -5,6 +5,7 @@ import * as Icons from "./icons";
 export { Icons };
 
 export { default as Alert } from "./Alert";
+export { default as AlertButton } from "./Alert/AlertButton";
 export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";

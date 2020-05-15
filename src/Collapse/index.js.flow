@@ -1,6 +1,5 @@
 // @flow
 import type { Translation, Globals } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   initialExpanded?: boolean,

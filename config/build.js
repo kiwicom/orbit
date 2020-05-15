@@ -82,34 +82,21 @@ const template = (code, config, state) => `
 // @flow
 /* eslint-disable */
     import * as React from "react";
-    import OrbitIcon from "../Icon";
-    import type { Props } from "./${state.componentName}.js.flow";
-    import whiteListProps from "../Icon/helpers/whiteListProps";
+    import createIcon from "../Icon/createIcon";
 
-    export default function ${state.componentName}(props: Props) {
-      return (
-        ${code.replace(
-          /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" {...whiteListProps(props)}>$2</OrbitIcon>`,
-        )}
-      );
-    };`;
+    export default createIcon(${code.replace(
+      /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
+      `<>$2</>, "$1", "${state.componentName}"`,
+    )});`;
 
-const flowTemplate = `// @flow
-import type { Globals } from "../common/common.js.flow";
+const flowTemplate = functionName => `// @flow
+import * as React from "react";
 
-export type Props = {|
-  +color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
-  +size?: "small" | "medium" | "large",
-  +customColor?: string,
-  +className?: string,
-  +ariaHidden?: boolean,
-  +reverseOnRtl?: boolean,
-  +ariaLabel?: string,
-  ...Globals,
-|};
+import type { Props } from "../Icon/createIcon";
 
-declare export default React$ComponentType<Props>;
+export type ${functionName}Type = React.ComponentType<Props>;
+
+declare export default ${functionName}Type;
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
@@ -125,7 +112,10 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   });
 
   // write .js.flow for every icon
-  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName}.flow`),
+    flowTemplate(functionName),
+  );
 });
 
 const index = names
@@ -137,7 +127,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const flowTypes = names
-  .map(({ functionName }) => `import typeof ${functionName}Type from "./${functionName}";\n`)
+  .map(({ functionName }) => `import type { ${functionName}Type } from "./${functionName}";\n`)
   .join("");
 
 const flowDeclares = names

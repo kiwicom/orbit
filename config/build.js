@@ -31,16 +31,42 @@ const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
 function getHTMLComments(content) {
-  return Object.assign(
-    {},
-    ...content.match(/<!--([\s\S]*?)-->/gm).map(item => {
-      // remove HTML comments and split by colon
-      const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
-      // one icon has color as character
-      const value = items[1] === "" && items[2] === "" ? ":" : items[1];
-      return { [items[0]]: value };
-    }),
-  );
+  const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
+  if (rawComments) {
+    return Object.assign(
+      {},
+      ...rawComments.map(item => {
+        // remove HTML comments and split by colon
+        const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+        // one icon has color as character
+        const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+        return { [items[0]]: value };
+      }),
+    );
+  }
+  return null;
+}
+
+const allIconsCharacters = [];
+
+function getHTMLCommentsWithCheck(content, baseName) {
+  const comments = getHTMLComments(content);
+  if (!comments || !comments.character) {
+    console.error(
+      `A character value needs to be present in SVG definition of ${baseName}.svg as HTML comment. Otherwise the icon font build will be broken.`,
+    );
+    process.exit(1);
+  }
+  allIconsCharacters.forEach(({ name, char }) => {
+    if (char === comments.character) {
+      console.error(
+        `A character ${comments.character} is already present on ${name} icon. Change the character value on ${baseName}, so it's unique.`,
+      );
+      process.exit(1);
+    }
+  });
+  allIconsCharacters.push({ name: baseName, char: comments.character });
+  return comments;
 }
 
 function getProperty(attributes, name, defaultValue = null) {
@@ -144,7 +170,7 @@ Promise.all(
         fs.readFile(inputFileName, "utf8", (err, content) => {
           if (err) reject();
           // only get the HTML comments
-          const comments = getHTMLComments(content);
+          const comments = getHTMLCommentsWithCheck(content, baseName);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;

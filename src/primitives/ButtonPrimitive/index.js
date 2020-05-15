@@ -121,13 +121,16 @@ export const StyledButtonPrimitive = styled(
     }
 
     &:hover {
-      background: ${backgroundHover};
-      color: ${foregroundHover};
-      box-shadow: ${boxShadowHover};
+      ${!disabled &&
+      css`
+        background: ${backgroundHover};
+        color: ${foregroundHover};
+        box-shadow: ${boxShadowHover};
 
-      ${StyledButtonPrimitiveIconContainer} {
-        color: ${icons && icons.foregroundHover};
-      }
+        ${StyledButtonPrimitiveIconContainer} {
+          color: ${icons && icons.foregroundHover};
+        }
+      `};
     }
 
     &:active {

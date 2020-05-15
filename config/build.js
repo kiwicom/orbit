@@ -90,20 +90,11 @@ const template = (code, config, state) => `
     )});`;
 
 const flowTemplate = `// @flow
-import type { Globals } from "../common/common.js.flow";
+import * as React from "react";
 
-export type Props = {|
-  +color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
-  +size?: "small" | "medium" | "large",
-  +customColor?: string,
-  +className?: string,
-  +ariaHidden?: boolean,
-  +reverseOnRtl?: boolean,
-  +ariaLabel?: string,
-  ...Globals,
-|};
+import type { Props } from "../Icon/createIcon";
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {

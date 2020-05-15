@@ -14,7 +14,6 @@ module.exports = {
   ],
   plugins: ["import", "flowtype", "prettier", "jest", "react-hooks"],
   reportUnusedDisableDirectives: true,
-  ignorePatterns: ["*.d.ts"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",

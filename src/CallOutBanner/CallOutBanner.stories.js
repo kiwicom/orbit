@@ -26,7 +26,7 @@ storiesOf("CallOutBanner", module)
         <CallOutBanner
           title={title}
           description={description}
-          illustration={<Illustration size="extraSmall" name="Accommodation" />}
+          illustration={<Illustration size="small" name="Accommodation" />}
           actions={
             <Button
               type="secondary"
@@ -64,7 +64,7 @@ storiesOf("CallOutBanner", module)
           title={title}
           description={description}
           onClick={action("onClick")}
-          illustration={<Illustration size="extraSmall" name="Accommodation" />}
+          illustration={<Illustration size="small" name="Accommodation" />}
           actions={
             <Button
               type="secondary"
@@ -108,7 +108,7 @@ storiesOf("CallOutBanner", module)
           dataTest={dataTest}
           onClick={onClick ? action("onClick") : undefined}
           illustration={
-            illustration ? <Illustration size="extraSmall" name={illustration} /> : undefined
+            illustration ? <Illustration size="small" name={illustration} /> : undefined
           }
           actions={
             actions ? (

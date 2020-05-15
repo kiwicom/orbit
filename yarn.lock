@@ -1511,10 +1511,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@kiwicom/orbit-design-tokens@~0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.9.0.tgz#c031af02f46d8b67ebda16e10937a36db9377a62"
-  integrity sha512-5kaZfJBUvhFqqxwDoPTKuM7VzHdWmGcTNhWvBYDveoi4th1dUNEkKewk6bL5oMLEfW63DjYiqT6bUXDhO4QQdQ==
+"@kiwicom/orbit-design-tokens@~0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.10.0.tgz#759fe60398003edbb5712541e59fb97b06b356c9"
+  integrity sha512-8kTLOp0KxwMwDo+no7fF4M5w1pAttW3Qs32QrFcWp0FMc8Z//qUAeBo2N+kvJYyT0+6rUPIv6arFPEyW5ZUfBw==
   dependencies:
     ramda "^0.27.0"
 

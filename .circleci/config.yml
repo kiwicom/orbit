@@ -33,6 +33,10 @@ jobs:
           command: yarn eslint
 
       - run:
+          name: Eslint TS
+          command: yarn eslint:ts:check
+
+      - run:
           name: Tests
           command: yarn test --ci --maxWorkers=2
 

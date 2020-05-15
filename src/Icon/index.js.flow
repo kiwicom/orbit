@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 import defaultTheme from "../defaultTheme";
 
@@ -19,14 +21,14 @@ export type Props = {|
   +color?: Color,
   +className?: string,
   +customColor?: string,
-  +children: React$Node,
+  +children: React.Node,
   +viewBox: string,
   +ariaHidden?: boolean,
   +reverseOnRtl?: boolean,
   +ariaLabel?: string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 export type GetSize = (size: Size) => ({ theme: typeof defaultTheme }) => string;
 

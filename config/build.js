@@ -31,16 +31,42 @@ const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
 function getHTMLComments(content) {
-  return Object.assign(
-    {},
-    ...content.match(/<!--([\s\S]*?)-->/gm).map(item => {
-      // remove HTML comments and split by colon
-      const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
-      // one icon has color as character
-      const value = items[1] === "" && items[2] === "" ? ":" : items[1];
-      return { [items[0]]: value };
-    }),
-  );
+  const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
+  if (rawComments) {
+    return Object.assign(
+      {},
+      ...rawComments.map(item => {
+        // remove HTML comments and split by colon
+        const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+        // one icon has color as character
+        const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+        return { [items[0]]: value };
+      }),
+    );
+  }
+  return null;
+}
+
+const allIconsCharacters = [];
+
+function getHTMLCommentsWithCheck(content, baseName) {
+  const comments = getHTMLComments(content);
+  if (!comments || !comments.character) {
+    console.error(
+      `A character value needs to be present in SVG definition of ${baseName}.svg as HTML comment. Otherwise the icon font build will be broken.`,
+    );
+    process.exit(1);
+  }
+  allIconsCharacters.forEach(({ name, char }) => {
+    if (char === comments.character) {
+      console.error(
+        `A character ${comments.character} is already present on ${name} icon. Change the character value on ${baseName}, so it's unique.`,
+      );
+      process.exit(1);
+    }
+  });
+  allIconsCharacters.push({ name: baseName, char: comments.character });
+  return comments;
 }
 
 function getProperty(attributes, name, defaultValue = null) {
@@ -82,34 +108,21 @@ const template = (code, config, state) => `
 // @flow
 /* eslint-disable */
     import * as React from "react";
-    import OrbitIcon from "../Icon";
-    import type { Props } from "./${state.componentName}.js.flow";
-    import whiteListProps from "../Icon/helpers/whiteListProps";
+    import createIcon from "../Icon/createIcon";
 
-    export default function ${state.componentName}(props: Props) {
-      return (
-        ${code.replace(
-          /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" {...whiteListProps(props)}>$2</OrbitIcon>`,
-        )}
-      );
-    };`;
+    export default createIcon(${code.replace(
+      /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
+      `<>$2</>, "$1", "${state.componentName}"`,
+    )});`;
 
-const flowTemplate = `// @flow
-import type { Globals } from "../common/common.js.flow";
+const flowTemplate = functionName => `// @flow
+import * as React from "react";
 
-export type Props = {|
-  +color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
-  +size?: "small" | "medium" | "large",
-  +customColor?: string,
-  +className?: string,
-  +ariaHidden?: boolean,
-  +reverseOnRtl?: boolean,
-  +ariaLabel?: string,
-  ...Globals,
-|};
+import type { Props } from "../Icon/createIcon";
 
-declare export default React$ComponentType<Props>;
+export type ${functionName}Type = React.ComponentType<Props>;
+
+declare export default ${functionName}Type;
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
@@ -125,7 +138,10 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   });
 
   // write .js.flow for every icon
-  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName}.flow`),
+    flowTemplate(functionName),
+  );
 });
 
 const index = names
@@ -137,7 +153,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const flowTypes = names
-  .map(({ functionName }) => `import typeof ${functionName}Type from "./${functionName}";\n`)
+  .map(({ functionName }) => `import type { ${functionName}Type } from "./${functionName}";\n`)
   .join("");
 
 const flowDeclares = names
@@ -154,7 +170,7 @@ Promise.all(
         fs.readFile(inputFileName, "utf8", (err, content) => {
           if (err) reject();
           // only get the HTML comments
-          const comments = getHTMLComments(content);
+          const comments = getHTMLCommentsWithCheck(content, baseName);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;

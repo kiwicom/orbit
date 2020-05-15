@@ -1,11 +1,11 @@
 // @flow
-import { parse } from "@babel/parser";
+import { parse, types as t } from "@babel/core";
 import generate from "@babel/generator";
 import glob from "glob";
 import fs from "fs";
 import path from "path";
 
-const files = glob.sync("src/**/__examples__/*.js");
+const files = glob.sync(process.argv.slice(2).join());
 
 async function readFile(pathToFile) {
   return new Promise((resolve, reject) => {
@@ -37,15 +37,15 @@ function collectImports(body) {
   };
   return body
     .map(node => {
-      if (node.type === "ImportDeclaration") {
+      if (t.isImportDeclaration(node)) {
         if (
           !(
-            node.specifiers[0].type === "ImportNamespaceSpecifier" &&
+            t.isImportNamespaceSpecifier(node.specifiers[0]) &&
             node.specifiers[0].local.name === "Icons"
           ) &&
           node.specifiers[0].local.name !== "React"
         ) {
-          if (node.specifiers[0].type === "ImportSpecifier") {
+          if (t.isImportSpecifier(node.specifiers[0])) {
             const componentName = node.specifiers[0].local.name;
             const parentComponent = componentName.split(/(?<=[a-z])(?=[A-Z])/)[0];
             return importFactory(componentName, [parentComponent, componentName], false);
@@ -90,9 +90,9 @@ async function generateImports(body, code) {
 async function getObjectProperty(body, name) {
   let value = null;
   body.forEach(node => {
-    if (node.type === "ExportDefaultDeclaration") {
+    if (t.isExportDefaultDeclaration(node)) {
       node.declaration.properties.forEach(prop => {
-        if (prop.type === "ObjectProperty" && prop.key.name === name) {
+        if (t.isObjectProperty(prop) && prop.key.name === name) {
           value = prop.value;
         }
       });
@@ -118,7 +118,7 @@ async function getInfo(body) {
 }
 
 const generatePath = (dirName, fileName) => {
-  const withDir = path.join(__dirname, "..", "examples", dirName);
+  const withDir = path.join(process.cwd(), "examples", dirName);
   if (!fs.existsSync(withDir)) {
     fs.mkdirSync(withDir);
   }
@@ -131,7 +131,6 @@ async function readFileAndCreateJSON(pathToFile) {
   const code = await readFile(pathToFile);
   const ast = parse(code, {
     sourceType: "module",
-    plugins: ["jsx", "flow"],
   });
   const imports = await generateImports(ast.program.body, code);
   const example = await getExample(ast.program.body, code);

@@ -46,7 +46,7 @@ StyledFormFeedback.defaultProps = {
 const FormFeedback = (props: Props) => {
   const { children, type = TYPE_OPTIONS.HELP, dataTest } = props;
   return (
-    <StyledFormFeedback type={type} data-test={dataTest}>
+    <StyledFormFeedback type={type} data-test={dataTest} aria-live="polite">
       {children}
     </StyledFormFeedback>
   );

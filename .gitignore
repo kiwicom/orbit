@@ -75,6 +75,10 @@ src/Illustration/index.js.flow
 src/AirportIllustration/index.js.flow
 src/ServiceLogo/index.js.flow
 src/FeatureIcon/index.js.flow
+src/Illustration/index.d.ts
+src/AirportIllustration/index.d.ts
+src/ServiceLogo/index.d.ts
+src/FeatureIcon/index.d.ts
 orbit-icons-font
 orbit-email-icons
 orbit-icons-font.zip

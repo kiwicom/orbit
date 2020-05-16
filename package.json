@@ -1,21 +1,21 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.84.2",
+  "version": "0.85.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
-    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:flowFiles && yarn build:lib && yarn build:module && yarn build:umd",
+    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd",
     "build:lib": "babel --out-dir lib --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js src && yarn copy:lib",
     "build:module": "cross-env BABEL_TARGET=\"js-esm\" babel --out-dir es --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js src && yarn copy:module",
     "build:icons": "babel-node config/build.js",
     "build:iconsPng": "node config/generatePngIcons.js",
-    "build:flowFiles": "babel-node config/flowFiles.js",
+    "build:typeFiles": "babel-node config/typeFiles.js",
     "build:iconFont": "babel-node config/createSVGFont.js && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
     "build:storybook": "cross-env BABEL_TARGET=storybook build-storybook -c .storybook -o .out -s ./static",
     "build:examples": "babel-node config/buildExample.js 'src/**/__examples__/*.js'",
     "build:umd": "webpack --mode=production",
-    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib",
+    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:module": "copyfiles -u 1 'src/**/*.md' es && copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.json' es",
     "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
     "prepare": "npm run build",
@@ -23,6 +23,8 @@
     "prettier:test": "prettier --check '**/*.md'",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint": "eslint . --report-unused-disable-directives",
+    "eslint:ts:check": "eslint . -c .eslintTS.js --ext .d.ts --report-unused-disable-directives",
+    "eslint:ts:fix": "eslint . -c .eslintTS.js --ext .d.ts --report-unused-disable-directives --fix",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
@@ -30,7 +32,8 @@
     "build-storybook": "build-storybook -s ./static",
     "deploy:storybook": "cross-env BABEL_TARGET=\"storybook\" storybook-to-ghpages",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
-    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL"
+    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
+    "compile:ts": "yarn tsc"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",
@@ -96,7 +99,7 @@
   },
   "dependencies": {
     "@adeira/js": "^1.2.2",
-    "@kiwicom/orbit-design-tokens": "~0.9.0"
+    "@kiwicom/orbit-design-tokens": "~0.10.0"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.3.0",
@@ -116,6 +119,9 @@
     "@storybook/react": "^5.3.18",
     "@storybook/storybook-deployer": "^2.8.6",
     "@svgr/core": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "@types/styled-components": "^4.4.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
@@ -163,6 +169,7 @@
     "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
+    "typescript": "^3.8.3",
     "webpack-cli": "^3.3.11"
   }
 }

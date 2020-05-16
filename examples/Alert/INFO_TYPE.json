@@ -1,5 +1,5 @@
 {
-	"imports": "\nimport Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\n\n\nimport InformationCircle from \"@kiwicom/orbit-components/lib/icons/InformationCircle\";",
+	"imports": "\nimport Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\n\nimport InformationCircle from \"@kiwicom/orbit-components/lib/icons/InformationCircle\";",
 	"example": "() => (\n  <Alert icon={<Icons.InformationCircle />} title=\"Re-check your credentials\">\n    <Stack spacing=\"compact\">\n      <Text>\n        To avoid boarding complications, your entire name must be entered{\" \"}\n        <strong>exactly as it appears in your passport/ID</strong>.\n      </Text>\n      <AlertButton type=\"info\">More info</AlertButton>\n    </Stack>\n  </Alert>\n)\n",
 	"info": {
 		"title": "Informational alert",

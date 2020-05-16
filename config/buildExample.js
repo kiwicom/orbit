@@ -4,6 +4,7 @@ import generate from "@babel/generator";
 import glob from "glob";
 import fs from "fs";
 import path from "path";
+import prettier from "prettier";
 
 const files = glob.sync(process.argv.slice(2).join());
 
@@ -29,45 +30,70 @@ async function writeFile(pathToFile, content) {
   });
 }
 
+const importFactory = (specifier, importPath) => {
+  const fullPath = Array.isArray(importPath) ? importPath.join("/") : importPath;
+  return `import ${specifier.local.name} from "@kiwicom/orbit-components/lib/${fullPath}";`;
+};
+
+const getComponentImportName = spec => spec.local.name;
+
+const getComponentImportValue = node => node.source.value;
+
+const getNameWithParent = spec => {
+  const componentName = getComponentImportName(spec);
+  const parentComponent = componentName.split(/(?<=[a-z])(?=[A-Z])/)[0];
+  return [parentComponent, componentName];
+};
+
+const makePlainAndInsertNewLine = arr => arr.join("\n");
+
 function collectImports(body) {
-  const importFactory = (name, importPath, isNameSpace = false) => {
-    const fullPath = Array.isArray(importPath) ? importPath.join("/") : importPath;
-    const withNamespace = isNameSpace ? `{ ${name} }` : name;
-    return `import ${withNamespace} from "@kiwicom/orbit-components/lib/${fullPath}";`;
-  };
-  return body
-    .map(node => {
+  return makePlainAndInsertNewLine(
+    body.map(node => {
       if (t.isImportDeclaration(node)) {
         if (
           !(
             t.isImportNamespaceSpecifier(node.specifiers[0]) &&
-            node.specifiers[0].local.name === "Icons"
+            getComponentImportName(node.specifiers[0]) === "Icons"
           ) &&
-          node.specifiers[0].local.name !== "React"
+          getComponentImportName(node.specifiers[0]) !== "React"
         ) {
-          if (t.isImportSpecifier(node.specifiers[0])) {
-            const componentName = node.specifiers[0].local.name;
+          if (t.isImportSpecifier(node.specifiers[0]) && node.specifiers.length === 1) {
+            const componentName = getComponentImportName(node.specifiers[0]);
             const parentComponent = componentName.split(/(?<=[a-z])(?=[A-Z])/)[0];
-            return importFactory(componentName, [parentComponent, componentName], false);
+            return importFactory(node.specifiers[0], [parentComponent, componentName]);
           }
           if (
-            (node.source.value === "../index" || node.source.value.match(/\.+\/.+\w+/)) &&
-            node.specifiers[0].local.name !== "Icons"
+            (getComponentImportValue(node) === "../index" ||
+              getComponentImportValue(node).match(/\.+\/.+\w+/)) &&
+            getComponentImportName(node.specifiers[0]) !== "Icons"
           ) {
-            return importFactory(node.specifiers[0].local.name, node.specifiers[0].local.name);
+            if (node.specifiers.length > 1) {
+              return makePlainAndInsertNewLine(
+                node.specifiers.map(spec => {
+                  const importPath = t.isImportSpecifier(spec)
+                    ? [getNameWithParent(spec)]
+                    : node.specifiers
+                        .filter(t.isImportDefaultSpecifier)
+                        .map(getComponentImportName);
+                  return importFactory(spec, ...importPath);
+                }),
+              );
+            }
+            return importFactory(node.specifiers[0], getComponentImportName(node.specifiers[0]));
           }
         }
         return null;
       }
       return null;
-    })
-    .join("\n");
+    }),
+  );
 }
 
 function generateIconsImports(icons) {
-  return icons
-    .map(icon => `import ${icon} from "@kiwicom/orbit-components/lib/icons/${icon}";`)
-    .join("\n");
+  return makePlainAndInsertNewLine(
+    icons.map(icon => `import ${icon} from "@kiwicom/orbit-components/lib/icons/${icon}";`),
+  );
 }
 
 async function findAllIcons(code) {
@@ -103,7 +129,9 @@ async function getObjectProperty(body, name) {
 
 async function getExample(body, code) {
   const example = await getObjectProperty(body, "Example");
-  return generate(example, code).code;
+  return prettier
+    .format(generate(example, code).code, { semi: false, parser: "babel" })
+    .replace(/^;/, "");
 }
 
 async function getInfo(body) {

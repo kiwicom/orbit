@@ -7,7 +7,7 @@ import Heading from "../../Heading";
 
 export default {
   Example: () => (
-    <Stack direction="column">
+    <Stack direction="row">
       <Stack direction="row" spaceAfter="medium">
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title5">Type: Success</Heading>
@@ -47,7 +47,7 @@ export default {
     </Stack>
   ),
   info: {
-    title: "Inline actions",
+    title: "Actions",
     description:
       "The alert offers a possibility to have an inline action inside it. You can use special buttons to match the button color with the alert color.",
   },

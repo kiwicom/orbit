@@ -1,0 +1,8 @@
+{
+	"imports": "\nimport Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\n\nimport Airplane from \"@kiwicom/orbit-components/lib/icons/Airplane\";",
+	"example": "() => (\n  <Alert\n    icon={<Icons.Airplane />}\n    inlineActions={\n      <AlertButton href=\"#\" size=\"small\" type=\"info\">\n        I am a link\n      </AlertButton>\n    }\n    title=\"You can change the title by changing the Title knob\"\n  />\n)\n",
+	"info": {
+		"title": "Inline actions",
+		"description": "Passing a inlineActions will cause children to be ignored. inlineActions should be used for displaying buttons inside short alerts which only have a title."
+	}
+}

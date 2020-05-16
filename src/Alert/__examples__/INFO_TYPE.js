@@ -3,7 +3,7 @@ import * as React from "react";
 
 import Alert, { AlertButton } from "../index";
 import Stack from "../../Stack";
-import Text from "../..";
+import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {

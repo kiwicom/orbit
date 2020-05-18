@@ -10,15 +10,15 @@ export default {
       icon={<Icons.Airplane />}
       inlineActions={
         <AlertButton href="#" size="small" type="info">
-          I am a link
+          Open link
         </AlertButton>
       }
-      title="You can change the title by changing the Title knob"
+      title="Fly with us and earn rewards"
     />
   ),
   info: {
     title: "Inline actions",
     description:
-      "Passing a inlineActions will cause children to be ignored. inlineActions should be used for displaying buttons inside short alerts which only have a title.",
+      "Passing inlineActions will cause children to be ignored. inlineActions should be used to display buttons inside short alerts that only have a title.",
   },
 };

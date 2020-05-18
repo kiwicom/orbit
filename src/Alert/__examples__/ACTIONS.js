@@ -8,7 +8,7 @@ import Heading from "../../Heading";
 export default {
   Example: () => (
     <Stack direction="column">
-      <Stack direction="row" spaceAfter="medium">
+      <Stack direction="row" align="end" spaceAfter="medium">
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title5">Type: Success</Heading>
           <AlertButton type="success">Success</AlertButton>
@@ -26,7 +26,7 @@ export default {
           <AlertButton type="critical">Critical</AlertButton>
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Stack direction="row" align="end">
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title5">Type: Success Subtle</Heading>
           <AlertButton type="successSubtle">Success</AlertButton>
@@ -49,6 +49,6 @@ export default {
   info: {
     title: "Actions",
     description:
-      "The alert offers a possibility to have an inline action inside it. You can use special buttons to match the button color with the alert color.",
+      "Alerts have the possibility to include actions with the message. Use special buttons to match the button color with the alert color.",
   },
 };

@@ -26,8 +26,8 @@ export default {
     </Alert>
   ),
   info: {
-    title: "Success alert",
+    title: "Warning alert",
     description:
-      "Success alerts confirm that an instruction from the user, such as to make a payment or request a refund, was processed successfully. Usually used without an action button.",
+      "Use warning alerts when you need to inform users about a potentially unfavorable situation that requires eventual but not immediate action from them.",
   },
 };

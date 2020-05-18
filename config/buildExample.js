@@ -45,7 +45,7 @@ const getNameWithParent = spec => {
   return [parentComponent, componentName];
 };
 
-const makePlainAndInsertNewLine = arr => arr.join("\n");
+const makePlainAndInsertNewLine = arr => arr.filter(Boolean).join("\n");
 
 function collectImports(body) {
   return makePlainAndInsertNewLine(

@@ -1,5 +1,5 @@
 {
-	"imports": "\nimport Alert from \"@kiwicom/orbit-components/lib/Alert\";\n",
+	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";",
 	"example": "() => <Alert icon title=\"The quick, brown fox jumps over a lazy dog.\" />\n",
 	"info": {
 		"title": "Default Alert",

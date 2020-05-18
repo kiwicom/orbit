@@ -120,7 +120,7 @@
     "@storybook/storybook-deployer": "^2.8.6",
     "@svgr/core": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.23.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "@types/styled-components": "^4.4.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",

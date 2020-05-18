@@ -7,7 +7,7 @@ import Heading from "../../Heading";
 
 export default {
   Example: () => (
-    <Stack direction="row">
+    <Stack direction="column">
       <Stack direction="row" spaceAfter="medium">
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title5">Type: Success</Heading>

@@ -1,8 +1,8 @@
 {
 	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";",
-	"example": "() => <Alert icon title=\"The quick, brown fox jumps over a lazy dog.\" />\n",
+	"example": "() => <Alert icon title=\"You're got mail\" />\n",
 	"info": {
 		"title": "Default Alert",
-		"description": "The default usage for Alert component is with an icon and title that should be longer than one line."
+		"description": "The recommend default use for an Alert is to have an icon and a title no longer than one line."
 	}
 }

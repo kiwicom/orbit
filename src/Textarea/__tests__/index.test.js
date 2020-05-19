@@ -44,12 +44,7 @@ describe(`Textarea with help`, () => {
   const field = component.find("Textarea__Field");
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain a textarea", () => {
     expect(area.exists()).toBe(true);
@@ -67,12 +62,7 @@ describe(`Textarea with help`, () => {
     expect(area.prop("fullHeight")).toBe(fullHeight);
     expect(area.render().prop("data-test")).toBe(dataTest);
     expect(area.render().prop("tabindex")).toBe(tabIndex);
-    expect(
-      component
-        .find("Textarea__StyledTextArea")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(component.find("Textarea__StyledTextArea").render().prop("attribs").name).toBe(name);
   });
   it("should contain FeedBack help", () => {
     expect(component.find(`FormFeedback`).exists()).toBe(true);

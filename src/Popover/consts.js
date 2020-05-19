@@ -9,6 +9,7 @@ export const POSITIONS = {
 export const ALIGNS = {
   START: "start",
   END: "end",
+  CENTER: "center",
 };
 
 export const POPOVER_SPACE_BETWEEN = 4;

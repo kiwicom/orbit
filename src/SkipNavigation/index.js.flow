@@ -10,6 +10,7 @@ type Actions = {|
 |};
 
 export type MappedOptions = {|
+  +key?: string,
   +value: string | number,
   +label?: string,
   +disabled?: boolean,

@@ -19,7 +19,7 @@ describe("Card", () => {
     const component = shallow(
       <Card dataTest="test">
         <CardSection>
-          <Heading type="title3" element="h3">
+          <Heading type="title3" as="h3">
             {text}
           </Heading>
           <Text>{text}</Text>
@@ -61,7 +61,7 @@ describe("CardSection", () => {
     <Card>
       <CardSection expandable onExpand={onExpand} onClose={onClose}>
         <CardSectionHeader>
-          <Heading type="title3" element="h3">
+          <Heading type="title3" as="h3">
             Title
           </Heading>
           <Text>Description</Text>

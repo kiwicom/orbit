@@ -1,0 +1,14 @@
+// @flow
+import * as React from "react";
+
+import type { Props as IconProps } from "./index";
+
+export type Props = $Diff<IconProps, {| +children: React.Node, +viewBox: string |}>;
+
+export type CreateIcon = (
+  def: React.Node,
+  viewBox: string,
+  displayName: string,
+) => React.ComponentType<Props>;
+
+declare export default CreateIcon;

@@ -33,12 +33,7 @@ describe("Popover", () => {
   );
 
   it("Should pass props", () => {
-    expect(
-      component
-        .find("PopoverContentWrapper")
-        .children()
-        .exists(),
-    ).toBe(true);
+    expect(component.find("PopoverContentWrapper").children().exists()).toBe(true);
     expect(component.find("PopoverContentWrapper").prop("preferredPosition")).toBe(position);
     expect(component.find("PopoverContentWrapper").prop("overlapped")).toBe(true);
   });

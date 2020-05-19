@@ -10,8 +10,9 @@ export type Props = {|
   +children?: React$Node,
   +icon?: React$Node,
   +ariaLabel?: string,
-  +background?: string,
-  +foregroundColor?: string,
+  +background?: ?string,
+  +foregroundColor?: ?string,
+  +borderColor?: ?string,
   ...Globals,
 |};
 

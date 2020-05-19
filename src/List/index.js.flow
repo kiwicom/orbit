@@ -9,7 +9,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Size = "small" | "normal" | "large";
 
-export type Type = "primary" | "secondary" | "separated";
+export type Type = "primary" | "secondary";
 
 export type Props = {|
   +children: React$Node,

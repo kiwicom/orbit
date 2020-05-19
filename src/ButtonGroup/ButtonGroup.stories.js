@@ -18,8 +18,8 @@ storiesOf("ButtonGroup", module)
       const dataTest = text("dataTest", "test");
       return (
         <ButtonGroup dataTest={dataTest}>
-          <Button icon={<Icons.Airplane />}>Button</Button>
-          <Button icon={<Icons.ChevronDown />} title="Show more" />
+          <Button iconLeft={<Icons.Airplane />}>Button</Button>
+          <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       );
     },
@@ -34,10 +34,10 @@ storiesOf("ButtonGroup", module)
       const dataTest = text("dataTest", "test");
       return (
         <ButtonGroup dataTest={dataTest}>
-          <ButtonLink type="secondary" icon={<Icons.Airplane />}>
+          <ButtonLink type="secondary" iconLeft={<Icons.Airplane />}>
             Button
           </ButtonLink>
-          <ButtonLink type="secondary" icon={<Icons.ChevronDown />} title="Show more" />
+          <ButtonLink type="secondary" iconLeft={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       );
     },
@@ -51,8 +51,8 @@ storiesOf("ButtonGroup", module)
     () => (
       <RenderInRtl>
         <ButtonGroup>
-          <Button icon={<Icons.Airplane />}>Button</Button>
-          <Button icon={<Icons.ChevronDown />} title="Show more" />
+          <Button iconLeft={<Icons.Airplane />}>Button</Button>
+          <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
         </ButtonGroup>
       </RenderInRtl>
     ),

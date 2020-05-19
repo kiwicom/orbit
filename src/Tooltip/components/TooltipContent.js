@@ -16,11 +16,14 @@ import tooltipPadding from "../helpers/tooltipPadding";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../Button";
 import Translate from "../../Translate";
+import { StyledTextLink } from "../../TextLink";
 import calculateTooltipPosition from "../helpers/calculateTooltipPosition";
 import calculateTooltipAlign from "../helpers/calculateTooltipAlign";
 import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
 import useDimensions from "../hooks/useDimensions";
 import type { Props } from "./TooltipContent";
+import transition from "../../utils/transition";
+import FOCUSABLE_ELEMENT_SELECTORS from "../../hooks/useFocusTrap/consts";
 
 const StyledTooltip = styled.div`
   width: 100%;
@@ -29,22 +32,23 @@ const StyledTooltip = styled.div`
 const StyledTooltipWrapper = styled.div`
   display: block;
   position: fixed;
-  width: 100%;
+  width: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
   box-sizing: border-box;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  background-color: ${({ theme }) => theme.orbit.backgroundTooltip};
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme.orbit.paletteInkNormal};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shownMobile }) => (shownMobile ? "visible" : "hidden")};
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: bottom ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear
-      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
+  transition: ${({ theme, shownMobile }) =>
+    css`
+      ${transition(["bottom"], "normal", "ease-in-out")},
+      ${transition(["visibility"], "fast", "linear")},
+        ${!shownMobile && theme.orbit.durationNormal}`};
   z-index: 10012; // TODO: use some good value
-  bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "0" : `-${tooltipWidth}px`)};
-  left: 0;
-  right: 0;
+  bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "16px" : `-${tooltipWidth}px`)};
+  left: ${({ theme }) => theme.orbit.spaceMedium};
+  right: ${({ theme }) => theme.orbit.spaceMedium};
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
   overflow-y: scroll;
 
@@ -60,11 +64,10 @@ const StyledTooltipWrapper = styled.div`
     max-width: ${tooltipSize};
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding: ${tooltipPadding};
-    background-color: ${({ theme }) => theme.orbit.backgroundTooltipLargeMobile};
     visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
     opacity: ${({ shown }) => (shown ? "1" : "0")};
-    transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-      visibility ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
+
     box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
 
     // prevent position, IEs don't have initial YAY
@@ -106,23 +109,25 @@ const StyledTooltipContent = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  color: ${({ theme }) => theme.orbit.paletteWhite};
   margin-bottom: 16px;
 
   & ${StyledText}, ${Item} {
     font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    color: ${({ theme }) => theme.orbit.paletteInkNormal};
+    color: ${({ theme }) => theme.orbit.paletteWhite};
+  }
+
+  & ${StyledTextLink} {
+    color: ${({ theme }) => theme.orbit.paletteWhite};
   }
 
   ${media.largeMobile(css`
-    color: ${({ theme }) => theme.orbit.paletteWhite};
     font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     margin-bottom: 0;
 
     & ${StyledText}, ${Item} {
-      color: ${({ theme }) => theme.orbit.paletteWhite};
       font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
       font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
     }
@@ -157,9 +162,10 @@ const StyledTooltipOverlay = styled.div`
   background-color: rgba(23, 27, 30, 0.6); // TODO: token
   z-index: 10011; // TODO: use some good value
   opacity: ${({ shownMobile }) => (shownMobile ? "1" : "0")};
-  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out,
-    visibility ${({ theme }) => theme.orbit.durationFast} linear
-      ${({ shownMobile, theme }) => !shownMobile && theme.orbit.durationNormal};
+  transition: ${({ theme, shownMobile }) => css`
+    ${transition(["opacity"], "normal", "ease-in-out")},
+    ${transition(["visibility"], "fast", "linear")},
+    ${!shownMobile && theme.orbit.durationNormal}`};
 
   ${media.largeMobile(css`
     display: none;
@@ -184,6 +190,7 @@ const TooltipContent = ({
   preferredPosition,
   preferredAlign,
   containerRef,
+  parent,
 }: Props) => {
   const theme = useTheme();
   const overlay = useRef(null);
@@ -193,7 +200,7 @@ const TooltipContent = ({
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
-  const dimensions = useDimensions({ containerRef, tooltip, content }, children);
+  const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
   const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,
@@ -211,6 +218,18 @@ const TooltipContent = ({
       }
     },
     [onCloseMobile],
+  );
+  const handleInnerClick = useCallback(
+    ev => {
+      if (tooltip.current) {
+        const focusableElements = tooltip.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
+        if (Object.values(focusableElements).some(v => v === ev.target)) {
+          onClose();
+          onCloseMobile();
+        }
+      }
+    },
+    [onClose, onCloseMobile],
   );
   return (
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
@@ -233,6 +252,7 @@ const TooltipContent = ({
         aria-hidden={!shown && !shownMobile}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
+        onClick={handleInnerClick}
       >
         <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
         <StyledTooltipClose>

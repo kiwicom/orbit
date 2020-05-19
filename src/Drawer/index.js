@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
+import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
 import DrawerClose from "./components/DrawerClose";
@@ -44,7 +45,7 @@ const StyledDrawer = styled.div`
     shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
   // TODO: use z-index framework
   z-index: 825;
-  transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["background-color"], "fast", "ease-in-out")};
 `;
 
 StyledDrawer.defaultProps = {
@@ -67,7 +68,7 @@ const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ..
     suppressed
       ? theme.orbit.paletteCloudLight
       : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
-  transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transition: ${transition(["transform"], "normal", "ease-in-out")};
   width: 100%;
   ${mq.largeMobile(css`
     max-width: ${({ width }) => width};
@@ -95,7 +96,7 @@ StyledDrawerContent.defaultProps = {
 
 const StyledDrawerHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${({ onlyIcon }) => (onlyIcon ? "flex-end" : "space-between")};
   align-items: center;
   background: ${({ suppressed, bordered, theme }) =>
     suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -177,7 +178,11 @@ const Drawer = ({
         suppressed={suppressed}
       >
         {(title || actions || onClose) && (
-          <StyledDrawerHeader bordered={title || actions} suppressed={suppressed}>
+          <StyledDrawerHeader
+            onlyIcon={!title && !actions}
+            bordered={title || actions}
+            suppressed={suppressed}
+          >
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (
               <Stack spacing="none" justify="end" flex shrink>

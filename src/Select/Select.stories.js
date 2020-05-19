@@ -138,6 +138,7 @@ storiesOf("Select", module)
       const label = text("Label", "Label");
       const error = text("Error", "");
       const help = text("Help", "");
+      const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
       return (
         <Select
@@ -158,6 +159,7 @@ storiesOf("Select", module)
           value={value}
           customValueText={customValueText}
           spaceAfter={spaceAfter}
+          dataAttrs={dataAttrs}
         />
       );
     },

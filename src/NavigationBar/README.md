@@ -4,15 +4,19 @@ To implement NavigationBar component into your project you'll need to add the im
 
 ```jsx
 import NavigationBar from "@kiwicom/orbit-components/lib/NavigationBar";
+import LinkList from "@kiwicom/orbit-components/lib/LinkList";
+import TextLink from "@kiwicom/orbit-components/lib/TextLink";
 ```
 
 After adding import into your project you can use it simply like:
 
 ```jsx
 <NavigationBar onMenuOpen={handleDrawerOpen}>
-  <NavigationList>
-    <NavigationListItem>About us</NavigationListItem>
-  </NavigationList>
+  <LinkList direction="row">
+    <TextLink> Link 1 </TextLink>
+    <TextLink> Link 2 </TextLink>
+    <TextLink> Link 3 </TextLink>
+  </LinkList>
 </NavigationBar>
 ```
 

@@ -15,10 +15,18 @@ storiesOf("Textarea", module)
   .add(
     "Default",
     () => {
+      const label = text("Label", "Label");
       const value = text("Value", "");
       const placeholder = text("Placeholder", "Placeholder");
 
-      return <Textarea placeholder={placeholder} onChange={action("change")} value={value} />;
+      return (
+        <Textarea
+          label={label}
+          placeholder={placeholder}
+          onChange={action("change")}
+          value={value}
+        />
+      );
     },
     {
       info: "Some description about this type of textarea in general.",

@@ -5,6 +5,10 @@ export type Globals = {|
   +dataTest?: string,
 |};
 
+export type DataAttrs = {|
+  +dataAttrs?: { [key: string]: ?string | ?boolean },
+|};
+
 export type RefType = { current: null | HTMLElement } | ((null | HTMLElement) => mixed);
 
 export type Ref = {|
@@ -15,4 +19,4 @@ export type Translation = React$Element<React$ComponentType<any>> | string;
 
 export type TranslationString = string;
 
-export type Component = () => React$Element<any>;
+export type Component = string | (() => React$Element<any>);

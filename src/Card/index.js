@@ -8,6 +8,7 @@ import { Provider as SectionProvider } from "./CardContext";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import Header from "./components/Header";
+import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import type { Props } from "./index";
 
@@ -25,11 +26,13 @@ StyledCard.defaultProps = {
 
 const Card = ({
   title,
+  titleAs = ELEMENT_OPTIONS.H2,
   icon,
   actions,
   description,
   children,
   dataTest,
+  onClose,
   loading,
   header,
   spaceAfter,
@@ -75,6 +78,8 @@ const Card = ({
             dataA11ySection={dataA11ySection}
             actions={actions}
             title={title}
+            titleAs={titleAs}
+            onClose={onClose}
             header={header}
           />
         </CardWrapper>
@@ -82,6 +87,7 @@ const Card = ({
 
       {children
         ? React.Children.map(children, (item, key) => {
+            if (!item) return null;
             const topRoundedBorder =
               expandedSections.indexOf(key - 1) !== -1 || expandedSections.indexOf(key) !== -1;
             const bottomRounderBorder =

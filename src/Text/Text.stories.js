@@ -94,7 +94,7 @@ storiesOf("Text", module)
     "Playground",
     () => {
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-      const element = select("Element", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
+      const as = select("As", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
       const weight = select("Weight", Object.values(WEIGHT_OPTIONS), WEIGHT_OPTIONS.NORMAL);
       const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.LEFT);
@@ -109,7 +109,7 @@ storiesOf("Text", module)
         <Text
           id={id}
           type={type}
-          element={element}
+          as={as}
           size={size}
           weight={weight}
           align={align}

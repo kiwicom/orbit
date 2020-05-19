@@ -9,7 +9,6 @@ import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
-import { StyledButtonLink } from "../ButtonLink/index";
 import randomID from "../utils/randomID";
 import FormFeedback from "../FormFeedback";
 import AlertCircle from "../icons/AlertCircle";
@@ -17,7 +16,7 @@ import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
-import type { Theme } from "../defaultTheme";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 
 import type { Props } from ".";
 
@@ -128,7 +127,7 @@ export const InputContainer = styled(({ children, className, labelRef }) => (
       }`};
   }
 
-  ${StyledButtonLink}:active {
+  ${StyledButtonPrimitive}:active {
     box-shadow: none;
   }
 `;
@@ -211,11 +210,9 @@ Suffix.defaultProps = {
 };
 
 export const Input = styled(
-  React.forwardRef<{| ...Props, theme: Theme |}, HTMLInputElement>(
-    ({ type, size, theme, error, help, inlineLabel, ...props }, ref) => (
-      <input type={getDOMType(type)} {...props} ref={ref} />
-    ),
-  ),
+  React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
+    <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
+  )),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
@@ -324,12 +321,13 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     id,
     inputMode,
     insideInputGroup,
+    dataAttrs,
   }: Props = props;
 
-  const forID = React.useMemo(() => {
-    if (id) return id;
-    return randomID("inputFieldID");
-  }, [id]);
+  const forID = React.useMemo(() => id || (label ? randomID("inputFieldID") : undefined), [
+    id,
+    label,
+  ]);
 
   const {
     tooltipShown,
@@ -422,6 +420,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           autoComplete={autoComplete}
           id={forID}
           inputMode={inputMode}
+          dataAttrs={dataAttrs}
         />
         {tags && <InputTags>{tags}</InputTags>}
         {suffix && <Suffix size={size}>{suffix}</Suffix>}

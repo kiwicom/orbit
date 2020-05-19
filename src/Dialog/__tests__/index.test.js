@@ -21,17 +21,7 @@ describe("Dialog", () => {
     />,
   );
   it("should have passed props correctly", () => {
-    expect(
-      component
-        .find(Heading)
-        .children()
-        .text(),
-    ).toBe(title);
-    expect(
-      component
-        .find(Text)
-        .children()
-        .text(),
-    ).toBe(description);
+    expect(component.find(Heading).children().text()).toBe(title);
+    expect(component.find(Text).children().text()).toBe(description);
   });
 });

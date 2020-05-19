@@ -2,11 +2,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import Header from "../../components/Header";
+import type { As } from "../../../Heading";
 
 const SpacingMobile = css`
   ${({ theme }) => String(parseInt(theme.orbit.spaceMedium, 10) + 1)}px;
@@ -17,7 +19,7 @@ const SpacingDesktop = css`
 `;
 
 const StyledCardSectionHeader = styled.div`
-  transition: margin ${({ theme }) => theme.orbit.durationFast} linear;
+  transition: ${transition(["margin"], "fast", "linear")};
   cursor: ${({ expandable }) => expandable && "pointer"};
   position: relative;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
@@ -25,7 +27,7 @@ const StyledCardSectionHeader = styled.div`
   margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     margin: -${SpacingDesktop};
     padding: ${({ theme }) => theme.orbit.spaceLarge};
     margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
@@ -47,6 +49,7 @@ StyledCardSectionHeader.defaultProps = {
 
 type Props = {|
   title?: React$Node,
+  titleAs?: As,
   description?: React$Node,
   icon?: React$Node,
   actions?: React$Node,
@@ -63,6 +66,7 @@ type Props = {|
 
 const CardSectionHeader = ({
   title,
+  titleAs,
   description,
   icon,
   isContent,
@@ -91,12 +95,14 @@ const CardSectionHeader = ({
     >
       <Header
         title={title}
+        titleAs={titleAs}
         description={description}
         icon={icon}
         expandable={expandable}
         header={header}
         expanded={expanded}
         actions={actions}
+        isSection
         dataA11ySection={dataA11ySection}
       />
     </StyledCardSectionHeader>

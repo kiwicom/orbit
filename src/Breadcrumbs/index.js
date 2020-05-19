@@ -7,6 +7,7 @@ import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
+import { right } from "../utils/rtl";
 
 import type { Props } from "./index";
 
@@ -29,7 +30,7 @@ const StyledBreadcrumbsList = styled.ol`
 `;
 
 const StyledBackButtonWrapper = styled.span`
-  margin-right: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
 StyledBackButtonWrapper.defaultProps = {
@@ -41,7 +42,7 @@ const GoBackButton = ({ onClick }) => {
   return (
     <StyledBackButtonWrapper>
       <Button
-        iconLeft={<ChevronLeft />}
+        iconLeft={<ChevronLeft reverseOnRtl />}
         circled
         type="secondary"
         size="small"
@@ -59,7 +60,7 @@ const Breadcrumbs = ({ children, dataTest, onGoBack, spaceAfter }: Props) => (
     data-test={dataTest}
     spaceAfter={spaceAfter}
   >
-    <StyledBreadcrumbsList vocab="http://schema.org/" typeof="BreadcrumbList">
+    <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
       {onGoBack && <GoBackButton onClick={onGoBack} />}
       {React.Children.map(children, (item, key) => {
         if (React.isValidElement(item)) {

@@ -21,6 +21,9 @@ const objectOptions = [
   { disabled: true, value: "disabled-six", label: "Disabled Six" },
 ];
 const spaceAfter = SPACINGS_AFTER.NORMAL;
+const dataAttrs = {
+  "data-recording-ignore": true,
+};
 
 describe("Select", () => {
   const component = shallow(
@@ -34,6 +37,7 @@ describe("Select", () => {
       tabIndex={tabIndex}
       dataTest={dataTest}
       spaceAfter={spaceAfter}
+      dataAttrs={dataAttrs}
     />,
   );
   const select = component.find("Select__StyledSelect");
@@ -43,6 +47,9 @@ describe("Select", () => {
   });
   it("should have data-state", () => {
     expect(select.render().prop("data-state")).toBe("ok");
+  });
+  it("should have data-state", () => {
+    expect(select.render().prop("data-recording-ignore")).toBe("true");
   });
   it("should have name", () => {
     expect(select.render().prop("attribs").name).toBe(name);

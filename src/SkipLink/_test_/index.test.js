@@ -15,20 +15,15 @@ describe("SkipLink", () => {
       href: "#link",
     },
   ];
-  const description = "https://www.kiwi.com/en/";
+  const buttonLabel = "https://www.kiwi.com/en/";
 
-  const component = shallow(<SkipLink links={links} description={description} />);
+  const component = shallow(<SkipLink links={links} buttonLabel={buttonLabel} />);
 
   it("Should contain description block", () => {
-    expect(component.find("SkipLink__StyledDescription").exists()).toEqual(true);
+    expect(component.find("SkipLink__StyledLabel").exists()).toEqual(true);
   });
 
   it("Should have 2 Links", () => {
-    expect(
-      component
-        .find("SkipLink__StyledLink")
-        .at(1)
-        .exists(),
-    ).toEqual(true);
+    expect(component.find("SkipLink__StyledLink").at(1).exists()).toEqual(true);
   });
 });

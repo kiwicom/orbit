@@ -2,6 +2,7 @@
 import styled, { css } from "styled-components";
 import * as React from "react";
 
+import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 import { CardElement } from "../../helpers/mixins";
 import defaultTheme from "../../../defaultTheme";
@@ -13,7 +14,7 @@ const topBorderRadius = css`
   border-top-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
   border-top-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     border-top-left-radius: ${getBorderRadius};
     border-top-right-radius: ${getBorderRadius};
   `)}
@@ -27,7 +28,7 @@ const bottomBorderRadius = css`
   border-bottom-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
   border-bottom-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     border-bottom-left-radius: ${getBorderRadius};
     border-bottom-right-radius: ${getBorderRadius};
   `)}
@@ -43,7 +44,7 @@ const StyledCardWrapper = styled.div`
   ${({ bottomBorder }) => bottomBorder && bottomBorderRadius};
   border-bottom: ${({ roundedBottom, bottomBorder }) =>
     (roundedBottom || bottomBorder) && getBorder};
-  transition: margin ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  transition: ${transition(["margin"], "fast", "ease-in-out")};
   ${({ noBorderTop, expandable }) =>
     noBorderTop && !expandable && `border-top: 1px solid transparent; padding-top: 0 !important;`};
 
@@ -65,7 +66,7 @@ const StyledCardWrapper = styled.div`
       `}
   }
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     &:first-of-type {
       ${topBorderRadius};
     }

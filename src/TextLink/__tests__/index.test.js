@@ -41,31 +41,13 @@ describe("TextLink", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should have noopener in attribute", () => {
-    expect(
-      component
-        .render()
-        .prop("rel")
-        .split(" ")
-        .includes("noopener"),
-    ).toBe(true);
+    expect(component.render().prop("rel").split(" ").includes("noopener")).toBe(true);
   });
   it("should have noreferrer in attribute", () => {
-    expect(
-      component
-        .render()
-        .prop("rel")
-        .split(" ")
-        .includes("noreferrer"),
-    ).toBe(true);
+    expect(component.render().prop("rel").split(" ").includes("noreferrer")).toBe(true);
   });
   it("should have rel values in the rel attribute", () => {
-    expect(
-      component
-        .render()
-        .prop("rel")
-        .split(" ")
-        .includes(rel),
-    ).toBe(true);
+    expect(component.render().prop("rel").split(" ").includes(rel)).toBe(true);
   });
   it("should have tabindex", () => {
     expect(component.render().prop("tabindex")).toBe(tabIndex);

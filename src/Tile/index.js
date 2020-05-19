@@ -5,7 +5,7 @@ import TileHeader from "./components/TileHeader";
 import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
-import KEY_CODE_MAP from "../common/keyMaps";
+import handleKeyDown from "../utils/handleKeyDown";
 
 import { type Props } from ".";
 
@@ -21,6 +21,8 @@ const Tile = ({
   noPadding = false,
   expandable = false,
   initialExpanded = false,
+  noHeaderIcon = false,
+  htmlTitle,
   onClick,
 }: Props) => {
   if (expandable) {
@@ -34,34 +36,25 @@ const Tile = ({
         noPadding={noPadding}
         initialExpanded={initialExpanded}
         onClick={onClick}
+        htmlTitle={htmlTitle}
       >
         {children}
       </TileExpandable>
     );
   }
   const hasHeader = !!(title || description || icon || header);
-  const handleKeyDown = ev => {
-    if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-      if (onClick) {
-        onClick(ev);
-      }
-    } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-      if (onClick) {
-        onClick(ev);
-      }
-    }
-  };
+
   return (
     <TileWrapper
       href={href}
       external={external}
       dataTest={dataTest}
       onClick={onClick}
-      onKeyDown={handleKeyDown}
+      onKeyDown={handleKeyDown(onClick)}
       as={href ? "a" : "div"}
       tabIndex={!href ? "0" : undefined}
       role={!href ? "button" : undefined}
+      htmlTitle={htmlTitle}
     >
       {hasHeader && (
         <TileHeader
@@ -70,6 +63,7 @@ const Tile = ({
           icon={icon}
           header={header}
           expandable={expandable}
+          noHeaderIcon={noHeaderIcon}
         />
       )}
       {children && (

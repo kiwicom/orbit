@@ -2,16 +2,19 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/alert-message/
 */
+import * as React from "react";
+
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals, Translation } from "../common/common.js.flow";
+import type { Props as AlertButtonProps } from "./AlertButton";
 
 type Type = "info" | "success" | "warning" | "critical";
 
 export type Props = {|
   +type?: Type,
-  +children?: React$Node,
+  +children?: React.Node,
   +title?: Translation,
-  +icon?: React$Element<any> | boolean,
+  +icon?: React.Element<any> | boolean,
   +closable?: boolean,
   +inlineActions?: React$Node,
   +onClose?: () => void | Promise<any>,
@@ -19,4 +22,6 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export var AlertButton: React.AbstractComponent<AlertButtonProps, HTMLButtonElement>;
+
+declare export default React.ComponentType<Props>;

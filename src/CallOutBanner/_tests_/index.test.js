@@ -11,7 +11,7 @@ describe("CallOutBanner - flat", () => {
   const tabIndex = "1";
   const dataTest = "test";
   const description = "Lorem ipsum dolor sit amet";
-  const illustration = <Illustration name="Accommodation" size="small" />;
+  const illustration = <Illustration name="Accommodation" size="extraSmall" />;
   const component = shallow(
     <CallOutBanner
       dataTest={dataTest}
@@ -32,18 +32,8 @@ describe("CallOutBanner - flat", () => {
     expect(banner.find("CallOutBanner__StyledIllustration").exists()).toBe(true);
   });
   it("should have title and description", () => {
-    expect(
-      banner
-        .find("Heading")
-        .children()
-        .text(),
-    ).toBe(title);
-    expect(
-      banner
-        .find("Text")
-        .children()
-        .text(),
-    ).toBe(description);
+    expect(banner.find("Heading").children().text()).toBe(title);
+    expect(banner.find("Text").children().text()).toBe(description);
   });
 });
 

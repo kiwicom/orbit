@@ -18,17 +18,19 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Card component.
 
-| Name        | Type         | Default | Description                                                                                                                                     |
-| :---------- | :----------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| actions     | `React.Node` |         | Optional prop for Action components in header of Card                                                                                           |
-| children    | `React.Node` |         | The content of the Card. You can use only [CardSection](#cardsection)                                                                           |
-| dataTest    | `string`     |         | Optional prop for testing purposes                                                                                                              |
-| description | `React.Node` |         | The description of the Card                                                                                                                     |
-| header      | `React.Node` |         | The header of the Card. Useful when you need different layout then combination of eg `title` and `description`                                  |
-| icon        | `React.Node` |         | Display icon on the left                                                                                                                        |
-| loading     | `boolean`    |         | If `true` `Loading` will be rendered                                                                                                            |
-| spaceAfter  | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
-| title       | `React.Node` |         | The title of the Card                                                                                                                           |
+| Name        | Type                    | Default | Description                                                                                                                                     |
+| :---------- | :---------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| actions     | `React.Node`            |         | Optional prop for Action components in header of Card                                                                                           |
+| children    | `React.Node`            |         | The content of the Card. You can use only [CardSection](#cardsection)                                                                           |
+| dataTest    | `string`                |         | Optional prop for testing purposes                                                                                                              |
+| description | `React.Node`            |         | The description of the Card                                                                                                                     |
+| header      | `React.Node`            |         | The header of the Card. Useful when you need different layout then combination of eg `title` and `description`                                  |
+| icon        | `React.Node`            |         | Display icon on the left                                                                                                                        |
+| loading     | `boolean`               |         | If `true` `Loading` will be rendered                                                                                                            |
+| onClose     | `() => void \| Promise` |         | Callback that is triggered when Card is closing                                                                                                 |
+| spaceAfter  | `enum`                  |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
+| title       | `React.Node`            |         | The title of the Card                                                                                                                           |
+| titleAs     | [`enum`](#enum)         | `"h2"`  | The element used for the root node of the title of Card.                                                                                        |
 
 ### CardSection
 
@@ -61,3 +63,16 @@ import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
 | onClose         | `() => void \| Promise` |         | Callback that is triggered when section is closing                                                                                                         |
 | onExpand        | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                                       |
 | title           | `React.Node`            |         | The title of the CardSection                                                                                                                               |
+| titleAs         | [`enum`](#enum)         | `"h2"`  | The element used for the root node of the title of CardSection.                                                                                            |
+
+### enum
+
+| titleAs |
+| :------ |
+| `"h1"`  |
+| `"h2"`  |
+| `"h3"`  |
+| `"h4"`  |
+| `"h5"`  |
+| `"h6"`  |
+| `"div"` |

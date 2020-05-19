@@ -57,6 +57,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
       children,
       filter,
       onOnlySelection,
+      onlySelectionText,
     } = this.props;
 
     return (
@@ -65,7 +66,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
           <Heading
             id={this.groupID}
             type={getHeadingSize(labelSize)}
-            element={labelAs}
+            as={labelAs}
             spaceAfter="medium"
           >
             {label}
@@ -74,20 +75,24 @@ class ChoiceGroup extends React.PureComponent<Props> {
         <Stack direction="column" spacing={filter ? "none" : "condensed"}>
           {React.Children.map(children, child => {
             return !filter ? (
-              <React.Fragment>
+              <>
                 {React.cloneElement(child, {
                   onChange: this.handleChange,
                   hasError: !!error,
                 })}
-              </React.Fragment>
+              </>
             ) : (
-              <FilterWrapper child={child} onOnlySelection={onOnlySelection}>
-                <React.Fragment>
+              <FilterWrapper
+                child={child}
+                onOnlySelection={onOnlySelection}
+                onlySelectionText={onlySelectionText}
+              >
+                <>
                   {React.cloneElement(child, {
                     onChange: this.handleChange,
                     hasError: !!error,
                   })}
-                </React.Fragment>
+                </>
               </FilterWrapper>
             );
           })}

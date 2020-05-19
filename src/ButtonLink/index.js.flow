@@ -2,43 +2,16 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/buttonlink/
 */
-import type { ReactComponentStyled } from "styled-components";
+import * as React from "react";
 
-import type { Globals, Ref, Component } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
-export type Type = "primary" | "secondary";
-export type Size = "small" | "normal" | "large";
+export type Type = "primary" | "secondary" | "critical";
 
 export type Props = {|
-  ...Globals,
-  ...Ref,
-  ...spaceAfter,
-  +children?: React$Node,
-  +asComponent?: Component,
-  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
-  +disabled?: boolean,
-  +fullWidth?: boolean,
-  +external?: boolean,
-  +type?: Type,
-  +size?: Size,
-  +href?: string,
-  +width?: number,
-  +icon?: React$Node,
-  +iconLeft?: React$Node,
-  +iconRight?: React$Node,
-  +circled?: boolean,
-  +submit?: boolean,
   +transparent?: boolean,
-  +tabIndex?: string,
-  +ariaExpanded?: boolean,
-  +ariaControls?: string,
-  +role?: string,
-  // Don't use, it's deprecated and will be removed in the major version
-  +className?: string,
-  +title?: string | (any => string),
+  +type?: Type,
+  ...ButtonCommonProps,
 |};
 
-declare export var StyledButtonLink: ReactComponentStyled<Props>;
-
-declare export default React$ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

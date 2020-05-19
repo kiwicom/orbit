@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
-import ButtonLink, { StyledButtonLink } from "../ButtonLink";
+import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
 import FormFeedback from "../FormFeedback";
 import Attachment from "../icons/Attachment";
@@ -14,6 +14,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 
 import type { Props } from "./index";
 
@@ -52,7 +53,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
         }`};
   }
 
-  ${StyledButtonLink}:active {
+  ${StyledButtonPrimitive}:active {
     box-shadow: none;
   }
 `;
@@ -100,13 +101,7 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputButton = styled(Button)`
-  flex-shrink: 0;
-`;
-
-const CloseButton = styled(ButtonLink)`
-  flex-shrink: 0;
-
+const CloseButton = styled.div`
   & svg {
     color: ${({ theme }) => theme.orbit.paletteInkLight};
   }
@@ -175,24 +170,26 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         </FormLabel>
       )}
       <FakeInput error={error}>
-        <InputButton type="secondary" size="small" icon={<Attachment />} component="div">
+        <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
           {buttonLabel}
-        </InputButton>
+        </Button>
         <StyledFileInput fileName={fileName} error={error}>
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (
-          <CloseButton
-            type="secondary"
-            transparent
-            icon={<CloseCircle />}
-            onClick={ev => {
-              ev.preventDefault();
-              if (onRemoveFile) {
-                onRemoveFile();
-              }
-            }}
-          />
+          <CloseButton>
+            <ButtonLink
+              type="secondary"
+              transparent
+              iconLeft={<CloseCircle />}
+              onClick={ev => {
+                ev.preventDefault();
+                if (onRemoveFile) {
+                  onRemoveFile();
+                }
+              }}
+            />
+          </CloseButton>
         )}
       </FakeInput>
       <FormFeedback

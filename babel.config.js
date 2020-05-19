@@ -16,12 +16,15 @@ type Caller = {|
 
 */
 
-module.exports = function(api /* : ApiType */) {
+// Use "flow", "js", "js-esm" or special "storybook" for storybook deployment
+const target = process.env.BABEL_TARGET || "js";
+
+module.exports = function (api /* : ApiType */) {
   api.assertVersion(7);
   api.cache.forever();
 
   return {
-    presets: [["@adeira/babel-preset-adeira", { target: "js" }]],
+    presets: target === "storybook" ? [] : [["@adeira/babel-preset-adeira", { target }]],
     plugins: ["babel-plugin-styled-components"],
     env: {
       test: {

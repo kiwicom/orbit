@@ -20,7 +20,7 @@ const Div = (props: any) => <div>{props.children}</div>;
 describe("Large Modal", () => {
   const size = SIZES.LARGE;
   const title = "My title";
-  const illustration = <Illustration name="Accommodation" size="small" />;
+  const illustration = <Illustration name="Accommodation" size="extraSmall" />;
   const description = "My description";
   const suppressed = true;
   const content = "My content";
@@ -50,7 +50,7 @@ describe("Large Modal", () => {
         {content}
       </ModalSection>
       <ModalFooter flex={flex} dataTest={dataTest}>
-        <Button icon={<ChevronLeft />} type="secondary">
+        <Button iconLeft={<ChevronLeft />} type="secondary">
           Back
         </Button>
         <Button fullWidth>Continue to Payment</Button>

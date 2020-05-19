@@ -190,7 +190,10 @@ storiesOf("InputGroup", module)
       const error = text("Error", undefined);
       const help = text("Help", undefined);
 
-      const selectOptions = [{ value: 1, label: "First item" }, { value: 2, label: "Second item" }];
+      const selectOptions = [
+        { value: 1, label: "First item" },
+        { value: 2, label: "Second item" },
+      ];
       const selectValue = select(
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),

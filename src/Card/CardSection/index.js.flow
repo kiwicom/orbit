@@ -2,9 +2,11 @@
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
+import type { As } from "../../Heading";
 
 export type Props = {|
   +title?: React$Node,
+  +titleAs?: As,
   +icon?: React$Node,
   +description?: React$Node,
   +children?: React$Node,

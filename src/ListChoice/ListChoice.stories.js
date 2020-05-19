@@ -37,7 +37,7 @@ storiesOf("ListChoice", module)
   .add(
     "Multiple choices",
     () => (
-      <React.Fragment>
+      <>
         <ListChoice
           title="Choice Title"
           description="Further description"
@@ -60,7 +60,7 @@ storiesOf("ListChoice", module)
           icon={<Icons.Accommodation />}
           onClick={action("onClick")}
         />
-      </React.Fragment>
+      </>
     ),
     {
       info: "Some description about this type of ListChoice in general.",
@@ -96,7 +96,7 @@ storiesOf("ListChoice", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <React.Fragment>
+        <>
           <ListChoice
             title="Choice Title"
             description="Further description"
@@ -119,7 +119,7 @@ storiesOf("ListChoice", module)
             icon={<Icons.Accommodation />}
             onClick={action("onClick")}
           />
-        </React.Fragment>
+        </>
       </RenderInRtl>
     ),
     {

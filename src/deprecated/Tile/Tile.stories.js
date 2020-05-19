@@ -8,8 +8,8 @@ import * as Icons from "../../icons";
 import Stack from "../../Stack";
 import Text from "../../Text";
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../../TripSector";
-import TripSegment from "../../TripSegment";
+import TripSector, { TripDate } from "../TripSector";
+import TripSegment from "../TripSegment";
 import List, { ListItem } from "../../List";
 import Badge from "../../Badge";
 import Heading from "../../Heading";
@@ -99,7 +99,7 @@ storiesOf("Deprecated Tile", module)
             <Stack justify="between" align="center" direction="row">
               <Stack spacing="none" direction="column" shrink>
                 <Stack direction="row" align="center" spacing="condensed">
-                  <Heading type="title4" element="h4">
+                  <Heading type="title4" as="h4">
                     Mr. Hot potato
                   </Heading>
                   <CountryFlag code="cz" />

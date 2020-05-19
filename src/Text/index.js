@@ -75,7 +75,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
   a:not(${StyledTextLink}) {
     // TextLink in Text always win
     ${({ theme }) =>
-      getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })} // Get styles from TextLink
+      getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })}// Get styles from TextLink
   }
 `;
 
@@ -88,7 +88,7 @@ const Text = ({
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
-  element = ELEMENT_OPTIONS.P,
+  as = ELEMENT_OPTIONS.P,
   uppercase = false,
   italic = false,
   dataTest,
@@ -103,7 +103,7 @@ const Text = ({
       size={size}
       weight={weight}
       align={align}
-      element={element}
+      element={as}
       uppercase={uppercase}
       italic={italic}
       dataTest={dataTest}

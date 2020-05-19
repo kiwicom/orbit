@@ -60,9 +60,9 @@ storiesOf("List", module)
     },
   )
   .add(
-    "ListItem",
+    "With labels",
     () => {
-      const type = select("Type", Object.values(TYPES), TYPES.SEPARATED);
+      const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
       const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
       const Icon = getIcon(getIcons("Check"));
       const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
@@ -84,12 +84,7 @@ storiesOf("List", module)
           >
             {content}
           </ListItem>
-          <ListItem
-            label="Kiwi.com services"
-            icon={Icon && <Icon size="small" color={iconColor} />}
-          >
-            {content}
-          </ListItem>
+          <ListItem icon={Icon && <Icon size="small" color={iconColor} />}>{content}</ListItem>
         </List>
       );
     },

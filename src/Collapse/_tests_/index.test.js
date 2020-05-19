@@ -24,12 +24,7 @@ describe("Collapse", () => {
   });
   it("should have label and ButtonLink", () => {
     const labelContainer = component.find("Collapse__StyledCollapseLabel").find("Stack");
-    expect(
-      labelContainer
-        .find("Heading")
-        .children()
-        .text(),
-    ).toBe(label);
+    expect(labelContainer.find("Heading").children().text()).toBe(label);
     expect(labelContainer.find("ButtonLink").exists()).toBe(true);
   });
   it("should have Slide with setup expanded and maxHeight", () => {

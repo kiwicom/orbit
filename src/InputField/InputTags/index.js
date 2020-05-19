@@ -31,6 +31,8 @@ const StyledInputTagsInner = styled.div`
   white-space: nowrap;
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
+  display: flex;
+  align-items: center;
 
   &::-webkit-scrollbar {
     display: none;

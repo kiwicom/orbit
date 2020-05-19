@@ -107,11 +107,6 @@ describe(`Textarea number with error and help`, () => {
     expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
   it("should have data-state", () => {
-    expect(
-      component
-        .find("Textarea__StyledTextArea")
-        .render()
-        .prop("data-state"),
-    ).toBe("error");
+    expect(component.find("Textarea__StyledTextArea").render().prop("data-state")).toBe("error");
   });
 });

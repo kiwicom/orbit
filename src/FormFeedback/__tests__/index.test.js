@@ -15,17 +15,7 @@ describe("FormFeedback", () => {
     expect(component.find("FormFeedbackTooltip").prop("dataTest")).toBe(dataTest);
   });
   it("should have children", () => {
-    expect(
-      component
-        .children()
-        .render()
-        .text(),
-    ).toBe(error);
-    expect(
-      componentHelp
-        .children()
-        .render()
-        .text(),
-    ).toBe(help);
+    expect(component.children().render().text()).toBe(error);
+    expect(componentHelp.children().render().text()).toBe(help);
   });
 });

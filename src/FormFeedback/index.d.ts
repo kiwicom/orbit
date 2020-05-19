@@ -8,11 +8,14 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/FormFeedback";
 
-type Type = "help" | "error";
-
 export interface Props extends Common.Global {
-  readonly children: React.ReactNode;
-  readonly type?: Type;
+  readonly error?: React.ReactNode;
+  readonly help?: React.ReactNode;
+  readonly tooltipShown?: boolean;
+  readonly tooltipShownHover?: boolean;
+  readonly labelRef?: Common.Ref;
+  readonly iconRef?: Common.Ref;
+  readonly inlineLabel?: boolean;
 }
 
 declare const FormFeedback: React.FunctionComponent<Props>;

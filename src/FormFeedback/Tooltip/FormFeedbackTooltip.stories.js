@@ -84,7 +84,7 @@ storiesOf("FormErrors Kitchensink", module)
             label={label}
             inlineLabel
             tags={
-              <div>
+              <>
                 <Tag selected onRemove={action("onRemove")}>
                   Brno
                 </Tag>
@@ -96,7 +96,7 @@ storiesOf("FormErrors Kitchensink", module)
                 <Tag onRemove={action("onRemove")}>Praha</Tag>
                 <Tag onRemove={action("onRemove")}>Praha</Tag>
                 <Tag onRemove={action("onRemove")}>Praha</Tag>
-              </div>
+              </>
             }
             error={error}
             value={value}
@@ -295,7 +295,7 @@ storiesOf("FormErrors Kitchensink", module)
               label={label}
               inlineLabel
               tags={
-                <div>
+                <>
                   <Tag selected onRemove={action("onRemove")}>
                     Brno
                   </Tag>
@@ -307,7 +307,7 @@ storiesOf("FormErrors Kitchensink", module)
                   <Tag onRemove={action("onRemove")}>Praha</Tag>
                   <Tag onRemove={action("onRemove")}>Praha</Tag>
                   <Tag onRemove={action("onRemove")}>Praha</Tag>
-                </div>
+                </>
               }
               error={error}
               value={value}
@@ -373,7 +373,10 @@ storiesOf("FormErrors Kitchensink", module)
                 label={label}
               >
                 <Select
-                  options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                  options={[
+                    { value: 1, label: "+420" },
+                    { value: 2, label: "+421" },
+                  ]}
                   value={1}
                   prefix={<CountryFlag code="cz" />}
                   error={error}
@@ -381,7 +384,7 @@ storiesOf("FormErrors Kitchensink", module)
                 <InputField placeholder="111 222 333" />
               </InputGroup>
               {showMore && (
-                <React.Fragment>
+                <>
                   <Text weight="bold" size="small">
                     Options
                   </Text>
@@ -391,12 +394,12 @@ storiesOf("FormErrors Kitchensink", module)
                     These are the most favorite. <TextLink href="#">Show more</TextLink>
                   </Text>
                   <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
-                </React.Fragment>
+                </>
               )}
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>

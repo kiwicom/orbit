@@ -9,11 +9,6 @@ describe("FormFeedbackTooltip", () => {
   const component = shallow(<FormFeedbackTooltip shown>{content}</FormFeedbackTooltip>);
 
   it("should have children", () => {
-    expect(
-      component
-        .find("Tooltip__StyledTooltipContent")
-        .render()
-        .text(),
-    ).toBe(content);
+    expect(component.find("Tooltip__StyledTooltipContent").render().text()).toBe(content);
   });
 });

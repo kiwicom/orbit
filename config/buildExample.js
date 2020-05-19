@@ -110,7 +110,7 @@ async function findAllIcons(code) {
 async function generateImports(body, code) {
   const imports = collectImports(body);
   const icons = generateIconsImports(await findAllIcons(code));
-  return `${imports}${icons}`;
+  return makePlainAndInsertNewLine([imports, icons]);
 }
 
 async function getObjectProperty(body, name) {

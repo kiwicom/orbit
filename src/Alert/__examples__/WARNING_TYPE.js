@@ -21,7 +21,9 @@ export default {
         <List>
           <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
         </List>
-        <AlertButton type="warning">Check visa requirements</AlertButton>
+        <AlertButton type="warning" size="small">
+          Check visa requirements
+        </AlertButton>
       </Stack>
     </Alert>
   ),

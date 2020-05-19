@@ -1,5 +1,5 @@
 {
-	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";import Check from \"@kiwicom/orbit-components/lib/icons/Check\";",
+	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport Check from \"@kiwicom/orbit-components/lib/icons/Check\";",
 	"example": "() => (\n  <Alert\n    icon={<Icons.Check />}\n    title=\"Your payment was successful.\"\n    type=\"success\"\n  />\n)\n",
 	"info": {
 		"title": "Success alert",

@@ -14,7 +14,7 @@ export interface ThemeShape {
 
 export type ThemeType = {
   theme: ThemeShape;
-}
+};
 
 const Theme: ThemeShape;
 export default Theme;

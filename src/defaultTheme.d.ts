@@ -6,12 +6,15 @@ import { Tokens } from "@kiwicom/orbit-design-tokens";
 
 declare module "@kiwicom/orbit-components/theme";
 
-export interface Theme {
+export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;
   readonly rtl?: boolean;
 }
 
-export interface ThemeProps {
-  theme: Theme;
-}
+export type ThemeType = {
+  theme: ThemeShape;
+};
+
+const Theme: ThemeShape;
+export default Theme;

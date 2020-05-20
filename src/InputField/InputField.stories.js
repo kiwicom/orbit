@@ -408,7 +408,7 @@ storiesOf("InputField", module)
             Suffix && (
               <ButtonLink
                 transparent
-                icon={<Suffix />}
+                iconLeft={<Suffix />}
                 size={size}
                 onClick={action("clicked")}
                 disabled={disabled}
@@ -478,7 +478,7 @@ storiesOf("InputField", module)
             Suffix && (
               <ButtonLink
                 transparent
-                icon={<Suffix />}
+                iconLeft={<Suffix />}
                 size={size}
                 onClick={action("clicked")}
                 disabled={disabled}

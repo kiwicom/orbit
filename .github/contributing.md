@@ -32,8 +32,8 @@ We are using merges with squashing commits.
 #### Good:
 
 ```
-- add React & React-Dom
-- resolve peer dependencies of React
+- chore: add React & React-Dom
+- chore: resolve peer dependencies of React
 ```
 
 ## What to not forget during code reviews
@@ -78,4 +78,5 @@ Run `yarn test-ci` to perform the same automatic checks as the CI server. You ca
 
 - `yarn flow` - static type check
 - `yarn eslint` - ESLint, some warnings can be fixed automatically with `yarn eslint --fix`
+- `yarn eslint:ts` - ESLint for typescript files, some warnings can be fixed automatically with `yarn eslint --fix`
 - `yarn test` - run all Jest tests

@@ -34,7 +34,7 @@ jobs:
 
       - run:
           name: Eslint TS
-          command: yarn eslint:ts:check
+          command: yarn eslint:ts
 
       - run:
           name: Tests

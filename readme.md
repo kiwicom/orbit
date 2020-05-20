@@ -24,13 +24,11 @@ Add them to your project by running:
 
 ```bash
 // with npm
-npm install @kiwicom/orbit-components
+npm install @kiwicom/orbit-components styled-components
 
 // with yarn
-yarn add @kiwicom/orbit-components
+yarn add @kiwicom/orbit-components styled-components
 ```
-
-Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
 
 ## Usage
 
@@ -63,6 +61,17 @@ For live preview check out [Storybook](https://kiwicom.github.io/orbit-component
 
 You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
 
+## Types
+Orbit comes with both Flow and Typescript definitions files, so you can choose what fits your project. However, if you work with Typescript, you need to add type for `styled-components`.
+
+```
+// with npm
+npm install @types/styled-components
+
+// with yarn
+yarn add @types/styled-components
+```
+
 ## Main Sections:
 
 - [Components](https://github.com/kiwicom/orbit-components/tree/master/src/)
@@ -73,7 +82,7 @@ You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io
 
 ## Contributing
 
-We are working on making this project fully open source. We appreciate any contributions you might make.
+We are working on making this project a fully open source. We appreciate any contributions you might make.
 
 [Bug reports](https://github.com/kiwicom/orbit-components/issues/new?template=bug_report.md) and [feature request](https://github.com/kiwicom/orbit-components/issues/new?template=feature_request.md) are welcome but, please use the correct template.
 

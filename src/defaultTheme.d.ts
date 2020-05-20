@@ -16,5 +16,4 @@ export type ThemeType = {
   theme: ThemeShape;
 };
 
-const Theme: ThemeShape;
-export default Theme;
+export const Theme: ThemeShape;

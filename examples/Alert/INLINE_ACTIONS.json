@@ -1,5 +1,5 @@
 {
-	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";import Airplane from \"@kiwicom/orbit-components/lib/icons/Airplane\";",
+	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Airplane from \"@kiwicom/orbit-components/lib/icons/Airplane\";",
 	"example": "() => (\n  <Alert\n    icon={<Icons.Airplane />}\n    inlineActions={\n      <AlertButton href=\"#\" size=\"small\" type=\"info\">\n        Open link\n      </AlertButton>\n    }\n    title=\"Fly with us and earn rewards\"\n  />\n)\n",
 	"info": {
 		"title": "Inline actions",

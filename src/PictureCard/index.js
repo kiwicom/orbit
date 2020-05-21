@@ -83,9 +83,9 @@ StyledOverlayHover.defaultProps = {
 
 type Content = {|
   title?: React.Node,
-    subTitle ?: React.Node,
-    children ?: React.Node,
-    cardID: string,
+  subTitle?: React.Node,
+  children?: React.Node,
+  cardID: string,
 |};
 
 const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {

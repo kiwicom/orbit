@@ -60,7 +60,7 @@ export default {
               {expanded ? "Hide" : "Show"}
             </Button>
             <div
-              aria-hidden={expanded ? false : true}
+              aria-hidden={expanded}
               style={{
                 backgroundColor: "#252A31",
                 display: expanded ? "block" : "none",
@@ -76,8 +76,8 @@ export default {
             <code>disabled</code>
           </Heading>
           <Text>
-            Setting a button as <code>disabled</code> indicates to users that they can’t interact
-            with the button even if they can't see the state.
+            Setting a button as <code>disabled</code> indicates to users that they can&apos;t
+            interact with the button even if they can&apos;t see the state.
           </Text>
           <Button disabled>Do nothing</Button>
         </Stack>
@@ -86,8 +86,8 @@ export default {
             Non-<code>{`<button>`}</code> elements
           </Heading>
           <Text>
-            If it's absolutely necessary for your button to be a nonactionable element, such as a{" "}
-            <code>{`<div>`}</code>, use <code>role</code> and <code>tabIndex</code> to ensure
+            If it&apos;s absolutely necessary for your button to be a nonactionable element, such as
+            a <code>{`<div>`}</code>, use <code>role</code> and <code>tabIndex</code> to ensure
             everyone can interact with the button. But try to avoid this unless there is no other
             option.
           </Text>
@@ -98,9 +98,9 @@ export default {
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title3">Title</Heading>
           <Text>
-            If there's any necessary information that's accessible only visually (like a button with
-            only an icon), include it for everyong by using a <code>title</code> prop to add an{" "}
-            <code>aria-label</code>.
+            If there&apos;s any necessary information that&apos;s accessible only visually (like a
+            button with only an icon), include it for everyong by using a <code>title</code> prop to
+            add an <code>aria-label</code>.
           </Text>
           <Button iconLeft={<Icons.Edit />} title="Edit name" />
         </Stack>

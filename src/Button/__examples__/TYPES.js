@@ -44,12 +44,12 @@ export default {
           <Heading type="title3">Type: Primary Subtle</Heading>
           <Button type="primarySubtle">Add passenger</Button>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed"></Stack>
+        <div />
         <Stack shrink direction="column" spacing="condensed">
           <Heading type="title3">Type: Critical Subtle</Heading>
           <Button type="criticalSubtle">Cancel</Button>
         </Stack>
-        <Stack shrink spacing="condensed"></Stack>
+        <div />
       </Stack>
     </Stack>
   ),

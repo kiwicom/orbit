@@ -5,7 +5,6 @@ import { shallow } from "enzyme";
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 import Checkbox from "../../Checkbox";
-
 import ChoiceGroup from "..";
 
 const label = "Label";
@@ -69,6 +68,7 @@ describe("RadioGroup Filters", () => {
       labelAs={labelAs}
       filter={filter}
       onOnlySelection={onOnlySelection}
+      onlySelectionText="Only"
     >
       <Checkbox value="one" label="Reason one" />
       <Checkbox value="two" label="Reason two" />

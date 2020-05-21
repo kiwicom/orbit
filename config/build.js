@@ -10,12 +10,13 @@ import glob from "glob";
 import svgr from "@svgr/core";
 
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
+import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts";
 
 const files = glob.sync("src/icons/svg/*.svg");
 
 const names = files.map(inputFileName => {
   const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
-  const functionName = capitalize(camelcase(baseName));
+  const functionName = capitalize(camelcase(baseName), true);
   const outputComponentFileName = `${functionName}.js`;
 
   return {
@@ -29,51 +30,131 @@ const names = files.map(inputFileName => {
 const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
-function getViewBox(attributes) {
+function getHTMLComments(content) {
+  const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
+  if (rawComments) {
+    return Object.assign(
+      {},
+      ...rawComments.map(item => {
+        // remove HTML comments and split by colon
+        const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
+        // one icon has color as character
+        const value = items[1] === "" && items[2] === "" ? ":" : items[1];
+        return { [items[0]]: value };
+      }),
+    );
+  }
+  return null;
+}
+
+const allIconsCharacters = [];
+
+function getHTMLCommentsWithCheck(content, baseName) {
+  const comments = getHTMLComments(content);
+  if (!comments || !comments.character) {
+    console.error(
+      `A character value needs to be present in SVG definition of ${baseName}.svg as HTML comment. Otherwise the icon font build will be broken.`,
+    );
+    process.exit(1);
+  }
+  allIconsCharacters.forEach(({ name, char }) => {
+    if (char === comments.character) {
+      console.error(
+        `A character ${comments.character} is already present on ${name} icon. Change the character value on ${baseName}, so it's unique.`,
+      );
+      process.exit(1);
+    }
+  });
+  allIconsCharacters.push({ name: baseName, char: comments.character });
+  return comments;
+}
+
+function getProperty(attributes, name, defaultValue = null) {
   for (let i = attributes.length - 1; i >= 0; i -= 1) {
-    if (attributes[i].name === "viewBox") {
+    if (attributes[i].name === name) {
       return attributes[i].value;
     }
   }
-  return "0 0 24 24";
+  return defaultValue;
+}
+function getViewBox(attributes) {
+  return getProperty(attributes, "viewBox", "0 0 24 24");
+}
+
+function findFillAttributes(dom, content, name) {
+  const comments = getHTMLComments(dom.serialize());
+  // only check icons that don't have replacement for icon font
+  if (comments && comments.iconFont !== "false" && comments.customColor == null) {
+    const prohibitedAttributes = ["fill", "fill-rule"];
+    const phrase = attrName =>
+      `${attrName} attribute find on ${name} SVG icon. Please delete the ${attrName} or redraw the icon. Otherwise the icon font will be broken.`;
+
+    const findAttrAndThrowErr = node => {
+      prohibitedAttributes.forEach(n => {
+        if (getProperty(node.attributes, n)) {
+          console.error(phrase(n));
+          process.exit(1);
+        }
+      });
+    };
+    // For the main DOM element
+    findAttrAndThrowErr(content);
+    // for all the children - paths
+    Object.values(content.children).forEach(node => findAttrAndThrowErr(node));
+  }
 }
 
 const template = (code, config, state) => `
 // @flow
 /* eslint-disable */
     import * as React from "react";
-    import OrbitIcon from "../Icon";
-    import type { Props } from "./${state.componentName}.js.flow";
+    import createIcon from "../Icon/createIcon";
 
-    export default function ${state.componentName}(props: Props) {
-      return (
-        ${code.replace(
-          /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-          `<OrbitIcon viewBox="$1" size={props.size} color={props.color} customColor={props.customColor} className={props.className} dataTest={props.dataTest} ariaHidden={props.ariaHidden} reverseOnRtl={props.reverseOnRtl} ariaLabel={props.ariaLabel}>$2</OrbitIcon>`,
-        )}
-      );
-    };`;
+    export default createIcon(${code.replace(
+      /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
+      `<>$2</>, "$1", "${state.componentName}"`,
+    )});`;
 
-const flowTemplate = `// @flow
-import type { Globals } from "../common/common.js.flow";
+const flowTemplate = functionName => `// @flow
+import * as React from "react";
 
-export type Props = {|
-  +color?: "primary" | "secondary" | "tertiary" | "info" | "success" | "warning" | "critical",
-  +size?: "small" | "medium" | "large",
-  +customColor?: string,
-  +className?: string,
-  +ariaHidden?: boolean,
-  +reverseOnRtl?: boolean,
-  +ariaLabel?: string,
-  ...Globals,
-|};
+import type { Props } from "../Icon/createIcon";
 
-declare export default React$ComponentType<Props>;
+export type ${functionName}Type = React.ComponentType<Props>;
+
+declare export default ${functionName}Type;
+`;
+
+const typescriptTemplate = `// @flow
+import * as React from "react";
+
+import * as Common from "../common/common";
+
+export interface Props extends Common.Global {
+  readonly size?: "small" | "medium" | "large";
+  readonly color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "info"
+    | "success"
+    | "warning"
+    | "critical";
+  readonly className?: string;
+  readonly customColor?: string;
+  readonly ariaHidden?: boolean;
+  readonly reverseOnRtl?: boolean;
+  readonly ariaLabel?: string;
+}
+
+declare const Icon: React.FunctionComponent<Props>;
+export { Icon, Icon as default };
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const content = dom.window.document.querySelector("svg");
+  findFillAttributes(dom, content, inputFileName);
   svgr(
     content.outerHTML,
     { svgAttributes: { viewBox: getViewBox(content.attributes) }, template },
@@ -83,7 +164,15 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   });
 
   // write .js.flow for every icon
-  fs.writeFileSync(path.join(componentPath, `${outputComponentFileName}.flow`), flowTemplate);
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName}.flow`),
+    flowTemplate(functionName),
+  );
+  // write .d.ts for every icon
+  fs.writeFileSync(
+    path.join(componentPath, `${outputComponentFileName.replace(".js", "")}.d.ts`),
+    typescriptTemplate,
+  );
 });
 
 const index = names
@@ -95,7 +184,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const flowTypes = names
-  .map(({ functionName }) => `import typeof ${functionName}Type from "./${functionName}";\n`)
+  .map(({ functionName }) => `import type { ${functionName}Type } from "./${functionName}";\n`)
   .join("");
 
 const flowDeclares = names
@@ -112,18 +201,11 @@ Promise.all(
         fs.readFile(inputFileName, "utf8", (err, content) => {
           if (err) reject();
           // only get the HTML comments
-          const comments = content.match(/<!--([\s\S]*?)-->/gm).map(item => {
-            // remove HTML comments and split by colon
-            const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
-            // one icon has color as character
-            const value = items[1] === "" && items[2] === "" ? ":" : items[1];
-            return { [items[0]]: value };
-          });
-          const commentsObject = Object.assign({}, ...comments);
+          const comments = getHTMLCommentsWithCheck(content, baseName);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;
-          resolve({ [baseName]: { ...commentsObject, svg, url } });
+          resolve({ [baseName]: { ...comments, svg, url } });
         });
       }),
   ),
@@ -148,4 +230,20 @@ const illustrationsJSON = Object.assign(
 fs.writeFileSync(
   path.join(__dirname, "..", "src", "data", "illustrations.json"),
   JSON.stringify(illustrationsJSON),
+);
+
+// create airport illustrations json file
+const airportIllustrationsJSON = Object.assign(
+  {},
+  ...AIRPORT_ILLUSTRATION_NAMES.map(illustration => ({
+    [illustration]: {
+      resized: `https://images.kiwi.com/illustrations/0x400/${illustration}-Q85.png`,
+      original: `https://images.kiwi.com/illustrations/originals/${illustration}.png`,
+    },
+  })),
+);
+
+fs.writeFileSync(
+  path.join(__dirname, "..", "src", "data", "airportIllustrations.json"),
+  JSON.stringify(airportIllustrationsJSON),
 );

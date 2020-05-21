@@ -57,7 +57,7 @@ const Stack = (props: Props) => {
     tablet,
     desktop,
     largeDesktop,
-    element = "div",
+    as = "div",
   } = props;
 
   // turn on FLEX automatically or manually with prop flex
@@ -89,7 +89,7 @@ const Stack = (props: Props) => {
       tablet={tablet}
       desktop={desktop}
       largeDesktop={largeDesktop}
-      element={element}
+      element={as}
     >
       {children}
     </StyledStack>

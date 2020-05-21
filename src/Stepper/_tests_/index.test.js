@@ -42,10 +42,7 @@ describe("Stepper", () => {
     expect(parseFloat(input.render().prop("min"))).toBe(minValue);
     expect(input.render().prop("disabled")).toBe(disabled);
     expect(
-      statelessCompoennt
-        .find("StepperStateless__StyledStepper")
-        .render()
-        .prop("data-test"),
+      statelessCompoennt.find("StepperStateless__StyledStepper").render().prop("data-test"),
     ).toBe(dataTest);
   });
 

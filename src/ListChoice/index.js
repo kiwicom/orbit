@@ -8,7 +8,7 @@ import Text from "../Text";
 import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
-import KEY_CODE_MAP from "../common/keyMaps";
+import handleKeyDown from "../utils/handleKeyDown";
 
 import type { Props } from "./index";
 
@@ -80,30 +80,17 @@ StyledListChoiceContent.defaultProps = {
 const ListChoice = (props: Props) => {
   const { dataTest, icon, title, description, selectable, onClick, selected } = props;
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick(ev);
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick(ev);
-      }
-    }
-  };
-
   return (
     <StyledListChoice
       onClick={onClick}
       data-test={dataTest}
-      onKeyDown={handleKeyDown}
+      onKeyDown={handleKeyDown(onClick)}
       tabIndex="0"
       role="button"
     >
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>
-        <Heading type="title4" element="div">
-          {title}
-        </Heading>
+        <Heading type="title4">{title}</Heading>
         {description && (
           <Text type="secondary" size="small">
             {description}

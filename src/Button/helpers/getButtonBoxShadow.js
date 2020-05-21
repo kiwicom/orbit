@@ -1,82 +1,30 @@
 // @flow
-import { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { TOKENS, TYPE_OPTIONS, BUTTON_STATES } from "../consts";
-import getTypeToken from "./getTypeToken";
+import { TOKENS, TYPE_OPTIONS } from "../consts";
+import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
+import getButtonTypeToken from "./getButtonTypeToken";
 import type { GetButtonBoxShadow } from "./getButtonBoxShadow";
 
 const opacity = {
-  default: {
-    [TYPE_OPTIONS.PRIMARY]: 15,
-    [TYPE_OPTIONS.SECONDARY]: 8,
-    [TYPE_OPTIONS.INFO]: 15,
-    [TYPE_OPTIONS.SUCCESS]: 15,
-    [TYPE_OPTIONS.WARNING]: 15,
-    [TYPE_OPTIONS.CRITICAL]: 15,
-    [TYPE_OPTIONS.FACEBOOK]: 15,
-    [TYPE_OPTIONS.GOOGLE]: 8,
-    [TYPE_OPTIONS.WHITE]: 8,
-  },
-  bordered: {
-    [TYPE_OPTIONS.PRIMARY]: 15,
-    [TYPE_OPTIONS.SECONDARY]: 15,
-    [TYPE_OPTIONS.INFO]: 15,
-    [TYPE_OPTIONS.SUCCESS]: 15,
-    [TYPE_OPTIONS.WARNING]: 15,
-    [TYPE_OPTIONS.CRITICAL]: 15,
-    [TYPE_OPTIONS.FACEBOOK]: 15,
-    [TYPE_OPTIONS.GOOGLE]: 15,
-    [TYPE_OPTIONS.WHITE]: 15,
-  },
+  [TYPE_OPTIONS.PRIMARY]: 15,
+  [TYPE_OPTIONS.SECONDARY]: 8,
+  [TYPE_OPTIONS.CRITICAL]: 15,
+  [TYPE_OPTIONS.WHITE]: 8,
+  [TYPE_OPTIONS.PRIMARY_SUBTLE]: 8,
+  [TYPE_OPTIONS.CRITICAL_SUBTLE]: 8,
 };
 
-const getButtonBoxShadow: GetButtonBoxShadow = state => ({ disabled, bordered, theme, type }) => {
+const getButtonBoxShadow: GetButtonBoxShadow = (state, disabled, theme, type) => {
+  const wrappedButtonTypeToken = name => getButtonTypeToken(name, type, theme);
   if (disabled) {
     return null;
   }
-  if (state === BUTTON_STATES.DEFAULT && bordered) {
-    return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButton)};
-    `;
-  }
-  if (state === BUTTON_STATES.HOVER && bordered) {
-    return css`
-      box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonHover)};
-    `;
-  }
   if (state === BUTTON_STATES.ACTIVE) {
-    if (bordered) {
-      return css`
-        box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
-          inset 0 0 6px 3px
-            ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: Create token
-      `;
-    }
-    return css`
-      box-shadow: inset 0 0 6px 3px
-        ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.default[type])}; // TODO: Create token
-    `;
+    return `inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity[type])};`;
   }
   if (state === BUTTON_STATES.FOCUS) {
-    return css`
-      ${!bordered &&
-        css`
-          box-shadow: 0 0 0 3px ${getTypeToken(TOKENS.borderColorButtonFocus)};
-        `}
-      &:active {
-        ${bordered
-          ? css`
-              box-shadow: inset 0 0 0 1px ${getTypeToken(TOKENS.borderColorButtonActive)},
-                inset 0 0 6px 3px
-                  ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.bordered[type])}; // TODO: create token
-            `
-          : css`
-              box-shadow: inset 0 0 6px 3px
-                ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity.default[type])}; // TODO: create token
-            `};
-      }
-    `;
+    return `0 0 0 3px ${wrappedButtonTypeToken(TOKENS.borderColorButtonFocus)}`;
   }
   return null;
 };

@@ -19,6 +19,7 @@ Table below contains all types of the props available in the Select component.
 | Name            | Type                       | Default    | Description                                                                                                                                     |
 | :-------------- | :------------------------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | customValueText | `Translation`              |            | The custom text alternative of current value. [See Functional specs](#functional-specs)                                                         |
+| dataAttrs       | `Object`                   |            | Optional prop for passing `data-*` attributes to the `select` DOM element.                                                                      |
 | dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                                                             |
 | disabled        | `boolean`                  | `false`    | If `true`, the Select will be disabled.                                                                                                         |
 | error           | `React.Node`               |            | The error message for the Select. [See Functional specs](#functional-specs)                                                                     |
@@ -47,6 +48,7 @@ Table below contains all types of the props available for object in Option array
 | :-------- | :----------------- | :-------------------------------------- |
 | **value** | `string \| number` | The value of the Option.                |
 | label     | `string`           | The label for the Option.               |
+| key       | `string`           | The key of the Option.                  |
 | disabled  | `boolean`          | If `true`, the Option will be disabled. |
 
 ### enum

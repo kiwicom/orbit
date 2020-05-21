@@ -103,16 +103,16 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
   :focus {
     outline: none;
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor};
+    box-shadow: 0 0 0 4px ${getFocusColor};
   }
   :focus:not(:focus-visible) {
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor}
+    box-shadow: 0 0 0 4px ${getFocusColor}
   }
   :-moz-focusring,
   :focus-visible {
     background: ${getFocusColor};
-    box-shadow: 0px 0px 0px 4px ${getFocusColor};
+    box-shadow: 0 0 0 4px ${getFocusColor};
   }
 `;
 
@@ -135,6 +135,8 @@ const TextLink = ({
   dataTest,
   tabIndex,
   asComponent = DefaultComponent,
+  stopPropagation = false,
+  title,
 }: Props) => {
   const relValues = rel ? rel.split(" ") : [];
 
@@ -148,6 +150,14 @@ const TextLink = ({
     }
   }
 
+  const onClickHandler = ev => {
+    if (stopPropagation) {
+      ev.stopPropagation();
+      if (onClick) onClick(ev);
+    }
+    if (onClick) onClick(ev);
+  };
+
   return (
     <StyledTextLink
       type={type}
@@ -155,11 +165,12 @@ const TextLink = ({
       href={href}
       target={external ? "_blank" : undefined}
       rel={relValues && relValues.join(" ")}
-      onClick={onClick}
+      onClick={onClickHandler}
       data-test={dataTest}
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
       asComponent={asComponent}
+      title={title}
     >
       {children}
       {icon && <IconContainer type={type}>{icon}</IconContainer>}

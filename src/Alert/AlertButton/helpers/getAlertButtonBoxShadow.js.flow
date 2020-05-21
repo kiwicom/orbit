@@ -1,0 +1,14 @@
+// @flow
+import type { Type } from "../index";
+import type { Theme } from "../../../defaultTheme";
+
+type State = "default" | "focus" | "active" | "hover";
+
+export type GetAlertButtonBoxShadow = (
+  state: State,
+  disabled: boolean,
+  theme: Theme,
+  type: Type,
+) => ?string;
+
+declare export default GetAlertButtonBoxShadow;

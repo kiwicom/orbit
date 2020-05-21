@@ -58,4 +58,13 @@ Table below contains all types of the props available for object in Image
 
 - `OnClick` is also called on `Enter` and `Space` keypresses.
 
-- For usage with server-side rendering (SSR), a placeholder can be emitted for it to work correctly. This is a React issue see more on this https://github.com/facebook/react/issues/15446 and https://github.com/zeit/next.js/issues/7047
+- For usage with server-side rendering (SSR), a placeholder can be emitted for it to work correctly. This is a React issue see more on this https://github.com/facebook/react/issues/15446 and https://github.com/zeit/next.js/issues/7047.
+  Lastly if you are using Next.js you can do this workaround with dynamic import set to SSR false. https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
+
+```
+const PictureCard = dynamic({
+  loader: () => import('PictureCard'),
+  loading: () => <Placeholder />,
+  ssr: false,
+});
+```

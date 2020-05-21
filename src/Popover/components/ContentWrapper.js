@@ -19,6 +19,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
+import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -34,9 +35,11 @@ const StyledContentWrapper = styled.div`
   max-height: ${({ actionsHeight, theme }) =>
     // Calculates all the spacing relative to viewport to get space for action box
     `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
-
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   ${media.largeMobile(css`
     max-height: 100%;
+    border-radius: 3px;
   `)}
 `;
 
@@ -47,6 +50,16 @@ StyledContentWrapper.defaultProps = {
 const StyledActions = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
   padding-top: 0;
+  ${StyledButtonPrimitive} {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+  ${media.largeMobile(css`
+    ${StyledButtonPrimitive} {
+      width: auto;
+      flex-grow: 0;
+    }
+  `)};
 `;
 
 StyledActions.defaultProps = {
@@ -61,8 +74,8 @@ const StyledPopoverParent = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border-top-left-radius: 9px; /* TODO: Add token */
-  border-top-right-radius: 9px; /* TODO: Add token */
+  border-top-left-radius: 12px; /* TODO: Add token */
+  border-top-right-radius: 12px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;
@@ -113,7 +126,7 @@ const StyledOverlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
-  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  transition: ${transition(["opacity"], "normal", "ease-in-out")};
   z-index: 999;
 
   ${media.largeMobile(css`
@@ -126,7 +139,6 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -182,7 +194,7 @@ const PopoverContentWrapper = ({
   useClickOutside(popover, onClose);
 
   return (
-    <React.Fragment>
+    <>
       <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
       <StyledPopoverParent
         shownMobile={shown}
@@ -222,7 +234,7 @@ const PopoverContentWrapper = ({
           )}
         </StyledPopoverContent>
       </StyledPopoverParent>
-    </React.Fragment>
+    </>
   );
 };
 

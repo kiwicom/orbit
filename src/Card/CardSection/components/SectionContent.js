@@ -2,9 +2,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import transition from "../../../utils/transition";
 import defaultTheme from "../../../defaultTheme";
 import Slide from "../../../utils/Slide";
 import mq from "../../../utils/mediaQuery";
+import useBoundingRect from "../../../hooks/useBoundingRect";
 
 const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -17,10 +19,9 @@ const StyledCardSectionContent = styled.div`
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ hasPaddingTop, theme }) => hasPaddingTop && theme.orbit.spaceMedium};
-  transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
-    border-top ${({ theme }) => theme.orbit.durationFast} linear;
+  transition: ${transition(["padding", "border-top"], "fast", "linear")};
 
-  ${mq.tablet(css`
+  ${mq.largeMobile(css`
     padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceLarge};
   `)}
 `;
@@ -48,29 +49,12 @@ const SectionContent = ({
   slideID,
   labelID,
 }: Props) => {
-  const ref: { current: any | HTMLElement } = React.useRef(null);
-  const [contentHeight, setContentHeight] = React.useState(expanded ? null : 0);
-
-  React.useEffect(() => {
-    const calculateHeight = () => {
-      if (ref && ref.current) {
-        const { height } = ref.current.getBoundingClientRect();
-        setContentHeight(height);
-      }
-    };
-
-    calculateHeight();
-
-    window.addEventListener("resize", calculateHeight);
-    return () => {
-      window.removeEventListener("resize", calculateHeight);
-    };
-  }, []);
+  const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (
     <>
       {expandable ? (
-        <Slide maxHeight={contentHeight} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+        <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
           <StyledCardSectionContent
             noSeparator={noSeparator}
             ref={ref}

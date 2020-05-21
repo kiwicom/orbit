@@ -47,12 +47,14 @@ storiesOf("ChoiceGroup", module)
     "Filter",
     () => {
       const label = text("Label", "What was the reason for your cancellation?");
+      const onlySelectionText = text("onlySelectionText", "Only");
       return (
         <ChoiceGroup
           label={label}
           filter
           onChange={action("onChange")}
           onOnlySelection={action("onOnlySelection")}
+          onlySelectionText={onlySelectionText}
         >
           <Checkbox label="Reason one" value="one" disabled />
           <Checkbox label="Reason two" value="two" />

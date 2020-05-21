@@ -58,14 +58,14 @@ storiesOf("SkipLink", module)
           onClick: action("Reguest a refund"),
         },
       ]);
-      const description = text(
-        "description",
+      const buttonLabel = text(
+        "buttonLabel",
         "Description for screen readers about where the user currently is or describing a more complex component.",
       );
 
       return (
         <div>
-          <SkipLink links={links} description={description} />
+          <SkipLink links={links} buttonLabel={buttonLabel} />
           {Content}
         </div>
       );
@@ -90,11 +90,11 @@ storiesOf("SkipLink", module)
               href: "#inbound",
             },
           ]}
-          description="Description"
+          buttonLabel="Description"
         />
         <ModalHeader
           title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="Meal" size="small" />}
+          illustration={<Illustration name="Meal" size="extraSmall" />}
           description="Select a flight below to see the menu (where available)"
         />
         <ModalSection suppressed>
@@ -256,7 +256,7 @@ storiesOf("SkipLink", module)
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button icon={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronLeft />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>

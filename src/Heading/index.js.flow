@@ -8,13 +8,13 @@ import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { ThemeProps } from "../defaultTheme";
 
-type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
 
 export type Props = {|
   ...Globals,
   ...spaceAfter,
-  +element?: Element,
+  +as?: As,
   +type?: Type,
   +children: React$Node,
   +inverted?: boolean,

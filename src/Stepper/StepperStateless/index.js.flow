@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 
 import type { SharedProps } from "../index";
 
@@ -17,4 +18,6 @@ export type StateLessProps = {|
   +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<StateLessProps>;
+export type StepperStatelessType = React.ComponentType<StateLessProps>;
+
+declare export default StepperStatelessType;

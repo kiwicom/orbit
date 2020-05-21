@@ -11,8 +11,8 @@ const StyledNavigation = styled.nav``;
 
 const StyledLink = styled.a`
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -42,12 +42,12 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDescription = styled.p`
+const StyledLabel = styled.p`
   background-color: red;
   visibility: none;
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -55,10 +55,10 @@ const StyledDescription = styled.p`
   border: 0;
 `;
 
-const SkipLink = ({ links, description }: Props) => {
+const SkipLink = ({ links, buttonLabel }: Props) => {
   return (
     <StyledNavigation>
-      {description && <StyledDescription>{description}</StyledDescription>}
+      {buttonLabel && <StyledLabel>{buttonLabel}</StyledLabel>}
       {links &&
         links.map(({ href, name, onClick }, index) => {
           return (

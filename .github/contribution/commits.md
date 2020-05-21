@@ -2,23 +2,17 @@
 
 ## Commit Message
 
+We're using conventional commits to ensure consistency of commit messages.
+
 Always assign a prefix to your first commit in a new branch.
 
-We use these prefix keywords:
-
-```
-FIX: Commit message
-NEW: Commit message
-UPDATE: Commit message
-RELEASE: Commit message
-WIP: Commit message
-```
+For more information, check the [convention](https://www.conventionalcommits.org/en/v1.0.0/).
 
 Please see [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/) for information on how to write commit messages.
 
 ## Commit History
 
-We are using merges with squashing commits.
+We are using merge to master with squashing commits.
 
 **Bad:**
 
@@ -33,11 +27,6 @@ We are using merges with squashing commits.
 **Good:**
 
 ```
-* Add React & React-Dom
-* Resolve peer dependencies of React
+* feat: adding React & React-Dom
+* fix: resolve peer dependencies of React
 ```
-
-## Things to remember during code reviews
-
-- Never click on the grey "Update branch" button on GitHub \* it merges master with the reviewed base branch, which leads to messed up history
-- Please make sure you’ve deleted the base branch by clicking on “Delete branch” which appears right after your merge is confirmed

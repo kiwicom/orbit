@@ -5,6 +5,8 @@ import * as Icons from "./icons";
 export { Icons };
 
 export { default as Alert } from "./Alert";
+export { default as AlertButton } from "./Alert/AlertButton";
+export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Badge } from "./Badge";
 export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
@@ -12,6 +14,7 @@ export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
 export { default as Button } from "./Button";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
+export { default as ButtonMobileStore } from "./ButtonMobileStore";
 export { default as CallOutBanner } from "./CallOutBanner";
 export { default as CarrierLogo } from "./CarrierLogo";
 export { default as Checkbox } from "./Checkbox";
@@ -55,6 +58,7 @@ export { default as TableBody } from "./Table/TableBody";
 export { default as TableCell } from "./Table/TableCell";
 export { default as TableRow } from "./Table/TableRow";
 export { default as TableHead } from "./Table/TableHead";
+export { default as TableFooter } from "./Table/TableFooter";
 
 export { default as PricingTable } from "./PricingTable";
 export { default as PricingTableItem } from "./PricingTable/PricingTableItem";
@@ -89,6 +93,7 @@ export { default as Stack } from "./Stack";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as Separator } from "./Separator";
 export { default as SkipNavigation } from "./SkipNavigation";
+export { default as SocialButton } from "./SocialButton";
 export { default as Stepper } from "./Stepper";
 export { default as StepperStateless } from "./Stepper/StepperStateless";
 export { default as StopoverArrow } from "./StopoverArrow";
@@ -115,3 +120,5 @@ export { default as mediaQueries } from "./utils/mediaQuery";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
+export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
+export { default as ButtonPrimitive } from "./primitives/ButtonPrimitive";

@@ -16,4 +16,5 @@ export const TYPE_OPTIONS = {
 export const TOKENS = {
   background: "background",
   color: "color",
+  border: "border",
 };

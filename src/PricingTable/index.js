@@ -1,24 +1,17 @@
 // @flow
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Stack from "../Stack";
 import Text from "../Text";
 import useMediaQuery from "../hooks/useMediaQuery";
 import type { Props } from "./index.js.flow";
+import { StyledListWrapper } from "./PricingTableItem";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children, defaultActiveElement = 0, dataTest }: Props) => {
+const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) => {
   const { isDesktop } = useMediaQuery();
-  const [activeElement, setActiveElement] = useState(defaultActiveElement);
-  const handleOnClick = i => {
-    return () => {
-      if (!isDesktop) {
-        setActiveElement(i);
-      }
-    };
-  };
   const resolveBasis = item => {
     if (item.length) {
       return `${Math.floor(100 / item.length)}%`;
@@ -45,28 +38,30 @@ const PricingTable = ({ children, defaultActiveElement = 0, dataTest }: Props) =
                     active: activeElement === i,
                     compact: true,
                     basis: resolveBasis(child),
-                    onClick: handleOnClick(i),
+                    hasError,
                   }),
                 )}
           </Stack>
           {!isDesktop && children && (
             <Stack spacing="condensed">
-              {React.Children.map(children, (child, i) => {
-                if (i === activeElement) {
-                  return (
-                    <>
-                      {child.props.mobileDescription && (
-                        <Text weight="bold" size="normal">
-                          {child.props.mobileDescription}
-                        </Text>
-                      )}
-                      {child.props.children && React.cloneElement(child.props.children)}
-                      {child.props.action && React.cloneElement(child.props.action)}
-                    </>
-                  );
-                }
-                return null;
-              })}
+              <StyledListWrapper>
+                {React.Children.map(children, (child, i) => {
+                  if (i === activeElement) {
+                    return (
+                      <>
+                        {child.props.mobileDescription && (
+                          <Text weight="bold" size="normal">
+                            {child.props.mobileDescription}
+                          </Text>
+                        )}
+                        {child.props.children && React.cloneElement(child.props.children)}
+                        {child.props.action && React.cloneElement(child.props.action)}
+                      </>
+                    );
+                  }
+                  return null;
+                })}
+              </StyledListWrapper>
             </Stack>
           )}
         </StyledPricingTable>

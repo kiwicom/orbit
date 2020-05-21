@@ -33,12 +33,12 @@ jobs:
           command: yarn eslint
 
       - run:
-          name: Tests
-          command: yarn test --ci --maxWorkers=2
+          name: Eslint TS
+          command: yarn eslint:ts:check
 
       - run:
-          name: Prettier test
-          command: yarn prettier:test
+          name: Tests
+          command: yarn test --ci --maxWorkers=2
 
   deploy:
     docker:

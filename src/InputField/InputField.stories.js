@@ -3,7 +3,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select, number } from "@storybook/addon-knobs";
+import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS, INPUTMODE } from "./consts";
@@ -238,7 +238,7 @@ storiesOf("InputField", module)
           label={label}
           inlineLabel
           tags={
-            <div>
+            <>
               <Tag selected onRemove={action("onRemove")}>
                 Brno
               </Tag>
@@ -261,7 +261,7 @@ storiesOf("InputField", module)
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
               <Tag onRemove={action("onRemove")}>Praha</Tag>
-            </div>
+            </>
           }
           error={error}
           value={value}
@@ -333,7 +333,7 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           suffix={
-            Suffix && <ButtonLink transparent icon={<Suffix />} onClick={action("clicked")} />
+            Suffix && <ButtonLink transparent iconLeft={<Suffix />} onClick={action("clicked")} />
           }
           onChange={action("change")}
         />
@@ -369,7 +369,7 @@ storiesOf("InputField", module)
   .add(
     "Playground",
     () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+      const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
       const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
       const name = text("Name", "input");
       const label = text("Label", "Label");
@@ -392,6 +392,7 @@ storiesOf("InputField", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("id", "ID");
       const inputMode = select("inputMode", [null, ...Object.values(INPUTMODE)]);
+      const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
       return (
         <InputField
@@ -409,7 +410,7 @@ storiesOf("InputField", module)
             Suffix && (
               <ButtonLink
                 transparent
-                icon={<Suffix />}
+                iconLeft={<Suffix />}
                 size={size}
                 onClick={action("clicked")}
                 disabled={disabled}
@@ -431,6 +432,7 @@ storiesOf("InputField", module)
           spaceAfter={spaceAfter}
           id={id}
           inputMode={inputMode}
+          dataAttrs={dataAttrs}
         />
       );
     },

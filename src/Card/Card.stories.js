@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, boolean } from "@storybook/addon-knobs";
+import { text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -16,22 +16,31 @@ import Clock from "../icons/Clock";
 import CardSection from "./CardSection";
 import * as Icons from "../icons";
 import List, { ListItem } from "../List";
+import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import Card from "./index";
 
-const title = text("Title", "Card with title");
-const description = text("Description", "This is description of the card");
-const sectionTitle = text("SectionTitle", "Section Title");
-const sectionDescription = text("SectionDescription", "Section Description");
-
 storiesOf("Card", module)
   .add("Default", () => {
-    return <Card icon={<Icons.Airplane />} title={title} />;
+    const title = text("Title", "Card with title");
+    const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+    return <Card icon={<Icons.Airplane />} title={title} titleAs={titleAs} />;
   })
   .add("Card with description", () => {
-    return <Card icon={<Icons.Airplane />} title={title} description={description} />;
+    const title = text("Title", "Card with title");
+    const description = text("Description", "This is description of the card");
+    return (
+      <Card
+        icon={<Icons.Airplane />}
+        onClose={action("onClose")}
+        title={title}
+        description={description}
+      />
+    );
   })
   .add("Card with actions", () => {
+    const title = text("Title", "Card with title");
+    const description = text("Description", "This is description of the card");
     return (
       <Card
         icon={<Icons.Airplane />}
@@ -49,19 +58,25 @@ storiesOf("Card", module)
     );
   })
   .add("Card with sections", () => {
+    const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+    const sectionTitle = text("SectionTitle", "Section Title");
+    const sectionDescription = text("SectionDescription", "Section Description");
     return (
       <Card>
-        <CardSection title={sectionTitle} description={sectionDescription} />
-        <CardSection title={sectionTitle} description={sectionDescription} />
-        <CardSection title={sectionTitle} description={sectionDescription} />
+        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
+        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
+        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
       </Card>
     );
   })
   .add(
     "Card with expandable sections",
     () => {
+      const title = text("Title", "Card with title");
+      const description = text("Description", "This is description of the card");
+      const sectionTitle = text("SectionTitle", "Section Title");
       return (
-        <Card title={title} description={description}>
+        <Card title={title} onClose={action("onClose")} description={description}>
           <CardSection expandable title={sectionTitle}>
             This is a section content
           </CardSection>
@@ -83,7 +98,9 @@ storiesOf("Card", module)
     "Card with controlled and uncontrolled",
     () => {
       const expanded = boolean("expanded", true);
-
+      const title = text("Title", "Card with title");
+      const description = text("Description", "This is description of the card");
+      const sectionTitle = text("SectionTitle", "Section Title");
       return (
         <Card title={title} description={description}>
           <CardSection
@@ -115,7 +132,9 @@ storiesOf("Card", module)
     "Card with controlled with knobe",
     () => {
       const expanded = boolean("expanded", false);
-
+      const title = text("Title", "Card with title");
+      const description = text("Description", "This is description of the card");
+      const sectionTitle = text("SectionTitle", "Section Title");
       return (
         <Card title={title} description={description}>
           <CardSection expandable expanded={expanded} title={sectionTitle}>
@@ -133,7 +152,6 @@ storiesOf("Card", module)
     "Card with default expanded",
     () => {
       const initialExpanded = boolean("initialExpended", true);
-
       return (
         <Card>
           <CardSection
@@ -183,6 +201,10 @@ storiesOf("Card", module)
   .add(
     "Card with mixed sections",
     () => {
+      const title = text("Title", "Card with title");
+      const description = text("Description", "This is description of the card");
+      const sectionTitle = text("SectionTitle", "Section Title");
+      const sectionDescription = text("SectionDescription", "Section Description");
       return (
         <Card
           title={title}
@@ -208,11 +230,14 @@ storiesOf("Card", module)
   )
   .add(
     "Loading Card",
-    () => (
-      <Card title={title} loading>
-        <CardSection>kek</CardSection>
-      </Card>
-    ),
+    () => {
+      const title = text("Title", "Card with title");
+      return (
+        <Card title={title} loading>
+          <CardSection>kek</CardSection>
+        </Card>
+      );
+    },
     {
       info:
         "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
@@ -284,6 +309,7 @@ storiesOf("Card", module)
   .add(
     "Accessibility",
     () => {
+      const title = text("Title", "Card with title");
       const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
       return <Card title={title} dataA11ySection={dataA11ySection} />;
     },

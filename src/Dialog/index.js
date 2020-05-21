@@ -7,12 +7,13 @@ import Portal from "../Portal";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
-import Text from "../Text";
+import Text, { StyledText } from "../Text";
 import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
-import { StyledButton } from "../Button";
+import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
 import randomID from "../utils/randomID";
+import { left } from "../utils/rtl";
 
 import type { Props } from ".";
 
@@ -25,6 +26,7 @@ const StyledDialog = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   z-index: ${({ theme }) => theme.orbit.zIndexModalOverlay};
   box-sizing: border-box;
   outline: none;
@@ -43,23 +45,34 @@ StyledDialog.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledDialogCenterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+`;
+
 const StyledDialogContent = styled.div`
   display: block;
   width: 100%;
-  position: fixed;
   box-sizing: border-box;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) =>
+    `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
   background: ${({ theme }) => theme.orbit.paletteWhite};
-  border-radius: 9px 9px 0 0;
+  border-radius: 12px;
   bottom: ${({ shown }) => (shown ? "0" : "-100%")};
-  transition: bottom ${({ theme }) => theme.orbit.durationFast} linear;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
+  text-align: center;
+  ${StyledText} {
+    text-align: center;
+  }
   ${mq.largeMobile(css`
-    position: relative;
-    bottom: auto;
-    max-width: ${({ theme }) => theme.orbit.widthModalSmall};
+    min-width: ${({ theme }) => theme.orbit.widthModalSmall};
     border-radius: 9px;
     padding: ${({ theme }) => theme.orbit.spaceLarge};
+    text-align: ${left};
+    ${StyledText} {
+      text-align: ${left};
+    }
   `)};
 `;
 
@@ -68,15 +81,15 @@ StyledDialogContent.defaultProps = {
 };
 
 const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
-  width: calc(100% * ${({ width }) => width});
-  ${StyledButton} {
+  width: 100%;
+  ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
   }
   ${mq.largeMobile(
     css`
       width: auto;
-      ${StyledButton} {
+      ${StyledButtonPrimitive} {
         width: auto;
         flex: 0 0 auto;
       }
@@ -88,7 +101,9 @@ StyledAction.defaultProps = {
   theme: defaultTheme,
 };
 
-const getButtonWidth = width => Math.floor(width * 100);
+const IllustrationContainer = styled.div`
+  margin-bottom: 16px;
+`;
 
 const Dialog = ({
   dataTest,
@@ -97,6 +112,7 @@ const Dialog = ({
   primaryAction,
   secondaryAction,
   onClose,
+  illustration,
 }: Props) => {
   const ref = React.useRef(null);
   const theme = useTheme();
@@ -146,18 +162,23 @@ const Dialog = ({
         aria-modal="true"
         aria-labelledby={dialogID}
       >
-        <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
-          <Stack spacing="tight" spaceAfter="medium">
-            {title && <Heading type="title3">{title}</Heading>}
-            {description && <Text type="secondary">{description}</Text>}
-          </Stack>
-          <Stack direction="row" largeMobile={{ justify: "end" }}>
-            {secondaryAction && (
-              <StyledAction width={getButtonWidth(1 / 3)}>{secondaryAction}</StyledAction>
-            )}
-            <StyledAction width={getButtonWidth(2 / 3)}>{primaryAction}</StyledAction>
-          </Stack>
-        </StyledDialogContent>
+        <StyledDialogCenterWrapper>
+          <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
+            {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
+            <Stack spacing="tight" spaceAfter="medium">
+              {title && <Heading type="title3">{title}</Heading>}
+              {description && <Text type="secondary">{description}</Text>}
+            </Stack>
+            <Stack
+              direction="column-reverse"
+              spacing="condensed"
+              largeMobile={{ direction: "row", justify: "end" }}
+            >
+              {secondaryAction && <StyledAction>{secondaryAction}</StyledAction>}
+              <StyledAction>{primaryAction}</StyledAction>
+            </Stack>
+          </StyledDialogContent>
+        </StyledDialogCenterWrapper>
       </StyledDialog>
     </Portal>
   );

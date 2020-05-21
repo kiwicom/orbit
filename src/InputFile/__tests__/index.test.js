@@ -44,26 +44,16 @@ describe(`InputFile with help`, () => {
   );
   const input = component.find("InputFile__Input");
   const field = component.find("InputFile__Field");
-  const closeButton = component.find("InputFile__CloseButton");
+  const closeButton = component.find("InputFile__CloseButton").find("ButtonLink");
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain an input", () => {
     expect(input.exists()).toBe(true);
   });
   it("should have passed props", () => {
-    expect(
-      component
-        .find("InputFile__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(component.find("InputFile__Input").render().prop("attribs").name).toBe(name);
     expect(input.prop("accept")).toBe(allowedFileTypes);
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.render().prop("tabindex")).toBe(tabIndex);
@@ -71,7 +61,7 @@ describe(`InputFile with help`, () => {
     expect(input.render().prop("data-state")).toBe("ok");
   });
   it("should contain a input Button", () => {
-    expect(component.find("InputFile__InputButton").exists()).toBe(true);
+    expect(component.find("InputFile__FakeInput").find("Button").exists()).toBe(true);
   });
   it("should contain a close Button", () => {
     expect(closeButton.exists()).toBe(true);
@@ -113,11 +103,6 @@ describe(`InputFiInputFile with error`, () => {
   });
 
   it("should has data-state error", () => {
-    expect(
-      component
-        .find("InputFile__Input")
-        .render()
-        .prop("data-state"),
-    ).toBe("error");
+    expect(component.find("InputFile__Input").render().prop("data-state")).toBe("error");
   });
 });

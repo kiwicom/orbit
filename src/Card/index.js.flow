@@ -6,13 +6,16 @@
 import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
 import typeof CardSectionType from "./CardSection/index.js.flow";
+import type { As } from "../Heading";
 
 export type Props = {|
   +children?: React$Node,
   +title?: React$Node,
+  +titleAs?: As,
   +description?: React$Node,
   +icon?: React$Node,
   +actions?: React$Node,
+  +onClose?: () => void | Promise<any>,
   +loading?: boolean,
   +header?: React$Node,
   +dataA11ySection?: string,

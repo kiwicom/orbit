@@ -107,7 +107,7 @@ storiesOf("Modal", module)
   .add(
     "Without section",
     () => {
-      const showMore = boolean(false);
+      const showMore = boolean("showMore", false);
       return (
         <Modal onClose={action("onClose")} fixedFooter>
           <ModalHeader
@@ -121,7 +121,7 @@ storiesOf("Modal", module)
             </ModalSection>
           )}
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -154,7 +154,7 @@ storiesOf("Modal", module)
             <Text>Lorem ipsum dolor sit amet</Text>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -187,14 +187,17 @@ storiesOf("Modal", module)
                 label="Mobile phone"
               >
                 <Select
-                  options={[{ value: 1, label: "+420" }, { value: 2, label: "+421" }]}
+                  options={[
+                    { value: 1, label: "+420" },
+                    { value: 2, label: "+421" },
+                  ]}
                   value={1}
                   prefix={<CountryFlag code="cz" />}
                 />
                 <InputField placeholder="111 222 333" />
               </InputGroup>
               {showMore && (
-                <React.Fragment>
+                <>
                   <Text weight="bold" size="small">
                     Options
                   </Text>
@@ -204,12 +207,12 @@ storiesOf("Modal", module)
                     These are the most favorite. <TextLink href="#">Show more</TextLink>
                   </Text>
                   <Checkbox label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris laoreet, eleifend nunc eu, venenatis sem. Etiam ullamcorper euismod suscipit. In a tortor ac velit elementum ultrices. Sed accumsan suscipit pulvinar." />
-                </React.Fragment>
+                </>
               )}
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button icon={<ChevronLeft />} type="secondary">
+            <Button iconLeft={<ChevronLeft />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -228,7 +231,7 @@ storiesOf("Modal", module)
       <Modal onClose={action("onClose")} fixedFooter>
         <ModalHeader
           title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="Meal" size="small" />}
+          illustration={<Illustration name="BaggageDrop" size="small" />}
           description="Select a flight below to see the menu (where available)"
         />
         <ModalSection suppressed>
@@ -392,7 +395,7 @@ storiesOf("Modal", module)
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button icon={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronLeft />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>

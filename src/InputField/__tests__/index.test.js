@@ -29,6 +29,9 @@ describe(`InputField with help, prefix and suffix`, () => {
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const id = "id";
   const inputMode = INPUTMODE.NUMERIC;
+  const dataAttrs = {
+    "data-recording-ignore": true,
+  };
 
   const component = shallow(
     <InputField
@@ -48,7 +51,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       spaceAfter={spaceAfter}
       inputMode={inputMode}
       prefix={<Search />}
-      suffix={<ButtonLink transparent icon={<Visibility />} />}
+      suffix={<ButtonLink transparent iconLeft={<Visibility />} />}
       help={
         <div>
           Did you mean <TextLink>something</TextLink>?
@@ -57,6 +60,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      dataAttrs={dataAttrs}
     />,
   );
   const prefix = component.find("InputField__Prefix");
@@ -65,12 +69,7 @@ describe(`InputField with help, prefix and suffix`, () => {
   const field = component.find("InputField__Field");
 
   it("should contain a label", () => {
-    expect(
-      component
-        .find("FormLabel")
-        .render()
-        .text(),
-    ).toBe(label);
+    expect(component.find("FormLabel").render().text()).toBe(label);
   });
   it("should contain a icon as prefix", () => {
     expect(prefix.find("Search").exists()).toBe(true);
@@ -82,16 +81,12 @@ describe(`InputField with help, prefix and suffix`, () => {
     expect(input.prop("size")).toBe(size);
     expect(field.prop("spaceAfter")).toBe(spaceAfter);
     expect(input.prop("type")).toBe(type);
-    expect(
-      component
-        .find("InputField__Input")
-        .render()
-        .prop("attribs").name,
-    ).toBe(name);
+    expect(component.find("InputField__Input").render().prop("attribs").name).toBe(name);
     expect(input.prop("value")).toBe(value);
     expect(input.prop("placeholder")).toBe(placeholder);
     expect(input.prop("maxLength")).toBe(maxLength);
     expect(input.prop("minLength")).toBe(minLength);
+    expect(input.render().prop("data-recording-ignore")).toBe("true");
     expect(input.render().prop("tabindex")).toBe(tabIndex);
     expect(input.render().prop("data-test")).toBe(dataTest);
     expect(input.render().prop("data-state")).toBe("ok");
@@ -177,11 +172,6 @@ describe(`InputField number with error and help`, () => {
     expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
   });
   it("should has data-state error", () => {
-    expect(
-      component
-        .find("InputField__Input")
-        .render()
-        .prop("data-state"),
-    ).toBe("error");
+    expect(component.find("InputField__Input").render().prop("data-state")).toBe("error");
   });
 });

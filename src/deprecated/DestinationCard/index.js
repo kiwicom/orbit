@@ -11,7 +11,7 @@ import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../../LazyImage";
 import Text from "../../Text";
 import randomID from "../../utils/randomID";
-import KEY_CODE_MAP from "../../common/keyMaps";
+import handleKeyDown from "../../utils/handleKeyDown";
 
 import type { Props, State } from "./index";
 
@@ -165,7 +165,7 @@ StyledDestinationCard.defaultProps = {
 };
 
 const SmallHeading = ({ children }: SmallHeadingType) => (
-  <Text type="white" element="div" size="small" weight="bold">
+  <Text type="white" as="div" size="small" weight="bold">
     {children}
   </Text>
 );
@@ -199,18 +199,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
-    const { onClick } = this.props;
-    if (onClick) {
-      if (ev.keyCode === KEY_CODE_MAP.ENTER) {
-        onClick();
-      } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-        ev.preventDefault();
-        onClick();
-      }
-    }
-  };
-
   render() {
     const {
       dataTest,
@@ -233,7 +221,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
-        onKeyDown={this.handleKeyDown}
+        onKeyDown={handleKeyDown(onClick)}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
         tabIndex={tabIndex}
         role="link"
@@ -256,29 +244,29 @@ class DestinationCard extends React.PureComponent<Props, State> {
           <StyledDestinationCardHeader id={this.cardID}>
             <Shown>
               <Stack flex align="center" justify="start" spacing="extraTight">
-                <Heading type="title3" element="div" inverted>
+                <Heading type="title3" inverted>
                   {departureCity}
                 </Heading>
                 <ArrowUp customColor="#fff" size="small" />
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" element="div" inverted>
+              <Heading type="title1" inverted>
                 {destinationCity}
               </Heading>
             </StyledDestination>
             <Shown>
-              <Heading type="title4" element="div" inverted>
+              <Heading type="title4" inverted>
                 {destinationCountry}
               </Heading>
             </Shown>
           </StyledDestinationCardHeader>
           <Stack flex justify="between" spaceAfter="small" align="end">
-            <Heading type="title3" element="div" inverted>
+            <Heading type="title3" inverted>
               {price}
             </Heading>
             {timeOfStay && (
-              <Heading type="title4" element="div" inverted>
+              <Heading type="title4" inverted>
                 {timeOfStay}
               </Heading>
             )}
@@ -289,10 +277,10 @@ class DestinationCard extends React.PureComponent<Props, State> {
                 {outbound.text ? (
                   outbound.text
                 ) : (
-                  <React.Fragment>
+                  <>
                     <FlightDirect size="small" />
                     {outbound.date}
-                  </React.Fragment>
+                  </>
                 )}
               </SmallHeading>
               <SmallHeading>

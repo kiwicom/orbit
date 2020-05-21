@@ -1,11 +1,11 @@
 // @flow
-import type { Devices } from "../../utils/mediaQuery/index";
+import type { Devices } from "../../utils/mediaQuery/consts";
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   ...Globals,
   +children: React$Node,
-  +element?: string,
+  +as?: string,
   +hideOn?: Devices[],
 |};
 

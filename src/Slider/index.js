@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
 
+import transition from "../utils/transition";
 import Text from "../Text";
 import Heading from "../Heading";
 import Stack from "../Stack";
@@ -43,7 +44,8 @@ const StyledSliderContent = styled.div`
     visibility: hidden;
     padding: 12px 24px 48px 24px;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    transition: ${transition(["all"], "fast", "ease-in-out")};
+
     background: transparent;
     ${({ focused, theme }) =>
       focused &&
@@ -432,11 +434,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       <Stack direction="row" spacing="none" spaceAfter={biggerSpace ? "medium" : "small"}>
         {(label || histogramDescription) && (
           <Stack direction="column" spacing="none" basis="60%" grow>
-            {label && (
-              <Heading type="title4" element="div">
-                {label}
-              </Heading>
-            )}
+            {label && <Heading type="title4">{label}</Heading>}
             {valueDescription && (
               <Text type="secondary" size="small">
                 {valueDescription}
@@ -480,9 +478,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       const properHistogramLength = (maxValue - minValue + step) / step;
       warning(
         histogramData.length === properHistogramLength,
-        `Warning: Length of histogramData array is ${
-          histogramData.length
-        }, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
+        `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
       );
     }
     const { value, focused } = this.state;

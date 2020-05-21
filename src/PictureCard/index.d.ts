@@ -13,6 +13,7 @@ type Image = {
   readonly placeholder?: string;
   readonly name: string;
   readonly code: string;
+  readonly src?: string;
 };
 
 interface Props extends Common.Global {

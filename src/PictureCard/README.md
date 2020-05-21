@@ -51,6 +51,7 @@ Table below contains all types of the props available for object in Image
 | name        | `string` | The name of image, defines alt prop for image                            |
 | **code**    | `string` | The code of image, defines which image will be rendered.                 |
 | placeholder | `string` | The preferred placeholder size [See Functional specs](#functional-specs) |
+| src         | `string` | The location of an image if you want it to be from your own source.      |
 
 ## Functional specs
 

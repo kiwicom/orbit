@@ -39,6 +39,7 @@ const getPictureType = picture => {
   const TYPES = {
     [FORMATS.WEBP]: "image/webp",
     [FORMATS.JPEG]: "image/jpg",
+    [FORMATS.ANY]: "image",
   };
   return TYPES[picture];
 };
@@ -79,8 +80,8 @@ const LazyImage = ({ placeholder, original, name }: Props) => {
           <Picture pictures={placeholder} lowRes name={name} loaded={!loaded} />
         </>
       ) : (
-          <Picture pictures={original} name={name} loaded />
-        )}
+        <Picture pictures={original} name={name} loaded />
+      )}
     </StyledLazyImage>
   );
 };

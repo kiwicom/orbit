@@ -16,21 +16,33 @@ storiesOf("Table", module)
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell as="th" scope="col">
+              Number
+            </TableCell>
+            <TableCell as="th" scope="col">
+              Lorem
+            </TableCell>
+            <TableCell as="th" scope="col">
+              ipsum dolo
+            </TableCell>
+            <TableCell as="th" scope="col">
+              sit amet
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell as="th" scope="row">
+              1
+            </TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell as="th" scope="row">
+              2
+            </TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
             <TableCell>Lorem ipsum dolor sit amet</TableCell>
@@ -110,15 +122,49 @@ storiesOf("Table", module)
     },
   )
   .add(
+    "Without stripes",
+    () => (
+      <Table type="secondary" striped={false}>
+        <TableHead>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    ),
+    {
+      info:
+        "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const compact = boolean("compact", false);
+      const striped = boolean("striped", true);
       const children = text("children", "Lorem ipsum dolor sit amet");
       const dataTest = text("dataTest", "test");
       const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
       const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
       return (
-        <Table type={type} compact={compact} dataTest={dataTest}>
+        <Table striped={striped} type={type} compact={compact} dataTest={dataTest}>
           <TableHead>
             <TableRow>
               <TableCell align={align}>{children}</TableCell>

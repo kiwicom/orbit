@@ -4,4 +4,9 @@ const TYPE_OPTIONS = {
   SECONDARY: "secondary",
 };
 
+export const TYPE_AS = {
+  TH: "th",
+  TD: "td",
+};
+
 export default TYPE_OPTIONS;

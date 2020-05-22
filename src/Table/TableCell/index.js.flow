@@ -5,10 +5,14 @@ import type { ReactComponentStyled } from "styled-components";
 import type { Globals } from "../../common/common.js.flow";
 
 type Align = "left" | "center" | "right";
+type As = "th" | "td";
+type Scope = "col" | "row" | "colgroup" | "rowgroup";
 
 export type Props = {|
   +children?: React$Node,
   +align?: Align,
+  +as?: As,
+  +scope?: Scope,
   ...Globals,
 |};
 

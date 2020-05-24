@@ -113,7 +113,7 @@
     "@emotion/core": "^10.0.28",
     "@octokit/rest": "^15.13.1",
     "@storybook/addon-actions": "^5.3.18",
-    "@storybook/addon-info": "5.3.18",
+    "@storybook/addon-info": "5.3.19",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addons": "5.3.18",
     "@storybook/react": "^5.3.18",

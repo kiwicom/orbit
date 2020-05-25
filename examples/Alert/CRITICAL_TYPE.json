@@ -1,8 +1,9 @@
 {
 	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport AlertCircle from \"@kiwicom/orbit-components/lib/icons/AlertCircle\";\nimport Reload from \"@kiwicom/orbit-components/lib/icons/Reload\";",
-	"example": "() => (\n  <Alert icon={<Icons.AlertCircle />} title=\"No results loaded\" type=\"critical\">\n    <Stack spacing=\"compact\">\n      <Text>\n        There was an error while processing your request. Refresh the page to\n        load the results.\n      </Text>\n      <Stack flex spacing=\"compact\">\n        <AlertButton iconLeft={<Icons.Reload />} type=\"critical\">\n          Refresh page\n        </AlertButton>\n        <AlertButton type=\"criticalSubtle\">Contact support</AlertButton>\n      </Stack>\n    </Stack>\n  </Alert>\n)\n",
+	"example": "() => (\n  <Alert icon={<Icons.AlertCircle />} title=\"No results loaded\" type=\"critical\">\n    <Stack spacing=\"compact\">\n      <Text>\n        There was an error while processing your request. Refresh the page to\n        load the results.\n      </Text>\n      <Stack flex spacing=\"compact\">\n        <AlertButton iconLeft={<Icons.Reload />} type=\"critical\" size=\"small\">\n          Refresh page\n        </AlertButton>\n        <AlertButton type=\"criticalSubtle\" size=\"small\">\n          Contact support\n        </AlertButton>\n      </Stack>\n    </Stack>\n  </Alert>\n)\n",
 	"info": {
 		"title": "Critical alert",
 		"description": "Use critical alerts when something is blocking users from continuing or an issue needs to be resolved immediately. The alert should offer a solution to the problem."
-	}
+	},
+	"compressedExample": "N4Igxg9gJgpiBcIA8BBANjATgFwAQEtIA7AXmCQEliBnAOnS2wGF9MwNcB6APgF9ds+bBhIAdEADkIuTDGoBXNNmq40EAIawo4gQE8ADjDHhMQwurTjuoorlxIAytnVgA1rmr6X+IgHNjkAC2XmDYVjZ2dkgAKjAAHtjWtpF20QAWWDC4AO7qKuq2WJgQmDlp+Bz6xWBy1D6+uLoQ8qWyAI7ycti0uABKMABmstRpAhm4Xr5Z2NJqmhEpY1nDisq0C1GcsQlJKY7ObrgDGHEeIfUBEMEuYSC7i6gYOABC8tgztoQQRAAyg9hkSg0Wj9OZQLh8PSGAKmQRgCw6OoALyM4mogQsljuG0W-SGclGkxgOM2DBebw+9z2ZOwr3e3yhqJMZnhaAc8gARsJiSAPPgUcZ0ZjwslFrgmN8DngFPp9CUwqLIkhODS6ZSccqnC5XPdNQcdTZlTSkiBeEA"
 }

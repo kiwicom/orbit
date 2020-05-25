@@ -4,5 +4,6 @@
 	"info": {
 		"title": "Inline actions",
 		"description": "Passing inlineActions will cause children to be ignored. inlineActions should be used to display buttons inside short alerts that only have a title."
-	}
+	},
+	"compressedExample": "N4Igxg9gJgpiBcIA8BBANjATgFwDoDsACQgS0nwF5gkBJcgZwDoUTMAHNAQ3xkIHoAfAF8CxEvjTiYKMNhIR89KqOKFUGHACEArtmwLCAC0wwAZhVwgAxJcL0SALxgWQ9ALac0aW9gCebZ0txUwhLARVVQgB5AKJJfABrCLU+dCxsHT0FcKJCEVy5bAwXADE0X0IAdxJsQ0JtekJuKEIYTkwiE0r2qHpLAkECECEgA"
 }

@@ -5,6 +5,7 @@ import glob from "glob";
 import fs from "fs";
 import path from "path";
 import prettier from "prettier";
+import lzString from "lz-string";
 
 const files = glob.sync(process.argv.slice(2).join());
 
@@ -127,11 +128,36 @@ async function getObjectProperty(body, name) {
   return value;
 }
 
+async function getJSXFromExample(node) {
+  if (!node) {
+    return null;
+  }
+  if (t.isArrowFunctionExpression(node)) {
+    if (t.isBlockStatement(node.body)) {
+      if (t.isReturnStatement(node.body.body[0])) {
+        return node.body.body[0].arguments;
+      }
+      return null;
+    }
+    if (node.body != null) return node.body;
+    return null;
+  }
+  return null;
+}
+
 async function getExample(body, code) {
+  const generateCode = content =>
+    prettier
+      .format(generate(content, code).code, { semi: false, parser: "babel" })
+      .replace(/^;/, "");
+
+  const compress = content =>
+    lzString.compressToEncodedURIComponent(JSON.stringify({ code: content }));
+
   const example = await getObjectProperty(body, "Example");
-  return prettier
-    .format(generate(example, code).code, { semi: false, parser: "babel" })
-    .replace(/^;/, "");
+  const onlyJSX = await getJSXFromExample(example);
+
+  return { example: generateCode(example), compressedExample: compress(generateCode(onlyJSX)) };
 }
 
 async function getInfo(body) {
@@ -161,11 +187,11 @@ async function readFileAndCreateJSON(pathToFile) {
     sourceType: "module",
   });
   const imports = await generateImports(ast.program.body, code);
-  const example = await getExample(ast.program.body, code);
+  const { example, compressedExample } = await getExample(ast.program.body, code);
   const info = await getInfo(ast.program.body);
   await writeFile(
     generatePath(nameSplit[1], fileName),
-    JSON.stringify({ imports, example, info }, null, "\t"),
+    JSON.stringify({ imports, example, info, compressedExample }, null, "\t"),
   );
 }
 

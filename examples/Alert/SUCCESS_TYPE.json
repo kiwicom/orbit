@@ -4,5 +4,6 @@
 	"info": {
 		"title": "Success alert",
 		"description": "Success alerts confirm that an instruction from the user, such as to make a payment or request a refund, was processed successfully. Usually used without an action button."
-	}
+	},
+	"compressedExample": "N4Igxg9gJgpiBcIA8BBANjATgFwDoDsACQgS0nwF5gkBJcgZwDoBhACxjAGtCB6APgC+BYthLYMFXCACaEAK6ZCABwCGATwC2MfNkIB3FfUL05YMDHr0AZnLSMpwwtjVKYkkCbMX6D-PwIgAkA"
 }

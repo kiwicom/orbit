@@ -16,6 +16,10 @@ const StyledInputStepper = styled.div`
   margin-bottom: ${getSpacingToken};
   ${Input} {
     text-align: center;
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
   }
   ${Prefix} {
     padding: 0;

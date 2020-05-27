@@ -104,10 +104,10 @@
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.3.0",
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.0",
     "@babel/generator": "^7.9.6",
     "@babel/node": "^7.8.7",
-    "@babel/runtime": "^7.9.6",
+    "@babel/runtime": "^7.10.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@emotion/core": "^10.0.28",

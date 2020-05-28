@@ -1,39 +1,80 @@
-# Tile
+**Props**
+| Name | Type | Default | Description |
+| --------------- | ------------- | ------- | ----------- |
+| title | `React$Node` | | |
+| description | `React$Node` | | |
+| icon | `React$Node` | | |
+| header | `React$Node` | | |
+| children | `React$Node` | | |
+| external | `boolean` | | |
+| href | `string` | | |
+| onClick | `TileOnClick` | | |
+| expandable | `boolean` | | |
+| initialExpanded | `boolean` | | |
+| noPadding | `boolean` | | |
+| htmlTitle | `string` | | |
+| noHeaderIcon | `boolean` | | |
+| dataTest | `string` | | |
 
-To implement Tile component into your project you'll need to the import at least the Tile:
+**TileContent**
 
-```jsx
-import Tile from "@kiwicom/orbit-components/lib/Tile";
-```
+| Name        | Type         | Default | Description |
+| ----------- | ------------ | ------- | ----------- |
+| children    | `React$Node` |         |             |
+| noPadding   | `boolean`    |         |             |
+| withPointer | `boolean`    |         |             |
+| withBorder  | `boolean`    |         |             |
+| useMargins  | `boolean`    |         |             |
 
-After adding import into your project you can use it simply like:
+**TileExpandable**
 
-```jsx
-<Tile title="Title" />
-```
+| Name            | Type                                                                                                  | Default | Description |
+| --------------- | ----------------------------------------------------------------------------------------------------- | ------- | ----------- |
+| dataTest        | `string`                                                                                              |         |             |
+| initialExpanded | `boolean`                                                                                             |         |             |
+| noPadding       | `boolean`                                                                                             |         |             |
+| children        | `React$Node`                                                                                          |         |             |
+| onClick         | `(e: SyntheticEvent<HTMLDivElement> \| SyntheticKeyboardEvent<HTMLElement>) => void \| Promise<any>;` |         |             |
+| title           | `React$Node`                                                                                          |         |             |
+| description     | `React$Node`                                                                                          |         |             |
+| header          | `React$Node`                                                                                          |         |             |
+| icon            | `React$Node`                                                                                          |         |             |
+| htmlTitle       | `string`                                                                                              |         |             |
 
-## Props
+**TileHeader**
 
-Table below contains all types of the props available in Tile component.
+| Name         | Type                                                                                                  | Default | Description |
+| ------------ | ----------------------------------------------------------------------------------------------------- | ------- | ----------- |
+| icon         | `React$Node`                                                                                          |         |             |
+| title        | `React$Node`                                                                                          |         |             |
+| description  | `React$Node`                                                                                          |         |             |
+| expandable   | `boolean`                                                                                             |         |             |
+| expanded     | `boolean`                                                                                             |         |             |
+| external     | `boolean`                                                                                             |         |             |
+| onClick      | `(e: SyntheticEvent<HTMLDivElement> \| SyntheticKeyboardEvent<HTMLElement>) => void \| Promise<any>;` |         |             |
+| onKeyDown    | `(e: SyntheticEvent<HTMLDivElement> \| SyntheticKeyboardEvent<HTMLElement>) => void \| Promise<any>;` |         |             |
+| header       | `React$Node`                                                                                          |         |             |
+| role         | `string`                                                                                              |         |             |
+| ariaExpanded | `boolean`                                                                                             |         |             |
+| ariaControls | `string`                                                                                              |         |             |
+| id           | `string`                                                                                              |         |             |
+| tabIndex     | `string`                                                                                              |         |             |
+| noHeaderIcon | `boolean`                                                                                             |         |             |
 
-| Name            | Type                       | Default | Description                                                                                                                  |
-| :-------------- | :------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------- |
-| children        | `React.Node`               |         | Content of expandable Tile.                                                                                                  |
-| dataTest        | `string`                   |         | Optional prop for testing purposes.                                                                                          |
-| description     | `React.Node`               |         | The description of the Tile.                                                                                                 |
-| expandable      | `boolean`                  | `false` | If `true`, the Tile will be expandable.                                                                                      |
-| external        | `boolean`                  | `false` | If `true`, the Tile opens link in a new tab. [See Functional specs](#functional-specs)                                       |
-| header          | `React.Node`               |         | The header of the Tile. Useful when you need different layout than combination of e.g. `title` and `description` properties. |
-| href            | `string`                   |         | The URL of the link to open when Tile is clicked. [See Functional specs](#functional-specs)                                  |
-| htmlTitle       | `string`                   |         | HTML attribute title for adding extra piece of information.                                                                  |
-| noHeaderIcon    | `boolean`                  | `false` | If `true`, the icon on the right won't appear. But when Tile is expandable, this property won't have any effect.             |
-| noPadding       | `boolean`                  |         | If `true`, the `children` content won't have inner spacing.                                                                  |
-| icon            | `React.Node`               |         | Displayed icon on the left side of the Tile.                                                                                 |
-| initialExpanded | `boolean`                  | `false` | Initial state of expandable Tile when it mounts.                                                                             |
-| onClick         | `event => void \| Promise` |         | Function for handling onClick event.                                                                                         |
-| title           | `React.Node`               |         | The title of the Tile.                                                                                                       |
+**TileWrapper**
 
-## Functional specs
-
-- When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
-- By passing the `href` prop into Tile, it will render into `a` element.
+| Name         | Type         | Default | Description |
+| ------------ | ------------ | ------- | ----------- |
+| dataTest     | `string`     |         |             |
+| href         | `string`     |         |             |
+| external     | `boolean`    |         |             |
+| onClick      | `any`        |         |             |
+| onKeyDown    | `any`        |         |             |
+| children     | `React$Node` |         |             |
+| as           | `string`     |         |             |
+| tabIndex     | `string`     |         |             |
+| role         | `?string`    |         |             |
+| ariaExpanded | `boolean`    |         |             |
+| ariaControls | `string`     |         |             |
+| htmlTitle    | `string`     |         |             |
+| id           | `string`     |         |             |

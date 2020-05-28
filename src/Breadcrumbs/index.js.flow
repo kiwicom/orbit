@@ -17,3 +17,27 @@ export type Props = {|
 declare export default React$ComponentType<Props>;
 
 declare export var BreadcrumbsItem: BreadcrumbsItemType;
+
+/* DOCS:
+# Breadcrumbs
+
+To implement Button component into your project you'll need to add the import:
+
+```jsx
+import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Breadcrumbs";
+```
+
+After adding import into your project you can use it simply like:
+
+```jsx
+<Breadcrumbs>
+  <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+</Breadcrumbs>
+```
+*/
+
+/* FunctionalSpec:
+## Functional specs
+
+- The last BreadcrumbsItem will have stronger `font-weight` automatically. Also, all meta information are automatically render too, so you don't have to specify it explicitly.
+*/

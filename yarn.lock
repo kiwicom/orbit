@@ -60,7 +60,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.10.2", "@babel/core@^7.7.5":
+"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.10.0", "@babel/core@^7.10.2", "@babel/core@^7.7.5":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.10.2.tgz#bd6786046668a925ac2bd2fd95b579b92a23b36a"
   integrity sha512-KQmV9yguEjQsXqyOUGKjS4+3K8/DlOCE2pZcq4augdQmtTy5iv5EHtmMSJ7V4c1BIPjuwtZYqYLCq9Ga+hGBRQ==
@@ -82,7 +82,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.10.1", "@babel/generator@^7.10.2":
+"@babel/generator@^7.10.0", "@babel/generator@^7.10.1", "@babel/generator@^7.10.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.10.2.tgz#0fa5b5b2389db8bfdfcc3492b551ee20f5dd69a9"
   integrity sha512-AxfBNHNu99DTMvlUPlt1h2+Hn7knPpH5ayJ8OqDWSeLld+Fi2AYBTC/IejWDM9Edcii4UzZRCsbUt0WlSDsDsA==
@@ -1554,6 +1554,13 @@
     graceful-fs "^4.1.3"
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
+
+"@markusylisiurunen/md-table@^0.2.1-alpha":
+  version "0.2.1-alpha"
+  resolved "https://registry.yarnpkg.com/@markusylisiurunen/md-table/-/md-table-0.2.1-alpha.tgz#81741b79f138042aff7d91b89986ae5555806dfb"
+  integrity sha512-CNQbtxHKKBVncZTGk+i4rf9S/OMEjgY878Ld/Uj0vD+H6qpQas+IkX0TenZ9NdQkjDIrbqrQc4s+EdeEMzSnBg==
+  dependencies:
+    chalk "^2.3.2"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -4003,7 +4010,7 @@ ccount@^1.0.3:
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.0.3.tgz#f1cec43f332e2ea5a569fd46f9f5bde4e6102aff"
   integrity sha512-Jt9tIBkRc9POUof7QA/VwWd+58fKkEEfI+/t1/eOlxKM7ZhrczNzMFefge7Ai+39y1pR/pP6cI19guHy3FSLmw==
 
-chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -6564,7 +6571,7 @@ fs-extra@^8.0.1:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.1:
+fs-extra@^9.0.0, fs-extra@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
   integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
@@ -8966,6 +8973,13 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
+log-symbols@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-4.0.0.tgz#69b3cc46d20f448eccdb75ea1fa733d9e821c920"
+  integrity sha512-FN8JBzLx6CzeMrB0tg6pqlGU1wCrXW+ZXGH481kfsBqer0hToTIiHdjH4Mq8xJUbvATujKCvaREGWpGUionraA==
+  dependencies:
+    chalk "^4.0.0"
+
 log-update@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/log-update/-/log-update-2.3.0.tgz#88328fd7d1ce7938b29283746f0b1bc126b24708"
@@ -9544,6 +9558,21 @@ moniker@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/moniker/-/moniker-0.1.2.tgz#872dfba575dcea8fa04a5135b13d5f24beccc97e"
   integrity sha1-hy37pXXc6o+gSlE1sT1fJL7MyX4=
+
+monstra@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/monstra/-/monstra-0.4.0.tgz#5e43e3e17bf5e6c7abb9e44a4d65b4aa5614dd99"
+  integrity sha512-/FDnj+1uteur0q/CY1+jETBhwdMllejGl9kO7NvNAfchKQBXpPbsU0CB1ej9nOIlWAkkbZxM0IpWdNSHOeMUVQ==
+  dependencies:
+    "@babel/core" "^7.10.0"
+    "@babel/generator" "^7.10.0"
+    "@markusylisiurunen/md-table" "^0.2.1-alpha"
+    chalk "^4.0.0"
+    fs-extra "^9.0.0"
+    glob "^7.1.6"
+    log-symbols "^4.0.0"
+    ramda "^0.27.0"
+    yargs "^15.3.1"
 
 moo@^0.4.3:
   version "0.4.3"

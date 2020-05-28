@@ -13,3 +13,19 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+
+/* DOCS:
+Breadcrumbs requires one subcomponent - BreadcrumbsItem.
+
+### BreadcrumbsItem
+
+```jsx
+import BreadcrumbsItem from "@kiwicom/orbit-components/lib/Breadcrumbs/BreadcrumbsItem";
+```
+
+#### Usage:
+
+```jsx
+<BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+```
+*/

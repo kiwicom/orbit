@@ -1,43 +1,38 @@
-# Text
+**Props**
+| Name | Type | Default | Description |
+| ---------- | ----------------- | ------- | ----------- |
+| type | `Type` | | |
+| size | `Size` | | |
+| weight | `Weight` | | |
+| align | `Align` | | |
+| italic | `boolean` | | |
+| uppercase | `boolean` | | |
+| as | `As` | | |
+| children | `React$Node` | | |
+| id | `string` | | |
+| dataTest | `string` | | |
+| spaceAfter | `[`enum`](#enum)` | | |
 
-To implement Text component into your project you'll need to add the import:
+| **Type**                                                                        |
+| ------------------------------------------------------------------------------- |
+| "primary" , "secondary" , "info" , "success" , "warning" , "critical" , "white" |
 
-```jsx
-import Text from "@kiwicom/orbit-components/lib/Text";
-```
+| **Size**                     |
+| ---------------------------- |
+| "large" , "normal" , "small" |
 
-After adding import into your project you can use it simply like:
+| **Weight**        |
+| ----------------- |
+| "normal" , "bold" |
 
-```jsx
-<Text>Hello World!</Text>
-```
+| **Align**                   |
+| --------------------------- |
+| "left" , "center" , "right" |
 
-## Props
+| **As**               |
+| -------------------- |
+| "p" , "span" , "div" |
 
-Table below contains all types of the props available in the Text component.
-
-| Name       | Type            | Default     | Description                                                                                                                                     |
-| :--------- | :-------------- | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| as         | [`enum`](#enum) | `"p"`       | The element used for the root node.                                                                                                             |
-| align      | [`enum`](#enum) | `"left"`    | The align of the Text.                                                                                                                          |
-| children   | `React.Node`    |             | The content of the Text.                                                                                                                        |
-| dataTest   | `string`        |             | Optional prop for testing purposes.                                                                                                             |
-| id         | `string`        |             | The `id` HTML attribute.                                                                                                                        |
-| italic     | `boolean`       | `false`     | If `true`, the Text will be in italic style.                                                                                                    |
-| **size**   | [`enum`](#enum) | `"normal"`  | The size of the Text.                                                                                                                           |
-| spaceAfter | `enum`          |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
-| **type**   | [`enum`](#enum) | `"primary"` | The color type of the Text.                                                                                                                     |
-| uppercase  | `boolean`       | `false`     | If `true`, the Text will be in uppercase style.                                                                                                 |
-| **weight** | [`enum`](#enum) | `"regular"` | The weight of the Text.                                                                                                                         |
-
-### enum
-
-| type          | align      | as       | size       | weight     |
-| :------------ | :--------- | :------- | :--------- | :--------- |
-| `"primary"`   | `"left"`   | `"p"`    | `"small"`  | `"normal"` |
-| `"secondary"` | `"center"` | `"span"` | `"normal"` | `"bold"`   |
-| `"info"`      | `"right"`  | `"div"`  | `"large"`  |            |
-| `"success"`   |            |          |            |            |
-| `"warning"`   |            |          |            |            |
-| `"critical"`  |            |          |            |            |
-| `"white"`     |            |          |            |            |
+| **spaceAfter**                                                            |
+| ------------------------------------------------------------------------- |
+| "none" , "smallest" , "small" , "normal" , "medium" , "large" , "largest" |

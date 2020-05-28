@@ -1,151 +1,68 @@
-# Table
+**Props**
+| Name | Type | Default | Description |
+| -------- | -------------------------- | ------- | ----------- |
+| type | `"primary" \| "secondary"` | | |
+| striped | `boolean` | | |
+| compact | `boolean` | | |
+| children | `React$Node` | | |
+| dataTest | `string` | | |
 
-To implement Table component into your project you'll need to add the import:
+**TableBody**
 
-```jsx
-import Table, {
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableFooter,
-} from "@kiwicom/orbit-components/lib/Table";
-```
+| Name     | Type         | Default | Description |
+| -------- | ------------ | ------- | ----------- |
+| children | `React$Node` |         |             |
+| dataTest | `string`     |         |             |
 
-After adding import into your project you can use it simply like:
+**TableCell**
 
-```jsx
-<Table>
-  <TableHead>
-    <TableRow>
-      <TableCell>Header</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    <TableRow>
-      <TableCell>Content</TableCell>
-    </TableRow>
-  </TableBody>
-  <TableFooter>
-    <TableRow>
-      <TableCell>Footer</TableCell>
-    </TableRow>
-  </TableFooter>
-</Table>
-```
+| Name          | Type            | Default | Description |
+| ------------- | --------------- | ------- | ----------- |
+| children      | `React$Node`    |         |             |
+| align         | `Align`         |         |             |
+| as            | `As`            |         |             |
+| scope         | `Scope`         |         |             |
+| whiteSpace    | `WhiteSpace`    |         |             |
+| verticalAlign | `VerticalAlign` |         |             |
+| dataTest      | `string`        |         |             |
 
-## Props
+| **Align**                   |
+| --------------------------- |
+| "left" , "center" , "right" |
 
-Table below contains all types of the props available in the Table component.
+| **As**      |
+| ----------- |
+| "th" , "td" |
 
-| Name         | Type            | Default     | Description                                                                                |
-| :----------- | :-------------- | :---------- | :----------------------------------------------------------------------------------------- |
-| **children** | `React.Node`    |             | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead). |
-| compact      | `boolean`       | `false`     | If `true`, the Table will have more compact styles.                                        |
-| dataTest     | `string`        |             | Optional prop for testing purposes.                                                        |
-| striped      | `boolean`       | `true`      | Functionality of table where every second line is grey                                     |
-| type         | [`enum`](#enum) | `"primary"` | The type of Table.                                                                         |
+| **Scope**                               |
+| --------------------------------------- |
+| "col" , "row" , "colgroup" , "rowgroup" |
 
-### enum
+| **WhiteSpace**                             |
+| ------------------------------------------ |
+| "nowrap" , "pre" , "pre-line" , "pre-wrap" |
 
-| type          |
-| :------------ |
-| `"primary"`   |
-| `"secondary"` |
+| **VerticalAlign**                                                                       |
+| --------------------------------------------------------------------------------------- |
+| "baseline" , "sub" , "super" , "text-top" , "text-bottom" , "middle" , "top" , "bottom" |
 
-## Subcomponents
+**TableFooter**
 
-There are four subcomponents which you need to use.
+| Name     | Type         | Default | Description |
+| -------- | ------------ | ------- | ----------- |
+| children | `React$Node` |         |             |
+| dataTest | `string`     |         |             |
 
-### TableHead
+**TableHead**
 
-```jsx
-import TableHead from "@kiwicom/orbit-components/lib/Table/TableHead";
-```
+| Name     | Type         | Default | Description |
+| -------- | ------------ | ------- | ----------- |
+| children | `React$Node` |         |             |
+| dataTest | `string`     |         |             |
 
-#### Props
+**TableRow**
 
-Table below contains all types of the props in TableHead component.
-
-| Name         | Type         | Default | Description                                                     |
-| :----------- | :----------- | :------ | :-------------------------------------------------------------- |
-| **children** | `React.Node` |         | The content of the TableHead, normally [`TableRow`](#tablerow). |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                             |
-
-### TableBody
-
-```jsx
-import TableBody from "@kiwicom/orbit-components/lib/Table/TableBody";
-```
-
-#### Props
-
-Table below contains all types of the props in TableBody component.
-
-| Name         | Type         | Default | Description                                                     |
-| :----------- | :----------- | :------ | :-------------------------------------------------------------- |
-| **children** | `React.Node` |         | The content of the TableBody, normally [`TableRow`](#tablerow). |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                             |
-
-### TableRow
-
-```jsx
-import TableRow from "@kiwicom/orbit-components/lib/Table/TableRow";
-```
-
-#### Props
-
-Table below contains all types of the props in TableRow component.
-
-| Name         | Type         | Default | Description                                                      |
-| :----------- | :----------- | :------ | :--------------------------------------------------------------- |
-| **children** | `React.Node` |         | The content of the TableRow, normally [`TableCell`](#tablecell). |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                              |
-
-### TableCell
-
-```jsx
-import TableCell from "@kiwicom/orbit-components/lib/Table/TableCell";
-```
-
-#### Props
-
-Table below contains all types of the props in TableCell component.
-
-| Name          | Type            | Default  | Description                                                                                                                                                         |
-| :------------ | :-------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| align         | [`enum`](#enum) | `"left"` | The align of text in the TableCell.                                                                                                                                 |
-| as            | [`enum`](#enum) | `"th"`   | possibility to render TableCell in different HTML                                                                                                                   |
-| children      | `React.Node`    |          | The content of the TableCell.                                                                                                                                       |
-| dataTest      | `string`        |          | Optional prop for testing purposes.                                                                                                                                 |
-| scope         | [`enum`](#enum) |          | The scope attribute identifies whether a table header is a column header or a row header. More about a11y reasons [here](https://webaim.org/techniques/tables/data) |
-| verticalAlign | [`enum`](#enum) |          | The vertical align of the content in the TableCell.                                                                                                                 |
-| whiteSpace    | [`enum`](#enum) |          | The white-space setting of text in the TableCell.                                                                                                                   |
-
-#### enum
-
-| align      | whiteSpace   | VerticalAlign   | as     | scope        |
-| :--------- | :----------- | --------------- | :----- | :----------- |
-| `"left"`   | `"nowrap"`   | `"nowrap"`      | `"th"` | `"col"`      |
-| `"center"` | `"pre"`      | `"sub"`         | `"td"` | `"row"`      |
-| `"right"`  | `"pre-line"` | `"super"`       |        | `"colgroup"` |
-|            |              | `"text-top"`    |        | `"rowgroup"` |
-|            |              | `"text-bottom"` |
-|            |              | `"middle"`      |
-|            |              | `"top"`         |
-|            |              | `"bottom"`      |
-
-### TableFooter
-
-```jsx
-import TableFooter from "@kiwicom/orbit-components/lib/Table/TableFooter";
-```
-
-#### Props
-
-Table below contains all types of the props in TableFooter component.
-
-| Name         | Type         | Default | Description                                                       |
-| :----------- | :----------- | :------ | :---------------------------------------------------------------- |
-| **children** | `React.Node` |         | The content of the TableFooter, normally [`TableRow`](#tablerow). |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                               |
+| Name     | Type         | Default | Description |
+| -------- | ------------ | ------- | ----------- |
+| children | `React$Node` |         |             |
+| dataTest | `string`     |         |             |

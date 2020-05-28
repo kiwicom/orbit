@@ -1,5 +1,10 @@
 **Props**
 | Name | Type | Default | Description |
 | -------- | ------------ | ------- | ----------- |
-| dataTest | `string` | | |
 | children | `React$Node` | | |
+| type | `Type` | | |
+| dataTest | `string` | | |
+
+| **Type**         |
+| ---------------- |
+| "help" , "error" |

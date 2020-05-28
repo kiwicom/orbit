@@ -130,7 +130,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "camelcase": "^6.0.0",
     "capitalize": "^2.0.3",
-    "copyfiles": "^2.2.0",
+    "copyfiles": "^2.3.0",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",

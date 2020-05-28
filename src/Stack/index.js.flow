@@ -44,17 +44,8 @@ export type SmallMobile = {|
 
 export type Props = {|
   ...Globals,
-  ...spaceAfter,
-  +inline?: boolean,
-  +direction?: Direction,
+  ...MediaQuery,
   +flex?: boolean,
-  +wrap?: boolean,
-  +grow?: boolean,
-  +shrink?: boolean,
-  +basis?: Basis,
-  +align?: Align,
-  +justify?: Justify,
-  +spacing?: Spacing,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

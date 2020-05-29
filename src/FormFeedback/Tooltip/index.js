@@ -27,7 +27,7 @@ const StyledFormFeedbackTooltip = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceSmall};
   padding-${right}: ${({ theme, isHelp }) => isHelp && theme.orbit.spaceSmall};
 
-  z-index: 10012; /* TODO: use some good value */
+  z-index: 10; /* TODO: use some good value */
 
   max-height: none;
   overflow: visible;

@@ -13,7 +13,11 @@ type Image = {
   readonly placeholder?: string;
   readonly name: string;
   readonly code: string;
-  readonly src?: string;
+};
+
+type ImageCustom = {
+  readonly name: string;
+  readonly src: string;
 };
 
 interface Props extends Common.Global {
@@ -22,7 +26,7 @@ interface Props extends Common.Global {
   readonly label?: React.ReactNode;
   readonly title?: React.ReactNode;
   readonly subTitle?: React.ReactNode;
-  readonly image: Image;
+  readonly image: Image | ImageCustom;
   readonly height?: string;
   readonly width?: string;
   readonly href?: string;

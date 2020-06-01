@@ -15,13 +15,18 @@ type Image = {
   readonly code: string;
 };
 
+type ImageCustom = {
+  readonly name: string;
+  readonly src: string;
+};
+
 interface Props extends Common.Global {
   readonly actions?: React.ReactNode;
   readonly children?: React.ReactNode;
   readonly label?: React.ReactNode;
   readonly title?: React.ReactNode;
   readonly subTitle?: React.ReactNode;
-  readonly image: Image;
+  readonly image: Image | ImageCustom;
   readonly height?: string;
   readonly width?: string;
   readonly href?: string;

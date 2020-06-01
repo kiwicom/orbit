@@ -4,15 +4,18 @@ import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
+import { TYPE_AS } from "../consts";
 import { textAlign } from "../../utils/rtl";
 
 import type { Props } from ".";
 
-export const StyledTableCell = styled(({ children, className, dataTest }) => (
-  <td className={className} data-test={dataTest}>
-    {children}
-  </td>
-))`
+export const StyledTableCell = styled(
+  ({ element: Component, children, className, dataTest, scope }) => (
+    <Component className={className} data-test={dataTest} scope={scope}>
+      {children}
+    </Component>
+  ),
+)`
   box-sizing: border-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
@@ -28,6 +31,8 @@ StyledTableCell.defaultProps = {
 
 const TableCell = ({
   align = ALIGN_OPTIONS.CENTER,
+  scope,
+  as = TYPE_AS.TD,
   verticalAlign,
   whiteSpace,
   dataTest,
@@ -39,6 +44,8 @@ const TableCell = ({
       whiteSpace={whiteSpace}
       align={align}
       dataTest={dataTest}
+      scope={scope}
+      element={as}
     >
       {children}
     </StyledTableCell>

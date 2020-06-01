@@ -3,7 +3,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import { ALIGN_OPTIONS, TYPE_AS } from "./consts";
+import { ALIGN_OPTIONS } from "./consts";
+import { TYPE_AS } from "../consts";
 import { textAlign } from "../../utils/rtl";
 
 import type { Props } from ".";

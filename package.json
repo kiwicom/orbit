@@ -32,7 +32,7 @@
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
     "fetch-translations": "babel-node config/fetchTranslations.js",
     "build-storybook": "cross-env BABEL_TARGET=\"storybook\" build-storybook -c .storybook -o .out -s ./static && yarn build:playroom",
-    "deploy:storybook": "storybook-to-ghpages --existing-output-dir=.out --dry-run",
+    "deploy:storybook": "storybook-to-ghpages --existing-output-dir=.out",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
     "compile:ts": "yarn tsc"

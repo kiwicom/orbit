@@ -83,7 +83,7 @@ storiesOf("ButtonLink", module)
       const href = text("Href", "");
       const dataTest = text("dataTest", "test");
       const external = boolean("External", false);
-      const transparent = boolean("Transparent", false);
+      const compact = boolean("compact", false);
       const submit = boolean("Submit", false);
       const ariaExpanded = boolean("Aria expanded", false);
       const ariaControls = text("Aria controls", "element ID");
@@ -104,7 +104,7 @@ storiesOf("ButtonLink", module)
           width={width}
           external={external}
           onClick={action("clicked")}
-          transparent={transparent}
+          compact={compact}
           submit={submit}
           ariaExpanded={ariaExpanded}
           ariaControls={ariaControls}

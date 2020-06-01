@@ -9,7 +9,7 @@ import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 export type Type = "primary" | "secondary" | "critical";
 
 export type Props = {|
-  +transparent?: boolean,
+  +compact?: boolean,
   +type?: Type,
   ...ButtonCommonProps,
 |};

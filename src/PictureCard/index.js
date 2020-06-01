@@ -225,7 +225,13 @@ const PictureCard = ({
 
   const cardID = React.useMemo(() => randomID("pictureCardID"), []);
 
-  const { name, original, placeholder, code } = image;
+  const {
+    name,
+    original = undefined,
+    placeholder = undefined,
+    code = undefined,
+    src = undefined,
+  } = image;
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;
   const isFocus = isPlain ? undefined : 0;
@@ -253,12 +259,16 @@ const PictureCard = ({
       aria-labelledby={isPlain ? undefined : cardID}
     >
       <LazyImage
-        original={{
-          webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
-          jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
-        }}
+        original={
+          code && original
+            ? {
+                webp: ` ${BASE_URL}/photos/${original}/${code}.webp`,
+                jpg: `${BASE_URL}/photos/${original}/${code}.jpg`,
+              }
+            : { "*": src }
+        }
         placeholder={
-          placeholder
+          placeholder && code
             ? {
                 webp: ` ${BASE_URL}/photos/${placeholder}/${code}.webp`,
                 jpg: `${BASE_URL}/photos/${placeholder}/${code}.jpg`,

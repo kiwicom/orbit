@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import ALIGN_OPTIONS from "./consts";
+import { ALIGN_OPTIONS } from "./consts";
 import { textAlign } from "../../utils/rtl";
 
 import type { Props } from ".";
@@ -18,15 +18,28 @@ export const StyledTableCell = styled(({ children, className, dataTest }) => (
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   color: ${({ theme }) => theme.orbit.colorInkNormal};
   text-align: ${({ align }) => textAlign(align)};
+  white-space: ${({ whiteSpace }) => whiteSpace};
+  vertical-align: ${({ verticalAlign }) => verticalAlign};
 `;
 
 StyledTableCell.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableCell = ({ align = ALIGN_OPTIONS.CENTER, dataTest, children }: Props) => {
+const TableCell = ({
+  align = ALIGN_OPTIONS.CENTER,
+  verticalAlign,
+  whiteSpace,
+  dataTest,
+  children,
+}: Props) => {
   return (
-    <StyledTableCell align={align} dataTest={dataTest}>
+    <StyledTableCell
+      verticalAlign={verticalAlign}
+      whiteSpace={whiteSpace}
+      align={align}
+      dataTest={dataTest}
+    >
       {children}
     </StyledTableCell>
   );

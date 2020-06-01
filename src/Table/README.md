@@ -111,19 +111,26 @@ import TableCell from "@kiwicom/orbit-components/lib/Table/TableCell";
 
 Table below contains all types of the props in TableCell component.
 
-| Name     | Type            | Default  | Description                         |
-| :------- | :-------------- | :------- | :---------------------------------- |
-| align    | [`enum`](#enum) | `"left"` | The align of text in the TableCell. |
-| children | `React.Node`    |          | The content of the TableCell.       |
-| dataTest | `string`        |          | Optional prop for testing purposes. |
+| Name          | Type            | Default  | Description                                         |
+| :------------ | :-------------- | :------- | :-------------------------------------------------- |
+| align         | [`enum`](#enum) | `"left"` | The align of text in the TableCell.                 |
+| children      | `React.Node`    |          | The content of the TableCell.                       |
+| dataTest      | `string`        |          | Optional prop for testing purposes.                 |
+| verticalAlign | [`enum`](#enum) |          | The vertical align of the content in the TableCell. |
+| whiteSpace    | [`enum`](#enum) |          | The white-space setting of text in the TableCell.   |
 
 #### enum
 
-| align      |
-| :--------- |
-| `"left"`   |
-| `"center"` |
-| `"right"`  |
+| align      | whiteSpace   | VerticalAlign   |
+| :--------- | :----------- | --------------- |
+| `"left"`   | `"nowrap"`   | `"nowrap"`      |
+| `"center"` | `"pre"`      | `"sub"`         |
+| `"right"`  | `"pre-line"` | `"super"`       |
+|            |              | `"text-top"`    |
+|            |              | `"text-bottom"` |
+|            |              | `"middle"`      |
+|            |              | `"top"`         |
+|            |              | `"bottom"`      |
 
 ### TableFooter
 

@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { boolean, text, select } from "@storybook/addon-knobs";
 
-import ALIGN_OPTIONS from "./TableCell/consts";
+import { ALIGN_OPTIONS, ALIGN_V_OPTIONS, WHITE_SPACE } from "./TableCell/consts";
 import TYPE_OPTIONS from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -116,43 +116,89 @@ storiesOf("Table", module)
       const children = text("children", "Lorem ipsum dolor sit amet");
       const dataTest = text("dataTest", "test");
       const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
+      const verticalAlign = select(
+        "vertical align",
+        Object.values(ALIGN_V_OPTIONS),
+        ALIGN_V_OPTIONS.BASELINE,
+      );
+      const whiteSpace = select("white space", Object.values(WHITE_SPACE), WHITE_SPACE.NOWRAP);
       const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
       return (
         <Table type={type} compact={compact} dataTest={dataTest}>
           <TableHead>
             <TableRow>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
             </TableRow>
           </TableBody>
           <TableFooter>
             <TableRow>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
-              <TableCell align={align}>{children}</TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
+              <TableCell whiteSpace={whiteSpace} verticalAlign={verticalAlign} align={align}>
+                {children}
+              </TableCell>
             </TableRow>
           </TableFooter>
         </Table>

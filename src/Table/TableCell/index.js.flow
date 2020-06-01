@@ -5,10 +5,22 @@ import type { ReactComponentStyled } from "styled-components";
 import type { Globals } from "../../common/common.js.flow";
 
 type Align = "left" | "center" | "right";
+type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
+type VerticalAlign =
+  | "baseline"
+  | "sub"
+  | "super"
+  | "text-top"
+  | "text-bottom"
+  | "middle"
+  | "top"
+  | "bottom";
 
 export type Props = {|
   +children?: React$Node,
   +align?: Align,
+  +whiteSpace?: WhiteSpace,
+  +verticalAlign?: VerticalAlign,
   ...Globals,
 |};
 

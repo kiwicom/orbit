@@ -11,6 +11,7 @@ import typeof TableFooterType from "./TableFooter/index.js.flow";
 
 export type Props = {|
   +type?: "primary" | "secondary",
+  +striped?: boolean,
   +compact?: boolean,
   +children: React$Node,
   ...Globals,

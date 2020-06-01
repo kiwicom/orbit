@@ -2,12 +2,12 @@
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
-import { TOKENS } from "../consts";
+import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import type { GetButtonLinkStyles } from "./getButtonLinkStyles";
 
-const getButtonLinkBoxShadow = (state, disabled, theme) => {
-  if (disabled) {
+const getButtonLinkBoxShadow = (state, disabled, theme, type) => {
+  if (disabled || type === TYPES.INLINE) {
     return null;
   }
   if (state === BUTTON_STATES.ACTIVE) {
@@ -18,7 +18,7 @@ const getButtonLinkBoxShadow = (state, disabled, theme) => {
 
 const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled }) => {
   const wrappedTypeToken = name => getButtonLinkTypeToken(name, type, theme);
-  const wrappedBoxShadow = state => getButtonLinkBoxShadow(state, disabled, theme);
+  const wrappedBoxShadow = state => getButtonLinkBoxShadow(state, disabled, theme, type);
   return {
     background: wrappedTypeToken(TOKENS.background),
     backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
@@ -30,6 +30,7 @@ const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled }) => 
     foreground: wrappedTypeToken(TOKENS.foreground),
     foregroundHover: wrappedTypeToken(TOKENS.foregroundHover),
     foregroundActive: wrappedTypeToken(TOKENS.foregroundActive),
+    foregroundFocus: wrappedTypeToken(TOKENS.foregroundActive),
   };
 };
 

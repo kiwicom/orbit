@@ -56,10 +56,6 @@ const FakeInput = styled(({ children, className }) => <div className={className}
           error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
         }`};
   }
-
-  ${StyledButtonPrimitive}:active {
-    box-shadow: none;
-  }
 `;
 
 FakeInput.defaultProps = {
@@ -105,16 +101,6 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const CloseButton = styled.div`
-  & svg {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
-  }
-`;
-
-CloseButton.defaultProps = {
-  theme: defaultTheme,
-};
-
 const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     placeholder = "No file selected",
@@ -148,19 +134,16 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           {props.fileName || placeholder}
         </StyledFileInput>
         {props.fileName && (
-          <CloseButton>
-            <ButtonLink
-              type="secondary"
-              transparent
-              iconLeft={<CloseCircle />}
-              onClick={ev => {
-                ev.preventDefault();
-                if (onRemoveFile) {
-                  onRemoveFile();
-                }
-              }}
-            />
-          </CloseButton>
+          <ButtonLink
+            type="inline"
+            iconLeft={<CloseCircle />}
+            onClick={ev => {
+              ev.preventDefault();
+              if (onRemoveFile) {
+                onRemoveFile();
+              }
+            }}
+          />
         )}
       </FakeInput>
       {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}

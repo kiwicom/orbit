@@ -329,7 +329,6 @@ const ModalCloseButton = ({ onClick, dataTest }) => {
       onClick={onClick}
       size="normal"
       iconLeft={<Close />}
-      transparent
       dataTest={dataTest}
       type="secondary"
       title={translate("button_close")}

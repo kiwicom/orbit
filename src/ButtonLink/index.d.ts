@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ButtonLink";
 
-type Type = "primary" | "secondary";
+type Type = "primary" | "secondary" | "critical" | "inline";
 
 export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly children?: React.ReactNode;
@@ -26,7 +26,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly iconRight?: React.ReactNode;
   readonly circled?: boolean;
   readonly submit?: boolean;
-  readonly transparent?: boolean;
+  readonly compact?: boolean;
   readonly tabIndex?: string;
   readonly ariaExpanded?: boolean;
   readonly ariaControls?: string;

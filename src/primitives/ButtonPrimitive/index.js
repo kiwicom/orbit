@@ -14,6 +14,12 @@ import mq from "../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
+const iconContainerColor = (color: ?string, important = true) => css`
+  ${StyledButtonPrimitiveIconContainer} {
+    color: ${color} ${important && "!important"};
+  }
+`;
+
 export const StyledButtonPrimitive = styled(
   ({
     asComponent = "button",
@@ -77,6 +83,7 @@ export const StyledButtonPrimitive = styled(
     icons,
     foregroundHover,
     foregroundActive,
+    foregroundFocus,
     backgroundHover,
     backgroundActive,
     backgroundFocus,
@@ -116,9 +123,7 @@ export const StyledButtonPrimitive = styled(
       border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
     `)}
 
-    ${StyledButtonPrimitiveIconContainer} {
-      color: ${icons && icons.foreground};
-    }
+    ${iconContainerColor(icons && icons.foreground, false)};
 
     ${StyledSpinner} {
       width: ${icons && icons.width};
@@ -129,12 +134,9 @@ export const StyledButtonPrimitive = styled(
       ${!disabled &&
       css`
         background: ${backgroundHover};
-        color: ${foregroundHover};
+        color: ${foregroundHover}!important;
         box-shadow: ${boxShadowHover};
-
-        ${StyledButtonPrimitiveIconContainer} {
-          color: ${icons && icons.foregroundHover};
-        }
+        ${iconContainerColor(icons && icons.foregroundHover)};
       `};
     }
 
@@ -143,26 +145,30 @@ export const StyledButtonPrimitive = styled(
       css`
         background: ${backgroundActive};
         box-shadow: ${boxShadowActive};
-        color: ${foregroundActive};
-        ${StyledButtonPrimitiveIconContainer} {
-          color: ${icons && icons.foregroundActive};
-        }
+        color: ${foregroundActive}!important;
+        ${iconContainerColor(icons && icons.foregroundActive)};
       `};
     }
 
     :focus {
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
+      color: ${foregroundFocus}!important;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
 
     :focus:not(:focus-visible) {
       box-shadow: none;
       background: ${background};
+      color: ${foregroundFocus}!important;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
     :-moz-focusring,
     :focus-visible {
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
+      color: ${foregroundFocus}!important;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
   `}};
 `;

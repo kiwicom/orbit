@@ -3,6 +3,7 @@ export const TYPES = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
   CRITICAL: "critical",
+  INLINE: "inline",
 };
 
 export const TOKENS = {

@@ -44,6 +44,7 @@ export type IconForeground = {|
   +foreground?: ?string,
   +foregroundHover?: ?string,
   +foregroundActive?: ?string,
+  +foregroundFocus?: ?string,
 |};
 
 export type IconProps = {|

@@ -49,6 +49,9 @@ export type Props = {|
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onSelect?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onMouseUp?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +onMouseDown?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
   +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
 |};

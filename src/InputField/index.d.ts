@@ -40,6 +40,9 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly onChange?: InputEvent;
   readonly onFocus?: InputEvent;
   readonly onBlur?: InputEvent;
+  readonly onSelect?: InputEvent;
+  readonly onMouseUp?: InputEvent;
+  readonly onMouseDown?: InputEvent;
   readonly onKeyDown?: KeyboardEvent;
   readonly onKeyUp?: KeyboardEvent;
 }

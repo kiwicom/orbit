@@ -429,6 +429,10 @@ storiesOf("InputField", module)
           onChange={action("change")}
           onFocus={action("focus")}
           onBlur={action("blur")}
+          onMouseUp={action("onMouseUp")}
+          onMouseDown={action("onMouseDown")}
+          onSelect={action("onSelect")}
+          onKeyDown={action("onKeyDown")}
           spaceAfter={spaceAfter}
           id={id}
           inputMode={inputMode}

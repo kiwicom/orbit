@@ -301,6 +301,9 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     onChange,
     onFocus,
     onBlur,
+    onSelect,
+    onMouseUp,
+    onMouseDown,
     onKeyUp,
     onKeyDown,
     placeholder,
@@ -349,6 +352,9 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           onBlur={onBlur}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
+          onSelect={onSelect}
+          onMouseUp={onMouseUp}
+          onMouseDown={onMouseDown}
           name={name}
           type={type}
           value={value}

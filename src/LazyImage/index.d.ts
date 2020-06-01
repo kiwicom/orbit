@@ -9,8 +9,9 @@ import * as Common from "../common/common";
 declare module "@kiwicom/orbit-components/lib/LazyImage";
 
 interface Image {
-  jpg: string;
-  webp: string;
+  "*"?: string;
+  jpg?: string;
+  webp?: string;
 }
 
 export interface Props {

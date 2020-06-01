@@ -9,6 +9,7 @@ import type { Props, PictureProps } from ".";
 const FORMATS = {
   WEBP: "webp",
   JPEG: "jpg",
+  ANY: "*",
 };
 
 export const StyledLazyImage = styled.div`
@@ -38,6 +39,7 @@ const getPictureType = picture => {
   const TYPES = {
     [FORMATS.WEBP]: "image/webp",
     [FORMATS.JPEG]: "image/jpg",
+    [FORMATS.ANY]: "image",
   };
   return TYPES[picture];
 };
@@ -46,8 +48,10 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
   <picture>
     {Object.keys(pictures).map(picture => (
       <React.Fragment key={picture}>
-        <source srcSet={pictures[picture]} type={getPictureType(picture)} />
-        {picture === "jpg" && (
+        {picture !== FORMATS.ANY && (
+          <source srcSet={pictures[picture]} type={getPictureType(picture)} />
+        )}
+        {(picture === "jpg" || picture === "*") && (
           <Image
             onLoad={onLoad}
             src={pictures[picture]}

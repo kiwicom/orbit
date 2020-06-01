@@ -7,7 +7,11 @@ type Image = {|
   +placeholder?: string,
   +name: string,
   +code: string,
-  +src?: string,
+|};
+
+type ImageCustom = {|
+  +name: string,
+  +src: string,
 |};
 
 export type Props = {|
@@ -17,7 +21,7 @@ export type Props = {|
   +label?: React$Node,
   +title?: React$Node,
   +subTitle?: React$Node,
-  +image: Image,
+  +image: Image | ImageCustom,
   +height?: string,
   +width?: string,
   +href?: string,

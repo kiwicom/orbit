@@ -7,12 +7,24 @@ import type { Globals } from "../../common/common.js.flow";
 type Align = "left" | "center" | "right";
 type As = "th" | "td";
 type Scope = "col" | "row" | "colgroup" | "rowgroup";
+type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
+type VerticalAlign =
+  | "baseline"
+  | "sub"
+  | "super"
+  | "text-top"
+  | "text-bottom"
+  | "middle"
+  | "top"
+  | "bottom";
 
 export type Props = {|
   +children?: React$Node,
   +align?: Align,
   +as?: As,
   +scope?: Scope,
+  +whiteSpace?: WhiteSpace,
+  +verticalAlign?: VerticalAlign,
   ...Globals,
 |};
 

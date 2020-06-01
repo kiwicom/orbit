@@ -23,7 +23,7 @@ Table below contains all types of the props available in ButtonLink component.
 | asComponent  | `string | () => React.Element` | `"button"`  | The component used for the root node.                                                                                                           |
 | circled      | `boolean`                      | `false`     | If `true`, the ButtonLink will have circular shape.                                                                                             |
 | children     | `React.Node`                   |             | The content of the ButtonLink. [See Functional specs](#functional-specs)                                                                        |
-| compact  | `boolean`                      | `false`     | If `true`, the ButtonLink will not have horizontal paddings.
+| compact      | `boolean`                      | `false`     | If `true`, the ButtonLink will not have horizontal paddings.                                                                                    |
 | disabled     | `boolean`                      | `false`     | If `true`, the ButtonLink will be disabled.                                                                                                     |
 | dataTest     | `string`                       |             | Optional prop for testing purposes.                                                                                                             |
 | external     | `boolean`                      | `false`     | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)                                                    |
@@ -49,7 +49,7 @@ Table below contains all types of the props available in ButtonLink component.
 | `"primary"`   | `"small"`  |
 | `"secondary"` | `"normal"` |
 | `"critical"`  | `"large"`  |
-| `"inline"`  |   |
+| `"inline"`    |            |
 
 ## Functional specs
 

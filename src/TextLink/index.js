@@ -17,15 +17,6 @@ const getColor = ({ theme, type }) => {
   return tokens[type];
 };
 
-const getFocusColor = ({ theme, type }) => {
-  const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 10),
-    [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
-  };
-
-  return tokens[type];
-};
-
 const getSizeToken = () => ({ theme, size }) => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
@@ -53,32 +44,26 @@ IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-export const getLinkStyle = ({
-  theme,
-  type,
-}: GetLinkStyleProps) => css` // Common styles for TextLink and "a" in Text
+export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
+  // Common styles for TextLink and "a" in Text
 
-  &, &:link, &:visited {
+  &,
+  &:link,
+  &:visited {
     color: ${getColor({ theme, type })};
-    text-decoration: ${
-      type === TYPE_OPTIONS.SECONDARY
-        ? theme.orbit.textDecorationTextLinkSecondary
-        : theme.orbit.textDecorationTextLinkPrimary
-    };
-      font-weight: ${theme.orbit.fontWeightLinks};
+    text-decoration: ${type === TYPE_OPTIONS.SECONDARY
+      ? theme.orbit.textDecorationTextLinkSecondary
+      : theme.orbit.textDecorationTextLinkPrimary};
+    font-weight: ${theme.orbit.fontWeightLinks};
   }
 
-  &:hover, &:active {
-    text-decoration: ${
-      type === TYPE_OPTIONS.SECONDARY
-        ? theme.orbit.textDecorationTextLinkSecondaryHover
-        : theme.orbit.textDecorationTextLinkPrimaryHover
-    };
-      color: ${
-        type === TYPE_OPTIONS.SECONDARY
-          ? theme.orbit.colorTextLinkSecondaryHover
-          : theme.orbit.colorTextLinkPrimaryHover
-      };
+  :hover,
+  :active,
+  :focus {
+    outline: none;
+    text-decoration: none;
+    color: ${theme.orbit.paletteProductNormalHover};
+  }
 `;
 
 export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...props }) => (
@@ -98,21 +83,6 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
       type === TYPE_OPTIONS.SECONDARY
         ? theme.orbit.colorTextLinkSecondaryHover
         : theme.orbit.colorTextLinkPrimaryHover};
-  }
-  }
-  :focus {
-    outline: none;
-    background: ${getFocusColor};
-    box-shadow: 0 0 0 4px ${getFocusColor};
-  }
-  :focus:not(:focus-visible) {
-    background: ${getFocusColor};
-    box-shadow: 0 0 0 4px ${getFocusColor}
-  }
-  :-moz-focusring,
-  :focus-visible {
-    background: ${getFocusColor};
-    box-shadow: 0 0 0 4px ${getFocusColor};
   }
 `;
 

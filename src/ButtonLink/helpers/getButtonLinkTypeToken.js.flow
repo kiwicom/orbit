@@ -6,7 +6,6 @@ type Name =
   | "background"
   | "backgroundHover"
   | "backgroundActive"
-  | "backgroundFocus"
   | "foreground"
   | "foregroundHover"
   | "foregroundActive";

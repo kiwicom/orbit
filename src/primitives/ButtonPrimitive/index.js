@@ -91,6 +91,7 @@ export const StyledButtonPrimitive = styled(
     boxShadowHover,
     boxShadowFocus,
     boxShadowActive,
+    underlined,
   }) => css`
     height: ${height};
     position: relative;
@@ -99,7 +100,7 @@ export const StyledButtonPrimitive = styled(
     align-items: center;
     box-sizing: border-box;
     appearance: none;
-    text-decoration: none;
+    text-decoration: ${underlined ? "underline" : "none"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
     max-width: 100%; // to ensure that Buttons content wraps in IE
     background: ${background};
@@ -136,6 +137,7 @@ export const StyledButtonPrimitive = styled(
         background: ${backgroundHover};
         color: ${foregroundHover}!important;
         box-shadow: ${boxShadowHover};
+        text-decoration: none;
         ${iconContainerColor(icons && icons.foregroundHover)};
       `};
     }
@@ -146,6 +148,7 @@ export const StyledButtonPrimitive = styled(
         background: ${backgroundActive};
         box-shadow: ${boxShadowActive};
         color: ${foregroundActive}!important;
+        text-decoration: none;
         ${iconContainerColor(icons && icons.foregroundActive)};
       `};
     }
@@ -154,6 +157,7 @@ export const StyledButtonPrimitive = styled(
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
       color: ${foregroundFocus}!important;
+      text-decoration: none;
       ${iconContainerColor(icons && icons.foregroundFocus)};
     }
 
@@ -161,6 +165,7 @@ export const StyledButtonPrimitive = styled(
       box-shadow: none;
       background: ${background};
       color: ${foregroundFocus}!important;
+      text-decoration: none;
       ${iconContainerColor(icons && icons.foregroundFocus)};
     }
     :-moz-focusring,
@@ -168,6 +173,7 @@ export const StyledButtonPrimitive = styled(
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
       color: ${foregroundFocus}!important;
+      text-decoration: none;
       ${iconContainerColor(icons && icons.foregroundFocus)};
     }
   `}};

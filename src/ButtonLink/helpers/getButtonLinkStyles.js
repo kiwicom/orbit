@@ -1,37 +1,25 @@
 // @flow
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
-import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import type { GetButtonLinkStyles } from "./getButtonLinkStyles";
 
-const getButtonLinkBoxShadow = (state, disabled, theme, type) => {
-  if (disabled || type === TYPES.INLINE) {
-    return null;
-  }
-  if (state === BUTTON_STATES.ACTIVE) {
-    return `inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkNormal, 8)}`;
-  }
-  return null;
-};
-
-const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, disabled }) => {
+const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme }) => {
   const wrappedTypeToken = name => getButtonLinkTypeToken(name, type, theme);
-  const wrappedBoxShadow = state => getButtonLinkBoxShadow(state, disabled, theme, type);
-  return {
+  const base = {
     background: wrappedTypeToken(TOKENS.background),
     backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
     backgroundActive: wrappedTypeToken(TOKENS.backgroundActive),
-    backgroundFocus: wrappedTypeToken(TOKENS.backgroundFocus),
-    boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
-    boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),
-    boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
+    backgroundFocus: wrappedTypeToken(TOKENS.backgroundActive),
     foreground: wrappedTypeToken(TOKENS.foreground),
     foregroundHover: wrappedTypeToken(TOKENS.foregroundHover),
     foregroundActive: wrappedTypeToken(TOKENS.foregroundActive),
     foregroundFocus: wrappedTypeToken(TOKENS.foregroundActive),
   };
+  if (type === TYPES.INLINE) {
+    return { ...base, underlined: true };
+  }
+  return base;
 };
 
 export default getButtonLinkStyles;

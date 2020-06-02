@@ -82,12 +82,6 @@
       }
     }
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn prettier:fix"
-    }
-  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "kiwi.com",

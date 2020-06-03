@@ -2,9 +2,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { mediaQueries } from "../index";
+import mediaQueries from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
-import useTheme from "../hooks/useTheme";
+import * as rtl from "../utils/rtl";
 
 const domElements = [
   "a",
@@ -145,37 +145,45 @@ const domElements = [
   "text",
   "tspan",
 ];
-const defaultBlockList = Object.keys(mediaQueries);
+const defaultBlockList = ["css", "rtl", "theme", ...Object.keys(mediaQueries)];
 
 const filterProps = (props, blockList = []) => {
   const componentBlockList = [...blockList, ...defaultBlockList];
-  console.log(
-    componentBlockList.filter(k => {
-      console.log(k, props, k in props);
-    }),
+  return Object.assign(
+    {},
+    ...Object.keys(props).map(v => (componentBlockList.indexOf(v) !== -1 ? {} : { [v]: props[v] })),
   );
-  return Object.assign({}, ...componentBlockList.filter(k => k in props));
 };
 
-const orbitConstructor = (styles, options) => {
-  const { attrs, as, blockList } = options;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const theme = useTheme();
-  const innerProps = props => ({ ...props, theme, ...mediaQueries, css });
-  const component = styled(({ as: Component = "div", ...props }) => {
-    // filter mediaQueries, css and theme from DOM
-    return <Component {...filterProps(innerProps(props), blockList)} />;
-  });
-  if (attrs) {
-  }
-  return component(props => styles(innerProps(props)));
+const createMediaQueries = Object.assign(
+  {},
+  ...Object.keys(mediaQueries).map(mq => ({
+    /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
+     * v0.115.0. To view the error, delete this comment and run Flow. */
+    [mq]: (...styles) => mediaQueries[mq](css(...styles)),
+  })),
+);
+
+const orbitConstructor = (styles, options = () => ({}), tag = "div") => {
+  const componentTemplate = styled(props => {
+    const { attrs, as = tag, blockList } = options(props);
+    // type check for as if validElementType (string) (react-is, isValidElementType);
+    const { as: Component = as } = props;
+    return <Component {...filterProps(props, blockList)} {...attrs} />;
+  })(props => styles(props));
+  componentTemplate.defaultProps = {
+    theme: defaultTheme,
+    ...createMediaQueries,
+    css,
+    rtl,
+  };
+  return componentTemplate;
 };
 
-const orbit = styles => orbitConstructor(styles, { as: "div" });
+const orbit = (styles, options) => orbitConstructor(styles, options);
 
 domElements.forEach(domElement => {
-  orbit[domElement] = (styles, options) =>
-    orbitConstructor(styles, { as: domElement, ...options() });
+  orbit[domElement] = (styles, options) => orbitConstructor(styles, options, domElement);
 });
 
 export default orbit;

@@ -147,7 +147,13 @@ const domElements = [
 ];
 const defaultBlockList = ["css", "rtl", "theme", ...Object.keys(mediaQueries)];
 
-const filterProps = (props, blockList = []) => {
+// camelCase props needs to be converted to kebab-case
+const defaultAllowedList = ["className", "children", "dataTest"];
+
+const filterProps = (props, blockList = [], allowOnly = false) => {
+  if (allowOnly) {
+    return Object.assign({}, ...defaultAllowedList.map(k => (k in props ? { [k]: props[k] } : {})));
+  }
   const componentBlockList = [...blockList, ...defaultBlockList];
   return Object.assign(
     {},
@@ -166,10 +172,10 @@ const createMediaQueries = Object.assign(
 
 const orbitConstructor = (styles, options = () => ({}), tag = "div") => {
   const componentTemplate = styled(props => {
-    const { attrs, as = tag, blockList } = options(props);
+    const { attrs, as = tag, blockList, allowOnly } = options(props);
     // type check for as if validElementType (string) (react-is, isValidElementType);
     const { as: Component = as } = props;
-    return <Component {...filterProps(props, blockList)} {...attrs} />;
+    return <Component {...filterProps(props, blockList, allowOnly)} {...attrs} />;
   })(props => styles(props));
   componentTemplate.defaultProps = {
     theme: defaultTheme,

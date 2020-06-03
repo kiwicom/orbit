@@ -1,8 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
 import Loading, { StyledSpinner } from "../../Loading";
 import getSpacingToken from "../../common/getSpacingToken";
 import ButtonPrimitiveContent from "./components/ButtonPrimitiveContent";
@@ -10,55 +8,12 @@ import ButtonPrimitiveIconContainer, {
   StyledButtonPrimitiveIconContainer,
 } from "./components/ButtonPrimitiveIconContainer";
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
+import orbited from "../../core";
 
 import type { Props } from "./index";
 
-export const StyledButtonPrimitive = styled(
+export const StyledButtonPrimitive = orbited(
   ({
-    asComponent = "button",
-    dataTest,
-    submit,
-    disabled,
-    forwardedRef,
-    ariaControls,
-    ariaExpanded,
-    title,
-    className,
-    rel,
-    href,
-    target,
-    external,
-    tabIndex,
-    onClick,
-    role,
-    ...props
-  }) => {
-    const isButtonWithHref = asComponent === "button" && href;
-    const Component = isButtonWithHref ? "a" : asComponent;
-    const buttonType = submit ? "submit" : "button";
-    return (
-      <Component
-        ref={forwardedRef}
-        data-test={dataTest}
-        aria-controls={ariaControls}
-        aria-expanded={ariaExpanded}
-        aria-label={title}
-        type={!isButtonWithHref ? buttonType : undefined}
-        className={className}
-        disabled={disabled}
-        href={!disabled ? href : null}
-        target={!disabled && href && external ? "_blank" : undefined}
-        rel={!disabled && href && external ? "noopener noreferrer" : undefined}
-        tabIndex={tabIndex}
-        onClick={onClick}
-        role={role}
-      >
-        {props.children}
-      </Component>
-    );
-  },
-)`
-  ${({
     foreground,
     disabled,
     fullWidth,
@@ -83,6 +38,7 @@ export const StyledButtonPrimitive = styled(
     boxShadowHover,
     boxShadowFocus,
     boxShadowActive,
+    css,
   }) => css`
     height: ${height};
     position: relative;
@@ -159,12 +115,41 @@ export const StyledButtonPrimitive = styled(
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
     }
-  `}};
-`;
-
-StyledButtonPrimitive.defaultProps = {
-  theme: defaultTheme,
-};
+  `,
+  ({
+    asComponent,
+    href,
+    submit,
+    role,
+    tabIndex,
+    disabled,
+    external,
+    ariaControls,
+    ariaExpanded,
+    title,
+    dataTest,
+  }) => {
+    const isButtonWithHref = asComponent === "button" && href;
+    const buttonType = submit ? "submit" : "button";
+    return {
+      as: isButtonWithHref ? "a" : asComponent,
+      allowOnly: true,
+      attrs: {
+        type: !isButtonWithHref ? buttonType : undefined,
+        role,
+        tabIndex,
+        disabled,
+        href: !disabled ? href : null,
+        target: !disabled && href && external ? "_blank" : undefined,
+        rel: !disabled && href && external ? "noopener noreferrer" : undefined,
+        ariaControls,
+        ariaExpanded,
+        ariaLabel: title,
+        dataTest,
+      },
+    };
+  },
+);
 
 const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {

@@ -1,23 +1,8 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { text, number, boolean, select } from "@storybook/addon-knobs";
 
 import orbited from "./index";
-
-/* const StyledDiv = orbited.div(
-  ({ css }) => css`
-    color: green;
-  `,
-  () => ({
-    as: props => {
-      console.log(props);
-      return <ol {...props} />;
-    },
-    blockList: ["type"],
-  }),
-); */
 
 storiesOf("core", module)
   .add(

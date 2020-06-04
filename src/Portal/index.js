@@ -4,39 +4,29 @@ import ReactDOM from "react-dom";
 
 import type { Props } from "./index";
 
-export default class Portal extends React.Component<Props> {
-  node: ?HTMLElement;
+const Portal = ({ renderInto, children }: Props) => {
+  const el = React.useRef(document.createElement("div"));
+  const node = React.useRef(
+    renderInto && document.getElementById(renderInto)
+      ? document.getElementById(renderInto)
+      : document.body,
+  );
 
-  el: ?HTMLElement;
-
-  constructor(props: Props) {
-    super(props);
-    if (typeof window !== "undefined") {
-      this.node =
-        this.props.renderInto && document.getElementById(this.props.renderInto)
-          ? document.getElementById(this.props.renderInto)
-          : document.body;
-      this.el = document.createElement("div");
+  React.useEffect(() => {
+    if (node.current && el.current) {
+      node.current.appendChild(el.current);
     }
-  }
+    return () => {
+      if (node.current && el.current) {
+        node.current.removeChild(el.current);
+      }
+    };
+  }, []);
 
-  componentDidMount() {
-    if (this.node && this.el) {
-      this.node.appendChild(this.el);
-    }
+  if (typeof window !== "undefined" && el.current) {
+    return ReactDOM.createPortal(children, el.current);
   }
+  return null;
+};
 
-  componentWillUnmount() {
-    if (this.node && this.el) {
-      this.node.removeChild(this.el);
-    }
-  }
-
-  render() {
-    const { children } = this.props;
-    if (typeof window !== "undefined" && this.el) {
-      return ReactDOM.createPortal(children, this.el);
-    }
-    return null;
-  }
-}
+export default Portal;

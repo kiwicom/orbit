@@ -9,6 +9,7 @@ const QueryContext: QueryContextType = React.createContext({
   isLargeMobile: null,
   isMediumMobile: null,
   isTablet: null,
+  prefersReducedMotion: null,
 });
 
 export default QueryContext;

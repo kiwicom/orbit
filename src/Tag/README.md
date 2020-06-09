@@ -35,6 +35,6 @@ Table below contains all types of the props available in the Tag component.
 
 ## Functional specs
 
-- By passing either the `onRemove` or `selected` the close icon will appear on the right side of the Tag.
+- By passing either the `onRemove` or `selected` the close icon will appear on the left side of the Tag.
 
 - If the Tag has `selected` prop, you need to pass `onRemove` function to able to handle the click on the close icon.

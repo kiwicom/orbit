@@ -21,6 +21,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;
   readonly tabIndex?: string;
+  readonly insideInputGroup?: boolean;
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;

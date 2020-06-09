@@ -12,6 +12,8 @@ export type Props = {|
   +flex?: string | Array<string>,
   +size?: "small" | "normal",
   +children: React$Node,
+  +error?: React$Node,
+  +help?: React$Node,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
@@ -19,6 +21,9 @@ export type Props = {|
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
   +onBlur?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +onBlurGroup?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,
 |};

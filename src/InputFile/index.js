@@ -145,7 +145,11 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
         data-test={dataTest}
-        data-state={insideInputGroup ? undefined : getFieldDataState(!!props.error)}
+        data-state={
+          insideInputGroup && typeof error === "undefined"
+            ? undefined
+            : getFieldDataState(!!props.error)
+        }
         type="file"
         name={name}
         error={error}
@@ -192,14 +196,16 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           </CloseButton>
         )}
       </FakeInput>
-      <FormFeedback
-        help={help}
-        error={error}
-        iconRef={iconRef}
-        labelRef={labelRef}
-        tooltipShown={tooltipShown}
-        tooltipShownHover={tooltipShownHover}
-      />
+      {!insideInputGroup && (
+        <FormFeedback
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          tooltipShown={tooltipShown}
+          tooltipShownHover={tooltipShownHover}
+        />
+      )}
     </Field>
   );
 });

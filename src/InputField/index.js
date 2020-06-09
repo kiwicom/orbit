@@ -338,6 +338,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     handleFocus,
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
+
   return (
     <Field
       component={label ? "label" : "div"}
@@ -396,7 +397,11 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         )}
         <Input
           data-test={dataTest}
-          data-state={insideInputGroup ? undefined : getFieldDataState(!!error)}
+          data-state={
+            insideInputGroup && typeof error === "undefined"
+              ? undefined
+              : getFieldDataState(!!error)
+          }
           onChange={onChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
@@ -412,7 +417,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           minLength={minLength}
           maxLength={maxLength}
           size={size}
-          error={error}
+          error={insideInputGroup ? undefined : error}
           ref={ref}
           tabIndex={tabIndex}
           inlineLabel={inlineLabel}
@@ -426,15 +431,17 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      <FormFeedback
-        help={help}
-        error={error}
-        iconRef={iconRef}
-        labelRef={labelRef}
-        tooltipShown={tooltipShown}
-        inlineLabel={inlineLabel}
-        tooltipShownHover={tooltipShownHover}
-      />
+      {!insideInputGroup && (
+        <FormFeedback
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          tooltipShown={tooltipShown}
+          inlineLabel={inlineLabel}
+          tooltipShownHover={tooltipShownHover}
+        />
+      )}
     </Field>
   );
 });

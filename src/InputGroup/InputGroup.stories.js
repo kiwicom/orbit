@@ -49,8 +49,16 @@ storiesOf("InputGroup", module)
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          onBlurGroup={action("onBlurGroup")}
         >
-          <InputField placeholder="DD" error={error} help={help} />
+          <InputField
+            placeholder="DD"
+            error={error}
+            help={help}
+            onBlur={action("onBlurIn")}
+            onFocus={action("onFocusIn")}
+            onChange={action("onChangeIn")}
+          />
           <Select options={selectOptions} value={selectValue} placeholder="Month" />
           <InputField placeholder="YYYY" />
         </InputGroup>
@@ -64,7 +72,7 @@ storiesOf("InputGroup", module)
     "Phone number",
     () => {
       const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
-      const error = text("Error", "error");
+      const error = text("Error", undefined);
       const help = text("Help", undefined);
       const selectOptions = [
         { value: 0, label: "Czech Republic (+420)" },
@@ -104,7 +112,7 @@ storiesOf("InputGroup", module)
     },
   )
   .add("Error", () => {
-    const label = text("Label", "Error");
+    const label = text("Label", "Label");
     const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
     const error = text("Error", "Something went wrong on day field");
     const help = text("Help", undefined);
@@ -148,6 +156,58 @@ storiesOf("InputGroup", module)
       </InputGroup>
     );
   })
+  .add(
+    "Validation approches",
+    () => {
+      const inputValue = text("Input Value", undefined);
+      const errorGroup = text("Error on group", "Something went wrong on day field");
+      const helpGroup = text("Help", undefined);
+      const errorSingleField = text("Error inside element", "Something went wrong on day field");
+      const helpSingleField = text("Help inside element", undefined);
+
+      return (
+        <div>
+          <InputGroup
+            label="Events and states on group"
+            onChange={action("onChange Group a+b")}
+            onFocus={action("onFocus Group a+b")}
+            onBlur={action("onBlur Group a+b")}
+            error={errorGroup}
+            help={helpGroup}
+          >
+            <InputField placeholder="a" maxLength={11} value={inputValue} />
+            <InputField placeholder="b" maxLength={11} value={inputValue} />
+          </InputGroup>
+
+          <InputGroup label="Events andd states on children" error={errorGroup}>
+            <InputField
+              placeholder="c"
+              maxLength={11}
+              value={inputValue}
+              error={errorSingleField}
+              help={helpSingleField}
+              onChange={action("onChange c")}
+              onFocus={action("onFocus c")}
+              onBlur={action("onBlur c")}
+            />
+            <InputField
+              placeholder="d"
+              maxLength={11}
+              value={inputValue}
+              error={errorSingleField}
+              help={helpSingleField}
+              onChange={action("onChange d")}
+              onFocus={action("onFocus d")}
+              onBlur={action("onBlur d")}
+            />
+          </InputGroup>
+        </div>
+      );
+    },
+    {
+      info: "Some description about this type of InputGroup in general.",
+    },
+  )
   .add(
     "onChange behaviour",
     () => {

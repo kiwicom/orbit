@@ -181,6 +181,9 @@ const InputGroup = ({
   onFocus,
   onBlur,
   onChange,
+  onBlurGroup,
+  error,
+  help,
 }: Props) => {
   const [active, setActive] = useState(false);
   const [filled, setFilled] = useState(false);
@@ -192,8 +195,8 @@ const InputGroup = ({
   const foundErrors = useMemo(() => findPropInChild("error", children), [children]);
   const foundHelp = useMemo(() => findPropInChild("help", children), [children]);
 
-  const error = foundErrors.length > 0 && foundErrors[0];
-  const help = foundHelp.length > 0 && foundHelp[0];
+  const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
+  const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
 
   const isFilled = useCallback(() => setFilled(findPropInChild("value", children).length > 0), [
     children,
@@ -204,42 +207,59 @@ const InputGroup = ({
   }, [isFilled, children]);
 
   const handleFocus = useCallback(
-    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
       setActive(true);
       setTooltipShown(true);
       if (onFocus) onFocus(ev);
+      if (callBack) callBack(ev);
     },
     [onFocus],
   );
 
   const handleBlur = useCallback(
-    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
       isFilled();
       setActive(false);
       setTooltipShown(false);
       if (onBlur) onBlur(ev);
+      if (callBack) callBack(ev);
     },
     [onBlur, isFilled],
   );
 
   const handleChange = useCallback(
-    (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
       isFilled();
       if (onChange) {
         onChange(ev);
       }
+      if (callBack) callBack(ev);
     },
     [onChange, isFilled],
   );
 
+  const handleBlurGroup = ev => {
+    ev.persist();
+    if (onBlurGroup) {
+      setTimeout(() => {
+        setActive(isActive => {
+          if (!isActive) {
+            onBlurGroup(ev);
+          }
+          return isActive;
+        });
+      }, 50);
+    }
+  };
+
   return (
     <StyledInputGroup
       label={label}
-      error={error}
+      error={errorReal}
       active={active}
       size={size}
       dataTest={dataTest}
-      dataState={getFieldDataState(error)}
+      dataState={getFieldDataState(!!errorReal)}
       spaceAfter={spaceAfter}
       role="group"
       ariaLabelledby={label && inputID}
@@ -249,8 +269,8 @@ const InputGroup = ({
         <FormLabel
           filled={filled}
           id={inputID}
-          error={!!error}
-          help={!!help}
+          error={!!errorReal}
+          help={!!helpReal}
           labelRef={labelRef}
           iconRef={iconRef}
           onMouseEnter={() => setTooltipShownHover(true)}
@@ -260,7 +280,7 @@ const InputGroup = ({
         </FormLabel>
       )}
 
-      <StyledChildren>
+      <StyledChildren onBlur={handleBlurGroup}>
         {React.Children.map(children, (item, key) => {
           // either array, array with one length or string
           // if it's not defined, use the first or string
@@ -283,21 +303,27 @@ const InputGroup = ({
                   : null,
                 size,
                 label: undefined,
-                help: undefined,
-                error: null,
-                onChange: item.props.onChange != null ? item.props.onChange : handleChange,
-                onBlur: item.props.onBlur != null ? item.props.onChange : handleBlur,
-                onFocus: item.props.onFocus != null ? item.props.onFocus : handleFocus,
+                help: item.props.help,
+                error: item.props.error,
+                onChange: ev => {
+                  handleChange(ev, item.props.onChange);
+                },
+                onBlur: ev => {
+                  handleBlur(ev, item.props.onBlur);
+                },
+                onFocus: ev => {
+                  handleFocus(ev, item.props.onFocus);
+                },
                 insideInputGroup: true,
               })}
             </StyledChild>
           );
         })}
       </StyledChildren>
-      <FakeGroup label={label} error={error} active={active} size={size} />
+      <FakeGroup label={label} error={errorReal} active={active} size={size} />
       <FormFeedback
-        help={help}
-        error={error}
+        help={helpReal}
+        error={errorReal}
         iconRef={iconRef}
         labelRef={labelRef}
         tooltipShown={tooltipShown}

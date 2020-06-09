@@ -50,7 +50,6 @@ const StyledSelect = styled(
         onFocus,
         onBlur,
         id,
-        insideInputGroup,
         dataAttrs,
       },
       ref,
@@ -58,7 +57,7 @@ const StyledSelect = styled(
       <select
         id={id}
         data-test={dataTest}
-        data-state={insideInputGroup ? undefined : getFieldDataState(error)}
+        data-state={getFieldDataState(error)}
         value={value}
         className={className}
         onChange={onChange}
@@ -335,7 +334,6 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           id={id}
           required={required}
           ref={ref}
-          insideInputGroup={insideInputGroup}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -357,14 +355,16 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           <ChevronDown />
         </SelectSuffix>
       </SelectContainer>
-      <FormFeedback
-        help={help}
-        error={error}
-        iconRef={iconRef}
-        labelRef={labelRef}
-        tooltipShown={tooltipShown}
-        tooltipShownHover={tooltipShownHover}
-      />
+      {!insideInputGroup && (
+        <FormFeedback
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          tooltipShown={tooltipShown}
+          tooltipShownHover={tooltipShownHover}
+        />
+      )}
     </Label>
   );
 });

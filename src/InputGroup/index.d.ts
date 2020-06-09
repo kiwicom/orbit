@@ -21,6 +21,7 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;
+  readonly onBlurGroup?: Event;
 }
 
 interface State {

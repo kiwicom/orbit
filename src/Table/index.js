@@ -64,9 +64,15 @@ const StyledTable = styled.table`
     background-color: ${({ theme }) => theme.orbit.backgroundTable};
     border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
     transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-    &:nth-of-type(even) {
-      background-color: ${({ theme }) => theme.orbit.backgroundTableEven};
-    }
+
+    ${({ striped, theme }) =>
+      striped &&
+      css`
+        &:nth-of-type(even) {
+          background-color: ${theme.orbit.backgroundTableEven};
+        }
+      `}
+
     &:last-child {
       border: 0;
     }
@@ -89,7 +95,13 @@ StyledTable.defaultProps = {
   theme: defaultTheme,
 };
 
-const Table = ({ children, compact = false, dataTest, type = TYPE_OPTIONS.PRIMARY }: Props) => {
+const Table = ({
+  children,
+  striped = true,
+  compact = false,
+  dataTest,
+  type = TYPE_OPTIONS.PRIMARY,
+}: Props) => {
   const [shadows, setShadows] = React.useState(false);
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);
@@ -133,7 +145,7 @@ const Table = ({ children, compact = false, dataTest, type = TYPE_OPTIONS.PRIMAR
       data-test={dataTest}
     >
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <StyledTable compact={compact} type={type} ref={table}>
+        <StyledTable striped={striped} compact={compact} type={type} ref={table}>
           {children}
         </StyledTable>
       </StyledTableInner>

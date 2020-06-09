@@ -40,6 +40,9 @@ Table below contains all types of the props available in InputField component.
 | onFocus      | `event => void \| Promise` |            | Function for handling onFocus event.                                                                                                                |
 | onKeyDown    | `event => void \| Promise` |            | Function for handling onKeyDown event.                                                                                                              |
 | onKeyUp      | `event => void \| Promise` |            | Function for handling onKeyUp event.                                                                                                                |
+| onMouseDown  | `event => void \| Promise` |            | Function for handling onMouseDown event.                                                                                                            |
+| onMouseUp    | `event => void \| Promise` |            | Function for handling onMouseUp event.                                                                                                              |
+| onSelect     | `event => void \| Promise` |            | Function for handling onSelect event.                                                                                                               |
 | placeholder  | `TranslationString`        |            | The placeholder of the InputField.                                                                                                                  |
 | **prefix**   | `React.Node`               |            | The prefix component for the InputField.                                                                                                            |
 | readOnly     | `boolean`                  | `"false"`  | If `true`, the InputField be readOnly.                                                                                                              |

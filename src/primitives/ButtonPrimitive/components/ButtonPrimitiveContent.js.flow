@@ -4,6 +4,8 @@ import * as React from "react";
 export type Props = {|
   +children: React.Node,
   +loading?: boolean,
+  +hasCenteredContent: boolean,
+  +onlyIcon: boolean,
 |};
 
 declare export default React.ComponentType<Props>;

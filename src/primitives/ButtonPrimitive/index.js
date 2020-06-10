@@ -10,6 +10,7 @@ import ButtonPrimitiveIconContainer, {
   StyledButtonPrimitiveIconContainer,
 } from "./components/ButtonPrimitiveIconContainer";
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
+import mq from "../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -98,7 +99,7 @@ export const StyledButtonPrimitive = styled(
     color: ${foreground}!important;
     border: 0;
     padding: ${padding};
-    border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    border-radius: ${circled ? height : "6px"};
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
@@ -110,6 +111,10 @@ export const StyledButtonPrimitive = styled(
     margin-bottom: ${getSpacingToken};
     width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
     box-shadow: ${boxShadow};
+
+    ${mq.tablet(css`
+      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    `)}
 
     ${StyledButtonPrimitiveIconContainer} {
       color: ${icons && icons.foreground};
@@ -179,6 +184,9 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
   const { width, height, leftMargin, rightMargin } = icons;
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
+  const hasCenteredContent = Boolean(
+    (iconLeft && !children) || (children && !(iconLeft || iconRight)),
+  );
   return (
     <StyledButtonPrimitive
       forwardedRef={ref}
@@ -188,13 +196,21 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
       className={undefined}
     >
       {loading && <Loading type="buttonLoader" />}
-      <ButtonPrimitiveContent loading={loading}>
+      <ButtonPrimitiveContent
+        loading={loading}
+        hasCenteredContent={hasCenteredContent}
+        onlyIcon={onlyIcon}
+      >
         {iconLeft && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
-        {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
+        {children && (
+          <ButtonPrimitiveContentChildren hasIcon={Boolean(iconLeft || iconRight)}>
+            {children}
+          </ButtonPrimitiveContentChildren>
+        )}
         {iconRight && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
             {iconRight}

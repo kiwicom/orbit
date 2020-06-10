@@ -12,7 +12,7 @@ export const ModalContext: ModalContextType = React.createContext({
   isInsideModal: false,
   closable: false,
 });
-
+ModalContext.displayName = "ModalOrbitContext";
 export const withModalContext: WithModalContextType = Component => props => (
   <ModalContext.Consumer>
     {

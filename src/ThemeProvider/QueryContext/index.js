@@ -9,6 +9,8 @@ const QueryContext: QueryContextType = React.createContext({
   isLargeMobile: null,
   isMediumMobile: null,
   isTablet: null,
+  prefersReducedMotion: null,
 });
+QueryContext.displayName = "QueryOrbitContext";
 
 export default QueryContext;

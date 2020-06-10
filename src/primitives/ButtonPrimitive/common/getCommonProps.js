@@ -17,7 +17,7 @@ const getCommonProps: GetCommonProps = ({
     ...getSizeToken(size, theme),
     width,
     padding: getPadding(onlyIcon, iconRight, iconLeft, size, theme),
-    fontWeight: theme.orbit.fontWeightBold,
+    fontWeight: theme.orbit.fontWeightMedium,
   };
 };
 

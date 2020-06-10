@@ -96,7 +96,6 @@ const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props
           type="secondary"
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
-          transparent
           title={translate("navigationbar_open_menu")}
         />
       )}

@@ -10,8 +10,15 @@ import ButtonPrimitiveIconContainer, {
   StyledButtonPrimitiveIconContainer,
 } from "./components/ButtonPrimitiveIconContainer";
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
+import mq from "../../utils/mediaQuery";
 
 import type { Props } from "./index";
+
+const iconContainerColor = (color: ?string, important = true) => css`
+  ${StyledButtonPrimitiveIconContainer} {
+    color: ${color} ${important && "!important"};
+  }
+`;
 
 export const StyledButtonPrimitive = styled(
   ({
@@ -76,6 +83,7 @@ export const StyledButtonPrimitive = styled(
     icons,
     foregroundHover,
     foregroundActive,
+    foregroundFocus,
     backgroundHover,
     backgroundActive,
     backgroundFocus,
@@ -83,6 +91,7 @@ export const StyledButtonPrimitive = styled(
     boxShadowHover,
     boxShadowFocus,
     boxShadowActive,
+    underlined,
   }) => css`
     height: ${height};
     position: relative;
@@ -91,14 +100,14 @@ export const StyledButtonPrimitive = styled(
     align-items: center;
     box-sizing: border-box;
     appearance: none;
-    text-decoration: none;
+    text-decoration: ${underlined ? "underline" : "none"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
     max-width: 100%; // to ensure that Buttons content wraps in IE
     background: ${background};
     color: ${foreground}!important;
     border: 0;
     padding: ${padding};
-    border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    border-radius: ${circled ? height : "6px"};
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
@@ -111,9 +120,11 @@ export const StyledButtonPrimitive = styled(
     width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
     box-shadow: ${boxShadow};
 
-    ${StyledButtonPrimitiveIconContainer} {
-      color: ${icons && icons.foreground};
-    }
+    ${mq.tablet(css`
+      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
+    `)}
+
+    ${iconContainerColor(icons && icons.foreground, false)};
 
     ${StyledSpinner} {
       width: ${icons && icons.width};
@@ -124,12 +135,10 @@ export const StyledButtonPrimitive = styled(
       ${!disabled &&
       css`
         background: ${backgroundHover};
-        color: ${foregroundHover};
+        color: ${foregroundHover}!important;
         box-shadow: ${boxShadowHover};
-
-        ${StyledButtonPrimitiveIconContainer} {
-          color: ${icons && icons.foregroundHover};
-        }
+        text-decoration: none;
+        ${iconContainerColor(icons && icons.foregroundHover)};
       `};
     }
 
@@ -138,26 +147,34 @@ export const StyledButtonPrimitive = styled(
       css`
         background: ${backgroundActive};
         box-shadow: ${boxShadowActive};
-        color: ${foregroundActive};
-        ${StyledButtonPrimitiveIconContainer} {
-          color: ${icons && icons.foregroundActive};
-        }
+        color: ${foregroundActive}!important;
+        text-decoration: none;
+        ${iconContainerColor(icons && icons.foregroundActive)};
       `};
     }
 
     :focus {
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
+      color: ${foregroundFocus}!important;
+      text-decoration: none;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
 
     :focus:not(:focus-visible) {
       box-shadow: none;
       background: ${background};
+      color: ${foregroundFocus}!important;
+      text-decoration: none;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
     :-moz-focusring,
     :focus-visible {
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
+      color: ${foregroundFocus}!important;
+      text-decoration: none;
+      ${iconContainerColor(icons && icons.foregroundFocus)};
     }
   `}};
 `;
@@ -179,6 +196,9 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
   const { width, height, leftMargin, rightMargin } = icons;
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
+  const hasCenteredContent = Boolean(
+    (iconLeft && !children) || (children && !(iconLeft || iconRight)),
+  );
   return (
     <StyledButtonPrimitive
       forwardedRef={ref}
@@ -188,13 +208,21 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
       className={undefined}
     >
       {loading && <Loading type="buttonLoader" />}
-      <ButtonPrimitiveContent loading={loading}>
+      <ButtonPrimitiveContent
+        loading={loading}
+        hasCenteredContent={hasCenteredContent}
+        onlyIcon={onlyIcon}
+      >
         {iconLeft && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
-        {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
+        {children && (
+          <ButtonPrimitiveContentChildren hasIcon={Boolean(iconLeft || iconRight)}>
+            {children}
+          </ButtonPrimitiveContentChildren>
+        )}
         {iconRight && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
             {iconRight}

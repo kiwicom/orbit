@@ -123,7 +123,6 @@ const Collapse = ({
             </StyledActionsWrapper>
             <ButtonLink
               iconLeft={<AnimatedIcon expanded={expanded} />}
-              transparent
               size="small"
               type="secondary"
               title={translate("drawer_hide")}

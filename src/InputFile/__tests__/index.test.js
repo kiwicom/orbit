@@ -44,7 +44,7 @@ describe(`InputFile with help`, () => {
   );
   const input = component.find("InputFile__Input");
   const field = component.find("InputFile__Field");
-  const closeButton = component.find("InputFile__CloseButton").find("ButtonLink");
+  const closeButton = component.find("ButtonLink");
 
   it("should contain a label", () => {
     expect(component.find("FormLabel").render().text()).toBe(label);

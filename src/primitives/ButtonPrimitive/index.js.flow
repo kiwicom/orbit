@@ -44,6 +44,7 @@ export type IconForeground = {|
   +foreground?: ?string,
   +foregroundHover?: ?string,
   +foregroundActive?: ?string,
+  +foregroundFocus?: ?string,
 |};
 
 export type IconProps = {|
@@ -84,10 +85,15 @@ export type BoxShadow = {|
   +boxShadowFocus?: ?string,
 |};
 
+export type Underlined = {|
+  +underlined?: boolean,
+|};
+
 export type PrimitiveTypes = {|
   +padding?: string,
   +fontWeight?: ?string,
   +icons?: IconProps,
+  ...Underlined,
   ...HeightProps,
   ...Foreground,
   ...Background,

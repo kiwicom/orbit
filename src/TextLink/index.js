@@ -30,8 +30,6 @@ const IconContainer = styled(({ children, className }) => (
 ))`
   display: flex;
   align-items: center;
-  color: ${getColor};
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   & svg {
     width: ${({ theme }) => theme.orbit.widthIconSmall};
@@ -76,13 +74,6 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
   align-items: center;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   ${getLinkStyle};
-
-  ${IconContainer} {
-    color: ${({ theme, type }) =>
-      type === TYPE_OPTIONS.SECONDARY
-        ? theme.orbit.colorTextLinkSecondaryHover
-        : theme.orbit.colorTextLinkPrimaryHover};
-  }
 `;
 
 StyledTextLink.defaultProps = {

@@ -10,5 +10,6 @@ const QueryContext: QueryContextType = React.createContext({
   isMediumMobile: null,
   isTablet: null,
 });
+QueryContext.displayName = "QueryOrbitContext";
 
 export default QueryContext;

@@ -14,7 +14,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
-import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive";
+import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";

@@ -11,5 +11,6 @@ const QueryContext: QueryContextType = React.createContext({
   isTablet: null,
   prefersReducedMotion: null,
 });
+QueryContext.displayName = "QueryOrbitContext";
 
 export default QueryContext;

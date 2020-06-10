@@ -9,7 +9,7 @@ import * as Common from "../common/common";
 declare module "@kiwicom/orbit-components/lib/Stack";
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
-export type Align = "start" | "end" | "center" | "stretch";
+export type Align = "start" | "end" | "center" | "stretch" | "baseline";
 export type Justify = "start" | "end" | "center" | "between" | "around";
 export type Spacing =
   | "none"

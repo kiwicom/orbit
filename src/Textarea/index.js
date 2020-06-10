@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormFeedback from "../FormFeedback";
@@ -9,6 +9,7 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -60,7 +61,6 @@ const StyledTextArea = styled.textarea`
   width: 100%;
   height: ${({ fullHeight }) => fullHeight && "100%"};
   padding: ${getPadding};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
@@ -77,6 +77,11 @@ const StyledTextArea = styled.textarea`
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   min-height: 44px; // TODO: create token
+
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
 
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};

@@ -6,10 +6,10 @@ import * as React from "react";
 
 import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
-export type Type = "primary" | "secondary" | "critical";
+export type Type = "primary" | "secondary" | "critical" | "inline";
 
 export type Props = {|
-  +transparent?: boolean,
+  +compact?: boolean,
   +type?: Type,
   ...ButtonCommonProps,
 |};

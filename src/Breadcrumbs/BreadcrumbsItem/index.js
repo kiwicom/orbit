@@ -18,9 +18,9 @@ const StyledBreadcrumbsItemAnchor = styled(
     return <Component {...props}>{children}</Component>;
   },
 )`
-  font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightBold};
-  color: ${({ theme }) => theme.orbit.paletteInkLight};
-  text-decoration: none;
+  font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightMedium};
+  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  text-decoration: ${({ isClickable }) => (isClickable ? "underline" : "none")};
 
   ${({ isClickable }) =>
     isClickable &&
@@ -30,9 +30,14 @@ const StyledBreadcrumbsItemAnchor = styled(
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.orbit.paletteInkLightHover};
         outline: none;
-        text-decoration: underline;
+        text-decoration: none;
+      }
+      &:hover {
+        color: ${({ theme }) => theme.orbit.paletteProductNormalHover};
+      }
+      :focus {
+        color: ${({ theme }) => theme.orbit.paletteProductNormalActive};
       }
     `};
 `;
@@ -87,7 +92,7 @@ const BreadcrumbsItem = ({
       </StyledBreadcrumbsItemAnchor>
       <meta itemProp="position" content={contentKey} />
       {!active && (
-        <StyledBreadcrumbsItemIcon ariaHidden reverseOnRtl size="small" color="tertiary" />
+        <StyledBreadcrumbsItemIcon ariaHidden reverseOnRtl size="small" color="secondary" />
       )}
     </StyledBreadcrumbsItem>
   );

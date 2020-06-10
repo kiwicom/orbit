@@ -110,7 +110,6 @@ const CardCloseButton = ({ onClick, dataTest }) => {
         size="small"
         iconLeft={<Close />}
         onClick={onClick}
-        transparent
         title={translate("button_close")}
       />
     </StyledCloseContainer>

@@ -7,6 +7,7 @@ export type Media = {|
   +isLargeMobile: ?boolean,
   +isMediumMobile: ?boolean,
   +isTablet: ?boolean,
+  +prefersReducedMotion: ?boolean,
 |};
 
 export type QueryContextType = React.Context<Media>;

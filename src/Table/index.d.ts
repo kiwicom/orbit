@@ -13,6 +13,8 @@ export interface SharedProps extends Common.Global {
 }
 
 interface Props extends SharedProps {
+  readonly type?: "primary" | "secondary";
+  readonly striped?: boolean;
   readonly compact?: boolean;
 }
 

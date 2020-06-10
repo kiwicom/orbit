@@ -2,11 +2,8 @@
 
 import type { ThemeProps } from "../../defaultTheme";
 import type { Type } from "../index";
+import type { IconForeground } from "../../primitives/ButtonPrimitive";
 
-export type GetButtonLinkIconForeground = ({ type: Type, ...ThemeProps }) => {|
-  foreground: string,
-  foregroundHover: string,
-  foregroundActive: string,
-|};
+export type GetButtonLinkIconForeground = ({ type: Type, ...ThemeProps }) => IconForeground;
 
 declare export default GetButtonLinkIconForeground;

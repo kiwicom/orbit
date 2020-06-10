@@ -7,5 +7,6 @@ const ListContext: ListContextType = React.createContext({
   size: null,
   type: null,
 });
+ListContext.displayName = "ListOrbitContext";
 
 export default ListContext;

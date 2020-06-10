@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
@@ -14,7 +14,8 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
+import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -84,7 +85,6 @@ export const FakeInput = styled(({ children, className }) => (
   left: 0;
   box-sizing: border-box;
   height: ${getToken(TOKENS.heightInput)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
@@ -94,6 +94,10 @@ export const FakeInput = styled(({ children, className }) => (
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${getToken(TOKENS.fontSizeInput)};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
 `;
 
 FakeInput.defaultProps = {
@@ -122,10 +126,6 @@ export const InputContainer = styled(({ children, className }) => (
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
-  }
-
-  ${StyledButtonPrimitive}:active {
-    box-shadow: none;
   }
 `;
 
@@ -171,6 +171,10 @@ export const Prefix = styled(({ children, className }) => (
     height: ${getToken(TOKENS.iconSize)};
     color: ${({ theme }) => theme.orbit.colorIconInput};
   }
+
+  ${StyledButtonPrimitiveIconContainer} {
+    color: ${({ theme }) => theme.orbit.colorIconSecondary};
+  }
 `;
 
 Prefix.defaultProps = {
@@ -187,9 +191,10 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   pointer-events: ${({ disabled }) => disabled && "none"};
   z-index: 3;
 
-  & svg {
+  ${StyledButtonPrimitiveIconContainer} {
     color: ${({ theme }) => theme.orbit.colorIconSecondary};
   }
+
   ${StyledServiceLogo} {
     height: 16px;
     padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};

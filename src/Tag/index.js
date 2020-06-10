@@ -154,7 +154,7 @@ const Tag = (props: Props) => {
       role="button"
       onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >
-      {!!onRemove && selected && (
+      {!!onRemove && (
         <CloseContainer
           onClick={ev => {
             ev.stopPropagation();

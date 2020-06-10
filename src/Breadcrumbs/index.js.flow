@@ -2,14 +2,15 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/breadcrumbs/
 */
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
-  children: React$Node,
-  onGoBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +children: React$Node,
+  +onGoBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +goBackTitle?: Translation,
   ...spaceAfter,
 |};
 

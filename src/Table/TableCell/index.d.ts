@@ -7,6 +7,8 @@ import { SharedProps } from "../index";
 declare module "@kiwicom/orbit-components/lib/Table/TableCell";
 
 type Align = "left" | "center" | "right";
+type As = "th" | "td";
+type Scope = "col" | "row" | "colgroup" | "rowgroup";
 type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
 type VerticalAlign =
   | "baseline"
@@ -19,6 +21,8 @@ type VerticalAlign =
   | "bottom";
 
 interface Props extends SharedProps {
+  readonly as?: As;
+  readonly scope?: Scope;
   readonly align?: Align;
   readonly whiteSpace?: WhiteSpace;
   readonly verticalAlign?: VerticalAlign;

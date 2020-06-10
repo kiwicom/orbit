@@ -7,14 +7,18 @@ import type { Props } from "./ButtonPrimitiveContentChildren";
 
 const StyledButtonPrimitiveContentChildren = styled.div`
   display: inline-block;
+  width: 100%;
+  text-align: ${({ hasIcon }) => hasIcon && "left"};
 `;
 
 StyledButtonPrimitiveContentChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContentChildren = ({ children }: Props) => (
-  <StyledButtonPrimitiveContentChildren>{children}</StyledButtonPrimitiveContentChildren>
+const ButtonPrimitiveContentChildren = ({ children, hasIcon }: Props) => (
+  <StyledButtonPrimitiveContentChildren hasIcon={hasIcon}>
+    {children}
+  </StyledButtonPrimitiveContentChildren>
 );
 
 export default ButtonPrimitiveContentChildren;

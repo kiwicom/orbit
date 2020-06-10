@@ -26,6 +26,10 @@ describe(`InputField with help, prefix and suffix`, () => {
   const onChange = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
+  const onSelect = jest.fn();
+  const onMouseUp = jest.fn();
+  const onMouseDown = jest.fn();
+
   const spaceAfter = SPACINGS_AFTER.NORMAL;
   const id = "id";
   const inputMode = INPUTMODE.NUMERIC;
@@ -60,6 +64,9 @@ describe(`InputField with help, prefix and suffix`, () => {
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
+      onSelect={onSelect}
+      onMouseUp={onMouseUp}
+      onMouseDown={onMouseDown}
       dataAttrs={dataAttrs}
     />,
   );
@@ -107,6 +114,18 @@ describe(`InputField with help, prefix and suffix`, () => {
   it("should execute onChange method", () => {
     input.simulate("change");
     expect(onChange).toHaveBeenCalled();
+  });
+  it("should execute onSelect method", () => {
+    input.simulate("select");
+    expect(onSelect).toHaveBeenCalled();
+  });
+  it("should execute onMouseUp method", () => {
+    input.simulate("mouseup");
+    expect(onMouseUp).toHaveBeenCalled();
+  });
+  it("should execute onMouseDown method", () => {
+    input.simulate("mousedown");
+    expect(onMouseDown).toHaveBeenCalled();
   });
   it("should execute onFocus method", () => {
     input.simulate("focus");

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
@@ -15,6 +15,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import randomID from "../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -84,7 +85,6 @@ export const FakeInput = styled(({ children, className }) => (
   left: 0;
   box-sizing: border-box;
   height: ${getToken(TOKENS.heightInput)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
@@ -94,6 +94,10 @@ export const FakeInput = styled(({ children, className }) => (
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${getToken(TOKENS.fontSizeInput)};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
 `;
 
 FakeInput.defaultProps = {
@@ -301,6 +305,9 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     onChange,
     onFocus,
     onBlur,
+    onSelect,
+    onMouseUp,
+    onMouseDown,
     onKeyUp,
     onKeyDown,
     placeholder,
@@ -349,6 +356,9 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           onBlur={onBlur}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
+          onSelect={onSelect}
+          onMouseUp={onMouseUp}
+          onMouseDown={onMouseDown}
           name={name}
           type={type}
           value={value}

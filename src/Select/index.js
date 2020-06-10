@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -12,6 +12,7 @@ import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -76,7 +77,6 @@ const StyledSelect = styled(
 )`
   appearance: none;
   background: ${({ theme }) => theme.orbit.backgroundInput};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   cursor: pointer;
   color: ${({ theme, filled }) =>
     filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
@@ -100,6 +100,12 @@ const StyledSelect = styled(
   color: ${({ customValueText }) => customValueText && "transparent"} !important;
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
+
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
+
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
   }

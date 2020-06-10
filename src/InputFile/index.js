@@ -135,7 +135,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         {props.fileName && (
           <ButtonLink
             type="inline"
-            iconLeft={<CloseCircle />}
+            iconLeft={<CloseCircle color="secondary" />}
             onClick={ev => {
               ev.preventDefault();
               if (onRemoveFile) {

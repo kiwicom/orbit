@@ -19,7 +19,7 @@ const hoverAndFocus = () => css`
 
 const StyledContentWrapper = styled.div`
   width: 100%;
-  padding: 0 4px;
+  padding-left: 4px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -64,7 +64,6 @@ const FilterWrapper: FilterWrapperType = ({
             onClick={ev => {
               onOnlySelection(ev, { value, label });
             }}
-            transparent
           >
             {onlySelectionText}
           </ButtonLink>

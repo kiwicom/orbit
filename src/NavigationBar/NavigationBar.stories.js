@@ -29,13 +29,13 @@ storiesOf("NavigationBar", module)
             dataTest={dataTest}
           >
             <Stack justify="between" spacing="none">
-              <ButtonLink iconRight={<ChevronDown />} type="secondary" transparent>
+              <ButtonLink iconRight={<ChevronDown />} type="secondary">
                 Flights
               </ButtonLink>
               <Stack direction="row" spacing="tight" justify="end" shrink>
-                <ButtonLink iconLeft={<StarFull />} type="secondary" transparent />
-                <ButtonLink iconLeft={<QuestionCircle />} type="secondary" transparent />
-                <ButtonLink iconLeft={<AccountCircle />} type="secondary" transparent />
+                <ButtonLink iconLeft={<StarFull />} type="secondary" />
+                <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
+                <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
               </Stack>
             </Stack>
           </NavigationBar>
@@ -66,15 +66,9 @@ storiesOf("NavigationBar", module)
                 <TextLink type="secondary">Flights</TextLink>
               </LinkList>
               <Stack direction="row" spacing="tight" justify="end" shrink>
-                <ButtonLink type="secondary" transparent>
-                  Starred
-                </ButtonLink>
-                <ButtonLink type="secondary" transparent>
-                  Help
-                </ButtonLink>
-                <ButtonLink type="secondary" transparent>
-                  Account
-                </ButtonLink>
+                <ButtonLink type="secondary">Starred</ButtonLink>
+                <ButtonLink type="secondary">Help</ButtonLink>
+                <ButtonLink type="secondary">Account</ButtonLink>
               </Stack>
             </Stack>
           </NavigationBar>

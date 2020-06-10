@@ -16,7 +16,7 @@ export const StyledButtonPrimitiveIconContainer = styled(({ className, children 
     justify-content: center;
     margin: ${margin};
     color: currentColor;
-    transition: ${transition(["background", "box-shadow"], "fast", "ease-in-out")};
+    transition: ${transition(["background", "box-shadow", "color"], "fast", "ease-in-out")};
     > svg {
       width: ${width};
       height: ${height};

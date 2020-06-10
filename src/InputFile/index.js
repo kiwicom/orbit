@@ -13,7 +13,6 @@ import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";

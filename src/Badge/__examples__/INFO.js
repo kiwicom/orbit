@@ -8,8 +8,8 @@ import * as Icons from "../../icons";
 export default {
   Example: () => (
     <Stack flex>
-      <Badge type="info" aria-label="Train" icon={<Icons.Train />} />
-      <Badge type="infoInverted" aria-label="Train" icon={<Icons.Train />} />
+      <Badge type="info" ariaLabel="Train" icon={<Icons.Train />} />
+      <Badge type="infoInverted" ariaLabel="Train" icon={<Icons.Train />} />
     </Stack>
   ),
   info: {

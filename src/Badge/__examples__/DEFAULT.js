@@ -9,8 +9,8 @@ export default {
   Example: () => (
     <Stack direction="column">
       <Badge>Tip</Badge>
-      <Badge aria-label="Train" icon={<Icons.Train />} />
-      <Badge aria-label="4 passengers" icon={<Icons.Passengers />}>
+      <Badge ariaLabel="Train" icon={<Icons.Train />} />
+      <Badge ariaLabel="4 passengers" icon={<Icons.Passengers />}>
         4
       </Badge>
     </Stack>

@@ -2,12 +2,11 @@
 import * as React from "react";
 
 import Badge from "../index";
-import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
   Example: () => (
-    <Badge aria-label="4 passengers" icon={<Icons.Passengers />}>
+    <Badge ariaLabel="4 passengers" icon={<Icons.Passengers />}>
       4
     </Badge>
   ),

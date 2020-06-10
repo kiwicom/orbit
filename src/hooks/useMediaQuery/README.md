@@ -21,12 +21,13 @@ Because Orbit aims to be mobile-first, you should consider your base return with
 
 ## Return
 
-The `useMediaQuery` hook returns an object with boolean values depending on which viewport the user is currently on.
+The `useMediaQuery` hook returns an object with boolean values depending on which viewport the user is currently on or what system preferences have the device.
 
-| Name           | Type      | Description                                        |
-| :------------- | :-------- | :------------------------------------------------- |
-| isMediumMobile | `boolean` | `true` if viewport equals or is more than `414px`  |
-| isLargeMobile  | `boolean` | `true` if viewport equals or is more than `576px`  |
-| isTablet       | `boolean` | `true` if viewport equals or is more than `768px`  |
-| isDesktop      | `boolean` | `true` if viewport equals or is more than `992px`  |
-| isLargeDesktop | `boolean` | `true` if viewport equals or is more than `1200px` |
+| Name                 | Type      | Description                                                                                                                                    |
+| :------------------- | :-------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| isMediumMobile       | `boolean` | `true` if viewport equals or is more than `414px`                                                                                              |
+| isLargeMobile        | `boolean` | `true` if viewport equals or is more than `576px`                                                                                              |
+| isTablet             | `boolean` | `true` if viewport equals or is more than `768px`                                                                                              |
+| isDesktop            | `boolean` | `true` if viewport equals or is more than `992px`                                                                                              |
+| isLargeDesktop       | `boolean` | `true` if viewport equals or is more than `1200px`                                                                                             |
+| prefersReducedMotion | `boolean` | `true` if device uses reduced motion. Please mind that this media query selector doesn't work on IE10+ and therefore it will be always `false` |

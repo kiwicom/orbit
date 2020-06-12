@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
 
-export type Props = {| +children: React.Node |};
+export type Props = {| +children: React.Node, +hasIcon: boolean |};
 
 declare export default React.ComponentType<Props>;

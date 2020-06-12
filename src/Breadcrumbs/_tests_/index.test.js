@@ -14,12 +14,13 @@ describe("Breadcrumbs", () => {
       <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
     </Breadcrumbs>,
   );
+  const wrapper = component.find("Breadcrumbs__StyledBreadcrumbs");
   const list = component.find("Breadcrumbs__StyledBreadcrumbsList");
   it("nav should contain label, role and data-test", () => {
-    expect(component.render().prop("name")).toBe("nav");
-    expect(component.render().prop("role")).toBe("navigation");
-    expect(component.render().prop("aria-label")).toBe("Breadcrumb");
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(wrapper.render().prop("name")).toBe("nav");
+    expect(wrapper.render().prop("role")).toBe("navigation");
+    expect(wrapper.render().prop("aria-label")).toBe("Breadcrumb");
+    expect(wrapper.render().prop("data-test")).toBe(dataTest);
   });
   it("ol should contain correct item type", () => {
     expect(list.render().prop("name")).toBe("ol");
@@ -31,6 +32,9 @@ describe("Breadcrumbs", () => {
   });
   it("should execute onGoBack", () => {
     component.find("GoBackButton").simulate("click");
+    expect(onGoBack).toHaveBeenCalled();
+
+    component.find("[dataTest='BreadcrumbsBack']").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
   });
 });

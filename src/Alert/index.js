@@ -236,7 +236,6 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
         size="small"
         iconLeft={icon}
         type="secondary"
-        transparent
         title={translate("button_close")}
       />
     </CloseContainer>

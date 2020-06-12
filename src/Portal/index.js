@@ -5,26 +5,25 @@ import ReactDOM from "react-dom";
 import type { Props } from "./index";
 
 const Portal = ({ renderInto, children }: Props) => {
-  const el = React.useRef(document.createElement("div"));
-  const node = React.useRef(
+  const [el] = React.useState(() => document.createElement("div"));
+  const [node] = React.useState(() =>
     renderInto && document.getElementById(renderInto)
       ? document.getElementById(renderInto)
       : document.body,
   );
-
-  React.useEffect(() => {
-    if (node.current && el.current) {
-      node.current.appendChild(el.current);
+  React.useLayoutEffect(() => {
+    if (node) {
+      node.appendChild(el);
     }
     return () => {
-      if (node.current && el.current) {
-        node.current.removeChild(el.current);
+      if (node) {
+        node.removeChild(el);
       }
     };
-  }, []);
+  }, [el, node]);
 
-  if (typeof window !== "undefined" && el.current) {
-    return ReactDOM.createPortal(children, el.current);
+  if (typeof window !== "undefined") {
+    return ReactDOM.createPortal(children, el);
   }
   return null;
 };

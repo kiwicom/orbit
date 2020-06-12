@@ -4,6 +4,13 @@ import * as React from "react";
 import type { HeightProps, Size } from "../index";
 import type { ThemeProps } from "../../../defaultTheme";
 
+export type GetCommonPropsReturn = {|
+  width?: string,
+  padding: string,
+  fontWeight: string,
+  ...HeightProps,
+|};
+
 export type GetCommonProps = ({
   width?: string,
   size?: Size,
@@ -11,11 +18,6 @@ export type GetCommonProps = ({
   iconLeft?: React.Node,
   children?: React.Node,
   ...ThemeProps,
-}) => {|
-  width?: string,
-  padding: string,
-  fontWeight: string,
-  ...HeightProps,
-|};
+}) => GetCommonPropsReturn;
 
 declare export default GetCommonProps;

@@ -9,6 +9,7 @@ const getButtonIconForeground: GetButtonIconForeground = ({ theme, type }) => {
     foreground: wrappedTypeToken(TOKENS.colorTextButton),
     foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonHover),
     foregroundActive: wrappedTypeToken(TOKENS.colorTextButtonActive),
+    foregroundFocus: wrappedTypeToken(TOKENS.colorTextButtonActive),
   };
 };
 

@@ -33,6 +33,9 @@ describe("Breadcrumbs", () => {
   it("should execute onGoBack", () => {
     component.find("GoBackButton").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
+
+    component.find("[dataTest='BreadcrumbsBack']").simulate("click");
+    expect(onGoBack).toHaveBeenCalled();
   });
 });
 

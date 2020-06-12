@@ -93,6 +93,7 @@ const Breadcrumbs = (props: Props) => {
           compact
           iconLeft={<ChevronLeft reverseOnRtl />}
           dataTest="BreadcrumbsBack"
+          onClick={onGoBack} 
         >
           {goBackTitle}
         </ButtonLink>

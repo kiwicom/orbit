@@ -100,6 +100,7 @@ export const StyledButtonPrimitive = styled(
     align-items: center;
     box-sizing: border-box;
     appearance: none;
+    text-align: center;
     text-decoration: ${underlined ? "underline" : "none"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
     max-width: 100%; // to ensure that Buttons content wraps in IE

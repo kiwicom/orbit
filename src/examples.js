@@ -26,3 +26,8 @@ export { default as ButtonRef } from "./Button/__examples__/REF";
 export { default as ButtonSizes } from "./Button/__examples__/SIZES";
 export { default as ButtonTypes } from "./Button/__examples__/TYPES";
 export { default as ButtonWidth } from "./Button/__examples__/WIDTH";
+export { default as IconAccessibility } from "./Icon/__examples__/ACCESSIBILITY";
+export { default as IconColors } from "./Icon/__examples__/COLORS";
+export { default as IconDefault } from "./Icon/__examples__/DEFAULT";
+export { default as IconRTL } from "./Icon/__examples__/RTL";
+export { default as IconSizes } from "./Icon/__examples__/SIZES";

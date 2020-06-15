@@ -12,6 +12,7 @@ export default {
   Example: () => {
     const [expanded1, setExpanded1] = React.useState(false);
     const [expanded2, setExpanded2] = React.useState(false);
+    const action = expanded1 || expanded2;
     return (
       <Card
         title="Passenger info"
@@ -19,12 +20,11 @@ export default {
           <ButtonLink
             size="small"
             onClick={() => {
-              const action = expanded1 || expanded2 ? false : true;
-              setExpanded1(action);
-              setExpanded2(action);
+              setExpanded1(!action);
+              setExpanded2(!action);
             }}
           >
-            {expanded1 || expanded2 ? "Close all" : "Expand all"}
+            {action ? "Close all" : "Expand all"}
           </ButtonLink>
         }
       >

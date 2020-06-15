@@ -46,7 +46,6 @@ export default {
   },
   info: {
     title: "Card actions",
-    description:
-      "Cards and card sections can have actions associated with the card or section.",
+    description: "Cards and card sections can have actions associated with the card or section.",
   },
 };

@@ -2,10 +2,8 @@
 import * as React from "react";
 
 import Button from "../../Button";
-import ButtonLink from "../../ButtonLink";
 import Card from "../index";
 import CardSection from "../CardSection/index";
-import Dialog from "../../Dialog";
 
 export default {
   Example: () => {

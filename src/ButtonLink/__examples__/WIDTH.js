@@ -32,6 +32,7 @@ export default {
   ),
   info: {
     title: "Button link widths",
-    description: "Button links can take up space relative to their containers or have fixed widths.",
+    description:
+      "Button links can take up space relative to their containers or have fixed widths.",
   },
 };

@@ -91,7 +91,7 @@ export default {
             ensure everyone can interact with the ButtonLink. But try to avoid this unless there is
             no other option.
           </Text>
-          <ButtonLink asComponent="div" role="ButtonLink" tabIndex="0">
+          <ButtonLink asComponent="div" role="button" tabIndex="0">
             Read more
           </ButtonLink>
         </Stack>

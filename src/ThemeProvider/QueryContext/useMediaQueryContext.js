@@ -11,6 +11,7 @@ const createBreakpoints = theme => ({
   isTablet: getBreakpointWidth("tablet", theme),
   isLargeMobile: getBreakpointWidth("largeMobile", theme),
   isMediumMobile: getBreakpointWidth("mediumMobile", theme),
+  prefersReducedMotion: "(prefers-reduced-motion: reduce)",
 });
 
 const createMediaQueryList = breakpoints => {
@@ -34,6 +35,7 @@ const useMediaQueryContext: UseMediaQuery = () => {
           isTablet: {},
           isLargeMobile: {},
           isMediumMobile: {},
+          prefersReducedMotion: {},
         },
         ...createMediaQueryList(breakpoints),
       ),
@@ -48,6 +50,7 @@ const useMediaQueryContext: UseMediaQuery = () => {
         isTablet: false,
         isLargeMobile: false,
         isMediumMobile: false,
+        prefersReducedMotion: false,
       },
       /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
        * v0.115.0. To view the error, delete this comment and run Flow. */

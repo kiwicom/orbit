@@ -333,7 +333,7 @@ storiesOf("InputField", module)
           value={value}
           placeholder={placeholder}
           suffix={
-            Suffix && <ButtonLink transparent iconLeft={<Suffix />} onClick={action("clicked")} />
+            Suffix && <ButtonLink type="inline" iconLeft={<Suffix />} onClick={action("clicked")} />
           }
           onChange={action("change")}
         />
@@ -409,7 +409,7 @@ storiesOf("InputField", module)
           suffix={
             Suffix && (
               <ButtonLink
-                transparent
+                type="inline"
                 iconLeft={<Suffix />}
                 size={size}
                 onClick={action("clicked")}

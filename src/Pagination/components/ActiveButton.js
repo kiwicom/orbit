@@ -21,6 +21,7 @@ const StyledButton = styled.div`
     css`
       &&& {
         background-color: transparent;
+        box-shadow: none;
       }
     `};
 `;

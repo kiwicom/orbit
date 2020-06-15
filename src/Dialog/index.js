@@ -165,7 +165,7 @@ const Dialog = ({
         <StyledDialogCenterWrapper>
           <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
             {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
-            <Stack spacing="tight" spaceAfter="medium">
+            <Stack spacing="condensed" spaceAfter="medium">
               {title && <Heading type="title3">{title}</Heading>}
               {description && <Text type="secondary">{description}</Text>}
             </Stack>

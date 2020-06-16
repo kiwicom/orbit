@@ -22,7 +22,9 @@ export default {
 
         <Stack direction="column" spacing="none">
           <Text>$16.48</Text>
-          <ButtonLink compact>Change</ButtonLink>
+          <ButtonLink type="inline" compact>
+            Change
+          </ButtonLink>
         </Stack>
       </Stack>
     </Stack>

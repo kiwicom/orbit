@@ -1,0 +1,8 @@
+{
+	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";\nimport Dialog from \"@kiwicom/orbit-components/lib/Dialog\";",
+	"example": "() => {\n  const [showCard, setShowCard] = React.useState(true)\n  return (\n    <>\n      {showCard && (\n        <Card\n          title=\"Passenger info\"\n          onClose={() => {\n            setShowCard(false)\n          }}\n        >\n          <CardSection>Yasmin Karenth</CardSection>\n        </Card>\n      )}\n      {!showCard && (\n        <Button\n          onClick={() => {\n            setShowCard(true)\n          }}\n        >\n          Show card\n        </Button>\n      )}\n    </>\n  )\n}\n",
+	"info": {
+		"title": "Closable card",
+		"description": "Passing onClose to the card makes the close button appear, which you can use to control whether the card is visable."
+	}
+}

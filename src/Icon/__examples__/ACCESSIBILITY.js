@@ -12,7 +12,7 @@ export default {
         <Icons.Passengers ariaLabel="Passengers" /> 4
       </Text>
       <Text>
-        <Icons.Airplane reverseOnRtl ariaLabel="Airplane" /> Flights
+        <Icons.Airplane ariaHidden /> Flights
       </Text>
     </Stack>
   ),

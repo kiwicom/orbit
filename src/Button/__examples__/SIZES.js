@@ -14,6 +14,6 @@ export default {
   ),
   info: {
     title: "Button sizes",
-    description: "Buttons buttons come in three sizes: small, normal, and large.",
+    description: "Buttons come in three sizes: small, normal, and large.",
   },
 };

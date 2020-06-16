@@ -25,7 +25,7 @@ export default {
     </Stack>
   ),
   info: {
-    title: "Circled button",
+    title: "Buttons as links",
     description:
       "1. When buttons have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop. 3. Buttons marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security.",
   },

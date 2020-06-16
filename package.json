@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.87.0",
+  "version": "0.87.1",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "scripts": {
@@ -102,7 +102,7 @@
     "@kiwicom/orbit-design-tokens": "~0.10.0"
   },
   "devDependencies": {
-    "@adeira/babel-preset-adeira": "^0.3.0",
+    "@adeira/babel-preset-adeira": "^0.4.0",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/generator": "^7.10.2",
@@ -140,7 +140,7 @@
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-flowtype": "^4.7.0",
-    "eslint-plugin-import": "^2.21.1",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^3.1.3",

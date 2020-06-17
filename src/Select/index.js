@@ -97,7 +97,7 @@ const StyledSelect = styled(
     )};
   outline: none;
   width: 100%;
-  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+  color: ${({ customValueText }) => customValueText && "transparent !important"};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   z-index: 2;
 
@@ -165,7 +165,7 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
-  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+  color: ${({ customValueText }) => customValueText && "transparent !important"};
 `;
 
 StyledSelect.defaultProps = {

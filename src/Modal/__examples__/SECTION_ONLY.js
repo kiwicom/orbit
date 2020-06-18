@@ -2,6 +2,7 @@
 import * as React from "react";
 
 import Button from "../../Button";
+import Hide from "../../Hide";
 import Modal from "../index";
 import ModalSection from "../ModalSection";
 
@@ -10,7 +11,13 @@ export default {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>
-        {showModal && (
+        <Hide
+          on={
+            !showModal
+              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
+              : []
+          }
+        >
           <Modal
             onClose={() => {
               setShowModal(false);
@@ -20,7 +27,7 @@ export default {
               Orbit is an open source design system for your next travel project.
             </ModalSection>
           </Modal>
-        )}
+        </Hide>
         {!showModal && (
           <Button
             onClick={() => {

@@ -2,6 +2,7 @@
 import * as React from "react";
 
 import Button from "../../Button";
+import Hide from "../../Hide";
 import Modal from "../index";
 import ModalSection from "../ModalSection";
 
@@ -10,7 +11,13 @@ export default {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>
-        {showModal && (
+        <Hide
+          on={
+            !showModal
+              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
+              : []
+          }
+        >
           <Modal
             preventOverlayClose
             onClose={() => {
@@ -22,7 +29,7 @@ export default {
               will not close it.
             </ModalSection>
           </Modal>
-        )}
+        </Hide>
         {!showModal && (
           <Button
             onClick={() => {

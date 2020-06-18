@@ -3,6 +3,7 @@ import * as React from "react";
 
 import Button from "../../Button";
 import Heading from "../../Heading";
+import Hide from "../../Hide";
 import Modal from "../index";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";
@@ -15,7 +16,13 @@ export default {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>
-        {showModal && (
+        <Hide
+          on={
+            !showModal
+              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
+              : []
+          }
+        >
           <Modal
             onClose={() => {
               setShowModal(false);
@@ -31,8 +38,8 @@ export default {
                   </Heading>
                 </Stack>
                 <Text>
-                  You won&apos;t have time to collect baggage in between flights, so don&apos;t take anything
-                  that won&apos;t fit under the seat.
+                  You won&apos;t have time to collect baggage in between flights, so don&apos;t take
+                  anything that won&apos;t fit under the seat.
                 </Text>
               </Stack>
             </ModalSection>
@@ -59,13 +66,13 @@ export default {
                   </Heading>
                 </Stack>
                 <Text>
-                  You&apos;re completely covered by the Kiwi.com Guarantee, so you know you&apos;ll get to
-                  your final destination.
+                  You&apos;re completely covered by the Kiwi.com Guarantee, so you know you&apos;ll
+                  get to your final destination.
                 </Text>
               </Stack>
             </ModalSection>
           </Modal>
-        )}
+        </Hide>
         {!showModal && (
           <Button
             onClick={() => {

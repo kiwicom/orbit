@@ -170,6 +170,6 @@
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
     "typescript": "^3.9.5",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }

@@ -16,6 +16,8 @@ export { default as BadgeNeutral } from "./Badge/__examples__/NEUTRAL";
 export { default as BadgeSuccess } from "./Badge/__examples__/SUCCESS";
 export { default as BadgeWarning } from "./Badge/__examples__/WARNING";
 export { default as BadgeWhite } from "./Badge/__examples__/WHITE";
+export { default as BreadcrumbsBack } from "./Breadcrumbs/__examples__/BACK";
+export { default as BreadcrumbsDefault } from "./Breadcrumbs/__examples__/DEFAULT";
 export { default as ButtonAccessibility } from "./Button/__examples__/ACCESSIBILITY";
 export { default as ButtonCircled } from "./Button/__examples__/CIRCLED";
 export { default as ButtonDefault } from "./Button/__examples__/DEFAULT";

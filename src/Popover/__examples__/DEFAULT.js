@@ -37,6 +37,6 @@ export default {
   info: {
     title: "Default popover",
     description:
-      "By default, popovers will open on ca lick of their trigger with a preference for aligning with the start of and underneath their child.",
+      "By default, popovers will open on a click of their trigger with a preference for aligning with the start of and underneath their child.",
   },
 };

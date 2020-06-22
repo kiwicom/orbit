@@ -105,7 +105,7 @@
     "@adeira/babel-preset-adeira": "^0.4.0",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
-    "@babel/generator": "^7.10.2",
+    "@babel/generator": "^7.10.3",
     "@babel/node": "^7.10.1",
     "@babel/runtime": "^7.10.2",
     "@commitlint/cli": "^8.3.5",

@@ -3,7 +3,6 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
-import styled, { css } from "styled-components";
 
 import Badge from "../Badge";
 import Button from "../Button";
@@ -14,9 +13,6 @@ import Check from "../icons/Check";
 import FeatureIcon from "../FeatureIcon";
 import Layout, { LayoutColumn } from "../Layout";
 import Card, { CardSection } from "../Card";
-import useMediaQuery from "../hooks/useMediaQuery";
-import mediaQueries from "../utils/mediaQuery";
-import defaultTheme from "../defaultTheme";
 
 import PricingTable, { PricingTableItem } from "./index";
 
@@ -99,49 +95,6 @@ const germanContent = (
   </List>
 );
 
-const CssQueryDiv = styled.div`
-  font-family: "Circular Pro", Roboto, -apple-system, ".SFNSText-Regular", "San Francisco",
-    "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-
-  padding: 24px;
-  background-color: #d21c1c;
-  font-size: 24px;
-  line-height: 1.5;
-
-  &::after {
-    content: "[CSS] Current Breakpoint: MOBILE";
-  }
-
-  ${mediaQueries.tablet(css`
-    background-color: #00a991;
-    font-size: 36px;
-
-    &::after {
-      content: "[CSS] Current Breakpoint: TABLET";
-    }
-  `)};
-`;
-
-CssQueryDiv.defaultProps = {
-  theme: defaultTheme,
-};
-
-const BugReport = () => {
-  const queries = useMediaQuery();
-
-  const isTablet = queries.isTablet;
-  console.log(queries);
-
-  return (
-    <CssQueryDiv>
-      <div style={{ color: isTablet ? "white" : "black" }}>
-        [JS] Current Breakpoint: {isTablet ? "TABLET" : "MOBILE"}
-      </div>
-      <br />
-    </CssQueryDiv>
-  );
-};
-
 storiesOf("PricingTable", module)
   .addDecorator(withKnobs)
   .add(
@@ -150,7 +103,70 @@ storiesOf("PricingTable", module)
       const activeElement = number("activeElement", null);
       const hasError = boolean("hasError", false);
 
-      return <BugReport />;
+      return (
+        <PricingTable hasError={hasError} activeElement={activeElement} dataTest="PricingTable">
+          <PricingTableItem
+            dataTest="PricingTableItem"
+            name="Limited Services"
+            priceBadge={<Badge type="info">Included</Badge>}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                type="secondary"
+                fullWidth
+              >
+                Don&#39;t upgrade
+              </Button>
+            }
+            mobileDescription="Basic ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+          <PricingTableItem
+            dataTest="PricingTableItem"
+            name="Plus Services"
+            priceBadge={<Badge type="info">+ 10</Badge>}
+            badge="Popular"
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                fullWidth
+              >
+                Upgrade and continue
+              </Button>
+            }
+            mobileDescription="Flexi ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {longerContent}
+          </PricingTableItem>
+          <PricingTableItem
+            dataTest="PricingTableItem"
+            name="Premium Services"
+            priceBadge={<Badge type="info">+ 20</Badge>}
+            action={
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                }}
+                type="secondary"
+                fullWidth
+              >
+                Upgrade and continue
+              </Button>
+            }
+            mobileDescription="Premium ticket fare includes:"
+            onClick={action("onClick")}
+          >
+            {content}
+          </PricingTableItem>
+        </PricingTable>
+      );
     },
     {
       info:

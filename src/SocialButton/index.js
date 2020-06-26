@@ -27,8 +27,8 @@ const SocialButton = React.forwardRef<Props, HTMLButtonElement>(
       <ButtonPrimitive
         ref={ref}
         {...props}
-        {...buttonStyles}
         {...commonProps}
+        {...buttonStyles}
         {...icons}
         disabled={disabled}
         iconLeft={iconLeft}

@@ -31,6 +31,8 @@ export type ButtonCommonProps = {|
   +size?: Size,
   +submit?: boolean,
   +title?: string | (any => string),
+  +contentAlign?: ?string,
+  +contentWidth?: ?string,
   +tabIndex?: string,
   +width?: string,
   ...Globals,

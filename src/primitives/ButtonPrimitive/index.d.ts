@@ -23,6 +23,8 @@ export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
   readonly role?: string;
   readonly size?: Common.Size;
   readonly submit?: boolean;
+  readonly contentAlign?: string;
+  readonly contentWidth?: string;
   readonly title?: string | functionReturningString;
   readonly tabIndex?: string;
   readonly width?: string;

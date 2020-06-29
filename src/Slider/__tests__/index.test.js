@@ -18,7 +18,7 @@ function testKeyTriggeringEvent(instance, expect, initialState, keyCode, stateVa
 
 describe("Slider", () => {
   beforeEach(() => {
-    // $FlowExpected
+    // $FlowExpectedError
     Element.prototype.getBoundingClientRect = jest.fn(() => {
       return {
         width: 400,
@@ -114,7 +114,7 @@ describe("Slider", () => {
 
 describe("Range Slider", () => {
   beforeEach(() => {
-    // $FlowExpected
+    // $FlowExpectedError
     Element.prototype.getBoundingClientRect = jest.fn(() => {
       return {
         width: 400,

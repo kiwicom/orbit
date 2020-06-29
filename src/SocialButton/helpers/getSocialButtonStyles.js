@@ -18,6 +18,8 @@ const getButtonStyles: GetSocialButtonStyles = ({ theme, disabled, type }) => {
     boxShadow: null,
     boxShadowActive: getSocialButtonBoxShadow(BUTTON_STATES.ACTIVE, disabled, theme, type),
     boxShadowFocus: getSocialButtonBoxShadow(BUTTON_STATES.FOCUS, disabled, theme, type),
+    contentAlign: "center",
+    contentWidth: null,
   };
 };
 

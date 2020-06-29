@@ -8,6 +8,8 @@ export type GetCommonPropsReturn = {|
   width?: string,
   padding: string,
   fontWeight: string,
+  contentAlign: string,
+  contentWidth: string,
   ...HeightProps,
 |};
 

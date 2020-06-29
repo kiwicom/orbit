@@ -2,6 +2,8 @@
 
 exports[`ButtonPrimitive: getCommonProps function should match: dynamic width and static fontWeight and transition 1`] = `
 Object {
+  "contentAlign": "center",
+  "contentWidth": "100%",
   "fontSize": "14px",
   "fontWeight": "500",
   "height": "44px",
@@ -12,6 +14,8 @@ Object {
 
 exports[`ButtonPrimitive: getCommonProps function should match: null width and static fontWeight and transition 1`] = `
 Object {
+  "contentAlign": "center",
+  "contentWidth": "100%",
   "fontSize": "16px",
   "fontWeight": "500",
   "height": "52px",

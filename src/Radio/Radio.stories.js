@@ -30,11 +30,26 @@ storiesOf("Radio", module)
     () => {
       const label = text("Label", "Label");
       const value = text("Value", "value");
-      const info = text("Info", "Additional information to this choice");
+      const info = text("Info", "Additional information about this choice");
       return <Radio label={label} value={value} info={info} onChange={action("changed")} />;
     },
     {
       info: "Additionally you can add info to this component.",
+    },
+  )
+  .add(
+    "With error",
+    () => {
+      const label = text("Label", "Label");
+      const hasError = boolean("hasError", true);
+      const checked = boolean("checked", false);
+      return (
+        <Radio label={label} hasError={hasError} checked={checked} onChange={action("changed")} />
+      );
+    },
+    {
+      info:
+        "Show there is an error with the hasError prop. Only displays when checked and disabled are false.",
     },
   )
   .add(

@@ -22,7 +22,7 @@ storiesOf("SocialButton", module)
   .add("Facebook", () => {
     const children = text("Children", "Sign in with Facebook");
     return (
-      <SocialButton type={TYPE_OPTIONS.FACEBOOK} onClick={action("clicked")}>
+      <SocialButton type={TYPE_OPTIONS.FACEBOOK} onClick={action("clicked")} fullWidth>
         {children}
       </SocialButton>
     );

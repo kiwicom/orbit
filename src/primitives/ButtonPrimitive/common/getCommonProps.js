@@ -13,11 +13,16 @@ const getCommonProps: GetCommonProps = ({
   children,
 }) => {
   const onlyIcon = Boolean(iconLeft && !children);
+  const hasCenteredContent = Boolean(
+    (iconLeft && !children) || (children && !(iconLeft || iconRight)),
+  );
   return {
     ...getSizeToken(size, theme),
     width,
     padding: getPadding(onlyIcon, iconRight, iconLeft, size, theme),
     fontWeight: theme.orbit.fontWeightMedium,
+    contentAlign: onlyIcon || hasCenteredContent ? "center" : "space-between",
+    contentWidth: "100%",
   };
 };
 

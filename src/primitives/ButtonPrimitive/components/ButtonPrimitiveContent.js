@@ -7,13 +7,12 @@ import type { Props } from "./ButtonPrimitiveContent";
 import onlyIE from "../../../utils/onlyIE";
 
 const StyledButtonPrimitiveContent = styled(
-  ({ theme, loading, hasCenteredContent, onlyIcon, ...props }) => <div {...props} />,
+  ({ theme, loading, hasCenteredContent, onlyIcon, contentAlign, ...props }) => <div {...props} />,
 )`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
-  justify-content: ${({ hasCenteredContent, onlyIcon }) =>
-    onlyIcon || hasCenteredContent ? "center" : "space-between"};
+  justify-content: ${({ contentAlign }) => contentAlign};
   flex-basis: 100%;
   align-items: center;
   // IE flexbox bug

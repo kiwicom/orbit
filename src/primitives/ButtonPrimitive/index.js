@@ -193,13 +193,12 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
     iconRight,
     // Need to setup null values so the object exits by default
     icons = { width: null, height: null, leftMargin: null, rightMargin: null },
+    contentAlign = "center",
+    contentWidth,
   } = props;
   const { width, height, leftMargin, rightMargin } = icons;
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
-  const hasCenteredContent = Boolean(
-    (iconLeft && !children) || (children && !(iconLeft || iconRight)),
-  );
   return (
     <StyledButtonPrimitive
       forwardedRef={ref}
@@ -209,18 +208,17 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
       className={undefined}
     >
       {loading && <Loading type="buttonLoader" />}
-      <ButtonPrimitiveContent
-        loading={loading}
-        hasCenteredContent={hasCenteredContent}
-        onlyIcon={onlyIcon}
-      >
+      <ButtonPrimitiveContent loading={loading} contentAlign={contentAlign}>
         {iconLeft && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
         {children && (
-          <ButtonPrimitiveContentChildren hasIcon={Boolean(iconLeft || iconRight)}>
+          <ButtonPrimitiveContentChildren
+            hasIcon={Boolean(iconLeft || iconRight)}
+            contentWidth={contentWidth}
+          >
             {children}
           </ButtonPrimitiveContentChildren>
         )}

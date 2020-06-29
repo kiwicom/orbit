@@ -14,7 +14,7 @@ storiesOf("SocialButton", module)
   .add("Apple", () => {
     const children = text("Children", "Sign in with Apple");
     return (
-      <SocialButton type={TYPE_OPTIONS.APPLE} onClick={action("clicked")}>
+      <SocialButton type={TYPE_OPTIONS.APPLE} onClick={action("clicked")} fullWidth>
         {children}
       </SocialButton>
     );

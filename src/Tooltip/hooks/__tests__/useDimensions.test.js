@@ -26,7 +26,7 @@ const Component = ({ children, parent }) => {
 
 describe("useDimensions", () => {
   beforeEach(() => {
-    // $FlowExpected
+    // $FlowExpectedError
     Element.prototype.getBoundingClientRect = jest.fn(() => {
       return {
         width: 400,

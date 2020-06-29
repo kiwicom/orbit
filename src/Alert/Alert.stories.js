@@ -177,7 +177,7 @@ storiesOf("Alert", module)
                 {button}
               </AlertButton>
               {/*
-               $FlowExpected
+               $FlowExpectedError
                */}
               <AlertButton type={`${type}Subtle`} size="small" href="#">
                 {button}

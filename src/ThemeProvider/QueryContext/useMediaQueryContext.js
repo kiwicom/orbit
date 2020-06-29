@@ -41,7 +41,6 @@ const useMediaQueryContext: UseMediaQuery = () => {
       ),
     [breakpoints],
   );
-  const timeoutRef = React.useRef(null);
   const getValue = React.useCallback(() => {
     return Object.assign(
       {
@@ -61,24 +60,12 @@ const useMediaQueryContext: UseMediaQuery = () => {
   const [value, setValue] = React.useState(getValue);
 
   React.useEffect(() => {
-    setValue(getValue);
-    const handler = () => {
-      if (typeof setTimeout === "function" && typeof clearTimeout === "function") {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-          timeoutRef.current = null;
-          setValue(getValue);
-        }, 150);
-      }
-    };
+    const handler = () => setValue(getValue);
     Object.keys(mediaQueryLists).forEach(mql => {
       mediaQueryLists[mql].addListener(handler);
     });
     return () => {
       Object.keys(mediaQueryLists).forEach(mql => mediaQueryLists[mql].addListener(handler));
-      if (timeoutRef.current !== null && typeof clearTimeout === "function") {
-        clearTimeout(timeoutRef.current);
-      }
     };
   }, [getValue, mediaQueryLists]);
   return value;

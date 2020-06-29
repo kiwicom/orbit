@@ -9,7 +9,7 @@ export type Props = {|
   +href?: string,
   +id?: string,
   +contentKey?: number,
-  +onClick?: (ev?: SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
+  +onClick?: (ev: SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
 |};
 
 declare export default React$ComponentType<Props>;

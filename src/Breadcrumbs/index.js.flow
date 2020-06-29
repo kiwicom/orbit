@@ -9,7 +9,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 export type Props = {|
   ...Globals,
   +children: React$Node,
-  +onGoBack?: (ev?: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +onGoBack?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +goBackTitle?: Translation,
   ...spaceAfter,
 |};

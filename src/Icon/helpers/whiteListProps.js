@@ -14,7 +14,7 @@ const ALLOWED_PROPS = [
 ];
 
 const whiteListProps: WhiteListProps = props =>
-  // $FlowExpected
+  // $FlowExpectedError
   Object.assign({}, ...ALLOWED_PROPS.map(k => (k in props ? { [k]: props[k] } : {})));
 
 export default whiteListProps;

@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import ClickOutside from "../index";
 
 describe("ClickOutside mount", () => {
-  // $FlowExpected
+  // $FlowExpectedError
   document.addEventListener = jest.fn();
 
   const component = mount(<ClickOutside onClickOutside={jest.fn()}>Lorem ipsum</ClickOutside>);
@@ -15,7 +15,7 @@ describe("ClickOutside mount", () => {
     expect(document.addEventListener).toBeCalledWith("click", instance.handleClickOutside, true);
   });
   it("should unmount", () => {
-    // $FlowExpected
+    // $FlowExpectedError
     document.removeEventListener = jest.fn();
     component.unmount();
     expect(document.removeEventListener).toBeCalledWith("click", instance.handleClickOutside, true);

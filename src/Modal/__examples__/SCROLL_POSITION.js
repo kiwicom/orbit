@@ -11,7 +11,7 @@ import ModalHeader from "../ModalHeader";
 export default {
   Example: () => {
     const [showModal, setShowModal] = React.useState(true);
-    const modalRef = React.useRef(null);
+    const modalRef: { current: React$ElementRef<any> } = React.useRef(null);
 
     const setScroll = () => {
       if (modalRef.current) {

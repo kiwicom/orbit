@@ -107,7 +107,7 @@
     "@babel/core": "^7.10.3",
     "@babel/generator": "^7.10.2",
     "@babel/node": "^7.10.3",
-    "@babel/runtime": "^7.10.3",
+    "@babel/runtime": "^7.10.4",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@emotion/core": "^10.0.28",

@@ -12,6 +12,7 @@ export const ALIGNS = {
   END: "end",
   CENTER: "center",
   STRETCH: "stretch",
+  BASELINE: "baseline",
 };
 
 export const JUSTIFY = {

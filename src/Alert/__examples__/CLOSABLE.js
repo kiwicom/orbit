@@ -8,7 +8,7 @@ export default {
   Example: () => {
     const [showAlert, setShowAlert] = React.useState(true);
     return showAlert ? (
-      <Alert closable onClose={() => setShowAlert(false)} title="You're got mail" />
+      <Alert closable onClose={() => setShowAlert(false)} title="You've got mail" />
     ) : (
       <Button onClick={() => setShowAlert(true)}>Show alert</Button>
     );

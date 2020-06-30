@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import styled from "styled-components";
+import * as React from "react";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -12,6 +12,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -76,7 +77,6 @@ const StyledSelect = styled(
 )`
   appearance: none;
   background: ${({ theme }) => theme.orbit.backgroundInput};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   cursor: pointer;
   color: ${({ theme, filled }) =>
     filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
@@ -97,10 +97,16 @@ const StyledSelect = styled(
     )};
   outline: none;
   width: 100%;
-  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+  color: ${({ customValueText }) => customValueText && "transparent !important"};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   color: ${({ customValueText }) => customValueText && "transparent"};
   z-index: 2;
+
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
+
   > option {
     color: ${({ theme }) => theme.orbit.colorTextInput};
   }
@@ -160,7 +166,7 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
-  color: ${({ customValueText }) => customValueText && "transparent"} !important;
+  color: ${({ customValueText }) => customValueText && "transparent !important"};
 `;
 
 StyledSelect.defaultProps = {

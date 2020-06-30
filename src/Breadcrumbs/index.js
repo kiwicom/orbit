@@ -8,6 +8,8 @@ import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
+import ButtonLink from "../ButtonLink";
+import Hide from "../Hide";
 
 import type { Props } from "./index";
 
@@ -53,28 +55,52 @@ const GoBackButton = ({ onClick }) => {
   );
 };
 
-const Breadcrumbs = ({ children, dataTest, onGoBack, spaceAfter }: Props) => (
-  <StyledBreadcrumbs
-    aria-label="Breadcrumb"
-    role="navigation"
-    data-test={dataTest}
-    spaceAfter={spaceAfter}
-  >
-    <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
-      {onGoBack && <GoBackButton onClick={onGoBack} />}
-      {React.Children.map(children, (item, key) => {
-        if (React.isValidElement(item)) {
-          return React.cloneElement(item, {
-            active: key === React.Children.count(children) - 1,
-            contentKey: key + 1,
-          });
-        }
-
-        return null;
-      })}
-    </StyledBreadcrumbsList>
-  </StyledBreadcrumbs>
-);
+const Breadcrumbs = (props: Props) => {
+  const translate = useTranslate();
+  const {
+    children,
+    dataTest,
+    onGoBack,
+    goBackTitle = translate("breadcrumbs_back"),
+    spaceAfter,
+  } = props;
+  return (
+    <>
+      <Hide on={["smallMobile", "mediumMobile"]}>
+        <StyledBreadcrumbs
+          aria-label="Breadcrumb"
+          role="navigation"
+          data-test={dataTest}
+          spaceAfter={spaceAfter}
+        >
+          <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
+            {onGoBack && <GoBackButton onClick={onGoBack} />}
+            {React.Children.map(children, (item, key) => {
+              if (React.isValidElement(item)) {
+                return React.cloneElement(item, {
+                  active: key === React.Children.count(children) - 1,
+                  contentKey: key + 1,
+                });
+              }
+              return null;
+            })}
+          </StyledBreadcrumbsList>
+        </StyledBreadcrumbs>
+      </Hide>
+      <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
+        <ButtonLink
+          type="inline"
+          compact
+          iconLeft={<ChevronLeft reverseOnRtl />}
+          dataTest="BreadcrumbsBack"
+          onClick={onGoBack}
+        >
+          {goBackTitle}
+        </ButtonLink>
+      </Hide>
+    </>
+  );
+};
 
 export default Breadcrumbs;
 

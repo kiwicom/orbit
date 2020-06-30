@@ -4,6 +4,7 @@ import * as React from "react";
 export type Props = {|
   +children: React.Node,
   +loading?: boolean,
+  +contentAlign: ?string,
 |};
 
 declare export default React.ComponentType<Props>;

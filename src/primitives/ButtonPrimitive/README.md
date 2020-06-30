@@ -31,6 +31,8 @@ Table below contains all types of the props available in ButtonPrimitive compone
 | boxShadowFocus   | `string`                   |            | The box-shadow of the ButtonPrimitive on focus state.                                                                                           |
 | children         | `React.Node`               |            | The content of the ButtonPrimitive. [See Functional specs](#functional-specs).                                                                  |
 | circled          | `boolean`                  | `false`    | If `true`, the ButtonPrimitive will have circular shape.                                                                                        |
+| contentAlign     | `string`                   | `center`   | The justify-content of inner container that wraps icons and the children.                                                                       |
+| contentWidth     | `string`                   |            | The with of inner container that wraps the children.                                                                                            |
 | dataTest         | `string`                   |            | Optional prop for testing purposes.                                                                                                             |
 | disabled         | `boolean`                  | `false`    | If `true`, the ButtonPrimitive will be disabled.                                                                                                |
 | external         | `boolean`                  | `false`    | If `true`, the ButtonPrimitive opens link in a new tab. [See Functional specs](#functional-specs)                                               |

@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
@@ -14,7 +14,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -36,7 +36,6 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   align-items: center;
   padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingInputFile)};
   height: ${({ theme }) => theme.orbit.heightInputNormal};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
       `${theme.orbit.borderWidthInput} ${
@@ -45,16 +44,17 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   background-color: ${({ theme }) => theme.backgroundInput};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
+
   &:hover {
     box-shadow: inset 0 0 0
       ${({ theme, error }) =>
         `${theme.orbit.borderWidthInput} ${
           error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
         }`};
-  }
-
-  ${StyledButtonPrimitive}:active {
-    box-shadow: none;
   }
 `;
 
@@ -98,16 +98,6 @@ const StyledFileInput = styled.div`
 `;
 
 StyledFileInput.defaultProps = {
-  theme: defaultTheme,
-};
-
-const CloseButton = styled.div`
-  & svg {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
-  }
-`;
-
-CloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -181,19 +171,16 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (
-          <CloseButton>
-            <ButtonLink
-              type="secondary"
-              transparent
-              iconLeft={<CloseCircle />}
-              onClick={ev => {
-                ev.preventDefault();
-                if (onRemoveFile) {
-                  onRemoveFile();
-                }
-              }}
-            />
-          </CloseButton>
+          <ButtonLink
+            type="inline"
+            iconLeft={<CloseCircle color="secondary" />}
+            onClick={ev => {
+              ev.preventDefault();
+              if (onRemoveFile) {
+                onRemoveFile();
+              }
+            }}
+          />
         )}
       </FakeInput>
       {!insideInputGroup && (

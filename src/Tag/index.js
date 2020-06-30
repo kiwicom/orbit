@@ -100,15 +100,18 @@ IconContainer.defaultProps = {
 const CloseContainer = styled.div`
   display: flex;
   margin-${right}: 8px;
-  color: ${({ theme }) => theme.orbit.paletteBlueDarker};
+  color: ${({ theme, selected }) =>
+    selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteInkLight};
   cursor: pointer;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.orbit.paletteBlueDarker};
+    color: ${({ theme, selected }) =>
+      selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteInkLight};
   }
   &:active {
-    color: ${({ theme }) => theme.orbit.paletteBlueDarker};
+    color: ${({ theme, selected }) =>
+      selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteInkLight};
   }
 `;
 
@@ -122,7 +125,9 @@ const StyledClose = styled.div`
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.orbit.paletteBlueDarker};
+    box-shadow: 0 0 0 2px
+      ${({ theme, selected }) =>
+        selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteBlueDarker};
   }
 `;
 StyledClose.defaultProps = {
@@ -140,7 +145,6 @@ const buttonClickEmulation = (ev, callback) => {
 
 const Tag = (props: Props) => {
   const { icon, selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
-
   return (
     <StyledTag
       actionable={onClick || onRemove}
@@ -154,8 +158,9 @@ const Tag = (props: Props) => {
       role="button"
       onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >
-      {!!onRemove && selected && (
+      {!!onRemove && (
         <CloseContainer
+          selected={selected}
           onClick={ev => {
             ev.stopPropagation();
             if (onRemove) {

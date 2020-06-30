@@ -9,5 +9,6 @@ const CardSectionContext: CardSectionContextType = React.createContext({
   handleToggleSection: () => {},
   onKeyDownHandler: () => {},
 });
+CardSectionContext.displayName = "CardDeprecatedOrbitContext";
 
 export default CardSectionContext;

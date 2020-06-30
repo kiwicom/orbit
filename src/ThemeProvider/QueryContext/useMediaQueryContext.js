@@ -11,6 +11,7 @@ const createBreakpoints = theme => ({
   isTablet: getBreakpointWidth("tablet", theme),
   isLargeMobile: getBreakpointWidth("largeMobile", theme),
   isMediumMobile: getBreakpointWidth("mediumMobile", theme),
+  prefersReducedMotion: "(prefers-reduced-motion: reduce)",
 });
 
 const createMediaQueryList = breakpoints => {
@@ -34,12 +35,12 @@ const useMediaQueryContext: UseMediaQuery = () => {
           isTablet: {},
           isLargeMobile: {},
           isMediumMobile: {},
+          prefersReducedMotion: {},
         },
         ...createMediaQueryList(breakpoints),
       ),
     [breakpoints],
   );
-  const timeoutRef = React.useRef(null);
   const getValue = React.useCallback(() => {
     return Object.assign(
       {
@@ -48,6 +49,7 @@ const useMediaQueryContext: UseMediaQuery = () => {
         isTablet: false,
         isLargeMobile: false,
         isMediumMobile: false,
+        prefersReducedMotion: false,
       },
       /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
        * v0.115.0. To view the error, delete this comment and run Flow. */
@@ -58,24 +60,12 @@ const useMediaQueryContext: UseMediaQuery = () => {
   const [value, setValue] = React.useState(getValue);
 
   React.useEffect(() => {
-    setValue(getValue);
-    const handler = () => {
-      if (typeof setTimeout === "function" && typeof clearTimeout === "function") {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-          timeoutRef.current = null;
-          setValue(getValue);
-        }, 150);
-      }
-    };
+    const handler = () => setValue(getValue);
     Object.keys(mediaQueryLists).forEach(mql => {
       mediaQueryLists[mql].addListener(handler);
     });
     return () => {
       Object.keys(mediaQueryLists).forEach(mql => mediaQueryLists[mql].addListener(handler));
-      if (timeoutRef.current !== null && typeof clearTimeout === "function") {
-        clearTimeout(timeoutRef.current);
-      }
     };
   }, [getValue, mediaQueryLists]);
   return value;

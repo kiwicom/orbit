@@ -23,6 +23,7 @@ Table below contains all types of the props available in ButtonLink component.
 | asComponent  | `string | () => React.Element` | `"button"`  | The component used for the root node.                                                                                                           |
 | circled      | `boolean`                      | `false`     | If `true`, the ButtonLink will have circular shape.                                                                                             |
 | children     | `React.Node`                   |             | The content of the ButtonLink. [See Functional specs](#functional-specs)                                                                        |
+| compact      | `boolean`                      | `false`     | If `true`, the ButtonLink will not have horizontal paddings.                                                                                    |
 | disabled     | `boolean`                      | `false`     | If `true`, the ButtonLink will be disabled.                                                                                                     |
 | dataTest     | `string`                       |             | Optional prop for testing purposes.                                                                                                             |
 | external     | `boolean`                      | `false`     | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)                                                    |
@@ -37,7 +38,6 @@ Table below contains all types of the props available in ButtonLink component.
 | spaceAfter   | `enum`                         |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 | submit       | `boolean`                      | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                           |
 | tabIndex     | `string`                       |             | Specifies the tab order of an element.                                                                                                          |
-| transparent  | `boolean`                      | `false`     | If `true`, the ButtonLink will not have `:hover` and `:active` state.                                                                           |
 | title        | `string`                       |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)                | `"primary"` | The type of ButtonLink.                                                                                                                         |
 | width        | `string`                       |             | The width of the ButtonLink. Can be any string - `100px`, `20%`.                                                                                |
@@ -49,6 +49,7 @@ Table below contains all types of the props available in ButtonLink component.
 | `"primary"`   | `"small"`  |
 | `"secondary"` | `"normal"` |
 | `"critical"`  | `"large"`  |
+| `"inline"`    |            |
 
 ## Functional specs
 

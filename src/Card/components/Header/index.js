@@ -39,7 +39,6 @@ const CardCloseButton = ({ onClick }) => {
       size="small"
       iconLeft={<Close />}
       onClick={onClick}
-      transparent
       title={translate("button_close")}
     />
   );

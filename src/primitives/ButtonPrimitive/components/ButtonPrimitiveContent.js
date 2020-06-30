@@ -6,11 +6,13 @@ import defaultTheme from "../../../defaultTheme";
 import type { Props } from "./ButtonPrimitiveContent";
 import onlyIE from "../../../utils/onlyIE";
 
-const StyledButtonPrimitiveContent = styled(({ theme, loading, ...props }) => <div {...props} />)`
+const StyledButtonPrimitiveContent = styled(
+  ({ theme, loading, hasCenteredContent, onlyIcon, contentAlign, ...props }) => <div {...props} />,
+)`
   visibility: ${({ loading }) => loading && "hidden"};
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: ${({ contentAlign }) => contentAlign};
   flex-basis: 100%;
   align-items: center;
   // IE flexbox bug
@@ -24,8 +26,8 @@ StyledButtonPrimitiveContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContent = ({ children, loading }: Props) => (
-  <StyledButtonPrimitiveContent loading={loading}>{children}</StyledButtonPrimitiveContent>
+const ButtonPrimitiveContent = ({ children, ...props }: Props) => (
+  <StyledButtonPrimitiveContent {...props}>{children}</StyledButtonPrimitiveContent>
 );
 
 export default ButtonPrimitiveContent;

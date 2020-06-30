@@ -1,6 +1,6 @@
 // @flow
 import React, { useState, useMemo, useRef, useCallback, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
@@ -13,6 +13,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
@@ -47,7 +48,6 @@ const FakeGroup = styled(({ children, className }) => (
   z-index: 1;
   box-sizing: border-box;
   height: ${getToken(TOKENS.height)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   box-shadow: ${({ theme }) =>
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
   box-shadow: ${({ theme, error }) =>
@@ -59,6 +59,11 @@ const FakeGroup = styled(({ children, className }) => (
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   margin-top: ${getFakeGroupMarginTop};
+
+  border-radius: 6px;
+  ${mq.tablet(css`
+    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
+  `)};
 
   &:hover {
     box-shadow: inset 0 0 0

@@ -80,16 +80,13 @@ const StyledTextArea = styled.textarea`
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   min-height: 44px; // TODO: create token
 
-<<<<<<< HEAD
   /* for usage with Stack */
-=======
   border-radius: 6px;
   ${mq.tablet(css`
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   `)};
 
   // for usage with Stack
->>>>>>> master
   flex: ${({ fullHeight }) => fullHeight && "1"};
 
   /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */

@@ -80,7 +80,7 @@ export default {
           value={year}
           type="number"
           onChange={event => {
-            setYear(parseInt(event.target.value));
+            setYear(parseInt(event.target.value, 10));
           }}
         />
       </InputGroup>

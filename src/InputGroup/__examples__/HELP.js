@@ -74,14 +74,14 @@ export default {
         <InputField
           help="This text is not displayed"
           placeholder="DD"
-          maxValue="31"
-          minValue="1"
+          maxValue={31}
+          minValue={1}
           type="number"
         />
         <InputField
           help="This text is not displayed"
           placeholder="YYYY"
-          minValue="2020"
+          minValue={2020}
           type="number"
         />
       </InputGroup>

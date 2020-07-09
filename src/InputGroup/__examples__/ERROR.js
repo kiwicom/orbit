@@ -78,7 +78,7 @@ export default {
           error="This text is not displayed"
           placeholder="YYYY"
           value={year}
-          minValue="2020"
+          minValue={2020}
           type="number"
           onChange={event => {
             setYear(event.target.value);

@@ -15,8 +15,8 @@ export default {
     });
     return (
       <InputGroup flex={["1 1 4em"]} label="Expiration date">
-        <InputField placeholder="MM" maxValue="12" minValue="1" type="number" />
-        <InputField placeholder="YYYY" type="number" minValue="2020" ref={ref} />
+        <InputField placeholder="MM" maxValue={12} minValue={1} type="number" />
+        <InputField placeholder="YYYY" type="number" minValue={2020} ref={ref} />
       </InputGroup>
     );
   },

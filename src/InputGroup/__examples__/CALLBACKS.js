@@ -44,18 +44,18 @@ export default {
             placeholder="MM"
             name="month"
             value={month}
-            maxValue="12"
-            minValue="1"
+            maxValue={12}
+            minValue={1}
             type="number"
           />
-          <InputField placeholder="YYYY" name="year" value={year} minValue="2020" type="number" />
+          <InputField placeholder="YYYY" name="year" value={year} minValue={2020} type="number" />
         </InputGroup>
         <InputGroup flex={["1 1 4em"]} label="Expiration date">
           <InputField
             placeholder="MM"
             value={month2}
-            maxValue="12"
-            minValue="1"
+            maxValue={12}
+            minValue={1}
             onChange={event => {
               setMonth2(event.target.value);
               addAction("The month in the second group changed");
@@ -67,7 +67,7 @@ export default {
           <InputField
             placeholder="YYYY"
             value={year2}
-            minValue="2020"
+            minValue={2020}
             onChange={event => {
               setYear2(event.target.value);
               addAction("The year in the second group changed");

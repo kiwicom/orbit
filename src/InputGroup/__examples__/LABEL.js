@@ -12,15 +12,15 @@ export default {
     return (
       <Stack>
         <InputGroup flex={["1 1 4em"]} label="Expiration date">
-          <InputField placeholder="MM" maxValue="12" minValue="1" type="number" />
+          <InputField placeholder="MM" maxValue={12} minValue={1} type="number" />
           <InputField placeholder="YYYY" type="number" />
         </InputGroup>
         <InputGroup flex={["1 1 4em"]} label="Expiration date">
           <InputField
             placeholder="MM"
             value={month}
-            maxValue="12"
-            minValue="1"
+            maxValue={12}
+            minValue={1}
             onChange={event => setMonth(event.target.value)}
             type="number"
           />

@@ -8,7 +8,7 @@ import Select from "../../Select";
 export default {
   Example: () => {
     const [month, setMonth] = React.useState("");
-    const [year, setYear] = React.useState("2000");
+    const [year, setYear] = React.useState(2000);
     return (
       <InputGroup
         flex={["8 8 15em", "1 1 4em", "2 2 6em"]}
@@ -78,10 +78,9 @@ export default {
           error="This text is not displayed"
           placeholder="YYYY"
           value={year}
-          minValue={2020}
           type="number"
           onChange={event => {
-            setYear(event.target.value);
+            setYear(parseInt(event.target.value));
           }}
         />
       </InputGroup>

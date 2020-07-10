@@ -21,6 +21,8 @@ export { default as BreadcrumbsDefault } from "./Breadcrumbs/__examples__/DEFAUL
 export { default as ButtonAccessibility } from "./Button/__examples__/ACCESSIBILITY";
 export { default as ButtonCircled } from "./Button/__examples__/CIRCLED";
 export { default as ButtonDefault } from "./Button/__examples__/DEFAULT";
+export { default as ButtonGroupDefault } from "./ButtonGroup/__examples__/DEFAULT";
+export { default as ButtonGroupButtonLink } from "./ButtonGroup/__examples__/BUTTONLINK";
 export { default as ButtonIcons } from "./Button/__examples__/ICONS";
 export { default as ButtonLinkAccessibility } from "./ButtonLink/__examples__/ACCESSIBILITY";
 export { default as ButtonLinkCircled } from "./ButtonLink/__examples__/CIRCLED";

@@ -69,6 +69,6 @@ export default {
   ),
   info: {
     title: "Sizes",
-    description: "Airport illustrations come in a variety of sizes.",
+    description: "Illustrations come in a variety of sizes.",
   },
 };

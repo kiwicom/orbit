@@ -98,7 +98,7 @@
     "styled-components": "^4.4.1"
   },
   "dependencies": {
-    "@adeira/js": "^1.2.2",
+    "@adeira/js": "^1.2.3",
     "@kiwicom/orbit-design-tokens": "~0.10.0"
   },
   "devDependencies": {
@@ -169,7 +169,7 @@
     "svg2ttf": "^5.0.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
-    "typescript": "^3.9.5",
+    "typescript": "^3.9.6",
     "webpack-cli": "^3.3.12"
   }
 }

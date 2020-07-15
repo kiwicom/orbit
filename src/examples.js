@@ -43,7 +43,6 @@ export { default as CallOutBannerActionable } from "./CallOutBanner/__examples__
 export { default as CallOutBannerDefault } from "./CallOutBanner/__examples__/DEFAULT";
 export { default as CallOutBannerStructuredContent } from "./CallOutBanner/__examples__/STRUCTURED_CONTENT";
 export { default as CardActions } from "./Card/__examples__/ACTIONS";
-export { default as CardClosable } from "./Card/__examples__/CLOSABLE";
 export { default as CardCustomHeader } from "./Card/__examples__/HEADER";
 export { default as CardDefault } from "./Card/__examples__/DEFAULT";
 export { default as CardExpandableControlled } from "./Card/__examples__/EXPAND_CONTROLLED";

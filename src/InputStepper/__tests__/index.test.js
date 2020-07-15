@@ -5,6 +5,7 @@ import { mount } from "enzyme";
 import InputStepper from "../index";
 import { SIZE_OPTIONS } from "../../InputField/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import ButtonLink from "../../ButtonLink";
 
 describe(`InputStepper with help, prefix and suffix`, () => {
   const size = SIZE_OPTIONS.NORMAL;
@@ -66,5 +67,15 @@ describe(`InputStepper with help, prefix and suffix`, () => {
     expect(input.prop("minValue")).toBe(minValue);
     expect(input.prop("required")).toBe(required);
     expect(inputFieldInput.render().prop("tabindex")).toBe(tabIndex);
+  });
+
+  it("should not work if disabled", () => {
+    const onChangeMock = jest.fn();
+    component.setProps({ disabled: true, onChange: onChangeMock });
+    const btnIncrement = component.find(ButtonLink).last();
+    btnIncrement.simulate("click");
+    expect(onChangeMock).not.toHaveBeenCalled();
+    // cleanup
+    component.setProps({ disabled, onChange });
   });
 });

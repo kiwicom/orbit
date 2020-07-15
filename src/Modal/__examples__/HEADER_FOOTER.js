@@ -2,7 +2,6 @@
 import * as React from "react";
 
 import Button from "../../Button";
-import Hide from "../../Hide";
 import Illustration from "../../Illustration";
 import Modal from "../index";
 import ModalFooter from "../ModalFooter";
@@ -13,13 +12,7 @@ export default {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>
-        <Hide
-          on={
-            !showModal
-              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
-              : []
-          }
-        >
+        {showModal && (
           <Modal
             onClose={() => {
               setShowModal(false);
@@ -34,7 +27,7 @@ export default {
               <Button>Add priority boarding</Button>
             </ModalFooter>
           </Modal>
-        </Hide>
+        )}
         {!showModal && (
           <Button
             onClick={() => {

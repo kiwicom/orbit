@@ -2,7 +2,6 @@
 import * as React from "react";
 
 import Button from "../../Button";
-import Hide from "../../Hide";
 import Modal from "../index";
 import ModalFooter from "../ModalFooter";
 import ModalSection from "../ModalSection";
@@ -20,13 +19,7 @@ export default {
     };
     return (
       <>
-        <Hide
-          on={
-            !showModal
-              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
-              : []
-          }
-        >
+        {showModal && (
           <Modal
             onClose={() => {
               setShowModal(false);
@@ -47,7 +40,7 @@ export default {
               <Button onClick={setScroll}>Change scrollTop</Button>
             </ModalFooter>
           </Modal>
-        </Hide>
+        )}
         {!showModal && (
           <Button
             onClick={() => {

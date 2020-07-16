@@ -31,7 +31,7 @@ interface Props extends Common.Global {
   readonly width?: string;
   readonly href?: string;
   readonly external?: boolean;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly onClick?: Common.Callback;
 }
 

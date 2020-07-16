@@ -27,7 +27,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly circled?: boolean;
   readonly submit?: boolean;
   readonly compact?: boolean;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly ariaExpanded?: boolean;
   readonly ariaControls?: string;
   readonly role?: string;

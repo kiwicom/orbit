@@ -16,7 +16,7 @@ interface Props extends Common.Global {
   readonly price: Common.Translation;
   readonly timeOfStay?: Common.Translation;
   readonly height?: number;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly outbound: {
     readonly text?: Common.Translation;
     readonly date?: Common.Translation;

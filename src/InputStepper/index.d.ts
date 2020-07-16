@@ -23,7 +23,7 @@ export interface SharedProps extends Common.Global, Common.Ref, Common.SpaceAfte
   readonly maxValue?: number;
   readonly minValue?: number;
   readonly required?: boolean;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly titleIncrement?: Title;
   readonly titleDecrement?: Title;
   readonly onFocus?: Event;

@@ -45,7 +45,7 @@ export type Props = {|
   +preferredPosition?: Positions,
   +preferredAlign?: Aligns,
   +enabled?: boolean,
-  +tabIndex?: string,
+  +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
 |};
 

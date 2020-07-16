@@ -18,7 +18,7 @@ interface Props extends Common.Global {
   readonly size?: Size;
   readonly preferredPosition?: Position;
   readonly enabled?: boolean;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
 }
 
 declare const Tooltip: React.FunctionComponent<Props>;

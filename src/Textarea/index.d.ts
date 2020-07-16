@@ -25,7 +25,7 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly resize?: Resize;
   readonly disabled?: boolean;
   readonly maxLength?: number;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;

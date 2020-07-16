@@ -17,7 +17,7 @@ interface Props extends Common.Global {
   readonly arrivalTime: Common.Translation;
   readonly duration: Common.Translation;
   readonly initialExpanded?: boolean;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly onClick?: Common.Callback;
 }
 

@@ -1,27 +1,25 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
 import { StyledCard } from "../../Card";
-import mq from "../../utils/mediaQuery";
+import { getBreakpointWidth } from "../../utils/mediaQuery";
+import { QUERIES } from "../../utils/mediaQuery/consts";
 
 import type { Props } from "./index";
 
 const StyledColumn = styled.div`
   ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};
 
-  ${StyledCard} {
-    margin: 0 -${({ theme }) => theme.orbit.spaceMedium};
-    width: auto;
-  }
-  ${mq.tablet(css`
+  @media (max-width: ${({ theme }) => +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledCard} {
-      margin: auto;
-      width: 100%;
+      margin-right: -${({ theme }) => theme.orbit.spaceMedium};
+      margin-left: -${({ theme }) => theme.orbit.spaceMedium};
+      width: auto;
     }
-  `)};
+  }
 `;
 
 StyledColumn.defaultProps = {

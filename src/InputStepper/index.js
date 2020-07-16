@@ -12,19 +12,23 @@ import useTranslate from "../hooks/useTranslate";
 import type { Props } from "./index";
 
 const InputStepper = React.forwardRef<Props, HTMLElement>(
-  ({ onChange, defaultValue = 0, ...props }, ref) => {
+  ({ onChange, defaultValue = 0, disabled = false, ...props }, ref) => {
     const translate = useTranslate();
     const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
     const incrementCounter = () => {
       const { maxValue = Number.POSITIVE_INFINITY, step = 1 } = props;
 
-      setValue(validateIncrement({ value, maxValue, step }));
+      if (!disabled) {
+        setValue(validateIncrement({ value, maxValue, step }));
+      }
     };
 
     const decrementCounter = () => {
       const { minValue = Number.NEGATIVE_INFINITY, step = 1 } = props;
-      setValue(validateDecrement({ value, minValue, step }));
+      if (!disabled) {
+        setValue(validateDecrement({ value, minValue, step }));
+      }
     };
 
     const handleIncrementCounter = (
@@ -76,6 +80,7 @@ const InputStepper = React.forwardRef<Props, HTMLElement>(
 
       const { maxValue, minValue } = props;
 
+      if (disabled) return;
       if (prevValue <= eventValue) {
         setValue(validateIncrement({ value, maxValue, step: 0 }));
       }
@@ -91,7 +96,6 @@ const InputStepper = React.forwardRef<Props, HTMLElement>(
       onBlur,
       onFocus,
       help,
-      disabled,
       name,
       dataTest,
       size = SIZE_OPTIONS.NORMAL,

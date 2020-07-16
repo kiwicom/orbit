@@ -42,7 +42,7 @@ export type Props = {|
   +maxLength?: number,
   +minLength?: number,
   required?: boolean,
-  tabIndex?: string,
+  tabIndex?: string | number,
   +readOnly?: boolean,
   +autoComplete?: string,
   +id?: string,

@@ -104,6 +104,7 @@ export { default as PopoverDefault } from "./Popover/__examples__/DEFAULT";
 export { default as PopoverOtherContent } from "./Popover/__examples__/OTHER_CONTENT";
 export { default as PopoverOverlapping } from "./Popover/__examples__/OVERLAPPING";
 export { default as PopoverPosition } from "./Popover/__examples__/POSITION";
+export { default as PopoverTrigger } from "./Popover/__examples__/TRIGGER";
 export { default as PopoverWidth } from "./Popover/__examples__/WIDTH";
 export { default as RadioDefault } from "./Radio/__examples__/DEFAULT";
 export { default as RadioError } from "./Radio/__examples__/ERROR";

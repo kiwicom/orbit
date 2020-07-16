@@ -13,7 +13,8 @@ import type { Props } from "./index";
 const StyledColumn = styled.div`
   ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};
 
-  @media (max-width: ${({ theme }) => +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+  @media (max-width: ${({ theme }) =>
+      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledCard} {
       margin-right: -${({ theme }) => theme.orbit.spaceMedium};
       margin-left: -${({ theme }) => theme.orbit.spaceMedium};

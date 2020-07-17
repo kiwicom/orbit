@@ -19,7 +19,7 @@ interface Props extends Common.Global {
   readonly type?: Type;
   readonly size?: Common.Size;
   readonly rel?: string;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly asComponent?: Common.Component;
   readonly stopPropagation?: boolean;
   readonly title?: string;

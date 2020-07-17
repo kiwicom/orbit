@@ -9,7 +9,7 @@ export type Props = {|
   onKeyDown: any,
   children: React$Node,
   as?: string,
-  tabIndex?: string,
+  tabIndex?: string | number,
   role: ?string,
   ariaExpanded?: boolean,
   ariaControls?: string,

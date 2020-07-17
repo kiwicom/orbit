@@ -9,9 +9,9 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => {
-    const [is2star, setIs2star] = React.useState(false);
-    const [is3star, setIs3star] = React.useState(false);
-    const [is4star, setIs4star] = React.useState(false);
+    const [is2star, setIs2star] = React.useState(true);
+    const [is3star, setIs3star] = React.useState(true);
+    const [is4star, setIs4star] = React.useState(true);
     return (
       <Popover
         content={
@@ -24,14 +24,14 @@ export default {
               icon={<Icons.Accommodation />}
             />
             <ListChoice
-              title="3 star hotets"
+              title="3 star hotels"
               selectable
               selected={is3star}
               onClick={() => setIs3star(!is3star)}
               icon={<Icons.Accommodation />}
             />
             <ListChoice
-              title="4 star hotets"
+              title="4 star hotels"
               selectable
               selected={is4star}
               onClick={() => setIs4star(!is4star)}

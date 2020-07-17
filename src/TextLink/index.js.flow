@@ -20,7 +20,7 @@ export type Props = {|
   +type?: Type,
   +size?: Size,
   +rel?: string,
-  +tabIndex?: string,
+  +tabIndex?: string | number,
   +asComponent?: Component,
   +stopPropagation?: boolean,
   +title?: string,

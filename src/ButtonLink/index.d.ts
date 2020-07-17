@@ -5,33 +5,15 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
+import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/ButtonLink";
 
 type Type = "primary" | "secondary" | "critical" | "inline";
 
-export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
-  readonly children?: React.ReactNode;
-  readonly asComponent?: Common.Component;
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
-  readonly disabled?: boolean;
-  readonly fullWidth?: boolean;
-  readonly external?: boolean;
-  readonly type?: Type;
-  readonly size?: Common.Size;
-  readonly href?: string;
-  readonly width?: number;
-  readonly icon?: React.ReactNode;
-  readonly iconLeft?: React.ReactNode;
-  readonly iconRight?: React.ReactNode;
-  readonly circled?: boolean;
-  readonly submit?: boolean;
+export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, ButtonCommonProps {
   readonly compact?: boolean;
-  readonly tabIndex?: string;
-  readonly ariaExpanded?: boolean;
-  readonly ariaControls?: string;
-  readonly role?: string;
-  readonly title?: string | ((param: any) => string);
+  readonly type?: Type;
 }
 
 declare const ButtonLink: React.FunctionComponent<Props>;

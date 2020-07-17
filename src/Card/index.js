@@ -12,7 +12,7 @@ import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import type { Props } from "./index";
 
-const StyledCard = styled.div`
+export const StyledCard = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;

@@ -3,7 +3,6 @@ import * as React from "react";
 
 import Button from "../../Button";
 import Heading from "../../Heading";
-import Hide from "../../Hide";
 import Modal from "../index";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";
@@ -16,13 +15,7 @@ export default {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>
-        <Hide
-          on={
-            !showModal
-              ? ["largeDesktop", "desktop", "tablet", "largeMobile", "mediumMobile", "smallMobile"]
-              : []
-          }
-        >
+        {showModal && (
           <Modal
             onClose={() => {
               setShowModal(false);
@@ -72,7 +65,7 @@ export default {
               </Stack>
             </ModalSection>
           </Modal>
-        </Hide>
+        )}
         {!showModal && (
           <Button
             onClick={() => {

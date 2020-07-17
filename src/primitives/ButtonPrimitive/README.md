@@ -51,12 +51,13 @@ Table below contains all types of the props available in ButtonPrimitive compone
 | loading          | `boolean`                  | `false`    | If `true`, the loading glyph will be displayed and ButtonPrimitive will be disabled.                                                            |
 | onClick          | `event => void \| Promise` |            | Function for handling onClick event.                                                                                                            |
 | padding          | `string`                   |            | The inner padding of the ButtonPrimitive.                                                                                                       |
+| rel              | `string`                   |            | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                      |
 | role             | `string`                   |            | Specifies the role of an element.                                                                                                               |
 | size             | [`enum`](#enum)            | `"normal"` | The size of the ButtonPrimitive.                                                                                                                |
 | spaceAfter       | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 | submit           | `boolean`                  | `false`    | If `true`, the ButtonPrimitive will have `type="submit"` attribute, otherwise `type="button"`.                                                  |
 | title            | `string`                   |            | Adds `aria-label`.                                                                                                                              |
-| tabIndex         | `string`                   | `"0"`      | Specifies the tab order of an element.                                                                                                          |
+| tabIndex         | `string | number`          | `"0"`      | Specifies the tab order of an element.                                                                                                          |
 | width            | `string`                   |            | The width of the ButtonPrimitive. Can be any string - `100px`, `20%`.                                                                           |
 
 ### enum

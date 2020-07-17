@@ -10,7 +10,7 @@ import Illustration from "../Illustration/index";
 declare module "@kiwicom/orbit-components/lib/CallOutBanner";
 
 export interface Props {
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly onClick?: Common.Callback;
   readonly title: Common.Translation;
   readonly description?: Common.Translation;

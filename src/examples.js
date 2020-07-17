@@ -1,4 +1,5 @@
 // @flow
+
 export { default as AlertActions } from "./Alert/__examples__/ACTIONS";
 export { default as AlertClosable } from "./Alert/__examples__/CLOSABLE";
 export { default as AlertCriticalType } from "./Alert/__examples__/CRITICAL_TYPE";
@@ -95,6 +96,14 @@ export { default as InputFieldRequired } from "./InputField/__examples__/REQUIRE
 export { default as InputFieldSizes } from "./InputField/__examples__/SIZES";
 export { default as InputFieldSuffix } from "./InputField/__examples__/SUFFIX";
 export { default as InputFieldTags } from "./InputField/__examples__/TAGS";
+export { default as InputGroupCallbacks } from "./InputGroup/__examples__/CALLBACKS";
+export { default as InputGroupDefault } from "./InputGroup/__examples__/DEFAULT";
+export { default as InputGroupError } from "./InputGroup/__examples__/ERROR";
+export { default as InputGroupFlex } from "./InputGroup/__examples__/FLEX";
+export { default as InputGroupHelp } from "./InputGroup/__examples__/HELP";
+export { default as InputGroupLabelColor } from "./InputGroup/__examples__/LABEL";
+export { default as InputGroupReference } from "./InputGroup/__examples__/REF";
+export { default as InputGroupSizes } from "./InputGroup/__examples__/SIZES";
 export { default as ListColors } from "./List/__examples__/COLORS";
 export { default as ListDefault } from "./List/__examples__/DEFAULT";
 export { default as ListIcons } from "./List/__examples__/ICONS";

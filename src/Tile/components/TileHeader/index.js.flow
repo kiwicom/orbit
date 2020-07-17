@@ -15,7 +15,7 @@ export type Props = {|
   ariaExpanded?: boolean,
   ariaControls?: string,
   id?: string,
-  tabIndex?: string,
+  tabIndex?: string | number,
   noHeaderIcon?: boolean,
 |};
 

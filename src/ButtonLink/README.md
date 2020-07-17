@@ -38,7 +38,7 @@ Table below contains all types of the props available in ButtonLink component.
 | **size**     | [`enum`](#enum)                | `"normal"`  | The size of the ButtonLink.                                                                                                                     |
 | spaceAfter   | `enum`                         |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 | submit       | `boolean`                      | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                           |
-| tabIndex     | `string`                       |             | Specifies the tab order of an element.                                                                                                          |
+| tabIndex     | `string | number`              |             | Specifies the tab order of an element.                                                                                                          |
 | title        | `string`                       |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)                | `"primary"` | The type of ButtonLink.                                                                                                                         |
 | width        | `string`                       |             | The width of the ButtonLink. Can be any string - `100px`, `20%`.                                                                                |

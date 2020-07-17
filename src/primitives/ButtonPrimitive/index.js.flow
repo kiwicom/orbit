@@ -34,7 +34,7 @@ export type ButtonCommonProps = {|
   +title?: string | (any => string),
   +contentAlign?: ?string,
   +contentWidth?: ?string,
-  +tabIndex?: string,
+  +tabIndex?: string | number,
   +width?: string,
   ...Globals,
   ...spaceAfter,

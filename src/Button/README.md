@@ -33,7 +33,7 @@ Table below contains all types of the props available in Button component.
 | loading      | `boolean`                  | `false`     | If `true`, the loading glyph will be displayed.                                                                                                 |
 | onClick      | `event => void \| Promise` |             | Function for handling onClick event.                                                                                                            |
 | ref          | `func`                     |             | Prop for forwarded ref of the Button.                                                                                                           |
-| rel         | `string`                   |             | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                                                               |
+| rel          | `string`                   |             | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                      |
 | role         | `string`                   |             | Specifies the role of an element.                                                                                                               |
 | **size**     | [`enum`](#enum)            | `"normal"`  | The size of the Button.                                                                                                                         |
 | spaceAfter   | `enum`                     |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |

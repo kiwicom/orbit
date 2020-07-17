@@ -18,9 +18,10 @@ const StyledBreadcrumbsItemAnchor = styled(
     return <Component {...props}>{children}</Component>;
   },
 )`
-  font-weight: ${({ active, theme }) => active && theme.orbit.fontWeightMedium};
+  font-weight: ${({ active, theme }) =>
+    active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  text-decoration: ${({ isClickable }) => (isClickable ? "underline" : "none")};
+  text-decoration: ${({ isClickable, active }) => (isClickable && !active ? "underline" : "none")};
 
   ${({ isClickable }) =>
     isClickable &&

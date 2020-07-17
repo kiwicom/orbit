@@ -3,7 +3,7 @@ import type { Translation, Globals } from "../common/common.js.flow";
 import Illustration from "../Illustration/index";
 
 export type Props = {|
-  tabIndex?: string,
+  tabIndex?: string | number,
   onClick?: () => void | Promise<any>,
   title: Translation,
   description?: Translation,

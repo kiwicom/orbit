@@ -33,11 +33,12 @@ Table below contains all types of the props available in Button component.
 | loading      | `boolean`                  | `false`     | If `true`, the loading glyph will be displayed.                                                                                                 |
 | onClick      | `event => void \| Promise` |             | Function for handling onClick event.                                                                                                            |
 | ref          | `func`                     |             | Prop for forwarded ref of the Button.                                                                                                           |
+| rel          | `string`                   |             | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                      |
 | role         | `string`                   |             | Specifies the role of an element.                                                                                                               |
 | **size**     | [`enum`](#enum)            | `"normal"`  | The size of the Button.                                                                                                                         |
 | spaceAfter   | `enum`                     |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
 | submit       | `boolean`                  | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                           |
-| tabIndex     | `string`                   |             | Specifies the tab order of an element.                                                                                                          |
+| tabIndex     | `string | number`          |             | Specifies the tab order of an element.                                                                                                          |
 | title        | `string`                   |             | Adds `aria-label`.                                                                                                                              |
 | **type**     | [`enum`](#enum)            | `"primary"` | The type of Button.                                                                                                                             |
 | width        | `string`                   |             | The width of the Button. Can be any string - `100px`, `20%`.                                                                                    |

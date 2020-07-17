@@ -1,5 +1,6 @@
 // @flow
-
+export { default as AirportIllustrationDefault } from "./AirportIllustration/__examples__/DEFAULT";
+export { default as AirportIllustrationSizes } from "./AirportIllustration/__examples__/SIZES";
 export { default as AlertActions } from "./Alert/__examples__/ACTIONS";
 export { default as AlertClosable } from "./Alert/__examples__/CLOSABLE";
 export { default as AlertCriticalType } from "./Alert/__examples__/CRITICAL_TYPE";
@@ -85,6 +86,8 @@ export { default as IconColors } from "./Icon/__examples__/COLORS";
 export { default as IconDefault } from "./Icon/__examples__/DEFAULT";
 export { default as IconRTL } from "./Icon/__examples__/RTL";
 export { default as IconSizes } from "./Icon/__examples__/SIZES";
+export { default as IllustrationDefault } from "./Illustration/__examples__/DEFAULT";
+export { default as IllustrationSizes } from "./Illustration/__examples__/SIZES";
 export { default as InputFieldAccessibility } from "./InputField/__examples__/ACCESSIBILITY";
 export { default as InputFieldCallbacks } from "./InputField/__examples__/CALLBACKS";
 export { default as InputFieldDataAttributes } from "./InputField/__examples__/DATA_ATTRIBUTES";

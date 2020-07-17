@@ -110,6 +110,7 @@ storiesOf("ButtonLink", module)
       const tabIndex = text("tabIndex", "0");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const title = text("Title", "Additional information for accessibility");
+      const rel = text("Rel", "nofollow");
 
       return (
         <ButtonLink
@@ -131,6 +132,7 @@ storiesOf("ButtonLink", module)
           tabIndex={tabIndex}
           spaceAfter={spaceAfter}
           title={title}
+          rel={rel}
         >
           {children}
         </ButtonLink>

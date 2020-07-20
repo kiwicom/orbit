@@ -20,8 +20,8 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly allowedFileTypes?: string | string[];
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;
-  readonly tabIndex?: string;
   readonly insideInputGroup?: boolean;
+  readonly tabIndex?: string | number;
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;

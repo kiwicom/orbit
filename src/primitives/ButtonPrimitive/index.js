@@ -43,6 +43,17 @@ export const StyledButtonPrimitive = styled(
     const isButtonWithHref = asComponent === "button" && href;
     const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
+    const relValues = rel ? rel.split(" ") : [];
+    // add noopener and noreferrer whenever external
+    if (external && !disabled && href) {
+      if (!relValues.includes("noopener")) {
+        relValues.push("noopener");
+      }
+      if (!relValues.includes("noreferrer")) {
+        relValues.push("noreferrer");
+      }
+    }
+
     return (
       <Component
         ref={forwardedRef}
@@ -55,7 +66,7 @@ export const StyledButtonPrimitive = styled(
         disabled={disabled}
         href={!disabled ? href : null}
         target={!disabled && href && external ? "_blank" : undefined}
-        rel={!disabled && href && external ? "noopener noreferrer" : undefined}
+        rel={relValues.length > 0 ? relValues.join(" ") : undefined}
         tabIndex={tabIndex}
         onClick={onClick}
         role={role}

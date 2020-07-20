@@ -16,7 +16,7 @@ export interface Props extends Common.Global, Common.Ref {
   readonly checked?: boolean;
   readonly name?: string;
   readonly info?: React.ReactNode;
-  readonly tabIndex?: string;
+  readonly tabIndex?: string | number;
   readonly readOnly?: boolean;
   readonly tooltip?: React.ReactNode | null;
   // Should be InputEvent type

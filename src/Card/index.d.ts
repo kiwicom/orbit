@@ -22,4 +22,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 }
 
 declare const Card: React.FunctionComponent<Props>;
-export { Card, Card as default, CardSection };
+declare const StyledCard: React.ComponentType<Props>;
+export { Card, Card as default, CardSection, StyledCard };

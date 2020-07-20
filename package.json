@@ -5,13 +5,14 @@
   "sideEffects": false,
   "scripts": {
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
-    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd",
+    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:xmlDesignTokens && yarn build:lib && yarn build:module && yarn build:umd",
     "build:lib": "babel --out-dir lib --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js src && yarn copy:lib",
     "build:module": "cross-env BABEL_TARGET=\"js-esm\" babel --out-dir es --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js src && yarn copy:module",
     "build:icons": "babel-node config/build.js",
     "build:iconsPng": "node config/generatePngIcons.js",
     "build:typeFiles": "babel-node config/typeFiles.js",
     "build:iconFont": "babel-node config/createSVGFont.js && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
+    "build:xmlDesignTokens": "node -e \"require('./config/createXMLDesignTokens.js')()\"",
     "build:storybook": "cross-env BABEL_TARGET=storybook build-storybook -c .storybook -o .out -s ./static",
     "build:examples": "babel-node config/buildExample.js 'src/**/__examples__/*.js'",
     "build:umd": "webpack --mode=production",
@@ -119,9 +120,9 @@
     "@storybook/react": "^5.3.19",
     "@storybook/storybook-deployer": "^2.8.6",
     "@svgr/core": "^2.0.0",
+    "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
-    "@types/styled-components": "^4.4.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
@@ -156,6 +157,7 @@
     "jsdom": "^16.3.0",
     "loki": "^0.15.0",
     "make-runnable": "^1.3.6",
+    "memfs": "^3.2.0",
     "mkdirp": "^1.0.4",
     "prettier": "^2.0.5",
     "react": "^16.12.0",
@@ -170,6 +172,7 @@
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
     "typescript": "^3.9.6",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "xml": "^1.0.1"
   }
 }

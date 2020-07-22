@@ -20,6 +20,9 @@ jobs:
       - run:
           name: Run all tests
           command: yarn test-ci
+      - run:
+          name: Run build (sanity check)
+          command: yarn build
 
 workflows:
   version: 2

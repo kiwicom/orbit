@@ -23,24 +23,27 @@ import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
-const actionsSpace = theme => theme.orbit.spaceMedium;
-
-const allSpacing = theme =>
-  parseFloat(popoverPadding(theme)) * 2 +
-  parseFloat(mobileTop(theme)) +
-  parseFloat(actionsSpace(theme));
 
 const StyledContentWrapper = styled.div`
   overflow: auto;
-  max-height: ${({ actionsHeight, theme }) =>
+  max-height: ${({ actionsHeight, windowHeight }) =>
     // Calculates all the spacing relative to viewport to get space for action box
-    `calc(100vh - ${allSpacing(theme) + actionsHeight}px)`};
+    `${windowHeight - actionsHeight - 34}px`};
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  position: absolute;
+  bottom: ${({ actionsHeight }) => (actionsHeight ? `${actionsHeight}px` : 0)};
+  left: 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+
   ${media.largeMobile(css`
     max-height: 100%;
     border-radius: 3px;
-  `)}
+    bottom: auto;
+    left: auto;
+    position: relative;
+  `)};
 `;
 
 StyledContentWrapper.defaultProps = {
@@ -48,13 +51,22 @@ StyledContentWrapper.defaultProps = {
 };
 
 const StyledActions = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width 100%;
+  box-sizing: border-box;
   padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: 0;
+  padding-top: ${({ theme }) => theme.orbit.spaceSmall};
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
   ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
   }
   ${media.largeMobile(css`
+    position: relative;
+    bottom: auto;
+    left: auto;
     ${StyledButtonPrimitive} {
       width: auto;
       flex-grow: 0;
@@ -74,8 +86,6 @@ const StyledPopoverParent = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border-top-left-radius: 12px; /* TODO: Add token */
-  border-top-right-radius: 12px; /* TODO: Add token */
   background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   z-index: 1000;
@@ -139,6 +149,7 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
+  border-radius: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -180,7 +191,8 @@ const PopoverContentWrapper = ({
   });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), []);
+  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);
+  const windowHeight = typeof window !== "undefined" && window.innerHeight;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -219,7 +231,10 @@ const PopoverContentWrapper = ({
         isInsideModal={isInsideModal}
       >
         <StyledPopoverContent ref={content}>
-          <StyledContentWrapper actionsHeight={actionsDimensions && actionsDimensions.height}>
+          <StyledContentWrapper
+            actionsHeight={actionsDimensions && actionsDimensions.height}
+            windowHeight={windowHeight}
+          >
             <StyledPopoverPadding noPadding={noPadding}>{children}</StyledPopoverPadding>
           </StyledContentWrapper>
 

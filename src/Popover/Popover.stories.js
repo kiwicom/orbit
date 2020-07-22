@@ -339,10 +339,8 @@ storiesOf("Popover", module)
             content={longContent}
             actions={
               <Stack direction="row" justify="between">
-                <Button type="secondary" size="small">
-                  Cancel
-                </Button>
-                <Button size="small">Done</Button>
+                <Button type="secondary">Cancel</Button>
+                <Button>Done</Button>
               </Stack>
             }
             onOpen={action("open")}

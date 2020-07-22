@@ -35,6 +35,7 @@ export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) 
   max-width: 100%;
   background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
   margin-bottom: ${getSpacingToken};
+  flex-shrink: 0;
 `;
 
 StyledImage.defaultProps = {

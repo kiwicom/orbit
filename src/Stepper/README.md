@@ -33,28 +33,27 @@ Table below contains all types of the props available in Stepper component.
 
 ## Functional specs
 
-- The prop `defaultValue` sets up the default value when component mounts. If you need to get the current value of Stepper, use arrow function for it. The second parameter `name` is optional. The code may look like this:
+- The prop `defaultValue` sets the default value when the component mounts. If you need to get the current value of the Stepper, use an arrow function. 
 
 ```jsx
-<Stepper onChange={(value, name) => doSomething(value, name)} />
+<Stepper onChange={value => doSomething(value)} />
 ```
 
-# StepperStateless
+## StepperStateless
 
-InputStepper offers a stateless version for your custom solutions. To use `StepperStateless` you'll need to add the import
+Stepper offers a stateless version for your custom solutions. To use `StepperStateless`, you need to import it.
 
 ```jsx
 import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperStateless";
 ```
 
-## Props
+### Props
 
 Table below contains all types of the props available in `StepperStateless` component.
 
 | Name              | Type                        | Default | Description                                                                   |
 | :---------------- | :-------------------------- | :------ | :---------------------------------------------------------------------------- |
 | dataTest          | `string`                    |         | Optional prop for testing purposes.                                           |
-| defaultValue      | `number`                    | `0`     | Specifies the value of the Stepper. [See Functional specs](#functional-specs) |
 | disabled          | `boolean`                   | `false` | If `true`, the Stepper will be disabled.                                      |
 | disabledIncrement | `boolean`                   |         | If `true`, the increment `Button` will be disabled.                           |
 | disabledDecrement | `boolean`                   |         | If `true`, the decrement `Button` will be disabled.                           |

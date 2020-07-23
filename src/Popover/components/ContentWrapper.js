@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useContext, useMemo } from "react";
+import React, { useRef, useEffect, useContext, useMemo, useLayoutEffect } from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -54,7 +54,7 @@ const StyledActions = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
-  width 100%;
+  width: 100%;
   box-sizing: border-box;
   padding: ${({ theme }) => popoverPadding(theme)};
   padding-top: ${({ theme }) => theme.orbit.spaceSmall};
@@ -149,7 +149,6 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
-  border-radius: 0;
 
   ${media.largeMobile(css`
     display: none;
@@ -191,8 +190,13 @@ const PopoverContentWrapper = ({
   });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-  const actionsDimensions = useMemo(() => boundingClientRect(actionsRef), [actionsRef.current]);
-  const windowHeight = typeof window !== "undefined" && window.innerHeight;
+  const [actionsDimensions, setActionsDimensions] = React.useState(0);
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      setActionsDimensions(boundingClientRect(actionsRef));
+    }, 15);
+  }, [actions]);
+  const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -232,7 +236,7 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           <StyledContentWrapper
-            actionsHeight={actionsDimensions && actionsDimensions.height}
+            actionsHeight={actionsDimensions ? actionsDimensions.height : 0}
             windowHeight={windowHeight}
           >
             <StyledPopoverPadding noPadding={noPadding}>{children}</StyledPopoverPadding>

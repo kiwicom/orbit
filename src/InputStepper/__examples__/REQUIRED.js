@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+
+import InputStepper from "../index";
+
+export default {
+  Example: () => (
+    <div style={{ maxWidth: "10em" }}>
+      <InputStepper
+        required
+        label="Travelers"
+        minValue={1}
+        defaultValue={0}
+        maxValue={10}
+        titleIncrement="Add a traveler"
+        titleDecrement="Remove a traveler"
+      />
+    </div>
+  ),
+  info: {
+    title: "Required",
+    description: "To mark an input stepper as required, pass the required prop.",
+  },
+};

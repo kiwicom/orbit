@@ -14,6 +14,7 @@ export default {
   ),
   info: {
     title: "Default coupon",
-    description: "Coupons render their child text as a <mark> element styled as all caps.",
+    description:
+      "Coupons render their child text as a <code>&lt;mark&gt;</code> element styled as all caps.",
   },
 };

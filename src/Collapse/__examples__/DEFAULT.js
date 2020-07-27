@@ -7,7 +7,7 @@ import TextLink from "../../TextLink";
 
 export default {
   Example: () => (
-    <Collapse label="See more">
+    <Collapse label="Collapse principles">
       <Text>
         Collapse components help with{" "}
         <TextLink external href="https://orbit.kiwi/guides/progressive-disclosure/">

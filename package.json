@@ -111,7 +111,7 @@
     "@babel/node": "^7.10.4",
     "@babel/runtime": "^7.10.3",
     "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "^9.0.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@emotion/core": "^10.0.28",
     "@octokit/rest": "^15.13.1",
     "@storybook/addon-actions": "^5.3.19",

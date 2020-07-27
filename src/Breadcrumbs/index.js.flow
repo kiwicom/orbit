@@ -10,6 +10,7 @@ export type Props = {|
   ...Globals,
   +children: React$Node,
   +onGoBack?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +backHref?: string,
   +goBackTitle?: Translation,
   ...spaceAfter,
 |};

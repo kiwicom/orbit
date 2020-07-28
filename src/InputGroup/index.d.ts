@@ -27,6 +27,5 @@ interface State {
   active: boolean;
   filled: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class InputGroup extends React.Component<Props, State> {}
 export { InputGroup, InputGroup as default };

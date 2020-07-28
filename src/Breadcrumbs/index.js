@@ -39,7 +39,7 @@ StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const GoBackButton = ({ onClick }) => {
+const GoBackButton = ({ onClick, backHref }) => {
   const translate = useTranslate();
   return (
     <StyledBackButtonWrapper>
@@ -49,6 +49,7 @@ const GoBackButton = ({ onClick }) => {
         type="secondary"
         size="small"
         onClick={onClick}
+        href={backHref}
         title={translate("breadcrumbs_back")}
       />
     </StyledBackButtonWrapper>
@@ -63,6 +64,7 @@ const Breadcrumbs = (props: Props) => {
     onGoBack,
     goBackTitle = translate("breadcrumbs_back"),
     spaceAfter,
+    backHref,
   } = props;
   return (
     <>
@@ -74,7 +76,7 @@ const Breadcrumbs = (props: Props) => {
           spaceAfter={spaceAfter}
         >
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
-            {onGoBack && <GoBackButton onClick={onGoBack} />}
+            {onGoBack && <GoBackButton backHref={backHref} onClick={onGoBack} />}
             {React.Children.map(children, (item, key) => {
               if (React.isValidElement(item)) {
                 return React.cloneElement(item, {

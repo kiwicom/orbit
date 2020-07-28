@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
+import { render } from "react-dom";
+import { nullthrows } from "@adeira/js";
 
 import Breadcrumbs from "../index";
 import BreadcrumbsItem from "../BreadcrumbsItem";
@@ -36,6 +38,20 @@ describe("Breadcrumbs", () => {
 
     component.find("[dataTest='BreadcrumbsBack']").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
+  });
+
+  it("should render as a link when backHref is passed", () => {
+    const container = document.createElement("div");
+    const body = nullthrows(document.body, "Expected document to have a body");
+    body.appendChild(container);
+    render(
+      <Breadcrumbs backHref="https://orbit.kiwi" dataTest={dataTest} onGoBack={onGoBack}>
+        <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+      </Breadcrumbs>,
+      container,
+    );
+
+    expect(container.querySelector('a[href="https://orbit.kiwi"]')).not.toBeNull();
   });
 });
 

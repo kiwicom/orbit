@@ -12,6 +12,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly goBackTitle?: Common.Translation;
   readonly onGoBack?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+  readonly backHref?: string;
 }
 
 declare const Breadcrumbs: React.FunctionComponent<Props>;

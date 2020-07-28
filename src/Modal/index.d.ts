@@ -28,7 +28,6 @@ export interface State {
   footerHeight: number;
   hasModalSection: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class Modal extends React.Component<Props, State> {}
 export { Modal, Modal as default };
 export { ModalHeader } from "./ModalHeader/index";

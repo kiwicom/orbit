@@ -8,7 +8,7 @@ import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
-type Type = "apple" | "facebook" | "google";
+type Type = "apple" | "facebook" | "google" | "twitter";
 
 type OmittedButtonCommonProps = Exclude<
   ButtonCommonProps,

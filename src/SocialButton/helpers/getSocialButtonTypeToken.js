@@ -58,6 +58,7 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.APPLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
       [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.paletteInkLight, 30),
       [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.TWITTER]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
     },
   };
   return tokens[name][type];

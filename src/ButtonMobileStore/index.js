@@ -23,6 +23,10 @@ const src = {
     "https://images.kiwi.com/common/AppStoreGrayButton.png, https://images.kiwi.com/common/AppStoreGrayButton@2x.png 2x",
   googlePlay:
     "https://images.kiwi.com/common/GooglePlayGrayButton.png, https://images.kiwi.com/common/GooglePlayGrayButton@2x.png 2x",
+  appStoreLight:
+    "https://images.kiwi.com/common/AppStoreLigthButton.png, https://images.kiwi.com/common/AppStoreLigthButton@2x.png 2x",
+  googlePlayLight:
+    "https://images.kiwi.com/common/GooglePlayLightButton.png, https://images.kiwi.com/common/GooglePlayLightButton@2x.png 2x",
 };
 
 const ButtonMobileStore = ({

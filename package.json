@@ -128,7 +128,7 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-styled-components": "^1.11.0",
+    "babel-plugin-styled-components": "^1.11.1",
     "camelcase": "^6.0.0",
     "capitalize": "^2.0.3",
     "copyfiles": "^2.3.0",

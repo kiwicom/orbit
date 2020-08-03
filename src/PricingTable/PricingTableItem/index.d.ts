@@ -22,6 +22,7 @@ export interface Props extends Common.Global {
   readonly basis?: string;
   readonly hasError?: boolean;
   readonly onClick?: Common.Callback;
+  readonly desktopRadio?: boolean;
 }
 
 declare const PricingTableItem: React.FunctionComponent<Props>;

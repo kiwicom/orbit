@@ -10,7 +10,7 @@ import { StyledListWrapper } from "./PricingTableItem";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) => {
+const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadio }: Props) => {
   const { isDesktop } = useMediaQuery();
   const resolveBasis = item => {
     if (item.length) {
@@ -31,16 +31,15 @@ const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) =>
             desktop={{ spacing: "natural", spaceAfter: "none" }}
             justify="center"
           >
-            {isDesktop
-              ? children
-              : React.Children.map(children, (child, i) =>
-                  React.cloneElement(child, {
-                    active: activeElement === i,
-                    compact: true,
-                    basis: resolveBasis(child),
-                    hasError,
-                  }),
-                )}
+            {React.Children.map(children, (child, i) =>
+              React.cloneElement(child, {
+                active: desktopRadio && activeElement === i,
+                compact: !isDesktop,
+                basis: !isDesktop && resolveBasis(child),
+                hasError,
+                desktopRadio,
+              }),
+            )}
           </Stack>
           {!isDesktop && children && (
             <Stack spacing="condensed">

@@ -24,7 +24,8 @@ Table below contains all types of the props available in the PricingTable compon
 | activeElement | `number`     |         | Sets default active element on mobile view                           |
 | children      | `React.Node` |         | The content of the PricingTable. [See Subcomponents](#subcomponents) |
 | dataTest      | `string`     |         | Optional prop for testing purposes.                                  |
-| hasError      | `boolean`    |         | Sets default active element on mobile view                           |
+| hasError      | `boolean`    |         | Shows error state                                                    |
+| desktopRadio  | `boolean`    |         | Shows Radio buttons also on desktop version                          |
 
 ---
 

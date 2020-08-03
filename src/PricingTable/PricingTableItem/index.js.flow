@@ -17,6 +17,7 @@ export type Props = {|
   +action?: React$Node,
   +basis?: string,
   +hasError?: boolean,
+  +desktopRadio?: boolean,
   +onClick?: () => void | Promise<any>,
 |};
 

@@ -104,6 +104,24 @@ StyledBadgeWrapperContent.defaultProps = {
 
 const Item = styled.div``;
 
+const DesktopRadio = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
+
+DesktopRadio.defaultProps = {
+  theme: defaultTheme,
+};
+
+const Spacer = styled.div`
+  margin-top: ${({ theme }) => theme.orbit.spaceSmall};
+`;
+
+Spacer.defaultProps = {
+  theme: defaultTheme,
+};
+
 /*
   This causes rewrite of a list so list is ussable in in PricingTable, this is not at all elegant solution.
 */
@@ -160,6 +178,7 @@ const PricingTableItem = ({
   onClick,
   basis,
   hasError,
+  desktopRadio,
 }: Props) => {
   const onClickHandler = () => {
     if (onClick) {
@@ -175,7 +194,14 @@ const PricingTableItem = ({
       active={active}
       data-test={dataTest}
       hasError={hasError}
+      desktopRadio={desktopRadio}
     >
+      {!featureIcon && desktopRadio && !compact && <Spacer />}
+      {desktopRadio && !compact && (
+        <DesktopRadio>
+          <Radio checked={active} onChange={onClickHandler} hasError={hasError} />
+        </DesktopRadio>
+      )}
       {badge && (
         <StyledBadgeWrapper>
           <StyledBadgeWrapperContent hasIcon={!!featureIcon}>

@@ -17,6 +17,6 @@ export type Devices =
   | "smallMobile";
 
 declare const MediaQuery: { [key in Devices]: QueryFunction };
-declare const GetBreakpointWidth: (name: string, theme: ThemeShape, pure?: boolean) => string;
+declare const getBreakpointWidth: (name: string, theme: ThemeShape, pure?: boolean) => string;
 
-export { MediaQuery, MediaQuery as default, GetBreakpointWidth };
+export { MediaQuery, MediaQuery as default, getBreakpointWidth };

@@ -17,7 +17,7 @@ export type State = {|
   hasModalSection: boolean,
 |};
 
-type Size = "small" | "normal" | "large";
+type Size = "extraSmall" | "small" | "normal" | "large";
 
 export type onClose = (
   ev: SyntheticKeyboardEvent<HTMLDivElement> | SyntheticEvent<HTMLButtonElement> | MouseEvent,

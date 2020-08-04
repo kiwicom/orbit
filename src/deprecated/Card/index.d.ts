@@ -15,5 +15,9 @@ interface Props extends Common.Global, Common.SpaceAfter {
 }
 
 export const DeprecatedCard: React.FunctionComponent<Props>;
+
+declare const StyledCard: React.ComponentType<Props>;
+export { StyledCard };
+
 export * from "./CardHeader/index";
 export * from "./CardSection/index";

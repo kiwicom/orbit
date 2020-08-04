@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -13,6 +13,8 @@ import type { Props } from "./index.js.flow";
 import STATES from "./consts";
 import { IconContainer, Item as ListItem } from "../../List/ListItem";
 import { rtlSpacing } from "../../utils/rtl";
+import PricingTableContext from "../PricingTableContext";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
@@ -173,85 +175,93 @@ const PricingTableItem = ({
   badge,
   action,
   active = false,
-  compact = false,
   children,
   onClick,
-  basis,
-  hasError,
-  desktopRadio,
+  compact,
 }: Props) => {
   const onClickHandler = () => {
     if (onClick) {
       onClick();
     }
   };
+  const { isDesktop } = useMediaQuery();
+  const trueCompact = compact || isDesktop;
+  const context = useContext(PricingTableContext);
 
   return (
-    <StyledPricingTableItem
-      onClick={onClickHandler}
-      basis={basis}
-      featureIcon={!!featureIcon}
-      active={active}
-      data-test={dataTest}
-      hasError={hasError}
-      desktopRadio={desktopRadio}
-    >
-      {!featureIcon && desktopRadio && !compact && <Spacer />}
-      {desktopRadio && !compact && (
-        <DesktopRadio>
-          <Radio checked={active} onChange={onClickHandler} hasError={hasError} />
-        </DesktopRadio>
-      )}
-      {badge && (
-        <StyledBadgeWrapper>
-          <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
-            {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
-          </StyledBadgeWrapperContent>
-        </StyledBadgeWrapper>
-      )}
-      <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
-        {featureIcon && (
-          <Stack justify="center" grow={false}>
-            {featureIcon}
-          </Stack>
+    <>
+      <StyledPricingTableItem
+        onClick={onClickHandler}
+        basis={context.basis}
+        featureIcon={!!featureIcon}
+        active={active}
+        data-test={dataTest}
+        hasError={context.hasError}
+        desktopRadio={context.desktopRadio}
+      >
+        {!featureIcon && context.desktopRadio && trueCompact && <Spacer />}
+        {context.desktopRadio && trueCompact && (
+          <DesktopRadio>
+            <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
+          </DesktopRadio>
         )}
-        <Stack justify="between" direction="column">
-          <Stack spacing="tight" direction="column" flex align="stretch" desktop={{ grow: false }}>
-            {name && (
-              <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
-                {name}
-              </Text>
-            )}
-            {price && (
-              <Text size="large" weight="bold" type="primary" align="center">
-                {price}
-              </Text>
-            )}
-            {priceBadge && (
-              <Stack justify="center" align="end" desktop={{ grow: false }}>
-                {priceBadge}
-              </Stack>
-            )}
-          </Stack>
-          {!compact ? (
-            <Stack justify="between" direction="column">
-              <StyledListWrapper>{children && children}</StyledListWrapper>
-              {action && (
-                <Stack justify="center" grow={false}>
-                  {action}
+        {badge && (
+          <StyledBadgeWrapper>
+            <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
+              {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
+            </StyledBadgeWrapperContent>
+          </StyledBadgeWrapper>
+        )}
+        <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
+          {featureIcon && (
+            <Stack justify="center" grow={false}>
+              {featureIcon}
+            </Stack>
+          )}
+          <Stack justify="between" direction="column">
+            <Stack
+              spacing="tight"
+              direction="column"
+              flex
+              align="stretch"
+              desktop={{ grow: false }}
+            >
+              {name && (
+                <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
+                  {name}
+                </Text>
+              )}
+              {price && (
+                <Text size="large" weight="bold" type="primary" align="center">
+                  {price}
+                </Text>
+              )}
+              {priceBadge && (
+                <Stack justify="center" align="end" desktop={{ grow: false }}>
+                  {priceBadge}
                 </Stack>
               )}
             </Stack>
-          ) : (
-            <Stack justify="center" align="center" grow={false}>
-              <Item>
-                <Radio checked={active} onChange={onClickHandler} hasError={hasError} />
-              </Item>
-            </Stack>
-          )}
+            {trueCompact ? (
+              <Stack justify="between" direction="column">
+                <StyledListWrapper>{children && children}</StyledListWrapper>
+                {action && (
+                  <Stack justify="center" grow={false}>
+                    {action}
+                  </Stack>
+                )}
+              </Stack>
+            ) : (
+              <Stack justify="center" align="center" grow={false}>
+                <Item>
+                  <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
+                </Item>
+              </Stack>
+            )}
+          </Stack>
         </Stack>
-      </Stack>
-    </StyledPricingTableItem>
+      </StyledPricingTableItem>
+    </>
   );
 };
 

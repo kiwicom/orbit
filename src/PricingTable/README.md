@@ -46,6 +46,7 @@ Table below contains all types of the props in the PricingTableItem component.
 | Name              | Type                    | Default | Description                                             |
 | :---------------- | :---------------------- | :------ | :------------------------------------------------------ |
 | action            | `React$Node`            |         | Area for action elements, like Button.                  |
+| active            | `boolean`               |         | Shows active state.                                     |
 | badge             | `string \| React$Node`  |         | Badge above the PricingTableItem, works with **Badge**. |
 | **children**      | `React.Node`            |         | Content of the PricingTableItem component.              |
 | dataTest          | `string`                |         | Optional prop for testing purposes.                     |

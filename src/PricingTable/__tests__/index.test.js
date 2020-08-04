@@ -7,6 +7,7 @@ import Button from "../../Button";
 import Badge from "../../Badge";
 import PricingTableItem from "../PricingTableItem";
 import PricingTable from "../index";
+import PricingTableContext from "../PricingTableContext";
 
 const onClick = jest.fn();
 const onClick2 = jest.fn();
@@ -28,20 +29,23 @@ jest.mock("../../hooks/useMediaQuery", () => {
 
 describe("PricingTableItem mobile", () => {
   const component = shallow(
-    <PricingTableItem
-      dataTest={dataTest}
-      name={name}
-      price={price}
-      featureIcon={image}
-      badge={badge}
-      action={actions}
-      active
-      compact
-      onClick={onClick}
-    >
-      {content}
-    </PricingTableItem>,
+    <PricingTableContext.Provider value={{ basis: 0 }}>
+      <PricingTableItem
+        dataTest={dataTest}
+        name={name}
+        price={price}
+        featureIcon={image}
+        badge={badge}
+        action={actions}
+        active
+        compact
+        onClick={onClick}
+      >
+        {content}
+      </PricingTableItem>
+    </PricingTableContext.Provider>,
   );
+
   const pricingTableItem = component.find("PricingTableItem__StyledPricingTableItem");
   it("shouldn't render children", () => {
     expect(component.find("ul").exists()).toBe(false);

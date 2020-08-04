@@ -8,8 +8,10 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Modal";
 
+type Size = "extraSmall" | "small" | "normal" | "large";
+
 export interface Props extends Common.Global {
-  readonly size?: Common.Size;
+  readonly size?: Size;
   readonly children: React.ReactNode;
   readonly onClose?: Common.Event<
     React.KeyboardEvent<HTMLDivElement> | React.SyntheticEvent<HTMLButtonElement> | React.MouseEvent

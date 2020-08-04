@@ -10,6 +10,6 @@ const defaultContext: Context = {
 };
 
 const PricingTableContext: React.Context<Context> = React.createContext(defaultContext);
-PricingTableContext.displayName = "DictionaryOrbitContext";
+PricingTableContext.displayName = "PricingTableOrbitContext";
 
 export default PricingTableContext;

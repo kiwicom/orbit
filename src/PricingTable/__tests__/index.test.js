@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Button from "../../Button";
 import Badge from "../../Badge";
@@ -28,7 +28,7 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("PricingTableItem mobile", () => {
-  const component = shallow(
+  const component = mount(
     <PricingTableContext.Provider value={{ basis: 0 }}>
       <PricingTableItem
         dataTest={dataTest}
@@ -70,8 +70,8 @@ describe("PricingTableItem mobile", () => {
   it("shouldn't have actions", () => {
     expect(pricingTableItem.find("Button").exists()).toBe(false);
   });
-  it("should have Radio checked radio button", () => {
-    expect(pricingTableItem.find("Radio").render().prop("checked")).toBe(true);
+  it("should have checked radio button", () => {
+    expect(pricingTableItem.find("Radio").props().checked).toBe(true);
   });
   it("should be actionable", () => {
     pricingTableItem.simulate("click");
@@ -79,8 +79,8 @@ describe("PricingTableItem mobile", () => {
   });
 });
 
-describe("PricingTableItem desktrop", () => {
-  const component = shallow(
+describe("PricingTableItem desktop", () => {
+  const component = mount(
     <PricingTableItem
       dataTest={dataTest}
       name={name}
@@ -90,10 +90,12 @@ describe("PricingTableItem desktrop", () => {
       action={actions}
       active
       onClick={onClick2}
+      compact={false}
     >
       {content}
     </PricingTableItem>,
   );
+
   const pricingTableItem = component.find("PricingTableItem__StyledPricingTableItem");
   it("should render children", () => {
     expect(component.find("ul").exists()).toBe(true);

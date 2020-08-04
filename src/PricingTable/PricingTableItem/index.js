@@ -185,7 +185,7 @@ const PricingTableItem = ({
     }
   };
   const { isDesktop } = useMediaQuery();
-  const trueCompact = compact || isDesktop;
+  const trueCompact = typeof compact !== "undefined" ? compact : !isDesktop;
   const context = useContext(PricingTableContext);
 
   return (
@@ -199,8 +199,8 @@ const PricingTableItem = ({
         hasError={context.hasError}
         desktopRadio={context.desktopRadio}
       >
-        {!featureIcon && context.desktopRadio && trueCompact && <Spacer />}
-        {context.desktopRadio && trueCompact && (
+        {!featureIcon && context.desktopRadio && !trueCompact && <Spacer />}
+        {context.desktopRadio && !trueCompact && (
           <DesktopRadio>
             <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
           </DesktopRadio>
@@ -243,6 +243,12 @@ const PricingTableItem = ({
               )}
             </Stack>
             {trueCompact ? (
+              <Stack justify="center" align="center" grow={false}>
+                <Item>
+                  <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
+                </Item>
+              </Stack>
+            ) : (
               <Stack justify="between" direction="column">
                 <StyledListWrapper>{children && children}</StyledListWrapper>
                 {action && (
@@ -250,12 +256,6 @@ const PricingTableItem = ({
                     {action}
                   </Stack>
                 )}
-              </Stack>
-            ) : (
-              <Stack justify="center" align="center" grow={false}>
-                <Item>
-                  <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
-                </Item>
               </Stack>
             )}
           </Stack>

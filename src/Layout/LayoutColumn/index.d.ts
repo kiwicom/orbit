@@ -11,7 +11,7 @@ declare module "@kiwicom/orbit-components/lib/LayoutColumn";
 
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
-  readonly element?: string;
+  readonly as?: string;
   readonly hideOn?: Devices[];
 }
 

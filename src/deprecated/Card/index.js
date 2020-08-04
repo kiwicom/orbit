@@ -50,7 +50,7 @@ StyledChildWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCard = styled.div`
+export const StyledCard = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;

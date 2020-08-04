@@ -33,7 +33,7 @@ const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadi
           >
             {React.Children.map(children, (child, i) =>
               React.cloneElement(child, {
-                active: desktopRadio && activeElement === i,
+                active: isDesktop ? desktopRadio && activeElement === i : activeElement === i,
                 compact: !isDesktop,
                 basis: !isDesktop && resolveBasis(child),
                 hasError,

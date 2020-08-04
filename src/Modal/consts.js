@@ -1,5 +1,6 @@
 // @flow
 export const SIZES = {
+  EXTRASMALL: "extraSmall",
   SMALL: "small",
   NORMAL: "normal",
   LARGE: "large",

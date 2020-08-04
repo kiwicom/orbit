@@ -15,6 +15,5 @@ export interface Props extends Common.Global {
   readonly description?: React.ReactNode;
   readonly suppressed?: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class ModalHeader extends React.Component<Props> {}
 export { ModalHeader, ModalHeader as default };

@@ -3,6 +3,7 @@ export const TYPE_OPTIONS = {
   APPLE: "apple",
   FACEBOOK: "facebook",
   GOOGLE: "google",
+  TWITTER: "twitter",
 };
 
 export const TOKENS = {

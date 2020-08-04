@@ -12,6 +12,5 @@ export interface Props extends Common.Global, ModalContextProps {
   readonly children: React.ReactNode;
   readonly suppressed?: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class ModalSection extends React.Component<Props> {}
 export { ModalSection, ModalSection as default };

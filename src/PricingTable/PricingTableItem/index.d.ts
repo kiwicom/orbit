@@ -17,11 +17,9 @@ export interface Props extends Common.Global {
   readonly badge?: string | React.ReactNode;
   readonly children?: React.ReactNode;
   readonly active?: boolean;
-  readonly compact?: boolean;
   readonly action?: React.ReactNode;
-  readonly basis?: string;
-  readonly hasError?: boolean;
   readonly onClick?: Common.Callback;
+  readonly compact?: boolean;
 }
 
 declare const PricingTableItem: React.FunctionComponent<Props>;

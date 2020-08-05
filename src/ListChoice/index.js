@@ -79,6 +79,9 @@ StyledListChoiceContent.defaultProps = {
 
 const ListChoice = (props: Props) => {
   const { dataTest, icon, title, description, selectable, onClick, selected } = props;
+  const conditionalProps = {
+    ...(selectable ? { "aria-checked": selected } : null),
+  };
 
   return (
     <StyledListChoice
@@ -86,7 +89,8 @@ const ListChoice = (props: Props) => {
       data-test={dataTest}
       onKeyDown={handleKeyDown(onClick)}
       tabIndex="0"
-      role="button"
+      role={selectable ? "checkbox" : "button"}
+      {...conditionalProps}
     >
       {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
       <StyledListChoiceContent>

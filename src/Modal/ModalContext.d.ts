@@ -19,6 +19,7 @@ export interface Props {
 }
 
 export const ModalContext: React.Context<Props>;
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type WithModalContextType = <Config extends {}>(
   arg0: React.Component<Config>,
 ) => React.Component<Config>;

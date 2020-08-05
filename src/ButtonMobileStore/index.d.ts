@@ -17,7 +17,7 @@ export interface Props extends Common.Global {
   readonly stopPropagation?: boolean;
   readonly href?: string;
   readonly alt?: string;
-  readonly onClick?: Common.Event;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
 }
 
 declare const ButtonMobileStore: React.FunctionComponent<Props>;

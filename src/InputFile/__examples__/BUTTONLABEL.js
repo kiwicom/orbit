@@ -7,6 +7,7 @@ import Stack from "../../Stack";
 export default {
   Example: () => {
     const [photoName, setPhotoName] = React.useState("");
+    const [statementName, setStatementName] = React.useState("");
     const fileTypes = ".png,.jpg,.jpeg,.webp";
     return (
       <Stack spacing="loose">
@@ -23,12 +24,12 @@ export default {
         <InputFile
           buttonLabel="Select statement"
           label="Signed statement"
-          fileName={photoName}
+          fileName={statementName}
           placeholder="No file selected"
           allowedFileTypes=".pdf"
           help="Upload a signed statement as a PDF"
-          onChange={event => setPhotoName(event.target.files[0].name)}
-          onRemoveFile={() => setPhotoName("")}
+          onChange={event => setStatementName(event.target.files[0].name)}
+          onRemoveFile={() => setStatementName("")}
         />
       </Stack>
     );

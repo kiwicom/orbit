@@ -4,7 +4,7 @@ export const TYPE_OPTIONS = {
   GOOGLEPLAY: "googlePlay",
 };
 export const TYPE_VARIANT = {
-  DARK: "DARK",
-  LIGHT: "Light",
+  DARK: "dark",
+  LIGHT: "light",
 };
 export const HEIGHT = "40px";

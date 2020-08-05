@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useContext, useMemo, useLayoutEffect } from "react";
+import React, { useRef, useEffect, useContext, useMemo, useCallback } from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -24,15 +24,18 @@ import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
 
-const StyledContentWrapper = styled.div`
-  overflow: auto;
-  max-height: ${({ actionsHeight, windowHeight }) =>
+const StyledContentWrapper = styled.div.attrs(props => ({
+  style: {
+    bottom: props.actionsHeight ? props.actionsHeight : 0,
     // Calculates all the spacing relative to viewport to get space for action box
-    `${windowHeight - actionsHeight - 34}px`};
+    // 32 here is the fixed gap from the top, same with modal.
+    maxHeight: `${props.windowHeight - props.actionsHeight - 32}px`,
+  },
+}))`
+  overflow: auto;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   position: absolute;
-  bottom: ${({ actionsHeight }) => (actionsHeight ? `${actionsHeight}px` : 0)};
   left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
@@ -191,12 +194,18 @@ const PopoverContentWrapper = ({
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const [actionsDimensions, setActionsDimensions] = React.useState(0);
-  useLayoutEffect(() => {
-    setTimeout(() => {
-      setActionsDimensions(boundingClientRect(actionsRef));
-    }, 15);
-  }, [actions]);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+
+  const measuredRef = useCallback(
+    node => {
+      if (node !== null) {
+        setTimeout(() => {
+          setActionsDimensions(boundingClientRect(actionsRef));
+        }, 15);
+      }
+    },
+    [actions],
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -243,9 +252,9 @@ const PopoverContentWrapper = ({
           </StyledContentWrapper>
 
           {actions ? (
-            <StyledActions ref={actionsRef}>{actions}</StyledActions>
+            <StyledActions ref={measuredRef}>{actions}</StyledActions>
           ) : (
-            <StyledPopoverClose ref={actionsRef}>
+            <StyledPopoverClose ref={measuredRef}>
               <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>

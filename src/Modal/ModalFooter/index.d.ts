@@ -11,6 +11,5 @@ export interface Props extends Common.Global {
   readonly flex?: string | Array<string>;
   readonly children: React.ReactNode;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class ModalFooter extends React.Component<Props> {}
 export { ModalFooter, ModalFooter as default };

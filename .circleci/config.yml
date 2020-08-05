@@ -30,11 +30,7 @@ jobs:
 
       - run:
           name: Eslint
-          command: yarn eslint
-
-      - run:
-          name: Eslint TS
-          command: yarn eslint:ts:check
+          command: yarn eslint:check
 
       - run:
           name: Tests

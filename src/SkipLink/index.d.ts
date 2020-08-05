@@ -9,6 +9,7 @@ declare module "@kiwicom/orbit-components/lib/SkipLink";
 interface Action {
   readonly name: string;
   readonly href?: string;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   readonly onClick?: () => {};
 }
 

@@ -26,6 +26,5 @@ interface State {
   contentHeight: number;
   initialExpanded: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class TripSegment extends React.Component<Props, State> {}
 export { TripSegment, TripSegment as default };

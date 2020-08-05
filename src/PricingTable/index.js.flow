@@ -11,6 +11,7 @@ export type Props = {|
   +children: React$Node, // TODO: Type this propperly
   +activeElement?: ?number,
   +hasError?: boolean,
+  +desktopRadio?: boolean,
 |};
 
 declare export default React$ComponentType<Props>;

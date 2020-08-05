@@ -1,0 +1,11 @@
+// @flow
+
+export type Context = {|
+  +basis: number,
+  +hasError: boolean,
+  +desktopRadio: boolean,
+|};
+
+export type PricingTableContextType = React.Context<Context>;
+
+declare export default PricingTableContextType;

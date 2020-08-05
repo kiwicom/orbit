@@ -120,6 +120,7 @@ export { default as ModalHeaderAndSection } from "./Modal/__examples__/HEADER_SE
 export { default as ModalPreventOverlayClose } from "./Modal/__examples__/PREVENT_OVERLAY_CLOSE";
 export { default as ModalScrollPosition } from "./Modal/__examples__/SCROLL_POSITION";
 export { default as ModalSectionOnly } from "./Modal/__examples__/SECTION_ONLY";
+export { default as ModalSizes } from "./Modal/__examples__/SIZES";
 export { default as PopoverActions } from "./Popover/__examples__/ACTIONS";
 export { default as PopoverAlign } from "./Popover/__examples__/ALIGN";
 export { default as PopoverControlled } from "./Popover/__examples__/CONTROLLED";

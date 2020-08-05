@@ -101,6 +101,12 @@ export { default as InputFieldRequired } from "./InputField/__examples__/REQUIRE
 export { default as InputFieldSizes } from "./InputField/__examples__/SIZES";
 export { default as InputFieldSuffix } from "./InputField/__examples__/SUFFIX";
 export { default as InputFieldTags } from "./InputField/__examples__/TAGS";
+export { default as InputFileButtonLabel } from "./InputFile/__examples__/BUTTONLABEL";
+export { default as InputFileCallbacks } from "./InputFile/__examples__/CALLBACKS";
+export { default as InputFileDefault } from "./InputFile/__examples__/DEFAULT";
+export { default as InputFileError } from "./InputFile/__examples__/ERROR";
+export { default as InputFileHelp } from "./InputFile/__examples__/HELP";
+export { default as InputFileReference } from "./InputFile/__examples__/REF";
 export { default as InputGroupCallbacks } from "./InputGroup/__examples__/CALLBACKS";
 export { default as InputGroupDefault } from "./InputGroup/__examples__/DEFAULT";
 export { default as InputGroupError } from "./InputGroup/__examples__/ERROR";

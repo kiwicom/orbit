@@ -34,11 +34,12 @@ Table below contains all types of the props available in the Modal component.
 
 ### Modal enum
 
-| size       |
-| :--------- |
-| `"small"`  |
-| `"normal"` |
-| `"large`   |
+| size           |
+| :------------- |
+| `"extraSmall"` |
+| `"small"`      |
+| `"normal"`     |
+| `"large`       |
 
 ### Functional specs
 

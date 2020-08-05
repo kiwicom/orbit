@@ -175,13 +175,14 @@ storiesOf("PricingTable", module)
   )
   .add("Booking", () => {
     const activeElement = number("activeElement", 0);
+    const desktopRadio = boolean("desktopRadio", true);
 
     return (
       <Layout type="Booking">
         <LayoutColumn>
           <Card>
             <CardSection>
-              <PricingTable activeElement={activeElement}>
+              <PricingTable activeElement={activeElement} desktopRadio={desktopRadio}>
                 <PricingTableItem
                   name="Limited Services"
                   priceBadge={<Badge type="info">Included</Badge>}

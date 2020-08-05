@@ -35,6 +35,14 @@ storiesOf("SocialButton", module)
       </SocialButton>
     );
   })
+  .add("Twitter", () => {
+    const children = text("Children", "Sign in with Twitter");
+    return (
+      <SocialButton type={TYPE_OPTIONS.TWITTER} onClick={action("clicked")}>
+        {children}
+      </SocialButton>
+    );
+  })
   .add(
     "RTL",
     () => (

@@ -7,19 +7,27 @@ import Text from "../Text";
 import useMediaQuery from "../hooks/useMediaQuery";
 import type { Props } from "./index.js.flow";
 import { StyledListWrapper } from "./PricingTableItem";
+import PricingTableContext from "./PricingTableContext";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) => {
+const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadio }: Props) => {
   const { isDesktop } = useMediaQuery();
   const resolveBasis = item => {
-    if (item.length) {
-      return `${Math.floor(100 / item.length)}%`;
+    if (item > 0) {
+      return `${Math.floor(100 / item)}%`;
     }
     return `100%`;
   };
+
   return (
-    <>
+    <PricingTableContext.Provider
+      value={{
+        basis: !isDesktop ? resolveBasis(React.Children.count(children)) : 0,
+        hasError,
+        desktopRadio,
+      }}
+    >
       {isDesktop !== null && (
         <StyledPricingTable data-test={dataTest}>
           <Stack
@@ -31,16 +39,7 @@ const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) =>
             desktop={{ spacing: "natural", spaceAfter: "none" }}
             justify="center"
           >
-            {isDesktop
-              ? children
-              : React.Children.map(children, (child, i) =>
-                  React.cloneElement(child, {
-                    active: activeElement === i,
-                    compact: true,
-                    basis: resolveBasis(child),
-                    hasError,
-                  }),
-                )}
+            {children}
           </Stack>
           {!isDesktop && children && (
             <Stack spacing="condensed">
@@ -66,7 +65,7 @@ const PricingTable = ({ children, dataTest, activeElement, hasError }: Props) =>
           )}
         </StyledPricingTable>
       )}
-    </>
+    </PricingTableContext.Provider>
   );
 };
 

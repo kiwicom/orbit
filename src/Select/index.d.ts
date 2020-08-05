@@ -37,5 +37,5 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly customValueText?: Common.Translation;
 }
 
-declare const Select: React.RefForwardingComponent<Props, HTMLInputElement>;
+declare const Select: React.FunctionComponent<Props>;
 export { Select, Select as default };

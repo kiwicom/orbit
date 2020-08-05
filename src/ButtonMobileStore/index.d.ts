@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 
@@ -8,10 +8,12 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/ButtonMobileStore";
 
-type Type = "appStore" | "googlePlay" | "appStoreLight" | "googlePlayLight";
+type Type = "appStore" | "googlePlay";
+type Variant = "light" | "dark";
 
 export interface Props extends Common.Global {
   readonly type?: Type;
+  readonly variant?: Variant;
   readonly stopPropagation?: boolean;
   readonly href?: string;
   readonly alt?: string;

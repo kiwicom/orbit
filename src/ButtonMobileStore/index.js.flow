@@ -2,7 +2,8 @@
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
-  type: "appStore" | "googlePlay" | "appStoreLight" | "googlePlayLight",
+  type: "appStore" | "googlePlay",
+  variant?: "light" | "dark",
   stopPropagation?: boolean,
   href?: string,
   alt?: string,

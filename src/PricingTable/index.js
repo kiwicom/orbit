@@ -23,7 +23,7 @@ const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadi
   return (
     <PricingTableContext.Provider
       value={{
-        basis: !isDesktop ? resolveBasis(React.Children.toArray(children).length) : 0,
+        basis: !isDesktop ? resolveBasis(React.Children.count(children)) : 0,
         hasError,
         desktopRadio,
       }}

@@ -86,7 +86,7 @@ const InputStepperStateless = ({
             }
             iconLeft={<MinusCircle />}
             size={size}
-            onClick={onDecrement}
+            onClick={!disabled ? onDecrement : undefined}
             title={titleDecrement}
             asComponent={props => <div {...props} />}
           />
@@ -99,7 +99,7 @@ const InputStepperStateless = ({
             type="inline"
             iconLeft={<PlusCircle />}
             size={size}
-            onClick={onIncrement}
+            onClick={!disabled ? onIncrement : undefined}
             title={titleIncrement}
             asComponent={props => <div {...props} />}
           />

@@ -67,7 +67,7 @@ const StepperStateless = ({
         type="secondary"
         size="small"
         onClick={ev => {
-          if (onDecrement) {
+          if (onDecrement && !disabled) {
             onDecrement(ev);
           }
         }}
@@ -97,7 +97,7 @@ const StepperStateless = ({
         type="secondary"
         size="small"
         onClick={ev => {
-          if (onIncrement) {
+          if (onIncrement && !disabled) {
             onIncrement(ev);
           }
         }}

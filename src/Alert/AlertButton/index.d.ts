@@ -8,7 +8,15 @@ import { ButtonCommonProps } from "../../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Alert/AlertButton";
 
-type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle" | "white";
+type Type =
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "infoSubtle"
+  | "successSubtle"
+  | "warningSubtle"
+  | "criticalSubtle";
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;

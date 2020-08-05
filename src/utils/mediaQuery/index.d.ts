@@ -2,6 +2,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit-components
 import { Interpolation } from "styled-components";
+import { ThemeShape } from "../../defaultTheme";
 
 declare module "@kiwicom/orbit-components/lib/utils/mediaQuery";
 
@@ -16,4 +17,6 @@ export type Devices =
   | "smallMobile";
 
 declare const MediaQuery: { [key in Devices]: QueryFunction };
-export { MediaQuery, MediaQuery as default };
+declare const getBreakpointWidth: (name: string, theme: ThemeShape, pure?: boolean) => string;
+
+export { MediaQuery, MediaQuery as default, getBreakpointWidth };

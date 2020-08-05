@@ -19,7 +19,7 @@ export type BasicProps = {
 };
 
 interface Props extends Common.Global, BasicProps {
-  readonly element?: string;
+  readonly as?: string;
   readonly mediumMobile?: BasicProps;
   readonly largeMobile?: BasicProps;
   readonly tablet?: BasicProps;

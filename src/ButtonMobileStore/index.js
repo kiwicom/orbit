@@ -19,13 +19,13 @@ StyledButtonMobileStore.defaultProps = {
 };
 
 const src = {
-  dark: {
+  [TYPE_VARIANT.DARK]: {
     appStore:
       "https://images.kiwi.com/common/AppStoreGrayButton.png, https://images.kiwi.com/common/AppStoreGrayButton@2x.png 2x",
     googlePlay:
       "https://images.kiwi.com/common/GooglePlayGrayButton.png, https://images.kiwi.com/common/GooglePlayGrayButton@2x.png 2x",
   },
-  light: {
+  [TYPE_VARIANT.LIGHT]: {
     appStore:
       "https://images.kiwi.com/common/AppStoreLightButton.png, https://images.kiwi.com/common/AppStoreLightButton@2x.png 2x",
     googlePlay:

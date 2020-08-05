@@ -28,9 +28,7 @@ Table below contains all types of the props available in the ButtonMobileStore c
 
 ### enum
 
-| type                | variant   |
-| :------------------ | :-------- |
-| `"appStore"`        | `"dark"`  |
-| `"googlePlay"`      | `"light"` |
-| `"appStoreLight"`   |
-| `"googlePlayLight"` |
+| type           | variant   |
+| :------------- | :-------- |
+| `"appStore"`   | `"dark"`  |
+| `"googlePlay"` | `"light"` |

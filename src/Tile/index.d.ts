@@ -22,7 +22,7 @@ interface Props extends Common.Global {
   readonly expandable?: boolean;
   readonly initialExpanded?: boolean;
   readonly noHeaderIcon?: boolean;
-  readonly htmlTitle?: string,
+  readonly htmlTitle?: string;
   readonly noPadding?: boolean;
 }
 

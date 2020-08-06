@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import { Props as BreadcrumbsItemProps} from './BreadcrumbsItem';
+import { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem";
 
 declare module "@kiwicom/orbit-components/lib/Breadcrumbs";
 
@@ -19,4 +19,4 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 declare const Breadcrumbs: React.FunctionComponent<Props>;
 declare const BreadcrumbsItem: React.FunctionComponent<BreadcrumbsItemProps>;
 
-export { Breadcrumbs,BreadcrumbsItem, Breadcrumbs as default };
+export { Breadcrumbs, BreadcrumbsItem, Breadcrumbs as default };

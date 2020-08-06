@@ -180,7 +180,7 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
-  const actionsRef: { current: React$ElementRef<*> } = useRef(null);
+  const intervalRef = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
   const dimensions = useDimensions({
@@ -199,9 +199,10 @@ const PopoverContentWrapper = ({
   const measuredRef = useCallback(
     node => {
       if (node !== null) {
-        setTimeout(() => {
-          setActionsDimensions(boundingClientRect(actionsRef));
+        const timer = setTimeout(() => {
+          setActionsDimensions(boundingClientRect(node));
         }, 15);
+        intervalRef.current = timer;
       }
     },
     [actions],
@@ -213,7 +214,10 @@ const PopoverContentWrapper = ({
         popover.current.focus();
       }
     }, 100);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(intervalRef.current);
+    };
   }, []);
 
   useClickOutside(popover, onClose);

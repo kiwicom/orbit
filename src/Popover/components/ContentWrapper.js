@@ -20,6 +20,7 @@ import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
+import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -180,7 +181,6 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = useContext(ModalContext);
   const popover: { current: React$ElementRef<*> } = useRef(null);
   const content: { current: React$ElementRef<*> } = useRef(null);
-  const intervalRef = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
   const dimensions = useDimensions({
@@ -193,15 +193,17 @@ const PopoverContentWrapper = ({
   });
   const verticalPosition = calculateVerticalPosition(position[0], dimensions);
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
-  const [actionsDimensions, setActionsDimensions] = React.useState(0);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+  const [
+    actionsDimensions,
+    ,
+    setActionsDimensionsWithTimeout,
+    clearActionsDimensions,
+  ] = useStateWithTimeout(null, 15);
   const measuredRef = useCallback(
     node => {
       if (node !== null) {
-        const timer = setTimeout(() => {
-          setActionsDimensions(boundingClientRect({ current: node }));
-        }, 15);
-        intervalRef.current = timer;
+        setActionsDimensionsWithTimeout(boundingClientRect({ current: node }));
       }
     },
     [actions],
@@ -215,7 +217,7 @@ const PopoverContentWrapper = ({
     }, 100);
     return () => {
       clearTimeout(timer);
-      clearTimeout(intervalRef.current);
+      clearActionsDimensions();
     };
   }, []);
 

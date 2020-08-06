@@ -7,6 +7,7 @@ const defaultContext: Context = {
   basis: 0,
   hasError: false,
   desktopRadio: false,
+  isContent: false,
 };
 
 const PricingTableContext: React.Context<Context> = React.createContext(defaultContext);

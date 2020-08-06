@@ -6,7 +6,7 @@ import * as Common from "../../common/common";
 type inexactString = string | null | undefined;
 type functionReturningString = () => string;
 
-export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
+export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
   readonly ariaExpanded?: boolean;

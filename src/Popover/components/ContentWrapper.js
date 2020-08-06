@@ -195,12 +195,11 @@ const PopoverContentWrapper = ({
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const [actionsDimensions, setActionsDimensions] = React.useState(0);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
-
   const measuredRef = useCallback(
     node => {
       if (node !== null) {
         const timer = setTimeout(() => {
-          setActionsDimensions(boundingClientRect(node));
+          setActionsDimensions(boundingClientRect({ current: node }));
         }, 15);
         intervalRef.current = timer;
       }

@@ -27,6 +27,6 @@ export default {
   info: {
     title: "Buttons as links",
     description:
-      "1. When buttons have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop. 3. Buttons marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security.",
+      "1. When buttons have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop.  (Just note you need to provide the function yourself and you should specific the role of the button.) 3. Buttons marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security.",
   },
 };

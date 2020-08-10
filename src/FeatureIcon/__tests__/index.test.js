@@ -16,7 +16,7 @@ describe(`FeatureIcon: ${name}`, () => {
     const IMAGE_PATH_RETINA = `${baseURL}/feature-icons/104x104/${name}.png 2x,${baseURL}/feature-icons/156x156/${name}.png 3x`;
     expect(component.prop("src")).toBe(IMAGE_PATH);
     expect(component.prop("srcSet")).toBe(IMAGE_PATH_RETINA);
-    expect(component.prop("alt")).toBe(name);
+    expect(component.prop("alt")).toBe(alt);
     expect(component.prop("data-test")).toBe(dataTest);
   });
 });

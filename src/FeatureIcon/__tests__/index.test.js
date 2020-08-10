@@ -9,7 +9,8 @@ const name = NAME_OPTIONS.TICKETSAVER;
 
 describe(`FeatureIcon: ${name}`, () => {
   const dataTest = "test";
-  const component = mount(<FeatureIcon name={name} dataTest={dataTest} />).find("img");
+  const alt = "alt-test";
+  const component = mount(<FeatureIcon alt={alt} name={name} dataTest={dataTest} />).find("img");
   it("should have props", () => {
     const IMAGE_PATH = `${baseURL}/feature-icons/52x52/${name}.png`;
     const IMAGE_PATH_RETINA = `${baseURL}/feature-icons/104x104/${name}.png 2x,${baseURL}/feature-icons/156x156/${name}.png 3x`;

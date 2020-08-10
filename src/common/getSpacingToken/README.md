@@ -12,7 +12,7 @@ import getSpacingToken from "@kiwicom/orbit-components/lib/common/getSpacingToke
 const MyComponent = styled.div`
   margin-bottom: ${getSpacingToken};
   // It's not necessary do destructure props
-  // margin-bottom: ${() => getSpacingToken({ spaceAfter, theme }};
+  // margin-bottom: ${() => getSpacingToken({ spaceAfter, theme })};
 `
 
 MyComponent.defaultProps = {

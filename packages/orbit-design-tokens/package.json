@@ -25,6 +25,7 @@
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
     "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
+    "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
     "build": "yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
@@ -42,9 +43,12 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
+    "@babel/node": "^7.10.5",
     "@babel/parser": "^7.9.4",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-flow": "^7.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-replace-import-path": "^0.5.0",
     "babylon": "^6.18.0",
@@ -58,14 +62,15 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "@typescript-eslint/eslint-plugin": "^2.23.0",
-    "@typescript-eslint/parser": "^2.23.0",
     "flow-bin": "^0.122.0",
+    "fs-extra": "^9.0.1",
     "jest": "^25.3.0",
     "lodash": "^4.17.14",
+    "memfs": "^3.2.0",
     "prettier": "^1.18.2",
     "theo": "^8.1.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "xml": "^1.0.1"
   },
   "dependencies": {
     "ramda": "^0.27.0"

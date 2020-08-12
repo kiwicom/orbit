@@ -49,8 +49,7 @@
     "component"
   ],
   "browserslist": [
-    "last 2 versions",
-    "Edge >= 38"
+    "extends @kiwicom/browserslist-config"
   ],
   "files": [
     "es",
@@ -112,6 +111,7 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@emotion/core": "^10.0.28",
+    "@kiwicom/browserslist-config": "^1.0.0",
     "@octokit/rest": "^15.13.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-info": "5.3.19",

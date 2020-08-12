@@ -1,80 +1,19 @@
 {
-  "name": "@kiwicom/orbit-components",
-  "version": "0.91.0",
-  "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
-  "sideEffects": false,
+  "name": "@kiwicom/orbit",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
-    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd",
-    "build:lib": "babel --out-dir lib --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js src && yarn copy:lib",
-    "build:module": "cross-env BABEL_TARGET=\"js-esm\" babel --out-dir es --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js src && yarn copy:module",
-    "build:icons": "babel-node config/build.js",
-    "build:iconsPng": "node config/generatePngIcons.js",
-    "build:typeFiles": "babel-node config/typeFiles.js",
-    "build:iconFont": "babel-node config/createSVGFont.js && cd src/icons/; zip -r ../../orbit-svgs.zip ./svg; cd -; zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg && zip -r orbit-icons-font.zip orbit-icons-font",
-    "build:storybook": "cross-env BABEL_TARGET=storybook build-storybook -c .storybook -o .out -s ./static",
-    "build:examples": "babel-node config/buildExample.js 'src/**/__examples__/*.js'",
-    "build:umd": "webpack --mode=production",
-    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
-    "copy:module": "copyfiles -u 1 'src/**/*.md' es && copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.json' es",
-    "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
-    "prepare": "npm run build",
+    "orbit-components": "yarn workspace @kiwicom/orbit-components",
+    "prepare": "yarn orbit-components build",
     "prettier:test": "prettier --check '**/*.md'",
-    "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
-    "fetch-translations": "babel-node config/fetchTranslations.js",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
-    "build-storybook": "build-storybook -s ./static",
-    "deploy:storybook": "cross-env BABEL_TARGET=\"storybook\" storybook-to-ghpages",
-    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
-    "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
-    "compile:ts": "yarn tsc"
-  },
-  "storybook-deployer": {
-    "gitUsername": "GH Pages Bot",
-    "gitEmail": "hello@ghbot.com",
-    "commitMessage": "Deploy Storybook to GitHub Pages [skip ci]"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kiwicom/orbit-components.git"
-  },
-  "keywords": [
-    "orbit",
-    "components",
-    "ui",
-    "library",
-    "component"
-  ],
-  "files": [
-    "es",
-    "lib",
-    "umd",
-    "orbit-icons-font",
-    "orbit-icons-font.zip",
-    "orbit-svgs.zip",
-    ".babelrc",
-    ".eslintrc",
-    ".flowconfig",
-    "package.json",
-    "readme.md",
-    "yarn.lock"
-  ],
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.docker",
-        "width": 1366,
-        "height": 768
-      },
-      "chrome.iphone7": {
-        "target": "chrome.docker",
-        "preset": "iPhone 7"
-      }
-    }
+    "release": "lerna version --conventional-commits"
   },
   "lint-staged": {
     "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",
@@ -87,20 +26,9 @@
       "pre-commit": "lint-staged"
     }
   },
-  "main": "lib/index.js",
-  "module": "es/index.js",
   "author": "kiwi.com",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1"
-  },
   "dependencies": {
-    "@adeira/js": "^1.2.4",
-    "@kiwicom/orbit-design-tokens": "~0.11.0"
-  },
-  "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.4.0",
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.4",
@@ -109,35 +37,18 @@
     "@babel/runtime": "^7.11.0",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.1",
-    "@emotion/core": "^10.0.28",
     "@kiwicom/browserslist-config": "^1.0.0",
-    "@octokit/rest": "^15.13.1",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-info": "5.3.19",
-    "@storybook/addon-knobs": "^5.3.19",
-    "@storybook/addons": "5.3.19",
-    "@storybook/react": "^5.3.19",
-    "@storybook/storybook-deployer": "^2.8.6",
-    "@svgr/core": "^2.0.0",
     "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
     "@typescript-eslint/parser": "^3.9.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.11.1",
     "browserslist": "^4.14.0",
     "camelcase": "^6.0.0",
     "caniuse-db": "^1.0.30001114",
-    "capitalize": "^2.0.3",
-    "copyfiles": "^2.3.0",
-    "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.5.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -149,31 +60,12 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "flow-bin": "^0.130.0",
-    "fs-extra": "^9.0.1",
-    "glob": "^7.1.2",
     "husky": "^4.2.5",
-    "isomorphic-unfetch": "^3.0.0",
     "jest": "^26.4.2",
-    "jest-styled-components": "^6.2.1",
-    "jsdom": "^16.4.0",
+    "lerna": "3.22.1",
     "lint-staged": "^10.2.11",
-    "loki": "^0.15.0",
-    "make-runnable": "^1.3.6",
     "markdown-magic": "^1.0.0",
-    "mkdirp": "^1.0.4",
     "prettier": "^2.0.5",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-element-to-jsx-string": "^14.3.1",
-    "react-test-renderer": "^16.13.0",
-    "rimraf": "^3.0.2",
-    "sharp": "^0.25.3",
-    "styled-components": "^4.4.1",
-    "surge": "^0.20.1",
-    "svg2ttf": "^5.0.0",
-    "svgicons2svgfont": "^9.0.4",
-    "ttf2woff2": "^3.0.0",
-    "typescript": "^3.9.7",
-    "webpack-cli": "^3.3.12"
+    "typescript": "^3.9.7"
   }
 }

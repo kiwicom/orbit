@@ -5,15 +5,15 @@ lib
 node_modules
 
 # from gitignore
-src/icons/*.js
-src/icons/*.js.flow
-src/icons/*.ts
+packages/orbit-components/src/icons/*.js
+packages/orbit-components/src/icons/*.js.flow
+packages/orbit-components/src/icons/*.ts
 
-src/Illustration/index.js.flow
-src/AirportIllustration/index.js.flow
-src/ServiceLogo/index.js.flow
-src/FeatureIcon/index.js.flow
-src/Illustration/index.d.ts
-src/AirportIllustration/index.d.ts
-src/ServiceLogo/index.d.ts
-src/FeatureIcon/index.d.ts
+packages/orbit-components/src/Illustration/index.js.flow
+packages/orbit-components/src/AirportIllustration/index.js.flow
+packages/orbit-components/src/ServiceLogo/index.js.flow
+packages/orbit-components/src/FeatureIcon/index.js.flow
+packages/orbit-components/src/Illustration/index.d.ts
+packages/orbit-components/src/AirportIllustration/index.d.ts
+packages/orbit-components/src/ServiceLogo/index.d.ts
+packages/orbit-components/src/FeatureIcon/index.d.ts

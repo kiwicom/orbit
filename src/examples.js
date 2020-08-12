@@ -148,6 +148,8 @@ export { default as SelectSizes } from "./Select/__examples__/SIZES";
 export { default as ServiceLogoDefault } from "./ServiceLogo/__examples__/DEFAULT";
 export { default as ServiceLogoGrayscale } from "./ServiceLogo/__examples__/GRAYSCALE";
 export { default as ServiceLogoSizes } from "./ServiceLogo/__examples__/SIZES";
+export { default as StopoverArrowDefault } from "./StopoverArrow/__examples__/DEFAULT";
+export { default as StopoverArrowStops } from "./StopoverArrow/__examples__/STOPS";
 export { default as TextAlign } from "./Text/__examples__/ALIGN";
 export { default as TextColor } from "./Text/__examples__/COLOR";
 export { default as TextColorSupplementary } from "./Text/__examples__/COLOR_SUPPLEMENTARY";

@@ -1,5 +1,5 @@
-etc
-es
+packages/*/es
+packages/*/lib
+packages/*/umd
 flow-typed
-lib
-package.json
+**/package.json

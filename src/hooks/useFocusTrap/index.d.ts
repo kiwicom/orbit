@@ -1,6 +1,3 @@
-// @flow
-import Translations from "../../Dictionary/index";
+declare const useFocusTrap: (ref: { current: HTMLElement | undefined | null }) => void;
 
-declare const useDictionary: () => typeof Translations;
-
-export { useDictionary, useDictionary as default };
+export { useFocusTrap, useFocusTrap as default };

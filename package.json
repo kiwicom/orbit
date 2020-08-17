@@ -26,6 +26,7 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
     "fetch-translations": "babel-node config/fetchTranslations.js",
+    "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
     "build-storybook": "build-storybook -s ./static",
     "deploy:storybook": "cross-env BABEL_TARGET=\"storybook\" storybook-to-ghpages",
     "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
@@ -47,9 +48,6 @@
     "ui",
     "library",
     "component"
-  ],
-  "browserslist": [
-    "extends @kiwicom/browserslist-config"
   ],
   "files": [
     "es",
@@ -80,7 +78,8 @@
   },
   "lint-staged": {
     "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",
-    "*.md": "prettier --write"
+    "*.md": "prettier --write",
+    ".browserslistrc": "yarn update-supported-browsers"
   },
   "husky": {
     "hooks": {
@@ -131,6 +130,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "browserslist": "^4.14.0",
     "camelcase": "^6.0.0",
+    "caniuse-db": "^1.0.30001114",
     "capitalize": "^2.0.3",
     "copyfiles": "^2.3.0",
     "cross-env": "^7.0.2",
@@ -159,6 +159,7 @@
     "lint-staged": "^10.2.11",
     "loki": "^0.15.0",
     "make-runnable": "^1.3.6",
+    "markdown-magic": "^1.0.0",
     "mkdirp": "^1.0.4",
     "prettier": "^2.0.5",
     "react": "^16.12.0",

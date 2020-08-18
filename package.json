@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@adeira/js": "^1.2.4",
-    "@kiwicom/orbit-design-tokens": "~0.10.0"
+    "@kiwicom/orbit-design-tokens": "~0.11.0"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^0.4.0",

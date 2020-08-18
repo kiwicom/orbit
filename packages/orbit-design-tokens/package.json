@@ -31,7 +31,8 @@
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "test": "jest",
     "eslint": "eslint .",
-    "test-ci": "yarn flow:check && yarn eslint && yarn test --ci"
+    "test-ci": "yarn flow:check && yarn eslint && yarn test --ci",
+    "prepublishOnly": "yarn build"
   },
   "author": "kiwi.com",
   "license": "MIT",

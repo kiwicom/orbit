@@ -107,7 +107,7 @@
     "@babel/generator": "^7.10.2",
     "@babel/node": "^7.10.5",
     "@babel/runtime": "^7.11.0",
-    "@commitlint/cli": "^9.1.1",
+    "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.1",
     "@emotion/core": "^10.0.28",
     "@kiwicom/browserslist-config": "^1.0.0",

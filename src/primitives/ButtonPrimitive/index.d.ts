@@ -86,5 +86,5 @@ export type Props = Exclude<ButtonCommonProps, { readonly size?: Common.Size }> 
   PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
-declare const Button: React.RefForwardingComponent<Props, HTMLButtonElement>;
+declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;
 export { Button, Button as default, StyledButtonPrimitive };

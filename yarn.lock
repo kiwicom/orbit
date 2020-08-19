@@ -1572,10 +1572,10 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-1.0.0.tgz#4abe67d42fd037f87e5abc20eb9e392a14639a30"
   integrity sha512-PoLLgols9+D58y58m5dbFCSxe6SqT7v+80zPqvDY/qfb/ZYbZ8dcCDrceMgdu2z0oP0D7ZtGK+7lpPXsIqRDYw==
 
-"@kiwicom/orbit-design-tokens@~0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.10.0.tgz#759fe60398003edbb5712541e59fb97b06b356c9"
-  integrity sha512-8kTLOp0KxwMwDo+no7fF4M5w1pAttW3Qs32QrFcWp0FMc8Z//qUAeBo2N+kvJYyT0+6rUPIv6arFPEyW5ZUfBw==
+"@kiwicom/orbit-design-tokens@~0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-0.11.0.tgz#57419566f8cfb56b8111a2317ba2f81856cbf47d"
+  integrity sha512-yrVsgaS5fiMKoiwiogw75crjKGNXzKZzJsu1e3ooyB+q1djRuWdNc9KjqywRqu+p6Y/jz20GOQ+cxiVRHpuGLw==
   dependencies:
     ramda "^0.27.0"
 

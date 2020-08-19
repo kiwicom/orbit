@@ -38,7 +38,7 @@ export interface Global {
 }
 
 export interface Ref {
-  readonly ref?: { current: HTMLElement | null };
+  readonly ref?: { current: HTMLElement | null } | ((instance: HTMLElement | null) => void);
 }
 
 export interface SpaceAfter {

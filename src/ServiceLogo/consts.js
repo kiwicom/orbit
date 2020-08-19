@@ -31,6 +31,7 @@ export const NAME_OPTIONS = {
   VISA: "Visa",
   VISAHQ: "VisaHQ",
   ZOOZ: "Zooz",
+  ELO: "Elo",
 };
 
 export const SIZE_OPTIONS = {

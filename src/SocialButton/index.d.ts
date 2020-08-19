@@ -8,7 +8,7 @@ import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
-type Type = "apple" | "facebook" | "google";
+type Type = "apple" | "facebook" | "google" | "twitter";
 
 type OmittedButtonCommonProps = Exclude<
   ButtonCommonProps,
@@ -23,5 +23,5 @@ type Props = {
   readonly type?: Type;
 } & OmittedButtonCommonProps;
 
-declare const SocialButton: React.RefForwardingComponent<Props, HTMLButtonElement>;
+declare const SocialButton: React.RefForwardingComponent<HTMLButtonElement, Props>;
 export { SocialButton, SocialButton as default };

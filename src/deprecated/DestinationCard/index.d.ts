@@ -34,6 +34,5 @@ interface Props extends Common.Global {
 interface State {
   hiddenContentHeight: number;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class DestinationCard extends React.Component<Props, State> {}
 export { DestinationCard, DestinationCard as default };

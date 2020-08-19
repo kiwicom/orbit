@@ -6,7 +6,7 @@ import * as Common from "../../common/common";
 type inexactString = string | null | undefined;
 type functionReturningString = () => string;
 
-export interface ButtonCommonProps extends Common.Global, Common.SpaceAfter {
+export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
   readonly ariaExpanded?: boolean;
@@ -86,5 +86,5 @@ export type Props = Exclude<ButtonCommonProps, { readonly size?: Common.Size }> 
   PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
-declare const Button: React.RefForwardingComponent<Props, HTMLButtonElement>;
+declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;
 export { Button, Button as default, StyledButtonPrimitive };

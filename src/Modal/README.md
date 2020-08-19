@@ -34,11 +34,12 @@ Table below contains all types of the props available in the Modal component.
 
 ### Modal enum
 
-| size       |
-| :--------- |
-| `"small"`  |
-| `"normal"` |
-| `"large`   |
+| size           |
+| :------------- |
+| `"extraSmall"` |
+| `"small"`      |
+| `"normal"`     |
+| `"large`       |
 
 ### Functional specs
 
@@ -137,8 +138,8 @@ import Button from "@kiwicom/orbit-components/lib/Button";
 #### Usage:
 
 ```jsx
-<Modal>
-  <ModalFooter flex={["0 0 auto", "1 1 100%"]} fixed>
+<Modal fixedFooter>
+  <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
     <Button type="secondary" iconLeft={<ChevronLeft />}>
       Back
     </Button>

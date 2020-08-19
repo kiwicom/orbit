@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 export default {
   Example: () => (
     <Stack direction="column">
-      <div style={{ maxWidth: "10em" }}>
+      <div style={{ maxWidth: "11em" }}>
         <InputStepper
           label="Travelers"
           minValue={1}
@@ -17,7 +17,7 @@ export default {
           titleDecrement="Remove a traveler"
         />
       </div>
-      <div style={{ maxWidth: "10em" }}>
+      <div style={{ maxWidth: "11em" }}>
         <InputStepper
           size="small"
           label="Travelers"

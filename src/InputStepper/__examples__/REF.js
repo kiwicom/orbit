@@ -13,7 +13,7 @@ export default {
       }
     });
     return (
-      <div style={{ maxWidth: "10em" }}>
+      <div style={{ maxWidth: "11em" }}>
         <InputStepper
           ref={ref}
           label="Travelers"

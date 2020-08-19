@@ -16,7 +16,7 @@ export default {
     };
 
     return (
-      <div style={{ maxWidth: "10em" }}>
+      <div style={{ maxWidth: "11em" }}>
         <InputStepperStateless
           value={`${value} adults`}
           disabledDecrement={value <= minValue}

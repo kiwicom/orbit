@@ -5,7 +5,7 @@ import InputStepper from "../index";
 
 export default {
   Example: () => (
-    <div style={{ maxWidth: "10em" }}>
+    <div style={{ maxWidth: "11em" }}>
       <InputStepper
         step={15}
         defaultValue={30}

@@ -25,7 +25,7 @@ export default {
             </Heading>
             <Text>For getting the current value.</Text>
           </Stack>
-          <div style={{ maxWidth: "10em" }}>
+          <div style={{ maxWidth: "11em" }}>
             <InputStepper
               onChange={value => setCurrentValue(value)}
               label="Travelers"
@@ -42,7 +42,7 @@ export default {
           <Heading type="title3" as="h3">
             All callbacks
           </Heading>
-          <div style={{ maxWidth: "10em" }}>
+          <div style={{ maxWidth: "11em" }}>
             <InputStepper
               onBlur={() => addAction("Blurred")}
               onChange={() => addAction("Changed")}

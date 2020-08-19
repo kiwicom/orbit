@@ -18,6 +18,5 @@ interface State {
   initialTop: number;
   initialWidth: boolean;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class Sticky extends React.Component<Props, State> {}
 export { Sticky, Sticky as default };

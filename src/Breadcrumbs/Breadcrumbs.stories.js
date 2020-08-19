@@ -36,8 +36,13 @@ storiesOf("Breadcrumbs", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const href = text("href", "https://kiwi.com");
       const withGoBack = boolean("onGoBack", true);
+      const backHref = text("backHref", null);
       return (
-        <Breadcrumbs onGoBack={withGoBack ? action("onGoBack") : undefined} spaceAfter={spaceAfter}>
+        <Breadcrumbs
+          backHref={backHref}
+          onGoBack={withGoBack ? action("onGoBack") : undefined}
+          spaceAfter={spaceAfter}
+        >
           <BreadcrumbsItem id="rocket" href={href} onClick={action("clicked")}>
             Kiwi.com
           </BreadcrumbsItem>
@@ -83,4 +88,7 @@ storiesOf("Breadcrumbs", module)
         </Breadcrumbs>
       </RenderInRtl>
     );
+  })
+  .add("Back link", () => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>, {
+    info: "Render the back button as a link. ",
   });

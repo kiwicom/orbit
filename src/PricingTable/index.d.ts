@@ -12,6 +12,7 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly activeElement?: number | undefined | null;
   readonly hasError?: boolean;
+  readonly desktopRadio?: boolean;
 }
 
 export const PricingTable: React.FunctionComponent<Props>;

@@ -59,8 +59,25 @@ describe("Component", () => {
 
 This part of testing is often abandoned by people, but we are aware of how important this is for users. It’s recommended that you test your new components across different platforms and browsers. New components should work on these browsers:
 
-- **Chrome**
-- **Firefox**
-- **Safari**
-- **Edge**
-- **IE10/11**
+<!-- AUTO-GENERATED-CONTENT:START (SUPPORTED_BROWSERS) -->
+
+- Chrome for Android 84
+- Chrome 84
+- Chrome 83
+- Chrome 81
+- Edge 84
+- Edge 83
+- Edge 18
+- Firefox 78
+- Firefox 77
+- IE 11
+- iOS Safari 13.4-13.5
+- iOS Safari 13.3
+- iOS Safari 13.0-13.1
+- iOS Safari 12.2-12.4
+- Opera 68
+- Safari 13.1
+- Samsung Internet 12.0
+- Samsung Internet 11.1-11.2
+
+<!-- AUTO-GENERATED-CONTENT:END -->

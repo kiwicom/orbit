@@ -6,11 +6,14 @@ import * as React from "react";
 
 import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
 
-export type Type = "apple" | "facebook" | "google";
+export type Type = "apple" | "facebook" | "google" | "twitter";
 
 export type Props = {|
   +type?: Type,
-  ...$Diff<ButtonCommonProps, { +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean }>,
+  ...$Diff<
+    ButtonCommonProps,
+    { +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean },
+  >,
 |};
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

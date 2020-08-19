@@ -25,6 +25,5 @@ export interface Props extends Common.Global {
   readonly onOpen?: Common.Callback;
   readonly onClose?: Common.Callback;
 }
-// eslint-disable-next-line react/prefer-stateless-function
 declare class Popover extends React.Component<Props> {}
 export { Popover, Popover as default };

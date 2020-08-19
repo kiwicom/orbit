@@ -2,9 +2,23 @@
 
 import * as React from "react";
 import { shallow } from "enzyme";
+import { render } from "react-dom";
+import { nullthrows } from "@adeira/js";
 
 import Breadcrumbs from "../index";
 import BreadcrumbsItem from "../BreadcrumbsItem";
+
+let screen;
+const body = nullthrows(document.body, "Expected document to have a body");
+
+beforeEach(() => {
+  screen = document.createElement("div");
+  body.appendChild(screen);
+});
+
+afterEach(() => {
+  body.removeChild(screen);
+});
 
 describe("Breadcrumbs", () => {
   const dataTest = "test";
@@ -36,6 +50,28 @@ describe("Breadcrumbs", () => {
 
     component.find("[dataTest='BreadcrumbsBack']").simulate("click");
     expect(onGoBack).toHaveBeenCalled();
+  });
+
+  it("should render as a link when backHref is passed", () => {
+    render(
+      <Breadcrumbs backHref="https://orbit.kiwi" dataTest={dataTest} onGoBack={onGoBack}>
+        <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+      </Breadcrumbs>,
+      screen,
+    );
+
+    expect(screen.querySelector('a[href="https://orbit.kiwi"]')).not.toBeNull();
+  });
+
+  it("should render as a link when backHref is passed without onGoBack", () => {
+    render(
+      <Breadcrumbs backHref="https://orbit.kiwi" dataTest={dataTest}>
+        <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+      </Breadcrumbs>,
+      screen,
+    );
+
+    expect(screen.querySelector('a[href="https://orbit.kiwi"]')).not.toBeNull();
   });
 });
 

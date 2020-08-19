@@ -15,8 +15,13 @@ export default {
           Tab index
         </Heading>
         <Text>
-          The <code>tabIndex</code> prop makes the given element focusable in keyboard navigation.
-          Click the link below to read more.
+          A <code>tabIndex</code> of <code>0</code> makes the given element focusable in keyboard
+          navigation. Do not use this except in rare cases where you need to render a TextLink as a
+          non-actionable element (like a <code>div</code>). It's also possible to hide elements from
+          keyboard navigation by passing a value of <code>-1</code>.{" "}
+        </Text>
+        <Text>
+          Most of the time, you shouldn't have use this prop. Click the link below to read more.
         </Text>
 
         <TextLink

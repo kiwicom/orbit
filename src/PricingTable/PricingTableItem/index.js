@@ -19,7 +19,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
     if (hasError) return `${shadow}, inset 0 0 0 1px ${theme.orbit.borderColorInputError}`;
-    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`;
+    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteBlueNormal}`;
     return shadow;
   };
   if (state === STATES.HOVER) {

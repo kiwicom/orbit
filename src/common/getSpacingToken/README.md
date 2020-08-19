@@ -13,13 +13,13 @@ const MyComponent = styled.div`
   margin-bottom: ${getSpacingToken};
   // It's not necessary do destructure props
   // margin-bottom: ${() => getSpacingToken({ spaceAfter, theme })};
-`
+`;
 
 MyComponent.defaultProps = {
   theme: defaultTheme,
 };
 
-const App = () => <MyComponent spaceAfter="small" />
+const App = () => <MyComponent spaceAfter="small" />;
 ```
 
 ## Parameter

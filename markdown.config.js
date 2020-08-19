@@ -5,12 +5,11 @@ const caniuse = require("caniuse-db/data.json").agents;
 module.exports = {
   transforms: {
     SUPPORTED_BROWSERS: () => {
-      return browserslist()
-        .map(b => {
-          const [id, version] = b.split(" ");
-          return `- ${caniuse[id].browser} ${version}`;
-        })
-        .join("\n");
+      const browsers = browserslist().map(b => {
+        const [id, version] = b.split(" ");
+        return `- ${caniuse[id].browser} ${version}`;
+      });
+      return `\n${browsers.join("\n")}\n`;
     },
   },
 };

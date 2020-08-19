@@ -9,7 +9,7 @@ import NotificationBadge from "@kiwicom/orbit-components/lib/NotificationBadge";
 After adding import into your project you can use it simply like:
 
 ```jsx
-<NotificationBadge>Hello!</NotificationBadge>
+<NotificationBadge>3</NotificationBadge>
 ```
 
 ## Props

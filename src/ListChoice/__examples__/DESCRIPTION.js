@@ -3,7 +3,6 @@ import * as React from "react";
 
 import InputField from "../../InputField";
 import ListChoice from "../index";
-import Stack from "../../Stack";
 import Popover from "../../Popover";
 
 export default {
@@ -12,7 +11,7 @@ export default {
     return (
       <Popover
         content={
-          <Stack>
+          <>
             <ListChoice
               title="London Heathrow"
               description="23 km from city center"
@@ -28,8 +27,9 @@ export default {
               description="68 km from city center"
               onClick={event => setChoice(event.currentTarget.children[0].children[0].innerText)}
             />
-          </Stack>
+          </>
         }
+        noPadding
       >
         <InputField label="To" inlineLabel value={choice} />
       </Popover>

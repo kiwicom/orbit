@@ -33,7 +33,7 @@ Table below contains all types of the props available in Stepper component.
 
 ## Functional specs
 
-- The prop `defaultValue` sets the default value when the component mounts. If you need to get the current value of the Stepper, use an arrow function. 
+- The prop `defaultValue` sets the default value when the component mounts. If you need to get the current value of the Stepper, use an arrow function.
 
 ```jsx
 <Stepper onChange={value => doSomething(value)} />
@@ -51,25 +51,25 @@ import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperState
 
 Table below contains all types of the props available in `StepperStateless` component.
 
-| Name              | Type                        | Default | Description                                                                   |
-| :---------------- | :-------------------------- | :------ | :---------------------------------------------------------------------------- |
-| dataTest          | `string`                    |         | Optional prop for testing purposes.                                           |
-| disabled          | `boolean`                   | `false` | If `true`, the Stepper will be disabled.                                      |
-| disabledIncrement | `boolean`                   |         | If `true`, the increment `Button` will be disabled.                           |
-| disabledDecrement | `boolean`                   |         | If `true`, the decrement `Button` will be disabled.                           |
-| maxValue          | `number`                    | `∞`     | Specifies the maximum value for the Stepper.                                  |
-| minValue          | `number`                    | `-∞`    | Specifies the minimum value for the Stepper.                                  |
-| name              | `string`                    |         | The name for the Stepper.                                                     |
-| onBlur            | `event => void \| Promise`  |         | Function for handling onBlur event.                                           |
-| onChange          | `number => void \| Promise` |         | Function for handling onClick event.                                          |
-| onDecrement       | `event => void \| Promise`  |         | Function for handling decrement event.l                                       |
-| onFocus           | `event => void \| Promise`  |         | Function for handling onFocus event.                                          |
-| onIncrement       | `event => void \| Promise`  |         | Function for handling increment event.                                        |
-| onKeyDown         | `event => void \| Promise`  |         | Function for handling onKeyDown event present on input.                       |
-| step              | `number`                    | `1`     | Specifies the value of step to increment and decrement.                       |
-| titleDecrement    | `string | (any => string)`  |         | Specifies `title` property on decrement `Button`.                             |
-| titleIncrement    | `string | (any => string)`  |         | Specifies `title` property on increment `Button`.                             |
-| value             | `number | string`           |         | Specifies the value of the StepperStateless.                                  |
+| Name              | Type                        | Default | Description                                             |
+| :---------------- | :-------------------------- | :------ | :------------------------------------------------------ |
+| dataTest          | `string`                    |         | Optional prop for testing purposes.                     |
+| disabled          | `boolean`                   | `false` | If `true`, the Stepper will be disabled.                |
+| disabledIncrement | `boolean`                   |         | If `true`, the increment `Button` will be disabled.     |
+| disabledDecrement | `boolean`                   |         | If `true`, the decrement `Button` will be disabled.     |
+| maxValue          | `number`                    | `∞`     | Specifies the maximum value for the Stepper.            |
+| minValue          | `number`                    | `-∞`    | Specifies the minimum value for the Stepper.            |
+| name              | `string`                    |         | The name for the Stepper.                               |
+| onBlur            | `event => void \| Promise`  |         | Function for handling onBlur event.                     |
+| onChange          | `number => void \| Promise` |         | Function for handling onClick event.                    |
+| onDecrement       | `event => void \| Promise`  |         | Function for handling decrement event.l                 |
+| onFocus           | `event => void \| Promise`  |         | Function for handling onFocus event.                    |
+| onIncrement       | `event => void \| Promise`  |         | Function for handling increment event.                  |
+| onKeyDown         | `event => void \| Promise`  |         | Function for handling onKeyDown event present on input. |
+| step              | `number`                    | `1`     | Specifies the value of step to increment and decrement. |
+| titleDecrement    | `string | (any => string)`  |         | Specifies `title` property on decrement `Button`.       |
+| titleIncrement    | `string | (any => string)`  |         | Specifies `title` property on increment `Button`.       |
+| value             | `number | string`           |         | Specifies the value of the StepperStateless.            |
 
 ### Usage:
 

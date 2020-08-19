@@ -60,6 +60,7 @@ describe("Component", () => {
 This part of testing is often abandoned by people, but we are aware of how important this is for users. It’s recommended that you test your new components across different platforms and browsers. New components should work on these browsers:
 
 <!-- AUTO-GENERATED-CONTENT:START (SUPPORTED_BROWSERS) -->
+
 - Chrome for Android 84
 - Chrome 84
 - Chrome 83
@@ -78,4 +79,5 @@ This part of testing is often abandoned by people, but we are aware of how impor
 - Safari 13.1
 - Samsung Internet 12.0
 - Samsung Internet 11.1-11.2
+
 <!-- AUTO-GENERATED-CONTENT:END -->

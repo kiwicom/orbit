@@ -128,6 +128,10 @@ export { default as NotificationBadgeAccessibility } from "./NotificationBadge/_
 export { default as NotificationBadgeDefault } from "./NotificationBadge/__examples__/DEFAULT";
 export { default as NotificationBadgeIcons } from "./NotificationBadge/__examples__/ICONS";
 export { default as NotificationBadgeTypes } from "./NotificationBadge/__examples__/TYPES";
+export { default as PaginationDefault } from "./Pagination/__examples__/DEFAULT";
+export { default as PaginationLabels } from "./Pagination/__examples__/LABELS";
+export { default as PaginationManyPages } from "./Pagination/__examples__/MANY_PAGES";
+export { default as PaginationSizes } from "./Pagination/__examples__/SIZES";
 export { default as PopoverActions } from "./Popover/__examples__/ACTIONS";
 export { default as PopoverAlign } from "./Popover/__examples__/ALIGN";
 export { default as PopoverControlled } from "./Popover/__examples__/CONTROLLED";

@@ -13,7 +13,6 @@ module.exports = {
     "prettier/react",
   ],
   plugins: ["import", "flowtype", "prettier", "jest", "react-hooks"],
-  reportUnusedDisableDirectives: true,
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",
@@ -24,6 +23,7 @@ module.exports = {
           "**/*.test.js",
           "**/*.spec.js",
           "**/*.stories.js",
+          "**/*.config.js",
           "**/stories/**",
           "/config/**",
         ],

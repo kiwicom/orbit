@@ -1,6 +1,6 @@
 // @flow
-import Theme from "../../Dictionary/index";
+import { ThemeType } from "../../defaultTheme";
 
-declare const UseTheme: () => typeof Theme;
+declare const useTheme: () => ThemeType;
 
-export { UseTheme, UseTheme as default };
+export { useTheme, useTheme as default };

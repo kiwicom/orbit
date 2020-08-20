@@ -5,7 +5,10 @@ import type { Translation } from "../../common/common.js.flow";
 type Props = {|
   +child: React$Element<*>,
   +children: React$Element<*>,
-  +onOnlySelection?: (SyntheticEvent<HTMLButtonElement>, {}) => void | Promise<any>,
+  +onOnlySelection?: (
+    SyntheticEvent<HTMLButtonElement>,
+    { value: string, label: string },
+  ) => void | Promise<any>,
   +onlySelectionText?: Translation,
 |};
 

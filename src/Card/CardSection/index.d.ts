@@ -20,7 +20,7 @@ export interface Props extends Common.Global {
   readonly noSeparator?: boolean;
   readonly onClose?: Common.Callback;
   readonly onExpand?: Common.Callback;
-  readonly header?: boolean;
+  readonly header?: React.ReactNode;
 }
 
 declare const CardSection: React.FunctionComponent<Props>;

@@ -49,6 +49,7 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly largeMobile?: MediaQuery;
   readonly tablet?: MediaQuery;
   readonly desktop?: MediaQuery;
+  readonly as?: string;
   readonly largeDesktop?: MediaQuery;
   readonly children: React.ReactNode;
 }

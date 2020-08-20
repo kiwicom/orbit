@@ -19,7 +19,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
     if (hasError) return `${shadow}, inset 0 0 0 1px ${theme.orbit.borderColorInputError}`;
-    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteProductNormal}`;
+    if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteBlueNormal}`;
     return shadow;
   };
   if (state === STATES.HOVER) {
@@ -178,6 +178,7 @@ const PricingTableItem = ({
   children,
   onClick,
   compact,
+  mobileDescription,
 }: Props) => {
   const onClickHandler = () => {
     if (onClick) {
@@ -190,77 +191,89 @@ const PricingTableItem = ({
 
   return (
     <>
-      <StyledPricingTableItem
-        onClick={onClickHandler}
-        basis={context.basis}
-        featureIcon={!!featureIcon}
-        active={active}
-        data-test={dataTest}
-        hasError={context.hasError}
-        desktopRadio={context.desktopRadio}
-      >
-        {!featureIcon && context.desktopRadio && !trueCompact && <Spacer />}
-        {context.desktopRadio && !trueCompact && (
-          <DesktopRadio>
-            <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
-          </DesktopRadio>
-        )}
-        {badge && (
-          <StyledBadgeWrapper>
-            <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
-              {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
-            </StyledBadgeWrapperContent>
-          </StyledBadgeWrapper>
-        )}
-        <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
-          {featureIcon && (
-            <Stack justify="center" grow={false}>
-              {featureIcon}
-            </Stack>
+      {context.isContent ? (
+        <>
+          {mobileDescription && (
+            <Text weight="bold" size="normal">
+              {mobileDescription}
+            </Text>
           )}
-          <Stack justify="between" direction="column">
-            <Stack
-              spacing="tight"
-              direction="column"
-              flex
-              align="stretch"
-              desktop={{ grow: false }}
-            >
-              {name && (
-                <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
-                  {name}
-                </Text>
-              )}
-              {price && (
-                <Text size="large" weight="bold" type="primary" align="center">
-                  {price}
-                </Text>
-              )}
-              {priceBadge && (
-                <Stack justify="center" align="end" desktop={{ grow: false }}>
-                  {priceBadge}
-                </Stack>
-              )}
-            </Stack>
-            {trueCompact ? (
-              <Stack justify="center" align="center" grow={false}>
-                <Item>
-                  <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
-                </Item>
+          {children && children}
+          {action && action}
+        </>
+      ) : (
+        <StyledPricingTableItem
+          onClick={onClickHandler}
+          basis={context.basis}
+          featureIcon={!!featureIcon}
+          active={active}
+          data-test={dataTest}
+          hasError={context.hasError}
+          desktopRadio={context.desktopRadio}
+        >
+          {!featureIcon && context.desktopRadio && !trueCompact && <Spacer />}
+          {context.desktopRadio && !trueCompact && (
+            <DesktopRadio>
+              <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
+            </DesktopRadio>
+          )}
+          {badge && (
+            <StyledBadgeWrapper>
+              <StyledBadgeWrapperContent hasIcon={!!featureIcon}>
+                {typeof badge === "string" ? <Badge type="infoInverted">{badge}</Badge> : badge}
+              </StyledBadgeWrapperContent>
+            </StyledBadgeWrapper>
+          )}
+          <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
+            {featureIcon && (
+              <Stack justify="center" grow={false}>
+                {featureIcon}
               </Stack>
-            ) : (
-              <Stack justify="between" direction="column">
-                <StyledListWrapper>{children && children}</StyledListWrapper>
-                {action && (
-                  <Stack justify="center" grow={false}>
-                    {action}
+            )}
+            <Stack justify="between" direction="column">
+              <Stack
+                spacing="tight"
+                direction="column"
+                flex
+                align="stretch"
+                desktop={{ grow: false }}
+              >
+                {name && (
+                  <Text type="primary" align="center" weight={featureIcon ? "normal" : "bold"}>
+                    {name}
+                  </Text>
+                )}
+                {price && (
+                  <Text size="large" weight="bold" type="primary" align="center">
+                    {price}
+                  </Text>
+                )}
+                {priceBadge && (
+                  <Stack justify="center" align="end" desktop={{ grow: false }}>
+                    {priceBadge}
                   </Stack>
                 )}
               </Stack>
-            )}
+              {trueCompact ? (
+                <Stack justify="center" align="center" grow={false}>
+                  <Item>
+                    <Radio checked={active} onChange={onClickHandler} hasError={context.hasError} />
+                  </Item>
+                </Stack>
+              ) : (
+                <Stack justify="between" direction="column">
+                  <StyledListWrapper>{children && children}</StyledListWrapper>
+                  {action && (
+                    <Stack justify="center" grow={false}>
+                      {action}
+                    </Stack>
+                  )}
+                </Stack>
+              )}
+            </Stack>
           </Stack>
-        </Stack>
-      </StyledPricingTableItem>
+        </StyledPricingTableItem>
+      )}
     </>
   );
 };

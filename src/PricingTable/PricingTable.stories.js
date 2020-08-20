@@ -39,6 +39,31 @@ const content = (
   </List>
 );
 
+const Wrapper = ({ name }) => {
+  return (
+    <PricingTableItem
+      dataTest="PricingTableItem"
+      name={name}
+      priceBadge={<Badge type="info">Included</Badge>}
+      action={
+        <Button
+          onClick={ev => {
+            ev.stopPropagation();
+          }}
+          type="secondary"
+          fullWidth
+        >
+          Don&#39;t upgrade
+        </Button>
+      }
+      mobileDescription={name}
+      onClick={action("onClick")}
+    >
+      {content}
+    </PricingTableItem>
+  );
+};
+
 const longerContent = (
   <List>
     <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
@@ -100,7 +125,7 @@ storiesOf("PricingTable", module)
   .add(
     "Compact",
     () => {
-      const activeElement = number("activeElement", null);
+      const activeElement = number("activeElement", 0);
       const hasError = boolean("hasError", false);
 
       return (
@@ -186,6 +211,7 @@ storiesOf("PricingTable", module)
                 <PricingTableItem
                   name="Limited Services"
                   priceBadge={<Badge type="info">Included</Badge>}
+                  active
                   action={
                     <Button
                       onClick={ev => {
@@ -202,6 +228,7 @@ storiesOf("PricingTable", module)
                 >
                   {content}
                 </PricingTableItem>
+
                 <PricingTableItem
                   name="Plus Services"
                   priceBadge={<Badge type="info">+ 10</Badge>}
@@ -428,6 +455,24 @@ storiesOf("PricingTable", module)
           >
             {content}
           </PricingTableItem>
+        </PricingTable>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Wrapped",
+    () => {
+      const activeElement = number("activeElement", 0);
+
+      return (
+        <PricingTable activeElement={activeElement}>
+          <Wrapper name="Basic" />
+          <Wrapper name="Standard" />
+          <Wrapper name="Premium" />
         </PricingTable>
       );
     },

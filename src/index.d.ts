@@ -1,6 +1,6 @@
 // @flow
 // Type definitions for @kiwicom/orbit-components
-// Project: http://github@kiwicom/orbit-componentscom/kiwicom/orbit-components
+// Project: https://github.com/kiwicom/orbit-components/
 
 declare module "@kiwicom/orbit-components";
 

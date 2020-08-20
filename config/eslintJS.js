@@ -23,6 +23,7 @@ module.exports = {
           "**/*.test.js",
           "**/*.spec.js",
           "**/*.stories.js",
+          "**/*.config.js",
           "**/stories/**",
           "/config/**",
         ],

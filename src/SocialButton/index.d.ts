@@ -23,5 +23,5 @@ type Props = {
   readonly type?: Type;
 } & OmittedButtonCommonProps;
 
-declare const SocialButton: React.RefForwardingComponent<Props, HTMLButtonElement>;
+declare const SocialButton: React.RefForwardingComponent<HTMLButtonElement, Props>;
 export { SocialButton, SocialButton as default };

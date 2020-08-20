@@ -68,7 +68,7 @@ export const StyledButtonPrimitive = styled(
         target={!disabled && href && external ? "_blank" : undefined}
         rel={relValues.length > 0 ? relValues.join(" ") : undefined}
         tabIndex={tabIndex}
-        onClick={onClick}
+        onClick={!disabled ? onClick : null}
         role={role}
       >
         {props.children}

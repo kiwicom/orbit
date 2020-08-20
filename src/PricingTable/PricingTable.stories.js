@@ -211,6 +211,7 @@ storiesOf("PricingTable", module)
                 <PricingTableItem
                   name="Limited Services"
                   priceBadge={<Badge type="info">Included</Badge>}
+                  active
                   action={
                     <Button
                       onClick={ev => {

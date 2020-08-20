@@ -118,37 +118,20 @@ const template = (code, config, state) => `
 const flowTemplate = functionName => `// @flow
 import * as React from "react";
 
-import type { Props } from "../Icon/createIcon";
+import type { Props } from "../Icon";
 
 export type ${functionName}Type = React.ComponentType<Props>;
 
 declare export default ${functionName}Type;
 `;
 
-const typescriptTemplate = `// @flow
+const typescriptTemplate = functionName => `// @flow
 import * as React from "react";
 
-import * as Common from "../common/common";
+import { Props } from "../Icon";
 
-export interface Props extends Common.Global {
-  readonly size?: "small" | "medium" | "large";
-  readonly color?:
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "info"
-    | "success"
-    | "warning"
-    | "critical";
-  readonly className?: string;
-  readonly customColor?: string;
-  readonly ariaHidden?: boolean;
-  readonly reverseOnRtl?: boolean;
-  readonly ariaLabel?: string;
-}
-
-declare const Icon: React.FunctionComponent<Props>;
-export { Icon, Icon as default };
+declare const ${functionName}: React.FunctionComponent<Props>;
+export { ${functionName}, ${functionName} as default };
 `;
 
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
@@ -171,7 +154,7 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   // write .d.ts for every icon
   fs.writeFileSync(
     path.join(componentPath, `${outputComponentFileName.replace(".js", "")}.d.ts`),
-    typescriptTemplate,
+    typescriptTemplate(functionName),
   );
 });
 
@@ -183,15 +166,24 @@ fs.writeFileSync(path.join(componentPath, "index.js"), index);
 const flow = `// @flow
 import * as React from "react";\n\n`;
 
-const flowTypes = names
-  .map(({ functionName }) => `import type { ${functionName}Type } from "./${functionName}";\n`)
-  .join("");
+const TSHeader = `// Type definitions for @kiwicom/orbit-components
+// Project: https://github.com/kiwicom/orbit-components/
 
-const flowDeclares = names
-  .map(({ functionName }) => `declare export var ${functionName}: ${functionName}Type;\n`)
-  .join("");
+declare module "@kiwicom/orbit-components/lib/icons";\n\n`;
 
-fs.writeFileSync(path.join(componentPath, "index.js.flow"), flow + flowTypes + flowDeclares);
+const iconMapper = interpolation =>
+  names.map(({ functionName }) => interpolation(functionName)).join("");
+
+fs.writeFileSync(
+  path.join(componentPath, "index.js.flow"),
+  flow +
+    iconMapper(name => `import type { ${name}Type } from "./${name}";\n`) +
+    iconMapper(name => `declare export var ${name}: ${name}Type;\n`),
+);
+fs.writeFileSync(
+  path.join(componentPath, "index.d.ts"),
+  TSHeader + iconMapper(name => `export { ${name} } from "./${name}";\n`),
+);
 
 // create icons json file
 Promise.all(

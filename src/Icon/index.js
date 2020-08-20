@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
 
-import type { GetSize, Props } from "./index";
+import type { GetSize, FactoryProps } from "./index";
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {
@@ -61,7 +61,7 @@ StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const OrbitIcon = (props: Props) => {
+const OrbitIcon = (props: FactoryProps) => {
   const {
     size,
     color,

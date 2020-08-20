@@ -18,8 +18,8 @@ interface Props extends SharedProps {
   readonly compact?: boolean;
 }
 
-export const Table: React.FunctionComponent<Props>;
-
+declare const Table: React.FunctionComponent<Props>;
+export { Table, Table as default };
 export { TableBody } from "./TableBody/index";
 export { TableCell } from "./TableCell/index";
 export { TableHead } from "./TableHead/index";

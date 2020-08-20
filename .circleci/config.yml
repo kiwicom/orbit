@@ -25,16 +25,8 @@ jobs:
           command: yarn
 
       - run:
-          name: Flow
-          command: yarn flow:check
-
-      - run:
-          name: Eslint
-          command: yarn eslint:check
-
-      - run:
-          name: Tests
-          command: yarn test --ci --maxWorkers=2
+          name: Testing, Linting, Type Checking
+          command: yarn test-ci
 
   deploy:
     docker:

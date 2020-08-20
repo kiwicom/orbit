@@ -8,21 +8,50 @@ import Stack from "../Stack";
 
 import ButtonMobileStore from ".";
 
-storiesOf("ButtonMobileStore", module).add(
-  "Default",
-  () => {
-    const href = text("href", "https://apps.apple.com/app/kiwi-com-cheap-travel-deals/id657843853");
+storiesOf("ButtonMobileStore", module)
+  .add(
+    "Default",
+    () => {
+      const href = text("href", "#");
 
-    return (
-      <>
-        <Stack flex>
-          <ButtonMobileStore onClick={action("clicked")} href={href} type="appStore" />
-          <ButtonMobileStore onClick={action("clicked")} href={href} type="googlePlay" />
-        </Stack>
-      </>
-    );
-  },
-  {
-    info: "This is the default configuration of this component.",
-  },
-);
+      return (
+        <>
+          <Stack flex>
+            <ButtonMobileStore onClick={action("clicked")} href={href} type="appStore" />
+            <ButtonMobileStore onClick={action("clicked")} href={href} type="googlePlay" />
+          </Stack>
+        </>
+      );
+    },
+    {
+      info: "This is the default configuration of this component.",
+    },
+  )
+  .add(
+    "Light",
+    () => {
+      const href = text("href", "#");
+
+      return (
+        <>
+          <Stack flex>
+            <ButtonMobileStore
+              onClick={action("clicked")}
+              href={href}
+              type="appStore"
+              variant="light"
+            />
+            <ButtonMobileStore
+              onClick={action("clicked")}
+              href={href}
+              type="googlePlay"
+              variant="light"
+            />
+          </Stack>
+        </>
+      );
+    },
+    {
+      info: "This is the default configuration of this component.",
+    },
+  );

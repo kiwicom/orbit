@@ -18,12 +18,15 @@ export interface Props extends Common.Global {
     | "critical";
   readonly className?: string;
   readonly customColor?: string;
-  readonly children: React.ReactNode;
-  readonly viewBox: string;
-  readonly ariaHidden?: boolean;
   readonly reverseOnRtl?: boolean;
   readonly ariaLabel?: string;
+  readonly ariaHidden?: boolean;
 }
 
-declare const Icon: React.FunctionComponent<Props>;
+export interface FactoryProps extends Props {
+  readonly children: React.ReactNode;
+  readonly viewBox: string;
+}
+
+declare const Icon: React.FunctionComponent<FactoryProps>;
 export { Icon, Icon as default };

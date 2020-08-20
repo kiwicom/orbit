@@ -17,8 +17,18 @@ storiesOf("ButtonMobileStore", module)
       return (
         <>
           <Stack flex>
-            <ButtonMobileStore onClick={action("clicked")} href={href} type="appStore" />
-            <ButtonMobileStore onClick={action("clicked")} href={href} type="googlePlay" />
+            <ButtonMobileStore
+              onClick={action("clicked")}
+              href={href}
+              type="appStore"
+              alt="Download on the App Store"
+            />
+            <ButtonMobileStore
+              onClick={action("clicked")}
+              href={href}
+              type="googlePlay"
+              alt="Download on the Google Play"
+            />
           </Stack>
         </>
       );
@@ -40,12 +50,14 @@ storiesOf("ButtonMobileStore", module)
               href={href}
               type="appStore"
               variant="light"
+              alt="Download on the App Store"
             />
             <ButtonMobileStore
               onClick={action("clicked")}
               href={href}
               type="googlePlay"
               variant="light"
+              alt="Download on the Google Play"
             />
           </Stack>
         </>

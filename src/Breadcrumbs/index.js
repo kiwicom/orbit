@@ -76,7 +76,7 @@ const Breadcrumbs = (props: Props) => {
           spaceAfter={spaceAfter}
         >
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
-            {onGoBack && <GoBackButton backHref={backHref} onClick={onGoBack} />}
+            {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {
               if (React.isValidElement(item)) {
                 return React.cloneElement(item, {
@@ -96,6 +96,7 @@ const Breadcrumbs = (props: Props) => {
           iconLeft={<ChevronLeft reverseOnRtl />}
           dataTest="BreadcrumbsBack"
           onClick={onGoBack}
+          href={backHref}
         >
           {goBackTitle}
         </ButtonLink>

@@ -28,5 +28,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly ref?: Common.Ref;
 }
 
-declare const InputFile: React.RefForwardingComponent<Props, HTMLInputElement>;
+declare const InputFile: React.RefForwardingComponent<HTMLInputElement, Props>;
 export { InputFile, InputFile as default };

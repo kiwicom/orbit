@@ -88,4 +88,7 @@ storiesOf("Breadcrumbs", module)
         </Breadcrumbs>
       </RenderInRtl>
     );
+  })
+  .add("Back link", () => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>, {
+    info: "Render the back button as a link. ",
   });

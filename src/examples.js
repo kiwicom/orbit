@@ -185,6 +185,8 @@ export { default as SelectPrefix } from "./Select/__examples__/PREFIX";
 export { default as SelectRequired } from "./Select/__examples__/REQUIRED";
 export { default as SelectShortValue } from "./Select/__examples__/SHORT_VALUE";
 export { default as SelectSizes } from "./Select/__examples__/SIZES";
+export { default as SeparatorDefault } from "./Separator/__examples__/DEFAULT";
+export { default as SeparatorSpaceAfter } from "./Separator/__examples__/SPACE_AFTER";
 export { default as ServiceLogoDefault } from "./ServiceLogo/__examples__/DEFAULT";
 export { default as ServiceLogoGrayscale } from "./ServiceLogo/__examples__/GRAYSCALE";
 export { default as ServiceLogoSizes } from "./ServiceLogo/__examples__/SIZES";

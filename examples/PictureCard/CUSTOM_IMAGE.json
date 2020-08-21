@@ -1,0 +1,8 @@
+{
+	"imports": "import PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";",
+	"example": "() => (\n  <PictureCard\n    image={{\n      name: \"Athens, Greece\",\n      src:\n        \"https://cdn.pixabay.com/photo/2019/09/29/17/21/greece-4513852_1280.jpg\",\n    }}\n  />\n)\n",
+	"info": {
+		"title": "Custom image",
+		"description": "You can pass any image you like using the <code>src</code> prop in <code>image</code>."
+	}
+}

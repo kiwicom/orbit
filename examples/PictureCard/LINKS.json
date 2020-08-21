@@ -1,0 +1,8 @@
+{
+	"imports": "import PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+	"example": "() => (\n  <Stack>\n    <PictureCard\n      href=\"https://www.kiwi.com/en/landing/london-united-kingdom/athens-greece/\"\n      image={{\n        code: \"athens_gr\",\n        name: \"Athens, Greece\",\n        original: \"1200x628\",\n      }}\n    />\n    <PictureCard\n      external\n      href=\"https://www.kiwi.com/en/landing/london-united-kingdom/athens-greece/\"\n      image={{\n        code: \"athens_gr\",\n        name: \"Athens, Greece\",\n        original: \"1200x628\",\n      }}\n    />\n  </Stack>\n)\n",
+	"info": {
+		"title": "Links",
+		"description": "To turn the card into a link as an <code><a></code> element, pass the <code>href</code> prop. Passing <code>external</code> will make it open in a new window with the appropriate <code>rel</code> attribute for security.."
+	}
+}

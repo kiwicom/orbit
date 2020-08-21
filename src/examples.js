@@ -128,6 +128,15 @@ export { default as NotificationBadgeAccessibility } from "./NotificationBadge/_
 export { default as NotificationBadgeDefault } from "./NotificationBadge/__examples__/DEFAULT";
 export { default as NotificationBadgeIcons } from "./NotificationBadge/__examples__/ICONS";
 export { default as NotificationBadgeTypes } from "./NotificationBadge/__examples__/TYPES";
+export { default as PictureCardAccessibility } from "./PictureCard/__examples__/ACCESSIBILITY";
+export { default as PictureCardActions } from "./PictureCard/__examples__/ACTIONS";
+export { default as PictureCardContent } from "./PictureCard/__examples__/CONTENT";
+export { default as PictureCardCustomImage } from "./PictureCard/__examples__/CUSTOM_IMAGE";
+export { default as PictureCardDefault } from "./PictureCard/__examples__/DEFAULT";
+export { default as PictureCardLinks } from "./PictureCard/__examples__/LINKS";
+export { default as PictureCardOnClick } from "./PictureCard/__examples__/ON_CLICK";
+export { default as PictureCardPlaceholder } from "./PictureCard/__examples__/PLACEHOLDER";
+export { default as PictureCardSizes } from "./PictureCard/__examples__/SIZES";
 export { default as PopoverActions } from "./Popover/__examples__/ACTIONS";
 export { default as PopoverAlign } from "./Popover/__examples__/ALIGN";
 export { default as PopoverControlled } from "./Popover/__examples__/CONTROLLED";

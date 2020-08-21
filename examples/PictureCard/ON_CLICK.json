@@ -1,0 +1,8 @@
+{
+	"imports": "import PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";",
+	"example": "() => (\n  <PictureCard\n    onClick={() => {\n      window.open(\n        \"https://www.kiwi.com/en/landing/london-united-kingdom/athens-greece/\",\n        \"_blank\",\n        \"noopener,noreferrer\"\n      )\n    }}\n    image={{\n      code: \"athens_gr\",\n      name: \"Athens, Greece\",\n      original: \"1200x628\",\n    }}\n  />\n)\n",
+	"info": {
+		"title": "On click",
+		"description": "To add interactions on click, enter, or space, use the <code>onClick</code> callback. By default, adding an <code>onClick</code> callback will make the card focusable."
+	}
+}

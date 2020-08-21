@@ -1,0 +1,8 @@
+{
+	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";",
+	"example": "() => (\n  <PictureCard\n    actions={\n      <Button\n        href=\"https://www.kiwi.com/en/landing/london-united-kingdom/athens-greece/\"\n        external\n      >\n        Find connections\n      </Button>\n    }\n    image={{\n      code: \"athens_gr\",\n      name: \"Athens, Greece\",\n      original: \"1200x628\",\n    }}\n  />\n)\n",
+	"info": {
+		"title": "Actions",
+		"description": "Actions adds space for actionable elements like buttons to appear on hover/focus."
+	}
+}

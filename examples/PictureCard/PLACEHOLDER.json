@@ -1,0 +1,8 @@
+{
+	"imports": "import PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
+	"example": "() => (\n  <Stack>\n    <PictureCard\n      image={{\n        code: \"athens_gr\",\n        name: \"Athens, Greece\",\n        original: \"600x600\",\n        placeholder: \"30x30\",\n      }}\n      height=\"300px\"\n      width=\"300px\"\n    />\n    <Text>\n      Note that the placeholder will not work with server-side rendering (SSR).\n      With SSR, you have to either leave out the placeholder or use a module\n      from your framework, such as{\" \"}\n      <TextLink\n        href=\"https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr\"\n        external\n      >\n        dynamic for Next.js\n      </TextLink>\n      .\n    </Text>\n  </Stack>\n)\n",
+	"info": {
+		"title": "Placeholder",
+		"description": "To enable lazy loading of images, use the <code>placeholder</code> prop, preferably with a smaller resolution."
+	}
+}

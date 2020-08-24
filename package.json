@@ -116,7 +116,7 @@
     "@storybook/addon-info": "5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addons": "5.3.19",
-    "@storybook/react": "^5.3.19",
+    "@storybook/react": "^6.0.16",
     "@storybook/storybook-deployer": "^2.8.6",
     "@svgr/core": "^2.0.0",
     "@types/styled-components": "^4.4.2",

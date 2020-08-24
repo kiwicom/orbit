@@ -176,6 +176,7 @@ export { default as RadioReference } from "./Radio/__examples__/REF";
 export { default as RadioShapeOnly } from "./Radio/__examples__/SHAPE_ONLY";
 export { default as RadioTooltip } from "./Radio/__examples__/TOOLTIP";
 export { default as SeatDefault } from "./Seat/__examples__/DEFAULT";
+export { default as SeatLegend } from "./Seat/__examples__/LEGEND";
 export { default as SeatSizes } from "./Seat/__examples__/SIZES";
 export { default as SeatTypes } from "./Seat/__examples__/TYPES";
 export { default as SelectAccessibility } from "./Select/__examples__/ACCESSIBILITY";

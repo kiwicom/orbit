@@ -20,13 +20,13 @@ As with every primitive, you should have a good reason to use `IllustrationPrimi
 
 Table below contains all types of the props available in IllustrationPrimitive component.
 
-| Name       | Type            | Default    | Description                                                                                                                                     |
-| :--------- | :-------------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used.                    |
-| dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                                             |
-| **name**   | `string`        |            | Name for the displayed illustrationPrimitive.                                                                                                   |
-| size       | [`enum`](#enum) | `"medium"` | The size of the IllustrationPrimitive.                                                                                                          |
-| spaceAfter | `enum`          |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
+| Name       | Type            | Default    | Description                                                                                                                                                               |
+| :--------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used.                                              |
+| dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                                                                       |
+| **name**   | `string`        |            | Name for the displayed illustrationPrimitive.                                                                                                                             |
+| size       | [`enum`](#enum) | `"medium"` | The size of the IllustrationPrimitive.                                                                                                                                    |
+| spaceAfter | `enum`          |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ### enum
 

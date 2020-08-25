@@ -33,7 +33,7 @@ export default {
               />
               <Tile
                 title="Drawer on GitHub"
-                href="https://github.com/kiwicom/orbit-components/tree/master/src/Drawer"
+                href="https://github.com/kiwicom/orbit-components/tree/master/packages/orbit-components/src/Drawer"
                 external
               />
             </Stack>

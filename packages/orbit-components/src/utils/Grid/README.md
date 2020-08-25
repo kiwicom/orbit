@@ -44,7 +44,7 @@ The table below contains all of the props available in the Grid component.
 ### Media Queries
 
 When you need to specify specific behaviours for the Grid component on different viewports, use the appropriate properties.
-The component has `mediumMobile`, `largeMobile`, `tablet`, `desktop`, and `largeDesktop`, which behave the same as [mediaQuery](https://github.com/kiwicom/orbit-components/tree/master/src/utils/mediaQuery) functions.
+The component has `mediumMobile`, `largeMobile`, `tablet`, `desktop`, and `largeDesktop`, which behave the same as [mediaQuery](https://github.com/kiwicom/orbit-components/tree/master/packages/orbit-components/src/utils/mediaQuery) functions.
 All of the object for these properties have the same properties and none is required.
 
 | Name      | Type      | Default  | Description                                                                                       |

@@ -7,6 +7,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
+    "build-ci": "lerna bootstrap && yarn orbit-components build",
     "prepare": "yarn orbit-components build",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:check": "eslint . --report-unused-disable-directives",

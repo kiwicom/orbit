@@ -21,19 +21,19 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in InputGroup component.
 
-| Name         | Type                        | Default      | Description                                                                                                                                     |
-| :----------- | :-------------------------- | :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node`                |              | The content of the InputGroup, normally **InputField** or **Select**.                                                                           |
-| dataTest     | `string`                    |              | Optional prop for testing purposes.                                                                                                             |
-| error        | `React.Node`                |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)                                                          |
-| flex         | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                                                 |
-| help         | `React.Node`                |              | The help to display beneath the InputGroup.                                                                                                     |
-| label        | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                                                         |
-| onChange     | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                                                  |
-| onFocus      | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                                                  |
-| onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event. [See Functional specs](#functional-specs)                                                                   |
-| size         | [`enum`](#enum)             | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)                                                                           |
-| spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken) |
+| Name         | Type                        | Default      | Description                                                                                                                                                    |
+| :----------- | :-------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children** | `React.Node`                |              | The content of the InputGroup, normally **InputField** or **Select**.                                                                                          |
+| dataTest     | `string`                    |              | Optional prop for testing purposes.                                                                                                                            |
+| error        | `React.Node`                |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)                                                                         |
+| flex         | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                                                                |
+| help         | `React.Node`                |              | The help to display beneath the InputGroup.                                                                                                                    |
+| label        | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                                                                        |
+| onChange     | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                                                                 |
+| onFocus      | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                                                                 |
+| onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event. [See Functional specs](#functional-specs)                                                                                  |
+| size         | [`enum`](#enum)             | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)                                                                                          |
+| spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ### enum
 

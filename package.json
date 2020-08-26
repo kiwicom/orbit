@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
     "prepare": "yarn orbit-components build",
     "prettier:test": "prettier --check '**/*.md'",

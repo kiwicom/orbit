@@ -19,7 +19,7 @@ const StyledColumn = styled.div`
     ${StyledCard}, ${DeprecatedStyledCard} {
       margin-right: -${({ theme }) => theme.orbit.spaceMedium};
       margin-left: -${({ theme }) => theme.orbit.spaceMedium};
-      width: auto;
+      width: 100vw;
     }
   }
 `;

@@ -122,6 +122,32 @@ storiesOf("Select", module)
     },
   )
   .add(
+    "With help",
+    () => {
+      const label = text("Label", "Label");
+      const help = text("Error", "Help message");
+
+      return <Select label={label} help={help} options={objectOptions} />;
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "With error",
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "Error message (explain how to solve it)");
+
+      return <Select label={label} error={error} options={objectOptions} />;
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const placeholder = text("Placeholder", "Select value from list");

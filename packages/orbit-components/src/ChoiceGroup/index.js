@@ -35,7 +35,6 @@ const StyledChoiceGroup = styled.div`
 StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
-
 class ChoiceGroup extends React.PureComponent<Props> {
   groupID = randomID("choiceGroupID");
 
@@ -78,7 +77,7 @@ class ChoiceGroup extends React.PureComponent<Props> {
               <>
                 {React.cloneElement(child, {
                   onChange: this.handleChange,
-                  hasError: !!error,
+                  hasError: Boolean(error),
                 })}
               </>
             ) : (
@@ -90,14 +89,14 @@ class ChoiceGroup extends React.PureComponent<Props> {
                 <>
                   {React.cloneElement(child, {
                     onChange: this.handleChange,
-                    hasError: !!error,
+                    hasError: Boolean(error),
                   })}
                 </>
               </FilterWrapper>
             );
           })}
         </Stack>
-        {error && <FormFeedback type="error">{error}</FormFeedback>}
+        <FormFeedback error={error} />
       </StyledChoiceGroup>
     );
   }

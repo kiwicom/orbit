@@ -114,45 +114,60 @@ StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-const Textarea = React.forwardRef<Props, HTMLElement>((props, ref) => {
-  const {
-    size = SIZE_OPTIONS.NORMAL,
-    disabled,
-    resize = RESIZE_OPTIONS.VERTICAL,
-    dataTest,
-    spaceAfter,
-  } = props;
-
-  return (
-    <Field fullHeight={props.fullHeight} spaceAfter={spaceAfter}>
-      {props.label && (
-        <FormLabel filled={!!props.value} disabled={disabled}>
-          {props.label}
-        </FormLabel>
-      )}
-      <StyledTextArea
-        data-test={dataTest}
-        name={props.name}
-        value={props.value}
-        rows={props.rows}
-        size={size}
-        fullHeight={props.fullHeight}
-        disabled={disabled}
-        error={props.error}
-        placeholder={props.placeholder}
-        maxLength={props.maxLength}
-        onChange={props.onChange}
-        onFocus={props.onFocus}
-        onBlur={props.onBlur}
-        resize={resize}
-        tabIndex={props.tabIndex}
-        ref={ref}
-      />
-      {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
-      {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
-    </Field>
-  );
-});
+const Textarea = React.forwardRef<Props, HTMLElement>(
+  (
+    {
+      size = SIZE_OPTIONS.NORMAL,
+      disabled,
+      resize = RESIZE_OPTIONS.VERTICAL,
+      dataTest,
+      spaceAfter,
+      fullHeight,
+      label,
+      value,
+      name,
+      rows,
+      tabIndex,
+      error,
+      help,
+      placeholder,
+      maxLength,
+      onChange,
+      onFocus,
+      onBlur,
+    },
+    ref,
+  ) => {
+    return (
+      <Field fullHeight={fullHeight} spaceAfter={spaceAfter}>
+        {label && (
+          <FormLabel filled={Boolean(value)} disabled={disabled}>
+            {label}
+          </FormLabel>
+        )}
+        <StyledTextArea
+          data-test={dataTest}
+          name={name}
+          value={value}
+          rows={rows}
+          size={size}
+          fullHeight={fullHeight}
+          disabled={disabled}
+          error={error}
+          placeholder={placeholder}
+          maxLength={maxLength}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          resize={resize}
+          tabIndex={tabIndex}
+          ref={ref}
+        />
+        <FormFeedback error={error} help={help} />
+      </Field>
+    );
+  },
+);
 
 Textarea.displayName = "Textarea";
 

@@ -268,8 +268,7 @@ class InputGroup extends React.PureComponent<Props, State> {
           })}
           <FakeGroup label={label} error={error} active={active} size={size} />
         </StyledChildren>
-        {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
-        {error && <FormFeedback type="error">{error}</FormFeedback>}
+        <FormFeedback error={error} help={help} />
       </StyledInputGroup>
     );
   }

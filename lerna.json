@@ -7,9 +7,6 @@
     "packages/*"
   ],
   "command": {
-    "init": {
-      "exact": true
-    },
     "version": {
       "message": "chore(release): publish"
     }

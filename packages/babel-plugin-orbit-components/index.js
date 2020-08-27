@@ -11,25 +11,25 @@
  * output. The following configuration maps destructed component to the new path (appended to libs).
  */
 const pathOverwrites = {
-  CardContent: 'Card/CardContent', // TODO: doesn't exist anymore (?)
-  CardHeader: 'Card/CardHeader',
-  CardSection: 'Card/CardSection',
-  Grid: 'utils/Grid',
-  Icons: 'icons',
-  mediaQueries: 'utils/mediaQuery',
-  ModalFooter: 'Modal/ModalFooter',
-  ModalHeader: 'Modal/ModalHeader',
-  ModalSection: 'Modal/ModalSection',
-  TableBody: 'Table/TableBody',
-  TableCell: 'Table/TableCell',
-  TableHead: 'Table/TableHead',
-  TableRow: 'Table/TableRow',
-  LayoutColumn: 'Layout/LayoutColumn',
-  BreadcrumbsItem: 'Breadcrumbs/BreadcrumbsItem',
-  BadgePrimitive: 'primitives/BadgePrimitive',
+  CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
+  CardHeader: "Card/CardHeader",
+  CardSection: "Card/CardSection",
+  Grid: "utils/Grid",
+  Icons: "icons",
+  mediaQueries: "utils/mediaQuery",
+  ModalFooter: "Modal/ModalFooter",
+  ModalHeader: "Modal/ModalHeader",
+  ModalSection: "Modal/ModalSection",
+  TableBody: "Table/TableBody",
+  TableCell: "Table/TableCell",
+  TableHead: "Table/TableHead",
+  TableRow: "Table/TableRow",
+  LayoutColumn: "Layout/LayoutColumn",
+  BreadcrumbsItem: "Breadcrumbs/BreadcrumbsItem",
+  BadgePrimitive: "primitives/BadgePrimitive",
 };
 
-const parsedImportPaths = ['@kiwicom/orbit-components', '@kiwicom/orbit-components/lib/icons'];
+const parsedImportPaths = ["@kiwicom/orbit-components", "@kiwicom/orbit-components/lib/icons"];
 
 module.exports = function orbitComponents(babel) {
   const t = babel.types;
@@ -54,8 +54,8 @@ module.exports = function orbitComponents(babel) {
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
 
             // icons will already have /lib in the name, this adds the /lib to normal components
-            if (importedPath.indexOf('/lib') === -1) {
-              importedPath += '/lib';
+            if (importedPath.indexOf("/lib") === -1) {
+              importedPath += "/lib";
             }
 
             if (pathOverwrites[importedName]) {

@@ -1,7 +1,9 @@
 // @flow
 
-import os from 'os';
-import { transform as babelTransform } from '@babel/core';
+const os = require("os");
+const { transform: babelTransform } = require("@babel/core");
+
+const plugin = require("..");
 
 expect.addSnapshotSerializer({
   print(serializerValue) {
@@ -16,9 +18,9 @@ expect.addSnapshotSerializer({
 
 function transform(input) {
   return babelTransform(input, {
-    plugins: [require('..')],
+    plugins: [plugin],
     root: __dirname,
-    rootMode: 'root',
+    rootMode: "root",
   }).code;
 }
 
@@ -48,7 +50,7 @@ import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";`,
   ['import { mediaQueries } from "@kiwicom/orbit-components";'], // https://github.com/kiwicom/babel-plugin-orbit-components/pull/4
   ["import { Text, Stack, Grid } from '@kiwicom/orbit-components';"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/5
   ["import { Icon, Icons } from '@kiwicom/orbit-components'"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/6
-])('transform imports as expected %#', rawInput => {
+])("transform imports as expected %#", rawInput => {
   const input = rawInput.trim();
   expect({
     input,

@@ -146,12 +146,7 @@ storiesOf("InputGroup", module)
       const inputValue = text("Input Value", undefined);
 
       return (
-        <InputGroup
-          label={label}
-          help={help}
-          inputValue={inputValue}
-          onChange={action("onChange a+b")}
-        >
+        <InputGroup label={label} help={help} onChange={action("onChange a+b")}>
           <InputField placeholder="a" maxLength={11} value={inputValue} />
           <InputField placeholder="b" maxLength={11} value={inputValue} />
         </InputGroup>

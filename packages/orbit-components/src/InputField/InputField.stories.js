@@ -372,7 +372,7 @@ storiesOf("InputField", module)
       const label = text("Label", "Label");
       const help = text("Help", "Help message");
 
-      return <InputField label={label} help={help} onRemoveFile={action("removeFile")} />;
+      return <InputField label={label} help={help} />;
     },
     {
       info:
@@ -385,7 +385,7 @@ storiesOf("InputField", module)
       const label = text("Label", "Label");
       const error = text("Error", "Error message (explain how to solve it)");
 
-      return <InputField label={label} error={error} onRemoveFile={action("removeFile")} />;
+      return <InputField label={label} error={error} />;
     },
     {
       info:

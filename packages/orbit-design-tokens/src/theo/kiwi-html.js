@@ -1,21 +1,22 @@
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
+// @noflow
+/* eslint-disable import/no-extraneous-dependencies */
 const groupBy = require("lodash/groupBy");
 const camelCase = require("lodash/camelCase");
 const upperfirst = require("lodash/upperFirst");
 
 class Styleguide {
   constructor({ props, options }) {
-    this.options = Object.assign(
-      {
-        transformPropName: camelCase,
-      },
-      options,
-    );
+    this.options = {
+      transformPropName: camelCase,
+      ...options,
+    };
     this.categories = groupBy(props, "category");
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderRowHeader(id, heading) {
     return `
       <thead>
@@ -29,8 +30,9 @@ class Styleguide {
     `;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderRow(prop, example) {
-    const name = prop.name; // this.options.transformPropName(prop.name);
+    const { name } = prop; // this.options.transformPropName(prop.name);
     return `
       <tr>
         <th scope="row">
@@ -58,7 +60,7 @@ class Styleguide {
 
   renderSizing(props) {
     return props.map(prop => {
-      const name = prop.name;
+      const { name } = prop;
       let style = `width: ${prop.value}; height: ${prop.value};`;
       if (name.startsWith("widthButtonMinimal")) style = `width: ${prop.value}; min-height: 16px;`;
       const example = `
@@ -124,12 +126,11 @@ class Styleguide {
 
   renderLineHeight(props) {
     return props.map(prop => {
+      // eslint-disable-next-line no-restricted-globals
       const vHeight = !isNaN(prop.value) ? `${prop.value}em` : prop.value;
       const example = `
         <td>
-          <div class="line-height-example" style="line-height: ${
-            prop.value
-          }; background-size: 100% ${vHeight};">
+          <div class="line-height-example" style="line-height: ${prop.value}; background-size: 100% ${vHeight};">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             elementum odio et lacus rutrum molestie. Nunc arcu enim, elementum
             id feugiat at, venenatis quis erat.
@@ -203,9 +204,7 @@ class Styleguide {
 
   renderBackgroundColor(props) {
     return props.map(prop => {
-      const example = `<td style="background-color: ${
-        prop.value
-      }; border: 1px solid #f6f6f6;"></td>`;
+      const example = `<td style="background-color: ${prop.value}; border: 1px solid #f6f6f6;"></td>`;
       return this.renderRow(prop, example);
     });
   }
@@ -290,10 +289,7 @@ class Styleguide {
         <table>
           ${this.renderRowHeader(type, heading)}
           <tbody>
-            ${render
-              .call(this, props)
-              .join("")
-              .trim()}
+            ${render.call(this, props).join("").trim()}
           </tbody>
         </table>
         <hr />
@@ -417,12 +413,12 @@ class Styleguide {
     </header>
     <div class="container">
       <main role="main">
-        ${this.renderSection("Colors", "Colors", this.renderTextColor)}      
+        ${this.renderSection("Colors", "Colors", this.renderTextColor)}
         ${this.renderSection("Background colors", "Background Colors", this.renderBackgroundColor)}
         ${this.renderSection("Font family", "Font Families", this.renderFontFamily)}
         ${this.renderSection("Font size", "Font Sizes", this.renderFontSize)}
         ${this.renderSection("Font weight", "Font Weights", this.renderFontWeight)}
-        
+
         ${this.renderSection("Border radius", "Border Radius", this.renderBorderRadius)}
         ${this.renderSection("Size (width, height)", "Sizing", this.renderSizing)}
         ${this.renderSection("Border color", "Border Colors", this.renderBorderColor)}

@@ -587,16 +587,16 @@ export type Tokens = {
 };
 
 export type ThemePaletteColors = {
-  productLight: string;
-  productLightHover: string;
-  productLightActive: string;
-  productNormal: string;
-  productNormalHover: string;
-  productNormalActive: string;
-  productDark: string;
-  productDarkHover?: string;
-  productDarkActive?: string;
-  productDarker?: string;
+  readonly productLight: string;
+  readonly productLightHover: string;
+  readonly productLightActive: string;
+  readonly productNormal: string;
+  readonly productNormalHover: string;
+  readonly productNormalActive: string;
+  readonly productDark: string;
+  readonly productDarkHover?: string;
+  readonly productDarkActive?: string;
+  readonly productDarker?: string;
 };
 
 type CustomPalette = {
@@ -618,6 +618,6 @@ type CustomFoundation = Partial<{
 }>;
 
 export declare const ConvertHexToRgba: (color: string, opacity: number) => string;
-export declare const FromPlainObject: (themePaletteColors: ThemePaletteColors) => Tokens;
-export declare const GetTokens: (customFoundation?: CustomFoundation) => Tokens;
+export declare const fromPlainObject: (themePaletteColors: ThemePaletteColors) => Tokens;
+export declare const getTokens: (customFoundation?: CustomFoundation) => Tokens;
 export declare const defaultTokens: Tokens;

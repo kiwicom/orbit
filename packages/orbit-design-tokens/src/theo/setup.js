@@ -1,3 +1,4 @@
+// @noflow
 const html = require("./kiwi-html");
 
 module.exports = theo => {

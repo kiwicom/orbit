@@ -1,3 +1,5 @@
+// @noflow
+// eslint-disable-next-line import/no-extraneous-dependencies
 const parser = require("@babel/parser");
 const fs = require("fs");
 const path = require("path");
@@ -16,15 +18,9 @@ const findDeclaration = x => x.id.name === "getTokens";
 const findGetTokens = x => x.type === "VariableDeclaration" && x.declarations.find(findDeclaration);
 
 const ar = ast.program.body.find(findGetTokens);
-const tokenProps = ar.declarations[0].init.body.body[1].argument.properties
+const tokenProps = ar.declarations[0].init.body.body[1].argument.properties;
 
-const camelCaseToText = text => {
-  let result = text.replace(/([A-Z])/g, " $1");
-  result = result.charAt(0).toUpperCase() + result.slice(1); // capitalize the first letter
-  return result;
-};
-
-const getType = (value, hint) => {
+const getType = value => {
   if (typeof value !== "string") return typeof value;
   if (value.startsWith("#") || value.startsWith("rgb")) return "color";
   if (value.includes("px")) return "size";
@@ -32,16 +28,9 @@ const getType = (value, hint) => {
   return "string";
 };
 
-const getCategory = (category, key) => {
-  // Workarounds
-  if (category === "color") return "text-color";
-  if (category === "zIndex") return "spacing";
-  if (category === "size") return "sizing";
-  return category.replace(/([A-Z])/g, g => `-${g[0].toLowerCase()}`);
-};
-
-const getProps = (tokenProps, category) =>
-  tokenProps.reduce((p, c) => Object.assign(p, getInfo(c, category)), {});
+const getProps = (tokenInputProps, category) =>
+  // eslint-disable-next-line no-use-before-define
+  tokenInputProps.reduce((p, c) => Object.assign(p, getInfo(c, category)), {});
 
 let category = "";
 let categoryDescription = "";

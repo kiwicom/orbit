@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: yarn install && yarn bootstrap
 
+      - name: Build design tokens
+        run: yarn orbit-design-tokens build
+
       - name: Fire deployment
         uses: actions/setup-node@v1
         with:

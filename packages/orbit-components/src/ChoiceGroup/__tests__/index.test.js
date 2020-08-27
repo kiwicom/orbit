@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
@@ -21,7 +21,7 @@ const choices = [
 
 describe("RadioGroup", () => {
   const dataTest = "test";
-  const component = shallow(
+  const component = mount(
     <ChoiceGroup
       dataTest={dataTest}
       label={label}
@@ -50,16 +50,15 @@ describe("RadioGroup", () => {
     expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should execute onChange method", () => {
-    const instance = component.instance();
     const ev = { persist: () => {}, target: <Radio value="one" label="Reason one" /> };
-    instance.handleChange(ev);
+    component.find("input").first().simulate("change", ev);
     expect(onChange).toHaveBeenCalled();
   });
 });
 
 describe("RadioGroup Filters", () => {
   const dataTest = "test";
-  const component = shallow(
+  const component = mount(
     <ChoiceGroup
       dataTest={dataTest}
       label={label}
@@ -91,9 +90,8 @@ describe("RadioGroup Filters", () => {
     });
   });
   it("should execute onOnlySelection method", () => {
-    const instance = component.instance();
     const ev = { persist: () => {}, target: <button type="button">Only</button> };
-    instance.handleChange(ev);
-    expect(onChange).toHaveBeenCalled();
+    component.find("button").first().simulate("click", ev);
+    expect(onOnlySelection).toHaveBeenCalled();
   });
 });

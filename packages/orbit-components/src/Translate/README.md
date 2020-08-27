@@ -1,6 +1,6 @@
 # Translate
 
-We have support of our `Dictionary` see [this document](https://github.com/kiwicom/orbit-components/blob/master/.github/dictionary.md)
+We have support of our `Dictionary` see [this document](https://github.com/kiwicom/orbit/blob/master/.github/dictionary.md)
 
 This component adds you possibility to take some strings from our dictionary.
 

@@ -38,7 +38,7 @@ jobs:
         run: yarn orbit-components build:storybook
 
       - name: Publish
-        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh
+        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Update PR description
         run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}

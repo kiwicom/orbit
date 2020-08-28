@@ -139,6 +139,44 @@ storiesOf("InputGroup", module)
     },
   )
   .add(
+    "With help",
+    () => {
+      const label = text("Label", "Label");
+      const help = text("Help", "Help message");
+      const inputValue = text("Input Value", undefined);
+
+      return (
+        <InputGroup label={label} help={help} onChange={action("onChange a+b")}>
+          <InputField placeholder="a" maxLength={11} value={inputValue} />
+          <InputField placeholder="b" maxLength={11} value={inputValue} />
+        </InputGroup>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "With error",
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "Error message (explain how to solve it)");
+      const inputValue = text("Input Value", undefined);
+
+      return (
+        <InputGroup label={label} onChange={action("onChange a+b")} error={error}>
+          <InputField placeholder="a" maxLength={11} value={inputValue} />
+          <InputField placeholder="b" maxLength={11} value={inputValue} />
+        </InputGroup>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const label = text("Label", "Phone number");

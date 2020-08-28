@@ -21,7 +21,7 @@ export default {
           Drawer React API
         </TextLink>
         <TextLink
-          href="https://github.com/kiwicom/orbit-components/tree/master/src/Drawer"
+          href="https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Drawer"
           external
           type="secondary"
         >

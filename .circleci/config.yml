@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
 
       - run:
           name: Testing, Linting, Type Checking
@@ -40,7 +40,7 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
       - run:
           name: Build and deploy
           command: yarn orbit-components deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
@@ -57,7 +57,7 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
       - run:
           name: Build storybook
           command: yarn orbit-components build:storybook

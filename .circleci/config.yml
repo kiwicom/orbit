@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
 
       - run:
           name: Testing, Linting, Type Checking
@@ -40,10 +40,10 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
       - run:
           name: Build and deploy
-          command: yarn deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
+          command: yarn orbit-components deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
   deploy-surge:
     docker:
@@ -57,16 +57,16 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
       - run:
           name: Build storybook
-          command: yarn build:storybook
+          command: yarn orbit-components build:storybook
       - run:
           name: Deploy storybook to surge
-          command: yarn deploy:surge
+          command: yarn orbit-components deploy:surge
       - run:
           name: Update url
-          command: yarn deploy:updateURL ${CIRCLE_BRANCH} https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh
+          command: yarn orbit-components deploy:updateURL ${CIRCLE_BRANCH} https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh
 
 workflows:
   version: 2

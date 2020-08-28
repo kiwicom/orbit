@@ -21,11 +21,12 @@ module.exports = {
       {
         devDependencies: [
           "**/*.test.js",
+          "**/__tests__/**",
           "**/*.spec.js",
           "**/*.stories.js",
           "**/*.config.js",
           "**/stories/**",
-          "/config/**",
+          "packages/*/config/**",
         ],
       },
     ],

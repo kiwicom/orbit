@@ -7,7 +7,11 @@
 <br />
 
 <div align="center">
-  <strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
+
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
+<strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
+
 </div>
 
 ---
@@ -57,7 +61,7 @@ import Alert from "@kiwicom/orbit-components/lib/Alert";
 <Alert>Hello World!</Alert>;
 ```
 
-If you want to use custom theme or dictionary inside your project, it's necessary to wrap your app into `<ThemeProvider>`. See [this document](https://github.com/kiwicom/orbit-components/tree/master/src/ThemeProvider/README.md) for more information.
+If you want to use custom theme or dictionary inside your project, it's necessary to wrap your app into `<ThemeProvider>`. See [this document](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/ThemeProvider/README.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit-components/) or [orbit.kiwi](https://orbit.kiwi).
 
@@ -65,9 +69,9 @@ You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io
 
 ## Main Sections:
 
-- [Components](https://github.com/kiwicom/orbit-components/tree/master/src/)
-- [Icons](https://github.com/kiwicom/orbit-components/tree/master/src/Icon/README.md)
-- [Right to left languages](https://github.com/kiwicom/orbit-components/tree/master/src/utils/rtl/README.md)
+- [Components](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/)
+- [Icons](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Icon/README.md)
+- [Right to left languages](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/rtl/README.md)
 - [Theming](https://github.com/kiwicom/orbit-components/tree/master/.github/theming.md)
 - [Dictionary](https://github.com/kiwicom/orbit-components/tree/master/.github/dictionary.md)
 

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/lerna",
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "message": "chore: publish"
+    }
+  }
+}

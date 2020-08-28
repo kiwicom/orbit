@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -14,7 +14,7 @@ import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
-import type { Props, State } from "./index";
+import type { Props } from "./index";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {
@@ -153,126 +153,113 @@ StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-class InputGroup extends React.PureComponent<Props, State> {
-  state = {
-    active: false,
-    filled: false,
-  };
+const findPropInChild = (propToFind, children) => {
+  return React.Children.toArray(children)
+    .map(el => {
+      if (el.props && el.props[propToFind]) return el.props[propToFind];
+      return null;
+    })
+    .filter(Boolean);
+};
 
-  inputID: string = randomID("inputGroupID");
+const InputGroup = ({
+  children,
+  label,
+  flex = "0 1 auto",
+  size = SIZE_OPTIONS.NORMAL,
+  help,
+  error,
+  dataTest,
+  spaceAfter,
+  onFocus,
+  onBlur,
+  onChange,
+}: Props) => {
+  const [active, setActive] = useState(false);
+  const [filled, setFilled] = useState(false);
+  const inputID = React.useMemo(() => randomID("inputGroupID"), []);
 
-  componentDidMount() {
-    this.isFilled();
-  }
+  const isFilled = useCallback(() => setFilled(findPropInChild("value", children).length > 0), [
+    children,
+  ]);
 
-  componentDidUpdate(prevProps: Props) {
-    if (this.props.children !== prevProps.children) {
-      this.isFilled();
-    }
-  }
+  useEffect(() => {
+    isFilled();
+  }, [isFilled]);
 
-  isFilled = () =>
-    this.setState({
-      filled: !React.Children.map(
-        this.props.children,
-        child => child.props.value !== undefined && child.props.value !== "",
-      ).includes(false),
-    });
-
-  handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onFocus } = this.props;
-
-    this.setState({ active: true });
+  const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    setActive(true);
     if (onFocus) {
       onFocus(ev);
     }
   };
 
-  handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onBlur } = this.props;
-    this.isFilled();
-
-    this.setState({ active: false });
+  const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    isFilled();
+    setActive(false);
     if (onBlur) {
       onBlur(ev);
     }
   };
 
-  handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-    const { onChange } = this.props;
-    this.isFilled();
+  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    isFilled();
 
     if (onChange) {
       onChange(ev);
     }
   };
 
-  render() {
-    const {
-      children,
-      label,
-      flex = "0 1 auto",
-      size = SIZE_OPTIONS.NORMAL,
-      help,
-      error,
-      dataTest,
-      spaceAfter,
-    } = this.props;
-
-    const { active, filled } = this.state;
-
-    return (
-      <StyledInputGroup
-        label={label}
-        error={error}
-        active={active}
-        size={size}
-        dataTest={dataTest}
-        spaceAfter={spaceAfter}
-        role="group"
-        ariaLabelledby={label && this.inputID}
-      >
-        {label && (
-          <FormLabel filled={filled} id={this.inputID}>
-            {label}
-          </FormLabel>
-        )}
-        <StyledChildren>
-          {React.Children.map(children, (item, key) => {
-            // either array, array with one length or string
-            // if it's not defined, use the first or string
-            const childFlex =
-              Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-            return (
-              <StyledChild flex={childFlex}>
-                {React.cloneElement(item, {
-                  ref: node => {
-                    // Call the original ref, if any
-                    const { ref } = item;
-                    if (typeof ref === "function") {
-                      ref(node);
-                    } else if (ref !== null) {
-                      ref.current = node;
-                    }
-                  },
-                  size,
-                  label: undefined,
-                  help: undefined,
-                  error: undefined,
-                  onChange: item.props.onChange != null ? item.props.onChange : this.handleChange,
-                  onBlur: item.props.onBlur != null ? item.props.onChange : this.handleBlur,
-                  onFocus: item.props.onFocus != null ? item.props.onFocus : this.handleFocus,
-                })}
-              </StyledChild>
-            );
-          })}
-          <FakeGroup label={label} error={error} active={active} size={size} />
-        </StyledChildren>
-        {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
-        {error && <FormFeedback type="error">{error}</FormFeedback>}
-      </StyledInputGroup>
-    );
-  }
-}
+  return (
+    <StyledInputGroup
+      label={label}
+      error={error}
+      active={active}
+      size={size}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+      role="group"
+      ariaLabelledby={label && inputID}
+    >
+      {label && (
+        <FormLabel filled={filled} id={inputID}>
+          {label}
+        </FormLabel>
+      )}
+      <StyledChildren>
+        {React.Children.map(children, (item, key) => {
+          // either array, array with one length or string
+          // if it's not defined, use the first or string
+          const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+          return (
+            <StyledChild flex={childFlex}>
+              {React.cloneElement(item, {
+                ref: node => {
+                  // Call the original ref, if any
+                  const { ref } = item;
+                  if (typeof ref === "function") {
+                    ref(node);
+                  } else if (ref !== null) {
+                    ref.current = node;
+                  }
+                },
+                size,
+                label: undefined,
+                help: undefined,
+                error: undefined,
+                onChange: item.props.onChange != null ? item.props.onChange : handleChange,
+                onBlur: item.props.onBlur != null ? item.props.onChange : handleBlur,
+                onFocus: item.props.onFocus != null ? item.props.onFocus : handleFocus,
+              })}
+            </StyledChild>
+          );
+        })}
+        <FakeGroup label={label} error={error} active={active} size={size} />
+      </StyledChildren>
+      {!error && help && <FormFeedback type="help">{help}</FormFeedback>}
+      {error && <FormFeedback type="error">{error}</FormFeedback>}
+    </StyledInputGroup>
+  );
+};
 
 export default InputGroup;

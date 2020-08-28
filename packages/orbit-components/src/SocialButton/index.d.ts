@@ -10,14 +10,7 @@ declare module "@kiwicom/orbit-components/lib/Button";
 
 type Type = "apple" | "facebook" | "google" | "twitter";
 
-type OmittedButtonCommonProps = Exclude<
-  ButtonCommonProps,
-  {
-    readonly iconLeft?: React.ReactNode;
-    readonly iconRight?: React.ReactNode;
-    readonly circled?: boolean;
-  }
->;
+type OmittedButtonCommonProps = Omit<ButtonCommonProps, "iconLeft" | "iconRight" | "circled">;
 
 type Props = {
   readonly type?: Type;

@@ -90,6 +90,7 @@ storiesOf("InputGroup", module)
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          label="Phone number"
         >
           <Select
             options={selectOptions}

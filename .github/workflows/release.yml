@@ -12,7 +12,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
 
-      - name: Release Notary Action
-        uses: docker://outillage/release-notary
+      - name: Publish
+        run: lerna publish from-git --create-release github
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

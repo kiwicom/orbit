@@ -77,6 +77,21 @@ storiesOf("Select", module)
     },
   )
   .add(
+    "With small size",
+    () => (
+      <Select
+        label="Select box (small size)"
+        size="small"
+        options={objectOptions}
+        onChange={action("onChange")}
+      />
+    ),
+    {
+      info:
+        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "With help message",
     () => (
       <Select
@@ -104,47 +119,6 @@ storiesOf("Select", module)
     {
       info:
         "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "With small size",
-    () => (
-      <Select
-        label="Select box (small size)"
-        size="small"
-        options={objectOptions}
-        onChange={action("onChange")}
-      />
-    ),
-    {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "With help",
-    () => {
-      const label = text("Label", "Label");
-      const help = text("Error", "Help message");
-
-      return <Select label={label} help={help} options={objectOptions} />;
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
-    "With error",
-    () => {
-      const label = text("Label", "Label");
-      const error = text("Error", "Error message (explain how to solve it)");
-
-      return <Select label={label} error={error} options={objectOptions} />;
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
   .add(

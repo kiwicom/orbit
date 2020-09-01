@@ -3,6 +3,6 @@
 	"example": "() => <Tag>Bags</Tag>\n",
 	"info": {
 		"title": "Default tag",
-		"description": "By default, tags are not selected and cannot be removeds."
+		"description": "By default, tags are not selected and cannot be removed."
 	}
 }

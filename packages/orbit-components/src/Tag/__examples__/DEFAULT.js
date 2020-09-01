@@ -7,6 +7,6 @@ export default {
   Example: () => <Tag>Bags</Tag>,
   info: {
     title: "Default tag",
-    description: "By default, tags are not selected and cannot be removeds.",
+    description: "By default, tags are not selected and cannot be removed.",
   },
 };

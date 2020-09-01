@@ -195,8 +195,7 @@ export default {
     );
   },
   info: {
-    title: "Tags in input fields",
-    description:
-      "If you want to use tags as your input, use the tags prop. See Tag documentation for more.",
+    title: "Filters",
+    description: "Use tags to show categories of filters that can and/or have been applied.",
   },
 };

@@ -49,6 +49,6 @@ export default {
   info: {
     title: "Tags in input fields",
     description:
-      "If you want to use tags as your input, use the tags prop. See Tag documentation for more.",
+      "Tags can be used to show selections in input fields, such as possible destinations.",
   },
 };

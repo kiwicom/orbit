@@ -12,17 +12,26 @@ export default {
       liverpool: { present: true, selected: false },
     });
 
-    const addTag = name => (
-      <Tag
-        selected={tags[name].selected}
-        onClick={() =>
-          setTags({ ...tags, [name]: { present: true, selected: !tags[name].selected } })
-        }
-        onRemove={() => setTags({ ...tags, [name]: { present: false, selected: false } })}
-      >
-        {`${name.slice(0, 1).toUpperCase()}${name.slice(1)}`}
-      </Tag>
-    );
+    type Cities = "london" | "manchester" | "liverpool";
+
+    const addTag = (name: Cities) => {
+      const newTags = { ...tags };
+      return (
+        <Tag
+          selected={tags[name].selected}
+          onClick={() => {
+            newTags[name] = { present: true, selected: !tags[name].selected };
+            setTags(newTags);
+          }}
+          onRemove={() => {
+            newTags[name] = { present: false, selected: false };
+            setTags(newTags);
+          }}
+        >
+          {`${name.slice(0, 1).toUpperCase()}${name.slice(1)}`}
+        </Tag>
+      );
+    };
     return (
       <InputField
         label="Destination"

@@ -164,6 +164,10 @@ export { default as ModalPreventOverlayClose } from "./Modal/__examples__/PREVEN
 export { default as ModalScrollPosition } from "./Modal/__examples__/SCROLL_POSITION";
 export { default as ModalSectionOnly } from "./Modal/__examples__/SECTION_ONLY";
 export { default as ModalSizes } from "./Modal/__examples__/SIZES";
+export { default as NavigationBarCallbacks } from "./NavigationBar/__examples__/CALLBACKS";
+export { default as NavigationBarDefault } from "./NavigationBar/__examples__/DEFAULT";
+export { default as NavigationBarIcons } from "./NavigationBar/__examples__/ICONS";
+export { default as NavigationBarMenu } from "./NavigationBar/__examples__/MENU";
 export { default as NotificationBadgeAccessibility } from "./NotificationBadge/__examples__/ACCESSIBILITY";
 export { default as NotificationBadgeDefault } from "./NotificationBadge/__examples__/DEFAULT";
 export { default as NotificationBadgeIcons } from "./NotificationBadge/__examples__/ICONS";

@@ -23,7 +23,7 @@
     "fetch-translations": "babel-node config/fetchTranslations.js",
     "build-storybook": "build-storybook -s ./static",
     "deploy:storybook": "cross-env BABEL_TARGET=\"storybook\" storybook-to-ghpages",
-    "deploy:surge": "yarn surge .out/ https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh",
+    "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
     "compile:ts": "yarn tsc"
   },
@@ -133,7 +133,7 @@
     "rimraf": "^3.0.2",
     "sharp": "^0.25.3",
     "styled-components": "^4.4.1",
-    "surge": "^0.20.1",
+    "surge": "^0.21.6",
     "svg2ttf": "^5.0.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",

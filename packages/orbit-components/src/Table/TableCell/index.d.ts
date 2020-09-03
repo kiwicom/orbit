@@ -10,15 +10,7 @@ type Align = "left" | "center" | "right";
 type As = "th" | "td";
 type Scope = "col" | "row" | "colgroup" | "rowgroup";
 type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
-type VerticalAlign =
-  | "baseline"
-  | "sub"
-  | "super"
-  | "text-top"
-  | "text-bottom"
-  | "middle"
-  | "top"
-  | "bottom";
+type VerticalAlign = "baseline" | "middle" | "top" | "bottom";
 
 interface Props extends SharedProps {
   readonly as?: As;

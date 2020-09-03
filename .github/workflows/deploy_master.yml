@@ -20,5 +20,5 @@ jobs:
       - name: Install dependencies
         run: yarn install && yarn bootstrap
 
-      - name: Deplyo storybook
+      - name: Deploy storybook
         run: yarn orbit-components deploy:storybook --ci --host-token-env-variable={{ secrets.GITHUB_TOKEN }}

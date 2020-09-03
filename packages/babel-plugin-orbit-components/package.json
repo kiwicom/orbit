@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kiwicom/babel-plugin-orbit-components",
   "main": "index",
   "devDependencies": {
+    "@babel/core": "^7.11.4",
     "jest": "^26.4.2"
   },
   "files": [

@@ -29,6 +29,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "engines": {
+    "yarn": ">=1.22.4"
+  },
   "author": "kiwi.com",
   "license": "MIT",
   "dependencies": {

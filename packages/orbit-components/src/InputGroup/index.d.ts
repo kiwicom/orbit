@@ -1,6 +1,6 @@
 // @flow
 // Type definitions for @kiwicom/orbit-components
-// Project: http://github.com/kiwicom/orbit-components
+// Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
 
@@ -23,9 +23,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onBlur?: Event;
 }
 
-interface State {
-  active: boolean;
-  filled: boolean;
-}
-declare class InputGroup extends React.Component<Props, State> {}
+declare class InputGroup extends React.FC<Props> {}
 export { InputGroup, InputGroup as default };

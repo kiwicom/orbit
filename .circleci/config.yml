@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
 
       - run:
           name: Testing, Linting, Type Checking
@@ -40,42 +40,13 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn bootstrap
       - run:
           name: Build and deploy
           command: yarn orbit-components deploy:storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
-  deploy-surge:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-      - run:
-          name: Install dependencies
-          command: yarn
-      - run:
-          name: Build storybook
-          command: yarn orbit-components build:storybook
-      - run:
-          name: Deploy storybook to surge
-          command: yarn orbit-components deploy:surge
-      - run:
-          name: Update url
-          command: yarn orbit-components deploy:updateURL ${CIRCLE_BRANCH} https://orbit-components-$(git rev-parse --abbrev-ref HEAD | sed -e 's/[^a-zA-Z0-9]/-/g').surge.sh
-
 workflows:
   version: 2
-  test_and_deploy_branch:
-    jobs:
-      - test
-      - deploy-surge:
-          requires:
-            - test
   test_and_deploy:
     jobs:
       - test

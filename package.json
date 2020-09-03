@@ -5,13 +5,16 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
-    "prepare": "yarn orbit-components build",
+    "build-ci": "lerna bootstrap && yarn orbit-components build",
+    "postinstall": "yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
+    "prepublishOnly": "yarn orbit-components build",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "yarn flow:check && yarn eslint && yarn test --ci --maxWorkers=2 && yarn prettier:test",
+    "test-ci": "yarn flow:check && yarn eslint:check && yarn test --ci --maxWorkers=2 && yarn prettier:test",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
     "release": "lerna version --conventional-commits"
   },

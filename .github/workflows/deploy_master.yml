@@ -1,7 +1,7 @@
 name: Deploy master
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -21,4 +21,6 @@ jobs:
         run: yarn install && yarn bootstrap
 
       - name: Deploy storybook
-        run: yarn orbit-components deploy:storybook --ci --host-token-env-variable=${{ secrets.GH_TOKEN }}
+        run: yarn orbit-components deploy:storybook --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

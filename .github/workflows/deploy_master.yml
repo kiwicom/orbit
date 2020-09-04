@@ -21,4 +21,4 @@ jobs:
         run: yarn install && yarn bootstrap
 
       - name: Deploy storybook
-        run: yarn orbit-components deploy:storybook --ci --host-token-env-variable=${{ secrets.GITHUB_TOKEN }}
+        run: yarn orbit-components deploy:storybook --ci --host-token-env-variable=${{ secrets.GH_TOKEN }}

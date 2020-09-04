@@ -12,6 +12,7 @@ import TextLink from "../TextLink";
 import List from "../List";
 import ListItem from "../List/ListItem";
 import Heading from "../Heading";
+import Button from "../Button";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tooltip from "./index";
@@ -69,6 +70,21 @@ storiesOf("Tooltip", module)
       return (
         <Tooltip content={content}>
           <Heading>Orbit design system</Heading>
+        </Tooltip>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "Tooltip on disabled element",
+    () => {
+      const content = text("content", "Write your text here.");
+      return (
+        <Tooltip content={content}>
+          <Button disabled>Disabled</Button>
         </Tooltip>
       );
     },

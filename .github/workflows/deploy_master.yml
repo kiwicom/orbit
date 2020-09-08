@@ -1,0 +1,26 @@
+name: Deploy master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to GH pages
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install && yarn bootstrap
+
+      - name: Deploy storybook
+        run: yarn orbit-components deploy:storybook --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

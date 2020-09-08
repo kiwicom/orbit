@@ -22,7 +22,7 @@ export default {
       >
         About us
       </TextLink>
-      <TextLink href="https:/code.kiwi.com/" external type="secondary">
+      <TextLink href="https://code.kiwi.com/" external type="secondary">
         &gt;code.kiwi.com_
       </TextLink>
       <Separator />

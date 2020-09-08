@@ -100,56 +100,67 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
-  const {
-    placeholder = "No file selected",
-    buttonLabel = "Select file",
-    onRemoveFile,
-    dataTest,
-    spaceAfter,
-  } = props;
-
-  return (
-    <Field spaceAfter={spaceAfter}>
-      <Input
-        data-test={dataTest}
-        data-state={getFieldDataState(!!props.error)}
-        type="file"
-        name={props.name}
-        error={props.error}
-        onChange={props.onChange}
-        onFocus={props.onChange}
-        onBlur={props.onBlur}
-        accept={props.allowedFileTypes}
-        ref={ref}
-        tabIndex={props.tabIndex}
-      />
-      {props.label && <FormLabel filled={!!props.fileName}>{props.label}</FormLabel>}
-      <FakeInput error={props.error}>
-        <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
-          {buttonLabel}
-        </Button>
-        <StyledFileInput fileName={props.fileName} error={props.error}>
-          {props.fileName || placeholder}
-        </StyledFileInput>
-        {props.fileName && (
-          <ButtonLink
-            type="inline"
-            iconLeft={<CloseCircle color="secondary" />}
-            onClick={ev => {
-              ev.preventDefault();
-              if (onRemoveFile) {
-                onRemoveFile();
-              }
-            }}
-          />
-        )}
-      </FakeInput>
-      {props.help && !props.error && <FormFeedback type="help">{props.help}</FormFeedback>}
-      {props.error && <FormFeedback type="error">{props.error}</FormFeedback>}
-    </Field>
-  );
-});
+const InputFile = React.forwardRef<Props, HTMLInputElement>(
+  (
+    {
+      placeholder = "No file selected",
+      buttonLabel = "Select file",
+      onRemoveFile,
+      dataTest,
+      spaceAfter,
+      name,
+      error,
+      help,
+      onChange,
+      onBlur,
+      allowedFileTypes,
+      tabIndex,
+      label,
+      fileName,
+    },
+    ref,
+  ) => {
+    return (
+      <Field spaceAfter={spaceAfter}>
+        <Input
+          data-test={dataTest}
+          data-state={getFieldDataState(Boolean(error))}
+          type="file"
+          name={name}
+          error={error}
+          onChange={onChange}
+          onFocus={onChange}
+          onBlur={onBlur}
+          accept={allowedFileTypes}
+          ref={ref}
+          tabIndex={tabIndex}
+        />
+        {label && <FormLabel filled={Boolean(fileName)}>{label}</FormLabel>}
+        <FakeInput error={error}>
+          <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
+            {buttonLabel}
+          </Button>
+          <StyledFileInput fileName={fileName} error={error}>
+            {fileName || placeholder}
+          </StyledFileInput>
+          {fileName && (
+            <ButtonLink
+              type="inline"
+              iconLeft={<CloseCircle color="secondary" />}
+              onClick={ev => {
+                ev.preventDefault();
+                if (onRemoveFile) {
+                  onRemoveFile();
+                }
+              }}
+            />
+          )}
+        </FakeInput>
+        <FormFeedback error={error} help={help} />
+      </Field>
+    );
+  },
+);
 
 InputFile.displayName = "InputFile";
 

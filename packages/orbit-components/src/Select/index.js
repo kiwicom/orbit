@@ -6,7 +6,6 @@ import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import FormFeedback from "../FormFeedback";
-import TYPE_OPTIONS from "../FormFeedback/consts";
 import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
@@ -335,8 +334,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           <ChevronDown />
         </SelectSuffix>
       </SelectContainer>
-      {help && !error && <FormFeedback type={TYPE_OPTIONS.HELP}>{help}</FormFeedback>}
-      {error && <FormFeedback type={TYPE_OPTIONS.ERROR}>{error}</FormFeedback>}
+      <FormFeedback error={error} help={help} />
     </Label>
   );
 });

@@ -1,6 +1,6 @@
 // @flow
 // Type definitions for @kiwicom/orbit-components
-// Project: http://github.com/kiwicom/orbit-components
+// Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
 
@@ -8,9 +8,9 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/TextLink";
 
-type Type = "primary" | "secondary";
+export type Type = "primary" | "secondary";
 
-interface Props extends Common.Global {
+export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly href?: string;
   readonly icon?: React.ReactNode;

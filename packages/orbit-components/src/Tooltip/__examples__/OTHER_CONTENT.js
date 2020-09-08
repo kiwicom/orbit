@@ -32,7 +32,7 @@ export default {
                 </TextLink>
               </ListItem>
               <ListItem>
-                <TextLink external href="https://github.com/kiwicom/orbit-components">
+                <TextLink external href="https://github.com/kiwicom/orbit">
                   GitHub repo
                 </TextLink>
               </ListItem>

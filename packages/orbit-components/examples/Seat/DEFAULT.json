@@ -1,0 +1,8 @@
+{
+	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";",
+	"example": "() => <Seat />\n",
+	"info": {
+		"title": "Default seat",
+		"description": "By default, seats appear as available in medium size."
+	}
+}

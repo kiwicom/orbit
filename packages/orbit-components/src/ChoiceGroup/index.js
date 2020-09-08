@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 
 import Heading from "../Heading";
@@ -36,71 +36,62 @@ StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-class ChoiceGroup extends React.PureComponent<Props> {
-  groupID = randomID("choiceGroupID");
+const ChoiceGroup = ({
+  dataTest,
+  label,
+  labelSize = LABEL_SIZES.NORMAL,
+  labelAs = LABEL_ELEMENTS.H4,
+  error,
+  children,
+  filter,
+  onOnlySelection,
+  onlySelectionText,
+  onChange,
+}: Props) => {
+  const groupID = useMemo(() => randomID("choiceGroupID"), []);
 
-  handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
-    const { onChange } = this.props;
     if (onChange) {
       onChange(ev);
     }
   };
 
-  render() {
-    const {
-      dataTest,
-      label,
-      labelSize = LABEL_SIZES.NORMAL,
-      labelAs = LABEL_ELEMENTS.H4,
-      error,
-      children,
-      filter,
-      onOnlySelection,
-      onlySelectionText,
-    } = this.props;
-
-    return (
-      <StyledChoiceGroup data-test={dataTest} role="group" aria-labelledby={this.groupID}>
-        {label && (
-          <Heading
-            id={this.groupID}
-            type={getHeadingSize(labelSize)}
-            as={labelAs}
-            spaceAfter="medium"
-          >
-            {label}
-          </Heading>
-        )}
-        <Stack direction="column" spacing={filter ? "none" : "condensed"}>
-          {React.Children.map(children, child => {
-            return !filter ? (
+  return (
+    <StyledChoiceGroup data-test={dataTest} role="group" aria-labelledby={groupID}>
+      {label && (
+        <Heading id={groupID} type={getHeadingSize(labelSize)} as={labelAs} spaceAfter="medium">
+          {label}
+        </Heading>
+      )}
+      <Stack direction="column" spacing={filter ? "none" : "condensed"}>
+        {React.Children.map(children, child => {
+          return !filter ? (
+            <>
+              {React.cloneElement(child, {
+                onChange: handleChange,
+                hasError: Boolean(error),
+              })}
+            </>
+          ) : (
+            <FilterWrapper
+              child={child}
+              onOnlySelection={onOnlySelection}
+              onlySelectionText={onlySelectionText}
+            >
               <>
                 {React.cloneElement(child, {
-                  onChange: this.handleChange,
-                  hasError: !!error,
+                  onChange: handleChange,
+                  hasError: Boolean(error),
                 })}
               </>
-            ) : (
-              <FilterWrapper
-                child={child}
-                onOnlySelection={onOnlySelection}
-                onlySelectionText={onlySelectionText}
-              >
-                <>
-                  {React.cloneElement(child, {
-                    onChange: this.handleChange,
-                    hasError: !!error,
-                  })}
-                </>
-              </FilterWrapper>
-            );
-          })}
-        </Stack>
-        {error && <FormFeedback type="error">{error}</FormFeedback>}
-      </StyledChoiceGroup>
-    );
-  }
-}
+            </FilterWrapper>
+          );
+        })}
+      </Stack>
+      <FormFeedback error={error} />
+    </StyledChoiceGroup>
+  );
+};
 
 export default ChoiceGroup;

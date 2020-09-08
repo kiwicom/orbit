@@ -383,8 +383,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         {suffix && <Suffix size={size}>{suffix}</Suffix>}
         <FakeInput size={size} disabled={disabled} error={error} />
       </InputContainer>
-      {help && !error && <FormFeedback type="help">{help}</FormFeedback>}
-      {error && <FormFeedback type="error">{error}</FormFeedback>}
+      <FormFeedback help={help} error={error} />
     </Field>
   );
 });

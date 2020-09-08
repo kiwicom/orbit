@@ -1,0 +1,12 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Position } from "../index";
+
+export type Props = {
+  ...Position,
+};
+
+type ResolveTooltipArrowPosition = Props => Interpolation[];
+
+declare export default ResolveTooltipArrowPosition;

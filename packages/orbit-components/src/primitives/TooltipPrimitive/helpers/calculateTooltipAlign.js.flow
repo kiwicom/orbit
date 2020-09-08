@@ -1,0 +1,10 @@
+// @flow
+import type { Aligns, Dimensions, Positions } from "../index";
+
+export type CalculateTooltipAlign = (
+  position: ?Positions,
+  aligns: Aligns[],
+  dimensions: Dimensions,
+) => ?Aligns;
+
+declare export default CalculateTooltipAlign;

@@ -1,0 +1,7 @@
+// @flow
+import type { Theme } from "../../../defaultTheme";
+import type { Positions } from "../index";
+
+export type SwitchPreferredPosition = (theme: Theme, preferredPosition: Positions) => Positions;
+
+declare export default SwitchPreferredPosition;

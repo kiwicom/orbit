@@ -367,6 +367,32 @@ storiesOf("InputField", module)
     },
   )
   .add(
+    "With help",
+    () => {
+      const label = text("Label", "Label");
+      const help = text("Help", "Help message");
+
+      return <InputField label={label} help={help} />;
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
+    "With error",
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "Error message (explain how to solve it)");
+
+      return <InputField label={label} error={error} />;
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);

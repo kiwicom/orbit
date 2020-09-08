@@ -69,8 +69,8 @@ describe(`InputFile with help`, () => {
   it("should contain a fake div with styling", () => {
     expect(component.find("InputFile__FakeInput").exists()).toBe(true);
   });
-  it("should contain FeedBack help", () => {
-    expect(component.find(`FormFeedback[type="help"]`).exists()).toBe(true);
+  it("should contain FeedBack", () => {
+    expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
   it("should execute onChange method", () => {
     input.simulate("change");
@@ -98,8 +98,8 @@ describe(`InputFiInputFile with error`, () => {
   it("should NOT contain a label", () => {
     expect(component.find("FormLabel").exists()).toBe(false);
   });
-  it("should contain FeedBack error", () => {
-    expect(component.find(`FormFeedback[type="error"]`).exists()).toBe(true);
+  it("should contain FeedBack", () => {
+    expect(component.find(`FormFeedback`).exists()).toBe(true);
   });
 
   it("should has data-state error", () => {

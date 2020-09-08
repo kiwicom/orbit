@@ -3,7 +3,7 @@
 const octokit = require("@octokit/rest")();
 // require("dotenv").config({ path: resolve(".env") });
 
-const repo = "orbit-components";
+const repo = "orbit";
 
 export const getPr = async (branchName: string) => {
   const res = await octokit.pullRequests.getAll({
@@ -14,12 +14,12 @@ export const getPr = async (branchName: string) => {
   return res.data[0];
 };
 
-export const updateLiveURL = async (branchName: string, lastUrl: string) => {
+export const updateLiveURL = async (branchName: string, lastUrl: string, token: string) => {
   if (!branchName) throw new Error("Missing branch parameter");
   const pr = await getPr(branchName);
   octokit.authenticate({
     type: "integration",
-    token: process.env.GITHUB_TOKEN,
+    token,
   });
   const res = await octokit.pullRequests.get({
     owner: "kiwicom",

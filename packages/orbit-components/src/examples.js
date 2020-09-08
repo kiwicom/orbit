@@ -225,6 +225,7 @@ export { default as TileDefault } from "./Tile/__examples__/DEFAULT";
 export { default as TileHeaderAndDescription } from "./Tile/__examples__/TITLE_DESCRIPTION";
 export { default as TileHeaderCustom } from "./Tile/__examples__/HEADER_CUSTOM";
 export { default as TileLink } from "./Tile/__examples__/LINK";
+export { default as TileGroupDefault } from "./TileGroup/__examples__/DEFAULT";
 export { default as TooltipAlign } from "./Tooltip/__examples__/ALIGN";
 export { default as TooltipDefault } from "./Tooltip/__examples__/DEFAULT";
 export { default as TooltipIndication } from "./Tooltip/__examples__/INDICATION";

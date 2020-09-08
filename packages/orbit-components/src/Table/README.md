@@ -124,16 +124,12 @@ Table below contains all types of the props in TableCell component.
 
 #### enum
 
-| align      | whiteSpace   | VerticalAlign   | as     | scope        |
-| :--------- | :----------- | --------------- | :----- | :----------- |
-| `"left"`   | `"nowrap"`   | `"nowrap"`      | `"th"` | `"col"`      |
-| `"center"` | `"pre"`      | `"sub"`         | `"td"` | `"row"`      |
-| `"right"`  | `"pre-line"` | `"super"`       |        | `"colgroup"` |
-|            |              | `"text-top"`    |        | `"rowgroup"` |
-|            |              | `"text-bottom"` |
-|            |              | `"middle"`      |
-|            |              | `"top"`         |
-|            |              | `"bottom"`      |
+| align      | whiteSpace   | VerticalAlign | as     | scope        |
+| :--------- | :----------- | ------------- | :----- | :----------- |
+| `"left"`   | `"nowrap"`   | `"baseline"`  | `"th"` | `"col"`      |
+| `"center"` | `"pre"`      | `"middle"`    | `"td"` | `"row"`      |
+| `"right"`  | `"pre-line"` | `"top"`       |        | `"colgroup"` |
+|            |              | `"bottom"`    |        | `"rowgroup"` |
 
 ### TableFooter
 

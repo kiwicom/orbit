@@ -29,6 +29,10 @@ const StyledTooltipChildren = styled.span`
         text-decoration: underline currentColor dotted;
       }
     `};
+  /* enable event bubbling for disabled children, e.g. buttons */
+  [disabled] {
+    pointer-events: none;
+  }
 `;
 
 const Tooltip = ({

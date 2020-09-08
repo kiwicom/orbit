@@ -11,7 +11,7 @@ import useIntersect from "@kiwicom/orbit-components/lib/hooks/useIntersect";
 Then you can use it:
 
 ```jsx
-const LazyLoaded = ({ src, placeholder }: Props) => {
+const LazyLoaded = ({ alt, src, placeholder, ...props }: Props) => {
   const [source, setSource] = React.useState(placeholder);
   const [loaded, setLoaded] = React.useState(false);
 

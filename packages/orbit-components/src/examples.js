@@ -231,3 +231,6 @@ export { default as TooltipIndication } from "./Tooltip/__examples__/INDICATION"
 export { default as TooltipOtherContent } from "./Tooltip/__examples__/OTHER_CONTENT";
 export { default as TooltipPosition } from "./Tooltip/__examples__/POSITION";
 export { default as TooltipSize } from "./Tooltip/__examples__/SIZE";
+export { default as TruncateDefault } from "./Truncate/__examples__/DEFAULT";
+export { default as TruncateText } from "./Truncate/__examples__/TEXT";
+export { default as TruncateWidth } from "./Truncate/__examples__/WIDTH";

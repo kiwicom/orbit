@@ -30,7 +30,7 @@ StyledTableCell.defaultProps = {
 };
 
 const TableCell = ({
-  align = ALIGN_OPTIONS.CENTER,
+  align = ALIGN_OPTIONS.LEFT,
   scope,
   as = TYPE_AS.TD,
   verticalAlign,

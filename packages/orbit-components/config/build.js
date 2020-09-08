@@ -167,7 +167,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const TSHeader = `// Type definitions for @kiwicom/orbit-components
-// Project: https://github.com/kiwicom/orbit-components/
+// Project: https://github.com/kiwicom/orbit/
 
 declare module "@kiwicom/orbit-components/lib/icons";\n\n`;
 
@@ -194,7 +194,7 @@ Promise.all(
           if (err) reject();
           // only get the HTML comments
           const comments = getHTMLCommentsWithCheck(content, baseName);
-          const url = `https://raw.githubusercontent.com/kiwicom/orbit-components/master/src/icons/svg/${baseName}.svg`;
+          const url = `https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;
           resolve({ [baseName]: { ...comments, svg, url } });

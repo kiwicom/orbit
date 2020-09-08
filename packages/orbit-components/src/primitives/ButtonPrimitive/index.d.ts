@@ -81,9 +81,7 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
   readonly icons?: IconProps;
 }
 
-export type Props = Exclude<ButtonCommonProps, { readonly size?: Common.Size }> &
-  ButtonCommonProps &
-  PrimitiveTypes;
+export type Props = Omit<ButtonCommonProps, "size"> & ButtonCommonProps & PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
 declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;

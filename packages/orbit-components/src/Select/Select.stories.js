@@ -77,6 +77,21 @@ storiesOf("Select", module)
     },
   )
   .add(
+    "With small size",
+    () => (
+      <Select
+        label="Select box (small size)"
+        size="small"
+        options={objectOptions}
+        onChange={action("onChange")}
+      />
+    ),
+    {
+      info:
+        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "With help message",
     () => (
       <Select
@@ -98,21 +113,6 @@ storiesOf("Select", module)
         label="Select box (with error text)"
         options={objectOptions}
         error={<div>You need to select some value.</div>}
-        onChange={action("onChange")}
-      />
-    ),
-    {
-      info:
-        "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "With small size",
-    () => (
-      <Select
-        label="Select box (small size)"
-        size="small"
-        options={objectOptions}
         onChange={action("onChange")}
       />
     ),

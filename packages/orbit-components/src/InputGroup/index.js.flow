@@ -25,9 +25,4 @@ export type Props = {|
   ) => void | Promise<any>,
 |};
 
-export type State = {|
-  active: boolean,
-  filled: boolean,
-|};
-
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

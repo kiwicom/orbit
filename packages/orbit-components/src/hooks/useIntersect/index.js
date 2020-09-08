@@ -12,8 +12,6 @@ export default ({ root = null, rootMargin, threshold = 0 }: IntersectionObserver
   const observer = useRef<null | IntersectionObserver>(null);
 
   useEffect(() => {
-    if (observer.current) observer.current.disconnect();
-
     observer.current = new window.IntersectionObserver(([ent]) => updateEntry(ent), {
       root,
       rootMargin,

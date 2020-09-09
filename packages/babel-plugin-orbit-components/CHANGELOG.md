@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.1 (2020-09-09)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
 ## 1.6.0
 
 - Fixed import of `BadgePrimitive`

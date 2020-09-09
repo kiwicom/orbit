@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.92.0 (2020-09-09)
+
+### Bug Fixes
+
+- **Layout:** width of Card on mobile ([#2181](https://github.com/kiwicom/orbit/issues/2181)) ([8daca18](https://github.com/kiwicom/orbit/commit/8daca18b382e04873d781f457c1294aae353134e))
+- updating TypeScript definitions to match Flow ([#2202](https://github.com/kiwicom/orbit/issues/2202)) ([d476c2f](https://github.com/kiwicom/orbit/commit/d476c2f95bb260b72611bfb19a55c294fc72478d))
+- **Docs:** internal github links ([#2182](https://github.com/kiwicom/orbit/issues/2182)) ([da12261](https://github.com/kiwicom/orbit/commit/da1226162b0cd3fee7c31f6ab8da97cf4b642feb))
+- **Table:** updating default align and removing unnecessary vertical-align options ([#2204](https://github.com/kiwicom/orbit/issues/2204)) ([0bfe9ae](https://github.com/kiwicom/orbit/commit/0bfe9ae0da094586a2818fb733ee5219802099df))
+- **Tooltip:** enable event bubbling for disabled children ([#2201](https://github.com/kiwicom/orbit/issues/2201)) ([5f26d88](https://github.com/kiwicom/orbit/commit/5f26d88d65ca1fc20b1cd2badf3bfd9fc03c2ede))
+- update docs and icons link for monorepo ([#2200](https://github.com/kiwicom/orbit/issues/2200)) ([27f4974](https://github.com/kiwicom/orbit/commit/27f49746c12a1adeb2721f9c31b323b074e98aea))
+
+### Features
+
+- **Hooks:** useIntersect ([#2091](https://github.com/kiwicom/orbit/issues/2091)) ([dd65d65](https://github.com/kiwicom/orbit/commit/dd65d65d55e6b90e47765160fd610fdd8441e3f0))
+- **Icons:** add double chevron icons ([#2190](https://github.com/kiwicom/orbit/issues/2190)) ([f0ce1f9](https://github.com/kiwicom/orbit/commit/f0ce1f96c918d3859590752f305a9e59497b1094))
+
+### Reverts
+
+- **Layout:** width of Card on mobile ([#2228](https://github.com/kiwicom/orbit/issues/2228)) ([09a5429](https://github.com/kiwicom/orbit/commit/09a5429138d2f922b54d45e573f07f85181bd141))
+
 ## [0.90.1](https://github.com/kiwicom/orbit/compare/0.90.0...0.90.1) (2020-08-06)
 
 ### Bug Fixes

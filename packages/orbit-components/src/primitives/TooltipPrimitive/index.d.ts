@@ -6,7 +6,7 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Tooltip";
+declare module "@kiwicom/orbit-components/lib/primitives/TooltipPrimitive";
 
 type Size = "small" | "medium";
 type Position = "right" | "left" | "top" | "bottom";

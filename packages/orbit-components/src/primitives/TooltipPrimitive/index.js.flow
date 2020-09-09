@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltip/
+  DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltipPrimitive/
 */
 import { ReactComponentStyled } from "styled-components";
 

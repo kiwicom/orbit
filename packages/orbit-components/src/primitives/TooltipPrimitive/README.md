@@ -3,7 +3,7 @@
 To implement TooltipPrimitive component into your project you'll need to add the import:
 
 ```jsx
-import TooltipPrimitive from "@kiwicom/orbit-components/lib/TooltipPrimitive";
+import TooltipPrimitive from "@kiwicom/orbit-components/lib/primitives/TooltipPrimitive";
 ```
 
 After adding import into your project you can use it simply like:

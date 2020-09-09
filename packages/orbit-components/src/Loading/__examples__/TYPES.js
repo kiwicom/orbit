@@ -42,9 +42,6 @@ export default {
           Useful when a user has interacted with a button to show that something is happening.
         </Text>
         <Button loading>Save</Button>
-        <Button iconLeft={<Loading type="buttonLoader" />} disabled>
-          Save
-        </Button>
       </Stack>
       <Stack spacing="extraTight">
         <Heading as="h3" type="title3">

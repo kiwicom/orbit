@@ -9,9 +9,9 @@ on:
       - master
 
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
-    name: Checkout and build branch
+    name: Build and test branch
     steps:
       - uses: actions/checkout@v2
       - name: Restore lerna
@@ -22,24 +22,29 @@ jobs:
 
       - name: Install dependencies
         run: yarn install && yarn bootstrap
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Test branch
-    steps:
-      - uses: actions/checkout@v2
+
       - name: Testing, Linting, Type Checking
         run: yarn test-ci
   deploy:
-    needs: [build, test]
+    needs: build_test
     runs-on: ubuntu-latest
     name: Deploy branch
     steps:
       - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install && yarn bootstrap
+
       - name: Fire deployment
         uses: actions/setup-node@v1
         with:
           node-version: 12
+
       - name: Get BRANCH_NAME
         run: echo ::set-env name=BRANCH_NAME::${{ github.head_ref }}
 

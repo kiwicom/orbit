@@ -1,4 +1,4 @@
-name: Test branch
+name: Test and deploy branch
 
 on:
   push:
@@ -9,9 +9,9 @@ on:
       - master
 
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
-    name: Test
+    name: Build and test branch
     steps:
       - uses: actions/checkout@v2
       - name: Restore lerna
@@ -25,3 +25,39 @@ jobs:
 
       - name: Testing, Linting, Type Checking
         run: yarn test-ci
+  deploy:
+    needs: build_test
+    runs-on: ubuntu-latest
+    name: Deploy branch
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install && yarn bootstrap
+
+      - name: Fire deployment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Get BRANCH_NAME
+        run: echo ::set-env name=BRANCH_NAME::${{ github.head_ref }}
+
+      - name: Get BRANCH_URL
+        run: echo ::set-env name=BRANCH_URL::$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})
+
+      - name: Build storybook
+        run: yarn orbit-components build:storybook
+
+      - name: Publish
+        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Update PR description
+        run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}
+
+

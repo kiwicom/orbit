@@ -101,7 +101,6 @@ StyledTooltipContent.defaultProps = {
 
 const TooltipContent = ({
   dataTest,
-  shownMobile,
   shown,
   size,
   tooltipId,
@@ -147,7 +146,6 @@ const TooltipContent = ({
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
       <StyledTooltipWrapper
         shown={shown && position && align}
-        shownMobile={shownMobile}
         size={size}
         align={align}
         position={position}
@@ -160,7 +158,7 @@ const TooltipContent = ({
         tooltipWidth={dimensions.tooltipWidth}
         contentHeight={dimensions.contentHeight}
         role="tooltip"
-        aria-hidden={!shown && !shownMobile}
+        aria-hidden={!shown}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
         onClick={handleInnerClick}

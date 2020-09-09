@@ -1,18 +1,17 @@
 // @flow
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import { SIZE_OPTIONS } from "./consts";
 import { StyledText } from "../../Text";
 import Portal from "../../Portal";
-import RandomID from "../../utils/randomID";
+import randomID from "../../utils/randomID";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
-import useMediaQuery from "../../hooks/useMediaQuery";
 
 import type { Props } from "./index";
 
-const StyledTooltipChildren = styled.span`
+export const StyledTooltipChildren = styled.span`
   display: inline-flex;
   &:focus:active {
     outline: none;
@@ -33,7 +32,7 @@ const StyledTooltipChildren = styled.span`
   }
 `;
 
-const Tooltip = ({
+const TooltipPrimitive = ({
   children,
   enabled = true,
   tabIndex = "0",
@@ -45,7 +44,6 @@ const Tooltip = ({
   stopPropagation = false,
   removeUnderlinedText,
 }: Props) => {
-  const { isLargeMobile } = useMediaQuery();
   const [shown, setShown] = useState(false);
   const [
     render,
@@ -53,11 +51,8 @@ const Tooltip = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
-  const [shownMobile, setShownMobile, setShownMobileWithTimeout] = useStateWithTimeout<boolean>(
-    false,
-    200,
-  );
-  const [tooltipId, setTooltipId] = useState(null);
+
+  const tooltipId = useMemo(() => randomID("TooltipID"), []);
   const container = useRef(null);
   const handleIn = useCallback(() => {
     setRender(true);
@@ -75,24 +70,16 @@ const Tooltip = ({
       if (stopPropagation) {
         ev.stopPropagation();
       }
-      if (!isLargeMobile) {
-        ev.preventDefault();
-        setRender(true);
-        setShownMobileWithTimeout(true);
-        clearRenderTimeout();
-      }
+      ev.preventDefault();
+      setRender(true);
+      clearRenderTimeout();
     },
-    [clearRenderTimeout, setRender, setShownMobileWithTimeout, stopPropagation, isLargeMobile],
+    [clearRenderTimeout, setRender, stopPropagation],
   );
 
   const handleOutMobile = useCallback(() => {
-    setShownMobile(false);
     setRenderWithTimeout(false);
-  }, [setRenderWithTimeout, setShownMobile]);
-
-  useEffect(() => {
-    setTooltipId(RandomID("tooltip"));
-  }, []);
+  }, [setRenderWithTimeout]);
 
   if (!enabled) return children;
 
@@ -117,7 +104,6 @@ const Tooltip = ({
           <TooltipContent
             parent={children}
             dataTest={dataTest}
-            shownMobile={shownMobile}
             shown={shown}
             size={size}
             tooltipId={tooltipId}
@@ -136,4 +122,4 @@ const Tooltip = ({
   );
 };
 
-export default Tooltip;
+export default TooltipPrimitive;

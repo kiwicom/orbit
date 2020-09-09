@@ -1,7 +1,9 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/tooltip/
+  DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltip/
 */
+import { ReactComponentStyled } from "styled-components";
+
 import type { Globals } from "../../common/common.js.flow";
 
 export type Dimensions = {|
@@ -48,5 +50,7 @@ export type Props = {|
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
 |};
+
+declare export var StyledTooltipChildren: ReactComponentStyled<any>;
 
 declare export default React$ComponentType<Props>;

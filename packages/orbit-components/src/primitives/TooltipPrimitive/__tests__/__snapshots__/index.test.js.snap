@@ -2,8 +2,8 @@
 
 exports[`Tooltip it should match snapshot 1`] = `
 <Fragment>
-  <Tooltip__StyledTooltipChildren
-    aria-describedby={null}
+  <TooltipPrimitive__StyledTooltipChildren
+    aria-describedby="TooltipID50000-id-50000"
     enabled={true}
     onBlur={[Function]}
     onClick={[Function]}
@@ -13,6 +13,6 @@ exports[`Tooltip it should match snapshot 1`] = `
     tabIndex="0"
   >
     <Airplane />
-  </Tooltip__StyledTooltipChildren>
+  </TooltipPrimitive__StyledTooltipChildren>
 </Fragment>
 `;

@@ -3,7 +3,6 @@ import type { Globals } from "../../../common/common.js.flow";
 import type { Aligns, Positions, Sizes } from "../index";
 
 export type Props = {|
-  shownMobile: boolean,
   shown: boolean,
   size: Sizes,
   tooltipId: ?string,

@@ -66,8 +66,9 @@ export default {
           <Checkbox name="Automobiles" label="Automobiles" checked={checked.Automobiles} />
         </ChoiceGroup>
         <List>
-          {items.map(item => (
-            <ListItem>{item}</ListItem>
+          {items.map((item, key) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <ListItem key={key}>{item}</ListItem>
           ))}
         </List>
       </Stack>

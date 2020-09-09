@@ -89,7 +89,7 @@ const ChoiceGroup = ({
           );
         })}
       </Stack>
-      {error && <FormFeedback type="error">{error}</FormFeedback>}
+      <FormFeedback error={error} />
     </StyledChoiceGroup>
   );
 };

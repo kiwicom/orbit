@@ -67,6 +67,25 @@ storiesOf("ChoiceGroup", module)
     },
   )
   .add(
+    "With error",
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "Error message (explain how to solve it)");
+
+      return (
+        <ChoiceGroup label={label} error={error} onChange={action("onChange")}>
+          <Radio label="Reason one" value="one" />
+          <Radio label="Reason two" value="two" />
+          <Radio label="Reason three" value="three" />
+        </ChoiceGroup>
+      );
+    },
+    {
+      info:
+        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    },
+  )
+  .add(
     "Playground",
     () => {
       const dataTest = text("dataTest", "test");

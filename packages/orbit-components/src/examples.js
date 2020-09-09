@@ -148,6 +148,10 @@ export { default as ListChoiceDefault } from "./ListChoice/__examples__/DEFAULT"
 export { default as ListChoiceDescription } from "./ListChoice/__examples__/DESCRIPTION";
 export { default as ListChoiceIcons } from "./ListChoice/__examples__/ICONS";
 export { default as ListChoiceSelectable } from "./ListChoice/__examples__/SELECTABLE";
+export { default as LoadingDefault } from "./Loading/__examples__/DEFAULT";
+export { default as LoadingLoadingAndChildren } from "./Loading/__examples__/LOADING_CHILDREN";
+export { default as LoadingText } from "./Loading/__examples__/TEXT";
+export { default as LoadingTypes } from "./Loading/__examples__/TYPES";
 export { default as ModalFixedFooter } from "./Modal/__examples__/FIXED_FOOTER";
 export { default as ModalFullPage } from "./Modal/__examples__/FULL_PAGE";
 export { default as ModalHeaderAndFooter } from "./Modal/__examples__/HEADER_FOOTER";

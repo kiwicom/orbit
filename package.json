@@ -16,7 +16,7 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn flow:check && yarn eslint:check && yarn test --ci --maxWorkers=2 && yarn prettier:test",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
-    "release": "lerna version --conventional-commits"
+    "release": "lerna version --conventional-commits --no-push"
   },
   "lint-staged": {
     "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",

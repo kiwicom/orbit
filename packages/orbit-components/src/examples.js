@@ -198,6 +198,12 @@ export { default as SeparatorSpaceAfter } from "./Separator/__examples__/SPACE_A
 export { default as ServiceLogoDefault } from "./ServiceLogo/__examples__/DEFAULT";
 export { default as ServiceLogoGrayscale } from "./ServiceLogo/__examples__/GRAYSCALE";
 export { default as ServiceLogoSizes } from "./ServiceLogo/__examples__/SIZES";
+export { default as SliderAccessibility } from "./Slider/__examples__/ACCESSIBILITY";
+export { default as SliderCallbacks } from "./Slider/__examples__/CALLBACKS";
+export { default as SliderDefault } from "./Slider/__examples__/DEFAULT";
+export { default as SliderHistogram } from "./Slider/__examples__/HISTOGRAM";
+export { default as SliderMobile } from "./Slider/__examples__/MOBILE";
+export { default as SliderTwoHandles } from "./Slider/__examples__/TWO_HANDLES";
 export { default as SocialLinkAccessibility } from "./SocialButton/__examples__/ACCESSIBILITY";
 export { default as SocialButtonDefault } from "./SocialButton/__examples__/DEFAULT";
 export { default as SocialButtonLinks } from "./SocialButton/__examples__/LINKS";

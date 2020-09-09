@@ -228,6 +228,13 @@ export { default as StepperStatelessHelpers } from "./Stepper/__examples__/STATE
 export { default as StepperStep } from "./Stepper/__examples__/STEP";
 export { default as StopoverArrowDefault } from "./StopoverArrow/__examples__/DEFAULT";
 export { default as StopoverArrowStops } from "./StopoverArrow/__examples__/STOPS";
+export { default as TableAccessibility } from "./Table/__examples__/ACCESSIBILITY";
+export { default as TableAlign } from "./Table/__examples__/ALIGN";
+export { default as TableColors } from "./Table/__examples__/COLORS";
+export { default as TableDefault } from "./Table/__examples__/DEFAULT";
+export { default as TableFooter } from "./Table/__examples__/FOOTER";
+export { default as TableSizes } from "./Table/__examples__/SIZES";
+export { default as TableWhiteSpace } from "./Table/__examples__/WHITESPACE";
 export { default as TagDefault } from "./Tag/__examples__/DEFAULT";
 export { default as TagFilters } from "./Tag/__examples__/FILTERS";
 export { default as TagInputField } from "./Tag/__examples__/INPUT_FIELD";

@@ -115,7 +115,7 @@ Table below contains all types of the props in TableCell component.
 | Name          | Type            | Default  | Description                                                                                                                                                         |
 | :------------ | :-------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | align         | [`enum`](#enum) | `"left"` | The align of text in the TableCell.                                                                                                                                 |
-| as            | [`enum`](#enum) | `"th"`   | possibility to render TableCell in different HTML                                                                                                                   |
+| as            | [`enum`](#enum) | `"td"`   | possibility to render TableCell in different HTML                                                                                                                   |
 | children      | `React.Node`    |          | The content of the TableCell.                                                                                                                                       |
 | dataTest      | `string`        |          | Optional prop for testing purposes.                                                                                                                                 |
 | scope         | [`enum`](#enum) |          | The scope attribute identifies whether a table header is a column header or a row header. More about a11y reasons [here](https://webaim.org/techniques/tables/data) |

@@ -26,6 +26,9 @@ jobs:
       - name: Testing, Linting, Type Checking
         run: yarn test-ci
   deploy:
+    # do not run on master branch
+    # if expression will fail because github.head_ref doesn't contain anything when push to master
+    if: ${{ github.head_ref }}
     needs: build_test
     runs-on: ubuntu-latest
     name: Deploy branch

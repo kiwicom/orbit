@@ -185,6 +185,8 @@ export { default as PopoverOverlapping } from "./Popover/__examples__/OVERLAPPIN
 export { default as PopoverPosition } from "./Popover/__examples__/POSITION";
 export { default as PopoverTrigger } from "./Popover/__examples__/TRIGGER";
 export { default as PopoverWidth } from "./Popover/__examples__/WIDTH";
+export { default as PortalDefault } from "./Portal/__examples__/DEFAULT";
+export { default as PortalRenderInto } from "./Portal/__examples__/RENDER_INTO";
 export { default as RadioDefault } from "./Radio/__examples__/DEFAULT";
 export { default as RadioError } from "./Radio/__examples__/ERROR";
 export { default as RadioHelp } from "./Radio/__examples__/HELP";

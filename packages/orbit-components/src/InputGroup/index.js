@@ -179,9 +179,13 @@ const InputGroup = ({
   const [filled, setFilled] = useState(false);
   const inputID = React.useMemo(() => randomID("inputGroupID"), []);
 
-  const isFilled = useCallback(() => setFilled(findPropInChild("value", children).length > 0), [
-    children,
-  ]);
+  const isFilled = useCallback(
+    () =>
+      setFilled(
+        findPropInChild("value", children).length === React.Children.toArray(children).length,
+      ),
+    [children],
+  );
 
   useEffect(() => {
     isFilled();

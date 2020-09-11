@@ -1,0 +1,142 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/Box/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+export type ColorTokens =
+  | "paletteProductLight"
+  | "paletteProductLightHover"
+  | "paletteProductLightActive"
+  | "paletteProductNormal"
+  | "paletteProductNormalHover"
+  | "paletteProductNormalActive"
+  | "paletteProductDark"
+  | "paletteProductDarkHover"
+  | "paletteProductDarkActive"
+  | "paletteProductDarker"
+  | "paletteWhite"
+  | "paletteWhiteHover"
+  | "paletteWhiteActive"
+  | "paletteCloudLight"
+  | "paletteCloudLightHover"
+  | "paletteCloudLightActive"
+  | "paletteCloudNormal"
+  | "paletteCloudNormalHover"
+  | "paletteCloudNormalActive"
+  | "paletteCloudDark"
+  | "paletteInkLighter"
+  | "paletteInkLighterHover"
+  | "paletteInkLighterActive"
+  | "paletteInkLight"
+  | "paletteInkLightHover"
+  | "paletteInkLightActive"
+  | "paletteInkNormal"
+  | "paletteInkNormalHover"
+  | "paletteInkNormalActive"
+  | "paletteOrangeLight"
+  | "paletteOrangeLightHover"
+  | "paletteOrangeLightActive"
+  | "paletteOrangeNormal"
+  | "paletteOrangeNormalHover"
+  | "paletteOrangeNormalActive"
+  | "paletteOrangeDark"
+  | "paletteOrangeDarkHover"
+  | "paletteOrangeDarkActive"
+  | "paletteOrangeDarker"
+  | "paletteRedLight"
+  | "paletteRedLightHover"
+  | "paletteRedLightActive"
+  | "paletteRedNormal"
+  | "paletteRedNormalHover"
+  | "paletteRedNormalActive"
+  | "paletteRedDark"
+  | "paletteRedDarkHover"
+  | "paletteRedDarkActive"
+  | "paletteRedDarker"
+  | "paletteGreenLight"
+  | "paletteGreenLightHover"
+  | "paletteGreenLightActive"
+  | "paletteGreenNormal"
+  | "paletteGreenNormalHover"
+  | "paletteGreenNormalActive"
+  | "paletteGreenDark"
+  | "paletteGreenDarkHover"
+  | "paletteGreenDarkActive"
+  | "paletteGreenDarker"
+  | "paletteBlueLight"
+  | "paletteBlueLightHover"
+  | "paletteBlueLightActive"
+  | "paletteBlueNormal"
+  | "paletteBlueNormalHover"
+  | "paletteBlueNormalActive"
+  | "paletteBlueDark"
+  | "paletteBlueDarkHover"
+  | "paletteBlueDarkActive"
+  | "paletteBlueDarker"
+  | "paletteSocialFacebook"
+  | "paletteSocialFacebookHover"
+  | "paletteSocialFacebookActive";
+
+export type SpacingToken =
+  | "none"
+  | "xx-small"
+  | "x-small"
+  | "small"
+  | "medium"
+  | "large"
+  | "x-large"
+  | "xx-large"
+  | "xxx-large";
+
+export type SpacingObject = {
+  left: SpacingToken,
+  top: SpacingToken,
+  right: SpacingToken,
+  bottom: SpacingToken,
+};
+
+export type MediaQueryObject = $Diff<
+  // eslint-disable-next-line no-use-before-define
+  Props,
+  { as: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
+>;
+
+export type Props = {|
+  as?: string,
+  padding?: SpacingObject | SpacingToken,
+  margin?: SpacingObject | SpacingToken,
+  display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block",
+  flexWrap?: "wrap" | "nowrap",
+  flexShrink?: 0 | 1,
+  flexGrow?: 0 | 1,
+  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse",
+  width?: "full" | "auto",
+  maxWidth?: string,
+  height?: "full" | "auto",
+  maxHeight?: string,
+  position?: "absolute" | "relative" | "fixed",
+  left?: string,
+  top?: string,
+  right?: string,
+  bottom?: string,
+  alignItems?: "start" | "end" | "center" | "stretch",
+  justifyContent?: "center" | "start" | "end" | "between" | "around",
+  textAlign?: "left" | "right" | "center",
+  elevation?: "suppressed" | "flat" | "action" | "fixed" | "raised" | "overlay",
+  color?: ColorTokens,
+  background?: ColorTokens,
+  borderRadius?: "small" | "normal" | "large" | "radiusCircle",
+  overflow?: "auto" | "hidden" | "scroll" | "visible",
+  mediumMobile?: MediaQueryObject,
+  largeMobile?: MediaQueryObject,
+  tablet?: MediaQueryObject,
+  desktop?: MediaQueryObject,
+  largeDesktop?: MediaQueryObject,
+  children?: React.Node,
+  ...Globals,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

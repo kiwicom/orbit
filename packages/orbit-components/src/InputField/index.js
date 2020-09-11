@@ -323,6 +323,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     tabIndex,
     readOnly,
     autoComplete,
+    autoFocus,
     spaceAfter,
     id,
     inputMode,
@@ -376,6 +377,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           inlineLabel={inlineLabel}
           readOnly={readOnly}
           autoComplete={autoComplete}
+          autoFocus={autoFocus}
           id={forID}
           inputMode={inputMode}
           dataAttrs={dataAttrs}

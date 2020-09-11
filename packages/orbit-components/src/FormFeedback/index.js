@@ -46,6 +46,8 @@ StyledFormFeedback.defaultProps = {
 const FormFeedback = ({ error, help, dataTest }: Props) => {
   const isHelp = help && !error;
 
+  if (!error || !help) return null;
+
   return (
     <StyledFormFeedback
       type={isHelp ? "help" : error && "error"}

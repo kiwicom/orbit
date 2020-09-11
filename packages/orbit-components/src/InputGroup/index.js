@@ -156,10 +156,10 @@ StyledInputGroup.defaultProps = {
 const findPropInChild = (propToFind, children) => {
   return React.Children.toArray(children)
     .map(el => {
-      if (el.props && el.props[propToFind]) return el.props[propToFind];
+      if (el.props && typeof el.props[propToFind] !== "undefined") return el.props[propToFind];
       return null;
     })
-    .filter(Boolean);
+    .filter(el => el !== null);
 };
 
 const InputGroup = ({

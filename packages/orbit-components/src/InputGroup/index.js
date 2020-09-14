@@ -159,7 +159,7 @@ const findPropInChild = (propToFind, children) => {
       if (el.props && typeof el.props[propToFind] !== "undefined") return el.props[propToFind];
       return null;
     })
-    .filter(el => el !== null);
+    .filter(el => el !== null && el !== "");
 };
 
 const InputGroup = ({

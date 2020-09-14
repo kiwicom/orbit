@@ -20,7 +20,7 @@ describe("Tooltip", () => {
       <Airplane />
     </Tooltip>,
   );
-  it("it should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+  it("it should render Tooltip", () => {
+    expect(component.find("Tooltip").exists()).toBe(true);
   });
 });

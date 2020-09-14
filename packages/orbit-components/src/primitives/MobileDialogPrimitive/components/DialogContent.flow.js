@@ -5,7 +5,6 @@ export type Props = {|
   shown: boolean,
   dialogId: ?string,
   children: React$Node,
-  parent: ?React$Node,
   onClose: () => void,
   ...Globals,
 |};

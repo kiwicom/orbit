@@ -26,7 +26,4 @@ describe("MobileDialogPrimitive", () => {
   it("should have tabindex", () => {
     expect(dialog.prop("tabIndex")).toBe(tabIndex);
   });
-  it("should have tabindex", () => {
-    expect(dialog.prop("tabIndex")).toBe(tabIndex);
-  });
 });

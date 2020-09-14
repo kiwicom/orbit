@@ -62,7 +62,6 @@ const MobileDialog = ({
       {enabled && render && (
         <Portal renderInto="dialogs">
           <DialogContent
-            parent={children}
             dataTest={dataTest}
             shown={shown}
             dialogId={mobileDialogID}

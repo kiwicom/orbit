@@ -156,10 +156,10 @@ StyledInputGroup.defaultProps = {
 const findPropInChild = (propToFind, children) => {
   return React.Children.toArray(children)
     .map(el => {
-      if (el.props && el.props[propToFind]) return el.props[propToFind];
+      if (el.props && typeof el.props[propToFind] !== "undefined") return el.props[propToFind];
       return null;
     })
-    .filter(Boolean);
+    .filter(el => el !== null && el !== "");
 };
 
 const InputGroup = ({
@@ -179,9 +179,13 @@ const InputGroup = ({
   const [filled, setFilled] = useState(false);
   const inputID = React.useMemo(() => randomID("inputGroupID"), []);
 
-  const isFilled = useCallback(() => setFilled(findPropInChild("value", children).length > 0), [
-    children,
-  ]);
+  const isFilled = useCallback(
+    () =>
+      setFilled(
+        findPropInChild("value", children).length === React.Children.toArray(children).length,
+      ),
+    [children],
+  );
 
   useEffect(() => {
     isFilled();

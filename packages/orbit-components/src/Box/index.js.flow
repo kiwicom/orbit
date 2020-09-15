@@ -7,78 +7,78 @@ import * as React from "react";
 import type { Globals } from "../common/common.js.flow";
 
 export type ColorTokens =
-  | "paletteProductLight"
-  | "paletteProductLightHover"
-  | "paletteProductLightActive"
-  | "paletteProductNormal"
-  | "paletteProductNormalHover"
-  | "paletteProductNormalActive"
-  | "paletteProductDark"
-  | "paletteProductDarkHover"
-  | "paletteProductDarkActive"
-  | "paletteProductDarker"
-  | "paletteWhite"
-  | "paletteWhiteHover"
-  | "paletteWhiteActive"
-  | "paletteCloudLight"
-  | "paletteCloudLightHover"
-  | "paletteCloudLightActive"
-  | "paletteCloudNormal"
-  | "paletteCloudNormalHover"
-  | "paletteCloudNormalActive"
-  | "paletteCloudDark"
-  | "paletteInkLighter"
-  | "paletteInkLighterHover"
-  | "paletteInkLighterActive"
-  | "paletteInkLight"
-  | "paletteInkLightHover"
-  | "paletteInkLightActive"
-  | "paletteInkNormal"
-  | "paletteInkNormalHover"
-  | "paletteInkNormalActive"
-  | "paletteOrangeLight"
-  | "paletteOrangeLightHover"
-  | "paletteOrangeLightActive"
-  | "paletteOrangeNormal"
-  | "paletteOrangeNormalHover"
-  | "paletteOrangeNormalActive"
-  | "paletteOrangeDark"
-  | "paletteOrangeDarkHover"
-  | "paletteOrangeDarkActive"
-  | "paletteOrangeDarker"
-  | "paletteRedLight"
-  | "paletteRedLightHover"
-  | "paletteRedLightActive"
-  | "paletteRedNormal"
-  | "paletteRedNormalHover"
-  | "paletteRedNormalActive"
-  | "paletteRedDark"
-  | "paletteRedDarkHover"
-  | "paletteRedDarkActive"
-  | "paletteRedDarker"
-  | "paletteGreenLight"
-  | "paletteGreenLightHover"
-  | "paletteGreenLightActive"
-  | "paletteGreenNormal"
-  | "paletteGreenNormalHover"
-  | "paletteGreenNormalActive"
-  | "paletteGreenDark"
-  | "paletteGreenDarkHover"
-  | "paletteGreenDarkActive"
-  | "paletteGreenDarker"
-  | "paletteBlueLight"
-  | "paletteBlueLightHover"
-  | "paletteBlueLightActive"
-  | "paletteBlueNormal"
-  | "paletteBlueNormalHover"
-  | "paletteBlueNormalActive"
-  | "paletteBlueDark"
-  | "paletteBlueDarkHover"
-  | "paletteBlueDarkActive"
-  | "paletteBlueDarker"
-  | "paletteSocialFacebook"
-  | "paletteSocialFacebookHover"
-  | "paletteSocialFacebookActive";
+  | "productLight"
+  | "productLightHover"
+  | "productLightActive"
+  | "productNormal"
+  | "productNormalHover"
+  | "productNormalActive"
+  | "productDark"
+  | "productDarkHover"
+  | "productDarkActive"
+  | "productDarker"
+  | "white"
+  | "whiteHover"
+  | "whiteActive"
+  | "cloudLight"
+  | "cloudLightHover"
+  | "cloudLightActive"
+  | "cloudNormal"
+  | "cloudNormalHover"
+  | "cloudNormalActive"
+  | "cloudDark"
+  | "inkLighter"
+  | "inkLighterHover"
+  | "inkLighterActive"
+  | "inkLight"
+  | "inkLightHover"
+  | "inkLightActive"
+  | "inkNormal"
+  | "inkNormalHover"
+  | "inkNormalActive"
+  | "orangeLight"
+  | "orangeLightHover"
+  | "orangeLightActive"
+  | "orangeNormal"
+  | "orangeNormalHover"
+  | "orangeNormalActive"
+  | "orangeDark"
+  | "orangeDarkHover"
+  | "orangeDarkActive"
+  | "orangeDarker"
+  | "redLight"
+  | "redLightHover"
+  | "redLightActive"
+  | "redNormal"
+  | "redNormalHover"
+  | "redNormalActive"
+  | "redDark"
+  | "redDarkHover"
+  | "redDarkActive"
+  | "redDarker"
+  | "greenLight"
+  | "greenLightHover"
+  | "greenLightActive"
+  | "greenNormal"
+  | "greenNormalHover"
+  | "greenNormalActive"
+  | "greenDark"
+  | "greenDarkHover"
+  | "greenDarkActive"
+  | "greenDarker"
+  | "blueLight"
+  | "blueLightHover"
+  | "blueLightActive"
+  | "blueNormal"
+  | "blueNormalHover"
+  | "blueNormalActive"
+  | "blueDark"
+  | "blueDarkHover"
+  | "blueDarkActive"
+  | "blueDarker"
+  | "socialFacebook"
+  | "socialFacebookHover"
+  | "socialFacebookActive";
 
 export type SpacingToken =
   | "none"
@@ -92,16 +92,16 @@ export type SpacingToken =
   | "xxx-large";
 
 export type SpacingObject = {
-  left: SpacingToken,
-  top: SpacingToken,
-  right: SpacingToken,
-  bottom: SpacingToken,
+  left?: SpacingToken,
+  top?: SpacingToken,
+  right?: SpacingToken,
+  bottom?: SpacingToken,
 };
 
 export type MediaQueryObject = $Diff<
   // eslint-disable-next-line no-use-before-define
   Props,
-  { as: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
+  { as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
 >;
 
 export type Props = {|
@@ -136,6 +136,7 @@ export type Props = {|
   desktop?: MediaQueryObject,
   largeDesktop?: MediaQueryObject,
   children?: React.Node,
+  className?: string, // Box is a only component where extending make sense
   ...Globals,
 |};
 

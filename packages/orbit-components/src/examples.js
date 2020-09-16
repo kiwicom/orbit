@@ -234,6 +234,8 @@ export { default as StepperDefault } from "./Stepper/__examples__/DEFAULT";
 export { default as StepperStateless } from "./Stepper/__examples__/STATELESS";
 export { default as StepperStatelessHelpers } from "./Stepper/__examples__/STATELESS_HELPERS";
 export { default as StepperStep } from "./Stepper/__examples__/STEP";
+export { default as StickyDefault } from "./Sticky/__examples__/DEFAULT";
+export { default as StickyOffset } from "./Sticky/__examples__/OFFSET";
 export { default as StopoverArrowDefault } from "./StopoverArrow/__examples__/DEFAULT";
 export { default as StopoverArrowStops } from "./StopoverArrow/__examples__/STOPS";
 export { default as TableAccessibility } from "./Table/__examples__/ACCESSIBILITY";

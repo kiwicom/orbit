@@ -414,6 +414,7 @@ storiesOf("InputField", module)
       const minLength = number("minLength", undefined);
       const readOnly = boolean("readOnly", false);
       const autoComplete = text("autoComplete", "off");
+      const autoFocus = boolean("autoFocus", true);
       const dataTest = text("dataTest", "test");
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("id", "ID");
@@ -452,6 +453,7 @@ storiesOf("InputField", module)
           minLength={minLength}
           readOnly={readOnly}
           autoComplete={autoComplete}
+          autoFocus={autoFocus}
           onChange={action("change")}
           onFocus={action("focus")}
           onBlur={action("blur")}

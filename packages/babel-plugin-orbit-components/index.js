@@ -27,6 +27,7 @@ const pathOverwrites = {
   LayoutColumn: "Layout/LayoutColumn",
   BreadcrumbsItem: "Breadcrumbs/BreadcrumbsItem",
   BadgePrimitive: "primitives/BadgePrimitive",
+  ListItem: "List/ListItem",
 };
 
 const parsedImportPaths = ["@kiwicom/orbit-components", "@kiwicom/orbit-components/lib/icons"];

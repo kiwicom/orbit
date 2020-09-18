@@ -17,4 +17,5 @@ module.exports = {
       plugins: ["require-context-hook"],
     },
   },
+  babelrcRoots: [".", "./packages/babel-plugin-orbit-components"],
 };

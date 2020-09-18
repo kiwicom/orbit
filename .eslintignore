@@ -3,6 +3,8 @@ umd
 flow-typed
 lib
 node_modules
+packages/babel-plugin-orbit-components/dist/
+packages/babel-plugin-orbit-components/__fixtures__/
 
 # from gitignore
 packages/orbit-components/src/icons/*.js

@@ -1,0 +1,41 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/Inline/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+// spacing tokens can then be imported from Box component
+export type SpacingToken =
+  | "none"
+  | "xx-small"
+  | "x-small"
+  | "small"
+  | "medium"
+  | "large"
+  | "x-large"
+  | "xx-large"
+  | "xxx-large";
+
+export type MediaQueryObject = $Diff<
+  // eslint-disable-next-line no-use-before-define
+  Props,
+  { as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
+>;
+
+export type Props = {|
+  as?: string,
+  spacing?: SpacingToken,
+  align?: "start" | "end" | "center",
+  justify?: "start" | "end" | "center",
+  mediumMobile?: MediaQueryObject,
+  largeMobile?: MediaQueryObject,
+  tablet?: MediaQueryObject,
+  desktop?: MediaQueryObject,
+  largeDesktop?: MediaQueryObject,
+  children?: React.Node,
+  ...Globals,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

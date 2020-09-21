@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Layout from "../index";
@@ -9,34 +8,34 @@ import Text from "../../Text";
 
 export default {
   Example: () => {
-    const ColoredDiv = styled.div`
-      min-height: ${defaultTheme.orbit.heightIllustrationMedium};
-      background: ${defaultTheme.orbit.backgroundBody};
-    `;
+    const divStyle = {
+      minHeight: defaultTheme.orbit.heightIllustrationMedium,
+      background: defaultTheme.orbit.backgroundBody,
+    };
     return (
       <Layout type="Search">
         <LayoutColumn hideOn={["smallMobile", "mediumMobile"]}>
-          <ColoredDiv>
+          <div style={divStyle}>
             <Text>
               This column is hidden on <code>mediumMobile</code> and smaller screens.
             </Text>
-          </ColoredDiv>
+          </div>
         </LayoutColumn>
         <LayoutColumn as="span">
-          <ColoredDiv>
+          <div style={divStyle}>
             <Text>
               This column is designed for the main content. It&apos;s always visible. It&apos;s a{" "}
               <code>span</code> element instead of the default <code>div</code>.
             </Text>
-          </ColoredDiv>
+          </div>
         </LayoutColumn>
         <LayoutColumn hideOn={["smallMobile", "largeDesktop"]}>
-          <ColoredDiv>
+          <div style={divStyle}>
             <Text>
               This column is hidden on very small (<code>smallMobile</code>) and very large (
               <code>largeDesktop</code>) screens.
             </Text>
-          </ColoredDiv>
+          </div>
         </LayoutColumn>
       </Layout>
     );

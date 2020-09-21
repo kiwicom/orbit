@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import Layout from "../index";
@@ -9,16 +8,16 @@ import Text from "../../Text";
 
 export default {
   Example: () => {
-    const ColoredDiv = styled.div`
-      min-height: ${defaultTheme.orbit.heightIllustrationMedium};
-      background: ${defaultTheme.orbit.backgroundBody};
-    `;
+    const style = {
+      minHeight: defaultTheme.orbit.heightIllustrationMedium,
+      background: defaultTheme.orbit.backgroundBody,
+    };
     return (
       <Layout type="MMB">
         <LayoutColumn>
-          <ColoredDiv>
+          <div style={style}>
             <Text>This column is designed for the main content. It&apos;s always visible.</Text>
-          </ColoredDiv>
+          </div>
         </LayoutColumn>
       </Layout>
     );

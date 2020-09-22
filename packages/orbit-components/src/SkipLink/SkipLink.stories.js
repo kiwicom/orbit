@@ -47,11 +47,11 @@ storiesOf("SkipLink", module)
       const links = array("links", [
         {
           href: "#guarantee",
-          name: "Got to kiwi guarantee informations",
+          name: "Go to kiwi guarantee information",
         },
         {
           href: "#cancelation",
-          name: "Got to cancelation informations",
+          name: "Go to cancelation information",
         },
         {
           name: "Reguest a refund",

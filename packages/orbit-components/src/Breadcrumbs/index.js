@@ -90,16 +90,18 @@ const Breadcrumbs = (props: Props) => {
         </StyledBreadcrumbs>
       </Hide>
       <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
-        <ButtonLink
-          type="inline"
-          compact
-          iconLeft={<ChevronLeft reverseOnRtl />}
-          dataTest="BreadcrumbsBack"
-          onClick={onGoBack}
-          href={backHref}
-        >
-          {goBackTitle}
-        </ButtonLink>
+        {onGoBack || backHref ? (
+          <ButtonLink
+            type="inline"
+            compact
+            iconLeft={<ChevronLeft reverseOnRtl />}
+            dataTest="BreadcrumbsBack"
+            onClick={onGoBack}
+            href={backHref}
+          >
+            {goBackTitle}
+          </ButtonLink>
+        ) : null}
       </Hide>
     </>
   );

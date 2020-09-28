@@ -26,6 +26,7 @@ module.exports = {
           "**/*.stories.js",
           "**/*.config.js",
           "**/stories/**",
+          "packages/*/.storybook/**",
           "packages/*/config/**",
         ],
       },

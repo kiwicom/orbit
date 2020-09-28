@@ -114,7 +114,6 @@ storiesOf("Accordion", module)
           header={
             <Stack justify="between">
               <p>This is a header label</p>
-              <p>This is a header label</p>
             </Stack>
           }
           footer={tmpFooter}
@@ -130,12 +129,6 @@ storiesOf("Accordion", module)
   .add("Loading Accordion", () => {
     return (
       <Accordion loading>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
-          This is a section content
-        </AccordionSection>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
-          This is a section content
-        </AccordionSection>
         <AccordionSection header={<div>Default Accordion with header</div>}>
           This is a section content
         </AccordionSection>

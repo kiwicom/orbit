@@ -2,10 +2,11 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import { useAccordion } from "../AccordionContext";
 import randomID from "../../utils/randomID";
 import useBoundingRect from "../../hooks/useBoundingRect";
 import Slide from "../../utils/Slide";
-import CardWrapper from "../components/CardWrapper";
+import AccordionWrapper from "../components/AccordionWrapper";
 import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
@@ -17,14 +18,16 @@ const ExpandableContent = styled.div`
   flex-direction: column;
 `;
 
-const AccordionSection = ({ children, header, footer, expanded, onExpand, actions }: Props) => {
+const AccordionSection = ({ children, header, footer, actions }: Props) => {
+  const { expanded, onExpand } = useAccordion();
+
   const slideID = React.useMemo(() => randomID("slideID"), []);
   const labelID = React.useMemo(() => randomID("labelID"), []);
 
   const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (
-    <CardWrapper>
+    <AccordionWrapper>
       {header && (
         <SectionHeader actions={actions} expanded={Boolean(expanded)} onExpand={onExpand}>
           {header}
@@ -41,7 +44,7 @@ const AccordionSection = ({ children, header, footer, expanded, onExpand, action
           {footer && <SectionFooter>{footer}</SectionFooter>}
         </ExpandableContent>
       </Slide>
-    </CardWrapper>
+    </AccordionWrapper>
   );
 };
 

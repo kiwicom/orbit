@@ -3,7 +3,9 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Loading from "../Loading";
+import AccordionWrapper from "./components/AccordionWrapper";
 import defaultTheme from "../defaultTheme";
+import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
@@ -34,27 +36,13 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
     setExpandedSection,
   ]);
 
-  const renderSection = (item, index) => {
+  const renderSection = item => {
     if (React.isValidElement(item)) {
-      const { id, onExpand } = item.props;
-
-      // Either use provided id or item index
-      const sectionId = (typeof id !== "undefined" && id) || index;
-      // Determine if section is expanded
-      const isExpanded = expandedSection === sectionId;
-      const handleDefaultExpand = () => onDefaultExpand(sectionId);
-
-      return React.cloneElement(item, {
-        ...item.props,
-        expanded: isExpanded,
-        onExpand: onExpand || handleDefaultExpand,
-      });
+      return React.cloneElement(item);
     }
 
     return null;
   };
-
-  // console.log("Accordion: expanded", expanded);
 
   return (
     <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
@@ -62,16 +50,32 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
         ? React.Children.map(children, (item, key) => {
             if (!item) return null;
 
+            const { id, onExpand } = item.props;
+
             // This is used for the case when user wants to map sections and change their order
             // related issue: #1005
             const index = Number(item.key) || key;
 
-            return loading ? (
-              <Loading loading={loading} type="boxLoader">
-                {renderSection(item, index)}
-              </Loading>
-            ) : (
-              renderSection(item, index)
+            // Either use provided id or item index
+            const sectionId = (typeof id !== "undefined" && id) || index;
+            // Determine if section is expanded
+            const isExpanded = expandedSection === sectionId;
+            const handleDefaultExpand = () => onDefaultExpand(sectionId);
+
+            return (
+              <SectionProvider
+                value={{ expanded: isExpanded, onExpand: onExpand || handleDefaultExpand }}
+              >
+                {loading ? (
+                  <AccordionWrapper>
+                    <Loading loading={loading} type="boxLoader">
+                      {renderSection(item)}
+                    </Loading>
+                  </AccordionWrapper>
+                ) : (
+                  renderSection(item)
+                )}
+              </SectionProvider>
             );
           })
         : null}

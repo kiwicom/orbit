@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, object, boolean } from "@storybook/addon-knobs/react";
+import { text, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";

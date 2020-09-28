@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { select, number } from "@storybook/addon-knobs/react";
+import { select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Card from "../Card";

@@ -10,20 +10,14 @@ import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
 
-// import type { Props } from "./index";
+import type { Props } from "./index";
 
 const ExpandableContent = styled.div`
   dispaly: flex;
   flex-direction: column;
-  /* transform: ${({ expanded }) => (expanded ? "scaleY(1)" : "scaleY(0)")}; */
-  /* transition: all 0.3s ease-in-out; */
 `;
 
-const AccordionSection = props => {
-  const { children, header, footer, expanded, onExpand, actions } = props;
-
-  // console.log("===+> props: ", props);
-
+const AccordionSection = ({ children, header, footer, expanded, onExpand, actions }: Props) => {
   const slideID = React.useMemo(() => randomID("slideID"), []);
   const labelID = React.useMemo(() => randomID("labelID"), []);
 
@@ -32,14 +26,18 @@ const AccordionSection = props => {
   return (
     <CardWrapper>
       {header && (
-        <SectionHeader actions={actions} expanded={expanded} onExpand={onExpand}>
+        <SectionHeader actions={actions} expanded={Boolean(expanded)} onExpand={onExpand}>
           {header}
         </SectionHeader>
       )}
 
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
         <ExpandableContent expanded={expanded} ref={ref}>
-          <SectionContent hasFooter={Boolean(footer)}>{children}</SectionContent>
+          {children && (
+            <SectionContent hasFooter={Boolean(footer)} expanded={Boolean(expanded)}>
+              {children}
+            </SectionContent>
+          )}
           {footer && <SectionFooter>{footer}</SectionFooter>}
         </ExpandableContent>
       </Slide>

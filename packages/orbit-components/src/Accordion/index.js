@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import Loading from "../Loading";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 
@@ -19,7 +20,7 @@ StyledCard.defaultProps = {
   theme: defaultTheme,
 };
 
-const Accordion = ({ children, dataTest, spaceAfter, expanded }: Props) => {
+const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props) => {
   // Make first section expanded by default (index 0)
   const [expandedSection, setExpandedSection] = React.useState(0);
 
@@ -65,7 +66,13 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded }: Props) => {
             // related issue: #1005
             const index = Number(item.key) || key;
 
-            return renderSection(item, index);
+            return loading ? (
+              <Loading loading={loading} type="boxLoader">
+                {renderSection(item, index)}
+              </Loading>
+            ) : (
+              renderSection(item, index)
+            );
           })
         : null}
     </StyledCard>

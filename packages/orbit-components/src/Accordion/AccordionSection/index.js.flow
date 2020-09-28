@@ -1,0 +1,19 @@
+// @flow
+import type { ReactComponentStyled } from "styled-components";
+
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +id?: string | number,
+  +children?: React$Node,
+  +actions?: React$Node,
+  +expanded?: boolean,
+  +onExpand?: () => void | Promise<any>,
+  +header?: React$Node,
+  +footer?: React$Node,
+  ...Globals,
+|};
+
+declare export var StyledAccordionSection: ReactComponentStyled<any>;
+
+declare export default React$ComponentType<Props>;

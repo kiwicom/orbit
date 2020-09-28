@@ -235,6 +235,8 @@ storiesOf("Card", module)
       return (
         <Card title={title} loading>
           <CardSection>kek</CardSection>
+          <CardSection>kek</CardSection>
+          <CardSection>kek</CardSection>
         </Card>
       );
     },

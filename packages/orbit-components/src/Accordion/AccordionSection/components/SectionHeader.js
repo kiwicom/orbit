@@ -32,7 +32,14 @@ HeaderActions.defaultProps = {
   theme: defaultTheme,
 };
 
-const AccordionSectionHeader = ({ children, actions, expanded, onExpand }) => {
+type Props = {
+  children: React.Node,
+  expanded: boolean,
+  onExpand?: () => void | Promise<any>,
+  actions?: React.Node,
+};
+
+const AccordionSectionHeader = ({ children, actions, expanded, onExpand }: Props) => {
   return (
     <Wrapper>
       <HeaderContent>{children}</HeaderContent>

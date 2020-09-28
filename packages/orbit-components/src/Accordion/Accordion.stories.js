@@ -126,4 +126,19 @@ storiesOf("Accordion", module)
         </AccordionSection>
       </Accordion>
     );
+  })
+  .add("Loading Accordion", () => {
+    return (
+      <Accordion loading>
+        <AccordionSection header={<div>Default Accordion with header</div>}>
+          This is a section content
+        </AccordionSection>
+        <AccordionSection header={<div>Default Accordion with header</div>}>
+          This is a section content
+        </AccordionSection>
+        <AccordionSection header={<div>Default Accordion with header</div>}>
+          This is a section content
+        </AccordionSection>
+      </Accordion>
+    );
   });

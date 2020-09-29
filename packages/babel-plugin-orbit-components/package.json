@@ -33,6 +33,6 @@
   "scripts": {
     "generateTestFile": "node scripts/generateImports.js",
     "build": "babel __fixtures__/index.js --out-file dist/index.js --root-mode upward",
-    "test": "yarn generateTestFile && yarn build && node dist/index.js"
+    "test": "yarn generateTestFile && yarn build && node scripts/testRequire.js"
   }
 }

@@ -1,49 +1,45 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import AirportIllustration from "../index";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
 
-const size = SIZE_OPTIONS.EXTRASMALL;
 const name = "BGYFastTrack";
 const dataTest = "test";
 
-const URL = "//images.kiwi.com/illustrations/0x90/BGYFastTrack-Q85.png";
-const URL_RETINA = "//images.kiwi.com/illustrations/0x180/BGYFastTrack-Q85.png 2x";
-
 describe(`AirportIllustration of ${name}`, () => {
-  const component = shallow(
-    <AirportIllustration
-      size={size}
-      name={name}
-      dataTest={dataTest}
-      spaceAfter={SPACINGS_AFTER.NORMAL}
-    />,
-  );
-
-  const mountedComponent = mount(
-    <AirportIllustration
-      size={size}
-      name={name}
-      dataTest={dataTest}
-      spaceAfter={SPACINGS_AFTER.NORMAL}
-    />,
-  );
+  beforeEach(() => {
+    render(
+      <AirportIllustration
+        size={SIZE_OPTIONS.EXTRASMALL}
+        name={name}
+        dataTest="test"
+        spaceAfter={SPACINGS_AFTER.NORMAL}
+      />,
+    );
+  });
 
   it("should have passed props", () => {
-    expect(component.prop("size")).toBe(size);
-    expect(component.render().prop("alt")).toBe(name);
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(screen.getByRole("img")).toHaveAttribute("alt", name);
+    expect(screen.getByRole("img")).toHaveAttribute("data-test", dataTest);
   });
 
   it("should render proper image", () => {
-    expect(component.render().attr("src")).toContain(URL);
-    expect(component.render().attr("srcset")).toContain(URL_RETINA);
+    expect(screen.getByRole("img").getAttribute("src")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/illustrations/0x90/BGYFastTrack-Q85.png"`,
+    );
+    expect(screen.getByRole("img").getAttribute("srcset")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/illustrations/0x180/BGYFastTrack-Q85.png 2x, //images.kiwi.com/illustrations/0x270/BGYFastTrack-Q85.png 3x"`,
+    );
   });
+
   it("should have margin-bottom", () => {
-    expect(mountedComponent).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
+    expect(getComputedStyle(screen.getByRole("img"))).toHaveProperty(
+      "margin-bottom",
+      defaultTheme.orbit.spaceSmall,
+    );
   });
 });

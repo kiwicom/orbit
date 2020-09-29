@@ -69,12 +69,7 @@ const Breadcrumbs = (props: Props) => {
   return (
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>
-        <StyledBreadcrumbs
-          aria-label="Breadcrumb"
-          role="navigation"
-          data-test={dataTest}
-          spaceAfter={spaceAfter}
-        >
+        <StyledBreadcrumbs aria-label="Breadcrumb" data-test={dataTest} spaceAfter={spaceAfter}>
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
             {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {

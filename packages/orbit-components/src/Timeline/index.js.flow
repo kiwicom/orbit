@@ -1,0 +1,11 @@
+// @flow
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  +children: React.Node,
+|};
+
+declare export default React$ComponentType<Props>;

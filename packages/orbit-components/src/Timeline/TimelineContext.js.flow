@@ -1,0 +1,17 @@
+// @flow
+export type Context = {|
+  +state: {
+    +statuses: (string | null)[],
+  },
+  dispatch: React.Dispatch<any>,
+|};
+
+export type StepContext = {|
+  +index: number,
+  +last: boolean,
+|};
+
+declare export var TimelineStatusProvider: React.Context<Context>;
+declare export var TimelineStepContext: React.Context<StepContext>;
+declare export function useStatuses(): Context;
+declare export function useStep(): StepContext;

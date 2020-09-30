@@ -21,34 +21,30 @@ const Tooltip = ({
   removeUnderlinedText,
 }: Props) => {
   const { isLargeMobile } = useMediaQuery();
-  return (
-    <>
-      {isLargeMobile ? (
-        <TooltipPrimitive
-          dataTest={dataTest}
-          tabIndex={tabIndex}
-          enabled={enabled}
-          content={content}
-          size={size}
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-          stopPropagation={stopPropagation}
-          removeUnderlinedText={removeUnderlinedText}
-        >
-          {children}
-        </TooltipPrimitive>
-      ) : (
-        <MobileDialog
-          tabIndex={tabIndex}
-          enabled={enabled}
-          content={content}
-          removeUnderlinedText={removeUnderlinedText}
-          stopPropagation={stopPropagation}
-        >
-          {children}
-        </MobileDialog>
-      )}
-    </>
+  return isLargeMobile ? (
+    <TooltipPrimitive
+      dataTest={dataTest}
+      tabIndex={tabIndex}
+      enabled={enabled}
+      content={content}
+      size={size}
+      preferredPosition={preferredPosition}
+      preferredAlign={preferredAlign}
+      stopPropagation={stopPropagation}
+      removeUnderlinedText={removeUnderlinedText}
+    >
+      {children}
+    </TooltipPrimitive>
+  ) : (
+    <MobileDialog
+      tabIndex={tabIndex}
+      enabled={enabled}
+      content={content}
+      removeUnderlinedText={removeUnderlinedText}
+      stopPropagation={stopPropagation}
+    >
+      {children}
+    </MobileDialog>
   );
 };
 

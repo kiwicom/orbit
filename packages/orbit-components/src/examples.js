@@ -152,6 +152,10 @@ export { default as InputStepperSizes } from "./InputStepper/__examples__/SIZES"
 export { default as InputStepperStateless } from "./InputStepper/__examples__/STATELESS";
 export { default as InputStepperStatelessHelpers } from "./InputStepper/__examples__/STATELESS_HELPERS";
 export { default as InputStepperStep } from "./InputStepper/__examples__/STEP";
+export { default as LayoutBooking } from "./Layout/__examples__/BOOKING";
+export { default as LayoutCustom } from "./Layout/__examples__/CUSTOM";
+export { default as LayoutMMB } from "./Layout/__examples__/MMB";
+export { default as LayoutSearch } from "./Layout/__examples__/SEARCH";
 export { default as LinkListDefault } from "./LinkList/__examples__/DEFAULT";
 export { default as LinkListDirection } from "./LinkList/__examples__/DIRECTION";
 export { default as LinkListIndent } from "./LinkList/__examples__/INDENT";

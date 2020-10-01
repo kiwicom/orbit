@@ -8,7 +8,7 @@ export type Props = {|
   +children?: React$Node,
   +actions?: React$Node,
   +expanded?: boolean,
-  +expanable?: boolean,
+  +expandable?: boolean,
   +onExpand?: () => void | Promise<any>,
   +header?: React$Node,
   +footer?: React$Node,

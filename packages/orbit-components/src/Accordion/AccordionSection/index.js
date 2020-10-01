@@ -34,7 +34,7 @@ const AccordionSection = ({
   const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (
-    <AccordionWrapper data-test={dataTest}>
+    <AccordionWrapper dataTest={dataTest}>
       {header && (
         <SectionHeader
           actions={actions}

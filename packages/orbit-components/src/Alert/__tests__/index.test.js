@@ -1,39 +1,40 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Alert from "../index";
 import defaultTheme from "../../defaultTheme";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
-import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 
 const message = "Alert message";
 
 describe("Alert", () => {
   it("should contain children", () => {
-    const component = shallow(<Alert>{message}</Alert>);
-    expect(component.find("Alert__Content").children().exists()).toBe(true);
+    render(<Alert>{message}</Alert>);
+    expect(screen.getByText(message)).toBeInTheDocument();
   });
   it("should have data-test", () => {
     const dataTest = "test";
-    const component = shallow(<Alert dataTest={dataTest}>{message}</Alert>);
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    render(<Alert dataTest={dataTest}>{message}</Alert>);
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
   });
   it("should have margin-bottom", () => {
-    const component = mount(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
-    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
+    const { container } = render(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
+    expect(getComputedStyle(container.firstChild)).toHaveProperty(
+      "margin-bottom",
+      defaultTheme.orbit.spaceSmall,
+    );
   });
   it("should be closable", () => {
     const onClose = jest.fn();
-    const component = shallow(
+    render(
       <Alert onClose={onClose} closable>
         {message}
       </Alert>,
     );
 
-    const ButtonLink = component.find("AlertCloseButton");
-    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
-    ButtonLink.simulate("click");
+    userEvent.click(screen.getByRole("button"));
     expect(onClose).toHaveBeenCalled();
   });
 });

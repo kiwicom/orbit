@@ -69,12 +69,7 @@ const Breadcrumbs = (props: Props) => {
   return (
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>
-        <StyledBreadcrumbs
-          aria-label="Breadcrumb"
-          role="navigation"
-          data-test={dataTest}
-          spaceAfter={spaceAfter}
-        >
+        <StyledBreadcrumbs aria-label="Breadcrumb" data-test={dataTest} spaceAfter={spaceAfter}>
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
             {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {
@@ -90,16 +85,18 @@ const Breadcrumbs = (props: Props) => {
         </StyledBreadcrumbs>
       </Hide>
       <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
-        <ButtonLink
-          type="inline"
-          compact
-          iconLeft={<ChevronLeft reverseOnRtl />}
-          dataTest="BreadcrumbsBack"
-          onClick={onGoBack}
-          href={backHref}
-        >
-          {goBackTitle}
-        </ButtonLink>
+        {onGoBack || backHref ? (
+          <ButtonLink
+            type="inline"
+            compact
+            iconLeft={<ChevronLeft reverseOnRtl />}
+            dataTest="BreadcrumbsBack"
+            onClick={onGoBack}
+            href={backHref}
+          >
+            {goBackTitle}
+          </ButtonLink>
+        ) : null}
       </Hide>
     </>
   );

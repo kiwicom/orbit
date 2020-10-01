@@ -76,12 +76,9 @@ StyledTileDescription.defaultProps = {
 };
 
 const IconRight = ({ external, expandable, className }) => {
-  if (expandable) {
-    return <ChevronDown className={className} />;
-  }
-  if (external) {
-    return <NewWindow className={className} />;
-  }
+  if (expandable) return <ChevronDown className={className} />;
+  if (external) return <NewWindow className={className} />;
+
   return <ChevronRight className={className} reverseOnRtl />;
 };
 

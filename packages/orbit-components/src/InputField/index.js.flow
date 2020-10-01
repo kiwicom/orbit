@@ -45,6 +45,7 @@ export type Props = {|
   tabIndex?: string | number,
   +readOnly?: boolean,
   +autoComplete?: string,
+  +autoFocus?: boolean,
   +id?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

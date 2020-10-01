@@ -1,33 +1,34 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Badge from "../index";
 import Sightseeing from "../../icons/Sightseeing";
-import defaultTheme from "../../defaultTheme";
 
 describe("Badge", () => {
   const content = "badge";
   const type = "info";
   const dataTest = "test";
-  const icon = <Sightseeing />;
+  const icon = <Sightseeing ariaLabel="sightseeing" />;
   const ariaLabel = content;
 
-  const component = shallow(
-    <Badge icon={icon} type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
-      {content}
-    </Badge>,
-  );
+  beforeEach(() => {
+    render(
+      <Badge icon={icon} type={type} dataTest={dataTest} ariaLabel={ariaLabel}>
+        {content}
+      </Badge>,
+    );
+  });
 
   it("should have passed props", () => {
-    expect(component.prop("background")).toBe(defaultTheme.orbit.paletteBlueLight);
-    expect(component.prop("foregroundColor")).toBe(defaultTheme.orbit.paletteBlueDark);
-    expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.render().prop("aria-label")).toBe(ariaLabel);
-    expect(component.prop("icon")).toBe(icon);
+    const style = getComputedStyle(screen.getByTestId(dataTest));
+    expect(style.border).toMatchInlineSnapshot(`"1px solid #d0e9fb"`);
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    expect(screen.getByLabelText(ariaLabel)).toBeInTheDocument();
+    expect(screen.getByLabelText("sightseeing")).toBeInTheDocument();
   });
   it("should contain a content", () => {
-    expect(component.render().text()).toBe(content);
+    expect(screen.getByText(content)).toBeInTheDocument();
   });
 });

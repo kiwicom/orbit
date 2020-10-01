@@ -123,7 +123,7 @@
     "enzyme-to-json": "^3.5.0",
     "fs-extra": "^9.0.1",
     "glob": "^7.1.2",
-    "isomorphic-unfetch": "^3.0.0",
+    "isomorphic-unfetch": "^3.1.0",
     "jest": "^26.4.2",
     "jest-styled-components": "^6.2.1",
     "jsdom": "^16.4.0",

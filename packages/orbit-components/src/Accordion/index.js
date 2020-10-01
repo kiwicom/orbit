@@ -10,7 +10,7 @@ import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
-export const StyledCard = styled.div`
+export const StyledAccordion = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -18,7 +18,7 @@ export const StyledCard = styled.div`
   margin-bottom: ${getSpacingToken};
 `;
 
-StyledCard.defaultProps = {
+StyledAccordion.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -45,7 +45,7 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
   };
 
   return (
-    <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
+    <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
       {children
         ? React.Children.map(children, (item, key) => {
             if (!item) return null;
@@ -60,12 +60,17 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
             const sectionId = (typeof id !== "undefined" && id) || index;
             // Determine if section is expanded
             const isExpanded = expandedSection === sectionId;
-            const handleDefaultExpand = () => onDefaultExpand(sectionId);
+            const handleDefaultExpand = () => {
+              if (onExpand) {
+                // AccordionSection callback
+                onExpand();
+              }
+              // Expand section
+              onDefaultExpand(sectionId);
+            };
 
             return (
-              <SectionProvider
-                value={{ expanded: isExpanded, onExpand: onExpand || handleDefaultExpand }}
-              >
+              <SectionProvider value={{ expanded: isExpanded, onExpand: handleDefaultExpand }}>
                 {loading ? (
                   <AccordionWrapper>
                     <Loading loading={loading} type="boxLoader">
@@ -79,7 +84,7 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
             );
           })
         : null}
-    </StyledCard>
+    </StyledAccordion>
   );
 };
 

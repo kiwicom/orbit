@@ -18,7 +18,14 @@ const ExpandableContent = styled.div`
   flex-direction: column;
 `;
 
-const AccordionSection = ({ children, header, footer, actions }: Props) => {
+const AccordionSection = ({
+  children,
+  header,
+  footer,
+  actions,
+  dataTest,
+  expandable = true,
+}: Props) => {
   const { expanded, onExpand } = useAccordion();
 
   const slideID = React.useMemo(() => randomID("slideID"), []);
@@ -27,9 +34,14 @@ const AccordionSection = ({ children, header, footer, actions }: Props) => {
   const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (
-    <AccordionWrapper>
+    <AccordionWrapper data-test={dataTest}>
       {header && (
-        <SectionHeader actions={actions} expanded={Boolean(expanded)} onExpand={onExpand}>
+        <SectionHeader
+          actions={actions}
+          expanded={Boolean(expanded)}
+          onExpand={onExpand}
+          expandable={expandable}
+        >
           {header}
         </SectionHeader>
       )}

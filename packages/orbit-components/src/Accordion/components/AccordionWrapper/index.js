@@ -9,7 +9,7 @@ import { getBorder, getBorderRadius } from "../../../Card/helpers/borders";
 
 import type { Props } from ".";
 
-const StyledCardWrapper = styled.div`
+const StyledAccordionWrapper = styled.div`
   ${CardElement};
   border: ${getBorder};
   border-radius: ${getBorderRadius};
@@ -17,11 +17,11 @@ const StyledCardWrapper = styled.div`
   margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
 `;
 
-StyledCardWrapper.defaultProps = {
+StyledAccordionWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const CardWrapper = ({
+const AccordionWrapper = ({
   children,
   bottomBorder,
   roundedBottom,
@@ -33,7 +33,7 @@ const CardWrapper = ({
   expandable,
   initialExpanded,
 }: Props) => (
-  <StyledCardWrapper
+  <StyledAccordionWrapper
     bottomBorder={bottomBorder}
     expanded={expanded || initialExpanded}
     data-test={dataTest}
@@ -44,7 +44,7 @@ const CardWrapper = ({
     roundedTop={roundedTop}
   >
     {children}
-  </StyledCardWrapper>
+  </StyledAccordionWrapper>
 );
 
-export default CardWrapper;
+export default AccordionWrapper;

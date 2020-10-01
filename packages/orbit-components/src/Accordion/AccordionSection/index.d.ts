@@ -13,6 +13,7 @@ export interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly actions?: React.ReactNode;
   readonly expanded?: boolean;
+  readonly expanable?: boolean;
   readonly onExpand?: Common.Callback;
   readonly header?: React.ReactNode;
   readonly footer?: React.ReactNode;

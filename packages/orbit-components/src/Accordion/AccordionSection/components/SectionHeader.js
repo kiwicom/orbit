@@ -35,21 +35,29 @@ HeaderActions.defaultProps = {
 type Props = {
   children: React.Node,
   expanded: boolean,
+  expandable: boolean,
   onExpand?: () => void | Promise<any>,
   actions?: React.Node,
 };
 
-const AccordionSectionHeader = ({ children, actions, expanded, onExpand }: Props) => {
+const AccordionSectionHeader = ({
+  children,
+  actions,
+  expanded,
+  onExpand,
+  expandable = true,
+}: Props) => {
   return (
     <Wrapper>
       <HeaderContent>{children}</HeaderContent>
       {!expanded && (
         <HeaderActions>
-          {actions || (
-            <Button onClick={onExpand} type="secondary">
-              Open
-            </Button>
-          )}
+          {expandable &&
+            (actions || (
+              <Button onClick={onExpand} type="secondary">
+                Open
+              </Button>
+            ))}
         </HeaderActions>
       )}
     </Wrapper>

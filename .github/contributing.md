@@ -2,80 +2,87 @@
 
 ## Table of Contents
 
-- [Commit Message](#commit-message)
-- [Commit history](#commit-history)
-- [Development Information](#development-information)
-  - [Repository structure](#repository-structure)
-  - [Requirements](#requirements)
-  - [Testing](#testing)
+- [Commit message & history](#commit-message-history)
+- [Repository structure](#repository-structure)
+- [Environment requirements](#environment-requirements)
+- [Testing](#testing)
 
 ---
 
-## Commit Message
+# Commit message & history
 
-Please see https://chris.beams.io/posts/git-commit/ for information on how to write commit messages.
+Please read our [guidelines for authoring commits](commits.md).
 
-## Commit History
+# Repository Structure
 
-We are using merges with squashing commits.
+This is a monorepo containing a few Orbit packages:
 
-#### Bad:
+## `@kiwicom/orbit-components`
 
-```
-- Add React
-- add react-dom
-- fix deps
-- another fix
-- fix test
-```
+- `/packages/orbit-components/src` – All Source files
+- `/packages/orbit-components/es` – **GENERATED** ES compliant modules
+- `/packages/orbit-components/lib` – **GENERATED** CJS compatible modules
+- `/packages/orbit-components/config` – Build and validation scripts, test configuration
+- `/packages/orbit-components/.storybook` – Storybook configuration
 
-#### Good:
+## `@kiwicom/babel-plugin-orbit-components`
 
-```
-- add React & React-Dom
-- resolve peer dependencies of React
-```
+- `/packages/babel-plugin-orbit-components/index.js` – Source file
+- `/packages/babel-plugin-orbit-components/scripts` – Test scripts
 
-## What to not forget during code reviews
+## Root
 
-- Never click on grey "update branch" button on GitHub - it merges master into reviewed base branch, which leads to messed up history
-- Please make sure you've deleted base branch as well by clicking on according GitHub button that appears right after you confirm merge
+- `/config` – Common stuff like ESLint configuration
+- `/flow-typed` – Flow library definitions
 
-# Development Information
-
-## Repository Structure
-
-- `/src` - All Source files
-- `/es` - **GENERATED** ES compliant modules
-- `/lib` - **GENERATED** most compatible modules
-- `/config` - All test and build configuration can be found here
-- `/flow-typed` - **GENERATED** types for Flow
-- `/.storybook` - Storybook configuration
-
-## Requirements
+# Environment Requirements
 
 - [Node 8.9+](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
 
-## How to develop
+# How to develop
 
-For local development you can use:
+We're using Lerna for managing the monorepo, so in order to link local packages together and install dependencies run:
 
-- `yarn storybook`
+```sh
+npx lerna bootstrap
+```
 
-In case you want to develop in your current project:
+You usually only need to do this once, or if a a new workspaces has been added.
 
-- `yarn add @kiwicom/orbit-components`
-- `yarn watch` in this folder
-- `yarn link` in this folder
-- `yarn link @kiwicom/orbit-components` in the project where you want to use this project
+For developing Orbit components run:
 
-See [Yarn Link](https://yarnpkg.com/lang/en/docs/cli/link/) documentation for more information.
+```sh
+yarn orbit-components storybook
+```
 
-## Testing
+If you would like to try out the development version of one of our packages, we recommend using [yalc](https://github.com/whitecolor/yalc):
+
+```sh
+yarn global add yalc
+```
+
+This is how you would link `@kiwicom/orbit-components`:
+
+```sh
+cd packages/orbit-components
+yalc publish
+cd path/to/your/project
+yalc add @kiwicom/orbit-components
+```
+
+Then run the following every time you make new changes in `packages/orbit-components` that you want to try out:
+
+```sh
+yalc push
+```
+
+This is a shortcut for `yalc publish --push`, which "publishes" the package again and updates it in every project that installed it.
+
+# Testing
 
 Run `yarn test-ci` to perform the same automatic checks as the CI server. You can also run these checks separately:
 
 - `yarn flow` - static type check
-- `yarn eslint` - ESLint, some warnings can be fixed automatically with `yarn eslint --fix`
+- `yarn eslint:check` - ESLint, some warnings can be fixed automatically with `yarn eslint:check --fix`
 - `yarn test` - run all Jest tests

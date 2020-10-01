@@ -8,7 +8,7 @@ import getDisplay from "./helpers/getDisplay";
 
 import type { Props } from "./index";
 
-const StyledHide = styled(({ on, block, theme, ...props }) => <span {...props} />)`
+const StyledHide = styled(({ on, block, theme, ...props }) => <div {...props} />)`
   ${({ on }) => getViewportHideStyles(on, getDisplay)};
 `;
 

@@ -68,7 +68,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lerna": "3.22.1",
-    "lint-staged": "^10.2.11",
+    "lint-staged": "^10.4.0",
     "markdown-magic": "^1.0.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7"

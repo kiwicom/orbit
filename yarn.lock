@@ -1903,12 +1903,12 @@
     resolve-global "1.0.0"
     yargs "^15.1.0"
 
-"@commitlint/config-conventional@^9.1.1":
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-9.1.1.tgz#c10e6ff8e56bd462fa33e17522b0f98da97daa39"
-  integrity sha512-t/bvv8ofjj7V4W99eVDyuACaC7Ch4SYaukglBYt/K1Y9Ixg8mCBuFDMGRMhyZn4upUe1ls8l4SO3rjaVbYIjlg==
+"@commitlint/config-conventional@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-11.0.0.tgz#3fa300a1b639273946de3c3f15e1cda518333422"
+  integrity sha512-SNDRsb5gLuDd2PL83yCOQX6pE7gevC79UPFx+GLbLfw6jGnnbO9/tlL76MLD8MOViqGbo7ZicjChO9Gn+7tHhA==
   dependencies:
-    conventional-changelog-conventionalcommits "4.3.0"
+    conventional-changelog-conventionalcommits "^4.3.1"
 
 "@commitlint/ensure@^9.1.2":
   version "9.1.2"
@@ -6740,12 +6740,12 @@ conventional-changelog-angular@^5.0.3:
     compare-func "^2.0.0"
     q "^1.5.1"
 
-conventional-changelog-conventionalcommits@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-4.3.0.tgz#c4205a659f7ca9d7881f29ee78a4e7d6aeb8b3c2"
-  integrity sha512-oYHydvZKU+bS8LnGqTMlNrrd7769EsuEHKy4fh1oMdvvDi7fem8U+nvfresJ1IDB8K00Mn4LpiA/lR+7Gs6rgg==
+conventional-changelog-conventionalcommits@^4.3.1:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-4.4.0.tgz#8d96687141c9bbd725a89b95c04966d364194cd4"
+  integrity sha512-ybvx76jTh08tpaYrYn/yd0uJNLt5yMrb1BphDe4WBredMlvPisvMghfpnJb6RmRNcqXeuhR6LfGZGewbkRm9yA==
   dependencies:
-    compare-func "^1.3.1"
+    compare-func "^2.0.0"
     lodash "^4.17.15"
     q "^1.5.1"
 

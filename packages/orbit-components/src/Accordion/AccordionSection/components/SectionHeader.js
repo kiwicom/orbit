@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   padding: ${({ theme, noPadding }) =>
     !noPadding && `${theme.orbit.spaceXLarge} ${theme.orbit.spaceLarge}`};
-  background-color: white;
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
   align-items: center;
 `;
 

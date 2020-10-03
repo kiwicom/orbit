@@ -6061,10 +6061,10 @@ can-use-dom@^0.1.0:
   resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
   integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
 
-caniuse-db@^1.0.30001141:
-  version "1.0.30001141"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001141.tgz#7567d40893cc589ceadbcfee42ceeca41c7daaeb"
-  integrity sha512-3QQYj4WLBA4DY3ArRmD+dgDH3fxv2twTbMSZsImYapmITyoVHOYhWLdlD7yUp3E6eq73vRC5FmQELZEcb9QqQQ==
+caniuse-db@^1.0.30001142:
+  version "1.0.30001142"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001142.tgz#0a274384e4223c139ad25ceaadaf4110d00fff81"
+  integrity sha512-nysCSvYxxXcSoUUjfHIulxh+hWjzxYvqo0+eEIv16y5TgSYBiTm2uRQlz6kfPerZ+RBHLRkaQc7QZn/zRmHwLA==
 
 caniuse-lite@^1.0.30001035:
   version "1.0.30001137"

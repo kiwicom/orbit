@@ -99,7 +99,7 @@
     "@storybook/addons": "^6.0.21",
     "@storybook/react": "^6.0.21",
     "@storybook/storybook-deployer": "^2.8.6",
-    "@storybook/theming": "^6.0.22",
+    "@storybook/theming": "^6.0.26",
     "@svgr/core": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",

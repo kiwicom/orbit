@@ -18,13 +18,13 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Accordion component.
 
-| Name        | Type                    | Default | Description                                                                                                                                                    |
-| :---------- | :---------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| expanded    | `boolean`               | 0       | Optional prop to control expanded state for AccordionSections                                                                                                  |
-| children    | `React.Node`            |         | The content of the Accordion. You can use only [AccordionSection](#accordionsection)                                                                           |
-| dataTest    | `string`                |         | Optional prop for testing purposes                                                                                                                             |
-| loading     | `boolean`               |         | If `true` `Loading` will be rendered                                                                                                                           |
-| spaceAfter  | `enum`                  |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| Name       | Type         | Default | Description                                                                                                                                                    |
+| :--------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| expanded   | `boolean`    | 0       | Optional prop to control expanded state for AccordionSections                                                                                                  |
+| children   | `React.Node` |         | The content of the Accordion. You can use only [AccordionSection](#accordionsection)                                                                           |
+| dataTest   | `string`     |         | Optional prop for testing purposes                                                                                                                             |
+| loading    | `boolean`    |         | If `true` `Loading` will be rendered                                                                                                                           |
+| spaceAfter | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ### AccordionSection
 
@@ -42,16 +42,16 @@ import Accordion, { AccordionSection } from "@kiwicom/orbit-components/lib/Accor
 
 #### Props
 
-| Name            | Type                    | Default | Description                                                                                                                                                |
-| :-------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id              | `string \| number`      |         | Identificator used to determine active section when using with controlled state                                                                            |
-| actions         | `React.Node`            |         | Actions which will be rendered on the right side                                                                                                           |
-| children        | `React.Node`            |         | The content of the AccordionSection.                                                                                                                       |
-| dataTest        | `string`                |         | Optional prop for testing purposes.                                                                                                                        |
-| expandable      | `boolean`               |         | If set to `false` `actions` will not be displayed                                                                                                                     |
-| header          | `React.Node`            |         | The header of the AccordionSection. Useful when you need different layout than combination of e.g. `title` and `description` properties.                   |
-| footer          | `React.Node`            |         | The sticky footer of the AccordionSection. Useful for navigation buttons                                                                                   |
-| onExpand        | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                                       |
+| Name       | Type                    | Default | Description                                                                                                                              |
+| :--------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| id         | `string \| number`      |         | Identificator used to determine active section when using with controlled state                                                          |
+| actions    | `React.Node`            |         | Actions which will be rendered on the right side                                                                                         |
+| children   | `React.Node`            |         | The content of the AccordionSection.                                                                                                     |
+| dataTest   | `string`                |         | Optional prop for testing purposes.                                                                                                      |
+| expandable | `boolean`               |         | If set to `false` `actions` will not be displayed                                                                                        |
+| header     | `React.Node`            |         | The header of the AccordionSection. Useful when you need different layout than combination of e.g. `title` and `description` properties. |
+| footer     | `React.Node`            |         | The sticky footer of the AccordionSection. Useful for navigation buttons                                                                 |
+| onExpand   | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                     |
 
 ### enum
 

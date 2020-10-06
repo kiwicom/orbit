@@ -103,7 +103,7 @@
     "@svgr/core": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.5",
+    "@testing-library/user-event": "^12.1.7",
     "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",

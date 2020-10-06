@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import { useAccordion } from "../AccordionContext";
 import randomID from "../../utils/randomID";
@@ -12,11 +11,6 @@ import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
 
 import type { Props } from "./index";
-
-const ExpandableContent = styled.div`
-  dispaly: flex;
-  flex-direction: column;
-`;
 
 const AccordionSection = ({
   children,
@@ -47,14 +41,10 @@ const AccordionSection = ({
       )}
 
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
-        <ExpandableContent expanded={expanded} ref={ref}>
-          {children && (
-            <SectionContent hasFooter={Boolean(footer)} expanded={Boolean(expanded)}>
-              {children}
-            </SectionContent>
-          )}
+        <div expanded={expanded} ref={ref}>
+          {children && <SectionContent>{children}</SectionContent>}
           {footer && <SectionFooter>{footer}</SectionFooter>}
-        </ExpandableContent>
+        </div>
       </Slide>
     </AccordionWrapper>
   );

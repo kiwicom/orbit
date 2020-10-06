@@ -14,11 +14,11 @@ Wrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-type Props = {
+type Props = {|
   children: React.Node,
   expanded: boolean,
   hasFooter: boolean,
-};
+|};
 
 const AccordionSectionContent = ({ children, expanded, hasFooter }: Props) => {
   return (

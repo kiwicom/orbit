@@ -32,13 +32,13 @@ HeaderActions.defaultProps = {
   theme: defaultTheme,
 };
 
-type Props = {
+type Props = {|
   children: React.Node,
   expanded: boolean,
   expandable: boolean,
   onExpand?: () => void | Promise<any>,
   actions?: React.Node,
-};
+|};
 
 const AccordionSectionHeader = ({
   children,

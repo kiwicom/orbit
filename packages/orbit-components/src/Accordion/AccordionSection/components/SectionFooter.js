@@ -17,9 +17,9 @@ Wrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-type Props = {
+type Props = {|
   children: React.Node,
-};
+|};
 
 const AccordionSectionFooter = ({ children }: Props) => {
   return <Wrapper>{children}</Wrapper>;

@@ -161,10 +161,7 @@ async function readFileAndCreateJSON(pathToFile) {
     sourceType: "module",
   });
   const firstLetter = nameSplit[1].charAt(0);
-  const componentName =
-    firstLetter === firstLetter.toLowerCase() && firstLetter !== firstLetter.toUpperCase()
-      ? nameSplit[2]
-      : nameSplit[1];
+  const componentName = firstLetter === firstLetter.toLowerCase() ? nameSplit[2] : nameSplit[1];
   const imports = await generateImports(ast.program.body, code);
   const example = await getExample(ast.program.body, code);
   const info = await getInfo(ast.program.body);

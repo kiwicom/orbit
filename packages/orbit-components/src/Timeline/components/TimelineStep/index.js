@@ -10,8 +10,8 @@ import CheckCircle from "../../../icons/CheckCircle";
 import Circle from "../../../icons/CircleEmpty";
 import AlertCircle from "../../../icons/AlertCircle";
 import CloseCircle from "../../../icons/CloseCircle";
-import Hide from "../../../Hide";
 import { useStatuses, useStep } from "../../TimelineContext";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 import type { Props } from "./index";
 
@@ -46,25 +46,14 @@ const renderStatus = (status, theme) => {
   return theme.orbit.paletteCloudNormalHover;
 };
 
-const getLineWidth = (desktop, isLeft, last, theme) => {
-  if (desktop) {
-    if (!isLeft) return css`calc(50% + ${theme.orbit.spaceSmall})`;
-    return "50%";
-  }
-
-  return "2px";
-};
-
 const ProgressLineStyled = styled.span`
-  ${({ desktop, theme, status, isLeft, last }) => css`
-    position: absolute;
-    width: ${getLineWidth(desktop, isLeft, last, theme)};
+  ${({ desktop, theme, status, isLeft }) => css`
+    ${!desktop && `position: absolute`};
+    width: ${desktop ? "50%" : "2px"};
     ${isLeft ? `left: 0` : `right: -20px`};
     z-index: -1;
-    top: 40px;
     ${!desktop && `left: 11px`};
     background: ${renderStatus(status, theme)};
-    ${!desktop && `top: 0`};
     height: ${desktop ? `2px` : `calc(100% + 20px)`};
   `}
 `;
@@ -87,71 +76,84 @@ IndentStyled.defaultProps = {
 
 const RelativeStyled = styled.div`
   position: relative;
+  ${({ inner, theme }) =>
+    inner &&
+    css`
+      width: calc(100% + ${parseInt(theme.orbit.spaceSmall, 10) * 2}px);
+      display: flex;
+      align-items: center;
+    `};
+`;
+
+RelativeStyled.defaultProps = {
+  theme: defaultTheme,
+};
+
+const DescriptionStyled = styled.div`
+  max-width: 250px;
+  width: 100%;
 `;
 
 const TimelineStep = ({ children, step, time, status }: Props) => {
-  const { state, dispatch } = useStatuses();
+  const { statuses, setStatuses } = useStatuses();
   const { index, last } = useStep();
+  const { isDesktop } = useMediaQuery();
 
-  const getStatus = state.statuses[index + 1];
+  const nextStatus = statuses[index + 1];
 
   React.useEffect(() => {
-    dispatch({ type: "ADD_STATUS", payload: status || null });
-  }, [dispatch, status]);
+    setStatuses(prev => ({ ...prev, [index]: status || null }));
+  }, [setStatuses, status, index]);
 
-  return (
-    <>
-      <Hide on={["desktop", "largeDesktop"]}>
-        <RelativeStyled>
-          <Stack inline spacing="compact" spaceAfter="large">
-            {!last && <ProgressLineStyled status={getStatus} data-test="progressLine" />}
-            <IconWrapperStyled>
-              <StatusIcon status={status} />
-            </IconWrapperStyled>
-            <Stack flex direction="column">
-              <Stack inline spacing="condensed" align="center">
-                <Badge type={status}>
-                  <Text type={status || "secondary"}>{step}</Text>
-                </Badge>
-                <Text size="small">{time}</Text>
-              </Stack>
-              <IndentStyled>
-                <Text type={status ? "primary" : "secondary"}>{children}</Text>
-              </IndentStyled>
-            </Stack>
-          </Stack>
+  return isDesktop ? (
+    <RelativeStyled>
+      <Stack inline direction="column" align="center" spacing="compact" spaceAfter="large">
+        <TimeWrapperStyled visible={!!status}>
+          <Text size="small">{time}</Text>
+        </TimeWrapperStyled>
+        <RelativeStyled inner>
+          <ProgressLineStyled data-test="progressLine" desktop isLeft status={status} />
+          <IconWrapperStyled>
+            <StatusIcon status={status} />
+          </IconWrapperStyled>
+          <ProgressLineStyled
+            data-test="progressLine"
+            desktop
+            status={nextStatus || (last && status)}
+          />
         </RelativeStyled>
-      </Hide>
-      <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
-        <RelativeStyled>
-          <Stack inline direction="column" align="center" spacing="compact" spaceAfter="large">
-            <TimeWrapperStyled visible={!!status}>
-              <Text size="small">{time}</Text>
-            </TimeWrapperStyled>
-            <ProgressLineStyled data-test="progressLine" desktop isLeft status={status} />
-            <IconWrapperStyled>
-              <StatusIcon status={status} />
-            </IconWrapperStyled>
-            <ProgressLineStyled
-              data-testid="progressLine"
-              desktop
-              last={last}
-              status={getStatus || (last && status)}
-            />
-            <Stack flex align="center" direction="column">
-              <Stack inline spacing="condensed" align="center">
-                <Badge type={status}>
-                  <Text type={status || "secondary"}>{step}</Text>
-                </Badge>
-              </Stack>
-              <Text align="center" type={status ? "primary" : "secondary"}>
-                {children}
-              </Text>
-            </Stack>
+        <Stack flex align="center" direction="column">
+          <Stack inline spacing="condensed" align="center">
+            <Badge type={status}>
+              <Text type={status || "secondary"}>{step}</Text>
+            </Badge>
           </Stack>
-        </RelativeStyled>
-      </Hide>
-    </>
+          <Text align="center" type={status ? "primary" : "secondary"}>
+            <DescriptionStyled>{children}</DescriptionStyled>
+          </Text>
+        </Stack>
+      </Stack>
+    </RelativeStyled>
+  ) : (
+    <RelativeStyled>
+      <Stack inline spacing="compact" spaceAfter="large">
+        {!last && <ProgressLineStyled status={nextStatus} data-test="progressLine" />}
+        <IconWrapperStyled>
+          <StatusIcon status={status} />
+        </IconWrapperStyled>
+        <Stack flex direction="column">
+          <Stack inline spacing="condensed" align="center">
+            <Badge type={status}>
+              <Text type={status || "secondary"}>{step}</Text>
+            </Badge>
+            <Text size="small">{time}</Text>
+          </Stack>
+          <IndentStyled>
+            <Text type={status ? "primary" : "secondary"}>{children}</Text>
+          </IndentStyled>
+        </Stack>
+      </Stack>
+    </RelativeStyled>
   );
 };
 

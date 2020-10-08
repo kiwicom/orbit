@@ -1,9 +1,10 @@
 // @flow
+
+type SetStateAction<S> = S | ((prevState: S) => S);
+type Dispatch<A> = (value: A) => void;
 export type Context = {|
-  +state: {
-    +statuses: (string | null)[],
-  },
-  dispatch: React.Dispatch<any>,
+  statuses: { [key: number]: string | null },
+  setStatuses: Dispatch<SetStateAction<{ [key: number]: string | null }>>,
 |};
 
 export type StepContext = {|

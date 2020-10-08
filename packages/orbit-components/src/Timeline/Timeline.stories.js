@@ -82,7 +82,7 @@ storiesOf("Timeline", module)
     "with critical",
     () => {
       const step = text("step", "Non refundable");
-      const status = text("status", "warning");
+      const status = text("status", "critical");
       const time = text("time", "7th May 10:30");
       const children = text("children", "The carrier rejected the refund");
 

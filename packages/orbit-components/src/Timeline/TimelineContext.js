@@ -3,13 +3,9 @@ import * as React from "react";
 
 import type { StepContext, Context } from "./TimelineContext";
 
-const initialState = {
-  statuses: [],
-};
-
 export const TimelineStatusContext: React.Context<Context> = React.createContext({
-  state: initialState,
-  dispatch: () => null,
+  statuses: {},
+  setStatuses: () => {},
 });
 
 export const TimelineStepContext: React.Context<StepContext> = React.createContext({
@@ -17,23 +13,11 @@ export const TimelineStepContext: React.Context<StepContext> = React.createConte
   last: false,
 });
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "ADD_STATUS":
-      return {
-        statuses: [...state.statuses, action.payload],
-      };
-
-    default:
-      return state;
-  }
-};
-
 export const TimelineStatusProvider = ({ children }: { children: React.Node }) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [statuses, setStatuses] = React.useState({});
 
   return (
-    <TimelineStatusContext.Provider value={{ state, dispatch }}>
+    <TimelineStatusContext.Provider value={{ statuses, setStatuses }}>
       {children}
     </TimelineStatusContext.Provider>
   );

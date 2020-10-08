@@ -4,7 +4,13 @@ import { render, screen } from "@testing-library/react";
 
 import TimelineStep from "..";
 
-jest.mock("../../../../Hide", () => ({ children }) => children);
+jest.mock("../../../../hooks/useMediaQuery", () => {
+  return () => {
+    return {
+      isTablet: false,
+    };
+  };
+});
 
 describe("#TimelineStep", () => {
   it("should have props", () => {
@@ -18,8 +24,8 @@ describe("#TimelineStep", () => {
       </TimelineStep>,
     );
 
-    expect(screen.getAllByText(children)).toHaveLength(2);
-    expect(screen.getAllByText(step)).toHaveLength(2);
-    expect(screen.getAllByText(time)).toHaveLength(2);
+    expect(screen.getByText(children)).toBeInTheDocument();
+    expect(screen.getByText(step)).toBeInTheDocument();
+    expect(screen.getByText(time)).toBeInTheDocument();
   });
 });

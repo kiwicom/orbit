@@ -1,8 +1,7 @@
 // @flow
-
 export type Status = "success" | "warning" | "critical";
 export type Props = {|
-  +children: React.ReactNode,
+  +children: React$Node,
   +time: string,
   +step: string,
   +status?: Status,

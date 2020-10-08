@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 import TimelineStep from "..";
 
-jest.mock("../../../../hooks/useMediaQuery", () => {
+jest.mock("../../../hooks/useMediaQuery", () => {
   return () => {
     return {
       isTablet: false,

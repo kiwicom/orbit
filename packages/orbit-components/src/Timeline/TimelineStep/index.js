@@ -2,16 +2,16 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../../../defaultTheme";
-import Badge from "../../../Badge";
-import Text from "../../../Text";
-import Stack from "../../../Stack";
-import CheckCircle from "../../../icons/CheckCircle";
-import Circle from "../../../icons/CircleEmpty";
-import AlertCircle from "../../../icons/AlertCircle";
-import CloseCircle from "../../../icons/CloseCircle";
-import { useStatuses, useStep } from "../../TimelineContext";
-import useMediaQuery from "../../../hooks/useMediaQuery";
+import defaultTheme from "../../defaultTheme";
+import Badge from "../../Badge";
+import Text from "../../Text";
+import Stack from "../../Stack";
+import CheckCircle from "../../icons/CheckCircle";
+import Circle from "../../icons/CircleEmpty";
+import AlertCircle from "../../icons/AlertCircle";
+import CloseCircle from "../../icons/CloseCircle";
+import { useStatuses, useStep } from "../TimelineContext";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 import type { Props } from "./index";
 

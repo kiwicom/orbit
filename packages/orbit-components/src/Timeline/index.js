@@ -45,4 +45,4 @@ const Timeline = ({ children, spaceAfter, dataTest }: Props) => {
 };
 
 export default Timeline;
-export { default as TimelineStep } from "./components/TimelineStep";
+export { default as TimelineStep } from "./TimelineStep";

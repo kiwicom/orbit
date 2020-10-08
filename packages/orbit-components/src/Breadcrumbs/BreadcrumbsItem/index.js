@@ -48,7 +48,7 @@ StyledBreadcrumbsItemAnchor.defaultProps = {
 };
 
 const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
-  margin: 0 ${({ theme }) => theme.orbit.spaceXSmall};
+  margin: 0 ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
 StyledBreadcrumbsItemIcon.defaultProps = {

@@ -45,6 +45,7 @@ const pathOverwrites = {
   TripLayover: "deprecated/TripSector/TripLayover",
   TripSector: "deprecated/TripSector",
   TripSegment: "deprecated/TripSegment",
+  TimelineStep: "Timeline/TimelineStep",
 };
 
 const parsedImportPaths = ["@kiwicom/orbit-components", "@kiwicom/orbit-components/lib/icons"];

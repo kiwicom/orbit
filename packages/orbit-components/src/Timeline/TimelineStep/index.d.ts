@@ -22,4 +22,4 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 declare const TimelineStep: React.FC<Props>;
 
-export { TimelineStep as default };
+export { TimelineStep, TimelineStep as default };

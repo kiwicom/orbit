@@ -31,7 +31,7 @@ Table below contains all types of the props available in the **Timeline** compon
 ### TimelineStep
 
 ```jsx
-import TimelineStep from "@kiwicom/orbit-components/lib/Timeline/components/TimelineStep";
+import TimelineStep from "@kiwicom/orbit-components/lib/Timeline/TimelineStep";
 ```
 
 #### Props

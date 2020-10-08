@@ -1,6 +1,7 @@
 // @flow
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
+import typeof TimelineStepType from "./TimelineStep";
 
 export type Props = {|
   ...Globals,
@@ -9,3 +10,4 @@ export type Props = {|
 |};
 
 declare export default React$ComponentType<Props>;
+declare export var TimelineStep: TimelineStepType;

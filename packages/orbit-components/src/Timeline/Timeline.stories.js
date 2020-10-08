@@ -3,6 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
 
+import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
 
 import Timeline from "./index";
@@ -107,4 +108,30 @@ storiesOf("Timeline", module)
       );
     },
     { info: "This is example of Timeline with critical status" },
-  );
+  )
+  .add("inside Modal", () => {
+    return (
+      <Modal>
+        <ModalSection>
+          <Timeline dataTest={dataTest}>
+            <TimelineStep step="Requested" time="3rd May 14:04" status="success">
+              We’ve assigned your request to one of our agents.
+            </TimelineStep>
+            <TimelineStep step="In progress" time="4th May 10:25" status="success">
+              We’ve applied for a refund from the carrier(s).
+            </TimelineStep>
+            <TimelineStep step="Waiting for the carrier" time="5th May 15:03" status="success">
+              We’ve applied for a refund from the carrier(s).
+            </TimelineStep>
+            <TimelineStep step="Carrier is refunding" time="6th May 20:50" status="success">
+              The carrier(s) is processing your refund request. We’ll contact them again if
+              necessary.
+            </TimelineStep>
+            <TimelineStep step="Refunded" time="8th May 15:30" status="success">
+              We’ll forward you all refunds from the carrier(s) after we receive it.
+            </TimelineStep>
+          </Timeline>
+        </ModalSection>
+      </Modal>
+    );
+  });

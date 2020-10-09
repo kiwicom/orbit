@@ -66,6 +66,7 @@ export const NAMES = [
   "SportsEquipment",
   "Success",
   "Time",
+  "TicketFlexi",
   "TimelineBoarding", // TODO: Get rid off 22.11
   "TimelineDropBaggage", // TODO: Get rid off 22.11
   "TimelineLeave",

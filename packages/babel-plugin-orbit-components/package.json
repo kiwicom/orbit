@@ -20,11 +20,19 @@
   "homepage": "https://github.com/kiwicom/babel-plugin-orbit-components",
   "main": "index",
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "jest": "^26.4.2"
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "jest": "^26.4.2",
+    "@kiwicom/orbit-components": "^0.92.0",
+    "prettier": "^2.1.2"
   },
   "files": [
     "index.js",
     "README.md"
-  ]
+  ],
+  "scripts": {
+    "generateTestFile": "node scripts/generateImports.js",
+    "build": "babel __fixtures__/index.js --out-file dist/index.js --root-mode upward",
+    "test": "yarn generateTestFile && yarn build && node scripts/testRequire.js"
+  }
 }

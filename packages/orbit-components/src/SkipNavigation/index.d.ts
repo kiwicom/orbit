@@ -4,13 +4,15 @@
 
 import * as React from "react";
 
+import * as Common from "../common/common";
+
 declare module "@kiwicom/orbit-components/lib/SkipNavigation";
 
 interface Action {
   readonly name?: string;
   readonly link?: string;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  readonly onClick?: () => {};
+  readonly onClick?: {} | Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
 }
 
 interface Props {

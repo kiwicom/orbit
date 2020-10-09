@@ -61,6 +61,7 @@ const Tile = ({
           title={title}
           description={description}
           icon={icon}
+          external={external}
           header={header}
           expandable={expandable}
           noHeaderIcon={noHeaderIcon}

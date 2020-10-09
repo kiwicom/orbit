@@ -160,11 +160,13 @@ async function readFileAndCreateJSON(pathToFile) {
   const ast = parse(code, {
     sourceType: "module",
   });
+  const firstLetter = nameSplit[1].charAt(0);
+  const componentName = firstLetter === firstLetter.toLowerCase() ? nameSplit[2] : nameSplit[1];
   const imports = await generateImports(ast.program.body, code);
   const example = await getExample(ast.program.body, code);
   const info = await getInfo(ast.program.body);
   await writeFile(
-    generatePath(nameSplit[1], fileName),
+    generatePath(componentName, fileName),
     JSON.stringify({ imports, example, info }, null, "\t"),
   );
 }

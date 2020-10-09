@@ -83,12 +83,14 @@ exports[`transform imports as expected 11 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
+import { Accommodation } from "@kiwicom/orbit-components/icons";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 import Alert from "@kiwicom/orbit-components/lib/Alert";
 import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
 import Passengers from "@kiwicom/orbit-components/lib/icons/Passengers";
+import Accommodation from "@kiwicom/orbit-components/lib/icons/Accommodation";
 `;
 
 exports[`transform imports as expected 12 1`] = `

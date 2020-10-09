@@ -20,13 +20,16 @@ export const LAYOUT_SETTINGS = {
       columns: "256px 1fr 288px",
     },
     layoutColumns: {
+      // prettier-ignore
       "0": {
         hideOn: ["smallMobile", "mediumMobile", "largeMobile"],
         element: "aside",
       },
+      // prettier-ignore
       "1": {
         element: "main",
       },
+      // prettier-ignore
       "2": {
         hideOn: ["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"],
       },
@@ -43,9 +46,11 @@ export const LAYOUT_SETTINGS = {
       columnGap: "24px",
     },
     layoutColumns: {
+      // prettier-ignore
       "0": {
         element: "main",
       },
+      // prettier-ignore
       "1": {
         element: "aside",
       },
@@ -59,6 +64,7 @@ export const LAYOUT_SETTINGS = {
       columnGap: "24px",
     },
     layoutColumns: {
+      // prettier-ignore
       "0": {
         element: "main",
       },

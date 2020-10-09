@@ -44,7 +44,8 @@ const StyledTooltipWrapper = styled.div`
     css`
       ${transition(["bottom"], "normal", "ease-in-out")},
       ${transition(["visibility"], "fast", "linear")},
-        ${!shownMobile && theme.orbit.durationNormal}`};
+        ${!shownMobile && theme.orbit.durationNormal}
+    `};
   z-index: 10012; // TODO: use some good value
   bottom: ${({ shownMobile, tooltipWidth }) => (shownMobile ? "16px" : `-${tooltipWidth}px`)};
   left: ${({ theme }) => theme.orbit.spaceMedium};
@@ -165,7 +166,8 @@ const StyledTooltipOverlay = styled.div`
   transition: ${({ theme, shownMobile }) => css`
     ${transition(["opacity"], "normal", "ease-in-out")},
     ${transition(["visibility"], "fast", "linear")},
-    ${!shownMobile && theme.orbit.durationNormal}`};
+    ${!shownMobile && theme.orbit.durationNormal}
+  `};
 
   ${media.largeMobile(css`
     display: none;

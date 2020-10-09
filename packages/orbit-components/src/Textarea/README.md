@@ -35,7 +35,7 @@ Table below contains all types of the props available in Textarea component.
 | rows        | `number`                   |              | Specifies the height of the text area (in lines).                                                                                                              |
 | size        | [`enum`](#enum)            | `"normal"`   | The size of the Textarea.                                                                                                                                      |
 | spaceAfter  | `enum`                     |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| tabIndex    | `string | number`          |              | Specifies the tab order of an element                                                                                                                          |
+| tabIndex    | `string                    | number`      |                                                                                                                                                                | Specifies the tab order of an element |
 | value       | `string`                   |              | Specifies the value of the Textarea.                                                                                                                           |
 
 ### enum

@@ -92,6 +92,7 @@ Table below contains all types of the props available in Illustration component.
 | `"SportsEquipment"`             |
 | `"Success"`                     |
 | `"Time"`                        |
+| `"TicketFlexi"`                 |
 | `"TimelineBoarding"`            |
 | `"TimelineDropBaggage"`         |
 | `"TimelineLeave"`               |

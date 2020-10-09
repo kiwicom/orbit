@@ -47,7 +47,11 @@ const pathOverwrites = {
   TripSegment: "deprecated/TripSegment",
 };
 
-const parsedImportPaths = ["@kiwicom/orbit-components", "@kiwicom/orbit-components/lib/icons"];
+const parsedImportPaths = [
+  "@kiwicom/orbit-components",
+  "@kiwicom/orbit-components/lib/icons",
+  "@kiwicom/orbit-components/icons",
+];
 
 module.exports = function orbitComponents(babel) {
   const t = babel.types;
@@ -72,8 +76,12 @@ module.exports = function orbitComponents(babel) {
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
 
             // icons will already have /lib in the name, this adds the /lib to normal components
-            if (importedPath.indexOf("/lib") === -1) {
-              importedPath += "/lib";
+            if (!importedPath.includes("/lib")) {
+              if (importedPath.includes("icons")) {
+                importedPath = importedPath.replace("icons", "lib/icons");
+              } else {
+                importedPath += "/lib";
+              }
             }
 
             if (pathOverwrites[importedName]) {

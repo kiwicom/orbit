@@ -37,7 +37,7 @@ Table below contains all types of the props available in the Select component.
 | required        | `boolean`                  | `false`    | If true, the label is displayed as required.                                                                                                                   |
 | size            | [`enum`](#enum)            | `"normal"` | The size of the Select.                                                                                                                                        |
 | spaceAfter      | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| tabIndex        | `string | number`          |            | Specifies the tab order of an element                                                                                                                          |
+| tabIndex        | `string                    | number`    |                                                                                                                                                                | Specifies the tab order of an element |
 | value           | `string`                   | `""`       | The value of the Select.                                                                                                                                       |
 
 ## Option

@@ -44,7 +44,8 @@ test.each([
   [
     // mixed
     `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
-import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";`,
+import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
+import { Accommodation } from "@kiwicom/orbit-components/icons";`,
   ],
 
   // REPORTED ISSUES:

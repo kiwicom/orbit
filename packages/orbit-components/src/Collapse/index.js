@@ -9,7 +9,6 @@ import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
-import useTranslate from "../hooks/useTranslate";
 import useBoundingRect from "../hooks/useBoundingRect";
 
 import type { Props } from "./index";
@@ -81,7 +80,6 @@ const Collapse = ({
   );
   const expanded = isControlledComponent ? expandedProp : expandedState;
   const [{ height }, node] = useBoundingRect({ height: expanded ? null : 0 });
-  const translate = useTranslate();
 
   const slideID = React.useMemo(() => randomID("slideID"), []);
   const labelID = React.useMemo(() => randomID("labelID"), []);
@@ -103,13 +101,7 @@ const Collapse = ({
 
   return (
     <StyledCollapse data-test={dataTest}>
-      <StyledCollapseLabel
-        onClick={handleClick}
-        role="button"
-        aria-expanded={expanded}
-        aria-controls={slideID}
-        id={labelID}
-      >
+      <StyledCollapseLabel onClick={handleClick} role="button" id={labelID}>
         <Stack justify="between" align="center">
           <Heading type="title4">{label}</Heading>
           {/* TODO: dictionary for title */}
@@ -125,7 +117,9 @@ const Collapse = ({
               iconLeft={<AnimatedIcon expanded={expanded} />}
               size="small"
               type="secondary"
-              title={translate("drawer_hide")}
+              ariaLabelledby={labelID}
+              ariaExpanded={expanded}
+              ariaControls={slideID}
             />
           </Stack>
         </Stack>

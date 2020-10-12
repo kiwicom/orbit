@@ -42,6 +42,7 @@ module.exports = {
     "import/no-mutable-exports": "error",
     "import/no-absolute-path": "error",
     "import/no-cycle": ["error", { maxDepth: 1 }],
+    "import/prefer-default-export": "off",
     "react/jsx-no-bind": "error",
     "react/no-multi-comp": "off",
     "react/prop-types": "off",

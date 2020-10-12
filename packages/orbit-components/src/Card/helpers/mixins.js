@@ -5,7 +5,6 @@ import mq from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
 import { getBorder } from "./borders";
 
-// eslint-disable-next-line import/prefer-default-export
 export const CardElement = css`
   width: 100%;
   box-sizing: border-box;

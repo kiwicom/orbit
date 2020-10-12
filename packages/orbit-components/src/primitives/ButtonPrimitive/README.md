@@ -80,6 +80,7 @@ Table below contains all types of the props available in ButtonPrimitive compone
 | rightMargin      | `string` | The margin of the left icon inside the ButtonPrimitive. |
 | foreground       | `string` | The color of the icon inside the ButtonPrimitive.       |
 | foregroundHover  | `string` | The color of the icon inside the ButtonPrimitive.       |
+| foregroundFocus  | `string` | The color of the icon inside the ButtonPrimitive.       |
 | foregroundActive | `string` | The color of the icon inside the ButtonPrimitive.       |
 
 ## Functional specs

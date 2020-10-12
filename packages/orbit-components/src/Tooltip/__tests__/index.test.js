@@ -1,9 +1,8 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Tooltip from "../index";
-import Airplane from "../../icons/Airplane";
 
 jest.mock("../../hooks/useMediaQuery", () => {
   return () => {
@@ -14,13 +13,11 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("Tooltip", () => {
-  const content = "Write some message to the user";
-  const component = mount(
-    <Tooltip content={content}>
-      <Airplane />
-    </Tooltip>,
-  );
   it("it should render Tooltip", () => {
-    expect(component.find("Tooltip").exists()).toBe(true);
+    const content = "Write some message to the user";
+
+    render(<Tooltip content={content}>kek</Tooltip>);
+
+    expect(screen.getByText("kek")).toBeInTheDocument();
   });
 });

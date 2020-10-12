@@ -1,7 +1,6 @@
 // @flow
 import React, { useRef } from "react";
-import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
+import { render, screen, act } from "@testing-library/react";
 
 import useDimensions from "../useDimensions";
 import Button from "../../../../Button";
@@ -13,10 +12,11 @@ const Component = ({ children, parent }) => {
     children,
     parent,
   );
+
   return (
     <div ref={ref}>
       {Object.keys(dimensions).map(key => (
-        <div id={key} key={key}>
+        <div id={key} data-test={key} key={key}>
           {dimensions[key]}
         </div>
       ))}
@@ -38,47 +38,46 @@ describe("useDimensions", () => {
       };
     });
   });
-  const eventMap = {};
-  window.addEventListener = jest.fn((event, cb) => {
-    eventMap[event] = cb;
-  });
-  window.removeEventListener = jest.fn(event => {
-    eventMap[event] = null;
-  });
-  const wrapper = mount(
-    <Component parent={<Button>Hello world</Button>}>
-      <div>content</div>
-    </Component>,
-  );
+
   it("should return values", () => {
-    wrapper.setProps({ children: <div>change</div> });
-    expect(wrapper.find("#containerTop").text()).toBe("16");
-    expect(wrapper.find("#containerLeft").text()).toBe("28");
-    expect(wrapper.find("#containerHeight").text()).toBe("32");
-    expect(wrapper.find("#containerWidth").text()).toBe("400");
-    expect(wrapper.find("#tooltipWidth").text()).toBe("400");
-    expect(wrapper.find("#tooltipHeight").text()).toBe("32");
-    expect(wrapper.find("#windowWidth").text()).toBe("1024");
-    expect(wrapper.find("#windowHeight").text()).toBe("768");
-    expect(wrapper.find("#contentHeight").text()).toBe("32");
+    render(
+      <Component parent={<Button>Hello world</Button>}>
+        <div>content</div>
+      </Component>,
+    );
+
+    expect(screen.getByTestId("containerTop")).toHaveTextContent("16");
+    expect(screen.getByTestId("containerLeft")).toHaveTextContent("28");
+    expect(screen.getByTestId("containerHeight")).toHaveTextContent("32");
+    expect(screen.getByTestId("containerWidth")).toHaveTextContent("400");
+    expect(screen.getByTestId("tooltipWidth")).toHaveTextContent("400");
+    expect(screen.getByTestId("tooltipHeight")).toHaveTextContent("32");
+    expect(screen.getByTestId("windowWidth")).toHaveTextContent("1024");
+    expect(screen.getByTestId("windowHeight")).toHaveTextContent("768");
+    expect(screen.getByTestId("contentHeight")).toHaveTextContent("32");
   });
   it("should return values", () => {
-    window.innerHeight = 700;
-    window.innerWidth = 1000;
-    window.scrollY = 40;
-    window.scrollX = 40;
     act(() => {
-      eventMap.resize();
+      window.innerHeight = 700;
+      window.innerWidth = 1000;
+      window.scrollY = 40;
+      window.scrollX = 40;
     });
-    wrapper.update();
-    expect(wrapper.find("#containerTop").text()).toBe("56");
-    expect(wrapper.find("#containerLeft").text()).toBe("68");
-    expect(wrapper.find("#containerHeight").text()).toBe("32");
-    expect(wrapper.find("#containerWidth").text()).toBe("400");
-    expect(wrapper.find("#tooltipWidth").text()).toBe("400");
-    expect(wrapper.find("#tooltipHeight").text()).toBe("32");
-    expect(wrapper.find("#windowWidth").text()).toBe("1000");
-    expect(wrapper.find("#windowHeight").text()).toBe("700");
-    expect(wrapper.find("#contentHeight").text()).toBe("32");
+
+    render(
+      <Component parent={<Button>Hello world</Button>}>
+        <div>content</div>
+      </Component>,
+    );
+
+    expect(screen.getByTestId("containerTop")).toHaveTextContent("56");
+    expect(screen.getByTestId("containerLeft")).toHaveTextContent("68");
+    expect(screen.getByTestId("containerHeight")).toHaveTextContent("32");
+    expect(screen.getByTestId("containerWidth")).toHaveTextContent("400");
+    expect(screen.getByTestId("tooltipWidth")).toHaveTextContent("400");
+    expect(screen.getByTestId("tooltipHeight")).toHaveTextContent("32");
+    expect(screen.getByTestId("windowWidth")).toHaveTextContent("1000");
+    expect(screen.getByTestId("windowHeight")).toHaveTextContent("700");
+    expect(screen.getByTestId("contentHeight")).toHaveTextContent("32");
   });
 });

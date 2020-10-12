@@ -18,9 +18,9 @@ import calculateTooltipPosition from "../helpers/calculateTooltipPosition";
 import calculateTooltipAlign from "../helpers/calculateTooltipAlign";
 import sortPositionsAndAligns from "../helpers/sortPositionsAndAligns";
 import useDimensions from "../hooks/useDimensions";
-import type { Props } from "./TooltipContent";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
+import type { Props } from "./TooltipContent";
 
 const StyledTooltip = styled.div`
   width: 100%;

@@ -30,7 +30,8 @@ const StyledDialogWrapper = styled.div`
     css`
       ${transition(["transform"], "normal", "ease-in-out")},
       ${transition(["visibility"], "fast", "linear")},
-        ${!shown && theme.orbit.durationNormal}`};
+        ${!shown && theme.orbit.durationNormal}
+    `};
 
   z-index: 10012; // TODO: use some good value
   transform: ${({ shown }) => (!shown ? "translateY(calc(100% + 16px))" : "translateY(0)")};
@@ -87,7 +88,8 @@ const StyledDialogOverlay = styled.div`
   transition: ${({ theme, shown }) => css`
     ${transition(["opacity"], "normal", "ease-in-out")},
     ${transition(["visibility"], "fast", "linear")},
-    ${!shown && theme.orbit.durationNormal}`};
+    ${!shown && theme.orbit.durationNormal}
+  `};
 `;
 
 StyledDialogOverlay.defaultProps = {

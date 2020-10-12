@@ -84,7 +84,6 @@ const CardSection = ({
   };
 
   const slideID = React.useMemo(() => randomID("slideID"), []);
-  const labelID = React.useMemo(() => randomID("labelID"), []);
 
   return (
     <CardWrapper
@@ -101,7 +100,7 @@ const CardSection = ({
           titleAs={titleAs}
           icon={icon}
           slideID={slideID}
-          labelID={labelID}
+          labelID={slideID}
           header={header}
           expandable={expandable}
           expanded={opened}
@@ -117,7 +116,7 @@ const CardSection = ({
         <SectionContent
           expanded={opened}
           slideID={slideID}
-          labelID={labelID}
+          labelID={slideID}
           hasPaddingTop={!!(title != null || header != null || expanded)}
           noSeparator={noSeparator}
           expandable={expandable}

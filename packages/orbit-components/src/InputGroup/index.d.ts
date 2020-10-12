@@ -23,5 +23,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onBlur?: Event;
 }
 
-declare class InputGroup extends React.FC<Props> {}
+declare const InputGroup: React.FC<Props>;
 export { InputGroup, InputGroup as default };

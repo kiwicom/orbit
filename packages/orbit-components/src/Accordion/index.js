@@ -61,10 +61,9 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
             // Determine if section is expanded
             const isExpanded = expandedSection === sectionId;
             const handleDefaultExpand = () => {
-              if (onExpand) {
-                // AccordionSection callback
-                onExpand();
-              }
+              // AccordionSection callback
+              if (onExpand) onExpand();
+
               // Expand section
               onDefaultExpand(sectionId);
             };
@@ -89,3 +88,4 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
 };
 
 export default Accordion;
+export { default as AccordionSection } from "./AccordionSection";

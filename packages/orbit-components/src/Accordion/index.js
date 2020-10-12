@@ -70,15 +70,11 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
 
             return (
               <SectionProvider value={{ expanded: isExpanded, onExpand: handleDefaultExpand }}>
-                {loading ? (
-                  <AccordionWrapper>
-                    <Loading loading={loading} type="boxLoader">
-                      {renderSection(item)}
-                    </Loading>
-                  </AccordionWrapper>
-                ) : (
-                  renderSection(item)
-                )}
+                <AccordionWrapper dataTest={item.props.dataTest}>
+                  <Loading loading={loading} type="boxLoader">
+                    {renderSection(item)}
+                  </Loading>
+                </AccordionWrapper>
               </SectionProvider>
             );
           })

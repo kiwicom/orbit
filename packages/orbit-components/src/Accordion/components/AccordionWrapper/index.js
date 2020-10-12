@@ -21,30 +21,12 @@ StyledAccordionWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const AccordionWrapper = ({
-  children,
-  bottomBorder,
-  roundedBottom,
-  roundedTop,
-  expanded,
-  noBorderTop,
-  dataTest,
-  noPadding,
-  expandable,
-  initialExpanded,
-}: Props) => (
+const AccordionWrapper = ({ dataTest, initialExpanded, ...props }: Props) => (
   <StyledAccordionWrapper
-    bottomBorder={bottomBorder}
-    expanded={expanded || initialExpanded}
+    {...props}
+    expanded={props.expanded || initialExpanded}
     data-test={dataTest}
-    noBorderTop={noBorderTop}
-    expandable={expandable}
-    noPadding={noPadding}
-    roundedBottom={roundedBottom}
-    roundedTop={roundedTop}
-  >
-    {children}
-  </StyledAccordionWrapper>
+  />
 );
 
 export default AccordionWrapper;

@@ -4,8 +4,8 @@ import * as React from "react";
 import type { StepContext, Context } from "./TimelineContext";
 
 export const TimelineStatusContext: React.Context<Context> = React.createContext({
-  statuses: {},
-  setStatuses: () => {},
+  types: {},
+  setTypes: () => {},
 });
 
 export const TimelineStepContext: React.Context<StepContext> = React.createContext({
@@ -14,10 +14,10 @@ export const TimelineStepContext: React.Context<StepContext> = React.createConte
 });
 
 export const TimelineStatusProvider = ({ children }: { children: React.Node }) => {
-  const [statuses, setStatuses] = React.useState({});
+  const [types, setTypes] = React.useState({});
 
   return (
-    <TimelineStatusContext.Provider value={{ statuses, setStatuses }}>
+    <TimelineStatusContext.Provider value={{ types, setTypes }}>
       {children}
     </TimelineStatusContext.Provider>
   );

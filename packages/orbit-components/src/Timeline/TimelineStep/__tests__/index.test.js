@@ -15,17 +15,17 @@ jest.mock("../../../hooks/useMediaQuery", () => {
 describe("#TimelineStep", () => {
   it("should have props", () => {
     const children = "children";
-    const step = "In progress";
-    const time = "In time";
+    const label = "In progress";
+    const subLabel = "In time";
 
     render(
-      <TimelineStep step={step} time={time}>
+      <TimelineStep label={label} subLabel={subLabel}>
         {children}
       </TimelineStep>,
     );
 
     expect(screen.getByText(children)).toBeInTheDocument();
-    expect(screen.getByText(step)).toBeInTheDocument();
-    expect(screen.getByText(time)).toBeInTheDocument();
+    expect(screen.getByText(label)).toBeInTheDocument();
+    expect(screen.getByText(subLabel)).toBeInTheDocument();
   });
 });

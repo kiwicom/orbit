@@ -1,10 +1,10 @@
 // @flow
-export type Status = "success" | "warning" | "critical";
+export type Type = "success" | "warning" | "critical";
 export type Props = {|
   +children: React$Node,
-  +time: string,
-  +step: string,
-  +status?: Status,
+  +subLabel: React$Node,
+  +label: string,
+  +type?: Type,
 |};
 
 declare export default React$ComponentType<Props>;

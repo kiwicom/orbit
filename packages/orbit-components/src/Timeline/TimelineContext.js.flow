@@ -1,10 +1,11 @@
 // @flow
+import type { Type } from "./TimelineStep";
 
 type SetStateAction<S> = S | ((prevState: S) => S);
 type Dispatch<A> = (value: A) => void;
 export type Context = {|
-  statuses: { [key: number]: string | null },
-  setStatuses: Dispatch<SetStateAction<{ [key: number]: string | null }>>,
+  types: { [key: number]: Type },
+  setTypes: Dispatch<SetStateAction<{ [key: number]: Type }>>,
 |};
 
 export type StepContext = {|

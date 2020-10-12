@@ -7,7 +7,6 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
-import { useModalContext } from "../Modal/ModalContext";
 
 import type { Props } from "./index";
 
@@ -15,7 +14,6 @@ const WrapperStyled = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: ${getSpacingToken};
-  z-index: ${({ isInsideModal }) => isInsideModal && `1000`};
 `;
 
 WrapperStyled.defaultProps = {
@@ -23,18 +21,19 @@ WrapperStyled.defaultProps = {
 };
 
 const Timeline = ({ children, spaceAfter, dataTest }: Props) => {
-  const childs = React.Children.toArray(children);
+  const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
-  const { isInsideModal } = useModalContext();
 
-  return childs && childs.length > 0 ? (
-    <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest} isInsideModal={isInsideModal}>
+  return childrenArr && childrenArr.length > 0 ? (
+    <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest}>
       <Stack flex shrink direction={isDesktop ? "row" : "column"}>
         <TimelineStatusProvider>
-          {React.Children.map(childs, (child, i) => {
+          {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {
               return (
-                <TimelineStepContext.Provider value={{ index: i, last: i + 1 === childs.length }}>
+                <TimelineStepContext.Provider
+                  value={{ index: i, last: i + 1 === childrenArr.length }}
+                >
                   {child}
                 </TimelineStepContext.Provider>
               );

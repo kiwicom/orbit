@@ -10,7 +10,7 @@ After adding import into your project you can use it simply like:
 
 ```jsx
 <Timeline>
-  <TimelineStep step="In Progress" time="20.05.2020" status="success">
+  <TimelineStep label="In Progress" time="20.05.2020" type="success">
     We’ll wait for the carrier(s) to send us the refund and contact them again if necessary.
   </TimelineStep>
 </Timeline>
@@ -41,13 +41,13 @@ Table below contains all types of the props in **TimelineStep** component.
 | Name         | Type            | Default | Description                                                               |
 | :----------- | :-------------- | :------ | :------------------------------------------------------------------------ |
 | **children** | `React.Node`    |         | The content of the component                                              |
-| step         | `string`        |         | Text for [`Badge`](https://orbit.kiwi/components/badge/) component inside |
-| status       | [`enum`](#enum) |         | Status of current process step                                            |
-| time         | `string`        |         | Time of current process step                                              |
+| label        | `string`        |         | Text for [`Badge`](https://orbit.kiwi/components/badge/) component inside |
+| type         | [`enum`](#enum) |         | Type of current process step                                              |
+| subLabel     | `string`        |         | SubLabel text of current process step                                     |
 
 ### enum
 
-| status     |
+| type       |
 | :--------- |
 | "success"  |
 | "warning"  |

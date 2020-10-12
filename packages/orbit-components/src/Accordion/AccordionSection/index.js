@@ -33,7 +33,7 @@ const AccordionSection = ({ children, header, footer, actions, expandable = true
       )}
 
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
-        <div expanded={expanded} ref={ref}>
+        <div ref={ref}>
           {children && <SectionContent>{children}</SectionContent>}
           {footer && <SectionFooter>{footer}</SectionFooter>}
         </div>

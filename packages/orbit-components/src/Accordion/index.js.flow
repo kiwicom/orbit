@@ -12,7 +12,6 @@ export type Props = {|
   +children?: React.ChildrenArray<React.Element<AccordionSectionType>>,
   +expanded?: string | number,
   +loading?: boolean,
-  +dataA11ySection?: string,
   ...Globals,
   ...spaceAfter,
 |};

@@ -24,8 +24,8 @@ const getBorderRadius = ({ theme }) => theme.orbit.borderRadiusNormal;
 // Logic of borders radius
 const StyledChildWrapper = styled.div`
   margin: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceXSmall} 0`};
-  transition: margin ${({ theme, initialExpanded }) =>
-    !initialExpanded && theme.orbit.durationFast} ease-in-out;
+  transition: margin ${({ theme, initialExpanded }) => !initialExpanded && theme.orbit.durationFast}
+    ease-in-out;
 
   ${StyledCardSection}, ${StyledCardHeader}, > ${StyledLoading} {
     border-top-left-radius: ${({ roundedTopBorders }) => roundedTopBorders && getBorderRadius};
@@ -41,7 +41,8 @@ const StyledChildWrapper = styled.div`
     background: ${({ theme }) => theme.orbit.backgroundCard};
   }
 
-  + div ${StyledCardSection}, ${StyledCardSection} { // If expanded - next CardSection and current CardSection will have border-top
+  + div ${StyledCardSection}, ${StyledCardSection} {
+    // If expanded - next CardSection and current CardSection will have border-top
     border-top: ${({ expanded }) => expanded && getBorder};
   }
 `;

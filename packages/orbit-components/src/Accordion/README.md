@@ -18,13 +18,13 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Accordion component.
 
-| Name       | Type         | Default | Description                                                                                                                                                    |
-| :--------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| expanded   | `boolean`    | 0       | Optional prop to control expanded state for AccordionSections                                                                                                  |
-| children   | `React.Node` |         | The content of the Accordion. You can use only [AccordionSection](#accordionsection)                                                                           |
-| dataTest   | `string`     |         | Optional prop for testing purposes                                                                                                                             |
-| loading    | `boolean`    |         | If `true` `Loading` will be rendered                                                                                                                           |
-| spaceAfter | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| Name       | Type                                                          | Default | Description                                                                                                                                                    |
+| :--------- | :------------------------------------------------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| expanded   | `boolean`                                                     | 0       | Optional prop to control expanded state for AccordionSections                                                                                                  |
+| children   | `React.ChildrenArray<React.Element<typeof AccordionSection>>` |         | The content of the Accordion. You can use only [AccordionSection](#accordionsection)                                                                           |
+| dataTest   | `string`                                                      |         | Optional prop for testing purposes                                                                                                                             |
+| loading    | `boolean`                                                     |         | If `true` it will render the Loading component                                                                                                                 |
+| spaceAfter | `enum`                                                        |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ### AccordionSection
 

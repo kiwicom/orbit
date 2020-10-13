@@ -8,7 +8,7 @@
     "bootstrap": "lerna bootstrap",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
     "build-ci": "lerna bootstrap && yarn orbit-components build",
-    "postinstall": "yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
+    "postinstall": "yarn orbit-components check:icons && yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
@@ -20,6 +20,7 @@
   "lint-staged": {
     "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",
     "*.md": "prettier --write",
+    "*.svg": "yarn orbit-components check:icons",
     ".browserslistrc": "yarn update-supported-browsers"
   },
   "husky": {

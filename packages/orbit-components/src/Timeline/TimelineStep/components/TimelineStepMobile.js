@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import StyledRelative from "../primitives/StyledRelative";
@@ -24,7 +24,7 @@ StyledIndent.defaultProps = {
 type Props = {|
   ...StepProps,
   last: boolean,
-  typeIcon: React$Node,
+  typeIcon: React.Node,
   nextType: Type,
 |};
 

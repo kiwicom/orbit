@@ -5,7 +5,7 @@ import BadgePrimitive from "../../../primitives/BadgePrimitive";
 import useTheme from "../../../hooks/useTheme";
 
 type Props = {|
-  children: React$Node,
+  children: React.Node,
 |};
 
 const Badge = ({ children }: Props) => {

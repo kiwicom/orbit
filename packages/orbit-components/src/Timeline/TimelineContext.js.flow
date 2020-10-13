@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { Type } from "./TimelineStep";
 
 type SetStateAction<S> = S | ((prevState: S) => S);

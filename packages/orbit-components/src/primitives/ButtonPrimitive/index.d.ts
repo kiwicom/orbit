@@ -10,6 +10,7 @@ export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.Spa
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
   readonly ariaExpanded?: boolean;
+  readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;
   readonly circled?: boolean;
   readonly disabled?: boolean;

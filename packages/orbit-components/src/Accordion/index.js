@@ -47,7 +47,7 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
   return (
     <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
       {children
-        ? React.Children.map(children, (item, key) => {
+        ? React.Children.map(children, (item, i) => {
             if (!item) return null;
 
             const { id, onExpand } = item.props;

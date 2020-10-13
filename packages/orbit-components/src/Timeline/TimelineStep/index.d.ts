@@ -7,7 +7,7 @@ import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Timeline/TimelineStep";
 
-export enum Status {
+export enum Type {
   success,
   warning,
   critical,
@@ -15,9 +15,9 @@ export enum Status {
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
-  readonly time: string;
-  readonly step: string;
-  readonly status?: Status;
+  readonly label: string;
+  readonly subLabel: string;
+  readonly type?: Type;
 }
 
 declare const TimelineStep: React.FC<Props>;

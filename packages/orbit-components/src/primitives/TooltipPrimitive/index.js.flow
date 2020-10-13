@@ -3,6 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltipPrimitive/
 */
 import { ReactComponentStyled } from "styled-components";
+import * as React from "react";
 
 import type { Globals } from "../../common/common.js.flow";
 
@@ -40,8 +41,8 @@ export type Size = {|
 
 export type Props = {|
   ...Globals,
-  +children?: React$Node,
-  +content: React$Node,
+  +children?: React.Node,
+  +content: React.Node,
   +size?: Sizes,
   +stopPropagation?: boolean,
   +preferredPosition?: Positions,
@@ -53,4 +54,4 @@ export type Props = {|
 
 declare export var StyledTooltipChildren: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

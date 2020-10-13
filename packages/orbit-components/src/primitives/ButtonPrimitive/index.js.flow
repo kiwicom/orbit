@@ -17,6 +17,7 @@ export type ButtonCommonProps = {|
   +asComponent?: Component,
   +ariaControls?: string,
   +ariaExpanded?: boolean,
+  +ariaLabelledby?: string,
   +children?: React.Node,
   +circled?: boolean,
   +disabled?: boolean,

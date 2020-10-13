@@ -93,7 +93,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@emotion/core": "^10.0.28",
     "@octokit/rest": "^15.13.1",
-    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-info": "^6.0.0-alpha.2",
     "@storybook/addon-knobs": "^6.0.26",
     "@storybook/addons": "^6.0.26",

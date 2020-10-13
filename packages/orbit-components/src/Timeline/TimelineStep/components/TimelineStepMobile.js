@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 import StyledRelative from "../primitives/StyledRelative";
 import defaultTheme from "../../../defaultTheme";
-import Badge from "./CustomBadge";
+import CustomBadge from "./CustomBadge";
+import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
@@ -43,7 +44,7 @@ const TimelineStepMobile = ({
         <StyledIconWrapper mobile>{typeIcon}</StyledIconWrapper>
         <Stack flex direction="column" spacing="condensed">
           <Stack inline spacing="condensed" align="center">
-            <Badge type={type}>{label}</Badge>
+            {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
             <StyledText>
               <Text size="small">{subLabel}</Text>
             </StyledText>

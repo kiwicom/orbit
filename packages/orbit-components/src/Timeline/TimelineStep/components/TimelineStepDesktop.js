@@ -6,7 +6,8 @@ import StyledRelative from "../primitives/StyledRelative";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import StyledText from "../primitives/StyledText";
-import Badge from "./CustomBadge";
+import CustomBadge from "./CustomBadge";
+import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
 import type { Props as StepProps, Type } from "../index";
@@ -43,7 +44,7 @@ const TimelineStepDesktop = ({
         <StyledProgressLine data-test="progressLine" desktop status={nextType || (last && type)} />
       </StyledRelative>
       <Stack flex align="center" spacing="condensed" direction="column">
-        <Badge type={type}>{label}</Badge>
+        {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
         <StyledDescription>
           <Text align="center" type={type ? "primary" : "secondary"}>
             {children}

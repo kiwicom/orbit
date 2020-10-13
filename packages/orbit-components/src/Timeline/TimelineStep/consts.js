@@ -5,12 +5,6 @@ export const TYPE_OPTIONS = {
   SUCCESS: "success",
   WARNING: "warning",
   CRITICAL: "critical",
-  DARK: "dark",
-  WHITE: "white",
-  INFO_INVERTED: "infoInverted",
-  CRITICAL_INVERTED: "criticalInverted",
-  SUCCESS_INVERTED: "successInverted",
-  WARNING_INVERTED: "warningInverted",
 };
 
 export const TOKENS = {

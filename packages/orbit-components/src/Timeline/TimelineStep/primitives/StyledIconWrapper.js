@@ -10,9 +10,6 @@ const StyledIconWrapper = styled.div`
   min-width: ${({ theme, mobile }) => mobile && theme.orbit.spaceLarge};
   min-height: ${({ theme }) => theme.orbit.spaceLarge};
   z-index: 1;
-  svg {
-    background: ${({ theme }) => theme.orbit.paletteWhite};
-  }
 `;
 
 StyledIconWrapper.defaultProps = {

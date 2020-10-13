@@ -32,18 +32,6 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
     }
   }, [expanded]);
 
-  const onDefaultExpand = React.useCallback(segmentId => setExpandedSection(segmentId), [
-    setExpandedSection,
-  ]);
-
-  const renderSection = item => {
-    if (React.isValidElement(item)) {
-      return React.cloneElement(item);
-    }
-
-    return null;
-  };
-
   return (
     <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
       {children
@@ -65,14 +53,14 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
               if (onExpand) onExpand();
 
               // Expand section
-              onDefaultExpand(sectionId);
+              setExpandedSection(sectionId);
             };
 
             return (
               <SectionProvider value={{ expanded: isExpanded, onExpand: handleDefaultExpand }}>
                 <AccordionWrapper dataTest={item.props.dataTest}>
                   <Loading loading={loading} type="boxLoader">
-                    {renderSection(item)}
+                    {item}
                   </Loading>
                 </AccordionWrapper>
               </SectionProvider>

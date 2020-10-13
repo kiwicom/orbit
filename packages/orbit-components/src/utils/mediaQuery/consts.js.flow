@@ -9,10 +9,10 @@ export type Devices =
 
 declare export var DEVICES: Devices[];
 
-declare export var QUERIES: {
+declare export var QUERIES: {|
   LARGEDESKTOP: "largeDesktop",
   DESKTOP: "desktop",
   TABLET: "tablet",
   LARGEMOBILE: "largeMobile",
   MEDIUMMOBILE: "mediumMobile",
-};
+|};

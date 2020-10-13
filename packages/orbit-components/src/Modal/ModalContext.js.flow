@@ -13,7 +13,7 @@ export type ModalContextProps = {|
 
 export type ModalContextType = React.Context<ModalContextProps>;
 
-export type WithModalContextType = <Config: {}>(
+export type WithModalContextType = <Config: {||}>(
   React.AbstractComponent<Config>,
 ) => React.AbstractComponent<Config>;
 

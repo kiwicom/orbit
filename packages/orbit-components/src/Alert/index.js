@@ -22,11 +22,11 @@ import media from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
-type IconProps = {
+type IconProps = {|
   icon: any,
   type: string,
   className: string,
-};
+|};
 
 const getTypeToken = name => ({ theme, type }) => {
   const tokens = {
@@ -99,11 +99,11 @@ const StyledDiv = ({
   className,
   children,
   dataTest,
-}: {
+}: {|
   className: string,
   children: React.Node,
   dataTest: string,
-}) => (
+|}) => (
   <div className={className} data-test={dataTest}>
     {children}
   </div>

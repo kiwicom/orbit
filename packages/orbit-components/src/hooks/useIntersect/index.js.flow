@@ -4,6 +4,6 @@ type SetAction<S> = S | ((prevState: S) => S);
 
 export type useIntersect = (
   intersect?: IntersectionObserverOptions,
-) => { ref: Dispatch<SetAction<null | Element>> | null, entry: IntersectionObserverEntry | null };
+) => {| ref: Dispatch<SetAction<null | Element>> | null, entry: IntersectionObserverEntry | null |};
 
 declare export default useIntersect;

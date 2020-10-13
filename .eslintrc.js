@@ -15,5 +15,11 @@ module.exports = {
       files: "*.ts",
       extends: ["./config/eslintTS"],
     },
+    {
+      files: ["packages/orbit-components/src/utils/**/*"],
+      rules: {
+        "@typescript-eslint/prefer-readonly-parameter-types": "OFF",
+      },
+    },
   ],
 };

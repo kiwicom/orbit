@@ -7,7 +7,7 @@ import type { Translations } from "../Dictionary";
 import type { Theme } from "../defaultTheme";
 
 export type Props = {|
-  +theme: { ...Theme }, // allow other sub objects with spread
+  +theme: {| ...Theme |}, // allow other sub objects with spread
   +dictionary?: Translations,
   +children: React$Node,
 |};

@@ -15,7 +15,7 @@ export type StepContext = {|
   +last: boolean,
 |};
 
-declare export var TimelineStatusProvider: React.ComponentType<{ children: React.Node }>;
+declare export var TimelineStatusProvider: React.ComponentType<{| children: React.Node |}>;
 declare export var TimelineStepContext: React.Context<StepContext>;
 declare export function useStatuses(): Context;
 declare export function useStep(): StepContext;

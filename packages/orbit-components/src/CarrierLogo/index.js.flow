@@ -6,11 +6,11 @@ import type { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type Carrier = {
+export type Carrier = {|
   code: string,
   name: string,
   type?: "airline" | "bus" | "train" | "ferry" | "private_transfer",
-};
+|};
 
 type Size = "small" | "medium" | "large";
 
@@ -20,10 +20,10 @@ export type Props = {|
   ...Globals,
 |};
 
-type styledCarrierLogo = {
+type styledCarrierLogo = {|
   size: Size,
   carriers: Carrier,
-};
+|};
 
 declare export var StyledCarrierLogo: ReactComponentStyled<styledCarrierLogo>;
 

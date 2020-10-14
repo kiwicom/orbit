@@ -136,14 +136,11 @@ export default async function checkIcons(iconPaths, enforceSize) {
   });
 }
 
-// Paths are provided as arguments as for example in lint staged, and formatted to blob patterns
-const paths = process.argv.slice(2).join(",");
-
-const formatPaths = pattern => {
-  if (Array.isArray(pattern)) {
-    return `{${pattern}}`;
-  }
-  return pattern;
-};
+/*
+ Paths are provided as arguments as for example in lint staged,
+ and formatted to blob pattern strings e.g. '({pattern1, pattern2})
+*/
+const paths = process.argv.slice(2);
+const formatPaths = pattern => (pattern.length > 1 ? `{${pattern.join(",")}}` : pattern[0]);
 
 checkIcons(formatPaths(paths) || DEFAULT_ICON_PATH, DEFAULT_ICON_SIZE);

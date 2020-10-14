@@ -45,7 +45,7 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
             const index = Number(item.key) || i;
 
             // Either use provided id or item index
-            const sectionId = (typeof id !== "undefined" && id) || index;
+            const sectionId = typeof id !== "undefined" ? id : index;
             // Determine if section is expanded
             const isExpanded = expandedSection === sectionId;
             const handleDefaultExpand = () => {

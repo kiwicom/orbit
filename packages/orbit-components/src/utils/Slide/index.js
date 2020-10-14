@@ -28,7 +28,7 @@ StyledSlide.defaultProps = {
 
 class Slide extends React.Component<Props, State> {
   state = {
-    maxHeight: 0,
+    maxHeight: typeof this.props.maxHeight !== "undefined" ? this.props.maxHeight : 0,
     transitionFinished: false,
     visible: false,
   };
@@ -42,7 +42,6 @@ class Slide extends React.Component<Props, State> {
   visibleTimeout = null;
 
   componentDidMount() {
-    this.setMaxHeight();
     if (this.props.expanded) {
       this.setState({ transitionFinished: true, visible: true });
     }

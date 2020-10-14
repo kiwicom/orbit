@@ -40,24 +40,23 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
 
             const { id, onExpand } = item.props;
 
-            // This is used for the case when user wants to map sections and change their order
-            // related issue: https://github.com/kiwicom/orbit/issues/1005
-            const index = Number(item.key) || i;
+            const idNumber = Number(id);
+            const index = Number.isNaN(idNumber) ? i : idNumber;
 
             // Either use provided id or item index
             const sectionId = typeof id !== "undefined" ? id : index;
             // Determine if section is expanded
             const isExpanded = expandedSection === sectionId;
-            const handleDefaultExpand = () => {
-              // AccordionSection callback
-              if (onExpand) onExpand();
 
+            const handleExpand = () => {
+              // AccordionSection callback along with id
+              if (onExpand) onExpand(sectionId);
               // Expand section
               setExpandedSection(sectionId);
             };
 
             return (
-              <SectionProvider value={{ expanded: isExpanded, onExpand: handleDefaultExpand }}>
+              <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand }}>
                 <AccordionWrapper dataTest={item.props.dataTest}>
                   <Loading loading={loading} type="boxLoader">
                     {item}

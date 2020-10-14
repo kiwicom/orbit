@@ -42,7 +42,7 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
 
             // This is used for the case when user wants to map sections and change their order
             // related issue: https://github.com/kiwicom/orbit/issues/1005
-            const index = Number(item.key) || key;
+            const index = Number(item.key) || i;
 
             // Either use provided id or item index
             const sectionId = (typeof id !== "undefined" && id) || index;

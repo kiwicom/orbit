@@ -97,7 +97,7 @@ describe(`Textarea number with error and help`, () => {
   it("should have size prop", () => {
     expect(component.find("Textarea__StyledTextArea").prop("size")).toBe(size);
   });
-  it("should have size prop", () => {
+  it("should have resize prop", () => {
     expect(component.find("Textarea__StyledTextArea").prop("resize")).toBe(resize);
   });
   it("renders FormFeedback", () => {

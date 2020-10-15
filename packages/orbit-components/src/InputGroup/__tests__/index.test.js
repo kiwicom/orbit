@@ -69,12 +69,10 @@ describe(`InputGroup - Phone number`, () => {
   });
   it("should contain a select", () => {
     expect(select.exists()).toBe(true);
+    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should have spaceAFter", () => {
     expect(group.prop("spaceAfter")).toBe(spaceAfter);
-  });
-  it("should contain a select", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
   });
   it("should contain a fake div with styling", () => {
     expect(component.find("InputGroup__FakeGroup").exists()).toBe(true);

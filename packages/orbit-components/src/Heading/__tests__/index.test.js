@@ -50,8 +50,6 @@ describe("Heading in DIV, type Title5", () => {
   );
   it("should have text-transform uppercase", () => {
     expect(component.render().prop("name")).toBe(as);
-  });
-  it("should have text-transform uppercase", () => {
     expect(component).toHaveStyleRule("text-transform", "uppercase");
   });
 });

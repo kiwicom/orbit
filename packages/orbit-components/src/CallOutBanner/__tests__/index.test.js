@@ -48,6 +48,9 @@ describe("CallOutBanner - actionable", () => {
   it("should have tabIndex", () => {
     expect(banner.render().prop("tabindex")).toBe("0");
   });
-  banner.simulate("click");
-  expect(onClick).toHaveBeenCalled();
+
+  it("should be clickabel", () => {
+    banner.simulate("click");
+    expect(onClick).toHaveBeenCalled();
+  });
 });

@@ -18,6 +18,7 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  AccordionSection: "Accordion/AccordionSection",
   DepreacatedCardHeader: "deprecated/Card/CardHeader",
   DeprecatedCard: "deprecated/Card",
   DeprecatedCardSection: "deprecated/Card/CardSection",

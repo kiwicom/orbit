@@ -97,5 +97,6 @@ export { PictureCard } from "./PictureCard/index";
 export { BadgePrimitive } from "./primitives/BadgePrimitive/index";
 export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive/index";
 export { LinkList } from "./LinkList/index";
+export { default as Wizard, WizardStep } from "./Wizard";
 
 export { Icon } from "./Icon/index";

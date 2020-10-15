@@ -46,6 +46,7 @@ const pathOverwrites = {
   TripSector: "deprecated/TripSector",
   TripSegment: "deprecated/TripSegment",
   TimelineStep: "Timeline/TimelineStep",
+  WizardStep: "Wizard/WizardStep",
 };
 
 const parsedImportPaths = [

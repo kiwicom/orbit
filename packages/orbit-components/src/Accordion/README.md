@@ -1,6 +1,6 @@
 # Accordion
 
-To implement Accordion component into your project you'll need to the import at least the Accordion and the [AccordionSection](#Accordionsection):
+To implement Accordion component into your project you'll need to the import the Accordion and the [AccordionSection](#Accordionsection):
 
 ```jsx
 import Accordion, { AccordionSection } from "@kiwicom/orbit-components/lib/Accordion";

@@ -50,7 +50,7 @@ export const StyledModalSection = styled.section`
 
     &:first-of-type {
       margin-top: ${({ suppressed, theme, closable }) =>
-        suppressed && closable && theme.orbit.spaceXXLarge};
+        ((suppressed && closable) || suppressed) && theme.orbit.spaceXXLarge};
       border-top-left-radius: ${({ isMobileFullPage }) =>
         !isMobileFullPage && "9px"}; // TODO: create token
       border-top-right-radius: ${({ isMobileFullPage }) =>

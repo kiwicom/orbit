@@ -25,6 +25,8 @@ export { default as DestinationHeader } from "./deprecated/DestinationHeader";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as PictureCard } from "./PictureCard";
+export { default as Wizard } from "./Wizard";
+export { default as WizardStep } from "./Wizard/WizardStep";
 
 // Card
 export { default as Card } from "./Card";

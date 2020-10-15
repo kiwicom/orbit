@@ -597,6 +597,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
       fixedFooter = false,
       dataTest,
       isMobileFullPage = false,
+      hasCloseButton = true,
     } = this.props;
 
     const {
@@ -642,7 +643,7 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
             isMobileFullPage={isMobileFullPage}
             onMouseDown={this.handleMouseDown}
           >
-            {onClose && (
+            {onClose && hasCloseButton && (
               <CloseContainer
                 modalWidth={modalWidth}
                 size={size}

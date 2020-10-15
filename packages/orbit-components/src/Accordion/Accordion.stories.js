@@ -1,8 +1,6 @@
 // @flow
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import { select } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
 import Stack from "../Stack";

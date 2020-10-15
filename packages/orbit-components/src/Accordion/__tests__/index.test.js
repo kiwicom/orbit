@@ -29,7 +29,7 @@ describe(`Accordion`, () => {
     expect(screen.getByTestId(sectionDataTest)).toBeInTheDocument();
   });
 
-  it("should have passed props", () => {
+  it("should render loading", () => {
     render(
       <Accordion loading>
         <AccordionSection dataTest={sectionDataTest} />

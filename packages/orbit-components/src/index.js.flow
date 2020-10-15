@@ -98,6 +98,7 @@ import typeof BadgePrimitiveType from "./primitives/BadgePrimitive";
 import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
 import typeof ButtonPrimitiveType from "./primitives/ButtonPrimitive";
 import typeof LinkListType from "./LinkList";
+import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
 
 declare export var InputText: any;
 declare export var InputTextarea: any;
@@ -209,6 +210,8 @@ declare export var TripSector: TripSectorType;
 declare export var TripDate: TripDateType;
 declare export var TripLayover: TripLayoverType;
 declare export var Truncate: TruncateType;
+declare export var Wizard: WizardType;
+declare export var WizardStep: WizardStepType;
 
 declare export var ThemeProvider: ThemeProviderType;
 declare export var Translate: TranslateType;

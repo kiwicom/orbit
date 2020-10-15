@@ -1,0 +1,15 @@
+// @flow
+import * as React from "react";
+
+export type Status = "available" | "completed" | "disabled";
+
+export type WizardStepContextValue = {|
+  +index: number,
+  +status: Status,
+  +nextStepStatus: Status,
+  +isCompact: boolean,
+  +isActive: boolean,
+  +onChangeStep?: (stepIndex: number) => void | Promise<any>,
+|};
+
+declare export var WizardStepContext: React.Context<WizardStepContextValue>;

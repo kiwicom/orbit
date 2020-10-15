@@ -1,0 +1,12 @@
+// @flow
+import * as React from "react";
+
+import type { Globals, Translation } from "../common/common.js.flow";
+
+export type Props = {|
+  ...Globals,
+  +title: Translation,
+  +onClick?: (SyntheticEvent<HTMLElement>) => void | Promise<any>,
+|};
+
+declare export default React.ComponentType<Props>;

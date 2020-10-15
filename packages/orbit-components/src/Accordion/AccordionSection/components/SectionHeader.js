@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   align-items: center;
-  min-height: ${({ expanded }) => (expanded ? "auto" : "44px")};
+  min-height: ${({ expanded }) => (expanded ? "19px" : "44px")};
   transition: ${transition(["min-height"], "fast", "ease-in-out")};
 `;
 

@@ -18,7 +18,7 @@ type Props = {|
 |};
 
 const AccordionSectionContent = ({ children, dataTest }: Props) => (
-  <Wrapper data-test={`${dataTest}Content`}>{children}</Wrapper>
+  <Wrapper data-test={dataTest && `${dataTest}Content`}>{children}</Wrapper>
 );
 
 export default AccordionSectionContent;

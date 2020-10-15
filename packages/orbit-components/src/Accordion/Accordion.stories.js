@@ -26,7 +26,7 @@ storiesOf("Accordion", module)
           id="0X0"
           header={
             <Stack spacing="compact">
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }
@@ -37,7 +37,7 @@ storiesOf("Accordion", module)
           id="0X1"
           header={
             <Stack spacing="compact">
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }
@@ -48,7 +48,7 @@ storiesOf("Accordion", module)
           id="0X2"
           header={
             <Stack spacing="compact">
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }
@@ -129,7 +129,7 @@ storiesOf("Accordion", module)
           id="0X0"
           header={
             <Stack>
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }
@@ -140,7 +140,7 @@ storiesOf("Accordion", module)
           id="0X1"
           header={
             <Stack spacing="compact">
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }
@@ -164,7 +164,7 @@ storiesOf("Accordion", module)
           id="0X2"
           header={
             <Stack spacing="compact">
-              <Text type="primdary">This is a header label</Text>
+              <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
           }

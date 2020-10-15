@@ -23,7 +23,7 @@ type Props = {|
 |};
 
 const AccordionSectionFooter = ({ children, dataTest }: Props) => (
-  <Wrapper data-test={`${dataTest}Footer`}>{children}</Wrapper>
+  <Wrapper data-test={dataTest && `${dataTest}Footer`}>{children}</Wrapper>
 );
 
 export default AccordionSectionFooter;

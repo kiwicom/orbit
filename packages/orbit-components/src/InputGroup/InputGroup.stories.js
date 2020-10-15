@@ -46,13 +46,19 @@ storiesOf("InputGroup", module)
         <InputGroup
           label={label}
           flex={flex}
-          error={error}
-          help={help}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
+          onBlurGroup={action("onBlurGroup")}
         >
-          <InputField placeholder="DD" />
+          <InputField
+            placeholder="DD"
+            error={error}
+            help={help}
+            onBlur={action("onBlurIn")}
+            onFocus={action("onFocusIn")}
+            onChange={action("onChangeIn")}
+          />
           <Select options={selectOptions} value={selectValue} placeholder="Month" />
           <InputField placeholder="YYYY" />
         </InputGroup>
@@ -66,7 +72,7 @@ storiesOf("InputGroup", module)
     "Phone number",
     () => {
       const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
-      const error = text("Error", "error");
+      const error = text("Error", undefined);
       const help = text("Help", undefined);
       const selectOptions = [
         { value: 0, label: "Czech Republic (+420)" },
@@ -85,21 +91,117 @@ storiesOf("InputGroup", module)
       return (
         <InputGroup
           flex={flex}
-          error={error}
-          help={help}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
           onBlur={action("onBlur")}
-          label="Phone number"
         >
           <Select
             options={selectOptions}
             value={selectValue}
             customValueText={customValueText}
             prefix={<CountryFlag code="cz" />}
+            error={error}
+            help={help}
           />
           <InputField placeholder={placeholder} maxLength={11} value={inputValue} />
         </InputGroup>
+      );
+    },
+    {
+      info: "Some description about this type of InputGroup in general.",
+    },
+  )
+  .add("Error", () => {
+    const label = text("Label", "Label");
+    const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
+    const error = text("Error", "Something went wrong on day field");
+    const help = text("Help", undefined);
+
+    const selectOptions = [
+      { value: "January", label: "January" },
+      { value: "February", label: "February" },
+      { value: "March", label: "March" },
+      { value: "April", label: "April" },
+      { value: "May", label: "May" },
+      { value: "June", label: "June" },
+      { value: "July", label: "July" },
+      { value: "August", label: "August" },
+      { value: "September", label: "September" },
+      { value: "October", label: "October" },
+      { value: "November", label: "November" },
+      { value: "December", label: "December" },
+    ];
+    const selectValue = select(
+      "Select Value",
+      [null].concat(...selectOptions.map(opt => opt.value)),
+    );
+
+    return (
+      <InputGroup
+        label={label}
+        flex={flex}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onBlur={action("onBlur")}
+      >
+        <InputField placeholder="DD" error={error} help={help} />
+        <Select
+          options={selectOptions}
+          value={selectValue}
+          placeholder="Month"
+          error="Something went wrong on month field"
+          help={help}
+        />
+        <InputField placeholder="YYYY" error="Something went wrong on year field" help={help} />
+      </InputGroup>
+    );
+  })
+  .add(
+    "Validation approches",
+    () => {
+      const inputValue = text("Input Value", undefined);
+      const errorGroup = text("Error on group", "Something went wrong on day field");
+      const helpGroup = text("Help", undefined);
+      const errorSingleField = text("Error inside element", "Something went wrong on day field");
+      const helpSingleField = text("Help inside element", undefined);
+
+      return (
+        <div>
+          <InputGroup
+            label="Events and states on group"
+            onChange={action("onChange Group a+b")}
+            onFocus={action("onFocus Group a+b")}
+            onBlur={action("onBlur Group a+b")}
+            error={errorGroup}
+            help={helpGroup}
+          >
+            <InputField placeholder="a" maxLength={11} value={inputValue} />
+            <InputField placeholder="b" maxLength={11} value={inputValue} />
+          </InputGroup>
+
+          <InputGroup label="Events andd states on children" error={errorGroup}>
+            <InputField
+              placeholder="c"
+              maxLength={11}
+              value={inputValue}
+              error={errorSingleField}
+              help={helpSingleField}
+              onChange={action("onChange c")}
+              onFocus={action("onFocus c")}
+              onBlur={action("onBlur c")}
+            />
+            <InputField
+              placeholder="d"
+              maxLength={11}
+              value={inputValue}
+              error={errorSingleField}
+              help={helpSingleField}
+              onChange={action("onChange d")}
+              onFocus={action("onFocus d")}
+              onBlur={action("onBlur d")}
+            />
+          </InputGroup>
+        </div>
       );
     },
     {
@@ -140,44 +242,6 @@ storiesOf("InputGroup", module)
     },
   )
   .add(
-    "With help",
-    () => {
-      const label = text("Label", "Label");
-      const help = text("Help", "Help message");
-      const inputValue = text("Input Value", undefined);
-
-      return (
-        <InputGroup label={label} help={help} onChange={action("onChange a+b")}>
-          <InputField placeholder="a" maxLength={11} value={inputValue} />
-          <InputField placeholder="b" maxLength={11} value={inputValue} />
-        </InputGroup>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
-    "With error",
-    () => {
-      const label = text("Label", "Label");
-      const error = text("Error", "Error message (explain how to solve it)");
-      const inputValue = text("Input Value", undefined);
-
-      return (
-        <InputGroup label={label} onChange={action("onChange a+b")} error={error}>
-          <InputField placeholder="a" maxLength={11} value={inputValue} />
-          <InputField placeholder="b" maxLength={11} value={inputValue} />
-        </InputGroup>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
     "Playground",
     () => {
       const label = text("Label", "Phone number");
@@ -203,8 +267,6 @@ storiesOf("InputGroup", module)
         <InputGroup
           label={label}
           flex={flex}
-          error={error}
-          help={help}
           size={size}
           onChange={action("onChange")}
           onFocus={action("onFocus")}
@@ -212,7 +274,7 @@ storiesOf("InputGroup", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Select options={selectOptions} value={selectValue} />
+          <Select options={selectOptions} value={selectValue} error={error} help={help} />
           <InputField placeholder={placeholder} value={inputValue} />
           <Select options={selectOptions} value={selectValue} />
           <InputField placeholder={placeholder} value={inputValue} />
@@ -245,16 +307,20 @@ storiesOf("InputGroup", module)
         "Select Value",
         [null].concat(...selectOptions.map(opt => opt.value)),
       );
+      const error = text("Error", undefined);
+      const help = text("Help", undefined);
+      const label = text("Label", "Phone number");
+
       return (
         <RenderInRtl>
           <InputGroup
             flex={flex}
-            label="My label"
             onChange={action("onChange")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
+            label={label}
           >
-            <InputField placeholder="DD" />
+            <InputField placeholder="DD" help={help} error={error} />
             <Select options={selectOptions} value={selectValue} placeholder="Month" />
             <InputField placeholder="YYYY" />
           </InputGroup>

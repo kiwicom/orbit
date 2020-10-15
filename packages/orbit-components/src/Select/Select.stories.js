@@ -135,6 +135,9 @@ storiesOf("Select", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const id = text("ID", "select-id");
       const required = boolean("Required", false);
+      const label = text("Label", "Label");
+      const error = text("Error", "");
+      const help = text("Help", "");
       const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
       return (
@@ -146,7 +149,9 @@ storiesOf("Select", module)
           options={option}
           disabled={disabled}
           name={name}
-          label={text("Label")}
+          label={label}
+          error={error}
+          help={help}
           onChange={action("onChange")}
           onBlur={action("onBlur")}
           onFocus={action("onFocus")}
@@ -165,11 +170,23 @@ storiesOf("Select", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <Select placeholder="My placeholder" options={objectOptions} label="My label" />
-      </RenderInRtl>
-    ),
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "");
+      const help = text("Help", "");
+
+      return (
+        <RenderInRtl>
+          <Select
+            label={label}
+            error={error}
+            help={help}
+            placeholder="My placeholder"
+            options={objectOptions}
+          />
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

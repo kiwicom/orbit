@@ -138,11 +138,17 @@ storiesOf("InputFile", module)
   )
   .add(
     "RTL",
-    () => (
-      <RenderInRtl>
-        <InputFile label="My label" />
-      </RenderInRtl>
-    ),
+    () => {
+      const label = text("Label", "Label");
+      const error = text("Error", "Error message (explain how to solve it)");
+      const help = text("Help", undefined);
+
+      return (
+        <RenderInRtl>
+          <InputFile label={label} error={error} help={help} />
+        </RenderInRtl>
+      );
+    },
     {
       info: "This is a preview of this component in RTL setup.",
     },

@@ -1,0 +1,17 @@
+// @flow
+import type { ReactComponentStyled } from "styled-components";
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+
+type Type = "help" | "error";
+
+export type Props = {|
+  children: React.Node,
+  type?: Type,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var StyledFormFeedback: ReactComponentStyled<any>;

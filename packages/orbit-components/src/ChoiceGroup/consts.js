@@ -11,3 +11,8 @@ export const LABEL_ELEMENTS = {
   H5: "h5",
   H6: "h6",
 };
+
+export const TYPE_OPTIONS = {
+  HELP: "help",
+  ERROR: "error",
+};

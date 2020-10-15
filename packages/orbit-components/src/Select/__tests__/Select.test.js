@@ -79,3 +79,25 @@ describe(`Required field`, () => {
     expect(component.find("FormLabel__StyledAsterisk").exists()).toBe(true);
   });
 });
+
+describe("Select error state", () => {
+  const component = shallow(
+    <Select
+      id={id}
+      value="1"
+      name={name}
+      placeholder={placeholder}
+      options={objectOptions}
+      onChange={mockChange}
+      tabIndex={tabIndex}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+      error="error"
+    />,
+  );
+  const select = component.find("Select__StyledSelect");
+
+  it("should have data-state", () => {
+    expect(select.render().prop("data-state")).toBe("error");
+  });
+});

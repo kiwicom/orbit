@@ -8,6 +8,7 @@ import { StyledTag } from "../../Tag";
 
 import type { Props } from "./index";
 
+// TODO: Error Forms order -1 check
 const StyledInputTags = styled.div`
   position: relative;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
@@ -18,6 +19,7 @@ const StyledInputTags = styled.div`
   z-index: 2;
   min-width: 50px;
   overflow: hidden;
+  order: -1;
 `;
 
 StyledInputTags.defaultProps = {

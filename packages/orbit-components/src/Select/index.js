@@ -10,6 +10,7 @@ import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
+import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
@@ -100,6 +101,7 @@ const StyledSelect = styled(
   width: 100%;
   color: ${({ customValueText }) => customValueText && "transparent !important"};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  color: ${({ customValueText }) => customValueText && "transparent"};
   z-index: 2;
 
   border-radius: 6px;
@@ -173,8 +175,10 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
+export const SelectContainer = styled(({ className, children, labelRef }) => (
+  <div ref={labelRef} className={className}>
+    {children}
+  </div>
 ))`
   position: relative;
   display: flex;
@@ -256,7 +260,7 @@ StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
+const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,
@@ -277,18 +281,40 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
     prefix,
     spaceAfter,
     customValueText,
+    insideInputGroup,
     dataAttrs,
     readOnly,
   } = props;
   const filled = !(value == null || value === "");
+
+  const {
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+    handleBlur,
+  } = useErrorTooltip({ onFocus, onBlur });
+
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
-        <FormLabel filled={filled} disabled={disabled} required={required}>
+        <FormLabel
+          filled={!!filled}
+          error={!!error}
+          help={!!help}
+          disabled={disabled}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+          required={required}
+        >
           {label}
         </FormLabel>
       )}
-      <SelectContainer disabled={disabled}>
+      <SelectContainer disabled={disabled} labelRef={label ? null : labelRef}>
         {prefix && (
           <SelectPrefix prefix={prefix} size={size}>
             {prefix}
@@ -307,8 +333,8 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           value={value == null ? "" : value}
           prefix={prefix}
           name={name}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onChange={onChange}
           filled={filled}
           customValueText={customValueText}
@@ -338,7 +364,16 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           <ChevronDown />
         </SelectSuffix>
       </SelectContainer>
-      <FormFeedback error={error} help={help} />
+      {!insideInputGroup && (
+        <FormFeedback
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          tooltipShown={tooltipShown}
+          tooltipShownHover={tooltipShownHover}
+        />
+      )}
     </Label>
   );
 });

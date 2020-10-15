@@ -1,0 +1,13 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Theme } from "../../../defaultTheme";
+import type { PositionRaw } from "../index";
+
+export type ResolveTooltipPosition = ({
+  theme: Theme,
+  position: string,
+  contentBounding: PositionRaw,
+}) => Interpolation[];
+
+declare export default ResolveTooltipPosition;

@@ -31,7 +31,6 @@ describe("Textarea", () => {
         maxLength={maxLength}
         help={<div>Something useful.</div>}
         onChange={onChange}
-        tabIndex={-1}
         onFocus={onFocus}
         onBlur={onBlur}
         dataTest={dataTest}
@@ -42,9 +41,11 @@ describe("Textarea", () => {
     const textarea = screen.getByRole("textbox");
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    expect(textarea).toHaveAttribute("tabindex", "-1");
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
+
+    const textbox: any = screen.getByRole("textbox");
+    userEvent.tab(textbox);
     expect(screen.getByText("Something useful.")).toBeInTheDocument();
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
@@ -68,6 +69,8 @@ describe("Textarea", () => {
 
   it("should have error", () => {
     render(<Textarea error="error" size="small" />);
+    const textbox: any = screen.getByRole("textbox");
+    userEvent.tab(textbox);
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
   });

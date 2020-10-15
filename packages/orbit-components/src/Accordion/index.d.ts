@@ -12,7 +12,6 @@ declare module "@kiwicom/orbit-components/lib/Accordion";
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children?: React.ReactNode;
   readonly expandedSection?: string | number;
-  readonly initiallyExpandedSection?: string | number;
   readonly loading?: boolean;
   readonly dataA11ySection?: string;
 }

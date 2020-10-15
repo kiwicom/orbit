@@ -9,7 +9,7 @@ export type Props = {|
   +actions?: React$Node,
   +expanded?: boolean,
   +expandable?: boolean,
-  +onExpand?: (sectionId: string | number) => void | Promise<any>,
+  +onExpand?: () => void | Promise<any>,
   +header?: React$Node,
   +footer?: React$Node,
   ...Globals,

@@ -11,7 +11,7 @@ import typeof AccordionSectionType from "./AccordionSection/index.js.flow";
 export type Props = {|
   +children?: React.ChildrenArray<React.Element<AccordionSectionType>>,
   +expandedSection?: string | number,
-  +onExpand?: () => void | Promise<any>,
+  +onExpand?: (sectionId: string | number) => void | Promise<any>,
   +loading?: boolean,
   ...Globals,
   ...spaceAfter,

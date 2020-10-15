@@ -37,7 +37,8 @@ const Accordion = ({
           // Determine if section is expanded
           const isExpanded = expandedSection === id;
           // Callback with section id
-          const handleExpand = () => onExpand(id);
+          // onExpand is not required prop to have easier loading use case
+          const handleExpand = () => onExpand && onExpand(id);
 
           return (
             <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand, loading }}>

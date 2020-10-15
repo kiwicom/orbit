@@ -63,6 +63,8 @@ import typeof CardSectionType from "./Card/CardSection";
 import typeof DeprecatedCardType from "./deprecated/Card";
 import typeof DeprecatedCardCardHeaderType from "./deprecated/Card/CardHeader";
 import typeof DeprecatedCardSectionType from "./deprecated/Card/CardSection";
+import typeof AccordionType from "./Accordion";
+import typeof AccordionSectionType from "./Accordion/AccordionSection";
 import typeof CouponType from "./Coupon";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof PortalType from "./Portal";
@@ -136,6 +138,9 @@ declare export var CardSection: CardSectionType;
 declare export var DeprecatedCard: DeprecatedCardType;
 declare export var DeprecatedCardHeader: DeprecatedCardCardHeaderType;
 declare export var DeprecatedCardSection: DeprecatedCardSectionType;
+
+declare export var Accordion: AccordionType;
+declare export var AccordionSection: AccordionSectionType;
 
 declare export var Coupon: CouponType;
 

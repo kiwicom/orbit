@@ -19,6 +19,7 @@ export interface Props extends Common.Global {
   readonly fixedFooter?: boolean;
   readonly isMobileFullPage?: boolean;
   readonly preventOverlayClose?: boolean;
+  readonly hasCloseButton?: boolean;
 }
 
 export interface State {

@@ -30,6 +30,7 @@ export type Props = {|
   +fixedFooter?: boolean,
   +isMobileFullPage?: boolean,
   +preventOverlayClose?: boolean,
+  +hasCloseButton?: boolean,
   ...Globals,
 |};
 

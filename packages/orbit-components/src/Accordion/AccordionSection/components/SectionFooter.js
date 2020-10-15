@@ -19,10 +19,11 @@ Wrapper.defaultProps = {
 
 type Props = {|
   children: React.Node,
+  dataTest?: string,
 |};
 
-const AccordionSectionFooter = ({ children }: Props) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+const AccordionSectionFooter = ({ children, dataTest }: Props) => (
+  <Wrapper data-test={`${dataTest}Footer`}>{children}</Wrapper>
+);
 
 export default AccordionSectionFooter;

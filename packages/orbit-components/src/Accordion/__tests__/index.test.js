@@ -13,13 +13,7 @@ describe(`Accordion`, () => {
   it("should have passed props", () => {
     render(
       <Accordion expandedSection={expandedSection} onExpand={onExpand} dataTest={dataTest}>
-        <AccordionSection
-          header="Header"
-          footer="Footer"
-          actions="Actions"
-          dataTest={sectionDataTest}
-          id="0X1"
-        >
+        <AccordionSection id="0X1" dataTest={sectionDataTest}>
           Section
         </AccordionSection>
       </Accordion>,
@@ -37,5 +31,25 @@ describe(`Accordion`, () => {
     );
 
     expect(screen.getByTestId(`${sectionDataTest}Loading`)).toBeInTheDocument();
+  });
+
+  describe(`AccordionSection`, () => {
+    it("should render passed components", () => {
+      render(
+        <AccordionSection
+          id="0X1"
+          header="Header"
+          footer="Footer"
+          actions="Actions"
+          dataTest={sectionDataTest}
+        >
+          Section
+        </AccordionSection>,
+      );
+
+      expect(screen.getByTestId(`${sectionDataTest}Header`)).toBeInTheDocument();
+      expect(screen.getByTestId(`${sectionDataTest}Content`)).toBeInTheDocument();
+      expect(screen.getByTestId(`${sectionDataTest}Footer`)).toBeInTheDocument();
+    });
   });
 });

@@ -14,10 +14,11 @@ Wrapper.defaultProps = {
 
 type Props = {|
   children: React.Node,
+  dataTest?: string,
 |};
 
-const AccordionSectionContent = ({ children }: Props) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+const AccordionSectionContent = ({ children, dataTest }: Props) => (
+  <Wrapper data-test={`${dataTest}Content`}>{children}</Wrapper>
+);
 
 export default AccordionSectionContent;

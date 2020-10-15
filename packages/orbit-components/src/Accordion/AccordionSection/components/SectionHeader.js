@@ -40,24 +40,30 @@ type Props = {|
   expandable: boolean,
   onExpand?: () => void | Promise<any>,
   actions?: React.Node,
+  dataTest?: string,
 |};
 
-const AccordionSectionHeader = ({ children, actions, expanded, onExpand, expandable }: Props) => {
-  return (
-    <Wrapper expanded={expanded}>
-      <HeaderContent>{children}</HeaderContent>
-      {!expanded && (
-        <HeaderActions>
-          {expandable &&
-            (actions || (
-              <Button onClick={onExpand} type="secondary">
-                Open
-              </Button>
-            ))}
-        </HeaderActions>
-      )}
-    </Wrapper>
-  );
-};
+const AccordionSectionHeader = ({
+  children,
+  actions,
+  expanded,
+  onExpand,
+  expandable,
+  dataTest,
+}: Props) => (
+  <Wrapper expanded={expanded} data-test={`${dataTest}Header`}>
+    <HeaderContent>{children}</HeaderContent>
+    {!expanded && (
+      <HeaderActions>
+        {expandable &&
+          (actions || (
+            <Button onClick={onExpand} type="secondary">
+              Open
+            </Button>
+          ))}
+      </HeaderActions>
+    )}
+  </Wrapper>
+);
 
 export default AccordionSectionHeader;

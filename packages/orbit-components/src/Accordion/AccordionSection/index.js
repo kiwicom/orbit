@@ -37,6 +37,7 @@ const AccordionSection = ({
             expanded={Boolean(isExpanded)}
             onExpand={onExpand}
             expandable={expandable}
+            dataTest={dataTest}
           >
             {header}
           </SectionHeader>
@@ -44,8 +45,8 @@ const AccordionSection = ({
 
         <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={slideID}>
           <div ref={ref}>
-            {children && <SectionContent>{children}</SectionContent>}
-            {footer && <SectionFooter>{footer}</SectionFooter>}
+            {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
+            {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}
           </div>
         </Slide>
       </Loading>

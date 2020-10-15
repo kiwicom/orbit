@@ -2,6 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 
+import Text from "../Text";
 import Button from "../Button";
 import Stack from "../Stack";
 import AccordionSection from "./AccordionSection";
@@ -21,13 +22,37 @@ storiesOf("Accordion", module)
 
     return (
       <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
-        <AccordionSection id="0X0" header={<Stack>Default Accordion with header</Stack>}>
+        <AccordionSection
+          id="0X0"
+          header={
+            <Stack spacing="compact">
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
+        >
           This is a section content
         </AccordionSection>
-        <AccordionSection id="0X1" header={<Stack>Default Accordion with header</Stack>}>
+        <AccordionSection
+          id="0X1"
+          header={
+            <Stack spacing="compact">
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
+        >
           This is a section content
         </AccordionSection>
-        <AccordionSection id="0X2" header={<Stack>Default Accordion with header</Stack>}>
+        <AccordionSection
+          id="0X2"
+          header={
+            <Stack spacing="compact">
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
+        >
           This is a section content
         </AccordionSection>
       </Accordion>
@@ -61,7 +86,7 @@ storiesOf("Accordion", module)
       </Accordion>
     );
   })
-  .add("Accordion with controlled state", () => {
+  .add("Accordion with custom actions", () => {
     const [expandedSection, setExpandedSection] = React.useState("0X1");
 
     return (
@@ -104,8 +129,8 @@ storiesOf("Accordion", module)
           id="0X0"
           header={
             <Stack>
-              <p>This is a header label</p>
-              <p>This is a header label</p>
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
             </Stack>
           }
         >
@@ -114,9 +139,9 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X1"
           header={
-            <Stack justify="between">
-              <p>This is a header label</p>
-              <p>This is a header label</p>
+            <Stack spacing="compact">
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
             </Stack>
           }
           footer={tmpFooter}
@@ -138,8 +163,9 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X2"
           header={
-            <Stack justify="between">
-              <p>This is a header label</p>
+            <Stack spacing="compact">
+              <Text type="primdary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
             </Stack>
           }
           footer={tmpFooter}

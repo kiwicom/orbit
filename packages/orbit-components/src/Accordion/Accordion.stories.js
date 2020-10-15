@@ -31,7 +31,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X1"
@@ -42,7 +42,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
@@ -53,7 +53,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -73,7 +73,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X1"
@@ -84,7 +84,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
@@ -96,7 +96,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X3"
@@ -107,7 +107,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a section content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -127,7 +127,7 @@ storiesOf("Accordion", module)
           }
           actions={<Button>Open</Button>}
         >
-          This is a content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X1"
@@ -139,7 +139,7 @@ storiesOf("Accordion", module)
           }
           actions={<Button>Open</Button>}
         >
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
@@ -156,7 +156,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -175,7 +175,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          This is a content
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X1"
@@ -187,37 +187,37 @@ storiesOf("Accordion", module)
           }
           footer={tmpFooter}
         >
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
           <Text type="primary" spaceAfter="large">
-            This is a header label
+            This is a content text
           </Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
           <Text type="primary" spaceAfter="large">
-            This is a header label
+            This is a content text
           </Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
           header={
             <Stack spacing="compact">
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
+              <Text type="primary">This is a content text</Text>
+              <Text size="small">This is a content text</Text>
             </Stack>
           }
           footer={tmpFooter}
         >
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
-          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is a content text</Text>
         </AccordionSection>
       </Accordion>
     );

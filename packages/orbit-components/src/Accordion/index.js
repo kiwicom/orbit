@@ -22,15 +22,22 @@ StyledAccordion.defaultProps = {
   theme: defaultTheme,
 };
 
-const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props) => {
+const Accordion = ({
+  children,
+  dataTest,
+  spaceAfter,
+  expandedSection,
+  initiallyExpandedSection,
+  loading,
+}: Props) => {
   // Make first section expanded by default (index 0)
-  const [expandedSection, setExpandedSection] = React.useState(0);
+  const [activeSecion, setExpandedSection] = React.useState(0);
 
   React.useEffect(() => {
-    if (typeof expanded !== "undefined") {
-      setExpandedSection(expanded);
+    if (typeof initiallyExpandedSection !== "undefined") {
+      setExpandedSection(initiallyExpandedSection);
     }
-  }, [expanded]);
+  }, [initiallyExpandedSection]);
 
   return (
     <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
@@ -45,8 +52,11 @@ const Accordion = ({ children, dataTest, spaceAfter, expanded, loading }: Props)
 
             // Either use provided id or item index
             const sectionId = typeof id !== "undefined" ? id : index;
+            const expandedSectionId =
+              typeof expandedSection !== "undefined" ? expandedSection : activeSecion;
+
             // Determine if section is expanded
-            const isExpanded = expandedSection === sectionId;
+            const isExpanded = expandedSectionId === sectionId;
 
             const handleExpand = () => {
               // AccordionSection callback along with id

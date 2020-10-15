@@ -54,10 +54,10 @@ storiesOf("Accordion", module)
       </Accordion>
     );
   })
-  .add("Accordion with actions", () => {
-    const expanded = select("expanded", ["0X0", "0X1", "0X2"], "0X1");
+  .add("Accordion with controlled state", () => {
+    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X1");
     return (
-      <Accordion expanded={expanded}>
+      <Accordion expandedSection={expandedSection}>
         <AccordionSection
           id="0X0"
           header={<div>This is a header label</div>}
@@ -89,7 +89,7 @@ storiesOf("Accordion", module)
   })
   .add("Accordion with sticky footer", () => {
     return (
-      <Accordion expanded="0X1">
+      <Accordion initiallyExpandedSection="0X1">
         <AccordionSection
           id="0X0"
           onExpand={action("onExpand")}

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Button from "../../../Button";
 import defaultTheme from "../../../defaultTheme";
 import transition from "../../../utils/transition";
+import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ type Props = {|
   expandable: boolean,
   onExpand?: () => void | Promise<any>,
   actions?: React.Node,
-  dataTest?: string,
+  ...Globals,
 |};
 
 const AccordionSectionHeader = ({

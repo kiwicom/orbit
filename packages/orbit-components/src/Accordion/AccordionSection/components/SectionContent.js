@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
+import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
   padding: ${({ theme }) => `0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge}`};
@@ -14,7 +15,7 @@ Wrapper.defaultProps = {
 
 type Props = {|
   children: React.Node,
-  dataTest?: string,
+  ...Globals,
 |};
 
 const AccordionSectionContent = ({ children, dataTest }: Props) => (

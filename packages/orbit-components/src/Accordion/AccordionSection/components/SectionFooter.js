@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
+import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ Wrapper.defaultProps = {
 
 type Props = {|
   children: React.Node,
-  dataTest?: string,
+  ...Globals,
 |};
 
 const AccordionSectionFooter = ({ children, dataTest }: Props) => (

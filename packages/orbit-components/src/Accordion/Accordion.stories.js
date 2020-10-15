@@ -66,21 +66,47 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X0"
           expandable={false}
-          header={<Stack>Default Accordion with header</Stack>}
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
         >
           This is a section content
         </AccordionSection>
-        <AccordionSection id="0X1" header={<Stack>Default Accordion with header</Stack>}>
+        <AccordionSection
+          id="0X1"
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
+        >
           This is a section content
         </AccordionSection>
         <AccordionSection
           id="0X2"
           expandable={false}
-          header={<Stack>Default Accordion with header</Stack>}
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
         >
           This is a section content
         </AccordionSection>
-        <AccordionSection id="0X3" header={<Stack>Default Accordion with header</Stack>}>
+        <AccordionSection
+          id="0X3"
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
+        >
           This is a section content
         </AccordionSection>
       </Accordion>
@@ -93,21 +119,36 @@ storiesOf("Accordion", module)
       <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection
           id="0X0"
-          header={<Stack>This is a header label</Stack>}
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
           actions={<Button>Open</Button>}
         >
           This is a content
         </AccordionSection>
         <AccordionSection
           id="0X1"
-          header={<Stack>This is a header label</Stack>}
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
           actions={<Button>Open</Button>}
         >
-          This is a content
+          <Text type="primary">This is a header label</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
-          header={<Stack>This is a header label</Stack>}
+          header={
+            <Stack>
+              <Text type="primary">This is a header label</Text>
+              <Text size="small">This is a header label</Text>
+            </Stack>
+          }
           actions={
             <Stack direction="row">
               <Button type="secondary">Edit</Button>
@@ -115,7 +156,7 @@ storiesOf("Accordion", module)
             </Stack>
           }
         >
-          Ja sam content 3
+          <Text type="primary">This is a header label</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -146,19 +187,22 @@ storiesOf("Accordion", module)
           }
           footer={tmpFooter}
         >
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
-          <br />
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
-          <br />
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary" spaceAfter="large">
+            This is a header label
+          </Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary" spaceAfter="large">
+            This is a header label
+          </Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
         </AccordionSection>
         <AccordionSection
           id="0X2"
@@ -170,10 +214,10 @@ storiesOf("Accordion", module)
           }
           footer={tmpFooter}
         >
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
-          This is a content <br />
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
+          <Text type="primary">This is a header label</Text>
         </AccordionSection>
       </Accordion>
     );

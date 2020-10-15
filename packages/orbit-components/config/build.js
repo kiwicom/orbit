@@ -9,6 +9,7 @@ import mkdirp from "mkdirp";
 import glob from "glob";
 import svgr from "@svgr/core";
 
+import { getProperty, getHTMLComments } from "./checkIcons";
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
 import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts";
 
@@ -30,78 +31,8 @@ const names = files.map(inputFileName => {
 const componentPath = path.join(__dirname, "..", "src", "icons");
 mkdirp(componentPath);
 
-function getHTMLComments(content) {
-  const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
-  if (rawComments) {
-    return Object.assign(
-      {},
-      ...rawComments.map(item => {
-        // remove HTML comments and split by colon
-        const items = item.replace(/<!--([\s\S]*?)-->/gm, "$1").split(":");
-        // one icon has color as character
-        const value = items[1] === "" && items[2] === "" ? ":" : items[1];
-        return { [items[0]]: value };
-      }),
-    );
-  }
-  return null;
-}
-
-const allIconsCharacters = [];
-
-function getHTMLCommentsWithCheck(content, baseName) {
-  const comments = getHTMLComments(content);
-  if (!comments || !comments.character) {
-    console.error(
-      `A character value needs to be present in SVG definition of ${baseName}.svg as HTML comment. Otherwise the icon font build will be broken.`,
-    );
-    process.exit(1);
-  }
-  allIconsCharacters.forEach(({ name, char }) => {
-    if (char === comments.character) {
-      console.error(
-        `A character ${comments.character} is already present on ${name} icon. Change the character value on ${baseName}, so it's unique.`,
-      );
-      process.exit(1);
-    }
-  });
-  allIconsCharacters.push({ name: baseName, char: comments.character });
-  return comments;
-}
-
-function getProperty(attributes, name, defaultValue = null) {
-  for (let i = attributes.length - 1; i >= 0; i -= 1) {
-    if (attributes[i].name === name) {
-      return attributes[i].value;
-    }
-  }
-  return defaultValue;
-}
 function getViewBox(attributes) {
   return getProperty(attributes, "viewBox", "0 0 24 24");
-}
-
-function findFillAttributes(dom, content, name) {
-  const comments = getHTMLComments(dom.serialize());
-  // only check icons that don't have replacement for icon font
-  if (comments && comments.iconFont !== "false" && comments.customColor == null) {
-    const prohibitedAttributes = ["fill", "fill-rule"];
-    const phrase = attrName =>
-      `${attrName} attribute find on ${name} SVG icon. Please delete the ${attrName} or redraw the icon. Otherwise the icon font will be broken.`;
-
-    const findAttrAndThrowErr = node => {
-      prohibitedAttributes.forEach(n => {
-        if (getProperty(node.attributes, n)) {
-          console.error(phrase(n));
-          process.exit(1);
-        }
-      });
-    };
-    // For the main DOM element
-    findAttrAndThrowErr(content);
-    // for all the children - paths
-    Object.values(content.children).forEach(node => findAttrAndThrowErr(node));
-  }
 }
 
 const template = (code, config, state) => `
@@ -137,7 +68,7 @@ export { ${functionName}, ${functionName} as default };
 names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) => {
   const dom = await JSDOM.fromFile(inputFileName);
   const content = dom.window.document.querySelector("svg");
-  findFillAttributes(dom, content, inputFileName);
+
   svgr(
     content.outerHTML,
     { svgAttributes: { viewBox: getViewBox(content.attributes) }, template },
@@ -193,7 +124,7 @@ Promise.all(
         fs.readFile(inputFileName, "utf8", (err, content) => {
           if (err) reject();
           // only get the HTML comments
-          const comments = getHTMLCommentsWithCheck(content, baseName);
+          const comments = getHTMLComments(content, baseName);
           const url = `https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/src/icons/svg/${baseName}.svg`;
           const dom = JSDOM.fragment(content);
           const svg = dom.querySelector("svg").outerHTML;

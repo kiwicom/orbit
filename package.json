@@ -20,6 +20,7 @@
   "lint-staged": {
     "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",
     "*.md": "prettier --write",
+    "*.svg": "yarn orbit-components check:icons",
     ".browserslistrc": "yarn update-supported-browsers"
   },
   "husky": {

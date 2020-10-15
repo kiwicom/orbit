@@ -38,6 +38,10 @@ export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
 export { default as DestinationCard } from "./deprecated/DestinationCard";
 
+// Accordion
+export { default as Accordion } from "./Accordion";
+export { default as AccordionSection } from "./Accordion/AccordionSection";
+
 // Modal
 export { default as Portal } from "./Portal";
 export { default as ClickOutside } from "./ClickOutside";

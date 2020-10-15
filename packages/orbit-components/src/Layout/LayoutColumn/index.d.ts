@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
-import { Devices } from "../../utils/mediaQuery/index";
+import { Devices } from "../../utils/mediaQuery/consts";
 
 declare module "@kiwicom/orbit-components/lib/LayoutColumn";
 

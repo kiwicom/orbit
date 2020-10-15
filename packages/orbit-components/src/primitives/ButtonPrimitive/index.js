@@ -29,6 +29,7 @@ export const StyledButtonPrimitive = styled(
     forwardedRef,
     ariaControls,
     ariaExpanded,
+    ariaLabelledby,
     title,
     className,
     rel,
@@ -61,6 +62,7 @@ export const StyledButtonPrimitive = styled(
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
         aria-label={title}
+        aria-labelledby={ariaLabelledby}
         type={!isButtonWithHref ? buttonType : undefined}
         className={className}
         disabled={disabled}

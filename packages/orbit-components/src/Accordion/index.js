@@ -29,7 +29,7 @@ const Accordion = ({
   loading,
 }: Props) => {
   // Make first section expanded by default (index 0)
-  const [activeSecion, setExpandedSection] = React.useState(0);
+  const [activeSection, setExpandedSection] = React.useState(0);
 
   React.useEffect(() => {
     if (typeof initiallyExpandedSection !== "undefined") {
@@ -51,7 +51,7 @@ const Accordion = ({
             // Either use provided id or item index
             const sectionId = typeof id !== "undefined" ? id : index;
             const expandedSectionId =
-              typeof expandedSection !== "undefined" ? expandedSection : activeSecion;
+              typeof expandedSection !== "undefined" ? expandedSection : activeSection;
 
             // Determine if section is expanded
             const isExpanded = expandedSectionId === sectionId;

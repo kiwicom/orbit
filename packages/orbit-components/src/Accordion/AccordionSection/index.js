@@ -30,7 +30,7 @@ const AccordionSection = ({
 
   return (
     <AccordionWrapper dataTest={dataTest}>
-      <Loading loading={loading} type="boxLoader">
+      <Loading loading={loading} type="boxLoader" dataTest={`${dataTest}Loading`}>
         {header && (
           <SectionHeader
             actions={actions}

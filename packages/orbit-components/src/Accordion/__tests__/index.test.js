@@ -4,14 +4,13 @@ import { render, screen } from "@testing-library/react";
 
 import Accordion, { AccordionSection } from "../index";
 
-const expandedSection = "0X1";
-const dataTest = "test";
-const sectionDataTest = "test-section";
-
 describe(`Accordion`, () => {
-  beforeEach(() => {
-    const onExpand = jest.fn();
+  const expandedSection = "0X1";
+  const dataTest = "Accordion";
+  const sectionDataTest = "AccordionSection";
+  const onExpand = jest.fn();
 
+  it("should have passed props", () => {
     render(
       <Accordion expandedSection={expandedSection} onExpand={onExpand} dataTest={dataTest}>
         <AccordionSection
@@ -25,10 +24,18 @@ describe(`Accordion`, () => {
         </AccordionSection>
       </Accordion>,
     );
+
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    expect(screen.getByTestId(sectionDataTest)).toBeInTheDocument();
   });
 
   it("should have passed props", () => {
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    expect(screen.getByTestId(sectionDataTest)).toBeInTheDocument();
+    render(
+      <Accordion loading>
+        <AccordionSection dataTest={sectionDataTest} />
+      </Accordion>,
+    );
+
+    expect(screen.getByTestId(`${sectionDataTest}Loading`)).toBeInTheDocument();
   });
 });

@@ -19,9 +19,10 @@ const tmpFooter = (
 
 storiesOf("Accordion", module)
   .add("Default", () => {
-    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X0");
+    const [expandedSection, setExpandedSection] = React.useState("0X1");
+
     return (
-      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection id="0X0" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
@@ -35,9 +36,10 @@ storiesOf("Accordion", module)
     );
   })
   .add("Accordion with disabled sections", () => {
-    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2", "0X3"], "0X1");
+    const [expandedSection, setExpandedSection] = React.useState("0X1");
+
     return (
-      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection
           id="0X0"
           expandable={false}
@@ -62,9 +64,10 @@ storiesOf("Accordion", module)
     );
   })
   .add("Accordion with controlled state", () => {
-    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X1");
+    const [expandedSection, setExpandedSection] = React.useState("0X1");
+
     return (
-      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection
           id="0X0"
           header={<Stack>This is a header label</Stack>}
@@ -95,9 +98,10 @@ storiesOf("Accordion", module)
     );
   })
   .add("Accordion with sticky footer", () => {
-    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X1");
+    const [expandedSection, setExpandedSection] = React.useState("0X1");
+
     return (
-      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection
           id="0X0"
           header={

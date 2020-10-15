@@ -12,6 +12,7 @@ export type Type = "primary" | "secondary";
 type Size = "large" | "normal" | "small";
 
 export type Props = {|
+  +ariaCurrent?: string,
   +children: React$Node,
   +href?: string,
   +icon?: React$Node,

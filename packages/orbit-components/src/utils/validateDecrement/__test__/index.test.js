@@ -5,6 +5,7 @@ import validateDecrement from "../index";
 describe("ValidateDecrement", () => {
   it("Should be 0", () => {
     expect(validateDecrement({ value: 1, minValue: 0, step: 1 })).toBe(0);
+    expect(validateDecrement({ value: -10, minValue: 0, step: 1.5 })).toBe(0);
   });
 
   it("Should be 1", () => {
@@ -17,10 +18,6 @@ describe("ValidateDecrement", () => {
 
   it("Should be 0.5", () => {
     expect(validateDecrement({ value: 2, minValue: 0, step: 1.5 })).toBe(0.5);
-  });
-
-  it("Should be 0", () => {
-    expect(validateDecrement({ value: -10, minValue: 0, step: 1.5 })).toBe(0);
   });
 
   it("Should be -11", () => {

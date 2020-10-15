@@ -62,5 +62,10 @@ module.exports = {
     "no-await-in-loop": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "jest/no-identical-title": "error",
+    "jest/no-standalone-expect": "error",
+    "jest/no-if": "error",
+    "jest/consistent-test-it": "warn",
+    "jest/no-focused-tests": "error",
   },
 };

@@ -47,8 +47,6 @@ describe("Select", () => {
   });
   it("should have data-state", () => {
     expect(select.render().prop("data-state")).toBe("ok");
-  });
-  it("should have data-state", () => {
     expect(select.render().prop("data-recording-ignore")).toBe("true");
   });
   it("should have name", () => {
@@ -62,8 +60,6 @@ describe("Select", () => {
   });
   it("should have placeholder", () => {
     expect(select.childAt(0).text()).toBe(placeholder);
-  });
-  it("should have placeholder", () => {
     expect(select.render().prop("id")).toBe(id);
   });
 });

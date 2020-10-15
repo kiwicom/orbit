@@ -10,7 +10,7 @@ import Slide from "../index";
 
 describe("slide util", () => {
   describe("server-side", () => {
-    test("expanded", () => {
+    it("should be expanded", () => {
       const sheet = new ServerStyleSheet();
       renderToStaticMarkup(
         sheet.collectStyles(

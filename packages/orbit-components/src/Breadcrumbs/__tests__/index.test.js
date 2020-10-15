@@ -13,7 +13,7 @@ import BreadcrumbsItem from "../BreadcrumbsItem";
 // inaccessible, so we're replacing <Hide> with a dummy component
 jest.mock("../../Hide", () => ({ children }) => children);
 
-describe("Breadcrumbs", () => {
+describe("#Breadcrumbs", () => {
   const dataTest = "test";
   const onGoBack = jest.fn();
   beforeEach(() => {
@@ -31,12 +31,14 @@ describe("Breadcrumbs", () => {
     expect(screen.getByLabelText("Breadcrumb")).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
   });
+
   it("ol should contain correct item type", () => {
     expect(screen.getByRole("list")).toHaveAttribute(
       "itemType",
       expect.stringContaining("BreadcrumbList"),
     );
   });
+
   it("children should contain active and contentKey", () => {
     expect(screen.getByRole("listitem")).toHaveAttribute("aria-current", "page");
     expect(document.querySelector("meta")).toHaveAttribute("content", "1");

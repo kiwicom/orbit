@@ -5,16 +5,17 @@ import { render, screen } from "@testing-library/react";
 import Slide from "../index";
 
 describe(`slide util`, () => {
-  test("a11y", () => {
+  it("should has a11y", () => {
     render(
       <Slide maxHeight={20} expanded>
         Expanded content
       </Slide>,
     );
+
     expect(screen.getByText("Expanded content")).toHaveAttribute("aria-hidden", "false");
   });
 
-  test("expand, collapse, expand", () => {
+  it("should: expand, collapse, expand", () => {
     jest.useFakeTimers();
 
     const { rerender } = render(

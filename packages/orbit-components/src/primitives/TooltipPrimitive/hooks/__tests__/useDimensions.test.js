@@ -56,7 +56,7 @@ describe("useDimensions", () => {
     expect(screen.getByTestId("windowHeight")).toHaveTextContent("768");
     expect(screen.getByTestId("contentHeight")).toHaveTextContent("32");
   });
-  it("should return values", () => {
+  it("should return values after resize", () => {
     act(() => {
       window.innerHeight = 700;
       window.innerWidth = 1000;

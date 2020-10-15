@@ -19,7 +19,7 @@ describe("Histogram in Slider", () => {
       expect(node.prop("active")).toBe(dataActive[index]);
     });
   });
-  it("should have four columns", () => {
+  it("should have four columns (value: [3, 4])", () => {
     component.setProps({ value: [3, 4] });
     const dataActive = [false, false, true, true];
     const children = component

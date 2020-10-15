@@ -1,6 +1,6 @@
 // @flow
 import sortPositionsAndAligns from "../sortPositionsAndAligns";
-import defaultTheme from "../../../defaultTheme";
+import defaultTheme from "../../../../defaultTheme";
 import { POSITIONS, RTL_POSITIONS, ALIGNS } from "../../consts";
 
 const positionsLTR = Object.values(POSITIONS);

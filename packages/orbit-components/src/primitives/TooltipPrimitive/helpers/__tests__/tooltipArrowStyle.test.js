@@ -1,6 +1,6 @@
 // @flow
 import tooltipArrowStyle from "../tooltipArrowStyle";
-import defaultTheme from "../../../defaultTheme";
+import defaultTheme from "../../../../defaultTheme";
 
 const params = position => ({ position, theme: defaultTheme });
 const resultWithColor = (width, color) =>

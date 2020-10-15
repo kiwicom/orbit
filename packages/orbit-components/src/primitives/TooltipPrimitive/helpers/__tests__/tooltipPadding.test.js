@@ -1,6 +1,6 @@
 // @flow
 import tooltipPadding from "../tooltipPadding";
-import defaultTheme from "../../../defaultTheme";
+import defaultTheme from "../../../../defaultTheme";
 
 const dimensions = {
   windowHeight: 789,

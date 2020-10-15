@@ -13,6 +13,7 @@ export const ModalContext: ModalContextType = React.createContext({
   closable: false,
 });
 ModalContext.displayName = "ModalOrbitContext";
+
 export const withModalContext: WithModalContextType = Component => props => (
   <ModalContext.Consumer>
     {
@@ -22,3 +23,5 @@ export const withModalContext: WithModalContextType = Component => props => (
     }
   </ModalContext.Consumer>
 );
+
+export const useModalContext = () => React.useContext(ModalContext);

@@ -100,6 +100,8 @@ export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";
+export { default as Timeline } from "./Timeline";
+export { default as TimelineStep } from "./Timeline/TimelineStep";
 export { default as TileGroup } from "./TileGroup";
 export { default as Tooltip } from "./Tooltip";
 export { default as Translate } from "./Translate";

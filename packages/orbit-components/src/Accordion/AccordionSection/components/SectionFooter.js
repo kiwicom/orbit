@@ -7,7 +7,7 @@ import defaultTheme from "../../../defaultTheme";
 const Wrapper = styled.div`
   display: flex;
   padding: ${({ theme }) => theme.orbit.spaceLarge};
-  background-color: white;
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
   position: sticky;
   bottom: 0;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};

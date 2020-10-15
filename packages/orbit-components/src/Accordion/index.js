@@ -2,8 +2,6 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Loading from "../Loading";
-import AccordionWrapper from "./components/AccordionWrapper";
 import defaultTheme from "../defaultTheme";
 import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
@@ -66,12 +64,8 @@ const Accordion = ({
             };
 
             return (
-              <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand }}>
-                <AccordionWrapper dataTest={item.props.dataTest}>
-                  <Loading loading={loading} type="boxLoader">
-                    {item}
-                  </Loading>
-                </AccordionWrapper>
+              <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand, loading }}>
+                {item}
               </SectionProvider>
             );
           })

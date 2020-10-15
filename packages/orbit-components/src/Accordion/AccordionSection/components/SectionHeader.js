@@ -7,8 +7,7 @@ import defaultTheme from "../../../defaultTheme";
 
 const Wrapper = styled.div`
   display: flex;
-  padding: ${({ theme, noPadding }) =>
-    !noPadding && `${theme.orbit.spaceXLarge} ${theme.orbit.spaceLarge}`};
+  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   align-items: center;
 `;
@@ -40,13 +39,7 @@ type Props = {|
   actions?: React.Node,
 |};
 
-const AccordionSectionHeader = ({
-  children,
-  actions,
-  expanded,
-  onExpand,
-  expandable = true,
-}: Props) => {
+const AccordionSectionHeader = ({ children, actions, expanded, onExpand, expandable }: Props) => {
   return (
     <Wrapper>
       <HeaderContent>{children}</HeaderContent>

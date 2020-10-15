@@ -18,5 +18,5 @@ export type WithModalContextType = <Config: {}>(
 ) => React.AbstractComponent<Config>;
 
 declare export var ModalContext: ModalContextType;
-
+declare export function useModalContext(): ModalContextProps;
 declare export var withModalContext: WithModalContextType;

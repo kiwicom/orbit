@@ -81,6 +81,8 @@ export { TableCell } from "./Table/TableCell/index";
 export { TableHead } from "./Table/TableHead/index";
 export { TableRow } from "./Table/TableRow/index";
 export { TableFooter } from "./Table/TableFooter/index";
+export { Timeline } from "./Timeline";
+export { TimelineStep } from "./Timeline/TimelineStep";
 export { Layout } from "./Layout/index";
 export { LayoutColumn } from "./Layout/LayoutColumn/index";
 export { Grid } from "./utils/Grid/index";

@@ -1,6 +1,7 @@
 // @flow
 import styled, { css } from "styled-components";
 
+import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
 const renderStatus = (type, theme) => {
@@ -12,12 +13,11 @@ const renderStatus = (type, theme) => {
 };
 
 const StyledProgressLine = styled.span`
-  ${({ desktop, theme, status, isLeft }) => css`
+  ${({ desktop, theme, status }) => css`
     ${!desktop && `position: absolute`};
     ${!desktop && `top: 18px`};
     width: ${desktop ? "50%" : "2px"};
-    ${isLeft ? `left: 0` : `right: -20px`};
-    ${!desktop && `left: 11px`};
+    ${left}: 11px;
     background: ${renderStatus(status, theme)};
     height: ${desktop ? `2px` : `calc(100% + 4px)`};
   `}

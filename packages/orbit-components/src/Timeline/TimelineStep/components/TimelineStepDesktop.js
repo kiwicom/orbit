@@ -17,6 +17,10 @@ const StyledDescription = styled.div`
   width: 100%;
 `;
 
+const StyledAligned = styled.div`
+  text-align: center;
+`;
+
 type Props = {|
   ...StepProps,
   last: boolean,
@@ -39,12 +43,20 @@ const TimelineStepDesktop = ({
         <Text size="small">{subLabel}</Text>
       </StyledText>
       <StyledRelative inner>
-        <StyledProgressLine data-test="progressLine" desktop isLeft status={type} />
+        <StyledProgressLine data-test="progressLine" desktop status={type} />
         <StyledIconWrapper>{typeIcon}</StyledIconWrapper>
         <StyledProgressLine data-test="progressLine" desktop status={nextType || (last && type)} />
       </StyledRelative>
       <Stack flex align="center" spacing="condensed" direction="column">
-        {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
+        {!type ? (
+          <CustomBadge>
+            <StyledAligned>{label}</StyledAligned>
+          </CustomBadge>
+        ) : (
+          <Badge type={type}>
+            <StyledAligned>{label}</StyledAligned>
+          </Badge>
+        )}
         <StyledDescription>
           <Text align="center" type={type ? "primary" : "secondary"}>
             {children}

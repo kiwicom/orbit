@@ -42,7 +42,7 @@ const TimelineStepMobile = ({
       <Stack inline spaceAfter="large">
         {!last && <StyledProgressLine status={nextType} data-test="progressLine" />}
         <StyledIconWrapper mobile>{typeIcon}</StyledIconWrapper>
-        <Stack flex direction="column" spacing="condensed">
+        <Stack flex shrink direction="column" spacing="condensed">
           <Stack inline spacing="condensed" align="center">
             {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
             <StyledText>

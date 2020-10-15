@@ -1,6 +1,6 @@
 // @flow
 import resolveContainerPosition from "../resolveContainerPosition";
-import defaultTheme from "../../../defaultTheme";
+import defaultTheme from "../../../../defaultTheme";
 
 const dimensions = {
   windowHeight: 789,

@@ -1,6 +1,6 @@
 // @flow
 import type { Aligns, Positions } from "../index";
-import type { Theme } from "../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
 
 type PositionsAndAligns = [Positions[], Aligns[]];
 

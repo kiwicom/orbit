@@ -30,6 +30,7 @@ export const StyledButtonPrimitive = styled(
     ariaControls,
     ariaExpanded,
     ariaLabelledby,
+    ariaCurrent,
     title,
     className,
     rel,
@@ -60,6 +61,7 @@ export const StyledButtonPrimitive = styled(
         ref={forwardedRef}
         data-test={dataTest}
         aria-controls={ariaControls}
+        aria-current={ariaCurrent}
         aria-expanded={ariaExpanded}
         aria-label={title}
         aria-labelledby={ariaLabelledby}

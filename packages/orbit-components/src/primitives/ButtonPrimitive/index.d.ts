@@ -9,6 +9,7 @@ type functionReturningString = () => string;
 export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
+  readonly ariaCurrent?: string;
   readonly ariaExpanded?: boolean;
   readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;

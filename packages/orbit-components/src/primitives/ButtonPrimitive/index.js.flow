@@ -16,6 +16,7 @@ export type Size = "small" | "normal" | "large";
 export type ButtonCommonProps = {|
   +asComponent?: Component,
   +ariaControls?: string,
+  +ariaCurrent?: string,
   +ariaExpanded?: boolean,
   +ariaLabelledby?: string,
   +children?: React.Node,

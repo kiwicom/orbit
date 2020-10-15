@@ -1,7 +1,7 @@
 // @flow
 
 export type Context = {|
-  +onExpand: () => void,
+  +onExpand?: () => void,
   +expanded: boolean,
   +loading?: boolean,
 |};

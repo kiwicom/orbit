@@ -24,8 +24,9 @@ const AccordionSection = ({
   const { expanded, onExpand, loading } = useAccordion();
 
   const slideID = React.useMemo(() => randomID("slideID"), []);
+  const isExpanded = expandable && expanded;
 
-  const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
+  const [{ height }, ref] = useBoundingRect({ height: isExpanded ? null : 0 });
 
   return (
     <AccordionWrapper dataTest={dataTest}>
@@ -33,7 +34,7 @@ const AccordionSection = ({
         {header && (
           <SectionHeader
             actions={actions}
-            expanded={Boolean(expanded)}
+            expanded={Boolean(isExpanded)}
             onExpand={onExpand}
             expandable={expandable}
           >
@@ -41,7 +42,7 @@ const AccordionSection = ({
           </SectionHeader>
         )}
 
-        <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={slideID}>
+        <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={slideID}>
           <div ref={ref}>
             {children && <SectionContent>{children}</SectionContent>}
             {footer && <SectionFooter>{footer}</SectionFooter>}

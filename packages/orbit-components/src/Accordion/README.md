@@ -20,6 +20,7 @@ Table below contains all types of the props available in the Accordion component
 
 | Name       | Type                                                          | Default | Description                                                                                                                                                    |
 | :--------- | :------------------------------------------------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onExpand   | `() => void \| Promise`                                       |         | Callback (along with sectionId) that is triggered when section is expanding                                                                                    |
 | expanded   | `boolean`                                                     | 0       | Optional prop to control expanded state for AccordionSections                                                                                                  |
 | children   | `React.ChildrenArray<React.Element<typeof AccordionSection>>` |         | The content of the Accordion. You can use only [AccordionSection](#accordionsection)                                                                           |
 | dataTest   | `string`                                                      |         | Optional prop for testing purposes                                                                                                                             |
@@ -35,8 +36,14 @@ import Accordion, { AccordionSection } from "@kiwicom/orbit-components/lib/Accor
 #### Usage:
 
 ```jsx
-<Accordion>
-  <AccordionSection>Hello World!</AccordionSection>
+<Accordion onExpand={onExpand} expanded={expanded}>
+  <AccordionSection id="0X1">Hello World!</AccordionSection>
+</Accordion>
+```
+
+```jsx
+<Accordion loading>
+  <AccordionSection id="0X1">Loading...</AccordionSection>
 </Accordion>
 ```
 
@@ -51,7 +58,6 @@ import Accordion, { AccordionSection } from "@kiwicom/orbit-components/lib/Accor
 | expandable | `boolean`               |         | If set to `false` `actions` will not be displayed                                                                                        |
 | header     | `React.Node`            |         | The header of the AccordionSection. Useful when you need different layout than combination of e.g. `title` and `description` properties. |
 | footer     | `React.Node`            |         | The sticky footer of the AccordionSection. Useful for navigation buttons                                                                 |
-| onExpand   | `() => void \| Promise` |         | Callback that is triggered when section is expanding                                                                                     |
 
 ### enum
 

@@ -19,36 +19,43 @@ const tmpFooter = (
 
 storiesOf("Accordion", module)
   .add("Default", () => {
+    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X0");
     return (
-      <Accordion>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
+      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+        <AccordionSection id="0X0" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
+        <AccordionSection id="0X1" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
+        <AccordionSection id="0X2" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
       </Accordion>
     );
   })
   .add("Accordion with disabled sections", () => {
+    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2", "0X3"], "0X1");
     return (
-      <Accordion>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
+      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
+        <AccordionSection
+          id="0X0"
+          expandable={false}
+          header={<Stack>Default Accordion with header</Stack>}
+        >
           This is a section content
         </AccordionSection>
-        <AccordionSection expandable={false} header={<div>Default Accordion with header</div>}>
+        <AccordionSection id="0X1" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
-        <AccordionSection expandable={false} header={<div>Default Accordion with header</div>}>
+        <AccordionSection
+          id="0X2"
+          expandable={false}
+          header={<Stack>Default Accordion with header</Stack>}
+        >
           This is a section content
         </AccordionSection>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
-          This is a section content
-        </AccordionSection>
-        <AccordionSection expandable={false} header={<div>Default Accordion with header</div>}>
+        <AccordionSection id="0X3" header={<Stack>Default Accordion with header</Stack>}>
           This is a section content
         </AccordionSection>
       </Accordion>
@@ -57,24 +64,24 @@ storiesOf("Accordion", module)
   .add("Accordion with controlled state", () => {
     const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X1");
     return (
-      <Accordion expandedSection={expandedSection}>
+      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
         <AccordionSection
           id="0X0"
-          header={<div>This is a header label</div>}
+          header={<Stack>This is a header label</Stack>}
           actions={<Button>Open</Button>}
         >
           This is a content
         </AccordionSection>
         <AccordionSection
           id="0X1"
-          header={<div>This is a header label</div>}
+          header={<Stack>This is a header label</Stack>}
           actions={<Button>Open</Button>}
         >
           This is a content
         </AccordionSection>
         <AccordionSection
           id="0X2"
-          header={<div>This is a header label</div>}
+          header={<Stack>This is a header label</Stack>}
           actions={
             <Stack direction="row">
               <Button type="secondary">Edit</Button>
@@ -88,13 +95,13 @@ storiesOf("Accordion", module)
     );
   })
   .add("Accordion with sticky footer", () => {
+    const expandedSection = select("expandedSection", ["0X0", "0X1", "0X2"], "0X1");
     return (
-      <Accordion initiallyExpandedSection="0X1">
+      <Accordion expandedSection={expandedSection} onExpand={action("onExpand")}>
         <AccordionSection
           id="0X0"
-          onExpand={action("onExpand")}
           header={
-            <Stack justify="between">
+            <Stack>
               <p>This is a header label</p>
               <p>This is a header label</p>
             </Stack>
@@ -104,7 +111,6 @@ storiesOf("Accordion", module)
         </AccordionSection>
         <AccordionSection
           id="0X1"
-          onExpand={action("onExpand")}
           header={
             <Stack justify="between">
               <p>This is a header label</p>
@@ -129,7 +135,6 @@ storiesOf("Accordion", module)
         </AccordionSection>
         <AccordionSection
           id="0X2"
-          onExpand={action("onExpand")}
           header={
             <Stack justify="between">
               <p>This is a header label</p>
@@ -148,9 +153,7 @@ storiesOf("Accordion", module)
   .add("Loading Accordion", () => {
     return (
       <Accordion loading>
-        <AccordionSection header={<div>Default Accordion with header</div>}>
-          This is a section content
-        </AccordionSection>
+        <AccordionSection>This is a section content</AccordionSection>
       </Accordion>
     );
   });

@@ -4,12 +4,15 @@ import styled from "styled-components";
 
 import Button from "../../../Button";
 import defaultTheme from "../../../defaultTheme";
+import transition from "../../../utils/transition";
 
 const Wrapper = styled.div`
   display: flex;
   padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   align-items: center;
+  min-height: ${({ expanded }) => (expanded ? "auto" : "44px")};
+  transition: ${transition(["min-height"], "fast", "ease-in-out")};
 `;
 
 const HeaderContent = styled.div`
@@ -41,7 +44,7 @@ type Props = {|
 
 const AccordionSectionHeader = ({ children, actions, expanded, onExpand, expandable }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper expanded={expanded}>
       <HeaderContent>{children}</HeaderContent>
       {!expanded && (
         <HeaderActions>

@@ -11,7 +11,11 @@ export default {
     const [showPassword, setShowPassword] = React.useState(false);
     return (
       <Stack direction="column">
-        <InputField label="Maximum price" type="number" suffix="Kč" />
+        <InputField
+          label="Maximum price"
+          type="number"
+          suffix={<div style={{ paddingRight: "12px" }}>Kč</div>}
+        />
         <InputField
           label="Password"
           type={showPassword ? "text" : "password"}

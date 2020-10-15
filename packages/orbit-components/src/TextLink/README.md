@@ -18,6 +18,7 @@ Table below contains all types of the props available in TextLink component.
 
 | Name            | Type                       | Default              | Description                                                                                                        |
 | :-------------- | :------------------------- | :------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| ariaCurrent     | `string`                   |                      | Indicates whether the element represents the current item within within a container or set of related elements.    |  | The component used for the root node. Either a string to use a DOM element or a component. |
 | asComponent     | `string                    | () => React.Element` | `"a"`                                                                                                              | The component used for the root node. Either a string to use a DOM element or a component. |
 | children        | `React.Node`               |                      | The content of the TextLink.                                                                                       |
 | dataTest        | `string`                   |                      | Optional prop for testing purposes.                                                                                |

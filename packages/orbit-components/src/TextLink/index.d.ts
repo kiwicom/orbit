@@ -11,6 +11,7 @@ declare module "@kiwicom/orbit-components/lib/TextLink";
 export type Type = "primary" | "secondary";
 
 export interface Props extends Common.Global {
+  readonly ariaCurrent: string;
   readonly children: React.ReactNode;
   readonly href?: string;
   readonly icon?: React.ReactNode;

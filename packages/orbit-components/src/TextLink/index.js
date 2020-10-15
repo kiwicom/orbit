@@ -84,6 +84,7 @@ StyledTextLink.defaultProps = {
 const DefaultComponent = props => <a {...props} />;
 
 const TextLink = ({
+  ariaCurrent,
   type = TYPE_OPTIONS.PRIMARY,
   size,
   children,
@@ -120,6 +121,7 @@ const TextLink = ({
 
   return (
     <StyledTextLink
+      aria-current={ariaCurrent}
       type={type}
       size={size}
       href={href}

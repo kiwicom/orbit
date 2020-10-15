@@ -3,6 +3,7 @@
 export type Context = {|
   +onExpand: () => void,
   +expanded: boolean,
+  +loading?: boolean,
 |};
 
 declare export var accordionDefault: Context;

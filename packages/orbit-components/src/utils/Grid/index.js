@@ -48,12 +48,13 @@ const Grid = ({
   rowGap,
   columnGap,
   maxWidth,
+  width,
   children,
   dataTest,
   as = "div",
   ...props
 }: Props) => {
-  const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth };
+  const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth, width };
   return (
     <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={as}>
       {children}

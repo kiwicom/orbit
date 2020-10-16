@@ -12,7 +12,7 @@ import type { GetViewportGridStyles } from "./getViewportGridStyles";
  */
 const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices }) => props => {
   if (props[viewport]) {
-    const { inline, maxWidth, gap, columnGap, rowGap, rows, columns } = props[viewport];
+    const { inline, maxWidth, gap, columnGap, rowGap, rows, columns, width } = props[viewport];
     const compatibleIE = getViewportIEGridStyles(
       props[viewport],
       React.Children.count(props.children),
@@ -22,6 +22,7 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
     return css`
       ${getDisplay(inline, viewport === "smallMobile")};
       max-width: ${maxWidth};
+      width: ${width};
       grid-template-columns: ${columns};
       grid-template-rows: ${rows};
       grid-column-gap: ${columnGap};

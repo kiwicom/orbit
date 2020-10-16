@@ -50,12 +50,12 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
   &:focus,
   &:hover {
     outline: none;
-    ${({ disabled }) =>
+    ${({ disabled, theme }) =>
       !disabled &&
       css`
-        background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
+        background-color: ${theme.orbit.paletteCloudLight};
         ${StyledListChoiceIcon} svg {
-          color: ${({ theme }) => theme.orbit.colorIconPrimary};
+          color: ${theme.orbit.colorIconPrimary};
         }
       `};
   }

@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/listchoice/
 */
+import * as React from "react";
+
 import type { Globals, Translation } from "../common/common.js.flow";
 
 export type Props = {|
@@ -11,10 +13,10 @@ export type Props = {|
   +selectable?: boolean,
   +selected?: boolean,
   +disabled?: boolean,
-  +icon?: React$Node,
+  +icon?: React.Node,
   +onClick?: (
     e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
   ) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

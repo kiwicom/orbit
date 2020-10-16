@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.93.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.92.0...@kiwicom/orbit-components@0.93.0) (2020-10-16)
+
+### Bug Fixes
+
+- add padding to InputField text suffix ([#2338](https://github.com/kiwicom/orbit/issues/2338)) ([6b77021](https://github.com/kiwicom/orbit/commit/6b7702161fd7b052c3a2a4dfe636cd6eb759a271))
+- **Breadcrumbs:** add check for absence of props on mobile ([#2259](https://github.com/kiwicom/orbit/issues/2259)) ([7bd4ab3](https://github.com/kiwicom/orbit/commit/7bd4ab3cc74b7c42a6d3817d6712865709a7e1bd))
+- **Breadcrumbs:** spacing from 8 to 4 ([#2311](https://github.com/kiwicom/orbit/issues/2311)) ([b51bd21](https://github.com/kiwicom/orbit/commit/b51bd21926a22393ab270c0de5b593299760a94a))
+- **ButtonPrimitive:** align text to right in RTL ([f26c45e](https://github.com/kiwicom/orbit/commit/f26c45e86f1f19c3c035f9eccae7644d23c27536))
+- **Docs:** primitives default ([dd91c4f](https://github.com/kiwicom/orbit/commit/dd91c4f254bb8c3240972d0708324d5ff2d624d8))
+- **Hide:** span to div ([#2277](https://github.com/kiwicom/orbit/issues/2277)) ([3bcc1bb](https://github.com/kiwicom/orbit/commit/3bcc1bbc82a0b0fe75610cc110c7c07983d6b664))
+- **ModalSection:** margin-top ([#2340](https://github.com/kiwicom/orbit/issues/2340)) ([4a7def0](https://github.com/kiwicom/orbit/commit/4a7def0168cacbe1b943a55f09ec5bccc8644ff3))
+- **Slide:** initialize max-height to work SSR ([#2339](https://github.com/kiwicom/orbit/issues/2339)) ([ff7dce8](https://github.com/kiwicom/orbit/commit/ff7dce8185d198ae847a3330287ab75dc5837f2b))
+- fix InputGroup/LayoutColumn TS typing ([#2326](https://github.com/kiwicom/orbit/issues/2326)) ([de52968](https://github.com/kiwicom/orbit/commit/de5296870ec89ba1c3c17fa7fb4a936171ebced8))
+- move collapsable aria labels to the focusable button ([#2319](https://github.com/kiwicom/orbit/issues/2319)) ([ad8708b](https://github.com/kiwicom/orbit/commit/ad8708bfd32af8966ec505032b7e703944b75b1a))
+- **Tile:** fix newWindow icon on external ([#2264](https://github.com/kiwicom/orbit/issues/2264)) ([4ea9639](https://github.com/kiwicom/orbit/commit/4ea9639fbd1ea693a9f315a2c0ee00d2f872ced5))
+
+### Features
+
+- **Accordion:** added Accordion component ([#2280](https://github.com/kiwicom/orbit/issues/2280)) ([9d24499](https://github.com/kiwicom/orbit/commit/9d244990ecc3e1c39ff60fc6caa5c5e4c3edda5a))
+- add Wizard component ([99229b1](https://github.com/kiwicom/orbit/commit/99229b1586acbf9ed093fa277a63c7333f73ecf5))
+- **ButtonPrimitive:** add support for aria-current ([d26067b](https://github.com/kiwicom/orbit/commit/d26067b648e23402fbfefdd9110b3cde0671ed0d))
+- **Illustration:** added image to images.kiwi ([#2312](https://github.com/kiwicom/orbit/issues/2312)) ([6652782](https://github.com/kiwicom/orbit/commit/66527820fd4529b3f58a2be20387a175befafddd))
+- **InputField:** adding a autofocus attribute ([#2236](https://github.com/kiwicom/orbit/issues/2236)) ([3ebec2e](https://github.com/kiwicom/orbit/commit/3ebec2ec954aaf7941282e71b921f4fd954562c0))
+- **Modal:** add prop to remove the close button ([d96f46d](https://github.com/kiwicom/orbit/commit/d96f46d9b4fced03cd8677bb8eb5a4a72c235ea9))
+- **TextLink:** add support for aria-current ([9e0b3e2](https://github.com/kiwicom/orbit/commit/9e0b3e2b6fb4129931da3a8ece0796e8a07d0b12))
+- **Timeline:** init component ([#2287](https://github.com/kiwicom/orbit/issues/2287)) ([9447edf](https://github.com/kiwicom/orbit/commit/9447edf6f2cdcfb10a72da133b9aeb2b18a3a928))
+- **Tooltip:** refactoring Tooltip into 2 separate components ([#2230](https://github.com/kiwicom/orbit/issues/2230)) ([df3b3be](https://github.com/kiwicom/orbit/commit/df3b3be122c92b4d0c29c6d72171cda866bdb471))
+- add an agnostic entry point for icons ([#2237](https://github.com/kiwicom/orbit/issues/2237)) ([597d1ec](https://github.com/kiwicom/orbit/commit/597d1ecefd543a79936af9a658be6b401c934a9a))
+
 # 0.92.0 (2020-09-09)
 
 ### Bug Fixes

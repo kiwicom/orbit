@@ -102,3 +102,12 @@ Table below contains all types of the props available in Illustration component.
 | `"TransportBus"`                |
 | `"TransportTaxi"`               |
 | `"WomanWithPhone"`              |
+
+### Types
+
+You can import the `Name` `enum` as a type from the component definition
+
+```js
+import type { Name } from "@kiwicom/orbit-components/lib/Illustration"; // Flow
+import { Name } from "@kiwicom/orbit-components/lib/Illustration"; // TS
+```

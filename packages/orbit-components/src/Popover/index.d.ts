@@ -8,14 +8,14 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Popover";
 
-type Position = "top" | "bottom";
-type Aligns = "start" | "end" | "center";
+export type Position = "top" | "bottom";
+export type AlignsCore = "start" | "end" | "center";
 
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly content: React.ReactNode;
   readonly preferredPosition?: Position;
-  readonly preferredAlign?: Aligns;
+  readonly preferredAlign?: AlignsCore;
   readonly opened?: boolean;
   readonly width?: string;
   readonly noPadding?: boolean;

@@ -8,8 +8,7 @@ import type { Globals, Component } from "../common/common.js.flow";
 import type { ThemeProps } from "../defaultTheme";
 
 export type Type = "primary" | "secondary";
-
-type Size = "large" | "normal" | "small";
+export type Size = "large" | "normal" | "small";
 
 export type Props = {|
   +ariaCurrent?: string,

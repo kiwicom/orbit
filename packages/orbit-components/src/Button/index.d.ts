@@ -8,7 +8,13 @@ import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
-type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle" | "white";
+export type Type =
+  | "primary"
+  | "secondary"
+  | "critical"
+  | "primarySubtle"
+  | "criticalSubtle"
+  | "white";
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;

@@ -8,9 +8,9 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Text";
 
-type Align = "left" | "center" | "right";
-type As = "p" | "span" | "div";
-type Type =
+export type Align = "left" | "center" | "right";
+export type As = "p" | "span" | "div";
+export type Type =
   | "primary"
   | "secondary"
   | "attention"
@@ -19,7 +19,7 @@ type Type =
   | "warning"
   | "critical"
   | "white";
-type Weight = "normal" | "bold";
+export type Weight = "normal" | "bold";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;

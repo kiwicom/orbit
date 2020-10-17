@@ -54,6 +54,15 @@ Table below contains all types of the props available in Button component.
 | `"primarySubtle"`  |            |
 | `"criticalSubtle"` |            |
 
+### Types
+
+You can import the `Type` `enum` as types from the component definition
+
+```js
+import type { Type } from "@kiwicom/orbit-components/lib/Button"; // Flow
+import { Type } from "@kiwicom/orbit-components/lib/Button"; // TS
+```
+
 ## Functional specs
 
 - When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.

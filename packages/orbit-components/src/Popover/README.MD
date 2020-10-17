@@ -28,19 +28,28 @@ Table below contains all types of the props available in the Popover component.
 | noPadding         | `boolean`               | `true`     | Adds or removes padding around popover's content.                                                            |
 | opened            | `boolean`               |            | Prop for programmatically controlling Popover inner state. If `opened` is present open triggers are ignored. |
 | preferredAlign    | [`enum`](#enum)         | `"start"`  | The preferred position to choose [See Functional specs](#functional-specs).                                  |
-| preferredPosition | [`enum`](#enum)         | `"bottom"` | The preferred align to choose [See Functional specs](#functional-specs).                                  |
+| preferredPosition | [`enum`](#enum)         | `"bottom"` | The preferred align to choose [See Functional specs](#functional-specs).                                     |
 | overlapped        | `boolean`               | `false`    | If `true`, the content of Popover will overlap the trigger children.                                         |
 | width             | `string`                |            | Width of popover, if not set the with is set to `auto`.                                                      |
 | onClose           | `() => void \| Promise` |            | Function for handling onClose.                                                                               |
 | onOpen            | `() => void \| Promise` |            | Function for handling onOpen.                                                                                |
 
-## enum
+### enum
 
 | position   | Align      |
 | :--------- | :--------- |
 | `"bottom"` | `"start"`  |
 | `"top"`    | `"end"`    |
-|     | `"center"`    |
+|            | `"center"` |
+
+### Types
+
+You can import the `AlignsCore` and `Position` `enums` as types from the component definition
+
+```js
+import type { AlignsCore, Position } from "@kiwicom/orbit-components/lib/Popover"; // Flow
+import { AlignsCore, Position } from "@kiwicom/orbit-components/lib/Popover"; // TS
+```
 
 ## Functional specs
 

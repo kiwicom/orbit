@@ -37,6 +37,15 @@ The table below contains all types of the props available in Alert component.
 | `"warning"`  |
 | `"critical"` |
 
+### Types
+
+You can import the `Type` `enum` as a type from the component definition
+
+```js
+import type { Type } from "@kiwicom/orbit-components/lib/Alert"; // Flow
+import { Type } from "@kiwicom/orbit-components/lib/Alert"; // TS
+```
+
 ## Functional specs
 
 - By passing the `closable` prop into Alert, you will be able to handle `onClose` function and Close icon will be displayed. Also, if you want to select the Close Button element for testing purposes, use [data-test="AlertCloseButton"] selector.

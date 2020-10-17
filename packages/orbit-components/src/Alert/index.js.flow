@@ -8,7 +8,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals, Translation } from "../common/common.js.flow";
 import type { Props as AlertButtonProps } from "./AlertButton";
 
-type Type = "info" | "success" | "warning" | "critical";
+export type Type = "info" | "success" | "warning" | "critical";
 
 export type Props = {|
   +type?: Type,

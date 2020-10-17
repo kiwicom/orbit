@@ -9,9 +9,10 @@ import type { Globals } from "../common/common.js.flow";
 
 type Align = "left" | "center" | "right";
 type As = "p" | "span" | "div";
-type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
 type Size = "large" | "normal" | "small";
-type Weight = "normal" | "bold";
+
+export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
+export type Weight = "normal" | "bold";
 
 export type Props = {|
   +type?: Type,

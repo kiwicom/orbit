@@ -52,6 +52,15 @@ Table below contains all types of the props available in ButtonLink component.
 | `"critical"`  | `"large"`  |
 | `"inline"`    |            |
 
+### Types
+
+You can import the `Type` `enum` as a type from the component definition
+
+```js
+import type { Type } from "@kiwicom/orbit-components/lib/ButtonLink"; // Flow
+import { Type } from "@kiwicom/orbit-components/lib/ButtonLink"; // TS
+```
+
 ## Functional specs
 
 - When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.

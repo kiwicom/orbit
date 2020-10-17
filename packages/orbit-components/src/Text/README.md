@@ -41,3 +41,12 @@ Table below contains all types of the props available in the Text component.
 | `"warning"`   |            |          |            |            |
 | `"critical"`  |            |          |            |            |
 | `"white"`     |            |          |            |            |
+
+### Types
+
+You can import the `Type, As, Align, Weight `enums` as types from the component definition
+
+```js
+import type { Type, As, Align, Weight } from "@kiwicom/orbit-components/lib/Text"; // Flow
+import { Type, As, Align, Weight } from "@kiwicom/orbit-components/lib/Text"; // TS
+```

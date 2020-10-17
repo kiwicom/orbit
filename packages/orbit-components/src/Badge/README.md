@@ -39,6 +39,15 @@ Table below contains all types of the props available in Badge component.
 | `"successInverted"`  |
 | `"warningInverted"`  |
 
+### Types
+
+You can import the `Type` `enum` as a type from the component definition
+
+```js
+import type { Type } from "@kiwicom/orbit-components/lib/Badge"; // Flow
+import { Type } from "@kiwicom/orbit-components/lib/Badge"; // TS
+```
+
 ## Functional specs
 
 - If you want to use `circled` badge, please take a look on **NotificationBadge**.

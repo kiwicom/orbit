@@ -7,9 +7,9 @@ import * as React from "react";
 import * as Common from "../common/common";
 import AlertButton from "./AlertButton";
 
-type Type = "info" | "success" | "warning" | "critical";
-
 declare module "@kiwicom/orbit-components/lib/Alert";
+
+export type Type = "info" | "success" | "warning" | "critical";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;

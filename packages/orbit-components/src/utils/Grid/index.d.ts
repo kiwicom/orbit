@@ -16,6 +16,7 @@ export type BasicProps = {
   readonly rowGap?: string;
   readonly columnGap?: string;
   readonly maxWidth?: string;
+  readonly width?: string;
 };
 
 interface Props extends Common.Global, BasicProps {

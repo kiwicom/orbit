@@ -10,6 +10,7 @@ import Grid from "..";
 describe("Grid with basic props", () => {
   const inline = true;
   const maxWidth = "1440px";
+  const width = "100%";
   const columns = "repeat(2, 1fr)";
   const columnGap = "10px";
   const rows = "repeat(2, minmax(30px, 100px))";
@@ -19,6 +20,7 @@ describe("Grid with basic props", () => {
     <Grid
       inline={inline}
       maxWidth={maxWidth}
+      width={width}
       columns={columns}
       columnGap={columnGap}
       rows={rows}
@@ -45,6 +47,7 @@ describe("Grid with basic props", () => {
      */
     expect(grid).toHaveStyleRule("display", "-ms-inline-grid");
     expect(grid).toHaveStyleRule("max-width", "1440px");
+    expect(grid).toHaveStyleRule("width", "100%");
     expect(grid).toHaveStyleRule("grid-template-columns", "repeat(2,1fr)");
     expect(grid).toHaveStyleRule("grid-template-rows", "repeat(2,minmax(30px,100px))");
     expect(grid).toHaveStyleRule("grid-row-gap", "20px");
@@ -94,6 +97,7 @@ describe("Grid with mediaQueries", () => {
     columns: "1fr 1fr",
     rows: "1fr 1fr",
     columnGap: "20px",
+    width: "100%",
   };
   const tablet = {
     gap: "20px",
@@ -221,6 +225,9 @@ describe("Grid with mediaQueries", () => {
       media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     });
     expect(grid).toHaveStyleRule("-ms-grid-rows", "1fr 1fr", {
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
+    });
+    expect(grid).toHaveStyleRule("width", "100%", {
       media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     });
   });

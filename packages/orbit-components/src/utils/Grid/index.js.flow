@@ -10,6 +10,7 @@ export type BasicProps = {|
   +rowGap?: string,
   +columnGap?: string,
   +maxWidth?: string,
+  +width?: string,
 |};
 
 export type MediaQuery = {|

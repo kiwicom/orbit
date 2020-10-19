@@ -39,7 +39,7 @@ describe("#TextLink", () => {
       </TextLink>,
     );
     expect(screen.getByText(title)).toBeInTheDocument();
-    expect(screen.getByText(title).closest("a")).toHaveAttribute("href", href);
+    expect(screen.getByRole("link")).toHaveAttribute("href", href);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTestId(dataTestIcon)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).not.toHaveAttribute("role");

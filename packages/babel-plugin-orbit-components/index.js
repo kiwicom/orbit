@@ -77,17 +77,18 @@ module.exports = function orbitComponents(babel) {
           if (t.isImportSpecifier(spec)) {
             const importedName = spec.imported.name;
             spec = t.importDefaultSpecifier(t.identifier(spec.local.name));
-
+            const isIcon = importedPath.includes("icons");
             // icons will already have /lib in the name, this adds the /lib to normal components
             if (!importedPath.includes("/lib")) {
-              if (importedPath.includes("icons")) {
+              if (isIcon) {
                 importedPath = importedPath.replace("icons", "lib/icons");
               } else {
                 importedPath += "/lib";
               }
             }
 
-            if (pathOverwrites[importedName]) {
+            if (pathOverwrites[importedName] && !isIcon) {
+              // Currently there are only overrides for non icons
               importedPath += `/${pathOverwrites[importedName]}`;
             } else {
               importedPath += `/${importedName}`;

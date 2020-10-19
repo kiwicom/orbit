@@ -116,3 +116,10 @@ import { Icon, Icons } from '@kiwicom/orbit-components'
 import Icons from "@kiwicom/orbit-components/lib/icons";
 import Icon from "@kiwicom/orbit-components/lib/Icon";
 `;
+
+exports[`transform imports as expected 15 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { Grid } from '@kiwicom/orbit-components/icons'
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import Grid from "@kiwicom/orbit-components/lib/icons/Grid";
+`;

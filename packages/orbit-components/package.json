@@ -143,7 +143,7 @@
     "svg2ttf": "^5.0.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^3.0.0",
-    "typescript": "^3.9.7",
+    "typescript": "^4.0.3",
     "webpack-cli": "^3.3.12"
   }
 }

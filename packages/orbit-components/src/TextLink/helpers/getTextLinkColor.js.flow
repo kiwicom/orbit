@@ -1,0 +1,12 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+import type { Type } from "../index";
+
+type GetTextLinkColorProps = {
+  type: Type,
+  ...ThemeProps,
+};
+
+export type GetTextLinkColor = GetTextLinkColorProps => string;
+
+declare export default GetTextLinkColor;

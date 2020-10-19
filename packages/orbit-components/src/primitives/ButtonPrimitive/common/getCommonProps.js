@@ -23,6 +23,10 @@ const getCommonProps: GetCommonProps = ({
     fontWeight: theme.orbit.fontWeightMedium,
     contentAlign: onlyIcon || hasCenteredContent ? "center" : "space-between",
     contentWidth: "100%",
+    borderRadius: "6px",
+    borderRadiusDesktop: theme.orbit.borderRadiusNormal,
+    inlineDisplay: "inline-flex",
+    blockDisplay: "flex",
   };
 };
 

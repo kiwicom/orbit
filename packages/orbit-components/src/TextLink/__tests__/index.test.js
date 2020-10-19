@@ -31,7 +31,7 @@ describe("#TextLink", () => {
     render(
       <TextLink
         href={href}
-        icon={<ChevronRight dataTest={dataTestIcon} />}
+        iconRight={<ChevronRight dataTest={dataTestIcon} />}
         tabIndex={tabIndex}
         dataTest={dataTest}
       >

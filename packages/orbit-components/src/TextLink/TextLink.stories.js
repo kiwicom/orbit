@@ -13,7 +13,7 @@ import TextLink from "./index";
 
 const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 storiesOf("TextLink", module)
@@ -54,14 +54,14 @@ storiesOf("TextLink", module)
     },
   )
   .add(
-    "Link with icon",
+    "Link with right icon",
     () => {
       const href = text("Href", "https://kiwi.com");
       const children = text("children", "TextLink with icon");
-      const Icon = getIcon(getIcons("ChevronRight"));
+      const Icon = getIcon(getIcons("iconRight", "ChevronRight"));
 
       return (
-        <TextLink onClick={action("clicked")} href={href} icon={Icon && <Icon />}>
+        <TextLink onClick={action("clicked")} href={href} iconRight={Icon && <Icon />}>
           {children}
         </TextLink>
       );
@@ -80,7 +80,8 @@ storiesOf("TextLink", module)
       const external = boolean("External", true);
       const children = text("Text", "Custom link");
       const rel = text("Rel", undefined);
-      const Icon = getIcon(getIcons("ChevronRight"));
+      const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
+      const IconLeft = getIcon(getIcons("iconLeft", null));
       const dataTest = text("dataTest", "test");
       const tabIndex = text("tabIndex", "");
       const stopPropagation = boolean("stopPropagation", false);
@@ -92,7 +93,8 @@ storiesOf("TextLink", module)
           type={type}
           size={size}
           rel={validate(rel)}
-          icon={Icon && <Icon />}
+          iconRight={IconRight && <IconRight />}
+          iconLeft={IconLeft && <IconLeft />}
           dataTest={dataTest}
           tabIndex={tabIndex}
           stopPropagation={stopPropagation}
@@ -127,7 +129,7 @@ storiesOf("TextLink", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <TextLink onClick={action("clicked")} href="#" icon={<Icons.ChevronRight />}>
+        <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronRight />}>
           Link
         </TextLink>
       </RenderInRtl>

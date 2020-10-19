@@ -106,7 +106,7 @@ const iconMapper = interpolation =>
   names.map(({ functionName }) => interpolation(functionName)).join("");
 
 fs.writeFileSync(
-  path.join(componentPath, "index.js.flow"),
+  path.join(componentPath, "getTextLinkColor.js.flow"),
   flow +
     iconMapper(name => `import type { ${name}Type } from "./${name}";\n`) +
     iconMapper(name => `declare export var ${name}: ${name}Type;\n`),

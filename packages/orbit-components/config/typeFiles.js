@@ -18,7 +18,10 @@ const generateTypeFile = async (templatePath, replacements) => {
   );
 
   await fs.writeFileSync(
-    path.join(path.dirname(templatePath), suffix === "flow" ? "index.js.flow" : "index.d.ts"),
+    path.join(
+      path.dirname(templatePath),
+      suffix === "flow" ? "getTextLinkColor.js.flow" : "index.d.ts",
+    ),
     replacedTemplate,
   );
 };

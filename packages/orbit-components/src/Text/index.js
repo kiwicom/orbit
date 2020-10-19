@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -12,10 +12,33 @@ import {
 } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
-import { getLinkStyle, StyledTextLink } from "../TextLink";
+import { StyledTextLink } from "../TextLink";
+import getTextLinkColor from "../TextLink/helpers/getTextLinkColor";
 import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from "../TextLink/consts";
 
 import type { Props } from "./index";
+
+const getLinkStyle = type => ({ theme }) => css`
+  // Common styles for "a" in Text
+
+  &,
+  &:link,
+  &:visited {
+    color: ${getTextLinkColor({ theme, type })};
+    text-decoration: ${type === TYPE_OPTIONS.SECONDARY
+      ? theme.orbit.textDecorationTextLinkSecondary
+      : theme.orbit.textDecorationTextLinkPrimary};
+    font-weight: ${theme.orbit.fontWeightLinks};
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: ${theme.orbit.paletteProductNormalHover};
+  }
+`;
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
@@ -74,8 +97,8 @@ export const StyledText = styled(({ element: TextElement, children, className, d
 
   a:not(${StyledTextLink}) {
     // TextLink in Text always win
-    ${({ theme }) =>
-      getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })}// Get styles from TextLink
+    // Get styles from TextLink
+    ${getLinkStyle(TEXTLINK_TYPE_OPTIONS.PRIMARY)}
   }
 `;
 

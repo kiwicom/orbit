@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.94.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.93.0...@kiwicom/orbit-components@0.94.0) (2020-10-19)
+
+### Bug Fixes
+
+- **TextLink:** ariaCurrent should in optional in TS definition ([#2365](https://github.com/kiwicom/orbit/issues/2365)) ([09857f7](https://github.com/kiwicom/orbit/commit/09857f7d9b64fc791b2371a2a43b3a709484be2f))
+
+### Features
+
+- **Grid:** add width property ([#2356](https://github.com/kiwicom/orbit/issues/2356)) ([ee8943e](https://github.com/kiwicom/orbit/commit/ee8943e4d59d73fa9d95573fffe8df4ece04ede7))
+
 # [0.93.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.92.0...@kiwicom/orbit-components@0.93.0) (2020-10-16)
 
 ### Bug Fixes

@@ -42,7 +42,7 @@ describe("#TextLink", () => {
     expect(screen.getByRole("link")).toHaveAttribute("href", href);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTestId(dataTestIcon)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTest)).not.toHaveAttribute("role");
+    expect(screen.getByRole("link")).toBeInTheDocument();
   });
   it("should have external and rel attributes", () => {
     const rel = "nofollow";

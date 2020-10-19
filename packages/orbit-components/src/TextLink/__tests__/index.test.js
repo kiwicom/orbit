@@ -11,7 +11,7 @@ const dataTest = "test";
 
 describe("#TextLink", () => {
   it("should be focusable and have button role", () => {
-    render(<TextLink>{title}</TextLink>);
+    render(<TextLink asComponent="button">{title}</TextLink>);
     userEvent.tab();
     expect(screen.getByText(title)).toHaveFocus();
     expect(screen.getByRole("button")).toBeInTheDocument();

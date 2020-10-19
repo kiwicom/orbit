@@ -52,6 +52,7 @@ import { Accommodation } from "@kiwicom/orbit-components/icons";`,
   ['import { mediaQueries } from "@kiwicom/orbit-components";'], // https://github.com/kiwicom/babel-plugin-orbit-components/pull/4
   ["import { Text, Stack, Grid } from '@kiwicom/orbit-components';"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/5
   ["import { Icon, Icons } from '@kiwicom/orbit-components'"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/6
+  ["import { Grid } from '@kiwicom/orbit-components/icons'"],
 ])("transform imports as expected %#", rawInput => {
   const input = rawInput.trim();
   expect({

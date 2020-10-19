@@ -8,7 +8,9 @@ const DURATIONS = {
 };
 
 const transition: Transition = (properties, duration, timingFunction) => ({ theme }) => {
-  if (!theme.transitions) return null;
+  if (theme.transitions === false) {
+    return null;
+  }
   const tokens = {
     [DURATIONS.SLOW]: theme.orbit.durationSlow,
     [DURATIONS.NORMAL]: theme.orbit.durationNormal,

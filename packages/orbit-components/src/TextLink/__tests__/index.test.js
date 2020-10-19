@@ -51,18 +51,10 @@ describe("#TextLink", () => {
         {title}
       </TextLink>,
     );
-    expect(screen.getByText(title).closest("a")).toHaveAttribute(
-      "rel",
-      expect.stringContaining("noopener"),
-    );
-    expect(screen.getByText(title).closest("a")).toHaveAttribute(
-      "rel",
-      expect.stringContaining("noreferrer"),
-    );
-    expect(screen.getByText(title).closest("a")).toHaveAttribute(
-      "rel",
-      expect.stringContaining(rel),
-    );
-    expect(screen.getByText(title).closest("a")).toHaveAttribute("target", "_blank");
+    const link = screen.getByText(title).closest("a");
+    expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    expect(link).toHaveAttribute("rel", expect.stringContaining("noreferrer"));
+    expect(link).toHaveAttribute("rel", expect.stringContaining(rel));
+    expect(link).toHaveAttribute("target", "_blank");
   });
 });

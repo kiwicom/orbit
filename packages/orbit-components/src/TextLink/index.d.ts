@@ -12,18 +12,21 @@ export type Type = "primary" | "secondary";
 
 export interface Props extends Common.Global {
   readonly ariaCurrent?: string;
-  readonly children: React.ReactNode;
-  readonly href?: string;
-  readonly icon?: React.ReactNode;
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
-  readonly external?: boolean;
-  readonly type?: Type;
-  readonly size?: Common.Size;
-  readonly rel?: string;
-  readonly tabIndex?: string | number;
   readonly asComponent?: Common.Component;
+  readonly children: React.ReactNode;
+  readonly external?: boolean;
+  readonly href?: string;
+  readonly iconLeft?: React.ReactNode;
+  readonly iconRight?: React.ReactNode;
+  readonly noUnderline?: boolean;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
+  readonly rel?: string;
+  readonly size?: Common.Size;
+  readonly standAlone?: boolean;
   readonly stopPropagation?: boolean;
+  readonly tabIndex?: string | number;
   readonly title?: string;
+  readonly type?: Type;
 }
 
 declare const TextLink: React.FunctionComponent<Props>;

@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
 import type { Props, GetLinkStyleProps } from "./index";
 
@@ -25,7 +26,7 @@ const getSizeToken = () => ({ theme, size }) => {
   return size && sizeTokens[size];
 };
 
-const IconContainer = styled(({ children, className }) => (
+const StyledIconContainer = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
   display: flex;
@@ -37,8 +38,15 @@ const IconContainer = styled(({ children, className }) => (
   }
 `;
 
-IconContainer.defaultProps = {
+StyledIconContainer.defaultProps = {
   theme: defaultTheme,
+};
+
+const resolveUnderline = ({ type, theme, noUnderline }) => {
+  if (noUnderline) return "none";
+  return type === TYPE_OPTIONS.SECONDARY
+    ? theme.orbit.textDecorationTextLinkSecondary
+    : theme.orbit.textDecorationTextLinkPrimary;
 };
 
 export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
@@ -48,9 +56,7 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   &:link,
   &:visited {
     color: ${getColor({ theme, type })};
-    text-decoration: ${type === TYPE_OPTIONS.SECONDARY
-      ? theme.orbit.textDecorationTextLinkSecondary
-      : theme.orbit.textDecorationTextLinkPrimary};
+    text-decoration: ${resolveUnderline};
     font-weight: ${theme.orbit.fontWeightLinks};
   }
 
@@ -63,9 +69,11 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   }
 `;
 
-export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...props }) => (
-  <Component {...props}>{props.children}</Component>
-))`
+export const StyledTextLink = styled(
+  ({ theme, type, standAlone, noUnderline, asComponent: Component, ...props }) => (
+    <Component {...props}>{props.children}</Component>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
   font-size: ${getSizeToken};
@@ -73,6 +81,7 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
   display: inline-flex;
   align-items: center;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  height: ${({ standAlone, theme }) => standAlone && theme.orbit.heightButtonNormal};
   ${getLinkStyle};
 `;
 
@@ -83,6 +92,11 @@ StyledTextLink.defaultProps = {
 // eslint-disable-next-line jsx-a11y/anchor-has-content
 const DefaultComponent = props => <a {...props} />;
 
+const IconContainer = ({ children }) => {
+  if (!children) return null;
+  return <StyledIconContainer>{children}</StyledIconContainer>;
+};
+
 const TextLink = ({
   ariaCurrent,
   type = TYPE_OPTIONS.PRIMARY,
@@ -91,26 +105,17 @@ const TextLink = ({
   href,
   external = false,
   rel,
-  icon,
+  iconLeft,
+  iconRight,
   onClick,
   dataTest,
   tabIndex,
   asComponent = DefaultComponent,
   stopPropagation = false,
   title,
+  standAlone,
+  noUnderline,
 }: Props) => {
-  const relValues = rel ? rel.split(" ") : [];
-
-  // add noopener and noreferrer whenever external
-  if (relValues && external) {
-    if (!relValues.includes("noopener")) {
-      relValues.push("noopener");
-    }
-    if (!relValues.includes("noreferrer")) {
-      relValues.push("noreferrer");
-    }
-  }
-
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();
@@ -126,17 +131,21 @@ const TextLink = ({
       size={size}
       href={href}
       target={external ? "_blank" : undefined}
-      rel={relValues && relValues.join(" ")}
+      rel={createRel({ href, external, rel })}
       onClick={onClickHandler}
       data-test={dataTest}
       tabIndex={tabIndex || (!href ? "0" : undefined)}
       role={!href ? "button" : undefined}
       asComponent={asComponent}
       title={title}
+      noUnderline={noUnderline}
+      standAlone={standAlone}
     >
+      {<IconContainer>{iconLeft}</IconContainer>}
       {children}
-      {icon && <IconContainer type={type}>{icon}</IconContainer>}
+      {<IconContainer>{iconRight}</IconContainer>}
     </StyledTextLink>
   );
 };
+
 export default TextLink;

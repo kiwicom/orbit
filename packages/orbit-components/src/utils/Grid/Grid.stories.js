@@ -13,6 +13,7 @@ const CustomDiv = styled.div`
 storiesOf("Grid", module).add("Playground", () => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
+  const width = text("width", "100%");
   const columns = text("columns", undefined);
   const rows = text("rows", "repeat(8, 40px)");
   const gap = text("gap", null);
@@ -45,6 +46,7 @@ storiesOf("Grid", module).add("Playground", () => {
     <Grid
       inline={inline}
       maxWidth={maxWidth}
+      width={width}
       columns={columns}
       rows={rows}
       gap={gap}

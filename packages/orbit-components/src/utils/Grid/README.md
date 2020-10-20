@@ -40,6 +40,7 @@ The table below contains all of the props available in the Grid component.
 | mediumMobile | [`Object`](#media-queries) |         | Object for setting up properties for mediumMobile viewports. [See Media queries](#media-queries)  |
 | rows         | `string`                   | `"1fr"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).    |
 | rowGap       | `string`                   |         | The gap size for `rows`.                                                                          |
+| width        | `string`                   |         | Alias for the `width` property of the Grid component.                                             |
 
 ### Media Queries
 
@@ -56,6 +57,7 @@ All of the object for these properties have the same properties and none is requ
 | maxWidth  | `string`  |          | Alias for the `max-width` property of the Grid component.                                         |
 | rows      | `string`  | `"none"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).    |
 | rowGap    | `string`  |          | Gap size for `rows`.                                                                              |
+| width     | `string`  |          | Alias for the `width` property of the Grid component.                                             |
 
 ## Why you should use this component
 

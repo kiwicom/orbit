@@ -34,6 +34,7 @@ export type Props = {|
 
 export type GetLinkStyleProps = {
   type: Type,
+  noUnderline?: boolean,
   ...ThemeProps,
 };
 

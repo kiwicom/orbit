@@ -1,7 +1,6 @@
 // @flow
 export type CreateRel = ({
   +href?: string,
-  +disabled?: boolean,
   +rel?: string,
   +external?: boolean,
 }) => ?string;

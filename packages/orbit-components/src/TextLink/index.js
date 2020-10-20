@@ -42,6 +42,13 @@ StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
+const resolveUnderline = ({ type, theme, noUnderline }) => {
+  if (noUnderline) return "none";
+  return type === TYPE_OPTIONS.SECONDARY
+    ? theme.orbit.textDecorationTextLinkSecondary
+    : theme.orbit.textDecorationTextLinkPrimary;
+};
+
 export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   // Common styles for TextLink and "a" in Text
 
@@ -49,9 +56,7 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   &:link,
   &:visited {
     color: ${getColor({ theme, type })};
-    text-decoration: ${type === TYPE_OPTIONS.SECONDARY
-      ? theme.orbit.textDecorationTextLinkSecondary
-      : theme.orbit.textDecorationTextLinkPrimary};
+    text-decoration: ${resolveUnderline};
     font-weight: ${theme.orbit.fontWeightLinks};
   }
 
@@ -64,9 +69,11 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   }
 `;
 
-export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...props }) => (
-  <Component {...props}>{props.children}</Component>
-))`
+export const StyledTextLink = styled(
+  ({ theme, type, standAlone, noUnderline, asComponent: Component, ...props }) => (
+    <Component {...props}>{props.children}</Component>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
   font-size: ${getSizeToken};
@@ -74,6 +81,7 @@ export const StyledTextLink = styled(({ theme, type, asComponent: Component, ...
   display: inline-flex;
   align-items: center;
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  height: ${({ standAlone, theme }) => standAlone && theme.orbit.heightButtonNormal};
   ${getLinkStyle};
 `;
 
@@ -105,6 +113,8 @@ const TextLink = ({
   asComponent = DefaultComponent,
   stopPropagation = false,
   title,
+  standAlone,
+  noUnderline,
 }: Props) => {
   const onClickHandler = ev => {
     if (stopPropagation) {
@@ -128,6 +138,8 @@ const TextLink = ({
       role={!href ? "button" : undefined}
       asComponent={asComponent}
       title={title}
+      noUnderline={noUnderline}
+      standAlone={standAlone}
     >
       {<IconContainer>{iconLeft}</IconContainer>}
       {children}

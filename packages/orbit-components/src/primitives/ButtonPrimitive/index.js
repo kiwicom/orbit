@@ -11,6 +11,7 @@ import ButtonPrimitiveIconContainer, {
 } from "./components/ButtonPrimitiveIconContainer";
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
 import mq from "../../utils/mediaQuery";
+import createRel from "./common/createRel";
 
 import type { Props } from "./index";
 
@@ -45,16 +46,6 @@ export const StyledButtonPrimitive = styled(
     const isButtonWithHref = asComponent === "button" && href;
     const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
-    const relValues = rel ? rel.split(" ") : [];
-    // add noopener and noreferrer whenever external
-    if (external && !disabled && href) {
-      if (!relValues.includes("noopener")) {
-        relValues.push("noopener");
-      }
-      if (!relValues.includes("noreferrer")) {
-        relValues.push("noreferrer");
-      }
-    }
 
     return (
       <Component
@@ -70,7 +61,7 @@ export const StyledButtonPrimitive = styled(
         disabled={disabled}
         href={!disabled ? href : null}
         target={!disabled && href && external ? "_blank" : undefined}
-        rel={relValues.length > 0 ? relValues.join(" ") : undefined}
+        rel={createRel({ external, href, disabled, rel })}
         tabIndex={tabIndex}
         onClick={!disabled ? onClick : null}
         role={role}
@@ -87,10 +78,6 @@ export const StyledButtonPrimitive = styled(
     href,
     theme,
     asComponent,
-    borderRadius,
-    borderRadiusDesktop,
-    inlineDisplay,
-    blockDisplay,
     circled,
     padding,
     background,
@@ -103,8 +90,6 @@ export const StyledButtonPrimitive = styled(
     foregroundHover,
     foregroundActive,
     foregroundFocus,
-    foregroundLink,
-    foregroundVisited,
     backgroundHover,
     backgroundActive,
     backgroundFocus,
@@ -116,7 +101,7 @@ export const StyledButtonPrimitive = styled(
   }) => css`
     height: ${height};
     position: relative;
-    display: ${href || asComponent === "a" ? inlineDisplay : blockDisplay};
+    display: ${href || asComponent === "a" ? "inline-flex" : "flex"};
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
@@ -129,7 +114,7 @@ export const StyledButtonPrimitive = styled(
     color: ${foreground}!important;
     border: 0;
     padding: ${padding};
-    border-radius: ${circled ? height : borderRadius};
+    border-radius: ${circled ? height : "6px"};
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
@@ -143,7 +128,7 @@ export const StyledButtonPrimitive = styled(
     box-shadow: ${boxShadow};
 
     ${mq.tablet(css`
-      border-radius: ${circled ? height : borderRadiusDesktop};
+      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
     `)}
 
     ${iconContainerColor(icons && icons.foreground, false)};
@@ -151,14 +136,6 @@ export const StyledButtonPrimitive = styled(
     ${StyledSpinner} {
       width: ${icons && icons.width};
       height: ${icons && icons.height};
-    }
-
-    &:link {
-      color: ${foregroundLink}!important;
-    }
-
-    &:visited {
-      color: ${foregroundVisited}!important;
     }
 
     &:hover {

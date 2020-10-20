@@ -1,3 +1,0 @@
-// @flow
-export type GetTextLinkStyleProps = () => string;
-declare export default GetTextLinkStyleProps;

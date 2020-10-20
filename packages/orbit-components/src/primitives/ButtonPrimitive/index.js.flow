@@ -13,7 +13,7 @@ import type { spaceAfter } from "../../common/getSpacingToken/index";
 
 export type Size = "small" | "normal" | "large";
 
-export type ButtonCommonProps<T = HTMLButtonElement> = {|
+export type ButtonCommonProps = {|
   +asComponent?: Component,
   +ariaControls?: string,
   +ariaCurrent?: string,
@@ -28,7 +28,7 @@ export type ButtonCommonProps<T = HTMLButtonElement> = {|
   +iconLeft?: React.Node,
   +iconRight?: React.Node,
   +loading?: boolean,
-  +onClick?: (e: SyntheticEvent<T>) => void | Promise<any>,
+  +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +rel?: string,
   +role?: string,
   +size?: Size,

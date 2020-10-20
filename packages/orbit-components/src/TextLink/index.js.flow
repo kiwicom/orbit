@@ -3,8 +3,10 @@
   DOCUMENTATION: https://orbit.kiwi/components/textlink/
 */
 import * as React from "react";
+import type { Interpolation } from "styled-components";
 
 import type { Globals, Component } from "../common/common.js.flow";
+import type { ThemeProps } from "../defaultTheme";
 
 export type Type = "primary" | "secondary";
 
@@ -25,9 +27,19 @@ export type Props = {|
   +asComponent?: Component,
   +stopPropagation?: boolean,
   +title?: string,
+  +standAlone?: boolean,
+  +noUnderline?: boolean,
   ...Globals,
 |};
 
-declare export var StyledTextLink: React.ComponentType<{}>;
+export type GetLinkStyleProps = {
+  type: Type,
+  ...ThemeProps,
+};
+
+export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
+
+declare export var getLinkStyle: GetLinkStyle;
+declare export var StyledTextLink: React.ComponentType<Props>;
 
 declare export default React.ComponentType<Props>;

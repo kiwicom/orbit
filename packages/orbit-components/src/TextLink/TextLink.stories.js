@@ -54,6 +54,24 @@ storiesOf("TextLink", module)
     },
   )
   .add(
+    "Link with left icon",
+    () => {
+      const href = text("Href", "https://kiwi.com");
+      const children = text("children", "TextLink with icon");
+      const Icon = getIcon(getIcons("iconLeft", "ChevronLeft"));
+
+      return (
+        <TextLink onClick={action("clicked")} href={href} iconLeft={Icon && <Icon />} standAlone>
+          {children}
+        </TextLink>
+      );
+    },
+    {
+      info:
+        "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    },
+  )
+  .add(
     "Link with right icon",
     () => {
       const href = text("Href", "https://kiwi.com");

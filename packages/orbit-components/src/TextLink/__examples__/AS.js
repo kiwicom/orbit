@@ -16,7 +16,7 @@ export default {
         <TextLink
           href="https://orbit.kiwi"
           external
-          icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
         >
           Orbit design system
         </TextLink>
@@ -31,7 +31,7 @@ export default {
             window.open("https://orbit.kiwi", "_blank", "noopener,noreferrer");
           }}
           tabIndex={0}
-          icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
         >
           Orbit design system
         </TextLink>

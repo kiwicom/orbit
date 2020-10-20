@@ -11,6 +11,7 @@ import ButtonPrimitiveIconContainer, {
 } from "./components/ButtonPrimitiveIconContainer";
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
 import mq from "../../utils/mediaQuery";
+import createRel from "./common/createRel";
 
 import type { Props } from "./index";
 
@@ -45,16 +46,6 @@ export const StyledButtonPrimitive = styled(
     const isButtonWithHref = asComponent === "button" && href;
     const Component = isButtonWithHref ? "a" : asComponent;
     const buttonType = submit ? "submit" : "button";
-    const relValues = rel ? rel.split(" ") : [];
-    // add noopener and noreferrer whenever external
-    if (external && !disabled && href) {
-      if (!relValues.includes("noopener")) {
-        relValues.push("noopener");
-      }
-      if (!relValues.includes("noreferrer")) {
-        relValues.push("noreferrer");
-      }
-    }
 
     return (
       <Component
@@ -70,7 +61,7 @@ export const StyledButtonPrimitive = styled(
         disabled={disabled}
         href={!disabled ? href : null}
         target={!disabled && href && external ? "_blank" : undefined}
-        rel={relValues.length > 0 ? relValues.join(" ") : undefined}
+        rel={createRel({ external, href, rel })}
         tabIndex={tabIndex}
         onClick={!disabled ? onClick : null}
         role={role}

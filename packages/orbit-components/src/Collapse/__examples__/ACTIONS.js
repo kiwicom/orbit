@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import ButtonLink from "../../ButtonLink";
+import TextLink from "../../TextLink";
 import ChoiceGroup from "../../ChoiceGroup";
 import Checkbox from "../../Checkbox";
 import Collapse from "../index";
@@ -31,28 +31,26 @@ export default {
         label="Transport"
         actions={
           <Stack direction="row">
-            <ButtonLink
+            <TextLink
               onClick={() => {
                 setPlaneChecked(true);
                 setTrainChecked(true);
                 setBusChecked(true);
               }}
-              compact
-              type="inline"
+              standAlone
             >
               Select all
-            </ButtonLink>
-            <ButtonLink
+            </TextLink>
+            <TextLink
               onClick={() => {
                 setPlaneChecked(false);
                 setTrainChecked(false);
                 setBusChecked(false);
               }}
-              compact
-              type="inline"
+              standAlone
             >
               Clear all
-            </ButtonLink>
+            </TextLink>
           </Stack>
         }
       >

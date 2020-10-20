@@ -80,10 +80,11 @@ const InputStepperStateless = ({
         ref={forwardedRef}
         prefix={
           <ButtonLink
-            type="inline"
+            type="primary"
             disabled={
               disabledDecrement || disabled || (typeof value === "number" && value <= +minValue)
             }
+            compact
             iconLeft={<MinusCircle />}
             size={size}
             onClick={!disabled ? onDecrement : undefined}
@@ -96,7 +97,8 @@ const InputStepperStateless = ({
             disabled={
               disabledIncrement || disabled || (typeof value === "number" && value >= +maxValue)
             }
-            type="inline"
+            type="primary"
+            compact
             iconLeft={<PlusCircle />}
             size={size}
             onClick={!disabled ? onIncrement : undefined}

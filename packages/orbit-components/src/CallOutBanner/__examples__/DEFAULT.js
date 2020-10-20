@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import Button from "../../Button";
-import ButtonLink from "../../ButtonLink";
+import TextLink from "../../TextLink";
 import CallOutBanner from "../index";
 import Illustration from "../../Illustration";
 import Stack from "../../Stack";
@@ -19,9 +19,9 @@ export default {
           <Button size="small" type="secondary" href="https://rooms.kiwi.com" external>
             Find a room
           </Button>
-          <ButtonLink iconLeft={<Icons.InformationCircle />} size="small" type="inline">
+          <TextLink iconLeft={<Icons.InformationCircle />} size="small" standAlone>
             More info
-          </ButtonLink>
+          </TextLink>
         </Stack>
       }
     />

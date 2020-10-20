@@ -19,4 +19,33 @@ describe("transition", () => {
       `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out`,
     );
   });
+  it("returns transition when transitions is undefined or null", () => {
+    const theme2 = {
+      theme: {
+        ...defaultTheme,
+        rtl: false,
+        transitions: undefined,
+      },
+    };
+
+    // $FlowExpectedError[incompatible-call]: Intentionally testing with undefined value
+    expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme2)).toMatch(
+      `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out`,
+    );
+    theme2.theme.transitions = null;
+    expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme2)).toMatch(
+      `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out`,
+    );
+  });
+
+  it("returns null when transitions is set to false", () => {
+    const theme2 = {
+      theme: {
+        ...defaultTheme,
+        rtl: false,
+        transitions: false,
+      },
+    };
+    expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme2)).toBeNull();
+  });
 });

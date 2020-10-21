@@ -92,7 +92,10 @@ function checkIconSize(content, name, size) {
   });
 }
 
-export default async function checkIcons(iconPaths, enforceSize) {
+export default async function checkIcons(
+  iconPaths = DEFAULT_ICON_PATH,
+  iconSize = DEFAULT_ICON_SIZE,
+) {
   const files = glob.sync(iconPaths || DEFAULT_ICON_PATH);
 
   if (!files || !files.length) {
@@ -101,7 +104,6 @@ export default async function checkIcons(iconPaths, enforceSize) {
   }
 
   const allIconsCharacters = [];
-  const iconSize = enforceSize || DEFAULT_ICON_SIZE;
 
   // We get the names of the icons in the directory
   const names = files.map(inputFileName => {
@@ -127,12 +129,3 @@ export default async function checkIcons(iconPaths, enforceSize) {
     }
   });
 }
-
-/*
- Paths are provided as arguments as for example in lint staged,
- and formatted to blob pattern strings e.g. '({pattern1, pattern2})
-*/
-const paths = process.argv.slice(2);
-const formatPaths = pattern => (pattern.length > 1 ? `{${pattern.join(",")}}` : pattern[0]);
-
-checkIcons(formatPaths(paths) || DEFAULT_ICON_PATH, DEFAULT_ICON_SIZE);

@@ -17,7 +17,7 @@ export type MediaQuery = {|
   ...BasicProps,
 |};
 
-export type Props = {
+export type Props = {|
   ...BasicProps,
   ...Globals,
   +as?: string,
@@ -27,7 +27,7 @@ export type Props = {
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
   +children: React$Node,
-};
+|};
 
 export type SmallMobile = {|
   +smallMobile: MediaQuery,

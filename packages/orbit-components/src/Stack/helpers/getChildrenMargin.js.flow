@@ -8,6 +8,6 @@ export type GetChildrenMargin = ({|
   viewport: Devices,
   index: number,
   devices: Devices[],
-|}) => ({ ...Props, ...SmallMobile }) => Interpolation | boolean;
+|}) => ({| ...Props, ...SmallMobile |}) => Interpolation | boolean;
 
 declare export default GetChildrenMargin;

@@ -15,9 +15,9 @@ export type Props = {|
 
 export type PureTranslate = (dictionary: Translations, key: Key, values?: Values) => string;
 
-export type Translate = {
+export type Translate = {|
   translate: (tKey: string, values?: Values) => string,
-};
+|};
 
 declare export default React$ComponentType<Props>;
 

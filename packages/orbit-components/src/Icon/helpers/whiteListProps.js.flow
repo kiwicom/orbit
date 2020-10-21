@@ -13,7 +13,7 @@ type Return = {|
   +ariaLabel?: string,
 |};
 
-type Props = { ...Return };
+type Props = {| ...Return |};
 
 export type WhiteListProps = (props: Props) => any;
 

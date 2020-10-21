@@ -3,9 +3,9 @@ import type { Interpolation } from "styled-components";
 
 import type { Position } from "../index";
 
-export type Props = {
+export type Props = {|
   ...Position,
-};
+|};
 
 type ResolveTooltipArrowPosition = Props => Interpolation[];
 

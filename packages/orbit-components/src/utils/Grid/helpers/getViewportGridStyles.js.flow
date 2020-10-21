@@ -4,9 +4,13 @@ import type { Interpolation } from "styled-components";
 import type { Devices } from "../../mediaQuery/consts";
 import type { Props, SmallMobile } from "../index";
 
-export type GetViewportGridStyles = ({ viewport: Devices, index: number, devices: Devices[] }) => ({
+export type GetViewportGridStyles = ({|
+  viewport: Devices,
+  index: number,
+  devices: Devices[],
+|}) => ({|
   ...Props,
   ...SmallMobile,
-}) => Interpolation[] | boolean;
+|}) => Interpolation[] | boolean;
 
 declare export default GetViewportGridStyles;

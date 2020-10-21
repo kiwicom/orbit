@@ -1,3 +1,5 @@
+/* eslint-disable flowtype/require-exact-type  */
+/* we disable it because the RefType does not need to be exact or is incompatible with the React ref */
 // @flow
 
 export type Globals = {|

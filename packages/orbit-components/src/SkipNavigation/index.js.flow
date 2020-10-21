@@ -6,7 +6,7 @@
 type Actions = {|
   +name?: string,
   +link?: string,
-  +onClick?: () => {} | void | Promise<any>,
+  +onClick?: () => {||} | void | Promise<any>,
 |};
 
 export type MappedOptions = {|

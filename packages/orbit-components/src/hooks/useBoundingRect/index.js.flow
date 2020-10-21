@@ -1,5 +1,5 @@
 // @flow
-export type Dimensions = {
+export type Dimensions = {|
   x: ?number,
   y: ?number,
   width: ?number,
@@ -8,10 +8,10 @@ export type Dimensions = {
   right: ?number,
   bottom: ?number,
   left: ?number,
-};
+|};
 
 export type UseBoundingRect = (
   initialValue: ?$Shape<Dimensions>,
-) => [Dimensions, { current: ?HTMLElement }];
+) => [Dimensions, {| current: ?HTMLElement |}];
 
 declare export default UseBoundingRect;

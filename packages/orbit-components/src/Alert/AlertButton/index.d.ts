@@ -18,9 +18,11 @@ type Type =
   | "warningSubtle"
   | "criticalSubtle";
 
-export interface Props extends ButtonCommonProps {
+type OmittedButtonCommonProps = Omit<ButtonCommonProps, "size">;
+
+type Props = {
   readonly type?: Type;
-}
+} & OmittedButtonCommonProps;
 
 declare const AlertButton: React.FunctionComponent<Props>;
 export { AlertButton, AlertButton as default };

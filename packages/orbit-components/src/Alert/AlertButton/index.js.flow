@@ -15,7 +15,7 @@ export type Type =
 
 export type Props = {|
   +type?: Type,
-  ...ButtonCommonProps,
+  ...$Diff<ButtonCommonProps, {| +size?: string |}>,
 |};
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

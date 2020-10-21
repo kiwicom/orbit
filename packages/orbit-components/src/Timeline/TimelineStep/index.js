@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 
 import CheckCircle from "../../icons/CheckCircle";
 import Circle from "../../icons/CircleEmpty";

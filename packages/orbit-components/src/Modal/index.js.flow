@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/modal/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 import typeof ModalSectionType from "./ModalSection";
 import typeof ModalHeaderType from "./ModalHeader";
@@ -25,7 +27,7 @@ export type onClose = (
 
 export type Props = {|
   +size?: Size,
-  +children: React$Node,
+  +children: React.Node,
   +onClose?: onClose,
   +fixedFooter?: boolean,
   +isMobileFullPage?: boolean,
@@ -34,9 +36,9 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
-declare export var PureModal: React$ComponentType<Props>;
+declare export var PureModal: React.ComponentType<Props>;
 
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;

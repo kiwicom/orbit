@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../../utils/transition";
@@ -48,13 +48,13 @@ StyledCardSectionHeader.defaultProps = {
 };
 
 type Props = {|
-  title?: React$Node,
+  title?: React.Node,
   titleAs?: As,
-  description?: React$Node,
-  icon?: React$Node,
-  actions?: React$Node,
+  description?: React.Node,
+  icon?: React.Node,
+  actions?: React.Node,
   dataA11ySection?: string,
-  header?: React$Node,
+  header?: React.Node,
   expandable?: boolean,
   expanded?: boolean,
   handleKeyDown: (ev: SyntheticKeyboardEvent<HTMLDivElement>) => void,

@@ -1,10 +1,11 @@
 // @flow
+import * as React from "react";
 
 import type { Translation } from "../../common/common.js.flow";
 
 type Props = {|
-  +child: React$Element<*>,
-  +children: React$Element<*>,
+  +child: React.Element<*>,
+  +children: React.Element<*>,
   +onOnlySelection?: (
     SyntheticEvent<HTMLButtonElement>,
     {| value: string, label: string |},
@@ -12,6 +13,6 @@ type Props = {|
   +onlySelectionText?: Translation,
 |};
 
-export type FilterWrapperType = Props => React$Element<*>;
+export type FilterWrapperType = Props => React.Element<*>;
 
 declare export default FilterWrapperType;

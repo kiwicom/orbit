@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/stack/
 */
+import * as React from "react";
+
 import type { spaceAfter } from "../common/getSpacingToken/index";
 import type { Globals } from "../common/common.js.flow";
 import type { Theme } from "../defaultTheme";
@@ -52,7 +54,7 @@ export type Props = {|
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
   +as?: string,
-  +children: React$Node,
+  +children: React.Node,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

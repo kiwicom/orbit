@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/skiplink
 */
+import * as React from "react";
 
 type Actions = {|
   +name: string,
@@ -19,4 +20,4 @@ export type Props = {|
   buttonLabel?: string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

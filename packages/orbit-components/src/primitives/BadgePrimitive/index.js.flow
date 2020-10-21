@@ -2,13 +2,14 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/primitives/badgePrimitive/
 */
+import * as React from "react";
 import { ReactComponentStyled } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
-  +children?: React$Node,
-  +icon?: React$Node,
+  +children?: React.Node,
+  +icon?: React.Node,
   +ariaLabel?: string,
   +background?: ?string,
   +foregroundColor?: ?string,
@@ -18,4 +19,4 @@ export type Props = {|
 
 declare export var StyledBadge: ReactComponentStyled<Props>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

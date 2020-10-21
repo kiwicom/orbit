@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 import type { Spacing } from "../Stack";
 
@@ -7,7 +9,7 @@ export type Props = {|
   direction?: "column" | "row",
   spacing?: Spacing,
   indent?: boolean,
-  children: React$Node,
+  children: React.Node,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

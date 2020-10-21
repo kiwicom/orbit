@@ -50,7 +50,7 @@ Table below contains all types of the props available in the Modal component.
 
 ```jsx
 class Component extends React.Component {
-  modalRef: { current: null | React$ElementRef<*> } = React.createRef();
+  modalRef: { current: null | React.ElementRef<*> } = React.createRef();
 
   setScroll = () => {
     if (modalRef.current) {

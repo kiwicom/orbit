@@ -1,9 +1,11 @@
 // @flow
-import React, { useRef } from "react";
+import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 
 import useDimensions from "../useDimensions";
 import Button from "../../../../Button";
+
+const { useRef } = React;
 
 const Component = ({ children, parent }) => {
   const ref = useRef(null);

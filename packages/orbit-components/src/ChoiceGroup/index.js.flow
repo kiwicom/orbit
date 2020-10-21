@@ -8,7 +8,7 @@ type LabelSize = "normal" | "large";
 
 type LabelAs = "h2" | "h3" | "h4" | "h5" | "h6";
 
-export type Filters = { label: string, value: string };
+export type Filters = {| label: string, value: string |};
 export type Props = {|
   ...Globals,
   children: React$Node,
@@ -20,7 +20,7 @@ export type Props = {|
   filter?: boolean,
   onOnlySelection?: (
     SyntheticEvent<HTMLButtonElement>,
-    { value: string, label: string },
+    {| value: string, label: string |},
   ) => void | Promise<any>,
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};

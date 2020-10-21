@@ -1,6 +1,6 @@
 // @flow
 export type UseClickOutside = (
-  ref: { current: ?HTMLElement },
+  ref: {| current: ?HTMLElement |},
   handler: (ev: SyntheticEvent<HTMLElement>) => void,
 ) => void;
 

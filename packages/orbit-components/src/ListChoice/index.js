@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Heading from "../Heading";
 import Checkbox, { Label } from "../Checkbox";
@@ -32,7 +32,7 @@ StyledListChoiceIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledListChoice = styled.div`
+const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...props} />)`
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ const StyledListChoice = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   transition: background-color 0.15s ease-in-out;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 
   &:last-child {
     border: none;
@@ -49,11 +49,15 @@ const StyledListChoice = styled.div`
 
   &:focus,
   &:hover {
-    background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
-    ${StyledListChoiceIcon} svg {
-      color: ${({ theme }) => theme.orbit.colorIconPrimary};
-    }
     outline: none;
+    ${({ disabled, theme }) =>
+      !disabled &&
+      css`
+        background-color: ${theme.orbit.paletteCloudLight};
+        ${StyledListChoiceIcon} svg {
+          color: ${theme.orbit.colorIconPrimary};
+        }
+      `};
   }
 
   ${Label} {
@@ -78,17 +82,19 @@ StyledListChoiceContent.defaultProps = {
 };
 
 const ListChoice = (props: Props) => {
-  const { dataTest, icon, title, description, selectable, onClick, selected } = props;
+  const { dataTest, icon, title, description, selectable, onClick, selected, disabled } = props;
   const conditionalProps = {
     ...(selectable ? { "aria-checked": selected } : null),
   };
 
   return (
     <StyledListChoice
-      onClick={onClick}
+      onClick={!disabled ? onClick : null}
       data-test={dataTest}
-      onKeyDown={handleKeyDown(onClick)}
+      onKeyDown={!disabled ? handleKeyDown(onClick) : null}
       tabIndex="0"
+      disabled={disabled}
+      aria-disabled={disabled}
       role={selectable ? "checkbox" : "button"}
       {...conditionalProps}
     >
@@ -101,7 +107,7 @@ const ListChoice = (props: Props) => {
           </Text>
         )}
       </StyledListChoiceContent>
-      {selectable && <Checkbox checked={selected} readOnly tabIndex="-1" />}
+      {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex="-1" />}
     </StyledListChoice>
   );
 };

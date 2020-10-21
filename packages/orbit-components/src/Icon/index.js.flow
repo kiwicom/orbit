@@ -26,14 +26,14 @@ export type Props = {|
   +ariaLabel?: string,
 |};
 
-export type FactoryProps = {
+export type FactoryProps = {|
   +viewBox: string,
   +children: React.Node,
   ...Props,
-};
+|};
 
 declare export default React.ComponentType<FactoryProps>;
 
-export type GetSize = (size: Size) => ({ theme: typeof defaultTheme }) => string;
+export type GetSize = (size: Size) => ({| theme: typeof defaultTheme |}) => string;
 
 declare export var getSize: GetSize;

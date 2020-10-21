@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/InputStepper";
 
-type Title = string | ((...params: any[]) => string);
+type Title = string | ((...params: readonly any[]) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 

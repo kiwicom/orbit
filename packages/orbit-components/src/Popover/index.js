@@ -43,7 +43,7 @@ const Popover = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, transitionLength);
-  const container: { current: React$ElementRef<*> } = useRef(null);
+  const container: {| current: React$ElementRef<*> |} = useRef(null);
 
   const resolveCallback = useCallback(
     state => {

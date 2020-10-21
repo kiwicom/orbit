@@ -4,11 +4,11 @@ import * as React from "react";
 import type { Dimensions } from "../index";
 
 export type UseDimensions = (
-  {
+  {|
     containerRef: ?React.ElementRef<*>,
     tooltip: ?React.ElementRef<*>,
     content: ?React.ElementRef<*>,
-  },
+  |},
   children: React.Node,
   parent: ?React.Node,
 ) => Dimensions;

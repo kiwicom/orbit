@@ -1,8 +1,8 @@
 // @flow
-import * as Common from "../../common/common";
 
 declare const UseClickOutside: (
-  ref: { current: HTMLElement | null | undefined },
+  ref: { readonly current: HTMLElement | null | undefined },
+  // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
   handler: (ev: React.SyntheticEvent<HTMLLinkElement>) => void,
 ) => void;
 

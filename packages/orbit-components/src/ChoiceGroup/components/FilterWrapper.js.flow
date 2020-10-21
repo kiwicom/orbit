@@ -7,7 +7,7 @@ type Props = {|
   +children: React$Element<*>,
   +onOnlySelection?: (
     SyntheticEvent<HTMLButtonElement>,
-    { value: string, label: string },
+    {| value: string, label: string |},
   ) => void | Promise<any>,
   +onlySelectionText?: Translation,
 |};

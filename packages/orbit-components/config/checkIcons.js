@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 // @noflow
 
 /*
@@ -101,8 +100,6 @@ export default async function checkIcons(iconPaths, enforceSize) {
     process.exit(1);
   }
 
-  console.info(`Checking icons on ${iconPaths}`);
-
   const allIconsCharacters = [];
   const iconSize = enforceSize || DEFAULT_ICON_SIZE;
 
@@ -120,9 +117,6 @@ export default async function checkIcons(iconPaths, enforceSize) {
     const comments = getHTMLComments(dom.serialize());
     const content = dom.window.document.querySelector("svg");
 
-    // We perform all the checks
-    console.info(`Checking ${baseName} icon`);
-
     try {
       checkFillAttributes(comments, content, inputFileName);
       checkCharacterValues(comments, baseName, allIconsCharacters);
@@ -131,8 +125,6 @@ export default async function checkIcons(iconPaths, enforceSize) {
       console.error(error.message);
       process.exit(1);
     }
-
-    console.info(`${baseName} icon checked successfully!`);
   });
 }
 

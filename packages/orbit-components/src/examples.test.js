@@ -17,7 +17,7 @@ Object.defineProperty(window, "matchMedia", {
 });
 
 describe("GitHub examples", () => {
-  test.each(Object.keys(examples).map(k => [examples[k].info.title, examples[k].Example]))(
+  it.each(Object.keys(examples).map(k => [examples[k].info.title, examples[k].Example]))(
     "Rendering example %p",
     (name, Example) => {
       const wrapper = shallow(<Example />);

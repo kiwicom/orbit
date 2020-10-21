@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 
 export type OnPageChange = {| +onPageChange: number => void |};
@@ -18,4 +20,4 @@ export type Props = {|
   size?: Sizes,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -10,7 +10,7 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => {
-    const defaultItems: Array<React$ElementRef<any>> = [
+    const defaultItems: Array<React.ElementRef<any>> = [
       <Icons.Airplane ariaLabel="Planes" />,
       <Icons.Train ariaLabel="Trains" />,
       <Icons.Airplane ariaLabel="Planes" />,

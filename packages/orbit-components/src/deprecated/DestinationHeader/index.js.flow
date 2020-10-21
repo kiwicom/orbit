@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { Globals, TranslationString } from "../../common/common.js.flow";
 
 export type Props = {|
@@ -8,4 +10,4 @@ export type Props = {|
   +goBack?: () => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -45,14 +45,14 @@ Table below contains all types of the props in the PricingTableItem component.
 
 | Name              | Type                    | Default | Description                                             |
 | :---------------- | :---------------------- | :------ | :------------------------------------------------------ |
-| action            | `React$Node`            |         | Area for action elements, like Button.                  |
+| action            | `React.Node`            |         | Area for action elements, like Button.                  |
 | active            | `boolean`               |         | Shows active state.                                     |
-| badge             | `string \| React$Node`  |         | Badge above the PricingTableItem, works with **Badge**. |
+| badge             | `string \| React.Node`  |         | Badge above the PricingTableItem, works with **Badge**. |
 | **children**      | `React.Node`            |         | Content of the PricingTableItem component.              |
 | dataTest          | `string`                |         | Optional prop for testing purposes.                     |
-| featureIcon       | `React$Node`            |         | Feature Icon displayed at top of the PricingTableItem . |
+| featureIcon       | `React.Node`            |         | Feature Icon displayed at top of the PricingTableItem . |
 | mobileDescription | `Translation`           |         | Description of PricingTableItem, displayed on mobile.   |
 | name              | `Translation`           |         | Name of PricingTableItem.                               |
 | onClick           | `() => void \| Promise` |         | Function for handling the onClick event.                |
 | price             | `Translation`           |         | Price of item.                                          |
-| priceBadge        | `React$Node`            |         | Badge instead of `price`, work with **Badge**.          |
+| priceBadge        | `React.Node`            |         | Badge instead of `price`, work with **Badge**.          |

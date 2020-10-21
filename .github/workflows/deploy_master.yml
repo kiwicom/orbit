@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
         run: yarn install && yarn bootstrap

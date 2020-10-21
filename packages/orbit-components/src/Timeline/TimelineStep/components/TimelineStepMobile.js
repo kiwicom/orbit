@@ -39,11 +39,11 @@ const TimelineStepMobile = ({
 }: Props) => {
   return (
     <StyledRelative>
-      <Stack inline spaceAfter="large">
-        {!last && <StyledProgressLine status={nextType} data-test="progressLine" />}
+      <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>
         <StyledIconWrapper mobile>{typeIcon}</StyledIconWrapper>
+        {!last && <StyledProgressLine status={nextType} data-test="progressLine" />}
         <Stack flex shrink direction="column" spacing="condensed">
-          <Stack inline spacing="condensed" align="center">
+          <Stack flex spacing="condensed" align="center">
             {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
             <StyledText>
               <Text size="small">{subLabel}</Text>

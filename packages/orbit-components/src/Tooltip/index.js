@@ -37,6 +37,7 @@ const Tooltip = ({
     </TooltipPrimitive>
   ) : (
     <MobileDialog
+      dataTest={dataTest}
       tabIndex={tabIndex}
       enabled={enabled}
       content={content}

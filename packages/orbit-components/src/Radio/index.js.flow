@@ -2,22 +2,24 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/radio/
 */
+import * as React from "react";
+
 import type { Globals, Ref } from "../common/common.js.flow";
 
 export type Props = {|
-  +label?: React$Node,
+  +label?: React.Node,
   +value?: string,
   +hasError?: boolean,
   +disabled?: boolean,
   +name?: string,
   +checked?: boolean,
-  +info?: React$Node,
+  +info?: React.Node,
   +readOnly?: boolean,
   +tabIndex?: string | number,
-  +tooltip?: ?React$Element<any>,
+  +tooltip?: ?React.Element<any>,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
   ...Ref,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

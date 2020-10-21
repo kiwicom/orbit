@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/stopoverarrow/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
@@ -9,4 +11,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -38,12 +38,14 @@ Table below contains all types of the props available in Checkbox component.
 - `ref` can be used for example auto-focus the elements immediately after render.
 
 ```jsx
+import * as React from "react";
+
 class Component extends React.PureComponent<Props> {
   componentDidMount() {
     this.ref.current && this.ref.current.focus();
   }
 
-  ref: { current: React$ElementRef<*> | null } = React.createRef();
+  ref: { current: React.ElementRef<*> | null } = React.createRef();
 
   render() {
     return <Checkbox ref={this.ref} />;

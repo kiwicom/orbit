@@ -1,8 +1,9 @@
 // @flow
+import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 export type Props = {|
-  children: React$Node,
+  children: React.Node,
   expanded?: boolean,
   expandable?: boolean,
   visible?: boolean,
@@ -14,4 +15,4 @@ export type State = {|
 
 declare export var StyledCardSectionContent: ReactComponentStyled<any>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -1,4 +1,6 @@
 // @flow
+import * as React from "react";
+
 import type { OnPageChange, PageCount, SelectedPage, Sizes } from "../index";
 
 export type Props = {|
@@ -9,4 +11,4 @@ export type Props = {|
   size: Sizes,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

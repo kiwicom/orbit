@@ -12,7 +12,7 @@ module.exports = {
     "prettier/flowtype",
     "prettier/react",
   ],
-  plugins: ["import", "flowtype", "prettier", "jest", "react-hooks"],
+  plugins: ["import", "flowtype", "prettier", "jest", "react-hooks", "eslint-plugin-adeira"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",
@@ -69,5 +69,6 @@ module.exports = {
     "jest/no-if": "error",
     "jest/consistent-test-it": "warn",
     "jest/no-focused-tests": "error",
+    "adeira/no-internal-flow-type": "error",
   },
 };

@@ -1,4 +1,6 @@
 // @noflow
+const path = require("path");
+
 module.exports = {
   env: {
     browser: true,
@@ -20,6 +22,11 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       {
+        packageDir: [
+          path.join(__dirname, "../"),
+          path.join(__dirname, "../packages/babel-plugin-orbit-components"),
+          path.join(__dirname, "../packages/orbit-components"),
+        ],
         devDependencies: [
           "**/*.test.js",
           "**/__tests__/**",

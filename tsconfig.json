@@ -1,17 +1,11 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "lib": ["esnext", "dom"],
     "strict": true,
-    "noImplicitAny": false,
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "baseUrl": "./"
+    "noImplicitAny": false
   },
   "include": [
-    "packages/*/src"
-  ],
-  "exclude": [
-    "**/node_modules",
-    "packages/*/{es,lib,umd}"
+    "packages/orbit-components/**/*"
   ]
 }

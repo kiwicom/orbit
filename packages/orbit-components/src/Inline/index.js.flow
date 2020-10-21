@@ -6,6 +6,7 @@ import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
 
+export type Position = "start" | "end" | "center";
 // spacing tokens can then be imported from Box component
 export type SpacingToken =
   | "none"
@@ -21,14 +22,14 @@ export type SpacingToken =
 export type MediaQueryObject = $Diff<
   // eslint-disable-next-line no-use-before-define
   Props,
-  { as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
+  {| as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * |},
 >;
 
 export type Props = {|
   as?: string,
   spacing?: SpacingToken,
-  align?: "start" | "end" | "center",
-  justify?: "start" | "end" | "center",
+  align?: Position,
+  justify?: Position,
   mediumMobile?: MediaQueryObject,
   largeMobile?: MediaQueryObject,
   tablet?: MediaQueryObject,

@@ -12,7 +12,9 @@ const PlaceHolder = () => {
   return <div style={{ width: "50px", height: "50px", background: "grey" }} />;
 };
 
-const TestChildrens = () => {
+const dataTest = "test";
+
+const TestChildren = () => {
   return (
     <>
       <PlaceHolder />
@@ -31,8 +33,8 @@ storiesOf("Inline", module)
     () => {
       const spacing = select("spacing", SPACING, SPACING[1]);
       return (
-        <Inline spacing={spacing}>
-          <TestChildrens />
+        <Inline spacing={spacing} dataTest={dataTest}>
+          <TestChildren />
         </Inline>
       );
     },
@@ -50,8 +52,8 @@ storiesOf("Inline", module)
       const spacing = select("spacing", SPACING, SPACING[1]);
 
       return (
-        <Inline as={as} align={align} justify={justify} spacing={spacing}>
-          <TestChildrens />
+        <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
+          <TestChildren />
         </Inline>
       );
     },
@@ -65,8 +67,8 @@ storiesOf("Inline", module)
       const spacing = select("spacing", SPACING, SPACING[1]);
       return (
         <RenderInRtl>
-          <Inline spacing={spacing}>
-            <TestChildrens />
+          <Inline spacing={spacing} dataTest={dataTest}>
+            <TestChildren />
           </Inline>
         </RenderInRtl>
       );

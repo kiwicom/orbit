@@ -13,7 +13,7 @@
     "eslint:check": "eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
     "test": "jest --config=jest.json",
-    "test-ci": "yarn orbit-components build && yarn flow:check && yarn eslint:check && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test",
+    "test-ci": "yarn orbit-components check:icons && yarn orbit-components build && yarn flow:check && yarn eslint:check && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
     "release": "lerna version --conventional-commits --no-push"
   },

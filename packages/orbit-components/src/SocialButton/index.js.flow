@@ -12,7 +12,7 @@ export type Props = {|
   +type?: Type,
   ...$Diff<
     ButtonCommonProps,
-    { +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean },
+    {| +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean |},
   >,
 |};
 

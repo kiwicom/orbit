@@ -5,7 +5,7 @@ import type { Devices } from "../../utils/mediaQuery/consts";
 export type GetProperty = (
   property: "spacing" | "direction",
   {| index: number, devices: Devices[] |},
-  { ...Props, ...SmallMobile },
+  {| ...Props, ...SmallMobile |},
 ) => ?Direction | ?Spacing;
 
 declare export default GetProperty;

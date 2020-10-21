@@ -32,13 +32,13 @@ class Sticky extends React.Component<Props, State> {
     width: 0,
   };
 
-  content: {
+  content: {|
     current: any | HTMLDivElement,
-  } = React.createRef();
+  |} = React.createRef();
 
-  sticky: {
+  sticky: {|
     current: any | HTMLDivElement,
-  } = React.createRef();
+  |} = React.createRef();
 
   componentDidMount() {
     this.handleTop();

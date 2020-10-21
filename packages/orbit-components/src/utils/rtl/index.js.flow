@@ -1,15 +1,15 @@
 // @flow
 import type { ThemeProps } from "../../defaultTheme";
 
-export type LeftToRight = <T1, T2>(left: T1, right: T2) => ({ ...ThemeProps }) => T1 | T2;
+export type LeftToRight = <T1, T2>(left: T1, right: T2) => ({| ...ThemeProps |}) => T1 | T2;
 
-export type RtlSpacing = (value: string) => ({ ...ThemeProps }) => string;
+export type RtlSpacing = (value: string) => ({| ...ThemeProps |}) => string;
 
-export type BorderRadius = (value: string) => ({ ...ThemeProps }) => string;
+export type BorderRadius = (value: string) => ({| ...ThemeProps |}) => string;
 
-export type TextAlign = (value: "left" | "right") => ({ ...ThemeProps }) => string | LeftToRight;
+export type TextAlign = (value: "left" | "right") => ({| ...ThemeProps |}) => string | LeftToRight;
 
-export type Translate3d = (value: string) => ({ ...ThemeProps }) => string;
+export type Translate3d = (value: string) => ({| ...ThemeProps |}) => string;
 
 declare export var rtlSpacing: RtlSpacing;
 

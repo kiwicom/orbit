@@ -214,7 +214,7 @@ const PictureCard = ({
   width,
   dataTest,
 }: Props) => {
-  const ref: { current: any | HTMLDivElement } = React.useRef(null);
+  const ref: {| current: any | HTMLDivElement |} = React.useRef(null);
   const [contentHeight, setContentHeight] = React.useState(0);
 
   React.useEffect(() => {

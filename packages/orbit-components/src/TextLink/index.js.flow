@@ -32,11 +32,11 @@ export type Props = {|
   ...Globals,
 |};
 
-export type GetLinkStyleProps = {
+export type GetLinkStyleProps = {|
   type: Type,
   noUnderline?: boolean,
   ...ThemeProps,
-};
+|};
 
 export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
 

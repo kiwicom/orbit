@@ -5,10 +5,10 @@ export type Translations = {
   [key: string]: string,
 };
 
-export type Props = {
+export type Props = {|
   +values: Translations,
   +children: React$Node,
-};
+|};
 
 type WithDictionary<A, B> = (a: React.ComponentType<A>) => React.ComponentType<B>;
 

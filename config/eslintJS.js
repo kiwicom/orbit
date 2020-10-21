@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",
+    "flowtype/require-exact-type": "error",
     "import/no-extraneous-dependencies": [
       "error",
       {

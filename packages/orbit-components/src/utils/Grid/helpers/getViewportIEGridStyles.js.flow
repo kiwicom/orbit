@@ -7,8 +7,8 @@ import type { Props, SmallMobile, BasicProps } from "../index";
 export type GetViewportIEGridStyles = (
   mediaQuery: BasicProps,
   childrenCount: number,
-  { index: number, devices: Devices[] },
-  { ...Props, ...SmallMobile },
+  {| index: number, devices: Devices[] |},
+  {| ...Props, ...SmallMobile |},
 ) => Interpolation[] | boolean;
 
 declare export default GetViewportIEGridStyles;

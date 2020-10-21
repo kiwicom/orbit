@@ -2,10 +2,10 @@
 import type { ThemeProps } from "../../../defaultTheme";
 import type { Dimensions } from "../index";
 
-export type Props = {
+export type Props = {|
   ...Dimensions,
   ...ThemeProps,
-};
+|};
 
 type TooltipPadding = Props => string;
 

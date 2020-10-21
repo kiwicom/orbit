@@ -178,8 +178,8 @@ const PopoverContentWrapper = ({
   actions,
 }: Props) => {
   const { isInsideModal } = useContext(ModalContext);
-  const popover: { current: React$ElementRef<*> } = useRef(null);
-  const content: { current: React$ElementRef<*> } = useRef(null);
+  const popover: {| current: React$ElementRef<*> |} = useRef(null);
+  const content: {| current: React$ElementRef<*> |} = useRef(null);
   const intervalRef = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);

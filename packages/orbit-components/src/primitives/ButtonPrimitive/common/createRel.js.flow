@@ -1,8 +1,8 @@
 // @flow
-export type CreateRel = ({
+export type CreateRel = ({|
   +href?: string,
   +rel?: string,
   +external?: boolean,
-}) => ?string;
+|}) => ?string;
 
 declare export default CreateRel;

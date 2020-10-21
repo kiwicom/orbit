@@ -4,11 +4,11 @@ import { Interpolation } from "styled-components";
 import type { Position } from "../index";
 import type { Theme } from "../../defaultTheme";
 
-export type GetTransitionAnimation = ({
+export type GetTransitionAnimation = ({|
   width: string,
   shown: boolean,
   position: Position,
   theme: Theme,
-}) => Interpolation;
+|}) => Interpolation;
 
 declare export default GetTransitionAnimation;

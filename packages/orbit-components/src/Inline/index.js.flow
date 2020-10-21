@@ -19,23 +19,21 @@ export type SpacingToken =
   | "xx-large"
   | "xxx-large";
 
-export type MediaQueryObject = $Diff<
-  // eslint-disable-next-line no-use-before-define
-  Props,
-  {| as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * |},
->;
+type MediaQuery = {|
+  +spacing?: SpacingToken,
+  +align?: Position,
+  +justify?: Position,
+|};
 
 export type Props = {|
-  as?: string,
-  spacing?: SpacingToken,
-  align?: Position,
-  justify?: Position,
-  mediumMobile?: MediaQueryObject,
-  largeMobile?: MediaQueryObject,
-  tablet?: MediaQueryObject,
-  desktop?: MediaQueryObject,
-  largeDesktop?: MediaQueryObject,
-  children?: React.Node,
+  +as?: string,
+  +mediumMobile?: MediaQuery,
+  +largeMobile?: MediaQuery,
+  +tablet?: MediaQuery,
+  +desktop?: MediaQuery,
+  +largeDesktop?: MediaQuery,
+  +children?: React.Node,
+  ...MediaQuery,
   ...Globals,
 |};
 

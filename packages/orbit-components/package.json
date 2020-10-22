@@ -58,7 +58,6 @@
     "yarn.lock"
   ],
   "loki": {
-    "chromeSelector": "#component_preview > *",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",

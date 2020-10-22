@@ -18,12 +18,12 @@ const orbitDecorator = (storyFn, context) => {
     <div style={{ padding: "20px" }}>
       <Heading spaceAfter="medium">{context.kind}</Heading>
       <Text spaceAfter="largest">{context.parameters?.info}</Text>
-      <div id="component_preview">{children}</div>
-      <div style={{ marginTop: 20 }}>
-        <>
+      {children}
+      {process.env.NODE_ENV !== "loki" ? (
+        <div style={{ marginTop: 20 }}>
           <Code code={jsxToString(children, options)} language="jsx" format={false} />
-        </>
-      </div>
+        </div>
+      ) : null}
     </div>
   );
 };

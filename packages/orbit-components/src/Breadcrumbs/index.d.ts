@@ -12,7 +12,7 @@ declare module "@kiwicom/orbit-components/lib/Breadcrumbs";
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly goBackTitle?: Common.Translation;
-  readonly onGoBack?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+  readonly onGoBack?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
   readonly backHref?: string;
 }
 

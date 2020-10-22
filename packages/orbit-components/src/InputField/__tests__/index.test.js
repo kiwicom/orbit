@@ -55,7 +55,7 @@ describe(`InputField with help, prefix and suffix`, () => {
       spaceAfter={spaceAfter}
       inputMode={inputMode}
       prefix={<Search />}
-      suffix={<ButtonLink type="inline" iconLeft={<Visibility />} />}
+      suffix={<ButtonLink type="primary" compact iconLeft={<Visibility />} />}
       help={
         <div>
           Did you mean <TextLink>something</TextLink>?

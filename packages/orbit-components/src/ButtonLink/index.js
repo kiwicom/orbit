@@ -19,7 +19,7 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
     const buttonLinkStyles = getButtonLinkStyles({ type, theme, compact });
     const icons = getIconContainer({
       ...propsWithTheme,
-      iconForeground: getButtonLinkIconForeground({ type, theme }),
+      iconForeground: getButtonLinkIconForeground({ type, theme, compact }),
     });
     return (
       <ButtonPrimitive ref={ref} {...props} {...buttonLinkStyles} {...commonProps} {...icons} />

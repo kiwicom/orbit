@@ -1,7 +1,7 @@
 // @flow
 import fetch from "isomorphic-unfetch";
 import path from "path";
-import dotenv from "dotenv";
+import dotenv from "dotenv-safe";
 import fs from "fs-extra";
 
 dotenv.config();

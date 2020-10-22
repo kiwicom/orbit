@@ -145,7 +145,8 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
           </StyledFileInput>
           {fileName && (
             <ButtonLink
-              type="inline"
+              type="primary"
+              compact
               iconLeft={<CloseCircle color="secondary" />}
               onClick={ev => {
                 ev.preventDefault();

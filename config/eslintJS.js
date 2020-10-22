@@ -36,6 +36,7 @@ module.exports = {
           "**/stories/**",
           "packages/*/.storybook/**",
           "packages/*/config/**",
+          "gulpfile.js",
         ],
       },
     ],

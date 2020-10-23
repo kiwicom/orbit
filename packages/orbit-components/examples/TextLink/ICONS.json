@@ -1,6 +1,6 @@
 {
 	"imports": "import TextLink from \"@kiwicom/orbit-components/lib/TextLink\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport ChevronRight from \"@kiwicom/orbit-components/lib/icons/ChevronRight\";",
-	"example": "() => (\n  <Stack flex>\n    <TextLink\n      href=\"https://orbit.kiwi\"\n      external\n      icon={<Icons.NewWindow ariaLabel=\"Opens in new window\" />}\n    >\n      Orbit design system\n    </TextLink>\n    <TextLink icon={<Icons.ChevronRight />}>Skip this step</TextLink>\n  </Stack>\n)\n",
+	"example": "() => (\n  <Stack flex>\n    <TextLink\n      href=\"https://orbit.kiwi\"\n      external\n      iconRight={<Icons.NewWindow ariaLabel=\"Opens in new window\" />}\n    >\n      Orbit design system\n    </TextLink>\n    <TextLink iconRight={<Icons.ChevronRight />}>Skip this step</TextLink>\n  </Stack>\n)\n",
 	"info": {
 		"title": "Icons",
 		"description": "Icons add visual context to text links, such as letting users know the link will open in a new window/tab or that they are moving forward in the flow. Remember to include all necessary information also non-visually so everyone can access it."

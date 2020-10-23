@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
         run: yarn install && yarn bootstrap
@@ -38,7 +38,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
         run: yarn install && yarn bootstrap
@@ -62,5 +62,3 @@ jobs:
 
       - name: Update PR description
         run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}
-
-

@@ -11,7 +11,7 @@ export default {
       <TextLink
         href="https://orbit.kiwi"
         external
-        icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+        iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
       >
         Orbit design system
       </TextLink>
@@ -19,7 +19,7 @@ export default {
         rel="nofollow"
         external
         href="https://orbit.kiwi"
-        icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+        iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
       >
         Orbit design system
       </TextLink>

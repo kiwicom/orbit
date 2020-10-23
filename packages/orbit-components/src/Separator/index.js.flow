@@ -2,10 +2,12 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/separator/
 */
+import * as React from "react";
+
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

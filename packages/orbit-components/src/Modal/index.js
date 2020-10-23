@@ -348,9 +348,9 @@ export class PureModal extends React.PureComponent<Props & ThemeProps, State> {
     hasModalSection: false,
   };
 
-  modalContent: { current: any | HTMLElement } = React.createRef();
+  modalContent: {| current: any | HTMLElement |} = React.createRef();
 
-  modalBody: { current: any | HTMLElement } = React.createRef();
+  modalBody: {| current: any | HTMLElement |} = React.createRef();
 
   offset = 40;
 

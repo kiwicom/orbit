@@ -104,7 +104,7 @@ storiesOf("Drawer", module)
             <Button type="secondary">I do not have booking</Button>
             <Separator />
             <Text align="center">
-              <TextLink icon={<NewWindow />} type="secondary">
+              <TextLink iconRight={<NewWindow />} type="secondary">
                 Full FAQ site
               </TextLink>
             </Text>
@@ -358,7 +358,7 @@ storiesOf("Drawer", module)
               <Button type="secondary">I do not have booking</Button>
               <Separator />
               <Text align="center">
-                <TextLink icon={<NewWindow />} type="secondary">
+                <TextLink iconRight={<NewWindow />} type="secondary">
                   Full FAQ site
                 </TextLink>
               </Text>

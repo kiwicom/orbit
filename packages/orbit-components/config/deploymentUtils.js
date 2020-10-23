@@ -1,7 +1,7 @@
 // @flow
 // const { resolve } = require("path");
 const octokit = require("@octokit/rest")();
-// require("dotenv").config({ path: resolve(".env") });
+// require("dotenv-safe").config({ path: resolve(".env") });
 
 const repo = "orbit";
 

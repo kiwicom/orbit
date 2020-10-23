@@ -2,18 +2,20 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/tile/
 */
+import * as React from "react";
+
 import type { Globals } from "../../common/common.js.flow";
 
-export type State = {
+export type State = {|
   expanded?: boolean,
   initialExpanded?: boolean,
-};
+|};
 
 export type Props = {|
-  +title?: React$Node,
-  +description?: React$Node,
-  +icon?: React$Node,
-  +children?: React$Node,
+  +title?: React.Node,
+  +description?: React.Node,
+  +icon?: React.Node,
+  +children?: React.Node,
   +external?: boolean,
   +href?: string,
   +onClick?: (
@@ -23,4 +25,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

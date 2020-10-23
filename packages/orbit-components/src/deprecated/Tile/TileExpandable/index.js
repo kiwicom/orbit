@@ -33,7 +33,7 @@ StyledTileExpandable.defaultProps = {
 class TileExpandable extends React.PureComponent<Props, State> {
   timeout: TimeoutID;
 
-  node: { current: any | HTMLDivElement };
+  node: {| current: any | HTMLDivElement |};
 
   constructor(props: Props) {
     super(props);

@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 
 import type { Translations } from "../Dictionary/index";
 
@@ -15,10 +16,10 @@ export type Props = {|
 
 export type PureTranslate = (dictionary: Translations, key: Key, values?: Values) => string;
 
-export type Translate = {
+export type Translate = {|
   translate: (tKey: string, values?: Values) => string,
-};
+|};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var pureTranslate: PureTranslate;

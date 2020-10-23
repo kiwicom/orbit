@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/inputstepper/
 */
+import * as React from "react";
+
 import type { Globals, Ref, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 import type { spaceAfter } from "../common/getSpacingToken/index";
@@ -13,8 +15,8 @@ export type SharedProps = {|
   +size?: Size,
   +label?: Translation,
   +step?: number,
-  +help?: React$Node,
-  +error?: React$Node,
+  +help?: React.Node,
+  +error?: React.Node,
   +name?: string,
   +disabled?: boolean,
   +maxValue?: number,
@@ -33,4 +35,4 @@ export type Props = {|
   +onChange?: number => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

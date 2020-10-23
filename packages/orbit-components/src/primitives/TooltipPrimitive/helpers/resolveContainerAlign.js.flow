@@ -3,11 +3,11 @@ import type { Interpolation } from "styled-components";
 
 import type { Align, Dimensions, Position } from "../index";
 
-export type Props = {
+export type Props = {|
   ...Dimensions,
   ...Align,
   ...Position,
-};
+|};
 
 type ResolveContainerAlign = Props => Interpolation[] | null;
 

@@ -1,6 +1,8 @@
 // @flow
+import * as React from "react";
+
 export type Props = {|
-  children: React$Node,
+  children: React.Node,
   bottomBorder?: boolean,
   roundedBottom?: boolean,
   roundedTop?: boolean,
@@ -12,4 +14,4 @@ export type Props = {|
   initialExpanded?: boolean,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

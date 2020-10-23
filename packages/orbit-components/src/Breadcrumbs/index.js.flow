@@ -2,19 +2,21 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/breadcrumbs/
 */
+import * as React from "react";
+
 import type { Globals, Translation } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
-  +children: React$Node,
-  +onGoBack?: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +children: React.Node,
+  +onGoBack?: (ev: SyntheticEvent<HTMLElement>) => void | Promise<any>,
   +backHref?: string,
   +goBackTitle?: Translation,
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 declare export var BreadcrumbsItem: BreadcrumbsItemType;

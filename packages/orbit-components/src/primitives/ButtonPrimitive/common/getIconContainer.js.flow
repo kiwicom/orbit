@@ -1,3 +1,4 @@
+/* eslint-disable flowtype/require-exact-type */
 // @flow
 import * as React from "react";
 

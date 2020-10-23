@@ -5,7 +5,7 @@ import Textarea from "../index";
 
 export default {
   Example: () => {
-    const ref: { current: React$ElementRef<any> } = React.useRef(null);
+    const ref: {| current: React.ElementRef<any> |} = React.useRef(null);
 
     React.useEffect(() => {
       if (ref.current) {

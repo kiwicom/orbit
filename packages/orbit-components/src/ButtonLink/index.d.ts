@@ -9,7 +9,7 @@ import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/ButtonLink";
 
-type Type = "primary" | "secondary" | "critical" | "inline";
+type Type = "primary" | "secondary" | "critical";
 
 export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, ButtonCommonProps {
   readonly compact?: boolean;

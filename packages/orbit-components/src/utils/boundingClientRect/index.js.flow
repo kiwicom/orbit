@@ -12,6 +12,6 @@ type Dimensions = {|
   pureBottom: number,
 |};
 
-export type BoundingClientRect = (ref: ?{ current: ?HTMLElement }) => ?Dimensions;
+export type BoundingClientRect = (ref: ?{| current: ?HTMLElement |}) => ?Dimensions;
 
 declare export default BoundingClientRect;

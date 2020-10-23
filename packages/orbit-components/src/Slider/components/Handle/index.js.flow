@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 
 import type { Value, AriaLabel } from "../../index";
 
@@ -20,7 +21,7 @@ export type Props = {|
   dataTest?: ?string,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 
 export type CalculateLeftPosition = (
   valueNow: number,

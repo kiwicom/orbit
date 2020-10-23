@@ -6,7 +6,9 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
+  plugins: ["import", "react"],
   rules: {
+    "@typescript-eslint/prefer-readonly-parameter-types": "error",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -18,8 +20,8 @@ module.exports = {
       },
     ],
   },
-  plugins: ["import", "react"],
   parserOptions: {
+    project: "./tsconfig.json",
     ecmaVersion: 2018,
     sourceType: "module",
   },

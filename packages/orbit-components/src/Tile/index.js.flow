@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/tile/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 
 export type TileOnClick = (
@@ -9,11 +11,11 @@ export type TileOnClick = (
 ) => void | Promise<any>;
 
 export type Props = {|
-  +title?: React$Node,
-  +description?: React$Node,
-  +icon?: React$Node,
-  +header?: React$Node,
-  +children?: React$Node,
+  +title?: React.Node,
+  +description?: React.Node,
+  +icon?: React.Node,
+  +header?: React.Node,
+  +children?: React.Node,
   +external?: boolean,
   +href?: string,
   +onClick?: TileOnClick,
@@ -25,4 +27,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

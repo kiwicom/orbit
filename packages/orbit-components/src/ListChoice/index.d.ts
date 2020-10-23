@@ -13,6 +13,7 @@ export interface Props extends Common.Global {
   readonly description?: Common.Translation;
   readonly selectable?: boolean;
   readonly selected?: boolean;
+  readonly disabled?: boolean;
   readonly icon?: React.ReactNode;
   readonly onClick?: Common.Event<
     React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>

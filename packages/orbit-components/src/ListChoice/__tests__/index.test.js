@@ -33,6 +33,7 @@ describe("ListChoice", () => {
       description={description}
       selectable={selectable}
       selected={selected}
+      disabled
       icon={<Accommodation />}
       onClick={onClick}
       dataTest={dataTest}
@@ -52,7 +53,12 @@ describe("ListChoice", () => {
   it("should render checkbox with checked false", () => {
     expect(component.find("Checkbox").prop("checked")).toBe(true);
   });
+  it("should NOT execute onClick method", () => {
+    component.simulate("click");
+    expect(onClick).not.toHaveBeenCalled();
+  });
   it("should execute onClick method", () => {
+    component.setProps({ disabled: false });
     component.simulate("click");
     expect(onClick).toHaveBeenCalled();
   });

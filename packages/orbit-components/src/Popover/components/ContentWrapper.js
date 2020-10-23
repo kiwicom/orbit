@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useEffect, useContext, useMemo, useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -20,6 +20,8 @@ import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
+
+const { useRef, useEffect, useContext, useMemo, useCallback } = React;
 
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
@@ -178,8 +180,8 @@ const PopoverContentWrapper = ({
   actions,
 }: Props) => {
   const { isInsideModal } = useContext(ModalContext);
-  const popover: { current: React$ElementRef<*> } = useRef(null);
-  const content: { current: React$ElementRef<*> } = useRef(null);
+  const popover: {| current: React.ElementRef<*> |} = useRef(null);
+  const content: {| current: React.ElementRef<*> |} = useRef(null);
   const intervalRef = useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);

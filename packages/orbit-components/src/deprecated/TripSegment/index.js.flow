@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/tripsegment/
 */
+import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
 import type { Carrier } from "../../CarrierLogo";
@@ -18,7 +19,7 @@ export type State = {|
 
 export type Props = {|
   ...Globals,
-  +children: React$Node,
+  +children: React.Node,
   +carrier: Carrier,
   +departure: Translation,
   +departureTime: Translation,
@@ -30,6 +31,6 @@ export type Props = {|
   +onClick?: () => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;
 declare export var StyledTripSegment: ReactComponentStyled<any>;
 declare export var StyledTripSegmentMilestone: ReactComponentStyled<any>;

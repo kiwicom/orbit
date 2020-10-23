@@ -7,7 +7,7 @@ export default {
   Example: () => {
     const [fileName, setFileName] = React.useState("");
     const fileTypes = ".png,.jpg,.jpeg,.webp";
-    const ref: { current: React$ElementRef<any> } = React.useRef(null);
+    const ref: {| current: React.ElementRef<any> |} = React.useRef(null);
 
     React.useEffect(() => {
       if (ref.current) {

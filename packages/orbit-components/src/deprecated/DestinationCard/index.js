@@ -175,7 +175,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
     hiddenContentHeight: 0,
   };
 
-  hiddenContent: { current: any | HTMLDivElement } = React.createRef();
+  hiddenContent: {| current: any | HTMLDivElement |} = React.createRef();
 
   cardID: string = randomID("destinationCardID");
 

@@ -89,7 +89,7 @@ yarn add @types/styled-components -D
 
 ## Contributing
 
-We are working on making this project fully open source. We appreciate any contributions you might make.
+We are working on making this project a fully open source. We appreciate any contributions you might make.
 
 [Bug reports](https://github.com/kiwicom/orbit/issues/new?template=bug_report.md) and [feature request](https://github.com/kiwicom/orbit/issues/new?template=feature_request.md) are welcome but, please use the correct template.
 

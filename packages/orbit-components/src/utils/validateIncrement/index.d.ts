@@ -1,4 +1,3 @@
-// @flow
 import { Params } from "../validateDecrement/index";
 
 declare const ValidateIncrement: (arg: Params) => number;

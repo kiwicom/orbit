@@ -1,4 +1,3 @@
-// @flow
 import Translations from "../../Dictionary/index";
 
 declare const useDictionary: () => typeof Translations;

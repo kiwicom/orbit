@@ -1,4 +1,3 @@
-// @flow
 import * as Common from "../../common/common";
 
 type Event = Common.Event<React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>>;

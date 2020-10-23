@@ -1,4 +1,3 @@
-// @flow
 export type Return<S> = [S, (arg0: S) => void];
 
 export default function useStateWithCallback<S>(

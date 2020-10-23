@@ -15,7 +15,7 @@ export default {
       description="Select the perfect place to rest during your stay in Warsaw."
       illustration={<Illustration name="Accommodation" />}
       actions={
-        <Stack flex>
+        <Stack flex align="center">
           <Button size="small" type="secondary" href="https://rooms.kiwi.com" external>
             Find a room
           </Button>

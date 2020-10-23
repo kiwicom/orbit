@@ -8,6 +8,7 @@ export { Alert } from "./Alert/index";
 export { AlertButton } from "./Alert/AlertButton/index";
 export { AirportIllustration } from "./AirportIllustration/index";
 export { Badge } from "./Badge/index";
+export { Box } from "./Box";
 export { NotificationBadge } from "./NotificationBadge/index";
 export { Breadcrumbs } from "./Breadcrumbs/index";
 export { BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem/index";

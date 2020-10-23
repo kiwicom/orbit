@@ -6,6 +6,9 @@ import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
 
+// TODO: extend to suppressed and flat
+export type Elevation = "action" | "fixed" | "raised" | "overlay";
+
 export type ColorTokens =
   | "productLight"
   | "productLightHover"
@@ -82,61 +85,62 @@ export type ColorTokens =
 
 export type SpacingToken =
   | "none"
-  | "xx-small"
-  | "x-small"
+  | "XXXSmall"
+  | "XXSmall"
+  | "XSmall"
   | "small"
   | "medium"
   | "large"
-  | "x-large"
-  | "xx-large"
-  | "xxx-large";
+  | "XLarge"
+  | "XXLarge"
+  | "XXXLarge";
 
-export type SpacingObject = {
-  left?: SpacingToken,
-  top?: SpacingToken,
-  right?: SpacingToken,
-  bottom?: SpacingToken,
-};
+export type SpacingObject = {|
+  +left?: SpacingToken,
+  +top?: SpacingToken,
+  +right?: SpacingToken,
+  +bottom?: SpacingToken,
+|};
 
 export type MediaQueryObject = $Diff<
   // eslint-disable-next-line no-use-before-define
   Props,
-  { as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * },
+  {| as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * |},
 >;
 
 export type Props = {|
-  as?: string,
-  padding?: SpacingObject | SpacingToken,
-  margin?: SpacingObject | SpacingToken,
-  display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block",
-  flexWrap?: "wrap" | "nowrap",
-  flexShrink?: 0 | 1,
-  flexGrow?: 0 | 1,
-  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse",
-  width?: "full" | "auto",
-  maxWidth?: string,
-  height?: "full" | "auto",
-  maxHeight?: string,
-  position?: "absolute" | "relative" | "fixed",
-  left?: string,
-  top?: string,
-  right?: string,
-  bottom?: string,
-  alignItems?: "start" | "end" | "center" | "stretch",
-  justifyContent?: "center" | "start" | "end" | "between" | "around",
-  textAlign?: "left" | "right" | "center",
-  elevation?: "suppressed" | "flat" | "action" | "fixed" | "raised" | "overlay",
-  color?: ColorTokens,
-  background?: ColorTokens,
-  borderRadius?: "small" | "normal" | "large" | "radiusCircle",
-  overflow?: "auto" | "hidden" | "scroll" | "visible",
-  mediumMobile?: MediaQueryObject,
-  largeMobile?: MediaQueryObject,
-  tablet?: MediaQueryObject,
-  desktop?: MediaQueryObject,
-  largeDesktop?: MediaQueryObject,
-  children?: React.Node,
-  className?: string, // Box is a only component where extending make sense
+  +as?: string,
+  +padding?: SpacingObject | SpacingToken,
+  +margin?: SpacingObject | SpacingToken,
+  +display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block",
+  +wrap?: "wrap" | "nowrap",
+  +shrink?: 0 | 1,
+  +grow?: 0 | 1,
+  +direction?: "row" | "column" | "row-reverse" | "column-reverse",
+  +width?: "full" | "auto",
+  +maxWidth?: string,
+  +height?: "full" | "auto",
+  +maxHeight?: string,
+  +position?: "absolute" | "relative" | "fixed",
+  +left?: string,
+  +top?: string,
+  +right?: string,
+  +bottom?: string,
+  +align?: "start" | "end" | "center" | "stretch",
+  +justify?: "center" | "start" | "end" | "between" | "around",
+  +textAlign?: "left" | "right" | "center",
+  +elevation?: Elevation,
+  +color?: ColorTokens,
+  +background?: ColorTokens,
+  +borderRadius?: "small" | "normal" | "large" | "circle",
+  +overflow?: "auto" | "hidden" | "scroll" | "visible",
+  +mediumMobile?: MediaQueryObject,
+  +largeMobile?: MediaQueryObject,
+  +tablet?: MediaQueryObject,
+  +desktop?: MediaQueryObject,
+  +largeDesktop?: MediaQueryObject,
+  +children?: React.Node,
+  +className?: string, // Box is a only component where extending make sense
   ...Globals,
 |};
 

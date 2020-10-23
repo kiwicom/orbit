@@ -1,4 +1,3 @@
-// @flow
 import { ThemeShape } from "../../defaultTheme";
 
 declare const useTheme: () => ThemeShape;

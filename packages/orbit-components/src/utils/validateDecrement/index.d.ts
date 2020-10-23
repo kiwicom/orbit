@@ -1,5 +1,3 @@
-// @flow
-
 export type Params = {
   value: number;
   minValue?: number;

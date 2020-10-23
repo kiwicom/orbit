@@ -15,7 +15,10 @@
     "test": "jest --config=jest.json",
     "test-ci": "yarn orbit-components check:icons && yarn orbit-components build && yarn flow:check && yarn tsc && yarn eslint:check && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
-    "dev:test": "cross-env NODE_ENV=loki yarn workspace @kiwicom/orbit-components storybook",
+    "loki:test": "yarn workspace @kiwicom/orbit-components loki test",
+    "loki:approve": "yarn workspace @kiwicom/orbit-components loki approve",
+    "dev": "yarn workspace @kiwicom/orbit-components storybook",
+    "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish"
   },
   "lint-staged": {

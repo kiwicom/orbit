@@ -1,8 +1,8 @@
 # How to use component types (Typescript | Flow)
 
-In `Orbit`, every component exports their `Props` object, so it can be then imported into your project and use it to access its fields.
+In `Orbit`, all components export their `Props` object so you can then import it into your project and use it to access their fields.
 
-A common use case would be, for example, to be able type the different `enums` that `Orbit` has like Popover `alignment` or text `weight`.
+A common use case is to be able type the different `enums` that `Orbit` has, such as `alignment` for Popover and `weight` for Text.
 
 In the following snippet (using `Typescript`), the type checker will complain because `type` is not the `enum` type but a general `string` type.
 
@@ -18,11 +18,11 @@ const WrappedText = ({ children, type }) => <Text type={type}>{children}</Text>;
 export default WrappedText;
 ```
 
-To solve this, we need to have a way to access the different `Props` fields to correctly type the fields that are passed onto the `Orbit` components. Fortunately there is a way to do so with the different typechecking systems.
+To solve this, you need to have a way to access the different `Props` fields to correctly type the fields that are passed on to `Orbit` components. Fortunately, there is a way to do so with the different type-checking systems.
 
 ## Typescript
 
-In `Typescript` we can access the fields using [Index Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#index-types), for example, creating a type which contains `field_name` from a given `TypeName` would be done like `TypeName["field_name"]`, so our issue could be solved by just doing:
+In `Typescript`, you can access the fields using [index types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#index-types). For example, a type that contains `field_name` from a given `TypeName` would be `TypeName["field_name"]`, so the issue above could be solved by modifying the prop's type:
 
 ```jsx
 import Text, { Props as TextProps } from "@kiwicom/orbit-components/lib/Text";
@@ -38,7 +38,7 @@ export default WrappedText;
 
 ## Flow
 
-In `Flow`, we can access the fields using [\$PropertyType](https://flow.org/en/docs/types/utilities/#toc-propertytype), so our example would be fixed as follows:
+In `Flow`, you can access the fields using [`$PropertyType`](https://flow.org/en/docs/types/utilities/#toc-propertytype), so the example would be fixed as follows:
 
 ```jsx
 import Text from "@kiwicom/orbit-components/lib/Text";

@@ -8,7 +8,7 @@ import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
-import ButtonLink from "../ButtonLink";
+import TextLink from "../TextLink";
 import Hide from "../Hide";
 
 import type { Props } from "./index";
@@ -86,16 +86,15 @@ const Breadcrumbs = (props: Props) => {
       </Hide>
       <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
         {onGoBack || backHref ? (
-          <ButtonLink
-            type="inline"
-            compact
+          <TextLink
+            standAlone
             iconLeft={<ChevronLeft reverseOnRtl />}
             dataTest="BreadcrumbsBack"
             onClick={onGoBack}
             href={backHref}
           >
             {goBackTitle}
-          </ButtonLink>
+          </TextLink>
         ) : null}
       </Hide>
     </>

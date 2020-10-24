@@ -40,7 +40,6 @@ export { default as ButtonLinkAccessibility } from "./ButtonLink/__examples__/AC
 export { default as ButtonLinkCircled } from "./ButtonLink/__examples__/CIRCLED";
 export { default as ButtonLinkDefault } from "./ButtonLink/__examples__/DEFAULT";
 export { default as ButtonLinkIcons } from "./ButtonLink/__examples__/ICONS";
-export { default as ButtonLinkInline } from "./ButtonLink/__examples__/INLINE";
 export { default as ButtonLinkLinks } from "./ButtonLink/__examples__/LINKS";
 export { default as ButtonLinkLoading } from "./ButtonLink/__examples__/LOADING";
 export { default as ButtonLinkRef } from "./ButtonLink/__examples__/REF";

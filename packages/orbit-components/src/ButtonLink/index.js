@@ -16,10 +16,10 @@ const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
     const commonProps = getButtonLinkCommonProps({ ...propsWithTheme, compact });
-    const buttonLinkStyles = getButtonLinkStyles({ type, theme });
+    const buttonLinkStyles = getButtonLinkStyles({ type, theme, compact });
     const icons = getIconContainer({
       ...propsWithTheme,
-      iconForeground: getButtonLinkIconForeground({ type, theme }),
+      iconForeground: getButtonLinkIconForeground({ type, theme, compact }),
     });
     return (
       <ButtonPrimitive ref={ref} {...props} {...buttonLinkStyles} {...commonProps} {...icons} />

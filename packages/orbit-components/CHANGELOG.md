@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.95.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.94.0...@kiwicom/orbit-components@0.95.0) (2020-10-23)
+
+### Bug Fixes
+
+- **Timeline:** IE fixes ([#2370](https://github.com/kiwicom/orbit/issues/2370)) ([e2d1953](https://github.com/kiwicom/orbit/commit/e2d1953af1a339f42ead0ed4dbe716fc52d52d62))
+- **Tooltip:** missing MobileDialog data-test ([#2382](https://github.com/kiwicom/orbit/issues/2382)) ([00bf878](https://github.com/kiwicom/orbit/commit/00bf878821ca59de024eb6ec0886f8e7b7b03000))
+
+### Features
+
+- **Eslint:** add rules for enforcing readOnly types on TS/Flow ([#2331](https://github.com/kiwicom/orbit/issues/2331)) ([26d13b5](https://github.com/kiwicom/orbit/commit/26d13b52ce62da4f41f48237a469c84c7e24f11b))
+- **ListChoice:** add disabled boolean property ([#2355](https://github.com/kiwicom/orbit/issues/2355)) ([4f135e5](https://github.com/kiwicom/orbit/commit/4f135e5b7bd07202dd507acad5375619fee1aa0a))
+- **Loki:** skip code blocks ([#2389](https://github.com/kiwicom/orbit/issues/2389)) ([9d4c7d1](https://github.com/kiwicom/orbit/commit/9d4c7d1af63735d652440cf0c9003e834e4b4fc5)), closes [#2346](https://github.com/kiwicom/orbit/issues/2346)
+- **orbit:** transitions defaults to on ([#2372](https://github.com/kiwicom/orbit/issues/2372)) ([d2338e3](https://github.com/kiwicom/orbit/commit/d2338e385f04d262de4fd82fe736eb5a12a6ffbe))
+- **TextLink:** add standAlone, noUnderline & iconRight, rename icon to iconLeft ([#2373](https://github.com/kiwicom/orbit/pull/2373)) ([76959c86](https://github.com/kiwicom/orbit/commit/76959c865fbb942bfafd9b67b4e2cc45897ab67a))
+  - for renaming `icon` to `iconRight` there's a codemod available, see https://github.com/kiwicom/orbit/pull/2380#issuecomment-713441576
+
 # [0.94.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.93.0...@kiwicom/orbit-components@0.94.0) (2020-10-19)
 
 ### Bug Fixes

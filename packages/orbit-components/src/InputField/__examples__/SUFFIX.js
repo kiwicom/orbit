@@ -21,7 +21,7 @@ export default {
           type={showPassword ? "text" : "password"}
           suffix={
             <ButtonLink
-              type="inline"
+              type="primary"
               iconLeft={
                 showPassword ? (
                   <Icons.VisibilityOff ariaLabel="Hide password" />
@@ -29,6 +29,7 @@ export default {
                   <Icons.Visibility ariaLabel="Show password" />
                 )
               }
+              compact
               onClick={() => setShowPassword(!showPassword)}
             />
           }

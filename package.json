@@ -59,7 +59,7 @@
     "@storybook/storybook-deployer": "^2.8.7",
     "@storybook/theming": "^6.0.26",
     "@svgr/core": "^2.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.8",
     "@types/styled-components": "^5.1.4",

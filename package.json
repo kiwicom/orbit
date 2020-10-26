@@ -51,7 +51,7 @@
     "@emotion/core": "^10.0.35",
     "@kiwicom/browserslist-config": "^1.0.0",
     "@octokit/rest": "^15.13.1",
-    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-actions": "^6.0.27",
     "@storybook/addon-info": "^6.0.0-alpha.2",
     "@storybook/addon-knobs": "^6.0.27",
     "@storybook/addons": "^6.0.26",

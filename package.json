@@ -112,7 +112,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-element-to-jsx-string": "^14.3.1",
-    "react-test-renderer": "^16.13.0",
+    "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2",
     "sharp": "^0.26.2",
     "styled-components": "^4.4.1",

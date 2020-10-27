@@ -82,15 +82,15 @@ storiesOf("SkipNavigation", module)
             actions={[
               {
                 link: "https://www.kiwi.com/cz/pages/content/terms",
-                name: "Got to terms and condition",
+                name: "Go to terms and conditions",
               },
               {
                 name: "Add baggage",
                 onClick: action("Add baggage"),
               },
               {
-                name: "Reguest refund",
-                onClick: action("Reguest refund"),
+                name: "Request refund",
+                onClick: action("Request refund"),
               },
             ]}
             feedbackUrl="#"

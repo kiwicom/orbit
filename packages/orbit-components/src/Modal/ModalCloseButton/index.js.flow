@@ -1,0 +1,9 @@
+// @flow
+import * as React from "react";
+
+export type Props = {|
+  +onClick: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +dataTest: string,
+|};
+
+declare export default React.ComponentType<Props>;

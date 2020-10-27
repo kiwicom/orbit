@@ -22,15 +22,15 @@
 
 ### Technologies we use
 
-- [react](https://reactjs.org/docs/getting-started.html) for development
+- [React](https://reactjs.org/docs/getting-started.html) for development
 - [styled-components](https://www.styled-components.com/docs) for styling
-- [jest](http://airbnb.io/enzyme/docs/guides/jest.html) and [enzyme](https://airbnb.io/enzyme/docs/api/) for testing
+- [Jest](http://airbnb.io/enzyme/docs/guides/jest.html), [Enzyme](https://airbnb.io/enzyme/docs/api/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/api) for testing
 
 ### Starting with development
 
 For local development you can use:
 
-- `yarn storybook`
+- `yarn workspace @kiwicom/orbit-components storybook`
 
 In case you want to develop in your current project:
 

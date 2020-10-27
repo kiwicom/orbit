@@ -63,7 +63,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.8",
     "@types/styled-components": "^5.1.4",
-    "@typescript-eslint/parser": "^4.5.0",
+    "@typescript-eslint/parser": "^4.6.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",

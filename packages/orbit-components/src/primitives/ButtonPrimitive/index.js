@@ -22,54 +22,58 @@ const iconContainerColor = (color: ?string, important = true) => css`
 `;
 
 export const StyledButtonPrimitive = styled(
-  ({
-    asComponent = "button",
-    dataTest,
-    submit,
-    disabled,
-    forwardedRef,
-    ariaControls,
-    ariaExpanded,
-    ariaLabelledby,
-    ariaCurrent,
-    title,
-    className,
-    rel,
-    href,
-    target,
-    external,
-    tabIndex,
-    onClick,
-    role,
-    ...props
-  }) => {
-    const isButtonWithHref = asComponent === "button" && href;
-    const Component = isButtonWithHref ? "a" : asComponent;
-    const buttonType = submit ? "submit" : "button";
+  React.forwardRef(
+    (
+      {
+        asComponent = "button",
+        dataTest,
+        submit,
+        disabled,
+        ariaControls,
+        ariaExpanded,
+        ariaLabelledby,
+        ariaCurrent,
+        title,
+        className,
+        rel,
+        href,
+        target,
+        external,
+        tabIndex,
+        onClick,
+        role,
+        ...props
+      },
+      ref,
+    ) => {
+      const isButtonWithHref = asComponent === "button" && href;
+      const Component = isButtonWithHref ? "a" : asComponent;
+      const buttonType = submit ? "submit" : "button";
 
-    return (
-      <Component
-        ref={forwardedRef}
-        data-test={dataTest}
-        aria-controls={ariaControls}
-        aria-current={ariaCurrent}
-        aria-expanded={ariaExpanded}
-        aria-label={title}
-        aria-labelledby={ariaLabelledby}
-        type={!isButtonWithHref ? buttonType : undefined}
-        className={className}
-        disabled={disabled}
-        href={!disabled ? href : null}
-        target={!disabled && href && external ? "_blank" : undefined}
-        rel={createRel({ external, href, rel })}
-        tabIndex={tabIndex}
-        onClick={!disabled ? onClick : null}
-        role={role}
-      >
-        {props.children}
-      </Component>
-    );
-  },
+      return (
+        <Component
+          ref={ref}
+          data-test={dataTest}
+          aria-controls={ariaControls}
+          aria-current={ariaCurrent}
+          aria-expanded={ariaExpanded}
+          aria-label={title}
+          aria-labelledby={ariaLabelledby}
+          type={!isButtonWithHref ? buttonType : undefined}
+          className={className}
+          disabled={disabled}
+          href={!disabled ? href : null}
+          target={!disabled && href && external ? "_blank" : undefined}
+          rel={createRel({ external, href, rel })}
+          tabIndex={tabIndex}
+          onClick={!disabled ? onClick : null}
+          role={role}
+        >
+          {props.children}
+        </Component>
+      );
+    },
+  ),
 )`
   ${({
     foreground,
@@ -207,7 +211,7 @@ const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) 
   const onlyIcon = Boolean(iconLeft && !children);
   return (
     <StyledButtonPrimitive
-      forwardedRef={ref}
+      ref={ref}
       onlyIcon={onlyIcon}
       {...props}
       disabled={isDisabled}

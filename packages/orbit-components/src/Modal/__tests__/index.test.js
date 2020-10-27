@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Modal from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
@@ -86,42 +87,37 @@ describe("Large Modal", () => {
   });
 });
 
-describe("Modal with ModalSection", () => {
-  const title = "My title";
-  const content = "My content";
+describe("Modal", () => {
+  it("should render ModalSection", () => {
+    const testId = "modalSection";
 
-  const component = mount(
-    <Modal>
-      <ModalHeader title={title} />
-      <Div>
+    render(
+      <Modal>
+        <ModalHeader title="Title of Modal" />
         <Div>
           <Div>
-            <ModalSection>{content}</ModalSection>
+            <Div>
+              <ModalSection dataTest={testId}>Content of Modal Section</ModalSection>
+            </Div>
           </Div>
         </Div>
-      </Div>
-      <ModalFooter>It should render if needed</ModalFooter>
-    </Modal>,
-  );
-  it.skip("should match snapshot", () => {
-    const instance = component.instance();
-    expect(instance.state.hasModalSection).toBe(true);
+        <ModalFooter>It should render if needed</ModalFooter>
+      </Modal>,
+    );
+
+    expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
-});
 
-describe("Modal without ModalSection", () => {
-  const title = "My title";
+  it("should not render ModalSection", () => {
+    const { container } = render(
+      <Modal>
+        <ModalHeader title="Title of Modal" />
+        <ModalFooter>
+          <Button fullWidth>Continue to Payment</Button>
+        </ModalFooter>
+      </Modal>,
+    );
 
-  const component = mount(
-    <Modal>
-      <ModalHeader title={title} />
-      <ModalFooter>
-        <Button fullWidth>Continue to Payment</Button>
-      </ModalFooter>
-    </Modal>,
-  );
-  it.skip("should match snapshot", () => {
-    const instance = component.instance();
-    expect(instance.state.hasModalSection).toBe(false);
+    expect(container.querySelector("section")).not.toBeInTheDocument();
   });
 });

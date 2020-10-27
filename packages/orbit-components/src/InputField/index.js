@@ -281,11 +281,11 @@ const FormLabel = ({
   label,
   isFilled,
   required,
-}: {
+}: {|
   label: Translation,
   isFilled: boolean,
   required?: boolean,
-}) => (
+|}) => (
   <DefaultFormLabel filled={isFilled} required={required}>
     {label}
   </DefaultFormLabel>

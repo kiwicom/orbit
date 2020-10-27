@@ -1,4 +1,6 @@
 // @noflow
+const path = require("path");
+
 module.exports = {
   env: {
     browser: true,
@@ -12,13 +14,19 @@ module.exports = {
     "prettier/flowtype",
     "prettier/react",
   ],
-  plugins: ["import", "flowtype", "prettier", "jest", "react-hooks"],
+  plugins: ["import", "flowtype", "prettier", "jest", "react-hooks", "eslint-plugin-adeira"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",
+    "flowtype/require-exact-type": "error",
     "import/no-extraneous-dependencies": [
       "error",
       {
+        packageDir: [
+          path.join(__dirname, "../"),
+          path.join(__dirname, "../packages/babel-plugin-orbit-components"),
+          path.join(__dirname, "../packages/orbit-components"),
+        ],
         devDependencies: [
           "**/*.test.js",
           "**/__tests__/**",
@@ -28,6 +36,7 @@ module.exports = {
           "**/stories/**",
           "packages/*/.storybook/**",
           "packages/*/config/**",
+          "gulpfile.js",
         ],
       },
     ],
@@ -68,5 +77,6 @@ module.exports = {
     "jest/no-if": "error",
     "jest/consistent-test-it": "warn",
     "jest/no-focused-tests": "error",
+    "adeira/no-internal-flow-type": "error",
   },
 };

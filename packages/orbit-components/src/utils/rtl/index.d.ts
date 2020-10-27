@@ -1,4 +1,3 @@
-// @flow
 import { ThemeType } from "../../defaultTheme";
 
 export type LeftToRight = <T1, T2>(left: T1, right: T2) => (theme: ThemeType) => T1 | T2;

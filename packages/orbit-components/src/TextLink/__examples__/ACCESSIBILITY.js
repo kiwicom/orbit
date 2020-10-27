@@ -35,7 +35,7 @@ export default {
             );
           }}
           tabIndex={0}
-          icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
         >
           Tab index docs
         </TextLink>
@@ -54,7 +54,7 @@ export default {
           title="Info from the W3 "
           href="https://www.w3.org/WAI/WCAG20/Techniques/ua-notes/html#H33"
           external
-          icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
         >
           Using links with titles
         </TextLink>

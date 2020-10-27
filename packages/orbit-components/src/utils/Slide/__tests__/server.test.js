@@ -2,7 +2,7 @@
  * @flow
  * @jest-environment node
  */
-import React from "react";
+import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 

@@ -1,4 +1,5 @@
 // @flow
+import * as React from "react";
 
 import type { Globals, Translation, TranslationString } from "../../common/common.js.flow";
 
@@ -30,4 +31,4 @@ export type Props = {|
   +onClick?: () => void,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

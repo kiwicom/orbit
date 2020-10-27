@@ -106,9 +106,9 @@ const Table = ({
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);
 
-  const outer: { current: any | HTMLElement } = React.useRef(null);
-  const inner: { current: any | HTMLElement } = React.useRef(null);
-  const table: { current: any | HTMLElement } = React.useRef(null);
+  const outer: {| current: any | HTMLElement |} = React.useRef(null);
+  const inner: {| current: any | HTMLElement |} = React.useRef(null);
+  const table: {| current: any | HTMLElement |} = React.useRef(null);
 
   const handleScroll = () => {
     if (shadows && inner && table && outer) {

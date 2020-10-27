@@ -1,5 +1,7 @@
 // @flow
 
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 
 type Image = {|
@@ -16,11 +18,11 @@ type ImageCustom = {|
 
 export type Props = {|
   ...Globals,
-  +actions?: React$Node,
-  +children?: React$Node,
-  +label?: React$Node,
-  +title?: React$Node,
-  +subTitle?: React$Node,
+  +actions?: React.Node,
+  +children?: React.Node,
+  +label?: React.Node,
+  +title?: React.Node,
+  +subTitle?: React.Node,
   +image: Image | ImageCustom,
   +height?: string,
   +width?: string,
@@ -30,4 +32,4 @@ export type Props = {|
   +onClick?: () => void,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

@@ -46,26 +46,6 @@ storiesOf("ButtonLink", module)
     },
   )
   .add(
-    "Inline",
-    () => {
-      const IconLeft = getIcon(getIcons("iconLeft", "ChevronLeft"));
-      return (
-        <ButtonLink
-          iconLeft={IconLeft && <IconLeft />}
-          onClick={action("onClick")}
-          type="inline"
-          compact
-        >
-          ButtonLink
-        </ButtonLink>
-      );
-    },
-    {
-      info:
-        "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
-    },
-  )
-  .add(
     "Circled",
     () => {
       const circled = boolean("circled", true);

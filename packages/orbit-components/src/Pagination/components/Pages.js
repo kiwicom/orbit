@@ -11,7 +11,7 @@ const Pages = ({
   onPageChange,
   enlargement = 1,
   size,
-}: Props): React$Node =>
+}: Props): React.Node =>
   Array(...Array(pageCount)).map((_, index) => {
     const key = index + enlargement;
     return selectedPage === key ? (

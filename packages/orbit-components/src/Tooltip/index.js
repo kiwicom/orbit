@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 
 import { SIZE_OPTIONS } from "./consts";
 import TooltipPrimitive from "../primitives/TooltipPrimitive";
@@ -37,6 +37,7 @@ const Tooltip = ({
     </TooltipPrimitive>
   ) : (
     <MobileDialog
+      dataTest={dataTest}
       tabIndex={tabIndex}
       enabled={enabled}
       content={content}

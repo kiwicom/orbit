@@ -1,5 +1,7 @@
 // @flow
 
+import * as React from "react";
+
 import type { SharedProps } from "../index";
 import type { RefType } from "../../common/common.js.flow";
 
@@ -19,4 +21,4 @@ export type StateLessProps = {|
   +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export default React$ComponentType<StateLessProps>;
+declare export default React.ComponentType<StateLessProps>;

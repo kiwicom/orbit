@@ -11,11 +11,11 @@ export default {
       <TextLink
         href="https://orbit.kiwi"
         external
-        icon={<Icons.NewWindow ariaLabel="Opens in new window" />}
+        iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
       >
         Orbit design system
       </TextLink>
-      <TextLink icon={<Icons.ChevronRight />}>Skip this step</TextLink>
+      <TextLink iconRight={<Icons.ChevronRight />}>Skip this step</TextLink>
     </Stack>
   ),
   info: {

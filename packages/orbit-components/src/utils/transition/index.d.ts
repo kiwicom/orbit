@@ -1,4 +1,3 @@
-// @flow
 import { ThemeType } from "../../defaultTheme";
 
 export declare const Transition: (

@@ -1,4 +1,3 @@
-// @flow
 type inexactNumber = number | undefined | null;
 
 type Dimensions = {

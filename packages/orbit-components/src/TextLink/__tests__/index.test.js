@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 import TextLink from "../index";
 import ChevronRight from "../../icons/ChevronRight";
+import defaultTheme from "../../defaultTheme";
 
 const title = "My text link";
 const dataTest = "test";
@@ -25,13 +26,15 @@ describe("#TextLink", () => {
   });
 
   it("should render with props", () => {
-    const dataTestIcon = "testIcon";
+    const dataTestLeftIcon = "leftIcon";
+    const dataTestRightIcon = "rightIcon";
     const tabIndex = "-1";
     const href = "https://kiwi.com";
     render(
       <TextLink
         href={href}
-        icon={<ChevronRight dataTest={dataTestIcon} />}
+        iconRight={<ChevronRight dataTest={dataTestLeftIcon} />}
+        iconLeft={<ChevronRight dataTest={dataTestRightIcon} />}
         tabIndex={tabIndex}
         dataTest={dataTest}
       >
@@ -41,13 +44,15 @@ describe("#TextLink", () => {
     expect(screen.getByText(title)).toBeInTheDocument();
     expect(screen.getByRole("link")).toHaveAttribute("href", href);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTestIcon)).toBeInTheDocument();
+    expect(screen.getByTestId(dataTestLeftIcon)).toBeInTheDocument();
+    expect(screen.getByTestId(dataTestRightIcon)).toBeInTheDocument();
     expect(screen.getByRole("link")).toBeInTheDocument();
   });
   it("should have external and rel attributes", () => {
     const rel = "nofollow";
+    const href = "https://kiwi.com";
     render(
-      <TextLink rel={rel} external>
+      <TextLink rel={rel} external href={href}>
         {title}
       </TextLink>,
     );
@@ -56,5 +61,17 @@ describe("#TextLink", () => {
     expect(link).toHaveAttribute("rel", expect.stringContaining("noreferrer"));
     expect(link).toHaveAttribute("rel", expect.stringContaining(rel));
     expect(link).toHaveAttribute("target", "_blank");
+  });
+  it("should no have underline and height for a11y", () => {
+    const { container } = render(
+      <TextLink noUnderline standAlone>
+        {title}
+      </TextLink>,
+    );
+    expect(getComputedStyle(container.firstChild)).toHaveProperty("text-decoration", "none");
+    expect(getComputedStyle(container.firstChild)).toHaveProperty(
+      "height",
+      defaultTheme.orbit.heightButtonNormal,
+    );
   });
 });

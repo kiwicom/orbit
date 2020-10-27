@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/featureicon/
 */
+import * as React from "react";
 import type { Globals } from "../common/common.js.flow";
 
 export type Name =%NAMES%
@@ -12,4 +13,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

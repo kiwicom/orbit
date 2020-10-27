@@ -1,4 +1,3 @@
-// @flow
 import { Props as Media } from "../../ThemeProvider/QueryContext/index";
 
 declare const UseMediaQuery: () => Media;

@@ -3,6 +3,6 @@ import type { Type } from "../index";
 import type { ThemeProps } from "../../defaultTheme";
 import type { IconForeground } from "../../primitives/ButtonPrimitive";
 
-export type GetSocialButtonIconForeground = ({ type: Type, ...ThemeProps }) => IconForeground;
+export type GetSocialButtonIconForeground = ({| type: Type, ...ThemeProps |}) => IconForeground;
 
 declare export default GetSocialButtonIconForeground;

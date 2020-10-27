@@ -2,7 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/textlink/
 */
-import type { ReactComponentStyled, Interpolation } from "styled-components";
+import * as React from "react";
+import type { Interpolation } from "styled-components";
 
 import type { Globals, Component } from "../common/common.js.flow";
 import type { ThemeProps } from "../defaultTheme";
@@ -13,9 +14,10 @@ type Size = "large" | "normal" | "small";
 
 export type Props = {|
   +ariaCurrent?: string,
-  +children: React$Node,
+  +children: React.Node,
   +href?: string,
-  +icon?: React$Node,
+  +iconLeft?: React.Node,
+  +iconRight?: React.Node,
   +onClick?: (SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
   +external?: boolean,
   +type?: Type,
@@ -25,22 +27,20 @@ export type Props = {|
   +asComponent?: Component,
   +stopPropagation?: boolean,
   +title?: string,
+  +standAlone?: boolean,
+  +noUnderline?: boolean,
   ...Globals,
 |};
 
-type styledTextLink = {
-  tokens?: { [key: string]: string | number },
-  type?: Type,
-};
-
-export type GetLinkStyleProps = {
+export type GetLinkStyleProps = {|
   type: Type,
+  noUnderline?: boolean,
   ...ThemeProps,
-};
+|};
 
 export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
 
 declare export var getLinkStyle: GetLinkStyle;
-declare export var StyledTextLink: ReactComponentStyled<styledTextLink>;
+declare export var StyledTextLink: React.ComponentType<Props>;
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

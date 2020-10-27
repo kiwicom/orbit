@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@1.7.1...@kiwicom/babel-plugin-orbit-components@1.7.2) (2020-10-23)
+
+### Bug Fixes
+
+- **babel-plugin:** fix Grid icon import path ([64d9468](https://github.com/kiwicom/orbit/commit/64d946826d4d5c8e249f416612b1ebc18fc0f519))
+
 ## [1.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@1.7.0...@kiwicom/babel-plugin-orbit-components@1.7.1) (2020-10-19)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

@@ -2,6 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
+import * as React from "react";
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
@@ -15,4 +16,4 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

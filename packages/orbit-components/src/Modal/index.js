@@ -346,8 +346,8 @@ const Modal = ({
   const [firstFocusableEl, setFirstFocusableEl] = React.useState<HTMLElement | null>(null);
   const [lastFocusableEl, setLastFocusableEl] = React.useState<HTMLElement | null>(null);
 
-  const modalContent: { current: any | HTMLElement } = React.useRef();
-  const modalBody: { current: any | HTMLElement } = React.useRef();
+  const modalContent: {| current: any | HTMLElement |} = React.useRef();
+  const modalBody: {| current: any | HTMLElement |} = React.useRef();
   const modalID: string = randomID("modalID");
 
   const prevChildren = usePrevious(children);

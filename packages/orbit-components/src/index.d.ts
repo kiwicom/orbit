@@ -1,4 +1,3 @@
-// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: https://github.com/kiwicom/orbit/
 
@@ -6,7 +5,7 @@ declare module "@kiwicom/orbit-components";
 
 export { Alert } from "./Alert/index";
 export { AlertButton } from "./Alert/AlertButton/index";
-export { AirportIllustration } from "./AirportIllustration/index";
+export { AirportIllustration } from "./AirportIllustration";
 export { Badge } from "./Badge/index";
 export { NotificationBadge } from "./NotificationBadge/index";
 export { Breadcrumbs } from "./Breadcrumbs/index";
@@ -23,14 +22,14 @@ export { CarrierLogo } from "./CarrierLogo/index";
 export { DestinationHeader } from "./deprecated/DestinationHeader/index";
 export { DestinationCard } from "./deprecated/DestinationCard/index";
 export { Dialog } from "./Dialog/index";
-export { FeatureIcon } from "./FeatureIcon/index";
+export { FeatureIcon } from "./FeatureIcon";
 export { Heading } from "./Heading/index";
 export { Hide } from "./Hide/index";
 export { InputField } from "./InputField/index";
 export { InputGroup } from "./InputGroup/index";
 export { InputStepper } from "./InputStepper/index";
 export { InputStepperStateless } from "./InputStepper/InputStepperStateless/index";
-export { Illustration } from "./Illustration/index";
+export { Illustration } from "./Illustration";
 export { List } from "./List/index";
 export { ListItem } from "./List/ListItem/index";
 export { ListChoice } from "./ListChoice/index";
@@ -57,7 +56,7 @@ export { Stack } from "./Stack/index";
 export { Sticky } from "./Sticky/index";
 export { Separator } from "./Separator/index";
 export { SkipNavigation } from "./SkipNavigation/index";
-export { ServiceLogo } from "./ServiceLogo/index";
+export { ServiceLogo } from "./ServiceLogo";
 export { Textarea } from "./Textarea/index";
 export { Card } from "./Card/index";
 export { CardSection } from "./Card/CardSection/index";

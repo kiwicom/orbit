@@ -2,15 +2,17 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/ratingstars/
 */
+import * as React from "react";
+
 import type { Globals } from "../common/common.js.flow";
 import type { Size } from "../Icon";
 
-export type Props = {
+export type Props = {|
   +rating: number,
   +size?: Size,
   +color?: "primary" | "secondary",
   +showEmpty?: boolean,
   ...Globals,
-};
+|};
 
-declare export default React$ComponentType<Props>;
+declare export default React.ComponentType<Props>;

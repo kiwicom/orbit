@@ -9,10 +9,11 @@ import type {
   Underlined,
 } from "../../primitives/ButtonPrimitive";
 
-export type GetButtonLinkStyles = ({
+export type GetButtonLinkStyles = ({|
   type: Type,
+  compact: boolean,
   ...ThemeProps,
-}) => {|
+|}) => {|
   ...Background,
   ...Foreground,
   ...BoxShadow,

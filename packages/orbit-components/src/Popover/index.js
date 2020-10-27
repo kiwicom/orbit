@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useCallback, useMemo, useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import Portal from "../Portal";
@@ -9,6 +9,8 @@ import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { POSITIONS, ALIGNS } from "./consts";
 import handleKeyDown from "../utils/handleKeyDown";
+
+const { useRef, useCallback, useMemo, useEffect } = React;
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -43,7 +45,7 @@ const Popover = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, transitionLength);
-  const container: { current: React$ElementRef<*> } = useRef(null);
+  const container: {| current: React.ElementRef<*> |} = useRef(null);
 
   const resolveCallback = useCallback(
     state => {

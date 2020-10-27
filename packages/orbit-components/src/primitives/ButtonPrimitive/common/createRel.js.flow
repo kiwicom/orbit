@@ -1,0 +1,8 @@
+// @flow
+export type CreateRel = ({|
+  +href?: string,
+  +rel?: string,
+  +external?: boolean,
+|}) => ?string;
+
+declare export default CreateRel;

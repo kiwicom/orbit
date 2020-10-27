@@ -50,6 +50,7 @@ storiesOf("ListChoice", module)
           description="Further description"
           selectable
           selected
+          disabled
           icon={<Icons.Accommodation />}
           onClick={action("onClick")}
         />
@@ -73,6 +74,7 @@ storiesOf("ListChoice", module)
       const description = text("description", "Further description");
       const selectable = boolean("selectable", true);
       const selected = boolean("selected", false);
+      const disabled = boolean("disabled", false);
       const Icon = getIcon(getIcons("icon", "Accommodation"));
       const dataTest = text("dataTest", "test");
 
@@ -82,6 +84,7 @@ storiesOf("ListChoice", module)
           description={description}
           selectable={selectable}
           selected={selected}
+          disabled={disabled}
           icon={Icon && <Icon />}
           onClick={action("onClick")}
           dataTest={dataTest}
@@ -109,6 +112,7 @@ storiesOf("ListChoice", module)
             description="Further description"
             selectable
             selected
+            disabled
             icon={<Icons.Accommodation />}
             onClick={action("onClick")}
           />

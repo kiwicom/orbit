@@ -1,52 +1,30 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import CheckBox from "../index";
 
-const label = "Checkbox";
-const onChange = jest.fn();
-const value = "option";
-const dataTest = "test";
-const tabIndex = "-1";
-const name = "name";
-
-describe(`Default CheckBox`, () => {
-  const component = shallow(
-    <CheckBox
-      label={label}
-      onChange={onChange}
-      value={value}
-      dataTest={dataTest}
-      name={name}
-      tabIndex={tabIndex}
-    />,
-  );
-  const checkbox = component.find("Checkbox__Input");
-  it("should contain a label", () => {
-    expect(component.find("Checkbox__LabelText").render().text()).toBe(label);
-  });
-  it("inputs value should match", () => {
-    expect(checkbox.prop("value")).toBe(value);
-  });
-  it("should have data-test", () => {
-    expect(checkbox.render().prop("data-test")).toBe(dataTest);
-  });
-
-  it("should have data-state", () => {
-    expect(checkbox.render().prop("data-state")).toBe("ok");
-  });
-
-  it("should have tabindex", () => {
-    expect(checkbox.render().prop("tabindex")).toBe(tabIndex);
-  });
-
-  it("should have name", () => {
-    expect(checkbox.render().prop("attribs").name).toBe(name);
-  });
-  it("should execute onChange method", () => {
-    checkbox.simulate("change");
+describe("CheckBox", () => {
+  it("default", () => {
+    const onChange = jest.fn();
+    render(
+      <CheckBox
+        label="Checkbox"
+        onChange={onChange}
+        value="option"
+        dataTest="test"
+        name="name"
+        tabIndex="-1"
+      />,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    const checkbox = screen.getByRole("checkbox", { name: "Checkbox" });
+    expect(checkbox).toHaveAttribute("value", "option");
+    expect(checkbox).toHaveAttribute("name", "name");
+    expect(checkbox).toHaveAttribute("tabIndex", "-1");
+    userEvent.click(checkbox);
     expect(onChange).toHaveBeenCalled();
   });
 });

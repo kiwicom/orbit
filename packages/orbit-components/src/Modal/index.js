@@ -325,14 +325,14 @@ ModalWrapperContent.defaultProps = {
 const OFFSET = 40;
 
 const Modal = ({
-  onClose,
-  children,
   size = SIZES.NORMAL,
+  children,
+  onClose,
   fixedFooter = false,
-  dataTest,
   isMobileFullPage = false,
-  hasCloseButton = true,
   preventOverlayClose = false,
+  hasCloseButton = true,
+  dataTest,
 }: Props) => {
   const [loaded, setLoaded] = React.useState<boolean>(false);
   const [scrolled, setScrolled] = React.useState<boolean>(false);

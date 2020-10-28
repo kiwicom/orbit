@@ -1,56 +1,101 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Card, { CardSection } from "../index";
+import Button from "../../Button";
+import { Airplane } from "../../icons";
 
-describe("#Card", () => {
-  const dataTest = "test";
-  const component = shallow(
-    <Card
-      title="kek"
-      icon="icon"
-      description="description"
-      dataTest={dataTest}
-      actions="actions"
-    />,
-  );
-
-  const withLoading = shallow(
-    <Card loading>
-      <CardSection>Section</CardSection>
-    </Card>,
-  );
-
-  const header = component.find("Header");
-
-  it("should have data-test", () => {
-    expect(component.prop("data-test")).toBe(dataTest);
+describe("Card", () => {
+  it("default", () => {
+    render(
+      <Card
+        dataTest="test"
+        title="kek"
+        description="description"
+        icon={<Airplane dataTest="airplane" />}
+        actions={<Button>button</Button>}
+      />,
+    );
+    expect(screen.getByTestId("test"));
+    expect(screen.getByText("kek")).toBeInTheDocument();
+    expect(screen.getByText("description")).toBeInTheDocument();
+    expect(screen.getByTestId("airplane"));
+    expect(screen.getByRole("button"));
   });
 
-  it("should have header component", () => {
-    expect(header.exists()).toBe(true);
+  it("section", () => {
+    render(
+      <Card>
+        <CardSection
+          dataTest="test"
+          title="kek"
+          description="description"
+          icon={<Airplane dataTest="airplane" />}
+          actions={<Button>action</Button>}
+          expandable
+          expanded
+        >
+          section
+        </CardSection>
+      </Card>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("kek")).toBeInTheDocument();
+    expect(screen.getByText("description")).toBeInTheDocument();
+    expect(screen.getByTestId("airplane")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "action" })).toBeInTheDocument();
+    expect(screen.getByText("section")).toBeInTheDocument();
   });
 
-  it("should have title", () => {
-    expect(header.prop("title")).toBe("kek");
+  it("loading", () => {
+    render(
+      <Card loading>
+        <CardSection>section</CardSection>
+      </Card>,
+    );
+    expect(screen.queryByText("section")).not.toBeInTheDocument();
   });
 
-  it("should have icon", () => {
-    expect(header.prop("icon")).toBe("icon");
-  });
+  describe("expandable", () => {
+    it("controlled", () => {
+      const { rerender } = render(
+        <Card>
+          <CardSection title="kek" expandable expanded={false}>
+            expandable
+          </CardSection>
+        </Card>,
+      );
+      const content = document.querySelector("[aria-hidden]");
+      expect(content).toHaveAttribute("aria-hidden", "true");
+      userEvent.click(screen.getByText("kek"));
+      expect(content).toHaveAttribute("aria-hidden", "true");
+      rerender(
+        <Card>
+          <CardSection title="kek" expandable expanded>
+            expandable
+          </CardSection>
+        </Card>,
+      );
+      expect(content).toHaveAttribute("aria-hidden", "false");
+      userEvent.click(screen.getByText("kek"));
+      expect(content).toHaveAttribute("aria-hidden", "false");
+    });
 
-  it("should have description", () => {
-    expect(header.prop("description")).toBe("description");
-  });
-
-  it("should have actions", () => {
-    expect(header.prop("actions")).toBe("actions");
-  });
-
-  it("should have Loading", () => {
-    expect(withLoading.find("Loading").exists()).toBe(true);
-    expect(withLoading.find("Loading").prop("loading")).toBe(true);
+    it("uncontrolled", () => {
+      render(
+        <Card>
+          <CardSection title="kek" expandable>
+            expandable
+          </CardSection>
+        </Card>,
+      );
+      const content = document.querySelector("[aria-hidden]");
+      expect(content).toHaveAttribute("aria-hidden", "true");
+      userEvent.click(screen.getByText("kek"));
+      expect(content).toHaveAttribute("aria-hidden", "false");
+    });
   });
 });

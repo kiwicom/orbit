@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { shallow } from "enzyme";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import Modal from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
@@ -32,7 +32,7 @@ describe("Large Modal", () => {
   const fixedFooter = true;
   const flex = ["0 0 auto", "1 1 100%"];
 
-  const component = shallow(
+  const LargeModal = (
     <Modal size={size} onClose={onClose} fixedFooter={fixedFooter} dataTest={dataTest}>
       <ModalHeader
         title={title}
@@ -56,15 +56,17 @@ describe("Large Modal", () => {
         </Button>
         <Button fullWidth>Continue to Payment</Button>
       </ModalFooter>
-    </Modal>,
+    </Modal>
   );
-  const modalWrapper = component.find("Modal__ModalWrapper");
-  const modalHeader = component.find("ModalHeader");
-  const modalSection = component.find("ModalSection");
-  const modalFooter = component.find("ModalFooter");
-  const closeButton = component.find("Modal__CloseContainer").find("ModalCloseButton");
 
   it("should have passed props", () => {
+    const component = shallow(LargeModal);
+
+    const modalWrapper = component.find("Modal__ModalWrapper");
+    const modalHeader = component.find("ModalHeader");
+    const modalSection = component.find("ModalSection");
+    const modalFooter = component.find("ModalFooter");
+
     expect(component.render().prop("data-test")).toBe(dataTest);
     expect(modalWrapper.prop("size")).toBe(size);
     expect(modalHeader.prop("title")).toBe(title);
@@ -80,10 +82,12 @@ describe("Large Modal", () => {
     expect(modalSection.render().prop("data-test")).toBe(dataTest);
   });
 
-  it("close button should have dataTest", () => {
-    expect(closeButton.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
-    closeButton.simulate("click");
-    expect(onClose).toHaveBeenCalled();
+  it("should call callback function when clicking on close button", () => {
+    render(LargeModal);
+
+    fireEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+
+    expect(onClose).toBeCalled();
   });
 });
 

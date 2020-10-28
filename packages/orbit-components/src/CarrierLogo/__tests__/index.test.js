@@ -1,76 +1,39 @@
 // @flow
 import * as React from "react";
-import { mount, shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import CarrierLogo from "../index";
 import { SIZE_OPTIONS } from "../consts";
 
-const carriers = [
-  { code: "FR", name: "Ryanair" },
-  { code: "TO", name: "Transavia France" },
-  { code: "VY", name: "Vueling" },
-  { code: "OK", name: "Czech Airlines" },
-];
-
-describe("CarrierLogo images", () => {
-  it("should contains correct image", () => {
-    const component = shallow(
-      <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size={SIZE_OPTIONS.LARGE} />,
+describe("CarrierLogo", () => {
+  it("default", () => {
+    render(
+      <CarrierLogo
+        dataTest="test"
+        carriers={[{ code: "FR", name: "Ryanair" }]}
+        size={SIZE_OPTIONS.LARGE}
+      />,
     );
-    expect(component.render().children().attr("src")).toContain(
-      "//images.kiwi.com/airlines/32/FR.png?default=airline.png",
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByAltText("Ryanair")).toBeInTheDocument();
+    expect(screen.getByTitle("Ryanair")).toBeInTheDocument();
+    const img = screen.getByRole("img");
+    expect(img.getAttribute("src")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/airlines/32/FR.png?default=airline.png"`,
     );
-
-    expect(component.render().children().attr("srcset")).toContain(
-      "//images.kiwi.com/airlines/64/FR.png?default=airline.png",
-    );
-  });
-});
-
-describe("CarrierLogo fallback", () => {
-  it("should have proper fallback: airline", () => {
-    const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "airline" }]} />,
-    );
-
-    expect(component.render().children().attr("src")).toContain(
-      "//images.kiwi.com/airlines/32/LOL.png?default=airline.png",
+    expect(img.getAttribute("srcset")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"`,
     );
   });
 
-  it("should have proper fallback: bus", () => {
-    const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "bus" }]} />,
+  it("fallback", () => {
+    render(<CarrierLogo carriers={[{ code: "TO", name: "Transavia France", type: "bus" }]} />);
+    const img = screen.getByRole("img");
+    expect(img.getAttribute("src")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/airlines/32/TO.png?default=bus.png"`,
     );
-
-    expect(component.render().children().attr("src")).toContain(
-      "//images.kiwi.com/airlines/32/LOL.png?default=bus.png",
+    expect(img.getAttribute("srcset")).toMatchInlineSnapshot(
+      `"//images.kiwi.com/airlines/64/TO.png?default=bus.png 2x"`,
     );
-  });
-
-  it("should have proper fallback: train", () => {
-    const component = shallow(
-      <CarrierLogo carriers={[{ code: "LOL", name: "LOL", type: "train" }]} />,
-    );
-
-    expect(component.render().children().attr("src")).toContain(
-      "//images.kiwi.com/airlines/32/LOL.png?default=train.png",
-    );
-  });
-});
-
-describe("Multiple CarrierLogo with DefaultProp", () => {
-  const dataTest = "test";
-  const component = mount(<CarrierLogo carriers={carriers} dataTest={dataTest} />);
-  carriers.map(carrier =>
-    it("should contain an image of carrier", () => {
-      expect(component.find(`img[alt="${carrier.name}"]`).prop("alt")).toBe(carrier.name);
-    }),
-  );
-  it("should contain a div", () => {
-    expect(component.find("div").exists()).toBe(true);
-  });
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
   });
 });

@@ -73,7 +73,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "browserslist": "^4.14.5",
     "camelcase": "^6.1.0",
-    "caniuse-db": "^1.0.30001142",
+    "caniuse-db": "^1.0.30001151",
     "capitalize": "^2.0.3",
     "copyfiles": "^2.4.0",
     "cross-env": "^7.0.2",

@@ -50,7 +50,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@emotion/core": "^10.0.35",
     "@kiwicom/browserslist-config": "^1.0.0",
-    "@octokit/rest": "^15.13.1",
+    "@octokit/rest": "^18.0.6",
     "@storybook/addon-actions": "^6.0.27",
     "@storybook/addon-info": "^6.0.0-alpha.2",
     "@storybook/addon-knobs": "^6.0.27",

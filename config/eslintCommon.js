@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   extends: ["prettier/react"],
-  plugins: ["import", "prettier", "jest", "react-hooks", "plugin:react/recommended"],
+  plugins: ["import", "prettier", "jest", "react-hooks"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",

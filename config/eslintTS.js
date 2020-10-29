@@ -1,6 +1,7 @@
 // @noflow
 module.exports = {
   extends: [
+    "./eslintCommon.js",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",

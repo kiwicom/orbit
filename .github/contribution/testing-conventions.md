@@ -2,11 +2,48 @@
 
 For testing Orbit components we're using [Testing Library](https://testing-library.com/). We expect every new component to have tests, so be sure to familiarize yourself with this library. This document provides some conventions we follow when writing tests.
 
+## Test format
+
+Test files should generally consist of one root `describe` block which is named after the unit that you're testing, containing multiple `it` blocks which should generally start with `should`, so that test names read like sentences. Sometimes you want to nest another `describe` block within the root one to group multiple `it` blocks related to the same aspect of the unit.
+
+```jsx
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+import Button from "../";
+
+describe("Button", () => {
+  it("should be accessible", () => {
+    render(<Button>Click me</Button>);
+    expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
+  });
+  it("should trigger the click handler", () => {
+    const onClick = jest.fn();
+    render(<Button onClick={onClick}>Click me</Button>);
+    userEvent.click(screen.getByRole("button", { name: "Click me" }));
+    expect(onClick).toHaveBeenCalled();
+  });
+  describe("when disabled", () => {
+    it("should not trigger the click handler", () => {
+      const onClick = jest.fn();
+      render(
+        <Button onClick={onClick} disabled>
+          Click me
+        </Button>,
+      );
+      userEvent.click(screen.getByRole("button", { name: "Click me" }));
+      expect(onClick).not.toHaveBeenCalled();
+    });
+  });
+});
+```
+
 ## Prefer `ByRole` queries
 
 Unless you're asserting that `dataTest` prop is being passed correctly, prefer [`ByRole`](https://testing-library.com/docs/dom-testing-library/api-queries#byrole) queries, that way you can test behavior and accessibility at the same time.
 
-### Pass literal props directly
+## Pass literal props directly
 
 It's not necessary to save every prop value in a variable just because you're asserting it later, only save objects like `onClick` because you need the reference to test it:
 
@@ -29,22 +66,6 @@ describe("Button", () => {
     userEvent.click(button);
     expect(button).toHaveTextContent("Click me"); // you can just repeat it
     expect(onClick).toHaveBeenCalled();
-  });
-});
-```
-
-### Test
-
-This section should contain all test occurrences that you want to test. Function `describe` should always be the name of the Component and it’s used only once. `it` function name always starts with “should” and continues with the appropriate name for the test occurrence. E.g. “should match snapshot”
-
-```jsx
-describe("Component", () => {
-  it("should have text", () => {
-    expect(screen.getByRole("link")).toHaveTextContent(text);
-  });
-
-  it("should match snapshot", () => {
-    expect(screen.getByRole("link")).toMatchSnapshot();
   });
 });
 ```

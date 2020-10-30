@@ -348,7 +348,7 @@ const Modal = ({
 
   const modalContent: {| current: any | HTMLElement |} = React.useRef();
   const modalBody: {| current: any | HTMLElement |} = React.useRef();
-  const modalID: string = randomID("modalID");
+  const modalID = React.useMemo(() => randomID("modalID"), []);
 
   const prevChildren = usePrevious(children);
 

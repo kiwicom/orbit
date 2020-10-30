@@ -49,7 +49,7 @@ const MobileDialog = ({
       setshown(false);
       setRenderWithTimeout(false);
     },
-    [setRenderWithTimeout, setshown],
+    [setRenderWithTimeout, setshown, stopPropagation],
   );
 
   if (!enabled) return children;

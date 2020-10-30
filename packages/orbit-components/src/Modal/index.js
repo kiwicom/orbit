@@ -543,18 +543,6 @@ const Modal = ({
     setClickedModalBody(true);
   };
 
-  const setHasModalSectionToTrue = () => {
-    if (!hasModalSection) {
-      setHasModalSection(true);
-    }
-  };
-
-  const removeHasModalSection = () => {
-    if (hasModalSection) {
-      setHasModalSection(false);
-    }
-  };
-
   const callContextFunctions = () => {
     setDimensions();
     decideFixedFooter();
@@ -607,8 +595,8 @@ const Modal = ({
           )}
           <ModalContext.Provider
             value={{
-              setHasModalSection: setHasModalSectionToTrue,
-              removeHasModalSection,
+              setHasModalSection: () => setHasModalSection(true),
+              removeHasModalSection: () => setHasModalSection(false),
               callContextFunctions,
               hasModalSection,
               isMobileFullPage,

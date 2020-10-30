@@ -1,27 +1,25 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Dialog from "../index";
 import Button from "../../Button";
-import Heading from "../../Heading";
-import Text from "../../Text";
 
 describe("Dialog", () => {
-  const dataTest = "test";
-  const title = "Log out";
-  const description = "Are you sure you want to log out now?";
-  const component = shallow(
-    <Dialog
-      dataTest={dataTest}
-      title={title}
-      description={description}
-      primaryAction={<Button type="critical">Log out</Button>}
-      secondaryAction={<Button type="secondary">Close</Button>}
-    />,
-  );
-  it("should have passed props correctly", () => {
-    expect(component.find(Heading).children().text()).toBe(title);
-    expect(component.find(Text).children().text()).toBe(description);
+  it("should have expected DOM output", () => {
+    render(
+      <Dialog
+        dataTest="test"
+        title="Logging out"
+        description="Are you sure you want to log out now?"
+        primaryAction={<Button type="critical">Log out</Button>}
+        secondaryAction={<Button type="secondary">Close</Button>}
+      />,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("Logging out")).toBeInTheDocument();
+    expect(screen.getByText("Are you sure you want to log out now?")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Log out" }));
+    expect(screen.getByRole("button", { name: "Close" }));
   });
 });

@@ -73,7 +73,7 @@ StyledShadow.defaultProps = {
   theme: defaultTheme,
 };
 
-export function getCountryProps(code: ?string, name: ?string): {| code: string, name: ?string |} {
+function getCountryProps(code: ?string, name: ?string): {| code: string, name: ?string |} {
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "ANYWHERE";
   const countryCodeExists = codeNormalized in CODES;
 

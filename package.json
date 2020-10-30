@@ -111,7 +111,7 @@
     "prettier": "^2.1.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-element-to-jsx-string": "^14.3.1",
+    "react-element-to-jsx-string": "^14.3.2",
     "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2",
     "sharp": "^0.26.2",

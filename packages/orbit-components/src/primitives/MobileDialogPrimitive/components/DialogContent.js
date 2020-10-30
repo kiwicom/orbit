@@ -103,7 +103,7 @@ const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) 
     ev => {
       ev.stopPropagation();
       if (ev.target === overlay.current) {
-        onClose();
+        onClose(ev);
       }
     },
     [onClose],
@@ -113,7 +113,7 @@ const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) 
       if (dialog.current) {
         const focusableElements = dialog.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
         if (Object.values(focusableElements).some(v => v === ev.target)) {
-          onClose();
+          onClose(ev);
         }
       }
     },

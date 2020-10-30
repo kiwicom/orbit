@@ -1,37 +1,53 @@
 // @flow strict
 
 import * as React from "react";
-import { mount } from "enzyme";
+import { render } from "@testing-library/react";
 
-import { getBreakpointWidth } from "../../utils/mediaQuery/index";
-import { QUERIES } from "../../utils/mediaQuery/consts";
-import theme from "../../defaultTheme";
 import Desktop from "..";
 
 describe("Desktop", () => {
-  const component = mount(<Desktop>kek</Desktop>);
+  it("should output expected styles", () => {
+    const { container } = render(<Desktop>kek</Desktop>);
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      .c0 {
+        display: none;
+      }
 
-  it("should be visible on desktop and largeDesktop", () => {
-    expect(component).toHaveStyleRule("display", "inline-block", {
-      media: getBreakpointWidth(QUERIES.LARGEDESKTOP, theme),
-    });
+      @media (min-width:414px) {
+        .c0 {
+          display: none;
+        }
+      }
 
-    expect(component).toHaveStyleRule("display", "inline-block", {
-      media: getBreakpointWidth(QUERIES.DESKTOP, theme),
-    });
-  });
+      @media (min-width:576px) {
+        .c0 {
+          display: none;
+        }
+      }
 
-  it("should be hidden on mediumMobile, largeMobile, tablet", () => {
-    expect(component).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.MEDIUMMOBILE, theme),
-    });
+      @media (min-width:768px) {
+        .c0 {
+          display: none;
+        }
+      }
 
-    expect(component).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
-    });
+      @media (min-width:992px) {
+        .c0 {
+          display: inline-block;
+        }
+      }
 
-    expect(component).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.TABLET, theme),
-    });
+      @media (min-width:1200px) {
+        .c0 {
+          display: inline-block;
+        }
+      }
+
+      <div
+        class="c0"
+      >
+        kek
+      </div>
+    `);
   });
 });

@@ -7,7 +7,7 @@ export type Props = {|
   shown: boolean,
   dialogId: ?string,
   children: React.Node,
-  onClose: () => void,
+  onClose: (ev: SyntheticEvent<HTMLElement>) => void,
   ...Globals,
 |};
 

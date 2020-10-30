@@ -1,97 +1,49 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 import Checkbox from "../../Checkbox";
 import ChoiceGroup from "..";
 
-const label = "Label";
-const labelSize = LABEL_SIZES.LARGE;
-const labelAs = LABEL_ELEMENTS.H5;
-const onChange = jest.fn();
-const onOnlySelection = jest.fn();
-const filter = true;
-const choices = [
-  { value: "one", label: "Reason one" },
-  { value: "two", label: "Reason two" },
-  { value: "three", label: "Reason three" },
-];
-
-describe("RadioGroup", () => {
-  const dataTest = "test";
-  const component = mount(
-    <ChoiceGroup
-      dataTest={dataTest}
-      label={label}
-      onChange={onChange}
-      labelSize={labelSize}
-      labelAs={labelAs}
-    >
-      <Radio value="one" label="Reason one" />
-      <Radio value="two" label="Reason two" />
-      <Radio value="three" label="Reason three" />
-    </ChoiceGroup>,
-  );
-  const heading = component.find("Heading");
-  it("should contain a label", () => {
-    expect(heading.render().text()).toBe(label);
-    expect(heading.prop("type")).toBe("title2");
-  });
-  it("should render children", () => {
-    component.find("Radio").forEach((node, key) => {
-      expect(node.type()).toBe(Radio);
-      expect(node.prop("value")).toBe(choices[key].value);
-      expect(node.prop("label")).toBe(choices[key].label);
-    });
-  });
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should execute onChange method", () => {
-    const ev = { persist: () => {}, target: <Radio value="one" label="Reason one" /> };
-    component.find("input").first().simulate("change", ev);
+describe("ChoiceGroup", () => {
+  it("radio", () => {
+    const onChange = jest.fn();
+    render(
+      <ChoiceGroup
+        dataTest="test"
+        label="Label"
+        onChange={onChange}
+        labelSize={LABEL_SIZES.LARGE}
+        labelAs={LABEL_ELEMENTS.H5}
+      >
+        <Radio value="option" label="Option" />
+      </ChoiceGroup>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("Label")).toBeInTheDocument();
+    userEvent.click(screen.getByRole("radio", { name: "Option" }));
     expect(onChange).toHaveBeenCalled();
   });
-});
 
-describe("RadioGroup Filters", () => {
-  const dataTest = "test";
-  const component = mount(
-    <ChoiceGroup
-      dataTest={dataTest}
-      label={label}
-      onChange={onChange}
-      labelSize={labelSize}
-      labelAs={labelAs}
-      filter={filter}
-      onOnlySelection={onOnlySelection}
-      onlySelectionText="Only"
-    >
-      <Checkbox value="one" label="Reason one" />
-      <Checkbox value="two" label="Reason two" />
-      <Checkbox value="three" label="Reason three" />
-    </ChoiceGroup>,
-  );
-  const heading = component.find("Heading");
-  it("should contain a label", () => {
-    expect(heading.render().text()).toBe(label);
-    expect(heading.prop("type")).toBe("title2");
-  });
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should render children", () => {
-    component.find("Radio").forEach((node, key) => {
-      expect(node.type()).toBe(Radio);
-      expect(node.prop("value")).toBe(choices[key].value);
-      expect(node.prop("label")).toBe(choices[key].label);
-    });
-  });
-  it("should execute onOnlySelection method", () => {
-    const ev = { persist: () => {}, target: <button type="button">Only</button> };
-    component.find("button").first().simulate("click", ev);
+  it("filter", () => {
+    const onOnlySelection = jest.fn();
+    render(
+      <ChoiceGroup
+        label="Label"
+        labelSize={LABEL_SIZES.LARGE}
+        labelAs={LABEL_ELEMENTS.H5}
+        filter
+        onChange={() => {}}
+        onOnlySelection={onOnlySelection}
+        onlySelectionText="Only"
+      >
+        <Checkbox value="option" label="Option" />
+      </ChoiceGroup>,
+    );
+    userEvent.click(screen.getByText("Only"));
     expect(onOnlySelection).toHaveBeenCalled();
   });
 });

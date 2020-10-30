@@ -1,15 +1,13 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Coupon from "../index";
 
 describe("Coupon", () => {
-  const dataTest = "test";
-  const children = "code";
-  const component = shallow(<Coupon dataTest={dataTest}>{children}</Coupon>);
-  it("should have props", () => {
-    expect(component.prop("data-test")).toBe(dataTest);
-    expect(component.children().text()).toBe(children);
+  it("should have expected DOM output", () => {
+    render(<Coupon dataTest="test">code</Coupon>);
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("code")).toBeInTheDocument();
   });
 });

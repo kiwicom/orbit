@@ -41,10 +41,16 @@ const MobileDialog = ({
     [clearRenderTimeout, setRender, setshownWithTimeout, stopPropagation],
   );
 
-  const handleOutMobile = useCallback(() => {
-    setshown(false);
-    setRenderWithTimeout(false);
-  }, [setRenderWithTimeout, setshown]);
+  const handleOutMobile = useCallback(
+    ev => {
+      if (stopPropagation) {
+        ev.stopPropagation();
+      }
+      setshown(false);
+      setRenderWithTimeout(false);
+    },
+    [setRenderWithTimeout, setshown, stopPropagation],
+  );
 
   if (!enabled) return children;
 

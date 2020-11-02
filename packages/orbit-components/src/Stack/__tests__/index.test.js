@@ -420,11 +420,11 @@ describe("Stack with every media query and reverse directions", () => {
   const component = mount(
     <Stack
       direction={DIRECTIONS.ROW}
-      spacing={SPACINGS.TIGHT}
+      spacing={SPACINGS.XSMALL}
       mediumMobile={{ direction: DIRECTIONS.COLUMNREVERSE }}
-      largeMobile={{ spacing: SPACINGS.LOOSE }}
+      largeMobile={{ spacing: SPACINGS.XLARGE }}
       tablet={{ direction: DIRECTIONS.ROWREVERSE }}
-      desktop={{ spacing: SPACINGS.EXTRATIGHT }}
+      desktop={{ spacing: SPACINGS.XXSMALL }}
       largeDesktop={{ direction: DIRECTIONS.COLUMN }}
     >
       <InputField type="password" label="Password" help="You need some help!" />

@@ -1,11 +1,10 @@
 // @flow
 import { css } from "styled-components";
 
-import getDesktopSpacing from "./getDesktopSpacing";
+import getSpacing from "./getSpacing";
 import { rtlSpacing } from "../../utils/rtl";
 import { SPACINGS } from "../consts";
 import isMobileViewport from "./isMobileViewport";
-import getMobileSpacing from "./getMobileSpacing";
 import getProperty from "./getProperty";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import type { GetChildrenMargin } from "./getChildrenMargin";
@@ -16,12 +15,14 @@ const getChildrenMargin: GetChildrenMargin = ({ viewport, index, devices }) => p
     const spacing = getProperty("spacing", { index, devices }, props);
     if (spacing === SPACINGS.NONE) return false;
     const isMobile = isMobileViewport(viewport);
-    const spacingTokens = isMobile ? getMobileSpacing() : getDesktopSpacing();
     const direction = getProperty("direction", { index, devices }, props);
     const margin =
       spacing &&
       direction &&
-      String(getDirectionSpacingTemplate(direction)).replace("__spacing__", spacingTokens[spacing]);
+      String(getDirectionSpacingTemplate(direction)).replace(
+        "__spacing__",
+        getSpacing(props)[spacing],
+      );
     return css`
       & > * {
         margin: ${margin && rtlSpacing(margin)}!important;

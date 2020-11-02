@@ -1,5 +1,6 @@
 // @flow
 import getProperty from "../getProperty";
+import theme from "../../../defaultTheme";
 
 const params = {
   index: 0,
@@ -12,6 +13,7 @@ const props = {
     spacing: "tight",
     direction: "column",
   },
+  theme,
 };
 
 describe("#getProperty", () => {

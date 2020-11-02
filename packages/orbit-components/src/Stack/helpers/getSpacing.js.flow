@@ -1,0 +1,9 @@
+// @flow
+import type { ThemeProps } from "../../defaultTheme";
+
+// eslint-disable-next-line flowtype/require-exact-type
+export type GetSpacing = ({ ...ThemeProps }) => {
+  [key: string]: string,
+};
+
+declare export default GetSpacing;

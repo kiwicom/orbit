@@ -1,9 +1,10 @@
 // @flow
-import getDesktopSpacing from "../getDesktopSpacing";
+import getSpacing from "../getSpacing";
+import theme from "../../../defaultTheme";
 
-describe("#getDesktopSpacing", () => {
-  it("should return dekstop spacings", () => {
-    expect(getDesktopSpacing()).toEqual({
+describe("#getSpacing", () => {
+  it("should return spacings", () => {
+    expect(getSpacing({ theme })).toEqual({
       comfy: "24px",
       compact: "12px",
       condensed: "8px",

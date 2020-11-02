@@ -36,7 +36,7 @@ storiesOf("Drawer", module)
           shown={shown}
           onClose={action("onClose")}
           actions={
-            <Stack direction="row" justify="between" spacing="condensed">
+            <Stack direction="row" justify="between" spacing="XSmall">
               <Button type="secondary" size="small">
                 Manage my bookings
               </Button>
@@ -288,7 +288,7 @@ storiesOf("Drawer", module)
             shown={shown}
             onClose={action("onClose")}
             actions={
-              <Stack direction="row" justify="between" spacing="condensed">
+              <Stack direction="row" justify="between" spacing="XSmall">
                 <Button type="secondary" size="small">
                   Manage my bookings
                 </Button>

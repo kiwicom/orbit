@@ -25,7 +25,7 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X0"
           header={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -36,7 +36,7 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X1"
           header={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -47,7 +47,7 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X2"
           header={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -180,7 +180,7 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X1"
           header={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -207,7 +207,7 @@ storiesOf("Accordion", module)
         <AccordionSection
           id="0X2"
           header={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Text type="primary">This is a content text</Text>
               <Text size="small">This is a content text</Text>
             </Stack>

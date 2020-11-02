@@ -12,7 +12,7 @@ import * as Icons from "../../icons";
 export default {
   Example: () => (
     <Alert icon={<Icons.Visa />} title="Visa requirements check" type="warning">
-      <Stack spacing="compact">
+      <Stack spacing="small">
         <Text>
           The requirements found here are for reference purposes only. Contact the embassy or your
           foreign ministry for more information.

@@ -10,7 +10,7 @@ const params = {
 const props = {
   children: " kek",
   smallMobile: {
-    spacing: "tight",
+    spacing: "XXSmall",
     direction: "column",
   },
   theme,
@@ -18,7 +18,7 @@ const props = {
 
 describe("#getProperty", () => {
   it("should get property spacing", () => {
-    expect(getProperty("spacing", params, props)).toBe("tight");
+    expect(getProperty("spacing", params, props)).toBe("XXSmall");
   });
 
   it("should get property direction", () => {

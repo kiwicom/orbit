@@ -9,11 +9,11 @@ import * as Icons from "../../icons";
 export default {
   Example: () => (
     <Alert icon={<Icons.AlertCircle />} title="No results loaded" type="critical">
-      <Stack spacing="compact">
+      <Stack spacing="small">
         <Text>
           There was an error while processing your request. Refresh the page to load the results.
         </Text>
-        <Stack flex spacing="compact">
+        <Stack flex spacing="small">
           <AlertButton iconLeft={<Icons.Reload />} type="critical">
             Refresh page
           </AlertButton>

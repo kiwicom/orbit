@@ -11,7 +11,7 @@ export default {
   Example: () => (
     <Popover
       content={
-        <Stack spacing="compact">
+        <Stack spacing="small">
           <ButtonLink
             external
             type="secondary"

@@ -12,7 +12,7 @@ export default {
     const [expanded, setExpanded] = React.useState(false);
     return (
       <Stack direction="column">
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             <code>ariaControls</code>
           </Heading>
@@ -40,7 +40,7 @@ export default {
             />
           </Stack>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             <code>ariaExpanded</code>
           </Heading>
@@ -69,7 +69,7 @@ export default {
             />
           </Stack>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             <code>disabled</code>
           </Heading>
@@ -79,7 +79,7 @@ export default {
           </Text>
           <SocialButton disabled>Sign in with Apple</SocialButton>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             Non-<code>{`<button>`}</code> elements
           </Heading>
@@ -93,7 +93,7 @@ export default {
             Sign in with Apple
           </SocialButton>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Title</Heading>
           <Text>
             If there&apos;s any necessary information that&apos;s accessible only visually (like a

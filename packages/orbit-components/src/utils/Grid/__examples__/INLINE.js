@@ -17,7 +17,7 @@ export default {
     };
     return (
       <Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Block
           </Heading>
@@ -42,7 +42,7 @@ export default {
             </Stack>
           </>
         </Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Inline
           </Heading>

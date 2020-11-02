@@ -81,7 +81,7 @@ All this properties - objects have the some own properties and none is required.
 | name         | size on `992px - ∞` |
 | :----------- | :------------------ |
 | `"none"`     | `null`              |
-| `"XXXSMall"` | `2px`               |
+| `"XXXSmall"` | `2px`               |
 | `"XXSmall"`  | `4px`               |
 | `"XSmall"`   | `8px`               |
 | `"small"`    | `12px`              |

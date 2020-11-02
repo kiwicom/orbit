@@ -1,50 +1,53 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Drawer from "../index";
-import LinkList from "../../LinkList";
-import TextLink from "../../TextLink";
+
+jest.useFakeTimers("modern");
 
 describe("Drawer", () => {
-  const dataTest = "test";
-  const onClose = jest.fn();
-  const shown = true;
-  const width = "400px";
-  const component = mount(
-    <Drawer dataTest={dataTest} onClose={onClose} shown={shown} width={width}>
-      <LinkList>
-        <TextLink onClick={jest.fn()}>Hello world!</TextLink>
-      </LinkList>
-    </Drawer>,
-  );
-  const wrapper = component.find("Drawer__StyledDrawer");
-  const side = component.find("Drawer__StyledDrawerSide");
-  it("should not execute onClose method", () => {
-    const link = side.find("LinkList");
-    link.simulate("click");
-    expect(onClose).not.toHaveBeenCalled();
+  it("should have expected DOM output", () => {
+    render(
+      <Drawer dataTest="test" shown>
+        content
+      </Drawer>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("content"));
   });
-  it("should execute onClose method", () => {
-    wrapper.simulate("click");
+  it("should be able to toggle visibility", () => {
+    const { rerender } = render(<Drawer shown={false}>content</Drawer>);
+    expect(screen.getByText("content")).not.toBeVisible();
+    rerender(<Drawer shown>content</Drawer>);
+    expect(screen.getByText("content")).toBeVisible();
+    rerender(<Drawer shown={false}>content</Drawer>);
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(screen.getByText("content")).not.toBeVisible();
+  });
+  it("should trigger close handler when clicked on close button", () => {
+    const onClose = jest.fn();
+    render(
+      <Drawer onClose={onClose} shown>
+        content
+      </Drawer>,
+    );
+    userEvent.click(screen.getByRole("button", { name: "Hide" }));
     expect(onClose).toHaveBeenCalled();
   });
-  it("should have data-test", () => {
-    expect(wrapper.render().prop("data-test")).toBe(dataTest);
-  });
-  it("the overlay and side content should be hidden", () => {
-    component.setProps({ shown: false });
-    expect(wrapper.render().prop("aria-hidden")).toBe("true");
-    setTimeout(() => {
-      expect(side).toHaveStyleRule("transform", `translate3d(${width},0,0)`);
-      expect(wrapper).toHaveStyleRule("visibility", "hidden");
-      expect(wrapper).toHaveStyleRule("background-color", "transparent");
-    }, 200);
-  });
-  it("the overlay and side content should be visible once more", () => {
-    component.setProps({ shown: true });
-    expect(side).toHaveStyleRule("transform", `translate3d(0,0,0)`);
-    expect(wrapper).toHaveStyleRule("visibility", "visible");
-    expect(wrapper.render().prop("aria-hidden")).toBe("false");
+  it("should trigger close handler when clicked on backdrop", () => {
+    const onClose = jest.fn();
+    render(
+      <Drawer dataTest="container" onClose={onClose} shown>
+        <div data-test="content" />
+      </Drawer>,
+    );
+    userEvent.click(screen.getByTestId("content"));
+    expect(onClose).not.toHaveBeenCalled();
+    userEvent.click(screen.getByTestId("container"));
+    expect(onClose).toHaveBeenCalled();
   });
 });

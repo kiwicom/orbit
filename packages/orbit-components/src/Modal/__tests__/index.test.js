@@ -1,7 +1,8 @@
 // @flow
 import * as React from "react";
 import { shallow } from "enzyme";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Modal from "../index";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "../consts";
@@ -85,7 +86,7 @@ describe("Large Modal", () => {
   it("should call callback function when clicking on close button", () => {
     render(LargeModal);
 
-    fireEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+    userEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
 
     expect(onClose).toBeCalled();
   });

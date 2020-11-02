@@ -1,6 +1,6 @@
 {
 	"imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack>\n    <Stack spacing=\"tight\">\n      <Heading as=\"h3\" type=\"title3\">\n        Small\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n      </Stack>\n    </Stack>\n    <Stack spacing=\"tight\">\n      <Heading as=\"h3\" type=\"title3\">\n        Medium\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat />\n        <Seat />\n        <Seat />\n        <Seat />\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
+	"example": "() => (\n  <Stack>\n    <Stack spacing=\"XXSmall\">\n      <Heading as=\"h3\" type=\"title3\">\n        Small\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n        <Seat size=\"small\" />\n      </Stack>\n    </Stack>\n    <Stack spacing=\"XXSmall\">\n      <Heading as=\"h3\" type=\"title3\">\n        Medium\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat />\n        <Seat />\n        <Seat />\n        <Seat />\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
 	"info": {
 		"title": "Sizes",
 		"description": "Seats can be either small or medium (the default)."

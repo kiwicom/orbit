@@ -408,7 +408,7 @@ const Modal = ({
         ? content?.offsetHeight
         : content?.scrollHeight;
 
-    // when scrollHeight + topPadding - scrollingElementHeight is smaller or even than window height
+    // when scrollHeight + topPadding - scrollingElementHeight is smaller than or equal to window height
     setFullyScrolled(contentHeight + OFFSET - body?.scrollTop <= window.innerHeight);
   };
 

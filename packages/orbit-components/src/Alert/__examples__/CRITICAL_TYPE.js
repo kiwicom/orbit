@@ -14,12 +14,10 @@ export default {
           There was an error while processing your request. Refresh the page to load the results.
         </Text>
         <Stack flex spacing="compact">
-          <AlertButton iconLeft={<Icons.Reload />} type="critical" size="small">
+          <AlertButton iconLeft={<Icons.Reload />} type="critical">
             Refresh page
           </AlertButton>
-          <AlertButton type="criticalSubtle" size="small">
-            Contact support
-          </AlertButton>
+          <AlertButton type="criticalSubtle">Contact support</AlertButton>
         </Stack>
       </Stack>
     </Alert>

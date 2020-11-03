@@ -85,7 +85,6 @@ Table below contains all types of the props available in AlertButton component.
 | onClick      | `event => void \| Promise` |             | Function for handling onClick event.                                                                                                                           |
 | ref          | `func`                     |             | Prop for forwarded ref of the AlertButton.                                                                                                                     |
 | role         | `string`                   |             | Specifies the role of an element.                                                                                                                              |
-| **size**     | [`enum`](#button-enum)     | `"normal"`  | The size of the AlertButton.                                                                                                                                   |
 | spaceAfter   | `enum`                     |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | submit       | `boolean`                  | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                                          |
 | tabIndex     | `string                    | number`     |                                                                                                                                                                | Specifies the tab order of an element. |
@@ -95,13 +94,13 @@ Table below contains all types of the props available in AlertButton component.
 
 ### Button enum
 
-| type               | size       |
-| :----------------- | :--------- |
-| `"info"`           | `"small"`  |
-| `"success"`        | `"normal"` |
-| `"warning"`        | `"large"`  |
-| `"critical"`       |            |
-| `"infoSubtle"`     |            |
-| `"successSubtle"`  |            |
-| `"warningSubtle"`  |            |
-| `"criticalSubtle"` |            |
+| type               |
+| :----------------- |
+| `"info"`           |
+| `"success"`        |
+| `"warning"`        |
+| `"critical"`       |
+| `"infoSubtle"`     |
+| `"successSubtle"`  |
+| `"warningSubtle"`  |
+| `"criticalSubtle"` |

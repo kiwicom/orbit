@@ -33,7 +33,7 @@ interface MediaQuery extends Common.SpaceAfter {
   readonly spacing?: Spacing;
 }
 
-interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Global, Common.SpaceAfter {
   readonly inline?: boolean;
   readonly direction?: Direction;
   readonly flex?: boolean;

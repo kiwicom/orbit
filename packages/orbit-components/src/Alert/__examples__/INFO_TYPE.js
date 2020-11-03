@@ -14,9 +14,7 @@ export default {
           To avoid boarding complications, your entire name must be entered{" "}
           <strong>exactly as it appears in your passport/ID</strong>.
         </Text>
-        <AlertButton type="info" size="small">
-          More info
-        </AlertButton>
+        <AlertButton type="info">More info</AlertButton>
       </Stack>
     </Alert>
   ),

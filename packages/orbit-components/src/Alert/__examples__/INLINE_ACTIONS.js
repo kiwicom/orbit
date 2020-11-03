@@ -9,7 +9,7 @@ export default {
     <Alert
       icon={<Icons.Airplane />}
       inlineActions={
-        <AlertButton href="#" size="small" type="info">
+        <AlertButton href="#" type="info">
           Open link
         </AlertButton>
       }

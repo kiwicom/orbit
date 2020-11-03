@@ -142,17 +142,6 @@ export const StyledButtonPrimitive = styled(
       height: ${icons && icons.height};
     }
 
-    &:hover {
-      ${!disabled &&
-      css`
-        background: ${backgroundHover};
-        color: ${foregroundHover}!important;
-        box-shadow: ${boxShadowHover};
-        text-decoration: none;
-        ${iconContainerColor(icons && icons.foregroundHover)};
-      `};
-    }
-
     &:active {
       ${!disabled &&
       css`
@@ -186,6 +175,18 @@ export const StyledButtonPrimitive = styled(
       color: ${foregroundFocus}!important;
       text-decoration: none;
       ${iconContainerColor(icons && icons.foregroundFocus)};
+    }
+
+    &:focus:hover,
+    &:hover {
+      ${!disabled &&
+      css`
+        background: ${backgroundHover};
+        color: ${foregroundHover}!important;
+        box-shadow: ${boxShadowHover};
+        text-decoration: none;
+        ${iconContainerColor(icons && icons.foregroundHover)};
+      `};
     }
   `}};
 `;

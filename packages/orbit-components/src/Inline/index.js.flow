@@ -10,14 +10,15 @@ export type Position = "start" | "end" | "center";
 // spacing tokens can then be imported from Box component
 export type SpacingToken =
   | "none"
-  | "xx-small"
-  | "x-small"
+  | "XXXSmall"
+  | "XXSmall"
+  | "XSmall"
   | "small"
   | "medium"
   | "large"
-  | "x-large"
-  | "xx-large"
-  | "xxx-large";
+  | "XLarge"
+  | "XXLarge"
+  | "XXXLarge";
 
 type MediaQuery = {|
   +spacing?: SpacingToken,

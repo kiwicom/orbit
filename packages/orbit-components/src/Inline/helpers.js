@@ -8,9 +8,9 @@ type Prop = "align" | "justify" | "spacing";
 
 export const formatCSS = (key: string, value: string): string => `${key}: ${value};`;
 
-const getAlign = align => {
-  if (align === "start") return "flex-start";
-  if (align === "end") return "flex-end";
+const getFlex = flex => {
+  if (flex === "start") return "flex-start";
+  if (flex === "end") return "flex-end";
 
   return "center";
 };
@@ -18,14 +18,15 @@ const getAlign = align => {
 export const normalizeSpacing = (el: SpacingToken, theme: Theme): string => {
   const tokens = {
     none: "",
-    "xx-small": theme.orbit.spaceXXSmall,
-    "x-small": theme.orbit.spaceXSmall,
+    XXXSmall: theme.orbit.spaceXXXSmall,
+    XXSmall: theme.orbit.spaceXXSmall,
+    XSmall: theme.orbit.spaceXSmall,
     small: theme.orbit.spaceSmall,
     medium: theme.orbit.spaceMedium,
     large: theme.orbit.spaceLarge,
-    "x-large": theme.orbit.spaceXLarge,
-    "xx-large": theme.orbit.spaceXLarge,
-    "xxx-large": theme.orbit.spaceXLarge,
+    XLarge: theme.orbit.spaceXLarge,
+    XXLarge: theme.orbit.spaceXXLarge,
+    XXXLarge: theme.orbit.spaceXXXLarge,
   };
 
   if (el !== "none") {
@@ -45,17 +46,17 @@ export const normalizeSpacing = (el: SpacingToken, theme: Theme): string => {
 
 type PropObject = { [key: Prop]: Position };
 
-// TODO: kinda weird, but it's well known problem in flow with Object.values
+// TODO: kinda weird, but it's well known problem in flow with Object.entries
 export const normalize = (object: PropObject) => ({ theme }: ThemeProps) => {
   if (!object) return null;
 
   return Object.entries(object).reduce((acc, [key, val]: [string, any]) => {
-    if (key === "align") {
-      return [...acc, formatCSS("justify-content", getAlign(val))];
+    if (key === "justify") {
+      return [...acc, formatCSS("justify-content", getFlex(val))];
     }
 
-    if (key === "justify") {
-      return [...acc, formatCSS("align-items", val)];
+    if (key === "align") {
+      return [...acc, formatCSS("align-items", getFlex(val))];
     }
 
     if (key === "spacing") {

@@ -8,8 +8,8 @@ import { ALIGN, JUSTIFY, SPACING } from "./consts";
 
 import Inline from "./index";
 
-const PlaceHolder = () => {
-  return <div style={{ width: "50px", height: "50px", background: "grey" }} />;
+const PlaceHolder = ({ height = 50 }) => {
+  return <div style={{ width: "50px", height: `${height}px`, background: "grey" }} />;
 };
 
 const dataTest = "test";
@@ -18,11 +18,11 @@ const TestChildren = () => {
   return (
     <>
       <PlaceHolder />
-      <PlaceHolder />
-      <PlaceHolder />
-      <PlaceHolder />
-      <PlaceHolder />
-      <PlaceHolder />
+      <PlaceHolder height={60} />
+      <PlaceHolder height={70} />
+      <PlaceHolder height={80} />
+      <PlaceHolder height={90} />
+      <PlaceHolder height={100} />
     </>
   );
 };
@@ -47,8 +47,8 @@ storiesOf("Inline", module)
     "Playground",
     () => {
       const as = text("As", "div");
-      const align = select("align", ALIGN, ALIGN[0]);
-      const justify = select("justify", JUSTIFY, JUSTIFY[0]);
+      const align = select("align", ALIGN, ALIGN.START);
+      const justify = select("justify", JUSTIFY, JUSTIFY.START);
       const spacing = select("spacing", SPACING, SPACING[1]);
 
       return (
@@ -58,7 +58,8 @@ storiesOf("Inline", module)
       );
     },
     {
-      info: "Some description about this type of component. ",
+      info:
+        "info: You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
   .add(

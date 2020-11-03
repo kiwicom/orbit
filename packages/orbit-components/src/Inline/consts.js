@@ -1,16 +1,18 @@
 // @flow
 
-export const ALIGN = ["start", "end", "center"];
+export const ALIGN = { START: "start", END: "end", CENTER: "center" };
 
-export const JUSTIFY = ["start", "end", "center"];
+export const JUSTIFY = { START: "start", END: "end", CENTER: "center" };
 
 export const SPACING = [
-  "xx-small",
-  "x-small",
+  "none",
+  "XXXSmall",
+  "XXSmall",
+  "XSmall",
   "small",
   "medium",
   "large",
-  "x-large",
-  "xx-large",
-  "xxx-large",
+  "XLarge",
+  "XXLarge",
+  "XXXLarge",
 ];

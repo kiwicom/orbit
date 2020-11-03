@@ -19,13 +19,11 @@ const StyledInline = styled(({ as: Element, children }) => (
   // map to mediaQueries
   ${({ viewportSizes }) => {
     return Object.entries(viewportSizes).map(([query, value]: any) => {
-      // DEVICES_CONSTS[0] === "smallMobile"
       if (query !== DEVICES_CONSTS[0] && typeof value !== "undefined") {
         return media[query](css`
           ${normalize(value)}
         `);
       }
-      // smallMobile is not in media obj so it needs to be rendered as a default
       return normalize(value);
     });
   }}

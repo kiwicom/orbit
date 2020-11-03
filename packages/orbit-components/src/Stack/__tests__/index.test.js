@@ -20,7 +20,7 @@ const defaultValues = {
   justify: "start",
   shrink: false,
   spaceAfter: undefined,
-  spacing: "MEDIUM",
+  spacing: SPACINGS.MEDIUM,
   wrap: false,
 };
 

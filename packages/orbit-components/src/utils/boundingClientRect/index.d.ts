@@ -1,5 +1,3 @@
-// @flow
-
 type Dimensions = {
   top: number;
   right: number;

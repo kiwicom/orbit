@@ -1,56 +1,71 @@
 # Component testing conventions
 
-Testing new components is very important, that’s why we’ve written this document. Every component in `orbit-components` has its own `enzyme` tests. For more informations check their [docs](https://airbnb.io/enzyme/docs/api/). These tests have different cases in terms of component type:
+For testing Orbit components we're using [Testing Library](https://testing-library.com/). We expect every new component to have tests, so be sure to familiarize yourself with this library. This document provides some conventions we follow when writing tests.
 
-- **Stateless component**
-  - A simple test without testing states
-- **Stateful component**
+## Test format
 
-  - A more complex test with testing states
-
-## Stateless component
-
-With stateless components we don’t have to test any state changes. We just have to check if the Component was rendered properly with all its props, compare snapshots and, if there are some handlers of functions, we need to test them to determine if they have been called.
-
-### Shallow wrapper
-
-We prefer to use a shallow wrapper instead of a mount wrapper. The best practise is to use constants that you’ve already defined in `consts.js`.
+Test files should generally consist of one root `describe` block which is named after the unit that you're testing, containing multiple `it` blocks which should generally start with `should`, so that test names read like sentences. Sometimes you want to nest another `describe` block within the root one to group multiple `it` blocks related to the same aspect of the unit.
 
 ```jsx
-import { shallow } from "enzyme";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-const text = "This is test text!";
-const size = SIZE_OPTIONS.SMALL;
-const component = shallow(<Component size={size}>{text}</Component>);
-```
+import Button from "../";
 
-### Test
-
-This section should contain all test occurrences that you want to test. Function `describe` should always be the name of the Component and it’s used only once. `it` function name always starts with “should” and continues with the appropriate name for the test occurrence. E.g. “should match snapshot”
-
-```jsx
-describe("Component", () => {
-  it("should have text", () => {
-    expect(component.find("Component__StyledComponent").text()).toBe(text);
+describe("Button", () => {
+  it("should be accessible", () => {
+    render(<Button>Click me</Button>);
+    expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
   });
-
-  it("should match snapshot", () => {
-    expect(component).toMatchSnapshot();
+  it("should trigger the click handler", () => {
+    const onClick = jest.fn();
+    render(<Button onClick={onClick}>Click me</Button>);
+    userEvent.click(screen.getByRole("button", { name: "Click me" }));
+    expect(onClick).toHaveBeenCalled();
+  });
+  describe("when disabled", () => {
+    it("should not trigger the click handler", () => {
+      const onClick = jest.fn();
+      render(
+        <Button onClick={onClick} disabled>
+          Click me
+        </Button>,
+      );
+      userEvent.click(screen.getByRole("button", { name: "Click me" }));
+      expect(onClick).not.toHaveBeenCalled();
+    });
   });
 });
 ```
 
-## Stateful component
+## Prefer `ByRole` queries
 
-We test stateful components the same way we test stateless components, but additionally we also test changes of states.
+Unless you're asserting that `dataTest` prop is being passed correctly, prefer [`ByRole`](https://testing-library.com/docs/dom-testing-library/api-queries#byrole) queries, that way you can test behavior and accessibility at the same time.
+
+## Pass literal props directly
+
+It's not necessary to save every prop value in a variable just because you're asserting it later, only save objects like `onClick` because you need the reference to test it:
 
 ```jsx
-describe("Component", () => {
-  it("should render closed", () => {
-    const component = shallow(<Component onClose={jest.fn()} onClick={jest.fn()} />);
-    const node = component.instance();
-    node.setState({ isOpen: false });
-    expect(component.getElement()).toMatchSnapshot();
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+import Button from "../";
+
+describe("Button", () => {
+  it("default", () => {
+    const onClick = jest.fn();
+    render(
+      <Button onClick={onClick}>
+        Click me {/* it's not necessary to save this into a variable */}
+      </Button>,
+    );
+    const button = screen.getByRole("button");
+    userEvent.click(button);
+    expect(button).toHaveTextContent("Click me"); // you can just repeat it
+    expect(onClick).toHaveBeenCalled();
   });
 });
 ```

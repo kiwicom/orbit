@@ -1,49 +1,70 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Collapse from "../index";
 
-/*
-  useEffect is not called in enzyme, so we can't test if the contentHeight is calculated or not
-  https://github.com/airbnb/enzyme/issues/2086
-  https://github.com/facebook/react/pull/16168
- */
+const toggleButtons = [
+  [0, "label"],
+  [1, "icon button"],
+];
 
 describe("Collapse", () => {
-  const dataTest = "test";
-  const label = "Collapse";
-  const component = shallow(
-    <Collapse dataTest={dataTest} label={label}>
-      <div>children</div>
-    </Collapse>,
-  );
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it("should have expected parts of DOM output", () => {
+    render(
+      <Collapse dataTest="test" label="Collapse">
+        <div>children</div>
+      </Collapse>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("Collapse")).toBeInTheDocument();
   });
-  it("should have label and ButtonLink", () => {
-    const labelContainer = component.find("Collapse__StyledCollapseLabel").find("Stack");
-    expect(labelContainer.find("Heading").children().text()).toBe(label);
-    expect(labelContainer.find("ButtonLink").exists()).toBe(true);
-  });
-  it("should have Slide with setup expanded and maxHeight", () => {
-    const slide = component.find("Slide");
-    expect(slide.prop("maxHeight")).toBe(0);
-    expect(slide.prop("expanded")).toBe(false);
-  });
-});
 
-describe("Collapse - controlled", () => {
-  const onClick = jest.fn();
-  const label = "Collapse";
-  const component = shallow(
-    <Collapse onClick={onClick} label={label} expanded>
-      <div>children</div>
-    </Collapse>,
-  );
-  it("should execute onClick method", () => {
-    component.find("Collapse__StyledCollapseLabel").simulate("click");
+  it.each(toggleButtons)("should trigger click handler when clicking on %s", buttonIndex => {
+    const onClick = jest.fn();
+    render(
+      <Collapse label="Collapse" onClick={onClick}>
+        <div>children</div>
+      </Collapse>,
+    );
+    const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
+    userEvent.click(toggleButton);
     expect(onClick).toHaveBeenCalled();
+  });
+
+  describe("uncontrolled", () => {
+    it.each(toggleButtons)("should expand/collapse when clicking on %s", buttonIndex => {
+      render(
+        <Collapse label="Collapse">
+          <article>children</article>
+        </Collapse>,
+      );
+      const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
+      // with ByRole we can test whether the content is visible because of aria-hidden
+      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+      userEvent.click(toggleButton);
+      expect(screen.getByRole("article")).toBeInTheDocument();
+      userEvent.click(toggleButton);
+      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+    });
+  });
+
+  describe("controlled", () => {
+    it("should expand/collapse with prop", () => {
+      const { rerender } = render(
+        <Collapse label="Collapse" expanded={false}>
+          <article>children</article>
+        </Collapse>,
+      );
+      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+      rerender(
+        <Collapse label="Collapse" expanded>
+          <article>children</article>
+        </Collapse>,
+      );
+      expect(screen.getByRole("article")).toBeInTheDocument();
+    });
   });
 });

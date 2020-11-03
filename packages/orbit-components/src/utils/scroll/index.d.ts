@@ -1,5 +1,3 @@
-// @flow
-
 export declare const addScrollHandler: (
   onScrollFunction: () => void,
   element?: Node,

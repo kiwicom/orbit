@@ -12,6 +12,7 @@ export { default as NotificationBadge } from "./NotificationBadge";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
 export { default as Button } from "./Button";
+export { default as Box } from "./Box";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ButtonLink } from "./ButtonLink";
 export { default as ButtonMobileStore } from "./ButtonMobileStore";

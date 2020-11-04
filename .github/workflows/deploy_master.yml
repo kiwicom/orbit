@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: yarn install && yarn bootstrap
 
+      - name: Build design tokens
+        run: yarn orbit-design-tokens build
+
       - name: Deploy storybook
         run: yarn orbit-components deploy:storybook --ci
         env:

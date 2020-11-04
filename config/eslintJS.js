@@ -26,6 +26,7 @@ module.exports = {
           path.join(__dirname, "../"),
           path.join(__dirname, "../packages/babel-plugin-orbit-components"),
           path.join(__dirname, "../packages/orbit-components"),
+          path.join(__dirname, "../packages/orbit-design-tokens"),
         ],
         devDependencies: [
           "**/*.test.js",

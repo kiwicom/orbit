@@ -3,3 +3,4 @@ packages/*/lib
 packages/*/umd
 flow-typed
 **/package.json
+CHANGELOG.md

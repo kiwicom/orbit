@@ -34,6 +34,7 @@ export type Props = {|
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
   +children?: React.Node,
+  +className?: string,
   ...MediaQuery,
   ...Globals,
 |};

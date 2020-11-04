@@ -5,8 +5,6 @@ import { screen, render } from "@testing-library/react";
 import theme from "../../defaultTheme";
 import Inline from "..";
 
-const dataTest = "test";
-
 const tokens = {
   none: "",
   XXXSmall: theme.orbit.spaceXXXSmall,
@@ -31,6 +29,8 @@ const Elements = () => (
 
 describe("#Inline", () => {
   it("should have props", () => {
+    const dataTest = "test";
+
     render(
       <Inline align="center" justify="start" dataTest={dataTest}>
         <Elements />
@@ -46,10 +46,8 @@ describe("#Inline", () => {
     'should have expected spacing for token "%s"',
     (token, spacing) => {
       render(
-        <Inline align="start" justify="center" spacing={token} dataTest={dataTest}>
-          <div data-test={token} style={{ marginLeft: tokens[token] }}>
-            kek
-          </div>
+        <Inline align="start" justify="center" spacing={token}>
+          <div data-test={token}>kek</div>
           <div>bur</div>
         </Inline>,
       );

@@ -9,14 +9,15 @@ import { normalize } from "./helpers";
 
 import type { Props } from "./index";
 
-const StyledInline = styled(({ as: Element, children }) => (
-  <Element>{children}</Element>
-)).attrs(({ dataTest }) => ({ "data-test": dataTest }))`
+const StyledInline = styled(({ asComponent: Element, children, className, dataTest }) => (
+  <Element className={className} data-test={dataTest}>
+    {children}
+  </Element>
+))`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
-  // map to mediaQueries
   ${({ viewportSizes }) => {
     return Object.entries(viewportSizes).map(([query, value]: any) => {
       if (query !== DEVICES_CONSTS[0] && typeof value !== "undefined") {
@@ -37,6 +38,7 @@ const Inline = ({
   as = "div",
   mediumMobile,
   largeMobile,
+  className,
   tablet,
   desktop,
   largeDesktop,
@@ -47,7 +49,12 @@ const Inline = ({
   const viewportSizes = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
 
   return (
-    <StyledInline as={as} dataTest={dataTest} viewportSizes={viewportSizes}>
+    <StyledInline
+      asComponent={as}
+      className={className}
+      dataTest={dataTest}
+      viewportSizes={viewportSizes}
+    >
       {children}
     </StyledInline>
   );

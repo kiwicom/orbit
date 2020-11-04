@@ -8,11 +8,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **InputFile:** forward onFocus event handler ([#2461](https://github.com/kiwicom/orbit/issues/2461)) ([92ad4da](https://github.com/kiwicom/orbit/commit/92ad4da10e4c90b81917083af762a9ae7bf6048f))
-* **SkipNavigation:** fix typos in stories ([#2414](https://github.com/kiwicom/orbit/issues/2414)) ([b380a1c](https://github.com/kiwicom/orbit/commit/b380a1cd70649bbea781fb026c659b1ea5902bf6))
-* **Stack:** add forgotten interface export ([#2456](https://github.com/kiwicom/orbit/issues/2456)) ([a85d20a](https://github.com/kiwicom/orbit/commit/a85d20aee69b29ac8a5305a77ad9078623569e48))
-* **Tooltip:** do not propagate the onClick event on mobile when stopPropagate is set to true ([#2438](https://github.com/kiwicom/orbit/issues/2438)) ([00467c5](https://github.com/kiwicom/orbit/commit/00467c5d3f77e49f2fbccf848c8ae0328c38f8ad))
-* remove //flow from *.d.ts ([5a57884](https://github.com/kiwicom/orbit/commit/5a57884281dc952ad959e53608b3a9dee8239e85))
+- **InputFile:** forward onFocus event handler ([#2461](https://github.com/kiwicom/orbit/issues/2461)) ([92ad4da](https://github.com/kiwicom/orbit/commit/92ad4da10e4c90b81917083af762a9ae7bf6048f))
+- **SkipNavigation:** fix typos in stories ([#2414](https://github.com/kiwicom/orbit/issues/2414)) ([b380a1c](https://github.com/kiwicom/orbit/commit/b380a1cd70649bbea781fb026c659b1ea5902bf6))
+- **Stack:** add forgotten interface export ([#2456](https://github.com/kiwicom/orbit/issues/2456)) ([a85d20a](https://github.com/kiwicom/orbit/commit/a85d20aee69b29ac8a5305a77ad9078623569e48))
+- **Tooltip:** do not propagate the onClick event on mobile when stopPropagate is set to true ([#2438](https://github.com/kiwicom/orbit/issues/2438)) ([00467c5](https://github.com/kiwicom/orbit/commit/00467c5d3f77e49f2fbccf848c8ae0328c38f8ad))
+- remove //flow from \*.d.ts ([5a57884](https://github.com/kiwicom/orbit/commit/5a57884281dc952ad959e53608b3a9dee8239e85))
+- **CountryFlag** stop exporting `getCountryProps` ([#2436](https://github.com/kiwicom/orbit/pull/2436)) ([e001aabe](https://github.com/kiwicom/orbit/commit/e001aabea64b132977ba534ee54eb059794a68a4))
+- **ButtonPrimitive** correctly forward `ref` ([#2418](https://github.com/kiwicom/orbit/pull/2418)) ([cf4c4f33](https://github.com/kiwicom/orbit/commit/cf4c4f33fc41fa7af80d2861014ea653dc44cd89))
 
 
 ### Features

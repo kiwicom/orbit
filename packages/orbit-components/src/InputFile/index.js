@@ -112,6 +112,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
       error,
       help,
       onChange,
+      onFocus,
       onBlur,
       allowedFileTypes,
       tabIndex,
@@ -129,7 +130,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
           name={name}
           error={error}
           onChange={onChange}
-          onFocus={onChange}
+          onFocus={onFocus}
           onBlur={onBlur}
           accept={allowedFileTypes}
           ref={ref}

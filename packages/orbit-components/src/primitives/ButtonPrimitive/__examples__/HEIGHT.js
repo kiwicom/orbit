@@ -8,17 +8,17 @@ import Stack from "../../../Stack";
 export default {
   Example: () => (
     <Stack flex>
-      <Stack shrink direction="column" spacing="condensed">
+      <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3">Relative height</Heading>
         <div style={{ height: "240px" }}>
           <Button height="50%">Save</Button>
         </div>
       </Stack>
-      <Stack shrink direction="column" spacing="condensed">
+      <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3">Fixed height</Heading>
         <Button height="40px">Save</Button>
       </Stack>
-      <Stack shrink direction="column" spacing="condensed">
+      <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3">Normal height</Heading>
         <Button>Save</Button>
       </Stack>

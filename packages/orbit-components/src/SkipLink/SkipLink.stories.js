@@ -113,13 +113,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>
@@ -136,13 +136,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>
@@ -159,13 +159,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>
@@ -191,13 +191,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>
@@ -214,13 +214,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>
@@ -237,13 +237,13 @@ storiesOf("SkipLink", module)
                     </Button>
                   }
                 >
-                  <Stack direction="row" align="center" justify="between" spacing="condensed">
+                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-                    <Stack spacing="tight">
+                    <Stack spacing="XXSmall">
                       <Text size="small" type="secondary">
                         Sat, Mar 31 Trip length: 1h55m
                       </Text>
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">London LHR</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Prague PRG</Text>

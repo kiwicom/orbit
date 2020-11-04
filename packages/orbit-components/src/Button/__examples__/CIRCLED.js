@@ -8,9 +8,9 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => (
-    <Stack spacing="loose">
+    <Stack spacing="XLarge">
       <Button iconLeft={<Icons.Edit />} circled title="Edit this page" />
-      <Stack spacing="condensed">
+      <Stack spacing="XSmall">
         <Text>How much do you like Orbit?</Text>
         <Stack direction="row">
           <Button type="primarySubtle" circled iconLeft="1" />

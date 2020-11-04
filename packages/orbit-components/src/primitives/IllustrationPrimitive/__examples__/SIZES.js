@@ -10,7 +10,7 @@ import Text from "../../../Text";
 export default {
   Example: () => (
     <Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Extra small
         </Heading>
@@ -21,7 +21,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Small
         </Heading>
@@ -32,7 +32,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Medium
         </Heading>
@@ -43,7 +43,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Large
         </Heading>
@@ -54,7 +54,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Display
         </Heading>

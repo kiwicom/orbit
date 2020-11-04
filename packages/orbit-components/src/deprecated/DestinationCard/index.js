@@ -243,7 +243,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
         <StyledDestinationCardContent hiddenContentHeight={hiddenContentHeight}>
           <StyledDestinationCardHeader id={this.cardID}>
             <Shown>
-              <Stack flex align="center" justify="start" spacing="extraTight">
+              <Stack flex align="center" justify="start" spacing="XXXSmall">
                 <Heading type="title3" inverted>
                   {departureCity}
                 </Heading>

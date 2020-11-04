@@ -18,14 +18,14 @@ export type Basis = string | ((theme: Theme) => string);
 
 export type Spacing =
   | "none"
-  | "extraTight"
-  | "tight"
-  | "condensed"
-  | "compact"
-  | "natural"
-  | "comfy"
-  | "loose"
-  | "extraLoose";
+  | "XXXSmall"
+  | "XXSmall"
+  | "XSmall"
+  | "small"
+  | "medium"
+  | "large"
+  | "XLarge"
+  | "XXLarge";
 
 export type MediaQuery = {|
   ...spaceAfter,

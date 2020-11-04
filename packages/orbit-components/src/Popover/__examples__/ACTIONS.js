@@ -24,7 +24,7 @@ export default {
         }
         opened={isOpen}
         content={
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <ListChoice
               title="2 star hotels"
               selectable

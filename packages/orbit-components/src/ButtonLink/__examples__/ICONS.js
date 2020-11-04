@@ -8,15 +8,15 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => (
-    <Stack direction="column" spacing="loose">
-      <Stack direction="column" spacing="condensed">
+    <Stack direction="column" spacing="XLarge">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With right icon</Heading>
         <Stack flex>
           <ButtonLink iconRight={<Icons.ChevronRight />}>Continue to payment</ButtonLink>
           <ButtonLink iconRight={<Icons.ChevronDown />}>Show more options</ButtonLink>
         </Stack>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With left icon</Heading>
         <Stack flex>
           <ButtonLink iconLeft={<Icons.PlusCircle />}>Add item</ButtonLink>
@@ -25,13 +25,13 @@ export default {
           </ButtonLink>
         </Stack>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With both icons</Heading>
         <ButtonLink iconLeft={<Icons.Visibility />} iconRight={<Icons.ChevronRight />}>
           Read more
         </ButtonLink>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Only icon</Heading>
         <ButtonLink iconLeft={<Icons.Edit />} title="Edit this page" />
       </Stack>

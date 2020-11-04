@@ -17,7 +17,7 @@ export default {
     };
     return (
       <Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             No gaps
           </Heading>
@@ -51,7 +51,7 @@ export default {
             </div>
           </Grid>
         </Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Column gaps
           </Heading>
@@ -85,7 +85,7 @@ export default {
             </div>
           </Grid>
         </Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Row gaps
           </Heading>
@@ -119,7 +119,7 @@ export default {
             </div>
           </Grid>
         </Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Both in one property
           </Heading>

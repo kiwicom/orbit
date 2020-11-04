@@ -13,11 +13,11 @@ export default {
   Example: () => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
-      <Stack spacing="extraLoose">
+      <Stack spacing="XXLarge">
         <Popover
           opened={isOpen}
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"

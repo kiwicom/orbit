@@ -27,9 +27,9 @@ const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadi
             flex
             grow
             spaceAfter="medium"
-            spacing="condensed"
+            spacing="XSmall"
             align="stretch"
-            desktop={{ spacing: "natural", spaceAfter: "none" }}
+            desktop={{ spacing: "medium", spaceAfter: "none" }}
             justify="center"
           >
             <PricingTableContext.Provider
@@ -43,7 +43,7 @@ const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadi
             </PricingTableContext.Provider>
           </Stack>
           {!isDesktop && children && (
-            <Stack spacing="condensed">
+            <Stack spacing="XSmall">
               <StyledListWrapper>
                 {React.Children.map(children, (child, i) => {
                   if (i === activeElement) {

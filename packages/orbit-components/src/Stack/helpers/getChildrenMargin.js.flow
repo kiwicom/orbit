@@ -3,11 +3,12 @@ import type { Interpolation } from "styled-components";
 
 import type { Devices } from "../../utils/mediaQuery/consts";
 import type { Props, SmallMobile } from "../index";
+import type { ThemeProps } from "../../defaultTheme";
 
 export type GetChildrenMargin = ({|
   viewport: Devices,
   index: number,
   devices: Devices[],
-|}) => ({| ...Props, ...SmallMobile |}) => Interpolation | boolean;
+|}) => ({| ...Props, ...SmallMobile, ...ThemeProps |}) => Interpolation | boolean;
 
 declare export default GetChildrenMargin;

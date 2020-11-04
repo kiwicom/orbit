@@ -9,7 +9,7 @@ import * as Icons from "../../icons";
 export default {
   Example: () => (
     <Alert icon={<Icons.InformationCircle />} title="Re-check your credentials">
-      <Stack spacing="compact">
+      <Stack spacing="small">
         <Text>
           To avoid boarding complications, your entire name must be entered{" "}
           <strong>exactly as it appears in your passport/ID</strong>.

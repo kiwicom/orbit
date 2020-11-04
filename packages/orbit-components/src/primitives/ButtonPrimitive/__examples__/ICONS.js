@@ -10,7 +10,7 @@ import * as Icons from "../../../icons";
 export default {
   Example: () => (
     <Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Width and height</Heading>
         <ButtonPrimitive icons={{ width: "12px", height: "12px" }} iconLeft={<Icons.Edit />}>
           Edit
@@ -19,7 +19,7 @@ export default {
           Edit
         </ButtonPrimitive>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Left margin</Heading>
         <ButtonPrimitive icons={{ leftMargin: "4px" }} iconLeft={<Icons.Edit />}>
           Edit
@@ -28,7 +28,7 @@ export default {
           Edit
         </ButtonPrimitive>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Right margin</Heading>
         <ButtonPrimitive icons={{ rightMargin: "4px" }} iconRight={<Icons.Edit />}>
           Edit
@@ -37,7 +37,7 @@ export default {
           Edit
         </ButtonPrimitive>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Color</Heading>
         <ButtonPrimitive
           icons={{ foreground: defaultTheme.orbit.colorIconSuccess }}
@@ -52,7 +52,7 @@ export default {
           Edit
         </ButtonPrimitive>
       </Stack>
-      <Stack direction="column" spacing="condensed">
+      <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Color on hover, focus, and active</Heading>
         <ButtonPrimitive
           icons={{ foregroundHover: defaultTheme.orbit.colorIconSuccess }}

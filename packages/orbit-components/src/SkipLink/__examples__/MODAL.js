@@ -54,7 +54,7 @@ export default {
                       <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                     }
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Cairo CAI</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
@@ -71,7 +71,7 @@ export default {
                       <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                     }
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
@@ -86,7 +86,7 @@ export default {
                   <CardSection
                     icon={<CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />}
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Malé MLE</Text>
@@ -110,7 +110,7 @@ export default {
                   <CardSection
                     icon={<CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />}
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Malé MLE</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
@@ -127,7 +127,7 @@ export default {
                       <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                     }
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
@@ -144,7 +144,7 @@ export default {
                       <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                     }
                     title={
-                      <Stack direction="row" spacing="tight" align="center">
+                      <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
                         <Icons.FlightDirect size="small" />
                         <Text weight="bold">Cairo CAI</Text>

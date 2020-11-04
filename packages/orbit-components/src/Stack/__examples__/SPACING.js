@@ -18,7 +18,7 @@ export default {
         {Object.values(SPACINGS).map((spacing: any) => (
           <Stack>
             <Heading as="h3" type="title3">
-              <code>{spacing}</code> {spacing === SPACINGS.NATURAL && `(the default) `}
+              <code>{spacing}</code> {spacing === SPACINGS.MEDIUM && `(the default) `}
             </Heading>
             <Stack flex spacing={spacing}>
               <div style={divStyle} />

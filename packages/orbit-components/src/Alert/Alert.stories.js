@@ -162,8 +162,8 @@ storiesOf("Alert", module)
           dataTest={dataTest}
           spaceAfter={spaceAfter}
         >
-          <Stack spacing="compact">
-            <Stack spacing="tight">
+          <Stack spacing="small">
+            <Stack spacing="XXSmall">
               <div>{message}</div>
               <List>
                 <ListItem>
@@ -172,7 +172,7 @@ storiesOf("Alert", module)
                 <ListItem>623 Kč will be refunded by your payment card</ListItem>
               </List>
             </Stack>
-            <Stack direction="row" spacing="condensed">
+            <Stack direction="row" spacing="XSmall">
               <AlertButton type={type} href="#">
                 {button}
               </AlertButton>
@@ -203,8 +203,8 @@ storiesOf("Alert", module)
           closable
           onClose={action("Close")}
         >
-          <Stack spacing="condensed">
-            <Stack spacing="tight">
+          <Stack spacing="XSmall">
+            <Stack spacing="XXSmall">
               <Text>
                 Requirements found here are for reference purposes only. Contact the embassy or your
                 foreign ministry for more information.

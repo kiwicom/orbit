@@ -224,7 +224,7 @@ const PricingTableItem = ({
               </StyledBadgeWrapperContent>
             </StyledBadgeWrapper>
           )}
-          <Stack flex direction="column" spacing="condensed" desktop={{ spacing: "natural" }}>
+          <Stack flex direction="column" spacing="XSmall" desktop={{ spacing: "medium" }}>
             {featureIcon && (
               <Stack justify="center" grow={false}>
                 {featureIcon}
@@ -232,7 +232,7 @@ const PricingTableItem = ({
             )}
             <Stack justify="between" direction="column">
               <Stack
-                spacing="tight"
+                spacing="XXSmall"
                 direction="column"
                 flex
                 align="stretch"

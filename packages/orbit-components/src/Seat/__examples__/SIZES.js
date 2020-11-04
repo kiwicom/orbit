@@ -8,7 +8,7 @@ import Stack from "../../Stack";
 export default {
   Example: () => (
     <Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Small
         </Heading>
@@ -19,7 +19,7 @@ export default {
           <Seat size="small" />
         </Stack>
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Medium
         </Heading>

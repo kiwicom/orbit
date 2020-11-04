@@ -7,6 +7,7 @@ import Stack from "../Stack";
 import mq from "../utils/mediaQuery";
 import { StyledTextLink } from "../TextLink";
 import defaultTheme from "../defaultTheme";
+import { SPACINGS } from "../Stack/consts";
 
 import type { Props } from "./index";
 
@@ -51,7 +52,7 @@ StyledNavigationLinkListChild.defaultProps = {
 const LinkList = ({
   direction = "column",
   indent,
-  spacing = "natural",
+  spacing = SPACINGS.MEDIUM,
   children,
   dataTest,
 }: Props) => (

@@ -138,6 +138,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
         />
         {label && <FormLabel filled={Boolean(fileName)}>{label}</FormLabel>}
         <FakeInput error={error}>
+          {/* <button> doesn't trigger the input so we're setting the tag to <div> */}
           <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
             {buttonLabel}
           </Button>

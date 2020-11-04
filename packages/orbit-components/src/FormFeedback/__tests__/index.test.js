@@ -1,28 +1,28 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import FormFeedback from "../index";
 
-describe("FormFeedback Error", () => {
-  const error = "error message";
-  const help = "help message";
-  const dataTest = "dataTest";
-  const component = shallow(<FormFeedback error={error} help={help} dataTest={dataTest} />);
-
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+describe("FormFeedback", () => {
+  it("should assign data-test", () => {
+    render(<FormFeedback help="help message" dataTest="test" />);
+    expect(screen.getByTestId("test"));
   });
-  it("should render error", () => {
-    expect(component.text()).toEqual(error);
+
+  it("should render given error message", () => {
+    render(<FormFeedback error="error message" />);
+    expect(screen.getByText("error message")).toBeInTheDocument();
   });
-});
 
-describe("FormFeedback Help", () => {
-  const help = "test";
-  const component = shallow(<FormFeedback error={undefined} help={help} />);
+  it("should render given help message", () => {
+    render(<FormFeedback help="help message" />);
+    expect(screen.getByText("help message")).toBeInTheDocument();
+  });
 
-  it("should render help", () => {
-    expect(component.text()).toEqual(help);
+  it("should prioritize rendering error message over help message", () => {
+    render(<FormFeedback error="error message" help="help message" />);
+    expect(screen.getByText("error message")).toBeInTheDocument();
+    expect(screen.queryByText("help message")).not.toBeInTheDocument();
   });
 });

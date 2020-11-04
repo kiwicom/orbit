@@ -1,18 +1,16 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import FormLabel from "../index";
 
 describe("FormLabel", () => {
-  const dataTest = "test";
-  const component = shallow(
-    <FormLabel filled={false} dataTest={dataTest}>
-      FormLabel
-    </FormLabel>,
-  );
-
-  it("should have data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+  it("should have expected DOM output", () => {
+    render(
+      <FormLabel filled={false} dataTest="test">
+        FormLabel
+      </FormLabel>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
   });
 });

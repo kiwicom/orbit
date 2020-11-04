@@ -125,7 +125,7 @@ storiesOf("Alert", module)
           closable={closable}
           onClose={action("Close")}
           inlineActions={
-            <AlertButton type={type} size="small" href="#">
+            <AlertButton type={type} href="#">
               {button}
             </AlertButton>
           }
@@ -173,13 +173,13 @@ storiesOf("Alert", module)
               </List>
             </Stack>
             <Stack direction="row" spacing="condensed">
-              <AlertButton type={type} size="small" href="#">
+              <AlertButton type={type} href="#">
                 {button}
               </AlertButton>
               {/*
                $FlowExpectedError
                */}
-              <AlertButton type={`${type}Subtle`} size="small" href="#">
+              <AlertButton type={`${type}Subtle`} href="#">
                 {button}
               </AlertButton>
             </Stack>
@@ -216,9 +216,7 @@ storiesOf("Alert", module)
                 <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
               </List>
             </Stack>
-            <AlertButton type="info" size="small">
-              Check Visa Requirements
-            </AlertButton>
+            <AlertButton type="info">Check Visa Requirements</AlertButton>
           </Stack>
         </Alert>
       </RenderInRtl>

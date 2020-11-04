@@ -8,6 +8,7 @@ import getCommonProps from "../../primitives/ButtonPrimitive/common/getCommonPro
 import useTheme from "../../hooks/useTheme";
 import getAlertButtonStyles from "./helpers/getAlertButtonStyles";
 import getAlertButtonIconForeground from "./helpers/getAlertButtonIconForeground";
+import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 
 import type { Props } from "./index";
 
@@ -15,7 +16,7 @@ const AlertButton = React.forwardRef<Props, HTMLButtonElement>(
   ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps(propsWithTheme);
+    const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
     const buttonStyles = getAlertButtonStyles({ type, theme, disabled });
     const icons = getIconContainer({
       ...propsWithTheme,

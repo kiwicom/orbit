@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.96.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.95.0...@kiwicom/orbit-components@0.96.0) (2020-11-04)
+
+
+### Bug Fixes
+
+* **InputFile:** forward onFocus event handler ([#2461](https://github.com/kiwicom/orbit/issues/2461)) ([92ad4da](https://github.com/kiwicom/orbit/commit/92ad4da10e4c90b81917083af762a9ae7bf6048f))
+* **SkipNavigation:** fix typos in stories ([#2414](https://github.com/kiwicom/orbit/issues/2414)) ([b380a1c](https://github.com/kiwicom/orbit/commit/b380a1cd70649bbea781fb026c659b1ea5902bf6))
+* **Stack:** add forgotten interface export ([#2456](https://github.com/kiwicom/orbit/issues/2456)) ([a85d20a](https://github.com/kiwicom/orbit/commit/a85d20aee69b29ac8a5305a77ad9078623569e48))
+* **Tooltip:** do not propagate the onClick event on mobile when stopPropagate is set to true ([#2438](https://github.com/kiwicom/orbit/issues/2438)) ([00467c5](https://github.com/kiwicom/orbit/commit/00467c5d3f77e49f2fbccf848c8ae0328c38f8ad))
+* remove //flow from *.d.ts ([5a57884](https://github.com/kiwicom/orbit/commit/5a57884281dc952ad959e53608b3a9dee8239e85))
+
+
+### Features
+
+* introduce Box component ([#2242](https://github.com/kiwicom/orbit/issues/2242)) ([226bec7](https://github.com/kiwicom/orbit/commit/226bec7f95143474df073ff0f6efe89d5a3f7a81))
+* introduce Inline component ([#2255](https://github.com/kiwicom/orbit/issues/2255)) ([ef00500](https://github.com/kiwicom/orbit/commit/ef005000b522d28b842e3c7651cac31540d1debe))
+* **AlertButton:** set small as default size for alert button ([#2391](https://github.com/kiwicom/orbit/issues/2391)) ([1a6d0be](https://github.com/kiwicom/orbit/commit/1a6d0bea34771c0b08ac196946b606ad23dc662b))
+* **Stack:** change spacing value names ([#2457](https://github.com/kiwicom/orbit/issues/2457)) ([6a9363b](https://github.com/kiwicom/orbit/commit/6a9363bab5c39632e1c245832014a3375b64d3fb)), closes [#2451](https://github.com/kiwicom/orbit/issues/2451)
+
+
+### BREAKING CHANGES
+
+* **Stack:** Renaming spacing values of `Stack` component and `LinkList` component – that was using Stack internally.
+
+Also dropped support of different spacings between mobile and desktop version. It no longer make sense from design point of view.
+* **AlertButton:** Removed size property from AlertButton since only the small size should be used and from now, it's the default value. No actions should be necessary. If you used different than small size, just remove the usage of the property.
+Co-authored-by: Luděk Vepřek <weprous@gmail.com>
+
+
+
+
+
 # [0.95.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.94.0...@kiwicom/orbit-components@0.95.0) (2020-10-23)
 
 ### Bug Fixes

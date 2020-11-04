@@ -13,7 +13,7 @@ export default {
     const [timeRange, setTimeRange] = React.useState([0, 24]);
     return (
       <Stack direction="column">
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             <code>ariaLabel</code>
           </Heading>
@@ -45,7 +45,7 @@ export default {
             </Stack>
           </Stack>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">
             <code>ariaValueText</code>
           </Heading>

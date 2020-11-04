@@ -98,7 +98,7 @@ storiesOf("Deprecated Tile", module)
           description={
             <Stack justify="between" align="center" direction="row">
               <Stack spacing="none" direction="column" shrink>
-                <Stack direction="row" align="center" spacing="condensed">
+                <Stack direction="row" align="center" spacing="XSmall">
                   <Heading type="title4" as="h4">
                     Mr. Hot potato
                   </Heading>

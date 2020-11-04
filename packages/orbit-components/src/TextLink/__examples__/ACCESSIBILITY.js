@@ -10,7 +10,7 @@ import * as Icons from "../../icons";
 export default {
   Example: () => (
     <Stack direction="column">
-      <Stack shrink direction="column" spacing="condensed">
+      <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3" as="h3">
           Tab index
         </Heading>
@@ -40,7 +40,7 @@ export default {
           Tab index docs
         </TextLink>
       </Stack>
-      <Stack shrink direction="column" spacing="condensed">
+      <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3" as="h3">
           Title
         </Heading>

@@ -1,4 +1,0 @@
-// @flow
-export type GetDesktopSpacing = () => { [key: string]: string };
-
-declare export default GetDesktopSpacing;

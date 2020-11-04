@@ -47,7 +47,7 @@ const TimelineStepDesktop = ({
         <StyledIconWrapper>{typeIcon}</StyledIconWrapper>
         <StyledProgressLine data-test="progressLine" desktop status={nextType || (last && type)} />
       </StyledRelative>
-      <Stack flex align="center" spacing="condensed" direction="column">
+      <Stack flex align="center" spacing="XSmall" direction="column">
         {!type ? (
           <CustomBadge>
             <StyledAligned>{label}</StyledAligned>

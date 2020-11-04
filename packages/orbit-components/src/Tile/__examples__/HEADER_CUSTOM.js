@@ -16,7 +16,7 @@ export default {
       header={
         <Stack align="center" direction="row" justify="between" shrink>
           <Stack direction="column" shrink spacing="none">
-            <Stack align="center" direction="row" spacing="condensed">
+            <Stack align="center" direction="row" spacing="XSmall">
               <Heading as="h4" type="title4">
                 Thoa Phan
               </Heading>

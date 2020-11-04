@@ -18,7 +18,7 @@ export default {
         <Popover
           preferredAlign="start"
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"
@@ -48,7 +48,7 @@ export default {
         <Popover
           preferredAlign="center"
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"
@@ -78,7 +78,7 @@ export default {
         <Popover
           preferredAlign="end"
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"

@@ -21,7 +21,7 @@ export default {
           ]}
         />
         <Stack>
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <Heading id="how-to">How to activate the link</Heading>
             <Text>
               To see the link, click in this container. Then use Tab or Shift+Tab to focus on the
@@ -29,7 +29,7 @@ export default {
             </Text>
           </Stack>
           {moreInfo && (
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Heading id="skiplink">SkipLink</Heading>
               <Text>
                 When designing with accessibility in mind, it&apos;s important to remember that not

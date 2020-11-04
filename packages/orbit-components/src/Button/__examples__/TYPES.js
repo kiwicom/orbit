@@ -9,15 +9,15 @@ export default {
   Example: () => (
     <Stack direction="column">
       <Stack flex>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Type: Primary</Heading>
           <Button>Add passenger</Button>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Type: Secondary</Heading>
           <Button type="secondary">Cancel</Button>
         </Stack>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Type: Critical</Heading>
           <Button type="critical">Cancel</Button>
         </Stack>
@@ -29,7 +29,7 @@ export default {
               paddingTop: "0",
             }}
           >
-            <Stack shrink direction="column" spacing="condensed">
+            <Stack shrink direction="column" spacing="XSmall">
               <Heading inverted type="title3">
                 Type: White
               </Heading>
@@ -40,12 +40,12 @@ export default {
         </Stack>
       </Stack>
       <Stack flex>
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Type: Primary Subtle</Heading>
           <Button type="primarySubtle">Add passenger</Button>
         </Stack>
         <div />
-        <Stack shrink direction="column" spacing="condensed">
+        <Stack shrink direction="column" spacing="XSmall">
           <Heading type="title3">Type: Critical Subtle</Heading>
           <Button type="criticalSubtle">Cancel</Button>
         </Stack>

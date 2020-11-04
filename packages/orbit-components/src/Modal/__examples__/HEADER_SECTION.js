@@ -23,7 +23,7 @@ export default {
           >
             <ModalHeader title="Important info about your trip" />
             <ModalSection suppressed>
-              <Stack direction="column" spacing="comfy">
+              <Stack direction="column" spacing="large">
                 <Stack flex>
                   <Icons.BaggagePersonalItem ariaHidden />
                   <Heading as="h3" type="title3">
@@ -37,7 +37,7 @@ export default {
               </Stack>
             </ModalSection>
             <ModalSection>
-              <Stack direction="column" spacing="comfy">
+              <Stack direction="column" spacing="large">
                 <Stack flex>
                   <Icons.Visa ariaHidden />
                   <Heading as="h3" type="title3">
@@ -51,7 +51,7 @@ export default {
               </Stack>
             </ModalSection>
             <ModalSection suppressed>
-              <Stack direction="column" spacing="comfy">
+              <Stack direction="column" spacing="large">
                 <Stack flex>
                   <Icons.KiwicomGuarantee ariaHidden />
                   <Heading as="h3" type="title3">

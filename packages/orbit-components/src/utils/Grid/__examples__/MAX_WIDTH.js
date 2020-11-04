@@ -17,7 +17,7 @@ export default {
     };
     return (
       <Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             No maximum width
           </Heading>
@@ -36,7 +36,7 @@ export default {
             </div>
           </Grid>
         </Stack>
-        <Stack spacing="condensed">
+        <Stack spacing="XSmall">
           <Heading as="h3" type="title3">
             Maximum width of 400 px
           </Heading>

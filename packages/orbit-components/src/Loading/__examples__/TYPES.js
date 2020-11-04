@@ -11,14 +11,14 @@ import Text from "../../Text";
 export default {
   Example: () => (
     <Stack>
-      <Stack spacing="extraTight">
+      <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">
           Page loader
         </Heading>
         <Text>Useful when an entire page is loading.</Text>
         <Loading />
       </Stack>
-      <Stack spacing="extraTight">
+      <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">
           Box loader
         </Heading>
@@ -34,7 +34,7 @@ export default {
           </CardSection>
         </Card>
       </Stack>
-      <Stack spacing="extraTight">
+      <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">
           Button loader
         </Heading>
@@ -43,14 +43,14 @@ export default {
         </Text>
         <Button loading>Save</Button>
       </Stack>
-      <Stack spacing="extraTight">
+      <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">
           Inline loader
         </Heading>
         <Text>Useful when content in paragraphs and other inline elements is being loaded.</Text>
         <Loading type="inlineLoader" />
       </Stack>
-      <Stack spacing="extraTight">
+      <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">
           Search loader
         </Heading>

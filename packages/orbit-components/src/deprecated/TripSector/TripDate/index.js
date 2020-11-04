@@ -31,7 +31,7 @@ StyledTripDate.defaultProps = {
 
 const TripDate = ({ children, dataTest, duration }: Props) => (
   <StyledTripDate data-test={dataTest}>
-    <Stack direction="row" spacing="condensed" shrink>
+    <Stack direction="row" spacing="XSmall" shrink>
       <Calendar size="small" />
       <Text>{children}</Text>
     </Stack>

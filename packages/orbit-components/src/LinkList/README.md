@@ -21,13 +21,13 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in LinkList component.
 
-| Name         | Type                  | Default     | Description                            |
-| :----------- | :-------------------- | :---------- | :------------------------------------- |
-| **children** | `React.Node`          |             | The content of the LinkList            |
-| dataTest     | `string`              |             | Optional prop for testing purposes.    |
-| direction    | [`enum`](#enum)       | `"column"`  | The size of the LinkList.              |
-| indent       | `boolean`             |             | Indenting LinkList item                |
-| spacing      | [`spacing`](#spacing) | `"natural"` | The spacing between LinkList children. |
+| Name         | Type                  | Default    | Description                            |
+| :----------- | :-------------------- | :--------- | :------------------------------------- |
+| **children** | `React.Node`          |            | The content of the LinkList            |
+| dataTest     | `string`              |            | Optional prop for testing purposes.    |
+| direction    | [`enum`](#enum)       | `"column"` | The size of the LinkList.              |
+| indent       | `boolean`             |            | Indenting LinkList item                |
+| spacing      | [`spacing`](#spacing) | `"medium"` | The spacing between LinkList children. |
 
 ### enum
 
@@ -38,14 +38,14 @@ Table below contains all types of the props available in LinkList component.
 
 ### spacing
 
-| name           | size on `0 - 991px` | size on `992px - ∞` |
-| :------------- | :------------------ | :------------------ |
-| `"none"`       | `null`              | `null`              |
-| `"extraTight"` | `2px`               | `2px`               |
-| `"tight"`      | `4px`               | `4px`               |
-| `"condensed"`  | `8px`               | `8px`               |
-| `"compact"`    | `12px`              | `12px`              |
-| `"natural"`    | `16px`              | `16px`              |
-| `"comfy"`      | `20px`              | `24px`              |
-| `"loose"`      | `28px`              | `32px`              |
-| `"extraLoose"` | `36px`              | `40px`              |
+| name         | size on `992px - ∞` |
+| :----------- | :------------------ |
+| `"none"`     | `null`              |
+| `"XXXSmall"` | `2px`               |
+| `"XXSmall"`  | `4px`               |
+| `"XSmall"`   | `8px`               |
+| `"small"`    | `12px`              |
+| `"medium"`   | `16px`              |
+| `"large"`    | `24px`              |
+| `"XLarge"`   | `32px`              |
+| `"XXLarge"`  | `40px`              |

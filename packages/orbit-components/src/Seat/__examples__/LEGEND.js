@@ -10,17 +10,17 @@ export default {
   Example: () => (
     <Stack>
       <Heading>Select your seat</Heading>
-      <Stack direction="row" align="center" spacing="extraLoose">
-        <Stack spacing="condensed" direction="row" inline grow={false} align="center">
+      <Stack direction="row" align="center" spacing="XXLarge">
+        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
           <Seat /> <Text>Standard (€5)</Text>
         </Stack>
-        <Stack spacing="condensed" direction="row" inline grow={false} align="center">
+        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
           <Seat type="legroom" /> <Text>Extra legroom (€10)</Text>
         </Stack>
-        <Stack spacing="condensed" direction="row" inline grow={false} align="center">
+        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
           <Seat type="selected" /> <Text>Selected</Text>
         </Stack>
-        <Stack spacing="condensed" direction="row" inline grow={false} align="center">
+        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
           <Seat type="unavailable" />
           <Text>Unavailable</Text>
         </Stack>

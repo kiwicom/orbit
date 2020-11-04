@@ -1,6 +1,6 @@
 {
 	"imports": "import CountryFlag from \"@kiwicom/orbit-components/lib/CountryFlag\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <CountryFlag code=\"cz\" name=\"Czech Republic\" />\n    <Stack direction=\"row\" spacing=\"tight\" align=\"center\">\n      <CountryFlag name=\"\" code=\"cz\" />\n      <Text>Czech Republic</Text>\n    </Stack>\n  </Stack>\n)\n",
+	"example": "() => (\n  <Stack direction=\"column\">\n    <CountryFlag code=\"cz\" name=\"Czech Republic\" />\n    <Stack direction=\"row\" spacing=\"XXSmall\" align=\"center\">\n      <CountryFlag name=\"\" code=\"cz\" />\n      <Text>Czech Republic</Text>\n    </Stack>\n  </Stack>\n)\n",
 	"info": {
 		"title": "Accessibility",
 		"description": "When the flag is used alone, include the name of the country for people who won't see the flag. If the country name is present in the text, include a blank name to make it clear it's just decoration."

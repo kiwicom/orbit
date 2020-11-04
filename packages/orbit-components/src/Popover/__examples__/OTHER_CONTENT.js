@@ -15,7 +15,7 @@ export default {
     return (
       <Popover
         content={
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <ListChoice
               title="2 star hotels"
               selectable

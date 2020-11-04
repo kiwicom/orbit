@@ -26,7 +26,7 @@ export default {
           ]}
         />
         <Stack>
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <Heading dataA11ySection="how-to">How to activate the action</Heading>
             <Text>
               To see the action, click in this container. Then use Tab or Shift+Tab to focus on the
@@ -34,7 +34,7 @@ export default {
             </Text>
           </Stack>
           {moreInfo && (
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <Heading>SkipNavigation</Heading>
               <Text>
                 When designing with accessibility in mind, it’s important to remember that not

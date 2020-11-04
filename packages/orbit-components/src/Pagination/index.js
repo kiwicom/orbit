@@ -39,7 +39,7 @@ const Pagination = ({
   return (
     <Stack
       direction="row"
-      spacing="tight"
+      spacing="XXSmall"
       align="center"
       grow={false}
       shrink
@@ -67,7 +67,7 @@ const Pagination = ({
         />
       </Hide>
       <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-        <Stack direction="row" spacing="tight" align="center">
+        <Stack direction="row" spacing="XXSmall" align="center">
           {pageCount <= MAXIMUM_PAGES ? (
             <Pages
               pageCount={pageCount}

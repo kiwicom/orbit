@@ -40,7 +40,7 @@ export default {
           title={`Yasmin Karenth – ${expanded1 ? "expanded" : "closed"}`}
           icon={<Icons.GenderWoman ariaLabel="female" />}
         >
-          <Stack direction="column" spacing="condensed">
+          <Stack direction="column" spacing="XSmall">
             <Text type="secondary">January 20, 1978</Text>
             <Text type="secondary">yas.karenth@example.com</Text>
           </Stack>
@@ -57,7 +57,7 @@ export default {
           title={`Robin Kask – ${expanded2 ? "expanded" : "closed"}`}
           icon={<Icons.GenderMan ariaLabel="male" />}
         >
-          <Stack direction="column" spacing="condensed">
+          <Stack direction="column" spacing="XSmall">
             <Text type="secondary">June 11, 1985</Text>
             <Text type="secondary">robin2fly@example.com</Text>
           </Stack>

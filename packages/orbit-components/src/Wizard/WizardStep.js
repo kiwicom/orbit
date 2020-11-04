@@ -153,7 +153,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props) => {
   return (
     <StyledContainer data-test={dataTest} isCompact={isCompact} status={status}>
       <StyledProgressBar status={status} nextStepStatus={nextStepStatus} iconHeight={iconHeight} />
-      <Stack direction="column" align="center" spacing="condensed">
+      <Stack direction="column" align="center" spacing="XSmall">
         <WizardStepIcon width={iconWidth} height={iconHeight} />
         <div
           css={css`

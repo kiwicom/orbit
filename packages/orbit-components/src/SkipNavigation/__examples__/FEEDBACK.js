@@ -12,14 +12,14 @@ export default {
     <>
       <SkipNavigation feedbackUrl="https://github.com/kiwicom/orbit/issues/new/choose" />
       <Stack>
-        <Stack spacing="compact">
+        <Stack spacing="small">
           <Heading dataA11ySection="how-to">How to get to the feedback URL</Heading>
           <Text>
             To see the feedback button, click in this container. Then use Tab or Shift+Tab to focus
             on the component. Then click the <b>Send feedback</b> button.
           </Text>
         </Stack>
-        <Stack spacing="compact">
+        <Stack spacing="small">
           <Heading>SkipNavigation</Heading>
           <Text>
             When designing with accessibility in mind, it&apos;s important to remember that not

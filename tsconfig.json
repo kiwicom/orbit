@@ -6,6 +6,7 @@
     "noImplicitAny": false
   },
   "include": [
-    "packages/orbit-components/**/*"
+    "packages/orbit-components/**/*",
+    "packages/orbit-design-tokens/**/*"
   ]
 }

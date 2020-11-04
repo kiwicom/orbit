@@ -64,7 +64,7 @@ const ChoiceGroup = ({
           {label}
         </Heading>
       )}
-      <Stack direction="column" spacing={filter ? "none" : "condensed"}>
+      <Stack direction="column" spacing={filter ? "none" : "XSmall"}>
         {React.Children.map(children, child => {
           return !filter ? (
             <>

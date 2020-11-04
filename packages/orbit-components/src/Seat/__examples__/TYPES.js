@@ -8,25 +8,25 @@ import Stack from "../../Stack";
 export default {
   Example: () => (
     <Stack flex>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Default
         </Heading>
         <Seat />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Extra legroom
         </Heading>
         <Seat type="legroom" />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Selected
         </Heading>
         <Seat type="selected" />
       </Stack>
-      <Stack spacing="tight">
+      <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">
           Unavailable
         </Heading>

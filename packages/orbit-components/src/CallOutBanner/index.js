@@ -73,9 +73,9 @@ const CallOutBanner = ({
     data-test={dataTest}
   >
     {illustration && <StyledIllustration>{illustration}</StyledIllustration>}
-    <Stack spacing="natural">
-      <Stack spacing="condensed">
-        <Stack spacing="tight">
+    <Stack spacing="medium">
+      <Stack spacing="XSmall">
+        <Stack spacing="XXSmall">
           {title && <Heading type="title3">{title}</Heading>}
           {description && <Text>{description}</Text>}
         </Stack>

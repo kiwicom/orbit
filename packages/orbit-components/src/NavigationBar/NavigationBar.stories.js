@@ -32,7 +32,7 @@ storiesOf("NavigationBar", module)
               <ButtonLink iconRight={<ChevronDown />} type="secondary">
                 Flights
               </ButtonLink>
-              <Stack direction="row" spacing="tight" justify="end" shrink>
+              <Stack direction="row" spacing="XXSmall" justify="end" shrink>
                 <ButtonLink iconLeft={<StarFull />} type="secondary" />
                 <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
                 <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
@@ -65,7 +65,7 @@ storiesOf("NavigationBar", module)
                 <TextLink type="secondary">Flights</TextLink>
                 <TextLink type="secondary">Flights</TextLink>
               </LinkList>
-              <Stack direction="row" spacing="tight" justify="end" shrink>
+              <Stack direction="row" spacing="XXSmall" justify="end" shrink>
                 <ButtonLink type="secondary">Starred</ButtonLink>
                 <ButtonLink type="secondary">Help</ButtonLink>
                 <ButtonLink type="secondary">Account</ButtonLink>

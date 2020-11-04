@@ -21,12 +21,12 @@ export default {
         </Text>
         <Stack
           flex
-          spacing={SPACINGS.TIGHT}
-          mediumMobile={{ spacing: SPACINGS.CONDENSED }}
-          largeMobile={{ spacing: SPACINGS.COMPACT }}
-          tablet={{ spacing: SPACINGS.NATURAL }}
-          desktop={{ spacing: SPACINGS.COMFY }}
-          largeDesktop={{ spacing: SPACINGS.LOOSE }}
+          spacing={SPACINGS.XXSMALL}
+          mediumMobile={{ spacing: SPACINGS.XSMALL }}
+          largeMobile={{ spacing: SPACINGS.SMALL }}
+          tablet={{ spacing: SPACINGS.MEDIUM }}
+          desktop={{ spacing: SPACINGS.LARGE }}
+          largeDesktop={{ spacing: SPACINGS.XLARGE }}
         >
           <div style={divStyle} />
           <div style={divStyle} />

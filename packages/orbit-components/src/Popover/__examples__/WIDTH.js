@@ -12,7 +12,7 @@ export default {
     <Stack>
       <Popover
         content={
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <ButtonLink
               external
               type="secondary"
@@ -37,7 +37,7 @@ export default {
       <Popover
         width="400px"
         content={
-          <Stack spacing="compact">
+          <Stack spacing="small">
             <ButtonLink
               external
               type="secondary"

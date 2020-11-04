@@ -18,7 +18,7 @@ export default {
     };
     return (
       <Stack direction="column">
-        <Stack spacing="compact">
+        <Stack spacing="small">
           <Stack direction="column">
             <Heading type="title3" as="h3">
               onChange

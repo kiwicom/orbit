@@ -7,7 +7,7 @@ import TextLink from "../../TextLink";
 
 export default {
   Example: () => (
-    <Stack spacing="extraLoose">
+    <Stack spacing="XXLarge">
       <LinkList>
         <TextLink href="https://orbit.kiwi/components/linklist/" external type="secondary">
           LinkList guidelines

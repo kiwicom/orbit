@@ -18,7 +18,7 @@ export default {
         <Popover
           preferredPosition="bottom"
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"
@@ -48,7 +48,7 @@ export default {
         <Popover
           preferredPosition="top"
           content={
-            <Stack spacing="compact">
+            <Stack spacing="small">
               <ButtonLink
                 external
                 type="secondary"

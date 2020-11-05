@@ -12,14 +12,14 @@ export type Align = "start" | "end" | "center" | "stretch" | "baseline";
 export type Justify = "start" | "end" | "center" | "between" | "around";
 export type Spacing =
   | "none"
-  | "extraTight"
-  | "tight"
-  | "condensed"
-  | "compact"
-  | "natural"
-  | "comfy"
-  | "loose"
-  | "extraLoose";
+  | "XXXSmall"
+  | "XXSmall"
+  | "XSmall"
+  | "small"
+  | "medium"
+  | "large"
+  | "XLarge"
+  | "XXLarge";
 
 interface MediaQuery extends Common.SpaceAfter {
   readonly inline?: boolean;

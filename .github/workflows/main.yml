@@ -2,6 +2,11 @@ name: Compressed Size
 
 on: [pull_request]
 
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
 jobs:
   build:
     runs-on: ubuntu-latest

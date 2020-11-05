@@ -8,6 +8,11 @@ on:
     branches:
       - master
 
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
 jobs:
   build_test:
     runs-on: ubuntu-latest

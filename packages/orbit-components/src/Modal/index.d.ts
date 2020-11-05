@@ -20,16 +20,7 @@ export interface Props extends Common.Global {
   readonly hasCloseButton?: boolean;
 }
 
-export interface State {
-  scrolled: boolean;
-  loaded: boolean;
-  fixedClose: boolean;
-  fullyScrolled: boolean;
-  modalWidth: number;
-  footerHeight: number;
-  hasModalSection: boolean;
-}
-declare class Modal extends React.Component<Props, State> {}
+declare class Modal extends React.Component<Props> {}
 export { Modal, Modal as default };
 export { ModalHeader } from "./ModalHeader/index";
 export { ModalSection } from "./ModalSection/index";

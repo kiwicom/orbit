@@ -45,6 +45,10 @@ const modal = (
   </Modal>
 );
 
+beforeEach(() => {
+  onClose.mockClear();
+});
+
 describe("Modal", () => {
   it("should render correctly", () => {
     const { container } = render(modal);

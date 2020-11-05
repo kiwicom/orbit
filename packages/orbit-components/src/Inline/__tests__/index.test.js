@@ -37,9 +37,9 @@ describe("#Inline", () => {
       </Inline>,
     );
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    const container = screen.getByTestId(dataTest);
-    expect(container).toHaveStyle({ alignItems: "center" });
-    expect(container).toHaveStyle({ justifyContent: "flex-start" });
+    const inner = screen.getByTestId(dataTest).firstChild;
+    expect(inner).toHaveStyle({ alignItems: "center" });
+    expect(inner).toHaveStyle({ justifyContent: "flex-start" });
   });
 
   it.each(Object.entries(tokens))(

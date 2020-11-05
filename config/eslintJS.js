@@ -38,6 +38,7 @@ module.exports = {
           "**/tasks/**",
           "packages/*/.storybook/**",
           "packages/*/config/**",
+          "packages/orbit-design-tokens/src/dictionary/**/*",
           "gulpfile.js",
         ],
       },

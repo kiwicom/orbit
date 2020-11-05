@@ -1,0 +1,48 @@
+{
+  "palette": {
+    "ink": {
+      "lighter": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.ink.lighter.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.ink.lighter.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.ink.lighter.minor}"
+        }
+      },
+      "light": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.ink.light.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.ink.light.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.ink.light.minor}"
+        }
+      },
+      "normal": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.ink.normal.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.ink.normal.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.ink.normal.minor}"
+        }
+      }
+    }
+  }
+}

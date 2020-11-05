@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "palette": {
+      "white": {
+        "normal": {
+          "base": {
+            "type": "color",
+            "value": "#FFFFFF",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#F1F4F7",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#E7ECF1",
+            "internal": true
+          }
+        }
+      }
+    }
+  }
+}

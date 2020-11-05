@@ -1,0 +1,54 @@
+{
+  "palette": {
+    "product": {
+      "light": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.product.light.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.product.light.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.product.light.minor}"
+        }
+      },
+      "normal": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.product.normal.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.product.normal.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.product.normal.minor}"
+        }
+      },
+      "dark": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.product.dark.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.product.dark.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.product.dark.minor}"
+        }
+      },
+      "darker": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.product.darker.base}"
+        }
+      }
+    }
+  }
+}

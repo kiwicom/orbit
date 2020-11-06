@@ -20,7 +20,10 @@ export interface Props extends Common.Global {
   readonly hasCloseButton?: boolean;
 }
 
-declare class Modal extends React.Component<Props> {}
+type Instance = { setScrollPosition: (value: number) => void };
+
+declare const Modal: React.ForwardRefRenderFunction<Instance, Props>;
+
 export { Modal, Modal as default };
 export { ModalHeader } from "./ModalHeader/index";
 export { ModalSection } from "./ModalSection/index";

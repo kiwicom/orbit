@@ -9,11 +9,7 @@ import { normalize } from "./helpers";
 
 import type { Props } from "./index";
 
-const StyledInline = styled(({ asComponent: Element, children, className, dataTest }) => (
-  <Element className={className} data-test={dataTest}>
-    {children}
-  </Element>
-))`
+const StyledInlineInner = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -30,12 +26,12 @@ const StyledInline = styled(({ asComponent: Element, children, className, dataTe
   }}
 `;
 
-StyledInline.defaultProps = {
+StyledInlineInner.defaultProps = {
   theme: defaultTheme,
 };
 
 const Inline = ({
-  as = "div",
+  as: Component = "div",
   mediumMobile,
   largeMobile,
   className,
@@ -49,14 +45,9 @@ const Inline = ({
   const viewportSizes = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
 
   return (
-    <StyledInline
-      asComponent={as}
-      className={className}
-      dataTest={dataTest}
-      viewportSizes={viewportSizes}
-    >
-      {children}
-    </StyledInline>
+    <Component className={className} data-test={dataTest}>
+      <StyledInlineInner viewportSizes={viewportSizes}>{children}</StyledInlineInner>
+    </Component>
   );
 };
 

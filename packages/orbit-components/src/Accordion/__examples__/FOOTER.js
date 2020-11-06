@@ -3,7 +3,6 @@ import * as React from "react";
 
 import Accordion from "../index";
 import AccordionSection from "../AccordionSection/index";
-import Button from "../../Button";
 import ButtonLink from "../../ButtonLink";
 import Heading from "../../Heading";
 import Seat from "../../Seat";
@@ -13,7 +12,7 @@ import * as Icons from "../../icons";
 
 export default {
   Example: () => {
-    const [expandedSection, setExpandedSection] = React.useState("");
+    const [expandedSection, setExpandedSection] = React.useState("outbound");
     const [selectedOutboundSeat, setSelectedOutboundSeat] = React.useState("1A");
     const [selectedInboundSeat, setSelectedInboundSeat] = React.useState("1A");
 
@@ -79,26 +78,16 @@ export default {
       </Stack>
     );
 
-    const SectionFooter = ({ direction }) => (
-      <Stack justify="end">
-        <ButtonLink
-          type="critical"
-          onClick={() =>
-            direction === "outbound" ? setSelectedOutboundSeat("") : setSelectedInboundSeat("")
-          }
-        >
-          Clear selection
-        </ButtonLink>
-        <Button type="secondary" onClick={() => setExpandedSection("")}>
-          Close
-        </Button>
-      </Stack>
-    );
-
     return (
       <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
         <AccordionSection
-          footer={<SectionFooter direction="outbound" />}
+          footer={
+            <Stack justify="center">
+              <ButtonLink type="primary" onClick={() => setExpandedSection("inbound")}>
+                Continue to next segment
+              </ButtonLink>
+            </Stack>
+          }
           id="outbound"
           header={
             <Heading as="h3" type="title3">
@@ -111,7 +100,13 @@ export default {
           <SeatMap direction="outbound" />
         </AccordionSection>
         <AccordionSection
-          footer={<SectionFooter direction="inbound" />}
+          footer={
+            <Stack justify="center">
+              <ButtonLink type="secondary" onClick={() => setExpandedSection("outbound")}>
+                Back to previous segment
+              </ButtonLink>
+            </Stack>
+          }
           id="inbound"
           header={
             <Heading as="h3" type="title3">

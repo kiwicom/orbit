@@ -2,7 +2,7 @@
 import { left } from "../utils/rtl";
 import type { Theme, ThemeProps } from "../defaultTheme";
 
-import type { SpacingToken, Position } from "./index";
+import type { SpacingToken, Align, Justify } from "./index";
 
 type Prop = "align" | "justify" | "spacing";
 
@@ -11,6 +11,8 @@ export const formatCSS = (key: string, value: string): string => `${key}: ${valu
 const getFlex = flex => {
   if (flex === "start") return "flex-start";
   if (flex === "end") return "flex-end";
+  if (flex === "between") return "space-between";
+  if (flex === "around") return "space-around";
 
   return "center";
 };
@@ -44,7 +46,7 @@ export const normalizeSpacing = (el: SpacingToken, theme: Theme): string => {
   return "";
 };
 
-type PropObject = { [key: Prop]: Position };
+type PropObject = { [key: Prop]: Align | Justify };
 
 // TODO: kinda weird, but it's well known problem in flow with Object.entries
 export const normalize = (object: PropObject) => ({ theme }: ThemeProps) => {

@@ -6,7 +6,9 @@ import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type Position = "start" | "end" | "center";
+export type Align = "start" | "end" | "center";
+
+export type Justify = "start" | "end" | "center" | "between" | "around";
 // spacing tokens can then be imported from Box component
 export type SpacingToken =
   | "none"
@@ -22,8 +24,8 @@ export type SpacingToken =
 
 type MediaQuery = {|
   +spacing?: SpacingToken,
-  +align?: Position,
-  +justify?: Position,
+  +align?: Align,
+  +justify?: Justify,
 |};
 
 export type Props = {|

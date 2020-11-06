@@ -240,15 +240,6 @@ const InputGroup = ({
           return (
             <StyledChild flex={childFlex}>
               {React.cloneElement(item, {
-                ref: node => {
-                  // Call the original ref, if any
-                  const { ref } = item;
-                  if (typeof ref === "function") {
-                    ref(node);
-                  } else if (ref !== null) {
-                    ref.current = node;
-                  }
-                },
                 size,
                 label: undefined,
                 help: undefined,

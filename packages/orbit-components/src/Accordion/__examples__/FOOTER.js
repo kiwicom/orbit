@@ -91,7 +91,7 @@ export default {
           id="outbound"
           header={
             <Heading as="h3" type="title3">
-              Seats for Barcelona
+              Seating for Barcelona
               <Icons.FlightDirect ariaLabel=" to " />
               Boston
             </Heading>
@@ -110,7 +110,7 @@ export default {
           id="inbound"
           header={
             <Heading as="h3" type="title3">
-              Seats for Boston
+              Seating for Boston
               <Icons.FlightDirect ariaLabel=" to " />
               Barcelona
             </Heading>

@@ -12,7 +12,7 @@ type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
 type VerticalAlign = "baseline" | "middle" | "top" | "bottom";
 
 interface Props extends SharedProps {
-  readonly as?: As;
+  readonly asComponent?: As;
   readonly scope?: Scope;
   readonly align?: Align;
   readonly whiteSpace?: WhiteSpace;

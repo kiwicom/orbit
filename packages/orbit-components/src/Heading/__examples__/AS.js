@@ -8,14 +8,14 @@ import Text from "../../Text";
 export default {
   Example: () => (
     <Stack>
-      <Heading type="display" as="h1">
+      <Heading type="display" asComponent="h1">
         Orbit design system
       </Heading>
-      <Heading type="title2" as="h2">
+      <Heading type="title2" asComponent="h2">
         Components
       </Heading>
       <Text>Orbit offers many components to create travel apps.</Text>
-      <Heading type="title2" as="h2">
+      <Heading type="title2" asComponent="h2">
         Utilities
       </Heading>
       <Text>There are also utilities to simplify development.</Text>

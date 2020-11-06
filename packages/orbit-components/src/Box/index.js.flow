@@ -105,11 +105,19 @@ export type SpacingObject = {|
 export type MediaQueryObject = $Diff<
   // eslint-disable-next-line no-use-before-define
   Props,
-  {| as: *, children: *, mediumMobile: *, largeMobile: *, tablet: *, desktop: *, largeDesktop: * |},
+  {|
+    asComponent: *,
+    children: *,
+    mediumMobile: *,
+    largeMobile: *,
+    tablet: *,
+    desktop: *,
+    largeDesktop: *,
+  |},
 >;
 
 export type Props = {|
-  +as?: string,
+  +asComponent?: string,
   +padding?: SpacingObject | SpacingToken,
   +margin?: SpacingObject | SpacingToken,
   +display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block",

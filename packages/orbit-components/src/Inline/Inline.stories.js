@@ -46,13 +46,19 @@ storiesOf("Inline", module)
   .add(
     "Playground",
     () => {
-      const as = text("As", "div");
+      const asComponent = text("As", "div");
       const align = select("align", ALIGN, ALIGN.START);
       const justify = select("justify", JUSTIFY, JUSTIFY.START);
       const spacing = select("spacing", SPACING, SPACING[1]);
 
       return (
-        <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
+        <Inline
+          asComponent={asComponent}
+          align={align}
+          justify={justify}
+          dataTest={dataTest}
+          spacing={spacing}
+        >
           <TestChildren />
         </Inline>
       );

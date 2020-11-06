@@ -41,7 +41,7 @@ const TileWrapper = ({
   onClick,
   onKeyDown,
   children,
-  as,
+  asComponent,
   tabIndex,
   role,
   ariaExpanded,
@@ -56,7 +56,7 @@ const TileWrapper = ({
     data-test={dataTest}
     onClick={onClick}
     onKeyDown={onKeyDown}
-    as={as}
+    as={asComponent}
     tabIndex={tabIndex}
     role={role}
     ariaExpanded={ariaExpanded}

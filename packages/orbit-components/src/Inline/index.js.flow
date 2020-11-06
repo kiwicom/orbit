@@ -27,7 +27,7 @@ type MediaQuery = {|
 |};
 
 export type Props = {|
-  +as?: string,
+  +asComponent?: string,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

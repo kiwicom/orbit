@@ -150,8 +150,8 @@ storiesOf("Box", module)
     "Default",
     () => {
       const children = text("Children", "Default box");
-      const as = text("As", "span");
-      return <Box as={as}>{children}</Box>;
+      const asComponent = text("As", "span");
+      return <Box asComponent={asComponent}>{children}</Box>;
     },
     {
       info:

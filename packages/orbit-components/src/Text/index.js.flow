@@ -21,7 +21,7 @@ export type Props = {|
   +align?: Align,
   +italic?: boolean,
   +uppercase?: boolean,
-  +as?: As,
+  +asComponent?: As,
   +children: React.Node,
   +id?: string,
   ...Globals,

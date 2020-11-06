@@ -28,9 +28,9 @@ StyledColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const LayoutColumn = ({ children, hideOn, as = "div", dataTest }: Props) => {
+const LayoutColumn = ({ children, hideOn, asComponent = "div", dataTest }: Props) => {
   return (
-    <StyledColumn data-test={dataTest} hideOn={hideOn} as={as}>
+    <StyledColumn data-test={dataTest} hideOn={hideOn} as={asComponent}>
       {children}
     </StyledColumn>
   );

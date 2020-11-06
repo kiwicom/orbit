@@ -18,7 +18,7 @@ Table below contains all types of the props available in the Text component.
 
 | Name       | Type            | Default     | Description                                                                                                                                                    |
 | :--------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| as         | [`enum`](#enum) | `"p"`       | The element used for the root node.                                                                                                                            |
+| asComponent| [`enum`](#enum) | `"p"`       | The element used for the root node.                                                                                                                            |
 | align      | [`enum`](#enum) | `"left"`    | The align of the Text.                                                                                                                                         |
 | children   | `React.Node`    |             | The content of the Text.                                                                                                                                       |
 | dataTest   | `string`        |             | Optional prop for testing purposes.                                                                                                                            |

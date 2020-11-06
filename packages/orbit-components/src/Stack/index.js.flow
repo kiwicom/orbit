@@ -53,7 +53,7 @@ export type Props = {|
   +tablet?: MediaQuery,
   +desktop?: MediaQuery,
   +largeDesktop?: MediaQuery,
-  +as?: string,
+  +asComponent?: string,
   +children: React.Node,
 |};
 

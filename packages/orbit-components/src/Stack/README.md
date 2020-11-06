@@ -21,7 +21,7 @@ Table below contains all types of the props available in Stack component.
 
 | Name         | Type                       | Default    | Description                                                                                                                                                    |
 | :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| as           | `string`                   | `"div"`    | The string used for the root node.                                                                                                                             |
+| asСomponent  | `string`                   | `"div"`    | The string used for the root node.                                                                                                                             |
 | align        | [`enum`](#enum)            | `"start"`  | The `align-items` and `align-content` of the Stack.                                                                                                            |
 | basis        | `string`                   | `auto`     | Specifies the basis value of `flex-basis`.                                                                                                                     |
 | **children** | `React.Node`               |            | Content of the Stack.                                                                                                                                          |

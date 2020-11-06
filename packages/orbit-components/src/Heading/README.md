@@ -18,7 +18,7 @@ Table below contains all types of the props available in Heading component.
 
 | Name            | Type            | Default    | Description                                                                                                                                                    |
 | :-------------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| as              | [`enum`](#enum) | `"div"`    | The element used for the root node.                                                                                                                            |
+| asComponent     | [`enum`](#enum) | `"div"`    | The element used for the root node.                                                                                                                            |
 | children        | `React.Node`    |            | The content of the Heading.                                                                                                                                    |
 | dataTest        | `string`        |            | Optional prop for testing purposes.                                                                                                                            |
 | dataA11ySection | `string`        |            | ID for a `<SkipNavigation>` component.                                                                                                                         |

@@ -92,10 +92,10 @@ describe("TableRow", () => {
 describe("TableCell", () => {
   const dataTest = "test";
   const children = "content";
-  const as = TYPE_AS.TH;
+  const asComponent = TYPE_AS.TH;
   const scope = "row";
   const component = shallow(
-    <TableCell as={as} scope={scope} dataTest={dataTest}>
+    <TableCell asComponent={asComponent} scope={scope} dataTest={dataTest}>
       {children}
     </TableCell>,
   );
@@ -106,7 +106,7 @@ describe("TableCell", () => {
     expect(component.render().prop("scope")).toBe(scope);
   });
   it("should have rendered as", () => {
-    expect(component.render().prop("name")).toBe(as);
+    expect(component.render().prop("name")).toBe(asComponent);
   });
   it("should have content", () => {
     expect(component.children().text()).toBe(children);

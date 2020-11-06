@@ -10,7 +10,7 @@ export type Props = {|
   onClick: any,
   onKeyDown: any,
   children: React.Node,
-  as?: string,
+  asComponent?: string,
   tabIndex?: string | number,
   role: ?string,
   ariaExpanded?: boolean,

@@ -11,7 +11,7 @@ type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "ti
 type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
-  readonly as?: As;
+  readonly asСomponent?: As;
   readonly type?: Type;
   readonly children: React.ReactNode;
   readonly inverted?: boolean;

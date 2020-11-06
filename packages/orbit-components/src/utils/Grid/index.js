@@ -10,10 +10,10 @@ import isDefined from "../../Stack/helpers/isDefined";
 
 import type { Props } from ".";
 
-const StyledGrid = styled(({ className, children, dataTest }) => (
-  <div className={className} data-test={dataTest}>
+const StyledGrid = styled(({ className, asComponent: Component, children, dataTest }) => (
+  <Component className={className} data-test={dataTest}>
     {children}
-  </div>
+  </Component>
 ))`
   /*
     Just apply all mediaQueries (from devices map)
@@ -51,12 +51,12 @@ const Grid = ({
   width,
   children,
   dataTest,
-  as = "div",
+  asComponent = "div",
   ...props
 }: Props) => {
   const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth, width };
   return (
-    <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={as}>
+    <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} asComponent={asComponent}>
       {children}
     </StyledGrid>
   );

@@ -44,7 +44,7 @@ const Pagination = ({
       grow={false}
       shrink
       dataTest={dataTest}
-      as={StyledNav}
+      asComponent={StyledNav}
     >
       <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
         <ButtonLink

@@ -13,7 +13,7 @@ type VerticalAlign = "baseline" | "middle" | "top" | "bottom";
 export type Props = {|
   +children?: React.Node,
   +align?: Align,
-  +as?: As,
+  +asComponent?: As,
   +scope?: Scope,
   +whiteSpace?: WhiteSpace,
   +verticalAlign?: VerticalAlign,

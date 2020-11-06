@@ -113,7 +113,7 @@ export type MediaQueryObject = Omit<
 >;
 
 export interface Props extends Common.Global {
-  readonly as?: string;
+  readonly asComponent?: string;
   readonly padding?: SpacingObject | SpacingToken;
   readonly margin?: SpacingObject | SpacingToken;
   readonly display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block";

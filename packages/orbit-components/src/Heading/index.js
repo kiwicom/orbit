@@ -43,7 +43,7 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
 };
 
 export const StyledHeading = styled(
-  ({ element: Component, className, children, dataTest, dataA11ySection, id }) => (
+  ({ asComponent: Component, className, children, dataTest, dataA11ySection, id }) => (
     <Component
       className={className}
       data-test={dataTest}
@@ -72,7 +72,7 @@ StyledHeading.defaultProps = {
 const Heading = ({
   children,
   type = TYPE_OPTIONS.TITLE1,
-  as = ELEMENT_OPTIONS.DIV,
+  asComponent = ELEMENT_OPTIONS.DIV,
   dataTest,
   inverted = false,
   spaceAfter,
@@ -82,7 +82,7 @@ const Heading = ({
   <StyledHeading
     id={id}
     type={type}
-    element={as}
+    asComponent={asComponent}
     inverted={inverted}
     dataTest={dataTest}
     spaceAfter={spaceAfter}

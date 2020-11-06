@@ -31,7 +31,7 @@ StyledInlineInner.defaultProps = {
 };
 
 const Inline = ({
-  as: Component = "div",
+  asComponent: Component = "div",
   mediumMobile,
   largeMobile,
   className,

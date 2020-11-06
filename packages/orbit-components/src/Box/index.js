@@ -32,7 +32,7 @@ StyledBox.defaultProps = {
 };
 
 const Box = ({
-  as = "div",
+  asComponent = "div",
   mediumMobile,
   largeMobile,
   tablet,
@@ -46,7 +46,12 @@ const Box = ({
   const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
 
   return (
-    <StyledBox asComponent={as} dataTest={dataTest} className={className} viewports={viewports}>
+    <StyledBox
+      asComponent={asComponent}
+      dataTest={dataTest}
+      className={className}
+      viewports={viewports}
+    >
       {children}
     </StyledBox>
   );

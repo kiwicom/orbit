@@ -71,7 +71,7 @@ const Header = ({
           {title && (
             <Heading
               type={isSection ? "title4" : "title3"}
-              as={titleAs}
+              asComponent={titleAs}
               dataA11ySection={dataA11ySection}
             >
               {title}

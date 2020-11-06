@@ -24,7 +24,7 @@ interface MediaQuery {
 }
 
 export interface Props extends Common.Global, MediaQuery {
-  readonly as?: string;
+  readonly asComponent?: string;
   readonly mediumMobile?: MediaQuery;
   readonly largeMobile?: MediaQuery;
   readonly tablet?: MediaQuery;

@@ -15,7 +15,7 @@ type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "ti
 export type Props = {|
   ...Globals,
   ...spaceAfter,
-  +as?: As,
+  +asComponent?: As,
   +type?: Type,
   +children: React.Node,
   +inverted?: boolean,

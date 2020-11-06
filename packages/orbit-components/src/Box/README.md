@@ -18,7 +18,7 @@ Table below contains all types of the props available in the Box component.
 
 | Name         | Type                                                                 | Default | Description                                                     |
 | :----------- | :------------------------------------------------------------------- | :------ | :-------------------------------------------------------------- |
-| as           | `string`                                                             | `"div"` | Render as element.                                              |
+| asComponent  | `string`                                                             | `"div"` | Render as element.                                              |
 | className    | `string`                                                             |         | The optional className of Box.                                  |
 | children     | `React.Node`                                                         |         | The children of the Box.                                        |
 | dataTest     | `string`                                                             |         | Optional prop for testing purposes.                             |

@@ -9,7 +9,7 @@ describe("Heading", () => {
   it("should have expected DOM output", () => {
     render(
       <Heading
-        as={ELEMENT_OPTIONS.H2}
+        asComponent={ELEMENT_OPTIONS.H2}
         type={TYPE_OPTIONS.TITLE1}
         inverted={false}
         dataTest="test"

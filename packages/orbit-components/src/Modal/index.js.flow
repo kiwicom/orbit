@@ -36,9 +36,9 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Instance = {| setScrollPosition: (value: number) => void |};
 
-declare export var PureModal: React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, Instance>;
 
 declare export var ModalHeader: ModalHeaderType;
 declare export var ModalSection: ModalSectionType;

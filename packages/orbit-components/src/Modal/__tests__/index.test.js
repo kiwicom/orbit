@@ -18,8 +18,10 @@ import ChevronLeft from "../../icons/ChevronLeft";
 const Div = (props: any) => <div>{props.children}</div>;
 const onClose = jest.fn();
 
+const ref = React.createRef();
+
 const modal = (
-  <Modal size={SIZES.LARGE} onClose={onClose} fixedFooter dataTest="modal">
+  <Modal size={SIZES.LARGE} onClose={onClose} fixedFooter dataTest="modal" ref={ref}>
     <ModalHeader
       title="Title of Modal"
       description="Description of Modal"
@@ -55,6 +57,13 @@ describe("Modal", () => {
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(container).toMatchSnapshot();
+  });
+
+  it("should expose ref with setScrollPosition", () => {
+    render(modal);
+    expect(ref.current?.setScrollPosition).toBeDefined();
+    ref.current?.setScrollPosition(20);
+    expect(screen.getByTestId("modal").scrollTop).toBe(20);
   });
 
   it("should render passed props correctly", () => {

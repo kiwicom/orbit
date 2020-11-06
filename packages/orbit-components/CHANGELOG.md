@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.96.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.1...@kiwicom/orbit-components@0.96.2) (2020-11-06)
+
+
+### Bug Fixes
+
+* **Inline:** add inner wrapper for negative margin ([#2469](https://github.com/kiwicom/orbit/issues/2469)) ([efd7ab2](https://github.com/kiwicom/orbit/commit/efd7ab2d2b1866d2727b3fc290b87754c76307b1))
+
+
+
+
+
 ## [0.96.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.0...@kiwicom/orbit-components@0.96.1) (2020-11-05)
 
 

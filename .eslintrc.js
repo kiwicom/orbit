@@ -12,7 +12,7 @@ module.exports = {
       extends: ["./config/eslintJS"],
     },
     {
-      files: "*.ts",
+      files: "*.ts?(x)",
       extends: ["./config/eslintTS"],
     },
     // some ESLint rules fail in certain cases, so we're disabling them

@@ -17,10 +17,13 @@ export type SpacingToken =
   | "XXLarge"
   | "XXXLarge";
 
+export type Align = "start" | "end" | "center";
+export type Justify = "start" | "end" | "center" | "between" | "around";
+
 interface MediaQuery {
   readonly spacing?: SpacingToken;
-  readonly align?: Position;
-  readonly justify?: Position;
+  readonly align?: Align;
+  readonly justify?: Justify;
 }
 
 export interface Props extends Common.Global, MediaQuery {

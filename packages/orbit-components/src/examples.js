@@ -1,4 +1,9 @@
 // @flow
+export { default as AccordionActions } from "./Accordion/__examples__/ACTIONS";
+export { default as AccordionDefault } from "./Accordion/__examples__/DEFAULT";
+export { default as AccordionNonexpandableSection } from "./Accordion/__examples__/NONEXPANDABLE";
+export { default as AccordionFooter } from "./Accordion/__examples__/FOOTER";
+export { default as AccordionLoading } from "./Accordion/__examples__/LOADING";
 export { default as AirportIllustrationDefault } from "./AirportIllustration/__examples__/DEFAULT";
 export { default as AirportIllustrationSizes } from "./AirportIllustration/__examples__/SIZES";
 export { default as AlertActions } from "./Alert/__examples__/ACTIONS";

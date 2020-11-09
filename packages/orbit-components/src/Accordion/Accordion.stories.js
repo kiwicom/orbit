@@ -6,15 +6,24 @@ import Text from "../Text";
 import Button from "../Button";
 import Stack from "../Stack";
 import AccordionSection from "./AccordionSection";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 import Accordion from "./index";
 
-const tmpFooter = (
-  <Stack direction="row" justify="between">
-    <Button type="secondary">Back to previous segment</Button>
-    <Button type="primarySubtle">Continue to next segment</Button>
-  </Stack>
-);
+const Footer = () => {
+  const { isTablet, isMediumMobile } = useMediaQuery();
+
+  return (
+    <Stack flex shrink justify="between" direction={isMediumMobile ? "row" : "column"}>
+      <Button fullWidth={!isTablet} type="secondary">
+        Back to previous segment
+      </Button>
+      <Button fullWidth={!isTablet} type="primarySubtle">
+        Continue to next segment
+      </Button>
+    </Stack>
+  );
+};
 
 storiesOf("Accordion", module)
   .add("Default", () => {
@@ -185,7 +194,7 @@ storiesOf("Accordion", module)
               <Text size="small">This is a header label</Text>
             </Stack>
           }
-          footer={tmpFooter}
+          footer={<Footer />}
         >
           <Text type="primary">This is a content text</Text>
           <Text type="primary">This is a content text</Text>
@@ -212,7 +221,7 @@ storiesOf("Accordion", module)
               <Text size="small">This is a content text</Text>
             </Stack>
           }
-          footer={tmpFooter}
+          footer={<Footer />}
         >
           <Text type="primary">This is a content text</Text>
           <Text type="primary">This is a content text</Text>

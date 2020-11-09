@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
   position: sticky;
   bottom: 0;
+  box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
 `;
 

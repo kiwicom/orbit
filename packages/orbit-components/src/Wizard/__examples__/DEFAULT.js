@@ -45,7 +45,7 @@ export default {
           break;
         default:
           setHeadingAndText({
-            heading: "Overview & payment",
+            heading: "Overview and payment",
             text: "Enter payment details.",
           });
       }
@@ -62,7 +62,7 @@ export default {
           <WizardStep title="Passenger details" />
           <WizardStep title="Ticket fare" />
           <WizardStep title="Customize your trip" />
-          <WizardStep title="Overview & payment" />
+          <WizardStep title="Overview and payment" />
         </Wizard>
         <Box padding={{ top: "XLarge" }}>
           <Stack>

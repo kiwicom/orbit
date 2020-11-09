@@ -64,7 +64,7 @@ describe(`Textarea with help`, () => {
     expect(component.find("Textarea__StyledTextArea").render().prop("attribs").name).toBe(name);
   });
   it("should contain FeedBack", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
+    expect(component.find(`TooltipForm`).exists()).toBe(true);
   });
   it("should execute onChange method", () => {
     area.simulate("change");
@@ -107,8 +107,8 @@ describe(`Textarea number with error and help`, () => {
   it("should have resize prop", () => {
     expect(component.find("Textarea__StyledTextArea").prop("resize")).toBe(resize);
   });
-  it("renders FormFeedback", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
+  it("renders TooltipForm", () => {
+    expect(component.find(`TooltipForm`).exists()).toBe(true);
   });
 
   it("should have data-state", () => {

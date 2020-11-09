@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import { SIZE_OPTIONS } from "./consts";
@@ -13,6 +13,7 @@ import type { Props } from "./index";
 
 export const StyledTooltipChildren = styled.span`
   display: inline-flex;
+  position: ${({ absolute }) => absolute && `absolute`};
   &:focus:active {
     outline: none;
   }
@@ -35,10 +36,13 @@ export const StyledTooltipChildren = styled.span`
 const TooltipPrimitive = ({
   children,
   enabled = true,
+  tooltipShown,
   tabIndex = "0",
   dataTest,
   size = SIZE_OPTIONS.SMALL,
   content,
+  error,
+  help,
   preferredPosition,
   preferredAlign,
   stopPropagation = false,
@@ -74,6 +78,13 @@ const TooltipPrimitive = ({
     [stopPropagation],
   );
 
+  useEffect(() => {
+    if (tooltipShown) handleIn();
+    else {
+      handleOut();
+    }
+  }, [tooltipShown, handleIn, handleOut]);
+
   const handleOutMobile = useCallback(() => {
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
@@ -88,6 +99,7 @@ const TooltipPrimitive = ({
         onClick={handleClick}
         onFocus={handleIn}
         onBlur={handleOut}
+        absolute={tooltipShown}
         ref={container}
         aria-describedby={enabled ? tooltipId : undefined}
         tabIndex={enabled ? tabIndex : undefined}
@@ -103,6 +115,8 @@ const TooltipPrimitive = ({
             dataTest={dataTest}
             shown={shown}
             size={size}
+            error={error}
+            help={help}
             tooltipId={tooltipId}
             onClose={handleOut}
             onCloseMobile={handleOutMobile}

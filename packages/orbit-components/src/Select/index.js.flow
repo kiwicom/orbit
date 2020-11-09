@@ -4,7 +4,6 @@
 */
 import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
-import * as React from "react";
 
 import type {
   Globals,
@@ -40,7 +39,7 @@ export type Props = {|
   +error?: React.Node,
   +help?: React.Node,
   insideInputGroup?: boolean,
-  tabIndex?: string | number,
+  +tabIndex?: string | number,
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,

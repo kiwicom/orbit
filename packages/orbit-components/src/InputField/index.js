@@ -10,11 +10,11 @@ import InputTags from "./InputTags";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import randomID from "../utils/randomID";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
-import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
@@ -348,112 +348,113 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   } = useErrorTooltip({ onFocus, onBlur });
 
   return (
-    <Field
-      component={label ? "label" : "div"}
-      spaceAfter={spaceAfter}
-      htmlFor={label ? forID : undefined}
-    >
-      {label && !inlineLabel && (
-        <FormLabel
-          inlineLabel={inlineLabel}
-          filled={!!value}
-          required={required}
-          error={!!error}
-          help={!!help}
-          labelRef={labelRef}
-          iconRef={iconRef}
-          onMouseEnter={() => setTooltipShownHover(true)}
-          onMouseLeave={() => setTooltipShownHover(false)}
-        >
-          {label}
-        </FormLabel>
-      )}
-      <InputContainer
-        size={size}
-        disabled={disabled}
-        error={error}
-        labelRef={label ? null : labelRef}
+    <>
+      <Field
+        component={label ? "label" : "div"}
+        spaceAfter={spaceAfter}
+        htmlFor={label ? forID : undefined}
       >
-        {inlineLabel && !tags && (error || help) ? (
-          <Prefix size={size}>
-            {help && !error && (
-              <StyledIconWrapper ref={iconRef}>
-                <InformationCircle color="secondary" size="small" />
-              </StyledIconWrapper>
-            )}
-            {error && (
-              <StyledIconWrapper ref={iconRef}>
-                <AlertCircle color="critical" size="small" />
-              </StyledIconWrapper>
-            )}
-          </Prefix>
-        ) : (
-          prefix && <Prefix size={size}>{prefix}</Prefix>
+        {label && !inlineLabel && (
+          <FormLabel
+            inlineLabel={inlineLabel}
+            filled={!!value}
+            required={required}
+            error={!!error}
+            help={!!help}
+            labelRef={labelRef}
+            iconRef={iconRef}
+            onMouseEnter={() => setTooltipShownHover(true)}
+            onMouseLeave={() => setTooltipShownHover(false)}
+          >
+            {label}
+          </FormLabel>
         )}
-        {label && inlineLabel && (
-          <StyledInlineLabel ref={labelRef} size={size}>
-            <FormLabel
-              filled={!!value}
-              required={required}
-              error={!!error}
-              help={!!help}
-              inlineLabel={inlineLabel}
-            >
-              {label}
-            </FormLabel>
-          </StyledInlineLabel>
-        )}
-        <Input
-          data-test={dataTest}
-          data-state={
-            insideInputGroup && typeof error === "undefined"
-              ? undefined
-              : getFieldDataState(!!error)
-          }
-          onChange={onChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onKeyUp={onKeyUp}
-          onKeyDown={onKeyDown}
-          onSelect={onSelect}
-          onMouseUp={onMouseUp}
-          onMouseDown={onMouseDown}
-          name={name}
-          type={type}
-          value={value}
-          placeholder={placeholder}
-          disabled={disabled}
-          min={minValue}
-          max={maxValue}
-          minLength={minLength}
-          maxLength={maxLength}
+        <InputContainer
           size={size}
-          error={insideInputGroup ? undefined : error}
-          ref={ref}
-          tabIndex={tabIndex}
-          inlineLabel={inlineLabel}
-          readOnly={readOnly}
-          autoComplete={autoComplete}
-          id={forID}
-          inputMode={inputMode}
-          dataAttrs={dataAttrs}
-        />
-        {tags && <InputTags>{tags}</InputTags>}
-        {suffix && <Suffix size={size}>{suffix}</Suffix>}
-        <FakeInput size={size} disabled={disabled} error={error} />
-      </InputContainer>
-      {!insideInputGroup && (
-        <FormFeedback
-          help={help}
+          disabled={disabled}
           error={error}
-          iconRef={iconRef}
-          labelRef={labelRef}
-          tooltipShown={tooltipShown}
-          inlineLabel={inlineLabel}
-          tooltipShownHover={tooltipShownHover}
-        />
-      )}
-    </Field>
+          labelRef={label ? null : labelRef}
+        >
+          {inlineLabel && !tags && (error || help) ? (
+            <Prefix size={size}>
+              {help && !error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <InformationCircle color="secondary" size="small" />
+                </StyledIconWrapper>
+              )}
+              {error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <AlertCircle color="critical" size="small" />
+                </StyledIconWrapper>
+              )}
+            </Prefix>
+          ) : (
+            prefix && <Prefix size={size}>{prefix}</Prefix>
+          )}
+          {label && inlineLabel && (
+            <StyledInlineLabel ref={labelRef} size={size}>
+              <FormLabel
+                filled={!!value}
+                required={required}
+                error={!!error}
+                help={!!help}
+                inlineLabel={inlineLabel}
+              >
+                {label}
+              </FormLabel>
+            </StyledInlineLabel>
+          )}
+          <Input
+            data-test={dataTest}
+            data-state={
+              insideInputGroup && typeof error === "undefined"
+                ? undefined
+                : getFieldDataState(!!error)
+            }
+            onChange={onChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onKeyUp={onKeyUp}
+            onKeyDown={onKeyDown}
+            onSelect={onSelect}
+            onMouseUp={onMouseUp}
+            onMouseDown={onMouseDown}
+            name={name}
+            type={type}
+            value={value}
+            placeholder={placeholder}
+            disabled={disabled}
+            min={minValue}
+            max={maxValue}
+            minLength={minLength}
+            maxLength={maxLength}
+            size={size}
+            error={insideInputGroup ? undefined : error}
+            ref={ref}
+            tabIndex={tabIndex}
+            inlineLabel={inlineLabel}
+            readOnly={readOnly}
+            autoComplete={autoComplete}
+            id={forID}
+            inputMode={inputMode}
+            dataAttrs={dataAttrs}
+          />
+          {tags && <InputTags>{tags}</InputTags>}
+          {suffix && <Suffix size={size}>{suffix}</Suffix>}
+          <FakeInput size={size} disabled={disabled} error={error} />
+        </InputContainer>
+        {!insideInputGroup && (
+          <TooltipForm
+            help={help}
+            error={error}
+            iconRef={iconRef}
+            labelRef={labelRef}
+            tooltipShown={tooltipShown || tooltipShownHover}
+            inlineLabel={inlineLabel}
+          />
+        )}
+      </Field>
+    </>
   );
 });
 

@@ -3,12 +3,12 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
@@ -19,9 +19,9 @@ const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   width: 100%;
+  position: relative;
   height: ${({ fullHeight }) => fullHeight && "100%"};
   flex-direction: column;
-  position: relative;
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
   margin-bottom: ${getSpacingToken};
@@ -158,7 +158,6 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
           error={!!error}
           help={!!help}
           disabled={disabled}
-          labelRef={labelRef}
           iconRef={iconRef}
           onMouseEnter={() => setTooltipShownHover(true)}
           onMouseLeave={() => setTooltipShownHover(false)}
@@ -187,13 +186,12 @@ const Textarea = React.forwardRef<Props, HTMLTextAreaElement>((props, ref) => {
         readOnly={readOnly}
         ref={ref}
       />
-      <FormFeedback
+      <TooltipForm
         help={help}
         error={error}
         iconRef={iconRef}
         labelRef={labelRef}
-        tooltipShown={tooltipShown}
-        tooltipShownHover={tooltipShownHover}
+        tooltipShown={tooltipShown || tooltipShownHover}
       />
     </Field>
   );

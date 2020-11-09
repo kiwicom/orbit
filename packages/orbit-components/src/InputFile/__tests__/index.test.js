@@ -70,7 +70,7 @@ describe(`InputFile with help`, () => {
     expect(component.find("InputFile__FakeInput").exists()).toBe(true);
   });
   it("should contain FeedBack help", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
+    expect(component.find(`TooltipForm`).exists()).toBe(true);
   });
   it("should execute onChange method", () => {
     input.simulate("change");
@@ -99,7 +99,7 @@ describe(`InputFiInputFile with error`, () => {
     expect(component.find("FormLabel").exists()).toBe(false);
   });
   it("should contain FeedBack error", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
+    expect(component.find(`TooltipForm`).exists()).toBe(true);
   });
 
   it("should has data-state error", () => {

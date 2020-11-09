@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
@@ -276,7 +276,6 @@ const InputGroup = ({
           id={inputID}
           error={!!errorReal}
           help={!!helpReal}
-          labelRef={labelRef}
           iconRef={iconRef}
           onMouseEnter={() => setTooltipShownHover(true)}
           onMouseLeave={() => setTooltipShownHover(false)}
@@ -326,13 +325,12 @@ const InputGroup = ({
         })}
       </StyledChildren>
       <FakeGroup label={label} error={errorReal} active={active} size={size} />
-      <FormFeedback
+      <TooltipForm
         help={helpReal}
         error={errorReal}
         iconRef={iconRef}
         labelRef={labelRef}
-        tooltipShown={tooltipShown}
-        tooltipShownHover={tooltipShownHover}
+        tooltipShown={tooltipShown || tooltipShownHover}
       />
     </StyledInputGroup>
   );

@@ -6,14 +6,14 @@ import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
@@ -172,7 +172,8 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         </StyledFileInput>
         {fileName && (
           <ButtonLink
-            type="inline"
+            type="primary"
+            compact
             iconLeft={<CloseCircle color="secondary" />}
             onClick={ev => {
               ev.preventDefault();
@@ -184,13 +185,12 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         )}
       </FakeInput>
       {!insideInputGroup && (
-        <FormFeedback
+        <TooltipForm
           help={help}
           error={error}
           iconRef={iconRef}
           labelRef={labelRef}
-          tooltipShown={tooltipShown}
-          tooltipShownHover={tooltipShownHover}
+          tooltipShown={tooltipShown || tooltipShownHover}
         />
       )}
     </Field>

@@ -38,6 +38,9 @@ describe("InputGroup", () => {
         <InputField />
       </InputGroup>,
     );
+
+    const input = screen.getByRole("textbox");
+    fireEvent.focus(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", () => {
@@ -46,6 +49,9 @@ describe("InputGroup", () => {
         <InputField />
       </InputGroup>,
     );
+
+    const input = screen.getByRole("textbox");
+    fireEvent.focus(input);
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
   it("should remove labels, help and error messages from child inputs", () => {

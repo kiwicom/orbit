@@ -10,6 +10,7 @@ import { StyledText } from "../../../Text/index";
 import { Item } from "../../../List/ListItem/index";
 import tooltipSize from "../helpers/tooltipSize";
 import resolveContainerAlign from "../helpers/resolveContainerAlign";
+import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
 import tooltipArrowStyle from "../helpers/tooltipArrowStyle";
 import tooltipPadding from "../helpers/tooltipPadding";
 import defaultTheme from "../../../defaultTheme";
@@ -33,7 +34,7 @@ const StyledTooltipWrapper = styled.div`
   max-width: ${tooltipSize};
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  background-color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  background-color: ${resolveBackgroundColor};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
   padding: ${tooltipPadding};
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
@@ -104,6 +105,8 @@ const TooltipContent = ({
   shown,
   size,
   tooltipId,
+  error,
+  help,
   children,
   onClose,
   onCloseMobile,
@@ -150,6 +153,8 @@ const TooltipContent = ({
         align={align}
         position={position}
         ref={tooltip}
+        error={error}
+        help={help}
         containerTop={dimensions.containerTop}
         containerLeft={dimensions.containerLeft}
         containerHeight={dimensions.containerHeight}

@@ -5,12 +5,12 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
-import useErrorTooltip from "../FormFeedback/hooks/useErrorTooltip";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
@@ -365,13 +365,12 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
         </SelectSuffix>
       </SelectContainer>
       {!insideInputGroup && (
-        <FormFeedback
+        <TooltipForm
           help={help}
           error={error}
           iconRef={iconRef}
           labelRef={labelRef}
-          tooltipShown={tooltipShown}
-          tooltipShownHover={tooltipShownHover}
+          tooltipShown={tooltipShown || tooltipShownHover}
         />
       )}
     </Label>

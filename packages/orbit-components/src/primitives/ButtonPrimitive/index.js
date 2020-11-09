@@ -12,6 +12,7 @@ import ButtonPrimitiveIconContainer, {
 import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
 import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
+import onKeyDown from "../../utils/handleKeyDown";
 
 import type { Props } from "./index";
 
@@ -50,6 +51,9 @@ export const StyledButtonPrimitive = styled(
       const Component = isButtonWithHref ? "a" : asComponent;
       const buttonType = submit ? "submit" : "button";
 
+      const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) =>
+        asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
+
       return (
         <Component
           ref={ref}
@@ -62,6 +66,7 @@ export const StyledButtonPrimitive = styled(
           type={!isButtonWithHref ? buttonType : undefined}
           className={className}
           disabled={disabled}
+          onKeyDown={handleKeyDown}
           href={!disabled ? href : null}
           target={!disabled && href && external ? "_blank" : undefined}
           rel={createRel({ external, href, rel })}

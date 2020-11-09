@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import ButtonPrimitive from "../index";
@@ -42,11 +42,13 @@ describe("ButtonPrimitive", () => {
     userEvent.click(button);
     expect(onClick).toHaveBeenCalled();
   });
+
   describe("disabled", () => {
     it("default", () => {
       render(<ButtonPrimitive disabled>Lorem ipsum</ButtonPrimitive>);
       expect(screen.getByRole("button")).toBeDisabled();
     });
+
     it("with href", () => {
       const onClick = jest.fn();
       render(
@@ -61,12 +63,14 @@ describe("ButtonPrimitive", () => {
       expect(onClick).not.toHaveBeenCalled();
     });
   });
+
   it("loading", () => {
     render(<ButtonPrimitive loading>Lorem ipsum</ButtonPrimitive>);
     const button = screen.getByRole("button");
     expect(button).toBeDisabled();
     expect(button.querySelector("svg")).toBeInTheDocument();
   });
+
   it("with href", () => {
     render(
       <ButtonPrimitive href="#" external>
@@ -74,5 +78,24 @@ describe("ButtonPrimitive", () => {
       </ButtonPrimitive>,
     );
     expect(screen.getByRole("link")).toHaveAttribute("href", "#");
+  });
+
+  it("should behave as button", () => {
+    const children = "Lorem ipsum";
+    const dataTest = "test";
+    const onClick = jest.fn();
+
+    render(
+      <ButtonPrimitive dataTest={dataTest} onClick={onClick} tabIndex={0} asComponent="div">
+        {children}
+      </ButtonPrimitive>,
+    );
+
+    const button = screen.getByTestId(dataTest);
+
+    userEvent.tab();
+    fireEvent.keyDown(button, { keyCode: 13 });
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(button).toHaveFocus();
   });
 });

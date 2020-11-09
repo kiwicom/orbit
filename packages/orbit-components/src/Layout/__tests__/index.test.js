@@ -1,36 +1,26 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
-import { LAYOUT_OPTIONS, LAYOUT_SETTINGS } from "../consts";
+import { LAYOUT_SETTINGS } from "../consts";
 import Layout, { LayoutColumn } from "..";
 
-describe("Button with icon", () => {
-  const dataTest = "test";
-  const as = "span";
-  const component = shallow(
-    <Layout type={LAYOUT_OPTIONS.SEARCH} dataTest={dataTest}>
-      <LayoutColumn dataTest={dataTest} as={as}>
-        Lorem ipsum dolor sit amet
-      </LayoutColumn>
-      <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
-      <LayoutColumn>Lorem ipsum dolor sit amet</LayoutColumn>
-    </Layout>,
-  );
-  const LayoutColumnEl = component.find("LayoutColumn").first();
-  it("should render data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(LayoutColumnEl.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should render props on LayoutColumn", () => {
-    expect(LayoutColumnEl.prop("as")).toBe(as);
-  });
-  it("columns should have hide props", () => {
-    component.children().forEach((node, key) => {
-      expect(node.prop("hideOn")).toBe(
-        LAYOUT_SETTINGS[LAYOUT_OPTIONS.SEARCH].layoutColumns[key].hideOn,
-      );
-    });
+describe("Layout", () => {
+  it("should have expected DOM output", () => {
+    render(
+      <Layout type="Search" dataTest="container">
+        <LayoutColumn as="span" dataTest="column">
+          one
+        </LayoutColumn>
+        <LayoutColumn dataTest="column">two</LayoutColumn>
+      </Layout>,
+    );
+    const container = screen.getByTestId("container");
+    const columns = screen.getAllByTestId("column");
+    expect(container).toHaveStyle({ maxWidth: LAYOUT_SETTINGS.Search.maxWidth });
+    expect(columns[0].tagName.toLowerCase()).toBe("span");
+    expect(columns[0]).toHaveTextContent("one");
+    expect(columns[1].tagName.toLowerCase()).toBe(LAYOUT_SETTINGS.Search.layoutColumns[1].element);
   });
 });

@@ -374,7 +374,7 @@ const Modal = React.forwardRef<Props, Instance>(
         clearTimeout(timer);
         window.removeEventListener("resize", handleResize);
       };
-    });
+    }, [handleResize]);
 
     React.useEffect(() => {
       if (children !== prevChildren) {

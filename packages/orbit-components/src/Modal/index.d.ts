@@ -22,7 +22,9 @@ export interface Props extends Common.Global {
 
 type Instance = { setScrollPosition: (value: number) => void };
 
-declare const Modal: React.ForwardRefRenderFunction<Instance, Props>;
+declare const Modal: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<Props> & React.RefAttributes<Instance>
+>;
 
 export { Modal, Modal as default };
 export { ModalHeader } from "./ModalHeader/index";

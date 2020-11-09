@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.96.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.2...@kiwicom/orbit-components@0.96.3) (2020-11-09)
+
+
+### Bug Fixes
+
+* **Modal:** expose setScrollPosition via forwardRef ([#2472](https://github.com/kiwicom/orbit/issues/2472)) ([3f30a63](https://github.com/kiwicom/orbit/commit/3f30a63cfcbf9791fdf6bedc10f7e1909edca5fc))
+* **Modal:** fix TypeScript definition for ref ([#2479](https://github.com/kiwicom/orbit/issues/2479)) ([86c5c7e](https://github.com/kiwicom/orbit/commit/86c5c7e55cd44d98501e26784c29f2a67f452ded))
+
+
+
+
+
 ## [0.96.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.1...@kiwicom/orbit-components@0.96.2) (2020-11-06)
 
 

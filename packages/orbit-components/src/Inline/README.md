@@ -45,13 +45,13 @@ All this properties - objects have the some own properties and none is required.
 
 ### enum
 
-| justify     | align       |
-| :---------- | :---------- |
-| `"start"`   | `"start"`   |
-| `"end"`     | `"end"`     |
-| `"center"`  | `"center"`  |
-| `"between"` | `"stretch"` |
-| `"around"`  |             |
+| justify     | align      |
+| :---------- | :--------- |
+| `"start"`   | `"start"`  |
+| `"end"`     | `"end"`    |
+| `"center"`  | `"center"` |
+| `"between"` |            |
+| `"around"`  |            |
 
 ### spacingToken
 

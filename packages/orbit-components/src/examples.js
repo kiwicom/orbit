@@ -323,6 +323,8 @@ export { default as TileHeaderAndDescription } from "./Tile/__examples__/TITLE_D
 export { default as TileHeaderCustom } from "./Tile/__examples__/HEADER_CUSTOM";
 export { default as TileLink } from "./Tile/__examples__/LINK";
 export { default as TileGroupDefault } from "./TileGroup/__examples__/DEFAULT";
+export { default as TimelineDefault } from "./Timeline/__examples__/DEFAULT";
+export { default as TimelineStepTypes } from "./Timeline/__examples__/STEP_TYPES";
 export { default as TooltipAlign } from "./Tooltip/__examples__/ALIGN";
 export { default as TooltipDefault } from "./Tooltip/__examples__/DEFAULT";
 export { default as TooltipIndication } from "./Tooltip/__examples__/INDICATION";
@@ -332,3 +334,4 @@ export { default as TooltipSize } from "./Tooltip/__examples__/SIZE";
 export { default as TruncateDefault } from "./Truncate/__examples__/DEFAULT";
 export { default as TruncateText } from "./Truncate/__examples__/TEXT";
 export { default as TruncateWidth } from "./Truncate/__examples__/WIDTH";
+export { default as WizardDefault } from "./Wizard/__examples__/DEFAULT";

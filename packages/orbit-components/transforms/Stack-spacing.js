@@ -47,14 +47,18 @@ function transformStackSpacing(fileInfo, api) {
 
   // usage in media queries with string literal
   mediaQueries.forEach(mq => {
-    root
+    const objectExpressions = root
       .findJSXElements("Stack")
       .find(j.JSXAttribute, { name: { name: mq }, value: { type: "JSXExpressionContainer" } })
-      .find(j.ObjectExpression)
-      .find(j.Property, { key: { name: "spacing" } })
-      .forEach(path => {
+      .find(j.ObjectExpression);
+
+    // this is where Babel and TypeScript AST differ
+    // eslint-disable-next-line no-restricted-syntax
+    for (const nodeType of [j.Property, j.ObjectProperty]) {
+      objectExpressions.find(nodeType, { key: { name: "spacing" } }).forEach(path => {
         path.node.value.value = replaceValue(path.node.value.value);
       });
+    }
   });
 
   // usage in conditional expression

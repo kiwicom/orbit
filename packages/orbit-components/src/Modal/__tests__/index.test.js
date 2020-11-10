@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Modal from "../index";
@@ -47,8 +47,11 @@ const modal = (
   </Modal>
 );
 
+jest.useFakeTimers("modern");
+
 beforeEach(() => {
   onClose.mockClear();
+  jest.clearAllTimers();
 });
 
 describe("Modal", () => {
@@ -57,6 +60,24 @@ describe("Modal", () => {
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(container).toMatchSnapshot();
+  });
+
+  it("should be able to focus content", async () => {
+    render(
+      <Modal>
+        <input />
+      </Modal>,
+    );
+
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(screen.getByRole("dialog")).toHaveFocus();
+    userEvent.tab(screen.getByRole("dialog"));
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(screen.getByRole("textbox")).toHaveFocus();
   });
 
   it("should expose ref with setScrollPosition", () => {

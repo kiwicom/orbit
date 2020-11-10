@@ -23,11 +23,11 @@ export const LAYOUT_SETTINGS = {
       // $FlowIssue
       0: {
         hideOn: ["smallMobile", "mediumMobile", "largeMobile"],
-        element: "aside",
+        as: "aside",
       },
       // $FlowIssue
       1: {
-        element: "main",
+        as: "main",
       },
       // $FlowIssue
       2: {
@@ -48,11 +48,11 @@ export const LAYOUT_SETTINGS = {
     layoutColumns: {
       // $FlowIssue
       0: {
-        element: "main",
+        as: "main",
       },
       // $FlowIssue
       1: {
-        element: "aside",
+        as: "aside",
       },
     },
   },
@@ -66,7 +66,7 @@ export const LAYOUT_SETTINGS = {
     layoutColumns: {
       // $FlowIssue
       0: {
-        element: "main",
+        as: "main",
       },
     },
   },

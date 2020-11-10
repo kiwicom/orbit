@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.97.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.3...@kiwicom/orbit-components@0.97.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **Accordion:** Accordion sticky footer story ([#2483](https://github.com/kiwicom/orbit/issues/2483)) ([09127f8](https://github.com/kiwicom/orbit/commit/09127f819da1e04f016d3590a78c8c079611bcac))
+* **Inline:** add around and between ([#2476](https://github.com/kiwicom/orbit/issues/2476)) ([554e536](https://github.com/kiwicom/orbit/commit/554e536cf64098812f62572b180a43ee6bec660c))
+
+
+### Features
+
+* **Button:** div behave like button, a11y ([#2426](https://github.com/kiwicom/orbit/issues/2426)) ([93cc601](https://github.com/kiwicom/orbit/commit/93cc6018f7287f8e192241acd0812c3a9106abef))
+
+
+
+
+
 ## [0.96.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.2...@kiwicom/orbit-components@0.96.3) (2020-11-09)
 
 

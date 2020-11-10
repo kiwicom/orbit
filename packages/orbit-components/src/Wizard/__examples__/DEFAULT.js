@@ -68,7 +68,9 @@ export default {
           <Stack>
             <Heading>{headingAndText.heading}</Heading>
             <Text>{headingAndText.text}</Text>
-            <Button onClick={() => handleStepChange(activeStep + 1)}>Next step</Button>
+            {activeStep < 4 && (
+              <Button onClick={() => handleStepChange(activeStep + 1)}>Next step</Button>
+            )}
           </Stack>
         </Box>
       </>

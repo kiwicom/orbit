@@ -359,31 +359,6 @@ const Modal = React.forwardRef<Props, Instance>(
 
     const prevChildren = usePrevious(children);
 
-    /* eslint-disable no-use-before-define */
-    React.useEffect(() => {
-      const timer: TimeoutID = setTimeout(() => {
-        setLoaded(true);
-        decideFixedFooter();
-        setDimensions();
-        setFirstFocus();
-      }, 15);
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        clearTimeout(timer);
-        window.removeEventListener("resize", handleResize);
-      };
-    });
-
-    React.useEffect(() => {
-      if (children !== prevChildren) {
-        decideFixedFooter();
-        setDimensions();
-      }
-    }, [children, prevChildren]);
-    /* eslint-enable no-use-before-define */
-
     const setDimensions = () => {
       const content = modalContent.current;
 
@@ -460,10 +435,10 @@ const Modal = React.forwardRef<Props, Instance>(
       keyboardHandler(event);
     };
 
-    const handleResize = () => {
+    const handleResize = React.useCallback(() => {
       setDimensions();
       decideFixedFooter();
-    };
+    }, []);
 
     const handleClickOutside = (event: MouseEvent) => {
       const clickedOutside =
@@ -570,6 +545,29 @@ const Modal = React.forwardRef<Props, Instance>(
     React.useImperativeHandle(ref, () => ({
       setScrollPosition,
     }));
+
+    React.useEffect(() => {
+      const timer: TimeoutID = setTimeout(() => {
+        setLoaded(true);
+        decideFixedFooter();
+        setDimensions();
+        setFirstFocus();
+      }, 15);
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("resize", handleResize);
+      };
+    }, [handleResize]);
+
+    React.useEffect(() => {
+      if (children !== prevChildren) {
+        decideFixedFooter();
+        setDimensions();
+      }
+    }, [children, prevChildren]);
 
     return (
       <ModalBody

@@ -36,10 +36,12 @@ describe("Select", () => {
       onChange={mockChange}
       tabIndex={tabIndex}
       dataTest={dataTest}
+      readOnly
       spaceAfter={spaceAfter}
       dataAttrs={dataAttrs}
     />,
   );
+
   const select = component.find("Select__StyledSelect");
   const label = component.find("Select__Label");
   it("should have data-test", () => {
@@ -61,6 +63,10 @@ describe("Select", () => {
   it("should have placeholder", () => {
     expect(select.childAt(0).text()).toBe(placeholder);
     expect(select.render().prop("id")).toBe(id);
+  });
+
+  it("should have readOnly", () => {
+    expect(select.render().prop("readonly")).toBe(true);
   });
 });
 

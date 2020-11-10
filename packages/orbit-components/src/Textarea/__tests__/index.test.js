@@ -32,6 +32,7 @@ describe(`Textarea with help`, () => {
       maxLength={maxLength}
       help={<div>Something useful.</div>}
       tabIndex={tabIndex}
+      readOnly
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
@@ -58,6 +59,7 @@ describe(`Textarea with help`, () => {
     expect(area.prop("maxLength")).toBe(maxLength);
     expect(area.prop("fullHeight")).toBe(fullHeight);
     expect(area.render().prop("data-test")).toBe(dataTest);
+    expect(area.render().prop("readonly")).toBe(true);
     expect(area.render().prop("tabindex")).toBe(tabIndex);
     expect(component.find("Textarea__StyledTextArea").render().prop("attribs").name).toBe(name);
   });

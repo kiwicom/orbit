@@ -15,6 +15,7 @@ interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly size?: Common.InputSize;
   readonly name?: string;
   readonly rows?: number;
+  readonly readOnly?: boolean;
   readonly label?: Common.Translation;
   readonly value?: string;
   readonly fullHeight?: boolean;

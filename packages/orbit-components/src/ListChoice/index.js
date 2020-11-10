@@ -81,8 +81,16 @@ StyledListChoiceContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListChoice = (props: Props) => {
-  const { dataTest, icon, title, description, selectable, onClick, selected, disabled } = props;
+const ListChoice = ({
+  dataTest,
+  icon,
+  title,
+  description,
+  selectable,
+  onClick,
+  selected,
+  disabled,
+}: Props) => {
   const conditionalProps = {
     ...(selectable ? { "aria-checked": selected } : null),
   };
@@ -92,7 +100,7 @@ const ListChoice = (props: Props) => {
       onClick={!disabled ? onClick : null}
       data-test={dataTest}
       onKeyDown={!disabled ? handleKeyDown(onClick) : null}
-      tabIndex="0"
+      tabIndex={disabled ? "-1" : "0"}
       disabled={disabled}
       aria-disabled={disabled}
       role={selectable ? "checkbox" : "button"}

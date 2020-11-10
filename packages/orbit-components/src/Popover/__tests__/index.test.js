@@ -83,6 +83,12 @@ describe("ContentWrapper", () => {
     expect(component.find("Button").exists()).toBe(true);
   });
 
+  it("Should fire onClose when esc is pressed", () => {
+    const parent = component.find("ContentWrapper__StyledPopoverParent");
+    parent.simulate("keyDown", { keyCode: 27 });
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
+
   it("should be hidden", () => {
     expect(component.find("ContentWrapper__StyledPopoverClose").exists()).toBe(false);
   });

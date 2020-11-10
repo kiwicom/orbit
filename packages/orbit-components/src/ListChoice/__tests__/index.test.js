@@ -11,8 +11,8 @@ describe("ListChoice", () => {
   const dataTest = "test";
   const onClick = jest.fn();
 
-  render(<ListChoice title={title} dataTest={dataTest} />);
   it("should have data-test", () => {
+    render(<ListChoice title={title} dataTest={dataTest} />);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
   });
 
@@ -59,7 +59,7 @@ describe("ListChoice", () => {
   });
 
   it("should have role checkbox when selectable", () => {
-    render(<ListChoice title={title} selectable dataTest={dataTest} />);
+    render(<ListChoice title={title} selectable selected dataTest={dataTest} />);
     expect(screen.getByTestId(dataTest)).toHaveAttribute("role", "checkbox");
   });
 
@@ -72,6 +72,6 @@ describe("ListChoice", () => {
   it("should not have focus", () => {
     render(<ListChoice title={title} disabled selectable dataTest={dataTest} />);
     userEvent.tab();
-    expect(screen.getByTestId(dataTest)).toHaveFocus();
+    expect(screen.getByTestId(dataTest)).not.toHaveFocus();
   });
 });

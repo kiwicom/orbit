@@ -51,6 +51,7 @@ const StyledSelect = styled(
         onBlur,
         id,
         dataAttrs,
+        readOnly,
       },
       ref,
     ) => (
@@ -62,6 +63,7 @@ const StyledSelect = styled(
         className={className}
         onChange={onChange}
         onFocus={onFocus}
+        readOnly={readOnly}
         onBlur={onBlur}
         disabled={disabled}
         name={name}
@@ -276,6 +278,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
     spaceAfter,
     customValueText,
     dataAttrs,
+    readOnly,
   } = props;
   const filled = !(value == null || value === "");
   return (
@@ -311,6 +314,7 @@ const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
           customValueText={customValueText}
           tabIndex={tabIndex}
           id={id}
+          readOnly={readOnly}
           required={required}
           ref={ref}
           dataAttrs={dataAttrs}

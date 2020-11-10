@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.98.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.3...@kiwicom/orbit-components@0.98.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **Layout:** use the correct tags for columns ([#2487](https://github.com/kiwicom/orbit/issues/2487)) ([f092fa9](https://github.com/kiwicom/orbit/commit/f092fa9e26aeacc74d5bc0b56a488f5ab8355ef3))
+* **ListChoice:** disabled items should not get focus ([#2474](https://github.com/kiwicom/orbit/issues/2474)) ([08eb9c4](https://github.com/kiwicom/orbit/commit/08eb9c4a364385b0baaef39f8e4c635989f5cb7e))
+* **Modal:** lost focus on user interaction ([#2484](https://github.com/kiwicom/orbit/issues/2484)) ([ef3e4f9](https://github.com/kiwicom/orbit/commit/ef3e4f9bf1a6b61812e42c5c7b16d9df3556678f))
+
+
+### Features
+
+* **Select:** added readOnly prop ([#2493](https://github.com/kiwicom/orbit/issues/2493)) ([2b06b27](https://github.com/kiwicom/orbit/commit/2b06b276d6165e6f1d0baaf93da1e991cedafc4a))
+* **Textarea:** added readOnly prop ([#2494](https://github.com/kiwicom/orbit/issues/2494)) ([d33c396](https://github.com/kiwicom/orbit/commit/d33c396714ba8e9e4931fa31796571c7c69e30c4))
+
+
+
+
+
 # [0.97.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.3...@kiwicom/orbit-components@0.97.0) (2020-11-10)
 
 

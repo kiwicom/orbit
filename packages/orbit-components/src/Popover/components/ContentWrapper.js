@@ -206,6 +206,9 @@ const PopoverContentWrapper = ({
         intervalRef.current = timer;
       }
     },
+    // this measures the element that's containing actions
+    // so it needs to be re-measured every time actions change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [actions],
   );
 
@@ -222,6 +225,10 @@ const PopoverContentWrapper = ({
   }, []);
 
   useClickOutside(popover, onClose);
+
+  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+    if (ev.keyCode === 27 && onClose) onClose(ev);
+  };
 
   return (
     <>
@@ -245,6 +252,7 @@ const PopoverContentWrapper = ({
         noPadding={noPadding}
         overlapped={overlapped}
         role="tooltip"
+        onKeyDown={handleKeyDown}
         fixed={fixed}
         isInsideModal={isInsideModal}
       >

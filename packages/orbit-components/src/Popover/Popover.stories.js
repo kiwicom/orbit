@@ -276,6 +276,7 @@ storiesOf("Popover", module)
     "Overlapped",
     () => {
       const overlapped = boolean("overlapped", true);
+      const opened = boolean("opened", false);
 
       return (
         <Popover
@@ -285,7 +286,7 @@ storiesOf("Popover", module)
           onOpen={action("open")}
           onClose={action("close")}
         >
-          <Button type="secondary" iconRight={<ChevronDown />}>
+          <Button type="secondary" ariaExpanded={opened} iconRight={<ChevronDown />}>
             Open popover
           </Button>
         </Popover>
@@ -424,6 +425,7 @@ storiesOf("Popover", module)
       const width = text("width", "350px");
       const noPadding = boolean("noPadding", false);
       const overlapped = boolean("overlapped", false);
+      const opened = boolean("opened", false);
 
       return (
         <Stack justify="center">
@@ -434,6 +436,7 @@ storiesOf("Popover", module)
             preferredPosition={preferredPosition}
             preferredAlign={preferredAlign}
             noPadding={noPadding}
+            opened={opened}
             actions={
               <Stack direction="row" justify="between">
                 <Button type="secondary" size="small">
@@ -446,7 +449,7 @@ storiesOf("Popover", module)
             onOpen={action("open")}
             onClose={action("close")}
           >
-            <Button type="secondary" iconRight={<ChevronDown />}>
+            <Button type="secondary" ariaExpanded={opened} iconRight={<ChevronDown />}>
               Open popover
             </Button>
           </Popover>

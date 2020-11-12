@@ -177,7 +177,7 @@ export const StyledButtonPrimitive = styled(
       ${iconContainerColor(icons && icons.foregroundFocus)};
     }
 
-    &:focus:hover,
+    &:focus:not(:active):hover,
     &:hover {
       ${!disabled &&
       css`

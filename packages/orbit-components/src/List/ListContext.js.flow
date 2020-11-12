@@ -8,6 +8,6 @@ type ListContextProps = {|
   +type: ?Type,
 |};
 
-export type ListContextType = React.Context<ListContextProps>;
+export type ListContext = React.Context<ListContextProps>;
 
-declare export default ListContextType;
+declare export default ListContext;

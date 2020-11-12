@@ -3,4 +3,6 @@ import * as React from "react";
 
 export type Props = {| +children: React.Node, +hasIcon: boolean, +contentWidth?: ?string |};
 
-declare export default React.ComponentType<Props>;
+export type ButtonPrimitiveContentChildren = React.ComponentType<Props>;
+
+declare export default ButtonPrimitiveContentChildren;

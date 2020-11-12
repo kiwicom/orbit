@@ -5,7 +5,7 @@
 
 import * as React from "react";
 
-import typeof ListItemType from "./ListItem";
+import type { ListItem as ListItemType } from "./ListItem";
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
@@ -21,6 +21,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type List = React.ComponentType<Props>;
+
+declare export default List;
 
 declare export var ListItem: ListItemType;

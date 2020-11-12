@@ -16,4 +16,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type NotificationBadge = React.ComponentType<Props>;
+
+declare export default NotificationBadge;

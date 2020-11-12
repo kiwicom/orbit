@@ -24,7 +24,9 @@ export type State = {|
   initialExpandedSections: Array<number>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type DeprecatedCard = React.ComponentType<Props>;
+
+declare export default DeprecatedCard;
 
 declare export var StyledCard: React.ComponentType<Props>;
 declare export var CardHeader: CardHeaderType;

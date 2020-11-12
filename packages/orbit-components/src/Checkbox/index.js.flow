@@ -23,6 +23,7 @@ export type Props = {|
   ...Ref,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Checkbox = React.ComponentType<Props>;
 
+declare export default Checkbox;
 declare export var Label: ReactComponentStyled<any>;

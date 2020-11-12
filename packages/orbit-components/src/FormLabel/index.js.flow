@@ -12,4 +12,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type FormLabel = React.ComponentType<Props>;
+
+declare export default FormLabel;

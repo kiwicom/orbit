@@ -51,4 +51,6 @@ export type Props = {|
   +removeUnderlinedText?: boolean,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Tooltip = React.ComponentType<Props>;
+
+declare export default Tooltip;

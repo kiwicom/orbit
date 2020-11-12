@@ -32,7 +32,9 @@ export type FactoryProps = {|
   ...Props,
 |};
 
-declare export default React.ComponentType<FactoryProps>;
+export type Icon = React.ComponentType<FactoryProps>;
+
+declare export default Icon;
 
 export type GetSize = (size: Size) => ({| theme: typeof defaultTheme |}) => string;
 

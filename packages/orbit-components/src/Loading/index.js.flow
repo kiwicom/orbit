@@ -17,7 +17,9 @@ export type Props = {|
   ...Globals,
 |};
 
+export type Loading = React.ComponentType<Props>;
+
 declare export var StyledSpinner: ReactComponentStyled<any>;
 declare export var StyledLoading: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+declare export default Loading;

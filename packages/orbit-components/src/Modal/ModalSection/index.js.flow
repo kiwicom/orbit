@@ -10,6 +10,8 @@ export type Props = {|
   +suppressed?: boolean,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ModalSection = React.ComponentType<Props>;
+
+declare export default ModalSection;
 
 declare export var StyledModalSection: ReactComponentStyled<any>;

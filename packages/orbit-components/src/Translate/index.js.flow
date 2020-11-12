@@ -20,6 +20,8 @@ export type Translate = {|
   translate: (tKey: string, values?: Values) => string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TranslateProps = React.ComponentType<Props>;
+
+declare export default TranslateProps;
 
 declare export var pureTranslate: PureTranslate;

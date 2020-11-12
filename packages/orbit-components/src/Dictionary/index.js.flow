@@ -10,8 +10,10 @@ export type Props = {|
   +children: React.Node,
 |};
 
+export type Dictionary = React.ComponentType<Props>;
+
 type WithDictionary<A, B> = (a: React.ComponentType<A>) => React.ComponentType<B>;
 
-declare export default React.ComponentType<Props>;
+declare export default Dictionary;
 
 declare export var withDictionary: WithDictionary<any, any>;

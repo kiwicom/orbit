@@ -9,6 +9,8 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TableBody = React.ComponentType<Props>;
+
+declare export default TableBody;
 
 declare export var StyledTableBody: ReactComponentStyled<Props>;

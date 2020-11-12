@@ -7,4 +7,6 @@ export type Props = {|
   +contentAlign: ?string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ButtonPrimitiveContent = React.ComponentType<Props>;
+
+declare export default ButtonPrimitiveContent;

@@ -9,4 +9,6 @@ export type Props = {|
   +children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Mobile = React.ComponentType<Props>;
+
+declare export default Mobile;

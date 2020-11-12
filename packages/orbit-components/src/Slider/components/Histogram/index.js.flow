@@ -15,4 +15,6 @@ export type Props = {|
   loadingText?: Translation,
 |};
 
-declare export default React.ComponentType<Props>;
+export type SliderHistogram = React.ComponentType<Props>;
+
+declare export default SliderHistogram;

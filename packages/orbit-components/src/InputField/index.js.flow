@@ -57,6 +57,8 @@ export type Props = {|
   +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
+export type InputField = React.ComponentType<Props>;
+
 declare export var FakeInput: ReactComponentStyled<any>;
 
 declare export var Input: ReactComponentStyled<any>;

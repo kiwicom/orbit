@@ -25,7 +25,9 @@ export type Props = {|
 
 export type GetHeadingToken = (name: string) => ({| ...ThemeProps, type: Type |}) => string;
 
-declare export default React.ComponentType<Props>;
+export type Heading = React.ComponentType<Props>;
+
+declare export default Heading;
 
 declare export var StyledHeading: ReactComponentStyled<any>;
 

@@ -39,8 +39,9 @@ export type GetLinkStyleProps = {|
 |};
 
 export type GetLinkStyle = GetLinkStyleProps => Interpolation[];
+export type TextLink = React.ComponentType<Props>;
 
 declare export var getLinkStyle: GetLinkStyle;
 declare export var StyledTextLink: React.ComponentType<Props>;
 
-declare export default React.ComponentType<Props>;
+declare export default TextLink;

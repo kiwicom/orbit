@@ -11,4 +11,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type MobileDialogPrimitive = React.ComponentType<Props>;
+
+declare export default MobileDialogPrimitive;

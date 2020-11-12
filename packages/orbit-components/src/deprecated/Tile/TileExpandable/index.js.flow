@@ -11,4 +11,6 @@ export type Props = {|
   +children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TileExpandable = React.ComponentType<Props>;
+
+declare export default TileExpandable;

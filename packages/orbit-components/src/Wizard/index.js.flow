@@ -13,5 +13,7 @@ export type Props = {|
   +children: React.ChildrenArray<React.Element<WizardStepComponent>>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Wizard = React.ComponentType<Props>;
+
+declare export default Wizard;
 declare export var WizardStep: WizardStepComponent;

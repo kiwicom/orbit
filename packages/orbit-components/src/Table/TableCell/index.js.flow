@@ -20,6 +20,8 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TableCell = React.ComponentType<Props>;
+
+declare export default TableCell;
 
 declare export var StyledTableCell: ReactComponentStyled<Props>;

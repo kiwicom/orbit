@@ -20,4 +20,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Drawer = React.ComponentType<Props>;
+
+declare export default Drawer;

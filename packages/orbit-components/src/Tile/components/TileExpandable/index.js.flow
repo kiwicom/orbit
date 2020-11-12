@@ -17,4 +17,6 @@ export type Props = {|
   htmlTitle?: string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TileExpandable = React.ComponentType<Props>;
+
+declare export default TileExpandable;

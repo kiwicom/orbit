@@ -5,9 +5,9 @@
 import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
-import typeof ModalSectionType from "./ModalSection";
-import typeof ModalHeaderType from "./ModalHeader";
-import typeof ModalFooterType from "./ModalFooter";
+import type { ModalSection as ModalSectionType } from "./ModalSection";
+import type { ModalHeader as ModalHeaderType } from "./ModalHeader";
+import type { ModalFooter as ModalFooterType } from "./ModalFooter";
 
 export type State = {|
   scrolled: boolean,
@@ -35,6 +35,8 @@ export type Props = {|
   +hasCloseButton?: boolean,
   ...Globals,
 |};
+
+export type Modal = React.ComponentType<Props>;
 
 export type Instance = {| setScrollPosition: (value: number) => void |};
 

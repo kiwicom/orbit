@@ -9,4 +9,6 @@ export type Props = {|
   useMargins?: boolean,
 |};
 
+export type TileContent = React.ComponentType<Props>;
+
 declare export default React.AbstractComponent<Props, HTMLDivElement>;

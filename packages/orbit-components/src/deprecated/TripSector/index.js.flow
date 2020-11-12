@@ -13,7 +13,10 @@ export type Props = {|
   +children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TripSector = React.ComponentType<Props>;
+
+declare export default TripSector;
 
 declare export var TripDate: TripDateType;
+
 declare export var TripLayover: TripLayoverType;

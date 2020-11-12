@@ -17,7 +17,9 @@ export type Props = {|
 
 declare export var StyledCardSection: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+export type DeprecatedCardCardSection = React.ComponentType<Props>;
+
+declare export default DeprecatedCardCardSection;
 
 declare export var CardSectionHeader: CardSectionHeaderType;
 declare export var CardSectionContent: CardSectionContentType;

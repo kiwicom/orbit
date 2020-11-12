@@ -19,4 +19,6 @@ export type Props = {|
   ) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ListChoice = React.ComponentType<Props>;
+
+declare export default ListChoice;

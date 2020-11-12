@@ -35,4 +35,6 @@ export type Props = {|
   +onChange?: number => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type InputStepper = React.ComponentType<Props>;
+
+declare export default InputStepper;

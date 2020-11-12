@@ -11,5 +11,7 @@ export type Props = {|
   +children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Timeline = React.ComponentType<Props>;
+
+declare export default Timeline;
 declare export var TimelineStep: TimelineStepType;

@@ -28,6 +28,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Text = React.ComponentType<Props>;
+
+declare export default Text;
 
 declare export var StyledText: ReactComponentStyled<any>;

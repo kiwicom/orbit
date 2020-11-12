@@ -16,4 +16,6 @@ export type Props = {|
   >,
 |};
 
+export type SocialButton = React.ComponentType<Props>;
+
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

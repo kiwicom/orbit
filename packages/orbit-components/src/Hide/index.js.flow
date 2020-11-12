@@ -12,4 +12,6 @@ export type Props = {|
   +block?: boolean,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Hide = React.ComponentType<Props>;
+
+declare export default Hide;

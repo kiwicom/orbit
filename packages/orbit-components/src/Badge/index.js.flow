@@ -27,6 +27,8 @@ export type Props = {|
   ...Globals,
 |};
 
+export type Badge = React.ComponentType<Props>;
+
 declare export var StyledBadge: ReactComponentStyled<Props>;
 
-declare export default React.ComponentType<Props>;
+declare export default Badge;

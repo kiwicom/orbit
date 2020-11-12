@@ -9,4 +9,6 @@ export type Props = {|
   +type?: Type,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TimelineStep = React.ComponentType<Props>;
+
+declare export default TimelineStep;

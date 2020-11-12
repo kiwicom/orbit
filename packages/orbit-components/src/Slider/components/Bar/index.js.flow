@@ -21,4 +21,6 @@ export type CalculateBarPosition = (
   hasHistogram: boolean,
 ) => {| left: number, width: number |};
 
+export type SliderBar = React.ComponentType<Props>;
+
 declare export var calculateBarPosition: CalculateBarPosition;

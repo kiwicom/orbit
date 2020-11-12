@@ -46,4 +46,6 @@ export type Props = {|
   +onClose?: () => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Popover = React.ComponentType<Props>;
+
+declare export default Popover;

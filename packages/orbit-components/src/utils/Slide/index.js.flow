@@ -16,6 +16,8 @@ export type Props = {|
   +id?: string,
 |};
 
+export type Slide = React.ComponentType<Props>;
+
 declare export var StyledSlide: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+declare export default Slide;

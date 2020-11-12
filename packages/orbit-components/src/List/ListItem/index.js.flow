@@ -13,7 +13,9 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ListItem = React.ComponentType<Props>;
+
+declare export default ListItem;
 
 declare export var Item: ReactComponentStyled<any>;
 declare export var IconContainer: ReactComponentStyled<any>;

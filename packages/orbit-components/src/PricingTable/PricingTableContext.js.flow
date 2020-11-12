@@ -7,6 +7,6 @@ export type Context = {|
   +isContent: boolean,
 |};
 
-export type PricingTableContextType = React.Context<Context>;
+export type PricingTableContext = React.Context<Context>;
 
-declare export default PricingTableContextType;
+declare export default PricingTableContext;

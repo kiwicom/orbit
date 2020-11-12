@@ -111,6 +111,8 @@ export type Props = {|
   ...PrimitiveTypes,
 |};
 
+export type ButtonPrimitive = React.ComponentType<Props>;
+
 declare export var StyledButtonPrimitive: React.ComponentType<Props>;
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

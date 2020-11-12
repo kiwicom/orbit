@@ -14,4 +14,6 @@ export type Props = {|
   +onClick?: (ev: SyntheticEvent<HTMLLinkElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type BreadcrumbsItem = React.ComponentType<Props>;
+
+declare export default BreadcrumbsItem;

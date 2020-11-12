@@ -11,4 +11,6 @@ export type Props = {|
   +hideOn?: Devices[],
 |};
 
-declare export default React.ComponentType<Props>;
+export type LayoutColumn = React.ComponentType<Props>;
+
+declare export default LayoutColumn;

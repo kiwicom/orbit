@@ -9,4 +9,6 @@ export type Props = {|
   +onClick?: (SyntheticEvent<HTMLElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type WizardStepType = React.ComponentType<Props>;
+
+declare export default WizardStepType;

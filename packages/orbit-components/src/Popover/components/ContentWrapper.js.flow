@@ -20,4 +20,6 @@ export type Props = {|
   +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ContentWrapper = React.ComponentType<Props>;
+
+declare export default ContentWrapper;

@@ -31,4 +31,6 @@ export type Props = {|
   +onClick?: () => void,
 |};
 
-declare export default React.ComponentType<Props>;
+export type DestinationCard = React.ComponentType<Props>;
+
+declare export default DestinationCard;

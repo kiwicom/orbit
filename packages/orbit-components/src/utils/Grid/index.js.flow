@@ -34,4 +34,6 @@ export type SmallMobile = {|
   +smallMobile: MediaQuery,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Grid = React.ComponentType<Props>;
+
+declare export default Grid;

@@ -15,4 +15,6 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type IllustrationPrimitive = React.ComponentType<Props>;
+
+declare export default IllustrationPrimitive;

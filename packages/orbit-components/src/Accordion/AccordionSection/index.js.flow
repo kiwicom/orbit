@@ -16,6 +16,8 @@ export type Props = {|
   ...Globals,
 |};
 
+export type AccordionSection = React.ComponentType<Props>;
+
 declare export var StyledAccordionSection: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+declare export default AccordionSection;

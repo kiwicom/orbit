@@ -41,4 +41,6 @@ export type Props = {|
   ...Globals,
 |};
 
+export type Inline = React.ComponentType<Props>;
+
 declare export default React.AbstractComponent<Props, HTMLDivElement>;

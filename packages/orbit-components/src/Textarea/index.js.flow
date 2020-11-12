@@ -29,4 +29,6 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Textarea = React.ComponentType<Props>;
+
+declare export default Textarea;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import type { FilterWrapperType } from "./FilterWrapper.js.flow";
+import type { FilterWrapper as FilterWrapperType } from "./FilterWrapper.js.flow";
 import defaultTheme from "../../defaultTheme";
 import ButtonLink from "../../ButtonLink";
 

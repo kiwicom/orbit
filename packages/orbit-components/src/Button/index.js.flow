@@ -19,4 +19,6 @@ export type Props = {|
   ...ButtonCommonProps,
 |};
 
+export type Button = React.ComponentType<Props>;
+
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

@@ -16,6 +16,8 @@ export type Props = {|
   +desktopRadio?: boolean,
 |};
 
-declare export default React.ComponentType<Props>;
+export type PricingTable = React.ComponentType<Props>;
+
+declare export default PricingTable;
 
 declare export var PricingTableItem: PricingTableItemType;

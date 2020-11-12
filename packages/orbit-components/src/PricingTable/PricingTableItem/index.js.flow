@@ -19,5 +19,7 @@ export type Props = {|
   +onClick?: () => void | Promise<any>,
 |};
 
+export type PricingTableItem = React.ComponentType<Props>;
+
 declare export var StyledListWrapper: ReactComponentStyled<any>;
-declare export default React.ComponentType<Props>;
+declare export default PricingTableItem;

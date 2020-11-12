@@ -8,6 +8,8 @@ export type Props = {|
   children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ButtonPrimitiveIconContainer = React.ComponentType<Props>;
+
+declare export default ButtonPrimitiveIconContainer;
 
 declare export var StyledButtonPrimitiveIconContainer: React.ComponentType<Props>;

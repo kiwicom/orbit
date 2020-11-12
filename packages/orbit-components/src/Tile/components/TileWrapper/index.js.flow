@@ -19,6 +19,8 @@ export type Props = {|
   id?: string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TileWrapper = React.ComponentType<Props>;
+
+declare export default TileWrapper;
 
 declare export var StyledTileWrapper: React.ComponentType<Props>;

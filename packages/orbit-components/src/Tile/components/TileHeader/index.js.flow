@@ -27,6 +27,8 @@ type IconProps = {|
   expanded: boolean,
 |};
 
+export type TileHeader = React.ComponentType<Props>;
+
 declare export var StyledIconRight: React.ComponentType<IconProps>;
 
-declare export default React.ComponentType<Props>;
+declare export default TileHeader;

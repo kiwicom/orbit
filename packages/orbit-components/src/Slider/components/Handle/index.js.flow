@@ -21,7 +21,9 @@ export type Props = {|
   dataTest?: ?string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type SliderHandle = React.ComponentType<Props>;
+
+declare export default SliderHandle;
 
 export type CalculateLeftPosition = (
   valueNow: number,

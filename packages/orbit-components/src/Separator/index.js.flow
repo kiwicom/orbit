@@ -10,4 +10,6 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Separator = React.ComponentType<Props>;
+
+declare export default Separator;

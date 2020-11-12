@@ -11,4 +11,6 @@ export type Props = {|
   size: Sizes,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Pages = React.ComponentType<Props>;
+
+declare export default Pages;

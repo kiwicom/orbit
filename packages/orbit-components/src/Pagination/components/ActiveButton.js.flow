@@ -10,4 +10,6 @@ export type Props = {|
   size?: Sizes,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ActiveButton = React.ComponentType<Props>;
+
+declare export default ActiveButton;

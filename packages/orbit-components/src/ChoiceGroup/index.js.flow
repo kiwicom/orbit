@@ -27,4 +27,6 @@ export type Props = {|
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ChoiceGroup = React.ComponentType<Props>;
+
+declare export default ChoiceGroup;

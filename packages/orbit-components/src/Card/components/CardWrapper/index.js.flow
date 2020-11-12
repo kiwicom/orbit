@@ -14,4 +14,6 @@ export type Props = {|
   initialExpanded?: boolean,
 |};
 
-declare export default React.ComponentType<Props>;
+export type CardWrapper = React.ComponentType<Props>;
+
+declare export default CardWrapper;

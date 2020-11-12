@@ -10,6 +10,8 @@ export type Props = {|
   +flex?: string | Array<string>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ModalFooter = React.ComponentType<Props>;
+
+declare export default ModalFooter;
 
 declare export var StyledModalFooter: ReactComponentStyled<any>;

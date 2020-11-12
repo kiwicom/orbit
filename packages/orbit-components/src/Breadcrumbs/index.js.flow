@@ -17,6 +17,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Breadcrumbs = React.ComponentType<Props>;
+
+declare export default Breadcrumbs;
 
 declare export var BreadcrumbsItem: BreadcrumbsItemType;

@@ -13,4 +13,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ButtonMobileStore = React.ComponentType<Props>;
+
+declare export default ButtonMobileStore;

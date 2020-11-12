@@ -26,4 +26,6 @@ export type Props = {|
   ref?: Ref,
 |};
 
-declare export default React.ComponentType<Props>;
+export type InputFile = React.ComponentType<Props>;
+
+declare export default InputFile;

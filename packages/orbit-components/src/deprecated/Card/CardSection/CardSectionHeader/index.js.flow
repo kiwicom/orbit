@@ -7,6 +7,8 @@ export type Props = {|
   actions?: React.Node,
 |};
 
+export type DeprecatedCardCardSectionHeader = React.ComponentType<Props>;
+
 declare export var StyledCardSectionHeader: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+declare export default DeprecatedCardCardSectionHeader;

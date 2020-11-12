@@ -17,4 +17,6 @@ export type Props = {|
   +header?: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type CardHeader = React.ComponentType<Props>;
+
+declare export default CardHeader;

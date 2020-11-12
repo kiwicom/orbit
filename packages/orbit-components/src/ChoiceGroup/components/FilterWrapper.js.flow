@@ -13,6 +13,6 @@ type Props = {|
   +onlySelectionText?: Translation,
 |};
 
-export type FilterWrapperType = Props => React.Element<*>;
+export type FilterWrapper = React.ComponentType<Props>;
 
-declare export default FilterWrapperType;
+declare export default FilterWrapper;

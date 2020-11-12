@@ -20,4 +20,6 @@ export type Props = {|
   buttonLabel?: string,
 |};
 
-declare export default React.ComponentType<Props>;
+export type SkipLink = React.ComponentType<Props>;
+
+declare export default SkipLink;

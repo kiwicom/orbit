@@ -22,4 +22,6 @@ export type Props = {|
   ...Ref,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Radio = React.ComponentType<Props>;
+
+declare export default Radio;

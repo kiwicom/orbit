@@ -6,4 +6,6 @@ export type Props = {|
   +children: React.Node | React.Node[],
 |};
 
-declare export default React.ComponentType<Props>;
+export type ClickOutside = React.ComponentType<Props>;
+
+declare export default ClickOutside;

@@ -22,6 +22,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
+export type Alert = React.ComponentType<Props>;
+
 declare export var AlertButton: React.AbstractComponent<AlertButtonProps, HTMLButtonElement>;
 
-declare export default React.ComponentType<Props>;
+declare export default Alert;

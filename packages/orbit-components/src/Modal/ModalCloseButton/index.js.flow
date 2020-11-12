@@ -8,4 +8,6 @@ export type Props = {|
   +onClick: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+export type ModalCloseButton = React.ComponentType<Props>;
+
+declare export default ModalCloseButton;

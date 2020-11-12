@@ -26,6 +26,8 @@ export type Props = {|
   +step?: number,
 |};
 
+export type Stepper = React.ComponentType<Props>;
+
 declare export var StepperStateless: StepperStatelessType;
 
-declare export default React.ComponentType<Props>;
+declare export default Stepper;

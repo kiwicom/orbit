@@ -17,6 +17,8 @@ export type Props = {|
   ...spaceAfter,
 |};
 
-declare export default React.ComponentType<Props>;
+export type Accordion = React.ComponentType<Props>;
+
+declare export default Accordion;
 declare export var AccordionSection: AccordionSectionType;
 declare export var StyledAccordion: React.ComponentType<Props>;

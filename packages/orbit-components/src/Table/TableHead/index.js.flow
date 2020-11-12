@@ -8,4 +8,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+export type TableHead = React.ComponentType<Props>;
+
+declare export default TableHead;

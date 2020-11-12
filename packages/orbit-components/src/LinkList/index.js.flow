@@ -12,4 +12,6 @@ export type Props = {|
   children: React.Node,
 |};
 
-declare export default React.ComponentType<Props>;
+export type LinkList = React.ComponentType<Props>;
+
+declare export default LinkList;

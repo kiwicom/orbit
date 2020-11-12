@@ -18,6 +18,8 @@ export type StateLessProps = {|
   +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
+export type StepperStateless = React.ComponentType<StateLessProps>;
+
 export type StepperStatelessType = React.ComponentType<StateLessProps>;
 
 declare export default StepperStatelessType;

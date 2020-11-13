@@ -7,6 +7,7 @@ import orbitDecorator from "./orbitDecorator";
 import theme from "../src/defaultTheme";
 
 const tokens = {
+  smallMobile: 320,
   [QUERIES.MEDIUMMOBILE]: theme.orbit.widthBreakpointMediumMobile,
   [QUERIES.LARGEMOBILE]: theme.orbit.widthBreakpointLargeMobile,
   [QUERIES.TABLET]: theme.orbit.widthBreakpointTablet,

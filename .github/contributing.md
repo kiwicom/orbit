@@ -81,8 +81,9 @@ This is a shortcut for `yalc publish --push`, which "publishes" the package agai
 
 # Testing
 
-Run `yarn test-ci` to perform the same automatic checks as the CI server. You can also run these checks separately:
+Run `yarn test-ci` to perform the same automatic checks as the CI server. You can also run some of these checks separately:
 
-- `yarn flow` - static type check
-- `yarn eslint:check` - ESLint, some warnings can be fixed automatically with `yarn eslint:check --fix`
+- `yarn flow` - Flow check
+- `yarn tsc` - TypeScript check
+- `yarn eslint .` - ESLint check
 - `yarn test` - run all Jest tests

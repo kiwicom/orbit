@@ -9,6 +9,8 @@ const mergeStream = require("merge-stream");
 const transform = require("through2").obj;
 const path = require("path");
 
+const eslintCI = require("./tasks/eslintCI");
+
 require("dotenv-safe").config();
 
 async function previewChangelog(done) {
@@ -56,5 +58,6 @@ function publishPackages() {
 }
 
 module.exports = {
+  eslintCI,
   publish: series(previewChangelog, publishPackages),
 };

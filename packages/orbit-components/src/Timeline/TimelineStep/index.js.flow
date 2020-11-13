@@ -4,7 +4,7 @@ import * as React from "react";
 export type Type = "success" | "warning" | "critical";
 export type Props = {|
   +children: React.Node,
-  +subLabel: React.Node,
+  +subLabel?: React.Node,
   +label: string,
   +type?: Type,
 |};

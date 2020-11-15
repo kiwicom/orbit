@@ -1,5 +1,11 @@
 // @flow
 module.exports = {
   stories: ["../src/**/*.stories.js"],
-  addons: ["@storybook/addon-knobs", "@storybook/addon-essentials"],
+  addons: [
+    "@storybook/addon-knobs",
+    "@storybook/addon-actions",
+    "@storybook/addon-viewport",
+    "@storybook/addon-docs",
+    "@storybook/addon-toolbars",
+  ],
 };

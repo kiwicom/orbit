@@ -3,8 +3,6 @@ import { create } from "@storybook/theming";
 import { addons } from "@storybook/addons";
 
 import orbitTheme from "./orbitTheme";
-import "@storybook/addon-knobs/register";
-import "@storybook/addon-actions/register";
 
 export default create({
   brandTitle: "Orbit",

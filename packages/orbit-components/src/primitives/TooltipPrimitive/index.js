@@ -65,16 +65,13 @@ const TooltipPrimitive = ({
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
 
-  const handleInMobile = useCallback(
+  const handleClick = useCallback(
     ev => {
       if (stopPropagation) {
         ev.stopPropagation();
       }
-      ev.preventDefault();
-      setRender(true);
-      clearRenderTimeout();
     },
-    [clearRenderTimeout, setRender, stopPropagation],
+    [stopPropagation],
   );
 
   const handleOutMobile = useCallback(() => {
@@ -88,7 +85,7 @@ const TooltipPrimitive = ({
       <StyledTooltipChildren
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
-        onClick={handleInMobile}
+        onClick={handleClick}
         onFocus={handleIn}
         onBlur={handleOut}
         ref={container}

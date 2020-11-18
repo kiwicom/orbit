@@ -16,7 +16,7 @@ export enum Type {
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly label: string;
-  readonly subLabel: string;
+  readonly subLabel?: string;
   readonly type?: Type;
 }
 

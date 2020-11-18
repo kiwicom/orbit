@@ -45,9 +45,11 @@ const TimelineStepMobile = ({
         <Stack flex shrink direction="column" spacing="XSmall">
           <Stack flex spacing="XSmall" align="center">
             {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
-            <StyledText>
-              <Text size="small">{subLabel}</Text>
-            </StyledText>
+            {subLabel && (
+              <StyledText>
+                <Text size="small">{subLabel}</Text>
+              </StyledText>
+            )}
           </Stack>
           <StyledIndent>
             <Text type={type ? "primary" : "secondary"}>{children}</Text>

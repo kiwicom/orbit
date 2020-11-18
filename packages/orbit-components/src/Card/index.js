@@ -86,7 +86,7 @@ const Card = ({
       )}
 
       {children
-        ? React.Children.map(children, (item, key) => {
+        && React.Children.map(children, (item, key) => {
             if (!item) return null;
             const topRoundedBorder =
               expandedSections.indexOf(key - 1) !== -1 || expandedSections.indexOf(key) !== -1;
@@ -111,19 +111,14 @@ const Card = ({
                   isOpened: expandedSections.some(val => val === index),
                 }}
               >
-                {loading ? (
-                  <CardWrapper noPadding>
-                    <Loading loading={loading} type="boxLoader">
-                      {renderSection(item, index)}
-                    </Loading>
-                  </CardWrapper>
-                ) : (
-                  renderSection(item, index)
-                )}
+                {!loading && renderSection(item, index) }
               </SectionProvider>
             );
-          })
-        : null}
+          })}
+      {loading && (
+      <CardWrapper noPadding>
+        <Loading loading={loading} type="boxLoader" />
+      </CardWrapper>)}
     </StyledCard>
   );
 };

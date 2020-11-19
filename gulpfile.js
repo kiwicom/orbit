@@ -9,6 +9,8 @@ const mergeStream = require("merge-stream");
 const transform = require("through2").obj;
 const path = require("path");
 
+require("dotenv-safe").config();
+
 async function previewChangelog(done) {
   const packages = await getPackages();
   const streams = packages.map(pkg => {

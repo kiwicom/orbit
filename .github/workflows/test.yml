@@ -57,10 +57,10 @@ jobs:
           node-version: 12
 
       - name: Get BRANCH_NAME
-        run: echo ::set-env name=BRANCH_NAME::${{ github.head_ref }}
+        run: echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
 
       - name: Get BRANCH_URL
-        run: echo ::set-env name=BRANCH_URL::$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
 
       - name: Build storybook
         run: yarn orbit-components build:storybook

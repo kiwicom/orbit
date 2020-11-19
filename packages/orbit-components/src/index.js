@@ -105,6 +105,7 @@ export { default as SocialButton } from "./SocialButton";
 export { default as Stepper } from "./Stepper";
 export { default as StepperStateless } from "./Stepper/StepperStateless";
 export { default as StopoverArrow } from "./StopoverArrow";
+export { default as SmartPassIllustration } from "./SmartPassIllustration";
 export { default as Tag } from "./Tag";
 export { default as Textarea } from "./Textarea";
 export { default as Tile } from "./Tile";

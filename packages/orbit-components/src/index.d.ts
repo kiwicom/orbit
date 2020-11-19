@@ -90,6 +90,7 @@ export { Grid } from "./utils/Grid/index";
 export { Stepper } from "./Stepper/index";
 export { StepperStateless } from "./Stepper/StepperStateless/index";
 export { StopoverArrow } from "./StopoverArrow/index";
+export { SmartPassIllustration } from "./SmartPassIllustration/index";
 export { ThemeProvider } from "./ThemeProvider/index";
 export { Translate } from "./Translate/index";
 export { NavigationBar } from "./NavigationBar/index";

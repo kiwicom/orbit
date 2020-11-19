@@ -3,6 +3,7 @@ umd
 es
 .out
 .cache
+.DS_STORE
 src/data/airportIllustrations.json
 src/data/illustrations.json
 src/data/icons.json

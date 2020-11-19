@@ -2,7 +2,8 @@
   "name": "@kiwicom/orbit",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -20,6 +21,7 @@
     "loki:test": "yarn workspace @kiwicom/orbit-components loki test",
     "loki:approve": "yarn workspace @kiwicom/orbit-components loki approve",
     "dev": "yarn workspace @kiwicom/orbit-components storybook",
+    "dev:docs": "yarn workspace orbit.kiwi dev",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish"
   },

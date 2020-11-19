@@ -21,5 +21,8 @@ packages/orbit-components/src/AirportIllustration/index.d.ts
 packages/orbit-components/src/ServiceLogo/index.d.ts
 packages/orbit-components/src/FeatureIcon/index.d.ts
 
+docs/.cache
+docs/public
+
 # orbit design tokens
 packages/orbit-design-tokens/output/

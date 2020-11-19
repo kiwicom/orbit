@@ -1,0 +1,24 @@
+{
+  "name": "orbit.kiwi",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "devDependencies": {
+    "@kiwicom/orbit-design-tokens": "^0.12.2",
+    "@mapbox/rehype-prism": "^0.5.0",
+    "@mdx-js/mdx": "^1.6.21",
+    "@mdx-js/react": "^1.6.21",
+    "babel-preset-gatsby": "^0.7.0",
+    "gatsby": "^2.27.0",
+    "gatsby-image": "^2.6.0",
+    "gatsby-plugin-mdx": "^1.5.0",
+    "gatsby-plugin-sharp": "^2.9.0",
+    "gatsby-source-filesystem": "^2.6.0",
+    "gatsby-transformer-sharp": "^2.7.0",
+    "tailwindcss": "^1.9.6"
+  }
+}

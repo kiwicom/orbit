@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.99.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.98.0...@kiwicom/orbit-components@0.99.0) (2020-11-19)
+
+
+### Bug Fixes
+
+* **Popover:** a11y issues ([45dbbdf](https://github.com/kiwicom/orbit/commit/45dbbdf094f688252a2a01a325ac823514609781))
+* **Timeline:** make subLabel optional ([#2505](https://github.com/kiwicom/orbit/issues/2505)) ([8cb77f0](https://github.com/kiwicom/orbit/commit/8cb77f011a2365ff178be7422827efcb19d0aef2))
+* **Tooltip:** only call `preventDefault` on mobile ([#2502](https://github.com/kiwicom/orbit/issues/2502)) ([f73940b](https://github.com/kiwicom/orbit/commit/f73940b5803311fb4b57418a6e384ea2ae7b5a0e)), closes [#2230](https://github.com/kiwicom/orbit/issues/2230)
+
+
+### Features
+
+* SmartPassIllustration component ([#2504](https://github.com/kiwicom/orbit/issues/2504)) ([4c8ba9c](https://github.com/kiwicom/orbit/commit/4c8ba9c1e3c98a734689ed04801d7d982136ba71))
+
+
+
+
+
 # [0.98.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.96.3...@kiwicom/orbit-components@0.98.0) (2020-11-10)
 
 

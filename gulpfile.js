@@ -8,10 +8,16 @@ const markdownChalk = require("markdown-chalk");
 const mergeStream = require("merge-stream");
 const transform = require("through2").obj;
 const path = require("path");
+const dotenv = require("dotenv-safe");
 
 const eslintCI = require("./tasks/eslintCI");
 
-require("dotenv-safe").config();
+function configureDotenv(done) {
+  dotenv.config({
+    example: ".env.example",
+  });
+  done();
+}
 
 async function previewChangelog(done) {
   const packages = await getPackages();
@@ -59,5 +65,5 @@ function publishPackages() {
 
 module.exports = {
   eslintCI,
-  publish: series(previewChangelog, publishPackages),
+  publish: series(configureDotenv, previewChangelog, publishPackages),
 };

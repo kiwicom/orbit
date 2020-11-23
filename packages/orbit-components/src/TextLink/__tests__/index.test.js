@@ -62,16 +62,16 @@ describe("#TextLink", () => {
     expect(link).toHaveAttribute("rel", expect.stringContaining(rel));
     expect(link).toHaveAttribute("target", "_blank");
   });
+
   it("should no have underline and height for a11y", () => {
-    const { container } = render(
+    render(
       <TextLink noUnderline standAlone>
         {title}
       </TextLink>,
     );
-    expect(getComputedStyle(container.firstChild)).toHaveProperty("text-decoration", "none");
-    expect(getComputedStyle(container.firstChild)).toHaveProperty(
-      "height",
-      defaultTheme.orbit.heightButtonNormal,
-    );
+    expect(screen.getByRole("button")).toHaveStyle({
+      textDecoration: "none",
+      height: defaultTheme.orbit.heightButtonNormal,
+    });
   });
 });

@@ -24,6 +24,7 @@ const StyledSlider = styled.div`
   position: relative;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSlider.defaultProps = {
   theme: defaultTheme,
 };
@@ -58,6 +59,7 @@ const StyledSliderContent = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSliderContent.defaultProps = {
   theme: defaultTheme,
 };

@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 type ImageObject = {|
   "*"?: string,
@@ -25,4 +25,4 @@ export type PictureProps = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledLazyImage: ReactComponentStyled<any>;
+declare export var StyledLazyImage: StyledComponent<any>;

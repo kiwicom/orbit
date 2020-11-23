@@ -71,6 +71,7 @@ const Field = styled(
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
@@ -100,6 +101,7 @@ export const FakeInput = styled(({ children, className }) => (
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeInput.defaultProps = {
   theme: defaultTheme,
 };
@@ -129,6 +131,7 @@ export const InputContainer = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 InputContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -150,6 +153,7 @@ const StyledInlineLabel = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
@@ -177,6 +181,7 @@ export const Prefix = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Prefix.defaultProps = {
   theme: defaultTheme,
 };
@@ -201,6 +206,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Suffix.defaultProps = {
   theme: defaultTheme,
 };
@@ -273,6 +279,7 @@ export const Input = styled(
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };

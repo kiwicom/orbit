@@ -17,6 +17,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
   transition: ${({ theme }) => theme.orbit.durationFast};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionIconRight.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,6 +57,7 @@ export const StyledCardSectionHeader = styled.div`
 
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -64,6 +66,7 @@ const StyledCardSectionButtons = styled.div`
   margin-${left}: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionButtons.defaultProps = {
   theme: defaultTheme,
 };
@@ -72,6 +75,7 @@ const StyledCardSectionHeaderContent = styled.div`
   flex: 1;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionHeaderContent.defaultProps = {
   theme: defaultTheme,
 };

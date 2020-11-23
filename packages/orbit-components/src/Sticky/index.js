@@ -19,6 +19,7 @@ const StyledStickyContent = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStickyContent.defaultProps = {
   theme: defaultTheme,
 };

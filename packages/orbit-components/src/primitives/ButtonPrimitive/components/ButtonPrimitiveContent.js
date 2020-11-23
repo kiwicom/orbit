@@ -22,6 +22,7 @@ const StyledButtonPrimitiveContent = styled(
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveContent.defaultProps = {
   theme: defaultTheme,
 };

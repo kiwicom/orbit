@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { TransitionDuration } from "../transition";
 
@@ -19,6 +19,6 @@ export type Props = {|
   +transitionDuration?: TransitionDuration,
 |};
 
-declare export var StyledSlide: ReactComponentStyled<any>;
+declare export var StyledSlide: StyledComponent<any>;
 
 declare export default React.ComponentType<Props>;

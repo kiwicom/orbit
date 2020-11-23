@@ -22,6 +22,7 @@ export const StyledCardHeader = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -40,6 +41,7 @@ const StyledSubTitle = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSubTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -51,6 +53,7 @@ const StyledIcon = styled.div`
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIcon.defaultProps = {
   theme: defaultTheme,
 };

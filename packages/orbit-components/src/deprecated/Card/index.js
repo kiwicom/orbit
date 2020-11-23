@@ -47,6 +47,7 @@ const StyledChildWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChildWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -90,6 +91,7 @@ export const StyledCard = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCard.defaultProps = {
   theme: defaultTheme,
 };

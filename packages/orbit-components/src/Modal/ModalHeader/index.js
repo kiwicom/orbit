@@ -31,6 +31,7 @@ export const ModalHeading = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalHeading.defaultProps = {
   theme: defaultTheme,
 };
@@ -49,6 +50,7 @@ const ModalTitle = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,6 +59,7 @@ const ModalDescription = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalDescription.defaultProps = {
   theme: defaultTheme,
 };
@@ -104,6 +107,7 @@ export const StyledModalHeader = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -140,6 +144,7 @@ export const MobileHeader = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 MobileHeader.defaultProps = {
   theme: defaultTheme,
 };

@@ -30,6 +30,7 @@ export const StyledFeatureIcon = styled(({ className, name, alt, dataTest }) => 
   background-color: transparent;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFeatureIcon.defaultProps = {
   theme: defaultTheme,
 };

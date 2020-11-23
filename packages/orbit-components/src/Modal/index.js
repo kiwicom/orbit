@@ -59,6 +59,7 @@ const ModalBody = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalBody.defaultProps = {
   theme: defaultTheme,
 };
@@ -93,6 +94,7 @@ const ModalWrapper = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -166,6 +168,7 @@ const CloseContainer = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -319,6 +322,7 @@ const ModalWrapperContent = styled.div`
     )};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };

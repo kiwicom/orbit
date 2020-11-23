@@ -13,6 +13,7 @@ const StyledDrawerClose = styled.div`
   margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerClose.defaultProps = {
   theme: defaultTheme,
 };

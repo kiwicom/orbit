@@ -62,6 +62,7 @@ const StyledPricingTableItem = styled.div`
     `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPricingTableItem.defaultProps = {
   theme: defaultTheme,
 };
@@ -100,6 +101,7 @@ const StyledBadgeWrapperContent = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadgeWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -112,6 +114,7 @@ const DesktopRadio = styled.div`
   right: 10px;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 DesktopRadio.defaultProps = {
   theme: defaultTheme,
 };
@@ -120,6 +123,7 @@ const Spacer = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Spacer.defaultProps = {
   theme: defaultTheme,
 };
@@ -162,6 +166,7 @@ export const StyledListWrapper = styled.div`
     `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListWrapper.defaultProps = {
   theme: defaultTheme,
 };

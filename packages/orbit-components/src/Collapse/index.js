@@ -22,6 +22,7 @@ const AnimatedIcon = styled(ChevronDown)`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 AnimatedIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -38,6 +39,7 @@ const StyledCollapse = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapse.defaultProps = {
   theme: defaultTheme,
 };
@@ -48,6 +50,7 @@ const StyledCollapseLabel = styled.div`
   cursor: pointer;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapseLabel.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,6 +59,7 @@ const StyledCollapseChildren = styled.div`
   margin: ${({ theme }) => theme.orbit.spaceSmall} 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapseChildren.defaultProps = {
   theme: defaultTheme,
 };

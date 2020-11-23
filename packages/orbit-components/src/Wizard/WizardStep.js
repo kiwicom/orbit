@@ -30,6 +30,7 @@ const StyledContainer = styled.li`
       `};
     `}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -45,6 +46,7 @@ const StyledActiveMarker = styled.div`
     pointer-events: none;
   `}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledActiveMarker.defaultProps = {
   theme: defaultTheme,
 };
@@ -75,6 +77,7 @@ const StyledProgressBar = styled.div`
     }
   `}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledProgressBar.defaultProps = {
   theme: defaultTheme,
 };
@@ -108,6 +111,7 @@ const StyledLink = styled.a`
         `}
   `};
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLink.defaultProps = {
   theme: defaultTheme,
 };

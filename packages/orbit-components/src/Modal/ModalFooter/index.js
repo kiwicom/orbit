@@ -23,6 +23,7 @@ const StyledChild = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -59,6 +60,7 @@ export const StyledModalFooter = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalFooter.defaultProps = {
   theme: defaultTheme,
 };

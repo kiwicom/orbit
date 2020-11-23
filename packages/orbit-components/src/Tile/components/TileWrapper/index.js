@@ -30,6 +30,7 @@ export const StyledTileWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileWrapper.defaultProps = {
   theme: defaultTheme,
 };

@@ -56,6 +56,7 @@ const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };

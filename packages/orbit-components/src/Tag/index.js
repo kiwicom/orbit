@@ -118,6 +118,7 @@ export const StyledTag = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTag.defaultProps = {
   theme: defaultTheme,
 };
@@ -136,7 +137,7 @@ const StyledClose = styled.div`
         selected && !removable ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
   }
 `;
-
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledClose.defaultProps = {
   theme: defaultTheme,
 };

@@ -20,6 +20,7 @@ const ChevronIcon = styled(ChevronDown)`
   transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ChevronIcon.defaultProps = {
   theme: defaultTheme,
 };

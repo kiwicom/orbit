@@ -195,6 +195,7 @@ export const StyledButtonPrimitive = styled(
   `}};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitive.defaultProps = {
   theme: defaultTheme,
 };

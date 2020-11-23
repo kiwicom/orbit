@@ -50,6 +50,7 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
     active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteInkLighter};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };

@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/inputfield/
 */
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation, TranslationString, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken";
@@ -50,12 +50,12 @@ export type Props = {|
   +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export var FakeInput: ReactComponentStyled<any>;
+declare export var FakeInput: StyledComponent<any>;
 
-declare export var Input: ReactComponentStyled<any>;
+declare export var Input: StyledComponent<any>;
 
-declare export var Prefix: ReactComponentStyled<any>;
+declare export var Prefix: StyledComponent<any>;
 
-declare export var InputContainer: ReactComponentStyled<any>;
+declare export var InputContainer: StyledComponent<any>;
 
 declare export default React.AbstractComponent<Props, HTMLInputElement>;

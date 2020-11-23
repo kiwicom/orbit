@@ -36,6 +36,7 @@ export const StyledServiceLogo = styled(({ className, name, size, grayScale, the
   background-color: transparent; // TODO: create token backgroundServiceLogo
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledServiceLogo.defaultProps = {
   theme: defaultTheme,
 };

@@ -1,5 +1,5 @@
 // @flow
-import { Interpolation } from "styled-components";
+import type { Interpolation } from "styled-components";
 
 import type { Position } from "../index";
 import type { Theme } from "../../defaultTheme";

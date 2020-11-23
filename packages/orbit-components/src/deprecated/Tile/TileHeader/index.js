@@ -19,6 +19,7 @@ const StyledTileHeader = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -29,6 +30,7 @@ const StyledTileTitle = styled.div`
   width: 100%;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -42,6 +44,7 @@ const StyledTileIcon = styled.div`
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -59,6 +62,7 @@ const StyledTileDescription = styled.div`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileDescription.defaultProps = {
   theme: defaultTheme,
 };
@@ -78,6 +82,7 @@ export const StyledIconRight = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconRight.defaultProps = {
   theme: defaultTheme,
 };

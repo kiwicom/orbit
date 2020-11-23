@@ -20,6 +20,7 @@ const topBorderRadius = css`
   `)}
 `;
 
+// $FlowFixMe: unsure what this is supposed to be, it's not a component
 topBorderRadius.defaultTheme = {
   theme: defaultTheme,
 };
@@ -34,6 +35,7 @@ const bottomBorderRadius = css`
   `)}
 `;
 
+// $FlowFixMe: unsure what this is supposed to be, it's not a component
 bottomBorderRadius.defaultProps = {
   theme: defaultTheme,
 };
@@ -89,6 +91,7 @@ const StyledCardWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardWrapper.defaultProps = {
   theme: defaultTheme,
 };

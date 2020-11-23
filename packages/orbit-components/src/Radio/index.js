@@ -37,6 +37,7 @@ const Glyph = styled.span`
   flex-shrink: 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Glyph.defaultProps = {
   theme: defaultTheme,
 };
@@ -58,6 +59,7 @@ const IconContainer = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,6 +71,7 @@ const TextContainer = styled.div`
   flex: 1; // IE wrapping fix
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 TextContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -79,6 +82,7 @@ const Info = styled.span`
   line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Info.defaultProps = {
   theme: defaultTheme,
 };
@@ -99,6 +103,7 @@ const LabelText = styled.span`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 LabelText.defaultProps = {
   theme: defaultTheme,
 };
@@ -137,6 +142,7 @@ const Input = styled.input`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
@@ -175,6 +181,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Label.defaultProps = {
   theme: defaultTheme,
 };

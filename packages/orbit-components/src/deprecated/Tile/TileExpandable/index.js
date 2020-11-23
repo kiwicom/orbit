@@ -26,6 +26,7 @@ const StyledTileExpandable = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileExpandable.defaultProps = {
   theme: defaultTheme,
 };

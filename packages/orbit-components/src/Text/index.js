@@ -79,6 +79,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };

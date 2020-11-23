@@ -18,6 +18,7 @@ export const CardElement = css`
   `)}
 `;
 
+// $FlowFixMe: unsure what this is supposed to be, it's not a component
 CardElement.defaultProps = {
   theme: defaultTheme,
 };

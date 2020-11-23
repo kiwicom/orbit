@@ -38,6 +38,7 @@ const StyledIconContainer = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -85,6 +86,7 @@ export const StyledTextLink = styled(
   ${getLinkStyle};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextLink.defaultProps = {
   theme: defaultTheme,
 };

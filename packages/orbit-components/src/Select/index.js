@@ -30,6 +30,7 @@ const Label = styled.label`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Label.defaultProps = {
   theme: defaultTheme,
 };
@@ -169,6 +170,7 @@ const StyledSelect = styled(
   color: ${({ customValueText }) => customValueText && "transparent !important"};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
@@ -185,6 +187,7 @@ export const SelectContainer = styled(({ className, children }) => (
   cursor: pointer;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -202,6 +205,7 @@ const SelectPrefix = styled(({ className, children }) => (
   height: ${getSelectSize};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
@@ -228,6 +232,7 @@ const SelectSuffix = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
@@ -252,6 +257,7 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...pr
   pointer-events: none;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };

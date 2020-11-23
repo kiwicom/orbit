@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/tag/
 */
 import * as React from "react";
-import { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
@@ -20,4 +20,4 @@ export type Props = {|
 
 declare export default React.AbstractComponent<Props, HTMLDivElement>;
 
-declare export var StyledTag: ReactComponentStyled<any>;
+declare export var StyledTag: StyledComponent<any>;

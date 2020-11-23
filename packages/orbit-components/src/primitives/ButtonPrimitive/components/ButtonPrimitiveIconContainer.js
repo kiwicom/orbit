@@ -24,6 +24,7 @@ export const StyledButtonPrimitiveIconContainer = styled(({ className, children 
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveIconContainer.defaultProps = {
   theme: defaultTheme,
 };

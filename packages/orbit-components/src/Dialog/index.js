@@ -41,6 +41,7 @@ const StyledDialog = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialog.defaultProps = {
   theme: defaultTheme,
 };
@@ -76,6 +77,7 @@ const StyledDialogContent = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -97,6 +99,7 @@ const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
   )};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAction.defaultProps = {
   theme: defaultTheme,
 };

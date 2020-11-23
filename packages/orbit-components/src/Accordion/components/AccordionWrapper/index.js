@@ -17,6 +17,7 @@ const StyledAccordionWrapper = styled.div`
   margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAccordionWrapper.defaultProps = {
   theme: defaultTheme,
 };

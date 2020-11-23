@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/heading/
 */
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
@@ -27,6 +27,6 @@ export type GetHeadingToken = (name: string) => ({| ...ThemeProps, type: Type |}
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledHeading: ReactComponentStyled<any>;
+declare export var StyledHeading: StyledComponent<any>;
 
 declare export var getHeadingToken: GetHeadingToken;

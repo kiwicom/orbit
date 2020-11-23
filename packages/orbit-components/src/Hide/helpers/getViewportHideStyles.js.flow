@@ -1,5 +1,5 @@
 // @flow
-import { Interpolation } from "styled-components";
+import type { Interpolation } from "styled-components";
 
 import type { Devices } from "../../utils/mediaQuery/consts";
 

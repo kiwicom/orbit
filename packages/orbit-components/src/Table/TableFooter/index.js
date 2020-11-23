@@ -17,6 +17,7 @@ export const StyledTableFooter = styled(({ children, className, dataTest }) => (
   font-weight: bold;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableFooter.defaultProps = {
   theme: defaultTheme,
 };

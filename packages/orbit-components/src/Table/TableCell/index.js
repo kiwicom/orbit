@@ -27,6 +27,7 @@ export const StyledTableCell = styled(
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableCell.defaultProps = {
   theme: defaultTheme,
 };

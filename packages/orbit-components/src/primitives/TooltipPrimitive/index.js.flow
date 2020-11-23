@@ -2,7 +2,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltipPrimitive/
 */
-import { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 import * as React from "react";
 
 import type { Globals } from "../../common/common.js.flow";
@@ -53,6 +53,6 @@ export type Props = {|
   +block?: boolean,
 |};
 
-declare export var StyledTooltipChildren: ReactComponentStyled<any>;
+declare export var StyledTooltipChildren: StyledComponent<any>;
 
 declare export default React.ComponentType<Props>;

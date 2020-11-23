@@ -27,10 +27,12 @@ const HeaderActions = styled.div`
   margin-left: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Wrapper.defaultProps = {
   theme: defaultTheme,
 };
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 HeaderActions.defaultProps = {
   theme: defaultTheme,
 };

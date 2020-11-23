@@ -34,6 +34,7 @@ export const StyledTile = styled(({ theme, icon, title, external, ...props }) =>
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTile.defaultProps = {
   theme: defaultTheme,
 };

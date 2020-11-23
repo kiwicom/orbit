@@ -17,6 +17,7 @@ const StyledIndent = styled.div`
   padding-left: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIndent.defaultProps = {
   theme: defaultTheme,
 };

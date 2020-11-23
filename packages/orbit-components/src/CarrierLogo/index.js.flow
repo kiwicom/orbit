@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/carrierlogo/
 */
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
@@ -26,6 +26,6 @@ type styledCarrierLogo = {|
   carriers: Carrier,
 |};
 
-declare export var StyledCarrierLogo: ReactComponentStyled<styledCarrierLogo>;
+declare export var StyledCarrierLogo: StyledComponent<styledCarrierLogo>;
 
 declare export default React.ComponentType<Props>;

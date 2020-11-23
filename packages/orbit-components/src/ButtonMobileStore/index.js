@@ -14,6 +14,7 @@ const StyledButtonMobileStore = styled(({ theme, type, ...props }) => (
   height: ${HEIGHT};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonMobileStore.defaultProps = {
   theme: defaultTheme,
 };

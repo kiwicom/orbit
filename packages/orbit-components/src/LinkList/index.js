@@ -23,6 +23,7 @@ const StyledLinkList = styled.ul`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLinkList.defaultProps = {
   theme: defaultTheme,
 };
@@ -66,6 +67,7 @@ const StyledNavigationLinkListChild = styled(({ theme, direction, ...props }) =>
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationLinkListChild.defaultProps = {
   theme: defaultTheme,
 };

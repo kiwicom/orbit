@@ -141,6 +141,7 @@ storiesOf("InputStepper", module)
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
       const titleIncrement = text("Title increment", "Add a passenger");
       const titleDecrement = text("Title decrement", "Remove a passenger");
+      const readOnly = boolean("readOnly", false);
 
       return (
         <InputStepper
@@ -155,6 +156,7 @@ storiesOf("InputStepper", module)
           minValue={min}
           disabled={disabled}
           required={required}
+          readOnly={readOnly}
           dataTest={dataTest}
           onChange={action("onChange")}
           onFocus={action("onFocus")}

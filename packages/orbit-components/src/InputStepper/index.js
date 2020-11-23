@@ -100,6 +100,7 @@ const InputStepper = React.forwardRef<Props, HTMLElement>(
       dataTest,
       size = SIZE_OPTIONS.NORMAL,
       required,
+      readOnly,
       minValue,
       maxValue,
       tabIndex,
@@ -115,6 +116,7 @@ const InputStepper = React.forwardRef<Props, HTMLElement>(
         label={label}
         disabled={disabled}
         required={required}
+        readOnly={readOnly}
         name={name}
         error={error}
         help={help}

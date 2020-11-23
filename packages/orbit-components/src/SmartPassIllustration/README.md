@@ -35,4 +35,4 @@ Table below contains all types of the props available in SmartPassIllustration c
 | `"small"`      | `"v2"` |
 | `"medium"`     | `"v3"` |
 | `"large"`      | `"v4"` |
-| `"display"`    | `"v4"` |
+| `"display"`    | `"v5"` |

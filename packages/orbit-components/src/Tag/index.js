@@ -192,6 +192,7 @@ const Tag = (props: Props) => {
             tabIndex="0"
             aria-label="close"
             selected={selected}
+            aria-label="close"
             role="button"
             onKeyDown={ev => {
               ev.stopPropagation();

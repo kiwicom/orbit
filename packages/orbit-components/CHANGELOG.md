@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.100.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.99.0...@kiwicom/orbit-components@0.100.0) (2020-11-23)
+
+
+### Bug Fixes
+
+* **RTL:** fix Flow types of utilities ([#2520](https://github.com/kiwicom/orbit/issues/2520)) ([d696b4c](https://github.com/kiwicom/orbit/commit/d696b4cc59dfeaf35f49d3099c845bb2ab992487)), closes [#2331](https://github.com/kiwicom/orbit/issues/2331)
+
+
+### Features
+
+* **InputStepper:** added readonly prop ([#2495](https://github.com/kiwicom/orbit/issues/2495)) ([74fee3f](https://github.com/kiwicom/orbit/commit/74fee3f208dcd6f89e66f92f66710a0fa68982f3))
+
+
+
+
+
 # [0.99.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.98.0...@kiwicom/orbit-components@0.99.0) (2020-11-19)
 
 

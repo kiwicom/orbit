@@ -46,6 +46,7 @@ const InputStepperStateless = ({
   maxValue,
   minValue,
   required,
+  readOnly,
   tabIndex,
   forwardedRef,
   spaceAfter,
@@ -65,6 +66,7 @@ const InputStepperStateless = ({
         label={label}
         disabled={disabled}
         required={required}
+        readOnly={readOnly}
         name={name}
         error={error}
         help={help}

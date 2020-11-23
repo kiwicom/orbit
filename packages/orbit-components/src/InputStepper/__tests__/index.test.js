@@ -19,6 +19,7 @@ describe("InputSteppe", () => {
         maxValue={100}
         minValue={1}
         tabIndex="-1"
+        readOnly
         required
         titleIncrement="Add"
         titleDecrement="Remove"
@@ -27,12 +28,12 @@ describe("InputSteppe", () => {
       />,
     );
     const input = screen.getByRole("spinbutton", { name: /Label/ });
-    expect(input).toHaveValue(1);
     expect(input).toHaveAttribute("name", "name");
     expect(input).toBeDisabled();
     expect(input).toHaveAttribute("max", "100");
     expect(input).toHaveAttribute("min", "1");
     expect(input).toHaveAttribute("tabindex", "-1");
+    expect(input).toHaveAttribute("readonly");
     expect(screen.getByText(/\*/)).toBeInTheDocument();
     expect(screen.getByLabelText("Add")).toBeInTheDocument();
     expect(screen.getByLabelText("Remove")).toBeInTheDocument();

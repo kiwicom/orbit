@@ -57,7 +57,7 @@ const CloseContainer = styled.div`
       : selected
       ? theme.orbit.paletteBlueDarker
       : theme.orbit.paletteInkLight};
-  cursor: pointer;
+  cursor: ${({ actionable }) => actionable && `pointer`};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover {
@@ -174,7 +174,7 @@ const Tag = (props: Props) => {
       onClick={onClick}
       removable={!!onRemove}
       selected={selected}
-      tabIndex="0"
+      tabIndex={(onClick || onRemove) && "0"}
       role="button"
       onKeyDown={ev => buttonClickEmulation(ev, onClick)}
     >

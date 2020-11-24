@@ -12,6 +12,10 @@ import Illustration from "../../Illustration";
 
 jest.useFakeTimers("modern");
 
+jest.mock("../../hooks/useMediaQuery", () => () => ({
+  isLargeMobile: true,
+}));
+
 beforeEach(() => {
   jest.clearAllTimers();
 });
@@ -68,7 +72,7 @@ describe("Modal", () => {
   });
 
   it("should expose ref scrolling API", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<React.ElementRef<typeof Modal>>();
     render(
       <Modal ref={ref} dataTest="test">
         content
@@ -76,7 +80,9 @@ describe("Modal", () => {
     );
 
     ref.current?.setScrollPosition(20);
-    expect(screen.getByTestId("test").scrollTop).toBe(20);
+    const scrollPosition = ref.current?.getScrollPosition();
+    expect(scrollPosition).toBe(screen.getByTestId("test").scrollTop);
+    expect(scrollPosition).toBe(20);
   });
 
   it("should call callback function when clicking on close button", () => {

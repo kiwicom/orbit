@@ -17,9 +17,9 @@ import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import randomID from "../utils/randomID";
 import onlyIE from "../utils/onlyIE";
+import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
-import useTheme from "../hooks/useTheme";
 
 import type { Instance, Props } from "./index";
 
@@ -351,11 +351,9 @@ const Modal = React.forwardRef<Props, Instance>(
     const [firstFocusableEl, setFirstFocusableEl] = React.useState<HTMLElement | null>(null);
     const [lastFocusableEl, setLastFocusableEl] = React.useState<HTMLElement | null>(null);
 
-    const modalContent: {| current: any | HTMLElement |} = React.useRef();
-    const modalBody: {| current: any | HTMLElement |} = React.useRef();
+    const modalContent = React.useRef<HTMLElement | null>(null);
+    const modalBody = React.useRef<HTMLElement | null>(null);
     const modalID = React.useMemo(() => randomID("modalID"), []);
-
-    const theme = useTheme();
 
     const prevChildren = usePrevious(children);
 
@@ -382,20 +380,21 @@ const Modal = React.forwardRef<Props, Instance>(
     };
 
     const decideFixedFooter = () => {
+      if (!modalContent.current || !modalBody.current) return;
       // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
       const content = modalContent.current;
       const body = modalBody.current;
       const contentHeight =
-        content?.scrollHeight > content?.offsetHeight + OFFSET
-          ? content?.offsetHeight
-          : content?.scrollHeight;
+        content.scrollHeight > content.offsetHeight + OFFSET
+          ? content.offsetHeight
+          : content.scrollHeight;
 
       // when scrollHeight + topPadding - scrollingElementHeight is smaller than or equal to window height
-      setFullyScrolled(contentHeight + OFFSET - body?.scrollTop <= window.innerHeight);
+      setFullyScrolled(contentHeight + OFFSET - body.scrollTop <= window.innerHeight);
     };
 
     const manageFocus = () => {
-      if (!focusTriggered) return;
+      if (!focusTriggered || !modalContent.current) return;
 
       const focusableElements = modalContent.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
 
@@ -532,17 +531,28 @@ const Modal = React.forwardRef<Props, Instance>(
       manageFocus();
     };
 
+    const { isLargeMobile } = useMediaQuery();
+    const scrollingElement = React.useRef<HTMLElement | null>(null);
+
+    React.useEffect(() => {
+      scrollingElement.current = isLargeMobile ? modalBody.current : modalContent.current;
+    }, [isLargeMobile]);
+
+    const getScrollPosition = () => {
+      if (scrollingElement.current) {
+        return scrollingElement.current.scrollTop;
+      }
+      return null;
+    };
+
     const setScrollPosition = value => {
-      if (window?.innerWidth >= getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)) {
-        if (modalBody.current) {
-          modalBody.current.scrollTop = value;
-        }
-      } else if (modalContent.current) {
-        modalContent.current.scrollTop = value;
+      if (scrollingElement.current) {
+        scrollingElement.current.scrollTop = value;
       }
     };
 
     React.useImperativeHandle(ref, () => ({
+      getScrollPosition,
       setScrollPosition,
     }));
 

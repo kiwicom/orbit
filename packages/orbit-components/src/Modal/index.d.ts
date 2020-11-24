@@ -20,7 +20,10 @@ export interface Props extends Common.Global {
   readonly hasCloseButton?: boolean;
 }
 
-type Instance = { setScrollPosition: (value: number) => void };
+type Instance = {
+  getScrollPosition: () => number | null;
+  setScrollPosition: (value: number) => void;
+};
 
 declare const Modal: React.ForwardRefExoticComponent<
   React.PropsWithoutRef<Props> & React.RefAttributes<Instance>

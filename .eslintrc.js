@@ -15,6 +15,12 @@ module.exports = {
       files: "*.ts?(x)",
       extends: ["./config/eslintTS"],
     },
+    {
+      files: "**/__typetests__/**",
+      rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
       files: ["packages/orbit-components/src/utils/**/*"],

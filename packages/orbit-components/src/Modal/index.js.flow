@@ -36,7 +36,10 @@ export type Props = {|
   ...Globals,
 |};
 
-export type Instance = {| setScrollPosition: (value: number) => void |};
+export type Instance = {|
+  getScrollPosition: () => number | null,
+  setScrollPosition: (value: number) => void,
+|};
 
 declare export default React.AbstractComponent<Props, Instance>;
 

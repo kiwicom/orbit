@@ -28,8 +28,7 @@ const javascriptThemeableObjectFormatter = dictionary => {
   };
 
   const tokens = dictionary.allProperties
-    .map(token => {
-      const { name, value } = token;
+    .map(({ name, value }) => {
       return createVariable(name, createValue(value));
     })
     .join("\n");

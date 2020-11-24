@@ -8,8 +8,8 @@ const formatters = {
 };
 
 const registerFormatters = StyleDictionary => {
-  Object.keys(formatters).forEach(name => {
-    StyleDictionary.registerFormat(formatters[name]);
+  Object.values(formatters).forEach(formatter => {
+    StyleDictionary.registerFormat(formatter);
   });
 };
 

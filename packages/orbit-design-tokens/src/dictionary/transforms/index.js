@@ -8,9 +8,9 @@ const transforms = {
 };
 
 const registerTransforms = StyleDictionary => {
-  Object.keys(transforms).forEach(type => {
-    Object.keys(transforms[type]).forEach(transform => {
-      StyleDictionary.registerTransform(transforms[type][transform]);
+  Object.values(transforms).forEach(type => {
+    Object.values(type).forEach(transform => {
+      StyleDictionary.registerTransform(transform);
     });
   });
 };

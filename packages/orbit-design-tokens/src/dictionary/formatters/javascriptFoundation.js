@@ -31,9 +31,8 @@ const createCategoryObject = (category, values) => {
 const javascriptFoundationFormatter = dictionary => {
   const groupedTokens = _.groupBy(dictionary.allProperties, token => token.attributes.category);
 
-  const tokens = Object.keys(groupedTokens)
-    .map(category => {
-      const values = groupedTokens[category];
+  const tokens = Object.entries(groupedTokens)
+    .map(([category, values]) => {
       return createCategoryObject(category, values);
     })
     .join("\n");

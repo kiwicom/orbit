@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.100.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.100.0...@kiwicom/orbit-components@0.100.1) (2020-11-24)
+
+
+### Bug Fixes
+
+* expose getScrollPosition in Modal ([#2528](https://github.com/kiwicom/orbit/issues/2528)) ([ecd5b9f](https://github.com/kiwicom/orbit/commit/ecd5b9f0d556b80519bae735110bb9acb3de3946))
+
+
+
+
+
 # [0.100.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.99.0...@kiwicom/orbit-components@0.100.0) (2020-11-23)
 
 

@@ -1,0 +1,9 @@
+// @flow
+import type { Tokens } from "./createTokens";
+import type { CustomFoundation } from "./defaultFoundation";
+
+type Overrides = $Shape<Tokens>;
+
+export type CreateTheme = (foundation: CustomFoundation, overrides: Overrides) => Tokens;
+
+declare export default CreateTheme;

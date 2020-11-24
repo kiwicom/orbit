@@ -1,8 +1,9 @@
 // @flow
 import createTheme from "./createTheme";
 import defaultFoundation from "./defaultFoundation";
+import type { FromPlainObject } from "./fromPlainObject";
 
-export default function fromPlainObject(themePaletteColors) {
+const fromPlainObject: FromPlainObject = themePaletteColors => {
   const theme = {
     palette: {
       product: {
@@ -22,4 +23,6 @@ export default function fromPlainObject(themePaletteColors) {
     },
   };
   return createTheme(theme);
-}
+};
+
+export default fromPlainObject;

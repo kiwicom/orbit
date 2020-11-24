@@ -1,52 +1,54 @@
 {
-  "palette": {
-    "blue": {
-      "light": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.blue.light.base}"
+  "global": {
+    "palette": {
+      "blue": {
+        "light": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.blue.light.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.blue.light.default}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.blue.light.active}"
+          }
         },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.blue.light.complementary}"
+        "normal": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.blue.normal.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.blue.normal.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.blue.normal.active}"
+          }
         },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.blue.light.minor}"
-        }
-      },
-      "normal": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.blue.normal.base}"
+        "dark": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.blue.dark.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.blue.dark.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.blue.dark.active}"
+          }
         },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.blue.normal.complementary}"
-        },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.blue.normal.minor}"
-        }
-      },
-      "dark": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.blue.dark.base}"
-        },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.blue.dark.complementary}"
-        },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.blue.dark.minor}"
-        }
-      },
-      "darker": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.blue.darker.base}"
+        "darker": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.blue.darker.default}"
+          }
         }
       }
     }

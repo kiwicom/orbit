@@ -1,19 +1,19 @@
 {
-  "theme": {
+  "foundation": {
     "palette": {
       "white": {
         "normal": {
-          "base": {
+          "default": {
             "type": "color",
             "value": "#FFFFFF",
             "internal": true
           },
-          "complementary": {
+          "hover": {
             "type": "color",
             "value": "#F1F4F7",
             "internal": true
           },
-          "minor": {
+          "active": {
             "type": "color",
             "value": "#E7ECF1",
             "internal": true

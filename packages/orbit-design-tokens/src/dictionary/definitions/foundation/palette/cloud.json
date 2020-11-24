@@ -1,43 +1,43 @@
 {
-  "theme": {
+  "foundation": {
     "palette": {
       "cloud": {
         "light": {
-          "base": {
+          "default": {
             "type": "color",
             "value": "#F5F7F9",
             "internal": true
           },
-          "complementary": {
+          "hover": {
             "type": "color",
             "value": "#E5EAEF",
             "internal": true
           },
-          "minor": {
+          "active": {
             "type": "color",
             "value": "#D6DEE6",
             "internal": true
           }
         },
         "normal": {
-          "base": {
+          "default": {
             "type": "color",
             "value": "#EFF2F5",
             "internal": true
           },
-          "complementary": {
+          "hover": {
             "type": "color",
             "value": "#DCE3E9",
             "internal": true
           },
-          "minor": {
+          "active": {
             "type": "color",
             "value": "#CAD4DE",
             "internal": true
           }
         },
         "dark": {
-          "base": {
+          "default": {
             "type": "color",
             "value": "#E8EDF1",
             "internal": true

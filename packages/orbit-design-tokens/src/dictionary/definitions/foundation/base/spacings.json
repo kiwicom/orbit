@@ -1,0 +1,48 @@
+{
+  "foundation": {
+    "base": {
+      "space": {
+        "XXS": {
+          "type": "spacing",
+          "value": 4,
+          "internal": true
+        },
+        "XS": {
+          "type": "spacing",
+          "value": 8,
+          "internal": true
+        },
+        "S": {
+          "type": "spacing",
+          "value": 12,
+          "internal": true
+        },
+        "M": {
+          "type": "spacing",
+          "value": 16,
+          "internal": true
+        },
+        "L": {
+          "type": "spacing",
+          "value": 24,
+          "internal": true
+        },
+        "XL": {
+          "type": "spacing",
+          "value": 32,
+          "internal": true
+        },
+        "XXL": {
+          "type": "spacing",
+          "value": 40,
+          "internal": true
+        },
+        "XXXL": {
+          "type": "spacing",
+          "value": 52,
+          "internal": true
+        }
+      }
+    }
+  }
+}

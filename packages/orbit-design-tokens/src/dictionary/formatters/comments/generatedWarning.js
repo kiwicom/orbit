@@ -8,5 +8,5 @@ module.exports = `/**
 
  If you want to update some tokens:
  - please do so in /definitions folder
- - run script "yarn orbit-design-tokens build"
+ - run @kiwicom/orbit-design-tokens "build" script
 */`;

@@ -44,31 +44,59 @@ Table below contains all types of the props available in the Modal component.
 
 ### Functional specs
 
-- Also, if you want to select the Close Button element for testing purposes, use [data-test="ModalCloseButton"] selector.
+- To select the Close Button element for testing purposes, use [data-test="ModalCloseButton"] selector.
 
-- If you need to set scrollTop position of the Modal component, you can use instance of the component and method `setScrollPosition` like this:
+- To type a reference you're passing to a modal, use the following example:
 
-```jsx
-class Component extends React.Component {
-  modalRef: { current: null | React.ElementRef<*> } = React.createRef();
+  ```jsx
+  const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null)
+  ```
 
-  setScroll = () => {
-    if (modalRef.current) {
-      modalRef.current.setScrollPosition(100);
+- You might want to get the current scroll position of a Modal component, which might change based on media queries. Reading it constantly would degrade performance. Instead, get it on demand by using the `getScrollPosition` method in a Modal instance like this:
+
+  ```jsx
+  class Component extends React.Component {
+    const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null)
+
+    const getScroll = () => {
+      if (modalRef.current) {
+        setLocalScrollPosition(modalRef.current.getScrollPosition());
+      }
+    };
+
+    render() {
+      return (
+        <Modal ref={modalRef}>
+          Some content.
+        </Modal>
+      );
     }
-  };
-  render() {
-    return (
-      <Modal ref={modalRef}>
-        <ModalSection>Example usage of setting up the scrollTop position</ModalSection>
-        <ModalFooter>
-          <Button onClick={this.setScroll}>Change scrollTop</Button>
-        </ModalFooter>
-      </Modal>
-    );
   }
-}
-```
+  ```
+
+- To set the scroll position of a Modal component, use the `setScrollPosition` method in a Modal instance like this:
+
+  ```jsx
+  class Component extends React.Component {
+    const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null)
+
+    setScroll = () => {
+      if (modalRef.current) {
+        modalRef.current.setScrollPosition(100);
+      }
+    };
+    render() {
+      return (
+        <Modal ref={modalRef}>
+          <ModalSection>Example usage of setting up the scrollTop position</ModalSection>
+          <ModalFooter>
+            <Button onClick={this.setScroll}>Change scrollTop</Button>
+          </ModalFooter>
+        </Modal>
+      );
+    }
+  }
+  ```
 
 ---
 
@@ -82,7 +110,7 @@ Modal component offers a good flexibility and many variations in its usage. Ther
 import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 ```
 
-#### Usage:
+#### Usage
 
 ```jsx
 <Modal>
@@ -106,7 +134,7 @@ Table below contains all types of the props in the ModalSection component.
 import Modal, { ModalHeader } from "@kiwicom/orbit-components/lib/Modal";
 ```
 
-#### Usage:
+#### Usage
 
 ```jsx
 <Modal>

@@ -2,19 +2,28 @@
 import * as React from "react";
 
 import Button from "../../Button";
+import Heading from "../../Heading";
 import Modal from "../index";
 import ModalFooter from "../ModalFooter";
 import ModalSection from "../ModalSection";
 import ModalHeader from "../ModalHeader";
+import Stack from "../../Stack";
+import Text from "../../Text";
 
 export default {
   Example: () => {
     const [showModal, setShowModal] = React.useState(true);
-    const modalRef: {| current: React.ElementRef<any> |} = React.useRef(null);
+    const [localScrollPosition, setLocalScrollPosition] = React.useState();
+    const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);
 
     const setScroll = () => {
       if (modalRef.current) {
         modalRef.current.setScrollPosition(100);
+      }
+    };
+    const getScroll = () => {
+      if (modalRef.current) {
+        setLocalScrollPosition(modalRef.current.getScrollPosition());
       }
     };
     return (
@@ -26,10 +35,25 @@ export default {
             }}
             ref={modalRef}
           >
-            <ModalHeader title="Scrollable modal" />
+            <ModalHeader
+              title={
+                <Stack direction="row" align="center" justify="between">
+                  <Heading>Scrollable modal</Heading>
+                  <Button type="secondary" onClick={getScroll}>
+                    Scroll position: {localScrollPosition}
+                  </Button>
+                </Stack>
+              }
+            />
             <ModalSection>
-              Top of the modal. Scroll up here by clicking the button in the footer
+              <Text>Top of the modal. Scroll up here by clicking the button in the footer.</Text>
+              <Text>
+                To see the current scroll position at any time, use the button in the header.
+              </Text>
             </ModalSection>
+            <ModalSection>Scroll down to button</ModalSection>
+            <ModalSection>Scroll down to button</ModalSection>
+            <ModalSection>Scroll down to button</ModalSection>
             <ModalSection>Scroll down to button</ModalSection>
             <ModalSection>Scroll down to button</ModalSection>
             <ModalSection>Scroll down to button</ModalSection>
@@ -56,6 +80,6 @@ export default {
   info: {
     title: "Set scroll for modal",
     description:
-      "If you have a long modal and want to set the top for scrolling, use a reference and the setScrollPosition method.",
+      "If you have a long modal and want to scroll to a specific place, use a reference and the setScrollPosition method. You can also get the current scroll position at any time using the getScrollPosition method. Use it on demand for performance reasons.",
   },
 };

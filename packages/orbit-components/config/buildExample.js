@@ -130,7 +130,7 @@ async function getObjectProperty(body, name) {
 async function getExample(body, code) {
   const example = await getObjectProperty(body, "Example");
   return prettier
-    .format(generate(example, code).code, { semi: false, parser: "babel" })
+    .format(generate(example, code).code, { semi: false, parser: "flow" })
     .replace(/^;/, "");
 }
 

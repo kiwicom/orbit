@@ -5,6 +5,9 @@ import Modal from "..";
 
 export default function Test() {
   const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);
+  const scrollingElementRef = React.useCallback(node => {
+    node?.addEventListener("scroll", () => {});
+  }, []);
   React.useEffect(() => {
     modalRef.current?.getScrollPosition();
     modalRef.current?.setScrollPosition(20);
@@ -15,5 +18,9 @@ export default function Test() {
       // do something
     });
   }, []);
-  return <Modal ref={modalRef}>content</Modal>;
+  return (
+    <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
+      content
+    </Modal>
+  );
 }

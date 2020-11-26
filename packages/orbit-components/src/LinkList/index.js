@@ -37,9 +37,9 @@ const resolveSpacings = ({ spacing, direction, ...props }) => {
     );
 
   return css`
-    margin: ${margin && rtlSpacing(margin)}!important;
+    margin: ${margin && rtlSpacing(margin)};
     &:last-child {
-      margin: 0 !important;
+      margin: 0;
     }
   `;
 };

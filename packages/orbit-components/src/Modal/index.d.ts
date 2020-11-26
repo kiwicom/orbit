@@ -23,6 +23,8 @@ export interface Props extends Common.Global {
 type Instance = {
   getScrollPosition: () => number | null;
   setScrollPosition: (value: number) => void;
+  modalBody: React.RefObject<HTMLElement>;
+  modalContent: React.RefObject<HTMLElement>;
 };
 
 declare const Modal: React.ForwardRefExoticComponent<

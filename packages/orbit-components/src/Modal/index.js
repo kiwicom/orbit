@@ -554,6 +554,8 @@ const Modal = React.forwardRef<Props, Instance>(
     React.useImperativeHandle(ref, () => ({
       getScrollPosition,
       setScrollPosition,
+      modalBody,
+      modalContent,
     }));
 
     React.useEffect(() => {

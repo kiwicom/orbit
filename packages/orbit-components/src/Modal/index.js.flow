@@ -39,6 +39,8 @@ export type Props = {|
 export type Instance = {|
   getScrollPosition: () => number | null,
   setScrollPosition: (value: number) => void,
+  modalBody: {| current: HTMLElement | null |},
+  modalContent: {| current: HTMLElement | null |},
 |};
 
 declare export default React.AbstractComponent<Props, Instance>;

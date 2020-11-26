@@ -329,6 +329,7 @@ const Modal = React.forwardRef<Props, Instance>(
   (
     {
       size = SIZES.NORMAL,
+      scrollingElementRef,
       children,
       onClose,
       fixedFooter = false,
@@ -354,6 +355,37 @@ const Modal = React.forwardRef<Props, Instance>(
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
     const modalID = React.useMemo(() => randomID("modalID"), []);
+
+    const { isLargeMobile } = useMediaQuery();
+    const scrollingElement = React.useRef<HTMLElement | null>(null);
+    const setScrollingElementRefs = React.useCallback(
+      node => {
+        scrollingElement.current = node;
+        if (scrollingElementRef) {
+          if (typeof scrollingElementRef === "function") {
+            scrollingElementRef(node);
+          } else {
+            // eslint-disable-next-line no-param-reassign
+            scrollingElementRef.current = node;
+          }
+        }
+      },
+      [scrollingElementRef],
+    );
+    const modalContentRef = React.useCallback(
+      node => {
+        modalContent.current = node;
+        if (!isLargeMobile) setScrollingElementRefs(node);
+      },
+      [isLargeMobile, setScrollingElementRefs],
+    );
+    const modalBodyRef = React.useCallback(
+      node => {
+        modalBody.current = node;
+        if (isLargeMobile) setScrollingElementRefs(node);
+      },
+      [isLargeMobile, setScrollingElementRefs],
+    );
 
     const prevChildren = usePrevious(children);
 
@@ -531,13 +563,6 @@ const Modal = React.forwardRef<Props, Instance>(
       manageFocus();
     };
 
-    const { isLargeMobile } = useMediaQuery();
-    const scrollingElement = React.useRef<HTMLElement | null>(null);
-
-    React.useEffect(() => {
-      scrollingElement.current = isLargeMobile ? modalBody.current : modalContent.current;
-    }, [isLargeMobile]);
-
     const getScrollPosition = () => {
       if (scrollingElement.current) {
         return scrollingElement.current.scrollTop;
@@ -588,7 +613,7 @@ const Modal = React.forwardRef<Props, Instance>(
         onScroll={handleScroll}
         onClick={handleClickOutside}
         data-test={dataTest}
-        ref={modalBody}
+        ref={modalBodyRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={modalID}
@@ -605,7 +630,7 @@ const Modal = React.forwardRef<Props, Instance>(
             size={size}
             fixedFooter={fixedFooter}
             scrolled={scrolled}
-            ref={modalContent}
+            ref={modalContentRef}
             fixedClose={fixedClose}
             fullyScrolled={fullyScrolled}
             modalWidth={modalWidth}

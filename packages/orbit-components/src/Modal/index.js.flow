@@ -28,6 +28,9 @@ export type onClose = (
 export type Props = {|
   +size?: Size,
   +children: React.Node,
+  +scrollingElementRef?:
+    | ((instance: HTMLElement | null) => void)
+    | {| current: HTMLElement | null |},
   +onClose?: onClose,
   +fixedFooter?: boolean,
   +isMobileFullPage?: boolean,

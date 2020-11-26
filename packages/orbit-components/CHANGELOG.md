@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.101.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.100.1...@kiwicom/orbit-components@0.101.0) (2020-11-26)
+
+
+### Bug Fixes
+
+* **Modal:** expose modalBody and modalContent ([500cf6b](https://github.com/kiwicom/orbit/commit/500cf6b9556190fb30be0a3736591fc4238d89b1))
+
+
+### Features
+
+* **Modal:** add scrollingElementRef prop ([0cf4f7e](https://github.com/kiwicom/orbit/commit/0cf4f7e6e646974a3b8dbaf50507de1a312b43e1))
+* **SmartPassIllustration:** added v5 image ([#2519](https://github.com/kiwicom/orbit/issues/2519)) ([f718651](https://github.com/kiwicom/orbit/commit/f7186513257324c9fa79bc118c90e17184beea00))
+
+
+
+
+
 ## [0.100.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.100.0...@kiwicom/orbit-components@0.100.1) (2020-11-24)
 
 

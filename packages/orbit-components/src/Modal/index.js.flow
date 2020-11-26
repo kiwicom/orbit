@@ -28,6 +28,9 @@ export type onClose = (
 export type Props = {|
   +size?: Size,
   +children: React.Node,
+  +scrollingElementRef?:
+    | ((instance: HTMLElement | null) => void)
+    | {| current: HTMLElement | null |},
   +onClose?: onClose,
   +fixedFooter?: boolean,
   +isMobileFullPage?: boolean,
@@ -39,6 +42,8 @@ export type Props = {|
 export type Instance = {|
   getScrollPosition: () => number | null,
   setScrollPosition: (value: number) => void,
+  modalBody: {| current: HTMLElement | null |},
+  modalContent: {| current: HTMLElement | null |},
 |};
 
 declare export default React.AbstractComponent<Props, Instance>;

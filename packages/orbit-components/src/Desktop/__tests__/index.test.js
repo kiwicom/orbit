@@ -44,6 +44,7 @@ describe("Desktop", () => {
       }
 
       <div
+        aria-hidden="false"
         class="c0"
       >
         kek

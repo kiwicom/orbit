@@ -47,6 +47,7 @@ describe("Hide", () => {
       }
 
       <div
+        aria-hidden="false"
         class="c0"
       >
         content

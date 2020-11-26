@@ -121,6 +121,7 @@ storiesOf("Textarea", module)
       const maxLength = number("maxLength", undefined);
       const dataTest = text("dataTest", "test");
       const rows = number("rows", 3);
+      const required = boolean("required", false);
       const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
 
       return (
@@ -133,6 +134,7 @@ storiesOf("Textarea", module)
           help={help}
           error={error}
           rows={rows}
+          required={required}
           disabled={disabled}
           maxLength={maxLength}
           resize={resize}

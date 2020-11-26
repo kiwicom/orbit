@@ -1,29 +1,31 @@
 // @flow
-
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import NavigationBar from "../index";
 
 describe("NavigationBar", () => {
-  const onMenuOpen = jest.fn();
-  const children = "Content";
-  const dataTest = "test";
-  const component = shallow(
-    <NavigationBar onMenuOpen={onMenuOpen} dataTest={dataTest}>
-      {children}
-    </NavigationBar>,
-  );
-  const bar = component.find("NavigationBar__StyledNavigationBar");
-  const hamburgerMenu = component.find("ButtonLink");
-  it("should contain the children", () => {
-    expect(bar.render().text()).toBe(children);
-  });
-  it("should execute onClick callback", () => {
-    hamburgerMenu.simulate("click");
+  it("should have expected DOM output", () => {
+    const onMenuOpen = jest.fn();
+    const children = "Content";
+    const dataTest = "test";
+    render(
+      <NavigationBar onMenuOpen={onMenuOpen} dataTest={dataTest}>
+        {children}
+      </NavigationBar>,
+    );
+
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    expect(screen.getByText(children)).toBeInTheDocument();
+    userEvent.click(screen.getByRole("button"));
     expect(onMenuOpen).toHaveBeenCalled();
   });
-  it("should have data-test", () => {
-    expect(bar.render().prop("data-test")).toBe(dataTest);
+
+  it("should dissapear on scoll", () => {
+    render(<NavigationBar dataTest="bur">kek</NavigationBar>);
+    expect(screen.getByTestId("bur")).toHaveStyle({ transform: "translate3d(0,0,0)" });
+    fireEvent.scroll(window, { target: { scrollY: 120 } });
+    expect(screen.getByTestId("bur")).toHaveStyle({ transform: "translate3d(0,-52px,0)" });
   });
 });

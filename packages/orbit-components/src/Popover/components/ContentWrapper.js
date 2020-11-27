@@ -26,14 +26,7 @@ const { useRef, useEffect, useContext, useMemo, useCallback } = React;
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
 
-const StyledContentWrapper = styled.div.attrs(props => ({
-  style: {
-    bottom: props.actionsHeight ? props.actionsHeight : 0,
-    // Calculates all the spacing relative to viewport to get space for action box
-    // 32 here is the fixed gap from the top, same with modal.
-    maxHeight: `${props.windowHeight - props.actionsHeight - 32}px`,
-  },
-}))`
+const StyledContentWrapper = styled.div`
   overflow: auto;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -41,6 +34,8 @@ const StyledContentWrapper = styled.div.attrs(props => ({
   left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  max-height: ${({ windowHeight, actionsHeight }) => `${windowHeight - actionsHeight - 32}px`};
+  bottom: ${({ actionsHeight }) => actionsHeight || 0}px;
 
   ${media.largeMobile(css`
     max-height: 100%;
@@ -48,7 +43,7 @@ const StyledContentWrapper = styled.div.attrs(props => ({
     bottom: auto;
     left: auto;
     position: relative;
-  `)};
+  `)}
 `;
 
 StyledContentWrapper.defaultProps = {

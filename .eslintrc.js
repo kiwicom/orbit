@@ -21,6 +21,18 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
+    {
+      files: "docs/**/*",
+      rules: {
+        // we're not using Flow in docs
+        "flowtype/require-valid-file-annotation": "off",
+        // these make sense for libraries, but not documentation
+        "global-require": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
       files: ["packages/orbit-components/src/utils/**/*"],

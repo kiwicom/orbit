@@ -3,12 +3,13 @@
     "noEmit": true,
     "lib": ["esnext", "dom"],
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "strict": true,
     "noImplicitAny": false
   },
   "include": [
     "packages/orbit-components/**/*",
-    "packages/orbit-design-tokens/**/*"
+    "packages/orbit-design-tokens/**/*",
+    "docs/**/*"
   ]
 }

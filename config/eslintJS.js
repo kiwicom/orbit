@@ -27,6 +27,7 @@ module.exports = {
           path.join(__dirname, "../packages/babel-plugin-orbit-components"),
           path.join(__dirname, "../packages/orbit-components"),
           path.join(__dirname, "../packages/orbit-design-tokens"),
+          path.join(__dirname, "../docs"),
         ],
         devDependencies: [
           "**/*.test.js",
@@ -36,6 +37,8 @@ module.exports = {
           "**/*.config.js",
           "**/stories/**",
           "**/tasks/**",
+          "docs/gatsby-*.js",
+          "docs/plugins/**",
           "packages/*/.storybook/**",
           "packages/*/config/**",
           "gulpfile.js",

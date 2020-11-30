@@ -14,6 +14,7 @@ export type Props = {|
   +name?: string,
   +rows?: number,
   +readOnly?: boolean,
+  +required?: boolean,
   +label?: Translation,
   +value?: string,
   +fullHeight?: boolean,

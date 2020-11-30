@@ -1,14 +1,10 @@
 // @flow
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
 
-import typeof DefaultTheme from "./defaultTheme";
-
-const defaultTheme: DefaultTheme = {
-  orbit: defaultTokens,
+export default {
+  orbit: defaultTheme,
   transitions: true,
   lockScrolling: true,
   lockScrollingBarGap: false,
   rtl: false,
 };
-
-export default defaultTheme;

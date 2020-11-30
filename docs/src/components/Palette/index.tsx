@@ -1,5 +1,5 @@
 import React from "react";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTheme as defaultTokens } from "@kiwicom/orbit-design-tokens";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 
@@ -18,7 +18,7 @@ const Grid = styled.div<{ isTablet?: boolean | null; hasAdditional: boolean }>`
 `;
 
 interface PaletteProps {
-  colors: tokenString[];
+  colors: string[];
   allowAdditional: boolean;
 }
 

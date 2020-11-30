@@ -1,5 +1,5 @@
 // @flow
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetAlertButtonTypeToken } from "./getAlertButtonTypeToken";
@@ -37,11 +37,12 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeLightActive,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedLightActive,
     },
+    // TODO: We don't use backgroundFocus on buttons and therefore can be deleted
     [TOKENS.backgroundButtonFocus]: {
-      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueNormal, 10),
-      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenNormal, 10),
-      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeNormal, 10),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedNormal, 10),
+      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueNormal, 10),
+      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenNormal, 10),
+      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeNormal, 10),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedNormal, 10),
       [TYPE_OPTIONS.INFO_SUBTLE]: theme.orbit.paletteBlueLight,
       [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.paletteGreenLight,
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeLight,
@@ -59,14 +60,14 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.borderColorButtonFocus]: {
-      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueNormal, 50),
-      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenNormal, 50),
-      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeNormal, 50),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
-      [TYPE_OPTIONS.INFO_SUBTLE]: convertHexToRgba(theme.orbit.paletteBlueNormal, 50),
-      [TYPE_OPTIONS.SUCCESS_SUBTLE]: convertHexToRgba(theme.orbit.paletteGreenNormal, 50),
-      [TYPE_OPTIONS.WARNING_SUBTLE]: convertHexToRgba(theme.orbit.paletteOrangeNormal, 50),
-      [TYPE_OPTIONS.CRITICAL_SUBTLE]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
+      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueNormal, 50),
+      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenNormal, 50),
+      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeNormal, 50),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedNormal, 50),
+      [TYPE_OPTIONS.INFO_SUBTLE]: transparentColor(theme.orbit.paletteBlueNormal, 50),
+      [TYPE_OPTIONS.SUCCESS_SUBTLE]: transparentColor(theme.orbit.paletteGreenNormal, 50),
+      [TYPE_OPTIONS.WARNING_SUBTLE]: transparentColor(theme.orbit.paletteOrangeNormal, 50),
+      [TYPE_OPTIONS.CRITICAL_SUBTLE]: transparentColor(theme.orbit.paletteRedNormal, 50),
     },
   };
   return tokens[name][type];

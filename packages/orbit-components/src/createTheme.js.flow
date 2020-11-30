@@ -1,0 +1,4 @@
+// @flow
+import type { CreateTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
+
+declare export default CreateTheme;

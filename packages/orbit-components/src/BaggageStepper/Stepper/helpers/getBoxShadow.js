@@ -1,5 +1,5 @@
 // @flow
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import type { Theme } from "../../../defaultTheme";
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
@@ -17,8 +17,8 @@ const getButtonBoxShadow = ({ state, disabled, theme, selected }: Args): string 
   if (state === BUTTON_STATES.FOCUS) {
     return `0 0 0 2px ${
       selected
-        ? convertHexToRgba(theme.orbit.paletteBlueNormal, 30)
-        : convertHexToRgba(theme.orbit.paletteInkLight, 30)
+        ? transparentColor(theme.orbit.paletteBlueNormal, 30)
+        : transparentColor(theme.orbit.paletteInkLight, 30)
     }}`;
   }
 

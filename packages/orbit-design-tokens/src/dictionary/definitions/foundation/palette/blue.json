@@ -1,0 +1,58 @@
+{
+  "foundation": {
+    "palette": {
+      "blue": {
+        "light": {
+          "type": "color",
+          "value": "#E8F4FD",
+          "internal": true
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "#D0E9FB",
+          "internal": true
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "#B4DBF8",
+          "internal": true
+        },
+        "normal": {
+          "type": "color",
+          "value": "#0172CB",
+          "internal": true
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "#0161AC",
+          "internal": true
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "#01508E",
+          "internal": true
+        },
+        "dark": {
+          "type": "color",
+          "value": "#005AA3",
+          "internal": true
+        },
+        "dark-secondary": {
+          "type": "color",
+          "value": "#004F8F",
+          "internal": true
+        },
+        "dark-tertiary": {
+          "type": "color",
+          "value": "#003E70",
+          "internal": true
+        },
+        "darker": {
+          "type": "color",
+          "value": "#004680",
+          "internal": true
+        }
+      }
+    }
+  }
+}

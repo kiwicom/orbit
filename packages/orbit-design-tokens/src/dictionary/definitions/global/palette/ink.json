@@ -1,0 +1,86 @@
+{
+  "global": {
+    "palette": {
+      "ink": {
+        "lighter": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter}"
+        },
+        "lighter-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.lighter-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "lighter-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter-secondary}"
+        },
+        "lighter-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.lighter-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "lighter-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter-tertiary}"
+        },
+        "light": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}"
+        },
+        "light-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.light-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light-secondary}"
+        },
+        "light-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.light-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light-tertiary}"
+        },
+        "normal": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "normal-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.normal-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}"
+        },
+        "normal-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.ink.normal-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}"
+        }
+      }
+    }
+  }
+}

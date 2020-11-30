@@ -1,0 +1,31 @@
+{
+  "component": {
+    "alert-button": {
+      "critical-subtle": {
+        "background": {
+          "type": "color",
+          "internal-comment": "The difference between button.critical-subtle and alert-button.critical-subtle is just the default background shade. This might be unified when Alert component get a visual refresh.",
+          "value": "{foundation.palette.red.light-secondary}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.light-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.light-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal}",
+          "opacity": 50
+        }
+      }
+    }
+  }
+}

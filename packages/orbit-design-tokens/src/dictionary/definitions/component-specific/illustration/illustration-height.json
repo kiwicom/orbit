@@ -1,0 +1,54 @@
+{
+  "component": {
+    "illustration": {
+      "extra-small": {
+        "height": {
+          "type": "size",
+          "value": 90
+        }
+      },
+      "small": {
+        "height": {
+          "type": "size",
+          "value": 120
+        }
+      },
+      "medium": {
+        "height": {
+          "type": "size",
+          "value": 200
+        }
+      },
+      "large": {
+        "height": {
+          "type": "size",
+          "value": 280
+        }
+      },
+      "display": {
+        "height": {
+          "type": "size",
+          "value": 460
+        }
+      }
+    },
+    "height": {
+      "illustration": {
+        "small": {
+          "type": "size",
+          "value": 90,
+          "deprecated": true,
+          "deprecated-replace": "{component.illustration.extra-small.height}",
+          "deprecated-version": "1.0.0"
+        },
+        "medium": {
+          "type": "size",
+          "value": 200,
+          "deprecated": true,
+          "deprecated-replace": "{component.illustration.medium.height}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

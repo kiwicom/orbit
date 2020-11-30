@@ -1,0 +1,203 @@
+---
+title: Language
+redirect_from:
+  - /content/technical-content/language/
+---
+
+In general,
+follow the guidelines in the [grammar and mechanics](/kiwi-use/content/grammar-and-mechanics/) section.
+If you come across anything not addressed there or here,
+use the [Google developer documentation style guide](https://developers.google.com/style) as a reference.
+
+## Address the reader directly
+
+Use the second person and tell users what to do.
+Be clear and to the point.
+
+Unless there is a very good reason to do so, avoid using "we" and "our".
+
+<!-- vale Kiwi.Direct = NO -->
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Click the button
+- If you're going to deploy the cluster/When deploying the cluster
+- To get started fast, use the default settings.
+
+</Do>
+
+<Dont>
+
+- Let's click the button
+- If we're going to deploy the cluster
+- We recommend that you use our default settings to get started fast.
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+<!-- vale Kiwi.Direct = YES -->
+
+## Tenses
+
+For most [types of documentation](/kiwi-use/content/specific-areas/technical-content/structure/),
+especially in how-to guides, readers are following the instructions as they read.
+Use the present tense to describe actions.
+Similarly, avoid "would" and "could"
+(and any other modals expressing uncertainty) in conditional statements.
+
+<!-- vale Kiwi.Will = NO -->
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Click the button and the window displays
+- Send a GET request to the endpoint. The server responds with a JSON object.
+- If you send a request, the server responds with a JSON object.
+
+</Do>
+
+<Dont>
+
+- Click the button and the window will display
+- Send a GET request to the endpoint. The server will respond with a JSON object.
+- You can send a request. The server would respond with a JSON object.
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+<!-- vale Kiwi.Will = YES -->
+
+## Creating links
+
+When inserting links into the text,
+try to give them descriptive text (not just the URL).
+Make exceptions for API endpoints when the purpose of including the link is
+to show the location of the endpoint.
+
+Also avoid phrases such as "click here."
+Have the text make sense out of context---when you're looking just at the link text.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- See a \[description of X\]\(link\)
+- \[More info\]\(link\)
+
+</Do>
+
+<Dont>
+
+- To see a description of X, \[click here\]\(link\)
+- More info \[here\]\(link\)
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+## Don't personify systems
+
+Keep computers and systems as inanimate things
+and attribute as few human qualities to them as possible.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- The server communicates to the client that it's received the request.
+- The app detects when you've entered the airport.
+- If you format the request badly, the server rejects it.
+
+</Do>
+
+<Dont>
+
+- The server tells the client when it's received the request.
+- The app sees when you've entered the airport.
+- If you format the request badly, the server refuses to accept it.
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+## Be specific
+
+Always be specific about what you're referring to.
+If you introduce a specific product in the first sentence of a section,
+don't assume the reader knows what you mean by "it" two paragraphs
+(or even two sentences later).
+
+Repeat your references to make it clear what you're talking about.
+
+Any time you have long strings of nouns, break them up into smaller pieces
+so it's clear what refers to what.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Call Refund Calculator to get the refundable amount.
+- Check the type of refund in the response from Refund Calculator.
+- Draft instructions for the default settings of the application
+
+</Do>
+
+<Dont>
+
+- Call it to get the refundable amount.
+- Check the type of refund in the response.
+- Draft default application settings instructions
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+## Order steps (and nothing else)
+
+Numbered lists are a great sign to readers that steps need to be completed in a given order.
+They make it clear what steps need to be done when.
+
+Don't weaken this guidance by numbering other things where the order doesn't matter.
+For example, headings in an article should follow a clear semantic structure.
+That structure should be enough, so the headings shouldn't be numbered.
+
+## Use contractions
+
+<!-- vale Kiwi.Contractions = NO -->
+
+In keeping with our being [empathetic](/kiwi-use/content/voice-and-tone/empathetic/#use-words-and-structures-youd-use-in-speaking),
+feel free to use common contractions.
+This means writing _can't_ and _isn't_ in place of _cannot_ and _are not_.
+
+It's best to avoid shortening noun and verb combinations where it might be confusing
+(such as making readers think something is a possessive rather than a noun and verb).
+But common contractions such as _it's_ should be clear (just don't confuse _it's_ and _its_).
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- It isn't true that we can't use contractions.
+- The trip is short and convenient.
+- It's common to see an error on the first request.
+- The returned object includes what its length is.
+
+</Do>
+
+<Dont>
+
+- It is not true that we cannot use contractions.
+- The trip's short and convenient.
+- It is common to see an error on the first request.
+- The returned object includes what it's length is.
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+<!-- vale Kiwi.Contractions = YES -->

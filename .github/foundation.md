@@ -1,6 +1,6 @@
 # Foundation
 
-Foundation object offers us very easy and quick way how to define design tokens and also how to simply create needed themes.
+Foundation object offers us very easy and quick way to define design tokens and also how to simply create needed themes.
 
 > You can overwrite some or all properties in this object with `getTokens` function.
 

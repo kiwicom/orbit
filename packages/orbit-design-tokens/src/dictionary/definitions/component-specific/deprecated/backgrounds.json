@@ -1,0 +1,63 @@
+{
+  "component": {
+    "background": {
+      "card": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.background}",
+        "deprecated-version": "1.0.0"
+      },
+      "carrier-logo": {
+        "type": "color",
+        "value": "transparent",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "country-flag": {
+        "type": "color",
+        "value": "transparent",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "illustration": {
+        "type": "color",
+        "value": "transparent",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "modal": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.background}",
+        "deprecated-version": "1.0.0"
+      },
+      "service-logo": {
+        "type": "color",
+        "value": "transparent",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tooltip": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tooltip-large-mobile": {
+        "type": "color",
+        "value": "{foundation.palette.blue.dark}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "separator": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.border-color}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

@@ -33,6 +33,7 @@ module.exports = {
           "packages/*/.storybook/**",
           "**/config/**",
           "**/scripts/**",
+          "packages/orbit-design-tokens/src/dictionary/**/*",
           "gulpfile.js",
           "**/.remarkrc.js",
           "**/.size-limit.js",
@@ -173,6 +174,15 @@ module.exports = {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      files: "packages/orbit-design-tokens/**/*",
+      rules: {
+        // we're not using Flow in orbit-design-tokens
+        "flowtype/require-valid-file-annotation": "off",
+        // if we stick to pure functions readonly is not needed
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
       },
     },
     {

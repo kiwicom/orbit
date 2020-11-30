@@ -1,0 +1,72 @@
+{
+  "component": {
+    "form-box": {
+      "small": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.large}"
+        }
+      },
+      "normal": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}"
+        }
+      },
+      "large": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}"
+        }
+      }
+    },
+    "height": {
+      "button": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.small.height}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.normal.height}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.large.height}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "input": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.small.height}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.normal.height}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-box.large.height}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

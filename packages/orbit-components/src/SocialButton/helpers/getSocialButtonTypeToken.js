@@ -1,5 +1,5 @@
 // @flow
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetSocialButtonTypeToken } from "./getSocialButtonTypeToken";
@@ -27,6 +27,7 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalActive,
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudNormalActive,
     },
+    // TODO: remove, not used in render
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,
@@ -63,11 +64,11 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.borderColorButtonFocus]: {
-      [TYPE_OPTIONS.APPLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
-      [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.paletteInkLight, 30),
-      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
-      [TYPE_OPTIONS.TWITTER]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
-      [TYPE_OPTIONS.EMAIL]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.APPLE]: transparentColor(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.FACEBOOK]: transparentColor(theme.orbit.paletteInkLight, 30),
+      [TYPE_OPTIONS.GOOGLE]: transparentColor(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.TWITTER]: transparentColor(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.EMAIL]: transparentColor(theme.orbit.paletteInkLight, 50),
     },
   };
   return tokens[name][type];

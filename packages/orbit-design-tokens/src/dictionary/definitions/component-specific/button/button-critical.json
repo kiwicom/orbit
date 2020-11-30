@@ -1,0 +1,140 @@
+{
+  "component": {
+    "button": {
+      "critical": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal}",
+          "opacity": 50
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.background}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.background-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.background-active}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "critical": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.foreground}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.foreground-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.critical.foreground-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical-bordered": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "critical-bordered-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "critical-bordered-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "border-color": {
+      "button": {
+        "critical-bordered": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "critical-bordered-hover": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "critical-bordered-active": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

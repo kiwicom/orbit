@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
@@ -131,7 +131,7 @@ const Input = styled.input`
       }`};
     box-shadow: 0 0 0 2px
       ${({ theme, hasError }) =>
-        convertHexToRgba(
+        transparentColor(
           hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};
@@ -170,6 +170,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
 
     &:active ${IconContainer} {
       border-color: ${disabled ? getBorderColor : theme.orbit.paletteBlueNormal};
+      // TODO: we can get rid of it completely, there won't be token replacement
       transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
     }
 

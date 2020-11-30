@@ -1,0 +1,94 @@
+{
+  "component": {
+    "background": {
+      "alert": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color": {
+      "alert-icon": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "alert": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.dark}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "link": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

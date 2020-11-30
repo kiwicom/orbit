@@ -1,4 +1,4 @@
 // @flow
-import type { GetTokens } from "@kiwicom/orbit-design-tokens";
+import type { GetTokens } from "@kiwicom/orbit-design-tokens/lib/js/getTokens";
 
 declare export default GetTokens;

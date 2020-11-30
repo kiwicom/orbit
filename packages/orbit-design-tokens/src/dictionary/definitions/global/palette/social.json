@@ -1,0 +1,34 @@
+{
+  "global": {
+    "palette": {
+      "social": {
+        "facebook": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook}"
+        },
+        "facebook-hover": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.social.facebook-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-secondary}"
+        },
+        "facebook-active": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.social.facebook-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-tertiary}"
+        }
+      }
+    }
+  }
+}

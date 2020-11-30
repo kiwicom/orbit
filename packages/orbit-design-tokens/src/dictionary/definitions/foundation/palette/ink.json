@@ -1,0 +1,53 @@
+{
+  "foundation": {
+    "palette": {
+      "ink": {
+        "lighter": {
+          "type": "color",
+          "value": "#BAC7D5",
+          "internal": true
+        },
+        "lighter-secondary": {
+          "type": "color",
+          "value": "#A6B6C8",
+          "internal": true
+        },
+        "lighter-tertiary": {
+          "type": "color",
+          "value": "#94A8BE",
+          "internal": true
+        },
+        "light": {
+          "type": "color",
+          "value": "#5F738C",
+          "internal": true
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "#52647A",
+          "internal": true
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "#465567",
+          "internal": true
+        },
+        "normal": {
+          "type": "color",
+          "value": "#252A31",
+          "internal": true
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "#181B20",
+          "internal": true
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "#0B0C0F",
+          "internal": true
+        }
+      }
+    }
+  }
+}

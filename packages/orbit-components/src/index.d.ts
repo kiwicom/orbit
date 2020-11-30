@@ -108,5 +108,8 @@ export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 export { default as useFocusTrap } from "./hooks/useFocusTrap";
 export { default as useInterval } from "./hooks/useInterval";
+export { default as getTokens } from "@kiwicom/orbit-design-tokens/lib/js/getTokens";
+export { default as createTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
+export { default as fromPlainObject } from "@kiwicom/orbit-design-tokens/lib/js/fromPlainObject";
 
 export { Icon } from "./Icon";

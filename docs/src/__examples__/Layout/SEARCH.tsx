@@ -8,6 +8,7 @@ export default {
       minHeight: `${defaultTheme.orbit.heightIllustrationMedium}`,
       background: `${defaultTheme.orbit.backgroundBody}`,
     };
+
     return (
       <Layout type="Search">
         <LayoutColumn>

@@ -1,5 +1,5 @@
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import { css } from "styled-components";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import { BorderProps } from "./ColorContainer";
 
@@ -16,7 +16,7 @@ export const normalizeName = (tokenName: tokenString) =>
     .replace("Active", ":active");
 
 export const isLight = (hex: string) => {
-  const rgba = convertHexToRgba(hex, 100);
+  const rgba = transparentColor(hex, 100);
   const found = rgba.match(/\((?<red>\d+), (?<green>\d+), (?<blue>\d+)/);
 
   if (!found || !found.groups) {

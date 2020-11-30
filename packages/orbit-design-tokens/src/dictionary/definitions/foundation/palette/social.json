@@ -1,0 +1,23 @@
+{
+  "foundation": {
+    "palette": {
+      "social": {
+        "facebook": {
+          "type": "color",
+          "value": "#3B5998",
+          "internal": true
+        },
+        "facebook-secondary": {
+          "type": "color",
+          "value": "#385490",
+          "internal": true
+        },
+        "facebook-tertiary": {
+          "type": "color",
+          "value": "#354F88",
+          "internal": true
+        }
+      }
+    }
+  }
+}

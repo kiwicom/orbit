@@ -3,7 +3,7 @@ const parser = require("@babel/parser");
 const fs = require("fs");
 const path = require("path");
 
-const { defaultTokens } = require("../../lib/index");
+const { defaultTheme } = require("../../lib/index");
 
 const code = fs.readFileSync(path.resolve(__dirname, "../../lib/index.js"), "utf8");
 
@@ -41,7 +41,7 @@ const itemCommentFn = c => !categoryCommentFn(c) && !categoryDescriptionFn(c);
 
 const getInfo = (tokenProp, xcategory) => {
   const key = tokenProp.key.name;
-  const value = xcategory ? defaultTokens[xcategory][key] : defaultTokens[key];
+  const value = xcategory ? defaultTheme[xcategory][key] : defaultTheme[key];
   if (value == null) {
     console.error("Wrong value for", key);
     throw new Error(`Wrong value for ${key}`);

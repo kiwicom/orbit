@@ -1,0 +1,41 @@
+{
+  "component": {
+    "social-button": {
+      "apple": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}",
+          "opacity": 50
+        },
+        "icon-foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      }
+    }
+  }
+}

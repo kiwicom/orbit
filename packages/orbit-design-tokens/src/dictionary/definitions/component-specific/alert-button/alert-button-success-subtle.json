@@ -1,0 +1,30 @@
+{
+  "component": {
+    "alert-button": {
+      "success-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.green.light-secondary}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.green.light-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.green.light-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.green.normal}",
+          "opacity": 50
+        }
+      }
+    }
+  }
+}

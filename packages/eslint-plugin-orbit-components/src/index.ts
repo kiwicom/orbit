@@ -9,6 +9,7 @@ import preferSingleDestructure from "./rules/preferSingleDestructure";
 import recommended from "./configs/recommended";
 import uniqueId from "./rules/uniqueId";
 import unnecessaryText from "./rules/unnecessaryText";
+import noDeprecatedToken from "./rules/noDeprecatedToken";
 
 export const rules = {
   "button-has-title": buttonHasTitle,
@@ -20,6 +21,7 @@ export const rules = {
   "unique-id": uniqueId,
   "unnecessary-text": unnecessaryText,
   "use-rtl": useRtl,
+  "no-deprecated-token": noDeprecatedToken,
 };
 
 export const configs = {

@@ -1,8 +1,9 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { Tokens } from "@kiwicom/orbit-design-tokens";
+import { Tokens } from "@kiwicom/orbit-design-tokens/lib/js/createTokens";
 
+declare module "@kiwicom/orbit-components/lib/defaultTheme";
 export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;

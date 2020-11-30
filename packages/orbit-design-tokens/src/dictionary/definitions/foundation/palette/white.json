@@ -1,0 +1,23 @@
+{
+  "foundation": {
+    "palette": {
+      "white": {
+        "normal": {
+          "type": "color",
+          "value": "#FFFFFF",
+          "internal": true
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "#F1F4F7",
+          "internal": true
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "#E7ECF1",
+          "internal": true
+        }
+      }
+    }
+  }
+}

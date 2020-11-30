@@ -12,19 +12,19 @@ interface CopyButtonProps {
   textToCopy?: string;
 }
 
-const StyledButton = styled.button<{ colorValue?: string }>`
+const StyledButton = styled.button<CopyButtonProps>`
   ${({ colorValue, theme }) => css`
     background: ${colorValue && isLight(colorValue)
       ? theme.orbit.paletteInkNormal
-      : theme.orbit.paletteWhite};
-    padding: 0 ${theme.orbit.spaceXSmall};
+      : theme.orbit.paletteWhiteNormal};
+    padding: 0 ${theme.orbit.spaceTwoX};
     border-radius: ${theme.orbit.borderRadiusBadge};
     text-transform: uppercase;
     transition: transform ${theme.orbit.durationFast} ease-in;
 
     svg path {
       fill: ${colorValue && isLight(colorValue)
-        ? theme.orbit.paletteWhite
+        ? theme.orbit.paletteWhiteNormal
         : theme.orbit.paletteInkNormal};
     }
     &:hover {

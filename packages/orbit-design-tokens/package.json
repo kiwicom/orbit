@@ -1,12 +1,12 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
   "version": "1.4.1",
-  "description": "Design tokens for Kiwi.com.",
+  "description": "Design tokens of Orbit design system.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiwicom/orbit",
+    "url": "https://github.com/kiwicom/orbit.git",
     "directory": "packages/orbit-design-tokens"
   },
   "files": [
@@ -18,19 +18,14 @@
     "pages/*"
   ],
   "scripts": {
-    "generate-json": "node ./src/theo/generate-theo-parser",
-    "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
-    "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
-    "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
-    "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:lib": "babel src --out-dir lib --ignore **/*.test.js,src/theo/* && yarn copy:lib",
-    "build:es": "babel src --out-dir es --ignore **/*.test.js,src/theo/* --env-name esm && yarn copy:es",
-    "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
-    "build": "yarn clean && yarn run build:lib && yarn run build:es && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
+    "build:dictionary": "ts-node ./src/dictionary/build.ts",
+    "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5 --esModuleInterop true",
+    "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
     "size:build": "yarn run build:lib",
-    "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
+    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "clean": "rimraf src/js lib es pages output",
+    "prebuild": "rimraf lib 'src/js/createTokens.*' 'src/js/defaultFoundation.*'",
     "prepublishOnly": "yarn build"
   },
   "author": "Kiwi.com",
@@ -38,7 +33,8 @@
   "keywords": [
     "orbit",
     "ui",
-    "design"
+    "design",
+    "tokens"
   ],
   "devDependencies": {
     "@babel/cli": "^7.12.8",
@@ -47,17 +43,18 @@
     "@babel/parser": "^7.13.13",
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-flow": "^7.12.13",
-    "babylon": "^6.18.0",
-    "copyfiles": "^2.4.0",
-    "fs-extra": "^9.0.1",
-    "lodash": "^4.17.21",
-    "memfs": "^3.2.0",
-    "optimist": "^0.6.1",
-    "theo": "^8.1.5",
+    "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.181",
+    "@types/ramda": "^0.27.1",
+    "@types/xml": "^1.0.5",
+    "copyfiles": "^2.4.1",
+    "lodash": "^4.17.14",
+    "style-dictionary": "^2.10.2",
+    "ts-jest": "^26.5.3",
     "xml": "^1.0.1"
   },
   "dependencies": {
-    "ramda": "^0.27.1",
-    "rimraf": "^3.0.2"
+    "color2k": "^2.0.0",
+    "ramda": "^0.27.1"
   }
 }

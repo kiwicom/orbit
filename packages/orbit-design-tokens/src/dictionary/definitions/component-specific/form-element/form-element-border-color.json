@@ -1,0 +1,122 @@
+{
+  "component": {
+    "form-element": {
+      "border-color": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}"
+      },
+      "border-color-hover": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter-secondary}"
+      },
+      "border-color-focus": {
+        "type": "color",
+        "value": "{foundation.palette.blue.normal}",
+        "comment": "Should be used for all form-elements when the component has active or focus state and it's needed to render border attribute, or combined with shadows."
+      },
+      "border-color-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "comment": "Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows."
+      }
+    },
+    "border-color": {
+      "checkbox-radio": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color}",
+        "deprecated-version": "1.0.0"
+      },
+      "checkbox-radio-active": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-focus}",
+        "deprecated-version": "1.0.0"
+      },
+      "checkbox-radio-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-error}",
+        "deprecated-version": "1.0.0"
+      },
+      "checkbox-radio-focus": {
+        "type": "color",
+        "value": "{foundation.palette.blue.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-focus}",
+        "deprecated-version": "1.0.0"
+      },
+      "checkbox-radio-hover": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-hover}",
+        "deprecated-version": "1.0.0"
+      },
+      "input": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color}",
+        "deprecated-version": "1.0.0"
+      },
+      "input-active": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter-tertiary}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-focus}",
+        "deprecated-version": "1.0.0"
+      },
+      "input-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-error}",
+        "deprecated-version": "1.0.0"
+      },
+      "input-error-focus": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "input-error-hover": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal-secondary}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "input-focus": {
+        "type": "color",
+        "value": "{foundation.palette.blue.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-focus}",
+        "deprecated-version": "1.0.0"
+      },
+      "input-hover": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter-secondary}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.border-color-hover}",
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "border-width": {
+      "input": {
+        "type": "size",
+        "value": 1,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "input-focus": {
+        "type": "size",
+        "value": 2,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

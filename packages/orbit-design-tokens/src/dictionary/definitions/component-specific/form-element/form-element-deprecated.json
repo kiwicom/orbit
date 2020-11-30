@@ -1,0 +1,30 @@
+{
+  "component": {
+    "border-style": {
+      "input": {
+        "type": "border-style",
+        "value": "solid",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "margin-top": {
+      "form-feedback": {
+        "type": "size",
+        "value": "{foundation.space.half-x}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "modifier-scale": {
+      "checkbox-radio": {
+        "active": {
+          "type": "modifier",
+          "value": 0.95,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

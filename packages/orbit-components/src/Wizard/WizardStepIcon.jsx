@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import Text from "../Text";
 import CheckCircle from "./CheckCircle";
@@ -20,7 +20,7 @@ export const StyledStepIconContainer: any = styled.div`
     background: ${$disabled
       ? theme.orbit.paletteCloudNormalHover
       : theme.orbit.paletteProductNormal};
-    box-shadow: ${$glow && `0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)}`};
+    box-shadow: ${$glow && `0 0 0 4px ${transparentColor(theme.orbit.paletteProductNormal, 20)}`};
     position: relative;
     top: -2px;
 

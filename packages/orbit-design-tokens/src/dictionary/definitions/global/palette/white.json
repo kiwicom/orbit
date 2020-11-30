@@ -1,0 +1,39 @@
+{
+  "global": {
+    "palette": {
+      "white": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.palette.white-normal}",
+        "deprecated-version": "1.0.0"
+      },
+      "white-normal": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}"
+      },
+      "white-hover": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal-secondary}",
+        "deprecated": true,
+        "deprecated-replace": "{global.palette.white-normal-secondary}",
+        "deprecated-version": "1.0.0"
+      },
+      "white-normal-secondary": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal-secondary}"
+      },
+      "white-active": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal-tertiary}",
+        "deprecated": true,
+        "deprecated-replace": "{global.palette.white-normal-tertiary}",
+        "deprecated-version": "1.0.0"
+      },
+      "white-normal-tertiary": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal-tertiary}"
+      }
+    }
+  }
+}

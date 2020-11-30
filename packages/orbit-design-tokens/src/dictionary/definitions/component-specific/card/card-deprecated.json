@@ -1,0 +1,30 @@
+{
+  "component": {
+    "border-color": {
+      "card": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.border-color}",
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "border-style": {
+      "card": {
+        "type": "border-style",
+        "value": "solid",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "border-width": {
+      "card": {
+        "type": "size",
+        "value": 1,
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.border-size}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

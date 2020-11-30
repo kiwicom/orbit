@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { warning } from "@adeira/js";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../defaultTheme";
 import { baseURL, CODES, SIZES, TOKENS } from "./consts";
@@ -66,7 +66,7 @@ const StyledShadow = styled.div`
   left: 0;
   // TODO: create token borderColorCountryFlag
   // TODO: create token borderWidthCountryFlag
-  box-shadow: inset 0 0 0 1px ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 10)};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => transparentColor(theme.orbit.paletteInkNormal, 10)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
 `;
 

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
 
 import ThemeProvider from "../../ThemeProvider";
 
@@ -25,7 +25,7 @@ class RenderInRtl extends React.PureComponent<Props> {
 
   render(): React.Node {
     return (
-      <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>
+      <ThemeProvider theme={{ orbit: defaultTheme, rtl: true }}>
         {this.props.children}
       </ThemeProvider>
     );

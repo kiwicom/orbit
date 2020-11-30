@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import KEY_CODE_MAP from "../common/keyMaps";
 import useFocusTrap from "../hooks/useFocusTrap";
@@ -45,7 +45,7 @@ const StyledDrawer = styled.div`
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: ${shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
+    background-color: ${shown ? transparentColor(theme.orbit.paletteInkNormal, 50) : "transparent"};
     z-index: ${theme.orbit.zIndexDrawer};
     transition: ${transition(["background-color"], "fast", "ease-in-out")};
   `}

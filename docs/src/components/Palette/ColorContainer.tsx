@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import { Stack } from "@kiwicom/orbit-components";
 
 import CopyButton from "./CopyButton";
@@ -26,8 +26,8 @@ const StyledCopyWrapper = styled.div<{ colorValue: string }>`
     background: linear-gradient(90deg, transparent, ${colorValue} 27%);
     position: absolute;
     bottom: 20px;
-    right: ${theme.orbit.spaceLarge};
-    padding-left: ${theme.orbit.spaceXLarge};
+    right: ${theme.orbit.spaceSixX};
+    padding-left: ${theme.orbit.spaceEightX};
   `}
 `;
 
@@ -63,7 +63,7 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
     :focus,
     :active {
       transform: scale(1.01);
-      box-shadow: ${theme.orbit.boxShadowRaised};
+      box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
 
       ${StyledCopyWrapper} {
         visibility: visible;
@@ -84,7 +84,7 @@ const StyledColorNameHolder = styled.div<{ isMain?: boolean }>`
 const StyledColorHexHolder = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightMedium};
-    padding-bottom: ${theme.orbit.spaceXXSmall};
+    padding-bottom: ${theme.orbit.spaceOneX};
   `}
 `;
 
@@ -101,13 +101,13 @@ const ColorContainer = ({ color, ...props }: Props) => {
     <StyledColorContainerWrapper colorValue={color.value} {...props}>
       <StyledColorNameHolder isMain={isNormal(color.name)}>{color.name}</StyledColorNameHolder>
       <StyledColorHexHolder>{color.value}</StyledColorHexHolder>
-      <StyledColorOtherTextHolder>{convertHexToRgba(color.value, 100)}</StyledColorOtherTextHolder>
+      <StyledColorOtherTextHolder>{transparentColor(color.value, 100)}</StyledColorOtherTextHolder>
       <StyledColorOtherTextHolder>{color.tokenName}</StyledColorOtherTextHolder>
       <StyledCopyWrapper colorValue={color.value}>
         <Stack direction="column" spacing="XXSmall" align="end">
           <CopyButton textToCopy={color.value} colorValue={color.value} buttonText="Hex" />
           <CopyButton
-            textToCopy={convertHexToRgba(color.value, 100)}
+            textToCopy={transparentColor(color.value, 100)}
             colorValue={color.value}
             buttonText="RGB"
           />

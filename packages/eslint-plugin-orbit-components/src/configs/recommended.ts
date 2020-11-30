@@ -9,6 +9,7 @@ const recommended = {
     "orbit-components/rtl-utils": "error",
     "orbit-components/unnecessary-text": "error",
     "orbit-components/use-rtl": "error",
+    "orbit-components/no-deprecated-token": "warning",
   },
 };
 

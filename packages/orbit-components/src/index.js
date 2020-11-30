@@ -116,7 +116,7 @@ export { default as Truncate } from "./Truncate";
 
 // tokens
 export { default as defaultTheme } from "./defaultTheme";
-export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
+export { fromPlainObject, createTheme, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";

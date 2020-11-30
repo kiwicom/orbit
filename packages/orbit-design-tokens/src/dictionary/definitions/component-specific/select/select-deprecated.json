@@ -1,0 +1,20 @@
+{
+  "component": {
+    "margin-bottom": {
+      "select-suffix": {
+        "type": "size",
+        "value": "{foundation.space.half-x}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "padding-left": {
+      "select-prefix": {
+        "type": "size",
+        "value": 48,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "component": {
+    "social-button": {
+      "google": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.dark}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}",
+          "opacity": 50
+        },
+        "icon-foreground": {
+          "type": "color",
+          "value": "currentColor",
+          "internal-comment": "Google icon has specific style with own colors, therefore we don't have to define it."
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "google": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "border-color": {
+      "button": {
+        "google-bordered": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "google": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-bordered": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "google-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

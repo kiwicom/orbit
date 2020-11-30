@@ -1,19 +1,19 @@
 import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
-import getTokens from "@kiwicom/orbit-components/lib/getTokens";
+import createTheme from "@kiwicom/orbit-components/lib/createTheme";
 import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
 
 export default {
   Example: () => {
-    const customTokens = getTokens({
+    const customTokens = createTheme({
       palette: {
         product: {
           light: "#fdf0ff",
-          lightHover: "#fbdfff",
-          lightActive: "#f9ceff",
+          lightSecondary: "#fbdfff",
+          lightTertiary: "#f9ceff",
           normal: "#5b0068",
-          normalHover: "#4c0057",
-          normalActive: "#3d0046",
+          normalSecondary: "#4c0057",
+          normalTertiary: "#3d0046",
           dark: "#110013",
         },
       },

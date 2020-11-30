@@ -1,0 +1,95 @@
+---
+title: Toast
+redirect_from:
+  - /components/toast/
+---
+
+import MoreThanColorSnippet from "snippets/more-than-color.mdx";
+
+## When to use
+
+- To display temporary short messages.
+- To react to user input (let users know something is happening).
+
+### When not to use
+
+- If the message should stay on the screen---use an [alert](/components/information/alert/).
+- When you want to include an action---use an [alert](/components/information/alert/).
+- When an action is necessary before continuing---use a [modal](/components/overlay/modal/)
+  or [dialog](/components/overlay/dialog/).
+
+## Component status
+
+<ComponentStatus component="Toast" />
+
+## Content structure
+
+![Icon: optionally supports the message; message: works best as one line; close button: lets users close the toast](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:798%3A2716)
+
+## Behavior
+
+### Use for non-critical messages
+
+Toasts usually disappear on their own.
+So any critical messages or errors that would block a user's flow don't get enough attention.
+
+For errors and other critical messages,
+place the message in the screen itself.
+If the message is important but doesn't block the flow,
+use an [alert](/components/information/alert/).
+If the user should be blocked,
+use a [modal](/components/overlay/modal/) or [dialog](/components/overlay/dialog/).
+
+### Not actionable
+
+Toasts are built for messages only, not actions.
+They can include links to additional information,
+but nothing that would be required.
+Toasts can disappear, meaning the actions would too.
+
+Make the actions available directly on the screen.
+If there are actions associated with the message,
+use an [alert](/components/information/alert/).
+Otherwise, use [buttons and other action components](/guides/using-button-type-components/).
+
+<MoreThanColorSnippet component="toast" />{" "}
+
+## Content
+
+### Keep it short
+
+Toasts only appear temporarily,
+so there's no time for long messages.
+Limit yourself to no more than 1 line.
+Aim for shorter if possible.
+
+If more information is necessary,
+use a [text link](/components/action/textlink/)
+to a more detailed description (don't truncate the toast itself).
+
+## Look & feel
+
+### Toast types
+
+#### Success
+
+Success toasts confirm that a user's action was processed.
+Use them to show success when the screen doesn't change.
+
+#### Warning
+
+Warning toasts warn the user about situations that might be unfavorable.
+Use them for general travel warnings.
+Don't use them for any critical information that should break the user's flow.
+
+#### Informational
+
+Informational toasts present general content
+without an associated positive (success) or negative (warning) emotion.
+
+### Positioning
+
+This component can be in different positions that are commonly used on websites,
+such as a corner of the screen.
+For mobile devices, the component is located at the top of the screen
+and is stretched to cover the entire screen width.

@@ -1,0 +1,90 @@
+{
+  "global": {
+    "palette": {
+      "orange": {
+        "light": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light}"
+        },
+        "light-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.light-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-secondary}"
+        },
+        "light-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.light-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-tertiary}"
+        },
+        "normal": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        },
+        "normal-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.normal-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}"
+        },
+        "normal-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.normal-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}"
+        },
+        "dark": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}"
+        },
+        "dark-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.dark-secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "dark-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark-secondary}"
+        },
+        "dark-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.orange.dark-tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "dark-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark-tertiary}"
+        },
+        "darker": {
+          "type": "color",
+          "value": "{foundation.palette.orange.darker}"
+        }
+      }
+    }
+  }
+}

@@ -198,7 +198,7 @@ export const Prefix: any = styled(({ children, className, iconRef }) => (
     }
 
     ${StyledButtonPrimitiveIconContainer} {
-      color: ${theme.orbit.colorIconSecondary};
+      color: ${theme.orbit.iconForegroundSecondary};
     }
   `}
 `;
@@ -220,7 +220,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
     z-index: 3;
 
     ${StyledButtonPrimitiveIconContainer} {
-      color: ${theme.orbit.colorIconSecondary};
+      color: ${theme.orbit.iconForegroundSecondary};
     }
 
     ${StyledServiceLogo} {

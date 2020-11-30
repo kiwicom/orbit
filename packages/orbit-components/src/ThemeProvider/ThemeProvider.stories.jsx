@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 
 import useTranslate from "../hooks/useTranslate";
 import Button from "../Button";
-import getTokens from "../getTokens";
+import createTheme from "../createTheme";
 import languages from "../data/dictionary";
 import Badge from "../Badge";
 import Tooltip from "../Tooltip";
@@ -24,7 +24,7 @@ export default {
 export const DictionaryContext = (): React.Node => {
   const dictionary = select("dictionary", Object.keys(languages));
   return (
-    <ThemeProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
+    <ThemeProvider theme={{ orbit: createTheme() }} dictionary={languages[dictionary]}>
       <ButtonWithTranslation />
     </ThemeProvider>
   );
@@ -42,7 +42,7 @@ DictionaryContext.story = {
 export const WithoutTransitions = (): React.Node => {
   const transitions = boolean("transitions", false);
   return (
-    <ThemeProvider theme={{ orbit: getTokens(), transitions }}>
+    <ThemeProvider theme={{ orbit: createTheme(), transitions }}>
       <Tooltip content="Lorem ipsum dolor sit amet">
         <Badge>Info</Badge>
       </Tooltip>
@@ -78,7 +78,7 @@ export const OwnTheme = (): React.Node => {
   });
   const customTheme = object("customTheme", { black: "#000" });
   return (
-    <ThemeProvider theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}>
+    <ThemeProvider theme={{ orbit: { ...createTheme(orbitTheme), ...customTheme } }}>
       <Button onClick={action("onClick")}>Hello World!</Button>
     </ThemeProvider>
   );

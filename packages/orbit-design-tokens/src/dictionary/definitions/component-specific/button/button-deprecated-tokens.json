@@ -1,0 +1,115 @@
+{
+  "component": {
+    "background": {
+      "button": {
+        "bordered": {
+          "type": "color",
+          "value": "transparent",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "box-shadow": {
+      "button": {
+        "focus": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.blue.normal}",
+          "attributes": {
+            "box-shadow": {
+              "x": 0,
+              "y": 0,
+              "blur": 4,
+              "spread": 1,
+              "color": "{foundation.palette.blue.normal}",
+              "opacity": 30
+            }
+          },
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "filled": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "filled-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "filled-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "modifier-scale": {
+      "button": {
+        "active": {
+          "type": "modifier",
+          "value": 0.95,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "margin": {
+      "button-group": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top": 0,
+            "right": 1,
+            "bottom": 0,
+            "left": 0
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "button-icon": {
+        "large": {
+          "type": "size",
+          "value": "{foundation.space.three-x}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.space.two-x}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "small": {
+          "type": "size",
+          "value": "{foundation.space.two-x}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

@@ -26,11 +26,11 @@ import type { Instance, Props } from ".";
 
 const getSizeToken: any = () => ({ size, theme }) => {
   const tokens = {
-    [SIZES.EXTRASMALL]: "360px",
-    [SIZES.SMALL]: theme.orbit.widthModalSmall,
-    [SIZES.NORMAL]: theme.orbit.widthModalNormal,
-    [SIZES.LARGE]: theme.orbit.widthModalLarge,
-    [SIZES.EXTRALARGE]: theme.orbit.widthModalExtraLarge,
+    [SIZES.EXTRASMALL]: theme.orbit.modalWidthExtraSmall,
+    [SIZES.SMALL]: theme.orbit.modalWidthSmall,
+    [SIZES.NORMAL]: theme.orbit.modalWidthNormal,
+    [SIZES.LARGE]: theme.orbit.modalWidthLarge,
+    [SIZES.EXTRALARGE]: theme.orbit.modalWidthExtraLarge,
   };
 
   return tokens[size];

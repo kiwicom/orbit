@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
@@ -42,9 +42,6 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const tokens = {
     [TOKENS.background]: getBackground(),
     [TOKENS.borderColor]: resolveBorderColor(),
-    [TOKENS.iconColor]: disabled
-      ? theme.orbit.paletteCloudNormal
-      : theme.orbit.colorIconCheckboxRadio,
   };
 
   return tokens[name];
@@ -154,7 +151,7 @@ const Input = styled.input`
       }`};
     box-shadow: 0 0 0 3px
       ${({ theme, error }) =>
-        convertHexToRgba(
+        transparentColor(
           error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};
@@ -181,7 +178,6 @@ export const Label: any = styled(({ className, children, dataTest }) => (
   position: relative;
 
   ${IconContainer} {
-    color: ${getToken(TOKENS.iconColor)};
     border: 1px solid ${getToken(TOKENS.borderColor)};
   }
 
@@ -194,6 +190,7 @@ export const Label: any = styled(({ className, children, dataTest }) => (
   &:active ${IconContainer} {
     border-color: ${({ disabled, theme }) =>
       disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
+    // TODO: we can get rid of it completely, there won't be token replacement
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }

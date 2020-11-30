@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import mq from "../utils/mediaQuery";
 import ButtonLink from "../ButtonLink";
@@ -54,7 +54,7 @@ const StyledContainer = styled.li`
         ${StyledStepIconContainer} {
           transition: box-shadow ${theme.orbit.durationFast} ease-in;
           box-shadow: ${status !== "disabled" &&
-          `0 0 0 6px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)}`};
+          `0 0 0 6px ${transparentColor(theme.orbit.paletteProductNormal, 20)}`};
         }
       }
     `)}

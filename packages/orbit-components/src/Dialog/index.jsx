@@ -70,7 +70,7 @@ const StyledDialogContent = styled.div`
       text-align: center;
     }
     ${mq.largeMobile(css`
-      min-width: ${theme.orbit.widthModalSmall};
+      min-width: ${theme.orbit.modalWidthSmall};
       border-radius: 9px;
       padding: ${theme.orbit.spaceLarge};
       text-align: ${left};

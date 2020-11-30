@@ -136,6 +136,7 @@ const Textarea = React.forwardRef<Props, HTMLElement>(
       onChange,
       onFocus,
       onBlur,
+      required,
     },
     ref,
   ) => {
@@ -163,6 +164,7 @@ const Textarea = React.forwardRef<Props, HTMLElement>(
           resize={resize}
           readOnly={readOnly}
           tabIndex={tabIndex}
+          required={required}
           ref={ref}
         />
         <FormFeedback error={error} help={help} />

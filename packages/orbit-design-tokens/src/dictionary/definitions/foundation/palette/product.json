@@ -1,0 +1,66 @@
+{
+  "theme": {
+    "palette": {
+      "product": {
+        "light": {
+          "base": {
+            "type": "color",
+            "value": "#ECF8F7",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#D6F0EE",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#C0E8E4",
+            "internal": true
+          }
+        },
+        "normal": {
+          "base": {
+            "type": "color",
+            "value": "#00A991",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#009882",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#008F7B",
+            "internal": true
+          }
+        },
+        "dark": {
+          "base": {
+            "type": "color",
+            "value": "#007F6D",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#007060",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#006657",
+            "internal": true
+          }
+        },
+        "darker": {
+          "base": {
+            "type": "color",
+            "value": "#005C4E",
+            "internal": true
+          }
+        }
+      }
+    }
+  }
+}

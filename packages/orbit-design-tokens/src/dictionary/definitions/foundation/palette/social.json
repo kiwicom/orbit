@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "palette": {
+      "social": {
+        "facebook": {
+          "base": {
+            "type": "color",
+            "value": "#3B5998",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#385490",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#354F88",
+            "internal": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "theme": {
+    "palette": {
+      "ink": {
+        "lighter": {
+          "base": {
+            "type": "color",
+            "value": "#BAC7D5",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#A6B6C8",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#94A8BE",
+            "internal": true
+          }
+        },
+        "light": {
+          "base": {
+            "type": "color",
+            "value": "#5F738C",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#52647A",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#465567",
+            "internal": true
+          }
+        },
+        "normal": {
+          "base": {
+            "type": "color",
+            "value": "#252A31",
+            "internal": true
+          },
+          "complementary": {
+            "type": "color",
+            "value": "#181B20",
+            "internal": true
+          },
+          "minor": {
+            "type": "color",
+            "value": "#0B0C0F",
+            "internal": true
+          }
+        }
+      }
+    }
+  }
+}

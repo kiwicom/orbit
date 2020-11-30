@@ -1,2 +1,4 @@
 es
 lib
+src/js/createTokens.js
+src/js/defaultFoundation.js

@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+type Sizes = "extraSmall" | "small" | "medium" | "large" | "display";
+
+export type Props = {|
+  +size?: Sizes,
+  +primary?: string,
+  +secondary?: string,
+  +title?: string,
+  +description?: string,
+  +ariaLabelledby?: string,
+  ...Globals,
+|};
+
+type SmartPassIllustration = React.ComponentType<Props>;
+
+declare export var SmartPassV1: SmartPassIllustration;
+declare export var SmartPassV2: SmartPassIllustration;
+declare export var SmartPassV3: SmartPassIllustration;
+declare export var SmartPassV4: SmartPassIllustration;
+declare export var SmartPassV5: SmartPassIllustration;

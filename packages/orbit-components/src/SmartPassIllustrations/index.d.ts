@@ -6,12 +6,10 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/SmartPassIllustration";
 
-type Names = "v1" | "v2" | "v3" | "v4" | "v5";
+type Sizes = "extraSmall" | "small" | "medium" | "large" | "display";
 
 export interface Props extends Common.Global {
-  readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
-  readonly name: Names;
-  readonly alt?: string;
+  readonly size?: Sizes;
   readonly title?: string;
   readonly desciption?: string;
   readonly primary?: string;
@@ -21,4 +19,8 @@ export interface Props extends Common.Global {
 
 declare const SmartPassIllustration: React.FunctionComponent<Props>;
 
-export { SmartPassIllustration, SmartPassIllustration as default };
+export declare const SmartPassV1: typeof SmartPassIllustration;
+export declare const SmartPassV2: typeof SmartPassIllustration;
+export declare const SmartPassV3: typeof SmartPassIllustration;
+export declare const SmartPassV4: typeof SmartPassIllustration;
+export declare const SmartPassV5: typeof SmartPassIllustration;

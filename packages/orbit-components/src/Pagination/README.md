@@ -19,7 +19,7 @@ Table below contains all types of the props available in the Pagination componen
 | Name             | Type             | Default    | Description                                                                                |
 | :--------------- | :--------------- | :--------- | :----------------------------------------------------------------------------------------- |
 | dataTest         | `string`         |            | Optional prop for testing purposes.                                                        |
-| hideLabels       | `boolean`        | `true`     | If `false`, the Previous and Next labels will be hidden.                                   |
+| hideLabels       | `boolean`        | `true`     | If `false`, the Previous and Next labels will be visible.                                  |
 | **onPageChange** | `number => void` |            | Function for handling onPageChange event. [See Functional specs](#functional-specs)        |
 | **pageCount**    | `number`         |            | The page count to render into separated buttons. [See Functional specs](#functional-specs) |
 | selectedPage     | `number`         | `1`        | The index number of the selected page.                                                     |

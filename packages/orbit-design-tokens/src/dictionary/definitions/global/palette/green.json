@@ -1,0 +1,54 @@
+{
+  "palette": {
+    "green": {
+      "light": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.green.light.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.green.light.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.green.light.minor}"
+        }
+      },
+      "normal": {
+        "base": {
+          "type": "color",
+          "value":"{theme.palette.green.normal.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.green.normal.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.green.normal.minor}"
+        }
+      },
+      "dark": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.green.dark.base}"
+        },
+        "complementary": {
+          "type": "color",
+          "value": "{theme.palette.green.dark.complementary}"
+        },
+        "minor": {
+          "type": "color",
+          "value": "{theme.palette.green.dark.minor}"
+        }
+      },
+      "darker": {
+        "base": {
+          "type": "color",
+          "value": "{theme.palette.green.darker.base}"
+        }
+      }
+    }
+  }
+}

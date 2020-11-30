@@ -1,32 +1,22 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
   "version": "0.13.1",
-  "description": "Design tokens for Kiwi.com.",
+  "description": "Design tokens of Orbit design system.",
   "main": "lib/index.js",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiwicom/orbit-design-tokens.git"
+    "url": "https://github.com/kiwicom/orbit.git"
   },
   "files": [
     "lib/*",
     "package.json",
-    "README.md",
-    "output/*",
-    "pages/*"
+    "README.md"
   ],
   "scripts": {
-    "generate-json": "node ./src/theo/generate-theo-parser",
-    "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
-    "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
-    "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
-    "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
-    "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
-    "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
-    "build": "yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
-    "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
-    "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
+    "build:dictionary": "yarn style-dictionary build --config ./src/dictionary/build.js",
+    "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/dictionary/* src",
+    "build": "yarn build:dictionary && yarn build:lib",
     "prepublishOnly": "yarn build"
   },
   "author": "Kiwi.com",
@@ -34,7 +24,8 @@
   "keywords": [
     "orbit",
     "ui",
-    "design"
+    "design",
+    "tokens"
   ],
   "devDependencies": {
     "@babel/parser": "^7.9.4",
@@ -43,6 +34,7 @@
     "lodash": "^4.17.14",
     "memfs": "^3.2.0",
     "optimist": "^0.6.1",
+    "style-dictionary": "^2.10.2",
     "theo": "^8.1.5",
     "xml": "^1.0.1"
   },

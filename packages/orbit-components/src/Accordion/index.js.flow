@@ -9,7 +9,7 @@ import type { Globals } from "../common/common.js.flow";
 import typeof AccordionSectionType from "./AccordionSection/index.js.flow";
 
 export type Props = {|
-  +children?: React.ChildrenArray<React.Element<AccordionSectionType>>,
+  +children?: React.Node,
   +expandedSection?: string | number,
   +onExpand?: (sectionId: string | number) => void | Promise<any>,
   +loading?: boolean,

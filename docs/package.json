@@ -8,6 +8,7 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
+    "@kiwicom/orbit-components": "^0.101.0",
     "@kiwicom/orbit-design-tokens": "^0.12.2",
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/mdx": "^1.6.21",

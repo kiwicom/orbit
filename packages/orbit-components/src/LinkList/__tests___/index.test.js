@@ -1,22 +1,26 @@
 // @flow
-import { mount } from "enzyme";
 import * as React from "react";
+import { screen, render } from "@testing-library/react";
 
 import LinkList from "..";
 
 describe("#LinkList", () => {
-  const wrapper = mount(
-    <LinkList direction="row" spacing="XXSmall">
-      <div>link</div>
-    </LinkList>,
-  );
+  it("should have expected dom output", () => {
+    render(
+      <LinkList dataTest="kek" spacing="XXLarge">
+        <div>link 1</div>
+        <div>link 2</div>
+        <div>link 3</div>
+      </LinkList>,
+    );
 
-  it("should have children", () => {
-    expect(wrapper.contains("link")).toBe(true);
-  });
-
-  it("should pass props to Stack", () => {
-    expect(wrapper.find("Stack").prop("direction")).toBe("row");
-    expect(wrapper.find("Stack").prop("spacing")).toBe("XXSmall");
+    expect(screen.getByText("link 1")).toBeInTheDocument();
+    expect(screen.getByTestId("kek")).toBeInTheDocument();
+    expect(screen.getAllByRole("listitem")[0]).toHaveStyle({
+      marginBottom: "40px",
+    });
+    expect(screen.getAllByRole("listitem")[2]).toHaveStyle({
+      marginBottom: "0px",
+    });
   });
 });

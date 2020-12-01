@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.102.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.101.0...@kiwicom/orbit-components@0.102.0) (2020-12-01)
+
+
+### Bug Fixes
+
+* **Accordion:** allow any children type in Flow ([#2552](https://github.com/kiwicom/orbit/issues/2552)) ([1f7e37d](https://github.com/kiwicom/orbit/commit/1f7e37d7991e750451329801c5171686e71a9aaf))
+* **Popover:** popover bottom position issue ([#2540](https://github.com/kiwicom/orbit/issues/2540)) ([4b251ad](https://github.com/kiwicom/orbit/commit/4b251ad3f5e388aced3bb29a51ff128f015906a7))
+* **SmartPassIllustration:** change smartPass api, to reduce bundle size ([#2529](https://github.com/kiwicom/orbit/issues/2529)) ([761d3f3](https://github.com/kiwicom/orbit/commit/761d3f39bd0fb6f5b8ea428410958eb491377ff9))
+
+
+### Features
+
+* **Textarea:** add required prop ([#2532](https://github.com/kiwicom/orbit/issues/2532)) ([904a78f](https://github.com/kiwicom/orbit/commit/904a78f04b316955f57b84dbb4e240f6067f4dc4))
+
+
+### BREAKING CHANGES
+
+* **SmartPassIllustration:** API of SmartPassIllustation has changed
+
+
+
+
+
 # [0.101.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.100.1...@kiwicom/orbit-components@0.101.0) (2020-11-26)
 
 

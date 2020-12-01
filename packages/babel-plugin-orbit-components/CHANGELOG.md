@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@1.7.2...@kiwicom/babel-plugin-orbit-components@2.0.0) (2020-12-01)
+
+
+### Bug Fixes
+
+* **SmartPassIllustration:** change smartPass api, to reduce bundle size ([#2529](https://github.com/kiwicom/orbit/issues/2529)) ([761d3f3](https://github.com/kiwicom/orbit/commit/761d3f39bd0fb6f5b8ea428410958eb491377ff9))
+
+
+### BREAKING CHANGES
+
+* **SmartPassIllustration:** API of SmartPassIllustation has changed
+
+
+
+
+
 ## [1.7.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@1.7.1...@kiwicom/babel-plugin-orbit-components@1.7.2) (2020-10-23)
 
 ### Bug Fixes

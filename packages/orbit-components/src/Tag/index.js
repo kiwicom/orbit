@@ -7,6 +7,7 @@ import { rtlSpacing, left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
 import { SIZES, STATES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
+import resolveColor from "./helpers/resolveColor";
 
 import type { Props } from "./index";
 
@@ -19,29 +20,23 @@ const getFontSize = ({ theme, size }) => {
   return tokens[size];
 };
 
-const getBackgroundColor = state => ({ selected, removable, theme }) => {
+const getBackgroundColor = state => () => {
   const states = {
-    [STATES.DEFAULT]:
-      // eslint-disable-next-line no-nested-ternary
-      removable && !selected
-        ? theme.orbit.paletteBlueNormal
-        : selected
-        ? theme.orbit.paletteBlueLight
-        : theme.orbit.paletteCloudDark,
-    [STATES.HOVER]:
-      // eslint-disable-next-line no-nested-ternary
-      removable && !selected
-        ? theme.orbit.paletteBlueNormalHover
-        : selected
-        ? theme.orbit.paletteBlueLightHover
-        : theme.orbit.paletteCloudNormalHover,
-    [STATES.ACTIVE]:
-      // eslint-disable-next-line no-nested-ternary
-      removable && !selected
-        ? theme.orbit.paletteBlueNormalActive
-        : selected
-        ? theme.orbit.paletteBlueLightActive
-        : theme.orbit.paletteCloudNormalHover,
+    [STATES.DEFAULT]: resolveColor({
+      selected: "paletteBlueNormal",
+      removable: "paletteBlueLight",
+      normal: "paletteCloudDark",
+    }),
+    [STATES.HOVER]: resolveColor({
+      selected: "paletteBlueNormalHover",
+      removable: "paletteBlueLightHover",
+      normal: "paletteCloudNormalHover",
+    }),
+    [STATES.ACTIVE]: resolveColor({
+      selected: "paletteBlueNormalActive",
+      removable: "paletteBlueLightActive",
+      normal: "paletteCloudNormalHover",
+    }),
   };
   return states[state];
 };
@@ -49,25 +44,18 @@ const getBackgroundColor = state => ({ selected, removable, theme }) => {
 const CloseContainer = styled.div`
   display: flex;
   margin-${left}: 8px;
-  opacity: 0.25;
-  color: ${({ theme, selected, removable }) =>
-    // eslint-disable-next-line no-nested-ternary
-    removable && !selected
-      ? theme.orbit.paletteWhite
-      : selected
-      ? theme.orbit.paletteBlueDarker
-      : theme.orbit.paletteInkLight};
+  opacity: 0.5;
+  color: ${resolveColor({
+    selected: "paletteWhite",
+    removable: "paletteBlueDarker",
+    normal: "paletteInkLink",
+  })};
   cursor: ${({ actionable }) => actionable && `pointer`};
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  &:hover {
-    color: ${({ theme, selected }) =>
-      selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteWhite};
-  }
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:active {
     color: ${({ theme, selected }) =>
-      selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteWhite};
+      selected ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
   }
 `;
 
@@ -76,42 +64,37 @@ CloseContainer.defaultProps = {
 };
 
 export const StyledTag = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  color: ${({ theme, selected, removable }) =>
-    // eslint-disable-next-line no-nested-ternary
-    removable && !selected
-      ? theme.orbit.paletteWhite
-      : selected
-      ? theme.orbit.paletteBlueDarker
-      : theme.orbit.colorTextTag};
-  background: ${getBackgroundColor(STATES.DEFAULT)};
-  display: inline-flex;
+  ${({ theme, actionable }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    color: ${resolveColor({
+      selected: "paletteWhite",
+      removable: "paletteBlueDarker",
+      normal: "colorTextTag",
+    })};
+    background: ${getBackgroundColor(STATES.DEFAULT)};
+    display: inline-flex;
 
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  font-size: ${getFontSize};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingTag)};
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out,
-    background ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-size: ${getFontSize};
+    font-weight: ${theme.orbit.fontWeightMedium};
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    padding: ${rtlSpacing(theme.orbit.paddingTag)};
+    transition: color ${theme.orbit.durationFast} ease-in-out,
+      box-shadow ${theme.orbit.durationFast} ease-in-out,
+      background ${theme.orbit.durationFast} ease-in-out;
 
-  &:focus {
-    outline: 0;
-  }
+    &:focus {
+      outline: 0;
+    }
 
-  ${({ actionable }) =>
-    actionable &&
+    ${actionable &&
     css`
       cursor: pointer;
 
       &:hover {
         background: ${getBackgroundColor(STATES.HOVER)};
-        ${CloseContainer} {
-          opacity: 0.5;
-        }
         box-shadow: none;
       }
 
@@ -132,6 +115,7 @@ export const StyledTag = styled.div`
         outline: 0;
       }
     `};
+  `}
 `;
 
 StyledTag.defaultProps = {
@@ -143,10 +127,13 @@ const StyledClose = styled.div`
   border-radius: 100%;
 
   &:focus {
+    ${CloseContainer} {
+      opacity: 1;
+    }
     outline: none;
     box-shadow: 0 0 0 2px
       ${({ theme, selected, removable }) =>
-        selected && !removable ? theme.orbit.paletteBlueDarker : theme.orbit.paletteWhite};
+        selected && !removable ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
   }
 `;
 
@@ -154,18 +141,16 @@ StyledClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const buttonClickEmulation = (ev, callback) => {
+const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButtonElement>) => {
   if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
     ev.preventDefault();
     if (callback) callback();
-  } else if (ev.keyCode === KEY_CODE_MAP.ENTER) {
+  } else if (ev && ev.keyCode === KEY_CODE_MAP.ENTER) {
     if (callback) callback();
   }
 };
 
-const Tag = (props: Props) => {
-  const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
-
+const Tag = ({ selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest }: Props) => {
   return (
     <StyledTag
       actionable={onClick || onRemove}
@@ -176,7 +161,7 @@ const Tag = (props: Props) => {
       selected={selected}
       tabIndex={(onClick || onRemove) && "0"}
       role="button"
-      onKeyDown={ev => buttonClickEmulation(ev, onClick)}
+      onKeyDown={buttonClickEmulation(onClick)}
     >
       {children}
       {!!onRemove && (
@@ -190,13 +175,12 @@ const Tag = (props: Props) => {
         >
           <StyledClose
             tabIndex="0"
-            aria-label="close"
             selected={selected}
             aria-label="close"
             role="button"
             onKeyDown={ev => {
               ev.stopPropagation();
-              buttonClickEmulation(ev, onRemove);
+              buttonClickEmulation(onRemove);
             }}
           >
             <CloseCircle size="small" />

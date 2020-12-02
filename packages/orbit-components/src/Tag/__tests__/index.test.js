@@ -26,3 +26,4 @@ describe("Tag", () => {
     expect(onRemove).toHaveBeenCalled();
     expect(screen.getByText(content)).toBeInTheDocument();
   });
+});

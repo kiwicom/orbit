@@ -1,51 +1,51 @@
 // @flow
-
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Radio from "../index";
 
-const label = "Radio";
-const onChange = jest.fn();
-const value = "option";
-const tabIndex = "-1";
-const dataTest = "test";
-const name = "name";
+describe(`Radio`, () => {
+  it("should have expected DOM output", () => {
+    const label = "Radio";
+    const onChange = jest.fn();
+    const value = "option";
+    const tabIndex = "-1";
+    const dataTest = "test";
+    const name = "name";
 
-describe(`Default Radio`, () => {
-  const component = shallow(
-    <Radio
-      label={label}
-      onChange={onChange}
-      value={value}
-      dataTest={dataTest}
-      name={name}
-      tabIndex={tabIndex}
-    />,
-  );
-  const radio = component.find("Radio__Input");
-  it("should contain a label", () => {
-    expect(component.find("Radio__LabelText").render().text()).toBe(label);
-  });
-  it("should have data-test", () => {
-    expect(radio.render().prop("data-test")).toBe(dataTest);
-  });
+    render(
+      <Radio
+        label={label}
+        onChange={onChange}
+        value={value}
+        dataTest={dataTest}
+        name={name}
+        readOnly
+        tabIndex={tabIndex}
+      />,
+    );
 
-  it("should have data-state", () => {
-    expect(radio.render().prop("data-state")).toBe("ok");
-  });
+    const radio = screen.getByRole("radio");
 
-  it("should have tabindex", () => {
-    expect(radio.render().prop("tabindex")).toBe(tabIndex);
-  });
-  it("should have name", () => {
-    expect(radio.render().prop("attribs").name).toBe(name);
-  });
-  it("input value should match", () => {
-    expect(radio.prop("value")).toBe(value);
-  });
-  it("should execute onChange method", () => {
-    radio.simulate("change");
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    expect(screen.getByLabelText(label)).toBeInTheDocument();
+    expect(radio).toHaveAttribute("tabindex", "-1");
+    expect(radio).toHaveAttribute("name", name);
+    expect(radio).toHaveAttribute("readonly");
+    expect(radio).toHaveAttribute("data-state", "ok");
+    expect(screen.getByDisplayValue(value)).toBeInTheDocument();
+    userEvent.click(radio);
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should be disabled", () => {
+    render(<Radio disabled onChange={() => {}} />);
+    expect(screen.getByRole("radio")).toBeDisabled();
+  });
+
+  it("should have error state", () => {
+    render(<Radio hasError onChange={() => {}} />);
+    expect(screen.getByRole("radio")).toHaveAttribute("data-state", "error");
   });
 });

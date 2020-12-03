@@ -16,7 +16,6 @@ interface Props {
 }
 
 export const p = Text;
-export const h1 = (props: Props) => <Heading as="h1" type="display" {...props} />;
 export const h2 = (props: Props) => <Heading as="h2" type="title1" {...props} />;
 export const h3 = (props: Props) => <Heading as="h3" type="title2" {...props} />;
 export const h4 = (props: Props) => <Heading as="h4" type="title3" {...props} />;

@@ -27,10 +27,10 @@ After adding import into your project you can use it simply like:
 
 The table below contains all types of props available in the SkipLink component.
 
-| Name        | Type                | Description                            |
-| :---------- | :------------------ | :------------------------------------- |
-| buttonLabel | `string`            | Description for screen readers.        |
-| **links**   | [`links[]`](#links) | An array specifying links to point to. |
+| Name      | Type                | Description                            |
+| :-------- | :------------------ | :------------------------------------- |
+| label     | `string`            | Description for screen readers.        |
+| **links** | [`links[]`](#links) | An array specifying links to point to. |
 
 ## links
 

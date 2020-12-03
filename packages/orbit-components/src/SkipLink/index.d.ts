@@ -16,7 +16,7 @@ interface Action {
 
 interface Props {
   readonly links: Action[];
-  readonly buttonLabel?: string;
+  readonly label?: string;
 }
 
 declare const SkipLink: React.FunctionComponent<Props>;

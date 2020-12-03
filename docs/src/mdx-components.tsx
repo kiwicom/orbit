@@ -9,7 +9,7 @@ import {
   TableRow,
   TableCell,
 } from "@kiwicom/orbit-components";
-import { InlineCode, Pre } from "./components/Code";
+import { InlineCode, CodeBlock } from "./components/Code";
 
 interface Props {
   children: React.ReactNode;
@@ -28,6 +28,6 @@ export const tbody = TableBody;
 export const tr = TableRow;
 export const td = TableCell;
 export const th = TableCell;
-export const pre = Pre;
+export const code = CodeBlock;
 export const inlineCode = InlineCode;
 export const a = TextLink;

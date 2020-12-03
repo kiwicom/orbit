@@ -15,7 +15,7 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         remarkPlugins: [],
-        rehypePlugins: [require("@mapbox/rehype-prism")],
+        rehypePlugins: [],
       },
     },
     "gatsby-transformer-sharp",

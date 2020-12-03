@@ -10,7 +10,7 @@ export default {
   Example: () => (
     <>
       <SkipLink
-        label="Use these links to skip to that section."
+        buttonLabel="Use these links to skip to that section."
         links={[
           {
             href: "#skiplink",

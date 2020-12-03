@@ -1,29 +1,33 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import SkipLink from "..";
 
 describe("SkipLink", () => {
-  const links = [
-    {
-      href: "https://www.kiwi.com/cz/pages/content/terms",
-      name: "Got to terms and condition",
-    },
-    {
-      name: "Reguest refund",
-      href: "#link",
-    },
-  ];
-  const buttonLabel = "https://www.kiwi.com/en/";
+  it("should have expected DOM output", () => {
+    const onClick = jest.fn();
+    const links = [
+      {
+        href: "https://www.kiwi.com/cz/pages/content/terms",
+        name: "Go to terms and conditions",
+      },
+      {
+        name: "Go to something",
+        onClick,
+      },
+    ];
 
-  const component = shallow(<SkipLink links={links} buttonLabel={buttonLabel} />);
-
-  it("Should contain description block", () => {
-    expect(component.find("SkipLink__StyledLabel").exists()).toEqual(true);
-  });
-
-  it("Should have 2 Links", () => {
-    expect(component.find("SkipLink__StyledLink").at(1).exists()).toEqual(true);
+    render(<SkipLink links={links} buttonLabel="https://www.kiwi.com/en/" />);
+    expect(screen.getByRole("link")).toHaveAttribute(
+      "href",
+      "https://www.kiwi.com/cz/pages/content/terms",
+    );
+    expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+    expect(screen.getByLabelText("https://www.kiwi.com/en/"));
+    userEvent.click(screen.getByRole("button"), { keyCode: 13 });
+    expect(onClick).toHaveBeenCalled();
   });
 });

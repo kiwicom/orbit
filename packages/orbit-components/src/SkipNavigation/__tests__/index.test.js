@@ -1,28 +1,44 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import SkipNavigation from "..";
 
 describe("SkipNavigation", () => {
-  const actions = [
-    {
-      link: "https://www.kiwi.com/cz/pages/content/terms",
-      name: "Got to terms and condition",
-    },
-    {
-      name: "Add baggage",
-    },
-    {
-      name: "Reguest refund",
-    },
-  ];
-  const feedbackUrl = "https://www.kiwi.com/en/";
+  it("should have expected DOM output", () => {
+    const actions = [
+      {
+        link: "https://www.kiwi.com/cz/pages/content/terms",
+        name: "Got to terms and condition",
+      },
+      {
+        name: "Add baggage",
+      },
+      {
+        name: "Reguest refund",
+      },
+    ];
+    const feedbackUrl = "https://www.kiwi.com/en/";
+    render(<SkipNavigation actions={actions} feedbackUrl={feedbackUrl} />);
+    expect(screen.getByRole("link")).toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
+  });
 
-  const component = shallow(<SkipNavigation actions={actions} feedbackUrl={feedbackUrl} />);
+  it("should toggle select on focus/blur", () => {
+    const { container } = render(
+      <SkipNavigation
+        actions={[
+          {
+            name: "Add baggage",
+          },
+        ]}
+        feedbackUrl="https://www.kiwi.com/en/"
+      />,
+    );
 
-  it("Should pass props", () => {
-    expect(component.find("Button").exists()).toEqual(true);
-    expect(component.find("Select").exists()).toEqual(true);
+    expect(container).toHaveStyle({ clip: "rect(0 0 0 0)" });
+    userEvent.tab(container);
+    expect(container).toHaveStyle({ clip: "" });
   });
 });

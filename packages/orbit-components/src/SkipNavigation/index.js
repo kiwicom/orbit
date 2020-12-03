@@ -23,12 +23,15 @@ const StyledNavigation = styled.div`
   ${({ show }) =>
     !show &&
     css`
-      clip: rect(1px, 1px, 1px, 1px);
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
       overflow: hidden;
+      white-space: nowrap;
+      padding: 0;
       position: absolute;
-      pointer-events: none;
-      opacity: 0;
-      width: 0;
+      width: 1px;
     `};
 `;
 
@@ -107,14 +110,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
   };
 
   return (
-    <StyledNavigation
-      tabIndex="-1"
-      onFocus={handleFocus}
-      onBlur={() => {
-        setShow(false);
-      }}
-      show={show}
-    >
+    <StyledNavigation tabIndex="-1" onFocus={handleFocus} onBlur={() => setShow(false)} show={show}>
       <Stack justify="between">
         <StyledSelectWrapper>
           <Stack align="center">

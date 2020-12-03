@@ -42,17 +42,17 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const SkipLink = ({ links, label }: Props) => {
+const SkipLink = ({ links, buttonLabel }: Props) => {
   return (
-    <StyledNavigation aria-label={label}>
+    <StyledNavigation aria-label={buttonLabel}>
       {links &&
         links.map(({ href, name, onClick }, index) => {
           return (
             <StyledLink
               key={encodeURIComponent(name + index)}
               href={href}
-              tabIndex={href ? "" : "0"}
-              role={href ? "" : "Button"}
+              tabIndex={onClick && "0"}
+              role={href ? "link" : "button"}
               onClick={onClick}
               onKeyDown={ev => {
                 if (ev.keyCode === KEY_CODE_MAP.ENTER && onClick) {

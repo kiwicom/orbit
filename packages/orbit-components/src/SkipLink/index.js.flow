@@ -12,12 +12,12 @@ type Actions = {|
 
 export type MappedOptions = {|
   +value: string | number,
-  +label?: string,
+  +buttonLabel?: string,
   +disabled?: boolean,
 |};
 export type Props = {|
   links: Actions[],
-  label?: string,
+  buttonLabel?: string,
 |};
 
 declare export default React.ComponentType<Props>;

@@ -13,7 +13,7 @@ After adding import into your project you can use it simply like:
   links={[
     {
       href: "#terms",
-      name: "Got to terms and condition",
+      name: "Go to terms and conditions",
     },
     {
       name: "Reguest refund",
@@ -23,14 +23,20 @@ After adding import into your project you can use it simply like:
 />
 ```
 
+Screen reader will read the content in the following order:
+
+- content of the link
+- aria-label of nav
+- navigation
+
 ## Props
 
 The table below contains all types of props available in the SkipLink component.
 
-| Name      | Type                | Description                            |
-| :-------- | :------------------ | :------------------------------------- |
-| label     | `string`            | Description for screen readers.        |
-| **links** | [`links[]`](#links) | An array specifying links to point to. |
+| Name        | Type                | Description                            |
+| :---------- | :------------------ | :------------------------------------- |
+| buttonLabel | `string`            | Description for screen readers.        |
+| **links**   | [`links[]`](#links) | An array specifying links to point to. |
 
 ## links
 

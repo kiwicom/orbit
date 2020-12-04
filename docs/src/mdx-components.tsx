@@ -9,7 +9,11 @@ import {
   TableRow,
   TableCell,
 } from "@kiwicom/orbit-components";
+import { NewWindow } from "@kiwicom/orbit-components/icons";
+import { navigate } from "gatsby";
+import { css } from "styled-components";
 import { InlineCode, CodeBlock } from "./components/Code";
+import useIsUrlExternal from "./hooks/useIsUrlExternal";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
@@ -75,6 +79,28 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
 export const code = CodeBlock;
 export const inlineCode = InlineCode;
 export const a = ({ children, href }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  if (href) return <TextLink href={href}>{children}</TextLink>;
-  return <a href={href}>{children}</a>;
+  const isExternal = useIsUrlExternal(href);
+  return (
+    <span
+      css={css`
+        /* TextLink's line-height affects nested elements like <code> */
+        a {
+          line-height: normal;
+        }
+      `}
+    >
+      <TextLink
+        href={href}
+        external={isExternal}
+        iconRight={isExternal && <NewWindow />}
+        onClick={event => {
+          if (isExternal || !href) return;
+          event.preventDefault();
+          navigate(href);
+        }}
+      >
+        {children}
+      </TextLink>
+    </span>
+  );
 };

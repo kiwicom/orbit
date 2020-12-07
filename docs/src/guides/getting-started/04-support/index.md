@@ -1,0 +1,5 @@
+---
+title: Support
+excerpt: A list of all channels where to report any bug or request new features.
+type: tabs
+---

@@ -1,0 +1,60 @@
+---
+title: For Kiwi.com
+---
+
+Slack is Kiwi.com's main platform for communication,
+so it's only understandable that everything important that is happening around Orbit is also on Slack.
+
+## Slack
+
+### Groups
+
+We also have four groups you can use to tag members of Orbit team:
+
+- **\@orbit** -- tags all Orbit members
+- **\@orbitdesign** -- tags all designers behind Orbit
+- **\@orbitreact** -- tags all React maintainers of Orbit components
+- **\@orbitdocs** -- tags all maintainers of Orbit documentation
+
+### Channels
+
+See all of our channels and what they're for.
+
+#### \#plz-orbit
+
+If you need to request some change in Orbit components, Sketch UI kit, etc.,
+this channel is one you are looking for.
+
+#### \#orbit-announcements
+
+The main channel with general information about Orbit -- component releases, updates of Sketch UI library, ...
+
+#### \#orbit-react
+
+The channel where we discuss everything connected to developing Orbit components in React.
+
+#### \#orbit-mobile-native
+
+The channel where we discuss everything related to the native mobile variation of Orbit.
+
+#### \#orbit-standup
+
+Team channel where all team members write their daily standups.
+
+#### \#orbit-documentation
+
+The channel where we discuss everything related to documentation.
+
+#### \#orbit-github-log
+
+Log of everything that is happening in [Orbit Github repositories](https://orbit.kiwi/getting-started/github-repos-resources/).
+
+## Bug reporting on Github
+
+If you found any bugs in our components,
+report them [on Github](https://github.com/kiwicom/orbit-components/issues) and we'll fix them asap.
+It's the highest priority to have Orbit working as expected.
+
+<FancyLink icon="github">
+
+[Report bug](https://github.com/kiwicom/orbit-components/issues)

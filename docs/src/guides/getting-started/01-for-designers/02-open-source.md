@@ -1,0 +1,43 @@
+---
+title: For open-source
+---
+
+👋 It's so great to see you here!
+
+As you don't have access to Kiwi.com's network and tooling,
+we provide our Figma UI kit as files for you to download.
+
+## Figma UI kit
+
+To access our library, duplicate the files you can find at our community profile.
+
+<FancyLink icon="figma">
+
+[Orbit Figma profile](https://figma.com/@OrbitByKiwi)
+</FancyLink>
+
+These will appear as in your Drafts.
+Now you can work with them to create your own designs.
+
+If you have a team plan, you can also use the files as a library.
+See the [Figma docs for how to publish the files as a library](https://help.figma.com/hc/en-us/articles/360039162653-Publish-a-File-to-Team-Library).
+
+<Callout type="warning>
+
+Currently, Figma does not provide notifications when our public files are updated.
+To make sure you stay up to date, check the _Last updated_ date on the files at our community profile
+and [follow us on Twitter](https://twitter.com/OrbitKiwi).
+<Callout>
+
+## Font
+
+By default, our libraries use Circular Pro, which is not an open font.
+If you have a license for Circular Pro, you can use Orbit with Circular Pro.
+
+<Callout type="warning>
+
+Don't forget to [buy a license](https://lineto.com/the+fonts/font+categories/text+fonts/circular/) for your domains.
+</Callout>
+
+If you do not have a license, you can replace it with Roboto, a free font from Google.
+You can [download Roboto from Google Fonts](https://fonts.google.com/specimen/Roboto).

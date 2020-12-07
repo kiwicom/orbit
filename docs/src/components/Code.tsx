@@ -10,6 +10,9 @@ export const InlineCode = styled.code`
   color: #000;
   /* monospace typefaces appear a bit larger */
   font-size: calc(1em - 2px);
+  a & {
+    color: currentColor;
+  }
 `;
 
 interface CodeBlockProps {

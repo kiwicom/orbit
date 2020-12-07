@@ -44,13 +44,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error when querying guides.`);
     return;
   }
-  result.data.allMdx.nodes.forEach(guide => {
-    const slug = omitNumbers(guide.slug);
+  result.data.allMdx.nodes.forEach(({ id, slug }) => {
+    const cuttedSlug = omitNumbers(slug);
 
     createPage({
-      path: `/${slug}`,
+      path: `/${cuttedSlug}`,
       component: `${__dirname}/src/templates/Doc.tsx`,
-      context: { id: guide.id },
+      context: { id },
     });
   });
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(
+    `
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter!
+    }
+
+    type MdxFrontmatter {
+      title: String!
+      date: Date @dateformat
+      type: String
+      excerpt: String
+    }
+  `,
+  );
 };

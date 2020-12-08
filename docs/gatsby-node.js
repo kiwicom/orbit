@@ -1,5 +1,3 @@
-const path = require("path");
-
 // creates a "collection" field to it easier to filter nodes created by
 // gatsby-source-filesystem instead of awkwardly filtering by file path
 // https://github.com/gatsbyjs/gatsby/issues/1634#issuecomment-388899348
@@ -10,7 +8,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   createNodeField({
     node,
     name: "collection",
-    value: parent.sourceInstanceName,
+    value: parent.relativeDirectory.split("/")[0],
   });
 };
 
@@ -35,7 +33,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   result.data.allMdx.nodes.forEach(guide => {
     createPage({
-      path: `/guides/${path.basename(guide.slug)}`,
+      path: guide.slug,
       component: `${__dirname}/src/templates/Guide.tsx`,
       context: {
         title: guide.frontmatter.title,

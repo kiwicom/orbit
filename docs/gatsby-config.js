@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     title: "Orbit",
     description: "Open source design system for your next travel project.",
+    siteUrl: "https://orbit.kiwi/",
+    author: "Kiwi.com",
   },
   plugins: [
     {

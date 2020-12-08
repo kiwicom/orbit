@@ -1,26 +1,52 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Logo from "../images/logo.svg";
+import { Link } from "gatsby";
 import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
-import useSiteMetadata from "../hooks/useSiteMetadata";
+import NavigationLinks from "./NavigationLinks";
+import Input from "./Input";
 
-const StyledWrapper = styled.header<{ isHome?: boolean }>`
+const flexMixin = css`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledWrapper = styled.header<{ isHomePage?: boolean }>`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
   padding: 1rem 2rem;
-  height: ${({ isHome }) => (isHome ? `108px` : `76px`)};
+  height: ${({ isHomePage }) => (isHomePage ? `108px` : `76px`)};
   background: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
   z-index: 10;
 `;
 
+const StyledLeftSide = styled.div`
+  ${flexMixin};
+`;
+
+const StyledRightSide = styled.div`
+  ${flexMixin};
+`;
+
 const Navbar = () => {
-  const { siteUrl } = useSiteMetadata();
+  const isHomePage = `${window.location.origin}/` === window.location.href;
 
   return (
-    <StyledWrapper isHome={window.location.href === siteUrl}>
-      <Logo height={40} />
-      <StarEmpty ariaLabel="star" />
+    <StyledWrapper isHomePage={isHomePage}>
+      <StyledLeftSide>
+        <Link to="/">
+          <Logo height={40} />
+        </Link>
+        {!isHomePage && <Input />}
+      </StyledLeftSide>
+      <StyledRightSide>
+        <NavigationLinks />
+        <StarEmpty ariaLabel="star" />
+      </StyledRightSide>
     </StyledWrapper>
   );
 };

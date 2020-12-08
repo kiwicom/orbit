@@ -1,21 +1,32 @@
 import React from "react";
-import { graphql } from "gatsby";
+import styled from "styled-components";
+import useCollections from "../hooks/useCollections";
+import { Link as GatsbyLink } from "gatsby";
 
-interface Props {
-  data: any;
-}
+const StyledLink = styled(GatsbyLink)`
+  font-size: 1em;
+  line-height: 22px;
+  color: #252a31;
+`;
 
-export default function NavigationLinks({ data }: Props) {
-  return <div></div>;
-}
+const NavigationLinks = () => {
+  const collections = useCollections([
+    "guides",
+    "accessibility",
+    "components",
+    "design-tokens",
+    "foundation",
+  ]);
 
-// export const query = graphql`
-//   query LinksQuery() {
-//     mdx(id: { eq: $id }) {
-//       frontmatter {
-//         title
-//       }
-//       body
-//     }
-//   }
-// `;
+  const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  return collections && collections.length > 0
+    ? collections.map(({ name, id }) => (
+        <StyledLink key={id} to={`/${name}/`}>
+          {capitalize(name.split("-").join(" "))}
+        </StyledLink>
+      ))
+    : null;
+};
+
+export default NavigationLinks;

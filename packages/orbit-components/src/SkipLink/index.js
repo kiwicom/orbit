@@ -10,14 +10,14 @@ import type { Props } from "./index";
 const StyledNavigation = styled.nav``;
 
 const StyledLink = styled.a`
-  position: absolute;
-  width: 0;
-  height: 0;
-  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  padding: 0;
+  position: absolute;
+  width: 1px;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   text-decoration: ${({ theme }) => theme.orbit.textDecorationTextLinkPrimary};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextLarge}; /* TODO: ADD TOKEN */
@@ -42,31 +42,17 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledLabel = styled.p`
-  background-color: red;
-  visibility: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-`;
-
 const SkipLink = ({ links, buttonLabel }: Props) => {
   return (
-    <StyledNavigation>
-      {buttonLabel && <StyledLabel>{buttonLabel}</StyledLabel>}
+    <StyledNavigation aria-label={buttonLabel}>
       {links &&
         links.map(({ href, name, onClick }, index) => {
           return (
             <StyledLink
               key={encodeURIComponent(name + index)}
               href={href}
-              tabIndex={href ? "" : "0"}
-              role={href ? "" : "Button"}
+              tabIndex={onClick && "0"}
+              role={href ? "link" : "button"}
               onClick={onClick}
               onKeyDown={ev => {
                 if (ev.keyCode === KEY_CODE_MAP.ENTER && onClick) {

@@ -12,7 +12,7 @@ type Actions = {|
 
 export type MappedOptions = {|
   +value: string | number,
-  +label?: string,
+  +buttonLabel?: string,
   +disabled?: boolean,
 |};
 export type Props = {|

@@ -1,58 +1,79 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import StepperStateless from "../StepperStateless";
 
 describe("Stepper", () => {
-  const defaultValue = 1;
-  const name = "name";
-  const disabled = false;
-  const maxValue = 100;
-  const minValue = 1;
-  const dataTest = "test";
-  const onChange = jest.fn();
-  const onFocus = jest.fn();
-  const onBlur = jest.fn();
+  it("should have expected DOM output", () => {
+    const defaultValue = 2;
+    const name = "name";
+    const maxValue = 100;
+    const minValue = 1;
+    const dataTest = "test";
+    const onIncrement = jest.fn();
+    const onDecrement = jest.fn();
+    const onFocus = jest.fn();
+    const onBlur = jest.fn();
+    const onKeyDown = jest.fn();
+    const IncrementLabel = "Increment";
+    const DecrementLabel = "Decrement";
 
-  const statelessCompoennt = shallow(
-    <StepperStateless
-      value={defaultValue}
-      name={name}
-      maxValue={maxValue}
-      minValue={minValue}
-      disabled={disabled}
-      dataTest={dataTest}
-      onChange={onChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      titleIncrement="Add"
-      titleDecrement="Remove"
-    />,
-  );
-  const input = statelessCompoennt.find("StepperStateless__StyledStepperInput");
+    render(
+      <StepperStateless
+        value={defaultValue}
+        name={name}
+        maxValue={maxValue}
+        minValue={minValue}
+        dataTest={dataTest}
+        onDecrement={onDecrement}
+        onIncrement={onIncrement}
+        onFocus={onFocus}
+        onKeyDown={onKeyDown}
+        onBlur={onBlur}
+        titleIncrement={IncrementLabel}
+        titleDecrement={DecrementLabel}
+      />,
+    );
 
-  it("should contain an input", () => {
-    expect(input.exists()).toBe(true);
-  });
-  it("should render props", () => {
-    expect(parseFloat(input.render().prop("value"))).toBe(defaultValue);
-    expect(input.render().prop("attribs").name).toBe(name);
-    expect(parseFloat(input.render().prop("max"))).toBe(maxValue);
-    expect(parseFloat(input.render().prop("min"))).toBe(minValue);
-    expect(input.render().prop("disabled")).toBe(disabled);
-    expect(
-      statelessCompoennt.find("StepperStateless__StyledStepper").render().prop("data-test"),
-    ).toBe(dataTest);
-  });
+    const input = screen.getByRole("textbox");
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
 
-  it("should execute onFocus method", () => {
-    input.simulate("focus");
+    fireEvent.keyDown(input, { keyCode: 40 });
+    fireEvent.keyDown(input, { keyCode: 38 });
+    expect(onKeyDown).toHaveBeenCalledTimes(2);
+
+    userEvent.click(screen.getByLabelText(IncrementLabel));
+    expect(onIncrement).toHaveBeenCalled();
+    userEvent.click(screen.getByLabelText(DecrementLabel));
+    expect(onDecrement).toHaveBeenCalled();
+
+    userEvent.tab(input);
     expect(onFocus).toHaveBeenCalled();
-  });
-  it("should execute onBlur method", () => {
-    input.simulate("focus");
-    input.simulate("blur");
+    fireEvent.blur(input);
     expect(onBlur).toHaveBeenCalled();
+  });
+
+  it("should have increment button disabled, if value is equal to maxValue", () => {
+    render(<StepperStateless value={10} maxValue={10} titleIncrement="Increment" />);
+    expect(screen.getByLabelText("Increment")).toBeDisabled();
+  });
+
+  it("should have decrement button disabled, if value is equal to minValue", () => {
+    render(<StepperStateless value={0} minValue={0} titleDecrement="Decrement" />);
+    expect(screen.getByLabelText("Decrement")).toBeDisabled();
+  });
+
+  it("should have disabled decrement button via prop", () => {
+    render(<StepperStateless disabledDecrement value={5} titleDecrement="Decrement" />);
+    expect(screen.getByLabelText("Decrement")).toBeDisabled();
+  });
+
+  it("should have disabled increment button via prop", () => {
+    render(
+      <StepperStateless disabledIncrement value={5} maxValue={10} titleIncrement="Increment" />,
+    );
+    expect(screen.getByLabelText("Increment")).toBeDisabled();
   });
 });

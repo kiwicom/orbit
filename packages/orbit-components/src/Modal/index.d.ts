@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 declare module "@kiwicom/orbit-components/lib/Modal";
 
-type Size = "extraSmall" | "small" | "normal" | "large";
+type Size = "extraSmall" | "small" | "normal" | "large" | "extraLarge";
 
 export interface Props extends Common.Global {
   readonly size?: Size;

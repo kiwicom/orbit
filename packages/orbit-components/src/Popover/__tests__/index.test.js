@@ -1,95 +1,64 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { screen, render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Popover from "../index";
-import ContentWrapper from "../components/ContentWrapper";
 import Button from "../../Button";
 import Stack from "../../Stack";
 
 describe("Popover", () => {
-  const content = "Message for a user";
-  const position = "bottom";
-  const opened = true;
-  const actions = (
-    <Stack direction="row" justify="between">
-      <Button type="secondary" size="small">
-        Cancel
-      </Button>
-      <Button size="small">Done</Button>
-    </Stack>
-  );
-  const overlapped = true;
-  const component = mount(
-    <Popover
-      actions={actions}
-      content={content}
-      preferredPosition={position}
-      opened={opened}
-      overlapped={overlapped}
-    >
-      <Button>Open</Button>
-    </Popover>,
-  );
+  it("should have expected DOM output", () => {
+    const content = "Message for a user";
+    const position = "bottom";
+    const onOpen = jest.fn();
+    const onClose = jest.fn();
+    const dataTest = "test";
 
-  it("Should pass props", () => {
-    expect(component.find("PopoverContentWrapper").children().exists()).toBe(true);
-    expect(component.find("PopoverContentWrapper").prop("preferredPosition")).toBe(position);
-    expect(component.find("PopoverContentWrapper").prop("overlapped")).toBe(true);
-  });
+    render(
+      <Popover
+        preferredPosition={position}
+        dataTest={dataTest}
+        content={content}
+        onOpen={onOpen}
+        onClose={onClose}
+      >
+        <Button>Open</Button>
+      </Popover>,
+    );
 
-  it("it should create portal", () => {
-    component.find("Portal");
-    expect(component.find("Portal").exists()).toBe(true);
-  });
-
-  it("should be hidden", () => {
-    expect(component.find("ContentWrapper__StyledPopoverClose").exists()).toBe(false);
+    const openButton = screen.getByRole("button", { name: "Open" });
+    userEvent.click(openButton);
+    expect(onOpen).toHaveBeenCalled();
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const closeButton = screen.getByRole("button", { name: "Close" });
+    userEvent.click(closeButton);
+    expect(onClose).toHaveBeenCalled();
   });
 
   it("should have actions", () => {
-    expect(component.find("ContentWrapper__StyledActions").exists()).toBe(true);
-  });
-});
+    const actions = (
+      <Stack direction="row" justify="between">
+        <Button type="secondary" size="small">
+          Cancel
+        </Button>
+      </Stack>
+    );
 
-describe("ContentWrapper", () => {
-  const content = <Button>Content</Button>;
-  const handleClose = jest.fn();
-  const ref = React.createRef();
-  const actions = (
-    <Stack direction="row" justify="between">
-      <Button type="secondary" size="small">
-        Cancel
-      </Button>
-      <Button size="small">Done</Button>
-    </Stack>
-  );
-  const position = "bottom";
-  const align = "start";
-  const component = shallow(
-    <ContentWrapper
-      containerRef={ref}
-      preferredPosition={position}
-      preferredAlign={align}
-      actions={actions}
-      onClose={handleClose}
-      shown
-    >
-      {content}
-    </ContentWrapper>,
-  );
-
-  it("Should have a child", () => {
-    expect(component.find("Button").exists()).toBe(true);
+    render(
+      <Popover actions={actions} content="kek" opened>
+        bur
+      </Popover>,
+    );
+    expect(screen.getByRole("button", { name: "Cancel" })).toBeInTheDocument();
   });
 
-  it("Should fire onClose when esc is pressed", () => {
-    const parent = component.find("ContentWrapper__StyledPopoverParent");
-    parent.simulate("keyDown", { keyCode: 27 });
-    expect(handleClose).toHaveBeenCalledTimes(1);
-  });
-
-  it("should be hidden", () => {
-    expect(component.find("ContentWrapper__StyledPopoverClose").exists()).toBe(false);
+  it("should have no padding", () => {
+    render(
+      <Popover noPadding opened dataTest="test" content="kek">
+        bur
+      </Popover>,
+    );
+    expect(screen.getByText("kek").closest("div")).toHaveStyle({ padding: "0" });
   });
 });

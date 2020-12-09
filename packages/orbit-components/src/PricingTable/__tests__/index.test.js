@@ -1,188 +1,108 @@
 // @flow
 
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
+import useMediaQuery from "../../hooks/useMediaQuery";
 import Button from "../../Button";
 import Badge from "../../Badge";
 import PricingTableItem from "../PricingTableItem";
 import PricingTable from "../index";
-import PricingTableContext from "../PricingTableContext";
 
-const onClick = jest.fn();
-const onClick2 = jest.fn();
-const dataTest = "test";
-const name = "name";
-const price = "$749";
-const actions = <Button>Buy</Button>;
-const content = <ul>List</ul>;
-const image = <img alt="" />;
-const badge = <Badge>Badge</Badge>;
+jest.mock("../../hooks/useMediaQuery", () => jest.fn());
+const useMediaQueryMock: JestMockFn<[], $Shape<$Call<typeof useMediaQuery>>> = useMediaQuery;
 
-jest.mock("../../hooks/useMediaQuery", () => {
-  return () => {
-    return {
-      isTablet: false,
-    };
-  };
+afterEach(() => {
+  useMediaQueryMock.mockRestore();
 });
 
-describe("PricingTableItem mobile", () => {
-  const component = mount(
-    <PricingTableContext.Provider value={{ basis: 0 }}>
-      <PricingTableItem
-        dataTest={dataTest}
-        name={name}
-        price={price}
-        featureIcon={image}
-        badge={badge}
-        action={actions}
-        active
-        compact
-        onClick={onClick}
-      >
-        {content}
-      </PricingTableItem>
-    </PricingTableContext.Provider>,
-  );
+describe("PricingTableItem", () => {
+  it("should have expected DOM output", () => {
+    useMediaQueryMock.mockImplementation(() => ({ isDesktop: false }));
 
-  const pricingTableItem = component.find("PricingTableItem__StyledPricingTableItem");
-  it("shouldn't render children", () => {
-    expect(component.find("ul").exists()).toBe(false);
-  });
-  it("should have name", () => {
-    expect(pricingTableItem.find("Text").at(0).children().text()).toBe(name);
-  });
-  it("should render data-test", () => {
-    expect(pricingTableItem.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should have price", () => {
-    expect(pricingTableItem.find("Text").at(1).children().text()).toBe(price);
-  });
-  it("should have featureIcon", () => {
-    expect(pricingTableItem.find("img").exists()).toBe(true);
-  });
-  it("should have badge", () => {
-    expect(pricingTableItem.find("PricingTableItem__StyledBadgeWrapperContent").exists()).toBe(
-      true,
+    const onClick = jest.fn();
+    const dataTest = "test";
+    const name = "name";
+    const price = "$749";
+    const actions = <Button>Buy</Button>;
+    const content = "content";
+    const image = <img alt="" />;
+    const badge = <Badge>Badge</Badge>;
+
+    render(
+      <PricingTable activeElement={0}>
+        <PricingTableItem
+          dataTest={dataTest}
+          name={name}
+          featureIcon={image}
+          action={actions}
+          active
+          compact
+          price={price}
+          priceBadge={badge}
+          onClick={onClick}
+        >
+          {content}
+        </PricingTableItem>
+        <PricingTableItem dataTest="non-active" name="non-active-name" price="$800">
+          bur
+        </PricingTableItem>
+      </PricingTable>,
     );
-  });
-  it("shouldn't have actions", () => {
-    expect(pricingTableItem.find("Button").exists()).toBe(false);
-  });
-  it("should have checked radio button", () => {
-    expect(pricingTableItem.find("Radio").props().checked).toBe(true);
-  });
-  it("should be actionable", () => {
-    pricingTableItem.simulate("click");
+
+    // active element
+    expect(screen.getByText(name)).toBeInTheDocument();
+    expect(screen.getByText(price)).toBeInTheDocument();
+    expect(screen.getByRole("img")).toBeInTheDocument();
+    userEvent.click(screen.getByTestId(dataTest));
     expect(onClick).toHaveBeenCalled();
-  });
-});
-
-describe("PricingTableItem desktop", () => {
-  const component = mount(
-    <PricingTableItem
-      dataTest={dataTest}
-      name={name}
-      price={price}
-      featureIcon={image}
-      badge={badge}
-      action={actions}
-      active
-      onClick={onClick2}
-      compact={false}
-    >
-      {content}
-    </PricingTableItem>,
-  );
-
-  const pricingTableItem = component.find("PricingTableItem__StyledPricingTableItem");
-  it("should render children", () => {
-    expect(component.find("ul").exists()).toBe(true);
-  });
-  it("should have name", () => {
-    expect(pricingTableItem.find("Text").at(0).children().text()).toBe(name);
-  });
-  it("should have price", () => {
-    expect(pricingTableItem.find("Text").at(1).children().text()).toBe(price);
-  });
-  it("should have featureIcon", () => {
-    expect(pricingTableItem.find("img").exists()).toBe(true);
-  });
-  it("should have badge", () => {
-    expect(pricingTableItem.find("PricingTableItem__StyledBadgeWrapperContent").exists()).toBe(
-      true,
+    expect(screen.getByTestId(dataTest)).toContainElement(
+      screen.getByRole("radio", { checked: true }),
     );
+    expect(screen.getByRole("button", { name: "Buy" })).toBeInTheDocument();
+    expect(screen.getByText("Badge")).toBeInTheDocument();
+    expect(screen.getByText(content)).toBeInTheDocument();
+    expect(screen.queryByText("bur")).not.toBeInTheDocument();
   });
-  it("should have actions", () => {
-    expect(pricingTableItem.find("Button").exists()).toBe(true);
-  });
-  it("shouldn't have Radio button", () => {
-    expect(pricingTableItem.find("Radio").exists()).toBe(false);
-  });
-  it("should be actionable", () => {
-    pricingTableItem.simulate("click");
-    expect(onClick2).toHaveBeenCalled();
-  });
-});
 
-describe("PricingTable", () => {
-  const mobileDescription = "Basic ticket fare includes:";
-  const component = mount(
-    <PricingTable activeElement={0} dataTest={dataTest}>
-      <PricingTableItem
-        dataTest={dataTest}
-        name={name}
-        price={price}
-        featureIcon={image}
-        badge={badge}
-        action={actions}
-        active
-        onClick={onClick2}
-        mobileDescription={mobileDescription}
-      >
-        {content}
-      </PricingTableItem>
-      <PricingTableItem
-        dataTest={dataTest}
-        name={name}
-        price={price}
-        featureIcon={image}
-        badge={badge}
-        action={actions}
-        active
-        onClick={onClick2}
-      >
-        {content}
-      </PricingTableItem>
-      <PricingTableItem
-        dataTest={dataTest}
-        name={name}
-        price={price}
-        featureIcon={image}
-        badge={badge}
-        action={actions}
-        active
-        onClick={onClick2}
-      >
-        {content}
-      </PricingTableItem>
-    </PricingTable>,
-  );
+  it("should have mobile description", () => {
+    useMediaQueryMock.mockImplementation(() => ({ isDesktop: false }));
+    render(
+      <PricingTable activeElement={0}>
+        <PricingTableItem mobileDescription="bur">kek</PricingTableItem>
+      </PricingTable>,
+    );
 
-  it("should render data-test", () => {
-    expect(component.render().prop("data-test")).toBe(dataTest);
+    expect(screen.getByText("bur")).toBeInTheDocument();
   });
-  it("should render children", () => {
-    expect(component.find("PricingTableItem")).toHaveLength(4);
+
+  it("should have radio button on desktop", () => {
+    useMediaQueryMock.mockImplementation(() => ({ isDesktop: true }));
+
+    render(
+      <PricingTable desktopRadio>
+        <PricingTableItem dataTest="first" active>
+          kek
+        </PricingTableItem>
+      </PricingTable>,
+    );
+
+    expect(screen.getByRole("radio")).toBeInTheDocument();
   });
-  it("should render childrens actions", () => {
-    expect(component.find("Button").exists()).toBe(true);
+
+  it("should have desktop variation of PricingTableItem", () => {
+    useMediaQueryMock.mockImplementation(() => ({ isDesktop: true }));
+
+    render(
+      <PricingTable activeElement={0} dataTest="test">
+        <PricingTableItem dataTest="tableItem">bur</PricingTableItem>
+      </PricingTable>,
+    );
+
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByTestId("tableItem")).toBeInTheDocument();
+    expect(screen.getByText("bur")).toBeInTheDocument();
+    expect(screen.queryByRole("radio")).not.toBeInTheDocument();
   });
-  it("should render childrens children", () => {
-    expect(component.find("ul").exists()).toBe(true);
-  });
-  // it("should render childrens mobileDescription", () => {
-  //   expect(component.find("Text").at(7).children().text()).toBe(mobileDescription);
-  // });
 });

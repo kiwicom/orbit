@@ -15,8 +15,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
-    query AllGuides {
-      allMdx(filter: { fields: { collection: { eq: "docs" } } }) {
+    query DocumentationQuery {
+      allMdx(filter: { fields: { collection: { eq: "documentation" } } }) {
         nodes {
           frontmatter {
             title
@@ -32,8 +32,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
   result.data.allMdx.nodes.forEach(guide => {
+    const slug = guide.slug
+      .split("/")
+      .map(s => s.replace(/^\d+-\s*/g, ""))
+      .join("/");
+
     createPage({
-      path: `/${guide.slug}`,
+      path: `/${slug}`,
       component: `${__dirname}/src/templates/Guide.tsx`,
       context: {
         title: guide.frontmatter.title,

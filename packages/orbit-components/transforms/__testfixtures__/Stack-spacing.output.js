@@ -1,5 +1,4 @@
 // @noflow
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { Stack, Button } from "@kiwicom/orbit-components";
 

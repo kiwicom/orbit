@@ -171,6 +171,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
+          id="paint0_linear"
           x1="1759.24"
           y1="929.9"
           x2="960.36"
@@ -182,6 +183,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint1_linear"
           x1="194950"
           y1="165505"
           x2="166372"
@@ -193,6 +195,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint2_linear"
           x1="2021.35"
           y1="530.91"
           x2="740.13"
@@ -203,6 +206,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#01A891" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint3_linear"
           x1="434133"
           y1="225442"
           x2="283903"
@@ -214,6 +218,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint4_linear"
           x1="175411"
           y1="195475"
           x2="142874"

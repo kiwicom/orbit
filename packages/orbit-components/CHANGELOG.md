@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.103.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.102.0...@kiwicom/orbit-components@0.103.0) (2020-12-10)
+
+
+### Bug Fixes
+
+* **SkipLink:** sr-only styles, label as aria-label ([eb0d625](https://github.com/kiwicom/orbit/commit/eb0d625bda51daefa34b74a863f32860306dbad5))
+* **SmartPassIllustration:** linergradients missing ids restored ([93fd176](https://github.com/kiwicom/orbit/commit/93fd176e46a2862ac9a2d34df3ff2b17fc26f7ba))
+* **Wizard:** translate progress label on mobile ([#2576](https://github.com/kiwicom/orbit/issues/2576)) ([cf6fc54](https://github.com/kiwicom/orbit/commit/cf6fc542a1ec0cad60dda133eb29d8f056afc812))
+
+
+### Features
+
+* **Modal:** extended size ([#2575](https://github.com/kiwicom/orbit/issues/2575)) ([9de69e9](https://github.com/kiwicom/orbit/commit/9de69e9fe36b4c9591d8bb9919fd3e03d71a72fb))
+
+
+### BREAKING CHANGES
+
+* **Modal:** size prop is changed, added new value
+CODEMODE: jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js
+<pathToYourCode> --parser=flow|ts
+
+
+
+
+
 # [0.102.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.101.0...@kiwicom/orbit-components@0.102.0) (2020-12-01)
 
 

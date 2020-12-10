@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: `/${slug}`,
-      component: `${__dirname}/src/templates/Guide.tsx`,
+      component: `${__dirname}/src/templates/Doc.tsx`,
       context: { id: guide.id },
     });
   });

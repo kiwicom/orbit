@@ -112,6 +112,7 @@ const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
+          id="paint0_linear"
           x1="1121.02"
           y1="998.066"
           x2="1121.02"
@@ -123,6 +124,7 @@ const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint1_linear"
           x1="1368.48"
           y1="592.209"
           x2="413.949"

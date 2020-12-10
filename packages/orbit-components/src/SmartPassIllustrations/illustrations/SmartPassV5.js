@@ -131,6 +131,7 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
+          id="paint0_linear"
           x1="1309.03"
           y1="1480.01"
           x2="526.04"
@@ -142,10 +143,11 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          x1="2.476e+06"
-          y1="1.18352e+06"
-          x2="2.0591e+06"
-          y2="-307215"
+          id="paint1_linear"
+          x1="1309.03"
+          y1="1316.7"
+          x2="526.04"
+          y2="-39.4801"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#BAC7D5" stopOpacity="0" />
@@ -153,17 +155,18 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          x1="2.59682e+06"
-          y1="1.05887e+06"
-          x2="2.17992e+06"
-          y2="-431862"
+          id="paint2_linear"
+          x1="1309.03"
+          y1="1143.7"
+          x2="526.04"
+          y2="-212.48"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#BAC7D5" stopOpacity="0" />
           <stop offset="0.5" stopColor="#BAC7D5" />
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
-        <clipPath>
+        <clipPath id="clip0">
           <rect width="1941.08" height="1249.2" fill="white" />
         </clipPath>
       </defs>

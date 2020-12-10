@@ -33,8 +33,8 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props) => {
           d="M1990.93 1050.13L1948.62 1068.13L1118.9 667.3L1156.83 648.74L1990.93 1050.13Z"
           fill="url(#paint1_linear)"
         />
-        <g>
-          <g>
+        <g opacity="0.5">
+          <g opacity="0.5">
             <path
               opacity="0.5"
               d="M257.49 564.6L1633.34 1243.95L1564.1 1278.36L172.83 591.14L257.49 564.6Z"
@@ -155,6 +155,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
+          id="paint0_linear"
           x1="379.62"
           y1="376.22"
           x2="1725.26"
@@ -165,6 +166,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#01A891" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint1_linear"
           x1="1194.65"
           y1="676.19"
           x2="1883.42"
@@ -176,6 +178,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          id="paint2_linear"
           x1="1367.86"
           y1="1160.68"
           x2="347.63"

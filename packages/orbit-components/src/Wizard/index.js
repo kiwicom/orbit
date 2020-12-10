@@ -13,6 +13,7 @@ import Modal from "../Modal";
 import { CardSection } from "../Card";
 import useMediaQuery from "../hooks/useMediaQuery";
 import useTheme from "../hooks/useTheme";
+import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from ".";
 
@@ -27,6 +28,7 @@ const Wizard = ({ dataTest, id, completedSteps, activeStep, children, onChangeSt
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const toggle = React.useRef<React.ElementRef<typeof ButtonLink> | null>(null);
+  const translate = useTranslate();
 
   const isCompact = !isLargeMobile;
   const childrenArray = React.Children.toArray(children);
@@ -78,7 +80,12 @@ const Wizard = ({ dataTest, id, completedSteps, activeStep, children, onChangeSt
             }}
           >
             <Stack as="span" inline>
-              <b>{`${activeStep + 1} of ${stepsCount}`}</b>{" "}
+              <b>
+                {translate("wizard_progress", {
+                  number: activeStep + 1,
+                  total: stepsCount,
+                })}
+              </b>{" "}
               <span
                 css={css`
                   font-weight: normal;

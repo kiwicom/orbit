@@ -18,7 +18,7 @@ interface Props {
   };
 }
 
-export default function Guide({ data }: Props) {
+export default function Doc({ data }: Props) {
   const { frontmatter, body } = data.mdx;
   return (
     <Layout>
@@ -35,7 +35,7 @@ export default function Guide({ data }: Props) {
 }
 
 export const query = graphql`
-  query GuideQuery($id: String!) {
+  query DocQuery($id: String!) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title

@@ -42,6 +42,7 @@ Table below contains all types of the props available in the Modal component.
 | `"small"`      |
 | `"normal"`     |
 | `"large`       |
+| `"extraLarge"` |
 
 ### Functional specs
 

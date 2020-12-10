@@ -29,7 +29,8 @@ const getSizeToken = () => ({ size, theme }) => {
     [SIZES.EXTRASMALL]: "360px",
     [SIZES.SMALL]: theme.orbit.widthModalSmall,
     [SIZES.NORMAL]: theme.orbit.widthModalNormal,
-    [SIZES.LARGE]: theme.orbit.widthModalLarge,
+    [SIZES.LARGE]: "900px",
+    [SIZES.EXTRALARGE]: theme.orbit.widthModalLarge, // add token theme.orbit.widthModalExtraLarge
   };
 
   return tokens[size];

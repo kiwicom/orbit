@@ -13,6 +13,8 @@ export default {
     const [showModalSmall, setShowModalSmall] = React.useState(false);
     const [showModalNormal, setShowModalNormal] = React.useState(false);
     const [showModalLarge, setShowModalLarge] = React.useState(false);
+    const [showModalExtraLarge, setShowModalExtraLarge] = React.useState(false);
+
     return (
       <>
         {showModalExtraSmall && (
@@ -62,6 +64,18 @@ export default {
             </ModalSection>
           </Modal>
         )}
+        {showModalExtraLarge && (
+          <Modal
+            size="extraLarge"
+            onClose={() => {
+              setShowModalExtraLarge(false);
+            }}
+          >
+            <ModalSection>
+              Orbit is an open source design system for your next travel project.
+            </ModalSection>
+          </Modal>
+        )}
         <Stack>
           <Button
             onClick={() => {
@@ -90,6 +104,13 @@ export default {
             }}
           >
             Show large modal
+          </Button>
+          <Button
+            onClick={() => {
+              setShowModalExtraLarge(true);
+            }}
+          >
+            Show extra large modal
           </Button>
         </Stack>
       </>

@@ -4,20 +4,19 @@ import styled from "styled-components";
 import theme from "../theme";
 import Navbar from "./Navbar";
 
-const StyledMain = styled.main`
-  min-height: 100%;
+const StyledWrapper = styled.div`
   display: grid;
   position: relative;
   overflow: hidden;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
+  min-height: 100vh;
 `;
 
-const StyledContainer = styled.section`
+const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  min-height: 100vh;
   padding: 2rem;
 `;
 
@@ -35,13 +34,11 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <StyledMain>
-          <Navbar />
-          <StyledContainer>{children}</StyledContainer>
-        </StyledMain>
+      <StyledWrapper>
+        <Navbar />
+        <StyledMain>{children}</StyledMain>
         <StyledFooter />
-      </>
+      </StyledWrapper>
     </ThemeProvider>
   );
 }

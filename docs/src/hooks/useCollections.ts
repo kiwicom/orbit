@@ -22,7 +22,7 @@ const DEFAULT: Collections[] = [
 const useCollections = (collections: Collections[] = DEFAULT) => {
   const { allDirectory } = useStaticQuery(
     graphql`
-      query collectionsQuery {
+      query CollectionsQuery {
         allDirectory(filter: { sourceInstanceName: { eq: "documentation" } }) {
           nodes {
             id

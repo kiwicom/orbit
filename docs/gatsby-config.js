@@ -28,5 +28,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: ["title", "excerpt", "slug"],
+        resolvers: {
+          Mdx: {
+            title: n => n.frontmatter.title,
+            excerpt: n => n.frontmatter.excerpt,
+            slug: n => n.fields.slug,
+          },
+        },
+      },
+    },
   ],
 };

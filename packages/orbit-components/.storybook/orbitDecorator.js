@@ -8,16 +8,24 @@ import Text from "../src/Text";
 
 const orbitDecorator = (storyFn, context) => {
   const children = storyFn(context);
+  const { globals } = context;
   const options = {
     filterProps: val => val != null && val !== "",
     functionValue: () => {
       return "function()";
     },
   };
+
+  const inverted = globals.backgrounds ? globals.backgrounds.value === "#333333" : undefined;
+
   return (
     <div style={{ padding: "20px" }}>
-      <Heading spaceAfter="medium">{context.kind}</Heading>
-      <Text spaceAfter="largest">{context.parameters?.info}</Text>
+      <Heading spaceAfter="medium" inverted={inverted}>
+        {context.kind}
+      </Heading>
+      <Text spaceAfter="largest" type={inverted ? "white" : "primary"}>
+        {context.parameters?.info}
+      </Text>
       {children}
       {process.env.NODE_ENV !== "loki" ? (
         <div style={{ marginTop: 20 }}>

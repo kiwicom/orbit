@@ -1,108 +1,73 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Textarea from "../index";
-import { SIZE_OPTIONS, RESIZE_OPTIONS } from "../consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
-describe(`Textarea with help`, () => {
-  const size = SIZE_OPTIONS.NORMAL;
-  const name = "name";
-  const label = "Label";
-  const value = "value";
-  const placeholder = "placeholder";
-  const tabIndex = "-1";
-  const dataTest = "test";
-  const maxLength = 200;
-  const fullHeight = true;
-  const onChange = jest.fn();
-  const onFocus = jest.fn();
-  const onBlur = jest.fn();
-  const spaceAfter = SPACINGS_AFTER.NORMAL;
+describe("Textarea", () => {
+  it("should have expected DOM output", () => {
+    const name = "name";
+    const label = "Label";
+    const value = "value";
+    const placeholder = "placeholder";
+    const dataTest = "test";
+    const maxLength = 200;
+    const fullHeight = true;
+    const onChange = jest.fn();
+    const onFocus = jest.fn();
+    const onBlur = jest.fn();
+    const spaceAfter = SPACINGS_AFTER.NORMAL;
 
-  const component = shallow(
-    <Textarea
-      size={size}
-      name={name}
-      label={label}
-      value={value}
-      fullHeight={fullHeight}
-      placeholder={placeholder}
-      maxLength={maxLength}
-      help={<div>Something useful.</div>}
-      tabIndex={tabIndex}
-      readOnly
-      onChange={onChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      dataTest={dataTest}
-      spaceAfter={spaceAfter}
-    />,
-  );
+    render(
+      <Textarea
+        name={name}
+        label={label}
+        value={value}
+        rows={4}
+        fullHeight={fullHeight}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        help={<div>Something useful.</div>}
+        onChange={onChange}
+        tabIndex={-1}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        dataTest={dataTest}
+        spaceAfter={spaceAfter}
+      />,
+    );
 
-  const area = component.find("Textarea__StyledTextArea");
-  const field = component.find("Textarea__Field");
+    const textarea = screen.getByRole("textbox");
 
-  it("should contain a label", () => {
-    expect(component.find("FormLabel").render().text()).toBe(label);
-  });
-  it("should contain a textarea", () => {
-    expect(area.exists()).toBe(true);
-  });
-  it("should have passed props", () => {
-    expect(area.prop("size")).toBe(size);
-    expect(field.prop("spaceAfter")).toBe(spaceAfter);
-    expect(area.prop("name")).toBe(name);
-    expect(area.prop("value")).toBe(value);
-    expect(area.prop("placeholder")).toBe(placeholder);
-    expect(area.prop("maxLength")).toBe(maxLength);
-    expect(area.prop("fullHeight")).toBe(fullHeight);
-    expect(area.render().prop("data-test")).toBe(dataTest);
-    expect(area.render().prop("readonly")).toBe(true);
-    expect(area.render().prop("tabindex")).toBe(tabIndex);
-    expect(component.find("Textarea__StyledTextArea").render().prop("attribs").name).toBe(name);
-  });
-  it("should contain FeedBack", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
-  });
-  it("should execute onChange method", () => {
-    area.simulate("change");
+    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    expect(textarea).toHaveAttribute("tabindex", "-1");
+    expect(screen.getByDisplayValue(value)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
+    expect(screen.getByText("Something useful.")).toBeInTheDocument();
+    expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
+    expect(textarea).toHaveAttribute("rows", "4");
+    expect(textarea).toHaveAttribute("name", name);
+    expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
+    expect(textarea).toHaveStyle({ padding: "12px" });
+
+    fireEvent.blur(textarea);
+    expect(onBlur).toHaveBeenCalled();
+    userEvent.type(textarea, "kek");
     expect(onChange).toHaveBeenCalled();
   });
-  it("should execute onFocus method", () => {
-    area.simulate("focus");
+
+  it("should have focus", () => {
+    const onFocus = jest.fn();
+    render(<Textarea onFocus={onFocus} />);
+    userEvent.tab(screen.getByRole("textbox"));
     expect(onFocus).toHaveBeenCalled();
   });
-  it("should execute onBlur method", () => {
-    area.simulate("focus");
-    area.simulate("blur");
-    expect(onBlur).toHaveBeenCalled();
-  });
-});
-describe(`Textarea number with error and help`, () => {
-  const size = SIZE_OPTIONS.SMALL;
-  const resize = RESIZE_OPTIONS.NONE;
 
-  const component = shallow(
-    <Textarea
-      size={size}
-      resize={resize}
-      help={<div>Everything is fine.</div>}
-      error={<div>Something went wrong.</div>}
-    />,
-  );
-
-  it("should NOT contain a label", () => {
-    expect(component.find("FormLabel").exists()).toBe(false);
-  });
-  it("should have size prop", () => {
-    expect(component.find("Textarea__StyledTextArea").prop("size")).toBe(size);
-  });
-  it("should have resize prop", () => {
-    expect(component.find("Textarea__StyledTextArea").prop("resize")).toBe(resize);
-  });
-  it("renders FormFeedback", () => {
-    expect(component.find(`FormFeedback`).exists()).toBe(true);
+  it("should have error", () => {
+    render(<Textarea error="error" size="small" />);
+    expect(screen.getByText("error")).toBeInTheDocument();
+    expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
   });
 });

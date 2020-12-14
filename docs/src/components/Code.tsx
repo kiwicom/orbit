@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import React from "react";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/oceanicNext";
+import styled, { css } from "styled-components";
 
 export const InlineCode = styled.code`
   padding: 0.25em 0.5em;
@@ -7,86 +10,47 @@ export const InlineCode = styled.code`
   color: #000;
   /* monospace typefaces appear a bit larger */
   font-size: calc(1em - 2px);
-`;
-
-// copied from Prism's theme "Okaidia"
-export const Pre = styled.pre`
-  padding: 1em;
-  border-radius: 0.5em;
-  background: #272822;
-  color: #f8f8f2;
-
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata {
-    color: slategray;
-  }
-
-  .token.punctuation {
-    color: #f8f8f2;
-  }
-
-  .namespace {
-    opacity: 0.7;
-  }
-
-  .token.property,
-  .token.tag,
-  .token.constant,
-  .token.symbol,
-  .token.deleted {
-    color: #f92672;
-  }
-
-  .token.boolean,
-  .token.number {
-    color: #ae81ff;
-  }
-
-  .token.selector,
-  .token.attr-name,
-  .token.string,
-  .token.char,
-  .token.builtin,
-  .token.inserted {
-    color: #a6e22e;
-  }
-
-  .token.operator,
-  .token.entity,
-  .token.url,
-  .language-css .token.string,
-  .style .token.string,
-  .token.variable {
-    color: #f8f8f2;
-  }
-
-  .token.atrule,
-  .token.attr-value,
-  .token.function,
-  .token.class-name {
-    color: #e6db74;
-  }
-
-  .token.keyword {
-    color: #66d9ef;
-  }
-
-  .token.regex,
-  .token.important {
-    color: #fd971f;
-  }
-
-  .token.important,
-  .token.bold {
-    font-weight: bold;
-  }
-  .token.italic {
-    font-style: italic;
-  }
-
-  .token.entity {
-    cursor: help;
+  a & {
+    color: currentColor;
   }
 `;
+
+interface CodeBlockProps {
+  children: string;
+  className: string;
+}
+export const CodeBlock = ({ children, className }: CodeBlockProps) => {
+  const language = className.replace(/language-/, "");
+  return (
+    <Highlight
+      {...defaultProps}
+      code={children}
+      theme={theme}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore avoid refining the string type to supported languages
+      language={language}
+    >
+      {({ style, tokens, getLineProps, getTokenProps }) => (
+        <div
+          css={css`
+            padding: 1em;
+            border-radius: 0.5em;
+            /* monospace typefaces appear a bit larger */
+            font-size: calc(1em - 2px);
+          `}
+          style={style}
+        >
+          {tokens
+            .filter(line => line.some(token => !token.empty)) // remove mysterious empty lines
+            .map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+        </div>
+      )}
+    </Highlight>
+  );
+};

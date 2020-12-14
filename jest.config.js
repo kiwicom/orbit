@@ -1,5 +1,5 @@
 // @noflow
 
 module.exports = {
-  projects: ["<rootDir>/packages/*"],
+  projects: ["<rootDir>/packages/*", "<rootDir>/docs"],
 };

@@ -16,6 +16,12 @@ module.exports = {
       extends: ["./config/eslintTS"],
     },
     {
+      files: "**/__tests__/**",
+      rules: {
+        "global-require": "off",
+      },
+    },
+    {
       files: "**/__typetests__/**",
       rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",

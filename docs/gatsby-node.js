@@ -18,10 +18,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     query DocumentationQuery {
       allMdx(filter: { fields: { collection: { eq: "documentation" } } }) {
         nodes {
-          frontmatter {
-            title
-          }
-          body
+          id
           slug
         }
       }
@@ -39,11 +36,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: `/${slug}`,
-      component: `${__dirname}/src/templates/Guide.tsx`,
-      context: {
-        title: guide.frontmatter.title,
-        body: guide.body,
-      },
+      component: `${__dirname}/src/templates/Doc.tsx`,
+      context: { id: guide.id },
     });
   });
 };

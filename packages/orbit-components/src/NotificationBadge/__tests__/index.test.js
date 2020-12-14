@@ -29,7 +29,7 @@ describe("NotificationBadge", () => {
   });
 
   it("should have icon", () => {
-    render(<NotificationBadge dataTest="kek" icon={<Sightseeing />} />);
-    expect(screen.getByTestId("kek").querySelector("svg")).toBeInTheDocument();
+    render(<NotificationBadge icon={<Sightseeing dataTest="icon" />} />);
+    expect(screen.getByTestId("icon")).toBeInTheDocument();
   });
 });

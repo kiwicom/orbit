@@ -22,7 +22,8 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in ButtonLink component.
 
-| Name     | Type         | Default | Description                        |
-| :------- | :----------- | :------ | :--------------------------------- |
-| children | `React.Node` |         | The content of the FloatingCard.   |
-| offset   | `number`     | `10`    | Sets offset from top during scroll |
+| Name     | Type         | Default | Description                         |
+| :------- | :----------- | :------ | :---------------------------------- |
+| children | `React.Node` |         | The content of the FloatingCard.    |
+| offset   | `number`     | `10`    | Sets offset from top during scroll  |
+| dataTest | `string`     |         | Optional prop for testing purposes. |

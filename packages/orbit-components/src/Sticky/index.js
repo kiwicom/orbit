@@ -101,10 +101,10 @@ class Sticky extends React.Component<Props, State> {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, dataTest } = this.props;
     const { sticky, height, width, initialWidth } = this.state;
     return (
-      <StyledSticky ref={this.sticky}>
+      <StyledSticky ref={this.sticky} data-test={dataTest}>
         <StyledStickyContent
           sticky={sticky}
           size={{ height, width }}

@@ -59,8 +59,8 @@ const TileWrapper = ({
     as={as}
     tabIndex={tabIndex}
     role={role}
-    ariaExpanded={ariaExpanded}
-    ariaControls={ariaControls}
+    aria-expanded={ariaExpanded}
+    aria-controls={ariaControls}
     id={id}
     title={htmlTitle}
   >

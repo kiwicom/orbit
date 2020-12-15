@@ -363,7 +363,7 @@ export type Tokens = {
   heightInputGroupSeparatorNormal: string;
   widthModalSmall: string;
   widthModalNormal: string;
-  widrthModalLarge: string;
+  widthModalLarge: string;
   widthModalExtraLarge: string;
   widthStopoverArrow: string;
   heightStopoverArrow: string;

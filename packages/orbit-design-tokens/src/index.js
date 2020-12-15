@@ -286,7 +286,8 @@ export const getTokens: GetTokens = customFoundation => {
     heightInputGroupSeparatorNormal: theme.base.sizeMd,
     widthModalSmall: "540px",
     widthModalNormal: "740px",
-    widthModalLarge: "1280px",
+    widthModalLarge: "900px",
+    widthModalExtraLarge: "1280px",
     widthStopoverArrow: "36px",
     heightStopoverArrow: "7px",
     // category:Breakpoints

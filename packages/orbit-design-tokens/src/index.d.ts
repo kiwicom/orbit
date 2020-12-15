@@ -364,6 +364,7 @@ export type Tokens = {
   widthModalSmall: string;
   widthModalNormal: string;
   widthModalLarge: string;
+  widthModalExtraLarge: string;
   widthStopoverArrow: string;
   heightStopoverArrow: string;
   widthBreakpointMediumMobile: number;

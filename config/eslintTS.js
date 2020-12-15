@@ -11,6 +11,7 @@ module.exports = {
   plugins: ["import", "react"],
   rules: {
     "@typescript-eslint/prefer-readonly-parameter-types": "error",
+    "react/prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

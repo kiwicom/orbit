@@ -33,7 +33,7 @@ describe("Tile", () => {
     expect(screen.getByText(description)).toBeInTheDocument();
     expect(screen.getByTitle(htmlTitle)).toBeInTheDocument();
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
-    expect(screen.getByText("kek")).toHaveStyle({ padding: "24px" });
+    expect(screen.getByText("kek")).toHaveStyle({ padding: "16px" });
 
     userEvent.click(screen.getByRole("button"));
 

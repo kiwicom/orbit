@@ -53,7 +53,7 @@ const Tile = ({
       onKeyDown={handleKeyDown(onClick)}
       as={href ? "a" : "div"}
       tabIndex={!href ? "0" : undefined}
-      role={!href ? "button" : undefined}
+      role={href ? undefined : "button"}
       htmlTitle={htmlTitle}
     >
       {hasHeader && (

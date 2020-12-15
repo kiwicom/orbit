@@ -1,29 +1,37 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import MobileDialog from "../index";
-import Button from "../../../Button";
+
+jest.mock("../../../utils/randomID", () => name => name);
+
+let dialogs: HTMLElement;
+
+beforeAll(() => {
+  dialogs = document.createElement("div");
+  dialogs.setAttribute("id", "dialogs");
+  document.body?.appendChild(dialogs);
+});
+
+afterAll(() => {
+  document.body?.removeChild(dialogs);
+});
 
 describe("MobileDialogPrimitive", () => {
-  const content = "My text link";
-  const tabIndex = "1";
-  const dataTest = "test";
-
-  const component = mount(
-    <MobileDialog tabIndex={tabIndex} dataTest={dataTest} content={content}>
-      <Button>Button</Button>
-    </MobileDialog>,
-  );
-
-  const dialog = component.find("MobileDialog");
-  it("should contain a children", () => {
-    expect(dialog.children().exists()).toBe(true);
-  });
-  it("should have data-test", () => {
-    expect(dialog.prop("dataTest")).toBe(dataTest);
-  });
-  it("should have tabindex", () => {
-    expect(dialog.prop("tabIndex")).toBe(tabIndex);
+  it("should have expected DOM output", () => {
+    render(
+      // eslint-disable-next-line jsx-a11y/tabindex-no-positive
+      <MobileDialog tabIndex="1" dataTest="test" content="My text link">
+        children
+      </MobileDialog>,
+    );
+    const children = screen.getByText("children");
+    expect(children).toHaveAttribute("tabindex", "1");
+    userEvent.click(children);
+    expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("My text link")).toBeInTheDocument();
   });
 });

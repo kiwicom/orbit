@@ -1,36 +1,27 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
 
 import Bar, { calculateBarPosition } from "../index";
 
-describe("Bar in Slider", () => {
-  const ref = React.createRef();
-  const onMouseDown = jest.fn();
-  const value = [1, 12];
-  const min = 1;
-  const max = 24;
-  const hasHistogram = true;
-  const component = shallow(
-    <Bar onMouseDown={onMouseDown} value={value} min={min} max={max} hasHistogram={hasHistogram} />,
-  );
-  const bar = component.find("Bar__StyledBar");
-  it("should execute onMouseDown", () => {
-    bar.simulate("mousedown");
+describe("Slider/Bar", () => {
+  it("should have exptected DOM output", () => {
+    const ref = React.createRef();
+    const onMouseDown = jest.fn();
+    const value = [1, 12];
+    const min = 1;
+    const max = 24;
+    const { container } = render(
+      <Bar onMouseDown={onMouseDown} value={value} min={min} ref={ref} max={max} hasHistogram />,
+    );
+
+    expect(ref.current).toBeDefined();
+    fireEvent.mouseDown(container.firstChild, { pageX: 100 });
     expect(onMouseDown).toHaveBeenCalled();
   });
-  it("each bar should have proper width and left", () => {
-    const positions = [{ left: 0, width: 100 }, calculateBarPosition(value, max, min, true)];
-    bar.children().forEach((node, index) => {
-      expect(node.prop("left")).toBe(positions[index].left);
-      expect(node.prop("width")).toBe(positions[index].width);
-    });
-  });
-  it("should have ref", () => {
-    expect(ref.current).toBeDefined();
-  });
 });
+
 describe("Bar in Slider: calculateBarPosition", () => {
   it("simple Slider without Histogram, should return proper left and width", () => {
     expect(calculateBarPosition(24, 24, 1, false)).toEqual({ left: 0, width: 100.0 });

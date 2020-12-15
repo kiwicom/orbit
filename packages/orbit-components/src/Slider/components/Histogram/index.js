@@ -65,7 +65,7 @@ const Histogram = ({ data, value, min, loading = false, loadingText, step }: Pro
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
-    <StyledHistogram>
+    <StyledHistogram role="presentation">
       {loading ? (
         <StyledLoadingContainer>
           <Loading type="inlineLoader" text={loadingText} />

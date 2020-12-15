@@ -5,12 +5,13 @@
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/dist/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/__fixtures__/
 
+
 .*/node_modules/immutable/.*
 .*/node_modules/radium/.*
 .*/node_modules/styled-components/.*
 .*/node_modules/devtools-timeline-model/.*
 .*/node_modules/chrome-devtools-frontend/.*
-
+.*/node_modules/elasticlunr/test/fixtures/.*
 [include]
 
 [libs]

@@ -29,6 +29,6 @@ expect(img).toHaveStyle({ maxHeight: "90px" });
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(img).toHaveAttribute("src", URL);
     expect(img).toHaveAttribute("srcset", expect.stringContaining(URL_RETINA));
-    expect(img).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
+    expect(img).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
 });

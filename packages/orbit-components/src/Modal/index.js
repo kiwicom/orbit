@@ -25,12 +25,11 @@ import type { Instance, Props } from "./index";
 
 const getSizeToken = () => ({ size, theme }) => {
   const tokens = {
-    // TODO: create tokens widthModalSmall,...
     [SIZES.EXTRASMALL]: "360px",
     [SIZES.SMALL]: theme.orbit.widthModalSmall,
     [SIZES.NORMAL]: theme.orbit.widthModalNormal,
-    [SIZES.LARGE]: "900px",
-    [SIZES.EXTRALARGE]: theme.orbit.widthModalLarge, // add token theme.orbit.widthModalExtraLarge
+    [SIZES.LARGE]: theme.orbit.widthModalLarge,
+    [SIZES.EXTRALARGE]: theme.orbit.widthModalExtraLarge,
   };
 
   return tokens[size];

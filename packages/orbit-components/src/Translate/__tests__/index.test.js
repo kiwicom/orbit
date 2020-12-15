@@ -1,16 +1,28 @@
 // @flow
-import { pureTranslate } from "../index";
+import React from "react";
+import { render, screen } from "@testing-library/react";
 
 describe("Translate", () => {
-  const dictionary = {
-    button_close: "Close",
-  };
-
-  it("should return correct translations", () => {
-    expect(pureTranslate(dictionary, "button_close")).toBe("Close");
+  it("should return translation", () => {
+    jest.doMock("../../hooks/useDictionary", () => () => ({
+      wizard_progress: "Custom __number__ of __total__",
+    }));
+    const Translate = require("..").default;
+    render(
+      <Translate
+        tKey="wizard_progress"
+        values={{
+          number: 5,
+          total: 10,
+        }}
+      />,
+    );
+    expect(screen.getByText("Custom 5 of 10")).toBeInTheDocument();
   });
 
-  it("Will fallback to default lang", () => {
-    expect(pureTranslate({}, "button_close")).toBe("Close");
+  it("should fall back to default dictionary", () => {
+    const Translate = require("..").default;
+    render(<Translate tKey="loading" />);
+    expect(screen.getByText("Loading")).toBeInTheDocument();
   });
 });

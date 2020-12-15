@@ -24,7 +24,7 @@ describe("IllustrationPrimitive", () => {
 
     const img = screen.getByRole("img");
 
-    expect(getComputedStyle(img).maxHeight).toMatchInlineSnapshot(`"90px"`);
+expect(img).toHaveStyle({ maxHeight: "90px" });
     expect(screen.getByAltText("Alternative text")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(img).toHaveAttribute("src", URL);

@@ -1,40 +1,33 @@
 // @flow
 
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import BadgePrimitive from "../index";
 import Sightseeing from "../../../icons/Sightseeing";
 
-describe("Badge", () => {
-  const content = "badge";
-  const dataTest = "test";
-  const icon = <Sightseeing />;
-  const ariaLabel = content;
-  const background = "red";
-  const foregroundColor = "blue";
+describe("BadgePrimitive", () => {
+  it("should have expected DOM output", () => {
+    render(
+      <BadgePrimitive
+        icon={<Sightseeing dataTest="icon" />}
+        background="red"
+        foregroundColor="blue"
+        borderColor="green"
+        dataTest="test"
+        ariaLabel="label"
+      >
+        badge
+      </BadgePrimitive>,
+    );
 
-  const component = shallow(
-    <BadgePrimitive
-      icon={icon}
-      background={background}
-      foregroundColor={foregroundColor}
-      dataTest={dataTest}
-      ariaLabel={ariaLabel}
-    >
-      {content}
-    </BadgePrimitive>,
-  );
-  it("should have passed props", () => {
-    expect(component.prop("background")).toBe(background);
-    expect(component.prop("foregroundColor")).toBe(foregroundColor);
-    expect(component.render().prop("data-test")).toBe(dataTest);
-    expect(component.render().prop("aria-label")).toBe(ariaLabel);
-  });
-  it("should contain a content", () => {
-    expect(component.render().text()).toBe(content);
-  });
-  it("should contain a icon", () => {
-    expect(component.find("Sightseeing").exists()).toBe(true);
+    expect(screen.getByTestId("test")).toHaveStyle({
+      backgroundColor: "red",
+      color: "blue",
+      borderColor: "green",
+    });
+    expect(screen.getByLabelText("label")).toBeInTheDocument();
+    expect(screen.getByText("badge")).toBeInTheDocument();
+    expect(screen.getByTestId("icon")).toBeInTheDocument();
   });
 });

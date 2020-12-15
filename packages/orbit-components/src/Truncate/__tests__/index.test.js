@@ -1,31 +1,37 @@
 // @flow
 
 import * as React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import Truncate from "..";
+import Text from "../../Text";
+import Heading from "../../Heading";
 
 describe("Truncate", () => {
-  const dataTest = "test";
-  const maxWidth = "10rem";
-  const content = "Lorem ipsum dolor sit amet";
-  const component = mount(
-    <Truncate maxWidth={maxWidth} dataTest={dataTest}>
-      {content}
-    </Truncate>,
-  );
-  const truncate = component.find("Truncate__StyledTruncate");
-  it("should have data-test", () => {
-    expect(truncate.render().prop("data-test")).toBe(dataTest);
+  it("should have expected DOM output", () => {
+    const { container } = render(
+      <Truncate maxWidth="10rem" dataTest="test">
+        children
+      </Truncate>,
+    );
+    expect(screen.getByTestId("test")).toBeInTheDocument();
+    expect(screen.getByText("children")).toBeInTheDocument();
+    expect(container.firstChild).toHaveStyle({
+      minWidth: 0,
+      maxWidth: "10rem",
+    });
   });
-  it("main wrapper should have styles", () => {
-    expect(truncate).toHaveStyleRule("min-width", "0");
-    expect(truncate).toHaveStyleRule("max-width", maxWidth);
-  });
-  it("content should have styles", () => {
-    const truncateContent = component.find("Truncate__StyledTruncateContent");
-    expect(truncateContent).toHaveStyleRule("white-space", "nowrap");
-    expect(truncateContent).toHaveStyleRule("overflow", "hidden");
-    expect(truncateContent).toHaveStyleRule("text-overflow", "ellipsis");
+
+  it("should truncate children, as well as Text and Heading", () => {
+    render(
+      <Truncate>
+        children
+        <Text>text</Text>
+        <Heading>heading</Heading>
+      </Truncate>,
+    );
+    expect(screen.getByText("children")).toHaveStyle({ textOverflow: "ellipsis" });
+    expect(screen.getByText("text")).toHaveStyle({ textOverflow: "ellipsis" });
+    expect(screen.getByText("heading")).toHaveStyle({ textOverflow: "ellipsis" });
   });
 });

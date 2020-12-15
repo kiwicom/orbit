@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import randomID from "../utils/randomID";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
 
@@ -45,10 +46,23 @@ const Stops = ({ stops }: Props) => {
   );
 };
 
-const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props) => (
-  <StyledArrow preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 8" data-test={dataTest}>
-    <Stops stops={stops} />
-  </StyledArrow>
-);
+const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props) => {
+  const titleId = React.useMemo(() => randomID("title"), []);
+  const descrId = React.useMemo(() => randomID("descr"), []);
+
+  return (
+    <StyledArrow
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 28 8"
+      aria-labelledby={`${titleId} ${descrId}`}
+      data-test={dataTest}
+      role="img"
+    >
+      <title id={titleId}>Stopover arrow, {stops} stops</title>
+      <desc id={descrId}>Shows how many stopovers there are between two locations</desc>
+      <Stops stops={stops} />
+    </StyledArrow>
+  );
+};
 
 export default StopoverArrow;

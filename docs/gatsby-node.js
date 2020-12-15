@@ -1,10 +1,26 @@
+const { createFilePath } = require(`gatsby-source-filesystem`);
 // creates a "collection" field to it easier to filter nodes created by
 // gatsby-source-filesystem instead of awkwardly filtering by file path
 // https://github.com/gatsbyjs/gatsby/issues/1634#issuecomment-388899348
+
+const omitNumbers = str =>
+  str
+    .split("/")
+    .map(s => s.replace(/^\d+-\s*/g, ""))
+    .join("/");
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type !== "Mdx") return;
   const { createNodeField } = actions;
   const parent = getNode(node.parent);
+  const slug = createFilePath({ node, getNode, basePath: `pages` });
+
+  createNodeField({
+    node,
+    name: `slug`,
+    value: omitNumbers(slug),
+  });
+
   createNodeField({
     node,
     name: "collection",
@@ -29,10 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
   result.data.allMdx.nodes.forEach(guide => {
-    const slug = guide.slug
-      .split("/")
-      .map(s => s.replace(/^\d+-\s*/g, ""))
-      .join("/");
+    const slug = omitNumbers(guide.slug);
 
     createPage({
       path: `/${slug}`,

@@ -1,32 +1,29 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import DestinationHeader from "../index";
 
 describe("DestinationHeader", () => {
-  const destinationName = "Dubai";
-  const image = "dubai_ae";
-  const dataTest = "test";
-  const goBack = jest.fn();
+  it("should have expected DOM output", () => {
+    const destinationName = "Dubai";
+    const image = "dubai_ae";
+    const dataTest = "test";
+    const goBack = jest.fn();
 
-  const component = shallow(
-    <DestinationHeader
-      destinationName={destinationName}
-      image={image}
-      goBack={goBack}
-      dataTest={dataTest}
-    />,
-  );
+    render(
+      <DestinationHeader
+        destinationName={destinationName}
+        image={image}
+        goBack={goBack}
+        dataTest={dataTest}
+      />,
+    );
 
-  const button = component.find("DestinationHeaderGoBackButton");
-  const heading = component.find("Heading");
-  it("should have passed props", () => {
-    expect(heading.children().text()).toBe(destinationName);
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
-  it("should execute onGoBack method", () => {
-    button.simulate("click");
+    screen.getByTestId(dataTest);
+    expect(screen.getAllByRole("img", { name: destinationName })).toHaveLength(2);
+    userEvent.click(screen.getByRole("button", { name: "Back" }));
     expect(goBack).toHaveBeenCalled();
   });
 });

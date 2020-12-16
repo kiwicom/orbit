@@ -1,8 +1,10 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import KEY_CODE_MAP from "../../common/keyMaps";
+import theme from "../../defaultTheme";
 import Tile from "../index";
 import Airplane from "../../icons/Airplane";
 
@@ -34,10 +36,15 @@ describe("Tile", () => {
     expect(screen.getByTitle(htmlTitle)).toBeInTheDocument();
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
     expect(screen.getByText("kek")).toHaveStyle({ padding: "16px" });
+    expect(screen.getByText("kek")).toHaveStyle({
+      borderTop: `1px solid ${theme.orbit.paletteCloudNormal}`,
+    });
 
     userEvent.click(screen.getByRole("button"));
+    fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.ENTER });
+    fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.SPACE });
 
-    expect(onClick).toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalledTimes(3);
   });
 
   it("should be link", () => {

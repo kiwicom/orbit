@@ -1,78 +1,59 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import Card from "../index";
-import CardSection from "../CardSection";
-import Heading from "../../../Heading";
-import Text from "../../../Text";
+import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "..";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
-import defaultTheme from "../../../defaultTheme";
-import CardSectionHeader from "../CardSection/CardSectionHeader";
-import CardSectionContent from "../CardSection/CardSectionContent";
-import CLOSE_BUTTON_DATA_TEST from "../consts";
-
-const text = "Text for testing";
 
 describe("Card", () => {
-  it("should contain CardSection", () => {
-    const component = shallow(
-      <Card dataTest="test">
-        <CardSection>
-          <Heading type="title3" as="h3">
-            {text}
-          </Heading>
-          <Text>{text}</Text>
+  it("should have expected DOM output", () => {
+    render(
+      <Card dataTest="card" spaceAfter={SPACINGS_AFTER.NORMAL}>
+        <CardHeader dataTest="header" title="title" subTitle="subtitle" />
+        <CardSection dataTest="section">
+          <CardSectionHeader>section header</CardSectionHeader>
+          <CardSectionContent>section content</CardSectionContent>
         </CardSection>
       </Card>,
     );
 
-    expect(component.find("CardSection").exists()).toBe(true);
+    expect(screen.getByTestId("card")).toHaveStyle({ marginBottom: SPACINGS_AFTER.NORMAL });
+    expect(screen.getByTestId("header")).toHaveTextContent("title");
+    expect(screen.getByTestId("header")).toHaveTextContent("subtitle");
+    expect(screen.getByTestId("section")).toHaveTextContent("section header");
+    expect(screen.getByTestId("section")).toHaveTextContent("section content");
   });
 
-  it("should have margin-bottom", () => {
-    const component = mount(<Card spaceAfter={SPACINGS_AFTER.NORMAL} />);
-    expect(component).toHaveStyleRule("margin-bottom", defaultTheme.orbit.spaceSmall);
-  });
+  it("should trigger event handlers", () => {
+    const onCloseCard = jest.fn();
+    const onExpandSection = jest.fn();
+    const onCloseSection = jest.fn();
 
-  it("should have data-test", () => {
-    const dataTest = "test";
-    const component = shallow(<Card dataTest={dataTest} />);
-    expect(component.render().prop("data-test")).toBe(dataTest);
-  });
+    render(
+      <Card closable onClose={onCloseCard}>
+        <CardSection
+          dataTest="section"
+          expandable
+          initialExpanded
+          onExpand={onExpandSection}
+          onClose={onCloseSection}
+        >
+          <CardSectionHeader>section header</CardSectionHeader>
+          <CardSectionContent>section content</CardSectionContent>
+        </CardSection>
+      </Card>,
+    );
 
-  it("should be closable", () => {
-    const onClose = jest.fn();
-    const component = shallow(<Card onClose={onClose} closable />);
+    const cardToggleBtn = screen.getByRole("button", { name: "Close" });
+    const sectionToggleBtn = screen.getByRole("button", { name: "section header" });
 
-    const ButtonLink = component.find("CardCloseButton");
+    userEvent.click(cardToggleBtn);
+    expect(onCloseCard).toHaveBeenCalled();
 
-    expect(ButtonLink.prop("dataTest")).toBe(CLOSE_BUTTON_DATA_TEST);
-    ButtonLink.simulate("click");
-    expect(onClose).toHaveBeenCalled();
-  });
-});
-
-describe("CardSection", () => {
-  const onExpand = jest.fn();
-  const onClose = jest.fn();
-
-  const component = mount(
-    <Card>
-      <CardSection expandable onExpand={onExpand} onClose={onClose}>
-        <CardSectionHeader>
-          <Heading type="title3" as="h3">
-            Title
-          </Heading>
-          <Text>Description</Text>
-        </CardSectionHeader>
-        <CardSectionContent>Content</CardSectionContent>
-      </CardSection>
-    </Card>,
-  );
-
-  it("should have callback onExpand", () => {
-    component.find("CardSectionHeader__StyledCardSectionHeader").simulate("click");
-    expect(onExpand).toHaveBeenCalled();
+    userEvent.click(sectionToggleBtn);
+    expect(onCloseSection).toHaveBeenCalled();
+    userEvent.click(sectionToggleBtn);
+    expect(onExpandSection).toHaveBeenCalled();
   });
 });

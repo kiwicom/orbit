@@ -130,6 +130,7 @@ const StyledClose = styled.div`
         selected ? theme.orbit.paletteBlueDarker : theme.orbit.paletteBlueDarker};
   }
 `;
+
 StyledClose.defaultProps = {
   theme: defaultTheme,
 };
@@ -170,6 +171,7 @@ const Tag = (props: Props) => {
         >
           <StyledClose
             tabIndex="0"
+            aria-label="close"
             role="button"
             onKeyDown={ev => {
               ev.stopPropagation();

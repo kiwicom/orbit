@@ -1,106 +1,59 @@
 // @flow
 import * as React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Tile from "../index";
 import Airplane from "../../../icons/Airplane";
 
-const title = "Tile title";
-const description = "Description";
-const href = "https://www.kiwi.com/";
-const external = true;
-const onClick = jest.fn();
-const dataTest = "test";
-
 describe("Deprecated Tile Default", () => {
-  const component = (
-    <Tile
-      icon={<Airplane />}
-      title={title}
-      description={description}
-      href={href}
-      external={external}
-      onClick={onClick}
-      dataTest={dataTest}
-    />
-  );
-  const shallowedComponent = shallow(component);
-  const mountedComponent = mount(component);
+  it("should have expected DOM output", () => {
+    const title = "Tile title";
+    const description = "Description";
+    const href = "https://www.kiwi.com/";
+    const external = true;
+    const dataTest = "test";
 
-  it("should contain icon, title and description", () => {
-    const tileHeader = mountedComponent.find("TileHeader");
-    expect(tileHeader.find("TileHeader__StyledTileTitle").exists()).toBe(true);
-    expect(tileHeader.find("TileHeader__StyledTileDescription").exists()).toBe(true);
-    expect(tileHeader.find("Icon__StyledIcon").find("svg").exists()).toBe(true);
-  });
-
-  it("should render rel when external", () => {
-    expect(shallowedComponent.render().prop("rel")).toBe("noopener noreferrer");
-  });
-
-  it("should render proper element", () => {
-    expect(shallowedComponent.render().prop("name")).toBe("a");
-  });
-
-  it("should execute onClick method", () => {
-    shallowedComponent.find("TileHeader").simulate("click");
-    expect(onClick).toHaveBeenCalled();
-  });
-});
-
-describe("Deprecated Tile Expandable", () => {
-  const children = "This is sample content of expandable tile";
-
-  const notDefaultExpandedTile = (
-    <Tile
-      icon={<Airplane />}
-      title={title}
-      href={undefined}
-      description={description}
-      onClick={onClick}
-      dataTest={dataTest}
-    >
-      {children}
-    </Tile>
-  );
-
-  const shallowednotDefaultExpandedTile = shallow(notDefaultExpandedTile);
-
-  const defaultExpandedTile = (
-    <Tile
-      icon={<Airplane />}
-      title={title}
-      description={description}
-      onClick={onClick}
-      dataTest={dataTest}
-      expanded
-    >
-      {children}
-    </Tile>
-  );
-
-  it("should call onClick on Expandable Tile", () => {
-    shallowednotDefaultExpandedTile.find("TileHeader").simulate("click");
-    expect(onClick).toHaveBeenCalled();
-  });
-
-  it("should render proper element", () => {
-    expect(shallowednotDefaultExpandedTile.render().prop("name")).toBe("div");
-  });
-
-  it("should contain children", () => {
-    expect(shallowednotDefaultExpandedTile.find("TileExpandable").exists()).toBe(true);
-  });
-
-  it("is default expanded children visible", () => {
-    const shallowedDefaultExpandedTile = mount(defaultExpandedTile);
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "max-height",
-      undefined,
+    render(
+      <Tile
+        icon={<Airplane dataTest="icon" />}
+        title={title}
+        description={description}
+        href={href}
+        external={external}
+        dataTest={dataTest}
+      />,
     );
-    expect(shallowedDefaultExpandedTile.find("TileExpandable")).toHaveStyleRule(
-      "animation",
-      undefined,
+
+    screen.getByTestId(dataTest);
+    screen.getByTestId("icon");
+    screen.getByText(title);
+    screen.getByText(description);
+
+    expect(screen.getByRole("link")).toHaveAttribute("href", href);
+    expect(screen.getByRole("link")).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("should render as a button", () => {
+    render(<Tile />);
+    expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
+  });
+
+  it("should expand and collapse", () => {
+    const onClick = jest.fn();
+    render(
+      <Tile title="title" onClick={onClick}>
+        content
+      </Tile>,
     );
+
+    expect(screen.getByText("content")).not.toBeVisible();
+    userEvent.type(screen.getByRole("button"), "{enter}");
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(screen.getByText("content")).toBeVisible();
+    userEvent.type(screen.getByRole("button"), "{space}");
+    expect(onClick).toHaveBeenCalledTimes(2);
+    userEvent.click(screen.getByText("title"));
+    expect(onClick).toHaveBeenCalledTimes(3);
   });
 });

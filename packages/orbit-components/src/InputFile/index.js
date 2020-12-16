@@ -139,7 +139,13 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
         {label && <FormLabel filled={Boolean(fileName)}>{label}</FormLabel>}
         <FakeInput error={error}>
           {/* <button> doesn't trigger the input so we're setting the tag to <div> */}
-          <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
+          <Button
+            type="secondary"
+            role="button"
+            size="small"
+            iconLeft={<Attachment />}
+            asComponent="div"
+          >
             {buttonLabel}
           </Button>
           <StyledFileInput fileName={fileName} error={error}>
@@ -149,7 +155,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>(
             <ButtonLink
               type="primary"
               compact
-              iconLeft={<CloseCircle color="secondary" />}
+              iconLeft={<CloseCircle ariaLabel="remove" color="secondary" />}
               onClick={ev => {
                 ev.preventDefault();
                 if (onRemoveFile) {

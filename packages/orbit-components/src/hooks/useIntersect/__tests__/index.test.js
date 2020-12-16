@@ -1,7 +1,6 @@
 // @noflow
 import * as React from "react";
-import { act } from "react-dom/test-utils";
-import { mount } from "enzyme";
+import { render, screen, act } from "@testing-library/react";
 
 import useIntersect from "..";
 
@@ -31,20 +30,21 @@ describe("useIntersect", () => {
       return entry;
     };
 
-    const wrapper = mount(<LazyImage src="source" placeholder="placeholder" threshold={0.01} />);
-    expect(wrapper.find("img").prop("src")).toBe("placeholder");
+    const { rerender } = render(
+      <LazyImage src="source" placeholder="placeholder" threshold={0.01} />,
+    );
+    expect(screen.getByRole("img")).toHaveAttribute("src", "placeholder");
     expect(entry.observe).toHaveBeenCalled();
     entry.observe.mockClear();
 
-    wrapper.setProps({ threshold: 0.02 });
+    rerender(<LazyImage src="source" placeholder="placeholder" threshold={0.02} />);
     expect(entry.disconnect).toHaveBeenCalled();
     expect(entry.observe).toHaveBeenCalled();
 
     act(() => {
       callback([{ isIntersecting: true }]);
     });
-    wrapper.update();
-    expect(wrapper.find("img").prop("src")).toBe("source");
+    expect(screen.getByRole("img")).toHaveAttribute("src", "source");
 
     window.IntersectionObserver = undefined;
   });

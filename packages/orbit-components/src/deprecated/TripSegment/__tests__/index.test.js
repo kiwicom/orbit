@@ -1,75 +1,57 @@
 // @flow
 import * as React from "react";
-import { shallow } from "enzyme";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import Airplane from "../../../icons/Airplane";
-import TripSegment from "../index";
-import List from "../../../List";
-import ListItem from "../../../List/ListItem";
+import TripSegment from "..";
 
-describe(`TripSegment with List as children`, () => {
-  const duration = "2h";
-  const content = "Some string";
-  const expanded = false;
-  const onClick = jest.fn();
-  const arrivalTime = "11:20";
-  const departureTime = "5:30";
-  const carrier = {
-    code: "FR",
-    name: "Rayanair",
-    type: "airline",
-  };
+describe("TripSegment", () => {
+  it("should have expected DOM output", async () => {
+    const duration = "2h";
+    const onClick = jest.fn();
+    const arrivalTime = "11:20";
+    const departureTime = "5:30";
+    const carrier = {
+      code: "FR",
+      name: "Rayanair",
+      type: "airline",
+    };
 
-  const departure = "Berlin TXL";
-  const arrival = "Moscow VKO";
+    const departure = "Berlin TXL";
+    const arrival = "Moscow VKO";
 
-  const component = shallow(
-    <TripSegment
-      arrival={arrival}
-      arrivalTime={arrivalTime}
-      departure={departure}
-      departureTime={departureTime}
-      duration={duration}
-      onClick={onClick}
-      carrier={carrier}
-    >
-      <List>
-        <ListItem icon={<Airplane color="secondary" />}>{content}</ListItem>
-        <ListItem icon={<Airplane color="secondary" />}>{content}</ListItem>
-        <ListItem icon={<Airplane color="secondary" />}>{content}</ListItem>
-      </List>
-    </TripSegment>,
-  );
+    render(
+      <TripSegment
+        arrival={arrival}
+        arrivalTime={arrivalTime}
+        departure={departure}
+        departureTime={departureTime}
+        duration={duration}
+        onClick={onClick}
+        carrier={carrier}
+      >
+        content
+      </TripSegment>,
+    );
 
-  const componentName = "TripSegment__";
+    screen.getByText(arrival);
+    screen.getByText(arrivalTime);
+    screen.getByText(departure);
+    screen.getByText(departureTime);
+    screen.getByText(duration);
 
-  const children = component.find(`${componentName}StyledTripSegmentChildren`);
-  const StyledTripSegmentOverviewWrapper = component.find(
-    `${componentName}StyledTripSegmentOverviewWrapper`,
-  );
-  const carrierWrapper = component.find(`${componentName}StyledTripSegmentCarrier`);
+    const content = screen.getByText("content");
 
-  const carrierLogo = carrierWrapper.find("CarrierLogo");
-  const flightDuration = carrierWrapper.find("Text");
-
-  it("should have passed props", () => {
-    expect(children.prop("expanded")).toBe(expanded);
-    expect(carrierLogo.exists()).toBe(true);
-    expect(flightDuration.exists()).toBe(true);
-  });
-
-  it("should be stateful", () => {
-    const node = component.instance();
-    node.setState({ shown: true });
-    expect(component.state("shown")).toBe(true);
-  });
-
-  it("should execute onClick method", () => {
-    StyledTripSegmentOverviewWrapper.simulate("click");
-    expect(onClick).toHaveBeenCalled();
-  });
-
-  it("children should have list", () => {
-    expect(children.find("List").exists()).toBe(true);
+    expect(content).not.toBeVisible();
+    userEvent.click(document.querySelector("svg"));
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(content).toBeVisible();
+    userEvent.type(screen.getByRole("button", { expanded: true }), "{enter}");
+    expect(onClick).toHaveBeenCalledTimes(2);
+    await waitFor(() => expect(content).not.toBeVisible());
+    userEvent.type(screen.getByRole("button", { expanded: false }), "{space}");
+    expect(onClick).toHaveBeenCalledTimes(3);
+    expect(content).toBeVisible();
+    screen.getByRole("button", { expanded: true });
   });
 });

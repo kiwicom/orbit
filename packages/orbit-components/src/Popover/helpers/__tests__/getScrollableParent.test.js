@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { mount } from "enzyme";
+import { render } from "@testing-library/react";
 
 import getScrollableParent from "../getScrollableParent";
 
@@ -16,8 +16,8 @@ describe("getScrollableParent", () => {
       );
     };
     const ref = React.createRef();
-    mount(<Wrapper propRef={ref} />);
-    expect(getScrollableParent(ref.current) instanceof HTMLElement).toEqual(true);
+    render(<Wrapper propRef={ref} />);
+    expect(getScrollableParent(ref.current)).toBeInstanceOf(HTMLDivElement);
   });
   it("To find scrollabe parent with scroll", () => {
     const Wrapper = ({ propRef }) => {
@@ -30,10 +30,10 @@ describe("getScrollableParent", () => {
       );
     };
     const ref = React.createRef();
-    mount(<Wrapper propRef={ref} />);
-    expect(getScrollableParent(ref.current) instanceof HTMLElement).toEqual(true);
+    render(<Wrapper propRef={ref} />);
+    expect(getScrollableParent(ref.current)).toBeInstanceOf(HTMLDivElement);
   });
-  it("To not fidn scrollabe parent", () => {
+  it("To not find scrollabe parent", () => {
     const Wrapper = ({ propRef }) => {
       return (
         <div>
@@ -44,7 +44,7 @@ describe("getScrollableParent", () => {
       );
     };
     const ref = React.createRef();
-    mount(<Wrapper propRef={ref} />);
-    expect(getScrollableParent(ref.current) instanceof HTMLElement).toEqual(false);
+    render(<Wrapper propRef={ref} />);
+    expect(getScrollableParent(ref.current)).not.toBeInstanceOf(HTMLDivElement);
   });
 });

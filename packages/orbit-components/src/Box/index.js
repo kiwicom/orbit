@@ -43,7 +43,7 @@ const Box = ({
   className,
   ...smallMobile
 }: Props) => {
-  const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
+  const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
   return (
     <StyledBox asComponent={as} dataTest={dataTest} className={className} viewports={viewports}>

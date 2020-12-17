@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.104.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.103.0...@kiwicom/orbit-components@0.104.0) (2020-12-17)
+
+
+### Bug Fixes
+
+* **Box:** apply `largeMobile` properties ([#2612](https://github.com/kiwicom/orbit/issues/2612)) ([e55c88e](https://github.com/kiwicom/orbit/commit/e55c88ea6d60d81cd492dce3a3a5e9a4e74edb33))
+* **Button:** change color of outline on focus ([#2611](https://github.com/kiwicom/orbit/issues/2611)) ([e2b0384](https://github.com/kiwicom/orbit/commit/e2b038451485858a2166a68e0cd44fc37dc989dc))
+* **InputFile:** a11y fixes ([be39d80](https://github.com/kiwicom/orbit/commit/be39d803f579d0f3dc607cfc51aeec1a39a232f3))
+* **Tag:** add missing aria-label ([26789fb](https://github.com/kiwicom/orbit/commit/26789fb6c3378dff9cec49028f552a3aef16c232))
+* **Tile:** missing a11y attributes ([3959338](https://github.com/kiwicom/orbit/commit/3959338be443a409c53c707def932f6dbfa96e93))
+
+
+### Features
+
+* add widthModalExtraLarge token ([#2592](https://github.com/kiwicom/orbit/issues/2592)) ([5213c49](https://github.com/kiwicom/orbit/commit/5213c498a7fade644d8d85ba821adfb5b25c162e))
+* **Sticky:** add data-test ([e01e6d2](https://github.com/kiwicom/orbit/commit/e01e6d22cc86eba6e6bfe908daff52b775b78518))
+
+
+
+
+
 # [0.103.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.102.0...@kiwicom/orbit-components@0.103.0) (2020-12-10)
 
 

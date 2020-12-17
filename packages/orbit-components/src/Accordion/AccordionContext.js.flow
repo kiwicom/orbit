@@ -1,7 +1,8 @@
 // @flow
+import * as React from "react";
 
 export type Context = {|
-  +onExpand?: () => void,
+  +onExpand?: () => void | Promise<any>,
   +expanded: boolean,
   +loading?: boolean,
 |};

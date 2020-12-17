@@ -107,7 +107,7 @@ const Card = ({
                     bottom: bottomRounderBorder,
                   },
                   index,
-                  noBorderTop: index === 0 && title,
+                  noBorderTop: index === 0 && Boolean(title),
                   isOpened: expandedSections.some(val => val === index),
                 }}
               >

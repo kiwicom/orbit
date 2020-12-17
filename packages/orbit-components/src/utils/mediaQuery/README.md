@@ -76,21 +76,21 @@ The `getBreakpointWidth` function accepts the viewport name and a theme object. 
 
 ```jsx
 import * as React from "react";
-import { mount } from "enzyme";
+import { render } from "@testing-library/react";
 import theme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { getBreakpointWidth } from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 
 import StyledComponent from "./";
 
 describe("StyledComponent", () => {
-  const component = mount(<StyledComponent />);
-
   it("should have 100% width by default", () => {
-    expect(component).toHaveStyleRule("width", "100%");
+    render(<StyledComponent data-test="test" />);
+    expect(screen.getByTestId("test")).toHaveStyleRule("width", "100%");
   });
 
   it("should have a width of 50% on a desktop viewport", () => {
-    expect(component).toHaveStyleRule("width", "50%", {
+    render(<StyledComponent data-test="test" />);
+    expect(screen.getByTestId("test")).toHaveStyleRule("width", "50%", {
       media: getBreakpointWidth("desktop", theme),
     });
   });

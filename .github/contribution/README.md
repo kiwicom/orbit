@@ -24,7 +24,7 @@
 
 - [React](https://reactjs.org/docs/getting-started.html) for development
 - [styled-components](https://www.styled-components.com/docs) for styling
-- [Jest](http://airbnb.io/enzyme/docs/guides/jest.html), [Enzyme](https://airbnb.io/enzyme/docs/api/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/api) for testing
+- [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for testing
 
 ### Starting with development
 

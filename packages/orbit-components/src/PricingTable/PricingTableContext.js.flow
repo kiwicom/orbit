@@ -1,10 +1,11 @@
 // @flow
+import * as React from "react";
 
 export type Context = {|
-  +basis: number,
-  +hasError: boolean,
-  +desktopRadio: boolean,
-  +isContent: boolean,
+  +basis?: number | string,
+  +hasError?: boolean,
+  +desktopRadio?: boolean,
+  +isContent?: boolean,
 |};
 
 export type PricingTableContextType = React.Context<Context>;

@@ -22,6 +22,7 @@ Table below contains all types of the props available in the Box component.
 | className    | `string`                                                             |         | The optional className of Box.                                  |
 | children     | `React.Node`                                                         |         | The children of the Box.                                        |
 | dataTest     | `string`                                                             |         | Optional prop for testing purposes.                             |
+| display      | [`enum`](#enum)                                                      |         | The `display` of the Box                                        |
 | padding      | [`spacingObject`](#spacingobject) \| [`spacingToken`](#spacingtoken) |         | The `padding` of the Box                                        |
 | margin       | [`spacingObject`](#spacingobject) \| [`spacingToken`](#spacingtoken) |         | The `margin` of the Box                                         |
 | wrap         | [`enum`](#enum)                                                      |         | The `flex-wrap` of the Box                                      |
@@ -85,13 +86,14 @@ All this properties - objects have the some own properties and none is required.
 
 ### enum
 
-| justify     | direction          | align       | wrap       | shrink | width    | height   |
-| :---------- | :----------------- | :---------- | :--------- | :----- | :------- | :------- |
-| `"start"`   | `"row"`            | `"start"`   | `"nowrap"` | `0`    | `"full"` | `"full"` |
-| `"end"`     | `"column"`         | `"end"`     | `"wrap"`   | `1`    | `"auto"` | `"auto"` |
-| `"center"`  | `"row-reverse"`    | `"center"`  |            |        |          |          |
-| `"between"` | `"column-reverse"` | `"stretch"` |            |        |          |          |
-| `"around"`  |                    |             |            |        |          |          |
+| display          | justify     | direction          | align       | wrap       | shrink | width    | height   |
+| :--------------- | :---------- | :----------------- | :---------- | :--------- | :----- | :------- | :------- |
+| `"none"`         | `"start"`   | `"row"`            | `"start"`   | `"nowrap"` | `0`    | `"full"` | `"full"` |
+| `"flex"`         | `"end"`     | `"column"`         | `"end"`     | `"wrap"`   | `1`    | `"auto"` | `"auto"` |
+| `"inline-flex"`  | `"center"`  | `"row-reverse"`    | `"center"`  |            |        |          |          |
+| `"block"`        | `"between"` | `"column-reverse"` | `"stretch"` |            |        |          |          |
+| `"inline"`       | `"around"`  |                    |             |            |        |          |          |
+| `"inline-block"` |             |                    |             |            |        |          |          |
 
 ### position
 

@@ -66,7 +66,8 @@ const getButtonTypeToken: GetButtonTypeToken = (name, type, theme) => {
       [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 50),
       [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 30),
       [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
-      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.paletteWhite, 50),
+      // because it's not possible to see outline on the white bg, we use active token
+      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.paletteWhiteActive, 50),
       [TYPE_OPTIONS.PRIMARY_SUBTLE]: convertHexToRgba(theme.orbit.paletteProductNormal, 50),
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
     },

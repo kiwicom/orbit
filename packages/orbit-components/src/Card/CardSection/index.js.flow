@@ -16,6 +16,7 @@ export type Props = {|
   +actions?: React.Node,
   +expanded?: boolean,
   +noSeparator?: boolean,
+  +onClick?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
   +onExpand?: () => void | Promise<any>,
   +header?: React.Node,

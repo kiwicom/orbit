@@ -16,6 +16,7 @@ const CardSection = ({
   titleAs = ELEMENT_OPTIONS.DIV,
   icon,
   description,
+  onClick,
   children,
   expandable = false,
   expanded,
@@ -91,6 +92,7 @@ const CardSection = ({
       roundedTop={roundedBorders.top}
       roundedBottom={roundedBorders.bottom}
       expanded={opened}
+      onClick={onClick}
       expandable={expandable}
       noBorderTop={noBorderTop}
     >

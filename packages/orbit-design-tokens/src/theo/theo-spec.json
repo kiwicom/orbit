@@ -2021,6 +2021,14 @@
       }
     },
     "widthModalLarge": {
+      "value": "900px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthModalExtraLarge": {
       "value": "1280px",
       "type": "size",
       "category": "Size (width, height)",

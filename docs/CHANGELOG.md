@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.1.0...orbit.kiwi@0.1.1) (2020-12-18)
+
+
+### Bug Fixes
+
+* **docs:** window and document SSR ([#2613](https://github.com/kiwicom/orbit/issues/2613)) ([881b4c2](https://github.com/kiwicom/orbit/commit/881b4c26f1fd279df777a14cd4afd4677c8eb7d5))
+
+
+
+
+
 # [0.1.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.0.3...orbit.kiwi@0.1.0) (2020-12-17)
 
 

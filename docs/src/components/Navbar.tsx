@@ -28,8 +28,14 @@ interface Props {
 }
 
 const Navbar = ({ onBookmarks, onSideNav }: Props) => {
-  const isHomePage = `${window.location.origin}/` === window.location.href;
   const { isTablet } = useMediaQuery();
+  const [isHomePage, setHomePage] = React.useState(false);
+
+  React.useEffect(() => {
+    if (`${window.location.origin}/` === window.location.href) {
+      setHomePage(true);
+    }
+  }, [setHomePage]);
 
   return (
     <StyledWrapper isHomePage={isHomePage}>

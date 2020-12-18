@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.0...@kiwicom/orbit-design-tokens@0.13.1) (2020-12-18)
+
+
+### Bug Fixes
+
+* update Theo output for design tokens ([#2617](https://github.com/kiwicom/orbit-design-tokens/issues/2617)) ([005e3f9](https://github.com/kiwicom/orbit-design-tokens/commit/005e3f9f603d6fc5dfa549ff0e556c7b3e70196a))
+
+
+
+
+
 # [0.13.0](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.12.2...@kiwicom/orbit-design-tokens@0.13.0) (2020-12-17)
 
 

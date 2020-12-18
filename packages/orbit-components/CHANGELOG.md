@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.105.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.104.0...@kiwicom/orbit-components@0.105.0) (2020-12-18)
+
+
+### Bug Fixes
+
+* **Box:** missing box-sizing ([#2616](https://github.com/kiwicom/orbit/issues/2616)) ([51246ca](https://github.com/kiwicom/orbit/commit/51246ca926cfab134098bca8d216b9fb7bbfe662))
+* **CardSection:** missing hover ([#2615](https://github.com/kiwicom/orbit/issues/2615)) ([d62d192](https://github.com/kiwicom/orbit/commit/d62d192f673c165e953339fe250667a904019342))
+
+
+### Features
+
+* **CardSection:** add onClick ([#2614](https://github.com/kiwicom/orbit/issues/2614)) ([074ded0](https://github.com/kiwicom/orbit/commit/074ded07055f2c606aa7b474de514e27fe63b7cd))
+
+
+
+
+
 # [0.104.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.103.0...@kiwicom/orbit-components@0.104.0) (2020-12-17)
 
 

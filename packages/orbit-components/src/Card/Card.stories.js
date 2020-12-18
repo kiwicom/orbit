@@ -66,11 +66,22 @@ storiesOf("Card", module)
         <CardSection
           onClick={action("onClick")}
           title={sectionTitle}
+          icon={<Icons.Airplane />}
           description={sectionDescription}
           titleAs={titleAs}
         />
-        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
-        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
+        <CardSection
+          icon={<Icons.Airplane />}
+          title={sectionTitle}
+          description={sectionDescription}
+          titleAs={titleAs}
+        />
+        <CardSection
+          icon={<Icons.Airplane />}
+          title={sectionTitle}
+          description={sectionDescription}
+          titleAs={titleAs}
+        />
       </Card>
     );
   })
@@ -216,7 +227,17 @@ storiesOf("Card", module)
           description={description}
           actions={<Button size="small">Button</Button>}
         >
-          <CardSection expandable title={sectionTitle} description={sectionDescription}>
+          <CardSection
+            expandable
+            icon={<Icons.Airplane />}
+            title={sectionTitle}
+            actions={
+              <Button size="small" type="secondary">
+                Button
+              </Button>
+            }
+            description={sectionDescription}
+          >
             Section Content
           </CardSection>
           <CardSection expandable title={sectionTitle} description={sectionDescription}>

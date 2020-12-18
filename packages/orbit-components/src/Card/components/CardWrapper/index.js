@@ -40,6 +40,7 @@ bottomBorderRadius.defaultProps = {
 
 const StyledCardWrapper = styled.div`
   padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceMedium};
+  cursor: ${({ onClick }) => onClick && `pointer`};
   ${CardElement};
   ${({ bottomBorder }) => bottomBorder && bottomBorderRadius};
   border-bottom: ${({ roundedBottom, bottomBorder }) =>
@@ -77,6 +78,11 @@ const StyledCardWrapper = styled.div`
 
     padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
   `)}
+
+  &:focus {
+    outline: 0;
+    background: ${({ theme }) => theme.orbit.paletteWhiteHover};
+  }
 `;
 
 StyledCardWrapper.defaultProps = {
@@ -85,6 +91,7 @@ StyledCardWrapper.defaultProps = {
 
 const CardWrapper = ({
   children,
+  onClick,
   bottomBorder,
   roundedBottom,
   roundedTop,
@@ -98,6 +105,8 @@ const CardWrapper = ({
   <StyledCardWrapper
     bottomBorder={bottomBorder}
     expanded={expanded || initialExpanded}
+    onClick={onClick}
+    tabIndex={onClick ? "0" : undefined}
     data-test={dataTest}
     noBorderTop={noBorderTop}
     expandable={expandable}

@@ -19,6 +19,7 @@ export interface Props extends Common.Global {
   readonly noSeparator?: boolean;
   readonly onClose?: Common.Callback;
   readonly onExpand?: Common.Callback;
+  readonly onClick?: Common.Callback;
   readonly header?: React.ReactNode;
 }
 

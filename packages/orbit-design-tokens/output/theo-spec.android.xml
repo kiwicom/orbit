@@ -281,6 +281,7 @@
   <string name="FONTWEIGHTLINKS" category="Font weight">500</string>
   <color name="COLORTEXTPRIMARY" category="Colors">#ff252a31</color>
   <color name="BACKGROUNDBADGENEUTRAL" category="Background colors">#fff5f7f9</color>
+  <dimen name="WIDTHMODALEXTRALARGE" category="Size (width, height)">1280dp</dimen>
   <dimen name="PADDINGTAGREMOVABLE" category="Spacing">6 6 6 8dp</dimen>
   <color name="COLORTEXTBUTTONSECONDARY" category="Colors">#ff252a31</color>
   <color name="COLORTEXTBUTTONWHITEBORDERED" category="Colors">#ffffffff</color>
@@ -315,7 +316,7 @@
   <string name="BACKGROUNDCOUNTRYFLAG" category="Background colors">transparent</string>
   <color name="COLORTEXTBUTTONFACEBOOKHOVER" category="Colors">#ffffffff</color>
   <string name="BACKGROUNDBUTTONWHITEBORDERED" category="Background colors">transparent</string>
-  <dimen name="WIDTHMODALLARGE" category="Size (width, height)">1280dp</dimen>
+  <dimen name="WIDTHMODALLARGE" category="Size (width, height)">900dp</dimen>
   <color name="PALETTEWHITEACTIVE" category="Color palette">#ffe5eaef</color>
   <color name="BACKGROUNDBUTTONSECONDARY" category="Background colors">#ffe8edf1</color>
   <color name="BACKGROUNDBUTTONINFOACTIVE" category="Background colors">#ff01508e</color>

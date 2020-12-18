@@ -1690,6 +1690,12 @@
       "name": "backgroundBadgeNeutral"
     },
     {
+      "value": "1280px",
+      "type": "size",
+      "category": "Size (width, height)",
+      "name": "widthModalExtraLarge"
+    },
+    {
       "value": "6px 6px 6px 8px",
       "type": "size",
       "category": "Spacing",
@@ -1894,7 +1900,7 @@
       "name": "backgroundButtonWhiteBordered"
     },
     {
-      "value": "1280px",
+      "value": "900px",
       "type": "size",
       "category": "Size (width, height)",
       "name": "widthModalLarge"

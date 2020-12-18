@@ -15,6 +15,7 @@ const StyledBox = styled(({ className, asComponent: Element, children, dataTest 
   </Element>
 ))`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
+  box-sizing: border-box;
   ${({ viewports }) => {
     return Object.entries(viewports).map(([query, value]: any) => {
       if (query !== DEVICES_CONSTS[0] && typeof value !== "undefined") {

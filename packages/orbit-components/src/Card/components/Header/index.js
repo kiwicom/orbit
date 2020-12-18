@@ -66,7 +66,7 @@ const Header = ({
         direction="column"
         spacing={isSection ? "none" : "XXSmall"}
       >
-        <Stack inline spacing="small">
+        <Stack inline spacing="small" align="center">
           {icon}
           {title && (
             <Heading

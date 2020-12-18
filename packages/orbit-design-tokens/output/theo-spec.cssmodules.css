@@ -283,6 +283,7 @@
 @value font-weight-links: "500";
 @value color-text-primary: rgb(37, 42, 49);
 @value background-badge-neutral: rgb(245, 247, 249);
+@value width-modal-extra-large: 1280px;
 @value padding-tag-removable: 6px 6px 6px 8px;
 @value color-text-button-secondary: rgb(37, 42, 49);
 @value color-text-button-white-bordered: rgb(255, 255, 255);
@@ -317,7 +318,7 @@
 @value background-country-flag: "transparent";
 @value color-text-button-facebook-hover: rgb(255, 255, 255);
 @value background-button-white-bordered: "transparent";
-@value width-modal-large: 1280px;
+@value width-modal-large: 900px;
 @value palette-white-active: rgb(229, 234, 239);
 @value background-button-secondary: rgb(232, 237, 241);
 @value background-button-info-active: rgb(1, 80, 142);

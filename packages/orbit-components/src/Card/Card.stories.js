@@ -63,7 +63,12 @@ storiesOf("Card", module)
     const sectionDescription = text("SectionDescription", "Section Description");
     return (
       <Card>
-        <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
+        <CardSection
+          onClick={action("onClick")}
+          title={sectionTitle}
+          description={sectionDescription}
+          titleAs={titleAs}
+        />
         <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
         <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
       </Card>

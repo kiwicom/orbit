@@ -59,6 +59,19 @@ describe("Card", () => {
     expect(screen.queryByText("section")).not.toBeInTheDocument();
   });
 
+  it("should be clickable", () => {
+    const onClick = jest.fn();
+
+    render(
+      <Card>
+        <CardSection title="kek" onClick={onClick} />
+      </Card>,
+    );
+
+    userEvent.click(screen.getByText("kek"));
+    expect(onClick).toHaveBeenCalled();
+  });
+
   describe("expandable", () => {
     it("controlled", () => {
       const { rerender } = render(

@@ -83,6 +83,10 @@ const StyledCardWrapper = styled.div`
     outline: 0;
     background: ${({ theme }) => theme.orbit.paletteWhiteHover};
   }
+
+  &:hover {
+    background: ${({ theme, onClick }) => onClick && theme.orbit.paletteWhiteHover};
+  }
 `;
 
 StyledCardWrapper.defaultProps = {

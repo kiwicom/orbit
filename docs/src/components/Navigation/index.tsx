@@ -5,6 +5,7 @@ import { Link as GatsbyLink } from "gatsby";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import MobileNavigation from "./Mobile";
 import { capitalize } from "./helpers";
+import Sidenav from "../Sidenav";
 
 const StyledLink = styled(GatsbyLink)`
   font-size: 1em;
@@ -35,11 +36,13 @@ const NavigationLinks = () => {
       </React.Fragment>
     ))
   ) : (
-    <ul role="menu">
-      {collections.map(({ id, name }) => (
-        <MobileNavigation key={id} name={name} />
-      ))}
-    </ul>
+    <Sidenav>
+      <ul role="menu">
+        {collections.map(({ id, name }) => (
+          <MobileNavigation key={id} name={name} />
+        ))}
+      </ul>
+    </Sidenav>
   );
 };
 

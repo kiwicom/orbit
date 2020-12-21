@@ -51,10 +51,10 @@ const StyledOpenButton = styled(({ className, children, ariaLabel, onClick }) =>
 
 const StyledAsideHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudLight};
-  padding-bottom: 10px;
+  padding: 0 20px 10px;
   margin: 0px -20px;
 `;
 
@@ -70,7 +70,6 @@ const StyledCloseButton = styled(({ className, tabIndex, children, ariaLabel, on
   </button>
 ))`
   ${({ theme }) => css`
-    margin: 0 10px;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-sizing: border-box;
     padding: 10px;
@@ -87,13 +86,18 @@ const StyledCloseButton = styled(({ className, tabIndex, children, ariaLabel, on
   `}
 `;
 
+const StyledContent = styled.div`
+  margin: 20px 0;
+`;
+
 interface Props {
   width?: number;
-  buttonIcon?: React.ReactNode;
+  actions?: React.ReactNode;
+  toggleIcon?: React.ReactNode;
   children: React.ReactNode;
 }
 
-const Sidenav = ({ width = 350, children, buttonIcon }: Props) => {
+const Sidenav = ({ width = 350, children, toggleIcon, actions }: Props) => {
   const [isShown, setShown] = React.useState(false);
   const handleShown = () => setShown(prev => !prev);
   const ref = React.useRef(null);
@@ -102,7 +106,7 @@ const Sidenav = ({ width = 350, children, buttonIcon }: Props) => {
   return (
     <>
       <StyledOpenButton onClick={handleShown} ariaLabel="open">
-        {buttonIcon || <Menu ariaHidden />}
+        {toggleIcon || <Menu ariaHidden />}
       </StyledOpenButton>
       <StyledAsideWrapper
         ref={ref}
@@ -113,6 +117,7 @@ const Sidenav = ({ width = 350, children, buttonIcon }: Props) => {
         shown={isShown}
       >
         <StyledAsideHeader>
+          {actions}
           <StyledCloseButton
             tabIndex={isShown ? "0" : "-1"}
             ariaLabel="close"
@@ -121,7 +126,7 @@ const Sidenav = ({ width = 350, children, buttonIcon }: Props) => {
             <Close ariaHidden />
           </StyledCloseButton>
         </StyledAsideHeader>
-        {children}
+        <StyledContent>{children}</StyledContent>
       </StyledAsideWrapper>
     </>
   );

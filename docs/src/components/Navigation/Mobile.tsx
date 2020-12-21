@@ -76,7 +76,7 @@ export default function Mobile({ name }: Props) {
       role="button"
       tabIndex={0}
       expanded={isExpanded}
-      aria-labelledBy={name}
+      aria-labelledby={name}
       aria-controls="dropdown"
       onKeyDown={ev => handleKeyDown(ev)}
     >

@@ -12,7 +12,7 @@ interface WrapperProps {
 
 const StyledAsideWrapper = styled.aside<WrapperProps>`
   ${({ width, theme, shown }) => css`
-    background: #fff;
+    background: ${theme.orbit.paletteWhite};
     padding: 10px 20px;
     z-index: 100;
     margin: 0;
@@ -22,12 +22,13 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
     top: 0;
     bottom: 0;
     height: 100vh;
-    font-family: ${theme.orbit.fontFamily};
     overflow-y: auto;
+    font-family: ${theme.orbit.fontFamily};
     box-shadow: ${theme.orbit.boxShadowRaised};
+    visibility: ${shown ? `visible` : `hidden`};
+    transition: transform ${theme.orbit.durationFast} ease-in;
     width: 100%;
     right: 0;
-    transition: transform ${theme.orbit.durationFast} ease-in;
     transform: translate3d(${shown ? "0, 0, 0" : `100%, 0, 0`});
     ${mq.largeMobile(css`
       max-width: ${width}px;
@@ -41,10 +42,20 @@ const StyledOpenButton = styled(({ className, children, ariaLabel, onClick }) =>
   </button>
 ))`
   border-radius: 3px;
+  box-sizing: border-box;
   &:focus {
     outline: 0;
     box-shadow: rgba(95, 115, 140, 0.3) 0px 0px 0px 3px;
   }
+`;
+
+const StyledAsideHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudLight};
+  padding-bottom: 10px;
+  margin: 0px -20px;
 `;
 
 const StyledCloseButton = styled(({ className, tabIndex, children, ariaLabel, onClick }) => (
@@ -59,10 +70,9 @@ const StyledCloseButton = styled(({ className, tabIndex, children, ariaLabel, on
   </button>
 ))`
   ${({ theme }) => css`
-    position: absolute;
     margin: 0 10px;
     border-radius: ${theme.orbit.borderRadiusNormal};
-    right: 0;
+    box-sizing: border-box;
     padding: 10px;
     &:focus {
       outline: 0;
@@ -94,11 +104,24 @@ const Sidenav = ({ width = 350, children, buttonIcon }: Props) => {
       <StyledOpenButton onClick={handleShown} ariaLabel="open">
         {buttonIcon || <Menu ariaHidden />}
       </StyledOpenButton>
-      <StyledAsideWrapper ref={ref} width={width} role="navigation" shown={isShown}>
+      <StyledAsideWrapper
+        ref={ref}
+        width={width}
+        role="navigation"
+        aria-label="side navigation"
+        aria-hidden={!isShown}
+        shown={isShown}
+      >
+        <StyledAsideHeader>
+          <StyledCloseButton
+            tabIndex={isShown ? "0" : "-1"}
+            ariaLabel="close"
+            onClick={handleShown}
+          >
+            <Close ariaHidden />
+          </StyledCloseButton>
+        </StyledAsideHeader>
         {children}
-        <StyledCloseButton tabIndex={isShown ? "0" : "-1"} ariaLabel="close" onClick={handleShown}>
-          <Close ariaHidden />
-        </StyledCloseButton>
       </StyledAsideWrapper>
     </>
   );

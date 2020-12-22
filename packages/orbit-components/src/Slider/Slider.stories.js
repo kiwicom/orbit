@@ -20,6 +20,8 @@ storiesOf("Slider", module)
       return (
         <Slider
           onChange={action("onChange")}
+          onChangeBefore={action("onChangeBefore")}
+          onChangeAfter={action("onChangeAfter")}
           label={label}
           valueDescription={valueDescription}
           dataTest={dataTest}

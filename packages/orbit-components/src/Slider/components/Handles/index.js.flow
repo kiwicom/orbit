@@ -5,20 +5,29 @@ import type { Value, AriaLabel } from "../../index";
 
 type Callback<A> = (event: A) => void;
 
-export type Props = {|
-  tabIndex: string | number,
+type CommonProps = {|
+  value: Value,
   onMouseDown: Callback<SyntheticMouseEvent<HTMLDivElement>>,
   onFocus: Callback<SyntheticKeyboardEvent<HTMLDivElement>>,
   onTouchStart: Callback<SyntheticTouchEvent<HTMLDivElement>>,
-  valueMax: number,
-  valueMin: number,
-  onTop: boolean,
-  index: number,
-  hasHistogram: boolean,
-  value: Value,
+  valueMax?: number,
+  valueMin?: number,
   ariaLabel: ?AriaLabel,
   ariaValueText: ?string,
+  hasHistogram: boolean,
+|};
+
+export type Props = {|
+  handleIndex?: number | null,
+  ...CommonProps,
+|};
+
+export type HandleProps = {|
+  index: number,
+  onTop?: boolean,
+  tabIndex: string | number,
   dataTest?: ?string,
+  ...CommonProps,
 |};
 
 declare export default React.ComponentType<Props>;

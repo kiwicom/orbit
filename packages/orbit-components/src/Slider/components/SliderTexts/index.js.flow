@@ -1,0 +1,13 @@
+// @flow
+import * as React from "react";
+
+import type { Translation } from "../../../common/common.js.flow";
+
+export type Props = {|
+  valueDescription?: Translation,
+  label?: Translation,
+  histogramDescription?: Translation,
+  biggerSpace?: boolean,
+|};
+
+declare export default React.ComponentType<Props>;

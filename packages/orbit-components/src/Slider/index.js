@@ -1,24 +1,25 @@
 // @flow
 import * as React from "react";
-import styled, { css, withTheme } from "styled-components";
-import { warning } from "@adeira/js";
+import styled, { css } from "styled-components";
+// import { warning } from "@adeira/js";
 
+import usePrevious from "../hooks/usePrevious";
+import useBoundingRect from "../hooks/useBoundingRect";
+import useTheme from "../hooks/useTheme";
 import transition from "../utils/transition";
-import Text from "../Text";
-import Heading from "../Heading";
-import Stack from "../Stack";
-import Hide from "../Hide";
-import Handle from "./components/Handle";
 import Bar from "./components/Bar";
-import KEY_CODE_MAP from "../common/keyMaps";
+// import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-import type { ThemeProps } from "../defaultTheme";
-import boundingClientRect from "../utils/boundingClientRect";
+import SliderTexts from "./components/SliderTexts";
+import SliderHeading from "./components/SliderHeading";
+import Handles from "./components/Handles";
+import { sortArray } from "./utils/helpers";
+import calculateValueFromPosition from "./utils/calculateValueFromPosition";
 
-import type { State, SliderCallback, Props, Value } from "./index";
+import type { Props } from "./index";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -69,453 +70,124 @@ const StyledSliderInput = styled.div`
   height: 24px;
 `;
 
-export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
-  bar = React.createRef<?HTMLElement>();
+export default function Slider({
+  dataTest,
+  defaultValue = DEFAULT_VALUES.VALUE,
+  histogramData,
+  histogramLoading,
+  histogramLoadingText,
+  histogramDescription,
+  ariaLabel,
+  ariaValueText,
+  valueDescription,
+  label,
+  onChange,
+  onChangeBefore,
+  onChangeAfter,
+  step = DEFAULT_VALUES.STEP,
+  minValue = DEFAULT_VALUES.MIN,
+  maxValue = DEFAULT_VALUES.MAX,
+}: Props) {
+  const [position, setPosition] = React.useState(defaultValue || DEFAULT_VALUES.MIN);
+  const sortedValue = sortArray(position);
+  const hasHistogram = histogramLoading || !!histogramData;
+  const [{ width: barWidth, left: barLeft, right: barRight }, bar] = useBoundingRect({
+    width: 0,
+    left: 0,
+    right: 0,
+  });
 
-  static defaultProps = {
-    theme: defaultTheme,
-  };
+  const theme = useTheme();
+  const prevPosition = usePrevious(position);
 
-  state = {
-    value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
-    handleIndex: null,
-    focused: false,
-  };
+  const handleMouseMove = React.useCallback(
+    (e: SyntheticMouseEvent<HTMLDivElement>) => {
+      const setLimit = (pos: number) => Math.min(Math.max(pos, minValue), maxValue);
+      if (barLeft && barWidth && barRight) {
+        const calculateP = calculateValueFromPosition({
+          hasHistogram,
+          minValue,
+          maxValue,
+          handleIndex: 0,
+          value: position,
+          theme,
+          barLeft,
+          barWidth,
+          barRight,
+        });
 
-  componentDidUpdate(prevProps: Props) {
-    const { defaultValue = DEFAULT_VALUES.VALUE } = this.props;
-    const { defaultValue: prevDefaultValue = DEFAULT_VALUES.VALUE } = prevProps;
-    if (this.isNotEqual(prevDefaultValue, defaultValue)) {
-      const newValue = Array.isArray(defaultValue)
-        ? defaultValue.map(item => Number(item))
-        : Number(defaultValue);
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ value: newValue });
-    }
-  }
-
-  pauseEvent = (
-    event:
-      | SyntheticKeyboardEvent<HTMLDivElement>
-      | SyntheticMouseEvent<HTMLDivElement>
-      | SyntheticTouchEvent<HTMLDivElement>,
-  ) => {
-    if (typeof event.stopPropagation === "function") {
-      event.stopPropagation();
-    }
-    if (
-      typeof event.preventDefault === "function" &&
-      (typeof event.cancelable !== "boolean" || event.cancelable)
-    ) {
-      event.preventDefault();
-    }
-  };
-
-  stopPropagation = (event: SyntheticTouchEvent<HTMLDivElement>) => {
-    if (typeof event.stopPropagation === "function") event.stopPropagation();
-  };
-
-  isNotEqual = (a: Value, b: Value) => {
-    if (Array.isArray(a) && Array.isArray(b)) {
-      return a.toString() !== b.toString();
-    }
-    return a !== b;
-  };
-
-  calculateValue = (ratio: number, addition?: boolean, deduction?: boolean) => {
-    const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
-    return Math.round(
-      (maxValue - minValue + (addition ? 1 : 0)) * ratio + minValue - (deduction ? 1 : 0),
-    );
-  };
-
-  calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
-    const barRect = boundingClientRect(this.bar);
-    if (barRect) {
-      const {
-        histogramData,
-        histogramLoading,
-        theme: { rtl },
-      } = this.props;
-      const { handleIndex, value } = this.state;
-      const mousePosition = (rtl ? barRect.right : pageX) - (rtl ? pageX : barRect.left);
-      const positionRatio = mousePosition / barRect.width;
-      const hasHistogram = histogramLoading || !!histogramData;
-      // when range slider
-      if (Array.isArray(value)) {
-        if (value[0] === value[value.length - 1]) {
-          if (this.calculateValue(positionRatio, true, true) >= value[value.length - 1]) {
-            return this.calculateValue(positionRatio, true, true);
-          }
-          return this.calculateValue(positionRatio, true);
-        }
-        if (this.isNotEqual(this.sortArray(value), value)) {
-          if (handleIndex === 0) {
-            return this.calculateValue(positionRatio, true, true);
-          }
-          return this.calculateValue(positionRatio, true);
-        }
-        const closestKey = this.findClosestKey(
-          this.calculateValue(positionRatio),
-          this.sortArray(value),
-        );
-        // when first handle of range slider or when clicked and it should move the first handle
-        if (handleIndex === 0 || (throughClick && closestKey === 0)) {
-          return this.calculateValue(positionRatio, true);
-        }
+        setPosition(() => setLimit(calculateP({ pageX: e.pageX })));
       }
-      // simple slider without histogram
-      if (handleIndex === null && !hasHistogram) {
-        return this.calculateValue(positionRatio);
+    },
+    [maxValue, minValue, barLeft, barRight, barWidth, hasHistogram, theme, position],
+  );
+
+  const handleMouseUp = React.useCallback(() => {
+    window.removeEventListener("mouseup", handleMouseUp);
+    window.removeEventListener("mousemove", handleMouseMove);
+    if (onChangeAfter) onChangeAfter(position);
+  }, [handleMouseMove, onChangeAfter, position]);
+
+  const handleMouseDown = React.useCallback(
+    (e: SyntheticMouseEvent<HTMLDivElement>) => {
+      if (barLeft && e.button === 0 && e.buttons !== 2) {
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", handleMouseUp);
+        if (onChangeBefore && prevPosition) onChangeBefore(prevPosition);
       }
-      return this.calculateValue(positionRatio, true, true);
-    }
-    return null;
-  };
+    },
+    [barLeft, handleMouseMove, handleMouseUp, onChangeBefore, prevPosition],
+  );
 
-  sortArray = (arr: Value): Value => {
-    if (Array.isArray(arr)) {
-      return arr.slice().sort((a, b) => a - b);
-    }
-    return arr;
-  };
+  React.useEffect(() => {
+    if (onChange) onChange(position);
+  }, [position, onChange]);
 
-  findClosestKey = (goal: number, value: Value) => {
-    return Array.isArray(value)
-      ? value.reduce((acc, curr, index) => {
-          return Array.isArray(value) && Math.abs(curr - goal) < Math.abs(value[acc] - goal)
-            ? index
-            : acc;
-        }, 0)
-      : null;
-  };
-
-  moveValueByStep = (step: number, forcedValue?: number) => {
-    const { value, handleIndex } = this.state;
-    if (Array.isArray(value)) {
-      return this.replaceValue(
-        forcedValue || this.alignValue(value[Number(handleIndex)] + step),
-        Number(handleIndex),
-      );
-    }
-    return forcedValue || this.alignValue(value + step);
-  };
-
-  handleKeyDown = (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    if (event.ctrlKey || event.shiftKey || event.altKey) return;
-    const {
-      step = DEFAULT_VALUES.STEP,
-      minValue = DEFAULT_VALUES.MIN,
-      maxValue = DEFAULT_VALUES.MAX,
-      theme: { rtl },
-    } = this.props;
-    if (event.keyCode === KEY_CODE_MAP.ARROW_UP) {
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(step));
-    }
-    if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(-step));
-    }
-    if (event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
-      const switchStep = rtl ? -step : step;
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
-    }
-    if (event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
-      const switchStep = rtl ? step : -step;
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
-    }
-    if (event.keyCode === KEY_CODE_MAP.HOME) {
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, minValue));
-    }
-    if (event.keyCode === KEY_CODE_MAP.END) {
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, maxValue));
-    }
-  };
-
-  handleBlur = () => {
-    this.setState({ focused: false });
-    const { value } = this.state;
-    window.removeEventListener("keydown", this.handleKeyDown);
-    window.removeEventListener("focusout", this.handleBlur);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
-  };
-
-  handleOnFocus = (i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
-    if (typeof i === "number") this.setState({ handleIndex: i });
-    const { value } = this.state;
-    this.setState({ focused: true });
-    this.pauseEvent(event);
-    window.addEventListener("keydown", this.handleKeyDown);
-    window.addEventListener("focusout", this.handleBlur);
-    this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-  };
-
-  handleMove = (newValue: ?number) => {
-    const { value, handleIndex } = this.state;
-    if (newValue != null) {
-      if (Array.isArray(value)) {
-        return this.replaceValue(this.alignValue(newValue), Number(handleIndex));
-      }
-      return this.alignValue(newValue);
-    }
-    return null;
-  };
-
-  handleBarMouseDown = (event: SyntheticMouseEvent<HTMLDivElement>) => {
-    const { value } = this.state;
-    this.setState({ handleIndex: null });
-    const newValue = this.calculateValueFromPosition(event.pageX, true);
-    if (newValue) {
-      if (Array.isArray(value)) {
-        const index = this.findClosestKey(newValue, value);
-        const replacedValue = this.replaceValue(this.alignValue(newValue), index);
-        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-        this.injectCallbackAndSetState(this.props.onChange, replacedValue);
-        this.injectCallbackAndSetState(this.props.onChangeAfter, replacedValue);
-      } else {
-        const alignedValue = this.alignValue(newValue);
-        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-        this.injectCallbackAndSetState(this.props.onChange, alignedValue);
-        this.injectCallbackAndSetState(this.props.onChangeAfter, alignedValue);
-      }
-    }
-  };
-
-  injectCallbackAndSetState = (
-    callback: ?SliderCallback,
-    newValue: ?Value,
-    forced: ?boolean = false,
-  ) => {
-    const { value } = this.state;
-    if (newValue != null) {
-      if (this.isNotEqual(newValue, value) || forced) {
-        this.setState({ value: newValue });
-        if (callback) {
-          callback(this.sortArray(newValue));
-        }
-      }
-    }
-  };
-
-  handleMouseMove = (event: SyntheticMouseEvent<HTMLDivElement>) => {
-    const newValue = this.calculateValueFromPosition(event.pageX);
-    this.pauseEvent(event);
-    this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
-  };
-
-  handleMouseUp = () => {
-    const { value } = this.state;
-    this.setState({ focused: false });
-    window.removeEventListener("mousemove", this.handleMouseMove);
-    window.removeEventListener("mouseup", this.handleMouseUp);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
-  };
-
-  handleMouseDown = (i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => {
-    // just allow left-click
-    if (event.button === 0 && event.buttons !== 2) {
-      const { value } = this.state;
-      this.setState({ focused: true });
-      if (typeof i === "number") this.setState({ handleIndex: i });
-      window.addEventListener("mousemove", this.handleMouseMove);
-      window.addEventListener("mouseup", this.handleMouseUp);
-      this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-    }
-  };
-
-  handleOnTouchMove = (event: SyntheticTouchEvent<HTMLDivElement>) => {
-    if (event.touches.length > 1) return;
-    const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
-    this.pauseEvent(event);
-    this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
-  };
-
-  handleTouchEnd = () => {
-    const { value } = this.state;
-    this.setState({ focused: false });
-    window.removeEventListener("touchmove", this.handleOnTouchMove);
-    window.removeEventListener("touchend", this.handleTouchEnd);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
-  };
-
-  handleOnTouchStart = (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
-    if (event.touches.length <= 1) {
-      this.setState({ focused: true });
-      const { value } = this.state;
-      if (typeof i === "number") this.setState({ handleIndex: i });
-      window.addEventListener("touchmove", this.handleOnTouchMove, {
-        passive: false,
-      });
-      window.addEventListener("touchend", this.handleTouchEnd);
-      this.stopPropagation(event);
-      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-    }
-  };
-
-  alignValueToStep = (value: number) => {
-    const { step = DEFAULT_VALUES.STEP } = this.props;
-    if (step === 1) return value;
-    const gap = value % step;
-    if (gap === 0) return value;
-    if (gap * 2 >= step) {
-      return value - gap + step;
-    }
-    return value - gap;
-  };
-
-  alignValueToMaxMin = (value: number) => {
-    const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
-    if (value > maxValue) {
-      return maxValue;
-    }
-    if (value < minValue) {
-      return minValue;
-    }
-    return value;
-  };
-
-  alignValue = (value: number) => this.alignValueToMaxMin(this.alignValueToStep(value));
-
-  replaceValue = (newValue: number, index: ?number) => {
-    const { value } = this.state;
-    if (index == null || !Array.isArray(value)) return newValue;
-    return value.map<number>((item, key) => (key === index ? newValue : item));
-  };
-
-  renderHandle = (valueNow: number, i: ?number) => {
-    const {
-      minValue = DEFAULT_VALUES.MIN,
-      maxValue = DEFAULT_VALUES.MAX,
-      histogramData,
-      histogramLoading,
-      ariaValueText,
-      ariaLabel,
-    } = this.props;
-    const { handleIndex, value } = this.state;
-    const key = i && encodeURIComponent(i.toString());
-    const index = i || 0;
-    return (
-      <Handle
-        tabIndex="0"
-        onTop={handleIndex === i}
-        valueMax={maxValue}
-        valueMin={minValue}
-        onMouseDown={this.handleMouseDown(i)}
-        onFocus={this.handleOnFocus(i)}
-        onTouchStart={this.handleOnTouchStart(i)}
-        value={value}
-        ariaValueText={ariaValueText}
-        ariaLabel={ariaLabel}
-        hasHistogram={histogramLoading || !!histogramData}
-        index={index}
-        key={key}
-        dataTest={`SliderHandle-${index}`}
+  return (
+    <StyledSlider data-test={dataTest}>
+      <SliderHeading
+        hasHistogram={hasHistogram}
+        label={label}
+        valueDescription={valueDescription}
+        histogramDescription={histogramDescription}
       />
-    );
-  };
-
-  renderHandles = () => {
-    const { value } = this.state;
-    return Array.isArray(value)
-      ? value.map<React.Node>((valueNow, i) => this.renderHandle(valueNow, i))
-      : this.renderHandle(value);
-  };
-
-  renderSliderTexts = (biggerSpace: boolean) => {
-    const { label, valueDescription, histogramDescription } = this.props;
-    if (!(label || valueDescription || histogramDescription)) return null;
-    return (
-      <Stack direction="row" spacing="none" spaceAfter={biggerSpace ? "medium" : "small"}>
-        {(label || histogramDescription) && (
-          <Stack direction="column" spacing="none" basis="60%" grow>
-            {label && <Heading type="title4">{label}</Heading>}
-            {valueDescription && (
-              <Text type="secondary" size="small">
-                {valueDescription}
-              </Text>
-            )}
-          </Stack>
-        )}
-        {histogramDescription && (
-          <Stack shrink justify="end" grow={false}>
-            <Text type="primary" size="small">
-              {histogramDescription}
-            </Text>
-          </Stack>
-        )}
-      </Stack>
-    );
-  };
-
-  renderHeading = (hasHistogram: boolean) => {
-    if (hasHistogram) {
-      return (
-        <Hide on={["smallMobile", "mediumMobile", "largeMobile"]} block>
-          {this.renderSliderTexts(true)}
-        </Hide>
-      );
-    }
-    return this.renderSliderTexts(true);
-  };
-
-  render() {
-    const {
-      minValue = DEFAULT_VALUES.MIN,
-      maxValue = DEFAULT_VALUES.MAX,
-      histogramData,
-      histogramLoading = false,
-      histogramLoadingText,
-      dataTest,
-      step = DEFAULT_VALUES.STEP,
-    } = this.props;
-    if (histogramData) {
-      const properHistogramLength = (maxValue - minValue + step) / step;
-      warning(
-        histogramData.length === properHistogramLength,
-        `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
-      );
-    }
-    const { value, focused } = this.state;
-    const sortedValue = this.sortArray(value);
-    const hasHistogram = histogramLoading || !!histogramData;
-    return (
-      <StyledSlider data-test={dataTest}>
-        {this.renderHeading(hasHistogram)}
-        {hasHistogram && (
-          <StyledSliderContent focused={focused}>
-            {this.renderSliderTexts(false)}
-            <Histogram
-              data={histogramData}
-              value={sortedValue}
-              min={minValue}
-              step={step}
-              loading={histogramLoading}
-              loadingText={histogramLoadingText}
-            />
-          </StyledSliderContent>
-        )}
-        <StyledSliderInput>
-          <Bar
-            ref={this.bar}
-            onMouseDown={this.handleBarMouseDown}
-            value={sortedValue}
-            max={maxValue}
-            min={minValue}
-            hasHistogram={hasHistogram}
+      {hasHistogram && (
+        <StyledSliderContent>
+          <SliderTexts
+            valueDescription={valueDescription}
+            histogramDescription={histogramDescription}
+            label={label}
           />
-          {this.renderHandles()}
-        </StyledSliderInput>
-      </StyledSlider>
-    );
-  }
+          <Histogram
+            data={histogramData}
+            value={sortedValue}
+            min={minValue}
+            step={step}
+            loading={histogramLoading}
+            loadingText={histogramLoadingText}
+          />
+        </StyledSliderContent>
+      )}
+      <StyledSliderInput>
+        <Bar
+          ref={bar}
+          onMouseDown={handleMouseDown}
+          value={sortedValue}
+          max={maxValue}
+          min={minValue}
+          hasHistogram={hasHistogram}
+        />
+        <Handles
+          valueMax={maxValue}
+          valueMin={minValue}
+          value={position}
+          ariaLabel={ariaLabel}
+          hasHistogram={hasHistogram}
+          onMouseDown={handleMouseDown}
+          // onFocus={handleOnFocus}
+          ariaValueText={ariaValueText}
+        />
+      </StyledSliderInput>
+    </StyledSlider>
+  );
 }
-
-const ThemedSlider = withTheme(PureSlider);
-ThemedSlider.displayName = "Slider";
-export default ThemedSlider;

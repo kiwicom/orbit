@@ -5,8 +5,9 @@ import styled from "styled-components";
 import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
+import DEFAULT_VALUES from "../../consts";
 
-import type { Props, CalculateLeftPosition, IsFirst } from "./index";
+import type { HandleProps, CalculateLeftPosition, IsFirst } from "./index";
 
 export const calculateLeftPosition: CalculateLeftPosition = (
   valueNow,
@@ -93,8 +94,8 @@ const Handle = ({
   onMouseDown,
   onFocus,
   onTouchStart,
-  valueMax,
-  valueMin,
+  valueMax = DEFAULT_VALUES.MAX,
+  valueMin = DEFAULT_VALUES.MIN,
   onTop,
   value,
   index,
@@ -102,7 +103,7 @@ const Handle = ({
   ariaLabel,
   hasHistogram,
   dataTest,
-}: Props) => {
+}: HandleProps) => {
   const valueNow = Array.isArray(value) ? value[index] : value;
   const first = isFirst(value, valueNow, index, hasHistogram);
   const isSimple = !hasHistogram && !Array.isArray(value);

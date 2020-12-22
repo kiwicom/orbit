@@ -1,0 +1,11 @@
+// @flow
+import * as React from "react";
+
+import type { Props as SliderTextProps } from "../SliderTexts";
+
+export type Props = {|
+  hasHistogram?: boolean,
+  ...SliderTextProps,
+|};
+
+declare export default React.ComponentType<Props>;

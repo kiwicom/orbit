@@ -8,6 +8,5 @@ export const SIZE_OPTIONS = {
 export const TYPES = {
   DEFAULT: "default",
   LEGROOM: "legroom",
-  SELECTED: "selected",
   UNAVAILABLE: "unavailable",
 };

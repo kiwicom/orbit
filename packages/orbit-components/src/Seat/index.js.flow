@@ -6,11 +6,16 @@ import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type Type = "default" | "legroom" | "selected" | "unavailable";
+export type Type = "default" | "legroom" | "unavailable";
 export type Size = "medium" | "small";
 
 export type Props = {|
   +type?: Type,
+  +title?: string,
+  +description?: string,
+  +selected?: boolean,
+  +price?: string,
+  +label?: string,
   +size?: Size,
   ...Globals,
 |};

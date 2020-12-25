@@ -4,13 +4,14 @@ import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
-import theme from "../theme";
+import defaultTheme from "../theme";
 import Prose from "./Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "./AddBookmark";
 import FancyLink from "./FancyLink";
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
+import Breadcrumbs from "./Breadcrumbs";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -44,11 +45,12 @@ interface Props {
 
 export default function DocLayout({ children, location, path, title }: Props) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
         <StyledWrapper>
           <Navbar location={location} />
           <StyledMain>
+            <Breadcrumbs location={location} />
             <Prose>
               {title && (
                 <Stack inline align="center">

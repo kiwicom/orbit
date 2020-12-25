@@ -28,6 +28,7 @@ module.exports = {
           path.join(__dirname, "../packages/orbit-components"),
           path.join(__dirname, "../packages/orbit-design-tokens"),
           path.join(__dirname, "../docs"),
+          path.join(__dirname, "../packages/eslint-plugin-orbit-components"),
         ],
         devDependencies: [
           "**/*.test.js",

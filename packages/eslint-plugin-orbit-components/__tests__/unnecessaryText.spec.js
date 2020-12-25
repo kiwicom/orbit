@@ -1,5 +1,5 @@
 // @flow
-import ruleTester from "./ruleTester";
+import ruleTester from "../ruleTester";
 import unnecessaryText from "../src/rules/unnecessaryText";
 
 describe("Unnecessary text", () => {

@@ -1,4 +1,3 @@
-// @flow
 import isOrbitComponent from "../utils/isOrbitComponent";
 import detectOriginalOrbitName from "../utils/detectOriginalOrbitName";
 

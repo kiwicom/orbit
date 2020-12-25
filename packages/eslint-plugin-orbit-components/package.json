@@ -16,7 +16,7 @@
   "author": "Kiwi.com",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -fr ./dist && babel ./src --out-dir ./dist",
+    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
     "test": "jest tests"
   },
   "files": [
@@ -26,6 +26,10 @@
     "README.md",
     "yarn.lock"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/eslint": "^7.2.6"
+  },
   "license": "MIT"
 }

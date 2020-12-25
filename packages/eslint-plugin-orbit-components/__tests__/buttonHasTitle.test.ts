@@ -1,4 +1,3 @@
-// @flow
 import ruleTester from "../ruleTester";
 import buttonHasTitle from "../src/rules/buttonHasTitle";
 

@@ -1,4 +1,3 @@
-// @flow
 import buttonHasTitle from "./rules/buttonHasTitle";
 import unnecessaryText from "./rules/unnecessaryText";
 

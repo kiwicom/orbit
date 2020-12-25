@@ -1,9 +1,9 @@
-// @flow
 import isOrbitComponent from "../utils/isOrbitComponent";
 import detectOriginalOrbitName from "../utils/detectOriginalOrbitName";
 
 export default {
   create: context => {
+    console.log("ctx", context);
     const importedOrbitComponents = {};
     const JSXElements = [];
     const variables = {};

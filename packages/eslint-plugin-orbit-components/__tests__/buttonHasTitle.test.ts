@@ -2,6 +2,7 @@ import ruleTester from "../ruleTester";
 import buttonHasTitle from "../src/rules/buttonHasTitle";
 
 describe("Button has title", () => {
+  // @ts-expect-error
   ruleTester.run("button-has-title", buttonHasTitle, {
     valid: [
       {

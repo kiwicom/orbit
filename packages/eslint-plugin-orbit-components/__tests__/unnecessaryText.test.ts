@@ -2,6 +2,7 @@ import ruleTester from "../ruleTester";
 import unnecessaryText from "../src/rules/unnecessaryText";
 
 describe("Unnecessary text", () => {
+  // @ts-expect-error
   ruleTester.run("unnecessary-text", unnecessaryText, {
     valid: [
       {

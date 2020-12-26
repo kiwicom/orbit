@@ -7,5 +7,10 @@
     "strict": true,
     "noImplicitAny": false
   },
-  "include": ["packages/orbit-components/**/*", "packages/orbit-design-tokens/**/*", "docs/**/*"]
+  "include": [
+    "packages/orbit-components/**/*",
+    "packages/orbit-design-tokens/**/*",
+    "packages/eslint-plugin-orbit-components/**/*",
+    "docs/**/*"
+  ]
 }

@@ -1,6 +1,7 @@
 {
-  "extends": "../../config/configTS.js",
-  "parserOptions": {
-    "project": "./tsconfig.json"
+  "extends": "../../config/eslintTS.js",
+  "rules": {
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }

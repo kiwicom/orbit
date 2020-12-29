@@ -1,4 +1,0 @@
-// @flow
-export type GetGrow = (grow: boolean) => string | boolean;
-
-declare export default GetGrow;

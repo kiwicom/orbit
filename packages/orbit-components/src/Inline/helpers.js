@@ -1,35 +1,15 @@
 // @flow
 import { left } from "../utils/rtl";
 import type { Theme, ThemeProps } from "../defaultTheme";
+import { getAlign, getJustify, formatCSS } from "../utils/layout";
+import { TOKENS } from "../utils/layout/consts";
 
 import type { SpacingToken, Align, Justify } from "./index";
 
 type Prop = "align" | "justify" | "spacing";
 
-export const formatCSS = (key: string, value: string): string => `${key}: ${value};`;
-
-const getFlex = flex => {
-  if (flex === "start") return "flex-start";
-  if (flex === "end") return "flex-end";
-  if (flex === "between") return "space-between";
-  if (flex === "around") return "space-around";
-
-  return "center";
-};
-
 export const normalizeSpacing = (el: SpacingToken, theme: Theme): string => {
-  const tokens = {
-    none: "",
-    XXXSmall: theme.orbit.spaceXXXSmall,
-    XXSmall: theme.orbit.spaceXXSmall,
-    XSmall: theme.orbit.spaceXSmall,
-    small: theme.orbit.spaceSmall,
-    medium: theme.orbit.spaceMedium,
-    large: theme.orbit.spaceLarge,
-    XLarge: theme.orbit.spaceXLarge,
-    XXLarge: theme.orbit.spaceXXLarge,
-    XXXLarge: theme.orbit.spaceXXXLarge,
-  };
+  const tokens = TOKENS(theme);
 
   if (el !== "none") {
     return `
@@ -54,11 +34,11 @@ export const normalize = (object: PropObject) => ({ theme }: ThemeProps) => {
 
   return Object.entries(object).reduce((acc, [key, val]: [string, any]) => {
     if (key === "justify") {
-      return [...acc, formatCSS("justify-content", getFlex(val))];
+      return [...acc, formatCSS("justify-content", getJustify(val))];
     }
 
     if (key === "align") {
-      return [...acc, formatCSS("align-items", getFlex(val))];
+      return [...acc, formatCSS("align-items", getAlign(val))];
     }
 
     if (key === "spacing") {

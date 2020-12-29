@@ -1,6 +1,0 @@
-// @flow
-import type { Justify } from "../index";
-
-export type GetJustify = (justify: Justify) => string;
-
-declare export default GetJustify;

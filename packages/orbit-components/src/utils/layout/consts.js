@@ -1,4 +1,5 @@
 // @flow
+import type { Theme } from "../../defaultTheme";
 
 export const DIRECTIONS = {
   ROW: "row",
@@ -34,3 +35,16 @@ export const SPACINGS = {
   XLARGE: "XLarge",
   XXLARGE: "XXLarge",
 };
+
+export const TOKENS = (theme: Theme) => ({
+  none: null,
+  XXXSmall: theme.orbit.spaceXXXSmall,
+  XXSmall: theme.orbit.spaceXXSmall,
+  XSmall: theme.orbit.spaceXSmall,
+  small: theme.orbit.spaceSmall,
+  medium: theme.orbit.spaceMedium,
+  large: theme.orbit.spaceLarge,
+  XLarge: theme.orbit.spaceXLarge,
+  XXLarge: theme.orbit.spaceXXLarge,
+  XXXLarge: theme.orbit.spaceXXXLarge,
+});

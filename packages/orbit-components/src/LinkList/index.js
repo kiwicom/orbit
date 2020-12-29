@@ -6,7 +6,7 @@ import { left, rtlSpacing } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
 import { StyledTextLink } from "../TextLink";
 import defaultTheme from "../defaultTheme";
-import { SPACINGS } from "../Stack/consts";
+import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 

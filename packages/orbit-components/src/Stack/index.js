@@ -4,9 +4,9 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import mediaQueries from "../utils/mediaQuery";
-import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "./consts";
+import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
 import { DEVICES } from "../utils/mediaQuery/consts";
-import isDefined from "./helpers/isDefined";
+import { isDefined } from "../utils/layout";
 import shouldUseFlex from "./helpers/shouldUseFlex";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getChildrenMargin from "./helpers/getChildrenMargin";

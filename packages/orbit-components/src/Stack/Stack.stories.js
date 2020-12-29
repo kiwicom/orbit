@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, object, text } from "@storybook/addon-knobs";
 
-import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "./consts";
+import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "../utils/layout/consts";
 import Edit from "../icons/Edit";
 import Button from "../Button";
 import InputField from "../InputField";

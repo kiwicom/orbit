@@ -2,6 +2,7 @@
 module.exports = {
   extends: [
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     // disables core ESLint rules which are handled by TypeScript
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",

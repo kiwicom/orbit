@@ -129,7 +129,7 @@ const Wizard = ({ dataTest, id, completedSteps, activeStep, children, onChangeSt
                             setOpen(false);
                           }}
                         >
-                          Close
+                          {translate("button_close")}
                         </Button>
                       </CardSection>
                     </li>

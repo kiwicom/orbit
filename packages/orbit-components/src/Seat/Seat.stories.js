@@ -1,39 +1,63 @@
 // @flow
 
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { select, text } from "@storybook/addon-knobs";
+import { select, text, boolean } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
 
 import Seat from "./index";
 
-storiesOf("Seat", module)
-  .add(
-    "Default",
-    () => {
-      return <Seat />;
-    },
-    {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Playground",
-    () => {
-      const dataTest = text("dataTest", "test");
-      const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
-      return (
-        <Stack direction="row">
-          <Seat size={size} dataTest={dataTest} />
-          <Seat size={size} type="legroom" dataTest={dataTest} />
-          <Seat size={size} type="unavailable" dataTest={dataTest} />
-          <Seat size={size} type="selected" dataTest={dataTest} />
-        </Stack>
-      );
-    },
-    {
-      info: "Visit Orbit.Kiwi for more detailed guidelines.",
-    },
+export const Default = () => <Seat />;
+
+export const Selected = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+  const dataTest = text("dataTest", "test");
+  const label = text("label", "MZ");
+
+  return (
+    <Stack direction="row">
+      <Seat size={size} label={label} selected dataTest={dataTest} />
+      <Seat size={size} label={label} selected type="legroom" dataTest={dataTest} />
+    </Stack>
   );
+};
+
+export const Playground = () => {
+  const dataTest = text("dataTest", "test");
+  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+  const label = text("label", "A");
+  const price = text("price", "12$");
+  const selected = boolean("selected", false);
+
+  return (
+    <Stack direction="row">
+      <Seat size={size} label={label} price={price} selected={selected} dataTest={dataTest} />
+      <Seat
+        size={size}
+        label={label}
+        price={price}
+        selected={selected}
+        type="legroom"
+        dataTest={dataTest}
+      />
+      <Seat
+        size={size}
+        label={label}
+        price={price}
+        selected={selected}
+        type="unavailable"
+        dataTest={dataTest}
+      />
+    </Stack>
+  );
+};
+
+export default {
+  title: "Seat",
+  component: Seat,
+  includeStories: ["Default", "Selected", "Playground"],
+  parameters: {
+    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};

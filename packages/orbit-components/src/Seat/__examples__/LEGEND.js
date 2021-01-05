@@ -18,9 +18,6 @@ export default {
           <Seat type="legroom" /> <Text>Extra legroom (€10)</Text>
         </Stack>
         <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
-          <Seat type="selected" /> <Text>Selected</Text>
-        </Stack>
-        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
           <Seat type="unavailable" />
           <Text>Unavailable</Text>
         </Stack>
@@ -29,7 +26,6 @@ export default {
         <Stack direction="row" align="center">
           <Stack inline grow={false} align="center" direction="column">
             <Text>A</Text>
-            <Seat type="selected" />
           </Stack>
           <Stack inline grow={false} align="center" direction="column">
             <Text>B</Text>

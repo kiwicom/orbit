@@ -18,9 +18,9 @@ export default {
 
     const seatType = (currentSeat, direction) => {
       if (direction === "outbound") {
-        return selectedOutboundSeat === currentSeat ? "selected" : "default";
+        return selectedOutboundSeat === currentSeat ? "legroom" : "default";
       }
-      return selectedInboundSeat === currentSeat ? "selected" : "default";
+      return selectedInboundSeat === currentSeat ? "legroom" : "default";
     };
     const SeatButton = ({ currentSeat, direction }) => (
       <ButtonLink

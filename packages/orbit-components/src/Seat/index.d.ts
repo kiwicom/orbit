@@ -13,6 +13,11 @@ type Type = "default" | "legroom" | "selected" | "unavailable";
 interface Props extends Common.Global {
   readonly type: Type;
   readonly size?: Size;
+  readonly title?: string;
+  readonly description?: string;
+  readonly selected?: boolean;
+  readonly label?: string;
+  readonly price?: string;
 }
 
 declare const Seat: React.FunctionComponent<Props>;

@@ -16,11 +16,15 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in Radio component.
 
-| Name     | Type                  | Default   | Description                         |
-| :------- | :-------------------- | :-------- | :---------------------------------- |
-| dataTest | `string`              |           | Optional prop for testing purposes. |
-| size     | [`enum`](#modal-enum) | `medium`  | Size of Seat component.             |
-| type     | [`enum`](#modal-enum) | `default` | Visual type of Seat                 |
+| Name        | Type                  | Default                        | Description                                  |
+| :---------- | :-------------------- | :----------------------------- | :------------------------------------------- |
+| dataTest    | `string`              |                                | Optional prop for testing purposes.          |
+| size        | [`enum`](#modal-enum) | `medium`                       | Size of Seat component.                      |
+| type        | [`enum`](#modal-enum) | `default`                      | Visual type of Seat                          |
+| price       | `string`              |                                | Price of Seat                                |
+| label       | `string`              |                                | Label text inside of a Seat                  |
+| title       | `string`              | `Seat`                         | Optional prop for title of svg element       |
+| description | `string`              | `Presents options for seating` | Optional prop for Description of svg element |
 
 ### enum
 
@@ -28,5 +32,4 @@ Table below contains all types of the props available in Radio component.
 | :--------- | :-------------- |
 | `"small"`  | `"default"`     |
 | `"medium"` | `"legroom"`     |
-|            | `"selected"`    |
 |            | `"unavailable"` |

@@ -231,6 +231,9 @@ export { default as RatingStarsShowEmpty } from "./RatingStars/__examples__/SHOW
 export { default as RatingStarsSizes } from "./RatingStars/__examples__/SIZES";
 export { default as SeatDefault } from "./Seat/__examples__/DEFAULT";
 export { default as SeatLegend } from "./Seat/__examples__/LEGEND";
+export { default as SeatSelected } from "./Seat/__examples__/SELECTED";
+export { default as SeatLabel } from "./Seat/__examples__/LABEL";
+export { default as SeatPrice } from "./Seat/__examples__/PRICE";
 export { default as SeatSizes } from "./Seat/__examples__/SIZES";
 export { default as SeatTypes } from "./Seat/__examples__/TYPES";
 export { default as SelectAccessibility } from "./Select/__examples__/ACCESSIBILITY";

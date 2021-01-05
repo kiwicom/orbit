@@ -24,7 +24,7 @@ export default {
         <Heading as="h3" type="title3">
           Selected
         </Heading>
-        <Seat type="selected" />
+        <Seat type="legroom" selected />
       </Stack>
       <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">

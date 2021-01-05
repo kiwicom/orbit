@@ -4,7 +4,8 @@
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiwicom/eslint-plugin-orbit-components"
+    "url": "https://github.com/kiwicom/orbit.git",
+    "directory": "packages/eslint-plugin-orbit-components"
   },
   "keywords": [
     "eslint",
@@ -16,8 +17,7 @@
   "author": "Kiwi.com",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
-    "test": "jest tests"
+    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist"
   },
   "files": [
     "dist",

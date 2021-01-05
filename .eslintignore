@@ -1,6 +1,7 @@
 es
 umd
 flow-typed
+dist
 lib
 node_modules
 packages/babel-plugin-orbit-components/dist/

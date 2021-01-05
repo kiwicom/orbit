@@ -28,6 +28,14 @@ module.exports = {
       },
     },
     {
+      files: "packages/eslint-plugin-orbit-components/**/*",
+      rules: {
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
       files: "docs/**/*",
       rules: {
         // we're not using Flow in docs

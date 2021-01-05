@@ -84,7 +84,7 @@ export default {
                     if (variables[name].find(v => v === "title")) return;
 
                     context.report({
-                      // @ts-expect-error
+                      // @ts-expect-error TODO
                       node,
                       message: `${localName} doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.`,
                     });
@@ -100,7 +100,7 @@ export default {
                 )
               ) {
                 context.report({
-                  // @ts-expect-error
+                  // @ts-expect-error TODO
                   node,
                   message: `${localName} doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.`,
                 });

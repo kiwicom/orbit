@@ -48,7 +48,7 @@ export default {
                     const childElementName = child.openingElement.name.name;
                     if (importedOrbitComponents[childElementName] === "Text") {
                       context.report({
-                        //@ts-expect-error
+                        // @ts-expect-error TODO
                         node: child,
                         message:
                           `Don't wrap ${localName}'s children to Text component. ` +

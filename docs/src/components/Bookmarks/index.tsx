@@ -17,11 +17,14 @@ const StyledLink = styled(Link)`
 
 const Bookmarks = () => {
   const [checked, setChecked] = React.useState(false);
+  const [bookmarks, setBookmarks] = React.useState<string | null>("");
 
   React.useEffect(() => {
+    if (load("bookmarks")) setBookmarks(load("bookmarks"));
+
     if (load("devMode") === "enabled") setChecked(true);
     else setChecked(false);
-  }, [load, setChecked]);
+  }, []);
 
   const handleChange = () => {
     if (load("devMode") === "enabled") {
@@ -32,8 +35,6 @@ const Bookmarks = () => {
       save("devMode", "enabled");
     }
   };
-
-  const bookmarks = load("bookmarks");
 
   return (
     <Sidenav

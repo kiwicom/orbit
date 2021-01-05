@@ -1,8 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { capitalize } from "./helpers";
+import { capitalize, omitNumbers } from "../../utils/common";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { omitNumbers } from "../../utils/common";
 
 const StyledList = styled.ul`
   padding: 10px 0;
@@ -46,7 +45,7 @@ interface Props {
   name: string;
 }
 
-export default function Mobile({ name }: Props) {
+export default function MobileNavigation({ name }: Props) {
   const [isExpanded, setExpanded] = React.useState(false);
   const handleExpanded = () => setExpanded(prev => !prev);
   const handleKeyDown = (ev: React.KeyboardEvent<HTMLLIElement>) => {

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import useCollections from "../../hooks/useCollections";
 import { Link as GatsbyLink } from "gatsby";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
-import MobileNavigation from "./Mobile";
-import { capitalize } from "./helpers";
+import MobileNavigation from "./MobileNavigation";
+import { capitalize } from "../../utils/common";
 import Sidenav from "../Sidenav";
 
 const StyledLink = styled(GatsbyLink)`

@@ -8,25 +8,27 @@ import Layout from "../components/Layout";
 import Prose from "../components/Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "../components/AddBookmark";
+import { PageRendererProps } from "gatsby";
 
-interface Props {
+interface Props extends PageRendererProps {
   data: {
     mdx: {
       frontmatter: {
         title: string;
       };
+      slug: string;
       body: string;
     };
   };
 }
 
-export default function Doc({ data }: Props) {
-  const { frontmatter, body } = data.mdx;
+export default function Doc({ data, location }: Props) {
+  const { frontmatter, slug, body } = data.mdx;
   return (
     <Layout>
       <Prose>
         <Stack inline align="center">
-          <AddBookmark page={frontmatter.title} />
+          <AddBookmark page={slug} location={location} />
           <Heading as="h1" type="display">
             {frontmatter.title}
           </Heading>
@@ -45,6 +47,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      slug
       body
     }
   }

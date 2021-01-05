@@ -18,7 +18,6 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
     margin: 0;
     display: block;
     position: absolute;
-    box-sizing: border-box;
     top: 0;
     bottom: 0;
     height: 100vh;
@@ -36,13 +35,13 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
   `}
 `;
 
-const StyledOpenButton = styled(({ className, children, ariaLabel, onClick }) => (
-  <button className={className} aria-label={ariaLabel} onClick={onClick} type="button">
-    {children}
-  </button>
-))`
+const StyledOpenButton = styled.button.attrs(({ className, onClick }) => ({
+  className,
+  onClick,
+  "aria-label": "open",
+  type: "button",
+}))`
   border-radius: 3px;
-  box-sizing: border-box;
   &:focus {
     outline: 0;
     box-shadow: rgba(95, 115, 140, 0.3) 0px 0px 0px 3px;
@@ -58,20 +57,14 @@ const StyledAsideHeader = styled.div`
   margin: 0px -20px;
 `;
 
-const StyledCloseButton = styled(({ className, tabIndex, children, ariaLabel, onClick }) => (
-  <button
-    className={className}
-    tabIndex={tabIndex}
-    aria-label={ariaLabel}
-    onClick={onClick}
-    type="button"
-  >
-    {children}
-  </button>
-))`
+const StyledCloseButton = styled.button.attrs(({ className, tabIndex, onClick }) => ({
+  className,
+  tabindex: tabIndex,
+  onClick,
+  "aria-label": "close",
+}))`
   ${({ theme }) => css`
     border-radius: ${theme.orbit.borderRadiusNormal};
-    box-sizing: border-box;
     padding: 10px;
     &:focus {
       outline: 0;
@@ -105,9 +98,7 @@ const Sidenav = ({ width = 350, children, toggleIcon, actions }: Props) => {
 
   return (
     <>
-      <StyledOpenButton onClick={handleShown} ariaLabel="open">
-        {toggleIcon || <Menu ariaHidden />}
-      </StyledOpenButton>
+      <StyledOpenButton onClick={handleShown}>{toggleIcon || <Menu ariaHidden />}</StyledOpenButton>
       <StyledAsideWrapper
         ref={ref}
         width={width}
@@ -118,11 +109,7 @@ const Sidenav = ({ width = 350, children, toggleIcon, actions }: Props) => {
       >
         <StyledAsideHeader>
           {actions}
-          <StyledCloseButton
-            tabIndex={isShown ? "0" : "-1"}
-            ariaLabel="close"
-            onClick={handleShown}
-          >
+          <StyledCloseButton tabIndex={isShown ? 0 : -1} onClick={handleShown}>
             <Close ariaHidden />
           </StyledCloseButton>
         </StyledAsideHeader>

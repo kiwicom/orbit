@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Inline from "@kiwicom/orbit-components/lib/Inline";
-import { Event } from "@kiwicom/orbit-components/lib/common/common";
-
-type InputEvent = Event<React.SyntheticEvent<HTMLInputElement>>;
-type KeyboardEvent = Event<React.KeyboardEvent<HTMLInputElement>>;
 
 const StyledLabel = styled.label`
   position: relative;
@@ -64,10 +60,10 @@ const StyledContent = styled.span`
 
 interface Props {
   children?: React.ReactNode;
-  onFocus?: InputEvent;
-  onBlur?: InputEvent;
-  onChange?: InputEvent;
-  onKeyPress?: KeyboardEvent;
+  onFocus?: () => any;
+  onBlur?: () => any;
+  onChange?: () => any;
+  onKeyPress?: () => any;
   checked?: boolean;
   ariaLabelledby?: string;
 }

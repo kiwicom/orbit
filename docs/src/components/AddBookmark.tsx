@@ -3,8 +3,13 @@ import styled from "styled-components";
 import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
 import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull";
 import { load, save } from "../utils/storage";
+import { PageRendererProps } from "gatsby";
 
-const Button = styled.button`
+const Button = styled.button.attrs(({ onClick }) => ({
+  "aria-label": "bookmark",
+  type: "button",
+  onClick,
+}))`
   border-radius: 3px;
   &:focus {
     outline: none;
@@ -12,37 +17,40 @@ const Button = styled.button`
   }
 `;
 
-interface Props {
+interface Props extends PageRendererProps {
   page: string;
 }
 
-const AddBookmark = ({ page }: Props) => {
+const AddBookmark = ({ page, location }: Props) => {
   const [added, setAdded] = React.useState(false);
-
+  const [bookmarks, setBookmarks] = React.useState({});
   const handleToggle = () => setAdded(prev => !prev);
 
-  React.useEffect(() => {
-    const pg = { [page]: window.location.pathname };
-    const bookmarks = load("bookmarks");
+  const exists = Object.values(bookmarks).includes(location.pathname);
 
-    // TODO: mb rewrite better
-    if (bookmarks) {
-      const exists = Object.values(JSON.parse(bookmarks)).includes(window.location.pathname);
-      if (exists) setAdded(true);
-      if (!exists && added) {
-        save("bookmarks", JSON.stringify(Object.assign(JSON.parse(bookmarks), pg)));
-      }
-      if (exists && added) {
-        save("bookmarks", JSON.stringify(Object.assign(JSON.parse(bookmarks), { [page]: null })));
-        setAdded(false);
-      }
-    } else {
-      if (added) save("bookmarks", JSON.stringify(pg));
+  React.useEffect(() => {
+    const data = load("bookmarks");
+    if (data) setBookmarks(JSON.parse(data));
+  }, []);
+
+  React.useEffect(() => {
+    const pg = { [page]: location.pathname };
+
+    if (exists) setAdded(true);
+    if (!exists && added) {
+      save("bookmarks", JSON.stringify(Object.assign(bookmarks, pg)));
     }
-  }, [save, load, added, setAdded]);
+  }, [added, bookmarks]);
+
+  React.useEffect(() => {
+    if (exists && !added) {
+      save("bookmarks", JSON.stringify(Object.assign(bookmarks, { [page]: null })));
+      setAdded(false);
+    }
+  }, [added]);
 
   return (
-    <Button type="button" aria-label="bookmark" onClick={handleToggle}>
+    <Button onClick={handleToggle}>
       {added ? <StarFull ariaHidden /> : <StarEmpty ariaHidden />}
     </Button>
   );

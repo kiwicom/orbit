@@ -2,6 +2,7 @@
 import * as React from "react";
 
 export type ModalContextProps = {|
+  +setHasModalTitle?: (boolean | (boolean => boolean)) => void,
   +setHasModalSection?: () => void,
   +removeHasModalSection?: () => void,
   +callContextFunctions?: () => void,

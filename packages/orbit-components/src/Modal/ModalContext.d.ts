@@ -8,6 +8,7 @@ declare module "@kiwicom/orbit-components/lib/Modal";
 export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
+  readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;
   readonly setHasModalSection?: () => void;
   readonly removeHasModalSection?: () => void;
   readonly manageFocus?: () => void;

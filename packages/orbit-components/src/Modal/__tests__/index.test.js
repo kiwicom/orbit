@@ -122,4 +122,19 @@ describe("Modal", () => {
     userEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
     expect(onClose).toBeCalled();
   });
+
+  it("should have fixed header background overlay when needed", () => {
+    const { rerender } = render(
+      <Modal hasCloseButton onClose={() => {}}>
+        content
+      </Modal>,
+    );
+    screen.getByTestId("CloseContainer");
+    rerender(
+      <Modal>
+        <ModalHeader title="title" />
+      </Modal>,
+    );
+    screen.getByTestId("CloseContainer");
+  });
 });

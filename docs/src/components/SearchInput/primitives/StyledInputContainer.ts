@@ -9,7 +9,6 @@ const StyledInputContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  box-sizing: border-box;
   height: 44px;
   font-size: 1em;
   cursor: text;

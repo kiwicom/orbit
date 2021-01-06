@@ -1,4 +1,4 @@
-export const omitNumbers = str =>
+export const omitNumbers = (str: string) =>
   str
     .split("/")
     .map(s => s.replace(/^\d+-\s*/g, ""))

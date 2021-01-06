@@ -34,11 +34,9 @@ const AddBookmark = ({ page, location }: Props) => {
   }, []);
 
   React.useEffect(() => {
-    const pg = { [page]: location.pathname };
-
     if (exists) setAdded(true);
     if (!exists && added) {
-      save("bookmarks", JSON.stringify(Object.assign(bookmarks, pg)));
+      save("bookmarks", JSON.stringify(Object.assign(bookmarks, { [page]: location.pathname })));
     }
   }, [added, bookmarks]);
 

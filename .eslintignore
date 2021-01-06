@@ -1,11 +1,11 @@
 es
 umd
 flow-typed
-dist
 lib
 node_modules
 packages/babel-plugin-orbit-components/dist/
 packages/babel-plugin-orbit-components/__fixtures__/
+packages/eslint-plugin-orbit-components/dist
 !.storybook
 
 # from gitignore

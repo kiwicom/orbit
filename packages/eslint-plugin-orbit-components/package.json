@@ -1,23 +1,14 @@
 {
   "name": "eslint-plugin-orbit-components",
-  "version": "0.2.0",
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
+  "version": "0.2.0",
+  "author": "Kiwi.com",
+  "main": "dist/index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit.git",
     "directory": "packages/eslint-plugin-orbit-components"
-  },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "orbit-components",
-    "kiwicom"
-  ],
-  "author": "Kiwi.com",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist"
   },
   "files": [
     "dist",
@@ -26,10 +17,22 @@
     "README.md",
     "yarn.lock"
   ],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "orbit-components",
+    "kiwicom"
+  ],
+
+
+  "scripts": {
+    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
+    "prepublishOnly": "build"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
     "@types/eslint": "^7.2.6"
-  },
-  "license": "MIT"
+  }
 }

@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     {
-      files: "packages/eslint-plugin-orbit-components/**/*",
+      files: "packages/eslint-plugin-orbit-components/**/*.ts?(x)",
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",

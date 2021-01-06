@@ -27,7 +27,7 @@ async function eslintCI() {
     ].some(f => fileName.endsWith(f));
   }
 
-  // changed file names saved by GitHub Action "Get Changed Files"
+  // changed file names saved by GitHub Action "get changed files"
   // https://github.com/lots0logs/gh-action-get-changed-files
   const addedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_added.json`));
   const modifiedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_modified.json`));

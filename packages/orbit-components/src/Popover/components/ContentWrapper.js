@@ -162,6 +162,7 @@ StyledPopoverClose.defaultProps = {
 
 const PopoverContentWrapper = ({
   children,
+  offset,
   onClose,
   width,
   dataTest,
@@ -243,6 +244,7 @@ const PopoverContentWrapper = ({
         width={width}
         ref={popover}
         tabIndex="0"
+        offset={offset}
         data-test={dataTest}
         noPadding={noPadding}
         overlapped={overlapped}

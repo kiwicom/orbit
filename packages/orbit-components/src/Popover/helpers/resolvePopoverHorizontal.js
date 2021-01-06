@@ -9,6 +9,7 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   containerLeft,
   containerWidth,
   popoverWidth,
+  offset = { left: 0 },
 }) => {
   if (anchor === ALIGNS.START) {
     return css`
@@ -18,13 +19,15 @@ const resolvePopoverHorizontal: ResolvePopoverHorizontal = ({
   if (anchor === ALIGNS.CENTER) {
     return css`
       left: ${Math.floor(
-        containerLeft + containerWidth / 2 - popoverWidth / 2,
+        containerLeft + containerWidth / 2 - popoverWidth / 2 - offset.left,
       )}px; /* TODO: use token */
     `;
   }
   if (anchor === ALIGNS.END) {
     return css`
-      left: ${Math.floor(containerLeft + containerWidth - popoverWidth)}px; /* TODO: use token */
+      left: ${Math.floor(
+        containerLeft + containerWidth - popoverWidth + offset.left,
+      )}px; /* TODO: use token */
     `;
   }
   return null;

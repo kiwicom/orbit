@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -426,12 +426,14 @@ storiesOf("Popover", module)
       const noPadding = boolean("noPadding", false);
       const overlapped = boolean("overlapped", false);
       const opened = boolean("opened", false);
+      const offset = object("offset", { top: 0, left: 0, right: 0, bottom: 0 });
 
       return (
         <Stack justify="center">
           <Popover
             width={width}
             dataTest={dataTest}
+            offset={offset}
             content={content}
             preferredPosition={preferredPosition}
             preferredAlign={preferredAlign}

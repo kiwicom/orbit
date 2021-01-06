@@ -18,6 +18,7 @@ const StyledPopoverChild = styled.div`
 
 const Popover = ({
   children,
+  offset,
   content,
   preferredPosition = POSITIONS.BOTTOM,
   preferredAlign = ALIGNS.START,
@@ -135,6 +136,7 @@ const Popover = ({
         <Portal renderInto="popovers">
           <PopoverContentWrapper
             shown={shown}
+            offset={offset}
             width={width}
             containerRef={container}
             preferredPosition={preferredPosition}

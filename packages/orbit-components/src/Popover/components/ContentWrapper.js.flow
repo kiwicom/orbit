@@ -7,6 +7,7 @@ import type { PositionsCore, AlignsCore } from "../index.js.flow";
 export type Props = {|
   ...Globals,
   +children: React.Node,
+  +offset?: {| top?: number, left?: number |},
   +closeText?: Translation,
   +preferredPosition: PositionsCore,
   +preferredAlign: AlignsCore,

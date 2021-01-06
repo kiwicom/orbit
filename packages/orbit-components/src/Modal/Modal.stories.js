@@ -44,7 +44,7 @@ storiesOf("Modal", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
       );
       return (
-        <Modal onClose={onClose} size={size}>
+        <Modal size={size} onClose={onClose}>
           <ModalHeader title={title}>{description}</ModalHeader>
           <ModalSection>
             <Text>{content}</Text>

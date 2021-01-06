@@ -156,11 +156,19 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props) => {
-  const { isMobileFullPage } = useContext(ModalContext);
+  const { setHasModalTitle, isMobileFullPage } = useContext(ModalContext);
 
   useModalContextFunctions();
 
+  React.useEffect(() => {
+    if (title) setHasModalTitle?.(true);
+    return () => {
+      setHasModalTitle?.(false);
+    };
+  }, [title, setHasModalTitle]);
+
   const hasHeader = title || description;
+
   return (
     <StyledModalHeader
       illustration={!!illustration}

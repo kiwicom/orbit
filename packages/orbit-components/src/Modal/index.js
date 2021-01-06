@@ -343,6 +343,7 @@ const Modal = React.forwardRef<Props, Instance>(
     const [loaded, setLoaded] = React.useState<boolean>(false);
     const [scrolled, setScrolled] = React.useState<boolean>(false);
     const [fullyScrolled, setFullyScrolled] = React.useState<boolean>(false);
+    const [hasModalTitle, setHasModalTitle] = React.useState<boolean>(false);
     const [hasModalSection, setHasModalSection] = React.useState<boolean>(false);
     const [clickedModalBody, setClickedModalBody] = React.useState<boolean>(false);
     const [fixedClose, setFixedClose] = React.useState<boolean>(false);
@@ -606,6 +607,8 @@ const Modal = React.forwardRef<Props, Instance>(
       }
     }, [children, prevChildren]);
 
+    const hasCloseContainer = hasModalTitle || (onClose && hasCloseButton);
+
     return (
       <ModalBody
         tabIndex="0"
@@ -639,19 +642,23 @@ const Modal = React.forwardRef<Props, Instance>(
             isMobileFullPage={isMobileFullPage}
             onMouseDown={handleMouseDown}
           >
-            {onClose && hasCloseButton && (
+            {hasCloseContainer && (
               <CloseContainer
+                data-test="CloseContainer"
                 modalWidth={modalWidth}
                 size={size}
                 scrolled={scrolled}
                 fixedClose={fixedClose}
                 isMobileFullPage={isMobileFullPage}
               >
-                <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />
+                {onClose && hasCloseButton && (
+                  <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />
+                )}
               </CloseContainer>
             )}
             <ModalContext.Provider
               value={{
+                setHasModalTitle,
                 setHasModalSection: () => setHasModalSection(true),
                 removeHasModalSection: () => setHasModalSection(false),
                 callContextFunctions,

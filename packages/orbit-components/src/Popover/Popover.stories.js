@@ -426,7 +426,7 @@ storiesOf("Popover", module)
       const noPadding = boolean("noPadding", false);
       const overlapped = boolean("overlapped", false);
       const opened = boolean("opened", false);
-      const offset = object("offset", { top: 0, left: 0, right: 0, bottom: 0 });
+      const offset = object("offset", { top: 0, left: 0 });
 
       return (
         <Stack justify="center">

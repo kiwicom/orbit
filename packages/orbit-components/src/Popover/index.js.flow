@@ -30,9 +30,9 @@ export type Anchor = {|
   anchor: AlignsCore,
 |};
 
-type Offset = {|
-  top?: number,
-  left?: number,
+export type Offset = {|
+  top: number,
+  left: number,
 |};
 
 export type Props = {|

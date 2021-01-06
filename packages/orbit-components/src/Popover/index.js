@@ -18,7 +18,7 @@ const StyledPopoverChild = styled.div`
 
 const Popover = ({
   children,
-  offset,
+  offset = { top: 0, left: 0 },
   content,
   preferredPosition = POSITIONS.BOTTOM,
   preferredAlign = ALIGNS.START,

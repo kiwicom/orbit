@@ -1,11 +1,12 @@
 // @flow
 import type { Interpolation } from "styled-components";
 
-import type { Position, DimensionsCore } from "../index.js.flow";
+import type { Position, DimensionsCore, Offset } from "../index.js.flow";
 
 export type StyledPosition = {|
   ...Position,
   ...DimensionsCore,
+  +offset: Offset,
   +fixed?: boolean,
 |};
 

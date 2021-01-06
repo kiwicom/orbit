@@ -6,7 +6,7 @@ import { POSITIONS, POPOVER_SPACE_BETWEEN } from "../consts";
 
 const resolvePopoverPosition: ResolvePopoverPosition = ({
   position,
-  offset = { top: 0 },
+  offset,
   containerTop,
   containerHeight,
   popoverHeight,

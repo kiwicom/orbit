@@ -1,12 +1,13 @@
 // @flow
 import type { Interpolation } from "styled-components";
 
-import type { Anchor, DimensionsCore } from "../index.js.flow";
+import type { Anchor, DimensionsCore, Offset } from "../index.js.flow";
 import type { Theme } from "../../defaultTheme.js.flow";
 
 export type StyledAnchor = {|
   ...Anchor,
   ...DimensionsCore,
+  offset: Offset,
   theme: Theme,
 |};
 

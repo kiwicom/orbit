@@ -6,6 +6,9 @@ import userEvent from "@testing-library/user-event";
 import Popover from "../index";
 import Button from "../../Button";
 import Stack from "../../Stack";
+import { getBreakpointWidth } from "../../utils/mediaQuery/index";
+import { QUERIES } from "../../utils/mediaQuery/consts";
+import theme from "../../defaultTheme";
 
 describe("Popover", () => {
   it("should have expected DOM output", () => {
@@ -60,5 +63,25 @@ describe("Popover", () => {
       </Popover>,
     );
     expect(screen.getByText("kek").closest("div")).toHaveStyle({ padding: "0" });
+  });
+
+  it("should have offset", () => {
+    render(
+      <Popover opened offset={{ top: 10, left: 20 }} content="kek">
+        <Button type="secondary" size="small">
+          Cancel
+        </Button>
+      </Popover>,
+    );
+
+    // default is 4px
+    expect(screen.getByRole("tooltip")).toHaveStyleRule("top", "14px", {
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
+    });
+
+    // default is 0px
+    expect(screen.getByRole("tooltip")).toHaveStyleRule("left", "20px", {
+      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
+    });
   });
 });

@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
-    "prepublishOnly": "build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",

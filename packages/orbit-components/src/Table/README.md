@@ -129,7 +129,7 @@ Table below contains all types of the props in TableCell component.
 | `"left"`   | `"nowrap"`   | `"baseline"`  | `"th"` | `"col"`      |
 | `"center"` | `"pre"`      | `"middle"`    | `"td"` | `"row"`      |
 | `"right"`  | `"pre-line"` | `"top"`       |        | `"colgroup"` |
-|            |              | `"bottom"`    |        | `"rowgroup"` |
+|            | `"normal"`   | `"bottom"`    |        | `"rowgroup"` |
 
 ### TableFooter
 

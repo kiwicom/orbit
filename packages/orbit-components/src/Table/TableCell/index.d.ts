@@ -8,7 +8,7 @@ declare module "@kiwicom/orbit-components/lib/Table/TableCell";
 type Align = "left" | "center" | "right";
 type As = "th" | "td";
 type Scope = "col" | "row" | "colgroup" | "rowgroup";
-type WhiteSpace = "nowrap" | "pre" | "pre-line" | "pre-wrap";
+type WhiteSpace = "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 type VerticalAlign = "baseline" | "middle" | "top" | "bottom";
 
 interface Props extends SharedProps {

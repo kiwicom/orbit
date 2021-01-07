@@ -45,6 +45,9 @@ export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
     {children}
   </Heading>
 );
+export const ol = ({ children}: React.OlHTMLAttributes<HTMLOListElement>) => (
+  <ol style={{listStyle: "inside none decimal"}}>{children}</ol>
+)
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>
 );

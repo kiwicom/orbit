@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.106.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.105.0...@kiwicom/orbit-components@0.106.0) (2021-01-07)
+
+
+### Bug Fixes
+
+* **Box:** fix null values ([eacb181](https://github.com/kiwicom/orbit/commit/eacb1815758f79cf417c88d141f7cef71d152eaf))
+* **Box:** set padding/marging to 0 if none ([f5eee37](https://github.com/kiwicom/orbit/commit/f5eee37c890134e042a125e30ef980b094d12429))
+* **CardSection:** title and icon alignment ([#2618](https://github.com/kiwicom/orbit/issues/2618)) ([3d2b795](https://github.com/kiwicom/orbit/commit/3d2b7952047ae7d29d889d1483e54e4218994708))
+* **Modal:** ensure header overlay if title exists ([#2634](https://github.com/kiwicom/orbit/issues/2634)) ([bf2a8e0](https://github.com/kiwicom/orbit/commit/bf2a8e09dc8524d9c1199799eff38def6228b66d))
+* **Wizard:** translate close button ([#2630](https://github.com/kiwicom/orbit/issues/2630)) ([25d351b](https://github.com/kiwicom/orbit/commit/25d351b752ba6b76ca69c1170816bb4badcb0343))
+
+
+### Features
+
+* **popover:** offset ([#2633](https://github.com/kiwicom/orbit/issues/2633)) ([ea71b64](https://github.com/kiwicom/orbit/commit/ea71b6428784be6c779b130c14749c1b14d70266))
+* **seat:** new version of seat component ([#2623](https://github.com/kiwicom/orbit/issues/2623)) ([e091345](https://github.com/kiwicom/orbit/commit/e09134523d8960fdfb150c8ed4861607c662d3b0))
+* **TableCell:** add normal white-space ([#2637](https://github.com/kiwicom/orbit/issues/2637)) ([4bc34ed](https://github.com/kiwicom/orbit/commit/4bc34edc1cb5247ec06208a9f587b9a3db4b51ed))
+
+
+
+
+
 # [0.105.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.104.0...@kiwicom/orbit-components@0.105.0) (2020-12-18)
 
 

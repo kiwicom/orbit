@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.1.1...orbit.kiwi@0.2.0) (2021-01-07)
+
+
+### Features
+
+* add support for images in MDX ([#2636](https://github.com/kiwicom/orbit/issues/2636)) ([64c666e](https://github.com/kiwicom/orbit/commit/64c666e71e042f2760a34520008d996a3c2d4c1a))
+* extend schema ([#2570](https://github.com/kiwicom/orbit/issues/2570)) ([d19309b](https://github.com/kiwicom/orbit/commit/d19309bf595d8005026fba0a82210c08fcfce63b))
+
+
+
+
+
 ## [0.1.1](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.1.0...orbit.kiwi@0.1.1) (2020-12-18)
 
 

@@ -164,11 +164,11 @@ describe("#Box", () => {
       paddingTop: "8px",
       paddingLeft: "4px",
       paddingRight: "16px",
-      paddingBottom: "",
+      paddingBottom: "0",
       marginTop: "8px",
       marginLeft: "4px",
       marginRight: "16px",
-      marginBottom: "",
+      marginBottom: "0",
     });
   });
 

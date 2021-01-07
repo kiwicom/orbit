@@ -136,7 +136,7 @@ const Popover = ({
         <Portal renderInto="popovers">
           <PopoverContentWrapper
             shown={shown}
-            offset={offset}
+            offset={{ top: 0, left: 0, ...offset }}
             width={width}
             containerRef={container}
             preferredPosition={preferredPosition}

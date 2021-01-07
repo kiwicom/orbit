@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
@@ -16,13 +16,15 @@ export const StyledTableCell = styled(
     </Component>
   ),
 )`
-  box-sizing: border-box;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorInkNormal};
-  text-align: ${({ align }) => textAlign(align)};
-  white-space: ${({ whiteSpace }) => whiteSpace};
-  vertical-align: ${({ verticalAlign }) => verticalAlign};
+  ${({ theme, whiteSpace, verticalAlign, align }) => css`
+    box-sizing: border-box;
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    color: ${theme.orbit.colorInkNormal};
+    text-align: ${textAlign(align)};
+    white-space: ${whiteSpace};
+    vertical-align: ${verticalAlign};
+  `}
 `;
 
 StyledTableCell.defaultProps = {

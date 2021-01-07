@@ -2,11 +2,12 @@
 import * as React from "react";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { PositionsCore, AlignsCore } from "../index.js.flow";
+import type { PositionsCore, AlignsCore, Offset } from "../index.js.flow";
 
 export type Props = {|
   ...Globals,
   +children: React.Node,
+  +offset: Offset,
   +closeText?: Translation,
   +preferredPosition: PositionsCore,
   +preferredAlign: AlignsCore,

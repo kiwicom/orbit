@@ -6,6 +6,7 @@ import { POSITIONS, POPOVER_SPACE_BETWEEN } from "../consts";
 
 const resolvePopoverPosition: ResolvePopoverPosition = ({
   position,
+  offset,
   containerTop,
   containerHeight,
   popoverHeight,
@@ -18,7 +19,8 @@ const resolvePopoverPosition: ResolvePopoverPosition = ({
       top: ${Math.floor(
         (fixed ? containerPureTop : containerTop) -
           popoverHeight -
-          (overlapped ? -containerHeight : POPOVER_SPACE_BETWEEN),
+          (overlapped ? -containerHeight : POPOVER_SPACE_BETWEEN) -
+          offset.top,
       )}px; /* TODO: use token */
     `;
   }
@@ -26,7 +28,8 @@ const resolvePopoverPosition: ResolvePopoverPosition = ({
     return css`
       top: ${Math.floor(
         (fixed ? containerPureTop : containerTop) +
-          (overlapped ? 0 : containerHeight + POPOVER_SPACE_BETWEEN),
+          (overlapped ? 0 : containerHeight + POPOVER_SPACE_BETWEEN) +
+          offset.top,
       )}px; /* TODO: use token */
     `;
   }

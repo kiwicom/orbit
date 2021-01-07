@@ -25,6 +25,7 @@ const firstToUpper = string => string.charAt(0).toUpperCase() + string.slice(1);
 const normalizeSpacing = (el, property, theme: Theme): string[] => {
   if (typeof el === "object") {
     return Object.entries(el).map(([key, val]: any) => {
+      if (val === "none") return "";
       return formatCSS(`${property}-${key}`, TOKENS(theme)[val]);
     });
   }

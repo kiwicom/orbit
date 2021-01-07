@@ -149,6 +149,29 @@ describe("#Box", () => {
     expect(screen.getByTestId(dataTest)).toHaveStyle({ right: "0px" });
   });
 
+  it("should have padding and margin object props", () => {
+    render(
+      <Box
+        dataTest="kek"
+        margin={{ top: "XSmall", left: "XXSmall", bottom: "none", right: "medium" }}
+        padding={{ top: "XSmall", left: "XXSmall", bottom: "none", right: "medium" }}
+      >
+        kek
+      </Box>,
+    );
+
+    expect(screen.getByTestId("kek")).toHaveStyle({
+      paddingTop: "8px",
+      paddingLeft: "4px",
+      paddingRight: "16px",
+      paddingBottom: "",
+      marginTop: "8px",
+      marginLeft: "4px",
+      marginRight: "16px",
+      marginBottom: "",
+    });
+  });
+
   it("should have elevation", () => {
     const test = Object.keys(ELEVATION).map((key, idx) => (
       <Box dataTest={`${dataTest}-${idx}`} display="flex" elevation={ELEVATION[key]}>

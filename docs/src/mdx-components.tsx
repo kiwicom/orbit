@@ -76,6 +76,13 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
     {children}
   </TableCell>
 );
+export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
+  <figcaption>
+    <Text align="center" italic={true}>
+      {children}
+    </Text>
+  </figcaption>
+);
 export const code = CodeBlock;
 export const inlineCode = InlineCode;
 export const a = ({ children, href }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {

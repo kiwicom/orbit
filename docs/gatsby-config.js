@@ -13,6 +13,7 @@ module.exports = {
         path: `${__dirname}/src/documentation`,
       },
     },
+    "gatsby-remark-images",
     {
       resolve: "gatsby-plugin-mdx",
       options: {

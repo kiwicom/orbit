@@ -10,6 +10,11 @@ declare module "@kiwicom/orbit-components/lib/Popover";
 type Position = "top" | "bottom";
 type Aligns = "start" | "end" | "center";
 
+type Offset = {
+  top?: number;
+  left?: number;
+};
+
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly content: React.ReactNode;
@@ -21,6 +26,7 @@ export interface Props extends Common.Global {
   readonly overlapped?: boolean;
   readonly fixed?: boolean;
   readonly actions?: React.ReactNode;
+  readonly offset?: Offset;
   readonly onOpen?: Common.Callback;
   readonly onClose?: Common.Callback;
 }

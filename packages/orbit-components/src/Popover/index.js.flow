@@ -30,6 +30,11 @@ export type Anchor = {|
   anchor: AlignsCore,
 |};
 
+export type Offset = {|
+  top: number,
+  left: number,
+|};
+
 export type Props = {|
   ...Globals,
   +children: React.Node,
@@ -42,6 +47,7 @@ export type Props = {|
   +overlapped?: boolean,
   +fixed?: boolean,
   +actions?: React.Node,
+  +offset?: Offset,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
 |};

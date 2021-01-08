@@ -35,6 +35,7 @@
     "gatsby-redirect-from": "^0.2.4",
     "gatsby-remark-copy-linked-files": "^2.9.0",
     "gatsby-remark-images": "^3.9.0",
+    "gatsby-remark-smartypants": "^2.8.0",
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "js-yaml": "^4.0.0",

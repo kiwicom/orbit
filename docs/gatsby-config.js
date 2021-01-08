@@ -35,7 +35,16 @@ module.exports = {
             },
           },
         ],
-        remarkPlugins: [require("remark-deflist")],
+        remarkPlugins: [
+          require("remark-deflist"),
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              backticks: false,
+              dashes: `oldschool`,
+            },
+          },
+        ],
         rehypePlugins: [],
       },
     },

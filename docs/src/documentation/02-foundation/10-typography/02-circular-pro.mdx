@@ -1,3 +1,56 @@
 ---
-title: Colors
+title: Circular Pro
 ---
+
+We use Circular Pro as the main typography supported by Orbit.
+Circular Pro is the only typeface for western texts and Lato is used for some eastern languages,
+with a fallback to system fonts.
+
+## Circular Pro in Kiwi.com projects
+
+We have Circular Pro licensed for Kiwi.com domain,
+so there is nothing stopping our designers from working with Circular Pro with all our platforms.
+
+## Circular Pro in non-Kiwi.com projects
+
+You can, of course, use Circular Pro typography with Orbit in any project.
+Just be sure that you have
+[the right license](https://lineto.com/The+Fonts/Font+Categories/Text+Fonts/Circular/) for your project.
+If you can't or don't want to use Circular Pro in your project,
+heck our [open-source section for typography](/foundation/typography/open-source/)
+where we explain how to use Orbit with Roboto.
+
+## Using Orbit with Circular Pro
+
+In an ideal world,
+it should be that easy as changing the value of the <InlineToken value="fontFamily" /> design token
+and everything would work automagically.
+It's actually not much harder, just a few more steps .
+
+### In React components
+
+#### 1. Insert font files into the page
+
+```html
+<link rel="stylesheet" href="//images.kiwi.com/fonts/circular-pro/style.min.css" />
+```
+
+#### 2. Change theme object
+
+```jsx
+import getTokens from "@kiwicom/orbit-components/lib/getTokens"
+import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider"
+const customTokens = getTokens({
+  base: {
+    fontFamily: '"Circular Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;'
+  }
+})
+
+<ThemeProvider theme={{orbit: customTokens}}>
+  <App />
+</ThemeProvider>
+```
+
+### In Figma
+
+See [Getting started for designers](/getting-started/for-designers/) for more details.

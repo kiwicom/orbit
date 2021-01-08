@@ -29,11 +29,12 @@ async function eslintCI() {
 
   // changed file names saved by GitHub Action "Get Changed Files"
   // https://github.com/lots0logs/gh-action-get-changed-files
-  const allChangedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files.json`));
-  const deletedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_deleted.json`));
-  const candidateFiles = allChangedFiles
-    .filter(fileName => !deletedFiles.includes(fileName))
-    .filter(isCandidateForLinting);
+  const addedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_added.json`));
+  const modifiedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_modified.json`));
+  const renamedFiles = JSON.parse(await fsx.readFile(`${process.env.HOME}/files_renamed.json`));
+  const candidateFiles = [...new Set([...addedFiles, ...modifiedFiles, ...renamedFiles])].filter(
+    isCandidateForLinting,
+  );
   const criticalFiles = candidateFiles.filter(shouldLintAll);
 
   let pathsToLint;

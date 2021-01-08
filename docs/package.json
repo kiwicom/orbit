@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "gatsby-remark-images": "^3.9.0",
-    "prism-react-renderer": "^1.1.1"
+    "prism-react-renderer": "^1.1.1",
+    "react-polymorphic-types": "^1.0.3"
   }
 }

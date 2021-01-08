@@ -3662,14 +3662,6 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-1.0.0.tgz#4abe67d42fd037f87e5abc20eb9e392a14639a30"
   integrity sha512-PoLLgols9+D58y58m5dbFCSxe6SqT7v+80zPqvDY/qfb/ZYbZ8dcCDrceMgdu2z0oP0D7ZtGK+7lpPXsIqRDYw==
 
-"@kiwicom/orbit-components@^0.106.0":
-  version "0.106.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-components/-/orbit-components-0.106.0.tgz#3d027946c60a7078c1aaf3dd4b30ddd4a898e616"
-  integrity sha512-9XsYTaeyRzhJwFGIy9ObJjBzDsoitG6vwQqDOvCjkFDQu9sJ7Tar9ICsVgfZ3hwJq9yGbScc/bvEaCLrCRB5pQ==
-  dependencies:
-    "@adeira/js" "^1.3.0"
-    "@kiwicom/orbit-design-tokens" "^0.13.1"
-
 "@lerna/add@3.21.0":
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.21.0.tgz#27007bde71cc7b0a2969ab3c2f0ae41578b4577b"
@@ -22178,6 +22170,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-polymorphic-types@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-polymorphic-types/-/react-polymorphic-types-1.0.3.tgz#fa4a33e56d2e3a324e4e4a3b81447791aba35120"
+  integrity sha512-FVLrK9nEvr+gTIPf2lw/AzYOaeWRGbSdFLA+qqQIVNpCpdwqZqHkmhpTaChpZkG+Xub1fPMEuLmXTwNykVxbbQ==
 
 react-popper-tooltip@^2.11.0, react-popper-tooltip@^2.8.3:
   version "2.11.1"

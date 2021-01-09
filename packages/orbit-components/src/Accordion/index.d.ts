@@ -4,11 +4,12 @@
 import * as React from "react";
 
 import AccordionSection from "./AccordionSection";
-import * as Common from "../common/common";
+import { Global, SpaceAfter } from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Accordion";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Global, SpaceAfter {
+  // kek
   readonly children?: React.ReactNode;
   readonly expandedSection?: string | number;
   readonly loading?: boolean;

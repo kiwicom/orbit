@@ -2,7 +2,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/Box/
 */
 import * as React from "react";
-import * as Common from "../common/common";
+import { Global } from "../common/common";
 
 // TODO: extend to suppressed and flat
 export type Elevation = "action" | "fixed" | "raised" | "overlay";
@@ -112,7 +112,7 @@ export type MediaQueryObject = Omit<
   | "className"
 >;
 
-export interface Props extends Common.Global {
+export interface Props extends Global {
   readonly as?: string;
   readonly padding?: SpacingObject | SpacingToken;
   readonly margin?: SpacingObject | SpacingToken;

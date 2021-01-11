@@ -25,12 +25,6 @@
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish"
   },
-  "lint-staged": {
-    "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",
-    "*.md": "prettier --write",
-    "*.svg": "yarn orbit-components check:icons",
-    ".browserslistrc": "yarn update-supported-browsers"
-  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",

@@ -1,0 +1,8 @@
+{
+	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";",
+	"example": "() => <Seat price=\"12$\" />\n",
+	"info": {
+		"title": "Seat with price",
+		"description": "Seat can have a price title"
+	}
+}

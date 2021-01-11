@@ -22,11 +22,11 @@ const StyledComponent = styled(DefaultComponent)<Props>`
     display: inline-flex;
     align-items: center;
     ${size === "medium" &&
-    css`
+    `
       padding: 0.875rem 1.5rem;
     `}
     ${size === "large" &&
-    css`
+    `
       padding: 1.25rem 2rem;
     `}
     border-radius: 100px; /* value safely greater than button height to achieve pill effect */

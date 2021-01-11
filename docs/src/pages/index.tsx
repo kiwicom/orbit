@@ -41,7 +41,7 @@ export default function Home() {
             <div
               css={css`
                 max-width: 20ch;
-                font-size: 48px;
+                font-size: 3rem;
                 line-height: 1.35;
               `}
             >

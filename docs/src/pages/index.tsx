@@ -56,7 +56,6 @@ export default function Home() {
           >
             <Inline spacing="small">
               <ButtonLink
-                type="primary"
                 size="large"
                 as={Link}
                 iconRight={<ArrowRight />}

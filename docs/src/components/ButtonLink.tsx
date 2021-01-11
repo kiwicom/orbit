@@ -18,7 +18,7 @@ type Props<T extends React.ElementType = typeof DefaultComponent> = PolymorphicP
 >;
 
 const StyledComponent = styled(DefaultComponent)<Props>`
-  ${({ theme, type, size = "medium" }) => css`
+  ${({ theme, type, size }) => css`
     display: inline-flex;
     align-items: center;
     ${size === "medium" &&
@@ -70,6 +70,8 @@ const StyledComponent = styled(DefaultComponent)<Props>`
 
 export default function ButtonLink<T extends React.ElementType = typeof DefaultComponent>({
   as: asProp,
+  type = "primary",
+  size = "medium",
   iconLeft,
   iconRight,
   children,
@@ -79,7 +81,7 @@ export default function ButtonLink<T extends React.ElementType = typeof DefaultC
 
   return (
     // @ts-expect-error react-polymorphic-types is currently not compatible with styled-components
-    <StyledComponent as={Component} {...restProps}>
+    <StyledComponent as={Component} type={type} size={size} {...restProps}>
       {iconLeft}
       <span>{children}</span>
       {iconRight}

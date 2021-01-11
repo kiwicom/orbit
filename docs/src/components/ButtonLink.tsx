@@ -5,7 +5,7 @@ import { PolymorphicPropsWithoutRef } from "react-polymorphic-types";
 const DefaultComponent = "a";
 
 interface OwnProps {
-  type: "primary" | "secondary";
+  type?: "primary" | "secondary";
   size?: "medium" | "large";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;

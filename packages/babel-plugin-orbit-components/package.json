@@ -24,8 +24,8 @@
     "README.md"
   ],
   "scripts": {
-    "generateTestFile": "node scripts/generateImports.js",
-    "build": "babel __fixtures__/index.js --out-file dist/index.js --root-mode upward",
-    "test": "yarn generateTestFile && yarn build && node scripts/testRequire.js"
+    "test:file": "node scripts/generateImports.js",
+    "test:compile": "babel __fixtures__/index.js --out-file dist/index.js --root-mode upward",
+    "test": "yarn test:file && yarn test:compile && node scripts/testRequire.js"
   }
 }

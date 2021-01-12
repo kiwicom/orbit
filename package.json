@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@adeira/babel-preset-adeira": "^0.4.0",
+    "@adeira/babel-preset-adeira": "^2.0.1",
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.10",
     "@babel/generator": "^7.12.1",

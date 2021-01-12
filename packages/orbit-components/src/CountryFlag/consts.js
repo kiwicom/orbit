@@ -241,6 +241,7 @@ export const CODES = {
   UA: "ua",
   UG: "ug",
   UM: "um",
+  UNDEFINED: "undefined",
   US: "us",
   UY: "uy",
   UZ: "uz",

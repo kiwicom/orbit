@@ -1,3 +1,10 @@
+const path = require("path");
+
+require("dotenv-safe").config({
+  example: path.resolve(__dirname, `../.env.example`),
+  path: path.resolve(__dirname, `../.env`),
+});
+
 module.exports = {
   siteMetadata: {
     title: "Orbit",
@@ -66,6 +73,17 @@ module.exports = {
         query: "allMdx",
       },
     },
-    "gatsby-plugin-meta-redirect", // This should always be the last one
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GitHub",
+        fieldName: "github",
+        url: "https://api.github.com/graphql",
+        headers: {
+          Authorization: `Bearer ${process.env.GH_TOKEN}`,
+        },
+      },
+    },
+    "gatsby-plugin-meta-redirect",
   ],
 };

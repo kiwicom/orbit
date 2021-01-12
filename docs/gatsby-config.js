@@ -94,5 +94,11 @@ module.exports = {
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        snippets: path.join(__dirname, "src/snippets"),
+      },
+    },
   ],
 };

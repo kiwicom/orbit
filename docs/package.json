@@ -30,6 +30,7 @@
     "gatsby-image": "^2.6.0",
     "gatsby-plugin-mdx": "^1.5.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.13.4",
     "gatsby-plugin-styled-components": "^3.10.0",
     "gatsby-redirect-from": "^0.2.4",

@@ -10,7 +10,7 @@ const environments = {
 };
 
 module.exports = {
-  presets: [["@adeira/babel-preset-adeira", { target, environments }]],
+  presets: [["@adeira/babel-preset-adeira", { target, environments, reactRuntime: "classic" }]],
   plugins: ["babel-plugin-styled-components"],
   env: {
     test: {

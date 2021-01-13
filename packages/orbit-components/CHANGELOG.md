@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.107.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.106.0...@kiwicom/orbit-components@0.107.0) (2021-01-13)
+
+
+### Bug Fixes
+
+* **seat:** randomize id to prevent namespace errors ([114e38f](https://github.com/kiwicom/orbit/commit/114e38f1f4e0e4301d192cf03d81aa127a37f987))
+
+
+### Features
+
+* deprecate old Seat component ([99001b0](https://github.com/kiwicom/orbit/commit/99001b0c9d7adc5869a21e7aa7978f48c56a7dc5))
+* **box:** add minWidth ([e325c19](https://github.com/kiwicom/orbit/commit/e325c1984e64c66f32cb43289ed138fbaf40abb6))
+* **CountryFlag:** add "undefined" flag ([#2654](https://github.com/kiwicom/orbit/issues/2654)) ([fa5fe66](https://github.com/kiwicom/orbit/commit/fa5fe665d0250c99161f8c7832fde87d17f50336))
+
+
+
+
+
 # [0.106.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.105.0...@kiwicom/orbit-components@0.106.0) (2021-01-07)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.2.0...orbit.kiwi@0.3.0) (2021-01-13)
+
+
+### Features
+
+* allow MDX from .md files ([b51b8f3](https://github.com/kiwicom/orbit/commit/b51b8f37019a043243af2e17a0b867c515536d00))
+
+
+
+
+
 # [0.2.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.1.1...orbit.kiwi@0.2.0) (2021-01-07)
 
 

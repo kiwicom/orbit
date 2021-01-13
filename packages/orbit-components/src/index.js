@@ -35,6 +35,7 @@ export { default as CardSection } from "./Card/CardSection";
 export { default as DeprecatedCard } from "./deprecated/Card";
 export { default as DepreacatedCardHeader } from "./deprecated/Card/CardHeader";
 export { default as DeprecatedCardSection } from "./deprecated/Card/CardSection";
+export { default as DeprecatedSeat } from "./deprecated/Seat";
 export { default as Coupon } from "./Coupon";
 export { default as Sticky } from "./Sticky";
 export { default as DestinationCard } from "./deprecated/DestinationCard";

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.0.0...@kiwicom/babel-plugin-orbit-components@2.1.0) (2021-01-13)
+
+
+### Features
+
+* deprecate old Seat component ([99001b0](https://github.com/kiwicom/orbit/commit/99001b0c9d7adc5869a21e7aa7978f48c56a7dc5))
+
+
+
+
+
 # [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@1.7.2...@kiwicom/babel-plugin-orbit-components@2.0.0) (2020-12-01)
 
 

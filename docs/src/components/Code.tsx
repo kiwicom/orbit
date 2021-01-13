@@ -17,10 +17,10 @@ export const InlineCode = styled.code`
 
 interface CodeBlockProps {
   children: string;
-  className: string;
+  className?: string;
 }
 export const CodeBlock = ({ children, className }: CodeBlockProps) => {
-  const language = className.replace(/language-/, "");
+  const language = className?.replace(/language-/, "");
   return (
     <Highlight
       {...defaultProps}

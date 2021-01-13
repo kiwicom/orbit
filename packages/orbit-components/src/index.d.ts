@@ -22,6 +22,7 @@ export { Collapse } from "./Collapse/index";
 export { CarrierLogo } from "./CarrierLogo/index";
 export { DestinationHeader } from "./deprecated/DestinationHeader/index";
 export { DestinationCard } from "./deprecated/DestinationCard/index";
+export { DeprecatedSeat } from "./deprecated/Seat/index";
 export { Dialog } from "./Dialog/index";
 export { FeatureIcon } from "./FeatureIcon";
 export { Heading } from "./Heading/index";

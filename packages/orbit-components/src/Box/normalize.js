@@ -12,6 +12,7 @@ const jsxPropsMap = {
   align: "align-items",
   justify: "justify-content",
   textAlign: "text-align",
+  minWidth: "min-width",
   maxWidth: "max-width",
   maxHeight: "max-height",
 };

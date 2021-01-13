@@ -324,6 +324,7 @@ storiesOf("Box", module)
       const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
       const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
       const width = select("width", Object.values(WIDTH_AND_HEIGHT), WIDTH_AND_HEIGHT.AUTO);
+      const minWidth = text("min-width", "");
       const maxWidth = text("max-width", "100px");
       const height = select("height", Object.values(WIDTH_AND_HEIGHT), WIDTH_AND_HEIGHT.AUTO);
       const maxHeight = text("max-height", "100px");
@@ -352,6 +353,7 @@ storiesOf("Box", module)
           direction={direction}
           justify={justify}
           width={width}
+          minWidth={minWidth}
           maxWidth={maxWidth}
           height={height}
           maxHeight={maxHeight}

@@ -118,6 +118,7 @@ export type Props = {|
   +grow?: 0 | 1,
   +direction?: "row" | "column" | "row-reverse" | "column-reverse",
   +width?: "full" | "auto",
+  +minWidth?: string,
   +maxWidth?: string,
   +height?: "full" | "auto",
   +maxHeight?: string,

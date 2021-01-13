@@ -41,6 +41,7 @@ describe("#Box", () => {
         color="blueDark"
         padding="medium"
         margin="medium"
+        minWidth="100px"
         maxWidth="300px"
         maxHeight="100px"
         display="block"
@@ -60,6 +61,7 @@ describe("#Box", () => {
     expect(el).toHaveStyle({ padding: TOKENS(theme).medium });
     expect(el).toHaveStyle({ margin: TOKENS(theme).medium });
     expect(el).toHaveStyle({ display: "block" });
+    expect(el).toHaveStyle({ "min-width": "100px" });
     expect(el).toHaveStyle({ "max-width": "300px" });
     expect(el).toHaveStyle({ "max-height": "100px" });
   });

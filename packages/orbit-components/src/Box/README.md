@@ -32,6 +32,7 @@ Table below contains all types of the props available in the Box component.
 | justify      | [`enum`](#enum)                                                      |         | The `justify-content` of the Box                                |
 | direction    | [`enum`](#enum)                                                      |         | The `flex-direction` of the Box                                 |
 | width        | [`enum`](#enum)                                                      |         | The `width` of the Box                                          |
+| minWidth     | `string`                                                             |         | The `min-width` of the Box                                      |
 | maxWidth     | `string`                                                             |         | The `max-width` of the Box                                      |
 | height       | [`enum`](#enum)                                                      |         | The `height` of the Box                                         |
 | maxHeight    | `string`                                                             |         | The `max-height` of the Box                                     |

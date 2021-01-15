@@ -20,7 +20,12 @@ const StyledWrapper = styled.header<{ isHomePage?: boolean }>`
   z-index: 10;
 `;
 
-const Navbar = () => {
+interface Props {
+  onBookmarks?: () => void;
+  onSideNav?: () => void;
+}
+
+const Navbar = ({ onBookmarks, onSideNav }: Props) => {
   const [isHomePage, setHomePage] = React.useState(false);
 
   React.useEffect(() => {

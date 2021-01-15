@@ -8,6 +8,7 @@ const StyledInput = styled.input`
   background-color: transparent;
   cursor: inherit;
   width: 100%;
+  box-sizing: border-box;
   z-index: 2;
   min-width: 0;
   &::-webkit-inner-spin-button,

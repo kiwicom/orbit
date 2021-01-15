@@ -1,3 +1,125 @@
 ---
 title: Why we don't export styled components
+redirect_from:
+  - /guides/why-we-dont-want-to-allow-extending-orbit-react-components/
 ---
+
+We know that Orbit React components are built upon styled-components,
+which allow you to easily extend other existing React components with the styled factory.
+Still, we, as Orbit maintainers, don't want to allow it,
+even though it would allow many of our developers to develop features easily
+with a better developer experience.
+
+Both approaches, allowing such extension and not,
+have a lot of pros and cons that have to be considered.
+So we would like to clearly state all of them we can and explain our decision clearly.
+
+## Pros
+
+We think the following pros to allowing the extension of Orbit React components are the most important.
+
+### Simpler JSX structure with fewer wrappers with custom overrides
+
+Given the nature of how styled-components work,
+the main benefit would be a simpler JSX structure.
+Mainly because of the possibility of extending our components,
+developers could attach additional styles in a very easy way.
+
+### Better developer experience with Orbit
+
+We also believe that allowing extension would lead to
+a better developer experience when working with Orbit.
+Developers would not have to think if our components support a particular use case
+and would simply override the behaviour or visual style of our components.
+
+## Cons
+
+On the other hand, we think that allowing the extension of Orbit React components
+would bring us and also our frontend developers many cons
+that might not manifest immediately, but most probably would in the future.
+
+### Consistency issues
+
+One of our main long-term goals is to ensure consistency across our applications.
+We believe that allowing extension would lead to worse consistency
+since developers would have a very easy way to implement designs
+that might not be aligned with the current possibilities that Orbit provides.
+It would lead also to fewer requests for enhancements, new features, and bug fixes
+and would slow down the growth of Orbit in some way.
+
+### Dependent on Orbit DOM structure
+
+Most of our components may be considered very simple,
+or by some definitions atoms or molecules.
+But in reality, their DOM and style structure may not be that simple---as a single DOM element.
+So it can be hard to properly extend some Orbit React components
+without exact CSS selectors that follow the exact DOM structure.
+For the future sustainability and maintainability of our components,
+we can't provide or support their DOM structures,
+which can be changed with refactoring or major visual updates.
+
+### All styled-components would have to have a public and documented API
+
+With allowance, we would have to document all of the inner styled-components
+that make up Orbit React components and have them publicly documented.
+This would add unnecessary complexity on our shoulders
+and require us to make updates and releases less often.
+
+### Harder to update to new versions as we could break the public API
+
+As said before, having a more public and documented API would mean
+that between some minor versions (and major versions once we will release the first major)
+it would most likely be harder to release quick updates of the newest version to production
+and would require a lot of work in users' repositories.
+
+### Impossibility to lint all overrides and custom styles
+
+As far as we know, there isn't any tooling that would allow us to control or determine
+which CSS properties are being used in the extended component and which are being overridden.
+So we couldn't transparently support how our components would be used.
+This, in the end, could lead to inconsistent behaviour or visual style for our applications,
+even though we can't prohibit all possibilities when it comes to custom CSS overrides.
+
+### Extending functionality to styled-components requires running more JS code
+
+Given the nature of how styled-components work,
+allowing extension could lead to unnecessary complexity in UI components
+and also more time-consuming runtimes.
+The most problematic part is managing the StyleSheetManager context state,
+which can be expensive.
+And with combinations of multiple extensions, it could lead to performance issues.
+
+### You'd become a maintainer of the UI
+
+Most importantly, allowing extension would mean that you'd be becoming a maintainer of the UI.
+We wouldn't be able to provide you with a guarantee over the UI that you need to develop.
+You should be responsible only for minor and major layouts that the feature requires
+and not for elementary pieces of the UI.
+Last but not least, you should spend most of your time on implementing functionality
+and not on the UI, which should be consistent in our applications and solved on a systematic level.
+
+Neutral:
+
+- Fewer support requests/fewer versions
+- Fewer reports that something doesn't work (bug fixes, features requests)
+- Solving topics on design level and systematic approach
+
+## On balance
+
+Overall, for us, allowing the extension of our components
+would bring too many drawbacks without enough benefits.
+It would mean we would get fewer requests for support and fewer opportunities
+to build Orbit into something better with more features and versions.
+It would mean we wouldn't be solving issues systematically
+and so you would have to spend more of your time solving minor issues.
+
+We understand the lack of flexibility is a drawback.
+That's why we've started other initiatives to give you more control
+while remaining inside the Orbit design system.
+For example, we began introducing primitive components,
+which give you all of the same basic functionalities with a lot more control over the visual style.
+
+If there's something that'd you'd like to have control over, let us know,
+in [#plz-orbit](https://skypicker.slack.com/archives/CAMS40F7B), on [Spectrum](https://spectrum.chat/orbit),
+or directly in our [GitHub repository](https://github.com/kiwicom/orbit).
+We want to cover all major use cases and work together to make Orbit the best it can be.

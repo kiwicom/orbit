@@ -85,7 +85,7 @@ yarn add @types/styled-components -D
 - [Icons](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Icon/README.md)
 - [Right to left languages](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/rtl/README.md)
 - [Theming](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)
-- [Dictionary](https://github.com/kiwicom/orbit/blob/master/.github/dictionary.md)
+- [Dictionary](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/05-development/01-guides/02-dictionary.mdx)
 
 ## Contributing
 

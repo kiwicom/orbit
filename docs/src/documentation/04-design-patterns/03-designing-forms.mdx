@@ -1,3 +1,89 @@
 ---
 title: Designing forms
+excerpt: How to put together forms to make them easy to complete
+redirect_from:
+  - /guides/designing-forms/
 ---
+
+
+
+## Layout
+
+For forms that aren't very complicated,
+we prefer using a one-column layout instead of multiple columns.
+It's makes it more clear for the user to complete fields one by one
+going down in a straight line rather than having to jump between columns,
+which might lead to their skipping some fields.
+Also, mobile devices make use of one-column layouts
+as there is not enough space for multiple columns,
+so using one-column layouts helps us unify our mobile and desktop platforms.
+
+For more complicated forms, it's better to use a multi-column layout.
+When you have many fields for users to complete,
+it's better to position them into 2 columns to shorten the length of the form,
+making it more compact and straightforward.
+
+### Layout in Modals
+
+Using forms inside of Modals is a common pattern across the product.
+Most of the time, forms in modals should be simple and straightforward with only a few fields.
+In modals, there is often not much space so you should use a one-column layout.
+
+## Grouping fields with related content
+
+Whenever your form has fields with related content (such as various parts of an address),
+you should consider using groups.
+Consider making the gaps between related fields smaller to show the relationship visually.
+In some cases, it's best to use [input groups](/components/input/inputgroup/).
+
+## Using wizards
+
+If your form is full of content and there are a lot of fields to fill in,
+try splitting the fields into steps to avoid a long, unordered bunch of fields.
+By showing steps, you help the user understand what they've already done and what they still have to do.
+
+Consider using a [Wizard component](/components/progress-indicators/wizard/) for this.
+
+## Diversification of input types
+
+There are many different types of information you can get from users.
+Some form components are more suitable for a specific information type.
+Using the right component could lead to a better user experience
+and so users filling in the form faster and with a higher completion rate.
+
+For example, when you need users to upload attachments,
+you should use the [InputFile component](/components/input/inputfile/).
+When you want users to fill in the number of children on the trip,
+you can use an [input stepper](/components/input/inputstepper/)
+instead of a basic [input field](/components/inputfield/).
+All of these input types have their own specific functionalities,
+so try to avoid using only InputField and Select components.
+
+## Working with calls-to-action
+
+When working with forms, it's important to have a clearly visible call-to-action.
+Make sure you differentiate between primary and secondary buttons.
+
+The position of these buttons is also important,
+so always place primary buttons on the right
+and secondary buttons to the left of the primary button.
+When you don't have enough space for buttons next to each other,
+always place the primary button above the secondary one.
+
+Sometimes it's very difficult to name these buttons.
+Try to use clear and short names to catch the user's attention.
+This improves readability and therefore speeds up the whole flow.
+
+## Validation
+
+This is probably the most important section of all.
+There are many approaches to how to handle errors in forms.
+We use inline validation, which is the best approach from our UX point of view.
+
+With this type of validation, we don't overload users with all messages at once,
+but only show the first error message in the form.
+The other messages are hidden but marked with a red exclamation mark.
+In this way, users can see that there is an error
+and will see the message after they focus on the corresponding field.
+This approach should be used across all forms we design.
+You can find more information about validation in the coming article about forms and errors.

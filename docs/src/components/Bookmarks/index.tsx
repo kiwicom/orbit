@@ -51,7 +51,11 @@ const Bookmarks = () => {
           {Object.entries(JSON.parse(bookmarks)).map(([key, slug]) => (
             // @ts-expect-error entries
             <StyledLink key={key} to={slug}>
-              {key}
+              {String(slug)
+                .split("/")
+                .filter(Boolean)
+                .map(s => s[0].toUpperCase().concat(s.slice(1)))
+                .join(" / ")}
             </StyledLink>
           ))}
         </Stack>

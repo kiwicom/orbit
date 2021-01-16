@@ -24,11 +24,21 @@ describe("IllustrationPrimitive", () => {
 
     const img = screen.getByRole("img");
 
-expect(img).toHaveStyle({ maxHeight: "90px" });
+    expect(img).toHaveStyle({ maxHeight: "90px" });
     expect(screen.getByAltText("Alternative text")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(img).toHaveAttribute("src", URL);
     expect(img).toHaveAttribute("srcset", expect.stringContaining(URL_RETINA));
     expect(img).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
+  });
+
+  it("should have empty alt", () => {
+    render(<IllustrationPrimitive name="Accommodation" alt="" />);
+    screen.getByAltText("");
+  });
+
+  it("should have name in alt", () => {
+    render(<IllustrationPrimitive name="Accommodation" />);
+    screen.getByAltText("Accommodation");
   });
 });

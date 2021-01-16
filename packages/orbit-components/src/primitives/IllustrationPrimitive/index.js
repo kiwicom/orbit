@@ -48,14 +48,16 @@ const IllustrationPrimitive = ({
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
   spaceAfter,
-}: Props) => (
-  <StyledImage
-    illustrationName={name}
-    alt={alt || name}
-    size={size}
-    data-test={dataTest}
-    spaceAfter={spaceAfter}
-  />
-);
+}: Props) => {
+  return (
+    <StyledImage
+      illustrationName={name}
+      alt={typeof alt === "string" ? alt : name}
+      size={size}
+      data-test={dataTest}
+      spaceAfter={spaceAfter}
+    />
+  );
+};
 
 export default IllustrationPrimitive;

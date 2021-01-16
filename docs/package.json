@@ -19,6 +19,7 @@
     "@types/mdx-js__react": "^1.5.3",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-preset-gatsby": "^0.7.0",
+    "dedent": "^0.7.0",
     "downshift": "^6.0.10",
     "gatsby": "^2.27.0",
     "gatsby-image": "^2.6.0",
@@ -26,6 +27,7 @@
     "gatsby-plugin-sharp": "^2.12.0",
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
+    "js-yaml": "^4.0.0",
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {

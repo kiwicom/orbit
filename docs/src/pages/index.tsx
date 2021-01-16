@@ -59,7 +59,7 @@ export default function Home() {
                 size="large"
                 as={Link}
                 iconRight={<ArrowRight />}
-                to="/getting-started/for-designers/kiwi"
+                to="/getting-started/for-designers/"
               >
                 Get started
               </ButtonLink>
@@ -82,7 +82,7 @@ export default function Home() {
             <Card
               title="Components"
               moreText="See our components"
-              linkTo="/components/action/button/guidelines"
+              linkTo="/components/action/button/"
             >
               Our components are a collection of interface elements that can be reused across the
               Orbit design system.
@@ -92,7 +92,7 @@ export default function Home() {
             <Card
               title="Patterns"
               moreText="See our patterns"
-              linkTo="/design-patterns/progressive-disclosure"
+              linkTo="/design-patterns/progressive-disclosure/"
             >
               Missing description for patterns card.
             </Card>
@@ -109,17 +109,17 @@ export default function Home() {
           <Heading as="h2">Foundation</Heading>
           <Inline spacing="XLarge">
             <CardWrapper>
-              <Card title="Colors" linkTo="/foundation/colors/colors">
+              <Card title="Colors" linkTo="/foundation/colors/">
                 Color is used to signal structure on a page, to highlight or emphasize...
               </Card>
             </CardWrapper>
             <CardWrapper>
-              <Card title="Typography" linkTo="/">
+              <Card title="Typography">
                 Typography is critical for communicating the hierarchy of a page.
               </Card>
             </CardWrapper>
             <CardWrapper>
-              <Card title="Spacings" linkTo="/">
+              <Card title="Spacings">
                 Consistent spacing makes an interface more clear and easy to scan.
               </Card>
             </CardWrapper>
@@ -146,21 +146,18 @@ export default function Home() {
           <Heading as="h2">Content</Heading>
           <Inline spacing="XLarge">
             <CardWrapper>
-              <Card
-                title="Voice & tone"
-                linkTo="/kiwi-use/content/specific-areas/social-media/tone-of-voice"
-              >
+              <Card title="Voice & tone" linkTo="/kiwi-use/content/specific-areas/social-media/">
                 How we write at Kiwi.com.
               </Card>
             </CardWrapper>
             <CardWrapper>
-              <Card title="Grammar & mechanics" linkTo="/kiwi-use/content/grammar-and-mechanics">
+              <Card title="Grammar & mechanics" linkTo="/kiwi-use/content/grammar-and-mechanics/">
                 Typography is critical for communicating the hierarchy of a page.Basic grammar
                 guidelines for writing with Orbit.
               </Card>
             </CardWrapper>
             <CardWrapper>
-              <Card title="Glossary" linkTo="/kiwi-use/content/glossary">
+              <Card title="Glossary" linkTo="/kiwi-use/content/glossary/">
                 A list of most used words and phrases in Kiwi.com products.
               </Card>
             </CardWrapper>

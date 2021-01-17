@@ -8,10 +8,9 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Accordion";
 
-/** DOCS:
- * # Accordion
+/*
+  DOCS:
   To implement Accordion component into your project you'll need to the import the Accordion and the [AccordionSection](#Accordionsection):
-
   ```jsx
   import Accordion, { AccordionSection } from "@kiwicom/orbit-components/lib/Accordion";
   ```
@@ -23,14 +22,14 @@ declare module "@kiwicom/orbit-components/lib/Accordion";
     <AccordionSection>Hello World!</AccordionSection>
   </Accordion>
   ```
- */
+*/
 
 export interface Props extends Common.Global, Common.SpaceAfter {
-  /** The content of the Accordion. You can use only [AccordionSection](#accordionsection) */
+  /** The content of the Accordion. You can use only AccordionSection */
   readonly children?: React.ReactNode;
-  /**  Optional prop to control which AccordionSection (by `id`) is expanded                                                                                         | */
+  /** Optional prop to control which AccordionSection (by id) is expanded */
   readonly expandedSection?: string | number;
-  /** If `true` it will render the Loading component */
+  /** If true it will render the Loading component */
   readonly loading?: boolean;
   /** Callback (along with sectionId) that is triggered when section is expanding */
   readonly onExpand?: (sectionId: string | number) => void | Promise<any>;

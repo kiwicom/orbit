@@ -17738,10 +17738,10 @@ moniker@0.1.2:
   resolved "https://registry.yarnpkg.com/moniker/-/moniker-0.1.2.tgz#872dfba575dcea8fa04a5135b13d5f24beccc97e"
   integrity sha1-hy37pXXc6o+gSlE1sT1fJL7MyX4=
 
-monstra@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/monstra/-/monstra-0.7.1.tgz#16f3c2e5c9897014b89ae5fcc9fe023c846e22ed"
-  integrity sha512-z7MQmq/x0Hw1nINCNHaD7OvPphqN7qNjxttkSuTBndey/ZMQOmYLVm6yye87D44/xNoFZoaW3vWbRnpKGzDxCg==
+monstra@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/monstra/-/monstra-0.7.2.tgz#b659898e1f748ee0820b4c764b6f88df22c83181"
+  integrity sha512-V6oHQQ4pyHiwR5O2mZgG8JFa0mNBVB7gr1hTqBN0PCMvrVKPXiiTZVNqhB7bjrGzL9LjrizdaUZJCrwf9xPwOw==
   dependencies:
     chalk "^4.0.0"
     fs-extra "^9.0.1"

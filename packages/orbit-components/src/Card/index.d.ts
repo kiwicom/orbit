@@ -5,12 +5,14 @@ import * as React from "react";
 
 import CardSection from "./CardSection";
 import * as Common from "../common/common";
+import { As } from "../Heading";
 
 declare module "@kiwicom/orbit-components/lib/Card";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children?: React.ReactNode;
   readonly title?: React.ReactNode;
+  readonly titleAs?: As;
   readonly description?: React.ReactNode;
   readonly icon?: React.ReactNode;
   readonly actions?: React.ReactNode;
@@ -22,4 +24,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 declare const Card: React.FunctionComponent<Props>;
 declare const StyledCard: React.ComponentType<Props>;
+
 export { Card, Card as default, CardSection, StyledCard };

@@ -1,46 +1,48 @@
 {
-  "palette": {
-    "ink": {
-      "lighter": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.ink.lighter.base}"
+  "global": {
+    "palette": {
+      "ink": {
+        "lighter": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.ink.lighter.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.ink.lighter.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.ink.lighter.active}"
+          }
         },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.ink.lighter.complementary}"
+        "light": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light.active}"
+          }
         },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.ink.lighter.minor}"
-        }
-      },
-      "light": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.ink.light.base}"
-        },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.ink.light.complementary}"
-        },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.ink.light.minor}"
-        }
-      },
-      "normal": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.ink.normal.base}"
-        },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.ink.normal.complementary}"
-        },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.ink.normal.minor}"
+        "normal": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.ink.normal.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.ink.normal.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.ink.normal.active}"
+          }
         }
       }
     }

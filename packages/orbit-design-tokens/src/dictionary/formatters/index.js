@@ -1,10 +1,10 @@
 // @flow
-const javascriptFoundation = require("./javascriptFoundation");
-const javascriptThemeableObject = require("./javascriptThemeableObject");
+const javascriptFoundation = require("./javascript-foundation");
+const javascriptTokens = require("./javascript-tokens");
 
 const formatters = {
-  javascriptFoundation,
-  javascriptThemeableObject,
+  ...javascriptFoundation,
+  ...javascriptTokens,
 };
 
 const registerFormatters = StyleDictionary => {

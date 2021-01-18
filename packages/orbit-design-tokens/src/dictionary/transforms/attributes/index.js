@@ -1,18 +1,43 @@
 // @flow
+const _ = require("lodash");
+
+const { errorTransform } = require("../../utils/errorMessage");
+
+/*
+  The basic attribute transformer, adds serialized path info to the property.
+  For colors:
+  attributes: {
+    category: "palette",
+    name: "blue",
+    type: "light",
+    // default is not present
+  }
+
+  For other types:
+  attributes: {
+    category: "base",
+    name: "space",
+    type: "XXS",
+    // default is not present
+  }
+ */
 const attributeFoundation = {
   name: "attribute/foundation",
   type: "attribute",
-  transformer: prop => {
-    const { attributes = {}, path } = prop;
-    const structure = ["foundation", "category", "name", "type", "state"];
+  transformer: ({ attributes = {}, path }) => {
+    const structure = ["category", "name", "type", "state"];
     const generatedAttrs = {};
+
     for (let i = 0; i < path.length && i < structure.length; i += 1) {
-      const item = path[i];
+      /*
+        Skipping first – it's foundation
+      */
+      const item = path[i + 1];
       /*
         If the horizontalShade is named as "base" so we want to skip it,
         because it would be explicit in the final token name
        */
-      if (item !== "base") {
+      if (item !== "default") {
         generatedAttrs[structure[i]] = item;
       }
     }
@@ -20,6 +45,43 @@ const attributeFoundation = {
   },
 };
 
+/*
+  Adds foundationName to attributes. Useful for type generation.
+  Needs to be used together with "attribute/foundation".
+ */
+const attributeFoundationName = {
+  name: "attribute/foundation/name",
+  type: "attribute",
+  transformer: ({ attributes }) => {
+    const { type, state, category, name } = attributes;
+    if ([category, name, type, state].every(value => value == null)) {
+      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
+    }
+    const foundation = {
+      foundationName: _.camelCase([type, state].join(" ")),
+    };
+    return { ...foundation, ...attributes };
+  },
+};
+
+/*
+  Adds foundationType to attributes. Useful for type generation.
+  Needs to be used together with "attribute/foundation".
+ */
+const attributeFoundationType = {
+  name: "attribute/foundation/type",
+  type: "attribute",
+  transformer: ({ attributes }) => {
+    const foundation = {
+      // This will need eventually polish - there will be more types, just placeholder for now
+      foundationType: "string",
+    };
+    return { ...foundation, attributes };
+  },
+};
+
 module.exports = {
   attributeFoundation,
+  attributeFoundationName,
+  attributeFoundationType,
 };

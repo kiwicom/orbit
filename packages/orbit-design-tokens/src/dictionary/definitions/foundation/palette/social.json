@@ -1,19 +1,19 @@
 {
-  "theme": {
+  "foundation": {
     "palette": {
       "social": {
         "facebook": {
-          "base": {
+          "default": {
             "type": "color",
             "value": "#3B5998",
             "internal": true
           },
-          "complementary": {
+          "hover": {
             "type": "color",
             "value": "#385490",
             "internal": true
           },
-          "minor": {
+          "active": {
             "type": "color",
             "value": "#354F88",
             "internal": true

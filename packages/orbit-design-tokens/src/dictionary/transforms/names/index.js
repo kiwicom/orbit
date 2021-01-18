@@ -1,16 +1,17 @@
 // @flow
 const _ = require("lodash");
 
-const isColor = require("../../helpers/isColor");
-const isBase = require("../../helpers/isBase");
+const { errorTransform } = require("../../utils/errorMessage");
 
-const foundation = {
-  name: "name/foundation",
+const nameFoundationCamel = {
+  name: "name/foundation/camel",
   type: "name",
-  matcher: _.overSome([isColor, isBase]),
-  transformer: ({ attributes }) => {
-    return _.camelCase(Object.values(attributes).join(" "));
+  transformer: ({ attributes: { category, name, type, state } }) => {
+    if ([category, name, type, state].every(value => value == null)) {
+      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
+    }
+    return _.camelCase(Object.values({ category, name, type, state }).join(" "));
   },
 };
 
-module.exports = { foundation };
+module.exports = { nameFoundationCamel };

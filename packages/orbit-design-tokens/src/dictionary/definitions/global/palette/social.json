@@ -1,18 +1,20 @@
 {
-  "palette": {
-    "social": {
-      "facebook": {
-        "base": {
-          "type": "color",
-          "value": "{theme.palette.social.facebook.base}"
-        },
-        "complementary": {
-          "type": "color",
-          "value": "{theme.palette.social.facebook.complementary}"
-        },
-        "minor": {
-          "type": "color",
-          "value": "{theme.palette.social.facebook.minor}"
+  "global": {
+    "palette": {
+      "social": {
+        "facebook": {
+          "default": {
+            "type": "color",
+            "value": "{foundation.palette.social.facebook.default}"
+          },
+          "hover": {
+            "type": "color",
+            "value": "{foundation.palette.social.facebook.hover}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{foundation.palette.social.facebook.active}"
+          }
         }
       }
     }

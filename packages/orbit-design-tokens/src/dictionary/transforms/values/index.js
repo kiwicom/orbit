@@ -2,7 +2,7 @@
 const _ = require("lodash");
 
 const { isSpacing, isColor } = require("../../utils/is");
-const { throwErrorTransform } = require("../../utils/throwError");
+const { errorTransform } = require("../../utils/errorMessage");
 
 /*
   Transforms spacing to pixel value.
@@ -40,7 +40,7 @@ const foundationAlias = {
     const { attributes } = prop;
     const { category, name, type, state } = attributes;
     if ([category, name, type, state].every(value => value == null)) {
-      throwErrorTransform("value/foundation/alias", "attribute/foundation");
+      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
     }
     const lastIdentifier = isColor(prop) ? [_.camelCase([type, state].join(" "))] : [type, state];
     return ["foundation", category, name, ...lastIdentifier].join(".");

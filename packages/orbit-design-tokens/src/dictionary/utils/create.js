@@ -1,6 +1,17 @@
 // @flow
 const _ = require("lodash");
 
+const getDelimiter = platform => {
+  switch (platform) {
+    case "typescript":
+      return ";";
+    case "flow":
+      return ",";
+    default:
+      return ",";
+  }
+};
+
 /*
   Returns string if condition is met.
   TODO: Can be moved to some string utils when there will be more.
@@ -37,15 +48,16 @@ const createEquivalentType = name => `${name}: ${_.upperFirst(name)}`;
 
   Can be also piped – with | as exact type if needed.
  */
-const createObject = (value, withPipe = false) => {
-  const pipe = falsyString(withPipe, "|");
+const createObjectExpression = (value, platform = "javascript") => {
+  const pipe = falsyString(platform === "flow", "|");
   return ["{", pipe, value, pipe, "}"].join("");
 };
 
 /*
   Converts array ["key:value", "key:value"] to string that should be consumed in createObject
  */
-const createValue = (values, delimiter = ",") => {
+const createValue = (values, platform) => {
+  const delimiter = getDelimiter(platform);
   return values.join(delimiter);
 };
 
@@ -91,7 +103,7 @@ module.exports = {
   falsyString,
   createVariableDeclarator,
   createArrowFunctionExpression,
-  createObject,
+  createObjectExpression,
   createValue,
   createDeclareExport,
   createObjectProperty,

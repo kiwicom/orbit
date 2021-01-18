@@ -6,9 +6,8 @@ const {
   falsyString,
   createVariableDeclarator,
   createObjectProperty,
-  createObject,
+  createObjectExpression,
   createValue,
-  createDeclareModule,
   createOptionalType,
   createSubsetType,
 } = require("../utils/create");
@@ -21,16 +20,11 @@ const formatCode = require("../utils/format");
 const generatedWarning = require("./comments/generatedWarning");
 const flowComment = require("./comments/flow");
 
-const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => {
+const foundationFactory = (allProperties, platform) => {
   /*
     Type checking with Flow needs to be allowed on .js and .js.flow files
    */
   const withFlowComment = falsyString(platform !== "typescript", flowComment);
-
-  const withTypescriptDeclare = falsyString(
-    platform === "typescript",
-    createDeclareModule(`@kiwicom/orbit-design-tokens/lib/js/defaultFoundation`),
-  );
 
   const variableType = platform !== "javascript" ? "type" : "const";
 
@@ -59,7 +53,7 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
       const propertiesValues = _.map(properties, ({ name, value }) =>
         createObjectProperty(name, value),
       );
-      const value = createObject(createValue(propertiesValues, delimiter), withPipe);
+      const value = createObjectExpression(createValue(propertiesValues, platform), platform);
       return createVariableDeclarator(upperFirst(typeName), variableType, value, withExport);
     });
     return types.join("\n");
@@ -70,21 +64,21 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
   */
   const categoriesVariables = _.map(serializedProperties, (names, category) => {
     const categoryNames = Object.keys(names).map(name => createObjectPropertyAlias(name));
-    const value = createObject(createValue(categoryNames, delimiter), withPipe);
+    const value = createObjectExpression(createValue(categoryNames, platform), platform);
     return createVariableDeclarator(upperFirst(category), variableType, value, withExport);
   }).join("\n");
 
   /*
     Creates type/variable for each category, e.g. export type Foundation = {| base: Base |}
   */
-  const foundationValue = createObject(
+  const foundationValue = createObjectExpression(
     createValue(
       Object.keys(serializedProperties).map(category => {
         return createObjectPropertyAlias(category);
       }),
-      delimiter,
+      platform,
     ),
-    withPipe,
+    platform,
   );
   const foundationVariable = createVariableDeclarator(
     upperFirst("foundation"),
@@ -99,12 +93,12 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
 
   const customCategoryTypes = _.map(serializedProperties, (names, category) => {
     const subCategoriesTypes = Object.keys(names).map(name =>
-      createObjectProperty(
-        createOptionalType(name),
-        createSubsetType(_.upperFirst(name), platform),
-      ),
+      createObjectProperty(createOptionalType(name), createSubsetType(name, platform)),
     );
-    const categoryValue = createObject(createValue(subCategoriesTypes, delimiter), withPipe);
+    const categoryValue = createObjectExpression(
+      createValue(subCategoriesTypes, platform),
+      platform,
+    );
     return createObjectProperty(
       createOptionalType(category),
       createSubsetType(categoryValue, platform),
@@ -114,7 +108,7 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
   const customFoundation = createVariableDeclarator(
     "CustomFoundation",
     variableType,
-    createObject(createValue(customCategoryTypes, delimiter), withPipe),
+    createObjectExpression(createValue(customCategoryTypes, platform), platform),
     true,
   );
 
@@ -128,7 +122,6 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
     [
       withFlowComment,
       generatedWarning,
-      withTypescriptDeclare,
       generatedVariables,
       categoriesVariables,
       foundationVariable,
@@ -142,33 +135,21 @@ const foundationFactory = (allProperties, { withPipe, delimiter, platform }) => 
 const flowFoundation = {
   name: "flow/foundation",
   formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, {
-      withPipe: true,
-      delimiter: ",",
-      platform: "flow",
-    });
+    return foundationFactory(allProperties, "flow");
   },
 };
 
 const typescriptFoundation = {
   name: "typescript/foundation",
   formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, {
-      withPipe: false,
-      delimiter: ";",
-      platform: "typescript",
-    });
+    return foundationFactory(allProperties, "typescript");
   },
 };
 
 const javascriptFoundation = {
   name: "javascript/foundation",
   formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, {
-      withPipe: false,
-      delimiter: ",",
-      platform: "javascript",
-    });
+    return foundationFactory(allProperties, "javascript");
   },
 };
 

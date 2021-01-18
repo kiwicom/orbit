@@ -9,11 +9,10 @@ const {
   createValue,
   createVariableDeclarator,
   createArrowFunctionExpression,
-  createObject,
+  createObjectExpression,
   falsyString,
   createEquivalentType,
   createDeclareExport,
-  createDeclareModule,
   createTypeImport,
 } = require("../utils/create");
 const { determinateExport } = require("../utils/determinate");
@@ -33,12 +32,11 @@ const getValue = value => {
 const javascriptTokens = {
   name: "javascript/tokens",
   formatter: ({ allProperties }) => {
-    const delimiter = ",";
     const platform = "javascript";
     const typeImport = createTypeImport(functionName, "./createTokens");
 
     const functionTemplate = value => {
-      const tokensValue = createObject(value);
+      const tokensValue = createObjectExpression(value);
       return createVariableDeclarator(
         createEquivalentType(functionName),
         "const",
@@ -52,7 +50,7 @@ const javascriptTokens = {
       return createObjectProperty(name, plainValue);
     });
 
-    const plainTokens = createValue(tokens, delimiter);
+    const plainTokens = createValue(tokens, platform);
 
     const createTokens = functionTemplate(plainTokens);
 
@@ -72,15 +70,10 @@ const javascriptTokens = {
 /*
   Used for generating flow and typescript. Javascript is separate - it has way to many differences.
  */
-const tokensTypeFactory = (allProperties, { platform, delimiter, withPipe }) => {
+const tokensTypeFactory = (allProperties, platform) => {
   const type = "type";
 
   const withFlowComment = falsyString(platform !== "typescript", flowComment);
-
-  const withTypescriptDeclare = falsyString(
-    platform === "typescript",
-    createDeclareModule(`@kiwicom/orbit-design-tokens/lib/js/${functionName}`),
-  );
 
   const foundationImport = createTypeImport("foundation", "./defaultFoundation");
   /*
@@ -90,11 +83,11 @@ const tokensTypeFactory = (allProperties, { platform, delimiter, withPipe }) => 
     createObjectProperty(name, foundationType),
   );
 
-  const tokensValue = createValue(tokens, delimiter);
+  const tokensValue = createValue(tokens, platform);
   const tokensType = createVariableDeclarator(
     "Tokens",
     type,
-    createObject(tokensValue, withPipe),
+    createObjectExpression(tokensValue, platform),
     true,
   );
 
@@ -118,15 +111,7 @@ const tokensTypeFactory = (allProperties, { platform, delimiter, withPipe }) => 
   });
 
   return formatCode(
-    [
-      withFlowComment,
-      generatedWarning,
-      withTypescriptDeclare,
-      foundationImport,
-      tokensType,
-      functionType,
-      exportFunction,
-    ],
+    [withFlowComment, generatedWarning, foundationImport, tokensType, functionType, exportFunction],
     platform,
   );
 };
@@ -134,22 +119,14 @@ const tokensTypeFactory = (allProperties, { platform, delimiter, withPipe }) => 
 const flowTokens = {
   name: "flow/tokens",
   formatter: ({ allProperties }) => {
-    return tokensTypeFactory(allProperties, {
-      withPipe: true,
-      delimiter: ",",
-      platform: "flow",
-    });
+    return tokensTypeFactory(allProperties, "flow");
   },
 };
 
 const typescriptTokens = {
   name: "typescript/tokens",
   formatter: ({ allProperties }) => {
-    return tokensTypeFactory(allProperties, {
-      withPipe: false,
-      delimiter: ";",
-      platform: "typescript",
-    });
+    return tokensTypeFactory(allProperties, "typescript");
   },
 };
 

@@ -1,7 +1,7 @@
 // @flow
 const _ = require("lodash");
 
-const { throwErrorTransform } = require("../../utils/throwError");
+const { errorTransform } = require("../../utils/errorMessage");
 
 /*
   The basic attribute transformer, adds serialized path info to the property.
@@ -55,12 +55,12 @@ const attributeFoundationName = {
   transformer: ({ attributes }) => {
     const { type, state, category, name } = attributes;
     if ([category, name, type, state].every(value => value == null)) {
-      throwErrorTransform("value/foundation/alias", "attribute/foundation");
+      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
     }
     const foundation = {
       foundationName: _.camelCase([type, state].join(" ")),
     };
-    return Object.assign(foundation, attributes);
+    return { ...foundation, ...attributes };
   },
 };
 
@@ -76,7 +76,7 @@ const attributeFoundationType = {
       // This will need eventually polish - there will be more types, just placeholder for now
       foundationType: "string",
     };
-    return Object.assign(foundation, attributes);
+    return { ...foundation, attributes };
   },
 };
 

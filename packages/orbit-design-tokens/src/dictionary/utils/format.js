@@ -1,8 +1,6 @@
 // @flow
 const prettier = require("prettier");
 
-const options = require("../../../../../prettier.config");
-
 const getParserOption = platform => {
   if (platform === "typescript") {
     return "typescript";
@@ -12,9 +10,13 @@ const getParserOption = platform => {
   return "babel";
 };
 
+function resolveConfig() {
+  return prettier.resolveConfig.sync(prettier.resolveConfigFile.sync());
+}
+
 const formatCode = (code, platform) =>
   prettier.format(Array.isArray(code) ? code.join("\n") : code, {
-    ...options,
+    ...resolveConfig(),
     parser: getParserOption(platform),
   });
 

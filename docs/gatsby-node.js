@@ -9,7 +9,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   createNodeField({
     node,
-    name: "path",
+    name: "slug",
     value: getDocumentUrlPath(filePath),
   });
 
@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           id
           fields {
-            path
+            slug
           }
         }
       }
@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   result.data.allMdx.nodes.forEach(({ id, fields }) => {
     createPage({
-      path: fields.path,
+      path: fields.slug,
       component: `${__dirname}/src/templates/Doc.tsx`,
       context: { id },
     });

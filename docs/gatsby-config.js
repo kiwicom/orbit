@@ -38,7 +38,7 @@ module.exports = {
           Mdx: {
             title: n => n.frontmatter.title,
             excerpt: n => n.frontmatter.excerpt,
-            path: n => n.fields.path,
+            path: n => n.fields.slug,
           },
         },
       },

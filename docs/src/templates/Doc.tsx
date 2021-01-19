@@ -9,6 +9,7 @@ import Prose from "../components/Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "../components/AddBookmark";
 import { PageRendererProps } from "gatsby";
+import { BookmarkProvider } from "../services/bookmarks";
 
 interface Props extends PageRendererProps {
   data: {
@@ -25,19 +26,21 @@ interface Props extends PageRendererProps {
 export default function Doc({ data, location }: Props) {
   const { frontmatter, slug, body } = data.mdx;
   return (
-    <Layout>
-      <Prose>
-        <Stack inline align="center">
-          <AddBookmark page={slug} location={location} />
-          <Heading as="h1" type="display">
-            {frontmatter.title}
-          </Heading>
-        </Stack>
-        <MDXProvider components={components}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </MDXProvider>
-      </Prose>
-    </Layout>
+    <BookmarkProvider page={slug} location={location}>
+      <Layout>
+        <Prose>
+          <Stack inline align="center">
+            <AddBookmark />
+            <Heading as="h1" type="display">
+              {frontmatter.title}
+            </Heading>
+          </Stack>
+          <MDXProvider components={components}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+        </Prose>
+      </Layout>
+    </BookmarkProvider>
   );
 }
 

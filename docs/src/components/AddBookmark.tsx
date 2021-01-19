@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
 import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull";
-import { load, save } from "../utils/storage";
-import { PageRendererProps } from "gatsby";
+import { useBookmarks } from "../services/bookmarks";
 
 const Button = styled.button.attrs(({ onClick }) => ({
   "aria-label": "bookmark",
@@ -17,37 +16,14 @@ const Button = styled.button.attrs(({ onClick }) => ({
   }
 `;
 
-interface Props extends PageRendererProps {
-  page: string;
-}
-
-const AddBookmark = ({ page, location }: Props) => {
+const AddBookmark = () => {
+  const { toggleBookmark } = useBookmarks();
   const [added, setAdded] = React.useState(false);
-  const [bookmarks, setBookmarks] = React.useState({});
-  const handleToggle = () => setAdded(prev => !prev);
 
-  const exists = Object.values(bookmarks).includes(location.pathname);
-
-  React.useEffect(() => {
-    const data = load("bookmarks");
-    if (data) setBookmarks(JSON.parse(data));
-  }, []);
-
-  React.useEffect(() => {
-    const pg = { [page]: location.pathname };
-
-    if (exists) setAdded(true);
-    if (!exists && added) {
-      save("bookmarks", JSON.stringify(Object.assign(bookmarks, pg)));
-    }
-  }, [added, bookmarks]);
-
-  React.useEffect(() => {
-    if (exists && !added) {
-      save("bookmarks", JSON.stringify(Object.assign(bookmarks, { [page]: null })));
-      setAdded(false);
-    }
-  }, [added]);
+  const handleToggle = () => {
+    toggleBookmark();
+    setAdded(prev => !prev);
+  };
 
   return (
     <Button onClick={handleToggle}>

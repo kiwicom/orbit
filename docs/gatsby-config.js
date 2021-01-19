@@ -18,7 +18,18 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.mdx`, `.md`],
-        remarkPlugins: [],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              linkImagesToOriginal: false,
+              // The base for generating different image widths.
+              maxWidth: 590,
+              showCaptions: ["title"],
+            },
+          },
+        ],
+        remarkPlugins: [require("remark-deflist")],
         rehypePlugins: [],
       },
     },

@@ -1,23 +1,24 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { createObjectProperty, createDeclareExport } = require("./create");
+import { createObjectProperty, createDeclareExport } from "./create";
 
-const determinateUpperFirst = platform => name => {
+export const determinateUpperFirst = (platform: string) => (name: string): string => {
   if (platform === "javascript") {
     return name;
   }
   return _.upperFirst(name);
 };
 
-const determinateObjectPropertyAlias = platform => name => {
+export const determinateObjectPropertyAlias = (platform: string) => (name: string): string => {
   if (platform === "javascript") {
     return name;
   }
   return createObjectProperty(name, determinateUpperFirst(platform)(name));
 };
 
-const determinateExport = platform => name => {
+export const determinateExport: (
+  platform: string,
+) => (name: string) => string = platform => name => {
   if (platform === "javascript") {
     return createDeclareExport(name, {
       isDefault: true,
@@ -28,10 +29,4 @@ const determinateExport = platform => name => {
     isDefault: true,
     isDeclare: true,
   });
-};
-
-module.exports = {
-  determinateUpperFirst,
-  determinateObjectPropertyAlias,
-  determinateExport,
 };

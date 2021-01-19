@@ -1,4 +1,3 @@
-// @flow
 import { isColor, isSpacing, isInternal, isNotInternal } from "../is";
 
 const typeColor = {

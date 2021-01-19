@@ -1,9 +1,8 @@
-// @flow
-const StyleDictionary = require("style-dictionary");
+import StyleDictionary from "style-dictionary";
 
-const registerTransforms = require("./transforms");
-const registerFormatters = require("./formatters");
-const { isInternal, isNotInternal } = require("./utils/is");
+import registerTransforms from "./transforms";
+import registerFormatters from "./formatters";
+import { isInternal, isNotInternal } from "./utils/is";
 
 const build = () => {
   registerFormatters(StyleDictionary);
@@ -36,17 +35,12 @@ const build = () => {
         buildPath: "src/js/",
         files: [
           {
-            destination: "defaultFoundation.js",
-            format: "javascript/foundation",
-            filter: isInternal,
-          },
-          {
             destination: "defaultFoundation.js.flow",
             format: "flow/foundation",
             filter: isInternal,
           },
           {
-            destination: "defaultFoundation.d.ts",
+            destination: "defaultFoundation.ts",
             format: "typescript/foundation",
             filter: isInternal,
           },
@@ -57,18 +51,13 @@ const build = () => {
         buildPath: "src/js/",
         files: [
           {
-            destination: "createTokens.js",
-            format: "javascript/tokens",
+            destination: "createTokens.ts",
+            format: "typescript/tokens",
             filter: isNotInternal,
           },
           {
             destination: "createTokens.js.flow",
             format: "flow/tokens",
-            filter: isNotInternal,
-          },
-          {
-            destination: "createTokens.d.ts",
-            format: "typescript/tokens",
             filter: isNotInternal,
           },
         ],

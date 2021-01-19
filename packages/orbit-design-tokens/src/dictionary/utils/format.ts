@@ -1,5 +1,4 @@
-// @flow
-const prettier = require("prettier");
+import prettier from "prettier";
 
 const getParserOption = platform => {
   if (platform === "typescript") {
@@ -11,13 +10,15 @@ const getParserOption = platform => {
 };
 
 function resolveConfig() {
-  return prettier.resolveConfig.sync(prettier.resolveConfigFile.sync());
+  const configFile = prettier.resolveConfigFile.sync();
+  if (!configFile) throw new Error("Can't find prettier config.");
+  return prettier.resolveConfig.sync(configFile);
 }
 
-const formatCode = (code, platform) =>
+const formatCode = (code: (string | undefined)[], platform: string): string =>
   prettier.format(Array.isArray(code) ? code.join("\n") : code, {
     ...resolveConfig(),
     parser: getParserOption(platform),
   });
 
-module.exports = formatCode;
+export default formatCode;

@@ -1,12 +1,12 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { errorTransform } = require("../../utils/errorMessage");
+import { errorTransform } from "../../utils/errorMessage";
+import { Property } from "style-dictionary";
 
 const nameFoundationCamel = {
   name: "name/foundation/camel",
   type: "name",
-  transformer: ({ attributes: { category, name, type, state } }) => {
+  transformer: ({ attributes: { category, name, type, state } }: Property): string => {
     if ([category, name, type, state].every(value => value == null)) {
       throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
     }
@@ -14,4 +14,4 @@ const nameFoundationCamel = {
   },
 };
 
-module.exports = { nameFoundationCamel };
+export default { nameFoundationCamel };

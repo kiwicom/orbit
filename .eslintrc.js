@@ -47,6 +47,15 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
+    {
+      files: "packages/orbit-design-tokens/**/*",
+      rules: {
+        // we're not using Flow in orbit-design-tokens
+        "flowtype/require-valid-file-annotation": "off",
+        // if we stick to pure functions readonly is not needed
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      },
+    },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
       files: ["packages/orbit-components/src/utils/**/*"],

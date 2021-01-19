@@ -1,9 +1,13 @@
-// @flow
 import mergeDeepRight from "ramda/src/mergeDeepRight";
 
-import defaultFoundation from "./defaultFoundation";
-import createTokens from "./createTokens";
-import type { CreateTheme } from "./createTheme";
+import defaultFoundation, { CustomFoundation } from "./defaultFoundation";
+import createTokens, { Tokens } from "./createTokens";
+
+type Overrides = Partial<Tokens>;
+
+export interface CreateTheme {
+  (foundation?: CustomFoundation, overrides?: Overrides): Tokens;
+}
 
 const createTheme: CreateTheme = (foundation = {}, overrides = {}) => {
   const theme = mergeDeepRight(defaultFoundation, foundation);

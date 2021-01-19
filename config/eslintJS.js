@@ -54,6 +54,16 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
     "import/newline-after-import": "error",
     "import/no-mutable-exports": "error",
     "import/no-absolute-path": "error",
@@ -85,5 +95,12 @@ module.exports = {
     "jest/consistent-test-it": "warn",
     "jest/no-focused-tests": "error",
     "adeira/no-internal-flow-type": "error",
+  },
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".d.ts", ".ts", ".tsx"],
+      },
+    },
   },
 };

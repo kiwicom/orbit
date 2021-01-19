@@ -1,8 +1,8 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { isSpacing, isColor } = require("../../utils/is");
-const { errorTransform } = require("../../utils/errorMessage");
+import { isSpacing, isColor } from "../../utils/is";
+import { errorTransform } from "../../utils/errorMessage";
+import { Property } from "style-dictionary";
 
 /*
   Transforms spacing to pixel value.
@@ -11,7 +11,7 @@ const spacingJavascript = {
   name: "value/spacing/javascript",
   type: "value",
   matcher: isSpacing,
-  transformer: ({ value }) => {
+  transformer: ({ value }: Property): string => {
     return `${value}px`;
   },
 };
@@ -22,7 +22,7 @@ const spacingJavascript = {
 const stringJavascript = {
   name: "value/string/javascript",
   type: "value",
-  transformer: ({ value }) => {
+  transformer: ({ value }: Property): string => {
     return `"${value}"`;
   },
 };
@@ -36,7 +36,7 @@ const stringJavascript = {
 const foundationAlias = {
   name: "value/foundation/alias",
   type: "value",
-  transformer: prop => {
+  transformer: (prop: Property): string => {
     const { attributes } = prop;
     const { category, name, type, state } = attributes;
     if ([category, name, type, state].every(value => value == null)) {
@@ -47,4 +47,4 @@ const foundationAlias = {
   },
 };
 
-module.exports = { spacingJavascript, stringJavascript, foundationAlias };
+export default { spacingJavascript, stringJavascript, foundationAlias };

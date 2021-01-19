@@ -1,7 +1,7 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { errorTransform } = require("../../utils/errorMessage");
+import { errorTransform } from "../../utils/errorMessage";
+import { Attributes, Property } from "style-dictionary";
 
 /*
   The basic attribute transformer, adds serialized path info to the property.
@@ -24,7 +24,7 @@ const { errorTransform } = require("../../utils/errorMessage");
 const attributeFoundation = {
   name: "attribute/foundation",
   type: "attribute",
-  transformer: ({ attributes = {}, path }) => {
+  transformer: ({ attributes = {}, path }: Property): Attributes => {
     const structure = ["category", "name", "type", "state"];
     const generatedAttrs = {};
 
@@ -52,7 +52,7 @@ const attributeFoundation = {
 const attributeFoundationName = {
   name: "attribute/foundation/name",
   type: "attribute",
-  transformer: ({ attributes }) => {
+  transformer: ({ attributes }: Property): Attributes => {
     const { type, state, category, name } = attributes;
     if ([category, name, type, state].every(value => value == null)) {
       throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
@@ -71,17 +71,13 @@ const attributeFoundationName = {
 const attributeFoundationType = {
   name: "attribute/foundation/type",
   type: "attribute",
-  transformer: ({ attributes }) => {
+  transformer: ({ attributes }: Property): Attributes => {
     const foundation = {
       // This will need eventually polish - there will be more types, just placeholder for now
       foundationType: "string",
     };
-    return { ...foundation, attributes };
+    return { ...foundation, ...attributes };
   },
 };
 
-module.exports = {
-  attributeFoundation,
-  attributeFoundationName,
-  attributeFoundationType,
-};
+export default { attributeFoundation, attributeFoundationName, attributeFoundationType };

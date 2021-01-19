@@ -1,4 +1,3 @@
-// @flow
 import {
   getAllPaletteNames,
   getAllCategories,

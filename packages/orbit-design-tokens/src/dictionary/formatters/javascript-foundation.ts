@@ -1,8 +1,7 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { getFoundationProperties, getFoundationNameValue } = require("../utils/get");
-const {
+import { getFoundationProperties, getFoundationNameValue } from "../utils/get";
+import {
   falsyString,
   createVariableDeclarator,
   createObjectProperty,
@@ -10,34 +9,24 @@ const {
   createValue,
   createOptionalType,
   createSubsetType,
-} = require("../utils/create");
-const {
+} from "../utils/create";
+import {
   determinateUpperFirst,
   determinateObjectPropertyAlias,
   determinateExport,
-} = require("../utils/determinate");
-const formatCode = require("../utils/format");
-const generatedWarning = require("./comments/generatedWarning");
-const flowComment = require("./comments/flow");
+} from "../utils/determinate";
+import formatCode from "../utils/format";
+import generatedWarning from "./comments/generatedWarning";
+import flowComment from "./comments/flow";
+import { Property } from "style-dictionary";
 
-const foundationFactory = (allProperties, platform) => {
-  /*
-    Type checking with Flow needs to be allowed on .js and .js.flow files
-   */
-  const withFlowComment = falsyString(platform !== "typescript", flowComment);
-
-  const variableType = platform !== "javascript" ? "type" : "const";
-
-  /*
-    By default we want to have "export type ..." only on typescript and flow platform
-   */
-  const withExport = platform !== "javascript";
-
+const genericFactory = (allProperties, platform) => {
   const upperFirst = determinateUpperFirst(platform);
-
+  const withExport = platform !== "javascript";
+  const variableType = platform !== "javascript" ? "type" : "const";
   /*
-    We need to be able to create both { base: Base } and { base }
-   */
+  We need to be able to create both { base: Base } and { base }
+ */
   const createObjectPropertyAlias = determinateObjectPropertyAlias(platform);
 
   const serializedProperties = getFoundationProperties(
@@ -51,7 +40,7 @@ const foundationFactory = (allProperties, platform) => {
   const generatedVariables = _.map(serializedProperties, names => {
     const types = _.map(names, (properties, typeName) => {
       const propertiesValues = _.map(properties, ({ name, value }) =>
-        createObjectProperty(name, value),
+        createObjectProperty(name, String(value)),
       );
       const value = createObjectExpression(createValue(propertiesValues, platform), platform);
       return createVariableDeclarator(upperFirst(typeName), variableType, value, withExport);
@@ -111,7 +100,16 @@ const foundationFactory = (allProperties, platform) => {
     createObjectExpression(createValue(customCategoryTypes, platform), platform),
     true,
   );
+  return [
+    generatedVariables,
+    categoriesVariables,
+    foundationVariable,
+    falsyString(platform !== "javascript", customFoundation),
+  ];
+};
 
+const flowFactory = (allProperties: Property[]): string => {
+  const platform = "flow";
   /*
     Creates export default (declare) for Foundation, e.g. declare export default Foundation
   */
@@ -119,38 +117,36 @@ const foundationFactory = (allProperties, platform) => {
   const exportFoundation = createExport("foundation");
 
   return formatCode(
-    [
-      withFlowComment,
-      generatedWarning,
-      generatedVariables,
-      categoriesVariables,
-      foundationVariable,
-      falsyString(platform !== "javascript", customFoundation),
-      exportFoundation,
-    ],
+    [flowComment, generatedWarning, ...genericFactory(allProperties, platform), exportFoundation],
     platform,
   );
 };
 
+const typescriptFactory = (allProperties: Property[]) => {
+  /*
+    Creates export default (declare) for Foundation, e.g. declare export default Foundation
+  */
+  const createExport = determinateExport("javascript");
+  const exportFoundation = createExport("foundation");
+
+  return [
+    generatedWarning,
+    ...genericFactory(allProperties, "typescript"),
+    ...genericFactory(allProperties, "javascript"),
+    exportFoundation,
+  ].join("\n");
+};
+
 const flowFoundation = {
   name: "flow/foundation",
-  formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, "flow");
-  },
+  formatter: ({ allProperties }: { allProperties: Property[] }): string =>
+    flowFactory(allProperties),
 };
 
 const typescriptFoundation = {
   name: "typescript/foundation",
-  formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, "typescript");
-  },
+  formatter: ({ allProperties }: { allProperties: Property[] }): string =>
+    typescriptFactory(allProperties),
 };
 
-const javascriptFoundation = {
-  name: "javascript/foundation",
-  formatter: ({ allProperties }) => {
-    return foundationFactory(allProperties, "javascript");
-  },
-};
-
-module.exports = { flowFoundation, typescriptFoundation, javascriptFoundation };
+export default { flowFoundation, typescriptFoundation };

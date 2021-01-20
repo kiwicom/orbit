@@ -43,5 +43,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-redirect-from",
+      options: {
+        query: "allMdx",
+      },
+    },
+    "gatsby-plugin-meta-redirect", // This should always be the last one
   ],
 };

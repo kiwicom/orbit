@@ -63,10 +63,11 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type MdxFrontmatter {
-      title: String!
       date: Date @dateformat
-      type: String
       excerpt: String
+      redirect_from: [String]
+      title: String!
+      type: String
     }
   `,
   );

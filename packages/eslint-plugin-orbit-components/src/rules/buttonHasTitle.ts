@@ -29,7 +29,9 @@ export default {
             if (declaration.init.properties.length > 0) {
               if (t.isIdentifier(declaration.id)) {
                 variables[declaration.id.name] = declaration.init.properties.map(property => {
-                  if (t.isProperty(property) && t.isIdentifier(property.key)) {
+                  // @ts-expect-error no available check in babel-types
+                  if (property && t.isIdentifier(property.key)) {
+                    // @ts-expect-error no available check in babel-types
                     return property.key.name;
                   }
                   return null;

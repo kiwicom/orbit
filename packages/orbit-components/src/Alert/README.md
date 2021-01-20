@@ -68,7 +68,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in AlertButton component.
 
 | Name         | Type                       | Default     | Description                                                                                                                                                    |
-| :----------- | :------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :----------- | :------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                                         |
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                     |
 | asComponent  | `string \| React.Element`  | `"button"`  | The component used for the root node.                                                                                                                          |

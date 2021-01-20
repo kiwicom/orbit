@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in Checkbox component.
 
 | Name     | Type                       | Default | Description                                                                                                  |
-| :------- | :------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- |
+| :------- | :------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | checked  | `boolean`                  | `false` | If `true`, the Checkbox will be checked.                                                                     |
 | disabled | `boolean`                  | `false` | If `true`, the Checkbox will be set up as disabled.                                                          |
 | dataTest | `string`                   |         | Optional prop for testing purposes.                                                                          |

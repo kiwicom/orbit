@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the CallOutBanner component.
 
 | Name         | Type                                 | Default | Description                                                                            |
-| :----------- | :----------------------------------- | :------ | :------------------------------------------------------------------------------------- |
+| :----------- | :----------------------------------- | :------ | :------------------------------------------------------------------------------------- | -------------------------------------- |
 | actions      | `React.Node`                         |         | Actions - especially Buttons of the CallOutBanner that will be rendered on the bottom. |
 | children     | `React.Node`                         |         | The children of the CallOutBanner.                                                     |
 | dataTest     | `string`                             |         | Optional prop for testing purposes.                                                    |

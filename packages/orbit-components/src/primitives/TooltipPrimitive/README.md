@@ -19,7 +19,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the TooltipPrimitive component.
 
 | Name                 | Type            | Default | Description                                                                                                                |
-| :------------------- | :-------------- | :------ | :------------------------------------------------------------------------------------------------------------------------- |
+| :------------------- | :-------------- | :------ | :------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | **children**         | `React.Node`    |         | The reference element where the TooltipPrimitive will appear.                                                              |
 | **content**          | `React.Node`    |         | The content to display in the TooltipPrimitive.                                                                            |
 | dataTest             | `string`        |         | Optional prop for testing purposes.                                                                                        |

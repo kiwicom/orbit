@@ -19,7 +19,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the MobileDialogPrimitive component.
 
 | Name                 | Type         | Default | Description                                                                                                                     |
-| :------------------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| :------------------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
 | **children**         | `React.Node` |         | The reference element where the MobileDialogPrimitive will appear.                                                              |
 | **content**          | `React.Node` |         | The content to display in the MobileDialogPrimitive.                                                                            |
 | dataTest             | `string`     |         | Optional prop for testing purposes.                                                                                             |

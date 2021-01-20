@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in InputField component.
 
 | Name         | Type                       | Default    | Description                                                                                                                                                                      |
-| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | autoComplete | `string`                   |            | The autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                                             |
 | autoFocus    | `boolean`                  |            | The autofocus attribute of the input, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp). Keep in mind that autofocus works only when Input is initially rendered |
 | disabled     | `boolean`                  |            | If `true`, the InputField will be disabled.                                                                                                                                      |

@@ -1,6 +1,6 @@
 # Translate
 
-We have support of our `Dictionary` see [this document](https://github.com/kiwicom/orbit/blob/master/.github/dictionary.md)
+We have support of our `Dictionary` see [this document](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/05-development/01-guides/02-dictionary.mdx)
 
 This component adds you possibility to take some strings from our dictionary.
 
@@ -17,8 +17,9 @@ Table below contains all types of the props available in Translate component.
 
 ```jsx
 import en_GB from "@kiwicom/orbit-components/lib/data/dictionary/en-GB.json";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
 import Button from "@kiwicom/orbit-components/lib/Button";
+import Translate from "@kiwicom/orbit-components/lib/Translate";
+import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
 
 const App = () =>
   <ThemeProvider theme={...} dictionary={en_GB}>

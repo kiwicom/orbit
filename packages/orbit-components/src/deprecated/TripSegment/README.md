@@ -26,7 +26,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in TripSegment component.
 
 | Name              | Type                    | Default | Description                                                                                                                                                                                          |
-| :---------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :---------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | **arrival**       | `Translation`           |         | The arrival city name and short code.                                                                                                                                                                |
 | **arrivalTime**   | `Translation`           |         | The arrival time.                                                                                                                                                                                    |
 | **carrier**       | `Carrier`               |         | It's used to render proper icon in the Milestone, by Carrier type. [`See Carrier type`](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/CarrierLogo#user-content-carrier) |

@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in DestinationCard component.
 
 | Name                   | Type                    | Default | Description                                                                        |
-| :--------------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------- |
+| :--------------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------- | ------------------------------------- |
 | dataTest               | `string`                |         | Optional prop for testing purposes.                                                |
 | **departureCity**      | `Translation`           |         | The name of departure city.                                                        |
 | **destinationCity**    | `Translation`           |         | The name of destination city.                                                      |

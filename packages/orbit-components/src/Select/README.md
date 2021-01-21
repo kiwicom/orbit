@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the Select component.
 
 | Name            | Type                       | Default    | Description                                                                                                                                                    |
-| :-------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :-------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | customValueText | `Translation`              |            | The custom text alternative of current value. [See Functional specs](#functional-specs)                                                                        |
 | dataAttrs       | `Object`                   |            | Optional prop for passing `data-*` attributes to the `select` DOM element.                                                                                     |
 | dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                                                                            |

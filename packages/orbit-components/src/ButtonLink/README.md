@@ -17,10 +17,10 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in ButtonLink component.
 
 | Name         | Type                       | Default              | Description                                                                                                                                                    |
-| :----------- | :------------------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :----------- | :------------------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | ariaControls | `string`                   |                      | Id of the element the button controls.                                                                                                                         |
 | ariaExpanded | `boolean`                  |                      | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                     |
-| asComponent  | `string                    | () => React.Element` | `"button"`                                                                                                                                                     | The component used for the root node. |
+| asComponent  | `string                    | () => React.Element` | `"button"`                                                                                                                                                     | The component used for the root node.  |
 | circled      | `boolean`                  | `false`              | If `true`, the ButtonLink will have circular shape.                                                                                                            |
 | children     | `React.Node`               |                      | The content of the ButtonLink. [See Functional specs](#functional-specs)                                                                                       |
 | compact      | `boolean`                  | `false`              | If `true`, the ButtonLink will not have horizontal paddings.                                                                                                   |

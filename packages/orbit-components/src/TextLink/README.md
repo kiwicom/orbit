@@ -17,8 +17,8 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in TextLink component.
 
 | Name            | Type                       | Default              | Description                                                                                                                  |
-| :-------------- | :------------------------- | :------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| ariaCurrent     | `string`                   |                      | Indicates whether the element represents the current item within within a container or set of related elements.              |  | The component used for the root node. Either a string to use a DOM element or a component. |
+| :-------------- | :------------------------- | :------------------- | :--------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| ariaCurrent     | `string`                   |                      | Indicates whether the element represents the current item within within a container or set of related elements.              |                                                                                            | The component used for the root node. Either a string to use a DOM element or a component. |
 | asComponent     | `string                    | () => React.Element` | `"a"`                                                                                                                        | The component used for the root node. Either a string to use a DOM element or a component. |
 | children        | `React.Node`               |                      | The content of the TextLink.                                                                                                 |
 | dataTest        | `string`                   |                      | Optional prop for testing purposes.                                                                                          |
@@ -32,7 +32,7 @@ Table below contains all types of the props available in TextLink component.
 | size            | [`enum`](#enum)            |                      | The size of the TextLink. [See Functional specs](#functional-specs)                                                          |
 | standAlone      | `boolean`                  |                      | If `true` the TextLink will have safe clickable area, so it's properly accessible. Useful for usages out of a block of text. |
 | stopPropagation | `boolean`                  |                      | If `true` the click event on children won't bubble. Useful when you use TextLink inside another clickable element.           |
-| tabIndex        | `string                    | number`              |                                                                                                                              | Specifies the tab order of an element |
+| tabIndex        | `string                    | number`              |                                                                                                                              | Specifies the tab order of an element                                                      |
 | title           | `string`                   |                      | HTML attribute Title, used forclarification of a link, for screen readers.                                                   |
 | **type**        | [`enum`](#enum)            | `"primary"`          | The color type of the TextLink.                                                                                              |
 

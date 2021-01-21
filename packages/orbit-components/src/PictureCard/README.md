@@ -26,7 +26,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in PictureCard component.
 
 | Name      | Type                                            | Default | Description                                                       |
-| :-------- | :---------------------------------------------- | :------ | :---------------------------------------------------------------- |
+| :-------- | :---------------------------------------------- | :------ | :---------------------------------------------------------------- | ------------------------------------- |
 | dataTest  | `string`                                        |         | Optional prop for testing purposes.                               |
 | title     | `string`                                        |         | The title of PictureCard                                          |
 | subTitle  | `string`                                        |         | The subTitle of PictureCard                                       |

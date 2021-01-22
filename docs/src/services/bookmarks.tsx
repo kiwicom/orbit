@@ -23,7 +23,8 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
   const [bookmarks, setBookmarks] = React.useState({});
 
   React.useEffect(() => {
-    if (load("bookmarks")) setBookmarks(JSON.parse(load("bookmarks") as string));
+    const loadedBookmarks = load("bookmarks");
+    if (loadedBookmarks) setBookmarks(JSON.parse(loadedBookmarks);
   }, [setBookmarks]);
 
   const toggleBookmark = () => {

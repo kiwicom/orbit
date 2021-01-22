@@ -150,12 +150,14 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
   }
 };
 
-const Tag = ({ selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest }: Props) => {
+const Tag = React.forwardRef<Props, HTMLDivElement>((props, ref) => {
+  const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
   return (
     <StyledTag
       actionable={onClick || onRemove}
       data-test={dataTest}
       size={size}
+      ref={ref}
       onClick={onClick}
       removable={!!onRemove}
       selected={selected}
@@ -189,6 +191,6 @@ const Tag = ({ selected, children, size = SIZES.NORMAL, onClick, onRemove, dataT
       )}
     </StyledTag>
   );
-};
+});
 
 export default Tag;

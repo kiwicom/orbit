@@ -12,6 +12,7 @@
     "packages/orbit-components/**/*",
     "packages/orbit-design-tokens/**/*",
     "packages/eslint-plugin-orbit-components/**/*",
+    "packages/eslint-plugin-orbit-internal/**/*",
     "docs/**/*"
   ]
 }

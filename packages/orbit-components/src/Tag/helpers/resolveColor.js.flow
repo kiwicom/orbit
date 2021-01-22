@@ -1,0 +1,18 @@
+// @flow
+import type { Theme } from "../../defaultTheme";
+
+type Colors = {|
+  removable: string,
+  selected: string,
+  normal: string,
+|};
+
+export type ResolveColor = (
+  colors: Colors,
+) => ({|
+  theme: Theme,
+  selected: boolean,
+  removable: boolean,
+|}) => string;
+
+declare export default ResolveColor;

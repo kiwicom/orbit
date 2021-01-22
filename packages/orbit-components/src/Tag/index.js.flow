@@ -11,7 +11,6 @@ type Size = "small" | "normal";
 
 export type Props = {|
   +children: React.Node,
-  +icon?: React.Node,
   +selected?: boolean,
   +size?: Size,
   +onRemove?: () => void | Promise<any>,

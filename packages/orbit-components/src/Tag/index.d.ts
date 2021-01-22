@@ -9,7 +9,6 @@ declare module "@kiwicom/orbit-components/lib/Tag";
 
 interface Props extends Common.Global {
   readonly children: React.ReactNode;
-  readonly icon?: React.ReactNode;
   readonly selected?: boolean;
   readonly size?: Common.InputSize;
   readonly onRemove?: Common.Callback;

@@ -5,27 +5,18 @@ import { storiesOf } from "@storybook/react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import * as Icons from "../icons";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SIZES } from "./consts";
 
 import Tag from "./index";
-
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
 
 storiesOf("Tag", module)
   .add(
     "Default",
     () => {
       const content = text("Content", "Brno");
-      const Icon = getIcon(getIcons("Airplane"));
 
-      return (
-        <Tag icon={Icon && <Icon />} onClick={action("onClick")}>
-          {content}
-        </Tag>
-      );
+      return <Tag onClick={action("onClick")}>{content}</Tag>;
     },
     {
       info: "Check Orbit.Kiwi for more detailed design guidelines.",
@@ -35,9 +26,8 @@ storiesOf("Tag", module)
     "Nonactionable",
     () => {
       const content = text("Content", "Brno");
-      const Icon = getIcon(getIcons("Airplane"));
 
-      return <Tag icon={Icon && <Icon />}>{content}</Tag>;
+      return <Tag>{content}</Tag>;
     },
     {
       info: "Check Orbit.Kiwi for more detailed design guidelines.",
@@ -50,11 +40,9 @@ storiesOf("Tag", module)
       const size = select("size", Object.values(SIZES), SIZES.NORMAL);
       const selected = boolean("selected", true);
       const dataTest = text("dataTest", "test");
-      const Icon = getIcon(getIcons("Bus"));
 
       return (
         <Tag
-          icon={Icon && <Icon />}
           size={size}
           selected={selected}
           onClick={action("onClick")}
@@ -74,9 +62,7 @@ storiesOf("Tag", module)
     "RTL",
     () => (
       <RenderInRtl>
-        <Tag icon={<Icons.Airplane />} onRemove={action("onRemove")}>
-          Transport
-        </Tag>
+        <Tag onRemove={action("onRemove")}>Transport</Tag>
       </RenderInRtl>
     ),
     {

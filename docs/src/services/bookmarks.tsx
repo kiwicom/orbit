@@ -14,8 +14,7 @@ interface Props extends PageRendererProps {
 
 const defaultBookmarks = {
   bookmarks: {},
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  toggleBookmark: () => {},
+  toggleBookmark: () => void,
 };
 
 export const BookmarksContext = React.createContext<BookmarksCtx>(defaultBookmarks);

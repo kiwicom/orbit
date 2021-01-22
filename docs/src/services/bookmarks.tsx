@@ -40,7 +40,6 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
     }
   };
 
-  console.log(bookmarks);
 
   return (
     <BookmarksContext.Provider value={{ bookmarks, toggleBookmark }}>

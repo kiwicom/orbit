@@ -18,6 +18,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;
 
 declare export var StyledTag: ReactComponentStyled<any>;

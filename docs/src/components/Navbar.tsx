@@ -2,12 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../images/orbit.svg";
 import { Link } from "gatsby";
-import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
-import Menu from "@kiwicom/orbit-components/lib/icons/MenuHamburger";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import Inline from "@kiwicom/orbit-components/lib/Inline";
-import NavigationLinks from "./NavigationLinks";
+import NavigationLinks from "./Navigation";
 import Input from "./SearchInput";
+import Bookmarks from "./Bookmarks";
 
 const StyledWrapper = styled.header<{ isHomePage?: boolean }>`
   display: grid;
@@ -22,13 +20,7 @@ const StyledWrapper = styled.header<{ isHomePage?: boolean }>`
   z-index: 10;
 `;
 
-interface Props {
-  onBookmarks?: () => void;
-  onSideNav?: () => void;
-}
-
-const Navbar = ({ onBookmarks, onSideNav }: Props) => {
-  const { isTablet } = useMediaQuery();
+const Navbar = () => {
   const [isHomePage, setHomePage] = React.useState(false);
 
   React.useEffect(() => {
@@ -44,16 +36,8 @@ const Navbar = ({ onBookmarks, onSideNav }: Props) => {
       </Link>
       {!isHomePage && <Input />}
       <Inline justify="end" align="center" spacing="medium" desktop={{ spacing: "large" }}>
-        {isTablet ? (
-          <NavigationLinks />
-        ) : (
-          <button onClick={onSideNav}>
-            <Menu ariaLabel="menu" />
-          </button>
-        )}
-        <button type="button" onClick={onBookmarks}>
-          <StarEmpty ariaLabel="star" />
-        </button>
+        <NavigationLinks />
+        <Bookmarks />
       </Inline>
     </StyledWrapper>
   );

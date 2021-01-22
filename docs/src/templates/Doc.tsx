@@ -17,16 +17,18 @@ interface Props extends PageRendererProps {
       frontmatter: {
         title: string;
       };
-      slug: string;
+      fields: {
+        slug: string;
+      };
       body: string;
     };
   };
 }
 
 export default function Doc({ data, location }: Props) {
-  const { frontmatter, slug, body } = data.mdx;
+  const { frontmatter, fields, body } = data.mdx;
   return (
-    <BookmarkProvider page={slug} location={location}>
+    <BookmarkProvider page={fields.slug} location={location}>
       <Layout>
         <Prose>
           <Stack inline align="center">
@@ -50,7 +52,9 @@ export const query = graphql`
       frontmatter {
         title
       }
-      slug
+      fields {
+        slug
+      }
       body
     }
   }

@@ -17,8 +17,7 @@ const Button = styled.button.attrs(({ onClick }) => ({
 `;
 
 const AddBookmark = () => {
-  const { toggleBookmark } = useBookmarks();
-  const [added, setAdded] = React.useState(false);
+  const { toggleBookmark, isAdded, setAdded } = useBookmarks();
 
   const handleToggle = () => {
     toggleBookmark();
@@ -27,7 +26,7 @@ const AddBookmark = () => {
 
   return (
     <Button onClick={handleToggle}>
-      {added ? <StarFull ariaHidden /> : <StarEmpty ariaHidden />}
+      {isAdded ? <StarFull ariaHidden /> : <StarEmpty ariaHidden />}
     </Button>
   );
 };

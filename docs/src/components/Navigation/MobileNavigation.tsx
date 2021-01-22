@@ -56,7 +56,9 @@ export default function MobileNavigation({ name }: Props) {
     query CollectionQuery {
       allMdx {
         nodes {
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
@@ -66,8 +68,11 @@ export default function MobileNavigation({ name }: Props) {
   `);
 
   const data = allMdx.nodes
-    .filter(({ slug }) => slug.includes(name))
-    .map(({ slug, frontmatter }) => ({ title: frontmatter.title, slug: omitNumbers(slug) }));
+    .filter(({ fields }) => fields.slug.includes(name))
+    .map(({ fields, frontmatter }) => ({
+      title: frontmatter.title,
+      slug: omitNumbers(fields.slug),
+    }));
 
   return (
     <StyledCollectionWrapper

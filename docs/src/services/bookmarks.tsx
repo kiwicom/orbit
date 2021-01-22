@@ -5,6 +5,8 @@ import { PageRendererProps } from "gatsby";
 interface BookmarksCtx {
   bookmarks: Record<string, string>;
   toggleBookmark: () => void;
+  setAdded: React.Dispatch<React.SetStateAction<boolean>>;
+  isAdded: boolean;
 }
 
 interface Props extends PageRendererProps {
@@ -14,24 +16,30 @@ interface Props extends PageRendererProps {
 
 const defaultBookmarks = {
   bookmarks: {},
-  toggleBookmark: () => void,
+  toggleBookmark: () => {},
+  setAdded: () => {},
+  isAdded: false,
 };
 
 export const BookmarksContext = React.createContext<BookmarksCtx>(defaultBookmarks);
 
 export const BookmarkProvider = ({ children, page, location }: Props) => {
   const [bookmarks, setBookmarks] = React.useState({});
+  const [isAdded, setAdded] = React.useState(false);
 
   React.useEffect(() => {
     const loadedBookmarks = load("bookmarks");
-    if (loadedBookmarks) setBookmarks(JSON.parse(loadedBookmarks);
+    if (loadedBookmarks) setBookmarks(JSON.parse(loadedBookmarks));
   }, [setBookmarks]);
+
+  React.useEffect(() => {
+    if (Object.values(bookmarks).includes(location.pathname)) setAdded(true);
+  }, [setAdded, bookmarks]);
 
   const toggleBookmark = () => {
     const pg = { [page]: location.pathname };
-    const exists = Object.values(bookmarks).includes(location.pathname);
 
-    if (!exists) {
+    if (!isAdded) {
       setBookmarks({ ...bookmarks, ...pg });
       save("bookmarks", JSON.stringify({ ...bookmarks, ...pg }));
     } else {
@@ -40,9 +48,8 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
     }
   };
 
-
   return (
-    <BookmarksContext.Provider value={{ bookmarks, toggleBookmark }}>
+    <BookmarksContext.Provider value={{ bookmarks, toggleBookmark, isAdded, setAdded }}>
       {children}
     </BookmarksContext.Provider>
   );

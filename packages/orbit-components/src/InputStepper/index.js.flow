@@ -4,13 +4,12 @@
 */
 import * as React from "react";
 
-import type { Globals, Ref, Translation } from "../common/common.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
 import type { Size } from "../InputField/index";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type SharedProps = {|
   ...Globals,
-  ...Ref,
   ...spaceAfter,
   +size?: Size,
   +label?: Translation,
@@ -36,4 +35,4 @@ export type Props = {|
   +onChange?: number => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLElement>;

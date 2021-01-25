@@ -9,7 +9,7 @@ import type { Props } from "./index";
 
 const resolveFillColor = ({ type, theme, selected }) => {
   if (type === TYPES.LEGROOM)
-    return selected ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLight;
+    return selected ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLight;
   if (type === TYPES.UNAVAILABLE) return theme.orbit.paletteCloudLight;
   return selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLight;
 };

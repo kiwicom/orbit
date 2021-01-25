@@ -18,15 +18,15 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the MobileDialogPrimitive component.
 
-| Name                 | Type         | Default | Description                                                                                                                     |
-| :------------------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
-| **children**         | `React.Node` |         | The reference element where the MobileDialogPrimitive will appear.                                                              |
-| **content**          | `React.Node` |         | The content to display in the MobileDialogPrimitive.                                                                            |
-| dataTest             | `string`     |         | Optional prop for testing purposes.                                                                                             |
-| enabled              | `boolean`    | `true`  | Enable render of MobileDialogPrimitive                                                                                          |
-| removeUnderlinedText | `boolean`    |         | Removes underline on child component, when underline is not desired.                                                            |
-| stopPropagation      | `boolean`    |         | If `true` the click event on children won't bubble. Useful when you use MobileDialogPrimitive inside another clickable element. |
-| tabIndex             | `string      | number` | `"0"`                                                                                                                           | Specifies the tab order of an element |
+| Name                 | Type               | Default | Description                                                                                                                     |
+| :------------------- | :----------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| **children**         | `React.Node`       |         | The reference element where the MobileDialogPrimitive will appear.                                                              |
+| **content**          | `React.Node`       |         | The content to display in the MobileDialogPrimitive.                                                                            |
+| dataTest             | `string`           |         | Optional prop for testing purposes.                                                                                             |
+| enabled              | `boolean`          | `true`  | Enable render of MobileDialogPrimitive                                                                                          |
+| removeUnderlinedText | `boolean`          |         | Removes underline on child component, when underline is not desired.                                                            |
+| stopPropagation      | `boolean`          |         | If `true` the click event on children won't bubble. Useful when you use MobileDialogPrimitive inside another clickable element. |
+| tabIndex             | `string \| number` | `"0"`   | Specifies the tab order of an element                                                                                           |
 
 ## Functional specs
 

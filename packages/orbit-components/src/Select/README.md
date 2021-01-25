@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the Select component.
 
 | Name            | Type                       | Default    | Description                                                                                                                                                    |
-| :-------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| :-------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | customValueText | `Translation`              |            | The custom text alternative of current value. [See Functional specs](#functional-specs)                                                                        |
 | dataAttrs       | `Object`                   |            | Optional prop for passing `data-*` attributes to the `select` DOM element.                                                                                     |
 | dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                                                                            |
@@ -38,7 +38,7 @@ Table below contains all types of the props available in the Select component.
 | readOnly        | `boolean`                  |            | If true, Select will be readonly.                                                                                                                              |
 | size            | [`enum`](#enum)            | `"normal"` | The size of the Select.                                                                                                                                        |
 | spaceAfter      | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| tabIndex        | `string                    | number`    |                                                                                                                                                                | Specifies the tab order of an element |
+| tabIndex        | `string \| number`         |            | Specifies the tab order of an element                                                                                                                          |
 | value           | `string`                   | `""`       | The value of the Select.                                                                                                                                       |
 
 ## Option

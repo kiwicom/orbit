@@ -26,7 +26,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in PictureCard component.
 
 | Name      | Type                                            | Default | Description                                                       |
-| :-------- | :---------------------------------------------- | :------ | :---------------------------------------------------------------- | ------------------------------------- |
+| :-------- | :---------------------------------------------- | :------ | :---------------------------------------------------------------- |
 | dataTest  | `string`                                        |         | Optional prop for testing purposes.                               |
 | title     | `string`                                        |         | The title of PictureCard                                          |
 | subTitle  | `string`                                        |         | The subTitle of PictureCard                                       |
@@ -39,7 +39,7 @@ Table below contains all types of the props available in PictureCard component.
 | external  | `boolean`                                       | `false` | If `true`, PictureCard opens link in a new tab                    |
 | **image** | [`Image`](#Image) [`ImageCustom`](#ImageCustom) |         | Image of PictureCard [See Functional specs](#functional-specs)    |
 | onClick   | `onClick`                                       |         | Function for handling onClick event.                              |
-| tabIndex  | `string                                         | number` | `"0"`                                                             | Specifies the tab order of an element |
+| tabIndex  | `string \| number`                              | `"0"`   | Specifies the tab order of an element                             |
 
 ### Image
 

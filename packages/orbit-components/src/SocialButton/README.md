@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in SocialButton component.
 
 | Name         | Type                       | Default    | Description                                                                                                                                                    |
-| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ariaControls | `string`                   |            | Id of the element the button controls.                                                                                                                         |
 | ariaExpanded | `boolean`                  |            | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                     |
 | asComponent  | `string \| React.Element`  | `"button"` | The component used for the root node.                                                                                                                          |
@@ -34,7 +34,7 @@ Table below contains all types of the props available in SocialButton component.
 | **size**     | [`enum`](#enum)            | `"normal"` | The size of the SocialButton.                                                                                                                                  |
 | spaceAfter   | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | submit       | `boolean`                  | `false`    | If `true`, the SocialButton will have `type="submit"` attribute, otherwise `type="button"`.                                                                    |
-| tabIndex     | `string                    | number`    |                                                                                                                                                                | Specifies the tab order of an element. |
+| tabIndex     | `string \| number`         |            | Specifies the tab order of an element.                                                                                                                         |
 | title        | `string`                   |            | Adds `aria-label`.                                                                                                                                             |
 | **type**     | [`enum`](#enum)            | `"apple"`  | The type of SocialButton.                                                                                                                                      |
 | width        | `string`                   |            | The width of the SocialButton. Can be any string - `100px`, `20%`.                                                                                             |

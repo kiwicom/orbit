@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in ButtonPrimitive component.
 
 | Name             | Type                       | Default    | Description                                                                                                                                                    |
-| :--------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| :--------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | asComponent      | `string \| React.Element`  | `"button"` | The component used for the root node.                                                                                                                          |
 | ariaControls     | `string`                   |            | Id of the element the button controls.                                                                                                                         |
 | ariaExpanded     | `boolean`                  |            | Tells screen reader the controlled element from `ariaControls` is expanded.                                                                                    |
@@ -58,7 +58,7 @@ Table below contains all types of the props available in ButtonPrimitive compone
 | spaceAfter       | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | submit           | `boolean`                  | `false`    | If `true`, the ButtonPrimitive will have `type="submit"` attribute, otherwise `type="button"`.                                                                 |
 | title            | `string`                   |            | Adds `aria-label`.                                                                                                                                             |
-| tabIndex         | `string                    | number`    | `"0"`                                                                                                                                                          | Specifies the tab order of an element. |
+| tabIndex         | `string \| number`         | `"0"`      | Specifies the tab order of an element.                                                                                                                         |
 | width            | `string`                   |            | The width of the ButtonPrimitive. Can be any string - `100px`, `20%`.                                                                                          |
 
 ### enum

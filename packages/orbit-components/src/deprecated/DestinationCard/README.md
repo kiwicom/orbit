@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in DestinationCard component.
 
 | Name                   | Type                    | Default | Description                                                                        |
-| :--------------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------- | ------------------------------------- |
+| :--------------------- | :---------------------- | :------ | :--------------------------------------------------------------------------------- |
 | dataTest               | `string`                |         | Optional prop for testing purposes.                                                |
 | **departureCity**      | `Translation`           |         | The name of departure city.                                                        |
 | **destinationCity**    | `Translation`           |         | The name of destination city.                                                      |
@@ -28,7 +28,7 @@ Table below contains all types of the props available in DestinationCard compone
 | onClick                | `onClick`               |         | Function for handling onClick event.                                               |
 | **outbound**           | [`Outbound`](#outbound) |         | The outbound information about the trip. [See Functional specs](#functional-specs) |
 | **price**              | `Translation`           |         | The price of the trip.                                                             |
-| tabIndex               | `string                 | number` | `"0"`                                                                              | Specifies the tab order of an element |
+| tabIndex               | `string \| number`      | `"0"`   | Specifies the tab order of an element                                              |
 | timeOfStay             | `Translation`           |         | The time of the stay for the trip. [See Functional specs](#functional-specs)       |
 
 ### Inbound

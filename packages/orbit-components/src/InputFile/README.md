@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the InputFile component.
 
 | Name             | Type                       | Default              | Description                                                                                                                                                    |
-| :--------------- | :------------------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| :--------------- | :------------------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | allowedFileTypes | `string \| string[]`       |                      | You can specify allow file types. [See MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers)                  |
 | buttonLabel      | `Translation`              | `"Select file"`      | The label for the Button inside InputFile. [See Functional specs](#functional-specs)                                                                           |
 | dataTest         | `string`                   |                      | Optional prop for testing purposes.                                                                                                                            |
@@ -33,7 +33,7 @@ Table below contains all types of the props available in the InputFile component
 | placeholder      | `TranslationString`        | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)                                                                                   |
 | ref              | `func`                     |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)                                                                             |
 | spaceAfter       | `enum`                     |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| tabIndex         | `string                    | number`              |                                                                                                                                                                | Specifies the tab order of an element |
+| tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
 
 ## Functional specs
 

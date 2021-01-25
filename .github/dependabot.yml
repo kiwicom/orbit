@@ -9,3 +9,7 @@ updates:
     labels:
       - "dependency"
     versioning-strategy: "increase"
+    ignore:
+      # updating @babel/types breaks the ESLint rule orbit-components/button-has-title
+      # https://github.com/kiwicom/orbit/pull/2675
+      - dependency-name: "@babel/types"

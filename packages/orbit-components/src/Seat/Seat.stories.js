@@ -26,7 +26,7 @@ export const Selected = () => {
 export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
-  const label = text("label", "A");
+  const label = text("label", "MZ");
   const price = text("price", "12$");
   const selected = boolean("selected", false);
 

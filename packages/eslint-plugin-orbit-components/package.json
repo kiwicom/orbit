@@ -29,7 +29,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10"
+    "@babel/types": "=7.12.12"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",

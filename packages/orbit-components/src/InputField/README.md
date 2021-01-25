@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in InputField component.
 
 | Name         | Type                       | Default    | Description                                                                                                                                                                      |
-| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | autoComplete | `string`                   |            | The autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                                             |
 | autoFocus    | `boolean`                  |            | The autofocus attribute of the input, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp). Keep in mind that autofocus works only when Input is initially rendered |
 | disabled     | `boolean`                  |            | If `true`, the InputField will be disabled.                                                                                                                                      |
@@ -51,7 +51,7 @@ Table below contains all types of the props available in InputField component.
 | spaceAfter   | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken)                   |
 | **size**     | [`enum`](#enum)            | `"normal"` | The size of the InputField.                                                                                                                                                      |
 | suffix       | `React.Node`               |            | The suffix component for the InputField. [See Functional specs](#functional-specs)                                                                                               |
-| tabIndex     | `string                    | number`    |                                                                                                                                                                                  | Specifies the tab order of an element |
+| tabIndex     | `string \| number`         |            | Specifies the tab order of an element                                                                                                                                            |
 | **type**     | [`enum`](#enum)            | `"text"`   | The type of the InputField.                                                                                                                                                      |
 | value        | `string`                   |            | Specifies the value of the InputField.                                                                                                                                           |
 

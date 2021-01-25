@@ -17,14 +17,14 @@ After adding import into your project you can use it simply like:
 Table below contains all types of the props available in the CallOutBanner component.
 
 | Name         | Type                                 | Default | Description                                                                            |
-| :----------- | :----------------------------------- | :------ | :------------------------------------------------------------------------------------- | -------------------------------------- |
+| :----------- | :----------------------------------- | :------ | :------------------------------------------------------------------------------------- |
 | actions      | `React.Node`                         |         | Actions - especially Buttons of the CallOutBanner that will be rendered on the bottom. |
 | children     | `React.Node`                         |         | The children of the CallOutBanner.                                                     |
 | dataTest     | `string`                             |         | Optional prop for testing purposes.                                                    |
 | description  | `Translation`                        |         | The displayed description of the CallOutBanner.                                        |
 | illustration | `React.Element<typeof Illustration>` |         | The displayed Illustration of the CallOutBanner.                                       |
 | onClick      | `() => void \| Promise`              |         | Function for handling onClick callback. See [functional specs](#functional-specs).     |
-| tabIndex     | `string                              | number` |                                                                                        | Specifies the tab order of an element. |
+| tabIndex     | `string \| number`                   |         | Specifies the tab order of an element.                                                 |
 | **title**    | `Translation`                        |         | The displayed title of the CallOutBanner.                                              |
 
 ## Functional specs

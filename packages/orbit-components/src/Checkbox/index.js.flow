@@ -5,7 +5,7 @@
 import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
-import type { Globals, Ref } from "../common/common.js.flow";
+import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   +label?: React.Node,
@@ -20,9 +20,8 @@ export type Props = {|
   +tooltip?: ?React.Element<any>,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
-  ...Ref,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLElement>;
 
 declare export var Label: ReactComponentStyled<any>;

@@ -13,7 +13,7 @@ import type { Props } from "./index";
 
 const WrappedText = styled.div`
   padding-right: ${({ selected, size }) =>
-    selected && (size === SIZE_OPTIONS.SMALL ? "5px" : "7px")};
+    selected && (size === SIZE_OPTIONS.SMALL ? "6px" : "7px")};
 `;
 
 const getSize = ({ size, selected }) => {
@@ -75,7 +75,7 @@ const Seat = ({
         <SeatItem type={type} selected={selected} size={size} price={price} label={label} />
       </StyledSeat>
       {price && !(selected && type === TYPES.UNAVAILABLE) && (
-        <WrappedText selected={selected}>
+        <WrappedText selected={selected} size={size}>
           <Text size="small" type="secondary">
             {price}
           </Text>

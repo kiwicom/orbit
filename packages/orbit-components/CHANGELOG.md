@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.108.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.0...@kiwicom/orbit-components@0.108.1) (2021-01-25)
+
+
+### Bug Fixes
+
+* **Seat:** visual fixes ([#2678](https://github.com/kiwicom/orbit/issues/2678)) ([a60c333](https://github.com/kiwicom/orbit/commit/a60c333af361add73569c4456589b570c3c8aac3))
+
+
+
+
+
 # [0.108.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.107.0...@kiwicom/orbit-components@0.108.0) (2021-01-22)
 
 

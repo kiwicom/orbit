@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.108.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.1...@kiwicom/orbit-components@0.108.2) (2021-01-26)
+
+
+### Bug Fixes
+
+* unescaped readmes ([#2687](https://github.com/kiwicom/orbit/issues/2687)) ([d33b47b](https://github.com/kiwicom/orbit/commit/d33b47b60d265144745e504780dd77836755ec59))
+* **Seat:** blueDark change to blueNormal ([#2685](https://github.com/kiwicom/orbit/issues/2685)) ([516e8ef](https://github.com/kiwicom/orbit/commit/516e8ef92ed3a853d718921e167ca84ccd454218))
+
+
+
+
+
 ## [0.108.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.0...@kiwicom/orbit-components@0.108.1) (2021-01-25)
 
 

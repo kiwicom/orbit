@@ -1,6 +1,6 @@
 {
   "name": "orbit.kiwi",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
-    "@kiwicom/orbit-components": "^0.108.1",
+    "@kiwicom/orbit-components": "^0.108.2",
     "@kiwicom/orbit-design-tokens": "^0.13.1",
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/mdx": "^1.6.22",

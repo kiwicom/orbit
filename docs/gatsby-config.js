@@ -24,8 +24,14 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               // The base for generating different image widths.
-              maxWidth: 590,
+              maxWidth: 736,
               showCaptions: ["title"],
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`, `md`, `mdx`],
             },
           },
         ],

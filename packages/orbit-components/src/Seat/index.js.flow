@@ -7,15 +7,15 @@ import * as React from "react";
 import type { Globals } from "../common/common.js.flow";
 
 export type Type = "default" | "legroom" | "unavailable";
-export type Size = "medium" | "small";
+export type Size = "extraSmall" | "small" | "medium";
 
 export type Props = {|
   +type?: Type,
   +title?: string,
   +description?: string,
   +selected?: boolean,
-  +price?: string,
-  +label?: string,
+  +price?: React.Node,
+  +label?: React.Node,
   +size?: Size,
   ...Globals,
 |};

@@ -6,11 +6,13 @@ import Seat from "../index";
 import { SIZE_OPTIONS, TYPES } from "../consts";
 
 const height = {
+  [SIZE_OPTIONS.EXTRASMALL]: "11px",
   [SIZE_OPTIONS.SMALL]: "36px",
   [SIZE_OPTIONS.MEDIUM]: "46px",
 };
 
 const width = {
+  [SIZE_OPTIONS.EXTRASMALL]: "10px",
   [SIZE_OPTIONS.SMALL]: "34px",
   [SIZE_OPTIONS.MEDIUM]: "47px",
 };

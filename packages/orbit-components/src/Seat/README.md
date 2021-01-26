@@ -28,8 +28,8 @@ Table below contains all types of the props available in Radio component.
 
 ### enum
 
-| size       | type            |
-| :--------- | :-------------- |
-| `"small"`  | `"default"`     |
-| `"medium"` | `"legroom"`     |
-|            | `"unavailable"` |
+| size           | type            |
+| :------------- | :-------------- |
+| `"extraSmall"` | `"default"`     |
+| `"small"`      | `"legroom"`     |
+| `"medium"`     | `"unavailable"` |

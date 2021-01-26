@@ -11,18 +11,15 @@ import { SIZE_OPTIONS, TYPES } from "./consts";
 
 import type { Props } from "./index";
 
-const WrappedText = styled.div`
-  padding-right: ${({ selected, size }) =>
-    selected && (size === SIZE_OPTIONS.SMALL ? "6px" : "7px")};
-`;
-
 const getSize = ({ size, selected }) => {
   const height = {
+    [SIZE_OPTIONS.EXTRASMALL]: "11px",
     [SIZE_OPTIONS.SMALL]: selected ? "43px" : "36px",
     [SIZE_OPTIONS.MEDIUM]: selected ? "54px" : "46px",
   };
 
   const width = {
+    [SIZE_OPTIONS.EXTRASMALL]: "10px",
     [SIZE_OPTIONS.SMALL]: selected ? "40px" : "34px",
     [SIZE_OPTIONS.MEDIUM]: selected ? "54px" : "47px",
   };
@@ -31,6 +28,7 @@ const getSize = ({ size, selected }) => {
 };
 
 const resolveViewBoxSize = (size, selected) => {
+  if (size === SIZE_OPTIONS.EXTRASMALL) return "0 0 10 11";
   if (selected) return size === SIZE_OPTIONS.SMALL ? "0 0 40 43" : "0 0 54 54";
   return size === SIZE_OPTIONS.SMALL ? "0 0 34 36" : "0 0 47 46";
 };
@@ -39,6 +37,8 @@ const StyledSeat = styled.svg`
   flex-shrink: 0;
   position: relative;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
+  margin-right: ${({ selected, size }) =>
+    selected && (size === SIZE_OPTIONS.SMALL ? `-7px !important` : `-8px !important`)};
   ${getSize};
 `;
 
@@ -47,7 +47,7 @@ StyledSeat.defaultProps = {
 };
 
 const Seat = ({
-  type,
+  type = TYPES.DEFAULT,
   selected,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
@@ -74,12 +74,10 @@ const Seat = ({
         <desc id={descrId}>{description}</desc>
         <SeatItem type={type} selected={selected} size={size} price={price} label={label} />
       </StyledSeat>
-      {price && !(selected && type === TYPES.UNAVAILABLE) && (
-        <WrappedText selected={selected} size={size}>
-          <Text size="small" type="secondary">
-            {price}
-          </Text>
-        </WrappedText>
+      {price && !(selected && type === TYPES.UNAVAILABLE) && size !== SIZE_OPTIONS.EXTRASMALL && (
+        <Text size="small" type="secondary">
+          {price}
+        </Text>
       )}
     </Stack>
   );

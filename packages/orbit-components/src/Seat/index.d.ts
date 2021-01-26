@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Seat";
 
-type Size = "medium" | "small";
+type Size = "extraSmall" | "small" | "medium";
 type Type = "default" | "legroom" | "selected" | "unavailable";
 
 interface Props extends Common.Global {
@@ -16,8 +16,8 @@ interface Props extends Common.Global {
   readonly title?: string;
   readonly description?: string;
   readonly selected?: boolean;
-  readonly label?: string;
-  readonly price?: string;
+  readonly label?: React.ReactNode;
+  readonly price?: React.ReactNode;
 }
 
 declare const Seat: React.FunctionComponent<Props>;

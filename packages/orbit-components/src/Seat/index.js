@@ -11,7 +11,7 @@ import { SIZE_OPTIONS, TYPES } from "./consts";
 
 import type { Props } from "./index";
 
-const WrappedText = styled.div`
+const StyledWrapperText = styled.div`
   padding-right: ${({ selected, size }) =>
     selected && (size === SIZE_OPTIONS.SMALL ? "6px" : "7px")};
 `;
@@ -75,11 +75,11 @@ const Seat = ({
         <SeatItem type={type} selected={selected} size={size} price={price} label={label} />
       </StyledSeat>
       {price && !(selected && type === TYPES.UNAVAILABLE) && (
-        <WrappedText selected={selected} size={size}>
+        <StyledWrapperText selected={selected}>
           <Text size="small" type="secondary">
             {price}
           </Text>
-        </WrappedText>
+        </StyledWrapperText>
       )}
     </Stack>
   );

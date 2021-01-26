@@ -16,8 +16,8 @@ interface Props extends Common.Global {
   readonly title?: string;
   readonly description?: string;
   readonly selected?: boolean;
-  readonly label?: string;
-  readonly price?: string;
+  readonly label?: React.ReactNode;
+  readonly price?: React.ReactNode;
 }
 
 declare const Seat: React.FunctionComponent<Props>;

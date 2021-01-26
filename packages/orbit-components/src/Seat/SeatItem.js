@@ -43,6 +43,8 @@ const SeatItem = ({ selected, type, label, size }: Props) => {
       <>
         <path
           d="M1.20801 17C1.20801 12.0294 5.23745 8 10.208 8H23.208C28.1786 8 32.208 12.0294 32.208 17V39C32.208 40.6569 30.8649 42 29.208 42H4.20801C2.55115 42 1.20801 40.6569 1.20801 39V17Z"
+          stroke={resolveFillColor({ type, theme, selected })}
+          strokeWidth="2"
           fill={resolveFillColor({ type, theme, selected })}
         />
         {label && type !== TYPES.UNAVAILABLE && (

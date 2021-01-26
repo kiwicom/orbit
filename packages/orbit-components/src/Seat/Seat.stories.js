@@ -10,6 +10,18 @@ import Seat from "./index";
 
 export const Default = () => <Seat />;
 
+export const Mixed = () => {
+  const label = text("label", "MZ");
+  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+
+  return (
+    <Stack align="end">
+      <Seat size={size} label={label} price="12$" />
+      <Seat size={size} label={label} price="12$" selected type="legroom" />
+    </Stack>
+  );
+};
+
 export const Selected = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
   const dataTest = text("dataTest", "test");
@@ -56,7 +68,7 @@ export const Playground = () => {
 export default {
   title: "Seat",
   component: Seat,
-  includeStories: ["Default", "Selected", "Playground"],
+  includeStories: ["Default", "Selected", "Mixed", "Playground"],
   parameters: {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
   },

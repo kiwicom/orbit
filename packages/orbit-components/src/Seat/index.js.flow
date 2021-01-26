@@ -14,8 +14,8 @@ export type Props = {|
   +title?: string,
   +description?: string,
   +selected?: boolean,
-  +price?: string,
-  +label?: string,
+  +price?: React.Node,
+  +label?: React.Node,
   +size?: Size,
   ...Globals,
 |};

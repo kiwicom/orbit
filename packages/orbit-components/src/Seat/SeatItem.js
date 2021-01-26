@@ -7,10 +7,18 @@ import randomID from "../utils/randomID";
 
 import type { Props } from "./index";
 
+const resolveFillColorLegend = ({ type, theme }) => {
+  if (type === TYPES.LEGROOM) return theme.orbit.paletteBlueLightActive;
+  if (type === TYPES.DEFAULT) return theme.orbit.paletteProductLightActive;
+
+  return theme.orbit.paletteCloudDark;
+};
+
 const resolveFillColor = ({ type, theme, selected }) => {
   if (type === TYPES.LEGROOM)
     return selected ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLight;
   if (type === TYPES.UNAVAILABLE) return theme.orbit.paletteCloudLight;
+
   return selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLight;
 };
 
@@ -32,11 +40,55 @@ const resolveCloseFill = ({ type, theme }) => {
 
 const SeatItem = ({ selected, type, label, size }: Props) => {
   const theme = useTheme();
-  const randomIdSelectedNormal = useMemo(() => randomID("selectedIdNormal"), []);
+  const randomIdSelectedExtraSmall = useMemo(() => randomID("selectedIdExtraSmall"), []);
   const randomIdSelectedSmall = useMemo(() => randomID("selectedIdSmall"), []);
+  const randomIdSelectedNormal = useMemo(() => randomID("selectedIdNormal"), []);
   const randomCloseIconId = useMemo(() => randomID("randomCloseIconId"), []);
 
   if (selected && type === TYPES.UNAVAILABLE) return null;
+
+  if (size === SIZE_OPTIONS.EXTRASMALL) {
+    return (
+      <>
+        <path
+          d="M0.5 3C0.5 1.61929 1.61929 0.5 3 0.5H7C8.38071 0.5 9.5 1.61929 9.5 3V10C9.5 10.2761 9.27614 10.5 9 10.5H1C0.723858 10.5 0.5 10.2761 0.5 10V3Z"
+          fill={resolveFillColorLegend({ theme, type })}
+          stroke={
+            type === TYPES.UNAVAILABLE
+              ? resolveAccentColor({ type, theme })
+              : resolveFillColorLegend({ type, theme })
+          }
+        />
+        <path
+          d="M0 9.77783H10C10 10.4528 9.45279 11.0001 8.77778 11.0001H1.22222C0.547207 11.0001 0 10.4528 0 9.77783Z"
+          fill={
+            type === TYPES.UNAVAILABLE
+              ? resolveAccentColor({ type, theme })
+              : resolveFillColorLegend({ type, theme })
+          }
+        />
+        <mask
+          id={randomIdSelectedExtraSmall}
+          mask-type="alpha"
+          maskUnits="userSpaceOnUse"
+          x="3"
+          y="4"
+          width="4"
+          height="4"
+        >
+          <path
+            d="M6.88487 4.11115C7.00211 4.22822 7.00225 4.41817 6.88518 4.53541L5.51746 5.90489C5.46547 5.95694 5.46547 6.04127 5.51746 6.09332L6.88518 7.46293C6.9925 7.57041 7.00132 7.73897 6.91174 7.85649L6.88487 7.8872C6.76763 8.00427 6.57768 8.00413 6.46061 7.88688L5.09374 6.51795C5.04171 6.46584 4.95728 6.46578 4.90517 6.51781C4.90512 6.51786 4.90507 6.51791 4.90502 6.51797L3.53866 7.88688C3.42158 8.00413 3.23164 8.00427 3.11439 7.8872C2.99715 7.77013 2.99701 7.58018 3.11408 7.46293L4.48163 6.09332C4.53361 6.04126 4.5336 5.95695 4.48162 5.90489L3.11408 4.53541C3.00676 4.42794 2.99794 4.25937 3.08752 4.14185L3.11439 4.11115C3.23164 3.99408 3.42158 3.99422 3.53866 4.11146L4.90503 5.47995C4.95706 5.53206 5.04148 5.53213 5.09359 5.4801C5.09364 5.48006 5.09368 5.48001 5.09372 5.47997L6.46061 4.11146C6.57768 3.99422 6.76763 3.99408 6.88487 4.11115Z"
+            fill={theme.orbit.paletteWhite}
+          />
+        </mask>
+        {type === TYPES.UNAVAILABLE && (
+          <g mask={`url(#${randomIdSelectedExtraSmall})`}>
+            <path d="M9 2H1V10.3333H9V2Z" fill="#BAC7D5" />
+          </g>
+        )}
+      </>
+    );
+  }
 
   if (size === SIZE_OPTIONS.SMALL) {
     return selected ? (

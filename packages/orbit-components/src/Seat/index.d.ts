@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Seat";
 
-type Size = "medium" | "small";
+type Size = "extraSmall" | "small" | "medium";
 type Type = "default" | "legroom" | "selected" | "unavailable";
 
 interface Props extends Common.Global {

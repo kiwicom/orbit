@@ -15,9 +15,22 @@ export const Mixed = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
 
   return (
-    <Stack align="end">
-      <Seat size={size} label={label} price="12$" />
-      <Seat size={size} label={label} price="12$" selected type="legroom" />
+    <Stack direction="column">
+      <Stack align="end">
+        <Seat size={size} label={label} price="12$" />
+        <Seat size={size} label={label} price="12$" type="unavailable" />
+        <Seat size={size} label={label} price="12$" selected type="legroom" />
+      </Stack>
+      <Stack align="end">
+        <Seat size={size} label={label} price="12$" type="unavailable" />
+        <Seat size={size} label={label} price="12$" selected type="legroom" />
+        <Seat size={size} label={label} price="12$" />
+      </Stack>
+      <Stack align="end">
+        <Seat size={size} label={label} price="12$" selected type="legroom" />
+        <Seat size={size} label={label} price="12$" />
+        <Seat size={size} label={label} price="12$" type="unavailable" />
+      </Stack>
     </Stack>
   );
 };
@@ -31,6 +44,7 @@ export const Selected = () => {
     <Stack direction="row">
       <Seat size={size} label={label} selected dataTest={dataTest} />
       <Seat size={size} label={label} selected type="legroom" dataTest={dataTest} />
+      <Seat size={size} label={label} selected dataTest={dataTest} />
     </Stack>
   );
 };

@@ -1,5 +1,4 @@
 // @noflow
-/* eslint-disable global-require */
 import fs from "fs";
 
 import generateXMLDesignTokens from "../generateXMLDesignTokens";

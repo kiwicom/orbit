@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
+
 import theme from "../theme";
 import Navbar from "./Navbar";
 

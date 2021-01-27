@@ -28,10 +28,6 @@ jobs:
       - name: Install dependencies
         run: yarn install && yarn bootstrap
 
-      - uses: lots0logs/gh-action-get-changed-files@2.1.4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Testing, Linting, Type Checking
         run: yarn test-ci
   deploy:

@@ -1,7 +1,8 @@
+import type { Rule } from "eslint";
+import * as t from "@babel/types";
+
 import isOrbitComponent from "../utils/isOrbitComponent";
 import detectOriginalOrbitName from "../utils/detectOriginalOrbitName";
-import { Rule } from "eslint";
-import * as t from "@babel/types";
 
 export default {
   create: (context: Rule.RuleContext) => {

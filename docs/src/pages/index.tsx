@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Heading, Inline } from "@kiwicom/orbit-components";
-import ArrowRight from "../components/ArrowRight";
 import { StarEmpty } from "@kiwicom/orbit-components/icons";
+import styled, { css } from "styled-components";
+
+import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
 import ButtonLink from "../components/ButtonLink";
 import Card from "../components/Card";
-import styled, { css } from "styled-components";
 
 const CardWrapper = styled.div`
   flex: 1;

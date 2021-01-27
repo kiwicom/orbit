@@ -1,11 +1,12 @@
 import React from "react";
-import Sidenav from "../Sidenav";
 import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
-import Switch from "../Switch";
-import { save, load } from "../../utils/storage";
 import { Link } from "gatsby";
 import styled from "styled-components";
+
+import Switch from "../Switch";
+import { save, load } from "../../utils/storage";
+import Sidenav from "../Sidenav";
 import { useBookmarks } from "../../services/bookmarks";
 
 const StyledLink = styled(Link)`

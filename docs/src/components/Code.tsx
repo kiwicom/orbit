@@ -43,8 +43,10 @@ export const CodeBlock = ({ children, className }: CodeBlockProps) => {
           {tokens
             .filter(line => line.some(token => !token.empty)) // remove mysterious empty lines
             .map((line, i) => (
+              // eslint-disable-next-line react/no-array-index-key
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
+                  // eslint-disable-next-line react/no-array-index-key
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
               </div>

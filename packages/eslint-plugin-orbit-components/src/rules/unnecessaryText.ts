@@ -1,7 +1,8 @@
+import * as t from "@babel/types";
+import type { Rule } from "eslint";
+
 import isOrbitComponent from "../utils/isOrbitComponent";
 import detectOriginalOrbitName from "../utils/detectOriginalOrbitName";
-import { types as t } from "@babel/core";
-import { Rule } from "eslint";
 
 export default {
   create: (context: Rule.RuleContext) => {
@@ -41,7 +42,7 @@ export default {
               doNotUseTextIn.find(x => x === importedOrbitComponents[localName]) &&
               node.children
             ) {
-              node.children.map(child => {
+              node.children.forEach(child => {
                 if (t.isJSXElement(child)) {
                   if (!child.openingElement) return;
                   if (t.isJSXIdentifier(child.openingElement.name)) {

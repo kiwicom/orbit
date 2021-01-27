@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
 import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull";
+
 import { useBookmarks } from "../services/bookmarks";
 
 const Button = styled.button.attrs(({ onClick }) => ({

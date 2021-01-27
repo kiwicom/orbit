@@ -13,7 +13,7 @@
     "build-ci": "lerna bootstrap && yarn build",
     "postinstall": "yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
     "prettier:test": "prettier --check '**/*.md'",
-    "eslint:ci": "gulp eslintCI",
+    "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
     "test": "jest",
     "test-ci": "yarn orbit-components check:icons && yarn build-ci && yarn flow:check && yarn tsc && yarn eslint:ci && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test",

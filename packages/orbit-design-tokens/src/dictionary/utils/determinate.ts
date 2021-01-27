@@ -16,9 +16,7 @@ export const determinateObjectPropertyAlias = (platform: string) => (name: strin
   return createObjectProperty(name, determinateUpperFirst(platform)(name));
 };
 
-export const determinateExport: (
-  platform: string,
-) => (name: string) => string = platform => name => {
+export const determinateExport = (platform: string) => (name: string): string => {
   if (platform === "javascript") {
     return createDeclareExport(name, {
       isDefault: true,

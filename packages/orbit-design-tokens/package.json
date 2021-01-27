@@ -15,8 +15,8 @@
     "README.md"
   ],
   "scripts": {
-    "build:dictionary": "yarn ts-node ./src/dictionary/build.ts",
-    "build:lib": "yarn tsc src/*.ts --outDir lib --declaration --target ES5",
+    "build:dictionary": "ts-node ./src/dictionary/build.ts",
+    "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5",
     "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "prepublishOnly": "yarn build"

@@ -96,11 +96,4 @@ module.exports = {
     "jest/no-focused-tests": "error",
     "adeira/no-internal-flow-type": "error",
   },
-  settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".d.ts", ".ts", ".tsx"],
-      },
-    },
-  },
 };

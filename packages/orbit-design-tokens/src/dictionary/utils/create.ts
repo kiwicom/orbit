@@ -23,7 +23,7 @@ export const falsyString = (condition: boolean, string: string): string | undefi
  */
 export const createVariableDeclarator = (
   name: string,
-  type = "const",
+  type: "const" | "type" = "const",
   value: string,
   withExport = false,
 ): string => {

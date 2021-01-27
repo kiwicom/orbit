@@ -10,12 +10,12 @@ const getParserOption = platform => {
 };
 
 function resolveConfig() {
-  const configFile = prettier.resolveConfigFile.sync();
-  if (!configFile) throw new Error("Can't find prettier config.");
-  return prettier.resolveConfig.sync(configFile);
+  const config = prettier.resolveConfig.sync("");
+  if (!config) throw new Error("Can't find prettier config.");
+  return config;
 }
 
-const formatCode = (code: (string | undefined)[], platform: string): string =>
+const formatCode = (code: Array<string | undefined>, platform: string): string =>
   prettier.format(Array.isArray(code) ? code.join("\n") : code, {
     ...resolveConfig(),
     parser: getParserOption(platform),

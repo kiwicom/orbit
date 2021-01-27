@@ -1,5 +1,4 @@
 // @noflow
-/* eslint-disable import/no-extraneous-dependencies */
 import xml from "xml";
 import fsx from "fs-extra";
 

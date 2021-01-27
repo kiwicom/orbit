@@ -1,6 +1,7 @@
 import * as React from "react";
-import { load, save } from "../utils/storage";
 import { PageRendererProps } from "gatsby";
+
+import { load, save } from "../utils/storage";
 
 interface BookmarksCtx {
   bookmarks: Record<string, string>;
@@ -34,7 +35,7 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
 
   React.useEffect(() => {
     if (Object.values(bookmarks).includes(location.pathname)) setAdded(true);
-  }, [setAdded, bookmarks]);
+  }, [setAdded, bookmarks, location.pathname]);
 
   const toggleBookmark = () => {
     const pg = { [page]: location.pathname };

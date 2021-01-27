@@ -35,7 +35,9 @@
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {
+    "elasticlunr": "^0.9.5",
     "gatsby-remark-copy-linked-files": "^2.9.0",
+    "gatsby-remark-images": "^3.9.0",
     "prism-react-renderer": "^1.1.1",
     "react-polymorphic-types": "^1.0.3"
   }

@@ -12,6 +12,7 @@ import {
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { navigate } from "gatsby";
 import { css } from "styled-components";
+
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 
@@ -78,7 +79,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
 );
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <figcaption>
-    <Text align="center" italic={true}>
+    <Text align="center" italic>
       {children}
     </Text>
   </figcaption>
@@ -101,7 +102,10 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   </dt>
 );
 export const inlineCode = InlineCode;
-export const a = ({ children, href }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+export const a = function Anchor({
+  children,
+  href,
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isExternal = useIsUrlExternal(href);
   return (
     <span

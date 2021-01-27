@@ -1,10 +1,10 @@
 import React from "react";
-import Modal from "../";
+
+import Modal from "..";
 
 export default function Test() {
   const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);
   const scrollingElementRef = React.useCallback(node => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     node?.addEventListener("scroll", () => {});
   }, []);
   React.useEffect(() => {

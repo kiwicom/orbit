@@ -2,14 +2,15 @@ import * as React from "react";
 import SearchIcon from "@kiwicom/orbit-components/lib/icons/Search";
 import { Event } from "@kiwicom/orbit-components/lib/common/common";
 import { Index } from "elasticlunr";
+import { Link } from "gatsby";
+import { useCombobox } from "downshift";
+
 import useSearchIndex from "../../hooks/useSearchIndex";
 import StyledWrapper from "./primitives/StyledWrapper";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPreffix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
 import { StyledDropdown, StyledDropdownItem } from "./primitives/StyledDropdown";
-import { Link } from "gatsby";
-import { useCombobox } from "downshift";
 
 type InputEvent = Event<React.SyntheticEvent<HTMLInputElement>>;
 type KeyboardEvent = Event<React.KeyboardEvent<HTMLInputElement>>;
@@ -50,12 +51,12 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const { index } = useSearchIndex();
 
-  const handleSearch = (value: string) => {
+  const handleSearch = (val: string) => {
     const indexed = Index.load(index);
     setResults(
-      indexed.search(value, { expand: true }).map(({ ref }) => indexed.documentStore.getDoc(ref)),
+      indexed.search(val, { expand: true }).map(doc => indexed.documentStore.getDoc(doc.ref)),
     );
-    if (onChange) onChange(value)(results);
+    if (onChange) onChange(val)(results);
   };
 
   const {

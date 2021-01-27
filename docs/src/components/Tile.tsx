@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Heading } from "@kiwicom/orbit-components";
-import ArrowRight from "./ArrowRight";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
+import ArrowRight from "./ArrowRight";
+
 interface Props {
-  grow?: number;
   title: string;
-  icon?: React.ComponentType;
   moreText?: string;
   linkTo?: string;
   children: React.ReactNode;

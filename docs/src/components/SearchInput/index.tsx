@@ -54,7 +54,6 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
   const handleSearch = (val: string) => {
     const indexed = Index.load(index);
     setResults(
-      // @ts-expect-error TODO
       indexed.search(val, { expand: true }).map(doc => indexed.documentStore.getDoc(doc.ref)),
     );
     if (onChange) onChange(val)(results);

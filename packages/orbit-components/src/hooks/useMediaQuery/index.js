@@ -8,11 +8,11 @@ import type { UseMediaQuery } from "./index";
 
 const useMediaQuery: UseMediaQuery = () => {
   const media = React.useContext(QueryContext);
+  const value = useMediaQueryContext();
   if (media != null && Object.values(media).some(v => v != null)) {
     return media;
   }
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  return useMediaQueryContext();
+  return value;
 };
 
 export default useMediaQuery;

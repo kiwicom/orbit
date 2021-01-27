@@ -64,16 +64,17 @@ const InputTags = ({ children }: Props) => {
       }
     };
 
-    if (tagsRef && tagsRef.current) {
-      tagsRef.current.addEventListener("mousemove", handleMouseMove);
-      tagsRef.current.addEventListener("mouseup", handleMouseUp);
+    const tags = tagsRef.current;
+
+    if (tags) {
+      tags.addEventListener("mousemove", handleMouseMove);
+      tags.addEventListener("mouseup", handleMouseUp);
     }
 
     return () => {
-      const tagsNode = tagsRef.current;
-      if (tagsNode) {
-        tagsNode.removeEventListener("mousemove", handleMouseMove);
-        tagsNode.removeEventListener("mouseup", handleMouseUp);
+      if (tags) {
+        tags.removeEventListener("mousemove", handleMouseMove);
+        tags.removeEventListener("mouseup", handleMouseUp);
       }
     };
   }, [tagsRef]);

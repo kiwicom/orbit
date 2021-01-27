@@ -1,5 +1,4 @@
-// @flow
-module.exports = `/**
+export default `/**
  #####################################################
  #                                                   #
  # DO NOT EDIT DIRECTLY, THIS FILE IS AUTO-GENERATED #

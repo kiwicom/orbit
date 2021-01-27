@@ -11,7 +11,7 @@
     "orbit-design-tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "build": "yarn orbit-design-tokens build && yarn orbit-components build",
     "build-ci": "lerna bootstrap && yarn build",
-    "postinstall": "yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
+    "postinstall": "yarn orbit-design-tokens build && yarn orbit-components build:icons && yarn orbit-components build:typeFiles",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "flow:check": "flow check",

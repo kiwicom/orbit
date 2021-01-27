@@ -1,4 +1,3 @@
-// @flow
 import createTheme from "./js/createTheme";
 
 export const defaultTheme = createTheme();

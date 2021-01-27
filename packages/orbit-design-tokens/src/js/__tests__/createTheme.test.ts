@@ -1,4 +1,3 @@
-// @flow
 import createTheme from "../createTheme";
 import { defaultTheme } from "../../index";
 

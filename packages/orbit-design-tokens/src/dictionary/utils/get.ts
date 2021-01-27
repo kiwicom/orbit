@@ -1,16 +1,23 @@
-// @flow
-const _ = require("lodash");
+import _ from "lodash";
 
-const { groupByName, groupByCategory } = require("./groupBy");
+import { groupByName, groupByCategory } from "./groupBy";
+import { Property } from "style-dictionary";
+
+type FoundationProperties = {
+  name: string;
+  value: string | number | undefined;
+};
+type NameValueSelector = (arg0: Property) => FoundationProperties;
+
 /*
   Returns array of unique names of colors, e.g. ["blue", "red"].
   The transform "attribute/foundation" needs to be used.
  */
-const getAllPaletteNames = properties =>
+export const getAllPaletteNames = (properties: Property[]): string[] =>
   _.uniq(
     _.map(
       _.filter(properties, ({ attributes: { category } }) => category === "palette"),
-      ({ attributes: { name } }) => name,
+      ({ attributes: { name } }) => String(name),
     ),
   );
 
@@ -18,8 +25,8 @@ const getAllPaletteNames = properties =>
   Returns array of unique names of categories, e.g. ["base", "palette"].
   The transform "attribute/foundation" needs to be used.
  */
-const getAllCategories = properties =>
-  _.uniq(_.map(properties, ({ attributes: { category } }) => category));
+export const getAllCategories = (properties: Property[]): string[] =>
+  _.uniq(_.map(properties, ({ attributes: { category } }) => String(category)));
 
 /*
   Returns object based on categories, e.g.
@@ -39,9 +46,9 @@ const getAllCategories = properties =>
   By default it returns prop.name and prop.value from the property,
   but can be changed by custom use of nameValueSelector
  */
-const getFoundationProperties = (
-  allProperties,
-  nameValueSelector = ({ name, value }) => ({ name, value }),
+export const getFoundationProperties = (
+  allProperties: Property[],
+  nameValueSelector: NameValueSelector = ({ name, value }) => ({ name, value }),
 ) => {
   return _.mapValues(groupByCategory(allProperties), values => {
     return _.mapValues(groupByName(values), properties => {
@@ -55,19 +62,15 @@ const getFoundationProperties = (
   Because "attribute/foundation" is used, we can use foundationName and foundationValue
   for the flow and typescript platform. Otherwise basic name and value of the property.
  */
-const getFoundationNameValue = platform => {
+export const getFoundationNameValue = (platform: string): NameValueSelector => {
   if (platform === "flow" || platform === "typescript") {
-    return ({ attributes: { foundationName, foundationType } }) => ({
-      name: foundationName,
+    return ({ attributes: { foundationName, foundationType } }: Property) => ({
+      name: String(foundationName),
       value: foundationType,
     });
   }
-  return ({ attributes: { foundationName }, value }) => ({ name: foundationName, value });
-};
-
-module.exports = {
-  getAllPaletteNames,
-  getAllCategories,
-  getFoundationProperties,
-  getFoundationNameValue,
+  return ({ attributes: { foundationName }, value }) => ({
+    name: String(foundationName),
+    value: value,
+  });
 };

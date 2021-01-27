@@ -15,10 +15,10 @@
     "README.md"
   ],
   "scripts": {
-    "build:dictionary": "yarn style-dictionary build --config ./src/dictionary/build.js",
-    "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/dictionary/* src",
+    "build:dictionary": "ts-node ./src/dictionary/build.ts",
+    "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5",
     "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
-    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
+    "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "prepublishOnly": "yarn build"
   },
   "author": "Kiwi.com",
@@ -30,6 +30,7 @@
     "tokens"
   ],
   "devDependencies": {
+    "@types/ramda": "^0.27.1",
     "eslint-config-airbnb-base": "^14.1.0",
     "lodash": "^4.17.14",
     "style-dictionary": "^2.10.2"

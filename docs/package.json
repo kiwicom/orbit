@@ -35,7 +35,6 @@
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {
-    "@types/elasticlunr": "^0.9.1",
     "elasticlunr": "^0.9.5",
     "gatsby-remark-copy-linked-files": "^2.9.0",
     "gatsby-remark-images": "^3.9.0",

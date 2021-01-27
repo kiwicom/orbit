@@ -14,7 +14,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function Card({ title, moreText = "Learn more", linkTo, children }: Props) {
+export default function Tile({ title, moreText = "Learn more", linkTo, children }: Props) {
   const theme = useTheme();
   return (
     <div

@@ -8,9 +8,9 @@ import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
 import ButtonLink from "../components/ButtonLink";
-import Card from "../components/Card";
+import Tile from "../components/Tile";
 
-const CardWrapper = styled.div`
+const TileWrapper = styled.div`
   flex: 1;
   align-self: stretch;
   display: flex;
@@ -79,25 +79,25 @@ export default function Home() {
         </div>
 
         <Inline spacing="XLarge">
-          <CardWrapper>
-            <Card
+          <TileWrapper>
+            <Tile
               title="Components"
               moreText="See our components"
               linkTo="/components/action/button/"
             >
               Our components are a collection of interface elements that can be reused across the
               Orbit design system.
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card
+            </Tile>
+          </TileWrapper>
+          <TileWrapper>
+            <Tile
               title="Patterns"
               moreText="See our patterns"
               linkTo="/design-patterns/progressive-disclosure/"
             >
               Missing description for patterns card.
-            </Card>
-          </CardWrapper>
+            </Tile>
+          </TileWrapper>
         </Inline>
 
         <div
@@ -109,21 +109,21 @@ export default function Home() {
         >
           <Heading as="h2">Foundation</Heading>
           <Inline spacing="XLarge">
-            <CardWrapper>
-              <Card title="Colors" linkTo="/foundation/colors/">
+            <TileWrapper>
+              <Tile title="Colors" linkTo="/foundation/colors/">
                 Color is used to signal structure on a page, to highlight or emphasize...
-              </Card>
-            </CardWrapper>
-            <CardWrapper>
-              <Card title="Typography">
+              </Tile>
+            </TileWrapper>
+            <TileWrapper>
+              <Tile title="Typography">
                 Typography is critical for communicating the hierarchy of a page.
-              </Card>
-            </CardWrapper>
-            <CardWrapper>
-              <Card title="Spacings">
+              </Tile>
+            </TileWrapper>
+            <TileWrapper>
+              <Tile title="Spacings">
                 Consistent spacing makes an interface more clear and easy to scan.
-              </Card>
-            </CardWrapper>
+              </Tile>
+            </TileWrapper>
           </Inline>
           <div
             css={css`
@@ -146,22 +146,22 @@ export default function Home() {
         >
           <Heading as="h2">Content</Heading>
           <Inline spacing="XLarge">
-            <CardWrapper>
-              <Card title="Voice & tone" linkTo="/kiwi-use/content/specific-areas/social-media/">
+            <TileWrapper>
+              <Tile title="Voice & tone" linkTo="/kiwi-use/content/specific-areas/social-media/">
                 How we write at Kiwi.com.
-              </Card>
-            </CardWrapper>
-            <CardWrapper>
-              <Card title="Grammar & mechanics" linkTo="/kiwi-use/content/grammar-and-mechanics/">
+              </Tile>
+            </TileWrapper>
+            <TileWrapper>
+              <Tile title="Grammar & mechanics" linkTo="/kiwi-use/content/grammar-and-mechanics/">
                 Typography is critical for communicating the hierarchy of a page.Basic grammar
                 guidelines for writing with Orbit.
-              </Card>
-            </CardWrapper>
-            <CardWrapper>
-              <Card title="Glossary" linkTo="/kiwi-use/content/glossary/">
+              </Tile>
+            </TileWrapper>
+            <TileWrapper>
+              <Tile title="Glossary" linkTo="/kiwi-use/content/glossary/">
                 A list of most used words and phrases in Kiwi.com products.
-              </Card>
-            </CardWrapper>
+              </Tile>
+            </TileWrapper>
           </Inline>
           <div
             css={css`

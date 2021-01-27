@@ -8,7 +8,7 @@ const detectOriginalOrbitName = (node: t.ImportDeclaration) => {
   }
   const originalImport = node.source.value.match(/@kiwicom\/orbit-components\/(?:lib|es)\/([^/]*)/);
   if (originalImport) return originalImport[1];
-  return null;
+  return undefined;
 };
 
 export default detectOriginalOrbitName;

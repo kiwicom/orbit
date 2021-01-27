@@ -10,8 +10,6 @@ const transform = require("through2").obj;
 const path = require("path");
 const dotenv = require("dotenv-safe");
 
-const eslintCI = require("./tasks/eslintCI");
-
 function configureDotenv(done) {
   dotenv.config({
     example: ".env.example",
@@ -72,6 +70,5 @@ function publishPackages() {
 }
 
 module.exports = {
-  eslintCI,
   publish: series(configureDotenv, previewChangelog, publishPackages),
 };

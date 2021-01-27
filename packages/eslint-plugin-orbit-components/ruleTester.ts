@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { RuleTester } from "eslint";
 
 const ruleTester = new RuleTester({

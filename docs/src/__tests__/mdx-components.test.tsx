@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
+
 import * as Components from "../mdx-components";
 
 describe("MDX components", () => {

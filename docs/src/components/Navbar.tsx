@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../images/orbit.svg";
 import { Link } from "gatsby";
 import Inline from "@kiwicom/orbit-components/lib/Inline";
+
+import Logo from "../images/orbit.svg";
 import NavigationLinks from "./Navigation";
 import Input from "./SearchInput";
 import Bookmarks from "./Bookmarks";

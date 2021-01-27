@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { capitalize, omitNumbers } from "../../utils/common";
 import { graphql, useStaticQuery, Link } from "gatsby";
+
+import { capitalize, omitNumbers } from "../../utils/common";
 
 const StyledList = styled.ul`
   padding: 10px 0;
@@ -87,6 +88,8 @@ export default function MobileNavigation({ name }: Props) {
       <span>{capitalize(name.split("-").join(" "))}</span>
 
       {isExpanded && (
+        // TODO: evaluate this error
+        // eslint-disable-next-line jsx-a11y/role-supports-aria-props
         <StyledList
           id="dropdown"
           role="menu"

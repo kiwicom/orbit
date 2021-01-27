@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import useCollections from "../../hooks/useCollections";
 import { Link as GatsbyLink } from "gatsby";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
+
+import useCollections from "../../hooks/useCollections";
 import MobileNavigation from "./MobileNavigation";
 import { capitalize } from "../../utils/common";
 import Sidenav from "../Sidenav";

@@ -39,6 +39,7 @@ module.exports = {
           "**/tasks/**",
           "docs/gatsby-*.js",
           "docs/plugins/**",
+          "docs/utils/**",
           "packages/*/.storybook/**",
           "**/config/**",
           "gulpfile.js",

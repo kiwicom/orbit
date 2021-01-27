@@ -16,12 +16,12 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in DestinationHeader component.
 
-| Name            | Type          | Default  | Description                                                                  |
-| :-------------- | :------------ | :------- | :--------------------------------------------------------------------------- |
-| dataTest        | `string`      |          | Optional prop for testing purposes.                                          |
-| destinationCity | `Translation` |          | The name of the destination.                                                 |
-| image           | `string`      |          | The image name of the destination. [See Functional specs](#functional-specs) |
-| onGoBack        | `() => void / | Promise` |                                                                              | Function for handling onGoBack event. |
+| Name            | Type                    | Default | Description                                                                  |
+| :-------------- | :---------------------- | :------ | :--------------------------------------------------------------------------- |
+| dataTest        | `string`                |         | Optional prop for testing purposes.                                          |
+| destinationCity | `Translation`           |         | The name of the destination.                                                 |
+| image           | `string`                |         | The image name of the destination. [See Functional specs](#functional-specs) |
+| onGoBack        | `() => void \| Promise` |         | Function for handling onGoBack event.                                        |
 
 ## Functional specs
 

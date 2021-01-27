@@ -10,7 +10,7 @@ interface Props {
   title: string;
   icon?: React.ComponentType;
   moreText?: string;
-  linkTo: string;
+  linkTo?: string;
   children: React.ReactNode;
 }
 
@@ -61,32 +61,34 @@ export default function Card({ title, moreText = "Learn more", linkTo, children 
           </p>
         </div>
       </div>
-      <div
-        css={css`
-          text-align: right;
-        `}
-      >
-        <Link
+      {linkTo && (
+        <div
           css={css`
-            display: inline-flex;
-            align-items: center;
-            > * + * {
-              margin-left: 0.25rem;
-            }
-            color: ${theme.orbit.colorTextLinkPrimary};
-            font-weight: 500;
-            text-decoration: underline;
-            &:hover {
-              color: ${theme.orbit.colorTextLinkPrimaryHover};
-              text-decoration: none;
-            }
+            text-align: right;
           `}
-          to={linkTo}
         >
-          <span>{moreText}</span>
-          <ArrowRight />
-        </Link>
-      </div>
+          <Link
+            css={css`
+              display: inline-flex;
+              align-items: center;
+              > * + * {
+                margin-left: 0.25rem;
+              }
+              color: ${theme.orbit.colorTextLinkPrimary};
+              font-weight: 500;
+              text-decoration: underline;
+              &:hover {
+                color: ${theme.orbit.colorTextLinkPrimaryHover};
+                text-decoration: none;
+              }
+            `}
+            to={linkTo}
+          >
+            <span>{moreText}</span>
+            <ArrowRight />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

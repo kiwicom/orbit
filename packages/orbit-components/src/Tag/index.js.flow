@@ -11,7 +11,6 @@ type Size = "small" | "normal";
 
 export type Props = {|
   +children: React.Node,
-  +icon?: React.Node,
   +selected?: boolean,
   +size?: Size,
   +onRemove?: () => void | Promise<any>,
@@ -19,6 +18,6 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;
 
 declare export var StyledTag: ReactComponentStyled<any>;

@@ -5,13 +5,7 @@
 import * as React from "react";
 import type { ReactComponentStyled } from "styled-components";
 
-import type {
-  Globals,
-  Ref,
-  Translation,
-  TranslationString,
-  DataAttrs,
-} from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 type Option = {|
@@ -25,7 +19,6 @@ type Size = "small" | "normal";
 
 export type Props = {|
   ...Globals,
-  ...Ref,
   ...spaceAfter,
   ...DataAttrs,
   +id?: string,
@@ -50,4 +43,4 @@ export type Props = {|
 
 declare export var SelectContainer: ReactComponentStyled<any>;
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLElement>;

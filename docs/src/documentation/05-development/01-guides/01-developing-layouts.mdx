@@ -1,3 +1,76 @@
 ---
 title: Developing layouts
+redirect_from:
+  - /guides/developing-layouts/
 ---
+
+Orbit offers options for developing clear layouts in a systematic way that fits the Orbit system.
+There are a few different components that offer specific possibilities.
+
+To see which component is right for you, try out this interactive decision tree.
+The reasons for the recommendations are below.
+
+<iframe
+  style="border: 1px solid rgba(0, 0, 0, 0.1);width:700px; height:350px;"
+  src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FA90hZFLfuo4C69QvApNuRw%2FLayout-component-guide%3Fnode-id%3D1%253A179%26scaling%3Dmin-zoom"
+  allowfullscreen=""
+></iframe>
+
+Each of the five basic layout components has specific cases where it's used:
+
+| Component | Use cases                                                                                                                                                                                                                                                                                                                                                            |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Layout    | Fixed page layouts                                                                                                                                                                                                                                                                                                                                                   |
+| Grid      | General screen layout (including modals)                                                                                                                                                                                                                                                                                                                             |
+| Box       | Component layout, positioning,spacing, visual style (universal building block for layouts)                                                                                                                                                                                                                                                                           |
+| Stack     | For single-direction groups of components <ul><li>Adds space between elements horizontally **_or_** vertically</li><li>Can be a column</li><li>Container can be inline</li><li>Offers more options for each direction (between & around in justify and stretch in align)</li><li>More flex options: shrink, grow, basis</li><li>Option for wrap or no wrap</li></ul> |
+| Inline    | For groups of components that could go in both directions<ul><li>Adds space between elements horizontally **_and_** vertically</li><li>Can't force a column</li><li>Container can't be inline (onlycontents)</li><li>Always wraps</li></ul>                                                                                                                          |
+
+## Components
+
+### Page layout
+
+For laying out everything on a screen there are two basic options:
+
+- [Layout](/components/layout/layout/)
+- [Grid](/components/layout/grid/)
+
+The Layout component offers three basic options for columns.
+These can be slightly customized in terms of when they appear.
+But the basic format is set.
+
+Grids offer more flexibility in laying out your screens.
+It lets you set up rows and columns for your screens
+that can change based on screen size and media queries.
+There are many more options that you have to set.
+
+### Building block
+
+To build your screens, Orbit offers the basic building block of a [box](/components/layout/box/).
+
+It provides a range of options on **position**, **layout**, **spacing**, and **visuals**.
+Use it within your page layout to get your components exactly where you want them.
+
+The many options available offer you freedom for your layouts.
+But it also means you have more things you need to set.
+
+Boxes work well for positioning and providing spacing
+for both individual and groups of components.
+
+### Groups of components
+
+In addition to boxes,
+there are two components that offer consistent **spacing** for groups of components:
+
+- [Stack](/components/layout/stack/)
+- [Inline](/components/layout/inline/)
+
+Stacks work when you want to focus on a group of components laid out in a single direction.
+The direction can be either horizontal or vertical
+and there are lots of options for how the components will fit into the space.
+In all cases, there will be consistent spacing in a single direction.
+
+Inline components give you consistent spacing both horizontally and vertically.
+They work for sets of components that might span multiple lines.
+There are fewer options for fitting the components into the space,
+but there is consistent spacing in two directions.

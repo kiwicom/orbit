@@ -1,3 +1,73 @@
 ---
 title: Dictionary
+redirect_from:
+  - /guides/dictionary/
 ---
+
+Our dictionary handles common translations like `Close` in components.
+
+Find our dictionary at: `@kiwicom/orbit-components/lib/data/dictionary/...`
+The files contain our own translations.
+
+## Example
+
+You can use dictionaries with various components.
+
+```jsx
+import en_GB from "@kiwicom/orbit-components/lib/data/dictionary/en-GB.json";
+import cs_CZ from "@kiwicom/orbit-components/lib/data/dictionary/cs-CZ.json";
+import Pagination from "@kiwicom/orbit-components/lib/Pagination";
+import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
+
+const App = () => (
+  <ThemeProvider theme={defaultTheme} dictionary={en_GB}>
+    <Pagination pageCount={4} selectedPage={3} hideLabels={false} />
+  </ThemeProvider>
+  <ThemeProvider theme={defaultTheme} dictionary={cs_CZ}>
+    <Pagination pageCount={4} selectedPage={3} hideLabels={false} />
+  </ThemeProvider>
+);
+```
+
+It's also possible to use them with [Translate components](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Translate)
+and useTranslate hooks for your functional components.
+
+## Fallbacks
+
+- If a translation key doesn't exist in your language,
+  the fallback is `en_GB`, which is our default language.
+- If a translation key doesn't exist in either file (your language, the default language),
+  the translation key will be rendered (for example, `button_close`).
+
+## Your own dictionary
+
+You can add your own dictionary.
+Just pass an object containing keys and values.
+
+```jsx
+import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+
+const App = () => (
+  <ThemeProvider
+    dictionary={{
+      button_close: "My own translation",
+    }}
+  >
+    <Button type="secondary" size="large" />
+  </ThemeProvider>
+);
+```
+
+## Languages
+
+We store all inner strings we translate inside of our Github repository
+and export them to NPM.
+
+<FancyLink icon="github">
+
+
+[See all language files](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/data/dictionary)
+
+</FancyLink>
+

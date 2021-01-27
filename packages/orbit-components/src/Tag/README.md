@@ -24,7 +24,7 @@ Table below contains all types of the props available in the Tag component.
 | onRemove     | `() => void \| Promise` |         | Function for handling the onClick event of the close icon. [See Functional specs](#functional-specs) |
 | selected     | `boolean`               | `false` | If `true`, the Tag will have selected styles. [See Functional specs](#functional-specs)              |
 | size         | [`enum`](#enum)         | `small` | Size of the Tag.                                                                                     |
-| icon         | `React.Node`            |         | The displayed icon on the left.                                                                      |
+| ref          | `func`                  |         | Prop for forwarded ref of the Tag                                                                    |
 
 ### enum
 

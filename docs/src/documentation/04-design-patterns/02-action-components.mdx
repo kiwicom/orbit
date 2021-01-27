@@ -1,3 +1,207 @@
 ---
 title: Choosing components for actions
+redirect_from:
+  - /guides/using-button-type-components/
 ---
+
+import NewWindow from "@kiwicom/orbit-components/lib/icons/NewWindow";
+
+Sometimes it's good to have a lot of choices.
+Other times it can be overwhelming
+(which is why Orbit is based around [progressive disclosure](/design-patterns/progressive-disclosure/)).
+We have multiple options for presenting possible actions,
+including [buttons](/components/action/button/),
+[button links](/components/action/buttonlink/),
+and [text links](/components/action/textlink/).
+
+If you'd like some help with which component to use,
+try out this interactive decision tree
+You can read about the reasons for the recommendations below.
+
+<iframe
+  style="border: 1px solid rgba(0, 0, 0, 0.1);width:700px; height:350px;"
+  src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FDepQNenR2nFql1K6frx0Fj%2FButton-types-guide?node-id=1%3A2%26scaling%3Dmin-zoom&amp;chrome=DOCUMENTATION"
+  allowfullscreen=""
+  width="800px"
+  height="600px"
+></iframe>
+
+## Buttons
+
+Our main [buttons](/components/action/button/) come in three sizes (_large_, _normal_, and _small_)
+and six types:
+
+- Primary
+- Primary subtle
+- Secondary
+- Critical
+- Critical subtle
+- White
+
+### Primary buttons
+
+Best for the [single primary action](/components/action/button/#identify-the-most-important-actions)
+on the screen.
+Use them when you want to continue in the flow of the app.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="96%3A1076"
+  alt="A form with a primary button to 'Sign up'."
+/>
+
+### Primary subtle buttons
+
+Also used for primary actions
+but those that do **not** directly push you to continue in the flow.
+They should be used when there are multiple primary actions on one page with the same importance.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="100%3A0"
+  alt="Images, text, and buttons for three options: Add a meal, Rent a car, Add insurance. Each option has a primary subtle button."
+/>
+
+### Secondary buttons
+
+Used for actions that aren't so important.
+They are usually connected to primary buttons.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="101%3A0"
+  alt="A modal to find accommodation, with a primary button to 'Find a room' and a secondary button to 'Close'."
+/>
+
+### Critical buttons
+
+Used when you need to permanently delete something
+or have a critical action that can't be taken back.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="101%3A52"
+  alt="A dialog asking to confirm account deletion with a critical button to 'Delect account' and a secondary button to 'Cancel'."
+/>
+
+### Critical subtle buttons
+
+Used mainly as complementary buttons to critical ones.
+They're often used as a step before permanent deletion,
+so they're visually less important than critical buttons.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="105%3A2047"
+  alt="A screen with details on a traveler, with a critical subtle button at the button to 'Delete traveler'."
+  caption="This is followed by a dialog confirming the deletion with a critical button (not a subtle one)."
+/>
+
+### White buttons
+
+Used in settings where the background is darker than usua
+and normal buttons wouldn't work,
+such as a [tooltip](/components/overlay/tooltip/) or a [picture card](/components/visuals/picturecard/).
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="111%3A1400"
+  alt="A dark tooltip with some text and a white button to 'Learn more'."
+/>
+
+## Alert buttons
+
+Alert buttons should be used **only in [alerts](/components/information/alert/)**.
+
+Each alert time has a basic button type (used in place of a primary button)
+and a subtle button type (used in place of a secondary button).
+There should be no more than _one basic and one subtle button_.
+(See [alignment guidance below](#button-alignment-in-alert).)
+
+<ReactExample name="Alert actions side-by-side" />
+
+## ButtonLinks
+
+ButtonLinks come in three sizes (_large_, _normal_, and _small_) and three types:
+
+- [Primary](#primary-buttonlinks)
+- [Secondary](#secondary-buttonlinks)
+- [Critical](#critical-buttonlinks)
+
+### Primary ButtonLinks
+
+Great as complements to **primary buttons**
+or as a primary standalone action that is visually less heavy than **primary subtle buttons**.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="104%3A180"
+  alt="A modal with a form for places to visit, a primary button to 'Search journey', and a primary button link to 'Add destination'."
+/>
+
+### Secondary ButtonLinks
+
+Great as complements to **secondary buttons** or as a secondary standalone action.
+Often used for filters.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="104%3A36"
+  alt="A search filter with a list of carriers that is incomplete and a secondary button link to 'Show all carriers'."
+/>
+
+### Critical ButtonLinks
+
+Great as complements to **critical buttons**
+or as a secondary standalone action that is visually less heavy than **critical subtle buttons**.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="105%3A2185"
+  alt="A form to edit payment card details with a secondary button to 'Close' and a critical button link to 'Delete card'."
+  caption="This can be followed by a confirmation dialog with a critical button."
+/>
+
+## TextLinks
+
+Our main TextLinks come in three sizes (_large_, _normal_, and _small_) and two types:
+
+- Primary
+- Secondary
+
+All types can be external to show that they navigate to external pages.
+With these links, the NewWindow icon (<NewWindow />) is automatically placed on the right side.
+
+**_Primary TextLinks_** are used for primary actions inside of text (a paragraph).
+
+**_Secondary TextLinks_** are used for secondary actions inside of text (a paragraph).
+
+## Button alignment
+
+**_Primary buttons_** always appear to the right.
+_Secondary buttons_ appear to the left of the primary button.
+Depending on the context, you can use _primary subtle buttons_ on either the left or right side.
+
+### Button alignment in Alert
+
+**Standalone buttons** should always be aligned to the left.
+If you have **multiple buttons**, align all buttons to the left.
+**Primary buttons** should be first and then **Secondary** buttons.
+
+If the text in either of the buttons in a two-button layout is too long,
+the buttons get placed on separate lines.
+
+### Button alignment in Modal
+
+When there is only _one action_ in Modal,
+se a **primary subtle button** aligned to the left.
+If there are _two actions_,
+use **primary buttons** on the right of the modal action area
+and **Secondary buttons** on the left.
+
+### Button alignment in Card
+
+The Card action area is on the right of the header
+for both mobile and desktop versions.
+In this area, we recommend using only a small **primary subtle button**
+or a small **secondary button**.

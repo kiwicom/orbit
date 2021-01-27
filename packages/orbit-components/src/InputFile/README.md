@@ -33,7 +33,7 @@ Table below contains all types of the props available in the InputFile component
 | placeholder      | `TranslationString`        | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)                                                                                   |
 | ref              | `func`                     |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)                                                                             |
 | spaceAfter       | `enum`                     |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| tabIndex         | `string                    | number`              |                                                                                                                                                                | Specifies the tab order of an element |
+| tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
 
 ## Functional specs
 

@@ -18,18 +18,18 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the TooltipPrimitive component.
 
-| Name                 | Type            | Default | Description                                                                                                                |
-| :------------------- | :-------------- | :------ | :------------------------------------------------------------------------------------------------------------------------- |
-| **children**         | `React.Node`    |         | The reference element where the TooltipPrimitive will appear.                                                              |
-| **content**          | `React.Node`    |         | The content to display in the TooltipPrimitive.                                                                            |
-| dataTest             | `string`        |         | Optional prop for testing purposes.                                                                                        |
-| enabled              | `boolean`       | `true`  | Enable render of tooltipPrimitive                                                                                          |
-| preferredAlign       | [`enum`](#enum) |         | The preferred align to choose [See Functional specs](#functional-specs)                                                    |
-| preferredPosition    | [`enum`](#enum) |         | The preferred position to choose [See Functional specs](#functional-specs)                                                 |
-| removeUnderlinedText | `boolean`       |         | Removes underline on child component, when underline is not desired.                                                       |
-| size                 | [`enum`](#enum) |         | The maximum possible size of the TooltipPrimitive.                                                                         |
-| stopPropagation      | `boolean`       |         | If `true` the click event on children won't bubble. Useful when you use TooltipPrimitive inside another clickable element. |
-| tabIndex             | `string         | number` | `"0"`                                                                                                                      | Specifies the tab order of an element |
+| Name                 | Type               | Default | Description                                                                                                                |
+| :------------------- | :----------------- | :------ | :------------------------------------------------------------------------------------------------------------------------- |
+| **children**         | `React.Node`       |         | The reference element where the TooltipPrimitive will appear.                                                              |
+| **content**          | `React.Node`       |         | The content to display in the TooltipPrimitive.                                                                            |
+| dataTest             | `string`           |         | Optional prop for testing purposes.                                                                                        |
+| enabled              | `boolean`          | `true`  | Enable render of tooltipPrimitive                                                                                          |
+| preferredAlign       | [`enum`](#enum)    |         | The preferred align to choose [See Functional specs](#functional-specs)                                                    |
+| preferredPosition    | [`enum`](#enum)    |         | The preferred position to choose [See Functional specs](#functional-specs)                                                 |
+| removeUnderlinedText | `boolean`          |         | Removes underline on child component, when underline is not desired.                                                       |
+| size                 | [`enum`](#enum)    |         | The maximum possible size of the TooltipPrimitive.                                                                         |
+| stopPropagation      | `boolean`          |         | If `true` the click event on children won't bubble. Useful when you use TooltipPrimitive inside another clickable element. |
+| tabIndex             | `string \| number` | `"0"`   | Specifies the tab order of an element                                                                                      |
 
 ## enum
 

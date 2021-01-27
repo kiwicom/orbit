@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.4.0...orbit.kiwi@0.4.1) (2021-01-25)
+
+**Note:** Version bump only for package orbit.kiwi
+
+
+
+
+
+# [0.4.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.3.0...orbit.kiwi@0.4.0) (2021-01-22)
+
+
+### Features
+
+* **docs:** add options for redirects ([97e41b8](https://github.com/kiwicom/orbit/commit/97e41b82de62d1d6927f5404d7d4b8cc11cb606e))
+* **docs:** sidenav, bookmarks ([#2621](https://github.com/kiwicom/orbit/issues/2621)) ([2f08ff6](https://github.com/kiwicom/orbit/commit/2f08ff6e7954332d7b926e2433c32a350af4eb4e))
+* add more content to the landing page ([#2645](https://github.com/kiwicom/orbit/issues/2645)) ([480d2d9](https://github.com/kiwicom/orbit/commit/480d2d9dd2f99c865e52f80d3ad60d869c35d9b1))
+
+
+
+
+
 # [0.3.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.2.0...orbit.kiwi@0.3.0) (2021-01-13)
 
 

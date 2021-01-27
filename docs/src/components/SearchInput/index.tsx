@@ -18,7 +18,7 @@ interface SearchResult {
   id: string;
   excerpt: string;
   title: string;
-  slug: string;
+  path: string;
 }
 
 interface Props {
@@ -97,10 +97,10 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
         {isOpen &&
           results.length > 0 &&
           results.map(item => {
-            const { title, slug, id } = item;
+            const { title, id, path } = item;
             return (
               <StyledDropdownItem key={id} {...getItemProps({ item })}>
-                <Link to={slug}>{title}</Link>
+                <Link to={path}>{title}</Link>
               </StyledDropdownItem>
             );
           })}

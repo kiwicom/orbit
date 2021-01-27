@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.108.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.0...@kiwicom/orbit-components@0.108.1) (2021-01-25)
+
+
+### Bug Fixes
+
+* **Seat:** visual fixes ([#2678](https://github.com/kiwicom/orbit/issues/2678)) ([a60c333](https://github.com/kiwicom/orbit/commit/a60c333af361add73569c4456589b570c3c8aac3))
+
+
+
+
+
+# [0.108.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.107.0...@kiwicom/orbit-components@0.108.0) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Accordion:** missing onExpand ts ([4a64429](https://github.com/kiwicom/orbit/commit/4a644293f97a415a01e6a05cb55bcc6412d61b26))
+* **Card:** missing titleAs in d.ts ([#2666](https://github.com/kiwicom/orbit/issues/2666)) ([0f60daa](https://github.com/kiwicom/orbit/commit/0f60daa418b7efbd69a8e4c9a94f8a30528f920b))
+* **IllustrationPrimitive:** allow empty alt ([1c9e3d7](https://github.com/kiwicom/orbit/commit/1c9e3d783ea0957fc447be3342c5b5bcdb196e4d))
+* **Tag:** focus only if onClick/onRemove provided ([41a163a](https://github.com/kiwicom/orbit/commit/41a163a764b679e3813cdc1daf217a71f7f278a0))
+
+
+### Features
+
+* **Tag:** add forwardRef ([4445cbb](https://github.com/kiwicom/orbit/commit/4445cbb37944172d0b859a605a2bfb84de9f2dfa))
+* **Tag:** Icon prop removed, changed colors ([4b918c0](https://github.com/kiwicom/orbit/commit/4b918c0bdf2b3077fb63306daf6ffb52cd8165b8))
+
+
+
+
+
 # [0.107.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.106.0...@kiwicom/orbit-components@0.107.0) (2021-01-13)
 
 

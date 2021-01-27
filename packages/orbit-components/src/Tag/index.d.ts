@@ -7,9 +7,8 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Tag";
 
-interface Props extends Common.Global {
+interface Props extends Common.Global, Common.Ref {
   readonly children: React.ReactNode;
-  readonly icon?: React.ReactNode;
   readonly selected?: boolean;
   readonly size?: Common.InputSize;
   readonly onRemove?: Common.Callback;

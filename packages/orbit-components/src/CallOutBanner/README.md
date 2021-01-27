@@ -24,7 +24,7 @@ Table below contains all types of the props available in the CallOutBanner compo
 | description  | `Translation`                        |         | The displayed description of the CallOutBanner.                                        |
 | illustration | `React.Element<typeof Illustration>` |         | The displayed Illustration of the CallOutBanner.                                       |
 | onClick      | `() => void \| Promise`              |         | Function for handling onClick callback. See [functional specs](#functional-specs).     |
-| tabIndex     | `string                              | number` |                                                                                        | Specifies the tab order of an element. |
+| tabIndex     | `string \| number`                   |         | Specifies the tab order of an element.                                                 |
 | **title**    | `Translation`                        |         | The displayed title of the CallOutBanner.                                              |
 
 ## Functional specs

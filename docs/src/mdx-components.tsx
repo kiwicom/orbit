@@ -84,6 +84,22 @@ export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   </figcaption>
 );
 export const code = CodeBlock;
+export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
+  <dd
+    css={css`
+      margin-left: 2em;
+    `}
+  >
+    <Text>{children}</Text>
+  </dd>
+);
+export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
+  <dt>
+    <Heading as="h3" type="title2">
+      {children}
+    </Heading>
+  </dt>
+);
 export const inlineCode = InlineCode;
 export const a = ({ children, href }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const isExternal = useIsUrlExternal(href);

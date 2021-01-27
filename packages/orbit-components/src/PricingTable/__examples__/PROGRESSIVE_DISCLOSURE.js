@@ -9,7 +9,7 @@ import PricingTable from "../index";
 import PricingTableItem from "../PricingTableItem";
 import Tooltip from "../../Tooltip";
 import Text from "../../Text";
-import * as Icons from "../../icons"
+import * as Icons from "../../icons";
 
 export default {
   Example: () => (

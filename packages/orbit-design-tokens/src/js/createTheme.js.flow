@@ -1,6 +1,6 @@
 // @flow
-import type { Tokens } from "./createTokens";
-import type { CustomFoundation } from "./defaultFoundation";
+import type { Tokens } from "./createTokens.js.flow";
+import type { CustomFoundation } from "./defaultFoundation.js.flow";
 
 type Overrides = $Shape<Tokens>;
 

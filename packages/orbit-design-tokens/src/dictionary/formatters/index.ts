@@ -1,15 +1,16 @@
+import type { StyleDictionary } from "style-dictionary";
+
 import javascriptFoundation from "./javascript-foundation";
 import javascriptTokens from "./javascript-tokens";
-import type { StyleDictionary } from "style-dictionary";
 
 const formatters = {
   ...javascriptFoundation,
   ...javascriptTokens,
 };
 
-const registerFormatters = (StyleDictionary: StyleDictionary): void => {
+const registerFormatters = (Dictionary: StyleDictionary): void => {
   Object.values(formatters).forEach(formatter => {
-    StyleDictionary.registerFormat(formatter);
+    Dictionary.registerFormat(formatter);
   });
 };
 

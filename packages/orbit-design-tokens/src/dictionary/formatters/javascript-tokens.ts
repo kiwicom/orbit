@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import flowComment from "./comments/flow";
 import generatedWarning from "./comments/generatedWarning";
@@ -13,7 +14,6 @@ import {
   createDeclareExport,
   createTypeImport,
 } from "../utils/create";
-import { Property } from "style-dictionary";
 
 const functionName = "createTokens";
 
@@ -54,11 +54,11 @@ const typescriptFactory = allProperties => {
   );
 
   const functionTemplate = (value: string) => {
-    const tokensValue = createObjectExpression(value);
+    const tokens = createObjectExpression(value);
     return createVariableDeclarator(
       createEquivalentType(functionName),
       "const",
-      createArrowFunctionExpression("foundation", `(${tokensValue})`),
+      createArrowFunctionExpression("foundation", `(${tokens})`),
     );
   };
 
@@ -99,7 +99,7 @@ const typescriptFactory = allProperties => {
 const flowFactory = allProperties => {
   const type = "type";
   const platform = "flow";
-  const foundationImport = createTypeImport("foundation", "./defaultFoundation");
+  const foundationImport = createTypeImport("foundation", "./defaultFoundation.js.flow");
   /*
     Generates "export type Tokens = { key: value }
    */

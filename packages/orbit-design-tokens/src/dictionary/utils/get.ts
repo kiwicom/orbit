@@ -1,13 +1,20 @@
 import _ from "lodash";
-
-import { groupByName, groupByCategory } from "./groupBy";
 import { Property } from "style-dictionary";
 
-type FoundationProperties = {
+import { groupByName, groupByCategory } from "./groupBy";
+
+type AlteredProperty = {
   name: string;
   value: string | number | undefined;
 };
-type NameValueSelector = (arg0: Property) => FoundationProperties;
+
+type FoundationProperties = {
+  [name: string]: {
+    [key: string]: Array<AlteredProperty>;
+  };
+};
+
+type NameValueSelector = (arg0: Property) => AlteredProperty;
 
 /*
   Returns array of unique names of colors, e.g. ["blue", "red"].
@@ -49,7 +56,7 @@ export const getAllCategories = (properties: Property[]): string[] =>
 export const getFoundationProperties = (
   allProperties: Property[],
   nameValueSelector: NameValueSelector = ({ name, value }) => ({ name, value }),
-) => {
+): FoundationProperties => {
   return _.mapValues(groupByCategory(allProperties), values => {
     return _.mapValues(groupByName(values), properties => {
       return _.map(properties, nameValueSelector);
@@ -71,6 +78,6 @@ export const getFoundationNameValue = (platform: string): NameValueSelector => {
   }
   return ({ attributes: { foundationName }, value }) => ({
     name: String(foundationName),
-    value: value,
+    value,
   });
 };

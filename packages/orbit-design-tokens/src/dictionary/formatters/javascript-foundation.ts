@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import { getFoundationProperties, getFoundationNameValue } from "../utils/get";
 import {
@@ -18,7 +19,6 @@ import {
 import formatCode from "../utils/format";
 import generatedWarning from "./comments/generatedWarning";
 import flowComment from "./comments/flow";
-import { Property } from "style-dictionary";
 
 const genericFactory = (allProperties, platform) => {
   const upperFirst = determinateUpperFirst(platform);
@@ -129,12 +129,15 @@ const typescriptFactory = (allProperties: Property[]) => {
   const createExport = determinateExport("javascript");
   const exportFoundation = createExport("foundation");
 
-  return [
-    generatedWarning,
-    ...genericFactory(allProperties, "typescript"),
-    ...genericFactory(allProperties, "javascript"),
-    exportFoundation,
-  ].join("\n");
+  return formatCode(
+    [
+      generatedWarning,
+      ...genericFactory(allProperties, "typescript"),
+      ...genericFactory(allProperties, "javascript"),
+      exportFoundation,
+    ],
+    "typescript",
+  );
 };
 
 const flowFoundation = {

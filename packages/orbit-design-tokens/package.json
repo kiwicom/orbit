@@ -19,6 +19,7 @@
     "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5",
     "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
+    "prebuild": "rimraf lib src/js",
     "prepublishOnly": "yarn build"
   },
   "author": "Kiwi.com",

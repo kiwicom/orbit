@@ -1,67 +1,22 @@
 // @flow
 import * as React from "react";
 
-import Heading from "../../Heading";
 import Seat from "../index";
+import SeatLegend from "../components/SeatLegend";
 import Stack from "../../Stack";
-import Text from "../../Text";
 
 export default {
   Example: () => (
-    <Stack>
-      <Heading>Select your seat</Heading>
-      <Stack direction="row" align="center" spacing="XXLarge">
-        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
-          <Seat /> <Text>Standard (€5)</Text>
-        </Stack>
-        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
-          <Seat type="legroom" /> <Text>Extra legroom (€10)</Text>
-        </Stack>
-        <Stack spacing="XSmall" direction="row" inline grow={false} align="center">
-          <Seat type="unavailable" />
-          <Text>Unavailable</Text>
-        </Stack>
+    <Stack direction="column">
+      <Stack inline>
+        <Seat />
+        <Seat type="legroom" />
+        <Seat type="unavailable" />
       </Stack>
-      <Stack>
-        <Stack direction="row" align="center">
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>A</Text>
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>B</Text>
-            <Seat />
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>C</Text>
-            <Seat />
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text> </Text>
-            <Text> </Text>
-            <Text>1</Text>
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>D</Text>
-            <Seat />
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>E</Text>
-            <Seat type="unavailable" />
-          </Stack>
-          <Stack inline grow={false} align="center" direction="column">
-            <Text>F</Text>
-            <Seat />
-          </Stack>
-        </Stack>
-        <Stack direction="row" align="center">
-          <Seat />
-          <Seat />
-          <Seat />
-          <Text>2</Text>
-          <Seat type="legroom" />
-          <Seat type="legroom" />
-          <Seat type="legroom" />
-        </Stack>
+      <Stack direction="column">
+        <SeatLegend label="Extra legroom ($ 5.99 – $ 12.98)" />
+        <SeatLegend type="legroom" label="Standard ($ 5.99 – $ 12.98)" />
+        <SeatLegend type="unavailable" label="Unavailable" />
       </Stack>
     </Stack>
   ),

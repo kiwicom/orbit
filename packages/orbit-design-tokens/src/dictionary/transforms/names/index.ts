@@ -8,7 +8,7 @@ const nameFoundationCamel = {
   type: "name",
   transformer: ({ attributes: { category, name, type, state } }: Property): string => {
     if ([category, name, type, state].every(value => value == null)) {
-      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
+      throw new Error(errorTransform("name/foundation/camel", "attribute/foundation"));
     }
     return _.camelCase(Object.values({ category, name, type, state }).join(" "));
   },

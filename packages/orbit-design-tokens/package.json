@@ -24,6 +24,7 @@
     "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
     "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
+    "prebuild": "rimraf lib src/js",
     "build": "yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",

@@ -1,15 +1,8 @@
 import React from "react";
 import { graphql, PageRendererProps } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Heading } from "@kiwicom/orbit-components";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
 
-import Layout from "../components/Layout";
-import Prose from "../components/Prose";
-import * as components from "../mdx-components";
-import AddBookmark from "../components/AddBookmark";
-import { BookmarkProvider } from "../services/bookmarks";
+import DocLayout from "../components/DocLayout";
 
 interface Props extends PageRendererProps {
   data: {
@@ -28,21 +21,9 @@ interface Props extends PageRendererProps {
 export default function Doc({ data, location }: Props) {
   const { frontmatter, fields, body } = data.mdx;
   return (
-    <BookmarkProvider page={fields.slug} location={location}>
-      <Layout>
-        <Prose>
-          <Stack inline align="center">
-            <AddBookmark />
-            <Heading as="h1" type="display">
-              {frontmatter.title}
-            </Heading>
-          </Stack>
-          <MDXProvider components={components}>
-            <MDXRenderer>{body}</MDXRenderer>
-          </MDXProvider>
-        </Prose>
-      </Layout>
-    </BookmarkProvider>
+    <DocLayout path={fields.slug} location={location} title={frontmatter.title}>
+      <MDXRenderer>{body}</MDXRenderer>
+    </DocLayout>
   );
 }
 

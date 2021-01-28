@@ -45,6 +45,9 @@ export default function Tile({ title, moreText = "Learn more", linkTo, children 
         <div
           css={css`
             margin-left: 0.75rem;
+            h3 {
+              margin-top: 0;
+            }
           `}
         >
           <Heading type="title2" as="h3">

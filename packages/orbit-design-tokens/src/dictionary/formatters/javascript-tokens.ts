@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import flowComment from "./comments/flow";
 import generatedWarning from "./comments/generatedWarning";
@@ -13,7 +14,6 @@ import {
   createDeclareExport,
   createTypeImport,
 } from "../utils/create";
-import { Property } from "style-dictionary";
 
 const functionName = "createTokens";
 

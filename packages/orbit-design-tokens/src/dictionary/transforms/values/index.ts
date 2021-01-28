@@ -1,8 +1,8 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import { isSpacing, isColor } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
-import { Property } from "style-dictionary";
 
 /*
   Transforms spacing to pixel value.

@@ -1,7 +1,7 @@
 import _ from "lodash";
+import { Attributes, Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
-import { Attributes, Property } from "style-dictionary";
 
 /*
   The basic attribute transformer, adds serialized path info to the property.

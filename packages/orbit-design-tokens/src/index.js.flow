@@ -1,7 +1,7 @@
 // @flow
-import type { CreateTheme } from "./js/createTheme";
-import type { FromPlainObject } from "./js/fromPlainObject";
-import type { Tokens } from "./js/createTokens";
+import type { CreateTheme } from "./js/createTheme.js.flow";
+import type { FromPlainObject } from "./js/fromPlainObject.js.flow";
+import type { Tokens } from "./js/createTokens.js.flow";
 
 declare export var fromPlainObject: FromPlainObject;
 declare export var createTheme: CreateTheme;

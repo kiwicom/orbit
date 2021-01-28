@@ -1,5 +1,5 @@
 // @flow
-import type { Tokens } from "./createTokens";
+import type { Tokens } from "./createTokens.js.flow";
 
 export type ThemePaletteColors = {|
   productLight: string,

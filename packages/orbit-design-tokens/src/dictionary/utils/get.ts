@@ -1,7 +1,7 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import { groupByName, groupByCategory } from "./groupBy";
-import { Property } from "style-dictionary";
 
 type FoundationProperties = {
   name: string;
@@ -71,6 +71,6 @@ export const getFoundationNameValue = (platform: string): NameValueSelector => {
   }
   return ({ attributes: { foundationName }, value }) => ({
     name: String(foundationName),
-    value: value,
+    value,
   });
 };

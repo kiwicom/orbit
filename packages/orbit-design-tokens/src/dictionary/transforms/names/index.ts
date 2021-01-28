@@ -1,7 +1,7 @@
 import _ from "lodash";
+import { Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
-import { Property } from "style-dictionary";
 
 const nameFoundationCamel = {
   name: "name/foundation/camel",

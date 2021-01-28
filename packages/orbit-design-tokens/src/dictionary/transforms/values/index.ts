@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { Property } from "style-dictionary";
 
-import { isSpacing, isColor } from "../../utils/is";
+import { isSpacing, isColor, isBorderRadius } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 
 /*
@@ -28,6 +28,22 @@ const stringJavascript = {
 };
 
 /*
+  Transforms corner radius value to Javascript compatible format with pixels.
+ */
+const cornerRadiusJavascript = {
+  name: "value/border-radius/javascript",
+  type: "value",
+  matcher: isBorderRadius,
+  transformer: ({ value }: Property): string => {
+    const normalizedValue = Number(value);
+    if (normalizedValue) {
+      return `${normalizedValue}px`;
+    }
+    return String(value);
+  },
+};
+
+/*
   Transforms attributes from attribute/foundation to interlaced identifiers.
   e.g. foundation.base.space.value
   TODO in future:
@@ -43,8 +59,8 @@ const foundationAlias = {
       throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
     }
     const lastIdentifier = isColor(prop) ? [_.camelCase([type, state].join(" "))] : [type, state];
-    return ["foundation", category, name, ...lastIdentifier].join(".");
+    return ["foundation", category, name, ...lastIdentifier].filter(Boolean).join(".");
   },
 };
 
-export default { spacingJavascript, stringJavascript, foundationAlias };
+export default { spacingJavascript, stringJavascript, cornerRadiusJavascript, foundationAlias };

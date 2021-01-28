@@ -38,7 +38,7 @@ const attributeFoundation = {
         because it would be explicit in the final token name
        */
       if (item !== "default") {
-        generatedAttrs[structure[i]] = item;
+        generatedAttrs[structure[i]] = _.camelCase(item);
       }
     }
     return Object.assign(generatedAttrs, attributes);

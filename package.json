@@ -49,7 +49,7 @@
     "@emotion/core": "^10.0.35",
     "@kiwicom/browserslist-config": "^1.0.0",
     "@lerna/project": "^3.21.0",
-    "@octokit/rest": "^15.13.1",
+    "@octokit/rest": "^18.0.14",
     "@storybook/addon-actions": "^6.0.28",
     "@storybook/addon-backgrounds": "^6.1.10",
     "@storybook/addon-info": "^6.0.0-alpha.2",

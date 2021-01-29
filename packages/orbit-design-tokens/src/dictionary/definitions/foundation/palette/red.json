@@ -8,12 +8,12 @@
             "value": "#FAEAEA",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#F4D2D2",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#EEB9B9",
             "internal": true
@@ -25,12 +25,12 @@
             "value": "#D21C1C",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#B91919",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#9D1515",
             "internal": true
@@ -42,12 +42,12 @@
             "value": "#970C0C",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#890B0B",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#6D0909",
             "internal": true

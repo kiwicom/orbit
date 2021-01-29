@@ -8,12 +8,12 @@
             "value": "#EBF4EC",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#D7EAD9",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#C3DFC7",
             "internal": true
@@ -25,12 +25,12 @@
             "value": "#28A138",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#238B31",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#1D7228",
             "internal": true
@@ -42,12 +42,12 @@
             "value": "#2B7336",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#25642F",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#1F5126",
             "internal": true

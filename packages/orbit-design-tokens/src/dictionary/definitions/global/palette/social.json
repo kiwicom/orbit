@@ -9,11 +9,23 @@
           },
           "hover": {
             "type": "color",
-            "value": "{foundation.palette.social.facebook.hover}"
+            "value": "{foundation.palette.social.facebook.secondary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.social.facebook.secondary}"
+          },
+          "secondary": {
+            "type": "color",
+            "value": "{foundation.palette.social.facebook.secondary}"
           },
           "active": {
             "type": "color",
-            "value": "{foundation.palette.social.facebook.active}"
+            "value": "{foundation.palette.social.facebook.tertiary}",
+            "deprecated": true,
+            "deprecated-replace": "{foundation.palette.social.facebook.tertiary"
+          },
+          "tertiary": {
+            "type": "color",
+            "value": "{foundation.palette.social.facebook.tertiary}"
           }
         }
       }

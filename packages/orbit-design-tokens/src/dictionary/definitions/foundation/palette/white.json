@@ -8,12 +8,12 @@
             "value": "#FFFFFF",
             "internal": true
           },
-          "hover": {
+          "secondary": {
             "type": "color",
             "value": "#F1F4F7",
             "internal": true
           },
-          "active": {
+          "tertiary": {
             "type": "color",
             "value": "#E7ECF1",
             "internal": true

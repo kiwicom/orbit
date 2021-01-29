@@ -9,11 +9,23 @@
           },
           "hover": {
             "type": "color",
-            "value": "{foundation.palette.ink.lighter.hover}"
+            "value": "{foundation.palette.ink.lighter.secondary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.lighter.secondary}"
+          },
+          "secondary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.lighter.secondary}"
           },
           "active": {
             "type": "color",
-            "value": "{foundation.palette.ink.lighter.active}"
+            "value": "{foundation.palette.ink.lighter.tertiary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.lighter.tertiary}"
+          },
+          "tertiary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.lighter.tertiary}"
           }
         },
         "light": {
@@ -23,11 +35,23 @@
           },
           "hover": {
             "type": "color",
-            "value": "{foundation.palette.ink.light.hover}"
+            "value": "{foundation.palette.ink.light.secondary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.light.secondary}"
+          },
+          "secondary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light.secondary}"
           },
           "active": {
             "type": "color",
-            "value": "{foundation.palette.ink.light.active}"
+            "value": "{foundation.palette.ink.light.tertiary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.light.tertiary}"
+          },
+          "tertiary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light.tertiary}"
           }
         },
         "normal": {
@@ -37,11 +61,23 @@
           },
           "hover": {
             "type": "color",
-            "value": "{foundation.palette.ink.normal.hover}"
+            "value": "{foundation.palette.ink.normal.secondary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.normal.secondary}"
+          },
+          "secondary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.normal.secondary}"
           },
           "active": {
             "type": "color",
-            "value": "{foundation.palette.ink.normal.active}"
+            "value": "{foundation.palette.ink.normal.tertiary}",
+            "deprecated": true,
+            "deprecated-replace": "{global.palette.ink.normal.tertiary}"
+          },
+          "tertiary": {
+            "type": "color",
+            "value": "{foundation.palette.ink.normal.tertiary}"
           }
         }
       }

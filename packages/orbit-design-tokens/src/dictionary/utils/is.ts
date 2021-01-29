@@ -11,3 +11,5 @@ export const isSpacing = ({ type, attributes: { category } }: Property): boolean
 export const isInternal = ({ internal }: Property): boolean => !!internal;
 
 export const isNotInternal = (token: Property): boolean => !isInternal(token);
+
+export const isDeprecated = ({ deprecated }: Property): boolean => deprecated != null;

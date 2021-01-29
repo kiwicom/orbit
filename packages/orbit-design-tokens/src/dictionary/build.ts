@@ -27,6 +27,10 @@ const build = () => {
       "name/foundation/camel",
     ],
   });
+  StyleDictionary.registerTransformGroup({
+    name: "xml/tokens",
+    transforms: ["attribute/foundation", "name/foundation/camel"],
+  });
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],
     platforms: {
@@ -61,6 +65,11 @@ const build = () => {
             filter: isNotInternal,
           },
         ],
+      },
+      "xml/tokens": {
+        transformGroup: "xml/tokens",
+        buildPath: "lib/",
+        files: [{ destination: "index.xml", format: "xml/tokens", filter: isNotInternal }],
       },
     },
   });

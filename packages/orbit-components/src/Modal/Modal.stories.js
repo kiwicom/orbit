@@ -30,6 +30,210 @@ import Tile from "../Tile";
 
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
 
+function WithFixedFooter() {
+  const [open, setOpen] = React.useState(false);
+  const [fullPage, setFullPage] = React.useState(false);
+  return (
+    <>
+      <Button
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open modal
+      </Button>
+      {open && (
+        <Modal
+          isMobileFullPage={fullPage}
+          onClose={() => {
+            setOpen(false);
+          }}
+          fixedFooter
+        >
+          <ModalHeader
+            title="Enjoy something to eat while you fly"
+            illustration={<Illustration name="BaggageDrop" size="small" />}
+            description="Select a flight below to see the menu (where available)"
+          />
+          <ModalSection suppressed>
+            <Stack>
+              <Button
+                onClick={() => {
+                  setFullPage(prev => !prev);
+                }}
+              >
+                Toggle full page
+              </Button>
+              <Tooltip content={<div>Lorem ipsum dolor sit amet</div>}>
+                <Text uppercase weight="bold">
+                  OUTBOUND
+                </Text>
+              </Tooltip>
+              <Card>
+                <CardSection
+                  expandable
+                  noSeparator
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                />
+                <CardSection
+                  expandable
+                  noSeparator
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                />
+                <CardSection
+                  expandable
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                />
+              </Card>
+            </Stack>
+          </ModalSection>
+          <ModalSection>
+            <Stack>
+              <Text uppercase weight="bold">
+                INBOUND
+              </Text>
+              <Card>
+                <CardSection
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                  expandable
+                />
+                <CardSection
+                  expandable
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                />
+                <CardSection
+                  expandable
+                  icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
+                  title={
+                    <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                      <Stack spacing="XXSmall">
+                        <Text size="small" type="secondary">
+                          Sat, Mar 31 Trip length: 1h55m
+                        </Text>
+                        <Stack direction="row" spacing="XXSmall" align="center">
+                          <Text weight="bold">London LHR</Text>
+                          <FlightDirect size="small" />
+                          <Text weight="bold">Prague PRG</Text>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  }
+                  actions={
+                    <Button type="secondary" size="small">
+                      Edit
+                    </Button>
+                  }
+                />
+              </Card>
+            </Stack>
+          </ModalSection>
+          <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+            <Button iconLeft={<ChevronLeft />} type="secondary">
+              Back
+            </Button>
+            <Button fullWidth>Proceed to Payment (23.98€)</Button>
+          </ModalFooter>
+        </Modal>
+      )}
+    </>
+  );
+}
+
 storiesOf("Modal", module)
   .add(
     "Sizes",
@@ -225,188 +429,10 @@ storiesOf("Modal", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
-  .add(
-    "With fixedFooter",
-    () => (
-      <Modal onClose={action("onClose")} fixedFooter>
-        <ModalHeader
-          title="Enjoy something to eat while you fly"
-          illustration={<Illustration name="BaggageDrop" size="small" />}
-          description="Select a flight below to see the menu (where available)"
-        />
-        <ModalSection suppressed>
-          <Stack>
-            <Tooltip content={<div>Lorem ipsum dolor sit amet</div>}>
-              <Text uppercase weight="bold">
-                OUTBOUND
-              </Text>
-            </Tooltip>
-            <Card>
-              <CardSection
-                expandable
-                noSeparator
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-              />
-              <CardSection
-                expandable
-                noSeparator
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-              />
-              <CardSection
-                expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-              />
-            </Card>
-          </Stack>
-        </ModalSection>
-        <ModalSection>
-          <Stack>
-            <Text uppercase weight="bold">
-              INBOUND
-            </Text>
-            <Card>
-              <CardSection
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-                expandable
-              />
-              <CardSection
-                expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-              />
-              <CardSection
-                expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
-                title={
-                  <Stack direction="row" align="center" justify="between" spacing="XSmall">
-                    <Stack spacing="XXSmall">
-                      <Text size="small" type="secondary">
-                        Sat, Mar 31 Trip length: 1h55m
-                      </Text>
-                      <Stack direction="row" spacing="XXSmall" align="center">
-                        <Text weight="bold">London LHR</Text>
-                        <FlightDirect size="small" />
-                        <Text weight="bold">Prague PRG</Text>
-                      </Stack>
-                    </Stack>
-                  </Stack>
-                }
-                actions={
-                  <Button type="secondary" size="small">
-                    Edit
-                  </Button>
-                }
-              />
-            </Card>
-          </Stack>
-        </ModalSection>
-        <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button iconLeft={<ChevronLeft />} type="secondary">
-            Back
-          </Button>
-          <Button fullWidth>Proceed to Payment (23.98€)</Button>
-        </ModalFooter>
-      </Modal>
-    ),
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
+  .add("With fixedFooter", () => <WithFixedFooter />, {
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  })
   .add(
     "Full preview",
     () => {

@@ -1,6 +1,6 @@
-# unique ids
+# Use unique value for `id` HTML attribute
 
-Rule prevents id namespace collisions. It often happens, that some elements can have same ids. To prevent it in our codebase, it's better to use `randomID`utility function.
+Rule prevents namespace collisions of the `id` HTML attribute. It often happens, that some elements can have same ids. To prevent it in our codebase, it's better to use `randomID` utility function.
 
 ## Rule details
 

@@ -1,13 +1,19 @@
 // @flow
-import React from "react";
+import React, { useMemo } from "react";
 
+import randomID from "../../utils/randomID";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "../index";
 
 const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
+  const clipID = useMemo(() => randomID("clip"), []);
+  const randomIDLinear = useMemo(() => randomID("linear1"), []);
+  const randomIDLinear2 = useMemo(() => randomID("linear2"), []);
+  const randomIDLinear3 = useMemo(() => randomID("linear3"), []);
+
   return (
     <IllustrationWrapper {...props} viewBox="0 0 1942 1250">
-      <g clipPath="url(#clip0)">
+      <g clipPath={`url(#${clipID})`}>
         <path
           d="M1722.55 492.33V784.45C1722.55 785.9 1723.66 787.35 1725.88 788.45C1728.41 789.541 1731.13 790.104 1733.88 790.104C1736.63 790.104 1739.35 789.541 1741.88 788.45C1744.1 787.34 1745.21 785.89 1745.21 784.45V492.33H1722.55Z"
           fill="#CAD5DF"
@@ -19,17 +25,17 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
         <path
           opacity="0.5"
           d="M146.9 360.31L0 427.55L1692.9 1249.2L1835.08 1176.3L146.9 360.31Z"
-          fill="url(#paint0_linear)"
+          fill={`url(#${randomIDLinear})`}
         />
         <path
           opacity="0.5"
           d="M187.1 211.52L40.2 278.75L1733.11 1100.41L1875.28 1027.51L187.1 211.52Z"
-          fill="url(#paint1_linear)"
+          fill={`url(#${randomIDLinear2})`}
         />
         <path
           opacity="0.5"
           d="M252.9 71.45L106 138.68L1798.91 960.34L1941.08 887.44L252.9 71.45Z"
-          fill="url(#paint2_linear)"
+          fill={`url(#${randomIDLinear3})`}
         />
         <path
           d="M1032.88 869.26C963.63 870.05 897.26 856.62 842.32 833.82L1241.22 559.71C1292.05 587.65 1328.6 622.21 1339.1 654.83C1378.69 777.81 1247.31 866.8 1032.88 869.26Z"
@@ -131,7 +137,7 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={randomIDLinear}
           x1="1309.03"
           y1="1480.01"
           x2="526.04"
@@ -143,7 +149,7 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={randomIDLinear2}
           x1="1309.03"
           y1="1316.7"
           x2="526.04"
@@ -155,7 +161,7 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear"
+          id={randomIDLinear3}
           x1="1309.03"
           y1="1143.7"
           x2="526.04"
@@ -166,7 +172,7 @@ const SmartPassV5 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="0.5" stopColor="#BAC7D5" />
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
-        <clipPath id="clip0">
+        <clipPath id={clipID}>
           <rect width="1941.08" height="1249.2" fill="white" />
         </clipPath>
       </defs>

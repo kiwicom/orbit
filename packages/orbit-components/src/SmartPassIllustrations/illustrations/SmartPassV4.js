@@ -1,10 +1,14 @@
 // @flow
-import React from "react";
+import React, { useMemo } from "react";
 
+import randomID from "../../utils/randomID";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "../index";
 
 const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
+  const randomIDLinear = useMemo(() => randomID("linear1"), []);
+  const randomIDLinear2 = useMemo(() => randomID("linear2"), []);
+
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2181 1662">
       <g>
@@ -12,11 +16,11 @@ const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
         <path
           opacity="0.3"
           d="M1125.14 1155.73L1374.88 998.066L1598.9 1130.98L851.314 1575.92L643.147 1446.55L1125.14 1155.73Z"
-          fill="url(#paint0_linear)"
+          fill={`url(#${randomIDLinear})`}
         />
         <path
           d="M222.997 1164.8L989.619 729.261L926.171 690.586L1241.52 683.75L1209.24 863.134L1137.71 819.528L354.868 1265.16L222.997 1164.8Z"
-          fill="url(#paint1_linear)"
+          fill={`url(#${randomIDLinear2})`}
         />
         <path
           d="M1374.88 532.853L1542.9 427.649L1766.92 566.076L1593.83 668.773L1374.88 532.853Z"
@@ -112,7 +116,7 @@ const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={randomIDLinear}
           x1="1121.02"
           y1="998.066"
           x2="1121.02"
@@ -124,7 +128,7 @@ const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={randomIDLinear2}
           x1="1368.48"
           y1="592.209"
           x2="413.949"

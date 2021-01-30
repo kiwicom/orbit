@@ -16,7 +16,7 @@
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "flow:check": "flow check",
     "test": "jest",
-    "test-ci": "yarn orbit-components check:icons && yarn build-ci && yarn flow:check && yarn tsc && yarn eslint:ci && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test",
+    "test-ci": "yarn orbit-components check:icons && yarn build-ci && yarn flow:check && lerna run --scope eslint-plugin-orbit-internal build && yarn tsc && yarn eslint:ci && yarn test --ci --maxWorkers=2 && yarn workspace @kiwicom/babel-plugin-orbit-components test && yarn prettier:test && lerna run --scope eslint-plugin-orbit-internal build",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
     "loki:test": "yarn workspace @kiwicom/orbit-components loki test",
     "loki:approve": "yarn workspace @kiwicom/orbit-components loki approve",

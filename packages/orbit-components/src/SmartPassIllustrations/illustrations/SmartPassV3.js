@@ -1,10 +1,17 @@
 // @flow
-import React from "react";
+import React, { useMemo } from "react";
 
+import randomID from "../../utils/randomID";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "../index";
 
 const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
+  const randomIDLinear = useMemo(() => randomID("linear1"), []);
+  const randomIDLinear2 = useMemo(() => randomID("linear2"), []);
+  const randomIDLinear3 = useMemo(() => randomID("linear3"), []);
+  const randomIDLinear4 = useMemo(() => randomID("linear4"), []);
+  const randomIDLinear5 = useMemo(() => randomID("linear5"), []);
+
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1521">
       <g>
@@ -14,21 +21,21 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M1344.72 1116.89L1471.12 1203.52L1065.24 1436.43L938.5 1349.75L1344.72 1116.89Z"
-              fill="url(#paint0_linear)"
+              fill={`url(#${randomIDLinear})`}
             />
             <path
               d="M1083.75 979.83L1047.4 958.42C1044.22 956.594 1041.58 953.962 1039.74 950.79C1037.9 947.617 1036.93 944.017 1036.93 940.35V799.53C1036.93 795.882 1037.89 792.298 1039.71 789.137C1041.53 785.976 1044.15 783.349 1047.3 781.519C1050.46 779.69 1054.04 778.722 1057.69 778.714C1061.34 778.705 1064.93 779.656 1068.09 781.47L1191.38 853C1194.56 854.825 1197.2 857.456 1199.04 860.626C1200.87 863.797 1201.84 867.395 1201.85 871.06L1194.31 881.46C1194.31 879.41 1190.37 870.13 1183.89 866.08L1060.59 794.53C1059.72 794.029 1058.73 793.768 1057.72 793.771C1056.71 793.775 1055.72 794.043 1054.85 794.55C1053.98 795.057 1053.26 795.784 1052.76 796.659C1052.27 797.533 1052 798.523 1052.01 799.53V940.35C1052.01 941.364 1052.27 942.36 1052.78 943.238C1053.28 944.116 1054.01 944.845 1054.89 945.35L1098.77 971.35L1083.75 979.83Z"
-              fill="url(#paint1_linear)"
+              fill={`url(#${randomIDLinear2})`}
             />
             <path
               d="M481.47 1321.94L1585.43 694.93L1519.64 655.9L1846.64 649L1813.16 830L1738.99 786.01L635.96 1413.07L481.47 1321.94Z"
-              fill="url(#paint2_linear)"
+              fill={`url(#${randomIDLinear3})`}
             />
             <path
               fillRule="evenodd"
               clipRule="evenodd"
               d="M780.43 902L856.89 967L500.89 1165.31L405.89 1107.79L780.43 902Z"
-              fill="url(#paint3_linear)"
+              fill={`url(#${randomIDLinear4})`}
             />
             <path
               fillRule="evenodd"
@@ -149,7 +156,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
             </g>
             <path
               d="M995.63 930.12C991.972 930.113 988.381 929.14 985.22 927.3L854.34 851.73C851.182 849.902 848.559 847.278 846.732 844.12C844.906 840.961 843.939 837.379 843.93 833.73V693C843.936 689.35 844.902 685.765 846.732 682.605C848.561 679.446 851.188 676.823 854.351 675C857.513 673.176 861.1 672.216 864.75 672.217C868.401 672.217 871.987 673.177 875.15 675L1006 750.48C1009.16 752.31 1011.78 754.935 1013.6 758.093C1015.43 761.251 1016.4 764.832 1016.41 768.48V909.27C1016.4 914.79 1014.2 920.081 1010.31 923.988C1006.41 927.894 1001.12 930.099 995.6 930.12H995.63ZM864.77 687.18C863.755 687.19 862.759 687.462 861.88 687.97C860.997 688.469 860.264 689.197 859.759 690.077C859.254 690.956 858.995 691.956 859.01 692.97V833.71C859.008 834.722 859.272 835.717 859.776 836.594C860.279 837.472 861.005 838.202 861.88 838.71L992.76 914.27C993.635 914.775 994.627 915.04 995.637 915.039C996.647 915.038 997.639 914.77 998.513 914.263C999.386 913.756 1000.11 913.027 1000.61 912.15C1001.11 911.274 1001.38 910.28 1001.37 909.27V768.51C1001.37 767.498 1001.11 766.502 1000.61 765.624C1000.1 764.747 999.376 764.017 998.5 763.51L867.61 688C866.754 687.476 865.773 687.193 864.77 687.18V687.18Z"
-              fill="url(#paint4_linear)"
+              fill={`url(#${randomIDLinear5})`}
             />
             <path d="M873.27 380.65V486.65L776.76 428.6V322.75L873.27 380.65Z" fill={secondary} />
             <path
@@ -171,7 +178,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={randomIDLinear}
           x1="1759.24"
           y1="929.9"
           x2="960.36"
@@ -183,7 +190,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={randomIDLinear2}
           x1="194950"
           y1="165505"
           x2="166372"
@@ -195,7 +202,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear"
+          id={randomIDLinear3}
           x1="2021.35"
           y1="530.91"
           x2="740.13"
@@ -206,7 +213,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#01A891" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint3_linear"
+          id={randomIDLinear4}
           x1="434133"
           y1="225442"
           x2="283903"
@@ -218,7 +225,7 @@ const SmartPassV3 = ({ primary, secondary, ...props }: Props) => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint4_linear"
+          id={randomIDLinear5}
           x1="175411"
           y1="195475"
           x2="142874"

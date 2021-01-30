@@ -2,8 +2,8 @@
   "name": "eslint-plugin-orbit-internal",
   "version": "0.0.1",
   "private": true,
-  "main":"dist/index.js",
-    "scripts": {
+  "main": "dist/index.js",
+  "scripts": {
     "build": "rimraf ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
     "install": "yarn build"
   },

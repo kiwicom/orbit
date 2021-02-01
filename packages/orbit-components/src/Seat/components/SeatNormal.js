@@ -2,12 +2,21 @@
 import React from "react";
 import styled from "styled-components";
 
+import defaultTheme from "../../defaultTheme";
 import useTheme from "../../hooks/useTheme";
 import { TYPES } from "../consts";
 import type { Props } from "../index";
-import * as helpers from "./helpers";
+import { resolveFillColor, resolveAccentColor, resolveTextColor } from "./helpers";
 
-export const StyledPath = styled.path``;
+export const StyledPath = styled.path`
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in;
+`;
+
+StyledPath.defaultProps = {
+  theme: defaultTheme,
+};
+
+export const StyledStrokeNormal = styled.path``;
 
 const SeatNormal = ({ selected, type, label }: Props) => {
   const theme = useTheme();
@@ -18,12 +27,12 @@ const SeatNormal = ({ selected, type, label }: Props) => {
     <>
       <StyledPath
         d="M1 10C1 5.02944 5.02944 1 10 1H36C40.9706 1 45 5.02944 45 10V42C45 43.6569 43.6569 45 42 45H4C2.34315 45 1 43.6569 1 42V10Z"
-        fill={helpers.resolveFillColor({ theme, type, selected })}
+        fill={resolveFillColor({ theme, type, selected })}
       />
 
       {type !== TYPES.UNAVAILABLE && (
         <text
-          fill={helpers.resolveTextColor({ theme, type, selected })}
+          fill={resolveTextColor({ theme, type, selected })}
           xmlSpace="preserve"
           fontSize="16"
           letterSpacing="0em"
@@ -46,13 +55,13 @@ const SeatNormal = ({ selected, type, label }: Props) => {
       {!selected && (
         <path
           d="M0 40H46V42C46 44.2091 44.2091 46 42 46H4C1.79086 46 0 44.2091 0 42V40Z"
-          fill={helpers.resolveAccentColor({ theme, type, selected })}
+          fill={resolveAccentColor({ theme, type, selected })}
         />
       )}
 
-      <path
+      <StyledStrokeNormal
         d="M1 10C1 5.02944 5.02944 1 10 1H36C40.9706 1 45 5.02944 45 10V42C45 43.6569 43.6569 45 42 45H4C2.34315 45 1 43.6569 1 42V10Z"
-        stroke={helpers.resolveAccentColor({ theme, type, selected })}
+        stroke={resolveAccentColor({ theme, type, selected })}
         strokeWidth="2"
       />
     </>

@@ -2,12 +2,21 @@
 import React from "react";
 import styled from "styled-components";
 
+import defaultTheme from "../../defaultTheme";
 import { TYPES } from "../consts";
 import type { Props } from "../index";
 import useTheme from "../../hooks/useTheme";
-import * as helpers from "./helpers";
+import { resolveFillColor, resolveTextColor, resolveAccentColor } from "./helpers";
 
-export const StyledPath = styled.path``;
+export const StyledPath = styled.path`
+  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in;
+`;
+
+StyledPath.defaultProps = {
+  theme: defaultTheme,
+};
+
+export const StyledStrokeSmall = styled.path``;
 
 const SeatSmall = ({ type, selected, label }: Props) => {
   const theme = useTheme();
@@ -18,11 +27,11 @@ const SeatSmall = ({ type, selected, label }: Props) => {
     <>
       <StyledPath
         d="M1 10C1 5.02944 5.02944 1 10 1H22C26.9706 1 31 5.02944 31 10V32C31 33.6569 29.6569 35 28 35H4C2.34315 35 1 33.6569 1 32V10Z"
-        fill={helpers.resolveFillColor({ type, theme, selected })}
+        fill={resolveFillColor({ type, theme, selected })}
       />
       {type !== TYPES.UNAVAILABLE && (
         <text
-          fill={helpers.resolveTextColor({ theme, type, selected })}
+          fill={resolveTextColor({ theme, type, selected })}
           xmlSpace="preserve"
           fontFamily="Circular Pro"
           fontSize="14"
@@ -44,11 +53,11 @@ const SeatSmall = ({ type, selected, label }: Props) => {
       )}
       <path
         d="M0 32H32C32 34.2091 30.2091 36 28 36H4C1.79086 36 0 34.2091 0 32Z"
-        fill={helpers.resolveAccentColor({ type, theme, selected })}
+        fill={resolveAccentColor({ type, theme, selected })}
       />
-      <path
+      <StyledStrokeSmall
         d="M1 10C1 5.02944 5.02944 1 10 1H22C26.9706 1 31 5.02944 31 10V32C31 33.6569 29.6569 35 28 35H4C2.34315 35 1 33.6569 1 32V10Z"
-        stroke={helpers.resolveAccentColor({ type, theme, selected })}
+        stroke={resolveAccentColor({ type, theme, selected })}
         strokeWidth="2"
       />
     </>

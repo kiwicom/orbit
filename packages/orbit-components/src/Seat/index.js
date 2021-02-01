@@ -6,12 +6,19 @@ import Stack from "../Stack";
 import Text from "../Text";
 import randomID from "../utils/randomID";
 import defaultTheme from "../defaultTheme";
-import SeatNormal, { StyledPath as StyledPathNormal } from "./components/SeatNormal";
-import SeatSmall, { StyledPath as StyledPathSmall } from "./components/SeatSmall";
+import SeatNormal, {
+  StyledPath as StyledPathNormal,
+  StyledStrokeNormal,
+} from "./components/SeatNormal";
+import SeatSmall, {
+  StyledPath as StyledPathSmall,
+  StyledStrokeSmall,
+} from "./components/SeatSmall";
 import {
-  resolveAccentColor,
-  resolveCloseIconHover,
-  resolveAccentColorAndSelected,
+  resolveHoverColor,
+  resolveFillColor,
+  resolveFocusColor,
+  resolveCloseIconColor,
 } from "./components/helpers";
 import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
@@ -38,24 +45,23 @@ const StyledSeatWrapper = styled.div`
     cursor: pointer;
     outline: none;
     &:hover {
-      ${StyledPathNormal}, ${StyledPathSmall} {
-        transition: fill ${theme.orbit.durationFast} ease-in;
+      ${StyledPathNormal}, ${StyledPathSmall}, ${StyledStrokeSmall} {
         ${type !== TYPES.UNAVAILABLE &&
         !selected &&
         css`
-          fill: ${resolveAccentColor};
-          opacity: 0.7;
+          fill: ${resolveHoverColor};
         `};
       }
       ${StyledCirclePath} {
-        transition: fill ${theme.orbit.durationFast} ease-in;
-        fill: ${resolveCloseIconHover};
+        fill: ${resolveCloseIconColor({ theme, type, hover: true })};
       }
     }
     &:focus {
       ${StyledPathNormal}, ${StyledPathSmall} {
-        transition: fill ${theme.orbit.durationFast} ease-in;
-        ${resolveAccentColorAndSelected};
+        ${resolveFillColor({ theme, type, selected, focus: true })};
+      }
+      ${StyledStrokeNormal}, ${StyledStrokeSmall} {
+        stroke: ${resolveFocusColor};
       }
     }
   `}
@@ -90,7 +96,12 @@ const Seat = ({
 
   return (
     <Stack inline grow={false} spacing="XXXSmall" direction="column" align="center">
-      <StyledSeatWrapper onClick={onClick} type={type} selected={selected} tabIndex={0}>
+      <StyledSeatWrapper
+        onClick={onClick}
+        type={type}
+        selected={selected}
+        tabIndex={type !== TYPES.UNAVAILABLE ? "0" : "-1"}
+      >
         <StyledSeat
           data-test={dataTest}
           viewBox={size === SIZE_OPTIONS.SMALL ? "0 0 32 36" : "0 0 46 46"}

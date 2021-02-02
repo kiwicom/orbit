@@ -6,14 +6,14 @@ const Prose = styled.div`
   > * + * {
     margin-top: ${({ theme }) => theme.orbit.spaceSmall};
   }
-  h1 {
+  > h1 {
     margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
   }
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
     margin-top: ${({ theme }) => theme.orbit.spaceLarge};
   }
 `;

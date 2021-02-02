@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading } from "@kiwicom/orbit-components";
+import { Heading, Stack } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
@@ -15,6 +15,9 @@ interface Props {
 
 export default function Tile({ title, moreText = "Learn more", linkTo, children }: Props) {
   const theme = useTheme();
+
+  // Wrap plain strings in a p tag and otherwise render children
+  const content = typeof children !== "string" ? <Stack>{children}</Stack> : <p>{children}</p>;
   return (
     <div
       css={css`
@@ -45,19 +48,22 @@ export default function Tile({ title, moreText = "Learn more", linkTo, children 
         <div
           css={css`
             margin-left: 0.75rem;
+            h3 {
+              margin-top: 0;
+            }
           `}
         >
           <Heading type="title2" as="h3">
             {title}
           </Heading>
-          <p
+          <div
             css={css`
               margin-top: 0.5rem;
               margin-bottom: 1.5rem;
             `}
           >
-            {children}
-          </p>
+            {content}
+          </div>
         </div>
       </div>
       {linkTo && (

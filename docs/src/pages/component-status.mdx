@@ -1,0 +1,23 @@
+---
+title: Component status 🚀
+excerpt: A detailed breakdown of our components and status of their implementation.
+---
+
+import { ComponentStatusList } from "../components/ComponentStatus";
+import Layout from "../components/Layout";
+
+export default ({ children }) => (
+  <Layout
+    excerpt="A detailed breakdown of our components and status of their implementation."
+    title="Component status 🚀"
+  >
+    {children}
+  </Layout>
+);
+
+This listing reflects the current state of our components.
+
+The individual phases do not directly depend on one another.
+The design or documentation could be published before development.
+
+<ComponentStatusList />

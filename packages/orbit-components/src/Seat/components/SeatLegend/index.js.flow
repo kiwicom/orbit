@@ -4,20 +4,14 @@
 */
 import * as React from "react";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals } from "../../../common/common.js.flow";
 
 export type Type = "default" | "legroom" | "unavailable";
 export type Size = "small" | "medium";
 
 export type Props = {|
   +type?: Type,
-  +title?: string,
-  +onClick?: () => void | Promise<any>,
-  +description?: string,
-  +selected?: boolean,
-  +price?: React.Node,
   +label?: React.Node,
-  +size?: Size,
   ...Globals,
 |};
 

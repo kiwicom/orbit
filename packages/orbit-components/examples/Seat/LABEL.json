@@ -1,6 +1,6 @@
 {
 	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";",
-	"example": "() => <Seat label=\"MZ\" />\n",
+	"example": "() => <Seat label=\"XY\" />\n",
 	"info": {
 		"title": "Seat with label",
 		"description": "Seat can have a label text inside"

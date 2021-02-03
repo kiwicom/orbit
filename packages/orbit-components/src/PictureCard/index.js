@@ -283,7 +283,7 @@ const PictureCard = ({
 
       {label && (
         <StyledLabel>
-          <Text size="small" type="white" weight="bold">
+          <Text as="div" size="small" type="white" weight="bold">
             {label}
           </Text>
         </StyledLabel>

@@ -1,8 +1,9 @@
 import StyleDictionary from "style-dictionary";
+import _ from "lodash";
 
 import registerTransforms from "./transforms";
 import registerFormatters from "./formatters";
-import { isInternal, isNotInternal } from "./utils/is";
+import { isInternal, isNotInternal, isDeprecated } from "./utils/is";
 
 const build = () => {
   registerFormatters(StyleDictionary);
@@ -34,6 +35,17 @@ const build = () => {
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],
     platforms: {
+      "json/deprecated-tokens": {
+        transformGroup: "javascript/tokens",
+        buildPath: "lib/",
+        files: [
+          {
+            destination: "deprecated-tokens.json",
+            format: "json/deprecated-tokens",
+            filter: _.overEvery([isNotInternal, isDeprecated]),
+          },
+        ],
+      },
       "javascript/foundation": {
         transformGroup: "javascript/foundation",
         buildPath: "src/js/",

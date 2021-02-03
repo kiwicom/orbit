@@ -31,9 +31,9 @@ const fromPlainObject: FromPlainObject = themePaletteColors => {
         normalActive: themePaletteColors.productNormalActive,
         dark: themePaletteColors.productDark,
         darkHover:
-          themePaletteColors.productDarkHover || defaultFoundation.palette.product.darkHover,
+          themePaletteColors.productDarkHover || defaultFoundation.palette.product.darkSecondary,
         darkActive:
-          themePaletteColors.productDarkActive || defaultFoundation.palette.product.darkActive,
+          themePaletteColors.productDarkActive || defaultFoundation.palette.product.darkTertiary,
         darker: themePaletteColors.productDarker || defaultFoundation.palette.product.darker,
       },
     },

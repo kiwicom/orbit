@@ -1,6 +1,6 @@
 {
-	"imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack>\n    <Stack spacing=\"XXSmall\">\n      <Heading as=\"h3\" type=\"title3\">\n        Small\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat size=\"small\" selected type=\"default\" />\n        <Seat size=\"small\" selected type=\"legroom\" />\n      </Stack>\n    </Stack>\n    <Stack spacing=\"XXSmall\">\n      <Heading as=\"h3\" type=\"title3\">\n        Medium\n      </Heading>\n      <Stack direction=\"row\">\n        <Seat size=\"medium\" selected type=\"default\" />\n        <Seat size=\"medium\" selected type=\"legroom\" />\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
+	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
+	"example": "() => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack>\n      <Stack spacing=\"XXSmall\">\n        <Stack direction=\"row\">\n          <Seat type=\"default\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat selected type=\"default\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat selected type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n        </Stack>\n      </Stack>\n    </Stack>\n  )\n}\n",
 	"info": {
 		"title": "Selected",
 		"description": "Seats can be selected."

@@ -1,8 +1,8 @@
 {
-	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";",
-	"example": "() => <Seat />\n",
+	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
+	"example": "() => {\n  const { isTablet } = useMediaQuery()\n  return <Seat size={isTablet ? \"medium\" : \"small\"} />\n}\n",
 	"info": {
 		"title": "Default seat",
-		"description": "By default, seats appear as available in medium size."
+		"description": "Default seats have no special characteristics."
 	}
 }

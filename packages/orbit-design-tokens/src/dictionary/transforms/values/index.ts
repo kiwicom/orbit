@@ -28,9 +28,9 @@ const stringJavascript = {
 };
 
 /*
-  Transforms corner radius value to Javascript compatible format with pixels.
+  Transforms border radius value to Javascript compatible format with pixels.
  */
-const cornerRadiusJavascript = {
+const borderRadiusJavascript = {
   name: "value/border-radius/javascript",
   type: "value",
   matcher: isBorderRadius,
@@ -63,4 +63,4 @@ const foundationAlias = {
   },
 };
 
-export default { spacingJavascript, stringJavascript, cornerRadiusJavascript, foundationAlias };
+export default { spacingJavascript, stringJavascript, borderRadiusJavascript, foundationAlias };

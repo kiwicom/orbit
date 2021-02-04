@@ -1,6 +1,6 @@
 import { isColor, isSpacing, isInternal, isNotInternal, isBorderRadius } from "../is";
 
-const tokenPlaceholder = ({ type = "color", internal = true }) => ({
+const tokenPlaceholder = ({ type, internal }) => ({
   type,
   value: "#FAEAEA",
   internal,

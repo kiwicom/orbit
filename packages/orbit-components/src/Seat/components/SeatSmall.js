@@ -33,7 +33,6 @@ const SeatSmall = ({ type, selected, label }: Props) => {
         <text
           fill={resolveTextColor({ theme, type, selected })}
           xmlSpace="preserve"
-          fontFamily="Circular Pro"
           fontSize="14"
           letterSpacing="0em"
           textAnchor="middle"
@@ -51,10 +50,12 @@ const SeatSmall = ({ type, selected, label }: Props) => {
           fill={theme.orbit.paletteInkLighterHover}
         />
       )}
-      <path
-        d="M0 32H32C32 34.2091 30.2091 36 28 36H4C1.79086 36 0 34.2091 0 32Z"
-        fill={resolveAccentColor({ type, theme, selected })}
-      />
+      {!selected && (
+        <path
+          d="M0 32H32C32 34.2091 30.2091 36 28 36H4C1.79086 36 0 34.2091 0 32Z"
+          fill={resolveAccentColor({ type, theme, selected })}
+        />
+      )}
       <StyledStrokeSmall
         d="M1 10C1 5.02944 5.02944 1 10 1H22C26.9706 1 31 5.02944 31 10V32C31 33.6569 29.6569 35 28 35H4C2.34315 35 1 33.6569 1 32V10Z"
         stroke={resolveAccentColor({ type, theme, selected })}

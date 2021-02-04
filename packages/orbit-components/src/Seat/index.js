@@ -45,7 +45,7 @@ const StyledSeatWrapper = styled.div`
     cursor: pointer;
     outline: none;
     &:hover {
-      ${StyledPathNormal}, ${StyledPathSmall}, ${StyledStrokeSmall} {
+      ${StyledPathNormal}, ${StyledPathSmall} {
         ${type !== TYPES.UNAVAILABLE &&
         !selected &&
         css`

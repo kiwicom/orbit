@@ -1,0 +1,18 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/seat
+*/
+import * as React from "react";
+
+import type { Globals } from "../../../common/common.js.flow";
+
+export type Type = "default" | "legroom" | "unavailable";
+export type Size = "small" | "medium";
+
+export type Props = {|
+  +type?: Type,
+  +label?: React.Node,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

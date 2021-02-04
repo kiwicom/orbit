@@ -1,6 +1,7 @@
 // @noflow
 import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
+import { renderHook } from "@testing-library/react-hooks";
 
 import useIntersect from "..";
 
@@ -46,6 +47,11 @@ describe("useIntersect", () => {
     });
     expect(screen.getByRole("img")).toHaveAttribute("src", "source");
 
-    window.IntersectionObserver = undefined;
+    delete window.IntersectionObserver;
+  });
+
+  it("should skip functionality when IntersectionObserver is not supported", () => {
+    const { result } = renderHook(() => useIntersect({}));
+    expect(result.current.entry).toBeNull();
   });
 });

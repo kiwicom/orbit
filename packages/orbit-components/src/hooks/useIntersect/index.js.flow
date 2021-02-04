@@ -1,9 +1,8 @@
 // @flow
-type Dispatch<S> = (args: S) => void;
-type SetAction<S> = S | ((prevState: S) => S);
+import * as React from "react";
 
 export type useIntersect = (
   intersect?: IntersectionObserverOptions,
-) => {| ref: Dispatch<SetAction<null | Element>> | null, entry: IntersectionObserverEntry | null |};
+) => {| ref: React.Ref<Element>, entry: IntersectionObserverEntry | null |};
 
 declare export default useIntersect;

@@ -30,6 +30,16 @@ Then add it to your ESLint configuration:
 }
 ```
 
+or via extending our recommended config:
+
+```
+  {
+    "extends": [
+      "plugin:orbit-components/recommended",
+    ]
+  }
+```
+
 ## Supported Rules
 
 - [button-has-title](https://github.com/kiwicom/eslint-plugin-orbit-components/blob/master/docs/rules/button-has-title.md): Enforces that `Button` and `ButtonLink` do have either `children` or `title` property.

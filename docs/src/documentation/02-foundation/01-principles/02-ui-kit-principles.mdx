@@ -1,3 +1,72 @@
 ---
 title: UI kit principles
 ---
+
+These principles help define how our UI kit is built.
+They should serve as a guide to contributing to the UI kit to help consumers get the most out of it.
+
+## Taking away visual decisions
+
+Designers using our UI kit shouldn't need to think about which color to pick for their components,
+what can be combined, and what can't.
+All components need to have our design decisions baked into them
+and only give a list of variations to choose from.
+
+This will allow even less experienced visual designers to build beautiful products with Orbit.
+
+### Practical tips
+
+- If possible, have every component variation as a separate component or symbol.
+- Use overrides only for the component's content: texts, labels, icons, and illustrations.
+  That should give designers time to focus mostly on the message they want to deliver,
+  not on understanding how visual overrides work.
+- If there is anything visual-related in the overrides, it should be documented.
+
+## Use appropriate defaults
+
+Switching between variations or removing default values takes a few seconds for every use of a component.
+If possible, even default content should help people with their design work,
+for example in nudging them to the mechanics of our grammar.
+
+### Practical tips
+
+- Mobile-first always:
+  all components need to be in the size and look for mobile and have desktop,
+  when it exists, as the second version.
+  The default is 360px for edge-to-edge components (Cards, Modals, ...)
+  and 344px for components intended to be inside of wrappers.
+- Sort components alphabetically at the root level,
+  but by the most frequently used variations at the second level.
+  This should help consumers find the right component quickly and then use its most common variation.
+- Never use Lorem ipsum or any other variation of dumb content.
+- Use default content to help designers with micro-copy,
+  for Alerts, for example, use a title and description to explain the purpose of each.
+
+## Promote consistency
+
+There's a lot to think about when working with a UI kit.
+Remove moving parts as much as possible.
+Consistent naming and scope for our components should help everyone.
+
+### Practical tips
+
+- Have every component available for all platforms.
+  If it's specific, document it and provide an alternative for specific platforms.
+- Use the same names for components and their parts in the design tool as in code.
+  This will help make handover between design and code smoother.
+
+## Favor usability over maintainability
+
+Overall, more time is spent using a UI kit than building or maintaining it.
+For this reason, it's most important that it's easy to use a UI kit
+without time spent learning how to use it.
+
+Using the Orbit UI kit should be easy and intuitive
+so any designer can start using it without extensive training.
+All edge cases or exceptions should be documented, ideally with examples.
+
+### Practical tips
+
+- Use guides to explain the alignment or composability of more complex components.
+- Speed up designers' workflow by providing larger reusable blocks as separate components
+  (such as Login, App Frame) that are intended to be broken and adjusted.

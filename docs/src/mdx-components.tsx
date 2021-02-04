@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Alert,
   Heading,
   Text,
   TextLink,
@@ -44,6 +45,9 @@ export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
     {children}
   </Heading>
 );
+export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
+  <ol style={{ listStyle: "inside none decimal" }}>{children}</ol>
+);
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>
 );
@@ -76,6 +80,9 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
   >
     {children}
   </TableCell>
+);
+export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
+  <ul style={{ listStyle: "inside none disc" }}>{children}</ul>
 );
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <figcaption>
@@ -131,3 +138,4 @@ export const a = function Anchor({
     </span>
   );
 };
+export const Callout = props => <Alert icon {...props} />;

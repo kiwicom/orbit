@@ -1,8 +1,8 @@
 {
-	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";",
-	"example": "() => <Seat price=\"12$\" />\n",
+	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
+	"example": "() => {\n  const { isTablet } = useMediaQuery()\n  return <Seat price=\"$12\" size={isTablet ? \"medium\" : \"small\"} />\n}\n",
 	"info": {
-		"title": "Seat with price",
-		"description": "Seat can have a price title"
+		"title": "Price",
+		"description": "You can set the price to display with each seat."
 	}
 }

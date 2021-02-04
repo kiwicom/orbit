@@ -1,0 +1,19 @@
+{
+  "name": "eslint-plugin-orbit-internal",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
+    "install": "yarn build"
+  },
+  "dependencies": {
+    "@babel/types": "=7.12.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/eslint": "^7.2.6"
+  }
+}

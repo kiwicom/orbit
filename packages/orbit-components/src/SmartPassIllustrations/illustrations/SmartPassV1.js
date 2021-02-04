@@ -1,10 +1,15 @@
 // @flow
-import React from "react";
+import React, { useMemo } from "react";
 
+import randomID from "../../utils/randomID";
 import type { Props } from "../index";
 import IllustrationWrapper from "./IllustrationWrapper";
 
 const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props) => {
+  const randomIDLinear = useMemo(() => randomID("linear1"), []);
+  const randomIDLinear2 = useMemo(() => randomID("linear2"), []);
+  const randomIDLinear3 = useMemo(() => randomID("linear3"), []);
+
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1300">
       <g>
@@ -13,7 +18,7 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
           fillRule="evenodd"
           clipRule="evenodd"
           d="M1940.1 1040.42L1910.1 1064.35L1011.92 629.61L1053.92 611.69L1940.1 1040.42Z"
-          fill="url(#paint0_linear)"
+          fill={`url(#${randomIDLinear})`}
         />
         <path
           d="M1105.99 639.03L1068.07 657.5L1010.55 629.32L1068.07 591.09L1105.99 639.03Z"
@@ -225,14 +230,14 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
         </g>
         <path
           d="M1969.54 1153L763.08 555.6L829.79 516.03L498.21 509.04L532.16 692.56L607.37 647.95L1812.89 1245.41L1969.54 1153Z"
-          fill="url(#paint1_linear)"
+          fill={`url(#${randomIDLinear2})`}
         />
         <g>
           <g>
             <path
               opacity="0.5"
               d="M206.65 554.88L1605.12 1245.41L1543.83 1283.75L124.88 582.86L206.65 554.88Z"
-              fill="url(#paint2_linear)"
+              fill={`url(#${randomIDLinear3})`}
             />
           </g>
         </g>
@@ -325,7 +330,7 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={randomIDLinear}
           x1="1091.97"
           y1="640.45"
           x2="1826.18"
@@ -337,7 +342,7 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={randomIDLinear2}
           x1="324.16"
           y1="369.19"
           x2="1669.8"
@@ -348,7 +353,7 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
           <stop offset="1" stopColor="#01A891" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear"
+          id={randomIDLinear3}
           x1="1336.18"
           y1="1160.61"
           x2="301.9"

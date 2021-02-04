@@ -65,8 +65,22 @@ jobs:
       - name: Build storybook
         run: yarn orbit-components build:storybook
 
+      - name: Build orbit
+        run: yarn orbit-components build:lib
+
       - name: Publish
         run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Update PR description
         run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}
+
+      - name: Build docs
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: yarn orbit-kiwi build
+
+      - name: Publish docs
+        run: yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Update docs description
+        run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}

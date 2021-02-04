@@ -16,6 +16,7 @@ const build = () => {
       "attribute/foundation/type",
       "name/foundation/camel",
       "value/spacing/javascript",
+      "value/border-radius/javascript",
       "value/string/javascript",
     ],
   });

@@ -1,0 +1,22 @@
+{
+  "global": {
+    "border-radius": {
+      "circle": {
+        "type": "border-radius",
+        "value": "{foundation.base.border-radius.circle}"
+      },
+      "small": {
+        "type": "border-radius",
+        "value": "{foundation.base.border-radius.small}"
+      },
+      "normal": {
+        "type": "border-radius",
+        "value": "{foundation.base.border-radius.normal}"
+      },
+      "large": {
+        "type": "border-radius",
+        "value": "{foundation.base.border-radius.large}"
+      }
+    }
+  }
+}

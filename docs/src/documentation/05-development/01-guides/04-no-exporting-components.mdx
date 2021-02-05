@@ -30,7 +30,7 @@ developers could attach additional styles in a very easy way. That would mean fe
 We also believe that allowing extension would lead to
 a better developer experience when working with Orbit.
 Developers would not have to think if our components support a particular use case
-and would simply override the behaviour or visual style of our components.
+and would simply override the behavior or visual style of our components.
 
 ## Cons
 
@@ -68,7 +68,7 @@ and require us to make updates and releases less often.
 ### New versions would require more work
 
 As said before, having a more public and documented API would mean
-that between some minor versions (and major versions once we will release the first major)
+that between some minor versions (and major versions once we release the first major)
 it would most likely be harder to release quick updates of the newest version to production
 and would require a lot of work in users' repositories.
 
@@ -77,14 +77,14 @@ and would require a lot of work in users' repositories.
 As far as we know, there isn't any tooling that would allow us to control or determine
 which CSS properties are being used in the extended component and which are being overridden.
 So we couldn't transparently support how our components would be used.
-This, in the end, could lead to inconsistent behaviour or visual style for our applications,
+This, in the end, could lead to inconsistent behavior or visual style for our applications,
 even though we can't prohibit all possibilities when it comes to custom CSS overrides.
 
 ### Extended functionality requires running more JS code
 
 Given the nature of how styled-components work,
 allowing extension could lead to unnecessary complexity in UI components
-and also more time-consuming runtimes.
+and also more time-consuming runtime.
 The most problematic part is managing the StyleSheetManager context state,
 which can be expensive.
 And with combinations of multiple extensions, it could lead to performance issues.

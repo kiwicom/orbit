@@ -216,6 +216,7 @@ module.exports = {
         // Ignore components added as shortcodes so they don't get marked as undefined
         // TODO: remove the components that aren't shortcodes, just haven't been added yet
         Callout: false,
+        ComponentStatus: false,
         Do: false,
         Dont: false,
         FancyLink: false,

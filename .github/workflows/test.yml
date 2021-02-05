@@ -88,6 +88,9 @@ jobs:
           yarn orbit-components build:lib
           yarn orbit-kiwi build
 
+      - name: Check links
+        run: node docs/utils/check-links.js
+
       - name: Publish
         run: |
           yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}

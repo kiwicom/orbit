@@ -7,7 +7,7 @@
     "dribbble": "",
     "github": "https://github.com/CollierCZ",
     "twitter": "",
-    "website": ""
+    "website": "https://collier.cz/"
   },
   {
     "id": "will",
@@ -32,7 +32,7 @@
   {
     "id": "vepor",
     "name": "Luděk Vepřek",
-    "info": "Luděk leads our team. He is responsible for cross-platform API consistency between different implementations of Orbit components",
+    "info": "Luděk leads our team. He is responsible for cross-platform API consistency between different implementations of Orbit components.",
     "position": "Engineering Lead",
     "dribbble": "",
     "github": "https://github.com/vepor",

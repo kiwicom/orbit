@@ -4,5 +4,7 @@ link: 'https://orbit.kiwi/content/grammar-and-mechanics/#punctuation'
 scope: paragraph
 level: error
 tokens:
-  - '(?<!\s)[—–](?!\s)'
-  - '(?<!\s)---(?!\s)'
+  - '\s[—–]'
+  - '[—–]\s'
+  - '\s---'
+  - '---\s'

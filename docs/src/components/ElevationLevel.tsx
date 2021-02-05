@@ -4,9 +4,9 @@ import styled, { css } from "styled-components";
 import theme from "../theme";
 
 interface LevelDivProps {
-  boxShadow: string;
   backgroundColor: string;
   border: string;
+  boxShadow: string;
 }
 
 export const LevelDiv = styled.div<LevelDivProps>`
@@ -21,7 +21,11 @@ export const LevelDiv = styled.div<LevelDivProps>`
   `}
 `;
 
-export default ({ level }) => {
+interface ElevationLevelProps {
+  level: 1 | 2 | 3 | 3.5 | 4 | 4.5 | 5 | 5.5 | 6;
+}
+
+export default ({ level }: ElevationLevelProps) => {
   let backgroundColor = theme.orbit.paletteWhite;
   let border = "none";
   let boxShadow = "none";

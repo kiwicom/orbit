@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.4.2...orbit.kiwi@0.5.0) (2021-02-05)
+
+
+### Features
+
+* **docs:** add Callout component for docs ([84216dd](https://github.com/kiwicom/orbit/commit/84216dd3ae6bc1b00c87cc854f1281587c4c7d9d))
+* **docs:** add component status ([8b81e8a](https://github.com/kiwicom/orbit/commit/8b81e8a30da8139913b549a88cced08e49b402c6))
+* **docs:** add elevation level component ([ee51e98](https://github.com/kiwicom/orbit/commit/ee51e986928f1c6bae3f14c245c74a3b2344739a))
+* **docs:** add roadmap page, data, and component ([ab66ecc](https://github.com/kiwicom/orbit/commit/ab66ecc4e8894dc825607b7985f2d7fff96ebfb3))
+* **docs:** allow ordered lists ([d0dbbee](https://github.com/kiwicom/orbit/commit/d0dbbee3f559e41bc391fd1bcfc50b6d6a5817e1))
+* **docs:** allow unordered lists ([8f7d256](https://github.com/kiwicom/orbit/commit/8f7d256db83f9a52b427dc42cfabe93a2481cc4e))
+* **eslint-orbit:** add unique-ids rule ([#2671](https://github.com/kiwicom/orbit/issues/2671)) ([b6a1057](https://github.com/kiwicom/orbit/commit/b6a10570a7fb3f0243fcf96a7f975dce52391fb5))
+* allow MDX files in pages directory ([bd97a7a](https://github.com/kiwicom/orbit/commit/bd97a7a2a194ab2c0b1b66f5170efe5d011c04b5))
+* contributors component ([#2652](https://github.com/kiwicom/orbit/issues/2652)) ([140423a](https://github.com/kiwicom/orbit/commit/140423a4962dd253512a2f410ddadbeb1bec5398))
+
+
+
+
+
 ## [0.4.2](https://github.com/kiwicom/orbit/compare/orbit.kiwi@0.4.1...orbit.kiwi@0.4.2) (2021-01-26)
 
 **Note:** Version bump only for package orbit.kiwi

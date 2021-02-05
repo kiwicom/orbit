@@ -1,0 +1,9 @@
+extends: existence
+message: "Use a 24-hour clock (for example: 23:43)."
+link: 'https://orbit.kiwi/content/grammar-and-mechanics/#currency'
+level: error
+nonword: true
+tokens:
+  - '\d{1,2}[aApP][Mm]'
+  - '\d{1,2} ?[aApP][Mm]'
+  - '\d{1,2} ?[aApP]\.[mM]\.'

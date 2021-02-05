@@ -1,0 +1,8 @@
+extends: existence
+message: "Don't put a space before or after a dash."
+link: 'https://orbit.kiwi/content/grammar-and-mechanics/#punctuation'
+scope: paragraph
+level: error
+tokens:
+  - '(?<!\s)[—–](?!\s)'
+  - '(?<!\s)---(?!\s)'

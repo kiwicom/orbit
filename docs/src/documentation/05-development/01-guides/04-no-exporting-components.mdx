@@ -18,12 +18,12 @@ So we would like to clearly state all of them we can and explain our decision cl
 
 We think the following pros to allowing the extension of Orbit React components are the most important.
 
-### Simpler JSX structure with fewer wrappers with custom overrides
+### Simpler JSX structure
 
 Given the nature of how styled-components work,
 the main benefit would be a simpler JSX structure.
 Mainly because of the possibility of extending our components,
-developers could attach additional styles in a very easy way.
+developers could attach additional styles in a very easy way. That would mean fewer wrappers with custom overrides.
 
 ### Better developer experience with Orbit
 
@@ -58,14 +58,14 @@ For the future sustainability and maintainability of our components,
 we can't provide or support their DOM structures,
 which can be changed with refactoring or major visual updates.
 
-### All styled-components would have to have a public and documented API
+### Would need to document API for all styled-components
 
-With allowance, we would have to document all of the inner styled-components
+If we exported, we would have to document all of the inner styled-components
 that make up Orbit React components and have them publicly documented.
 This would add unnecessary complexity on our shoulders
 and require us to make updates and releases less often.
 
-### Harder to update to new versions as we could break the public API
+### New versions would require more work
 
 As said before, having a more public and documented API would mean
 that between some minor versions (and major versions once we will release the first major)
@@ -80,7 +80,7 @@ So we couldn't transparently support how our components would be used.
 This, in the end, could lead to inconsistent behaviour or visual style for our applications,
 even though we can't prohibit all possibilities when it comes to custom CSS overrides.
 
-### Extending functionality to styled-components requires running more JS code
+### Extended functionality requires running more JS code
 
 Given the nature of how styled-components work,
 allowing extension could lead to unnecessary complexity in UI components

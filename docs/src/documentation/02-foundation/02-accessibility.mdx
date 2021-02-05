@@ -50,12 +50,7 @@ As Orbit, we try our best to have accessible components from the get go
 and abstract as much we can for developers.
 For example, we have a few components that will help you to make your websites more accessible.
 
-<FancyLink
-  title="SkipLink"
-  href="/components/accessibility/skiplink/"
-  icon="lightbulb"
-/>
-
+<FancyLink title="SkipLink" href="/components/accessibility/skiplink/" icon="lightbulb" />
 
 <FancyLink
   title="SkipNavigation"
@@ -63,19 +58,18 @@ For example, we have a few components that will help you to make your websites m
   icon="lightbulb"
 />
 
-
 However, we can't do everything as making products accessible is a team effort.
 Below, you can find a list of current components where we need your help
 to ensure proper accessibility support.
 
-| React Component   | What Orbit offers                         | What you need to do                                                                                     |
-| ----------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Badge             | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                  |
-| Button            | Screen reader/keyboard navigation support | Read about [Button's multiple accessibility properties](/components/button/react/#accessibility)        |
-| ButtonLink        | Screen reader/keyboard navigation support | Read about [ButtonLink's multiple accessibility properties]/components/buttonlink/react/#accessibility) |
-| Card              | Screen reader/keyboard navigation support | Use the `dataA11ySection` property when needed                                                          |
-| Heading           | Screen reader support                     | Use the `dataA11ySection` property when needed                                                          |
-| NotificationBadge | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                  |
+| React Component   | What Orbit offers                         | What you need to do                                                                                            |
+| ----------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Badge             | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                         |
+| Button            | Screen reader/keyboard navigation support | Read about [Button's multiple accessibility properties](/components/action/button/react/#accessibility)        |
+| ButtonLink        | Screen reader/keyboard navigation support | Read about [ButtonLink's multiple accessibility properties]/components/action/buttonlink/react/#accessibility) |
+| Card              | Screen reader/keyboard navigation support | Use the `dataA11ySection` property when needed                                                                 |
+| Heading           | Screen reader support                     | Use the `dataA11ySection` property when needed                                                                 |
+| NotificationBadge | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                         |
 
 ## Screen readers (assistive technologies)
 
@@ -185,7 +179,7 @@ Lines can be shorter as well, down to 50 (or 25) characters.
 Justifying text to both the right and left can create uneven spacing
 ("[rivers of white](<https://en.wikipedia.org/wiki/River_(typography)>)"),
 which makes it hard to follow the flow of the text.
-That's why Orbit [Text](/components/text/) components do not offer this as an alignment option.
+That's why Orbit [Text](/components/text/text/) components do not offer this as an alignment option.
 Base the text alignment off the directionality of the language.
 
 ## Bidirectionality (RTL)
@@ -197,7 +191,7 @@ it will make it harder for users to understand what to do to accomplish their go
 
 Luckily, Orbit components are designed to work in both directions.
 This lets you mirror your layouts so the important aspects are clear to users of any language.
-You can see [how to implement RTL language support with Orbit](/development/utilities/right-to-left-languages/).
+You can see [how to implement RTL language support with Orbit](/development/utilities/rtl-languages/).
 
 As a part of this process, important visual clues (like a forward arrow pointing to the right on a Tile)
 are mirrored in RTL presentation (the arrow points to the left by default).
@@ -249,7 +243,7 @@ which can include padding and isn't limited to only visible icons.)
 
 This translates to different values depending on the device,
 but can be generalized as at least 44 by 44 CSS pixels.
-An example is an Orbit circled [Button](/components/button/) at normal size.
+An example is an Orbit circled [Button](/components/action/button/) at normal size.
 
 Then to make sure each target can be used separately,
 make sure to include enough spacing between each target.

@@ -1,0 +1,8 @@
+extends: existence
+message: "Avoid using '%s'. Stick to the present tense."
+link: 'https://orbit.kiwi/content/technical-content/language/#tenses'
+ignorecase: true
+level: warning
+tokens:
+  - will
+  - won't

@@ -190,6 +190,45 @@ module.exports = {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
       },
     },
+    {
+      files: "*.mdx",
+      extends: ["plugin:mdx/recommended"],
+      rules: {
+        "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
+        "mdx/no-unescaped-entities": "OFF",
+        "mdx/remark": "error",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            tsx: "never",
+          },
+        ],
+      },
+      settings: {
+        "import/resolver": {
+          node: {
+            extensions: [".tsx"],
+          },
+        },
+      },
+      globals: {
+        // Ignore components added as shortcodes so they don't get marked as undefined
+        // TODO: remove the components that aren't shortcodes, just haven't been added yet
+        Callout: false,
+        Do: false,
+        Dont: false,
+        FancyLink: false,
+        FigmaFile: false,
+        GitHubContributors: false,
+        Guidelines: false,
+        GuidelinesSideBySide: false,
+        IconsDownloadList: false,
+        Palette: false,
+        ReactExample: false,
+        SocialLinks: false,
+      },
+    },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
       files: ["packages/orbit-components/src/utils/**/*"],

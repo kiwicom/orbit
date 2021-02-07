@@ -83,4 +83,4 @@ jobs:
         run: yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Update docs description
-        run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}
+        run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} DOCS

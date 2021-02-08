@@ -75,7 +75,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "browserslist": "^4.14.5",
     "camelcase": "^6.1.0",
-    "caniuse-db": "^1.0.30001181",
+    "caniuse-db": "^1.0.30001185",
     "capitalize": "^2.0.3",
     "conventional-changelog": "^3.1.24",
     "copyfiles": "^2.4.0",

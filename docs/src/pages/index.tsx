@@ -9,7 +9,6 @@ import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
 import ButtonLink from "../components/ButtonLink";
 import Tile from "../components/Tile";
-import OrbitTeam from "../components/Github/OrbitTeam";
 
 const TileWrapper = styled.div`
   flex: 1;
@@ -136,7 +135,6 @@ export default function Home() {
             </ButtonLink>
           </div>
         </div>
-        <OrbitTeam />
         <div
           css={css`
             margin-top: 0;

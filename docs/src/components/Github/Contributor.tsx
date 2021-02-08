@@ -15,19 +15,21 @@ const StyledImageWrapper = styled(({ url, children, ...props }) => {
   width: 60px;
 `;
 
-const Contributor = ({ avatarUrl, name, url }: IContributor) => {
+// eslint-disable-next-line camelcase
+const Contributor = ({ avatar_url, name, url }: IContributor) => {
   return (
     <Stack
-      flex
+      inline
       direction="column"
-      largeMobile={{ direction: "row" }}
+      largeMobile={{ direction: "row", shrink: true }}
       spaceAfter="large"
       spacing="large"
       align="stretch"
     >
       <StyledImageWrapper url={url}>
         <img
-          src={avatarUrl}
+          // eslint-disable-next-line camelcase
+          src={avatar_url}
           alt={name}
           title={name}
           css={css`

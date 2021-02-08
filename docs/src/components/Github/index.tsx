@@ -1,34 +1,41 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Contributor from "./Contributor";
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
+`;
 
 export interface IContributor {
   name?: string;
   id?: string;
-  avatarUrl?: string;
+  // eslint-disable-next-line camelcase
+  avatar_url?: string;
   bio?: string;
-  websiteUrl?: string;
-  twitterUsername?: string;
+  blog?: string;
+  // eslint-disable-next-line camelcase
+  twitter_username?: string;
   url?: string;
 }
 
 const ContributorsComponent = () => {
-  const { github } = useStaticQuery(
+  const { allContributor } = useStaticQuery(
     graphql`
       query CollaboratorsQuery {
-        github {
-          repository(name: "orbit", owner: "kiwicom") {
-            collaborators {
-              nodes {
-                bio
-                avatarUrl
-                id
-                name
-                url
-                websiteUrl
-                twitterUsername
-              }
+        allContributor {
+          edges {
+            node {
+              id
+              avatar_url
+              bio
+              blog
+              twitter_username
+              name
+              url
             }
           }
         }
@@ -37,12 +44,15 @@ const ContributorsComponent = () => {
   );
 
   return (
-    <>
-      {github.repository.collaborators.nodes.map(({ id, ...info }) => (
-        <Contributor key={id} id={id} {...info} />
-      ))}
-    </>
+    <Grid>
+      {allContributor.edges
+        .map(n => n.node)
+        .map(({ id, ...info }) => {
+          return <Contributor key={id} id={id} {...info} />;
+        })}
+    </Grid>
   );
+  return null;
 };
 
 export default ContributorsComponent;

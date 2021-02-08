@@ -74,15 +74,12 @@ module.exports = {
         query: "allMdx",
       },
     },
+    // our custom plugins place here:
     {
-      resolve: "gatsby-source-graphql",
+      resolve: require.resolve("./plugins/contributors"),
       options: {
-        typeName: "GitHub",
-        fieldName: "github",
-        url: "https://api.github.com/graphql",
-        headers: {
-          Authorization: `Bearer ${process.env.GH_TOKEN}`,
-        },
+        repo: "orbit",
+        owner: "kiwicom",
       },
     },
     "gatsby-plugin-meta-redirect",

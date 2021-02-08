@@ -58,7 +58,7 @@
     "@storybook/addons": "^6.0.28",
     "@storybook/react": "^6.0.28",
     "@storybook/storybook-deployer": "^2.8.7",
-    "@storybook/theming": "^6.0.28",
+    "@storybook/theming": "^6.1.17",
     "@svgr/core": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.0",

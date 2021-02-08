@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.109.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.0...@kiwicom/orbit-components@0.109.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* use postinstall script only in development ([05cecc4](https://github.com/kiwicom/orbit/commit/05cecc434b069d32732c0434186d76877c2f0277))
+
+
+
+
+
 # [0.109.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.2...@kiwicom/orbit-components@0.109.0) (2021-02-05)
 
 

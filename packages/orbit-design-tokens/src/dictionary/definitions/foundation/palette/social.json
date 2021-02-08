@@ -3,21 +3,19 @@
     "palette": {
       "social": {
         "facebook": {
-          "default": {
-            "type": "color",
-            "value": "#3B5998",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#385490",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#354F88",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#3B5998",
+          "internal": true
+        },
+        "facebook-secondary": {
+          "type": "color",
+          "value": "#385490",
+          "internal": true
+        },
+        "facebook-tertiary": {
+          "type": "color",
+          "value": "#354F88",
+          "internal": true
         }
       }
     }

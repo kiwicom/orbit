@@ -1,13 +1,12 @@
-import _ from "lodash";
 import { Property } from "style-dictionary";
 
-import { isSpacing, isColor, isBorderRadius } from "../../utils/is";
+import { isSpacing, isBorderRadius } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 
 /*
   Transforms spacing to pixel value.
  */
-const spacingJavascript = {
+export const spacingJavascript = {
   name: "value/spacing/javascript",
   type: "value",
   matcher: isSpacing,
@@ -19,7 +18,7 @@ const spacingJavascript = {
 /*
   Transforms value to Javascript compatible format with double quotes.
  */
-const stringJavascript = {
+export const stringJavascript = {
   name: "value/string/javascript",
   type: "value",
   transformer: ({ value }: Property): string => {
@@ -30,7 +29,7 @@ const stringJavascript = {
 /*
   Transforms border radius value to Javascript compatible format with pixels.
  */
-const borderRadiusJavascript = {
+export const borderRadiusJavascript = {
   name: "value/border-radius/javascript",
   type: "value",
   matcher: isBorderRadius,
@@ -44,23 +43,20 @@ const borderRadiusJavascript = {
 };
 
 /*
-  Transforms attributes from attribute/foundation to interlaced identifiers.
-  e.g. foundation.base.space.value
+  Transforms attributes from attribute/nov to interlaced identifiers.
+  e.g. foundation.space.value
   TODO in future:
   - other types has leading dot at the end (only palette is being exposed via global tokens for now)
  */
-const foundationAlias = {
-  name: "value/foundation/alias",
+export const foundationAlias = {
+  name: "value/nov/alias",
   type: "value",
   transformer: (prop: Property): string => {
     const { attributes } = prop;
-    const { category, name, type, state } = attributes;
-    if ([category, name, type, state].every(value => value == null)) {
-      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
+    const { namespace, object, variant, subVariant } = attributes;
+    if ([namespace, object, variant, subVariant].every(value => value == null)) {
+      throw new Error(errorTransform("value/nov/alias", "attribute/nov"));
     }
-    const lastIdentifier = isColor(prop) ? [_.camelCase([type, state].join(" "))] : [type, state];
-    return ["foundation", category, name, ...lastIdentifier].filter(Boolean).join(".");
+    return [namespace, object, variant, subVariant].filter(Boolean).join(".");
   },
 };
-
-export default { spacingJavascript, stringJavascript, borderRadiusJavascript, foundationAlias };

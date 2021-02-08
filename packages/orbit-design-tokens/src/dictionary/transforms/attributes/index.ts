@@ -3,73 +3,63 @@ import { Attributes, Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
 
+const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
+
 /*
   The basic attribute transformer, adds serialized path info to the property.
-  For colors:
   attributes: {
-    category: "palette",
-    name: "blue",
-    type: "light",
-    // default is not present
-  }
-
-  For other types:
-  attributes: {
-    category: "base",
-    name: "space",
-    type: "XXS",
-    // default is not present
+    namespace: "foundation" (or "global", "variant"),
+    object: "palette" (or e.g. "border-radius"),
+    variant: "blue" (or e.g. "small"),
+    subVariant: "light" (nullish for most properties),
   }
  */
-const attributeFoundation = {
-  name: "attribute/foundation",
+export const attributeNOV = {
+  name: "attribute/nov",
   type: "attribute",
   transformer: ({ attributes = {}, path }: Property): Attributes => {
-    const structure = ["category", "name", "type", "state"];
     const generatedAttrs = {};
 
-    for (let i = 0; i < path.length && i < structure.length; i += 1) {
-      /*
-        Skipping first – it's foundation
-      */
-      const item = path[i + 1];
-      /*
-        If the horizontalShade is named as "base" so we want to skip it,
-        because it would be explicit in the final token name
-       */
-      if (item !== "default") {
-        generatedAttrs[structure[i]] = _.camelCase(item);
-      }
+    for (let i = 0; i < path.length && i < NOV_STRUCTURE.length; i += 1) {
+      generatedAttrs[NOV_STRUCTURE[i]] = _.camelCase(path[i]);
     }
     return Object.assign(generatedAttrs, attributes);
   },
 };
 
-/*
-  Adds foundationName to attributes. Useful for type generation.
-  Needs to be used together with "attribute/foundation".
- */
-const attributeFoundationName = {
-  name: "attribute/foundation/name",
+export const attributeNOVCamelCase = {
+  name: "attribute/nov/camelCase",
   type: "attribute",
   transformer: ({ attributes }: Property): Attributes => {
-    const { type, state, category, name } = attributes;
-    if ([category, name, type, state].every(value => value == null)) {
-      throw new Error(errorTransform("value/foundation/alias", "attribute/foundation"));
+    const { namespace, object, variant, subVariant } = attributes;
+    const camelCased = {};
+    return Object.assign(attributes, camelCased);
+  },
+};
+
+/*
+  Adds foundationName to attributes. Useful for type generation.
+  Needs to be used together with "attribute/nov".
+ */
+export const attributeNOVAlias = {
+  name: "attribute/nov/alias",
+  type: "attribute",
+  transformer: ({ attributes }: Property): Attributes => {
+    const { namespace, object, variant, subVariant } = attributes;
+    if ([namespace, object, variant, subVariant].every(value => value == null)) {
+      throw new Error(errorTransform("attribute/nov/alias", "attribute/nov"));
     }
-    const foundation = {
-      foundationName: _.camelCase([type, state].join(" ")),
-    };
-    return { ...foundation, ...attributes };
+    const foundationAlias = subVariant || variant;
+    return { foundationAlias, ...attributes };
   },
 };
 
 /*
   Adds foundationType to attributes. Useful for type generation.
-  Needs to be used together with "attribute/foundation".
+  Needs to be used together with "attribute/nov".
  */
-const attributeFoundationType = {
-  name: "attribute/foundation/type",
+export const attributeNOVType = {
+  name: "attribute/nov/type",
   type: "attribute",
   transformer: ({ attributes }: Property): Attributes => {
     const foundation = {
@@ -79,5 +69,3 @@ const attributeFoundationType = {
     return { ...foundation, ...attributes };
   },
 };
-
-export default { attributeFoundation, attributeFoundationName, attributeFoundationType };

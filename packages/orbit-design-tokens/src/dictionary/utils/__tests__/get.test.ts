@@ -1,93 +1,117 @@
 import {
-  getAllPaletteNames,
-  getAllCategories,
-  getFoundationProperties,
+  getFoundationSubVariantProperties,
+  getFoundationVariantOnlyProperties,
   getFoundationNameValue,
 } from "../get";
 
-const properties = [
-  {
-    type: "spacing",
-    value: 4,
-    internal: true,
-    original: { type: "spacing", value: 4, internal: true },
-    name: "foundationBaseSpace2Xs",
-    attributes: {
-      foundationName: "2Xs",
-      foundationType: "string",
-      category: "base",
-      name: "space",
-      type: "2xs",
-    },
-    path: ["foundation", "base", "space", "2xs"],
-  },
+const propertiesWithSubVariant = [
   {
     type: "color",
     value: "#E8F4FD",
     internal: true,
     original: { type: "color", value: "#E8F4FD", internal: true },
-    name: "foundationPaletteBlueLightDefault",
+    name: "foundationPaletteBlueLight",
     attributes: {
-      foundationName: "light",
+      namespace: "foundation",
+      object: "palette",
+      variant: "blue",
+      subVariant: "light",
+      foundationAlias: "light",
       foundationType: "string",
-      category: "palette",
-      name: "blue",
-      type: "light",
     },
-    path: ["foundation", "palette", "blue", "light", "default"],
+    path: ["foundation", "palette", "blue", "light"],
   },
   {
     type: "color",
     value: "#FAEAEA",
     internal: true,
     original: { type: "color", value: "#FAEAEA", internal: true },
-    name: "foundationPaletteRedLightDefault",
+    name: "foundationPaletteRedLight",
     attributes: {
-      foundationName: "light",
+      namespace: "foundation",
+      object: "palette",
+      variant: "red",
+      subVariant: "light",
+      foundationAlias: "light",
       foundationType: "string",
-      category: "palette",
-      name: "red",
-      type: "light",
     },
-    path: ["foundation", "palette", "red", "light", "default"],
+    path: ["foundation", "palette", "red", "light"],
   },
 ];
 
+const propertiesWithVariantOnly = [
+  {
+    type: "border-radius",
+    value: 2,
+    internal: true,
+    original: { type: "border-radius", value: 2, internal: true },
+    name: "foundationBorderRadiusSmall",
+    attributes: {
+      namespace: "foundation",
+      object: "border-radius",
+      variant: "small",
+      foundationAlias: "small",
+      foundationType: "string",
+    },
+    path: ["foundation", "border-radius", "small"],
+  },
+  {
+    type: "border-radius",
+    value: 4,
+    internal: true,
+    original: { type: "border-radius", value: 4, internal: true },
+    name: "foundationBorderRadiusNormal",
+    attributes: {
+      namespace: "foundation",
+      object: "border-radius",
+      variant: "normal",
+      foundationAlias: "normal",
+      foundationType: "string",
+    },
+    path: ["foundation", "border-radius", "normal"],
+  },
+];
 describe("get utils", () => {
-  it("getAllPaletteNames should return expected", () => {
-    const expected = ["blue", "red"];
-    expect(getAllPaletteNames(properties)).toEqual(expected);
-  });
-  it("getAllCategories should return expected", () => {
-    const expected = ["base", "palette"];
-    expect(getAllCategories(properties)).toEqual(expected);
-  });
-  it("getFoundationProperties should return expected", () => {
+  it("getFoundationSubVariantProperties should return expected", () => {
     const expected = {
-      base: {
-        space: [{ name: "2Xs", value: 4 }],
-      },
       palette: {
         blue: [{ name: "light", value: "#E8F4FD" }],
         red: [{ name: "light", value: "#FAEAEA" }],
       },
     };
-    expect(getFoundationProperties(properties, getFoundationNameValue("javascript"))).toEqual(
-      expected,
-    );
+    expect(
+      getFoundationSubVariantProperties(
+        propertiesWithSubVariant,
+        getFoundationNameValue("javascript"),
+      ),
+    ).toEqual(expected);
   });
-  it("getFoundationProperties should return expected with selector", () => {
+  it("getFoundationSubVariantProperties should return expected with selector", () => {
     const expected = {
-      base: {
-        space: [{ name: "2Xs", value: "string" }],
-      },
       palette: {
         blue: [{ name: "light", value: "string" }],
         red: [{ name: "light", value: "string" }],
       },
     };
-    expect(getFoundationProperties(properties, getFoundationNameValue("typescript"))).toEqual(
-      expected,
-    );
+    expect(
+      getFoundationSubVariantProperties(
+        propertiesWithSubVariant,
+        getFoundationNameValue("typescript"),
+      ),
+    ).toEqual(expected);
+  });
+  it("getFoundationVariantOnlyProperties should return expected", () => {
+    const expected = {
+      "border-radius": [
+        { name: "small", value: 2 },
+        { name: "normal", value: 4 },
+      ],
+    };
+    expect(
+      getFoundationVariantOnlyProperties(
+        propertiesWithVariantOnly,
+        getFoundationNameValue("javascript"),
+      ),
+    ).toEqual(expected);
   });
 });

@@ -18,23 +18,25 @@ const tokenPlaceholder = ({ type, internal }) => ({
 
 describe("is utils", () => {
   it("isColor should return expected", () => {
-    expect(isColor(tokenPlaceholder({ type: "color" }))).toEqual(true);
-    expect(isColor(tokenPlaceholder({ type: "spacing" }))).toEqual(false);
+    expect(isColor(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);
+    expect(isColor(tokenPlaceholder({ type: "spacing", internal: true }))).toEqual(false);
   });
   it("isSpacing should return expected", () => {
-    expect(isSpacing(tokenPlaceholder({ type: "color" }))).toEqual(false);
-    expect(isSpacing(tokenPlaceholder({ type: "spacing" }))).toEqual(true);
+    expect(isSpacing(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isSpacing(tokenPlaceholder({ type: "spacing", internal: true }))).toEqual(true);
   });
   it("isBorderRadius should return expected", () => {
-    expect(isBorderRadius(tokenPlaceholder({ type: "color" }))).toEqual(false);
-    expect(isBorderRadius(tokenPlaceholder({ type: "border-radius" }))).toEqual(true);
+    expect(isBorderRadius(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isBorderRadius(tokenPlaceholder({ type: "border-radius", internal: true }))).toEqual(
+      true,
+    );
   });
   it("isInternal should return expected", () => {
-    expect(isInternal(tokenPlaceholder({ internal: true }))).toEqual(true);
-    expect(isInternal(tokenPlaceholder({ internal: false }))).toEqual(false);
+    expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);
+    expect(isInternal(tokenPlaceholder({ type: "color", internal: false }))).toEqual(false);
   });
   it("isNotInternal should return expected", () => {
-    expect(isNotInternal(tokenPlaceholder({ internal: true }))).toEqual(false);
-    expect(isNotInternal(tokenPlaceholder({ internal: false }))).toEqual(true);
+    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: false }))).toEqual(true);
   });
 });

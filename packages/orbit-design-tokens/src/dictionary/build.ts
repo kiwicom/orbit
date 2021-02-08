@@ -11,10 +11,10 @@ const build = () => {
   StyleDictionary.registerTransformGroup({
     name: "javascript/foundation",
     transforms: [
-      "attribute/foundation",
-      "attribute/foundation/name",
-      "attribute/foundation/type",
-      "name/foundation/camel",
+      "attribute/nov",
+      "attribute/nov/alias",
+      "attribute/nov/type",
+      "name/nov/camel",
       "value/spacing/javascript",
       "value/border-radius/javascript",
       "value/string/javascript",
@@ -22,16 +22,11 @@ const build = () => {
   });
   StyleDictionary.registerTransformGroup({
     name: "javascript/tokens",
-    transforms: [
-      "attribute/foundation",
-      "attribute/foundation/type",
-      "value/foundation/alias",
-      "name/foundation/camel",
-    ],
+    transforms: ["attribute/nov", "attribute/nov/type", "value/nov/alias", "name/nov/camel"],
   });
   StyleDictionary.registerTransformGroup({
     name: "xml/tokens",
-    transforms: ["attribute/foundation", "name/foundation/camel"],
+    transforms: ["attribute/nov", "name/nov/camel"],
   });
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],

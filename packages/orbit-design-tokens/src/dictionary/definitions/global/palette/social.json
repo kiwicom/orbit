@@ -3,30 +3,28 @@
     "palette": {
       "social": {
         "facebook": {
-          "default": {
-            "type": "color",
-            "value": "{foundation.palette.social.facebook.default}"
-          },
-          "hover": {
-            "type": "color",
-            "value": "{foundation.palette.social.facebook.secondary}",
-            "deprecated": true,
-            "deprecated-replace": "{global.palette.social.facebook.secondary}"
-          },
-          "secondary": {
-            "type": "color",
-            "value": "{foundation.palette.social.facebook.secondary}"
-          },
-          "active": {
-            "type": "color",
-            "value": "{foundation.palette.social.facebook.tertiary}",
-            "deprecated": true,
-            "deprecated-replace": "{global.palette.social.facebook.tertiary}"
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "{foundation.palette.social.facebook.tertiary}"
-          }
+          "type": "color",
+          "value": "{foundation.palette.social.facebook}"
+        },
+        "facebook-hover": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.social.facebook-secondary}"
+        },
+        "facebook-secondary": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-secondary}"
+        },
+        "facebook-active": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{global.palette.social.facebook-tertiary}"
+        },
+        "facebook-tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-tertiary}"
         }
       }
     }

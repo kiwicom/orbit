@@ -1,8 +1,8 @@
 import type { StyleDictionary } from "style-dictionary";
 
-import attributes from "./attributes";
-import names from "./names";
-import values from "./values";
+import * as attributes from "./attributes";
+import * as names from "./names";
+import * as values from "./values";
 
 const transforms = {
   attributes,

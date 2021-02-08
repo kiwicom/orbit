@@ -1,7 +1,5 @@
 import { Property } from "style-dictionary";
 
-export const isBase = ({ path }: Property): boolean => path && path[0] === "global";
-
 const isTypeOf = ({ type, attributes: { category } }: Property, typeName: string): boolean =>
   typeName === type || typeName === category;
 

@@ -3,45 +3,39 @@
     "palette": {
       "cloud": {
         "light": {
-          "default": {
-            "type": "color",
-            "value": "#F5F7F9",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#E5EAEF",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#D6DEE6",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#F5F7F9",
+          "internal": true
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "#E5EAEF",
+          "internal": true
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "#D6DEE6",
+          "internal": true
         },
         "normal": {
-          "default": {
-            "type": "color",
-            "value": "#EFF2F5",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#DCE3E9",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#CAD4DE",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#EFF2F5",
+          "internal": true
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "#DCE3E9",
+          "internal": true
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "#CAD4DE",
+          "internal": true
         },
         "dark": {
-          "default": {
-            "type": "color",
-            "value": "#E8EDF1",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#E8EDF1",
+          "internal": true
         }
       }
     }

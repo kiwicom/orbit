@@ -9,6 +9,7 @@
     "bootstrap": "lerna bootstrap",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
     "orbit-design-tokens": "yarn workspace @kiwicom/orbit-design-tokens",
+    "orbit-kiwi": "yarn workspace orbit.kiwi",
     "build": "yarn orbit-design-tokens build && yarn orbit-components build",
     "build-ci": "lerna bootstrap && yarn build",
     "postinstall": "lerna run postinstall --stream",

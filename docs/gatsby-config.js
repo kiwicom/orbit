@@ -3,6 +3,7 @@ const path = require("path");
 require("dotenv-safe").config({
   example: path.resolve(__dirname, `../.env.example`),
   path: path.resolve(__dirname, `../.env`),
+  allowEmptyValues: true,
 });
 
 module.exports = {

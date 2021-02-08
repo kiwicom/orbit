@@ -7,7 +7,8 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
-    "repl": "gatsby repl"
+    "repl": "gatsby repl",
+    "deploy:surge": "yarn surge public/"
   },
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",

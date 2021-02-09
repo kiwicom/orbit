@@ -24,8 +24,7 @@ jobs:
       uses: errata-ai/vale-action@v1.3.0
       with:
         files: docs/src/documentation
-        # Will set following to true once initial lint setup is ready
-        # onlyAnnotateModifiedLines: true
+        onlyAnnotateModifiedLines: true
       env:
         # Required
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -7,6 +7,7 @@
   - [Technologies we use](#technologies-we-use)
   - [Starting with development](#starting-with-development)
   - [Testing](#testing)
+- [Contributing to the docs](./docs.md)
 - [Adding a new icon](#adding-a-new-icon)
 - [Props naming convention](#props-naming-convention)
 - [Component design](#component-design)
@@ -66,6 +67,10 @@ If you need to update tests because of some changes in the code, you can do it b
 ### Visual regression test
 
 We are still working on this, we will add documentation as soon as possible.
+
+## Contributing to the docs
+
+See our full guide to [contributing to our docs](./docs.md)
 
 ## Adding a new icon
 

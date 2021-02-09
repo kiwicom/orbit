@@ -1,2 +1,2 @@
-const Placeholder = ({ children }) => children;
+const Placeholder = ({ children }) => children || "Placeholder";
 export default Placeholder;

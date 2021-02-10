@@ -1,3 +1,66 @@
 ---
 title: Guidelines
 ---
+
+import ResponsiveSimilarContentSnippet from "snippets/responsive-similar-content.mdx";
+
+<ReactExample name="Layout" />
+
+## When to use
+
+To chose the best component for your use case, see our [developing layouts guide](/development//guides/developing-layouts/).
+
+- To ensure designs don't break at different sizes.
+- To use a predefined or your own layout to show content in the right place at any size.
+
+### When not to use
+
+- For content only on large screens---use a [desktop component](/components/responsive/desktop/).
+- For content only on small screens---use a [Mobile component](/components/responsive/mobile/).
+- For more control over what appears on different screen sizes---use a
+  [Hide component](/components/responsive/hide/).
+
+## Component status
+
+<ComponentStatus component="Layout" />
+
+## Behavior
+
+<ResponsiveSimilarContentSnippet />
+
+When choosing a layout with columns that change,
+make sure the same content appears no matter the width.
+If a column will be hidden, move its content to a different one.
+
+Use progressive disclosure to keep content close by.
+Consider a [Hide component](/components/responsive/hide/) to vary what appears in each column.
+
+## Look & feel
+
+### Common properties
+
+In all of the layouts, there is one column designed to hold the main content.
+There's always a maximum width defined
+so it doesn't cover the entire width of large screens.
+And all of the content is centered in the middle of the screen.
+
+### Different layouts
+
+#### Booking layout
+
+The Booking layout is a two-column layout on larger screens.
+On smaller screens, the second column is placed underneath the first.
+
+<ReactExample name="Layout bBoking" />
+
+### MMB layout
+
+The MMB layout is a one-column layout with the same visibility no matter the screen size.
+
+<ReactExample name="Layout MMB" />
+
+### Search layout
+
+The Search layout is a three-column layout with one column always visible and the others variable.
+
+<ReactExample name="Layout Search" />

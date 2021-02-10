@@ -1,3 +1,50 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Loading" />
+
+## When to use
+
+- To let users know progress on their action in the UI is being made.
+- To keep users from giving up on an experince.
+- Especially after user input to prevent repeated action.
+
+Read or listen to [more about progress indicators](https://99percentinvisible.org/episode/wait-wait-tell-me/).
+
+### When not to use
+
+- For progress on a large task with steps users should complete---use a [wizard](/components/progress-indicators/wizard/).
+- For progress on a process out of their control---use a [timeline](/components/progress-indicators/timeline/).
+
+## Component status
+
+<ComponentStatus component="Loading" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="89%3A0"
+  alt="Animation: varies based on loading type; text: optionally lets users know what is happening."
+/>
+
+## Behavior
+
+### Use the right type
+
+Differ loading types take up different spaces
+and create certain expectations in users.
+Choose the loading type to correspond to the content that will be loaded.
+
+<ReactExample name="Loading types" />
+
+## Content
+
+### Let users know what's happening
+
+Loading components help show users progress is being made.
+Make it clear what the progress will lead to with helpful text
+indicating what's coming or what action is being taken.
+
+<ReactExample name="Text" />

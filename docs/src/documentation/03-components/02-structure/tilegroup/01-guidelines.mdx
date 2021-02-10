@@ -1,3 +1,54 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="TileGroup" />
+
+## When to use
+
+- You have multiple related structured interactions ([tiles](/components/structure/tile/)).
+- You want to present the groups as a whole.
+
+### When not to use
+
+- For information without a related action---use a [card](/components/structure/card/).
+
+## Component status
+
+<ComponentStatus component="TileGroup" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="782%3A2502"
+  alt="Hovered/focused tile: shows the currently selected action; other tiles: offer other actions to choose from."
+/>
+
+## Behavior
+
+### Use for related actions
+
+Tile groups are designed to associate their contents closely.
+This means the tiles will look similar and connected.
+
+So don't use tile groups for unrelated options.
+Use them to present clear choices for the next logical step.
+
+### Keep tiles consistent       
+
+To present clear options,
+it helps if all of the choices are similar.
+This makes scanning for the right one easier.
+
+Use similar structures for all tiles so each action is clear
+and users can choose the one that's right for them.
+
+## Look & feel
+
+### Hover/focus
+
+The tiles are associated together within the group and made to look similar.
+To make selection clearer, the background changes when a user hovers over/focuses on a tile.
+
+In this way, the current selection is clear and users are less likely to click the wrong action.

@@ -1,3 +1,70 @@
 ---
 title: Guidelines
 ---
+
+import InputBackgroundLinkSnippet from "snippets/input-background-link.mdx";
+import InputHelpErrorSnippet from "snippets/input-help-error.mdx";
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+import InputPlaceholderSnippet from "snippets/input-placeholder.mdx";
+
+<ReactExample name="InputGroup" />
+
+## When to use
+
+- To group multiple input fields for related information
+  such as a date of birth with a day, a month, and a year.
+- To label and validate the group as a whole, rather than just individual fields.
+
+### When not to use
+
+- For information that can't be presented as a single unit---use the appropriate field for the data type, such as:
+  - [Input field](https://orbit.kiwi/components/inputfield/)
+  - [Select](https://orbit.kiwi/components/select/)
+  - [Input file](https://orbit.kiwi/components/inputfile/)
+  - [Input stepper](https://orbit.kiwi/components/inputstepper/)
+
+## Component status
+
+<ComponentStatus component="InputGroup" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="76%3A1011"
+  alt="Label: provides a clear description of what users should fill in; input divider: clearly separates inputs within the group; Select (component): specifies options users can choose from. InputField (component): specifies one type of input expected of users; error: guides users on how to solve any problems and overrides errors for individual inputs in the group."
+/>
+
+## Behavior
+
+### Use for closely related fields       
+
+Input groups override the settings of individual fields to present a coherent whole.
+This means they're great for a couple of fields that make a single unit.
+
+They're not good at grouping many fields,
+such as everything that goes into building an address.
+For those cases, use visual spacing, logical headers, and other structure
+to make it clear what fields are related.
+
+## Content
+
+<InputLabelsSnippet />
+
+<InputHelpErrorSnippet />
+
+#### Help message
+
+<ReactExample name="InputGroup help" />
+
+#### Error message
+
+<ReactExample name="InputGroup error" />
+
+<InputPlaceholderSnippet />
+
+The placeholder text must be added to each field, rather than the input group as a whole.
+
+## Look & feel
+
+<InputBackgroundLinkSnippet />

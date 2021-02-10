@@ -1,3 +1,75 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Collapse" />
+
+## When to use
+
+- To keep content off the initial screen but still only a tap away.
+- For details not necessary to the main flow.
+- To support [progressive disclosure](/guides/progressive-disclosure).
+
+### When not to use
+
+- For structured information to show one section at a time---use an [accordion](/components/structure/accordion/).
+- For information and/or actions outside the scope of the screen---use a [popover](/components/overlay/popover/).
+- For explanations connected to specific elements---use a [tooltip](/components/overlay/tooltip/).
+- For actions outside the main flow---use a [dialog](/components/overlay/tooltip/) (for simple choices)
+  or a [modal](/components/overlay/modal/) (for more structure or options).
+
+## Component status
+
+<ComponentStatus component="Collapse" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="366%3A1604"
+  alt="Label: clearly indicates what can be hidden/shown; actions: optionally creates an area for actions that relate to the entire contents; collapse controller: indicates the state, which can be expanded or not."
+/>
+
+## Behavior
+
+### Use for less essential information
+
+Because it requires an extra interaction,
+information inside a collapse won't be seen by all users.
+So it's a great container for extra information that adds context that some users might want
+but no users will absolutely require.
+
+Don't use it to hide errors or anything else that might block a user's flow.
+Remember that they might not choose to open it.
+
+## Content
+
+### Make content clear from label
+
+The label is the first thing all users will see,
+and the only thing most of them will see.
+Make sure it's clear what the collapse contains
+so they know whether they want to see more.
+
+Keep the label short but clear.
+Focus on nouns describing what the collapse contains.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Transport
+- Stops
+- Collapse principles
+
+</Do>
+
+<Dont>
+
+- What different kinds of transport to search
+- How many stops are OK?
+- Read more (about the principles behind collapse components)
+
+</Dont>
+
+</GuidelinesSideBySide>

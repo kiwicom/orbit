@@ -1,3 +1,76 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="" />
+
+## When to use
+
+- To show users where they are in your overall structure.
+- To offer a way to go up the hierarchy back to the start.
+
+### When not to use
+
+- To show steps in a process including steps in the future---use a
+  [wizard](/components/progress-indicators/wizard/).
+
+## Component status
+
+<ComponentStatus component="" />
+
+## Content structure
+
+### Mobile
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="536%3A1869"
+  alt="Back button: allows users to easily go back one step in the path."
+/>
+
+### Desktop
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="542%3A251"
+  alt="Back button: allows users to easily go back in the path; root item: usually the name of your product; full path: shows where the current page lies in the sitemaps; current page: shows the name of the page where the user currently is."
+/>
+
+## Behavior
+
+### Clearly present position
+
+Users may come to a given screen through different flows
+(such as an external link or search).
+So it's important that they always know where in your structure they are.
+
+Use breadcrumbs to show the position and that there are other screens in your hierarchy.
+This helps them find related screens and navigate through your hierarchy.
+
+### Show only parents
+
+Breadcrumbs are useful for showing how to navigate up in a hierarchy.
+They display the current screen as the final item in the list to make it clear where the user is.
+
+There are scenarios where you might want to show children
+or other screens lower in the hierarchy,
+such as steps in a signup process.
+Use a [Wizard component](/components/progress-indicators/wizard/) for these cases.
+
+## Look & feel
+
+### Responsive design
+
+In large spaces like a desktop screen,
+it's possible to show the entire breadcrumbs path without cluttering up the screen.
+
+<ReactExample name="Breadcrumbs" size="Desktop" />
+
+When the screen gets smaller,
+it becomes impossible to fit the entire path on one line.
+That's why breadcrumbs on smaller screens show only **one option**:
+going back to the immediate parent.
+
+<ReactExample name="Breadcrumbs" size="Mobile small" />
+
+This way users have a clear tool for navigating up in the hierarchy.

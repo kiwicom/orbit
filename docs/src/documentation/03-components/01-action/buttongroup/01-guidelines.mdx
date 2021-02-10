@@ -1,3 +1,47 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample />
+
+## When to use
+
+If you're unsure what component or type to use for actions, check out our [interactive guide on action components](/guides/using-button-type-components/).
+
+- To group several actions with similar purposes.
+- If the actions are important, fill the group with [buttons](/components/button/).
+- If the actions are less important, fill the group with [button links](/components/buttonlink/).
+
+### When not to use
+
+- When you have too many actions---separate them so as not to overwhelm users.
+- When the actions are more complex and have structure---use a [tile group](/components/structure/tilegroup/)
+
+## Component status
+
+<ComponentStatus component="buttongroup" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="289%3A14"
+  alt="Related actions: all actions within the group are visually connected; buttons: includes more important actions; ButtonLinks: includes less important actions."
+/>
+
+## Guidelines               
+
+### Use only for closely related actions 
+
+Button groups remove many visual clues that there are multiple actions,
+such as spacing and border radiuses on buttons.
+This makes them great at presenting a united visual.
+
+It also makes it more difficult for users to distinguish that there are multiple actions.
+So only use them for actions that clearly relate to one another.
+
+### Follow guidelines for children
+
+Make sure to follow the guidelines for whatever components you're using within the group,
+[buttons](/components/button/) or [button links](/components/buttonlink/).
+See our [interactive guide on choosing the right component for your actions](/guides/using-button-type-components/).

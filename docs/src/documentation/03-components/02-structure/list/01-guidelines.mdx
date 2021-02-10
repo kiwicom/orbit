@@ -1,3 +1,127 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="List" />
+
+## When to use
+
+- You have simple pieces of information that are related or have a similar structure.
+
+### When not to use
+
+- You have more complex, tabular information---use a [table](/components/structure/table/).
+- There are choices connected to the information---use [checkboxes](https://orbit.kiwi/components/checkbox/
+  or [radio](https://orbit.kiwi/components/radio/) buttons to enable interaction.
+- You have complex structures with choices--- use [list choices](https://orbit.kiwi/components/listchoice/).
+
+## Component status
+
+<ComponentStatus component="List" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="83%3A0"
+  alt="Icon: visually supports list item contents; ListItem: includes one item in the list; content: best when short and doesn't need to be complete sentences."
+/>
+
+## Behavior
+
+### Use when order doesn't matter
+
+The list component presents information as unstructured lists.
+Don't use it when the order of the items matters,
+such as a list of steps in a process.
+Instead, use an ordered list.
+
+## Content
+
+### Use for similar items
+
+Lists are good at making more complex information easy to scan.
+This works well when you have multiple items with similar information.
+
+They are not designed to emphasize details.
+So don't use them when you only have one item to set off from surrounding text.
+
+<Guidelines type="do" title="Not for emphasis">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="118%3A31"
+  alt="A card about Germany with a paragraph about travel restrictions and a button to learn more."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="118%3A244"
+  alt="A card about only Germany with a list with a single item about travel restrictions and a button to learn more."
+/>
+
+</Guidelines>
+
+Similarly, while lists provide a visual break,
+they shouldn't be used just to break up long paragraphs.
+If you don't have information that can be broken into similar pieces,
+break long paragraphs into shorter ones but don't use a list.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+As the passenger, it's your responsibility to ensure
+you have the correct visas and travel documents for your trip.
+
+You should carefully check which countries you are transiting through before making your booking.
+A visa is generally required even for transit or rechecking your baggage.
+
+</Do>
+
+<Dont>
+
+- As a passenger, it's your responsibility to ensure
+  you have the correct visas and travel documents for your trip.
+- You should carefully check which countries you are transiting through before making your booking.
+- A visa is generally required even for transit or rechecking your baggage.
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+### Use parallel structures
+
+Each item in the list should be phrased in a similar way.
+This consistency helps users scan to find the information they need.
+Varying the structure makes it harder to understand.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Download boarding passes
+- Get exclusive deals
+- Book in one click
+
+</Do>
+
+<Dont>
+
+- Download boarding passes
+- You’ll get exclusive deals
+- One click booking
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+## Look & feel
+
+### Use icons sparingly
+
+Icons can help add emotion to your lists,
+such as checks in colorTextSuccess when listing features.
+They can also make details easier to scan, such as the icons in the [content structure](#content-structure).
+
+But too many different icons can draw too much attention and overwhelm users.
+Only use them if they provide clear value and don't distract too much from important actions.

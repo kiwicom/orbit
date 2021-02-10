@@ -15,7 +15,6 @@ const StyledImageWrapper = styled(({ url, children, ...props }) => {
   width: 60px;
 `;
 
-// eslint-disable-next-line camelcase
 const Contributor = ({ avatar_url, name, url }: IContributor) => {
   return (
     <Stack
@@ -28,7 +27,6 @@ const Contributor = ({ avatar_url, name, url }: IContributor) => {
     >
       <StyledImageWrapper url={url}>
         <img
-          // eslint-disable-next-line camelcase
           src={avatar_url}
           alt={name}
           title={name}

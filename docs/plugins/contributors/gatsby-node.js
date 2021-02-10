@@ -1,13 +1,36 @@
 const { Octokit } = require("@octokit/rest");
-
-const fallback = require("./fallback.json");
+const path = require("path");
 
 const NODE = `contributor`;
 
 exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { repo, owner }) => {
-  const { createNode } = actions;
+  const { createNode, createTypes } = actions;
+
+  createTypes(
+    `
+    type Contributor implements Node {
+      id: ID!
+      login: String
+      avatar_url: String
+      url: String
+      name: String
+      blog: String
+      bio: String
+      email: String
+      location: String
+      twitter_username: String
+      company: String
+    }
+  `,
+  );
 
   try {
+    require("dotenv-safe").config({
+      example: path.resolve(__dirname, `../../../.env.example`),
+      path: path.resolve(__dirname, `../../../.env`),
+      allowEmptyValues: true,
+    });
+
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     const names = [];
 
@@ -35,22 +58,21 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
       });
     });
   } catch (error) {
-    if (error.status === 401) {
-      console.error("401: UNAUTHORIZED, CREATE GITHUB TOKEN");
-      createNode({
-        ...fallback,
-        id: createNodeId(`${NODE}-${fallback.id}`),
-        parent: null,
-        children: [],
-        internal: {
-          type: NODE,
-          content: JSON.stringify(fallback),
-          contentDigest: createContentDigest(fallback),
-        },
-      });
+    if (error.missing.includes("GH_TOKEN")) {
+      console.warn("Missing an access token for GitHub. Please create one.");
+      console.info(
+        "The token is needed to display the Contributors component, which is based on the GitHub API.",
+        "Create a personal access token: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token",
+        "Don't forget to include the required scopes for the token: all repo scopes and read:org.",
+        "After creating a token in GitHub, add it to a .env file in the root folder with GH_TOKEN=<YOUR TOKEN>",
+      );
     } else {
       console.error(error);
+      console.info(
+        "You may have forgotten to include the repo and read:org scopes for your GitHub access token.",
+      );
     }
   }
-  return undefined;
+
+  return [];
 };

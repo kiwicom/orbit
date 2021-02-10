@@ -37,7 +37,7 @@ export default function Home() {
           }
         `}
       >
-        <div>
+        <>
           <Heading type="display">
             <div
               css={css`
@@ -76,7 +76,7 @@ export default function Home() {
               </ButtonLink>
             </Inline>
           </div>
-        </div>
+        </>
 
         <Inline spacing="XLarge">
           <TileWrapper>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
+import { Alert, Text } from "@kiwicom/orbit-components";
 
 import Contributor from "./Contributor";
 
@@ -13,11 +14,9 @@ const Grid = styled.div`
 export interface IContributor {
   name?: string;
   id?: string;
-  // eslint-disable-next-line camelcase
   avatar_url?: string;
   bio?: string;
   blog?: string;
-  // eslint-disable-next-line camelcase
   twitter_username?: string;
   url?: string;
 }
@@ -27,32 +26,44 @@ const ContributorsComponent = () => {
     graphql`
       query CollaboratorsQuery {
         allContributor {
-          edges {
-            node {
-              id
-              avatar_url
-              bio
-              blog
-              twitter_username
-              name
-              url
-            }
+          nodes {
+            id
+            avatar_url
+            bio
+            blog
+            twitter_username
+            name
+            url
           }
         }
       }
     `,
   );
 
-  return (
-    <Grid>
-      {allContributor.edges
-        .map(n => n.node)
-        .map(({ id, ...info }) => {
-          return <Contributor key={id} id={id} {...info} />;
-        })}
-    </Grid>
+  const githubDocs = (
+    <a
+      href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token"
+      aria-label="creating-a-personal-access-token"
+    >
+      Please create one
+    </a>
   );
-  return null;
+
+  return allContributor.nodes && allContributor.nodes.length > 0 ? (
+    <Grid>
+      {allContributor.nodes.map(({ id, ...info }) => (
+        <Contributor key={id} id={id} {...info} />
+      ))}
+    </Grid>
+  ) : (
+    <Alert type="warning">
+      <Text>
+        Contributors component is not shown, because you are missing github personal access token
+        {githubDocs}
+        Check the terminal where you started the site for more details.
+      </Text>
+    </Alert>
+  );
 };
 
 export default ContributorsComponent;

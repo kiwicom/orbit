@@ -1,3 +1,83 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Drawer" />
+
+## When to use
+
+- You have long content that you want to keep out of sight at first.
+- To use [progressive disclosure](/guides/progressive-disclosure/) to reveal
+  relevant information at the right time.
+- To keep content like structured navigation or screen-specific help accessible.
+
+### When not to use
+
+- To force users to complete an action before continuing---use a [modal](/components/overlay/modal/).
+- For small bits of information focused on a single action---use a [dialog](/components/overlay/dialog/).
+- For small content or few options closer to the original context---use a [popover](/components/overlay/popover/).
+
+## Component status
+
+<ComponentStatus component="Drawer" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="746%3A2237"
+  alt="Overlay: keeps the overall context present but less important; close: allows users to close the drawer; content: navigation or other content to hide and show."
+/>
+
+## Content
+
+### Use for short related content
+
+Drawers are good for short pieces of content
+that are related to the main screen but not a part of it.
+Examples include:
+
+- Navigation (consider using a [link list](/components/navigation/linklist))
+- Context-sensitive help
+- Notifications
+- Simple forms or settings
+
+Drawers also work well on small screens for things
+like menus that would ordinarily be horizontal.
+When there's not enough space for such things,
+use a drawer to keep them easily accessible but initially hidden.
+
+## Look & feel
+
+###
+
+## Guidelines
+
+### Make trigger clear
+
+Make it clear how users can open the drawer
+and don't surprise them by opening it when they wouldn't expect it.
+Use common patterns like a [menu icon](/foundation/icons/#menu-hamburger)
+to make it clear what is possible.
+
+### Allow users to close
+
+Users want to feel in control of their actions.
+If the trigger is clear, drawers don't interrupt a user's flow,
+but it's still important users know how to get back to what they were doing.
+Make sure users feel in control by offering them a clear option to close the drawer.
+
+Drawers should generally include a close button in the upper right
+and often the option to close the modal by clicking the overlay.
+
+### Maintain state
+
+Drawers are easy to open and close.
+If the content might change (such as a form or which help article is displayed),
+keep the most recent state active even on open and close.
+
+Reset the state to the default only on an intentional user action,
+not just because they closed the drawer.
+Users expect to be able to easily return to where they were.
+
+<ReactExample name="Drawer state" />

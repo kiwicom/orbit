@@ -1,3 +1,30 @@
 ---
 title: Guidelines
 ---
+
+import ResponsiveSimilarContentSnippet from "snippets/responsive-similar-content.mdx";
+import ResponsiveDontHideEssentialSnippet from "snippets/responsive-dont-hide-essential.mdx";
+
+<ReactExample name="Desktop" />
+
+## When to use
+
+- To offer content only on small screens.
+- For tailered content that fits small spaces.
+- To keep such content from getting lost on large screens.
+
+### When not to use
+
+- For content only on large screens---use a [Desktop component](/components/responsive/desktop/).
+- For more control over what appears on different screen sizes---use a
+  [Hide component](/components/responsive/hide/).
+
+## Component status
+
+<ComponentStatus component="Desktop" />
+
+## Behavior
+
+<ResponsiveSimilarContentSnippet />
+
+<ResponsiveDontHideEssentialSnippet />

@@ -1,3 +1,101 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Heading" />
+
+See also the general guidelines in [Typography](https://orbit.kiwi/foundation/typography/).
+
+## When to use
+
+- To structure the UI.
+- To add a clear hierarchy.
+
+### When not to use
+
+- For decoration or emphasis (headings should represent semantic value)---use a [text](/components/text/text/).
+
+## Component status
+
+<ComponentStatus component="Heading" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A237"
+  alt="1st level heading: opens every page; 2nd level heading: opens sections with grouped content; 3rd level heading: following the content hierarchy when more structure is needed."
+/>
+
+## Content
+
+### Stick to the hierarchy
+
+Start with either a Title 1 or Display heading.
+Then use Title 2 and so on.
+Don't skip around in the hierarchy or you'll confuse users.
+
+Choose a Display heading for screens with lots of content and Title 1 otherwise.
+Generally, don't use both on the same screen.
+
+<Guidelines type="do" title="Respect the hierarchy">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="62%3A5"
+  alt="Headings with (from the top) and h1, an h2, some text, an h2, and some text."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="61%3A0"
+  alt="Headings with (from the top) and h1, an h4, some text, an h3, and some text."
+/>
+
+</Guidelines>
+
+### Create semantic structure
+
+Your beautiful visual hierarchy can be really helpful for those who can see it,
+but remember that [not everyone will be able to see it](/foundation/accessibility/).
+Make sure everyone gets the benefit of your clearly structured content by using semantic tags
+(such as starting with h1 and continuing).
+
+## Look & feel
+
+### Heading types
+
+Headings are split based on size and appearance into seven different types.
+These types represent a visual hierarchy from most important to least.
+
+<ReactExample name="Heading types" />
+
+There is also one additional color for use on very dark backgrounds.
+This is the only color for headings other than colorHeading.
+
+<ReactExample name="Heading inverted" />
+
+### Use only a single color
+
+While you might be tempted to make your headings stand out even more by using various colors,
+resist the temptation.
+Trust the visual style to make it clear what is important and what isn't.
+
+In particular, do not use our product colors (such as <InlineToken value="paletteProductNormal" alternateName />)
+to make headings more prominent.
+Those colors are [reserved for actions](/foundation/color/#actionable-colors) users can take,
+so using them in headings may confuse users.
+
+<Guidelines type="do" title="Use heading color">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="63%3A0"
+  alt="A heading in the middle of text with everything in the same color."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="64%3A6"
+  alt="A heading in the middle of text with the heading in green."
+/>
+
+</Guidelines>

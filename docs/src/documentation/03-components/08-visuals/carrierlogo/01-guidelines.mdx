@@ -1,3 +1,51 @@
 ---
 title: Guidelines
 ---
+
+import ShortNonvisualSnippet from "snippets/short-nonvisual.mdx";
+
+<ReactExample name="CarrierLogo" />
+
+## When to use
+
+- To add simple visual context so users can see at a glance the logos of carriers involved in their journey.
+- With the carrier name so the context is [accessible to everyone](/foundation/accessibility/).
+
+### When not to use
+
+- For services such as payment methods---use a [service logo](/components/visuals/servicelogo/).
+- For general visual context---use an [illustration](/components/visuals/illustration/).
+
+## Component status
+
+<ComponentStatus component="CarrierLogo" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A183"
+  alt="Logo image: shows the logo and best to pass through the carrier name; carrier grid: displays multiple carriers."
+/>
+
+## Content
+
+<ShortNonvisualSnippet visual="logo" associated="carrier" />
+
+<ReactExample name="CarrierLogo accessibility" />
+
+## Look & Feel
+
+### Multiple logos
+
+Carrier logos can include up to four logos at once.
+With one logo, by default it'll occupy the entire space.
+With multiple logos, the logos are shrunk to the same size
+(no matter how many more there are).
+
+To create visual balance, the logos are positioned differently depending on their number.
+With two logos, they'll be in the top left and bottom right.
+With three, the second logo shifts to the bottom left and the third is present in the top right.
+With four, the logos take up all four corners.
+
+<ReactExample name="CarrierLogo multiple" />

@@ -1,3 +1,47 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="RatingStars" />
+
+## When to use
+
+- To display static ratings for services such as hotels.
+- To display the results of previously collected ratings.
+
+### When not to use
+
+- To collect ratings or other interactions---use [button links](/components/action/buttonlink/).
+
+## Component status
+
+<ComponentStatus component="RatingStars" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="164%3A0"
+  alt="Rating: indicates the rating rounded to a whole number; empty: optionally shows the potential rating not obtained."
+/>
+
+## Behavior
+
+### Make clear what is being rated
+
+Rating stars automatically come with an aria label to describe the rating in words
+for [those who might not see the visual cues](/foundation/accessibility/).
+Use the context to make sure that it's clear what the rating covers
+even if a user doesn't see the stars.
+
+## Look & feel
+
+### Types
+
+Ratings stars can be small, medium, or large.
+
+<ReactExample name="RatingStars sizes" />
+
+The color (based on [text](https://orbit.kiwi/components/text/) colors) can be primary or secondary.
+
+<ReactExample name="RatingStars color" />

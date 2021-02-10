@@ -1,3 +1,57 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample />
+
+## When to use
+
+- To enable users to sign in with a trusted provider
+- To shorten the time to access your services.
+
+### When not to use
+
+- For any other action---check out our [interactive guide on action components](/guides/using-button-type-components/).
+
+## Component status
+
+<ComponentStatus component="SocialButton" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="759%3A2358"
+  alt="Social service logo: shows the logo of the given sign-in service; label: nudges the user to complete the sign-in flow."
+/>
+
+## Behavior
+
+### Use full width in small spaces
+
+As with [other buttons](/components/action/button/#mobile-vs-desktop-size),
+social buttons work best as full length buttons on smaller screens.
+
+### Use only for signing in
+
+Social buttons are designed to ease the flow for users signing in.
+Don't use them in any other case or in any complex scenarios.
+
+## Content
+
+### Use actionable text
+
+It should be clear from the button text exactly what will happen when
+the user interacts with it. To make it actionable, the label should
+include the service name and the action text **_sign in_**.
+
+Be sure to use the same text structure for all social buttons.
+
+## Look & feel
+
+### SocialButton services
+
+Social buttons automatically display the logo for the selected service.
+See all available services below.
+
+<ReactExample name="SocialButton services" />

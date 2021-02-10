@@ -1,3 +1,67 @@
 ---
 title: Guidelines
 ---
+
+import InputBackgroundLinkSnippet from "snippets/input-background-link.mdx";
+import InputHelpErrorSnippet from "snippets/input-help-error.mdx";
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+import InputPlaceholderSnippet from "snippets/input-placeholder.mdx";
+
+<ReactExample name="Select" />
+
+## When to use
+
+- To present many options where only one can be selected.
+- To keep long lists of options from being overwhelming.
+- To fit multiple options into a small space.
+
+### When not to use
+
+- When you have only a few options and enough space---use a [radio](/components/input/radio/).
+- When users can select more than one of a few optioons---use a [checkbox](/components/input/checkbox/).
+- When users can add and remove from many options---consider an [input field](/components/input//inputfield/)
+  with [tags](/components/interaction/tag/).
+- For structured options with enough space---use a [list choice](/components/input/listchoice/).
+
+## Component status
+
+<ComponentStatus component="Select" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="171%3A1252"
+  alt="Label: provides a clear description of what users should fill in; placeholder: provides additional help for expected values; prefix: optionally adds additional clarity for options; select suffix: indicates there are options to choose from."
+/>
+
+## Behavior
+
+### Use for many options
+
+Selects work well to present many different options in a compact unit.
+This way users don't have to scroll through tens of options to find what they're looking for.
+
+When you have only a few options so users won't be overwhelmed by them,
+it can help to present them all at once,
+such as with [radio buttons](/components/input/radio/).
+
+## Content
+
+<InputLabelsSnippet />
+
+<InputHelpErrorSnippet />
+
+#### Help message
+
+<ReactExample name="Select help" />
+
+#### Error message
+
+<ReactExample name="Select error" />
+
+<InputPlaceholderSnippet />
+
+## Look & feel
+
+<InputBackgroundLinkSnippet />

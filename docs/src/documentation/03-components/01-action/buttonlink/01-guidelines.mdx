@@ -1,3 +1,69 @@
 ---
 title: Guidelines
 ---
+
+import ButtonSizeSnippet from "snippets/button-size.mdx";
+
+<ReactExample />
+
+## When to use
+
+If you're unsure what component or type to use for actions, check out our [interactive guide on action components](/guides/using-button-type-components/).
+
+- To offer less important actions users can take.
+- When you want to show many possible actions at once.
+
+### When not to use
+
+- When you have a single action you want to draw attention to---use a [button](/components/button/).
+- To make text inside paragraphs or lists actionable---use a [text link](/components/textlink/).
+- So users can sign in using a social service---use a [SocialButton](/components/socialbutton/).
+
+## Component status
+
+<ComponentStatus component="ButtonLink" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A100"
+  alt="IconLeft: visually supports button visability; label: describes the main action and works best when short; icon right: shows additional options for the button (expandable, link, etc.)."
+/>
+
+## Behavior             
+
+### Use apart from text
+
+Button links have extra spacing built into them so that they present a large enough
+[target size](/foundation/accessibility/#target-sizes) to be usable on smaller screens.
+So they have different heights than text and using them in a paragraph would cause visual misalignment.
+
+Use button links only as stand-alone elements.
+The extra space around them also helps show they're connected to an action.
+If you need links aligned with text, use [text links](/components/textlink/).
+
+## Content
+
+### Use actionable text
+
+It should be clear from the button text exactly what will happen when the user interacts with it.
+The labels should be actionable, such as "Add passenger" and "Book for (price)".
+
+Avoid long explanations in the button text.
+The text should be short and clear.
+If additional explanation is needed,
+add it above the button as text.
+
+See [examples for how to make actions clear](/content/voice-tone/straightforward/#make-every-action-clear).
+
+## Look & feel
+
+<ButtonSizeSnippet />
+
+## ButtonLink types
+
+Button links come in the **three types** (primary, secondary, and critical)
+and **three sizes** (large, normal, and small).
+
+<ReactExample name="ButtonLink types" />

@@ -1,3 +1,74 @@
 ---
 title: Guidelines
 ---
+
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+
+<ReactExample name="Slider" />
+
+## When to use
+
+- To offer users options within a clearly defined range.
+- To offer a visually pleasing interface.
+- To let users select a single value or a range of values.
+
+### When not to use
+
+- To input single, large numbers---use an [input field](/components/input/inputfield/)
+  with the input mode set to number.
+
+## Component status
+
+<ComponentStatus component="Slider" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="177%3A0"
+  alt="Label: optionally provides an overview of what is being selected; value description: optionally clearly describes the range users can select from; histogram description: optionally describes what is contained in the selected range in the histogram; histogram: optionally shows what's included in the selection; min value: sets the lowest possible value; max value: sets the highest possible value; handlers: enable users to select their desired value and to improve accessibility it's best to add a label."
+/>
+
+## Behavior
+
+### Present immediate feedback
+
+Users are used to seeing immediate results from interacting with sliders,
+such as from volume controls on phones and video players.
+Make sure they can see the effect of their choice of range.
+
+Histograms help with this by offering a visualization of what is included within the range.
+Just make sure the information is also included non-visually
+so [everyone can access it](/foundation/accessibility/).
+
+### Use for appropriate ranges
+
+Sliders work well for many kinds of values.
+But if the range is too large (such as 0--1,000 counting by 1)
+or too small (such as 0--3),
+they start to lose their benefits.
+
+For large ranges, try to break it into smaller pieces,
+or step up and down by a large number.
+For small ranges,
+consider [checkboxes](/components/input/checkbox/) or [selects](/components/input/select/).
+
+### Hide on small screens
+
+When a screen doesn't have enough space for a full slider,
+hide it initially behind a button.
+[Popovers](/components/overlay/popover/) are great for disclosing sliders properly.
+
+### Make range clear
+
+Users want to know exactly what they're selecting from.
+So make it clear what the minimum and maximum of the range are.
+
+The value description is the place to present this information clearly
+without it demanding too much attention.
+
+<ReactExample name="Slider histogram" />
+
+## Content
+
+<InputLabelsSnippet />

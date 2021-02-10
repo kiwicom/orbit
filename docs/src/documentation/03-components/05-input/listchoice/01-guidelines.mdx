@@ -1,3 +1,94 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="ListChoice" />
+
+## When to use
+
+- To present similar choices with structured information to users.
+- To highlight differences by using a consistent style.
+- To add visual cues to choices.
+
+### When not to use
+
+- For simple information without choices---use a [list](/components/structure/list/).
+- For unstructured choices---use [checkboxes](/components/input/checkbox/)
+  or [radio buttons](/components/input/radio/).
+- In small spaces when users can select only one option---use a [select](/components/input/select/).
+
+## Component status
+
+<ComponentStatus component="ListChoice" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="83%3A130"
+  alt="Title: clarifies what the choice offers; checkbox: optionally indicates when the choice is selectable; icon: visually supports the choice; description: optionally adds more explanation to the choice."
+/>
+
+## Behavior
+
+### Use for similar structured items
+
+List choices work well at displaying items that are similar
+and have the same kinds of information.
+For example, use them to display a list of cities to travel to.
+
+Seeing multiple options with similar information
+allows users to quickly scan for what they need to know.
+
+Don't use list choices when the information for each choice is very different.
+This will slow down and confuse users.
+
+### Categorize with icons
+
+When you have a lot of similar structures,
+breaking them into various groups makes it easier for users to choose.
+To show things like stations with different modes of transport,
+use different icons for each mode.
+
+Just remember that [not everyone will see your visual cues](/foundation/accessibility/),
+so include the same information in a non-visual way.
+
+<ReactExample name="ListChoice icons" />
+
+### Use separately
+
+List choices work well when separated from the main flow,
+such as in a popover, modal, or drawer.
+They don't work as well within the context of other information,
+such as directly in a form (they can be in popovers within the form).
+
+When using within a container like a popover,
+remove the extra padding added by the container
+(such as by using `noPadding` for a popover).
+
+### Explain any disabling
+
+Similarly [as with buttons](/components/action/button/#avoid-disabled-buttons),
+it's best to avoid disabling any potential choices.
+When users see things that look like actions but they can't take them,
+they may get confused.
+
+If it's necessary to present a disabled choice,
+make sure users know why the options aren't available.
+
+## Content
+
+### Add context with description
+
+When the structure of each choice is similar,
+you can add additional context to the choices with the descriptions.
+For example, you can note how far each station is from the city center.
+
+Just remember to keep the descriptions parallel
+so they are easy to skim through and find the information they need
+(such as the distance).
+
+<ReactExample name="ListChoice description" />
+
+The descriptions are presented as secondary text,
+o they should be used only for extra context and not vital information.

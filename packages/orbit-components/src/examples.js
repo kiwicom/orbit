@@ -198,6 +198,7 @@ export { default as ModalPreventOverlayClose } from "./Modal/__examples__/PREVEN
 export { default as ModalScrollPosition } from "./Modal/__examples__/SCROLL_POSITION";
 export { default as ModalSectionOnly } from "./Modal/__examples__/SECTION_ONLY";
 export { default as ModalSizes } from "./Modal/__examples__/SIZES";
+export { default as ModalWithCard } from "./Modal/__examples__/WITH_CARD";
 export { default as NavigationBarCallbacks } from "./NavigationBar/__examples__/CALLBACKS";
 export { default as NavigationBarDefault } from "./NavigationBar/__examples__/DEFAULT";
 export { default as NavigationBarIcons } from "./NavigationBar/__examples__/ICONS";

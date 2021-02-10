@@ -1,0 +1,31 @@
+{
+  "foundation": {
+    "size": {
+      "small": {
+        "type": "size",
+        "value": 16,
+        "internal": true
+      },
+      "medium": {
+        "type": "size",
+        "value": 24,
+        "internal": true
+      },
+      "large": {
+        "type": "size",
+        "value": 32,
+        "internal": true
+      },
+      "extra-large": {
+        "type": "size",
+        "value": 44,
+        "internal": true
+      },
+      "extra-extra-large": {
+        "type": "size",
+        "value": 52,
+        "internal": true
+      }
+    }
+  }
+}

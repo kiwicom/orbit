@@ -1,15 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
 import theme from "../theme";
 
-export const LevelDiv = styled.div`
-  height: 40px;
-  width: 40px;
-  position: relative;
-  left: 25%;
-  background-color: ${props => props.backgroundColor};
-  border: ${props => props.border};
-  box-shadow: ${props => props.boxShadow};
+interface LevelDivProps {
+  boxShadow: string;
+  backgroundColor: string;
+  border: string;
+}
+
+export const LevelDiv = styled.div<LevelDivProps>`
+  ${({ boxShadow, backgroundColor, border }) => css`
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 25%;
+    background-color: ${backgroundColor};
+    border: ${border};
+    box-shadow: ${boxShadow};
+  `}
 `;
 
 export default ({ level }) => {

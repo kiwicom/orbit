@@ -11,7 +11,7 @@ const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
     namespace: "foundation" (or "global", "variant"),
     object: "palette" (or e.g. "border-radius"),
     variant: "blue" (or e.g. "small"),
-    subVariant: "light" (nullish for most properties),
+    subVariant: "light" (nullish for most variants),
   }
  */
 export const attributeNOV = {

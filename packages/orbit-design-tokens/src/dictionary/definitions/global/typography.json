@@ -1,51 +1,51 @@
 {
   "global": {
-    "font": {
-      "family": {
+    "font-family": {
+      "base": {
         "type": "font-family",
-        "value": "{foundation.font.family}"
+        "value": "{foundation.font-family.base}"
+      }
+    },
+    "font-size": {
+      "small": {
+        "type": "font-size",
+        "value": "{foundation.font-size.small}"
       },
-      "size": {
-        "small": {
-          "type": "font-size",
-          "value": "{foundation.font.size.small}"
-        },
-        "normal": {
-          "type": "font-size",
-          "value": "{foundation.font.size.normal}"
-        },
-        "large": {
-          "type": "font-size",
-          "value": "{foundation.font.size.large}"
-        }
+      "normal": {
+        "type": "font-size",
+        "value": "{foundation.font-size.normal}"
       },
-      "line-height": {
-        "small": {
-          "type": "line-height",
-          "value": "{foundation.font.line-height.small}"
-        },
-        "normal": {
-          "type": "line-height",
-          "value": "{foundation.font.line-height.normal}"
-        },
-        "large": {
-          "type": "line-height",
-          "value": "{foundation.font.line-height.large}"
-        }
+      "large": {
+        "type": "font-size",
+        "value": "{foundation.font-size.large}"
+      }
+    },
+    "line-height": {
+      "small": {
+        "type": "line-height",
+        "value": "{foundation.line-height.small}"
       },
-      "weight": {
-        "normal": {
-          "type": "font-height",
-          "value": "{foundation.font.weight.normal}"
-        },
-        "medium": {
-          "type": "font-height",
-          "value": "{foundation.font.weight.medium}"
-        },
-        "bold": {
-          "type": "font-height",
-          "value": "{foundation.font.weight.bold}"
-        }
+      "normal": {
+        "type": "line-height",
+        "value": "{foundation.line-height.normal}"
+      },
+      "large": {
+        "type": "line-height",
+        "value": "{foundation.line-height.large}"
+      }
+    },
+    "weight": {
+      "normal": {
+        "type": "font-height",
+        "value": "{foundation.font-weight.normal}"
+      },
+      "medium": {
+        "type": "font-height",
+        "value": "{foundation.font-weight.medium}"
+      },
+      "bold": {
+        "type": "font-height",
+        "value": "{foundation.font-weight.bold}"
       }
     }
   }

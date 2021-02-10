@@ -3,62 +3,54 @@
     "palette": {
       "orange": {
         "light": {
-          "default": {
-            "type": "color",
-            "value": "#FDF0E3",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#FAE2C7",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#F8D3AB",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#FDF0E3",
+          "internal": true
+        },
+        "light-secondary": {
+          "type": "color",
+          "value": "#FAE2C7",
+          "internal": true
+        },
+        "light-tertiary": {
+          "type": "color",
+          "value": "#F8D3AB",
+          "internal": true
         },
         "normal": {
-          "default": {
-            "type": "color",
-            "value": "#E98305",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#DC7C05",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#CD7304",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#E98305",
+          "internal": true
+        },
+        "normal-secondary": {
+          "type": "color",
+          "value": "#DC7C05",
+          "internal": true
+        },
+        "normal-tertiary": {
+          "type": "color",
+          "value": "#CD7304",
+          "internal": true
         },
         "dark": {
-          "default": {
-            "type": "color",
-            "value": "#A25100",
-            "internal": true
-          },
-          "secondary": {
-            "type": "color",
-            "value": "#8F4700",
-            "internal": true
-          },
-          "tertiary": {
-            "type": "color",
-            "value": "#753A00",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#A25100",
+          "internal": true
+        },
+        "dark-secondary": {
+          "type": "color",
+          "value": "#8F4700",
+          "internal": true
+        },
+        "dark-tertiary": {
+          "type": "color",
+          "value": "#753A00",
+          "internal": true
         },
         "darker": {
-          "default": {
-            "type": "color",
-            "value": "#803F00",
-            "internal": true
-          }
+          "type": "color",
+          "value": "#803F00",
+          "internal": true
         }
       }
     }

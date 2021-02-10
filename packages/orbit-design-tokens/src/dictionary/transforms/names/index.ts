@@ -3,15 +3,13 @@ import { Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
 
-const nameFoundationCamel = {
-  name: "name/foundation/camel",
+export const nameFoundationCamel = {
+  name: "name/nov/camel",
   type: "name",
-  transformer: ({ attributes: { category, name, type, state } }: Property): string => {
-    if ([category, name, type, state].every(value => value == null)) {
-      throw new Error(errorTransform("name/foundation/camel", "attribute/foundation"));
+  transformer: ({ attributes: { namespace, object, variant, subVariant } }: Property): string => {
+    if ([namespace, object, variant, subVariant].every(value => value == null)) {
+      throw new Error(errorTransform("name/nov/camel", "attribute/nov"));
     }
-    return _.camelCase(Object.values({ category, name, type, state }).join(" "));
+    return _.camelCase(Object.values({ object, variant, subVariant }).filter(Boolean).join(" "));
   },
 };
-
-export default { nameFoundationCamel };

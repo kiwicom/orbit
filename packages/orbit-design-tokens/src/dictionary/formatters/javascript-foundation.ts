@@ -1,7 +1,12 @@
 import _ from "lodash";
 import { Property } from "style-dictionary";
 
-import { getFoundationProperties, getFoundationNameValue } from "../utils/get";
+import {
+  getFoundationNameValue,
+  getFoundationSubVariantProperties,
+  getFoundationVariantOnlyProperties,
+  AlteredProperty,
+} from "../utils/get";
 import {
   falsyString,
   createVariableDeclarator,
@@ -29,46 +34,77 @@ const genericFactory = (allProperties, platform) => {
  */
   const createObjectPropertyAlias = determinateObjectPropertyAlias(platform);
 
-  const serializedProperties = getFoundationProperties(
-    allProperties,
+  /*
+    Because of concept object.property.variant we need to split allProperties if they contain
+    only variant or also subVariant.
+   */
+  const propertiesWithSubVariant = allProperties.filter(prop => prop.attributes.subVariant != null);
+  const propertiesWithVariantOnly = allProperties.filter(
+    prop => prop.attributes.subVariant == null,
+  );
+
+  /*
+    Properties with subVariant will be e.g. colors (foundation.palette.blue.light)
+   */
+  const serializedSubVariantProperties = getFoundationSubVariantProperties(
+    propertiesWithSubVariant,
     getFoundationNameValue(platform),
   );
 
   /*
-    Creates type/variable for each name, e.g. export type Color = {| shade: "value" |}
+    Properties with variant only will be e.g. border-radius properties (foundation.border-radius.small)
    */
-  const generatedVariables = _.map(serializedProperties, names => {
-    const types = _.map(names, (properties, typeName) => {
-      const propertiesValues = _.map(properties, ({ name, value }) =>
+  const serializedVariantOnlyProperties = getFoundationVariantOnlyProperties(
+    propertiesWithVariantOnly,
+    getFoundationNameValue(platform),
+  );
+
+  const generateVariables = (properties: { [key: string]: Array<AlteredProperty> }) =>
+    _.map(properties, (names, typeName) => {
+      const propertiesValues = _.map(names, ({ name, value }) =>
         createObjectProperty(name, String(value)),
       );
       const value = createObjectExpression(createValue(propertiesValues, platform), platform);
       return createVariableDeclarator(upperFirst(typeName), variableType, value, withExport);
-    });
-    return types.join("\n");
+    }).join("\n");
+
+  /*
+    Creates type/variable for each color variant name, e.g. export type Blue = {| subVariant: "value" |}
+   */
+  const generatedPropertiesWithSubVariant = _.map(serializedSubVariantProperties, names => {
+    return generateVariables(names);
   }).join("\n");
+
+  const generatedPropertiesWithVariantOnly = generateVariables(serializedVariantOnlyProperties);
 
   /*
     Creates type/variable for each category, e.g. export type Base = {| space: Space |}
   */
-  const categoriesVariables = _.map(serializedProperties, (names, category) => {
-    const categoryNames = Object.keys(names).map(name => createObjectPropertyAlias(name));
-    const value = createObjectExpression(createValue(categoryNames, platform), platform);
-    return createVariableDeclarator(upperFirst(category), variableType, value, withExport);
-  }).join("\n");
+  const propertiesWithSubVariantVariables = _.map(
+    serializedSubVariantProperties,
+    (names, category) => {
+      const categoryNames = Object.keys(names).map(name => createObjectPropertyAlias(name));
+      const value = createObjectExpression(createValue(categoryNames, platform), platform);
+      return createVariableDeclarator(upperFirst(category), variableType, value, withExport);
+    },
+  ).join("\n");
 
   /*
-    Creates type/variable for each category, e.g. export type Foundation = {| base: Base |}
+    Creates type/variable for each category, e.g. export type Foundation = {| palette: Palette |}
   */
   const foundationValue = createObjectExpression(
     createValue(
-      Object.keys(serializedProperties).map(category => {
+      [
+        ...Object.keys(serializedSubVariantProperties),
+        ...Object.keys(serializedVariantOnlyProperties),
+      ].map(category => {
         return createObjectPropertyAlias(category);
       }),
       platform,
     ),
     platform,
   );
+
   const foundationVariable = createVariableDeclarator(
     upperFirst("foundation"),
     variableType,
@@ -77,32 +113,38 @@ const genericFactory = (allProperties, platform) => {
   );
 
   /*
-  Create type for CustomFoundation, needed for theming purposes (not all parts of the object are required)
+    Create types for CustomFoundation, needed for theming purposes (not all parts of the object are required)
   */
 
-  const customCategoryTypes = _.map(serializedProperties, (names, category) => {
-    const subCategoriesTypes = Object.keys(names).map(name =>
+  const propertyWithSubVariantTypes = _.map(serializedSubVariantProperties, (names, property) => {
+    const variantTypes = Object.keys(names).map(name =>
       createObjectProperty(createOptionalType(name), createSubsetType(name, platform)),
     );
-    const categoryValue = createObjectExpression(
-      createValue(subCategoriesTypes, platform),
-      platform,
-    );
+    const propertyValue = createObjectExpression(createValue(variantTypes, platform), platform);
     return createObjectProperty(
-      createOptionalType(category),
-      createSubsetType(categoryValue, platform),
+      createOptionalType(property),
+      createSubsetType(propertyValue, platform),
     );
   });
+
+  const propertyWithVariantOnlyTypes = Object.keys(serializedVariantOnlyProperties).map(name =>
+    createObjectProperty(createOptionalType(name), createSubsetType(name, platform)),
+  );
 
   const customFoundation = createVariableDeclarator(
     "CustomFoundation",
     variableType,
-    createObjectExpression(createValue(customCategoryTypes, platform), platform),
+    createObjectExpression(
+      createValue([...propertyWithSubVariantTypes, ...propertyWithVariantOnlyTypes], platform),
+      platform,
+    ),
     true,
   );
+
   return [
-    generatedVariables,
-    categoriesVariables,
+    generatedPropertiesWithSubVariant,
+    generatedPropertiesWithVariantOnly,
+    propertiesWithSubVariantVariables,
     foundationVariable,
     falsyString(platform !== "javascript", customFoundation),
   ];

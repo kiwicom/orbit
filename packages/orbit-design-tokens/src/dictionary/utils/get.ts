@@ -1,66 +1,66 @@
 import _ from "lodash";
 import { Property } from "style-dictionary";
 
-import { groupByName, groupByCategory } from "./groupBy";
+import { groupByAttribute } from "./groupBy";
 
-type AlteredProperty = {
+export type AlteredProperty = {
   name: string;
   value: string | number | undefined;
 };
 
-type FoundationProperties = {
+type PropertiesWithSubVariant = {
   [name: string]: {
     [key: string]: Array<AlteredProperty>;
   };
 };
 
+type PropertiesWithVariantOnly = {
+  [key: string]: Array<AlteredProperty>;
+};
+
 type NameValueSelector = (arg0: Property) => AlteredProperty;
 
 /*
-  Returns array of unique names of colors, e.g. ["blue", "red"].
-  The transform "attribute/foundation" needs to be used.
- */
-export const getAllPaletteNames = (properties: Property[]): string[] =>
-  _.uniq(
-    _.map(
-      _.filter(properties, ({ attributes: { category } }) => category === "palette"),
-      ({ attributes: { name } }) => String(name),
-    ),
-  );
-
-/*
-  Returns array of unique names of categories, e.g. ["base", "palette"].
-  The transform "attribute/foundation" needs to be used.
- */
-export const getAllCategories = (properties: Property[]): string[] =>
-  _.uniq(_.map(properties, ({ attributes: { category } }) => String(category)));
-
-/*
-  Returns object based on categories, e.g.
+  Returns object based on properties and variants based on object/property/variant schema, e.g.
   {
     palette: {
       blue: [
         name: "light", value: "#000000"
       ]
-    },
-    base: {
-      space: [
-        name: "small", value: "2px"
-      ]
     }
-  ]
+  }
 
   By default it returns prop.name and prop.value from the property,
   but can be changed by custom use of nameValueSelector
  */
-export const getFoundationProperties = (
+export const getFoundationSubVariantProperties = (
   allProperties: Property[],
   nameValueSelector: NameValueSelector = ({ name, value }) => ({ name, value }),
-): FoundationProperties => {
-  return _.mapValues(groupByCategory(allProperties), values => {
-    return _.mapValues(groupByName(values), properties => {
+): PropertiesWithSubVariant => {
+  return _.mapValues(groupByAttribute(allProperties, "object"), values => {
+    return _.mapValues(groupByAttribute(values, "variant"), properties => {
       return _.map(properties, nameValueSelector);
     });
+  });
+};
+
+/*
+  Returns object based on properties based on object/property/variant schema, e.g.
+  {
+    blue: [
+      name: "light", value: "#000000"
+    ]
+  }
+
+  By default it returns prop.name and prop.value from the property,
+  but can be changed by custom use of nameValueSelector
+ */
+export const getFoundationVariantOnlyProperties = (
+  allProperties: Property[],
+  nameValueSelector: NameValueSelector = ({ name, value }) => ({ name, value }),
+): PropertiesWithVariantOnly => {
+  return _.mapValues(groupByAttribute(allProperties, "object"), values => {
+    return _.map(values, nameValueSelector);
   });
 };
 
@@ -71,13 +71,13 @@ export const getFoundationProperties = (
  */
 export const getFoundationNameValue = (platform: string): NameValueSelector => {
   if (platform === "flow" || platform === "typescript") {
-    return ({ attributes: { foundationName, foundationType } }: Property) => ({
-      name: String(foundationName),
+    return ({ attributes: { foundationAlias, foundationType } }: Property) => ({
+      name: String(foundationAlias),
       value: foundationType,
     });
   }
-  return ({ attributes: { foundationName }, value }) => ({
-    name: String(foundationName),
+  return ({ attributes: { foundationAlias }, value }) => ({
+    name: String(foundationAlias),
     value,
   });
 };

@@ -1,0 +1,38 @@
+{
+  "global": {
+    "space": {
+      "half-x": {
+        "type": "spacing",
+        "value": "{foundation.space.half-x}"
+      },
+      "one-x": {
+        "type": "spacing",
+        "value": "{foundation.space.one-x}"
+      },
+      "two-x": {
+        "type": "spacing",
+        "value": "{foundation.space.two-x}"
+      },
+      "three-x": {
+        "type": "spacing",
+        "value": "{foundation.space.three-x}"
+      },
+      "four-x": {
+        "type": "spacing",
+        "value": "{foundation.space.four-x}"
+      },
+      "six-x": {
+        "type": "spacing",
+        "value": "{foundation.space.six-x}"
+      },
+      "eight-x": {
+        "type": "spacing",
+        "value": "{foundation.space.eight-x}"
+      },
+      "ten-x": {
+        "type": "spacing",
+        "value": "{foundation.space.ten-x}"
+      }
+    }
+  }
+}

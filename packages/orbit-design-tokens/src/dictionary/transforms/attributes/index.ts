@@ -21,7 +21,7 @@ export const attributeNOV = {
     const generatedAttrs = {};
 
     for (let i = 0; i < path.length && i < NOV_STRUCTURE.length; i += 1) {
-      generatedAttrs[NOV_STRUCTURE[i]] = _.camelCase(path[i]);
+      generatedAttrs[NOV_STRUCTURE[i]] = path[i];
     }
     return Object.assign(generatedAttrs, attributes);
   },
@@ -40,12 +40,21 @@ export const attributeIsReferenced = {
   },
 };
 
+/*
+  Transforms all attributes of names/object/variant structure to camelCased string.
+ */
 export const attributeNOVCamelCase = {
   name: "attribute/nov/camelCase",
   type: "attribute",
   transformer: ({ attributes }: Property): Attributes => {
-    const { namespace, object, variant, subVariant } = attributes;
     const camelCased = {};
+    for (let i = 0; i < NOV_STRUCTURE.length; i += 1) {
+      const key = NOV_STRUCTURE[i];
+      if (attributes[key]) {
+        camelCased[key] = _.camelCase(String(attributes[key]));
+      }
+    }
+
     return Object.assign(attributes, camelCased);
   },
 };

@@ -12,6 +12,7 @@ const build = () => {
     name: "javascript/foundation",
     transforms: [
       "attribute/nov",
+      "attribute/nov/camelCase",
       "attribute/nov/alias",
       "attribute/nov/type",
       "name/nov/camel",
@@ -25,6 +26,7 @@ const build = () => {
     transforms: [
       "attribute/nov",
       "attribute/nov/isReferenced",
+      "attribute/nov/camelCase",
       "attribute/nov/type",
       "value/nov/alias",
       "name/nov/camel",

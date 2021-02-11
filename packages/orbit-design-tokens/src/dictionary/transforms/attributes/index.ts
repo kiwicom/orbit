@@ -30,7 +30,6 @@ export const attributeNOV = {
 export const attributeIsReferenced = {
   name: "attribute/nov/isReferenced",
   type: "attribute",
-  // marcher: ({ attributes: { namespace } }: Property): boolean => namespace !== "foundation",
   transformer: ({ value, attributes }: Property): Attributes => {
     const { namespace, object, variant, subVariant } = attributes;
     if ([namespace, object, variant, subVariant].every(v => v == null)) {

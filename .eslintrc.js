@@ -177,6 +177,8 @@ module.exports = {
         "flowtype/require-valid-file-annotation": "off",
         // these make sense for libraries, but not documentation
         "global-require": "off",
+        camelcase: "off",
+        "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",

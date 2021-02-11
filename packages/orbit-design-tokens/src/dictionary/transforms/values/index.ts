@@ -1,4 +1,4 @@
-import { Property } from "style-dictionary";
+import { Property, Value } from "style-dictionary";
 
 import { isSpacing, isBorderRadius } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
@@ -10,7 +10,7 @@ export const spacingJavascript = {
   name: "value/spacing/javascript",
   type: "value",
   matcher: isSpacing,
-  transformer: ({ value }: Property): string => {
+  transformer: ({ value }: Property): Value => {
     return `${value}px`;
   },
 };
@@ -21,7 +21,7 @@ export const spacingJavascript = {
 export const stringJavascript = {
   name: "value/string/javascript",
   type: "value",
-  transformer: ({ value }: Property): string => {
+  transformer: ({ value }: Property): Value => {
     return `"${value}"`;
   },
 };
@@ -33,30 +33,31 @@ export const borderRadiusJavascript = {
   name: "value/border-radius/javascript",
   type: "value",
   matcher: isBorderRadius,
-  transformer: ({ value }: Property): string => {
+  transformer: ({ value }: Property): Value => {
     const normalizedValue = Number(value);
     if (normalizedValue) {
       return `${normalizedValue}px`;
     }
-    return String(value);
+    return value;
   },
 };
 
 /*
-  Transforms attributes from attribute/nov to interlaced identifiers.
+  Transforms attributes from attribute/nov to interlaced identifiers,
+  only for referenced aliases.
   e.g. foundation.space.value
-  TODO in future:
-  - other types has leading dot at the end (only palette is being exposed via global tokens for now)
  */
 export const foundationAlias = {
   name: "value/nov/alias",
   type: "value",
-  transformer: (prop: Property): string => {
-    const { attributes } = prop;
-    const { namespace, object, variant, subVariant } = attributes;
-    if ([namespace, object, variant, subVariant].every(value => value == null)) {
+  transformer: ({
+    attributes: { namespace, object, variant, subVariant, aliased },
+    value,
+  }: Property): Value => {
+    if ([namespace, object, variant, subVariant].every(v => v == null)) {
       throw new Error(errorTransform("value/nov/alias", "attribute/nov"));
     }
+    if (!aliased) return value;
     return [namespace, object, variant, subVariant].filter(Boolean).join(".");
   },
 };

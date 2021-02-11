@@ -22,7 +22,13 @@ const build = () => {
   });
   StyleDictionary.registerTransformGroup({
     name: "javascript/tokens",
-    transforms: ["attribute/nov", "attribute/nov/type", "value/nov/alias", "name/nov/camel"],
+    transforms: [
+      "attribute/nov",
+      "attribute/nov/isReferenced",
+      "attribute/nov/type",
+      "value/nov/alias",
+      "name/nov/camel",
+    ],
   });
   StyleDictionary.registerTransformGroup({
     name: "xml/tokens",

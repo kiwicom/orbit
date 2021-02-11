@@ -27,6 +27,20 @@ export const attributeNOV = {
   },
 };
 
+export const attributeIsReferenced = {
+  name: "attribute/nov/isReferenced",
+  type: "attribute",
+  // marcher: ({ attributes: { namespace } }: Property): boolean => namespace !== "foundation",
+  transformer: ({ value, attributes }: Property): Attributes => {
+    const { namespace, object, variant, subVariant } = attributes;
+    if ([namespace, object, variant, subVariant].every(v => v == null)) {
+      throw new Error(errorTransform("attribute/nov/isReferenced", "attribute/nov"));
+    }
+    const aliased = attributes.namespace === "foundation" || /{[\w.-]+}/g.test(String(value));
+    return { aliased, ...attributes };
+  },
+};
+
 export const attributeNOVCamelCase = {
   name: "attribute/nov/camelCase",
   type: "attribute",

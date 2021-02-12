@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { select, text, boolean } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
@@ -18,19 +19,58 @@ export const Mixed = () => {
   return (
     <Stack direction="column">
       <Stack align="end">
-        <Seat size={size} label={label} price="$12" />
-        <Seat size={size} label={label} price="$12" type="unavailable" />
-        <Seat size={size} label={label} price="$12" selected type="legroom" />
+        <Seat size={size} onClick={action("onClick")} label={label} price="12$" />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          type="unavailable"
+        />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          selected
+          type="legroom"
+        />
       </Stack>
       <Stack align="end">
-        <Seat size={size} label={label} price="$12" type="unavailable" />
-        <Seat size={size} label={label} price="$12" selected type="legroom" />
-        <Seat size={size} label={label} price="$12" />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          type="unavailable"
+        />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          selected
+          type="legroom"
+        />
+        <Seat size={size} onClick={action("onClick")} label={label} price="12$" />
       </Stack>
       <Stack align="end">
-        <Seat size={size} label={label} price="$12" selected type="legroom" />
-        <Seat size={size} label={label} price="$12" />
-        <Seat size={size} label={label} price="$12" type="unavailable" />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          selected
+          type="legroom"
+        />
+        <Seat size={size} onClick={action("onClick")} label={label} price="12$" />
+        <Seat
+          size={size}
+          onClick={action("onClick")}
+          label={label}
+          price="12$"
+          type="unavailable"
+        />
       </Stack>
     </Stack>
   );
@@ -43,9 +83,16 @@ export const Selected = () => {
 
   return (
     <Stack direction="row">
-      <Seat size={size} label={label} selected dataTest={dataTest} />
-      <Seat size={size} label={label} selected type="legroom" dataTest={dataTest} />
-      <Seat size={size} label={label} selected dataTest={dataTest} />
+      <Seat size={size} onClick={action("onClick")} label={label} selected dataTest={dataTest} />
+      <Seat
+        size={size}
+        onClick={action("onClick")}
+        label={label}
+        selected
+        type="legroom"
+        dataTest={dataTest}
+      />
+      <Seat size={size} onClick={action("onClick")} label={label} selected dataTest={dataTest} />
     </Stack>
   );
 };
@@ -65,6 +112,7 @@ export const Playground = () => {
         label={label}
         price={price}
         selected={selected}
+        onClick={action("onClick")}
         type="legroom"
         dataTest={dataTest}
       />
@@ -72,6 +120,7 @@ export const Playground = () => {
         size={size}
         label={label}
         price={price}
+        onClick={action("onClick")}
         selected={selected}
         type="unavailable"
         dataTest={dataTest}

@@ -18,19 +18,19 @@ export const Mixed = () => {
   return (
     <Stack direction="column">
       <Stack align="end">
-        <Seat size={size} label={label} price="12$" />
-        <Seat size={size} label={label} price="12$" type="unavailable" />
-        <Seat size={size} label={label} price="12$" selected type="legroom" />
+        <Seat size={size} label={label} price="$12" />
+        <Seat size={size} label={label} price="$12" type="unavailable" />
+        <Seat size={size} label={label} price="$12" selected type="legroom" />
       </Stack>
       <Stack align="end">
-        <Seat size={size} label={label} price="12$" type="unavailable" />
-        <Seat size={size} label={label} price="12$" selected type="legroom" />
-        <Seat size={size} label={label} price="12$" />
+        <Seat size={size} label={label} price="$12" type="unavailable" />
+        <Seat size={size} label={label} price="$12" selected type="legroom" />
+        <Seat size={size} label={label} price="$12" />
       </Stack>
       <Stack align="end">
-        <Seat size={size} label={label} price="12$" selected type="legroom" />
-        <Seat size={size} label={label} price="12$" />
-        <Seat size={size} label={label} price="12$" type="unavailable" />
+        <Seat size={size} label={label} price="$12" selected type="legroom" />
+        <Seat size={size} label={label} price="$12" />
+        <Seat size={size} label={label} price="$12" type="unavailable" />
       </Stack>
     </Stack>
   );
@@ -54,7 +54,7 @@ export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
   const label = text("label", "XY");
-  const price = text("price", "12$");
+  const price = text("price", "$12");
   const selected = boolean("selected", false);
 
   return (

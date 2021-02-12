@@ -14,9 +14,9 @@ export default {
         </Heading>
         <Stack direction="row">
           <Seat size="small" />
-          <Seat size="small" />
-          <Seat size="small" />
-          <Seat size="small" />
+          <Seat size="small" selected />
+          <Seat size="small" type="legroom" />
+          <Seat size="small" type="unavailable" />
         </Stack>
       </Stack>
       <Stack spacing="XXSmall">
@@ -25,15 +25,16 @@ export default {
         </Heading>
         <Stack direction="row">
           <Seat />
-          <Seat />
-          <Seat />
-          <Seat />
+          <Seat selected />
+          <Seat type="legroom" />
+          <Seat type="unavailable" />
         </Stack>
       </Stack>
     </Stack>
   ),
   info: {
     title: "Sizes",
-    description: "Seats can be either small or medium (the default).",
+    description:
+      "Seats can be either small or medium (the default). We recommend using the medium size for desktop screens and small for mobiles.",
   },
 };

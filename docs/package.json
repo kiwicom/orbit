@@ -1,5 +1,5 @@
 {
-  "name": "orbit.kiwi",
+  "name": "@kiwicom/orbit.kiwi",
   "version": "0.5.1",
   "private": true,
   "scripts": {

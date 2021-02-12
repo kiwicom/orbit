@@ -1,0 +1,62 @@
+{
+  "foundation": {
+    "font-family": {
+      "base": {
+        "type": "font-family",
+        "value": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
+        "internal": true
+      }
+    },
+    "font-size": {
+      "small": {
+        "type": "font-size",
+        "value": 12,
+        "internal": true
+      },
+      "normal": {
+        "type": "font-size",
+        "value": 14,
+        "internal": true
+      },
+      "large": {
+        "type": "font-size",
+        "value": 16,
+        "internal": true
+      }
+    },
+    "line-height": {
+      "small": {
+        "type": "line-height",
+        "value": 16,
+        "internal": true
+      },
+      "normal": {
+        "type": "line-height",
+        "value": 20,
+        "internal": true
+      },
+      "large": {
+        "type": "line-height",
+        "value": 22,
+        "internal": true
+      }
+    },
+    "font-weight": {
+      "normal": {
+        "type": "font-weight",
+        "value": 400,
+        "internal": true
+      },
+      "medium": {
+        "type": "font-weight",
+        "value": 500,
+        "internal": true
+      },
+      "bold": {
+        "type": "font-weight",
+        "value": 700,
+        "internal": true
+      }
+    }
+  }
+}

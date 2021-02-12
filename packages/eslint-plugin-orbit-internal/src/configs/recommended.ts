@@ -1,7 +1,7 @@
 const recommended = {
-  plugins: ["orbit-internal"],
+  plugins: ["@kiwicom/orbit-internal"],
   rules: {
-    "orbit-internal/unique-id": "error",
+    "@kiwicom/orbit-internal/unique-id": "error",
   },
 };
 

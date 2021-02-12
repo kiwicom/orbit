@@ -4,6 +4,7 @@ flow-typed
 lib
 node_modules
 packages/babel-plugin-orbit-components/dist/
+packages/eslint-plugin-orbit-internal/dist/
 packages/babel-plugin-orbit-components/__fixtures__/
 packages/eslint-plugin-orbit-components/dist
 !.storybook

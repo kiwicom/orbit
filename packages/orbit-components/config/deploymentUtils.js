@@ -1,41 +1,35 @@
 // @flow
 // const { resolve } = require("path");
-const { octokit } = require("@octokit/rest");
+const { Octokit } = require("@octokit/rest");
 
 const repo = "orbit";
 
-export const getPr = async (branchName: string) => {
-  const res = await octokit.pullRequests.getAll({
-    owner: "kiwicom",
-    repo,
-    head: `kiwicom:${branchName}`,
-  });
-  return res.data[0];
+const parseDescription = (body, str) => {
+  if (body.match(str)) return body;
+  return body.concat(`\n ${str}`);
 };
 
-export const updateLiveURL = async (branchName: string, lastUrl: string, token: string) => {
-  if (!branchName) throw new Error("Missing branch parameter");
-  const pr = await getPr(branchName);
-  octokit.authenticate({
-    type: "integration",
-    token,
-  });
-  const res = await octokit.pullRequests.get({
+export const updateLiveURL = async (
+  pr: number,
+  lastUrl: string,
+  token: string,
+  urlName: string = "LiveURL",
+) => {
+  if (!pr) throw new Error("Missing PR number");
+
+  const octokit = new Octokit({ log: console, auth: token });
+
+  const { data } = await octokit.pulls.get({
     owner: "kiwicom",
     repo,
-    number: pr.number,
+    pull_number: pr,
   });
-  let newBody;
-  if (res.data.body.match(/<url>/)) {
-    newBody = res.data.body.replace(/<url>(.*)(<\/url>)?/, `<url>LiveURL: ${lastUrl}</url>`);
-  } else {
-    newBody = res.data.body.concat(`<br/><br/><br/><url>LiveURL: ${lastUrl}</url>`);
-  }
-  await octokit.pullRequests.update({
+
+  await octokit.pulls.update({
     owner: "kiwicom",
     repo,
-    number: pr.number,
-    body: newBody,
+    pull_number: pr,
+    body: parseDescription(data.body, `${urlName}: ${lastUrl}`),
   });
 };
 

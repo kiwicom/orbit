@@ -8,6 +8,7 @@ module.exports = {
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
+    "plugin:orbit-internal/recommended",
     "prettier/react",
   ],
   plugins: ["babel"],
@@ -22,6 +23,7 @@ module.exports = {
           __dirname,
           path.join(__dirname, "packages/babel-plugin-orbit-components"),
           path.join(__dirname, "packages/eslint-plugin-orbit-components"),
+          path.join(__dirname, "packages/eslint-plugin-orbit-internal"),
           path.join(__dirname, "packages/orbit-components"),
           path.join(__dirname, "packages/orbit-design-tokens"),
           path.join(__dirname, "docs"),
@@ -35,6 +37,7 @@ module.exports = {
           "**/stories/**",
           "**/tasks/**",
           "docs/**",
+          "packages/eslint-plugin-orbit-internal/**",
           "packages/*/.storybook/**",
           "**/config/**",
           "**/scripts/**",
@@ -185,6 +188,8 @@ module.exports = {
         "flowtype/require-valid-file-annotation": "off",
         // these make sense for libraries, but not documentation
         "global-require": "off",
+        camelcase: "off",
+        "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -201,6 +206,19 @@ module.exports = {
       files: ["packages/orbit-components/src/utils/**/*"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "OFF",
+      },
+    },
+    {
+      files: ["packages/eslint-plugin-orbit-internal/src/**"],
+      rules: {
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
+      rules: {
+        "orbit-internal/unique-id": "off",
       },
     },
   ],

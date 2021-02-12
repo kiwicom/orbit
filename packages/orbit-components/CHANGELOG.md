@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.109.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.0...@kiwicom/orbit-components@0.109.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* use postinstall script only in development ([05cecc4](https://github.com/kiwicom/orbit/commit/05cecc434b069d32732c0434186d76877c2f0277))
+
+
+
+
+
+# [0.109.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.2...@kiwicom/orbit-components@0.109.0) (2021-02-05)
+
+
+### Bug Fixes
+
+* **InputTags:** fix cleanup logic ([7d66ff8](https://github.com/kiwicom/orbit/commit/7d66ff8458da274a0f48b30f9099f6430e7aa274))
+* **PictureCard:** label semantic ([#2713](https://github.com/kiwicom/orbit/issues/2713)) ([0c454e0](https://github.com/kiwicom/orbit/commit/0c454e07e5c6bdf96a85b8db005268aa741d00be))
+* **Seat:** small selected state ([#2715](https://github.com/kiwicom/orbit/issues/2715)) ([8426630](https://github.com/kiwicom/orbit/commit/84266306b655060a8197c6f23e4289ea68b94d45))
+* **useIntersect:** do nothing in browsers that don't support IntersectionObserver ([99d3772](https://github.com/kiwicom/orbit/commit/99d3772da1b386fe620d6c8735760aed754f9779))
+* **useMediaQuery:** fix Rules of Hooks violation ([6146505](https://github.com/kiwicom/orbit/commit/6146505eead568ad12a8bc7e58ed46cea9096157))
+
+
+### Features
+
+* **eslint-orbit:** add unique-ids rule ([#2671](https://github.com/kiwicom/orbit/issues/2671)) ([b6a1057](https://github.com/kiwicom/orbit/commit/b6a10570a7fb3f0243fcf96a7f975dce52391fb5))
+* **Seat:** new icon sizes, general refactoring ([a86cd07](https://github.com/kiwicom/orbit/commit/a86cd07dc6971f694142d836c5ec36cf10419621))
+
+
+### BREAKING CHANGES
+
+* **Seat:** separated component for legend, changed icon sizes
+
+
+
+
+
 ## [0.108.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.108.1...@kiwicom/orbit-components@0.108.2) (2021-01-26)
 
 

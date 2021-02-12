@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.2.3...eslint-plugin-orbit-components@0.3.0) (2021-02-05)
+
+
+### Features
+
+* **eslint-orbit:** add recommended config ([#2712](https://github.com/kiwicom/orbit/issues/2712)) ([4c1e3b4](https://github.com/kiwicom/orbit/commit/4c1e3b4af885f0d4c7b4531326a2f638756501cc))
+
+
+
+
+
 ## [0.2.3](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.2.2...eslint-plugin-orbit-components@0.2.3) (2021-01-22)
 
 

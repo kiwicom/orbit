@@ -1,18 +1,19 @@
 {
   "name": "orbit.kiwi",
-  "version": "0.4.2",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
-    "repl": "gatsby repl"
+    "repl": "gatsby repl",
+    "deploy:surge": "yarn surge public/"
   },
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
-    "@kiwicom/orbit-components": "^0.108.2",
-    "@kiwicom/orbit-design-tokens": "^0.13.1",
+    "@kiwicom/orbit-components": "^0.109.1",
+    "@kiwicom/orbit-design-tokens": "^0.13.2",
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.21",
@@ -23,7 +24,7 @@
     "babel-preset-gatsby": "^0.7.0",
     "dedent": "^0.7.0",
     "downshift": "^6.0.10",
-    "gatsby": "^2.27.0",
+    "gatsby": "^2.32.3",
     "gatsby-image": "^2.6.0",
     "gatsby-plugin-mdx": "^1.5.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -31,7 +32,6 @@
     "gatsby-redirect-from": "^0.2.4",
     "gatsby-remark-images": "^3.9.0",
     "gatsby-source-filesystem": "^2.6.0",
-    "gatsby-source-graphql": "^2.12.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "js-yaml": "^4.0.0",
     "remark-deflist": "^0.3.0",

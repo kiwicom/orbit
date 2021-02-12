@@ -1,3 +1,57 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Seat" />
+
+## When to use
+
+- To show information about options for where to sit.
+- To enable users to scan the distinct types to make a selection.
+
+### When not to use
+
+- For general visual context---use an [illustration](/components/visuals/illustration/).
+
+## Component status
+
+<ComponentStatus component="Seat" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="331%3A0"
+  alt="Type: optionally adds additional information about a seat option."
+/>
+
+## Behavior
+
+### Explain the types
+
+While the visual cues available for each [seat type](#seat-types)
+should help users understand their options,
+some users might not understand it at first glance.
+Provide a clear legend explaining each type so users can scan for what they want.
+
+<ReactExample name="Seat legend" />
+
+## Look & feel
+
+### Seat sizes
+
+Seats come in two sizes: small and medium.
+Use small seats for small screens and medium seats for larger ones.
+Our [media queries](/development/utilities/media-queries/)
+or [useMediaQuery hood](/development/hooks/usemediaquery/)
+can help with this.
+
+<ReactExample name="Seat default" />
+
+### Seat types
+
+Seat types present clear options for quick scanning.
+This allows users to find the option that fits them best.
+
+<ReactExample name="Seat types" />
+

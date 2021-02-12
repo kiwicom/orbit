@@ -1,0 +1,58 @@
+{
+  "global": {
+    "breakpoint": {
+      "mediumMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.mediumMobile}"
+      },
+      "largeMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeMobile}"
+      },
+      "tablet": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.tablet}"
+      },
+      "desktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.desktop}"
+      },
+      "largeDesktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeDesktop}"
+      }
+    },
+    "width-breakpoint": {
+      "mediumMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.mediumMobile}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.mediumMobile}"
+      },
+      "largeMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeMobile}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.largeMobile}"
+      },
+      "tablet": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.tablet}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.tablet}"
+      },
+      "desktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.desktop}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.desktop}"
+      },
+      "largeDesktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeDesktop}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.largeDesktop}"
+      }
+    }
+  }
+}

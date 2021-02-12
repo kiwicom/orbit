@@ -8,11 +8,11 @@ module.exports = {
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:orbit-internal/recommended",
     "prettier/react",
   ],
-  plugins: ["babel"],
+  plugins: ["babel", "@kiwicom/orbit-internal"],
   rules: {
+    "@kiwicom/orbit-internal/unique-id": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
@@ -218,7 +218,7 @@ module.exports = {
     {
       files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
       rules: {
-        "orbit-internal/unique-id": "off",
+        "@kiwicom/orbit-internal/unique-id": "off",
       },
     },
   ],

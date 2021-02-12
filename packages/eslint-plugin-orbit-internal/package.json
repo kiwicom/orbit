@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-orbit-internal",
+  "name": "@kiwicom/eslint-plugin-orbit-internal",
   "version": "0.1.0",
   "private": true,
   "main": "dist/index.js",

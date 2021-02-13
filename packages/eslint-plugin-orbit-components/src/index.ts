@@ -7,6 +7,7 @@ import customColors from "./rules/customColors";
 import defaultTheme from "./rules/defaultTheme";
 import rtlUtils from "./rules/rtlUtils";
 import internal from "./configs/internal";
+import customTypography from "./rules/customTypography";
 
 export const rules = {
   "button-has-title": buttonHasTitle,
@@ -16,6 +17,7 @@ export const rules = {
   "default-theme": defaultTheme,
   "rtl-utils": rtlUtils,
   "unique-id": uniqueId,
+  "custom-typography": customTypography,
 };
 
 export const configs = {

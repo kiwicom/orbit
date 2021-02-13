@@ -7,6 +7,7 @@ const recommended = {
     "orbit-components/custom-colors": "warn",
     "orbit-components/default-theme": "error",
     "orbit-components/rtl-utils": "error",
+    "orbit-components/custom-typography": "warn",
   },
 };
 

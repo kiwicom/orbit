@@ -74,6 +74,7 @@ module.exports = {
         owner: "kiwicom",
       },
     },
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
   ],
 };

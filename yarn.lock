@@ -351,7 +351,12 @@
     regenerator-runtime "^0.13.4"
     v8flags "^3.1.1"
 
-"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.10.5", "@babel/parser@^7.12.13", "@babel/parser@^7.12.5", "@babel/parser@^7.12.7", "@babel/parser@^7.7.0", "@babel/parser@^7.9.4":
+"@babel/parser@^7.0.0":
+  version "7.12.15"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.15.tgz#2b20de7f0b4b332d9b119dd9c33409c538b8aacf"
+  integrity sha512-AQBOU2Z9kWwSZMd6lNjCX0GUgFonL1wAM1db8L8PMk9UDaGsRCArBkU4Sc+UCM3AE4hjbXx+h58Lb3QT4oRmrA==
+
+"@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.10.5", "@babel/parser@^7.12.13", "@babel/parser@^7.12.5", "@babel/parser@^7.12.7", "@babel/parser@^7.7.0", "@babel/parser@^7.9.4":
   version "7.12.14"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.14.tgz#4adb7c5eef1d437ef965ad1569cd826db8c11dc9"
   integrity sha512-xcfxDq3OrBnDsA/Z8eK5/2iPcLD8qbOaSSfOw4RA6jp4i7e6dEQ7+wTwxItEwzcXPQcsry5nZk96gmVPKletjQ==
@@ -11859,6 +11864,13 @@ gatsby-plugin-sharp@^2.13.4:
     sharp "^0.27.0"
     svgo "1.3.2"
     uuid "3.4.0"
+
+gatsby-plugin-styled-components@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.10.0.tgz#beeafee695b1a42df6584ca5afcaa9b461eb29f5"
+  integrity sha512-CDNNvRxLS4dsQI2fv57T+0VUqapRtiDXm6SUsxyuVuEhJCyDGu1g9jg+9ty0HfUEDcW8JexlRJO5srkdYp1x1g==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 gatsby-plugin-typescript@^2.12.0:
   version "2.12.0"

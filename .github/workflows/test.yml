@@ -28,8 +28,26 @@ jobs:
       - name: Install dependencies
         run: yarn install && yarn bootstrap
 
-      - name: Testing, Linting, Type Checking
-        run: yarn test-ci
+      - name: Check icons
+        run: npx lerna run --scope @kiwicom/orbit-components check:icons
+
+      - name: Build
+        run: npx lerna run --ignore orbit.kiwi build
+
+      - name: Flow
+        run: yarn flow:check
+
+      - name: TypeScript
+        run: npx tsc
+
+      - name: Lint
+        run: |
+          yarn eslint:ci
+          yarn prettier:test
+
+      - name: Test
+        run: |
+          yarn test-ci
   deploy:
     # do not run on master branch
     # if expression will fail because github.head_ref doesn't contain anything when push to master

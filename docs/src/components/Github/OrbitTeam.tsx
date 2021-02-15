@@ -35,7 +35,7 @@ interface AllMembers {
 const OrbitTeam = () => {
   const { allFile } = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativePath: { regex: "/team/" } }) {
+      allFile(filter: { relativeDirectory: { regex: "/team/" } }) {
         edges {
           node {
             childImageSharp {

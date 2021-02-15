@@ -8,11 +8,11 @@ module.exports = {
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:orbit-internal/recommended",
     "prettier/react",
   ],
-  plugins: ["babel"],
+  plugins: ["babel", "@kiwicom/orbit-internal"],
   rules: {
+    "@kiwicom/orbit-internal/unique-id": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
@@ -177,6 +177,8 @@ module.exports = {
         "flowtype/require-valid-file-annotation": "off",
         // these make sense for libraries, but not documentation
         "global-require": "off",
+        camelcase: "off",
+        "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -205,7 +207,7 @@ module.exports = {
     {
       files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
       rules: {
-        "orbit-internal/unique-id": "off",
+        "@kiwicom/orbit-internal/unique-id": "off",
       },
     },
   ],

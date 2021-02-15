@@ -74,17 +74,26 @@ jobs:
         with:
           node-version: 12
 
-      - name: Get BRANCH_NAME
-        run: echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
-
       - name: Get BRANCH_URL
         run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
 
-      - name: Build storybook
-        run: yarn orbit-components build:storybook
+      - name: Get PR_NUMBER
+        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
+
+      - name: Build
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          yarn orbit-components build:storybook
+          yarn orbit-components build:lib
+          yarn orbit-kiwi build
 
       - name: Publish
-        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: |
+          yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
-      - name: Update PR description
-        run: yarn orbit-components deploy:updateURL ${BRANCH_NAME} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }}
+      - name: Update description
+        run: |
+          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi
+          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook

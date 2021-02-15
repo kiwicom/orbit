@@ -60,7 +60,7 @@ function publishPackages() {
       "lerna",
       "publish",
       "--ignore",
-      "orbit.kiwi",
+      "@kiwicom/orbit.kiwi",
       "--conventional-commits",
       "--create-release",
       "github",

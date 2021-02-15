@@ -38,7 +38,7 @@
     "design"
   ],
   "devDependencies": {
-    "@babel/parser": "^7.9.4",
+    "@babel/parser": "^7.12.16",
     "babylon": "^6.18.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "lodash": "^4.17.14",

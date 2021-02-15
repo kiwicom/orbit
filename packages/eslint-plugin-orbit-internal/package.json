@@ -1,11 +1,11 @@
 {
-  "name": "eslint-plugin-orbit-internal",
+  "name": "@kiwicom/eslint-plugin-orbit-internal",
   "version": "0.1.0",
   "private": true,
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
-    "install": "yarn build"
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"

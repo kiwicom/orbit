@@ -6,9 +6,20 @@ import { Tile } from "@kiwicom/orbit-components";
 
 import useIsUrlExternal from "../hooks/useIsUrlExternal";
 
-interface FancyLinkProps {
-  download: boolean;
-  icon: string | React.ReactNode;
+type IconNames =
+  | "color-picker"
+  | "download"
+  | "figma"
+  | "github"
+  | "google"
+  | "lightbulb"
+  | "react"
+  | "spectrum"
+  | "storybook";
+
+interface Props {
+  download?: boolean;
+  icon: IconNames | React.ReactNode;
   title: string;
   href: string;
 }
@@ -18,53 +29,41 @@ const StyledAnchor = styled.a`
   display: block;
 `;
 
-const FancyLink = ({ download, href, icon, title }: FancyLinkProps) => {
+const FancyLink = ({ download, href, icon, title }: Props) => {
   const isExternal = useIsUrlExternal(href);
 
-  let usedIcon = icon || <FlightDirect />;
-
-  // If not passing an icon
-  if (typeof icon === "string") {
+  const usedIcon = () => {
     switch (icon) {
       case "download":
-        usedIcon = <Download />;
-        break;
+        return <Download />;
       case "color-picker":
-        usedIcon = <ColorPicker />;
-        break;
+        return <ColorPicker />;
       case "figma":
-        usedIcon = <Figma />;
-        break;
+        return <Figma />;
       case "github":
-        usedIcon = <Github />;
-        break;
+        return <Github />;
       case "google":
-        usedIcon = <Google />;
-        break;
+        return <Google />;
       case "react":
-        usedIcon = <ReactJs />;
-        break;
+        return <ReactJs />;
       case "spectrum":
-        usedIcon = <Spectrum />;
-        break;
+        return <Spectrum />;
       case "storybook":
-        usedIcon = <Storybook />;
-        break;
+        return <Storybook />;
       case "lightbulb":
-        usedIcon = <Tips />;
-        break;
+        return <Tips />;
       default:
-        usedIcon = <FlightDirect />;
+        return <FlightDirect />;
     }
-  }
+  };
   return (
     <>
       {download ? (
         <StyledAnchor href={href} download>
-          <Tile title={title} icon={usedIcon} />
+          <Tile title={title} icon={usedIcon()} />
         </StyledAnchor>
       ) : (
-        <Tile title={title} icon={usedIcon} href={href} external={isExternal} />
+        <Tile title={title} icon={usedIcon()} href={href} external={isExternal} />
       )}
     </>
   );

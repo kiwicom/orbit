@@ -1,12 +1,11 @@
 import React from "react";
 import { Stack } from "@kiwicom/orbit-components";
 import styled from "styled-components";
+import { Dribbble, Github } from "@icons-pack/react-simple-icons";
 import Twitter from "@kiwicom/orbit-components/lib/icons/Twitter";
 import LinkIcon from "@kiwicom/orbit-components/lib/icons/Link";
 
 import { Member } from "./OrbitTeam";
-import Github from "../../images/github.svg";
-import Dribbble from "../../images/dribbble.svg";
 
 const StyledHeading = styled.h4`
   color: ${({ theme }) => theme.orbit.colorHeading};

@@ -1688,6 +1688,13 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
+"@icons-pack/react-simple-icons@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-4.0.0.tgz#da5d613b73dd7f709a5e225d5fc52e1bc7f717f0"
+  integrity sha512-vNAKspB1VoDlYLaBJo99cdbNmyjsr0BmYRvmFlAAMgHGaTp05KmNL14op+TQTukUr5IoBhmbsaIFXa0DVjwNZg==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"

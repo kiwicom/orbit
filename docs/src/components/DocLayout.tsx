@@ -8,6 +8,7 @@ import theme from "../theme";
 import Prose from "./Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "./AddBookmark";
+import FancyLink from "./FancyLink";
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 
@@ -57,7 +58,7 @@ export default function DocLayout({ children, location, path, title }: Props) {
                   </Heading>
                 </Stack>
               )}
-              <MDXProvider components={components}>{children}</MDXProvider>
+              <MDXProvider components={{ ...components, FancyLink }}>{children}</MDXProvider>
             </Prose>
           </StyledMain>
           <StyledFooter />

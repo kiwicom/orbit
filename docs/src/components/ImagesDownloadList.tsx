@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { Download } from "@kiwicom/orbit-components/icons";
@@ -8,13 +8,13 @@ import { useStaticQuery, graphql } from "gatsby";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import bizdevAssets from "../data/bizdev-assets.yaml";
-import theme from "../theme";
 
 const StyledAnchor = styled.a`
+  ${({ theme }) => css`
   background-color: ${theme.orbit.paletteProductLight};
   color: ${theme.orbit.paletteProductNormal};
   padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
-  padding-top: 4px;
+  padding-top: ${theme.orbit.spaceXXSmall};
   height: ${theme.orbit.heightButtonSmall};
   border-radius: ${theme.orbit.borderRadiusNormal}
   transition: all ${theme.orbit.durationFast} ease-in;
@@ -23,6 +23,7 @@ const StyledAnchor = styled.a`
     background-color: ${theme.orbit.paletteProductLightHover};
     color: ${theme.orbit.paletteProductDark};
   }
+`}
 `;
 
 const ImageContainer = styled.div`
@@ -36,12 +37,14 @@ interface ImageWrapProps {
 }
 
 const ImageWrap = styled.div<ImageWrapProps>`
-  padding: 12px;
-  border: 1px solid ${theme.orbit.borderColorCard};
-  border-radius: 6px;
-  margin-top: 16px;
-  width: ${props => props.width};
-  margin-right: 2%;
+  ${({ theme, width }) => css`
+    padding: ${theme.orbit.spaceSmall};
+    border: 1px solid ${theme.orbit.borderColorCard};
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    margin-top: ${theme.orbit.spaceMedium};
+    width: ${width};
+    margin-right: 2%;
+  `}
 `;
 
 const ImageCenterer = styled.div`
@@ -55,10 +58,12 @@ const CopyButton = ({ url }) => {
 
   useEffect(() => {
     if (copied) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setCopied(false);
-      }, 3000);
+      }, 2000);
+      return () => clearTimeout(timer);
     }
+    return undefined;
   });
   return (
     <CopyToClipboard text={`https://orbit.kiwi${url}`}>
@@ -79,11 +84,11 @@ interface ImageData {
 }
 
 interface ImagesDownloadListProps {
-  list: "headers" | "icons";
+  listName: "headers" | "icons";
 }
 
-const ImagesDownloadList = ({ list }: ImagesDownloadListProps) => {
-  const { isDesktop } = useMediaQuery();
+const ImagesDownloadList = ({ listName }: ImagesDownloadListProps) => {
+  const { isDesktop, isMediumMobile } = useMediaQuery();
 
   const data: {
     allFile: {
@@ -111,45 +116,48 @@ const ImagesDownloadList = ({ list }: ImagesDownloadListProps) => {
     }
   `);
 
-  let imageWrapWidth;
-  if (list === "headers") {
-    imageWrapWidth = "100%";
-  } else {
-    imageWrapWidth = isDesktop ? "31%" : "100%";
-  }
+  const imageWrapWidth = () => {
+    if (listName === "headers") {
+      return "100%";
+    }
+    return isDesktop ? "31%" : "100%";
+  };
 
   return (
     <ImageContainer>
-      {bizdevAssets[list].map(asset => {
+      {bizdevAssets[listName].map(asset => {
         const assetData = data.allFile.nodes.find(image => image.relativePath === asset.path);
-        if (!assetData) {
-          return "";
-        }
+        if (!assetData) return "";
 
         // Fixed size for the smaller icons and fluid for wider headers
         const imageProp =
-          list === "icons"
+          listName === "icons"
             ? { fixed: assetData.childImageSharp.fixed }
             : { fluid: assetData.childImageSharp.fluid };
 
         return (
-          <ImageWrap width={imageWrapWidth}>
+          <ImageWrap width={imageWrapWidth()}>
             <ImageCenterer>
               <Img {...imageProp} alt="" />
             </ImageCenterer>
             <Stack
               spacing="small"
-              direction={imageWrapWidth === "100%" ? "row" : "column"}
+              direction={imageWrapWidth() === "100%" && isMediumMobile ? "row" : "column"}
               justify="between"
-              align={imageWrapWidth === "100%" ? "center" : "start"}
+              align={imageWrapWidth() === "100%" ? "center" : "start"}
             >
               <Heading as="h3" type="title2">
                 {asset.alt}
               </Heading>
-              <Stack justify={imageWrapWidth === "100%" ? "end" : "between"} shrink basis="content">
+              <Stack
+                justify={imageWrapWidth() === "100%" && isMediumMobile ? "end" : "between"}
+                shrink
+                basis="content"
+              >
                 <StyledAnchor href={assetData.publicURL} download>
                   <Stack spacing="XXSmall" align="center">
-                    <Download size="small" /> <div>Download</div>
+                    <Download size="small" />
+                    <div>Download</div>
                   </Stack>
                 </StyledAnchor>
                 <CopyButton url={assetData.publicURL} />

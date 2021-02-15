@@ -129,6 +129,20 @@ module.exports = {
       },
     },
     {
+      files: [
+        // React components
+        "**/[A-Z]*.ts?(x)",
+        "**/[A-Z]*/index.ts?(x)",
+        "**/__typetests__/*.ts?(x)",
+        "**/__testfixtures__/**",
+        // other
+        "docs/**",
+      ],
+      rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
       files: "*.d.ts",
       rules: {
         "react/prefer-stateless-function": "off",
@@ -148,12 +162,6 @@ module.exports = {
         "jest/no-if": "error",
         "jest/consistent-test-it": "warn",
         "jest/no-focused-tests": "error",
-      },
-    },
-    {
-      files: "**/__typetests__/**",
-      rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     {
@@ -180,14 +188,6 @@ module.exports = {
         camelcase: "off",
         "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-      },
-    },
-    {
-      files: "**/__testfixtures__/**",
-      rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them
@@ -201,7 +201,6 @@ module.exports = {
       files: ["packages/eslint-plugin-orbit-internal/src/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     {

@@ -1,6 +1,4 @@
 // @flow
-import { css } from "styled-components";
-
 import resolveFocusColor from "./resolveFocusColor";
 import resolveAccentColor from "./resolveAccentColor";
 import { TYPES } from "../../consts";
@@ -12,14 +10,10 @@ const resolveFillColor = ({ type, theme, selected, focus }: Params) => {
     if (type === TYPES.UNAVAILABLE) return "";
 
     if (!selected) {
-      return css`
-        fill: ${resolveAccentColor};
-      `;
+      return resolveAccentColor;
     }
 
-    return css`
-      fill: ${resolveFocusColor};
-    `;
+    return resolveFocusColor;
   }
 
   if (type === TYPES.LEGROOM)

@@ -110,7 +110,7 @@ export default function Home() {
           <Heading as="h2">Foundation</Heading>
           <Inline spacing="XLarge">
             <TileWrapper>
-              <Tile title="Colors" linkTo="/foundation/colors/">
+              <Tile title="Colors" linkTo="/foundation/color/">
                 Color is used to signal structure on a page, to highlight or emphasize...
               </Tile>
             </TileWrapper>

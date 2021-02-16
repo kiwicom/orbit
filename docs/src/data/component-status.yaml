@@ -88,7 +88,7 @@
   ios: n/a
   android: n/a
   docs: Released
-  group: Information
+  group: Visuals
 - component: Card
   figma: Released
   react: Released
@@ -348,7 +348,7 @@
   android: n/a
   docs: Not doing
   group: Navigation
-- component: NotificiationBadge
+- component: NotificationBadge
   figma: Designing
   react: Released
   ios: n/a

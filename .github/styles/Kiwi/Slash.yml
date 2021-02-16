@@ -1,0 +1,6 @@
+extends: existence
+message: "Don't put a space before or after a slash."
+link: 'https://developers.google.com/style/dashes'
+level: error
+tokens:
+  - '\s/\s'

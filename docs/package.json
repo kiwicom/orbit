@@ -13,6 +13,7 @@
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@icons-pack/react-simple-icons": "^4.0.0",
+    "@kiwicom/babel-plugin-orbit-components": "^2.1.0",
     "@kiwicom/orbit-components": "^0.109.1",
     "@kiwicom/orbit-design-tokens": "^0.13.2",
     "@mapbox/rehype-prism": "^0.5.0",
@@ -32,6 +33,7 @@
     "gatsby-plugin-styled-components": "^3.10.0",
     "gatsby-plugin-sharp": "^2.13.4",
     "gatsby-redirect-from": "^0.2.4",
+    "gatsby-remark-copy-linked-files": "^2.9.0",
     "gatsby-remark-images": "^3.9.0",
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
@@ -42,8 +44,6 @@
   },
   "dependencies": {
     "elasticlunr": "^0.9.5",
-    "gatsby-remark-copy-linked-files": "^2.9.0",
-    "gatsby-remark-images": "^3.9.0",
     "prism-react-renderer": "^1.1.1",
     "react-polymorphic-types": "^1.0.3"
   }

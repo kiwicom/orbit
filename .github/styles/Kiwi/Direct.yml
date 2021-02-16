@@ -1,0 +1,10 @@
+extends: existence
+message: "Be direct and tell readers what to do, instead of using '%s'."
+link: 'https://orbit.kiwi/content/technical-content/language/#address-the-reader-directly'
+level: warning
+nonword: true
+tokens:
+  - Let's
+  - We recommend
+exceptions:
+  - Let's Encypt

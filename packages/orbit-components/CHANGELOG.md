@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.109.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.1...@kiwicom/orbit-components@0.109.2) (2021-02-16)
+
+
+### Bug Fixes
+
+* **Popover:** readme ([07aecf2](https://github.com/kiwicom/orbit/commit/07aecf20862899762cfd7f37f96fb28d034a98f4))
+* **Seat:** active state, spacing ([#2734](https://github.com/kiwicom/orbit/issues/2734)) ([d59187f](https://github.com/kiwicom/orbit/commit/d59187f902fce1f84c15b381c49b35110b729db7))
+
+
+
+
+
 ## [0.109.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.0...@kiwicom/orbit-components@0.109.1) (2021-02-08)
 
 

@@ -8,6 +8,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import bizdevAssets from "../data/bizdev-assets.yaml";
+import { copyTimeout } from "../utils/common";
 
 const StyledAnchor = styled.a`
   ${({ theme }) => css`
@@ -55,16 +56,9 @@ const ImageCenterer = styled.div`
 
 const CopyButton = ({ url }) => {
   const [copied, setCopied] = useState(false);
-
   useEffect(() => {
-    if (copied) {
-      const timer = setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-    return undefined;
-  });
+    copyTimeout(copied, setCopied);
+  }, [copied, setCopied]);
   return (
     <CopyToClipboard text={`https://orbit.kiwi${url}`}>
       <ButtonLink size="small" disabled={copied} onClick={() => setCopied(true)}>

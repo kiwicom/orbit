@@ -22,7 +22,7 @@ describe("Seat", () => {
   it("should have expected DOM output", () => {
     render(
       <Seat
-        type={TYPES.UNAVAILABLE}
+        type={TYPES.DEFAULT}
         size={SIZE_OPTIONS.SMALL}
         title="kek"
         onClick={onClick}
@@ -31,7 +31,7 @@ describe("Seat", () => {
       />,
     );
 
-    userEvent.click(screen.getByRole("img"));
+    userEvent.click(screen.getByTestId(dataTest));
     expect(onClick).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTitle("kek")).toBeInTheDocument();

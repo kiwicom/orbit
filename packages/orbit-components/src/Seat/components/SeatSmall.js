@@ -9,14 +9,20 @@ import useTheme from "../../hooks/useTheme";
 import { resolveFillColor, resolveTextColor, resolveAccentColor } from "./helpers";
 
 export const StyledPath = styled.path`
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in;
+  transition: fill ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
 StyledPath.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledStrokeSmall = styled.path``;
+export const StyledStrokeSmall = styled.path`
+  transition: stroke ${({ theme }) => theme.orbit.durationFast} ease-in;
+`;
+
+StyledStrokeSmall.defaultProps = {
+  theme: defaultTheme,
+};
 
 const SeatSmall = ({ type, selected, label }: Props) => {
   const theme = useTheme();

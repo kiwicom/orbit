@@ -16,6 +16,7 @@ import SeatSmall, {
 } from "./components/SeatSmall";
 import {
   resolveHoverColor,
+  resolveAccentColor,
   resolveFillColor,
   resolveFocusColor,
   resolveCloseIconColor,
@@ -42,8 +43,10 @@ const getSize = ({ size }) => {
 const StyledSeatWrapper = styled.div`
   ${({ type, selected, theme }) => css`
     position: relative;
-    cursor: pointer;
+    cursor: ${type !== TYPES.UNAVAILABLE && "pointer"};
+    ${getSize};
     outline: none;
+    font-family: ${theme.orbit.fontFamily};
     &:hover {
       ${StyledPathNormal}, ${StyledPathSmall} {
         ${type !== TYPES.UNAVAILABLE &&
@@ -56,12 +59,23 @@ const StyledSeatWrapper = styled.div`
         fill: ${resolveCloseIconColor({ theme, type, hover: true })};
       }
     }
+
+    &:active,
     &:focus {
       ${StyledPathNormal}, ${StyledPathSmall} {
-        ${resolveFillColor({ theme, type, selected, focus: true })};
+        fill: ${resolveFillColor({ theme, type, selected, focus: true })};
       }
       ${StyledStrokeNormal}, ${StyledStrokeSmall} {
         stroke: ${resolveFocusColor};
+      }
+    }
+
+    &:focus:not(:focus-visible):not(:active) {
+      ${StyledPathNormal}, ${StyledPathSmall} {
+        fill: ${resolveFillColor};
+      }
+      ${StyledStrokeNormal}, ${StyledStrokeSmall} {
+        stroke: ${resolveAccentColor};
       }
     }
   `}
@@ -71,10 +85,7 @@ StyledSeatWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledSeat = styled.svg`
-  ${getSize};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-`;
+const StyledSeat = styled.svg``;
 
 StyledSeat.defaultProps = {
   theme: defaultTheme,
@@ -93,20 +104,21 @@ const Seat = ({
 }: Props) => {
   const titleId = React.useMemo(() => randomID("title"), []);
   const descrId = React.useMemo(() => randomID("descr"), []);
+  const clickable = type !== TYPES.UNAVAILABLE;
 
   return (
     <Stack inline grow={false} spacing="XXXSmall" direction="column" align="center">
       <StyledSeatWrapper
-        onClick={onClick}
+        data-test={dataTest}
+        onClick={clickable ? onClick : undefined}
+        tabIndex={clickable ? "0" : "-1"}
         type={type}
+        size={size}
         selected={selected}
-        tabIndex={type !== TYPES.UNAVAILABLE ? "0" : "-1"}
       >
-        <StyledSeat
-          data-test={dataTest}
+        <svg
           viewBox={size === SIZE_OPTIONS.SMALL ? "0 0 32 36" : "0 0 46 46"}
           aria-labelledby={`${titleId} ${descrId}`}
-          size={size}
           fill="none"
           role="img"
         >
@@ -118,8 +130,8 @@ const Seat = ({
           ) : (
             <SeatNormal type={type} selected={selected} price={price} label={label} />
           )}
-        </StyledSeat>
-        {selected && type !== TYPES.UNAVAILABLE && <SeatCircle size={size} type={type} />}
+        </svg>
+        {selected && clickable && <SeatCircle size={size} type={type} />}
       </StyledSeatWrapper>
       {price && !(selected && type === TYPES.UNAVAILABLE) && (
         <Text size="small" type="secondary">

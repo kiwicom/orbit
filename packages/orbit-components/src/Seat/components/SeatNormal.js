@@ -9,14 +9,20 @@ import type { Props } from "../index";
 import { resolveFillColor, resolveAccentColor, resolveTextColor } from "./helpers";
 
 export const StyledPath = styled.path`
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in;
+  transition: fill ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
 StyledPath.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledStrokeNormal = styled.path``;
+export const StyledStrokeNormal = styled.path`
+  transition: stroke ${({ theme }) => theme.orbit.durationFast} ease-in;
+`;
+
+StyledStrokeNormal.defaultProps = {
+  theme: defaultTheme,
+};
 
 const SeatNormal = ({ selected, type, label }: Props) => {
   const theme = useTheme();

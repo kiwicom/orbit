@@ -4,12 +4,10 @@
 import * as React from "react";
 
 import { Translations } from "../Dictionary";
-import { ThemeShape } from "../defaultTheme";
-
-declare module "@kiwicom/orbit-components/lib/ThemeProvider";
+import { Theme } from "../defaultTheme";
 
 interface Props {
-  readonly theme: ThemeShape;
+  readonly theme: Theme;
   readonly dictionary?: Translations;
   readonly children: React.ReactNode;
 }

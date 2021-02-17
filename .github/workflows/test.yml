@@ -47,10 +47,7 @@ jobs:
       - name: Check icons
         run: npx lerna run --scope @kiwicom/orbit-components check:icons
 
-      - name: Flow
-        run: yarn flow:check
-
-      - name: TypeScript
+      - name: Check types
         run: yarn check-types
 
       - name: Lint

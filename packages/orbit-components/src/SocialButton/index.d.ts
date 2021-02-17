@@ -5,8 +5,6 @@ import * as React from "react";
 
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-declare module "@kiwicom/orbit-components/lib/Button";
-
 export type Type = "apple" | "facebook" | "google" | "twitter";
 
 type OmittedButtonCommonProps = Omit<ButtonCommonProps, "iconLeft" | "iconRight" | "circled">;

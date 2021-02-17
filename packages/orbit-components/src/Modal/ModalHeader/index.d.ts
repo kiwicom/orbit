@@ -4,8 +4,6 @@ import React from "react";
 
 import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Modal/ModalHeader";
-
 export interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly illustration?: React.ReactNode;

@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/ChoiceGroup";
-
 type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -25,7 +23,6 @@ export interface Props extends Common.Global {
   readonly onlySelectionText?: Common.Translation;
   readonly filter?: boolean;
   readonly onOnlySelection?: (
-    // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
     event: React.SyntheticEvent<HTMLButtonElement>,
     param2: { readonly value: string; readonly label: string },
   ) => void | Promise<void>;

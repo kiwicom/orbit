@@ -4,8 +4,6 @@ import React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Skeleton";
-
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
 /**  DOCS:

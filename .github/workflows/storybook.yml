@@ -34,7 +34,7 @@ jobs:
         run: yarn bootstrap:ci
 
       - name: Compile design tokens
-        run: yarn tokens build:lib
+        run: yarn tokens build
 
       - name: Build Storybook
         run: yarn components build:storybook

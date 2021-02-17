@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/InputStepper";
-
 type Title = string | ((...params: readonly any[]) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
@@ -37,3 +35,4 @@ export interface Props extends SharedProps {
 
 declare const InputStepper: React.FunctionComponent<Props>;
 export { InputStepper, InputStepper as default };
+export { default as InputStepperStateless } from "./InputStepperStateless";

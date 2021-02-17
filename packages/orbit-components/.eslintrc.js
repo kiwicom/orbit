@@ -1,5 +1,22 @@
+const { DEV_DEPENDENCIES } = require("../../utils/eslint");
+
 module.exports = {
   overrides: [
+    {
+      files: [
+        ...DEV_DEPENDENCIES,
+        "./utils/**",
+        "./cypress/**",
+        "**/*.stories.*",
+        "./.storybook/**",
+      ],
+      rules: {
+        "import/no-extraneous-dependencies": [
+          "error",
+          { packageDir: [__dirname, `${__dirname}/../..`] },
+        ],
+      },
+    },
     {
       files: "cypress/**",
       rules: {

@@ -1,6 +1,4 @@
 // @flow
-declare module "@kiwicom/orbit-design-tokens/";
-
 export { default as convertHexToRgba } from "./convertHexToRgba";
 
 export type ProductColor = {

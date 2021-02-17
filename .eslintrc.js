@@ -1,5 +1,5 @@
 // @noflow
-const path = require("path");
+const { DEV_DEPENDENCIES } = require("./utils/eslint");
 
 module.exports = {
   root: true,
@@ -7,9 +7,8 @@ module.exports = {
   extends: [
     "airbnb",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
     "plugin:orbit-components/internal",
-    "prettier/react",
+    "plugin:prettier/recommended",
   ],
   plugins: ["babel"],
   rules: {
@@ -17,36 +16,7 @@ module.exports = {
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
     "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        packageDir: [
-          __dirname,
-          path.join(__dirname, "packages/babel-plugin-orbit-components"),
-          path.join(__dirname, "packages/eslint-plugin-orbit-components"),
-          path.join(__dirname, "packages/orbit-components"),
-          path.join(__dirname, "packages/orbit-design-tokens"),
-          path.join(__dirname, "docs/plugins/gatsby-remark-figma-images"),
-          path.join(__dirname, "docs"),
-        ],
-        devDependencies: [
-          "**/*.test.js",
-          "**/__tests__/**",
-          "**/__testfixtures__/**",
-          "**/cypress/**",
-          "**/*.stories.js",
-          "**/*.config.js",
-          "**/stories/**",
-          "**/tasks/**",
-          "docs/**",
-          "packages/eslint-plugin-orbit-components/**",
-          "packages/*/.storybook/**",
-          "**/config/**",
-          "**/scripts/**",
-          "gulpfile.js",
-        ],
-      },
-    ],
+    "import/no-extraneous-dependencies": ["error", { devDependencies: false }],
     "import/order": [
       "error",
       {
@@ -75,11 +45,27 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
+    // to improve performance locally
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
+    ...(!process.env.CI
+      ? {
+          "import/no-named-as-default": "off",
+          "import/no-cycle": "off",
+          "import/no-unused-modules": "off",
+          "import/no-deprecated": "off",
+        }
+      : null),
   },
   overrides: [
     {
+      files: DEV_DEPENDENCIES,
+      rules: {
+        "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+      },
+    },
+    {
       files: ["*.js", "*.js.flow"],
-      extends: ["plugin:flowtype/recommended", "prettier/flowtype"],
+      extends: ["plugin:flowtype/recommended", "prettier"],
       plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -93,11 +79,15 @@ module.exports = {
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
+        "prettier",
       ],
       parserOptions: {
+        tsconfigRootDir: __dirname,
         project: [
           "./tsconfig.json",
+          "./scripts/tsconfig.json",
+          "./packages/*/tsconfig.json",
+          "./packages/*/scripts/tsconfig.json",
           "./docs/tsconfig.json",
           "./packages/orbit-components/cypress/tsconfig.json",
         ],
@@ -113,7 +103,6 @@ module.exports = {
       },
       rules: {
         "@typescript-eslint/no-empty-interface": "off",
-        "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/no-empty-function": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
@@ -132,6 +121,12 @@ module.exports = {
           },
         ],
         "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+        // TypeScript has these checks
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
+        "import/named": "off",
+        "import/namespace": "off",
+        "import/default": "off",
+        "import/no-named-as-default-member": "off",
       },
     },
     {
@@ -173,7 +168,6 @@ module.exports = {
     {
       files: "packages/eslint-plugin-orbit-components/**/*.ts",
       rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
@@ -193,7 +187,6 @@ module.exports = {
         "global-require": "off",
         camelcase: "off",
         "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
       },
     },
     {
@@ -243,27 +236,17 @@ module.exports = {
         FigmaIframe: false,
       },
     },
-    // some ESLint rules fail in certain cases, so we're disabling them
-    {
-      files: ["packages/orbit-components/src/utils/**/*"],
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "OFF",
-      },
-    },
-    {
-      files: ["packages/eslint-plugin-orbit-components/src/**"],
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-      },
-    },
     {
       files: "**/__examples__/**/*.js",
       rules: {
+        // even though we want to remove "/index" segments, there are too many in examples
+        // and it would cause a lot of JSON files updates without any real gain
         "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
       },
     },
+    // some ESLint rules fail in certain cases, so we're disabling them
     {
-      files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
+      files: ["*.stories.*", "**/__examples__/**", "*.test.js"],
       rules: {
         "orbit-components/unique-id": "off",
       },
@@ -276,6 +259,13 @@ module.exports = {
       ],
       rules: {
         "flowtype/require-valid-file-annotation": ["error", "always"],
+      },
+    },
+    {
+      files: "**/scripts/**/*.ts",
+      rules: {
+        "no-console": "off",
+        "no-restricted-syntax": "off",
       },
     },
   ],

@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Modal";
-
 export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
@@ -23,6 +21,5 @@ export interface Props {
 export const ModalContext: React.Context<Props>;
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type WithModalContextType = <Config extends {}>(
-  // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
   arg0: React.Component<Config>,
 ) => React.Component<Config>;

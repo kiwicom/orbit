@@ -1,5 +1,7 @@
 {
-  "extends": "../tsconfig.json",
-  "include": ["**/*"],
-  "exclude": []
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "exclude": ["**/scripts/**/*"]
 }

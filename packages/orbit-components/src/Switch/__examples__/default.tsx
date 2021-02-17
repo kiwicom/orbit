@@ -1,5 +1,6 @@
 import * as React from "react";
-import { defaultTheme, Stack, Switch, Text } from "@kiwicom/orbit-components";
+
+import { defaultTheme, Stack, Switch, Text } from "../..";
 
 export default {
   Example: () => {

@@ -12,7 +12,7 @@ import Button from "../Button";
 import Illustration from "../Illustration";
 import ChevronLeft from "../icons/ChevronLeft";
 import FlightDirect from "../icons/FlightDirect";
-import { CarrierLogo } from "..";
+import CarrierLogo from "../CarrierLogo";
 import Tooltip from "../Tooltip";
 
 import SkipLink from ".";

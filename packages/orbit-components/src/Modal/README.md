@@ -33,6 +33,7 @@ Table below contains all types of the props available in the Modal component.
 | onClose             | `event => void \| Promise` |            | Function for handling onClose event. If you don't pass any function the Close button will not be displayed and it will not be possible to close the Modal. [See Functional specs](#functional-specs) |
 | preventOverlayClose | `boolean`                  |            | Property for preventing closing of modal when there is a action on overlay. BEWARE: This should be used only in very specials edge-cases! It breaks user experience.                                 |
 | hasCloseButton      | `boolean`                  | `true`     | Defines whether the Modal displays a close button. If you disable this, we recommend adding some kind of an alternative.                                                                             |
+| autoFocus           | `boolean`                  | `true`     | The autofocus attribute of the Modal, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp).                                                                                             |
 
 ### Modal enum
 

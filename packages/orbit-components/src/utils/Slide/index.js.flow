@@ -2,6 +2,8 @@
 import * as React from "react";
 import { ReactComponentStyled } from "styled-components";
 
+import type { TransitionDuration } from "../transition"
+
 export type State = {|
   maxHeight: number | null,
   transitionFinished: boolean,
@@ -14,6 +16,7 @@ export type Props = {|
   +expanded?: boolean,
   +ariaLabelledBy?: string,
   +id?: string,
+  +transitionDuration?: TransitionDuration,
 |};
 
 declare export var StyledSlide: ReactComponentStyled<any>;

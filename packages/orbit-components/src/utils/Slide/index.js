@@ -24,6 +24,7 @@ export const StyledSlide = styled.div`
 
 StyledSlide.defaultProps = {
   theme: defaultTheme,
+  transitionDuration: "fast",
 };
 
 class Slide extends React.Component<Props, State> {
@@ -132,7 +133,7 @@ class Slide extends React.Component<Props, State> {
   };
 
   render() {
-    const { children, expanded = false, id, ariaLabelledBy, transitionDuration = "fast" } = this.props;
+    const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;
     const { transitionFinished, maxHeight, visible } = this.state;
     return (
       <StyledSlide

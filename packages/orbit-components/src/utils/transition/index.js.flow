@@ -1,7 +1,7 @@
 // @flow
 import type { ThemeProps } from "../../defaultTheme";
 
-export type TransitionDuration = "slow" | "normal" | "fast"
+export type TransitionDuration = "slow" | "normal" | "fast";
 
 export type Transition = (
   properties: string[],

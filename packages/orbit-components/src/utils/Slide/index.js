@@ -16,7 +16,8 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   position: relative;
   width: 100%;
-  transition: ${({ transitionDuration }) => transition(["max-height"], transitionDuration, "linear")};
+  transition: ${({ transitionDuration }) =>
+    transition(["max-height"], transitionDuration, "linear")};
   max-height: ${getMaxHeight};
   overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
   visibility: ${({ visible }) => !visible && "hidden"};

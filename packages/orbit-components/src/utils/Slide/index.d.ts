@@ -13,7 +13,7 @@ interface Props {
   readonly expanded?: boolean;
   readonly ariaLabelledBy?: string;
   readonly id?: string;
-  readonly transitionDuration?: TransitionDuration,
+  readonly transitionDuration?: TransitionDuration;
 }
 
 declare const Slide: React.FunctionComponent<Props>;

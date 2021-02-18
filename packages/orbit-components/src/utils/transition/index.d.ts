@@ -1,6 +1,6 @@
 import { ThemeType } from "../../defaultTheme";
 
-export type TransitionDuration = "slow" | "normal" | "fast"
+export type TransitionDuration = "slow" | "normal" | "fast";
 
 export declare const Transition: (
   properties: string[],

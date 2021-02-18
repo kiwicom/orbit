@@ -2,7 +2,7 @@
 import * as React from "react";
 import { ReactComponentStyled } from "styled-components";
 
-import type { TransitionDuration } from "../transition"
+import type { TransitionDuration } from "../transition";
 
 export type State = {|
   maxHeight: number | null,

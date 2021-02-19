@@ -1,7 +1,7 @@
 ### Maintain visual hierarchy
 
 <p>
-  {props.component.replace(/^\w/, c => c.toUpperCase()) + "s"} are open to any content you want to
+  {`${props.component.replace(/^\w/, c => c.toUpperCase())}s`} are open to any content you want to
   put into them. If you're putting a heading into a {props.component}, we recommend using the{" "}
   {props.component} title, which was designed for this purpose. Or at least use the same style of
   heading to keep the overall visual hierarchy.
@@ -9,5 +9,5 @@
 
 <p>
   Using different styles can create conflicting visual messages, especially if you're using multiple{" "}
-  {props.component + "s"} on the same screen.
+  {`${props.component}s`} on the same screen.
 </p>

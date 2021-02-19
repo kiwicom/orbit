@@ -9,7 +9,7 @@ title: Guidelines
 - To group choices together under a single heading.
 - To offer unified instructions for a group
   where users can either select one (with [radios](/components/input/radio/))
-  or multiple (with [checkboxes](/components/input/checkbox/) options..
+  or multiple (with [checkboxes](/components/input/checkbox/) options.
 
 ### When not to use
 
@@ -29,35 +29,25 @@ title: Guidelines
 
 ## Behavior
 
-###
-
-## Content
-
-###
-
-## Look & feel
-
-###
-
-## Guidelines
-
-### Use for closely related options       
+### Use for closely related options
 
 Choice groups override the settings of individual choices to present a coherent whole.
 This means they're great for a few choices that make a single unit.
 
 They're not good at grouping many options,
 such as all countries in the world.
-For many options, consider using a [select](/components/select/).
+For many options, consider using a [select](/components/input/select/).
+
+## Content
 
 ### Use labels properly
 
 Labels serve to clearly present what the choice means for users.
-They are especially important for [people who won't see other visual cues](/foundation/accessibility/).
+They're especially important for [people who don't see other visual cues](/foundation/accessibility/).
 But they also help everyone know exactly what to choose.
 
-Follow the labeling advice for [radios](/components/radio/#use-parallel-labels)
-or [checkboxes](/components/checkbox/#write-positive-labels).
+Follow the labeling advice for [radios](/components/input/radio/#use-parallel-labels)
+or [checkboxes](/components/input/checkbox/#write-positive-labels).
 In particular, make sure all the labels have a parallel structure.
 
 ### Use helpful error messages
@@ -70,6 +60,7 @@ Use clear, calm error messages when there's a problem with a choice.
 Remember that such messages are likely to invoke negative feelings,
 so be positive and focused on solutions to any problems.
 
-Only messages you include for the choice group will appear. Any messages for individual choices within the group will not be shown.
+Only messages you include for the choice group appear.
+Any messages for individual choices within the group aren't shown.
 
 <ReactExample name="ChoiceGroup error" />

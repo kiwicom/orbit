@@ -6,14 +6,15 @@ title: Guidelines
 
 ## When to use
 
-If you're unsure what component or type to use for actions, check out our [interactive guide on action components](/guides/using-button-type-components/).
+If you're unsure what component or type to use for actions,
+check out our [interactive guide on action components](/guides/using-button-type-components/).
 
 - To make text inside paragraphs or lists actionable.
 - To offer navigation that doesn't draw too much attention.
 
 ### When not to use
 
-- For actions outside other text related to the current screen---use a [button link](/components/buttonlink/).
+- For actions outside other text related to the current screen---use a [button link](/components/action/buttonlink/).
 - For a single action you want to draw attention to---use a [button](/components/action/button/).
 
 ## Component status
@@ -37,25 +38,25 @@ sizes** (small, normal, and large).
 
 <ReactExample name="TextLink sizes" />
 
-## Behavior    
+## Behavior
 
 ### Use for navigation
 
 Text links work best for navigating users.
-They present a familiar pattern where users will be used
+They present a familiar pattern where users are used
 to being redirected to another part of your app or some place external.
 
 For actions within the same screen, such as adding passengers,
-use a different action component, such as a [button link](/components/buttonlink/).
+use a different action component, such as a [button link](/components/action/buttonlink/).
 
 ### Make actions clear
 
-It should be clear from the link text exactly what will happen when the user interacts with it.
+It should be clear from the link text exactly what happens when the user interacts with it.
 The text can be actionable, such as "Read all reviews",
-or descriptive of what will be described at the link,
+or descriptive of what is described at the link,
 such as "[Kiwi.com Guarantee](https://www.kiwi.com/en/pages/guarantee)".
 
-The link will stand out from the surrounding text.
+The link stands out from the surrounding text.
 Its text is also used separately by screen readers
 to make the link [accessible to everyone](/foundation/accessibility/).
 
@@ -88,10 +89,10 @@ Some examples of what to have and not have as the text within the link:
 ### Use only with text
 
 Text links are designed to go together with surrounding text.
-They inherit their basic characterics from the parent so that they will easily fit in.
+They inherit their basic characteristics from the parent so that they fit in.
 They're also clearly aligned with other text to present a coherent whole.
 
-If you need actions that stand alone, use [button links](/components/buttonlink/).
+If you need actions that stand alone, use [button links](/components/action/buttonlink/).
 
 ### Show unexpected results
 
@@ -99,7 +100,7 @@ Text links look much like surrounding text.
 If something unexpected happens on interaction,
 let users know.
 For example, use a new-window icon together with a clear label for screen readers
-to let users know a link will open in a new window/tab.
+to let users know a link opens in a new window/tab.
 
 <ReactExample name="TextLink icons" />
 
@@ -112,6 +113,6 @@ Text links inherit their default size from their parent.
 ### Primary color
 
 The primary color of text links is <InlineToken value="colorTextLinkPrimary" alternateName />.
-This is a darker color than other primary actions, such as primary [buttons](/components/actions/button/).
+This is a darker color than other primary actions, such as primary [buttons](//components/action/button/).
 
 The color for text links is darker so it has enough contrast with surrounding text.

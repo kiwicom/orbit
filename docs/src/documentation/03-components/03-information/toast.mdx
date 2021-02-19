@@ -9,7 +9,7 @@ import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 ## When to use
 
 - To display temporary short messages.
-- To react to user imput (let users know something is happening).
+- To react to user input (let users know something is happening).
 
 ### When not to use
 
@@ -31,12 +31,12 @@ import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 ### Use for non-critical messages
 
 Toasts usually disappear on their own.
-So any critical messages or errors that would block a user's flow won't get enough attention.
+So any critical messages or errors that would block a user's flow don't get enough attention.
 
 For errors and other critical messages,
 place the message in the screen itself.
 If the message is important but doesn't block the flow,
-use an [alert](/components/information/alert-message/).
+use an [alert](/components/information/alert/).
 If the user should be blocked,
 use a [modal](/components/overlay/modal/) or [dialog](/components/overlay/dialog/).
 
@@ -49,7 +49,7 @@ Toasts can disappear, meaning the actions would too.
 
 Make the actions available directly on the screen.
 If there are actions associated with the message,
-use an [alert](/components/information/alert-message/).
+use an [alert](/components/information/alert/).
 Otherwise, use [buttons and other action components](/guides/using-button-type-components/).
 
 <MoreThanColorSnippet component="toast" />{" "}
@@ -71,18 +71,18 @@ to a more detailed description (don't truncate the toast itself).
 
 ### Toast types
 
-#### Success 
+#### Success
 
 Success toasts confirm that a user's action was processed.
 Use them to show success when the screen doesn't change.
 
-#### Warning 
+#### Warning
 
 Warning toasts warn the user about situations that might be unfavorable.
 Use them for general travel warnings.
-Do not use them for any critical information that should break the user's flow.
+Don't use them for any critical information that should break the user's flow.
 
-#### Informational 
+#### Informational
 
 Informational toasts present general content
 without an associated positive (success) or negative (warning) emotion.

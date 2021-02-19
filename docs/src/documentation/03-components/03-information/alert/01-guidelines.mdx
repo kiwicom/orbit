@@ -13,12 +13,12 @@ import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 
 ### When not to use
 
-- When there are already many on a page. Don't overwhlem the user.
-- For messages that shouldn't interuprt the flow---consider [heading](/components/text/heading/)
+- When there are already many on a page. Don't overwhelm the user.
+- For messages that shouldn't interrupt the flow---consider [heading](/components/text/heading/)
   and [text](/components/text/text/).
 - For temporary messages that don't draw much attention---use a [toast](/components/information/toast/).
 - When no results match a user query---use an [empty state](/components/progress-indicators/emptystate/).
-- When a user has to solve an issue **as soon aspossible**---use a [modal](/components/overlay/modal/).
+- When a user has to solve an issue **as soon as possible**---use a [modal](/components/overlay/modal/).
 
 ## Component status
 
@@ -109,7 +109,7 @@ let users access more information through an action button.
 
 ### Alert types
 
-There are four types of alerts---_informational_, _success_, _warning_, and _critical_.
+There are four types of alerts: _informational_, _success_, _warning_, and _critical_.
 
 ### Informational alert
 
@@ -118,7 +118,7 @@ Use them to **guide a user's attention to relevant details**,
 but keep it focused and related to the topic on the screen.
 
 Consider tailoring your icons to your message.
-Baggage, clocks, or other symbols will strengthen the informative nature of your message.
+Baggage, clocks, or other symbols strengthen the informative nature of your message.
 
 <ReactExample name="Alert info" />
 
@@ -154,13 +154,11 @@ A critical alert should provide some form of solution for their problem.
 If something is **important for users to solve as soon as possible**,
 it's worth considering automatically opening a modal window.
 
-## Look & feel
-
 ### Mobile vs. desktop
 
 The alert component's content should be the same on all platforms,
 but there's more space to play with on the desktop.
-That's why the desktop versions have larger fonts, icons, and inner paddings.
+That's why the desktop versions have larger fonts, icons, and inner padding.
 
 For native or responsive views,
 the design is much more compact to avoid filling the screen with the message.
@@ -192,6 +190,6 @@ The title's darker color emphasizes it against the description.
 It's a minor adjustment that doesn't stand out to the user.
 
 In React, we also force the colors of child components to match the alert type.
-You can freely use [Text](/components/text/text/), [Heading](/components/heading/),
+You can freely use [Text](/components/text/text/), [Heading](/components/text/heading/),
 [List](/components/structure/list/), and [TextLink](/components/action/textlink/) components,
 and the colors of these components will be automatically adjusted.

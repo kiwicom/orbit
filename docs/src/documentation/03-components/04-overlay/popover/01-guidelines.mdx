@@ -8,7 +8,7 @@ title: Guidelines
 
 - To keep small bits content off of the initial screen but still only a tap away.
 - For short content or interactions that aren't necessary to the main flow.
-- For content that still might interest users and can be revealed through [progressive disclosure](/guides/progressive-disclosure/).
+- For content that still might interest users and can be revealed through [progressive disclosure](/design-patterns/progressive-disclosure/).
 - To add interactions or choices in the context of the current screen.
 
 ### When not to use
@@ -33,26 +33,13 @@ title: Guidelines
 
 ## Behavior
 
-###
+### Make trigger clear
 
-## Content
+Since popovers necessarily hide information from the initial screen,
+users need to know how they can get to that information.
 
-### Keep it simple       
-
-Popovers present extra information or choices in a limited space.
-Don't overwhelm your users with information.
-
-## Look & feel
-
-###
-
-## Guidelines
-
-### Make trigger clear 
-
-Since popovers necessarily hide information from the initial screen, users need to know how they can get to that information.
-
-A common way to do this is a button with a chevron down icon on the right. This makes it clear that more information can pop down below the button.
+A common way to do this is a button with a chevron down icon on the right.
+This makes it clear that more information can pop down below the button.
 
 <ReactExample name="Popover trigger" />
 
@@ -76,3 +63,10 @@ not many things at once.
 />
 
 </Guidelines>
+
+## Content
+
+### Keep it simple
+
+Popovers present extra information or choices in a limited space.
+Don't overwhelm your users with information.

@@ -8,16 +8,17 @@ import ButtonSizeSnippet from "snippets/button-size.mdx";
 
 ## When to use
 
-If you're unsure what component or type to use for actions, check out our [interactive guide on action components](/guides/using-button-type-components/).
+If you're unsure what component or type to use for actions,
+check out our [interactive guide on action components](/guides/using-button-type-components/).
 
 - To offer the most important actions users can take.
 
 ### When not to use
 
-- When you have many actions at once---use a [button link](/components/buttonlink/).
-- You want to offer a less important action---use a [button link](/components/buttonlink/).
-- To make text inside paragraphs or lists actionable---use a [text link](/components/textlink/).
-- So users can sign in using a social service---use a [SocialButton](/components/socialbutton/).
+- When you have many actions at once---use a [button link](/components/action/buttonlink/).
+- You want to offer a less important action---use a [button link](/components/action/buttonlink/).
+- To make text inside paragraphs or lists actionable---use a [text link](/components/action/textlink/).
+- So users can sign in using a social service---use a [SocialButton](/components/action/socialbutton/).
 
 ## Component status
 
@@ -43,7 +44,7 @@ Users need to be certain of what action to take next.
 You need to know which actions are the most important within a given section of the user flow.
 
 Once you've identified which actions are the most important at the moment,
-you can indicate importance through [size, type, and variation](#button-combinations).
+you can indicate importance through [size, type, and variation](#look--feel).
 
 <Guidelines type="do" title="Have one primary action">
 
@@ -80,15 +81,15 @@ use different button types and sizes to show different levels of importance.
 
 Many designers want to show users that actions will be possible in the future,
 so they end up using disabled buttons to show potential actions.
-But such buttons often end up confusing users about what is possible.
+But such buttons often end up confusing users about what's possible.
 
-Instead, try to focus on using [progressive disclosure](/guides/progressive-disclosure/)
+Instead, try to focus on using [progressive disclosure](/design-patterns/progressive-disclosure/)
 to show them only the actions they should take right at the moment.
-Then when it is possible for them to take action, you can show them more buttons.
+Then when it's possible for them to take action, you can show them more buttons.
 
 If you need to use a disabled button,
 always make it clear how users can activate it,
-such as with a [tooltip](/components/tooltip/).
+such as with a [tooltip](/components/overlay/tooltip/).
 
 ## Content
 
@@ -102,7 +103,7 @@ Avoid long explanations in the button text.
 The text should be short and clear.
 If additional explanation is needed, add it above the button as text.
 
-See [examples for how to make actions clear](/content/voice-tone/straightforward/#make-every-action-clear).
+See [examples for how to make actions clear](/kiwi-use/content/voice-and-tone/straightforward/#make-every-action-clear).
 
 ## Look & feel
 
@@ -113,7 +114,7 @@ See [examples for how to make actions clear](/content/voice-tone/straightforward
 Buttons come in **three sizes** (large, normal, and small)
 and **three types** (primary, secondary, and critical).
 Two of these types (primary and critical) also have **subtle** versions in lighter shades
-to show actions that won't draw as much attention.
+to show actions that don't draw as much attention.
 
 Primary buttons are best for the [single primary action](#identify-the-most-important-actions) on the screen.
 Critical buttons work for destructive actions---actions users can't take back.
@@ -123,7 +124,7 @@ All remaining actions can be secondary buttons or [another component](#when-to-u
 
 <Guidelines type="do" title="Use secondary small buttons for additional actions on the page">
 
-The secondary small button is great for actions in [cards](/components/cards/)
+The secondary small button is great for actions in [cards](/components/structure/card/)
 as it stands out from the interface but doesn't take so much attention.
 
 </Guidelines>
@@ -165,7 +166,7 @@ such as PlusCircle or PassengerAdd.
 <Guidelines type="do" title="Right icons should only be directional">
 
 They can help explain what happens when the user interacts with the button.
-It's easier to see if the user will be taken elsewhere with an icon.
+An icon (with an aria-label) makes it easier to know if the user is taken elsewhere.
 
 </Guidelines>
 
@@ -181,10 +182,10 @@ add a proper label to communicate the purpose.
 
 All of our buttons use a consistently defined set of states.
 
-![](../../../../images/components/actions/button-interactions.png)
+![](../../../../images/components/action/button-interactions.png)
 
 - **Hover** -- We change the background of a button to its :_hover_ color.
-- **Active** -- We scale down the button with the <InlineToken value="modifierScaleButtonActive" />
+- **Active** -- We scale down the button with the <InlineToken value="modifierScaleButtonActive" />
   design token and also change the background to its _:active_ color.
 - **Focus** -- The background stays same but we create a light blue border around the button.
 - **Disabled** -- We change the button opacity with the <InlineToken value="opacityButtonDisabled" />

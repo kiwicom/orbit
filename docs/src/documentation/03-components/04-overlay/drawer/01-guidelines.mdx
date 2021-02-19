@@ -7,7 +7,7 @@ title: Guidelines
 ## When to use
 
 - You have long content that you want to keep out of sight at first.
-- To use [progressive disclosure](/guides/progressive-disclosure/) to reveal
+- To use [progressive disclosure](/design-patterns/progressive-disclosure/) to reveal
   relevant information at the right time.
 - To keep content like structured navigation or screen-specific help accessible.
 
@@ -29,36 +29,14 @@ title: Guidelines
   alt="Overlay: keeps the overall context present but less important; close: allows users to close the drawer; content: navigation or other content to hide and show."
 />
 
-## Content
-
-### Use for short related content
-
-Drawers are good for short pieces of content
-that are related to the main screen but not a part of it.
-Examples include:
-
-- Navigation (consider using a [link list](/components/navigation/linklist))
-- Context-sensitive help
-- Notifications
-- Simple forms or settings
-
-Drawers also work well on small screens for things
-like menus that would ordinarily be horizontal.
-When there's not enough space for such things,
-use a drawer to keep them easily accessible but initially hidden.
-
-## Look & feel
-
-###
-
-## Guidelines
+## Behavior
 
 ### Make trigger clear
 
 Make it clear how users can open the drawer
 and don't surprise them by opening it when they wouldn't expect it.
 Use common patterns like a [menu icon](/foundation/icons/#menu-hamburger)
-to make it clear what is possible.
+to make it clear what's possible.
 
 ### Allow users to close
 
@@ -81,3 +59,21 @@ not just because they closed the drawer.
 Users expect to be able to easily return to where they were.
 
 <ReactExample name="Drawer state" />
+
+## Content
+
+### Use for short related content
+
+Drawers are good for short pieces of content
+that are related to the main screen but not a part of it.
+Examples include:
+
+- Navigation (consider using a [link list](/components/navigation/linklist))
+- Context-sensitive help
+- Notifications
+- Simple forms or settings
+
+Drawers also work well on small screens for things
+like menus that would ordinarily be horizontal.
+When there's not enough space for such things,
+use a drawer to keep them easily accessible but initially hidden.

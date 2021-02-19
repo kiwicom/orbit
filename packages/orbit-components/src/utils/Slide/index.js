@@ -25,7 +25,6 @@ export const StyledSlide = styled.div`
 
 StyledSlide.defaultProps = {
   theme: defaultTheme,
-  transitionDuration: "fast",
 };
 
 class Slide extends React.Component<Props, State> {
@@ -42,6 +41,10 @@ class Slide extends React.Component<Props, State> {
   transitionFinishedTimeout = null;
 
   visibleTimeout = null;
+
+  static defaultProps = {
+    transitionDuration: "fast",
+  };
 
   componentDidMount() {
     if (this.props.expanded) {

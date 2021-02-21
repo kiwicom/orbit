@@ -332,6 +332,7 @@ const Modal = React.forwardRef<Props, Instance>(
       scrollingElementRef,
       children,
       onClose,
+      autoFocus = true,
       fixedFooter = false,
       isMobileFullPage = false,
       preventOverlayClose = false,
@@ -407,7 +408,7 @@ const Modal = React.forwardRef<Props, Instance>(
     };
 
     const setFirstFocus = () => {
-      if (modalBody.current) {
+      if (modalBody.current && autoFocus) {
         modalBody.current.focus();
       }
     };
@@ -618,6 +619,7 @@ const Modal = React.forwardRef<Props, Instance>(
         data-test={dataTest}
         ref={modalBodyRef}
         role="dialog"
+        autoFocus={autoFocus}
         aria-modal="true"
         aria-labelledby={modalID}
       >

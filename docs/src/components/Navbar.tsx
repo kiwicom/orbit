@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import Inline from "@kiwicom/orbit-components/lib/Inline";
+import { Inline } from "@kiwicom/orbit-components";
+import { WindowLocation } from "@reach/router";
 
 import Logo from "../images/orbit.svg";
 import NavigationLinks from "./Navigation";
@@ -21,21 +22,19 @@ const StyledWrapper = styled.header<{ isHomePage?: boolean }>`
   z-index: 10;
 `;
 
-const Navbar = () => {
-  const [isHomePage, setHomePage] = React.useState(false);
+interface Props {
+  location: WindowLocation;
+}
 
-  React.useEffect(() => {
-    if (`${window.location.origin}/` === window.location.href) {
-      setHomePage(true);
-    }
-  }, [setHomePage]);
+const Navbar = ({ location }: Props) => {
+  const isHome = location && location.pathname === "/";
 
   return (
-    <StyledWrapper isHomePage={isHomePage}>
+    <StyledWrapper isHomePage={isHome}>
       <Link to="/">
         <Logo height={40} />
       </Link>
-      {!isHomePage && <Input />}
+      {!isHome && <Input />}
       <Inline justify="end" align="center" spacing="medium" desktop={{ spacing: "large" }}>
         <NavigationLinks />
         <Bookmarks />

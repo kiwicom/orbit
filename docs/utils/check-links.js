@@ -87,7 +87,7 @@ const checkForDeadUrls = async () => {
         .map(url => `${url} status: ${results[url].statusCode}`)
         .join("\n")}`,
     );
-    // TODO: uncomment
+    // TODO: uncomment when the dead links in Navbar have been resolved
     // process.exit(1);
   }
 };

@@ -12197,10 +12197,10 @@ gatsby-plugin-page-creator@^2.10.0:
     globby "^11.0.2"
     lodash "^4.17.20"
 
-gatsby-plugin-sharp@^2.13.4:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.14.0.tgz#763600d1339b5d9197371aa7e1cca7a614ebd269"
-  integrity sha512-399SJ83vuqP2gkf0PdC1CXALNebPfaTxzuE3uF1LalemeXuBlR0YvVo5QG84AxhnEzTfg5hWKk36F5A36xX9ow==
+gatsby-plugin-sharp@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.14.1.tgz#163b4b2456b7f5125bccb8e6a6bef73d9cab9941"
+  integrity sha512-JhYaVtXJeocJ6VWaZqDMLbKVbvfUh5zZcvRTDtCGjZsBqFaVxffnkBI46b/nxpDzfJQwmixDU7Chyxu0Dbzh+A==
   dependencies:
     "@babel/runtime" "^7.12.5"
     async "^3.2.0"

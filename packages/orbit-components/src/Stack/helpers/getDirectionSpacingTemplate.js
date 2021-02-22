@@ -1,5 +1,5 @@
 // @flow
-import { DIRECTIONS } from "../consts";
+import { DIRECTIONS } from "../../utils/layout/consts";
 import type { GetDirectionSpacingTemplate } from "./getDirectionSpacingTemplate";
 
 const getDirectionSpacingTemplate: GetDirectionSpacingTemplate = direction => {

@@ -1,14 +1,16 @@
 // @flow
 import { css } from "styled-components";
 
-import getJustify from "./getJustify";
-import getDirection from "./getDirection";
+import {
+  getJustify,
+  getAlign,
+  getDirection,
+  getWrap,
+  getGrow,
+  getShrink,
+} from "../../utils/layout";
 import getWidth from "./getWidth";
 import getDisplay from "./getDisplay";
-import getShrink from "./getShrink";
-import getWrap from "./getWrap";
-import getGrow from "./getGrow";
-import getAlign from "./getAlign";
 import getBasis from "./getBasis";
 import getSpacingToken from "../../common/getSpacingToken/index";
 import type { GetViewportFlexStyles } from "./getViewportFlexStyles";

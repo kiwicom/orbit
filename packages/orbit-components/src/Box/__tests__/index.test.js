@@ -3,10 +3,10 @@ import React from "react";
 import { screen, render } from "@testing-library/react";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
+import { getJustify, getAlign } from "../../utils/layout";
 import theme from "../../defaultTheme";
-import { TOKENS } from "../consts";
+import { TOKENS } from "../../utils/layout/consts";
 import Box from "..";
-import { normalizeFlex } from "../normalize";
 
 const dataTest = "test";
 
@@ -61,9 +61,9 @@ describe("#Box", () => {
     expect(el).toHaveStyle({ padding: TOKENS(theme).medium });
     expect(el).toHaveStyle({ margin: TOKENS(theme).medium });
     expect(el).toHaveStyle({ display: "block" });
-    expect(el).toHaveStyle({ "min-width": "100px" });
-    expect(el).toHaveStyle({ "max-width": "300px" });
-    expect(el).toHaveStyle({ "max-height": "100px" });
+    expect(el).toHaveStyle({ minWidth: "100px" });
+    expect(el).toHaveStyle({ maxWidth: "300px" });
+    expect(el).toHaveStyle({ maxHeight: "100px" });
   });
 
   it("should have display flex", () => {
@@ -74,10 +74,10 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyle({ display: "flex" });
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ "flex-direction": "row" });
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ "flex-shrink": "0" });
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ "flex-grow": "0" });
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ "flex-wrap": "wrap" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexDirection: "row" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexShrink: "0" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexGrow: "0" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexWrap: "wrap" });
   });
 
   it.each(Object.values(DIRECTIONS))("should have directions", direction => {
@@ -88,7 +88,7 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(`${dataTest}-${direction}`)).toHaveStyle({
-      "flex-direction": direction,
+      flexDirection: direction,
     });
   });
 
@@ -110,7 +110,7 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(`${dataTest}-${key}`)).toHaveStyle({
-      "justify-content": normalizeFlex("justify", JUSTIFY[key]),
+      justifyContent: getJustify(JUSTIFY[key]),
     });
   });
 
@@ -122,7 +122,7 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(`${dataTest}-${key}`)).toHaveStyle({
-      "align-items": normalizeFlex("align", ALIGN[key]),
+      alignItems: getAlign(ALIGN[key]),
     });
   });
 
@@ -134,7 +134,7 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(`${dataTest}-${key}`)).toHaveStyle({
-      "text-align": TEXT_ALIGN[key],
+      textAlign: TEXT_ALIGN[key],
     });
   });
 
@@ -185,9 +185,9 @@ describe("#Box", () => {
 
     const trimSpaces = val => val.replace(/, /g, ",");
 
-    expect(testEl(0)).toHaveStyle({ "box-shadow": trimSpaces(theme.orbit.boxShadowAction) });
-    expect(testEl(1)).toHaveStyle({ "box-shadow": trimSpaces(theme.orbit.boxShadowFixed) });
-    expect(testEl(2)).toHaveStyle({ "box-shadow": trimSpaces(theme.orbit.boxShadowRaised) });
-    expect(testEl(3)).toHaveStyle({ "box-shadow": trimSpaces(theme.orbit.boxShadowOverlay) });
+    expect(testEl(0)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowAction) });
+    expect(testEl(1)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowFixed) });
+    expect(testEl(2)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowRaised) });
+    expect(testEl(3)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowOverlay) });
   });
 });

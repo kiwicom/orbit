@@ -1,6 +1,0 @@
-// @flow
-type Property = number | boolean | string | { [key: string]: Property };
-
-export type IsDefined = (property: ?Property) => boolean;
-
-declare export default IsDefined;

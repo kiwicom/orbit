@@ -19,7 +19,7 @@ const DISPLAY = {
   "INLINE-BLOCK": "inline-block",
 };
 
-const WRAP = { WRAP: "wrap", NOWRAP: "nowrap" };
+const WRAP = [0, 1];
 
 const DIRECTION = {
   ROW: "row",
@@ -291,15 +291,19 @@ storiesOf("Box", module)
   })
   .add("Flex", () => {
     const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-    const display = select("display", ["flex", "inline-flex"], "flex");
+    const display = select("display", Object.values(DISPLAY), "flex");
     const align = select("align", Object.values(ALIGN), ALIGN.START);
     const justify = select("justify", Object.values(JUSTIFY), "start");
-    const wrap = select("wrap", Object.values(WRAP), WRAP.NOWRAP);
+    const wrap = select("wrap", Object.values(WRAP), WRAP[0]);
+    const shrink = select("shrink", Object.values(SHRINK), SHRINK[0]);
+    const grow = select("grow", Object.values(GROW), GROW[0]);
 
     return (
       <Box
         display={display}
         justify={justify}
+        shrink={shrink}
+        grow={grow}
         height="full"
         wrap={wrap}
         align={align}

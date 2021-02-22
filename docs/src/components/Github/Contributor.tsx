@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Stack } from "@kiwicom/orbit-components";
 
-import { IContributor } from ".";
+import { Contributor as ContributorData } from ".";
 
 const StyledImageWrapper = styled(({ url, children, ...props }) => {
   const Component = url ? "a" : "div";
@@ -15,7 +15,7 @@ const StyledImageWrapper = styled(({ url, children, ...props }) => {
   width: 60px;
 `;
 
-const Contributor = ({ avatar_url, name, url }: IContributor) => {
+const Contributor = ({ avatar_url, name, html_url }: ContributorData) => {
   return (
     <Stack
       inline
@@ -25,7 +25,7 @@ const Contributor = ({ avatar_url, name, url }: IContributor) => {
       spacing="large"
       align="stretch"
     >
-      <StyledImageWrapper url={url}>
+      <StyledImageWrapper url={html_url}>
         <img
           src={avatar_url}
           alt={name}

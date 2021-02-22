@@ -11,14 +11,14 @@ const Grid = styled.div`
   grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
-export interface IContributor {
+export interface Contributor {
   name?: string;
   id?: string;
   avatar_url?: string;
   bio?: string;
   blog?: string;
   twitter_username?: string;
-  url?: string;
+  html_url?: string;
 }
 
 const ContributorsComponent = () => {
@@ -30,6 +30,7 @@ const ContributorsComponent = () => {
             id
             avatar_url
             bio
+            html_url
             blog
             twitter_username
             name

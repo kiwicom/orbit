@@ -5,7 +5,7 @@ import { PolymorphicPropsWithoutRef } from "react-polymorphic-types";
 const DefaultComponent = "a";
 
 interface OwnProps {
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "dark";
   size?: "medium" | "large";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
@@ -55,14 +55,25 @@ const StyledComponent = styled(DefaultComponent)<Props>`
     css`
       background: ${theme.orbit.paletteProductLight};
       color: ${theme.orbit.paletteProductDark};
-      &:hover {
+      &:hover,
+      &:focus {
         background: ${theme.orbit.paletteProductLightHover};
       }
       &:active {
         background: ${theme.orbit.paletteProductLightActive};
       }
+    `}
+
+    ${type === "dark" &&
+    css`
+      background: hsla(0, 0%, 100%, 20%);
+      color: #fff;
+      &:hover,
       &:focus {
-        background: ${theme.orbit.paletteProductLightHover};
+        background: hsla(0, 0%, 100%, 25%);
+      }
+      &:active {
+        background: hsla(0, 0%, 100%, 30%);
       }
     `}
   `}

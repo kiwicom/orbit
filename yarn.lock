@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@adeira/babel-preset-adeira@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@adeira/babel-preset-adeira/-/babel-preset-adeira-2.0.1.tgz#118aeb9a9bc6af11144b37a43f486bf2ce0e8657"
-  integrity sha512-a+fm68GIC1lxtlOHrBz5FfTkdMzmPM4mlLf52UuwuMgquw2gXM0EsEtOEB2NuozJMKcHsxdDKsiKvKOOJOJPLg==
+"@adeira/babel-preset-adeira@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@adeira/babel-preset-adeira/-/babel-preset-adeira-3.0.0.tgz#859eed95a6524f6b59c1b07073cc1f03234090f6"
+  integrity sha512-P2vKYnHAKmi07mk8zHrAd2qn/IchT6UAnbRSiP7WUiamNRqO8EzF7eKWwSk2l3AYFSFFTQpOiU+0/fmZnB3+Nw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.1"
-    "@babel/plugin-proposal-numeric-separator" "^7.12.7"
+    "@babel/plugin-proposal-numeric-separator" "^7.12.13"
     "@babel/plugin-proposal-object-rest-spread" "^7.12.1"
     "@babel/plugin-transform-flow-strip-types" "^7.12.10"
     "@babel/plugin-transform-runtime" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
-    "@babel/preset-react" "^7.12.10"
+    "@babel/preset-react" "^7.12.13"
     "@babel/runtime" "^7.12.5"
 
 "@adeira/js@^1.3.0":
@@ -430,7 +430,7 @@
     "@babel/helper-plugin-utils" "^7.12.13"
     "@babel/plugin-syntax-nullish-coalescing-operator" "^7.8.0"
 
-"@babel/plugin-proposal-numeric-separator@^7.12.13", "@babel/plugin-proposal-numeric-separator@^7.12.5", "@babel/plugin-proposal-numeric-separator@^7.12.7":
+"@babel/plugin-proposal-numeric-separator@^7.12.13", "@babel/plugin-proposal-numeric-separator@^7.12.5":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-numeric-separator/-/plugin-proposal-numeric-separator-7.12.13.tgz#bd9da3188e787b5120b4f9d465a8261ce67ed1db"
   integrity sha512-O1jFia9R8BUCl3ZGB7eitaAPu62TXJRHn7rh+ojNERCFyqRwJMTmhz+tJ+k0CwI6CLjX/ee4qW74FSqlq9I35w==
@@ -1043,7 +1043,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-react@^7.12.1", "@babel/preset-react@^7.12.10", "@babel/preset-react@^7.12.5":
+"@babel/preset-react@^7.12.1", "@babel/preset-react@^7.12.13", "@babel/preset-react@^7.12.5":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.12.13.tgz#5f911b2eb24277fa686820d5bd81cad9a0602a0a"
   integrity sha512-TYM0V9z6Abb6dj1K7i5NrEhA13oS5ujUYQYDfqIBXYHOc2c2VkFgc+q9kyssIyUfy4/hEwqrgSlJ/Qgv8zJLsA==

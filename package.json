@@ -40,7 +40,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "devDependencies": {
-    "@adeira/babel-preset-adeira": "^2.0.1",
+    "@adeira/babel-preset-adeira": "^3.0.0",
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.10",
     "@babel/generator": "^7.12.1",

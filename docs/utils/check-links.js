@@ -1,9 +1,15 @@
 const globby = require("globby");
-const posthtml = require("posthtml");
-const fs = require("fs");
 const server = require("browser-sync").create();
 const checkLinks = require("check-links");
 const path = require("path");
+const unified = require("unified");
+const parse = require("rehype-parse");
+const inspectUrls = require("@jsdevtools/rehype-url-inspector");
+const stringify = require("rehype-stringify");
+const toVFile = require("to-vfile");
+const reporter = require("vfile-reporter");
+
+const warnMissingAccessToken = require("./warnings");
 
 try {
   require("dotenv-safe").config({
@@ -11,29 +17,12 @@ try {
     path: path.resolve(__dirname, `../../.env`),
     allowEmptyValues: true,
   });
-} catch (err) {
-  if (err.missing.includes("GH_TOKEN")) {
-    console.warn(`Missing an access token for GitHub. Please create one:
-      https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token`);
-  }
+} catch (error) {
+  warnMissingAccessToken(error);
 }
 
 const checkForDeadUrls = async () => {
   const files = await globby("docs/public/**/*.html");
-
-  const urls = new Set();
-
-  const ph = posthtml([
-    require("posthtml-urls")({
-      eachURL: url => {
-        urls.add(url);
-      },
-    }),
-  ]);
-
-  files.forEach(file => {
-    ph.process(fs.readFileSync(file));
-  });
 
   await new Promise(resolve => {
     server.init(
@@ -48,24 +37,59 @@ const checkForDeadUrls = async () => {
     );
   });
 
-  const urlsWithLocal = Array.from(urls).map(url =>
-    url.match(/^\/\w/) ? `http://localhost:3000${url}` : url,
-  );
+  const urls = new Map();
 
-  // Split GitHub URLs out so we can add a header to them
-  const [githubUrls, nonGithubUrls] = urlsWithLocal.reduce(
-    ([github, notGithub], url) => {
-      return url.startsWith("https://github.com")
-        ? [[...github, url], notGithub]
-        : [github, [...notGithub, url]];
-    },
-    [[], []],
-  );
+  const processor = await unified()
+    .use(parse)
+    .use(inspectUrls, {
+      inspectEach({ file, url }) {
+        if (!urls.has(url)) {
+          urls.set(url, { sources: [file] });
+        } else {
+          urls.get(url).sources.push(file);
+        }
+      },
+    })
+    .use(stringify);
 
-  const notGithubResults = await checkLinks(nonGithubUrls);
+  files.forEach(file => {
+    // Read the example HTML file
+    const virtualFile = toVFile.readSync(file);
+
+    // Crawl the HTML files and find all the URLs
+    processor.process(virtualFile);
+  });
+
+  const urlsWithLocal = new Map();
+  const githubUrls = new Map();
+  urls.forEach((sources, url) => {
+    // Filter out known issues
+    // Figma returns 403 status for all requests
+    if (url.match(/figma\.com/)) {
+      return;
+    }
+
+    // Don't check images in CSS or headers
+    if (url.startsWith("data:image") || url.startsWith("#")) {
+      return;
+    }
+
+    // Add localhost to relative links but not //images.kiwi.com links
+    const urlToCheck =
+      url.startsWith("/") && !url.startsWith("//") ? `http://localhost:3000${url}` : url;
+
+    // Separate GitHub URLs to add headers later
+    if (url.match(/github\.com/)) {
+      githubUrls.set(urlToCheck, sources);
+    } else {
+      urlsWithLocal.set(urlToCheck, sources);
+    }
+  });
+
+  const notGithubResults = await checkLinks(Array.from(urlsWithLocal.keys()));
 
   // Use token from environment to avoid rate limits
-  const githubResults = await checkLinks(githubUrls, {
+  const githubResults = await checkLinks(Array.from(githubUrls.keys()), {
     headers: {
       Authorization: `Bearer ${process.env.GH_TOKEN}`,
     },
@@ -75,21 +99,24 @@ const checkForDeadUrls = async () => {
 
   server.exit();
 
-  // Filter out known issues
-  // Figma returns 403 status for all requests
-  const urlsToCheck = Object.keys(results).filter(url => !url.match(/figma\.com/));
-
-  const deadUrls = urlsToCheck.filter(url => results[url].status === "dead");
+  const deadUrls = Object.keys(results).filter(url => results[url].status === "dead");
 
   if (deadUrls.length > 0) {
-    console.error(
-      `Dead URLs:\n\n${deadUrls
-        .map(url => `${url} status: ${results[url].statusCode}`)
-        .join("\n")}`,
-    );
-    // TODO: uncomment when the dead links in Navbar have been resolved
-    // process.exit(1);
+    const completeMap = new Map([...urlsWithLocal, ...githubUrls]);
+
+    const filesWithMessages = [];
+    deadUrls.forEach(deadUrl => {
+      completeMap.get(deadUrl).sources.forEach(file => {
+        file.message(`Broken link: ${deadUrl}`);
+        filesWithMessages.push(file);
+      });
+    });
+
+    console.error(reporter(filesWithMessages));
+    /* TODO: uncomment when the dead links in Navbar have been resolved
+    process.exit(1); */
   }
+  process.exit(0);
 };
 
 checkForDeadUrls();

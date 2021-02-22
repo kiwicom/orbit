@@ -42,6 +42,7 @@ const StyledOpenButton = styled.button.attrs(({ className, onClick }) => ({
   type: "button",
 }))`
   border-radius: 3px;
+  display: flex;
   &:focus {
     outline: 0;
     box-shadow: rgba(95, 115, 140, 0.3) 0px 0px 0px 3px;

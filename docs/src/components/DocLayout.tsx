@@ -36,7 +36,7 @@ const StyledFooter = styled.footer`
 `;
 
 interface Props {
-  children: React.ReactNodeArray | React.ReactNode;
+  children: React.ReactNode;
   location: WindowLocation;
   path: string;
   title?: string;
@@ -47,7 +47,7 @@ export default function DocLayout({ children, location, path, title }: Props) {
     <ThemeProvider theme={theme}>
       <BookmarkProvider page={path} location={location}>
         <StyledWrapper>
-          <Navbar />
+          <Navbar location={location} />
           <StyledMain>
             <Prose>
               {title && (

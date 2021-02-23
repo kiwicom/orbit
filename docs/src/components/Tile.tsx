@@ -8,7 +8,7 @@ import ArrowRight from "./ArrowRight";
 
 interface Props {
   title: string;
-  linkContent: React.ReactNode;
+  linkContent?: React.ReactNode;
   href?: string;
   children?: React.ReactNode;
 }

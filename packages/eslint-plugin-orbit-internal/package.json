@@ -11,9 +11,6 @@
     "@babel/types": "=7.12.10"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
     "@types/eslint": "^7.2.6"
   }
 }

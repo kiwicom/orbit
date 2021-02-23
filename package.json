@@ -127,8 +127,6 @@
     "merge-stream": "^2.0.0",
     "mkdirp": "^1.0.4",
     "pinst": "^2.1.4",
-    "posthtml": "^0.15.1",
-    "posthtml-urls": "^1.0.0",
     "prettier": "^2.1.2",
     "raf": "^3.4.1",
     "react": "^16.14.0",

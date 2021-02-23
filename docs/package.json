@@ -13,6 +13,7 @@
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@icons-pack/react-simple-icons": "^4.0.0",
+    "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "^2.1.0",
     "@kiwicom/orbit-components": "^0.109.2",
     "@kiwicom/orbit-design-tokens": "^0.13.3",
@@ -39,8 +40,13 @@
     "gatsby-transformer-sharp": "^2.7.0",
     "js-yaml": "^4.0.0",
     "react-copy-to-clipboard": "^5.0.3",
+    "rehype-parse": "^7.0.1",
+    "rehype-stringify": "^8.0.0",
     "remark-deflist": "^0.3.0",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^1.9.6",
+    "to-vfile": "^6.1.0",
+    "unified": "^9.2.0",
+    "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
     "elasticlunr": "^0.9.5",

@@ -15,6 +15,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
       url: String
       name: String
       blog: String
+      html_url: String
       bio: String
       email: String
       location: String

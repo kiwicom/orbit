@@ -1,0 +1,230 @@
+import { Meal } from "@kiwicom/orbit-components/icons";
+
+import DocLayout from "../components/DocLayout";
+
+export default ({ children, location, path }) => (
+  <DocLayout
+    excerpt="Examples of our components shared across MDX docs files."
+    title="MDX examples"
+    location={location}
+    path={path}
+  >
+    {children}
+  </DocLayout>
+);
+
+This page includes examples of all components shared across our docs files.
+See them all in action in the built page
+or view the source to see how use them.
+
+## h2 Heading
+
+Lorem ipsum dolor sit amet
+
+### h3 Heading
+
+Lorem ipsum dolor sit amet
+
+#### h4 Heading
+
+Lorem ipsum dolor sit amet
+
+##### h5 Heading
+
+Lorem ipsum dolor sit amet
+
+###### h6 Heading
+
+Lorem ipsum dolor sit amet
+
+## Horizontal Rules
+
+---
+
+## Typographic replacements
+
+&copy; &reg; &trade; &para; &sect; &plusmn;
+
+&rarr; &larr;
+
+Ellipses: test.. test... test..... test?..... test!....
+
+Dashes: -- ---
+
+Quotes: "Smartypants, double quotes" and 'single quotes'
+
+## Emphasis
+
+This is **bold text**
+
+This is _italic text_
+
+~~Strikethrough~~
+
+## Lists
+
+### Unordered
+
+- Create a list by starting a line with `-`.
+- Sub-lists are made by indenting 2 spaces:
+  - Keep going, just with the indentation the same for each list:
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
+- Very easy!
+
+### Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+
+   1. Ac tristique libero volutpat at
+   2. Facilisis in pretium nisl aliquet
+
+3. Integer molestie lorem at massa
+
+### Items with multiple paragraphs
+
+- The first paragraph.
+
+  The second paragraph.
+
+- Another item.
+
+## Code
+
+Inline `code`
+
+Code blocks
+
+```txt
+Sample text here...
+```
+
+Syntax highlighting
+
+```javascript
+const foo = bar => ++bar;
+
+console.log(foo(5));
+```
+
+## Callouts
+
+You can use various callouts using properties from [our Alert component](/components/information/alert/react/#props).
+
+<Callout title="This is an informational callout.">
+
+It should present additional useful information.
+
+</Callout>
+
+<Callout type="success" title="This is a success callout.">
+
+You can present tips for additional success or mark progress through a guide.
+
+</Callout>
+
+<Callout type="warning" title="This is a warning callout.">
+
+It can warn about potential dangers that might come with specific choices.
+
+</Callout>
+
+<Callout type="critical" title="This is a critical callout." >
+
+It should only present information that could end up destroying previous progress/data.
+
+</Callout>
+
+<Callout title="This is a callout with only a title" />
+
+<Callout
+  title="This is a callout with only a title and a custom icon"
+  icon={<Meal ariaLabel="Hot food." />}
+/>
+
+## Tables
+
+| Package                        | Description                                                |
+| ------------------------------ | ---------------------------------------------------------- |
+| orbit-components               | All our React components along with API documentation.     |
+| orbit-design-tokens            | All visual UI attributes available as tokens.              |
+| eslint-plugin-orbit-components | ESLint rules to enforce best practices for our components. |
+
+### Aligned columns
+
+In addition to the default of left alignment, columns can also be right or center aligned.
+Set alignment with colons in the header row.
+
+|                         Option |                        Description                         |
+| -----------------------------: | :--------------------------------------------------------: |
+|               orbit-components |   All our React components along with API documentation.   |
+|            orbit-design-tokens |       All visual UI attributes available as tokens.        |
+| eslint-plugin-orbit-components | ESLint rules to enforce best practices for our components. |
+
+## Links
+
+External links
+
+[link text](https://github.com/kiwicom/orbit)
+
+Internal links
+
+[link text](.)
+
+Autoconverted link <https://github.com/kiwicom/orbit>
+
+## Images
+
+### Plain Images
+
+![Minion](../images/rocket.jpg)
+
+### Image with caption
+
+![Stormtroopocat](../images/rocket.jpg "Blast into Orbit")
+
+### Images by reference
+
+You can also add images with a footnote-style syntax.
+
+![Alt text][id]
+
+Use a reference at the end of the document to define the URL location.
+
+### Figma image
+
+TODO.
+
+## Definition Lists
+
+Orbit
+: An open source design system for your next travel project.
+
+Design system
+: Components, styles, and patterns to create beautiful consistent designs at scale.
+
+## Fancy links
+
+Tiles that span the text area and show icons the links.
+
+<FancyLink title="Orbit GitHub repo" href="https://github.com/kiwicom/orbit/" icon="github" />
+
+Choose from the existing icons or import your own.
+
+<FancyLink title="Eat at Orbit" href="https://orbit.kiwi/" icon={<Meal />} />
+
+## Guidelines
+
+TODO.
+
+## Inline token
+
+TODO.
+
+## Color palette
+
+TODO.
+
+[id]: ../images/rocket.jpg "Blast into Orbit"

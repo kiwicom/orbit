@@ -2,6 +2,7 @@ import React from "react";
 import {
   Alert,
   Heading,
+  Separator,
   Text,
   TextLink,
   Table,
@@ -45,8 +46,20 @@ export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
     {children}
   </Heading>
 );
+export const hr = () => <Separator spaceAfter="largest" />;
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
-  <ol style={{ listStyle: "inside none decimal" }}>{children}</ol>
+  <ol
+    css={css`
+      list-style: outside none decimal;
+      margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+      ol,
+      ul {
+        margin: ${({ theme }) => theme.orbit.spaceSmall};
+      }
+    `}
+  >
+    {children}
+  </ol>
 );
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>
@@ -82,7 +95,18 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
   </TableCell>
 );
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
-  <ul style={{ listStyle: "inside none disc" }}>{children}</ul>
+  <ul
+    css={css`
+      list-style: outside none disc;
+      margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+      ol,
+      ul {
+        margin: ${({ theme }) => theme.orbit.spaceSmall};
+      }
+    `}
+  >
+    {children}
+  </ul>
 );
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <figcaption>
@@ -138,4 +162,6 @@ export const a = function Anchor({
     </span>
   );
 };
-export const Callout = props => <Alert icon {...props} />;
+export const Callout = ({ icon = true, ...props }) => (
+  <Alert icon={icon} spaceAfter="large" {...props} />
+);

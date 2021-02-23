@@ -33,27 +33,32 @@ const FancyLink = ({ download, href, icon, title }: Props) => {
   const isExternal = useIsUrlExternal(href);
 
   const usedIcon = () => {
-    switch (icon) {
-      case "download":
-        return <Download />;
-      case "color-picker":
-        return <ColorPicker />;
-      case "figma":
-        return <Figma />;
-      case "github":
-        return <Github />;
-      case "google":
-        return <Google />;
-      case "react":
-        return <ReactJs />;
-      case "spectrum":
-        return <Spectrum />;
-      case "storybook":
-        return <Storybook />;
-      case "lightbulb":
-        return <Tips />;
+    switch (typeof icon) {
+      case "string":
+        switch (icon) {
+          case "download":
+            return <Download />;
+          case "color-picker":
+            return <ColorPicker />;
+          case "figma":
+            return <Figma />;
+          case "github":
+            return <Github />;
+          case "google":
+            return <Google />;
+          case "react":
+            return <ReactJs />;
+          case "spectrum":
+            return <Spectrum />;
+          case "storybook":
+            return <Storybook />;
+          case "lightbulb":
+            return <Tips />;
+          default:
+            return <FlightDirect />;
+        }
       default:
-        return <FlightDirect />;
+        return icon;
     }
   };
   return (

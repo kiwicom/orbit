@@ -116,7 +116,6 @@ const checkForDeadUrls = async () => {
     /* TODO: uncomment when the dead links in Navbar have been resolved
     process.exit(1); */
   }
-  process.exit(0);
 };
 
 checkForDeadUrls();

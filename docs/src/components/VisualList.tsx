@@ -73,7 +73,7 @@ const Visual = ({
       <Tile onClick={() => setOpenedVisual(opened ? "" : visualName)}>
         <Stack justify="between">
           <img src={getImgSource(visualObject)} alt="" />
-          {visualObject.character && <Coupon>{visualObject.character}</Coupon>}
+          {"character" in visualObject && <Coupon>{visualObject.character}</Coupon>}
         </Stack>
         <Text type="secondary">{visualName}</Text>
       </Tile>

@@ -1,7 +1,7 @@
 // @noflow
 
 module.exports = {
-  displayName: "orbit-design-tokens",
+  displayName: "jest-internal",
   transform: {
     "\\.[jt]sx?$": ["babel-jest", { root: __dirname }],
   },

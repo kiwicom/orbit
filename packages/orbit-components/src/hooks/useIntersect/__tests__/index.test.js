@@ -26,10 +26,11 @@ describe("useIntersect", () => {
   it("uses the observer and updates when intersecting", () => {
     let callback;
     const entry = { observe: jest.fn(), disconnect: jest.fn() };
-    window.IntersectionObserver = cb => {
+    // a regular function fails because it's "not a constructor"
+    window.IntersectionObserver = jest.fn(cb => {
       callback = cb;
       return entry;
-    };
+    });
 
     const { rerender } = render(
       <LazyImage src="source" placeholder="placeholder" threshold={0.01} />,

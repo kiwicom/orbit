@@ -67,7 +67,7 @@ const StyledComponent = styled(DefaultComponent)<Props>`
     ${type === "dark" &&
     css`
       background: hsla(0, 0%, 100%, 20%);
-      color: #fff;
+      color: ${theme.orbit.paletteWhite};
       &:hover,
       &:focus {
         background: hsla(0, 0%, 100%, 25%);

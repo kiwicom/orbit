@@ -44,7 +44,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
             width: 2rem;
             height: 2rem;
             background: hsla(0, 0%, 100%, 20%);
-            border-radius: 50%;
+            border-radius: ${theme.orbit.borderRadiusCircle};
           `}
         />
         <div

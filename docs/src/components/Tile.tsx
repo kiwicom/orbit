@@ -23,7 +23,7 @@ function TileIcon() {
         width: 2rem;
         height: 2rem;
         background: ${theme.orbit.paletteProductLight};
-        border-radius: 50%;
+        border-radius: ${theme.orbit.borderRadiusCircle};
       `}
     />
   );

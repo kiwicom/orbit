@@ -60,8 +60,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
           </Heading>
           <div
             css={css`
-              margin-top: 0.5rem;
-              margin-bottom: 1.5rem;
+              margin: 0.5rem 0 1.5rem;
             `}
           >
             {content}

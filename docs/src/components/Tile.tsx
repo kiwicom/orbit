@@ -67,8 +67,7 @@ export default function Tile({ title, linkContent, href, children }: Props) {
             </Heading>
             <div
               css={css`
-                margin-top: 0.5rem;
-                margin-bottom: 1.5rem;
+                margin: 0.5rem 0 1.5rem;
               `}
             >
               {/* wrap plain strings in a p tag and otherwise render children */}

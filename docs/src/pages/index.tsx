@@ -259,7 +259,7 @@ export default function Home({ location }: Props) {
             <Tile
               title="Figma library"
               linkContent={<NewWindow />}
-              href="https://www.figma.com/files/789638813347008260/team/794894413986510582/Orbit"
+              href="https://www.figma.com/@orbitbykiwi"
             />
             <div />
           </TileRow>

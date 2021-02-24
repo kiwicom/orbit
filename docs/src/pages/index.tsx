@@ -261,7 +261,11 @@ export default function Home({ location }: Props) {
               linkContent={<NewWindow />}
               href="https://www.figma.com/@orbitbykiwi"
             />
-            <div />
+            <Tile
+              title="Orbit repository"
+              linkContent={<NewWindow />}
+              href="https://github.com/kiwicom/orbit"
+            />
           </TileRow>
         </div>
       </div>

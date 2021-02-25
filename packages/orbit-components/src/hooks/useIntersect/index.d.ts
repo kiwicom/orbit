@@ -1,7 +1,7 @@
 declare const useIntersect: (
   intersect?: IntersectionObserverInit,
 ) => {
-  ref: React.Dispatch<React.SetStateAction<null | Element>> | null;
+  ref: (el: Element | null) => void;
   entry: IntersectionObserverEntry | null;
 };
 

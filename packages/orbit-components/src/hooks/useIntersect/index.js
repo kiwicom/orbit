@@ -2,10 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 
 export default ({ root = null, rootMargin, threshold = 0 }: IntersectionObserverOptions) => {
-  if (typeof window === "undefined") {
-    return { ref: null, entry: null };
-  }
-
   const [entry, updateEntry] = useState<IntersectionObserverEntry | null>(null);
   const [node, setNode] = useState<Element | null>(null);
 

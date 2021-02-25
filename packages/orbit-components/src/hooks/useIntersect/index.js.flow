@@ -1,8 +1,7 @@
 // @flow
-import * as React from "react";
 
 export type useIntersect = (
   intersect?: IntersectionObserverOptions,
-) => {| ref: React.Ref<Element>, entry: IntersectionObserverEntry | null |};
+) => {| ref: (Element | null) => void, entry: IntersectionObserverEntry | null |};
 
 declare export default useIntersect;

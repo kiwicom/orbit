@@ -1,5 +1,5 @@
 // @flow
-import { SPACINGS } from "../consts";
+import { SPACINGS } from "../../utils/layout/consts";
 import type { GetSpacing } from "./getSpacing";
 
 const getSpacing: GetSpacing = ({ theme }) => ({

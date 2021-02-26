@@ -1,4 +1,0 @@
-// @flow
-export type GetWrap = (wrap: boolean) => string | boolean;
-
-declare export default GetWrap;

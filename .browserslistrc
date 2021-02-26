@@ -1,1 +1,5 @@
+[production]
 extends @kiwicom/browserslist-config
+
+[test]
+current node

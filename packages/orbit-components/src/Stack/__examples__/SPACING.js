@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { SPACINGS } from "../consts";
+import { SPACINGS } from "../../utils/layout/consts";
 import defaultTheme from "../../defaultTheme";
 import Heading from "../../Heading";
 import Stack from "../index";

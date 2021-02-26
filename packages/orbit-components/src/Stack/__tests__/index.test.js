@@ -6,7 +6,7 @@ import Stack from "../index";
 import theme from "../../defaultTheme";
 import InputField from "../../InputField";
 import Button from "../../Button";
-import { DIRECTIONS, SPACINGS } from "../consts";
+import { DIRECTIONS, SPACINGS } from "../../utils/layout/consts";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import getSpacing from "../helpers/getSpacing";
 

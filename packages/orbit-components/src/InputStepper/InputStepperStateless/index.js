@@ -14,6 +14,7 @@ import type { StateLessProps } from "./index.js.flow";
 const StyledInputStepper = styled.div`
   width: 100%;
   margin-bottom: ${getSpacingToken};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   ${Input} {
     text-align: center;
 

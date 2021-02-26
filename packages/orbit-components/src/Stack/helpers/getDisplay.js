@@ -1,5 +1,5 @@
 // @flow
-import isDefined from "./isDefined";
+import { isDefined } from "../../utils/layout";
 import type { GetDisplay } from "./getDisplay";
 
 const getDisplay: GetDisplay = inline => isDefined(inline) && (inline ? "inline-flex" : "flex");

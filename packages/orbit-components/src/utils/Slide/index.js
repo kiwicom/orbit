@@ -16,7 +16,8 @@ const getMaxHeight = ({ maxHeight }) => {
 export const StyledSlide = styled.div`
   position: relative;
   width: 100%;
-  transition: ${transition(["max-height"], "fast", "linear")};
+  transition: ${({ transitionDuration }) =>
+    transition(["max-height"], transitionDuration, "linear")};
   max-height: ${getMaxHeight};
   overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
   visibility: ${({ visible }) => !visible && "hidden"};
@@ -40,6 +41,10 @@ class Slide extends React.Component<Props, State> {
   transitionFinishedTimeout = null;
 
   visibleTimeout = null;
+
+  static defaultProps = {
+    transitionDuration: "fast",
+  };
 
   componentDidMount() {
     if (this.props.expanded) {
@@ -132,13 +137,14 @@ class Slide extends React.Component<Props, State> {
   };
 
   render() {
-    const { children, expanded = false, id, ariaLabelledBy } = this.props;
+    const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;
     const { transitionFinished, maxHeight, visible } = this.state;
     return (
       <StyledSlide
         maxHeight={maxHeight}
         expanded={expanded}
         transitionFinished={transitionFinished}
+        transitionDuration={transitionDuration}
         aria-hidden={!expanded}
         id={id}
         aria-labelledby={ariaLabelledBy}

@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import mediaQueries from "../mediaQuery";
 import { DEVICES } from "../mediaQuery/consts";
 import getViewportGridStyles from "./helpers/getViewportGridStyles";
-import isDefined from "../../Stack/helpers/isDefined";
+import { isDefined } from "../layout";
 
 import type { Props } from ".";
 

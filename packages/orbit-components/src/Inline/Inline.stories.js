@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { text, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { ALIGN, JUSTIFY, SPACING } from "./consts";
+import { ALIGNS as ALIGN, JUSTIFY, SPACINGS as SPACING } from "../utils/layout/consts";
 
 import Inline from "./index";
 
@@ -31,7 +31,7 @@ storiesOf("Inline", module)
   .add(
     "Default",
     () => {
-      const spacing = select("spacing", SPACING, SPACING[1]);
+      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
       return (
         <Inline spacing={spacing} dataTest={dataTest}>
           <TestChildren />
@@ -47,9 +47,9 @@ storiesOf("Inline", module)
     "Playground",
     () => {
       const as = text("As", "div");
-      const align = select("align", ALIGN, ALIGN.START);
-      const justify = select("justify", JUSTIFY, JUSTIFY.START);
-      const spacing = select("spacing", SPACING, SPACING[1]);
+      const align = select("align", Object.values(ALIGN), ALIGN.START);
+      const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
+      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
 
       return (
         <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
@@ -65,7 +65,7 @@ storiesOf("Inline", module)
   .add(
     "RTL",
     () => {
-      const spacing = select("spacing", SPACING, SPACING[1]);
+      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
       return (
         <RenderInRtl>
           <Inline spacing={spacing} dataTest={dataTest}>

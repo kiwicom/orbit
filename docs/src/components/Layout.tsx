@@ -1,8 +1,9 @@
 import React from "react";
 import { ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
+import { WindowLocation } from "@reach/router";
 
-import theme from "../theme";
+import defaultTheme from "../theme";
 import Navbar from "./Navbar";
 
 const StyledWrapper = styled.div`
@@ -30,13 +31,14 @@ const StyledFooter = styled.footer`
 
 interface Props {
   children: React.ReactNode;
+  location: WindowLocation;
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, location }: Props) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <StyledWrapper>
-        <Navbar />
+        <Navbar location={location} />
         <StyledMain>{children}</StyledMain>
         <StyledFooter />
       </StyledWrapper>

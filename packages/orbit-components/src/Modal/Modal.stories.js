@@ -172,7 +172,7 @@ storiesOf("Modal", module)
     () => {
       const showMore = boolean(false);
       return (
-        <Modal onClose={action("onClose")} fixedFooter>
+        <Modal onClose={action("onClose")} fixedFooter autoFocus={false}>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -180,7 +180,7 @@ storiesOf("Modal", module)
               <Text size="small" weight="bold">
                 Contact information
               </Text>
-              <InputField label="E-mail" placeholder="Your email" />
+              <InputField label="E-mail" autoFocus placeholder="Your email" />
               <InputGroup
                 flex={["0 0 120px", "1 1 100%"]}
                 onChange={action("onChange")}

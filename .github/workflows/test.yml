@@ -89,6 +89,8 @@ jobs:
           yarn orbit-kiwi build
 
       - name: Check links
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: node docs/utils/check-links.js
 
       - name: Publish

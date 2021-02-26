@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import isDefined from "../../../Stack/helpers/isDefined";
+import { isDefined } from "../../layout";
 import type { GetDisplay } from "./getDisplay";
 
 const getDisplay: GetDisplay = (inline, force) =>

@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 import getSpacing from "./getSpacing";
 import { rtlSpacing } from "../../utils/rtl";
-import { SPACINGS } from "../consts";
+import { SPACINGS } from "../../utils/layout/consts";
 import isMobileViewport from "./isMobileViewport";
 import getProperty from "./getProperty";
 import { QUERIES } from "../../utils/mediaQuery/consts";

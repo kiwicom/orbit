@@ -38,7 +38,7 @@ export default function Tile({ title, linkContent, href, children }: Props) {
         padding: 2rem;
         border-radius: 1rem;
         background: ${theme.orbit.paletteWhite};
-        box-shadow: ${theme.orbit.boxShadowRaised};
+        box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
         ${children
           ? css`

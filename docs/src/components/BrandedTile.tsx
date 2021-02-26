@@ -26,7 +26,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
         border-radius: 1rem;
         background: ${color};
         color: ${theme.orbit.colorTextWhite};
-        box-shadow: ${theme.orbit.boxShadowRaised};
+        box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
         flex-direction: column;
       `}

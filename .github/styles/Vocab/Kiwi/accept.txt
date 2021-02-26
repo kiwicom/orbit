@@ -5,9 +5,9 @@ Cmd
 composable
 composability
 Ctrl
-[Dv]ialog
-[Dv]ialogs
-[Dv]ev
+[Dd]ialog
+[Dd]ialogs
+[Dd]ev
 [Ff]igma
 Filip
 Funkify
@@ -30,7 +30,7 @@ npm
 Okta
 overcomplicate
 Pantone
-[P|p]escatarian
+[Pp]escatarian
 Photoshop
 px
 radiuses

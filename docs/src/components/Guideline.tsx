@@ -1,9 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import { Heading, Stack, Text } from "@kiwicom/orbit-components";
+import { Stack, Text } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants.js";
+
+import HeaderWithLink from "./HeaderWithLink";
+import { sluggify } from "../utils/common";
 
 export interface GuidelineType {
   type: "do" | "dont";
@@ -89,7 +92,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   let content = children;
 
   const checkIfImageAndAddToArray = object => {
-    if (object.props?.children.props?.className === imageWrapperClass) {
+    if (object.props?.children?.props?.className === imageWrapperClass) {
       images.push(object);
       return true;
     }
@@ -110,7 +113,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   const typeOpposite = type === "do" ? "dont" : "do";
 
   return (
-    <StyledComponent>
+    <StyledComponent id={sluggify(title) || undefined}>
       <Wrapper type={type} border={!(images.length > 1)}>
         {images.length < 2 &&
           (type === "do" ? (
@@ -120,9 +123,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ))}
         <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
           <ContentContainer>
-            <Heading as="h3" type="title3" spaceAfter="small">
-              {title}
-            </Heading>
+            <HeaderWithLink>{title}</HeaderWithLink>
             {content}
           </ContentContainer>
           {images.length === 1 && (

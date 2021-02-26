@@ -18,6 +18,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { CodeBlock } from "./Code";
 import { copyTimeout, pascalize } from "../utils/common";
+import HeaderWithLink from "./HeaderWithLink";
 
 const Grid = styled.div`
   display: grid;
@@ -70,19 +71,7 @@ const Icon = ({ iconName, opened, setOpenedIcon }: IconProps) => {
         <Card>
           <CardSection>
             <Stack>
-              <StyledAnchorWrapper>
-                <Stack flex spacing="XXXSmall" align="center">
-                  <Heading as="h3" type="title2" spaceAfter="medium">
-                    {iconName}
-                  </Heading>
-                  <ButtonLink
-                    iconLeft={<LinkIcon />}
-                    href={`#${iconName}`}
-                    type="secondary"
-                    compact
-                  />
-                </Stack>
-              </StyledAnchorWrapper>
+              <HeaderWithLink>{iconName}</HeaderWithLink>
               {iconObject.description && <Text>{iconObject.description}</Text>}
               <CodeBlock className="language-jsx">{`import { ${pascalName} } from "@kiwicom/orbit-components/icons"\n\n<${pascalName} />`}</CodeBlock>
               <Stack direction="row" justify="between">

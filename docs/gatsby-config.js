@@ -36,9 +36,6 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`, `md`, `mdx`],
             },
           },
-        ],
-        remarkPlugins: [
-          require("remark-deflist"),
           {
             resolve: `gatsby-remark-smartypants`,
             options: {
@@ -47,6 +44,7 @@ module.exports = {
             },
           },
         ],
+        remarkPlugins: [require("remark-deflist")],
         rehypePlugins: [],
       },
     },

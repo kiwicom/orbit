@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Heading, Stack, Text } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
+import { imageWrapperClass } from "gatsby-remark-images/constants.js";
 
 export interface GuidelineType {
   type: "do" | "dont";
@@ -88,7 +89,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   let content = children;
 
   const checkIfImageAndAddToArray = object => {
-    if (object.props?.children.props?.className === "gatsby-resp-image-wrapper") {
+    if (object.props?.children.props?.className === imageWrapperClass) {
       images.push(object);
       return true;
     }

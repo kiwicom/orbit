@@ -4,6 +4,7 @@ import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
 import ButtonLink from "./ButtonLink";
+import { ICON_SIZE } from "./Tile";
 
 interface Props {
   title: string;
@@ -48,8 +49,8 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
           css={css`
             align-self: start;
             flex-shrink: 0;
-            width: 2rem;
-            height: 2rem;
+            width: ${ICON_SIZE};
+            height: ${ICON_SIZE};
             background: ${colorSecondary};
             border-radius: ${theme.orbit.borderRadiusCircle};
           `}
@@ -59,6 +60,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
             margin-left: 0.75rem;
             h3 {
               margin-top: 0;
+              line-height: ${ICON_SIZE};
             }
           `}
         >

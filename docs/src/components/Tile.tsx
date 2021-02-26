@@ -6,6 +6,8 @@ import { css } from "styled-components";
 
 import ArrowRight from "./ArrowRight";
 
+export const ICON_SIZE = "2rem";
+
 interface Props {
   title: string;
   linkContent?: React.ReactNode;
@@ -20,12 +22,28 @@ function TileIcon() {
       css={css`
         align-self: start;
         flex-shrink: 0;
-        width: 2rem;
-        height: 2rem;
+        width: ${ICON_SIZE};
+        height: ${ICON_SIZE};
         background: ${theme.orbit.paletteProductLight};
         border-radius: ${theme.orbit.borderRadiusCircle};
       `}
     />
+  );
+}
+
+function TileTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      css={css`
+        h3 {
+          line-height: ${ICON_SIZE};
+        }
+      `}
+    >
+      <Heading type="title2" as="h3">
+        {children}
+      </Heading>
+    </div>
   );
 }
 
@@ -62,9 +80,7 @@ export default function Tile({ title, linkContent, href, children }: Props) {
         <TileIcon />
         {children ? (
           <div>
-            <Heading type="title2" as="h3">
-              {title}
-            </Heading>
+            <TileTitle>{title}</TileTitle>
             <div
               css={css`
                 margin: 0.5rem 0 1.5rem;
@@ -75,9 +91,7 @@ export default function Tile({ title, linkContent, href, children }: Props) {
             </div>
           </div>
         ) : (
-          <Heading type="title2" as="h3">
-            {title}
-          </Heading>
+          <TileTitle>{title}</TileTitle>
         )}
       </div>
       {href && (

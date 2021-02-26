@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Heading, Inline, Stack } from "@kiwicom/orbit-components";
-import { StarEmpty, NewWindow } from "@kiwicom/orbit-components/icons";
+import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
+import SearchInput, { Size } from "../components/SearchInput";
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
@@ -86,16 +87,7 @@ export default function Home({ location }: Props) {
               >
                 Get started
               </ButtonLink>
-              <ButtonLink
-                type="secondary"
-                size="large"
-                iconLeft={<StarEmpty />}
-                href="https://github.com/kiwicom/orbit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Star us on GitHub
-              </ButtonLink>
+              <SearchInput size={Size.Large} />
             </Inline>
           </div>
         </>

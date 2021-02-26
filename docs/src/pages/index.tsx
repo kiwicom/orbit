@@ -20,21 +20,25 @@ import srcTequila from "../images/tequila.png";
 function TileRow({ children }: { children: React.ReactNode }) {
   return (
     <Inline spacing="XLarge">
-      {React.Children.map(children, tile => (
-        <div
-          css={css`
-            flex: 1;
-            align-self: stretch;
-            display: flex;
-            flex-direction: column;
-            > :only-child {
-              flex: 1;
-            }
-          `}
-        >
-          {tile}
-        </div>
-      ))}
+      {React.Children.map(
+        children,
+        tile =>
+          React.isValidElement(tile) && (
+            <div
+              css={css`
+                flex: 1;
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                > :only-child {
+                  flex: 1;
+                }
+              `}
+            >
+              {tile}
+            </div>
+          ),
+      )}
     </Inline>
   );
 }

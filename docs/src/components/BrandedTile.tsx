@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack } from "@kiwicom/orbit-components";
+import { Heading, Stack, Inline } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
@@ -43,6 +43,9 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
         css={css`
           flex: 1;
           display: flex;
+          > * + * {
+            margin-left: 0.75rem;
+          }
         `}
       >
         <div
@@ -57,7 +60,6 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
         />
         <div
           css={css`
-            margin-left: 0.75rem;
             h3 {
               margin-top: 0;
               line-height: ${ICON_SIZE};
@@ -74,32 +76,26 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
           >
             {content}
           </div>
-        </div>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        `}
-      >
-        <ButtonLink
-          {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
-          dark
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {linkContent}
-        </ButtonLink>
-        <div
-          css={css`
-            img {
-              max-width: none;
-            }
-          `}
-        >
-          {logo}
+          <Inline justify="between" align="center">
+            <ButtonLink
+              {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+              dark
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {linkContent}
+            </ButtonLink>
+            <div
+              css={css`
+                img {
+                  max-width: none;
+                }
+              `}
+            >
+              {logo}
+            </div>
+          </Inline>
         </div>
       </div>
     </div>

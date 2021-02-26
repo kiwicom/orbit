@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Heading, Inline, Stack } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
+import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
@@ -48,6 +49,7 @@ interface Props {
 }
 
 export default function Home({ location }: Props) {
+  const theme = useTheme();
   return (
     <Layout location={location}>
       <RocketImage />
@@ -84,6 +86,7 @@ export default function Home({ location }: Props) {
           >
             <Inline spacing="small">
               <ButtonLink
+                type="primary"
                 size="large"
                 as={Link}
                 iconRight={<ArrowRight />}
@@ -200,7 +203,10 @@ export default function Home({ location }: Props) {
                   href="https://github.com/kiwicom/orbit/issues/new/choose"
                   linkContent="Report bug on GitHub"
                   logo={<GitHubLogo />}
-                  color="#252A31"
+                  color={{
+                    primary: "#252A31",
+                    secondary: "#515C6C",
+                  }}
                 >
                   If you found any bugs in our components, report them on Github and we’ll fix them
                   asap. It’s the highest priority to have Orbit working as expected.
@@ -210,7 +216,10 @@ export default function Home({ location }: Props) {
                   href="https://spectrum.chat/orbit"
                   linkContent="Go to Spectrum chat"
                   logo={<SpectrumLogo />}
-                  color="#330B94"
+                  color={{
+                    primary: "#330B94",
+                    secondary: "#7441F1",
+                  }}
                 >
                   We aim to provide the best possible support for all designers and developers using
                   Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform
@@ -223,7 +232,10 @@ export default function Home({ location }: Props) {
                   href="https://twitter.com/OrbitKiwi"
                   linkContent="Go to Orbit.kiwi’s Twitter"
                   logo={<TwitterLogo />}
-                  color="#0989CF"
+                  color={{
+                    primary: "#0989CF",
+                    secondary: "#179CE3",
+                  }}
                 >
                   Slack is Kiwi.com’s main platform for communication, so it’s only understandable
                   that everything important that is happening around Orbit is also on Slack.
@@ -233,7 +245,7 @@ export default function Home({ location }: Props) {
                   href="https://partners.kiwi.com"
                   linkContent="Explore Tequila possibilities"
                   logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
-                  color="#007F6D"
+                  color="product"
                 >
                   Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
                   our content, technology, and services.

@@ -10,7 +10,12 @@ interface Props {
   linkContent: string;
   href: string;
   logo: React.ReactNode;
-  color: string;
+  color:
+    | {
+        primary: string;
+        secondary: string;
+      }
+    | "product";
   children: React.ReactNode;
 }
 
@@ -19,12 +24,14 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
 
   // Wrap plain strings in a p tag and otherwise render children
   const content = typeof children !== "string" ? <Stack>{children}</Stack> : <p>{children}</p>;
+  const colorPrimary = color === "product" ? theme.orbit.paletteProductDark : color.primary;
+  const colorSecondary = color === "product" ? theme.orbit.paletteProductNormal : color.secondary;
   return (
     <div
       css={css`
         padding: 2rem;
         border-radius: 1rem;
-        background: ${color};
+        background: ${colorPrimary};
         color: ${theme.orbit.colorTextWhite};
         box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
@@ -43,7 +50,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
             flex-shrink: 0;
             width: 2rem;
             height: 2rem;
-            background: hsla(0, 0%, 100%, 20%);
+            background: ${colorSecondary};
             border-radius: ${theme.orbit.borderRadiusCircle};
           `}
         />
@@ -74,7 +81,13 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
           justify-content: space-between;
         `}
       >
-        <ButtonLink type="dark" href={href} target="_blank" rel="noopener noreferrer">
+        <ButtonLink
+          {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+          dark
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {linkContent}
         </ButtonLink>
         <div

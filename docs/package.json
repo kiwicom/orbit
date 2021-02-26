@@ -11,6 +11,7 @@
     "repl": "gatsby repl"
   },
   "devDependencies": {
+    "@csstools/convert-colors": "^2.0.0",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@kiwicom/babel-plugin-orbit-components": "^2.1.0",

@@ -1,3 +1,42 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Truncate" />
+
+## When to use
+
+- For text that's too long to display all at once.
+- To give a taste of what text is available.
+- With a clear way for users to display all of the text.
+- As part of an approach of [progressive disclosure](/design-patterns/progressive-disclosure/).
+
+### When not to use
+
+- For more control over what appears on different screen sizes---use a
+  [Hide component](/components/responsive/hide/).
+- For content only on small screens---use a [Mobile component](/components/responsive/mobile/).
+- For content only on large screens---use a [Desktop component](/components/responsive/desktop/).
+
+## Component status
+
+<ComponentStatus component="Truncate" />
+
+## Behavior
+
+### Don't hide anything essential
+
+Truncating text works well for long text that might not otherwise fit on the screen.
+But you don't want to hide information users need.
+
+Make sure you're only hiding things that add extra value.
+Not something preventing the user from continuing in their main flow.
+
+### Let users get the rest
+
+Truncating text is a great way to preview longer text.
+But once users see a little of your content, they may want more.
+
+Make it clear how they get the rest of the content.
+Include a button to add more content to the screen,
+link to the full content elsewhere, or anything else to make it available.

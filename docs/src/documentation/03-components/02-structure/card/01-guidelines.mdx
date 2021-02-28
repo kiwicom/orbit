@@ -1,3 +1,60 @@
 ---
 title: Guidelines
 ---
+
+import DescriptionsExtraSnippet from "snippets/descriptions-extra.mdx";
+import VisualHierarchySnippet from "snippets/visual-hierarchy.mdx";
+
+<ReactExample name="Card" />
+
+## When to use
+
+- You have long sections of content with similar structure.
+- You want to organize it into related groups.
+- You want to show all the content at once.
+
+### When not to use
+
+- You want to display only one section at a time---use an [accordion](/components/structure/accordion/).
+- There is a single action applying to all the content---use a [tile](/components/structure/tile/).
+- You want to hide simple information at first---use a [collapse](/components/interaction/collapse/).
+- You have many sections with little information in each---use a [table](/components/structure/table/).
+
+## Component status
+
+<ComponentStatus component="Card" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A148"
+  alt="Title: sets the context for the card and works best when short; action: creates an action associated with the whole card; closed card sections: sets the context for content that can be expanded; expanded card section: supports progressive disclosure for showing more complex or structured content."
+/>
+
+## Behavior
+
+### Use as the main content container
+
+Because of its white background, a card highlights your content against a gray background.
+This helps divide your content into logical sections and make it clear what's related.
+
+## Content
+
+<DescriptionsExtraSnippet />
+
+### Use sections for content types
+
+When you have different types of information or just multiple examples of the same kind,
+use card sections to divide it into clearly related ideas.
+
+For example, you might have a card about a passenger
+where you need to split personal information from baggage or other services.
+Or you might have a card with all passengers in an itinerary
+and you want to divide each passenger into a different section.
+
+<ReactExample name="Card uncontrolled sections" />
+
+## Look & feel
+
+<VisualHierarchySnippet component="card" />

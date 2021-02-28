@@ -1,3 +1,133 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Dialog" />
+
+## When to use
+
+- To break users out of their flow to complete an action.
+- To present simple choices or small bits of information.
+
+### When not to use
+
+- You have more complex or structured information---use a [modal](/components/overlay/modal/).
+- To keep current screen in focus or not block content on wide screens---use a [popover](/components/overlay/popover).
+- For temporary messages without actions---use a [modal](/components/information/toast/).
+
+## Component status
+
+<ComponentStatus component="Dialog" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="317%3A1560"
+  alt="Illustration: optionally adds visual context; title: sets the context and works best when short; description: adds more context and works best when short; primary action: sets the main action for the user to complete; secondary action: optionally sets another action to perform, usually cancelling/closing the Dialog."
+/>
+
+## Behavior
+
+### Open on user action
+
+Dialogs are disruptive to the main flow.
+Only start one after the user has taken an action so it's clear why it was triggered.
+
+### Allow users to close
+
+Users want to feel in control of their actions.
+Since dialogs interrupt the main user flow,
+they can invoke negative feelings in users.
+Make sure users feel in control by offering them a clear option to cancel the dialog
+and get back to the main flow.
+
+There are situations that all users need to complete before continuing
+(like accepting terms for an additional service),
+but it should still be possible to go back to the previous point in the flow.
+
+<Guidelines type="do" title="Give a cancel option">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="37%3A631"
+  alt="A dialog with two buttons: agree and cancel."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="37%3A631"
+  alt="A dialog with only one option: agree. There is no way to close/cancel the dialog."
+/>
+
+</Guidelines>
+
+### Warn about destructive actions
+
+If the action related to the dialog is irreversible or removes something,
+use a critical button to make the consequences clear to users.
+
+<Guidelines type="do" title="Warn about destructive actions">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="38%3A665"
+  alt="A dialog with a warning in the description stating 'You can't do this' and the button is marked as critical (meaning a destructive action)."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="38%3A665"
+  alt="A dialog with no description and actions as normal (even though they are destructive -- asking to remove a traveler)."
+/>
+
+</Guidelines>
+
+## Content
+
+### Keep it simple
+
+Dialogs are best as single actions
+where the context is clear and doesn't need a lot of explanation.
+Don't overwhelm your users with information.
+
+<Guidelines type="do" title="Minimize information">
+
+If more information is absolutely necessary, consider adding a [text link](/components/action/textlink/).
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="37%3A652"
+  alt="A dialog with a short title and description."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="37%3A652"
+  alt="A dialog with an title covering three lines and a description with three separate paragraphs."
+/>
+
+</Guidelines>
+
+### Make action clear from title
+
+The title should make it clear what action users are expected to take
+or what they're agreeing to.
+Keep it short and save any details for the description.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Remove insurance?
+- Add a meal?
+- Edit passenger name
+
+</Do>
+
+<Dont>
+
+- Are you sure you want to remove your insurance?
+- Add?
+- Edit passenger name for this itinerary
+
+</Dont>
+
+</GuidelinesSideBySide>

@@ -1,3 +1,171 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Badge" />
+
+## When to use
+
+- To call attention to details in a way that makes it easy to scan.
+- To present information, such as status.
+
+### When not to use
+
+- If there's an interaction (such as add/remove)---use a [tag](/components/interaction/tag/).
+- If the entire message has an associated action---use an [alert](/components/information/alert/).
+- For a circled badge for notifications--- use a [notification badge](/components/information/notificationbadge/)
+
+## Component status
+
+<ComponentStatus component="Badge" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A43"
+  alt="Label: works best when short; icon: supports the label."
+/>
+
+## Behavior
+
+### Display static info
+
+Badges are indicators of static information.
+They can be updated when a status changes,
+but they should **not** be actionable.
+
+When you have extra information to display,
+it's possible to include a simple interaction,
+such as displaying a [tooltip](/components/overlay/tooltip/) on hover.
+When doing so, make sure it's clear that the interaction is there.
+
+<Guidelines type="do" title="Don't combine with text link">
+
+If you'd like to have an action, consider an [alert](/components/information/alert/) or a [button](/components/action/button/) instead.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="25%3A40"
+  alt="An alert with the message 'Your booking failed' and a button labelled 'Get details'."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="25%3A40"
+  alt="A badge with the text: Booking failed. Get details. The second sentence is a link."
+/>
+
+</Guidelines>
+
+### Support with icons
+
+With such small space to convey a message,
+visual cues can help users understand the idea more quickly.
+Use icons to display more information in a smaller size,
+such as what form of transport is included.
+
+The badge can be only an icon. Just be sure to keep it [accessible](/foundation/accessibility/)
+by giving it a label for people who don't see the icon.
+
+<Guidelines type="do" title="Use icons only on left">
+
+Icons connected to the badge meaning should be displayed on the left.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="32%3A13"
+  alt="A badge with an icon of passengers on the left of the number 4."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="32%3A7"
+  alt="A badge with the number 4 and to the right an icon of passengers."
+/>
+
+</Guidelines>
+
+Use icons on the right **only** when that icon relates to
+there being further explanation of the label (such as to signal there's a tooltip).
+
+<ReactExample name="Badge icon" />
+
+## Content
+
+### Keep it short
+
+Badges are small and can't contain much information.
+They're great for indicating status or how much of something is selected.
+But you can't fit a lot into that space.
+
+If you have more information to display,
+use another component.
+To keep the UI uncluttered, you can choose one that supports [progressive disclosure](/design-patterns/progressive-disclosure/),
+such as a [tooltip](/components/overlay/tooltip/).
+This can wrap text or even a badge.
+
+<Guidelines type="do" title="Keep badges short">
+
+Use progressive disclosure for other information.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="29%3A574"
+  alt="A badge with an icon of passengers and the number 4 and a tooltip saying 2 adults and 2 children."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="29%3A559"
+  alt="A badge with an icon of passengers and the number 4 and the text 2 adults and 2 children."
+/>
+
+</Guidelines>
+
+## Look & feel
+
+### Badge types
+
+There are six basic types of badges. All except white badges have an inverted variant for use with different backgrounds.
+
+#### Neutral badges
+
+Neutral badges present information without adding any emotion.
+They're useful when the information isn't so important to the user's main flow.
+
+<ReactExample name="Badge neutral" />
+
+#### White badges
+
+White badges are useful when presenting neutral information within a dark context.
+
+<ReactExample name="Badge white" />
+
+#### Info badges
+
+Informational badges help to highlight some information as particularly important.
+They draw attention to the badge without stating whether it was positive or a potential problem.
+
+<ReactExample name="Badge info" />
+
+#### Success badges
+
+Success badges help to highlight something desirable has happened or will happen.
+You can use them in situations like a confirmation of a user action (such as booking a trip)
+or potentially attractive options (such as free baggage).
+
+<ReactExample name="Badge success" />
+
+#### Warning badges
+
+Warning badges highlight information that might have a negative impact on the user
+but isn't critical.
+They're associated with negative emotions
+so only use them occasionally to stop potential problems before they happen.
+
+<ReactExample name="Badge warning" />
+
+#### Critical badges
+
+Critical badges call attention to problems that require immediate attention from the user.
+These badges create feelings of stress so only use them for issues where they're truly necessary.
+
+<ReactExample name="Badge critical" />

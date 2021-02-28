@@ -1,3 +1,35 @@
 ---
 title: Guidelines
 ---
+
+import ShortNonvisualSnippet from "snippets/short-nonvisual.mdx";
+
+<ReactExample name="CountryFlag" />
+
+## When to use
+
+- To add simple visual context so users can see the relevant country at a glance.
+- With the country name so the context is [accessible to everyone](/foundation/accessibility/).
+
+### When not to use
+
+- For general visual context---use an [illustration](/components/visuals/illustration/).
+- For users to select the right country---use a [select](/components/input/select) with country flags.
+
+## Component status
+
+<ComponentStatus component="CountryFlag" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A231"
+  alt="Flag: works best accompanied by the country name."
+/>
+
+## Content
+
+<ShortNonvisualSnippet visual="flag" associated="country" />
+
+<ReactExample name="CountryFlag accessibility" />

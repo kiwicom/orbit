@@ -40,14 +40,21 @@ export interface ComponentStatusProps {
   component: string;
 }
 
-const ComponentStatus = ({ component }: ComponentStatusProps) => (
-  <Table>
-    <StatusTableHead />
-    <TableBody>
-      <StatusTableRow component={ComponentStatusData.find(item => item.component === component)} />
-    </TableBody>
-  </Table>
-);
+const ComponentStatus = ({ component }: ComponentStatusProps) => {
+  const componentToDisplay = ComponentStatusData.find(item => item.component === component);
+  if (!componentToDisplay) {
+    return "This component has not yet been started.";
+  }
+
+  return (
+    <Table>
+      <StatusTableHead />
+      <TableBody>
+        <StatusTableRow component={componentToDisplay} />
+      </TableBody>
+    </Table>
+  );
+};
 
 export default ComponentStatus;
 

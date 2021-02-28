@@ -1,3 +1,37 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Timeline" />
+
+## When to use
+
+- You have a larger process (such as processing a customer request) broken into steps.
+- Users have no control over the process.
+- You want set user expectations about progress being made.
+
+### When not to use
+
+- There is a task users should complete and you want to nudge them along the process---use a
+  [wizard](/components/progress-indicators/wizard/).
+
+## Component status
+
+<ComponentStatus component="Timeline" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="821%3A0"
+  alt="Type indicator: shows the result of completed steps; label: sets the context for the step and works best when short; sub-label: adds additional context for the step; step content: describes the step in detail."
+/>
+
+## Look & feel
+
+### Step types
+
+Each completed step can have one of three results: success, warning, or critical.
+Use these types to add context for the process.
+
+<ReactExample name="Timeline types" />

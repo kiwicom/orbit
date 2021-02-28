@@ -1,3 +1,72 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Popover" />
+
+## When to use
+
+- To keep small bits content off of the initial screen but still only a tap away.
+- For short content or interactions that aren't necessary to the main flow.
+- For content that still might interest users and can be revealed through [progressive disclosure](/design-patterns/progressive-disclosure/).
+- To add interactions or choices in the context of the current screen.
+
+### When not to use
+
+- For large and/or structured content---use a [modal](/components/overlay/modal/).
+- To interrupt the main flow---use a [modal](/components/overlay/modal/) or [dialog](/components/overlay/dialog/).
+- For one choice less related to current screen---use a [dialog](/components/overlay/dialog/).
+- For static, short information---use a [tooltip](/components/overlay/tooltip/).
+- To add hidden information to the screen itself---use a [collapse](/components/interaction/collapse/).
+
+## Component status
+
+<ComponentStatus component="Popover" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="143%3A0"
+  alt="Button: most common trigger to open popover, though other ways are possible; popover: wraps content and actions and can have a preferred position and alignment and/or overlap the button; content: wraps the main message or options; action area: optionally creates an area for actions associated with the whole popover, at least one of which should close the popover."
+/>
+
+## Behavior
+
+### Make trigger clear
+
+Since popovers necessarily hide information from the initial screen,
+users need to know how they can get to that information.
+
+A common way to do this is a button with a chevron down icon on the right.
+This makes it clear that more information can pop down below the button.
+
+<ReactExample name="Popover trigger" />
+
+### Minimize actions
+
+Popovers have limited space outside the main flow.
+This means they're best for resolving single issues,
+not many things at once.
+
+<Guidelines type="do" title="Focus actions">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="40%3A976"
+  alt="A popover with the ability to add adult and child passengers and a single primary action."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="40%3A852"
+  alt="A popover with buttons to add passenger, add special meals, and add cabin bags."
+/>
+
+</Guidelines>
+
+## Content
+
+### Keep it simple
+
+Popovers present extra information or choices in a limited space.
+Don't overwhelm your users with information.

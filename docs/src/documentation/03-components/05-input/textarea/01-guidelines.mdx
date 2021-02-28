@@ -1,3 +1,54 @@
 ---
 title: Guidelines
 ---
+
+import InputBackgroundLinkSnippet from "snippets/input-background-link.mdx";
+import InputHelpErrorSnippet from "snippets/input-help-error.mdx";
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+import InputPlaceholderSnippet from "snippets/input-placeholder.mdx";
+
+<ReactExample name="Textarea" />
+
+## When to use
+
+- To collect longer answers from users.
+- To gather detailed information with guidance on what to enter.
+
+### When not to use
+
+- For short and simple user input---use an [input field](/components/input/inputfield/).
+- For longer responses that users can upload---use an [input file](/components/input/inputfile/).
+
+## Component status
+
+<ComponentStatus component="Textarea" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="171%3A1252"
+  alt="Label: provides a clear description of what users should fill in; placeholder: provides additional help for expected value; rows: optionally defines textarea height."
+/>
+
+## Content
+
+<InputLabelsSnippet />
+
+<InputHelpErrorSnippet />
+
+<!-- eslint-disable -->
+#### Help message
+<!-- eslint-enable -->
+
+<ReactExample name="Textarea help" />
+
+#### Error message
+
+<ReactExample name="Textarea error" />
+
+<InputPlaceholderSnippet />
+
+## Look & feel
+
+<InputBackgroundLinkSnippet />

@@ -4,7 +4,7 @@ import { ThemeContext } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 
-import type { UseTheme } from ".";
+import type { UseTheme } from "./index.js.flow";
 
 const useTheme: UseTheme = () => useContext(ThemeContext) || defaultTheme;
 

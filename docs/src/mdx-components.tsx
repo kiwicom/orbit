@@ -15,39 +15,48 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { navigate } from "gatsby";
 import { css } from "styled-components";
 
+import Example from "./components/Example";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
+
 export const h1 = () => null;
+
 export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h2" type="title1">
     {children}
   </Heading>
 );
+
 export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h3" type="title2">
     {children}
   </Heading>
 );
+
 export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h4" type="title3">
     {children}
   </Heading>
 );
+
 export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h5" type="title4">
     {children}
   </Heading>
 );
+
 export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h6" type="title5">
     {children}
   </Heading>
 );
+
 export const hr = () => <Separator spaceAfter="largest" />;
+
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
@@ -62,18 +71,23 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
     {children}
   </ol>
 );
+
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>
 );
+
 export const thead = ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
   <TableHead>{children}</TableHead>
 );
+
 export const tbody = ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
   <TableBody>{children}</TableBody>
 );
+
 export const tr = ({ children }: React.HTMLAttributes<HTMLTableRowElement>) => (
   <TableRow>{children}</TableRow>
 );
+
 export const td = ({
   children,
   align,
@@ -87,6 +101,7 @@ export const td = ({
     {children}
   </TableCell>
 );
+
 export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
   <TableCell
     as="th"
@@ -95,6 +110,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
     {children}
   </TableCell>
 );
+
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
@@ -109,6 +125,7 @@ export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
     {children}
   </ul>
 );
+
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <figcaption>
     <Text align="center" italic>
@@ -116,7 +133,9 @@ export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     </Text>
   </figcaption>
 );
+
 export const code = CodeBlock;
+
 export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <dd
     css={css`
@@ -126,6 +145,7 @@ export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     <Text>{children}</Text>
   </dd>
 );
+
 export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <dt>
     <Heading as="h3" type="title2">
@@ -133,7 +153,9 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     </Heading>
   </dt>
 );
+
 export const inlineCode = InlineCode;
+
 export const a = function Anchor({
   children,
   href,
@@ -165,6 +187,7 @@ export const a = function Anchor({
     </span>
   );
 };
+
 export const Callout = ({ icon = true, ...props }) => (
   <Alert icon={icon} spaceAfter="large" {...props} />
 );

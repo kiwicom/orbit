@@ -1,6 +1,5 @@
 // @noflow
-const baseConfig = require("../../babel.config");
 
 module.exports = {
-  ...baseConfig,
+  presets: ["@babel/preset-env", "@babel/preset-flow"],
 };

@@ -21,14 +21,14 @@ excerpt: We build Orbit to ensure all users have the most pleasant experience po
 - Not perfectly calibrated glasses or just tired eyes
 - Non-quality displays in foreign countries
 - Non-stable environment,
-  like a bus or subway where you are balancing in a crowd
+  like a bus or subway where you're balancing in a crowd
   and need to find information quick
 
-## Quick overview of WCAG 2.1
+## Quick overview of accessibility guidelines
 
 The Web Content Accessibility Guidelines (WCAG) are a single shared standard for web content accessibility.
 Going through the [WCAG specifications](https://www.w3.org/TR/WCAG21/) might seem, well, overwhelming.
-But they are the most complete source for web accessibility.
+But they're the most complete source for web accessibility.
 And navigating them can be easier then you might think.
 Rather than jumping into the complete specifications,
 go with a [quick reference guide](https://www.w3.org/WAI/WCAG21/quickref/).
@@ -48,36 +48,28 @@ Learn more:
 
 As Orbit, we try our best to have accessible components from the get go
 and abstract as much we can for developers.
-For example, we have a few components that will help you to make your websites more accessible.
+For example, we have a few components that help you to make your websites more accessible.
 
-<FancyLink icon="lightbulb">
+<FancyLink title="SkipLink" href="/components/accessibility/skiplink/" icon="lightbulb" />
 
-
-[SkipLink](/components/accessibility/skiplink/)
-
-</FancyLink>
-
-
-<FancyLink icon="lightbulb">
-
-
-[SkipNavigation](/components/accessibility/skipnavigation/)
-
-</FancyLink>
-
+<FancyLink
+  title="SkipNavigation"
+  href="/components/accessibility/skipnavigation/"
+  icon="lightbulb"
+/>
 
 However, we can't do everything as making products accessible is a team effort.
 Below, you can find a list of current components where we need your help
 to ensure proper accessibility support.
 
-| React Component   | What Orbit offers                         | What you need to do                                                                                     |
-| ----------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Badge             | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                  |
-| Button            | Screen reader/keyboard navigation support | Read about [Button's multiple accessibility properties](/components/button/react/#accessibility)        |
-| ButtonLink        | Screen reader/keyboard navigation support | Read about [ButtonLink's multiple accessibility properties]/components/buttonlink/react/#accessibility) |
-| Card              | Screen reader/keyboard navigation support | Use the `dataA11ySection` property when needed                                                          |
-| Heading           | Screen reader support                     | Use the `dataA11ySection` property when needed                                                          |
-| NotificationBadge | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                  |
+| React Component   | What Orbit offers                         | What you need to do                                                                                             |
+| ----------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Badge             | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                          |
+| Button            | Screen reader/keyboard navigation support | Read about [Button's multiple accessibility properties](/components/action/button/react/#accessibility)         |
+| ButtonLink        | Screen reader/keyboard navigation support | Read about [ButtonLink's multiple accessibility properties](/components/action/buttonlink/react/#accessibility) |
+| Card              | Screen reader/keyboard navigation support | Use the `dataA11ySection` property when needed                                                                  |
+| Heading           | Screen reader support                     | Use the `dataA11ySection` property when needed                                                                  |
+| NotificationBadge | Screen reader support                     | Fill `ariaLabel` if there is a need for more information than you can fit in `content`                          |
 
 ## Screen readers (assistive technologies)
 
@@ -92,7 +84,7 @@ Understanding the user context is the first step to being able to develop and de
 
 Luckily, all major operating systems already have a screen reader included,
 so you can just open it, follow the basic tutorial, and go on the web.
-Mentioning the tutorial here is not a coincidence.
+Mentioning the tutorial here isn't a coincidence.
 Screen readers are powerful tools with a lot of interesting features.
 They allow users to jump to headings, find the closest buttons, and lot more.
 To get better idea of what screen readers can do for a user,
@@ -116,28 +108,29 @@ The `dataA11ySection` property then servers as a pointer for this navigation.
 
 With accessibility regarding color, there are two main parts to keep in mind.
 
-### Ensure proper color contrast 
+### Ensure proper color contrast
 
-- **Minimum requirement: Level A according to WCAG**  
+- **Minimum requirement: Level A according to WCAG**
   The contrast ratio between the background and foreground should be at least 3:1
   as this ratio is recommended for users with any vision.
-- **Recommended requirement: Level AA according to WCAG**  
+- **Recommended requirement: Level AA according to WCAG**
   We should have a contrast ratio of at least 4.5:1 between the background and foreground.
   There is an exception for larger text over 24px (or 18px bold):
-  the contrast ratio in such cases should be at least 3:1.  
+  the contrast ratio in such cases should be at least 3:1.
   This color contrast ratio should be used for
   any color used to show important information (icon and text).
 
 Orbit provides an [accessible palette of colors](/foundation/color/).
 
-_Disclaimer: we know about slight contrast issues in the product color and we are working toward fixing that._
+> Disclaimer: we know about slight contrast issues in the product color
+> and we're working toward fixing that.
 
 Tip: Avoid using pure black text on a pure white background as it's difficult to read for dyslexic users.
 The combination of these colors causes the words to blur together.
 
 ### Convey information with more than just color
 
-A message conveyed with color alone will be completely lost for some users.
+A message conveyed with color alone is completely lost for some users.
 For example, don't indicate an error only with red,
 as the inability to distinguish red and green is the most common type of color blindness.
 
@@ -145,7 +138,7 @@ It's important to convey information in multiple ways
 and make sure the message is clear even with CSS disabled.
 You can use labels or icons to convey errors and important states.
 
-## Typography 
+## Typography
 
 Clear typography helps ensure the content is readable and everyone can follow the flow of the text.
 This means making sure the text is big enough to read
@@ -156,7 +149,7 @@ and the spacing around the text makes it easy to distinguish what should be read
 Having a clear base size for the text enables you to base other sizing and spacing relative to that.
 See the [Typography section](/foundation/typography/) for how it works in Orbit.
 
-Keep in mind that many users will use zoom and other technology
+Keep in mind that many users use zoom and other technology
 to resize the text to fit their needs.
 Make sure your content works with no overlapping or need to scroll horizontally,
 even with the text at 200% of the base size.
@@ -167,7 +160,7 @@ Proper spacing of lines helps readers track their progress through lines
 and recognize when they've reached the end of a paragraph.
 This means it's important to think about spacing both within and between paragraphs.
 
-Within a paragraph, you want to aim for a line height that is about 1.5 times the font size.
+Within a paragraph, you want to aim for a line height that's about 1.5 times the font size.
 
 Spacing between paragraphs and other elements should be enough
 to distinguish different elements while keeping related elements connected.
@@ -178,7 +171,7 @@ See the [section on spacing](/foundation/spacing/) for more on the Orbit system.
 Long lines of text can be hard to follow and make readers lose their place in the text.
 With shorter lines, it's easier to flow from one line to the next.
 
-Make sure your lines do not exceed 80 characters
+Make sure your lines don't exceed 80 characters
 (or 40 for Chinese, Japanese, or Korean characters as those are about twice as wide).
 Lines can be shorter as well, down to 50 (or 25) characters.
 
@@ -187,19 +180,19 @@ Lines can be shorter as well, down to 50 (or 25) characters.
 Justifying text to both the right and left can create uneven spacing
 ("[rivers of white](<https://en.wikipedia.org/wiki/River_(typography)>)"),
 which makes it hard to follow the flow of the text.
-That's why Orbit [Text](/components/text/) components do not offer this as an alignment option.
+That's why Orbit [Text](/components/text/text/) components don't offer this as an alignment option.
 Base the text alignment off the directionality of the language.
 
-## Bidirectionality (RTL)
+## Bi-directionality (RTL)
 
 Users of right-to-left (RTL) languages expect their content to start on the right side.
 This expectation sets the basis for all their interactions.
 If only the text starts on the right,
-it will make it harder for users to understand what to do to accomplish their goals.
+it makes it harder for users to understand what to do to accomplish their goals.
 
 Luckily, Orbit components are designed to work in both directions.
 This lets you mirror your layouts so the important aspects are clear to users of any language.
-You can see [how to implement RTL language support with Orbit](/development/utilities/right-to-left-languages/).
+You can see [how to implement RTL language support with Orbit](/development/utilities/rtl-languages/).
 
 As a part of this process, important visual clues (like a forward arrow pointing to the right on a Tile)
 are mirrored in RTL presentation (the arrow points to the left by default).
@@ -211,12 +204,12 @@ are designed to work no matter the direction of the text,
 so the icons default to not reversing based on RTL settings (though you can manually override this).
 
 Focusing on making sure your designs make sense from each direction
-helps ensure they will be usable by everyone.
+helps ensure they are usable by everyone.
 
 ## Scale
 
 When designing across devices, window sizes, and orientations,
-it can be difficult to maintain a consistent look that is usable at various scales.
+it can be difficult to maintain a consistent look that's usable at various scales.
 It's important to ensure that people can use your designs however they access them.
 
 ### Media queries
@@ -240,18 +233,18 @@ and make them small to make more room elsewhere.
 The problem, as anyone who's tried to hit the bullseye on a dartboard 🎯 knows,
 is that smaller targets are harder to hit.
 And when small targets are closer together,
-it makes it more likely that users will hit the wrong target accidentally,
+it makes it more likely that users hit the wrong target accidentally,
 increasing their frustration with your design.
 
 So especially in mobile designs,
 you want to make sure your targets are designed for human fingers.
-This means aiming for sizes that are 7--10 mm wide.
+This means aiming for sizes that are 7 to 10 mm wide.
 (Note that this involves the target size,
 which can include padding and isn't limited to only visible icons.)
 
 This translates to different values depending on the device,
 but can be generalized as at least 44 by 44 CSS pixels.
-An example is an Orbit circled [Button](/components/button/) at normal size.
+An example is an Orbit circled [Button](/components/action/button/) at normal size.
 
 Then to make sure each target can be used separately,
 make sure to include enough spacing between each target.
@@ -260,15 +253,15 @@ which you can see in the Orbit [design tokens for button margins](/foundation/de
 
 It's also important to keep in mind that the edges of screens aren't so easily accessible
 or may be used for swipe gestures,
-so you'll want to add extra spacing for any targets near the edge.
+so you want to add extra spacing for any targets near the edge.
 
 When you size and space your targets properly,
 you make your designs usable for people whose hands shake, older people,
 people with disabilities, people with large fingers, and more.
 
-And the great thing is that when you plan your designs like this on a mobile scale, 
-caling them up will help people with targeting on desktops.
-This ensures your design will be usable in all situations.
+And the great thing is that when you plan your designs like this on a mobile scale,
+scaling them up helps people with targeting on desktops.
+This ensures your design are usable in all situations.
 
 ## Things to keep in mind while developing
 

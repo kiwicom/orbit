@@ -1,3 +1,65 @@
 ---
 title: Guidelines
 ---
+
+import InputBackgroundLinkSnippet from "snippets/input-background-link.mdx";
+import InputHelpErrorSnippet from "snippets/input-help-error.mdx";
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+
+<ReactExample name="InputFile" />
+
+## When to use
+
+- To collect files from users.
+- To provide clear guidance on what should be attached.
+
+### When not to use
+
+- To collect small pieces of information---use an [input field](/components/input/inputfield/).
+- To collect longer, text responses from users---use a [text area](/components/input/textarea/).
+
+## Component status
+
+<ComponentStatus component="InputFile" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="44%3A1017"
+  alt="Label: provides a clear description of what users should upload; placeholder: provides additional info before a file is uploaded; button label: describes the main action and works best when short; help: optionally provides additional help for what's expected."
+/>
+
+## Content
+
+<InputLabelsSnippet />
+
+### Use specific action text
+
+In addition to a label to help direct user action,
+change the label on the upload button to make it specific to what users need to upload.
+
+<ReactExample name="InputFile button label" />
+
+<InputHelpErrorSnippet />
+
+#### Help message
+
+<ReactExample name="InputFile help" />
+
+#### Error message
+
+<ReactExample name="InputFile error" />
+
+### Consider including placeholder text
+
+To prompt users to upload a file,
+consider including relevant placeholder text to indicate the task isn't done yet.
+
+Remember that placeholder text is visually less important, low in contrast,
+and disappears once users enter anything.
+So do **not** include anything **necessary**, such as what file types are allowed.
+
+## Look & feel
+
+<InputBackgroundLinkSnippet />

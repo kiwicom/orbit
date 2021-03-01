@@ -1,0 +1,12 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+link: 'https://orbit.kiwi/content/grammar-and-mechanics/#spelling'
+ignorecase: true
+level: warning
+action:
+  name: replace
+swap:
+  comprise of: comprise
+  comprises of: comprises
+  reason why: reason
+  way how: way

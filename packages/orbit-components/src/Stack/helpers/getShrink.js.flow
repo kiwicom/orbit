@@ -1,4 +1,0 @@
-// @flow
-export type GetShrink = (shrink: boolean) => string | boolean;
-
-declare export default GetShrink;

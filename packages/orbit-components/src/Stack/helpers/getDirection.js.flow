@@ -1,6 +1,0 @@
-// @flow
-import type { Direction } from "../index";
-
-export type GetDirection = (direction: Direction) => string | boolean;
-
-declare export default GetDirection;

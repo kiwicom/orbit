@@ -1,6 +1,0 @@
-// @flow
-import type { Align } from "../index";
-
-export type GetAlign = (align: Align) => string;
-
-declare export default GetAlign;

@@ -1,3 +1,195 @@
 ---
 title: Guidelines
 ---
+
+import MoreThanColorSnippet from "snippets/more-than-color.mdx";
+
+<ReactExample name="" />
+
+## When to use
+
+- When you want to interrupt a user's journey with relevant information.
+- For things like status messages and additional explanations.
+
+### When not to use
+
+- When there are already many on a page. Don't overwhelm the user.
+- For messages that shouldn't interrupt the flow---consider [heading](/components/text/heading/)
+  and [text](/components/text/text/).
+- For temporary messages that don't draw much attention---use a [toast](/components/information/toast/).
+- When no results match a user query---use an [empty state](/components/progress-indicators/emptystate/).
+- When a user has to solve an issue **as soon as possible**---use a [modal](/components/overlay/modal/).
+
+## Component status
+
+<ComponentStatus component="alert" />
+
+## Content structure
+
+### Mobile
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="289%3A0"
+  alt="Icon: supports the message; title: works best with 5 to 8 words (in English); closable: optionally lets users close the message; action: optionally adds related actions for users to take; description: provides more context for the message, usually when the message is long."
+/>
+
+### Desktop
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="566%3A2147"
+  alt="Icon: supports the message; title: works best with 5 to 8 words (in English); closable: optionally lets users close the message; action: optionally adds related actions for users to take; actions: optionally adds actions for users to take; description: provides more context for the message, usually when the message is long."
+/>
+
+## Behavior
+
+<MoreThanColorSnippet component="alert" />
+
+<Guidelines type="do" title="Use icons">
+
+Without icons, people with color blindness might see success and critical alerts as the same.
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node=""
+  alt="Success and critical alerts with icons are clear even without color."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node=""
+  alt="Success and critical alerts without icons are not clear without color."
+/>
+
+</Guidelines>
+
+### Follow up with actions
+
+There are times when just simple information isn't enough
+and the user needs to take additional steps to resolve the problem or get additional details.
+
+In such cases, provide additional actions for your message.
+Alerts use special status buttons to match the button color with the alert color.
+
+<ReactExample name="Alert buttons" />
+
+## Content
+
+### Explain the alert
+
+Explain why the user was interrupted---confirm the action that will happen
+or describe what just has happened.
+
+Keep it clear, short, and simple.
+Alerts break the user flow,
+so you want to explain why with as few details as possible.
+
+For longer messages, use a title for quick info.
+The user sees the title first when scanning the message.
+You can also provide additional context for the alert by adding a description.
+For more complex messages,
+let users access more information through an action button.
+
+<Guidelines type="do" title="Provide context for your messages">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node=""
+  alt="Airline refunds apply. Message: This ticket is covered by airline refund policies. If the airline denies your application, your economy tickets will receive little or no refund."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node=""
+  alt="Message: If the airline denies your application, your economy tickets will receive little or no refund."
+/>
+
+</Guidelines>
+
+## Look & feel
+
+### Alert types
+
+There are four types of alerts: _informational_, _success_, _warning_, and _critical_.
+
+### Informational alert
+
+Informational alerts are the most common alerts.
+Use them to **guide a user's attention to relevant details**,
+but keep it focused and related to the topic on the screen.
+
+Consider tailoring your icons to your message.
+Baggage, clocks, or other symbols strengthen the informative nature of your message.
+
+<ReactExample name="Alert info" />
+
+### Success alert
+
+Success alerts confirm that an instruction from the user,
+such as to make a payment or request a refund, was processed successfully.
+Usually used without an action button.
+
+**Avoid using success alerts** when there is a follow-up action,
+such as when users need to confirm something by e-mail.
+For such actions, use an informational alert instead.
+
+<ReactExample name="Alert success" />
+
+### Warning alert
+
+Use warning alerts when you need to inform users about a **potentially unfavorable situation**
+that requires eventual action from them.
+If the issue requires immediate attention, use a critical alert.
+
+<ReactExample name="Alert warning" />
+
+### Critical alert
+
+Use critical alerts when something is **blocking** users from continuing
+or an issue needs to be resolved **immediately**.
+The alert should offer a solution to the problem.
+
+<ReactExample name="Alert critical" />
+
+A critical alert should provide some form of solution for their problem.
+If something is **important for users to solve as soon as possible**,
+it's worth considering automatically opening a modal window.
+
+### Mobile vs. desktop
+
+The alert component's content should be the same on all platforms,
+but there's more space to play with on the desktop.
+That's why the desktop versions have larger fonts, icons, and inner padding.
+
+For native or responsive views,
+the design is much more compact to avoid filling the screen with the message.
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node=""
+  alt="On mobile platforms, everything is more compact."
+  caption="On mobile platforms, everything is more compact."
+/>
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="555%3A0"
+  alt="On desktop platforms, things can breathe"
+  caption="On desktop platforms, things can breathe"
+/>
+
+### Cascading visual hierarchy
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="555%3A0"
+  alt="A darker title to stand out; the icon color softens the alert; a complementary description color."
+/>
+
+Alert components have a visual hierarchy where the title is the most significant element.
+The title's darker color emphasizes it against the description.
+It's a minor adjustment that doesn't stand out to the user.
+
+In React, we also force the colors of child components to match the alert type.
+You can freely use [Text](/components/text/text/), [Heading](/components/text/heading/),
+[List](/components/structure/list/), and [TextLink](/components/action/textlink/) components,
+and the colors of these components will be automatically adjusted.

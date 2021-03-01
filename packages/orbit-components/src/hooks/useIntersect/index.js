@@ -1,14 +1,15 @@
 // @flow
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
-export default ({ root = null, rootMargin, threshold = 0 }: IntersectionObserverOptions) => {
-  if (typeof window === "undefined") {
-    return { ref: null, entry: null };
-  }
+import typeof UseIntersect from ".";
 
+const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } = {}) => {
   const [entry, updateEntry] = useState<IntersectionObserverEntry | null>(null);
   const [node, setNode] = useState<Element | null>(null);
 
+  const ref = useCallback((el: Element | null) => {
+    setNode(el);
+  }, []);
   const observer = useRef<null | IntersectionObserver>(null);
 
   useEffect(() => {
@@ -29,5 +30,7 @@ export default ({ root = null, rootMargin, threshold = 0 }: IntersectionObserver
     return () => currentObs?.disconnect();
   }, [node, root, rootMargin, threshold]);
 
-  return { ref: setNode, entry };
+  return { ref, entry };
 };
+
+export default useIntersect;

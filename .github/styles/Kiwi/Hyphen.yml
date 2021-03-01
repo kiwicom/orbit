@@ -1,0 +1,7 @@
+extends: existence
+message: "Use a dash, comma, or colon instead of a hyphen. Or break it into two sentences."
+link: 'https://orbit.kiwi/content/grammar-and-mechanics/#punctuation'
+level: warning
+scope: text
+raw:
+  - '\b - \b'

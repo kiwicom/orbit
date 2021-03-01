@@ -1,3 +1,29 @@
 ---
 title: Guidelines
 ---
+
+## title: Guidelines
+
+import SkipRepeatedContentSnippet from "snippets/skip-repeated-content.mdx";
+
+<ReactExample name="SkipNavigation" />
+
+## When to use
+
+- To optimize for [accessibility](/foundation/accessibility/) for people who navigate in a non-visual way.
+- To let users skip directly to the content that interests them.
+- At the top of a page.
+- To offer other actions associated with the entire page (such as submitting feedback).
+- To satisfy [WCAG2.0 Criterion 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
+
+### When not to use
+
+- To offer skip links within complex content (such as cards)---use a [SkipLink component](/components/accessibility/skiplink/).
+
+## Component status
+
+<ComponentStatus component="SkipNavigation" />
+
+## Behavior
+
+<SkipRepeatedContentSnippet />

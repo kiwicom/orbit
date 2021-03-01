@@ -1,3 +1,62 @@
 ---
 title: Guidelines
 ---
+
+import DescriptionsExtraSnippet from "snippets/descriptions-extra.mdx";
+import VisualHierarchySnippet from "snippets/visual-hierarchy.mdx";
+
+<ReactExample name="Tile" />
+
+## When to use
+
+- You have an action associated with a section of content.
+- Structured content should lead to the next step in the flow.
+
+### When not to use
+
+- With information without a related action---use a [card](/components/structure/card/)
+
+## Component status
+
+<ComponentStatus component="Tile" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="219%3A1"
+  alt="Title: sets the context for the tile and works best when short; chevron: indicates the interaction for the tile (like an external link); icon: optionally visually supports the tile focus; description: optionally provides more context and works best as a one-liner; header: displays whatever content you want to give it."
+/>
+
+## Behavior
+
+### Make the action clear
+
+Tiles should be associated with a single action the user can take.
+You don't want surprise users by jumping them into a different context without warning.
+
+So if your action is, say, taking users to a different site where they can read more information,
+provide icons and other cues to make it clear what will happen.
+
+<Guidelines type="do" title="Show the action">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="140%3A1438"
+  alt="A tile with two icons showing that the tile leads to a link and the text 'Read about progressive disclosure'."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="140%3A1636"
+  alt="A tile with only the text 'Read about progressive disclosure'."
+/>
+
+</Guidelines>
+
+## Content
+
+<DescriptionsExtraSnippet />
+
+## Look & feel
+
+<VisualHierarchySnippet component="tile" />

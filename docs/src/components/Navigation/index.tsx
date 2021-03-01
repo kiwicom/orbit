@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
+import { Hide, Stack } from "@kiwicom/orbit-components";
 
 import useCollections from "../../hooks/useCollections";
 import MobileNavigation from "./MobileNavigation";
@@ -27,23 +27,28 @@ const NavigationLinks = () => {
     "foundation",
   ]);
 
-  const { isDesktop } = useMediaQuery();
-
-  return isDesktop ? (
-    collections.map(({ name, id }, i) => (
-      <React.Fragment key={id}>
-        <StyledLink to={`/${name}/`}>{capitalize(name.split("-").join(" "))}</StyledLink>
-        {i + 1 !== collections.length ? <span>&#xb7;</span> : null}
-      </React.Fragment>
-    ))
-  ) : (
-    <Sidenav>
-      <ul role="menu">
-        {collections.map(({ id, name }) => (
-          <MobileNavigation key={id} name={name} />
-        ))}
-      </ul>
-    </Sidenav>
+  return (
+    <>
+      <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+        <Stack spacing="medium" align="center">
+          {collections.map(({ name, id }, i) => (
+            <React.Fragment key={id}>
+              <StyledLink to={`/${name}/`}>{capitalize(name.split("-").join(" "))}</StyledLink>
+              {i + 1 !== collections.length ? <span>&#xb7;</span> : null}
+            </React.Fragment>
+          ))}
+        </Stack>
+      </Hide>
+      <Hide on={["desktop", "largeDesktop"]}>
+        <Sidenav>
+          <ul role="menu">
+            {collections.map(({ id, name }) => (
+              <MobileNavigation key={id} name={name} />
+            ))}
+          </ul>
+        </Sidenav>
+      </Hide>
+    </>
   );
 };
 

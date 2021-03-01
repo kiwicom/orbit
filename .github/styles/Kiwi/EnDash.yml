@@ -1,0 +1,9 @@
+extends: existence
+message: "Don't use en dashes ('--'). Use em dashes ('---') or the word 'to'."
+link: 'https://developers.google.com/style/dashes'
+level: warning
+scope: sentence
+raw:
+  # Trailing | is necessary because raw items get concatenated
+  - '\b\s(?:--|–)\s\b|'
+  - '\b(?:--|–)\b'

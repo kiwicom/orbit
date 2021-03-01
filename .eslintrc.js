@@ -131,6 +131,20 @@ module.exports = {
       },
     },
     {
+      files: [
+        // React components
+        "**/[A-Z]*.ts?(x)",
+        "**/[A-Z]*/index.ts?(x)",
+        "**/__typetests__/*.ts?(x)",
+        "**/__testfixtures__/**",
+        // other
+        "docs/**",
+      ],
+      rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
       files: "*.d.ts",
       rules: {
         "react/prefer-stateless-function": "off",
@@ -150,12 +164,6 @@ module.exports = {
         "jest/no-if": "error",
         "jest/consistent-test-it": "warn",
         "jest/no-focused-tests": "error",
-      },
-    },
-    {
-      files: "**/__typetests__/**",
-      rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     {
@@ -191,14 +199,46 @@ module.exports = {
         camelcase: "off",
         "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     {
-      files: "**/__testfixtures__/**",
+      files: "*.mdx",
+      extends: ["plugin:mdx/recommended"],
       rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
+        "mdx/no-unescaped-entities": "OFF",
+        "mdx/remark": "error",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            tsx: "never",
+          },
+        ],
+      },
+      settings: {
+        "import/resolver": {
+          node: {
+            extensions: [".tsx"],
+          },
+          alias: {
+            map: [["snippets", "./docs/src/snippets"]],
+          },
+        },
+      },
+      globals: {
+        // Ignore components added as shortcodes so they don't get marked as undefined
+        Callout: false,
+        ComponentStatus: false,
+        Do: false,
+        Dont: false,
+        FancyLink: false,
+        FigmaFile: false,
+        Guidelines: false,
+        GuidelinesSideBySide: false,
+        InlineToken: false,
+        Palette: false,
+        ReactExample: false,
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them
@@ -212,7 +252,6 @@ module.exports = {
       files: ["packages/eslint-plugin-orbit-internal/src/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
     {

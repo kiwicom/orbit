@@ -1,0 +1,32 @@
+headers:
+  - alt: Header
+    path: bizdev/header.png
+  - alt: Header (for retina)
+    path: bizdev/header@2x.png
+  - alt: Small header
+    path: bizdev/header-small.png
+  - alt: Small header (for retina)
+    path: bizdev/header-small@2x.png
+icons:
+  - alt: Bookings
+    path: bizdev/icon-bookings.png
+  - alt: Clicks
+    path: bizdev/icon-clicks.png
+  - alt: ConversionRate
+    path: bizdev/icon-conversion-rate.png
+  - alt: Margin
+    path: bizdev/icon-margin.png
+  - alt: MarginPure
+    path: bizdev/icon-margin-pure.png
+  - alt: Objectives
+    path: bizdev/icon-objectives.png
+  - alt: Passenger
+    path: bizdev/icon-passenger.png
+  - alt: Profit
+    path: bizdev/icon-profit.png
+  - alt: Refunds
+    path: bizdev/icon-refunds.png
+  - alt: Revenue
+    path: bizdev/icon-revenue.png
+  - alt: Seat
+    path: bizdev/icon-seat.png

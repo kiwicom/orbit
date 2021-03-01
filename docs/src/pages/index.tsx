@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { Heading, Inline } from "@kiwicom/orbit-components";
 import { StarEmpty } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
+import { WindowLocation } from "@reach/router";
 
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
@@ -20,9 +21,13 @@ const TileWrapper = styled.div`
   }
 `;
 
-export default function Home() {
+interface Props {
+  location: WindowLocation;
+}
+
+export default function Home({ location }: Props) {
   return (
-    <Layout>
+    <Layout location={location}>
       <RocketImage />
       <div
         css={css`
@@ -110,7 +115,7 @@ export default function Home() {
           <Heading as="h2">Foundation</Heading>
           <Inline spacing="XLarge">
             <TileWrapper>
-              <Tile title="Colors" linkTo="/foundation/colors/">
+              <Tile title="Colors" linkTo="/foundation/color/">
                 Color is used to signal structure on a page, to highlight or emphasize...
               </Tile>
             </TileWrapper>

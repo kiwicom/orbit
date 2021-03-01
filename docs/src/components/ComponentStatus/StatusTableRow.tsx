@@ -24,23 +24,29 @@ interface StatusTableRowProps {
 
 const StatusTableRow = ({ component, group }: StatusTableRowProps) => {
   const theme = useTheme();
+  const isDocs = component.docs === "Released";
   return (
     <TableRow>
       {group && (
         <TableCell>
-          <Link
-            to={`/components/${group.toLowerCase()}/${component.component.toLowerCase()}/`}
-            css={css`
-              color: ${theme.orbit.colorTextLinkPrimary};
-              text-decoration: underline;
-              &:hover {
-                color: ${theme.orbit.colorTextLinkPrimaryHover};
-                text-decoration: none;
-              }
-            `}
-          >
-            {component.component}
-          </Link>
+          {isDocs && (
+            <Link
+              to={`/components/${group
+                .toLowerCase()
+                .replace(" ", "-")}/${component.component.toLowerCase()}/`}
+              css={css`
+                color: ${theme.orbit.colorTextLinkPrimary};
+                text-decoration: underline;
+                &:hover {
+                  color: ${theme.orbit.colorTextLinkPrimaryHover};
+                  text-decoration: none;
+                }
+              `}
+            >
+              {component.component}
+            </Link>
+          )}
+          {!isDocs && component.component}
         </TableCell>
       )}
       <TableCell align="center">

@@ -1,3 +1,63 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="NotificationBadge" />
+
+## When to use
+
+- To show how many notifications a user has.
+- To show simple information that doesn't require interaction (such as the type of transport).
+
+### When not to use
+
+- For anything longer than a very short number or one icon---use a [badge](/components/information/badge/).
+- To include an action---use a [button](/components/action/button/)
+  (a circled button has a similar look with an action).
+
+## Component status
+
+<ComponentStatus component="NotificationBadge" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="119%3A1159"
+  alt="Type: visually supports the message with different styles for different types; icon: optionally represent the notification visually and is not an action; content: displays the number of the notification and will not display if an icon is used."
+/>
+
+## Behavior
+
+### Prefer inverted critical for notifications
+
+Generally, notification badges are used to draw attention to something to be done.
+They're not an action themselves, so we avoid [interactive](/foundation/color/#interactive-colors)
+and [actionable](/foundation/color/#actionable-colors) colors.
+It's best to use inverted critical badges unless you have a specific reason not to.
+
+## Content
+
+### Limit content
+
+Notification badges are very small and circular.
+This means they can't hold much content.
+Use only an icon or a number no more than 2 digits.
+
+### Include nonvisual info
+
+When you're using only an icon for the notification badge,
+make sure to include the same information nonvisually
+so even people who don't see the icon [get the same message](/foundation/accessibility/).
+
+<ReactExample name="NotificationBadge accessibility" />
+
+## Look & feel
+
+### NotificationBadge types
+
+There are six basic types of badges.
+Info and critical badges have an inverted variant for use with different backgrounds.
+You should [default to using inverted critical badges](#prefer-inverted-critical-for-notifications).
+
+<ReactExample name="NotificationBadge types" />

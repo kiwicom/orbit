@@ -210,11 +210,13 @@ module.exports = {
           node: {
             extensions: [".tsx"],
           },
+          alias: {
+            map: [["snippets", "./docs/src/snippets"]],
+          },
         },
       },
       globals: {
         // Ignore components added as shortcodes so they don't get marked as undefined
-        // TODO: remove the components that aren't shortcodes, just haven't been added yet
         Callout: false,
         ComponentStatus: false,
         Do: false,
@@ -224,13 +226,12 @@ module.exports = {
         FancyLink: false,
         FigmaFile: false,
         GitHubContributors: false,
-        Guideline: false,
         GuidelineImages: false,
+        Guideline: false,
         GuidelinesSideBySide: false,
-        IconsDownloadList: false,
+        InlineToken: false,
         Palette: false,
         ReactExample: false,
-        SocialLinks: false,
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them

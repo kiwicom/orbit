@@ -1,3 +1,102 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Table" />
+
+## When to use
+
+- To present tabular information with a clear, repeating structure.
+- To help users scan structured data to make informed decisions.
+
+### When not to use
+
+- To create layouts---use a [layout](/components/layout/layout/) or related component.
+- For simple, non-tabular information---use a [list](/components/structure/list/).
+- When you have fewer sections and want to emphasize each more---use a [card](/components/structure/card/).
+- For choices about pricing---use a [pricing table](/components/structure/pricingtable/).
+
+## Component status
+
+<ComponentStatus component="Table" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="197%3A0"
+  alt="Table head: optionally describes what each column contains; table body: wraps table rows; table rows: wrap table cells; table cells: present static information."
+/>
+
+## Behavior
+
+### Use semantic structure
+
+Tables are great at presenting a clear structure
+that can be scanned to get just the right information.
+Make sure to use all of the benefits this structure offers.
+
+This means not just taking advantage of the visual differences in rows,
+but making it clear what headers are connected to what data.
+Use `<th>` elements and `scope`
+to make it clear to [everyone](/foundation/accessibility/) what the table means.
+
+<ReactExample name="Table accessibility" />
+
+### Use for data, not layout
+
+Tables are great for presenting information with a clear, repeating structure.
+Breaking structured data into tables helps users scan it for what they need.
+
+While tables have long been used for layouts on the web, it's not what they're best at.
+Use components like [cards](/components/structure/card/), [stack](/components/layout/stack/),
+and [grid](/components/layout/grid/) to get the layout you want.
+
+## Content
+
+### Keep headers short
+
+Tables are useful for scanning for the right information.
+Users get slowed down in scanning if there's too much information at once.
+
+Keep the data short, especially in headers.
+Use only one or two words when possible to communicate the essence of what the table contains.
+
+<Guideline type="do" title="Short headers">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="145%3A1609"
+  alt="A table on baggage options with the headers 'Baggage' and 'Availability'."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="147%3A0"
+  alt="A table on baggage options with the headers 'What baggage type is meant' and 'Is it available with your ticket'."
+/>
+
+</Guideline>
+
+## Look & feel
+
+### Align consistently
+
+To quickly scan data,
+it helps if it's all presented in the same way.
+Keep your data aligned in the same way throughout the table
+so users don't get confused about where the information is.
+
+### Hover
+
+When you have tables with multiple columns,
+sometimes it can be hard to match rows to exact columns.
+That's why rows in Orbit tables have a <InlineToken value="paletteCloudNormal" alternateName /> background
+when they're hovered over.
+
+This darker background makes the data easier to scan to match the correct row and column.
+
+### Colors
+
+Tables have options for both the row backgrounds (whether or not to be striped) and the text color.
+
+<ReactExample name="Table colors" />

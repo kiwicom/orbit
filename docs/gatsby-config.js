@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: "Orbit",
@@ -24,7 +26,7 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               // The base for generating different image widths.
-              maxWidth: 736,
+              maxWidth: 590,
               showCaptions: ["title"],
             },
           },
@@ -32,6 +34,13 @@ module.exports = {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`, `md`, `mdx`],
+            },
+          },
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              backticks: false,
+              dashes: `oldschool`,
             },
           },
         ],
@@ -76,5 +85,11 @@ module.exports = {
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        snippets: path.join(__dirname, "src/snippets"),
+      },
+    },
   ],
 };

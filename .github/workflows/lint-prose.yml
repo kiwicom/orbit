@@ -17,14 +17,16 @@ jobs:
   prose:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Vale
-      uses: errata-ai/vale-action@v1.3.0
-      with:
-        files: docs/src/documentation
-        onlyAnnotateModifiedLines: true
-      env:
-        # Required
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Vale
+        uses: errata-ai/vale-action@v1.3.0
+        with:
+          files:
+            - docs/src/documentation
+            - docs/src/snippets
+          onlyAnnotateModifiedLines: true
+        env:
+          # Required
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,3 +1,87 @@
 ---
 title: Guidelines
 ---
+
+## title: Guidelines
+
+import SupportProgressiveDisclosureSnippet from "snippets/support-progressive-disclosure.mdx";
+
+<ReactExample name="Radio" />
+
+## When to use
+
+- To present a few options where only one can be selected.
+
+### When not to use
+
+- When you have many options---use a [select](/components/input/select/).
+- When multiple options can be selected---use a [checkbox](/components/input/checkbox/).
+- For a single on--off option---use a [checkbox](/components/input/checkbox/).
+- You want to group multiple options together into a single basic choice---use a [choice group](/components/input/choicegroup/).
+
+## Component status
+
+<ComponentStatus component="Radio" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="160%3A1219"
+  alt="Label: works best when short; radio controller: indicates the state and can be selected or not; info text: adds more explanation to the label and can contain a link."
+/>
+
+## Behavior
+
+<SupportProgressiveDisclosureSnippet />
+
+<Guideline type="do" title="Progressive disclosure">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="79%3A1002"
+  alt="Two radio buttons, one of which has additional text with a link to more info."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="79%3A1000"
+  alt="Two radio buttons, one of which has a very long paragraph of additional text."
+/>
+
+</Guideline>
+
+### Show multiple options, but not too many
+
+Radios force users to choose only one option.
+Make sure they're always presented with two or more options.
+If you have many options to choose from,
+consider using a [select](/components/input/select/)
+to decrease the initial cognitive load on users.
+
+## Content
+
+### Use parallel labels
+
+Whether you're offering filters for transport options,
+statuses for requests, or types of special meals,
+always present options using the same structure.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Nonstop, Up to 1 stop, Up to 2 stops
+- Resolved, Waiting for response, Postponed
+- Vegan, Vegetarian, Pescatarian
+
+</Do>
+
+<Dont>
+
+- Nonstop, 1 stop or fewer, Up to 2 stops
+- Resolved, I'm waiting for a response, We're not doing this now
+- Vegan, A meal without meat, It can include fish
+
+</Dont>
+
+</GuidelinesSideBySide>

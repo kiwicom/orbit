@@ -1,3 +1,137 @@
 ---
 title: Guidelines
 ---
+
+import IconsList from "../../../../components/IconsList";
+
+import IconColorsSnippet from "snippets/icon-colors.mdx";
+
+<ReactExample name="Icon" />
+
+## When to use
+
+- To add simple visual context.
+- To clarify the purpose of a feature or draw attention to a commonly understood action.
+- With text so the context is [accessible to everyone](/foundation/accessibility/).
+
+### When not to use
+
+- For services such as payment methods---use a [service logo](/components/visuals/servicelogo/).
+- For carriers for transport---use a [carrier logo](/components/visuals/carrierlogo/).
+- For general visual context---use an [illustration](/components/visuals/illustration/).
+
+## Component status
+
+<ComponentStatus component="Icon" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="0%3A259"
+  alt="Icon glyph: works best when accompanied by a clear label to improve usability."
+/>
+
+## Behavior
+
+### Use interactive icons for interactions
+
+Some icons (like plus \[+\] and close \[×\])
+work well to show users that an interaction is possible (like adding an option or closing a dialog).
+Users are used to interacting with these icons, so they work well inside buttons.
+
+Don't use such icons in places where users can't interact with them.
+This creates an expectation that clicking them does something,
+which can lead to users being frustrated when nothing happens.
+
+<GuidelineImages>
+
+<DoImage>
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="143%3A1532"
+  alt="Radio buttons under the heading 'Select an option' with both icons related to baggage."
+/>
+
+Use non-interactive icons for settings other than interactions.
+
+</DoImage>
+
+<DontImage>
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="143%3A1473"
+  alt="Radio buttons under the heading 'Select an option' with the first icon being X and the second related to baggage."
+/>
+
+Using interactive icons creates the expectation that clicking the icon will do something.
+
+</DontImage>
+
+</GuidelineImages>
+
+### Use similar icons for lists
+
+When creating lists and other repeated structures,
+make sure to use icons that seem visually consistent.
+For example, to show steps taken and not,
+use check-circle and close-circle to present similar visual cues.
+
+<GuidelineImages>
+
+<DoImage>
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="144%3A1511"
+  alt="A list with three steps all with circled icons."
+/>
+
+Using consistent icons keeps it easy to scan.
+
+</DoImage>
+
+<DontImage>
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="143%3A1473"
+  alt="A list with three steps with 1 circled icon and 2 non-cicled icons."
+/>
+
+Varying the icons creates confusion about the message.
+
+</DontImage>
+
+</GuidelineImages>
+
+## Content
+
+### Use labels
+
+Not everyone is able to see your carefully selected icon,
+no matter how perfectly its shape matches its meaning.
+Ensure everyone gets the same message by including a label with the icon.
+
+The label should be short and match the meaning you want to convey with the icon.
+
+You don't need labels when the icon is just visually supporting a message that exists in text.
+In such cases, you should hide the icon from assistive technology.
+
+See how it's done in React:
+
+<ReactExample name="Icon accessibility" />
+
+## Look & feel
+
+### Match the color
+
+<IconColorsSnippet />
+
+<ReactExample name="Icon colors" />
+
+## List of all icons
+
+<IconsList />

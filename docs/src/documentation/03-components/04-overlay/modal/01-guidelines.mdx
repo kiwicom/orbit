@@ -1,3 +1,176 @@
 ---
 title: Guidelines
 ---
+
+import { SIZES as MODAL_SIZES } from "@kiwicom/orbit-components/src/Modal/consts.js";
+
+import theme from "@kiwicom/orbit-components/lib/defaultTheme";
+
+<ReactExample name="Modal" />
+
+## When to use
+
+- For necessary actions outside the main flow.
+- When the action doesn't benefit from the context of the current screen.
+- To interrupt the flow and force attention.
+
+### When not to use
+
+- When you have only a single simple action---use a [dialog](/components/overlay/dialog/).
+- For little information that doesn't disrupt the main flow---use a [popover](/components/overlay/popover/).
+- For a temporary message without actions---use a [toast](/components/information/toast/).
+
+## Component status
+
+<ComponentStatus component="Modal" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="102%3A1068"
+  alt="Title: sets the context and works best when short; illustration: visually supports the message; description: optionally adds more context; suppressed section: optionally adds options or explanations and can include more complex structures; section: optionally adds options or explanations and can include more complex structures; close button: optionally enables users to close the modal; footer: optionally adds an area for actions or next steps and can be fixed to always appear."
+/>
+
+## Behavior
+
+### Open on user action
+
+Modals disrupt the main flow.
+If they come as a surprise, they're more likely to be dismissed.
+Only open a modal after the user has taken an action so it's clear why it was triggered.
+
+## Content
+
+### Structure content
+
+Modals are flexible enough to include many types of information.
+If you're including multiple types or multiple examples of the same type,
+structure the information to make it easy for users to scan.
+
+You can use modal sections to add structure to the modal and even,
+if your content can be logically grouped,
+include [cards](/components/structure/card/) to group the information even further.
+
+For example, if you have options to offer for each [segment](/kiwi-use/content/glossary/#itinerary-parts) of a trip,
+you can use modal sections for each sector (such as inbound and outbound of a round trip)
+and cards inside them with card sections for each segment.
+
+<ReactExample name="Modal with card" />
+
+### Direct user with the title
+
+A modal title sets the context for everything inside
+and also stays fixed at the top if the modal scrolls down.
+
+So the title should make it clear what the modal relates to
+and what actions might be expected of the user.
+Keep it short and focused on either an action (verb) or a category (noun).
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Save payment card
+- Activate your plan
+- Priority Boarding
+
+</Do>
+
+<Dont>
+
+- Your payment card is safe with us
+- Great! Your email has been verified. Now activate your plan.
+- All details about Priority Boarding
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+### Allow users to close
+
+Users want to feel in control of their actions.
+Since modals act as interruptions,
+they can invoke negative feelings in users.
+Make sure users feel in control
+by offering them a clear option to close the modal and get back to the main flow.
+
+You should try to match user expectations for the given platform.
+Responsive and native modals should always include a close button in the footer.
+
+Desktop modals should include a close button in the upper right and
+(unless you need an explicit close, such as for cookie consent)
+the option to close the modal by clicking the overlay.
+Optionally include a secondary button in the footer.
+
+<Guideline type="do" title="Mobile">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="46%3A119"
+  alt="A modal for mobile with a Save button and a Close button."
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="46%3A118"
+  alt="A modal for mobile with a Save button but no other actions."
+/>
+
+</Guideline>
+
+<Guideline type="do" title="Desktop">
+
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="153%3A119"
+  alt="A modal for desktop with a Save button and a Close button"
+/>
+<FigmaFile
+  file="fannvRpkOJK6uxxT33EKaa"
+  node="45%3A58"
+  alt=" modal for desktop with a Save button but no other actions"
+/>
+
+</Guideline>
+
+## Look & feel
+
+### Modal sizes
+
+Modals come in various sizes.
+These set the maximum width a modal can have on large screens.
+
+<!-- vale Kiwi.Abbreviations = NO -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{MODAL_SIZES.EXTRASMALL}</td>
+      <td>360px</td>
+    </tr>
+    <tr>
+      <td>{MODAL_SIZES.SMALL}</td>
+      <td>{theme.orbit.widthModalSmall}</td>
+    </tr>
+    <tr>
+      <td>{MODAL_SIZES.NORMAL}</td>
+      <td>{theme.orbit.widthModalNormal}</td>
+    </tr>
+    <tr>
+      <td>{MODAL_SIZES.LARGE}</td>
+      <td>{theme.orbit.widthModalLarge}</td>
+    </tr>
+    <tr>
+      <td>{MODAL_SIZES.EXTRALARGE}</td>
+      <td>{theme.orbit.widthModalExtraLarge}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ReactExample name="Modal sizes" />

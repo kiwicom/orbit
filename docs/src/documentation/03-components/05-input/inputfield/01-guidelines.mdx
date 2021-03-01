@@ -1,3 +1,99 @@
 ---
 title: Guidelines
 ---
+
+import InputHelpErrorSnippet from "snippets/input-help-error.mdx";
+import InputLabelsSnippet from "snippets/input-labels.mdx";
+import InputPlaceholderSnippet from "snippets/input-placeholder.mdx";
+
+<ReactExample name="InputField" />
+
+## When to use
+
+- To gather basic information from users.
+- To specify what kind of data users can enter.
+
+### When not to use
+
+- You have multiple related fields---use an [input group](/components/input/inputgroup/).
+- You want longer responses from users (such as feedback)---use a [textarea](/components/input/textarea/).
+- You want users to upload a file---use an [input file](/components/input/inputfile/).
+
+## Component status
+
+<ComponentStatus component="InputField" />
+
+## Content structure
+
+### Mobile
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="289%3A17"
+  alt="Label: provides a clear description of what users should fill in; placeholder: provides additional help for expected values; prefix: optionally adds icon or text context for expected values."
+/>
+
+### Desktop
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="576%3A1259"
+  alt="Label: provides a clear description of what users should fill in; placeholder: provides additional help for expected values; prefix: optionally adds icon or text context for expected values; suffix: optionally improves clarity (text adds context and ButtonLink is actionable)."
+/>
+
+## Behavior
+
+### Set input mode
+
+Setting the proper input mode for the field (such as number, email address)
+helps make it clear what's expected.
+It also displays the correct keyboard on mobile devices,
+making it easier for users to complete the field.
+
+## Content
+
+<InputLabelsSnippet />
+
+<InputHelpErrorSnippet />
+
+<!-- eslint-disable -->
+#### Help message
+<!-- eslint-enable -->
+
+<ReactExample name="InputField help" />
+
+#### Error message
+
+<ReactExample name="InputField error" />
+
+<InputPlaceholderSnippet />
+
+## Look & feel
+
+### Background color and borders
+
+It's important for fields to stand out from the background
+as something different that can be filled in.
+
+That's why our native fields come with a <InlineToken value="paletteCloudNormal" /> background
+to stand out against the <InlineToken value="paletteWhite" /> background natural to the app.
+And they don't have a border as that would make them too heavy and overwhelming.
+
+For our desktop and responsive fields,
+which are usually placed against a <InlineToken value="paletteCloudLight" /> background,
+the fields have a <InlineToken value="paletteWhite" /> background to stand out.
+They get a solid 1 px border to make sure it's clear they're a place to add input.
+
+### Suffixes
+
+On mobile devices, users are used to the pattern
+where the right side of the input allows them to clear what they've entered.
+So that's the only option for suffixes for native inputs.
+
+On desktops, there isn't such a common pattern,
+so there's more freedom for input suffixes.
+Use icons or text to add clarity
+and [button links](/components/action/buttonlink/) to add actions
+(such as opening more information).
+
+<ReactExample name="InputField suffixes" />

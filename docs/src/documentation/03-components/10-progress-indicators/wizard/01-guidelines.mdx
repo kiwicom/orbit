@@ -1,3 +1,50 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Wizard" />
+
+## When to use
+
+- You have a larger task (such as setting up an account) broken into steps.
+- Users need to complete information in each of the steps.
+- You want to nudge the user to complete the remaining steps.
+
+### When not to use
+
+- The process is out of the user's control and involves status updates---use a
+  [timeline](/components/progress-indicators/timeline/).
+
+## Component status
+
+<ComponentStatus component="Wizard" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="818%3A2010"
+  alt="Completed steps: show steps the users has completed with the option to return; step title: sets the context for each step; active step: shows the step the user is currently in; remaining steps: show steps the user has yet to complete (without current access)."
+/>
+
+## Behavior
+
+### Make it clear how to progress
+
+Wizards offers options for going back to completed steps.
+But the wizard itself has no option for moving forward.
+
+Make it clear in the rest of the screen how users can continue in the task.
+Use primary [buttons](/components/action/button/) to draw attention to the main action
+to get them to the next step.
+
+## Content
+
+### Keep progress even
+
+Manage user expectations by keeping it clear
+what's been done and what's left to do.
+Reduce anxiety by showing their progress and continuing forward smoothly.
+
+Break the process into approximately equal steps
+so that each step advances the user about the same amount toward the end.

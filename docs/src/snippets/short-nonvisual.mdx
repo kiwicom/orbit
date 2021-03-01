@@ -1,0 +1,28 @@
+### Include non-visual information
+
+<p>
+  {`${props.visual.replace(/^\w/, c => c.toUpperCase())}s`} can create important context for users,
+  but <a href="/foundation/accessibility/">not everyone sees the {props.visual}</a>. So make sure
+  everything necessary is presented in a non-visual form.
+</p>
+
+<>
+  {props.version !== 2 && (
+    <p>
+      This can mean including the name of the {props.associated} with the {props.visual} so anyone
+      who doesn't see the {props.visual} still gets the name. But if the {props.visual} is present
+      next to text with the name, don't include the name with the {props.visual} so it's not
+      repeated.
+    </p>
+  )}
+</>
+
+<>
+  {props.version === 2 && (
+    <p>
+      By default, the {props.visual} comes with alternative text that's the same as the name of the{" "}
+      {props.associated}. Check to make sure that this information is meaningful and not
+      unnecessarily repeated.
+    </p>
+  )}
+</>

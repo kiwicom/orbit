@@ -2,6 +2,8 @@ import _ from "lodash";
 import { Attributes, Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
+import { nameNOVCamel } from "../names";
+import { valueJavascript } from "../values";
 
 const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
 
@@ -89,5 +91,19 @@ export const attributeNOVType = {
       foundationType: "string",
     };
     return { ...foundation, ...attributes };
+  },
+};
+
+export const attributeDocs = {
+  name: "attribute/docs-platforms",
+  type: "attribute",
+  transformer: (prop: Property): Attributes => {
+    const { attributes } = prop;
+    const javascript = {
+      name: nameNOVCamel.transformer(prop),
+      value: valueJavascript.transformer(prop),
+    };
+    const docsPlatforms = { javascript };
+    return { docsPlatforms, ...attributes };
   },
 };

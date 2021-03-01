@@ -43,6 +43,20 @@ export const borderRadiusJavascript = {
 };
 
 /*
+  Additional mapping for the Javascript format.
+  Transforms all needed attributes, easier to use in the config file.
+ */
+export const valueJavascript = {
+  name: "value/javascript",
+  type: "value",
+  transformer: (prop: Property): Value => {
+    if (isSpacing(prop)) return spacingJavascript.transformer(prop);
+    if (isBorderRadius(prop)) return borderRadiusJavascript.transformer(prop);
+    return prop.value;
+  },
+};
+
+/*
   Transforms attributes from attribute/nov to interlaced identifiers,
   only for referenced aliases.
   e.g. foundation.space.value

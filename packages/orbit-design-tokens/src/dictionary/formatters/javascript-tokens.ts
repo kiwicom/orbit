@@ -14,18 +14,10 @@ import {
   createDeclareExport,
   createTypeImport,
 } from "../utils/create";
+import { getValue } from "../utils/get";
 
 const functionName = "createTokens";
 
-/*
-  Recursively gets value, because of alias referencing it can be nested { value: { value } }
- */
-const getValue = value => {
-  if (typeof value === "object") {
-    return getValue(value.value);
-  }
-  return value;
-};
 /*
   Used for generating typescript file that contains javascript and typescript declarations together.
  */

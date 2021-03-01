@@ -2,6 +2,7 @@ import {
   getFoundationSubVariantProperties,
   getFoundationVariantOnlyProperties,
   getFoundationNameValue,
+  getValue,
 } from "../get";
 
 const propertiesWithSubVariant = [
@@ -113,5 +114,10 @@ describe("get utils", () => {
         getFoundationNameValue("javascript"),
       ),
     ).toEqual(expected);
+  });
+  it("getValue should return expected", () => {
+    expect(getValue(5)).toEqual(5);
+    expect(getValue("5px")).toEqual("5px");
+    expect(getValue({ value: "5px", type: "font-size" })).toEqual("5px");
   });
 });

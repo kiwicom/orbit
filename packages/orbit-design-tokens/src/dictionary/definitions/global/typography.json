@@ -3,48 +3,58 @@
     "font-family": {
       "base": {
         "type": "font-family",
+        "category": "typography",
         "value": "{foundation.font-family.base}"
       }
     },
     "font-size": {
       "small": {
         "type": "font-size",
+        "category": "typography",
         "value": "{foundation.font-size.small}"
       },
       "normal": {
         "type": "font-size",
+        "category": "typography",
         "value": "{foundation.font-size.normal}"
       },
       "large": {
         "type": "font-size",
+        "category": "typography",
         "value": "{foundation.font-size.large}"
       }
     },
     "line-height": {
       "small": {
         "type": "line-height",
+        "category": "typography",
         "value": "{foundation.line-height.small}"
       },
       "normal": {
         "type": "line-height",
+        "category": "typography",
         "value": "{foundation.line-height.normal}"
       },
       "large": {
         "type": "line-height",
+        "category": "typography",
         "value": "{foundation.line-height.large}"
       }
     },
     "weight": {
       "normal": {
         "type": "font-height",
+        "category": "typography",
         "value": "{foundation.font-weight.normal}"
       },
       "medium": {
         "type": "font-height",
+        "category": "typography",
         "value": "{foundation.font-weight.medium}"
       },
       "bold": {
         "type": "font-height",
+        "category": "typography",
         "value": "{foundation.font-weight.bold}"
       }
     }

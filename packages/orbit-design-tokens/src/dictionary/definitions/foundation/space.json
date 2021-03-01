@@ -1,44 +1,44 @@
 {
   "foundation": {
     "space": {
-      "XXS": {
+      "half-x": {
+        "type": "spacing",
+        "value": 2,
+        "internal": true
+      },
+      "one-x": {
         "type": "spacing",
         "value": 4,
         "internal": true
       },
-      "XS": {
+      "two-x": {
         "type": "spacing",
         "value": 8,
         "internal": true
       },
-      "S": {
+      "three-x": {
         "type": "spacing",
         "value": 12,
         "internal": true
       },
-      "M": {
+      "four-x": {
         "type": "spacing",
         "value": 16,
         "internal": true
       },
-      "L": {
+      "six-x": {
         "type": "spacing",
         "value": 24,
         "internal": true
       },
-      "XL": {
+      "eight-x": {
         "type": "spacing",
         "value": 32,
         "internal": true
       },
-      "XXL": {
+      "ten-x": {
         "type": "spacing",
         "value": 40,
-        "internal": true
-      },
-      "XXXL": {
-        "type": "spacing",
-        "value": 52,
         "internal": true
       }
     }

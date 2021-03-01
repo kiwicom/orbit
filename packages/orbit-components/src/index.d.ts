@@ -53,7 +53,7 @@ export { TripLayover } from "./deprecated/TripSector/TripLayover/index";
 export { Truncate } from "./Truncate/index";
 export { Radio } from "./Radio/index";
 export { RatingStars } from "./RatingStars/index";
-export { Seat } from "./Seat/index";
+export { default as Seat, SeatLegend } from "./Seat/index";
 export { Select } from "./Select/index";
 export { Stack } from "./Stack/index";
 export { Sticky } from "./Sticky/index";

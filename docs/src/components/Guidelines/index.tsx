@@ -5,8 +5,8 @@ import { Stack, Text } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants.js";
 
-import HeaderWithLink from "./HeaderWithLink";
-import { sluggify } from "../utils/common";
+import HeaderWithLink from "../HeaderWithLink";
+import { slugify } from "../../utils/common";
 
 export interface GuidelineType {
   type: "do" | "dont";
@@ -50,14 +50,14 @@ const ContentContainer = styled.div`
 interface ImageContainerProps {
   noLeftPadding?: boolean;
   middleAlign?: boolean;
-  sizeCheck?: boolean | null | undefined;
+  isMediumMobile?: boolean | null;
 }
 
 const ImageContainer = styled.div<ImageContainerProps>`
-  ${({ noLeftPadding, sizeCheck, theme }) => css`
+  ${({ isMediumMobile, noLeftPadding, theme }) => css`
     padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceXLarge};
     ${noLeftPadding && "padding-left: 0;"}
-    width: ${sizeCheck ? "346px" : "100%"};
+    width: ${isMediumMobile ? "346px" : "100%"};
     background-color: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.spaceMedium};
   `}
@@ -88,7 +88,7 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
 export default function Guideline({ type = "do", title, children }: GuidelineProps) {
   const { isDesktop, isMediumMobile, isTablet } = useMediaQuery();
 
-  const images: Array<React.ReactNode> = [];
+  const images: React.ReactNode[] = [];
   let content = children;
 
   const checkIfImageAndAddToArray = object => {
@@ -113,7 +113,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   const typeOpposite = type === "do" ? "dont" : "do";
 
   return (
-    <StyledComponent id={sluggify(title) || undefined}>
+    <StyledComponent id={slugify(title)}>
       <Wrapper type={type} border={!(images.length > 1)}>
         {images.length < 2 &&
           (type === "do" ? (
@@ -123,11 +123,11 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ))}
         <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
           <ContentContainer>
-            <HeaderWithLink>{title}</HeaderWithLink>
+            <HeaderWithLink headerText={title} />
             {content}
           </ContentContainer>
           {images.length === 1 && (
-            <ImageContainer middleAlign sizeCheck={isMediumMobile}>
+            <ImageContainer middleAlign isMediumMobile={isMediumMobile}>
               {images}
             </ImageContainer>
           )}
@@ -142,7 +142,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={type} />
                 </DoDontHeaderWrapper>
-                <ImageContainer sizeCheck={isMediumMobile} noLeftPadding>
+                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
                   <ImageBorder type={type}>{images[0]}</ImageBorder>
                 </ImageContainer>
               </Stack>
@@ -150,7 +150,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={typeOpposite} />
                 </DoDontHeaderWrapper>
-                <ImageContainer sizeCheck={isMediumMobile} noLeftPadding>
+                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
                   <ImageBorder type={typeOpposite}>{images[1]}</ImageBorder>
                 </ImageContainer>
               </Stack>

@@ -3,33 +3,34 @@ import styled from "styled-components";
 import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
 
-import { sluggify } from "../utils/common";
+import { slugify } from "../utils/common";
 
 const StyledAnchorWrapper = styled.div`
   margin-top: -10px;
 
   svg {
-    visibility: hidden;
+    opacity: 0%;
+    transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in;
   }
 
   &:hover svg {
-    visibility: visible;
+    opacity: 100%;
   }
 `;
 
 interface Props {
-  children: string;
+  headerText: string;
 }
 
-const Header = ({ children }: Props) => (
+const Header = ({ headerText }: Props) => (
   <StyledAnchorWrapper>
     <Stack flex spacing="XXXSmall" align="center">
       <Heading as="h3" type="title3" spaceAfter="small">
-        {children}
+        {headerText}
       </Heading>
       <ButtonLink
         iconLeft={<LinkIcon />}
-        href={`#${sluggify(children)}`}
+        href={`#${slugify(headerText)}`}
         type="secondary"
         compact
       />

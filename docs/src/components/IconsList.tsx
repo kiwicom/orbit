@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   Button,
-  ButtonLink,
   Card,
   CardSection,
   Coupon,
-  Heading,
   InputField,
   Stack,
   Text,
   Tile,
 } from "@kiwicom/orbit-components";
-import { Link as LinkIcon, Search } from "@kiwicom/orbit-components/icons";
+import { Search } from "@kiwicom/orbit-components/icons";
 import iconsList from "@kiwicom/orbit-components/lib/data/icons.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -24,16 +22,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
-`;
-
-const StyledAnchorWrapper = styled.div`
-  svg {
-    visibility: hidden;
-  }
-
-  &:hover svg {
-    visibility: visible;
-  }
 `;
 
 interface IconObjectShape {
@@ -71,7 +59,7 @@ const Icon = ({ iconName, opened, setOpenedIcon }: IconProps) => {
         <Card>
           <CardSection>
             <Stack>
-              <HeaderWithLink>{iconName}</HeaderWithLink>
+              <HeaderWithLink headerText={iconName} />
               {iconObject.description && <Text>{iconObject.description}</Text>}
               <CodeBlock className="language-jsx">{`import { ${pascalName} } from "@kiwicom/orbit-components/icons"\n\n<${pascalName} />`}</CodeBlock>
               <Stack direction="row" justify="between">

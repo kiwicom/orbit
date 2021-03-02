@@ -4,7 +4,7 @@ import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
-import { GuidelineType } from "./Guideline";
+import { GuidelineType } from ".";
 
 interface GuidelineItemProps extends GuidelineType {
   children: React.ReactNode;
@@ -20,15 +20,15 @@ const Wrapper = styled.div<GuidelineType>`
 `;
 
 interface StyledContainerProps {
-  sizeCheck: boolean | null | undefined;
+  isTablet?: boolean | null;
 }
 
 const StyledContainer = styled.div<StyledContainerProps>`
-  ${({ sizeCheck, theme }) => css`
+  ${({ isTablet, theme }) => css`
     padding: 0 ${theme.orbit.spaceLarge};
     background-color: ${theme.orbit.paletteCloudLight};
     border-radius: 16px;
-    width: ${sizeCheck ? "50%" : "100%"};
+    width: ${isTablet ? "50%" : "100%"};
   `}
 `;
 
@@ -46,10 +46,10 @@ const GuidelineItem = ({ children, type }: GuidelineItemProps) => (
 const GuidelineContainer = ({ children, type }) => {
   const { isTablet } = useMediaQuery();
   return (
-    <StyledContainer sizeCheck={isTablet}>
+    <StyledContainer isTablet={isTablet}>
       <Wrapper type={type}>
         {(Array.isArray(children.props.children) &&
-          children.props.children.map(child => (
+          React.Children.map(children.props.children, child => (
             <GuidelineItem type={type}>{child.props.children}</GuidelineItem>
           ))) || (
           <GuidelineItem type={type}>{children.props.children.props.children}</GuidelineItem>

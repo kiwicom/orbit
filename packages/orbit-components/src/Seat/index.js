@@ -2,6 +2,7 @@
 import styled, { css } from "styled-components";
 import * as React from "react";
 
+import SeatLegend from "./components/SeatLegend";
 import Stack from "../Stack";
 import Text from "../Text";
 import randomID from "../utils/randomID";
@@ -142,4 +143,5 @@ const Seat = ({
   );
 };
 
+export { SeatLegend };
 export default Seat;

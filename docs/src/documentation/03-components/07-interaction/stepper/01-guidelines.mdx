@@ -1,3 +1,40 @@
 ---
 title: Guidelines
 ---
+
+import StepperTitlesSnippet from "snippets/stepper-titles.mdx";
+
+<ReactExample name="" />
+
+## When to use
+
+- To let users change small amounts of something and in a separate context.
+
+### When not to use
+
+- In a form---use an [input stepper](/components/input/inputstepper/).
+
+## Component status
+
+<ComponentStatus component="" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="194%3A0"
+  alt="Value: displays the current value; decrement controller: decreases the value and to improve accessibility it's best to add a title describing the action; increment controller: increases the value and to improve accessibility it's best to add a title describing the action."
+/>
+
+## Content
+
+### Make the value clear
+
+A stepper by itself only presents a number.
+Make sure it's clear from context what the value refers to
+and what users are changing by incrementing in either direction.
+
+You can do this with [text](/components/text/text/), [icons](/components/visuals/icon/),
+or other clues nearby to show the full context of the number.
+
+<StepperTitlesSnippet />

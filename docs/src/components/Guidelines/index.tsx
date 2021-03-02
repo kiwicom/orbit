@@ -89,7 +89,6 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   const { isDesktop, isMediumMobile, isTablet } = useMediaQuery();
 
   const images: React.ReactNode[] = [];
-  let content = children;
 
   const checkIfImageAndAddToArray = object => {
     if (object.props?.children?.props?.className === imageWrapperClass) {
@@ -99,16 +98,22 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
     return false;
   };
 
-  if (Array.isArray(children)) {
-    content = children.map(child => {
-      if (checkIfImageAndAddToArray(child)) {
-        return "";
-      }
-      return child;
-    });
-  } else if (checkIfImageAndAddToArray(children)) {
-    content = ""; // only should apply for guidelines with only an image
-  }
+  const extractContent = object => {
+    if (Array.isArray(object)) {
+      return React.Children.map(object, child => {
+        if (checkIfImageAndAddToArray(child)) {
+          return "";
+        }
+        return child;
+      });
+    }
+    if (checkIfImageAndAddToArray(object)) {
+      return ""; // only should apply for guidelines with only an image
+    }
+    return object;
+  };
+
+  const content = extractContent(children);
 
   const typeOpposite = type === "do" ? "dont" : "do";
 

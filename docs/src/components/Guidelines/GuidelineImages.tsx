@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { Stack } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
-import { DoDontHeader, GuidelineType } from "./Guideline";
+import { DoDontHeader, GuidelineType } from ".";
 
 const GuidelineContainer = styled.div`
   ${({ theme }) => css`
@@ -14,17 +14,17 @@ const GuidelineContainer = styled.div`
   `}
 `;
 
-interface SizeCheckProps {
-  sizeCheck: boolean | null | undefined;
+interface isMediumMobileProps {
+  isMediumMobile?: boolean | null;
 }
 
-interface ImageContainerProps extends SizeCheckProps {
+interface ImageContainerProps extends isMediumMobileProps {
   leftPadding?: boolean;
 }
 
 const ImageContainer = styled.div<ImageContainerProps>`
-  ${({ sizeCheck, theme }) => css`
-    width: ${sizeCheck ? "424px" : "100%"};
+  ${({ isMediumMobile, theme }) => css`
+    width: ${isMediumMobile ? "424px" : "100%"};
     background-color: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.spaceMedium};
     padding: ${theme.orbit.spaceXLarge};
@@ -45,13 +45,12 @@ interface GuidelineWithImageProps extends GuidelineType, ImageProps {}
 const GuidelineWithImage = ({ children, type }: GuidelineWithImageProps) => {
   const { isMediumMobile } = useMediaQuery();
   const image = children[0];
-  const content = children.slice();
-  content.shift();
+  const content = children.slice(1, children.length);
   return (
     <GuidelineContainer>
       <Border type={type}>
         <Stack>
-          <ImageContainer sizeCheck={isMediumMobile}>{image}</ImageContainer>
+          <ImageContainer isMediumMobile={isMediumMobile}>{image}</ImageContainer>
           <Stack spacing="small">
             <DoDontHeader type={type} />
             {content}

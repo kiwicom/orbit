@@ -11,12 +11,16 @@ export const pascalize = (str: string) =>
     .replace(/-(.)/g, (_match, chartacter: string) => chartacter.toUpperCase())
     .replace(/^(.)/, ($1: string) => $1.toUpperCase());
 
-export const sluggify = (str: string) =>
-  str
-    .trim()
-    .toLowerCase()
-    .replace(/[\s_]+/g, "-") // replace all spaces and underscores with hyphens
-    .replace(/[^A-Za-z0-9-/]+/g, ""); // remove everything not basic
+export const slugify = (str: string) => {
+  if (str) {
+    return str
+      .trim()
+      .toLowerCase()
+      .replace(/[\s_]+/g, "-") // replace all spaces and underscores with hyphens
+      .replace(/[^A-Za-z0-9-/]+/g, ""); // remove everything not basic
+  }
+  return "";
+};
 
 export const copyTimeout = (
   copied: boolean,

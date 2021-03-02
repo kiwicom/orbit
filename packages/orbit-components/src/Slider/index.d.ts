@@ -7,10 +7,10 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Slider";
 
-type Label = string | string[];
-type Value = number | number[];
-type Callback = (value: Value) => void | Promise<void>;
-type Data = number[];
+export type Label = string | string[];
+export type Value = number | number[];
+export type Data = number[];
+export type Callback = (value: Value) => void | Promise<void>;
 
 export interface Props extends Common.Global {
   readonly minValue?: number;

@@ -53,6 +53,7 @@ const pathOverwrites = {
   TripSector: "deprecated/TripSector",
   TripSegment: "deprecated/TripSegment",
   TimelineStep: "Timeline/TimelineStep",
+  SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
 };
 

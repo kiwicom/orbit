@@ -34,6 +34,24 @@ const StyledAnchorWrapper = styled.div`
   }
 `;
 
+interface StyledRatioContainerProps {
+  smallVisual?: boolean;
+}
+
+const StyledRatioContainer = styled.div<StyledRatioContainerProps>`
+  position: relative;
+  padding-bottom: calc(
+    400 / 677 * ${({ smallVisual }) => (smallVisual ? "25" : "100")}%
+  ); /* height / width = ratio */
+`;
+
+const StyledImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
 type VisualObjectShape = IllustrationObjectShape | IconObjectShape;
 
 interface ObjectActions {
@@ -59,6 +77,7 @@ const Visual = ({
   list,
   opened,
   setOpenedVisual,
+  smallVisual,
   visualName,
 }: VisualProps) => {
   const [copied, setCopied] = useState(false);
@@ -71,11 +90,13 @@ const Visual = ({
   return (
     <div id={visualName}>
       <Tile onClick={() => setOpenedVisual(opened ? "" : visualName)}>
+        <StyledRatioContainer smallVisual={smallVisual}>
+          <StyledImage src={getImgSource(visualObject)} alt="" />
+        </StyledRatioContainer>
         <Stack justify="between">
-          <img src={getImgSource(visualObject)} alt="" />
+          <Text type="secondary">{visualName}</Text>
           {"character" in visualObject && <Coupon>{visualObject.character}</Coupon>}
         </Stack>
-        <Text type="secondary">{visualName}</Text>
       </Tile>
       {opened && (
         <Card>
@@ -104,11 +125,11 @@ const Visual = ({
   );
 };
 
-interface VisualListProps extends ObjectActions {
+interface VisualListProps extends ObjectActions, StyledRatioContainerProps {
   list: { [name: string]: VisualObjectShape };
 }
 
-const VisualList = ({ actions, exampleCode, getImgSource, list }: VisualListProps) => {
+const VisualList = ({ actions, exampleCode, getImgSource, list, smallVisual }: VisualListProps) => {
   const allVisualNames = Object.keys(list);
   const [openedVisual, setOpenedVisual] = useState("");
   const [filter, setFilter] = useState("");
@@ -138,6 +159,7 @@ const VisualList = ({ actions, exampleCode, getImgSource, list }: VisualListProp
             getImgSource={getImgSource}
             exampleCode={exampleCode}
             list={list}
+            smallVisual={smallVisual}
           />
         ))}
       </Grid>

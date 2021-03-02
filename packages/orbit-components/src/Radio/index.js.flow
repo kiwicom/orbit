@@ -4,6 +4,7 @@
 */
 import * as React from "react";
 
+import Tooltip from "../Tooltip";
 import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
@@ -16,7 +17,7 @@ export type Props = {|
   +info?: React.Node,
   +readOnly?: boolean,
   +tabIndex?: string | number,
-  +tooltip?: ?React.Element<any>,
+  +tooltip?: ?React.Element<typeof Tooltip>,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
 |};

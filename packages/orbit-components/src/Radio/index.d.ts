@@ -3,6 +3,7 @@
 
 import * as React from "react";
 
+import Tooltip from "../Tooltip";
 import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Radio";
@@ -15,6 +16,7 @@ export interface Props extends Common.Global, Common.Ref {
   readonly name?: string;
   readonly checked?: boolean;
   readonly info?: React.ReactNode;
+  readonly tooltip?: React.ElementType<typeof Tooltip>;
   readonly readOnly?: boolean;
   readonly tabIndex?: string | number;
   // InputEvent

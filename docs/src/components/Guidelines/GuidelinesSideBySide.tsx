@@ -48,12 +48,9 @@ const GuidelineContainer = ({ children, type }) => {
   return (
     <StyledContainer isTablet={isTablet}>
       <Wrapper type={type}>
-        {(Array.isArray(children.props.children) &&
-          React.Children.map(children.props.children, child => (
-            <GuidelineItem type={type}>{child.props.children}</GuidelineItem>
-          ))) || (
-          <GuidelineItem type={type}>{children.props.children.props.children}</GuidelineItem>
-        )}
+        {React.Children.map(children.props?.children, child => (
+          <GuidelineItem type={type}>{child.props.children}</GuidelineItem>
+        )) || <GuidelineItem type={type}>{children.props?.children.props?.children}</GuidelineItem>}
       </Wrapper>
     </StyledContainer>
   );

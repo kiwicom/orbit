@@ -74,9 +74,7 @@ const ImageBorder = styled.div<GuidelineType>`
 `;
 
 const DoDontHeaderWrapper = styled.div`
-  ${({ theme }) => css`
-    padding-left: ${theme.orbit.spaceLarge};
-  `}
+  padding-left: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
 export const DoDontHeader = ({ type }: GuidelineType) => (
@@ -88,32 +86,29 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
 export default function Guideline({ type = "do", title, children }: GuidelineProps) {
   const { isDesktop, isMediumMobile, isTablet } = useMediaQuery();
 
-  const images: React.ReactNode[] = [];
-
-  const checkIfImageAndAddToArray = object => {
-    if (object.props?.children?.props?.className === imageWrapperClass) {
-      images.push(object);
-      return true;
-    }
+  const isImage = object => {
+    if (object.props?.children?.props?.className === imageWrapperClass) return true;
     return false;
   };
 
-  const extractContent = object => {
-    if (Array.isArray(object)) {
-      return React.Children.map(object, child => {
-        if (checkIfImageAndAddToArray(child)) {
-          return "";
-        }
-        return child;
-      });
-    }
-    if (checkIfImageAndAddToArray(object)) {
-      return ""; // only should apply for guidelines with only an image
-    }
-    return object;
+  interface Content {
+    images: React.ReactNode[];
+    content: React.ReactNode;
+  }
+
+  const extractContent = data => {
+    return React.Children.toArray(data).reduce(
+      (acc: Content, cur) => {
+        if (isImage(cur)) acc.images.push(cur);
+        else acc.content = cur;
+
+        return acc;
+      },
+      { images: [], content: null },
+    );
   };
 
-  const content = extractContent(children);
+  const { images, content } = extractContent(children);
 
   const typeOpposite = type === "do" ? "dont" : "do";
 

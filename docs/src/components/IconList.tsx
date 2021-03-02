@@ -40,6 +40,7 @@ const IconList = () => {
       actions={actions}
       getImgSource={getImgSource}
       exampleCode={exampleCode}
+      smallVisual
     />
   );
 };

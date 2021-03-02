@@ -1,3 +1,89 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="NavigationBar" />
+
+## When to use
+
+- To offer top-level navigation and branding (such as a logo).
+- To keep navigation in a consistent place throughout the app.
+
+### When not to use
+
+- For more complicated or lower-level navigation---use a [drawer](/components/overlay/drawer/).
+- For navigation within a screen or links in an app footer--- use [tabs](/components/structure/tabs/)
+- For lists of navigation links (in or out of a navigation bar)---use a [link list](/components/navigation/linklist/).
+
+## Component status
+
+<ComponentStatus component="NavigationBar" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="527%3A0"
+  alt="Native bar (design first for native mobile): Back button: allows users to go back to a previous screen; title: gives users context for where they are; action: adds an action for the entire screen. Responsive bar (then make a responsive design): Home button: enables users to navigate to the top level; dropdown: optionally opens additional nav items; link list: optionally places multiple buttons next to one another; menu: optionally opens additional options."
+/>
+
+## Behavior
+
+### Vary items by context
+
+On large screens, it can help to have full ideas written out.
+Use clear nouns to describe what each menu item means.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Help
+- English
+- Careers
+
+</Do>
+
+<Dont>
+
+- Get help now
+- Change the interface language
+- Look for a job
+
+</Dont>
+
+</GuidelinesSideBySide>
+
+<ReactExample name="NavigationBar default" />
+
+On smaller screens, there's not space for many words.
+Use [icons](/components/visuals/icon/) to communicate the main ideas.
+Just remember to include text equivalents
+so [everyone knows](/foundation/accessibility/) what the items mean.
+
+When using icons, keep them aligned to the side without large gaps in between.
+
+<ReactExample name="NavigationBar icons" />
+
+### Collapse menus in smaller contexts
+
+When you have complicated navigation but only limited space,
+use [progressive disclosure](/design-patterns/progressive-disclosure/).
+Keep most items hidden at first
+and offer dropdowns and [drawers](/components/overlay/drawer/) to reveal them.
+
+Make sure users know how to open the items.
+Use common patterns like a [menu icon](/foundation/icons/#menu-hamburger)
+to make it clear what's possible.
+
+<ReactExample name="NavigationBar menu" />
+
+## Content
+
+### Keep app bar clean
+
+In mobile apps, the navigation bar can't hold much.
+It's not the right place to hold menus or other complicated options.
+
+If you want to add links to options in an app,
+consider using a tab bar in the footer.

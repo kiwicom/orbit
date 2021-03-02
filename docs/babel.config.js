@@ -1,4 +1,4 @@
 module.exports = {
-  presets: ["gatsby"],
+  presets: ["gatsby", "@babel/preset-typescript"],
   plugins: ["styled-components", "inline-react-svg"],
 };

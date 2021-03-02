@@ -1,3 +1,67 @@
 ---
 title: Guidelines
 ---
+
+<ReactExample name="Pagination" />
+
+## When to use
+
+- To enable users to focus on a few items at a time.
+- To make it clear there's more to explore when ready.
+- For large collections of items.
+
+### When not to use
+
+- For only a view items---keep them all on one page.
+
+## Component status
+
+<ComponentStatus component="Pagination" />
+
+## Content structure
+
+<FigmaFile
+  file="4QJZqvBvRrLu6t9mwObCkA"
+  node="580%3A33"
+  alt="Selected page: indicates which page is currently being viewed; ellipsis: represents other pages in between to save horizontal space; page count: indicates how many pages there are in total; labels: can be hidden when needed. "
+/>
+
+## Behavior
+
+### Use for many items
+
+Pagination is great at breaking up large numbers of similar items into smaller groups.
+You don't need to hide items behind pages when they can all fit in a single manageable view.
+
+Generally, use pagination if you have more than 25 or so items to display.
+
+### Ellipses
+
+When the number of pages gets too large,
+displaying them all would be overwhelming.
+So if the total page count is 8 or higher,
+the pages appear compactly.
+Ellipses replace some pages so a reasonable number are shown.
+
+<ReactExample name="Pagination many pages" />
+
+### Disabled buttons
+
+While we generally [recommend against using disabled buttons](/components/action/button/#avoid-disabled-buttons),
+they are used in pagination on the first and last page.
+If the buttons were hidden,
+it would cause the other ones to jump around on the page.
+
+With all of the other buttons next to the disabled one,
+it should be clear enough to users what they need to do to enable the button.
+So in this case it should work without major issues.
+
+## Look & feel
+
+### Responsive design
+
+In small spaces, a list of pages would take up too much space.
+So for small screens, the complete list of buttons for each page is hidden.
+Instead, only the current page and total page count are show with the previous and next buttons.
+
+<ReactExample name="Pagination default" size="Mobile small" />

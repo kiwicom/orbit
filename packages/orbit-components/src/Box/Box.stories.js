@@ -190,10 +190,10 @@ storiesOf("Box", module)
   })
   .add("Positions", () => {
     const position = select("position", Object.values(POSITION), POSITION.RELATIVE);
-    const top = text("top", null);
-    const left = text("left", null);
-    const right = text("right", null);
-    const bottom = text("bottom", null);
+    const top = text("top", "");
+    const left = text("left", "");
+    const right = text("right", "");
+    const bottom = text("bottom", "");
 
     return (
       <Box

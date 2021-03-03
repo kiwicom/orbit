@@ -93,6 +93,7 @@ export { LayoutColumn } from "./Layout/LayoutColumn/index";
 export { Grid } from "./utils/Grid/index";
 export { Stepper } from "./Stepper/index";
 export { StepperStateless } from "./Stepper/StepperStateless/index";
+export { SocialButton } from "./SocialButton/index";
 export { StopoverArrow } from "./StopoverArrow/index";
 export { SmartPassV1 } from "./SmartPassIllustrations/index";
 export { SmartPassV2 } from "./SmartPassIllustrations/index";

@@ -1,0 +1,28 @@
+{
+  "component": {
+    "illustration": {
+      "height": {
+        "extra-small": {
+          "type": "size",
+          "value": 90
+        },
+        "small": {
+          "type": "size",
+          "value": 120
+        },
+        "medium": {
+          "type": "size",
+          "value": 200
+        },
+        "large": {
+          "type": "size",
+          "value": 280
+        },
+        "display": {
+          "type": "size",
+          "value": 460
+        }
+      }
+    }
+  }
+}

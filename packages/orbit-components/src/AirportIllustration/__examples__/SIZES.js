@@ -14,7 +14,7 @@ export default {
         <Heading as="h3" type="title3">
           Extra small
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationSmall}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightExtraSmall}</Text>
         <AirportIllustration
           size="extraSmall"
           alt="Follow all directions for priority security lanes"
@@ -25,7 +25,7 @@ export default {
         <Heading as="h3" type="title3">
           Small
         </Heading>
-        <Text>Height: 120px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightSmall}</Text>
         <AirportIllustration
           size="small"
           alt="Follow all directions for priority security lanes"
@@ -36,7 +36,7 @@ export default {
         <Heading as="h3" type="title3">
           Medium
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationMedium}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightMedium}</Text>
         <AirportIllustration
           size="medium"
           alt="Follow all directions for priority security lanes"
@@ -47,7 +47,7 @@ export default {
         <Heading as="h3" type="title3">
           Large
         </Heading>
-        <Text>Height: 280px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightLarge}</Text>
         <AirportIllustration
           size="large"
           alt="Follow all directions for priority security lanes"
@@ -58,7 +58,7 @@ export default {
         <Heading as="h3" type="title3">
           Display
         </Heading>
-        <Text>Height: 460px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightDisplay}</Text>
         <AirportIllustration
           size="display"
           alt="Follow all directions for priority security lanes"

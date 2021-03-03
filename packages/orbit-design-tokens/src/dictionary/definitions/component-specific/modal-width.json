@@ -1,0 +1,28 @@
+{
+  "component": {
+    "modal": {
+      "width": {
+        "extra-small": {
+          "type": "size",
+          "value": 360
+        },
+        "small": {
+          "type": "size",
+          "value": 540
+        },
+        "normal": {
+          "type": "size",
+          "value": 740
+        },
+        "large": {
+          "type": "size",
+          "value": 900
+        },
+        "extra-large": {
+          "type": "size",
+          "value": 1280
+        }
+      }
+    }
+  }
+}

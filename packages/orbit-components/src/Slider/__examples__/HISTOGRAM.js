@@ -5,7 +5,11 @@ import Slider from "../index";
 import calculateCountOf from "../utils/calculateCountOf";
 import type { Value } from "../index";
 
-const randomArray = Array.from({ length: 20 }, () => Math.floor(Math.random() * 40));
+const randomArray =
+  process.env.NODE_ENV === "loki"
+    ? // in visual regression testing we need to always use the same array to avoid flakiness
+      [12, 23, 29, 11, 12, 11, 22, 39, 25, 31, 22, 36, 14, 39, 37, 14, 1, 24, 23, 21]
+    : Array.from({ length: 20 }, () => Math.floor(Math.random() * 40));
 const availableFlights = [0, ...randomArray];
 
 export default {

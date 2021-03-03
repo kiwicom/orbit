@@ -1,6 +1,6 @@
 import { Property, Value } from "style-dictionary";
 
-import { isSpacing, isBorderRadius, isSize, isZIndex, isBreakpoint } from "../../utils/is";
+import { isBorderRadius, isSize, isZIndex, isBreakpoint } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 import { stringify, pixelized } from "../../utils/string";
 

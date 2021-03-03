@@ -5,8 +5,6 @@ const isTypeOf = ({ type, attributes: { category } }: Property, typeName: string
 
 export const isColor = (prop: Property): boolean => isTypeOf(prop, "color");
 
-export const isSpacing = (prop: Property): boolean => isTypeOf(prop, "spacing");
-
 export const isBorderRadius = (prop: Property): boolean => isTypeOf(prop, "border-radius");
 
 export const isZIndex = (prop: Property): boolean => isTypeOf(prop, "z-index");

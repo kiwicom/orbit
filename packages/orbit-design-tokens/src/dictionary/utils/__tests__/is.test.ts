@@ -1,4 +1,12 @@
-import { isColor, isSpacing, isInternal, isNotInternal, isBorderRadius } from "../is";
+import {
+  isColor,
+  isInternal,
+  isNotInternal,
+  isBorderRadius,
+  isZIndex,
+  isBreakpoint,
+  isSize,
+} from "../is";
 
 const tokenPlaceholder = ({ type, internal }) => ({
   type,
@@ -21,15 +29,23 @@ describe("is utils", () => {
     expect(isColor(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);
     expect(isColor(tokenPlaceholder({ type: "spacing", internal: true }))).toEqual(false);
   });
-  it("isSpacing should return expected", () => {
-    expect(isSpacing(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isSpacing(tokenPlaceholder({ type: "spacing", internal: true }))).toEqual(true);
-  });
   it("isBorderRadius should return expected", () => {
     expect(isBorderRadius(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
     expect(isBorderRadius(tokenPlaceholder({ type: "border-radius", internal: true }))).toEqual(
       true,
     );
+  });
+  it("isZIndex should return expected", () => {
+    expect(isZIndex(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isZIndex(tokenPlaceholder({ type: "z-index", internal: true }))).toEqual(true);
+  });
+  it("isBreakpoint should return expected", () => {
+    expect(isBreakpoint(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isBreakpoint(tokenPlaceholder({ type: "breakpoint", internal: true }))).toEqual(true);
+  });
+  it("isSize should return expected", () => {
+    expect(isSize(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isSize(tokenPlaceholder({ type: "size", internal: true }))).toEqual(true);
   });
   it("isInternal should return expected", () => {
     expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);

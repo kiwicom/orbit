@@ -28,15 +28,6 @@ const getButtonTypeToken: GetButtonTypeToken = (name, type, theme) => {
       [TYPE_OPTIONS.PRIMARY_SUBTLE]: theme.orbit.buttonPrimarySubtleBackgroundActive,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.buttonCriticalSubtleBackgroundActive,
     },
-    // TODO: IS THIS BEING USED?
-    [TOKENS.backgroundButtonFocus]: {
-      [TYPE_OPTIONS.PRIMARY]: theme.orbit.buttonPrimaryBackgroundFocus,
-      [TYPE_OPTIONS.SECONDARY]: theme.orbit.buttonSecondaryBackgroundFocus,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.buttonCriticalBackgroundFocus,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.buttonWhiteBackgroundFocus,
-      [TYPE_OPTIONS.PRIMARY_SUBTLE]: theme.orbit.buttonPrimarySubtleBackgroundFocus,
-      [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.buttonCriticalSubtleBackgroundFocus,
-    },
     [TOKENS.colorTextButton]: {
       [TYPE_OPTIONS.PRIMARY]: theme.orbit.buttonPrimaryForeground,
       [TYPE_OPTIONS.SECONDARY]: theme.orbit.buttonSecondaryForeground,

@@ -40,13 +40,13 @@ export default {
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Color</Heading>
         <ButtonPrimitive
-          icons={{ foreground: defaultTheme.orbit.colorIconSuccess }}
+          icons={{ foreground: defaultTheme.orbit.iconForegroundSuccess }}
           iconLeft={<Icons.Edit />}
         >
           Edit
         </ButtonPrimitive>
         <ButtonPrimitive
-          icons={{ foreground: defaultTheme.orbit.colorIconInfo }}
+          icons={{ foreground: defaultTheme.orbit.iconForegroundInfo }}
           iconLeft={<Icons.Edit />}
         >
           Edit
@@ -55,19 +55,19 @@ export default {
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Color on hover, focus, and active</Heading>
         <ButtonPrimitive
-          icons={{ foregroundHover: defaultTheme.orbit.colorIconSuccess }}
+          icons={{ foregroundHover: defaultTheme.orbit.iconForegroundSuccess }}
           iconLeft={<Icons.Edit />}
         >
           Edit
         </ButtonPrimitive>
         <ButtonPrimitive
-          icons={{ foregroundFocus: defaultTheme.orbit.colorIconSuccess }}
+          icons={{ foregroundFocus: defaultTheme.orbit.iconForegroundSuccess }}
           iconLeft={<Icons.Edit />}
         >
           Edit
         </ButtonPrimitive>
         <ButtonPrimitive
-          icons={{ foregroundActive: defaultTheme.orbit.colorIconSuccess }}
+          icons={{ foregroundActive: defaultTheme.orbit.iconForegroundSuccess }}
           iconLeft={<Icons.Edit />}
         >
           Edit

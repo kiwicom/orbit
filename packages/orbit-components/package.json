@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.109.2",
+  "version": "0.110.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "scripts": {
@@ -71,6 +71,6 @@
   },
   "dependencies": {
     "@adeira/js": "^1.3.0",
-    "@kiwicom/orbit-design-tokens": "^0.13.3"
+    "@kiwicom/orbit-design-tokens": "^0.13.4"
   }
 }

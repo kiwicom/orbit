@@ -4,7 +4,7 @@ import { Attributes, Property } from "style-dictionary";
 import { errorTransform } from "../../utils/errorMessage";
 import { nameNOVCamel } from "../names";
 import { valueJavascript } from "../values";
-import { isBoxShadow } from "../../utils/is";
+import { isZIndex, isBreakpoint, isBoxShadow } from "../../utils/is";
 import { falsyString, pixelized } from "../../utils/string";
 
 const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
@@ -27,7 +27,7 @@ export const attributeNOV = {
     for (let i = 0; i < path.length && i < NOV_STRUCTURE.length; i += 1) {
       generatedAttrs[NOV_STRUCTURE[i]] = path[i];
     }
-    return Object.assign(generatedAttrs, attributes);
+    return { ...generatedAttrs, ...attributes };
   },
 };
 
@@ -40,7 +40,7 @@ export const attributeIsReferenced = {
       throw new Error(errorTransform("attribute/nov/isReferenced", "attribute/nov"));
     }
     const aliased = attributes.namespace === "foundation" || /{[\w.-]+}/g.test(String(value));
-    return { aliased, ...attributes };
+    return { ...attributes, aliased };
   },
 };
 
@@ -59,7 +59,7 @@ export const attributeNOVCamelCase = {
       }
     }
 
-    return Object.assign(attributes, camelCased);
+    return { ...attributes, ...camelCased };
   },
 };
 
@@ -76,23 +76,24 @@ export const attributeNOVAlias = {
       throw new Error(errorTransform("attribute/nov/alias", "attribute/nov"));
     }
     const foundationAlias = subVariant || variant;
-    return { foundationAlias, ...attributes };
+    return { ...attributes, foundationAlias };
   },
 };
 
 /*
   Adds foundationType to attributes. Useful for type generation.
-  Needs to be used together with "attribute/nov".
  */
-export const attributeNOVType = {
-  name: "attribute/nov/type",
+export const attributeJavascriptType = {
+  name: "attribute/javascript/type",
   type: "attribute",
-  transformer: ({ attributes }: Property): Attributes => {
-    const foundation = {
-      // This will need eventually polish - there will be more types, just placeholder for now
-      foundationType: "string",
+  transformer: (prop: Property): Attributes => {
+    const { attributes } = prop;
+    const getFoundationType = p => {
+      if (isZIndex(p) || isBreakpoint(p)) return "number";
+      return "string";
     };
-    return { ...foundation, ...attributes };
+    const foundationType = getFoundationType(prop);
+    return { ...attributes, foundationType };
   },
 };
 
@@ -131,6 +132,7 @@ export const attributeJavascript = {
     return attributes;
   },
 };
+
 export const attributeDocs = {
   name: "attribute/docs-platforms",
   type: "attribute",

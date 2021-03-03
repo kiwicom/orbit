@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
@@ -135,7 +135,7 @@ const StyledOverlay = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
+  background-color: ${({ theme }) => transparentColor(theme.orbit.paletteInkNormal, 60)};
   transition: ${transition(["opacity"], "normal", "ease-in-out")};
   z-index: 999;
 

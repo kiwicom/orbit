@@ -1,28 +1,18 @@
 import { Property, Value } from "style-dictionary";
 
-import { isSpacing, isBorderRadius } from "../../utils/is";
+import { isSpacing, isBorderRadius, isSize, isZIndex, isBreakpoint } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
+import { stringify, pixelized } from "../../utils/string";
 
 /*
-  Transforms spacing to pixel value.
+  Transforms sizes to pixel value.
  */
-export const spacingJavascript = {
-  name: "value/spacing/javascript",
+export const sizeJavascript = {
+  name: "value/size/javascript",
   type: "value",
-  matcher: isSpacing,
+  matcher: isSize,
   transformer: ({ value }: Property): Value => {
-    return `${value}px`;
-  },
-};
-
-/*
-  Transforms value to Javascript compatible format with double quotes.
- */
-export const stringJavascript = {
-  name: "value/string/javascript",
-  type: "value",
-  transformer: ({ value }: Property): Value => {
-    return `"${value}"`;
+    return pixelized(value);
   },
 };
 
@@ -35,10 +25,23 @@ export const borderRadiusJavascript = {
   matcher: isBorderRadius,
   transformer: ({ value }: Property): Value => {
     const normalizedValue = Number(value);
-    if (normalizedValue) {
-      return `${normalizedValue}px`;
-    }
-    return value;
+    return stringify(normalizedValue ? `${normalizedValue}px` : value);
+  },
+};
+
+/*
+  Additional mapping for the Javascript format.
+  Transforms all needed attributes, easier to use in the config file.
+ */
+export const valueJavascript = {
+  name: "value/javascript",
+  type: "value",
+  matcher: ({ attributes: { aliased } }: Property): boolean => !aliased,
+  transformer: (prop: Property): Value => {
+    if (isSize(prop)) return sizeJavascript.transformer(prop);
+    if (isBorderRadius(prop)) return borderRadiusJavascript.transformer(prop);
+    if (isZIndex(prop) || isBreakpoint(prop)) return Number(prop.value);
+    return stringify(prop.value);
   },
 };
 

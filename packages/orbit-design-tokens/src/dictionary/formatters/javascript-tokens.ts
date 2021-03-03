@@ -16,6 +16,8 @@ import {
   createArrayExpression,
   createDefaultImport,
 } from "../utils/create";
+import { isColor } from "../utils/is";
+import { falsyString } from "../utils/string";
 import { getValue } from "../utils/get";
 import { isBoxShadow } from "../utils/is";
 import { falsyString } from "../utils/string";
@@ -30,11 +32,15 @@ const typescriptFactory = allProperties => {
 
   const foundationImport = createTypeImport("foundation", "./defaultFoundation");
 
+  const transparentColorImport = falsyString(
+    allProperties.some(({ opacity }) => opacity != null),
+    createDefaultImport("transparentColor", "./transparentColor"),
+  );
+
   const boxShadowImport = falsyString(
     allProperties.some(isBoxShadow),
     createDefaultImport("boxShadow", "./boxShadow"),
   );
-
   /*
     Generates "export type Tokens = { key: value }
    */
@@ -65,8 +71,11 @@ const typescriptFactory = allProperties => {
   };
 
   const tokens = _.map(allProperties, prop => {
-    const { name, value } = prop;
+    const { name, value, opacity } = prop;
     const plainValue = getValue(value);
+    if (isColor(prop) && opacity) {
+      return createObjectProperty(name, `transparentColor(${plainValue}, ${opacity})`);
+    }
     if (isBoxShadow(prop)) {
       const {
         attributes: { "box-shadow": boxShadow },
@@ -113,8 +122,9 @@ const typescriptFactory = allProperties => {
   return formatCode(
     [
       generatedWarning,
-      foundationImport,
+      transparentColorImport,
       boxShadowImport,
+      foundationImport,
       tokensType,
       functionType,
       createTokens,

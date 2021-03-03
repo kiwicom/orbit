@@ -9,6 +9,12 @@ export const isSpacing = (prop: Property): boolean => isTypeOf(prop, "spacing");
 
 export const isBorderRadius = (prop: Property): boolean => isTypeOf(prop, "border-radius");
 
+export const isZIndex = (prop: Property): boolean => isTypeOf(prop, "z-index");
+
+export const isBreakpoint = (prop: Property): boolean => isTypeOf(prop, "breakpoint");
+
+export const isSize = (prop: Property): boolean => isTypeOf(prop, "size");
+
 export const isBoxShadow = (prop: Property): boolean => isTypeOf(prop, "box-shadow");
 
 export const isInternal = ({ internal }: Property): boolean => !!internal;

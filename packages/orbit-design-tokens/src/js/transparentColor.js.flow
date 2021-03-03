@@ -1,0 +1,4 @@
+// @flow
+export type TransparentColor = (color: string, opacity: number) => string;
+
+declare export default TransparentColor;

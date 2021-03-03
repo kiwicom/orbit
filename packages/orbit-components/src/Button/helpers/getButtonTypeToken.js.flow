@@ -6,7 +6,6 @@ export type TokenName =
   | "backgroundButton"
   | "backgroundButtonHover"
   | "backgroundButtonActive"
-  | "backgroundButtonFocus"
   | "colorTextButton"
   | "colorTextButtonHover"
   | "colorTextButtonActive"

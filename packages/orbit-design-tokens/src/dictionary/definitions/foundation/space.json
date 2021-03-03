@@ -2,42 +2,42 @@
   "foundation": {
     "space": {
       "half-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 2,
         "internal": true
       },
       "one-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 4,
         "internal": true
       },
       "two-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 8,
         "internal": true
       },
       "three-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 12,
         "internal": true
       },
       "four-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 16,
         "internal": true
       },
       "six-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 24,
         "internal": true
       },
       "eight-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 32,
         "internal": true
       },
       "ten-x": {
-        "type": "spacing",
+        "type": "size",
         "value": 40,
         "internal": true
       }

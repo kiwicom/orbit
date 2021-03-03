@@ -9,34 +9,34 @@
     },
     "font-size": {
       "small": {
-        "type": "font-size",
+        "type": "size",
         "value": 12,
         "internal": true
       },
       "normal": {
-        "type": "font-size",
+        "type": "size",
         "value": 14,
         "internal": true
       },
       "large": {
-        "type": "font-size",
+        "type": "size",
         "value": 16,
         "internal": true
       }
     },
     "line-height": {
       "small": {
-        "type": "line-height",
+        "type": "size",
         "value": 16,
         "internal": true
       },
       "normal": {
-        "type": "line-height",
+        "type": "size",
         "value": 20,
         "internal": true
       },
       "large": {
-        "type": "line-height",
+        "type": "size",
         "value": 22,
         "internal": true
       }

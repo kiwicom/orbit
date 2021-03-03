@@ -112,6 +112,13 @@ export const createSubsetType = (name: string, platform: string): string => {
 };
 
 /*
+  Creates granular import of something.
+  e.g. import { Type } from "path"
+ */
+export const createDefaultImport = (name: string, path: string): string =>
+  `import ${name} from "${path}"\n`;
+
+/*
   Creates import of some type.
   e.g. import type { Type } from "path"
  */

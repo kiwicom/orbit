@@ -1,0 +1,39 @@
+{
+  "component": {
+    "button-primary-subtle": {
+      "background": {
+        "type": "color",
+        "value": "{foundation.palette.product.light}"
+      },
+      "background-hover": {
+        "type": "color",
+        "value": "{foundation.palette.product.light-secondary}"
+      },
+      "background-active": {
+        "type": "color",
+        "value": "{foundation.palette.product.light-tertiary}"
+      },
+      "foreground": {
+        "type": "color",
+        "category": "foreground",
+        "value": "{foundation.palette.product.normal}"
+      },
+      "foreground-hover": {
+        "type": "color",
+        "category": "foreground",
+        "value": "{foundation.palette.product.dark}"
+      },
+      "foreground-active": {
+        "type": "color",
+        "category": "foreground",
+        "value": "{foundation.palette.product.dark}"
+      },
+      "border-color-focus": {
+        "type": "color",
+        "category": "border-color",
+        "value": "{foundation.palette.product.normal}",
+        "opacity": 50
+      }
+    }
+  }
+}

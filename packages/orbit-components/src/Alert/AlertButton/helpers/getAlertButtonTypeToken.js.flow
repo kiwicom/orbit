@@ -7,8 +7,7 @@ export type TokenName =
   | "backgroundButtonHover"
   | "backgroundButtonActive"
   | "backgroundButtonFocus"
-  | "colorTextButton"
-  | "borderColorButtonFocus";
+  | "colorTextButton";
 
 export type GetAlertButtonTypeToken = (name: TokenName, type: Type, theme: Theme) => string;
 

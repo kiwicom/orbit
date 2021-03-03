@@ -10,8 +10,8 @@ import type { Props, GetLinkStyleProps } from "./index";
 
 const getColor = ({ theme, type }) => {
   const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.textLinkForegroundPrimary,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.textLinkForegroundSecondary,
   };
 
   return tokens[type];
@@ -42,11 +42,9 @@ StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const resolveUnderline = ({ type, theme, noUnderline }) => {
+const resolveUnderline = ({ theme, noUnderline }) => {
   if (noUnderline) return "none";
-  return type === TYPE_OPTIONS.SECONDARY
-    ? theme.orbit.textDecorationTextLinkSecondary
-    : theme.orbit.textDecorationTextLinkPrimary;
+  return theme.orbit.textLinkTextDecoration;
 };
 
 export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
@@ -57,15 +55,15 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   &:visited {
     color: ${getColor({ theme, type })};
     text-decoration: ${resolveUnderline};
-    font-weight: ${theme.orbit.fontWeightLinks};
+    font-weight: ${theme.orbit.textLinkFontWeight};
   }
 
   :hover,
   :active,
   :focus {
     outline: none;
-    text-decoration: none;
-    color: ${theme.orbit.paletteProductNormalHover};
+    text-decoration: ${theme.orbit.textLinkTextDecorationHover};
+    color: ${theme.orbit.textLinkForegroundHover};
   }
 `;
 
@@ -75,7 +73,7 @@ export const StyledTextLink = styled(
   ),
 )`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
+  font-weight: ${({ theme }) => theme.orbit.textLinkFontWeight};
   font-size: ${getSizeToken};
   cursor: pointer;
   display: inline-flex;

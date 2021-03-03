@@ -1,0 +1,32 @@
+{
+  "component": {
+    "text-link": {
+      "foreground": {
+        "primary": {
+          "type": "color",
+          "value": "{foundation.palette.product.dark}"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        }
+      },
+      "foreground-hover": {
+        "type": "color",
+        "value": "{foundation.palette.product.normal-secondary}"
+      },
+      "text-decoration": {
+        "type": "text-decoration",
+        "value": "underline"
+      },
+      "text-decoration-hover": {
+        "type": "text-decoration",
+        "value": "underline"
+      },
+      "font-weight": {
+        "type": "font-weight",
+        "value": "{foundation.font-weight.medium}"
+      }
+    }
+  }
+}

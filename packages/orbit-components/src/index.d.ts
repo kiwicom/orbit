@@ -11,6 +11,7 @@ export { Box } from "./Box";
 export { NotificationBadge } from "./NotificationBadge/index";
 export { Breadcrumbs } from "./Breadcrumbs/index";
 export { BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem/index";
+export { ButtonMobileStore } from "./ButtonMobileStore/index";
 export { Button } from "./Button/index";
 export { ButtonLink } from "./ButtonLink/index";
 export { ButtonGroup } from "./ButtonGroup/index";

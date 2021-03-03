@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.3.1](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.3.0...eslint-plugin-orbit-components@0.3.1) (2021-03-03)
 
-**Note:** Version bump only for package eslint-plugin-orbit-components
+Version bump due to Babel cleanup.
 
 
 

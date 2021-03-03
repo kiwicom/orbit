@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.13.4](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.3...@kiwicom/orbit-design-tokens@0.13.4) (2021-03-03)
 
-**Note:** Version bump only for package @kiwicom/orbit-design-tokens
+Version bump due to Babel cleanup.
 
 
 

@@ -21,7 +21,7 @@
       },
       "text-decoration-hover": {
         "type": "text-decoration",
-        "value": "underline"
+        "value": "none"
       },
       "font-weight": {
         "type": "font-weight",

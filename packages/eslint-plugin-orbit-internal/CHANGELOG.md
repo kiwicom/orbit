@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/eslint-plugin-orbit-internal@0.2.0...@kiwicom/eslint-plugin-orbit-internal@0.2.1) (2021-03-03)
 
-**Note:** Version bump only for package @kiwicom/eslint-plugin-orbit-internal
+Version bump due to Babel cleanup.
 
 
 

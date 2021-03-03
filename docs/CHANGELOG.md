@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.6.0...@kiwicom/orbit.kiwi@0.7.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* **docs:** add aspect ratio box to visual lists ([4a0bb2c](https://github.com/kiwicom/orbit/commit/4a0bb2cfb65b54c1ebd27e20c784ce69e1e70d33))
+* **docs:** make Guideline even more declaritive ([f52e054](https://github.com/kiwicom/orbit/commit/f52e054fe33ff11af790193a15dacd528bb47f5b))
+* remove improper type check ([132b4b6](https://github.com/kiwicom/orbit/commit/132b4b6632a5c58d1ad6609ca0e042efff530611))
+* type check ([596efac](https://github.com/kiwicom/orbit/commit/596efac295d0dbbbafa1819584d73a8f4013ff5f))
+* **Contributors:** correct github profile url ([#2774](https://github.com/kiwicom/orbit/issues/2774)) ([2a9763a](https://github.com/kiwicom/orbit/commit/2a9763aa73455c22ff28654dcafe488075e11ddc))
+* **docs:** allow custom images in FancyLink ([bb01b73](https://github.com/kiwicom/orbit/commit/bb01b732b13ae5b11927c9a6a5d0e64f2f72d8c3))
+* **docs:** list styling with paragraphs ([ca3526d](https://github.com/kiwicom/orbit/commit/ca3526d9c592e9c9466403430b3f2cafbcd58668))
+* **docs:** navbar ([#2750](https://github.com/kiwicom/orbit/issues/2750)) ([0c6e186](https://github.com/kiwicom/orbit/commit/0c6e186ab62c2b0fb8d88d50b4194d16f22af208))
+
+
+### Features
+
+* **docs:** add anchor to headers ([e8f3dec](https://github.com/kiwicom/orbit/commit/e8f3decd5a40e97c70f9f6a879e36b1f5dd29f4d))
+* **docs:** add guidelines components ([4f8ea4d](https://github.com/kiwicom/orbit/commit/4f8ea4d2c3721e345b616e11323139a2d128fe82))
+* **docs:** add IconsList ([f925ec8](https://github.com/kiwicom/orbit/commit/f925ec86f2748510b120f4bf00a630d6e6757edd))
+* **docs:** add illustration list ([1ad4da1](https://github.com/kiwicom/orbit/commit/1ad4da1fc527a9d5944fbeb7b0623ebbb68d7bc3))
+* **docs:** added breadcrumbs ([6d6af50](https://github.com/kiwicom/orbit/commit/6d6af503c91d7d418fe357dc630f51b359e93d45))
+
+
+
+
+
 # 0.6.0 (2021-02-16)
 
 

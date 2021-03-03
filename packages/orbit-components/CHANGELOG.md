@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.110.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.2...@kiwicom/orbit-components@0.110.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* **Box:** regression test error ([#2807](https://github.com/kiwicom/orbit/issues/2807)) ([2f2478e](https://github.com/kiwicom/orbit/commit/2f2478e585af02afca3aaa951ea0e0c94519199f))
+* **InputStepper:** missing font-family ([#2748](https://github.com/kiwicom/orbit/issues/2748)) ([8ccebe7](https://github.com/kiwicom/orbit/commit/8ccebe76084c85be6a994ba2e7b5d4f18ae22eb9))
+* **Seat:** add export for SeatLegend and fix TS type of "type" prop  ([#2788](https://github.com/kiwicom/orbit/issues/2788)) ([9fea5af](https://github.com/kiwicom/orbit/commit/9fea5af6201f01b351011937d4416b5dd4d0ba26))
+* **useIntersect:** remove unnecessary SSR check ([0b440e6](https://github.com/kiwicom/orbit/commit/0b440e631c35a9c1dc5599e098d5e97ee2da5fcc))
+* **useIntersect:** simplify `ref` type ([573eba0](https://github.com/kiwicom/orbit/commit/573eba08249868c2e8de4a92e04fa9dd63b4fa72))
+* **utils:** getDirection ([#2782](https://github.com/kiwicom/orbit/issues/2782)) ([01be059](https://github.com/kiwicom/orbit/commit/01be059cf7b3fbf2445e1741322f331ff6325f54))
+
+
+### Features
+
+* **Modal:** autofocus ([#2749](https://github.com/kiwicom/orbit/issues/2749)) ([7318569](https://github.com/kiwicom/orbit/commit/7318569da6665f392ccfa88ea9b5fc3336e38072))
+* **slide:** added static defaultProps inside class ([e344e61](https://github.com/kiwicom/orbit/commit/e344e612cdedc64e0a8d25ad3f74b91e689b2b34))
+* **slide:** added transitionDuration support ([7e5cf6a](https://github.com/kiwicom/orbit/commit/7e5cf6ab85f1d36ad0738090d0ab06ce2e213255))
+* **slide:** fixed eslint issues ([d0bd068](https://github.com/kiwicom/orbit/commit/d0bd068f227f149a8e70bc11f9fbebda44f93347))
+* **slide:** using defaultProps instead of destruct value ([140f896](https://github.com/kiwicom/orbit/commit/140f896b05c772028093f24c511a1477ef5d47c2))
+* **Slide:** added transitionDuration support ([#2751](https://github.com/kiwicom/orbit/issues/2751)) ([e7b5c72](https://github.com/kiwicom/orbit/commit/e7b5c728f0ebb3bf4d032c10bccaa187cb76dd54))
+
+
+
+
+
 ## [0.109.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.109.1...@kiwicom/orbit-components@0.109.2) (2021-02-16)
 
 

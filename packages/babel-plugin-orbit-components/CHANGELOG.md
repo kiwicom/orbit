@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.1...@kiwicom/babel-plugin-orbit-components@2.1.2) (2021-03-03)
+
+
+### Bug Fixes
+
+* **Seat:** add export for SeatLegend and fix TS type of "type" prop  ([#2788](https://github.com/kiwicom/orbit/issues/2788)) ([9fea5af](https://github.com/kiwicom/orbit/commit/9fea5af6201f01b351011937d4416b5dd4d0ba26))
+
+
+
+
+
 ## [2.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.0...@kiwicom/babel-plugin-orbit-components@2.1.1) (2021-02-05)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

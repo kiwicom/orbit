@@ -211,7 +211,7 @@ export const StyledTripSegment = styled.div`
 
     ${StyledTripSegmentMilestone}, ${StyledChevrons} {
       svg {
-        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+        color: ${({ theme }) => theme.orbit.iconForegroundPrimary};
       }
     }
     ${StyledTripSegmentMilestoneArrow} {
@@ -228,7 +228,7 @@ export const StyledTripSegment = styled.div`
     }
     ${StyledTripSegmentMilestone}, ${StyledChevrons} {
       svg {
-        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+        color: ${({ theme }) => theme.orbit.iconForegroundPrimary};
       }
     }
     ${StyledTripSegmentMilestoneArrow} {

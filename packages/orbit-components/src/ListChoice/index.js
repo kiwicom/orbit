@@ -23,7 +23,7 @@ const StyledListChoiceIcon = styled.div`
     align-self: center;
     width: ${getSize("small")};
     height: ${getSize("small")};
-    color: ${({ theme }) => theme.orbit.colorIconPrimary};
+    color: ${({ theme }) => theme.orbit.iconForegroundPrimary};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }
 `;
@@ -55,7 +55,7 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
       css`
         background-color: ${theme.orbit.paletteCloudLight};
         ${StyledListChoiceIcon} svg {
-          color: ${theme.orbit.colorIconPrimary};
+          color: ${theme.orbit.iconForegroundPrimary};
         }
       `};
   }

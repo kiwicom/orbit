@@ -9,6 +9,9 @@ import Prose from "./Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "./AddBookmark";
 import FancyLink from "./FancyLink";
+import Guideline from "./Guidelines";
+import GuidelinesSideBySide, { Do, Dont } from "./Guidelines/GuidelinesSideBySide";
+import GuidelineImages, { DoImage, DontImage } from "./Guidelines/GuidelineImages";
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
@@ -60,7 +63,21 @@ export default function DocLayout({ children, location, path, title }: Props) {
                   </Heading>
                 </Stack>
               )}
-              <MDXProvider components={{ ...components, FancyLink }}>{children}</MDXProvider>
+              <MDXProvider
+                components={{
+                  ...components,
+                  FancyLink,
+                  Guideline,
+                  GuidelineImages,
+                  DoImage,
+                  DontImage,
+                  GuidelinesSideBySide,
+                  Do,
+                  Dont,
+                }}
+              >
+                {children}
+              </MDXProvider>
             </Prose>
           </StyledMain>
           <StyledFooter />

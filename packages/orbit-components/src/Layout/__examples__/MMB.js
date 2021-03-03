@@ -9,7 +9,7 @@ import Text from "../../Text";
 export default {
   Example: () => {
     const style = {
-      minHeight: defaultTheme.orbit.heightIllustrationMedium,
+      minHeight: defaultTheme.orbit.illustrationHeightMedium,
       background: defaultTheme.orbit.backgroundBody,
     };
     return (

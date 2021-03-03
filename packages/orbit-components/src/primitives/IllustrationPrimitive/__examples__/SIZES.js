@@ -14,7 +14,7 @@ export default {
         <Heading as="h3" type="title3">
           Extra small
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationSmall}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightExtraSmall}</Text>
         <IllustrationPrimitive
           size="extraSmall"
           alt="Jump to the front of the line when boarding"
@@ -25,7 +25,7 @@ export default {
         <Heading as="h3" type="title3">
           Small
         </Heading>
-        <Text>Height: 120px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightSmall}</Text>
         <IllustrationPrimitive
           size="small"
           alt="Jump to the front of the line when boarding"
@@ -36,7 +36,7 @@ export default {
         <Heading as="h3" type="title3">
           Medium
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationMedium}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightMedium}</Text>
         <IllustrationPrimitive
           size="medium"
           alt="Jump to the front of the line when boarding"
@@ -47,7 +47,7 @@ export default {
         <Heading as="h3" type="title3">
           Large
         </Heading>
-        <Text>Height: 280px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightLarge}</Text>
         <IllustrationPrimitive
           size="large"
           alt="Jump to the front of the line when boarding"
@@ -58,7 +58,7 @@ export default {
         <Heading as="h3" type="title3">
           Display
         </Heading>
-        <Text>Height: 460px</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationHeightDisplay}</Text>
         <IllustrationPrimitive
           size="display"
           alt="Jump to the front of the line when boarding"

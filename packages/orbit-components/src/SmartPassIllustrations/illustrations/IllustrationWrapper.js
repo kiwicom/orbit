@@ -6,11 +6,11 @@ import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import type { Props } from "..";
 
 const tokens = {
-  [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.heightIllustrationSmall,
-  [SIZE_OPTIONS.SMALL]: "120px",
-  [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightIllustrationMedium,
-  [SIZE_OPTIONS.LARGE]: "280px",
-  [SIZE_OPTIONS.DISPLAY]: "460px",
+  [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.illustrationHeightExtraSmall,
+  [SIZE_OPTIONS.SMALL]: theme.orbit.illustrationHeightSmall,
+  [SIZE_OPTIONS.MEDIUM]: theme.orbit.illustrationHeightMedium,
+  [SIZE_OPTIONS.LARGE]: theme.orbit.illustrationHeightLarge,
+  [SIZE_OPTIONS.DISPLAY]: theme.orbit.illustrationHeightDisplay,
 };
 
 type WrapperProps = {|

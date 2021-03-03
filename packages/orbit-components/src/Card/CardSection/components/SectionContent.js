@@ -12,7 +12,7 @@ const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  color: ${({ theme }) => theme.orbit.textForegroundPrimary};
   width: 100%;
   border-top: ${({ theme, expanded, noSeparator }) =>
     expanded && !noSeparator

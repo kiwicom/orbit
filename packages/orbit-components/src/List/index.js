@@ -21,8 +21,8 @@ const getSizeToken = ({ theme, size }) => {
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
-    [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
-    [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
+    [TYPES.PRIMARY]: theme.orbit.textForegroundPrimary,
+    [TYPES.SECONDARY]: theme.orbit.textForegroundSecondary,
   };
 
   return typeTokens[type];

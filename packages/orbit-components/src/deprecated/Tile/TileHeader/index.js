@@ -49,7 +49,7 @@ StyledTileIcon.defaultProps = {
 const StyledTileDescription = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  color: ${({ theme }) => theme.orbit.textForegroundPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   width: 100%;
   ${({ hasTitle, theme }) =>

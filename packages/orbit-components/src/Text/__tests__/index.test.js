@@ -25,7 +25,7 @@ describe("Text", () => {
     expect(screen.getByText(text)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toHaveStyle({
       fontSize: defaultTheme.orbit.fontSizeTextSmall,
-      color: defaultTheme.orbit.colorTextPrimary,
+      color: defaultTheme.orbit.textForegroundPrimary,
       marginBottom: defaultTheme.orbit.spaceSmall,
     });
   });

@@ -9,7 +9,9 @@ import type { Props } from "./index";
 
 export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
+    type === TYPE_OPTIONS.ERROR
+      ? theme.orbit.textForegroundCritical
+      : theme.orbit.textForegroundSecondary};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
   font-weight: ${({ theme, type }) =>
@@ -26,7 +28,9 @@ export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {..
 
   & a {
     color: ${({ theme, type }) =>
-      type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextPrimary};
+      type === TYPE_OPTIONS.ERROR
+        ? theme.orbit.textForegroundCritical
+        : theme.orbit.textForegroundPrimary};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     text-decoration: underline;
     cursor: pointer;

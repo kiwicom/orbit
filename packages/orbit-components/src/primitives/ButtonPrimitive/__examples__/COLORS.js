@@ -24,14 +24,14 @@ export default {
           <ButtonPrimitive
             iconLeft={<Icons.AirplaneTakeoff />}
             background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
-            foreground={defaultTheme.orbit.colorTextWhite}
+            foreground={defaultTheme.orbit.textForegroundWhite}
           >
             Click me
           </ButtonPrimitive>
           <ButtonPrimitive
             iconLeft={<Icons.AirplaneTakeoff />}
             background="url(https://images.kiwi.com/photos/60x60/paris_fr.jpg)"
-            foreground={defaultTheme.orbit.colorTextWhite}
+            foreground={defaultTheme.orbit.textForegroundWhite}
           >
             Orbit
           </ButtonPrimitive>
@@ -54,8 +54,8 @@ export default {
                 iconLeft={<Icons.AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundHover={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextWhite}
-                foregroundHover={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundWhite}
+                foregroundHover={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>
@@ -68,8 +68,8 @@ export default {
                 iconLeft={<Icons.AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundFocus={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextWhite}
-                foregroundFocus={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundWhite}
+                foregroundFocus={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>
@@ -82,8 +82,8 @@ export default {
                 iconLeft={<Icons.AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundActive={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextWhite}
-                foregroundActive={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundWhite}
+                foregroundActive={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>

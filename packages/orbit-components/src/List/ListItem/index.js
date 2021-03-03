@@ -91,7 +91,7 @@ IconContainer.defaultProps = {
 const StyledLabel = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  color: ${({ theme }) => theme.orbit.colorTextSecondary};
+  color: ${({ theme }) => theme.orbit.textForegroundSecondary};
   font-size: ${getSizeTokenLabel};
 `;
 

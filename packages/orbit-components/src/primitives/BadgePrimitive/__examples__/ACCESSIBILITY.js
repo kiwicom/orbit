@@ -9,7 +9,7 @@ export default {
   Example: () => (
     <BadgePrimitive
       background={defaultTheme.orbit.backgroundBody}
-      foregroundColor={defaultTheme.orbit.colorTextPrimary}
+      foregroundColor={defaultTheme.orbit.textForegroundPrimary}
       ariaLabel="4 passengers"
       icon={<Icons.Passengers />}
     >

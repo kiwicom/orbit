@@ -18,7 +18,7 @@ export default {
           <ButtonPrimitive
             boxShadow={defaultTheme.orbit.boxShadowAction}
             background={defaultTheme.orbit.backgroundButtonSecondary}
-            foreground={defaultTheme.orbit.colorTextPrimary}
+            foreground={defaultTheme.orbit.textForegroundPrimary}
           >
             Click me
           </ButtonPrimitive>
@@ -41,7 +41,7 @@ export default {
                 boxShadowHover={defaultTheme.orbit.boxShadowButtonFocus}
                 boxShadow={defaultTheme.orbit.boxShadowAction}
                 background={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>
@@ -54,7 +54,7 @@ export default {
                 boxShadowFocus={defaultTheme.orbit.boxShadowButtonFocus}
                 boxShadow={defaultTheme.orbit.boxShadowAction}
                 background={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>
@@ -67,7 +67,7 @@ export default {
                 boxShadowActive={defaultTheme.orbit.boxShadowActionActive}
                 boxShadow={defaultTheme.orbit.boxShadowAction}
                 background={defaultTheme.orbit.backgroundButtonSecondary}
-                foreground={defaultTheme.orbit.colorTextPrimary}
+                foreground={defaultTheme.orbit.textForegroundPrimary}
               >
                 Click me
               </ButtonPrimitive>

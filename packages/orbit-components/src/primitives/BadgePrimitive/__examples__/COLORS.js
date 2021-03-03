@@ -12,14 +12,14 @@ export default {
       <BadgePrimitive
         icon={<Icons.AirplaneTakeoff />}
         background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
-        foregroundColor={defaultTheme.orbit.colorTextWhite}
+        foregroundColor={defaultTheme.orbit.textForegroundWhite}
       >
         Orbit
       </BadgePrimitive>
       <BadgePrimitive
         icon={<Icons.AirplaneTakeoff />}
         background="url(https://images.kiwi.com/photos/60x60/paris_fr.jpg)"
-        foregroundColor={defaultTheme.orbit.colorTextWhite}
+        foregroundColor={defaultTheme.orbit.textForegroundWhite}
       >
         Orbit
       </BadgePrimitive>

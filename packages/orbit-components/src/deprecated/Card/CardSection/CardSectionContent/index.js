@@ -15,7 +15,7 @@ export const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  color: ${({ theme }) => theme.orbit.textForegroundPrimary};
   border-top: ${({ theme, expanded }) =>
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`

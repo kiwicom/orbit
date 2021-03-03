@@ -118,6 +118,6 @@ export default {
   },
   info: {
     title: "Sizes",
-    description: `Modals can have four sizes: extra small (360px), small (${defaultTheme.orbit.widthModalSmall}), normal (${defaultTheme.orbit.widthModalNormal}, the default), and large (${defaultTheme.orbit.widthModalLarge}). This sets their maximum width on larger screens`,
+    description: `Modals can have four sizes: extra small (${defaultTheme.orbit.modalWidthExtraSmall}), small (${defaultTheme.orbit.modalWidthSmall}), normal (${defaultTheme.orbit.modalWidthNormal}, the default), and large (${defaultTheme.orbit.modalWidthLarge}). This sets their maximum width on larger screens`,
   },
 };

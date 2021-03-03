@@ -22,6 +22,11 @@ interface SearchResult {
   path: string;
 }
 
+export enum Size {
+  Regular,
+  Large,
+}
+
 interface Props {
   placeholder?: string;
   onFocus?: InputEvent;
@@ -32,6 +37,7 @@ interface Props {
   name?: string;
   disabled?: boolean;
   value?: string;
+  size?: Size;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
@@ -45,6 +51,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
     onKeyUp,
     onKeyDown,
     name,
+    size = Size.Regular,
   },
   ref,
 ) {
@@ -72,28 +79,27 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
   });
 
   return (
-    <StyledWrapper>
-      <div {...getComboboxProps()}>
-        <StyledInputContainer>
-          <StyledPreffix>
-            <SearchIcon />
-          </StyledPreffix>
-          <StyledInput
-            ref={ref}
-            {...getInputProps({
-              type: "search",
-              name,
-              value,
-              placeholder,
-              disabled,
-              onKeyDown,
-              onKeyUp,
-              onFocus,
-              onBlur,
-            })}
-          />
-        </StyledInputContainer>
-      </div>
+    <StyledWrapper size={size}>
+      <StyledInputContainer {...getComboboxProps()}>
+        <StyledPreffix>
+          <SearchIcon />
+        </StyledPreffix>
+        <StyledInput
+          ref={ref}
+          {...getInputProps({
+            type: "search",
+            name,
+            value,
+            placeholder,
+            disabled,
+            onKeyDown,
+            onKeyUp,
+            onFocus,
+            onBlur,
+          })}
+        />
+      </StyledInputContainer>
+
       <StyledDropdown {...getMenuProps()} visible={results.length > 0}>
         {isOpen &&
           results.length > 0 &&

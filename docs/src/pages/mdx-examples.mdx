@@ -1,6 +1,7 @@
 import { Meal } from "@kiwicom/orbit-components/icons";
 
 import DocLayout from "../components/DocLayout";
+import Palette from "../components/Palette";
 
 export default ({ children, location, path }) => (
   <DocLayout
@@ -380,6 +381,27 @@ TODO.
 
 ## Color palette
 
-TODO.
+### Plain palette
+
+<Palette
+  colors={[
+    "paletteProductLight",
+    "paletteProductNormal",
+    "paletteProductDark",
+    "paletteProductDarker",
+  ]}
+/>
+
+### Palette with additional shades
+
+<Palette
+  allowAdditional
+  colors={[
+    "paletteProductLight",
+    "paletteProductNormal",
+    "paletteProductDark",
+    "paletteProductDarker",
+  ]}
+/>
 
 [id]: ../images/rocket.jpg "Blast into Orbit"

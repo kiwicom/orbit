@@ -59,6 +59,7 @@ export { default as Seat, SeatLegend } from "./Seat/index";
 export { Select } from "./Select/index";
 export { Stack } from "./Stack/index";
 export { Sticky } from "./Sticky/index";
+export { SocialButton } from "./SocialButton/index";
 export { Separator } from "./Separator/index";
 export { SkipNavigation } from "./SkipNavigation/index";
 export { ServiceLogo } from "./ServiceLogo";

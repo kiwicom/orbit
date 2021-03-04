@@ -230,7 +230,6 @@ module.exports = {
         Guideline: false,
         GuidelinesSideBySide: false,
         InlineToken: false,
-        Palette: false,
         ReactExample: false,
       },
     },

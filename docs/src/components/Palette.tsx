@@ -25,10 +25,10 @@ const isLight = (hex: string) => {
 };
 
 interface BorderingProps {
-  order: "first" | "middle" | "last" | "only";
-  full: boolean;
-  left: boolean;
-  right: boolean;
+  order?: "first" | "middle" | "last" | "only";
+  full?: boolean;
+  left?: boolean;
+  right?: boolean;
 }
 interface ColorValueShape {
   colorValue: string;
@@ -140,23 +140,19 @@ const CopyWrapper = styled.div<ColorValueShape>`
 type tokenString = keyof typeof defaultTokens;
 
 interface ColorObjectShape {
-  value: string;
+  value: string | number;
   name: string;
   tokenName: tokenString;
-  hover: {
-    value: string;
-    name: string;
-    tokenName: string;
-  };
-  active: {
-    value: string;
-    name: string;
-    tokenName: string;
-  };
+}
+
+interface ColorObjectAdditionalShape {
+  value: string;
+  name: string;
+  tokenName: string;
 }
 
 interface ColorContainerProps extends BorderingProps {
-  color: ColorObjectShape;
+  color: ColorObjectShape | ColorObjectAdditionalShape;
 }
 
 const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps) => {
@@ -167,6 +163,8 @@ const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps
     }
     return false;
   };
+
+  if (typeof color.value !== "string") return <div />;
 
   return (
     <ColorContainerWrapper
@@ -247,7 +245,6 @@ const Palette = ({ colors, allowAdditional }: PaletteProps) => {
       )}
       <div>
         {colorsWithToken.map((color, index, allColors) => {
-          if (typeof color.value !== "string") return undefined;
           const determineOrder = indexNumber => {
             if (allColors.length === 1) return "only";
             if (indexNumber === 0) return "first";

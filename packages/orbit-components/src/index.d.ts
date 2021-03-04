@@ -4,6 +4,8 @@
 declare module "@kiwicom/orbit-components";
 
 export { Alert } from "./Alert/index";
+export { Accordion } from "./Accordion/index";
+export { AccordionSection } from "./Accordion/AccordionSection/index";
 export { AlertButton } from "./Alert/AlertButton/index";
 export { AirportIllustration } from "./AirportIllustration";
 export { Badge } from "./Badge/index";

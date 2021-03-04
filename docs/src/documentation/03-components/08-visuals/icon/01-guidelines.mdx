@@ -2,7 +2,7 @@
 title: Guidelines
 ---
 
-import IconsList from "../../../../components/IconsList";
+import IconList from "../../../../components/IconList";
 
 import IconColorsSnippet from "snippets/icon-colors.mdx";
 
@@ -44,20 +44,33 @@ Don't use such icons in places where users can't interact with them.
 This creates an expectation that clicking them does something,
 which can lead to users being frustrated when nothing happens.
 
-<Guidelines>
+<GuidelineImages>
+
+<DoImage>
 
 <FigmaFile
   file="fannvRpkOJK6uxxT33EKaa"
   node="143%3A1532"
   alt="Radio buttons under the heading 'Select an option' with both icons related to baggage."
 />
+
+Use non-interactive icons for settings other than interactions.
+
+</DoImage>
+
+<DontImage>
+
 <FigmaFile
   file="fannvRpkOJK6uxxT33EKaa"
   node="143%3A1473"
   alt="Radio buttons under the heading 'Select an option' with the first icon being X and the second related to baggage."
 />
 
-</Guidelines>
+Using interactive icons creates the expectation that clicking the icon will do something.
+
+</DontImage>
+
+</GuidelineImages>
 
 ### Use similar icons for lists
 
@@ -66,20 +79,33 @@ make sure to use icons that seem visually consistent.
 For example, to show steps taken and not,
 use check-circle and close-circle to present similar visual cues.
 
-<Guidelines>
+<GuidelineImages>
+
+<DoImage>
 
 <FigmaFile
   file="fannvRpkOJK6uxxT33EKaa"
   node="144%3A1511"
   alt="A list with three steps all with circled icons."
 />
+
+Using consistent icons keeps it easy to scan.
+
+</DoImage>
+
+<DontImage>
+
 <FigmaFile
   file="fannvRpkOJK6uxxT33EKaa"
   node="143%3A1473"
   alt="A list with three steps with 1 circled icon and 2 non-cicled icons."
 />
 
-</Guidelines>
+Varying the icons creates confusion about the message.
+
+</DontImage>
+
+</GuidelineImages>
 
 ## Content
 
@@ -108,4 +134,4 @@ See how it's done in React:
 
 ## List of all icons
 
-<IconsList />
+<IconList />

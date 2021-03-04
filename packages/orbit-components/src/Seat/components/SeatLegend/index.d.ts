@@ -13,4 +13,5 @@ interface Props extends Common.Global {
 }
 
 declare const SeatLegend: React.FunctionComponent<Props>;
-export { SeatLegend, SeatLegend as default };
+
+export default SeatLegend;

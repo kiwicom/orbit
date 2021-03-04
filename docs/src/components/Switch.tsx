@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Inline from "@kiwicom/orbit-components/lib/Inline";
+import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 const StyledLabel = styled.label`
   position: relative;
@@ -66,6 +66,7 @@ interface Props {
   onKeyPress?: () => any;
   checked?: boolean;
   ariaLabelledby?: string;
+  reverseLabel?: boolean;
 }
 
 const InputSwitch = ({
@@ -76,9 +77,10 @@ const InputSwitch = ({
   checked,
   ariaLabelledby,
   onKeyPress,
+  reverseLabel,
 }: Props) => {
   return (
-    <Inline align="center" spacing="medium">
+    <Stack direction={reverseLabel ? "row-reverse" : "row"} align="center" spacing="medium">
       <StyledLabel>
         <StyledInput
           type="checkbox"
@@ -93,7 +95,7 @@ const InputSwitch = ({
         <StyledCircle />
       </StyledLabel>
       {children && <StyledContent>{children}</StyledContent>}
-    </Inline>
+    </Stack>
   );
 };
 

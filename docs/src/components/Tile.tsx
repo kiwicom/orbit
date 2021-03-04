@@ -6,93 +6,137 @@ import { css } from "styled-components";
 
 import ArrowRight from "./ArrowRight";
 
+export const ICON_SIZE = "2rem";
+
 interface Props {
   title: string;
-  moreText?: string;
-  linkTo?: string;
-  children: React.ReactNode;
+  linkContent?: React.ReactNode;
+  href?: string;
+  children?: React.ReactNode;
 }
 
-export default function Tile({ title, moreText = "Learn more", linkTo, children }: Props) {
+function TileIcon() {
+  const theme = useTheme();
+  return (
+    <div
+      css={css`
+        align-self: start;
+        flex-shrink: 0;
+        width: ${ICON_SIZE};
+        height: ${ICON_SIZE};
+        background: ${theme.orbit.paletteProductLight};
+        border-radius: ${theme.orbit.borderRadiusCircle};
+      `}
+    />
+  );
+}
+
+function TileTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      css={css`
+        h3 {
+          line-height: ${ICON_SIZE};
+        }
+      `}
+    >
+      <Heading type="title2" as="h3">
+        {children}
+      </Heading>
+    </div>
+  );
+}
+
+export default function Tile({ title, linkContent, href, children }: Props) {
   const theme = useTheme();
 
-  // Wrap plain strings in a p tag and otherwise render children
-  const content = typeof children !== "string" ? <Stack>{children}</Stack> : <p>{children}</p>;
   return (
     <div
       css={css`
         padding: 2rem;
         border-radius: 1rem;
         background: ${theme.orbit.paletteWhite};
-        box-shadow: ${theme.orbit.boxShadowRaised};
+        box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
-        flex-direction: column;
+        ${children
+          ? css`
+              flex-direction: column;
+            `
+          : css`
+              align-items: center;
+              justify-content: space-between;
+            `}
       `}
     >
       <div
         css={css`
           flex: 1;
           display: flex;
+          > * + * {
+            margin-left: 0.75rem;
+          }
         `}
       >
-        <div
-          css={css`
-            align-self: start;
-            flex-shrink: 0;
-            width: 2rem;
-            height: 2rem;
-            background: ${theme.orbit.paletteProductLight};
-            border-radius: 50%;
-          `}
-        />
-        <div
-          css={css`
-            margin-left: 0.75rem;
-            h3 {
-              margin-top: 0;
-            }
-          `}
-        >
-          <Heading type="title2" as="h3">
-            {title}
-          </Heading>
-          <div
-            css={css`
-              margin-top: 0.5rem;
-              margin-bottom: 1.5rem;
-            `}
-          >
-            {content}
+        <TileIcon />
+        {children ? (
+          <div>
+            <TileTitle>{title}</TileTitle>
+            <div
+              css={css`
+                margin: 0.5rem 0 1.5rem;
+              `}
+            >
+              {/* wrap plain strings in a p tag and otherwise render children */}
+              {typeof children !== "string" ? <Stack>{children}</Stack> : <p>{children}</p>}
+            </div>
           </div>
-        </div>
+        ) : (
+          <TileTitle>{title}</TileTitle>
+        )}
       </div>
-      {linkTo && (
-        <div
-          css={css`
-            text-align: right;
-          `}
-        >
-          <Link
-            css={css`
-              display: inline-flex;
-              align-items: center;
-              > * + * {
-                margin-left: 0.25rem;
-              }
-              color: ${theme.orbit.colorTextLinkPrimary};
-              font-weight: 500;
-              text-decoration: underline;
-              &:hover {
-                color: ${theme.orbit.colorTextLinkPrimaryHover};
-                text-decoration: none;
-              }
-            `}
-            to={linkTo}
-          >
-            <span>{moreText}</span>
-            <ArrowRight />
-          </Link>
-        </div>
+      {href && (
+        <>
+          {typeof linkContent === "string" ? (
+            <div
+              css={css`
+                text-align: right;
+              `}
+            >
+              <Link
+                css={css`
+                  display: inline-flex;
+                  align-items: center;
+                  > * + * {
+                    margin-left: 0.25rem;
+                  }
+                  color: ${theme.orbit.colorTextLinkPrimary};
+                  font-weight: 500;
+                  text-decoration: underline;
+                  &:hover {
+                    color: ${theme.orbit.colorTextLinkPrimaryHover};
+                    text-decoration: none;
+                  }
+                `}
+                to={href}
+              >
+                <span>{linkContent}</span>
+                <ArrowRight />
+              </Link>
+            </div>
+          ) : (
+            <Link
+              css={css`
+                color: ${theme.orbit.colorTextLinkPrimary};
+                &:hover {
+                  color: ${theme.orbit.colorTextLinkPrimaryHover};
+                }
+              `}
+              to={href}
+            >
+              {linkContent}
+            </Link>
+          )}
+        </>
       )}
     </div>
   );

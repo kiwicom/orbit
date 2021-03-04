@@ -1,7 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledWrapper = styled.div`
+import { Size } from "..";
+
+const StyledWrapper = styled.div<{ size: Size }>`
   position: relative;
+  min-width: 24em; /* so that the placeholder fits in */
+  ${({ size }) =>
+    size === Size.Large &&
+    css`
+      height: 64px; /* to match the height of the large ButtonLink on the landing page */
+    `}
 `;
 
 export default StyledWrapper;

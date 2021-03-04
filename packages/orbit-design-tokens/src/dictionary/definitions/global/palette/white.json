@@ -10,7 +10,8 @@
           "type": "color",
           "value": "{foundation.palette.white.normal-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.white.normal-secondary}"
+          "deprecated-replace": "{global.palette.white.normal-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-secondary": {
           "type": "color",
@@ -20,7 +21,8 @@
           "type": "color",
           "value": "{foundation.palette.white.normal-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.white.normal-tertiary}"
+          "deprecated-replace": "{global.palette.white.normal-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-tertiary": {
           "type": "color",

@@ -1,0 +1,13 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript"
+    }
+  },
+  "env": {
+    "targets": "node 12"
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}

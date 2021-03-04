@@ -25,7 +25,7 @@
     "kiwicom"
   ],
   "scripts": {
-    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
+    "build": "rm -fr ./dist && swc ./src --out-dir ./dist",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -62,21 +62,24 @@ export const StyledText: any = styled(
     </TextElement>
   ),
 )`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${getSizeToken};
-  font-weight: ${getWeightToken};
-  color: ${getTypeToken};
-  line-height: ${getLineHeightToken};
-  text-align: ${({ align }) => textAlign(align)};
-  text-transform: ${({ uppercase }) => uppercase && `uppercase`};
-  font-style: ${({ italic }) => italic && `italic`};
-  margin: 0;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, align, uppercase, strikeThrough, type, italic }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${getSizeToken};
+    font-weight: ${getWeightToken};
+    color: ${getTypeToken};
+    line-height: ${getLineHeightToken};
+    text-align: ${textAlign(align)};
+    text-transform: ${uppercase && `uppercase`};
+    text-decoration: ${strikeThrough && `line-through`};
+    font-style: ${italic && `italic`};
+    margin: 0;
+    margin-bottom: ${getSpacingToken};
 
-  a:not(${StyledTextLink}) {
-    // TextLink in Text always win
-    ${({ theme, type }) => getLinkStyle({ theme, type })}// Get styles from TextLink
-  }
+    a:not(${StyledTextLink}) {
+      // TextLink in Text always win
+      ${getLinkStyle({ theme, type })}// Get styles from TextLink
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

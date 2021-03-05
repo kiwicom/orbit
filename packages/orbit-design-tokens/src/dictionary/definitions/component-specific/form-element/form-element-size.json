@@ -1,0 +1,20 @@
+{
+  "component": {
+    "form-element": {
+      "size": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.large}"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}"
+        }
+      }
+    }
+  }
+}

@@ -36,6 +36,10 @@ const build = () => {
     name: "xml/tokens",
     transforms: ["attribute/nov", "name/nov/camel"],
   });
+  StyleDictionary.registerTransformGroup({
+    name: "json/documentation-tokens",
+    transforms: ["attribute/nov", "name/nov/camel", "attribute/docs-platforms"],
+  });
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],
     platforms: {
@@ -47,6 +51,17 @@ const build = () => {
             destination: "deprecated-tokens.json",
             format: "json/deprecated-tokens",
             filter: _.overEvery([isNotInternal, isDeprecated]),
+          },
+        ],
+      },
+      "json/documentation-tokens": {
+        transformGroup: "json/documentation-tokens",
+        buildPath: "lib/",
+        files: [
+          {
+            destination: "docs-tokens.json",
+            format: "json/documentation-tokens",
+            filter: isNotInternal,
           },
         ],
       },

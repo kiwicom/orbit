@@ -3,7 +3,7 @@ import { Property } from "style-dictionary";
 
 import { errorTransform } from "../../utils/errorMessage";
 
-export const nameFoundationCamel = {
+export const nameNOVCamel = {
   name: "name/nov/camel",
   type: "name",
   transformer: ({ attributes: { namespace, object, variant, subVariant } }: Property): string => {

@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { Property } from "style-dictionary";
+import { Property, BasicProperties, Value } from "style-dictionary";
 
 import { groupByAttribute } from "./groupBy";
 
@@ -80,4 +80,14 @@ export const getFoundationNameValue = (platform: string): NameValueSelector => {
     name: String(foundationAlias),
     value,
   });
+};
+
+/*
+  Recursively gets value, because of alias referencing it can be nested { value: { value } }
+ */
+export const getValue = (value: BasicProperties | Value): Value => {
+  if (typeof value === "object") {
+    return getValue(value.value);
+  }
+  return value;
 };

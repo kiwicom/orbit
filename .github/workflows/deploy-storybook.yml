@@ -1,0 +1,48 @@
+name: Deploy storybook
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - master
+
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn install && yarn bootstrap
+
+      - name: Build design tokens
+        run: npx lerna run --scope @kiwicom/orbit-design-tokens build
+
+      - name: Get BRANCH_URL
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
+
+      - name: Get PR_NUMBER
+        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
+
+      - if: ${{ github.ref != 'refs/heads/master' }}
+        name: Preview storybook
+        run: |
+          npx lerna run --scope @kiwicom/orbit-components build:storybook
+          npx lerna run --scope @kiwicom/orbit-components deploy:surge -- https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          npx lerna run --scope @kiwicom/orbit-components deploy:updateURL -- ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+
+      - if: ${{ github.ref == 'refs/heads/master' }}
+        name: Publish storybook
+        run: npx lerna run --scope @kiwicom/orbit-components deploy:storybook -- --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

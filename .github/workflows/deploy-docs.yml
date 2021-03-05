@@ -1,0 +1,39 @@
+name: Deploy documentation
+
+on: workflow_dispatch
+
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn install && yarn bootstrap
+
+      - name: Build
+        run: |
+          npx lerna run --scope @kiwicom/orbit-design-tokens build
+          npx lerna run --scope @kiwicom/orbit-components build
+          npx lerna run --scope orbit.kiwi build
+
+      - name: Get BRANCH_URL
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
+
+      - name: Get PR_NUMBER
+        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
+
+      - name: Deploy
+        run: |
+          npx lerna run --scope orbit.kiwi deploy:surge -- https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          npx lerna run --scope @kiwicom/orbit-components deploy:updateURL -- ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi

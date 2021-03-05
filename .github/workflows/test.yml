@@ -1,4 +1,4 @@
-name: Test and deploy branch
+name: Test
 
 on:
   push:
@@ -14,9 +14,8 @@ env: # Set environment variables for every job and step in this workflow
   FORCE_COLOR: "1" # Force colors in the terminal
 
 jobs:
-  build_test:
+  test:
     runs-on: ubuntu-latest
-    name: Build and test branch
     steps:
       - uses: actions/checkout@v2
       - name: Restore lerna
@@ -32,7 +31,7 @@ jobs:
         run: npx lerna run --scope @kiwicom/orbit-components check:icons
 
       - name: Build
-        run: npx lerna run --ignore orbit.kiwi build
+        run: npx lerna run build
 
       - name: Flow
         run: yarn flow:check
@@ -45,60 +44,10 @@ jobs:
           yarn eslint:ci
           yarn prettier:test
 
-      - name: Test
-        run: |
-          yarn test-ci
-  deploy:
-    # do not run on master branch
-    # if expression will fail because github.head_ref doesn't contain anything when push to master
-    if: ${{ github.head_ref }}
-    needs: build_test
-    runs-on: ubuntu-latest
-    name: Deploy branch
-    steps:
-      - uses: actions/checkout@v2
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
-
-      - name: Install dependencies
-        run: yarn install && yarn bootstrap
-
-      - name: Build design tokens
-        run: yarn orbit-design-tokens build
-
-      - name: Fire deployment
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      - name: Get BRANCH_URL
-        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
-
-      - name: Get PR_NUMBER
-        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
-
-      - name: Build
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          yarn orbit-components build:storybook
-          yarn orbit-components build:lib
-          yarn orbit-kiwi build
-
       - name: Check links
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: node docs/utils/check-links.js
+        run: yarn check-links
 
-      - name: Publish
-        run: |
-          yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-          yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-
-      - name: Update description
-        run: |
-          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi
-          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+      - name: Test
+        run: yarn test-ci

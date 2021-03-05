@@ -26,6 +26,7 @@
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
     "prebuild": "rimraf lib src/js",
     "build": "yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
+    "build:size": "yarn build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "prepublishOnly": "yarn build"

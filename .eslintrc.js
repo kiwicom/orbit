@@ -13,7 +13,6 @@ module.exports = {
   plugins: ["babel", "@kiwicom/orbit-internal"],
   rules: {
     "@kiwicom/orbit-internal/unique-id": "error",
-    "@kiwicom/orbit-internal/no-deprecated-token": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",

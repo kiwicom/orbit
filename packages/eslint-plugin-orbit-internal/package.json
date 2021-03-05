@@ -8,8 +8,7 @@
     "postinstall": "yarn build"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10",
-    "eslint-plugin-orbit-components": "^0.3.0"
+    "@babel/types": "=7.12.10"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.6"

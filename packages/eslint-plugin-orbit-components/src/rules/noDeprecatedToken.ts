@@ -1,33 +1,6 @@
 import * as t from "@babel/types";
 import type { Rule } from "eslint";
-/*
-  TODO: Either we should add dependency @kiwicom/orbit-design-tokens for the eslint-plugin,
-  or we can re-export it inside @kiwicom/orbit-components.
- */
 import deprecatedTokens from "@kiwicom/orbit-design-tokens/lib/deprecated-tokens.json";
-
-export const mockTokens = {
-  deprecatedTokenOne: {
-    replaceForToken: "replacementTokenOne",
-    version: "1.0.0",
-  },
-  deprecatedTokenTwo: {
-    replaceForToken: "replacementTokenTwo",
-    version: "1.0.0",
-  },
-  deprecatedTokenThree: {
-    replaceForToken: "replacementTokenThree",
-  },
-  deprecatedTokenFour: {
-    replaceForToken: null,
-    version: "1.0.0",
-  },
-};
-/*
-  We prefer to use mock list of deprecated tokens for testing purposes,
-  because the actual list will change in time.
- */
-const tokensList = process.env.NODE_ENV === "test" ? mockTokens : deprecatedTokens;
 
 export const DeprecatedTokenReplaceError = (
   name: string,
@@ -43,12 +16,20 @@ export const DeprecatedTokenReplaceError = (
   return [tokenIsDeprecated, replaceFor].join(" ");
 };
 
-export const getError = tokenName => {
-  const { replaceForToken, version } = tokensList[tokenName];
+export const getError = (tokenName: string) => {
+  const { replaceForToken, version } = deprecatedTokens[tokenName];
   return DeprecatedTokenReplaceError(tokenName, replaceForToken, version);
 };
 
-export default {
+const replaceToken = (tokenName, property) => fixer => {
+  const { replaceForToken } = deprecatedTokens[tokenName];
+  if (replaceForToken) {
+    return fixer.replaceTextRange(property.range, replaceForToken);
+  }
+  return null;
+};
+
+const noDeprecatedToken: Rule.RuleModule = {
   meta: {
     type: "suggestion",
     docs: {
@@ -56,13 +37,15 @@ export default {
       category: "Possible Errors",
       recommended: true,
     },
+    fixable: "code",
   },
   create: (context: Rule.RuleContext) => {
-    const reportError = (tokenName, node) => {
-      if (tokenName in tokensList) {
+    const reportError = (tokenName, property) => {
+      if (tokenName in deprecatedTokens) {
         context.report({
-          node,
+          node: property,
           message: getError(tokenName),
+          fix: replaceToken(tokenName, property),
         });
       }
     };
@@ -88,9 +71,11 @@ export default {
       }
     };
     return {
-      MemberExpression(node: t.MemberExpression) {
-        reportIfDesignToken(node);
+      MemberExpression(node) {
+        if (t.isMemberExpression(node)) reportIfDesignToken(node);
       },
     };
   },
 };
+
+export default noDeprecatedToken;

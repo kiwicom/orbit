@@ -19,6 +19,7 @@ const Tooltip = ({
   preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
+  block = false,
 }: Props) => {
   const { isLargeMobile } = useMediaQuery();
   return isLargeMobile ? (
@@ -32,6 +33,7 @@ const Tooltip = ({
       preferredAlign={preferredAlign}
       stopPropagation={stopPropagation}
       removeUnderlinedText={removeUnderlinedText}
+      block={block}
     >
       {children}
     </TooltipPrimitive>
@@ -43,6 +45,7 @@ const Tooltip = ({
       content={content}
       removeUnderlinedText={removeUnderlinedText}
       stopPropagation={stopPropagation}
+      block={block}
     >
       {children}
     </MobileDialog>

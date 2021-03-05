@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
@@ -42,7 +42,7 @@ const StyledDrawer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ theme, shown }) =>
-    shown ? transparentColor(theme.orbit.paletteInkNormal, 50) : "transparent"};
+    shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
   // TODO: use z-index framework
   z-index: 825;
   transition: ${transition(["background-color"], "fast", "ease-in-out")};

@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import { getJustify, getAlign } from "../../utils/layout";
 import theme from "../../defaultTheme";
@@ -53,7 +53,7 @@ describe("#Box", () => {
 
     const el = screen.getByTestId(dataTest);
     const getOmittedHex = hex =>
-      transparentColor(hex, NaN).replace(", NaN", "").replace("rgba", "rgb");
+      convertHexToRgba(hex, NaN).replace(", NaN", "").replace("rgba", "rgb");
 
     expect(el).toBeInTheDocument();
     expect(el).toHaveStyle({ color: getOmittedHex(theme.orbit.paletteBlueDark) });

@@ -1,5 +1,5 @@
 // @flow
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetSocialButtonTypeToken } from "./getSocialButtonTypeToken";
@@ -55,10 +55,10 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.TWITTER]: "#00ACEE", // TODO: add token
     },
     [TOKENS.borderColorButtonFocus]: {
-      [TYPE_OPTIONS.APPLE]: transparentColor(theme.orbit.paletteInkLight, 50),
-      [TYPE_OPTIONS.FACEBOOK]: transparentColor(theme.orbit.paletteInkLight, 30),
-      [TYPE_OPTIONS.GOOGLE]: transparentColor(theme.orbit.paletteInkLight, 50),
-      [TYPE_OPTIONS.TWITTER]: transparentColor(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.APPLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.FACEBOOK]: convertHexToRgba(theme.orbit.paletteInkLight, 30),
+      [TYPE_OPTIONS.GOOGLE]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
+      [TYPE_OPTIONS.TWITTER]: convertHexToRgba(theme.orbit.paletteInkLight, 50),
     },
   };
   return tokens[name][type];

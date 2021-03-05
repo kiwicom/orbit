@@ -21,7 +21,7 @@ describe("Icon", () => {
     const icon = screen.getByLabelText("Accommodation");
     expect(icon.tagName.toLowerCase()).toBe("svg");
     expect(icon).toHaveAttribute("aria-hidden", "true");
-    expect(icon).toHaveStyle({ color: defaultTheme.orbit.iconForegroundPrimary });
+    expect(icon).toHaveStyle({ color: defaultTheme.orbit.colorIconPrimary });
   });
 
   it("should support passing custom color", () => {

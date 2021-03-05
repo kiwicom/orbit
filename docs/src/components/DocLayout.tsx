@@ -15,6 +15,7 @@ import GuidelineImages, { DoImage, DontImage } from "./Guidelines/GuidelineImage
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
+import ComponentStatus from "./ComponentStatus";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -66,6 +67,7 @@ export default function DocLayout({ children, location, path, title }: Props) {
               <MDXProvider
                 components={{
                   ...components,
+                  ComponentStatus,
                   FancyLink,
                   Guideline,
                   GuidelineImages,

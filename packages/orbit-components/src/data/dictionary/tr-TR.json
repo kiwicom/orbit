@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Atla",
+  "a11ymenu_page_actions": "Bu sayfadaki yaygın eylemler",
+  "a11ymenu_page_sections": "Bu sayfanın bölümleri",
+  "a11ymenu_send_feedback": "Geri bildirim gönder",
+  "breadcrumbs_back": "Geri",
+  "button_close": "Kapat",
+  "choicegroup_only": "Sadece",
+  "loading": "Yükleniyor",
+  "pagination_label_next": "Sonraki",
+  "pagination_label_prev": "Önceki",
+  "ratingstar_description": "__total__ üzerinden __number__ değerlendirme",
+  "wizard_progress": "__number__ / __total__"
+}

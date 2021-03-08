@@ -9,5 +9,6 @@
   "loading": "Laster inn",
   "pagination_label_next": "Neste",
   "pagination_label_prev": "Forrige",
-  "ratingstar_description": "Vurdert som __number__ av __total__"
+  "ratingstar_description": "Vurdert som __number__ av __total__",
+  "wizard_progress": "__number__ av __total__"
 }

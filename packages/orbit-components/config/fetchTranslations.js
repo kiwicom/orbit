@@ -3,8 +3,30 @@ import fetch from "isomorphic-unfetch";
 import path from "path";
 import dotenv from "dotenv-safe";
 import fs from "fs-extra";
+import dedent from "dedent";
 
-dotenv.config();
+try {
+  dotenv.config({
+    example: `${process.cwd()}/../../.env.example`,
+    path: `${process.cwd()}/../../.env`,
+  });
+} catch (err) {
+  if (
+    err.missing.includes("PHRASE_APP_PROJECT_ID") ||
+    err.missing.includes("PHRASE_APP_ACCESS_TOKEN")
+  ) {
+    throw new Error(
+      dedent`
+        Some PhraseApp secrets are missing in the .env file:
+
+        ${err.missing.join("\n")}
+
+        You can find them in 1Password.
+      `,
+    );
+  }
+}
+
 const env = name => process.env[name] || "";
 
 const PHRASE_APP_BASE_URL = "https://api.phraseapp.com/api/v2";
@@ -43,7 +65,7 @@ const writeFile = (filename, content) =>
 
 const writeIndexFile = async codes => {
   const fullCodes = codes.map(code => {
-    const shortCode = code.match(/[A-Z]./g)[0];
+    const shortCode = code.match(/-(.*)$/)[1];
     const importPath = getImport(shortCode, code);
     return { code, shortCode, importPath };
   });

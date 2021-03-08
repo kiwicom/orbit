@@ -15,6 +15,7 @@ export interface Props extends Common.Global {
   readonly content: React.ReactNode;
   readonly stopPropagation?: boolean;
   readonly removeUnderlinedText?: boolean;
+  readonly block?: boolean;
 }
 
 export const MobileDialogPrimitive: React.FunctionComponent<Props>;

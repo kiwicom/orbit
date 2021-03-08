@@ -12,7 +12,11 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import type { Props } from "./index";
 
 export const StyledTooltipChildren = styled.span`
-  display: inline-flex;
+  ${({ block }) =>
+    !block &&
+    `
+      display: inline-flex;
+    `};
   &:focus:active {
     outline: none;
   }
@@ -43,6 +47,7 @@ const TooltipPrimitive = ({
   preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
+  block = false,
 }: Props) => {
   const [shown, setShown] = useState(false);
   const [
@@ -83,6 +88,7 @@ const TooltipPrimitive = ({
   return (
     <>
       <StyledTooltipChildren
+        as={block ? "div" : "span"}
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
         onClick={handleClick}
@@ -93,6 +99,7 @@ const TooltipPrimitive = ({
         tabIndex={enabled ? tabIndex : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
+        block={block}
       >
         {children}
       </StyledTooltipChildren>

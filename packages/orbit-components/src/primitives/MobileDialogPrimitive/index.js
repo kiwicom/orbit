@@ -17,6 +17,7 @@ const MobileDialog = ({
   content,
   stopPropagation = false,
   removeUnderlinedText,
+  block = false,
 }: Props) => {
   const [
     render,
@@ -62,6 +63,7 @@ const MobileDialog = ({
         tabIndex={enabled ? tabIndex : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
+        block={block}
       >
         {children}
       </StyledTooltipChildren>

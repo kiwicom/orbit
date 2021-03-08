@@ -9,5 +9,6 @@
   "loading": "Laden",
   "pagination_label_next": "Volgende",
   "pagination_label_prev": "Vorige",
-  "ratingstar_description": "Gerangschikt op plaats __number__ van de __total__"
+  "ratingstar_description": "Gerangschikt op plaats __number__ van de __total__",
+  "wizard_progress": "__number__ van __total__"
 }

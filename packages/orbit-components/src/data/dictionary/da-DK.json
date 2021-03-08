@@ -9,5 +9,6 @@
   "loading": "Indlæser",
   "pagination_label_next": "Næste",
   "pagination_label_prev": "Forrige",
-  "ratingstar_description": "Vurdering __number__ ud af __total__"
+  "ratingstar_description": "Vurdering __number__ ud af __total__",
+  "wizard_progress": "__number__ ud af __total__"
 }

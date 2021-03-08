@@ -9,5 +9,6 @@
   "loading": "Зареждане",
   "pagination_label_next": "Напред",
   "pagination_label_prev": "Назад",
-  "ratingstar_description": "Оценка __number__ от __total__"
+  "ratingstar_description": "Оценка __number__ от __total__",
+  "wizard_progress": "__number__ от __total__"
 }

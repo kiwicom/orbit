@@ -9,5 +9,6 @@
   "loading": "Betöltés",
   "pagination_label_next": "Következő",
   "pagination_label_prev": "Előző",
-  "ratingstar_description": "Értékelés: __number__/__total__"
+  "ratingstar_description": "Értékelés: __number__/__total__",
+  "wizard_progress": "__number__/__total__"
 }

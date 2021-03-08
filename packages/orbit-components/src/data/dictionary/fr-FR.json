@@ -9,5 +9,6 @@
   "loading": "Chargement",
   "pagination_label_next": "Suivant",
   "pagination_label_prev": "Précédent",
-  "ratingstar_description": "Notation __number__ sur __total__"
+  "ratingstar_description": "Notation __number__ sur __total__",
+  "wizard_progress": "__number__ sur __total__"
 }

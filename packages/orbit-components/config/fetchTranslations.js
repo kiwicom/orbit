@@ -33,7 +33,9 @@ const PHRASE_APP_BASE_URL = "https://api.phraseapp.com/api/v2";
 const PHRASE_APP_PROJECT_ID = env("PHRASE_APP_PROJECT_ID");
 const PHRASE_APP_ACCESS_TOKEN = env("PHRASE_APP_ACCESS_TOKEN");
 
-const LOCALES_URL = `${PHRASE_APP_BASE_URL}/projects/${PHRASE_APP_PROJECT_ID}/locales`;
+const LOCALES_URL = `${PHRASE_APP_BASE_URL}/projects/${PHRASE_APP_PROJECT_ID}/locales?per_page=50`;
+
+const SINGLE_LOCAL_URL = `${PHRASE_APP_BASE_URL}/projects/${PHRASE_APP_PROJECT_ID}/locales`;
 const FILE_FORMAT = "nested_json";
 const LOCALES_DATA = path.join(__dirname, "..", "src", "data", "dictionary");
 
@@ -65,7 +67,7 @@ const writeFile = (filename, content) =>
 
 const writeIndexFile = async codes => {
   const fullCodes = codes.map(code => {
-    const shortCode = code.match(/-(.*)$/)[1];
+    const shortCode = code.split("-").join("");
     const importPath = getImport(shortCode, code);
     return { code, shortCode, importPath };
   });
@@ -101,7 +103,7 @@ const flatten = (obj = {}, keyPrefix = "") =>
     // eslint-disable-next-line no-restricted-syntax
     for (const locale of allLocales) {
       const translation = await fetchJSON(
-        `${LOCALES_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,
+        `${SINGLE_LOCAL_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,
       );
       await writeFile(
         path.join(LOCALES_DATA, `${locale.code}.json`),

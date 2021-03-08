@@ -9,5 +9,6 @@
   "loading": "המערכת טוענת נתונים",
   "pagination_label_next": "הבא",
   "pagination_label_prev": "הקודם",
-  "ratingstar_description": "דירוג של __number__ מתוך __total__"
+  "ratingstar_description": "דירוג של __number__ מתוך __total__",
+  "wizard_progress": "__number__ מתוך __total__"
 }

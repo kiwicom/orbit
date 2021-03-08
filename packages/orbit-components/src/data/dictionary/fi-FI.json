@@ -9,5 +9,6 @@
   "loading": "Ladataan",
   "pagination_label_next": "Seuraava",
   "pagination_label_prev": "Edellinen",
-  "ratingstar_description": "Arvostelu __number__/__total__"
+  "ratingstar_description": "Arvostelu __number__/__total__",
+  "wizard_progress": "__number__/__total__"
 }

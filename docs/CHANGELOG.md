@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.7.0...@kiwicom/orbit.kiwi@0.7.1) (2021-03-08)
+
+
+### Bug Fixes
+
+* **docs:** add ComponentStatus to shortcodes ([7dbee54](https://github.com/kiwicom/orbit/commit/7dbee5436ad97e91d946022cd519bd904758e195))
+* **docs:** add fallback for ComponentStatus ([a8872eb](https://github.com/kiwicom/orbit/commit/a8872eb23ba753ff6c30c4a70cb36f401ab2eecc))
+
+
+
+
+
 # [0.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.6.0...@kiwicom/orbit.kiwi@0.7.0) (2021-03-03)
 
 

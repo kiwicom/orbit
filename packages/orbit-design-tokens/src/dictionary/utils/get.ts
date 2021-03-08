@@ -73,7 +73,7 @@ export const getFoundationNameValue = (platform: string): NameValueSelector => {
   if (platform === "flow" || platform === "typescript") {
     return ({ attributes: { foundationAlias, foundationType } }: Property) => ({
       name: String(foundationAlias),
-      value: foundationType,
+      value: String(foundationType),
     });
   }
   return ({ attributes: { foundationAlias }, value }) => ({

@@ -1,6 +1,6 @@
 import { Property, Value } from "style-dictionary";
 
-import { isSpacing, isBorderRadius } from "../../utils/is";
+import { isSpacing, isBorderRadius, isBoxShadow } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 
 /*

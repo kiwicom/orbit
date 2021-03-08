@@ -1,0 +1,232 @@
+{
+  "global": {
+    "elevation": {
+      "suppressed": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}"
+        }
+      },
+      "flat": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "border-color": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal}"
+        }
+      },
+      "action": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 0,
+                "blur": 2,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 1,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 12
+              }
+            ]
+          }
+        }
+      },
+      "action-active": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 1,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 12
+              }
+            ]
+          }
+        }
+      },
+      "fixed": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 0,
+                "blur": 2,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 2,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 12
+              }
+            ]
+          }
+        }
+      },
+      "fixed-reverse": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 0,
+                "blur": 2,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": -2,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 12
+              }
+            ]
+          }
+        }
+      },
+      "raised": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 8,
+                "blur": 24,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 24
+              }
+            ]
+          }
+        }
+      },
+      "raised-reverse": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": -4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": -8,
+                "blur": 24,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 24
+              }
+            ]
+          }
+        }
+      },
+      "overlay": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "value": "{foundation.palette.ink.normal}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 12,
+                "blur": 24,
+                "spread": -4,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 24
+              },
+              {
+                "x": 0,
+                "y": 8,
+                "blur": 60,
+                "spread": 0,
+                "color": "{foundation.palette.ink.normal}",
+                "opacity": 32
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

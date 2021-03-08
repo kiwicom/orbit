@@ -24,6 +24,7 @@ Table below contains all types of the props available in the Tooltip component.
 | **content**          | `React.Node`       |         | The content to display in the Tooltip.                                                                            |
 | dataTest             | `string`           |         | Optional prop for testing purposes.                                                                               |
 | enabled              | `boolean`          | `true`  | Enable render of tooltip                                                                                          |
+| block                | `boolean`          | `false` | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width. |
 | preferredAlign       | [`enum`](#enum)    |         | The preferred align to choose [See Functional specs](#functional-specs)                                           |
 | preferredPosition    | [`enum`](#enum)    |         | The preferred position to choose [See Functional specs](#functional-specs)                                        |
 | removeUnderlinedText | `boolean`          |         | Removes underline on child component, when underline is not desired.                                              |

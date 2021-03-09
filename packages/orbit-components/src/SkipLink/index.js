@@ -19,7 +19,7 @@ const StyledLink = styled.a`
   position: absolute;
   width: 1px;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  text-decoration: ${({ theme }) => theme.orbit.textLinkTextDecoration};
+  text-decoration: ${({ theme }) => theme.orbit.textDecorationTextLinkPrimary};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextLarge}; /* TODO: ADD TOKEN */
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal}; /* TODO: ADD TOKEN */
   color: ${({ theme }) => theme.orbit.paletteInkNormal}; /* TODO: ADD TOKEN */

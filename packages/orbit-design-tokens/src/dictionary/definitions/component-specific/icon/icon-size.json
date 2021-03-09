@@ -1,0 +1,32 @@
+{
+  "component": {
+    "icon": {
+      "size": {
+        "extra-extra-small": {
+          "type": "size",
+          "value": 12
+        },
+        "extra-small": {
+          "type": "size",
+          "value": "{foundation.size.small}"
+        },
+        "small": {
+          "type": "size",
+          "value": 20
+        },
+        "medium": {
+          "type": "size",
+          "value": "{foundation.size.medium}"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.large}"
+        },
+        "extra-large": {
+          "type": "size",
+          "value": 48
+        }
+      }
+    }
+  }
+}

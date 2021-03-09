@@ -44,6 +44,7 @@ StyledIconContainer.defaultProps = {
 
 const resolveUnderline = ({ type, theme, noUnderline }) => {
   if (noUnderline) return "none";
+  // TODO: type not needed, there's only one token for underline
   return type === TYPE_OPTIONS.SECONDARY
     ? theme.orbit.textDecorationTextLinkSecondary
     : theme.orbit.textDecorationTextLinkPrimary;

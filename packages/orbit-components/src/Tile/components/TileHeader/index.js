@@ -36,7 +36,7 @@ StyledTileHeader.defaultProps = {
 };
 
 const StyledTileIcon = styled.div`
-  color: ${({ theme }) => theme.orbit.iconForegroundPrimary};
+  color: ${({ theme }) => theme.orbit.colorIconPrimary};
   flex-shrink: 0;
   align-items: center;
   align-self: flex-start;
@@ -83,7 +83,7 @@ const IconRight = ({ external, expandable, className }) => {
 };
 
 export const StyledIconRight = styled(IconRight)`
-  color: ${({ theme }) => theme.orbit.iconForegroundSecondary};
+  color: ${({ theme }) => theme.orbit.colorIconSecondary};
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
   ${({ expanded }) =>

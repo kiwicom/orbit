@@ -1,4 +1,4 @@
-import type { Rule } from "eslint";
+import { Rule } from "eslint";
 import * as t from "@babel/types";
 
 import isOrbitComponent from "../utils/isOrbitComponent";

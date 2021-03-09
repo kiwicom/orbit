@@ -8,10 +8,10 @@ module.exports = {
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:@kiwicom/orbit-internal/recommended",
+    "plugin:orbit-components/internal",
     "prettier/react",
   ],
-  plugins: ["babel", "@kiwicom/orbit-internal"],
+  plugins: ["babel"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
@@ -23,7 +23,6 @@ module.exports = {
           __dirname,
           path.join(__dirname, "packages/babel-plugin-orbit-components"),
           path.join(__dirname, "packages/eslint-plugin-orbit-components"),
-          path.join(__dirname, "packages/eslint-plugin-orbit-internal"),
           path.join(__dirname, "packages/orbit-components"),
           path.join(__dirname, "packages/orbit-design-tokens"),
           path.join(__dirname, "docs"),
@@ -37,7 +36,6 @@ module.exports = {
           "**/stories/**",
           "**/tasks/**",
           "docs/**",
-          "packages/eslint-plugin-orbit-internal/**",
           "packages/eslint-plugin-orbit-components/**",
           "packages/*/.storybook/**",
           "**/config/**",
@@ -166,7 +164,7 @@ module.exports = {
       },
     },
     {
-      files: "packages/eslint-plugin-orbit-components/**/*.ts?(x)",
+      files: "packages/eslint-plugin-orbit-components/**/*.ts",
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -243,7 +241,7 @@ module.exports = {
       },
     },
     {
-      files: ["packages/eslint-plugin-orbit-internal/src/**"],
+      files: ["packages/eslint-plugin-orbit-components/src/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
       },
@@ -251,7 +249,7 @@ module.exports = {
     {
       files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
       rules: {
-        "@kiwicom/orbit-internal/unique-id": "off",
+        "orbit-components/unique-id": "off",
       },
     },
   ],

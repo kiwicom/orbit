@@ -1,5 +1,5 @@
 import * as t from "@babel/types";
-import type { Rule } from "eslint";
+import { Rule } from "eslint";
 
 export const ERRORS = {
   variableDeclaration: "Do not use defaultTheme as value, use useTheme() hook or ThemeConsumer",

@@ -1,0 +1,9 @@
+// @flow
+type BoxShadowDefinition = {|
+  def: Array<string>,
+  color: string,
+|};
+
+export type BoxShadow = (Array<BoxShadowDefinition> | BoxShadowDefinition) => string;
+
+declare export default BoxShadow;

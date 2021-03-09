@@ -31,11 +31,13 @@
     "tokens"
   ],
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/ramda": "^0.27.1",
     "@types/xml": "^1.0.5",
     "eslint-config-airbnb-base": "^14.1.0",
     "lodash": "^4.17.14",
     "style-dictionary": "^2.10.2",
+    "ts-jest": "^26.5.3",
     "xml": "^1.0.1"
   },
   "dependencies": {

@@ -1,5 +1,7 @@
 import _ from "lodash";
 
+import { falsyString } from "./string";
+
 const getDelimiter = platform => {
   switch (platform) {
     case "typescript":
@@ -10,13 +12,6 @@ const getDelimiter = platform => {
       return ",";
   }
 };
-
-/*
-  Returns string if condition is met.
-  TODO: Can be moved to some string utils when there will be more.
- */
-export const falsyString = (condition: boolean, string: string): string | undefined =>
-  condition ? string : undefined;
 
 /*
   Returns variable declaration, e.g. const Test = value
@@ -61,18 +56,23 @@ export const createObjectExpression = (value: string, platform = "javascript"): 
   return ["{", pipe, value, pipe, "}"].join("");
 };
 
+export const createArrayExpression = (value: string): string => {
+  return ["[", value, "]"].join("");
+};
+
 /*
   Converts array ["key:value", "key:value"] to string that should be consumed in createObject
  */
 export const createValue = (values: string[], platform: string): string => {
   const delimiter = getDelimiter(platform);
-  return values.join(delimiter);
+  return values.filter(Boolean).join(delimiter);
 };
 
 /*
   Creates compatible property of object for all platforms
  */
-export const createObjectProperty = (name: string, value: string): string => `${name}:${value}`;
+export const createObjectProperty = (name: string, value: string | number): string =>
+  `${name}:${value}`;
 
 /*
   Creates export with/without default or declare word.
@@ -94,6 +94,13 @@ export const createDeclareExport = (
 export const createDeclareModule = (path: string): string => `declare module "${path}";`;
 
 export const createOptionalType = (name: string): string => `${name}?`;
+
+/*
+  Creates default import of something.
+  e.g. import Something from "path"
+ */
+export const createDefaultImport = (name: string, path: string): string =>
+  `import ${name} from "${path}"\n`;
 
 /*
   Creates subset type - both for TS/Flow.

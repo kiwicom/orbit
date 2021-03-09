@@ -8,7 +8,6 @@ import {
   AlteredProperty,
 } from "../utils/get";
 import {
-  falsyString,
   createVariableDeclarator,
   createObjectProperty,
   createObjectExpression,
@@ -24,6 +23,7 @@ import {
 import formatCode from "../utils/format";
 import generatedWarning from "./comments/generatedWarning";
 import flowComment from "./comments/flow";
+import { falsyString } from "../utils/string";
 
 const genericFactory = (allProperties, platform) => {
   const upperFirst = determinateUpperFirst(platform);

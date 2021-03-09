@@ -4,6 +4,8 @@ import { Attributes, Property } from "style-dictionary";
 import { errorTransform } from "../../utils/errorMessage";
 import { nameNOVCamel } from "../names";
 import { valueJavascript } from "../values";
+import { isBoxShadow } from "../../utils/is";
+import { falsyString, pixelized } from "../../utils/string";
 
 const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
 
@@ -94,6 +96,41 @@ export const attributeNOVType = {
   },
 };
 
+export const attributeBoxShadowJavascript = {
+  name: "attribute/box-shadow/javascript",
+  type: "attribute",
+  matcher: isBoxShadow,
+  transformer: (prop: Property): Attributes => {
+    const { attributes } = prop;
+    const { "box-shadow": boxShadowDefinition } = attributes;
+    const boxShadowArray = Array.isArray(boxShadowDefinition)
+      ? boxShadowDefinition
+      : [boxShadowDefinition];
+
+    const boxShadowValues = (boxShadowArray as []).map(({ x, y, blur, spread, color, opacity }) => {
+      return {
+        x: pixelized(x),
+        y: pixelized(y),
+        blur: falsyString(blur != null, pixelized(blur)),
+        spread: falsyString(spread != null, pixelized(spread)),
+        color,
+        opacity,
+      };
+    });
+
+    return { ...attributes, "box-shadow": boxShadowValues };
+  },
+};
+
+export const attributeJavascript = {
+  name: "attribute/javascript",
+  type: "attribute",
+  transformer: (prop: Property): Attributes => {
+    const { attributes } = prop;
+    if (isBoxShadow(prop)) return attributeBoxShadowJavascript.transformer(prop);
+    return attributes;
+  },
+};
 export const attributeDocs = {
   name: "attribute/docs-platforms",
   type: "attribute",

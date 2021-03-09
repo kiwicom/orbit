@@ -28,6 +28,7 @@ const build = () => {
       "attribute/nov/isReferenced",
       "attribute/nov/camelCase",
       "attribute/nov/type",
+      "attribute/javascript",
       "value/nov/alias",
       "name/nov/camel",
     ],

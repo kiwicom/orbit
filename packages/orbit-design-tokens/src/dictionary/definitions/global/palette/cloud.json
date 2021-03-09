@@ -10,7 +10,8 @@
           "type": "color",
           "value": "{foundation.palette.cloud.light-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.cloud.light-secondary}"
+          "deprecated-replace": "{global.palette.cloud.light-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "light-secondary": {
           "type": "color",
@@ -20,7 +21,8 @@
           "type": "color",
           "value": "{foundation.palette.cloud.light-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.cloud.light-tertiary}"
+          "deprecated-replace": "{global.palette.cloud.light-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "light-tertiary": {
           "type": "color",
@@ -34,7 +36,8 @@
           "type": "color",
           "value": "{foundation.palette.cloud.normal-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.cloud.normal-secondary}"
+          "deprecated-replace": "{global.palette.cloud.normal-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-secondary": {
           "type": "color",
@@ -44,7 +47,8 @@
           "type": "color",
           "value": "{foundation.palette.cloud.normal-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.cloud.normal-tertiary}"
+          "deprecated-replace": "{global.palette.cloud.normal-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-tertiary": {
           "type": "color",

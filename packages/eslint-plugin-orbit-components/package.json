@@ -29,7 +29,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10"
+    "@babel/types": "=7.12.10",
+    "@kiwicom/orbit-design-tokens": "^0.13.3"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.6"

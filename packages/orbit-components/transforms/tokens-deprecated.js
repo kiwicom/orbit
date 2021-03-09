@@ -12,7 +12,7 @@ function transformDeprecatedTokens(fileInfo, api) {
     })
     .forEach(node => {
       if (node.value.property.name in deprecatedTokens) {
-        node.value.property.name = deprecatedTokens[node.value.property.name];
+        node.value.property.name = deprecatedTokens[node.value.property.name].replaceForToken;
       }
     });
   return root.toSource();

@@ -10,7 +10,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.lighter-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.lighter-secondary}"
+          "deprecated-replace": "{global.palette.ink.lighter-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "lighter-secondary": {
           "type": "color",
@@ -20,7 +21,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.lighter-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.lighter-tertiary}"
+          "deprecated-replace": "{global.palette.ink.lighter-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "lighter-tertiary": {
           "type": "color",
@@ -34,7 +36,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.light-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.light-secondary}"
+          "deprecated-replace": "{global.palette.ink.light-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "light-secondary": {
           "type": "color",
@@ -44,7 +47,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.light-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.light-tertiary}"
+          "deprecated-replace": "{global.palette.ink.light-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "light-tertiary": {
           "type": "color",
@@ -58,7 +62,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.normal-secondary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.normal-secondary}"
+          "deprecated-replace": "{global.palette.ink.normal-secondary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-secondary": {
           "type": "color",
@@ -68,7 +73,8 @@
           "type": "color",
           "value": "{foundation.palette.ink.normal-tertiary}",
           "deprecated": true,
-          "deprecated-replace": "{global.palette.ink.normal-tertiary}"
+          "deprecated-replace": "{global.palette.ink.normal-tertiary}",
+          "deprecated-version": "1.0.0"
         },
         "normal-tertiary": {
           "type": "color",

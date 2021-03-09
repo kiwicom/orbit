@@ -5,10 +5,15 @@ import { getValue } from "../utils/get";
 const jsonDeprecatedTokens = {
   name: "json/deprecated-tokens",
   formatter: ({ allProperties }: { allProperties: Property[] }): string => {
-    const deprecatedTokens = allProperties.map(({ name, "deprecated-replace": { value } }) => {
-      const { name: replaceFor } = value;
+    const deprecatedTokens = allProperties.map(prop => {
+      const { name } = prop;
+      const { "deprecated-replace": deprecatedReplace, "deprecated-version": version } = prop;
+      const replaceForToken = deprecatedReplace != null ? deprecatedReplace.value.name : null;
       return {
-        [name]: replaceFor,
+        [name]: {
+          replaceForToken,
+          version,
+        },
       };
     });
     return JSON.stringify(Object.assign({}, ...deprecatedTokens), null, 2);

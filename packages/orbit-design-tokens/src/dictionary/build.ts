@@ -14,11 +14,9 @@ const build = () => {
       "attribute/nov",
       "attribute/nov/camelCase",
       "attribute/nov/alias",
-      "attribute/nov/type",
+      "attribute/javascript/type",
       "name/nov/camel",
-      "value/spacing/javascript",
-      "value/border-radius/javascript",
-      "value/string/javascript",
+      "value/javascript",
     ],
   });
   StyleDictionary.registerTransformGroup({
@@ -27,9 +25,10 @@ const build = () => {
       "attribute/nov",
       "attribute/nov/isReferenced",
       "attribute/nov/camelCase",
-      "attribute/nov/type",
+      "attribute/javascript/type",
       "attribute/javascript",
       "value/nov/alias",
+      "value/javascript",
       "name/nov/camel",
     ],
   });

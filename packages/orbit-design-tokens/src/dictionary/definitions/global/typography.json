@@ -9,52 +9,43 @@
     },
     "font-size": {
       "small": {
-        "type": "font-size",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.font-size.small}"
       },
       "normal": {
-        "type": "font-size",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.font-size.normal}"
       },
       "large": {
-        "type": "font-size",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.font-size.large}"
       }
     },
     "line-height": {
       "small": {
-        "type": "line-height",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.line-height.small}"
       },
       "normal": {
-        "type": "line-height",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.line-height.normal}"
       },
       "large": {
-        "type": "line-height",
-        "category": "typography",
+        "type": "size",
         "value": "{foundation.line-height.large}"
       }
     },
-    "weight": {
+    "font-weight": {
       "normal": {
-        "type": "font-height",
-        "category": "typography",
+        "type": "font-weight",
         "value": "{foundation.font-weight.normal}"
       },
       "medium": {
-        "type": "font-height",
-        "category": "typography",
+        "type": "font-weight",
         "value": "{foundation.font-weight.medium}"
       },
       "bold": {
-        "type": "font-height",
-        "category": "typography",
+        "type": "font-weight",
         "value": "{foundation.font-weight.bold}"
       }
     }

@@ -36,6 +36,7 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeLightActive,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedLightActive,
     },
+    // TODO: We don't use backgroundFocus on buttons and therefore can be deleted
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueNormal, 10),
       [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenNormal, 10),

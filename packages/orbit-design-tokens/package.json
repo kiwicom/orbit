@@ -41,6 +41,7 @@
     "xml": "^1.0.1"
   },
   "dependencies": {
+    "color2k": "^1.2.4",
     "ramda": "^0.27.1"
   }
 }

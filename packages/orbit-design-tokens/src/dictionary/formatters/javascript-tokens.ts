@@ -16,8 +16,8 @@ import {
   createArrayExpression,
   createDefaultImport,
 } from "../utils/create";
+import { isColor, isBoxShadow } from "../utils/is";
 import { getValue } from "../utils/get";
-import { isBoxShadow } from "../utils/is";
 import { falsyString } from "../utils/string";
 
 const functionName = "createTokens";
@@ -30,11 +30,15 @@ const typescriptFactory = allProperties => {
 
   const foundationImport = createTypeImport("foundation", "./defaultFoundation");
 
+  const transparentColorImport = falsyString(
+    allProperties.some(({ opacity }) => opacity != null),
+    createDefaultImport("transparentColor", "./transparentColor"),
+  );
+
   const boxShadowImport = falsyString(
     allProperties.some(isBoxShadow),
     createDefaultImport("boxShadow", "./boxShadow"),
   );
-
   /*
     Generates "export type Tokens = { key: value }
    */
@@ -65,25 +69,30 @@ const typescriptFactory = allProperties => {
   };
 
   const tokens = _.map(allProperties, prop => {
-    const { name, value } = prop;
+    const { name, value, opacity } = prop;
     const plainValue = getValue(value);
+    if (isColor(prop) && opacity) {
+      return createObjectProperty(name, `transparentColor(${plainValue}, ${opacity})`);
+    }
     if (isBoxShadow(prop)) {
       const {
         attributes: { "box-shadow": boxShadow },
       } = prop;
-      const boxShadowDefinition = boxShadow.map(({ x, y, blur, spread, color, opacity }) => {
-        const definition = {
-          def: [x, y, blur, spread],
-          color: `transparentColor(${getValue(color)}, ${opacity})`,
-        };
-        const values = Object.keys(definition).map(key => {
-          const val = Array.isArray(definition[key])
-            ? createArrayExpression(createValue(definition[key], "javascript"))
-            : definition[key];
-          return createObjectProperty(key, val);
-        });
-        return createObjectExpression(createValue(values, "javascript"));
-      });
+      const boxShadowDefinition = boxShadow.map(
+        ({ x, y, blur, spread, color, opacity: colorOpacity }) => {
+          const definition = {
+            def: [x, y, blur, spread],
+            color: `transparentColor(${getValue(color)}, ${colorOpacity})`,
+          };
+          const values = Object.keys(definition).map(key => {
+            const val = Array.isArray(definition[key])
+              ? createArrayExpression(createValue(definition[key], "javascript"))
+              : definition[key];
+            return createObjectProperty(key, val);
+          });
+          return createObjectExpression(createValue(values, "javascript"));
+        },
+      );
       const boxShadowValue = createArrayExpression(createValue(boxShadowDefinition, "javascript"));
 
       return createObjectProperty(name, `boxShadow(${boxShadowValue})`);
@@ -113,8 +122,9 @@ const typescriptFactory = allProperties => {
   return formatCode(
     [
       generatedWarning,
-      foundationImport,
+      transparentColorImport,
       boxShadowImport,
+      foundationImport,
       tokensType,
       functionType,
       createTokens,

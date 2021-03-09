@@ -60,7 +60,7 @@ StyledTileTitle.defaultProps = {
 const StyledTileDescription = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.textForegroundPrimary};
+  color: ${({ theme }) => theme.orbit.colorTextPrimary};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   -webkit-text-size-adjust: 100%;
   width: 100%;
@@ -83,7 +83,7 @@ const IconRight = ({ external, expandable, className }) => {
 };
 
 export const StyledIconRight = styled(IconRight)`
-  color: ${({ theme }) => theme.orbit.colorIconSecondary};
+  color: ${({ theme }) => theme.orbit.iconForegroundSecondary};
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
   ${({ expanded }) =>

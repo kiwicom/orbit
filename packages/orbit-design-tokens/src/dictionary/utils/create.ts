@@ -96,13 +96,6 @@ export const createDeclareModule = (path: string): string => `declare module "${
 export const createOptionalType = (name: string): string => `${name}?`;
 
 /*
-  Creates default import of something.
-  e.g. import Something from "path"
- */
-export const createDefaultImport = (name: string, path: string): string =>
-  `import ${name} from "${path}"\n`;
-
-/*
   Creates subset type - both for TS/Flow.
   e.g. $Shape<Name>
  */

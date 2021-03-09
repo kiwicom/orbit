@@ -23,6 +23,9 @@ packages/orbit-components/src/AirportIllustration/index.d.ts
 packages/orbit-components/src/ServiceLogo/index.d.ts
 packages/orbit-components/src/FeatureIcon/index.d.ts
 
+packages/orbit-design-tokens/src/js/createTokens.*
+packages/orbit-design-tokens/src/js/defaultFoundation.*
+
 docs/.cache
 docs/public
 

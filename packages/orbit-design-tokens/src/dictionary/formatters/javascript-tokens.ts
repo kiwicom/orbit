@@ -16,10 +16,8 @@ import {
   createArrayExpression,
   createDefaultImport,
 } from "../utils/create";
-import { isColor } from "../utils/is";
-import { falsyString } from "../utils/string";
+import { isColor, isBoxShadow } from "../utils/is";
 import { getValue } from "../utils/get";
-import { isBoxShadow } from "../utils/is";
 import { falsyString } from "../utils/string";
 
 const functionName = "createTokens";
@@ -80,19 +78,21 @@ const typescriptFactory = allProperties => {
       const {
         attributes: { "box-shadow": boxShadow },
       } = prop;
-      const boxShadowDefinition = boxShadow.map(({ x, y, blur, spread, color, opacity }) => {
-        const definition = {
-          def: [x, y, blur, spread],
-          color: `transparentColor(${getValue(color)}, ${opacity})`,
-        };
-        const values = Object.keys(definition).map(key => {
-          const val = Array.isArray(definition[key])
-            ? createArrayExpression(createValue(definition[key], "javascript"))
-            : definition[key];
-          return createObjectProperty(key, val);
-        });
-        return createObjectExpression(createValue(values, "javascript"));
-      });
+      const boxShadowDefinition = boxShadow.map(
+        ({ x, y, blur, spread, color, opacity: colorOpacity }) => {
+          const definition = {
+            def: [x, y, blur, spread],
+            color: `transparentColor(${getValue(color)}, ${colorOpacity})`,
+          };
+          const values = Object.keys(definition).map(key => {
+            const val = Array.isArray(definition[key])
+              ? createArrayExpression(createValue(definition[key], "javascript"))
+              : definition[key];
+            return createObjectProperty(key, val);
+          });
+          return createObjectExpression(createValue(values, "javascript"));
+        },
+      );
       const boxShadowValue = createArrayExpression(createValue(boxShadowDefinition, "javascript"));
 
       return createObjectProperty(name, `boxShadow(${boxShadowValue})`);

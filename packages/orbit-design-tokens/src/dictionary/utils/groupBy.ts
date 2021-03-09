@@ -9,4 +9,3 @@ export const groupByAttribute = (
   properties: Property[],
   name: "namespace" | "object" | "variant" | "subVariant",
 ): GroupedProperties => _.groupBy(properties, token => token.attributes[name]);
-

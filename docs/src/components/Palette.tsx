@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba.js";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Grid, Stack, Text } from "@kiwicom/orbit-components";

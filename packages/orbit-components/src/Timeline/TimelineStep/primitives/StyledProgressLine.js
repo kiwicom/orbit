@@ -5,9 +5,9 @@ import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
 const renderStatus = (type, theme) => {
-  if (type === "success") return theme.orbit.textForegroundSuccess;
-  if (type === "warning") return theme.orbit.textForegroundWarning;
-  if (type === "critical") return theme.orbit.textForegroundCritical;
+  if (type === "success") return theme.orbit.colorTextSuccess;
+  if (type === "warning") return theme.orbit.colorTextWarning;
+  if (type === "critical") return theme.orbit.colorTextCritical;
 
   return theme.orbit.paletteCloudNormalHover;
 };

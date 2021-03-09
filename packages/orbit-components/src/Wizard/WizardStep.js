@@ -96,12 +96,12 @@ const StyledLink = styled.a`
         css`
           cursor: pointer;
           span {
-            color: ${theme.orbit.textForegroundSecondary};
+            color: ${theme.orbit.colorTextSecondary};
           }
           &:hover,
           &:focus {
             span {
-              color: ${theme.orbit.textForegroundPrimary};
+              color: ${theme.orbit.colorTextPrimary};
               text-decoration: underline;
             }
           }

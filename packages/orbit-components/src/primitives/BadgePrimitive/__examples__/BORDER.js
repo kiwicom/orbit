@@ -8,7 +8,7 @@ export default {
   Example: () => (
     <BadgePrimitive
       background={defaultTheme.orbit.backgroundBody}
-      foregroundColor={defaultTheme.orbit.textForegroundPrimary}
+      foregroundColor={defaultTheme.orbit.colorTextPrimary}
       borderColor={defaultTheme.orbit.paletteProductNormal}
     >
       Orbit

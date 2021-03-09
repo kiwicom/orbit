@@ -23,7 +23,7 @@ const StyledTileExpandable = styled.div`
     `};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.textForegroundPrimary};
+  color: ${({ theme }) => theme.orbit.colorTextPrimary};
 `;
 
 StyledTileExpandable.defaultProps = {

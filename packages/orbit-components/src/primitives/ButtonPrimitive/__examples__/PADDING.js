@@ -11,28 +11,28 @@ export default {
       <ButtonPrimitive
         padding={defaultTheme.orbit.paddingButtonSmall}
         background={defaultTheme.orbit.backgroundButtonSecondary}
-        foreground={defaultTheme.orbit.textForegroundPrimary}
+        foreground={defaultTheme.orbit.colorTextPrimary}
       >
         Click me
       </ButtonPrimitive>
       <ButtonPrimitive
         padding={defaultTheme.orbit.paddingButtonNormal}
         background={defaultTheme.orbit.backgroundButtonSecondary}
-        foreground={defaultTheme.orbit.textForegroundPrimary}
+        foreground={defaultTheme.orbit.colorTextPrimary}
       >
         Click me
       </ButtonPrimitive>
       <ButtonPrimitive
         padding={defaultTheme.orbit.paddingButtonLarge}
         background={defaultTheme.orbit.backgroundButtonSecondary}
-        foreground={defaultTheme.orbit.textForegroundPrimary}
+        foreground={defaultTheme.orbit.colorTextPrimary}
       >
         Click me
       </ButtonPrimitive>
       <ButtonPrimitive
         padding="16px 8px"
         background={defaultTheme.orbit.backgroundButtonSecondary}
-        foreground={defaultTheme.orbit.textForegroundPrimary}
+        foreground={defaultTheme.orbit.colorTextPrimary}
       >
         Click me
       </ButtonPrimitive>

@@ -19,13 +19,13 @@ import type { Props } from "./index";
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.textForegroundPrimary,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.textForegroundSecondary,
-    [TYPE_OPTIONS.INFO]: theme.orbit.textForegroundInfo,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.textForegroundSuccess,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.textForegroundWarning,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.textForegroundCritical,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.textForegroundWhite,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
+    [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextCritical,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextWhite,
   };
   return typeTokens[type];
 };

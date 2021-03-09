@@ -7,7 +7,7 @@ import defaultTheme from "../defaultTheme";
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   color: ${({ theme, filled }) =>
-    !filled ? theme.orbit.textForegroundCritical : theme.orbit.colorFormLabelFilled};
+    !filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
   font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
   vertical-align: top;
 `;

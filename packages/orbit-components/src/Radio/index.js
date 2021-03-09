@@ -13,26 +13,17 @@ import media from "../utils/mediaQuery/index";
 import type { Props } from "./index";
 
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
-  if (disabled) {
-    return theme.orbit.paletteInkLighter;
-  }
-  if (checked) {
-    return theme.orbit.paletteBlueNormal;
-  }
-  if (hasError && !disabled && !checked) {
-    return theme.orbit.borderColorCheckboxRadioError;
-  }
+  if (disabled) return theme.orbit.paletteInkLighter;
+  if (checked) return theme.orbit.paletteBlueNormal;
+  if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
 
   return theme.orbit.borderColorCheckboxRadio;
 };
 
 const getBackground = () => ({ theme, disabled, checked }) => {
-  if (disabled && checked) {
-    return theme.orbit.paletteInkLighter;
-  }
-  if (disabled && !checked) {
-    return theme.orbit.paletteCloudNormal;
-  }
+  if (disabled && checked) return theme.orbit.paletteInkLighter;
+  if (disabled && !checked) return theme.orbit.paletteCloudNormal;
+
   return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
 };
 
@@ -51,19 +42,20 @@ Glyph.defaultProps = {
 };
 
 const IconContainer = styled.div`
-  position: relative;
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${getBackground()};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
-  width: ${({ theme }) => theme.orbit.widthCheckbox};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
-  transform: scale(1);
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  }
+  ${({ theme }) => css`
+    position: relative;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${getBackground};
+    height: ${theme.orbit.heightCheckbox};
+    width: ${theme.orbit.widthCheckbox};
+    border-radius: ${theme.orbit.borderRadiusCircle};
+    transform: scale(1);
+    transition: all ${theme.orbit.durationFast} ease-in-out;
+  `}
 `;
 
 IconContainer.defaultProps = {
@@ -92,17 +84,19 @@ Info.defaultProps = {
 };
 
 const LabelText = styled.span`
-  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-  color: ${({ theme }) => theme.orbit.colorFormLabel};
-  line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+  ${({ theme }) => css`
+    font-weight: ${theme.orbit.fontWeightNormal};
+    font-size: ${theme.orbit.fontSizeFormLabel};
+    color: ${theme.orbit.colorFormLabel};
+    line-height: ${theme.orbit.heightCheckbox};
 
-  ${StyledText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-    color: ${({ theme }) => theme.orbit.colorFormLabel};
-    line-height: ${({ theme }) => theme.orbit.heightCheckbox};
-  }
+    ${StyledText} {
+      font-weight: ${theme.orbit.fontWeightNormal};
+      font-size: ${theme.orbit.fontSizeFormLabel};
+      color: ${theme.orbit.colorFormLabel};
+      line-height: ${theme.orbit.heightCheckbox};
+    }
+  `}
 `;
 
 LabelText.defaultProps = {
@@ -150,35 +144,35 @@ Input.defaultProps = {
 const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: self-start;
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  position: relative;
+  ${({ theme, disabled }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: self-start;
+    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
+    cursor: ${disabled ? "default" : "pointer"};
+    position: relative;
 
-  ${IconContainer} {
-    border: 2px solid ${getBorderColor()};
-  }
-
-  &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme }) => !disabled && theme.orbit.paletteBlueLightActive};
-  }
-
-  &:active ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getBorderColor() : theme.orbit.paletteBlueNormal};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
-
-  ${media.largeMobile(css`
     ${IconContainer} {
-      border: 1px solid ${getBorderColor()};
+      border: 2px solid ${getBorderColor};
     }
-  `)}
+
+    &:hover ${IconContainer} {
+      border-color: ${!disabled && theme.orbit.paletteBlueLightActive};
+    }
+
+    &:active ${IconContainer} {
+      border-color: ${disabled ? getBorderColor : theme.orbit.paletteBlueNormal};
+      transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
+    }
+
+    ${media.largeMobile(css`
+      ${IconContainer} {
+        border: 1px solid ${getBorderColor};
+      }
+    `)}
+  `}
 `;
 
 Label.defaultProps = {

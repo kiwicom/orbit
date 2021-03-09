@@ -9,5 +9,6 @@
   "loading": "불러오는 중",
   "pagination_label_next": "다음",
   "pagination_label_prev": "이전",
-  "ratingstar_description": "점수 __total__점 만점 중 __number__점"
+  "ratingstar_description": "점수 __total__점 만점 중 __number__점",
+  "wizard_progress": "__number__/__total__"
 }

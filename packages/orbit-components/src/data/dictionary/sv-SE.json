@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Hoppa till",
+  "a11ymenu_page_actions": "Vanliga åtgärder på sidan",
+  "a11ymenu_page_sections": "Delar av denna sida",
+  "a11ymenu_send_feedback": "Skicka feedback",
+  "breadcrumbs_back": "Tillbaka",
+  "button_close": "Stäng",
+  "choicegroup_only": "Enbart",
+  "loading": "Laddar",
+  "pagination_label_next": "Nästa",
+  "pagination_label_prev": "Föregående",
+  "ratingstar_description": "Betyg __number__ av __total__",
+  "wizard_progress": "__number__ av __total__"
+}

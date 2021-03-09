@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Preskočiť na",
+  "a11ymenu_page_actions": "Bežné aktivity na tejto stránke",
+  "a11ymenu_page_sections": "Sekcie tejto stránky",
+  "a11ymenu_send_feedback": "Poslať spätnú väzbu",
+  "breadcrumbs_back": "Späť",
+  "button_close": "Zavrieť",
+  "choicegroup_only": "Len",
+  "loading": "Načítava sa",
+  "pagination_label_next": "Ďalej",
+  "pagination_label_prev": "Predchádzajúca",
+  "ratingstar_description": "Hodnotenie __number__ z __total__",
+  "wizard_progress": "__number__ z __total__"
+}

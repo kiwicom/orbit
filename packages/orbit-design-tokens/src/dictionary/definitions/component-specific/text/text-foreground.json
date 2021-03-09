@@ -1,0 +1,36 @@
+{
+  "component": {
+    "text": {
+      "foreground": {
+        "primary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        },
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      }
+    }
+  }
+}

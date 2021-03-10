@@ -31,6 +31,59 @@
           "value": "{foundation.palette.red.normal}"
         }
       }
+    },
+    "color": {
+      "icon": {
+        "primary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.primary}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.tertiary}",
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.info}",
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.success}",
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.warning}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.foreground.critical}",
+          "deprecated-version": "1.0.0"
+        }
+      }
     }
   }
 }

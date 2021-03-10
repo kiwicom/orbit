@@ -1,38 +1,156 @@
 {
   "component": {
-    "button-white": {
-      "background": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal}"
-      },
-      "background-hover": {
-        "type": "color",
-        "value": "{foundation.palette.cloud.light}"
-      },
-      "background-active": {
-        "type": "color",
-        "value": "{foundation.palette.cloud.light-secondary}"
-      },
-      "foreground": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.ink.normal}"
-      },
-      "foreground-hover": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.ink.normal-secondary}"
-      },
-      "foreground-active": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.ink.normal-tertiary}"
-      },
-      "border-color-focus": {
-        "type": "color",
-        "category": "border-color",
-        "value": "{foundation.palette.white.normal-tertiary}",
-        "opacity": 50
+    "button": {
+      "white": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-secondary}"
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal-secondary}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal-tertiary}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.white.normal-tertiary}",
+          "opacity": 50
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered": {
+          "type": "color",
+          "value": "transparent",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "opacity": 20,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "opacity": 20,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "white": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "border-color": {
+      "button": {
+        "white-bordered": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
       }
     }
   }

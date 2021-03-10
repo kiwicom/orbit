@@ -23,6 +23,38 @@
           "value": 1280
         }
       }
+    },
+    "width": {
+      "modal": {
+        "small": {
+          "type": "size",
+          "value": 540,
+          "deprecated": true,
+          "deprecated-replace": "{component.modal.width.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": 740,
+          "deprecated": true,
+          "deprecated-replace": "{component.modal.width.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": 900,
+          "deprecated": true,
+          "deprecated-replace": "{component.modal.width.large}",
+          "deprecated-version": "1.0.0"
+        },
+        "extra-large": {
+          "type": "size",
+          "value": 1280,
+          "deprecated": true,
+          "deprecated-replace": "{component.modal.width.extra-large}",
+          "deprecated-version": "1.0.0"
+        }
+      }
     }
   }
 }

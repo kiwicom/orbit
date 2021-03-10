@@ -4,7 +4,7 @@ import { Attributes, Property } from "style-dictionary";
 import { errorTransform } from "../../utils/errorMessage";
 import { nameNOVCamel } from "../names";
 import { valueJavascript } from "../values";
-import { isZIndex, isBreakpoint, isBoxShadow } from "../../utils/is";
+import { isZIndex, isBreakpoint, isBoxShadow, isModifier } from "../../utils/is";
 import { falsyString, pixelized } from "../../utils/string";
 
 const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
@@ -89,7 +89,7 @@ export const attributeJavascriptType = {
   transformer: (prop: Property): Attributes => {
     const { attributes } = prop;
     const getFoundationType = p => {
-      if (isZIndex(p) || isBreakpoint(p)) return "number";
+      if (isZIndex(p) || isBreakpoint(p) || isModifier(p)) return "number";
       return "string";
     };
     const foundationType = getFoundationType(prop);

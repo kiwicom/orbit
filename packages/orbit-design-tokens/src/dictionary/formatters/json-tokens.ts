@@ -2,13 +2,20 @@ import { Property } from "style-dictionary";
 
 import { getValue } from "../utils/get";
 
+const getDeprecatedToken = deprecatedToken => {
+  if (deprecatedToken) {
+    return deprecatedToken.name;
+  }
+  return null;
+};
+
 const jsonDeprecatedTokens = {
   name: "json/deprecated-tokens",
   formatter: ({ allProperties }: { allProperties: Property[] }): string => {
     const deprecatedTokens = allProperties.map(prop => {
       const { name } = prop;
       const { "deprecated-replace": deprecatedReplace, "deprecated-version": version } = prop;
-      const replaceForToken = deprecatedReplace != null ? deprecatedReplace.value.name : null;
+      const replaceForToken = getDeprecatedToken(deprecatedReplace);
       return {
         [name]: {
           replaceForToken,

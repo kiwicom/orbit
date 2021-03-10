@@ -15,6 +15,8 @@ export const isSize = (prop: Property): boolean => isTypeOf(prop, "size");
 
 export const isBoxShadow = (prop: Property): boolean => isTypeOf(prop, "box-shadow");
 
+export const isModifier = (prop: Property): boolean => isTypeOf(prop, "modifier");
+
 export const isInternal = ({ internal }: Property): boolean => !!internal;
 
 export const isNotInternal = (token: Property): boolean => !isInternal(token);

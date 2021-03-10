@@ -24,6 +24,7 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalActive,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalActive,
     },
+    // TODO: remove, not used in render
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,

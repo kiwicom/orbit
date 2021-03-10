@@ -1,4 +1,4 @@
-name: Test and deploy branch
+name: Test and deploy
 
 on:
   push:
@@ -16,7 +16,7 @@ env: # Set environment variables for every job and step in this workflow
 jobs:
   build_test:
     runs-on: ubuntu-latest
-    name: Build and test branch
+    name: Build and test
     steps:
       - uses: actions/checkout@v2
       - name: Restore lerna
@@ -25,14 +25,33 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            docs/.cache
+            docs/public
+          key: ${{ runner.os }}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+
       - name: Install dependencies
-        run: yarn install && yarn bootstrap
+        run: yarn install --frozen-lockfile && yarn bootstrap
 
       - name: Check icons
         run: npx lerna run --scope @kiwicom/orbit-components check:icons
 
       - name: Build
-        run: npx lerna run --ignore orbit.kiwi build
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx lerna run build
+
+      - name: Upload orbit.kiwi and storybook artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            docs/public
+            packages/orbit-components/.out
+          retention-days: 5
 
       - name: Flow
         run: yarn flow:check
@@ -48,10 +67,14 @@ jobs:
       - name: Test
         run: |
           yarn test-ci
-  deploy:
+
+      - name: Check docs links
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node docs/utils/check-links.js
+  deploy_branch:
     # do not run on master branch
-    # if expression will fail because github.head_ref doesn't contain anything when push to master
-    if: ${{ github.head_ref }}
+    if: github.ref != 'refs/heads/master'
     needs: build_test
     runs-on: ubuntu-latest
     name: Deploy branch
@@ -64,10 +87,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
-        run: yarn install && yarn bootstrap
-
-      - name: Build design tokens
-        run: yarn orbit-design-tokens build
+        run: yarn install --frozen-lockfile && yarn bootstrap
 
       - name: Fire deployment
         uses: actions/setup-node@v1
@@ -80,18 +100,10 @@ jobs:
       - name: Get PR_NUMBER
         run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
 
-      - name: Build
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          yarn orbit-components build:storybook
-          yarn orbit-components build:lib
-          yarn orbit-kiwi build
-
-      - name: Check links
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: node docs/utils/check-links.js
+      - name: Restore orbit.kiwi and storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
 
       - name: Publish
         run: |
@@ -102,3 +114,29 @@ jobs:
         run: |
           yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi
           yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+  deploy_master:
+    # run on master branch
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: build_test
+    name: Deploy to GH pages
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && yarn bootstrap
+
+      - name: Restore orbit.kiwi and storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+
+      - name: Deploy storybook
+        run: yarn orbit-components deploy:storybook --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

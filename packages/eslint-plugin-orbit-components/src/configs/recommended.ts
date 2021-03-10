@@ -5,6 +5,7 @@ const recommended = {
     "orbit-components/unnecessary-text": "error",
     "orbit-components/prefer-single-destructure": "warn",
     "orbit-components/custom-colors": "warn",
+    "orbit-components/default-theme": "error",
   },
 };
 

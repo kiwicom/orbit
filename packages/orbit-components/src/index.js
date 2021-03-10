@@ -100,6 +100,7 @@ export { default as Seat } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Separator } from "./Separator";
 export { default as ServiceLogo } from "./ServiceLogo";
+export { default as SkipLink } from "./SkipLink";
 export { default as SkipNavigation } from "./SkipNavigation";
 export { default as SmartPassV1 } from "./SmartPassIllustrations/illustrations/SmartPassV1";
 export { default as SmartPassV2 } from "./SmartPassIllustrations/illustrations/SmartPassV2";

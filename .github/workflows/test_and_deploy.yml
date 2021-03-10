@@ -23,7 +23,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          restore-keys: |
+            node-modules-${{ github.ref}}-
+            node-modules-
 
       - name: Restore Gatsby cache
         uses: actions/cache@v2
@@ -31,7 +34,10 @@ jobs:
           path: |
             docs/.cache
             docs/public
-          key: ${{ runner.os }}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+          key: gatsby-${{ github.ref}}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+          restore-keys: |
+            gatsby-${{ github.ref}}-
+            gatsby-
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn bootstrap
@@ -84,7 +90,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn bootstrap
@@ -126,7 +132,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn bootstrap

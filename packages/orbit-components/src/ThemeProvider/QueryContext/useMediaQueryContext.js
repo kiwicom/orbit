@@ -65,7 +65,7 @@ const useMediaQueryContext: UseMediaQuery = () => {
       mediaQueryLists[mql].addListener(handler);
     });
     return () => {
-      Object.keys(mediaQueryLists).forEach(mql => mediaQueryLists[mql].addListener(handler));
+      Object.keys(mediaQueryLists).forEach(mql => mediaQueryLists[mql].removeListener(handler));
     };
   }, [getValue, mediaQueryLists]);
   return value;

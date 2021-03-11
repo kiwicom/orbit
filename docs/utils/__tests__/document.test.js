@@ -27,7 +27,7 @@ describe("document utils", () => {
         `${ROOT}/01-getting-started/02-for-designers/meta.yml`,
         dedent`
         title: For designers
-        excerpt: Everything you need to start designing with Orbit UI kit.
+        description: Everything you need to start designing with Orbit UI kit.
         type: tabs
       `,
       );

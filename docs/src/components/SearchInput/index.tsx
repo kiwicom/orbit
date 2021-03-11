@@ -17,7 +17,7 @@ type KeyboardEvent = Event<React.KeyboardEvent<HTMLInputElement>>;
 
 interface SearchResult {
   id: string;
-  excerpt: string;
+  description: string;
   title: string;
   path: string;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import { Heading, Inline, Stack } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
@@ -49,7 +48,6 @@ interface Props {
 }
 
 export default function Home({ location }: Props) {
-  const theme = useTheme();
   return (
     <Layout location={location}>
       <RocketImage />

@@ -3,31 +3,34 @@ import { graphql, PageRendererProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import DocLayout from "../components/DocLayout";
+import { TabObject } from "../components/Tabs";
 
 interface Props extends PageRendererProps {
   data: {
     mdx: {
-      frontmatter: {
-        title: string;
-      };
       fields: {
         description: string;
         slug: string;
+        title: string;
       };
       body: string;
+    };
+    tabs: {
+      nodes: TabObject[];
     };
   };
 }
 
 export default function Doc({ data, location }: Props) {
-  const { frontmatter, fields, body } = data.mdx;
-  console.log(fields);
+  const { fields, body } = data.mdx;
+  const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
   return (
     <DocLayout
       path={fields.slug}
       location={location}
-      title={frontmatter.title}
+      title={fields.title}
       description={fields.description}
+      tabs={tabs}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
@@ -35,16 +38,28 @@ export default function Doc({ data, location }: Props) {
 }
 
 export const query = graphql`
-  query DocQuery($id: String!) {
+  query DocQuery($id: String!, $tabs: String) {
     mdx(id: { eq: $id }) {
-      frontmatter {
-        title
-      }
       fields {
         description
         slug
+        title
       }
       body
+    }
+    tabs: allMdx(
+      filter: { fields: { tabCollection: { eq: $tabs } } }
+      sort: { fields: fileAbsolutePath }
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+          tabCollection
+        }
+      }
     }
   }
 `;

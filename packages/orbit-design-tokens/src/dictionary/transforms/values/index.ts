@@ -19,7 +19,6 @@ export const sizeJavascript = {
   type: "value",
   matcher: isSize,
   transformer: ({ value }: Property): Value => {
-    if (value === "auto") return stringify(value);
     return pixelized(value);
   },
 };
@@ -31,6 +30,19 @@ export const durationJavascript = {
   transformer: ({ value }: Property): Value => {
     const normalizedValue = Number(value);
     return stringify(`${normalizedValue / 1000}s`);
+  },
+};
+
+/*
+  Transforms sizes to pixel value for XML platform.
+  The result is without explicit quote marks.
+ */
+export const sizeXML = {
+  name: "value/size/xml",
+  type: "value",
+  matcher: isSize,
+  transformer: ({ value }: Property): Value => {
+    return pixelized(value, false);
   },
 };
 
@@ -61,6 +73,16 @@ export const valueJavascript = {
     if (isDuration(prop)) return durationJavascript.transformer(prop);
     if (isZIndex(prop) || isBreakpoint(prop) || isModifier(prop)) return Number(prop.value);
     return stringify(prop.value);
+  },
+};
+
+export const valueXML = {
+  name: "value/xml",
+  type: "value",
+  matcher: ({ attributes: { aliased } }: Property): boolean => !aliased,
+  transformer: (prop: Property): Value => {
+    if (isSize(prop)) return sizeJavascript.transformer(prop);
+    return prop.value;
   },
 };
 

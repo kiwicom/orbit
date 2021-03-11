@@ -6,6 +6,9 @@ import {
   isZIndex,
   isBreakpoint,
   isSize,
+  isSpacingWithTwoValues,
+  isSpacingWithThreeValues,
+  isSpacingWithFourValues,
   isBoxShadow,
   isModifier,
   isDuration,
@@ -29,26 +32,24 @@ const tokenPlaceholder = ({ type, internal }) => ({
 
 describe("is utils", () => {
   it("isColor should return expected", () => {
-    expect(isColor(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);
-    expect(isColor(tokenPlaceholder({ type: "spacing", internal: true }))).toEqual(false);
+    expect(isColor(tokenPlaceholder({ type: "color", internal: true }))).toBe(true);
+    expect(isColor(tokenPlaceholder({ type: "spacing", internal: true }))).toBe(false);
   });
   it("isBorderRadius should return expected", () => {
-    expect(isBorderRadius(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isBorderRadius(tokenPlaceholder({ type: "border-radius", internal: true }))).toEqual(
-      true,
-    );
+    expect(isBorderRadius(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
+    expect(isBorderRadius(tokenPlaceholder({ type: "border-radius", internal: true }))).toBe(true);
   });
   it("isZIndex should return expected", () => {
-    expect(isZIndex(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isZIndex(tokenPlaceholder({ type: "z-index", internal: true }))).toEqual(true);
+    expect(isZIndex(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
+    expect(isZIndex(tokenPlaceholder({ type: "z-index", internal: true }))).toBe(true);
   });
   it("isBreakpoint should return expected", () => {
-    expect(isBreakpoint(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isBreakpoint(tokenPlaceholder({ type: "breakpoint", internal: true }))).toEqual(true);
+    expect(isBreakpoint(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
+    expect(isBreakpoint(tokenPlaceholder({ type: "breakpoint", internal: true }))).toBe(true);
   });
   it("isSize should return expected", () => {
-    expect(isSize(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isSize(tokenPlaceholder({ type: "size", internal: true }))).toEqual(true);
+    expect(isSize(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
+    expect(isSize(tokenPlaceholder({ type: "size", internal: true }))).toBe(true);
   });
   it("isBoxShadow should return expected", () => {
     expect(isBoxShadow(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
@@ -63,11 +64,34 @@ describe("is utils", () => {
     expect(isDuration(tokenPlaceholder({ type: "duration", internal: false }))).toEqual(true);
   });
   it("isInternal should return expected", () => {
-    expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);
-    expect(isInternal(tokenPlaceholder({ type: "color", internal: false }))).toEqual(false);
+    expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toBe(true);
+    expect(isInternal(tokenPlaceholder({ type: "color", internal: false }))).toBe(false);
   });
   it("isNotInternal should return expected", () => {
-    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
-    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: false }))).toEqual(true);
+    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
+    expect(isNotInternal(tokenPlaceholder({ type: "color", internal: false }))).toBe(true);
+  });
+  it("isSpacingWithTwoValues should return expected", () => {
+    expect(isSpacingWithTwoValues(["top-bottom", "left-right"])).toBe(true);
+    expect(isSpacingWithTwoValues(["left-right", "top-bottom"])).toBe(true);
+    expect(isSpacingWithTwoValues(["left-right", "bottom-top"])).toBe(false);
+    expect(isSpacingWithTwoValues(["right-left", "top-bottom"])).toBe(false);
+    expect(isSpacingWithTwoValues(["top", "right", "bottom", "left"])).toBe(false);
+    expect(isSpacingWithTwoValues(["top", "left-right", "bottom"])).toBe(false);
+  });
+  it("isSpacingWithThreeValues should return expected", () => {
+    expect(isSpacingWithThreeValues(["top", "left-right", "bottom"])).toBe(true);
+    expect(isSpacingWithThreeValues(["bottom", "left-right", "top"])).toBe(true);
+    expect(isSpacingWithThreeValues(["left-right", "bottom", "top"])).toBe(true);
+    expect(isSpacingWithThreeValues(["left", "bottom", "top"])).toBe(false);
+    expect(isSpacingWithThreeValues(["right", "left", "bottom", "top"])).toBe(false);
+    expect(isSpacingWithThreeValues(["top-bottom", "left-right"])).toBe(false);
+  });
+  it("isSpacingWithFourValues should return expected", () => {
+    expect(isSpacingWithFourValues(["top", "right", "bottom", "left"])).toBe(true);
+    expect(isSpacingWithFourValues(["top", "left", "bottom", "right"])).toBe(true);
+    expect(isSpacingWithFourValues(["bottom", "left", "top", "right"])).toBe(true);
+    expect(isSpacingWithFourValues(["top-bottom", "left-right"])).toBe(false);
+    expect(isSpacingWithFourValues(["top", "left-right", "bottom"])).toBe(false);
   });
 });

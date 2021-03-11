@@ -16,11 +16,20 @@ import {
   createArrayExpression,
   createDefaultImport,
 } from "../utils/create";
-import { isColor, isBoxShadow } from "../utils/is";
+import { isColor, isBoxShadow, isSpacing } from "../utils/is";
 import { getValue } from "../utils/get";
-import { falsyString } from "../utils/string";
+import { falsyString, flattenSpacing } from "../utils/string";
 
 const functionName = "createTokens";
+
+const createSpacingValue = values => {
+  // wrap up the value into interpolation only if the value is not pixelized or zero
+  const value = values.map(v => (!/[\d]+px/g.test(v) && String(v) !== "0" ? `\${${v}}` : v));
+  return `\`${value.join(" ")}\``;
+};
+
+const createSpacing = (name: string, spacing: { [key: string]: Property }) =>
+  createObjectProperty(name, createSpacingValue(flattenSpacing(name, spacing)));
 
 /*
   Used for generating typescript file that contains javascript and typescript declarations together.
@@ -73,6 +82,12 @@ const typescriptFactory = allProperties => {
     const plainValue = getValue(value);
     if (isColor(prop) && opacity) {
       return createObjectProperty(name, `transparentColor(${plainValue}, ${opacity})`);
+    }
+    if (isSpacing(prop)) {
+      const {
+        attributes: { spacing },
+      } = prop;
+      return createSpacing(name, spacing);
     }
     if (isBoxShadow(prop)) {
       const {

@@ -1,5 +1,8 @@
-export const errorValue = (name: string, value: string, type: string, toType: string): string =>
-  `Invalid value: '${name}: ${value}' is not a valid value for '${type}', cannot transform to '${toType}' \n`;
+export const spacingError = (name: string): string =>
+  `Unexpected value of spacing token ${name}. Please specify attributes.spacing object for the token.`;
+
+export const spacingErrorDefinition = (name: string): string =>
+  `Unexpected value of spacing token ${name}. Supported properties of the spacing object are { top, right, bottom, left }, { top, left-right, bottom } or { top-bottom, left-right}.`;
 
 export const errorTransform = (transform: string, neededTransform: string): string =>
   `Can't use transform '${transform}', because transform '${neededTransform}' is not being used. Add it into the transformGroup settings. \n`;

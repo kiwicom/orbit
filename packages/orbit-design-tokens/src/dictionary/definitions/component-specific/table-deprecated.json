@@ -1,0 +1,104 @@
+{
+  "component": {
+    "background": {
+      "table": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-even": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.light}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-hover": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-shadow": {
+        "left": {
+          "type": "color",
+          "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 23))",
+          "internal-comment": "We don't want to maintain and define linear-gradient type and function for it right now, and the tokens is deprecated therefore it's stored as a static value",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "right": {
+          "type": "color",
+          "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 23))",
+          "internal-comment": "We don't want to maintain and define linear-gradient type and function for it right now, and the tokens is deprecated therefore it's stored as a static value",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "border-color": {
+      "table": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-cell": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-head": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "color-text": {
+      "table": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "font-weight": {
+      "table-head": {
+        "type": "font-weight",
+        "value": "{foundation.font-weight.bold}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "padding": {
+      "table": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top-bottom": "{foundation.space.three-x}",
+            "left-right": "{foundation.space.four-x}"
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "table-compact": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top-bottom": "{foundation.space.two-x}",
+            "left-right": "{foundation.space.three-x}"
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

@@ -7,30 +7,21 @@ const omitNumbers = filePath => filePath.replace(rePathNumbers, "$1");
 
 const ROOT = path.resolve(__dirname, "../src/documentation");
 
-function getMetaFile(pathToFile) {
-  return fs.existsSync(pathToFile) ? yaml.load(fs.readFileSync(pathToFile)) : {};
-}
-
 function getMetaPath(dir) {
   return path.join(ROOT, dir, "meta.yml");
 }
 
-// TODO: check if need or else move back to getDocumentUrlPath
-function doesPageHaveTabs(dir) {
+function getMetaFile(dir) {
   const metaPath = getMetaPath(dir);
-  const meta = getMetaFile(metaPath);
+  return fs.existsSync(metaPath) ? yaml.load(fs.readFileSync(metaPath)) : {};
+}
+
+function doesPageHaveTabs(dir) {
+  const meta = getMetaFile(dir);
   return meta.type === "tabs";
 }
 
-function getDescriptionFromMeta(filePath) {
-  const { dir } = path.parse(filePath);
-  const metaPath = getMetaPath(dir);
-  const meta = getMetaFile(metaPath);
-  return meta.description;
-}
-
-function getDocumentUrlPath(filePath) {
-  const { dir, base, name } = path.parse(filePath);
+function getDocumentUrlPath(dir, base, name) {
   if (!base.startsWith("01-")) {
     return omitNumbers(path.join(dir, name, "/"));
   }
@@ -40,6 +31,7 @@ function getDocumentUrlPath(filePath) {
 }
 
 module.exports = {
+  doesPageHaveTabs,
   getDocumentUrlPath,
-  getDescriptionFromMeta,
+  getMetaFile,
 };

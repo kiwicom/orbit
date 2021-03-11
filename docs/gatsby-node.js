@@ -1,24 +1,26 @@
+const path = require("path");
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { getDocumentUrlPath, getDescriptionFromMeta } = require("./utils/document");
+const { doesPageHaveTabs, getDocumentUrlPath, getMetaFile } = require("./utils/document");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type !== "Mdx") return;
   const { createNodeField } = actions;
   const parent = getNode(node.parent);
   const filePath = createFilePath({ node, getNode, basePath: `pages` });
+  const { dir, base, name } = path.parse(filePath);
+  const metaFile = getMetaFile(dir);
 
   createNodeField({
     node,
     name: "slug",
-    value: getDocumentUrlPath(filePath),
+    value: getDocumentUrlPath(dir, base, name),
   });
-
-  const nodeDescription = node.description || getDescriptionFromMeta(filePath);
 
   createNodeField({
     node,
     name: "description",
-    value: nodeDescription,
+    value: node.frontmatter.description || node.description || metaFile.description,
   });
 
   // creates a "collection" field to make it easier to filter nodes created by
@@ -29,6 +31,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node,
     name: "collection",
     value: parent.sourceInstanceName,
+  });
+
+  // Create a similar field that should be identical
+  // for all pages that are tabs in one folder
+  createNodeField({
+    node,
+    name: "tabCollection",
+    value: doesPageHaveTabs(dir) ? parent.relativeDirectory : null,
+  });
+
+  // Make title the same for all pages in tabs
+  createNodeField({
+    node,
+    name: "title",
+    value: doesPageHaveTabs(dir) ? getMetaFile(dir).title : node.frontmatter.title,
   });
 };
 
@@ -41,6 +58,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           fields {
             slug
+            tabCollection
           }
         }
       }
@@ -54,7 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: fields.slug,
       component: `${__dirname}/src/templates/Doc.tsx`,
-      context: { id },
+      context: { id, tabs: fields.tabCollection },
     });
   });
 };
@@ -79,6 +97,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       collection: String!
       description: String
       slug: String!
+      tabCollection: String
+      title: String!
     }
   `,
   );

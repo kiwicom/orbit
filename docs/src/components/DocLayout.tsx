@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Stack, Text, ThemeProvider } from "@kiwicom/orbit-components";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -16,6 +16,7 @@ import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
+import Tabs, { TabObject } from "./Tabs";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -41,7 +42,7 @@ const StyledFooter = styled.footer`
 `;
 
 const ContentContainer = styled(Box)`
-  border-radius: 16px;
+  border-radius: ${({ theme }) => theme.orbit.spaceMedium};
   > * + * {
     margin-top: ${({ theme }) => theme.orbit.spaceSmall};
   }
@@ -55,6 +56,11 @@ const ContentContainer = styled(Box)`
   > h6 {
     margin-top: ${({ theme }) => theme.orbit.spaceLarge};
   }
+  > div + h2:nth-child(2),
+  h2:first-child {
+    margin-top: 0;
+  }
+  margin-top: 0;
 `;
 
 interface Props {
@@ -63,9 +69,10 @@ interface Props {
   path: string;
   title?: string;
   description?: string;
+  tabs: TabObject[];
 }
 
-export default function DocLayout({ children, description, location, path, title }: Props) {
+export default function DocLayout({ children, description, location, path, tabs, title }: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -74,24 +81,22 @@ export default function DocLayout({ children, description, location, path, title
           <StyledMain>
             <Breadcrumbs location={location} />
             <Prose>
-              {title && (
-                <Stack inline align="center">
+              <Box padding={{ bottom: "XLarge" }}>
+                <Stack inline align="center" spaceAfter="small">
                   <AddBookmark />
                   <Heading as="h1" type="display">
                     {title}
                   </Heading>
                 </Stack>
-              )}
-              {description && (
-                <Box padding={{ left: "XXLarge", bottom: "XLarge" }}>
-                  {" "}
-                  <Text>{description}</Text>
-                </Box>
-              )}
-              <ContentContainer
-                padding={{ left: "XLarge", top: "XXSmall", right: "XLarge", bottom: "large" }}
-                elevation="raised"
-              >
+                {description && (
+                  <Box padding={{ left: "XXLarge" }}>
+                    {" "}
+                    <Text>{description}</Text>
+                  </Box>
+                )}
+              </Box>
+              {tabs && <Tabs location={location.pathname} tabs={tabs} />}
+              <ContentContainer padding="XLarge" elevation="raised">
                 <MDXProvider
                   components={{
                     ...components,

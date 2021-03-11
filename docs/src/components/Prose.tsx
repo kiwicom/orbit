@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Box } from "@kiwicom/orbit-components";
 
 const Prose = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -8,13 +9,6 @@ const Prose = styled.div`
   }
   > h1 {
     margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
-  }
-  > h2,
-  > h3,
-  > h4,
-  > h5,
-  > h6 {
-    margin-top: ${({ theme }) => theme.orbit.spaceLarge};
   }
 `;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Stack, Text, ThemeProvider } from "@kiwicom/orbit-components";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -40,6 +40,23 @@ const StyledFooter = styled.footer`
   justify-content: flex-end;
 `;
 
+const ContentContainer = styled(Box)`
+  border-radius: 16px;
+  > * + * {
+    margin-top: ${({ theme }) => theme.orbit.spaceSmall};
+  }
+  > h1 {
+    margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
+  }
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin-top: ${({ theme }) => theme.orbit.spaceLarge};
+  }
+`;
+
 interface Props {
   children: React.ReactNode;
   location: WindowLocation;
@@ -65,23 +82,33 @@ export default function DocLayout({ children, description, location, path, title
                   </Heading>
                 </Stack>
               )}
-              <Box padding={{ left: "XXLarge" }}>{description && <Text>{description}</Text>}</Box>
-              <MDXProvider
-                components={{
-                  ...components,
-                  ComponentStatus,
-                  FancyLink,
-                  Guideline,
-                  GuidelineImages,
-                  DoImage,
-                  DontImage,
-                  GuidelinesSideBySide,
-                  Do,
-                  Dont,
-                }}
+              {description && (
+                <Box padding={{ left: "XXLarge", bottom: "XLarge" }}>
+                  {" "}
+                  <Text>{description}</Text>
+                </Box>
+              )}
+              <ContentContainer
+                padding={{ left: "XLarge", top: "XXSmall", right: "XLarge", bottom: "large" }}
+                elevation="raised"
               >
-                {children}
-              </MDXProvider>
+                <MDXProvider
+                  components={{
+                    ...components,
+                    ComponentStatus,
+                    FancyLink,
+                    Guideline,
+                    GuidelineImages,
+                    DoImage,
+                    DontImage,
+                    GuidelinesSideBySide,
+                    Do,
+                    Dont,
+                  }}
+                >
+                  {children}
+                </MDXProvider>
+              </ContentContainer>
             </Prose>
           </StyledMain>
           <StyledFooter />

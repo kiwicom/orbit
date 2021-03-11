@@ -78,7 +78,7 @@ export default {
       </Stack>
     );
     return (
-      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
         <AccordionSection
           id="outbound"
           header={

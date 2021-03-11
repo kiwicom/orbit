@@ -15,7 +15,7 @@ export default {
     </div>
   ),
   info: {
-    title: "Accessibilty",
+    title: "Accessibility",
     description:
       "Include a label with the input stepper so it's clear what is being incremented. Include titles for the increment and decrement buttons so everyone will know what they do.",
   },

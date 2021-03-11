@@ -1,24 +1,24 @@
 import * as React from "react";
 import { Layout, LayoutColumn, Text } from "@kiwicom/orbit-components";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle = css`
-      minHeight: ${defaultTheme.orbit.heightIllustrationMedium},
-      background: ${defaultTheme.orbit.backgroundBody},
-    `;
+    const divStyle: CSSProperties = {
+      minHeight: `${defaultTheme.orbit.heightIllustrationMedium}`,
+      background: `${defaultTheme.orbit.backgroundBody}`,
+    };
 
     return (
       <Layout type="Booking">
         <LayoutColumn>
-          <div css={divStyle}>
+          <div style={divStyle}>
             <Text>This column is designed for the main content.</Text>
           </div>
         </LayoutColumn>
         <LayoutColumn>
-          <div css={divStyle}>
+          <div style={divStyle}>
             <Text>
               This column is designed for summaries. It appears on the right on <code>tablet</code>{" "}
               and wider screens. On <code>largeMobile</code> and smaller screens, it appears below

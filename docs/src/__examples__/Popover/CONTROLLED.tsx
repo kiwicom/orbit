@@ -1,8 +1,6 @@
 import * as React from "react";
-import { Button, ButtonLink, Heading, Stack, Popover } from "@kiwicom/orbit-components";
+import { Button, ButtonLink, Heading, Stack, Popover, Text } from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
-
-import { Text } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {

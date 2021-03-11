@@ -1,18 +1,35 @@
-const statsFilename = "loadable-stats.json";
-const statsPath = `${process.cwd()}/public/${statsFilename}`;
-const fs = require("fs");
-const parser = require("@babel/parser");
-const path = require("path");
+const { parse } = require("@babel/parser");
+const t = require("@babel/types");
 
-const getSource = file => {
-  const code = parser.parse(fs.readFileSync(file), {
+const getScope = example => {
+  const code = parse(example, {
     sourceType: "module",
-    sourceFilename: path.basename(file),
+    plugins: ["typescript", "jsx"],
   });
-  return code;
+
+  const scope = [];
+
+  code.program.body.forEach(n => {
+    if (t.isImportDeclaration(n)) {
+      const p = n.source.value;
+      if (n.source.value.match(/@kiwicom\/orbit-components|styled-components/)) {
+        n.specifiers.forEach(s => {
+          if (t.isImportDefaultSpecifier(s)) {
+            if (t.isIdentifier(s.local)) scope.push({ name: s.local.name, path: p, default: true });
+          }
+
+          if (t.isImportSpecifier(s)) {
+            if (t.isIdentifier(s.imported))
+              scope.push({ name: s.imported.name, path: p, default: false });
+          }
+        });
+      }
+    }
+  });
+
+  return scope;
 };
 
 module.exports = {
-  statsPath,
-  getSource,
+  getScope,
 };

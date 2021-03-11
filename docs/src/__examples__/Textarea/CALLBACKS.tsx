@@ -3,9 +3,8 @@ import { Stack, Text, Textarea, List, ListItem, TextLink } from "@kiwicom/orbit-
 
 export default {
   Example: () => {
-    const [actions, setActions] = React.useState([]);
+    const [actions, setActions] = React.useState<string[]>([]);
     const addAction = action => {
-      // @ts-expect-error todo
       setActions([...actions, action]);
     };
     return (

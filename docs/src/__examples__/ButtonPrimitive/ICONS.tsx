@@ -1,7 +1,6 @@
 import * as React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { Stack } from "@kiwicom/orbit-components";
-import { Heading } from "@kiwicom/orbit-components";
+import { Stack, Heading } from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
 import ButtonPrimitive from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 
@@ -59,7 +58,7 @@ export default {
           Edit
         </ButtonPrimitive>
         <ButtonPrimitive
-          icons={{ foregroundFocus: defaultTheme.orbit.colorIconSuccess }}
+          icons={{ foregroundActive: defaultTheme.orbit.colorIconSuccess }}
           iconLeft={<Icons.Edit />}
         >
           Edit

@@ -83,7 +83,7 @@ export default {
           </Popover>
           <Popover
             content={
-              <ChoiceGroup label="Stops" onChange={event => setStops(event.target.name)}>
+              <ChoiceGroup label="Stops" onChange={event => setStops(event.currentTarget.name)}>
                 <Radio name="non" label="Any" checked={stops === "any" || false} />
                 <Radio name="non" label="Nonstop" checked={stops === "non" || false} />
                 <Radio name="1stop" label="Up to 1 stop" checked={stops === "1stop" || false} />
@@ -109,7 +109,7 @@ export default {
               <ChoiceGroup
                 label="Transport"
                 onChange={event => {
-                  const { name } = event.target;
+                  const { name } = event.currentTarget;
                   setChecked(prevState => ({ ...prevState, [name]: !checked[name] }));
                 }}
               >

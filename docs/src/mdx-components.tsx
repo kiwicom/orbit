@@ -15,7 +15,6 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { navigate } from "gatsby";
 import { css } from "styled-components";
 
-import Example from "./components/Example";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 

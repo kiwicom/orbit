@@ -79,7 +79,7 @@ export default {
     );
 
     return (
-      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
         <AccordionSection
           footer={
             <Stack justify="center">

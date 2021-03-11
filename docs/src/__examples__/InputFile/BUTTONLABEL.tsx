@@ -11,6 +11,7 @@ export default {
         <InputFile
           buttonLabel="Select photo"
           label="Profile photo"
+          // @ts-expect-error TODO
           onChange={event => setPhotoName(event.target.files[0].name)}
           onRemoveFile={() => setPhotoName("")}
           fileName={photoName}
@@ -25,6 +26,7 @@ export default {
           placeholder="No file selected"
           allowedFileTypes=".pdf"
           help="Upload a signed statement as a PDF"
+          // @ts-expect-error TODO
           onChange={event => setStatementName(event.target.files[0].name)}
           onRemoveFile={() => setStatementName("")}
         />

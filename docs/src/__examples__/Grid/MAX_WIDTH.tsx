@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Grid, Stack, Heading, Text } from "@kiwicom/orbit-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 
 export default {
   Example: () => {
-    const divStyle = css`
-      background: ${defaultTheme.orbit.paletteCloudDark};
-      border: 1px solid ${defaultTheme.orbit.paletteProductDark};
-      box-sizing: "border-box";
-      padding: ${defaultTheme.orbit.paddingButtonSmall};
-    `;
+    const divStyle: CSSProperties = {
+      backgroundColor: `${defaultTheme.orbit.paletteCloudDark}`,
+      border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
+      boxSizing: "border-box",
+      padding: `${defaultTheme.orbit.paddingButtonSmall}`,
+    };
 
     return (
       <Stack>
@@ -19,16 +19,16 @@ export default {
             No maximum width
           </Heading>
           <Grid columns="repeat(2, 1fr)" rows="repeat(2, 1fr)">
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 1, Row 1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 2, Row 1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 1, Row 2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 2, Row 2</Text>
             </div>
           </Grid>
@@ -38,16 +38,16 @@ export default {
             Maximum width of 400 px
           </Heading>
           <Grid columns="repeat(2, 1fr)" rows="repeat(2, 1fr)" maxWidth="400px">
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 1, Row 1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 2, Row 1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 1, Row 2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text>Column 2, Row 2</Text>
             </div>
           </Grid>

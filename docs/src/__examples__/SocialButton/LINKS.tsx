@@ -10,6 +10,7 @@ export default {
       <SocialButton
         asComponent="div"
         href="https://www.apple.com/"
+        // @ts-expect-error todo
         onClick={() => window.open("https://www.apple.com/", "_blank")}
         role="button"
         title="Homepage"

@@ -1,8 +1,6 @@
 import * as React from "react";
-import { Stack } from "@kiwicom/orbit-components";
+import { Stack, ListItem, CarrierLogo, List } from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
-
-import { ListItem, CarrierLogo, List } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (

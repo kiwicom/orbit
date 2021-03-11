@@ -15,7 +15,7 @@ export default {
         help={`Select a photo in one of the following types: ${fileTypes}`}
         label="Profile photo"
         // @ts-expect-error type
-        onChange={event => setFileName(event.currentTarget.files[0].name)}
+        onChange={event => setFileName(event.target.files[0].name)}
         onRemoveFile={() => setFileName("")}
         fileName={fileName}
         placeholder="No photo selected"

@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle = css`
+    const divStyle: CSSProperties = {
       width: "160px",
       height: "40px",
-      backgroundColor: ${defaultTheme.orbit.paletteInkLight},
-    `;
+      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
 
     return (
       <Stack>
@@ -18,13 +18,13 @@ export default {
             Vertical (the default)
           </Heading>
           <Stack>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">3</Text>
             </div>
           </Stack>
@@ -34,13 +34,13 @@ export default {
             Vertical reverse
           </Heading>
           <Stack direction="column-reverse">
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">3</Text>
             </div>
           </Stack>
@@ -50,13 +50,13 @@ export default {
             Horizontal
           </Heading>
           <Stack direction="row">
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">3</Text>
             </div>
           </Stack>
@@ -66,13 +66,13 @@ export default {
             Horizontal reverse
           </Heading>
           <Stack direction="row-reverse">
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">1</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">2</Text>
             </div>
-            <div css={divStyle}>
+            <div style={divStyle}>
               <Text type="white">3</Text>
             </div>
           </Stack>

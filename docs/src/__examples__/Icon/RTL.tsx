@@ -1,18 +1,16 @@
 import * as React from "react";
-import RenderInRtl from "@kiwicom/orbit-components/lib/utils/rtl/RenderInRtl";
-import { Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { Stack, ThemeProvider } from "@kiwicom/orbit-components";
+import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane";
 
 export default {
   Example: () => (
-    <Stack flex>
-      <RenderInRtl>
-        <Icons.Airplane ariaLabel="Airplane" />
-      </RenderInRtl>
-      <RenderInRtl>
-        <Icons.Airplane reverseOnRtl ariaLabel="Airplane" />
-      </RenderInRtl>
-    </Stack>
+    <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>
+      <Stack flex>
+        <Airplane ariaLabel="Airplane" />
+        <Airplane reverseOnRtl ariaLabel="Airplane" />
+      </Stack>
+    </ThemeProvider>
   ),
   info: {
     title: "Right-to-left icons",

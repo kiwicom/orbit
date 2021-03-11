@@ -28,7 +28,7 @@ export default {
             const newChecked = { ...checked, [name]: !checked[name] };
             setChecked(newChecked);
             const newItems = defaultItems.filter(item => {
-              const array = [];
+              const array: string[] = [];
               if (newChecked.Planes) {
                 array.push("Planes");
               }

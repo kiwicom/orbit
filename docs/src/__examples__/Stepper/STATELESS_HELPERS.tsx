@@ -10,7 +10,6 @@ export default {
     const step = 1;
     const [value, setValue] = React.useState(3);
     const incrementValue = () => {
-      // @ts-expect-error todo
       setValue(validateIncrement({ value, maxValue, step }));
     };
     const decrementValue = () => {

@@ -19,7 +19,7 @@ export default {
             { label: "Mexico", value: "mx" },
           ]}
           id="nationalities"
-          onChange={event => setCountry(event.target.value)}
+          onChange={event => setCountry(event.currentTarget.value)}
         />
       </Stack>
     );

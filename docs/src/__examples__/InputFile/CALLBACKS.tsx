@@ -3,7 +3,7 @@ import { InputFile, Stack, Text, List, ListItem, TextLink } from "@kiwicom/orbit
 
 export default {
   Example: () => {
-    const [actions, setActions] = React.useState([]);
+    const [actions, setActions] = React.useState<string[]>([]);
     const [fileName, setFileName] = React.useState("");
 
     const fileTypes = ".png,.jpg,.jpeg,.webp";
@@ -15,6 +15,7 @@ export default {
         <InputFile
           onChange={event => {
             addAction("Changed");
+            // @ts-expect-error TODO
             setFileName(event.target.files[0].name);
           }}
           onRemoveFile={() => {

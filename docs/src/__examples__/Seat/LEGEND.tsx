@@ -13,7 +13,7 @@ export default {
           <Seat size={isTablet ? "medium" : "small"} type="unavailable" />
         </Stack>
         <Stack direction="column">
-          <SeatLegend label="Extra legroom ($ 5.99 – $ 12.98)" />
+          <SeatLegend label="Extra legroom ($ 5.99 – $ 12.98)" type="default" />
           <SeatLegend type="legroom" label="Standard ($ 5.99 – $ 12.98)" />
           <SeatLegend type="unavailable" label="Unavailable" />
         </Stack>

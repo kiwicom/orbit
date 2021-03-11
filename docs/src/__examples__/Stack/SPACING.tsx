@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Stack, Heading } from "@kiwicom/orbit-components";
 import { Spacing } from "@kiwicom/orbit-components/lib/Stack";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 const SPACINGS: Record<string, Spacing> = {
@@ -18,11 +18,11 @@ const SPACINGS: Record<string, Spacing> = {
 
 export default {
   Example: () => {
-    const divStyle = css`
-      width: "160px";
-      height: "40px";
-      backgroundcolor: ${defaultTheme.orbit.paletteInkLight};
-    `;
+    const divStyle: CSSProperties = {
+      width: "160px",
+      height: "40px",
+      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
 
     return (
       <Stack>
@@ -32,9 +32,9 @@ export default {
               <code>{spacing}</code> {spacing === SPACINGS.MEDIUM && `(the default) `}
             </Heading>
             <Stack flex spacing={spacing}>
-              <div css={divStyle} />
-              <div css={divStyle} />
-              <div css={divStyle} />
+              <div style={divStyle} />
+              <div style={divStyle} />
+              <div style={divStyle} />
             </Stack>
           </Stack>
         ))}

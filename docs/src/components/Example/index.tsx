@@ -2,18 +2,19 @@ import React from "react";
 import { LiveProvider, LivePreview, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
-import loadable from "@loadable/component";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { Grid, ButtonLink, Stack, Tooltip } from "@kiwicom/orbit-components";
+import { ButtonLink, Stack, Tooltip } from "@kiwicom/orbit-components";
 import dracula from "prism-react-renderer/themes/dracula";
 import ChevronUp from "@kiwicom/orbit-components/lib/icons/ChevronUp";
 import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import * as Components from "@kiwicom/orbit-components";
+import * as Icons from "@kiwicom/orbit-components/lib/icons";
 
 import Copy from "../../images/copy.svg";
 
 interface Props {
-  name: string;
+  exampleId: string;
 }
 
 const StyledPreviewWrapper = styled.div`
@@ -24,7 +25,7 @@ const StyledPreviewWrapper = styled.div`
 
 const StyledBoard = styled.div``;
 
-const Example = ({ name }: Props) => {
+const Example = ({ exampleId }: Props) => {
   const [isOpened, setOpenEditor] = React.useState(false);
   const [isCopied, setCopied] = React.useState(false);
 
@@ -38,6 +39,11 @@ const Example = ({ name }: Props) => {
             fields {
               example_id
               example
+              scope {
+                name
+                path
+                default
+              }
             }
           }
         }
@@ -45,63 +51,64 @@ const Example = ({ name }: Props) => {
     `,
   );
 
-  const { fields } = allFile.nodes.find(n => n.fields.example_id === name);
+  const { fields } = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  // TODO: just temporary, investigating
-  // dynamic import: https://github.com/gregberge/loadable-components/pull/483
-  const modules = ["Button", "Heading", "Text", "Stack"].reduce((acc, cur) => {
+  const modules = fields.scope.reduce((acc, { name, path }) => {
+    if (path.match(/@kiwicom\/orbit-components\/lib\/icons/)) {
+      return {
+        ...acc,
+        [name]: Icons[name],
+      };
+    }
+
     return {
       ...acc,
-      [cur]: loadable(() => import(`@kiwicom/orbit-components`), {
-        resolveComponent: mod => mod[cur],
-      }),
+      [name]: Components[name],
     };
   }, {});
 
   return (
-    <>
-      <LiveProvider
-        code={fields.example}
-        scope={{ ...modules, css, styled, defaultTheme, Grid }}
-        theme={dracula}
-      >
-        <StyledPreviewWrapper>
-          <LivePreview />
-        </StyledPreviewWrapper>
-        <StyledBoard>
-          <Stack flex justify="between" align="center">
-            <Stack inline>
-              <ButtonLink
-                onClick={() => setOpenEditor(prev => !prev)}
-                type="secondary"
-                ariaExpanded={isOpened}
-                iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
-              >
-                Code
-              </ButtonLink>
-            </Stack>
-            <Stack inline justify="end" align="center">
-              <CopyToClipboard text={fields.example}>
-                <Tooltip
-                  preferredPosition="top"
-                  preferredAlign="center"
-                  content={isCopied ? "copied" : "copy to clipboard"}
-                >
-                  <ButtonLink
-                    onClick={() => setCopied(true)}
-                    type="secondary"
-                    ariaLabelledby="copy to clipboard"
-                  >
-                    <Copy />
-                  </ButtonLink>
-                </Tooltip>
-              </CopyToClipboard>
-            </Stack>
+    <LiveProvider
+      code={fields.example}
+      scope={{ ...modules, defaultTheme, styled, css }}
+      theme={dracula}
+    >
+      <StyledPreviewWrapper>
+        <LivePreview />
+      </StyledPreviewWrapper>
+      <StyledBoard>
+        <Stack flex justify="between" align="center">
+          <Stack inline>
+            <ButtonLink
+              onClick={() => setOpenEditor(prev => !prev)}
+              type="secondary"
+              ariaExpanded={isOpened}
+              iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
+            >
+              Code
+            </ButtonLink>
           </Stack>
-        </StyledBoard>
-        {isOpened && <LiveEditor />}
-      </LiveProvider>
-    </>
+          <Stack inline justify="end" align="center">
+            <CopyToClipboard text={fields.example}>
+              <Tooltip
+                preferredPosition="top"
+                preferredAlign="center"
+                content={isCopied ? "copied" : "copy to clipboard"}
+              >
+                <ButtonLink
+                  onClick={() => setCopied(true)}
+                  type="secondary"
+                  ariaLabelledby="copy to clipboard"
+                >
+                  <Copy />
+                </ButtonLink>
+              </Tooltip>
+            </CopyToClipboard>
+          </Stack>
+        </Stack>
+      </StyledBoard>
+      {isOpened && <LiveEditor />}
+    </LiveProvider>
   );
 };
 

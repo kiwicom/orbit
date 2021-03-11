@@ -1,21 +1,21 @@
 import * as React from "react";
 import { Stack } from "@kiwicom/orbit-components";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle = css`
+    const divStyle: CSSProperties = {
       width: "160px",
       height: "40px",
-      backgroundColor: ${defaultTheme.orbit.paletteInkLight},
-    `;
+      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
 
     return (
       <Stack>
-        <div css={divStyle} />
-        <div css={divStyle} />
-        <div css={divStyle} />
+        <div style={divStyle} />
+        <div style={divStyle} />
+        <div style={divStyle} />
       </Stack>
     );
   },

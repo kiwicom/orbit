@@ -8,7 +8,7 @@ export default {
       <Textarea
         error={value ? "" : "Please enter some feedback"}
         value={value}
-        onChange={event => setValue(event.target.value)}
+        onChange={event => setValue(event.currentTarget.value)}
         help="Tell us what you liked about your booking experience and what could change."
         label="Your feedback"
         placeholder="What I liked about booking with Kiwi.com was ..."

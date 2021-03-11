@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import IllustrationPrimitive from "@kiwicom/orbit-components/lib/primitives/IllustrationPrimitive";
 
 export default {

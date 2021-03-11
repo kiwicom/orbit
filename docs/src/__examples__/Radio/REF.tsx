@@ -3,7 +3,7 @@ import { Radio } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
-    const ref = React.useRef(null);
+    const ref = React.useRef<HTMLElement | null>(null);
 
     React.useEffect(() => {
       if (ref.current) {

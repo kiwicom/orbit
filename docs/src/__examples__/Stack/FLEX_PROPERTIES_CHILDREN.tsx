@@ -1,35 +1,35 @@
 import * as React from "react";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 
 export default {
   Example: () => {
-    const divStyle = css`
-      width: "160px";
-      height: "40px";
-      backgroundcolor: ${defaultTheme.orbit.paletteInkLight};
-    `;
+    const divStyle: CSSProperties = {
+      width: "160px",
+      height: "40px",
+      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
 
-    const divStyleNarrow = css`
-      ${divStyle};
-      width: "80px";
-    `;
+    const divStyleNarrow = {
+      ...divStyle,
+      width: "80px",
+    };
 
-    const divStyleTall = css`
-      ${divStyle};
-      height: "80px";
-    `;
+    const divStyleTall = {
+      ...divStyle,
+      height: "80px",
+    };
 
-    const divStyleAutoHeight = css`
-      ${divStyle};
-      height: "auto";
-    `;
+    const divStyleAutoHeight = {
+      ...divStyle,
+      height: "auto",
+    };
 
-    const divStyleAutoWidth = css`
-      ${divStyle};
-      width: "auto";
-    `;
+    const divStyleAutoWidth = {
+      ...divStyle,
+      width: "auto",
+    };
 
     return (
       <Stack>
@@ -56,9 +56,9 @@ export default {
                 </Heading>
                 <Text>Items are grouped at the start of the row.</Text>
                 <Stack justify="start">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -67,9 +67,9 @@ export default {
                 </Heading>
                 <Text>Items are grouped toward the end of the row.</Text>
                 <Stack justify="end">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -78,9 +78,9 @@ export default {
                 </Heading>
                 <Text>Items are horizontally centered.</Text>
                 <Stack justify="center">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -92,9 +92,9 @@ export default {
                   last at the end.
                 </Text>
                 <Stack justify="between">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -107,9 +107,9 @@ export default {
                   item). And similarly for the last item.
                 </Text>
                 <Stack justify="around">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
             </Stack>
@@ -123,9 +123,9 @@ export default {
                 </Heading>
                 <Text>Items align with the top of the stack.</Text>
                 <Stack align="start">
-                  <div css={divStyle} />
-                  <div css={divStyleTall} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleTall} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -134,9 +134,9 @@ export default {
                 </Heading>
                 <Text>Items align with the bottom of the stack.</Text>
                 <Stack align="end">
-                  <div css={divStyle} />
-                  <div css={divStyleTall} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleTall} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -145,9 +145,9 @@ export default {
                 </Heading>
                 <Text>Items are vertically centered.</Text>
                 <Stack align="center">
-                  <div css={divStyle} />
-                  <div css={divStyleTall} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleTall} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -159,9 +159,9 @@ export default {
                   to fill the vertical space.
                 </Text>
                 <Stack align="stretch">
-                  <div css={divStyleAutoHeight} />
-                  <div css={divStyleTall} />
-                  <div css={divStyleAutoHeight} />
+                  <div style={divStyleAutoHeight} />
+                  <div style={divStyleTall} />
+                  <div style={divStyleAutoHeight} />
                 </Stack>
               </Stack>
             </Stack>
@@ -189,9 +189,9 @@ export default {
                 </Heading>
                 <Text>Items align with the start of the stack.</Text>
                 <Stack direction="column" align="start">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -200,9 +200,9 @@ export default {
                 </Heading>
                 <Text>Items align with the end of the stack.</Text>
                 <Stack direction="column" align="end">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -211,9 +211,9 @@ export default {
                 </Heading>
                 <Text>Items are horizontally centered.</Text>
                 <Stack direction="column" align="center">
-                  <div css={divStyle} />
-                  <div css={divStyleNarrow} />
-                  <div css={divStyle} />
+                  <div style={divStyle} />
+                  <div style={divStyleNarrow} />
+                  <div style={divStyle} />
                 </Stack>
               </Stack>
               <Stack>
@@ -225,9 +225,9 @@ export default {
                   to fill the horizontally space.
                 </Text>
                 <Stack direction="column" align="stretch">
-                  <div css={divStyleAutoWidth} />
-                  <div css={divStyle} />
-                  <div css={divStyleAutoWidth} />
+                  <div style={divStyleAutoWidth} />
+                  <div style={divStyle} />
+                  <div style={divStyleAutoWidth} />
                 </Stack>
               </Stack>
             </Stack>
@@ -247,11 +247,11 @@ export default {
             <Heading as="h3" type="title2">
               Not wrapped
             </Heading>
-            <div css={{ width: "400px" }}>
+            <div style={{ width: "400px" }}>
               <Stack flex>
-                <div css={divStyle} />
-                <div css={divStyle} />
-                <div css={divStyle} />
+                <div style={divStyle} />
+                <div style={divStyle} />
+                <div style={divStyle} />
               </Stack>
             </div>
           </Stack>
@@ -259,11 +259,11 @@ export default {
             <Heading as="h3" type="title2">
               Wrapped
             </Heading>
-            <div css={{ width: "400px" }}>
+            <div style={{ width: "400px" }}>
               <Stack wrap>
-                <div css={divStyle} />
-                <div css={divStyle} />
-                <div css={divStyle} />
+                <div style={divStyle} />
+                <div style={divStyle} />
+                <div style={divStyle} />
               </Stack>
             </div>
           </Stack>

@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Grid, Stack, Text } from "@kiwicom/orbit-components";
-import useTheme from "@kiwicom/orbit-components/src/hooks/useTheme";
-import { css } from "styled-components";
+import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
+import { CSSProperties } from "styled-components";
 
 export default {
   Example: () => {
-    const divStyle = css`
-      background: ${defaultTheme.orbit.paletteCloudDark};
-      border: 1px solid ${defaultTheme.orbit.paletteProductDark};
-      box-sizing: "border-box";
-      padding: ${defaultTheme.orbit.paddingButtonSmall};
-    `;
+    const divStyle: CSSProperties = {
+      backgroundColor: `${defaultTheme.orbit.paletteCloudDark}`,
+      border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
+      boxSizing: "border-box",
+      padding: `${defaultTheme.orbit.paddingButtonSmall}`,
+    };
 
     return (
       <Stack>
@@ -26,13 +26,13 @@ export default {
           desktop={{ rowGap: "28px" }}
           largeDesktop={{ rowGap: "36px" }}
         >
-          <div css={divStyle}>
+          <div style={divStyle}>
             <Text>Row 1</Text>
           </div>
-          <div css={divStyle}>
+          <div style={divStyle}>
             <Text>Row 2</Text>
           </div>
-          <div css={divStyle}>
+          <div style={divStyle}>
             <Text>Row 3</Text>
           </div>
         </Grid>

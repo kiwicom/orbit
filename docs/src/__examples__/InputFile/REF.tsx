@@ -14,6 +14,7 @@ export default {
     });
     return (
       <InputFile
+        // @ts-expect-error todo
         ref={ref}
         label="Profile photo"
         // @ts-expect-error type

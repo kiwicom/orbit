@@ -6,7 +6,11 @@ export default {
     <Checkbox
       label="Direct"
       disabled
-      tooltip={<Tooltip content="No results for direct connections" preferredPosition="top" />}
+      tooltip={
+        <Tooltip content="No results for direct connections" preferredPosition="top">
+          children
+        </Tooltip>
+      }
     />
   ),
   info: {

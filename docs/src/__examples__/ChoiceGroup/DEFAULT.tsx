@@ -10,7 +10,7 @@ export default {
         <ChoiceGroup
           label="Transport to search"
           onChange={event => {
-            const { name } = event.target;
+            const { name } = event.currentTarget;
             setChecked(prevState => ({ ...prevState, [name]: !checked[name] }));
           }}
         >
@@ -18,7 +18,7 @@ export default {
           <Checkbox name="train" label="Trains" checked={checked.train} />
           <Checkbox name="auto" label="Automobiles" checked={checked.auto} />
         </ChoiceGroup>
-        <ChoiceGroup label="Number of stops" onChange={event => setRadio(event.target.name)}>
+        <ChoiceGroup label="Number of stops" onChange={event => setRadio(event.currentTarget.name)}>
           <Radio name="non" label="Nonstop" checked={radio === "non" || false} />
           <Radio name="1stop" label="Up to 1 stop" checked={radio === "1stop" || false} />
           <Radio name="2stop" label="Up to 2 stops" checked={radio === "2stop" || false} />

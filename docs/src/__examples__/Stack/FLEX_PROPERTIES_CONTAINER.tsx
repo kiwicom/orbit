@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Stack, Heading, Text, TextLink } from "@kiwicom/orbit-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { css } from "styled-components";
+import { CSSProperties } from "styled-components";
 
 export default {
   Example: () => {
-    const divStyle = css`
-      width: "160px";
-      height: "40px";
-      backgroundcolor: ${defaultTheme.orbit.paletteInkLight};
-    `;
+    const divStyle: CSSProperties = {
+      width: "160px",
+      height: "40px",
+      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
 
     return (
       <Stack>
@@ -23,18 +23,18 @@ export default {
               Block
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack flex>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">First in stack</Text>
                 </div>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Second in stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -44,18 +44,18 @@ export default {
               Inline
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack inline>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">First in stack</Text>
                 </div>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Second in stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -73,7 +73,7 @@ export default {
             A basis of <code>auto</code> means relative flex using the item&apos;s content as the
             starting point. A basis of <code>0</code> means an absolute flex starting from 0. See
             more at the{" "}
-            <TextLink href="https://www.w3.org/TR/css-flexbox-1/#flex-flex-basis" external>
+            <TextLink href="https://www.w3.org/TR/style-flexbox-1/#flex-flex-basis" external>
               specification of <code>flex-basis</code>
             </TextLink>{" "}
             (especially the diagram there).
@@ -83,18 +83,18 @@ export default {
               Auto (the default)
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack flex basis="auto">
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">First in stack</Text>
                 </div>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Second in stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -104,18 +104,18 @@ export default {
               0
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack flex basis="0">
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">First in stack</Text>
                 </div>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Second in stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -125,18 +125,18 @@ export default {
               Specific number (400 px)
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack flex basis="400px">
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">First in stack</Text>
                 </div>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Second in stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -155,15 +155,15 @@ export default {
               Do grow
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack inline grow>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">In stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -173,15 +173,15 @@ export default {
               Don&apos;t grow
             </Heading>
             <Stack direction="row">
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">Before stack</Text>
               </div>
               <Stack inline grow={false}>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">In stack</Text>
                 </div>
               </Stack>
-              <div css={divStyle}>
+              <div style={divStyle}>
                 <Text type="white">After stack</Text>
               </div>
             </Stack>
@@ -199,20 +199,20 @@ export default {
             <Heading as="h3" type="title2">
               Do shrink
             </Heading>
-            <div css={{ width: "300px" }}>
+            <div style={{ width: "300px" }}>
               <Stack direction="row">
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Before stack</Text>
                 </div>
                 <Stack inline shrink basis="420px">
-                  <div css={divStyle}>
+                  <div style={divStyle}>
                     <Text type="white">First in stack</Text>
                   </div>
-                  <div css={divStyle}>
+                  <div style={divStyle}>
                     <Text type="white">Second in stack</Text>
                   </div>
                 </Stack>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">After stack</Text>
                 </div>
               </Stack>
@@ -222,20 +222,20 @@ export default {
             <Heading as="h3" type="title2">
               Don&apos;t shrink
             </Heading>
-            <div css={{ width: "400px" }}>
+            <div style={{ width: "400px" }}>
               <Stack direction="row">
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">Before stack</Text>
                 </div>
                 <Stack inline shrink={false} basis="420px">
-                  <div css={divStyle}>
+                  <div style={divStyle}>
                     <Text type="white">First in stack</Text>
                   </div>
-                  <div css={divStyle}>
+                  <div style={divStyle}>
                     <Text type="white">Second in stack</Text>
                   </div>
                 </Stack>
-                <div css={divStyle}>
+                <div style={divStyle}>
                   <Text type="white">After stack</Text>
                 </div>
               </Stack>

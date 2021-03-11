@@ -3,10 +3,9 @@ import { Stepper, Heading, Stack, List, Text, ListItem, TextLink } from "@kiwico
 
 export default {
   Example: () => {
-    const [actions, setActions] = React.useState([]);
+    const [actions, setActions] = React.useState<string[]>([]);
     const [currentValue, setCurrentValue] = React.useState(2);
     const addAction = action => {
-      // @ts-expect-error todo
       setActions([...actions, action]);
     };
     return (

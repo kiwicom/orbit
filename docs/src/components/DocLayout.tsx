@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, ThemeProvider } from "@kiwicom/orbit-components";
+import { Box, Heading, Stack, Text, ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
@@ -45,9 +45,10 @@ interface Props {
   location: WindowLocation;
   path: string;
   title?: string;
+  description?: string;
 }
 
-export default function DocLayout({ children, location, path, title }: Props) {
+export default function DocLayout({ children, description, location, path, title }: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -64,6 +65,7 @@ export default function DocLayout({ children, location, path, title }: Props) {
                   </Heading>
                 </Stack>
               )}
+              <Box padding={{ left: "XXLarge" }}>{description && <Text>{description}</Text>}</Box>
               <MDXProvider
                 components={{
                   ...components,

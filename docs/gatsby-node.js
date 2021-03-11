@@ -1,5 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { getDocumentUrlPath } = require("./utils/document");
+const { getDocumentUrlPath, getDescriptionFromMeta } = require("./utils/document");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type !== "Mdx") return;
@@ -11,6 +11,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node,
     name: "slug",
     value: getDocumentUrlPath(filePath),
+  });
+
+  const nodeDescription = node.description || getDescriptionFromMeta(filePath);
+
+  createNodeField({
+    node,
+    name: "description",
+    value: nodeDescription,
   });
 
   // creates a "collection" field to make it easier to filter nodes created by
@@ -56,14 +64,21 @@ exports.createSchemaCustomization = ({ actions }) => {
     `
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
+      fields: MdxFields
     }
 
     type MdxFrontmatter {
       date: Date @dateformat
-      excerpt: String
+      description: String
       redirect_from: [String]
       title: String!
       type: String
+    }
+
+    type MdxFields {
+      collection: String!
+      description: String
+      slug: String!
     }
   `,
   );

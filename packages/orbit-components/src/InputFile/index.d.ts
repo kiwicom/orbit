@@ -10,7 +10,7 @@ declare module "@kiwicom/orbit-components/lib/InputFile";
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Global, Common.SpaceAfter, Common.Ref {
   readonly label?: Common.Translation;
   readonly buttonLabel?: React.ReactNode;
   readonly name?: string;
@@ -24,7 +24,6 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly onFocus?: Event;
   readonly onBlur?: Event;
   readonly onRemoveFile?: Common.Callback;
-  readonly ref?: Common.Ref;
 }
 
 declare const InputFile: React.RefForwardingComponent<HTMLInputElement, Props>;

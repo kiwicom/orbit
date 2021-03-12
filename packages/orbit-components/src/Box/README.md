@@ -55,7 +55,7 @@ Table below contains all types of the props available in the Box component.
 
 ### Media Queries
 
-When you need to specify some different behaviour of the Box component on different viewport, you can use properties for it.
+When you need to specify some different behavior of the Box component on different viewport, you can use properties for it.
 There are `mediumMobile`, `largeMobile`, `tablet`, `desktop` and `largeDesktop` available and it behaves the same as [mediaQueries](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/mediaQuery) functions.
 All this properties - objects have the some own properties and none is required.
 
@@ -114,12 +114,12 @@ All this properties - objects have the some own properties and none is required.
 
 ### borderRadius
 
-| borderRadius     |
-| :--------------- |
-| `"small"`        |
-| `"normal"`       |
-| `"large"`        |
-| `"radiusCircle"` |
+| borderRadius |
+| :----------- |
+| `"small"`    |
+| `"normal"`   |
+| `"large"`    |
+| `"circle"`   |
 
 ### overflow
 
@@ -149,7 +149,7 @@ All this properties - objects have the some own properties and none is required.
 | `"bottom"` | [`spacingToken`](#spacingtoken) |
 
 If you want to define `spacingObject`, you can define specific directions like this:
-<Box margin={{ top: "XXSmall", bottom: "XXSmall" }} />
+`<Box margin={{ top: "XXSmall", bottom: "XXSmall" }} />`
 
 ### spacingToken
 

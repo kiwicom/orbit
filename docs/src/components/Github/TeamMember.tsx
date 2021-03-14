@@ -15,8 +15,7 @@ const StyledHeading = styled.h4`
   line-height: 1.2;
 `;
 
-const StyledLink = styled.a.attrs(({ href }) => ({
-  href,
+const StyledLink = styled.a.attrs(() => ({
   rel: "noopener noreferrer",
   target: "_blank",
 }))`

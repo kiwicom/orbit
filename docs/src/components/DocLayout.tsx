@@ -5,7 +5,6 @@ import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
 import defaultTheme from "../theme";
-import Prose from "./Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "./AddBookmark";
 import FancyLink from "./FancyLink";
@@ -32,6 +31,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   overflow: hidden;
   padding: 2rem;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
 `;
 
 const StyledFooter = styled.footer`
@@ -42,6 +42,7 @@ const StyledFooter = styled.footer`
 `;
 
 const ContentContainer = styled(Box)`
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   border-radius: ${({ theme }) => theme.orbit.spaceMedium};
   > * + * {
     margin-top: ${({ theme }) => theme.orbit.spaceSmall};
@@ -80,41 +81,38 @@ export default function DocLayout({ children, description, location, path, tabs,
           <Navbar location={location} />
           <StyledMain>
             <Breadcrumbs location={location} />
-            <Prose>
-              <Box padding={{ bottom: "XLarge" }}>
-                <Stack inline align="center" spaceAfter="small">
-                  <AddBookmark />
-                  <Heading as="h1" type="display">
-                    {title}
-                  </Heading>
-                </Stack>
-                {description && (
-                  <Box padding={{ left: "XXLarge" }}>
-                    {" "}
-                    <Text>{description}</Text>
-                  </Box>
-                )}
-              </Box>
-              {tabs && <Tabs location={location.pathname} tabs={tabs} />}
-              <ContentContainer padding="XLarge" elevation="raised">
-                <MDXProvider
-                  components={{
-                    ...components,
-                    ComponentStatus,
-                    FancyLink,
-                    Guideline,
-                    GuidelineImages,
-                    DoImage,
-                    DontImage,
-                    GuidelinesSideBySide,
-                    Do,
-                    Dont,
-                  }}
-                >
-                  {children}
-                </MDXProvider>
-              </ContentContainer>
-            </Prose>
+            <Box padding={{ bottom: "XLarge" }}>
+              <Stack inline align="center" spaceAfter="small">
+                <AddBookmark />
+                <Heading as="h1" type="display">
+                  {title}
+                </Heading>
+              </Stack>
+              {description && (
+                <Box padding={{ left: "XXLarge" }}>
+                  <Text>{description}</Text>
+                </Box>
+              )}
+            </Box>
+            {tabs && <Tabs location={location.pathname} tabs={tabs} />}
+            <ContentContainer padding="XLarge" elevation="raised">
+              <MDXProvider
+                components={{
+                  ...components,
+                  ComponentStatus,
+                  FancyLink,
+                  Guideline,
+                  GuidelineImages,
+                  DoImage,
+                  DontImage,
+                  GuidelinesSideBySide,
+                  Do,
+                  Dont,
+                }}
+              >
+                {children}
+              </MDXProvider>
+            </ContentContainer>
           </StyledMain>
           <StyledFooter />
         </StyledWrapper>

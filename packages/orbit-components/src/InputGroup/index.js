@@ -24,6 +24,7 @@ const getToken = name => ({ theme, size }) => {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
       [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
     },
+    // TODO: use icon sizes
     [TOKENS.heightLine]: {
       [SIZE_OPTIONS.SMALL]: "16px",
       [SIZE_OPTIONS.NORMAL]: "24px",

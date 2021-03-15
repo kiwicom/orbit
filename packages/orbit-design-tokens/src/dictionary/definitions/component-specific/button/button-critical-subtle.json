@@ -1,38 +1,40 @@
 {
   "component": {
-    "button-critical-subtle": {
-      "background": {
-        "type": "color",
-        "value": "{foundation.palette.red.light}"
-      },
-      "background-hover": {
-        "type": "color",
-        "value": "{foundation.palette.red.light-secondary}"
-      },
-      "background-active": {
-        "type": "color",
-        "value": "{foundation.palette.red.light-tertiary}"
-      },
-      "foreground": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.red.normal}"
-      },
-      "foreground-hover": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.red.dark}"
-      },
-      "foreground-active": {
-        "type": "color",
-        "category": "foreground",
-        "value": "{foundation.palette.red.dark}"
-      },
-      "border-color-focus": {
-        "type": "color",
-        "category": "border-color",
-        "value": "{foundation.palette.red.normal}",
-        "opacity": 50
+    "button": {
+      "critical-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.light}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.light-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.light-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.dark}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.red.dark}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.red.normal}",
+          "opacity": 50
+        }
       }
     }
   }

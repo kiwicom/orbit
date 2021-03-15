@@ -6,6 +6,8 @@ import {
   isZIndex,
   isBreakpoint,
   isSize,
+  isBoxShadow,
+  isModifier,
 } from "../is";
 
 const tokenPlaceholder = ({ type, internal }) => ({
@@ -46,6 +48,14 @@ describe("is utils", () => {
   it("isSize should return expected", () => {
     expect(isSize(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
     expect(isSize(tokenPlaceholder({ type: "size", internal: true }))).toEqual(true);
+  });
+  it("isBoxShadow should return expected", () => {
+    expect(isBoxShadow(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isBoxShadow(tokenPlaceholder({ type: "box-shadow", internal: true }))).toEqual(true);
+  });
+  it("isModifier should return expected", () => {
+    expect(isModifier(tokenPlaceholder({ type: "box-shadow", internal: true }))).toEqual(false);
+    expect(isModifier(tokenPlaceholder({ type: "modifier", internal: true }))).toEqual(true);
   });
   it("isInternal should return expected", () => {
     expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toEqual(true);

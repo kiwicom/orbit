@@ -1,7 +1,7 @@
 {
   "component": {
     "form-element": {
-      "size": {
+      "height": {
         "small": {
           "type": "size",
           "value": "{foundation.size.large}"
@@ -13,6 +13,54 @@
         "large": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}"
+        }
+      }
+    },
+    "height": {
+      "button": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.large}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "input": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.height.large}",
+          "deprecated-version": "1.0.0"
         }
       }
     }

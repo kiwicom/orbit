@@ -31,6 +31,66 @@
           "value": "{foundation.palette.white.normal}"
         }
       }
+    },
+    "color": {
+      "text": {
+        "primary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.primary}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.secondary}",
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.info}",
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.success}",
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.warning}",
+          "deprecated-version": "1.0.0"
+        },
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.critical}",
+          "deprecated-version": "1.0.0"
+        },
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.white}",
+          "deprecated-version": "1.0.0"
+        },
+        "error": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.text.foreground.critical}",
+          "deprecated-version": "1.0.0"
+        }
+      }
     }
   }
 }

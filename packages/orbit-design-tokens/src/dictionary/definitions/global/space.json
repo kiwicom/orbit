@@ -32,6 +32,68 @@
       "ten-x": {
         "type": "size",
         "value": "{foundation.space.ten-x}"
+      },
+      "X-X-X-Small": {
+        "type": "size",
+        "value": "{foundation.space.half-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.half-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "X-X-Small": {
+        "type": "size",
+        "value": "{foundation.space.one-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.one-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "X-Small": {
+        "type": "size",
+        "value": "{foundation.space.two-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.two-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "small": {
+        "type": "size",
+        "value": "{foundation.space.three-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.three-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "medium": {
+        "type": "size",
+        "value": "{foundation.space.four-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.four-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "large": {
+        "type": "size",
+        "value": "{foundation.space.six-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.six-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "X-Large": {
+        "type": "size",
+        "value": "{foundation.space.eight-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.eight-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "X-X-Large": {
+        "type": "size",
+        "value": "{foundation.space.ten-x}",
+        "deprecated": true,
+        "deprecated-replace": "{global.space.ten-x}",
+        "deprecated-version": "1.0.0"
+      },
+      "X-X-X-Large": {
+        "type": "size",
+        "value": 52,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
       }
     }
   }

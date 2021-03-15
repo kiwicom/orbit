@@ -1,11 +1,9 @@
 {
   "global": {
     "font-family": {
-      "base": {
-        "type": "font-family",
-        "category": "typography",
-        "value": "{foundation.font-family.base}"
-      }
+      "type": "font-family",
+      "category": "typography",
+      "value": "{foundation.font-family.base}"
     },
     "font-size": {
       "small": {
@@ -19,6 +17,29 @@
       "large": {
         "type": "size",
         "value": "{foundation.font-size.large}"
+      },
+      "text": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.font-size.small}",
+          "deprecated": true,
+          "deprecated-replace": "{global.font-size.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{global.font-size.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.font-size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{global.font-size.large}",
+          "deprecated-version": "1.0.0"
+        }
       }
     },
     "line-height": {
@@ -33,6 +54,29 @@
       "large": {
         "type": "size",
         "value": "{foundation.line-height.large}"
+      },
+      "text": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.line-height.small}",
+          "deprecated": true,
+          "deprecated-replace": "{global.line-height.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.line-height.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{global.line-height.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.line-height.large}",
+          "deprecated": true,
+          "deprecated-replace": "{global.line-height.large}",
+          "deprecated-version": "1.0.0"
+        }
       }
     },
     "font-weight": {

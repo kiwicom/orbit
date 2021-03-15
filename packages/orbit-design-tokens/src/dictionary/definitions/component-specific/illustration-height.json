@@ -23,6 +23,24 @@
           "value": 460
         }
       }
+    },
+    "height": {
+      "illustration": {
+        "small": {
+          "type": "size",
+          "value": 90,
+          "deprecated": true,
+          "deprecated-replace": "{component.illustration.height.extra-small}",
+          "deprecated-version": "1.0.0"
+        },
+        "medium": {
+          "type": "size",
+          "value": 200,
+          "deprecated": true,
+          "deprecated-replace": "{component.illustration.height.medium}",
+          "deprecated-version": "1.0.0"
+        }
+      }
     }
   }
 }

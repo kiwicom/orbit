@@ -10,6 +10,7 @@ import { baseURL, CODES, SIZES, TOKENS } from "./consts";
 import type { Props } from "./index";
 
 const getSizeToken = name => ({ theme, size }) => {
+  // TODO: height should be calculated with aspect ratio of the image
   const tokens = {
     [TOKENS.WIDTH]: {
       [SIZES.SMALL]: "16px",

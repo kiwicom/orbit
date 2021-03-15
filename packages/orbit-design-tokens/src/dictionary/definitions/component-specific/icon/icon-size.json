@@ -8,7 +8,8 @@
         },
         "extra-small": {
           "type": "size",
-          "value": "{foundation.size.small}"
+          "value": "{foundation.size.small}",
+          "internal-comment": "In the future we want to bump the size of small icons from 16 to 20 pixels, so it's more aligned with text sizes. Therefore this extra-small variant is temporary solution."
         },
         "small": {
           "type": "size",
@@ -25,6 +26,173 @@
         "extra-large": {
           "type": "size",
           "value": 48
+        }
+      }
+    },
+    "width": {
+      "icon": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.small}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-version": "1.0.0"
+        },
+        "medium": {
+          "type": "size",
+          "value": "{foundation.size.medium}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.large}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "badge": {
+        "circled": {
+          "type": "size",
+          "value": "{foundation.size.medium}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "checkbox": {
+        "type": "size",
+        "value": 20,
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-version": "1.0.0"
+      },
+      "radio-button": {
+        "type": "size",
+        "value": 20,
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-version": "1.0.0"
+      },
+      "stopover-arrow": {
+        "type": "size",
+        "value": 36,
+        "internal-comment": "Let's define the size of StopoverArrow directly in the component. It has not similarity right now.",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "country-flag": {
+        "type": "size",
+        "value": "{component.icon.size.medium}",
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.medium}",
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "height": {
+      "icon": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.small}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-version": "1.0.0"
+        },
+        "medium": {
+          "type": "size",
+          "value": "{foundation.size.medium}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.large}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "badge": {
+        "type": "size",
+        "value": "{foundation.size.medium}",
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.medium}",
+        "deprecated-version": "1.0.0"
+      },
+      "checkbox": {
+        "type": "size",
+        "value": 20,
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-version": "1.0.0"
+      },
+      "radio-button": {
+        "type": "size",
+        "value": 20,
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-version": "1.0.0"
+      },
+      "stopover-arrow": {
+        "type": "size",
+        "value": 7,
+        "internal-comment": "Let's define the size of StopoverArrow directly in the component. It has not similarity right now.",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "country-flag": {
+        "type": "size",
+        "value": "auto",
+        "internal-comment": "Height of CountryFlag for all sizes should be calculated by the image ratio.",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "service-logo": {
+        "small": {
+          "type": "size",
+          "value": 12,
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.extra-extra-small}",
+          "deprecated-version": "1.0.0"
+        },
+        "medium": {
+          "type": "size",
+          "value": "{foundation.size.medium}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": 48,
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.extra-large}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "separator": {
+        "type": "size",
+        "value": 1,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "input-group-separator": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.size.small}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.size.medium}",
+          "deprecated": true,
+          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-version": "1.0.0"
         }
       }
     }

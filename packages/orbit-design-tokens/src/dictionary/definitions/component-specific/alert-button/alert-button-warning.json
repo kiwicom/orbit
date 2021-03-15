@@ -1,0 +1,118 @@
+{
+  "component": {
+    "alert-button": {
+      "warning": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.orange.normal}",
+          "opacity": 50
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.alert-button.warning.background}",
+          "deprecated-version": "1.0.0"
+        },
+        "warning-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.alert-button.warning.background-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "warning-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-replace": "{component.alert-button.warning.background-active}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.alert-button.warning.foreground}",
+          "deprecated-version": "1.0.0"
+        },
+        "warning-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-bordered": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "border-color": {
+      "button": {
+        "warning-bordered": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-secondary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal-tertiary}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "component": {
+    "social-button": {
+      "twitter": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.dark}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}",
+          "opacity": 50
+        },
+        "icon-color": {
+          "type": "color",
+          "value": "#00ACEE"
+        }
+      }
+    }
+  }
+}

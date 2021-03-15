@@ -1,0 +1,30 @@
+{
+  "component": {
+    "alert-button": {
+      "warning-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-secondary}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-secondary}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light-tertiary}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "category": "border-color",
+          "value": "{foundation.palette.orange.normal}",
+          "opacity": 50
+        }
+      }
+    }
+  }
+}

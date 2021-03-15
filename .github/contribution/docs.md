@@ -85,6 +85,9 @@ This means having new sentences on new lines.
 This should help keep the differences for review about semantics,
 and not formatting.
 
+This style is known as ventilated prose.
+Read [more about the reasons to use it](https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line).
+
 ## Prose style
 
 In addition to the linting for code style in our docs,

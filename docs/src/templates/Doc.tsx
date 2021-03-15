@@ -16,7 +16,15 @@ interface Props extends PageRendererProps {
       body: string;
     };
     tabs: {
-      nodes: TabObject[];
+      nodes: {
+        frontmatter: {
+          title: string;
+        };
+        fields: {
+          slug: string;
+          tabCollection: string | null;
+        };
+      }[];
     };
   };
 }
@@ -24,13 +32,18 @@ interface Props extends PageRendererProps {
 export default function Doc({ data, location }: Props) {
   const { fields, body } = data.mdx;
   const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
+  const usedTabs: TabObject[] = tabs.map(tab => ({
+    slug: tab.fields.slug,
+    tabCollection: tab.fields.tabCollection,
+    title: tab.frontmatter.title,
+  }));
   return (
     <DocLayout
       path={fields.slug}
       location={location}
       title={fields.title}
       description={fields.description}
-      tabs={tabs}
+      tabs={usedTabs}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>

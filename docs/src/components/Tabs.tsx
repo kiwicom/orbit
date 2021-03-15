@@ -5,13 +5,9 @@ import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 
 export interface TabObject {
-  frontmatter: {
-    title: string;
-  };
-  fields: {
-    slug: string;
-    tabCollection: string | null;
-  };
+  slug: string;
+  tabCollection: string | null;
+  title: string;
 }
 
 interface SizeCheck {
@@ -29,13 +25,15 @@ const StyledTab = styled.div`
     box-shadow: ${theme.orbit.boxShadowRaised};
     background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhite} 27%);
     display: inline-block;
+    position: relative;
   `}
 `;
 
 const StyledTabWrapper = styled.div<SizeCheck>`
   ${({ isMediumMobile, theme }) => css`
     display: inline-block;
-    ${StyledTab},${StyledTabLink} {
+    z-index: ${theme.orbit.zIndexSticky};
+    ${StyledTab}, ${StyledTabLink} {
       padding: ${theme.orbit.spaceSmall}
         ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
       margin: 0 ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
@@ -55,21 +53,21 @@ const BottomShadowHider = styled.div`
 `;
 
 interface TabProps {
-  isActive?: boolean;
+  active?: boolean;
   tab: TabObject;
 }
 
-const Tab = ({ isActive, tab }: TabProps) => {
+const Tab = ({ active, tab }: TabProps) => {
   const { isMediumMobile } = useMediaQuery();
   return (
     <StyledTabWrapper isMediumMobile={isMediumMobile}>
-      {isActive ? (
+      {active ? (
         <>
-          <StyledTab>{tab.frontmatter.title}</StyledTab>
+          <StyledTab>{tab.title}</StyledTab>
           <BottomShadowHider />
         </>
       ) : (
-        <StyledTabLink to={tab.fields.slug}>{tab.frontmatter.title}</StyledTabLink>
+        <StyledTabLink to={tab.slug}>{tab.title}</StyledTabLink>
       )}
     </StyledTabWrapper>
   );
@@ -80,16 +78,12 @@ interface TabsProps {
   location: string;
 }
 
-const Tabs = ({ location, tabs }: TabsProps) => {
-  const [activeTab, setActiveTab] = React.useState(location);
-  React.useEffect(() => setActiveTab(location), [location]);
-  return (
-    <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
-      {tabs.map(tab => (
-        <Tab key={tab.frontmatter.title} tab={tab} isActive={activeTab === tab.fields.slug} />
-      ))}
-    </Box>
-  );
-};
+const Tabs = ({ location, tabs }: TabsProps) => (
+  <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
+    {tabs.map(tab => (
+      <Tab key={tab.title} tab={tab} active={location === tab.slug} />
+    ))}
+  </Box>
+);
 
 export default Tabs;

@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "跳转到",
+  "a11ymenu_page_actions": "此页面的常见操作",
+  "a11ymenu_page_sections": "此页面的章节",
+  "a11ymenu_send_feedback": "提交反馈",
+  "breadcrumbs_back": "返回",
+  "button_close": "关闭",
+  "choicegroup_only": "仅",
+  "loading": "加载中",
+  "pagination_label_next": "下一页",
+  "pagination_label_prev": "上一页",
+  "ratingstar_description": "评分 __number__/__total__",
+  "wizard_progress": "__number__/__total__"
+}

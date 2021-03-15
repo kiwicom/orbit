@@ -10,11 +10,19 @@ const transform = require("through2").obj;
 const path = require("path");
 const dotenv = require("dotenv-safe");
 
-function configureDotenv(done) {
-  dotenv.config({
-    example: ".env.example",
-  });
-  done();
+function configureGitHubToken(done) {
+  try {
+    dotenv.config({
+      example: ".env.example",
+    });
+    done();
+  } catch (err) {
+    if (err.missing.includes("GH_TOKEN")) {
+      throw new Error(
+        "GitHub token is missing in the .env file, Lerna needs it to create GitHub releases.\nLearn how to create one: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token.",
+      );
+    }
+  }
 }
 
 async function previewChangelog(done) {
@@ -70,5 +78,5 @@ function publishPackages() {
 }
 
 module.exports = {
-  publish: series(configureDotenv, previewChangelog, publishPackages),
+  publish: series(configureGitHubToken, previewChangelog, publishPackages),
 };

@@ -93,6 +93,14 @@ storiesOf("Tooltip", module)
         "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
     },
   )
+  .add("Block", () => {
+    const content = text("content", "Write your text here.");
+    return (
+      <Tooltip block content={content}>
+        <Button fullWidth>Full width</Button>
+      </Tooltip>
+    );
+  })
   .add(
     "Preferred position",
     () => {

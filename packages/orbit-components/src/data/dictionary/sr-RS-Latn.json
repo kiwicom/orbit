@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Pređi na",
+  "a11ymenu_page_actions": "Uobičajene radnje na ovoj strani",
+  "a11ymenu_page_sections": "Odeljci na ovoj strani",
+  "a11ymenu_send_feedback": "Pošalji komentar",
+  "breadcrumbs_back": "Nazad",
+  "button_close": "Zatvori",
+  "choicegroup_only": "Samo",
+  "loading": "Učitava se",
+  "pagination_label_next": "Dalje",
+  "pagination_label_prev": "Prethodno",
+  "ratingstar_description": "Ocena __number__ od __total__",
+  "wizard_progress": "__number__ od __total__"
+}

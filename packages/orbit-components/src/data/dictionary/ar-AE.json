@@ -9,5 +9,6 @@
   "loading": "جارٍ التحميل",
   "pagination_label_next": "التالي",
   "pagination_label_prev": "السابق",
-  "ratingstar_description": "تقييم __number__ من __total__"
+  "ratingstar_description": "تقييم __number__ من __total__",
+  "wizard_progress": "__number__ من __total__"
 }

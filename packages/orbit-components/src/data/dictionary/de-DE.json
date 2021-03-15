@@ -9,5 +9,6 @@
   "loading": "Wird geladen",
   "pagination_label_next": "Weiter",
   "pagination_label_prev": "Zurück",
-  "ratingstar_description": "Bewertung: __number__ von __total__"
+  "ratingstar_description": "Bewertung: __number__ von __total__",
+  "wizard_progress": "__number__ von __total__"
 }

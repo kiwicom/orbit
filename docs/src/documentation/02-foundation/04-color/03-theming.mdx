@@ -1,3 +1,40 @@
 ---
 title: Theming
 ---
+
+## Theming in React
+
+You can create your own [design tokens](/foundation/design-tokens/) for themes and use them in your components.
+
+<ReactExample value="theming" />
+
+### Styled components
+
+For custom usage in `styled-components`,
+you should always depend on the actual `theme` property stored inside your context:
+
+```jsx
+import React from "react";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  margin: ${({ theme }) => theme.orbit.spaceLarge};
+`;
+```
+
+If you don't use a theming context in your application and you still want to use context,
+declare `defaultProps` for your styled component:
+
+```jsx
+import React from "react";
+import styled from "styled-components";
+import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
+
+const StyledDiv = styled.div`
+  margin: ${({ theme }) => theme.orbit.spaceLarge};
+`;
+
+StyledDiv.defaultProps = {
+  theme: defaultTheme,
+};
+```

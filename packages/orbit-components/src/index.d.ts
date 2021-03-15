@@ -63,6 +63,7 @@ export { Stack } from "./Stack/index";
 export { Sticky } from "./Sticky/index";
 export { Separator } from "./Separator/index";
 export { SkipNavigation } from "./SkipNavigation/index";
+export { SkipLink } from "./SkipLink/index";
 export { ServiceLogo } from "./ServiceLogo";
 export { Textarea } from "./Textarea/index";
 export { Card } from "./Card/index";

@@ -8,7 +8,7 @@ export interface Props extends Common.Global {
   readonly completedSteps: number;
   readonly activeStep: number;
   readonly onChangeStep?: (stepIndex: number) => void | Promise<any>;
-  readonly children: React.ReactChildren;
+  readonly children: React.ReactNode;
 }
 
 declare const Wizard: React.FunctionComponent<Props>;

@@ -1,0 +1,14 @@
+{
+  "component": {
+    "margin": {
+      "badge": {
+        "icon": {
+          "type": "size",
+          "value": "0 4px 0 0",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

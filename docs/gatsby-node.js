@@ -1,7 +1,7 @@
 const path = require("path");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { doesPageHaveTabs, getDocumentUrlPath, getMetaFile } = require("./utils/document");
+const { doesPageHaveTabs, getDocumentUrlPath, getMetaFileData } = require("./utils/document");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type !== "Mdx") return;
@@ -9,7 +9,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const parent = getNode(node.parent);
   const filePath = createFilePath({ node, getNode, basePath: `pages` });
   const { dir, base, name } = path.parse(filePath);
-  const metaFile = getMetaFile(dir);
+  const metaFile = getMetaFileData(dir);
 
   createNodeField({
     node,
@@ -45,7 +45,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   createNodeField({
     node,
     name: "title",
-    value: doesPageHaveTabs(dir) ? getMetaFile(dir).title : node.frontmatter.title,
+    value: doesPageHaveTabs(dir) ? getMetaFileData(dir).title : node.frontmatter.title,
   });
 };
 

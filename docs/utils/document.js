@@ -11,13 +11,13 @@ function getMetaPath(dir) {
   return path.join(ROOT, dir, "meta.yml");
 }
 
-function getMetaFile(dir) {
+function getMetaFileData(dir) {
   const metaPath = getMetaPath(dir);
   return fs.existsSync(metaPath) ? yaml.load(fs.readFileSync(metaPath)) : {};
 }
 
 function doesPageHaveTabs(dir) {
-  const meta = getMetaFile(dir);
+  const meta = getMetaFileData(dir);
   return meta.type === "tabs";
 }
 
@@ -33,5 +33,5 @@ function getDocumentUrlPath(dir, base, name) {
 module.exports = {
   doesPageHaveTabs,
   getDocumentUrlPath,
-  getMetaFile,
+  getMetaFileData,
 };

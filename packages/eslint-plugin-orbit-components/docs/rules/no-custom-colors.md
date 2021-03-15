@@ -1,4 +1,4 @@
-# custom-colors
+# no-custom-colors
 
 Prevents inconsistencies between Orbit and custom colors
 
@@ -20,4 +20,10 @@ const StyledWrapper = styled.div`
   color: ${({theme}) => theme.orbit.colorTextPrimary};
   background: ${({theme}) => theme.orbit.paletteWhite};
 `,
+```
+
+## Rule options
+
+```
+"orbit-components/no-custom-colors": <enabled>
 ```

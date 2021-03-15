@@ -5,7 +5,8 @@ export default {
   meta: {
     type: "suggestion",
     docs: {
-      description: "Prevents inconsistencies between Orbit and custom typography",
+      description:
+        "The aim of this rule is to prevent usage of custom values for font-size, font-family and line-height CSS properties. Only some of design tokens from @kiwicom/orbit-design-tokens should be used as value.",
       category: "Possible Errors",
       recommended: true,
     },
@@ -32,7 +33,9 @@ export default {
               context.report({
                 // @ts-expect-error TODO
                 node,
-                message: `${p[0]} should be replaced with Orbit design token`,
+                message: `The value ${p[1].trim()} used for CSS property ${
+                  p[0]
+                } should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.`,
               });
             }
           });

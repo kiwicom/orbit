@@ -1,6 +1,6 @@
-# custom-typography
+# no-custom-typography
 
-Prevents inconsistencies between Orbit and custom typography styles
+The aim of this rule is to prevent usage of custom values for font-size, font-family and line-height CSS properties. Only some of design tokens from @kiwicom/orbit-design-tokens should be used as value.
 
 ## Rule details
 
@@ -30,4 +30,10 @@ const StyledWrapper = styled.div`
   font-family: unset;
   line-height: initial;
 `,
+```
+
+## Rule options
+
+```
+"orbit-components/no-custom-typography": <enabled>
 ```

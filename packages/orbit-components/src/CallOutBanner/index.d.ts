@@ -13,7 +13,7 @@ export interface Props {
   readonly onClick?: Common.Callback;
   readonly title: Common.Translation;
   readonly description?: Common.Translation;
-  readonly illustration?: React.ElementType<typeof Illustration>;
+  readonly illustration?: React.ReactElement<typeof Illustration>;
   readonly actions?: React.ReactNode;
   readonly children?: React.ReactNode;
 }

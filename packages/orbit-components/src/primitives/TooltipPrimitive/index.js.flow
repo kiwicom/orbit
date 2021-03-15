@@ -50,6 +50,7 @@ export type Props = {|
   +enabled?: boolean,
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
+  +block?: boolean,
 |};
 
 declare export var StyledTooltipChildren: ReactComponentStyled<any>;

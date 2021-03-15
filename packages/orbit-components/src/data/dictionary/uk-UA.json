@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Перейти до",
+  "a11ymenu_page_actions": "Поширені дії на цій сторінці",
+  "a11ymenu_page_sections": "Розділи цієї сторінки",
+  "a11ymenu_send_feedback": "Надіслати відгук",
+  "breadcrumbs_back": "Назад",
+  "button_close": "Закрити",
+  "choicegroup_only": "Лише",
+  "loading": "Завантаження",
+  "pagination_label_next": "Далі",
+  "pagination_label_prev": "Назад",
+  "ratingstar_description": "Оцінка __number__ з __total__",
+  "wizard_progress": "__number__ з __total__"
+}

@@ -6,7 +6,9 @@
   "breadcrumbs_back": "Înapoi",
   "button_close": "Închideți",
   "choicegroup_only": "Doar",
+  "loading": "Se încarcă",
   "pagination_label_next": "Următorul",
   "pagination_label_prev": "Anteriorul",
-  "ratingstar_description": "Evaluare __number__ din __number__"
+  "ratingstar_description": "Evaluarea __number__ din __total__",
+  "wizard_progress": "__number__ din __total__"
 }

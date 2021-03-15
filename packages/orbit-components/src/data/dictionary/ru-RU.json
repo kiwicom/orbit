@@ -1,0 +1,14 @@
+{
+  "a11ymenu_jump_to": "Перейти к",
+  "a11ymenu_page_actions": "Обычные действия на этой странице",
+  "a11ymenu_page_sections": "Разделы на этой странице",
+  "a11ymenu_send_feedback": "Отправить отзыв",
+  "breadcrumbs_back": "Назад",
+  "button_close": "Закрыть",
+  "choicegroup_only": "Только",
+  "loading": "Загрузка",
+  "pagination_label_next": "Далее",
+  "pagination_label_prev": "Назад",
+  "ratingstar_description": "Рейтинг __number__ из __total__",
+  "wizard_progress": "Шаг __number__ из __total__"
+}

@@ -55,7 +55,6 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@emotion/core": "^10.0.35",
     "@kiwicom/browserslist-config": "^1.0.0",
-    "@kiwicom/eslint-plugin-orbit-internal": "*",
     "@lerna/project": "^3.21.0",
     "@octokit/rest": "^18.0.14",
     "@storybook/addon-actions": "^6.0.28",

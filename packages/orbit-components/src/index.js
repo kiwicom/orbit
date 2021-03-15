@@ -34,7 +34,7 @@ export { default as WizardStep } from "./Wizard/WizardStep";
 export { default as Card } from "./Card";
 export { default as CardSection } from "./Card/CardSection";
 export { default as Coupon } from "./Coupon";
-export { default as DepreacatedCardHeader } from "./deprecated/Card/CardHeader";
+export { default as DeprecatedCardHeader } from "./deprecated/Card/CardHeader";
 export { default as DeprecatedCard } from "./deprecated/Card";
 export { default as DeprecatedCardSection } from "./deprecated/Card/CardSection";
 export { default as DeprecatedSeat } from "./deprecated/Seat";

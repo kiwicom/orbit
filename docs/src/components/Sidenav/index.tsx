@@ -35,9 +35,8 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
   `}
 `;
 
-const StyledOpenButton = styled.button.attrs(({ className, onClick }) => ({
+const StyledOpenButton = styled.button.attrs(({ className }) => ({
   className,
-  onClick,
   "aria-label": "open",
   type: "button",
 }))`
@@ -58,10 +57,9 @@ const StyledAsideHeader = styled.div`
   margin: 0px -20px;
 `;
 
-const StyledCloseButton = styled.button.attrs(({ className, tabIndex, onClick }) => ({
+const StyledCloseButton = styled.button.attrs(({ className, tabIndex }) => ({
   className,
   tabindex: tabIndex,
-  onClick,
   "aria-label": "close",
 }))`
   ${({ theme }) => css`

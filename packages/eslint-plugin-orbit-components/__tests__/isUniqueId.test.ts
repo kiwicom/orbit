@@ -1,8 +1,7 @@
 import ruleTester from "../ruleTester";
-import uniqueId from "../src/rules/unique-id";
+import uniqueId from "../src/rules/uniqueId";
 
 describe("unique id", () => {
-  // @ts-expect-error TODO
   ruleTester.run("svg-unique-id", uniqueId, {
     valid: [
       {

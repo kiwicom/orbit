@@ -23,9 +23,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@v1.3.0
         with:
-          files:
-            - docs/src/documentation
-            - docs/src/snippets
+          files: '["docs/src/documentation", "docs/src/snippets"]'
           onlyAnnotateModifiedLines: true
         env:
           # Required

@@ -1,9 +1,9 @@
 import ruleTester from "../ruleTester";
-import customColors from "../src/rules/customColors";
+import noCustomColors from "../src/rules/noCustomColors";
 
-describe("custom-colors", () => {
+describe("no-custom-colors", () => {
   // @ts-expect-error TODO
-  ruleTester.run("custom-colors", customColors, {
+  ruleTester.run("no-custom-colors", noCustomColors, {
     valid: [
       {
         code: `

@@ -8,6 +8,7 @@ const recommended = {
     "orbit-components/prefer-single-destructure": "warn",
     "orbit-components/rtl-utils": "error",
     "orbit-components/unnecessary-text": "error",
+    "orbit-components/use-rtl": "error",
   },
 };
 

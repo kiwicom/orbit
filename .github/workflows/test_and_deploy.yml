@@ -1,0 +1,148 @@
+name: Test and deploy
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    name: Build and test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          restore-keys: |
+            node-modules-${{ github.ref}}-
+            node-modules-
+
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            docs/.cache
+            docs/public
+          key: gatsby-${{ github.ref}}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+          restore-keys: |
+            gatsby-${{ github.ref}}-
+            gatsby-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && yarn bootstrap
+
+      - name: Check icons
+        run: npx lerna run --scope @kiwicom/orbit-components check:icons
+
+      - name: Build
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx lerna run build
+
+      - name: Upload orbit.kiwi and storybook artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            docs/public
+            packages/orbit-components/.out
+          retention-days: 5
+
+      - name: Flow
+        run: yarn flow:check
+
+      - name: TypeScript
+        run: npx tsc
+
+      - name: Lint
+        run: |
+          yarn eslint:ci
+          yarn prettier:test
+
+      - name: Test
+        run: |
+          yarn test-ci
+
+      - name: Check docs links
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node docs/utils/check-links.js
+  deploy_branch:
+    # do not run on master branch
+    if: github.ref != 'refs/heads/master'
+    needs: build_test
+    runs-on: ubuntu-latest
+    name: Deploy branch
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && yarn bootstrap
+
+      - name: Fire deployment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Get BRANCH_URL
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
+
+      - name: Get PR_NUMBER
+        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
+
+      - name: Restore orbit.kiwi and storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+
+      - name: Publish
+        run: |
+          yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Update description
+        run: |
+          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi
+          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+  deploy_master:
+    # run on master branch
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: build_test
+    name: Deploy to GH pages
+    steps:
+      - uses: actions/checkout@v2
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile && yarn bootstrap
+
+      - name: Restore orbit.kiwi and storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+
+      - name: Deploy storybook
+        run: yarn orbit-components deploy:storybook --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

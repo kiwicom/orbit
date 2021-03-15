@@ -26,7 +26,7 @@
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "fetch-translations": "babel-node config/fetchTranslations.js",
-    "deploy:storybook": "yarn build:storybook && yarn storybook-to-ghpages -e ./.out",
+    "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
     "compile:ts": "yarn tsc"

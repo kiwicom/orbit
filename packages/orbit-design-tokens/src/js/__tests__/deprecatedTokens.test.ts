@@ -638,6 +638,6 @@ describe("All deprecated tokens", () => {
   const oldTokensObject = oldTokens();
   const newTokensObject = createTheme();
   it.each(Object.keys(oldTokensObject))("%s should exist in the return of createTheme", key => {
-    expect(key in newTokensObject).toBe(true);
+    expect(newTokensObject).toHaveProperty(key);
   });
 });

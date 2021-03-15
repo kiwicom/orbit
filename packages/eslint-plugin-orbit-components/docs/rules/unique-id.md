@@ -33,5 +33,5 @@ const App = () => (
 ## Rule options
 
 ```
-"@kiwicom/orbit-internal/unique-id": <enabled>
+"orbit-components/unique-id": <enabled>
 ```

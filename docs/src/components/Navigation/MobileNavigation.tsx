@@ -91,7 +91,7 @@ export default function MobileNavigation({ name }: Props) {
         // TODO: evaluate this error
         // eslint-disable-next-line jsx-a11y/role-supports-aria-props
         <StyledList
-          // eslint-disable-next-line @kiwicom/orbit-internal/unique-id
+          // eslint-disable-next-line orbit-components/unique-id
           id="dropdown"
           role="menu"
           aria-labelledby="menubutton"

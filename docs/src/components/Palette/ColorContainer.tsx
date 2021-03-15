@@ -28,7 +28,7 @@ const CopyWrapper = styled.div<ColorValueShape>`
   `}
 `;
 
-interface ColorContainerWrapperProps extends ColorValueShape, BorderingProps {}
+type ColorContainerWrapperProps = ColorValueShape & BorderingProps;
 
 const ColorContainerWrapper = styled.div<ColorContainerWrapperProps>`
   ${({ colorValue, full, left, order, right, theme }) => css`

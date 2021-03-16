@@ -1,11 +1,10 @@
 import React from "react";
-import { Heading, Stack, ThemeProvider } from "@kiwicom/orbit-components";
+import { Box, Heading, Stack, Text, ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
 import defaultTheme from "../theme";
-import Prose from "./Prose";
 import * as components from "../mdx-components";
 import AddBookmark from "./AddBookmark";
 import FancyLink from "./FancyLink";
@@ -16,6 +15,7 @@ import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
+import Tabs, { TabObject } from "./Tabs";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -31,6 +31,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   overflow: hidden;
   padding: 2rem;
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
 `;
 
 const StyledFooter = styled.footer`
@@ -40,14 +41,39 @@ const StyledFooter = styled.footer`
   justify-content: flex-end;
 `;
 
+const ContentContainer = styled(Box)`
+  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  border-radius: ${({ theme }) => theme.orbit.spaceMedium};
+  > * + * {
+    margin-top: ${({ theme }) => theme.orbit.spaceSmall};
+  }
+  > h1 {
+    margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
+  }
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin-top: ${({ theme }) => theme.orbit.spaceLarge};
+  }
+  > div + h2:nth-child(2),
+  h2:first-child {
+    margin-top: 0;
+  }
+  margin-top: 0;
+`;
+
 interface Props {
   children: React.ReactNode;
   location: WindowLocation;
   path: string;
   title?: string;
+  description?: string;
+  tabs: TabObject[];
 }
 
-export default function DocLayout({ children, location, path, title }: Props) {
+export default function DocLayout({ children, description, location, path, tabs, title }: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -55,15 +81,21 @@ export default function DocLayout({ children, location, path, title }: Props) {
           <Navbar location={location} />
           <StyledMain>
             <Breadcrumbs location={location} />
-            <Prose>
-              {title && (
-                <Stack inline align="center">
-                  <AddBookmark />
-                  <Heading as="h1" type="display">
-                    {title}
-                  </Heading>
-                </Stack>
+            <Box padding={{ bottom: "XLarge" }}>
+              <Stack inline align="center" spaceAfter="small">
+                <AddBookmark />
+                <Heading as="h1" type="display">
+                  {title}
+                </Heading>
+              </Stack>
+              {description && (
+                <Box padding={{ left: "XXLarge" }}>
+                  <Text>{description}</Text>
+                </Box>
               )}
+            </Box>
+            {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+            <ContentContainer padding="XLarge" elevation="raised">
               <MDXProvider
                 components={{
                   ...components,
@@ -80,7 +112,7 @@ export default function DocLayout({ children, location, path, title }: Props) {
               >
                 {children}
               </MDXProvider>
-            </Prose>
+            </ContentContainer>
           </StyledMain>
           <StyledFooter />
         </StyledWrapper>

@@ -142,9 +142,11 @@ export const a = function Anchor({
   return (
     <span
       css={css`
-        /* TextLink's line-height affects nested elements like <code> */
         a {
+          /* TextLink's line-height affects nested elements like <code> */
           line-height: normal;
+          /* TextLink's display as inline-flex cause long links to break paragraphs */
+          display: inherit;
         }
       `}
     >

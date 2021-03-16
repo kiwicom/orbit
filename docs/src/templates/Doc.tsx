@@ -3,40 +3,76 @@ import { graphql, PageRendererProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import DocLayout from "../components/DocLayout";
+import { TabObject } from "../components/Tabs";
 
 interface Props extends PageRendererProps {
   data: {
     mdx: {
-      frontmatter: {
+      fields: {
+        description: string;
+        slug: string;
         title: string;
       };
-      fields: {
-        slug: string;
-      };
       body: string;
+    };
+    tabs: {
+      nodes: {
+        frontmatter: {
+          title: string;
+        };
+        fields: {
+          slug: string;
+          tabCollection: string | null;
+        };
+      }[];
     };
   };
 }
 
 export default function Doc({ data, location }: Props) {
-  const { frontmatter, fields, body } = data.mdx;
+  const { fields, body } = data.mdx;
+  const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
+  const usedTabs: TabObject[] = tabs.map(tab => ({
+    slug: tab.fields.slug,
+    tabCollection: tab.fields.tabCollection,
+    title: tab.frontmatter.title,
+  }));
   return (
-    <DocLayout path={fields.slug} location={location} title={frontmatter.title}>
+    <DocLayout
+      path={fields.slug}
+      location={location}
+      title={fields.title}
+      description={fields.description}
+      tabs={usedTabs}
+    >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
   );
 }
 
 export const query = graphql`
-  query DocQuery($id: String!) {
+  query DocQuery($id: String!, $tabs: String) {
     mdx(id: { eq: $id }) {
-      frontmatter {
+      fields {
+        description
+        slug
         title
       }
-      fields {
-        slug
-      }
       body
+    }
+    tabs: allMdx(
+      filter: { fields: { tabCollection: { eq: $tabs } } }
+      sort: { fields: fileAbsolutePath }
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+          tabCollection
+        }
+      }
     }
   }
 `;

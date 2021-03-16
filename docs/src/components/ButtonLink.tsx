@@ -163,6 +163,7 @@ export default function ButtonLink<T extends React.ElementType = typeof DefaultC
   const Component = asProp || DefaultComponent;
 
   return (
+    // @ts-expect-error react-polymorphic-types is currently not compatible with styled-components
     <StyledComponent
       as={Component}
       type={type}

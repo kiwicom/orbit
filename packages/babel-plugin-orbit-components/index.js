@@ -19,7 +19,7 @@ const pathOverwrites = {
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
   AccordionSection: "Accordion/AccordionSection",
-  DepreacatedCardHeader: "deprecated/Card/CardHeader",
+  DeprecatedCardHeader: "deprecated/Card/CardHeader",
   DeprecatedCard: "deprecated/Card",
   DeprecatedSeat: "deprecated/Seat",
   DeprecatedCardSection: "deprecated/Card/CardSection",

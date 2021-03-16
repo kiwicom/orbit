@@ -5,10 +5,9 @@ import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull";
 
 import { useBookmarks } from "../services/bookmarks";
 
-const Button = styled.button.attrs(({ onClick }) => ({
+const Button = styled.button.attrs(() => ({
   "aria-label": "bookmark",
   type: "button",
-  onClick,
 }))`
   border-radius: 3px;
   &:focus {

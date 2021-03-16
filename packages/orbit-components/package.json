@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6007 -c .storybook --ci -s ./static",
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable",
-    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd",
+    "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd && yarn build:storybook",
     "babel-base": "babel src --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js",
     "build:lib": "yarn babel-base --out-dir lib && yarn copy:lib",
     "build:module": "yarn babel-base --env-name esm --out-dir es && yarn copy:module",
@@ -26,7 +26,7 @@
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "fetch-translations": "babel-node config/fetchTranslations.js",
-    "deploy:storybook": "yarn build:storybook && yarn storybook-to-ghpages -e ./.out",
+    "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
     "compile:ts": "yarn tsc"

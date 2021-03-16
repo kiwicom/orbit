@@ -1,7 +1,7 @@
 import { Rule } from "eslint";
-import { types as t } from "@babel/core";
+import * as t from "@babel/types";
 
-export default {
+const uniqueId: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
@@ -11,6 +11,7 @@ export default {
     },
   },
 
+  // @ts-expect-error node
   create: (context: Rule.RuleContext) => {
     return {
       JSXAttribute(node: t.JSXAttribute) {
@@ -28,3 +29,5 @@ export default {
     };
   },
 };
+
+export default uniqueId;

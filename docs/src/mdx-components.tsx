@@ -21,6 +21,7 @@ import useIsUrlExternal from "./hooks/useIsUrlExternal";
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
+export const h1 = () => null;
 export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <Heading as="h2" type="title1">
     {children}

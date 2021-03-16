@@ -94,7 +94,7 @@ export default function DocLayout({ children, description, location, path, tabs,
                 </Box>
               )}
             </Box>
-            {tabs && <Tabs location={location.pathname} tabs={tabs} />}
+            {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
             <ContentContainer padding="XLarge" elevation="raised">
               <MDXProvider
                 components={{

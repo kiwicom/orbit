@@ -53,15 +53,15 @@ const BottomShadowHider = styled.div`
 `;
 
 interface TabProps {
-  active?: boolean;
+  isActive?: boolean;
   tab: TabObject;
 }
 
-const Tab = ({ active, tab }: TabProps) => {
+const Tab = ({ isActive, tab }: TabProps) => {
   const { isMediumMobile } = useMediaQuery();
   return (
     <StyledTabWrapper isMediumMobile={isMediumMobile}>
-      {active ? (
+      {isActive ? (
         <>
           <StyledTab>{tab.title}</StyledTab>
           <BottomShadowHider />
@@ -75,13 +75,13 @@ const Tab = ({ active, tab }: TabProps) => {
 
 interface TabsProps {
   tabs: TabObject[];
-  location: string;
+  activeTab: string;
 }
 
-const Tabs = ({ location, tabs }: TabsProps) => (
+const Tabs = ({ activeTab, tabs }: TabsProps) => (
   <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
     {tabs.map(tab => (
-      <Tab key={tab.title} tab={tab} active={location === tab.slug} />
+      <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />
     ))}
   </Box>
 );

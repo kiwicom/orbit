@@ -7,7 +7,8 @@ import {
   isBreakpoint,
   isSize,
   isBoxShadow,
-  isModifier, isDuration,
+  isModifier,
+  isDuration,
 } from "../is";
 
 const tokenPlaceholder = ({ type, internal }) => ({

@@ -16,6 +16,7 @@ import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import Tabs, { TabObject } from "./Tabs";
+import Footer from "./Footer";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -32,13 +33,6 @@ const StyledMain = styled.main`
   overflow: hidden;
   padding: 2rem;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-`;
-
-const StyledFooter = styled.footer`
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 `;
 
 const ContentContainer = styled(Box)`
@@ -114,7 +108,7 @@ export default function DocLayout({ children, description, location, path, tabs,
               </MDXProvider>
             </ContentContainer>
           </StyledMain>
-          <StyledFooter />
+          <Footer />
         </StyledWrapper>
       </BookmarkProvider>
     </ThemeProvider>

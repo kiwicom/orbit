@@ -1,15 +1,16 @@
+const { types: t } = require("@babel/core");
 const { parse } = require("@babel/parser");
-const t = require("@babel/types");
 
-const getScope = example => {
-  const code = parse(example, {
+const getCode = str =>
+  parse(str, {
     sourceType: "module",
     plugins: ["typescript", "jsx"],
   });
 
+const getScope = example => {
   const scope = [];
 
-  code.program.body.forEach(n => {
+  getCode(example).program.body.forEach(n => {
     if (t.isImportDeclaration(n)) {
       const p = n.source.value;
       if (n.source.value.match(/@kiwicom\/orbit-components|styled-components/)) {

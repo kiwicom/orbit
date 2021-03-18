@@ -44,7 +44,6 @@ export default {
     };
     return (
       <>
-        {/* @ts-expect-error: TODO */}
         <Wizard
           id="wizard"
           completedSteps={activeStep}

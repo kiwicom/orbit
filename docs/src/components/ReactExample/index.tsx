@@ -12,6 +12,7 @@ import * as Components from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
 
 import Copy from "../../images/copy.svg";
+import { copyTimeout } from "../../utils/common";
 
 interface Props {
   exampleId: string;
@@ -20,14 +21,20 @@ interface Props {
 const StyledPreviewWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.orbit.boxShadowFixed};
   padding: 20px;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
-const StyledBoard = styled.div``;
+const StyledBoard = styled.div`
+  background: ${({ theme }) => theme.orbit.paletteCloudLight};
+  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+`;
 
 const ReactExample = ({ exampleId }: Props) => {
   const [isOpened, setOpenEditor] = React.useState(false);
   const [isCopied, setCopied] = React.useState(false);
+
+  React.useEffect(() => {
+    copyTimeout(isCopied, setCopied);
+  }, [isCopied, setCopied]);
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -53,10 +60,10 @@ const ReactExample = ({ exampleId }: Props) => {
 
   const { fields } = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!fields) return `Could not find example with ${exampleId} id`;
+  if (!fields) return <>{`Could not find example with ${exampleId} id`}</>;
 
   const modules = fields.scope.reduce((acc, { name, path }) => {
-    if (path.match(/@kiwicom\/orbit-components\/lib\/icons/)) {
+    if (path.match(/@kiwicom\/orbit-components\/icons/)) {
       return {
         ...acc,
         [name]: Icons[name],
@@ -68,6 +75,10 @@ const ReactExample = ({ exampleId }: Props) => {
       [name]: Components[name],
     };
   }, {});
+
+  const scopeOutput = fields.scope
+    .map(({ path, name }) => `import { ${name} } from ${path}`)
+    .join("\n");
 
   return (
     <LiveProvider
@@ -89,9 +100,17 @@ const ReactExample = ({ exampleId }: Props) => {
             >
               Code
             </ButtonLink>
+            <ButtonLink
+              onClick={() => setOpenEditor(prev => !prev)}
+              type="secondary"
+              ariaExpanded={isOpened}
+              iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
+            >
+              Playground
+            </ButtonLink>
           </Stack>
           <Stack inline justify="end" align="center">
-            <CopyToClipboard text={fields.example}>
+            <CopyToClipboard text={[scopeOutput, fields.example].join("\n\n")}>
               <Tooltip
                 preferredPosition="top"
                 preferredAlign="center"

@@ -6,9 +6,5 @@
   "keywords": [
     "gatsby",
     "gatsby-plugin"
-  ],
-  "dependencies": {
-    "@babel/parser": "^7.13.10",
-    "@babel/types": "^7.13.0"
-  }
+  ]
 }

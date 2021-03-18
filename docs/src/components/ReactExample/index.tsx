@@ -25,7 +25,7 @@ const StyledPreviewWrapper = styled.div`
 
 const StyledBoard = styled.div``;
 
-const Example = ({ exampleId }: Props) => {
+const ReactExample = ({ exampleId }: Props) => {
   const [isOpened, setOpenEditor] = React.useState(false);
   const [isCopied, setCopied] = React.useState(false);
 
@@ -52,6 +52,8 @@ const Example = ({ exampleId }: Props) => {
   );
 
   const { fields } = allFile.nodes.find(n => n.fields.example_id === exampleId);
+
+  if (!fields) return `Could not find example with ${exampleId} id`;
 
   const modules = fields.scope.reduce((acc, { name, path }) => {
     if (path.match(/@kiwicom\/orbit-components\/lib\/icons/)) {
@@ -112,4 +114,4 @@ const Example = ({ exampleId }: Props) => {
   );
 };
 
-export default Example;
+export default ReactExample;

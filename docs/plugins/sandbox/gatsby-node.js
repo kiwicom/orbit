@@ -28,7 +28,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
 
     createNodeField({
       node,
-      name: "example-id",
+      name: "example_id",
       value,
     });
   }

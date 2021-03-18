@@ -26,7 +26,9 @@
   ],
   "scripts": {
     "build": "rm -fr ./dist && swc ./src --out-dir ./dist",
-    "prepublishOnly": "yarn build"
+    "postinstall": "yarn build",
+    "prepublishOnly": "yarn build && pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"

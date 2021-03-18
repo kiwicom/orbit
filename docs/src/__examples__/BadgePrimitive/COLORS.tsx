@@ -1,7 +1,7 @@
 import * as React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 import BadgePrimitive from "@kiwicom/orbit-components/lib/primitives/BadgePrimitive";
 
 export default {

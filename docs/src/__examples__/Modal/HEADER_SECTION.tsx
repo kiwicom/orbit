@@ -8,7 +8,7 @@ import {
   ModalSection,
   ModalHeader,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {

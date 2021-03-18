@@ -8,7 +8,7 @@ import {
   Drawer,
   LinkList,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 export default {

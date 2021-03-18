@@ -1,7 +1,7 @@
 import * as React from "react";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Stack, ThemeProvider } from "@kiwicom/orbit-components";
-import Airplane from "@kiwicom/orbit-components/lib/icons/Airplane";
+import Airplane from "@kiwicom/orbit-components/icons/Airplane";
 
 export default {
   Example: () => (

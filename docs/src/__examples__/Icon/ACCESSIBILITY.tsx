@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 import { Stack, Text } from "@kiwicom/orbit-components";
 
 export default {

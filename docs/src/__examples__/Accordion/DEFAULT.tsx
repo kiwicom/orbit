@@ -8,7 +8,7 @@ import {
   AccordionSection,
   Accordion,
 } from "@kiwicom/orbit-components";
-import FlightDirect from "@kiwicom/orbit-components/lib/icons/FlightDirect";
+import FlightDirect from "@kiwicom/orbit-components/icons/FlightDirect";
 
 export default {
   Example: () => {

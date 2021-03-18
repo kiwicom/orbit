@@ -8,6 +8,7 @@ import camelcase from "camelcase";
 import mkdirp from "mkdirp";
 import glob from "glob";
 import svgr from "@svgr/core";
+import * as t from "@babel/types";
 
 import { getProperty, getHTMLComments } from "./checkIcons";
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
@@ -35,16 +36,24 @@ function getViewBox(attributes) {
   return getProperty(attributes, "viewBox", "0 0 24 24");
 }
 
-const template = (code, config, state) => `
-// @flow
-/* eslint-disable */
+const template = (code, opts, { componentName, jsx }) => {
+  const viewBox = getViewBox(jsx.openingElement.attributes);
+
+  const temp = code.template(`
+    // @flow
+    /* eslint-disable */
     import * as React from "react";
     import createIcon from "../Icon/createIcon";
 
-    export default createIcon(${code.replace(
-      /<svg\b[^>]* viewBox="(\b[^"]*)".*>([\s\S]*?)<\/svg>/g,
-      `<>$2</>, "$1", "${state.componentName}"`,
-    )});`;
+    export default createIcon(PATH, VIEWBOX, NAME)
+  `);
+
+  return temp({
+    PATH: t.jsxFragment(t.jsxOpeningFragment(), t.jsxClosingFragment(), jsx.children),
+    VIEWBOX: t.stringLiteral(viewBox),
+    NAME: t.stringLiteral(componentName.name),
+  });
+};
 
 const flowTemplate = functionName => `// @flow
 import * as React from "react";
@@ -71,11 +80,17 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
 
   svgr(
     content.outerHTML,
-    { svgAttributes: { viewBox: getViewBox(content.attributes) }, template },
+    {
+      plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx", "@svgr/plugin-prettier"],
+      svgProps: { viewBox: getViewBox(content.attributes) },
+      template,
+    },
     { componentName: functionName },
-  ).then(jsCode => {
-    fs.writeFileSync(path.join(componentPath, outputComponentFileName), jsCode);
-  });
+  )
+    .then(code => {
+      fs.writeFileSync(path.join(componentPath, outputComponentFileName), code);
+    })
+    .catch(err => console.error(err));
 
   // write .js.flow for every icon
   fs.writeFileSync(

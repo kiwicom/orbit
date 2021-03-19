@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.3.2...eslint-plugin-orbit-components@0.4.0) (2021-03-19)
+
+
+### Features
+
+* **eslint-plugin-orbit:** custom-colors ([#2738](https://github.com/kiwicom/orbit/issues/2738)) ([af5f7cf](https://github.com/kiwicom/orbit/commit/af5f7cfac528472f0ce5e3993758ddc8c43dd4a0))
+* **eslint-plugin-orbit:** custom-typography ([#2777](https://github.com/kiwicom/orbit/issues/2777)) ([65f6a75](https://github.com/kiwicom/orbit/commit/65f6a75b8d0ab8dfc8a2c0283a962a4c55bfcaa5))
+* **eslint-plugin-orbit:** default-theme rule ([#2737](https://github.com/kiwicom/orbit/issues/2737)) ([9caa785](https://github.com/kiwicom/orbit/commit/9caa7850f361ba5355c5d78a693f9ddcdfcf27de))
+* **eslint-plugin-orbit:** prefer-single-destructure ([#2739](https://github.com/kiwicom/orbit/issues/2739)) ([7dbf181](https://github.com/kiwicom/orbit/commit/7dbf1811acaeeca030450864577554306b61a273))
+* **eslint-plugin-orbit:** theme-rtl rule ([#2740](https://github.com/kiwicom/orbit/issues/2740)) ([f199a18](https://github.com/kiwicom/orbit/commit/f199a18581b2f55e3fe6a98fca52a101d996a072))
+
+
+
+
+
 ## [0.3.2](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.3.1...eslint-plugin-orbit-components@0.3.2) (2021-03-08)
 
 **Note:** Version bump only for package eslint-plugin-orbit-components

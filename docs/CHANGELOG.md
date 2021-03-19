@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.7.1...@kiwicom/orbit.kiwi@0.8.0) (2021-03-19)
+
+
+### Bug Fixes
+
+* rename prop to be less misleading ([5f3ac88](https://github.com/kiwicom/orbit/commit/5f3ac88436d5c665924ce9f28454a07fc1fc9f0f))
+* use type intersection ([0ecb395](https://github.com/kiwicom/orbit/commit/0ecb395734b6ed4ab64a86c2289e3dc043172089))
+* **docs:** long links breaking up paragraphs ([c575baa](https://github.com/kiwicom/orbit/commit/c575baa96ced69bcb3e53e6bd13c62088dc6e326))
+* **docs:** remove H1s from MDX ([2056329](https://github.com/kiwicom/orbit/commit/205632907c6f0db726b16261438e504594ef5217))
+* **docs:** split Palette into separate components ([c2c1144](https://github.com/kiwicom/orbit/commit/c2c1144291455175243caf1036cad02895c96645))
+* specify import as js, not tsx ([d8fb638](https://github.com/kiwicom/orbit/commit/d8fb638b0c4dd81702fd4445aab165fac4868705))
+* **docs:** typing for Palette ([5c7fb9d](https://github.com/kiwicom/orbit/commit/5c7fb9d2db38db43612353ad2f17653c4748beb4))
+
+
+### Features
+
+* **docs:** add content container ([3617d0c](https://github.com/kiwicom/orbit/commit/3617d0c4033909021f42e680a655601b1b15c675))
+* **docs:** add description to pages ([f7db63c](https://github.com/kiwicom/orbit/commit/f7db63cec2eea087f0d4dcfb2d25e2c3329d5fc6))
+* **docs:** add missing content ([ca995e3](https://github.com/kiwicom/orbit/commit/ca995e327329dc687044dd119a995b537461d307))
+* **docs:** add Palette component and use it ([4bf430b](https://github.com/kiwicom/orbit/commit/4bf430b0e0cad6dd6539bdd058cb58f885fec1f6))
+* **docs:** add tabs ([20f2825](https://github.com/kiwicom/orbit/commit/20f2825bd925f1e1ebb652465caa43c76c564f80))
+* **docs:** allow labels on switch to be reversed ([68852b6](https://github.com/kiwicom/orbit/commit/68852b63a0529ed1286d9e554d67680a95448a8c))
+
+
+
+
+
 ## [0.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.7.0...@kiwicom/orbit.kiwi@0.7.1) (2021-03-08)
 
 

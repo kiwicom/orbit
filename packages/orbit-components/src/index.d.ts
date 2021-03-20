@@ -112,5 +112,6 @@ export { BadgePrimitive } from "./primitives/BadgePrimitive/index";
 export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive/index";
 export { LinkList } from "./LinkList/index";
 export { default as Wizard, WizardStep } from "./Wizard";
+export { default as useMediaQuery } from "./hooks/useMediaQuery";
 
 export { Icon } from "./Icon/index";

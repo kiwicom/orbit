@@ -1,119 +1,66 @@
 import * as React from "react";
-import SearchIcon from "@kiwicom/orbit-components/lib/icons/Search";
-import { Event } from "@kiwicom/orbit-components/lib/common/common";
-import { Index } from "elasticlunr";
-import { Link } from "gatsby";
-import { useCombobox } from "downshift";
+import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
+import { useMediaQuery } from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
 
-import useSearchIndex from "../../hooks/useSearchIndex";
-import StyledWrapper from "./primitives/StyledWrapper";
+import StyledWrapper, { Size } from "./primitives/StyledWrapper";
 import StyledInputContainer from "./primitives/StyledInputContainer";
-import StyledPreffix from "./primitives/StyledPrefix";
-import StyledInput from "./primitives/StyledInput";
-import { StyledDropdown, StyledDropdownItem } from "./primitives/StyledDropdown";
-
-type InputEvent = Event<React.SyntheticEvent<HTMLInputElement>>;
-type KeyboardEvent = Event<React.KeyboardEvent<HTMLInputElement>>;
-
-interface SearchResult {
-  id: string;
-  description: string;
-  title: string;
-  path: string;
-}
-
-export enum Size {
-  Regular,
-  Large,
-}
+import StyledPrefix from "./primitives/StyledPrefix";
+import SearchModal from "./SearchModal";
 
 interface Props {
-  placeholder?: string;
-  onFocus?: InputEvent;
-  onChange?: (value: string) => (data: SearchResult[]) => void | Promise<void>;
-  onBlur?: InputEvent;
-  onKeyUp?: KeyboardEvent;
-  onKeyDown?: KeyboardEvent;
-  name?: string;
-  disabled?: boolean;
-  value?: string;
   size?: Size;
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(function SearchInput(
-  {
-    placeholder = "Search for components, foundation...",
-    disabled,
-    value,
-    onChange,
-    onFocus,
-    onBlur,
-    onKeyUp,
-    onKeyDown,
-    name,
-    size = Size.Regular,
-  },
-  ref,
-) {
-  const [results, setResults] = React.useState<SearchResult[]>([]);
-  const { index } = useSearchIndex();
+const StyledToggleContainer = styled(StyledInputContainer)`
+  cursor: auto; /* the interactive element should change the cursor, not container */
+  padding: 0; /* to increase the clickable area */
+`;
+const StyledTogglePrefix = styled(StyledPrefix)`
+  pointer-events: none;
+  position: absolute;
+  left: 1.5em;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+const StyledSearchToggle = styled.button.attrs({ type: "button" })<{ size: Size }>`
+  ${({ theme, size }) => css`
+    display: block;
+    width: 100%;
+    height: ${size === Size.Large ? "100%" : "44px"};
+    border-radius: 44px;
+    padding: 10px 1.5em; /* copied from StyledInputContainer */
+    padding-left: 4em; /* compensate for the icon */
+    text-align: left;
+    color: ${theme.orbit.paletteInkLight};
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  `}
+`;
 
-  const handleSearch = (val: string) => {
-    const indexed = Index.load(index);
-    setResults(
-      indexed.search(val, { expand: true }).map(doc => indexed.documentStore.getDoc(doc.ref)),
-    );
-    if (onChange) onChange(val)(results);
-  };
+function SearchInput({ size = Size.Regular }: Props) {
+  const [modalOpen, setModalOpen] = React.useState<boolean>(false);
 
-  const {
-    isOpen,
-    getMenuProps,
-    inputValue,
-    getInputProps,
-    getComboboxProps,
-    getItemProps,
-  } = useCombobox({
-    items: results,
-    onInputValueChange: () => handleSearch(inputValue),
-  });
+  const { isTablet } = useMediaQuery();
+  const placeholder = isTablet ? "Search for components, foundation..." : "Search...";
 
   return (
-    <StyledWrapper size={size}>
-      <StyledInputContainer {...getComboboxProps()}>
-        <StyledPreffix>
-          <SearchIcon />
-        </StyledPreffix>
-        <StyledInput
-          ref={ref}
-          {...getInputProps({
-            type: "search",
-            name,
-            value,
-            placeholder,
-            disabled,
-            onKeyDown,
-            onKeyUp,
-            onFocus,
-            onBlur,
-          })}
-        />
-      </StyledInputContainer>
-
-      <StyledDropdown {...getMenuProps()} visible={results.length > 0}>
-        {isOpen &&
-          results.length > 0 &&
-          results.map(item => {
-            const { title, id, path } = item;
-            return (
-              <StyledDropdownItem key={id} {...getItemProps({ item })}>
-                <Link to={path}>{title}</Link>
-              </StyledDropdownItem>
-            );
-          })}
-      </StyledDropdown>
-    </StyledWrapper>
+    <>
+      <StyledWrapper size={size}>
+        <StyledToggleContainer>
+          <StyledTogglePrefix>
+            <SearchIcon />
+          </StyledTogglePrefix>
+          <StyledSearchToggle size={size} onClick={() => setModalOpen(true)}>
+            {placeholder}
+          </StyledSearchToggle>
+        </StyledToggleContainer>
+      </StyledWrapper>
+      {modalOpen && <SearchModal placeholder={placeholder} onClose={() => setModalOpen(false)} />}
+    </>
   );
-});
+}
 
-export default Input;
+export default SearchInput;
+export { Size };

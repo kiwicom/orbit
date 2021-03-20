@@ -16,6 +16,7 @@ import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import Tabs, { TabObject } from "./Tabs";
+import { CONTENT_PADDING, MAX_CONTENT_WIDTH } from "../consts";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -27,10 +28,14 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledMain = styled.main`
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 2rem;
+  padding: 2rem ${CONTENT_PADDING};
+  max-width: ${MAX_CONTENT_WIDTH};
+  margin: 0 auto;
+  box-sizing: content-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
 `;
 

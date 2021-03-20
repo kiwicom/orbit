@@ -5,6 +5,7 @@ import { WindowLocation } from "@reach/router";
 
 import defaultTheme from "../theme";
 import Navbar from "./Navbar";
+import { CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -19,7 +20,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 2rem;
+  padding: 2rem ${CONTENT_PADDING};
 `;
 
 const StyledFooter = styled.footer`

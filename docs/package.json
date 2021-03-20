@@ -52,6 +52,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
+    "body-scroll-lock": "^3.1.5",
     "elasticlunr": "^0.9.5",
     "prism-react-renderer": "^1.1.1",
     "react-polymorphic-types": "^1.0.3"

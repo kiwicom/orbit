@@ -1,10 +1,13 @@
 import styled, { css } from "styled-components";
 
-import { Size } from "..";
+export enum Size {
+  Regular,
+  Large,
+}
 
 const StyledWrapper = styled.div<{ size: Size }>`
   position: relative;
-  min-width: 24em; /* so that the placeholder fits in */
+  max-width: 24em; /* so that the placeholder fits in */
   ${({ size }) =>
     size === Size.Large &&
     css`

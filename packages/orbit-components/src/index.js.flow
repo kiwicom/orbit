@@ -112,6 +112,7 @@ import typeof TripSectorType from "./deprecated/TripSector";
 import typeof TripSegmentType from "./deprecated/TripSegment";
 import typeof TruncateType from "./Truncate";
 import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
+import typeof useMediaQueryType from "./hooks/useMediaQuery";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -249,6 +250,7 @@ declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
+declare export var useMediaQuery: useMediaQueryType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

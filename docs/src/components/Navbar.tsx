@@ -5,7 +5,6 @@ import { Inline } from "@kiwicom/orbit-components";
 import { WindowLocation } from "@reach/router";
 
 import Logo from "../images/orbit.svg";
-import NavigationLinks from "./Navigation";
 import Input from "./SearchInput";
 import Bookmarks from "./Bookmarks";
 
@@ -36,7 +35,6 @@ const Navbar = ({ location }: Props) => {
       </Link>
       {!isHome && <Input />}
       <Inline justify="end" align="center" spacing="medium" desktop={{ spacing: "large" }}>
-        <NavigationLinks />
         <Bookmarks />
       </Inline>
     </StyledWrapper>

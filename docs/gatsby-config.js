@@ -67,6 +67,7 @@ module.exports = {
             path: n => n.fields.slug,
           },
         },
+        filter: n => path.relative(__dirname, n.fileAbsolutePath).includes("documentation"),
       },
     },
     {

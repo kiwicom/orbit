@@ -54,8 +54,10 @@ const StyledSearchInput = styled(StyledInput)`
 export default function SearchModal({ placeholder, onClose }: Props) {
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const { index } = useSearchIndex();
+  // the index will not update in production
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const indexed = React.useMemo<typeof index>(() => Index.load(index), []);
   const handleSearch = (val: string) => {
-    const indexed = Index.load(index);
     setResults(
       indexed.search(val, { expand: true }).map(doc => indexed.documentStore.getDoc(doc.ref)),
     );

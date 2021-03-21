@@ -22,8 +22,8 @@ import useSearchIndex from "../../hooks/useSearchIndex";
 
 export interface SearchResult {
   id: string;
+  breadcrumbs: string[];
   description: string;
-  title: string;
   path: string;
 }
 
@@ -126,10 +126,10 @@ export default function SearchModal({ placeholder, onClose }: Props) {
                 <>
                   {results.length > 0 ? (
                     results.map(item => {
-                      const { title, id, path } = item;
+                      const { breadcrumbs, id, path } = item;
                       return (
                         <StyledDropdownItem key={id} {...getItemProps({ item })}>
-                          <Link to={path}>{title}</Link>
+                          <Link to={path}>{breadcrumbs.join(" / ")}</Link>
                         </StyledDropdownItem>
                       );
                     })

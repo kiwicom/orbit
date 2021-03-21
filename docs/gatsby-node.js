@@ -19,11 +19,16 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
     !node.relativePath.startsWith("assets")
   ) {
     const metaFilePath = path.join(node.absolutePath, "meta.yml");
+    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
     const url = omitNumbers(path.join("/", node.relativePath, "/"));
 
     if (!fs.existsSync(metaFilePath)) {
       reporter.panicOnBuild(
-        `Expected meta.yml file to exist in "${node.absolutePath}", every directory in "src/documentation" should have one`,
+        `Expected meta.yml file to exist in "${
+          process.env.NODE_ENV === "test"
+            ? path.relative(process.cwd(), node.absolutePath)
+            : node.absolutePath
+        }", every directory in "src/documentation" should have one`,
       );
       metaFileDataMap.set(url, {});
       return;
@@ -39,13 +44,17 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       missingFields.push("type");
     } else if (!["folder", "tabs"].includes(metaFileData.type)) {
       reporter.panicOnBuild(
-        `Expected the value of "type" in "${metaFilePath}" to be one of: folder, tabs`,
+        `Expected the value of "type" in "${
+          process.env.NODE_ENV === "test" ? metaFilePathRelative : metaFilePath
+        }" to be one of: folder, tabs`,
       );
     }
 
     if (missingFields.length > 0) {
       reporter.panicOnBuild(
-        `Expected "${metaFilePath}" to contain fields: ${missingFields.join(", ")}`,
+        `Expected "${
+          process.env.NODE_ENV === "test" ? metaFilePathRelative : metaFilePath
+        }" to contain fields: ${missingFields.join(", ")}`,
       );
     }
 

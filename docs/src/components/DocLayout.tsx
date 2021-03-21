@@ -101,6 +101,10 @@ interface Props {
   tableOfContents: TocItemObject[];
   tabs?: TabObject[];
   title?: string;
+  trail?: Array<{
+    name: string;
+    url: string;
+  }>;
 }
 
 export default function DocLayout({
@@ -113,6 +117,7 @@ export default function DocLayout({
   tableOfContents,
   tabs,
   title,
+  trail,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
   const tocHasItems = tableOfContents?.length > 0;
@@ -122,7 +127,7 @@ export default function DocLayout({
         <StyledWrapper>
           <Navbar location={location} />
           <StyledMain>
-            <Breadcrumbs location={location} />
+            {trail && <Breadcrumbs trail={trail} />}
             <Box padding={{ bottom: "XLarge" }}>
               <Stack inline align="center" spaceAfter="small">
                 <AddBookmark />

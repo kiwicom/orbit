@@ -1,4 +1,15 @@
 const path = require("path");
+const capitalize = require("capitalize");
+
+function pathToWords(p) {
+  return p
+    .split("/")
+    .filter(Boolean)
+    .map(part => {
+      if (part === "code-kiwi-com") return "code.kiwi.com";
+      return capitalize(part.replace(/-/g, " "));
+    });
+}
 
 module.exports = {
   siteMetadata: {
@@ -59,10 +70,10 @@ module.exports = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ["title", "description", "path"],
+        fields: ["breadcrumbs", "description", "path"],
         resolvers: {
           Mdx: {
-            title: n => n.frontmatter.title,
+            breadcrumbs: n => pathToWords(n.fields.slug),
             description: n => n.frontmatter.description,
             path: n => n.fields.slug,
           },

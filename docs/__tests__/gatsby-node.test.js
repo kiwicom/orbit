@@ -56,7 +56,7 @@ describe("gatsby-node", () => {
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [
-            "Expected meta.yml file to exist in \\"/Users/silvenon/Code/orbit/docs/src/documentation/01-getting-started\\", every directory in \\"src/documentation\\" should have one",
+            "Expected meta.yml file to exist in \\"docs/src/documentation/01-getting-started\\", every directory in \\"src/documentation\\" should have one",
           ],
         ]
       `);
@@ -78,7 +78,7 @@ describe("gatsby-node", () => {
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [
-            "Expected \\"/Users/silvenon/Code/orbit/docs/src/documentation/01-getting-started/meta.yml\\" to contain fields: title, type",
+            "Expected \\"docs/src/documentation/01-getting-started/meta.yml\\" to contain fields: title, type",
           ],
         ]
       `);
@@ -101,7 +101,7 @@ describe("gatsby-node", () => {
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [
-            "Expected the value of \\"type\\" in \\"/Users/silvenon/Code/orbit/docs/src/documentation/01-getting-started/meta.yml\\" to be one of: folder, tabs",
+            "Expected the value of \\"type\\" in \\"docs/src/documentation/01-getting-started/meta.yml\\" to be one of: folder, tabs",
           ],
         ]
       `);

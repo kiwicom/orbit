@@ -1,5 +1,19 @@
 const path = require("path");
 
+const warnMissingAccessTokens = require("./utils/warnings");
+
+(() => {
+  try {
+    require("dotenv-safe").config({
+      example: path.resolve(__dirname, `../.env.example`),
+      path: path.resolve(__dirname, `../.env`),
+      allowEmptyValues: true,
+    });
+  } catch (error) {
+    warnMissingAccessTokens(error);
+  }
+})();
+
 module.exports = {
   siteMetadata: {
     title: "Orbit",
@@ -28,6 +42,15 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
+          {
+            resolve: require.resolve("../packages/gatsby-remark-figma-images"),
+            options: {
+              path: `${__dirname}/src/figma-images`,
+              format: "png",
+              scale: 2,
+              accessToken: process.env.FIGMA_TOKEN,
+            },
+          },
           {
             resolve: "gatsby-remark-images",
             options: {

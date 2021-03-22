@@ -37,7 +37,7 @@ This function receives one parameter - object. With usage in `styled-components`
 
 | name         | used token     | token value |
 | :----------- | :------------- | :---------- |
-| `"none"`     | `spaceXXSmall` | `null`      |
+| `"none"`     |                | `null`      |
 | `"smallest"` | `spaceXXSmall` | `4px`       |
 | `"small"`    | `spaceXSmall`  | `8px`       |
 | `"normal"`   | `spaceSmall`   | `12px`      |

@@ -77,7 +77,7 @@ const Palette = ({ colors, allowAdditional }: PaletteProps) => {
           return false;
         };
         return (
-          <Grid columns={showAdditional && color.hover.value && isTablet ? "1fr 1fr 1fr" : "1fr"}>
+          <Grid key={color.tokenName} columns={showAdditional && color.hover.value && isTablet ? "1fr 1fr 1fr" : "1fr"}>
             <ColorContainer
               color={color}
               order={determineOrder(index)}

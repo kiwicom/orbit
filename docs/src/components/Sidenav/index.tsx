@@ -35,7 +35,7 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
   `}
 `;
 
-const StyledOpenButton = styled.button.attrs(({ className }) => ({
+export const StyledOpenButton = styled.button.attrs(({ className }) => ({
   className,
   "aria-label": "open",
   type: "button",

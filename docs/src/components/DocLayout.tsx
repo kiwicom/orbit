@@ -32,7 +32,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 2rem ${CONTENT_PADDING};
+  padding: ${CONTENT_PADDING};
   max-width: ${MAX_CONTENT_WIDTH};
   margin: 0 auto;
   box-sizing: content-box;

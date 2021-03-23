@@ -20,7 +20,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 2rem ${CONTENT_PADDING};
+  padding: ${CONTENT_PADDING};
 `;
 
 const StyledFooter = styled.footer`

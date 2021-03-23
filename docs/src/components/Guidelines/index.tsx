@@ -5,7 +5,7 @@ import { Stack, Text } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants.js";
 
-import HeaderWithLink from "../HeaderWithLink";
+import HeadingWithLink from "../HeadingWithLink";
 import { slugify } from "../../utils/common";
 
 export interface GuidelineType {
@@ -123,7 +123,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ))}
         <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
           <ContentContainer>
-            <HeaderWithLink headerText={title} />
+            <HeadingWithLink headingLevel={4} headingText={title} noId />
             {content}
           </ContentContainer>
           {images.length === 1 && (

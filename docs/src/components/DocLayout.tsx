@@ -16,6 +16,7 @@ import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import Tabs, { TabObject } from "./Tabs";
+import ReactExample from "./ReactExample";
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -95,6 +96,7 @@ export default function DocLayout({ children, description, location, path, tabs,
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+            <ReactExample exampleId="Wizard-default" />
             <ContentContainer padding="XLarge" elevation="raised">
               <MDXProvider
                 components={{

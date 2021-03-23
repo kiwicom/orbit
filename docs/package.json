@@ -11,6 +11,8 @@
     "repl": "gatsby repl"
   },
   "devDependencies": {
+    "@babel/parser": "^7.13.11",
+    "@babel/types": "^7.13.0",
     "@csstools/convert-colors": "^2.0.0",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@icons-pack/react-simple-icons": "^4.0.0",
@@ -43,6 +45,7 @@
     "gatsby-transformer-sharp": "^2.7.0",
     "js-yaml": "^4.0.0",
     "react-copy-to-clipboard": "^5.0.3",
+    "react-live": "^2.2.3",
     "rehype-parse": "^7.0.1",
     "rehype-stringify": "^8.0.0",
     "remark-deflist": "^0.3.0",

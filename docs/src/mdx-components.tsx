@@ -15,6 +15,7 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { navigate } from "gatsby";
 import { css } from "styled-components";
 
+import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 
@@ -22,36 +23,30 @@ export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
 
+interface HeadingProps {
+  children: string;
+}
+
 export const h1 = () => null;
 
-export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h2" type="title1">
-    {children}
-  </Heading>
+export const h2 = ({ children }: HeadingProps) => (
+  <HeadingWithLink headingLevel={2} headingText={children} spaceAfter="normal" />
 );
 
-export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h3" type="title2">
-    {children}
-  </Heading>
+export const h3 = ({ children }: HeadingProps) => (
+  <HeadingWithLink headingLevel={3} headingText={children} spaceAfter="small" />
 );
 
-export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h4" type="title3">
-    {children}
-  </Heading>
+export const h4 = ({ children }: HeadingProps) => (
+  <HeadingWithLink headingLevel={4} headingText={children} spaceAfter="smallest" />
 );
 
-export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h5" type="title4">
-    {children}
-  </Heading>
+export const h5 = ({ children }: HeadingProps) => (
+  <HeadingWithLink headingLevel={5} headingText={children} />
 );
 
-export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h6" type="title5">
-    {children}
-  </Heading>
+export const h6 = ({ children }: HeadingProps) => (
+  <HeadingWithLink headingLevel={6} headingText={children} />
 );
 
 export const hr = () => <Separator spaceAfter="largest" />;

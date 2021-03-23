@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
-  ButtonLink,
   Card,
   CardSection,
   Coupon,
-  Heading,
   InputField,
   Stack,
   Text,
   Tile,
 } from "@kiwicom/orbit-components";
-import { Link as LinkIcon, Search } from "@kiwicom/orbit-components/icons";
+import { Search } from "@kiwicom/orbit-components/icons";
 
+import HeadingWithLink from "./HeadingWithLink";
 import { IllustrationObjectShape } from "./IllustrationList";
 import { IconObjectShape } from "./IconList";
 import { CodeBlock } from "./Code";
@@ -102,19 +101,7 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <StyledAnchorWrapper>
-                <Stack flex spacing="XXXSmall" align="center">
-                  <Heading as="h3" type="title2" spaceAfter="medium">
-                    {visualName}
-                  </Heading>
-                  <ButtonLink
-                    iconLeft={<LinkIcon />}
-                    href={`#${visualName}`}
-                    type="secondary"
-                    compact
-                  />
-                </Stack>
-              </StyledAnchorWrapper>
+              <HeadingWithLink headingText={visualName} noId />
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, setCopied)}
             </Stack>

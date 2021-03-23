@@ -15,6 +15,7 @@ import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
+import { StyledAnchorWrapper } from "./HeadingWithLink";
 import Tabs, { TabObject } from "./Tabs";
 import ReactExample from "./ReactExample";
 
@@ -51,12 +52,12 @@ const ContentContainer = styled(Box)`
   > h1 {
     margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
   }
-  > h2,
-  > h3,
-  > h4,
-  > h5,
-  > h6 {
+  > ${StyledAnchorWrapper} {
     margin-top: ${({ theme }) => theme.orbit.spaceLarge};
+
+    + * {
+      margin-top: 0;
+    }
   }
   > div + h2:nth-child(2),
   h2:first-child {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Box } from "@kiwicom/orbit-components";
+import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 
@@ -50,6 +50,9 @@ const BottomShadowHider = styled.div`
     left: 0;
     right: 0;
     margin: 0 calc(2rem + 12px);
+    ${mediaQueries.tablet(css`
+      margin: 0 calc(2rem + 12px + 200px) 0 calc(2rem + 12px);
+    `)}
   `}
 `;
 

@@ -1,6 +1,16 @@
 import React from "react";
-import { Box, Heading, Stack, Text, ThemeProvider } from "@kiwicom/orbit-components";
-import styled from "styled-components";
+import {
+  Box,
+  Collapse,
+  Grid,
+  Heading,
+  Hide,
+  mediaQueries,
+  Stack,
+  Text,
+  ThemeProvider,
+} from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -16,6 +26,7 @@ import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import { StyledAnchorWrapper } from "./HeadingWithLink";
+import TableOfContents, { TocItemObject } from "./TableOfContents";
 import Tabs, { TabObject } from "./Tabs";
 import ReactExample from "./ReactExample";
 
@@ -66,16 +77,38 @@ const ContentContainer = styled(Box)`
   margin-top: 0;
 `;
 
+const TocWrapper = styled.div`
+  ${mediaQueries.tablet(css`
+    order: 2;
+  `)}
+
+  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  > * {
+    position: sticky;
+    top: 0;
+    transition: top ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  }
+`;
+
 interface Props {
   children: React.ReactNode;
   location: WindowLocation;
   path: string;
   title?: string;
   description?: string;
+  tableOfContents: TocItemObject[];
   tabs: TabObject[];
 }
 
-export default function DocLayout({ children, description, location, path, tabs, title }: Props) {
+export default function DocLayout({
+  children,
+  description,
+  location,
+  path,
+  tableOfContents,
+  tabs,
+  title,
+}: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -97,25 +130,36 @@ export default function DocLayout({ children, description, location, path, tabs,
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-            <ReactExample exampleId="Wizard-default" />
-            <ContentContainer padding="XLarge" elevation="raised">
-              <MDXProvider
-                components={{
-                  ...components,
-                  ComponentStatus,
-                  FancyLink,
-                  Guideline,
-                  GuidelineImages,
-                  DoImage,
-                  DontImage,
-                  GuidelinesSideBySide,
-                  Do,
-                  Dont,
-                }}
-              >
-                {children}
-              </MDXProvider>
-            </ContentContainer>
+            <Grid columns="1fr" tablet={{ columns: "4fr 1fr" }}>
+              <TocWrapper>
+                <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+                  <TableOfContents items={tableOfContents} />
+                </Hide>
+              </TocWrapper>
+              <ContentContainer padding="XLarge" elevation="raised">
+                <Hide on={["tablet", "desktop", "largeDesktop"]}>
+                  <Collapse label="Table of contents">
+                    <TableOfContents items={tableOfContents} alwaysVisible />
+                  </Collapse>
+                </Hide>
+                <MDXProvider
+                  components={{
+                    ...components,
+                    ComponentStatus,
+                    FancyLink,
+                    Guideline,
+                    GuidelineImages,
+                    DoImage,
+                    DontImage,
+                    GuidelinesSideBySide,
+                    Do,
+                    Dont,
+                  }}
+                >
+                  {children}
+                </MDXProvider>
+              </ContentContainer>
+            </Grid>
           </StyledMain>
           <StyledFooter />
         </StyledWrapper>

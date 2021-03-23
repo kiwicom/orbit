@@ -9,7 +9,7 @@ import LogoGlyph from "../images/orbit-glyph.svg";
 import Input from "./SearchInput";
 import Bookmarks from "./Bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
-import { StyledAsideHeader } from "./Sidenav";
+import { StyledAsideHeader, StyledOpenButton as StyledSidenavToggle } from "./Sidenav";
 
 const CONTENT_HEIGHT = "52px"; // safely above the search input height
 const paddingMixin = css`
@@ -28,6 +28,8 @@ const paddingMixin = css`
 const StyledWrapper = styled.header`
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: center;
   ${paddingMixin};
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);
@@ -37,9 +39,17 @@ const StyledWrapper = styled.header`
     ${paddingMixin};
     box-sizing: content-box;
   }
+
+  ${mediaQueries.tablet(css`
+    ${StyledSidenavToggle} {
+      padding: ${CONTENT_PADDING};
+      margin: -${CONTENT_PADDING} 0;
+    }
+  `)}
 `;
 
 const StyledInner = styled.div`
+  flex: 1;
   max-width: ${MAX_CONTENT_WIDTH};
   padding: 0 ${CONTENT_PADDING};
   box-sizing: content-box;
@@ -56,7 +66,7 @@ interface Props {
 }
 
 const Navbar = ({ location }: Props) => {
-  const { isMediumMobile } = useMediaQuery();
+  const { isMediumMobile, isTablet } = useMediaQuery();
   const isHome = location && location.pathname === "/";
 
   return (
@@ -66,8 +76,9 @@ const Navbar = ({ location }: Props) => {
           {isMediumMobile ? <Logo width={175} height={40} /> : <LogoGlyph width={40} height={40} />}
         </Link>
         {isHome ? <div /> : <Input />}
-        <Bookmarks />
+        {!isTablet && <Bookmarks />}
       </StyledInner>
+      {isTablet && <Bookmarks />}
     </StyledWrapper>
   );
 };

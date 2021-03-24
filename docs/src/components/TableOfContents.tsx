@@ -31,25 +31,13 @@ const StyledAnchor = styled.a<StyledAnchorProps>`
       border-top: 2px solid;
       width: ${getWidth(level)};
       margin: 4px 12px;
-      visibility: visible;
     }
   `}
 `;
 
-interface StyledTocListProps {
-  alwaysVisible?: boolean;
-}
-
-const StyledTocList = styled.ul<StyledTocListProps>`
+const StyledTocList = styled.ul`
   max-height: 100vh;
   overflow-y: auto;
-  ${StyledAnchor} {
-    visibility: ${({ alwaysVisible }) => !alwaysVisible && `hidden`};
-  }
-
-  :hover ${StyledAnchor},:focus ${StyledAnchor},:active ${StyledAnchor} {
-    visibility: visible;
-  }
 `;
 
 const getTocList = (array: TocItemObject[], level = 0) => {
@@ -67,18 +55,18 @@ const getTocList = (array: TocItemObject[], level = 0) => {
   ));
 };
 
-interface Props extends StyledTocListProps {
+interface Props {
   items: TocItemObject[];
 }
 
-const TableOfContents = ({ alwaysVisible, items }: Props) => {
+const TableOfContents = ({ items }: Props) => {
   const TocContent = getTocList(items);
   if (TocContent.length === 0) {
     return null;
   }
   return (
     <nav>
-      <StyledTocList alwaysVisible={alwaysVisible}>{TocContent}</StyledTocList>
+      <StyledTocList>{TocContent}</StyledTocList>
     </nav>
   );
 };

@@ -12,15 +12,15 @@ interface StyledAnchorProps {
 }
 
 const getWidth = (level: number) => {
-  if (level === 1) return "4px";
-  if (level === 2) return "8px";
+  if (level === 0) return "4px";
+  if (level === 1) return "8px";
   return "12px";
 };
 
 const StyledAnchor = styled.a<StyledAnchorProps>`
   ${({ level, theme }) => css`
-    color: ${level === 1 ? theme.orbit.paletteInkNormal : theme.orbit.paletteInkLight};
-    font-size: ${level <= 2 ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextSmall};
+    color: ${level === 0 ? theme.orbit.paletteInkNormal : theme.orbit.paletteInkLight};
+    font-size: ${level <= 1 ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextSmall};
     text-indent: -${theme.orbit.spaceXLarge};
     padding-left: ${theme.orbit.spaceXLarge};
     display: inline-block;

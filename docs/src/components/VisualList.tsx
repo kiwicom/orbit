@@ -101,7 +101,7 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <HeadingWithLink headingText={visualName} noId />
+              <HeadingWithLink noId>{visualName}</HeadingWithLink>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, setCopied)}
             </Stack>

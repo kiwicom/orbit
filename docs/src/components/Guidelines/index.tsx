@@ -123,7 +123,9 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ))}
         <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
           <ContentContainer>
-            <HeadingWithLink headingLevel={4} headingText={title} noId />
+            <HeadingWithLink headingLevel={4} noId>
+              {title}
+            </HeadingWithLink>
             {content}
           </ContentContainer>
           {images.length === 1 && (

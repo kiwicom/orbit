@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Box, mediaQueries } from "@kiwicom/orbit-components";
+import { Box } from "@kiwicom/orbit-components";
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 

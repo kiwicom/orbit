@@ -5,11 +5,11 @@ import {
   Grid,
   Heading,
   Hide,
-  mediaQueries,
   Stack,
   Text,
   ThemeProvider,
 } from "@kiwicom/orbit-components";
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
@@ -28,7 +28,6 @@ import ComponentStatus from "./ComponentStatus";
 import { StyledAnchorWrapper } from "./HeadingWithLink";
 import TableOfContents, { TocItemObject } from "./TableOfContents";
 import Tabs, { TabObject } from "./Tabs";
-import ReactExample from "./ReactExample";
 
 const StyledWrapper = styled.div`
   display: grid;

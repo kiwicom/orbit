@@ -58,9 +58,11 @@ const ReactExample = ({ exampleId }: Props) => {
     `,
   );
 
-  const { fields } = allFile.nodes.find(n => n.fields.example_id === exampleId);
+  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!fields) return <>{`Could not find example with ${exampleId} id`}</>;
+  if (!example) return <>{`Could not find example with the id: ${exampleId}`}</>;
+
+  const { fields } = example;
 
   const modules = fields.scope.reduce((acc, { name, path }) => {
     if (path.match(/@kiwicom\/orbit-components\/icons/)) {

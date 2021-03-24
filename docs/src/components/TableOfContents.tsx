@@ -55,6 +55,9 @@ const StyledTocList = styled.ul<StyledTocListProps>`
 
 const getTocList = (array: TocItemObject[], level: Levels) => {
   const nextLevel: Levels = ++level;
+  if (typeof array === "undefined") {
+    return [];
+  }
   return array.map(item => (
     <li key={item.url}>
       <StyledAnchor level={level} href={item.url}>
@@ -69,10 +72,16 @@ interface TableOfContentsProps extends StyledTocListProps {
   items: TocItemObject[];
 }
 
-const TableOfContents = ({ alwaysVisible, items }: TableOfContentsProps) => (
-  <nav>
-    <StyledTocList alwaysVisible={alwaysVisible}>{getTocList(items, Levels.First)}</StyledTocList>
-  </nav>
-);
+const TableOfContents = ({ alwaysVisible, items }: TableOfContentsProps) => {
+  const TocContent = getTocList(items, Levels.First);
+  if (TocContent.length === 0) {
+    return null;
+  }
+  return (
+    <nav>
+      <StyledTocList alwaysVisible={alwaysVisible}>{TocContent}</StyledTocList>
+    </nav>
+  );
+};
 
 export default TableOfContents;

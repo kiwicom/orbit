@@ -109,6 +109,7 @@ export default function DocLayout({
   tabs,
   title,
 }: Props) {
+  const Toc = <TableOfContents items={tableOfContents} />;
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -131,17 +132,17 @@ export default function DocLayout({
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
             <Grid columns="1fr" tablet={{ columns: "80% 20%" }}>
-              <TocWrapper>
-                <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-                  <TableOfContents items={tableOfContents} />
-                </Hide>
-              </TocWrapper>
+              {typeof Toc !== "undefined" && (
+                <TocWrapper>
+                  <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
+                </TocWrapper>
+              )}
               <ContentContainer padding="XLarge" elevation="raised">
-                <Hide on={["tablet", "desktop", "largeDesktop"]}>
-                  <Collapse label="Table of contents">
-                    <TableOfContents items={tableOfContents} alwaysVisible />
-                  </Collapse>
-                </Hide>
+                {typeof Toc !== "undefined" && (
+                  <Hide on={["tablet", "desktop", "largeDesktop"]}>
+                    <Collapse label="Table of contents">{Toc}</Collapse>
+                  </Hide>
+                )}
                 <MDXProvider
                   components={{
                     ...components,

@@ -5,7 +5,7 @@
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/dist/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/__fixtures__/
 
-
+.*/node_modules/webpack-cli/lib/utils/__tests__/
 .*/node_modules/immutable/.*
 .*/node_modules/radium/.*
 .*/node_modules/styled-components/.*

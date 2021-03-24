@@ -130,7 +130,7 @@ export default function DocLayout({
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-            <Grid columns="1fr" tablet={{ columns: "4fr 1fr" }}>
+            <Grid columns="1fr" tablet={{ columns: "80% 20%" }}>
               <TocWrapper>
                 <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
                   <TableOfContents items={tableOfContents} />

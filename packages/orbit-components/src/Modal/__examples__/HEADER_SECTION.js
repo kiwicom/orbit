@@ -25,7 +25,7 @@ export default {
             <ModalSection suppressed>
               <Stack direction="column" spacing="large">
                 <Stack flex>
-                  <Icons.BaggagePersonalItem ariaHidden />
+                  <Icons.BaggagePersonal ariaHidden />
                   <Heading as="h3" type="title3">
                     Personal item only
                   </Heading>

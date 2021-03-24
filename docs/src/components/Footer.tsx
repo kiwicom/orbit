@@ -72,8 +72,6 @@ export default function Footer() {
                 <div>·</div>
                 <StyledFooterLink to="/roadmap">Roadmap</StyledFooterLink>
                 <div>·</div>
-                <StyledFooterLink to="#">Road to React 1.0.0</StyledFooterLink>
-                <div>·</div>
                 <StyledFooterLink to="#">Changelog</StyledFooterLink>
               </Inline>
             </StyledOutdent>

@@ -23,30 +23,32 @@ export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
 
-interface HeadingProps {
-  children: string;
-}
-
 export const h1 = () => null;
 
-export const h2 = ({ children }: HeadingProps) => (
-  <HeadingWithLink headingLevel={2} headingText={children} spaceAfter="normal" />
+export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <HeadingWithLink headingLevel={2} spaceAfter="normal">
+    {children}
+  </HeadingWithLink>
 );
 
-export const h3 = ({ children }: HeadingProps) => (
-  <HeadingWithLink headingLevel={3} headingText={children} spaceAfter="small" />
+export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <HeadingWithLink headingLevel={3} spaceAfter="small">
+    {children}
+  </HeadingWithLink>
 );
 
-export const h4 = ({ children }: HeadingProps) => (
-  <HeadingWithLink headingLevel={4} headingText={children} spaceAfter="smallest" />
+export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <HeadingWithLink headingLevel={4} spaceAfter="smallest">
+    {children}
+  </HeadingWithLink>
 );
 
-export const h5 = ({ children }: HeadingProps) => (
-  <HeadingWithLink headingLevel={5} headingText={children} />
+export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <HeadingWithLink headingLevel={5}>{children}</HeadingWithLink>
 );
 
-export const h6 = ({ children }: HeadingProps) => (
-  <HeadingWithLink headingLevel={6} headingText={children} />
+export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <HeadingWithLink headingLevel={6}>{children}</HeadingWithLink>
 );
 
 export const hr = () => <Separator spaceAfter="largest" />;

@@ -4,12 +4,13 @@
 */
 import * as React from "react";
 
-import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 export type Type = "apple" | "facebook" | "google" | "twitter";
 
 export type Props = {|
   +type?: Type,
+  +size?: Size,
   ...$Diff<
     ButtonCommonProps,
     {| +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean |},

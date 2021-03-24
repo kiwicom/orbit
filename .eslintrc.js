@@ -195,6 +195,7 @@ module.exports = {
       rules: {
         "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
         "mdx/no-unescaped-entities": "OFF",
+        "react/no-unescaped-entities": "OFF",
         "mdx/remark": "error",
         "import/extensions": [
           "error",

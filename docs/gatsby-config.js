@@ -83,6 +83,9 @@ module.exports = {
         owner: "kiwicom",
       },
     },
+    {
+      resolve: require.resolve("./plugins/sandbox"),
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
     {

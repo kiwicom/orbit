@@ -27,7 +27,7 @@ interface Props {
 const Breadcrumbs = ({ location }: Props) => {
   const createLink = (name: string, url: string) => ({
     name: name.replace(/-/g, " "),
-    url: url.split(",").join("/"),
+    url: `${url.split(",").join("/")}/`,
   });
 
   const { pathname } = location;

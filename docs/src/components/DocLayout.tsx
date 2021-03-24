@@ -16,6 +16,7 @@ import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import Tabs, { TabObject } from "./Tabs";
+import ReactExample from "./ReactExample";
 import Footer from "./Footer";
 
 const StyledWrapper = styled.div`
@@ -102,6 +103,7 @@ export default function DocLayout({ children, description, location, path, tabs,
                   GuidelinesSideBySide,
                   Do,
                   Dont,
+                  ReactExample,
                 }}
               >
                 {children}

@@ -5,6 +5,7 @@ const { doesPageHaveTabs, getDocumentUrlPath, getMetaFileData } = require("./uti
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type !== "Mdx") return;
+
   const { createNodeField } = actions;
   const parent = getNode(node.parent);
   const filePath = createFilePath({ node, getNode, basePath: `pages` });

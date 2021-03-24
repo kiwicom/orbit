@@ -51,7 +51,7 @@ const BottomShadowHider = styled.div`
     right: 0;
     margin: 0 calc(2rem + 12px);
     ${mediaQueries.tablet(css`
-      margin: 0 calc(2rem + 12px + 200px) 0 calc(2rem + 12px);
+      margin: 0 calc(2rem + 20%) 0 calc(2rem + 12px);
     `)}
   `}
 `;

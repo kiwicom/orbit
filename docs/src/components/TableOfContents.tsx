@@ -39,6 +39,8 @@ interface StyledTocListProps {
 }
 
 const StyledTocList = styled.ul<StyledTocListProps>`
+  max-height: 100vh;
+  overflow-y: auto;
   ${({ alwaysVisible }) => css`
     ${!alwaysVisible &&
     `${StyledAnchor} {

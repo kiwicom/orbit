@@ -1,76 +1,75 @@
-
 - quarter: current
   items:
-  - title: Make orbit.kiwi follow Orbit and open source it
-    estimate: Q1/2021
-    jiraNumber: 1419
-    description: Orbit.kiwi does not always follow the Orbit principles (spacing, colors, accessibility). Having it be a shining example would make the value proposition for Orbit clearer. Having it be released as an open source example would provide clear demonstrations of how to use Orbit and possibly increase its use.
-  - title: Prepare design tokens for native platforms
-    estimate: Q3/2020
-    jiraNumber: 868
-    description: Design tokens are visual properties describing the UI on a global level. We use them across Orbit components, but we want to prepare them also for other platforms (like iOS and Android), so we have a visual style connected to one source of truth across all Kiwi.com platforms.
-  - title: Improve developer experience with better layouting and composition
-    estimate: Q3/2020
-    jiraNumber: 953
-    description: In some cases, we force developers to create their own styled-components since we don’t cover all possible cases when it comes to layouts and edge cases (that are not aligned with design).
-  - title: Improve coverage for React docs
-    estimate: Q3/2020
-    jiraNumber: 1087
-    description: Developers have noticed some gaps in our docs. We’d like to create guidelines and examples using React for all components. The examples can eventually serve to demonstrate functionality in place of manually updated specs. This should save time and improve clarity through actual examples. Ideally, include also guidelines and examples for more complex composition scenarios (multiple components).
-  - title: Set up native mobile foundations — design & docs
-    estimate: Q3/2020
-    jiraNumber: 2
-    description: We need to build upon existing mobile experience guidelines and have it documented on orbit.kiwi.
-  - title: Improve Figma file structure
-    estimate: Q3/2020
-    jiraNumber: 1221
-    description: We started solving this issue during Q2 and we find out that this is one of the biggest issues currently in design team work organization. We should provide some guidelines for organizing files in Figma due to better consistency and easier searching for PM’s, developers and writers inside of Kiwi organization.
-  - title: Create separate library for emails
-    estimate: Q3/2020
-    jiraNumber: 1216
-    description: There are technical differences between emails and website/app. Email clients do not support other interactions than simple clicks. There is also less space than on a website. It is difficult to design emails with our current set of components.
-  - title: Introduce contribution guidelines to make Orbit less centralized
-    estimate: Q3/2020
-    jiraNumber: 1214
-    description: With the current situation we lack manpower, especially in the development part of the Orbit. It would be nice to introduce a systematic contribution approach and decentralize the Orbit, so more developers contribute to it (with bug fixes). It would give us more space to focus on major features and would not be stuck on maintenance that much. It would also mean that more people in the company understand Orbit deeper.
+    - title: Make orbit.kiwi follow Orbit and open source it
+      estimate: Q1/2021
+      jiraNumber: 1419
+      description: Orbit.kiwi does not always follow the Orbit principles (spacing, colors, accessibility). Having it be a shining example would make the value proposition for Orbit clearer. Having it be released as an open source example would provide clear demonstrations of how to use Orbit and possibly increase its use.
+    - title: Prepare design tokens for native platforms
+      estimate: Q3/2020
+      jiraNumber: 868
+      description: Design tokens are visual properties describing the UI on a global level. We use them across Orbit components, but we want to prepare them also for other platforms (like iOS and Android), so we have a visual style connected to one source of truth across all Kiwi.com platforms.
+    - title: Improve developer experience with better layouting and composition
+      estimate: Q3/2020
+      jiraNumber: 953
+      description: In some cases, we force developers to create their own styled-components since we don’t cover all possible cases when it comes to layouts and edge cases (that are not aligned with design).
+    - title: Improve coverage for React docs
+      estimate: Q3/2020
+      jiraNumber: 1087
+      description: Developers have noticed some gaps in our docs. We’d like to create guidelines and examples using React for all components. The examples can eventually serve to demonstrate functionality in place of manually updated specs. This should save time and improve clarity through actual examples. Ideally, include also guidelines and examples for more complex composition scenarios (multiple components).
+    - title: Set up native mobile foundations — design & docs
+      estimate: Q3/2020
+      jiraNumber: 2
+      description: We need to build upon existing mobile experience guidelines and have it documented on orbit.kiwi.
+    - title: Improve Figma file structure
+      estimate: Q3/2020
+      jiraNumber: 1221
+      description: We started solving this issue during Q2 and we find out that this is one of the biggest issues currently in design team work organization. We should provide some guidelines for organizing files in Figma due to better consistency and easier searching for PM’s, developers and writers inside of Kiwi organization.
+    - title: Create separate library for emails
+      estimate: Q3/2020
+      jiraNumber: 1216
+      description: There are technical differences between emails and website/app. Email clients do not support other interactions than simple clicks. There is also less space than on a website. It is difficult to design emails with our current set of components.
+    - title: Introduce contribution guidelines to make Orbit less centralized
+      estimate: Q3/2020
+      jiraNumber: 1214
+      description: With the current situation we lack manpower, especially in the development part of the Orbit. It would be nice to introduce a systematic contribution approach and decentralize the Orbit, so more developers contribute to it (with bug fixes). It would give us more space to focus on major features and would not be stuck on maintenance that much. It would also mean that more people in the company understand Orbit deeper.
 - quarter: next
   items:
-  - title: Develop Orbit components for native mobile
-    estimate: Q3-Q4/2019
-    description: "The main goal: have components developed also for iOS and Android so we support better workflows and full Orbit adoption for our mobile team."
-  - title: Improve composability of List (sub)components
-    estimate: Q4/2020
-    description: Currently, we have several components related to List components – some of them are interactive, some with icons, some without them. We plan to refactor them and improve their composability to offer more flexibility for our consumers.
-  - title: Implement end-to-end tests for better coverage on orbit-components
-    estimate: Q4/2020
-    description: With introduction of more complex patterns or features, we lack integration tests. We don’t have an overall picture with our components working together on the screen and the proper interactivity of them is ensured.
-  - title: Create library for landing pages
-    estimate: Q4/2020
-    description: It would be nice to have a library for landing pages. We would be able to create more consistent landing pages which could be designed faster (Kiwi.com events pages, etc.)
-  - title: Creating dark theme palette and trying out theme-ability of Orbit
-    estimate: Q2/2021
-    description: Some platforms (emails) have raised questions of dark theme for their implementation. This may happen also for other platforms (e.g. web, native mobile) when optional theme switching will become industry standard or there will be B2B partners that have dark brands. For the start, a proper color palette would be enough – later we can try integration on tokens and react components level.
-  - title: Fonts upscaling, alternative fonts
-    estimate: Q4/2020
-    description: There is kind of a long term problem with the typography size especially on mobile devices. Most of the small size texts are not accessible and should be upscaled by 1 level. There is also space for defining responsive typography and getting rid of pixel values.
-  - title: Implement a new set of rules for eslint-plugin – unify the existing ones
-    estimate: Q4/2020
-    description: Currently each team has its own set of rules, lets unify them and distribute them as a single package, add other rules to this package as needed.
-  - title: Improve onboarding for developers
-    estimate: Q4/2020
-    description: How we can make life easier for new devs. Right now (from feedback) Orbit is really good and useful but it takes time to start and be productive.
-  - title: Guidelines for animations
-    estimate: Q4/2020
-    description: We are slowly introducing more complicated interactions and transitions, we will need to write some guidelines for animations so it’s consistent behavior across the product and works together.
+    - title: Develop Orbit components for native mobile
+      estimate: Q3-Q4/2019
+      description: "The main goal: have components developed also for iOS and Android so we support better workflows and full Orbit adoption for our mobile team."
+    - title: Improve composability of List (sub)components
+      estimate: Q4/2020
+      description: Currently, we have several components related to List components – some of them are interactive, some with icons, some without them. We plan to refactor them and improve their composability to offer more flexibility for our consumers.
+    - title: Implement end-to-end tests for better coverage on orbit-components
+      estimate: Q4/2020
+      description: With introduction of more complex patterns or features, we lack integration tests. We don’t have an overall picture with our components working together on the screen and the proper interactivity of them is ensured.
+    - title: Create library for landing pages
+      estimate: Q4/2020
+      description: It would be nice to have a library for landing pages. We would be able to create more consistent landing pages which could be designed faster (Kiwi.com events pages, etc.)
+    - title: Creating dark theme palette and trying out theme-ability of Orbit
+      estimate: Q2/2021
+      description: Some platforms (emails) have raised questions of dark theme for their implementation. This may happen also for other platforms (e.g. web, native mobile) when optional theme switching will become industry standard or there will be B2B partners that have dark brands. For the start, a proper color palette would be enough – later we can try integration on tokens and react components level.
+    - title: Fonts upscaling, alternative fonts
+      estimate: Q4/2020
+      description: There is kind of a long term problem with the typography size especially on mobile devices. Most of the small size texts are not accessible and should be upscaled by 1 level. There is also space for defining responsive typography and getting rid of pixel values.
+    - title: Implement a new set of rules for eslint-plugin – unify the existing ones
+      estimate: Q4/2020
+      description: Currently each team has its own set of rules, lets unify them and distribute them as a single package, add other rules to this package as needed.
+    - title: Improve onboarding for developers
+      estimate: Q4/2020
+      description: How we can make life easier for new devs. Right now (from feedback) Orbit is really good and useful but it takes time to start and be productive.
+    - title: Guidelines for animations
+      estimate: Q4/2020
+      description: We are slowly introducing more complicated interactions and transitions, we will need to write some guidelines for animations so it’s consistent behavior across the product and works together.
 - quarter: future
   items:
-  - title: Better interactive examples
-    description: Current examples on orbit.kiwi and possible usage of Playroom doesn’t support usage of React and styled-components. Some sort of custom playroom build upon we already have can be very quick. On orbit.kiwi, we can add link that would open the source code in our playroom and would allow developers to easily code whatever they need and copy it into their codebase.
-  - title: New company font
-    description: We face some issues with the readability of our current typography in smaller sizes and as our UI is compact, we should solve it by using a font that supports it better.
-  - title: Refactor form components
-    description: After rapid introduction of many form elements, we noticed some inconsistencies in naming, composability and clear purpose of several form components. We want to improve these aspects, as well as introduce better guidelines on forms in general.
-  - title: Launch Orbit Dashboard
-    description: We want to provide an overview of Orbit adoption across all our projects, with the list of used components, adopters and mostly to provide information to maintainers about possible breaking changes.
-  - title: Brand color cleaning
-    description: "We have a lot of colors defined for our white labels, we are duplicating #hexa codes and it’s a mess a little. The goal is to clean it, make the system out of it and improve the experience of white labels by defining colors that can & shouldn’t be changed."
+    - title: Better interactive examples
+      description: Current examples on orbit.kiwi and possible usage of Playroom doesn’t support usage of React and styled-components. Some sort of custom playroom build upon we already have can be very quick. On orbit.kiwi, we can add link that would open the source code in our playroom and would allow developers to easily code whatever they need and copy it into their codebase.
+    - title: New company font
+      description: We face some issues with the readability of our current typography in smaller sizes and as our UI is compact, we should solve it by using a font that supports it better.
+    - title: Refactor form components
+      description: After rapid introduction of many form elements, we noticed some inconsistencies in naming, composability and clear purpose of several form components. We want to improve these aspects, as well as introduce better guidelines on forms in general.
+    - title: Launch Orbit Dashboard
+      description: We want to provide an overview of Orbit adoption across all our projects, with the list of used components, adopters and mostly to provide information to maintainers about possible breaking changes.
+    - title: Brand color cleaning
+      description: "We have a lot of colors defined for our white labels, we are duplicating #hexa codes and it’s a mess a little. The goal is to clean it, make the system out of it and improve the experience of white labels by defining colors that can & shouldn’t be changed."

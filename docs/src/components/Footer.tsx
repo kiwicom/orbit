@@ -1,10 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Inline, Box, Text } from "@kiwicom/orbit-components";
+import { Box, Text, Desktop, mediaQueries } from "@kiwicom/orbit-components";
 import { Link } from "gatsby";
 
 import Switch from "./Switch";
-import Emoji from "./Emoji";
 import GitHub from "../images/logos/github-circle.svg";
 import Spectrum from "../images/logos/spectrum-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";
@@ -13,24 +12,17 @@ import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 
 const StyledContainer = styled.div<{ color: string }>`
   ${({ theme, color }) => `
-    background: ${theme.orbit[color]}; `};
+    background: ${theme.orbit[color]};
+  `};
 `;
 
 const StyledInner = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     overflow: hidden;
     box-sizing: content-box;
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
-    padding: 0 ${CONTENT_PADDING};
-  `}
-`;
-
-const StyledOutdent = styled.div<{
-  amount: string;
-}>`
-  ${({ theme, amount }) => `
-    margin: 0 -${theme.orbit[amount]};
+    padding: ${theme.orbit.spaceSmall} ${CONTENT_PADDING};
   `}
 `;
 
@@ -38,28 +30,59 @@ const StyledIconLink = styled.a.attrs({
   target: "_blank",
   rel: "noopener noreferrer",
 })`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     display: block;
     padding: ${theme.orbit.spaceXSmall};
+    margin-right: -${theme.orbit.spaceXSmall};
     border-radius: ${theme.orbit.borderRadiusCircle};
     color: ${theme.orbit.paletteInkNormal};
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormalHover};
     }
+    ${mediaQueries.tablet(css`
+      margin-right: 0;
+      &:last-child {
+        margin-right: -${theme.orbit.spaceXSmall};
+      }
+    `)}
   `}
 `;
 
 const StyledFooterLink = styled(Link)`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge};
+    margin-left: -${CONTENT_PADDING};
+    padding: ${theme.orbit.spaceSmall} ${CONTENT_PADDING};
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormalHover};
     }
+    &:first-child {
+      margin-left: -${CONTENT_PADDING};
+    }
+    ${mediaQueries.tablet(`
+      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge};
+      margin-left: 0;
+      &:first-child {
+        margin-left: -${theme.orbit.spaceLarge};
+      }
+    `)}
+    ${mediaQueries.desktop(`
+      padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceXXLarge};
+      &:first-child {
+        margin-left: -${theme.orbit.spaceXXLarge};
+      }
+    `)}
+    ${mediaQueries.largeDesktop(css`
+      padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge};
+    `)}
   `}
 `;
+
+function Dot() {
+  return <Desktop>·</Desktop>;
+}
 
 export default function Footer() {
   return (
@@ -67,36 +90,43 @@ export default function Footer() {
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
           <Box display="flex" align="center" justify="between">
-            <StyledOutdent amount="spaceXXLarge">
-              <Inline align="center">
-                <StyledFooterLink to="/component-status">Component status</StyledFooterLink>
-                <div>·</div>
-                <StyledFooterLink to="/roadmap">Roadmap</StyledFooterLink>
-                <div>·</div>
-                <StyledFooterLink to="#">Changelog</StyledFooterLink>
-              </Inline>
-            </StyledOutdent>
-            <StyledOutdent amount="spaceXSmall">
-              <Inline align="center">
-                <StyledIconLink href="https://github.com/kiwicom/orbit">
-                  <GitHub />
-                </StyledIconLink>
-                <StyledIconLink href="https://spectrum.chat/orbit">
-                  <Spectrum />
-                </StyledIconLink>
-                <StyledIconLink href="https://twitter.com/OrbitKiwi">
-                  <Twitter />
-                </StyledIconLink>
-              </Inline>
-            </StyledOutdent>
+            <Box tablet={{ display: "flex", direction: "row", align: "center" }}>
+              <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="#">Changelog</StyledFooterLink>
+            </Box>
+            <Box tablet={{ display: "flex", direction: "row", align: "center" }}>
+              <StyledIconLink href="https://github.com/kiwicom/orbit">
+                <GitHub />
+              </StyledIconLink>
+              <StyledIconLink href="https://spectrum.chat/orbit">
+                <Spectrum />
+              </StyledIconLink>
+              <StyledIconLink href="https://twitter.com/OrbitKiwi">
+                <Twitter />
+              </StyledIconLink>
+            </Box>
           </Box>
         </StyledInner>
       </StyledContainer>
       <StyledContainer color="paletteCloudNormal">
         <StyledInner>
-          <Inline align="center" justify="between">
-            <Box display="flex" align="center">
-              <Box padding={{ top: "large", bottom: "large" }}>
+          <Box
+            largeDesktop={{
+              display: "flex",
+              align: "center",
+              direction: "row",
+              justify: "between",
+            }}
+          >
+            <Box tablet={{ display: "flex", align: "center" }}>
+              <Box
+                padding={{ top: "XSmall", bottom: "XSmall" }}
+                desktop={{ padding: { right: "XXLarge" } }}
+                largeDesktop={{ padding: { top: "large", bottom: "large" } }}
+              >
                 <Text as="div" weight="bold">
                   Design tokens
                 </Text>
@@ -104,7 +134,17 @@ export default function Footer() {
                   v0.11.0
                 </Text>
               </Box>
-              <Box padding={{ top: "large", bottom: "large", left: "XXLarge" }}>
+              <Dot />
+              <Box
+                padding={{ top: "XSmall", bottom: "XSmall" }}
+                tablet={{ padding: { top: "XSmall", bottom: "XSmall", left: "XXLarge" } }}
+                desktop={{
+                  padding: { right: "XXLarge", left: "XXLarge" },
+                }}
+                largeDesktop={{
+                  padding: { top: "large", right: "XXLarge", bottom: "large", left: "XXLarge" },
+                }}
+              >
                 <Text as="div" weight="bold">
                   React components
                 </Text>
@@ -112,13 +152,16 @@ export default function Footer() {
                   v0.11.0
                 </Text>
               </Box>
+              <Dot />
               <Box
                 display="flex"
                 align="center"
-                justify="between"
-                padding={{ top: "large", bottom: "large", left: "XXLarge" }}
+                padding={{ top: "XSmall", bottom: "XSmall" }}
+                tablet={{ padding: { top: "XSmall", bottom: "XSmall", left: "XXLarge" } }}
+                desktop={{ padding: { left: "XXLarge" } }}
+                largeDesktop={{ padding: { top: "large", bottom: "large", left: "XXLarge" } }}
               >
-                <Box shrink={0} padding={{ right: "XLarge" }}>
+                <Box padding={{ right: "XLarge" }} desktop={{ shrink: 0 }}>
                   <Text as="div" weight="bold">
                     Developer mode
                   </Text>
@@ -126,10 +169,15 @@ export default function Footer() {
                     Opens components on the React tab by default.
                   </Text>
                 </Box>
-                <Switch />
+                <Box shrink={0}>
+                  <Switch />
+                </Box>
               </Box>
             </Box>
-            <Text align="right">
+            <Box
+              padding={{ top: "XSmall", bottom: "XSmall" }}
+              largeDesktop={{ display: "flex", direction: "column", align: "end" }}
+            >
               <Text as="div" weight="bold">
                 Built & maintained by Kiwi.com
               </Text>
@@ -144,8 +192,8 @@ export default function Footer() {
                 />{" "}
                 for travel
               </Text>
-            </Text>
-          </Inline>
+            </Box>
+          </Box>
         </StyledInner>
       </StyledContainer>
     </footer>

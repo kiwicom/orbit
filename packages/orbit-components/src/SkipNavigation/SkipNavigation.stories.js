@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import Heading from "../Heading";
@@ -57,51 +56,55 @@ const Content = (
   </Stack>
 );
 
-storiesOf("SkipNavigation", module)
-  .add(
-    "Default",
-    () => {
-      return (
-        <div>
-          <SkipNavigation />
-          {Content}
-        </div>
-      );
-    },
-    {
-      info:
-        "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
-    },
-  )
-  .add(
-    "Playground",
-    () => {
-      return (
-        <div>
-          <SkipNavigation
-            actions={[
-              {
-                link: "https://www.kiwi.com/cz/pages/content/terms",
-                name: "Go to terms and conditions",
-              },
-              {
-                name: "Add baggage",
-                onClick: action("Add baggage"),
-              },
-              {
-                name: "Request refund",
-                onClick: action("Request refund"),
-              },
-            ]}
-            feedbackUrl="#"
-          />
+export default {
+  title: "SkipNavigation",
+};
 
-          {Content}
-        </div>
-      );
-    },
-    {
-      info:
-        "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
-    },
+export const Default = () => {
+  return (
+    <div>
+      <SkipNavigation />
+      {Content}
+    </div>
   );
+};
+
+Default.story = {
+  parameters: {
+    info:
+      "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+  },
+};
+
+export const Playground = () => {
+  return (
+    <div>
+      <SkipNavigation
+        actions={[
+          {
+            link: "https://www.kiwi.com/cz/pages/content/terms",
+            name: "Go to terms and conditions",
+          },
+          {
+            name: "Add baggage",
+            onClick: action("Add baggage"),
+          },
+          {
+            name: "Request refund",
+            onClick: action("Request refund"),
+          },
+        ]}
+        feedbackUrl="#"
+      />
+
+      {Content}
+    </div>
+  );
+};
+
+Playground.story = {
+  parameters: {
+    info:
+      "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+  },
+};

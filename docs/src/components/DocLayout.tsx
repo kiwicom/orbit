@@ -96,7 +96,6 @@ export default function DocLayout({ children, description, location, path, tabs,
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-            <ReactExample exampleId="Wizard-default" />
             <ContentContainer padding="XLarge" elevation="raised">
               <MDXProvider
                 components={{
@@ -110,6 +109,7 @@ export default function DocLayout({ children, description, location, path, tabs,
                   GuidelinesSideBySide,
                   Do,
                   Dont,
+                  ReactExample,
                 }}
               >
                 {children}

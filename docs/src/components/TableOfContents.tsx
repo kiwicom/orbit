@@ -6,15 +6,17 @@ export interface TocItemObject {
   url: string;
   items?: TocItemObject[];
 }
-enum Levels {
-  First,
-  Second,
-  Third,
-}
 
 interface StyledAnchorProps {
-  level: Levels;
+  level: number;
 }
+
+const getWidth = (level: number) => {
+  if (level === 1) return "4px";
+  if (level === 2) return "8px";
+  return "12px";
+};
+
 const StyledAnchor = styled.a<StyledAnchorProps>`
   ${({ level, theme }) => css`
     color: ${level === 1 ? theme.orbit.paletteInkNormal : theme.orbit.paletteInkLight};
@@ -27,7 +29,7 @@ const StyledAnchor = styled.a<StyledAnchorProps>`
       display: inline-block;
       content: "";
       border-top: 2px solid;
-      width: ${level === 1 ? "4px" : level === 2 ? "8px" : "12px"};
+      width: ${getWidth(level)};
       margin: 4px 12px;
       visibility: visible;
     }
@@ -41,20 +43,17 @@ interface StyledTocListProps {
 const StyledTocList = styled.ul<StyledTocListProps>`
   max-height: 100vh;
   overflow-y: auto;
-  ${({ alwaysVisible }) => css`
-    ${!alwaysVisible &&
-    `${StyledAnchor} {
-    visibility: hidden;
-  }`}
+  ${StyledAnchor} {
+    visibility: ${({ alwaysVisible }) => !alwaysVisible && `hidden`};
+  }
 
-    :hover ${StyledAnchor},:focus ${StyledAnchor},:active ${StyledAnchor} {
-      visibility: visible;
-    }
-  `}
+  :hover ${StyledAnchor},:focus ${StyledAnchor},:active ${StyledAnchor} {
+    visibility: visible;
+  }
 `;
 
-const getTocList = (array: TocItemObject[], level: Levels) => {
-  const nextLevel: Levels = ++level;
+const getTocList = (array: TocItemObject[], level = 0) => {
+  const nextLevel = level + 1;
   if (typeof array === "undefined") {
     return [];
   }
@@ -68,12 +67,12 @@ const getTocList = (array: TocItemObject[], level: Levels) => {
   ));
 };
 
-interface TableOfContentsProps extends StyledTocListProps {
+interface Props extends StyledTocListProps {
   items: TocItemObject[];
 }
 
-const TableOfContents = ({ alwaysVisible, items }: TableOfContentsProps) => {
-  const TocContent = getTocList(items, Levels.First);
+const TableOfContents = ({ alwaysVisible, items }: Props) => {
+  const TocContent = getTocList(items);
   if (TocContent.length === 0) {
     return null;
   }

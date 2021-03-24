@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { As, Type as HeadingType } from "@kiwicom/orbit-components/lib/Heading";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
+import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
 
 import { getTextFromChildren, slugify } from "../utils/common";
 
@@ -19,11 +20,10 @@ export const StyledAnchorWrapper = styled.div`
   }
 `;
 
-interface Props {
+interface Props extends SpaceAfter {
   children?: React.ReactNode;
   headingLevel?: 2 | 3 | 4 | 5 | 6;
   noId?: boolean;
-  spaceAfter?: "smallest" | "small" | "normal" | "medium" | "none";
 }
 
 const HeadingWithLink = ({ children, headingLevel = 3, noId, spaceAfter = "none" }: Props) => {

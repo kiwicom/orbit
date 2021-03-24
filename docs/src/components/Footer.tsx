@@ -8,6 +8,7 @@ import Emoji from "./Emoji";
 import GitHub from "../images/logos/github-circle.svg";
 import Spectrum from "../images/logos/spectrum-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";
+import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 
 const StyledContainer = styled.div<{ color: string }>`
@@ -133,7 +134,15 @@ export default function Footer() {
                 Built & maintained by Kiwi.com
               </Text>
               <Text as="div" type="secondary">
-                Open sourced with <Emoji>❤️</Emoji> for travel
+                Open sourced with{" "}
+                <img
+                  alt="❤"
+                  src={orbitHeart}
+                  width={20}
+                  height={20}
+                  style={{ display: "inline", verticalAlign: -5 }}
+                />{" "}
+                for travel
               </Text>
             </Text>
           </Inline>

@@ -4,7 +4,7 @@ import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { As, Type as HeadingType } from "@kiwicom/orbit-components/lib/Heading";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
 
-import { slugify } from "../utils/common";
+import { getTextFromChildren, slugify } from "../utils/common";
 
 export const StyledAnchorWrapper = styled.div`
   margin-top: -10px;
@@ -20,13 +20,13 @@ export const StyledAnchorWrapper = styled.div`
 `;
 
 interface Props {
-  headingText: string;
+  children?: React.ReactNode;
   headingLevel?: 2 | 3 | 4 | 5 | 6;
   noId?: boolean;
   spaceAfter?: "smallest" | "small" | "normal" | "medium" | "none";
 }
 
-const HeadingWithLink = ({ headingText, headingLevel = 3, noId, spaceAfter = "none" }: Props) => {
+const HeadingWithLink = ({ children, headingLevel = 3, noId, spaceAfter = "none" }: Props) => {
   const getHeadingTypes = (level: Props["headingLevel"]): [As, HeadingType] => {
     switch (level) {
       case 2:
@@ -42,12 +42,13 @@ const HeadingWithLink = ({ headingText, headingLevel = 3, noId, spaceAfter = "no
     }
   };
   const [headingAs, headingType] = getHeadingTypes(headingLevel);
+  const headingText = getTextFromChildren(children);
   const slugifiedText = slugify(headingText);
   return (
     <StyledAnchorWrapper id={noId ? "" : slugifiedText}>
       <Stack flex spacing="XXXSmall" align="center" spaceAfter={spaceAfter}>
         <Heading as={headingAs} type={headingType}>
-          {headingText}
+          {children}
         </Heading>
         <ButtonLink iconLeft={<LinkIcon />} href={`#${slugifiedText}`} type="secondary" compact />
       </Stack>

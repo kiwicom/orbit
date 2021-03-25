@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { storiesOf } from "@storybook/react";
 import { text, boolean, number, object } from "@storybook/addon-knobs";
 
 import Grid from "./index";
@@ -10,7 +9,11 @@ const CustomDiv = styled.div`
   background: rgba(0, 169, 145, 0.2);
 `;
 
-storiesOf("Grid", module).add("Playground", () => {
+export default {
+  title: "Grid",
+};
+
+export const Playground = () => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
   const width = text("width", "100%");
@@ -66,4 +69,4 @@ storiesOf("Grid", module).add("Playground", () => {
       ))}
     </Grid>
   );
-});
+};

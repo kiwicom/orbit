@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { withKnobs, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
@@ -120,364 +119,374 @@ const germanContent = (
   </List>
 );
 
-storiesOf("PricingTable", module)
-  .addDecorator(withKnobs)
-  .add(
-    "Compact",
-    () => {
-      const activeElement = number("activeElement", 0);
-      const hasError = boolean("hasError", false);
+export default {
+  title: "PricingTable",
+  decorators: [withKnobs],
+};
 
-      return (
-        <PricingTable hasError={hasError} activeElement={activeElement} dataTest="PricingTable">
-          <PricingTableItem
-            dataTest="PricingTableItem"
-            name="Limited Services"
-            priceBadge={<Badge type="info">Included</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                type="secondary"
-                fullWidth
-              >
-                Don&#39;t upgrade
-              </Button>
-            }
-            mobileDescription="Basic ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {content}
-          </PricingTableItem>
-          <PricingTableItem
-            dataTest="PricingTableItem"
-            name="Plus Services"
-            priceBadge={<Badge type="info">+ 10</Badge>}
-            badge="Popular"
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Upgrade and continue
-              </Button>
-            }
-            mobileDescription="Flexi ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {longerContent}
-          </PricingTableItem>
-          <PricingTableItem
-            dataTest="PricingTableItem"
-            name="Premium Services"
-            priceBadge={<Badge type="info">+ 20</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                type="secondary"
-                fullWidth
-              >
-                Upgrade and continue
-              </Button>
-            }
-            mobileDescription="Premium ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {content}
-          </PricingTableItem>
-        </PricingTable>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add("Booking", () => {
-    const activeElement = number("activeElement", 0);
-    const desktopRadio = boolean("desktopRadio", true);
+export const Compact = () => {
+  const activeElement = number("activeElement", 0);
+  const hasError = boolean("hasError", false);
 
-    return (
-      <Layout type="Booking">
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <PricingTable activeElement={activeElement} desktopRadio={desktopRadio}>
-                <PricingTableItem
-                  name="Limited Services"
-                  priceBadge={<Badge type="info">Included</Badge>}
-                  active
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      type="secondary"
-                      fullWidth
-                    >
-                      Don&#39;t upgrade
-                    </Button>
-                  }
-                  mobileDescription="Basic ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {content}
-                </PricingTableItem>
-
-                <PricingTableItem
-                  name="Plus Services"
-                  priceBadge={<Badge type="info">+ 10</Badge>}
-                  badge="Popular"
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      fullWidth
-                    >
-                      Upgrade and continue
-                    </Button>
-                  }
-                  mobileDescription="Flexi ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {longerContent}
-                </PricingTableItem>
-                <PricingTableItem
-                  name="Premium Services"
-                  priceBadge={<Badge type="info">+ 20</Badge>}
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      type="secondary"
-                      fullWidth
-                    >
-                      Upgrade and continue
-                    </Button>
-                  }
-                  mobileDescription="Premium ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {content}
-                </PricingTableItem>
-              </PricingTable>
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-        <LayoutColumn>
-          <Card>
-            <CardSection>Test</CardSection>
-          </Card>
-        </LayoutColumn>
-      </Layout>
-    );
-  })
-  .add("Translated", () => {
-    const activeElement = number("activeElement", 0);
-
-    return (
-      <Layout type="Booking">
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <PricingTable activeElement={activeElement}>
-                <PricingTableItem
-                  name="Basic Service"
-                  priceBadge={<Badge type="info">Inbegriffen</Badge>}
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      type="secondary"
-                      fullWidth
-                    >
-                      Mit Basic fortfahren{" "}
-                    </Button>
-                  }
-                  mobileDescription="Basic ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {germanContent}
-                </PricingTableItem>
-                <PricingTableItem
-                  name="Premium Service"
-                  priceBadge={<Badge type="info">+ 20</Badge>}
-                  action={
-                    <Button
-                      onClick={ev => {
-                        ev.stopPropagation();
-                      }}
-                      type="secondary"
-                      fullWidth
-                    >
-                      Auswählen und fortfahren
-                    </Button>
-                  }
-                  mobileDescription="Premium ticket fare includes:"
-                  onClick={action("onClick")}
-                >
-                  {germanContent}
-                </PricingTableItem>
-              </PricingTable>
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-        <LayoutColumn>
-          <Card>
-            <CardSection>Test</CardSection>
-          </Card>
-        </LayoutColumn>
-      </Layout>
-    );
-  })
-  .add(
-    "With FeatureIcon",
-    () => {
-      return (
-        <PricingTable>
-          <PricingTableItem
-            name="Basic"
-            price="$749"
-            featureIcon={<FeatureIcon name="TicketSaver" />}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Basic ticket fare includes:"
-            onClick={action("onClick")}
+  return (
+    <PricingTable hasError={hasError} activeElement={activeElement} dataTest="PricingTable">
+      <PricingTableItem
+        dataTest="PricingTableItem"
+        name="Limited Services"
+        priceBadge={<Badge type="info">Included</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            type="secondary"
+            fullWidth
           >
-            {content}
-          </PricingTableItem>
-          <PricingTableItem
-            name="Premium"
-            price="$1,095"
-            featureIcon={<FeatureIcon name="TicketFlexi" />}
-            badge={<Badge type="info">Recommended</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Premium ticket fare includes:"
-            onClick={action("onClick")}
+            Don&#39;t upgrade
+          </Button>
+        }
+        mobileDescription="Basic ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+      <PricingTableItem
+        dataTest="PricingTableItem"
+        name="Plus Services"
+        priceBadge={<Badge type="info">+ 10</Badge>}
+        badge="Popular"
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
           >
-            {content}
-          </PricingTableItem>
-        </PricingTable>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
-    "Badges",
-    () => {
-      return (
-        <PricingTable>
-          <PricingTableItem
-            name="Basic"
-            price="$749"
-            featureIcon={<FeatureIcon name="TicketSaver" />}
-            badge={<Badge type="info">Recommended</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Basic ticket fare includes:"
-            onClick={action("onClick")}
+            Upgrade and continue
+          </Button>
+        }
+        mobileDescription="Flexi ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {longerContent}
+      </PricingTableItem>
+      <PricingTableItem
+        dataTest="PricingTableItem"
+        name="Premium Services"
+        priceBadge={<Badge type="info">+ 20</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            type="secondary"
+            fullWidth
           >
-            {content}
-          </PricingTableItem>
-          <PricingTableItem
-            name="Premium"
-            price="$1,095"
-            featureIcon={<FeatureIcon name="TicketFlexi" />}
-            badge={<Badge type="info">Lorem ipsum dolor sit amet</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Premium ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {content}
-          </PricingTableItem>
-          <PricingTableItem
-            name="Premium"
-            price="$1,095"
-            featureIcon={<FeatureIcon name="TicketFlexi" />}
-            badge={<Badge type="info">Loremipsumdolorsitamet</Badge>}
-            action={
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                }}
-                fullWidth
-              >
-                Continue with Basic
-              </Button>
-            }
-            mobileDescription="Premium ticket fare includes:"
-            onClick={action("onClick")}
-          >
-            {content}
-          </PricingTableItem>
-        </PricingTable>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
-    "Wrapped",
-    () => {
-      const activeElement = number("activeElement", 0);
-
-      return (
-        <PricingTable activeElement={activeElement}>
-          <Wrapper name="Basic" />
-          <Wrapper name="Standard" />
-          <Wrapper name="Premium" />
-        </PricingTable>
-      );
-    },
-    {
-      info:
-        "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
+            Upgrade and continue
+          </Button>
+        }
+        mobileDescription="Premium ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+    </PricingTable>
   );
+};
+
+Compact.story = {
+  parameters: {
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Booking = () => {
+  const activeElement = number("activeElement", 0);
+  const desktopRadio = boolean("desktopRadio", true);
+
+  return (
+    <Layout type="Booking">
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <PricingTable activeElement={activeElement} desktopRadio={desktopRadio}>
+              <PricingTableItem
+                name="Limited Services"
+                priceBadge={<Badge type="info">Included</Badge>}
+                active
+                action={
+                  <Button
+                    onClick={ev => {
+                      ev.stopPropagation();
+                    }}
+                    type="secondary"
+                    fullWidth
+                  >
+                    Don&#39;t upgrade
+                  </Button>
+                }
+                mobileDescription="Basic ticket fare includes:"
+                onClick={action("onClick")}
+              >
+                {content}
+              </PricingTableItem>
+
+              <PricingTableItem
+                name="Plus Services"
+                priceBadge={<Badge type="info">+ 10</Badge>}
+                badge="Popular"
+                action={
+                  <Button
+                    onClick={ev => {
+                      ev.stopPropagation();
+                    }}
+                    fullWidth
+                  >
+                    Upgrade and continue
+                  </Button>
+                }
+                mobileDescription="Flexi ticket fare includes:"
+                onClick={action("onClick")}
+              >
+                {longerContent}
+              </PricingTableItem>
+              <PricingTableItem
+                name="Premium Services"
+                priceBadge={<Badge type="info">+ 20</Badge>}
+                action={
+                  <Button
+                    onClick={ev => {
+                      ev.stopPropagation();
+                    }}
+                    type="secondary"
+                    fullWidth
+                  >
+                    Upgrade and continue
+                  </Button>
+                }
+                mobileDescription="Premium ticket fare includes:"
+                onClick={action("onClick")}
+              >
+                {content}
+              </PricingTableItem>
+            </PricingTable>
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn>
+        <Card>
+          <CardSection>Test</CardSection>
+        </Card>
+      </LayoutColumn>
+    </Layout>
+  );
+};
+
+export const Translated = () => {
+  const activeElement = number("activeElement", 0);
+
+  return (
+    <Layout type="Booking">
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <PricingTable activeElement={activeElement}>
+              <PricingTableItem
+                name="Basic Service"
+                priceBadge={<Badge type="info">Inbegriffen</Badge>}
+                action={
+                  <Button
+                    onClick={ev => {
+                      ev.stopPropagation();
+                    }}
+                    type="secondary"
+                    fullWidth
+                  >
+                    Mit Basic fortfahren{" "}
+                  </Button>
+                }
+                mobileDescription="Basic ticket fare includes:"
+                onClick={action("onClick")}
+              >
+                {germanContent}
+              </PricingTableItem>
+              <PricingTableItem
+                name="Premium Service"
+                priceBadge={<Badge type="info">+ 20</Badge>}
+                action={
+                  <Button
+                    onClick={ev => {
+                      ev.stopPropagation();
+                    }}
+                    type="secondary"
+                    fullWidth
+                  >
+                    Auswählen und fortfahren
+                  </Button>
+                }
+                mobileDescription="Premium ticket fare includes:"
+                onClick={action("onClick")}
+              >
+                {germanContent}
+              </PricingTableItem>
+            </PricingTable>
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn>
+        <Card>
+          <CardSection>Test</CardSection>
+        </Card>
+      </LayoutColumn>
+    </Layout>
+  );
+};
+
+export const WithFeatureIcon = () => {
+  return (
+    <PricingTable>
+      <PricingTableItem
+        name="Basic"
+        price="$749"
+        featureIcon={<FeatureIcon name="TicketSaver" />}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
+          >
+            Continue with Basic
+          </Button>
+        }
+        mobileDescription="Basic ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+      <PricingTableItem
+        name="Premium"
+        price="$1,095"
+        featureIcon={<FeatureIcon name="TicketFlexi" />}
+        badge={<Badge type="info">Recommended</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
+          >
+            Continue with Basic
+          </Button>
+        }
+        mobileDescription="Premium ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+    </PricingTable>
+  );
+};
+
+WithFeatureIcon.story = {
+  name: "With FeatureIcon",
+
+  parameters: {
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Badges = () => {
+  return (
+    <PricingTable>
+      <PricingTableItem
+        name="Basic"
+        price="$749"
+        featureIcon={<FeatureIcon name="TicketSaver" />}
+        badge={<Badge type="info">Recommended</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
+          >
+            Continue with Basic
+          </Button>
+        }
+        mobileDescription="Basic ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+      <PricingTableItem
+        name="Premium"
+        price="$1,095"
+        featureIcon={<FeatureIcon name="TicketFlexi" />}
+        badge={<Badge type="info">Lorem ipsum dolor sit amet</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
+          >
+            Continue with Basic
+          </Button>
+        }
+        mobileDescription="Premium ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+      <PricingTableItem
+        name="Premium"
+        price="$1,095"
+        featureIcon={<FeatureIcon name="TicketFlexi" />}
+        badge={<Badge type="info">Loremipsumdolorsitamet</Badge>}
+        action={
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+            }}
+            fullWidth
+          >
+            Continue with Basic
+          </Button>
+        }
+        mobileDescription="Premium ticket fare includes:"
+        onClick={action("onClick")}
+      >
+        {content}
+      </PricingTableItem>
+    </PricingTable>
+  );
+};
+
+Badges.story = {
+  parameters: {
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Wrapped = () => {
+  const activeElement = number("activeElement", 0);
+
+  return (
+    <PricingTable activeElement={activeElement}>
+      <Wrapper name="Basic" />
+      <Wrapper name="Standard" />
+      <Wrapper name="Premium" />
+    </PricingTable>
+  );
+};
+
+Wrapped.story = {
+  parameters: {
+    info:
+      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};

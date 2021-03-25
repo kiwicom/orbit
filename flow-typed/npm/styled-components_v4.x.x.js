@@ -1,26 +1,43 @@
-// flow-typed signature: 8ae4cfa383fc58443d8d65b5301bf1c1
-// flow-typed version: 1a7d5ca288/styled-components_v4.x.x/flow_>=v0.75.x
+// flow-typed signature: c17015ec421be0534f16a612e1354d1f
+// flow-typed version: 52fe4a44bf/styled-components_v4.x.x/flow_>=v0.104.x
 
 // @flow
 
 declare module 'styled-components' {
+  declare class InterpolatableComponent<P> extends React$Component<P> {
+    static +styledComponentId: string;
+  }
 
-  declare export type Interpolation =
-                                    | (<P: {}>(executionContext: P) => string)
-                                    | CSSRules
-                                    | KeyFrames
-                                    | string
-                                    | number
+  declare export type Interpolation<P> =
+    | ((executionContext: P) =>
+      | ((executionContext: P) => InterpolationBase)
+      | InterpolationBase
+    )
+    | Class<InterpolatableComponent<any>>
+    | InterpolationBase
 
+  declare export type InterpolationBase =
+    | CSSRules
+    | KeyFrames
+    | string
+    | number
+    | false // falsy values are OK, true is the only one not allowed, because it renders as "true"
+    | null
+    | void
+    | {[ruleOrSelector: string]: string | number, ...} // CSS-in-JS object returned by polished are also supported, partially
 
-  declare export type CSSRules = Interpolation[]
+  declare export type TaggedTemplateLiteral<I, R> = {
+    [[call]]: (strings: string[], ...interpolations: Interpolation<I>[]) => R,
+    [[call]]: ((props: I) => Interpolation<any>) => R,
+    ...
+  };
 
-  // This is not exported on purpose, since it's an implementation detail
-  declare type TaggedTemplateLiteral<R> = (strings : string[], ...interpolations : Interpolation[]) => R
+  // Should this be `mixed` perhaps?
+  declare export type CSSRules = Interpolation<any>[] // eslint-disable-line flowtype/no-weak-types
 
-  declare export type CSSConstructor = TaggedTemplateLiteral<CSSRules>
-  declare export type KeyFramesConstructor = TaggedTemplateLiteral<KeyFrames>
-  declare export type CreateGlobalStyleConstructor = TaggedTemplateLiteral<React$ComponentType<*>>
+  declare export type CSSConstructor = TaggedTemplateLiteral<any, CSSRules> // eslint-disable-line flowtype/no-weak-types
+  declare export type KeyFramesConstructor = TaggedTemplateLiteral<any, KeyFrames> // eslint-disable-line flowtype/no-weak-types
+  declare export type CreateGlobalStyleConstructor = TaggedTemplateLiteral<any, React$ComponentType<*>> // eslint-disable-line flowtype/no-weak-types
 
   declare interface Tag<T> {
     styleTag: HTMLStyleElement | null;
@@ -45,10 +62,10 @@ declare module 'styled-components' {
     id : number;
     forceServer : boolean;
     target : ?HTMLElement;
-    tagMap : {[string]: Tag<any>}; // eslint-disable-line flowtype/no-weak-types
-    deferred: { [string]: string[] | void };
-    rehydratedNames: { [string]: boolean };
-    ignoreRehydratedNames: { [string]: boolean };
+    tagMap : { [string]: Tag<any>, ... }; // eslint-disable-line flowtype/no-weak-types
+    deferred: { [string]: string[] | void, ... };
+    rehydratedNames: { [string]: boolean, ... };
+    ignoreRehydratedNames: { [string]: boolean, ... };
     tags: Tag<any>[]; // eslint-disable-line flowtype/no-weak-types
     importRuleTag: Tag<any>; // eslint-disable-line flowtype/no-weak-types
     capacity: number;
@@ -70,6 +87,43 @@ declare module 'styled-components' {
     toReactElements() : React$ElementType[];
   }
 
+  declare export function isStyledComponent(target: any): boolean;
+
+  declare type SCMProps = {
+    children?: React$Element<any>,
+    sheet?: StyleSheet,
+    target?: HTMLElement,
+    ...
+  }
+
+  declare export var StyleSheetContext: React$Context<StyleSheet>;
+  declare export var StyleSheetConsumer : React$ComponentType<{|
+    children: (value: StyleSheet) => ?React$Node
+  |}>
+  declare var StyleSheetProvider: React$ComponentType<{|
+    children?: React$Node,
+    value: StyleSheet,
+  |}>
+
+  declare export class StyleSheetManager extends React$Component<SCMProps> {
+    getContext(sheet: ?StyleSheet, target: ?HTMLElement): StyleSheet;
+    render(): React$Element<typeof StyleSheetProvider>
+  }
+
+  declare export class ServerStyleSheet {
+    instance: StyleSheet;
+    masterSheet: StyleSheet;
+    sealed: boolean;
+
+    seal(): void;
+    collectStyles(children: any): React$Element<StyleSheetManager>;
+    getStyleTags(): string;
+    toReactElements(): React$ElementType[];
+    // This seems to be use a port of node streams in the Browsers. Not gonna type this for now
+    // eslint-disable-next-line flowtype/no-weak-types
+    interleaveWithNodeStream(stream: any): any;
+  }
+
   declare export class KeyFrames {
     id : string;
     name : string;
@@ -83,328 +137,312 @@ declare module 'styled-components' {
 
   // I think any is appropriate here?
   // eslint-disable-next-line flowtype/no-weak-types
-  declare export type Theme = {+[string] : any}
-
   declare export var css : CSSConstructor;
   declare export var keyframes : KeyFramesConstructor;
   declare export var createGlobalStyle : CreateGlobalStyleConstructor
-  declare export var ThemeProvider : React$ComponentType<{children?: ?React$Node, theme : Theme | (Theme) => Theme}>
+  declare export var ThemeConsumer : React$ComponentType<{|
+    children: (value: mixed) => ?React$Node
+  |}>
+  declare export var ThemeProvider: React$ComponentType<{|
+    children?: ?React$Node,
+    theme: mixed | (mixed) => mixed,
+  |}>
 
-  // This is a bit hard to read. Not sure how to make it more readable. I think adding line-breaks makes it worse.
-  declare type InjectedProps = { theme : Theme | void }
-  declare  export function withTheme<Props : {}, Component: React$ComponentType<Props>>(WrappedComponent: Component) : React$ComponentType<$Diff<React$ElementConfig<$Shape<Component>>, InjectedProps>>;
+  /**
+    Any because the intended use-case is for users to do:
+
+        import {ThemeContext} from 'styled-components';
+        ...
+        const theme = React.useContext<MyTheme>(ThemeContext);
+
+    If they want DRY-er code, they could declare their own version of this via something like
+
+        import { ThemeContext as SCThemeContext } from 'styled-components';
+        export const ThemeContext: React$Context<MyTheme> = SCThemeContext;
+
+    and then
+
+        import {ThemeContext} from './theme';
+  */
+  // eslint-disable-next-line flowtype/no-weak-types
+  declare export var ThemeContext: React$Context<any>;
+
+  declare export type ThemeProps<T> = {|
+    theme: T
+  |}
+
+  declare type CommonSCProps = {|
+    children?: React$Node,
+    className?: ?string,
+    style?: {[string]: string | number, ...},
+  |}
+
+  declare export type PropsWithTheme<Props, T> = {|
+    ...ThemeProps<T>,
+    ...CommonSCProps, // Not sure how useful this is here, but it's technically correct to have it
+    ...$Exact<Props>
+  |}
+
+  declare export function withTheme<Theme, Config: {...}, Instance>(Component: React$AbstractComponent<Config, Instance>): React$AbstractComponent<$Diff<Config, ThemeProps<Theme | void>>, Instance>
+
+  declare export type StyledComponent<Props, Theme, Instance, MergedProps = {...$Exact<Props>, ...CommonSCProps, ...}> = React$AbstractComponent<MergedProps, Instance> & Class<InterpolatableComponent<MergedProps>>
+
+  declare export type StyledFactory<StyleProps, Theme, Instance> = {|
+    [[call]]: TaggedTemplateLiteral<PropsWithTheme<StyleProps, Theme>, StyledComponent<StyleProps, Theme, Instance>>;
+    +attrs: <A: {...}>(((StyleProps) => A) | A) => TaggedTemplateLiteral<
+      PropsWithTheme<{|...$Exact<StyleProps>, ...$Exact<A>|}, Theme>,
+      StyledComponent<React$Config<{|...$Exact<StyleProps>, ...$Exact<A>|}, $Exact<A>>, Theme, Instance>
+    >;
+  |}
+
+  declare export type StyledShorthandFactory<V> = {|
+    [[call]]: <StyleProps, Theme>(string[], ...Interpolation<PropsWithTheme<StyleProps, Theme>>[]) => StyledComponent<StyleProps, Theme, V>;
+    [[call]]: <StyleProps, Theme>((props: PropsWithTheme<StyleProps, Theme>) => Interpolation<any>) => StyledComponent<StyleProps, Theme, V>;
+    +attrs: <A: {...}, StyleProps = {||}, Theme = {||}>(((StyleProps) => A) | A) => TaggedTemplateLiteral<
+      PropsWithTheme<{|...$Exact<StyleProps>, ...$Exact<A>|}, Theme>,
+      StyledComponent<React$Config<{|...$Exact<StyleProps>, ...$Exact<A>|}, $Exact<A>>, Theme, V>
+    >;
+  |}
 
 
-  // @HACK This is a cheat to hide that the underlying type is "just a string"
-  //       once we know of a better way, we should be able to update this accordingly.
-  //       I don't think there _is_ a good way, currently.
-  // @NOTE Also not too sure about the naming of this...
-  declare export type StyledElementType<T> = T;
-  declare export type StyledComponentType<C> = {
-    [[call]]: TaggedTemplateLiteral<C>,
-    +attrs: <A: {}>(attributes: A | (props: React$ElementConfig<C>) => A) => TaggedTemplateLiteral<React$ComponentType<$Diff<React$ElementConfig<C>, A>>>
-  };
-
-  declare type StyledComponentList = {
-    a:                        StyledComponentType<StyledElementType<'a'>>,
-    abbr:                     StyledComponentType<StyledElementType<'abbr'>>,
-    address:                  StyledComponentType<StyledElementType<'address'>>,
-    area:                     StyledComponentType<StyledElementType<'area'>>,
-    article:                  StyledComponentType<StyledElementType<'article'>>,
-    aside:                    StyledComponentType<StyledElementType<'aside'>>,
-    audio:                    StyledComponentType<StyledElementType<'audio'>>,
-    b:                        StyledComponentType<StyledElementType<'b'>>,
-    base:                     StyledComponentType<StyledElementType<'base'>>,
-    bdi:                      StyledComponentType<StyledElementType<'bdi'>>,
-    bdo:                      StyledComponentType<StyledElementType<'bdo'>>,
-    big:                      StyledComponentType<StyledElementType<'big'>>,
-    blockquote:               StyledComponentType<StyledElementType<'blockquote'>>,
-    body:                     StyledComponentType<StyledElementType<'body'>>,
-    br:                       StyledComponentType<StyledElementType<'br'>>,
-    button:                   StyledComponentType<StyledElementType<'button'>>,
-    canvas:                   StyledComponentType<StyledElementType<'canvas'>>,
-    caption:                  StyledComponentType<StyledElementType<'caption'>>,
-    cite:                     StyledComponentType<StyledElementType<'cite'>>,
-    code:                     StyledComponentType<StyledElementType<'code'>>,
-    col:                      StyledComponentType<StyledElementType<'col'>>,
-    colgroup:                 StyledComponentType<StyledElementType<'colgroup'>>,
-    data:                     StyledComponentType<StyledElementType<'data'>>,
-    datalist:                 StyledComponentType<StyledElementType<'datalist'>>,
-    dd:                       StyledComponentType<StyledElementType<'dd'>>,
-    del:                      StyledComponentType<StyledElementType<'del'>>,
-    details:                  StyledComponentType<StyledElementType<'details'>>,
-    dfn:                      StyledComponentType<StyledElementType<'dfn'>>,
-    dialog:                   StyledComponentType<StyledElementType<'dialog'>>,
-    div:                      StyledComponentType<StyledElementType<'div'>>,
-    dl:                       StyledComponentType<StyledElementType<'dl'>>,
-    dt:                       StyledComponentType<StyledElementType<'dt'>>,
-    em:                       StyledComponentType<StyledElementType<'em'>>,
-    embed:                    StyledComponentType<StyledElementType<'embed'>>,
-    fieldset:                 StyledComponentType<StyledElementType<'fieldset'>>,
-    figcaption:               StyledComponentType<StyledElementType<'figcaption'>>,
-    figure:                   StyledComponentType<StyledElementType<'figure'>>,
-    footer:                   StyledComponentType<StyledElementType<'footer'>>,
-    form:                     StyledComponentType<StyledElementType<'form'>>,
-    h1:                       StyledComponentType<StyledElementType<'h1'>>,
-    h2:                       StyledComponentType<StyledElementType<'h2'>>,
-    h3:                       StyledComponentType<StyledElementType<'h3'>>,
-    h4:                       StyledComponentType<StyledElementType<'h4'>>,
-    h5:                       StyledComponentType<StyledElementType<'h5'>>,
-    h6:                       StyledComponentType<StyledElementType<'h6'>>,
-    head:                     StyledComponentType<StyledElementType<'head'>>,
-    header:                   StyledComponentType<StyledElementType<'header'>>,
-    hgroup:                   StyledComponentType<StyledElementType<'hgroup'>>,
-    hr:                       StyledComponentType<StyledElementType<'hr'>>,
-    html:                     StyledComponentType<StyledElementType<'html'>>,
-    i:                        StyledComponentType<StyledElementType<'i'>>,
-    iframe:                   StyledComponentType<StyledElementType<'iframe'>>,
-    img:                      StyledComponentType<StyledElementType<'img'>>,
-    input:                    StyledComponentType<StyledElementType<'input'>>,
-    ins:                      StyledComponentType<StyledElementType<'ins'>>,
-    kbd:                      StyledComponentType<StyledElementType<'kbd'>>,
-    keygen:                   StyledComponentType<StyledElementType<'keygen'>>,
-    label:                    StyledComponentType<StyledElementType<'label'>>,
-    legend:                   StyledComponentType<StyledElementType<'legend'>>,
-    li:                       StyledComponentType<StyledElementType<'li'>>,
-    link:                     StyledComponentType<StyledElementType<'link'>>,
-    main:                     StyledComponentType<StyledElementType<'main'>>,
-    map:                      StyledComponentType<StyledElementType<'map'>>,
-    mark:                     StyledComponentType<StyledElementType<'mark'>>,
-    menu:                     StyledComponentType<StyledElementType<'menu'>>,
-    menuitem:                 StyledComponentType<StyledElementType<'menuitem'>>,
-    meta:                     StyledComponentType<StyledElementType<'meta'>>,
-    meter:                    StyledComponentType<StyledElementType<'meter'>>,
-    nav:                      StyledComponentType<StyledElementType<'nav'>>,
-    noscript:                 StyledComponentType<StyledElementType<'noscript'>>,
-    object:                   StyledComponentType<StyledElementType<'object'>>,
-    ol:                       StyledComponentType<StyledElementType<'ol'>>,
-    optgroup:                 StyledComponentType<StyledElementType<'optgroup'>>,
-    option:                   StyledComponentType<StyledElementType<'option'>>,
-    output:                   StyledComponentType<StyledElementType<'output'>>,
-    p:                        StyledComponentType<StyledElementType<'p'>>,
-    param:                    StyledComponentType<StyledElementType<'param'>>,
-    picture:                  StyledComponentType<StyledElementType<'picture'>>,
-    pre:                      StyledComponentType<StyledElementType<'pre'>>,
-    progress:                 StyledComponentType<StyledElementType<'progress'>>,
-    q:                        StyledComponentType<StyledElementType<'q'>>,
-    rp:                       StyledComponentType<StyledElementType<'rp'>>,
-    rt:                       StyledComponentType<StyledElementType<'rt'>>,
-    ruby:                     StyledComponentType<StyledElementType<'ruby'>>,
-    s:                        StyledComponentType<StyledElementType<'s'>>,
-    samp:                     StyledComponentType<StyledElementType<'samp'>>,
-    script:                   StyledComponentType<StyledElementType<'script'>>,
-    section:                  StyledComponentType<StyledElementType<'section'>>,
-    select:                   StyledComponentType<StyledElementType<'select'>>,
-    small:                    StyledComponentType<StyledElementType<'small'>>,
-    source:                   StyledComponentType<StyledElementType<'source'>>,
-    span:                     StyledComponentType<StyledElementType<'span'>>,
-    strong:                   StyledComponentType<StyledElementType<'strong'>>,
-    style:                    StyledComponentType<StyledElementType<'style'>>,
-    sub:                      StyledComponentType<StyledElementType<'sub'>>,
-    summary:                  StyledComponentType<StyledElementType<'summary'>>,
-    sup:                      StyledComponentType<StyledElementType<'sup'>>,
-    table:                    StyledComponentType<StyledElementType<'table'>>,
-    tbody:                    StyledComponentType<StyledElementType<'tbody'>>,
-    td:                       StyledComponentType<StyledElementType<'td'>>,
-    textarea:                 StyledComponentType<StyledElementType<'textarea'>>,
-    tfoot:                    StyledComponentType<StyledElementType<'tfoot'>>,
-    th:                       StyledComponentType<StyledElementType<'th'>>,
-    thead:                    StyledComponentType<StyledElementType<'thead'>>,
-    time:                     StyledComponentType<StyledElementType<'time'>>,
-    title:                    StyledComponentType<StyledElementType<'title'>>,
-    tr:                       StyledComponentType<StyledElementType<'tr'>>,
-    track:                    StyledComponentType<StyledElementType<'track'>>,
-    u:                        StyledComponentType<StyledElementType<'u'>>,
-    ul:                       StyledComponentType<StyledElementType<'ul'>>,
-    var:                      StyledComponentType<StyledElementType<'var'>>,
-    video:                    StyledComponentType<StyledElementType<'video'>>,
-    wbr:                      StyledComponentType<StyledElementType<'wbr'>>,
-
+  declare type BuiltinElementInstances = {
+    a: React$ElementRef<'a'>,
+    abbr: React$ElementRef<'abbr'>,
+    address: React$ElementRef<'address'>,
+    area: React$ElementRef<'area'>,
+    article: React$ElementRef<'article'>,
+    aside: React$ElementRef<'aside'>,
+    audio: React$ElementRef<'audio'>,
+    b: React$ElementRef<'b'>,
+    base: React$ElementRef<'base'>,
+    bdi: React$ElementRef<'bdi'>,
+    bdo: React$ElementRef<'bdo'>,
+    big: React$ElementRef<'big'>,
+    blockquote: React$ElementRef<'blockquote'>,
+    body: React$ElementRef<'body'>,
+    br: React$ElementRef<'br'>,
+    button: React$ElementRef<'button'>,
+    canvas: React$ElementRef<'canvas'>,
+    caption: React$ElementRef<'caption'>,
+    cite: React$ElementRef<'cite'>,
+    code: React$ElementRef<'code'>,
+    col: React$ElementRef<'col'>,
+    colgroup: React$ElementRef<'colgroup'>,
+    data: React$ElementRef<'data'>,
+    datalist: React$ElementRef<'datalist'>,
+    dd: React$ElementRef<'dd'>,
+    del: React$ElementRef<'del'>,
+    details: React$ElementRef<'details'>,
+    dfn: React$ElementRef<'dfn'>,
+    dialog: React$ElementRef<'dialog'>,
+    div: React$ElementRef<'div'>,
+    dl: React$ElementRef<'dl'>,
+    dt: React$ElementRef<'dt'>,
+    em: React$ElementRef<'em'>,
+    embed: React$ElementRef<'embed'>,
+    fieldset: React$ElementRef<'fieldset'>,
+    figcaption: React$ElementRef<'figcaption'>,
+    figure: React$ElementRef<'figure'>,
+    footer: React$ElementRef<'footer'>,
+    form: React$ElementRef<'form'>,
+    h1: React$ElementRef<'h1'>,
+    h2: React$ElementRef<'h2'>,
+    h3: React$ElementRef<'h3'>,
+    h4: React$ElementRef<'h4'>,
+    h5: React$ElementRef<'h5'>,
+    h6: React$ElementRef<'h6'>,
+    head: React$ElementRef<'head'>,
+    header: React$ElementRef<'header'>,
+    hgroup: React$ElementRef<'hgroup'>,
+    hr: React$ElementRef<'hr'>,
+    html: React$ElementRef<'html'>,
+    i: React$ElementRef<'i'>,
+    iframe: React$ElementRef<'iframe'>,
+    img: React$ElementRef<'img'>,
+    input: React$ElementRef<'input'>,
+    ins: React$ElementRef<'ins'>,
+    kbd: React$ElementRef<'kbd'>,
+    label: React$ElementRef<'label'>,
+    legend: React$ElementRef<'legend'>,
+    li: React$ElementRef<'li'>,
+    link: React$ElementRef<'link'>,
+    main: React$ElementRef<'main'>,
+    map: React$ElementRef<'map'>,
+    mark: React$ElementRef<'mark'>,
+    menu: React$ElementRef<'menu'>,
+    meta: React$ElementRef<'meta'>,
+    meter: React$ElementRef<'meter'>,
+    nav: React$ElementRef<'nav'>,
+    noscript: React$ElementRef<'noscript'>,
+    object: React$ElementRef<'object'>,
+    ol: React$ElementRef<'ol'>,
+    optgroup: React$ElementRef<'optgroup'>,
+    option: React$ElementRef<'option'>,
+    output: React$ElementRef<'output'>,
+    p: React$ElementRef<'p'>,
+    param: React$ElementRef<'param'>,
+    picture: React$ElementRef<'picture'>,
+    pre: React$ElementRef<'pre'>,
+    progress: React$ElementRef<'progress'>,
+    q: React$ElementRef<'q'>,
+    rp: React$ElementRef<'rp'>,
+    rt: React$ElementRef<'rt'>,
+    ruby: React$ElementRef<'ruby'>,
+    s: React$ElementRef<'s'>,
+    samp: React$ElementRef<'samp'>,
+    script: React$ElementRef<'script'>,
+    section: React$ElementRef<'section'>,
+    select: React$ElementRef<'select'>,
+    small: React$ElementRef<'small'>,
+    source: React$ElementRef<'source'>,
+    span: React$ElementRef<'span'>,
+    strong: React$ElementRef<'strong'>,
+    style: React$ElementRef<'style'>,
+    sub: React$ElementRef<'sub'>,
+    summary: React$ElementRef<'summary'>,
+    sup: React$ElementRef<'sup'>,
+    table: React$ElementRef<'table'>,
+    tbody: React$ElementRef<'tbody'>,
+    td: React$ElementRef<'td'>,
+    textarea: React$ElementRef<'textarea'>,
+    tfoot: React$ElementRef<'tfoot'>,
+    th: React$ElementRef<'th'>,
+    thead: React$ElementRef<'thead'>,
+    time: React$ElementRef<'time'>,
+    title: React$ElementRef<'title'>,
+    tr: React$ElementRef<'tr'>,
+    track: React$ElementRef<'track'>,
+    u: React$ElementRef<'u'>,
+    ul: React$ElementRef<'ul'>,
+    var: React$ElementRef<'var'>,
+    video: React$ElementRef<'video'>,
+    wbr: React$ElementRef<'wbr'>,
     // SVG
-    circle:                   StyledComponentType<StyledElementType<'circle'>>,
-    clipPath:                 StyledComponentType<StyledElementType<'clipPath'>>,
-    defs:                     StyledComponentType<StyledElementType<'defs'>>,
-    ellipse:                  StyledComponentType<StyledElementType<'ellipse'>>,
-    g:                        StyledComponentType<StyledElementType<'g'>>,
-    image:                    StyledComponentType<StyledElementType<'image'>>,
-    line:                     StyledComponentType<StyledElementType<'line'>>,
-    linearGradient:           StyledComponentType<StyledElementType<'linearGradient'>>,
-    mask:                     StyledComponentType<StyledElementType<'mask'>>,
-    path:                     StyledComponentType<StyledElementType<'path'>>,
-    pattern:                  StyledComponentType<StyledElementType<'pattern'>>,
-    polygon:                  StyledComponentType<StyledElementType<'polygon'>>,
-    polyline:                 StyledComponentType<StyledElementType<'polyline'>>,
-    radialGradient:           StyledComponentType<StyledElementType<'radialGradient'>>,
-    rect:                     StyledComponentType<StyledElementType<'rect'>>,
-    stop:                     StyledComponentType<StyledElementType<'stop'>>,
-    svg:                      StyledComponentType<StyledElementType<'svg'>>,
-    text:                     StyledComponentType<StyledElementType<'text'>>,
-    tspan:                    StyledComponentType<StyledElementType<'tspan'>>
+    circle: React$ElementRef<'circle'>,
+    clipPath: React$ElementRef<'clipPath'>,
+    defs: React$ElementRef<'defs'>,
+    ellipse: React$ElementRef<'ellipse'>,
+    g: React$ElementRef<'g'>,
+    image: React$ElementRef<'image'>,
+    line: React$ElementRef<'line'>,
+    linearGradient: React$ElementRef<'linearGradient'>,
+    mask: React$ElementRef<'mask'>,
+    path: React$ElementRef<'path'>,
+    pattern: React$ElementRef<'pattern'>,
+    polygon: React$ElementRef<'polygon'>,
+    polyline: React$ElementRef<'polyline'>,
+    radialGradient: React$ElementRef<'radialGradient'>,
+    rect: React$ElementRef<'rect'>,
+    stop: React$ElementRef<'stop'>,
+    svg: React$ElementRef<'svg'>,
+    text: React$ElementRef<'text'>,
+    tspan: React$ElementRef<'tspan'>,
+    // Deprecated, should be HTMLUnknownElement, but Flow doesn't support it
+    keygen: React$ElementRef<'keygen'>,
+    menuitem: React$ElementRef<'menuitem'>,
+    ...
   }
 
-  declare export default StyledComponentList & {
-    [[call]]: <S : string>(S) => $ElementType<StyledComponentList, S>,
-    [[call]]: <P : {}, C : React$ComponentType<P>>(C) => StyledComponentType<C>
-  };
+  declare type BuiltinElementType<ElementName: string> = $ElementType<BuiltinElementInstances, ElementName>
+
+  declare type ConvenientShorthands = $ObjMap<
+    BuiltinElementInstances,
+    <V>(V) => StyledShorthandFactory<V>
+  >
+
+  declare interface Styled {
+    <StyleProps, Theme, ElementName: $Keys<BuiltinElementInstances>>(ElementName): StyledFactory<StyleProps, Theme, BuiltinElementType<ElementName>>;
+    <Comp: React$ComponentType<any>, Theme, OwnProps = React$ElementConfig<Comp>>(Comp): StyledFactory<{|...$Exact<OwnProps>|}, Theme, Comp>;
+  }
+
+  declare export default Styled & ConvenientShorthands
 }
 
 
-
 declare module 'styled-components/native' {
+  import type {
+    CSSRules,
+    CSSConstructor,
+    KeyFramesConstructor,
+    CreateGlobalStyleConstructor,
+    StyledComponent,
+    Interpolation,
 
-  declare export type Interpolation =
-                                    | (<P: {}>(executionContext: P) => string)
-                                    | CSSRules
-                                    | KeyFrames
-                                    | string
-                                    | number
+    // "private" types
+    TaggedTemplateLiteral,
+    StyledFactory,
+    StyledShorthandFactory,
+    ThemeProps,
+    PropsWithTheme,
+  } from 'styled-components';
 
-
-  declare export type CSSRules = Interpolation[]
-
-  // This is not exported on purpose, since it's an implementation detail
-  declare type TaggedTemplateLiteral<R> = (strings : string[], ...interpolations : Interpolation[]) => R
-
-  declare export type CSSConstructor = TaggedTemplateLiteral<CSSRules>
-  declare export type KeyFramesConstructor = TaggedTemplateLiteral<KeyFrames>
-  declare export type CreateGlobalStyleConstructor = TaggedTemplateLiteral<React$ComponentType<*>>
-
-  declare interface Tag<T> {
-    styleTag: HTMLStyleElement | null;
-    getIds(): string[];
-    hasNameForId(id: string, name: string): boolean;
-    insertMarker(id: string): T;
-    insertRules(id: string, cssRules: string[], name: ?string): void;
-    removeRules(id: string): void;
-    css(): string;
-    toHTML(additionalAttrs: ?string): string;
-    toElement(): React$Element<*>;
-    clone(): Tag<T>;
-    sealed: boolean;
+  declare type BuiltinElementInstances = {
+    ActivityIndicator:             React$ComponentType<{...}>,
+    ActivityIndicatorIOS:          React$ComponentType<{...}>,
+    ART:                           React$ComponentType<{...}>,
+    Button:                        React$ComponentType<{...}>,
+    DatePickerIOS:                 React$ComponentType<{...}>,
+    DrawerLayoutAndroid:           React$ComponentType<{...}>,
+    Image:                         React$ComponentType<{...}>,
+    ImageBackground:               React$ComponentType<{...}>,
+    ImageEditor:                   React$ComponentType<{...}>,
+    ImageStore:                    React$ComponentType<{...}>,
+    KeyboardAvoidingView:          React$ComponentType<{...}>,
+    ListView:                      React$ComponentType<{...}>,
+    MapView:                       React$ComponentType<{...}>,
+    Modal:                         React$ComponentType<{...}>,
+    NavigatorIOS:                  React$ComponentType<{...}>,
+    Picker:                        React$ComponentType<{...}>,
+    PickerIOS:                     React$ComponentType<{...}>,
+    ProgressBarAndroid:            React$ComponentType<{...}>,
+    ProgressViewIOS:               React$ComponentType<{...}>,
+    ScrollView:                    React$ComponentType<{...}>,
+    SegmentedControlIOS:           React$ComponentType<{...}>,
+    Slider:                        React$ComponentType<{...}>,
+    SliderIOS:                     React$ComponentType<{...}>,
+    SnapshotViewIOS:               React$ComponentType<{...}>,
+    Switch:                        React$ComponentType<{...}>,
+    RecyclerViewBackedScrollView:  React$ComponentType<{...}>,
+    RefreshControl:                React$ComponentType<{...}>,
+    SafeAreaView:                  React$ComponentType<{...}>,
+    StatusBar:                     React$ComponentType<{...}>,
+    SwipeableListView:             React$ComponentType<{...}>,
+    SwitchAndroid:                 React$ComponentType<{...}>,
+    SwitchIOS:                     React$ComponentType<{...}>,
+    TabBarIOS:                     React$ComponentType<{...}>,
+    Text:                          React$ComponentType<{...}>,
+    TextInput:                     React$ComponentType<{...}>,
+    ToastAndroid:                  React$ComponentType<{...}>,
+    ToolbarAndroid:                React$ComponentType<{...}>,
+    Touchable:                     React$ComponentType<{...}>,
+    TouchableHighlight:            React$ComponentType<{...}>,
+    TouchableNativeFeedback:       React$ComponentType<{...}>,
+    TouchableOpacity:              React$ComponentType<{...}>,
+    TouchableWithoutFeedback:      React$ComponentType<{...}>,
+    View:                          React$ComponentType<{...}>,
+    ViewPagerAndroid:              React$ComponentType<{...}>,
+    WebView:                       React$ComponentType<{...}>,
+    FlatList:                      React$ComponentType<{...}>,
+    SectionList:                   React$ComponentType<{...}>,
+    VirtualizedList:               React$ComponentType<{...}>,
+    ...
   }
 
-  // The `any`/weak types in here all come from `styled-components` directly, since those definitions were just copied over
-  declare export class StyleSheet {
-    static get master() : StyleSheet;
-    static get instance() : StyleSheet;
-    static reset(forceServer? : boolean) : void;
+  declare type BuiltinElementType<ElementName: string> = $ElementType<BuiltinElementInstances, ElementName>
 
-    id : number;
-    forceServer : boolean;
-    target : ?HTMLElement;
-    tagMap : {[string]: Tag<any>}; // eslint-disable-line flowtype/no-weak-types
-    deferred: { [string]: string[] | void };
-    rehydratedNames: { [string]: boolean };
-    ignoreRehydratedNames: { [string]: boolean };
-    tags: Tag<any>[]; // eslint-disable-line flowtype/no-weak-types
-    importRuleTag: Tag<any>; // eslint-disable-line flowtype/no-weak-types
-    capacity: number;
-    clones: StyleSheet[];
+  declare type ConvenientShorthands = $ObjMap<
+    BuiltinElementInstances,
+    <V>(V) => StyledShorthandFactory<V>
+  >
 
-    constructor(?HTMLElement) : this;
-    rehydrate() : this;
-    clone() : StyleSheet;
-    sealAllTags() : void;
-    makeTag(tag : ?Tag<any>) : Tag<any>; // eslint-disable-line flowtype/no-weak-types
-    getImportRuleTag() : Tag<any>; // eslint-disable-line flowtype/no-weak-types
-    getTagForId(id : string): Tag<any>; // eslint-disable-line flowtype/no-weak-types
-    hasId(id: string) : boolean;
-    hasNameForId(id: string, name: string) : boolean;
-    deferredInject(id : string, cssRules : string[]) : void;
-    inject(id: string, cssRules : string[], name? : string) : void;
-    remove(id : string) : void;
-    toHtml() : string;
-    toReactElements() : React$ElementType[];
+  declare interface Styled {
+    <StyleProps, Theme, ElementName: $Keys<BuiltinElementInstances>>(ElementName): StyledFactory<StyleProps, Theme, BuiltinElementType<ElementName>>;
+    <Comp: React$ComponentType<any>, Theme, OwnProps = React$ElementConfig<Comp>>(Comp): StyledFactory<{|...$Exact<OwnProps>|}, Theme, Comp>;
   }
 
-  declare export class KeyFrames {
-    id : string;
-    name : string;
-    rules : string[];
+  declare export default Styled & ConvenientShorthands
+}
 
-    constructor(name : string, rules : string[]) : this;
-    inject(StyleSheet) : void;
-    toString() : string;
-    getName() : string;
-  }
-
-  // I think any is appropriate here?
-  // eslint-disable-next-line flowtype/no-weak-types
-  declare export type Theme = {+[string] : any}
-
-  declare export var css : CSSConstructor;
-  declare export var keyframes : KeyFramesConstructor;
-  declare export var createGlobalStyle : CreateGlobalStyleConstructor
-  declare export var ThemeProvider : React$ComponentType<{children?: ?React$Node, theme : Theme | (Theme) => Theme}>
-
-  // This is a bit hard to read. Not sure how to make it more readable. I think adding line-breaks makes it worse.
-  declare type InjectedProps = { theme : Theme | void }
-  declare  export function withTheme<Props : {}, Component: React$ComponentType<Props>>(WrappedComponent: Component) : React$ComponentType<$Diff<React$ElementConfig<$Shape<Component>>, InjectedProps>>;
-
-
-  // @HACK This is a cheat to hide that the underlying type is "just a string"
-  //       once we know of a better way, we should be able to update this accordingly.
-  //       I don't think there _is_ a good way, currently.
-  // @NOTE Also not too sure about the naming of this...
-  declare export type StyledElementType<T> = T;
-  declare export type StyledComponentType<C> = {
-    [[call]]: TaggedTemplateLiteral<C>,
-    +attrs: <A: {}>(attributes: A) => TaggedTemplateLiteral<React$ComponentType<$Diff<React$ElementConfig<C>, A>>>
-  };
-
-  declare type StyledComponentList = {
-    ActivityIndicator:             StyledComponentType<React$ComponentType<{}>>,
-    ActivityIndicatorIOS:          StyledComponentType<React$ComponentType<{}>>,
-    ART:                           StyledComponentType<React$ComponentType<{}>>,
-    Button:                        StyledComponentType<React$ComponentType<{}>>,
-    DatePickerIOS:                 StyledComponentType<React$ComponentType<{}>>,
-    DrawerLayoutAndroid:           StyledComponentType<React$ComponentType<{}>>,
-    Image:                         StyledComponentType<React$ComponentType<{}>>,
-    ImageBackground:               StyledComponentType<React$ComponentType<{}>>,
-    ImageEditor:                   StyledComponentType<React$ComponentType<{}>>,
-    ImageStore:                    StyledComponentType<React$ComponentType<{}>>,
-    KeyboardAvoidingView:          StyledComponentType<React$ComponentType<{}>>,
-    ListView:                      StyledComponentType<React$ComponentType<{}>>,
-    MapView:                       StyledComponentType<React$ComponentType<{}>>,
-    Modal:                         StyledComponentType<React$ComponentType<{}>>,
-    NavigatorIOS:                  StyledComponentType<React$ComponentType<{}>>,
-    Picker:                        StyledComponentType<React$ComponentType<{}>>,
-    PickerIOS:                     StyledComponentType<React$ComponentType<{}>>,
-    ProgressBarAndroid:            StyledComponentType<React$ComponentType<{}>>,
-    ProgressViewIOS:               StyledComponentType<React$ComponentType<{}>>,
-    ScrollView:                    StyledComponentType<React$ComponentType<{}>>,
-    SegmentedControlIOS:           StyledComponentType<React$ComponentType<{}>>,
-    Slider:                        StyledComponentType<React$ComponentType<{}>>,
-    SliderIOS:                     StyledComponentType<React$ComponentType<{}>>,
-    SnapshotViewIOS:               StyledComponentType<React$ComponentType<{}>>,
-    Switch:                        StyledComponentType<React$ComponentType<{}>>,
-    RecyclerViewBackedScrollView:  StyledComponentType<React$ComponentType<{}>>,
-    RefreshControl:                StyledComponentType<React$ComponentType<{}>>,
-    SafeAreaView:                  StyledComponentType<React$ComponentType<{}>>,
-    StatusBar:                     StyledComponentType<React$ComponentType<{}>>,
-    SwipeableListView:             StyledComponentType<React$ComponentType<{}>>,
-    SwitchAndroid:                 StyledComponentType<React$ComponentType<{}>>,
-    SwitchIOS:                     StyledComponentType<React$ComponentType<{}>>,
-    TabBarIOS:                     StyledComponentType<React$ComponentType<{}>>,
-    Text:                          StyledComponentType<React$ComponentType<{}>>,
-    TextInput:                     StyledComponentType<React$ComponentType<{}>>,
-    ToastAndroid:                  StyledComponentType<React$ComponentType<{}>>,
-    ToolbarAndroid:                StyledComponentType<React$ComponentType<{}>>,
-    Touchable:                     StyledComponentType<React$ComponentType<{}>>,
-    TouchableHighlight:            StyledComponentType<React$ComponentType<{}>>,
-    TouchableNativeFeedback:       StyledComponentType<React$ComponentType<{}>>,
-    TouchableOpacity:              StyledComponentType<React$ComponentType<{}>>,
-    TouchableWithoutFeedback:      StyledComponentType<React$ComponentType<{}>>,
-    View:                          StyledComponentType<React$ComponentType<{}>>,
-    ViewPagerAndroid:              StyledComponentType<React$ComponentType<{}>>,
-    WebView:                       StyledComponentType<React$ComponentType<{}>>,
-    FlatList:                      StyledComponentType<React$ComponentType<{}>>,
-    SectionList:                   StyledComponentType<React$ComponentType<{}>>,
-    VirtualizedList:               StyledComponentType<React$ComponentType<{}>>,
-  }
-
-  declare export default StyledComponentList & {
-    [[call]]: <S : string>(S) => $ElementType<StyledComponentList, S>,
-    [[call]]: <P : {}, C : React$ComponentType<P>>(C) => StyledComponentType<C>
-  };
+declare module 'styled-components/macro' {
+  declare export * from 'styled-components';
 }

@@ -21,6 +21,6 @@ StyledSeparator.defaultProps = {
   theme: defaultTheme,
 };
 
-const Separator = ({ spaceAfter }: Props) => <StyledSeparator spaceAfter={spaceAfter} />;
+const Separator = ({ spaceAfter }: Props): React.Node => <StyledSeparator spaceAfter={spaceAfter} />;
 
 export default Separator;

@@ -5,7 +5,7 @@ import Alert, { AlertButton } from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Alert
       icon={<Icons.Airplane />}
       inlineActions={

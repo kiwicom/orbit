@@ -325,7 +325,7 @@ ModalWrapperContent.defaultProps = {
 
 const OFFSET = 40;
 
-const Modal = React.forwardRef<Props, Instance>(
+const Modal: React$AbstractComponent<Props, Instance> = React.forwardRef<Props, Instance>(
   (
     {
       size = SIZES.NORMAL,

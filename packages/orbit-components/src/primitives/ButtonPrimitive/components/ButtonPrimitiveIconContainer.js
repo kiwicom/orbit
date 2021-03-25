@@ -6,7 +6,7 @@ import defaultTheme from "../../../defaultTheme";
 import transition from "../../../utils/transition";
 import type { Props } from "./ButtonPrimitiveIconContainer";
 
-export const StyledButtonPrimitiveIconContainer = styled(({ className, children }) => (
+export const StyledButtonPrimitiveIconContainer: any = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   ${({ margin, width, height }) => css`
@@ -28,7 +28,7 @@ StyledButtonPrimitiveIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveIconContainer = ({ margin, width, height, children }: Props) => (
+const ButtonPrimitiveIconContainer = ({ margin, width, height, children }: Props): React.Node => (
   <StyledButtonPrimitiveIconContainer margin={margin} width={width} height={height}>
     {children}
   </StyledButtonPrimitiveIconContainer>

@@ -45,7 +45,7 @@ StyledInputTagsInner.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputTags = ({ children }: Props) => {
+const InputTags = ({ children }: Props): React.Node => {
   const tagsRef = React.createRef();
 
   React.useEffect(() => {

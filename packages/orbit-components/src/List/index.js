@@ -56,7 +56,7 @@ const List = ({
   type = TYPES.PRIMARY,
   dataTest,
   spaceAfter,
-}: Props) => (
+}: Props): React.Node => (
   <StyledList type={type} size={size} dataTest={dataTest} spaceAfter={spaceAfter}>
     <ListContext.Provider value={{ size, type }}>{children}</ListContext.Provider>
   </StyledList>

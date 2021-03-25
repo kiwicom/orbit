@@ -9,7 +9,7 @@ import { textAlign } from "../../utils/rtl";
 
 import type { Props } from ".";
 
-export const StyledTableCell = styled(
+export const StyledTableCell: any = styled(
   ({ element: Component, children, className, dataTest, scope }) => (
     <Component className={className} data-test={dataTest} scope={scope}>
       {children}
@@ -39,7 +39,7 @@ const TableCell = ({
   whiteSpace,
   dataTest,
   children,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledTableCell
       verticalAlign={verticalAlign}

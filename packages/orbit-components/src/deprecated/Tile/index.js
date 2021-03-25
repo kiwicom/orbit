@@ -9,7 +9,7 @@ import KEY_CODE_MAP from "../../common/keyMaps";
 
 import type { Props, State } from "./index";
 
-export const StyledTile = styled(({ theme, icon, title, external, ...props }) => {
+export const StyledTile: any = styled(({ theme, icon, title, external, ...props }) => {
   const Component = props.href ? "a" : "div";
   return <Component {...props}>{props.children}</Component>;
 })`
@@ -39,7 +39,7 @@ StyledTile.defaultProps = {
 };
 
 class Tile extends React.PureComponent<Props, State> {
-  state = {
+  state: State = {
     expanded: false,
     initialExpanded: false,
   };
@@ -49,22 +49,22 @@ class Tile extends React.PureComponent<Props, State> {
     this.setExpanded({ expanded, initialExpanded: expanded });
   }
 
-  setExpanded = ({ expanded, initialExpanded }: State) => {
+  setExpanded: ((State) => void) = ({ expanded, initialExpanded }: State) => {
     this.setState({ expanded, initialExpanded });
   };
 
-  isExpandable = () => {
+  isExpandable: (() => boolean) = () => {
     const { href, children } = this.props;
     return !!(!href && children); // Tile is expandable if - not href && children are passed
   };
 
-  toggleExpandable = () => {
+  toggleExpandable: (() => void) = () => {
     if (this.isExpandable()) {
       this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
     }
   };
 
-  handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+  handleClick: ((ev: SyntheticEvent<HTMLDivElement>) => void) = (ev: SyntheticEvent<HTMLDivElement>) => {
     const { onClick } = this.props;
     this.toggleExpandable();
     if (onClick) {
@@ -72,7 +72,7 @@ class Tile extends React.PureComponent<Props, State> {
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+  handleKeyDown: ((ev: SyntheticKeyboardEvent<HTMLElement>) => void) = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
     const { onClick } = this.props;
     if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.toggleExpandable();
@@ -88,7 +88,7 @@ class Tile extends React.PureComponent<Props, State> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const { href, external, icon, title, description, children, dataTest } = this.props;
     const isExpandable = this.isExpandable();
     const isExpanded = this.state.expanded;

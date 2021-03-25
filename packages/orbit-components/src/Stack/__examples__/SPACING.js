@@ -7,7 +7,7 @@ import Heading from "../../Heading";
 import Stack from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const divStyle = {
       width: "40px",
       height: "40px",

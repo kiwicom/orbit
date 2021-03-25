@@ -53,7 +53,7 @@ const Grid = ({
   dataTest,
   as = "div",
   ...props
-}: Props) => {
+}: Props): React.Node => {
   const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth, width };
   return (
     <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={as}>

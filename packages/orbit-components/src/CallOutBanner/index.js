@@ -66,7 +66,7 @@ const CallOutBanner = ({
   tabIndex,
   description,
   dataTest,
-}: Props) => (
+}: Props): React.Node => (
   <StyledCallOutBanner
     onClick={onClick}
     tabIndex={(onClick || tabIndex) && (tabIndex || 0)}

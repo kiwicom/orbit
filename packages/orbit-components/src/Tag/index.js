@@ -63,7 +63,7 @@ CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledTag = styled.div`
+export const StyledTag: any = styled.div`
   ${({ theme, actionable }) => css`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
@@ -150,7 +150,7 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
   }
 };
 
-const Tag = React.forwardRef<Props, HTMLDivElement>((props, ref) => {
+const Tag: React$AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>((props, ref) => {
   const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
   return (
     <StyledTag

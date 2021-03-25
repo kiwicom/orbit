@@ -90,7 +90,7 @@ const ListChoice = ({
   onClick,
   selected,
   disabled,
-}: Props) => {
+}: Props): React.Node => {
   const conditionalProps = {
     ...(selectable ? { "aria-checked": selected } : null),
   };

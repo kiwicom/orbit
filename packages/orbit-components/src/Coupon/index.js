@@ -24,7 +24,7 @@ StyledCoupon.defaultProps = {
   theme: defaultTheme,
 };
 
-const Coupon = ({ children, dataTest }: Props) => (
+const Coupon = ({ children, dataTest }: Props): React.Node => (
   <StyledCoupon data-test={dataTest}>{children}</StyledCoupon>
 );
 

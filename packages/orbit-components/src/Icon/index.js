@@ -61,7 +61,7 @@ StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const OrbitIcon = (props: FactoryProps) => {
+const OrbitIcon = (props: FactoryProps): React.Node => {
   const {
     size,
     color,

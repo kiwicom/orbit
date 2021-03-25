@@ -6,7 +6,7 @@ import Seat from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack spacing="XXSmall">
         <Heading as="h3" type="title3">

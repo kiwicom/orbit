@@ -4,7 +4,7 @@ import * as React from "react";
 import Text from "../index";
 
 export default {
-  Example: () => <Text>Orbit is an open source design system for your next travel project.</Text>,
+  Example: (): React.Node => <Text>Orbit is an open source design system for your next travel project.</Text>,
   info: {
     title: "Default text",
     description:

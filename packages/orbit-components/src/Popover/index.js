@@ -29,7 +29,7 @@ const Popover = ({
   onOpen,
   fixed,
   actions,
-}: Props) => {
+}: Props): React.Node => {
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,

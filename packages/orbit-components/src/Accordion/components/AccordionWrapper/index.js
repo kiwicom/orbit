@@ -21,7 +21,7 @@ StyledAccordionWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const AccordionWrapper = ({ dataTest, initialExpanded, ...props }: Props) => (
+const AccordionWrapper = ({ dataTest, initialExpanded, ...props }: Props): React.Node => (
   <StyledAccordionWrapper
     {...props}
     expanded={props.expanded || initialExpanded}

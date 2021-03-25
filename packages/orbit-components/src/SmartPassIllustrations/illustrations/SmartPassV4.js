@@ -5,7 +5,7 @@ import randomID from "../../utils/randomID";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "../index";
 
-const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
+const SmartPassV4 = ({ primary, secondary, ...props }: Props): React.Node => {
   const randomIDLinear = React.useMemo(() => randomID("linear1"), []);
   const randomIDLinear2 = React.useMemo(() => randomID("linear2"), []);
 

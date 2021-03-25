@@ -171,7 +171,7 @@ const SmallHeading = ({ children }: SmallHeadingType) => (
 );
 
 class DestinationCard extends React.PureComponent<Props, State> {
-  state = {
+  state: State = {
     hiddenContentHeight: 0,
   };
 
@@ -189,7 +189,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   }
 
-  setHeight = () => {
+  setHeight: (() => void) = () => {
     const { hiddenContent } = this;
 
     if (hiddenContent.current) {
@@ -199,7 +199,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const {
       dataTest,
       departureCity,

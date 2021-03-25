@@ -30,7 +30,7 @@ StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const ActiveButton = ({ children, transparent, size }: Props) => {
+const ActiveButton = ({ children, transparent, size }: Props): React.Node => {
   return (
     <Button
       type="secondary"

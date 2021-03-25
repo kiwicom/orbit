@@ -11,7 +11,7 @@ import getButtonIconForeground from "./helpers/getButtonIconForeground";
 
 import type { Props } from "./index";
 
-const Button = React.forwardRef<Props, HTMLButtonElement>(
+const Button: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>(
   ({ type = TYPE_OPTIONS.PRIMARY, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };

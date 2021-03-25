@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -127,7 +127,7 @@ Spacer.defaultProps = {
 /*
   This causes rewrite of a list so list is ussable in in PricingTable, this is not at all elegant solution.
 */
-export const StyledListWrapper = styled.div`
+export const StyledListWrapper: any = styled.div`
   ${({ theme }) =>
     css`
       width: 100%;
@@ -179,7 +179,7 @@ const PricingTableItem = ({
   onClick,
   compact,
   mobileDescription,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = () => {
     if (onClick) {
       onClick();
@@ -187,7 +187,7 @@ const PricingTableItem = ({
   };
   const { isDesktop } = useMediaQuery();
   const trueCompact = typeof compact !== "undefined" ? compact : !isDesktop;
-  const context = useContext(PricingTableContext);
+  const context = React.useContext(PricingTableContext);
 
   return (
     <>

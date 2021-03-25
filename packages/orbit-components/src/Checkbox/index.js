@@ -161,7 +161,7 @@ Input.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Label = styled(({ className, children, dataTest }) => (
+export const Label: any = styled(({ className, children, dataTest }) => (
   <label className={className} data-test={dataTest}>
     {children}
   </label>
@@ -204,7 +204,7 @@ Label.defaultProps = {
   theme: defaultTheme,
 };
 
-const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
+const Checkbox: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     label,
     value,

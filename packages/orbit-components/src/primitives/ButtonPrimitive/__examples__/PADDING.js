@@ -6,7 +6,7 @@ import ButtonPrimitive from "../index";
 import Stack from "../../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <ButtonPrimitive
         padding={defaultTheme.orbit.paddingButtonSmall}

@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -19,7 +19,7 @@ const getModalHeading = (type, token) => ({ theme }) => {
   return getHeadingToken(token)({ theme, type });
 };
 
-export const ModalHeading = styled.div`
+export const ModalHeading: any = styled.div`
   font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
   font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
   line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
@@ -74,7 +74,7 @@ const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
   return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
 };
 
-export const StyledModalHeader = styled.div`
+export const StyledModalHeader: any = styled.div`
   width: 100%;
   display: block;
   padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
@@ -108,7 +108,7 @@ StyledModalHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-export const MobileHeader = styled.div`
+export const MobileHeader: any = styled.div`
   display: inline-block;
   position: fixed;
   visibility: hidden;
@@ -155,8 +155,8 @@ const ModalHeader = ({
   description,
   title,
   dataTest,
-}: Props) => {
-  const { setHasModalTitle, isMobileFullPage } = useContext(ModalContext);
+}: Props): Node => {
+  const { setHasModalTitle, isMobileFullPage } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 

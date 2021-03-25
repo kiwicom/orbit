@@ -46,7 +46,7 @@ const LoaderAnimation = keyframes`
   100%  {opacity: .3; transform:translateY(0px);}
 `;
 
-export const StyledLoading = styled(({ children, className, dataTest }) => (
+export const StyledLoading: any = styled(({ children, className, dataTest }) => (
   <div className={className} data-test={dataTest}>
     {children}
   </div>
@@ -84,7 +84,7 @@ StyledLoadingText.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledSpinner = styled.svg`
+export const StyledSpinner: any = styled.svg`
   width: 40px;
   height: 40px;
   animation: ${SpinnerAnimation} 0.75s linear infinite;
@@ -130,7 +130,19 @@ StyledLoaderCircle.defaultProps = {
   theme: defaultTheme,
 };
 
-const Loading = (props: Props) => {
+const Loading = (props: Props): 
+  | boolean
+  | number
+  | string
+  | $Iterable<?React$Node, void, void>
+  | React.Node
+  | React$Portal
+  | {|
+    +key: React$Key | null,
+    +props: React$ElementProps<any>,
+    +ref: any,
+    +type: any,
+  |} => {
   const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
 
   return children && !loading ? (

@@ -14,7 +14,7 @@ export default {
   title: "CarrierLogo",
 };
 
-export const OneCarrier = () => {
+export const OneCarrier = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), "large");
   const dataTest = text("dataTest", "test");
 
@@ -34,7 +34,7 @@ OneCarrier.story = {
   },
 };
 
-export const TwoCarriers = () => {
+export const TwoCarriers = (): React.Node => {
   const carrier = [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
@@ -54,7 +54,7 @@ TwoCarriers.story = {
   },
 };
 
-export const FourCarriers = () => {
+export const FourCarriers = (): React.Node => {
   const carrier = [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
@@ -76,7 +76,7 @@ FourCarriers.story = {
   },
 };
 
-export const NonExistingCarriers = () => {
+export const NonExistingCarriers = (): React.Node => {
   const carrier = [
     { code: "LOL", name: "Lorem ipsum", type: "airline" },
     { code: "KEK", name: "Lorem ipsum", type: "bus" },
@@ -97,7 +97,7 @@ NonExistingCarriers.story = {
   },
 };
 
-export const NonExistingCarrier = () => {
+export const NonExistingCarrier = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), "large");
   const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
   const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
@@ -115,7 +115,7 @@ NonExistingCarrier.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <CarrierLogo
       size="large"

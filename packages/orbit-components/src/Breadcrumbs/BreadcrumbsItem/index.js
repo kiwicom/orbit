@@ -68,7 +68,7 @@ const BreadcrumbsItem = ({
   component = DefaultComponent,
   id,
   ...props
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledBreadcrumbsItem
       data-test={dataTest}

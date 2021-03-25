@@ -56,7 +56,7 @@ const Header = ({
   header,
   expandable,
   expanded,
-}: Props) => (
+}: Props): React.Node => (
   <Stack align={actions && !header ? "start" : "center"} spacing={header ? "small" : "none"}>
     {(title || description || icon) && !header && (
       <Stack

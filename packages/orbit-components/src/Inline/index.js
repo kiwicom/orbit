@@ -41,7 +41,7 @@ const Inline = ({
   children,
   dataTest,
   ...smallMobile
-}: Props) => {
+}: Props): React.Element<string> => {
   const viewportSizes = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
 
   return (

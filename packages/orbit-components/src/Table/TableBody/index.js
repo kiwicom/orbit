@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 
 import type { Props } from ".";
 
-export const StyledTableBody = styled(({ children, className, dataTest }) => (
+export const StyledTableBody: any = styled(({ children, className, dataTest }) => (
   <tbody className={className} data-test={dataTest}>
     {children}
   </tbody>
@@ -20,7 +20,7 @@ StyledTableBody.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableBody = ({ children, dataTest }: Props) => (
+const TableBody = ({ children, dataTest }: Props): React.Node => (
   <StyledTableBody dataTest={dataTest}>{children}</StyledTableBody>
 );
 

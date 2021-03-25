@@ -4,7 +4,7 @@ import * as React from "react";
 import Select from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Element<"div"> => {
     const [country, setCountry] = React.useState("");
     return (
       <div style={{ width: "80px" }}>

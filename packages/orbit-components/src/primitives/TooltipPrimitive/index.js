@@ -11,7 +11,7 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
 import type { Props } from "./index";
 
-export const StyledTooltipChildren = styled.span`
+export const StyledTooltipChildren: any = styled.span`
   ${({ block }) =>
     !block &&
     `
@@ -48,7 +48,7 @@ const TooltipPrimitive = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props) => {
+}: Props): void | React.Node | React.Node => {
   const [shown, setShown] = React.useState(false);
   const [
     render,

@@ -39,7 +39,7 @@ Default.story = {
   },
 };
 
-export const CustomColor = () => {
+export const CustomColor = (): React.Node => {
   const size = select("Size", [null, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
   const customColor = text("Custom color", "#ABCDEF");
   const source = select("Icon", Object.keys(Icons), "Airplane");
@@ -56,7 +56,7 @@ CustomColor.story = {
   },
 };
 
-export const ReversedOnRtl = () => {
+export const ReversedOnRtl = (): React.Node => {
   const source = select("Icon", Object.keys(Icons), "ChevronLeft");
   const Icon = Icons[source];
   return (
@@ -74,7 +74,7 @@ ReversedOnRtl.story = {
   },
 };
 
-export const ListOfAllIcons = () => <IconList />;
+export const ListOfAllIcons = (): React.Node => <IconList />;
 
 ListOfAllIcons.story = {
   name: "List of all icons",

@@ -100,7 +100,7 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputFile = React.forwardRef<Props, HTMLInputElement>(
+const InputFile: React$AbstractComponent<Props, HTMLInputElement> = React.forwardRef<Props, HTMLInputElement>(
   (
     {
       placeholder = "No file selected",

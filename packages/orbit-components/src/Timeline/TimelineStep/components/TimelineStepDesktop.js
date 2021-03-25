@@ -36,7 +36,7 @@ const TimelineStepDesktop = ({
   label,
   subLabel,
   typeIcon,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
       {subLabel && (

@@ -39,7 +39,7 @@ StyledStack.defaultProps = {
   theme: defaultTheme,
 };
 
-const Stack = (props: Props) => {
+const Stack = (props: Props): React.Node => {
   const {
     dataTest,
     inline = false,

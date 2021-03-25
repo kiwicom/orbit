@@ -60,7 +60,7 @@ StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const Histogram = ({ data, value, min, loading = false, loadingText, step }: Props) => {
+const Histogram = ({ data, value, min, loading = false, loadingText, step }: Props): React.Node => {
   const maxValue = !!data && Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;

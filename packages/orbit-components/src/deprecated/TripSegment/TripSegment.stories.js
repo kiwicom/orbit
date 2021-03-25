@@ -15,7 +15,7 @@ export default {
   title: "Deprecated TripSegment",
 };
 
-export const Default = () => (
+export const Default = (): React.Node => (
   <TripSegment
     duration="3h"
     carrier={{
@@ -56,7 +56,7 @@ Default.story = {
   },
 };
 
-export const ShownByDefault = () => (
+export const ShownByDefault = (): React.Node => (
   <TripSegment
     initialExpanded
     duration="3h"
@@ -100,7 +100,7 @@ ShownByDefault.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const initialExpanded = boolean("initialExpanded", false);
   const duration = text("duration", "3h");
   const carrier = object("carrier", {
@@ -142,7 +142,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <TripSegment
       carrier={{

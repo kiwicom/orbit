@@ -12,7 +12,7 @@ const FORMATS = {
   ANY: "*",
 };
 
-export const StyledLazyImage = styled.div`
+export const StyledLazyImage: any = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -65,7 +65,7 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
   </picture>
 );
 
-const LazyImage = ({ placeholder, original, name }: Props) => {
+const LazyImage = ({ placeholder, original, name }: Props): React.Node => {
   const [loaded, setLoaded] = React.useState(false);
   return (
     <StyledLazyImage>

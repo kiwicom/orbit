@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -44,7 +44,7 @@ const getIconSizeFromType = ({ theme, type }) => {
   return tokens[type];
 };
 
-export const Item = styled(({ type, theme, ...props }) => <li {...props} />)`
+export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   flex-direction: row;
@@ -65,7 +65,7 @@ Item.defaultProps = {
   theme: defaultTheme,
 };
 
-export const IconContainer = styled.div`
+export const IconContainer: any = styled.div`
   display: flex;
   align-items: center;
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
@@ -103,8 +103,8 @@ StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => {
-  const { size, type } = useContext(ListContext);
+const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props): React.Node => {
+  const { size, type } = React.useContext(ListContext);
   return (
     <Item data-test={dataTest} type={type}>
       <IconContainer type={type} size={size}>

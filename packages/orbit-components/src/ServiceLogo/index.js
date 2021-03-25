@@ -20,7 +20,7 @@ const getHeight = (theme, size) => {
 
 const getColor = greyScale => (greyScale ? "logos-grayscale" : "logos");
 
-export const StyledServiceLogo = styled(({ className, name, size, grayScale, theme, dataTest }) => (
+export const StyledServiceLogo: any = styled(({ className, name, size, grayScale, theme, dataTest }) => (
   <img
     className={className}
     src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(getHeight(theme, size), 10)}/${name}.png`}
@@ -40,7 +40,7 @@ StyledServiceLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const ServiceLogo = ({ name, size = SIZE_OPTIONS.MEDIUM, grayScale = false, dataTest }: Props) => (
+const ServiceLogo = ({ name, size = SIZE_OPTIONS.MEDIUM, grayScale = false, dataTest }: Props): React.Node => (
   <StyledServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} />
 );
 

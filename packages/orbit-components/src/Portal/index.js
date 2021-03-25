@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 import type { Props } from "./index";
 
-const Portal = ({ renderInto, children }: Props) => {
+const Portal = ({ renderInto, children }: Props): any | null => {
   const [el] = React.useState(() => {
     if (typeof window !== "undefined") {
       return document.createElement("div");

@@ -11,7 +11,7 @@ import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from "./index";
 
-const InputStepper = React.forwardRef<Props, HTMLElement>(
+const InputStepper: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
   ({ onChange, defaultValue = 0, disabled = false, ...props }, ref) => {
     const translate = useTranslate();
     const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);

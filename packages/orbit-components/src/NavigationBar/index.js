@@ -50,7 +50,7 @@ StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props) => {
+const NavigationBar = ({ onMenuOpen, children, dataTest, onShow, onHide }: Props): React.Node => {
   const translate = useTranslate();
   const resolveCallback = React.useCallback(
     state => {

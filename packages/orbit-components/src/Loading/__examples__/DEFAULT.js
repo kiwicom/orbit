@@ -4,7 +4,7 @@ import * as React from "react";
 import Loading from "../index";
 
 export default {
-  Example: () => <Loading type="pageLoader" />,
+  Example: (): React.Node => <Loading type="pageLoader" />,
   info: {
     title: "Default loading",
     description:

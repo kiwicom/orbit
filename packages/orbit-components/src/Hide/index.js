@@ -16,7 +16,7 @@ StyledHide.defaultProps = {
   theme: defaultTheme,
 };
 
-const Hide = ({ on = [], block, children }: Props) => (
+const Hide = ({ on = [], block, children }: Props): React.Node => (
   <StyledHide on={on} block={block}>
     {children}
   </StyledHide>

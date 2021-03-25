@@ -14,7 +14,7 @@ export default {
   title: "Illustration",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const name = select("Name", Object.values(NAMES), "Accommodation");
   const dataTest = text("dataTest", "test");
@@ -31,7 +31,7 @@ Playground.story = {
   },
 };
 
-export const ListOfAllIllustrations = () => {
+export const ListOfAllIllustrations = (): React.Node => {
   return <IllustrationPrimitiveList nameOfComponent="Illustration" images={NAMES} />;
 };
 

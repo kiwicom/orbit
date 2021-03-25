@@ -34,7 +34,7 @@ const Pagination = ({
   dataTest,
   hideLabels = true,
   size = SIZES.NORMAL,
-}: Props) => {
+}: Props): React.Node => {
   const pageChanged = handlePageChange(onPageChange, pageCount);
   const { isTablet } = useMediaQuery();
   const translate = useTranslate();

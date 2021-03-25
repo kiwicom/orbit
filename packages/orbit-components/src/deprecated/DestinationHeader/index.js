@@ -108,7 +108,7 @@ const DestinationHeaderGoBackButton = ({ onClick }) => {
   );
 };
 
-const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
+const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props): React.Node => {
   const destinationImage = image.toLowerCase();
   return (
     <StyledDestinationHeader data-test={dataTest}>

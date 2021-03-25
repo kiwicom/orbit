@@ -13,7 +13,7 @@ const getMaxHeight = ({ maxHeight }) => {
   return `${maxHeight}px`;
 };
 
-export const StyledSlide = styled.div`
+export const StyledSlide: any = styled.div`
   position: relative;
   width: 100%;
   transition: ${({ transitionDuration }) =>
@@ -28,21 +28,21 @@ StyledSlide.defaultProps = {
 };
 
 class Slide extends React.Component<Props, State> {
-  state = {
+  state: State = {
     maxHeight: typeof this.props.maxHeight !== "undefined" ? this.props.maxHeight : 0,
     transitionFinished: false,
     visible: false,
   };
 
-  expandTimeout = null;
+  expandTimeout: null | TimeoutID = null;
 
-  collapseTimeout = null;
+  collapseTimeout: null | TimeoutID = null;
 
-  transitionFinishedTimeout = null;
+  transitionFinishedTimeout: null | TimeoutID = null;
 
-  visibleTimeout = null;
+  visibleTimeout: null | TimeoutID = null;
 
-  static defaultProps = {
+  static defaultProps: {|transitionDuration: string|} = {
     transitionDuration: "fast",
   };
 
@@ -96,30 +96,30 @@ class Slide extends React.Component<Props, State> {
     }
   }
 
-  getSnapshotBeforeUpdate(prevProps: Props) {
+  getSnapshotBeforeUpdate(prevProps: Props): null | boolean {
     if (this.props.expanded === prevProps.expanded) return null;
     return true;
   }
 
-  setVisible = (visible: boolean) => () => {
+  setVisible: ((visible: boolean) => () => void) = (visible: boolean) => () => {
     this.setState({ visible });
   };
 
-  setMaxHeight = () => {
+  setMaxHeight: (() => void) = () => {
     const { maxHeight } = this.props;
     this.setState({
       maxHeight,
     });
   };
 
-  expandCallback = () => {
+  expandCallback: (() => void) = () => {
     this.setState({
       maxHeight: null,
     });
     this.transitionFinishedTimeout = setTimeout(this.transitionFinishedCallback(true), 100);
   };
 
-  collapseCallback = () => {
+  collapseCallback: (() => void) = () => {
     this.setState({
       maxHeight: 0,
       transitionFinished: false,
@@ -132,11 +132,11 @@ class Slide extends React.Component<Props, State> {
     }
   };
 
-  transitionFinishedCallback = (transitionFinished: boolean) => () => {
+  transitionFinishedCallback: ((transitionFinished: boolean) => () => void) = (transitionFinished: boolean) => () => {
     this.setState({ transitionFinished });
   };
 
-  render() {
+  render(): React.Node {
     const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;
     const { transitionFinished, maxHeight, visible } = this.state;
     return (

@@ -42,7 +42,7 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const SkipLink = ({ links, buttonLabel }: Props) => {
+const SkipLink = ({ links, buttonLabel }: Props): React.Node => {
   return (
     <StyledNavigation aria-label={buttonLabel}>
       {links &&

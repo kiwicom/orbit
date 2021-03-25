@@ -7,7 +7,7 @@ import type { Props } from "./resolveTooltipArrowAlign";
 import { TOOLTIP_ARROW_SIZE, TOOLTIP_PADDING } from "../consts";
 
 // TODO: use tokens for 12px and 7px - paddings and sizeTooltipArrow
-const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight }: Props) => {
+const resolveTooltipArrowAlign = ({ position, align, tooltipWidth, tooltipHeight }: Props): any | null => {
   if (isVertical(position)) {
     if (isAlignCenter(align)) {
       return css`

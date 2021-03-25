@@ -24,7 +24,7 @@ type Props = {|
   ...Globals,
 |};
 
-const AccordionSectionFooter = ({ children, dataTest }: Props) => (
+const AccordionSectionFooter = ({ children, dataTest }: Props): React.Node => (
   <Wrapper data-test={dataTest && `${dataTest}Footer`}>{children}</Wrapper>
 );
 

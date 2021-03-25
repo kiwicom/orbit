@@ -11,7 +11,7 @@ export default {
   title: "StopoverArrow",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const stops = select("stops", Object.values(STOPS), STOPS.ZERO);
   const dataTest = text("dataTest", "test");
 
@@ -25,7 +25,7 @@ Playground.story = {
   },
 };
 
-export const InRtl = () => {
+export const InRtl = (): React.Node => {
   const stops = select("stops", Object.values(STOPS), STOPS.THREE);
   const dataTest = text("dataTest", "test");
   return (

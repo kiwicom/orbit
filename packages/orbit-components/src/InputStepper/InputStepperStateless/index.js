@@ -58,7 +58,7 @@ const InputStepperStateless = ({
   disabledDecrement,
   titleIncrement,
   titleDecrement,
-}: StateLessProps) => {
+}: StateLessProps): React.Node => {
   return (
     <StyledInputStepper spaceAfter={spaceAfter}>
       <InputField

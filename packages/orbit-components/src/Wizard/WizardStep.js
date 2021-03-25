@@ -112,7 +112,7 @@ StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStep = ({ dataTest, title, onClick }: Props) => {
+const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   const theme = useTheme();
   const { index, status, nextStepStatus, isCompact, isActive, onChangeStep } = React.useContext(
     WizardStepContext,

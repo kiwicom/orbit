@@ -73,7 +73,7 @@ const Collapse = ({
   dataTest,
   onClick,
   actions,
-}: Props) => {
+}: Props): React.Node => {
   const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
   const [expandedState, setExpandedState] = React.useState(
     isControlledComponent ? expandedProp : initialExpanded,

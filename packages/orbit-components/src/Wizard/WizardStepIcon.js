@@ -63,7 +63,7 @@ type Props = {|
   +height: number,
 |};
 
-const WizardStepIcon = ({ width, height }: Props) => {
+const WizardStepIcon = ({ width, height }: Props): React.Element<"div"> => {
   const { index, status, isCompact, isActive } = React.useContext(WizardStepContext);
   const theme = useTheme();
 

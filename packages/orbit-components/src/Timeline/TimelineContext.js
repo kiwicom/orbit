@@ -13,7 +13,7 @@ export const TimelineStepContext: React.Context<StepContext> = React.createConte
   last: false,
 });
 
-export const TimelineStatusProvider = ({ children }: {| children: React.Node |}) => {
+export const TimelineStatusProvider = ({ children }: {| children: React.Node |}): React.Node => {
   const [types, setTypes] = React.useState({});
 
   return (
@@ -23,5 +23,5 @@ export const TimelineStatusProvider = ({ children }: {| children: React.Node |})
   );
 };
 
-export const useStep = () => React.useContext(TimelineStepContext);
-export const useStatuses = () => React.useContext(TimelineStatusContext);
+export const useStep = (): StepContext => React.useContext(TimelineStepContext);
+export const useStatuses = (): Context => React.useContext(TimelineStatusContext);

@@ -1,5 +1,5 @@
 // @flow
-import * as React from "react";
+import type {ModalContextProps} from "./ModalContext";import * as React from "react";
 
 import type { WithModalContextType, ModalContextType } from "./ModalContext";
 
@@ -25,4 +25,4 @@ export const withModalContext: WithModalContextType = Component => props => (
   </ModalContext.Consumer>
 );
 
-export const useModalContext = () => React.useContext(ModalContext);
+export const useModalContext = (): ModalContextProps => React.useContext(ModalContext);

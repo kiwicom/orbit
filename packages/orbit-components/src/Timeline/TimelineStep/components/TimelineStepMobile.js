@@ -36,7 +36,7 @@ const TimelineStepMobile = ({
   typeIcon,
   children,
   last,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledRelative>
       <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>

@@ -132,7 +132,7 @@ const Drawer = ({
   suppressed,
   title,
   actions,
-}: Props) => {
+}: Props): React.Node => {
   const theme = useTheme();
   const overlayRef = React.useRef(null);
   const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [

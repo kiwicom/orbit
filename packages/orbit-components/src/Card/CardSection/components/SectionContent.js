@@ -48,7 +48,7 @@ const SectionContent = ({
   hasPaddingTop,
   slideID,
   labelID,
-}: Props) => {
+}: Props): React.Node => {
   const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (

@@ -10,7 +10,7 @@ import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
-export const StyledModalSection = styled.section`
+export const StyledModalSection: any = styled.section`
   width: 100%;
   padding: ${({ theme }) => `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
   background-color: ${({ theme, suppressed }) =>
@@ -74,7 +74,7 @@ StyledModalSection.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalSection = ({ children, suppressed, dataTest }: Props) => {
+const ModalSection = ({ children, suppressed, dataTest }: Props): React.Node => {
   const {
     removeHasModalSection,
     setHasModalSection,

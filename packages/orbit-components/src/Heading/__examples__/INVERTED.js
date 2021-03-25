@@ -4,7 +4,7 @@ import * as React from "react";
 import Heading from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Element<"div"> => (
     <div
       style={{
         backgroundColor: "#252A31",

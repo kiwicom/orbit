@@ -114,7 +114,7 @@ StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-const Textarea = React.forwardRef<Props, HTMLElement>(
+const Textarea: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
   (
     {
       size = SIZE_OPTIONS.NORMAL,

@@ -5,7 +5,7 @@ import Coupon from "../index";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Text>
       Use
       <Coupon>Baggagefree</Coupon>

@@ -10,7 +10,7 @@ export default {
   title: "Separator",
 };
 
-export const Default = () => <Separator />;
+export const Default = (): React.Node => <Separator />;
 
 Default.story = {
   parameters: {
@@ -19,7 +19,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const spaceAfter = select(
     "spaceAfter",
     [null, ...Object.values(SPACINGS_AFTER)],

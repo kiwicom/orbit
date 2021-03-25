@@ -11,7 +11,7 @@ export default {
   title: "FeatureIcon",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.TICKETFLEXI);
   const dataTest = text("dataTest", "test");
   return <FeatureIcon name={name} dataTest={dataTest} />;

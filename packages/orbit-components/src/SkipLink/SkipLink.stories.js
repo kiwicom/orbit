@@ -43,7 +43,7 @@ export default {
   title: "SkipLink",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Element<"div"> => {
   const links = array("links", [
     {
       href: "#guarantee",
@@ -78,7 +78,7 @@ Playground.story = {
   },
 };
 
-export const WithinModal = () => (
+export const WithinModal = (): React.Node => (
   <Modal onClose={action("onClose")} fixedFooter>
     <SkipLink
       links={[

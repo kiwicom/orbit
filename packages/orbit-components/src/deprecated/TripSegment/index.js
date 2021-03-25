@@ -21,7 +21,7 @@ import randomID from "../../utils/randomID";
 
 import type { Props, State, ExpandedType } from "./index";
 
-export const StyledTripSegmentMilestone = styled.div`
+export const StyledTripSegmentMilestone: any = styled.div`
   display: flex;
   height: 50px;
   width: ${getSize(ICON_SIZES.MEDIUM)};
@@ -198,7 +198,7 @@ StyledTripSegmentChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledTripSegment = styled.div`
+export const StyledTripSegment: any = styled.div`
   display: flex;
   width: 100%;
 
@@ -258,7 +258,7 @@ const MilestoneIcon = ({ type }) => {
 };
 
 class TripSegment extends React.PureComponent<Props, State> {
-  node = React.createRef<HTMLDivElement>();
+  node: {|current: null | HTMLDivElement|} = React.createRef<HTMLDivElement>();
 
   tripSegmentID: string = randomID("tripSegmentID");
 
@@ -280,13 +280,13 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   }
 
-  setHeight = () => {
+  setHeight: (() => void) = () => {
     this.setState({
       contentHeight: this.node.current?.clientHeight,
     });
   };
 
-  handleToggle = () => {
+  handleToggle: (() => void) = () => {
     const { onClick } = this.props;
     this.setState(prevState => ({
       expanded: !prevState.expanded,
@@ -297,7 +297,7 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  handleOnKeyDown: ((ev: SyntheticKeyboardEvent<HTMLInputElement>) => void) = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
     if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.handleToggle();
     } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
@@ -306,7 +306,7 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const {
       children,
       departure,

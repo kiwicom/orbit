@@ -7,7 +7,7 @@ import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
-export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
+export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel }) => (
   <div className={className} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
@@ -59,7 +59,7 @@ StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const BadgePrimitive = (props: Props) => {
+const BadgePrimitive = (props: Props): React.Node => {
   const { icon, children, ariaLabel, dataTest, background, foregroundColor, borderColor } = props;
 
   return (

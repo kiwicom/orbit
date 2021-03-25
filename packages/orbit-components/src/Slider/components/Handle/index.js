@@ -102,7 +102,7 @@ const Handle = ({
   ariaLabel,
   hasHistogram,
   dataTest,
-}: Props) => {
+}: Props): React.Node => {
   const valueNow = Array.isArray(value) ? value[index] : value;
   const first = isFirst(value, valueNow, index, hasHistogram);
   const isSimple = !hasHistogram && !Array.isArray(value);

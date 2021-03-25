@@ -51,7 +51,7 @@ StyledChildWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCard = styled.div`
+export const StyledCard: any = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -118,12 +118,12 @@ const CardCloseButton = ({ onClick, dataTest }) => {
 };
 
 class Card extends React.Component<Props, State> {
-  state = {
+  state: State = {
     expandedSections: [],
     initialExpandedSections: [],
   };
 
-  getRoundedBorders = (index: number) => {
+  getRoundedBorders: ((index: number) => {|bottom: boolean, top: boolean|}) = (index: number) => {
     const { expandedSections } = this.state;
     const topBorder =
       expandedSections.indexOf(index - 1) !== -1 || expandedSections.indexOf(index) !== -1;
@@ -157,20 +157,20 @@ class Card extends React.Component<Props, State> {
     return children;
   };
 
-  setInitialExpandedSection = (index: number) => {
+  setInitialExpandedSection: ((index: number) => void) = (index: number) => {
     this.setState({
       initialExpandedSections: [...this.state.initialExpandedSections, index],
     });
   };
 
-  isExpanded = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
+  isExpanded: ((index: number) => boolean) = (index: number) => this.state.expandedSections.indexOf(index) !== -1;
 
-  isInitialExpanded = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
+  isInitialExpanded: ((index: number) => boolean) = (index: number) => this.state.initialExpandedSections.indexOf(index) !== -1;
 
-  isExpandableCardSection = (item: any) =>
+  isExpandableCardSection: ((item: any) => any | boolean) = (item: any) =>
     item.type.name === CardSection.name && item.props.expandable;
 
-  handleToggleSection = (index: number) => {
+  handleToggleSection: ((index: number) => void) = (index: number) => {
     this.setState({
       expandedSections:
         this.state.expandedSections.indexOf(index) === -1
@@ -182,7 +182,7 @@ class Card extends React.Component<Props, State> {
     });
   };
 
-  hasAdjustedHeader = () => {
+  hasAdjustedHeader: (() => any | boolean) = () => {
     const children = this.getChildren();
     if (children === undefined) {
       return false;
@@ -200,7 +200,7 @@ class Card extends React.Component<Props, State> {
     return !this.isExpandableCardSection(children[1]);
   };
 
-  renderSection = (section: any, index: number) => {
+  renderSection: ((section: any, index: number) => React.Node) = (section: any, index: number) => {
     const isExpanded = this.isExpanded(index);
     const isInitialExpanded = this.isInitialExpanded(index);
 
@@ -221,7 +221,7 @@ class Card extends React.Component<Props, State> {
     );
   };
 
-  render() {
+  render(): React.Node {
     const { closable, dataTest, spaceAfter, onClose } = this.props;
     const children = this.getChildren();
     return (

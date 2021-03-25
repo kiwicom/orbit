@@ -7,7 +7,7 @@ import useTranslate from "../../hooks/useTranslate";
 
 import type { Props } from "./index";
 
-const ModalCloseButton = ({ onClick, dataTest }: Props) => {
+const ModalCloseButton = ({ onClick, dataTest }: Props): React.Node => {
   const translate = useTranslate();
 
   return (

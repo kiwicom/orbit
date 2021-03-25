@@ -31,7 +31,7 @@ StyledLayout.defaultProps = {
   theme: defaultTheme,
 };
 
-const Layout = ({ children, type, dataTest }: Props) => (
+const Layout = ({ children, type, dataTest }: Props): React.Node => (
   <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
     {React.Children.map(children, (item, key) => {
       return React.cloneElement(item, {

@@ -5,7 +5,7 @@ import InputField from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <InputField label="Email" placeholder="jose@example.com" type="email" inputMode="email" />
       <InputField

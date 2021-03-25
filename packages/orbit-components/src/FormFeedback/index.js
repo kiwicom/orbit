@@ -7,7 +7,7 @@ import TYPE_OPTIONS from "./consts";
 
 import type { Props } from "./index";
 
-export const StyledFormFeedback = styled(({ theme, type, ...props }) => <div {...props} />)`
+export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -43,7 +43,7 @@ StyledFormFeedback.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormFeedback = ({ error, help, dataTest }: Props) => {
+const FormFeedback = ({ error, help, dataTest }: Props): null | React.Node => {
   const isHelp = help && !error;
 
   if (!error && !help) return null;

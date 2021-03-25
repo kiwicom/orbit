@@ -27,7 +27,7 @@ export default {
   title: "Deprecated Card",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description");
   return (
@@ -43,7 +43,7 @@ Default.story = {
   },
 };
 
-export const CardWithDescription = () => {
+export const CardWithDescription = (): React.Node => {
   const title = text("Title", "Card with title & description");
   const description = text("Description", "This is a description of the card.");
   return (
@@ -62,7 +62,7 @@ CardWithDescription.story = {
   },
 };
 
-export const CardWithOnlySection = () => {
+export const CardWithOnlySection = (): React.Node => {
   const content = text("Content", "This is a content of the card.");
   return (
     <Card>
@@ -82,7 +82,7 @@ CardWithOnlySection.story = {
   },
 };
 
-export const CardWithSections = () => {
+export const CardWithSections = (): React.Node => {
   const title = text("Title", "Card with sections");
   const description = text("Description", "This is a description of the card.");
   return (
@@ -118,7 +118,7 @@ CardWithSections.story = {
   },
 };
 
-export const CardWithExpandableSections = () => {
+export const CardWithExpandableSections = (): React.Node => {
   const title = text("Title", "Card with sections");
   const description = text("Description", "This is a description of the card.");
   return (
@@ -168,7 +168,7 @@ CardWithExpandableSections.story = {
   },
 };
 
-export const CardWithDefaultExpanded = () => {
+export const CardWithDefaultExpanded = (): React.Node => {
   const initialExpanded = boolean("initialExpended", true);
   return (
     <Card>
@@ -231,7 +231,7 @@ CardWithDefaultExpanded.story = {
   },
 };
 
-export const CardWithMixedSections = () => {
+export const CardWithMixedSections = (): React.Node => {
   const title = text("Title", "Card with sections");
   const description = text("Description", "This is a description of the card.");
   return (
@@ -275,7 +275,7 @@ CardWithMixedSections.story = {
   },
 };
 
-export const LoadingCard = () => (
+export const LoadingCard = (): React.Node => (
   <Card>
     <Loading type="boxLoader" loading>
       {true && (
@@ -295,7 +295,7 @@ LoadingCard.story = {
   },
 };
 
-export const TripSectorCard = () => (
+export const TripSectorCard = (): React.Node => (
   <Card>
     <CardSection expandable initialExpanded>
       <CardSectionHeader>Expandable dynamic height of Card</CardSectionHeader>
@@ -329,7 +329,7 @@ TripSectorCard.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const title = text("Title", "Customisable card title");
   const description = text("Description", "This is a customisable description of the card.");
   const Icon = getIcon(getIcons("Airplane"));
@@ -362,7 +362,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const title = text("Title", "Card with title");
   const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
   return (
@@ -378,7 +378,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Card closable onClose={action("Close")}>
       <CardHeader

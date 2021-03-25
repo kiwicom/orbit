@@ -8,7 +8,7 @@ import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from "./index";
 
-export const StyledAccordion = styled.div`
+export const StyledAccordion: any = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -27,7 +27,7 @@ const Accordion = ({
   expandedSection,
   loading,
   onExpand,
-}: Props) => (
+}: Props): React.Node => (
   <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
     {children
       ? React.Children.map(children, item => {

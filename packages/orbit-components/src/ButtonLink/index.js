@@ -11,7 +11,7 @@ import getButtonLinkCommonProps from "./helpers/getButtonLinkCommonProps";
 
 import type { Props } from "./index";
 
-const ButtonLink = React.forwardRef<Props, HTMLButtonElement>(
+const ButtonLink: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>(
   ({ type = TYPES.PRIMARY, compact = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };

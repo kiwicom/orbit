@@ -13,7 +13,7 @@ export default {
   title: "SocialButton",
 };
 
-export const Apple = () => {
+export const Apple = (): React.Node => {
   const children = text("Children", "Sign in with Apple");
   return (
     <SocialButton type={TYPE_OPTIONS.APPLE} onClick={action("clicked")} fullWidth>
@@ -22,7 +22,7 @@ export const Apple = () => {
   );
 };
 
-export const Facebook = () => {
+export const Facebook = (): React.Node => {
   const children = text("Children", "Sign in with Facebook");
   return (
     <SocialButton type={TYPE_OPTIONS.FACEBOOK} onClick={action("clicked")} fullWidth>
@@ -31,7 +31,7 @@ export const Facebook = () => {
   );
 };
 
-export const Google = () => {
+export const Google = (): React.Node => {
   const children = text("Children", "Sign in with Google");
   return (
     <SocialButton type={TYPE_OPTIONS.GOOGLE} onClick={action("clicked")}>
@@ -40,7 +40,7 @@ export const Google = () => {
   );
 };
 
-export const Twitter = () => {
+export const Twitter = (): React.Node => {
   const children = text("Children", "Sign in with Twitter");
   return (
     <SocialButton type={TYPE_OPTIONS.TWITTER} onClick={action("clicked")}>
@@ -49,7 +49,7 @@ export const Twitter = () => {
   );
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <SocialButton type={TYPE_OPTIONS.APPLE} iconRight={<Icons.Airplane />}>
       Button

@@ -9,7 +9,7 @@ type Props = {|
 |};
 
 class RenderInRtl extends React.PureComponent<Props> {
-  html = document.querySelector("html");
+  html: null | HTMLHtmlElement = document.querySelector("html");
 
   componentDidMount() {
     if (this.html) {
@@ -23,7 +23,7 @@ class RenderInRtl extends React.PureComponent<Props> {
     }
   }
 
-  render() {
+  render(): React.Node {
     return (
       <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>
         {this.props.children}

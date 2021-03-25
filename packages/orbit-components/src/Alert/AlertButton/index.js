@@ -12,7 +12,7 @@ import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 
 import type { Props } from "./index";
 
-const AlertButton = React.forwardRef<Props, HTMLButtonElement>(
+const AlertButton: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>(
   ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };

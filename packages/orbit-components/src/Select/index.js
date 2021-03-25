@@ -173,7 +173,7 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer = styled(({ className, children }) => (
+export const SelectContainer: any = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   position: relative;
@@ -256,7 +256,7 @@ StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-const Select = React.forwardRef<Props, HTMLElement>((props, ref) => {
+const Select: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,

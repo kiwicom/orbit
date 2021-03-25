@@ -6,7 +6,7 @@ import Modal from "../index";
 import ModalSection from "../ModalSection";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>

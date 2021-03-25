@@ -29,7 +29,7 @@ StyledTripDate.defaultProps = {
   theme: defaultTheme,
 };
 
-const TripDate = ({ children, dataTest, duration }: Props) => (
+const TripDate = ({ children, dataTest, duration }: Props): React.Node => (
   <StyledTripDate data-test={dataTest}>
     <Stack direction="row" spacing="XSmall" shrink>
       <Calendar size="small" />

@@ -56,7 +56,7 @@ const StepperStateless = ({
   titleDecrement,
   disabledIncrement,
   disabledDecrement,
-}: StateLessProps) => {
+}: StateLessProps): React.Node => {
   return (
     <StyledStepper data-test={dataTest}>
       <Button

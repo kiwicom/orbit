@@ -11,7 +11,7 @@ import type { Props, State } from "./index";
 
 const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible || !expandable;
 
-export const StyledCardSectionContent = styled.div`
+export const StyledCardSectionContent: any = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
@@ -114,7 +114,7 @@ class CardSectionContent extends React.Component<Props, State> {
   }
 }
 
-const DecoratedComponent = withConsumer(CardSectionContent);
+const DecoratedComponent: ((Props) => React.Node) = withConsumer(CardSectionContent);
 DecoratedComponent.displayName = "CardSectionContent";
 
 export default DecoratedComponent;

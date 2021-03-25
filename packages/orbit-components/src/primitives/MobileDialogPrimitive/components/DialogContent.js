@@ -96,7 +96,7 @@ StyledDialogOverlay.defaultProps = {
   theme: defaultTheme,
 };
 
-const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) => {
+const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props): React.Node => {
   const overlay = React.useRef(null);
   const dialog = React.useRef(null);
   const handleClickOutside = React.useCallback(

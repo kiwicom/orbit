@@ -105,7 +105,7 @@ const CardWrapper = ({
   noPadding,
   expandable,
   initialExpanded,
-}: Props) => (
+}: Props): React.Node => (
   <StyledCardWrapper
     bottomBorder={bottomBorder}
     expanded={expanded || initialExpanded}

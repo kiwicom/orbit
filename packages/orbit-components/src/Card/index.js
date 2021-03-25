@@ -12,7 +12,7 @@ import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import type { Props } from "./index";
 
-export const StyledCard = styled.div`
+export const StyledCard: any = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -37,7 +37,7 @@ const Card = ({
   header,
   spaceAfter,
   dataA11ySection,
-}: Props) => {
+}: Props): React.Node => {
   const [expandedSections, setExpandedSections] = React.useState([]);
 
   // handles array of expanded sections

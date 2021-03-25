@@ -20,7 +20,7 @@ export default {
   title: "Desktop",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return (
     <Desktop>
       <Component>Desktop</Component>

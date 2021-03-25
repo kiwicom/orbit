@@ -12,7 +12,7 @@ const renderStatus = (type, theme) => {
   return theme.orbit.paletteCloudNormalHover;
 };
 
-const StyledProgressLine = styled.span`
+const StyledProgressLine: any = styled.span`
   ${({ desktop, theme, status }) => css`
     ${!desktop && `position: absolute`};
     ${!desktop && `top: 18px`};

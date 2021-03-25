@@ -102,7 +102,7 @@ const Table = ({
   compact = false,
   dataTest,
   type = TYPE_OPTIONS.PRIMARY,
-}: Props) => {
+}: Props): React.Node => {
   const [shadows, setShadows] = React.useState(false);
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);

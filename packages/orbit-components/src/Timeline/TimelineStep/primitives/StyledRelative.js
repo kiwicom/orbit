@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
-const StyledRelative = styled.div`
+const StyledRelative: any = styled.div`
   position: relative;
   ${({ inner, theme }) =>
     inner &&

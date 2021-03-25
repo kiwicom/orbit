@@ -179,7 +179,7 @@ Label.defaultProps = {
   theme: defaultTheme,
 };
 
-const Radio = React.forwardRef<Props, HTMLElement>((props, ref) => {
+const Radio: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>((props, ref) => {
   const {
     label,
     value,

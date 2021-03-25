@@ -10,7 +10,7 @@ import media from "../../../utils/mediaQuery";
 
 import type { Props } from "./index";
 
-export const StyledCardHeader = styled.div`
+export const StyledCardHeader: any = styled.div`
   position: relative;
   width: 100%;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
@@ -55,7 +55,7 @@ StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection }: Props) => (
+const CardHeader = ({ icon, title, subTitle, actions, dataTest, dataA11ySection }: Props): React.Node => (
   <StyledCardHeader data-test={dataTest}>
     <StyledHeadingWrapper>
       {icon && <StyledIcon>{icon}</StyledIcon>}

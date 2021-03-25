@@ -11,7 +11,7 @@ export default {
   title: "Hide",
 };
 
-export const WithSeparator = () => {
+export const WithSeparator = (): React.Node => {
   const block = boolean("block", true);
   return (
     <Hide on={["largeMobile"]} block={block}>
@@ -27,7 +27,7 @@ WithSeparator.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const largeDesktop = boolean("largeDesktop", false);
   const desktop = boolean("desktop", false);
   const tablet = boolean("tablet", false);

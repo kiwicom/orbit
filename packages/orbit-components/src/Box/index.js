@@ -43,7 +43,7 @@ const Box = ({
   dataTest,
   className,
   ...smallMobile
-}: Props) => {
+}: Props): React.Node => {
   const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
   return (

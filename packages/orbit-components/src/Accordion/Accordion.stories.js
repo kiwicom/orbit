@@ -28,7 +28,7 @@ export default {
   title: "Accordion",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
@@ -70,7 +70,7 @@ export const Default = () => {
   );
 };
 
-export const AccordionWithDisabledSections = () => {
+export const AccordionWithDisabledSections = (): React.Node => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
@@ -129,7 +129,7 @@ AccordionWithDisabledSections.story = {
   name: "Accordion with disabled sections",
 };
 
-export const AccordionWithCustomActions = () => {
+export const AccordionWithCustomActions = (): React.Node => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
@@ -183,7 +183,7 @@ AccordionWithCustomActions.story = {
   name: "Accordion with custom actions",
 };
 
-export const AccordionWithStickyFooter = () => {
+export const AccordionWithStickyFooter = (): React.Node => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
@@ -249,7 +249,7 @@ AccordionWithStickyFooter.story = {
   name: "Accordion with sticky footer",
 };
 
-export const LoadingAccordion = () => {
+export const LoadingAccordion = (): React.Node => {
   return (
     <Accordion loading>
       <AccordionSection>This is a section content</AccordionSection>

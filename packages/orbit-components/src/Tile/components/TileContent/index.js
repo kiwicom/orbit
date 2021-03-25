@@ -50,7 +50,7 @@ StyledTileContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileContent = forwardRef<Props, HTMLInputElement>(
+const TileContent: React$AbstractComponent<Props, HTMLInputElement> = forwardRef<Props, HTMLInputElement>(
   (
     { children, noPadding, withPointer = false, withBorder = false, useMargins = true }: Props,
     ref,

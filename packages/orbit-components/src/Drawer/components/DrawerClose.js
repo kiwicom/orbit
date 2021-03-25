@@ -17,7 +17,7 @@ StyledDrawerClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const DrawerClose = ({ onClick }: Props) => {
+const DrawerClose = ({ onClick }: Props): React.Node => {
   const translate = useTranslate();
   return (
     <StyledDrawerClose>

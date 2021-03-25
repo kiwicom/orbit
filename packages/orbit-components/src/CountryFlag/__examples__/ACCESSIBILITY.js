@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <CountryFlag code="cz" name="Czech Republic" />
       <Stack direction="row" spacing="XXSmall" align="center">

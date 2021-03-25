@@ -7,7 +7,7 @@ import Stack from "../index";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const divStyle = {
       width: "40px",
       height: "40px",

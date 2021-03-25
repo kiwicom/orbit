@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
-const StyledIconWrapper = styled.div`
+const StyledIconWrapper: any = styled.div`
   min-width: ${({ theme, mobile }) => mobile && theme.orbit.spaceLarge};
   min-height: ${({ theme }) => theme.orbit.spaceLarge};
   z-index: 1;

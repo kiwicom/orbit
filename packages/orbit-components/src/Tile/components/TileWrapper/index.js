@@ -8,7 +8,7 @@ import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";
 
-export const StyledTileWrapper = styled.div`
+export const StyledTileWrapper: any = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -48,7 +48,7 @@ const TileWrapper = ({
   ariaControls,
   id,
   htmlTitle,
-}: Props) => (
+}: Props): React.Node => (
   <StyledTileWrapper
     target={href && external ? "_blank" : undefined}
     rel={href && external ? "noopener noreferrer" : undefined}

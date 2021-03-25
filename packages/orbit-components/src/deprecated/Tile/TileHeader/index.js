@@ -63,7 +63,7 @@ StyledTileDescription.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledIconRight = styled.div`
+export const StyledIconRight: any = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -106,7 +106,7 @@ const TileHeader = ({
   onClick,
   isExpandable,
   isExpanded,
-}: Props) => (
+}: Props): React.Node => (
   <StyledTileHeader onClick={onClick}>
     <Stack align="center" shrink spacing="none">
       {icon && <StyledTileIcon>{icon}</StyledTileIcon>}

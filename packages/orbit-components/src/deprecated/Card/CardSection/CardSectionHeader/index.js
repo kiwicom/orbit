@@ -21,7 +21,7 @@ StyledCardSectionIconRight.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCardSectionHeader = styled.div`
+export const StyledCardSectionHeader: any = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,7 +76,7 @@ StyledCardSectionHeaderContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const CardSectionHeader = ({ children, actions }: Props) => (
+const CardSectionHeader = ({ children, actions }: Props): React.Node => (
   <CardSectionContext.Consumer>
     {({ expandable, expanded, handleToggleSection, onKeyDownHandler }) => (
       <StyledCardSectionHeader

@@ -29,7 +29,7 @@ export const normalizeSpacing = (el: SpacingToken, theme: Theme): string => {
 type PropObject = { [key: Prop]: Align | Justify };
 
 // TODO: kinda weird, but it's well known problem in flow with Object.entries
-export const normalize = (object: PropObject) => ({ theme }: ThemeProps) => {
+export const normalize = (object: PropObject): ((ThemeProps) => null | Array<any> | Array<string>) => ({ theme }: ThemeProps) => {
   if (!object) return null;
 
   return Object.entries(object).reduce((acc, [key, val]: [string, any]) => {

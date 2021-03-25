@@ -43,7 +43,7 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
+const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
   const [links, setLinks] = React.useState([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
   const [innerPages, setPages] = React.useState([]);

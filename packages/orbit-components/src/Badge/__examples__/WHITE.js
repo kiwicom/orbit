@@ -6,7 +6,7 @@ import PictureCard from "../../PictureCard";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <PictureCard
       image={{
         code: "moscow_ru",

@@ -18,7 +18,7 @@ const MobileDialog = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props) => {
+}: Props): void | React.Node | React.Node => {
   const [
     render,
     setRender,

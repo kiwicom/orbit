@@ -50,7 +50,7 @@ StyledCardSectionHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCardSection = styled.div`
+export const StyledCardSection: any = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   box-sizing: border-box;
@@ -76,7 +76,7 @@ class CardSection extends React.Component<any, Props> {
     }
   }
 
-  injectCallbackAndToggleSection = () => {
+  injectCallbackAndToggleSection: (() => void) = () => {
     const { handleToggleSection, onClose, onExpand, expanded } = this.props;
     handleToggleSection(); // First do toggle
 
@@ -90,7 +90,7 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleKeyDown: ((ev: SyntheticKeyboardEvent<HTMLDivElement>) => void) = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 13 || ev.keyCode === 32) {
       ev.preventDefault();
 
@@ -98,7 +98,7 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const { children, dataTest, expandable, expanded } = this.props;
     return (
       <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>

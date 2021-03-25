@@ -43,7 +43,7 @@ StyledTileGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileGroup = ({ children, dataTest }: Props) => {
+const TileGroup = ({ children, dataTest }: Props): React.Node => {
   return <StyledTileGroup data-test={dataTest}>{children}</StyledTileGroup>;
 };
 

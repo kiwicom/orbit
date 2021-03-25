@@ -22,7 +22,7 @@ const iconContainerColor = (color: ?string, important = true) => css`
   }
 `;
 
-export const StyledButtonPrimitive = styled(
+export const StyledButtonPrimitive: any = styled(
   React.forwardRef(
     (
       {
@@ -199,7 +199,7 @@ StyledButtonPrimitive.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitive = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
+const ButtonPrimitive: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
   const {
     loading,
     disabled,

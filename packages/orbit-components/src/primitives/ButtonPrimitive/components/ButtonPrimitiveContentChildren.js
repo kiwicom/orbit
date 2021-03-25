@@ -16,7 +16,7 @@ StyledButtonPrimitiveContentChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContentChildren = ({ children, hasIcon, contentWidth }: Props) => (
+const ButtonPrimitiveContentChildren = ({ children, hasIcon, contentWidth }: Props): React.Node => (
   <StyledButtonPrimitiveContentChildren hasIcon={hasIcon} contentWidth={contentWidth}>
     {children}
   </StyledButtonPrimitiveContentChildren>

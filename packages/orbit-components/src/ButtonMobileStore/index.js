@@ -41,7 +41,7 @@ const ButtonMobileStore = ({
   dataTest,
   alt = "",
   stopPropagation = false,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();

@@ -82,7 +82,7 @@ const IconRight = ({ external, expandable, className }) => {
   return <ChevronRight className={className} reverseOnRtl />;
 };
 
-export const StyledIconRight = styled(IconRight)`
+export const StyledIconRight: any = styled(IconRight)`
   color: ${({ theme }) => theme.orbit.colorIconSecondary};
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
@@ -113,7 +113,7 @@ const TileHeader = ({
   tabIndex,
   onKeyDown,
   noHeaderIcon,
-}: Props) => (
+}: Props): React.Node => (
   <StyledTileHeader
     onClick={onClick}
     onKeyDown={onKeyDown}

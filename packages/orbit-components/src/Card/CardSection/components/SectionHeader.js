@@ -79,7 +79,7 @@ const CardSectionHeader = ({
   handleKeyDown,
   header,
   dataA11ySection,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledCardSectionHeader
       expandable={expandable}

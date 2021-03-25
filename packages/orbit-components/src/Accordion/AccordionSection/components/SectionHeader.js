@@ -51,7 +51,7 @@ const AccordionSectionHeader = ({
   onExpand,
   expandable,
   dataTest,
-}: Props) => (
+}: Props): React.Node => (
   <Wrapper expanded={expanded} data-test={dataTest && `${dataTest}Header`}>
     <HeaderContent>{children}</HeaderContent>
     {!expanded && (

@@ -24,7 +24,7 @@ const StyledTruncateContent = styled.div`
   }
 `;
 
-const Truncate = ({ children, maxWidth = "100%", dataTest }: Props) => (
+const Truncate = ({ children, maxWidth = "100%", dataTest }: Props): React.Node => (
   <StyledTruncate maxWidth={maxWidth} data-test={dataTest}>
     <StyledTruncateContent>{children}</StyledTruncateContent>
   </StyledTruncate>

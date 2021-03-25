@@ -48,7 +48,7 @@ StyledTripSector.defaultProps = {
   theme: defaultTheme,
 };
 
-const TripSector = ({ children, dataTest }: Props) => (
+const TripSector = ({ children, dataTest }: Props): React.Node => (
   <StyledTripSector data-test={dataTest}>{children}</StyledTripSector>
 );
 

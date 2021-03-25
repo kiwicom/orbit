@@ -17,7 +17,7 @@ StyledTripLayover.defaultProps = {
   theme: defaultTheme,
 };
 
-const TripLayover = ({ children, dataTest }: Props) => (
+const TripLayover = ({ children, dataTest }: Props): React.Node => (
   <StyledTripLayover data-test={dataTest}>{children}</StyledTripLayover>
 );
 

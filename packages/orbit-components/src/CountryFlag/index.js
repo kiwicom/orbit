@@ -37,7 +37,7 @@ StyledCountryFlag.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledImage = styled.img.attrs(({ theme, size, code }) => {
+export const StyledImage: any = styled.img.attrs(({ theme, size, code }) => {
   const width = parseInt(getSizeToken(TOKENS.WIDTH)({ theme, size }), 10);
   return {
     src: `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`,
@@ -83,7 +83,7 @@ function getCountryProps(code: ?string, name: ?string): {| code: string, name: ?
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props) => {
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props): React.Node => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
     <StyledCountryFlag size={size}>

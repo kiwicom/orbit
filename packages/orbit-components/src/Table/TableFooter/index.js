@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 
 import type { Props } from ".";
 
-export const StyledTableFooter = styled(({ children, className, dataTest }) => (
+export const StyledTableFooter: any = styled(({ children, className, dataTest }) => (
   <tfoot className={className} data-test={dataTest}>
     {children}
   </tfoot>
@@ -21,7 +21,7 @@ StyledTableFooter.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableFooter = ({ children, dataTest }: Props) => (
+const TableFooter = ({ children, dataTest }: Props): React.Node => (
   <StyledTableFooter dataTest={dataTest}>{children}</StyledTableFooter>
 );
 

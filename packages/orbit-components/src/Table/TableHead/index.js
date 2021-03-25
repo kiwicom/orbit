@@ -23,7 +23,7 @@ const StyledTableHead = styled(({ children, className, dataTest }) => (
 StyledTableHead.defaultProps = {
   theme: defaultTheme,
 };
-const TableHead = ({ children, dataTest }: Props) => (
+const TableHead = ({ children, dataTest }: Props): React.Node => (
   <StyledTableHead dataTest={dataTest}>{children}</StyledTableHead>
 );
 

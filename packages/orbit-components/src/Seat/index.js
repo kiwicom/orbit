@@ -102,7 +102,7 @@ const Seat = ({
   label,
   title = "Seat",
   description = "Presents options for seating",
-}: Props) => {
+}: Props): React.Node => {
   const titleId = React.useMemo(() => randomID("title"), []);
   const descrId = React.useMemo(() => randomID("descr"), []);
   const clickable = type !== TYPES.UNAVAILABLE;

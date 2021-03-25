@@ -113,7 +113,7 @@ const Dialog = ({
   secondaryAction,
   onClose,
   illustration,
-}: Props) => {
+}: Props): React.Node => {
   const ref = React.useRef(null);
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [

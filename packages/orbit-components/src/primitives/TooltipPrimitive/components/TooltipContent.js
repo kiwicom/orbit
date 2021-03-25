@@ -112,7 +112,7 @@ const TooltipContent = ({
   preferredAlign,
   containerRef,
   parent,
-}: Props) => {
+}: Props): React.Node => {
   const theme = useTheme();
   const tooltip = React.useRef(null);
   const content = React.useRef(null);

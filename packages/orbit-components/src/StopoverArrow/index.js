@@ -46,7 +46,7 @@ const Stops = ({ stops }: Props) => {
   );
 };
 
-const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props) => {
+const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
   const titleId = React.useMemo(() => randomID("title"), []);
   const descrId = React.useMemo(() => randomID("descr"), []);
 

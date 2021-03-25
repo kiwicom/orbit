@@ -19,7 +19,7 @@ StyledNotificationBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-const NotificationBadge = (props: Props) => {
+const NotificationBadge = (props: Props): React.Node => {
   const { type, children, icon, ariaLabel, dataTest } = props;
 
   return (

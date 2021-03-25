@@ -20,7 +20,7 @@ WrapperStyled.defaultProps = {
   theme: themeDefault,
 };
 
-const Timeline = ({ children, spaceAfter, dataTest }: Props) => {
+const Timeline = ({ children, spaceAfter, dataTest }: Props): null | React.Node => {
   const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
 

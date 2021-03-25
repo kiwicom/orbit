@@ -5,7 +5,7 @@ import SocialButton from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <SocialButton size="small">Sign in with Apple </SocialButton>
       <SocialButton>Sign in with Apple </SocialButton>

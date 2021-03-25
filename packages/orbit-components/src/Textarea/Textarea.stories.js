@@ -14,7 +14,7 @@ export default {
   title: "Textarea",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -30,7 +30,7 @@ Default.story = {
   },
 };
 
-export const SmallSize = () => {
+export const SmallSize = (): React.Node => {
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
 
@@ -47,7 +47,7 @@ SmallSize.story = {
   },
 };
 
-export const WithLabel = () => {
+export const WithLabel = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -65,7 +65,7 @@ WithLabel.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const value = text("Value", "Something");
   const placeholder = text("Placeholder", "Placeholder");
   const help = text("Help", "Everything is fine.");
@@ -83,7 +83,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const value = text("Value", "Something");
   const placeholder = text("Placeholder", "Placeholder");
   const error = text("Error", "Something went wrong.");
@@ -101,7 +101,7 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const label = text("Label", "Label");
   const value = text("Value", "");
@@ -146,7 +146,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Textarea placeholder="My placeholder" value="Content of the Textarea" />
   </RenderInRtl>

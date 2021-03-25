@@ -17,7 +17,7 @@ export default {
   title: "InputGroup",
 };
 
-export const DateOfBirth = () => {
+export const DateOfBirth = (): React.Node => {
   const label = text("Label", "Date of birth");
   const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
   const error = text("Error", undefined);
@@ -64,7 +64,7 @@ DateOfBirth.story = {
   },
 };
 
-export const PhoneNumber = () => {
+export const PhoneNumber = (): React.Node => {
   const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
   const error = text("Error", "error");
   const help = text("Help", undefined);
@@ -111,7 +111,7 @@ PhoneNumber.story = {
   },
 };
 
-export const OnChangeBehaviour = () => {
+export const OnChangeBehaviour = (): React.Element<"div"> => {
   const inputValue = text("Input Value", undefined);
 
   return (
@@ -147,7 +147,7 @@ OnChangeBehaviour.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const label = text("Label", "Label");
   const help = text("Help", "Help message");
   const inputValue = text("Input Value", undefined);
@@ -169,7 +169,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
   const inputValue = text("Input Value", undefined);
@@ -191,7 +191,7 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const label = text("Label", "Phone number");
   const flex = array("Flex", ["1 0 200px", "1 1 100%", "1 0 150px", "0 1 50%"]);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
@@ -235,7 +235,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
   const selectOptions = [
     { value: "January", label: "January" },

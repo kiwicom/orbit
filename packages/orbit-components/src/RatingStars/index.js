@@ -32,7 +32,7 @@ const RatingStars = ({
   dataTest,
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
-}: Props) => {
+}: Props): React.Node => {
   const translate = useTranslate();
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;

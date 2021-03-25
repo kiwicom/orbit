@@ -43,7 +43,7 @@ StyledButtonGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonGroup = ({ children, dataTest }: Props) => (
+const ButtonGroup = ({ children, dataTest }: Props): React.Node => (
   <StyledButtonGroup data-test={dataTest}>{children}</StyledButtonGroup>
 );
 

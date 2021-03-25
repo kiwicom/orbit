@@ -23,7 +23,7 @@ export default {
   title: "Alert",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const message = "The quick, brown fox jumps over a lazy dog.";
   return <Alert icon title={message} />;
 };
@@ -35,7 +35,7 @@ Default.story = {
   },
 };
 
-export const InfoAlert = () => {
+export const InfoAlert = (): React.Node => {
   const title = text("Title", "Some additional information");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -54,7 +54,7 @@ InfoAlert.story = {
   },
 };
 
-export const SuccessAlert = () => {
+export const SuccessAlert = (): React.Node => {
   const title = text("Title", "You did it!");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -74,7 +74,7 @@ SuccessAlert.story = {
   },
 };
 
-export const WarningAlert = () => {
+export const WarningAlert = (): React.Node => {
   const title = text("Title", "Be careful!");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -93,7 +93,7 @@ WarningAlert.story = {
   },
 };
 
-export const CriticalAlert = () => {
+export const CriticalAlert = (): React.Node => {
   const title = text("Title", "Something has gone horribly wrong");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -112,7 +112,7 @@ CriticalAlert.story = {
   },
 };
 
-export const OnlyTitle = () => {
+export const OnlyTitle = (): React.Node => {
   const title = text("Title", "The quick, brown fox jumps over a lazy dog.");
   return <Alert title={title} closable />;
 };
@@ -126,7 +126,7 @@ OnlyTitle.story = {
   },
 };
 
-export const InlineActions = () => {
+export const InlineActions = (): React.Node => {
   const type = select("Type", Object.values(TYPE_OPTIONS), "info");
   const title = text("Title", "You can change the title by changing the Title knob");
   const button = text("Button", "I am a link");
@@ -156,7 +156,7 @@ InlineActions.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const type = select("Type", Object.values(TYPE_OPTIONS), "info");
   const title = text("Title", "You can change the title by changing the Title knob");
   const message = text("Message", "Also you can change the message by changing the Message knob");
@@ -209,7 +209,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Alert
       type="info"

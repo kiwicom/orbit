@@ -60,12 +60,12 @@ class TileExpandable extends React.PureComponent<Props, State> {
     window.removeEventListener("resize", this.setHeight);
   }
 
-  setHeight = () => {
+  setHeight: (() => void) = () => {
     const contentHeight = this.node.current?.clientHeight;
     this.setState({ contentHeight });
   };
 
-  render() {
+  render(): React.Node {
     const { expanded, children, initialExpanded } = this.props;
     return (
       <StyledTileExpandable

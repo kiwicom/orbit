@@ -12,7 +12,7 @@ export default {
   title: "InputFile",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("Label", "Label");
   return (
     <InputFile
@@ -32,7 +32,7 @@ Default.story = {
   },
 };
 
-export const FilledWithFile = () => {
+export const FilledWithFile = (): React.Node => {
   const label = text("Label", "Label");
   const fileName = text("fileName", "file.png");
 
@@ -57,7 +57,7 @@ FilledWithFile.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const label = text("Label", "Label");
 
   return (
@@ -85,7 +85,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
 
@@ -110,7 +110,7 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const label = text("Label", "Label");
   const buttonLabel = text("buttonLabel", "Please select file");
   const name = text("Name", "fileInput");
@@ -149,7 +149,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <InputFile label="My label" />
   </RenderInRtl>

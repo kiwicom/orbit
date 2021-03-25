@@ -60,7 +60,7 @@ IllustrationJSX.defaultProps = {
   theme: defaultTheme,
 };
 
-const IllustrationPrimitiveList = (props: {| images: Array<string>, nameOfComponent: string |}) => {
+const IllustrationPrimitiveList = (props: {| images: Array<string>, nameOfComponent: string |}): React.Node => {
   return (
     <List>
       {props.images.map(illustration => {

@@ -24,7 +24,7 @@ StyledStickyContent.defaultProps = {
 };
 
 class Sticky extends React.Component<Props, State> {
-  state = {
+  state: State = {
     sticky: false,
     height: 0,
     initialWidth: true,
@@ -53,7 +53,7 @@ class Sticky extends React.Component<Props, State> {
     removeScrollHandler(this.handleScroll);
   }
 
-  handleTop = () => {
+  handleTop: (() => void) = () => {
     if (this.sticky.current) {
       const values = this.sticky.current.getBoundingClientRect();
       this.setState({
@@ -62,7 +62,7 @@ class Sticky extends React.Component<Props, State> {
     }
   };
 
-  stickyState = (sticky: boolean, height: number, width: number) => {
+  stickyState: ((sticky: boolean, height: number, width: number) => void) = (sticky: boolean, height: number, width: number) => {
     this.setState({
       sticky,
       height,
@@ -70,7 +70,7 @@ class Sticky extends React.Component<Props, State> {
     });
   };
 
-  handleScroll = () => {
+  handleScroll: (() => void) = () => {
     const element = this.content.current;
     const sticky = this.sticky.current;
     const elementHeight = element.offsetHeight;
@@ -100,7 +100,7 @@ class Sticky extends React.Component<Props, State> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const { children, dataTest } = this.props;
     const { sticky, height, width, initialWidth } = this.state;
     return (

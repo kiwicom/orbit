@@ -242,7 +242,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
   );
 };
 
-const Alert = (props: Props) => {
+const Alert = (props: Props): React.Node => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,

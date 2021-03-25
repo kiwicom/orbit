@@ -25,7 +25,7 @@ export default {
   title: "Drawer",
 };
 
-export const SideNavigation = () => {
+export const SideNavigation = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
@@ -82,7 +82,7 @@ SideNavigation.story = {
   },
 };
 
-export const SmartFaq = () => {
+export const SmartFaq = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -120,7 +120,7 @@ SmartFaq.story = {
   },
 };
 
-export const Suppressed = () => {
+export const Suppressed = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -171,7 +171,7 @@ Suppressed.story = {
   },
 };
 
-export const WithTitle = () => {
+export const WithTitle = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const title = text("Title", "Title");
@@ -223,7 +223,7 @@ WithTitle.story = {
   },
 };
 
-export const SmartFaqSearch = () => {
+export const SmartFaqSearch = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -283,7 +283,7 @@ SmartFaqSearch.story = {
   },
 };
 
-export const SideNavigationInRtl = () => {
+export const SideNavigationInRtl = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
@@ -344,7 +344,7 @@ SideNavigationInRtl.story = {
   },
 };
 
-export const SmartFaqInRtl = () => {
+export const SmartFaqInRtl = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -384,7 +384,7 @@ SmartFaqInRtl.story = {
   },
 };
 
-export const SmartFaqSearchInRtl = () => {
+export const SmartFaqSearchInRtl = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);

@@ -75,7 +75,7 @@ Field.defaultProps = {
   theme: defaultTheme,
 };
 
-export const FakeInput = styled(({ children, className }) => (
+export const FakeInput: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   width: 100%;
@@ -104,7 +104,7 @@ FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const InputContainer = styled(({ children, className }) => (
+export const InputContainer: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
@@ -154,7 +154,7 @@ StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Prefix = styled(({ children, className }) => (
+export const Prefix: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   height: 100%;
@@ -205,7 +205,7 @@ Suffix.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Input = styled(
+export const Input: any = styled(
   React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
     <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
   )),
@@ -291,7 +291,7 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
+const InputField: React$AbstractComponent<Props, HTMLInputElement> = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,

@@ -49,7 +49,7 @@ const resolveUnderline = ({ type, theme, noUnderline }) => {
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
-export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
+export const getLinkStyle = ({ theme, type }: GetLinkStyleProps): any => css`
   // Common styles for TextLink and "a" in Text
 
   &,
@@ -69,7 +69,7 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   }
 `;
 
-export const StyledTextLink = styled(
+export const StyledTextLink: any = styled(
   ({ theme, type, standAlone, noUnderline, asComponent: Component, ...props }) => (
     <Component {...props}>{props.children}</Component>
   ),
@@ -115,7 +115,7 @@ const TextLink = ({
   title,
   standAlone,
   noUnderline,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();

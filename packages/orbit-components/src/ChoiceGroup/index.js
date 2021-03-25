@@ -47,7 +47,7 @@ const ChoiceGroup = ({
   onOnlySelection,
   onlySelectionText,
   onChange,
-}: Props) => {
+}: Props): React.Node => {
   const groupID = React.useMemo(() => randomID("choiceGroupID"), []);
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {

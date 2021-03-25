@@ -20,7 +20,7 @@ export default {
   title: "List",
 };
 
-export const Default = () => (
+export const Default = (): React.Node => (
   <List>
     <ListItem>
       24,000 locations <TextLink href="#">around</TextLink> the globe
@@ -38,7 +38,7 @@ Default.story = {
   },
 };
 
-export const DifferentTypeAndSize = () => {
+export const DifferentTypeAndSize = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
 
@@ -61,7 +61,7 @@ DifferentTypeAndSize.story = {
   },
 };
 
-export const WithLabels = () => {
+export const WithLabels = (): React.Node => {
   const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const Icon = getIcon(getIcons("Check"));
@@ -91,7 +91,7 @@ WithLabels.story = {
   },
 };
 
-export const WithCarrier = () => {
+export const WithCarrier = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
 
@@ -115,7 +115,7 @@ WithCarrier.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
   const Icon = getIcon(getIcons("Check"));
@@ -140,7 +140,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <List size="small" type="secondary">
       <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>

@@ -56,7 +56,7 @@ const getLineHeightToken = ({ theme, size }) => {
   return lineHeightTokens[size];
 };
 
-export const StyledText = styled(({ element: TextElement, children, className, dataTest, id }) => (
+export const StyledText: any = styled(({ element: TextElement, children, className, dataTest, id }) => (
   <TextElement className={className} data-test={dataTest} id={id}>
     {children}
   </TextElement>
@@ -95,7 +95,7 @@ const Text = ({
   spaceAfter,
   children,
   id,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledText
       id={id}

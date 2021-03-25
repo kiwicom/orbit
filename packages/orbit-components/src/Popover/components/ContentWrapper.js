@@ -172,7 +172,7 @@ const PopoverContentWrapper = ({
   shown,
   fixed,
   actions,
-}: Props) => {
+}: Props): React.Node => {
   const { isInsideModal } = React.useContext(ModalContext);
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);

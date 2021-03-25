@@ -174,7 +174,7 @@ const InputGroup = ({
   onFocus,
   onBlur,
   onChange,
-}: Props) => {
+}: Props): React.Node => {
   const [active, setActive] = React.useState(false);
   const [filled, setFilled] = React.useState(false);
   const inputID = React.useMemo(() => randomID("inputGroupID"), []);

@@ -56,7 +56,7 @@ const GoBackButton = ({ onClick, backHref }) => {
   );
 };
 
-const Breadcrumbs = (props: Props) => {
+const Breadcrumbs = (props: Props): React.Node => {
   const translate = useTranslate();
   const {
     children,

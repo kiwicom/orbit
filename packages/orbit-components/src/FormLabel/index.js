@@ -16,7 +16,7 @@ StyledAsterisk.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormLabel = styled(({ className, children, required, filled, dataTest, id }) => (
+const FormLabel: any = styled(({ className, children, required, filled, dataTest, id }) => (
   <span className={className} data-test={dataTest} id={id}>
     {required && (
       <StyledAsterisk aria-hidden="true" filled={filled}>

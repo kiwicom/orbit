@@ -16,7 +16,7 @@ export default {
   title: "Radio",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("Label", "Label");
   const checked = boolean("Checked", false);
   return <Radio label={label} checked={checked} onChange={action("changed")} />;
@@ -28,7 +28,7 @@ Default.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "value");
   const info = text("Info", "Additional information about this choice");
@@ -43,7 +43,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const label = text("Label", "Label");
   const hasError = boolean("hasError", true);
   const checked = boolean("checked", false);
@@ -59,7 +59,7 @@ WithError.story = {
   },
 };
 
-export const WithTextLinkInLabel = () => {
+export const WithTextLinkInLabel = (): React.Node => {
   const checked = boolean("checked", true);
   return (
     <Radio
@@ -84,7 +84,7 @@ WithTextLinkInLabel.story = {
   },
 };
 
-export const WithTooltip = () => {
+export const WithTooltip = (): React.Node => {
   return (
     <Radio
       label="Direct"
@@ -106,7 +106,7 @@ WithTooltip.story = {
   },
 };
 
-export const WithStackAndIcon = () => {
+export const WithStackAndIcon = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "value");
   const info = text("Info", "Additional information to this choice");
@@ -135,7 +135,7 @@ WithStackAndIcon.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "value");
   const checked = boolean("Checked", true);
@@ -166,7 +166,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Radio
       label={

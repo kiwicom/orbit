@@ -23,7 +23,7 @@ export default {
   title: "Deprecated Tile",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("Title", "Default");
   return <Tile onClick={action("clicked")} title={title} />;
 };
@@ -34,7 +34,7 @@ Default.story = {
   },
 };
 
-export const Expandable = () => {
+export const Expandable = (): React.Node => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -59,7 +59,7 @@ Expandable.story = {
   },
 };
 
-export const TripSectorTile = () => (
+export const TripSectorTile = (): React.Node => (
   <Tile
     title="Dynamic Tile height"
     description="This is a example of dynamic Tile height with TripSector"
@@ -91,7 +91,7 @@ TripSectorTile.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = () => {
+export const ExpandableWithCustomDescription = (): React.Node => {
   const showMore = boolean("showMore", false);
   const Icon = getIcon(getIcons("GenderMan"));
 
@@ -138,7 +138,7 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const href = text("Href", "https://www.kiwi.com/");
   const title = text("Title", "Tile with title");
   const external = boolean("External", false);
@@ -168,7 +168,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Tile
       onClick={action("clicked")}

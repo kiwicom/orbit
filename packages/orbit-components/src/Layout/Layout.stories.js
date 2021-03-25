@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { storiesOf } from "@storybook/react";
 
 import Card, { CardSection } from "../Card";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -13,16 +12,39 @@ const CustomDiv = styled.div`
   background: rgba(0, 169, 145, 0.2);
 `;
 
-storiesOf("Layout", module)
-  .add("Search", () => (
-    <Layout type="Search">
-      <LayoutColumn>
-        <Card>
-          <CardSection>
-            <CustomDiv />
-          </CardSection>
-        </Card>
-      </LayoutColumn>
+export default {
+  title: "Layout",
+};
+
+export const Search = () => (
+  <Layout type="Search">
+    <LayoutColumn>
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+    <LayoutColumn>
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+    <LayoutColumn>
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+  </Layout>
+);
+
+export const Booking = () => {
+  return (
+    <Layout type="Booking">
       <LayoutColumn>
         <Card>
           <CardSection>
@@ -38,56 +60,12 @@ storiesOf("Layout", module)
         </Card>
       </LayoutColumn>
     </Layout>
-  ))
-  .add("Booking", () => {
-    return (
-      <Layout type="Booking">
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv />
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv />
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-      </Layout>
-    );
-  })
-  .add("MMB", () => {
-    return (
-      <Layout type="MMB">
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv />
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-      </Layout>
-    );
-  })
-  .add("Customized", () => (
-    <Layout type="Search">
-      <LayoutColumn dataTest="test" as="span">
-        <Card>
-          <CardSection>
-            <CustomDiv />
-          </CardSection>
-        </Card>
-      </LayoutColumn>
-      <LayoutColumn hideOn={["largeMobile"]} as="span">
-        <Card>
-          <CardSection>
-            <CustomDiv />
-          </CardSection>
-        </Card>
-      </LayoutColumn>
+  );
+};
+
+export const Mmb = () => {
+  return (
+    <Layout type="MMB">
       <LayoutColumn>
         <Card>
           <CardSection>
@@ -96,31 +74,67 @@ storiesOf("Layout", module)
         </Card>
       </LayoutColumn>
     </Layout>
-  ))
-  .add("RTL", () => (
-    <RenderInRtl>
-      <Layout type="Search">
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv>First</CustomDiv>
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv>Second</CustomDiv>
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-        <LayoutColumn>
-          <Card>
-            <CardSection>
-              <CustomDiv>Third</CustomDiv>
-            </CardSection>
-          </Card>
-        </LayoutColumn>
-      </Layout>
-    </RenderInRtl>
-  ));
+  );
+};
+
+Mmb.story = {
+  name: "MMB",
+};
+
+export const Customized = () => (
+  <Layout type="Search">
+    <LayoutColumn dataTest="test" as="span">
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+    <LayoutColumn hideOn={["largeMobile"]} as="span">
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+    <LayoutColumn>
+      <Card>
+        <CardSection>
+          <CustomDiv />
+        </CardSection>
+      </Card>
+    </LayoutColumn>
+  </Layout>
+);
+
+export const Rtl = () => (
+  <RenderInRtl>
+    <Layout type="Search">
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <CustomDiv>First</CustomDiv>
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <CustomDiv>Second</CustomDiv>
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+      <LayoutColumn>
+        <Card>
+          <CardSection>
+            <CustomDiv>Third</CustomDiv>
+          </CardSection>
+        </Card>
+      </LayoutColumn>
+    </Layout>
+  </RenderInRtl>
+);
+
+Rtl.story = {
+  name: "RTL",
+};

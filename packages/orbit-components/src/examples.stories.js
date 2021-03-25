@@ -1,5 +1,4 @@
 // @flow
-
 import { storiesOf } from "@storybook/react";
 
 import * as examples from "./examples";

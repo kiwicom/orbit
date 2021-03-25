@@ -103,7 +103,7 @@ const InputSwitch = ({
   reverseLabel,
 }: Props) => {
   return (
-    <Stack direction={reverseLabel ? "row-reverse" : "row"} align="center" spacing="medium">
+    <Stack inline direction={reverseLabel ? "row-reverse" : "row"} align="center" spacing="medium">
       <StyledLabel>
         <StyledInput
           type="checkbox"

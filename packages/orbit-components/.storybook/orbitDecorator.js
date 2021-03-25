@@ -1,7 +1,7 @@
 // @noflow
 import * as React from "react";
 import jsxToString from "react-element-to-jsx-string";
-import { Code } from "@storybook/addon-info/dist/components/markdown/";
+import { Code } from "@storybook/addon-info/dist/components/markdown";
 
 import Heading from "../src/Heading";
 import Text from "../src/Text";

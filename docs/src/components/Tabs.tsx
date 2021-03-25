@@ -17,6 +17,7 @@ interface SizeCheck {
 const StyledTabLink = styled(Link)`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
 `;
+
 const StyledTab = styled.div`
   ${({ theme }) => css`
     border-top-left-radius: ${theme.orbit.borderRadiusLarge};
@@ -73,12 +74,12 @@ const Tab = ({ isActive, tab }: TabProps) => {
   );
 };
 
-interface TabsProps {
+interface Props {
   tabs: TabObject[];
   activeTab: string;
 }
 
-const Tabs = ({ activeTab, tabs }: TabsProps) => (
+const Tabs = ({ activeTab, tabs }: Props) => (
   <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
     {tabs.map(tab => (
       <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />

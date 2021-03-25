@@ -12,28 +12,29 @@ import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 
 import type { Props } from "./index";
 
-const AlertButton: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>(
-  ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
-    const theme = useTheme();
-    const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
-    const buttonStyles = getAlertButtonStyles({ type, theme, disabled });
-    const icons = getIconContainer({
-      ...propsWithTheme,
-      iconForeground: getAlertButtonIconForeground({ type, theme }),
-    });
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        disabled={disabled}
-        {...props}
-        {...buttonStyles}
-        {...commonProps}
-        {...icons}
-      />
-    );
-  },
-);
+const AlertButton: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
+  Props,
+  HTMLButtonElement,
+>(({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
+  const theme = useTheme();
+  const propsWithTheme = { theme, ...props };
+  const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
+  const buttonStyles = getAlertButtonStyles({ type, theme, disabled });
+  const icons = getIconContainer({
+    ...propsWithTheme,
+    iconForeground: getAlertButtonIconForeground({ type, theme }),
+  });
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      disabled={disabled}
+      {...props}
+      {...buttonStyles}
+      {...commonProps}
+      {...icons}
+    />
+  );
+});
 
 AlertButton.displayName = "AlertButton";
 

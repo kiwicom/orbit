@@ -1,5 +1,6 @@
 // @flow
-import type {Tokens} from "../../../orbit-design-tokens/lib/index";import * as React from "react";
+import type { Tokens } from "../../../orbit-design-tokens/lib/index";
+import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
 
@@ -24,6 +25,7 @@ const StyledSlider = styled.div`
   position: relative;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSlider.defaultProps = {
   theme: defaultTheme,
 };
@@ -58,6 +60,7 @@ const StyledSliderContent = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSliderContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -70,9 +73,9 @@ const StyledSliderInput = styled.div`
 `;
 
 export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
-  bar: {|current: ?HTMLElement|} = React.createRef<?HTMLElement>();
+  bar: {| current: ?HTMLElement |} = React.createRef<?HTMLElement>();
 
-  static defaultProps: {|theme: {|+orbit: Tokens, +rtl?: boolean, +transitions?: boolean|}|} = {
+  static defaultProps: {| theme: {| +orbit: Tokens, +rtl?: boolean, +transitions?: boolean |} |} = {
     theme: defaultTheme,
   };
 
@@ -94,12 +97,12 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   }
 
-  pauseEvent: ((
-  event: 
-    | SyntheticKeyboardEvent<HTMLDivElement>
-    | SyntheticMouseEvent<HTMLDivElement>
-    | SyntheticTouchEvent<HTMLDivElement>
-) => void) = (
+  pauseEvent: (
+    event:
+      | SyntheticKeyboardEvent<HTMLDivElement>
+      | SyntheticMouseEvent<HTMLDivElement>
+      | SyntheticTouchEvent<HTMLDivElement>,
+  ) => void = (
     event:
       | SyntheticKeyboardEvent<HTMLDivElement>
       | SyntheticMouseEvent<HTMLDivElement>
@@ -116,25 +119,34 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  stopPropagation: ((event: SyntheticTouchEvent<HTMLDivElement>) => void) = (event: SyntheticTouchEvent<HTMLDivElement>) => {
+  stopPropagation: (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
+    event: SyntheticTouchEvent<HTMLDivElement>,
+  ) => {
     if (typeof event.stopPropagation === "function") event.stopPropagation();
   };
 
-  isNotEqual: ((a: Value, b: Value) => boolean) = (a: Value, b: Value) => {
+  isNotEqual: (a: Value, b: Value) => boolean = (a: Value, b: Value) => {
     if (Array.isArray(a) && Array.isArray(b)) {
       return a.toString() !== b.toString();
     }
     return a !== b;
   };
 
-  calculateValue: ((ratio: number, addition?: boolean, deduction?: boolean) => number) = (ratio: number, addition?: boolean, deduction?: boolean) => {
+  calculateValue: (ratio: number, addition?: boolean, deduction?: boolean) => number = (
+    ratio: number,
+    addition?: boolean,
+    deduction?: boolean,
+  ) => {
     const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
     return Math.round(
       (maxValue - minValue + (addition ? 1 : 0)) * ratio + minValue - (deduction ? 1 : 0),
     );
   };
 
-  calculateValueFromPosition: ((pageX: number, throughClick?: boolean) => null | number) = (pageX: number, throughClick?: boolean) => {
+  calculateValueFromPosition: (pageX: number, throughClick?: boolean) => null | number = (
+    pageX: number,
+    throughClick?: boolean,
+  ) => {
     const barRect = boundingClientRect(this.bar);
     if (barRect) {
       const {
@@ -178,14 +190,14 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return null;
   };
 
-  sortArray: ((arr: Value) => Value) = (arr: Value): Value => {
+  sortArray: (arr: Value) => Value = (arr: Value): Value => {
     if (Array.isArray(arr)) {
       return arr.slice().sort((a, b) => a - b);
     }
     return arr;
   };
 
-  findClosestKey: ((goal: number, value: Value) => null | number) = (goal: number, value: Value) => {
+  findClosestKey: (goal: number, value: Value) => null | number = (goal: number, value: Value) => {
     return Array.isArray(value)
       ? value.reduce((acc, curr, index) => {
           return Array.isArray(value) && Math.abs(curr - goal) < Math.abs(value[acc] - goal)
@@ -195,7 +207,10 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       : null;
   };
 
-  moveValueByStep: ((step: number, forcedValue?: number) => number | Array<number>) = (step: number, forcedValue?: number) => {
+  moveValueByStep: (step: number, forcedValue?: number) => number | Array<number> = (
+    step: number,
+    forcedValue?: number,
+  ) => {
     const { value, handleIndex } = this.state;
     if (Array.isArray(value)) {
       return this.replaceValue(
@@ -206,7 +221,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return forcedValue || this.alignValue(value + step);
   };
 
-  handleKeyDown: ((event: SyntheticKeyboardEvent<HTMLDivElement>) => void) = (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleKeyDown: (event: SyntheticKeyboardEvent<HTMLDivElement>) => void = (
+    event: SyntheticKeyboardEvent<HTMLDivElement>,
+  ) => {
     if (event.ctrlKey || event.shiftKey || event.altKey) return;
     const {
       step = DEFAULT_VALUES.STEP,
@@ -242,7 +259,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  handleBlur: (() => void) = () => {
+  handleBlur: () => void = () => {
     this.setState({ focused: false });
     const { value } = this.state;
     window.removeEventListener("keydown", this.handleKeyDown);
@@ -250,7 +267,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
-  handleOnFocus: ((i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => void) = (i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleOnFocus: (i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => void = (
+    i: ?number,
+  ) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (typeof i === "number") this.setState({ handleIndex: i });
     const { value } = this.state;
     this.setState({ focused: true });
@@ -260,7 +279,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
   };
 
-  handleMove: ((newValue: ?number) => null | number | Array<number>) = (newValue: ?number) => {
+  handleMove: (newValue: ?number) => null | number | Array<number> = (newValue: ?number) => {
     const { value, handleIndex } = this.state;
     if (newValue != null) {
       if (Array.isArray(value)) {
@@ -271,7 +290,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return null;
   };
 
-  handleBarMouseDown: ((event: SyntheticMouseEvent<HTMLDivElement>) => void) = (event: SyntheticMouseEvent<HTMLDivElement>) => {
+  handleBarMouseDown: (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
+    event: SyntheticMouseEvent<HTMLDivElement>,
+  ) => {
     const { value } = this.state;
     this.setState({ handleIndex: null });
     const newValue = this.calculateValueFromPosition(event.pageX, true);
@@ -291,11 +312,11 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  injectCallbackAndSetState: ((callback: ?SliderCallback, newValue: ?Value, forced?: ?boolean) => void) = (
+  injectCallbackAndSetState: (
     callback: ?SliderCallback,
     newValue: ?Value,
-    forced: ?boolean = false,
-  ) => {
+    forced?: ?boolean,
+  ) => void = (callback: ?SliderCallback, newValue: ?Value, forced: ?boolean = false) => {
     const { value } = this.state;
     if (newValue != null) {
       if (this.isNotEqual(newValue, value) || forced) {
@@ -307,13 +328,15 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  handleMouseMove: ((event: SyntheticMouseEvent<HTMLDivElement>) => void) = (event: SyntheticMouseEvent<HTMLDivElement>) => {
+  handleMouseMove: (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
+    event: SyntheticMouseEvent<HTMLDivElement>,
+  ) => {
     const newValue = this.calculateValueFromPosition(event.pageX);
     this.pauseEvent(event);
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
-  handleMouseUp: (() => void) = () => {
+  handleMouseUp: () => void = () => {
     const { value } = this.state;
     this.setState({ focused: false });
     window.removeEventListener("mousemove", this.handleMouseMove);
@@ -321,7 +344,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
-  handleMouseDown: ((i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => void) = (i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => {
+  handleMouseDown: (i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
+    i: ?number,
+  ) => (event: SyntheticMouseEvent<HTMLDivElement>) => {
     // just allow left-click
     if (event.button === 0 && event.buttons !== 2) {
       const { value } = this.state;
@@ -334,14 +359,16 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  handleOnTouchMove: ((event: SyntheticTouchEvent<HTMLDivElement>) => void) = (event: SyntheticTouchEvent<HTMLDivElement>) => {
+  handleOnTouchMove: (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
+    event: SyntheticTouchEvent<HTMLDivElement>,
+  ) => {
     if (event.touches.length > 1) return;
     const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
     this.pauseEvent(event);
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
-  handleTouchEnd: (() => void) = () => {
+  handleTouchEnd: () => void = () => {
     const { value } = this.state;
     this.setState({ focused: false });
     window.removeEventListener("touchmove", this.handleOnTouchMove);
@@ -349,7 +376,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
   };
 
-  handleOnTouchStart: ((i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => void) = (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
+  handleOnTouchStart: (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
+    i: ?number,
+  ) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
     if (event.touches.length <= 1) {
       this.setState({ focused: true });
       const { value } = this.state;
@@ -363,7 +392,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  alignValueToStep: ((value: number) => number) = (value: number) => {
+  alignValueToStep: (value: number) => number = (value: number) => {
     const { step = DEFAULT_VALUES.STEP } = this.props;
     if (step === 1) return value;
     const gap = value % step;
@@ -374,7 +403,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return value - gap;
   };
 
-  alignValueToMaxMin: ((value: number) => number) = (value: number) => {
+  alignValueToMaxMin: (value: number) => number = (value: number) => {
     const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
     if (value > maxValue) {
       return maxValue;
@@ -385,15 +414,19 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return value;
   };
 
-  alignValue: ((value: number) => number) = (value: number) => this.alignValueToMaxMin(this.alignValueToStep(value));
+  alignValue: (value: number) => number = (value: number) =>
+    this.alignValueToMaxMin(this.alignValueToStep(value));
 
-  replaceValue: ((newValue: number, index: ?number) => number | Array<number>) = (newValue: number, index: ?number) => {
+  replaceValue: (newValue: number, index: ?number) => number | Array<number> = (
+    newValue: number,
+    index: ?number,
+  ) => {
     const { value } = this.state;
     if (index == null || !Array.isArray(value)) return newValue;
     return value.map<number>((item, key) => (key === index ? newValue : item));
   };
 
-  renderHandle: ((valueNow: number, i: ?number) => React.Node) = (valueNow: number, i: ?number) => {
+  renderHandle: (valueNow: number, i: ?number) => React.Node = (valueNow: number, i: ?number) => {
     const {
       minValue = DEFAULT_VALUES.MIN,
       maxValue = DEFAULT_VALUES.MAX,
@@ -425,14 +458,14 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     );
   };
 
-  renderHandles: (() => React.Node | Array<React.Node>) = () => {
+  renderHandles: () => React.Node | Array<React.Node> = () => {
     const { value } = this.state;
     return Array.isArray(value)
       ? value.map<React.Node>((valueNow, i) => this.renderHandle(valueNow, i))
       : this.renderHandle(value);
   };
 
-  renderSliderTexts: ((biggerSpace: boolean) => null | React.Node) = (biggerSpace: boolean) => {
+  renderSliderTexts: (biggerSpace: boolean) => null | React.Node = (biggerSpace: boolean) => {
     const { label, valueDescription, histogramDescription } = this.props;
     if (!(label || valueDescription || histogramDescription)) return null;
     return (
@@ -458,7 +491,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     );
   };
 
-  renderHeading: ((hasHistogram: boolean) => null | React.Node) = (hasHistogram: boolean) => {
+  renderHeading: (hasHistogram: boolean) => null | React.Node = (hasHistogram: boolean) => {
     if (hasHistogram) {
       return (
         <Hide on={["smallMobile", "mediumMobile", "largeMobile"]} block>

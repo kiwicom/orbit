@@ -20,6 +20,7 @@ const StyledCoupon = styled.mark`
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCoupon.defaultProps = {
   theme: defaultTheme,
 };

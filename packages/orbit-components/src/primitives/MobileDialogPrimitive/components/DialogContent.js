@@ -46,6 +46,7 @@ const StyledDialogWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,6 +70,7 @@ const StyledTooltipContent = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -92,6 +94,7 @@ const StyledDialogOverlay = styled.div`
   `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogOverlay.defaultProps = {
   theme: defaultTheme,
 };

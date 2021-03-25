@@ -35,6 +35,7 @@ export const StyledCardSectionContent: any = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -114,7 +115,8 @@ class CardSectionContent extends React.Component<Props, State> {
   }
 }
 
-const DecoratedComponent: ((Props) => React.Node) = withConsumer(CardSectionContent);
+const DecoratedComponent: Props => React.Node = withConsumer(CardSectionContent);
+// $FlowFixMe
 DecoratedComponent.displayName = "CardSectionContent";
 
 export default DecoratedComponent;

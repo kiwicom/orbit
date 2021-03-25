@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import type { DataAttrs } from "../common/common.js.flow";
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
@@ -30,12 +31,20 @@ const Label = styled.label`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Label.defaultProps = {
   theme: defaultTheme,
 };
 
+type StyledSelectType = Props & {|
+  ...DataAttrs,
+  className: string,
+  children: React.Node,
+  error: boolean,
+|};
+
 const StyledSelect = styled(
-  React.forwardRef(
+  React.forwardRef<StyledSelectType, HTMLSelectElement>(
     (
       {
         className,
@@ -169,6 +178,7 @@ const StyledSelect = styled(
   color: ${({ customValueText }) => customValueText && "transparent !important"};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
@@ -185,6 +195,7 @@ export const SelectContainer: any = styled(({ className, children }) => (
   cursor: pointer;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -202,6 +213,7 @@ const SelectPrefix = styled(({ className, children }) => (
   height: ${getSelectSize};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
@@ -228,6 +240,7 @@ const SelectSuffix = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
@@ -252,96 +265,102 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...pr
   pointer-events: none;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-const Select: React$AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>((props, ref) => {
-  const {
-    size = SIZE_OPTIONS.NORMAL,
-    label,
-    placeholder,
-    value,
-    disabled = false,
-    error,
-    help,
-    name,
-    onChange,
-    onBlur,
-    onFocus,
-    options,
-    tabIndex,
-    id,
-    required,
-    dataTest,
-    prefix,
-    spaceAfter,
-    customValueText,
-    dataAttrs,
-    readOnly,
-  } = props;
-  const filled = !(value == null || value === "");
-  return (
-    <Label spaceAfter={spaceAfter}>
-      {label && (
-        <FormLabel filled={filled} disabled={disabled} required={required}>
-          {label}
-        </FormLabel>
-      )}
-      <SelectContainer disabled={disabled}>
-        {prefix && (
-          <SelectPrefix prefix={prefix} size={size}>
-            {prefix}
-          </SelectPrefix>
+const Select: React.AbstractComponent<
+  Props,
+  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
+> = React.forwardRef<Props, React.AbstractComponent<StyledSelectType, HTMLSelectElement>>(
+  (props, ref) => {
+    const {
+      size = SIZE_OPTIONS.NORMAL,
+      label,
+      placeholder,
+      value,
+      disabled = false,
+      error,
+      help,
+      name,
+      onChange,
+      onBlur,
+      onFocus,
+      options,
+      tabIndex,
+      id,
+      required,
+      dataTest,
+      prefix,
+      spaceAfter,
+      customValueText,
+      dataAttrs,
+      readOnly,
+    } = props;
+    const filled = !(value == null || value === "");
+    return (
+      <Label spaceAfter={spaceAfter}>
+        {label && (
+          <FormLabel filled={filled} disabled={disabled} required={required}>
+            {label}
+          </FormLabel>
         )}
-        {customValueText && (
-          <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
-            {customValueText}
-          </StyledCustomValue>
-        )}
-        <StyledSelect
-          dataTest={dataTest}
-          size={size}
-          disabled={disabled}
-          error={error}
-          value={value == null ? "" : value}
-          prefix={prefix}
-          name={name}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onChange={onChange}
-          filled={filled}
-          customValueText={customValueText}
-          tabIndex={tabIndex}
-          id={id}
-          readOnly={readOnly}
-          required={required}
-          ref={ref}
-          dataAttrs={dataAttrs}
-        >
-          {placeholder && (
-            <option label={placeholder} value="">
-              {placeholder}
-            </option>
+        <SelectContainer disabled={disabled}>
+          {prefix && (
+            <SelectPrefix prefix={prefix} size={size}>
+              {prefix}
+            </SelectPrefix>
           )}
-          {options.map(option => (
-            <option
-              key={`option-${option.key || option.value}`}
-              value={option.value}
-              disabled={option.disabled}
-            >
-              {option.label}
-            </option>
-          ))}
-        </StyledSelect>
-        <SelectSuffix size={size} disabled={disabled}>
-          <ChevronDown />
-        </SelectSuffix>
-      </SelectContainer>
-      <FormFeedback error={error} help={help} />
-    </Label>
-  );
-});
+          {customValueText && (
+            <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
+              {customValueText}
+            </StyledCustomValue>
+          )}
+          <StyledSelect
+            dataTest={dataTest}
+            size={size}
+            disabled={disabled}
+            error={error}
+            value={value == null ? "" : value}
+            prefix={prefix}
+            name={name}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onChange={onChange}
+            filled={filled}
+            customValueText={customValueText}
+            tabIndex={tabIndex}
+            id={id}
+            readOnly={readOnly}
+            required={required}
+            ref={ref}
+            dataAttrs={dataAttrs}
+          >
+            {placeholder && (
+              <option label={placeholder} value="">
+                {placeholder}
+              </option>
+            )}
+            {options.map(option => (
+              <option
+                key={`option-${option.key || option.value}`}
+                value={option.value}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))}
+          </StyledSelect>
+          <SelectSuffix size={size} disabled={disabled}>
+            <ChevronDown />
+          </SelectSuffix>
+        </SelectContainer>
+        <FormFeedback error={error} help={help} />
+      </Label>
+    );
+  },
+);
 
 // otherwise Unknown in storybook
 Select.displayName = "Select";

@@ -82,12 +82,14 @@ const StyledSeatWrapper = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeatWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
 const StyledSeat = styled.svg``;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeat.defaultProps = {
   theme: defaultTheme,
 };

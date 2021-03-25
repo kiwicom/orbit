@@ -13,6 +13,7 @@ const StyledTripLayover = styled.div`
     ${theme.orbit.spaceLarge}`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripLayover.defaultProps = {
   theme: defaultTheme,
 };

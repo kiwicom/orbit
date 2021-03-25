@@ -12,6 +12,7 @@ const StyledAsterisk = styled.span`
   vertical-align: top;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAsterisk.defaultProps = {
   theme: defaultTheme,
 };
@@ -35,6 +36,7 @@ const FormLabel: any = styled(({ className, children, required, filled, dataTest
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FormLabel.defaultProps = {
   theme: defaultTheme,
 };

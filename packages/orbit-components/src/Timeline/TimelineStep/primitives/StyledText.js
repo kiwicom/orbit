@@ -8,6 +8,7 @@ const StyledText: any = styled.div`
   text-align: center;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };

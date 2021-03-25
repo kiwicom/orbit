@@ -44,6 +44,7 @@ const StyledContentWrapper = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -72,6 +73,7 @@ const StyledActions = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledActions.defaultProps = {
   theme: defaultTheme,
 };
@@ -110,6 +112,7 @@ const StyledPopoverParent = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
@@ -118,6 +121,7 @@ const StyledPopoverPadding = styled.div`
   padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverPadding.defaultProps = {
   theme: defaultTheme,
 };
@@ -141,6 +145,7 @@ const StyledOverlay = styled.div`
     display: none;
   `)};
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -154,6 +159,7 @@ const StyledPopoverClose = styled.div`
     padding-bottom: 0;
   `)}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverClose.defaultProps = {
   theme: defaultTheme,
 };

@@ -48,6 +48,7 @@ const StyledDrawer = styled.div`
   transition: ${transition(["background-color"], "fast", "ease-in-out")};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
@@ -77,6 +78,7 @@ const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ..
   ${getTransitionAnimation};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerSide.defaultProps = {
   theme: defaultTheme,
 };
@@ -90,6 +92,7 @@ const StyledDrawerContent = styled(
     !hasClose && noPadding && theme.orbit.spaceLarge};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -117,6 +120,7 @@ const StyledDrawerHeader = styled.div`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerHeader.defaultProps = {
   theme: defaultTheme,
 };

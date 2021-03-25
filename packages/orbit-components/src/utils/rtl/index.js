@@ -1,8 +1,10 @@
 // @flow
 
-import type {ThemeProps} from "../../defaultTheme";import type { LeftToRight, RtlSpacing, BorderRadius, TextAlign, Translate3d } from "./index";
+import type { ThemeProps } from "../../defaultTheme";
 
-const leftToRight: LeftToRight = (left, right) => ({ theme }) => (theme.rtl ? right : left);
+import type { RtlSpacing, BorderRadius, TextAlign, Translate3d } from "./index";
+
+const leftToRight = (left, right) => ({ theme }) => (theme.rtl ? right : left);
 
 export const rtlSpacing: RtlSpacing = value => ({ theme }) => {
   if (!theme.rtl) {
@@ -12,9 +14,9 @@ export const rtlSpacing: RtlSpacing = value => ({ theme }) => {
   return parts.length === 4 ? [parts[0], parts[3], parts[2], parts[1]].join(" ") : value;
 };
 
-export const left: (({...ThemeProps,...}) => string) = leftToRight("left", "right");
+export const left: ({ ...ThemeProps, ... }) => string = leftToRight("left", "right");
 
-export const right: (({...ThemeProps,...}) => string) = leftToRight("right", "left");
+export const right: ({ ...ThemeProps, ... }) => string = leftToRight("right", "left");
 
 export const borderRadius: BorderRadius = value => ({ theme }) => {
   if (!theme.rtl) {

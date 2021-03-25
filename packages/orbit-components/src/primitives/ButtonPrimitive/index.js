@@ -195,11 +195,15 @@ export const StyledButtonPrimitive: any = styled(
   `}};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitive.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitive: React$AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<Props, HTMLButtonElement>((props, ref) => {
+const ButtonPrimitive: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
+  Props,
+  HTMLButtonElement,
+>((props, ref) => {
   const {
     loading,
     disabled,

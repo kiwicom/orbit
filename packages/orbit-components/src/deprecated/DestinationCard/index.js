@@ -43,6 +43,7 @@ const StyledOverlay = styled.div`
   );
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,6 +54,7 @@ const StyledOverlayHover = styled.div`
   background: rgba(0, 0, 0, 0.8);
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlayHover.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,6 +71,7 @@ const StyledDestinationCardContent = styled.div`
     `-${hiddenContentHeight + parseInt(theme.orbit.spaceSmall, 10)}px`};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestinationCardContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -77,6 +80,7 @@ const StyledDestinationCardHeader = styled.div`
   margin-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestinationCardHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -89,6 +93,7 @@ const Shown = styled.div`
   margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Shown.defaultProps = {
   theme: defaultTheme,
 };
@@ -98,6 +103,7 @@ const ArrowUp = styled(ArrowUpIcon)`
   margin-left: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ArrowUp.defaultProps = {
   theme: defaultTheme,
 };
@@ -107,6 +113,7 @@ const StyledDestinationCardHiddenContent = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestinationCardHiddenContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -121,6 +128,7 @@ const StyledDestination = styled.div`
   top: 16px;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestination.defaultProps = {
   theme: defaultTheme,
 };
@@ -160,6 +168,7 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
       0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
   }
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestinationCard.defaultProps = {
   theme: defaultTheme,
 };
@@ -189,7 +198,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   }
 
-  setHeight: (() => void) = () => {
+  setHeight: () => void = () => {
     const { hiddenContent } = this;
 
     if (hiddenContent.current) {

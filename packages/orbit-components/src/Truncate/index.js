@@ -16,7 +16,6 @@ const StyledTruncate = styled.div`
 `;
 
 const StyledTruncateContent = styled.div`
-  &,
   ${StyledText}, ${StyledHeading} {
     white-space: nowrap;
     overflow: hidden;

@@ -1,5 +1,4 @@
 // @flow
-
 import * as React from "react";
 
 import randomID from "../../utils/randomID";

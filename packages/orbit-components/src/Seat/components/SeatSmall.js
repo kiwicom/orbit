@@ -12,6 +12,7 @@ export const StyledPath: any = styled.path`
   transition: fill ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPath.defaultProps = {
   theme: defaultTheme,
 };
@@ -20,6 +21,7 @@ export const StyledStrokeSmall: any = styled.path`
   transition: stroke ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStrokeSmall.defaultProps = {
   theme: defaultTheme,
 };

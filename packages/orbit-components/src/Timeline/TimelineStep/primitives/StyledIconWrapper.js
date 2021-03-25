@@ -11,6 +11,7 @@ const StyledIconWrapper: any = styled.div`
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconWrapper.defaultProps = {
   theme: defaultTheme,
 };

@@ -33,6 +33,7 @@ const StyledCountryFlag = styled.div`
   flex-shrink: 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCountryFlag.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,6 +70,7 @@ const StyledShadow = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledShadow.defaultProps = {
   theme: defaultTheme,
 };

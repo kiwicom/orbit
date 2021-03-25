@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 import type { TileOnClick } from "../../index";
 
@@ -27,6 +28,6 @@ type IconProps = {|
   expanded: boolean,
 |};
 
-declare export var StyledIconRight: React.ComponentType<IconProps>;
+declare export var StyledIconRight: StyledComponent<IconProps, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;

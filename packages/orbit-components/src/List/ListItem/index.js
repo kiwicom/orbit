@@ -61,6 +61,7 @@ export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Item.defaultProps = {
   theme: defaultTheme,
 };
@@ -84,6 +85,7 @@ export const IconContainer: any = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -99,6 +101,7 @@ const StyledSpan = styled.span`
   width: 100%;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };

@@ -34,6 +34,7 @@ export const StyledTile: any = styled(({ theme, icon, title, external, ...props 
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTile.defaultProps = {
   theme: defaultTheme,
 };
@@ -49,22 +50,24 @@ class Tile extends React.PureComponent<Props, State> {
     this.setExpanded({ expanded, initialExpanded: expanded });
   }
 
-  setExpanded: ((State) => void) = ({ expanded, initialExpanded }: State) => {
+  setExpanded: State => void = ({ expanded, initialExpanded }: State) => {
     this.setState({ expanded, initialExpanded });
   };
 
-  isExpandable: (() => boolean) = () => {
+  isExpandable: () => boolean = () => {
     const { href, children } = this.props;
     return !!(!href && children); // Tile is expandable if - not href && children are passed
   };
 
-  toggleExpandable: (() => void) = () => {
+  toggleExpandable: () => void = () => {
     if (this.isExpandable()) {
       this.setExpanded({ expanded: !this.state.expanded, initialExpanded: false });
     }
   };
 
-  handleClick: ((ev: SyntheticEvent<HTMLDivElement>) => void) = (ev: SyntheticEvent<HTMLDivElement>) => {
+  handleClick: (ev: SyntheticEvent<HTMLDivElement>) => void = (
+    ev: SyntheticEvent<HTMLDivElement>,
+  ) => {
     const { onClick } = this.props;
     this.toggleExpandable();
     if (onClick) {
@@ -72,7 +75,9 @@ class Tile extends React.PureComponent<Props, State> {
     }
   };
 
-  handleKeyDown: ((ev: SyntheticKeyboardEvent<HTMLElement>) => void) = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+  handleKeyDown: (ev: SyntheticKeyboardEvent<HTMLElement>) => void = (
+    ev: SyntheticKeyboardEvent<HTMLElement>,
+  ) => {
     const { onClick } = this.props;
     if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.toggleExpandable();

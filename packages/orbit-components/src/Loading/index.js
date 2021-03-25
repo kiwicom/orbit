@@ -66,6 +66,7 @@ export const StyledLoading: any = styled(({ children, className, dataTest }) => 
   box-sizing: border-box;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLoading.defaultProps = {
   theme: defaultTheme,
 };
@@ -80,6 +81,7 @@ const StyledLoadingText = styled.div`
   type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLoadingText.defaultProps = {
   theme: defaultTheme,
 };
@@ -100,6 +102,7 @@ const StyledSpinnerCircle = styled.circle`
   stroke-dashoffset: 64px;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSpinnerCircle.defaultProps = {
   theme: defaultTheme,
 };
@@ -126,11 +129,14 @@ const StyledLoaderCircle = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLoaderCircle.defaultProps = {
   theme: defaultTheme,
 };
 
-const Loading = (props: Props): 
+const Loading = (
+  props: Props,
+):
   | boolean
   | number
   | string
@@ -138,11 +144,11 @@ const Loading = (props: Props):
   | React.Node
   | React$Portal
   | {|
-    +key: React$Key | null,
-    +props: React$ElementProps<any>,
-    +ref: any,
-    +type: any,
-  |} => {
+      +key: React$Key | null,
+      +props: React$ElementProps<any>,
+      +ref: any,
+      +type: any,
+    |} => {
   const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
 
   return children && !loading ? (

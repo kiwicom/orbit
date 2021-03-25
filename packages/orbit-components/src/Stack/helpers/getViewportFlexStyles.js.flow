@@ -1,8 +1,8 @@
 // @flow
-import type { Interpolation } from "styled-components";
+import type { InterpolationBase } from "styled-components";
 
 import type { Devices } from "../../utils/mediaQuery/consts";
 
-export type GetViewportFlexStyles = (viewport: Devices) => Interpolation;
+export type GetViewportFlexStyles = (viewport: Devices) => any => InterpolationBase;
 
 declare export default GetViewportFlexStyles;

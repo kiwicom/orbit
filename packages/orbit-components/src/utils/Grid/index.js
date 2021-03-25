@@ -36,6 +36,7 @@ const StyledGrid = styled(({ className, children, dataTest }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledGrid.defaultProps = {
   theme: defaultTheme,
 };

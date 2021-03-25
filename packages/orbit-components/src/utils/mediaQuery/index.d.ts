@@ -1,6 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import { Interpolation } from "styled-components";
+import type { Interpolation } from "styled-components";
 
 import { ThemeShape } from "../../defaultTheme";
 import { Devices } from "./consts";

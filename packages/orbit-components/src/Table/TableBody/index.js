@@ -16,6 +16,7 @@ export const StyledTableBody: any = styled(({ children, className, dataTest }) =
   border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableBody.defaultProps = {
   theme: defaultTheme,
 };

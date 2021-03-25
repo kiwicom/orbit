@@ -23,6 +23,7 @@ const StyledProgressLine: any = styled.span`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledProgressLine.defaultProps = {
   theme: defaultTheme,
 };

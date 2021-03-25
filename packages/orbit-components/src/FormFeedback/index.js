@@ -39,6 +39,7 @@ export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <di
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFormFeedback.defaultProps = {
   theme: defaultTheme,
 };

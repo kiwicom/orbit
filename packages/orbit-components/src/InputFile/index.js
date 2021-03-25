@@ -25,6 +25,7 @@ const Field = styled.label`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,6 +58,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeInput.defaultProps = {
   theme: defaultTheme,
 };
@@ -72,6 +74,7 @@ const Input = styled.input`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
@@ -96,11 +99,15 @@ const StyledFileInput = styled.div`
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputFile: React$AbstractComponent<Props, HTMLInputElement> = React.forwardRef<Props, HTMLInputElement>(
+const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
+  Props,
+  HTMLInputElement,
+>(
   (
     {
       placeholder = "No file selected",

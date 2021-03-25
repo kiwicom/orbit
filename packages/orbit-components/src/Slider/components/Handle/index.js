@@ -84,6 +84,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHandle.defaultProps = {
   theme: defaultTheme,
 };

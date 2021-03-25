@@ -19,6 +19,7 @@ const StyledStickyContent = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStickyContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,7 +54,7 @@ class Sticky extends React.Component<Props, State> {
     removeScrollHandler(this.handleScroll);
   }
 
-  handleTop: (() => void) = () => {
+  handleTop: () => void = () => {
     if (this.sticky.current) {
       const values = this.sticky.current.getBoundingClientRect();
       this.setState({
@@ -62,7 +63,11 @@ class Sticky extends React.Component<Props, State> {
     }
   };
 
-  stickyState: ((sticky: boolean, height: number, width: number) => void) = (sticky: boolean, height: number, width: number) => {
+  stickyState: (sticky: boolean, height: number, width: number) => void = (
+    sticky: boolean,
+    height: number,
+    width: number,
+  ) => {
     this.setState({
       sticky,
       height,
@@ -70,7 +75,7 @@ class Sticky extends React.Component<Props, State> {
     });
   };
 
-  handleScroll: (() => void) = () => {
+  handleScroll: () => void = () => {
     const element = this.content.current;
     const sticky = this.sticky.current;
     const elementHeight = element.offsetHeight;

@@ -4,7 +4,7 @@ import mergeDeepRight from "ramda/src/mergeDeepRight";
 import foundation from "./foundation";
 import convertHexToRgba from "./convertHexToRgba";
 
-import type { GetTokens, FromPlainObject } from "./index";
+import type { GetTokens, FromPlainObject, Tokens } from "./index";
 
 export const getTokens: GetTokens = customFoundation => {
   // By default it takes base foundation config
@@ -555,7 +555,7 @@ export const getTokens: GetTokens = customFoundation => {
   };
 };
 
-export const defaultTokens = getTokens();
+export const defaultTokens: Tokens = getTokens();
 
 export const fromPlainObject: FromPlainObject = themePaletteColors => {
   const theme = {

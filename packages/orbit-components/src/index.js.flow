@@ -78,11 +78,13 @@ import typeof ServiceLogoType from "./ServiceLogo";
 import typeof SkipNavigationType from "./SkipNavigation";
 import typeof SkipLinkType from "./SkipLink";
 import typeof SliderType from "./Slider";
-import typeof SmartPassV1Type from "./SmartPassIllustrations/illustrations/SmartPassV1";
-import typeof SmartPassV2Type from "./SmartPassIllustrations/illustrations/SmartPassV2";
-import typeof SmartPassV3Type from "./SmartPassIllustrations/illustrations/SmartPassV3";
-import typeof SmartPassV4Type from "./SmartPassIllustrations/illustrations/SmartPassV4";
-import typeof SmartPassV5Type from "./SmartPassIllustrations/illustrations/SmartPassV5";
+import typeof {
+  SmartPassV1 as SmartPassV1Type,
+  SmartPassV2 as SmartPassV2Type,
+  SmartPassV3 as SmartPassV3Type,
+  SmartPassV4 as SmartPassV4Type,
+  SmartPassV5 as SmartPassV5Type,
+} from "./SmartPassIllustrations";
 import typeof SocialButtonType from "./SocialButton";
 import typeof StackType from "./Stack";
 import typeof StepperStatelessType from "./Stepper/StepperStateless";

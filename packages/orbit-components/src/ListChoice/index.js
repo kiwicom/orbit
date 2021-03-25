@@ -28,6 +28,7 @@ const StyledListChoiceIcon = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoiceIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,6 +66,7 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoice.defaultProps = {
   theme: defaultTheme,
 };
@@ -77,6 +79,7 @@ const StyledListChoiceContent = styled.div`
   padding-${right}: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoiceContent.defaultProps = {
   theme: defaultTheme,
 };

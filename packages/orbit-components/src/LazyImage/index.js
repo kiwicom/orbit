@@ -31,6 +31,7 @@ const Image = styled.img`
   filter: ${({ lowRes }) => lowRes && "blur(3px)"};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Image.defaultProps = {
   theme: defaultTheme,
 };

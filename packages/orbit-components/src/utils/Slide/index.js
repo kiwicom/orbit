@@ -23,6 +23,7 @@ export const StyledSlide: any = styled.div`
   visibility: ${({ visible }) => !visible && "hidden"};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSlide.defaultProps = {
   theme: defaultTheme,
 };
@@ -42,7 +43,7 @@ class Slide extends React.Component<Props, State> {
 
   visibleTimeout: null | TimeoutID = null;
 
-  static defaultProps: {|transitionDuration: string|} = {
+  static defaultProps: {| transitionDuration: string |} = {
     transitionDuration: "fast",
   };
 
@@ -101,25 +102,25 @@ class Slide extends React.Component<Props, State> {
     return true;
   }
 
-  setVisible: ((visible: boolean) => () => void) = (visible: boolean) => () => {
+  setVisible: (visible: boolean) => () => void = (visible: boolean) => () => {
     this.setState({ visible });
   };
 
-  setMaxHeight: (() => void) = () => {
+  setMaxHeight: () => void = () => {
     const { maxHeight } = this.props;
     this.setState({
       maxHeight,
     });
   };
 
-  expandCallback: (() => void) = () => {
+  expandCallback: () => void = () => {
     this.setState({
       maxHeight: null,
     });
     this.transitionFinishedTimeout = setTimeout(this.transitionFinishedCallback(true), 100);
   };
 
-  collapseCallback: (() => void) = () => {
+  collapseCallback: () => void = () => {
     this.setState({
       maxHeight: 0,
       transitionFinished: false,
@@ -132,7 +133,9 @@ class Slide extends React.Component<Props, State> {
     }
   };
 
-  transitionFinishedCallback: ((transitionFinished: boolean) => () => void) = (transitionFinished: boolean) => () => {
+  transitionFinishedCallback: (transitionFinished: boolean) => () => void = (
+    transitionFinished: boolean,
+  ) => () => {
     this.setState({ transitionFinished });
   };
 

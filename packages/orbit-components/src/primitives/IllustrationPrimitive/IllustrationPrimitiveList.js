@@ -14,6 +14,7 @@ const List = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 List.defaultProps = {
   theme: defaultTheme,
 };
@@ -37,6 +38,7 @@ const Container = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Container.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,11 +58,15 @@ const IllustrationJSX = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IllustrationJSX.defaultProps = {
   theme: defaultTheme,
 };
 
-const IllustrationPrimitiveList = (props: {| images: Array<string>, nameOfComponent: string |}): React.Node => {
+const IllustrationPrimitiveList = (props: {|
+  images: Array<string>,
+  nameOfComponent: string,
+|}): React.Node => {
   return (
     <List>
       {props.images.map(illustration => {

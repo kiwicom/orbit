@@ -34,7 +34,9 @@ export const getJustify = (justify: "start" | "center" | "end" | "between" | "ar
   return justify && tokens[justify];
 };
 
-export const getDirection = (direction?: "row" | "row-reverse" | "column" | "column-reverse"): "column" | "column-reverse" | "row" | "row-reverse" | string => {
+export const getDirection = (
+  direction?: "row" | "row-reverse" | "column" | "column-reverse",
+): string => {
   if (!direction) return "";
   return Object.values(DIRECTIONS).indexOf(direction) !== -1 ? direction : DIRECTIONS.ROW;
 };

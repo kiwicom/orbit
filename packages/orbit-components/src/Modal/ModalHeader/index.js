@@ -31,6 +31,7 @@ export const ModalHeading: any = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalHeading.defaultProps = {
   theme: defaultTheme,
 };
@@ -49,6 +50,7 @@ const ModalTitle = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,6 +59,7 @@ const ModalDescription = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalDescription.defaultProps = {
   theme: defaultTheme,
 };
@@ -78,10 +81,8 @@ export const StyledModalHeader: any = styled.div`
   width: 100%;
   display: block;
   padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
-  border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
+  border-top-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "12px"};
+  border-top-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "12px"};
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
     suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
@@ -104,6 +105,7 @@ export const StyledModalHeader: any = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -140,6 +142,7 @@ export const MobileHeader: any = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 MobileHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -155,7 +158,7 @@ const ModalHeader = ({
   description,
   title,
   dataTest,
-}: Props): Node => {
+}: Props): React.Node => {
   const { setHasModalTitle, isMobileFullPage } = React.useContext(ModalContext);
 
   useModalContextFunctions();

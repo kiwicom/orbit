@@ -67,6 +67,7 @@ const FakeGroup = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeGroup.defaultProps = {
   theme: defaultTheme,
 };
@@ -83,6 +84,7 @@ const StyledChild = styled.div`
     padding: 0;
   }
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -149,6 +151,7 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };

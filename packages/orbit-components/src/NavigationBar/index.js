@@ -20,6 +20,7 @@ const StyledNavigationBarContent = styled.div`
   margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationBarContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -46,6 +47,7 @@ const StyledNavigationBar = styled.nav`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };

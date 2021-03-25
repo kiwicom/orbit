@@ -4,13 +4,14 @@ import ReactDOM from "react-dom";
 
 import type { Props } from "./index";
 
-const Portal = ({ renderInto, children }: Props): any | null => {
+const Portal = ({ renderInto, children }: Props): React.Portal | null => {
   const [el] = React.useState(() => {
     if (typeof window !== "undefined") {
       return document.createElement("div");
     }
     return null;
   });
+
   const [node] = React.useState(() => {
     if (typeof window !== "undefined") {
       return renderInto && document.getElementById(renderInto)
@@ -19,6 +20,7 @@ const Portal = ({ renderInto, children }: Props): any | null => {
     }
     return null;
   });
+
   React.useLayoutEffect(() => {
     if (node && el) {
       node.appendChild(el);
@@ -30,9 +32,10 @@ const Portal = ({ renderInto, children }: Props): any | null => {
     };
   }, [el, node]);
 
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && el !== null) {
     return ReactDOM.createPortal(children, el);
   }
+
   return null;
 };
 

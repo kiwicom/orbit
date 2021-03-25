@@ -69,8 +69,7 @@ SuccessAlert.story = {
 
   parameters: {
     info:
-      "Use when a user just performed some action and we need to tell them that action was successful. This button is usually used without an action button.\n" +
-      "Avoid using success banner if there is any follow-up action, for example, in cases where we need to confirm something to users by e-mail later. It's recommended to use informational alert instead. Visit Orbit.Kiwi for more detailed guidelines.",
+      "Use when a user just performed some action and we need to tell them that action was successful. This button is usually used without an action button.Avoid using success banner if there is any follow-up action, for example, in cases where we need to confirm something to users by e-mail later. It's recommended to use informational alert instead. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

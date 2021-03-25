@@ -41,6 +41,7 @@ const StyledCallOutBanner = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCallOutBanner.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,6 +54,7 @@ const StyledIllustration = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIllustration.defaultProps = {
   theme: defaultTheme,
 };

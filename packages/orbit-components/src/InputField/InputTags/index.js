@@ -1,5 +1,5 @@
 // @flow
-import React, { useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import { rtlSpacing } from "../../utils/rtl";
@@ -48,7 +48,7 @@ StyledInputTagsInner.defaultProps = {
 const InputTags = ({ children }: Props) => {
   const tagsRef = React.createRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleMouseMove = event => {
       if (tagsRef && tagsRef.current) {
         const { isDragging } = tagsRef.current;

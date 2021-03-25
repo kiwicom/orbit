@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useEffect } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -75,20 +75,23 @@ StyledModalSection.defaultProps = {
 };
 
 const ModalSection = ({ children, suppressed, dataTest }: Props) => {
-  const { removeHasModalSection, setHasModalSection, isMobileFullPage, closable } = useContext(
-    ModalContext,
-  );
+  const {
+    removeHasModalSection,
+    setHasModalSection,
+    isMobileFullPage,
+    closable,
+  } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 
   /*
     Run on every re-render to prevent setting hasModalSection to false when there's more sections
    */
-  useEffect(() => {
+  React.useEffect(() => {
     if (setHasModalSection) setHasModalSection();
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     return () => {
       if (removeHasModalSection) removeHasModalSection();
     };

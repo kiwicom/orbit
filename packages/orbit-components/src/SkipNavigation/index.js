@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Select from "../Select";
@@ -44,10 +44,10 @@ const StyledSelectWrapper = styled.div`
 `;
 
 const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
-  const [links, setLinks] = useState([]);
-  const [mappedLinks, setMappedLinks] = useState<MappedOptions[]>([]);
-  const [innerPages, setPages] = useState([]);
-  const [show, setShow] = useState(false);
+  const [links, setLinks] = React.useState([]);
+  const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
+  const [innerPages, setPages] = React.useState([]);
+  const [show, setShow] = React.useState(false);
 
   const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
     const index = Number(ev.target.value);

@@ -1,5 +1,5 @@
 // @flow
-import React, { useMemo } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import Heading from "../Heading";
@@ -48,7 +48,7 @@ const ChoiceGroup = ({
   onlySelectionText,
   onChange,
 }: Props) => {
-  const groupID = useMemo(() => randomID("choiceGroupID"), []);
+  const groupID = React.useMemo(() => randomID("choiceGroupID"), []);
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();

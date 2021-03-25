@@ -21,8 +21,6 @@ import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
-const { useRef, useEffect, useContext, useMemo, useCallback } = React;
-
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
 
@@ -175,12 +173,14 @@ const PopoverContentWrapper = ({
   fixed,
   actions,
 }: Props) => {
-  const { isInsideModal } = useContext(ModalContext);
-  const popover: {| current: React.ElementRef<*> |} = useRef(null);
-  const content: {| current: React.ElementRef<*> |} = useRef(null);
-  const intervalRef = useRef(null);
+  const { isInsideModal } = React.useContext(ModalContext);
+  const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const content: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
-  const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
+  const scrollableParent = React.useMemo(() => getScrollableParent(containerRef.current), [
+    containerRef,
+  ]);
   const dimensions = useDimensions({
     containerRef,
     popover,
@@ -193,7 +193,7 @@ const PopoverContentWrapper = ({
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const [actionsDimensions, setActionsDimensions] = React.useState(0);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
-  const measuredRef = useCallback(
+  const measuredRef = React.useCallback(
     node => {
       if (node !== null) {
         const timer = setTimeout(() => {
@@ -208,7 +208,7 @@ const PopoverContentWrapper = ({
     [actions],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => {
       if (popover.current) {
         popover.current.focus();

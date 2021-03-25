@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -220,7 +220,7 @@ const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
     tooltip,
   } = props;
 
-  const preventOnClick = useCallback(ev => {
+  const preventOnClick = React.useCallback(ev => {
     ev.preventDefault();
   }, []);
   return (

@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useMemo } from "react";
+import * as React from "react";
 
 import randomID from "../../utils/randomID";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
@@ -26,9 +26,9 @@ const MobileDialog = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
   const [shown, setshown, setshownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
-  const mobileDialogID = useMemo(() => randomID("mobileDialogID"), []);
+  const mobileDialogID = React.useMemo(() => randomID("mobileDialogID"), []);
 
-  const handleInMobile = useCallback(
+  const handleInMobile = React.useCallback(
     ev => {
       ev.preventDefault();
       if (stopPropagation) {
@@ -42,7 +42,7 @@ const MobileDialog = ({
     [clearRenderTimeout, setRender, setshownWithTimeout, stopPropagation],
   );
 
-  const handleOutMobile = useCallback(
+  const handleOutMobile = React.useCallback(
     ev => {
       if (stopPropagation) {
         ev.stopPropagation();

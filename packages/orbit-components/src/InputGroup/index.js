@@ -16,8 +16,6 @@ import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
-const { useState, useEffect, useCallback } = React;
-
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.height]: {
@@ -177,11 +175,11 @@ const InputGroup = ({
   onBlur,
   onChange,
 }: Props) => {
-  const [active, setActive] = useState(false);
-  const [filled, setFilled] = useState(false);
+  const [active, setActive] = React.useState(false);
+  const [filled, setFilled] = React.useState(false);
   const inputID = React.useMemo(() => randomID("inputGroupID"), []);
 
-  const isFilled = useCallback(
+  const isFilled = React.useCallback(
     () =>
       setFilled(
         findPropInChild("value", children).length === React.Children.toArray(children).length,
@@ -189,7 +187,7 @@ const InputGroup = ({
     [children],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     isFilled();
   }, [isFilled]);
 

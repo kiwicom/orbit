@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -76,9 +76,9 @@ const longContent = (
 );
 
 const PopoverState = () => {
-  const [render, setRender] = useState(false);
+  const [render, setRender] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
       if (!render) {
         setRender(true);

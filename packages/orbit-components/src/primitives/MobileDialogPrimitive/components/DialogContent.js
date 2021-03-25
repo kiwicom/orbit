@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { StyledText } from "../../../Text/index";
@@ -97,9 +97,9 @@ StyledDialogOverlay.defaultProps = {
 };
 
 const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) => {
-  const overlay = useRef(null);
-  const dialog = useRef(null);
-  const handleClickOutside = useCallback(
+  const overlay = React.useRef(null);
+  const dialog = React.useRef(null);
+  const handleClickOutside = React.useCallback(
     ev => {
       ev.stopPropagation();
       if (ev.target === overlay.current) {
@@ -108,7 +108,7 @@ const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) 
     },
     [onClose],
   );
-  const handleInnerClick = useCallback(
+  const handleInnerClick = React.useCallback(
     ev => {
       if (dialog.current) {
         const focusableElements = dialog.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);

@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useMemo, useCallback } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import useTheme from "../../../hooks/useTheme";
@@ -114,23 +114,23 @@ const TooltipContent = ({
   parent,
 }: Props) => {
   const theme = useTheme();
-  const tooltip = useRef(null);
-  const content = useRef(null);
-  const [positions, aligns] = useMemo(
+  const tooltip = React.useRef(null);
+  const content = React.useRef(null);
+  const [positions, aligns] = React.useMemo(
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
   const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
-  const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
+  const position = React.useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,
   ]);
-  const align = useMemo(() => calculateTooltipAlign(position, aligns, dimensions), [
+  const align = React.useMemo(() => calculateTooltipAlign(position, aligns, dimensions), [
     aligns,
     dimensions,
     position,
   ]);
-  const handleInnerClick = useCallback(
+  const handleInnerClick = React.useCallback(
     ev => {
       if (tooltip.current) {
         const focusableElements = tooltip.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);

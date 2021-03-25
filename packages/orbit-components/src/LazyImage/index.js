@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -66,7 +66,7 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
 );
 
 const LazyImage = ({ placeholder, original, name }: Props) => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = React.useState(false);
   return (
     <StyledLazyImage>
       {/*

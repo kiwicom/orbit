@@ -17,6 +17,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import ComponentStatus from "./ComponentStatus";
 import Tabs, { TabObject } from "./Tabs";
 import ReactExample from "./ReactExample";
+import Footer from "./Footer";
 import { CONTENT_PADDING, MAX_CONTENT_WIDTH } from "../consts";
 
 const StyledWrapper = styled.div`
@@ -38,13 +39,6 @@ const StyledMain = styled.main`
   margin: 0 auto;
   box-sizing: content-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-`;
-
-const StyledFooter = styled.footer`
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 `;
 
 const ContentContainer = styled(Box)`
@@ -121,7 +115,7 @@ export default function DocLayout({ children, description, location, path, tabs,
               </MDXProvider>
             </ContentContainer>
           </StyledMain>
-          <StyledFooter />
+          <Footer />
         </StyledWrapper>
       </BookmarkProvider>
     </ThemeProvider>

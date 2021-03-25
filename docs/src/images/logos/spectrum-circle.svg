@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="spectrum-glyph">
+      <rect fill="white" width="100%" height="100%" />
+      <path fill="black" d="M8 9.067C8 8.477 8.478 8 9.067 8H10c7.732 0 14 6.268 14 14v.933c0 .59-.478 1.067-1.067 1.067h-5.866A1.067 1.067 0 0 1 16 22.933V22a6 6 0 0 0-6-6h-.933A1.067 1.067 0 0 1 8 14.933V9.067z" />
+    </mask>
+  </defs>
+  <rect fill="currentColor" width="32" height="32" rx="16" mask="url(#spectrum-glyph)" />
+</svg>

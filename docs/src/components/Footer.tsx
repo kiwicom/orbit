@@ -174,24 +174,27 @@ export default function Footer() {
                 </Box>
               </Box>
             </Box>
-            <Box
-              padding={{ top: "XSmall", bottom: "XSmall" }}
-              largeDesktop={{ display: "flex", direction: "column", align: "end" }}
-            >
-              <Text as="div" weight="bold">
-                Built & maintained by Kiwi.com
-              </Text>
-              <Text as="div" type="secondary">
-                Open sourced with{" "}
-                <img
-                  alt="❤"
-                  src={orbitHeart}
-                  width={20}
-                  height={20}
-                  style={{ display: "inline", verticalAlign: -5 }}
-                />{" "}
-                for travel
-              </Text>
+            <Box display="flex" justify="center" mediumMobile={{ justify: "start" }}>
+              <Box
+                padding={{ top: "medium", bottom: "medium" }}
+                mediumMobile={{ padding: { top: "XSmall", bottom: "XSmall" } }}
+                largeDesktop={{ display: "flex", direction: "column", align: "end" }}
+              >
+                <Text as="div" weight="bold">
+                  Built & maintained by Kiwi.com
+                </Text>
+                <Text as="div" type="secondary">
+                  Open sourced with{" "}
+                  <img
+                    alt="❤"
+                    src={orbitHeart}
+                    width={20}
+                    height={20}
+                    style={{ display: "inline", verticalAlign: -5 }}
+                  />{" "}
+                  for travel
+                </Text>
+              </Box>
             </Box>
           </Box>
         </StyledInner>

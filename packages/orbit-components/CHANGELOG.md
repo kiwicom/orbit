@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.111.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.0...@kiwicom/orbit-components@0.111.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* **ci:** deploy storybook only, not build ([#2830](https://github.com/kiwicom/orbit/issues/2830)) ([f287d1e](https://github.com/kiwicom/orbit/commit/f287d1ec507fcb5f93d06f74afe1d2e8d973c958))
+* **docs:** misnamed prop for Box ([#2825](https://github.com/kiwicom/orbit/issues/2825)) ([4e98bd9](https://github.com/kiwicom/orbit/commit/4e98bd9038f3e30d634a74047308c08467416a31))
+* **InputFile:** ref ts type ([#2827](https://github.com/kiwicom/orbit/issues/2827)) ([1341d57](https://github.com/kiwicom/orbit/commit/1341d57ecd5aa63baafd9f95409941d910153141))
+* **SkipLink:** missing export ([#2794](https://github.com/kiwicom/orbit/issues/2794)) ([eff2c6d](https://github.com/kiwicom/orbit/commit/eff2c6d0e62fb8f2f151d8935f3e4dbe1879796c))
+* **useMediaQuery:** remove listeners on cleanup ([#2822](https://github.com/kiwicom/orbit/issues/2822)) ([eb92419](https://github.com/kiwicom/orbit/commit/eb92419e9d0884c4d6013d1598f0de9b85ebbf2f))
+* **Wizard:** remove incorrect React.ReactChildren ([#2829](https://github.com/kiwicom/orbit/issues/2829)) ([3f6b803](https://github.com/kiwicom/orbit/commit/3f6b80396aac9feb9df621dce2ef2ac70fddf616))
+
+
+
+
+
 # [0.111.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.110.0...@kiwicom/orbit-components@0.111.0) (2021-03-08)
 
 

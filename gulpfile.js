@@ -13,6 +13,7 @@ const dotenv = require("dotenv-safe");
 function configureGitHubToken(done) {
   try {
     dotenv.config({
+      allowEmptyValues: true,
       example: ".env.example",
     });
     done();

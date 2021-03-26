@@ -28,7 +28,9 @@ const StyledAnchor = styled.a<StyledAnchorProps>`
     ::before {
       display: inline-block;
       content: "";
-      border-top: 2px solid;
+      height: 2px;
+      border-radius: 1px;
+      background: currentColor;
       width: ${getWidth(level)};
       margin: 4px 12px;
     }

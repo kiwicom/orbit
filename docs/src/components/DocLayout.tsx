@@ -65,6 +65,8 @@ const ContentContainer = styled(Box)`
   > ${StyledAnchorWrapper} {
     margin-top: ${({ theme }) => theme.orbit.spaceLarge};
 
+    /* Handle spacing after headings through the heading,
+       rather than the generic margin-top for all elements in the layout */
     + * {
       margin-top: 0;
     }

@@ -31,6 +31,8 @@ const HeadingWithLink = ({ children, headingLevel = 3, noId, spaceAfter = "none"
     switch (level) {
       case 2:
         return ["h2", "title1"];
+      case 3:
+        return ["h3", "title2"];
       case 4:
         return ["h4", "title3"];
       case 5:

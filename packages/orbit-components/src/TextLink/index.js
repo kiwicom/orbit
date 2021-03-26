@@ -119,7 +119,6 @@ const TextLink = ({
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();
-      if (onClick) onClick(ev);
     }
     if (onClick) onClick(ev);
   };

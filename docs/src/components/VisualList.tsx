@@ -23,16 +23,6 @@ const Grid = styled.div`
   grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
-const StyledAnchorWrapper = styled.div`
-  svg {
-    visibility: hidden;
-  }
-
-  &:hover svg {
-    visibility: visible;
-  }
-`;
-
 interface StyledRatioContainerProps {
   smallVisual?: boolean;
 }

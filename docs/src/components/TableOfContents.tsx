@@ -1,4 +1,5 @@
 import React from "react";
+import Scrollspy from "react-scrollspy";
 import styled, { css } from "styled-components";
 
 export interface TocItemObject {
@@ -9,6 +10,7 @@ export interface TocItemObject {
 
 interface StyledAnchorProps {
   level: number;
+  active: boolean;
 }
 
 const getWidth = (level: number) => {
@@ -17,9 +19,15 @@ const getWidth = (level: number) => {
   return "12px";
 };
 
+const getColor = (active: boolean, level: number, theme) => {
+  if (active) return theme.orbit.paletteProductNormal;
+  if (level === 0) return theme.orbit.paletteInkNormal;
+  return theme.orbit.paletteInkLight;
+};
+
 const StyledAnchor = styled.a<StyledAnchorProps>`
-  ${({ level, theme }) => css`
-    color: ${level === 0 ? theme.orbit.paletteInkNormal : theme.orbit.paletteInkLight};
+  ${({ active, level, theme }) => css`
+    color: ${getColor(active, level, theme)};
     font-size: ${level <= 1 ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextSmall};
     text-indent: -${theme.orbit.spaceXLarge};
     padding-left: ${theme.orbit.spaceXLarge};
@@ -42,19 +50,41 @@ const StyledTocList = styled.ul`
   overflow-y: auto;
 `;
 
-const getTocList = (array: TocItemObject[], level = 0) => {
+const stripOctothorpe = (string?: string) => {
+  if (!string) return "";
+  return string.replace("#", "");
+};
+
+const getTocList = (array: TocItemObject[], level = 0, activeScrollSpy: string) => {
   const nextLevel = level + 1;
   if (typeof array === "undefined") {
     return [];
   }
   return array.map(item => (
     <li key={item.url}>
-      <StyledAnchor level={level} href={item.url}>
+      <StyledAnchor
+        level={level}
+        href={item.url}
+        active={activeScrollSpy === stripOctothorpe(item.url)}
+      >
         {item.title}
       </StyledAnchor>
-      {item.items && <ul>{getTocList(item.items, nextLevel)}</ul>}
+      {item.items && <ul>{getTocList(item.items, nextLevel, activeScrollSpy)}</ul>}
     </li>
   ));
+};
+
+const getTocIds = array => {
+  return array
+    .reduce((idArray, item) => {
+      const kids = item.props.children;
+      idArray.push(stripOctothorpe(kids[0].props.href));
+      if (kids[1]) {
+        idArray.push(getTocIds(kids[1].props.children));
+      }
+      return idArray;
+    }, [])
+    .flat();
 };
 
 interface Props {
@@ -62,14 +92,24 @@ interface Props {
 }
 
 const TableOfContents = ({ items }: Props) => {
-  const TocContent = getTocList(items);
+  // Set scroll state
+  const [activeScrollSpy, setActiveScrollSpy] = React.useState("");
+
+  const handleScrollSpyUpdate = el => {
+    if (el) {
+      setActiveScrollSpy(el.getAttribute("id"));
+    }
+  };
+
+  const TocContent = getTocList(items, 0, activeScrollSpy);
   if (TocContent.length === 0) {
     return null;
   }
+  const tocIds = getTocIds(TocContent);
   return (
-    <nav>
+    <Scrollspy items={tocIds} onUpdate={handleScrollSpyUpdate}>
       <StyledTocList>{TocContent}</StyledTocList>
-    </nav>
+    </Scrollspy>
   );
 };
 

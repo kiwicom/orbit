@@ -116,6 +116,7 @@ declare module 'styled-components' {
     sealed: boolean;
 
     seal(): void;
+    //$FlowFixMe
     collectStyles(children: any): React$Element<StyleSheetManager>;
     getStyleTags(): string;
     toReactElements(): React$ElementType[];

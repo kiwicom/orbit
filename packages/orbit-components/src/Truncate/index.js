@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
@@ -8,14 +8,15 @@ import { StyledHeading } from "../Heading";
 import type { Props } from "./index";
 
 const StyledTruncate = styled.div`
-  min-width: 0;
-  ${({ maxWidth }) => css`
+  ${({ maxWidth }) => `
+    min-width: 0;
     flex: 0 1 ${maxWidth === "none" ? "100%" : maxWidth};
     max-width: ${maxWidth};
   `};
 `;
 
 const StyledTruncateContent = styled.div`
+  &,
   ${StyledText}, ${StyledHeading} {
     white-space: nowrap;
     overflow: hidden;

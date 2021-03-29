@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
@@ -11,107 +10,127 @@ import CarrierLogo from "./index";
 
 const carriersLabel = "Carriers";
 
-storiesOf("CarrierLogo", module)
-  .add(
-    "One carrier",
-    () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), "large");
-      const dataTest = text("dataTest", "test");
+export default {
+  title: "CarrierLogo",
+};
 
-      const carrier = [{ code: "FR", name: "Ryanair" }];
+export const OneCarrier = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+  const dataTest = text("dataTest", "test");
 
-      const carriersObject = object(carriersLabel, carrier);
+  const carrier = [{ code: "FR", name: "Ryanair" }];
 
-      return <CarrierLogo size={size} carriers={carriersObject} dataTest={dataTest} />;
-    },
-    {
-      info:
-        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Two carriers",
-    () => {
-      const carrier = [
-        { code: "FR", name: "Ryanair" },
-        { code: "TO", name: "Transavia France" },
-      ];
+  const carriersObject = object(carriersLabel, carrier);
 
-      const carriersObject = object(carriersLabel, carrier);
+  return <CarrierLogo size={size} carriers={carriersObject} dataTest={dataTest} />;
+};
 
-      return <CarrierLogo carriers={carriersObject} />;
-    },
-    {
-      info:
-        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Four carriers",
-    () => {
-      const carrier = [
-        { code: "FR", name: "Ryanair" },
-        { code: "TO", name: "Transavia France" },
-        { code: "VY", name: "Vueling" },
-        { code: "OK", name: "Czech Airlines" },
-      ];
+OneCarrier.story = {
+  name: "One carrier",
 
-      const carriersObject = object(carriersLabel, carrier);
+  parameters: {
+    info:
+      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
 
-      return <CarrierLogo carriers={carriersObject} />;
-    },
-    {
-      info:
-        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Non-existing carriers",
-    () => {
-      const carrier = [
-        { code: "LOL", name: "Lorem ipsum", type: "airline" },
-        { code: "KEK", name: "Lorem ipsum", type: "bus" },
-        { code: "BUR", name: "Lorem ipsum", type: "train" },
-      ];
+export const TwoCarriers = () => {
+  const carrier = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+  ];
 
-      const carriersObject = object(carriersLabel, carrier);
+  const carriersObject = object(carriersLabel, carrier);
 
-      return <CarrierLogo carriers={carriersObject} />;
-    },
-    {
-      info:
-        "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Non-existing carrier",
-    () => {
-      const size = select("Size", Object.values(SIZE_OPTIONS), "large");
-      const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
-      const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
-      const carriersObject = object(carriersLabel, carrier);
+  return <CarrierLogo carriers={carriersObject} />;
+};
 
-      return <CarrierLogo size={size} carriers={carriersObject} />;
-    },
-    {
-      info:
-        "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
-    },
-  )
-  .add(
-    "RTL",
-    () => (
-      <RenderInRtl>
-        <CarrierLogo
-          size="large"
-          carriers={[
-            { code: "FR", name: "Lorem ipsum", type: "airline" },
-            { code: "TO", name: "Lorem ipsum", type: "train" },
-          ]}
-        />
-      </RenderInRtl>
-    ),
-    {
-      info: "This is a preview of this component in RTL setup.",
-    },
-  );
+TwoCarriers.story = {
+  name: "Two carriers",
+
+  parameters: {
+    info:
+      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const FourCarriers = () => {
+  const carrier = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+    { code: "VY", name: "Vueling" },
+    { code: "OK", name: "Czech Airlines" },
+  ];
+
+  const carriersObject = object(carriersLabel, carrier);
+
+  return <CarrierLogo carriers={carriersObject} />;
+};
+
+FourCarriers.story = {
+  name: "Four carriers",
+
+  parameters: {
+    info:
+      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const NonExistingCarriers = () => {
+  const carrier = [
+    { code: "LOL", name: "Lorem ipsum", type: "airline" },
+    { code: "KEK", name: "Lorem ipsum", type: "bus" },
+    { code: "BUR", name: "Lorem ipsum", type: "train" },
+  ];
+
+  const carriersObject = object(carriersLabel, carrier);
+
+  return <CarrierLogo carriers={carriersObject} />;
+};
+
+NonExistingCarriers.story = {
+  name: "Non-existing carriers",
+
+  parameters: {
+    info:
+      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const NonExistingCarrier = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+  const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
+  const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
+  const carriersObject = object(carriersLabel, carrier);
+
+  return <CarrierLogo size={size} carriers={carriersObject} />;
+};
+
+NonExistingCarrier.story = {
+  name: "Non-existing carrier",
+
+  parameters: {
+    info:
+      "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
+  },
+};
+
+export const Rtl = () => (
+  <RenderInRtl>
+    <CarrierLogo
+      size="large"
+      carriers={[
+        { code: "FR", name: "Lorem ipsum", type: "airline" },
+        { code: "TO", name: "Lorem ipsum", type: "train" },
+      ]}
+    />
+  </RenderInRtl>
+);
+
+Rtl.story = {
+  name: "RTL",
+
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+  },
+};

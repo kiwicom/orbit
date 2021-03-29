@@ -16,6 +16,7 @@ import GitHubLogo from "../images/github-full.svg";
 import SpectrumLogo from "../images/spectrum.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
+import { MAX_CONTENT_WIDTH } from "../consts";
 
 function TileRow({ children }: { children: React.ReactNode }) {
   return (
@@ -56,7 +57,7 @@ export default function Home({ location }: Props) {
           /* so that the rest of the content has a higher z-order than the image */
           position: relative;
           width: 100%;
-          max-width: 80rem;
+          max-width: ${MAX_CONTENT_WIDTH};
           margin: 0 auto;
 
           > * + * {

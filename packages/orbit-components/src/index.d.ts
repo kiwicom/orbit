@@ -72,7 +72,7 @@ export { DeprecatedCard } from "./deprecated/Card/index";
 export { DeprecatedCardHeader } from "./deprecated/Card/CardHeader/index";
 export { DeprecatedCardSection } from "./deprecated/Card/CardSection/index";
 export { Coupon } from "./Coupon/index";
-export { MediaQuery } from "./utils/mediaQuery/index";
+export { default as mediaQueries } from "./utils/mediaQuery/index";
 export { Portal } from "./Portal/index";
 export { Pagination } from "./Pagination/index";
 export { Modal } from "./Modal/index";
@@ -112,5 +112,6 @@ export { BadgePrimitive } from "./primitives/BadgePrimitive/index";
 export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive/index";
 export { LinkList } from "./LinkList/index";
 export { default as Wizard, WizardStep } from "./Wizard";
+export { default as useMediaQuery } from "./hooks/useMediaQuery";
 
 export { Icon } from "./Icon/index";

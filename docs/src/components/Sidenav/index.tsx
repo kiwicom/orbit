@@ -13,7 +13,7 @@ interface WrapperProps {
 const StyledAsideWrapper = styled.aside<WrapperProps>`
   ${({ width, theme, shown }) => css`
     background: ${theme.orbit.paletteWhite};
-    padding: 10px 20px;
+    padding: 0 20px;
     z-index: 100;
     margin: 0;
     display: block;
@@ -35,7 +35,7 @@ const StyledAsideWrapper = styled.aside<WrapperProps>`
   `}
 `;
 
-const StyledOpenButton = styled.button.attrs(({ className }) => ({
+export const StyledOpenButton = styled.button.attrs(({ className }) => ({
   className,
   "aria-label": "open",
   type: "button",
@@ -48,13 +48,12 @@ const StyledOpenButton = styled.button.attrs(({ className }) => ({
   }
 `;
 
-const StyledAsideHeader = styled.div`
+export const StyledAsideHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudLight};
-  padding: 0 20px 10px;
-  margin: 0px -20px;
+  padding-left: 0 20px;
 `;
 
 const StyledCloseButton = styled.button.attrs(({ className, tabIndex }) => ({

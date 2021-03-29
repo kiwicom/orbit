@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
@@ -20,162 +19,175 @@ import Tile from "./index";
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Deprecated Tile", module)
-  .add(
-    "Default",
-    () => {
-      const title = text("Title", "Default");
-      return <Tile onClick={action("clicked")} title={title} />;
-    },
-    {
-      info: "This is the default configuration of this component.",
-    },
-  )
+export default {
+  title: "Deprecated Tile",
+};
 
-  .add(
-    "Expandable",
-    () => {
-      const title = text("Title", "Expandable");
-      const description = text(
-        "Description",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      );
-      const Icon = getIcon(getIcons("Airplane"));
-      return (
-        <Tile
-          onClick={action("clicked")}
-          icon={Icon && <Icon />}
-          title={title}
-          description={description}
-        >
-          This is example of expanded content
-        </Tile>
-      );
-    },
-    {
-      info: "This is the default configuration of this component.",
-    },
-  )
-  .add(
-    "TripSector Tile",
-    () => (
-      <Tile
-        title="Dynamic Tile height"
-        description="This is a example of dynamic Tile height with TripSector"
-      >
-        <TripSector dataTest="test">
-          <TripDate>Mon 22 Oct</TripDate>
-          <TripSegment
-            carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
-            duration="2h"
-            departure="Barcelona BCN"
-            departureTime="6:30"
-            arrival="Paris BVA"
-            arrivalTime="8:30"
-          >
-            <List size="small" type="secondary">
-              <ListItem>Airline: Ryanair</ListItem>
-              <ListItem>Flight no: D8 1762</ListItem>
-            </List>
-          </TripSegment>
-        </TripSector>
-      </Tile>
-    ),
-    {
-      info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
-    },
-  )
-  .add(
-    "Expandable with custom description",
-    () => {
-      const showMore = boolean("showMore", false);
-      const Icon = getIcon(getIcons("GenderMan"));
+export const Default = () => {
+  const title = text("Title", "Default");
+  return <Tile onClick={action("clicked")} title={title} />;
+};
 
-      return (
-        <Tile
-          icon={Icon && <Icon />}
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" align="center" direction="row">
-              <Stack spacing="none" direction="column" shrink>
-                <Stack direction="row" align="center" spacing="XSmall">
-                  <Heading type="title4" as="h4">
-                    Mr. Hot potato
-                  </Heading>
-                  <CountryFlag code="cz" />
-                </Stack>
-                <Text>13/37/1337</Text>
-              </Stack>
-              <Stack align="center" basis="0%">
-                <Badge type="info">You</Badge>
-              </Stack>
-            </Stack>
-          }
-        >
-          This is example of expanded content
-          {showMore && (
-            <Text>
-              Etiam posuere lacus quis dolor. Mauris elementum mauris vitae tortor. Class aptent
-              taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
-              Aenean id metus id velit ullamcorper pulvinar. Mauris metus. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            </Text>
-          )}
-        </Tile>
-      );
-    },
-    {
-      info: "This is the playground configuration of this component.",
-    },
-  )
-  .add(
-    "Playground",
-    () => {
-      const href = text("Href", "https://www.kiwi.com/");
-      const title = text("Title", "Tile with title");
-      const external = boolean("External", false);
-      const Icon = getIcon(getIcons("Airplane"));
-      const description = text(
-        "Description",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      );
-      const dataTest = text("dataTest", "test");
+Default.story = {
+  parameters: {
+    info: "This is the default configuration of this component.",
+  },
+};
 
-      return (
-        <Tile
-          href={href}
-          onClick={action("clicked")}
-          icon={Icon && <Icon />}
-          title={title}
-          description={description}
-          external={external}
-          dataTest={dataTest}
-        />
-      );
-    },
-    {
-      info: "This is the default configuration of this component.",
-    },
-  )
-  .add(
-    "RTL",
-    () => (
-      <RenderInRtl>
-        <Tile
-          onClick={action("clicked")}
-          description={
-            <Stack justify="between" direction="row">
-              <Text>Mr. John Smith</Text>
-              <Text>20 kg</Text>
-            </Stack>
-          }
-        >
-          This is example of expanded content
-        </Tile>
-      </RenderInRtl>
-    ),
-    {
-      info: "This is a preview of this component in RTL setup.",
-    },
+export const Expandable = () => {
+  const title = text("Title", "Expandable");
+  const description = text(
+    "Description",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   );
+  const Icon = getIcon(getIcons("Airplane"));
+  return (
+    <Tile
+      onClick={action("clicked")}
+      icon={Icon && <Icon />}
+      title={title}
+      description={description}
+    >
+      This is example of expanded content
+    </Tile>
+  );
+};
+
+Expandable.story = {
+  parameters: {
+    info: "This is the default configuration of this component.",
+  },
+};
+
+export const TripSectorTile = () => (
+  <Tile
+    title="Dynamic Tile height"
+    description="This is a example of dynamic Tile height with TripSector"
+  >
+    <TripSector dataTest="test">
+      <TripDate>Mon 22 Oct</TripDate>
+      <TripSegment
+        carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
+        duration="2h"
+        departure="Barcelona BCN"
+        departureTime="6:30"
+        arrival="Paris BVA"
+        arrivalTime="8:30"
+      >
+        <List size="small" type="secondary">
+          <ListItem>Airline: Ryanair</ListItem>
+          <ListItem>Flight no: D8 1762</ListItem>
+        </List>
+      </TripSegment>
+    </TripSector>
+  </Tile>
+);
+
+TripSectorTile.story = {
+  name: "TripSector Tile",
+
+  parameters: {
+    info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
+  },
+};
+
+export const ExpandableWithCustomDescription = () => {
+  const showMore = boolean("showMore", false);
+  const Icon = getIcon(getIcons("GenderMan"));
+
+  return (
+    <Tile
+      icon={Icon && <Icon />}
+      onClick={action("clicked")}
+      description={
+        <Stack justify="between" align="center" direction="row">
+          <Stack spacing="none" direction="column" shrink>
+            <Stack direction="row" align="center" spacing="XSmall">
+              <Heading type="title4" as="h4">
+                Mr. Hot potato
+              </Heading>
+              <CountryFlag code="cz" />
+            </Stack>
+            <Text>13/37/1337</Text>
+          </Stack>
+          <Stack align="center" basis="0%">
+            <Badge type="info">You</Badge>
+          </Stack>
+        </Stack>
+      }
+    >
+      This is example of expanded content
+      {showMore && (
+        <Text>
+          Etiam posuere lacus quis dolor. Mauris elementum mauris vitae tortor. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean id
+          metus id velit ullamcorper pulvinar. Mauris metus. Cum sociis natoque penatibus et magnis
+          dis parturient montes, nascetur ridiculus mus.
+        </Text>
+      )}
+    </Tile>
+  );
+};
+
+ExpandableWithCustomDescription.story = {
+  name: "Expandable with custom description",
+
+  parameters: {
+    info: "This is the playground configuration of this component.",
+  },
+};
+
+export const Playground = () => {
+  const href = text("Href", "https://www.kiwi.com/");
+  const title = text("Title", "Tile with title");
+  const external = boolean("External", false);
+  const Icon = getIcon(getIcons("Airplane"));
+  const description = text(
+    "Description",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+  );
+  const dataTest = text("dataTest", "test");
+
+  return (
+    <Tile
+      href={href}
+      onClick={action("clicked")}
+      icon={Icon && <Icon />}
+      title={title}
+      description={description}
+      external={external}
+      dataTest={dataTest}
+    />
+  );
+};
+
+Playground.story = {
+  parameters: {
+    info: "This is the default configuration of this component.",
+  },
+};
+
+export const Rtl = () => (
+  <RenderInRtl>
+    <Tile
+      onClick={action("clicked")}
+      description={
+        <Stack justify="between" direction="row">
+          <Text>Mr. John Smith</Text>
+          <Text>20 kg</Text>
+        </Stack>
+      }
+    >
+      This is example of expanded content
+    </Tile>
+  </RenderInRtl>
+);
+
+Rtl.story = {
+  name: "RTL",
+
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+  },
+};

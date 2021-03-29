@@ -134,21 +134,7 @@ StyledLoaderCircle.defaultProps = {
   theme: defaultTheme,
 };
 
-const Loading = (
-  props: Props,
-):
-  | boolean
-  | number
-  | string
-  | $Iterable<?React$Node, void, void>
-  | React.Node
-  | React$Portal
-  | {|
-      +key: React$Key | null,
-      +props: React$ElementProps<any>,
-      +ref: any,
-      +type: any,
-    |} => {
+const Loading = (props: Props): React.Node => {
   const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
 
   return children && !loading ? (
@@ -174,6 +160,7 @@ const Loading = (
     </StyledLoading>
   );
 };
+
 Loading.displayName = "Loading";
 
 export default Loading;

@@ -10,7 +10,13 @@ import PricingTableContext from "./PricingTableContext";
 
 const StyledPricingTable = styled.div``;
 
-const PricingTable = ({ children, dataTest, activeElement, hasError, desktopRadio }: Props): React.Node => {
+const PricingTable = ({
+  children,
+  dataTest,
+  activeElement,
+  hasError,
+  desktopRadio,
+}: Props): React.Node => {
   const { isDesktop } = useMediaQuery();
   const resolveBasis = item => {
     if (item > 0) {

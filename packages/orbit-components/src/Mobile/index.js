@@ -5,6 +5,8 @@ import Hide from "../Hide";
 
 import type { Props } from "./index";
 
-const Desktop = ({ children }: Props): React.Node => <Hide on={["desktop", "largeDesktop"]}>{children}</Hide>;
+const Desktop = ({ children }: Props): React.Node => (
+  <Hide on={["desktop", "largeDesktop"]}>{children}</Hide>
+);
 
 export default Desktop;

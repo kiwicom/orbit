@@ -98,7 +98,9 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const BackLink = (): React.Node => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>;
+export const BackLink = (): React.Node => (
+  <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>
+);
 
 BackLink.story = {
   name: "Back link",

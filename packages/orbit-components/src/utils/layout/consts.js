@@ -36,7 +36,9 @@ export const SPACINGS = {
   XXLARGE: "XXLarge",
 };
 
-export const TOKENS = (theme: Theme): {|
+export const TOKENS = (
+  theme: Theme,
+): {|
   XLarge: string,
   XSmall: string,
   XXLarge: string,

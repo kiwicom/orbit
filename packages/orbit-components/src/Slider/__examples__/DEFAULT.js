@@ -4,7 +4,9 @@ import * as React from "react";
 import Slider from "../index";
 
 export default {
-  Example: (): React.Node => <Slider label="Volume" minValue={0} maxValue={100} defaultValue={33} />,
+  Example: (): React.Node => (
+    <Slider label="Volume" minValue={0} maxValue={100} defaultValue={33} />
+  ),
   info: {
     title: "Default slider",
     description:

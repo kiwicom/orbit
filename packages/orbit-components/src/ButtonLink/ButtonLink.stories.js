@@ -19,7 +19,9 @@ export default {
   title: "ButtonLink",
 };
 
-export const Default = (): React.Node => <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>;
+export const Default = (): React.Node => (
+  <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>
+);
 
 Default.story = {
   parameters: {

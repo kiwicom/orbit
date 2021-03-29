@@ -4,7 +4,9 @@ import * as React from "react";
 import InputField from "../index";
 
 export default {
-  Example: (): React.Node => <InputField inlineLabel label="Given names" placeholder="Sofia Cruz" />,
+  Example: (): React.Node => (
+    <InputField inlineLabel label="Given names" placeholder="Sofia Cruz" />
+  ),
   info: {
     title: "Input field with inline label",
     description:

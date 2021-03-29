@@ -5,7 +5,7 @@ import { TYPES } from "../../consts";
 
 import type { Params } from "./index";
 
-const resolveFillColor = ({ type, theme, selected, focus }: Params): string | ((Params) => any) => {
+const resolveFillColor = ({ type, theme, selected, focus }: Params): string | (Params => any) => {
   if (focus) {
     if (type === TYPES.UNAVAILABLE) return "";
 

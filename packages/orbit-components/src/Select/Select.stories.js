@@ -23,7 +23,9 @@ export default {
   title: "Select",
 };
 
-export const Default = (): React.Node => <Select options={objectOptions} onChange={action("onChange")} />;
+export const Default = (): React.Node => (
+  <Select options={objectOptions} onChange={action("onChange")} />
+);
 
 Default.story = {
   parameters: {

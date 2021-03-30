@@ -15,15 +15,12 @@ const StyledWrapper = styled.header`
   z-index: 10;
   display: flex;
   align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
   ${mq.tablet(css`
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
   `)}
   ${mq.desktop(css`
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
   `)}
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);

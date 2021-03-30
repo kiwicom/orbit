@@ -2,7 +2,6 @@
 <PROJECT_ROOT>/packages/*/es/.*
 <PROJECT_ROOT>/packages/*/lib/.*
 <PROJECT_ROOT>/packages/*/umd/.*
-<PROJECT_ROOT>/packages/babel-plugin-orbit-components/scripts/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/dist/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/__fixtures__/
 

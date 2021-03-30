@@ -12,7 +12,7 @@ export default {
   title: "Icon",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const size = select("Size", [null, ...Object.values(ICON_SIZES)]);
   const color = select("Color", [null, ...Object.values(ICON_COLORS)]);
   const source = select("Icon", Object.keys(Icons), "Airplane");

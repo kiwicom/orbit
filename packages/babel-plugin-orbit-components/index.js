@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, flowtype/require-valid-file-annotation */
+/* eslint-disable no-param-reassign */
 
 /**
  * Usually, we take the destructed component name and append it after `/libs/` like so:
@@ -10,6 +10,7 @@
  * However, there are some exceptions which we have to handle manually and change the resulting
  * output. The following configuration maps destructed component to the new path (appended to libs).
  */
+
 const pathOverwrites = {
   AlertButton: "Alert/AlertButton",
   BadgePrimitive: "primitives/BadgePrimitive",

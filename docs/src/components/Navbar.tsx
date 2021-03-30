@@ -2,13 +2,12 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 import { WindowLocation } from "@reach/router";
-import { mediaQueries, useMediaQuery } from "@kiwicom/orbit-components";
+import { useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
 
 import Logo from "../images/orbit.svg";
 import LogoGlyph from "../images/orbit-glyph.svg";
 import Input from "./SearchInput";
 import Bookmarks from "./Bookmarks";
-import { HEADER_HEIGHT as SIDENAV_HEADER_HEIGHT, paddingMixin } from "./Sidenav";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.header`
@@ -16,7 +15,16 @@ const StyledWrapper = styled.header`
   z-index: 10;
   display: flex;
   align-items: center;
-  ${paddingMixin};
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  ${mq.tablet(css`
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  `)}
+  ${mq.desktop(css`
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  `)}
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);
 `;
@@ -26,7 +34,7 @@ const StyledInner = styled.div`
   max-width: ${MAX_CONTENT_WIDTH};
   padding: 0 ${CONTENT_PADDING};
   box-sizing: content-box;
-  height: ${SIDENAV_HEADER_HEIGHT};
+  height: 52px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: min-content auto min-content;

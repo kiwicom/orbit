@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { useMediaQuery } from "@kiwicom/orbit-components";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import StyledWrapper, { Size } from "./primitives/StyledWrapper";
 import StyledInputContainer from "./primitives/StyledInputContainer";
@@ -24,7 +24,7 @@ const StyledTogglePrefix = styled(StyledPrefix)`
   transform: translateY(-50%);
 `;
 const StyledSearchToggle = styled.button.attrs({ type: "button" })<{ size: Size }>`
-  ${({ theme, size }) => css`
+  ${({ theme, size }) => `
     display: block;
     width: 100%;
     height: ${size === Size.Large ? "100%" : "44px"};

@@ -26,10 +26,10 @@ const StyledInner = styled.div`
   `}
 `;
 
-const StyledIconLink = styled.a.attrs({
+const StyledIconLink = styled.a.attrs(() => ({
   target: "_blank",
   rel: "noopener noreferrer",
-})`
+}))`
   ${({ theme }) => css`
     display: block;
     padding: ${theme.orbit.spaceXSmall};

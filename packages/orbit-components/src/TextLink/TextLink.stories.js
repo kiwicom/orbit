@@ -19,7 +19,7 @@ export default {
   title: "TextLink",
 };
 
-export const PrimaryLink = () => {
+export const PrimaryLink = (): React.Node => {
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
   const children = text("children", "Primary link");
@@ -40,7 +40,7 @@ PrimaryLink.story = {
   },
 };
 
-export const SecondaryLink = () => {
+export const SecondaryLink = (): React.Node => {
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
   const children = text("children", "Secondary link");
@@ -61,7 +61,7 @@ SecondaryLink.story = {
   },
 };
 
-export const LinkWithLeftIcon = () => {
+export const LinkWithLeftIcon = (): React.Node => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
   const Icon = getIcon(getIcons("iconLeft", "ChevronLeft"));
@@ -82,7 +82,7 @@ LinkWithLeftIcon.story = {
   },
 };
 
-export const LinkWithRightIcon = () => {
+export const LinkWithRightIcon = (): React.Node => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
   const Icon = getIcon(getIcons("iconRight", "ChevronRight"));
@@ -103,7 +103,7 @@ LinkWithRightIcon.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const href = text("Href", "https://kiwi.com");
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
@@ -145,7 +145,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const children = text("children", "Primary link");
   const title = text("title", "Clarify purpose of a link for screen readers");
 
@@ -163,7 +163,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronRight />}>
       Link

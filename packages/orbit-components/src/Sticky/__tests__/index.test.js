@@ -9,6 +9,7 @@ describe("Sticky", () => {
     render(<Sticky dataTest="test">children</Sticky>);
     expect(screen.getByText("children")).toBeInTheDocument();
     expect(screen.getByTestId("test").firstChild).toHaveStyle({ position: "relative", top: "0" });
+    // $FlowFixMe
     fireEvent.scroll(document, { target: { scrollY: 150 } });
     expect(screen.getByTestId("test").firstChild).toHaveStyle({ position: "fixed", top: "0px" });
   });

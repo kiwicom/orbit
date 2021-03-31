@@ -5,7 +5,7 @@ import ServiceLogo from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <ServiceLogo name="Axa" size="large" />
       <ServiceLogo name="Axa" size="large" grayScale />

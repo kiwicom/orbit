@@ -82,12 +82,14 @@ const StyledSeatWrapper = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeatWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
 const StyledSeat = styled.svg``;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeat.defaultProps = {
   theme: defaultTheme,
 };
@@ -102,7 +104,7 @@ const Seat = ({
   label,
   title = "Seat",
   description = "Presents options for seating",
-}: Props) => {
+}: Props): React.Node => {
   const titleId = React.useMemo(() => randomID("title"), []);
   const descrId = React.useMemo(() => randomID("descr"), []);
   const clickable = type !== TYPES.UNAVAILABLE;

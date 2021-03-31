@@ -3,6 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/card/
 */
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 import type { spaceAfter } from "../../common/getSpacingToken/index";
 import type { Globals } from "../../common/common.js.flow";
@@ -26,7 +27,7 @@ export type State = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledCard: React.ComponentType<Props>;
+declare export var StyledCard: StyledComponent<any, any, HTMLElement>;
 declare export var CardHeader: CardHeaderType;
 declare export var CardSection: CardSectionType;
 declare export var CardSectionHeader: CardSectionHeaderType;

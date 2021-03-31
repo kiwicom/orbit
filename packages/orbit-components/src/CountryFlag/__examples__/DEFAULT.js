@@ -4,7 +4,7 @@ import * as React from "react";
 import CountryFlag from "../index";
 
 export default {
-  Example: () => <CountryFlag />,
+  Example: (): React.Node => <CountryFlag />,
   info: {
     title: "Default country flag",
     description:

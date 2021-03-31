@@ -4,7 +4,7 @@ import * as React from "react";
 import Tag from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [selected, setSelected] = React.useState(false);
     return (
       <Tag selected={selected} onClick={() => setSelected(!selected)}>

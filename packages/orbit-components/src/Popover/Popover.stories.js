@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -76,9 +76,9 @@ const longContent = (
 );
 
 const PopoverState = () => {
-  const [render, setRender] = useState(false);
+  const [render, setRender] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
       if (!render) {
         setRender(true);
@@ -133,7 +133,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return (
     <Popover content={content}>
       <Button type="secondary" iconRight={<ChevronDown />}>
@@ -150,7 +150,7 @@ Default.story = {
   },
 };
 
-export const PreferredAlign = () => {
+export const PreferredAlign = (): React.Node => {
   const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
   return (
     <Stack justify="center">
@@ -170,7 +170,7 @@ PreferredAlign.story = {
   },
 };
 
-export const PreferredPosition = () => {
+export const PreferredPosition = (): React.Node => {
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.TOP);
   return (
     <Popover
@@ -202,7 +202,7 @@ PreferredPosition.story = {
   },
 };
 
-export const WithListChoice = () => {
+export const WithListChoice = (): React.Node => {
   const width = text("width", "250px");
   return (
     <Popover
@@ -252,7 +252,7 @@ WithListChoice.story = {
   },
 };
 
-export const OpenedByProp = () => {
+export const OpenedByProp = (): React.Node => {
   const opened = boolean("opened", false);
 
   return (
@@ -273,7 +273,7 @@ OpenedByProp.story = {
   },
 };
 
-export const Overlapped = () => {
+export const Overlapped = (): React.Node => {
   const overlapped = boolean("overlapped", true);
   const opened = boolean("opened", false);
 
@@ -299,7 +299,7 @@ Overlapped.story = {
   },
 };
 
-export const MultiplePopovers = () => {
+export const MultiplePopovers = (): React.Node => {
   return (
     <Stack flex>
       <Popover
@@ -334,7 +334,7 @@ MultiplePopovers.story = {
   },
 };
 
-export const LongContent = () => {
+export const LongContent = (): React.Node => {
   return (
     <>
       <Popover
@@ -371,7 +371,7 @@ LongContent.story = {
   },
 };
 
-export const ScrollingPage = () => {
+export const ScrollingPage = (): React.Node => {
   return (
     <>
       <Sticky>
@@ -398,7 +398,7 @@ ScrollingPage.story = {
   },
 };
 
-export const ScrollingContent = () => {
+export const ScrollingContent = (): React.Node => {
   return (
     <ScrollWrapper>
       <ScrolledPage>
@@ -424,7 +424,7 @@ ScrollingContent.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
   const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
@@ -472,7 +472,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
 
@@ -498,7 +498,7 @@ Rtl.story = {
   },
 };
 
-export const RtlReverse = () => {
+export const RtlReverse = (): React.Node => {
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
   const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
 
@@ -528,7 +528,7 @@ RtlReverse.story = {
   },
 };
 
-export const LazyContentSimlulated = () => {
+export const LazyContentSimlulated = (): React.Node => {
   return <PopoverState />;
 };
 

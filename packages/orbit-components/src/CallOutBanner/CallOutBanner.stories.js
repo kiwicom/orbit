@@ -16,7 +16,7 @@ export default {
   title: "CallOutBanner",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",
@@ -54,7 +54,7 @@ Default.story = {
   },
 };
 
-export const Actionable = () => {
+export const Actionable = (): React.Node => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",
@@ -93,7 +93,7 @@ Actionable.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",

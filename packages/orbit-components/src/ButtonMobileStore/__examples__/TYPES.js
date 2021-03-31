@@ -5,7 +5,7 @@ import ButtonMobileStore from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack flex>
         <ButtonMobileStore

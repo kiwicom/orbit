@@ -15,7 +15,7 @@ const resolveContainerPosition = ({
   contentHeight,
   tooltipWidth,
   theme,
-}: Props) => {
+}: Props): any | null => {
   if (isPositionTop(position)) {
     /*
       Needed, otherwise the top position is incorrectly positioned due to missing 8 pixels.

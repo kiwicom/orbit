@@ -23,7 +23,7 @@ export default {
   title: "Tile",
 };
 
-export const DefaultJustWrapper = () => {
+export const DefaultJustWrapper = (): React.Node => {
   const content = text("content", "Lorem ipsum dolor sit amet");
   const noPadding = boolean("noPadding", false);
   return (
@@ -41,7 +41,7 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = () => {
+export const DefaultWithHeaderProps = (): React.Node => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -68,7 +68,7 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const DefaultWithHeaderPropsAsHref = () => {
+export const DefaultWithHeaderPropsAsHref = (): React.Node => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -96,7 +96,7 @@ DefaultWithHeaderPropsAsHref.story = {
   },
 };
 
-export const TripSectorTile = () => (
+export const TripSectorTile = (): React.Node => (
   <Tile
     title="Dynamic Tile height"
     description="This is a example of dynamic Tile height with TripSector"
@@ -129,7 +129,7 @@ TripSectorTile.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = () => {
+export const ExpandableWithCustomDescription = (): React.Node => {
   const showMore = boolean("showMore", false);
   const Icon = getIcon(getIcons("GenderMan"));
 
@@ -177,7 +177,7 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const href = text("Href", "https://www.kiwi.com/");
   const title = text("Title", "Tile with title");
   const external = boolean("External", false);
@@ -220,7 +220,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Tile
       onClick={action("clicked")}

@@ -5,7 +5,7 @@ import Timeline from "../index";
 import TimelineStep from "../TimelineStep";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Timeline>
       <TimelineStep label="Booked" subLabel="January 3, 10:43" type="success">
         You booked the trip and received e-tickets.

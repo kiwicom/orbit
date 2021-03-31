@@ -12,7 +12,7 @@ import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import type { Props } from "./index";
 
-export const StyledCard = styled.div`
+export const StyledCard: any = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -20,6 +20,7 @@ export const StyledCard = styled.div`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCard.defaultProps = {
   theme: defaultTheme,
 };
@@ -37,7 +38,7 @@ const Card = ({
   header,
   spaceAfter,
   dataA11ySection,
-}: Props) => {
+}: Props): React.Node => {
   const [expandedSections, setExpandedSections] = React.useState([]);
 
   // handles array of expanded sections

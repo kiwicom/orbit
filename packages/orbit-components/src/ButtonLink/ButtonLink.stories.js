@@ -19,7 +19,9 @@ export default {
   title: "ButtonLink",
 };
 
-export const Default = () => <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>;
+export const Default = (): React.Node => (
+  <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>
+);
 
 Default.story = {
   parameters: {
@@ -28,7 +30,7 @@ Default.story = {
   },
 };
 
-export const Secondary = () => (
+export const Secondary = (): React.Node => (
   <ButtonLink href="https://kiwi.com" type="secondary">
     ButtonLink
   </ButtonLink>
@@ -41,7 +43,7 @@ Secondary.story = {
   },
 };
 
-export const Critical = () => (
+export const Critical = (): React.Node => (
   <ButtonLink onClick={action("onClick")} type="critical">
     ButtonLink
   </ButtonLink>
@@ -54,7 +56,7 @@ Critical.story = {
   },
 };
 
-export const Circled = () => {
+export const Circled = (): React.Node => {
   const circled = boolean("circled", true);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
@@ -79,7 +81,7 @@ Circled.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const children = text("Children", "ButtonLink");
   const disabled = boolean("Disabled", false);
   const fullWidth = boolean("fullWidth", false);
@@ -134,7 +136,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const children = text("Children", "ButtonLink");
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
@@ -153,7 +155,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <ButtonLink iconLeft={<Icons.Airplane />}>ButtonLink</ButtonLink>
   </RenderInRtl>

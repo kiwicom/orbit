@@ -1,5 +1,5 @@
 // @flow
-import type { Interpolation } from "styled-components";
+import type { CSSRules } from "styled-components";
 
 export type AutoPlacement = (
   childrenCount: number,
@@ -7,6 +7,6 @@ export type AutoPlacement = (
   rows: ?string,
   columnGap: ?string,
   rowGap: ?string,
-) => Interpolation[];
+) => CSSRules;
 
 declare export default AutoPlacement;

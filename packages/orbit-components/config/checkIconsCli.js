@@ -1,4 +1,3 @@
-// @noflow
 import checkIcons from "./checkIcons";
 
 /*

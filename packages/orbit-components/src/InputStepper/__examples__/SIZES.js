@@ -5,7 +5,7 @@ import InputStepper from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <div style={{ maxWidth: "11em" }}>
         <InputStepper

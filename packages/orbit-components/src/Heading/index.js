@@ -42,7 +42,7 @@ export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   return tokens[name][type];
 };
 
-export const StyledHeading = styled(
+export const StyledHeading: any = styled(
   ({ element: Component, className, children, dataTest, dataA11ySection, id }) => (
     <Component
       className={className}
@@ -65,6 +65,7 @@ export const StyledHeading = styled(
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHeading.defaultProps = {
   theme: defaultTheme,
 };
@@ -78,7 +79,7 @@ const Heading = ({
   spaceAfter,
   dataA11ySection,
   id,
-}: Props) => (
+}: Props): React.Node => (
   <StyledHeading
     id={id}
     type={type}

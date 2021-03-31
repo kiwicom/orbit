@@ -20,27 +20,38 @@ const getHeight = (theme, size) => {
 
 const getColor = greyScale => (greyScale ? "logos-grayscale" : "logos");
 
-export const StyledServiceLogo = styled(({ className, name, size, grayScale, theme, dataTest }) => (
-  <img
-    className={className}
-    src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(getHeight(theme, size), 10)}/${name}.png`}
-    srcSet={`${baseURL}/${getColor(grayScale)}/0x${
-      parseInt(getHeight(theme, size), 10) * 2
-    }/${name}.png 2x`}
-    alt={name}
-    data-test={dataTest}
-  />
-))`
+export const StyledServiceLogo: any = styled(
+  ({ className, name, size, grayScale, theme, dataTest }) => (
+    <img
+      className={className}
+      src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(
+        getHeight(theme, size),
+        10,
+      )}/${name}.png`}
+      srcSet={`${baseURL}/${getColor(grayScale)}/0x${
+        parseInt(getHeight(theme, size), 10) * 2
+      }/${name}.png 2x`}
+      alt={name}
+      data-test={dataTest}
+    />
+  ),
+)`
   height: ${({ theme, size }) => getHeight(theme, size)};
   width: auto;
   background-color: transparent; // TODO: create token backgroundServiceLogo
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledServiceLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const ServiceLogo = ({ name, size = SIZE_OPTIONS.MEDIUM, grayScale = false, dataTest }: Props) => (
+const ServiceLogo = ({
+  name,
+  size = SIZE_OPTIONS.MEDIUM,
+  grayScale = false,
+  dataTest,
+}: Props): React.Node => (
   <StyledServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} />
 );
 

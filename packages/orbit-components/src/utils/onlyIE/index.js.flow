@@ -1,7 +1,7 @@
 // @flow
 
-import type { CSSConstructor } from "styled-components";
+import type { CSSRules } from "styled-components";
 
-export type OnlyIE = (style: CSSConstructor, breakpoint?: string) => CSSConstructor;
+export type OnlyIE = (style: CSSRules, breakpoint?: string) => CSSRules;
 
 declare export default OnlyIE;

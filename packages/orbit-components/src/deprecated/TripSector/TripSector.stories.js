@@ -19,7 +19,7 @@ export default {
   title: "Deprecated TripSector",
 };
 
-export const MultipleDays = () => (
+export const MultipleDays = (): React.Node => (
   <TripSector>
     <TripDate>Mon 22 Oct</TripDate>
     <TripSegment
@@ -130,7 +130,7 @@ MultipleDays.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const date = text("date", "Mon 22 Oct");
   const dataTest = text("dataTest", "test");
   const duration = text("duration", "15h 10m");
@@ -166,7 +166,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <TripSector>
       <TripDate>Mon 22 Oct</TripDate>

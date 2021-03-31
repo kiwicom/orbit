@@ -6,7 +6,7 @@ import InputGroup from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [month, setMonth] = React.useState(12);
     const [year, setYear] = React.useState(new Date().getFullYear());
     return (

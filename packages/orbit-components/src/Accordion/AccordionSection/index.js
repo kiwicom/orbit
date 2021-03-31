@@ -20,7 +20,7 @@ const AccordionSection = ({
   actions,
   dataTest,
   expandable = true,
-}: Props) => {
+}: Props): React.Node => {
   const { expanded, onExpand, loading } = useAccordion();
 
   const slideID = React.useMemo(() => randomID("slideID"), []);

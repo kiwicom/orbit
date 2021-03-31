@@ -18,7 +18,7 @@ export default {
   title: "Button",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const children = text("Children", "Default button");
   return <Button onClick={action("clicked")}>{children}</Button>;
 };
@@ -30,7 +30,7 @@ Default.story = {
   },
 };
 
-export const BasicButtons = () => {
+export const BasicButtons = (): React.Node => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
   const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
@@ -52,7 +52,7 @@ BasicButtons.story = {
   },
 };
 
-export const ButtonWithIcons = () => {
+export const ButtonWithIcons = (): React.Node => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
   const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
@@ -82,7 +82,7 @@ ButtonWithIcons.story = {
   },
 };
 
-export const SubtleButtons = () => {
+export const SubtleButtons = (): React.Node => {
   const children = text("Children", "Button");
   const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
 
@@ -117,7 +117,7 @@ SubtleButtons.story = {
   },
 };
 
-export const CircledButton = () => {
+export const CircledButton = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
   const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
@@ -143,7 +143,7 @@ CircledButton.story = {
   },
 };
 
-export const DestructiveButtons = () => {
+export const DestructiveButtons = (): React.Node => {
   const children = text("Children", "Destructive button");
   const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
 
@@ -163,7 +163,7 @@ DestructiveButtons.story = {
   },
 };
 
-export const ButtonAsALink = () => {
+export const ButtonAsALink = (): React.Node => {
   const children = text("Children", "I am a link");
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
@@ -193,7 +193,7 @@ ButtonAsALink.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const children = text("Children", "Button");
   const href = text("Href", undefined);
   const external = boolean("External", false);
@@ -251,7 +251,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const children = text("Children", "Button");
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
@@ -275,7 +275,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Button type="primary" iconLeft={<Icons.Airplane />}>
       Button

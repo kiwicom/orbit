@@ -17,6 +17,7 @@ const StyledIndent = styled.div`
   padding-left: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIndent.defaultProps = {
   theme: defaultTheme,
 };
@@ -36,7 +37,7 @@ const TimelineStepMobile = ({
   typeIcon,
   children,
   last,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledRelative>
       <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>

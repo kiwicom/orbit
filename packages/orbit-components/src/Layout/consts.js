@@ -5,7 +5,32 @@ export const LAYOUT_OPTIONS = {
   MMB: "MMB",
 };
 
-export const LAYOUT_SETTINGS = {
+export const LAYOUT_SETTINGS: {|
+  Booking: {|
+    columnGap: string,
+    columns: string,
+    desktop: {| columnGap: string |},
+    layoutColumns: { ... },
+    maxWidth: string,
+    tablet: {| columns: string |},
+  |},
+  MMB: {|
+    columnGap: string,
+    columns: string,
+    desktop: {| columnGap: string |},
+    layoutColumns: { ... },
+    maxWidth: string,
+  |},
+  Search: {|
+    columnGap: string,
+    columns: string,
+    desktop: {| columnGap: string |},
+    largeDesktop: {| columns: string |},
+    layoutColumns: { ... },
+    maxWidth: string,
+    tablet: {| columns: string |},
+  |},
+|} = {
   [LAYOUT_OPTIONS.SEARCH]: {
     columns: "1fr",
     columnGap: "16px",

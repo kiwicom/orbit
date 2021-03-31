@@ -5,7 +5,7 @@ import Loading from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Loading type="inlineLoader" text="Hang on while we retrieve the best flights" />
       <Loading type="inlineLoader" text="Saving your request" />

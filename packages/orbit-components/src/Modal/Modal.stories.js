@@ -33,7 +33,7 @@ export default {
   title: "Modal",
 };
 
-export const Sizes = () => {
+export const Sizes = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Title", "I'm lovely description");
@@ -69,7 +69,7 @@ Sizes.story = {
   },
 };
 
-export const ShortModal = () => (
+export const ShortModal = (): React.Node => (
   <Modal onClose={action("onClose")} fixedFooter>
     <ModalSection>
       <Stack>
@@ -108,7 +108,7 @@ ShortModal.story = {
   },
 };
 
-export const WithoutSection = () => {
+export const WithoutSection = (): React.Node => {
   const showMore = boolean("showMore", false);
   return (
     <Modal onClose={action("onClose")} fixedFooter>
@@ -141,7 +141,7 @@ WithoutSection.story = {
   },
 };
 
-export const RemovableSections = () => {
+export const RemovableSections = (): React.Node => {
   const showMore = boolean(false);
   return (
     <Modal onClose={action("onClose")} fixedFooter>
@@ -177,7 +177,7 @@ RemovableSections.story = {
   },
 };
 
-export const WithForm = () => {
+export const WithForm = (): React.Node => {
   const showMore = boolean(false);
   return (
     <Modal onClose={action("onClose")} fixedFooter autoFocus={false}>
@@ -236,7 +236,7 @@ WithForm.story = {
   },
 };
 
-export const WithFixedFooter = () => (
+export const WithFixedFooter = (): React.Node => (
   <Modal onClose={action("onClose")} fixedFooter>
     <ModalHeader
       title="Enjoy something to eat while you fly"
@@ -421,7 +421,7 @@ WithFixedFooter.story = {
   },
 };
 
-export const FullPreview = () => {
+export const FullPreview = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Description", "Lorem ispum dolor sit amet");
@@ -487,7 +487,7 @@ FullPreview.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Modal onClose={action("onClose")} fixedFooter>
       <ModalHeader

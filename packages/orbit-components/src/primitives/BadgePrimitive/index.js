@@ -7,7 +7,7 @@ import { rtlSpacing } from "../../utils/rtl";
 
 import type { Props } from "./index";
 
-export const StyledBadge = styled(({ className, children, dataTest, ariaLabel }) => (
+export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel }) => (
   <div className={className} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
@@ -29,6 +29,7 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel })
   border: ${({ borderColor }) => borderColor && `1px solid ${borderColor}`};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadge.defaultProps = {
   theme: defaultTheme,
 };
@@ -46,6 +47,7 @@ const IconContainer = styled(({ className, children }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -55,11 +57,12 @@ const StyledBadgeContent = styled.div`
   line-height: 1;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const BadgePrimitive = (props: Props) => {
+const BadgePrimitive = (props: Props): React.Node => {
   const { icon, children, ariaLabel, dataTest, background, foregroundColor, borderColor } = props;
 
   return (

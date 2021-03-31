@@ -1,5 +1,5 @@
 // @flow
-import React, { useEffect } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import { rtlSpacing } from "../../utils/rtl";
@@ -20,11 +20,12 @@ const StyledInputTags = styled.div`
   overflow: hidden;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputTags.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledInputTagsInner = styled.div`
+const StyledInputTagsInner: any = styled.div`
   overflow-x: scroll;
   white-space: nowrap;
   -ms-overflow-style: none; /* IE 11 */
@@ -41,14 +42,15 @@ const StyledInputTagsInner = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputTagsInner.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputTags = ({ children }: Props) => {
+const InputTags = ({ children }: Props): React.Node => {
   const tagsRef = React.createRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleMouseMove = event => {
       if (tagsRef && tagsRef.current) {
         const { isDragging } = tagsRef.current;

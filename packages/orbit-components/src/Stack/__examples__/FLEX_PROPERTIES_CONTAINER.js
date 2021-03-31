@@ -8,7 +8,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const divStyle = {
       width: "120px",
       height: "40px",

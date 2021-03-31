@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 
 import Stack from "../../../Stack";
 import Text from "../../../Text";
@@ -9,7 +9,7 @@ import { TYPES } from "../../consts";
 
 import type { Props } from "./index";
 
-const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props) => {
+const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props): React.Node => {
   const theme = useTheme();
 
   return (

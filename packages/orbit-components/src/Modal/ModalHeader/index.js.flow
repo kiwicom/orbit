@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
@@ -15,8 +15,8 @@ export type Props = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var MobileHeader: ReactComponentStyled<any>;
+declare export var MobileHeader: StyledComponent<any, any, HTMLElement>;
 
-declare export var StyledModalHeader: ReactComponentStyled<any>;
+declare export var StyledModalHeader: StyledComponent<any, any, HTMLElement>;
 
-declare export var ModalHeading: ReactComponentStyled<any>;
+declare export var ModalHeading: StyledComponent<any, any, HTMLElement>;

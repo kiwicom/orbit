@@ -5,7 +5,7 @@ import StopoverArrow from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <StopoverArrow stops="0" />
       <StopoverArrow stops="1" />

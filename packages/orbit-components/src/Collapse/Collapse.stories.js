@@ -16,7 +16,7 @@ export default {
   title: "Collapse",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("label", "Duration");
   return (
     <Collapse label={label}>
@@ -64,7 +64,7 @@ Default.story = {
   },
 };
 
-export const OpenedByDefault = () => {
+export const OpenedByDefault = (): React.Node => {
   const label = text("label", "Duration");
   return (
     <Collapse label={label} initialExpanded>
@@ -114,7 +114,7 @@ OpenedByDefault.story = {
   },
 };
 
-export const WithActions = () => {
+export const WithActions = (): React.Node => {
   const label = text("label", "Transportation");
   return (
     <Collapse
@@ -143,7 +143,7 @@ WithActions.story = {
   },
 };
 
-export const MultipleCollapses = () => {
+export const MultipleCollapses = (): React.Node => {
   const label = text("label", "Transportation");
   return (
     <Stack spacing="none">
@@ -191,7 +191,7 @@ MultipleCollapses.story = {
   },
 };
 
-export const Uncontrolled = () => {
+export const Uncontrolled = (): React.Node => {
   const label = text("label", "Duration");
   const expanded = boolean("expanded", true);
   return (
@@ -214,7 +214,7 @@ Uncontrolled.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const label = text("label", "Transportation");
   return (
     <RenderInRtl>

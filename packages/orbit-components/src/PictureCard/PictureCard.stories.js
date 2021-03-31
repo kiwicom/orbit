@@ -31,7 +31,7 @@ export default {
   title: "PictureCard",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("title", "Moscow");
   const subTitle = text("title", "Prague");
   const label = text("title", "Family fun");
@@ -57,7 +57,7 @@ Default.story = {
   },
 };
 
-export const WithActions = () => {
+export const WithActions = (): React.Node => {
   const tabIndex = text("TabIndex", "0");
   const title = text("title", "Moscow");
   const subTitle = text("title", "Prague");
@@ -89,7 +89,7 @@ WithActions.story = {
   },
 };
 
-export const Plain = () => {
+export const Plain = (): React.Node => {
   const width = text("title", "100%");
   const height = text("height", "150px");
 
@@ -103,7 +103,7 @@ Plain.story = {
   },
 };
 
-export const PlainWithoutPlaceHolderForSsr = () => {
+export const PlainWithoutPlaceHolderForSsr = (): React.Node => {
   return <PictureCard image={imageWithoutPlaceholder} />;
 };
 
@@ -116,7 +116,7 @@ PlainWithoutPlaceHolderForSsr.story = {
   },
 };
 
-export const PlainWithAnSrcDefinedInsteadOfACode = () => {
+export const PlainWithAnSrcDefinedInsteadOfACode = (): React.Node => {
   return <PictureCard image={imageWithSrc} />;
 };
 
@@ -129,7 +129,7 @@ PlainWithAnSrcDefinedInsteadOfACode.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const title = text("title", "Moscow");
   const dataTest = text("dataTest", "test");
   const height = text("height", "300px");
@@ -169,7 +169,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const title = text("title", "Paris");
   const dataTest = text("dataTest", "test");
   const height = text("height", "300px");

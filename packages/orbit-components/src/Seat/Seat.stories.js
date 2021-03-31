@@ -10,9 +10,9 @@ import SeatLegend from "./components/SeatLegend";
 
 import Seat from "./index";
 
-export const Default = () => <Seat />;
+export const Default = (): React.Node => <Seat />;
 
-export const Mixed = () => {
+export const Mixed = (): React.Node => {
   const label = text("label", "XY");
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
 
@@ -76,7 +76,7 @@ export const Mixed = () => {
   );
 };
 
-export const Selected = () => {
+export const Selected = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
   const dataTest = text("dataTest", "test");
   const label = text("label", "XY");
@@ -97,7 +97,7 @@ export const Selected = () => {
   );
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
   const label = text("label", "XY");
@@ -129,7 +129,7 @@ export const Playground = () => {
   );
 };
 
-export const Legend = () => {
+export const Legend = (): React.Node => {
   return (
     <Stack direction="column">
       <SeatLegend label="Extra legroom ($ 5.99 – $ 12.98)" />

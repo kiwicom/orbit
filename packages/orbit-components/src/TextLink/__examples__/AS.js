@@ -7,7 +7,7 @@ import TextLink from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack>
         <Heading type="title3" as="h3">

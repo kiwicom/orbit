@@ -18,7 +18,7 @@ export default {
   title: "Primitives",
 };
 
-export const BadgePrimitive = () => {
+export const BadgePrimitive = (): React.Node => {
   const Icon = getIcon(getIcons("icon", "Airplane"));
   const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
   const foregroundColor = text("ForegroundColor", "#fff");
@@ -44,7 +44,7 @@ BadgePrimitive.story = {
   },
 };
 
-export const IllustrationPrimitive = () => {
+export const IllustrationPrimitive = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const name = "Accommodation";
   const dataTest = text("dataTest", "test");
@@ -67,7 +67,7 @@ IllustrationPrimitive.story = {
   },
 };
 
-export const ButtonPrimitive = () => {
+export const ButtonPrimitive = (): React.Node => {
   const asComponent = text("asComponent", "button");
   const ariaControls = text("ariaControls", null);
   const ariaExpanded = boolean("ariaExpanded", false);

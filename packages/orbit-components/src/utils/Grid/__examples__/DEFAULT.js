@@ -6,7 +6,7 @@ import Grid from "../index";
 import Text from "../../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const divStyle = {
       backgroundColor: defaultTheme.orbit.paletteCloudDark,
       border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,

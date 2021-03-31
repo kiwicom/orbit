@@ -5,7 +5,7 @@ import defaultTheme from "../../../defaultTheme";
 import BadgePrimitive from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <BadgePrimitive
       background={defaultTheme.orbit.backgroundBody}
       foregroundColor={defaultTheme.orbit.colorTextPrimary}

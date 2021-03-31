@@ -23,7 +23,9 @@ export default {
   title: "Select",
 };
 
-export const Default = () => <Select options={objectOptions} onChange={action("onChange")} />;
+export const Default = (): React.Node => (
+  <Select options={objectOptions} onChange={action("onChange")} />
+);
 
 Default.story = {
   parameters: {
@@ -32,7 +34,7 @@ Default.story = {
   },
 };
 
-export const WithPrefix = () => (
+export const WithPrefix = (): React.Node => (
   <Select
     label="Select box (with prefix)"
     options={objectOptions}
@@ -50,7 +52,7 @@ WithPrefix.story = {
   },
 };
 
-export const WithCountryFlagPrefix = () => {
+export const WithCountryFlagPrefix = (): React.Node => {
   const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
   return (
     <Select
@@ -71,7 +73,7 @@ WithCountryFlagPrefix.story = {
   },
 };
 
-export const WithPlaceholder = () => {
+export const WithPlaceholder = (): React.Node => {
   const placeholder = text("Placeholder", "Select value from list");
   return (
     <Select
@@ -92,7 +94,7 @@ WithPlaceholder.story = {
   },
 };
 
-export const WithSmallSize = () => (
+export const WithSmallSize = (): React.Node => (
   <Select
     label="Select box (small size)"
     size="small"
@@ -110,7 +112,7 @@ WithSmallSize.story = {
   },
 };
 
-export const WithHelpMessage = () => (
+export const WithHelpMessage = (): React.Node => (
   <Select
     label="Select box (with help text)"
     options={objectOptions}
@@ -128,7 +130,7 @@ WithHelpMessage.story = {
   },
 };
 
-export const WithErrorMessage = () => (
+export const WithErrorMessage = (): React.Node => (
   <Select
     label="Select box (with error text)"
     options={objectOptions}
@@ -146,7 +148,7 @@ WithErrorMessage.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const placeholder = text("Placeholder", "Select value from list");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const disabled = boolean("Disabled", false);
@@ -189,7 +191,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Select placeholder="My placeholder" options={objectOptions} label="My label" />
   </RenderInRtl>

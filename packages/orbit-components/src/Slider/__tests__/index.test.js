@@ -48,6 +48,7 @@ describe("Slider", () => {
     expect(slider).toHaveAttribute("aria-valuenow", defaultValue.toString());
     expect(slider).toHaveAttribute("aria-valuetext", ariaValueText.toString());
 
+    // $FlowFixMe
     userEvent.tab(slider);
     expect(onChangeBefore).toHaveBeenCalled();
     fireEvent.blur(slider);

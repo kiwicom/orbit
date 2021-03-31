@@ -14,7 +14,7 @@ export default {
   title: "InputStepper",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return <InputStepper onChange={action("onChange")} />;
 };
 
@@ -24,7 +24,7 @@ Default.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const label = text("Label", "Adults");
   const help = text("help", "You need to enter count of adults");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
@@ -53,7 +53,7 @@ WithHelp.story = {
   },
 };
 
-export const WithDifferentSize = () => {
+export const WithDifferentSize = (): React.Node => {
   const label = text("Label", "Adults");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const titleIncrement = text("Title increment", "Add a passenger");
@@ -79,7 +79,7 @@ WithDifferentSize.story = {
   },
 };
 
-export const Stateless = () => {
+export const Stateless = (): React.Node => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);
@@ -133,7 +133,7 @@ Stateless.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);
@@ -182,7 +182,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   return (
     <RenderInRtl>
       <InputStepper label="My label" />

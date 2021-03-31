@@ -24,11 +24,12 @@ const StyledColumn = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const LayoutColumn = ({ children, hideOn, as = "div", dataTest }: Props) => {
+const LayoutColumn = ({ children, hideOn, as = "div", dataTest }: Props): React.Node => {
   return (
     <StyledColumn data-test={dataTest} hideOn={hideOn} as={as}>
       {children}

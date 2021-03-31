@@ -15,7 +15,7 @@ export default {
   title: "NotificationBadge",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const content = text("Content", "10");
   const Icon = getIcon(getIcons(null));
   return <NotificationBadge icon={Icon && <Icon />}>{content}</NotificationBadge>;
@@ -27,7 +27,7 @@ Default.story = {
   },
 };
 
-export const Neutral = () => {
+export const Neutral = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.NEUTRAL}>{content}</NotificationBadge>;
 };
@@ -38,7 +38,7 @@ Neutral.story = {
   },
 };
 
-export const Info = () => {
+export const Info = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.INFO}>{content}</NotificationBadge>;
 };
@@ -49,7 +49,7 @@ Info.story = {
   },
 };
 
-export const InfoInverted = () => {
+export const InfoInverted = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.INFO_INVERTED}>{content}</NotificationBadge>;
 };
@@ -60,7 +60,7 @@ InfoInverted.story = {
   },
 };
 
-export const Success = () => {
+export const Success = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.SUCCESS}>{content}</NotificationBadge>;
 };
@@ -71,7 +71,7 @@ Success.story = {
   },
 };
 
-export const Warning = () => {
+export const Warning = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.WARNING}>{content}</NotificationBadge>;
 };
@@ -82,7 +82,7 @@ Warning.story = {
   },
 };
 
-export const Critical = () => {
+export const Critical = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL}>{content}</NotificationBadge>;
 };
@@ -93,7 +93,7 @@ Critical.story = {
   },
 };
 
-export const CriticalInverted = () => {
+export const CriticalInverted = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_INVERTED}>{content}</NotificationBadge>;
 };
@@ -104,7 +104,7 @@ CriticalInverted.story = {
   },
 };
 
-export const Dark = () => {
+export const Dark = (): React.Node => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.DARK}>{content}</NotificationBadge>;
 };
@@ -115,7 +115,7 @@ Dark.story = {
   },
 };
 
-export const White = () => {
+export const White = (): React.Element<"div"> => {
   const content = text("Content", "10");
   return (
     <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
@@ -130,7 +130,7 @@ White.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const content = text("Content", "10");
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
   const dataTest = text("dataTest", "test");
@@ -156,7 +156,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const content = text("Content", "10");
   const ariaLabel = text("ariaLabel", "additional information for screen readers");
 
@@ -173,7 +173,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <NotificationBadge type="info">10</NotificationBadge>
   </RenderInRtl>

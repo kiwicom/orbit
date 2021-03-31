@@ -21,7 +21,7 @@ export default {
   title: "ThemeProvider",
 };
 
-export const DictionaryContext = () => {
+export const DictionaryContext = (): React.Node => {
   const dictionary = select("dictionary", Object.keys(languages));
   return (
     <ThemeProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
@@ -39,7 +39,7 @@ DictionaryContext.story = {
   },
 };
 
-export const WithoutTransitions = () => {
+export const WithoutTransitions = (): React.Node => {
   const transitions = boolean("transitions", false);
   return (
     <ThemeProvider theme={{ orbit: getTokens(), transitions }}>
@@ -59,7 +59,7 @@ WithoutTransitions.story = {
   },
 };
 
-export const OwnTheme = () => {
+export const OwnTheme = (): React.Node => {
   const orbitTheme = object("orbitTheme", {
     palette: {
       product: {

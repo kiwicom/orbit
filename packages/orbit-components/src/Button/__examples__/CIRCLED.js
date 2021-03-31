@@ -7,7 +7,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack spacing="XLarge">
       <Button iconLeft={<Icons.Edit />} circled title="Edit this page" />
       <Stack spacing="XSmall">

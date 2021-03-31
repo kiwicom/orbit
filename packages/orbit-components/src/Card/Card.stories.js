@@ -23,13 +23,13 @@ export default {
   title: "Card",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("Title", "Card with title");
   const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   return <Card icon={<Icons.Airplane />} title={title} titleAs={titleAs} />;
 };
 
-export const CardWithDescription = () => {
+export const CardWithDescription = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   return (
@@ -46,7 +46,7 @@ CardWithDescription.story = {
   name: "Card with description",
 };
 
-export const CardWithActions = () => {
+export const CardWithActions = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   return (
@@ -63,7 +63,7 @@ CardWithActions.story = {
   name: "Card with actions",
 };
 
-export const CardWithOnlySection = () => {
+export const CardWithOnlySection = (): React.Node => {
   return (
     <Card>
       <CardSection>This is content of card</CardSection>
@@ -75,7 +75,7 @@ CardWithOnlySection.story = {
   name: "Card with only section",
 };
 
-export const CardWithSections = () => {
+export const CardWithSections = (): React.Node => {
   const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   const sectionTitle = text("SectionTitle", "Section Title");
   const sectionDescription = text("SectionDescription", "Section Description");
@@ -108,7 +108,7 @@ CardWithSections.story = {
   name: "Card with sections",
 };
 
-export const CardWithExpandableSections = () => {
+export const CardWithExpandableSections = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   const sectionTitle = text("SectionTitle", "Section Title");
@@ -136,7 +136,7 @@ CardWithExpandableSections.story = {
   },
 };
 
-export const CardWithControlledAndUncontrolled = () => {
+export const CardWithControlledAndUncontrolled = (): React.Node => {
   const expanded = boolean("expanded", true);
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
@@ -173,7 +173,7 @@ CardWithControlledAndUncontrolled.story = {
   },
 };
 
-export const CardWithControlledWithKnobe = () => {
+export const CardWithControlledWithKnobe = (): React.Node => {
   const expanded = boolean("expanded", false);
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
@@ -196,7 +196,7 @@ CardWithControlledWithKnobe.story = {
   },
 };
 
-export const CardWithDefaultExpanded = () => {
+export const CardWithDefaultExpanded = (): React.Node => {
   const initialExpanded = boolean("initialExpended", true);
   return (
     <Card>
@@ -249,7 +249,7 @@ CardWithDefaultExpanded.story = {
   },
 };
 
-export const CardWithMixedSections = () => {
+export const CardWithMixedSections = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   const sectionTitle = text("SectionTitle", "Section Title");
@@ -288,7 +288,7 @@ CardWithMixedSections.story = {
   },
 };
 
-export const LoadingCard = () => {
+export const LoadingCard = (): React.Node => {
   const title = text("Title", "Card with title");
   return (
     <Card title={title} loading>
@@ -304,7 +304,7 @@ LoadingCard.story = {
   },
 };
 
-export const TripSectorCard = () => (
+export const TripSectorCard = (): React.Node => (
   <Card>
     <CardSection expandable initialExpanded title="Expandable dynamic height of Card">
       <TripSector dataTest="test">
@@ -335,7 +335,7 @@ TripSectorCard.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Card
       title="Title of the CardHeader"
@@ -373,7 +373,7 @@ Rtl.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const title = text("Title", "Card with title");
   const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
   return <Card title={title} dataA11ySection={dataA11ySection} />;

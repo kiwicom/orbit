@@ -24,7 +24,7 @@ const Tile = ({
   noHeaderIcon = false,
   htmlTitle,
   onClick,
-}: Props) => {
+}: Props): React.Node => {
   if (expandable) {
     return (
       <TileExpandable

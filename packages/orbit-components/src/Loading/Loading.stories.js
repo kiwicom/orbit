@@ -16,7 +16,7 @@ export default {
   title: "Loading",
 };
 
-export const Default = () => <Loading />;
+export const Default = (): React.Node => <Loading />;
 
 Default.story = {
   parameters: {
@@ -25,7 +25,7 @@ Default.story = {
   },
 };
 
-export const ButtonLoading = () => <Button loading>Default button</Button>;
+export const ButtonLoading = (): React.Node => <Button loading>Default button</Button>;
 
 ButtonLoading.story = {
   name: "Button loading",
@@ -36,7 +36,7 @@ ButtonLoading.story = {
   },
 };
 
-export const CardLoading = () => {
+export const CardLoading = (): React.Node => {
   const title = text("Title", "Card with title");
   const description = text("Description");
   const loading = boolean("Loading", true);
@@ -61,7 +61,7 @@ CardLoading.story = {
   },
 };
 
-export const InlineLoader = () => {
+export const InlineLoader = (): React.Node => {
   const loadingText = text("Text", "Please wait, content of the page is loading...");
   return <Loading type={TYPE_OPTIONS.INLINE_LOADER} text={loadingText} />;
 };
@@ -75,7 +75,7 @@ InlineLoader.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PAGE_LOADER);
   const loadingText = text("Text", "Please wait, content of the page is loading...");
   const loading = boolean("Loading", true);
@@ -91,7 +91,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Loading loading type="pageLoader" text="Please wait, content of the page is loading..." />
   </RenderInRtl>

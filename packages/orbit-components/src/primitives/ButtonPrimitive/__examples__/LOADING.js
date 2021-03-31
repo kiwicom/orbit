@@ -4,7 +4,7 @@ import * as React from "react";
 import Button from "../index";
 
 export default {
-  Example: () => <Button loading>Click me</Button>,
+  Example: (): React.Node => <Button loading>Click me</Button>,
   info: {
     title: "Loading button",
     description:

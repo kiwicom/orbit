@@ -16,11 +16,12 @@ const WrapperStyled = styled.div`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 WrapperStyled.defaultProps = {
   theme: themeDefault,
 };
 
-const Timeline = ({ children, spaceAfter, dataTest }: Props) => {
+const Timeline = ({ children, spaceAfter, dataTest }: Props): null | React.Node => {
   const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
 

@@ -11,28 +11,29 @@ import getButtonIconForeground from "./helpers/getButtonIconForeground";
 
 import type { Props } from "./index";
 
-const Button = React.forwardRef<Props, HTMLButtonElement>(
-  ({ type = TYPE_OPTIONS.PRIMARY, disabled = false, ...props }, ref) => {
-    const theme = useTheme();
-    const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps(propsWithTheme);
-    const buttonStyles = getButtonStyles({ type, theme, disabled });
-    const icons = getIconContainer({
-      ...propsWithTheme,
-      iconForeground: getButtonIconForeground({ type, theme }),
-    });
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        disabled={disabled}
-        {...props}
-        {...buttonStyles}
-        {...commonProps}
-        {...icons}
-      />
-    );
-  },
-);
+const Button: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
+  Props,
+  HTMLButtonElement,
+>(({ type = TYPE_OPTIONS.PRIMARY, disabled = false, ...props }, ref) => {
+  const theme = useTheme();
+  const propsWithTheme = { theme, ...props };
+  const commonProps = getCommonProps(propsWithTheme);
+  const buttonStyles = getButtonStyles({ type, theme, disabled });
+  const icons = getIconContainer({
+    ...propsWithTheme,
+    iconForeground: getButtonIconForeground({ type, theme }),
+  });
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      disabled={disabled}
+      {...props}
+      {...buttonStyles}
+      {...commonProps}
+      {...icons}
+    />
+  );
+});
 
 Button.displayName = "Button";
 

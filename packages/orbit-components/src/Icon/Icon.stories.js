@@ -8,6 +8,10 @@ import * as Icons from "../icons";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
+export default {
+  title: "Icon",
+};
+
 export const Default = () => {
   const size = select("Size", [null, ...Object.values(ICON_SIZES)]);
   const color = select("Color", [null, ...Object.values(ICON_COLORS)]);

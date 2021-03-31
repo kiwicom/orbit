@@ -14,7 +14,7 @@ export default {
   title: "Dialog",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("title", "Log out");
   const description = text("description", "Are you sure you want to log out now?");
   const dataTest = text("dataTest", "test");
@@ -34,7 +34,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const title = text("title", "Log out");
   const description = text("description", "Are you sure you want to log out now?");
   const illustration = select("illustration", NAMES, "NoNotification");

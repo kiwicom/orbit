@@ -5,7 +5,7 @@ import ButtonLink from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <ButtonLink size="small">Small button link</ButtonLink>
       <ButtonLink>Normal button link</ButtonLink>

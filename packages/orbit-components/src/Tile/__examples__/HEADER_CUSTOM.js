@@ -10,7 +10,7 @@ import Tile from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Tile
       icon={<Icons.GenderWoman ariaLabel="Woman" />}
       header={

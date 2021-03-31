@@ -19,6 +19,7 @@ const StyledBreadcrumbs = styled.nav`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbs.defaultProps = {
   theme: defaultTheme,
 };
@@ -35,6 +36,7 @@ const StyledBackButtonWrapper = styled.span`
   margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,7 +58,7 @@ const GoBackButton = ({ onClick, backHref }) => {
   );
 };
 
-const Breadcrumbs = (props: Props) => {
+const Breadcrumbs = (props: Props): React.Node => {
   const translate = useTranslate();
   const {
     children,

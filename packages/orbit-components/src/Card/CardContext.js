@@ -19,6 +19,6 @@ export const cardDefault: Context = {
 const context: React.Context<Context> = React.createContext(cardDefault);
 context.displayName = "CardOrbitContext";
 
-export const useCard = () => React.useContext(context);
+export const useCard = (): Context => React.useContext(context);
 
 export const { Consumer, Provider } = context;

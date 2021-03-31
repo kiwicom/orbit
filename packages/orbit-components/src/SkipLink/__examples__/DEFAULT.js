@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <>
       <SkipLink
         links={[

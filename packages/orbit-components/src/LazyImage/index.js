@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
@@ -12,7 +12,7 @@ const FORMATS = {
   ANY: "*",
 };
 
-export const StyledLazyImage = styled.div`
+export const StyledLazyImage: any = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -31,6 +31,7 @@ const Image = styled.img`
   filter: ${({ lowRes }) => lowRes && "blur(3px)"};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Image.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,8 +66,8 @@ const Picture = ({ pictures, name, loaded, onLoad, lowRes }: PictureProps) => (
   </picture>
 );
 
-const LazyImage = ({ placeholder, original, name }: Props) => {
-  const [loaded, setLoaded] = useState(false);
+const LazyImage = ({ placeholder, original, name }: Props): React.Node => {
+  const [loaded, setLoaded] = React.useState(false);
   return (
     <StyledLazyImage>
       {/*

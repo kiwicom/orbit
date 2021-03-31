@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import type { Props } from ".";
 
-export const StyledTableRow = styled(({ children, className, dataTest }) => (
+export const StyledTableRow: any = styled(({ children, className, dataTest }) => (
   <tr className={className} data-test={dataTest}>
     {children}
   </tr>
@@ -14,7 +14,7 @@ export const StyledTableRow = styled(({ children, className, dataTest }) => (
   white-space: nowrap;
 `;
 
-const TableRow = ({ dataTest, children }: Props) => (
+const TableRow = ({ dataTest, children }: Props): React.Node => (
   <StyledTableRow dataTest={dataTest}>{children}</StyledTableRow>
 );
 

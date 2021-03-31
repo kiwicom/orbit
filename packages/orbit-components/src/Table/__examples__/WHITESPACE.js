@@ -9,7 +9,7 @@ import TableHead from "../TableHead";
 import TableRow from "../TableRow";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Table>
         <TableHead>

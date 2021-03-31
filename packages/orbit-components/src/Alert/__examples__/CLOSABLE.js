@@ -5,7 +5,7 @@ import Alert from "../index";
 import Button from "../../Button";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showAlert, setShowAlert] = React.useState(true);
     return showAlert ? (
       <Alert closable onClose={() => setShowAlert(false)} title="You've got mail" />

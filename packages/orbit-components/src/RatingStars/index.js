@@ -22,6 +22,7 @@ const StyledRatingStars = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledRatingStars.defaultProps = {
   theme: defaultTheme,
 };
@@ -32,7 +33,7 @@ const RatingStars = ({
   dataTest,
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
-}: Props) => {
+}: Props): React.Node => {
   const translate = useTranslate();
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;

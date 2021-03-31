@@ -8,7 +8,7 @@ import Portal from "../index";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDrawer, setShowDrawer] = React.useState(false);
     return (
       <>

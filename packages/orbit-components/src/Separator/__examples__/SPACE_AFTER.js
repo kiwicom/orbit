@@ -6,7 +6,7 @@ import Separator from "../index";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <>
       <Heading spaceAfter="large">Normal</Heading>
       <Text spaceAfter="normal">

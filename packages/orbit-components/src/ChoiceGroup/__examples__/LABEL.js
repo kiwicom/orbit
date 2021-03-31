@@ -6,7 +6,7 @@ import Checkbox from "../../Checkbox";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [checked, setChecked] = React.useState({ plane: false, train: false, auto: false });
     return (
       <Stack>

@@ -21,6 +21,7 @@ describe("Alert", () => {
   });
   it("should have margin-bottom", () => {
     const { container } = render(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
+    // $FlowFixMe
     expect(getComputedStyle(container.firstChild)).toHaveProperty(
       "margin-bottom",
       defaultTheme.orbit.spaceSmall,

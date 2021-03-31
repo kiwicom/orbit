@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useMemo, useCallback } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import useTheme from "../../../hooks/useTheme";
@@ -72,6 +72,7 @@ const StyledTooltipWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -95,6 +96,7 @@ const StyledTooltipContent = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -112,25 +114,25 @@ const TooltipContent = ({
   preferredAlign,
   containerRef,
   parent,
-}: Props) => {
+}: Props): React.Node => {
   const theme = useTheme();
-  const tooltip = useRef(null);
-  const content = useRef(null);
-  const [positions, aligns] = useMemo(
+  const tooltip = React.useRef(null);
+  const content = React.useRef(null);
+  const [positions, aligns] = React.useMemo(
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
   const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
-  const position = useMemo(() => calculateTooltipPosition(positions, dimensions), [
+  const position = React.useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,
   ]);
-  const align = useMemo(() => calculateTooltipAlign(position, aligns, dimensions), [
+  const align = React.useMemo(() => calculateTooltipAlign(position, aligns, dimensions), [
     aligns,
     dimensions,
     position,
   ]);
-  const handleInnerClick = useCallback(
+  const handleInnerClick = React.useCallback(
     ev => {
       if (tooltip.current) {
         const focusableElements = tooltip.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);

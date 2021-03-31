@@ -5,7 +5,7 @@ import InputFile from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [photoName, setPhotoName] = React.useState("");
     const [statementName, setStatementName] = React.useState("");
     const fileTypes = ".png,.jpg,.jpeg,.webp";

@@ -7,7 +7,7 @@ import Text from "../../Text";
 import TextLink from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Heading type="title3" as="h3">
         Inherited

@@ -12,7 +12,7 @@ export default {
   title: "Seat",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return <Seat />;
 };
 
@@ -22,7 +22,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
   return (

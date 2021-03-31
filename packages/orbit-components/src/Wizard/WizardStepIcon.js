@@ -38,6 +38,7 @@ const StyledCircle = styled.div`
     `}
   `}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCircle.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,6 +55,8 @@ const StyledTextContainer = styled.div`
       ${Math.round((width - checkboxWidth) / 2)}px;
   `}
 `;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -63,7 +66,7 @@ type Props = {|
   +height: number,
 |};
 
-const WizardStepIcon = ({ width, height }: Props) => {
+const WizardStepIcon = ({ width, height }: Props): React.Element<"div"> => {
   const { index, status, isCompact, isActive } = React.useContext(WizardStepContext);
   const theme = useTheme();
 

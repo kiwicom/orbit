@@ -6,7 +6,7 @@ import TileGroup from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <TileGroup>
       <Tile
         icon={<Icons.BaggageChecked />}

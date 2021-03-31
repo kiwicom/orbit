@@ -15,7 +15,7 @@ const resolveContainerAlign = ({
   containerWidth,
   tooltipHeight,
   tooltipWidth,
-}: Props) => {
+}: Props): any | null => {
   if (isAlignCenter(align)) {
     if (isHorizontal(position)) {
       return css`

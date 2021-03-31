@@ -20,7 +20,7 @@ const Tooltip = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props) => {
+}: Props): React.Node => {
   const { isLargeMobile } = useMediaQuery();
   return isLargeMobile ? (
     <TooltipPrimitive

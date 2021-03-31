@@ -16,7 +16,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [cabinBags, setCabinBags] = React.useState(0);
     const [checkedBags, setCheckedBags] = React.useState(0);
     const [stops, setStops] = React.useState("any");

@@ -5,7 +5,7 @@ import Seat from "../index";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const { isTablet } = useMediaQuery();
     return <Seat price="$12" size={isTablet ? "medium" : "small"} />;
   },

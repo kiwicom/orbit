@@ -39,6 +39,7 @@ const StyledTableOuter = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableOuter.defaultProps = {
   theme: defaultTheme,
 };
@@ -92,6 +93,7 @@ const StyledTable = styled.table`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTable.defaultProps = {
   theme: defaultTheme,
 };
@@ -102,7 +104,7 @@ const Table = ({
   compact = false,
   dataTest,
   type = TYPE_OPTIONS.PRIMARY,
-}: Props) => {
+}: Props): React.Node => {
   const [shadows, setShadows] = React.useState(false);
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);

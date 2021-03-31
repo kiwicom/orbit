@@ -55,7 +55,7 @@ export default {
   title: "Stack",
 };
 
-export const Default = () => (
+export const Default = (): React.Node => (
   <Stack>
     <Button type="primary" iconLeft={<Airplane />}>
       Button
@@ -71,7 +71,7 @@ Default.story = {
   },
 };
 
-export const MobileProperties = () => {
+export const MobileProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -113,7 +113,7 @@ MobileProperties.story = {
   },
 };
 
-export const MediumMobileProperties = () => {
+export const MediumMobileProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -154,7 +154,7 @@ MediumMobileProperties.story = {
   },
 };
 
-export const LargeMobileProperties = () => {
+export const LargeMobileProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -195,7 +195,7 @@ LargeMobileProperties.story = {
   },
 };
 
-export const TabletProperties = () => {
+export const TabletProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -236,7 +236,7 @@ TabletProperties.story = {
   },
 };
 
-export const DesktopProperties = () => {
+export const DesktopProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -277,7 +277,7 @@ DesktopProperties.story = {
   },
 };
 
-export const LargeDesktopProperties = () => {
+export const LargeDesktopProperties = (): React.Node => {
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
   const wrap = boolean("Wrap", false);
@@ -318,7 +318,7 @@ LargeDesktopProperties.story = {
   },
 };
 
-export const NestedExample = () => (
+export const NestedExample = (): React.Node => (
   <Stack spacing="large" direction="column" align="start">
     <Stack spacing="XSmall" direction="row" inline>
       <Text weight="bold">email@gmail.com</Text>
@@ -343,7 +343,7 @@ NestedExample.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const flex = boolean("flex", false);
   const inline = boolean("Inline", false);
@@ -407,7 +407,7 @@ Playground.story = {
   },
 };
 
-export const ComponentsPreview = () => (
+export const ComponentsPreview = (): React.Node => (
   <Stack direction="column">
     <Stack direction="row" align="center">
       <Alert title="hola amigo" icon>
@@ -985,7 +985,7 @@ ComponentsPreview.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Stack spacing="large" direction="column" align="start">
       <Stack spacing="XSmall" direction="row" inline>

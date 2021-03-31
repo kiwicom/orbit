@@ -84,6 +84,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHandle.defaultProps = {
   theme: defaultTheme,
 };
@@ -102,7 +103,7 @@ const Handle = ({
   ariaLabel,
   hasHistogram,
   dataTest,
-}: Props) => {
+}: Props): React.Node => {
   const valueNow = Array.isArray(value) ? value[index] : value;
   const first = isFirst(value, valueNow, index, hasHistogram);
   const isSimple = !hasHistogram && !Array.isArray(value);

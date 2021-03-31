@@ -6,7 +6,7 @@ import IllustrationPrimitive from "../primitives/IllustrationPrimitive";
 
 import type { Props } from "./index";
 
-const AirportIllustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props) => (
+const AirportIllustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props): React.Node => (
   <IllustrationPrimitive {...props} size={size} />
 );
 

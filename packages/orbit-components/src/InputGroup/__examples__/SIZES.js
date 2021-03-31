@@ -8,7 +8,7 @@ import Select from "../../Select";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [country, setCountry] = React.useState("");
     const [country2, setCountry2] = React.useState("");
 

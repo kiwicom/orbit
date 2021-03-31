@@ -4,7 +4,7 @@ import * as React from "react";
 import TextLink from "../index";
 
 export default {
-  Example: () => <TextLink href="https://orbit.kiwi">Orbit design system</TextLink>,
+  Example: (): React.Node => <TextLink href="https://orbit.kiwi">Orbit design system</TextLink>,
   info: {
     title: "Default text link",
     description:

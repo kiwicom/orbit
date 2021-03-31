@@ -4,7 +4,7 @@ import * as React from "react";
 import AirportIllustration from "../index";
 
 export default {
-  Example: () => <AirportIllustration name="BUDFastTrack" />,
+  Example: (): React.Node => <AirportIllustration name="BUDFastTrack" />,
   info: {
     title: "Default airport illustration",
     description:

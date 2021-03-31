@@ -33,11 +33,12 @@ const StyledCountryFlag = styled.div`
   flex-shrink: 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCountryFlag.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledImage = styled.img.attrs(({ theme, size, code }) => {
+export const StyledImage: any = styled.img.attrs(({ theme, size, code }) => {
   const width = parseInt(getSizeToken(TOKENS.WIDTH)({ theme, size }), 10);
   return {
     src: `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`,
@@ -69,6 +70,7 @@ const StyledShadow = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledShadow.defaultProps = {
   theme: defaultTheme,
 };
@@ -83,7 +85,7 @@ function getCountryProps(code: ?string, name: ?string): {| code: string, name: ?
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props) => {
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props): React.Node => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
     <StyledCountryFlag size={size}>

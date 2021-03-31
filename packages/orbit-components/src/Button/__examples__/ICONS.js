@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column" spacing="XLarge">
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With right icon</Heading>

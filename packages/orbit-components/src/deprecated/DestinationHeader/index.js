@@ -28,6 +28,7 @@ const StyledDestinationHeader = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDestinationHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -43,6 +44,7 @@ const StyledOverlay = styled.div`
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -73,6 +75,7 @@ const StyledContent = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -92,6 +95,7 @@ const StyledHeader = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -108,7 +112,7 @@ const DestinationHeaderGoBackButton = ({ onClick }) => {
   );
 };
 
-const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props) => {
+const DestinationHeader = ({ destinationName, goBack, dataTest, image }: Props): React.Node => {
   const destinationImage = image.toLowerCase();
   return (
     <StyledDestinationHeader data-test={dataTest}>

@@ -46,6 +46,7 @@ const StyledList = styled(({ className, children, dataTest }) => (
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledList.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,7 +57,7 @@ const List = ({
   type = TYPES.PRIMARY,
   dataTest,
   spaceAfter,
-}: Props) => (
+}: Props): React.Node => (
   <StyledList type={type} size={size} dataTest={dataTest} spaceAfter={spaceAfter}>
     <ListContext.Provider value={{ size, type }}>{children}</ListContext.Provider>
   </StyledList>

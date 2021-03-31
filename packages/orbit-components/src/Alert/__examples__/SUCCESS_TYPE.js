@@ -5,7 +5,7 @@ import Alert from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Alert icon={<Icons.Check />} title="Your payment was successful." type="success" />
   ),
   info: {

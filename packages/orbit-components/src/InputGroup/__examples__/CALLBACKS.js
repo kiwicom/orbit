@@ -10,7 +10,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [month, setMonth] = React.useState("");
     const [year, setYear] = React.useState("");
     const [month2, setMonth2] = React.useState("");

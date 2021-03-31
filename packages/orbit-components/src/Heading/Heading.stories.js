@@ -12,7 +12,7 @@ export default {
   title: "Heading",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   return <Heading>{customTitle}</Heading>;
 };
@@ -24,7 +24,7 @@ Default.story = {
   },
 };
 
-export const TitleDisplay = () => {
+export const TitleDisplay = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
   return (
@@ -41,7 +41,7 @@ TitleDisplay.story = {
   },
 };
 
-export const TitleDisplaySubtitle = () => {
+export const TitleDisplaySubtitle = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
   return (
@@ -60,7 +60,7 @@ TitleDisplaySubtitle.story = {
   },
 };
 
-export const Title1 = () => {
+export const Title1 = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
   return (
@@ -77,7 +77,7 @@ Title1.story = {
   },
 };
 
-export const Title2 = () => {
+export const Title2 = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   return (
@@ -94,7 +94,7 @@ Title2.story = {
   },
 };
 
-export const Title3 = () => {
+export const Title3 = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H3);
   return (
@@ -111,7 +111,7 @@ Title3.story = {
   },
 };
 
-export const Title4 = () => {
+export const Title4 = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H4);
   return (
@@ -128,7 +128,7 @@ Title4.story = {
   },
 };
 
-export const Title5 = () => {
+export const Title5 = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H5);
   return (
@@ -145,7 +145,7 @@ Title5.story = {
   },
 };
 
-export const InvertedHeading = () => {
+export const InvertedHeading = (): React.Element<"div"> => {
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
   const inverted = boolean("Inverted", true);
@@ -169,7 +169,7 @@ InvertedHeading.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
   const dataTest = text("dataTest", "test");
@@ -198,7 +198,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
   const customTitle = text("Title", "Orbit design system");
   return <Heading dataA11ySection={dataA11ySection}>{customTitle}</Heading>;
@@ -210,7 +210,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Heading type="display">Orbit design system</Heading>
   </RenderInRtl>

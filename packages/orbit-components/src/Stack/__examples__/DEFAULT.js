@@ -5,7 +5,7 @@ import defaultTheme from "../../defaultTheme";
 import Stack from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const divStyle = {
       width: "160px",
       height: "40px",

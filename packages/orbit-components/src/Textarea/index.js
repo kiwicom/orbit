@@ -25,6 +25,7 @@ const Field = styled.label`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
@@ -110,11 +111,12 @@ const StyledTextArea = styled.textarea`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-const Textarea = React.forwardRef<Props, HTMLElement>(
+const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
   (
     {
       size = SIZE_OPTIONS.NORMAL,

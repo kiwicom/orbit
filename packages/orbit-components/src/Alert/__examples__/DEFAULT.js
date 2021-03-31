@@ -4,7 +4,7 @@ import * as React from "react";
 import Alert from "../index";
 
 export default {
-  Example: () => <Alert icon title="You've got mail" />,
+  Example: (): React.Node => <Alert icon title="You've got mail" />,
   info: {
     title: "Default Alert",
     description:

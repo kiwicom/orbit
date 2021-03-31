@@ -8,7 +8,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Card
       icon={<Icons.Airplane ariaLabel="Flight" />}
       header={

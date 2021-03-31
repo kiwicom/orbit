@@ -12,7 +12,7 @@ export default {
   title: "Wizard",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return (
     <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={action("onChangeStep")}>
       <WizardStep title="Search" />
@@ -24,7 +24,7 @@ export const Default = () => {
   );
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   return (
     <RenderInRtl>
       <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={action("onChangeStep")}>
@@ -42,7 +42,7 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const steps = array("Steps", [
     "Search",
     "Passenger details",

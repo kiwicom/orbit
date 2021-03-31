@@ -16,7 +16,7 @@ export default {
   title: "ListChoice",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const title = text("title", "Choice Title");
   const description = text("description", "Further description");
   const Icon = getIcon(getIcons("icon", "Accommodation"));
@@ -37,7 +37,7 @@ Default.story = {
   },
 };
 
-export const MultipleChoices = () => (
+export const MultipleChoices = (): React.Node => (
   <>
     <ListChoice
       title="Choice Title"
@@ -73,7 +73,7 @@ MultipleChoices.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const title = text("title", "Choice Title");
   const description = text("description", "Further description");
   const selectable = boolean("selectable", true);
@@ -102,7 +102,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <>
       <ListChoice

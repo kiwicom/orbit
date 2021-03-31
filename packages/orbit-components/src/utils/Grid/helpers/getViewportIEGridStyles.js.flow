@@ -1,5 +1,5 @@
 // @flow
-import type { Interpolation } from "styled-components";
+import type { CSSRules } from "styled-components";
 
 import type { Devices } from "../../mediaQuery/consts";
 import type { Props, SmallMobile, BasicProps } from "../index";
@@ -9,6 +9,6 @@ export type GetViewportIEGridStyles = (
   childrenCount: number,
   {| index: number, devices: Devices[] |},
   {| ...Props, ...SmallMobile |},
-) => Interpolation[] | boolean;
+) => CSSRules;
 
 declare export default GetViewportIEGridStyles;

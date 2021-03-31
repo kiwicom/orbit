@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef, useMemo, useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { SIZE_OPTIONS } from "./consts";
@@ -11,7 +11,7 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
 import type { Props } from "./index";
 
-export const StyledTooltipChildren = styled.span`
+export const StyledTooltipChildren: any = styled.span`
   ${({ block }) =>
     !block &&
     `
@@ -48,8 +48,8 @@ const TooltipPrimitive = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props) => {
-  const [shown, setShown] = useState(false);
+}: Props): void | React.Node | React.Node => {
+  const [shown, setShown] = React.useState(false);
   const [
     render,
     setRender,
@@ -57,20 +57,20 @@ const TooltipPrimitive = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
 
-  const tooltipId = useMemo(() => randomID("TooltipID"), []);
-  const container = useRef(null);
-  const handleIn = useCallback(() => {
+  const tooltipId = React.useMemo(() => randomID("TooltipID"), []);
+  const container = React.useRef(null);
+  const handleIn = React.useCallback(() => {
     setRender(true);
     setShown(true);
     clearRenderTimeout();
   }, [clearRenderTimeout, setRender]);
 
-  const handleOut = useCallback(() => {
+  const handleOut = React.useCallback(() => {
     setShown(false);
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
 
-  const handleClick = useCallback(
+  const handleClick = React.useCallback(
     ev => {
       if (stopPropagation) {
         ev.stopPropagation();
@@ -79,7 +79,7 @@ const TooltipPrimitive = ({
     [stopPropagation],
   );
 
-  const handleOutMobile = useCallback(() => {
+  const handleOutMobile = React.useCallback(() => {
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
 

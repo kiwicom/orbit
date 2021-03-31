@@ -5,7 +5,7 @@ import Sticky from "../index";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Element<"div"> => (
     <div style={{ height: "800px" }}>
       <Sticky>
         <Text>Scroll down and see this text at the top of the screen.</Text>

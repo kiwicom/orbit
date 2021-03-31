@@ -60,7 +60,7 @@ export default {
   title: "SkipNavigation",
 };
 
-export const Default = () => {
+export const Default = (): React.Element<"div"> => {
   return (
     <div>
       <SkipNavigation />
@@ -76,7 +76,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Element<"div"> => {
   return (
     <div>
       <SkipNavigation

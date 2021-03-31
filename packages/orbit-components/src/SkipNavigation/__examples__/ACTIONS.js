@@ -8,7 +8,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [moreInfo, setMoreInfo] = React.useState(false);
     const handleClick = () => setMoreInfo(!moreInfo);
     return (

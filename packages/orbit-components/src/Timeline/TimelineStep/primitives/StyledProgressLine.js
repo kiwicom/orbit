@@ -12,7 +12,7 @@ const renderStatus = (type, theme) => {
   return theme.orbit.paletteCloudNormalHover;
 };
 
-const StyledProgressLine = styled.span`
+const StyledProgressLine: any = styled.span`
   ${({ desktop, theme, status }) => css`
     ${!desktop && `position: absolute`};
     ${!desktop && `top: 18px`};
@@ -23,6 +23,7 @@ const StyledProgressLine = styled.span`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledProgressLine.defaultProps = {
   theme: defaultTheme,
 };

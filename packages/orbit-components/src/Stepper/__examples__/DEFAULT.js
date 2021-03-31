@@ -7,7 +7,7 @@ import Heading from "../../Heading";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex align="center">
       <Heading type="title4">
         <Icons.Passengers />

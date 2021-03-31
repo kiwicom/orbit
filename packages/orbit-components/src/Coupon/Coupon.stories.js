@@ -12,7 +12,7 @@ export default {
   title: "Coupon",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const content = text("content", "PROMOTIONCODE");
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   return (
@@ -34,7 +34,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const content = text("content", "CODE");
 

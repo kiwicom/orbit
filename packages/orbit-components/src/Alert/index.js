@@ -142,6 +142,7 @@ const StyledAlert = styled(StyledDiv)`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAlert.defaultProps = {
   theme: defaultTheme,
 };
@@ -163,6 +164,7 @@ const IconContainer = styled(StyledDiv)`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -186,6 +188,7 @@ const Title = styled(StyledDiv)`
   min-height: ${({ theme }) => theme.orbit.heightIconMedium};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Title.defaultProps = {
   theme: defaultTheme,
 };
@@ -210,6 +213,7 @@ const Content = styled(StyledDiv)`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Content.defaultProps = {
   theme: defaultTheme,
 };
@@ -222,6 +226,7 @@ const CloseContainer = styled(StyledDiv)`
   margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -242,7 +247,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
   );
 };
 
-const Alert = (props: Props) => {
+const Alert = (props: Props): React.Node => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,

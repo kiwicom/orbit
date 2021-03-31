@@ -23,7 +23,7 @@ export default {
   title: "TooltipPrimitive",
 };
 
-export const TooltipPrimitiveOnInlineElement = () => {
+export const TooltipPrimitiveOnInlineElement = (): React.Node => {
   const content = text("content", "Write your text here.");
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
 
@@ -65,7 +65,7 @@ TooltipPrimitiveOnInlineElement.story = {
   },
 };
 
-export const TooltipPrimitiveOnBlockElement = () => {
+export const TooltipPrimitiveOnBlockElement = (): React.Node => {
   const content = text(
     "content",
     "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
@@ -86,7 +86,7 @@ TooltipPrimitiveOnBlockElement.story = {
   },
 };
 
-export const TooltipPrimitiveOnDisabledElement = () => {
+export const TooltipPrimitiveOnDisabledElement = (): React.Node => {
   const content = text("content", "Write your text here.");
   return (
     <TooltipPrimitive content={content}>
@@ -104,7 +104,7 @@ TooltipPrimitiveOnDisabledElement.story = {
   },
 };
 
-export const PreferredPosition = () => {
+export const PreferredPosition = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
   const content = text("content", "Write your text here.");
@@ -126,7 +126,7 @@ PreferredPosition.story = {
   },
 };
 
-export const WithImageInside = () => {
+export const WithImageInside = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
   return (
@@ -170,7 +170,7 @@ WithImageInside.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const content = text("content", "Write your text here.");
   const dataTest = text("dataTest", "test");
   const Icon = getIcon(getIcons("Airplane"));
@@ -204,7 +204,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   return (
     <RenderInRtl>
       <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">

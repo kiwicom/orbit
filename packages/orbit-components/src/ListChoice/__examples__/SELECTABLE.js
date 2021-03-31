@@ -7,7 +7,7 @@ import Popover from "../../Popover";
 import Tag from "../../Tag";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [choices, setChoices] = React.useState([]);
     const [selectMilan, setSelectMilan] = React.useState(false);
     const [selectOslo, setSelectOslo] = React.useState(false);

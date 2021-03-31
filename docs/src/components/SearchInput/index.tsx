@@ -28,14 +28,21 @@ const StyledSearchToggle = styled.button.attrs({ type: "button" })<{ size: Size 
     display: block;
     width: 100%;
     height: ${size === Size.Large ? "100%" : "44px"};
+    border: 2px solid transparent;
     border-radius: 44px;
     padding: 10px 1.5em; /* copied from StyledInputContainer */
     padding-left: 4em; /* compensate for the icon */
     text-align: left;
     color: ${theme.orbit.paletteInkLight};
+    background: ${theme.orbit.paletteCloudLight};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    &:hover,
+    &:focus {
+      border-color: ${theme.orbit.paletteProductNormal};
+      background: ${theme.orbit.paletteWhite};
+    }
   `}
 `;
 

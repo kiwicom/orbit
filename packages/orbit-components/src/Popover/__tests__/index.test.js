@@ -66,13 +66,15 @@ describe("Popover", () => {
   });
 
   it("should have offset", () => {
-    render(
+    const { debug } = render(
       <Popover opened offset={{ top: 10, left: 20 }} content="kek">
         <Button type="secondary" size="small">
           Cancel
         </Button>
       </Popover>,
     );
+
+    debug();
 
     // default is 4px
     expect(screen.getByRole("tooltip")).toHaveStyleRule("top", "14px", {

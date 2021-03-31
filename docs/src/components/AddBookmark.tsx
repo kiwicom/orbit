@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
-import StarFull from "@kiwicom/orbit-components/lib/icons/StarFull";
+import { StarEmpty, StarFull } from "@kiwicom/orbit-components/icons";
 
 import { useBookmarks } from "../services/bookmarks";
 

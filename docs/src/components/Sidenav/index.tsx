@@ -1,8 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { Portal, Drawer } from "@kiwicom/orbit-components";
-import Menu from "@kiwicom/orbit-components/lib/icons/MenuHamburger";
-import mq from "@kiwicom/orbit-components/lib/utils/mediaQuery";
+import { Portal, Drawer, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { MenuHamburger as Menu } from "@kiwicom/orbit-components/icons";
 
 import { CONTENT_PADDING } from "../../consts";
 

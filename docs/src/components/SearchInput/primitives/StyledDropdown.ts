@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledDropdown = styled.ul<{ visible: boolean }>`
   visibility: ${({ visible }) => (visible ? `visible` : "hidden")}
@@ -7,7 +7,7 @@ export const StyledDropdown = styled.ul<{ visible: boolean }>`
 `;
 
 export const StyledDropdownItem = styled.li<{ type?: "interactive" | "disabled" }>`
-  ${({ theme, type = "interactive" }) => css`
+  ${({ theme, type = "interactive" }) => `
     padding: 0.5em 1em;
     border-radius: ${theme.orbit.borderRadiusLarge};
     outline: none;
@@ -15,29 +15,33 @@ export const StyledDropdownItem = styled.li<{ type?: "interactive" | "disabled" 
       font-size: calc(1em - 2px);
     }
 
-    ${type === "interactive" &&
-    css`
-      cursor: pointer;
-      background: #fff;
-      box-shadow: ${theme.orbit.boxShadowAction};
-      color: ${theme.orbit.paletteProductNormal};
-      &:hover {
-        color: ${theme.orbit.paletteProductNormalHover};
-      }
-      &:active {
-        color: ${theme.orbit.paletteProductNormalActive};
-      }
-      > p {
-        color: ${theme.orbit.colorTextPrimary};
-      }
-    `}
+    ${
+      type === "interactive" &&
+      `
+        cursor: pointer;
+        background: #fff;
+        box-shadow: ${theme.orbit.boxShadowAction};
+        color: ${theme.orbit.paletteProductNormal};
+        &:hover {
+          color: ${theme.orbit.paletteProductNormalHover};
+        }
+        &:active {
+          color: ${theme.orbit.paletteProductNormalActive};
+        }
+        > p {
+          color: ${theme.orbit.colorTextPrimary};
+        }
+      `
+    }
 
-    ${type === "disabled" &&
-    css`
-      background: ${theme.orbit.paletteCloudLight};
-      border: 1px solid ${theme.orbit.paletteCloudDark};
-      color: ${theme.orbit.paletteInkLight};
-    `}
+    ${
+      type === "disabled" &&
+      `
+        background: ${theme.orbit.paletteCloudLight};
+        border: 1px solid ${theme.orbit.paletteCloudDark};
+        color: ${theme.orbit.paletteInkLight};
+      `
+    }
 
     & + & {
       margin-top: 0.5rem;

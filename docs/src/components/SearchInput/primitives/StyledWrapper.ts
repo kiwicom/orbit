@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export enum Size {
   Regular,
@@ -10,7 +10,7 @@ const StyledWrapper = styled.div<{ size: Size }>`
   max-width: 24em; /* so that the placeholder fits in */
   ${({ size }) =>
     size === Size.Large &&
-    css`
+    `
       height: 64px; /* to match the height of the large ButtonLink on the landing page */
     `}
 `;

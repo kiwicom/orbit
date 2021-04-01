@@ -12,32 +12,33 @@ import { TYPE_OPTIONS } from "./consts";
 
 import type { Props } from "./index";
 
-const SocialButton = React.forwardRef<Props, HTMLButtonElement>(
-  ({ type = TYPE_OPTIONS.APPLE, disabled = false, ...props }, ref) => {
-    const theme = useTheme();
-    const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps(propsWithTheme);
-    const buttonStyles = getSocialButtonStyles({ type, disabled, theme });
-    const icons = getIconContainer({
-      ...propsWithTheme,
-      iconForeground: getSocialButtonIconForeground({ type, theme }),
-    });
-    const iconLeft = getSocialButtonIcon(type);
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        {...props}
-        {...commonProps}
-        {...buttonStyles}
-        {...icons}
-        disabled={disabled}
-        iconLeft={iconLeft}
-        iconRight={null}
-        circled={false}
-      />
-    );
-  },
-);
+const SocialButton: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
+  Props,
+  HTMLButtonElement,
+>(({ type = TYPE_OPTIONS.APPLE, disabled = false, ...props }, ref) => {
+  const theme = useTheme();
+  const propsWithTheme = { theme, ...props };
+  const commonProps = getCommonProps(propsWithTheme);
+  const buttonStyles = getSocialButtonStyles({ type, disabled, theme });
+  const icons = getIconContainer({
+    ...propsWithTheme,
+    iconForeground: getSocialButtonIconForeground({ type, theme }),
+  });
+  const iconLeft = getSocialButtonIcon(type);
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      {...props}
+      {...commonProps}
+      {...buttonStyles}
+      {...icons}
+      disabled={disabled}
+      iconLeft={iconLeft}
+      iconRight={null}
+      circled={false}
+    />
+  );
+});
 
 SocialButton.displayName = "SocialButton";
 

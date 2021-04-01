@@ -5,6 +5,7 @@ import MatchMediaMock from "jest-matchmedia-mock";
 
 import * as examples from "./examples";
 
+// $FlowFixMe
 let matchMedia: MatchMediaMock;
 
 beforeAll(() => {

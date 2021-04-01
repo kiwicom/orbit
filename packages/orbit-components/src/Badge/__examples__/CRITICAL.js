@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <Badge type="critical" icon={<Icons.AlertCircle ariaLabel="Critical alert" />}>
         No connection to internet

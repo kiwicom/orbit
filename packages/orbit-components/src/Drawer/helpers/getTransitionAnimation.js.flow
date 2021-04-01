@@ -1,5 +1,5 @@
 // @flow
-import { Interpolation } from "styled-components";
+import type { CSSRules } from "styled-components";
 
 import type { Position } from "../index";
 import type { Theme } from "../../defaultTheme";
@@ -9,6 +9,6 @@ export type GetTransitionAnimation = ({|
   shown: boolean,
   position: Position,
   theme: Theme,
-|}) => Interpolation;
+|}) => CSSRules;
 
 declare export default GetTransitionAnimation;

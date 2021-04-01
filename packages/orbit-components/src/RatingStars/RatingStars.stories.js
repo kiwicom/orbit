@@ -12,7 +12,7 @@ export default {
   title: "RatingStars",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const rating = number("rating", 4.4, { min: 0, max: MAX_STARS });
   const size = select("size", [null, ...Object.values(ICON_SIZES)]);
   const color = select("color", [null, ICON_COLORS.PRIMARY, ICON_COLORS.SECONDARY]);
@@ -36,7 +36,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <RatingStars rating={3.3} />
   </RenderInRtl>

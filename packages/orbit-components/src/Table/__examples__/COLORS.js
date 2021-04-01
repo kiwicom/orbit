@@ -11,7 +11,7 @@ import TableRow from "../TableRow";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack>
         <Heading as="h3" type="title3">

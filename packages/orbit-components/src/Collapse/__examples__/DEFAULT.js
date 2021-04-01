@@ -6,7 +6,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Collapse label="Collapse principles">
       <Text>
         Collapse components help with{" "}

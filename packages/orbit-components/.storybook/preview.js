@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 import { addDecorator } from "@storybook/react";
 
 import "loki/configure-react";

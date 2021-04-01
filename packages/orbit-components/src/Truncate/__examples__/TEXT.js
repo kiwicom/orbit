@@ -5,7 +5,7 @@ import Text from "../../Text";
 import Truncate from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Truncate>
       <Text>
         When you&apos;re using progressive disclosure, you might have text that you&apos;ve decided

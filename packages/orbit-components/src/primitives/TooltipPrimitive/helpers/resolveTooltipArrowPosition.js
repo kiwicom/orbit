@@ -5,7 +5,7 @@ import { isPositionBottom, isPositionLeft, isPositionRight, isPositionTop } from
 import type { Props } from "./resolveTooltipArrowPosition";
 import { TOOLTIP_ARROW_SIZE } from "../consts";
 
-const resolveTooltipArrowPosition = ({ position }: Props) => {
+const resolveTooltipArrowPosition = ({ position }: Props): any => {
   const cssPosition =
     (isPositionTop(position) && "bottom") ||
     (isPositionBottom(position) && "top") ||

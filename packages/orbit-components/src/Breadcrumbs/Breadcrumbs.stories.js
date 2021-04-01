@@ -13,7 +13,7 @@ export default {
   title: "Breadcrumbs",
 };
 
-export const Default = () => (
+export const Default = (): React.Node => (
   <Breadcrumbs>
     <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
       Kiwi.com
@@ -33,7 +33,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
   const href = text("href", "https://kiwi.com");
   const withGoBack = boolean("onGoBack", true);
@@ -69,7 +69,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const href = text("href", "https://kiwi.com");
   return (
     <RenderInRtl>
@@ -98,7 +98,9 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const BackLink = () => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>;
+export const BackLink = (): React.Node => (
+  <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>
+);
 
 BackLink.story = {
   name: "Back link",

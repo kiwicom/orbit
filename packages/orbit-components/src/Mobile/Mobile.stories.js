@@ -19,7 +19,7 @@ export default {
   title: "Mobile",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return (
     <Desktop>
       <Component>Mobile</Component>

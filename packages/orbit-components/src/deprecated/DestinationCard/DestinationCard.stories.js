@@ -12,7 +12,7 @@ export default {
   title: "DestinationCard",
 };
 
-export const Direct = () => (
+export const Direct = (): React.Node => (
   <DestinationCard
     departureCity="Prague"
     destinationCity="Dubai"
@@ -31,7 +31,7 @@ Direct.story = {
   },
 };
 
-export const Return = () => (
+export const Return = (): React.Node => (
   <DestinationCard
     departureCity="Prague"
     destinationCity="Dubai"
@@ -52,7 +52,7 @@ Return.story = {
   },
 };
 
-export const GermanyMutation = () => (
+export const GermanyMutation = (): React.Node => (
   <DestinationCard
     departureCity="Amsterdam"
     destinationCity="Dubai"
@@ -75,7 +75,7 @@ GermanyMutation.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const image = text("image", "paris_fr");
   const destinationCity = text("destinationCity", "Paris");
   const dataTest = text("dataTest", "test");
@@ -117,7 +117,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const image = text("image", "paris_fr");
   const destinationCity = text("destinationCity", "Paris");
   const dataTest = text("dataTest", "test");

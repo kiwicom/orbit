@@ -43,6 +43,7 @@ const StyledCardSectionHeader = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -79,7 +80,7 @@ const CardSectionHeader = ({
   handleKeyDown,
   header,
   dataA11ySection,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledCardSectionHeader
       expandable={expandable}

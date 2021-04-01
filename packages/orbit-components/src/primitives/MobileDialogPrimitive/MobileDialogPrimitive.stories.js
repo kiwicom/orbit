@@ -10,7 +10,7 @@ export default {
   title: "MobileDialogPrimtive",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const content = text("content", "Write your text here.");
   const dataTest = text("dataTest", "test");
   const tabIndex = text("TabIndex", "0");

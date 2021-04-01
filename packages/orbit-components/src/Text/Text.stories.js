@@ -21,7 +21,7 @@ export default {
   title: "Text",
 };
 
-export const PrimaryText = () => {
+export const PrimaryText = (): React.Node => {
   const children = text("Text", customText);
 
   return <Text>{children}</Text>;
@@ -36,7 +36,7 @@ PrimaryText.story = {
   },
 };
 
-export const SecondaryText = () => {
+export const SecondaryText = (): React.Node => {
   const children = text("Text", customText);
 
   return <Text type="secondary">{children}</Text>;
@@ -51,7 +51,7 @@ SecondaryText.story = {
   },
 };
 
-export const StatusText = () => {
+export const StatusText = (): React.Element<"div"> => {
   const children = text("Text", customText);
 
   return (
@@ -73,7 +73,7 @@ StatusText.story = {
   },
 };
 
-export const LinkInText = () => (
+export const LinkInText = (): React.Node => (
   <Text>
     {customText} <a href="http://kiwi.com">Kiwi.com</a>
   </Text>
@@ -88,7 +88,7 @@ LinkInText.story = {
   },
 };
 
-export const WhiteText = () => {
+export const WhiteText = (): React.Element<"div"> => {
   const children = text("Text", customText);
 
   return (
@@ -107,7 +107,7 @@ WhiteText.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
   const as = select("As", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
@@ -145,7 +145,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Text align="left">Lorem ipsum dolor sit amet</Text>
   </RenderInRtl>

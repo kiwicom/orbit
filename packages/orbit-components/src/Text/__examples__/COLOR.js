@@ -5,7 +5,7 @@ import Text from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <Text>Primary text</Text>
       <Text type="secondary">Secondary text</Text>

@@ -12,13 +12,13 @@ export default {
   title: "Pagination",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const pageCount = number("pageCount", 6);
 
   return <Pagination pageCount={pageCount} onPageChange={action("onPageChange")} />;
 };
 
-export const WithALotOfPages = () => {
+export const WithALotOfPages = (): React.Node => {
   const selectedPage = number("selectedPage", 44);
   const pageCount = number("pageCount", 100);
 
@@ -35,7 +35,7 @@ WithALotOfPages.story = {
   name: "With a lot of pages",
 };
 
-export const SmallSize = () => {
+export const SmallSize = (): React.Node => {
   const size = select("size", Object.values(SIZES), SIZES.SMALL);
   const pageCount = number("pageCount", 100);
 
@@ -46,7 +46,7 @@ SmallSize.story = {
   name: "Small size",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const pageCount = number("pageCount", 6);
   const selectedPage = number("selectedPage", 2);

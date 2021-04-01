@@ -30,7 +30,7 @@ export default {
   title: "Inline",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
   return (
     <Inline spacing={spacing} dataTest={dataTest}>
@@ -46,7 +46,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const as = text("As", "div");
   const align = select("align", Object.values(ALIGN), ALIGN.START);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
@@ -66,7 +66,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
   return (
     <RenderInRtl>

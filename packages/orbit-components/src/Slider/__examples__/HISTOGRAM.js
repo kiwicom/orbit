@@ -13,7 +13,7 @@ const randomArray =
 const availableFlights = [0, ...randomArray];
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [priceRange, setPriceRange] = React.useState([50, 250]);
     const step = 50;
     const [selectedFlights, totalFlights] = calculateCountOf(

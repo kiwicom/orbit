@@ -6,7 +6,7 @@ import InputGroup from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     return (
       <Stack>
         <InputGroup flex={["8 8 15em", "1 1 4em", "2 2 6em"]} label="Departure">

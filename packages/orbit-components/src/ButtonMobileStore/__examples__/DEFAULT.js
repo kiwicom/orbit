@@ -4,7 +4,7 @@ import * as React from "react";
 import ButtonMobileStore from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <ButtonMobileStore
       alt="Get it on Google Play"
       href="https://play.google.com/store/apps/details?id=com.skypicker.main"

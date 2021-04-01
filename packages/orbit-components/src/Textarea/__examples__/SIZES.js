@@ -7,7 +7,7 @@ import Text from "../../Text";
 import Textarea from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack direction="column">
         <Heading as="h3" type="title3">

@@ -5,7 +5,7 @@ import Badge from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Badge ariaLabel="4 passengers" icon={<Icons.Passengers />}>
       4
     </Badge>

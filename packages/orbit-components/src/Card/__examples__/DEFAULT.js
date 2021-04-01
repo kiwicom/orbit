@@ -5,7 +5,7 @@ import Card from "../index";
 import CardSection from "../CardSection/index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Card title="Passenger info" description="All passengers in this itinerary">
       <CardSection>Yasmin Karenth</CardSection>
     </Card>

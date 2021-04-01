@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showPassword, setShowPassword] = React.useState(false);
     return (
       <Stack direction="column">

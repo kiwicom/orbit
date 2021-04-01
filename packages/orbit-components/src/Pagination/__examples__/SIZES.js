@@ -5,7 +5,7 @@ import Pagination from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [currentPageSmall, setCurrentPageSmall] = React.useState(2);
     const [currentPageNormal, setCurrentPageNormal] = React.useState(2);
     return (

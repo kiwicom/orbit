@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 
 module.exports = {
   "*.{js,js.flow,ts}": "eslint --fix --report-unused-disable-directives",

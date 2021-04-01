@@ -15,11 +15,12 @@ const StyledNotificationBadge = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNotificationBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-const NotificationBadge = (props: Props) => {
+const NotificationBadge = (props: Props): React.Node => {
   const { type, children, icon, ariaLabel, dataTest } = props;
 
   return (

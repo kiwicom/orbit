@@ -19,9 +19,9 @@ const StyledCircleWrapper = styled.div`
   right: -10px;
 `;
 
-export const StyledCirclePath = styled.path``;
+export const StyledCirclePath: any = styled.path``;
 
-const SeatCircle = ({ size, type }: Props) => {
+const SeatCircle = ({ size, type }: Props): React.Node => {
   const theme = useTheme();
   const circleSmallId = React.useMemo(() => randomID("circleSmallId"), []);
   const circleNormalId = React.useMemo(() => randomID("circleNormalId"), []);

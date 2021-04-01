@@ -5,7 +5,7 @@ import Button from "../../Button";
 import Tag from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [tag, setTag] = React.useState(true);
     return (
       <>

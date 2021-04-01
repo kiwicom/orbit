@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [loadingNow, setLoadingNow] = React.useState(true);
     return (
       <Stack direction="column">

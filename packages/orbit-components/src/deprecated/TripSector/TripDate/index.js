@@ -25,11 +25,12 @@ const StyledTripDate = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripDate.defaultProps = {
   theme: defaultTheme,
 };
 
-const TripDate = ({ children, dataTest, duration }: Props) => (
+const TripDate = ({ children, dataTest, duration }: Props): React.Node => (
   <StyledTripDate data-test={dataTest}>
     <Stack direction="row" spacing="XSmall" shrink>
       <Calendar size="small" />

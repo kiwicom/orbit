@@ -77,7 +77,7 @@ const norm = ({ val, key, theme }): string | void => {
   return all[key];
 };
 
-const normalize = (object: MediaQueryObject) => ({ theme }: ThemeProps) => {
+const normalize = (object: MediaQueryObject): any => ({ theme }: ThemeProps) => {
   if (!object) return null;
 
   return Object.entries(object).reduce((acc, [key, val]: any) => {

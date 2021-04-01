@@ -12,7 +12,7 @@ export default {
   title: "Table",
 };
 
-export const DefaultTable = () => (
+export const DefaultTable = (): React.Node => (
   <Table>
     <TableHead>
       <TableRow>
@@ -58,7 +58,7 @@ DefaultTable.story = {
   },
 };
 
-export const CompactTable = () => (
+export const CompactTable = (): React.Node => (
   <Table compact>
     <TableHead>
       <TableRow>
@@ -92,7 +92,7 @@ CompactTable.story = {
   },
 };
 
-export const SecondaryType = () => (
+export const SecondaryType = (): React.Node => (
   <Table type="secondary">
     <TableHead>
       <TableRow>
@@ -128,7 +128,7 @@ SecondaryType.story = {
   },
 };
 
-export const WithoutStripes = () => (
+export const WithoutStripes = (): React.Node => (
   <Table type="secondary" striped={false}>
     <TableHead>
       <TableRow>
@@ -164,7 +164,7 @@ WithoutStripes.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const compact = boolean("compact", false);
   const striped = boolean("striped", true);
   const children = text("children", "Lorem ipsum dolor sit amet");
@@ -266,7 +266,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Table>
       <TableHead>

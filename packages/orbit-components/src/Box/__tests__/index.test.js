@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import { screen, render } from "@testing-library/react";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 

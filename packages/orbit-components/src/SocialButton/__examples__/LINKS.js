@@ -5,7 +5,7 @@ import SocialButton from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="row">
       <SocialButton href="https://www.apple.com/" title="Homepage">
         Sign in with Apple

@@ -11,7 +11,7 @@ export default {
   title: "ServiceLogo",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const grayScale = boolean("GrayScale", false);

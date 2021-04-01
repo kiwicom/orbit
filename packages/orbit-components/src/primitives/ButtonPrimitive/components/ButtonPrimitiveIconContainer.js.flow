@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 export type Props = {|
   margin: ?string,
@@ -10,4 +11,4 @@ export type Props = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledButtonPrimitiveIconContainer: React.ComponentType<Props>;
+declare export var StyledButtonPrimitiveIconContainer: StyledComponent<Props, any, HTMLDivElement>;

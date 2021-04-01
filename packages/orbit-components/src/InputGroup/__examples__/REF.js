@@ -5,7 +5,7 @@ import InputField from "../../InputField";
 import InputGroup from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const ref = React.useRef(null);
 
     React.useEffect(() => {

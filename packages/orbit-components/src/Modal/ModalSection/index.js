@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext, useEffect } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -10,7 +10,7 @@ import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
 import type { Props } from "./index";
 
-export const StyledModalSection = styled.section`
+export const StyledModalSection: any = styled.section`
   width: 100%;
   padding: ${({ theme }) => `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
   background-color: ${({ theme, suppressed }) =>
@@ -70,25 +70,29 @@ export const StyledModalSection = styled.section`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalSection.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalSection = ({ children, suppressed, dataTest }: Props) => {
-  const { removeHasModalSection, setHasModalSection, isMobileFullPage, closable } = useContext(
-    ModalContext,
-  );
+const ModalSection = ({ children, suppressed, dataTest }: Props): React.Node => {
+  const {
+    removeHasModalSection,
+    setHasModalSection,
+    isMobileFullPage,
+    closable,
+  } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 
   /*
     Run on every re-render to prevent setting hasModalSection to false when there's more sections
    */
-  useEffect(() => {
+  React.useEffect(() => {
     if (setHasModalSection) setHasModalSection();
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     return () => {
       if (removeHasModalSection) removeHasModalSection();
     };

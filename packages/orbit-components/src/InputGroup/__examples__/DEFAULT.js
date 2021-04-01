@@ -6,7 +6,7 @@ import InputGroup from "../index";
 import Select from "../../Select";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [month, setMonth] = React.useState("");
     return (
       <InputGroup flex={["8 8 15em", "1 1 4em", "2 2 6em"]} label="Departure">

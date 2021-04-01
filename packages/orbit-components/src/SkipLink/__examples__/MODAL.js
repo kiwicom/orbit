@@ -15,7 +15,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>

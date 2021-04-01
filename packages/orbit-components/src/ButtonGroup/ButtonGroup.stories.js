@@ -14,7 +14,7 @@ export default {
   title: "ButtonGroup",
 };
 
-export const WithButtons = () => {
+export const WithButtons = (): React.Node => {
   const dataTest = text("dataTest", "test");
   return (
     <ButtonGroup dataTest={dataTest}>
@@ -31,7 +31,7 @@ WithButtons.story = {
   },
 };
 
-export const WithButtonLinks = () => {
+export const WithButtonLinks = (): React.Node => {
   const dataTest = text("dataTest", "test");
   return (
     <ButtonGroup dataTest={dataTest}>
@@ -52,7 +52,7 @@ WithButtonLinks.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <ButtonGroup>
       <Button iconLeft={<Icons.Airplane />}>Button</Button>

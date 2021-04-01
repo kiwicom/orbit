@@ -8,7 +8,7 @@ import Collapse from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [planeChecked, setPlaneChecked] = React.useState(true);
     const [trainChecked, setTrainChecked] = React.useState(true);
     const [busChecked, setBusChecked] = React.useState(true);

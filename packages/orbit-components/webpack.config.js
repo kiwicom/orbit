@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 module.exports = {
   output: {
     path: `${__dirname}/umd`,

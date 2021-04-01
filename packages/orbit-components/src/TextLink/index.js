@@ -38,6 +38,7 @@ const StyledIconContainer = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -49,7 +50,7 @@ const resolveUnderline = ({ type, theme, noUnderline }) => {
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
-export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
+export const getLinkStyle = ({ theme, type }: GetLinkStyleProps): any => css`
   // Common styles for TextLink and "a" in Text
 
   &,
@@ -69,7 +70,7 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps) => css`
   }
 `;
 
-export const StyledTextLink = styled(
+export const StyledTextLink: any = styled(
   ({ theme, type, standAlone, noUnderline, asComponent: Component, ...props }) => (
     <Component {...props}>{props.children}</Component>
   ),
@@ -85,6 +86,7 @@ export const StyledTextLink = styled(
   ${getLinkStyle};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextLink.defaultProps = {
   theme: defaultTheme,
 };
@@ -115,7 +117,7 @@ const TextLink = ({
   title,
   standAlone,
   noUnderline,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();

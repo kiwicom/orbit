@@ -52,7 +52,7 @@ const getTypeToken = ({ name, theme, type }) => {
   return tokens[name][type];
 };
 
-const Badge = (props: Props) => {
+const Badge = (props: Props): React.Node => {
   const theme = useTheme();
   const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;
 

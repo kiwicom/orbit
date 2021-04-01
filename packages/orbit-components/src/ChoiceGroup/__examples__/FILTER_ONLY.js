@@ -9,7 +9,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const defaultItems: Array<React.ElementRef<any>> = [
       <Icons.Airplane ariaLabel="Planes" />,
       <Icons.Train ariaLabel="Trains" />,

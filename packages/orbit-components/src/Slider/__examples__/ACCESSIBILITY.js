@@ -8,7 +8,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [priceRange, setPriceRange] = React.useState([50, 250]);
     const [timeRange, setTimeRange] = React.useState([0, 24]);
     return (

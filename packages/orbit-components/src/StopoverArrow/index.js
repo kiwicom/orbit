@@ -21,6 +21,7 @@ const StyledArrow = styled.svg`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledArrow.defaultProps = {
   theme: defaultTheme,
 };
@@ -46,7 +47,7 @@ const Stops = ({ stops }: Props) => {
   );
 };
 
-const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props) => {
+const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
   const titleId = React.useMemo(() => randomID("title"), []);
   const descrId = React.useMemo(() => randomID("descr"), []);
 

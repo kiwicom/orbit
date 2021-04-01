@@ -16,7 +16,7 @@ export default {
   title: "Layout",
 };
 
-export const Search = () => (
+export const Search = (): React.Node => (
   <Layout type="Search">
     <LayoutColumn>
       <Card>
@@ -42,7 +42,7 @@ export const Search = () => (
   </Layout>
 );
 
-export const Booking = () => {
+export const Booking = (): React.Node => {
   return (
     <Layout type="Booking">
       <LayoutColumn>
@@ -63,7 +63,7 @@ export const Booking = () => {
   );
 };
 
-export const Mmb = () => {
+export const Mmb = (): React.Node => {
   return (
     <Layout type="MMB">
       <LayoutColumn>
@@ -81,7 +81,7 @@ Mmb.story = {
   name: "MMB",
 };
 
-export const Customized = () => (
+export const Customized = (): React.Node => (
   <Layout type="Search">
     <LayoutColumn dataTest="test" as="span">
       <Card>
@@ -107,7 +107,7 @@ export const Customized = () => (
   </Layout>
 );
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Layout type="Search">
       <LayoutColumn>

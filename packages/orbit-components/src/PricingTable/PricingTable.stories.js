@@ -124,7 +124,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Compact = () => {
+export const Compact = (): React.Node => {
   const activeElement = number("activeElement", 0);
   const hasError = boolean("hasError", false);
 
@@ -201,7 +201,7 @@ Compact.story = {
   },
 };
 
-export const Booking = () => {
+export const Booking = (): React.Node => {
   const activeElement = number("activeElement", 0);
   const desktopRadio = boolean("desktopRadio", true);
 
@@ -283,7 +283,7 @@ export const Booking = () => {
   );
 };
 
-export const Translated = () => {
+export const Translated = (): React.Node => {
   const activeElement = number("activeElement", 0);
 
   return (
@@ -343,7 +343,7 @@ export const Translated = () => {
   );
 };
 
-export const WithFeatureIcon = () => {
+export const WithFeatureIcon = (): React.Node => {
   return (
     <PricingTable>
       <PricingTableItem
@@ -398,7 +398,7 @@ WithFeatureIcon.story = {
   },
 };
 
-export const Badges = () => {
+export const Badges = (): React.Node => {
   return (
     <PricingTable>
       <PricingTableItem
@@ -472,7 +472,7 @@ Badges.story = {
   },
 };
 
-export const Wrapped = () => {
+export const Wrapped = (): React.Node => {
   const activeElement = number("activeElement", 0);
 
   return (

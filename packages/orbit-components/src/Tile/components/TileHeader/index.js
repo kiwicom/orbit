@@ -31,6 +31,7 @@ const StyledTileHeader = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -43,6 +44,7 @@ const StyledTileIcon = styled.div`
   margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,6 +55,7 @@ const StyledTileTitle = styled.div`
   width: 100%;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -71,6 +74,7 @@ const StyledTileDescription = styled.div`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileDescription.defaultProps = {
   theme: defaultTheme,
 };
@@ -82,7 +86,7 @@ const IconRight = ({ external, expandable, className }) => {
   return <ChevronRight className={className} reverseOnRtl />;
 };
 
-export const StyledIconRight = styled(IconRight)`
+export const StyledIconRight: any = styled(IconRight)`
   color: ${({ theme }) => theme.orbit.colorIconSecondary};
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
   transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
@@ -93,6 +97,7 @@ export const StyledIconRight = styled(IconRight)`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconRight.defaultProps = {
   theme: defaultTheme,
 };
@@ -113,7 +118,7 @@ const TileHeader = ({
   tabIndex,
   onKeyDown,
   noHeaderIcon,
-}: Props) => (
+}: Props): React.Node => (
   <StyledTileHeader
     onClick={onClick}
     onKeyDown={onKeyDown}

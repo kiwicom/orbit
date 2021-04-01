@@ -10,7 +10,7 @@ export default {
   title: "DestinationHeader",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const image = text("image", "dubai_ae");
   const destinationName = text("destinationName", "Dubai");
   const dataTest = text("dataTest", "test");

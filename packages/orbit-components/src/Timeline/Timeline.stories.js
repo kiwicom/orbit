@@ -14,7 +14,7 @@ export default {
   title: "Timeline",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const type = text("type", "success");
   const label = text("label", "In progress");
   const time = text("time", "4th May 10:25");
@@ -50,7 +50,7 @@ Default.story = {
   },
 };
 
-export const WithWarning = () => {
+export const WithWarning = (): React.Node => {
   const label = text("label", "Action required");
   const time = text("time", "5th May 15:03");
   const type = text("type", "warning");
@@ -85,7 +85,7 @@ WithWarning.story = {
   parameters: { info: "This is example of Timeline with warning type" },
 };
 
-export const WithCritical = () => {
+export const WithCritical = (): React.Node => {
   const label = text("label", "Non refundable");
   const type = text("type", "critical");
   const time = text("time", "7th May 10:30");
@@ -117,7 +117,7 @@ WithCritical.story = {
   parameters: { info: "This is example of Timeline with critical type" },
 };
 
-export const InsideModal = () => {
+export const InsideModal = (): React.Node => {
   return (
     <Modal>
       <ModalSection>
@@ -147,7 +147,7 @@ InsideModal.story = {
   name: "inside Modal",
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   return (
     <RenderInRtl>
       <Timeline dataTest={dataTest}>

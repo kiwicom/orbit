@@ -8,7 +8,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack shrink direction="column" spacing="XSmall">
         <Heading type="title3" as="h3">

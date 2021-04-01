@@ -4,7 +4,7 @@ import * as React from "react";
 import InputFile from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [fileName, setFileName] = React.useState("");
     const fileTypes = ".png,.jpg,.jpeg,.webp";
     return (

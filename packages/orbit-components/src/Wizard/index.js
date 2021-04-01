@@ -23,7 +23,14 @@ const unstyledList = css`
   padding: 0;
 `;
 
-const Wizard = ({ dataTest, id, completedSteps, activeStep, children, onChangeStep }: Props) => {
+const Wizard = ({
+  dataTest,
+  id,
+  completedSteps,
+  activeStep,
+  children,
+  onChangeStep,
+}: Props): React.Node | React.Element<"nav"> => {
   const { isLargeMobile } = useMediaQuery();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);

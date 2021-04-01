@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
@@ -83,6 +83,7 @@ const IconContainer = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -94,6 +95,7 @@ const TextContainer = styled.div`
   flex: 1; // IE wrapping fix
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 TextContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -104,6 +106,7 @@ const Info = styled.span`
   line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Info.defaultProps = {
   theme: defaultTheme,
 };
@@ -123,6 +126,7 @@ const LabelText = styled.span`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 LabelText.defaultProps = {
   theme: defaultTheme,
 };
@@ -157,11 +161,12 @@ const Input = styled.input`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Label = styled(({ className, children, dataTest }) => (
+export const Label: any = styled(({ className, children, dataTest }) => (
   <label className={className} data-test={dataTest}>
     {children}
   </label>
@@ -200,64 +205,67 @@ export const Label = styled(({ className, children, dataTest }) => (
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Label.defaultProps = {
   theme: defaultTheme,
 };
 
-const Checkbox = React.forwardRef<Props, HTMLElement>((props, ref) => {
-  const {
-    label,
-    value,
-    hasError = false,
-    disabled = false,
-    checked = false,
-    name,
-    onChange,
-    dataTest,
-    info,
-    readOnly,
-    tabIndex,
-    tooltip,
-  } = props;
+const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
+  (props, ref) => {
+    const {
+      label,
+      value,
+      hasError = false,
+      disabled = false,
+      checked = false,
+      name,
+      onChange,
+      dataTest,
+      info,
+      readOnly,
+      tabIndex,
+      tooltip,
+    } = props;
 
-  const preventOnClick = useCallback(ev => {
-    ev.preventDefault();
-  }, []);
-  return (
-    <Label disabled={disabled} hasError={hasError} checked={checked}>
-      <Input
-        data-test={dataTest}
-        data-state={getFieldDataState(!!hasError)}
-        value={value}
-        type="checkbox"
-        disabled={disabled}
-        name={name}
-        tabIndex={tabIndex}
-        checked={checked}
-        onChange={onChange}
-        ref={ref}
-        readOnly={readOnly}
-        error={hasError}
-      />
-      {cloneWithTooltip(
-        tooltip,
-        <IconContainer
+    const preventOnClick = React.useCallback(ev => {
+      ev.preventDefault();
+    }, []);
+    return (
+      <Label disabled={disabled} hasError={hasError} checked={checked}>
+        <Input
+          data-test={dataTest}
+          data-state={getFieldDataState(!!hasError)}
+          value={value}
+          type="checkbox"
           disabled={disabled}
+          name={name}
+          tabIndex={tabIndex}
           checked={checked}
-          onClick={readOnly ? preventOnClick : null}
-        >
-          <Check customColor="white" />
-        </IconContainer>,
-      )}
-      {(label || info) && (
-        <TextContainer>
-          {label && <LabelText>{label}</LabelText>}
-          {info && <Info>{info}</Info>}
-        </TextContainer>
-      )}
-    </Label>
-  );
-});
+          onChange={onChange}
+          ref={ref}
+          readOnly={readOnly}
+          error={hasError}
+        />
+        {cloneWithTooltip(
+          tooltip,
+          <IconContainer
+            disabled={disabled}
+            checked={checked}
+            onClick={readOnly ? preventOnClick : null}
+          >
+            <Check customColor="white" />
+          </IconContainer>,
+        )}
+        {(label || info) && (
+          <TextContainer>
+            {label && <LabelText>{label}</LabelText>}
+            {info && <Info>{info}</Info>}
+          </TextContainer>
+        )}
+      </Label>
+    );
+  },
+);
 
 Checkbox.displayName = "Checkbox";
 

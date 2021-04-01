@@ -18,7 +18,7 @@ export default {
   title: "NavigationBar",
 };
 
-export const NavBarUpToTablet = () => {
+export const NavBarUpToTablet = (): React.Element<"div"> => {
   const dataTest = text("dataTest", "test");
   return (
     <div style={{ height: "1000px" }}>
@@ -51,7 +51,7 @@ NavBarUpToTablet.story = {
   },
 };
 
-export const NavBarDesktop = () => {
+export const NavBarDesktop = (): React.Element<"div"> => {
   const dataTest = text("dataTest", "test");
   return (
     <div style={{ height: "1000px" }}>

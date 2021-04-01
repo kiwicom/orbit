@@ -11,7 +11,7 @@ export default {
   title: "CountryFlag",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const code = text("Code", CODES.ANYWHERE);
 
   return <CountryFlag code={code} />;
@@ -24,7 +24,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const code = text("Code", CODES.ANYWHERE);
   const name = text("Name", "Country");
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);

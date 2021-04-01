@@ -9,7 +9,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [actions, setActions] = React.useState([]);
     const [country, setCountry] = React.useState("");
     const addAction = action => {

@@ -9,7 +9,7 @@ import Text from "../../../Text";
 import * as Icons from "../../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack spaceAfter="large">
         <Heading as="h3" type="title3">

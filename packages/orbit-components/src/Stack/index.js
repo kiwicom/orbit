@@ -35,11 +35,12 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
     )};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStack.defaultProps = {
   theme: defaultTheme,
 };
 
-const Stack = (props: Props) => {
+const Stack = (props: Props): React.Node => {
   const {
     dataTest,
     inline = false,

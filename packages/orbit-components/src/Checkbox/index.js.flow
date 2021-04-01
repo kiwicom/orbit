@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/checkbox/
 */
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 
@@ -24,4 +24,4 @@ export type Props = {|
 
 declare export default React.AbstractComponent<Props, HTMLElement>;
 
-declare export var Label: ReactComponentStyled<any>;
+declare export var Label: StyledComponent<any, any, HTMLElement>;

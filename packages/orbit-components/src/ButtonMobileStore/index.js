@@ -14,6 +14,7 @@ const StyledButtonMobileStore = styled(({ theme, type, ...props }) => (
   height: ${HEIGHT};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonMobileStore.defaultProps = {
   theme: defaultTheme,
 };
@@ -41,7 +42,7 @@ const ButtonMobileStore = ({
   dataTest,
   alt = "",
   stopPropagation = false,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = ev => {
     if (stopPropagation) {
       ev.stopPropagation();

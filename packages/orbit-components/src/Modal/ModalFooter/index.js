@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
@@ -23,11 +23,12 @@ const StyledChild = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledModalFooter = styled.div`
+export const StyledModalFooter: any = styled.div`
   display: flex;
   z-index: 800; // TODO: use z-index framework
   width: 100%;
@@ -59,6 +60,7 @@ export const StyledModalFooter = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalFooter.defaultProps = {
   theme: defaultTheme,
 };
@@ -96,8 +98,8 @@ const wrappedChildren = (children, flex = "0 1 auto") => {
   });
 };
 
-const ModalFooter = ({ dataTest, children, flex }: Props) => {
-  const { isMobileFullPage } = useContext(ModalContext);
+const ModalFooter = ({ dataTest, children, flex }: Props): React.Node => {
+  const { isMobileFullPage } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
-const StyledRelative = styled.div`
+const StyledRelative: any = styled.div`
   position: relative;
   ${({ inner, theme }) =>
     inner &&
@@ -14,6 +14,7 @@ const StyledRelative = styled.div`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledRelative.defaultProps = {
   theme: defaultTheme,
 };

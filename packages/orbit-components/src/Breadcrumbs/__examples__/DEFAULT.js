@@ -5,7 +5,7 @@ import Breadcrumbs from "../index";
 import BreadcrumbsItem from "../BreadcrumbsItem";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Breadcrumbs>
       <BreadcrumbsItem href="https://orbit.kiwi/" onClick={event => event.preventDefault()}>
         Orbit.kiwi

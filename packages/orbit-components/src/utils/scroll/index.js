@@ -9,5 +9,5 @@ export const removeScrollHandler = (onScrollFunction: () => void, element: Node 
   element.removeEventListener("scroll", onScrollFunction);
 };
 
-export const getScrollingElement = () =>
+export const getScrollingElement = (): any =>
   window.document.scrollingElement || window.document.documentElement;

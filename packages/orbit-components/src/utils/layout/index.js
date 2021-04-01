@@ -3,7 +3,7 @@ import { ALIGNS, JUSTIFY, DIRECTIONS } from "./consts";
 
 type Property = number | boolean | string | { [key: string]: Property };
 
-export const isDefined = (prop: ?Property) => typeof prop !== "undefined";
+export const isDefined = (prop: ?Property): boolean => typeof prop !== "undefined";
 
 const evaluateProp = (prop: string | boolean, positive: string, negative: string): string => {
   if (isDefined(prop)) return prop ? positive : negative;
@@ -12,7 +12,7 @@ const evaluateProp = (prop: string | boolean, positive: string, negative: string
 
 export const formatCSS = (key: string, value: string): string => `${key}: ${value};`;
 
-export const getAlign = (align: "start" | "end" | "center" | "stretch") => {
+export const getAlign = (align: "start" | "end" | "center" | "stretch"): string => {
   const tokens = {
     [ALIGNS.START]: "flex-start",
     [ALIGNS.END]: "flex-end",
@@ -23,7 +23,7 @@ export const getAlign = (align: "start" | "end" | "center" | "stretch") => {
   return align && tokens[align];
 };
 
-export const getJustify = (justify: "start" | "center" | "end" | "between" | "around") => {
+export const getJustify = (justify: "start" | "center" | "end" | "between" | "around"): string => {
   const tokens = {
     [JUSTIFY.START]: "flex-start",
     [JUSTIFY.END]: "flex-end",
@@ -34,13 +34,15 @@ export const getJustify = (justify: "start" | "center" | "end" | "between" | "ar
   return justify && tokens[justify];
 };
 
-export const getDirection = (direction?: "row" | "row-reverse" | "column" | "column-reverse") => {
+export const getDirection = (
+  direction?: "row" | "row-reverse" | "column" | "column-reverse",
+): string => {
   if (!direction) return "";
   return Object.values(DIRECTIONS).indexOf(direction) !== -1 ? direction : DIRECTIONS.ROW;
 };
 
-export const getGrow = (grow: string | boolean) => evaluateProp(grow, "1", "0");
+export const getGrow = (grow: string | boolean): string => evaluateProp(grow, "1", "0");
 
-export const getShrink = (shrink: string | boolean) => evaluateProp(shrink, "1", "0");
+export const getShrink = (shrink: string | boolean): string => evaluateProp(shrink, "1", "0");
 
-export const getWrap = (wrap: string | boolean) => evaluateProp(wrap, "wrap", "nowrap");
+export const getWrap = (wrap: string | boolean): string => evaluateProp(wrap, "wrap", "nowrap");

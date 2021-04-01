@@ -15,7 +15,7 @@ export default {
   title: "Badge",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const content = text("Content", "Badge");
   const Icon = getIcon(getIcons("Airplane"));
 
@@ -28,7 +28,7 @@ Default.story = {
   },
 };
 
-export const Neutral = () => {
+export const Neutral = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.NEUTRAL} icon={<Icons.Sightseeing />}>
@@ -43,7 +43,7 @@ Neutral.story = {
   },
 };
 
-export const Info = () => {
+export const Info = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.INFO} icon={<Icons.InformationCircle />}>
@@ -58,7 +58,7 @@ Info.story = {
   },
 };
 
-export const InfoInverted = () => {
+export const InfoInverted = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.INFO_INVERTED} icon={<Icons.Sightseeing />}>
@@ -73,7 +73,7 @@ InfoInverted.story = {
   },
 };
 
-export const Success = () => {
+export const Success = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.SUCCESS} icon={<Icons.CheckCircle />}>
@@ -88,7 +88,7 @@ Success.story = {
   },
 };
 
-export const SuccessInverted = () => {
+export const SuccessInverted = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.SUCCESS_INVERTED} icon={<Icons.CheckCircle />}>
@@ -103,7 +103,7 @@ SuccessInverted.story = {
   },
 };
 
-export const Warning = () => {
+export const Warning = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.WARNING} icon={<Icons.Clock />}>
@@ -118,7 +118,7 @@ Warning.story = {
   },
 };
 
-export const WarningInverted = () => {
+export const WarningInverted = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.WARNING_INVERTED} icon={<Icons.Clock />}>
@@ -133,7 +133,7 @@ WarningInverted.story = {
   },
 };
 
-export const Critical = () => {
+export const Critical = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.CRITICAL} icon={<Icons.Passport />}>
@@ -148,7 +148,7 @@ Critical.story = {
   },
 };
 
-export const CriticalInverted = () => {
+export const CriticalInverted = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.CRITICAL_INVERTED} icon={<Icons.Sightseeing />}>
@@ -163,7 +163,7 @@ CriticalInverted.story = {
   },
 };
 
-export const Dark = () => {
+export const Dark = (): React.Node => {
   const content = text("Content", "Badge");
   return (
     <Badge type={TYPE_OPTIONS.DARK} icon={<Icons.Sightseeing />}>
@@ -178,7 +178,7 @@ Dark.story = {
   },
 };
 
-export const White = () => {
+export const White = (): React.Element<"div"> => {
   const content = text("Content", "Badge");
   return (
     <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
@@ -195,7 +195,7 @@ White.story = {
   },
 };
 
-export const BadgeWithTranslatedNode = () => (
+export const BadgeWithTranslatedNode = (): React.Node => (
   <Badge icon={<Icons.Airplane />}>
     <span>Content should </span>
     <span>be</span>
@@ -207,7 +207,7 @@ BadgeWithTranslatedNode.story = {
   name: "Badge with translated node",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const content = text("Content", "Badge");
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
   const dataTest = text("dataTest", "test");
@@ -228,7 +228,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
+export const Accessibility = (): React.Node => {
   const content = text("Content", "Badge");
   const Icon = getIcon(getIcons("Airplane"));
   const ariaLabel = text("ariaLabel", "test");
@@ -246,7 +246,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Badge type="info" icon={<Icons.Airplane />}>
       Badge

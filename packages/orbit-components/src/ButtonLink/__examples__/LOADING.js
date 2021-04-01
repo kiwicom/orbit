@@ -4,7 +4,7 @@ import * as React from "react";
 import ButtonLink from "../index";
 
 export default {
-  Example: () => <ButtonLink loading>Click me</ButtonLink>,
+  Example: (): React.Node => <ButtonLink loading>Click me</ButtonLink>,
   info: {
     title: "Loading nutton link",
     description:

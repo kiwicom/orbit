@@ -5,7 +5,7 @@ import List from "../index";
 import ListItem from "../ListItem";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <List>
       <ListItem>Planes</ListItem>
       <ListItem>Trains</ListItem>

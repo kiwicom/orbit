@@ -13,7 +13,7 @@ import Tile from "../../Tile";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDrawer, setShowDrawer] = React.useState(false);
     return (
       <>

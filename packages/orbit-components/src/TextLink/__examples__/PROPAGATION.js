@@ -8,7 +8,7 @@ import TextLink from "../index";
 import Tile from "../../Tile";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [text, setText] = React.useState("");
     return (
       <Stack>

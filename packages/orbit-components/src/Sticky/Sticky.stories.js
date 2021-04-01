@@ -16,7 +16,7 @@ export default {
   title: "Sticky",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Element<"div"> => {
   const Icon = getIcon(getIcons("Airplane"));
   const offset = number("offset", 0);
   return (

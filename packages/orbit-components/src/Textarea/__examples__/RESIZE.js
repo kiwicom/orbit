@@ -5,7 +5,7 @@ import Stack from "../../Stack";
 import Textarea from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Textarea label="Given names" placeholder="Sofia Cruz" resize="vertical" />
       <Textarea label="Given names" placeholder="Sofia Cruz" resize="none" />

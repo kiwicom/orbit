@@ -5,7 +5,7 @@ import Button from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <Button size="small">Small button</Button>
       <Button>Normal button</Button>

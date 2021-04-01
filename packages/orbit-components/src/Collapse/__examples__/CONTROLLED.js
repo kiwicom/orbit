@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import Slider from "../../Slider";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [collapsed, setCollapsed] = React.useState(false);
     return (
       <Stack>

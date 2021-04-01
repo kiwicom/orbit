@@ -90,7 +90,7 @@ const SeatType = ({ type }) => {
   }
 };
 
-const Seat = ({ type, size = SIZE_OPTIONS.MEDIUM, dataTest }: Props) => {
+const Seat = ({ type, size = SIZE_OPTIONS.MEDIUM, dataTest }: Props): React.Node => {
   return (
     <StyledSeat
       preserveAspectRatio="xMidYMid meet"

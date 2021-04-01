@@ -61,6 +61,7 @@ describe("Textarea", () => {
   it("should have focus", () => {
     const onFocus = jest.fn();
     render(<Textarea onFocus={onFocus} />);
+    // $FlowFixMe
     userEvent.tab(screen.getByRole("textbox"));
     expect(onFocus).toHaveBeenCalled();
   });

@@ -8,7 +8,7 @@ import Text from "../../Text";
 import Tooltip from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack direction="column" align="center">
         <Heading type="title3" as="h4">

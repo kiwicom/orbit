@@ -11,7 +11,7 @@ export default {
   title: "Stepper",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
 
@@ -30,7 +30,7 @@ Default.story = {
   },
 };
 
-export const Stateless = () => {
+export const Stateless = (): React.Node => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const value = text("value", "2 adults");
@@ -69,7 +69,7 @@ Stateless.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);

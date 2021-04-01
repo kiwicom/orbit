@@ -148,7 +148,7 @@ export default {
   title: "Box",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const children = text("Children", "Default box");
   const as = text("As", "span");
   return <Box as={as}>{children}</Box>;
@@ -161,7 +161,7 @@ Default.story = {
   },
 };
 
-export const Overflow = () => {
+export const Overflow = (): React.Node => {
   const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.AUTO);
 
   return (
@@ -177,7 +177,7 @@ export const Overflow = () => {
   );
 };
 
-export const TextAlign = () => {
+export const TextAlign = (): React.Node => {
   const textAlign = select("textAlign", Object.values(TEXT_ALIGN), TEXT_ALIGN.CENTER);
 
   return (
@@ -197,7 +197,7 @@ TextAlign.story = {
   name: "TextAlign",
 };
 
-export const Positions = () => {
+export const Positions = (): React.Node => {
   const position = select("position", Object.values(POSITION), POSITION.RELATIVE);
   const top = text("top", "");
   const left = text("left", "");
@@ -226,7 +226,7 @@ export const Positions = () => {
   );
 };
 
-export const PaddingMargin = () => {
+export const PaddingMargin = (): React.Node => {
   const margin = select("margin", SPACINGS, SPACINGS[0]);
   const padding = select("padding", SPACINGS, SPACINGS[0]);
 
@@ -245,7 +245,7 @@ PaddingMargin.story = {
   name: "Padding & Margin",
 };
 
-export const BorderRadius = () => {
+export const BorderRadius = (): React.Node => {
   const radius = select("borderRadius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);
 
   return (
@@ -263,7 +263,7 @@ BorderRadius.story = {
   name: "BorderRadius",
 };
 
-export const Colors = () => {
+export const Colors = (): React.Node => {
   const color = select("colors", COLORS, COLORS[10]);
   const background = select("background", COLORS, DEFAULT_COLOR);
 
@@ -284,7 +284,7 @@ export const Colors = () => {
   );
 };
 
-export const Elevation = () => {
+export const Elevation = (): React.Node => {
   const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
 
   return (
@@ -311,7 +311,7 @@ export const Elevation = () => {
   );
 };
 
-export const Flex = () => {
+export const Flex = (): React.Node => {
   const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
   const display = select("display", Object.values(DISPLAY), "flex");
   const align = select("align", Object.values(ALIGN), ALIGN.START);
@@ -337,7 +337,7 @@ export const Flex = () => {
   );
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const children = text("Children", "Box");
   const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
   const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.VISIBLE);
@@ -403,7 +403,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
+export const Rtl = (): React.Node => {
   const right = text("right", "10px");
   const left = text("bottom", "10px");
   const margin = select("margin", SPACINGS, SPACINGS[0]);

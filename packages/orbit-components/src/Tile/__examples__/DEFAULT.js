@@ -4,7 +4,7 @@ import * as React from "react";
 import Tile from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Tile
       onClick={() => {
         window.location = "https://orbit.kiwi/guides/progressive-disclosure/";

@@ -10,7 +10,7 @@ import Stepper from "../../Stepper";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [planeChecked, setPlaneChecked] = React.useState(true);
     const [trainChecked, setTrainChecked] = React.useState(true);
     const [busChecked, setBusChecked] = React.useState(true);

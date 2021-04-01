@@ -33,6 +33,8 @@ const useBoundingRect: UseBoundingRect = initialValue => {
       window.removeEventListener("resize", calculate);
     };
   }, []);
+
+  // $FlowFixMe
   return [state, ref];
 };
 

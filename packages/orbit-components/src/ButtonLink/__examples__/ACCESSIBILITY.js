@@ -8,7 +8,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [color, setColor] = React.useState(false);
     const [expanded, setExpanded] = React.useState(false);
     return (

@@ -10,7 +10,7 @@ import Wizard from "../index";
 import WizardStep from "../WizardStep";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [activeStep, setActiveStep] = React.useState(2);
     const [headingAndText, setHeadingAndText] = React.useState({
       heading: "Ticket fare",

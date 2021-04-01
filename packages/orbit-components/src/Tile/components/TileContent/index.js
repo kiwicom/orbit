@@ -1,5 +1,5 @@
 // @flow
-import React, { forwardRef } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import mq from "../../../utils/mediaQuery";
@@ -46,11 +46,15 @@ const StyledTileContent = styled.div`
   ${getPadding};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileContent = forwardRef<Props, HTMLInputElement>(
+const TileContent: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
+  Props,
+  HTMLElement,
+>(
   (
     { children, noPadding, withPointer = false, withBorder = false, useMargins = true }: Props,
     ref,

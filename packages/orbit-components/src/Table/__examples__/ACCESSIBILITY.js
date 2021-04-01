@@ -10,7 +10,7 @@ import TableHead from "../TableHead";
 import TableRow from "../TableRow";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Heading as="h3" type="title3">
         Passengers

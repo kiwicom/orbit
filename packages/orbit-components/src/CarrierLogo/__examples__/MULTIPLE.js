@@ -5,7 +5,7 @@ import CarrierLogo from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <CarrierLogo
         carriers={[

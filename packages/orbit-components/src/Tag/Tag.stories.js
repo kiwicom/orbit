@@ -13,7 +13,7 @@ export default {
   title: "Tag",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const content = text("Content", "Brno");
 
   return <Tag onClick={action("onClick")}>{content}</Tag>;
@@ -25,7 +25,7 @@ Default.story = {
   },
 };
 
-export const Nonactionable = () => {
+export const Nonactionable = (): React.Node => {
   const content = text("Content", "Brno");
 
   return <Tag>{content}</Tag>;
@@ -37,7 +37,7 @@ Nonactionable.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const content = text("Content", "Transport");
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
   const selected = boolean("selected", true);
@@ -63,7 +63,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <Tag onRemove={action("onRemove")}>Transport</Tag>
   </RenderInRtl>

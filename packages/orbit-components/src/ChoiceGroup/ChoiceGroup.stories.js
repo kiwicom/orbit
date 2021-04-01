@@ -13,7 +13,7 @@ export default {
   title: "ChoiceGroup",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("Label", "What was the reason for your cancellation?");
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
@@ -30,7 +30,7 @@ Default.story = {
   },
 };
 
-export const Multiple = () => {
+export const Multiple = (): React.Node => {
   const label = text("Label", "What was the reason for your cancellation?");
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
@@ -47,7 +47,7 @@ Multiple.story = {
   },
 };
 
-export const Filter = () => {
+export const Filter = (): React.Node => {
   const label = text("Label", "What was the reason for your cancellation?");
   const onlySelectionText = text("onlySelectionText", "Only");
   return (
@@ -71,7 +71,7 @@ Filter.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
 
@@ -93,7 +93,7 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const label = text("Label", "What was the reason for your cancellation?");
   const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);

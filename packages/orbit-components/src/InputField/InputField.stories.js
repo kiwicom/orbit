@@ -23,7 +23,7 @@ export default {
   title: "InputField",
 };
 
-export const DefaultInput = () => {
+export const DefaultInput = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -41,7 +41,7 @@ DefaultInput.story = {
   },
 };
 
-export const SmallInput = () => {
+export const SmallInput = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -65,7 +65,7 @@ SmallInput.story = {
   },
 };
 
-export const NumberInput = () => {
+export const NumberInput = (): React.Node => {
   const label = text("Label", "Number");
   const value = text("Value", 2);
   const placeholder = text("Placeholder", "Number");
@@ -93,7 +93,7 @@ NumberInput.story = {
   },
 };
 
-export const PasswordInput = () => {
+export const PasswordInput = (): React.Node => {
   const label = text("Label", "Password");
   const value = text("Value", "p422W0rd");
   const placeholder = text("Placeholder", "Password");
@@ -117,7 +117,7 @@ PasswordInput.story = {
   },
 };
 
-export const PassportOrIdInput = () => {
+export const PassportOrIdInput = (): React.Node => {
   const label = text("Label", "Passport or ID number");
   const placeholder = text("Placeholder", "588539238");
 
@@ -139,7 +139,7 @@ PassportOrIdInput.story = {
   },
 };
 
-export const EmailInput = () => {
+export const EmailInput = (): React.Node => {
   const label = text("Label", "Email");
   const value = text("Value", "name@example.co");
   const placeholder = text("Placeholder", "Email");
@@ -169,7 +169,7 @@ EmailInput.story = {
   },
 };
 
-export const WithTextPrefix = () => {
+export const WithTextPrefix = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -194,7 +194,7 @@ WithTextPrefix.story = {
   },
 };
 
-export const WithTextSuffix = () => {
+export const WithTextSuffix = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -219,7 +219,7 @@ WithTextSuffix.story = {
   },
 };
 
-export const CompactInput = () => {
+export const CompactInput = (): React.Node => {
   const value = text("Value", "");
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
@@ -247,7 +247,7 @@ CompactInput.story = {
   },
 };
 
-export const CompactInputWithTags = () => {
+export const CompactInputWithTags = (): React.Node => {
   const value = text("Value", "");
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
@@ -301,7 +301,7 @@ CompactInputWithTags.story = {
   },
 };
 
-export const RequiredField = () => {
+export const RequiredField = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const required = boolean("required", true);
@@ -326,7 +326,7 @@ RequiredField.story = {
   },
 };
 
-export const WithIconPrefix = () => {
+export const WithIconPrefix = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -351,7 +351,7 @@ WithIconPrefix.story = {
   },
 };
 
-export const WithButtonLinkSuffix = () => {
+export const WithButtonLinkSuffix = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -380,7 +380,7 @@ WithButtonLinkSuffix.story = {
   },
 };
 
-export const WithServiceLogoPrefix = () => {
+export const WithServiceLogoPrefix = (): React.Node => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -406,7 +406,7 @@ WithServiceLogoPrefix.story = {
   },
 };
 
-export const WithHelp = () => {
+export const WithHelp = (): React.Node => {
   const label = text("Label", "Label");
   const help = text("Help", "Help message");
 
@@ -422,7 +422,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
+export const WithError = (): React.Node => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
 
@@ -438,7 +438,7 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
@@ -520,7 +520,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <InputField
       placeholder="Placeholder"

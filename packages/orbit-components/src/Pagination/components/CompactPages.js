@@ -8,7 +8,7 @@ import type { Props } from "./CompactPages";
 
 const MeatBalls = () => <MenuMeatballs size="small" color="primary" />;
 
-const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) => {
+const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props): React.Node => {
   if (selectedPage > pageCount - 4) {
     return (
       <>

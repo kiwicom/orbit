@@ -11,7 +11,7 @@ import TextLink from "../../TextLink";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [actions, setActions] = React.useState([]);
     const addAction = action => {
       setActions([...actions, action]);

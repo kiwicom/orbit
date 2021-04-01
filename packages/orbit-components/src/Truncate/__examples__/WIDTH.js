@@ -7,7 +7,7 @@ import Text from "../../Text";
 import Truncate from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Heading as="h3" type="title3">
         Width in parent

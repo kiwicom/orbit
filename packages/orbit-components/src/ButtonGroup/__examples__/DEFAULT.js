@@ -5,7 +5,7 @@ import Button from "../../Button";
 import ButtonGroup from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <ButtonGroup>
       <Button
         external

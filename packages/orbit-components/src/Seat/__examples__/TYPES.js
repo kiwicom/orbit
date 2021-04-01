@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const { isTablet } = useMediaQuery();
     return (
       <Stack flex>

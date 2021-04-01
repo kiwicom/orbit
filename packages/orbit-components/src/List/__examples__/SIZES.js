@@ -6,7 +6,7 @@ import ListItem from "../ListItem";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <List size="small">
         <ListItem>Planes</ListItem>

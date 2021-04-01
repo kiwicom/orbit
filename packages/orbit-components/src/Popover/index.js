@@ -10,8 +10,6 @@ import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { POSITIONS, ALIGNS } from "./consts";
 import handleKeyDown from "../utils/handleKeyDown";
 
-const { useRef, useCallback, useMemo, useEffect } = React;
-
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
@@ -31,9 +29,9 @@ const Popover = ({
   onOpen,
   fixed,
   actions,
-}: Props) => {
+}: Props): React.Node => {
   const theme = useTheme();
-  const transitionLength = useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
+  const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
   ]);
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
@@ -46,9 +44,9 @@ const Popover = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, transitionLength);
-  const container: {| current: React.ElementRef<*> |} = useRef(null);
+  const container: {| current: React.ElementRef<*> |} = React.useRef(null);
 
-  const resolveCallback = useCallback(
+  const resolveCallback = React.useCallback(
     state => {
       if (onClose && !state) onClose();
       if (onOpen && state) onOpen();
@@ -56,7 +54,7 @@ const Popover = ({
     [onClose, onOpen],
   );
 
-  const handleOut = useCallback(
+  const handleOut = React.useCallback(
     ev => {
       // If open prop is present ignore custom handler
       if (container.current && !container.current.contains(ev.target)) {
@@ -71,7 +69,7 @@ const Popover = ({
     [clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout, setShown],
   );
 
-  const handleClick = useCallback(() => {
+  const handleClick = React.useCallback(() => {
     // If open prop is present ignore custom handler
     if (typeof opened === "undefined") {
       if (shown) {
@@ -102,7 +100,7 @@ const Popover = ({
     shown,
   ]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof opened !== "undefined") {
       if (opened) {
         setRender(true);

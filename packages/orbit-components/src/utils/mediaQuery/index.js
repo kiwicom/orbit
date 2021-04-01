@@ -19,10 +19,12 @@ export const getBreakpointWidth: GetBreakpointWidth = (name, theme, pure) => {
   return `(min-width: ${tokens[name]}px)`;
 };
 
+// $FlowFixMe
 const mediaQueries: MediaQueries = Object.keys(QUERIES).reduce(
   /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
    * v0.115.0. To view the error, delete this comment and run Flow. */
   (o, name) => ({
+    // $FlowFixMe
     ...o,
     /* $FlowFixMe(>=0.115.0) This comment suppresses an error found when upgrading Flow to
      * v0.115.0. To view the error, delete this comment and run Flow. */

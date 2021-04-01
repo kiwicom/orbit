@@ -1,5 +1,5 @@
 // @flow
-import React, { useContext } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -62,6 +62,7 @@ const StyledPricingTableItem = styled.div`
     `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPricingTableItem.defaultProps = {
   theme: defaultTheme,
 };
@@ -100,6 +101,7 @@ const StyledBadgeWrapperContent = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadgeWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -112,6 +114,7 @@ const DesktopRadio = styled.div`
   right: 10px;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 DesktopRadio.defaultProps = {
   theme: defaultTheme,
 };
@@ -120,6 +123,7 @@ const Spacer = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Spacer.defaultProps = {
   theme: defaultTheme,
 };
@@ -127,7 +131,7 @@ Spacer.defaultProps = {
 /*
   This causes rewrite of a list so list is ussable in in PricingTable, this is not at all elegant solution.
 */
-export const StyledListWrapper = styled.div`
+export const StyledListWrapper: any = styled.div`
   ${({ theme }) =>
     css`
       width: 100%;
@@ -162,6 +166,7 @@ export const StyledListWrapper = styled.div`
     `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -179,7 +184,7 @@ const PricingTableItem = ({
   onClick,
   compact,
   mobileDescription,
-}: Props) => {
+}: Props): React.Node => {
   const onClickHandler = () => {
     if (onClick) {
       onClick();
@@ -187,7 +192,7 @@ const PricingTableItem = ({
   };
   const { isDesktop } = useMediaQuery();
   const trueCompact = typeof compact !== "undefined" ? compact : !isDesktop;
-  const context = useContext(PricingTableContext);
+  const context = React.useContext(PricingTableContext);
 
   return (
     <>

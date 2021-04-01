@@ -11,7 +11,7 @@ export default {
   title: "Slider",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const label = text("label", "Depart from Prague");
   const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
   const minValue = number("minValue", 1);
@@ -36,7 +36,7 @@ Default.story = {
   },
 };
 
-export const SliderWithHistogram = () => {
+export const SliderWithHistogram = (): React.Element<"div"> => {
   const label = text("label", "Depart from Prague");
   const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
   const defaultValue = number("defaultValue", 12);
@@ -94,7 +94,7 @@ SliderWithHistogram.story = {
   },
 };
 
-export const RangeSlider = () => {
+export const RangeSlider = (): React.Node => {
   const label = text("label", "Depart from Prague");
   const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
   const defaultValue = array("defaultValue", [1, 5]);
@@ -121,7 +121,7 @@ RangeSlider.story = {
   },
 };
 
-export const RangeSliderWithHistogram = () => {
+export const RangeSliderWithHistogram = (): React.Element<"div"> => {
   const label = text("label", "Depart from Prague");
   const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
   const defaultValue = array("defaultValue", [0, 24]);
@@ -182,7 +182,7 @@ RangeSliderWithHistogram.story = {
   },
 };
 
-export const SliderWithLoadingHistogram = () => {
+export const SliderWithLoadingHistogram = (): React.Element<"div"> => {
   const histogramDescription = text("histogramDescription", "20 of 133 flights");
   const histogramLoading = boolean("histogramLoading", true);
   const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
@@ -213,7 +213,7 @@ SliderWithLoadingHistogram.story = {
   },
 };
 
-export const RangeSliderWithLoadingHistogram = () => {
+export const RangeSliderWithLoadingHistogram = (): React.Element<"div"> => {
   const histogramDescription = text("histogramDescription", "20 of 133 flights");
   const histogramLoading = boolean("histogramLoading", true);
   const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
@@ -244,7 +244,7 @@ RangeSliderWithLoadingHistogram.story = {
   },
 };
 
-export const SliderPlayground = () => {
+export const SliderPlayground = (): React.Element<"div"> => {
   const ariaLabel = text("ariaLabel", "Label of handle");
   const ariaValueText = text("ariaValueText", "Text alternative of actual value");
   const dataTest = text("dataTest", "test");
@@ -283,7 +283,7 @@ SliderPlayground.story = {
   },
 };
 
-export const RangeSliderPlayground = () => {
+export const RangeSliderPlayground = (): React.Element<"div"> => {
   const ariaLabel = array("ariaLabel", ["First handle", "Second handle"]);
   const ariaValueText = text("ariaValueText", "Text alternative of actual value");
   const dataTest = text("dataTest", "test");
@@ -355,7 +355,7 @@ RangeSliderPlayground.story = {
   },
 };
 
-export const RtlDefaultSlider = () => {
+export const RtlDefaultSlider = (): React.Node => {
   return (
     <RenderInRtl>
       <Slider
@@ -377,7 +377,7 @@ RtlDefaultSlider.story = {
   },
 };
 
-export const RtlSliderWithHistogram = () => {
+export const RtlSliderWithHistogram = (): React.Node => {
   return (
     <RenderInRtl>
       <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
@@ -430,7 +430,7 @@ RtlSliderWithHistogram.story = {
   },
 };
 
-export const RtlRangeSliderWithHistogram = () => {
+export const RtlRangeSliderWithHistogram = (): React.Node => {
   return (
     <RenderInRtl>
       <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
@@ -483,7 +483,7 @@ RtlRangeSliderWithHistogram.story = {
   },
 };
 
-export const RtlSliderWithLoadingHistogram = () => {
+export const RtlSliderWithLoadingHistogram = (): React.Node => {
   const histogramDescription = text("histogramDescription", "20 of 133 flights");
   const histogramLoading = boolean("histogramLoading", true);
   const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");

@@ -21,7 +21,7 @@ export default {
   title: "TileGroup",
 };
 
-export const DefaultJustWrapper = () => {
+export const DefaultJustWrapper = (): React.Node => {
   const dataTest = text("dataTest", "test");
 
   const content = text("content", "Lorem ipsum dolor sit amet");
@@ -43,7 +43,7 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = () => {
+export const DefaultWithHeaderProps = (): React.Node => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -88,7 +88,7 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = () => {
+export const ExpandableWithCustomDescription = (): React.Node => {
   const Icon = getIcon(getIcons("GenderMan"));
 
   return (
@@ -197,7 +197,7 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
-export const Rtl = () => (
+export const Rtl = (): React.Node => (
   <RenderInRtl>
     <TileGroup>
       <Tile

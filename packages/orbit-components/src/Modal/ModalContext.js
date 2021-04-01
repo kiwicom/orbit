@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { WithModalContextType, ModalContextType } from "./ModalContext";
+import type { ModalContextProps, WithModalContextType, ModalContextType } from "./ModalContext";
 
 export const ModalContext: ModalContextType = React.createContext({
   setHasModalTitle: () => {},
@@ -15,6 +15,7 @@ export const ModalContext: ModalContextType = React.createContext({
 });
 ModalContext.displayName = "ModalOrbitContext";
 
+// $FlowFixMe
 export const withModalContext: WithModalContextType = Component => props => (
   <ModalContext.Consumer>
     {
@@ -25,4 +26,4 @@ export const withModalContext: WithModalContextType = Component => props => (
   </ModalContext.Consumer>
 );
 
-export const useModalContext = () => React.useContext(ModalContext);
+export const useModalContext = (): ModalContextProps => React.useContext(ModalContext);

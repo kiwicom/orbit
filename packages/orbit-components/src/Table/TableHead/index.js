@@ -20,10 +20,11 @@ const StyledTableHead = styled(({ children, className, dataTest }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableHead.defaultProps = {
   theme: defaultTheme,
 };
-const TableHead = ({ children, dataTest }: Props) => (
+const TableHead = ({ children, dataTest }: Props): React.Node => (
   <StyledTableHead dataTest={dataTest}>{children}</StyledTableHead>
 );
 

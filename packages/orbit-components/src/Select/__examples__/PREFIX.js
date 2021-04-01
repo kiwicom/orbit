@@ -5,7 +5,7 @@ import CountryFlag from "../../CountryFlag";
 import Select from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [country, setCountry] = React.useState("");
     return (
       <Select

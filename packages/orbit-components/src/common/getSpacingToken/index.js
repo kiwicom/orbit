@@ -3,7 +3,7 @@ import SPACINGS_AFTER from "./consts";
 
 import type { Props } from ".";
 
-const getSpacingToken = ({ spaceAfter, theme }: Props) => {
+const getSpacingToken = ({ spaceAfter, theme }: Props): void | string => {
   const tokens = {
     [SPACINGS_AFTER.NONE]: "0",
     [SPACINGS_AFTER.SMALLEST]: theme.orbit.spaceXXSmall,

@@ -5,7 +5,7 @@ import mq from "../../utils/mediaQuery";
 import defaultTheme from "../../defaultTheme";
 import { getBorder } from "./borders";
 
-export const CardElement = css`
+export const CardElement: any = css`
   width: 100%;
   box-sizing: border-box;
   position: relative;

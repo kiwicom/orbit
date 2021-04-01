@@ -8,7 +8,7 @@ import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";
 
-export const StyledTileWrapper = styled.div`
+export const StyledTileWrapper: any = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -30,6 +30,7 @@ export const StyledTileWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -48,7 +49,7 @@ const TileWrapper = ({
   ariaControls,
   id,
   htmlTitle,
-}: Props) => (
+}: Props): React.Node => (
   <StyledTileWrapper
     target={href && external ? "_blank" : undefined}
     rel={href && external ? "noopener noreferrer" : undefined}

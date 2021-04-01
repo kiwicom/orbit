@@ -11,7 +11,7 @@ export default {
   title: "ButtonMobileStore",
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   const href = text("href", "#");
 
   return (
@@ -40,7 +40,7 @@ Default.story = {
   },
 };
 
-export const Light = () => {
+export const Light = (): React.Node => {
   const href = text("href", "#");
 
   return (

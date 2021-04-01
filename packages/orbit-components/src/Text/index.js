@@ -56,11 +56,13 @@ const getLineHeightToken = ({ theme, size }) => {
   return lineHeightTokens[size];
 };
 
-export const StyledText = styled(({ element: TextElement, children, className, dataTest, id }) => (
-  <TextElement className={className} data-test={dataTest} id={id}>
-    {children}
-  </TextElement>
-))`
+export const StyledText: any = styled(
+  ({ element: TextElement, children, className, dataTest, id }) => (
+    <TextElement className={className} data-test={dataTest} id={id}>
+      {children}
+    </TextElement>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${getSizeToken};
   font-weight: ${getWeightToken};
@@ -79,6 +81,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };
@@ -95,7 +98,7 @@ const Text = ({
   spaceAfter,
   children,
   id,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledText
       id={id}

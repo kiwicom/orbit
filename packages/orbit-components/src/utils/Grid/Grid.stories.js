@@ -13,7 +13,7 @@ export default {
   title: "Grid",
 };
 
-export const Playground = () => {
+export const Playground = (): React.Node => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
   const width = text("width", "100%");

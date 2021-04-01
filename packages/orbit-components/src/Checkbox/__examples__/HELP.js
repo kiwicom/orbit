@@ -5,7 +5,7 @@ import Checkbox from "../index";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [checked, setChecked] = React.useState(false);
     return (
       <Checkbox

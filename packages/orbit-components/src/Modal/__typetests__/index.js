@@ -3,7 +3,7 @@ import * as React from "react";
 
 import Modal from "..";
 
-export default function Test() {
+export default function Test(): React.Node {
   const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);
   const scrollingElementRef = React.useCallback(node => {
     node?.addEventListener("scroll", () => {});

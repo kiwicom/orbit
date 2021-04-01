@@ -19,6 +19,7 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
       { index, devices },
       props,
     );
+
     return css`
       ${getDisplay(inline, viewport === "smallMobile")};
       max-width: ${maxWidth};
@@ -31,7 +32,8 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
       ${compatibleIE};
     `;
   }
-  return false;
+
+  return css``;
 };
 
 export default getViewportGridStyles;

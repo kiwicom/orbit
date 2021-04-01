@@ -20,7 +20,7 @@ const TypeIcon = ({ type }) => {
   return <Circle color="tertiary" size="small" />;
 };
 
-const TimelineStep = ({ children, label, subLabel, type }: Props) => {
+const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node => {
   const { types, setTypes } = useStatuses();
   const { index, last } = useStep();
   const { isDesktop } = useMediaQuery();

@@ -71,11 +71,12 @@ const Field = styled(
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
 
-export const FakeInput = styled(({ children, className }) => (
+export const FakeInput: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   width: 100%;
@@ -100,11 +101,12 @@ export const FakeInput = styled(({ children, className }) => (
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const InputContainer = styled(({ children, className }) => (
+export const InputContainer: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   display: flex;
@@ -129,6 +131,7 @@ export const InputContainer = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 InputContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -150,11 +153,12 @@ const StyledInlineLabel = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Prefix = styled(({ children, className }) => (
+export const Prefix: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   height: 100%;
@@ -177,6 +181,7 @@ export const Prefix = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Prefix.defaultProps = {
   theme: defaultTheme,
 };
@@ -201,11 +206,12 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Suffix.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Input = styled(
+export const Input: any = styled(
   React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
     <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
   )),
@@ -273,6 +279,7 @@ export const Input = styled(
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
@@ -291,7 +298,10 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
+const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
+  Props,
+  HTMLInputElement,
+>((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,

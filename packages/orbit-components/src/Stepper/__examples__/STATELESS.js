@@ -6,7 +6,7 @@ import StepperStateless from "../StepperStateless";
 import Heading from "../../Heading";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const maxValue = 10;
     const minValue = 1;
     const [value, setValue] = React.useState(3);

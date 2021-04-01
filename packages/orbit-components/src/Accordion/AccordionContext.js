@@ -12,6 +12,6 @@ export const accordionDefault: Context = {
 const context: React.Context<Context> = React.createContext(accordionDefault);
 context.displayName = "AccordionOrbitContext";
 
-export const useAccordion = () => React.useContext(context);
+export const useAccordion = (): Context => React.useContext(context);
 
 export const { Consumer, Provider } = context;

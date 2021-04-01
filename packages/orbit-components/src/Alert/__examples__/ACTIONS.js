@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import Heading from "../../Heading";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack direction="row" align="end" spaceAfter="medium">
         <Stack shrink direction="column" spacing="XSmall">

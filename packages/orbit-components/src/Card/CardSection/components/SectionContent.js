@@ -26,6 +26,7 @@ const StyledCardSectionContent = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -48,7 +49,7 @@ const SectionContent = ({
   hasPaddingTop,
   slideID,
   labelID,
-}: Props) => {
+}: Props): React.Node => {
   const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
 
   return (

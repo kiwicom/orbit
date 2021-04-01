@@ -35,7 +35,6 @@ import { CONTENT_PADDING, MAX_CONTENT_WIDTH } from "../consts";
 const StyledWrapper = styled.div`
   display: grid;
   position: relative;
-  overflow: hidden;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   min-height: 100vh;
@@ -45,7 +44,6 @@ const StyledMain = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: ${CONTENT_PADDING};
   max-width: ${MAX_CONTENT_WIDTH};
   margin: 0 auto;

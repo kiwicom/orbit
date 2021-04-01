@@ -200,6 +200,7 @@ module.exports = {
           "error",
           "ignorePackages",
           {
+            ts: "never",
             tsx: "never",
           },
         ],
@@ -207,7 +208,7 @@ module.exports = {
       settings: {
         "import/resolver": {
           node: {
-            extensions: [".tsx"],
+            extensions: [".ts", ".tsx"],
           },
           alias: {
             map: [["snippets", "./docs/src/snippets"]],

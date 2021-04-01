@@ -1,18 +1,27 @@
 import { Meal } from "@kiwicom/orbit-components/icons";
 
+import useMdxPageTableofContents from "../hooks/useMdxPageTableofContents";
 import DocLayout from "../components/DocLayout";
 import Palette from "../components/Palette";
 
-export default ({ children, location, path }) => (
-  <DocLayout
-    description="Examples of our components shared across MDX docs files."
-    title="MDX examples"
-    location={location}
-    path={path}
-  >
-    {children}
-  </DocLayout>
-);
+<!-- vale off -->
+
+export default ({ children, location, path }) => {
+  const tableOfContents = useMdxPageTableofContents("mdx-examples");
+  return (
+    <DocLayout
+      description="Examples of our components shared across MDX docs files."
+      title="MDX examples"
+      location={location}
+      path={path}
+      tableOfContents={tableOfContents}
+    >
+      {children}
+    </DocLayout>
+  );
+};
+
+<!-- vale on -->
 
 This page includes examples of all components shared across our docs files.
 See them all in action in the built page

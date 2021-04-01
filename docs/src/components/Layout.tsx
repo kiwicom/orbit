@@ -11,7 +11,6 @@ import { CONTENT_PADDING } from "../consts";
 const StyledWrapper = styled.div`
   display: grid;
   position: relative;
-  overflow: hidden;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   min-height: 100vh;
@@ -20,7 +19,6 @@ const StyledWrapper = styled.div`
 const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: ${CONTENT_PADDING};
 `;
 

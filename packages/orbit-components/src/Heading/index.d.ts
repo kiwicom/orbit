@@ -7,7 +7,14 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Heading";
 
-type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
+export type Type =
+  | "display"
+  | "displaySubtitle"
+  | "title1"
+  | "title2"
+  | "title3"
+  | "title4"
+  | "title5";
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
 export interface Props extends Common.Global, Common.SpaceAfter {

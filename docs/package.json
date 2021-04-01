@@ -46,6 +46,7 @@
     "js-yaml": "^4.0.0",
     "react-copy-to-clipboard": "^5.0.3",
     "react-live": "^2.2.3",
+    "react-scrollspy": "^3.4.3",
     "rehype-parse": "^7.0.1",
     "rehype-stringify": "^8.0.0",
     "remark-deflist": "^0.3.0",

@@ -11,12 +11,12 @@ export const StyledAnchorWrapper = styled.div`
   margin-top: -10px;
 
   svg {
-    opacity: 0%;
+    opacity: 0;
     transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in;
   }
 
   &:hover svg {
-    opacity: 100%;
+    opacity: 1;
   }
 `;
 

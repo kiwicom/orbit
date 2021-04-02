@@ -7,6 +7,5 @@ type ThemeShape = React.ComponentProps<typeof ThemeProvider>["theme"];
 
 declare module "styled-components" {
   // this has to be an interface, "type" doesn't work
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface DefaultTheme extends ThemeShape {}
 }

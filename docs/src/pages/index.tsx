@@ -93,7 +93,7 @@ export default function Home({ location }: Props) {
               >
                 Get started
               </ButtonLink>
-              <SearchInput size={Size.Large} />
+              <SearchInput size="large" />
             </Inline>
           </div>
         </>

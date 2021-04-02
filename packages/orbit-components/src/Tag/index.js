@@ -59,11 +59,12 @@ const CloseContainer = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledTag = styled.div`
+export const StyledTag: any = styled.div`
   ${({ theme, actionable }) => css`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
@@ -118,6 +119,7 @@ export const StyledTag = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTag.defaultProps = {
   theme: defaultTheme,
 };
@@ -137,6 +139,7 @@ const StyledClose = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledClose.defaultProps = {
   theme: defaultTheme,
 };
@@ -150,47 +153,49 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
   }
 };
 
-const Tag = React.forwardRef<Props, HTMLDivElement>((props, ref) => {
-  const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
-  return (
-    <StyledTag
-      actionable={onClick || onRemove}
-      data-test={dataTest}
-      size={size}
-      ref={ref}
-      onClick={onClick}
-      removable={!!onRemove}
-      selected={selected}
-      tabIndex={(onClick || onRemove) && "0"}
-      role="button"
-      onKeyDown={buttonClickEmulation(onClick)}
-    >
-      {children}
-      {!!onRemove && (
-        <CloseContainer
-          selected={selected}
-          removable={!!onRemove}
-          onClick={ev => {
-            ev.stopPropagation();
-            if (onRemove) onRemove();
-          }}
-        >
-          <StyledClose
-            tabIndex="0"
+const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>(
+  (props, ref) => {
+    const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
+    return (
+      <StyledTag
+        actionable={onClick || onRemove}
+        data-test={dataTest}
+        size={size}
+        ref={ref}
+        onClick={onClick}
+        removable={!!onRemove}
+        selected={selected}
+        tabIndex={(onClick || onRemove) && "0"}
+        role="button"
+        onKeyDown={buttonClickEmulation(onClick)}
+      >
+        {children}
+        {!!onRemove && (
+          <CloseContainer
             selected={selected}
-            aria-label="close"
-            role="button"
-            onKeyDown={ev => {
+            removable={!!onRemove}
+            onClick={ev => {
               ev.stopPropagation();
-              buttonClickEmulation(onRemove);
+              if (onRemove) onRemove();
             }}
           >
-            <CloseCircle size="small" />
-          </StyledClose>
-        </CloseContainer>
-      )}
-    </StyledTag>
-  );
-});
+            <StyledClose
+              tabIndex="0"
+              selected={selected}
+              aria-label="close"
+              role="button"
+              onKeyDown={ev => {
+                ev.stopPropagation();
+                buttonClickEmulation(onRemove);
+              }}
+            >
+              <CloseCircle size="small" />
+            </StyledClose>
+          </CloseContainer>
+        )}
+      </StyledTag>
+    );
+  },
+);
 
 export default Tag;

@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import Separator from "../../Separator";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Heading type="display">Display title</Heading>
       <Heading type="displaySubtitle">Display subtitle</Heading>

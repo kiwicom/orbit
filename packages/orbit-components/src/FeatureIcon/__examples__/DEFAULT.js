@@ -4,7 +4,7 @@ import * as React from "react";
 import FeatureIcon from "../index";
 
 export default {
-  Example: () => <FeatureIcon name="TicketStandard" />,
+  Example: (): React.Node => <FeatureIcon name="TicketStandard" />,
   info: {
     title: "Default feature icon",
     description:

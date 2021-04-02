@@ -5,11 +5,12 @@ import { WindowLocation } from "@reach/router";
 
 import defaultTheme from "../theme";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.div`
   display: grid;
   position: relative;
-  overflow: hidden;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   min-height: 100vh;
@@ -18,15 +19,7 @@ const StyledWrapper = styled.div`
 const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding: 2rem;
-`;
-
-const StyledFooter = styled.footer`
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: ${CONTENT_PADDING};
 `;
 
 interface Props {
@@ -40,7 +33,7 @@ export default function Layout({ children, location }: Props) {
       <StyledWrapper>
         <Navbar location={location} />
         <StyledMain>{children}</StyledMain>
-        <StyledFooter />
+        <Footer />
       </StyledWrapper>
     </ThemeProvider>
   );

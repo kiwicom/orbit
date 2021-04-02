@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import styled from "styled-components";
 
 import Desktop from "./index";
@@ -16,16 +15,20 @@ const Component = styled.div`
   justify-content: center;
 `;
 
-storiesOf("Mobile", module).add(
-  "Default",
-  () => {
-    return (
-      <Desktop>
-        <Component>Mobile</Component>
-      </Desktop>
-    );
-  },
-  {
+export default {
+  title: "Mobile",
+};
+
+export const Default = (): React.Node => {
+  return (
+    <Desktop>
+      <Component>Mobile</Component>
+    </Desktop>
+  );
+};
+
+Default.story = {
+  parameters: {
     info: "Visible only on mq.smallMobile, mq.mediumMobile, mq.largeMobile, mq.tablet",
   },
-);
+};

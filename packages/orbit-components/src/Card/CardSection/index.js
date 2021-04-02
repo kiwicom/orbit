@@ -27,7 +27,7 @@ const CardSection = ({
   dataTest,
   actions,
   noSeparator,
-}: Props) => {
+}: Props): React.Node => {
   const { addSection, removeSection, index, roundedBorders, noBorderTop, isOpened } = useCard();
   const [opened, setOpened] = React.useState(isOpened || initialExpanded);
 

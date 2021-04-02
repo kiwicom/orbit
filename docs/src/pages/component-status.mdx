@@ -5,19 +5,28 @@ description: A detailed breakdown of our components and status of their implemen
 
 import { ComponentStatusList } from "../components/ComponentStatus";
 import Layout from "../components/Layout";
+import useMdxPageTableofContents from "../hooks/useMdxPageTableofContents";
 
-export default ({ children }) => (
-  <Layout
-    description="A detailed breakdown of our components and status of their implementation."
-    title="Component status 🚀"
-  >
-    {children}
-  </Layout>
-);
+<!-- vale off -->
+
+export default ({ children }) => {
+  const tableOfContents = useMdxPageTableofContents("mdx-examples");
+  return (
+    <Layout
+      description="A detailed breakdown of our components and status of their implementation."
+      title="Component status 🚀"
+      tableOfContents={tableOfContents}
+    >
+      {children}
+    </Layout>
+  );
+};
+
+<!-- vale on -->
 
 This listing reflects the current state of our components.
 
-The individual phases do not directly depend on one another.
+The individual phases don't directly depend on one another.
 The design or documentation could be published before development.
 
 <ComponentStatusList />

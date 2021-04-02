@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, useCallback } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { StyledText } from "../../../Text/index";
@@ -46,6 +46,7 @@ const StyledDialogWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,6 +70,7 @@ const StyledTooltipContent = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -92,14 +94,15 @@ const StyledDialogOverlay = styled.div`
   `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogOverlay.defaultProps = {
   theme: defaultTheme,
 };
 
-const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) => {
-  const overlay = useRef(null);
-  const dialog = useRef(null);
-  const handleClickOutside = useCallback(
+const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props): React.Node => {
+  const overlay = React.useRef(null);
+  const dialog = React.useRef(null);
+  const handleClickOutside = React.useCallback(
     ev => {
       ev.stopPropagation();
       if (ev.target === overlay.current) {
@@ -108,7 +111,7 @@ const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props) 
     },
     [onClose],
   );
-  const handleInnerClick = useCallback(
+  const handleInnerClick = React.useCallback(
     ev => {
       if (dialog.current) {
         const focusableElements = dialog.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);

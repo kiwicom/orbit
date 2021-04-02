@@ -13,6 +13,7 @@ describe("slide util", () => {
     it("should be expanded", () => {
       const sheet = new ServerStyleSheet();
       renderToStaticMarkup(
+        // $FlowFixMe
         sheet.collectStyles(
           <Slide maxHeight={20} expanded>
             Expanded content

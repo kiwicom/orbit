@@ -8,7 +8,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <>
       <SkipNavigation feedbackUrl="https://github.com/kiwicom/orbit/issues/new/choose" />
       <Stack>

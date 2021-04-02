@@ -43,6 +43,7 @@ const StyledBreadcrumbsItemAnchor = styled(
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbsItemAnchor.defaultProps = {
   theme: defaultTheme,
 };
@@ -51,6 +52,7 @@ const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
   margin: 0 ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbsItemIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -68,7 +70,7 @@ const BreadcrumbsItem = ({
   component = DefaultComponent,
   id,
   ...props
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledBreadcrumbsItem
       data-test={dataTest}

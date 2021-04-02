@@ -6,7 +6,7 @@ import Text from "../../Text";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Text>This text appears all of the time. Resize to change other text.</Text>
       <Mobile>

@@ -6,7 +6,7 @@ import Dialog from "../index";
 import Illustration from "../../Illustration";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDialog, setShowDialog] = React.useState(false);
     return (
       <>

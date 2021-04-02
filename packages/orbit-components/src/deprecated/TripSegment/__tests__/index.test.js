@@ -43,6 +43,7 @@ describe("TripSegment", () => {
     const content = screen.getByText("content");
 
     expect(content).not.toBeVisible();
+    // $FlowFixMe
     userEvent.click(document.querySelector("svg"));
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(content).toBeVisible();

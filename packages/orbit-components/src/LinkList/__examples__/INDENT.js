@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack spacing="XXLarge">
       <LinkList>
         <TextLink href="https://orbit.kiwi/components/linklist/" external type="secondary">

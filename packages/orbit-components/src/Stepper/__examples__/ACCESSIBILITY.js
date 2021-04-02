@@ -6,7 +6,7 @@ import Stepper from "../index";
 import Heading from "../../Heading";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex align="center">
       <Heading type="title4">Travelers</Heading>
       <div style={{ maxWidth: "10em" }}>

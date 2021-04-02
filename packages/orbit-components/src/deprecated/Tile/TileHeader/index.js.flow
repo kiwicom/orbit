@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 export type Props = {|
   +icon?: React.Node,
@@ -18,6 +18,6 @@ export type IconRightProps = {|
   isExpanded?: boolean,
 |};
 
-declare export var StyledIconRight: ReactComponentStyled<IconRightProps>;
+declare export var StyledIconRight: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;

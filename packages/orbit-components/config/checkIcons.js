@@ -1,5 +1,3 @@
-// @noflow
-
 /*
 This script checks the validity of a given set of icons. They need to:
 

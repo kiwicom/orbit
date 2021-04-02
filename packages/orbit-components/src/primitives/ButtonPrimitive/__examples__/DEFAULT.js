@@ -4,7 +4,7 @@ import * as React from "react";
 import ButtonPrimitive from "../index";
 
 export default {
-  Example: () => <ButtonPrimitive>Click me</ButtonPrimitive>,
+  Example: (): React.Node => <ButtonPrimitive>Click me</ButtonPrimitive>,
   info: {
     title: "Default button primitive",
     description:

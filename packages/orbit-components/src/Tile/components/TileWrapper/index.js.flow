@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../../common/common.js.flow";
 
@@ -21,4 +22,4 @@ export type Props = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledTileWrapper: React.ComponentType<Props>;
+declare export var StyledTileWrapper: StyledComponent<Props, any, HTMLElement>;

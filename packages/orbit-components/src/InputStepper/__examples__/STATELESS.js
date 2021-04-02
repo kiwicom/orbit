@@ -4,7 +4,7 @@ import * as React from "react";
 import InputStepperStateless from "../InputStepperStateless";
 
 export default {
-  Example: () => {
+  Example: (): React.Element<"div"> => {
     const maxValue = 10;
     const minValue = 1;
     const [value, setValue] = React.useState(3);

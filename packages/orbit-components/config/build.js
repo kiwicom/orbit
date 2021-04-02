@@ -1,5 +1,3 @@
-// @noflow
-
 import path from "path";
 import fs from "fs";
 import { JSDOM } from "jsdom";

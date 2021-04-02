@@ -8,7 +8,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <NavigationBar>
       <Stack direction="row" align="center" justify="center">
         <ButtonLink href="https://orbit.kiwi">

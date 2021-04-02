@@ -9,7 +9,7 @@ import Tooltip from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Text>
         If you&apos;re building a travel app, you should give{" "}

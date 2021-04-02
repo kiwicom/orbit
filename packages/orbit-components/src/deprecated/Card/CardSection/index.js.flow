@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../../common/common.js.flow";
 import typeof CardSectionHeaderType from "./CardSectionHeader/index.js.flow";
@@ -15,7 +15,7 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export var StyledCardSection: ReactComponentStyled<any>;
+declare export var StyledCardSection: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;
 

@@ -32,6 +32,7 @@ describe("transition", () => {
     expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme2)).toMatch(
       `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out`,
     );
+    // $FlowFixMe
     theme2.theme.transitions = null;
     expect(transition(["top", "box-shadow"], "slow", "ease-in-out")(theme2)).toMatch(
       `top ${defaultTheme.orbit.durationSlow} ease-in-out,box-shadow ${defaultTheme.orbit.durationSlow} ease-in-out`,

@@ -27,7 +27,7 @@ interface Props {
 const Breadcrumbs = ({ location }: Props) => {
   const createLink = (name: string, url: string) => ({
     name: name.replace(/-/g, " "),
-    url: url.split(",").join("/"),
+    url: `${url.split(",").join("/")}/`,
   });
 
   const { pathname } = location;
@@ -44,7 +44,7 @@ const Breadcrumbs = ({ location }: Props) => {
       {allLinks.map(({ name, url }, i) => {
         const current = `${url}/` === pathname;
         return (
-          <StyledListItem current={current}>
+          <StyledListItem key={url} current={current}>
             <Link to={url} aria-label={name} aria-current={current && "page"}>
               {name}
             </Link>

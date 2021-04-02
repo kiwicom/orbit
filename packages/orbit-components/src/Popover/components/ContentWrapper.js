@@ -21,8 +21,6 @@ import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
-const { useRef, useEffect, useContext, useMemo, useCallback } = React;
-
 const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
 
@@ -46,6 +44,7 @@ const StyledContentWrapper = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -74,6 +73,7 @@ const StyledActions = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledActions.defaultProps = {
   theme: defaultTheme,
 };
@@ -112,6 +112,7 @@ const StyledPopoverParent = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
@@ -120,6 +121,7 @@ const StyledPopoverPadding = styled.div`
   padding: ${({ noPadding, theme }) => (noPadding ? 0 : popoverPadding(theme))};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverPadding.defaultProps = {
   theme: defaultTheme,
 };
@@ -143,6 +145,7 @@ const StyledOverlay = styled.div`
     display: none;
   `)};
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -156,6 +159,7 @@ const StyledPopoverClose = styled.div`
     padding-bottom: 0;
   `)}
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverClose.defaultProps = {
   theme: defaultTheme,
 };
@@ -174,13 +178,15 @@ const PopoverContentWrapper = ({
   shown,
   fixed,
   actions,
-}: Props) => {
-  const { isInsideModal } = useContext(ModalContext);
-  const popover: {| current: React.ElementRef<*> |} = useRef(null);
-  const content: {| current: React.ElementRef<*> |} = useRef(null);
-  const intervalRef = useRef(null);
+}: Props): React.Node => {
+  const { isInsideModal } = React.useContext(ModalContext);
+  const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const content: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
-  const scrollableParent = useMemo(() => getScrollableParent(containerRef.current), [containerRef]);
+  const scrollableParent = React.useMemo(() => getScrollableParent(containerRef.current), [
+    containerRef,
+  ]);
   const dimensions = useDimensions({
     containerRef,
     popover,
@@ -193,7 +199,7 @@ const PopoverContentWrapper = ({
   const horizontalPosition = calculateHorizontalPosition(position[1], dimensions);
   const [actionsDimensions, setActionsDimensions] = React.useState(0);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
-  const measuredRef = useCallback(
+  const measuredRef = React.useCallback(
     node => {
       if (node !== null) {
         const timer = setTimeout(() => {
@@ -208,7 +214,7 @@ const PopoverContentWrapper = ({
     [actions],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => {
       if (popover.current) {
         popover.current.focus();

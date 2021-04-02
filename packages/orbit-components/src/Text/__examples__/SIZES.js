@@ -5,7 +5,7 @@ import Text from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex align="end">
       <Text size="large">Large text</Text>
       <Text>Normal text</Text>

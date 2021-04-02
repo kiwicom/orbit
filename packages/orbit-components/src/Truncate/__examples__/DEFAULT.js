@@ -4,7 +4,7 @@ import * as React from "react";
 import Truncate from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Truncate>
       When you&apos;re using progressive disclosure, you might have text that you&apos;ve decided is
       too long to display all at once. You don&apos;t want to overwhelm your users, so you want to

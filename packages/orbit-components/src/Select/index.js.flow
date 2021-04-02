@@ -3,7 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/select/
 */
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation, TranslationString, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
@@ -41,6 +41,6 @@ export type Props = {|
   +customValueText?: Translation,
 |};
 
-declare export var SelectContainer: ReactComponentStyled<any>;
+declare export var SelectContainer: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.AbstractComponent<Props, HTMLElement>;

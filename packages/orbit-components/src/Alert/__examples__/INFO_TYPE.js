@@ -7,7 +7,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Alert icon={<Icons.InformationCircle />} title="Re-check your credentials">
       <Stack spacing="small">
         <Text>

@@ -8,7 +8,7 @@ import Stack from "../../Stack";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDefaultDrawer, setShowDefaultDrawer] = React.useState(false);
     const [showWideDrawer, setShowWideDrawer] = React.useState(false);
     const content = (

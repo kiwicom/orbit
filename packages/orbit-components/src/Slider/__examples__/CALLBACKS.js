@@ -9,7 +9,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [flightText, setFlightText] = React.useState("");
     const [priceRange, setPriceRange] = React.useState([50]);
 

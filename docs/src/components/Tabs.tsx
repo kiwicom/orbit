@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Box } from "@kiwicom/orbit-components";
+import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 
@@ -17,6 +18,7 @@ interface SizeCheck {
 const StyledTabLink = styled(Link)`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
 `;
+
 const StyledTab = styled.div`
   ${({ theme }) => css`
     border-top-left-radius: ${theme.orbit.borderRadiusLarge};
@@ -49,6 +51,9 @@ const BottomShadowHider = styled.div`
     left: 0;
     right: 0;
     margin: 0 calc(2rem + 12px);
+    ${mediaQueries.tablet(css`
+      margin: 0 calc(2rem + 20%) 0 calc(2rem + 12px);
+    `)}
   `}
 `;
 
@@ -73,12 +78,12 @@ const Tab = ({ isActive, tab }: TabProps) => {
   );
 };
 
-interface TabsProps {
+interface Props {
   tabs: TabObject[];
   activeTab: string;
 }
 
-const Tabs = ({ activeTab, tabs }: TabsProps) => (
+const Tabs = ({ activeTab, tabs }: Props) => (
   <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
     {tabs.map(tab => (
       <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />

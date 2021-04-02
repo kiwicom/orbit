@@ -10,7 +10,7 @@ import Text from "../../Text";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModal, setShowModal] = React.useState(false);
     return (
       <>

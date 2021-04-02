@@ -26,6 +26,7 @@ const StyledTileExpandable = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileExpandable.defaultProps = {
   theme: defaultTheme,
 };
@@ -60,12 +61,12 @@ class TileExpandable extends React.PureComponent<Props, State> {
     window.removeEventListener("resize", this.setHeight);
   }
 
-  setHeight = () => {
+  setHeight: () => void = () => {
     const contentHeight = this.node.current?.clientHeight;
     this.setState({ contentHeight });
   };
 
-  render() {
+  render(): React.Node {
     const { expanded, children, initialExpanded } = this.props;
     return (
       <StyledTileExpandable

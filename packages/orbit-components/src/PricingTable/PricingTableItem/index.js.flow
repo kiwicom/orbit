@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
 
@@ -19,5 +19,5 @@ export type Props = {|
   +onClick?: () => void | Promise<any>,
 |};
 
-declare export var StyledListWrapper: ReactComponentStyled<any>;
+declare export var StyledListWrapper: StyledComponent<any, any, HTMLElement>;
 declare export default React.ComponentType<Props>;

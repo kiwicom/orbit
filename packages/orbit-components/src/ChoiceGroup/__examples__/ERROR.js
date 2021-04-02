@@ -7,7 +7,7 @@ import Radio from "../../Radio";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [checked, setChecked] = React.useState({ plane: false, train: true, auto: true });
     const [radio, setRadio] = React.useState("non");
     return (

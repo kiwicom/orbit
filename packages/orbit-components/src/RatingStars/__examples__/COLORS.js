@@ -6,7 +6,7 @@ import RatingStars from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <Stack direction="column">
         <Heading type="title3" as="h3">

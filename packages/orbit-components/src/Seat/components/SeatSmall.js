@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
@@ -8,23 +8,25 @@ import type { Props } from "../index";
 import useTheme from "../../hooks/useTheme";
 import { resolveFillColor, resolveTextColor, resolveAccentColor } from "./helpers";
 
-export const StyledPath = styled.path`
+export const StyledPath: any = styled.path`
   transition: fill ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPath.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledStrokeSmall = styled.path`
+export const StyledStrokeSmall: any = styled.path`
   transition: stroke ${({ theme }) => theme.orbit.durationFast} ease-in;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStrokeSmall.defaultProps = {
   theme: defaultTheme,
 };
 
-const SeatSmall = ({ type, selected, label }: Props) => {
+const SeatSmall = ({ type, selected, label }: Props): null | React.Node => {
   const theme = useTheme();
 
   if (selected && type === TYPES.UNAVAILABLE) return null;

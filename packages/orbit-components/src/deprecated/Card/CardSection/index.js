@@ -16,6 +16,7 @@ const StyledCardSectionIconRight = styled(ChevronDown)`
   transition: ${({ theme }) => theme.orbit.durationFast};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionIconRight.defaultProps = {
   theme: defaultTheme,
 };
@@ -33,6 +34,7 @@ const StyledCardSectionContent = styled.div`
   overflow: hidden;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -46,11 +48,12 @@ const StyledCardSectionHeader = styled.div`
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCardSection = styled.div`
+export const StyledCardSection: any = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.orbit.spaceMedium};
   box-sizing: border-box;
@@ -62,6 +65,7 @@ export const StyledCardSection = styled.div`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSection.defaultProps = {
   theme: defaultTheme,
 };
@@ -76,7 +80,7 @@ class CardSection extends React.Component<any, Props> {
     }
   }
 
-  injectCallbackAndToggleSection = () => {
+  injectCallbackAndToggleSection: () => void = () => {
     const { handleToggleSection, onClose, onExpand, expanded } = this.props;
     handleToggleSection(); // First do toggle
 
@@ -90,7 +94,9 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleKeyDown: (ev: SyntheticKeyboardEvent<HTMLDivElement>) => void = (
+    ev: SyntheticKeyboardEvent<HTMLDivElement>,
+  ) => {
     if (ev.keyCode === 13 || ev.keyCode === 32) {
       ev.preventDefault();
 
@@ -98,7 +104,7 @@ class CardSection extends React.Component<any, Props> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const { children, dataTest, expandable, expanded } = this.props;
     return (
       <StyledCardSection data-test={dataTest} expandable={expandable} expanded={expanded}>

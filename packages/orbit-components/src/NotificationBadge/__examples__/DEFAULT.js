@@ -4,7 +4,7 @@ import * as React from "react";
 import NotificationBadge from "../index";
 
 export default {
-  Example: () => <NotificationBadge type="criticalInverted">3</NotificationBadge>,
+  Example: (): React.Node => <NotificationBadge type="criticalInverted">3</NotificationBadge>,
   info: {
     title: "Default notification badges",
     description:

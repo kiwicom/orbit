@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Wrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -24,7 +25,7 @@ type Props = {|
   ...Globals,
 |};
 
-const AccordionSectionFooter = ({ children, dataTest }: Props) => (
+const AccordionSectionFooter = ({ children, dataTest }: Props): React.Node => (
   <Wrapper data-test={dataTest && `${dataTest}Footer`}>{children}</Wrapper>
 );
 

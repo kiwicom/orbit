@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { text, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -27,54 +26,61 @@ const TestChildren = () => {
   );
 };
 
-storiesOf("Inline", module)
-  .add(
-    "Default",
-    () => {
-      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
-      return (
-        <Inline spacing={spacing} dataTest={dataTest}>
-          <TestChildren />
-        </Inline>
-      );
-    },
-    {
-      info:
-        "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-    },
-  )
-  .add(
-    "Playground",
-    () => {
-      const as = text("As", "div");
-      const align = select("align", Object.values(ALIGN), ALIGN.START);
-      const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
-      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+export default {
+  title: "Inline",
+};
 
-      return (
-        <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
-          <TestChildren />
-        </Inline>
-      );
-    },
-    {
-      info:
-        "info: You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    },
-  )
-  .add(
-    "RTL",
-    () => {
-      const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
-      return (
-        <RenderInRtl>
-          <Inline spacing={spacing} dataTest={dataTest}>
-            <TestChildren />
-          </Inline>
-        </RenderInRtl>
-      );
-    },
-    {
-      info: "This is a preview of this component in RTL setup.",
-    },
+export const Default = (): React.Node => {
+  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+  return (
+    <Inline spacing={spacing} dataTest={dataTest}>
+      <TestChildren />
+    </Inline>
   );
+};
+
+Default.story = {
+  parameters: {
+    info:
+      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const Playground = (): React.Node => {
+  const as = text("As", "div");
+  const align = select("align", Object.values(ALIGN), ALIGN.START);
+  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+
+  return (
+    <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
+      <TestChildren />
+    </Inline>
+  );
+};
+
+Playground.story = {
+  parameters: {
+    info:
+      "info: You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Rtl = (): React.Node => {
+  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+  return (
+    <RenderInRtl>
+      <Inline spacing={spacing} dataTest={dataTest}>
+        <TestChildren />
+      </Inline>
+    </RenderInRtl>
+  );
+};
+
+Rtl.story = {
+  name: "RTL",
+
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+  },
+};

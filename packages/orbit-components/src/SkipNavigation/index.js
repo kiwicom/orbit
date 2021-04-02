@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Select from "../Select";
@@ -35,6 +35,7 @@ const StyledNavigation = styled.div`
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigation.defaultProps = {
   theme: defaultTheme,
 };
@@ -43,11 +44,11 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
-  const [links, setLinks] = useState([]);
-  const [mappedLinks, setMappedLinks] = useState<MappedOptions[]>([]);
-  const [innerPages, setPages] = useState([]);
-  const [show, setShow] = useState(false);
+const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
+  const [links, setLinks] = React.useState([]);
+  const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
+  const [innerPages, setPages] = React.useState([]);
+  const [show, setShow] = React.useState(false);
 
   const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
     const index = Number(ev.target.value);

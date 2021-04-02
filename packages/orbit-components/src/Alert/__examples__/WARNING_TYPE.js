@@ -10,7 +10,7 @@ import List, { ListItem } from "../../List";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Alert icon={<Icons.Visa />} title="Visa requirements check" type="warning">
       <Stack spacing="small">
         <Text>

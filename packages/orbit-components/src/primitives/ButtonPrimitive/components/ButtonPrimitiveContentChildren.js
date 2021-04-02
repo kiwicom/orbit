@@ -12,11 +12,12 @@ const StyledButtonPrimitiveContentChildren = styled.div`
   text-align: ${({ hasIcon }) => hasIcon && left};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveContentChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContentChildren = ({ children, hasIcon, contentWidth }: Props) => (
+const ButtonPrimitiveContentChildren = ({ children, hasIcon, contentWidth }: Props): React.Node => (
   <StyledButtonPrimitiveContentChildren hasIcon={hasIcon} contentWidth={contentWidth}>
     {children}
   </StyledButtonPrimitiveContentChildren>

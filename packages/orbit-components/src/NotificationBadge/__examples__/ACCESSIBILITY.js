@@ -5,7 +5,7 @@ import NotificationBadge from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} />,
+  Example: (): React.Node => <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} />,
   info: {
     title: "Accessibility",
     description:

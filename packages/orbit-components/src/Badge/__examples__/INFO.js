@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <Badge type="info" ariaLabel="Train" icon={<Icons.Train />} />
       <Badge type="infoInverted" ariaLabel="Train" icon={<Icons.Train />} />

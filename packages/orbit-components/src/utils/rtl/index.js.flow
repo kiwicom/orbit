@@ -7,17 +7,15 @@ export type RtlSpacing = (value: string) => ({ ...ThemeProps, ... }) => string;
 
 export type BorderRadius = (value: string) => ({ ...ThemeProps, ... }) => string;
 
-export type TextAlign = (
-  value: "left" | "right",
-) => ({ ...ThemeProps, ... }) => string | LeftToRight;
+export type TextAlign = (value: "left" | "right") => ({ ...ThemeProps, ... }) => string;
 
 export type Translate3d = (value: string) => ({ ...ThemeProps, ... }) => string;
 
 declare export var rtlSpacing: RtlSpacing;
 
-declare export var left;
+declare export var left: ({ ...ThemeProps, ... }) => string;
 
-declare export var right;
+declare export var right: ({ ...ThemeProps, ... }) => string;
 
 declare export var borderRadius: BorderRadius;
 

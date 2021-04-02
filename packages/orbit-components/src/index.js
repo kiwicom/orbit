@@ -58,7 +58,7 @@ export { default as Slider } from "./Slider";
 
 // Navigation components
 export { default as NavigationBar } from "./NavigationBar";
-export { default as NavigationDrawer } from "./Drawer";
+export { default as Drawer } from "./Drawer";
 export { default as LinkList } from "./LinkList";
 
 // Table

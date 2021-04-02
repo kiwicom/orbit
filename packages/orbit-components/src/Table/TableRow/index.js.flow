@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import type { ReactComponentStyled } from "styled-components";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
@@ -11,4 +11,4 @@ export type Props = {|
 
 declare export default React.ComponentType<Props>;
 
-declare export var StyledTableRow: ReactComponentStyled<Props>;
+declare export var StyledTableRow: StyledComponent<any, any, HTMLElement>;

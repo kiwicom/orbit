@@ -73,7 +73,7 @@ describe("InputFile", () => {
       />,
     );
 
-    userEvent.tab(screen.getByTestId("test"));
+    userEvent.tab((screen.getByTestId("test"): any));
     expect(onFocus).toHaveBeenCalled();
     screen.getByText("chuck norris counted to infinity twice");
   });

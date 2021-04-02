@@ -26,6 +26,13 @@ module.exports = {
         path: `${__dirname}/src/documentation`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`,
+      },
+    },
     "gatsby-remark-images",
     {
       resolve: "gatsby-plugin-mdx",
@@ -94,6 +101,9 @@ module.exports = {
         repo: "orbit",
         owner: "kiwicom",
       },
+    },
+    {
+      resolve: require.resolve("./plugins/sandbox"),
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",

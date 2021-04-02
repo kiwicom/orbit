@@ -7,7 +7,7 @@ import Slider from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Popover
       content={<Slider label="Volume" minValue={0} maxValue={100} defaultValue={33} />}
       width="320px"

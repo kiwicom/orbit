@@ -38,11 +38,12 @@ const StyledLink = styled.a`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLink.defaultProps = {
   theme: defaultTheme,
 };
 
-const SkipLink = ({ links, buttonLabel }: Props) => {
+const SkipLink = ({ links, buttonLabel }: Props): React.Node => {
   return (
     <StyledNavigation aria-label={buttonLabel}>
       {links &&

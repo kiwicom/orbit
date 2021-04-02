@@ -5,7 +5,7 @@ import Text from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Text>Text aligned to the left</Text>
       <Text align="center">Text aligned in the center</Text>

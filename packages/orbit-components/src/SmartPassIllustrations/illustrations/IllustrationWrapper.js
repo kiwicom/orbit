@@ -27,7 +27,7 @@ const IllustrationWrapper = ({
   ariaLabelledby,
   dataTest,
   children,
-}: WrapperProps) => {
+}: WrapperProps): React.Element<"svg"> => {
   const height = tokens[size];
 
   return (

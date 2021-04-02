@@ -20,6 +20,7 @@ const topBorderRadius = css`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 topBorderRadius.defaultTheme = {
   theme: defaultTheme,
 };
@@ -34,6 +35,7 @@ const bottomBorderRadius = css`
   `)}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 bottomBorderRadius.defaultProps = {
   theme: defaultTheme,
 };
@@ -89,6 +91,7 @@ const StyledCardWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -105,7 +108,7 @@ const CardWrapper = ({
   noPadding,
   expandable,
   initialExpanded,
-}: Props) => (
+}: Props): React.Node => (
   <StyledCardWrapper
     bottomBorder={bottomBorder}
     expanded={expanded || initialExpanded}

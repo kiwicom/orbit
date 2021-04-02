@@ -1,0 +1,10 @@
+{
+  "name": "@kiwicom/orbit-docs-sandbox",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ]
+}

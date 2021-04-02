@@ -11,7 +11,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [expandedSection, setExpandedSection] = React.useState("");
     const [selectedOutboundSeat, setSelectedOutboundSeat] = React.useState("1A");
     const [selectedInboundSeat, setSelectedInboundSeat] = React.useState("1A");

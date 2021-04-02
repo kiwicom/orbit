@@ -5,7 +5,7 @@ import Slider from "../index";
 import type { Value } from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [priceRange, setPriceRange] = React.useState([0, 250]);
     return (
       <Slider

@@ -27,11 +27,12 @@ const StyledLayout = styled(Grid)`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLayout.defaultProps = {
   theme: defaultTheme,
 };
 
-const Layout = ({ children, type, dataTest }: Props) => (
+const Layout = ({ children, type, dataTest }: Props): React.Node => (
   <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
     {React.Children.map(children, (item, key) => {
       return React.cloneElement(item, {

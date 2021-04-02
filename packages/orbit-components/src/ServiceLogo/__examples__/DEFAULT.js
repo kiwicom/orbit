@@ -4,7 +4,7 @@ import * as React from "react";
 import ServiceLogo from "../index";
 
 export default {
-  Example: () => <ServiceLogo name="NewYorkTimes" />,
+  Example: (): React.Node => <ServiceLogo name="NewYorkTimes" />,
   info: {
     title: "Default service logo",
     description:

@@ -8,7 +8,7 @@ import validateDecrement from "../../utils/validateDecrement";
 import validateIncrement from "../../utils/validateIncrement";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const maxValue = 10;
     const minValue = 1;
     const step = 1;

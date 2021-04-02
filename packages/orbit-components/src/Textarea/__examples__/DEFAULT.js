@@ -4,7 +4,7 @@ import * as React from "react";
 import Textarea from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Textarea
       label="Your feedback"
       placeholder="What I liked about booking with Kiwi.com was ..."

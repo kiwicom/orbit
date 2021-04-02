@@ -9,7 +9,7 @@ import TextLink from "../../TextLink";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showLeftDrawer, setShowLeftDrawer] = React.useState(false);
     const [showRightDrawer, setShowRightDrawer] = React.useState(false);
     const content = (

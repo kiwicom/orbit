@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
 import { select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
@@ -13,7 +12,11 @@ import FloatingCard from "./index";
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
-storiesOf("Sticky", module).add("Playground", () => {
+export default {
+  title: "Sticky",
+};
+
+export const Playground = (): React.Element<"div"> => {
   const Icon = getIcon(getIcons("Airplane"));
   const offset = number("offset", 0);
   return (
@@ -32,4 +35,4 @@ storiesOf("Sticky", module).add("Playground", () => {
       </FloatingCard>
     </div>
   );
-});
+};

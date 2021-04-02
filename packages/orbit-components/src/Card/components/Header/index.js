@@ -20,6 +20,7 @@ const ChevronIcon = styled(ChevronDown)`
   transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ChevronIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,7 +57,7 @@ const Header = ({
   header,
   expandable,
   expanded,
-}: Props) => (
+}: Props): React.Node => (
   <Stack align={actions && !header ? "start" : "center"} spacing={header ? "small" : "none"}>
     {(title || description || icon) && !header && (
       <Stack

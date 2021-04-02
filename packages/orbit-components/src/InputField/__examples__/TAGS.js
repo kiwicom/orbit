@@ -5,7 +5,7 @@ import InputField from "../index";
 import Tag from "../../Tag";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [tags, setTags] = React.useState(["London", "Manchester", "Liverpool"]);
     const removeTag = tag => {
       setTags(tags.filter(place => place !== tag));

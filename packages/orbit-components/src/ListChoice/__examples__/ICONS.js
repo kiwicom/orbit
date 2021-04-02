@@ -7,7 +7,7 @@ import Popover from "../../Popover";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [choice, setChoice] = React.useState("");
     return (
       <Popover

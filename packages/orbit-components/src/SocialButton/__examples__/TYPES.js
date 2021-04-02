@@ -5,7 +5,7 @@ import SocialButton from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <SocialButton type="apple">Sign in with Apple </SocialButton>
       <SocialButton type="facebook">Sign in with Facebook </SocialButton>

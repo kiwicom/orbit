@@ -4,7 +4,7 @@ import * as React from "react";
 import Textarea from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [value, setValue] = React.useState("");
     return (
       <Textarea

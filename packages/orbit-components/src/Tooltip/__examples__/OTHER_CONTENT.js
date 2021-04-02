@@ -10,7 +10,7 @@ import TextLink from "../../TextLink";
 import Tooltip from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Text>
       If you&apos;re building a travel app, you should give{" "}
       <Tooltip

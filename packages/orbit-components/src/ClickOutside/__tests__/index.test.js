@@ -7,8 +7,8 @@ import ClickOutside from "../index";
 
 describe("ClickOutside", () => {
   it("should trigger when clicked outside", () => {
-    const insideRef = React.createRef();
-    const outsideRef = React.createRef();
+    const insideRef: {| current: React.ElementRef<any> |} = React.createRef();
+    const outsideRef: {| current: React.ElementRef<any> |} = React.createRef();
     const onClickOutside = jest.fn();
     render(
       <div ref={outsideRef}>

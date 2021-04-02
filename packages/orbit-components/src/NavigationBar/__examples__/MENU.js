@@ -12,7 +12,7 @@ import TextLink from "../../TextLink";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDrawer, setShowDrawer] = React.useState(false);
     const { isLargeMobile } = useMediaQuery();
     return (

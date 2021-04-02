@@ -5,7 +5,7 @@ import Radio from "../index";
 import Tooltip from "../../Tooltip";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Radio
       label="Direct connections"
       disabled

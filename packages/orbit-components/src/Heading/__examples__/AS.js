@@ -6,7 +6,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Heading type="display" as="h1">
         Orbit design system

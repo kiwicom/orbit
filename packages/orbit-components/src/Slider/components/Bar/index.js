@@ -32,7 +32,7 @@ export const calculateBarPosition: CalculateBarPosition = (value, max, min, hasH
   };
 };
 
-export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
+export const StyledBarPart: any = styled(({ width, left, theme, active, ...props }) => (
   <div {...props} />
 )).attrs(({ width, left, theme }) => {
   return {
@@ -50,11 +50,12 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
     active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteInkLighter};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
 
-const Bar = React.forwardRef<Props, HTMLElement>(
+const Bar: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
   ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
     const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
     return (

@@ -5,7 +5,7 @@ import Select from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [country, setCountry] = React.useState("");
     const [countrySmall, setCountrySmall] = React.useState("");
     return (

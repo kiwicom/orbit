@@ -61,11 +61,12 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledImage.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCarrierLogo = styled.div`
+export const StyledCarrierLogo: any = styled.div`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
   height: ${({ theme, carriers, size }) =>
     carriers.length > 1 ? theme.orbit.heightIconLarge : `${getRenderSize({ theme, size })}px`};
@@ -78,11 +79,12 @@ export const StyledCarrierLogo = styled.div`
   justify-content: space-between;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCarrierLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props) => (
+const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props): React.Node => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage

@@ -9,7 +9,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack spacing="XXXSmall">
         <Heading as="h3" type="title3">

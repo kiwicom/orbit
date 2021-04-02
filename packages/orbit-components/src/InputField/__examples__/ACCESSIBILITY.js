@@ -6,7 +6,7 @@ import InputField from "../index";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <label htmlFor="names">Given names</label>
       <Illustration name="Success" />

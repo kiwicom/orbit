@@ -22,11 +22,12 @@ const StyledButtonPrimitiveContent = styled(
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContent = ({ children, ...props }: Props) => (
+const ButtonPrimitiveContent = ({ children, ...props }: Props): React.Node => (
   <StyledButtonPrimitiveContent {...props}>{children}</StyledButtonPrimitiveContent>
 );
 

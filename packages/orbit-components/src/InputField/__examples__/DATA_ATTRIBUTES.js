@@ -4,7 +4,7 @@ import * as React from "react";
 import InputField from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <InputField
       label="Given names"
       placeholder="Sofia Cruz"

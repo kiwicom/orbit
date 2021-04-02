@@ -8,7 +8,7 @@ import CardSection from "../CardSection/index";
 import Dialog from "../../Dialog";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDialog, setShowDialog] = React.useState(false);
     return (
       <>

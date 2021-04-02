@@ -4,7 +4,7 @@ import * as React from "react";
 import Textarea from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Textarea
       help="Tell us what you liked about your booking experience and what could change."
       label="Your feedback"

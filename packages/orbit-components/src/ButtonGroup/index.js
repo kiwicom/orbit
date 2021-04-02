@@ -39,11 +39,12 @@ const StyledButtonGroup = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonGroup = ({ children, dataTest }: Props) => (
+const ButtonGroup = ({ children, dataTest }: Props): React.Node => (
   <StyledButtonGroup data-test={dataTest}>{children}</StyledButtonGroup>
 );
 

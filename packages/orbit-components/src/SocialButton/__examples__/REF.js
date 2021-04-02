@@ -4,7 +4,7 @@ import * as React from "react";
 import SocialButton from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const ref = React.useRef(null);
     return (
       <SocialButton ref={ref} href="https://reactjs.org/docs/refs-and-the-dom.html" external>

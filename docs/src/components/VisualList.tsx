@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
-  ButtonLink,
   Card,
   CardSection,
   Coupon,
-  Heading,
   InputField,
   Stack,
   Text,
   Tile,
 } from "@kiwicom/orbit-components";
-import { Link as LinkIcon, Search } from "@kiwicom/orbit-components/icons";
+import { Search } from "@kiwicom/orbit-components/icons";
 
+import HeadingWithLink from "./HeadingWithLink";
 import { IllustrationObjectShape } from "./IllustrationList";
 import { IconObjectShape } from "./IconList";
 import { CodeBlock } from "./Code";
@@ -22,16 +21,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
-`;
-
-const StyledAnchorWrapper = styled.div`
-  svg {
-    visibility: hidden;
-  }
-
-  &:hover svg {
-    visibility: visible;
-  }
 `;
 
 interface StyledRatioContainerProps {
@@ -102,19 +91,7 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <StyledAnchorWrapper>
-                <Stack flex spacing="XXXSmall" align="center">
-                  <Heading as="h3" type="title2" spaceAfter="medium">
-                    {visualName}
-                  </Heading>
-                  <ButtonLink
-                    iconLeft={<LinkIcon />}
-                    href={`#${visualName}`}
-                    type="secondary"
-                    compact
-                  />
-                </Stack>
-              </StyledAnchorWrapper>
+              <HeadingWithLink noId>{visualName}</HeadingWithLink>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, setCopied)}
             </Stack>

@@ -17,7 +17,7 @@ export const pureTranslate: PureTranslate = (translations, key, values = {}) => 
   );
 };
 
-const Translate = ({ tKey, values }: Props) => {
+const Translate = ({ tKey, values }: Props): string => {
   const dictionary = useDictionary();
   return pureTranslate(dictionary, tKey, values);
 };

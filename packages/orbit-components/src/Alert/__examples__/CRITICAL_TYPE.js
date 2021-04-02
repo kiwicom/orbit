@@ -7,7 +7,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Alert icon={<Icons.AlertCircle />} title="No results loaded" type="critical">
       <Stack spacing="small">
         <Text>

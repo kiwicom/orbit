@@ -4,7 +4,7 @@ import * as React from "react";
 import IllustrationPrimitive from "../index";
 
 export default {
-  Example: () => <IllustrationPrimitive name="Accommodation" />,
+  Example: (): React.Node => <IllustrationPrimitive name="Accommodation" />,
   info: {
     title: "Default illustration primitive",
     description:

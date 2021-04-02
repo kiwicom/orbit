@@ -25,6 +25,17 @@ describe("#TextLink", () => {
     expect(onClick).toHaveBeenCalled();
   });
 
+  it("should execute onClick method once when stopPropagation", () => {
+    const onClick = jest.fn();
+    render(
+      <TextLink onClick={onClick} stopPropagation>
+        {title}
+      </TextLink>,
+    );
+    userEvent.click(screen.getByText(title));
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
   it("should render with props", () => {
     const dataTestLeftIcon = "leftIcon";
     const dataTestRightIcon = "rightIcon";

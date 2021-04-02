@@ -1,4 +1,3 @@
-// @flow
 import SVGIcons2SVGFontStream from "svgicons2svgfont";
 import path from "path";
 import fs from "fs";

@@ -23,6 +23,7 @@ const StyledLinkList = styled.ul`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLinkList.defaultProps = {
   theme: defaultTheme,
 };
@@ -66,6 +67,7 @@ const StyledNavigationLinkListChild = styled(({ theme, direction, ...props }) =>
     `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationLinkListChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -76,7 +78,7 @@ const LinkList = ({
   spacing = SPACINGS.MEDIUM,
   children,
   dataTest,
-}: Props) => (
+}: Props): React.Node => (
   <StyledLinkList indent={indent} direction={direction} data-test={dataTest}>
     {React.Children.map(children, item => {
       if (React.isValidElement(item)) {

@@ -50,7 +50,7 @@ describe("Select", () => {
       />,
     );
 
-    const select = screen.getByRole("combobox");
+    const select: any = screen.getByRole("combobox");
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(select).toHaveAttribute("id", id);

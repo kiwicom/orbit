@@ -11,7 +11,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModal, setShowModal] = React.useState(true);
     const [localScrollPosition, setLocalScrollPosition] = React.useState();
     const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);

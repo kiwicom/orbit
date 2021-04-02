@@ -9,7 +9,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
       <Stack>
         <Heading type="title3" as="h4">

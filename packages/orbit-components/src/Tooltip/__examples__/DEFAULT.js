@@ -6,7 +6,7 @@ import Text from "../../Text";
 import Tooltip from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Tooltip content={<Text>Select a flight before continuing.</Text>}>
       <Button disabled>Book</Button>
     </Tooltip>

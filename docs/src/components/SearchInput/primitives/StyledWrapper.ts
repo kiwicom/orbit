@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import { Button } from "@kiwicom/orbit-components";
 
-export enum Size {
-  Regular,
-  Large,
-}
+interface Props extends Pick<React.ComponentProps<typeof Button>, "size"> {}
 
-const StyledWrapper = styled.div<{ size: React.ComponentProps<typeof Button>["size"] }>`
+const StyledWrapper = styled.div<Props>`
   position: relative;
   max-width: 24em; /* so that the placeholder fits in */
   ${({ size }) =>

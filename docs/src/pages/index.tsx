@@ -5,7 +5,7 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
-import SearchInput, { Size } from "../components/SearchInput";
+import SearchInput from "../components/SearchInput";
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";

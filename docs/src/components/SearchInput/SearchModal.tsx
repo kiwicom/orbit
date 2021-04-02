@@ -13,7 +13,7 @@ import {
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
-import StyledWrapper, { Size } from "./primitives/StyledWrapper";
+import StyledWrapper from "./primitives/StyledWrapper";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
@@ -107,7 +107,7 @@ export default function SearchModal({ placeholder, onClose }: Props) {
           onClose={onClose}
         >
           <ModalSection>
-            <StyledSearchWrapper size={Size.Regular}>
+            <StyledSearchWrapper>
               <StyledInputContainer {...getComboboxProps()}>
                 <StyledPrefix>
                   <SearchIcon />

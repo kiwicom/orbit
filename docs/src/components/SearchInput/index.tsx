@@ -2,12 +2,10 @@ import * as React from "react";
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { Button, useMediaQuery } from "@kiwicom/orbit-components";
 
-import StyledWrapper, { Size } from "./primitives/StyledWrapper";
+import StyledWrapper from "./primitives/StyledWrapper";
 import SearchModal from "./SearchModal";
 
-interface Props {
-  size: React.ComponentProps<typeof Button>["size"];
-}
+interface Props extends Pick<React.ComponentProps<typeof Button>, "size"> {}
 
 function SearchInput({ size }: Props) {
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
@@ -38,4 +36,3 @@ function SearchInput({ size }: Props) {
 }
 
 export default SearchInput;
-export { Size };

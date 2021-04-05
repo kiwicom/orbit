@@ -12281,16 +12281,16 @@ gatsby-redirect-from@^0.2.4:
   resolved "https://registry.yarnpkg.com/gatsby-redirect-from/-/gatsby-redirect-from-0.2.4.tgz#23862e1e53163a750b314e7a3466d72f07b1e014"
   integrity sha512-A+nxoZo7JMmTmHKAcdVmIvVZhyIXvTObuX9eawjHKavzDWvigV+TEARk7nK0h/BFuVfcnMlF7bTku1OIaeFCmg==
 
-gatsby-remark-copy-linked-files@^2.9.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.10.0.tgz#4e2d4df10df5930c3980bc90609d6305bfbabaf3"
-  integrity sha512-46YyGH1LyTYYrTxJRfqbP3BgLRQM8b3GdoBVL4gvC5UNPjOfbAiRUyp7qZSP7Ocnb05Y36cbuQ8KpMl8vdopVw==
+gatsby-remark-copy-linked-files@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-3.2.0.tgz#aedfb7c05c0833fcb9e807127a08be101654503b"
+  integrity sha512-pNKYR9Q3QuIZ3u5msW9dtqszOgKzRqDRtg3kXnqagCC8JbT2IVYI4IG3tP2tTG3CwEOjBtBI0YhUM2KGgzdJ5g==
   dependencies:
     "@babel/runtime" "^7.12.5"
     cheerio "^1.0.0-rc.3"
     fs-extra "^8.1.0"
     is-relative-url "^3.0.0"
-    lodash "^4.17.20"
+    lodash "^4.17.21"
     path-is-inside "^1.0.2"
     probe-image-size "^6.0.0"
     unist-util-visit "^1.4.1"

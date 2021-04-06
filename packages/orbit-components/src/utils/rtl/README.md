@@ -135,7 +135,7 @@ Function `translate3d` switches the values for `transform` property.
 ```jsx
 import { translate3d } from "@kiwicom/orbit-components/lib/utils/rtl";
 
-const Compomnent = styled.div`
+const Component = styled.div`
   transform: ${translate3d("400px, 0, 0")};
 `;
 ```

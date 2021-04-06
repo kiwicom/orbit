@@ -20,7 +20,7 @@ export default {
         </TableRow>
         <TableRow>
           <TableCell>
-            <Icons.BaggageChecked /> Checked baggage
+            <Icons.BaggageChecked30 /> Checked baggage
           </TableCell>
           <TableCell>Paid-for option</TableCell>
         </TableRow>

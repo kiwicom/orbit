@@ -103,6 +103,7 @@ export default function Home({ location }: Props) {
             title="Components"
             linkContent="See our components"
             href="/components/action/button/"
+            icon
           >
             Our components are a collection of interface elements that can be reused across the
             Orbit design system.
@@ -111,6 +112,7 @@ export default function Home({ location }: Props) {
             title="Patterns"
             linkContent="See our patterns"
             href="/design-patterns/progressive-disclosure/"
+            icon
           >
             Missing description for patterns card.
           </Tile>
@@ -125,13 +127,13 @@ export default function Home({ location }: Props) {
         >
           <Heading as="h2">Foundation</Heading>
           <TileRow>
-            <Tile title="Colors" linkContent="Learn more" href="/foundation/color/">
+            <Tile title="Colors" linkContent="Learn more" href="/foundation/color/" icon>
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more">
+            <Tile title="Typography" linkContent="Learn more" icon>
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
-            <Tile title="Spacings" linkContent="Learn more">
+            <Tile title="Spacings" linkContent="Learn more" icon>
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
           </TileRow>
@@ -159,6 +161,7 @@ export default function Home({ location }: Props) {
               title="Voice & tone"
               linkContent="Learn more"
               href="/kiwi-use/content/specific-areas/social-media/"
+              icon
             >
               How we write at Kiwi.com.
             </Tile>
@@ -166,11 +169,12 @@ export default function Home({ location }: Props) {
               title="Grammar & mechanics"
               linkContent="Learn more"
               href="/kiwi-use/content/grammar-and-mechanics/"
+              icon
             >
               Typography is critical for communicating the hierarchy of a page.Basic grammar
               guidelines for writing with Orbit.
             </Tile>
-            <Tile title="Glossary" linkContent="Learn more" href="/kiwi-use/content/glossary/">
+            <Tile title="Glossary" linkContent="Learn more" href="/kiwi-use/content/glossary/" icon>
               A list of most used words and phrases in Kiwi.com products.
             </Tile>
           </TileRow>
@@ -267,11 +271,13 @@ export default function Home({ location }: Props) {
               title="Figma library"
               linkContent={<NewWindow />}
               href="https://www.figma.com/@orbitbykiwi"
+              icon
             />
             <Tile
               title="Orbit repository"
               linkContent={<NewWindow />}
               href="https://github.com/kiwicom/orbit"
+              icon
             />
           </TileRow>
         </div>

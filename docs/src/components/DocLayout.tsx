@@ -91,18 +91,20 @@ const TocWrapper = styled.div`
 
 interface Props {
   children: React.ReactNode;
-  location: WindowLocation;
-  path: string;
-  title?: string;
   description?: string;
+  location: WindowLocation;
+  noElevation?: boolean;
+  path: string;
   tableOfContents: TocItemObject[];
-  tabs: TabObject[];
+  tabs?: TabObject[];
+  title?: string;
 }
 
 export default function DocLayout({
   children,
   description,
   location,
+  noElevation,
   path,
   tableOfContents,
   tabs,
@@ -136,7 +138,14 @@ export default function DocLayout({
                   <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
                 </TocWrapper>
               )}
-              <ContentContainer padding="XLarge" elevation="raised">
+              <ContentContainer
+                padding={
+                  noElevation
+                    ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                    : "XLarge"
+                }
+                elevation={noElevation ? undefined : "raised"}
+              >
                 {typeof Toc !== "undefined" && (
                   <Hide on={["tablet", "desktop", "largeDesktop"]}>
                     <Collapse label="Table of contents">{Toc}</Collapse>

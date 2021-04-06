@@ -2,7 +2,6 @@
 
 module.exports = api => {
   api.assertVersion(7);
-  const testEnv = api.env("test");
   return {
     presets: [
       ["@babel/preset-env", { modules: api.env("esm") ? false : "cjs", bugfixes: true }],
@@ -10,7 +9,7 @@ module.exports = api => {
       "@babel/preset-flow",
     ],
     plugins: [
-      ["babel-plugin-styled-components", { ssr: !testEnv }],
+      "babel-plugin-styled-components",
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread",
       "@babel/plugin-proposal-nullish-coalescing-operator",

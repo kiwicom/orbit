@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.8.0...@kiwicom/orbit.kiwi@0.9.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* **docs:** add explanations and review fixes ([4bb7571](https://github.com/kiwicom/orbit/commit/4bb75713e18d845633d13751fbc8ff3474bcc198))
+* **docs:** allow ts files to be imported ([ee638de](https://github.com/kiwicom/orbit/commit/ee638defcc1256102129cccb6c5f493d31153e5f))
+* **docs:** enable ReactExample use ([#2850](https://github.com/kiwicom/orbit/issues/2850)) ([7b1152b](https://github.com/kiwicom/orbit/commit/7b1152bb9372d9ab2824000c59e9181ce9a9f65d))
+* **docs:** handle all Heading children ([c80c41d](https://github.com/kiwicom/orbit/commit/c80c41d804db630f387d2ff49e062a1554cad8a0))
+* **docs:** hide table of contents when not present ([8463734](https://github.com/kiwicom/orbit/commit/84637341209076b74bfd8b3baac682d4f0dfe6a5))
+* **docs:** importing correctly ([bfe91bb](https://github.com/kiwicom/orbit/commit/bfe91bb31f9bd58ec9e29ac6a8532d2e67022637))
+* **docs:** make Masonry layout responsive ([6a39148](https://github.com/kiwicom/orbit/commit/6a391481f1f23782b0de978dad855ec7910bb429))
+* **docs:** make sticky work ([bcda584](https://github.com/kiwicom/orbit/commit/bcda5842fcccb45eb10a4f9ff5c03e743502c4fa))
+* **docs:** make ToC visible on larger screens ([dc3c7af](https://github.com/kiwicom/orbit/commit/dc3c7afce9cfed2a9a60db37e6e8d75e345e8862))
+* **docs:** more universal check for ToC ([65dc2dd](https://github.com/kiwicom/orbit/commit/65dc2ddf90142b96946a93cac235e0d48911e73d))
+* **docs:** render ToC only when present ([ba3fb1a](https://github.com/kiwicom/orbit/commit/ba3fb1a2961253442a1207a91e30a592c5ac5ef2))
+* **docs:** styling of error from React Example ([9058854](https://github.com/kiwicom/orbit/commit/90588545eaf419eb3274672b30f5fca44aac8e7b))
+* **docs:** types and imports ([113e64d](https://github.com/kiwicom/orbit/commit/113e64d6e1b18763491e03bc23185b8e615e6dff))
+* **docs:** typing and clarifying code ([2ebecfa](https://github.com/kiwicom/orbit/commit/2ebecfa1e96ab43db9ffdb471061fb919464a72e))
+* **docs:** use more universal value for opacity ([675e5e1](https://github.com/kiwicom/orbit/commit/675e5e13c2c3a1dce2ec041e49758b696cd5c42c))
+* **docs:** use smart apostrophes ([66e0188](https://github.com/kiwicom/orbit/commit/66e0188fe049fff5a1f855eb2190574f15b9b1b5))
+
+
+### Features
+
+* update baggage related icons ([#2851](https://github.com/kiwicom/orbit/issues/2851)) ([fb118c9](https://github.com/kiwicom/orbit/commit/fb118c91406cabc74b5665cd3c8d75a4e77a1566))
+* **docs:** add ids and links for each heading ([1457bbf](https://github.com/kiwicom/orbit/commit/1457bbfba6014eb6f5703af06f9a8a2fa635d074))
+* **docs:** add scrollspy for active ToC items ([a90f116](https://github.com/kiwicom/orbit/commit/a90f116436a886705d656e8c7ecfcc0df8e7978d))
+* **docs:** add TableOfContents ([04d35ac](https://github.com/kiwicom/orbit/commit/04d35ac56d762fd3fa220fbd29b508bc5f6eb1c5))
+* **docs:** add ToC to MDX in pages directory ([eeecbfd](https://github.com/kiwicom/orbit/commit/eeecbfdf536876f98e4f544ea54f5b792b5a3e46))
+* **docs:** allow doc layout without elevation ([b7a417b](https://github.com/kiwicom/orbit/commit/b7a417b26296ef2d9d91f7f975ba2583839b4d37))
+* **docs:** allow tiles without icons ([1b01123](https://github.com/kiwicom/orbit/commit/1b01123c4d0fc9347687688c1e9f3412da22aeb0))
+* **docs:** rework roadmap based on design ([d7dc75b](https://github.com/kiwicom/orbit/commit/d7dc75b8c87db1ef48fdee40cd9ff6750b4d93a3))
+* **playground:** examples ([#2808](https://github.com/kiwicom/orbit/issues/2808)) ([6f495cf](https://github.com/kiwicom/orbit/commit/6f495cf1e219720033a19d61a304f3c224c5c3ec))
+
+
+### BREAKING CHANGES
+
+* Renamed icons BaggageChecked -> BaggageChecked30; BaggagePersonalItem -> BaggagePersonal; BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Added new icons:**
+
+- BaggageChecked10
+- BaggageChecked20
+
+**Renamed icons:**
+
+- BaggageChecked -> BaggageChecked30
+- BaggagePersonalItem -> BaggagePersonal
+- BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Updated icons:**
+
+- PriorityBorading
+- BaggageCheckedNone
+- BaggageCabin
+- BaggageCabinNone
+
+
+
+
+
 # [0.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.7.1...@kiwicom/orbit.kiwi@0.8.0) (2021-03-19)
 
 

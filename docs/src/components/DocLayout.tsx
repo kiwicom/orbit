@@ -111,6 +111,7 @@ export default function DocLayout({
   title,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
+  const tocHasItems = Toc.props.items?.length > 0;
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -132,8 +133,8 @@ export default function DocLayout({
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-            <Grid columns="1fr" tablet={{ columns: "80% 20%" }}>
-              {typeof Toc !== "undefined" && (
+            <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
+              {tocHasItems && (
                 <TocWrapper>
                   <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
                 </TocWrapper>
@@ -146,7 +147,7 @@ export default function DocLayout({
                 }
                 elevation={noElevation ? undefined : "raised"}
               >
-                {typeof Toc !== "undefined" && (
+                {tocHasItems && (
                   <Hide on={["tablet", "desktop", "largeDesktop"]}>
                     <Collapse label="Table of contents">{Toc}</Collapse>
                   </Hide>

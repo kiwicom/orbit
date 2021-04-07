@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 interface MasonryItemObject {
   gap?: number;
@@ -24,10 +25,13 @@ interface Props extends MasonryItemObject {
 }
 
 const MasonryLayout = ({ columns = 2, gap = 24, children }: Props) => {
+  const { isTablet } = useMediaQuery();
+  const masonryColumns = isTablet ? columns : 1;
+
   if (!Array.isArray(children)) return <>{children}</>;
   const columnWrapper = children.reduce<Record<string, Array<React.ReactNode>>>(
     (wrapper, child, index) => {
-      const columnIndex = index % columns;
+      const columnIndex = index % masonryColumns;
       if (!wrapper) wrapper = {}; // eslint-disable-line no-param-reassign
       if (!Object.prototype.hasOwnProperty.call(wrapper, `column${columnIndex}`)) {
         wrapper[`column${columnIndex}`] = []; // eslint-disable-line no-param-reassign

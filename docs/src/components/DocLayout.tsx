@@ -91,24 +91,27 @@ const TocWrapper = styled.div`
 
 interface Props {
   children: React.ReactNode;
-  location: WindowLocation;
-  path: string;
-  title?: string;
   description?: string;
+  location: WindowLocation;
+  noElevation?: boolean;
+  path: string;
   tableOfContents: TocItemObject[];
-  tabs: TabObject[];
+  tabs?: TabObject[];
+  title?: string;
 }
 
 export default function DocLayout({
   children,
   description,
   location,
+  noElevation,
   path,
   tableOfContents,
   tabs,
   title,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
+  const tocHasItems = tableOfContents?.length > 0;
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>
@@ -130,14 +133,21 @@ export default function DocLayout({
               )}
             </Box>
             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-            <Grid columns="1fr" tablet={{ columns: "80% 20%" }}>
-              {typeof Toc !== "undefined" && (
+            <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
+              {tocHasItems && (
                 <TocWrapper>
                   <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
                 </TocWrapper>
               )}
-              <ContentContainer padding="XLarge" elevation="raised">
-                {typeof Toc !== "undefined" && (
+              <ContentContainer
+                padding={
+                  noElevation
+                    ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                    : "XLarge"
+                }
+                elevation={noElevation ? undefined : "raised"}
+              >
+                {tocHasItems && (
                   <Hide on={["tablet", "desktop", "largeDesktop"]}>
                     <Collapse label="Table of contents">{Toc}</Collapse>
                   </Hide>

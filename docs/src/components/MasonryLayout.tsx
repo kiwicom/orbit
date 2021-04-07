@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 interface MasonryItemObject {
@@ -28,19 +28,14 @@ const MasonryLayout = ({ columns = 2, gap = 24, children }: Props) => {
   const { isTablet } = useMediaQuery();
   const masonryColumns = isTablet ? columns : 1;
 
-  if (!Array.isArray(children)) return <>{children}</>;
-  const columnWrapper = children.reduce<Record<string, Array<React.ReactNode>>>(
-    (wrapper, child, index) => {
-      const columnIndex = index % masonryColumns;
-      if (!wrapper) wrapper = {}; // eslint-disable-line no-param-reassign
-      if (!Object.prototype.hasOwnProperty.call(wrapper, `column${columnIndex}`)) {
-        wrapper[`column${columnIndex}`] = []; // eslint-disable-line no-param-reassign
-      }
-      wrapper[`column${columnIndex}`].push(<MasonryItem gap={gap}>{child}</MasonryItem>);
-      return wrapper;
-    },
-    {},
-  );
+  const columnWrapper: Record<string, Array<React.ReactNode>> = {};
+  React.Children.forEach(children, (child, index) => {
+    const columnIndex = index % masonryColumns;
+    if (!Object.prototype.hasOwnProperty.call(columnWrapper, `column${columnIndex}`)) {
+      columnWrapper[`column${columnIndex}`] = [];
+    }
+    columnWrapper[`column${columnIndex}`].push(<MasonryItem gap={gap}>{child}</MasonryItem>);
+  });
 
   const result = Object.keys(columnWrapper).map(columnName => {
     const columnNumber = parseInt(columnName.replace("column", ""), 10);
@@ -51,7 +46,15 @@ const MasonryLayout = ({ columns = 2, gap = 24, children }: Props) => {
     );
   });
 
-  return <div style={{ display: "flex" }}>{result}</div>;
+  return (
+    <div
+      css={css`
+        display: flex;
+      `}
+    >
+      {result}
+    </div>
+  );
 };
 
 export default MasonryLayout;

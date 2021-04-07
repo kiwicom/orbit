@@ -111,7 +111,7 @@ export default function DocLayout({
   title,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
-  const tocHasItems = Toc.props.items?.length > 0;
+  const tocHasItems = tableOfContents?.length > 0;
   return (
     <ThemeProvider theme={defaultTheme}>
       <BookmarkProvider page={path} location={location}>

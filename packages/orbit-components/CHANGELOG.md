@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.112.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.1...@kiwicom/orbit-components@0.112.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* add default export for Icon stories ([#2864](https://github.com/kiwicom/orbit/issues/2864)) ([2e9d2c7](https://github.com/kiwicom/orbit/commit/2e9d2c7700c36c78b0c46b36d1cb82104f6659f2))
+* **docs:** add exports for types ([3acc31e](https://github.com/kiwicom/orbit/commit/3acc31e379c8089cdf42383e3459bafff8647190))
+* **docs:** change null to 0 ([9eca6cd](https://github.com/kiwicom/orbit/commit/9eca6cdab0987dd3b0ccef7f648cca39a2f63bd8))
+* **docs:** remove improper token in enum ([4ab6b23](https://github.com/kiwicom/orbit/commit/4ab6b2319597574d6fbfa23c95d305754a9163be))
+* **TextLink:** called twice when stopPropagation specified ([#2857](https://github.com/kiwicom/orbit/issues/2857)) ([4fc78dc](https://github.com/kiwicom/orbit/commit/4fc78dca23086fd0f9dadd51164774dcd8a83c70))
+* **TypeScript:** fix root mediaQueries export ([32a70a6](https://github.com/kiwicom/orbit/commit/32a70a69de07638cc78fd3961d09bb2184599e8a))
+
+
+### Features
+
+* **eslint-plugin-orbit:** useRtl rule ([#2833](https://github.com/kiwicom/orbit/issues/2833)) ([ecb3fd6](https://github.com/kiwicom/orbit/commit/ecb3fd6530cf6c9c0a3115d72bd6fb12f45aef90))
+* update baggage related icons ([#2851](https://github.com/kiwicom/orbit/issues/2851)) ([fb118c9](https://github.com/kiwicom/orbit/commit/fb118c91406cabc74b5665cd3c8d75a4e77a1566))
+* **playground:** examples ([#2808](https://github.com/kiwicom/orbit/issues/2808)) ([6f495cf](https://github.com/kiwicom/orbit/commit/6f495cf1e219720033a19d61a304f3c224c5c3ec))
+* export useMediaQuery hook from root ([1048599](https://github.com/kiwicom/orbit/commit/1048599150ed88126f5591fe83a76fb18b72d001))
+
+
+### BREAKING CHANGES
+
+* Renamed icons BaggageChecked -> BaggageChecked30; BaggagePersonalItem -> BaggagePersonal; BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Added new icons:**
+
+- BaggageChecked10
+- BaggageChecked20
+
+**Renamed icons:**
+
+- BaggageChecked -> BaggageChecked30
+- BaggagePersonalItem -> BaggagePersonal
+- BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Updated icons:**
+
+- PriorityBorading
+- BaggageCheckedNone
+- BaggageCabin
+- BaggageCabinNone
+
+
+
+
+
 ## [0.111.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.0...@kiwicom/orbit-components@0.111.1) (2021-03-19)
 
 

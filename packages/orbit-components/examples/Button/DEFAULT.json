@@ -1,8 +1,8 @@
 {
-	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";",
-	"example": "() => <Button>Click me</Button>\n",
-	"info": {
-		"title": "Default button",
-		"description": "The default button is a primary button with its children as its text."
-	}
+  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";",
+  "example": "(): React.Node => <Button>Click me</Button>\n",
+  "info": {
+    "title": "Default button",
+    "description": "The default button is a primary button with its children as its text."
+  }
 }

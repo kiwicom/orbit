@@ -1,8 +1,8 @@
 {
-	"imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport InformationCircle from \"@kiwicom/orbit-components/lib/icons/InformationCircle\";",
-	"example": "() => (\n  <Alert icon={<Icons.InformationCircle />} title=\"Re-check your credentials\">\n    <Stack spacing=\"small\">\n      <Text>\n        To avoid boarding complications, your entire name must be entered{\" \"}\n        <strong>exactly as it appears in your passport/ID</strong>.\n      </Text>\n      <AlertButton type=\"info\">More info</AlertButton>\n    </Stack>\n  </Alert>\n)\n",
-	"info": {
-		"title": "Informational alert",
-		"description": "Informational alerts are the most common alerts. Use them to guide a user's attention to relevant details, but keep it focused and related to the topic on the screen."
-	}
+  "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport InformationCircle from \"@kiwicom/orbit-components/lib/icons/InformationCircle\";",
+  "example": "(): React.Node => (\n  <Alert icon={<Icons.InformationCircle />} title=\"Re-check your credentials\">\n    <Stack spacing=\"small\">\n      <Text>\n        To avoid boarding complications, your entire name must be entered{\" \"}\n        <strong>exactly as it appears in your passport/ID</strong>.\n      </Text>\n      <AlertButton type=\"info\">More info</AlertButton>\n    </Stack>\n  </Alert>\n)\n",
+  "info": {
+    "title": "Informational alert",
+    "description": "Informational alerts are the most common alerts. Use them to guide a user's attention to relevant details, but keep it focused and related to the topic on the screen."
+  }
 }

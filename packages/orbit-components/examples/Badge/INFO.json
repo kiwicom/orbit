@@ -1,8 +1,8 @@
 {
-	"imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";",
-	"example": "() => (\n  <Stack flex>\n    <Badge type=\"info\" ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <Badge type=\"infoInverted\" ariaLabel=\"Train\" icon={<Icons.Train />} />\n  </Stack>\n)\n",
-	"info": {
-		"title": "Info badges",
-		"description": "Informational badges help to highlight some information as particularly important. They draw attention to the badge without stating whether it was positive or a potential problem."
-	}
+  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";",
+  "example": "(): React.Node => (\n  <Stack flex>\n    <Badge type=\"info\" ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <Badge type=\"infoInverted\" ariaLabel=\"Train\" icon={<Icons.Train />} />\n  </Stack>\n)\n",
+  "info": {
+    "title": "Info badges",
+    "description": "Informational badges help to highlight some information as particularly important. They draw attention to the badge without stating whether it was positive or a potential problem."
+  }
 }

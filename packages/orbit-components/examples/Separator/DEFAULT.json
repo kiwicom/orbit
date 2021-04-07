@@ -1,8 +1,8 @@
 {
-	"imports": "import Separator from \"@kiwicom/orbit-components/lib/Separator\";\nimport LinkList from \"@kiwicom/orbit-components/lib/LinkList\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
-	"example": "() => (\n  <LinkList>\n    <TextLink\n      href=\"https://orbit.kiwi/components/separator/\"\n      external\n      type=\"secondary\"\n    >\n      Guidelines\n    </TextLink>\n    <TextLink\n      href=\"https://orbit.kiwi/components/separator/react/\"\n      external\n      type=\"secondary\"\n    >\n      React API\n    </TextLink>\n    <Separator />\n    <TextLink\n      href=\"https://orbit.kiwi/getting-started/channels/team-and-contributors/\"\n      external\n      type=\"secondary\"\n    >\n      About us\n    </TextLink>\n    <TextLink href=\"https://code.kiwi.com/\" external type=\"secondary\">\n      &gt;code.kiwi.com_\n    </TextLink>\n    <Separator />\n    <TextLink\n      href=\"https://www.kiwi.com/en/pages/content/terms\"\n      external\n      type=\"secondary\"\n    >\n      Terms of use\n    </TextLink>\n    <TextLink\n      href=\"https://www.kiwi.com/pages/content/terms\"\n      external\n      type=\"secondary\"\n    >\n      Privacy policy\n    </TextLink>\n  </LinkList>\n)\n",
-	"info": {
-		"title": "Default separator",
-		"description": "Separators present a visual and semantic break between groups of content."
-	}
+  "imports": "import Separator from \"@kiwicom/orbit-components/lib/Separator\";\nimport LinkList from \"@kiwicom/orbit-components/lib/LinkList\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
+  "example": "(): React.Node => (\n  <LinkList>\n    <TextLink\n      href=\"https://orbit.kiwi/components/separator/\"\n      external\n      type=\"secondary\"\n    >\n      Guidelines\n    </TextLink>\n    <TextLink\n      href=\"https://orbit.kiwi/components/separator/react/\"\n      external\n      type=\"secondary\"\n    >\n      React API\n    </TextLink>\n    <Separator />\n    <TextLink\n      href=\"https://orbit.kiwi/getting-started/channels/team-and-contributors/\"\n      external\n      type=\"secondary\"\n    >\n      About us\n    </TextLink>\n    <TextLink href=\"https://code.kiwi.com/\" external type=\"secondary\">\n      &gt;code.kiwi.com_\n    </TextLink>\n    <Separator />\n    <TextLink\n      href=\"https://www.kiwi.com/en/pages/content/terms\"\n      external\n      type=\"secondary\"\n    >\n      Terms of use\n    </TextLink>\n    <TextLink\n      href=\"https://www.kiwi.com/pages/content/terms\"\n      external\n      type=\"secondary\"\n    >\n      Privacy policy\n    </TextLink>\n  </LinkList>\n)\n",
+  "info": {
+    "title": "Default separator",
+    "description": "Separators present a visual and semantic break between groups of content."
+  }
 }

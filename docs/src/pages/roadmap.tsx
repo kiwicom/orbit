@@ -21,7 +21,7 @@ export default ({ location, path }) => (
     </Text>
     <Text>
       This roadmap contains delivery estimates only by quarter. For a more detailed overview of
-      what&apos;s already designed and the state it&apos;s in, visit{" "}
+      what’s already designed and the state it’s in, visit{" "}
       <Link to="/component-status/">component status</Link>.
     </Text>
     <HeadingWithLink headingLevel={2}>Current quarter 🚀</HeadingWithLink>
@@ -29,7 +29,7 @@ export default ({ location, path }) => (
     <Roadmap roadmapQuarter="current" />
     <HeadingWithLink headingLevel={2}>Next quarter or two 🏗</HeadingWithLink>
     <Text type="secondary">
-      There&apos;s a larger chance of this being our possible focus for next two quarters.
+      There’s a larger chance of this being our possible focus for next two quarters.
     </Text>
     <Roadmap roadmapQuarter="next" />
     <HeadingWithLink headingLevel={2}>Future 🔮</HeadingWithLink>

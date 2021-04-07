@@ -2,7 +2,7 @@
 title: Guidelines
 ---
 
-<ReactExample name="NotificationBadge" />
+<ReactExample exampleId="NotificationBadge-default" />
 
 ## When to use
 
@@ -27,15 +27,6 @@ title: Guidelines
   alt="Type: visually supports the message with different styles for different types; icon: optionally represent the notification visually and is not an action; content: displays the number of the notification and will not display if an icon is used."
 />
 
-## Behavior
-
-### Prefer inverted critical for notifications
-
-Generally, notification badges are used to draw attention to something to be done.
-They're not an action themselves, so we avoid [interactive](/foundation/color/#interactive-colors)
-and [actionable](/foundation/color/#actionable-colors) colors.
-It's best to use inverted critical badges unless you have a specific reason not to.
-
 ## Content
 
 ### Limit content
@@ -54,10 +45,18 @@ so even people who don't see the icon [get the same message](/foundation/accessi
 
 ## Look & feel
 
-### NotificationBadge types
+### Choose type based on urgency
 
-There are six basic types of badges.
-Info and critical badges have an inverted variant for use with different backgrounds.
-You should [default to using inverted critical badges](#prefer-inverted-critical-for-notifications).
+We have two types of notification badges with different backgrounds:
+info (<InlineToken value="paletteBlueLight" />)
+and critical (<InlineToken value="paletteRedLight" />).
+They each express a different feel,
+so choose a color based on how urgent the notification is.
 
-<ReactExample name="NotificationBadge types" />
+- Info: Subtle, useful for counters.
+  Use when you just want to show users that there is something to see
+  but action isn’t necessary (such as a wish list).
+- Critical: Grabs attention.
+  Use when the notification requires real action from the user.
+
+<ReactExample exampleId="NotificationBadge-types" />

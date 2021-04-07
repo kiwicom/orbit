@@ -1,8 +1,8 @@
 {
-	"imports": "import InputStepperStateless from \"@kiwicom/orbit-components/lib/InputStepperStateless\";\nimport validateDecrement from \"@kiwicom/orbit-components/lib/validateDecrement\";\nimport validateIncrement from \"@kiwicom/orbit-components/lib/validateIncrement\";",
-	"example": "() => {\n  const maxValue = 10\n  const minValue = 1\n  const step = 1\n  const [value, setValue] = React.useState(3)\n\n  const incrementValue = () => {\n    setValue(\n      validateIncrement({\n        value,\n        maxValue,\n        step,\n      })\n    )\n  }\n\n  const decrementValue = () => {\n    setValue(\n      validateDecrement({\n        value,\n        minValue,\n        step,\n      })\n    )\n  }\n\n  return (\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepperStateless\n        value={`${value} adults`}\n        disabledDecrement={value <= minValue}\n        disabledIncrement={value >= maxValue}\n        onIncrement={incrementValue}\n        onDecrement={decrementValue}\n        label=\"Travelers\"\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  )\n}\n",
-	"info": {
-		"title": "Stateless helpers",
-		"description": "Use the provided helper functions to validate your stateless stepper."
-	}
+  "imports": "import InputStepperStateless from \"@kiwicom/orbit-components/lib/InputStepperStateless\";\nimport validateDecrement from \"@kiwicom/orbit-components/lib/validateDecrement\";\nimport validateIncrement from \"@kiwicom/orbit-components/lib/validateIncrement\";",
+  "example": "(): React.Element<\"div\"> => {\n  const maxValue = 10\n  const minValue = 1\n  const step = 1\n  const [value, setValue] = React.useState(3)\n\n  const incrementValue = () => {\n    setValue(\n      validateIncrement({\n        value,\n        maxValue,\n        step,\n      })\n    )\n  }\n\n  const decrementValue = () => {\n    setValue(\n      validateDecrement({\n        value,\n        minValue,\n        step,\n      })\n    )\n  }\n\n  return (\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepperStateless\n        value={`${value} adults`}\n        disabledDecrement={value <= minValue}\n        disabledIncrement={value >= maxValue}\n        onIncrement={incrementValue}\n        onDecrement={decrementValue}\n        label=\"Travelers\"\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  )\n}\n",
+  "info": {
+    "title": "Stateless helpers",
+    "description": "Use the provided helper functions to validate your stateless stepper."
+  }
 }

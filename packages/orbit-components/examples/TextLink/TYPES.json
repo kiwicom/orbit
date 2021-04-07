@@ -1,8 +1,8 @@
 {
-	"imports": "import TextLink from \"@kiwicom/orbit-components/lib/TextLink\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack flex>\n    <Stack shrink direction=\"column\" spacing=\"XSmall\">\n      <Heading type=\"title3\" as=\"h3\">\n        Primary\n      </Heading>\n      <TextLink href=\"https://orbit.kiwi\">Orbit design system</TextLink>\n    </Stack>\n    <Stack shrink direction=\"column\" spacing=\"XSmall\">\n      <Heading type=\"title3\" as=\"h3\">\n        Secondary\n      </Heading>\n      <TextLink type=\"secondary\" href=\"https://orbit.kiwi\">\n        Orbit design system\n      </TextLink>\n    </Stack>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Types",
-		"description": "Text links can be either primary or secondary."
-	}
+  "imports": "import TextLink from \"@kiwicom/orbit-components/lib/TextLink\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack flex>\n    <Stack shrink direction=\"column\" spacing=\"XSmall\">\n      <Heading type=\"title3\" as=\"h3\">\n        Primary\n      </Heading>\n      <TextLink href=\"https://orbit.kiwi\">Orbit design system</TextLink>\n    </Stack>\n    <Stack shrink direction=\"column\" spacing=\"XSmall\">\n      <Heading type=\"title3\" as=\"h3\">\n        Secondary\n      </Heading>\n      <TextLink type=\"secondary\" href=\"https://orbit.kiwi\">\n        Orbit design system\n      </TextLink>\n    </Stack>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Types",
+    "description": "Text links can be either primary or secondary."
+  }
 }

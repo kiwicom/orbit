@@ -1,8 +1,8 @@
 {
-	"imports": "import ButtonMobileStore from \"@kiwicom/orbit-components/lib/ButtonMobileStore\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <Stack flex>\n      <ButtonMobileStore\n        alt=\"Download on the App Store\"\n        href=\"https://apps.apple.com/us/app/kiwi-com-cheap-travel-deals/id657843853\"\n        type=\"appStore\"\n      />\n      <ButtonMobileStore\n        alt=\"Get it on Google Play\"\n        href=\"https://play.google.com/store/apps/details?id=com.skypicker.main\"\n        type=\"googlePlay\"\n      />\n    </Stack>\n    <Stack flex>\n      <ButtonMobileStore\n        variant=\"light\"\n        alt=\"Download on the App Store\"\n        href=\"https://apps.apple.com/us/app/kiwi-com-cheap-travel-deals/id657843853\"\n        type=\"appStore\"\n      />\n      <ButtonMobileStore\n        variant=\"light\"\n        alt=\"Get it on Google Play\"\n        href=\"https://play.google.com/store/apps/details?id=com.skypicker.main\"\n        type=\"googlePlay\"\n      />\n    </Stack>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Types",
-		"description": "Mobile store buttons can be either dark (the default) or light."
-	}
+  "imports": "import ButtonMobileStore from \"@kiwicom/orbit-components/lib/ButtonMobileStore\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <Stack flex>\n      <ButtonMobileStore\n        alt=\"Download on the App Store\"\n        href=\"https://apps.apple.com/us/app/kiwi-com-cheap-travel-deals/id657843853\"\n        type=\"appStore\"\n      />\n      <ButtonMobileStore\n        alt=\"Get it on Google Play\"\n        href=\"https://play.google.com/store/apps/details?id=com.skypicker.main\"\n        type=\"googlePlay\"\n      />\n    </Stack>\n    <Stack flex>\n      <ButtonMobileStore\n        variant=\"light\"\n        alt=\"Download on the App Store\"\n        href=\"https://apps.apple.com/us/app/kiwi-com-cheap-travel-deals/id657843853\"\n        type=\"appStore\"\n      />\n      <ButtonMobileStore\n        variant=\"light\"\n        alt=\"Get it on Google Play\"\n        href=\"https://play.google.com/store/apps/details?id=com.skypicker.main\"\n        type=\"googlePlay\"\n      />\n    </Stack>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Types",
+    "description": "Mobile store buttons can be either dark (the default) or light."
+  }
 }

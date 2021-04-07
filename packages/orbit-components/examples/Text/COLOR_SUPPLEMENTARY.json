@@ -1,8 +1,8 @@
 {
-	"imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack flex>\n    <Text type=\"info\">Informational text</Text>\n    <Text type=\"success\">Success text</Text>\n    <Text type=\"warning\">Warning text</Text>\n    <Text type=\"critical\">Critical text</Text>\n    <div\n      style={{\n        backgroundColor: \"#252A31\",\n        padding: \"8px\",\n      }}\n    >\n      <Text type=\"white\">White text</Text>\n    </div>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Text size",
-		"description": "Text components have supplementary colors for when you need to match text to a specific status (as in alerts) or when you’re writing on a dark background."
-	}
+  "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack flex>\n    <Text type=\"info\">Informational text</Text>\n    <Text type=\"success\">Success text</Text>\n    <Text type=\"warning\">Warning text</Text>\n    <Text type=\"critical\">Critical text</Text>\n    <div\n      style={{\n        backgroundColor: \"#252A31\",\n        padding: \"8px\",\n      }}\n    >\n      <Text type=\"white\">White text</Text>\n    </div>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Text size",
+    "description": "Text components have supplementary colors for when you need to match text to a specific status (as in alerts) or when you’re writing on a dark background."
+  }
 }

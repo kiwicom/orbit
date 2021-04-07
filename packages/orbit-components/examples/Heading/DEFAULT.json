@@ -1,8 +1,8 @@
 {
-	"imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";",
-	"example": "() => <Heading>Orbit components</Heading>\n",
-	"info": {
-		"title": "Default heading",
-		"description": "By default, headings are rendered as divs in the title1 format."
-	}
+  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";",
+  "example": "(): React.Node => <Heading>Orbit components</Heading>\n",
+  "info": {
+    "title": "Default heading",
+    "description": "By default, headings are rendered as divs in the title1 format."
+  }
 }

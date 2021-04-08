@@ -1,3 +1,5 @@
+import React from "react";
+
 type inexactNumber = number | undefined | null;
 
 type Dimensions = {
@@ -11,8 +13,8 @@ type Dimensions = {
   left: inexactNumber;
 };
 
-declare const UseBoundingRect: (
+declare function UseBoundingRect<T extends HTMLElement>(
   initialValue: Partial<Dimensions> | undefined | null,
-) => [Dimensions, { current: HTMLElement | undefined | null }];
+): [Dimensions, React.RefObject<T>];
 
 export { UseBoundingRect, UseBoundingRect as default };

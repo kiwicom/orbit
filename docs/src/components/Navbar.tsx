@@ -5,7 +5,6 @@ import { WindowLocation } from "@reach/router";
 import { useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
 
 import Logo from "../images/orbit.svg";
-import LogoGlyph from "../images/orbit-glyph.svg";
 import Input from "./SearchInput";
 import Bookmarks from "./Bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
@@ -44,14 +43,14 @@ interface Props {
 }
 
 const Navbar = ({ location }: Props) => {
-  const { isMediumMobile, isTablet } = useMediaQuery();
+  const { isTablet } = useMediaQuery();
   const isHome = location && location.pathname === "/";
 
   return (
     <StyledWrapper>
       <StyledInner>
         <Link to="/">
-          {isMediumMobile ? <Logo width={175} height={40} /> : <LogoGlyph width={40} height={40} />}
+          <Logo width={175} height={40} />
         </Link>
         {isHome ? <div /> : <Input />}
         {!isTablet && <Bookmarks />}

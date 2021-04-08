@@ -1,8 +1,8 @@
 {
-	"imports": "import NotificationBadge from \"@kiwicom/orbit-components/lib/NotificationBadge\";",
-	"example": "() => <NotificationBadge type=\"criticalInverted\">3</NotificationBadge>\n",
-	"info": {
-		"title": "Default notification badges",
-		"description": "Notification badges should be only an icon or a 2-digit number. For notifications, use critical inverted badges unless you have a specific reason not to."
-	}
+  "imports": "import NotificationBadge from \"@kiwicom/orbit-components/lib/NotificationBadge\";",
+  "example": "(): React.Node => <NotificationBadge type=\"info\">3</NotificationBadge>\n",
+  "info": {
+    "title": "Default notification badges",
+    "description": "Notification badges should be only an icon or a number up to 2 digits."
+  }
 }

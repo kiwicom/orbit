@@ -1,8 +1,8 @@
 {
-	"imports": "import IllustrationPrimitive from \"@kiwicom/orbit-components/lib/IllustrationPrimitive\";",
-	"example": "() => <IllustrationPrimitive name=\"Accommodation\" />\n",
-	"info": {
-		"title": "Default illustration primitive",
-		"description": "Illustration primitives by default come in medium. By default, the name of the illustration is used for alt text. This might not be meaningful so include meaningful alt text when appropriate. If the same text is present next to the illustration, use an empty string for the alt prop."
-	}
+  "imports": "import IllustrationPrimitive from \"@kiwicom/orbit-components/lib/IllustrationPrimitive\";",
+  "example": "(): React.Node => <IllustrationPrimitive name=\"Accommodation\" />\n",
+  "info": {
+    "title": "Default illustration primitive",
+    "description": "Illustration primitives by default come in medium. By default, the name of the illustration is used for alt text. This might not be meaningful so include meaningful alt text when appropriate. If the same text is present next to the illustration, use an empty string for the alt prop."
+  }
 }

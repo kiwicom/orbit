@@ -1,8 +1,8 @@
 {
-	"imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport ListChoice from \"@kiwicom/orbit-components/lib/ListChoice\";\nimport Popover from \"@kiwicom/orbit-components/lib/Popover\";",
-	"example": "() => {\n  const [choice, setChoice] = React.useState(\"\")\n  return (\n    <Popover\n      content={\n        <>\n          <ListChoice\n            title=\"Oslo, Norway\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n          <ListChoice\n            title=\"Prague, Czechia\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n          <ListChoice\n            title=\"Milan, Italy\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n        </>\n      }\n      noPadding\n    >\n      <InputField label=\"To\" inlineLabel value={choice} />\n    </Popover>\n  )\n}\n",
-	"info": {
-		"title": "Default list choice",
-		"description": "List choices require only titles to display options for users to choose."
-	}
+  "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport ListChoice from \"@kiwicom/orbit-components/lib/ListChoice\";\nimport Popover from \"@kiwicom/orbit-components/lib/Popover\";",
+  "example": "(): React.Node => {\n  const [choice, setChoice] = React.useState(\"\")\n  return (\n    <Popover\n      content={\n        <>\n          <ListChoice\n            title=\"Oslo, Norway\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n          <ListChoice\n            title=\"Prague, Czechia\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n          <ListChoice\n            title=\"Milan, Italy\"\n            onClick={(event) => setChoice(event.currentTarget.innerText)}\n          />\n        </>\n      }\n      noPadding\n    >\n      <InputField label=\"To\" inlineLabel value={choice} />\n    </Popover>\n  )\n}\n",
+  "info": {
+    "title": "Default list choice",
+    "description": "List choices require only titles to display options for users to choose."
+  }
 }

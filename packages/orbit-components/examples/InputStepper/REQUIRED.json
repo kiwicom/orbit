@@ -1,8 +1,8 @@
 {
-	"imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
-	"example": "() => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      required\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={0}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n    />\n  </div>\n)\n",
-	"info": {
-		"title": "Required",
-		"description": "To mark an input stepper as required, pass the required prop."
-	}
+  "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
+  "example": "(): React.Element<\"div\"> => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      required\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={0}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n    />\n  </div>\n)\n",
+  "info": {
+    "title": "Required",
+    "description": "To mark an input stepper as required, pass the required prop."
+  }
 }

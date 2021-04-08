@@ -1,8 +1,8 @@
 {
-	"imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-	"example": "() => (\n  <Badge ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n    4\n  </Badge>\n)\n",
-	"info": {
-		"title": "Badge accessibility",
-		"description": "To make sure their meaning is clear to everyone, badges can have an aria-label to help people who can't see their visual cues."
-	}
+  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
+  "example": "(): React.Node => (\n  <Badge ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n    4\n  </Badge>\n)\n",
+  "info": {
+    "title": "Badge accessibility",
+    "description": "To make sure their meaning is clear to everyone, badges can have an aria-label to help people who can't see their visual cues."
+  }
 }

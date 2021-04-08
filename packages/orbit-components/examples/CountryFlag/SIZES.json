@@ -1,8 +1,8 @@
 {
-	"imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport CountryFlag from \"@kiwicom/orbit-components/lib/CountryFlag\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Small\n      </Heading>\n      <CountryFlag size=\"small\" code=\"es\" name=\"Spain\" />\n    </Stack>\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Medium\n      </Heading>\n      <CountryFlag code=\"es\" name=\"Spain\" />\n    </Stack>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Sizes",
-		"description": "Country flags can be small or medium (the default)."
-	}
+  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport CountryFlag from \"@kiwicom/orbit-components/lib/CountryFlag\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Small\n      </Heading>\n      <CountryFlag size=\"small\" code=\"es\" name=\"Spain\" />\n    </Stack>\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Medium\n      </Heading>\n      <CountryFlag code=\"es\" name=\"Spain\" />\n    </Stack>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Sizes",
+    "description": "Country flags can be small or medium (the default)."
+  }
 }

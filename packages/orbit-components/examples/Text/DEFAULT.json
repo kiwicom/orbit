@@ -1,8 +1,8 @@
 {
-	"imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";",
-	"example": "() => (\n  <Text>\n    Orbit is an open source design system for your next travel project.\n  </Text>\n)\n",
-	"info": {
-		"title": "Default text",
-		"description": "By default, Text components render their children in <p> tags with the proper font family and styling applied."
-	}
+  "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";",
+  "example": "(): React.Node => (\n  <Text>\n    Orbit is an open source design system for your next travel project.\n  </Text>\n)\n",
+  "info": {
+    "title": "Default text",
+    "description": "By default, Text components render their children in <p> tags with the proper font family and styling applied."
+  }
 }

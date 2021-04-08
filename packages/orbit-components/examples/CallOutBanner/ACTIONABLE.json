@@ -1,8 +1,8 @@
 {
-	"imports": "import CallOutBanner from \"@kiwicom/orbit-components/lib/CallOutBanner\";\nimport Illustration from \"@kiwicom/orbit-components/lib/Illustration\";",
-	"example": "() => (\n  <CallOutBanner\n    title=\"Accommodation in Warsaw\"\n    description=\"Select the perfect place to rest during your stay in Warsaw.\"\n    illustration={<Illustration name=\"Accommodation\" />}\n    onClick={() => {\n      window.open(\"https://rooms.kiwi.com\", \"_blank\")\n    }}\n  />\n)\n",
-	"info": {
-		"title": "Actionable callout banner",
-		"description": "To make the entire callout banner actionable and automatically add the appropriate elevation, use the onClick prop. This will also make the callout banner focusable by adding a tab index."
-	}
+  "imports": "import CallOutBanner from \"@kiwicom/orbit-components/lib/CallOutBanner\";\nimport Illustration from \"@kiwicom/orbit-components/lib/Illustration\";",
+  "example": "(): React.Node => (\n  <CallOutBanner\n    title=\"Accommodation in Warsaw\"\n    description=\"Select the perfect place to rest during your stay in Warsaw.\"\n    illustration={<Illustration name=\"Accommodation\" />}\n    onClick={() => {\n      window.open(\"https://rooms.kiwi.com\", \"_blank\")\n    }}\n  />\n)\n",
+  "info": {
+    "title": "Actionable callout banner",
+    "description": "To make the entire callout banner actionable and automatically add the appropriate elevation, use the onClick prop. This will also make the callout banner focusable by adding a tab index."
+  }
 }

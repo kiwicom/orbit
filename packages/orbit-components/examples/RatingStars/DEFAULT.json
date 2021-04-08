@@ -1,8 +1,8 @@
 {
-	"imports": "import RatingStars from \"@kiwicom/orbit-components/lib/RatingStars\";",
-	"example": "() => <RatingStars rating={4} />\n",
-	"info": {
-		"title": "Default rating stars",
-		"description": "By default, the stars will be small and only the positive rating will be shown."
-	}
+  "imports": "import RatingStars from \"@kiwicom/orbit-components/lib/RatingStars\";",
+  "example": "(): React.Node => <RatingStars rating={4} />\n",
+  "info": {
+    "title": "Default rating stars",
+    "description": "By default, the stars will be small and only the positive rating will be shown."
+  }
 }

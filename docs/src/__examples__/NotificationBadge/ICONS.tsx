@@ -5,10 +5,10 @@ import * as Icons from "@kiwicom/orbit-components/icons";
 export default {
   Example: () => (
     <Stack>
-      <NotificationBadge ariaLabel="Train" icon={<Icons.Train />}>
+      <NotificationBadge ariaLabel="Train" type="info" icon={<Icons.Train />}>
         Train
       </NotificationBadge>
-      <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} />
+      <NotificationBadge ariaLabel="Train" type="info" icon={<Icons.Train />} />
     </Stack>
   ),
   info: {

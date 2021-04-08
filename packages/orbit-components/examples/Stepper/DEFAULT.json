@@ -1,8 +1,8 @@
 {
-	"imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Stepper from \"@kiwicom/orbit-components/lib/Stepper\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-	"example": "() => (\n  <Stack flex align=\"center\">\n    <Heading type=\"title4\">\n      <Icons.Passengers />\n      Travelers\n    </Heading>\n    <div\n      style={{\n        maxWidth: \"10em\",\n      }}\n    >\n      <Stepper\n        defaultValue={2}\n        maxValue={10}\n        minValue={1}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Default stepper",
-		"description": "By default, steppers allow users to go up to their maximums and down to their minimum and then disables the buttons. It displays the <code>defaultValue</code> on initial mount."
-	}
+  "imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Stepper from \"@kiwicom/orbit-components/lib/Stepper\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
+  "example": "(): React.Node => (\n  <Stack flex align=\"center\">\n    <Heading type=\"title4\">\n      <Icons.Passengers />\n      Travelers\n    </Heading>\n    <div\n      style={{\n        maxWidth: \"10em\",\n      }}\n    >\n      <Stepper\n        defaultValue={2}\n        maxValue={10}\n        minValue={1}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Default stepper",
+    "description": "By default, steppers allow users to go up to their maximums and down to their minimum and then disables the buttons. It displays the <code>defaultValue</code> on initial mount."
+  }
 }

@@ -1,8 +1,8 @@
 {
-	"imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack direction=\"row\">\n    <SocialButton href=\"https://www.apple.com/\" title=\"Homepage\">\n      Sign in with Apple\n    </SocialButton>\n    <SocialButton\n      asComponent=\"div\"\n      href=\"https://www.apple.com/\"\n      onClick={() => window.open(\"https://www.apple.com/\", \"_blank\")}\n      role=\"button\"\n      title=\"Homepage\"\n    >\n      Sign in with Apple\n    </SocialButton>\n    <SocialButton\n      external\n      href=\"https://orbit.kiwi/components/socialbutton/\"\n      title=\"Opens in new window\"\n    >\n      Sign in with Apple\n    </SocialButton>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Buttons as links",
-		"description": "1. When buttons have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop. (Just note you need to provide the function yourself and you should specific the role of the button.) 3. Buttons marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security."
-	}
+  "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"row\">\n    <SocialButton href=\"https://www.apple.com/\" title=\"Homepage\">\n      Sign in with Apple\n    </SocialButton>\n    <SocialButton\n      asComponent=\"div\"\n      href=\"https://www.apple.com/\"\n      onClick={() => window.open(\"https://www.apple.com/\", \"_blank\")}\n      role=\"button\"\n      title=\"Homepage\"\n    >\n      Sign in with Apple\n    </SocialButton>\n    <SocialButton\n      external\n      href=\"https://orbit.kiwi/components/socialbutton/\"\n      title=\"Opens in new window\"\n    >\n      Sign in with Apple\n    </SocialButton>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Buttons as links",
+    "description": "1. When buttons have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop. (Just note you need to provide the function yourself and you should specific the role of the button.) 3. Buttons marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security."
+  }
 }

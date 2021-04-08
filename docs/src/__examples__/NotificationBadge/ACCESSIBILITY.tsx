@@ -3,7 +3,7 @@ import * as Icons from "@kiwicom/orbit-components/icons";
 import { NotificationBadge } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} />,
+  Example: () => <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} type="info" />,
   info: {
     title: "Accessibility",
     description:

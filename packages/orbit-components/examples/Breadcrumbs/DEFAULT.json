@@ -1,8 +1,8 @@
 {
-	"imports": "import Breadcrumbs from \"@kiwicom/orbit-components/lib/Breadcrumbs\";\nimport BreadcrumbsItem from \"@kiwicom/orbit-components/lib/BreadcrumbsItem\";",
-	"example": "() => (\n  <Breadcrumbs>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Orbit.kiwi\n    </BreadcrumbsItem>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/components/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Components\n    </BreadcrumbsItem>\n    <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>\n  </Breadcrumbs>\n)\n",
-	"info": {
-		"title": "Default breadcrumbs",
-		"description": "Breadcrumbs items by default navigation to their provided href and list all necessary metadata so you don't have to set it up yourself."
-	}
+  "imports": "import Breadcrumbs from \"@kiwicom/orbit-components/lib/Breadcrumbs\";\nimport BreadcrumbsItem from \"@kiwicom/orbit-components/lib/BreadcrumbsItem\";",
+  "example": "(): React.Node => (\n  <Breadcrumbs>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Orbit.kiwi\n    </BreadcrumbsItem>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/components/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Components\n    </BreadcrumbsItem>\n    <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>\n  </Breadcrumbs>\n)\n",
+  "info": {
+    "title": "Default breadcrumbs",
+    "description": "Breadcrumbs items by default navigation to their provided href and list all necessary metadata so you don't have to set it up yourself."
+  }
 }

@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 import dracula from "prism-react-renderer/themes/dracula";
 
 import Copy from "../../images/copy.svg";
@@ -99,7 +99,7 @@ const ReactExample = ({ exampleId }: Props) => {
   return (
     <LiveProvider
       code={fields.example}
-      scope={{ ...modules, defaultTheme, styled, css }}
+      scope={{ ...modules, Icons, defaultTheme, styled, css }}
       theme={dracula}
     >
       <StyledExampleWrapper>

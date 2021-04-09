@@ -2,13 +2,13 @@ import * as t from "@babel/types";
 import { Rule } from "eslint";
 
 export const ERROR_RTL_SPACING =
-  "Values for right and left edges are different. Use Orbit's rtlSpacing utility.";
+  "Use Orbit's rtlSpacing utility because values for right and left edges are different. https://orbit.kiwi/utilities/right-to-left-languages/#rtlspacing";
 
 export const ERROR_BORDER_RADIUS =
   "border-radius edge values are different. Use borderRadius utility.";
 
-export const errorBasic = (prop, value) =>
-  `Values for ${prop} and ${value} edges are different. Use Orbit's rtlSpacing utility. https://orbit.kiwi/utilities/right-to-left-languages/#rtlspacing`;
+export const errorBasic =
+  "Values for right and left edges are different. Use Orbit's rtl utility. https://orbit.kiwi/utilities/right-to-left-languages/#right";
 
 const parseVals = str =>
   str
@@ -105,7 +105,7 @@ const useRtl: Rule.RuleModule = {
               context.report({
                 // @ts-expect-error todo
                 node,
-                message: errorBasic(prop, value.trim()),
+                message: errorBasic,
               });
             }
 
@@ -113,7 +113,7 @@ const useRtl: Rule.RuleModule = {
               context.report({
                 // @ts-expect-error todo
                 node,
-                message: errorBasic(prop, value.trim()),
+                message: errorBasic,
               });
             }
           });

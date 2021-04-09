@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Box, Text, Desktop, mediaQueries } from "@kiwicom/orbit-components";
+import { Text, Desktop, Stack, mediaQueries } from "@kiwicom/orbit-components";
 import { Link } from "gatsby";
 
 import Switch from "./Switch";
@@ -16,13 +16,13 @@ const StyledContainer = styled.div<{ color: string }>`
   `};
 `;
 
-const StyledInner = styled.div`
-  ${({ theme }) => `
+const StyledInner = styled.div<{ thick?: boolean }>`
+  ${({ theme, thick }) => `
     overflow: hidden;
     box-sizing: content-box;
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
-    padding: ${theme.orbit.spaceSmall} ${CONTENT_PADDING};
+    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceSmall} ${CONTENT_PADDING}`};
   `}
 `;
 
@@ -52,31 +52,11 @@ const StyledIconLink = styled.a.attrs(() => ({
 const StyledFooterLink = styled(Link)`
   ${({ theme }) => css`
     display: block;
-    margin-left: -${CONTENT_PADDING};
-    padding: ${theme.orbit.spaceSmall} ${CONTENT_PADDING};
+    padding: ${theme.orbit.spaceMedium} 0;
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormalHover};
     }
-    &:first-child {
-      margin-left: -${CONTENT_PADDING};
-    }
-    ${mediaQueries.tablet(`
-      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge};
-      margin-left: 0;
-      &:first-child {
-        margin-left: -${theme.orbit.spaceLarge};
-      }
-    `)}
-    ${mediaQueries.desktop(`
-      padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceXXLarge};
-      &:first-child {
-        margin-left: -${theme.orbit.spaceXXLarge};
-      }
-    `)}
-    ${mediaQueries.largeDesktop(css`
-      padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge};
-    `)}
   `}
 `;
 
@@ -89,15 +69,26 @@ export default function Footer() {
     <footer>
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
-          <Box display="flex" align="center" justify="between">
-            <Box tablet={{ display: "flex", direction: "row", align: "center" }}>
+          <Stack flex align="center" justify="between">
+            <Stack
+              inline
+              direction="column"
+              spacing="none"
+              tablet={{ direction: "row", align: "center", spacing: "XXLarge" }}
+            >
               <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="#">Changelog</StyledFooterLink>
-            </Box>
-            <Box tablet={{ display: "flex", direction: "row", align: "center" }}>
+            </Stack>
+            <Stack
+              inline
+              direction="column"
+              spacing="none"
+              align="end"
+              tablet={{ direction: "row", justify: "end" }}
+            >
               <StyledIconLink href="https://github.com/kiwicom/orbit">
                 <GitHub />
               </StyledIconLink>
@@ -107,96 +98,79 @@ export default function Footer() {
               <StyledIconLink href="https://twitter.com/OrbitKiwi">
                 <Twitter />
               </StyledIconLink>
-            </Box>
-          </Box>
+            </Stack>
+          </Stack>
         </StyledInner>
       </StyledContainer>
       <StyledContainer color="paletteCloudNormal">
-        <StyledInner>
-          <Box
+        <StyledInner thick>
+          <Stack
+            direction="column"
             largeDesktop={{
-              display: "flex",
               align: "center",
               direction: "row",
               justify: "between",
             }}
           >
-            <Box tablet={{ display: "flex", align: "center" }}>
-              <Box
-                padding={{ top: "XSmall", bottom: "XSmall" }}
-                desktop={{ padding: { right: "XXLarge" } }}
-                largeDesktop={{ padding: { top: "large", bottom: "large" } }}
-              >
+            <Stack
+              inline
+              direction="column"
+              tablet={{ direction: "row", align: "center", spacing: "XXLarge" }}
+            >
+              <Stack inline grow={false} direction="column" spacing="none">
                 <Text as="div" weight="bold">
                   Design tokens
                 </Text>
                 <Text as="div" type="secondary">
                   v0.11.0
                 </Text>
-              </Box>
+              </Stack>
               <Dot />
-              <Box
-                padding={{ top: "XSmall", bottom: "XSmall" }}
-                tablet={{ padding: { top: "XSmall", bottom: "XSmall", left: "XXLarge" } }}
-                desktop={{
-                  padding: { right: "XXLarge", left: "XXLarge" },
-                }}
-                largeDesktop={{
-                  padding: { top: "large", right: "XXLarge", bottom: "large", left: "XXLarge" },
-                }}
-              >
+              <Stack inline grow={false} direction="column" spacing="none">
                 <Text as="div" weight="bold">
                   React components
                 </Text>
                 <Text as="div" type="secondary">
                   v0.11.0
                 </Text>
-              </Box>
+              </Stack>
               <Dot />
-              <Box
-                display="flex"
-                align="center"
-                padding={{ top: "XSmall", bottom: "XSmall" }}
-                tablet={{ padding: { top: "XSmall", bottom: "XSmall", left: "XXLarge" } }}
-                desktop={{ padding: { left: "XXLarge" } }}
-                largeDesktop={{ padding: { top: "large", bottom: "large", left: "XXLarge" } }}
-              >
-                <Box padding={{ right: "XLarge" }} desktop={{ shrink: 0 }}>
+              <Stack flex shrink spacing="medium" align="center">
+                <Stack flex shrink direction="column" spacing="none">
                   <Text as="div" weight="bold">
                     Developer mode
                   </Text>
                   <Text as="div" type="secondary">
                     Opens components on the React tab by default.
                   </Text>
-                </Box>
-                <Box shrink={0}>
-                  <Switch />
-                </Box>
-              </Box>
-            </Box>
-            <Box display="flex" justify="center" mediumMobile={{ justify: "start" }}>
-              <Box
-                padding={{ top: "medium", bottom: "medium" }}
-                mediumMobile={{ padding: { top: "XSmall", bottom: "XSmall" } }}
-                largeDesktop={{ display: "flex", direction: "column", align: "end" }}
-              >
-                <Text as="div" weight="bold">
-                  Built & maintained by Kiwi.com
-                </Text>
-                <Text as="div" type="secondary">
-                  Open sourced with{" "}
-                  <img
-                    alt="❤"
-                    src={orbitHeart}
-                    width={20}
-                    height={20}
-                    style={{ display: "inline", verticalAlign: -5 }}
-                  />{" "}
-                  for travel
-                </Text>
-              </Box>
-            </Box>
-          </Box>
+                </Stack>
+                <Switch />
+              </Stack>
+            </Stack>
+            <Stack
+              flex
+              spacing="none"
+              direction="column"
+              align="center"
+              mediumMobile={{ align: "start" }}
+              largeDesktop={{ shrink: true, align: "end" }}
+            >
+              <Text as="div" weight="bold">
+                Built & maintained by Kiwi.com
+              </Text>
+              <Text as="div" type="secondary">
+                Open sourced with{" "}
+                <img
+                  alt="❤"
+                  src={orbitHeart}
+                  width={20}
+                  height={20}
+                  style={{ display: "inline", verticalAlign: -5 }}
+                />{" "}
+                for travel
+              </Text>
+            </Stack>
+          </Stack>
         </StyledInner>
       </StyledContainer>
     </footer>

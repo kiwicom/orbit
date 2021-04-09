@@ -15,7 +15,7 @@ import HeadingWithLink from "./HeadingWithLink";
 import { IllustrationObjectShape } from "./IllustrationList";
 import { IconObjectShape } from "./IconList";
 import { CodeBlock } from "./Code";
-import { copyTimeout } from "../utils/common";
+import useCopyToClipboard from "../hooks/useCopyToClipboard";
 
 const Grid = styled.div`
   display: grid;
@@ -44,11 +44,7 @@ const StyledImage = styled.img`
 type VisualObjectShape = IllustrationObjectShape | IconObjectShape;
 
 interface ObjectActions {
-  actions(
-    VisualObjectShape,
-    copied?: boolean,
-    setCopied?: React.Dispatch<React.SetStateAction<boolean>>,
-  ): React.ReactNode;
+  actions(VisualObjectShape, copied?: boolean, copy?: (text: string) => void): React.ReactNode;
   getImgSource(VisualObjectShape): string;
   exampleCode(string): string;
 }
@@ -69,10 +65,7 @@ const Visual = ({
   smallVisual,
   visualName,
 }: VisualProps) => {
-  const [copied, setCopied] = useState(false);
-  useEffect(() => {
-    copyTimeout(copied, setCopied);
-  }, [copied, setCopied]);
+  const [copied, copy] = useCopyToClipboard();
 
   const visualObject: VisualObjectShape = list[visualName];
 
@@ -93,7 +86,7 @@ const Visual = ({
             <Stack>
               <HeadingWithLink noId>{visualName}</HeadingWithLink>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
-              {actions(visualObject, copied, setCopied)}
+              {actions(visualObject, copied, copy)}
             </Stack>
           </CardSection>
         </Card>

@@ -1,8 +1,6 @@
 import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
 import iconList from "@kiwicom/orbit-components/lib/data/icons.json";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import { pascalize } from "../utils/common";
 import VisualList from "./VisualList";
 
@@ -16,16 +14,14 @@ export interface IconObjectShape {
 
 const IconList = () => {
   const getImgSource = (iconObject: IconObjectShape) => `data:image/svg+xml;utf8,${iconObject.svg}`;
-  const actions = (iconObject: IconObjectShape, copied, setCopied) => (
+  const actions = (iconObject: IconObjectShape, copied, copy) => (
     <Stack direction="row" justify="between">
       <Button size="small" type="secondary" href={iconObject.url} external>
         Download SVG
       </Button>
-      <CopyToClipboard text={iconObject.svg}>
-        <Button size="small" type="secondary" disabled={copied} onClick={() => setCopied(true)}>
-          {copied ? "Copied source!" : "Copy SVG source"}
-        </Button>
-      </CopyToClipboard>
+      <Button size="small" type="secondary" disabled={copied} onClick={() => copy(iconObject.svg)}>
+        {copied ? "Copied source!" : "Copy SVG source"}
+      </Button>
     </Stack>
   );
 

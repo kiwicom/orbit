@@ -5,10 +5,8 @@ import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { Download } from "@kiwicom/orbit-components/icons";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { useStaticQuery, graphql } from "gatsby";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import bizdevAssets from "../data/bizdev-assets.yaml";
-import { copyTimeout } from "../utils/common";
+import useCopyToClipboard from "../hooks/useCopyToClipboard";
 
 const StyledAnchor = styled.a`
   ${({ theme }) => css`
@@ -55,16 +53,11 @@ const ImageCenterer = styled.div`
 `;
 
 const CopyButton = ({ url }) => {
-  const [copied, setCopied] = useState(false);
-  useEffect(() => {
-    copyTimeout(copied, setCopied);
-  }, [copied, setCopied]);
+  const [isCopied, copy] = useCopyToClipboard();
   return (
-    <CopyToClipboard text={`https://orbit.kiwi${url}`}>
-      <ButtonLink size="small" disabled={copied} onClick={() => setCopied(true)}>
-        {copied ? "Copied!" : "Copy URL"}
-      </ButtonLink>
-    </CopyToClipboard>
+    <ButtonLink size="small" disabled={isCopied} onClick={() => copy(`https://orbit.kiwi${url}`)}>
+      {isCopied ? "Copied!" : "Copy URL"}
+    </ButtonLink>
   );
 };
 

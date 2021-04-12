@@ -86,7 +86,7 @@
     "browser-sync": "^2.26.14",
     "browserslist": "^4.14.5",
     "camelcase": "^6.1.0",
-    "caniuse-db": "^1.0.30001185",
+    "caniuse-db": "^1.0.30001208",
     "capitalize": "^2.0.3",
     "check-links": "^1.1.8",
     "conventional-changelog": "^3.1.24",

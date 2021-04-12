@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 import { ButtonLink, Heading, Stack } from "@kiwicom/orbit-components";
 import { Download } from "@kiwicom/orbit-components/icons";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { useStaticQuery, graphql } from "gatsby";
+
 import bizdevAssets from "../data/bizdev-assets.yaml";
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
 

@@ -5,9 +5,9 @@ import { Stack, Text } from "@kiwicom/orbit-components";
 
 import CopyIcon from "../../images/icons/CopyIcon.svg";
 import { ColorValueShape } from "./ColorContainer";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 import { isLight } from ".";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 interface CopyButtonProps {
   buttonText: string;

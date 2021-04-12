@@ -60,6 +60,8 @@ const GoBackButton = ({ onClick, backHref }) => {
 
 const Breadcrumbs = (props: Props): React.Node => {
   const translate = useTranslate();
+  const links = React.useRef([]);
+
   const {
     children,
     dataTest,
@@ -68,6 +70,9 @@ const Breadcrumbs = (props: Props): React.Node => {
     spaceAfter,
     backHref,
   } = props;
+
+  const getParent = arr => (arr.length > 1 ? arr[arr.length - 2] : undefined);
+
   return (
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>
@@ -75,6 +80,12 @@ const Breadcrumbs = (props: Props): React.Node => {
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
             {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {
+              links.current.push({
+                index: key,
+                href: item.props.href,
+                onClick: item.props.onClick,
+              });
+
               if (React.isValidElement(item)) {
                 return React.cloneElement(item, {
                   active: key === React.Children.count(children) - 1,
@@ -87,17 +98,15 @@ const Breadcrumbs = (props: Props): React.Node => {
         </StyledBreadcrumbs>
       </Hide>
       <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
-        {onGoBack || backHref ? (
-          <TextLink
-            standAlone
-            iconLeft={<ChevronLeft reverseOnRtl />}
-            dataTest="BreadcrumbsBack"
-            onClick={onGoBack}
-            href={backHref}
-          >
-            {goBackTitle}
-          </TextLink>
-        ) : null}
+        <TextLink
+          standAlone
+          iconLeft={<ChevronLeft reverseOnRtl />}
+          dataTest="BreadcrumbsBack"
+          onClick={getParent(links.current)?.onClick}
+          href={getParent(links.current)?.href}
+        >
+          {goBackTitle}
+        </TextLink>
       </Hide>
     </>
   );

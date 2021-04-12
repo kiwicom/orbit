@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
 import iconList from "@kiwicom/orbit-components/lib/data/icons.json";
+
 import { pascalize } from "../utils/common";
 import VisualList from "./VisualList";
 

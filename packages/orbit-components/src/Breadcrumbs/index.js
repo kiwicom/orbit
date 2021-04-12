@@ -60,7 +60,7 @@ const GoBackButton = ({ onClick, backHref }) => {
 
 const Breadcrumbs = (props: Props): React.Node => {
   const translate = useTranslate();
-  const links = React.useRef([]);
+  const links = [];
 
   const {
     children,
@@ -80,7 +80,7 @@ const Breadcrumbs = (props: Props): React.Node => {
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
             {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {
-              links.current.push({
+              links.push({
                 index: key,
                 href: item.props.href,
                 onClick: item.props.onClick,
@@ -102,8 +102,8 @@ const Breadcrumbs = (props: Props): React.Node => {
           standAlone
           iconLeft={<ChevronLeft reverseOnRtl />}
           dataTest="BreadcrumbsBack"
-          onClick={getParent(links.current)?.onClick}
-          href={getParent(links.current)?.href}
+          onClick={onGoBack || getParent(links)?.onClick}
+          href={backHref || getParent(links)?.href}
         >
           {goBackTitle}
         </TextLink>

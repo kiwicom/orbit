@@ -1,6 +1,4 @@
 // @flow
-/* eslint-disable no-restricted-syntax */
-
 import * as React from "react";
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -13,70 +11,66 @@ import BreadcrumbsItem from "../BreadcrumbsItem";
 // inaccessible, so we're replacing <Hide> with a dummy component
 jest.mock("../../Hide", () => ({ children }) => children);
 
-describe("#Breadcrumbs", () => {
-  const dataTest = "test";
-  const onGoBack = jest.fn();
-  beforeEach(() => {
+describe("Breadcrumbs", () => {
+  it("should have expected DOM output", () => {
+    const dataTest = "test";
+    const onGoBack = jest.fn();
+
     render(
       <Breadcrumbs dataTest={dataTest} onGoBack={onGoBack}>
         <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
       </Breadcrumbs>,
     );
-  });
-  afterEach(() => {
-    onGoBack.mockClear();
-  });
-  it("nav should contain label, role and data-test", () => {
+
     expect(screen.getByRole("navigation")).toBeInTheDocument();
     expect(screen.getByLabelText("Breadcrumb")).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-  });
-
-  it("ol should contain correct item type", () => {
     expect(screen.getByRole("list")).toHaveAttribute(
       "itemType",
       expect.stringContaining("BreadcrumbList"),
     );
-  });
 
-  it("children should contain active and contentKey", () => {
     expect(screen.getByRole("listitem")).toHaveAttribute("aria-current", "page");
     expect(document.querySelector("meta")).toHaveAttribute("content", "1");
-  });
-  it("should execute onGoBack", () => {
-    for (const backBtn of screen.getAllByRole("button", { name: "Back" })) {
-      userEvent.click(backBtn);
-    }
+
+    screen.getAllByRole("button", { name: "Back" }).forEach(link => {
+      userEvent.click(link);
+    });
 
     expect(onGoBack).toHaveBeenCalledTimes(2);
   });
 
   it("should render as a link when backHref is passed", () => {
     render(
-      <Breadcrumbs backHref="https://orbit.kiwi" dataTest={dataTest} onGoBack={onGoBack}>
+      <Breadcrumbs backHref="https://orbit.kiwi" dataTest="kek">
         <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
       </Breadcrumbs>,
     );
 
-    for (const backLink of screen.getAllByRole("link", { name: "Back" })) {
+    screen.getAllByRole("link", { name: "Back" }).forEach(backLink => {
       expect(backLink).toHaveAttribute("href", "https://orbit.kiwi");
-    }
+    });
   });
 
-  it("should render as a link when backHref is passed without onGoBack", () => {
+  it("back link should have take parent link, if the onBackHref is not passed", () => {
     render(
-      <Breadcrumbs backHref="https://orbit.kiwi" dataTest={dataTest}>
+      <Breadcrumbs dataTest="kek">
         <BreadcrumbsItem href="https://kiwi.com">Kiwi.com</BreadcrumbsItem>
+        <BreadcrumbsItem href="https://wikipedia.org" onClick={jest.fn()}>
+          Wikipedia.org
+        </BreadcrumbsItem>
+        <BreadcrumbsItem href="https://reactjs.org">Reactjs.org</BreadcrumbsItem>
       </Breadcrumbs>,
     );
 
-    for (const backLink of screen.getAllByRole("link", { name: "Back" })) {
-      expect(backLink).toHaveAttribute("href", "https://orbit.kiwi");
-    }
+    expect(screen.getByRole("link", { name: "Back" })).toHaveAttribute(
+      "href",
+      "https://wikipedia.org",
+    );
   });
 });
 
-describe("Breadcrumbs", () => {
+describe("Breadcrumbs item", () => {
   const onClick = jest.fn();
   const url = "https://kiwi.com";
   const title = "Kiwi.com";

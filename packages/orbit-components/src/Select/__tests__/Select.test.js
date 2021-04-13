@@ -71,12 +71,12 @@ describe("Select", () => {
   });
 
   it("should have custom value text", () => {
-    render(<Select customValueText="blin" options={[{ value: "1", label: "One" }]} />);
+    render(<Select customValueText="blin" readOnly options={[{ value: "1", label: "One" }]} />);
     expect(screen.getByText("blin")).toBeInTheDocument();
   });
 
   it("should be disabled", () => {
-    render(<Select options={[{ value: "1", label: "One" }]} disabled />);
+    render(<Select options={[{ value: "1", label: "One" }]} readOnly disabled />);
     expect(screen.getByRole("combobox")).toBeDisabled();
   });
 });

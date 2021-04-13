@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Table, Stack, TableCell, TableBody, TableRow, TableHead } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { BaggageCabin } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -15,7 +15,7 @@ export default {
         <TableBody>
           <TableRow>
             <TableCell>
-              <Icons.BaggageCabin /> Cabin baggage
+              <BaggageCabin /> Cabin baggage
             </TableCell>
             <TableCell>Free</TableCell>
           </TableRow>
@@ -37,7 +37,7 @@ export default {
         <TableBody>
           <TableRow>
             <TableCell>
-              <Icons.BaggageCabin /> Cabin baggage
+              <BaggageCabin /> Cabin baggage
             </TableCell>
             <TableCell>Free</TableCell>
           </TableRow>

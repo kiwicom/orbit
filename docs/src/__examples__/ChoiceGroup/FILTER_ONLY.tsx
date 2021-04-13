@@ -1,16 +1,16 @@
 import * as React from "react";
 import { ChoiceGroup, List, ListItem, Stack, Checkbox } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Airplane, Car, Train } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
     const defaultItems = [
-      <Icons.Airplane ariaLabel="Planes" />,
-      <Icons.Train ariaLabel="Trains" />,
-      <Icons.Airplane ariaLabel="Planes" />,
-      <Icons.Car ariaLabel="Automobiles" />,
-      <Icons.Car ariaLabel="Automobiles" />,
-      <Icons.Train ariaLabel="Trains" />,
+      <Airplane ariaLabel="Planes" />,
+      <Train ariaLabel="Trains" />,
+      <Airplane ariaLabel="Planes" />,
+      <Car ariaLabel="Automobiles" />,
+      <Car ariaLabel="Automobiles" />,
+      <Train ariaLabel="Trains" />,
     ];
     const [checked, setChecked] = React.useState({
       Planes: true,

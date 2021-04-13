@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
   Button,
   Stack,
@@ -44,7 +44,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Cairo CAI</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
                       </Stack>
                     }
@@ -61,7 +61,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
                       </Stack>
                     }
@@ -76,7 +76,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Malé MLE</Text>
                       </Stack>
                     }
@@ -100,7 +100,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Malé MLE</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
                       </Stack>
                     }
@@ -117,7 +117,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
                       </Stack>
                     }
@@ -134,7 +134,7 @@ export default {
                     title={
                       <Stack direction="row" spacing="XXSmall" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
-                        <Icons.FlightDirect size="small" />
+                        <FlightDirect size="small" />
                         <Text weight="bold">Cairo CAI</Text>
                       </Stack>
                     }

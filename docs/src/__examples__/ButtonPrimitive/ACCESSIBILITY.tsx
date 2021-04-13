@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Edit } from "@kiwicom/orbit-components/icons";
 import ButtonPrimitive from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 
 export default {
@@ -98,7 +98,7 @@ export default {
             button with only an icon), include it for everyong by using a <code>title</code> prop to
             add an <code>aria-label</code>.
           </Text>
-          <ButtonPrimitive iconLeft={<Icons.Edit />} title="Edit name" />
+          <ButtonPrimitive iconLeft={<Edit />} title="Edit name" />
         </Stack>
       </Stack>
     );

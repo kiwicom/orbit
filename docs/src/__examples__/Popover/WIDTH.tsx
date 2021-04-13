@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Popover, Button, ButtonLink, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -27,7 +27,7 @@ export default {
           </Stack>
         }
       >
-        <Button circled title="Help" iconLeft={<Icons.QuestionCircle />} />
+        <Button circled title="Help" iconLeft={<QuestionCircle />} />
       </Popover>
       <Popover
         width="400px"
@@ -52,7 +52,7 @@ export default {
           </Stack>
         }
       >
-        <Button circled title="Help" iconLeft={<Icons.QuestionCircle />} />
+        <Button circled title="Help" iconLeft={<QuestionCircle />} />
       </Popover>
     </Stack>
   ),

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Stack, Button } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronRight } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -14,7 +14,7 @@ export default {
       <Button
         external
         href="https://orbit.kiwi/components/button/"
-        iconRight={<Icons.ChevronRight />}
+        iconRight={<ChevronRight />}
         title="Opens in new window"
       >
         Read the docs

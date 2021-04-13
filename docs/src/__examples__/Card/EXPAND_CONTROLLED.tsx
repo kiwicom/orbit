@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ButtonLink, Stack, Text, Card, CardSection } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { GenderMan, GenderWoman } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -32,7 +32,7 @@ export default {
             setExpanded1(true);
           }}
           title={`Yasmin Karenth – ${expanded1 ? "expanded" : "closed"}`}
-          icon={<Icons.GenderWoman ariaLabel="female" />}
+          icon={<GenderWoman ariaLabel="female" />}
         >
           <Stack direction="column" spacing="XSmall">
             <Text type="secondary">January 20, 1978</Text>
@@ -49,7 +49,7 @@ export default {
             setExpanded2(true);
           }}
           title={`Robin Kask – ${expanded2 ? "expanded" : "closed"}`}
-          icon={<Icons.GenderMan ariaLabel="male" />}
+          icon={<GenderMan ariaLabel="male" />}
         >
           <Stack direction="column" spacing="XSmall">
             <Text type="secondary">June 11, 1985</Text>

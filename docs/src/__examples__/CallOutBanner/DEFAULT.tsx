@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { InformationCircle } from "@kiwicom/orbit-components/icons";
 import { CallOutBanner, Button, Stack, TextLink, Illustration } from "@kiwicom/orbit-components";
 
 export default {
@@ -13,7 +13,7 @@ export default {
           <Button size="small" type="secondary" href="https://rooms.kiwi.com" external>
             Find a room
           </Button>
-          <TextLink iconLeft={<Icons.InformationCircle />} size="small" standAlone>
+          <TextLink iconLeft={<InformationCircle />} size="small" standAlone>
             More info
           </TextLink>
         </Stack>

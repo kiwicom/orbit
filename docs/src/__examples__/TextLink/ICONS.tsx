@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TextLink, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronRight, NewWindow } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -8,11 +8,11 @@ export default {
       <TextLink
         href="https://orbit.kiwi"
         external
-        iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
+        iconRight={<NewWindow ariaLabel="Opens in new window" />}
       >
         Orbit design system
       </TextLink>
-      <TextLink iconRight={<Icons.ChevronRight />}>Skip this step</TextLink>
+      <TextLink iconRight={<ChevronRight />}>Skip this step</TextLink>
     </Stack>
   ),
   info: {

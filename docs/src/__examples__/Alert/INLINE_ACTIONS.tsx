@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Alert, AlertButton } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Airplane } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Alert
-      icon={<Icons.Airplane />}
+      icon={<Airplane />}
       inlineActions={
         <AlertButton href="#" type="info">
           Open link

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Alert, Stack, Text, AlertButton } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { InformationCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <Alert icon={<Icons.InformationCircle />} title="Re-check your credentials">
+    <Alert icon={<InformationCircle />} title="Re-check your credentials">
       <Stack spacing="small">
         <Text>
           To avoid boarding complications, your entire name must be entered{" "}

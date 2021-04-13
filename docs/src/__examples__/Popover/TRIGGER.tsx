@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Popover, Button, ButtonLink, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronDown } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -27,7 +27,7 @@ export default {
       }
       preferredPosition="bottom"
     >
-      <Button iconRight={<Icons.ChevronDown />} type="secondary">
+      <Button iconRight={<ChevronDown />} type="secondary">
         Learn more
       </Button>
     </Popover>

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Heading, Stack, Text, Badge, Tile, CountryFlag } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { GenderWoman } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Tile
-      icon={<Icons.GenderWoman ariaLabel="Woman" />}
+      icon={<GenderWoman ariaLabel="Woman" />}
       header={
         <Stack align="center" direction="row" justify="between" shrink>
           <Stack direction="column" shrink spacing="none">

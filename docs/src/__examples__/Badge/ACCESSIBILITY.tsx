@@ -1,10 +1,10 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Passengers } from "@kiwicom/orbit-components/icons";
 import { Badge } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Badge ariaLabel="4 passengers" icon={<Icons.Passengers />}>
+    <Badge ariaLabel="4 passengers" icon={<Passengers />}>
       4
     </Badge>
   ),

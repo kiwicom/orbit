@@ -1,8 +1,8 @@
 {
-	"imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Grid from \"@kiwicom/orbit-components/lib/Grid\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-	"example": "() => {\n  const divStyle = {\n    backgroundColor: defaultTheme.orbit.paletteCloudDark,\n    border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,\n    boxSizing: \"border-box\",\n    padding: defaultTheme.orbit.paddingButtonSmall,\n  }\n\n  const Wrapper = ({ children }) => {\n    return children\n  }\n\n  return (\n    <Stack>\n      <Text>\n        The follow example works in newer browers, but not in older browsers\n        because the columns are not direct children of the grid.\n      </Text>\n      <Grid columns=\"120px minmax(120px, 3fr) repeat(2, 1fr)\">\n        <Wrapper>\n          <div style={divStyle}>\n            <Text>Column 1</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 2</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 3</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 4</Text>\n          </div>\n        </Wrapper>\n      </Grid>\n    </Stack>\n  )\n}\n",
-	"info": {
-		"title": "Direct children",
-		"description": "Due to limitations in older browsers, columns and rows must be direct children of the grid."
-	}
+  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Grid from \"@kiwicom/orbit-components/lib/Grid\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
+  "example": "(): React.Node => {\n  const divStyle = {\n    backgroundColor: defaultTheme.orbit.paletteCloudDark,\n    border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,\n    boxSizing: \"border-box\",\n    padding: defaultTheme.orbit.paddingButtonSmall,\n  }\n\n  const Wrapper = ({ children }) => {\n    return children\n  }\n\n  return (\n    <Stack>\n      <Text>\n        The follow example works in newer browers, but not in older browsers\n        because the columns are not direct children of the grid.\n      </Text>\n      <Grid columns=\"120px minmax(120px, 3fr) repeat(2, 1fr)\">\n        <Wrapper>\n          <div style={divStyle}>\n            <Text>Column 1</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 2</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 3</Text>\n          </div>\n          <div style={divStyle}>\n            <Text>Column 4</Text>\n          </div>\n        </Wrapper>\n      </Grid>\n    </Stack>\n  )\n}\n",
+  "info": {
+    "title": "Direct children",
+    "description": "Due to limitations in older browsers, columns and rows must be direct children of the grid."
+  }
 }

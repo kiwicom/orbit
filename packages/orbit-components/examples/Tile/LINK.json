@@ -1,8 +1,8 @@
 {
-	"imports": "import Tile from \"@kiwicom/orbit-components/lib/Tile\";",
-	"example": "() => (\n  <Tile\n    icon={<Icons.Airplane ariaLabel=\"Flight\" />}\n    title=\"More flights\"\n    description=\"Find more flights to get you anywhere you want to go.\"\n    href=\"https://kiwi.com\"\n    external\n  />\n)\n",
-	"info": {
-		"title": "Tiles as links",
-		"description": "When passed the href prop, tiles automatically render as a elements. If passed the external prop, they will automatically open in a new window with noopener and noreferrer as values for the rel attribute for security."
-	}
+  "imports": "import Tile from \"@kiwicom/orbit-components/lib/Tile\";",
+  "example": "(): React.Node => (\n  <Tile\n    icon={<Icons.Airplane ariaLabel=\"Flight\" />}\n    title=\"More flights\"\n    description=\"Find more flights to get you anywhere you want to go.\"\n    href=\"https://kiwi.com\"\n    external\n  />\n)\n",
+  "info": {
+    "title": "Tiles as links",
+    "description": "When passed the href prop, tiles automatically render as a elements. If passed the external prop, they will automatically open in a new window with noopener and noreferrer as values for the rel attribute for security."
+  }
 }

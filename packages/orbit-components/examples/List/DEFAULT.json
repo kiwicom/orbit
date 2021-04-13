@@ -1,8 +1,8 @@
 {
-	"imports": "import List from \"@kiwicom/orbit-components/lib/List\";\nimport ListItem from \"@kiwicom/orbit-components/lib/ListItem\";",
-	"example": "() => (\n  <List>\n    <ListItem>Planes</ListItem>\n    <ListItem>Trains</ListItem>\n    <ListItem>Automobiles</ListItem>\n  </List>\n)\n",
-	"info": {
-		"title": "Default list",
-		"description": "Default lists display their items in primary color with small circles for each item."
-	}
+  "imports": "import List from \"@kiwicom/orbit-components/lib/List\";\nimport ListItem from \"@kiwicom/orbit-components/lib/ListItem\";",
+  "example": "(): React.Node => (\n  <List>\n    <ListItem>Planes</ListItem>\n    <ListItem>Trains</ListItem>\n    <ListItem>Automobiles</ListItem>\n  </List>\n)\n",
+  "info": {
+    "title": "Default list",
+    "description": "Default lists display their items in primary color with small circles for each item."
+  }
 }

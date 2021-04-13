@@ -1,8 +1,8 @@
 {
-	"imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepper\n        label=\"Travelers\"\n        minValue={1}\n        defaultValue={2}\n        maxValue={10}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepper\n        size=\"small\"\n        label=\"Travelers\"\n        minValue={1}\n        defaultValue={2}\n        maxValue={10}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Sizes",
-		"description": "Input steppers can be either normal sized or small."
-	}
+  "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepper\n        label=\"Travelers\"\n        minValue={1}\n        defaultValue={2}\n        maxValue={10}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n    <div\n      style={{\n        maxWidth: \"11em\",\n      }}\n    >\n      <InputStepper\n        size=\"small\"\n        label=\"Travelers\"\n        minValue={1}\n        defaultValue={2}\n        maxValue={10}\n        titleIncrement=\"Add a traveler\"\n        titleDecrement=\"Remove a traveler\"\n      />\n    </div>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Sizes",
+    "description": "Input steppers can be either normal sized or small."
+  }
 }

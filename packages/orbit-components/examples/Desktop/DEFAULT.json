@@ -1,8 +1,8 @@
 {
-	"imports": "import Desktop from \"@kiwicom/orbit-components/lib/Desktop\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-	"example": "() => (\n  <Stack>\n    <Text>This text appears all of the time. Resize to change other text.</Text>\n    <Desktop>\n      <Text>This text only appears on larger screens.</Text>\n    </Desktop>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Default desktop",
-		"description": "Desktop components hide their children on small screens (tablet and below)."
-	}
+  "imports": "import Desktop from \"@kiwicom/orbit-components/lib/Desktop\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
+  "example": "(): React.Node => (\n  <Stack>\n    <Text>This text appears all of the time. Resize to change other text.</Text>\n    <Desktop>\n      <Text>This text only appears on larger screens.</Text>\n    </Desktop>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Default desktop",
+    "description": "Desktop components hide their children on small screens (tablet and below)."
+  }
 }

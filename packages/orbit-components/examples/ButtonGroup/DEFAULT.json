@@ -1,8 +1,8 @@
 {
-	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonGroup from \"@kiwicom/orbit-components/lib/ButtonGroup\";",
-	"example": "() => (\n  <ButtonGroup>\n    <Button\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=aircraft\"\n    >\n      Check flights\n    </Button>\n    <Button\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=bus\"\n    >\n      Check buses\n    </Button>\n  </ButtonGroup>\n)\n",
-	"info": {
-		"title": "Default button group",
-		"description": "Button groups visually join their children to show related actions as a single unit."
-	}
+  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonGroup from \"@kiwicom/orbit-components/lib/ButtonGroup\";",
+  "example": "(): React.Node => (\n  <ButtonGroup>\n    <Button\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=aircraft\"\n    >\n      Check flights\n    </Button>\n    <Button\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=bus\"\n    >\n      Check buses\n    </Button>\n  </ButtonGroup>\n)\n",
+  "info": {
+    "title": "Default button group",
+    "description": "Button groups visually join their children to show related actions as a single unit."
+  }
 }

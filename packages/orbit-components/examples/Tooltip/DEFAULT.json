@@ -1,8 +1,8 @@
 {
-	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
-	"example": "() => (\n  <Tooltip content={<Text>Select a flight before continuing.</Text>}>\n    <Button disabled>Book</Button>\n  </Tooltip>\n)\n",
-	"info": {
-		"title": "Default tooltip",
-		"description": "By default, tooltips will open on hover over their child on large devices and a click on the child on smaller devices. By default, preference is given to aligning to the right and in the center of the child."
-	}
+  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
+  "example": "(): React.Node => (\n  <Tooltip content={<Text>Select a flight before continuing.</Text>}>\n    <Button disabled>Book</Button>\n  </Tooltip>\n)\n",
+  "info": {
+    "title": "Default tooltip",
+    "description": "By default, tooltips will open on hover over their child on large devices and a click on the child on smaller devices. By default, preference is given to aligning to the right and in the center of the child."
+  }
 }

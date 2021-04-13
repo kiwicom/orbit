@@ -1,8 +1,8 @@
 {
-	"imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";",
-	"example": "() => <SocialButton loading>Sign in with Apple </SocialButton>\n",
-	"info": {
-		"title": "Loading",
-		"description": "Loading buttons are useful when content needs to be loaded before the user can take an action."
-	}
+  "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";",
+  "example": "(): React.Node => <SocialButton loading>Sign in with Apple </SocialButton>\n",
+  "info": {
+    "title": "Loading",
+    "description": "Loading buttons are useful when content needs to be loaded before the user can take an action."
+  }
 }

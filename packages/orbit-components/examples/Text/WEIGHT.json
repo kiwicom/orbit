@@ -1,8 +1,8 @@
 {
-	"imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack flex>\n    <Text>Normal text</Text>\n    <Text weight=\"bold\">Bold text</Text>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Text weight",
-		"description": "There are only two possible weights for text: normal and bold"
-	}
+  "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack flex>\n    <Text>Normal text</Text>\n    <Text weight=\"bold\">Bold text</Text>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Text weight",
+    "description": "There are only two possible weights for text: normal and bold"
+  }
 }

@@ -1,8 +1,8 @@
 {
-	"imports": "import BadgePrimitive from \"@kiwicom/orbit-components/lib/BadgePrimitive\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <BadgePrimitive>Tip</BadgePrimitive>\n    <BadgePrimitive ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <BadgePrimitive ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n      4\n    </BadgePrimitive>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Default badge primitives",
-		"description": "By default, badge primitives have padding with no background and ink text."
-	}
+  "imports": "import BadgePrimitive from \"@kiwicom/orbit-components/lib/BadgePrimitive\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <BadgePrimitive>Tip</BadgePrimitive>\n    <BadgePrimitive ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <BadgePrimitive ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n      4\n    </BadgePrimitive>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Default badge primitives",
+    "description": "By default, badge primitives have padding with no background and ink text."
+  }
 }

@@ -1,8 +1,8 @@
 {
-	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Illustration from \"@kiwicom/orbit-components/lib/Illustration\";\nimport Modal from \"@kiwicom/orbit-components/lib/Modal\";\nimport ModalFooter from \"@kiwicom/orbit-components/lib/ModalFooter\";\nimport ModalHeader from \"@kiwicom/orbit-components/lib/ModalHeader\";",
-	"example": "() => {\n  const [showModal, setShowModal] = React.useState(true)\n  return (\n    <>\n      {showModal && (\n        <Modal\n          onClose={() => {\n            setShowModal(false)\n          }}\n        >\n          <ModalHeader\n            title=\"Priority boarding\"\n            description=\"Skip the line and board in peace. Only $25!\"\n            illustration={<Illustration name=\"PriorityBoarding\" />}\n          />\n          <ModalFooter>\n            <Button>Add priority boarding</Button>\n          </ModalFooter>\n        </Modal>\n      )}\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
-	"info": {
-		"title": "Modal with header and footer",
-		"description": "Modals can have structured headers, with an illustration and title, and footers, with a space for actions."
-	}
+  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Illustration from \"@kiwicom/orbit-components/lib/Illustration\";\nimport Modal from \"@kiwicom/orbit-components/lib/Modal\";\nimport ModalFooter from \"@kiwicom/orbit-components/lib/ModalFooter\";\nimport ModalHeader from \"@kiwicom/orbit-components/lib/ModalHeader\";",
+  "example": "(): React.Node => {\n  const [showModal, setShowModal] = React.useState(true)\n  return (\n    <>\n      {showModal && (\n        <Modal\n          onClose={() => {\n            setShowModal(false)\n          }}\n        >\n          <ModalHeader\n            title=\"Priority boarding\"\n            description=\"Skip the line and board in peace. Only $25!\"\n            illustration={<Illustration name=\"PriorityBoarding\" />}\n          />\n          <ModalFooter>\n            <Button>Add priority boarding</Button>\n          </ModalFooter>\n        </Modal>\n      )}\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
+  "info": {
+    "title": "Modal with header and footer",
+    "description": "Modals can have structured headers, with an illustration and title, and footers, with a space for actions."
+  }
 }

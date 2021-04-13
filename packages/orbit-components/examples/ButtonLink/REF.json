@@ -1,8 +1,8 @@
 {
-	"imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
-	"example": "() => {\n  const ref = React.useRef(null)\n  return (\n    <ButtonLink\n      ref={ref}\n      href=\"https://reactjs.org/docs/refs-and-the-dom.html\"\n      external\n    >\n      Read more\n    </ButtonLink>\n  )\n}\n",
-	"info": {
-		"title": "Button link refs",
-		"description": "See how to implement refs with  button links. Click the button link to read more about when and how to use refs."
-	}
+  "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
+  "example": "(): React.Node => {\n  const ref = React.useRef(null)\n  return (\n    <ButtonLink\n      ref={ref}\n      href=\"https://reactjs.org/docs/refs-and-the-dom.html\"\n      external\n    >\n      Read more\n    </ButtonLink>\n  )\n}\n",
+  "info": {
+    "title": "Button link refs",
+    "description": "See how to implement refs with  button links. Click the button link to read more about when and how to use refs."
+  }
 }

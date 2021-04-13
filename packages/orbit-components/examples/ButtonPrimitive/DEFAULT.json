@@ -1,8 +1,8 @@
 {
-	"imports": "import ButtonPrimitive from \"@kiwicom/orbit-components/lib/ButtonPrimitive\";",
-	"example": "() => <ButtonPrimitive>Click me</ButtonPrimitive>\n",
-	"info": {
-		"title": "Default button primitive",
-		"description": "The default button primitive appears as a &lt;button&gt; with other traits inherited or as the browser default."
-	}
+  "imports": "import ButtonPrimitive from \"@kiwicom/orbit-components/lib/ButtonPrimitive\";",
+  "example": "(): React.Node => <ButtonPrimitive>Click me</ButtonPrimitive>\n",
+  "info": {
+    "title": "Default button primitive",
+    "description": "The default button primitive appears as a &lt;button&gt; with other traits inherited or as the browser default."
+  }
 }

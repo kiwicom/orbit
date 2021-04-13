@@ -1,8 +1,8 @@
 {
-	"imports": "import CarrierLogo from \"@kiwicom/orbit-components/lib/CarrierLogo\";",
-	"example": "() => (\n  <CarrierLogo\n    carriers={[\n      {\n        code: \"OK\",\n        type: \"airline\",\n        name: \"Czech Airlines\",\n      },\n    ]}\n  />\n)\n",
-	"info": {
-		"title": "Default carrier logo",
-		"description": "By default, carrier logos present a large version of a single logo. When used alone, be sure to pass the name of the carrier. It's best to include the type of carrier to create the right placeholder for missing logos."
-	}
+  "imports": "import CarrierLogo from \"@kiwicom/orbit-components/lib/CarrierLogo\";",
+  "example": "(): React.Node => (\n  <CarrierLogo\n    carriers={[\n      {\n        code: \"OK\",\n        type: \"airline\",\n        name: \"Czech Airlines\",\n      },\n    ]}\n  />\n)\n",
+  "info": {
+    "title": "Default carrier logo",
+    "description": "By default, carrier logos present a large version of a single logo. When used alone, be sure to pass the name of the carrier. It's best to include the type of carrier to create the right placeholder for missing logos."
+  }
 }

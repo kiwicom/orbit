@@ -1,7 +1,7 @@
 import ruleTester from "../ruleTester";
 import rtlUtils, { RightOrLeftError, SpacingError } from "../src/rules/rtlUtils";
 
-describe("theme-rtl", () => {
+describe("rtl-utils", () => {
   ruleTester.run("rtl-utils", rtlUtils, {
     valid: [
       {

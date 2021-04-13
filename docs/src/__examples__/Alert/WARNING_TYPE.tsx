@@ -9,11 +9,11 @@ import {
   Alert,
   AlertButton,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Visa } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <Alert icon={<Icons.Visa />} title="Visa requirements check" type="warning">
+    <Alert icon={<Visa />} title="Visa requirements check" type="warning">
       <Stack spacing="small">
         <Text>
           The requirements found here are for reference purposes only. Contact the embassy or your

@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Airplane } from "@kiwicom/orbit-components/icons";
 import { Stack, Text } from "@kiwicom/orbit-components";
 
 export default {
@@ -7,15 +7,15 @@ export default {
     <Stack flex>
       <Stack>
         <Text>Small</Text>
-        <Icons.Airplane size="small" ariaLabel="Airplane" />
+        <Airplane size="small" ariaLabel="Airplane" />
       </Stack>
       <Stack>
         <Text>Medium</Text>
-        <Icons.Airplane ariaLabel="Airplane" />
+        <Airplane ariaLabel="Airplane" />
       </Stack>
       <Stack>
         <Text>Large</Text>
-        <Icons.Airplane size="large" ariaLabel="Airplane" />
+        <Airplane size="large" ariaLabel="Airplane" />
       </Stack>
     </Stack>
   ),

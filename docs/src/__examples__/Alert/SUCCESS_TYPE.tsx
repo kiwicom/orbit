@@ -1,11 +1,9 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Check } from "@kiwicom/orbit-components/icons";
 import { Alert } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Alert icon={<Icons.Check />} title="Your payment was successful." type="success" />
-  ),
+  Example: () => <Alert icon={<Check />} title="Your payment was successful." type="success" />,
   info: {
     title: "Success alert",
     description:

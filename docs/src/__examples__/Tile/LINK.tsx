@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Tile } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Airplane } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Tile
-      icon={<Icons.Airplane ariaLabel="Flight" />}
+      icon={<Airplane ariaLabel="Flight" />}
       title="More flights"
       description="Find more flights to get you anywhere you want to go."
       href="https://kiwi.com"

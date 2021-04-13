@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Passengers } from "@kiwicom/orbit-components/icons";
 import { PictureCard, Badge } from "@kiwicom/orbit-components";
 
 export default {
@@ -14,7 +14,7 @@ export default {
       height="300px"
       width="400px"
     >
-      <Badge type="white" icon={<Icons.Passengers />} ariaLabel="4 passengers">
+      <Badge type="white" icon={<Passengers />} ariaLabel="4 passengers">
         4
       </Badge>
     </PictureCard>

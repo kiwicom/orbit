@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Stack, Popover, ListChoice } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Accommodation } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -25,21 +25,21 @@ export default {
               selectable
               selected={is2star}
               onClick={() => setIs2star(!is2star)}
-              icon={<Icons.Accommodation />}
+              icon={<Accommodation />}
             />
             <ListChoice
               title="3 star hotels"
               selectable
               selected={is3star}
               onClick={() => setIs3star(!is3star)}
-              icon={<Icons.Accommodation />}
+              icon={<Accommodation />}
             />
             <ListChoice
               title="4 star hotels"
               selectable
               selected={is4star}
               onClick={() => setIs4star(!is4star)}
-              icon={<Icons.Accommodation />}
+              icon={<Accommodation />}
             />
           </Stack>
         }
@@ -47,7 +47,7 @@ export default {
         <Button
           circled
           title="Hotel types"
-          iconLeft={<Icons.Accommodation />}
+          iconLeft={<Accommodation />}
           onClick={() => setIsOpen(true)}
         />
       </Popover>

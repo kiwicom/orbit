@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Drawer, Stack, Tile } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { MenuHamburger } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -35,7 +35,7 @@ export default {
           </Drawer>
         )}
         <Button
-          iconLeft={<Icons.MenuHamburger />}
+          iconLeft={<MenuHamburger />}
           title="Open menu"
           onClick={() => {
             setShowDrawer(true);

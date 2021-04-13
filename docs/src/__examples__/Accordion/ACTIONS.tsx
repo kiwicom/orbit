@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
   Button,
   ButtonLink,
@@ -91,7 +91,7 @@ export default {
           header={
             <Heading as="h3" type="title3">
               Seating for Barcelona
-              <Icons.FlightDirect ariaLabel=" to " />
+              <FlightDirect ariaLabel=" to " />
               Boston
             </Heading>
           }
@@ -108,7 +108,7 @@ export default {
           header={
             <Heading as="h3" type="title3">
               Seating for Boston
-              <Icons.FlightDirect ariaLabel=" to " />
+              <FlightDirect ariaLabel=" to " />
               Barcelona
             </Heading>
           }

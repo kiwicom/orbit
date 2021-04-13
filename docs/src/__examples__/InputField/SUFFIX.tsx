@@ -1,6 +1,6 @@
 import * as React from "react";
 import { InputField, ButtonLink, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Visibility, VisibilityOff } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -20,9 +20,9 @@ export default {
               type="primary"
               iconLeft={
                 showPassword ? (
-                  <Icons.VisibilityOff ariaLabel="Hide password" />
+                  <VisibilityOff ariaLabel="Hide password" />
                 ) : (
-                  <Icons.Visibility ariaLabel="Show password" />
+                  <Visibility ariaLabel="Show password" />
                 )
               }
               compact

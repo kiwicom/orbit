@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Heading, Stack, ButtonLink } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronDown, ChevronRight, Edit, PlusCircle, Visibility } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -8,28 +8,28 @@ export default {
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With right icon</Heading>
         <Stack flex>
-          <ButtonLink iconRight={<Icons.ChevronRight />}>Continue to payment</ButtonLink>
-          <ButtonLink iconRight={<Icons.ChevronDown />}>Show more options</ButtonLink>
+          <ButtonLink iconRight={<ChevronRight />}>Continue to payment</ButtonLink>
+          <ButtonLink iconRight={<ChevronDown />}>Show more options</ButtonLink>
         </Stack>
       </Stack>
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With left icon</Heading>
         <Stack flex>
-          <ButtonLink iconLeft={<Icons.PlusCircle />}>Add item</ButtonLink>
-          <ButtonLink type="secondary" iconLeft={<Icons.Edit />}>
+          <ButtonLink iconLeft={<PlusCircle />}>Add item</ButtonLink>
+          <ButtonLink type="secondary" iconLeft={<Edit />}>
             Add item
           </ButtonLink>
         </Stack>
       </Stack>
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">With both icons</Heading>
-        <ButtonLink iconLeft={<Icons.Visibility />} iconRight={<Icons.ChevronRight />}>
+        <ButtonLink iconLeft={<Visibility />} iconRight={<ChevronRight />}>
           Read more
         </ButtonLink>
       </Stack>
       <Stack direction="column" spacing="XSmall">
         <Heading type="title4">Only icon</Heading>
-        <ButtonLink iconLeft={<Icons.Edit />} title="Edit this page" />
+        <ButtonLink iconLeft={<Edit />} title="Edit this page" />
       </Stack>
     </Stack>
   ),

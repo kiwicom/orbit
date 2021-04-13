@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Heading, Stack, Text, ButtonLink } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Edit } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -97,7 +97,7 @@ export default {
             ButtonLink with only an icon), include it for everyong by using a <code>title</code>{" "}
             prop to add an <code>aria-label</code>.
           </Text>
-          <ButtonLink iconLeft={<Icons.Edit />} title="Edit name" />
+          <ButtonLink iconLeft={<Edit />} title="Edit name" />
         </Stack>
       </Stack>
     );

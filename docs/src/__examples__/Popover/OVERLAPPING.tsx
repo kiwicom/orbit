@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Stack, Text, Popover, Stepper } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Passengers } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -40,7 +40,7 @@ export default {
           <Button
             type="secondary"
             title="Add or remove passengers"
-            iconLeft={<Icons.Passengers ariaLabel="Passengers" />}
+            iconLeft={<Passengers ariaLabel="Passengers" />}
           >
             {adults + children}
           </Button>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { InputField, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Search } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -11,7 +11,7 @@ export default {
         placeholder="Search by keyword"
         type="text"
         inputMode="search"
-        prefix={<Icons.Search />}
+        prefix={<Search />}
       />
     </Stack>
   ),

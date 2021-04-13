@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, ButtonLink, Heading, Stack, Text, Drawer, Tile } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -91,7 +91,7 @@ export default {
         <Stack flex>
           <Button type="secondary">Add priority boarding</Button>
           <ButtonLink
-            iconLeft={<Icons.QuestionCircle />}
+            iconLeft={<QuestionCircle />}
             title="Open help"
             circled
             onClick={() => {

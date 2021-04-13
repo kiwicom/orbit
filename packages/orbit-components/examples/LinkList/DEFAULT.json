@@ -1,8 +1,8 @@
 {
-	"imports": "import LinkList from \"@kiwicom/orbit-components/lib/LinkList\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
-	"example": "() => (\n  <LinkList>\n    <TextLink\n      href=\"https://orbit.kiwi/components/linklist/\"\n      external\n      type=\"secondary\"\n    >\n      LinkList guidelines\n    </TextLink>\n    <TextLink\n      href=\"https://orbit.kiwi/components/linklist/react/\"\n      external\n      type=\"secondary\"\n    >\n      LinkList React API\n    </TextLink>\n    <TextLink\n      href=\"https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/LinkList\"\n      external\n      type=\"secondary\"\n    >\n      LinkList on GitHub\n    </TextLink>\n  </LinkList>\n)\n",
-	"info": {
-		"title": "Default link list",
-		"description": "By default, link lists show their children in a column with no indent and medium spacing."
-	}
+  "imports": "import LinkList from \"@kiwicom/orbit-components/lib/LinkList\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
+  "example": "(): React.Node => (\n  <LinkList>\n    <TextLink\n      href=\"https://orbit.kiwi/components/linklist/\"\n      external\n      type=\"secondary\"\n    >\n      LinkList guidelines\n    </TextLink>\n    <TextLink\n      href=\"https://orbit.kiwi/components/linklist/react/\"\n      external\n      type=\"secondary\"\n    >\n      LinkList React API\n    </TextLink>\n    <TextLink\n      href=\"https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/LinkList\"\n      external\n      type=\"secondary\"\n    >\n      LinkList on GitHub\n    </TextLink>\n  </LinkList>\n)\n",
+  "info": {
+    "title": "Default link list",
+    "description": "By default, link lists show their children in a column with no indent and medium spacing."
+  }
 }

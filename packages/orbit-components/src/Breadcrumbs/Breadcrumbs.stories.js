@@ -14,7 +14,7 @@ export default {
 };
 
 export const Default = (): React.Node => (
-  <Breadcrumbs>
+  <Breadcrumbs onGoBack={action("onGoBack")}>
     <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
       Kiwi.com
     </BreadcrumbsItem>

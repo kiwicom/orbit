@@ -1,8 +1,8 @@
 {
-	"imports": "import Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";",
-	"example": "() => (\n  <Card title=\"Passenger info\" description=\"All passengers in this itinerary\">\n    <CardSection>Yasmin Karenth</CardSection>\n  </Card>\n)\n",
-	"info": {
-		"title": "Default card",
-		"description": "Cards can have titles and descriptions that cover all of their contents plus sections for organization."
-	}
+  "imports": "import Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";",
+  "example": "(): React.Node => (\n  <Card title=\"Passenger info\" description=\"All passengers in this itinerary\">\n    <CardSection>Yasmin Karenth</CardSection>\n  </Card>\n)\n",
+  "info": {
+    "title": "Default card",
+    "description": "Cards can have titles and descriptions that cover all of their contents plus sections for organization."
+  }
 }

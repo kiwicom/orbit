@@ -22,7 +22,7 @@ exports[`Tooltip it should match snapshot 1`] = `
   outline: none;
 }
 
-.c0 .c2 {
+.c0 .Text__StyledText-sc-19qtt4y-0 {
   display: inline-block;
   -webkit-text-decoration: underline;
   text-decoration: underline;

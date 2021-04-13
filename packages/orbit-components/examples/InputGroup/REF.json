@@ -1,8 +1,8 @@
 {
-	"imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport InputGroup from \"@kiwicom/orbit-components/lib/InputGroup\";",
-	"example": "() => {\n  const ref = React.useRef(null)\n  React.useEffect(() => {\n    if (ref.current) {\n      ref.current.focus()\n    }\n  })\n  return (\n    <InputGroup flex={[\"1 1 4em\"]} label=\"Expiration date\">\n      <InputField placeholder=\"MM\" maxValue={12} minValue={1} type=\"number\" />\n      <InputField placeholder=\"YYYY\" type=\"number\" minValue={2020} ref={ref} />\n    </InputGroup>\n  )\n}\n",
-	"info": {
-		"title": "References",
-		"description": "For actions like automatically focusing on an input field within the group, use the ref prop. You can't focus on the group as a whole."
-	}
+  "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport InputGroup from \"@kiwicom/orbit-components/lib/InputGroup\";",
+  "example": "(): React.Node => {\n  const ref = React.useRef(null)\n  React.useEffect(() => {\n    if (ref.current) {\n      ref.current.focus()\n    }\n  })\n  return (\n    <InputGroup flex={[\"1 1 4em\"]} label=\"Expiration date\">\n      <InputField placeholder=\"MM\" maxValue={12} minValue={1} type=\"number\" />\n      <InputField placeholder=\"YYYY\" type=\"number\" minValue={2020} ref={ref} />\n    </InputGroup>\n  )\n}\n",
+  "info": {
+    "title": "References",
+    "description": "For actions like automatically focusing on an input field within the group, use the ref prop. You can't focus on the group as a whole."
+  }
 }

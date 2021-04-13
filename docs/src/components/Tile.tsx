@@ -9,6 +9,7 @@ import ArrowRight from "./ArrowRight";
 export const ICON_SIZE = "2rem";
 
 interface Props {
+  icon?: boolean;
   title: string;
   linkContent?: React.ReactNode;
   href?: string;
@@ -47,7 +48,7 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Tile({ title, linkContent, href, children }: Props) {
+export default function Tile({ href, icon, linkContent, title, children }: Props) {
   const theme = useTheme();
 
   return (
@@ -77,13 +78,13 @@ export default function Tile({ title, linkContent, href, children }: Props) {
           }
         `}
       >
-        <TileIcon />
+        {icon && <TileIcon />}
         {children ? (
           <div>
             <TileTitle>{title}</TileTitle>
             <div
               css={css`
-                margin: 0.5rem 0 1.5rem;
+                margin: 0.5rem 0 ${href ? "1.5rem" : "0"};
               `}
             >
               {/* wrap plain strings in a p tag and otherwise render children */}

@@ -1,8 +1,8 @@
 {
-	"imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
-	"example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Checkbox\n      label=\"Accept terms and conditions\"\n      checked={checked}\n      onChange={() => setChecked(!checked)}\n      info={\n        <div>\n          You must accept the{\" \"}\n          <TextLink\n            type=\"secondary\"\n            stopPropagation\n            href=\"https://orbit.kiwi\"\n            external\n          >\n            Terms and Conditions\n          </TextLink>{\" \"}\n          before continuing. .\n        </div>\n      }\n      hasError\n    />\n  )\n}\n",
-	"info": {
-		"title": "Errors",
-		"description": "Show users there is an error with a checkbox by passing the hasError prop. Note that the checkbox will show the error only when checked and disabled are false."
-	}
+  "imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
+  "example": "(): React.Node => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Checkbox\n      label=\"Accept terms and conditions\"\n      checked={checked}\n      onChange={() => setChecked(!checked)}\n      info={\n        <div>\n          You must accept the{\" \"}\n          <TextLink\n            type=\"secondary\"\n            stopPropagation\n            href=\"https://orbit.kiwi\"\n            external\n          >\n            Terms and Conditions\n          </TextLink>{\" \"}\n          before continuing. .\n        </div>\n      }\n      hasError\n    />\n  )\n}\n",
+  "info": {
+    "title": "Errors",
+    "description": "Show users there is an error with a checkbox by passing the hasError prop. Note that the checkbox will show the error only when checked and disabled are false."
+  }
 }

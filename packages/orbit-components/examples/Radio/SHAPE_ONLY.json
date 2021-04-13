@@ -1,8 +1,8 @@
 {
-	"imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Stack>\n      <Radio checked={checked} onChange={() => setChecked(!checked)} />\n      <Button type=\"secondary\" onClick={() => setChecked(false)}>\n        Clear\n      </Button>\n    </Stack>\n  )\n}\n",
-	"info": {
-		"title": "Shape only",
-		"description": "In some cases, you may want to include only the shape of the radio. Make sure any visual information about the radio is accessible to everyone."
-	}
+  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Stack>\n      <Radio checked={checked} onChange={() => setChecked(!checked)} />\n      <Button type=\"secondary\" onClick={() => setChecked(false)}>\n        Clear\n      </Button>\n    </Stack>\n  )\n}\n",
+  "info": {
+    "title": "Shape only",
+    "description": "In some cases, you may want to include only the shape of the radio. Make sure any visual information about the radio is accessible to everyone."
+  }
 }

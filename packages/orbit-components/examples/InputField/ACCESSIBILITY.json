@@ -1,8 +1,8 @@
 {
-	"imports": "import Illustration from \"@kiwicom/orbit-components/lib/Illustration\";\nimport InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack direction=\"column\">\n    <label htmlFor=\"names\">Given names</label>\n    <Illustration name=\"Success\" />\n    <InputField placeholder=\"Sofia Cruz\" id=\"names\" />\n  </Stack>\n)\n",
-	"info": {
-		"title": "Accessibility",
-		"description": "If you need to separate the label from the input, match the for prop on the label with the id props on the input field. Never leave the input field without a connected label."
-	}
+  "imports": "import Illustration from \"@kiwicom/orbit-components/lib/Illustration\";\nimport InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <label htmlFor=\"names\">Given names</label>\n    <Illustration name=\"Success\" />\n    <InputField placeholder=\"Sofia Cruz\" id=\"names\" />\n  </Stack>\n)\n",
+  "info": {
+    "title": "Accessibility",
+    "description": "If you need to separate the label from the input, match the for prop on the label with the id props on the input field. Never leave the input field without a connected label."
+  }
 }

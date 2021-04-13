@@ -3,7 +3,7 @@ import { LiveProvider, LivePreview, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { ButtonLink, Stack, Tooltip } from "@kiwicom/orbit-components";
+import { ButtonLink, Stack, Text, Tooltip } from "@kiwicom/orbit-components";
 import dracula from "prism-react-renderer/themes/dracula";
 import ChevronUp from "@kiwicom/orbit-components/lib/icons/ChevronUp";
 import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown";
@@ -60,7 +60,7 @@ const ReactExample = ({ exampleId }: Props) => {
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!example) return <>{`Could not find example with the id: ${exampleId}`}</>;
+  if (!example) return <Text>{`Could not find example with the id: ${exampleId}`}</Text>;
 
   const { fields } = example;
 

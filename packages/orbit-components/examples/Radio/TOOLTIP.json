@@ -1,8 +1,8 @@
 {
-	"imports": "import Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
-	"example": "() => (\n  <Radio\n    label=\"Direct connections\"\n    disabled\n    tooltip={\n      <Tooltip\n        content=\"No results for direct connections\"\n        preferredPosition=\"top\"\n      />\n    }\n  />\n)\n",
-	"info": {
-		"title": "Tooltip",
-		"description": "If you want to attach a tooltip only to the radio itself and not the label or any other text, use the tooltip prop."
-	}
+  "imports": "import Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
+  "example": "(): React.Node => (\n  <Radio\n    label=\"Direct connections\"\n    disabled\n    tooltip={\n      <Tooltip\n        content=\"No results for direct connections\"\n        preferredPosition=\"top\"\n      />\n    }\n  />\n)\n",
+  "info": {
+    "title": "Tooltip",
+    "description": "If you want to attach a tooltip only to the radio itself and not the label or any other text, use the tooltip prop."
+  }
 }

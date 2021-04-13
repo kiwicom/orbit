@@ -1,8 +1,8 @@
 {
-	"imports": "import Textarea from \"@kiwicom/orbit-components/lib/Textarea\";",
-	"example": "() => (\n  <Textarea\n    label=\"Your feedback\"\n    placeholder=\"What I liked about booking with Kiwi.com was ...\"\n  />\n)\n",
-	"info": {
-		"title": "Default textarea",
-		"description": "By default, the text area will be a normal-sized space for text that can be resized vertically."
-	}
+  "imports": "import Textarea from \"@kiwicom/orbit-components/lib/Textarea\";",
+  "example": "(): React.Node => (\n  <Textarea\n    label=\"Your feedback\"\n    placeholder=\"What I liked about booking with Kiwi.com was ...\"\n  />\n)\n",
+  "info": {
+    "title": "Default textarea",
+    "description": "By default, the text area will be a normal-sized space for text that can be resized vertically."
+  }
 }

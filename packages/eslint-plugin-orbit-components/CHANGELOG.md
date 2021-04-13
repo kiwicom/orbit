@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.4.0...eslint-plugin-orbit-components@0.5.0) (2021-04-07)
+
+
+### Features
+
+* **eslint-plugin-orbit:** useRtl rule ([#2833](https://github.com/kiwicom/orbit/issues/2833)) ([ecb3fd6](https://github.com/kiwicom/orbit/commit/ecb3fd6530cf6c9c0a3115d72bd6fb12f45aef90))
+
+
+
+
+
 # [0.4.0](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.3.2...eslint-plugin-orbit-components@0.4.0) (2021-03-19)
 
 

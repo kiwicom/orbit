@@ -1,8 +1,8 @@
 {
-	"imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-	"example": "() => (\n  <Stack flex>\n    <Badge type=\"success\" icon={<Icons.Check ariaLabel=\"Success\" />}>\n      Included in price\n    </Badge>\n    <Badge type=\"successInverted\" icon={<Icons.Check ariaLabel=\"Success\" />}>\n      Included in price\n    </Badge>\n  </Stack>\n)\n",
-	"info": {
-		"title": "Success badges",
-		"description": "Success badges help to highlight something desirable has happened or will happen. You can use them in situations like a confirmation of a user action (such as booking a trip) or potentially attractive options (such as free baggage)."
-	}
+  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
+  "example": "(): React.Node => (\n  <Stack flex>\n    <Badge type=\"success\" icon={<Icons.Check ariaLabel=\"Success\" />}>\n      Included in price\n    </Badge>\n    <Badge type=\"successInverted\" icon={<Icons.Check ariaLabel=\"Success\" />}>\n      Included in price\n    </Badge>\n  </Stack>\n)\n",
+  "info": {
+    "title": "Success badges",
+    "description": "Success badges help to highlight something desirable has happened or will happen. You can use them in situations like a confirmation of a user action (such as booking a trip) or potentially attractive options (such as free baggage)."
+  }
 }

@@ -1,8 +1,8 @@
 {
-	"imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport SeatLegend from \"@kiwicom/orbit-components/lib/SeatLegend\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
-	"example": "() => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack direction=\"column\">\n      <Stack inline>\n        <Seat size={isTablet ? \"medium\" : \"small\"} />\n        <Seat size={isTablet ? \"medium\" : \"small\"} type=\"legroom\" />\n        <Seat size={isTablet ? \"medium\" : \"small\"} type=\"unavailable\" />\n      </Stack>\n      <Stack direction=\"column\">\n        <SeatLegend label=\"Extra legroom ($ 5.99 – $ 12.98)\" />\n        <SeatLegend type=\"legroom\" label=\"Standard ($ 5.99 – $ 12.98)\" />\n        <SeatLegend type=\"unavailable\" label=\"Unavailable\" />\n      </Stack>\n    </Stack>\n  )\n}\n",
-	"info": {
-		"title": "Legend",
-		"description": "Including an explanation can help users quickly scan the available options."
-	}
+  "imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport SeatLegend from \"@kiwicom/orbit-components/lib/SeatLegend\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
+  "example": "(): React.Node => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack direction=\"column\">\n      <Stack inline>\n        <Seat size={isTablet ? \"medium\" : \"small\"} />\n        <Seat size={isTablet ? \"medium\" : \"small\"} type=\"legroom\" />\n        <Seat size={isTablet ? \"medium\" : \"small\"} type=\"unavailable\" />\n      </Stack>\n      <Stack direction=\"column\">\n        <SeatLegend label=\"Extra legroom ($ 5.99 – $ 12.98)\" />\n        <SeatLegend type=\"legroom\" label=\"Standard ($ 5.99 – $ 12.98)\" />\n        <SeatLegend type=\"unavailable\" label=\"Unavailable\" />\n      </Stack>\n    </Stack>\n  )\n}\n",
+  "info": {
+    "title": "Legend",
+    "description": "Including an explanation can help users quickly scan the available options."
+  }
 }

@@ -11,7 +11,7 @@ import Tooltip from "../index";
 
 export default {
   Example: (): React.Node => (
-    <Text>
+    <Text as="div">
       If you&apos;re building a travel app, you should give{" "}
       <Tooltip
         content={

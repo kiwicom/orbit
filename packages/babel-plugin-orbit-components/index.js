@@ -19,6 +19,7 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  calculateCountOf: "Slider/utils/calculateCountOf",
   AccordionSection: "Accordion/AccordionSection",
   DeprecatedCardHeader: "deprecated/Card/CardHeader",
   DeprecatedCard: "deprecated/Card",

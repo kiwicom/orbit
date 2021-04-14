@@ -55,6 +55,7 @@ export { default as ModalSection } from "./Modal/ModalSection";
 export { default as ModalFooter } from "./Modal/ModalFooter";
 
 export { default as Slider } from "./Slider";
+export { default as calculateCountOf } from "./Slider/utils/calculateCountOf";
 
 // Navigation components
 export { default as NavigationBar } from "./NavigationBar";

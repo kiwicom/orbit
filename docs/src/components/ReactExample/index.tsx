@@ -1,14 +1,12 @@
 import React from "react";
-import { LiveProvider, LivePreview, LiveEditor } from "react-live";
+import { LiveProvider, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
 import dracula from "prism-react-renderer/themes/dracula";
-
-import Copy from "../../images/copy.svg";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard";
+import * as Components from "@kiwicom/orbit-components";
+import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import Board from "./Board";
+import Preview from "./Preview";
 
 interface Props {
   exampleId: string;
@@ -27,23 +25,8 @@ const StyledEditor = styled(LiveEditor)`
   `};
 `;
 
-const StyledPreviewWrapper = styled(LivePreview)`
-  padding: ${({ theme }) => theme.orbit.spaceXLarge};
-`;
-
-const StyledBoard = styled.div`
-  ${({ theme }) => `
-    margin-top: 0 !important;
-    padding: ${theme.orbit.spaceXSmall};
-    background: ${theme.orbit.paletteCloudLight};
-  `};
-`;
-
 const ReactExample = ({ exampleId }: Props) => {
-  const { ButtonLink, Stack, Text, Tooltip } = Components;
-  const { ChevronUp, ChevronDown } = Icons;
-  const [isOpened, setOpenEditor] = React.useState(false);
-  const [isCopied, copy] = useCopyToClipboard();
+  const [isEditorOpened, setOpenEditor] = React.useState(false);
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -69,7 +52,8 @@ const ReactExample = ({ exampleId }: Props) => {
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!example) return <Text>{`Could not find example with the id: ${exampleId}`}</Text>;
+  if (!example)
+    return <Components.Text>{`Could not find example with the id: ${exampleId}`}</Components.Text>;
 
   const { fields } = example;
 
@@ -88,55 +72,22 @@ const ReactExample = ({ exampleId }: Props) => {
   }, {});
 
   const scopeOutput = fields.scope
-    .map(({ path, name: moduleName }) => `import { ${moduleName} } from ${path}`)
+    .map(({ path, name: moduleName, default: isDefault }) => {
+      if (isDefault) return `import ${moduleName} from ${path}`;
+      return `import { ${moduleName} }  from ${path}`;
+    })
     .join("\n");
 
   return (
-    <LiveProvider
-      code={fields.example}
-      scope={{ ...modules, Icons, defaultTheme, styled, css }}
-      theme={dracula}
-    >
+    <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
       <StyledExampleWrapper>
-        <StyledPreviewWrapper />
-        <StyledBoard>
-          <Stack flex justify="between" align="center">
-            <Stack inline>
-              <ButtonLink
-                onClick={() => setOpenEditor(prev => !prev)}
-                type="secondary"
-                ariaExpanded={isOpened}
-                iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
-              >
-                Code
-              </ButtonLink>
-              <ButtonLink
-                onClick={() => setOpenEditor(prev => !prev)}
-                type="secondary"
-                ariaExpanded={isOpened}
-                iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
-              >
-                Playground
-              </ButtonLink>
-            </Stack>
-            <Stack inline justify="end" align="center">
-              <Tooltip
-                preferredPosition="top"
-                preferredAlign="center"
-                content={isCopied ? "copied" : "copy to clipboard"}
-              >
-                <ButtonLink
-                  onClick={() => copy([scopeOutput, fields.example].join("\n\n"))}
-                  type="secondary"
-                  ariaLabelledby="copy to clipboard"
-                >
-                  <Copy />
-                </ButtonLink>
-              </Tooltip>
-            </Stack>
-          </Stack>
-        </StyledBoard>
-        {isOpened && <StyledEditor />}
+        <Preview />
+        <Board
+          isEditorOpened={isEditorOpened}
+          onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+          code={[scopeOutput, fields.example].join("\n\n")}
+        />
+        {isEditorOpened && <StyledEditor />}
       </StyledExampleWrapper>
     </LiveProvider>
   );

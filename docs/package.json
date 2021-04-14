@@ -14,7 +14,6 @@
     "@babel/parser": "^7.13.13",
     "@babel/types": "^7.13.0",
     "@csstools/convert-colors": "^2.0.0",
-    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "^2.2.0",
@@ -57,7 +56,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
-    "elasticlunr": "^0.9.5",
+    "fuzzaldrin-plus": "^0.6.0",
     "prism-react-renderer": "^1.1.1",
     "react-polymorphic-types": "^1.0.3"
   }

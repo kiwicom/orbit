@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Drawer, LinkList, Stack, TextLink } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronLeft, ChevronRight } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -38,14 +38,14 @@ export default {
         )}
         <Stack justify="center">
           <Button
-            iconLeft={<Icons.ChevronLeft />}
+            iconLeft={<ChevronLeft />}
             title="Open left drawer"
             onClick={() => {
               setShowLeftDrawer(true);
             }}
           />
           <Button
-            iconLeft={<Icons.ChevronRight />}
+            iconLeft={<ChevronRight />}
             title="Open right drawer"
             onClick={() => {
               setShowRightDrawer(true);

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TextLink, Heading, Stack, Text } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { NewWindow } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -30,7 +30,7 @@ export default {
             );
           }}
           tabIndex={0}
-          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<NewWindow ariaLabel="Opens in new window" />}
         >
           Tab index docs
         </TextLink>
@@ -49,7 +49,7 @@ export default {
           title="Info from the W3 "
           href="https://www.w3.org/WAI/WCAG20/Techniques/ua-notes/html#H33"
           external
-          iconRight={<Icons.NewWindow ariaLabel="Opens in new window" />}
+          iconRight={<NewWindow ariaLabel="Opens in new window" />}
         >
           Using links with titles
         </TextLink>

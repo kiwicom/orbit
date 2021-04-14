@@ -81,6 +81,7 @@ export { ModalHeader } from "./Modal/ModalHeader/index";
 export { ModalSection } from "./Modal/ModalSection/index";
 export { ModalFooter } from "./Modal/ModalFooter/index";
 export { Slider } from "./Slider/index";
+export { default as calculateCountOf } from "./Slider/utils/calculateCountOf";
 export { ClickOutside } from "./ClickOutside/index";
 export { Tag } from "./Tag/index";
 export { Table } from "./Table/index";

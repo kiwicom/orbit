@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Edit } from "@kiwicom/orbit-components/icons";
 import { Stack, Text, ButtonLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Stack spacing="XLarge">
-      <ButtonLink iconLeft={<Icons.Edit />} circled title="Edit this page" />
+      <ButtonLink iconLeft={<Edit />} circled title="Edit this page" />
       <Stack spacing="XSmall">
         <Text>How much do you like Orbit?</Text>
         <Stack direction="row">

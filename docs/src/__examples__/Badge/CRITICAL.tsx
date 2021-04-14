@@ -1,14 +1,14 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { AlertCircle } from "@kiwicom/orbit-components/icons";
 import { Stack, Badge } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Stack flex>
-      <Badge type="critical" icon={<Icons.AlertCircle ariaLabel="Critical alert" />}>
+      <Badge type="critical" icon={<AlertCircle ariaLabel="Critical alert" />}>
         No connection to internet
       </Badge>
-      <Badge type="criticalInverted" icon={<Icons.AlertCircle ariaLabel="Critical alert" />}>
+      <Badge type="criticalInverted" icon={<AlertCircle ariaLabel="Critical alert" />}>
         No connection to internet
       </Badge>
     </Stack>

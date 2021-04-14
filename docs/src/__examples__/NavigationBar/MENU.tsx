@@ -8,7 +8,13 @@ import {
   Drawer,
   LinkList,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import {
+  Accommodation,
+  AccountCircle,
+  AirplaneTakeoff,
+  Partners,
+  QuestionCircle,
+} from "@kiwicom/orbit-components/icons";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 export default {
@@ -42,18 +48,14 @@ export default {
                 />
               </div>
             </ButtonLink>
-            <ButtonLink type="secondary" iconLeft={<Icons.AirplaneTakeoff />} title="Travel" />
-            <ButtonLink type="secondary" iconLeft={<Icons.Accommodation />} title="Rooms" />
-            <ButtonLink type="secondary" iconLeft={<Icons.Partners />} title="Careers" />
+            <ButtonLink type="secondary" iconLeft={<AirplaneTakeoff />} title="Travel" />
+            <ButtonLink type="secondary" iconLeft={<Accommodation />} title="Rooms" />
+            <ButtonLink type="secondary" iconLeft={<Partners />} title="Careers" />
             {isLargeMobile && (
               <Stack justify="end" inline>
                 <ButtonLink type="secondary" iconLeft={<CountryFlag code="gb" />} title="English" />
-                <ButtonLink type="secondary" iconLeft={<Icons.QuestionCircle />} title="Help" />
-                <ButtonLink
-                  type="secondary"
-                  iconLeft={<Icons.AccountCircle />}
-                  title="My account"
-                />
+                <ButtonLink type="secondary" iconLeft={<QuestionCircle />} title="Help" />
+                <ButtonLink type="secondary" iconLeft={<AccountCircle />} title="My account" />
               </Stack>
             )}
           </Stack>

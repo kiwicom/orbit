@@ -1,14 +1,15 @@
 import * as React from "react";
 import {
   Heading,
-  Table,
+  Inline,
   Stack,
-  TableCell,
+  Table,
   TableBody,
+  TableCell,
   TableHead,
   TableRow,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { BaggageCabin, BaggageChecked30 } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -28,13 +29,17 @@ export default {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <Icons.BaggageCabin /> Cabin baggage
+                  <Inline>
+                    <BaggageCabin /> Cabin baggage
+                  </Inline>
                 </TableCell>
                 <TableCell>Free</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <Icons.BaggageChecked30 /> Checked baggage
+                  <Inline>
+                    <BaggageChecked30 /> Checked baggage
+                  </Inline>
                 </TableCell>
                 <TableCell>Paid-for option</TableCell>
               </TableRow>
@@ -50,13 +55,17 @@ export default {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <Icons.BaggageCabin /> Cabin baggage
+                  <Inline>
+                    <BaggageCabin /> Cabin baggage
+                  </Inline>
                 </TableCell>
                 <TableCell>Free</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <Icons.BaggageChecked30 /> Checked baggage
+                  <Inline>
+                    <BaggageChecked30 /> Checked baggage
+                  </Inline>
                 </TableCell>
                 <TableCell>Paid-for option</TableCell>
               </TableRow>
@@ -78,13 +87,17 @@ export default {
               <TableBody>
                 <TableRow>
                   <TableCell>
-                    <Icons.BaggageCabin /> Cabin baggage
+                    <Inline>
+                      <BaggageCabin /> Cabin baggage
+                    </Inline>
                   </TableCell>
                   <TableCell>Free</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
-                    <Icons.BaggageChecked30 /> Checked baggage
+                    <Inline>
+                      <BaggageChecked30 /> Checked baggage
+                    </Inline>
                   </TableCell>
                   <TableCell>Paid-for option</TableCell>
                 </TableRow>
@@ -100,13 +113,17 @@ export default {
               <TableBody>
                 <TableRow>
                   <TableCell>
-                    <Icons.BaggageCabin /> Cabin baggage
+                    <Inline>
+                      <BaggageCabin /> Cabin baggage
+                    </Inline>
                   </TableCell>
                   <TableCell>Free</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
-                    <Icons.BaggageChecked30 /> Checked baggage
+                    <Inline>
+                      <BaggageChecked30 /> Checked baggage
+                    </Inline>
                   </TableCell>
                   <TableCell>Paid-for option</TableCell>
                 </TableRow>

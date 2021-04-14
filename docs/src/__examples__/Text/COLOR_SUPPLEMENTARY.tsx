@@ -3,7 +3,7 @@ import { Text, Stack } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Stack flex>
+    <Stack flex align="center">
       <Text type="info">Informational text</Text>
       <Text type="success">Success text</Text>
       <Text type="warning">Warning text</Text>

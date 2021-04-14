@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Stepper, Stack, Heading } from "@kiwicom/orbit-components";
+import { Heading, Inline, Stepper, Stack } from "@kiwicom/orbit-components";
 import { Passengers } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Stack flex align="center">
       <Heading type="title4">
-        <Passengers />
-        Travelers
+        <Inline>
+          <Passengers />
+          Travelers
+        </Inline>
       </Heading>
       <div style={{ maxWidth: "10em" }}>
         <Stepper

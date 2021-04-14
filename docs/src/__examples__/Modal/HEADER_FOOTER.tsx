@@ -3,7 +3,7 @@ import { Button, Illustration, Modal, ModalFooter, ModalHeader } from "@kiwicom/
 
 export default {
   Example: () => {
-    const [showModal, setShowModal] = React.useState(true);
+    const [showModal, setShowModal] = React.useState(false);
     return (
       <>
         {showModal && (

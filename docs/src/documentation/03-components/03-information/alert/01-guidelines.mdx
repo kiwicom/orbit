@@ -4,7 +4,7 @@ title: Guidelines
 
 import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 
-<ReactExample name="" />
+<ReactExample exampleId="Alert-default" />
 
 ## When to use
 
@@ -71,7 +71,11 @@ and the user needs to take additional steps to resolve the problem or get additi
 In such cases, provide additional actions for your message.
 Alerts use special status buttons to match the button color with the alert color.
 
-<ReactExample name="Alert buttons" />
+There should be no more than two actions in each Alert:
+one primary and one subtle.
+(See more on [the styles of the actions](/design-patterns/action-components/#alert-buttons))
+
+<ReactExample exampleId="Alert-actions_sidebyside" />
 
 ## Content
 
@@ -120,7 +124,7 @@ but keep it focused and related to the topic on the screen.
 Consider tailoring your icons to your message.
 Baggage, clocks, or other symbols strengthen the informative nature of your message.
 
-<ReactExample name="Alert info" />
+<ReactExample exampleId="Alert-info_type" />
 
 ### Success alert
 
@@ -132,7 +136,7 @@ Usually used without an action button.
 such as when users need to confirm something by e-mail.
 For such actions, use an informational alert instead.
 
-<ReactExample name="Alert success" />
+<ReactExample exampleId="Alert-success_type" />
 
 ### Warning alert
 
@@ -140,7 +144,7 @@ Use warning alerts when you need to inform users about a **potentially unfavorab
 that requires eventual action from them.
 If the issue requires immediate attention, use a critical alert.
 
-<ReactExample name="Alert warning" />
+<ReactExample exampleId="Alert-warning_type" />
 
 ### Critical alert
 
@@ -148,7 +152,7 @@ Use critical alerts when something is **blocking** users from continuing
 or an issue needs to be resolved **immediately**.
 The alert should offer a solution to the problem.
 
-<ReactExample name="Alert critical" />
+<ReactExample exampleId="Alert-critical_type" />
 
 A critical alert should provide some form of solution for their problem.
 If something is **important for users to solve as soon as possible**,

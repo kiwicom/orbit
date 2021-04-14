@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Airplane, BaggageCabin, Bus, FlightDirect, Train } from "@kiwicom/orbit-components/icons";
+import {
+  Airplane,
+  BaggageCabin,
+  BaggageChecked30,
+  Bus,
+  FlightDirect,
+  Train,
+} from "@kiwicom/orbit-components/icons";
 import {
   Tag,
   Badge,
@@ -147,7 +154,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 2</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bags" />
+                  <BaggageChecked30 ariaLabel="checked bags" />
                 </Stack>
               </Stack>
             }
@@ -166,7 +173,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
+                  <BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }
@@ -185,7 +192,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
+                  <BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }

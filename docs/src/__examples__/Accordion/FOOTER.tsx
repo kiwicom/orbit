@@ -1,12 +1,13 @@
 import * as React from "react";
 import {
-  ButtonLink,
-  Heading,
-  Stack,
-  Text,
   Accordion,
   AccordionSection,
+  ButtonLink,
+  Heading,
+  Inline,
   Seat,
+  Stack,
+  Text,
 } from "@kiwicom/orbit-components";
 import { FlightDirect } from "@kiwicom/orbit-components/icons";
 
@@ -91,9 +92,11 @@ export default {
           id="outbound"
           header={
             <Heading as="h3" type="title3">
-              Seating for Barcelona
-              <FlightDirect ariaLabel=" to " />
-              Boston
+              <Inline>
+                Seating for Barcelona
+                <FlightDirect ariaLabel=" to " />
+                Boston
+              </Inline>
             </Heading>
           }
         >
@@ -110,9 +113,11 @@ export default {
           id="inbound"
           header={
             <Heading as="h3" type="title3">
-              Seating for Boston
-              <FlightDirect ariaLabel=" to " />
-              Barcelona
+              <Inline>
+                Seating for Boston
+                <FlightDirect ariaLabel=" to " />
+                Barcelona
+              </Inline>
             </Heading>
           }
         >

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, ButtonLink, Heading, Stack, Text, Drawer, Tile } from "@kiwicom/orbit-components";
+import { ButtonLink, Heading, Stack, Text, Drawer, Tile } from "@kiwicom/orbit-components";
 import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
@@ -89,7 +89,6 @@ export default {
           </Drawer>
         )}
         <Stack flex>
-          <Button type="secondary">Add priority boarding</Button>
           <ButtonLink
             iconLeft={<QuestionCircle />}
             title="Open help"

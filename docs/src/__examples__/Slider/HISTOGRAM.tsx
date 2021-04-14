@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Slider } from "@kiwicom/orbit-components";
-import calculateCountOf from "@kiwicom/orbit-components/lib/Slider/utils/calculateCountOf";
-
-const randomArray = Array.from({ length: 20 }, () => Math.floor(Math.random() * 40));
-const availableFlights = [0, ...randomArray];
+import { calculateCountOf, Slider } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
+    // the numbers are just random so no need to make them pretty
+    // eslint-disable-next-line prettier/prettier
+    const availableFlights = [5, 29, 28, 7, 13, 7, 16, 12, 8, 39, 13, 7, 20, 38, 15, 18, 28, 14, 23, 24, 10];
+
     const [priceRange, setPriceRange] = React.useState([50, 250]);
     const step = 50;
     const [selectedFlights, totalFlights] = calculateCountOf(

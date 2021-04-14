@@ -7,7 +7,7 @@ export default {
       <TimelineStep label="Booked" subLabel="January 3, 10:43" type="success">
         You booked the trip and received e-tickets.
       </TimelineStep>
-      <TimelineStep label="Checked in" subLabel="" type="warning">
+      <TimelineStep label="Checked in" subLabel="May 3, 8:15" type="warning">
         Please check in before your trip.
       </TimelineStep>
       <TimelineStep label="Board" subLabel="May 4, 8:15" type="critical">

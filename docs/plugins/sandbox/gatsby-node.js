@@ -1,4 +1,4 @@
-const { getScope } = require("./helpers");
+const { getScope, omitTypes } = require("./helpers");
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
   if (node.sourceInstanceName === "examples" && node.internal.type === "File") {
@@ -10,6 +10,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
     const value = relativeDirectory.split("/").slice(-1).concat(name.toLowerCase()).join("-");
 
     const { content } = node.internal;
+
     const example = content.match(/(?<=example:)([\s\S]*)(?=,+[\W]+info)/gim);
 
     const scope = getScope(content);
@@ -23,7 +24,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
     createNodeField({
       node,
       name: "example",
-      value: example ? example[0] : "",
+      value: example ? omitTypes(example[0]) : "",
     });
 
     createNodeField({

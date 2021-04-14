@@ -1,5 +1,6 @@
-const { types: t } = require("@babel/core");
+const { types: t, traverse } = require("@babel/core");
 const { parse } = require("@babel/parser");
+const { default: generate } = require("@babel/generator");
 
 const getCode = str =>
   parse(str, {
@@ -31,6 +32,21 @@ const getScope = example => {
   return scope;
 };
 
+/* react-live can't have types inside example, this helper removes the types for react-live */
+const omitTypes = example => {
+  const ast = getCode(example);
+
+  traverse(ast, {
+    TSTypeAnnotation: path => {
+      path.remove();
+    },
+  });
+
+  const { code } = generate(ast);
+  return code;
+};
+
 module.exports = {
   getScope,
+  omitTypes,
 };

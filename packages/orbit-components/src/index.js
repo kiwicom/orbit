@@ -97,7 +97,7 @@ export { default as Pagination } from "./Pagination";
 export { default as Popover } from "./Popover";
 export { default as Radio } from "./Radio";
 export { default as RatingStars } from "./RatingStars";
-export { default as Seat } from "./Seat";
+export { default as Seat, SeatLegend } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Separator } from "./Separator";
 export { default as ServiceLogo } from "./ServiceLogo";

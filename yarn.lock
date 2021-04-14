@@ -1478,13 +1478,6 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
-"@gatsby-contrib/gatsby-plugin-elasticlunr-search@^2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@gatsby-contrib/gatsby-plugin-elasticlunr-search/-/gatsby-plugin-elasticlunr-search-2.4.2.tgz#79a319435cc220655080a6d462d71bb7413e4f99"
-  integrity sha512-Hz6JOE+cLEaQOubtP+gJNfNr3Ok13SLzRyadP5qotEvZxH351vYqVyMMlnRv1h8TRd3S+e4WlZ5ebjt0QLASCw==
-  dependencies:
-    elasticlunr "^0.9.5"
-
 "@graphql-tools/batch-execute@^7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.1.0.tgz#89fde91ae27c717a5f9f2fff9de8cb6efb7df956"
@@ -9910,11 +9903,6 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-elasticlunr@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/elasticlunr/-/elasticlunr-0.9.5.tgz#65541bb309dddd0cf94f2d1c8861b2be651bb0d5"
-  integrity sha1-ZVQbswnd3Qz5Ty0ciGGyvmUbsNU=
-
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.649:
   version "1.3.708"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.708.tgz#127970d2fc665ab356be59e668f2914856419176"
@@ -11891,6 +11879,11 @@ fuse.js@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.6.1.tgz#7de85fdd6e1b3377c23ce010892656385fd9b10c"
   integrity sha512-hT9yh/tiinkmirKrlv4KWOjztdoZo1mx9Qh4KvWqC7isoXwdUY3PNWUxceF4/qO9R6riA2C29jdTOeQOIROjgw==
+
+fuzzaldrin-plus@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/fuzzaldrin-plus/-/fuzzaldrin-plus-0.6.0.tgz#832f6489fbe876769459599c914a670ec22947ee"
+  integrity sha1-gy9kifvodnaUWVmckUpnDsIpR+4=
 
 gatsby-cli@^2.19.2:
   version "2.19.2"

@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Tile, TileGroup } from "@kiwicom/orbit-components";
-import { Child, Meal } from "@kiwicom/orbit-components/icons";
+import { BaggageChecked30, Child, Meal } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <TileGroup>
       <Tile
-        icon={<Icons.BaggageChecked30 />}
+        icon={<BaggageChecked30 />}
         href="https://www.kiwi.com/en/?help=%2Ffaq%2Fbaggage-131"
         external
         title="Baggage"

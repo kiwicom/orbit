@@ -3,7 +3,7 @@ import { Collapse, Text, TextLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Collapse label="Collapse principles">
+    <Collapse label="Principle for collapses">
       <Text>
         Collapse components help with{" "}
         <TextLink external href="https://orbit.kiwi/guides/progressive-disclosure/">

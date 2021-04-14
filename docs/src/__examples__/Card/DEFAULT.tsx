@@ -1,10 +1,16 @@
 import * as React from "react";
-import { Card, CardSection } from "@kiwicom/orbit-components";
+import { Card, CardSection, Inline } from "@kiwicom/orbit-components";
+import { GenderWoman } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Card title="Passenger info" description="All passengers in this itinerary">
-      <CardSection>Yasmin Karenth</CardSection>
+      <CardSection>
+        <Inline>
+          <GenderWoman ariaLabel="female" />
+          Yasmin Karenth
+        </Inline>
+      </CardSection>
     </Card>
   ),
   info: {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Airplane } from "@kiwicom/orbit-components/icons";
-import { Stack, Text } from "@kiwicom/orbit-components";
+import { Inline, Stack, Text } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
@@ -10,7 +10,9 @@ export default {
           <Stack>
             <Text>Inherited color</Text>
             <Text type="success">
-              <Airplane ariaLabel="Airplane" /> Price alerts
+              <Inline>
+                <Airplane ariaLabel="Airplane" /> Price alerts
+              </Inline>
             </Text>
           </Stack>
         </Stack>

@@ -1,6 +1,12 @@
 import * as React from "react";
 import { Heading, Stack, ButtonLink } from "@kiwicom/orbit-components";
-import { ChevronDown, ChevronRight, Edit, PlusCircle, Visibility } from "@kiwicom/orbit-components/icons";
+import {
+  ChevronDown,
+  ChevronRight,
+  Edit,
+  PlusCircle,
+  Visibility,
+} from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (

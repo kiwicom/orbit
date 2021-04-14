@@ -5,11 +5,7 @@ import { GenderMan, GenderWoman } from "@kiwicom/orbit-components/icons";
 export default {
   Example: () => (
     <Card title="Passenger info">
-      <CardSection
-        expandable
-        title="Yasmin Karenth"
-        icon={<GenderWoman ariaLabel="female" />}
-      >
+      <CardSection expandable title="Yasmin Karenth" icon={<GenderWoman ariaLabel="female" />}>
         <Stack direction="column" spacing="XSmall">
           <Text type="secondary">January 20, 1978</Text>
           <Text type="secondary">yas.karenth@example.com</Text>

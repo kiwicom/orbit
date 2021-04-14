@@ -12,7 +12,7 @@ export default {
           },
           {
             href: "#WCAG",
-            name: "Got to info on Web Content Accessibility Guidelines",
+            name: "Go to info on Web Content Accessibility Guidelines",
           },
         ]}
       />

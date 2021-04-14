@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Airplane, Passengers } from "@kiwicom/orbit-components/icons";
-import { Stack, Text } from "@kiwicom/orbit-components";
+import { Inline, Stack, Text } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Stack>
-      <Text>
-        <Passengers ariaLabel="Passengers" /> 4
-      </Text>
-      <Text>
-        <Airplane ariaHidden /> Flights
-      </Text>
+      <Inline>
+        <Passengers ariaLabel="Passengers" /> <Text>4</Text>
+      </Inline>
+      <Inline>
+        <Airplane ariaHidden /> <Text>Flights</Text>
+      </Inline>
     </Stack>
   ),
   info: {

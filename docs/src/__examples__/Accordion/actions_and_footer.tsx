@@ -98,6 +98,13 @@ export default {
               </Inline>
             </Heading>
           }
+          footer={
+            <Stack justify="center">
+              <ButtonLink type="primary" onClick={() => setExpandedSection("inbound")}>
+                Continue to next segment
+              </ButtonLink>
+            </Stack>
+          }
         >
           <SeatMap direction="outbound" />
         </AccordionSection>
@@ -116,6 +123,13 @@ export default {
                 Barcelona
               </Inline>
             </Heading>
+          }
+          footer={
+            <Stack justify="center">
+              <ButtonLink type="secondary" onClick={() => setExpandedSection("outbound")}>
+                Back to previous segment
+              </ButtonLink>
+            </Stack>
           }
         >
           <SeatMap direction="inbound" />

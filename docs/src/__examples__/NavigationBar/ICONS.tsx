@@ -1,6 +1,12 @@
 import * as React from "react";
 import { NavigationBar, ButtonLink, Stack, CountryFlag } from "@kiwicom/orbit-components";
-import { Accommodation, AccountCircle, AirplaneTakeoff, Partners, QuestionCircle } from "@kiwicom/orbit-components/icons";
+import {
+  Accommodation,
+  AccountCircle,
+  AirplaneTakeoff,
+  Partners,
+  QuestionCircle,
+} from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (

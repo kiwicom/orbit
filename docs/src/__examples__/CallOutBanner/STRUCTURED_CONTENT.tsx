@@ -29,9 +29,7 @@ export default {
     >
       <List type="secondary">
         <ListItem icon={<Check color="success" />}>50% off</ListItem>
-        <ListItem icon={<Check color="success" />}>
-          From budget deals to ultimate luxury
-        </ListItem>
+        <ListItem icon={<Check color="success" />}>From budget deals to ultimate luxury</ListItem>
       </List>
     </CallOutBanner>
   ),

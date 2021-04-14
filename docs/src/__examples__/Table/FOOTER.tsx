@@ -7,7 +7,7 @@ import {
   TableHead,
   TableFooter,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { FlightReturn } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -25,19 +25,19 @@ export default {
       <TableBody>
         <TableRow>
           <TableCell align="left">
-            Madrid <Icons.FlightReturn /> Moscow
+            Madrid <FlightReturn /> Moscow
           </TableCell>
           <TableCell align="left">€197</TableCell>
         </TableRow>
         <TableRow>
           <TableCell align="left">
-            Barcelona <Icons.FlightReturn /> Istanbul
+            Barcelona <FlightReturn /> Istanbul
           </TableCell>
           <TableCell align="left">€184</TableCell>
         </TableRow>
         <TableRow>
           <TableCell align="left">
-            Valencia <Icons.FlightReturn /> Dubai
+            Valencia <FlightReturn /> Dubai
           </TableCell>
           <TableCell align="left">€475</TableCell>
         </TableRow>

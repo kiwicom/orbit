@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Popover, Slider } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { ChevronDown } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -8,7 +8,7 @@ export default {
       content={<Slider label="Volume" minValue={0} maxValue={100} defaultValue={33} />}
       width="320px"
     >
-      <Button iconRight={<Icons.ChevronDown ariaLabel="Open slider" />}>Volume</Button>
+      <Button iconRight={<ChevronDown ariaLabel="Open slider" />}>Volume</Button>
     </Popover>
   ),
   info: {

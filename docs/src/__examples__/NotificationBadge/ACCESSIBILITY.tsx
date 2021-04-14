@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Train } from "@kiwicom/orbit-components/icons";
 import { NotificationBadge } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <NotificationBadge ariaLabel="Train" icon={<Icons.Train />} type="info" />,
+  Example: () => <NotificationBadge ariaLabel="Train" icon={<Train />} type="info" />,
   info: {
     title: "Accessibility",
     description:

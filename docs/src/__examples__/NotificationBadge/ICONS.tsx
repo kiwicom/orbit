@@ -1,14 +1,14 @@
 import * as React from "react";
 import { NotificationBadge, Stack } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Train } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
     <Stack>
-      <NotificationBadge ariaLabel="Train" type="info" icon={<Icons.Train />}>
+      <NotificationBadge ariaLabel="Train" type="info" icon={<Train />}>
         Train
       </NotificationBadge>
-      <NotificationBadge ariaLabel="Train" type="info" icon={<Icons.Train />} />
+      <NotificationBadge ariaLabel="Train" type="info" icon={<Train />} />
     </Stack>
   ),
   info: {

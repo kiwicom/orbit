@@ -1,5 +1,12 @@
 import * as React from "react";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import {
+  Airplane,
+  BaggageCabin,
+  BaggageChecked30,
+  Bus,
+  FlightDirect,
+  Train,
+} from "@kiwicom/orbit-components/icons";
 import {
   Tag,
   Badge,
@@ -30,7 +37,7 @@ export default {
       <Stack>
         <Stack direction="row" spacing="small">
           <Text>Amsterdam</Text>
-          <Icons.FlightDirect ariaLabel="to" />
+          <FlightDirect ariaLabel="to" />
           <Text>Barcelona</Text>
         </Stack>
         <Stack direction="row" spacing="small">
@@ -140,14 +147,14 @@ export default {
               <Stack flex align="center">
                 <Text>Excellent flight</Text>
                 <StopoverArrow stops="0" />
-                <Icons.Airplane ariaLabel="Plane" />
+                <Airplane ariaLabel="Plane" />
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageCabin ariaLabel="cabin bag" />
+                  <BaggageCabin ariaLabel="cabin bag" />
                 </Stack>
                 <Stack inline>
                   <Text>Up to 2</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bags" />
+                  <BaggageChecked30 ariaLabel="checked bags" />
                 </Stack>
               </Stack>
             }
@@ -159,14 +166,14 @@ export default {
               <Stack flex align="center">
                 <Text>Awesome train ride</Text>
                 <StopoverArrow stops="1" />
-                <Icons.Train ariaLabel="Train" />
+                <Train ariaLabel="Train" />
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageCabin ariaLabel="cabin bag" />
+                  <BaggageCabin ariaLabel="cabin bag" />
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
+                  <BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }
@@ -178,14 +185,14 @@ export default {
               <Stack flex align="center">
                 <Text>Smooth bus ride</Text>
                 <StopoverArrow stops="2" />
-                <Icons.Bus ariaLabel="Bus" />
+                <Bus ariaLabel="Bus" />
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageCabin ariaLabel="cabin bag" />
+                  <BaggageCabin ariaLabel="cabin bag" />
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
+                  <BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }

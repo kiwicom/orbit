@@ -1,7 +1,7 @@
 import * as React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { AirplaneTakeoff } from "@kiwicom/orbit-components/icons";
 import ButtonPrimitive from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 
 export default {
@@ -18,14 +18,14 @@ export default {
         </Text>
         <Stack flex>
           <ButtonPrimitive
-            iconLeft={<Icons.AirplaneTakeoff />}
+            iconLeft={<AirplaneTakeoff />}
             background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
             foreground={defaultTheme.orbit.colorTextWhite}
           >
             Click me
           </ButtonPrimitive>
           <ButtonPrimitive
-            iconLeft={<Icons.AirplaneTakeoff />}
+            iconLeft={<AirplaneTakeoff />}
             background="url(https://images.kiwi.com/photos/60x60/paris_fr.jpg)"
             foreground={defaultTheme.orbit.colorTextWhite}
           >
@@ -47,7 +47,7 @@ export default {
                 Hover
               </Heading>
               <ButtonPrimitive
-                iconLeft={<Icons.AirplaneTakeoff />}
+                iconLeft={<AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundHover={defaultTheme.orbit.backgroundButtonSecondary}
                 foreground={defaultTheme.orbit.colorTextWhite}
@@ -61,7 +61,7 @@ export default {
                 Focus
               </Heading>
               <ButtonPrimitive
-                iconLeft={<Icons.AirplaneTakeoff />}
+                iconLeft={<AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundFocus={defaultTheme.orbit.backgroundButtonSecondary}
                 foreground={defaultTheme.orbit.colorTextWhite}
@@ -75,7 +75,7 @@ export default {
                 Active
               </Heading>
               <ButtonPrimitive
-                iconLeft={<Icons.AirplaneTakeoff />}
+                iconLeft={<AirplaneTakeoff />}
                 background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
                 backgroundActive={defaultTheme.orbit.backgroundButtonSecondary}
                 foreground={defaultTheme.orbit.colorTextWhite}

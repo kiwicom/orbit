@@ -8,11 +8,11 @@ import {
   ModalSection,
   ModalHeader,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { BaggagePersonal, KiwicomGuarantee, Visa } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
-    const [showModal, setShowModal] = React.useState(true);
+    const [showModal, setShowModal] = React.useState(false);
     return (
       <>
         {showModal && (
@@ -25,7 +25,7 @@ export default {
             <ModalSection suppressed>
               <Stack direction="column" spacing="large">
                 <Stack flex>
-                  <Icons.BaggagePersonal ariaHidden />
+                  <BaggagePersonal ariaHidden />
                   <Heading as="h3" type="title3">
                     Personal item only
                   </Heading>
@@ -39,7 +39,7 @@ export default {
             <ModalSection>
               <Stack direction="column" spacing="large">
                 <Stack flex>
-                  <Icons.Visa ariaHidden />
+                  <Visa ariaHidden />
                   <Heading as="h3" type="title3">
                     Visas needed
                   </Heading>
@@ -53,7 +53,7 @@ export default {
             <ModalSection suppressed>
               <Stack direction="column" spacing="large">
                 <Stack flex>
-                  <Icons.KiwicomGuarantee ariaHidden />
+                  <KiwicomGuarantee ariaHidden />
                   <Heading as="h3" type="title3">
                     Kiwi.com Guarantee
                   </Heading>

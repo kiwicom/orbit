@@ -10,7 +10,7 @@ import {
   Text,
   Tooltip,
 } from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
+import { Check, Close } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -23,17 +23,17 @@ export default {
         price="$349"
       >
         <List type="secondary">
-          <ListItem icon={<Icons.Check color="success" size="small" />} label="Kiwi.com services">
+          <ListItem icon={<Check color="success" size="small" />} label="Kiwi.com services">
             <Tooltip content="Extra info about basic services" stopPropagation>
               <Text>Basic</Text>
             </Tooltip>
           </ListItem>
-          <ListItem icon={<Icons.Close color="critical" size="small" />} label="Rebooking">
+          <ListItem icon={<Close color="critical" size="small" />} label="Rebooking">
             <Tooltip content="Extra info about rebooking" stopPropagation>
               <Text>New ticket</Text>
             </Tooltip>
           </ListItem>
-          <ListItem icon={<Icons.Close color="critical" size="small" />} label="Cancelation">
+          <ListItem icon={<Close color="critical" size="small" />} label="Cancelation">
             <Text>$10 refund</Text>
           </ListItem>
         </List>
@@ -47,17 +47,17 @@ export default {
         price="$595"
       >
         <List type="secondary">
-          <ListItem icon={<Icons.Check color="success" size="small" />} label="Kiwi.com services">
+          <ListItem icon={<Check color="success" size="small" />} label="Kiwi.com services">
             <Tooltip content="Extra info about basic services" stopPropagation>
               <Text>Extended</Text>
             </Tooltip>
           </ListItem>
-          <ListItem icon={<Icons.Check color="success" size="small" />} label="Rebooking">
+          <ListItem icon={<Check color="success" size="small" />} label="Rebooking">
             <Tooltip content="Extra info about rebooking" stopPropagation>
               <Text>Pay the difference</Text>
             </Tooltip>
           </ListItem>
-          <ListItem icon={<Icons.Check color="success" size="small" />} label="Cancelation">
+          <ListItem icon={<Check color="success" size="small" />} label="Cancelation">
             <Text>90% refund</Text>
           </ListItem>
         </List>

@@ -3,7 +3,7 @@ import { Button, Modal, ModalSection } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
-    const [showModal, setShowModal] = React.useState(true);
+    const [showModal, setShowModal] = React.useState(false);
     return (
       <>
         {showModal && (

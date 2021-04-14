@@ -12,7 +12,7 @@ import {
 
 export default {
   Example: () => {
-    const [showModal, setShowModal] = React.useState(true);
+    const [showModal, setShowModal] = React.useState(false);
     const [localScrollPosition, setLocalScrollPosition] = React.useState<number | null>(0);
     const modalRef = React.useRef<React.ElementRef<typeof Modal> | null>(null);
 

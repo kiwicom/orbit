@@ -17,6 +17,7 @@ import typeof ButtonLinkType from "./ButtonLink";
 import typeof ButtonMobileStoreType from "./ButtonMobileStore";
 import typeof ButtonPrimitiveType from "./primitives/ButtonPrimitive";
 import typeof ButtonType from "./Button";
+import typeof calculateCountOfType from "./Slider/utils/calculateCountOf";
 import typeof CallOutBannerType from "./CallOutBanner";
 import typeof CardSectionType from "./Card/CardSection";
 import typeof CardType from "./Card";
@@ -174,6 +175,7 @@ declare export var Portal: PortalType;
 declare export var Sticky: StickyType;
 
 declare export var Slider: SliderType;
+declare export var calculateCountOf: calculateCountOfType;
 
 declare export var NavigationBar: NavigationBarType;
 declare export var Drawer: DrawerType;

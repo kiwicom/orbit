@@ -1,7 +1,6 @@
 import * as React from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
-import { StyleSheetManager } from "styled-components";
-import styled, { css } from "styled-components";
+import styled, { StyleSheetManager, css } from "styled-components";
 import { LivePreview } from "react-live";
 
 type BgType = "white" | "dark" | "grid";
@@ -57,13 +56,11 @@ const Preview = ({ background = "white" }: Props) => {
   return (
     <StyledFrame background={background}>
       <FrameContextConsumer>
-        {({ document }) => {
-          return (
-            <StyleSheetManager target={document.head}>
-              <StyledPreview />
-            </StyleSheetManager>
-          );
-        }}
+        {({ document }) => (
+          <StyleSheetManager target={document.head}>
+            <StyledPreview />
+          </StyleSheetManager>
+        )}
       </FrameContextConsumer>
     </StyledFrame>
   );

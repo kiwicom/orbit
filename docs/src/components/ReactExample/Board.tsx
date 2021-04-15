@@ -1,10 +1,10 @@
 import React from "react";
 import { Stack, ButtonLink, Tooltip } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import styled from "styled-components";
+
 import Copy from "../../images/copy.svg";
-import { copyTimeout } from "../../utils/common";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 const StyledBoard = styled.div`
   ${({ theme }) => `
@@ -21,11 +21,7 @@ interface Props {
 }
 
 const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
-  const [isCopied, setCopied] = React.useState(false);
-
-  React.useEffect(() => {
-    copyTimeout(isCopied, setCopied);
-  }, [isCopied, setCopied]);
+  const [isCopied, copy] = useCopyToClipboard();
 
   return (
     <StyledBoard>
@@ -49,21 +45,19 @@ const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
           </ButtonLink>
         </Stack>
         <Stack inline justify="end" align="center">
-          <CopyToClipboard text={code}>
-            <Tooltip
-              preferredPosition="top"
-              preferredAlign="center"
-              content={isCopied ? "copied" : "copy to clipboard"}
+          <Tooltip
+            preferredPosition="top"
+            preferredAlign="center"
+            content={isCopied ? "copied" : "copy to clipboard"}
+          >
+            <ButtonLink
+              onClick={() => copy(code)}
+              type="secondary"
+              ariaLabelledby="copy to clipboard"
             >
-              <ButtonLink
-                onClick={() => setCopied(true)}
-                type="secondary"
-                ariaLabelledby="copy to clipboard"
-              >
-                <Copy />
-              </ButtonLink>
-            </Tooltip>
-          </CopyToClipboard>
+              <Copy />
+            </ButtonLink>
+          </Tooltip>
         </Stack>
       </Stack>
     </StyledBoard>

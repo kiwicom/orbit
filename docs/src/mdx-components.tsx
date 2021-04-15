@@ -152,6 +152,10 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
 
 export const inlineCode = InlineCode;
 
+const isKeyboardEvent = (e): e is React.KeyboardEvent => {
+  return (e as React.KeyboardEvent).getModifierState !== undefined;
+};
+
 export const a = function Anchor({
   children,
   href,
@@ -180,11 +184,13 @@ export const a = function Anchor({
         href={href}
         external={isExternal}
         iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
-        onClick={event => {
+        onClick={(event: React.SyntheticEvent<HTMLLinkElement>) => {
           if (isExternal || !href) return;
 
           // Allows opening in a new tab with ctrl/cmd + click
-          if (event.metaKey || event.ctrlKey) return;
+          if (isKeyboardEvent(event)) {
+            if (event.metaKey || event.ctrlKey) return;
+          }
 
           event.preventDefault();
           navigate(href);

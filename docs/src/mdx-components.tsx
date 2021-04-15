@@ -174,6 +174,10 @@ export const a = function Anchor({
         iconRight={isExternal && <NewWindow />}
         onClick={event => {
           if (isExternal || !href) return;
+
+          // Allows opening in a new tab with ctrl/cmd + click
+          if (event.metaKey || event.ctrlKey) return;
+
           event.preventDefault();
           navigate(href);
         }}

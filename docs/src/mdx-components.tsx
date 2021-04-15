@@ -166,6 +166,13 @@ export const a = function Anchor({
           line-height: normal;
           /* TextLink's display as inline-flex cause long links to break paragraphs */
           display: inherit;
+          /* Ensure the icon stays inline */
+          span {
+            display: inline;
+            svg {
+              display: inline;
+            }
+          }
         }
       `}
     >

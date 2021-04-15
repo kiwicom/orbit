@@ -1,23 +1,33 @@
 import React from "react";
 import { LiveProvider, LiveEditor } from "react-live";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import dracula from "prism-react-renderer/themes/dracula";
 import * as Components from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
 import Board from "./Board";
 import Preview from "./Preview";
+import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
-interface Props {
-  exampleId: string;
+interface Scope {
+  name: string;
+  path: string;
+  default: boolean;
 }
 
-const StyledExampleWrapper = styled.div`
-  ${({ theme }) => `
-    box-shadow: ${theme.orbit.boxShadowRaised};
-    border-radius: ${theme.orbit.borderRadiusLarge};
-  `}
-`;
+interface Props {
+  data: {
+    file: {
+      id: string;
+
+      fields: {
+        example_id: string;
+        example: string;
+        scope: Scope[];
+      };
+    };
+  };
+}
 
 const StyledEditor = styled(LiveEditor)`
   ${({ theme }) => `
@@ -25,37 +35,10 @@ const StyledEditor = styled(LiveEditor)`
   `};
 `;
 
-const ReactExample = ({ exampleId }: Props) => {
+export default function Example({ data }: Props) {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
 
-  const { allFile } = useStaticQuery(
-    graphql`
-      query ExamplesQuery {
-        allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
-          nodes {
-            id
-            relativePath
-            fields {
-              example_id
-              example
-              scope {
-                name
-                path
-                default
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
-
-  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
-
-  if (!example)
-    return <Components.Text>{`Could not find example with the id: ${exampleId}`}</Components.Text>;
-
-  const { fields } = example;
+  const { fields } = data.file;
 
   const modules = fields.scope.reduce((acc, { name: moduleName, path }) => {
     if (path.match(/@kiwicom\/orbit-components\/icons/)) {
@@ -64,7 +47,6 @@ const ReactExample = ({ exampleId }: Props) => {
         [moduleName]: Icons[moduleName],
       };
     }
-
     return {
       ...acc,
       [moduleName]: Components[moduleName],
@@ -79,8 +61,8 @@ const ReactExample = ({ exampleId }: Props) => {
     .join("\n");
 
   return (
-    <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
-      <StyledExampleWrapper>
+    <Components.ThemeProvider theme={defaultTheme}>
+      <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
         <Preview />
         <Board
           isEditorOpened={isEditorOpened}
@@ -88,9 +70,24 @@ const ReactExample = ({ exampleId }: Props) => {
           code={[scopeOutput, fields.example].join("\n\n")}
         />
         {isEditorOpened && <StyledEditor />}
-      </StyledExampleWrapper>
-    </LiveProvider>
+      </LiveProvider>
+    </Components.ThemeProvider>
   );
-};
+}
 
-export default ReactExample;
+export const query = graphql`
+  query($id: String) {
+    file(id: { eq: $id }) {
+      id
+      fields {
+        example
+        example_id
+        scope {
+          path
+          default
+          name
+        }
+      }
+    }
+  }
+`;

@@ -57,11 +57,13 @@ const Preview = ({ background = "white" }: Props) => {
   return (
     <StyledFrame background={background}>
       <FrameContextConsumer>
-        {({ document }) => (
-          <StyleSheetManager target={document.head}>
-            <StyledPreview />
-          </StyleSheetManager>
-        )}
+        {({ document }) => {
+          return (
+            <StyleSheetManager target={document.head}>
+              <StyledPreview />
+            </StyleSheetManager>
+          );
+        }}
       </FrameContextConsumer>
     </StyledFrame>
   );

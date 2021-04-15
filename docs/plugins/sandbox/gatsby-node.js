@@ -1,4 +1,5 @@
 const { getScope, omitTypes } = require("./helpers");
+const path = require("path");
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
   if (node.sourceInstanceName === "examples" && node.internal.type === "File") {
@@ -33,4 +34,39 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
       value,
     });
   }
+};
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
+        nodes {
+          id
+          relativePath
+          fields {
+            example_id
+            example
+            scope {
+              name
+              path
+              default
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  result.data.allFile.nodes.forEach(({ id, fields, relativePath }) => {
+    createPage({
+      path: `examples/${fields.example_id}`.toLowerCase(),
+      component: path.resolve(path.resolve(__dirname, "../../src/templates/Example/index.tsx")),
+      context: {
+        fields,
+        id,
+      },
+    });
+  });
 };

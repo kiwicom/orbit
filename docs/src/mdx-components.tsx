@@ -157,6 +157,7 @@ export const a = function Anchor({
   href,
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isExternal = useIsUrlExternal(href);
+  const useExternalIcon = isExternal && typeof children === "string";
   return (
     <span
       css={css`
@@ -171,7 +172,7 @@ export const a = function Anchor({
       <TextLink
         href={href}
         external={isExternal}
-        iconRight={isExternal && <NewWindow />}
+        iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
         onClick={event => {
           if (isExternal || !href) return;
 

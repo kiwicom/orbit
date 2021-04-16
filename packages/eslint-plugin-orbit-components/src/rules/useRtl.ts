@@ -8,7 +8,7 @@ export const ERROR_BORDER_RADIUS =
   "border-radius edge values are different. Use borderRadius utility.";
 
 export const errorBasic =
-  "Values for right and left edges are different. Use Orbit's rtl utility. https://orbit.kiwi/utilities/right-to-left-languages/#right";
+  "Values for right and left edges are different. Use Orbit's rtl utility. https://orbit.kiwi/utilities/right-to-left-languages";
 
 const parseVals = str =>
   str

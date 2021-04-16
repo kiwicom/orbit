@@ -16,14 +16,12 @@ import {
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
-import StyledWrapper from "./primitives/StyledWrapper";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
 import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
 
 interface Props {
-  placeholder: string;
   onClose: () => void;
 }
 
@@ -55,8 +53,7 @@ const StyledModalWrapper = styled.div`
     }
   `)}
 `;
-const StyledSearchWrapper = styled(StyledWrapper)`
-  max-width: none;
+const StyledSearchWrapper = styled.div`
   margin-bottom: 1rem;
   font-size: 1rem;
 `;
@@ -66,7 +63,7 @@ const StyledSearchInput = styled(StyledInput)`
   text-overflow: ellipsis;
 `;
 
-export default function SearchModal({ placeholder, onClose }: Props) {
+export default function SearchModal({ onClose }: Props) {
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const data: QueryResponse = useStaticQuery(graphql`
     query Documents {
@@ -112,7 +109,9 @@ export default function SearchModal({ placeholder, onClose }: Props) {
     };
   }, []);
 
-  const { isLargeMobile } = useMediaQuery();
+  const { isLargeMobile, isTablet } = useMediaQuery();
+  // so it doesn't cause horizontal overflow
+  const placeholder = isTablet ? "Search…" : "Search for components, foundation…";
 
   function getItemTitle(item: SearchResult): string {
     return item.breadcrumbs.join(" / ");

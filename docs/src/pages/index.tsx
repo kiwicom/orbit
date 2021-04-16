@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack } from "@kiwicom/orbit-components";
-import { NewWindow } from "@kiwicom/orbit-components/icons";
+import { Heading, Inline, Stack, Button } from "@kiwicom/orbit-components";
+import { NewWindow, Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
-import SearchInput from "../components/SearchInput";
+import Search from "../components/Search";
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
@@ -49,6 +49,7 @@ interface Props {
 }
 
 export default function Home({ location }: Props) {
+  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   return (
     <Layout location={location}>
       <RocketImage />
@@ -93,7 +94,25 @@ export default function Home({ location }: Props) {
               >
                 Get started
               </ButtonLink>
-              <SearchInput size="large" />
+              <div
+                css={css`
+                  button {
+                    /* to match the height of the ButtonLink above */
+                    height: 64px;
+                  }
+                `}
+              >
+                <Button
+                  size="large"
+                  circled
+                  iconLeft={<SearchIcon />}
+                  type="primarySubtle"
+                  onClick={() => setSearchOpen(true)}
+                >
+                  Search…
+                </Button>
+                {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
+              </div>
             </Inline>
           </div>
         </>

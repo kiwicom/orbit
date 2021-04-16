@@ -12,7 +12,7 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-import { navigate } from "gatsby";
+import { Link } from "gatsby";
 import { css } from "styled-components";
 
 import HeadingWithLink from "./components/HeadingWithLink";
@@ -152,9 +152,9 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
 
 export const inlineCode = InlineCode;
 
-const isKeyboardEvent = (e): e is React.KeyboardEvent => {
-  return (e as React.KeyboardEvent).getModifierState !== undefined;
-};
+const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
+  <Link to={href} {...props} />
+);
 
 export const a = function Anchor({
   children,
@@ -181,20 +181,11 @@ export const a = function Anchor({
       `}
     >
       <TextLink
+        // @ts-expect-error type declaration is not permissive enough
+        asComponent={isExternal ? "a" : LinkForOrbitTextLink}
         href={href}
         external={isExternal}
         iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
-        onClick={(event: React.SyntheticEvent<HTMLLinkElement>) => {
-          if (isExternal || !href) return;
-
-          // Allows opening in a new tab with ctrl/cmd + click
-          if (isKeyboardEvent(event)) {
-            if (event.metaKey || event.ctrlKey) return;
-          }
-
-          event.preventDefault();
-          navigate(href);
-        }}
       >
         {children}
       </TextLink>

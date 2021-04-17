@@ -151,7 +151,7 @@ describe("use-rtl", () => {
             text-align: left;
           \`
         `,
-        errors: [errorBasic("text-align", "left")],
+        errors: [errorBasic],
       },
       {
         code: `
@@ -161,7 +161,7 @@ describe("use-rtl", () => {
             right: 0;
           \`
         `,
-        errors: [errorBasic("right", "0")],
+        errors: [errorBasic],
       },
       {
         code: `
@@ -171,7 +171,7 @@ describe("use-rtl", () => {
             left: 0;
           \`
         `,
-        errors: [errorBasic("left", "0")],
+        errors: [errorBasic],
       },
       {
         code: `
@@ -181,7 +181,7 @@ describe("use-rtl", () => {
             transform: translate3d("400px, 0, 0");
           \`
         `,
-        errors: [errorBasic("transform", 'translate3d("400px, 0, 0")')],
+        errors: [errorBasic],
       },
     ],
   });

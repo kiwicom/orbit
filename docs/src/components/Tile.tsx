@@ -11,6 +11,7 @@ export const ICON_SIZE = "2rem";
 interface Props {
   icon?: boolean;
   title: string;
+  fullWidth?: boolean;
   linkContent?: React.ReactNode;
   href?: string;
   children?: React.ReactNode;
@@ -48,7 +49,14 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Tile({ href, icon, linkContent, title, children }: Props) {
+export default function Tile({
+  href,
+  icon,
+  linkContent,
+  title,
+  children,
+  fullWidth = true,
+}: Props) {
   const theme = useTheme();
 
   return (
@@ -59,6 +67,7 @@ export default function Tile({ href, icon, linkContent, title, children }: Props
         background: ${theme.orbit.paletteWhite};
         box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
+        width: ${fullWidth && "100%"};
         ${children
           ? css`
               flex-direction: column;

@@ -12,7 +12,7 @@ export default {
         ref.current.focus();
       }
     });
-    return <Radio label="Allow notifications" ref={ref} />;
+    return <Radio label="Allow notifications" ref={ref} readOnly />;
   },
   info: {
     title: "References",

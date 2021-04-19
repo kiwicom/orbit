@@ -16,7 +16,7 @@ export default {
     return (
       <Stack>
         {Object.values(SPACINGS).map((spacing: any) => (
-          <Stack>
+          <Stack key={spacing}>
             <Heading as="h3" type="title3">
               <code>{spacing}</code> {spacing === SPACINGS.MEDIUM && `(the default) `}
             </Heading>

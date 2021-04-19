@@ -104,14 +104,14 @@ describe("InputField", () => {
 
   describe("compact", () => {
     it("should render label", () => {
-      render(<InputField label="Label" inlineLabel />);
+      render(<InputField label="Label" readOnly inlineLabel />);
       expect(screen.getByText("Label")).toBeInTheDocument();
     });
   });
 
   describe("required", () => {
     it("should render asterisk", () => {
-      render(<InputField label="Label" required />);
+      render(<InputField label="Label" readOnly required />);
       expect(screen.getByText(/\*/)).toBeInTheDocument();
     });
   });
@@ -123,6 +123,7 @@ describe("InputField", () => {
           type="number"
           minValue={1}
           maxValue={5}
+          readOnly
           help={<div data-test="help">Everything is fine.</div>}
           error={<div data-test="error">Something went wrong.</div>}
         />,

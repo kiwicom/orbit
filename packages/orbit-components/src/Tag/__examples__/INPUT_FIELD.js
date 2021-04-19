@@ -36,6 +36,7 @@ export default {
       <InputField
         label="Destination"
         value=""
+        readOnly
         tags={
           <>
             {tags.london.present && addTag("london")}

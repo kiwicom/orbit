@@ -43,7 +43,7 @@
     "gatsby-remark-images": "^4.1.1",
     "gatsby-remark-smartypants": "^2.8.0",
     "gatsby-source-filesystem": "^2.6.0",
-    "gatsby-transformer-sharp": "^2.7.0",
+    "gatsby-transformer-sharp": "^3.3.0",
     "js-yaml": "^4.0.0",
     "react-live": "^2.2.3",
     "react-scrollspy": "^3.4.3",

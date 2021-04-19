@@ -177,8 +177,8 @@ export default function Home({ location }: Props) {
           `}
         >
           <Heading as="h2">Support</Heading>
-          <Stack flex direction="column" spacing="XLarge">
-            <Stack flex align="stretch">
+          <Stack flex direction="column">
+            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
               <BrandedTile
                 title="Report a bug"
                 href="https://github.com/kiwicom/orbit/issues/new/choose"
@@ -207,7 +207,7 @@ export default function Home({ location }: Props) {
                 get feedback from you.
               </BrandedTile>
             </Stack>
-            <Stack flex>
+            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
               <BrandedTile
                 title="Follow us on Twitter"
                 href="https://twitter.com/OrbitKiwi"
@@ -218,8 +218,8 @@ export default function Home({ location }: Props) {
                   secondary: "#179CE3",
                 }}
               >
-                Slack is Kiwi.com’s main platform for communication, so it’s only understandable
-                that everything important that is happening around Orbit is also on Slack.
+                Twitter is one of the main platform for sharing, everything important that is
+                happening around Orbit is published on Twitter
               </BrandedTile>
               <BrandedTile
                 title="Connect Orbit to Tequila"
@@ -234,28 +234,28 @@ export default function Home({ location }: Props) {
             </Stack>
           </Stack>
         </div>
-      </div>
 
-      <div
-        css={css`
-          > * + * {
-            margin-top: 2rem;
-          }
-        `}
-      >
-        <Heading as="h2">Resources</Heading>
-        <Tile
-          title="Figma library"
-          linkContent={<NewWindow />}
-          href="https://www.figma.com/@orbitbykiwi"
-          icon
-        />
-        <Tile
-          title="Orbit repository"
-          linkContent={<NewWindow />}
-          href="https://github.com/kiwicom/orbit"
-          icon
-        />
+        <div
+          css={css`
+            > * + * {
+              margin-top: 2rem;
+            }
+          `}
+        >
+          <Heading as="h2">Resources</Heading>
+          <Tile
+            title="Figma library"
+            linkContent={<NewWindow />}
+            href="https://www.figma.com/@orbitbykiwi"
+            icon
+          />
+          <Tile
+            title="Orbit repository"
+            linkContent={<NewWindow />}
+            href="https://github.com/kiwicom/orbit"
+            icon
+          />
+        </div>
       </div>
     </Layout>
   );

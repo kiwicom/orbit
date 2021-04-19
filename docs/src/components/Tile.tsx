@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Stack } from "@kiwicom/orbit-components";
+import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
@@ -82,12 +82,18 @@ export default function Tile({
         css={css`
           flex: 1;
           display: flex;
-          > * + * {
-            margin-left: 0.75rem;
-          }
+          ${mq.largeMobile(`
+            > * + * {
+              margin-left: 0.75rem;
+            };
+          `)};
         `}
       >
-        {icon && <TileIcon />}
+        {icon && (
+          <Hide on={["smallMobile", "mediumMobile"]}>
+            <TileIcon />
+          </Hide>
+        )}
         {children ? (
           <div>
             <TileTitle>{title}</TileTitle>

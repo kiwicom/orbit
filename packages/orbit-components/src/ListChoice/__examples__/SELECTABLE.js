@@ -68,6 +68,7 @@ export default {
             </>
           }
           label="To"
+          readOnly
           inlineLabel
           value=""
         />

@@ -28,7 +28,7 @@ export default {
         }
         noPadding
       >
-        <InputField label="To" inlineLabel value={choice} />
+        <InputField label="To" inlineLabel value={choice} readOnly />
       </Popover>
     );
   },

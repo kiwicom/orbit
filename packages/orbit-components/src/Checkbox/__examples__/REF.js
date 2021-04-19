@@ -12,7 +12,7 @@ export default {
         ref.current.focus();
       }
     });
-    return <Checkbox label="Allow notifications" ref={ref} />;
+    return <Checkbox label="Allow notifications" ref={ref} readOnly />;
   },
   info: {
     title: "References",

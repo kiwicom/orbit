@@ -24,19 +24,6 @@ export const slugify = (str: string) => {
   return "";
 };
 
-export const copyTimeout = (
-  copied: boolean,
-  setCopied: React.Dispatch<React.SetStateAction<boolean>>,
-) => {
-  if (copied) {
-    const timer = setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }
-  return undefined;
-};
-
 export const getTextFromChildren = (children?: React.ReactNode) => {
   if (typeof children === "string") return children;
   if (typeof children === "number") return children.toString();

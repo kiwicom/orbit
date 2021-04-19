@@ -2,11 +2,10 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Stack, Text } from "@kiwicom/orbit-components";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import CopyIcon from "../../images/icons/CopyIcon.svg";
-import { copyTimeout } from "../../utils/common";
 import { ColorValueShape } from "./ColorContainer";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 import { isLight } from ".";
 
@@ -32,22 +31,17 @@ const StyledButton = styled.button<ColorValueShape>`
 `;
 
 const CopyButton = ({ buttonText, colorValue, textToCopy }: CopyButtonProps) => {
-  const [copied, setCopied] = React.useState(false);
-  React.useEffect(() => {
-    copyTimeout(copied, setCopied);
-  }, [copied, setCopied]);
+  const [copied, copy] = useCopyToClipboard();
 
   return (
-    <CopyToClipboard text={textToCopy}>
-      <StyledButton colorValue={colorValue} type="button" onClick={() => setCopied(true)}>
-        <Stack direction="row" spacing="XXSmall" align="center">
-          <Text type={isLight(colorValue) ? "white" : "primary"}>
-            {copied ? "copied" : buttonText}
-          </Text>
-          {!copied && <CopyIcon />}
-        </Stack>
-      </StyledButton>
-    </CopyToClipboard>
+    <StyledButton colorValue={colorValue} type="button" onClick={() => copy(textToCopy)}>
+      <Stack direction="row" spacing="XXSmall" align="center">
+        <Text type={isLight(colorValue) ? "white" : "primary"}>
+          {copied ? "copied" : buttonText}
+        </Text>
+        {!copied && <CopyIcon />}
+      </Stack>
+    </StyledButton>
   );
 };
 

@@ -3,13 +3,12 @@ import { LiveProvider, LivePreview, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as Components from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/icons";
 import dracula from "prism-react-renderer/themes/dracula";
 
 import Copy from "../../images/copy.svg";
-import { copyTimeout } from "../../utils/common";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 interface Props {
   exampleId: string;
@@ -44,11 +43,7 @@ const ReactExample = ({ exampleId }: Props) => {
   const { ButtonLink, Stack, Text, Tooltip } = Components;
   const { ChevronUp, ChevronDown } = Icons;
   const [isOpened, setOpenEditor] = React.useState(false);
-  const [isCopied, setCopied] = React.useState(false);
-
-  React.useEffect(() => {
-    copyTimeout(isCopied, setCopied);
-  }, [isCopied, setCopied]);
+  const [isCopied, copy] = useCopyToClipboard();
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -125,21 +120,19 @@ const ReactExample = ({ exampleId }: Props) => {
               </ButtonLink>
             </Stack>
             <Stack inline justify="end" align="center">
-              <CopyToClipboard text={[scopeOutput, fields.example].join("\n\n")}>
-                <Tooltip
-                  preferredPosition="top"
-                  preferredAlign="center"
-                  content={isCopied ? "copied" : "copy to clipboard"}
+              <Tooltip
+                preferredPosition="top"
+                preferredAlign="center"
+                content={isCopied ? "copied" : "copy to clipboard"}
+              >
+                <ButtonLink
+                  onClick={() => copy([scopeOutput, fields.example].join("\n\n"))}
+                  type="secondary"
+                  ariaLabelledby="copy to clipboard"
                 >
-                  <ButtonLink
-                    onClick={() => setCopied(true)}
-                    type="secondary"
-                    ariaLabelledby="copy to clipboard"
-                  >
-                    <Copy />
-                  </ButtonLink>
-                </Tooltip>
-              </CopyToClipboard>
+                  <Copy />
+                </ButtonLink>
+              </Tooltip>
             </Stack>
           </Stack>
         </StyledBoard>

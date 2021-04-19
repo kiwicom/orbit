@@ -12,7 +12,7 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-import { navigate } from "gatsby";
+import { Link } from "gatsby";
 import { css } from "styled-components";
 
 import HeadingWithLink from "./components/HeadingWithLink";
@@ -152,11 +152,16 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
 
 export const inlineCode = InlineCode;
 
+const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
+  <Link to={href} {...props} />
+);
+
 export const a = function Anchor({
   children,
   href,
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isExternal = useIsUrlExternal(href);
+  const useExternalIcon = isExternal && typeof children === "string";
   return (
     <span
       css={css`
@@ -165,18 +170,22 @@ export const a = function Anchor({
           line-height: normal;
           /* TextLink's display as inline-flex cause long links to break paragraphs */
           display: inherit;
+          /* Ensure the icon stays inline */
+          span {
+            display: inline;
+            svg {
+              display: inline;
+            }
+          }
         }
       `}
     >
       <TextLink
+        // @ts-expect-error type declaration is not permissive enough
+        asComponent={isExternal ? "a" : LinkForOrbitTextLink}
         href={href}
         external={isExternal}
-        iconRight={isExternal && <NewWindow />}
-        onClick={event => {
-          if (isExternal || !href) return;
-          event.preventDefault();
-          navigate(href);
-        }}
+        iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
       >
         {children}
       </TextLink>

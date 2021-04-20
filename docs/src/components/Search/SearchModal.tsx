@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { useStaticQuery, graphql, navigate } from "gatsby";
-import capitalize from "capitalize";
 import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
 import {
@@ -16,6 +15,7 @@ import {
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
+import { capitalize } from "../../utils/common";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";

@@ -105,6 +105,7 @@ module.exports = {
         },
       },
       rules: {
+        "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/no-empty-function": "off",
         "no-shadow": "off",

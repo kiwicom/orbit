@@ -64,19 +64,6 @@ module.exports = {
       },
     },
     {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: ["title", "excerpt", "path"],
-        resolvers: {
-          Mdx: {
-            title: n => n.frontmatter.title,
-            excerpt: n => n.frontmatter.excerpt,
-            path: n => n.fields.slug,
-          },
-        },
-      },
-    },
-    {
       resolve: "gatsby-redirect-from",
       options: {
         query: "allMdx",

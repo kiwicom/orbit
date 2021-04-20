@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.ul<{ hasResults?: boolean }>`
-  ${({ hasResults = false }) => `
+  ${({ hasResults }) => `
     padding-top: ${hasResults ? "2rem" : "1rem"};
   `}
 `;

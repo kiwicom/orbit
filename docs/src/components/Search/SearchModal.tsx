@@ -57,11 +57,6 @@ const StyledSearchWrapper = styled.div`
   margin-bottom: 1rem;
   font-size: 1rem;
 `;
-const StyledSearchInput = styled(StyledInput)`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
 
 export default function SearchModal({ onClose }: Props) {
   const [results, setResults] = React.useState<SearchResult[]>([]);
@@ -158,7 +153,7 @@ export default function SearchModal({ onClose }: Props) {
                 <StyledPrefix>
                   <SearchIcon />
                 </StyledPrefix>
-                <StyledSearchInput
+                <StyledInput
                   {...getInputProps({
                     ref: inputRef,
                     type: "search",

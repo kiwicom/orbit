@@ -23,6 +23,7 @@ export { ChoiceGroup } from "./ChoiceGroup/index";
 export { CountryFlag } from "./CountryFlag/index";
 export { Collapse } from "./Collapse/index";
 export { CarrierLogo } from "./CarrierLogo/index";
+export { default as defaultTheme } from "./defaultTheme";
 export { DestinationHeader } from "./deprecated/DestinationHeader/index";
 export { DestinationCard } from "./deprecated/DestinationCard/index";
 export { DeprecatedSeat } from "./deprecated/Seat/index";

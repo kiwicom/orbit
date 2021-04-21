@@ -27,7 +27,7 @@
     "dev:docs": "yarn workspace @kiwicom/orbit.kiwi dev",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:deploy": "yarn install --frozen-lockfile && yarn bootstrap && yarn build && yarn orbit-kiwi build"
+    "orbit-kiwi:build": "yarn install --frozen-lockfile && yarn bootstrap && yarn build && yarn orbit-kiwi build"
   },
   "husky": {
     "hooks": {

@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.113.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.112.0...@kiwicom/orbit-components@0.113.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* add TypeScript definition of getTokens ([267109a](https://github.com/kiwicom/orbit/commit/267109aa0680f48756bda7c6e87827d500a066ca))
+* add typescript export of defaultTheme ([1047b61](https://github.com/kiwicom/orbit/commit/1047b6117fb705943caeaf64b509a285100ad0b4))
+* export SeatLegend ([576027f](https://github.com/kiwicom/orbit/commit/576027fcca81b72c0b5a968ecef5e5b034a0cc98))
+* update React peer dependency versions ([#2898](https://github.com/kiwicom/orbit/issues/2898)) ([b841f2d](https://github.com/kiwicom/orbit/commit/b841f2d05a96dc023338b527d46910a2d61b2e5f))
+* **Breadcrumbs:** missing action in default story ([#2884](https://github.com/kiwicom/orbit/issues/2884)) ([683bd86](https://github.com/kiwicom/orbit/commit/683bd86a37e15fb89368621ae45604842c0f6a6a))
+* **docs:** escape pipe in Alert button props table ([f50485f](https://github.com/kiwicom/orbit/commit/f50485f91a29af1460af8dbd429b078c1e8ba7bb))
+* **useBoundingRect:** fix TypeScript declaration ([#2875](https://github.com/kiwicom/orbit/issues/2875)) ([371b30d](https://github.com/kiwicom/orbit/commit/371b30dbdff3fe96d1a2b8c2ead88e1f24288f8a))
+
+
+### Features
+
+* add export of calculateCountOf ([6ac26ff](https://github.com/kiwicom/orbit/commit/6ac26ff591e332e7ea680d9feb845ad264fb9b0e))
+* **docs:** update guidance on notification badges ([f5b0da7](https://github.com/kiwicom/orbit/commit/f5b0da7660d3f7b03294bc882667c10273114ee5))
+
+
+### BREAKING CHANGES
+
+* **useBoundingRect:** In TypeScript `useBoundingRect` now requires a type
+parameter based on which HTML element it measures:
+
+```tsx
+function App() {
+  const [dimensions, ref] = useBoundingRect<HTMLDivElement>();
+  return <div ref={ref} />;
+}
+```
+
+
+
+
+
 # [0.112.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.1...@kiwicom/orbit-components@0.112.0) (2021-04-07)
 
 

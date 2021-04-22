@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.9.0...@kiwicom/orbit.kiwi@0.10.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* **docs:** external icon only for text links ([54441c6](https://github.com/kiwicom/orbit/commit/54441c6e77739cb32b2aa0ab96175159de5af2b3))
+* **docs:** keep external icon inline with link ([2fcb023](https://github.com/kiwicom/orbit/commit/2fcb023d374d56999deaf84cf6bdf5f78eeee3ec))
+* **docs:** proper image and placement ([d4c46c5](https://github.com/kiwicom/orbit/commit/d4c46c535574ad85afbb616e2383fcd8bfed4c8d))
+* **docs:** simplify function use ([483eb76](https://github.com/kiwicom/orbit/commit/483eb769e0a2ccfad14311cbb89b3427c21e0bae))
+* **docs:** type of keyboard event ([8312dba](https://github.com/kiwicom/orbit/commit/8312dbaa6ea00ba426748d6062e74d855f083054))
+* allow opening internal links in new tabs ([7d665be](https://github.com/kiwicom/orbit/commit/7d665be549a0c0cd3258b4b8b59c981df6a93a91))
+* **docs:** update icon imports in examples ([e900980](https://github.com/kiwicom/orbit/commit/e900980c153ab6c6a1a13974264f84b90703e9ce))
+* **examples:** omit types for react-live ([#2889](https://github.com/kiwicom/orbit/issues/2889)) ([f5bf525](https://github.com/kiwicom/orbit/commit/f5bf525cb78cb3309e85fb3ef0578b195d4d97eb))
+* **ReactExample:** change appearance acc to design ([#2878](https://github.com/kiwicom/orbit/issues/2878)) ([2c9dd63](https://github.com/kiwicom/orbit/commit/2c9dd630bdd20e562db1772c03e9d6f70a1d3c49))
+* orbit.kiwi layout wrapper ([#2872](https://github.com/kiwicom/orbit/issues/2872)) ([75bc7e4](https://github.com/kiwicom/orbit/commit/75bc7e423b4e39f14705f4245d78882f22e668b2))
+
+
+### Features
+
+* **docs:** add and adjust React examples ([981318c](https://github.com/kiwicom/orbit/commit/981318cd5a160a5fc18524614acea91f9081ed66))
+* **docs:** add image container ([6b63ea5](https://github.com/kiwicom/orbit/commit/6b63ea501faf73beb1d7f050774b24b6c5ba2576))
+* **docs:** add link at top of page ([b5b0cd5](https://github.com/kiwicom/orbit/commit/b5b0cd594d5975851f9c7c4d946933ef97e852fd))
+* **docs:** add redirects to old doc structure ([f32a6a0](https://github.com/kiwicom/orbit/commit/f32a6a0e81598da7e8fde9d3c6bbd0382e4d94b9))
+* **docs:** update guidance on notification badges ([f5b0da7](https://github.com/kiwicom/orbit/commit/f5b0da7660d3f7b03294bc882667c10273114ee5))
+* **hooks:** useCopyToClipboard ([42dbbc0](https://github.com/kiwicom/orbit/commit/42dbbc0033c044b2f5966e42997603783ac3c9b0))
+
+
+
+
+
 # [0.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.8.0...@kiwicom/orbit.kiwi@0.9.0) (2021-04-07)
 
 

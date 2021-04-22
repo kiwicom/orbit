@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.2.0...@kiwicom/babel-plugin-orbit-components@2.3.0) (2021-04-22)
+
+
+### Features
+
+* add export of calculateCountOf ([6ac26ff](https://github.com/kiwicom/orbit/commit/6ac26ff591e332e7ea680d9feb845ad264fb9b0e))
+
+
+
+
+
 # [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.3...@kiwicom/babel-plugin-orbit-components@2.2.0) (2021-04-07)
 
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { WindowLocation } from "@reach/router";
 
 import defaultTheme from "../theme";
+import { DevModeProvider } from "../hooks/useDevMode";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { CONTENT_PADDING } from "../consts";
@@ -30,11 +31,13 @@ interface Props {
 export default function Layout({ children, location }: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <StyledWrapper>
-        <Navbar location={location} />
-        <StyledMain>{children}</StyledMain>
-        <Footer />
-      </StyledWrapper>
+      <DevModeProvider>
+        <StyledWrapper>
+          <Navbar location={location} />
+          <StyledMain>{children}</StyledMain>
+          <Footer />
+        </StyledWrapper>
+      </DevModeProvider>
     </ThemeProvider>
   );
 }

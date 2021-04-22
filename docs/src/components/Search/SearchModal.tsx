@@ -5,7 +5,6 @@ import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
 import {
   Portal,
-  Modal,
   ModalHeader,
   ModalSection,
   Text,
@@ -13,8 +12,8 @@ import {
   useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
+import Modal from "../Modal";
 import { capitalize } from "../../utils/common";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
@@ -94,16 +93,6 @@ export default function SearchModal({ onClose }: Props) {
     [data],
   );
 
-  const scrollingElementRef = React.useRef<HTMLElement | null>(null);
-  React.useLayoutEffect(() => {
-    if (scrollingElementRef.current) {
-      disableBodyScroll(scrollingElementRef.current);
-    }
-    return () => {
-      clearAllBodyScrollLocks();
-    };
-  }, []);
-
   const { isLargeMobile, isTablet } = useMediaQuery();
   // so it doesn't cause horizontal overflow
   const placeholder = isTablet ? "Search…" : "Search for components, foundation…";
@@ -141,7 +130,6 @@ export default function SearchModal({ onClose }: Props) {
         <Modal
           // the search field will be autofocused
           autoFocus={false}
-          scrollingElementRef={scrollingElementRef}
           // to get round corners on larger viewports
           isMobileFullPage={!isLargeMobile}
           onClose={onClose}

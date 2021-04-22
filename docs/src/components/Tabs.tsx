@@ -72,12 +72,15 @@ interface Props {
   activeTab: string;
 }
 
-const Tabs = ({ activeTab, tabs }: Props) => (
-  <Container>
-    {tabs.map(tab => (
-      <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />
-    ))}
-  </Container>
-);
+const Tabs = ({ activeTab, tabs }: Props) => {
+  if (tabs.length === 0) return null;
+  return (
+    <Container>
+      {tabs.map(tab => (
+        <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />
+      ))}
+    </Container>
+  );
+};
 
 export default Tabs;

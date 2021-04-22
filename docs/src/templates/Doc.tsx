@@ -11,6 +11,7 @@ interface Props extends PageRendererProps {
     mdx: {
       fields: {
         description: string;
+        headerLink: string;
         slug: string;
         title: string;
       };
@@ -41,12 +42,13 @@ export default function Doc({ data, location }: Props) {
   }));
   return (
     <DocLayout
-      path={fields.slug}
-      location={location}
-      title={fields.title}
       description={fields.description}
-      tabs={usedTabs}
+      headerLink={fields.headerLink}
+      location={location}
+      path={fields.slug}
       tableOfContents={tableOfContents.items}
+      tabs={usedTabs}
+      title={fields.title}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
@@ -58,6 +60,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       fields {
         description
+        headerLink
         slug
         title
       }

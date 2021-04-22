@@ -10,24 +10,22 @@ interface Props {
 }
 
 const ImageContainer = ({ align = "center", border, size = "large", children }: Props) => {
-  const getContainerWidth = containerSize => {
-    if (containerSize === "small") return "200px";
-    if (containerSize === "medium") return "400px";
+  const getContainerWidth = () => {
+    if (size === "small") return "200px";
+    if (size === "medium") return "400px";
     return "650px";
   };
-  const containerWidth = getContainerWidth(size);
 
-  const getContainerMargin = containerAlignment => {
-    if (containerAlignment === "right") return "0 0 0 auto";
-    if (containerAlignment === "left") return "0";
+  const getContainerMargin = () => {
+    if (align === "right") return "0 0 0 auto";
+    if (align === "left") return "0";
     return "0 auto";
   };
-  const containerMargin = getContainerMargin(align);
   return (
     <div
       css={css`
-        margin: ${containerMargin};
-        width: ${containerWidth};
+        margin: ${getContainerMargin()};
+        width: ${getContainerWidth()};
         ${border && `border: 1px solid ${defaultTheme.orbit.borderColorTableCell};`}
       `}
     >

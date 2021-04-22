@@ -10,7 +10,7 @@ import SeatLegend from "./components/SeatLegend";
 
 import Seat from "./index";
 
-export const Default = (): React.Node => <Seat />;
+export const Default = (): React.Node => <Seat type="default" />;
 
 export const Mixed = (): React.Node => {
   const label = text("label", "XY");

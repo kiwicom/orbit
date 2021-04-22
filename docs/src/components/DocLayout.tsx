@@ -5,11 +5,11 @@ import {
   Grid,
   Heading,
   Hide,
+  mediaQueries,
   Stack,
   Text,
   ThemeProvider,
 } from "@kiwicom/orbit-components";
-import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
@@ -22,6 +22,7 @@ import Guideline from "./Guidelines";
 import GuidelinesSideBySide, { Do, Dont } from "./Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "./Guidelines/GuidelineImages";
 import HeaderLink from "./HeaderLink";
+import ImageContainer from "./ImageContainer";
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
 import Breadcrumbs from "./Breadcrumbs";
@@ -172,6 +173,7 @@ export default function DocLayout({
                     GuidelinesSideBySide,
                     Do,
                     Dont,
+                    ImageContainer,
                     ReactExample,
                   }}
                 >

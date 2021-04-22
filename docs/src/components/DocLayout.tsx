@@ -21,6 +21,7 @@ import FancyLink from "./FancyLink";
 import Guideline from "./Guidelines";
 import GuidelinesSideBySide, { Do, Dont } from "./Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "./Guidelines/GuidelineImages";
+import HeaderLink from "./HeaderLink";
 import ImageContainer from "./ImageContainer";
 import Navbar from "./Navbar";
 import { BookmarkProvider } from "../services/bookmarks";
@@ -93,6 +94,7 @@ const TocWrapper = styled.div`
 interface Props {
   children: React.ReactNode;
   description?: string;
+  headerLink?: string;
   location: WindowLocation;
   noElevation?: boolean;
   path: string;
@@ -104,6 +106,7 @@ interface Props {
 export default function DocLayout({
   children,
   description,
+  headerLink,
   location,
   noElevation,
   path,
@@ -133,7 +136,12 @@ export default function DocLayout({
                 </Box>
               )}
             </Box>
-            {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+            {(tabs || headerLink) && (
+              <Box display="flex" justify="between" tablet={{ maxWidth: "80%" }}>
+                {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+                {headerLink && <HeaderLink href={headerLink} />}
+              </Box>
+            )}
             <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
               {tocHasItems && (
                 <TocWrapper>

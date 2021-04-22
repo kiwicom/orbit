@@ -43,10 +43,30 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   });
 
   // Make title the same for all pages in tabs
+  const title = doesPageHaveTabs(dir) ? getMetaFileData(dir).title : node.frontmatter.title;
   createNodeField({
     node,
     name: "title",
-    value: doesPageHaveTabs(dir) ? getMetaFileData(dir).title : node.frontmatter.title,
+    value: title,
+  });
+
+  const getLinkForComponents = () => {
+    if (dir.startsWith("/03-components")) {
+      if (dir.match(/primitive/)) {
+        return `https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/primitives/${title}`;
+      }
+      if (dir.match(/grid/)) {
+        return `https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/Grid`;
+      }
+      return `https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/${title}`;
+    }
+    return "";
+  };
+
+  createNodeField({
+    node,
+    name: "headerLink",
+    value: getLinkForComponents() || node.frontmatter.headerLink || metaFile.headerLink,
   });
 };
 

@@ -25,7 +25,7 @@ module.exports = {
           path.join(__dirname, "packages/eslint-plugin-orbit-components"),
           path.join(__dirname, "packages/orbit-components"),
           path.join(__dirname, "packages/orbit-design-tokens"),
-          path.join(__dirname, "packages/gatsby-remark-figma-images"),
+          path.join(__dirname, "docs/plugins/gatsby-remark-figma-images"),
           path.join(__dirname, "docs"),
         ],
         devDependencies: [

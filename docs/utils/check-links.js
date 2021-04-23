@@ -9,7 +9,7 @@ const stringify = require("rehype-stringify");
 const toVFile = require("to-vfile");
 const reporter = require("vfile-reporter");
 
-const warnMissingAccessToken = require("./warnings");
+const { warnMissingAccessToken } = require("./warnings");
 
 try {
   require("dotenv-safe").config({

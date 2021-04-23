@@ -3,12 +3,14 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Portal from "../Portal";
-import PopoverContentWrapper from "./components/ContentWrapper";
+import PopoverContentWrapperDesktop from "./components/ContentWrapperDesktop";
+import PopoverContentWrapperMobile from "./components/ContentWrapperMobile";
 import type { Props } from "./index.js.flow";
 import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { POSITIONS, ALIGNS } from "./consts";
 import handleKeyDown from "../utils/handleKeyDown";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -20,17 +22,13 @@ const Popover = ({
   content,
   preferredPosition = POSITIONS.BOTTOM,
   preferredAlign = ALIGNS.START,
-  dataTest,
-  opened,
-  width,
-  noPadding,
-  overlapped,
   onClose,
   onOpen,
-  fixed,
-  actions,
+  opened,
+  ...props
 }: Props): React.Node => {
   const theme = useTheme();
+  const { isTablet } = useMediaQuery();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
   ]);
@@ -132,22 +130,31 @@ const Popover = ({
       </StyledPopoverChild>
       {render && (
         <Portal renderInto="popovers">
-          <PopoverContentWrapper
-            shown={shown}
-            offset={{ top: 0, left: 0, ...offset }}
-            width={width}
-            containerRef={container}
-            preferredPosition={preferredPosition}
-            preferredAlign={preferredAlign}
-            onClose={handleOut}
-            dataTest={dataTest}
-            noPadding={noPadding}
-            overlapped={overlapped}
-            fixed={fixed}
-            actions={actions}
-          >
-            {content}
-          </PopoverContentWrapper>
+          {isTablet ? (
+            <PopoverContentWrapperDesktop
+              shown={shown}
+              offset={{ top: 0, left: 0, ...offset }}
+              containerRef={container}
+              preferredPosition={preferredPosition}
+              preferredAlign={preferredAlign}
+              onClose={handleOut}
+              {...props}
+            >
+              {content}
+            </PopoverContentWrapperDesktop>
+          ) : (
+            <PopoverContentWrapperMobile
+              shown={shown}
+              offset={{ top: 0, left: 0, ...offset }}
+              containerRef={container}
+              preferredPosition={preferredPosition}
+              preferredAlign={preferredAlign}
+              onClose={handleOut}
+              {...props}
+            >
+              {content}
+            </PopoverContentWrapperMobile>
+          )}
         </Portal>
       )}
     </>

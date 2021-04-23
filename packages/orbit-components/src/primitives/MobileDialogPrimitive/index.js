@@ -18,14 +18,14 @@ const MobileDialog = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props): void | React.Node | React.Node => {
+}: Props): void | React.Node => {
   const [
     render,
     setRender,
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
-  const [shown, setshown, setshownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
+  const [shown, setShown, setShownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
   const mobileDialogID = React.useMemo(() => randomID("mobileDialogID"), []);
 
   const handleInMobile = React.useCallback(
@@ -36,10 +36,10 @@ const MobileDialog = ({
       }
 
       setRender(true);
-      setshownWithTimeout(true);
+      setShownWithTimeout(true);
       clearRenderTimeout();
     },
-    [clearRenderTimeout, setRender, setshownWithTimeout, stopPropagation],
+    [clearRenderTimeout, setRender, setShownWithTimeout, stopPropagation],
   );
 
   const handleOutMobile = React.useCallback(
@@ -47,10 +47,10 @@ const MobileDialog = ({
       if (stopPropagation) {
         ev.stopPropagation();
       }
-      setshown(false);
+      setShown(false);
       setRenderWithTimeout(false);
     },
-    [setRenderWithTimeout, setshown, stopPropagation],
+    [setRenderWithTimeout, setShown, stopPropagation],
   );
 
   if (!enabled) return children;

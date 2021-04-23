@@ -22,6 +22,7 @@ const Tooltip = ({
   block = false,
 }: Props): React.Node => {
   const { isLargeMobile } = useMediaQuery();
+
   return isLargeMobile ? (
     <TooltipPrimitive
       dataTest={dataTest}

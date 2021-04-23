@@ -10,6 +10,7 @@ const useClickOutside: UseClickOutside = (ref, handler) => {
         handler(event);
       }
     };
+
     window.addEventListener("mousedown", handleClose);
     window.addEventListener("touchstart", handleClose);
     return () => {

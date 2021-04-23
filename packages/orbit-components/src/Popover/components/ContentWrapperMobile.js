@@ -4,10 +4,7 @@ import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
 import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
 import Button from "../../Button";
-import resolvePopoverPosition from "../helpers/resolvePopoverPosition";
-import resolvePopoverHorizontal from "../helpers/resolvePopoverHorizontal";
 import calculatePopoverPosition from "../helpers/calculatePopoverPosition";
 import calculateVerticalPosition from "../helpers/calculateVerticalPosition";
 import calculateHorizontalPosition from "../helpers/calculateHorizontalPosition";
@@ -15,7 +12,6 @@ import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
-import useClickOutside from "../../hooks/useClickOutside";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
@@ -25,23 +21,17 @@ const mobileTop = theme => theme.orbit.spaceXLarge;
 const popoverPadding = theme => theme.orbit.spaceMedium;
 
 const StyledContentWrapper = styled.div`
-  overflow: auto;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
-  max-height: ${({ windowHeight, actionsHeight }) => `${windowHeight - actionsHeight - 32}px`};
-  bottom: ${({ actionsHeight }) => actionsHeight || 0}px;
-
-  ${media.largeMobile(css`
-    max-height: 100%;
-    border-radius: 3px;
-    bottom: auto;
-    left: auto;
-    position: relative;
-  `)}
+  ${({ theme, windowHeight, actionsHeight }) => `
+    overflow: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: ${theme.orbit.paletteWhite};
+    max-height: ${windowHeight - actionsHeight - 32}px;
+    bottom: ${actionsHeight || 0}px;
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -50,27 +40,20 @@ StyledContentWrapper.defaultProps = {
 };
 
 const StyledActions = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: ${({ theme }) => theme.orbit.spaceSmall};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
-  ${StyledButtonPrimitive} {
+  ${({ theme }) => css`
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    flex: 1 1 auto;
-  }
-  ${media.largeMobile(css`
-    position: relative;
-    bottom: auto;
-    left: auto;
+    box-sizing: border-box;
+    padding: ${popoverPadding(theme)};
+    padding-top: ${theme.orbit.spaceSmall};
+    background-color: ${theme.orbit.paletteWhite};
     ${StyledButtonPrimitive} {
-      width: auto;
-      flex-grow: 0;
+      width: 100%;
+      flex: 1 1 auto;
     }
-  `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -79,37 +62,24 @@ StyledActions.defaultProps = {
 };
 
 const StyledPopoverParent = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  z-index: 1000;
-  transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
-  transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
-  max-height: ${({ theme }) => `calc(100% - ${mobileTop(theme)})`};
-  &:focus {
-    outline: 0;
-  }
-  ${media.largeMobile(css`
-    z-index: ${({ isInsideModal }) => (isInsideModal ? "1000" : "600")};
-    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: ${({ width }) => (width ? `${width}` : "auto")};
-    opacity: ${({ shown }) => (shown ? "1" : "0")};
-    transform: none;
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
-    max-height: none;
-    ${resolvePopoverPosition}
-    ${resolvePopoverHorizontal}
-  `)}
+  ${({ theme, shownMobile }) => css`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: ${theme.orbit.backgroundModal}; // TODO: Add token
+    box-shadow: ${theme.orbit.boxShadowRaisedReverse};
+    z-index: 1000;
+    transition: ${transition(["transform"], "fast", "ease-in-out")};
+    transform: translateY(${shownMobile ? "0%" : "100%"});
+    max-height: calc(100% - ${mobileTop(theme)});
+    &:focus {
+      outline: 0;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -129,21 +99,19 @@ StyledPopoverPadding.defaultProps = {
 const StyledPopoverContent = styled.div``;
 
 const StyledOverlay = styled.div`
-  display: block;
-  position: fixed;
-  opacity: ${({ shown }) => (shown ? "1" : "0")};
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
-  transition: ${transition(["opacity"], "normal", "ease-in-out")};
-  z-index: 999;
-
-  ${media.largeMobile(css`
-    display: none;
-  `)};
+  ${({ theme, shown }) => css`
+    display: block;
+    position: fixed;
+    opacity: ${shown ? "1" : "0"};
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
+    transition: ${transition(["opacity"], "normal", "ease-in-out")};
+    z-index: 999;
+  `}
 `;
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
@@ -152,19 +120,13 @@ StyledOverlay.defaultProps = {
 
 const StyledPopoverClose = styled.div`
   padding: ${({ theme }) => popoverPadding(theme)};
-
-  ${media.largeMobile(css`
-    display: none;
-    visibility: hidden;
-    padding-bottom: 0;
-  `)}
 `;
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const PopoverContentWrapper = ({
+const PopoverContentWrapperMobile = ({
   children,
   offset,
   onClose,
@@ -181,6 +143,7 @@ const PopoverContentWrapper = ({
 }: Props): React.Node => {
   const { isInsideModal } = React.useContext(ModalContext);
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const overlayRef: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);
   const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
@@ -220,13 +183,22 @@ const PopoverContentWrapper = ({
         popover.current.focus();
       }
     }, 100);
+
+    const handleClose = ev => {
+      if (overlayRef.current && onClose) {
+        if (overlayRef.current && overlayRef.current.contains(ev.target)) onClose(ev);
+      }
+    };
+
+    window.addEventListener("mousedown", handleClose);
+
     return () => {
+      window.removeEventListener("mousedown", handleClose);
+
       clearTimeout(timer);
       clearTimeout(intervalRef.current);
     };
   }, []);
-
-  useClickOutside(popover, onClose);
 
   const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 27 && onClose) onClose(ev);
@@ -234,7 +206,7 @@ const PopoverContentWrapper = ({
 
   return (
     <>
-      <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
+      <StyledOverlay shown={shown} isInsideModal={isInsideModal} ref={overlayRef} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}
@@ -282,4 +254,4 @@ const PopoverContentWrapper = ({
   );
 };
 
-export default PopoverContentWrapper;
+export default PopoverContentWrapperMobile;

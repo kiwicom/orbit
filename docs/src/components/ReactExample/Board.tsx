@@ -8,7 +8,7 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 const StyledBoard = styled.div`
   ${({ theme }) => `
-    margin-top: 0 !important;
+    margin-top: 0;
     padding: ${theme.orbit.spaceXSmall};
     background: ${theme.orbit.paletteCloudLight};
   `};
@@ -35,14 +35,14 @@ const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
           >
             Code
           </ButtonLink>
-          <ButtonLink
+          {/* <ButtonLink
             onClick={onOpenEditor}
             type="secondary"
             ariaExpanded={isEditorOpened}
             iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
           >
             Playground
-          </ButtonLink>
+          </ButtonLink> */}
         </Stack>
         <Stack inline justify="end" align="center">
           <Tooltip

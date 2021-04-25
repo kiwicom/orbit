@@ -8,6 +8,7 @@ import * as Icons from "@kiwicom/orbit-components/lib/icons";
 
 import Board from "./Board";
 import Preview from "./Preview";
+import ViewportsRuler from "./ViewportsRuler";
 
 interface Props {
   exampleId: string;
@@ -28,6 +29,9 @@ const StyledEditor = styled(LiveEditor)`
 
 const ReactExample = ({ exampleId }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [width, setPreviewWidth] = React.useState(0);
+
+  const getCurrentWidth = React.useCallback(size => setPreviewWidth(size), []);
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -82,7 +86,8 @@ const ReactExample = ({ exampleId }: Props) => {
   return (
     <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
       <StyledExampleWrapper>
-        <Preview />
+        <ViewportsRuler onChangeSize={getCurrentWidth} />
+        <Preview width={width} />
         <Board
           isEditorOpened={isEditorOpened}
           onOpenEditor={() => setOpenEditor(!isEditorOpened)}

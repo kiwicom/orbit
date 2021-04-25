@@ -2,11 +2,15 @@ import * as React from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import styled, { StyleSheetManager, css } from "styled-components";
 import { LivePreview } from "react-live";
+import { Stack } from "@kiwicom/orbit-components";
 
 type BgType = "white" | "dark" | "grid";
 interface Props {
   background?: BgType;
+  width: number;
 }
+
+const BOARD_HEIGHT = 68;
 
 const getBackground = (type: BgType) => ({ theme }) => {
   if (type === "grid") {
@@ -40,25 +44,45 @@ const getBackground = (type: BgType) => ({ theme }) => {
 };
 
 const StyledFrame = styled(Frame)`
-  ${({ background }) => css`
+  ${({ background, height }) => css`
     width: 100%;
-    height: 100%;
-    overflow: scroll;
+    height: ${Number(height) + BOARD_HEIGHT}px;
     ${getBackground(background)};
   `};
 `;
 
-const StyledPreview = styled(LivePreview)`
-  padding: ${({ theme }) => theme.orbit.spaceXLarge};
+const StyledPreviewWrapper = styled.div<{ width: number }>`
+  ${({ theme, width }) => css`
+    max-width: ${width}px;
+    width: 100%;
+    overflow: scroll;
+    padding-top: ${theme.orbit.spaceXLarge};
+  `};
 `;
 
-const Preview = ({ background = "white" }: Props) => {
+const Preview = ({ background = "white", width }: Props) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [loaded, setLoad] = React.useState(false);
+  const [height, setHeight] = React.useState(0);
+
+  React.useEffect(() => {
+    if (ref && ref.current && loaded) {
+      setHeight(ref.current.clientHeight);
+    }
+  }, [loaded, setHeight]);
+
   return (
-    <StyledFrame background={background}>
+    <StyledFrame background={background} height={height} onLoad={() => setLoad(true)}>
       <FrameContextConsumer>
         {({ document }) => (
           <StyleSheetManager target={document.head}>
-            <StyledPreview />
+            <>
+              <Stack justify="center" align="center">
+                <StyledPreviewWrapper ref={ref} width={width}>
+                  <LivePreview />
+                </StyledPreviewWrapper>
+              </Stack>
+            </>
           </StyleSheetManager>
         )}
       </FrameContextConsumer>

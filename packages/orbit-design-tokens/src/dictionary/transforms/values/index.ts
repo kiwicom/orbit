@@ -1,6 +1,13 @@
 import { Property, Value } from "style-dictionary";
 
-import { isBorderRadius, isSize, isZIndex, isBreakpoint, isModifier } from "../../utils/is";
+import {
+  isBorderRadius,
+  isSize,
+  isZIndex,
+  isBreakpoint,
+  isModifier,
+  isDuration,
+} from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 import { stringify, pixelized } from "../../utils/string";
 
@@ -14,6 +21,16 @@ export const sizeJavascript = {
   transformer: ({ value }: Property): Value => {
     if (value === "auto") return stringify(value);
     return pixelized(value);
+  },
+};
+
+export const durationJavascript = {
+  name: "value/duration/javascript",
+  type: "value",
+  matcher: isDuration,
+  transformer: ({ value }: Property): Value => {
+    const normalizedValue = Number(value);
+    return stringify(`${normalizedValue / 1000}s`);
   },
 };
 
@@ -41,6 +58,7 @@ export const valueJavascript = {
   transformer: (prop: Property): Value => {
     if (isSize(prop)) return sizeJavascript.transformer(prop);
     if (isBorderRadius(prop)) return borderRadiusJavascript.transformer(prop);
+    if (isDuration(prop)) return durationJavascript.transformer(prop);
     if (isZIndex(prop) || isBreakpoint(prop) || isModifier(prop)) return Number(prop.value);
     return stringify(prop.value);
   },

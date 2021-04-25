@@ -1,0 +1,30 @@
+{
+  "component": {
+    "heading": {
+      "foreground": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}"
+      },
+      "foreground-inverted": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}"
+      }
+    },
+    "color": {
+      "heading": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.heading.foreground}",
+        "deprecated-version": "1.0.0"
+      },
+      "heading-inverted": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.heading.foreground-inverted}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

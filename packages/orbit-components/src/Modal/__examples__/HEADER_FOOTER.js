@@ -8,7 +8,7 @@ import ModalFooter from "../ModalFooter";
 import ModalHeader from "../ModalHeader";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModal, setShowModal] = React.useState(true);
     return (
       <>

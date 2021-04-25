@@ -8,7 +8,7 @@ import useMediaQueryContext from "./QueryContext/useMediaQueryContext";
 
 import type { Props } from "./index";
 
-const ThemeProvider = ({ theme, dictionary, children }: Props) => {
+const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
   const media = useMediaQueryContext();
 
   return (

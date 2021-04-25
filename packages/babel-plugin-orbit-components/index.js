@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, flowtype/require-valid-file-annotation */
+/* eslint-disable no-param-reassign */
 
 /**
  * Usually, we take the destructed component name and append it after `/libs/` like so:
@@ -10,6 +10,7 @@
  * However, there are some exceptions which we have to handle manually and change the resulting
  * output. The following configuration maps destructed component to the new path (appended to libs).
  */
+
 const pathOverwrites = {
   AlertButton: "Alert/AlertButton",
   BadgePrimitive: "primitives/BadgePrimitive",
@@ -18,6 +19,7 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  calculateCountOf: "Slider/utils/calculateCountOf",
   AccordionSection: "Accordion/AccordionSection",
   DeprecatedCardHeader: "deprecated/Card/CardHeader",
   DeprecatedCard: "deprecated/Card",
@@ -55,6 +57,7 @@ const pathOverwrites = {
   TimelineStep: "Timeline/TimelineStep",
   SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
+  useMediaQuery: "hooks/useMediaQuery",
 };
 
 const parsedImportPaths = [

@@ -1,12 +1,11 @@
 import React from "react";
-import StarEmpty from "@kiwicom/orbit-components/lib/icons/StarEmpty";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Stack, Button, Portal, Drawer } from "@kiwicom/orbit-components";
+import { StarEmpty } from "@kiwicom/orbit-components/icons";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 import Switch from "../Switch";
 import { save, load } from "../../utils/storage";
-import Sidenav from "../Sidenav";
 import { useBookmarks } from "../../services/bookmarks";
 
 const StyledLink = styled(Link)`
@@ -18,7 +17,8 @@ const StyledLink = styled(Link)`
 `;
 
 const Bookmarks = () => {
-  const [checked, setChecked] = React.useState(false);
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [checked, setChecked] = React.useState<boolean>(false);
   const { bookmarks } = useBookmarks();
 
   React.useEffect(() => {
@@ -37,32 +37,44 @@ const Bookmarks = () => {
   };
 
   return (
-    <Sidenav
-      actions={
-        <Switch onChange={handleChange} checked={checked}>
-          Developer Mode
-        </Switch>
-      }
-      toggleIcon={<StarEmpty ariaHidden />}
-    >
-      {bookmarks && (
-        <Stack direction="column">
-          <h3>Your bookmarks</h3>
-          {Object.entries(bookmarks).map(
-            ([key, slug]) =>
-              slug && (
-                <StyledLink key={key} to={slug}>
-                  {String(slug)
-                    .split("/")
-                    .filter(Boolean)
-                    .map(s => s[0].toUpperCase().concat(s.slice(1)))
-                    .join(" / ")}
-                </StyledLink>
-              ),
+    <>
+      <Button
+        type="white"
+        iconLeft={<StarEmpty />}
+        circled
+        title="Open bookmarks"
+        onClick={() => setOpen(true)}
+      />
+      <Portal>
+        <Drawer
+          shown={open}
+          actions={
+            <Switch onChange={handleChange} checked={checked}>
+              Developer Mode
+            </Switch>
+          }
+          onClose={() => setOpen(false)}
+        >
+          {bookmarks && (
+            <Stack direction="column">
+              <h3>Your bookmarks</h3>
+              {Object.entries(bookmarks).map(
+                ([key, slug]) =>
+                  slug && (
+                    <StyledLink key={key} to={slug}>
+                      {String(slug)
+                        .split("/")
+                        .filter(Boolean)
+                        .map(s => s[0].toUpperCase().concat(s.slice(1)))
+                        .join(" / ")}
+                    </StyledLink>
+                  ),
+              )}
+            </Stack>
           )}
-        </Stack>
-      )}
-    </Sidenav>
+        </Drawer>
+      </Portal>
+    </>
   );
 };
 

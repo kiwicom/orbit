@@ -10,7 +10,7 @@ import TableRow from "../TableRow";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack flex>
       <Table>
         <TableHead>
@@ -28,7 +28,7 @@ export default {
           </TableRow>
           <TableRow>
             <TableCell>
-              <Icons.BaggageChecked /> Checked baggage
+              <Icons.BaggageChecked30 /> Checked baggage
             </TableCell>
             <TableCell>Paid-for option</TableCell>
           </TableRow>
@@ -50,7 +50,7 @@ export default {
           </TableRow>
           <TableRow>
             <TableCell>
-              <Icons.BaggageChecked /> Checked baggage
+              <Icons.BaggageChecked30 /> Checked baggage
             </TableCell>
             <TableCell>Paid-for option</TableCell>
           </TableRow>

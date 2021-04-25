@@ -1,31 +1,49 @@
 // @flow strict
 
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
-import { getBreakpointWidth } from "../../utils/mediaQuery/index";
-import { QUERIES } from "../../utils/mediaQuery/consts";
-import theme from "../../defaultTheme";
 import Mobile from "..";
 
 describe("Mobile", () => {
   it("should be visible on smallMobile, largeMobile and tablet", () => {
-    render(<Mobile>kek</Mobile>);
+    const { container } = render(<Mobile>kek</Mobile>);
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      @media (min-width:414px) {
+        .c0 {
+          display: inline-block;
+        }
+      }
 
-    expect(screen.getByText("kek")).toHaveStyleRule("display", "inline-block", {
-      media: getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
-    });
+      @media (min-width:576px) {
+        .c0 {
+          display: inline-block;
+        }
+      }
 
-    expect(screen.getByText("kek")).toHaveStyleRule("display", "inline-block", {
-      media: getBreakpointWidth(QUERIES.TABLET, theme),
-    });
+      @media (min-width:768px) {
+        .c0 {
+          display: inline-block;
+        }
+      }
 
-    expect(screen.getByText("kek")).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.LARGEDESKTOP, theme),
-    });
+      @media (min-width:992px) {
+        .c0 {
+          display: none;
+        }
+      }
 
-    expect(screen.getByText("kek")).toHaveStyleRule("display", "none", {
-      media: getBreakpointWidth(QUERIES.DESKTOP, theme),
-    });
+      @media (min-width:1200px) {
+        .c0 {
+          display: none;
+        }
+      }
+
+      <div
+        class="c0"
+      >
+        kek
+      </div>
+    `);
   });
 });

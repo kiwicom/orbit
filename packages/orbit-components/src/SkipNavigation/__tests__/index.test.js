@@ -38,6 +38,7 @@ describe("SkipNavigation", () => {
     );
 
     expect(container).toHaveStyle({ clip: "rect(0 0 0 0)" });
+    // $FlowFixMe
     userEvent.tab(container);
     expect(container).toHaveStyle({ clip: "" });
   });

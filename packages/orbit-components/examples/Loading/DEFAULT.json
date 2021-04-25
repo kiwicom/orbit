@@ -1,8 +1,8 @@
 {
-	"imports": "import Loading from \"@kiwicom/orbit-components/lib/Loading\";",
-	"example": "() => <Loading type=\"pageLoader\" />\n",
-	"info": {
-		"title": "Default loading",
-		"description": "By default, a loading component is a page loader with only animation and no text."
-	}
+  "imports": "import Loading from \"@kiwicom/orbit-components/lib/Loading\";",
+  "example": "(): React.Node => <Loading type=\"pageLoader\" />\n",
+  "info": {
+    "title": "Default loading",
+    "description": "By default, a loading component is a page loader with only animation and no text."
+  }
 }

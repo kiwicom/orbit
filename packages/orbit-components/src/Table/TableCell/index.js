@@ -9,7 +9,7 @@ import { textAlign } from "../../utils/rtl";
 
 import type { Props } from ".";
 
-export const StyledTableCell = styled(
+export const StyledTableCell: any = styled(
   ({ element: Component, children, className, dataTest, scope }) => (
     <Component className={className} data-test={dataTest} scope={scope}>
       {children}
@@ -27,6 +27,7 @@ export const StyledTableCell = styled(
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableCell.defaultProps = {
   theme: defaultTheme,
 };
@@ -39,7 +40,7 @@ const TableCell = ({
   whiteSpace,
   dataTest,
   children,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledTableCell
       verticalAlign={verticalAlign}

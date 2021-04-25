@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [color, setColor] = React.useState(false);
     const [expanded, setExpanded] = React.useState(false);
     return (

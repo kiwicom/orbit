@@ -6,7 +6,7 @@ import Stack from "../../../Stack";
 import * as Icons from "../../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack direction="column">
       <BadgePrimitive>Tip</BadgePrimitive>
       <BadgePrimitive ariaLabel="Train" icon={<Icons.Train />} />

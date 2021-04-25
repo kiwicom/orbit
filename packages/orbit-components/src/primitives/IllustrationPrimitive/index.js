@@ -19,7 +19,7 @@ const getHeightToken = ({ theme, size }) => {
   return tokens[size];
 };
 
-export const StyledImage = styled.img.attrs(({ theme, size, illustrationName }) => {
+export const StyledImage: any = styled.img.attrs(({ theme, size, illustrationName }) => {
   const height = parseInt(getHeightToken({ theme, size }), 10);
   const illustrationPath = `${illustrationName}-Q85.png`;
   return {
@@ -48,7 +48,7 @@ const IllustrationPrimitive = ({
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
   spaceAfter,
-}: Props) => {
+}: Props): React.Node => {
   return (
     <StyledImage
       illustrationName={name}

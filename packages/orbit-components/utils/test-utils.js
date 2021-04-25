@@ -16,7 +16,7 @@ class BreakpointChangeEvent extends CustomEvent {
   }
 }
 
-export function mockBreakpoint(breakpoint: Breakpoint, initialMatches: boolean = false) {
+export function mockBreakpoint(breakpoint: Breakpoint, initialMatches: boolean = false): any {
   const mediaQuery = getBreakpointWidth(breakpoint, defaultTheme);
   const matchMediaSpy = jest.spyOn(window, "matchMedia");
   let matches = initialMatches;

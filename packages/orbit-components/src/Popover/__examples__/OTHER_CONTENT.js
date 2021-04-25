@@ -8,10 +8,11 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [is2star, setIs2star] = React.useState(true);
     const [is3star, setIs3star] = React.useState(true);
     const [is4star, setIs4star] = React.useState(true);
+
     return (
       <Popover
         content={

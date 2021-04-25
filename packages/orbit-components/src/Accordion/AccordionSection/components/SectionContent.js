@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => `0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge}`};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Wrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -18,7 +19,7 @@ type Props = {|
   ...Globals,
 |};
 
-const AccordionSectionContent = ({ children, dataTest }: Props) => (
+const AccordionSectionContent = ({ children, dataTest }: Props): React.Node => (
   <Wrapper data-test={dataTest && `${dataTest}Content`}>{children}</Wrapper>
 );
 

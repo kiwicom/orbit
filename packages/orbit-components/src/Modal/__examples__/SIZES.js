@@ -8,7 +8,7 @@ import ModalSection from "../ModalSection";
 import Stack from "../../Stack";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showModalExtraSmall, setShowModalExtraSmall] = React.useState(false);
     const [showModalSmall, setShowModalSmall] = React.useState(false);
     const [showModalNormal, setShowModalNormal] = React.useState(false);

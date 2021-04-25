@@ -1,8 +1,8 @@
 {
-	"imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Tag from \"@kiwicom/orbit-components/lib/Tag\";",
-	"example": "() => {\n  const [tags, setTags] = React.useState([\"London\", \"Manchester\", \"Liverpool\"])\n\n  const removeTag = (tag) => {\n    setTags(tags.filter((place) => place !== tag))\n  }\n\n  return (\n    <InputField\n      label=\"Destination\"\n      tags={\n        <>\n          {tags.map((tag) => (\n            <Tag\n              key={tag}\n              onRemove={() => {\n                removeTag(tag)\n              }}\n            >\n              {tag}\n            </Tag>\n          ))}\n        </>\n      }\n    />\n  )\n}\n",
-	"info": {
-		"title": "Tags in input fields",
-		"description": "If you want to use tags as your input, use the tags prop. See Tag documentation for more."
-	}
+  "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Tag from \"@kiwicom/orbit-components/lib/Tag\";",
+  "example": "(): React.Node => {\n  const [tags, setTags] = React.useState([\"London\", \"Manchester\", \"Liverpool\"])\n\n  const removeTag = (tag) => {\n    setTags(tags.filter((place) => place !== tag))\n  }\n\n  return (\n    <InputField\n      label=\"Destination\"\n      tags={\n        <>\n          {tags.map((tag) => (\n            <Tag\n              key={tag}\n              onRemove={() => {\n                removeTag(tag)\n              }}\n            >\n              {tag}\n            </Tag>\n          ))}\n        </>\n      }\n    />\n  )\n}\n",
+  "info": {
+    "title": "Tags in input fields",
+    "description": "If you want to use tags as your input, use the tags prop. See Tag documentation for more."
+  }
 }

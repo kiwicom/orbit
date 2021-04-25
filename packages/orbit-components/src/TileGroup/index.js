@@ -39,11 +39,12 @@ const StyledTileGroup = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileGroup = ({ children, dataTest }: Props) => {
+const TileGroup = ({ children, dataTest }: Props): React.Node => {
   return <StyledTileGroup data-test={dataTest}>{children}</StyledTileGroup>;
 };
 

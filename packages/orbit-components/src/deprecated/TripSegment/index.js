@@ -21,7 +21,7 @@ import randomID from "../../utils/randomID";
 
 import type { Props, State, ExpandedType } from "./index";
 
-export const StyledTripSegmentMilestone = styled.div`
+export const StyledTripSegmentMilestone: any = styled.div`
   display: flex;
   height: 50px;
   width: ${getSize(ICON_SIZES.MEDIUM)};
@@ -39,6 +39,7 @@ export const StyledTripSegmentMilestone = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentMilestone.defaultProps = {
   theme: defaultTheme,
 };
@@ -73,6 +74,7 @@ const StyledTripSegmentMilestoneArrow = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentMilestoneArrow.defaultProps = {
   theme: defaultTheme,
 };
@@ -89,6 +91,7 @@ const StyledTripSegmentContent = styled.div`
   transition: border-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -103,6 +106,7 @@ const StyledChevrons = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChevrons.defaultProps = {
   theme: defaultTheme,
 };
@@ -127,6 +131,7 @@ const StyledTripSegmentOverview = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentOverview.defaultProps = {
   theme: defaultTheme,
 };
@@ -140,6 +145,7 @@ const StyledTripSegmentCarrier = styled.div`
   height: 100%;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentCarrier.defaultProps = {
   theme: defaultTheme,
 };
@@ -160,6 +166,7 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentOverviewWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -179,6 +186,7 @@ const StyledTripSegmentOverviewTime = styled.div`
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentOverviewTime.defaultProps = {
   theme: defaultTheme,
 };
@@ -194,11 +202,12 @@ const StyledTripSegmentChildren = styled.div`
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegmentChildren.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledTripSegment = styled.div`
+export const StyledTripSegment: any = styled.div`
   display: flex;
   width: 100%;
 
@@ -240,6 +249,7 @@ export const StyledTripSegment = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripSegment.defaultProps = {
   theme: defaultTheme,
 };
@@ -258,7 +268,7 @@ const MilestoneIcon = ({ type }) => {
 };
 
 class TripSegment extends React.PureComponent<Props, State> {
-  node = React.createRef<HTMLDivElement>();
+  node: {| current: null | HTMLDivElement |} = React.createRef<HTMLDivElement>();
 
   tripSegmentID: string = randomID("tripSegmentID");
 
@@ -280,13 +290,13 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   }
 
-  setHeight = () => {
+  setHeight: () => void = () => {
     this.setState({
       contentHeight: this.node.current?.clientHeight,
     });
   };
 
-  handleToggle = () => {
+  handleToggle: () => void = () => {
     const { onClick } = this.props;
     this.setState(prevState => ({
       expanded: !prevState.expanded,
@@ -297,7 +307,9 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  handleOnKeyDown: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void = (
+    ev: SyntheticKeyboardEvent<HTMLInputElement>,
+  ) => {
     if (ev.keyCode === KEY_CODE_MAP.ENTER) {
       this.handleToggle();
     } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
@@ -306,7 +318,7 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
-  render() {
+  render(): React.Node {
     const {
       children,
       departure,

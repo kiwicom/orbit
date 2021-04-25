@@ -9,9 +9,9 @@ import Tooltip from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Stack>
-      <Text>
+      <Text as="div">
         If you&apos;re building a travel app, you should give{" "}
         <Tooltip
           content={
@@ -50,7 +50,7 @@ export default {
         </Tooltip>{" "}
         for your trip.
       </Alert>
-      <Text>
+      <Text as="div">
         The following text has a tooltip:{" "}
         <Tooltip
           removeUnderlinedText

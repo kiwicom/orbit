@@ -1,8 +1,8 @@
 {
-	"imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Textarea from \"@kiwicom/orbit-components/lib/Textarea\";",
-	"example": "() => (\n  <Stack>\n    <Textarea label=\"Given names\" placeholder=\"Sofia Cruz\" resize=\"vertical\" />\n    <Textarea label=\"Given names\" placeholder=\"Sofia Cruz\" resize=\"none\" />\n  </Stack>\n)\n",
-	"info": {
-		"title": "Resizing",
-		"description": "You can set text areas so they can be resized vertically (the default) or so they can't be resized at all. If you set the fullHeight prop, the text area cannot be resized."
-	}
+  "imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Textarea from \"@kiwicom/orbit-components/lib/Textarea\";",
+  "example": "(): React.Node => (\n  <Stack>\n    <Textarea label=\"Given names\" placeholder=\"Sofia Cruz\" resize=\"vertical\" />\n    <Textarea label=\"Given names\" placeholder=\"Sofia Cruz\" resize=\"none\" />\n  </Stack>\n)\n",
+  "info": {
+    "title": "Resizing",
+    "description": "You can set text areas so they can be resized vertically (the default) or so they can't be resized at all. If you set the fullHeight prop, the text area cannot be resized."
+  }
 }

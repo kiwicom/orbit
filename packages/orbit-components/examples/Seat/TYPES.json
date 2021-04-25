@@ -1,8 +1,8 @@
 {
-	"imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
-	"example": "() => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack flex>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Default\n        </Heading>\n        <Seat size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Extra legroom\n        </Heading>\n        <Seat type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Selected\n        </Heading>\n        <Seat type=\"legroom\" selected size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Unavailable\n        </Heading>\n        <Seat type=\"unavailable\" size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n    </Stack>\n  )\n}\n",
-	"info": {
-		"title": "Types",
-		"description": "The types of seats indicate information about the possible options."
-	}
+  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
+  "example": "(): React.Node => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack flex>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Default\n        </Heading>\n        <Seat size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Extra legroom\n        </Heading>\n        <Seat type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Selected\n        </Heading>\n        <Seat type=\"legroom\" selected size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n      <Stack spacing=\"XXSmall\">\n        <Heading as=\"h3\" type=\"title3\">\n          Unavailable\n        </Heading>\n        <Seat type=\"unavailable\" size={isTablet ? \"medium\" : \"small\"} />\n      </Stack>\n    </Stack>\n  )\n}\n",
+  "info": {
+    "title": "Types",
+    "description": "The types of seats indicate information about the possible options."
+  }
 }

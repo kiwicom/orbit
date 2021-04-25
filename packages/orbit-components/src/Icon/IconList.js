@@ -39,7 +39,7 @@ const IconImport = styled.div`
   padding: ${defaultTokens.spaceXXSmall} ${defaultTokens.spaceXSmall};
 `;
 
-const IconList = () => (
+const IconList = (): React.Node => (
   <List>
     {Object.keys(Icons).map(icon => {
       const Icon = styled(Icons[icon])`

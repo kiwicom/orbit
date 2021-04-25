@@ -12,42 +12,47 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-import { navigate } from "gatsby";
+import { Link } from "gatsby";
 import { css } from "styled-components";
 
+import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
+
 export const h1 = () => null;
+
 export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h2" type="title1">
+  <HeadingWithLink headingLevel={2} spaceAfter="normal">
     {children}
-  </Heading>
+  </HeadingWithLink>
 );
+
 export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h3" type="title2">
+  <HeadingWithLink headingLevel={3} spaceAfter="small">
     {children}
-  </Heading>
+  </HeadingWithLink>
 );
+
 export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h4" type="title3">
+  <HeadingWithLink headingLevel={4} spaceAfter="smallest">
     {children}
-  </Heading>
+  </HeadingWithLink>
 );
+
 export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h5" type="title4">
-    {children}
-  </Heading>
+  <HeadingWithLink headingLevel={5}>{children}</HeadingWithLink>
 );
+
 export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <Heading as="h6" type="title5">
-    {children}
-  </Heading>
+  <HeadingWithLink headingLevel={6}>{children}</HeadingWithLink>
 );
+
 export const hr = () => <Separator spaceAfter="largest" />;
+
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
@@ -62,18 +67,23 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
     {children}
   </ol>
 );
+
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>
 );
+
 export const thead = ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
   <TableHead>{children}</TableHead>
 );
+
 export const tbody = ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
   <TableBody>{children}</TableBody>
 );
+
 export const tr = ({ children }: React.HTMLAttributes<HTMLTableRowElement>) => (
   <TableRow>{children}</TableRow>
 );
+
 export const td = ({
   children,
   align,
@@ -87,6 +97,7 @@ export const td = ({
     {children}
   </TableCell>
 );
+
 export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
   <TableCell
     as="th"
@@ -95,6 +106,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
     {children}
   </TableCell>
 );
+
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
@@ -109,6 +121,7 @@ export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
     {children}
   </ul>
 );
+
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <figcaption>
     <Text align="center" italic>
@@ -116,7 +129,9 @@ export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     </Text>
   </figcaption>
 );
+
 export const code = CodeBlock;
+
 export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <dd
     css={css`
@@ -126,6 +141,7 @@ export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     <Text>{children}</Text>
   </dd>
 );
+
 export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
   <dt>
     <Heading as="h3" type="title2">
@@ -133,36 +149,50 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
     </Heading>
   </dt>
 );
+
 export const inlineCode = InlineCode;
+
+const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
+  <Link to={href} {...props} />
+);
+
 export const a = function Anchor({
   children,
   href,
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isExternal = useIsUrlExternal(href);
+  const useExternalIcon = isExternal && typeof children === "string";
   return (
     <span
       css={css`
-        /* TextLink's line-height affects nested elements like <code> */
         a {
+          /* TextLink's line-height affects nested elements like <code> */
           line-height: normal;
+          /* TextLink's display as inline-flex cause long links to break paragraphs */
+          display: inherit;
+          /* Ensure the icon stays inline */
+          span {
+            display: inline;
+            svg {
+              display: inline;
+            }
+          }
         }
       `}
     >
       <TextLink
+        // @ts-expect-error type declaration is not permissive enough
+        asComponent={isExternal ? "a" : LinkForOrbitTextLink}
         href={href}
         external={isExternal}
-        iconRight={isExternal && <NewWindow />}
-        onClick={event => {
-          if (isExternal || !href) return;
-          event.preventDefault();
-          navigate(href);
-        }}
+        iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
       >
         {children}
       </TextLink>
     </span>
   );
 };
+
 export const Callout = ({ icon = true, ...props }) => (
   <Alert icon={icon} spaceAfter="large" {...props} />
 );

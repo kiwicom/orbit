@@ -4,7 +4,7 @@ import * as React from "react";
 import Radio from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const ref: {| current: React.ElementRef<any> |} = React.useRef(null);
 
     React.useEffect(() => {
@@ -12,7 +12,7 @@ export default {
         ref.current.focus();
       }
     });
-    return <Radio label="Allow notifications" ref={ref} />;
+    return <Radio label="Allow notifications" ref={ref} readOnly />;
   },
   info: {
     title: "References",

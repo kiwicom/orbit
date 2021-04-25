@@ -1,8 +1,8 @@
 {
-	"imports": "import CountryFlag from \"@kiwicom/orbit-components/lib/CountryFlag\";",
-	"example": "() => <CountryFlag />\n",
-	"info": {
-		"title": "Default country flag",
-		"description": "By default, the country flag component presents a generic flag with the title 'anywhere' to prompt users to make an actual selection."
-	}
+  "imports": "import CountryFlag from \"@kiwicom/orbit-components/lib/CountryFlag\";",
+  "example": "(): React.Node => <CountryFlag />\n",
+  "info": {
+    "title": "Default country flag",
+    "description": "By default, the country flag component presents a generic flag with the title 'anywhere' to prompt users to make an actual selection."
+  }
 }

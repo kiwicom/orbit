@@ -9,7 +9,7 @@ import TableRow from "../TableRow";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Table>
       <TableHead>
         <TableRow>
@@ -26,7 +26,7 @@ export default {
         </TableRow>
         <TableRow>
           <TableCell>
-            <Icons.BaggageChecked /> Checked baggage
+            <Icons.BaggageChecked30 /> Checked baggage
           </TableCell>
           <TableCell>Paid-for option</TableCell>
         </TableRow>

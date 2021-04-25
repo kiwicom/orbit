@@ -26,6 +26,7 @@ const StyledInlineInner = styled.div`
   }}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInlineInner.defaultProps = {
   theme: defaultTheme,
 };
@@ -41,7 +42,7 @@ const Inline = ({
   children,
   dataTest,
   ...smallMobile
-}: Props) => {
+}: Props): React.Element<string> => {
   const viewportSizes = { smallMobile, mediumMobile, largeMobile, tablet, desktop };
 
   return (

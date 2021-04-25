@@ -1,5 +1,5 @@
 // @flow
-import React, { useMemo } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import Heading from "../Heading";
@@ -32,6 +32,7 @@ const StyledChoiceGroup = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
@@ -47,8 +48,8 @@ const ChoiceGroup = ({
   onOnlySelection,
   onlySelectionText,
   onChange,
-}: Props) => {
-  const groupID = useMemo(() => randomID("choiceGroupID"), []);
+}: Props): React.Node => {
+  const groupID = React.useMemo(() => randomID("choiceGroupID"), []);
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();

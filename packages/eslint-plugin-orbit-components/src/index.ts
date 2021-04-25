@@ -1,11 +1,12 @@
 import buttonHasTitle from "./rules/buttonHasTitle";
 import defaultTheme from "./rules/defaultTheme";
+import rtlUtils from "./rules/rtlUtils";
+import useRtl from "./rules/useRtl";
 import internal from "./configs/internal";
 import noCustomColors from "./rules/noCustomColors";
 import noCustomTypography from "./rules/noCustomTypography";
 import preferSingleDestructure from "./rules/preferSingleDestructure";
 import recommended from "./configs/recommended";
-import rtlUtils from "./rules/rtlUtils";
 import uniqueId from "./rules/uniqueId";
 import unnecessaryText from "./rules/unnecessaryText";
 import noDeprecatedToken from "./rules/noDeprecatedToken";
@@ -20,6 +21,7 @@ export const rules = {
   "unique-id": uniqueId,
   "unnecessary-text": unnecessaryText,
   "no-deprecated-token": noDeprecatedToken,
+  "use-rtl": useRtl,
 };
 
 export const configs = {

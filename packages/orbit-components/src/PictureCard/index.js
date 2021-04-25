@@ -23,6 +23,7 @@ const Shown = styled.div`
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Shown.defaultProps = {
   theme: defaultTheme,
 };
@@ -45,6 +46,7 @@ const StyledLabel = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
@@ -61,6 +63,7 @@ const StyledOverlay = styled.div`
   );
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -77,6 +80,7 @@ const StyledOverlayHover = styled.div`
   );
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlayHover.defaultProps = {
   theme: defaultTheme,
 };
@@ -128,6 +132,7 @@ const StyledPictureCardContent = styled.div`
   bottom: 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPictureCardContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -195,6 +200,7 @@ const StyledPictureCard = styled(
     `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPictureCard.defaultProps = {
   theme: defaultTheme,
 };
@@ -213,7 +219,7 @@ const PictureCard = ({
   height = "300px",
   width,
   dataTest,
-}: Props) => {
+}: Props): React.Node => {
   const ref: {| current: any | HTMLDivElement |} = React.useRef(null);
   const [contentHeight, setContentHeight] = React.useState(0);
 

@@ -6,7 +6,7 @@ import validateDecrement from "../../utils/validateDecrement";
 import validateIncrement from "../../utils/validateIncrement";
 
 export default {
-  Example: () => {
+  Example: (): React.Element<"div"> => {
     const maxValue = 10;
     const minValue = 1;
     const step = 1;
@@ -27,6 +27,7 @@ export default {
           onIncrement={incrementValue}
           onDecrement={decrementValue}
           label="Travelers"
+          onChange={() => {}}
           titleIncrement="Add a traveler"
           titleDecrement="Remove a traveler"
         />

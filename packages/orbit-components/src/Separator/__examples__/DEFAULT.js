@@ -6,7 +6,7 @@ import LinkList from "../../LinkList";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <LinkList>
       <TextLink href="https://orbit.kiwi/components/separator/" external type="secondary">
         Guidelines

@@ -7,7 +7,7 @@ import Popover from "../../Popover";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [choice, setChoice] = React.useState("");
     return (
       <Popover
@@ -42,7 +42,7 @@ export default {
         }
         noPadding
       >
-        <InputField label="To" inlineLabel value={choice} />
+        <InputField label="To" inlineLabel value={choice} readOnly />
       </Popover>
     );
   },

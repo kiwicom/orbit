@@ -4,7 +4,7 @@ import * as React from "react";
 import InputStepper from "../index";
 
 export default {
-  Example: () => (
+  Example: (): React.Element<"div"> => (
     <div style={{ maxWidth: "11em" }}>
       <InputStepper
         required

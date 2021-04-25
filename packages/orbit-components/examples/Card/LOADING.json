@@ -1,8 +1,8 @@
 {
-	"imports": "import Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";",
-	"example": "() => (\n  <Card loading title=\"Passenger info\">\n    <CardSection>Yasmin Karenth</CardSection>\n  </Card>\n)\n",
-	"info": {
-		"title": "Loading card",
-		"description": "Pass the loading prop if you need to wait for data to load before displaying the card."
-	}
+  "imports": "import Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";",
+  "example": "(): React.Node => (\n  <Card loading title=\"Passenger info\">\n    <CardSection>Yasmin Karenth</CardSection>\n  </Card>\n)\n",
+  "info": {
+    "title": "Loading card",
+    "description": "Pass the loading prop if you need to wait for data to load before displaying the card."
+  }
 }

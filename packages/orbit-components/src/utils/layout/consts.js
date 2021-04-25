@@ -36,7 +36,20 @@ export const SPACINGS = {
   XXLARGE: "XXLarge",
 };
 
-export const TOKENS = (theme: Theme) => ({
+export const TOKENS = (
+  theme: Theme,
+): {|
+  XLarge: string,
+  XSmall: string,
+  XXLarge: string,
+  XXSmall: string,
+  XXXLarge: string,
+  XXXSmall: string,
+  large: string,
+  medium: string,
+  none: null,
+  small: string,
+|} => ({
   none: null,
   XXXSmall: theme.orbit.spaceXXXSmall,
   XXSmall: theme.orbit.spaceXXSmall,

@@ -6,10 +6,10 @@ import TileGroup from "../index";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <TileGroup>
       <Tile
-        icon={<Icons.BaggageChecked />}
+        icon={<Icons.BaggageChecked30 />}
         href="https://www.kiwi.com/en/?help=%2Ffaq%2Fbaggage-131"
         external
         title="Baggage"

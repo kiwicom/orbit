@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
 
 import useMediaQuery from "../hooks/useMediaQuery";
 import ButtonLink from "../ButtonLink";
@@ -22,11 +21,6 @@ const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   }
 };
 
-// Fix this with updated stack
-const StyledNav = styled.nav`
-  width: auto;
-`;
-
 const Pagination = ({
   pageCount,
   selectedPage = 1,
@@ -34,13 +28,13 @@ const Pagination = ({
   dataTest,
   hideLabels = true,
   size = SIZES.NORMAL,
-}: Props) => {
+}: Props): React.Node => {
   const pageChanged = handlePageChange(onPageChange, pageCount);
   const { isTablet } = useMediaQuery();
   const translate = useTranslate();
 
   return (
-    <Stack spacing="XXSmall" align="center" grow={false} shrink dataTest={dataTest} as={StyledNav}>
+    <Stack spacing="XXSmall" align="center" grow={false} shrink dataTest={dataTest} basis="auto">
       {!isTablet ? (
         <>
           <ButtonLink

@@ -22,7 +22,7 @@ const TileExpandable = ({
   icon,
   dataTest,
   htmlTitle,
-}: Props) => {
+}: Props): React.Node => {
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
 

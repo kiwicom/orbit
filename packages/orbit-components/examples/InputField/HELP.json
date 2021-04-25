@@ -1,8 +1,8 @@
 {
-	"imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";",
-	"example": "() => (\n  <InputField\n    label=\"Password\"\n    placeholder=\"paSsw0rd\"\n    type=\"password\"\n    help=\"Use at least one uppercase letter and one number\"\n  />\n)\n",
-	"info": {
-		"title": "Input field help",
-		"description": "Help text can guide users to entering proper data. Note that an error message will override the help text."
-	}
+  "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";",
+  "example": "(): React.Node => (\n  <InputField\n    label=\"Password\"\n    placeholder=\"paSsw0rd\"\n    type=\"password\"\n    help=\"Use at least one uppercase letter and one number\"\n  />\n)\n",
+  "info": {
+    "title": "Input field help",
+    "description": "Help text can guide users to entering proper data. Note that an error message will override the help text."
+  }
 }

@@ -11,7 +11,7 @@ import type { Props, State } from "./index";
 
 const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible || !expandable;
 
-export const StyledCardSectionContent = styled.div`
+export const StyledCardSectionContent: any = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
@@ -35,6 +35,7 @@ export const StyledCardSectionContent = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -114,7 +115,8 @@ class CardSectionContent extends React.Component<Props, State> {
   }
 }
 
-const DecoratedComponent = withConsumer(CardSectionContent);
+const DecoratedComponent: Props => React.Node = withConsumer(CardSectionContent);
+// $FlowFixMe
 DecoratedComponent.displayName = "CardSectionContent";
 
 export default DecoratedComponent;

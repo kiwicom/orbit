@@ -5,7 +5,7 @@ import LinkList from "../index";
 import TextLink from "../../TextLink";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <LinkList>
       <TextLink href="https://orbit.kiwi/components/linklist/" external type="secondary">
         LinkList guidelines

@@ -5,7 +5,7 @@ import InputField from "../../InputField";
 import Tag from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [tags, setTags] = React.useState({
       london: { present: true, selected: false },
       manchester: { present: true, selected: false },
@@ -36,6 +36,7 @@ export default {
       <InputField
         label="Destination"
         value=""
+        readOnly
         tags={
           <>
             {tags.london.present && addTag("london")}

@@ -1,5 +1,4 @@
-// @flow
-
+// @noflow
 const orbits = require("@kiwicom/orbit-components");
 const icons = require("@kiwicom/orbit-components/icons");
 const fs = require("fs");

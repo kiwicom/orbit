@@ -16,7 +16,7 @@ import Text from "../../Text";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [cabinBags, setCabinBags] = React.useState(0);
     const [checkedBags, setCheckedBags] = React.useState(0);
     const [stops, setStops] = React.useState("any");
@@ -147,7 +147,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 2</Text>
-                  <Icons.BaggageChecked ariaLabel="checked bags" />
+                  <Icons.BaggageChecked30 ariaLabel="checked bags" />
                 </Stack>
               </Stack>
             }
@@ -166,7 +166,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked ariaLabel="checked bag" />
+                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }
@@ -185,7 +185,7 @@ export default {
                 </Stack>
                 <Stack inline>
                   <Text>Up to 1</Text>
-                  <Icons.BaggageChecked ariaLabel="checked bag" />
+                  <Icons.BaggageChecked30 ariaLabel="checked bag" />
                 </Stack>
               </Stack>
             }

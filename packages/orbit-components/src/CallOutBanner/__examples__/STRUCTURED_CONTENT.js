@@ -11,7 +11,7 @@ import Stack from "../../Stack";
 import * as Icons from "../../icons";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <CallOutBanner
       title="Accommodation in Warsaw"
       description="Select the perfect place to rest during your stay in Warsaw."

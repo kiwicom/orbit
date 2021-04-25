@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-orbit-components",
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
-  "version": "0.3.2",
+  "version": "0.5.1",
   "author": "Kiwi.com",
   "main": "dist/index.js",
   "license": "MIT",
@@ -26,13 +26,15 @@
   ],
   "scripts": {
     "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
-    "prepublishOnly": "yarn build"
+    "postinstall": "yarn build",
+    "prepublishOnly": "yarn build && pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "@babel/types": "=7.12.10",
     "@kiwicom/orbit-design-tokens": "^0.13.3"
   },
   "devDependencies": {
-    "@types/eslint": "^7.2.6"
+    "@types/eslint": "^7.2.10"
   }
 }

@@ -8,7 +8,7 @@ type Props = {|
   children: React.Node,
 |};
 
-const Badge = ({ children }: Props) => {
+const Badge = ({ children }: Props): React.Node => {
   const theme = useTheme();
 
   return (

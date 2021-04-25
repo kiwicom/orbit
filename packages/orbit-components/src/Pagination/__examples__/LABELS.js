@@ -4,7 +4,7 @@ import * as React from "react";
 import Pagination from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [currentPage, setCurrentPage] = React.useState(2);
     return (
       <Pagination

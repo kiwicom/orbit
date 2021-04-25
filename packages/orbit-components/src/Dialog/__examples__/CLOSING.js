@@ -5,7 +5,7 @@ import Button from "../../Button";
 import Dialog from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [showDialog, setShowDialog] = React.useState(false);
     return (
       <>

@@ -17,6 +17,7 @@ describe("Slider/Bar", () => {
     );
 
     expect(ref.current).toBeDefined();
+    // $FlowFixMe
     fireEvent.mouseDown(container.firstChild, { pageX: 100 });
     expect(onMouseDown).toHaveBeenCalled();
   });

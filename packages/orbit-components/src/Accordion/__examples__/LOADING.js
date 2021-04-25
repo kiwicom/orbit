@@ -5,7 +5,7 @@ import Accordion from "../index";
 import AccordionSection from "../AccordionSection/index";
 
 export default {
-  Example: () => (
+  Example: (): React.Node => (
     <Accordion loading>
       <AccordionSection>Seat map outbound</AccordionSection>
       <AccordionSection>Seat map inbound</AccordionSection>

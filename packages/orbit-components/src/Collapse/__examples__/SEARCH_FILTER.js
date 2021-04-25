@@ -6,7 +6,7 @@ import Checkbox from "../../Checkbox";
 import Collapse from "../index";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [planeChecked, setPlaneChecked] = React.useState(true);
     const [trainChecked, setTrainChecked] = React.useState(true);
     const [busChecked, setBusChecked] = React.useState(true);

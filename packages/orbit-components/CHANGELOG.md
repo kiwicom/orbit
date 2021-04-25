@@ -3,6 +3,105 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.113.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.112.0...@kiwicom/orbit-components@0.113.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* add TypeScript definition of getTokens ([267109a](https://github.com/kiwicom/orbit/commit/267109aa0680f48756bda7c6e87827d500a066ca))
+* add typescript export of defaultTheme ([1047b61](https://github.com/kiwicom/orbit/commit/1047b6117fb705943caeaf64b509a285100ad0b4))
+* export SeatLegend ([576027f](https://github.com/kiwicom/orbit/commit/576027fcca81b72c0b5a968ecef5e5b034a0cc98))
+* update React peer dependency versions ([#2898](https://github.com/kiwicom/orbit/issues/2898)) ([b841f2d](https://github.com/kiwicom/orbit/commit/b841f2d05a96dc023338b527d46910a2d61b2e5f))
+* **Breadcrumbs:** missing action in default story ([#2884](https://github.com/kiwicom/orbit/issues/2884)) ([683bd86](https://github.com/kiwicom/orbit/commit/683bd86a37e15fb89368621ae45604842c0f6a6a))
+* **docs:** escape pipe in Alert button props table ([f50485f](https://github.com/kiwicom/orbit/commit/f50485f91a29af1460af8dbd429b078c1e8ba7bb))
+* **useBoundingRect:** fix TypeScript declaration ([#2875](https://github.com/kiwicom/orbit/issues/2875)) ([371b30d](https://github.com/kiwicom/orbit/commit/371b30dbdff3fe96d1a2b8c2ead88e1f24288f8a))
+
+
+### Features
+
+* add export of calculateCountOf ([6ac26ff](https://github.com/kiwicom/orbit/commit/6ac26ff591e332e7ea680d9feb845ad264fb9b0e))
+* **docs:** update guidance on notification badges ([f5b0da7](https://github.com/kiwicom/orbit/commit/f5b0da7660d3f7b03294bc882667c10273114ee5))
+
+
+### BREAKING CHANGES
+
+* **useBoundingRect:** In TypeScript `useBoundingRect` now requires a type
+parameter based on which HTML element it measures:
+
+```tsx
+function App() {
+  const [dimensions, ref] = useBoundingRect<HTMLDivElement>();
+  return <div ref={ref} />;
+}
+```
+
+
+
+
+
+# [0.112.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.1...@kiwicom/orbit-components@0.112.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* add default export for Icon stories ([#2864](https://github.com/kiwicom/orbit/issues/2864)) ([2e9d2c7](https://github.com/kiwicom/orbit/commit/2e9d2c7700c36c78b0c46b36d1cb82104f6659f2))
+* **docs:** add exports for types ([3acc31e](https://github.com/kiwicom/orbit/commit/3acc31e379c8089cdf42383e3459bafff8647190))
+* **docs:** change null to 0 ([9eca6cd](https://github.com/kiwicom/orbit/commit/9eca6cdab0987dd3b0ccef7f648cca39a2f63bd8))
+* **docs:** remove improper token in enum ([4ab6b23](https://github.com/kiwicom/orbit/commit/4ab6b2319597574d6fbfa23c95d305754a9163be))
+* **TextLink:** called twice when stopPropagation specified ([#2857](https://github.com/kiwicom/orbit/issues/2857)) ([4fc78dc](https://github.com/kiwicom/orbit/commit/4fc78dca23086fd0f9dadd51164774dcd8a83c70))
+* **TypeScript:** fix root mediaQueries export ([32a70a6](https://github.com/kiwicom/orbit/commit/32a70a69de07638cc78fd3961d09bb2184599e8a))
+
+
+### Features
+
+* **eslint-plugin-orbit:** useRtl rule ([#2833](https://github.com/kiwicom/orbit/issues/2833)) ([ecb3fd6](https://github.com/kiwicom/orbit/commit/ecb3fd6530cf6c9c0a3115d72bd6fb12f45aef90))
+* update baggage related icons ([#2851](https://github.com/kiwicom/orbit/issues/2851)) ([fb118c9](https://github.com/kiwicom/orbit/commit/fb118c91406cabc74b5665cd3c8d75a4e77a1566))
+* **playground:** examples ([#2808](https://github.com/kiwicom/orbit/issues/2808)) ([6f495cf](https://github.com/kiwicom/orbit/commit/6f495cf1e219720033a19d61a304f3c224c5c3ec))
+* export useMediaQuery hook from root ([1048599](https://github.com/kiwicom/orbit/commit/1048599150ed88126f5591fe83a76fb18b72d001))
+
+
+### BREAKING CHANGES
+
+* Renamed icons BaggageChecked -> BaggageChecked30; BaggagePersonalItem -> BaggagePersonal; BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Added new icons:**
+
+- BaggageChecked10
+- BaggageChecked20
+
+**Renamed icons:**
+
+- BaggageChecked -> BaggageChecked30
+- BaggagePersonalItem -> BaggagePersonal
+- BaggagePersonalItemNone -> BaggagePersonalNone
+
+**Updated icons:**
+
+- PriorityBorading
+- BaggageCheckedNone
+- BaggageCabin
+- BaggageCabinNone
+
+
+
+
+
+## [0.111.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.0...@kiwicom/orbit-components@0.111.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* **ci:** deploy storybook only, not build ([#2830](https://github.com/kiwicom/orbit/issues/2830)) ([f287d1e](https://github.com/kiwicom/orbit/commit/f287d1ec507fcb5f93d06f74afe1d2e8d973c958))
+* **docs:** misnamed prop for Box ([#2825](https://github.com/kiwicom/orbit/issues/2825)) ([4e98bd9](https://github.com/kiwicom/orbit/commit/4e98bd9038f3e30d634a74047308c08467416a31))
+* **InputFile:** ref ts type ([#2827](https://github.com/kiwicom/orbit/issues/2827)) ([1341d57](https://github.com/kiwicom/orbit/commit/1341d57ecd5aa63baafd9f95409941d910153141))
+* **SkipLink:** missing export ([#2794](https://github.com/kiwicom/orbit/issues/2794)) ([eff2c6d](https://github.com/kiwicom/orbit/commit/eff2c6d0e62fb8f2f151d8935f3e4dbe1879796c))
+* **useMediaQuery:** remove listeners on cleanup ([#2822](https://github.com/kiwicom/orbit/issues/2822)) ([eb92419](https://github.com/kiwicom/orbit/commit/eb92419e9d0884c4d6013d1598f0de9b85ebbf2f))
+* **Wizard:** remove incorrect React.ReactChildren ([#2829](https://github.com/kiwicom/orbit/issues/2829)) ([3f6b803](https://github.com/kiwicom/orbit/commit/3f6b80396aac9feb9df621dce2ef2ac70fddf616))
+
+
+
+
+
 # [0.111.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.110.0...@kiwicom/orbit-components@0.111.0) (2021-03-08)
 
 

@@ -13,11 +13,12 @@ const StyledTripLayover = styled.div`
     ${theme.orbit.spaceLarge}`)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTripLayover.defaultProps = {
   theme: defaultTheme,
 };
 
-const TripLayover = ({ children, dataTest }: Props) => (
+const TripLayover = ({ children, dataTest }: Props): React.Node => (
   <StyledTripLayover data-test={dataTest}>{children}</StyledTripLayover>
 );
 

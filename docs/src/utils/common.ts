@@ -1,3 +1,5 @@
+import React from "react";
+
 export const omitNumbers = (str: string) =>
   str
     .split("/")
@@ -22,15 +24,10 @@ export const slugify = (str: string) => {
   return "";
 };
 
-export const copyTimeout = (
-  copied: boolean,
-  setCopied: React.Dispatch<React.SetStateAction<boolean>>,
-) => {
-  if (copied) {
-    const timer = setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }
-  return undefined;
+export const getTextFromChildren = (children?: React.ReactNode) => {
+  if (typeof children === "string") return children;
+  if (typeof children === "number") return children.toString();
+  if (Array.isArray(children)) return children.map(child => getTextFromChildren(child)).join(" ");
+  if (!children || typeof children !== "object" || !("props" in children)) return "";
+  return children.props.children;
 };

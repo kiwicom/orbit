@@ -23,7 +23,7 @@ import usePrevious from "../hooks/usePrevious";
 
 import type { Instance, Props } from "./index";
 
-const getSizeToken = () => ({ size, theme }) => {
+const getSizeToken: any = () => ({ size, theme }) => {
   const tokens = {
     [SIZES.EXTRASMALL]: theme.orbit.modalWidthExtraSmall,
     [SIZES.SMALL]: theme.orbit.modalWidthSmall,
@@ -48,7 +48,7 @@ const ModalBody = styled.div`
   outline: none;
   overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  font-family: ${({ theme }) => theme.orbit.fontfamily};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   -webkit-overflow-scrolling: auto;
   ${media.largeMobile(css`
     overflow-y: auto;
@@ -59,6 +59,7 @@ const ModalBody = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalBody.defaultProps = {
   theme: defaultTheme,
 };
@@ -93,6 +94,7 @@ const ModalWrapper = styled.div`
   `)};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -166,6 +168,7 @@ const CloseContainer = styled.div`
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -319,13 +322,14 @@ const ModalWrapperContent = styled.div`
     )};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
 const OFFSET = 40;
 
-const Modal = React.forwardRef<Props, Instance>(
+const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, Instance>(
   (
     {
       size = SIZES.NORMAL,
@@ -397,6 +401,7 @@ const Modal = React.forwardRef<Props, Instance>(
       if (!content) return;
 
       // added in 4.0.3, interpolation of styled component return static className
+      // $FlowFixMe
       const footerEl = content.querySelector(`${StyledModalFooter}`);
       const contentDimensions = content.getBoundingClientRect();
 
@@ -512,6 +517,7 @@ const Modal = React.forwardRef<Props, Instance>(
           ? contentHeight + 80
           : target.scrollHeight;
 
+      // $FlowFixMe
       setScrolled(target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0));
       setFixedClose(target.scrollTop >= fixCloseOffset);
       // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
@@ -525,6 +531,7 @@ const Modal = React.forwardRef<Props, Instance>(
 
       if (!content) return null;
 
+      // $FlowFixMe
       const headingEl = content.querySelector(`${ModalHeading}`);
 
       if (headingEl) {

@@ -4,10 +4,11 @@ import * as React from "react";
 import InputStepperStateless from "../InputStepperStateless";
 
 export default {
-  Example: () => {
+  Example: (): React.Element<"div"> => {
     const maxValue = 10;
     const minValue = 1;
     const [value, setValue] = React.useState(3);
+
     const incrementValue = () => {
       setValue(value + 1);
     };
@@ -24,6 +25,7 @@ export default {
           onIncrement={incrementValue}
           onDecrement={decrementValue}
           label="Travelers"
+          onChange={() => {}}
           titleIncrement="Add a traveler"
           titleDecrement="Remove a traveler"
         />

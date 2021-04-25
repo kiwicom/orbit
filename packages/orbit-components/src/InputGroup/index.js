@@ -16,8 +16,6 @@ import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
 
-const { useState, useEffect, useCallback } = React;
-
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.height]: {
@@ -70,6 +68,7 @@ const FakeGroup = styled(({ children, className }) => (
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeGroup.defaultProps = {
   theme: defaultTheme,
 };
@@ -86,6 +85,7 @@ const StyledChild = styled.div`
     padding: 0;
   }
 `;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -152,6 +152,7 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
   }
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
@@ -177,12 +178,12 @@ const InputGroup = ({
   onFocus,
   onBlur,
   onChange,
-}: Props) => {
-  const [active, setActive] = useState(false);
-  const [filled, setFilled] = useState(false);
+}: Props): React.Node => {
+  const [active, setActive] = React.useState(false);
+  const [filled, setFilled] = React.useState(false);
   const inputID = React.useMemo(() => randomID("inputGroupID"), []);
 
-  const isFilled = useCallback(
+  const isFilled = React.useCallback(
     () =>
       setFilled(
         findPropInChild("value", children).length === React.Children.toArray(children).length,
@@ -190,7 +191,7 @@ const InputGroup = ({
     [children],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     isFilled();
   }, [isFilled]);
 

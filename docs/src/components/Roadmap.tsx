@@ -1,7 +1,8 @@
 import React from "react";
-import { Inline, Separator, Stack, Text, TextLink } from "@kiwicom/orbit-components";
+import { Stack, Text, TextLink } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 
+import MasonryLayout from "./MasonryLayout";
 import RoadmapData from "../data/roadmap.yaml";
 import Tile from "./Tile";
 
@@ -18,26 +19,21 @@ const RoadmapItem = ({ description, estimate, jiraNumber, title }: RoadmapItemPr
   return (
     <Tile title={title}>
       <p>{description}</p>
-      {(estimate || jiraNumber) && <Separator />}
-
-      <Stack spacing="XXXSmall">
-        <Inline>
+      {(estimate || jiraNumber) && (
+        <Stack direction="row">
           {estimate && (
-            <>
-              <Text size="small" weight="bold">
+            <Stack spacing="XXXSmall">
+              <Text size="small" type="secondary">
                 Estimated completion
               </Text>
-              <Text size="small">: {estimate}</Text>
-            </>
+              <Text>{estimate}</Text>
+            </Stack>
           )}
-        </Inline>
-        {jiraNumber && (
-          <Inline>
-            <Text size="small" weight="bold">
-              Connected Jira epic
-            </Text>
-            <Text size="small">
-              :{" "}
+          {jiraNumber && (
+            <Stack spacing="XXXSmall">
+              <Text size="small" type="secondary">
+                Connected Jira epic
+              </Text>
               <TextLink
                 external
                 href={`https://jira.kiwi.com/browse/ORBIT-${jiraNumber}`}
@@ -46,10 +42,10 @@ const RoadmapItem = ({ description, estimate, jiraNumber, title }: RoadmapItemPr
               >
                 ORBIT-{jiraNumber}
               </TextLink>
-            </Text>{" "}
-          </Inline>
-        )}
-      </Stack>
+            </Stack>
+          )}
+        </Stack>
+      )}
     </Tile>
   );
 };
@@ -60,14 +56,20 @@ interface RoadmapProps {
 
 const Roadmap = ({ roadmapQuarter }: RoadmapProps) => {
   const quarterItems = RoadmapData.find(item => item.quarter === roadmapQuarter).items;
-  return quarterItems.map(item => (
-    <RoadmapItem
-      title={item.title}
-      jiraNumber={item.jiraNumber}
-      estimate={item.estimate}
-      description={item.description}
-    />
-  ));
+
+  return (
+    <MasonryLayout>
+      {quarterItems.map(item => (
+        <RoadmapItem
+          key={item.title}
+          title={item.title}
+          jiraNumber={item.jiraNumber}
+          estimate={item.estimate}
+          description={item.description}
+        />
+      ))}
+    </MasonryLayout>
+  );
 };
 
 export default Roadmap;

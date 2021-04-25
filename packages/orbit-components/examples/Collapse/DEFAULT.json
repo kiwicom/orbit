@@ -1,8 +1,8 @@
 {
-	"imports": "import Collapse from \"@kiwicom/orbit-components/lib/Collapse\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
-	"example": "() => (\n  <Collapse label=\"Collapse principles\">\n    <Text>\n      Collapse components help with{\" \"}\n      <TextLink\n        external\n        href=\"https://orbit.kiwi/guides/progressive-disclosure/\"\n      >\n        progressive disclosure\n      </TextLink>\n      , ensuring users don&apos;t get overwhelmed by too much information or too\n      many choices at once.\n    </Text>\n  </Collapse>\n)\n",
-	"info": {
-		"title": "Default collapse",
-		"description": "A collapse requires a label to describe what it's hiding and children to hide. By default, it is closed on initial load."
-	}
+  "imports": "import Collapse from \"@kiwicom/orbit-components/lib/Collapse\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
+  "example": "(): React.Node => (\n  <Collapse label=\"Collapse principles\">\n    <Text>\n      Collapse components help with{\" \"}\n      <TextLink\n        external\n        href=\"https://orbit.kiwi/guides/progressive-disclosure/\"\n      >\n        progressive disclosure\n      </TextLink>\n      , ensuring users don&apos;t get overwhelmed by too much information or too\n      many choices at once.\n    </Text>\n  </Collapse>\n)\n",
+  "info": {
+    "title": "Default collapse",
+    "description": "A collapse requires a label to describe what it's hiding and children to hide. By default, it is closed on initial load."
+  }
 }

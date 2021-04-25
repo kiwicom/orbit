@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 import { defaultTokens, getTokens, fromPlainObject } from "../index";
 import foundation from "../foundation";
 import convertHexToRgba from "../convertHexToRgba";

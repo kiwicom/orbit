@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack } from "@kiwicom/orbit-components";
-import { NewWindow } from "@kiwicom/orbit-components/icons";
-import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
+import { Heading, Inline, Stack, Button } from "@kiwicom/orbit-components";
+import { NewWindow, Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
-import SearchInput, { Size } from "../components/SearchInput";
+import Search from "../components/Search";
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
@@ -17,39 +16,14 @@ import GitHubLogo from "../images/github-full.svg";
 import SpectrumLogo from "../images/spectrum.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
-
-function TileRow({ children }: { children: React.ReactNode }) {
-  return (
-    <Inline spacing="XLarge">
-      {React.Children.map(
-        children,
-        tile =>
-          React.isValidElement(tile) && (
-            <div
-              css={css`
-                flex: 1;
-                align-self: stretch;
-                display: flex;
-                flex-direction: column;
-                > :only-child {
-                  flex: 1;
-                }
-              `}
-            >
-              {tile}
-            </div>
-          ),
-      )}
-    </Inline>
-  );
-}
+import { MAX_CONTENT_WIDTH } from "../consts";
 
 interface Props {
   location: WindowLocation;
 }
 
 export default function Home({ location }: Props) {
-  const theme = useTheme();
+  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   return (
     <Layout location={location}>
       <RocketImage />
@@ -58,7 +32,7 @@ export default function Home({ location }: Props) {
           /* so that the rest of the content has a higher z-order than the image */
           position: relative;
           width: 100%;
-          max-width: 80rem;
+          max-width: ${MAX_CONTENT_WIDTH};
           margin: 0 auto;
 
           > * + * {
@@ -94,16 +68,40 @@ export default function Home({ location }: Props) {
               >
                 Get started
               </ButtonLink>
-              <SearchInput size={Size.Large} />
+              <div
+                css={css`
+                  button {
+                    /* to match the height of the ButtonLink above */
+                    height: 64px;
+                  }
+                `}
+              >
+                <Button
+                  size="large"
+                  circled
+                  iconLeft={<SearchIcon />}
+                  type="primarySubtle"
+                  onClick={() => setSearchOpen(true)}
+                >
+                  Search…
+                </Button>
+                {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
+              </div>
             </Inline>
           </div>
         </>
 
-        <TileRow>
+        <Stack
+          flex
+          direction="column"
+          justify="between"
+          largeMobile={{ direction: "row", align: "stretch" }}
+        >
           <Tile
             title="Components"
             linkContent="See our components"
             href="/components/action/button/"
+            icon
           >
             Our components are a collection of interface elements that can be reused across the
             Orbit design system.
@@ -112,10 +110,11 @@ export default function Home({ location }: Props) {
             title="Patterns"
             linkContent="See our patterns"
             href="/design-patterns/progressive-disclosure/"
+            icon
           >
             Missing description for patterns card.
           </Tile>
-        </TileRow>
+        </Stack>
 
         <div
           css={css`
@@ -125,17 +124,17 @@ export default function Home({ location }: Props) {
           `}
         >
           <Heading as="h2">Foundation</Heading>
-          <TileRow>
-            <Tile title="Colors" linkContent="Learn more" href="/foundation/color/">
+          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+            <Tile title="Colors" linkContent="Learn more" href="/foundation/color/" icon>
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more">
+            <Tile title="Typography" linkContent="Learn more" icon>
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
-            <Tile title="Spacings" linkContent="Learn more">
+            <Tile title="Spacings" linkContent="Learn more" icon>
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
-          </TileRow>
+          </Stack>
           <div
             css={css`
               text-align: right;
@@ -155,11 +154,12 @@ export default function Home({ location }: Props) {
           `}
         >
           <Heading as="h2">Content</Heading>
-          <TileRow>
+          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
             <Tile
               title="Voice & tone"
               linkContent="Learn more"
               href="/kiwi-use/content/specific-areas/social-media/"
+              icon
             >
               How we write at Kiwi.com.
             </Tile>
@@ -167,14 +167,15 @@ export default function Home({ location }: Props) {
               title="Grammar & mechanics"
               linkContent="Learn more"
               href="/kiwi-use/content/grammar-and-mechanics/"
+              icon
             >
               Typography is critical for communicating the hierarchy of a page.Basic grammar
               guidelines for writing with Orbit.
             </Tile>
-            <Tile title="Glossary" linkContent="Learn more" href="/kiwi-use/content/glossary/">
+            <Tile title="Glossary" linkContent="Learn more" href="/kiwi-use/content/glossary/" icon>
               A list of most used words and phrases in Kiwi.com products.
             </Tile>
-          </TileRow>
+          </Stack>
           <div
             css={css`
               text-align: right;
@@ -195,64 +196,62 @@ export default function Home({ location }: Props) {
           `}
         >
           <Heading as="h2">Support</Heading>
-          <div>
-            <Stack spacing="XLarge">
-              <TileRow>
-                <BrandedTile
-                  title="Report a bug"
-                  href="https://github.com/kiwicom/orbit/issues/new/choose"
-                  linkContent="Report bug on GitHub"
-                  logo={<GitHubLogo />}
-                  color={{
-                    primary: "#252A31",
-                    secondary: "#515C6C",
-                  }}
-                >
-                  If you found any bugs in our components, report them on Github and we’ll fix them
-                  asap. It’s the highest priority to have Orbit working as expected.
-                </BrandedTile>
-                <BrandedTile
-                  title="Engage with us"
-                  href="https://spectrum.chat/orbit"
-                  linkContent="Go to Spectrum chat"
-                  logo={<SpectrumLogo />}
-                  color={{
-                    primary: "#330B94",
-                    secondary: "#7441F1",
-                  }}
-                >
-                  We aim to provide the best possible support for all designers and developers using
-                  Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform
-                  to get feedback from you.
-                </BrandedTile>
-              </TileRow>
-              <TileRow>
-                <BrandedTile
-                  title="Follow us on Twitter"
-                  href="https://twitter.com/OrbitKiwi"
-                  linkContent="Go to Orbit.kiwi’s Twitter"
-                  logo={<TwitterLogo />}
-                  color={{
-                    primary: "#0989CF",
-                    secondary: "#179CE3",
-                  }}
-                >
-                  Slack is Kiwi.com’s main platform for communication, so it’s only understandable
-                  that everything important that is happening around Orbit is also on Slack.
-                </BrandedTile>
-                <BrandedTile
-                  title="Connect Orbit to Tequila"
-                  href="https://partners.kiwi.com"
-                  linkContent="Explore Tequila possibilities"
-                  logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
-                  color="product"
-                >
-                  Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
-                  our content, technology, and services.
-                </BrandedTile>
-              </TileRow>
+          <Stack flex direction="column">
+            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
+              <BrandedTile
+                title="Report a bug"
+                href="https://github.com/kiwicom/orbit/issues/new/choose"
+                linkContent="Report bug on GitHub"
+                logo={<GitHubLogo />}
+                color={{
+                  primary: "#252A31",
+                  secondary: "#515C6C",
+                }}
+              >
+                If you found any bugs in our components, report them on Github and we’ll fix them
+                asap. It’s the highest priority to have Orbit working as expected.
+              </BrandedTile>
+              <BrandedTile
+                title="Engage with us"
+                href="https://spectrum.chat/orbit"
+                linkContent="Go to Spectrum chat"
+                logo={<SpectrumLogo />}
+                color={{
+                  primary: "#330B94",
+                  secondary: "#7441F1",
+                }}
+              >
+                We aim to provide the best possible support for all designers and developers using
+                Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform to
+                get feedback from you.
+              </BrandedTile>
             </Stack>
-          </div>
+            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
+              <BrandedTile
+                title="Follow us on Twitter"
+                href="https://twitter.com/OrbitKiwi"
+                linkContent="Go to Orbit.kiwi’s Twitter"
+                logo={<TwitterLogo />}
+                color={{
+                  primary: "#0989CF",
+                  secondary: "#179CE3",
+                }}
+              >
+                Twitter is one of the main platform for sharing, everything important that is
+                happening around Orbit is published on Twitter
+              </BrandedTile>
+              <BrandedTile
+                title="Connect Orbit to Tequila"
+                href="https://partners.kiwi.com"
+                linkContent="Explore Tequila possibilities"
+                logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
+                color="product"
+              >
+                Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
+                our content, technology, and services.
+              </BrandedTile>
+            </Stack>
+          </Stack>
         </div>
 
         <div
@@ -263,18 +262,18 @@ export default function Home({ location }: Props) {
           `}
         >
           <Heading as="h2">Resources</Heading>
-          <TileRow>
-            <Tile
-              title="Figma library"
-              linkContent={<NewWindow />}
-              href="https://www.figma.com/@orbitbykiwi"
-            />
-            <Tile
-              title="Orbit repository"
-              linkContent={<NewWindow />}
-              href="https://github.com/kiwicom/orbit"
-            />
-          </TileRow>
+          <Tile
+            title="Figma library"
+            linkContent={<NewWindow />}
+            href="https://www.figma.com/@orbitbykiwi"
+            icon
+          />
+          <Tile
+            title="Orbit repository"
+            linkContent={<NewWindow />}
+            href="https://github.com/kiwicom/orbit"
+            icon
+          />
         </div>
       </div>
     </Layout>

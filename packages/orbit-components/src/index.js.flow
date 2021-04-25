@@ -17,6 +17,7 @@ import typeof ButtonLinkType from "./ButtonLink";
 import typeof ButtonMobileStoreType from "./ButtonMobileStore";
 import typeof ButtonPrimitiveType from "./primitives/ButtonPrimitive";
 import typeof ButtonType from "./Button";
+import typeof calculateCountOfType from "./Slider/utils/calculateCountOf";
 import typeof CallOutBannerType from "./CallOutBanner";
 import typeof CardSectionType from "./Card/CardSection";
 import typeof CardType from "./Card";
@@ -78,11 +79,13 @@ import typeof ServiceLogoType from "./ServiceLogo";
 import typeof SkipNavigationType from "./SkipNavigation";
 import typeof SkipLinkType from "./SkipLink";
 import typeof SliderType from "./Slider";
-import typeof SmartPassV1Type from "./SmartPassIllustrations/illustrations/SmartPassV1";
-import typeof SmartPassV2Type from "./SmartPassIllustrations/illustrations/SmartPassV2";
-import typeof SmartPassV3Type from "./SmartPassIllustrations/illustrations/SmartPassV3";
-import typeof SmartPassV4Type from "./SmartPassIllustrations/illustrations/SmartPassV4";
-import typeof SmartPassV5Type from "./SmartPassIllustrations/illustrations/SmartPassV5";
+import typeof {
+  SmartPassV1 as SmartPassV1Type,
+  SmartPassV2 as SmartPassV2Type,
+  SmartPassV3 as SmartPassV3Type,
+  SmartPassV4 as SmartPassV4Type,
+  SmartPassV5 as SmartPassV5Type,
+} from "./SmartPassIllustrations";
 import typeof SocialButtonType from "./SocialButton";
 import typeof StackType from "./Stack";
 import typeof StepperStatelessType from "./Stepper/StepperStateless";
@@ -112,6 +115,7 @@ import typeof TripSectorType from "./deprecated/TripSector";
 import typeof TripSegmentType from "./deprecated/TripSegment";
 import typeof TruncateType from "./Truncate";
 import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
+import typeof useMediaQueryType from "./hooks/useMediaQuery";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -171,6 +175,7 @@ declare export var Portal: PortalType;
 declare export var Sticky: StickyType;
 
 declare export var Slider: SliderType;
+declare export var calculateCountOf: calculateCountOfType;
 
 declare export var NavigationBar: NavigationBarType;
 declare export var Drawer: DrawerType;
@@ -249,6 +254,7 @@ declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
 declare export var mediaQueries: mediaQueriesType;
+declare export var useMediaQuery: useMediaQueryType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 import type { Props } from "./tooltipArrowStyle";
 
-const tooltipArrowStyle = ({ position, theme }: Props) => {
+const tooltipArrowStyle = ({ position, theme }: Props): any => {
   const arrows = {
     top: css`
       border-width: 7px 7px 0 7px; // TODO: create token sizeTooltipArrow

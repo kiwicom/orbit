@@ -82,7 +82,6 @@ module.exports = {
       rules: {
         "flowtype/require-exact-type": "error",
         "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
-        "flowtype/require-valid-file-annotation": ["error", "always"],
         "adeira/no-internal-flow-type": "error",
       },
     },
@@ -108,6 +107,7 @@ module.exports = {
         },
       },
       rules: {
+        "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/no-empty-function": "off",
         "no-shadow": "off",
@@ -206,11 +206,13 @@ module.exports = {
       rules: {
         "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
         "mdx/no-unescaped-entities": "OFF",
+        "react/no-unescaped-entities": "OFF",
         "mdx/remark": "error",
         "import/extensions": [
           "error",
           "ignorePackages",
           {
+            ts: "never",
             tsx: "never",
           },
         ],
@@ -218,7 +220,7 @@ module.exports = {
       settings: {
         "import/resolver": {
           node: {
-            extensions: [".tsx"],
+            extensions: [".ts", ".tsx"],
           },
           alias: {
             map: [["snippets", "./docs/src/snippets"]],
@@ -239,8 +241,8 @@ module.exports = {
         GuidelineImages: false,
         Guideline: false,
         GuidelinesSideBySide: false,
+        ImageContainer: false,
         InlineToken: false,
-        Palette: false,
         ReactExample: false,
       },
     },
@@ -261,6 +263,16 @@ module.exports = {
       files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
       rules: {
         "orbit-components/unique-id": "off",
+      },
+    },
+    {
+      files: [
+        "packages/orbit-components/{src,es,lib}/**/*.js",
+        "packages/orbit-design-tokens/{src,lib}/**/*.js",
+        "*.js.flow",
+      ],
+      rules: {
+        "flowtype/require-valid-file-annotation": ["error", "always"],
       },
     },
   ],

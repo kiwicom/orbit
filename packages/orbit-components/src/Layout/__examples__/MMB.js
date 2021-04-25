@@ -7,7 +7,7 @@ import LayoutColumn from "../LayoutColumn";
 import Text from "../../Text";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const style = {
       minHeight: defaultTheme.orbit.illustrationHeightMedium,
       background: defaultTheme.orbit.backgroundBody,

@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.2.0...@kiwicom/babel-plugin-orbit-components@2.3.0) (2021-04-22)
+
+
+### Features
+
+* add export of calculateCountOf ([6ac26ff](https://github.com/kiwicom/orbit/commit/6ac26ff591e332e7ea680d9feb845ad264fb9b0e))
+
+
+
+
+
+# [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.3...@kiwicom/babel-plugin-orbit-components@2.2.0) (2021-04-07)
+
+
+### Features
+
+* export useMediaQuery hook from root ([1048599](https://github.com/kiwicom/orbit/commit/1048599150ed88126f5591fe83a76fb18b72d001))
+
+
+
+
+
+## [2.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.2...@kiwicom/babel-plugin-orbit-components@2.1.3) (2021-03-19)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
 ## [2.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.1.1...@kiwicom/babel-plugin-orbit-components@2.1.2) (2021-03-03)
 
 

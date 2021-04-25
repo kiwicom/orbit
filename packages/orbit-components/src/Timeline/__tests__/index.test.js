@@ -17,7 +17,7 @@ jest.mock("../../hooks/useMediaQuery", () => {
 describe("#Timeline", () => {
   it("should have spaceAfter", () => {
     const { container } = render(<Timeline spaceAfter={SPACINGS_AFTER.NORMAL}>kek</Timeline>);
-
+    // $FlowFixMe
     expect(getComputedStyle(container.firstChild)).toHaveProperty(
       "margin-bottom",
       defaultTheme.orbit.spaceSmall,

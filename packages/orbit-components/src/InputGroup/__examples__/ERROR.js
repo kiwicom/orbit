@@ -6,7 +6,7 @@ import InputGroup from "../index";
 import Select from "../../Select";
 
 export default {
-  Example: () => {
+  Example: (): React.Node => {
     const [month, setMonth] = React.useState("");
     const [year, setYear] = React.useState(2000);
     return (

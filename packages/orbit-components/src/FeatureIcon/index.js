@@ -22,7 +22,7 @@ const generateURL = name => {
   return { src: urlWithName(), srcSet: [urlWithName(2), urlWithName(3)].join(",") };
 };
 
-export const StyledFeatureIcon = styled(({ className, name, alt, dataTest }) => (
+export const StyledFeatureIcon: any = styled(({ className, name, alt, dataTest }) => (
   <img className={className} alt={alt} data-test={dataTest} {...generateURL(name)} />
 ))`
   height: ${baseSize}px;
@@ -30,11 +30,12 @@ export const StyledFeatureIcon = styled(({ className, name, alt, dataTest }) => 
   background-color: transparent;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFeatureIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const FeatureIcon = ({ alt = "", name, dataTest }: Props) => (
+const FeatureIcon = ({ alt = "", name, dataTest }: Props): React.Node => (
   <StyledFeatureIcon alt={alt} name={name} dataTest={dataTest} />
 );
 

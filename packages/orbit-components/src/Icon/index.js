@@ -57,11 +57,12 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden,
   ${reverse};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const OrbitIcon = (props: FactoryProps) => {
+const OrbitIcon = (props: FactoryProps): React.Node => {
   const {
     size,
     color,

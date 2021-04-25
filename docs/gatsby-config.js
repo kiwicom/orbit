@@ -15,6 +15,13 @@ module.exports = {
         path: `${__dirname}/src/documentation`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`,
+      },
+    },
     "gatsby-remark-images",
     {
       resolve: "gatsby-plugin-mdx",
@@ -57,19 +64,6 @@ module.exports = {
       },
     },
     {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: ["title", "excerpt", "path"],
-        resolvers: {
-          Mdx: {
-            title: n => n.frontmatter.title,
-            excerpt: n => n.frontmatter.excerpt,
-            path: n => n.fields.slug,
-          },
-        },
-      },
-    },
-    {
       resolve: "gatsby-redirect-from",
       options: {
         query: "allMdx",
@@ -82,6 +76,9 @@ module.exports = {
         repo: "orbit",
         owner: "kiwicom",
       },
+    },
+    {
+      resolve: require.resolve("./plugins/sandbox"),
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",

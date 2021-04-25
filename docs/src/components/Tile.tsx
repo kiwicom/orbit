@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Stack } from "@kiwicom/orbit-components";
+import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import { css } from "styled-components";
 
@@ -9,7 +9,9 @@ import ArrowRight from "./ArrowRight";
 export const ICON_SIZE = "2rem";
 
 interface Props {
+  icon?: boolean;
   title: string;
+  fullWidth?: boolean;
   linkContent?: React.ReactNode;
   href?: string;
   children?: React.ReactNode;
@@ -47,7 +49,14 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Tile({ title, linkContent, href, children }: Props) {
+export default function Tile({
+  href,
+  icon,
+  linkContent,
+  title,
+  children,
+  fullWidth = true,
+}: Props) {
   const theme = useTheme();
 
   return (
@@ -58,6 +67,7 @@ export default function Tile({ title, linkContent, href, children }: Props) {
         background: ${theme.orbit.paletteWhite};
         box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
         display: flex;
+        width: ${fullWidth && "100%"};
         ${children
           ? css`
               flex-direction: column;
@@ -72,18 +82,24 @@ export default function Tile({ title, linkContent, href, children }: Props) {
         css={css`
           flex: 1;
           display: flex;
-          > * + * {
-            margin-left: 0.75rem;
-          }
+          ${mq.largeMobile(`
+            > * + * {
+              margin-left: 0.75rem;
+            };
+          `)};
         `}
       >
-        <TileIcon />
+        {icon && (
+          <Hide on={["smallMobile", "mediumMobile"]}>
+            <TileIcon />
+          </Hide>
+        )}
         {children ? (
           <div>
             <TileTitle>{title}</TileTitle>
             <div
               css={css`
-                margin: 0.5rem 0 1.5rem;
+                margin: 0.5rem 0 ${href ? "1.5rem" : "0"};
               `}
             >
               {/* wrap plain strings in a p tag and otherwise render children */}

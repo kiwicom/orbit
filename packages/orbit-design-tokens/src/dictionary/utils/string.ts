@@ -11,18 +11,19 @@ export const falsyString = (condition: boolean, string: string): string | undefi
 
 export const stringify = (value: string | number): string => `"${value}"`;
 
+const addStringified = (condition: boolean, value: string) =>
+  condition ? stringify(value) : value;
 /*
   Converts a string or number into string with pixels.
   The `${value}px` is applied only for value of type number, e.g. 24.
   Cases like "auto", "0" are being skipped because it's either redundant to specify the pixels, or unwanted.
   Second parameter is required boolean if it's needed to attach additional double quotes or not.
  */
-const isStringified = (condition: boolean, value: string) => (condition ? stringify(value) : value);
 export const pixelized = (value: string | number, stringified = true): string => {
   if (/^[0-9]*$/g.test(String(value)) && String(value) !== "0") {
-    return isStringified(stringified, `${value}px`);
+    return addStringified(stringified, `${value}px`);
   }
-  return isStringified(stringified, String(value));
+  return addStringified(stringified, String(value));
 };
 
 /*

@@ -4,7 +4,16 @@
       "badge": {
         "icon": {
           "type": "size",
-          "value": "0 4px 0 0",
+          "category": "spacing",
+          "value": null,
+          "attributes": {
+            "spacing": {
+              "top": 0,
+              "right": "{foundation.space.one-x}",
+              "left": 0,
+              "bottom": 0
+            }
+          },
           "deprecated": true,
           "deprecated-version": "1.0.0"
         }

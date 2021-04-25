@@ -1,0 +1,19 @@
+{
+  "component": {
+    "padding": {
+      "badge": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top-bottom": 0,
+            "left-right": "{foundation.space.two-x}"
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

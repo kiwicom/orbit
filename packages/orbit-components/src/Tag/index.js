@@ -66,6 +66,9 @@ CloseContainer.defaultProps = {
 export const StyledTag = styled.div`
   ${({ theme, actionable }) => css`
     font-family: ${theme.orbit.fontFamily};
+    /*
+      Don't do this, hard to track.
+    */
     color: ${resolveColor({
       selected: "paletteWhite",
       removable: "paletteBlueDarker",

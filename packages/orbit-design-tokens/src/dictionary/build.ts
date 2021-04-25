@@ -34,7 +34,7 @@ const build = () => {
   });
   StyleDictionary.registerTransformGroup({
     name: "xml/tokens",
-    transforms: ["attribute/nov", "name/nov/camel"],
+    transforms: ["attribute/nov", "attribute/spacing", "name/nov/camel", "value/xml"],
   });
   StyleDictionary.registerTransformGroup({
     name: "json/documentation-tokens",
@@ -100,7 +100,13 @@ const build = () => {
       "xml/tokens": {
         transformGroup: "xml/tokens",
         buildPath: "lib/",
-        files: [{ destination: "index.xml", format: "xml/tokens", filter: isNotInternal }],
+        files: [
+          {
+            destination: "index.xml",
+            format: "xml/tokens",
+            filter: isNotInternal,
+          },
+        ],
       },
     },
   });

@@ -13,5 +13,8 @@ describe("string utils", () => {
     expect(pixelized("5")).toBe(`"5px"`);
     expect(pixelized(5)).toBe(`"5px"`);
     expect(pixelized(0)).toBe(`"0"`);
+    expect(pixelized("5", false)).toEqual(`5px`);
+    expect(pixelized(5, false)).toEqual(`5px`);
+    expect(pixelized(0, false)).toEqual(`0`);
   });
 });

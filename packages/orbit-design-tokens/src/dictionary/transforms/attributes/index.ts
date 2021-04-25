@@ -1,10 +1,19 @@
 import _ from "lodash";
 import { Attributes, Property } from "style-dictionary";
 
-import { errorTransform } from "../../utils/errorMessage";
+import { errorTransform, spacingError, spacingErrorDefinition } from "../../utils/errorMessage";
 import { nameNOVCamel } from "../names";
 import { valueJavascript } from "../values";
-import { isZIndex, isBreakpoint, isBoxShadow, isModifier } from "../../utils/is";
+import {
+  isZIndex,
+  isBreakpoint,
+  isBoxShadow,
+  isModifier,
+  isSpacing,
+  isSpacingWithTwoValues,
+  isSpacingWithThreeValues,
+  isSpacingWithFourValues,
+} from "../../utils/is";
 import { falsyString, pixelized } from "../../utils/string";
 
 const NOV_STRUCTURE = ["namespace", "object", "variant", "subVariant"];
@@ -123,12 +132,55 @@ export const attributeBoxShadowJavascript = {
   },
 };
 
+/*
+  This transform ensures that the spacing object inside attributes has the right properties,
+  and also transforms values to pixelized value.
+  Allowed combinations are:
+  { top, right, bottom, left }
+  { top, left-right, bottom }
+  { top-bottom, left-right }
+  The order doesn't matter, it's being sorted for the check and also in the formatters.
+ */
+export const attributeSpacingJavascript = {
+  name: "attribute/spacing",
+  type: "attribute",
+  matcher: isSpacing,
+  transformer: (prop: Property): Attributes => {
+    const { attributes } = prop;
+    const { spacing } = attributes;
+    const tokenName = nameNOVCamel.transformer(prop);
+    // spacing object has to be defined
+    if (spacing == null) {
+      throw new Error(spacingError(tokenName));
+    }
+    const spaceArray = Object.keys(spacing).sort();
+    // and the object has to contain one of the supported combinations
+    if (
+      !isSpacingWithTwoValues(spaceArray) &&
+      !isSpacingWithThreeValues(spaceArray) &&
+      !isSpacingWithFourValues(spaceArray)
+    ) {
+      throw new Error(spacingErrorDefinition(tokenName));
+    }
+    const pixelizedSpacing = Object.keys(spacing).map(key => {
+      const val = spacing[key];
+      const shouldTransformValue = typeof val === "number" || !/{[\w.-]+}/g.test(String(val));
+      const returnValue = shouldTransformValue ? pixelized(val, false) : val;
+      return {
+        [key]: returnValue,
+      };
+    });
+    return { ...attributes, spacing: Object.assign({}, ...pixelizedSpacing) };
+  },
+};
+
 export const attributeJavascript = {
   name: "attribute/javascript",
   type: "attribute",
   transformer: (prop: Property): Attributes => {
     const { attributes } = prop;
     if (isBoxShadow(prop)) return attributeBoxShadowJavascript.transformer(prop);
+    if (isSpacing(prop)) return attributeSpacingJavascript.transformer(prop);
     return attributes;
   },
 };

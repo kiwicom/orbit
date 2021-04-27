@@ -1,0 +1,14 @@
+// @flow
+import * as React from "react";
+
+import type { Spacing } from "../../Stack";
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  ...Globals,
+  +minHeight?: number,
+  +spacing?: Spacing,
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;

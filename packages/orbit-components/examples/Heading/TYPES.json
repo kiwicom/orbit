@@ -1,6 +1,6 @@
 {
   "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Separator from \"@kiwicom/orbit-components/lib/Separator\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <Heading type=\"display\">Display title</Heading>\n    <Heading type=\"displaySubtitle\">Display subtitle</Heading>\n    <Separator />\n    <Heading type=\"title1\">Title 1</Heading>\n    <Heading type=\"title2\">Title 2</Heading>\n    <Heading type=\"title3\">Title 3</Heading>\n    <Heading type=\"title4\">Title 4</Heading>\n    <Heading type=\"title5\">Title 5</Heading>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <Heading type=\"display\">Display title</Heading>\n    <Heading type=\"displaySubtitle\">Display subtitle</Heading>\n    <Separator />\n    <Heading type=\"title1\">Title 1</Heading>\n    <Heading type=\"title2\">Title 2</Heading>\n    <Heading type=\"title3\">Title 3</Heading>\n    <Heading type=\"title4\">Title 4</Heading>\n    <Heading type=\"title5\">Title 5</Heading>\n  </Stack>\n)\n",
   "info": {
     "title": "Heading types",
     "description": "Headings are split based on size and appearance into seven different types. These types represent a visual hierarchy from most important to least."

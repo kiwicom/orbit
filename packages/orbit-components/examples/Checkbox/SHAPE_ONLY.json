@@ -1,6 +1,6 @@
 {
   "imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";",
-  "example": "(): React.Node => {\n  const [checked, setChecked] = React.useState(false)\n  return <Checkbox checked={checked} onChange={() => setChecked(!checked)} />\n}\n",
+  "example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return <Checkbox checked={checked} onChange={() => setChecked(!checked)} />\n}\n",
   "info": {
     "title": "Shape only",
     "description": "In some cases, you may want to include only the shape of the checkbox. Make sure any visual information about the checkbox is accessible to everyone."

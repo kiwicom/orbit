@@ -1,6 +1,6 @@
 {
   "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";",
-  "example": "(): React.Element<\"div\"> => (\n  <div\n    style={{\n      backgroundColor: \"#252A31\",\n      padding: \"8px\",\n    }}\n  >\n    <Heading inverted>Inverted heading</Heading>\n  </div>\n)\n",
+  "example": "() => (\n  <div\n    style={{\n      backgroundColor: \"#252A31\",\n      padding: \"8px\",\n    }}\n  >\n    <Heading inverted>Inverted heading</Heading>\n  </div>\n)\n",
   "info": {
     "title": "Inverted heading",
     "description": "Inverted headings can be used on very dark backgrounds. This is the only color for headings other than colorHeading (Ink / Normal)."

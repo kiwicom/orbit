@@ -1,6 +1,6 @@
 {
   "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";",
-  "example": "(): React.Node => <Button loading>Click me</Button>\n",
+  "example": "() => <Button loading>Click me</Button>\n",
   "info": {
     "title": "Loading button",
     "description": "Loading buttons are useful when content needs to be loaded before the user can take an action."

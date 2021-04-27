@@ -1,6 +1,6 @@
 {
   "imports": "import Timeline from \"@kiwicom/orbit-components/lib/Timeline\";\nimport TimelineStep from \"@kiwicom/orbit-components/lib/TimelineStep\";",
-  "example": "(): React.Node => (\n  <Timeline>\n    <TimelineStep label=\"Booked\" subLabel=\"January 3, 10:43\" type=\"success\">\n      You booked the trip and received e-tickets.\n    </TimelineStep>\n    <TimelineStep label=\"Checked in\" subLabel=\"\" type=\"warning\">\n      Please check in before your trip.\n    </TimelineStep>\n    <TimelineStep label=\"Board\" subLabel=\"May 4, 8:15\" type=\"critical\">\n      You need to check in before you can board.\n    </TimelineStep>\n    <TimelineStep label=\"Arrive\" subLabel=\"May 4, 11:48\">\n      Arrive at your destination\n    </TimelineStep>\n  </Timeline>\n)\n",
+  "example": "() => (\n  <Timeline>\n    <TimelineStep label=\"Booked\" subLabel=\"January 3, 10:43\" type=\"success\">\n      You booked the trip and received e-tickets.\n    </TimelineStep>\n    <TimelineStep label=\"Checked in\" subLabel=\"\" type=\"warning\">\n      Please check in before your trip.\n    </TimelineStep>\n    <TimelineStep label=\"Board\" subLabel=\"May 4, 8:15\" type=\"critical\">\n      You need to check in before you can board.\n    </TimelineStep>\n    <TimelineStep label=\"Arrive\" subLabel=\"May 4, 11:48\">\n      Arrive at your destination\n    </TimelineStep>\n  </Timeline>\n)\n",
   "info": {
     "title": "Step types",
     "description": "Timeline steps can be one of four types: success, warning, critical, and default."

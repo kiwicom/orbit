@@ -1,6 +1,6 @@
 {
   "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack flex>\n    <SocialButton size=\"small\">Sign in with Apple </SocialButton>\n    <SocialButton>Sign in with Apple </SocialButton>\n    <SocialButton size=\"large\">Sign in with Apple </SocialButton>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack flex>\n    <SocialButton size=\"small\">Sign in with Apple </SocialButton>\n    <SocialButton>Sign in with Apple </SocialButton>\n    <SocialButton size=\"large\">Sign in with Apple </SocialButton>\n  </Stack>\n)\n",
   "info": {
     "title": "Sizes",
     "description": "Buttons come in three sizes: small, normal, and large."

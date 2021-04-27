@@ -1,6 +1,6 @@
 {
   "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Modal from \"@kiwicom/orbit-components/lib/Modal\";\nimport ModalSection from \"@kiwicom/orbit-components/lib/ModalSection\";",
-  "example": "(): React.Node => {\n  const [showModal, setShowModal] = React.useState(true)\n  return (\n    <>\n      {showModal && (\n        <Modal\n          onClose={() => {\n            setShowModal(false)\n          }}\n        >\n          <ModalSection>\n            Orbit is an open source design system for your next travel project.\n          </ModalSection>\n        </Modal>\n      )}\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
+  "example": "() => {\n  const [showModal, setShowModal] = React.useState(true)\n  return (\n    <>\n      {showModal && (\n        <Modal\n          onClose={() => {\n            setShowModal(false)\n          }}\n        >\n          <ModalSection>\n            Orbit is an open source design system for your next travel project.\n          </ModalSection>\n        </Modal>\n      )}\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
   "info": {
     "title": "Modal with only a section",
     "description": "Modals can be as simple as just a section with text or anything else you like inside."

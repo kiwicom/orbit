@@ -1,6 +1,6 @@
 {
   "imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <Text>\n      <Icons.Passengers ariaLabel=\"Passengers\" /> 4\n    </Text>\n    <Text>\n      <Icons.Airplane ariaHidden /> Flights\n    </Text>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <Text>\n      <Icons.Passengers ariaLabel=\"Passengers\" /> 4\n    </Text>\n    <Text>\n      <Icons.Airplane ariaHidden /> Flights\n    </Text>\n  </Stack>\n)\n",
   "info": {
     "title": "Icon accessibility",
     "description": "When the icon is displaying information not stated in any other way, use ariaLabel to make the same information available to screenreaders. When the icon is just decorative and repeats other information, use ariaHidden to hide it from screenreaders."

@@ -1,13 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { rangeAppend, updateViewportName } from "./helpers";
+import { DEFAULT_ACTIVE, MIDDLE_CELL_IDX, MIN_WIDTH, CELL_HEIGHT } from "./consts";
+import { rangeAppend, rangeDelete, updateViewportName, isAllActive } from "./helpers";
 
-const MIN_WIDTH = 1400;
-const CELL_HEIGHT = 33;
-const MIDDLE_CELL_IDX = 3;
-
-const DEFAULT_ACTIVE = [1, 1, 1, 1, 1, 1, 1];
+/* eslint-disable no-return-assign */
+/* eslint-disable react/no-array-index-key */
 
 interface Props {
   onChangeSize: (width: number) => void;
@@ -42,26 +40,18 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   const [activeItems, setActiveItems] = React.useState<number[]>(DEFAULT_ACTIVE);
 
   const { current: cellsWidths } = React.useRef<number[]>([]);
-  const mounted = React.useRef(false);
 
   React.useEffect(() => {
+    const sum = cellsWidths.filter((c, i) => activeItems[i]).reduce((a, b) => a + b, 1);
+    setCurrentWidth(sum);
     if (onChangeSize) onChangeSize(currentWidth);
-  }, [currentWidth, onChangeSize]);
-
-  React.useEffect(() => {
-    if (mounted.current) {
-      const sum = cellsWidths.filter((c, i) => activeItems[i]).reduce((a, b) => a + b, 1);
-      setCurrentWidth(sum);
-    } else mounted.current = true;
-  }, [activeItems]);
+  }, [currentWidth, onChangeSize, activeItems]);
 
   const updateCurr = idx => {
-    if (idx === MIDDLE_CELL_IDX) return;
-
     if (!activeItems[idx]) {
       rangeAppend({ idx, callback: setActiveItems, middle: MIDDLE_CELL_IDX, arr: activeItems });
     } else {
-      setActiveItems([0, 0, 0, 1, 0, 0, 0]);
+      rangeDelete({ idx, callback: setActiveItems, middle: MIDDLE_CELL_IDX, arr: activeItems });
     }
   };
 
@@ -71,14 +61,12 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
         React.createElement(
           StyledCell,
           {
-            // eslint-disable-next-line react/no-array-index-key
             key: i,
-            // eslint-disable-next-line no-return-assign
             ref: r => (cellsWidths[i] = r && r.clientWidth),
             onClick: () => updateCurr(i),
             active: activeItems[i],
           },
-          i === MIDDLE_CELL_IDX && updateViewportName(currentWidth),
+          i === MIDDLE_CELL_IDX && updateViewportName(currentWidth, isAllActive(activeItems)),
         ),
       )}
     </StyledViewports>

@@ -12,6 +12,7 @@ import ViewportsRuler from "./ViewportsRuler";
 
 interface Props {
   exampleId: string;
+  minHeight?: number;
 }
 
 const StyledExampleWrapper = styled.div`
@@ -27,7 +28,7 @@ const StyledEditor = styled(LiveEditor)`
   `};
 `;
 
-const ReactExample = ({ exampleId }: Props) => {
+const ReactExample = ({ exampleId, minHeight }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [width, setPreviewWidth] = React.useState(0);
 
@@ -87,7 +88,7 @@ const ReactExample = ({ exampleId }: Props) => {
     <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
       <StyledExampleWrapper>
         <ViewportsRuler onChangeSize={getCurrentWidth} />
-        <Preview width={width} />
+        <Preview width={width} minHeight={minHeight} />
         <Board
           isEditorOpened={isEditorOpened}
           onOpenEditor={() => setOpenEditor(!isEditorOpened)}

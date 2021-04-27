@@ -7,6 +7,7 @@ import { Stack } from "@kiwicom/orbit-components";
 type BgType = "white" | "dark" | "grid";
 interface Props {
   background?: BgType;
+  minHeight?: number;
   width: number;
 }
 
@@ -44,8 +45,9 @@ const getBackground = (type: BgType) => ({ theme }) => {
 };
 
 const StyledFrame = styled(Frame)`
-  ${({ background, height }) => css`
+  ${({ background, height, minHeight }) => css`
     width: 100%;
+    min-height: ${minHeight}px;
     height: ${Number(height) + BOARD_HEIGHT}px;
     ${getBackground(background)};
   `};
@@ -60,31 +62,38 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
   `};
 `;
 
-const Preview = ({ background = "white", width }: Props) => {
-  const ref = React.useRef<HTMLDivElement | null>(null);
+const Preview = ({ background = "white", width, minHeight }: Props) => {
   const [loaded, setLoad] = React.useState(false);
   const [height, setHeight] = React.useState(0);
 
-  React.useEffect(() => {
-    if (ref && ref.current && loaded) {
-      setHeight(ref.current.clientHeight);
-    }
-  }, [loaded, setHeight]);
+  const measuredRef = React.useCallback(
+    n => {
+      if (n !== null && loaded) {
+        setHeight(n.getBoundingClientRect().height);
+      }
+    },
+    [loaded],
+  );
 
   return (
-    <StyledFrame background={background} height={height} onLoad={() => setLoad(true)}>
+    <StyledFrame
+      background={background}
+      height={height}
+      minHeight={minHeight}
+      onLoad={() => setLoad(true)}
+    >
       <FrameContextConsumer>
-        {({ document }) => (
-          <StyleSheetManager target={document.head}>
-            <>
+        {({ document }) => {
+          return (
+            <StyleSheetManager target={document.head}>
               <Stack justify="center" align="center">
-                <StyledPreviewWrapper ref={ref} width={width}>
+                <StyledPreviewWrapper ref={measuredRef} width={width}>
                   <LivePreview />
                 </StyledPreviewWrapper>
               </Stack>
-            </>
-          </StyleSheetManager>
-        )}
+            </StyleSheetManager>
+          );
+        }}
       </FrameContextConsumer>
     </StyledFrame>
   );

@@ -17,7 +17,7 @@ const ButtonLink: React.AbstractComponent<Props, HTMLButtonElement> = React.forw
 >(({ type = TYPES.PRIMARY, size, compact = false, ...props }, ref) => {
   const theme = useTheme();
   const propsWithTheme = { theme, ...props };
-  const commonProps = getButtonLinkCommonProps({ ...propsWithTheme, compact });
+  const commonProps = getButtonLinkCommonProps({ ...propsWithTheme, size, compact });
   const buttonLinkStyles = getButtonLinkStyles({ type, theme, compact });
   const icons = getIconContainer({
     ...propsWithTheme,

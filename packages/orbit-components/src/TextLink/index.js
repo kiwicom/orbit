@@ -22,7 +22,7 @@ const getColor = ({ theme, type }) => {
 };
 
 const getHoverColor = ({ type, theme }) => {
-  if (type === TYPE_OPTIONS.PRIMARY || TYPE_OPTIONS.SECONDARY) {
+  if (type === TYPE_OPTIONS.PRIMARY || type === TYPE_OPTIONS.SECONDARY) {
     return theme.orbit.paletteProductNormalHover;
   }
   const tokens = {

@@ -7,7 +7,6 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
-    "deploy:surge": "yarn surge public/",
     "repl": "gatsby repl"
   },
   "devDependencies": {

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.113.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.0...@kiwicom/orbit-components@0.113.1) (2021-04-28)
+
+
+### Bug Fixes
+
+* **Button:** pass forgotten size prop to utility functions ([8b97281](https://github.com/kiwicom/orbit/commit/8b972812c9fdd8cd985247b139589babf335b59b))
+* **ButtonPrimitive:** remove redundant size property ([#2847](https://github.com/kiwicom/orbit/issues/2847)) ([bec9180](https://github.com/kiwicom/orbit/commit/bec9180e55ac7fe04c08bd51dac37993d432fc3b))
+* **examples:** strip flow types from the generated JSONs ([#2913](https://github.com/kiwicom/orbit/issues/2913)) ([49f36fd](https://github.com/kiwicom/orbit/commit/49f36fd815b75894c223bd79acd00456e159c432))
+* **SocialButton:** add forgotten size property to getCommomProps ([a950d6d](https://github.com/kiwicom/orbit/commit/a950d6d2b1f60de77fadd9e3cb021a77639306dc))
+
+
+
+
+
 # [0.113.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.112.0...@kiwicom/orbit-components@0.113.0) (2021-04-22)
 
 

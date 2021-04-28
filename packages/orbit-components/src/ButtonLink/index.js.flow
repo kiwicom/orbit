@@ -4,13 +4,14 @@
 */
 import * as React from "react";
 
-import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 export type Type = "primary" | "secondary" | "critical";
 
 export type Props = {|
   +compact?: boolean,
   +type?: Type,
+  +size?: Size,
   ...ButtonCommonProps,
 |};
 

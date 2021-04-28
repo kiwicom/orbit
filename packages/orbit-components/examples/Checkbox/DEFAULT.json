@@ -1,6 +1,6 @@
 {
   "imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";",
-  "example": "(): React.Node => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Checkbox\n      label=\"Allow notifications\"\n      checked={checked}\n      onChange={() => setChecked(!checked)}\n    />\n  )\n}\n",
+  "example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Checkbox\n      label=\"Allow notifications\"\n      checked={checked}\n      onChange={() => setChecked(!checked)}\n    />\n  )\n}\n",
   "info": {
     "title": "Default checkbox",
     "description": "A default checkbox should have a label to make it clear what it relates to."

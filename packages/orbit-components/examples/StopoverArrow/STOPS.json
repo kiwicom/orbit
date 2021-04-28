@@ -1,6 +1,6 @@
 {
   "imports": "import StopoverArrow from \"@kiwicom/orbit-components/lib/StopoverArrow\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <StopoverArrow stops=\"0\" />\n    <StopoverArrow stops=\"1\" />\n    <StopoverArrow stops=\"2\" />\n    <StopoverArrow stops=\"3\" />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <StopoverArrow stops=\"0\" />\n    <StopoverArrow stops=\"1\" />\n    <StopoverArrow stops=\"2\" />\n    <StopoverArrow stops=\"3\" />\n  </Stack>\n)\n",
   "info": {
     "title": "Stops",
     "description": "Stopover arrows can display from 0 to 3 stops."

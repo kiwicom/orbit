@@ -1,6 +1,6 @@
 {
   "imports": "import Sticky from \"@kiwicom/orbit-components/lib/Sticky\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "(): React.Element<\"div\"> => (\n  <div\n    style={{\n      height: \"800px\",\n    }}\n  >\n    <Sticky>\n      <Text>Scroll down and see this text stick to the top of the screen.</Text>\n    </Sticky>\n  </div>\n)\n",
+  "example": "() => (\n  <div\n    style={{\n      height: \"800px\",\n    }}\n  >\n    <Sticky>\n      <Text>Scroll down and see this text stick to the top of the screen.</Text>\n    </Sticky>\n  </div>\n)\n",
   "info": {
     "title": "Default sticky",
     "description": "By default, sticky components elevate their children and keep them at the top of the screen."

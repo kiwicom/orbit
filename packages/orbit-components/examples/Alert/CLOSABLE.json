@@ -1,6 +1,6 @@
 {
   "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport Button from \"@kiwicom/orbit-components/lib/Button\";",
-  "example": "(): React.Node => {\n  const [showAlert, setShowAlert] = React.useState(true)\n  return showAlert ? (\n    <Alert\n      closable\n      onClose={() => setShowAlert(false)}\n      title=\"You've got mail\"\n    />\n  ) : (\n    <Button onClick={() => setShowAlert(true)}>Show alert</Button>\n  )\n}\n",
+  "example": "() => {\n  const [showAlert, setShowAlert] = React.useState(true)\n  return showAlert ? (\n    <Alert\n      closable\n      onClose={() => setShowAlert(false)}\n      title=\"You've got mail\"\n    />\n  ) : (\n    <Button onClick={() => setShowAlert(true)}>Show alert</Button>\n  )\n}\n",
   "info": {
     "title": "Closable Alert",
     "description": "Alerts can be closable. Including a closeable prop displays a close button and lets the alert handle onClose. Be careful not to overuse closable alerts. They still interrupte the user flow and lead to the opposite of progressive disclosure: a lot of information at first sight that progressively goes away."

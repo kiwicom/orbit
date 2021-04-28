@@ -1,6 +1,6 @@
 {
   "imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "(): React.Node => (\n  <Stack flex>\n    <Stack>\n      <Text>Small</Text>\n      <Icons.Airplane size=\"small\" ariaLabel=\"Airplane\" />\n    </Stack>\n    <Stack>\n      <Text>Medium</Text>\n      <Icons.Airplane ariaLabel=\"Airplane\" />\n    </Stack>\n    <Stack>\n      <Text>Large</Text>\n      <Icons.Airplane size=\"large\" ariaLabel=\"Airplane\" />\n    </Stack>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack flex>\n    <Stack>\n      <Text>Small</Text>\n      <Icons.Airplane size=\"small\" ariaLabel=\"Airplane\" />\n    </Stack>\n    <Stack>\n      <Text>Medium</Text>\n      <Icons.Airplane ariaLabel=\"Airplane\" />\n    </Stack>\n    <Stack>\n      <Text>Large</Text>\n      <Icons.Airplane size=\"large\" ariaLabel=\"Airplane\" />\n    </Stack>\n  </Stack>\n)\n",
   "info": {
     "title": "Icon colors",
     "description": "Icons come in three sizes: small, medium (the default), and large."

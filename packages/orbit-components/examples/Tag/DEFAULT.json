@@ -1,6 +1,6 @@
 {
   "imports": "import Tag from \"@kiwicom/orbit-components/lib/Tag\";",
-  "example": "(): React.Node => <Tag>Bags</Tag>\n",
+  "example": "() => <Tag>Bags</Tag>\n",
   "info": {
     "title": "Default tag",
     "description": "By default, tags are not selected and cannot be removed."

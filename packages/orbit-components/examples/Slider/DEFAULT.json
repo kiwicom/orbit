@@ -1,6 +1,6 @@
 {
   "imports": "import Slider from \"@kiwicom/orbit-components/lib/Slider\";",
-  "example": "(): React.Node => (\n  <Slider label=\"Volume\" minValue={0} maxValue={100} defaultValue={33} />\n)\n",
+  "example": "() => <Slider label=\"Volume\" minValue={0} maxValue={100} defaultValue={33} />\n",
   "info": {
     "title": "Default slider",
     "description": "A default slider presents a range in between given minimum and maximum values. Always include a label."

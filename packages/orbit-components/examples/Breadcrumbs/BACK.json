@@ -1,6 +1,6 @@
 {
   "imports": "import Breadcrumbs from \"@kiwicom/orbit-components/lib/Breadcrumbs\";\nimport BreadcrumbsItem from \"@kiwicom/orbit-components/lib/BreadcrumbsItem\";",
-  "example": "(): React.Node => (\n  <Breadcrumbs onGoBack={(event) => event.preventDefault()} goBackTitle=\"Back\">\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Orbit.kiwi\n    </BreadcrumbsItem>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/components/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Components\n    </BreadcrumbsItem>\n    <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>\n  </Breadcrumbs>\n)\n",
+  "example": "() => (\n  <Breadcrumbs onGoBack={(event) => event.preventDefault()} goBackTitle=\"Back\">\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Orbit.kiwi\n    </BreadcrumbsItem>\n    <BreadcrumbsItem\n      href=\"https://orbit.kiwi/components/\"\n      onClick={(event) => event.preventDefault()}\n    >\n      Components\n    </BreadcrumbsItem>\n    <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>\n  </Breadcrumbs>\n)\n",
   "info": {
     "title": "Breadcrumbs with back button",
     "description": "If you add onGoBack to the breadcrumbs, it will have a back button. The title for the button is available for translation through the goBackTitle prop."

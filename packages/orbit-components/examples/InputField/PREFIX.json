@@ -1,6 +1,6 @@
 {
   "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Search from \"@kiwicom/orbit-components/lib/icons/Search\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <InputField label=\"Maximum price\" type=\"number\" prefix=\"$\" />\n    <InputField\n      label=\"Search\"\n      placeholder=\"Search by keyword\"\n      type=\"text\"\n      inputMode=\"search\"\n      prefix={<Icons.Search />}\n    />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <InputField label=\"Maximum price\" type=\"number\" prefix=\"$\" />\n    <InputField\n      label=\"Search\"\n      placeholder=\"Search by keyword\"\n      type=\"text\"\n      inputMode=\"search\"\n      prefix={<Icons.Search />}\n    />\n  </Stack>\n)\n",
   "info": {
     "title": "Prefixes",
     "description": "If you need additional context, you can add it as a prefix."

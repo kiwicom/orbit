@@ -1,5 +1,5 @@
 // @flow
-import { parse, types as t } from "@babel/core";
+import { transformAsync, types as t } from "@babel/core";
 import generate from "@babel/generator";
 import glob from "glob";
 import fs from "fs";
@@ -157,18 +157,23 @@ async function readFileAndCreateJSON(pathToFile) {
   const nameSplit = pathToFile.split("/");
   const fileName = nameSplit[nameSplit.length - 1].replace(".js", ".json");
   const code = await readFile(pathToFile);
-  const ast = parse(code, {
+  transformAsync(code, {
     sourceType: "module",
+    plugins: ["@babel/plugin-syntax-jsx"],
+    presets: ["@babel/preset-flow"],
+    configFile: false,
+    ast: true,
+  }).then(async ({ ast }) => {
+    const firstLetter = nameSplit[1].charAt(0);
+    const componentName = firstLetter === firstLetter.toLowerCase() ? nameSplit[2] : nameSplit[1];
+    const imports = await generateImports(ast.program.body, code);
+    const example = await getExample(ast.program.body, code);
+    const info = await getInfo(ast.program.body);
+    await writeFile(
+      generatePath(componentName, fileName),
+      JSON.stringify({ imports, example, info }, null, "\t"),
+    );
   });
-  const firstLetter = nameSplit[1].charAt(0);
-  const componentName = firstLetter === firstLetter.toLowerCase() ? nameSplit[2] : nameSplit[1];
-  const imports = await generateImports(ast.program.body, code);
-  const example = await getExample(ast.program.body, code);
-  const info = await getInfo(ast.program.body);
-  await writeFile(
-    generatePath(componentName, fileName),
-    JSON.stringify({ imports, example, info }, null, "\t"),
-  );
 }
 
 (async () => {

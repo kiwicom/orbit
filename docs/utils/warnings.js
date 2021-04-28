@@ -15,14 +15,6 @@ const warnMissingAccessToken = error => {
       "After creating a token in GitHub, add it to a .env file in the root folder with GH_TOKEN=<YOUR TOKEN>",
     );
   }
-  if (error.missing.includes("FIGMA_TOKEN")) {
-    console.warn("Missing an access token for Figma files API. Please create one.");
-    console.info(
-      "The token is needed to be able to fetch and store images from Figma API.",
-      "Create a personal access token: https://www.figma.com/developers/api#access-tokens",
-      "After creating a token in Figma, add it to a .env file in the root folder wit FIGMA_TOKEN=<YOUR TOKEN>",
-    );
-  }
 };
 
 const warnMissingFigmaToken = error => {

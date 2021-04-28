@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import tokensList from "@kiwicom/orbit-design-tokens/lib/docs-tokens.json";
+import React, { useState, useEffect } from "react";
+import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
 import {
-  ButtonLink,
   InputField,
   Stack,
   Table,
@@ -10,32 +8,34 @@ import {
   TableBody,
   TableCell,
   TableRow,
-  Heading,
-  Badge,
+  Truncate,
   Tooltip,
 } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-import DesignTokenColor from "./components/DesignTokenColor";
+import { StyledDesignTokenOther } from "./components/DesignTokenColor";
+import DesignTokenIcon from "./components/DesignTokenIcon";
 import DesignTokenName from "./components/DesignTokenName";
 
-const allTokens = Object.keys(tokensList).map(key => ({ name: key, ...tokensList[key] }));
+const allTokens = Object.keys(tokensList)
+  .map(key => ({ name: key, value: tokensList[key] }))
+  .sort((a, b) => (a.name < b.name ? -1 : 1));
 
-const DesignToken = ({ type, value }) => {
-  const [isCopied, copy] = useCopyToClipboard(1000);
-  const onClick = () => copy(value);
-  const render = () => {
-    if (type === "color") return <DesignTokenColor value={value} onClick={onClick} />;
-    return null;
-  };
+const DesignToken = ({ value }) => {
+  const [isCopied, copy] = useCopyToClipboard(2000);
   return (
-    <Tooltip
-      content={isCopied ? "Value copied!" : "Click to copy the value."}
-      preferredPosition="bottom"
-      preferredAlign="center"
-    >
-      {render()}
+    <Tooltip content="Click to copy" preferredPosition="bottom" preferredAlign="center">
+      {isCopied ? (
+        <StyledDesignTokenOther>Copied!</StyledDesignTokenOther>
+      ) : (
+        <Stack inline spacing="XSmall" shrink align="center">
+          <DesignTokenIcon value={value} />
+          <span role="button" onClick={() => copy(value)} title={value}>
+            <Truncate maxWidth="200px">{value}</Truncate>
+          </span>
+        </Stack>
+      )}
     </Tooltip>
   );
 };
@@ -46,39 +46,21 @@ const DesignTokensTable = ({ tokens, filter }) => {
       <TableHead>
         <TableRow>
           <TableCell>Name</TableCell>
-          <TableCell align="center">Status</TableCell>
           <TableCell>Value</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {tokens
           .filter(({ name }) => name.toLowerCase().indexOf(filter) !== -1)
-          .map(({ type, deprecated, javascript: { name, value } }) => (
+          .map(({ name, value }) => (
             <TableRow>
               <TableCell verticalAlign="middle">
                 <Stack spacing="none" align="center" shrink>
                   <DesignTokenName>{name}</DesignTokenName>
                 </Stack>
               </TableCell>
-              <TableCell align="center">
-                {deprecated ? (
-                  <>
-                    <Tooltip
-                      preferredPosition="bottom"
-                      preferredAlign="center"
-                      content="This token is deprecated. Replace it for something"
-                    >
-                      <Badge type="critical">Deprecated</Badge>
-                    </Tooltip>
-                  </>
-                ) : (
-                  <Badge type="success">For use</Badge>
-                )}
-              </TableCell>
-              <TableCell verticalAlign="middle" align="center">
-                <Stack spacing="none" align="center" shrink>
-                  <DesignToken type={type} value={value} />
-                </Stack>
+              <TableCell verticalAlign="middle" align="left">
+                <DesignToken value={value} />
               </TableCell>
             </TableRow>
           ))}
@@ -87,8 +69,22 @@ const DesignTokensTable = ({ tokens, filter }) => {
   );
 };
 
-const Index = () => {
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  return debouncedValue;
+}
+
+const DesignTokensList = () => {
   const [filter, setFilter] = useState<string>("");
+  const debouncedFilter = useDebounce(filter, 300);
   return (
     <Stack spacing="large">
       <InputField
@@ -97,9 +93,9 @@ const Index = () => {
         value={filter}
         onChange={event => setFilter(event.currentTarget.value)}
       />
-      <DesignTokensTable tokens={allTokens} filter={filter} />
+      <DesignTokensTable tokens={allTokens} filter={debouncedFilter} />
     </Stack>
   );
 };
 
-export default Index;
+export default DesignTokensList;

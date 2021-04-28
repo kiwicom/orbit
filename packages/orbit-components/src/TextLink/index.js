@@ -12,11 +12,27 @@ const getColor = ({ theme, type }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
+    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
   };
 
   return tokens[type];
 };
 
+const getHoverColor = ({ type, theme }) => {
+  if (type === TYPE_OPTIONS.PRIMARY || TYPE_OPTIONS.SECONDARY) {
+    return theme.orbit.paletteProductNormalHover;
+  }
+  const tokens = {
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
+    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
+  };
+  return tokens[type];
+};
 const getSizeToken = () => ({ theme, size }) => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
@@ -66,7 +82,7 @@ export const getLinkStyle = ({ theme, type }: GetLinkStyleProps): any => css`
   :focus {
     outline: none;
     text-decoration: none;
-    color: ${theme.orbit.paletteProductNormalHover};
+    color: ${getHoverColor({ theme, type })};
   }
 `;
 

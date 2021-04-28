@@ -13,7 +13,6 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
-import { TYPE_OPTIONS as TEXTLINK_TYPE_OPTIONS } from "../TextLink/consts";
 
 import type { Props } from "./index";
 
@@ -76,8 +75,7 @@ export const StyledText: any = styled(
 
   a:not(${StyledTextLink}) {
     // TextLink in Text always win
-    ${({ theme }) =>
-      getLinkStyle({ theme, type: TEXTLINK_TYPE_OPTIONS.PRIMARY })}// Get styles from TextLink
+    ${({ theme, type }) => getLinkStyle({ theme, type })}// Get styles from TextLink
   }
 `;
 

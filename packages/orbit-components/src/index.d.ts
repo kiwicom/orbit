@@ -105,6 +105,7 @@ export { SmartPassV2 } from "./SmartPassIllustrations/index";
 export { SmartPassV3 } from "./SmartPassIllustrations/index";
 export { SmartPassV4 } from "./SmartPassIllustrations/index";
 export { SmartPassV5 } from "./SmartPassIllustrations/index";
+export { Switch } from "./Switch/index";
 export { ThemeProvider } from "./ThemeProvider/index";
 export { Translate } from "./Translate/index";
 export { NavigationBar } from "./NavigationBar/index";

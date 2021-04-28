@@ -108,6 +108,7 @@ export { default as SmartPassV2 } from "./SmartPassIllustrations/illustrations/S
 export { default as SmartPassV3 } from "./SmartPassIllustrations/illustrations/SmartPassV3";
 export { default as SmartPassV4 } from "./SmartPassIllustrations/illustrations/SmartPassV4";
 export { default as SmartPassV5 } from "./SmartPassIllustrations/illustrations/SmartPassV5";
+export { default as Switch } from "./Switch";
 export { default as SocialButton } from "./SocialButton";
 export { default as Stack } from "./Stack";
 export { default as Stepper } from "./Stepper";

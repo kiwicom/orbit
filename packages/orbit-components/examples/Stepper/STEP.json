@@ -1,6 +1,6 @@
 {
   "imports": "import Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Stepper from \"@kiwicom/orbit-components/lib/Stepper\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";",
-  "example": "(): React.Node => (\n  <Stack flex align=\"center\">\n    <Heading type=\"title4\">Minutes between journeys</Heading>\n    <div\n      style={{\n        maxWidth: \"10em\",\n      }}\n    >\n      <Stepper\n        step={15}\n        defaultValue={30}\n        maxValue={180}\n        minValue={15}\n        titleIncrement=\"Add 15 minutes\"\n        titleDecrement=\"Subtract 15 minutes\"\n      />\n    </div>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack flex align=\"center\">\n    <Heading type=\"title4\">Minutes between journeys</Heading>\n    <div\n      style={{\n        maxWidth: \"10em\",\n      }}\n    >\n      <Stepper\n        step={15}\n        defaultValue={30}\n        maxValue={180}\n        minValue={15}\n        titleIncrement=\"Add 15 minutes\"\n        titleDecrement=\"Subtract 15 minutes\"\n      />\n    </div>\n  </Stack>\n)\n",
   "info": {
     "title": "Step",
     "description": "To increment by a number other than 1, use the <code>step</code> prop."

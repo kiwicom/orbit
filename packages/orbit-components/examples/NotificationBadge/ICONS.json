@@ -1,6 +1,6 @@
 {
   "imports": "import NotificationBadge from \"@kiwicom/orbit-components/lib/NotificationBadge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <NotificationBadge ariaLabel=\"Train\" type=\"info\" icon={<Icons.Train />}>\n      Train\n    </NotificationBadge>\n    <NotificationBadge ariaLabel=\"Train\" type=\"info\" icon={<Icons.Train />} />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <NotificationBadge ariaLabel=\"Train\" type=\"info\" icon={<Icons.Train />}>\n      Train\n    </NotificationBadge>\n    <NotificationBadge ariaLabel=\"Train\" type=\"info\" icon={<Icons.Train />} />\n  </Stack>\n)\n",
   "info": {
     "title": "Icons",
     "description": "If you include an icon, it will override the content. Notification badges with icons look the same with and without content (the content doesn't work as accessible text)."

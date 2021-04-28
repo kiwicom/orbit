@@ -1,6 +1,6 @@
 {
   "imports": "import List from \"@kiwicom/orbit-components/lib/List\";\nimport ListItem from \"@kiwicom/orbit-components/lib/ListItem\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <List size=\"small\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List>\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List size=\"large\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <List size=\"small\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List>\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List size=\"large\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n  </Stack>\n)\n",
   "info": {
     "title": "Sizes",
     "description": "Lists come in three sizes: small, medium, and large."

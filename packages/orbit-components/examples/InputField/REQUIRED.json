@@ -1,6 +1,6 @@
 {
   "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";",
-  "example": "(): React.Node => (\n  <InputField label=\"Given names\" placeholder=\"Sofia Cruz\" required />\n)\n",
+  "example": "() => <InputField label=\"Given names\" placeholder=\"Sofia Cruz\" required />\n",
   "info": {
     "title": "Required input field",
     "description": "To mark an input field as required, pass the required prop."

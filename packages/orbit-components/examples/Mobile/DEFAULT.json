@@ -1,6 +1,6 @@
 {
   "imports": "import Mobile from \"@kiwicom/orbit-components/lib/Mobile\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <Text>This text appears all of the time. Resize to change other text.</Text>\n    <Mobile>\n      <Text>This text only appears on smaller screens.</Text>\n    </Mobile>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <Text>This text appears all of the time. Resize to change other text.</Text>\n    <Mobile>\n      <Text>This text only appears on smaller screens.</Text>\n    </Mobile>\n  </Stack>\n)\n",
   "info": {
     "title": "Default mobile",
     "description": "Mobile components hide their children on wide screens (desktop and above)."

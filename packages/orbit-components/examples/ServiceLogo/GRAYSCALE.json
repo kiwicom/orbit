@@ -1,6 +1,6 @@
 {
   "imports": "import ServiceLogo from \"@kiwicom/orbit-components/lib/ServiceLogo\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <ServiceLogo name=\"Axa\" size=\"large\" />\n    <ServiceLogo name=\"Axa\" size=\"large\" grayScale />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <ServiceLogo name=\"Axa\" size=\"large\" />\n    <ServiceLogo name=\"Axa\" size=\"large\" grayScale />\n  </Stack>\n)\n",
   "info": {
     "title": "Grayscale",
     "description": "Service logos can come in grayscale versions."

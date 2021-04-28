@@ -1,6 +1,6 @@
 {
   "imports": "import Loading from \"@kiwicom/orbit-components/lib/Loading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <Loading\n      type=\"inlineLoader\"\n      text=\"Hang on while we retrieve the best flights\"\n    />\n    <Loading type=\"inlineLoader\" text=\"Saving your request\" />\n    <Loading\n      type=\"inlineLoader\"\n      text=\"Finding the best routes to get you there\"\n    />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <Loading\n      type=\"inlineLoader\"\n      text=\"Hang on while we retrieve the best flights\"\n    />\n    <Loading type=\"inlineLoader\" text=\"Saving your request\" />\n    <Loading\n      type=\"inlineLoader\"\n      text=\"Finding the best routes to get you there\"\n    />\n  </Stack>\n)\n",
   "info": {
     "title": "Text",
     "description": "Use text to set user expectations."

@@ -39,13 +39,16 @@ CustomIcon.story = {
 };
 
 export const Playground = (): React.Node => {
-  const checked = boolean("checked", true);
+  const checked = boolean("checked", false);
   const dataTest = text("dataTest", null);
   const Icon = getIcon(getIcons("icon", null));
+  const disabled = boolean("disabled", false);
+
   return (
     <Switch
       onChange={action("onChange")}
       checked={checked}
+      disabled={disabled}
       dataTest={dataTest}
       icon={Icon && <Icon />}
     />

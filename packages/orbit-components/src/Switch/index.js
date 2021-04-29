@@ -5,23 +5,25 @@ import styled, { css } from "styled-components";
 import type { Props } from "./index.js.flow";
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
+import handleKeyDown from "../utils/handleKeyDown";
 
 const StyledSwitch = styled.label`
   display: inline-block;
 `;
 
 const StyledSwitchBase = styled.div`
-  ${({ theme, checked }) => css`
+  ${({ theme, checked, disabled }) => css`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: pointer;
+    cursor: ${!disabled && "pointer"};
     width: 50px;
     height: 28px;
     background-color: ${theme.orbit.paletteInkLighter};
     border-radius: 100px;
     position: relative;
     transition: background-color ${theme.orbit.durationFast};
+    opacity: ${disabled && "0.5"};
 
     ${checked &&
     css`
@@ -31,7 +33,7 @@ const StyledSwitchBase = styled.div`
 `;
 
 const StyledSwitchButton = styled.div`
-  ${({ theme, checked, hasCustomIcon }) => css`
+  ${({ theme, checked, hasCustomIcon, disabled }) => css`
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -47,7 +49,7 @@ const StyledSwitchButton = styled.div`
     box-shadow: inset 0 0 1px 0 rgba(7, 64, 92, 0.1), ${theme.orbit.boxShadowAction};
 
     &:active {
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+      box-shadow: ${!disabled && theme.orbit.boxShadowActionActive};
     }
 
     svg {
@@ -100,21 +102,26 @@ StyledSwitchButton.defaultProps = {
 const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
   Props,
   HTMLInputElement,
->(({ onChange, checked, dataTest, icon, disabled, onBlur, onFocus }, ref) => {
+>(({ onChange, checked, dataTest, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
   return (
     <StyledSwitch>
-      <StyledSwitchBase checked={checked}>
+      <StyledSwitchBase checked={checked} disabled={disabled}>
         <StyledSwitchInput
           ref={ref}
           checked={checked}
           disabled={disabled}
-          onBlur={onBlur}
-          onChange={onChange}
-          onFocus={onFocus}
+          aria-checked={checked}
+          role="switch"
+          ariaLabelledby={ariaLabelledby}
+          // $FlowFixMe: fix the type of handleKeyDown
+          onKeyDown={!disabled ? handleKeyDown(onChange) : undefined}
+          onBlur={!disabled ? onBlur : undefined}
+          onChange={!disabled ? onChange : undefined}
+          onFocus={!disabled ? onFocus : undefined}
           type="checkbox"
           data-test={dataTest}
         />
-        <StyledSwitchButton checked={checked} hasCustomIcon={!!icon}>
+        <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
           {icon || <Circle />}
         </StyledSwitchButton>
       </StyledSwitchBase>

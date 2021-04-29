@@ -124,6 +124,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-artifacts
+          path: packages/orbit-components/.out
 
       - name: Deploy storybook
         run: yarn orbit-components deploy:storybook --ci

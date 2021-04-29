@@ -10,8 +10,9 @@ export type Props = {|
   +onChange: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  +checked: boolean,
   +disabled?: boolean,
+  +ariaLabelledby?: string,
+  +checked: boolean,
   +icon?: React.Node,
   ...Globals,
 |};

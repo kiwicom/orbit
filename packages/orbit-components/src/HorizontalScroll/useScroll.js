@@ -30,15 +30,12 @@ const useScroll: UseScroll = ref => {
 
   const handleLastScrollX = useCallback(x => setLastScrollX(x), []);
 
-  const handleMomentum = useCallback(
-    throttle(nextMomentum => {
-      setMomentum(nextMomentum);
-      if (scrollWrapperCurrent) {
-        scrollWrapperCurrent.scrollLeft += nextMomentum * timing * direction;
-      }
-    }, timing),
-    [scrollWrapperCurrent, direction],
-  );
+  const handleMomentum = throttle(nextMomentum => {
+    setMomentum(nextMomentum);
+    if (scrollWrapperCurrent) {
+      scrollWrapperCurrent.scrollLeft += nextMomentum * timing * direction;
+    }
+  }, timing);
 
   useEffect(() => {
     if (direction !== 0) {

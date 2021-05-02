@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import useScrollBox from "./useScroll";
-import Stack from "../../Stack";
+import Stack from "../Stack";
 
 import type { Props } from ".";
 
@@ -40,11 +40,10 @@ const StyledContainer = styled.div`
   `}
 `;
 
-const StyledChild = styled.div``;
-
 const HorizontalScroll = ({
   children,
   spacing = "small",
+  dataTest,
   minHeight,
   ...props
 }: Props): React.Node => {
@@ -55,21 +54,32 @@ const HorizontalScroll = ({
     if (childRef.length > 0) {
       setHeight(Math.max(...childRef.filter(Boolean)));
     }
-  }, []);
+  }, [childRef]);
 
   const scrollWrapper = React.useRef(null);
   const { isDragging } = useScrollBox(scrollWrapper);
 
   return (
-    <StyledWrapper {...props} isDragging={isDragging} height={height} minHeight={minHeight}>
+    <StyledWrapper
+      {...props}
+      isDragging={isDragging}
+      height={height}
+      minHeight={minHeight}
+      data-test={dataTest}
+    >
       <StyledOverflow ref={scrollWrapper}>
         <StyledContainer isDragging={isDragging}>
           <Stack inline spacing={spacing}>
             {React.Children.map(children, (child, idx) => {
               if (!React.isValidElement(child)) return null;
               return (
-                // eslint-disable-next-line no-return-assign
-                <StyledChild ref={r => (childRef[idx] = r && r.clientHeight)}>{child}</StyledChild>
+                <div
+                  ref={r => {
+                    if (r) childRef[idx] = r.clientHeight;
+                  }}
+                >
+                  {child}
+                </div>
               );
             })}
           </Stack>

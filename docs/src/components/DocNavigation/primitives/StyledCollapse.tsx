@@ -11,17 +11,14 @@ export const StyledCollapseLabel = styled.div`
 `;
 export const StyledCollapseContent = styled.div<{ hasCategories: boolean }>`
   ${({ hasCategories }) => css`
+    margin: -10px 0;
     ${hasCategories
       ? `
-        padding-left: 0.5rem;
         > * + * {
           margin-top: 0.5rem;
         }
       `
       : css`
-          ${mediaQueries.desktop(css`
-            padding-left: 0.5rem;
-          `)};
           > * {
             padding-left: 0.5rem;
             padding-right: 0.5rem;

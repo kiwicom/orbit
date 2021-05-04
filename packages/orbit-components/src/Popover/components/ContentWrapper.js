@@ -228,7 +228,9 @@ const PopoverContentWrapper = ({
     };
   }, []);
 
-  useClickOutside(popover, onClose, !isTablet);
+  useClickOutside(popover, ev => {
+    if (isTablet) onClose(ev);
+  });
 
   const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 27 && onClose) onClose(ev);

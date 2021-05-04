@@ -1,10 +1,26 @@
 import React from "react";
+import { Stack, Badge } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
 import Category from "./Category";
 import StyledLink from "./primitives/StyledLink";
 import Collapse from "./Collapse";
-import { NavigationItem } from "./types";
+import { NavigationItem, NavigationItemStatus } from "./types";
+
+function getBadgeType(
+  itemStatus: NavigationItemStatus,
+): React.ComponentProps<typeof Badge>["type"] {
+  switch (itemStatus) {
+    case "wip":
+      return "warning";
+    case "new":
+      return "success";
+    case "deprecated":
+      return "critical";
+    default:
+      return "info";
+  }
+}
 
 export function getItemKey(item: NavigationItem) {
   if (item.type === "branch") {
@@ -33,6 +49,14 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const theme = useTheme();
   const firstRenderRef = React.useRef<boolean>(true);
+  const itemName = item.status ? (
+    <Stack flex align="center" spacing="XSmall">
+      <div>{item.name}</div>
+      <Badge type={getBadgeType(item.status)}>{item.status.toUpperCase()}</Badge>
+    </Stack>
+  ) : (
+    item.name
+  );
 
   React.useEffect(() => {
     if (firstRenderRef.current) {
@@ -63,7 +87,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
     if (level === 1) {
       return (
         <Collapse
-          label={item.name}
+          label={itemName}
           expanded={expanded}
           hasCategories={hasCategories}
           onClick={() => setExpanded(prev => !prev)}
@@ -74,7 +98,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
     }
 
     if (level === 2) {
-      return <Category name={item.name}>{navigationItems}</Category>;
+      return <Category name={itemName}>{navigationItems}</Category>;
     }
   } else {
     return (

@@ -7,7 +7,7 @@ import {
 } from "./primitives/StyledCategory";
 
 interface Props {
-  name: string;
+  name: React.ReactNode;
   children: React.ReactNode;
 }
 

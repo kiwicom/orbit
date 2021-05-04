@@ -9,7 +9,6 @@ import { SharedProps, Event } from "../index";
 declare module "@kiwicom/orbit-components/lib/StepperStateless";
 
 type InputEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
-
 export interface Props extends SharedProps {
   readonly value?: number | string | (() => string);
   readonly disabledIncrement?: boolean;
@@ -18,6 +17,7 @@ export interface Props extends SharedProps {
   readonly onDecrement?: Event;
   readonly onIncrement?: Event;
   readonly onChange?: InputEvent;
+  readonly selected?: boolean;
 }
 
 declare const StepperStateless: React.FunctionComponent<Props>;

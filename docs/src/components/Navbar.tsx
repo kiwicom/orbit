@@ -72,6 +72,7 @@ const StyledTabList = styled.div`
     display: flex;
     height: 44px;
     border-radius: 22px;
+    padding: 2px;
     background: ${theme.orbit.paletteCloudLight};
     box-shadow: 0px 1px 4px 0px #252A311F inset, 0px 0px 2px 0px #252A3129 inset;
   `}

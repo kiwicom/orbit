@@ -1,7 +1,7 @@
 import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
-const StyledTocWrapepr = styled.div`
+const StyledTocWrapper = styled.div`
   ${mediaQueries.tablet(css`
     order: 2;
   `)}
@@ -14,4 +14,4 @@ const StyledTocWrapepr = styled.div`
   }
 `;
 
-export default StyledTocWrapepr;
+export default StyledTocWrapper;

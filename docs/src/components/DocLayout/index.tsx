@@ -74,7 +74,22 @@ export default function DocLayout({
       <DevModeProvider>
         <BookmarkProvider page={path} location={location}>
           <StyledWrapper>
-            <Navbar location={location} docNavigation={navigation} />
+            <Navbar
+              location={location}
+              docNavigation={
+                <DocNavigation
+                  currentUrl={path}
+                  onCollapse={() => {
+                    // hack for when collapsing an overflowing DocNavigationItem in Modal
+                    // causes the fixed ModalFooter to be stuck at the bottom of the screen
+                    setTimeout(() => {
+                      // causing Modal to reposition ModalFooter
+                      window.dispatchEvent(new Event("resize"));
+                    }, 70); // not sure why, but this delay is necessary (the exact threshold is 62)
+                  }}
+                />
+              }
+            />
             <StyledMiddle>
               <Stack
                 flex
@@ -83,6 +98,7 @@ export default function DocLayout({
               >
                 {trail && (
                   <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                    <DocNavigation currentUrl={path} />
                     {navigation}
                   </Hide>
                 )}
@@ -103,9 +119,19 @@ export default function DocLayout({
                   </Box>
                   <StyledMobileOutdent>
                     {(tabs || headerLink) && (
-                      <Box display="flex" justify="between" tablet={{ maxWidth: "80%" }}>
+                      <Box
+                        display="flex"
+                        align="end"
+                        justify="between"
+                        tablet={{ maxWidth: "80%" }}
+                      >
                         {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                        {headerLink && <HeaderLink href={headerLink} />}
+                        {headerLink && (
+                          // align with tabs
+                          <Box padding={{ bottom: "XXSmall" }}>
+                            <HeaderLink href={headerLink} />
+                          </Box>
+                        )}
                       </Box>
                     )}
                     <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>

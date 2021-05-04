@@ -3,10 +3,10 @@ import { useEffect } from "react";
 
 import type { UseClickOutside } from ".";
 
-const useClickOutside: UseClickOutside = (ref, handler) => {
+const useClickOutside: UseClickOutside = (ref, handler, isOff) => {
   useEffect(() => {
     const handleClose = event => {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (ref.current && !ref.current.contains(event.target) && !isOff) {
         handler(event);
       }
     };
@@ -16,7 +16,7 @@ const useClickOutside: UseClickOutside = (ref, handler) => {
       window.removeEventListener("mousedown", handleClose);
       window.removeEventListener("touchstart", handleClose);
     };
-  }, [handler, ref]);
+  }, [handler, ref, isOff]);
 };
 
 export default useClickOutside;

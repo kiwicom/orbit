@@ -2,7 +2,6 @@
 export type UseClickOutside = (
   ref: {| current: ?HTMLElement |},
   handler: (ev: SyntheticEvent<HTMLElement>) => void,
-  isOff?: boolean,
 ) => void;
 
 declare export default UseClickOutside;

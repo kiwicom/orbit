@@ -46,9 +46,15 @@ interface SearchResult {
 
 const StyledModalWrapper = styled.div`
   /* align modal to the top */
+  > * > * > * {
+    height: 100%;
+  }
   ${mediaQueries.largeMobile(css`
     > * > * {
       align-items: flex-start;
+    }
+    > * > * > * {
+      height: auto;
     }
   `)}
 `;
@@ -93,7 +99,7 @@ export default function SearchModal({ onClose }: Props) {
     [data],
   );
 
-  const { isLargeMobile, isTablet } = useMediaQuery();
+  const { isTablet } = useMediaQuery();
   // so it doesn't cause horizontal overflow
   const placeholder = isTablet ? "Search…" : "Search for components, foundation…";
 
@@ -130,8 +136,6 @@ export default function SearchModal({ onClose }: Props) {
         <Modal
           // the search field will be autofocused
           autoFocus={false}
-          // to get round corners on larger viewports
-          isMobileFullPage={!isLargeMobile}
           onClose={onClose}
         >
           <ModalHeader title="What are you looking for?" />
@@ -141,6 +145,7 @@ export default function SearchModal({ onClose }: Props) {
                 <StyledPrefix>
                   <SearchIcon />
                 </StyledPrefix>
+
                 <StyledInput
                   {...getInputProps({
                     ref: inputRef,

@@ -1,19 +1,19 @@
 import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   margin-bottom: 1rem;
 `;
 
-export default Wrapper;
+export default StyledWrapper;
 
-export const WrapperMobile = styled.div`
+export const StyledWrapperMobile = styled.div`
   ${mediaQueries.desktop(css`
     display: none;
   `)};
 `;
 
-export const WrapperDesktop = styled.div`
+export const StyledWrapperDesktop = styled.div`
   display: none;
   ${mediaQueries.desktop(css`
     display: block;

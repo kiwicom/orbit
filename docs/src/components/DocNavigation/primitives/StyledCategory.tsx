@@ -1,15 +1,14 @@
-import React from "react";
 import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
-const StyledCategoryContainer = styled.div`
+export const StyledCategoryContainer = styled.div`
   width: 100%;
   ${mediaQueries.desktop(css`
     width: auto;
   `)};
 `;
 
-const StyledCategoryName = styled.div`
+export const StyledCategoryName = styled.div`
   ${({ theme }) => `
     padding: 4px 0;
     font-size: 14px;
@@ -17,7 +16,8 @@ const StyledCategoryName = styled.div`
     color: ${theme.orbit.paletteInkLight};
   `}
 `;
-const StyledCategoryItems = styled.div`
+
+export const StyledCategoryItems = styled.div`
   ${({ theme }) => `
     position: relative;
     &::before {
@@ -33,17 +33,3 @@ const StyledCategoryItems = styled.div`
     }
   `}
 `;
-
-interface Props {
-  name: string;
-  children: React.ReactNode;
-}
-
-export default function Category({ name, children }: Props) {
-  return (
-    <StyledCategoryContainer>
-      <StyledCategoryName>{name}</StyledCategoryName>
-      <StyledCategoryItems>{children}</StyledCategoryItems>
-    </StyledCategoryContainer>
-  );
-}

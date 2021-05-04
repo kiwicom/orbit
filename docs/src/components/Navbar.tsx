@@ -156,75 +156,119 @@ const Navbar = ({ location, docNavigation }: Props) => {
           )}
           {menuOpen && (
             <Portal>
-              <Modal isMobileFullPage fixedFooter onClose={() => setMenuOpen(false)}>
-                {docNavigation ? (
-                  <>
-                    <Hide block on={["desktop", "largeDesktop"]}>
+              <div
+                css={css`
+                  > * > * > * {
+                    /* keep modal at full width between tabs */
+                    height: 100%;
+                  }
+                  ${mq.largeMobile(css`
+                    /* align modal to the top */
+                    > * > * {
+                      align-items: flex-start;
+                    }
+
+                    > * > * > * {
+                      height: auto;
+                      align-self: stretch;
+                    }
+                  `)}
+                  ${mq.desktop(css`
+                    > * > * > * {
+                      align-self: auto;
+                    }
+                  `)}
+                `}
+              >
+                <Modal fixedFooter onClose={() => setMenuOpen(false)}>
+                  {docNavigation ? (
+                    <>
                       <ModalHeader
                         title={
-                          <Stack flex direction="column" align="stretch" spacing="large">
-                            {/* TODO: ensure that tabs are accessible, code below is just guesswork */}
-                            <StyledTabList role="tablist">
-                              <StyledTab
-                                role="tab"
-                                aria-selected={activeTab === "navigation"}
-                                aria-controls="navbar-tabpanel-navigation"
-                                // eslint-disable-next-line orbit-components/unique-id
-                                id="navbar-tab-navigation"
-                                type="button"
-                                onClick={() => setActiveTab("navigation")}
-                              >
-                                Navigation
-                              </StyledTab>
-                              <StyledTab
-                                role="tab"
-                                aria-selected={activeTab === "bookmarks"}
-                                aria-controls="navbar-tabpanel-bookmarks"
-                                // eslint-disable-next-line orbit-components/unique-id
-                                id="navbar-tab-bookmarks"
-                                type="button"
-                                onClick={() => setActiveTab("bookmarks")}
-                              >
-                                Bookmarks
-                              </StyledTab>
-                            </StyledTabList>
-                            {activeTab === "bookmarks" && (
+                          <>
+                            <Hide block on={["desktop", "largeDesktop"]}>
+                              <Stack flex direction="column" align="stretch" spacing="large">
+                                {/* TODO: ensure that tabs are accessible, code below is just guesswork */}
+                                <StyledTabList role="tablist">
+                                  <StyledTab
+                                    role="tab"
+                                    aria-selected={activeTab === "navigation"}
+                                    aria-controls="navbar-tabpanel-navigation"
+                                    // eslint-disable-next-line orbit-components/unique-id
+                                    id="navbar-tab-navigation"
+                                    type="button"
+                                    onClick={() => setActiveTab("navigation")}
+                                  >
+                                    Navigation
+                                  </StyledTab>
+                                  <StyledTab
+                                    role="tab"
+                                    aria-selected={activeTab === "bookmarks"}
+                                    aria-controls="navbar-tabpanel-bookmarks"
+                                    // eslint-disable-next-line orbit-components/unique-id
+                                    id="navbar-tab-bookmarks"
+                                    type="button"
+                                    onClick={() => setActiveTab("bookmarks")}
+                                  >
+                                    Bookmarks
+                                  </StyledTab>
+                                </StyledTabList>
+                                {activeTab === "bookmarks" && (
+                                  <Stack flex align="center">
+                                    <div>Your bookmarks</div>
+                                    <Badge type="infoInverted">
+                                      {bookmarks ? Object.keys(bookmarks).length : 0}
+                                    </Badge>
+                                  </Stack>
+                                )}
+                              </Stack>
+                            </Hide>
+                            <Hide
+                              block
+                              on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}
+                            >
                               <Stack flex align="center">
                                 <div>Your bookmarks</div>
                                 <Badge type="infoInverted">
                                   {bookmarks ? Object.keys(bookmarks).length : 0}
                                 </Badge>
                               </Stack>
-                            )}
-                          </Stack>
+                            </Hide>
+                          </>
                         }
                       />
                       <ModalSection>
-                        {activeTab === "navigation" && (
-                          <div
-                            tabIndex={0}
-                            role="tabpanel"
-                            // eslint-disable-next-line orbit-components/unique-id
-                            id="navbar-tabpanel-navigation"
-                            aria-labelledby="navbar-tab-navigation"
-                          >
-                            {docNavigation}
-                          </div>
-                        )}
-                        {activeTab === "bookmarks" && (
-                          <div
-                            tabIndex={0}
-                            role="tabpanel"
-                            // eslint-disable-next-line orbit-components/unique-id
-                            id="navbar-tabpanel-navigation"
-                            aria-labelledby="navbar-tab-navigation"
-                          >
-                            <Bookmarks />
-                          </div>
-                        )}
+                        <Hide block on={["desktop", "largeDesktop"]}>
+                          {activeTab === "navigation" && (
+                            <div
+                              tabIndex={0}
+                              role="tabpanel"
+                              // eslint-disable-next-line orbit-components/unique-id
+                              id="navbar-tabpanel-navigation"
+                              aria-labelledby="navbar-tab-navigation"
+                            >
+                              {docNavigation}
+                            </div>
+                          )}
+                          {activeTab === "bookmarks" && (
+                            <div
+                              tabIndex={0}
+                              role="tabpanel"
+                              // eslint-disable-next-line orbit-components/unique-id
+                              id="navbar-tabpanel-navigation"
+                              aria-labelledby="navbar-tab-navigation"
+                            >
+                              <Bookmarks />
+                            </div>
+                          )}
+                        </Hide>
+                        <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                          <Bookmarks />
+                        </Hide>
                       </ModalSection>
-                    </Hide>
-                    <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                    </>
+                  ) : (
+                    <>
                       <ModalHeader
                         title={
                           <Stack flex align="center">
@@ -238,77 +282,67 @@ const Navbar = ({ location, docNavigation }: Props) => {
                       <ModalSection>
                         <Bookmarks />
                       </ModalSection>
+                    </>
+                  )}
+                  <ModalFooter>
+                    <Hide block on={["desktop", "largeDesktop"]}>
+                      {activeTab === "bookmarks" && editingBookmarks ? (
+                        <>
+                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
+                            Cancel
+                          </Button>
+                          {selectedBookmarks.length > 0 && (
+                            <Button
+                              type="primarySubtle"
+                              onClick={() => {
+                                // delete bookmarks...
+                                setEditingBookmarks(false);
+                              }}
+                            >
+                              Remove selected ({selectedBookmarks.length})
+                            </Button>
+                          )}
+                        </>
+                      ) : (
+                        <Button type="secondary" onClick={() => setMenuOpen(false)}>
+                          Close
+                        </Button>
+                      )}
                     </Hide>
-                  </>
-                ) : (
-                  <>
-                    <ModalHeader>
-                      <ModalHeader
-                        title={
-                          <Stack flex align="center">
-                            <div>Your bookmarks</div>
-                            <Badge type="infoInverted">
-                              {bookmarks ? Object.keys(bookmarks).length : 0}
-                            </Badge>
-                          </Stack>
-                        }
-                      />
-                    </ModalHeader>
-                    <ModalSection>
-                      <Bookmarks />
-                    </ModalSection>
-                  </>
-                )}
-                <Hide block on={["desktop", "largeDesktop"]}>
-                  <ModalFooter>
-                    <Button type="secondary" onClick={() => setMenuOpen(false)}>
-                      Close
-                    </Button>
-                    {activeTab === "bookmarks" && editingBookmarks && selectedBookmarks.length > 0 && (
-                      <Button
-                        type="primarySubtle"
-                        onClick={() => {
-                          // delete bookmarks...
-                          setEditingBookmarks(false);
-                        }}
-                      >
-                        Remove selected ({selectedBookmarks.length})
-                      </Button>
-                    )}
-                  </ModalFooter>
-                </Hide>
-                <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
-                  <ModalFooter>
-                    {!editingBookmarks && (
-                      <Button type="secondary" onClick={() => setEditingBookmarks(true)}>
-                        Edit bookmarks
-                      </Button>
-                    )}
-                    {editingBookmarks && selectedBookmarks.length === 0 && (
-                      <Stack flex align="center" justify="between" spacing="XLarge">
-                        <p>Select the bookmarks you would like to remove.</p>
-                        <Button type="secondary">Cancel</Button>
-                      </Stack>
-                    )}
-                    {editingBookmarks && selectedBookmarks.length > 0 && (
-                      <Stack flex justify="end">
-                        <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
-                          Cancel
+                    <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                      {!editingBookmarks && (
+                        <Button type="secondary" onClick={() => setEditingBookmarks(true)}>
+                          Edit bookmarks
                         </Button>
-                        <Button
-                          type="criticalSubtle"
-                          onClick={() => {
-                            // delete bookmarks...
-                            setEditingBookmarks(false);
-                          }}
-                        >
-                          Remove selected
-                        </Button>
-                      </Stack>
-                    )}
+                      )}
+                      {editingBookmarks && selectedBookmarks.length === 0 && (
+                        <Stack flex align="center" justify="between" spacing="XLarge">
+                          <p>Select the bookmarks you would like to remove.</p>
+                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
+                            Cancel
+                          </Button>
+                        </Stack>
+                      )}
+                      {editingBookmarks && selectedBookmarks.length > 0 && (
+                        <Stack flex justify="end">
+                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
+                            Cancel
+                          </Button>
+                          <Button
+                            type="criticalSubtle"
+                            onClick={() => {
+                              // delete bookmarks...
+                              setEditingBookmarks(false);
+                            }}
+                          >
+                            Remove selected
+                          </Button>
+                        </Stack>
+                      )}
+                    </Hide>
                   </ModalFooter>
-                </Hide>
-              </Modal>
+                </Modal>
+              </div>
             </Portal>
           )}
         </StyledRight>

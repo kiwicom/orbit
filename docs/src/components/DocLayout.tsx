@@ -30,9 +30,9 @@ import ComponentStatus from "./ComponentStatus";
 import { StyledAnchorWrapper } from "./HeadingWithLink";
 import TableOfContents, { TocItemObject } from "./TableOfContents";
 import Tabs, { TabObject } from "./Tabs";
-import ReactExample from "./ReactExample";
 import Footer from "./Footer";
 import { CONTENT_PADDING, MAX_CONTENT_WIDTH } from "../consts";
+import ReactExample from "./ReactExample";
 
 const StyledWrapper = styled.div`
   display: grid;

@@ -29,7 +29,8 @@
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
-    "compile:ts": "yarn tsc"
+    "compile:ts": "yarn tsc",
+    "docs-gen": "monstra docs"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",

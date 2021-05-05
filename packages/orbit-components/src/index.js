@@ -80,6 +80,7 @@ export { default as Grid } from "./utils/Grid";
 
 export { default as Heading } from "./Heading";
 export { default as Hide } from "./Hide";
+export { default as HorizontalScroll } from "./HorizontalScroll";
 export { default as Icon } from "./Icon";
 export { default as Illustration } from "./Illustration";
 export { default as Inline } from "./Inline";

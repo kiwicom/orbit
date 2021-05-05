@@ -41,6 +41,7 @@ import typeof FeatureIconType from "./FeatureIcon";
 import typeof GridType from "./utils/Grid";
 import typeof HeadingType from "./Heading";
 import typeof HideType from "./Hide";
+import typeof HorizontalScrollType from "./HorizontalScroll";
 import typeof IllustrationPrimitiveType from "./primitives/IllustrationPrimitive";
 import typeof IllustrationType from "./Illustration";
 import typeof InlineType from "./Inline";
@@ -197,6 +198,7 @@ declare export var Grid: GridType;
 
 declare export var Heading: HeadingType;
 declare export var Hide: HideType;
+declare export var HorizontalScroll: HorizontalScrollType;
 declare export var Icon: any;
 declare export var Icons: any;
 declare export var Illustration: IllustrationType;

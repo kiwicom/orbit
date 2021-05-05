@@ -131,6 +131,7 @@
     "memfs": "^3.2.0",
     "merge-stream": "^2.0.0",
     "mkdirp": "^1.0.4",
+    "monstra": "^0.9.1",
     "pinst": "^2.1.4",
     "prettier": "^2.1.2",
     "raf": "^3.4.1",

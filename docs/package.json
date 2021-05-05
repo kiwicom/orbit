@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -16,7 +16,7 @@
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "^2.3.0",
-    "@kiwicom/orbit-components": "^0.113.1",
+    "@kiwicom/orbit-components": "^0.114.0",
     "@kiwicom/orbit-design-tokens": "^0.13.6",
     "@loadable/component": "^5.14.1",
     "@mapbox/rehype-prism": "^0.6.0",

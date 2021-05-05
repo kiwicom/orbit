@@ -32,6 +32,7 @@ export { Dialog } from "./Dialog/index";
 export { FeatureIcon } from "./FeatureIcon";
 export { Heading } from "./Heading/index";
 export { Hide } from "./Hide/index";
+export { HorizontalScroll } from "./HorizontalScroll/index";
 export { InputField } from "./InputField/index";
 export { InputGroup } from "./InputGroup/index";
 export { InputStepper } from "./InputStepper/index";

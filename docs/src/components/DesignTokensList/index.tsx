@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
 import {
+  Box,
   InputField,
   Stack,
   Table,
@@ -27,7 +28,9 @@ const DesignToken = ({ value }) => {
   return (
     <Tooltip content="Click to copy" preferredPosition="bottom" preferredAlign="center">
       {isCopied ? (
-        <StyledDesignTokenOther>Copied!</StyledDesignTokenOther>
+        <Box padding={{ top: "XXXSmall", bottom: "XXXSmall" }}>
+          <StyledDesignTokenOther>Copied!</StyledDesignTokenOther>
+        </Box>
       ) : (
         <Stack inline spacing="XSmall" shrink align="center">
           <DesignTokenIcon value={value} />

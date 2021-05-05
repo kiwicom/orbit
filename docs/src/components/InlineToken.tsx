@@ -34,12 +34,22 @@ const getTokenName = value => {
   return value;
 };
 
-const InlineToken = ({ value }) => {
+interface Props {
+  alternateName?: boolean;
+  value: string;
+}
+
+const InlineToken = ({ alternateName, value }: Props) => {
   const tokenValue = findValue(value);
-  const tokenName = getTokenName(value);
+  const tokenName = alternateName ? getTokenName(value) : value;
   return (
     <Tooltip
-      content={<Text>Token value: {tokenValue}</Text>}
+      content={
+        <>
+          <Text>Token value: {tokenValue}</Text>
+          {alternateName && <Text>Token name: {value}</Text>}
+        </>
+      }
       preferredPosition="top"
       preferredAlign="center"
     >

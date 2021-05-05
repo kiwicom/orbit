@@ -35,15 +35,15 @@ For most of our colors[^note], the following points should apply:
 
 We use two main colors for backgrounds:
 
-- <InlineToken value="paletteWhite" />
-- <InlineToken value="paletteCloudLight" />
+- <InlineToken value="paletteWhite" alternateName />
+- <InlineToken value="paletteCloudLight" alternateName />
 
 And four colors to create status backgrounds:
 
-- <InlineToken value="paletteBlueLight" />
-- <InlineToken value="paletteGreenLight" />
-- <InlineToken value="paletteOrangeLight" />
-- <InlineToken value="paletteRedLight" />
+- <InlineToken value="paletteBlueLight" alternateName />
+- <InlineToken value="paletteGreenLight" alternateName />
+- <InlineToken value="paletteOrangeLight" alternateName />
+- <InlineToken value="paletteRedLight" alternateName />
 
 These are mostly used for backgrounds for any elevation level or component.
 These colors are accessible with dark foreground colors,
@@ -55,14 +55,14 @@ which should give you enough colors to work with.
 
 Interactive colors are used in components with some indication of state
 that do **not** move you forward in the flow or redirect you to another page.
-All of these elements should be colored in <InlineToken value="paletteBlueNormal" />.
+All of these elements should be colored in <InlineToken value="paletteBlueNormal" alternateName />.
 This mostly means _hover, focus, select, active, press_, and _drag_ states.
 
 ### Actionable colors
 
 Actionable colors are used in components that include an action (such as moving you forward in the flow).
 This means the [Button](/components/action/button/), [ButtonLink](/components/action/buttonlink/), and [TextLink](/components/action/textlink/) components.
-For the actionable color, we use our main **<InlineToken value="paletteProductNormal" />**.
+For the actionable color, we use our main **<InlineToken value="paletteProductNormal" alternateName/>**.
 Elements that aren't actionable shouldn't be in this color.
 
 ## Orbit palette
@@ -195,7 +195,7 @@ and it works well with white Cards and sections for content.
 
 If an input is used on a non-white background, the border isn't be visible.
 
-Use <InlineToken value="colorInputBorder" /> instead.
+Use <InlineToken value="colorInputBorder" alternateName/> instead.
 
 ![Inputs with Cloud borders don't stand out](../../../images/foundation/color-cloud-input.png)
 

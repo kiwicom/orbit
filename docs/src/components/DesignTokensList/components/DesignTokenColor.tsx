@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledDesignTokenColor = styled.span`
+interface ColorProps {
+  $color: string;
+}
+
+export const StyledDesignTokenColor = styled.span<ColorProps>`
   display: inline-flex;
   width: 20px;
   height: 20px;

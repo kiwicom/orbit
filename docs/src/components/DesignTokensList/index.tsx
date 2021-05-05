@@ -34,9 +34,9 @@ const DesignToken = ({ value }) => {
       ) : (
         <Stack inline spacing="XSmall" shrink align="center">
           <DesignTokenIcon value={value} />
-          <span role="button" onClick={() => copy(value)} title={value}>
+          <button type="button" onClick={() => copy(value)} title={value}>
             <Truncate maxWidth="200px">{value}</Truncate>
-          </span>
+          </button>
         </Stack>
       )}
     </Tooltip>

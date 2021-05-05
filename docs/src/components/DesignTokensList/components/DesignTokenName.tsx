@@ -11,9 +11,9 @@ const DesignTokenName = ({ children }) => {
       preferredAlign="center"
       preferredPosition="bottom"
     >
-      <span onClick={() => copy(children)} role="button">
+      <button onClick={() => copy(children)} type="button">
         {isCopied ? "Copied!" : children}
-      </span>
+      </button>
     </Tooltip>
   );
 };

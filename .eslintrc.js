@@ -99,8 +99,8 @@ module.exports = {
       },
       settings: {
         "import/resolver": {
-          node: {
-            extensions: [".d.ts", ".ts", ".tsx"],
+          typescript: {
+            alwaysTryTypes: true,
           },
         },
       },

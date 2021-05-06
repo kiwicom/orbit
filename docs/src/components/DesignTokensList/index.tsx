@@ -23,7 +23,14 @@ const allTokens = Object.keys(tokensList)
   .map(key => ({ name: key, value: tokensList[key] }))
   .sort((a, b) => (a.name < b.name ? -1 : 1));
 
-const DesignToken = ({ value }) => {
+export type TokenNameType = keyof typeof tokensList;
+export type TokenValueType = string | number;
+
+interface ValueObject {
+  value: TokenNameType;
+}
+
+const DesignToken = ({ value }: ValueObject) => {
   const [isCopied, copy] = useCopyToClipboard(2000);
   return (
     <Tooltip content="Click to copy" preferredPosition="bottom" preferredAlign="center">
@@ -72,7 +79,7 @@ const DesignTokensTable = ({ tokens, filter }) => {
   );
 };
 
-function useDebounce(value, delay) {
+function useDebounce(value: string, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     const handler = setTimeout(() => {

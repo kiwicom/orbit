@@ -5,6 +5,7 @@ import { warning } from "@adeira/js";
 import { Stack, Text, Tooltip } from "@kiwicom/orbit-components";
 
 import DesignTokenIcon from "./DesignTokensList/components/DesignTokenIcon";
+import { TokenNameType, TokenValueType } from "./DesignTokensList";
 
 const StyledInlineToken = styled.span`
   height: 24px;
@@ -20,28 +21,31 @@ const StyledInlineToken = styled.span`
   position: relative;
 `;
 
-const findValue = value => {
-  const tokenValue = value in tokensList ? tokensList[value] : false;
-  warning(!!tokenValue, "Value %s haven't been find in all tokens.", value);
+const findValue = (name: TokenNameType): TokenValueType => {
+  const tokenValue = name in tokensList ? tokensList[name] : "";
+  warning(!!tokenValue, "%s wasn't found in the tokens.", name);
   return tokenValue;
 };
 
-const getTokenName = value => {
-  if (value.startsWith("palette")) {
-    const values = value.match(/[A-Z][a-z]+/g);
+const getAlternateTokenName = (name: TokenNameType) => {
+  if (typeof name !== "string") return name;
+
+  if (name.startsWith("palette")) {
+    const values = name.match(/[A-Z][a-z]+/g);
+    if (!values) return name;
     return values.filter(Boolean).join(" / ");
   }
-  return value;
+  return name;
 };
 
 interface Props {
   alternateName?: boolean;
-  value: string;
+  value: TokenNameType;
 }
 
 const InlineToken = ({ alternateName, value }: Props) => {
   const tokenValue = findValue(value);
-  const tokenName = alternateName ? getTokenName(value) : value;
+  const tokenName = alternateName ? getAlternateTokenName(value) : value;
   return (
     <Tooltip
       content={

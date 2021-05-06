@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba.js";
+import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 import { Stack } from "@kiwicom/orbit-components";
 
 import CopyButton from "./CopyButton";

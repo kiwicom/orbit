@@ -77,8 +77,10 @@ const ModalWrapper = styled.div`
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
-  transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
+  transition: ${transition(["transform"], "normal", "ease-in-out")};
+  transform: translateY(
+    ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")}
+  );
 
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
@@ -88,7 +90,7 @@ const ModalWrapper = styled.div`
 
   ${media.largeMobile(css`
     position: relative;
-    top: 0;
+    transform: none;
     max-width: ${getSizeToken};
     align-items: center;
   `)};

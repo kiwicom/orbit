@@ -27,14 +27,14 @@ const StyledWrapper = styled.header`
   position: relative;
   z-index: 10;
   padding: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
   ${mq.tablet(css`
     padding: 1rem 0;
   `)}
   ${mq.desktop(css`
     padding: 1.5rem 0;
   `)}
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(5px);
 `;
 
 const StyledInner = styled.div`

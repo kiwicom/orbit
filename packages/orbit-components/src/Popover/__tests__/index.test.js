@@ -7,6 +7,14 @@ import Popover from "../index";
 import Button from "../../Button";
 import Stack from "../../Stack";
 
+jest.mock("../../hooks/useMediaQuery", () => {
+  return () => {
+    return {
+      isTablet: false,
+    };
+  };
+});
+
 describe("Popover", () => {
   it("should have expected DOM output", () => {
     const content = "Message for a user";

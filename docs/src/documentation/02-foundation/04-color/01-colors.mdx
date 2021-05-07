@@ -35,15 +35,15 @@ For most of our colors[^note], the following points should apply:
 
 We use two main colors for backgrounds:
 
-- <InlineToken value="paletteWhite" alternateName />
-- <InlineToken value="paletteCloudLight" alternateName />
+- <InlineToken name="paletteWhite" alternateName />
+- <InlineToken name="paletteCloudLight" alternateName />
 
 And four colors to create status backgrounds:
 
-- <InlineToken value="paletteBlueLight" alternateName />
-- <InlineToken value="paletteGreenLight" alternateName />
-- <InlineToken value="paletteOrangeLight" alternateName />
-- <InlineToken value="paletteRedLight" alternateName />
+- <InlineToken name="paletteBlueLight" alternateName />
+- <InlineToken name="paletteGreenLight" alternateName />
+- <InlineToken name="paletteOrangeLight" alternateName />
+- <InlineToken name="paletteRedLight" alternateName />
 
 These are mostly used for backgrounds for any elevation level or component.
 These colors are accessible with dark foreground colors,
@@ -55,14 +55,14 @@ which should give you enough colors to work with.
 
 Interactive colors are used in components with some indication of state
 that do **not** move you forward in the flow or redirect you to another page.
-All of these elements should be colored in <InlineToken value="paletteBlueNormal" alternateName />.
+All of these elements should be colored in <InlineToken name="paletteBlueNormal" alternateName />.
 This mostly means _hover, focus, select, active, press_, and _drag_ states.
 
 ### Actionable colors
 
 Actionable colors are used in components that include an action (such as moving you forward in the flow).
 This means the [Button](/components/action/button/), [ButtonLink](/components/action/buttonlink/), and [TextLink](/components/action/textlink/) components.
-For the actionable color, we use our main **<InlineToken value="paletteProductNormal" alternateName/>**.
+For the actionable color, we use our main **<InlineToken name="paletteProductNormal" alternateName/>**.
 Elements that aren't actionable shouldn't be in this color.
 
 ## Orbit palette
@@ -195,7 +195,7 @@ and it works well with white Cards and sections for content.
 
 If an input is used on a non-white background, the border isn't be visible.
 
-Use <InlineToken value="colorInputBorder" alternateName/> instead.
+Use <InlineToken name="colorInputBorder" alternateName/> instead.
 
 ![Inputs with Cloud borders don't stand out](../../../images/foundation/color-cloud-input.png)
 
@@ -218,7 +218,7 @@ Ink colors are generally used for typography and icons.
 
 <Guideline type="do" title="Use Ink Normal as the main text color">
 
-Even better, rely on the value of <InlineToken value ="colorTextPrimary" />
+Even better, rely on the value of <InlineToken name ="colorTextPrimary" />
 as it properly supports theming.
 
 ![Ink text can be seen clearly](../../../images/foundation/color-ink-text.png)
@@ -358,4 +358,4 @@ That basically means that we use the Facebook color only in [Facebook login butt
 #### Google
 
 There aren't any specific colors for Google.
-We just use the colored version of their logo and <InlineToken value="colorTextPrimary" /> for text.
+We just use the colored version of their logo and <InlineToken name="colorTextPrimary" /> for text.

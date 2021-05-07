@@ -103,7 +103,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
   } else {
     return (
       <StyledLink
-        to={devMode && item.url.startsWith("/components/") ? `${item.url}react/` : item.url}
+        to={devMode && item.hasReactTab ? `${item.url}react/` : item.url}
         active={currentUrl.startsWith(item.url)}
         level={level}
       >

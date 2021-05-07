@@ -1,11 +1,9 @@
 import React from "react";
-import { Stack, Button, Portal, Drawer } from "@kiwicom/orbit-components";
-import { StarEmpty } from "@kiwicom/orbit-components/icons";
 import { Link } from "gatsby";
+import { Text } from "@kiwicom/orbit-components";
+import { StarEmpty } from "@kiwicom/orbit-components/icons";
 import styled from "styled-components";
 
-import Switch from "../Switch";
-import { save, load } from "../../utils/storage";
 import { useBookmarks } from "../../services/bookmarks";
 
 const StyledLink = styled(Link)`
@@ -16,65 +14,43 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StarIcon = styled(StarEmpty)`
+  display: inline;
+  vertical-align: -0.2em;
+`;
+
+const StyledNowrap = styled.span`
+  white-space: nowrap;
+`;
+
 const Bookmarks = () => {
-  const [open, setOpen] = React.useState<boolean>(false);
-  const [checked, setChecked] = React.useState<boolean>(false);
   const { bookmarks } = useBookmarks();
 
-  React.useEffect(() => {
-    if (load("devMode") === "enabled") setChecked(true);
-    else setChecked(false);
-  }, []);
-
-  const handleChange = () => {
-    if (load("devMode") === "enabled") {
-      setChecked(false);
-      save("devMode", "disabled");
-    } else {
-      setChecked(true);
-      save("devMode", "enabled");
-    }
-  };
-
-  return (
+  return bookmarks && Object.keys(bookmarks).length > 0 ? (
     <>
-      <Button
-        type="white"
-        iconLeft={<StarEmpty />}
-        circled
-        title="Open bookmarks"
-        onClick={() => setOpen(true)}
-      />
-      <Portal>
-        <Drawer
-          shown={open}
-          actions={
-            <Switch onChange={handleChange} checked={checked}>
-              Developer Mode
-            </Switch>
-          }
-          onClose={() => setOpen(false)}
-        >
-          {bookmarks && (
-            <Stack direction="column">
-              <h3>Your bookmarks</h3>
-              {Object.entries(bookmarks).map(
-                ([key, slug]) =>
-                  slug && (
-                    <StyledLink key={key} to={slug}>
-                      {String(slug)
-                        .split("/")
-                        .filter(Boolean)
-                        .map(s => s[0].toUpperCase().concat(s.slice(1)))
-                        .join(" / ")}
-                    </StyledLink>
-                  ),
-              )}
-            </Stack>
-          )}
-        </Drawer>
-      </Portal>
+      {Object.entries(bookmarks).map(
+        ([key, slug]) =>
+          slug && (
+            <StyledLink key={key} to={slug}>
+              {String(slug)
+                .split("/")
+                .filter(Boolean)
+                .map(s => s[0].toUpperCase().concat(s.slice(1)))
+                .join(" / ")}
+            </StyledLink>
+          ),
+      )}
     </>
+  ) : (
+    <Text type="secondary">
+      No bookmarks yet. You can can bookmark pages by clicking on{" "}
+      <StyledNowrap>
+        &ldquo;
+        <StarIcon size="small" />
+        &rdquo;
+      </StyledNowrap>{" "}
+      next to the page title.
+    </Text>
   );
 };
 

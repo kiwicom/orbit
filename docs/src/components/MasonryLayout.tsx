@@ -50,6 +50,7 @@ const MasonryLayout = ({ columns = 2, gap = 24, children }: Props) => {
     <div
       css={css`
         display: flex;
+        margin-top: 1rem;
       `}
     >
       {result}

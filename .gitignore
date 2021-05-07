@@ -63,3 +63,6 @@ typings/
 .atom
 .idea
 .vscode
+
+# operating systems
+.DS_Store

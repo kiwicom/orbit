@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.114.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.1...@kiwicom/orbit-components@0.114.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* **Popover:** fix bug with Tooltip inside Popover on mobile ([75d8fa4](https://github.com/kiwicom/orbit/commit/75d8fa41df9afb0d2448ee073a0d2b559d1ae29e))
+
+
+### Features
+
+* **BaggageStepper:** init ([#2922](https://github.com/kiwicom/orbit/issues/2922)) ([0c9c546](https://github.com/kiwicom/orbit/commit/0c9c5460f41d34300dfa28b6573db7d855a52f79))
+* HorizontalScroll component ([#2917](https://github.com/kiwicom/orbit/issues/2917)) ([d5e5929](https://github.com/kiwicom/orbit/commit/d5e59290b6aa6474ef3c5454b427c2a7859f43e1))
+* introduce Switch component ([7517675](https://github.com/kiwicom/orbit/commit/7517675712c36073c909c74ef4b334b92cc97fb1))
+
+
+
+
+
 ## [0.113.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.0...@kiwicom/orbit-components@0.113.1) (2021-04-28)
 
 

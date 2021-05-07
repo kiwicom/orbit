@@ -40,6 +40,10 @@ const omitTypes = example => {
     TSTypeAnnotation: path => {
       path.remove();
     },
+
+    TSTypeParameterInstantiation: path => {
+      path.remove();
+    },
   });
 
   const { code } = generate(ast);

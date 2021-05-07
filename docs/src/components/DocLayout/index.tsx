@@ -68,7 +68,6 @@ export default function DocLayout({
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
   const tocHasItems = tableOfContents?.length > 0;
-  const navigation = <DocNavigation currentUrl={path} />;
   return (
     <ThemeProvider theme={defaultTheme}>
       <DevModeProvider>
@@ -99,7 +98,6 @@ export default function DocLayout({
                 {trail && (
                   <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
                     <DocNavigation currentUrl={path} />
-                    {navigation}
                   </Hide>
                 )}
                 <StyledMain>

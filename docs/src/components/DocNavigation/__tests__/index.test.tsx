@@ -4,43 +4,42 @@ describe("DocNavigation", () => {
   it("should group trails into navigation items", () => {
     const navigation = groupTrails([
       [
-        { name: "Getting started", url: "/getting-started/" },
-        { name: "For designers", url: "/getting-started/for-designers/" },
+        { name: "Getting started", url: "/getting-started/", hasReactTab: false },
+        { name: "For designers", url: "/getting-started/for-designers/", hasReactTab: false },
       ],
       [
-        { name: "Getting started", url: "/getting-started/" },
-        { name: "For developers", url: "/getting-started/for-developers/" },
+        { name: "Getting started", url: "/getting-started/", hasReactTab: false },
+        { name: "For developers", url: "/getting-started/for-developers/", hasReactTab: false },
       ],
       [
-        { name: "Getting started", url: "/getting-started/" },
-        { name: "GitHub repos & resources", url: "/getting-started/github/" },
+        { name: "Getting started", url: "/getting-started/", hasReactTab: false },
+        { name: "GitHub repos & resources", url: "/getting-started/github/", hasReactTab: false },
       ],
       [
-        { name: "Components", url: "/components/" },
-        { name: "Action", url: "/components/action/" },
-        { name: "Button", url: "/components/action/button/" },
+        { name: "Components", url: "/components/", hasReactTab: false },
+        { name: "Action", url: "/components/action/", hasReactTab: false },
+        { name: "Button", url: "/components/action/button/", hasReactTab: true },
       ],
       [
-        { name: "Components", url: "/components/" },
-        { name: "Action", url: "/components/action/" },
-        { name: "Button", url: "/components/action/button/" },
+        { name: "For Kiwi.com use", url: "/kiwi-use/", hasReactTab: false },
+        { name: "Brand", url: "/kiwi-use/brand/", hasReactTab: false },
+        { name: "Brand guidelines", url: "/kiwi-use/brand/brand-guidelines/", hasReactTab: false },
       ],
       [
-        { name: "For Kiwi.com use", url: "/kiwi-use/" },
-        { name: "Brand", url: "/kiwi-use/brand/" },
-        { name: "Brand guidelines", url: "/kiwi-use/brand/brand-guidelines/" },
+        { name: "For Kiwi.com use", url: "/kiwi-use/", hasReactTab: false },
+        { name: "Content", url: "/kiwi-use/content/", hasReactTab: false },
+        { name: "Specific areas", url: "/kiwi-use/content/specific-areas/", hasReactTab: false },
+        { name: "Social media", url: "/kiwi-use/content/social-media/", hasReactTab: false },
       ],
       [
-        { name: "For Kiwi.com use", url: "/kiwi-use/" },
-        { name: "Content", url: "/kiwi-use/content/" },
-        { name: "Specific areas", url: "/kiwi-use/content/specific-areas/" },
-        { name: "Social media", url: "/kiwi-use/content/social-media/" },
-      ],
-      [
-        { name: "For Kiwi.com use", url: "/kiwi-use/" },
-        { name: "Content", url: "/kiwi-use/content/" },
-        { name: "Specific areas", url: "/kiwi-use/content/specific-areas/" },
-        { name: "Technical content", url: "/kiwi-use/content/technical-content/" },
+        { name: "For Kiwi.com use", url: "/kiwi-use/", hasReactTab: false },
+        { name: "Content", url: "/kiwi-use/content/", hasReactTab: false },
+        { name: "Specific areas", url: "/kiwi-use/content/specific-areas/", hasReactTab: false },
+        {
+          name: "Technical content",
+          url: "/kiwi-use/content/technical-content/",
+          hasReactTab: false,
+        },
       ],
     ]);
 
@@ -53,17 +52,20 @@ describe("DocNavigation", () => {
             {
               \\"type\\": \\"leaf\\",
               \\"name\\": \\"For designers\\",
-              \\"url\\": \\"/getting-started/for-designers/\\"
+              \\"url\\": \\"/getting-started/for-designers/\\",
+              \\"hasReactTab\\": false
             },
             {
               \\"type\\": \\"leaf\\",
               \\"name\\": \\"For developers\\",
-              \\"url\\": \\"/getting-started/for-developers/\\"
+              \\"url\\": \\"/getting-started/for-developers/\\",
+              \\"hasReactTab\\": false
             },
             {
               \\"type\\": \\"leaf\\",
               \\"name\\": \\"GitHub repos & resources\\",
-              \\"url\\": \\"/getting-started/github/\\"
+              \\"url\\": \\"/getting-started/github/\\",
+              \\"hasReactTab\\": false
             }
           ]
         },
@@ -78,7 +80,8 @@ describe("DocNavigation", () => {
                 {
                   \\"type\\": \\"leaf\\",
                   \\"name\\": \\"Button\\",
-                  \\"url\\": \\"/components/action/button/\\"
+                  \\"url\\": \\"/components/action/button/\\",
+                  \\"hasReactTab\\": true
                 }
               ]
             }
@@ -95,7 +98,8 @@ describe("DocNavigation", () => {
                 {
                   \\"type\\": \\"leaf\\",
                   \\"name\\": \\"Brand guidelines\\",
-                  \\"url\\": \\"/kiwi-use/brand/brand-guidelines/\\"
+                  \\"url\\": \\"/kiwi-use/brand/brand-guidelines/\\",
+                  \\"hasReactTab\\": false
                 }
               ]
             },
@@ -110,12 +114,14 @@ describe("DocNavigation", () => {
                     {
                       \\"type\\": \\"leaf\\",
                       \\"name\\": \\"Social media\\",
-                      \\"url\\": \\"/kiwi-use/content/social-media/\\"
+                      \\"url\\": \\"/kiwi-use/content/social-media/\\",
+                      \\"hasReactTab\\": false
                     },
                     {
                       \\"type\\": \\"leaf\\",
                       \\"name\\": \\"Technical content\\",
-                      \\"url\\": \\"/kiwi-use/content/technical-content/\\"
+                      \\"url\\": \\"/kiwi-use/content/technical-content/\\",
+                      \\"hasReactTab\\": false
                     }
                   ]
                 }

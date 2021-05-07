@@ -14,6 +14,10 @@ interface Props extends PageRendererProps {
         headerLink: string;
         slug: string;
         title: string;
+        trail: Array<{
+          name: string;
+          url: string;
+        }>;
       };
       body: string;
       tableOfContents: { items: TocItemObject[] };
@@ -49,6 +53,7 @@ export default function Doc({ data, location }: Props) {
       tableOfContents={tableOfContents.items}
       tabs={usedTabs}
       title={fields.title}
+      trail={fields.trail}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
@@ -63,6 +68,10 @@ export const query = graphql`
         headerLink
         slug
         title
+        trail {
+          name
+          url
+        }
       }
       body
       tableOfContents

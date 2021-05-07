@@ -17,7 +17,6 @@ export const StyledWrapperDesktop = styled.div`
   display: none;
   ${mediaQueries.desktop(css`
     display: block;
-    width: 22ch;
     flex-shrink: 0;
     margin-top: -6px;
   `)}

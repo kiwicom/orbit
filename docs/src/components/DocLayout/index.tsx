@@ -35,6 +35,8 @@ import StyledWrapper from "./primitives/StyledWrapper";
 import StyledMiddle from "./primitives/StyledMiddle";
 import StyledMain from "./primitives/StyledMain";
 import StyledMobileOutdent from "./primitives/StyledMobileOutdent";
+import StyledDocNavigationWidth from "./primitives/StyledDocNavigationWidth";
+import StyledDocNavigationWrapper from "./primitives/StyledDocNavigationWrapper";
 import StyledTocWrapper from "./primitives/StyledTocWrapper";
 import StyledProse from "./primitives/StyledProse";
 
@@ -97,7 +99,11 @@ export default function DocLayout({
               >
                 {trail && (
                   <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
-                    <DocNavigation currentUrl={path} />
+                    <StyledDocNavigationWidth>
+                      <StyledDocNavigationWrapper>
+                        <DocNavigation currentUrl={path} />
+                      </StyledDocNavigationWrapper>
+                    </StyledDocNavigationWidth>
                   </Hide>
                 )}
                 <StyledMain>
@@ -120,7 +126,7 @@ export default function DocLayout({
                       <Box
                         display="flex"
                         align="end"
-                        justify="between"
+                        justify={tabs && tabs.length > 0 ? "between" : "end"}
                         tablet={{ maxWidth: "80%" }}
                       >
                         {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}

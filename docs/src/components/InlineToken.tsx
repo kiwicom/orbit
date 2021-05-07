@@ -40,18 +40,18 @@ const getAlternateTokenName = (name: TokenNameType) => {
 
 interface Props {
   alternateName?: boolean;
-  value: TokenNameType;
+  name: TokenNameType;
 }
 
-const InlineToken = ({ alternateName, value }: Props) => {
-  const tokenValue = findValue(value);
-  const tokenName = alternateName ? getAlternateTokenName(value) : value;
+const InlineToken = ({ alternateName, name }: Props) => {
+  const tokenValue = findValue(name);
+  const tokenName = alternateName ? getAlternateTokenName(name) : name;
   return (
     <Tooltip
       content={
         <>
           <Text>Token value: {tokenValue}</Text>
-          {alternateName && <Text>Token name: {value}</Text>}
+          {alternateName && <Text>Token name: {name}</Text>}
         </>
       }
       preferredPosition="top"

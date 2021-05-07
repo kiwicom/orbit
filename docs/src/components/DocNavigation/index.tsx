@@ -12,6 +12,7 @@ import { Navigation } from "./types";
 type Trail = Array<{
   name: string;
   url: string;
+  hasReactTab: boolean;
 }>;
 
 interface QueryData {
@@ -34,13 +35,13 @@ export function groupTrails(trails: Trail[]): Navigation {
   const result: Navigation = [];
   const level = { result };
   trails.forEach(trail => {
-    trail.reduce((acc, { name, url }, index) => {
+    trail.reduce((acc, { name, url, hasReactTab }, index) => {
       if (!acc[name]) {
         acc[name] = { result: [] };
         if (index < trail.length - 1) {
           acc.result.push({ type: "branch", name, items: acc[name].result });
         } else {
-          acc.result.push({ type: "leaf", name, url });
+          acc.result.push({ type: "leaf", name, url, hasReactTab });
         }
       }
       return acc[name];
@@ -83,7 +84,21 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
 
   const trails = data.allMdx.nodes
     .filter(node => !node.fields.tabCollection || node.parent.name.startsWith("01-"))
-    .map(node => node.fields.trail);
+    .map(node =>
+      node.fields.trail.map((t, i) => {
+        if (i === node.fields.trail.length - 1) {
+          return {
+            ...t,
+            hasReactTab: data.allMdx.nodes.some(
+              n =>
+                n.fields.tabCollection === node.fields.tabCollection &&
+                n.fields.trail[n.fields.trail.length - 1].url.endsWith("/react/"),
+            ),
+          };
+        }
+        return t;
+      }),
+    );
 
   const navigation = (
     <>

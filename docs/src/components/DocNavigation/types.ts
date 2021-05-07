@@ -10,6 +10,7 @@ export type NavigationItem =
   | {
       type: "leaf";
       name: string;
+      hasReactTab: boolean;
       url: string;
       status?: NavigationItemStatus;
     };

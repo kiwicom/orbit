@@ -18,7 +18,7 @@
     "@kiwicom/babel-plugin-orbit-components": "^2.3.0",
     "@kiwicom/orbit-components": "^0.114.0",
     "@kiwicom/orbit-design-tokens": "^0.13.6",
-    "@loadable/component": "^5.14.1",
+    "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.21",

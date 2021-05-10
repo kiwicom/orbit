@@ -2,9 +2,9 @@ import React from "react";
 import { ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { WindowLocation } from "@reach/router";
+import { Helmet } from "react-helmet";
 
 import defaultTheme from "../theme";
-import { DevModeProvider } from "../hooks/useDevMode";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { CONTENT_PADDING } from "../consts";
@@ -26,18 +26,25 @@ const StyledMain = styled.main`
 interface Props {
   children: React.ReactNode;
   location: WindowLocation;
+  title: string;
+  description?: string;
 }
 
-export default function Layout({ children, location }: Props) {
+export default function Layout({ children, location, title, description }: Props) {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <DevModeProvider>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+      </Helmet>
+      <ThemeProvider theme={defaultTheme}>
         <StyledWrapper>
           <Navbar location={location} />
           <StyledMain>{children}</StyledMain>
           <Footer />
         </StyledWrapper>
-      </DevModeProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
   );
 }

@@ -25,7 +25,10 @@ interface Props {
 export default function Home({ location }: Props) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      title="Orbit — Open source design system for your next travel project"
+    >
       <RocketImage />
       <div
         css={css`

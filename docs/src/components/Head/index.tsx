@@ -3,13 +3,13 @@ import { Helmet } from "react-helmet";
 
 interface Props {
   title?: string;
-  hasSiteTitle?: boolean;
+  hasSiteName?: boolean;
   description?: string;
   path: string;
 }
 
-export default function Head({ title, hasSiteTitle, description, path }: Props) {
-  const pageTitle = hasSiteTitle ? `${title} | Orbit` : title
+export default function Head({ title, hasSiteName, description, path }: Props) {
+  const pageTitle = hasSiteName ? `${title} | Orbit` : title
   const url = `https://orbit.kiwi${path}`;
   return (
     <Helmet>

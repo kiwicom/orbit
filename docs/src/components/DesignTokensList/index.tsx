@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
 import {
-  Box,
   InputField,
   Stack,
   Table,
@@ -19,38 +18,33 @@ import { StyledDesignTokenOther } from "./components/DesignTokenColor";
 import DesignTokenIcon from "./components/DesignTokenIcon";
 import DesignTokenName from "./components/DesignTokenName";
 
-const allTokens = Object.keys(tokensList)
-  .map(key => ({ name: key, value: tokensList[key] }))
+export type TokenNameType = string;
+export type TokenValueType = string | number;
+// @ts-expect-error force type because Object.entries makes the value unknown
+const allTokens: Array<{ name: TokenName; value: TokenValue }> = Object.entries(tokensList)
+  .map(([name, value]) => ({ name, value }))
   .sort((a, b) => (a.name < b.name ? -1 : 1));
 
-export type TokenNameType = keyof typeof tokensList;
-export type TokenValueType = string | number;
-
-interface ValueObject {
-  value: TokenNameType;
-}
-
-const DesignToken = ({ value }: ValueObject) => {
+const DesignToken = ({ value }: { value: TokenValueType }) => {
   const [isCopied, copy] = useCopyToClipboard(2000);
-  return (
+  return isCopied ? (
+    <Stack inline spacing="XSmall" shrink align="center">
+      <StyledDesignTokenOther />
+      <span>Copied!</span>
+    </Stack>
+  ) : (
     <Tooltip content="Click to copy" preferredPosition="bottom" preferredAlign="center">
-      {isCopied ? (
-        <Box padding={{ top: "XXXSmall", bottom: "XXXSmall" }}>
-          <StyledDesignTokenOther>Copied!</StyledDesignTokenOther>
-        </Box>
-      ) : (
-        <Stack inline spacing="XSmall" shrink align="center">
-          <DesignTokenIcon value={value} />
-          <button type="button" onClick={() => copy(value)} title={value}>
-            <Truncate maxWidth="200px">{value}</Truncate>
-          </button>
-        </Stack>
-      )}
+      <Stack inline spacing="XSmall" shrink align="center">
+        <DesignTokenIcon value={value} />
+        <button type="button" onClick={() => copy(String(value))} title={String(value)}>
+          <Truncate maxWidth="200px">{value}</Truncate>
+        </button>
+      </Stack>
     </Tooltip>
   );
 };
 
-const DesignTokensTable = ({ tokens, filter }) => {
+const DesignTokensTable = ({ tokens, filter }: { tokens: typeof allTokens; filter: string }) => {
   return (
     <Table striped={false}>
       <TableHead>

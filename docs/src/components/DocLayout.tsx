@@ -177,6 +177,7 @@ export default function DocLayout({
                     ImageContainer,
                     ReactExample,
                     InlineToken,
+                    Stack,
                   }}
                 >
                   {children}

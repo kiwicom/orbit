@@ -2,11 +2,11 @@ import React from "react";
 import { ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { WindowLocation } from "@reach/router";
-import { Helmet } from "react-helmet";
 
 import defaultTheme from "../theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Head from "./Head";
 import { CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.div`
@@ -28,16 +28,14 @@ interface Props {
   location: WindowLocation;
   title: string;
   description?: string;
+  path: string;
+  isHome?: boolean;
 }
 
-export default function Layout({ children, location, title, description }: Props) {
+export default function Layout({ children, location, title, description, path, isHome }: Props) {
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        {description && <meta name="description" content={description} />}
-      </Helmet>
+      <Head title={title} hasSiteTitle={isHome} description={description} path={path} />
       <ThemeProvider theme={defaultTheme}>
         <StyledWrapper>
           <Navbar location={location} />

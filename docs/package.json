@@ -57,6 +57,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
+    "@types/react-helmet": "^6.1.1",
     "body-scroll-lock": "^3.1.5",
     "fuzzaldrin-plus": "^0.6.0",
     "prism-react-renderer": "^1.1.1",

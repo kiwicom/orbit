@@ -16,6 +16,7 @@ import { Helmet } from "react-helmet";
 import defaultTheme from "../../theme";
 import * as components from "../../mdx-components";
 import { DevModeProvider } from "../../hooks/useDevMode";
+import Head from "../Head";
 import AddBookmark from "../AddBookmark";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
@@ -74,12 +75,12 @@ export default function DocLayout({
   const tocHasItems = tableOfContents?.length > 0;
   return (
     <>
-      <Helmet>
-        {title && (
-          <title>{getDocumentPageTitle(title, trail ? trail.map(t => t.name) : [])} | Orbit</title>
-        )}
-        {description && <meta name="description" content={description} />}
-      </Helmet>
+      <Head
+        title={title ? getDocumentPageTitle(title, trail ? trail.map(t => t.name) : []) : "Orbit"}
+        hasSiteName={Boolean(title)}
+        description={description}
+        path={path}
+      />
       <ThemeProvider theme={defaultTheme}>
         <DevModeProvider>
           <BookmarkProvider page={path} location={location}>

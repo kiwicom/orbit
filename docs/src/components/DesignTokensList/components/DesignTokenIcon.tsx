@@ -1,7 +1,7 @@
 import React from "react";
 
 import { StyledDesignTokenColor, StyledDesignTokenOther } from "./DesignTokenColor";
-import { TokenValueType } from "../index";
+import { TokenValueType } from "..";
 /*
   TODO: we can create later more types such as spacing (and size)
  */
@@ -17,14 +17,15 @@ const determinateTokenType = (value: TokenValueType) => {
 };
 
 interface Props {
+  size?: "medium" | "large";
   value: TokenValueType;
 }
 
-const DesignTokenIcon = ({ value }: Props) => {
-  if (typeof value !== "string") return <StyledDesignTokenOther />;
+const DesignTokenIcon = ({ size, value }: Props) => {
+  if (typeof value !== "string") return <StyledDesignTokenOther size={size} />;
 
   const type = determinateTokenType(value);
-  if (type === "color") return <StyledDesignTokenColor $color={value} />;
+  if (type === "color") return <StyledDesignTokenColor size={size} $color={value} />;
 
   return <StyledDesignTokenOther />;
 };

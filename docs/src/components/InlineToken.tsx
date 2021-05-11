@@ -1,24 +1,78 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
 import { warning } from "@adeira/js";
-import { Stack, Text, Tooltip } from "@kiwicom/orbit-components";
+import { Text, Tooltip } from "@kiwicom/orbit-components";
 
 import DesignTokenIcon from "./DesignTokensList/components/DesignTokenIcon";
 import { TokenNameType, TokenValueType } from "./DesignTokensList";
 
-const StyledInlineToken = styled.span`
-  height: 24px;
-  display: inline-flex;
-  padding: 0 12px 0 4px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: bold;
-  align-items: center;
-  border: 1px dashed #dee7f5;
-  background: white;
-  top: 3px;
-  position: relative;
+const StyledInlineTokenWrapper = styled.span`
+  flex-shrink: 1;
+  vertical-align: -3px; /* align with the baseline of surrounding text */
+`;
+
+const StyledInlineToken = styled.span<{ size?: "medium" | "large" }>`
+  ${({ theme, size = "medium" }) => css`
+    display: inline-flex;
+    align-items: center;
+    ${size === "medium" &&
+    `
+      height: 22px;
+      border-radius: 11px;
+      padding-left: 4px;
+      padding-right: 8px;
+    `};
+    ${size === "large" &&
+    `
+      height: 44px;
+      border-radius: 22px;
+      padding-left: 6px;
+      padding-right: 18px;
+    `};
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    border: 1px dashed #dee7f5;
+    background: white;
+
+    > * + * {
+      margin-left: ${theme.orbit.spaceXSmall};
+    }
+  `}
+`;
+
+const StyledLabel = styled.span<{ size: "medium" | "large" }>`
+  ${({ size }) => `
+    display: inline-flex;
+    ${
+      size === "medium" &&
+      `
+        > * + * {
+          margin-left: 4px;
+        }
+      `
+    };
+    ${
+      size === "large" &&
+      `
+        flex-direction: column;
+      `
+    };
+  `}
+`;
+const StyledLabelVariant = styled.span<{ size: "medium" | "large" }>`
+  ${({ theme, size }) => `
+    font-weight: normal;
+    color: ${theme.orbit.paletteInkLight};
+    ${
+      size === "large" &&
+      `
+        font-size: 12px;
+      `
+    };
+  `}
 `;
 
 const findValue = (name: TokenNameType): TokenValueType => {
@@ -27,13 +81,26 @@ const findValue = (name: TokenNameType): TokenValueType => {
   return tokenValue;
 };
 
-const getAlternateTokenName = (name: TokenNameType) => {
+const getAlternateTokenName = (
+  name: TokenNameType,
+  size: "medium" | "large" = "medium",
+): React.Node => {
   if (typeof name !== "string") return name;
 
   if (name.startsWith("palette")) {
     const values = name.match(/[A-Z][a-z]+/g);
     if (!values) return name;
-    return values.filter(Boolean).join(" / ");
+    const filteredValues = values.filter(Boolean);
+    if (filteredValues.length === 1) return values[0];
+    return (
+      <StyledLabel size={size}>
+        <span>{filteredValues[0]}</span>
+        <StyledLabelVariant size={size}>
+          {filteredValues[1]}
+          {filteredValues[2] && ` ${filteredValues[2]}`}
+        </StyledLabelVariant>
+      </StyledLabel>
+    );
   }
   return name;
 };
@@ -41,29 +108,30 @@ const getAlternateTokenName = (name: TokenNameType) => {
 interface Props {
   alternateName?: boolean;
   name: TokenNameType;
+  size?: "medium" | "large";
 }
 
-const InlineToken = ({ alternateName, name }: Props) => {
+const InlineToken = ({ size, alternateName, name }: Props) => {
   const tokenValue = findValue(name);
-  const tokenName = alternateName ? getAlternateTokenName(name) : name;
+  const tokenName = alternateName ? getAlternateTokenName(name, size) : name;
   return (
-    <Tooltip
-      content={
-        <>
-          <Text>Token value: {tokenValue}</Text>
-          {alternateName && <Text>Token name: {name}</Text>}
-        </>
-      }
-      preferredPosition="top"
-      preferredAlign="center"
-    >
-      <StyledInlineToken>
-        <Stack inline spacing="XSmall" shrink align="center">
-          <DesignTokenIcon value={tokenValue} />
+    <StyledInlineTokenWrapper>
+      <Tooltip
+        content={
+          <>
+            <Text>Token value: {tokenValue}</Text>
+            {alternateName && <Text>Token name: {name}</Text>}
+          </>
+        }
+        preferredPosition="top"
+        preferredAlign="center"
+      >
+        <StyledInlineToken size={size}>
+          <DesignTokenIcon size={size} value={tokenValue} />
           <span>{tokenName}</span>
-        </Stack>
-      </StyledInlineToken>
-    </Tooltip>
+        </StyledInlineToken>
+      </Tooltip>
+    </StyledInlineTokenWrapper>
   );
 };
 

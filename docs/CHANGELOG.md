@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.0...@kiwicom/orbit.kiwi@0.11.1) (2021-05-05)
+
+**Note:** Version bump only for package @kiwicom/orbit.kiwi
+
+
+
+
+
+# [0.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.10.0...@kiwicom/orbit.kiwi@0.11.0) (2021-04-28)
+
+
+### Features
+
+* **docs:** add guidelines on TextLink colors ([#2912](https://github.com/kiwicom/orbit/issues/2912)) ([9360a22](https://github.com/kiwicom/orbit/commit/9360a229888c32045d3a71a46d73bad53b6bdede))
+
+
+
+
+
 # [0.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.9.0...@kiwicom/orbit.kiwi@0.10.0) (2021-04-22)
 
 

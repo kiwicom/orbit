@@ -1,0 +1,29 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/stepper/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+export type SharedProps = {|
+  ...Globals,
+  +name?: string,
+  +disabled?: boolean,
+  +selected?: boolean,
+  +maxValue?: number,
+  +minValue?: number,
+  +titleIncrement?: string | (any => string),
+  +titleDecrement?: string | (any => string),
+  +onChange?: (value: number) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+export type Props = {|
+  ...SharedProps,
+  +defaultValue?: number,
+  +step?: number,
+|};
+
+declare export default React.ComponentType<Props>;

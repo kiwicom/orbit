@@ -9,6 +9,22 @@ import Spectrum from "../images/logos/spectrum-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";
 import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
+import useDevMode from "../hooks/useDevMode";
+
+const StyledFooter = styled.footer`
+  position: relative; /* so that the content card shadow goes behind it */
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 52px;
+    top: -52px;
+    pointer-events: none;
+    background-image: linear-gradient(to top, #fff, transparent);
+  }
+`;
 
 const StyledContainer = styled.div<{ color: string }>`
   ${({ theme, color }) => `
@@ -65,8 +81,9 @@ function Dot() {
 }
 
 export default function Footer() {
+  const [devMode, setDevMode] = useDevMode();
   return (
-    <footer>
+    <StyledFooter>
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
           <Stack flex align="center" justify="between">
@@ -144,7 +161,7 @@ export default function Footer() {
                     Opens components on the React tab by default.
                   </Text>
                 </Stack>
-                <Switch />
+                <Switch checked={devMode} onChange={() => setDevMode(!devMode)} />
               </Stack>
             </Stack>
             <Stack
@@ -173,6 +190,6 @@ export default function Footer() {
           </Stack>
         </StyledInner>
       </StyledContainer>
-    </footer>
+    </StyledFooter>
   );
 }

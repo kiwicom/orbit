@@ -92,6 +92,7 @@ export const td = ({
   <TableCell
     as="td"
     align={align === "left" || align === "center" || align === "right" ? align : undefined}
+    whiteSpace="normal"
     verticalAlign={valign}
   >
     {children}

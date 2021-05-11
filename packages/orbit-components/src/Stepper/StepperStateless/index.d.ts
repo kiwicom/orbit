@@ -10,7 +10,6 @@ declare module "@kiwicom/orbit-components/lib/StepperStateless";
 
 type InputEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 
-// TODO: fix types, onChange is not being used inside
 export interface Props extends SharedProps {
   readonly value?: number | string | (() => string);
   readonly disabledIncrement?: boolean;

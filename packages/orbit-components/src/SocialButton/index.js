@@ -15,9 +15,9 @@ import type { Props } from "./index";
 const SocialButton: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,
   HTMLButtonElement,
->(({ type = TYPE_OPTIONS.APPLE, disabled = false, ...props }, ref) => {
+>(({ type = TYPE_OPTIONS.APPLE, disabled = false, size, ...props }, ref) => {
   const theme = useTheme();
-  const propsWithTheme = { theme, ...props };
+  const propsWithTheme = { theme, size, ...props };
   const commonProps = getCommonProps(propsWithTheme);
   const buttonStyles = getSocialButtonStyles({ type, disabled, theme });
   const icons = getIconContainer({

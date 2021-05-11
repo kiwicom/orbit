@@ -97,7 +97,7 @@ const getAlternateTokenName = (
         <span>{filteredValues[0]}</span>
         <StyledLabelVariant size={size}>
           {filteredValues[1]}
-          {filteredValues[2] && ` ${filteredValues[2]}`}
+          {filteredValues[2] && ` ${filteredValues.slice(1).join(" ")}`}
         </StyledLabelVariant>
       </StyledLabel>
     );

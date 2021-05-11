@@ -233,7 +233,6 @@ module.exports = {
         ImageContainer: false,
         InlineToken: false,
         ReactExample: false,
-        Stack: false,
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them

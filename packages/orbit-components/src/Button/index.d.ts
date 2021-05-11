@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
@@ -11,6 +11,7 @@ type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSu
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;
+  readonly size?: Size;
 }
 
 declare const Button: React.FunctionComponent<Props>;

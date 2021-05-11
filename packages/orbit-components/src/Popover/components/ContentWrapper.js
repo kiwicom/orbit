@@ -13,6 +13,7 @@ import calculateVerticalPosition from "../helpers/calculateVerticalPosition";
 import calculateHorizontalPosition from "../helpers/calculateHorizontalPosition";
 import type { Props } from "./ContentWrapper.js.flow";
 import useDimensions from "../hooks/useDimensions";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
@@ -180,6 +181,7 @@ const PopoverContentWrapper = ({
   actions,
 }: Props): React.Node => {
   const { isInsideModal } = React.useContext(ModalContext);
+  const { isTablet } = useMediaQuery();
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);
   const intervalRef = React.useRef(null);
@@ -226,7 +228,9 @@ const PopoverContentWrapper = ({
     };
   }, []);
 
-  useClickOutside(popover, onClose);
+  useClickOutside(popover, ev => {
+    if (isTablet) onClose(ev);
+  });
 
   const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 27 && onClose) onClose(ev);

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function Head({ title, hasSiteName, description, path }: Props) {
-  const pageTitle = hasSiteName ? `${title} | Orbit` : title
+  const pageTitle = hasSiteName ? `${title} | Orbit` : title;
   const url = `https://orbit.kiwi${path}`;
   return (
     <Helmet>

@@ -20,12 +20,19 @@ import { MAX_CONTENT_WIDTH } from "../consts";
 
 interface Props {
   location: WindowLocation;
+  path: string;
 }
 
-export default function Home({ location }: Props) {
+export default function Home({ location, path }: Props) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      title="Orbit design system"
+      description="An open source design system for your next travel project."
+      path={path}
+      isHome
+    >
       <RocketImage />
       <div
         css={css`

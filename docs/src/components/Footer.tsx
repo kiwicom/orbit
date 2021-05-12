@@ -106,13 +106,13 @@ export default function Footer() {
               align="end"
               tablet={{ direction: "row", justify: "end" }}
             >
-              <StyledIconLink href="https://github.com/kiwicom/orbit">
+              <StyledIconLink href="https://github.com/kiwicom/orbit" aria-label="GitHub">
                 <GitHub />
               </StyledIconLink>
-              <StyledIconLink href="https://spectrum.chat/orbit">
+              <StyledIconLink href="https://spectrum.chat/orbit" aria-label="Spectrum">
                 <Spectrum />
               </StyledIconLink>
-              <StyledIconLink href="https://twitter.com/OrbitKiwi">
+              <StyledIconLink href="https://twitter.com/OrbitKiwi" aria-label="Twitter">
                 <Twitter />
               </StyledIconLink>
             </Stack>

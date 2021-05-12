@@ -161,7 +161,9 @@ export default function Footer() {
                     Opens components on the React tab by default.
                   </Text>
                 </Stack>
-                <Switch checked={devMode} onChange={() => setDevMode(!devMode)} />
+                <Switch checked={devMode} onChange={() => setDevMode(!devMode)} hideLabel>
+                  Turn {devMode ? "off" : "on"} dev mode
+                </Switch>
               </Stack>
             </Stack>
             <Stack

@@ -59,6 +59,7 @@
   "dependencies": {
     "@types/react-helmet": "^6.1.1",
     "body-scroll-lock": "^3.1.5",
+    "eslint-plugin-orbit-components": "^0.5.1",
     "fuzzaldrin-plus": "^0.6.0",
     "prism-react-renderer": "^1.1.1",
     "react-helmet": "^6.1.0",

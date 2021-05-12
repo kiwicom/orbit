@@ -50,13 +50,14 @@ interface Props {
   location: WindowLocation;
   noElevation?: boolean;
   path: string;
-  tableOfContents: TocItemObject[];
+  tableOfContents?: TocItemObject[];
   tabs?: TabObject[];
   title?: string;
   trail?: Array<{
     name: string;
     url: string;
   }>;
+  custom?: boolean;
 }
 
 export default function DocLayout({
@@ -66,10 +67,11 @@ export default function DocLayout({
   location,
   noElevation,
   path,
-  tableOfContents,
+  tableOfContents = [],
   tabs,
   title,
   trail,
+  custom,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;
   const tocHasItems = tableOfContents?.length > 0;
@@ -102,97 +104,95 @@ export default function DocLayout({
                 }
               />
               <StyledMiddle>
-                <Stack
-                  flex
-                  direction="column"
-                  desktop={{ direction: "row", spacing: "large", align: "stretch" }}
-                >
-                  {trail && (
-                    <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
-                      <StyledDocNavigationWidth>
-                        <StyledDocNavigationWrapper>
-                          <DocNavigation currentUrl={path} />
-                        </StyledDocNavigationWrapper>
-                      </StyledDocNavigationWidth>
-                    </Hide>
-                  )}
-                  <StyledMain>
-                    {trail && <Breadcrumbs trail={trail} />}
-                    <Box padding={{ bottom: "XLarge" }}>
-                      <Stack inline align="center" spaceAfter="small">
-                        <AddBookmark />
-                        <Heading as="h1" type="display">
-                          {title}
-                        </Heading>
-                      </Stack>
-                      {description && (
-                        <Box padding={{ left: "XXLarge" }}>
-                          <Text>{description}</Text>
-                        </Box>
-                      )}
-                    </Box>
-                    <StyledMobileOutdent>
-                      {(tabs || headerLink) && (
-                        <Box
-                          display="flex"
-                          align="end"
-                          justify={tabs && tabs.length > 0 ? "between" : "end"}
-                          tablet={{ maxWidth: "80%" }}
-                        >
-                          {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                          {headerLink && (
-                            // align with tabs
-                            <Box padding={{ bottom: "XXSmall" }}>
-                              <HeaderLink href={headerLink} />
-                            </Box>
-                          )}
-                        </Box>
-                      )}
-                      <Grid
-                        columns="1fr"
-                        tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}
-                      >
-                        {tocHasItems && (
-                          <StyledTocWrapper>
-                            <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
-                          </StyledTocWrapper>
+                <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                  <StyledDocNavigationWidth>
+                    <StyledDocNavigationWrapper>
+                      <DocNavigation currentUrl={path} />
+                    </StyledDocNavigationWrapper>
+                  </StyledDocNavigationWidth>
+                </Hide>
+                <StyledMain>
+                  {custom ? (
+                    <div>{children}</div>
+                  ) : (
+                    <>
+                      {trail && <Breadcrumbs trail={trail} />}
+                      <Box padding={{ bottom: "XLarge" }}>
+                        <Stack inline align="center" spaceAfter="small">
+                          <AddBookmark />
+                          <Heading as="h1" type="display">
+                            {title}
+                          </Heading>
+                        </Stack>
+                        {description && (
+                          <Box padding={{ left: "XXLarge" }}>
+                            <Text>{description}</Text>
+                          </Box>
                         )}
-                        <StyledProse
-                          padding={
-                            noElevation
-                              ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
-                              : "XLarge"
-                          }
-                          elevation={noElevation ? undefined : "raised"}
+                      </Box>
+                      <StyledMobileOutdent>
+                        {(tabs || headerLink) && (
+                          <Box
+                            display="flex"
+                            align="end"
+                            justify={tabs && tabs.length > 0 ? "between" : "end"}
+                            tablet={{ maxWidth: "80%" }}
+                          >
+                            {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+                            {headerLink && (
+                              // align with tabs
+                              <Box padding={{ bottom: "XXSmall" }}>
+                                <HeaderLink href={headerLink} />
+                              </Box>
+                            )}
+                          </Box>
+                        )}
+                        <Grid
+                          columns="1fr"
+                          tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}
                         >
                           {tocHasItems && (
-                            <Hide on={["tablet", "desktop", "largeDesktop"]}>
-                              <Collapse label="Table of contents">{Toc}</Collapse>
-                            </Hide>
+                            <StyledTocWrapper>
+                              <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
+                            </StyledTocWrapper>
                           )}
-                          <MDXProvider
-                            components={{
-                              ...components,
-                              ComponentStatus,
-                              FancyLink,
-                              Guideline,
-                              GuidelineImages,
-                              DoImage,
-                              DontImage,
-                              GuidelinesSideBySide,
-                              Do,
-                              Dont,
-                              ImageContainer,
-                              ReactExample,
-                            }}
+                          <StyledProse
+                            padding={
+                              noElevation
+                                ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                                : "XLarge"
+                            }
+                            elevation={noElevation ? undefined : "raised"}
                           >
-                            {children}
-                          </MDXProvider>
-                        </StyledProse>
-                      </Grid>
-                    </StyledMobileOutdent>
-                  </StyledMain>
-                </Stack>
+                            {tocHasItems && (
+                              <Hide on={["tablet", "desktop", "largeDesktop"]}>
+                                <Collapse label="Table of contents">{Toc}</Collapse>
+                              </Hide>
+                            )}
+                            <MDXProvider
+                              components={{
+                                ...components,
+                                ComponentStatus,
+                                FancyLink,
+                                Guideline,
+                                GuidelineImages,
+                                DoImage,
+                                DontImage,
+                                GuidelinesSideBySide,
+                                Do,
+                                Dont,
+                                ImageContainer,
+                                ReactExample,
+                              }}
+                            >
+                              {children}
+                            </MDXProvider>
+                          </StyledProse>
+                        </Grid>
+                      </StyledMobileOutdent>
+                    </>
+                  )}
+                </StyledMain>
               </StyledMiddle>
               <Footer />
             </StyledWrapper>

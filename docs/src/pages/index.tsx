@@ -28,7 +28,8 @@ export default function Home({ location, path }: Props) {
   return (
     <Layout
       location={location}
-      title="Orbit — Open source design system for your next travel project"
+      title="Orbit design system"
+      description="An open source design system for your next travel project."
       path={path}
       isHome
     >

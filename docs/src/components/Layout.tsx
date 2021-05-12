@@ -35,7 +35,7 @@ interface Props {
 export default function Layout({ children, location, title, description, path, isHome }: Props) {
   return (
     <>
-      <Head title={title} hasSiteName={isHome} description={description} path={path} />
+      <Head title={title} hasSiteName={!isHome} description={description} path={path} />
       <ThemeProvider theme={defaultTheme}>
         <StyledWrapper>
           <Navbar location={location} />

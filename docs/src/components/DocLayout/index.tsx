@@ -112,7 +112,16 @@ export default function DocLayout({
                 </Hide>
                 <StyledMain>
                   {custom ? (
-                    <div>{children}</div>
+                    <StyledProse
+                      padding={
+                        noElevation
+                          ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                          : { top: "XLarge", bottom: "XXLarge", left: "XLarge", right: "XLarge" }
+                      }
+                      elevation={noElevation ? undefined : "raised"}
+                    >
+                      {children}
+                    </StyledProse>
                   ) : (
                     <>
                       {trail && <Breadcrumbs trail={trail} />}
@@ -159,7 +168,12 @@ export default function DocLayout({
                             padding={
                               noElevation
                                 ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
-                                : "XLarge"
+                                : {
+                                    top: "XLarge",
+                                    bottom: "XXLarge",
+                                    left: "XLarge",
+                                    right: "XLarge",
+                                  }
                             }
                             elevation={noElevation ? undefined : "raised"}
                           >
@@ -193,7 +207,7 @@ export default function DocLayout({
                   )}
                 </StyledMain>
               </StyledMiddle>
-              <Footer />
+              <Footer hasGradient={!noElevation} />
             </StyledWrapper>
           </BookmarkProvider>
         </DevModeProvider>

@@ -11,7 +11,7 @@ export default function PageNotFound({ location, path }: PageProps) {
 
   return (
     <DocLayout custom title="Page not found" location={location} path={path}>
-      <Stack flex direction="row">
+      <Stack flex>
         <Stack spacing="XLarge">
           <Stack spacing="small">
             <Heading as="h1" type="display">
@@ -19,7 +19,7 @@ export default function PageNotFound({ location, path }: PageProps) {
             </Heading>
             <p>Try our search to find the content you&apos;re looking for.</p>
           </Stack>
-          <Stack flex direction="row" spacing="XSmall">
+          <Stack flex spacing="XSmall">
             {/* @ts-ignore wrong type definition of asComponent */}
             <Button circled type="primary" iconRight={<TripIcon />} asComponent={Link} href="/">
               Return home

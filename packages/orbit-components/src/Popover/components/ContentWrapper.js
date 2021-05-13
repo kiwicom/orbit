@@ -183,6 +183,7 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = React.useContext(ModalContext);
   const { isTablet } = useMediaQuery();
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const overlay: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);
   const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
@@ -216,6 +217,15 @@ const PopoverContentWrapper = ({
     [actions],
   );
 
+  const handleClick = React.useCallback(
+    ev => {
+      if (onClose && overlay.current.contains(ev.target)) {
+        onClose(ev);
+      }
+    },
+    [onClose],
+  );
+
   React.useEffect(() => {
     const timer = setTimeout(() => {
       if (popover.current) {
@@ -238,7 +248,12 @@ const PopoverContentWrapper = ({
 
   return (
     <>
-      <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
+      <StyledOverlay
+        shown={shown}
+        isInsideModal={isInsideModal}
+        onMouseDown={handleClick}
+        ref={overlay}
+      />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}

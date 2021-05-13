@@ -11,7 +11,6 @@ import {
 } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
-import { Helmet } from "react-helmet";
 
 import defaultTheme from "../../theme";
 import * as components from "../../mdx-components";

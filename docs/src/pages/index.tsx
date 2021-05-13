@@ -17,6 +17,7 @@ import SpectrumLogo from "../images/spectrum.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
+import ScreenReaderText from "../components/ScreenReaderText";
 
 interface Props {
   location: WindowLocation;
@@ -271,13 +272,25 @@ export default function Home({ location, path }: Props) {
           <Heading as="h2">Resources</Heading>
           <Tile
             title="Figma library"
-            linkContent={<NewWindow />}
+            linkContent={
+              <>
+                <ScreenReaderText>
+                  Open Orbit&apost;s public Figma library in a new window
+                </ScreenReaderText>
+                <NewWindow />
+              </>
+            }
             href="https://www.figma.com/@orbitbykiwi"
             icon
           />
           <Tile
             title="Orbit repository"
-            linkContent={<NewWindow />}
+            linkContent={
+              <>
+                <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
+                <NewWindow />
+              </>
+            }
             href="https://github.com/kiwicom/orbit"
             icon
           />

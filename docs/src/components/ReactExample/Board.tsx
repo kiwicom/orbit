@@ -50,11 +50,7 @@ const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
             preferredAlign="center"
             content={isCopied ? "copied" : "copy to clipboard"}
           >
-            <ButtonLink
-              onClick={() => copy(code)}
-              type="secondary"
-              ariaLabelledby="copy to clipboard"
-            >
+            <ButtonLink onClick={() => copy(code)} type="secondary" title="Copy to clipboard">
               <Copy />
             </ButtonLink>
           </Tooltip>

@@ -144,7 +144,7 @@ export default function DocLayout({
                             display="flex"
                             align="end"
                             justify={tabs && tabs.length > 0 ? "between" : "end"}
-                            tablet={{ maxWidth: "80%" }}
+                            tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
                           >
                             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
                             {headerLink && (

@@ -12,19 +12,21 @@ import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import useDevMode from "../hooks/useDevMode";
 
 const StyledFooter = styled.footer<{ hasGradient?: boolean }>`
-  ${({ hasGradient }) => hasGradient && `
-    position: relative; /* so that the content card shadow goes behind it */
+  ${({ hasGradient }) =>
+    hasGradient &&
+    `
+      position: relative; /* so that the content card shadow goes behind it */
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 52px;
-      top: -52px;
-      pointer-events: none;
-      background-image: linear-gradient(to top, #fff, transparent);
-    }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 52px;
+        top: -52px;
+        pointer-events: none;
+        background-image: linear-gradient(to top, #fff, transparent);
+      }
   `}
 `;
 
@@ -86,7 +88,7 @@ interface Props {
   hasGradient?: boolean;
 }
 
-export default function Footer({ hasGradient }) {
+export default function Footer({ hasGradient }: Props) {
   const [devMode, setDevMode] = useDevMode();
   return (
     <StyledFooter hasGradient={hasGradient}>

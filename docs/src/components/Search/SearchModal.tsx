@@ -107,16 +107,22 @@ export default function SearchModal({ onClose }: Props) {
     return item.breadcrumbs.join(" / ");
   }
 
-  const { isOpen, getMenuProps, getInputProps, getComboboxProps, getItemProps } = useCombobox({
+  const {
+    isOpen,
+    getMenuProps,
+    getInputProps,
+    getComboboxProps,
+    getItemProps,
+  } = useCombobox<SearchResult>({
     items: results,
     itemToString: item => (item ? getItemTitle(item) : ""),
     defaultHighlightedIndex: 0,
     onInputValueChange: changes => {
       setResults(filter(documents, changes.inputValue, { key: "name" }));
     },
-    onSelectedItemChange: changes => {
+    onSelectedItemChange: async changes => {
       if (changes.selectedItem) {
-        navigate(changes.selectedItem.path);
+        await navigate(changes.selectedItem.path);
         onClose();
       }
     },

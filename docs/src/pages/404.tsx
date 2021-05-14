@@ -20,7 +20,7 @@ export default function PageNotFound({ location, path }: PageProps) {
             <p>Try our search to find the content you&apos;re looking for.</p>
           </Stack>
           <Stack flex spacing="XSmall">
-            {/* @ts-ignore wrong type definition of asComponent */}
+            {/* @ts-expect-error wrong type definition of asComponent */}
             <Button circled type="primary" iconRight={<TripIcon />} asComponent={Link} href="/">
               Return home
             </Button>

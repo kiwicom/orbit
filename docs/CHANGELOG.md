@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.1...@kiwicom/orbit.kiwi@0.11.2) (2021-05-12)
+
+
+### Bug Fixes
+
+* standardize description for content ([3072403](https://github.com/kiwicom/orbit/commit/307240379dfa6b2146b819ee512b7d307114c8e5))
+* **docs:** correct component titles ([de0545f](https://github.com/kiwicom/orbit/commit/de0545f582093e9442b1844ac0e75be9cb0ba709))
+
+
+
+
+
 ## [0.11.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.0...@kiwicom/orbit.kiwi@0.11.1) (2021-05-05)
 
 **Note:** Version bump only for package @kiwicom/orbit.kiwi

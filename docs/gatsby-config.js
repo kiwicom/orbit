@@ -59,6 +59,24 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: path.resolve(__dirname, "src/images/orbit-glyph.svg"),
+        icons: [
+          {
+            src: path.resolve(__dirname, "src/images/orbit-icon-192.png"),
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: path.resolve(__dirname, "src/images/orbit-icon-512.png"),
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/images`,

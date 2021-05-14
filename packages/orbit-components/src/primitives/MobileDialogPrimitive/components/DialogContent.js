@@ -123,7 +123,7 @@ const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props):
     [onClose],
   );
   return (
-    <StyledDialog role="tooltip" id={dialogId} data-test={dataTest}>
+    <StyledDialog role="dialog" id={dialogId} data-test={dataTest}>
       <StyledDialogOverlay shown={shown} ref={overlay} onClick={handleClickOutside} />
       <StyledDialogWrapper
         shown={shown}

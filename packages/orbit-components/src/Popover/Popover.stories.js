@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import Tooltip from "../Tooltip";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { POSITIONS, ALIGNS } from "./consts";
 import Stack from "../Stack";
@@ -136,6 +137,16 @@ export default {
 export const Default = (): React.Node => {
   return (
     <Popover content={content}>
+      <Button type="secondary" iconRight={<ChevronDown />}>
+        Open popover
+      </Button>
+    </Popover>
+  );
+};
+
+export const withTooltip = (): React.Node => {
+  return (
+    <Popover content={<Tooltip content="Content">Tooltip</Tooltip>}>
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
       </Button>

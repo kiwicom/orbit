@@ -52,7 +52,13 @@ const HeadingWithLink = ({ children, headingLevel = 3, noId, spaceAfter = "none"
         <Heading as={headingAs} type={headingType}>
           {children}
         </Heading>
-        <ButtonLink iconLeft={<LinkIcon />} href={`#${slugifiedText}`} type="secondary" compact />
+        <ButtonLink
+          iconLeft={<LinkIcon />}
+          title={`Link to heading: ${headingText}`}
+          href={`#${slugifiedText}`}
+          type="secondary"
+          compact
+        />
       </Stack>
     </StyledAnchorWrapper>
   );

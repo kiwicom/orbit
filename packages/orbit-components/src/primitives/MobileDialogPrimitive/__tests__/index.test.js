@@ -30,7 +30,7 @@ describe("MobileDialogPrimitive", () => {
     const children = screen.getByText("children");
     expect(children).toHaveAttribute("tabindex", "1");
     userEvent.click(children);
-    expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("My text link")).toBeInTheDocument();
   });

@@ -84,7 +84,7 @@ const findValue = (name: TokenNameType): TokenValueType => {
 const getAlternateTokenName = (
   name: TokenNameType,
   size: "medium" | "large" = "medium",
-): React.Node => {
+): React.ReactNode => {
   if (typeof name !== "string") return name;
 
   if (name.startsWith("palette")) {

@@ -1,0 +1,13 @@
+// @flow
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +children: React.Node,
+  +icon: React.Node,
+  +type?: "neutral" | "info" | "success" | "warning" | "critical",
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

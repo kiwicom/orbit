@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Text, { StyledText } from "../../Text";
@@ -87,11 +87,16 @@ StyledVerticalBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const BadgeListItem = ({ icon, type = TYPE_OPTIONS.NEUTRAL, dataTest, children }: Props) => {
+const BadgeListItem = ({
+  icon,
+  type = TYPE_OPTIONS.NEUTRAL,
+  dataTest,
+  children,
+}: Props): React.Node => {
   return (
     <StyledBadgeListItem data-test={dataTest}>
       <StyledVerticalBadge $type={type} aria-hidden>
-        {React.cloneElement(icon, { color: getIconColor(type) })}
+        {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
       </StyledVerticalBadge>
       <StyledVerticalBadgeContent>
         <Text type="secondary" size="small" as="span">

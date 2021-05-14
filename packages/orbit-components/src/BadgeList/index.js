@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 import type { Props } from "./index";
@@ -11,7 +11,7 @@ const StyledBadgeList = styled.ul`
   flex-direction: column;
 `;
 
-const BadgeList = ({ children, dataTest }: Props) => {
+const BadgeList = ({ children, dataTest }: Props): React.Node => {
   return <StyledBadgeList data-test={dataTest}>{children}</StyledBadgeList>;
 };
 

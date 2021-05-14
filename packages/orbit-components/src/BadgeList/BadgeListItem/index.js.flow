@@ -5,7 +5,7 @@ import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +children: React.Node,
-  +icon: React.Node,
+  +icon: React.Element<any>,
   +type?: "neutral" | "info" | "success" | "warning" | "critical",
   ...Globals,
 |};

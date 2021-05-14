@@ -112,7 +112,7 @@ const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRe
           disabled={disabled}
           aria-checked={checked}
           role="switch"
-          ariaLabelledby={ariaLabelledby}
+          aria-labelledby={ariaLabelledby}
           // $FlowFixMe: fix the type of handleKeyDown
           onKeyDown={!disabled ? handleKeyDown(onChange) : undefined}
           onBlur={!disabled ? onBlur : undefined}

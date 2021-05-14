@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -16,7 +16,7 @@
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "^2.3.0",
-    "@kiwicom/orbit-components": "^0.114.0",
+    "@kiwicom/orbit-components": "^0.114.1",
     "@kiwicom/orbit-design-tokens": "^0.13.6",
     "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.6.0",
@@ -34,7 +34,9 @@
     "gatsby": "^2.32.3",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-mdx": "^2.3.0",
+    "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-react-helmet": "^4.4.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^3.3.1",
     "gatsby-plugin-styled-components": "^4.3.0",
@@ -57,9 +59,12 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
+    "@types/react-helmet": "^6.1.1",
     "body-scroll-lock": "^3.1.5",
+    "eslint-plugin-orbit-components": "^0.5.1",
     "fuzzaldrin-plus": "^0.6.0",
     "prism-react-renderer": "^1.1.1",
+    "react-helmet": "^6.1.0",
     "react-polymorphic-types": "^1.0.3"
   }
 }

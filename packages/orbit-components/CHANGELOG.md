@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.114.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.0...@kiwicom/orbit-components@0.114.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **BaggageStepper:** forgotten prop ([#2931](https://github.com/kiwicom/orbit/issues/2931)) ([6797d73](https://github.com/kiwicom/orbit/commit/6797d73f2395b905cfe8ca9f8d7bc47b775f8171))
+* **Modal:** reduce Cumulative Layout Shift ([2108956](https://github.com/kiwicom/orbit/commit/21089567a2b25d6e42f432fa44ea40ab21d16785))
+
+
+
+
+
 # [0.114.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.1...@kiwicom/orbit-components@0.114.0) (2021-05-05)
 
 

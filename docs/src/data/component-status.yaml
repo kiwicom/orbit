@@ -28,10 +28,10 @@
   group: Information
 - component: BadgeList
   figma: Released
-  react: Developing
+  react: Released
   ios: n/a
   android: n/a
-  docs: Waiting
+  docs: Released
   group: Information
 - component: BadgePrimitive
   figma: n/a

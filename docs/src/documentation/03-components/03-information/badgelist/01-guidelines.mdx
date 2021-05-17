@@ -1,0 +1,94 @@
+---
+title: Guidelines
+redirect_from:
+  - /components/badge/
+---
+
+<ReactExample exampleId="BadgeList-default" />
+
+## When to use
+
+- To display several details about a single idea like a transfer at an airport.
+- To use common visual cues (icons and colors) to help users scan the details.
+
+### When not to use
+
+- If the users can take an action---use the right [action component](/design-patterns/action-components/).
+- When the information isn't about only one thing---use a [list](/components/structure/list/).
+- With a single, simple piece of information---use a [badge](/components/information/badge/).
+- If there are choices the user must make---use [list choices](/components/input/listchoice/).
+
+## Component status
+
+<ComponentStatus component="BadgeList" />
+
+## Content structure
+
+![BadgeListItem: includes one item in the list; label: works best when short; icon: supports the label.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:1418%3A0)
+
+## Content
+
+### Display short, static info
+
+The items in the list should all be static information, **not** actionable.
+
+If you have extra information to display, include it with [progressive disclosure](/design-patterns/progressive-disclosure/).
+Use a simple interaction, such as a [tooltip](/components/overlay/tooltip/)
+or a secondary [text link](/components/action/textlink/) to open contextual help.
+
+When doing so, make sure it's clear that the interaction is there.
+
+<ReactExample exampleId="BadgeList-progressive-disclosure" />
+
+### Support with icons
+
+With a small space to convey a message and possibly several items to show,
+visual cues can help users scan and understand the idea more quickly.
+Use icons to display more information in a smaller space,
+such as what form of transport is included.
+
+Make sure that any information you include in the icon is [accessible](/foundation/accessibility/),
+either in the text around it or as a label to the icon.
+
+## Look & feel
+
+### List item types
+
+There are five types for the badge list items.
+
+#### Neutral items
+
+Neutral badge list items present information without adding any emotion.
+They're useful when the information isn't so important to the user's main flow.
+
+<ReactExample exampleId="BadgeList-neutral" />
+
+#### Info items
+
+Informational badge list items help to highlight some information as particularly important.
+They draw attention to the item without making it seem positive or negative.
+
+<ReactExample exampleId="BadgeList-info" />
+
+#### Success items
+
+Success badge list items help to highlight a desirable detail.
+Use them for potentially attractive features (such as a guaranteed transfer).
+
+<ReactExample exampleId="BadgeList-success" />
+
+#### Warning items
+
+Warning badges highlight information that might have a negative impact on the user
+but isn't critical.
+They're associated with negative emotions
+so only use them occasionally to stop potential problems before they happen.
+
+<ReactExample exampleId="BadgeList-warning" />
+
+#### Critical items
+
+Critical badges call attention to problems that require immediate attention from the user.
+These badges create feelings of stress so only use them for issues where they're truly necessary.
+
+<ReactExample exampleId="BadgeList-critical" />

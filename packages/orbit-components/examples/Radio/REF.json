@@ -1,6 +1,6 @@
 {
   "imports": "import Radio from \"@kiwicom/orbit-components/lib/Radio\";",
-  "example": "(): React.Node => {\n  const ref: {|\n    current: React.ElementRef<any>,\n  |} = React.useRef(null)\n  React.useEffect(() => {\n    if (ref.current) {\n      ref.current.focus()\n    }\n  })\n  return <Radio label=\"Allow notifications\" ref={ref} />\n}\n",
+  "example": "() => {\n  const ref = React.useRef(null)\n  React.useEffect(() => {\n    if (ref.current) {\n      ref.current.focus()\n    }\n  })\n  return <Radio label=\"Allow notifications\" ref={ref} readOnly />\n}\n",
   "info": {
     "title": "References",
     "description": "For actions like automatically focusing on a radio, use the ref prop."

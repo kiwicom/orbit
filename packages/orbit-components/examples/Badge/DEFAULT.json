@@ -1,6 +1,6 @@
 {
   "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <Badge>Tip</Badge>\n    <Badge ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <Badge ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n      4\n    </Badge>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <Badge>Tip</Badge>\n    <Badge ariaLabel=\"Train\" icon={<Icons.Train />} />\n    <Badge ariaLabel=\"4 passengers\" icon={<Icons.Passengers />}>\n      4\n    </Badge>\n  </Stack>\n)\n",
   "info": {
     "title": "Default badges",
     "description": "Badges should present simple and short static information. They can be just text, just an icon, or an icon and text."

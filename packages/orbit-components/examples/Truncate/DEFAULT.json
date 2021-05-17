@@ -1,6 +1,6 @@
 {
   "imports": "import Truncate from \"@kiwicom/orbit-components/lib/Truncate\";",
-  "example": "(): React.Node => (\n  <Truncate>\n    When you&apos;re using progressive disclosure, you might have text that\n    you&apos;ve decided is too long to display all at once. You don&apos;t want\n    to overwhelm your users, so you want to keep it hidden but accessible. Use a\n    Truncate component to make sure your text fits within its parent and\n    doesn&apos;t take over your designs.\n  </Truncate>\n)\n",
+  "example": "() => (\n  <Truncate>\n    When you&apos;re using progressive disclosure, you might have text that\n    you&apos;ve decided is too long to display all at once. You don&apos;t want\n    to overwhelm your users, so you want to keep it hidden but accessible. Use a\n    Truncate component to make sure your text fits within its parent and\n    doesn&apos;t take over your designs.\n  </Truncate>\n)\n",
   "info": {
     "title": "Default truncate",
     "description": "By default, truncate components will limit their children to 100% of the parent width."

@@ -1,6 +1,6 @@
 {
   "imports": "import NotificationBadge from \"@kiwicom/orbit-components/lib/NotificationBadge\";\nimport Train from \"@kiwicom/orbit-components/lib/icons/Train\";",
-  "example": "(): React.Node => (\n  <NotificationBadge ariaLabel=\"Train\" icon={<Icons.Train />} type=\"info\" />\n)\n",
+  "example": "() => (\n  <NotificationBadge ariaLabel=\"Train\" icon={<Icons.Train />} type=\"info\" />\n)\n",
   "info": {
     "title": "Accessibility",
     "description": "When using icons in notification badges, use <code>aria-label</code> to provide the same information to people who won't see the icons."

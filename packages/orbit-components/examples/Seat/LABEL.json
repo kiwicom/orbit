@@ -1,6 +1,6 @@
 {
   "imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
-  "example": "(): React.Node => {\n  const { isTablet } = useMediaQuery()\n  return <Seat label=\"XY\" size={isTablet ? \"medium\" : \"small\"} />\n}\n",
+  "example": "() => {\n  const { isTablet } = useMediaQuery()\n  return <Seat label=\"XY\" size={isTablet ? \"medium\" : \"small\"} />\n}\n",
   "info": {
     "title": "Seat with label",
     "description": "Seat can have a label text inside"

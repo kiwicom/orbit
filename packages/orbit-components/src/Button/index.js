@@ -14,9 +14,9 @@ import type { Props } from "./index";
 const Button: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,
   HTMLButtonElement,
->(({ type = TYPE_OPTIONS.PRIMARY, disabled = false, ...props }, ref) => {
+>(({ type = TYPE_OPTIONS.PRIMARY, size, disabled = false, ...props }, ref) => {
   const theme = useTheme();
-  const propsWithTheme = { theme, ...props };
+  const propsWithTheme = { theme, size, ...props };
   const commonProps = getCommonProps(propsWithTheme);
   const buttonStyles = getButtonStyles({ type, theme, disabled });
   const icons = getIconContainer({

@@ -1,5 +1,7 @@
 ---
 title: Guidelines
+redirect_from:
+  - /components/textlink/
 ---
 
 <ReactExample exampleId="TextLink-default" />
@@ -25,15 +27,6 @@ check out our [interactive guide on action components](/guides/using-button-type
 
 ![Text: describes the link purpose and works best when short; icon: optionally visually supports the link.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:216%3A8)
 
-## TextLink types
-
-Text links come in **two types** (primary and secondary) and **three
-sizes** (small, normal, and large).
-
-<ReactExample exampleId="TextLink-types" />
-
-<ReactExample exampleId="TextLink-sizes" />
-
 ## Behavior
 
 ### Use for navigation
@@ -49,7 +42,7 @@ use a different action component, such as a [button link](/components/action/but
 
 It should be clear from the link text exactly what happens when the user interacts with it.
 The text can be actionable, such as "Read all reviews",
-or descriptive of what is described at the link,
+or descriptive of what's described at the link,
 such as "[Kiwi.com Guarantee](https://www.kiwi.com/en/pages/guarantee)".
 
 The link stands out from the surrounding text.
@@ -105,10 +98,27 @@ to let users know a link opens in a new window/tab.
 ### Sizing
 
 Text links inherit their default size from their parent.
+You can override this size.
 
-### Primary color
+<ReactExample exampleId="TextLink-sizes" />
 
-The primary color of text links is <InlineToken value="colorTextLinkPrimary" alternateName />.
+### Color
+
+Text links should align with the color of text around them.
+Usually, this means using the default [primary color](#primary-color).
+
+When the text link is part of or next to [text with a different color](/components/text/#text-color),
+the text link can have its color align with other text.
+(It's always darker to make it clear it has an action.)
+
+<ReactExample exampleId="TextLink-types" />
+
+Do **_not_** use different colors for standalone text links.
+The colors aren't for emphasis or to draw attention.
+
+#### Primary color
+
+The primary color of text links is <InlineToken name="colorTextLinkPrimary" alternateName />.
 This is a darker color than other primary actions, such as primary [buttons](/components/action/button/).
 
 The color for text links is darker so it has enough contrast with surrounding text.

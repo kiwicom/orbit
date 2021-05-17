@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.114.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.0...@kiwicom/orbit-components@0.114.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **BaggageStepper:** forgotten prop ([#2931](https://github.com/kiwicom/orbit/issues/2931)) ([6797d73](https://github.com/kiwicom/orbit/commit/6797d73f2395b905cfe8ca9f8d7bc47b775f8171))
+* **Modal:** reduce Cumulative Layout Shift ([2108956](https://github.com/kiwicom/orbit/commit/21089567a2b25d6e42f432fa44ea40ab21d16785))
+
+
+
+
+
+# [0.114.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.1...@kiwicom/orbit-components@0.114.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* **Popover:** fix bug with Tooltip inside Popover on mobile ([75d8fa4](https://github.com/kiwicom/orbit/commit/75d8fa41df9afb0d2448ee073a0d2b559d1ae29e))
+
+
+### Features
+
+* **BaggageStepper:** init ([#2922](https://github.com/kiwicom/orbit/issues/2922)) ([0c9c546](https://github.com/kiwicom/orbit/commit/0c9c5460f41d34300dfa28b6573db7d855a52f79))
+* HorizontalScroll component ([#2917](https://github.com/kiwicom/orbit/issues/2917)) ([d5e5929](https://github.com/kiwicom/orbit/commit/d5e59290b6aa6474ef3c5454b427c2a7859f43e1))
+* introduce Switch component ([7517675](https://github.com/kiwicom/orbit/commit/7517675712c36073c909c74ef4b334b92cc97fb1))
+
+
+
+
+
+## [0.113.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.0...@kiwicom/orbit-components@0.113.1) (2021-04-28)
+
+
+### Bug Fixes
+
+* **Button:** pass forgotten size prop to utility functions ([8b97281](https://github.com/kiwicom/orbit/commit/8b972812c9fdd8cd985247b139589babf335b59b))
+* **ButtonPrimitive:** remove redundant size property ([#2847](https://github.com/kiwicom/orbit/issues/2847)) ([bec9180](https://github.com/kiwicom/orbit/commit/bec9180e55ac7fe04c08bd51dac37993d432fc3b))
+* **examples:** strip flow types from the generated JSONs ([#2913](https://github.com/kiwicom/orbit/issues/2913)) ([49f36fd](https://github.com/kiwicom/orbit/commit/49f36fd815b75894c223bd79acd00456e159c432))
+* **SocialButton:** add forgotten size property to getCommomProps ([a950d6d](https://github.com/kiwicom/orbit/commit/a950d6d2b1f60de77fadd9e3cb021a77639306dc))
+
+
+
+
+
+# [0.113.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.112.0...@kiwicom/orbit-components@0.113.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* add TypeScript definition of getTokens ([267109a](https://github.com/kiwicom/orbit/commit/267109aa0680f48756bda7c6e87827d500a066ca))
+* add typescript export of defaultTheme ([1047b61](https://github.com/kiwicom/orbit/commit/1047b6117fb705943caeaf64b509a285100ad0b4))
+* export SeatLegend ([576027f](https://github.com/kiwicom/orbit/commit/576027fcca81b72c0b5a968ecef5e5b034a0cc98))
+* update React peer dependency versions ([#2898](https://github.com/kiwicom/orbit/issues/2898)) ([b841f2d](https://github.com/kiwicom/orbit/commit/b841f2d05a96dc023338b527d46910a2d61b2e5f))
+* **Breadcrumbs:** missing action in default story ([#2884](https://github.com/kiwicom/orbit/issues/2884)) ([683bd86](https://github.com/kiwicom/orbit/commit/683bd86a37e15fb89368621ae45604842c0f6a6a))
+* **docs:** escape pipe in Alert button props table ([f50485f](https://github.com/kiwicom/orbit/commit/f50485f91a29af1460af8dbd429b078c1e8ba7bb))
+* **useBoundingRect:** fix TypeScript declaration ([#2875](https://github.com/kiwicom/orbit/issues/2875)) ([371b30d](https://github.com/kiwicom/orbit/commit/371b30dbdff3fe96d1a2b8c2ead88e1f24288f8a))
+
+
+### Features
+
+* add export of calculateCountOf ([6ac26ff](https://github.com/kiwicom/orbit/commit/6ac26ff591e332e7ea680d9feb845ad264fb9b0e))
+* **docs:** update guidance on notification badges ([f5b0da7](https://github.com/kiwicom/orbit/commit/f5b0da7660d3f7b03294bc882667c10273114ee5))
+
+
+### BREAKING CHANGES
+
+* **useBoundingRect:** In TypeScript `useBoundingRect` now requires a type
+parameter based on which HTML element it measures:
+
+```tsx
+function App() {
+  const [dimensions, ref] = useBoundingRect<HTMLDivElement>();
+  return <div ref={ref} />;
+}
+```
+
+
+
+
+
 # [0.112.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.111.1...@kiwicom/orbit-components@0.112.0) (2021-04-07)
 
 

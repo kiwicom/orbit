@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Hide, mediaQueries as mq, TextLink } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import ArrowRight from "./ArrowRight";
+import useIsUrlExternal from "../hooks/useIsUrlExternal";
 
 export const ICON_SIZE = "2rem";
 
@@ -49,6 +50,21 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
+const StyledLinkText = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  > * + * {
+    margin-left: 0.25rem;
+  }
+  color: ${({ theme }) => theme.orbit.colorTextLinkPrimary};
+  font-weight: 500;
+  text-decoration: underline;
+  &:hover {
+    color: ${({ theme }) => theme.orbit.colorTextLinkPrimaryHover};
+    text-decoration: none;
+  }
+`;
+
 export default function Tile({
   href,
   icon,
@@ -59,6 +75,43 @@ export default function Tile({
 }: Props) {
   const theme = useTheme();
 
+  const isExternal = useIsUrlExternal(href);
+
+  const getEndLink = () => {
+    if (!href) return undefined;
+    if (isExternal)
+      return (
+        <TextLink external href={href}>
+          {linkContent}
+        </TextLink>
+      );
+    if (typeof linkContent === "string")
+      return (
+        <div
+          css={css`
+            text-align: right;
+          `}
+        >
+          <StyledLinkText to={href}>
+            <span>{linkContent}</span>
+            <ArrowRight />
+          </StyledLinkText>
+        </div>
+      );
+    return (
+      <Link
+        css={css`
+          color: ${theme.orbit.colorTextLinkPrimary};
+          &:hover {
+            color: ${theme.orbit.colorTextLinkPrimaryHover};
+          }
+        `}
+        to={href}
+      >
+        {linkContent}
+      </Link>
+    );
+  };
   return (
     <div
       css={css`
@@ -110,50 +163,7 @@ export default function Tile({
           <TileTitle>{title}</TileTitle>
         )}
       </div>
-      {href && (
-        <>
-          {typeof linkContent === "string" ? (
-            <div
-              css={css`
-                text-align: right;
-              `}
-            >
-              <Link
-                css={css`
-                  display: inline-flex;
-                  align-items: center;
-                  > * + * {
-                    margin-left: 0.25rem;
-                  }
-                  color: ${theme.orbit.colorTextLinkPrimary};
-                  font-weight: 500;
-                  text-decoration: underline;
-                  &:hover {
-                    color: ${theme.orbit.colorTextLinkPrimaryHover};
-                    text-decoration: none;
-                  }
-                `}
-                to={href}
-              >
-                <span>{linkContent}</span>
-                <ArrowRight />
-              </Link>
-            </div>
-          ) : (
-            <Link
-              css={css`
-                color: ${theme.orbit.colorTextLinkPrimary};
-                &:hover {
-                  color: ${theme.orbit.colorTextLinkPrimaryHover};
-                }
-              `}
-              to={href}
-            >
-              {linkContent}
-            </Link>
-          )}
-        </>
-      )}
+      {href && getEndLink()}
     </div>
   );
 }

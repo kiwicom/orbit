@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "0.112.0",
+  "version": "0.114.1",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "scripts": {
@@ -29,7 +29,8 @@
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "yarn babel-node config/deploymentUtils.js updateLiveURL",
-    "compile:ts": "yarn tsc"
+    "compile:ts": "yarn tsc",
+    "docs-gen": "monstra docs"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",

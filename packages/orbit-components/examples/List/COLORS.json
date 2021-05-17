@@ -1,6 +1,6 @@
 {
   "imports": "import List from \"@kiwicom/orbit-components/lib/List\";\nimport ListItem from \"@kiwicom/orbit-components/lib/ListItem\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack>\n    <List type=\"primary\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List type=\"secondary\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack>\n    <List type=\"primary\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n    <List type=\"secondary\">\n      <ListItem>Planes</ListItem>\n      <ListItem>Trains</ListItem>\n      <ListItem>Automobiles</ListItem>\n    </List>\n  </Stack>\n)\n",
   "info": {
     "title": "Colors",
     "description": "Lists come in two colors: primary (for important information) and secondary (for less important details)."

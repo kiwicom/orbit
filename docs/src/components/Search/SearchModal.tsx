@@ -5,7 +5,6 @@ import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
 import {
   Portal,
-  Modal,
   ModalHeader,
   ModalSection,
   Text,
@@ -13,8 +12,8 @@ import {
   useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
+import Modal from "../Modal";
 import { capitalize } from "../../utils/common";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
@@ -47,9 +46,15 @@ interface SearchResult {
 
 const StyledModalWrapper = styled.div`
   /* align modal to the top */
+  > * > * > * {
+    height: 100%;
+  }
   ${mediaQueries.largeMobile(css`
     > * > * {
       align-items: flex-start;
+    }
+    > * > * > * {
+      height: auto;
     }
   `)}
 `;
@@ -94,17 +99,7 @@ export default function SearchModal({ onClose }: Props) {
     [data],
   );
 
-  const scrollingElementRef = React.useRef<HTMLElement | null>(null);
-  React.useLayoutEffect(() => {
-    if (scrollingElementRef.current) {
-      disableBodyScroll(scrollingElementRef.current);
-    }
-    return () => {
-      clearAllBodyScrollLocks();
-    };
-  }, []);
-
-  const { isLargeMobile, isTablet } = useMediaQuery();
+  const { isTablet } = useMediaQuery();
   // so it doesn't cause horizontal overflow
   const placeholder = isTablet ? "Search…" : "Search for components, foundation…";
 
@@ -112,16 +107,22 @@ export default function SearchModal({ onClose }: Props) {
     return item.breadcrumbs.join(" / ");
   }
 
-  const { isOpen, getMenuProps, getInputProps, getComboboxProps, getItemProps } = useCombobox({
+  const {
+    isOpen,
+    getMenuProps,
+    getInputProps,
+    getComboboxProps,
+    getItemProps,
+  } = useCombobox<SearchResult>({
     items: results,
     itemToString: item => (item ? getItemTitle(item) : ""),
     defaultHighlightedIndex: 0,
     onInputValueChange: changes => {
       setResults(filter(documents, changes.inputValue, { key: "name" }));
     },
-    onSelectedItemChange: changes => {
+    onSelectedItemChange: async changes => {
       if (changes.selectedItem) {
-        navigate(changes.selectedItem.path);
+        await navigate(changes.selectedItem.path);
         onClose();
       }
     },
@@ -141,9 +142,6 @@ export default function SearchModal({ onClose }: Props) {
         <Modal
           // the search field will be autofocused
           autoFocus={false}
-          scrollingElementRef={scrollingElementRef}
-          // to get round corners on larger viewports
-          isMobileFullPage={!isLargeMobile}
           onClose={onClose}
         >
           <ModalHeader title="What are you looking for?" />
@@ -153,6 +151,7 @@ export default function SearchModal({ onClose }: Props) {
                 <StyledPrefix>
                   <SearchIcon />
                 </StyledPrefix>
+
                 <StyledInput
                   {...getInputProps({
                     ref: inputRef,

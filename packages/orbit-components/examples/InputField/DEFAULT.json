@@ -1,6 +1,6 @@
 {
   "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";",
-  "example": "(): React.Node => <InputField label=\"Given names\" placeholder=\"Sofia Cruz\" />\n",
+  "example": "() => <InputField label=\"Given names\" placeholder=\"Sofia Cruz\" />\n",
   "info": {
     "title": "Default input field",
     "description": "By default, the input field offers a place to enter generic text with a clearly defined focus state. Labels and placeholders help guide users with what to input."

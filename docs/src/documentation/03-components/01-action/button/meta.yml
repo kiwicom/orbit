@@ -1,5 +1,3 @@
 title: Button
 description: Displays a single important action a user can take.
 type: tabs
-links:
-  - https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Button/

@@ -1,6 +1,6 @@
 {
   "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack flex align=\"end\">\n    <Text size=\"large\">Large text</Text>\n    <Text>Normal text</Text>\n    <Text size=\"small\">Small text</Text>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack flex align=\"end\">\n    <Text size=\"large\">Large text</Text>\n    <Text>Normal text</Text>\n    <Text size=\"small\">Small text</Text>\n  </Stack>\n)\n",
   "info": {
     "title": "Text size",
     "description": "Text components can come in three possible sizes (small, normal, and large). These sizes should give you a clear hierarchy for all your text."

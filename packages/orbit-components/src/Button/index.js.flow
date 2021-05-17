@@ -4,7 +4,7 @@
 */
 import * as React from "react";
 
-import type { ButtonCommonProps } from "../primitives/ButtonPrimitive";
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 export type Type =
   | "primary"
@@ -16,6 +16,7 @@ export type Type =
 
 export type Props = {|
   +type?: Type,
+  +size?: Size,
   ...ButtonCommonProps,
 |};
 

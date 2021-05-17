@@ -1,6 +1,6 @@
 {
   "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";",
-  "example": "(): React.Node => <SocialButton>Sign in with Apple </SocialButton>\n",
+  "example": "() => <SocialButton>Sign in with Apple </SocialButton>\n",
   "info": {
     "title": "Default social button",
     "description": "The default social button is an Apple button."

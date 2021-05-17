@@ -1,6 +1,6 @@
 {
   "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"column\">\n    <InputField\n      label=\"Email\"\n      placeholder=\"jose@example.com\"\n      type=\"email\"\n      inputMode=\"email\"\n    />\n    <InputField\n      label=\"Email\"\n      placeholder=\"jose@example.com\"\n      type=\"email\"\n      inputMode=\"email\"\n      size=\"small\"\n    />\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"column\">\n    <InputField\n      label=\"Email\"\n      placeholder=\"jose@example.com\"\n      type=\"email\"\n      inputMode=\"email\"\n    />\n    <InputField\n      label=\"Email\"\n      placeholder=\"jose@example.com\"\n      type=\"email\"\n      inputMode=\"email\"\n      size=\"small\"\n    />\n  </Stack>\n)\n",
   "info": {
     "title": "Sizes",
     "description": "Input fields can be either normal sized or small."

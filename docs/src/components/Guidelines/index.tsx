@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack, Text } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
-import { imageWrapperClass } from "gatsby-remark-images/constants.js";
+import { imageWrapperClass } from "gatsby-remark-images/constants";
 
 import HeadingWithLink from "../HeadingWithLink";
 import { slugify } from "../../utils/common";

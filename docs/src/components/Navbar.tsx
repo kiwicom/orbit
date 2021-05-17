@@ -107,7 +107,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   return (
     <StyledWrapper>
       <StyledInner>
-        <Link to="/">
+        <Link to="/" aria-label="Back to home page">
           <StyledLogo width={192} height={44} />
           <StyledLogoGlyph width={44} height={44} />
         </Link>

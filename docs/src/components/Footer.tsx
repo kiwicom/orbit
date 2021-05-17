@@ -114,13 +114,13 @@ export default function Footer({ hasGradient }: Props) {
               align="end"
               tablet={{ direction: "row", justify: "end" }}
             >
-              <StyledIconLink href="https://github.com/kiwicom/orbit">
+              <StyledIconLink href="https://github.com/kiwicom/orbit" aria-label="GitHub">
                 <GitHub />
               </StyledIconLink>
-              <StyledIconLink href="https://spectrum.chat/orbit">
+              <StyledIconLink href="https://spectrum.chat/orbit" aria-label="Spectrum">
                 <Spectrum />
               </StyledIconLink>
-              <StyledIconLink href="https://twitter.com/OrbitKiwi">
+              <StyledIconLink href="https://twitter.com/OrbitKiwi" aria-label="Twitter">
                 <Twitter />
               </StyledIconLink>
             </Stack>
@@ -169,7 +169,9 @@ export default function Footer({ hasGradient }: Props) {
                     Opens components on the React tab by default.
                   </Text>
                 </Stack>
-                <Switch checked={devMode} onChange={() => setDevMode(!devMode)} />
+                <Switch checked={devMode} onChange={() => setDevMode(!devMode)} hideLabel>
+                  Turn {devMode ? "off" : "on"} dev mode
+                </Switch>
               </Stack>
             </Stack>
             <Stack

@@ -30,6 +30,14 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
+            resolve: require.resolve("./plugins/gatsby-remark-figma-images"),
+            options: {
+              path: `${__dirname}/src/figma-images`,
+              format: "png",
+              scale: 2,
+            },
+          },
+          {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,

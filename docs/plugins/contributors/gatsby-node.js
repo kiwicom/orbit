@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 const path = require("path");
 
-const warnMissingAccessToken = require("../../utils/warnings");
+const { warnMissingAccessToken } = require("../../utils/warnings");
 
 const NODE = `contributor`;
 

@@ -238,7 +238,7 @@ const PopoverContentWrapper = ({
 
   return (
     <>
-      <StyledOverlay shown={shown} isInsideModal={isInsideModal} />
+      <StyledOverlay shown={shown} isInsideModal={isInsideModal} onMouseDown={onClose} />
       <StyledPopoverParent
         shownMobile={shown}
         shown={shown && verticalPosition && horizontalPosition}

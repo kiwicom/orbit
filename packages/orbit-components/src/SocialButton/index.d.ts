@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../primitives/ButtonPrimitive/index";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 
@@ -11,8 +11,9 @@ export type Type = "apple" | "facebook" | "google" | "twitter";
 
 type OmittedButtonCommonProps = Omit<ButtonCommonProps, "iconLeft" | "iconRight" | "circled">;
 
-type Props = {
+export type Props = {
   readonly type?: Type;
+  readonly size?: Size;
 } & OmittedButtonCommonProps;
 
 declare const SocialButton: React.RefForwardingComponent<HTMLButtonElement, Props>;

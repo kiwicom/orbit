@@ -28,17 +28,6 @@ jobs:
             node-modules-${{ github.ref}}-
             node-modules-
 
-      - name: Restore Gatsby cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            docs/.cache
-            docs/public
-          key: gatsby-${{ github.ref}}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
-          restore-keys: |
-            gatsby-${{ github.ref}}-
-            gatsby-
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn bootstrap
 
@@ -50,13 +39,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx lerna run build
 
-      - name: Upload orbit.kiwi and storybook artifacts
+      - name: Upload storybook artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
-          path: |
-            docs/public
-            packages/orbit-components/.out
+          path: packages/orbit-components/.out
           retention-days: 5
 
       - name: Flow
@@ -71,8 +58,7 @@ jobs:
           yarn prettier:test
 
       - name: Test
-        run: |
-          yarn test-ci
+        run: yarn test-ci
 
       - name: Check docs links
         env:
@@ -98,7 +84,7 @@ jobs:
       - name: Fire deployment
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Get BRANCH_URL
         run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
@@ -106,20 +92,17 @@ jobs:
       - name: Get PR_NUMBER
         run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
 
-      - name: Restore orbit.kiwi and storybook artifacts
+      - name: Restore storybook artifacts
         uses: actions/download-artifact@v2
         with:
           name: build-artifacts
+          path: packages/orbit-components/.out
 
       - name: Publish
-        run: |
-          yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-          yarn orbit-kiwi deploy:surge https://orbit-docs-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Update description
-        run: |
-          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-docs-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Orbit.kiwi
-          yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+        run: yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
   deploy_master:
     # run on master branch
     if: github.ref == 'refs/heads/master'
@@ -137,10 +120,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile && yarn bootstrap
 
-      - name: Restore orbit.kiwi and storybook artifacts
+      - name: Restore storybook artifacts
         uses: actions/download-artifact@v2
         with:
           name: build-artifacts
+          path: packages/orbit-components/.out
 
       - name: Deploy storybook
         run: yarn orbit-components deploy:storybook --ci

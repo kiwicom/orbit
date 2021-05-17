@@ -1,6 +1,6 @@
 {
   "imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
-  "example": "(): React.Node => (\n  <Checkbox\n    label=\"Direct\"\n    disabled\n    tooltip={\n      <Tooltip\n        content=\"No results for direct connections\"\n        preferredPosition=\"top\"\n      />\n    }\n  />\n)\n",
+  "example": "() => (\n  <Checkbox\n    label=\"Direct\"\n    disabled\n    tooltip={\n      <Tooltip\n        content=\"No results for direct connections\"\n        preferredPosition=\"top\"\n      />\n    }\n  />\n)\n",
   "info": {
     "title": "Tooltip",
     "description": "If you want to attach a tooltip only to the checkbox itself and not the label or any other text, use the tooltip prop."

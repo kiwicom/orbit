@@ -1,6 +1,6 @@
 {
   "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
-  "example": "(): React.Element<\"div\"> => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={12}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n      help=\"At least 1 and no more than 10 travelers\"\n      error=\"Decrease the number of travelers to no more than 10\"\n    />\n  </div>\n)\n",
+  "example": "() => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={12}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n      help=\"At least 1 and no more than 10 travelers\"\n      error=\"Decrease the number of travelers to no more than 10\"\n    />\n  </div>\n)\n",
   "info": {
     "title": "Error messages",
     "description": "Include error messages when validation isn't passed, either on change in focus or form submission. Note that an error message will override any help text."

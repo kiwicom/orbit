@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Box } from "@kiwicom/orbit-components";
-import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import styled, { css } from "styled-components";
 
@@ -14,6 +12,14 @@ export interface TabObject {
 interface SizeCheck {
   isMediumMobile?: boolean | null;
 }
+
+const Container = styled.div`
+  ${({ theme }) => `
+    padding-top: 16px;
+    padding-left: ${theme.orbit.spaceMedium};
+    overflow: hidden;
+  `};
+`;
 
 const StyledTabLink = styled(Link)`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
@@ -43,20 +49,6 @@ const StyledTabWrapper = styled.div<SizeCheck>`
   `}
 `;
 
-const BottomShadowHider = styled.div`
-  ${({ theme }) => css`
-    background-color: ${theme.orbit.paletteWhite};
-    height: ${theme.orbit.spaceXLarge};
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 calc(2rem + 12px);
-    ${mediaQueries.tablet(css`
-      margin: 0 calc(2rem + 20%) 0 calc(2rem + 12px);
-    `)}
-  `}
-`;
-
 interface TabProps {
   isActive?: boolean;
   tab: TabObject;
@@ -67,10 +59,7 @@ const Tab = ({ isActive, tab }: TabProps) => {
   return (
     <StyledTabWrapper isMediumMobile={isMediumMobile}>
       {isActive ? (
-        <>
-          <StyledTab>{tab.title}</StyledTab>
-          <BottomShadowHider />
-        </>
+        <StyledTab>{tab.title}</StyledTab>
       ) : (
         <StyledTabLink to={tab.slug}>{tab.title}</StyledTabLink>
       )}
@@ -83,12 +72,15 @@ interface Props {
   activeTab: string;
 }
 
-const Tabs = ({ activeTab, tabs }: Props) => (
-  <Box padding={{ left: "medium" }} margin={{ top: "none" }}>
-    {tabs.map(tab => (
-      <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />
-    ))}
-  </Box>
-);
+const Tabs = ({ activeTab, tabs }: Props) => {
+  if (tabs.length === 0) return null;
+  return (
+    <Container>
+      {tabs.map(tab => (
+        <Tab key={tab.title} tab={tab} isActive={activeTab === tab.slug} />
+      ))}
+    </Container>
+  );
+};
 
 export default Tabs;

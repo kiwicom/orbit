@@ -1,5 +1,3 @@
 title: ButtonLink
 description: Displays a single, less important action a user can take.
 type: tabs
-links:
-  - https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/ButtonLink/

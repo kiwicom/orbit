@@ -1,6 +1,6 @@
 {
   "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport PictureCard from \"@kiwicom/orbit-components/lib/PictureCard\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-  "example": "(): React.Node => (\n  <PictureCard\n    image={{\n      code: \"moscow_ru\",\n      name: \"moscow_ru\",\n      original: \"385x320\",\n      placeholder: \"385x320\",\n    }}\n    height=\"300px\"\n    width=\"400px\"\n  >\n    <Badge type=\"white\" icon={<Icons.Passengers />} ariaLabel=\"4 passengers\">\n      4\n    </Badge>\n  </PictureCard>\n)\n",
+  "example": "() => (\n  <PictureCard\n    image={{\n      code: \"moscow_ru\",\n      name: \"moscow_ru\",\n      original: \"385x320\",\n      placeholder: \"385x320\",\n    }}\n    height=\"300px\"\n    width=\"400px\"\n  >\n    <Badge type=\"white\" icon={<Icons.Passengers />} ariaLabel=\"4 passengers\">\n      4\n    </Badge>\n  </PictureCard>\n)\n",
   "info": {
     "title": "White badges",
     "description": "White badges are useful when presenting neutral information within a dark context."

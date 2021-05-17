@@ -1,6 +1,6 @@
 {
   "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
-  "example": "(): React.Node => <ButtonLink>Click me</ButtonLink>\n",
+  "example": "() => <ButtonLink>Click me</ButtonLink>\n",
   "info": {
     "title": "Default button link",
     "description": "The default button link is a primary button link with its children as its text."

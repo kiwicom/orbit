@@ -6,6 +6,7 @@ import { WindowLocation } from "@reach/router";
 import defaultTheme from "../theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Head from "./Head";
 import { CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.div`
@@ -25,16 +26,23 @@ const StyledMain = styled.main`
 interface Props {
   children: React.ReactNode;
   location: WindowLocation;
+  title: string;
+  description?: string;
+  path: string;
+  isHome?: boolean;
 }
 
-export default function Layout({ children, location }: Props) {
+export default function Layout({ children, location, title, description, path, isHome }: Props) {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <StyledWrapper>
-        <Navbar location={location} />
-        <StyledMain>{children}</StyledMain>
-        <Footer />
-      </StyledWrapper>
-    </ThemeProvider>
+    <>
+      <Head title={title} hasSiteName={!isHome} description={description} path={path} />
+      <ThemeProvider theme={defaultTheme}>
+        <StyledWrapper>
+          <Navbar location={location} />
+          <StyledMain>{children}</StyledMain>
+          <Footer />
+        </StyledWrapper>
+      </ThemeProvider>
+    </>
   );
 }

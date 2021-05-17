@@ -100,8 +100,8 @@ module.exports = {
       },
       settings: {
         "import/resolver": {
-          node: {
-            extensions: [".d.ts", ".ts", ".tsx"],
+          typescript: {
+            alwaysTryTypes: true,
           },
         },
       },
@@ -231,6 +231,7 @@ module.exports = {
         GuidelineImages: false,
         Guideline: false,
         GuidelinesSideBySide: false,
+        ImageContainer: false,
         InlineToken: false,
         ReactExample: false,
       },

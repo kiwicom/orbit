@@ -70,16 +70,14 @@ const ModalWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin: 0 auto;
-
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
-  transition: ${transition(["top"], "normal", "ease-in-out")};
+  transition: ${transition(["transform"], "normal", "ease-in-out")};
   top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
-
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
     https://github.com/philipwalton/flexbugs/issues/231 */

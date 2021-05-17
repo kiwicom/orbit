@@ -1,11 +1,20 @@
 // @flow
 import * as React from "react";
-import { screen, render } from "@testing-library/react";
+import { screen, render, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import Tooltip from "../../Tooltip";
 import Popover from "../index";
 import Button from "../../Button";
 import Stack from "../../Stack";
+
+jest.mock("../../hooks/useMediaQuery", () => {
+  return () => {
+    return {
+      isTablet: false,
+    };
+  };
+});
 
 describe("Popover", () => {
   it("should have expected DOM output", () => {
@@ -73,5 +82,18 @@ describe("Popover", () => {
 
     // default is 4px
     expect(screen.getByRole("tooltip")).toHaveStyle({ top: "10" });
+  });
+
+  it("with tooltip", async () => {
+    render(
+      <Popover dataTest="popover" content={<Tooltip content="Content">Tooltip</Tooltip>}>
+        <Button>Open popover</Button>
+      </Popover>,
+    );
+    userEvent.click(screen.getByRole("button"));
+    const overlay = (await screen.findByTestId("popover")).previousElementSibling;
+    expect(overlay).toBeInTheDocument();
+    if (overlay) userEvent.click(overlay);
+    await waitForElementToBeRemoved(screen.queryByTestId("popover"));
   });
 });

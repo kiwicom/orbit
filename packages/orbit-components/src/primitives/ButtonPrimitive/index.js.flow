@@ -32,7 +32,6 @@ export type ButtonCommonProps = {|
   +onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
   +rel?: string,
   +role?: string,
-  +size?: Size,
   +submit?: boolean,
   +title?: string | (any => string),
   +contentAlign?: ?string,
@@ -107,7 +106,6 @@ export type PrimitiveTypes = {|
 |};
 
 export type Props = {|
-  ...$Diff<ButtonCommonProps, { +size?: Size, ... }>,
   ...ButtonCommonProps,
   ...PrimitiveTypes,
 |};

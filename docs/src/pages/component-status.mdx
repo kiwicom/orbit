@@ -1,24 +1,21 @@
----
-title: Component status 🚀
-description: A detailed breakdown of our components and status of their implementation.
----
-
 import { ComponentStatusList } from "../components/ComponentStatus";
-import Layout from "../components/Layout";
+import DocLayout from "../components/DocLayout";
 import useMdxPageTableofContents from "../hooks/useMdxPageTableofContents";
 
 <!-- vale off -->
 
-export default ({ children }) => {
-  const tableOfContents = useMdxPageTableofContents("mdx-examples");
+export default ({ children, location, path }) => {
+  const tableOfContents = useMdxPageTableofContents("component-status");
   return (
-    <Layout
-      description="A detailed breakdown of our components and status of their implementation."
+    <DocLayout
+      description="A detailed breakdown of our components and the status of their implementation."
       title="Component status 🚀"
+      location={location}
+      path={path}
       tableOfContents={tableOfContents}
     >
       {children}
-    </Layout>
+    </DocLayout>
   );
 };
 

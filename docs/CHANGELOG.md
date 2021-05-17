@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.2...@kiwicom/orbit.kiwi@0.12.0) (2021-05-17)
+
+
+### Bug Fixes
+
+* add labels to empty links ([d0f6b02](https://github.com/kiwicom/orbit/commit/d0f6b0267f09d76dc5e313b233e22d3cb142ed19))
+* add screen reader text for tile links ([ec756e6](https://github.com/kiwicom/orbit/commit/ec756e63a19fd4c0c788db976b2e868a9dbcc089))
+* add types for adeira ([f6d0857](https://github.com/kiwicom/orbit/commit/f6d08572d46086676eb93f70047f038314fc26a3))
+* aria label for copy button in React example ([101f54c](https://github.com/kiwicom/orbit/commit/101f54c20f078df75de1a87837c6126ef821e25f))
+* change to typescript eslint import resolver ([d9b2887](https://github.com/kiwicom/orbit/commit/d9b28879e0e26357a1e00090b0935fcd482349ae))
+* don't use Gatsby Link for external links ([474e453](https://github.com/kiwicom/orbit/commit/474e4536789d1aac364848c1ddec7005b2872628))
+* keep token list height stable on copy ([d893627](https://github.com/kiwicom/orbit/commit/d89362766b62c7de6ecedad2e63de67ec184c29d))
+* labels for switches ([fdbcd6c](https://github.com/kiwicom/orbit/commit/fdbcd6c39fbf94bae98000acaf1f41217715b5b2))
+* layout and heading links for component status ([21b6a0c](https://github.com/kiwicom/orbit/commit/21b6a0cb4a61311bcee6305f8fbf41289e2861ac))
+* typing for tokens ([d955f97](https://github.com/kiwicom/orbit/commit/d955f976a295f806527b45e6de370607cce94d36))
+* typing tokens ([beb9e37](https://github.com/kiwicom/orbit/commit/beb9e37744a68d146a5613a79ee73ef8e3c8d654))
+
+
+### Features
+
+* allow alternateName on inline tokens ([d641d41](https://github.com/kiwicom/orbit/commit/d641d41e368d887f04d9d603ba7eae04934b4744))
+* **docs:** add design tokens list and inline token ([746fd45](https://github.com/kiwicom/orbit/commit/746fd4553d29dfa59603552c6665cafa7b3eba48))
+* **docs:** design tokens list ([a2c48cd](https://github.com/kiwicom/orbit/commit/a2c48cd31de767aa5fdf7ab4d24deb554c112ea3))
+
+
+
+
+
 ## [0.11.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.1...@kiwicom/orbit.kiwi@0.11.2) (2021-05-12)
 
 

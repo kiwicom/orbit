@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -22,6 +22,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.21",
     "@reach/router": "^1.3.4",
+    "@types/adeira__js": "^1.2.0",
     "@types/mdx-js__react": "^1.5.3",
     "@types/reach__router": "^1.3.7",
     "babel-plugin-inline-react-svg": "^1.1.2",
@@ -31,8 +32,8 @@
     "downshift": "^6.0.10",
     "gatsby": "^2.32.3",
     "gatsby-image": "^3.3.0",
-    "gatsby-plugin-mdx": "^2.3.0",
     "gatsby-plugin-manifest": "^3.4.0",
+    "gatsby-plugin-mdx": "^2.3.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-react-helmet": "^4.4.0",
     "gatsby-plugin-root-import": "^2.0.5",
@@ -57,7 +58,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-components": "^0.114.1",
+    "@kiwicom/orbit-components": "^0.114.2",
     "@types/react-helmet": "^6.1.1",
     "body-scroll-lock": "^3.1.5",
     "eslint-plugin-orbit-components": "^0.5.1",

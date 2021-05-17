@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.114.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.1...@kiwicom/orbit-components@0.114.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **ButtonLink:** pass size prop to icons ([#2938](https://github.com/kiwicom/orbit/issues/2938)) ([0184785](https://github.com/kiwicom/orbit/commit/01847859090fe9b95e41fd6c3944f3aa701180a8))
+* **HorizontalScroll:** remove automatic height calculation for wrapper ([#2936](https://github.com/kiwicom/orbit/issues/2936)) ([0880483](https://github.com/kiwicom/orbit/commit/0880483961e88ccfb1c27c6b9eafe8dd0094b3d5))
+* **MobileDialog:** change to dialog role ([9895ac7](https://github.com/kiwicom/orbit/commit/9895ac79fb4405396dcc3937e97fdf3c4e9072a7))
+* **popover:** close on overlay ([e2cef68](https://github.com/kiwicom/orbit/commit/e2cef688dd3eecbf15eabafbf70009ac9baee72b))
+* pass aria-labelledby for switch labels ([#2935](https://github.com/kiwicom/orbit/issues/2935)) ([1b10e4c](https://github.com/kiwicom/orbit/commit/1b10e4c4e708d768149346c5b941202fd72dc431))
+
+
+### Reverts
+
+* **Modal:** revert CLS changes ([b1d00b4](https://github.com/kiwicom/orbit/commit/b1d00b4c187d1ed4d25cb3b24a42c84cbe6856d0))
+
+
+
+
+
 ## [0.114.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.0...@kiwicom/orbit-components@0.114.1) (2021-05-12)
 
 

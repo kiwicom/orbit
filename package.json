@@ -12,6 +12,7 @@
     "orbit-kiwi": "yarn workspace @kiwicom/orbit.kiwi",
     "build": "yarn orbit-design-tokens build && yarn orbit-components build",
     "build-ci": "lerna bootstrap && yarn build",
+    "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",

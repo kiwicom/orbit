@@ -12,6 +12,8 @@ env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands
   PY_COLORS: "1" # Enable colors for Python-based utilities
   FORCE_COLOR: "1" # Force colors in the terminal
+  STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+  STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
 
 jobs:
   build_test:

@@ -20,6 +20,7 @@ import Head from "../Head";
 import AddBookmark from "../AddBookmark";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
+import InlineToken from "../InlineToken";
 import GuidelinesSideBySide, { Do, Dont } from "../Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "../Guidelines/GuidelineImages";
 import HeaderLink from "../HeaderLink";
@@ -184,6 +185,7 @@ export default function DocLayout({
                               Dont,
                               ImageContainer,
                               ReactExample,
+                              InlineToken,
                             }}
                           >
                             {children}

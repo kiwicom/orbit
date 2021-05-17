@@ -8,11 +8,10 @@ import Stack from "../Stack";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ isDragging, height, minHeight }) => `
+  ${({ isDragging, minHeight }) => `
     position: relative;
     width: 100%;
     min-height: ${minHeight}px;
-    height: ${height}px;
     cursor: ${isDragging ? "grabbing" : "grab"};
     overflow: hidden;
   `}
@@ -47,41 +46,15 @@ const HorizontalScroll = ({
   minHeight,
   ...props
 }: Props): React.Node => {
-  const [height, setHeight] = React.useState(0);
-  const { current: childRef } = React.useRef<(number | null)[]>([]);
-
-  React.useEffect(() => {
-    if (childRef.length > 0) {
-      setHeight(Math.max(...childRef.filter(Boolean)));
-    }
-  }, [childRef]);
-
   const scrollWrapper = React.useRef(null);
   const { isDragging } = useScrollBox(scrollWrapper);
 
   return (
-    <StyledWrapper
-      {...props}
-      isDragging={isDragging}
-      height={height}
-      minHeight={minHeight}
-      data-test={dataTest}
-    >
+    <StyledWrapper {...props} isDragging={isDragging} minHeight={minHeight} data-test={dataTest}>
       <StyledOverflow ref={scrollWrapper}>
         <StyledContainer isDragging={isDragging}>
           <Stack inline spacing={spacing}>
-            {React.Children.map(children, (child, idx) => {
-              if (!React.isValidElement(child)) return null;
-              return (
-                <div
-                  ref={r => {
-                    if (r) childRef[idx] = r.clientHeight;
-                  }}
-                >
-                  {child}
-                </div>
-              );
-            })}
+            {children}
           </Stack>
         </StyledContainer>
       </StyledOverflow>

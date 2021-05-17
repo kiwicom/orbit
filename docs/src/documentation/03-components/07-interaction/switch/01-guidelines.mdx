@@ -1,0 +1,48 @@
+---
+title: Guidelines
+---
+
+<ReactExample exampleId="Switch-default" />
+
+## When to use
+
+- To enable users to change a single setting.
+- When the result of turning the setting on and off is clear.
+- For changes that have an instant response (such as disabling a form field).
+
+### When not to use
+
+- To present multiple options---use a [choice group](/components/input/choicegroup/).
+- For settings that require additional help or error handling---use a [checkbox](/components/input/checkbox/).
+- For changes that require an additional confirmation (saving or submitting)---use a [checkbox](/components/input/checkbox/).
+
+## Component status
+
+<ComponentStatus component="Switch" />
+
+## Content structure
+
+![Toggle: indicates whether the switch is on or off; icon: optionally offers visual cues about the current state.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:1315%3A2202)
+
+## Behavior
+
+### Use for immediate changes
+
+Switches should have effects that are immediate, like using a light switch.
+Use them for situations like changing the theme, disabling a form field,
+and adding additional options to the UI (as with our [color palettes](/foundation/color/#product)).
+
+## Look & feel
+
+### Use icons when appropriate
+
+In cases where users are used to certain visuals,
+it can make sense to include them as part of the switch.
+Offer icons that show the currently selected state
+(_not_ showing what happens if users toggle that state).
+This can make it easier to determine what is happening right now.
+
+Just make sure the function of the switch is clear also from just words
+so that [everyone can use it](/foundation/accessibility/).
+
+<ReactExample exampleId="Switch-icons" />

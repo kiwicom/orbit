@@ -10,10 +10,29 @@ const StyledProse = styled(Box)`
       border-radius: ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium} 0 0;
     `)};
     > * + * {
-      margin-top: ${theme.orbit.spaceSmall};
+      margin-top: 16px;
     }
-    > h1 {
-      margin-bottom: ${theme.orbit.spaceLarge};
+    > * + h1,
+    > * + h2,
+    > * + h3,
+    > * + h4,
+    > * + h5 {
+      margin-top: 24px;
+    }
+    > h1 + *,
+    > h2 + *,
+    > h3 + *,
+    > h4 + *,
+    > h5 + * {
+      margin-top: 12px;
+    }
+    > p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    > ul > li + li,
+    > ol > li + li {
+      margin-top: 12px;
     }
     > ${StyledAnchorWrapper} {
       margin-top: ${theme.orbit.spaceLarge};

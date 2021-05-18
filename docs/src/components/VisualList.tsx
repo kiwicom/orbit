@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
   Tile,
+  Heading,
 } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
@@ -84,7 +85,11 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <HeadingWithLink noId>{visualName}</HeadingWithLink>
+              <HeadingWithLink noId>
+                <Heading as="h3" type="title3">
+                  {visualName}
+                </Heading>
+              </HeadingWithLink>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, copy)}
             </Stack>

@@ -32,8 +32,8 @@ const StyledBadgeListItem = styled.li`
     display: flex;
     flex-direction: row;
     width: 100%;
-    &:not(:last-child) {
-      margin-bottom: ${theme.orbit.spaceXXSmall};
+    & + & {
+      margin-top: ${theme.orbit.spaceXXSmall};
     }
   `};
 `;
@@ -50,7 +50,7 @@ const StyledVerticalBadge = styled.div`
     align-items: center;
     justify-content: center;
     margin-${right}: ${theme.orbit.spaceXSmall};
-    flex: 0 0 auto;
+    flex-shrink: 0;
     height: ${theme.orbit.heightIconMedium};
     width: ${theme.orbit.widthIconMedium};
     border-radius: ${theme.orbit.borderRadiusCircle};

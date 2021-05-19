@@ -19,6 +19,6 @@ describe("BadgeList", () => {
     );
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTestId(childrenDataTest)).toBeInTheDocument();
-    expect(screen.getByTestId(childrenDataTest)).toHaveTextContent(childrenText);
+    expect(screen.getByText(childrenText)).toBeInTheDocument();
   });
 });

@@ -5,8 +5,6 @@ redirect_from:
   - /guides/using-button-type-components/
 ---
 
-import { NewWindow } from "@kiwicom/orbit-components/icons";
-
 Sometimes it's good to have a lot of choices.
 Other times it can be overwhelming
 (which is why Orbit is based around [progressive disclosure](/design-patterns/progressive-disclosure/)).
@@ -99,6 +97,14 @@ There should be no more than _one basic and one subtle button_.
 
 ## ButtonLinks
 
+Choose a button link when it is outside text, the text inside is short,
+and either of the following is true:
+
+- The action navigates inside the app.
+- The action is an interaction, like opening a modal or submitting a form.
+
+Inside text and for external navigation, use only [text links](#textlinks).
+
 ButtonLinks come in three sizes (_large_, _normal_, and _small_) and three types:
 
 - [Primary](#primary-buttonlinks)
@@ -128,13 +134,19 @@ or as a secondary standalone action that is visually less heavy than **critical 
 
 ## TextLinks
 
+Choose a text link in any of these cases:
+
+- The action is inside text.
+- The action is less important and navigates outside the app.
+- The text inside the action is long.
+
 Our main TextLinks come in three sizes (_large_, _normal_, and _small_) and two types:
 
 - Primary
 - Secondary
 
-All types can be external to show that they navigate to external pages.
-With these links, the NewWindow icon (<NewWindow />) is automatically placed on the right side.
+All types can be external to navigate to external pages.
+These links automatically open in a new window with extra security attributes.
 
 **_Primary TextLinks_** are used for primary actions inside of text (a paragraph).
 

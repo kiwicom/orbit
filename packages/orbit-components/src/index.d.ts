@@ -9,6 +9,7 @@ export { AccordionSection } from "./Accordion/AccordionSection/index";
 export { AlertButton } from "./Alert/AlertButton/index";
 export { AirportIllustration } from "./AirportIllustration";
 export { Badge } from "./Badge/index";
+export { BadgeList, BadgeListItem } from "./BadgeList/index";
 export { Box } from "./Box";
 export { NotificationBadge } from "./NotificationBadge/index";
 export { Breadcrumbs } from "./Breadcrumbs/index";

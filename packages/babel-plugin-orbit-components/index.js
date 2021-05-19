@@ -14,6 +14,7 @@
 const pathOverwrites = {
   AlertButton: "Alert/AlertButton",
   BadgePrimitive: "primitives/BadgePrimitive",
+  BadgeListItem: "BadgeList/BadgeListItem",
   BreadcrumbsItem: "Breadcrumbs/BreadcrumbsItem",
   ButtonPrimitive: "primitives/ButtonPrimitive",
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)

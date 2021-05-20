@@ -19,7 +19,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      #
+
+      - name: Touch markdown file
+        run: touch docs/src/snippets/more-than-color.mdx
+
       - name: Vale
         uses: errata-ai/vale-action@v1.4.1
         with:

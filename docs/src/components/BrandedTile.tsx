@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, Truncate, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
@@ -8,6 +8,7 @@ import { ICON_SIZE } from "./Tile";
 
 interface Props {
   title: string;
+  icon: React.ReactNode;
   linkContent: string;
   href: string;
   logo: React.ReactNode;
@@ -43,8 +44,19 @@ const StyledIcon = styled.div<{ secondary: string }>`
     background: ${secondary};
     border-radius: ${theme.orbit.borderRadiusCircle};
     ${mq.largeMobile(`
-      display: flex;
+      display: grid;
+      align-content: center;
+      justify-content: center;
     `)};
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    [stroke] {
+      stroke: currentColor;
+    }
   `}
 `;
 
@@ -65,7 +77,15 @@ const StyledContent = styled.div`
   margin: 0.5rem 0 1.5rem;
 `;
 
-export default function BrandedTile({ title, linkContent, href, logo, color, children }: Props) {
+export default function BrandedTile({
+  title,
+  icon,
+  linkContent,
+  href,
+  logo,
+  color,
+  children,
+}: Props) {
   const theme = useTheme();
 
   // Wrap plain strings in a p tag and otherwise render children
@@ -76,7 +96,7 @@ export default function BrandedTile({ title, linkContent, href, logo, color, chi
   return (
     <StyledWrapper primary={colorPrimary}>
       <Stack inline>
-        <StyledIcon secondary={colorSecondary} />
+        <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
         <StyledHeading>
           <Heading inverted type="title2" as="h3">
             {title}

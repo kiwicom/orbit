@@ -34,6 +34,7 @@ Table below contains all types of the props available in the Modal component.
 | preventOverlayClose | `boolean`                  |            | Property for preventing closing of modal when there is a action on overlay. BEWARE: This should be used only in very specials edge-cases! It breaks user experience.                                 |
 | hasCloseButton      | `boolean`                  | `true`     | Defines whether the Modal displays a close button. If you disable this, we recommend adding some kind of an alternative.                                                                             |
 | autoFocus           | `boolean`                  | `true`     | The autofocus attribute of the Modal, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp).                                                                                             |
+| disableAnimation    | `boolean`                  | `false`    | Defines whether the Modal performs the slide in animation on mobile. If you want to improve your [CLS](https://web.dev/cls/) score, you might want to set this to `true`.                            |
 
 ### Modal enum
 

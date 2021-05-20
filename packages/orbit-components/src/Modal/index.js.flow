@@ -37,6 +37,7 @@ export type Props = {|
   +isMobileFullPage?: boolean,
   +preventOverlayClose?: boolean,
   +hasCloseButton?: boolean,
+  +disableAnimation?: boolean,
   ...Globals,
 |};
 

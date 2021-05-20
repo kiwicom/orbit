@@ -24,6 +24,5 @@ jobs:
         uses: errata-ai/vale-action@v1.4.1
         with:
           files: '["docs/src/documentation", "docs/src/snippets"]'
-          onlyAnnotateModifiedLines: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

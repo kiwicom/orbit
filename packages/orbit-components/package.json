@@ -23,7 +23,7 @@
     "build:umd": "webpack --mode=production",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.json' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:module": "copyfiles -u 1 'src/**/*.md' es && copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.json' es",
-    "clean": "rimraf lib es src/icons/*.js src/icons/*.js.flow",
+    "clean": "rimraf lib es umd src/icons/*{.js,.js.flow,.d.ts} orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out",
     "watch": "concurrently \"npm run build:lib -- --watch\" \"npm run build:module -- --watch\"",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "fetch-translations": "babel-node config/fetchTranslations.js",

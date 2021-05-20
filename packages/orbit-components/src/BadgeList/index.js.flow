@@ -1,0 +1,17 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/badgelist/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import type { Props as BadgeListItemProps } from "./BadgeListItem/index";
+
+export type Props = {|
+  +children: React.Node,
+  ...Globals,
+|};
+
+declare export var BadgeListItem: React.ComponentType<BadgeListItemProps>;
+
+declare export default React.ComponentType<Props>;

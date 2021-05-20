@@ -9,6 +9,7 @@
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable",
     "build": "yarn clean && yarn build:icons && yarn build:iconFont && yarn build:typeFiles && yarn build:lib && yarn build:module && yarn build:umd && yarn build:storybook",
+    "build:size": "yarn clean && yarn build:icons && yarn build:lib",
     "babel-base": "babel src --ignore **/*.stories.js,**/*.test.js,**/*.storyshot.js,**/__examples__/*.js,**/examples.js",
     "build:lib": "yarn babel-base --out-dir lib && yarn copy:lib",
     "build:module": "yarn babel-base --env-name esm --out-dir es && yarn copy:module",

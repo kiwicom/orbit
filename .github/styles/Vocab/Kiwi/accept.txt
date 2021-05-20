@@ -12,6 +12,7 @@ Ctrl
 Filip
 Funkify
 Genaev
+[Gg]rayscale
 Hapl
 inclusivity
 JavaScript

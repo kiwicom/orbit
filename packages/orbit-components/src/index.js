@@ -8,6 +8,7 @@ export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Alert } from "./Alert";
 export { default as AlertButton } from "./Alert/AlertButton";
 export { default as Badge } from "./Badge";
+export { default as BadgeList, BadgeListItem } from "./BadgeList";
 export { default as Box } from "./Box";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";

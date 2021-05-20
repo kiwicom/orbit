@@ -38,7 +38,7 @@ Table below contains all types of the props available in TextLink component.
 
 ### enum
 
-| type          | type       |
+| type          | size       |
 | :------------ | :--------- |
 | `"primary"`   | `"small"`  |
 | `"secondary"` | `"normal"` |

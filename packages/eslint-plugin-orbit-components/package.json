@@ -25,7 +25,8 @@
     "kiwicom"
   ],
   "scripts": {
-    "build": "rm -fr ./dist && babel ./src --extensions '.ts' --out-dir ./dist",
+    "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
+    "clean": "rimraf dist",
     "postinstall": "yarn build",
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable"

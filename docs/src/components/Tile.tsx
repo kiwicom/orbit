@@ -10,28 +10,12 @@ import useIsUrlExternal from "../hooks/useIsUrlExternal";
 export const ICON_SIZE = "2rem";
 
 interface Props {
-  icon?: boolean;
+  icon?: React.ReactNode;
   title: string;
   fullWidth?: boolean;
   linkContent?: React.ReactNode;
   href?: string;
   children?: React.ReactNode;
-}
-
-function TileIcon() {
-  const theme = useTheme();
-  return (
-    <div
-      css={css`
-        align-self: start;
-        flex-shrink: 0;
-        width: ${ICON_SIZE};
-        height: ${ICON_SIZE};
-        background: ${theme.orbit.paletteProductLight};
-        border-radius: ${theme.orbit.borderRadiusCircle};
-      `}
-    />
-  );
 }
 
 function TileTitle({ children }: { children: React.ReactNode }) {
@@ -63,6 +47,29 @@ const StyledLinkText = styled(Link)`
     color: ${({ theme }) => theme.orbit.colorTextLinkPrimaryHover};
     text-decoration: none;
   }
+`;
+const StyledIcon = styled.div`
+  ${({ theme }) => `
+    align-self: start;
+    flex-shrink: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: ${ICON_SIZE};
+    height: ${ICON_SIZE};
+    background: ${theme.orbit.paletteProductLight};
+    border-radius: ${theme.orbit.borderRadiusCircle};
+    color: ${theme.orbit.paletteProductDark};
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    [stroke] {
+      stroke: currentColor;
+    }
+  `}
 `;
 
 export default function Tile({
@@ -144,7 +151,7 @@ export default function Tile({
       >
         {icon && (
           <Hide on={["smallMobile", "mediumMobile"]}>
-            <TileIcon />
+            <StyledIcon>{icon}</StyledIcon>
           </Hide>
         )}
         {children ? (

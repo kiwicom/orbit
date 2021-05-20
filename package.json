@@ -7,17 +7,20 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "bootstrap:ci": "npx --yes lerna bootstrap -- --frozen-lockfile",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
     "orbit-design-tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "orbit-kiwi": "yarn workspace @kiwicom/orbit.kiwi",
     "build": "yarn orbit-design-tokens build && yarn orbit-components build",
-    "build-ci": "lerna bootstrap && lerna run --scope @kiwicom/orbit-components build:size",
+    "build-ci": "lerna bootstrap && yarn orbit-design-tokens build && yarn orbit-components build",
     "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",
-    "check-links": "remark -e '.mdx' -fq -u validate-links docs/src/documentation --no-config && node docs/utils/check-links.js",
+    "check-links": "yarn check-links:src && yarn check-links:dist",
+    "check-links:src": "remark -e '.mdx' -fq -u validate-links docs/src/documentation --no-config",
+    "check-links:dist": "node docs/utils/check-links.js",
     "flow:check": "flow check",
     "test": "jest",
     "test-ci": "jest --ci --maxWorkers=2 && lerna run test",
@@ -29,7 +32,7 @@
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "clean:docs": "lerna run --scope @kiwicom/orbit.kiwi clean",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:build": "yarn install --frozen-lockfile && yarn bootstrap && yarn build && yarn orbit-kiwi build"
+    "orbit-kiwi:build": "yarn bootstrap:ci && yarn orbit-design-tokens build:lib && yarn orbit-components build:lib && yarn orbit-kiwi build"
   },
   "husky": {
     "hooks": {

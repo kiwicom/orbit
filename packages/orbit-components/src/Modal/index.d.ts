@@ -21,6 +21,7 @@ export interface Props extends Common.Global {
   readonly isMobileFullPage?: boolean;
   readonly preventOverlayClose?: boolean;
   readonly hasCloseButton?: boolean;
+  readonly disableAnimation?: boolean;
 }
 
 type Instance = {

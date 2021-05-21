@@ -91,6 +91,7 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
           STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
         run: yarn orbit-kiwi:build
 

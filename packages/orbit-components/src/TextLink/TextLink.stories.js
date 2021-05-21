@@ -5,7 +5,9 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
+import { TYPE_OPTIONS as TEXT_TYPES } from "../Text/consts";
 import * as Icons from "../icons";
+import Text from "../Text";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TextLink from "./index";
@@ -136,6 +138,30 @@ export const Playground = (): React.Node => {
       {children}
     </TextLink>
   );
+};
+
+export const TextLinkInText = (): React.Node => {
+  const type = select("type", Object.values(TEXT_TYPES), TEXT_TYPES.CRITICAL);
+  return (
+    <Text type={type}>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dapibus fermentum ipsum. Duis
+      ante orci, molestie vitae vehicula venenatis, tincidunt ac pede.{" "}
+      <TextLink onClick={action("onClick")} type={type}>
+        Etiam dui sem
+      </TextLink>
+      , fermentum vitae, sagittis id, malesuada in, quam. Vivamus luctus egestas leo. Integer
+      imperdiet lectus quis justo. Duis condimentum augue id magna semper rutrum. Quisque porta. Sed
+      elit dui, pellentesque a, faucibus vel, interdum nec, diam.
+    </Text>
+  );
+};
+
+TextLinkInText.story = {
+  name: "TextLink inside paragraph",
+  parameters: {
+    info:
+      "It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
 };
 
 Playground.story = {

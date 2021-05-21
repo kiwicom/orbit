@@ -8,7 +8,7 @@ import type { CSSRules, StyledComponent } from "styled-components";
 import type { Globals, Component } from "../common/common.js.flow";
 import type { ThemeProps } from "../defaultTheme";
 
-export type Type = "primary" | "secondary";
+export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical";
 
 type Size = "large" | "normal" | "small";
 

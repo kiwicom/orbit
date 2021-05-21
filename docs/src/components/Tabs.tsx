@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
+import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 export interface TabObject {
@@ -38,14 +38,19 @@ const StyledTab = styled.div`
 `;
 
 const StyledTabWrapper = styled.div<SizeCheck>`
-  ${({ isMediumMobile, theme }) => css`
+  ${({ theme }) => css`
     display: inline-block;
     z-index: ${theme.orbit.zIndexSticky};
     ${StyledTab}, ${StyledTabLink} {
-      padding: ${theme.orbit.spaceSmall}
-        ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
-      margin: 0 ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
+      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceXSmall};
+      margin: 0 ${theme.orbit.spaceXSmall};
     }
+    ${mediaQueries.mediumMobile(css`
+      ${StyledTab}, ${StyledTabLink} {
+        padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium};
+        margin: 0 ${theme.orbit.spaceMedium};
+      }
+    `)}
   `}
 `;
 
@@ -55,9 +60,8 @@ interface TabProps {
 }
 
 const Tab = ({ isActive, tab }: TabProps) => {
-  const { isMediumMobile } = useMediaQuery();
   return (
-    <StyledTabWrapper isMediumMobile={isMediumMobile}>
+    <StyledTabWrapper>
       {isActive ? (
         <StyledTab>{tab.title}</StyledTab>
       ) : (

@@ -107,7 +107,7 @@ const TableOfContents = ({ items }: Props) => {
   }
   const tocIds = getTocIds(TocContent);
   return (
-    <Scrollspy items={tocIds} onUpdate={handleScrollSpyUpdate}>
+    <Scrollspy items={tocIds} onUpdate={handleScrollSpyUpdate} currentClassName="">
       <StyledTocList>{TocContent}</StyledTocList>
     </Scrollspy>
   );

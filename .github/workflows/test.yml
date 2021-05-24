@@ -1,0 +1,101 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+
+jobs:
+  general:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          restore-keys: |
+            node-modules-${{ github.ref}}-
+            node-modules-
+
+      - name: Install dependencies
+        env:
+          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+          STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
+        run: yarn bootstrap:ci
+
+      - name: Compile design tokens
+        run: yarn orbit-design-tokens build:lib
+
+      - name: Compile components
+        run: yarn orbit-components build:lib
+
+      - name: Check icons
+        run: npx lerna run --scope @kiwicom/orbit-components check:icons
+
+      - name: Flow
+        run: yarn flow:check
+
+      - name: TypeScript
+        run: npx tsc
+
+      - name: Lint
+        run: |
+          yarn eslint:ci
+          yarn prettier:test
+
+      - name: Test
+        run: yarn test-ci
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          restore-keys: |
+            node-modules-${{ github.ref}}-
+            node-modules-
+
+      - name: Restore Gatsby cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            docs/.cache
+            docs/public
+          key: gatsby-${{ github.ref}}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+          restore-keys: |
+            gatsby-${{ github.ref}}-
+            gatsby-
+
+      - name: Install dependencies & Build
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+          STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+        run: yarn orbit-kiwi:build
+
+      - name: Check links
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: yarn check-links

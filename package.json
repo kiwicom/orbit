@@ -157,7 +157,7 @@
     "rimraf": "^3.0.2",
     "sharp": "^0.27.0",
     "styled-components": "^5.2.2",
-    "surge": "^0.21.7",
+    "surge": "^0.23.0",
     "svg2ttf": "^5.2.0",
     "svgicons2svgfont": "^9.0.4",
     "through2": "^4.0.2",

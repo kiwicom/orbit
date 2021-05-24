@@ -29,6 +29,11 @@ export default function Head({ title, hasSiteName, description, path }: Props) {
       <meta name="twitter:site" content="@OrbitKiwi" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
     </Helmet>
   );
 }

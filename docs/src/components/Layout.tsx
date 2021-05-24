@@ -3,7 +3,8 @@ import { ThemeProvider } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { WindowLocation } from "@reach/router";
 
-import defaultTheme from "../theme";
+import theme from "../theme";
+import BaseStyles from "./BaseStyles";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Head from "./Head";
@@ -36,8 +37,9 @@ export default function Layout({ children, location, title, description, path, i
   return (
     <>
       <Head title={title} hasSiteName={!isHome} description={description} path={path} />
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={theme}>
         <StyledWrapper>
+          <BaseStyles />
           <Navbar location={location} />
           <StyledMain>{children}</StyledMain>
           <Footer />

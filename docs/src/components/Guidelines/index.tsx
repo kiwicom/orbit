@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import { Stack, Text } from "@kiwicom/orbit-components";
+import { Stack, Text, Heading } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants";
 
@@ -123,8 +123,10 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ))}
         <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
           <ContentContainer>
-            <HeadingWithLink headingLevel={4} noId>
-              {title}
+            <HeadingWithLink noId>
+              <Heading as="h3" type="title3">
+                {title}
+              </Heading>
             </HeadingWithLink>
             {content}
           </ContentContainer>

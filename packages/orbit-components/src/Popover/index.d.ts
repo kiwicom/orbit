@@ -28,6 +28,7 @@ export interface Props extends Common.Global {
   readonly actions?: React.ReactNode;
   readonly offset?: Offset;
   readonly onOpen?: Common.Callback;
+  readonly insidePortal?: boolean;
   readonly onClose?: Common.Callback;
 }
 declare class Popover extends React.Component<Props> {}

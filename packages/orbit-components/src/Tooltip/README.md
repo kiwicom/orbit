@@ -30,7 +30,7 @@ Table below contains all types of the props available in the Tooltip component.
 | removeUnderlinedText | `boolean`       |         | Removes underline on child component, when underline is not desired.                                              |
 | size                 | [`enum`](#enum) |         | The maximum possible size of the Tooltip.                                                                         |
 | stopPropagation      | `boolean`       |         | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element. |
-| insidePortal         | `boolean`       | `true`  | If `false` the Tooltip will not rendered with `Portal`                                                            |
+| renderInPortal       | `boolean`       | `true`  | Optional prop, set it to `false` if you're rendering Tooltip inside a custom portal, defaults to `true`           |
 
 | tabIndex | `string \| number` | `"0"` | Specifies the tab order of an element |
 

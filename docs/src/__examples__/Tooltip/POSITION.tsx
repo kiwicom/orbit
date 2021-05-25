@@ -8,7 +8,7 @@ export default {
         <Heading type="title3" as="h4">
           Right
         </Heading>
-        <Tooltip insidePortal={false} content={<Text>Select a flight before continuing.</Text>}>
+        <Tooltip renderInPortal={false} content={<Text>Select a flight before continuing.</Text>}>
           <Button disabled>Book</Button>
         </Tooltip>
       </Stack>
@@ -17,7 +17,7 @@ export default {
           Left
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredPosition="left"
           content={<Text>Select a flight before continuing.</Text>}
         >
@@ -29,7 +29,7 @@ export default {
           Bottom
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredPosition="bottom"
           content={<Text>Select a flight before continuing.</Text>}
         >
@@ -41,7 +41,7 @@ export default {
           Top
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredPosition="top"
           content={<Text>Select a flight before continuing.</Text>}
         >

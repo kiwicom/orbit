@@ -15,7 +15,7 @@ interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;
-  readonly insidePortal?: boolean;
+  readonly renderInPortal?: boolean;
   readonly stopPropagation?: boolean;
   readonly preferredPosition?: Position;
   readonly preferredAlign?: Align;

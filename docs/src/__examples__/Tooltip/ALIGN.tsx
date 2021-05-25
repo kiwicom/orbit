@@ -9,7 +9,7 @@ export default {
           Start
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredAlign="start"
           content={<Text>Select a flight before continuing.</Text>}
         >
@@ -23,7 +23,7 @@ export default {
           Center
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredAlign="center"
           content={<Text>Select a flight before continuing.</Text>}
         >
@@ -37,7 +37,7 @@ export default {
           End
         </Heading>
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           preferredAlign="end"
           content={<Text>Select a flight before continuing.</Text>}
         >

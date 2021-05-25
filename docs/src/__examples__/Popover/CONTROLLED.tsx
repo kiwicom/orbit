@@ -8,6 +8,7 @@ export default {
     return (
       <Stack spacing="XXLarge">
         <Popover
+          renderInPortal={false}
           opened={isOpen}
           content={
             <Stack spacing="small">

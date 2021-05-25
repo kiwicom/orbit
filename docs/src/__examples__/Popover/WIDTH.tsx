@@ -6,6 +6,7 @@ export default {
   Example: () => (
     <Stack>
       <Popover
+        renderInPortal={false}
         content={
           <Stack spacing="small">
             <ButtonLink
@@ -30,6 +31,7 @@ export default {
         <Button circled title="Help" iconLeft={<QuestionCircle />} />
       </Popover>
       <Popover
+        renderInPortal={false}
         width="400px"
         content={
           <Stack spacing="small">

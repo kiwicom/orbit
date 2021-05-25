@@ -115,7 +115,7 @@ const Dialog = ({
   primaryAction,
   secondaryAction,
   onClose,
-  insidePortal = true,
+  renderInPortal = true,
   illustration,
 }: Props): React.Node => {
   const ref = React.useRef(null);
@@ -155,37 +155,7 @@ const Dialog = ({
 
   const dialogID = React.useMemo(() => randomID("dialog"), []);
 
-  return insidePortal ? (
-    <Portal renderInto="modals">
-      <StyledDialog
-        data-test={dataTest}
-        shown={shown}
-        onClick={handleClose}
-        tabIndex="0"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={dialogID}
-      >
-        <StyledDialogCenterWrapper>
-          <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
-            {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
-            <Stack spacing="XSmall" spaceAfter="medium">
-              {title && <Heading type="title3">{title}</Heading>}
-              {description && <Text type="secondary">{description}</Text>}
-            </Stack>
-            <Stack
-              direction="column-reverse"
-              spacing="XSmall"
-              largeMobile={{ direction: "row", justify: "end" }}
-            >
-              {secondaryAction && <StyledAction>{secondaryAction}</StyledAction>}
-              <StyledAction>{primaryAction}</StyledAction>
-            </Stack>
-          </StyledDialogContent>
-        </StyledDialogCenterWrapper>
-      </StyledDialog>
-    </Portal>
-  ) : (
+  const dialog = (
     <StyledDialog
       data-test={dataTest}
       shown={shown}
@@ -214,6 +184,8 @@ const Dialog = ({
       </StyledDialogCenterWrapper>
     </StyledDialog>
   );
+
+  return renderInPortal ? <Portal renderInto="modals">{dialog}</Portal> : dialog;
 };
 
 export default Dialog;

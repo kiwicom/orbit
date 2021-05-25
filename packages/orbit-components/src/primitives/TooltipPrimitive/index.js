@@ -41,7 +41,7 @@ const TooltipPrimitive = ({
   enabled = true,
   tabIndex = "0",
   dataTest,
-  insidePortal = true,
+  renderInPortal = true,
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
@@ -86,6 +86,24 @@ const TooltipPrimitive = ({
 
   if (!enabled) return children;
 
+  const tooltip = (
+    <TooltipContent
+      parent={children}
+      dataTest={dataTest}
+      shown={shown}
+      size={size}
+      tooltipId={tooltipId}
+      onClose={handleOut}
+      onCloseMobile={handleOutMobile}
+      onEnter={handleIn}
+      preferredPosition={preferredPosition}
+      preferredAlign={preferredAlign}
+      containerRef={container}
+    >
+      {content}
+    </TooltipContent>
+  );
+
   return (
     <>
       <StyledTooltipChildren
@@ -104,41 +122,9 @@ const TooltipPrimitive = ({
       >
         {children}
       </StyledTooltipChildren>
-      {enabled && render && insidePortal ? (
-        <Portal renderInto="tooltips">
-          <TooltipContent
-            parent={children}
-            dataTest={dataTest}
-            shown={shown}
-            size={size}
-            tooltipId={tooltipId}
-            onClose={handleOut}
-            onCloseMobile={handleOutMobile}
-            onEnter={handleIn}
-            preferredPosition={preferredPosition}
-            preferredAlign={preferredAlign}
-            containerRef={container}
-          >
-            {content}
-          </TooltipContent>
-        </Portal>
-      ) : (
-        <TooltipContent
-          parent={children}
-          dataTest={dataTest}
-          shown={shown}
-          size={size}
-          tooltipId={tooltipId}
-          onClose={handleOut}
-          onCloseMobile={handleOutMobile}
-          onEnter={handleIn}
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-          containerRef={container}
-        >
-          {content}
-        </TooltipContent>
-      )}
+      {enabled &&
+        render &&
+        (renderInPortal ? <Portal renderInto="tooltips">{tooltip}</Portal> : tooltip)}
     </>
   );
 };

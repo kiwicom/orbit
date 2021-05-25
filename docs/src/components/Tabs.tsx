@@ -30,7 +30,7 @@ const StyledTab = styled.div`
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     color: ${theme.orbit.paletteInkNormal};
-    box-shadow: rgb(37 42 49 / 8%) 0px 4px 8px 0px, rgb(37 42 49 / 16%) 0px 8px 24px 0px;
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhite} 27%);
     display: inline-block;
     position: relative;

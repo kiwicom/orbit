@@ -28,7 +28,7 @@ const StyledWrapper = styled.a<{ primary: string }>`
     border-radius: 1rem;
     background: ${primary};
     color: ${theme.orbit.colorTextWhite};
-    box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     display: flex;
     width: 100%;
     flex-direction: column;

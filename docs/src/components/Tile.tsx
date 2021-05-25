@@ -34,6 +34,32 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
+interface StyledContainerProps extends Pick<Props, "fullWidth"> {
+  hasContent: boolean;
+}
+
+const StyledWrapper = styled.a<StyledContainerProps>`
+  ${({ theme, fullWidth, hasContent }) => `
+    display: block;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: ${theme.orbit.paletteWhite};
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    display: flex;
+    width: ${fullWidth && "100%"};
+    ${
+      hasContent
+        ? css`
+            flex-direction: column;
+          `
+        : css`
+            align-items: center;
+            justify-content: space-between;
+          `
+    }
+  `}
+`;
+
 const StyledLinkText = styled(Link)`
   display: inline-flex;
   align-items: center;
@@ -120,26 +146,7 @@ export default function Tile({
     );
   };
   return (
-    <a
-      href={href}
-      css={css`
-        display: block;
-        padding: 2rem;
-        border-radius: 1rem;
-        background: ${theme.orbit.paletteWhite};
-        box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
-        display: flex;
-        width: ${fullWidth && "100%"};
-        ${children
-          ? css`
-              flex-direction: column;
-            `
-          : css`
-              align-items: center;
-              justify-content: space-between;
-            `}
-      `}
-    >
+    <StyledWrapper href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
       <div
         css={css`
           flex: 1;
@@ -173,6 +180,6 @@ export default function Tile({
         )}
       </div>
       {href && getEndLink()}
-    </a>
+    </StyledWrapper>
   );
 }

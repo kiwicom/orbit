@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { mediaQueries } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 export interface TabObject {
@@ -58,9 +58,17 @@ const Tab = ({ isActive, tab }: TabProps) => {
   return (
     <StyledTabWrapper>
       {isActive ? (
-        <StyledTab>{tab.title}</StyledTab>
+        <StyledTab>
+          <Text size="large" as="span">
+            {tab.title}
+          </Text>
+        </StyledTab>
       ) : (
-        <StyledTabLink to={tab.slug}>{tab.title}</StyledTabLink>
+        <StyledTabLink to={tab.slug}>
+          <Text size="large" as="span">
+            {tab.title}
+          </Text>
+        </StyledTabLink>
       )}
     </StyledTabWrapper>
   );

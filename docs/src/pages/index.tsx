@@ -298,30 +298,32 @@ export default function Home({ location, path }: Props) {
           `}
         >
           <Heading as="h2">Resources</Heading>
-          <Tile
-            title="Figma library"
-            linkContent={
-              <>
-                <ScreenReaderText>
-                  Open Orbit&apost;s public Figma library in a new window
-                </ScreenReaderText>
-                <NewWindow />
-              </>
-            }
-            href="https://www.figma.com/@orbitbykiwi"
-            icon={<FigmaIcon />}
-          />
-          <Tile
-            title="Orbit repository"
-            linkContent={
-              <>
-                <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
-                <NewWindow />
-              </>
-            }
-            href="https://github.com/kiwicom/orbit"
-            icon={<GitHubIcon />}
-          />
+          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+            <Tile
+              title="Figma library"
+              linkContent={
+                <>
+                  <ScreenReaderText>
+                    Open Orbit&apost;s public Figma library in a new window
+                  </ScreenReaderText>
+                  <NewWindow />
+                </>
+              }
+              href="https://www.figma.com/@orbitbykiwi"
+              icon={<FigmaIcon />}
+            />
+            <Tile
+              title="Orbit repository"
+              linkContent={
+                <>
+                  <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
+                  <NewWindow />
+                </>
+              }
+              href="https://github.com/kiwicom/orbit"
+              icon={<GitHubIcon />}
+            />
+          </Stack>
         </div>
       </div>
     </Layout>

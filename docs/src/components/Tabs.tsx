@@ -27,10 +27,10 @@ const StyledTabLink = styled(Link)`
 
 const StyledTab = styled.div`
   ${({ theme }) => css`
-    border-top-left-radius: ${theme.orbit.borderRadiusLarge};
-    border-top-right-radius: ${theme.orbit.borderRadiusLarge};
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     color: ${theme.orbit.paletteInkNormal};
-    box-shadow: ${theme.orbit.boxShadowRaised};
+    box-shadow: rgb(37 42 49 / 8%) 0px 4px 8px 0px, rgb(37 42 49 / 16%) 0px 8px 24px 0px;
     background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhite} 27%);
     display: inline-block;
     position: relative;
@@ -42,15 +42,10 @@ const StyledTabWrapper = styled.div<SizeCheck>`
     display: inline-block;
     z-index: ${theme.orbit.zIndexSticky};
     ${StyledTab}, ${StyledTabLink} {
-      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceXSmall};
-      margin: 0 ${theme.orbit.spaceXSmall};
+      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
+        ${theme.orbit.spaceMedium};
+      margin: 0 ${theme.orbit.spaceMedium};
     }
-    ${mediaQueries.mediumMobile(css`
-      ${StyledTab}, ${StyledTabLink} {
-        padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium};
-        margin: 0 ${theme.orbit.spaceMedium};
-      }
-    `)}
   `}
 `;
 

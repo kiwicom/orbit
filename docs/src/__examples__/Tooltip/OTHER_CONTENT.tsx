@@ -6,6 +6,7 @@ export default {
     <Text>
       If you&apos;re building a travel app, you should give{" "}
       <Tooltip
+        insidePortal={false}
         content={
           <Stack>
             <img

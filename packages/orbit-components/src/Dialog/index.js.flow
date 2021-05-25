@@ -6,6 +6,7 @@ import type { Globals } from "../common/common.js.flow";
 export type Props = {|
   +title: React.Node,
   +description?: React.Node,
+  +insidePortal?: boolean,
   +illustration?: React.Node,
   +primaryAction: React.Node,
   +secondaryAction?: React.Node,

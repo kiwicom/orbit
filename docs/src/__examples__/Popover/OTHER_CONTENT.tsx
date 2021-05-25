@@ -9,6 +9,7 @@ export default {
     const [is4star, setIs4star] = React.useState(true);
     return (
       <Popover
+        renderInPortal={false}
         content={
           <Stack spacing="small">
             <ListChoice

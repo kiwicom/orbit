@@ -12,7 +12,7 @@ import type { Props } from "./index";
 const MobileDialog = ({
   children,
   enabled = true,
-  insidePortal = true,
+  renderInPortal = true,
   tabIndex = "0",
   dataTest,
   content,
@@ -56,6 +56,17 @@ const MobileDialog = ({
 
   if (!enabled) return children;
 
+  const dialog = (
+    <DialogContent
+      dataTest={dataTest}
+      shown={shown}
+      dialogId={mobileDialogID}
+      onClose={handleOutMobile}
+    >
+      {content}
+    </DialogContent>
+  );
+
   return (
     <>
       <StyledTooltipChildren
@@ -70,27 +81,7 @@ const MobileDialog = ({
       </StyledTooltipChildren>
       {enabled &&
         render &&
-        (insidePortal ? (
-          <Portal renderInto="dialogs">
-            <DialogContent
-              dataTest={dataTest}
-              shown={shown}
-              dialogId={mobileDialogID}
-              onClose={handleOutMobile}
-            >
-              {content}
-            </DialogContent>
-          </Portal>
-        ) : (
-          <DialogContent
-            dataTest={dataTest}
-            shown={shown}
-            dialogId={mobileDialogID}
-            onClose={handleOutMobile}
-          >
-            {content}
-          </DialogContent>
-        ))}
+        (renderInPortal ? <Portal renderInto="dialogs">{dialog}</Portal> : dialog)}
     </>
   );
 };

@@ -31,7 +31,7 @@ Table below contains all types of the props available in the Popover component.
 | preferredAlign    | [`enum`](#enum)         | `"start"`           | The preferred position to choose [See Functional specs](#functional-specs).                                  |
 | preferredPosition | [`enum`](#enum)         | `"bottom"`          | The preferred align to choose [See Functional specs](#functional-specs).                                     |
 | overlapped        | `boolean`               | `false`             | If `true`, the content of Popover will overlap the trigger children.                                         |
-| insidePortal      | `boolean`               | `true`              | If `false`, the content of Popover will not be rendered inside `Portal`                                      |
+| renderInPortal    | `boolean`               | `true`              | Optional prop, set it to `false` if you're rendering Popover inside a custom portal, defaults to `true`      |
 | width             | `string`                |                     | Width of popover, if not set the with is set to `auto`.                                                      |
 | onClose           | `() => void \| Promise` |                     | Function for handling onClose.                                                                               |
 | onOpen            | `() => void \| Promise` |                     | Function for handling onOpen.                                                                                |

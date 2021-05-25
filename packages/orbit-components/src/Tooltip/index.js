@@ -16,7 +16,7 @@ const Tooltip = ({
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
-  insidePortal,
+  renderInPortal = true,
   preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
@@ -30,7 +30,7 @@ const Tooltip = ({
       enabled={enabled}
       content={content}
       size={size}
-      insidePortal={insidePortal}
+      renderInPortal={renderInPortal}
       preferredPosition={preferredPosition}
       preferredAlign={preferredAlign}
       stopPropagation={stopPropagation}

@@ -10,6 +10,7 @@ export default {
           Bottom
         </Heading>
         <Popover
+          renderInPortal={false}
           preferredPosition="bottom"
           content={
             <Stack spacing="small">
@@ -40,6 +41,7 @@ export default {
           Top
         </Heading>
         <Popover
+          renderInPortal={false}
           preferredPosition="top"
           content={
             <Stack spacing="small">

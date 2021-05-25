@@ -8,7 +8,7 @@ export default {
       <Text>
         If you&apos;re building a travel app, you should give{" "}
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           content={
             <Stack>
               <Heading inverted as="h3" type="title3">
@@ -25,7 +25,7 @@ export default {
       <Alert icon={<CheckCircle />} type="success">
         If you&apos;re building a travel app, you should give{" "}
         <Tooltip
-          insidePortal={false}
+          renderInPortal={false}
           content={
             <Stack>
               <Heading inverted as="h3" type="title3">
@@ -41,7 +41,7 @@ export default {
       </Alert>
       <Alert icon={<Visa />} type="warning">
         You{" "}
-        <Tooltip insidePortal={false} content={<Text>Check with your embassy.</Text>}>
+        <Tooltip renderInPortal={false} content={<Text>Check with your embassy.</Text>}>
           <Text>may need a visa</Text>
         </Tooltip>{" "}
         for your trip.
@@ -50,7 +50,7 @@ export default {
         The following text has a tooltip:{" "}
         <Tooltip
           removeUnderlinedText
-          insidePortal={false}
+          renderInPortal={false}
           content={
             <Stack>
               <Heading inverted as="h3" type="title3">

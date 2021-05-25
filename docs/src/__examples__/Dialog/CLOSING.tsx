@@ -10,7 +10,7 @@ export default {
           <Dialog
             title="Accept notifications?"
             description="Stay up to date with all travel possibilities."
-            insidePortal={false}
+            renderInPortal={false}
             primaryAction={
               <Button
                 onClick={() => {

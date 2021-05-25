@@ -15,6 +15,7 @@ const StyledContent = styled.div`
       ${theme.orbit.spaceMedium};
     border-left: 4px solid ${theme.orbit.paletteInkLight};
     font-style: italic;
+    font-weight: 500;
 
     > * + * {
       margin-top: ${theme.orbit.spaceXSmall};

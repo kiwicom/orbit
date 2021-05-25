@@ -45,6 +45,7 @@ const StyledWrapper = styled.a<StyledContainerProps>`
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: ${fullWidth && "100%"};
     ${
@@ -56,6 +57,9 @@ const StyledWrapper = styled.a<StyledContainerProps>`
             align-items: center;
             justify-content: space-between;
           `
+    }
+    &:hover {
+      box-shadow: ${theme.orbit.boxShadowRaised};
     }
   `}
 `;

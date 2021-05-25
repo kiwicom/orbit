@@ -50,14 +50,14 @@ const ContentContainer = styled.div`
 interface ImageContainerProps {
   noLeftPadding?: boolean;
   middleAlign?: boolean;
-  isMediumMobile?: boolean | null;
 }
 
 const ImageContainer = styled.div<ImageContainerProps>`
-  ${({ isMediumMobile, noLeftPadding, theme }) => css`
-    padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceXLarge};
+  ${({ noLeftPadding, theme }) => css`
+    padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceLarge};
     ${noLeftPadding && "padding-left: 0;"}
-    width: ${isMediumMobile ? "346px" : "100%"};
+    width: 100%;
+    max-width: 360px;
     background-color: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.spaceMedium};
   `}
@@ -84,7 +84,7 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
 );
 
 export default function Guideline({ type = "do", title, children }: GuidelineProps) {
-  const { isDesktop, isMediumMobile, isTablet } = useMediaQuery();
+  const { isDesktop, isTablet } = useMediaQuery();
 
   const isImage = object => {
     if (object.props?.children?.props?.className === imageWrapperClass) return true;
@@ -130,23 +130,18 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
             </HeadingWithLink>
             {content}
           </ContentContainer>
-          {images.length === 1 && (
-            <ImageContainer middleAlign isMediumMobile={isMediumMobile}>
-              {images}
-            </ImageContainer>
-          )}
+          {images.length === 1 && <ImageContainer middleAlign>{images}</ImageContainer>}
           {images.length > 1 && (
             <Stack
-              shrink
+              basis="65%"
               direction={isTablet ? "row" : "column"}
               justify={isDesktop ? "end" : "start"}
-              basis="content"
             >
               <Stack shrink direction="column" spacing="XXXSmall">
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={type} />
                 </DoDontHeaderWrapper>
-                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
+                <ImageContainer noLeftPadding>
                   <ImageBorder type={type}>{images[0]}</ImageBorder>
                 </ImageContainer>
               </Stack>
@@ -154,7 +149,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={typeOpposite} />
                 </DoDontHeaderWrapper>
-                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
+                <ImageContainer noLeftPadding>
                   <ImageBorder type={typeOpposite}>{images[1]}</ImageBorder>
                 </ImageContainer>
               </Stack>

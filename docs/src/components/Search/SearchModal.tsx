@@ -7,6 +7,7 @@ import {
   Portal,
   ModalHeader,
   ModalSection,
+  Heading,
   Text,
   mediaQueries,
   useMediaQuery,
@@ -189,9 +190,9 @@ export default function SearchModal({ onClose }: Props) {
                     <StyledMenuItem key={item.path} {...getItemProps({ item, index: itemIndex })}>
                       <div>
                         <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
-                        <Text size="large">{item.description}</Text>
+                        <div>{item.description}</div>
                       </div>
-                      <ChevronRight size="large" />
+                      <ChevronRight size="medium" />
                     </StyledMenuItem>
                   ))}
                 </>

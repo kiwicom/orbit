@@ -21,8 +21,9 @@ interface Props {
   children: React.ReactNode;
 }
 
-const StyledWrapper = styled.div<{ primary: string }>`
+const StyledWrapper = styled.a<{ primary: string }>`
   ${({ theme, primary }) => `
+    display: block;
     padding: 2rem;
     border-radius: 1rem;
     background: ${primary};
@@ -94,7 +95,7 @@ export default function BrandedTile({
   const colorSecondary = color === "product" ? theme.orbit.paletteProductNormal : color.secondary;
 
   return (
-    <StyledWrapper primary={colorPrimary}>
+    <StyledWrapper href={href} target="_blank" rel="noopener noreferrer" primary={colorPrimary}>
       <Stack inline>
         <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
         <StyledHeading>
@@ -107,7 +108,7 @@ export default function BrandedTile({
       <Stack
         inline
         direction="column"
-        largeMobile={{ direction: "row" }}
+        desktop={{ direction: "row" }}
         align="center"
         justify="between"
       >

@@ -120,8 +120,10 @@ export default function Tile({
     );
   };
   return (
-    <div
+    <a
+      href={href}
       css={css`
+        display: block;
         padding: 2rem;
         border-radius: 1rem;
         background: ${theme.orbit.paletteWhite};
@@ -171,6 +173,6 @@ export default function Tile({
         )}
       </div>
       {href && getEndLink()}
-    </div>
+    </a>
   );
 }

@@ -29,9 +29,13 @@ const StyledWrapper = styled.a<{ primary: string }>`
     background: ${primary};
     color: ${theme.orbit.colorTextWhite};
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: 100%;
     flex-direction: column;
+    &:hover {
+      box-shadow: ${theme.orbit.boxShadowRaised};
+    }
   `};
 `;
 

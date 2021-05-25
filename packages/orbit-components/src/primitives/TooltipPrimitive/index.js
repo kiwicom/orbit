@@ -41,6 +41,7 @@ const TooltipPrimitive = ({
   enabled = true,
   tabIndex = "0",
   dataTest,
+  insidePortal = true,
   size = SIZE_OPTIONS.SMALL,
   content,
   preferredPosition,
@@ -103,7 +104,7 @@ const TooltipPrimitive = ({
       >
         {children}
       </StyledTooltipChildren>
-      {enabled && render && (
+      {enabled && render && insidePortal ? (
         <Portal renderInto="tooltips">
           <TooltipContent
             parent={children}
@@ -121,6 +122,22 @@ const TooltipPrimitive = ({
             {content}
           </TooltipContent>
         </Portal>
+      ) : (
+        <TooltipContent
+          parent={children}
+          dataTest={dataTest}
+          shown={shown}
+          size={size}
+          tooltipId={tooltipId}
+          onClose={handleOut}
+          onCloseMobile={handleOutMobile}
+          onEnter={handleIn}
+          preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
+          containerRef={container}
+        >
+          {content}
+        </TooltipContent>
       )}
     </>
   );

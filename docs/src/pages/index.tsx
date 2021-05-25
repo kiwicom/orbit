@@ -68,7 +68,7 @@ export default function Home({ location, path }: Props) {
               css={css`
                 max-width: 20ch;
                 font-size: 3rem;
-                line-height: 1.35;
+                line-height: 1.3;
               `}
             >
               Open source design system for your next travel project.

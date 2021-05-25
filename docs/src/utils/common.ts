@@ -29,5 +29,5 @@ export const getTextFromChildren = (children?: React.ReactNode) => {
   if (typeof children === "number") return children.toString();
   if (Array.isArray(children)) return children.map(child => getTextFromChildren(child)).join(" ");
   if (!children || typeof children !== "object" || !("props" in children)) return "";
-  return children.props.children;
+  return getTextFromChildren(children.props.children);
 };

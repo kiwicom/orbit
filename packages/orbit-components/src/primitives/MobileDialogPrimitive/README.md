@@ -24,6 +24,7 @@ Table below contains all types of the props available in the MobileDialogPrimiti
 | **content**          | `React.Node`       |         | The content to display in the MobileDialogPrimitive.                                                                            |
 | dataTest             | `string`           |         | Optional prop for testing purposes.                                                                                             |
 | enabled              | `boolean`          | `true`  | Enable render of MobileDialogPrimitive                                                                                          |
+| insidePortal         | `boolean`          | `true`  | If `false` the component will not rendered with `Portal`                                                                        |
 | block                | `boolean`          | `false` | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.               |
 | removeUnderlinedText | `boolean`          |         | Removes underline on child component, when underline is not desired.                                                            |
 | stopPropagation      | `boolean`          |         | If `true` the click event on children won't bubble. Useful when you use MobileDialogPrimitive inside another clickable element. |

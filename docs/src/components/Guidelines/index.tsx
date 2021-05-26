@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack, Text, Heading } from "@kiwicom/orbit-components";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants";
 
 import HeadingWithLink from "../HeadingWithLink";
@@ -84,8 +83,6 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
 );
 
 export default function Guideline({ type = "do", title, children }: GuidelineProps) {
-  const { isDesktop, isTablet } = useMediaQuery();
-
   const isImage = object => {
     if (object.props?.children?.props?.className === imageWrapperClass) return true;
     return false;
@@ -121,7 +118,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ) : (
             <CloseCircle color="critical" ariaLabel="Don't" />
           ))}
-        <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
+        <Stack justify="between" shrink direction="column" desktop={{ direction: "row" }}>
           <ContentContainer>
             <HeadingWithLink noId>
               <Heading as="h3" type="title3">
@@ -134,8 +131,10 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           {images.length > 1 && (
             <Stack
               basis="65%"
-              direction={isTablet ? "row" : "column"}
-              justify={isDesktop ? "end" : "start"}
+              direction="column"
+              justify="start"
+              desktop={{ justify: "end" }}
+              tablet={{ direction: "row" }}
             >
               <Stack shrink direction="column" spacing="XXXSmall">
                 <DoDontHeaderWrapper>

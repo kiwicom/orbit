@@ -43,7 +43,11 @@ export const Default = (): React.Node => {
 
 export const withScrollSnap = (): React.Node => {
   const scrollSnapAlign = select("scrollSnapAlign", ["none", "start", "end", "center"], "start");
-  const scrollSnap = select("scrollSnapType", ["none", "inline", "mandatory", "proximity"], "mandatory");
+  const scrollSnap = select(
+    "scrollSnapType",
+    ["none", "inline", "mandatory", "proximity"],
+    "mandatory",
+  );
   const scrollPadding = number("scrollPadding", 0);
 
   return (

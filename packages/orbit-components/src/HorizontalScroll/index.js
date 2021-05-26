@@ -30,7 +30,7 @@ const StyledOverflow = styled.div`
     height: 100%;
     overflow-y: hidden;
     overflow-x: scroll;
-    scroll-snap-type: ${isDragging ? "none" : setSnap};
+    scroll-snap-type: ${isDragging ? "none" : getSnap};
     scroll-padding: ${scrollPadding && `${scrollPadding}px`};
     box-sizing: border-box;
     -ms-overflow-style: none;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Stack } from "@kiwicom/orbit-components";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 import { DoDontHeader, GuidelineType } from ".";
 
@@ -75,6 +74,9 @@ interface GuidelineImagesProps {
 }
 
 export default function GuidelineImages({ children }: GuidelineImagesProps) {
-  const { isDesktop } = useMediaQuery();
-  return <Stack direction={isDesktop ? "row" : "column"}>{children}</Stack>;
+  return (
+    <Stack direction="column" desktop={{ direction: "row" }}>
+      {children}
+    </Stack>
+  );
 }

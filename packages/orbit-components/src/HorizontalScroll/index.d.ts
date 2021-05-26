@@ -25,6 +25,8 @@ import * as Common from "../common/common";
   ```
 */
 
+type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
+
 export interface Props extends Common.Global {
   /** set minimal height */
   readonly minHeight?: number;
@@ -35,6 +37,8 @@ export interface Props extends Common.Global {
   readonly spacing?: Spacing;
   /** content of HorizontalScroll */
   readonly children: React.ReactNode;
+  readonly scrollSnap?: ScrollSnap;
+  readonly scrollPadding?: number;
 }
 
 declare const HorizontalScroll: React.FunctionComponent<Props>;

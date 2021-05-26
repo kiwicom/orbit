@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-const setSnap = ({ scrollSnap }: {| scrollSnap: ScrollSnap |}) => {
+const getSnap = ({ scrollSnap }: {| scrollSnap: ScrollSnap |}) => {
   if (scrollSnap === "mandatory") return "x mandatory";
   if (scrollSnap === "proximity") return "x proximity";
 

@@ -107,7 +107,10 @@ export default function DocLayout({
                 }
               />
               <StyledMiddle>
-                <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                <Hide
+                  block
+                  on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+                >
                   <StyledDocNavigationWidth>
                     <StyledDocNavigationWrapper>
                       <DocNavigation currentUrl={path} />

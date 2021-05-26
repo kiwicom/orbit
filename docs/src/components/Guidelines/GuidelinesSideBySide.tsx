@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack } from "@kiwicom/orbit-components";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 import { GuidelineType } from ".";
 

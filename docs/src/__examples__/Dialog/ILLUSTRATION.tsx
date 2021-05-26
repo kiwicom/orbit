@@ -11,6 +11,7 @@ export default {
             title="Add meal?"
             description="Enjoy a tasty meal on your journey."
             illustration={<Illustration name="Meal" alt="" />}
+            renderInPortal={false}
             primaryAction={
               <Button
                 onClick={() => {

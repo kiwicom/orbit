@@ -8,7 +8,11 @@ export default {
         <Heading type="title3" as="h4">
           Start
         </Heading>
-        <Tooltip preferredAlign="start" content={<Text>Select a flight before continuing.</Text>}>
+        <Tooltip
+          renderInPortal={false}
+          preferredAlign="start"
+          content={<Text>Select a flight before continuing.</Text>}
+        >
           <Button size="large" disabled>
             Book
           </Button>
@@ -18,7 +22,11 @@ export default {
         <Heading type="title3" as="h4">
           Center
         </Heading>
-        <Tooltip preferredAlign="center" content={<Text>Select a flight before continuing.</Text>}>
+        <Tooltip
+          renderInPortal={false}
+          preferredAlign="center"
+          content={<Text>Select a flight before continuing.</Text>}
+        >
           <Button size="large" disabled>
             Book
           </Button>
@@ -28,7 +36,11 @@ export default {
         <Heading type="title3" as="h4">
           End
         </Heading>
-        <Tooltip preferredAlign="end" content={<Text>Select a flight before continuing.</Text>}>
+        <Tooltip
+          renderInPortal={false}
+          preferredAlign="end"
+          content={<Text>Select a flight before continuing.</Text>}
+        >
           <Button size="large" disabled>
             Book
           </Button>

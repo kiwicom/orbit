@@ -9,6 +9,7 @@ export default {
     return (
       <Stack>
         <Popover
+          renderInPortal={false}
           content={
             <Stack>
               <Stack align="center">

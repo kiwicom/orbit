@@ -19,7 +19,7 @@ export type InputSize = "small" | "normal";
 export type Carrier = {
   code: string;
   name: string;
-  type?: "airline" | "bus" | "train" | "ferry" | "private_transfer";
+  type?: "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
 };
 
 export type DataAttrs = {

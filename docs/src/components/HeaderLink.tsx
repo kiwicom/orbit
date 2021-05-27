@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Figma, Github } from "@icons-pack/react-simple-icons";
-import { ButtonLink } from "@kiwicom/orbit-components";
+import { Button, ButtonLink } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 
 const StyledContainer = styled.div`
-  padding: 0 12px;
+  padding: 0 20px;
 `;
 
 interface Props {
   href: string;
 }
 
-const FancyLink = ({ href }: Props) => {
+const HeaderLink = ({
+  as: ButtonComponent,
+  href,
+}: Props & {
+  as: typeof Button | typeof ButtonLink;
+}) => {
   const getDomain = () => {
     const matches = href.match(/\/\/(?<domain>[a-zA-Z.0-9]*)/);
     if (matches && matches.groups) {
@@ -45,19 +50,21 @@ const FancyLink = ({ href }: Props) => {
     }
   };
   return (
-    <StyledContainer>
-      <ButtonLink
-        compact
-        external
-        href={href}
-        iconLeft={getUsedIcon()}
-        iconRight={<NewWindow ariaLabel="Opens in new window" />}
-        type="secondary"
-      >
-        {getUsedText()}
-      </ButtonLink>
-    </StyledContainer>
+    <ButtonComponent
+      external
+      href={href}
+      iconLeft={getUsedIcon()}
+      iconRight={<NewWindow ariaLabel="Opens in new window" />}
+      type="secondary"
+    >
+      {getUsedText()}
+    </ButtonComponent>
   );
 };
 
-export default FancyLink;
+export const HeaderButton = (props: Props) => <HeaderLink as={Button} {...props} />;
+export const HeaderButtonLink = (props: Props) => (
+  <StyledContainer>
+    <HeaderLink as={ButtonLink} {...props} />
+  </StyledContainer>
+);

@@ -9,11 +9,26 @@ interface Props {
 }
 
 export default function Head({ title, hasSiteName, description, path }: Props) {
+  const [hasJs, setHasJs] = React.useState<boolean>(false);
+
   const pageTitle = hasSiteName ? `${title} | Orbit` : title;
   const url = `https://orbit.kiwi${path}`;
+
+  React.useEffect(() => {
+    setHasJs(true);
+  }, []);
+
   return (
     <Helmet>
-      <html lang="en" />
+      <html lang="en" className={hasJs ? "js" : "no-js"} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        document.documentElement.classList.remove("no-js");
+        document.documentElement.classList.add("js");
+      `,
+        }}
+      />
       <meta charSet="utf-8" />
       <title>{pageTitle}</title>
       {description && <meta name="description" content={description} />}

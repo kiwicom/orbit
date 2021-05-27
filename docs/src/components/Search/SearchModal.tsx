@@ -177,8 +177,8 @@ export default function SearchModal({ onClose }: Props) {
                 `}
               >
                 {isOpen && (
-                  <Text as="p" size="large">
-                    We found <b>{results.length} generic results</b> matching your results
+                  <Text as="p">
+                    We found <b>{results.length} results</b> matching your search
                   </Text>
                 )}
               </div>

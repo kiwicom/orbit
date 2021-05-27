@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -15,8 +15,8 @@
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
-    "@kiwicom/babel-plugin-orbit-components": "^2.3.0",
-    "@kiwicom/orbit-design-tokens": "^0.13.6",
+    "@kiwicom/babel-plugin-orbit-components": "^2.4.0",
+    "@kiwicom/orbit-design-tokens": "^0.13.7",
     "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -61,11 +61,11 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-components": "^0.114.2",
+    "@kiwicom/orbit-components": "^0.115.0",
     "@streamlinehq/streamlinehq": "^2.1.0",
     "@types/react-helmet": "^6.1.1",
     "body-scroll-lock": "^3.1.5",
-    "eslint-plugin-orbit-components": "^0.5.1",
+    "eslint-plugin-orbit-components": "^0.5.2",
     "fuzzaldrin-plus": "^0.6.0",
     "prism-react-renderer": "^1.1.1",
     "react-helmet": "^6.1.0",

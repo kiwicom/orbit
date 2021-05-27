@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.12.0...@kiwicom/orbit.kiwi@0.13.0) (2021-05-27)
+
+
+### Bug Fixes
+
+* add height to example ([87c8be6](https://github.com/kiwicom/orbit/commit/87c8be664ca46ecada6a8beab6cd4be7a1526c4a))
+* add missing InlineToken shortcode ([7cc317d](https://github.com/kiwicom/orbit/commit/7cc317d94053abace40fd9a0535f48d76c17a185))
+* allow guidelines to be side by side ([2d8ea67](https://github.com/kiwicom/orbit/commit/2d8ea67fd18bd85972c5f81e1cc32c28040ba235))
+* constrain guideline images (stop overflow) ([e55e43b](https://github.com/kiwicom/orbit/commit/e55e43ba0be6223b487adbd24d1527a7b1f2c314))
+* limit size of action images ([e227351](https://github.com/kiwicom/orbit/commit/e2273512f21d4a5805d4ef4357ca7b5d715f4699))
+* make base font size always the same ([51fff43](https://github.com/kiwicom/orbit/commit/51fff434bb7a187b781aef68774627c066600d7a))
+* more space for content at smaller sizes ([2b88295](https://github.com/kiwicom/orbit/commit/2b88295aa8660f6fb6ec82d2f62b61a726cc716f))
+* prettier ([fd99c61](https://github.com/kiwicom/orbit/commit/fd99c61e2adc5c4edec05c40b08a4defa1198527))
+* react tab naming ([a57c166](https://github.com/kiwicom/orbit/commit/a57c166c7be3d2442ad7598fe034cf251d248bed))
+* remove extra InlineToken shortcode ([6d3d32c](https://github.com/kiwicom/orbit/commit/6d3d32cbf7d5539998cd692da951a5b0b2c3e590))
+* remove extra padding for responsivity ([df1b814](https://github.com/kiwicom/orbit/commit/df1b8142daa7f52cd1e9f626c5829cb352fe3c78))
+* spelling issues ([7435286](https://github.com/kiwicom/orbit/commit/7435286b49780c3d70fff3490950a26309cf26eb))
+* stop using useMediaQuery hook for Guidelines ([182bafe](https://github.com/kiwicom/orbit/commit/182bafeb611642b3066296322450bba3d9e70156))
+
+
+### Features
+
+* add icons on landing page ([#2944](https://github.com/kiwicom/orbit/issues/2944)) ([5d9c062](https://github.com/kiwicom/orbit/commit/5d9c06287d53f8dda053e5dfe18d656203074ed9))
+* set up basic typography ([9a34461](https://github.com/kiwicom/orbit/commit/9a34461055ab27f5e3789e721e4f4db6ca170924))
+* **docs:** remark plugin for fetching Figma images ([e9646b6](https://github.com/kiwicom/orbit/commit/e9646b6fed053e4ad161990acb7ab4a0c4c12797))
+* **docs:** remark plugin for fetching Figma images ([c9ee901](https://github.com/kiwicom/orbit/commit/c9ee901dbb8325880013aab192c7631df861f6a7))
+* **docs:** remark plugin for fetching Figma images ([e52cf6c](https://github.com/kiwicom/orbit/commit/e52cf6c1af0de73b5c98b9ebba22c08b2b1fe045))
+* **docs:** remark plugin for fetching Figma images ([1c6ea9a](https://github.com/kiwicom/orbit/commit/1c6ea9a97bc0510916c2a024f0ee51389c25d653))
+
+
+
+
+
 # [0.12.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.11.2...@kiwicom/orbit.kiwi@0.12.0) (2021-05-17)
 
 

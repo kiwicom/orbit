@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.115.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.2...@kiwicom/orbit-components@0.115.0) (2021-05-27)
+
+
+### Bug Fixes
+
+* **HorizontalScroll:** getSnap ([9823909](https://github.com/kiwicom/orbit/commit/98239092d0be2e23ba8ffab2b4bb0b268bdbb52d))
+
+
+### Features
+
+* **CarrierLogo:** add kiwicom type fallback ([#2959](https://github.com/kiwicom/orbit/issues/2959)) ([041d8d6](https://github.com/kiwicom/orbit/commit/041d8d6a6d4d8acf6f7cdd78282f132010949cf1))
+* **Dialog:** add insidePortal prop ([dbe7785](https://github.com/kiwicom/orbit/commit/dbe7785ae8326663500e92c207143f42f1ad92fd))
+* **HorizontalScroll:** add scroll-snap-type ([#2964](https://github.com/kiwicom/orbit/issues/2964)) ([837685d](https://github.com/kiwicom/orbit/commit/837685d29aa200c19f5c3549d12fa756bb7c628b))
+* **Illustration:** add GroundTransport404 ([#2966](https://github.com/kiwicom/orbit/issues/2966)) ([24771e2](https://github.com/kiwicom/orbit/commit/24771e2adf737137a4fe85bc62effa8f2c32342e))
+* **MobileDialog:** add insidePortal prop ([3b55af6](https://github.com/kiwicom/orbit/commit/3b55af6800f04d29318a9a6f25f635c106a684ab))
+* **Modal:** add disableAnimation prop ([306455b](https://github.com/kiwicom/orbit/commit/306455b5c8bf6a303781d0b477c45fd2be76ef12))
+* **Popover:** add insidePortal prop ([14d126f](https://github.com/kiwicom/orbit/commit/14d126f808720d0e08c08aea3c1de9a0efc94824))
+* **TextLink:** add status types ([#2915](https://github.com/kiwicom/orbit/issues/2915)) ([970edc7](https://github.com/kiwicom/orbit/commit/970edc7fe16bb710754db7020c4ef2e2ab63d72c))
+* **Tooltip:** add insidePortal prop ([fa127e8](https://github.com/kiwicom/orbit/commit/fa127e8e55164295bfb22d189153f31170e609ad))
+* **TooltipPrimitive:** add insidePortal prop ([4cb5dde](https://github.com/kiwicom/orbit/commit/4cb5ddee0a88872f97b4a00fbb2d47bfe0c6f440))
+* introduce BadgeList component ([#2937](https://github.com/kiwicom/orbit/issues/2937)) ([b2b68ec](https://github.com/kiwicom/orbit/commit/b2b68ecc5b0eac97c0c3c628f7da2cc836bb6050))
+
+
+
+
+
 ## [0.114.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.1...@kiwicom/orbit-components@0.114.2) (2021-05-17)
 
 

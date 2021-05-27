@@ -7,17 +7,20 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "bootstrap:ci": "npx --yes lerna bootstrap -- --frozen-lockfile",
     "orbit-components": "yarn workspace @kiwicom/orbit-components",
     "orbit-design-tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "orbit-kiwi": "yarn workspace @kiwicom/orbit.kiwi",
     "build": "yarn orbit-design-tokens build && yarn orbit-components build",
-    "build-ci": "lerna bootstrap && lerna run --scope @kiwicom/orbit-components build:size",
+    "build-ci": "lerna bootstrap && yarn orbit-design-tokens build && yarn orbit-components build",
     "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",
-    "check-links": "remark -e '.mdx' -fq -u validate-links docs/src/documentation --no-config && node docs/utils/check-links.js",
+    "check-links": "yarn check-links:src && yarn check-links:dist",
+    "check-links:src": "remark -e '.mdx' -fq -u validate-links docs/src/documentation --no-config",
+    "check-links:dist": "node docs/utils/check-links.js",
     "flow:check": "flow check",
     "test": "jest",
     "test-ci": "jest --ci --maxWorkers=2 && lerna run test",
@@ -29,13 +32,8 @@
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "clean:docs": "lerna run --scope @kiwicom/orbit.kiwi clean",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:build": "yarn install --frozen-lockfile && yarn bootstrap && yarn build && yarn orbit-kiwi build"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
+    "orbit-kiwi:build": "yarn bootstrap:ci && yarn orbit-design-tokens build:lib && yarn orbit-components build:lib && yarn orbit-kiwi build",
+    "prepare": "husky install"
   },
   "engines": {
     "yarn": ">=1.19.1"
@@ -87,7 +85,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.12.0",
     "browser-sync": "^2.26.14",
-    "browserslist": "^4.14.5",
+    "browserslist": "^4.16.6",
     "camelcase": "^6.1.0",
     "caniuse-db": "^1.0.30001208",
     "capitalize": "^2.0.3",
@@ -118,7 +116,7 @@
     "globby": "^11.0.2",
     "gray-matter": "^4.0.2",
     "gulp": "^4.0.2",
-    "husky": "^4.3.0",
+    "husky": "^6.0.0",
     "isomorphic-unfetch": "^3.1.0",
     "jest": "^26.6.3",
     "jest-matchmedia-mock": "^1.1.0",
@@ -154,7 +152,7 @@
     "rimraf": "^3.0.2",
     "sharp": "^0.27.0",
     "styled-components": "^5.2.2",
-    "surge": "^0.21.7",
+    "surge": "^0.23.0",
     "svg2ttf": "^5.2.0",
     "svgicons2svgfont": "^9.0.4",
     "through2": "^4.0.2",

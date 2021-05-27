@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/TextLink";
 
-export type Type = "primary" | "secondary";
+export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical";
 
 export interface Props extends Common.Global {
   readonly ariaCurrent?: string;

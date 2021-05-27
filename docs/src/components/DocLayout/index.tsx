@@ -11,11 +11,13 @@ import {
 } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
+import { css } from "styled-components";
 
-import defaultTheme from "../../theme";
+import theme from "../../theme";
 import * as components from "../../mdx-components";
 import { DevModeProvider } from "../../hooks/useDevMode";
 import Head from "../Head";
+import BaseStyles from "../BaseStyles";
 import AddBookmark from "../AddBookmark";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
@@ -83,9 +85,10 @@ export default function DocLayout({
         description={description}
         path={path}
       />
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={theme}>
         <DevModeProvider>
           <BookmarkProvider page={path} location={location}>
+            <BaseStyles />
             <StyledWrapper>
               <Navbar
                 location={location}
@@ -104,7 +107,10 @@ export default function DocLayout({
                 }
               />
               <StyledMiddle>
-                <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                <Hide
+                  block
+                  on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+                >
                   <StyledDocNavigationWidth>
                     <StyledDocNavigationWrapper>
                       <DocNavigation currentUrl={path} />
@@ -129,9 +135,17 @@ export default function DocLayout({
                       <Box padding={{ bottom: "XLarge" }}>
                         <Stack inline align="center" spaceAfter="small">
                           <AddBookmark />
-                          <Heading as="h1" type="display">
-                            {title}
-                          </Heading>
+                          <div
+                            css={css`
+                              /* align with the bookmark icon */
+                              position: relative;
+                              top: 1px;
+                            `}
+                          >
+                            <Heading as="h1" type="title1">
+                              {title}
+                            </Heading>
+                          </div>
                         </Stack>
                         {description && (
                           <Box padding={{ left: "XXLarge" }}>
@@ -196,8 +210,8 @@ export default function DocLayout({
                                 Do,
                                 Dont,
                                 ImageContainer,
-                                ReactExample,
                                 InlineToken,
+                                ReactExample,
                               }}
                             >
                               {children}

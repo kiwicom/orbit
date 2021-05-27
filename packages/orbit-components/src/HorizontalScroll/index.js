@@ -1,14 +1,14 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import useScrollBox from "./useScroll";
 import Stack from "../Stack";
 
-import type { Props } from ".";
+import type { Props, ScrollSnap } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ isDragging, minHeight }) => `
+  ${({ isDragging, minHeight }) => css`
     position: relative;
     width: 100%;
     min-height: ${minHeight}px;
@@ -17,22 +17,33 @@ const StyledWrapper = styled.div`
   `}
 `;
 
+const getSnap = ({ scrollSnap }: {| scrollSnap: ScrollSnap |}) => {
+  if (scrollSnap === "mandatory") return "x mandatory";
+  if (scrollSnap === "proximity") return "x proximity";
+
+  return scrollSnap;
+};
+
 const StyledOverflow = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  box-sizing: border-box;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  scrollbar-width: none;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  ${({ isDragging, scrollPadding }) => css`
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: ${isDragging ? "none" : getSnap};
+    scroll-padding: ${scrollPadding && `${scrollPadding}px`};
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  `}
 `;
 
 const StyledContainer = styled.div`
-  ${({ isDragging }) => `
+  ${({ isDragging }) => css`
     height: 100%;
     display: inline-flex;
     pointer-events: ${isDragging && "none"};
@@ -42,6 +53,8 @@ const StyledContainer = styled.div`
 const HorizontalScroll = ({
   children,
   spacing = "small",
+  scrollSnap = "none",
+  scrollPadding,
   dataTest,
   minHeight,
   ...props
@@ -51,7 +64,12 @@ const HorizontalScroll = ({
 
   return (
     <StyledWrapper {...props} isDragging={isDragging} minHeight={minHeight} data-test={dataTest}>
-      <StyledOverflow ref={scrollWrapper}>
+      <StyledOverflow
+        ref={scrollWrapper}
+        scrollSnap={scrollSnap}
+        scrollPadding={scrollPadding}
+        isDragging={isDragging}
+      >
         <StyledContainer isDragging={isDragging}>
           <Stack inline spacing={spacing}>
             {children}

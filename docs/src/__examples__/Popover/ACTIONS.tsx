@@ -10,6 +10,7 @@ export default {
     const [is4star, setIs4star] = React.useState(true);
     return (
       <Popover
+        renderInPortal={false}
         actions={
           <Stack direction="row" justify="end">
             <Button type="primarySubtle" onClick={() => setIsOpen(false)}>

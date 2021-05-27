@@ -25,7 +25,8 @@ const ImageContainer = ({ align = "center", border, size = "large", children }: 
     <div
       css={css`
         margin: ${getContainerMargin()};
-        width: ${getContainerWidth()};
+        width: 100%;
+        max-width: ${getContainerWidth()};
         ${border && `border: 1px solid ${defaultTheme.orbit.borderColorTableCell};`}
       `}
     >

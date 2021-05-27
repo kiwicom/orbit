@@ -10,6 +10,7 @@ declare module "@kiwicom/orbit-components/lib/Dialog";
 export interface Props extends Common.Global {
   readonly title: React.ReactNode;
   readonly description?: React.ReactNode;
+  readonly renderInPortal?: boolean;
   readonly illustration?: React.ReactNode;
   readonly primaryAction: React.ReactNode;
   readonly secondaryAction?: React.ReactNode;

@@ -12,6 +12,7 @@ export const CARRIER_TYPE_OPTIONS = {
   TRAIN: "train",
   PRIVATE_TRANSFER: "private_transfer",
   FERRY: "ferry",
+  KIWICOM: "kiwicom",
 };
 
 export const BASE_URL = "//images.kiwi.com";

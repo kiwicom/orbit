@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, TableBody } from "@kiwicom/orbit-components";
+import { Table, TableBody, Heading } from "@kiwicom/orbit-components";
 
 import HeadingWithLink from "../HeadingWithLink";
 import StatusTableHead from "./StatusTableHead";
@@ -63,7 +63,11 @@ export const ComponentStatusList = () => (
   <>
     {Object.values(Groups).map(group => (
       <React.Fragment key={group}>
-        <HeadingWithLink headingLevel={2}>{group}</HeadingWithLink>
+        <HeadingWithLink>
+          <Heading as="h2" type="title2">
+            {group}
+          </Heading>
+        </HeadingWithLink>
         <Table>
           <StatusTableHead group={group} />
           <TableBody>

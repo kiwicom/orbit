@@ -124,7 +124,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
           {searchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
           {docNavigation ? (
             <>
-              <Hide block on={["desktop", "largeDesktop"]}>
+              <Hide block on={["largeDesktop"]}>
                 <Button
                   type="white"
                   circled
@@ -133,7 +133,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   onClick={() => setMenuOpen(true)}
                 />
               </Hide>
-              <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+              <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
                 <Button
                   type="white"
                   iconLeft={<StarEmpty />}
@@ -186,7 +186,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                       <ModalHeader
                         title={
                           <>
-                            <Hide block on={["desktop", "largeDesktop"]}>
+                            <Hide block on={["largeDesktop"]}>
                               <Stack flex direction="column" align="stretch" spacing="large">
                                 {/* TODO: ensure that tabs are accessible, code below is just guesswork */}
                                 <StyledTabList role="tablist">
@@ -225,7 +225,13 @@ const Navbar = ({ location, docNavigation }: Props) => {
                             </Hide>
                             <Hide
                               block
-                              on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}
+                              on={[
+                                "smallMobile",
+                                "mediumMobile",
+                                "largeMobile",
+                                "tablet",
+                                "desktop",
+                              ]}
                             >
                               <Stack flex align="center">
                                 <div>Your bookmarks</div>
@@ -238,7 +244,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         }
                       />
                       <ModalSection>
-                        <Hide block on={["desktop", "largeDesktop"]}>
+                        <Hide block on={["largeDesktop"]}>
                           {activeTab === "navigation" && (
                             <div
                               tabIndex={0}
@@ -262,7 +268,10 @@ const Navbar = ({ location, docNavigation }: Props) => {
                             </div>
                           )}
                         </Hide>
-                        <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                        <Hide
+                          block
+                          on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+                        >
                           <Bookmarks />
                         </Hide>
                       </ModalSection>
@@ -285,7 +294,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                     </>
                   )}
                   <ModalFooter>
-                    <Hide block on={["desktop", "largeDesktop"]}>
+                    <Hide block on={["largeDesktop"]}>
                       {activeTab === "bookmarks" && editingBookmarks ? (
                         <>
                           <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
@@ -309,7 +318,10 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         </Button>
                       )}
                     </Hide>
-                    <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+                    <Hide
+                      block
+                      on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+                    >
                       {!editingBookmarks && (
                         <Button type="secondary" onClick={() => setEditingBookmarks(true)}>
                           Edit bookmarks

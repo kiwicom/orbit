@@ -29,6 +29,7 @@ const Popover = ({
   onOpen,
   fixed,
   actions,
+  renderInPortal = true,
 }: Props): React.Node => {
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
@@ -121,6 +122,26 @@ const Popover = ({
     setShownWithTimeout,
     setRenderWithTimeout,
   ]);
+
+  const popover = (
+    <PopoverContentWrapper
+      shown={shown}
+      offset={{ top: 0, left: 0, ...offset }}
+      width={width}
+      containerRef={container}
+      preferredPosition={preferredPosition}
+      preferredAlign={preferredAlign}
+      onClose={handleOut}
+      dataTest={dataTest}
+      noPadding={noPadding}
+      overlapped={overlapped}
+      fixed={fixed}
+      actions={actions}
+    >
+      {content}
+    </PopoverContentWrapper>
+  );
+
   return (
     <>
       <StyledPopoverChild
@@ -130,26 +151,7 @@ const Popover = ({
       >
         {children}
       </StyledPopoverChild>
-      {render && (
-        <Portal renderInto="popovers">
-          <PopoverContentWrapper
-            shown={shown}
-            offset={{ top: 0, left: 0, ...offset }}
-            width={width}
-            containerRef={container}
-            preferredPosition={preferredPosition}
-            preferredAlign={preferredAlign}
-            onClose={handleOut}
-            dataTest={dataTest}
-            noPadding={noPadding}
-            overlapped={overlapped}
-            fixed={fixed}
-            actions={actions}
-          >
-            {content}
-          </PopoverContentWrapper>
-        </Portal>
-      )}
+      {render && (renderInPortal ? <Portal renderInto="popovers">{popover}</Portal> : popover)}
     </>
   );
 };

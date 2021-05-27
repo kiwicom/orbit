@@ -12,6 +12,7 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly enabled?: boolean;
   readonly tabIndex?: string | number;
+  readonly renderInPortal?: boolean;
   readonly content: React.ReactNode;
   readonly stopPropagation?: boolean;
   readonly removeUnderlinedText?: boolean;

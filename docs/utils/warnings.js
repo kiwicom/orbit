@@ -1,3 +1,10 @@
+const throwInCI = varName => {
+  if (process.env.CI)
+    throw new Error(
+      `${varName} is missing from the environment, make sure to add it to the GitHub Actions workflow.`,
+    );
+};
+
 const warnMissingAccessToken = error => {
   if (typeof error.missing === "undefined") {
     console.error(error);
@@ -7,6 +14,7 @@ const warnMissingAccessToken = error => {
     return;
   }
   if (error.missing.includes("GH_TOKEN")) {
+    throwInCI("GH_TOKEN");
     console.warn("Missing an access token for GitHub. Please create one.");
     console.info(
       "The token is needed to display the Contributors component, which is based on the GitHub API.",
@@ -19,6 +27,7 @@ const warnMissingAccessToken = error => {
 
 const warnMissingFigmaToken = error => {
   if (error.missing.includes("FIGMA_TOKEN")) {
+    throwInCI("FIGMA_TOKEN");
     console.warn("Missing an access token for Figma files API. Please create one.");
     console.info(
       "The token is needed to be able to fetch and store images from Figma API.",

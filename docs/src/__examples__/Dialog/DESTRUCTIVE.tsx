@@ -10,6 +10,7 @@ export default {
           <Dialog
             title="Remove traveler?"
             description="You can't undo this."
+            renderInPortal={false}
             primaryAction={
               <Button
                 onClick={() => {

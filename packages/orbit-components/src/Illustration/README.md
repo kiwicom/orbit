@@ -59,6 +59,7 @@ Table below contains all types of the props available in Illustration component.
 | `"Improve"`                     |
 | `"Insurance"`                   |
 | `"InviteAFriend"`               |
+| `"GroundTransport404"`          |
 | `"Login"`                       |
 | `"Lounge"`                      |
 | `"Mailbox"`                     |

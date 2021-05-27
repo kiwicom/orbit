@@ -5,6 +5,7 @@ import { ChevronDown } from "@kiwicom/orbit-components/icons";
 export default {
   Example: () => (
     <Popover
+      renderInPortal={false}
       content={
         <Stack spacing="small">
           <ButtonLink

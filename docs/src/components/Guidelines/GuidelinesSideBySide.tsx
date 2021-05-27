@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack } from "@kiwicom/orbit-components";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 import { GuidelineType } from ".";
 
@@ -19,16 +18,12 @@ const Wrapper = styled.div<GuidelineType>`
   `}
 `;
 
-interface StyledContainerProps {
-  isTablet?: boolean | null;
-}
-
-const StyledContainer = styled.div<StyledContainerProps>`
-  ${({ isTablet, theme }) => css`
+const StyledContainer = styled.div`
+  ${({ theme }) => css`
     padding: 0 ${theme.orbit.spaceLarge};
     background-color: ${theme.orbit.paletteCloudLight};
     border-radius: 16px;
-    width: ${isTablet ? "50%" : "100%"};
+    width: 100%;
   `}
 `;
 
@@ -44,9 +39,8 @@ const GuidelineItem = ({ children, type }: GuidelineItemProps) => (
 );
 
 const GuidelineContainer = ({ children, type }) => {
-  const { isTablet } = useMediaQuery();
   return (
-    <StyledContainer isTablet={isTablet}>
+    <StyledContainer>
       <Wrapper type={type}>
         {React.Children.map(children.props?.children, child => (
           <GuidelineItem type={type}>{child.props.children}</GuidelineItem>
@@ -63,7 +57,9 @@ export const Dont = ({ children }) => (
 );
 
 export default function GuidelinesSideBySide({ children }) {
-  const { isTablet } = useMediaQuery();
-
-  return <Stack direction={isTablet ? "row" : "column"}>{children}</Stack>;
+  return (
+    <Stack direction="column" tablet={{ direction: "row" }}>
+      {children}
+    </Stack>
+  );
 }

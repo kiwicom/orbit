@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack, Text, Heading } from "@kiwicom/orbit-components";
-import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { imageWrapperClass } from "gatsby-remark-images/constants";
 
 import HeadingWithLink from "../HeadingWithLink";
@@ -50,14 +49,14 @@ const ContentContainer = styled.div`
 interface ImageContainerProps {
   noLeftPadding?: boolean;
   middleAlign?: boolean;
-  isMediumMobile?: boolean | null;
 }
 
 const ImageContainer = styled.div<ImageContainerProps>`
-  ${({ isMediumMobile, noLeftPadding, theme }) => css`
-    padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceXLarge};
+  ${({ noLeftPadding, theme }) => css`
+    padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceLarge};
     ${noLeftPadding && "padding-left: 0;"}
-    width: ${isMediumMobile ? "346px" : "100%"};
+    width: 100%;
+    max-width: 360px;
     background-color: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.spaceMedium};
   `}
@@ -84,8 +83,6 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
 );
 
 export default function Guideline({ type = "do", title, children }: GuidelineProps) {
-  const { isDesktop, isMediumMobile, isTablet } = useMediaQuery();
-
   const isImage = object => {
     if (object.props?.children?.props?.className === imageWrapperClass) return true;
     return false;
@@ -121,7 +118,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
           ) : (
             <CloseCircle color="critical" ariaLabel="Don't" />
           ))}
-        <Stack justify="between" shrink direction={isDesktop ? "row" : "column"}>
+        <Stack justify="between" shrink direction="column" desktop={{ direction: "row" }}>
           <ContentContainer>
             <HeadingWithLink noId>
               <Heading as="h3" type="title3">
@@ -130,23 +127,20 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
             </HeadingWithLink>
             {content}
           </ContentContainer>
-          {images.length === 1 && (
-            <ImageContainer middleAlign isMediumMobile={isMediumMobile}>
-              {images}
-            </ImageContainer>
-          )}
+          {images.length === 1 && <ImageContainer middleAlign>{images}</ImageContainer>}
           {images.length > 1 && (
             <Stack
-              shrink
-              direction={isTablet ? "row" : "column"}
-              justify={isDesktop ? "end" : "start"}
-              basis="content"
+              basis="65%"
+              direction="column"
+              justify="start"
+              desktop={{ justify: "end" }}
+              tablet={{ direction: "row" }}
             >
               <Stack shrink direction="column" spacing="XXXSmall">
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={type} />
                 </DoDontHeaderWrapper>
-                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
+                <ImageContainer noLeftPadding>
                   <ImageBorder type={type}>{images[0]}</ImageBorder>
                 </ImageContainer>
               </Stack>
@@ -154,7 +148,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
                 <DoDontHeaderWrapper>
                   <DoDontHeader type={typeOpposite} />
                 </DoDontHeaderWrapper>
-                <ImageContainer isMediumMobile={isMediumMobile} noLeftPadding>
+                <ImageContainer noLeftPadding>
                   <ImageBorder type={typeOpposite}>{images[1]}</ImageBorder>
                 </ImageContainer>
               </Stack>

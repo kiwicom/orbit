@@ -12,7 +12,7 @@ const StyledMiddle = styled.div`
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
     box-sizing: content-box;
-    ${mediaQueries.desktop(css`
+    ${mediaQueries.largeDesktop(css`
       flex-direction: row;
       > * + * {
         margin-left: ${theme.orbit.spaceLarge};

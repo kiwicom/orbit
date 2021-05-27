@@ -8,6 +8,7 @@ export default {
       <InputField
         error={!value && "Please enter your email"}
         help="Enter your email in the format name@example.com"
+        placeholder="your@email.com"
         label="Email"
         type="email"
         inputMode="email"

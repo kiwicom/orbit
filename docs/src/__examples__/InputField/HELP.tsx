@@ -7,6 +7,7 @@ export default {
     return (
       <InputField
         help="Enter your email in the format name@example.com"
+        placeholder="your@email.com"
         label="Email"
         type="email"
         inputMode="email"

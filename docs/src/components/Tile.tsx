@@ -47,7 +47,12 @@ const StyledWrapper = styled.a<StyledContainerProps>`
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
-    width: ${fullWidth && "100%"};
+    ${
+      fullWidth &&
+      `
+        width: 100%;
+      `
+    };
     ${
       hasContent
         ? css`

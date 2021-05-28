@@ -1,18 +1,23 @@
 import * as React from "react";
-import { InputField } from "@kiwicom/orbit-components";
+import InputField from "@kiwicom/orbit-components/lib/InputField";
 
 export default {
-  Example: () => (
-    <InputField
-      label="Password"
-      placeholder="paSsw0rd"
-      type="password"
-      help="Use at least one uppercase letter and one number"
-    />
-  ),
+  Example: () => {
+    const [value, setValue] = React.useState("");
+    return (
+      <InputField
+        help="Enter your email in the format name@example.com"
+        placeholder="your@email.com"
+        label="Email"
+        type="email"
+        inputMode="email"
+        value={value}
+        onChange={event => setValue(event.currentTarget.value)}
+      />
+    );
+  },
   info: {
-    title: "Input field help",
-    description:
-      "Help text can guide users to entering proper data. Note that an error message will override the help text.",
+    title: "",
+    description: "",
   },
 };

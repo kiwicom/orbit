@@ -1,19 +1,24 @@
 import * as React from "react";
-import { InputField } from "@kiwicom/orbit-components";
+import InputField from "@kiwicom/orbit-components/lib/InputField";
 
 export default {
-  Example: () => (
-    <InputField
-      label="Password"
-      placeholder="paSsw0rd"
-      type="password"
-      help="Use at least one uppercase letter and one number"
-      error="Your password must contain a number"
-    />
-  ),
+  Example: () => {
+    const [value, setValue] = React.useState("");
+    return (
+      <InputField
+        error={!value && "Please enter your email"}
+        help="Enter your email in the format name@example.com"
+        placeholder="your@email.com"
+        label="Email"
+        type="email"
+        inputMode="email"
+        value={value}
+        onChange={event => setValue(event.currentTarget.value)}
+      />
+    );
+  },
   info: {
-    title: "Error messages",
-    description:
-      "Include error messages when validation isn't passed, either on change in focus or form submission. Note that an error message will override any help text.",
+    title: "",
+    description: "",
   },
 };

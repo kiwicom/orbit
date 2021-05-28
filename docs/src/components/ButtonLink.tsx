@@ -42,7 +42,7 @@ function getBgColor({
   }
 }
 
-function getBgColorHover({
+export function getBgColorHover({
   theme,
   type,
   color,
@@ -63,7 +63,7 @@ function getBgColorHover({
   }
 }
 
-function getBgColorFocus({
+export function getBgColorFocus({
   theme,
   type,
   color,
@@ -83,7 +83,7 @@ function getBgColorFocus({
   }
 }
 
-function getBgColorActive({
+export function getBgColorActive({
   theme,
   type,
   color,
@@ -104,12 +104,9 @@ function getBgColorActive({
   }
 }
 
-const StyledComponent = styled(DefaultComponent)<{
-  type?: "primary" | "secondary";
-  color?: string;
-  dark: boolean;
-  size: "medium" | "large";
-}>`
+export const StyledComponent = styled(DefaultComponent)<
+  Pick<OwnProps, "type" | "color" | "dark" | "size">
+>`
   ${({ theme, type, color, dark, size }) => `
     display: inline-flex;
     align-items: center;
@@ -151,9 +148,6 @@ const StyledComponent = styled(DefaultComponent)<{
 
 export default function ButtonLink<T extends React.ElementType = typeof DefaultComponent>({
   as: asProp,
-  type,
-  color,
-  dark = false,
   size = "medium",
   iconLeft,
   iconRight,
@@ -164,14 +158,7 @@ export default function ButtonLink<T extends React.ElementType = typeof DefaultC
 
   return (
     // @ts-expect-error react-polymorphic-types is currently not compatible with styled-components
-    <StyledComponent
-      as={Component}
-      type={type}
-      color={color}
-      dark={dark}
-      size={size}
-      {...restProps}
-    >
+    <StyledComponent as={Component} size={size} {...restProps}>
       {iconLeft}
       <span>{children}</span>
       {iconRight}

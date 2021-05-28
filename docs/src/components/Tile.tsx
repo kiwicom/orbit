@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Heading, Stack, Hide, mediaQueries as mq, TextLink } from "@kiwicom/orbit-components";
-import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
 import ArrowRight from "./ArrowRight";
@@ -35,12 +34,13 @@ function TileTitle({ children }: { children: React.ReactNode }) {
 }
 
 interface StyledContainerProps extends Pick<Props, "fullWidth"> {
+  href?: string;
+  to?: string;
   hasContent: boolean;
 }
 
-const StyledWrapper = styled.a<StyledContainerProps>`
-  ${({ theme, fullWidth, hasContent }) => `
-    display: block;
+const StyledWrapper = styled.div<StyledContainerProps>`
+  ${({ theme, fullWidth, href, to, hasContent }) => `
     padding: 2rem;
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
@@ -63,26 +63,38 @@ const StyledWrapper = styled.a<StyledContainerProps>`
             justify-content: space-between;
           `
     }
-    &:hover {
-      box-shadow: ${theme.orbit.boxShadowRaised};
-    }
+    ${
+      (href || to) &&
+      `
+        &:hover {
+          box-shadow: ${theme.orbit.boxShadowRaised};
+        }
+      `
+    };
   `}
 `;
 
-const StyledLinkText = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  > * + * {
-    margin-left: 0.25rem;
+interface TileWrapperProps {
+  href?: string;
+  fullWidth: boolean;
+  hasContent: boolean;
+  children: React.ReactNode;
+}
+
+function TileWrapper({ href, ...props }: TileWrapperProps) {
+  const isExternal = useIsUrlExternal(href);
+
+  if (href) {
+    return isExternal ? (
+      <StyledWrapper as="a" href={href} target="_blank" rel="noopener noreferrer" {...props} />
+    ) : (
+      <StyledWrapper as={Link} to={href} {...props} />
+    );
   }
-  color: ${({ theme }) => theme.orbit.colorTextLinkPrimary};
-  font-weight: 500;
-  text-decoration: underline;
-  &:hover {
-    color: ${({ theme }) => theme.orbit.colorTextLinkPrimaryHover};
-    text-decoration: none;
-  }
-`;
+
+  return <StyledWrapper {...props} />;
+}
+
 const StyledIcon = styled.div`
   ${({ theme }) => `
     align-self: start;
@@ -107,6 +119,65 @@ const StyledIcon = styled.div`
   `}
 `;
 
+const StyledEndLinkWrapper = styled.span`
+  pointer-events: none;
+`;
+const StyledTextLink = styled.span`
+  ${({ theme }) => `
+    font-weight: ${theme.orbit.fontWeightLinks};
+    color: ${theme.orbit.colorTextLinkPrimary};
+    text-decoration: underline;
+    ${StyledWrapper}:hover & {
+      color: ${theme.orbit.paletteProductNormalHover};
+      text-decoration: none;
+    }
+  `};
+`;
+const StyledLinkTextWrapper = styled.div`
+  text-align: right;
+`;
+const StyledLinkText = styled(StyledTextLink)`
+  display: inline-flex;
+  align-items: center;
+  > * + * {
+    margin-left: 0.25rem;
+  }
+`;
+const StyledLinkNode = styled.span`
+  ${({ theme }) => `
+    color: ${theme.orbit.colorTextLinkPrimary};
+    ${StyledWrapper}:hover & {
+      color: ${theme.orbit.colorTextLinkPrimaryHover};
+    }
+  `};
+`;
+
+interface EndLinkProps {
+  href: string;
+  children?: React.ReactNode;
+}
+
+function EndLink({ href, children }: EndLinkProps) {
+  const isExternal = useIsUrlExternal(href);
+
+  if (isExternal) {
+    return <StyledTextLink>{children}</StyledTextLink>;
+  }
+
+  if (typeof children === "string") {
+    return (
+      <StyledLinkTextWrapper>
+        <StyledLinkText>
+          <span>{children}</span>
+          <ArrowRight />
+        </StyledLinkText>
+      </StyledLinkTextWrapper>
+    );
+  }
+
+  return <StyledLinkNode>{children}</StyledLinkNode>;
+}
+
 export default function Tile({
   href,
   icon,
@@ -115,47 +186,8 @@ export default function Tile({
   children,
   fullWidth = true,
 }: Props) {
-  const theme = useTheme();
-
-  const isExternal = useIsUrlExternal(href);
-
-  const getEndLink = () => {
-    if (!href) return undefined;
-    if (isExternal)
-      return (
-        <TextLink external href={href}>
-          {linkContent}
-        </TextLink>
-      );
-    if (typeof linkContent === "string")
-      return (
-        <div
-          css={css`
-            text-align: right;
-          `}
-        >
-          <StyledLinkText to={href}>
-            <span>{linkContent}</span>
-            <ArrowRight />
-          </StyledLinkText>
-        </div>
-      );
-    return (
-      <Link
-        css={css`
-          color: ${theme.orbit.colorTextLinkPrimary};
-          &:hover {
-            color: ${theme.orbit.colorTextLinkPrimaryHover};
-          }
-        `}
-        to={href}
-      >
-        {linkContent}
-      </Link>
-    );
-  };
   return (
-    <StyledWrapper href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
+    <TileWrapper href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
       <div
         css={css`
           flex: 1;
@@ -188,7 +220,11 @@ export default function Tile({
           <TileTitle>{title}</TileTitle>
         )}
       </div>
-      {href && getEndLink()}
-    </StyledWrapper>
+      {href && (
+        <StyledEndLinkWrapper>
+          <EndLink href={href}>{linkContent}</EndLink>
+        </StyledEndLinkWrapper>
+      )}
+    </TileWrapper>
   );
 }

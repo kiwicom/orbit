@@ -3,7 +3,12 @@ import { Heading, Stack, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
-import ButtonLink from "./ButtonLink";
+import ButtonLink, {
+  StyledComponent as StyledButtonLink,
+  getBgColorHover,
+  getBgColorFocus,
+  getBgColorActive,
+} from "./ButtonLink";
 import { ICON_SIZE } from "./Tile";
 
 interface Props {
@@ -21,8 +26,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-const StyledWrapper = styled.a<{ primary: string }>`
-  ${({ theme, primary }) => `
+const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"; color?: string }>`
+  ${({ theme, primary, type, color }) => `
     display: block;
     padding: 2rem;
     border-radius: 1rem;
@@ -35,6 +40,20 @@ const StyledWrapper = styled.a<{ primary: string }>`
     flex-direction: column;
     &:hover {
       box-shadow: ${theme.orbit.boxShadowRaised};
+    }
+
+    ${StyledButtonLink} {
+      pointer-events: none;
+    }
+
+    &:hover ${StyledButtonLink} {
+      background: ${getBgColorHover({ theme, type, color, dark: true })}
+    }
+    &:focus ${StyledButtonLink} {
+      background: ${getBgColorFocus({ theme, type, color, dark: true })}
+    }
+    &:active ${StyledButtonLink} {
+      background: ${getBgColorActive({ theme, type, color, dark: true })}
     }
   `};
 `;
@@ -99,7 +118,14 @@ export default function BrandedTile({
   const colorSecondary = color === "product" ? theme.orbit.paletteProductNormal : color.secondary;
 
   return (
-    <StyledWrapper href={href} target="_blank" rel="noopener noreferrer" primary={colorPrimary}>
+    <StyledWrapper
+      className="BrandedTile"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      primary={colorPrimary}
+      {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+    >
       <Stack inline>
         <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
         <StyledHeading>
@@ -117,12 +143,9 @@ export default function BrandedTile({
         justify="between"
       >
         <ButtonLink
-          {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+          as="div"
           dark
-          href={href}
-          target="_blank"
-          title={linkContent}
-          rel="noopener noreferrer"
+          {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
         >
           {linkContent}
         </ButtonLink>

@@ -1,10 +1,23 @@
 import * as React from "react";
-import { InputField } from "@kiwicom/orbit-components";
+import InputField from "@kiwicom/orbit-components/lib/InputField";
 
 export default {
-  Example: () => <InputField label="Given names" placeholder="Sofia Cruz" required />,
+  Example: () => {
+    const [value, setValue] = React.useState("");
+    return (
+      <InputField
+        required
+        placeholder="your@email.com"
+        label="Email"
+        type="email"
+        inputMode="email"
+        value={value}
+        onChange={event => setValue(event.currentTarget.value)}
+      />
+    );
+  },
   info: {
-    title: "Required input field",
-    description: "To mark an input field as required, pass the required prop.",
+    title: "",
+    description: "",
   },
 };

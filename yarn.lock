@@ -9356,10 +9356,10 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
 
-cubic2quad@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/cubic2quad/-/cubic2quad-1.1.1.tgz#69b19c61a3f5b41ecf2f1d5fae8fb03415aa8b15"
-  integrity sha1-abGcYaP1tB7PLx1fro+wNBWqixU=
+cubic2quad@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/cubic2quad/-/cubic2quad-1.2.1.tgz#2442260b72c02ee4b6a2fe998fcc1c4073622286"
+  integrity sha512-wT5Y7mO8abrV16gnssKdmIhIbA9wSkeMzhh27jAguKrV82i24wER0vL5TGhUJ9dbJNDcigoRZ0IAHFEEEI4THQ==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -24559,17 +24559,17 @@ svg-pathdata@^5.0.2:
   resolved "https://registry.yarnpkg.com/svg-pathdata/-/svg-pathdata-5.0.5.tgz#65e8d765642ba15fe15434444087d082bc526b29"
   integrity sha512-TAAvLNSE3fEhyl/Da19JWfMAdhSXTYeviXsLSoDT1UM76ADj5ndwAPX1FKQEgB/gFMPavOy6tOqfalXKUiXrow==
 
-svg2ttf@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/svg2ttf/-/svg2ttf-5.2.0.tgz#75c9b8d3c799a91c893ef7bdbfa72d8e00a48a5c"
-  integrity sha512-CzxPnSm2/CrMnJuKlXVllOx+q9wuarbIMi4Vf14eJoeESRqAOxVZiH0Ias71mhyXYGgz88A4T/E8fN/Y8eXoYA==
+svg2ttf@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/svg2ttf/-/svg2ttf-6.0.0.tgz#fdb0b0a7a4bf3dd001747bf8c0faa1c750a2a5d7"
+  integrity sha512-nwBRCK9e86f+zeB2JXQyn5LVNVTlBNEC7hIQCrXxeUN6EU7mawogJosE+S4S1sZbezOBxwF9epxkJCma/chaOw==
   dependencies:
     argparse "^2.0.1"
-    cubic2quad "^1.0.0"
+    cubic2quad "^1.2.1"
     lodash "^4.17.10"
     microbuffer "^1.0.0"
     svgpath "^2.1.5"
-    xmldom "~0.5.0"
+    xmldom "~0.6.0"
 
 svgicons2svgfont@^9.0.4:
   version "9.2.0"
@@ -27034,10 +27034,10 @@ xmlchars@^2.2.0:
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
-xmldom@~0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.5.0.tgz#193cb96b84aa3486127ea6272c4596354cb4962e"
-  integrity sha512-Foaj5FXVzgn7xFzsKeNIde9g6aFBxTPi37iwsno8QvApmtg7KYrr+OPyRHcJF7dud2a5nGRBXK3n0dL62Gf7PA==
+xmldom@~0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.6.0.tgz#43a96ecb8beece991cef382c08397d82d4d0c46f"
+  integrity sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==
 
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"

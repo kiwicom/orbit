@@ -40,7 +40,7 @@ export default function BlockQuote({ children }: Props) {
   // if quote ends with author
   if (
     React.isValidElement(lastChild) &&
-    typeof lastChild.props.children &&
+    typeof lastChild.props.children === "string" &&
     lastChild.props.children.startsWith("—")
   ) {
     return (

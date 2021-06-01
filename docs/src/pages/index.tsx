@@ -83,7 +83,6 @@ export default function Home({ location, path }: Props) {
             <Inline spacing="small">
               <ButtonLink
                 type="primary"
-                size="large"
                 as={Link}
                 iconRight={<ArrowRight />}
                 to="/getting-started/for-designers/"
@@ -99,7 +98,6 @@ export default function Home({ location, path }: Props) {
                 `}
               >
                 <Button
-                  size="large"
                   circled
                   iconLeft={<SearchIcon />}
                   type="primarySubtle"

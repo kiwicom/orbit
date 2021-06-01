@@ -12,7 +12,6 @@ interface OwnProps {
   dark?: boolean;
   type?: "primary" | "secondary";
   color?: string;
-  size?: "medium" | "large";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   children: React.ReactNode;
@@ -104,32 +103,28 @@ export function getBgColorActive({
   }
 }
 
-export const StyledComponent = styled(DefaultComponent)<
-  Pick<OwnProps, "type" | "color" | "dark" | "size">
->`
-  ${({ theme, type, color, dark, size }) => `
+interface StyledComponentProps extends Pick<OwnProps, "type" | "color" | "dark"> {
+  hasIcon: boolean;
+}
+
+export const StyledComponent = styled(DefaultComponent)<StyledComponentProps>`
+  ${({ theme, type, color, dark, hasIcon }) => `
     display: inline-flex;
     align-items: center;
-
-    ${
-      size === "medium" &&
-      `
-        padding: 0.875rem 1.5rem;
-      `
-    };
-
-    ${
-      size === "large" &&
-      `
-        padding: 1.25rem 2rem;
-      `
-    };
-
+    padding: 20px 28px;
     border-radius: 100px; /* value safely greater than button height to achieve pill effect */
     font-weight: 500;
 
+    ${
+      hasIcon &&
+      `
+        padding-left: 20px;
+        padding-right: 20px;
+      `
+    };
+
     > * + * {
-      margin-left: 10px;
+      margin-left: ${theme.orbit.marginButtonIconLarge};
     }
 
     background: ${getBgColor({ theme, type, color })};
@@ -148,7 +143,6 @@ export const StyledComponent = styled(DefaultComponent)<
 
 export default function ButtonLink<T extends React.ElementType = typeof DefaultComponent>({
   as: asProp,
-  size = "medium",
   iconLeft,
   iconRight,
   children,
@@ -158,7 +152,7 @@ export default function ButtonLink<T extends React.ElementType = typeof DefaultC
 
   return (
     // @ts-expect-error react-polymorphic-types is currently not compatible with styled-components
-    <StyledComponent as={Component} size={size} {...restProps}>
+    <StyledComponent as={Component} hasIcon={Boolean(iconLeft || iconRight)} {...restProps}>
       {iconLeft}
       <span>{children}</span>
       {iconRight}

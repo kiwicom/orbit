@@ -44,7 +44,7 @@ const StyledTabWrapper = styled.div<SizeCheck>`
     ${StyledTab}, ${StyledTabLink} {
       padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
         ${theme.orbit.spaceMedium};
-      margin: 0 ${theme.orbit.spaceMedium};
+      margin: 0 ${theme.orbit.spaceXSmall};
     }
   `}
 `;

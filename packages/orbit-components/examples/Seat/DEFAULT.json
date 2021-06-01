@@ -1,6 +1,6 @@
 {
   "imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
-  "example": "(): React.Node => {\n  const { isTablet } = useMediaQuery()\n  return <Seat size={isTablet ? \"medium\" : \"small\"} />\n}\n",
+  "example": "() => {\n  const { isTablet } = useMediaQuery()\n  return <Seat size={isTablet ? \"medium\" : \"small\"} />\n}\n",
   "info": {
     "title": "Default seat",
     "description": "Default seats have no special characteristics."

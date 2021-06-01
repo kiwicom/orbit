@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.115.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.2...@kiwicom/orbit-components@0.115.0) (2021-05-27)
+
+
+### Bug Fixes
+
+* **HorizontalScroll:** getSnap ([9823909](https://github.com/kiwicom/orbit/commit/98239092d0be2e23ba8ffab2b4bb0b268bdbb52d))
+
+
+### Features
+
+* **CarrierLogo:** add kiwicom type fallback ([#2959](https://github.com/kiwicom/orbit/issues/2959)) ([041d8d6](https://github.com/kiwicom/orbit/commit/041d8d6a6d4d8acf6f7cdd78282f132010949cf1))
+* **Dialog:** add insidePortal prop ([dbe7785](https://github.com/kiwicom/orbit/commit/dbe7785ae8326663500e92c207143f42f1ad92fd))
+* **HorizontalScroll:** add scroll-snap-type ([#2964](https://github.com/kiwicom/orbit/issues/2964)) ([837685d](https://github.com/kiwicom/orbit/commit/837685d29aa200c19f5c3549d12fa756bb7c628b))
+* **Illustration:** add GroundTransport404 ([#2966](https://github.com/kiwicom/orbit/issues/2966)) ([24771e2](https://github.com/kiwicom/orbit/commit/24771e2adf737137a4fe85bc62effa8f2c32342e))
+* **MobileDialog:** add insidePortal prop ([3b55af6](https://github.com/kiwicom/orbit/commit/3b55af6800f04d29318a9a6f25f635c106a684ab))
+* **Modal:** add disableAnimation prop ([306455b](https://github.com/kiwicom/orbit/commit/306455b5c8bf6a303781d0b477c45fd2be76ef12))
+* **Popover:** add insidePortal prop ([14d126f](https://github.com/kiwicom/orbit/commit/14d126f808720d0e08c08aea3c1de9a0efc94824))
+* **TextLink:** add status types ([#2915](https://github.com/kiwicom/orbit/issues/2915)) ([970edc7](https://github.com/kiwicom/orbit/commit/970edc7fe16bb710754db7020c4ef2e2ab63d72c))
+* **Tooltip:** add insidePortal prop ([fa127e8](https://github.com/kiwicom/orbit/commit/fa127e8e55164295bfb22d189153f31170e609ad))
+* **TooltipPrimitive:** add insidePortal prop ([4cb5dde](https://github.com/kiwicom/orbit/commit/4cb5ddee0a88872f97b4a00fbb2d47bfe0c6f440))
+* introduce BadgeList component ([#2937](https://github.com/kiwicom/orbit/issues/2937)) ([b2b68ec](https://github.com/kiwicom/orbit/commit/b2b68ecc5b0eac97c0c3c628f7da2cc836bb6050))
+
+
+
+
+
+## [0.114.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.1...@kiwicom/orbit-components@0.114.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **ButtonLink:** pass size prop to icons ([#2938](https://github.com/kiwicom/orbit/issues/2938)) ([0184785](https://github.com/kiwicom/orbit/commit/01847859090fe9b95e41fd6c3944f3aa701180a8))
+* **HorizontalScroll:** remove automatic height calculation for wrapper ([#2936](https://github.com/kiwicom/orbit/issues/2936)) ([0880483](https://github.com/kiwicom/orbit/commit/0880483961e88ccfb1c27c6b9eafe8dd0094b3d5))
+* **MobileDialog:** change to dialog role ([9895ac7](https://github.com/kiwicom/orbit/commit/9895ac79fb4405396dcc3937e97fdf3c4e9072a7))
+* **popover:** close on overlay ([e2cef68](https://github.com/kiwicom/orbit/commit/e2cef688dd3eecbf15eabafbf70009ac9baee72b))
+* pass aria-labelledby for switch labels ([#2935](https://github.com/kiwicom/orbit/issues/2935)) ([1b10e4c](https://github.com/kiwicom/orbit/commit/1b10e4c4e708d768149346c5b941202fd72dc431))
+
+
+### Reverts
+
+* **Modal:** revert CLS changes ([b1d00b4](https://github.com/kiwicom/orbit/commit/b1d00b4c187d1ed4d25cb3b24a42c84cbe6856d0))
+
+
+
+
+
+## [0.114.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.0...@kiwicom/orbit-components@0.114.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **BaggageStepper:** forgotten prop ([#2931](https://github.com/kiwicom/orbit/issues/2931)) ([6797d73](https://github.com/kiwicom/orbit/commit/6797d73f2395b905cfe8ca9f8d7bc47b775f8171))
+* **Modal:** reduce Cumulative Layout Shift ([2108956](https://github.com/kiwicom/orbit/commit/21089567a2b25d6e42f432fa44ea40ab21d16785))
+
+
+
+
+
+# [0.114.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.1...@kiwicom/orbit-components@0.114.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* **Popover:** fix bug with Tooltip inside Popover on mobile ([75d8fa4](https://github.com/kiwicom/orbit/commit/75d8fa41df9afb0d2448ee073a0d2b559d1ae29e))
+
+
+### Features
+
+* **BaggageStepper:** init ([#2922](https://github.com/kiwicom/orbit/issues/2922)) ([0c9c546](https://github.com/kiwicom/orbit/commit/0c9c5460f41d34300dfa28b6573db7d855a52f79))
+* HorizontalScroll component ([#2917](https://github.com/kiwicom/orbit/issues/2917)) ([d5e5929](https://github.com/kiwicom/orbit/commit/d5e59290b6aa6474ef3c5454b427c2a7859f43e1))
+* introduce Switch component ([7517675](https://github.com/kiwicom/orbit/commit/7517675712c36073c909c74ef4b334b92cc97fb1))
+
+
+
+
+
+## [0.113.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.113.0...@kiwicom/orbit-components@0.113.1) (2021-04-28)
+
+
+### Bug Fixes
+
+* **Button:** pass forgotten size prop to utility functions ([8b97281](https://github.com/kiwicom/orbit/commit/8b972812c9fdd8cd985247b139589babf335b59b))
+* **ButtonPrimitive:** remove redundant size property ([#2847](https://github.com/kiwicom/orbit/issues/2847)) ([bec9180](https://github.com/kiwicom/orbit/commit/bec9180e55ac7fe04c08bd51dac37993d432fc3b))
+* **examples:** strip flow types from the generated JSONs ([#2913](https://github.com/kiwicom/orbit/issues/2913)) ([49f36fd](https://github.com/kiwicom/orbit/commit/49f36fd815b75894c223bd79acd00456e159c432))
+* **SocialButton:** add forgotten size property to getCommomProps ([a950d6d](https://github.com/kiwicom/orbit/commit/a950d6d2b1f60de77fadd9e3cb021a77639306dc))
+
+
+
+
+
 # [0.113.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.112.0...@kiwicom/orbit-components@0.113.0) (2021-04-22)
 
 

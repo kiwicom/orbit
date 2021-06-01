@@ -5,6 +5,8 @@ import * as Common from "../../common/common";
 type inexactString = string | null | undefined;
 type functionReturningString = () => string;
 
+export type Size = "small" | "normal" | "large";
+
 export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
@@ -23,7 +25,6 @@ export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.Spa
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
   readonly rel?: string;
   readonly role?: string;
-  readonly size?: Common.Size;
   readonly submit?: boolean;
   readonly contentAlign?: string | null;
   readonly contentWidth?: string | null;
@@ -82,7 +83,7 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
   readonly icons?: IconProps;
 }
 
-export type Props = Omit<ButtonCommonProps, "size"> & ButtonCommonProps & PrimitiveTypes;
+export type Props = ButtonCommonProps & PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
 declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;

@@ -10,6 +10,7 @@ export default {
           Start
         </Heading>
         <Popover
+          renderInPortal={false}
           preferredAlign="start"
           content={
             <Stack spacing="small">
@@ -40,6 +41,7 @@ export default {
           Center
         </Heading>
         <Popover
+          renderInPortal={false}
           preferredAlign="center"
           content={
             <Stack spacing="small">
@@ -70,6 +72,7 @@ export default {
           End
         </Heading>
         <Popover
+          renderInPortal={false}
           preferredAlign="end"
           content={
             <Stack spacing="small">

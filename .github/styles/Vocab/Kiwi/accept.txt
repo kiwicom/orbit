@@ -12,6 +12,7 @@ Ctrl
 Filip
 Funkify
 Genaev
+[Gg]rayscale
 Hapl
 inclusivity
 JavaScript
@@ -46,6 +47,7 @@ Themer
 [Tt]ooltip
 [Tt]ooltips
 tl
+unformatted
 Toman
 viewport
 Vueling

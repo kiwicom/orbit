@@ -8,8 +8,9 @@ const inspectUrls = require("@jsdevtools/rehype-url-inspector");
 const stringify = require("rehype-stringify");
 const toVFile = require("to-vfile");
 const reporter = require("vfile-reporter");
+const fsx = require("fs-extra");
 
-const warnMissingAccessToken = require("./warnings");
+const { warnMissingAccessToken } = require("./warnings");
 
 try {
   require("dotenv-safe").config({
@@ -22,6 +23,10 @@ try {
 }
 
 const checkForDeadUrls = async () => {
+  if (!(await fsx.pathExists("docs/public"))) {
+    throw new Error(`You need to build @kiwicom/orbit.kiwi in order to check links`);
+  }
+
   const files = await globby("docs/public/**/*.html");
 
   await new Promise(resolve => {

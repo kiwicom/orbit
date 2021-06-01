@@ -5,6 +5,7 @@ export default {
   Example: () => (
     <Stack direction="column">
       <Tooltip
+        renderInPortal={false}
         size="small"
         content={
           <Text>
@@ -16,6 +17,7 @@ export default {
         <Button disabled>Book</Button>
       </Tooltip>
       <Tooltip
+        renderInPortal={false}
         size="medium"
         content={
           <Text>

@@ -1,6 +1,6 @@
 {
   "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";",
-  "example": "(): React.Node => <Alert title=\"You've got mail\" />\n",
+  "example": "() => <Alert title=\"You've got mail\" />\n",
   "info": {
     "title": "Alert with only a title",
     "description": "If you have a short, clear message, use an alert with only a title."

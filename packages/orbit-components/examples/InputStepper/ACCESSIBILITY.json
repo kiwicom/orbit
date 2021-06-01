@@ -1,6 +1,6 @@
 {
   "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
-  "example": "(): React.Element<\"div\"> => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={2}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n    />\n  </div>\n)\n",
+  "example": "() => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={2}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n    />\n  </div>\n)\n",
   "info": {
     "title": "Accessibilty",
     "description": "Include a label with the input stepper so it's clear what is being incremented. Include titles for the increment and decrement buttons so everyone will know what they do."

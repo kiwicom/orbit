@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
+import ScreenReaderText from "./ScreenReaderText";
+
 const StyledLabel = styled.label`
   cursor: pointer;
   display: inline-block;
+`;
+
+const StyledSwitchContainer = styled.div`
   width: 50px;
   height: 28px;
 `;
@@ -89,6 +94,7 @@ interface Props {
   onKeyPress?: () => any;
   checked?: boolean;
   ariaLabelledby?: string;
+  hideLabel?: boolean;
   reverseLabel?: boolean;
 }
 
@@ -100,29 +106,39 @@ const InputSwitch = ({
   checked,
   ariaLabelledby,
   onKeyPress,
+  hideLabel,
   reverseLabel,
 }: Props) => {
+  const ContentContainer = hideLabel ? ScreenReaderText : StyledContent;
   return (
-    <Stack inline direction={reverseLabel ? "row-reverse" : "row"} align="center" spacing="medium">
-      <StyledLabel>
-        <StyledInput
-          type="checkbox"
-          tabIndex={0}
-          aria-labelledby={ariaLabelledby}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onChange={onChange}
-          onKeyPress={onKeyPress}
-          checked={checked}
-        />
-        <StyledTrack>
-          <StyledHandle>
-            <StyledCircle />
-          </StyledHandle>
-        </StyledTrack>
-      </StyledLabel>
-      {children && <StyledContent>{children}</StyledContent>}
-    </Stack>
+    <StyledLabel>
+      <Stack
+        inline
+        direction={reverseLabel ? "row-reverse" : "row"}
+        align="center"
+        spacing="medium"
+      >
+        <StyledSwitchContainer>
+          <StyledInput
+            type="checkbox"
+            tabIndex={0}
+            aria-labelledby={ariaLabelledby}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onChange={onChange}
+            onKeyPress={onKeyPress}
+            checked={checked}
+            role="switch"
+          />
+          <StyledTrack>
+            <StyledHandle>
+              <StyledCircle />
+            </StyledHandle>
+          </StyledTrack>
+        </StyledSwitchContainer>
+        {children && <ContentContainer>{children}</ContentContainer>}
+      </Stack>
+    </StyledLabel>
   );
 };
 

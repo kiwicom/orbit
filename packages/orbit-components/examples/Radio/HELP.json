@@ -1,6 +1,6 @@
 {
   "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "(): React.Node => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Stack>\n      <Radio\n        label=\"Cabin bag\"\n        checked={checked}\n        onChange={() => setChecked(!checked)}\n        info=\"56 × 45 × 25 cm, 8 kg\"\n      />\n      <Button type=\"secondary\" onClick={() => setChecked(false)}>\n        Clear\n      </Button>\n    </Stack>\n  )\n}\n",
+  "example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Stack>\n      <Radio\n        label=\"Cabin bag\"\n        checked={checked}\n        onChange={() => setChecked(!checked)}\n        info=\"56 × 45 × 25 cm, 8 kg\"\n      />\n      <Button type=\"secondary\" onClick={() => setChecked(false)}>\n        Clear\n      </Button>\n    </Stack>\n  )\n}\n",
   "info": {
     "title": "Help",
     "description": "Guide users to the right choice by providing helpful text in the info prop."

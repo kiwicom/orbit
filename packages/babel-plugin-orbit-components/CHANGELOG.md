@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.3.0...@kiwicom/babel-plugin-orbit-components@2.4.0) (2021-05-27)
+
+
+### Features
+
+* introduce BadgeList component ([#2937](https://github.com/kiwicom/orbit/issues/2937)) ([b2b68ec](https://github.com/kiwicom/orbit/commit/b2b68ecc5b0eac97c0c3c628f7da2cc836bb6050))
+
+
+
+
+
 # [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.2.0...@kiwicom/babel-plugin-orbit-components@2.3.0) (2021-04-22)
 
 

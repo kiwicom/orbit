@@ -1,0 +1,18 @@
+// @flow
+import * as React from "react";
+
+import type { Spacing } from "../Stack";
+import type { Globals } from "../common/common.js.flow";
+
+export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
+
+export type Props = {|
+  ...Globals,
+  +minHeight?: number,
+  +spacing?: Spacing,
+  +children: React.Node,
+  +scrollSnap?: ScrollSnap,
+  +scrollPadding?: number,
+|};
+
+declare export default React.ComponentType<Props>;

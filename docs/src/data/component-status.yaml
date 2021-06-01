@@ -19,13 +19,6 @@
   android: n/a
   docs: Released
   group: Information
-- component: BadgePrimitive
-  figma: n/a
-  react: Released
-  ios: n/a
-  android: n/a
-  docs: Released
-  group: Primitives
 - component: Badge
   figma: Released
   react: Released
@@ -33,6 +26,20 @@
   android: Released
   docs: Released
   group: Information
+- component: BadgeList
+  figma: Released
+  react: Released
+  ios: n/a
+  android: n/a
+  docs: Released
+  group: Information
+- component: BadgePrimitive
+  figma: n/a
+  react: Released
+  ios: n/a
+  android: n/a
+  docs: Released
+  group: Primitives
 - component: Box
   figma: n/a
   react: Released
@@ -215,6 +222,13 @@
   android: n/a
   docs: Released
   group: Responsive
+- component: HorizontalScroll
+  figma: n/a
+  react: Released
+  ios: n/a
+  android: n/a
+  docs: Writing
+  group: Layout
 - component: Icon
   figma: Released
   react: Released
@@ -490,10 +504,10 @@
   group: Visuals
 - component: Switch
   figma: Released
-  react: n/a
-  ios: Waiting
+  react: Released
+  ios: Released
   android: Released
-  docs: Waiting
+  docs: Writing
   group: Interaction
 - component: TabBar
   figma: Released

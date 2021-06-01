@@ -1,6 +1,6 @@
 {
   "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport BadgePrimitive from \"@kiwicom/orbit-components/lib/BadgePrimitive\";",
-  "example": "(): React.Node => (\n  <BadgePrimitive\n    background={defaultTheme.orbit.backgroundBody}\n    foregroundColor={defaultTheme.orbit.colorTextPrimary}\n    borderColor={defaultTheme.orbit.paletteProductNormal}\n  >\n    Orbit\n  </BadgePrimitive>\n)\n",
+  "example": "() => (\n  <BadgePrimitive\n    background={defaultTheme.orbit.backgroundBody}\n    foregroundColor={defaultTheme.orbit.colorTextPrimary}\n    borderColor={defaultTheme.orbit.paletteProductNormal}\n  >\n    Orbit\n  </BadgePrimitive>\n)\n",
   "info": {
     "title": "Border",
     "description": "You can set the color of the border, which is always 1 px and solid."

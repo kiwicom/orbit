@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+
+import type { SharedProps } from "../index";
+
+export type StateLessProps = {|
+  ...SharedProps,
+  +value: number | string | (() => string),
+  +disabledIncrement?: boolean,
+  +disabledDecrement?: boolean,
+  +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onDecrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onIncrement?: (
+    ev: SyntheticEvent<HTMLButtonElement> | SyntheticKeyboardEvent<HTMLButtonElement>,
+  ) => void | Promise<any>,
+  +onChange?: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +selected?: boolean,
+|};
+
+export type StepperStatelessType = React.ComponentType<StateLessProps>;
+
+declare export default StepperStatelessType;

@@ -4,24 +4,24 @@ import { Spacing } from "@kiwicom/orbit-components/lib/Stack";
 import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
-const SPACINGS: Record<string, Spacing> = {
-  NONE: "none",
-  XXXSMALL: "XXXSmall",
-  XXSMALL: "XXSmall",
-  XSMALL: "XSmall",
-  SMALL: "small",
-  MEDIUM: "medium",
-  LARGE: "large",
-  XLARGE: "XLarge",
-  XXLARGE: "XXLarge",
-};
-
 export default {
   Example: () => {
     const divStyle: CSSProperties = {
       width: "160px",
       height: "40px",
       backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
+    };
+
+    const SPACINGS: Record<string, Spacing> = {
+      NONE: "none",
+      XXXSMALL: "XXXSmall",
+      XXSMALL: "XXSmall",
+      XSMALL: "XSmall",
+      SMALL: "small",
+      MEDIUM: "medium",
+      LARGE: "large",
+      XLARGE: "XLarge",
+      XXLARGE: "XXLarge",
     };
 
     return (

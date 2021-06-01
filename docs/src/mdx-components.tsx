@@ -26,29 +26,43 @@ export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
 export const h1 = () => null;
 
 export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink headingLevel={2} spaceAfter="normal">
-    {children}
+  <HeadingWithLink spaceAfter="normal">
+    <Heading as="h2" type="title2">
+      {children}
+    </Heading>
   </HeadingWithLink>
 );
 
 export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink headingLevel={3} spaceAfter="small">
-    {children}
+  <HeadingWithLink spaceAfter="small">
+    <Heading as="h3" type="title3">
+      {children}
+    </Heading>
   </HeadingWithLink>
 );
 
 export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink headingLevel={4} spaceAfter="smallest">
-    {children}
+  <HeadingWithLink spaceAfter="smallest">
+    <Heading as="h4" type="title4">
+      {children}
+    </Heading>
   </HeadingWithLink>
 );
 
 export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink headingLevel={5}>{children}</HeadingWithLink>
+  <HeadingWithLink>
+    <Heading as="h5" type="title5">
+      {children}
+    </Heading>
+  </HeadingWithLink>
 );
 
 export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink headingLevel={6}>{children}</HeadingWithLink>
+  <HeadingWithLink>
+    <Heading as="h6" type="title5">
+      {children}
+    </Heading>
+  </HeadingWithLink>
 );
 
 export const hr = () => <Separator spaceAfter="largest" />;
@@ -92,6 +106,7 @@ export const td = ({
   <TableCell
     as="td"
     align={align === "left" || align === "center" || align === "right" ? align : undefined}
+    whiteSpace="normal"
     verticalAlign={valign}
   >
     {children}

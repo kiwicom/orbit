@@ -8,6 +8,7 @@ export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Alert } from "./Alert";
 export { default as AlertButton } from "./Alert/AlertButton";
 export { default as Badge } from "./Badge";
+export { default as BadgeList, BadgeListItem } from "./BadgeList";
 export { default as Box } from "./Box";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
@@ -80,6 +81,7 @@ export { default as Grid } from "./utils/Grid";
 
 export { default as Heading } from "./Heading";
 export { default as Hide } from "./Hide";
+export { default as HorizontalScroll } from "./HorizontalScroll";
 export { default as Icon } from "./Icon";
 export { default as Illustration } from "./Illustration";
 export { default as Inline } from "./Inline";
@@ -108,6 +110,7 @@ export { default as SmartPassV2 } from "./SmartPassIllustrations/illustrations/S
 export { default as SmartPassV3 } from "./SmartPassIllustrations/illustrations/SmartPassV3";
 export { default as SmartPassV4 } from "./SmartPassIllustrations/illustrations/SmartPassV4";
 export { default as SmartPassV5 } from "./SmartPassIllustrations/illustrations/SmartPassV5";
+export { default as Switch } from "./Switch";
 export { default as SocialButton } from "./SocialButton";
 export { default as Stack } from "./Stack";
 export { default as Stepper } from "./Stepper";

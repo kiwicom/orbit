@@ -70,16 +70,21 @@ const ModalWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin: 0 auto;
-
   position: fixed;
   width: 100%;
   border-top-left-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
-  transition: ${transition(["top"], "normal", "ease-in-out")};
-  top: ${({ loaded, isMobileFullPage }) => (loaded ? !isMobileFullPage && "32px" : "100%")};
-
+  ${({ disableAnimation, loaded, isMobileFullPage }) =>
+    disableAnimation
+      ? css`
+          top: ${!isMobileFullPage && "32px"};
+        `
+      : css`
+          transition: ${transition(["top"], "normal", "ease-in-out")};
+          top: ${loaded ? !isMobileFullPage && "32px" : "100%"};
+        `}
   ${onlyIE(css`
     /* IE flex bug, the content won't be centered if there is not 'height' property
     https://github.com/philipwalton/flexbugs/issues/231 */
@@ -341,6 +346,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       isMobileFullPage = false,
       preventOverlayClose = false,
       hasCloseButton = true,
+      disableAnimation = false,
       dataTest,
     }: Props,
     ref,
@@ -473,11 +479,6 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       keyboardHandler(event);
     };
 
-    const handleResize = React.useCallback(() => {
-      setDimensions();
-      decideFixedFooter();
-    }, []);
-
     const handleClickOutside = (event: MouseEvent) => {
       const clickedOutside =
         onClose &&
@@ -592,21 +593,38 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       modalContent,
     }));
 
+    // eslint-disable-next-line consistent-return
     React.useEffect(() => {
-      const timer: TimeoutID = setTimeout(() => {
-        setLoaded(true);
+      if (disableAnimation) {
         decideFixedFooter();
         setDimensions();
         setFirstFocus();
-      }, 15);
+      } else {
+        const timer: TimeoutID = setTimeout(() => {
+          setLoaded(true);
+          decideFixedFooter();
+          setDimensions();
+          setFirstFocus();
+        }, 15);
 
+        return () => {
+          clearTimeout(timer);
+        };
+      }
+      // the Modal can only transition in on mount
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    React.useEffect(() => {
+      const handleResize = () => {
+        setDimensions();
+        decideFixedFooter();
+      };
       window.addEventListener("resize", handleResize);
-
       return () => {
-        clearTimeout(timer);
         window.removeEventListener("resize", handleResize);
       };
-    }, [handleResize]);
+    }, []);
 
     React.useEffect(() => {
       if (children !== prevChildren) {
@@ -637,6 +655,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
           fixedFooter={fixedFooter}
           id={modalID}
           isMobileFullPage={isMobileFullPage}
+          disableAnimation={disableAnimation}
         >
           <ModalWrapperContent
             size={size}

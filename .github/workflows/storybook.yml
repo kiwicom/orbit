@@ -1,0 +1,116 @@
+name: Storybook
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env: # Set environment variables for every job and step in this workflow
+  CLICOLOR: "1" # Enable colors for *NIX commands
+  PY_COLORS: "1" # Enable colors for Python-based utilities
+  FORCE_COLOR: "1" # Force colors in the terminal
+  STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+  STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn bootstrap:ci
+
+      - name: Compile design tokens
+        run: yarn orbit-design-tokens build:lib
+
+      - name: Build Storybook
+        run: yarn orbit-components build:storybook
+
+      - name: Upload storybook artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: packages/orbit-components/.out
+          retention-days: 5
+
+  deploy_branch:
+    needs: build
+    # do not run on master branch
+    if: github.ref != 'refs/heads/master'
+    runs-on: ubuntu-latest
+    name: Deploy branch
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn bootstrap:ci
+
+      - name: Restore storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: packages/orbit-components/.out
+
+      - name: Get BRANCH_URL
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
+
+      - name: Get PR_NUMBER
+        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
+
+      - name: Publish
+        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Update description
+        run: yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+
+  deploy_master:
+    needs: build
+    # run on master branch
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    name: Deploy to GitHub Pages
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+
+      - name: Install dependencies
+        run: yarn bootstrap:ci
+
+      - name: Restore storybook artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: packages/orbit-components/.out
+
+      - name: Deploy storybook
+        run: yarn orbit-components deploy:storybook --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

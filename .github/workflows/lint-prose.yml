@@ -19,11 +19,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      #
+      # https://github.com/errata-ai/vale-action/issues/39
+      - name: Touch markdown file
+        run: touch docs/src/snippets/more-than-color.mdx
+
       - name: Vale
-        uses: errata-ai/vale-action@v1.3.0
+        uses: errata-ai/vale-action@v1.4.1
         with:
           files: '["docs/src/documentation", "docs/src/snippets"]'
-          onlyAnnotateModifiedLines: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,6 +1,6 @@
 {
   "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport ChevronRight from \"@kiwicom/orbit-components/lib/icons/ChevronRight\";",
-  "example": "(): React.Node => (\n  <Stack direction=\"row\">\n    <ButtonLink href=\"/\" title=\"Homepage\">\n      Go home\n    </ButtonLink>\n    <ButtonLink asComponent=\"div\" href=\"/\" title=\"Homepage\">\n      Go home\n    </ButtonLink>\n    <ButtonLink\n      external\n      href=\"https://orbit.kiwi/components/buttonlink/\"\n      iconRight={<Icons.ChevronRight />}\n      title=\"Opens in new window\"\n    >\n      Read the docs\n    </ButtonLink>\n  </Stack>\n)\n",
+  "example": "() => (\n  <Stack direction=\"row\">\n    <ButtonLink href=\"/\" title=\"Homepage\">\n      Go home\n    </ButtonLink>\n    <ButtonLink asComponent=\"div\" href=\"/\" title=\"Homepage\">\n      Go home\n    </ButtonLink>\n    <ButtonLink\n      external\n      href=\"https://orbit.kiwi/components/buttonlink/\"\n      iconRight={<Icons.ChevronRight />}\n      title=\"Opens in new window\"\n    >\n      Read the docs\n    </ButtonLink>\n  </Stack>\n)\n",
   "info": {
     "title": "Button links as links",
     "description": "1. When button links have an *href* prop, they are automatically rendered as <a> elements. 2. You can override this using an *asComponent* prop. 3. Button links marked as *external* automatically open in a new window with *noopener noreferrer* as the *rel* attribute for security."

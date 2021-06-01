@@ -28,11 +28,7 @@ check out our [interactive guide on action components](/guides/using-button-type
 
 ## Content structure
 
-<FigmaFile
-  file="4QJZqvBvRrLu6t9mwObCkA"
-  node="289%3A14"
-  alt="IconLeft: visually supports button visability; label: describes the main action and works best when short; icon right: shows additional options for the button (expandable, link, etc.)."
-/>
+![IconLeft: visually supports button visibility; label: describes the main action and works best when short; icon right: shows additional options for the button (expandable, link, etc.).](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:289%3A14)
 
 ## Behavior
 
@@ -53,16 +49,9 @@ you can indicate importance through [size, type, and variation](#look--feel).
 Every screen should have only one button that represents the most important action.
 It leads the user to the next step.
 
-<FigmaFile
-  alt="One primary button on a screen stands out."
-  file="fannvRpkOJK6uxxT33EKaa"
-  node="10%3A1406"
-/>
-<FigmaFile
-  alt="Too many primary buttons confuse users."
-  file="fannvRpkOJK6uxxT33EKaa"
-  node="10%3A1666"
-/>
+![One primary button on a screen stands out.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1406)
+
+![Too many primary buttons confuse users.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1666)
 
 </Guideline>
 
@@ -71,11 +60,7 @@ It leads the user to the next step.
 If you have multiple actions on one screen,
 use different button types and sizes to show different levels of importance.
 
-<FigmaFile
-  alt="One primary button on a screen stands out."
-  file="fannvRpkOJK6uxxT33EKaa"
-  node="10%3A1406"
-/>
+![One primary button on a screen stands out.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1406)
 
 </Guideline>
 
@@ -187,8 +172,8 @@ All of our buttons use a consistently defined set of states.
 ![](../../../../images/components/action/button-interactions.png)
 
 - **Hover** -- We change the background of a button to its :_hover_ color.
-- **Active** -- We scale down the button with the <InlineToken value="modifierScaleButtonActive" />
+- **Active** -- We scale down the button with the <InlineToken name="modifierScaleButtonActive" />
   design token and also change the background to its _:active_ color.
 - **Focus** -- The background stays same but we create a light blue border around the button.
-- **Disabled** -- We change the button opacity with the <InlineToken value="opacityButtonDisabled" />
+- **Disabled** -- We change the button opacity with the <InlineToken name="opacityButtonDisabled" />
   design token. This deactivates all the states listed above.

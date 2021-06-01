@@ -4,7 +4,7 @@ import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
-import { getBgColor, getBgColorHover, getBgColorFocus, getBgColorActive } from "../utils/button";
+import { getBgColor, getBgColorHover, getBgColorActive } from "../utils/dark-button";
 import { ICON_SIZE } from "./Tile";
 
 interface Props {

@@ -51,7 +51,7 @@ const FancyLink = ({ href }: Props) => {
         external
         href={href}
         iconLeft={getUsedIcon()}
-        iconRight={<NewWindow />}
+        iconRight={<NewWindow ariaLabel="Opens in new window" />}
         type="secondary"
       >
         {getUsedText()}

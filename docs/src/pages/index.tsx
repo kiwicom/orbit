@@ -23,7 +23,6 @@ import Search from "../components/Search";
 import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
-import ButtonLink from "../components/ButtonLink";
 import Tile from "../components/Tile";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
@@ -36,6 +35,10 @@ import ScreenReaderText from "../components/ScreenReaderText";
 interface Props {
   location: WindowLocation;
   path: string;
+}
+
+function GatsbyLinkToButton({ href, ...props }: { href: string }) {
+  return <Link to={href} {...props} />;
 }
 
 export default function Home({ location, path }: Props) {
@@ -78,35 +81,34 @@ export default function Home({ location, path }: Props) {
           <div
             css={css`
               margin-top: 3rem;
+              button,
+              a {
+                height: 64px;
+              }
             `}
           >
             <Inline spacing="small">
-              <ButtonLink
+              <Button
+                size="large"
                 type="primary"
-                as={Link}
+                circled
                 iconRight={<ArrowRight />}
-                to="/getting-started/for-designers/"
+                // @ts-expect-error asComponent has wrong type declaration
+                asComponent={GatsbyLinkToButton}
+                href="/getting-started/for-designers/"
               >
                 Get started
-              </ButtonLink>
-              <div
-                css={css`
-                  button {
-                    /* to match the height of the ButtonLink above */
-                    height: 64px;
-                  }
-                `}
+              </Button>
+              <Button
+                size="large"
+                circled
+                iconLeft={<SearchIcon />}
+                type="primarySubtle"
+                onClick={() => setSearchOpen(true)}
               >
-                <Button
-                  circled
-                  iconLeft={<SearchIcon />}
-                  type="primarySubtle"
-                  onClick={() => setSearchOpen(true)}
-                >
-                  Search…
-                </Button>
-                {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
-              </div>
+                Search
+              </Button>
+              {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
             </Inline>
           </div>
         </>
@@ -162,12 +164,13 @@ export default function Home({ location, path }: Props) {
           </Stack>
           <div
             css={css`
-              text-align: right;
+              display: flex;
+              justify-content: flex-end;
             `}
           >
-            <ButtonLink type="secondary" href="#">
+            <Button size="large" circled type="primarySubtle">
               Show all items
-            </ButtonLink>
+            </Button>
           </div>
         </div>
         <div
@@ -208,12 +211,13 @@ export default function Home({ location, path }: Props) {
           </Stack>
           <div
             css={css`
-              text-align: right;
+              display: flex;
+              justify-content: flex-end;
             `}
           >
-            <ButtonLink type="secondary" href="#">
+            <Button size="large" circled type="primarySubtle">
               Show all items
-            </ButtonLink>
+            </Button>
           </div>
         </div>
 

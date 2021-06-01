@@ -32,7 +32,7 @@
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "clean:docs": "lerna run --scope @kiwicom/orbit.kiwi clean",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:build": "yarn bootstrap:ci && yarn orbit-design-tokens build:lib && yarn orbit-components build:lib && yarn orbit-kiwi build",
+    "orbit-kiwi:build": "yarn bootstrap:ci && yarn orbit-design-tokens build:lib && yarn orbit-components build:lib && yarn orbit-kiwi clean && yarn orbit-kiwi build",
     "prepare": "husky install"
   },
   "engines": {

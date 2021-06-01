@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Figma, Github } from "@icons-pack/react-simple-icons";
 import { ButtonLink } from "@kiwicom/orbit-components";
+import { NewWindow } from "@kiwicom/orbit-components/icons";
 
 const StyledContainer = styled.div`
   padding: 0 12px;
@@ -45,7 +46,14 @@ const FancyLink = ({ href }: Props) => {
   };
   return (
     <StyledContainer>
-      <ButtonLink compact external href={href} iconLeft={getUsedIcon()} type="secondary">
+      <ButtonLink
+        compact
+        external
+        href={href}
+        iconLeft={getUsedIcon()}
+        iconRight={<NewWindow />}
+        type="secondary"
+      >
         {getUsedText()}
       </ButtonLink>
     </StyledContainer>

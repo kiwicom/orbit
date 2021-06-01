@@ -1,14 +1,10 @@
 import React from "react";
-import { Heading, Stack, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
-import ButtonLink, {
-  StyledComponent as StyledButtonLink,
-  getBgColorHover,
-  getBgColorFocus,
-  getBgColorActive,
-} from "./ButtonLink";
+import { getBgColor, getBgColorHover, getBgColorFocus, getBgColorActive } from "../utils/button";
 import { ICON_SIZE } from "./Tile";
 
 interface Props {
@@ -42,18 +38,19 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
       box-shadow: ${theme.orbit.boxShadowRaised};
     }
 
-    ${StyledButtonLink} {
+    ${StyledButtonPrimitive} {
       pointer-events: none;
+      background: ${getBgColor({ theme, type, color })};
     }
 
-    &:hover ${StyledButtonLink} {
-      background: ${getBgColorHover({ theme, type, color, dark: true })}
+    &:hover ${StyledButtonPrimitive} {
+      background: ${getBgColorHover({ theme, type, color })}
     }
-    &:focus ${StyledButtonLink} {
-      background: ${getBgColorFocus({ theme, type, color, dark: true })}
+    &:focus ${StyledButtonPrimitive} {
+      background: ${getBgColor({ theme, type, color })}
     }
-    &:active ${StyledButtonLink} {
-      background: ${getBgColorActive({ theme, type, color, dark: true })}
+    &:active ${StyledButtonPrimitive} {
+      background: ${getBgColorActive({ theme, type, color })}
     }
   `};
 `;
@@ -142,13 +139,13 @@ export default function BrandedTile({
         align="center"
         justify="between"
       >
-        <ButtonLink
-          as="div"
-          dark
+        <Button
+          size="large"
+          circled
           {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
         >
           {linkContent}
-        </ButtonLink>
+        </Button>
         <div
           css={css`
             img {

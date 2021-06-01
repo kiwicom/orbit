@@ -28,7 +28,7 @@ const getColor = (active: boolean, level: number, theme) => {
 const StyledAnchor = styled.a<StyledAnchorProps>`
   ${({ active, level, theme }) => css`
     color: ${getColor(active, level, theme)};
-    font-size: ${level > 0 && "14px"};
+    font-size: ${level === 0 ? "14px" : "12px"};
     font-weight: ${level <= 1 && "500"};
     text-indent: -${theme.orbit.spaceXLarge};
     margin-bottom: ${level === 0 && "8px"};

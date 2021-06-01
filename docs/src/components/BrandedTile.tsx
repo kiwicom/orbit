@@ -142,6 +142,8 @@ export default function BrandedTile({
         <Button
           size="large"
           circled
+          // interactive elements shouldn't be nested, so we're making this a click-through div
+          asComponent="div"
           {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
         >
           {linkContent}

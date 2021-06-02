@@ -94,6 +94,7 @@ const StyledSelect = styled(
   font-size: ${({ theme, size }) =>
     size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
   height: ${getSelectSize};
+  // TODO: we should adopt inputPadding component-specific tokens here
   padding: ${({ theme, size, prefix }) =>
     rtlSpacing(
       (size === SIZE_OPTIONS.SMALL &&

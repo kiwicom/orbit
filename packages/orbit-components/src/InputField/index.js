@@ -122,6 +122,7 @@ export const InputContainer: any = styled(({ children, className }) => (
   font-size: ${getToken(TOKENS.fontSizeInput)};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
 
+  // the hover effect is being overwritten, so we could get rid of it anyway
   &:hover > ${FakeInput} {
     ${({ disabled, theme, error }) =>
       !disabled &&

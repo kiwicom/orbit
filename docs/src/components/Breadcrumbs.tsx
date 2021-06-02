@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 const StyledList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
   margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
 `;

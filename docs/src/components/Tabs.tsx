@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Text, useMediaQuery } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 export interface TabObject {
@@ -27,10 +27,10 @@ const StyledTabLink = styled(Link)`
 
 const StyledTab = styled.div`
   ${({ theme }) => css`
-    border-top-left-radius: ${theme.orbit.borderRadiusLarge};
-    border-top-right-radius: ${theme.orbit.borderRadiusLarge};
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     color: ${theme.orbit.paletteInkNormal};
-    box-shadow: ${theme.orbit.boxShadowRaised};
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhite} 27%);
     display: inline-block;
     position: relative;
@@ -38,13 +38,13 @@ const StyledTab = styled.div`
 `;
 
 const StyledTabWrapper = styled.div<SizeCheck>`
-  ${({ isMediumMobile, theme }) => css`
+  ${({ theme }) => css`
     display: inline-block;
     z-index: ${theme.orbit.zIndexSticky};
     ${StyledTab}, ${StyledTabLink} {
-      padding: ${theme.orbit.spaceSmall}
-        ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
-      margin: 0 ${isMediumMobile ? theme.orbit.spaceMedium : theme.orbit.spaceXSmall};
+      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
+        ${theme.orbit.spaceMedium};
+      margin: 0 ${theme.orbit.spaceXSmall};
     }
   `}
 `;
@@ -55,9 +55,8 @@ interface TabProps {
 }
 
 const Tab = ({ isActive, tab }: TabProps) => {
-  const { isMediumMobile } = useMediaQuery();
   return (
-    <StyledTabWrapper isMediumMobile={isMediumMobile}>
+    <StyledTabWrapper>
       {isActive ? (
         <StyledTab>
           <Text size="large" as="span">

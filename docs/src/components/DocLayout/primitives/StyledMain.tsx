@@ -4,6 +4,7 @@ const StyledMain = styled.main`
   flex: 1;
   position: relative;
   display: flex;
+  padding-top: 6px; /* align with DocNavigation */
   flex-direction: column;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
 

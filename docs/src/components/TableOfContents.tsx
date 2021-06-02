@@ -28,8 +28,10 @@ const getColor = (active: boolean, level: number, theme) => {
 const StyledAnchor = styled.a<StyledAnchorProps>`
   ${({ active, level, theme }) => css`
     color: ${getColor(active, level, theme)};
-    font-size: ${level <= 1 ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextSmall};
+    font-size: ${level === 0 ? "14px" : "12px"};
+    font-weight: ${level <= 1 && "500"};
     text-indent: -${theme.orbit.spaceXLarge};
+    margin-bottom: ${level === 0 && "8px"};
     padding-left: ${theme.orbit.spaceXLarge};
     display: inline-block;
 
@@ -50,6 +52,23 @@ const StyledTocList = styled.ul`
   overflow-y: auto;
 `;
 
+const StyledTocListItem = styled.li<{ level: number }>`
+  ${({ level }) => `
+    ${
+      level === 0 &&
+      `
+      margin-bottom: 8px;
+    `
+    };
+    ${
+      level === 1 &&
+      `
+      margin-bottom: 4px;
+    `
+    };
+  `};
+`;
+
 const stripOctothorpe = (string?: string) => {
   if (!string) return "";
   return string.replace("#", "");
@@ -61,7 +80,7 @@ const getTocList = (array: TocItemObject[], level = 0, activeScrollSpy: string) 
     return [];
   }
   return array.map(item => (
-    <li key={item.url}>
+    <StyledTocListItem key={item.url} level={level}>
       <StyledAnchor
         level={level}
         href={item.url}
@@ -70,7 +89,7 @@ const getTocList = (array: TocItemObject[], level = 0, activeScrollSpy: string) 
         {item.title}
       </StyledAnchor>
       {item.items && <ul>{getTocList(item.items, nextLevel, activeScrollSpy)}</ul>}
-    </li>
+    </StyledTocListItem>
   ));
 };
 
@@ -107,7 +126,12 @@ const TableOfContents = ({ items }: Props) => {
   }
   const tocIds = getTocIds(TocContent);
   return (
-    <Scrollspy items={tocIds} onUpdate={handleScrollSpyUpdate}>
+    <Scrollspy
+      componentTag="div"
+      items={tocIds}
+      onUpdate={handleScrollSpyUpdate}
+      currentClassName=""
+    >
       <StyledTocList>{TocContent}</StyledTocList>
     </Scrollspy>
   );

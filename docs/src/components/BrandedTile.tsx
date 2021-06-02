@@ -1,9 +1,10 @@
 import React from "react";
-import { Heading, Stack, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
-import ButtonLink from "./ButtonLink";
+import { getBgColor, getBgColorHover, getBgColorActive } from "../utils/dark-button";
 import { ICON_SIZE } from "./Tile";
 
 interface Props {
@@ -21,16 +22,36 @@ interface Props {
   children: React.ReactNode;
 }
 
-const StyledWrapper = styled.div<{ primary: string }>`
-  ${({ theme, primary }) => `
+const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"; color?: string }>`
+  ${({ theme, primary, type, color }) => `
+    display: block;
     padding: 2rem;
     border-radius: 1rem;
     background: ${primary};
     color: ${theme.orbit.colorTextWhite};
-    box-shadow: 0px 8px 24px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.08);
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: 100%;
     flex-direction: column;
+    &:hover {
+      box-shadow: ${theme.orbit.boxShadowRaised};
+    }
+
+    ${StyledButtonPrimitive} {
+      pointer-events: none;
+      background: ${getBgColor({ theme, type, color })};
+    }
+
+    &:hover ${StyledButtonPrimitive} {
+      background: ${getBgColorHover({ theme, type, color })}
+    }
+    &:focus ${StyledButtonPrimitive} {
+      background: ${getBgColor({ theme, type, color })}
+    }
+    &:active ${StyledButtonPrimitive} {
+      background: ${getBgColorActive({ theme, type, color })}
+    }
   `};
 `;
 
@@ -94,7 +115,14 @@ export default function BrandedTile({
   const colorSecondary = color === "product" ? theme.orbit.paletteProductNormal : color.secondary;
 
   return (
-    <StyledWrapper primary={colorPrimary}>
+    <StyledWrapper
+      className="BrandedTile"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      primary={colorPrimary}
+      {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+    >
       <Stack inline>
         <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
         <StyledHeading>
@@ -107,20 +135,19 @@ export default function BrandedTile({
       <Stack
         inline
         direction="column"
-        largeMobile={{ direction: "row" }}
+        desktop={{ direction: "row" }}
         align="center"
         justify="between"
       >
-        <ButtonLink
+        <Button
+          size="large"
+          circled
+          // interactive elements shouldn't be nested, so we're making this a click-through div
+          asComponent="div"
           {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
-          dark
-          href={href}
-          target="_blank"
-          title={linkContent}
-          rel="noopener noreferrer"
         >
           {linkContent}
-        </ButtonLink>
+        </Button>
         <div
           css={css`
             img {

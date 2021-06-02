@@ -1,0 +1,21 @@
+{
+  "component": {
+    "padding": {
+      "input-file": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 6
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

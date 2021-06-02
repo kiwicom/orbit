@@ -1,0 +1,12 @@
+{
+  "component": {
+    "padding": {
+      "loading": {
+        "type": "size",
+        "value": "{foundation.space.three-x}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

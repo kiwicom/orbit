@@ -12,11 +12,11 @@ import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import useDevMode from "../hooks/useDevMode";
 
 const StyledFooter = styled.footer<{ hasGradient?: boolean }>`
+  position: relative; /* so it's on top of elements like the rocket image and content card shadow */
+
   ${({ hasGradient }) =>
     hasGradient &&
     `
-      position: relative; /* so that the content card shadow goes behind it */
-
       &::before {
         content: "";
         display: block;

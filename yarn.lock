@@ -5001,6 +5001,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-scrollspy@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@types/react-scrollspy/-/react-scrollspy-3.3.3.tgz#ebf82b20f0a14cf2db175f6b3d65f2e3d1acb911"
+  integrity sha512-HLaQStNl141NngJoczBNAK71GRmmbO25p+JiJyEI0bUvH9MKO8B52SI3kVb1PU48S/n1SiNbabDn3D1p37/1bA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-syntax-highlighter@11.0.5":
   version "11.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.5.tgz#0d546261b4021e1f9d85b50401c0a42acb106087"

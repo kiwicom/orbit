@@ -15,6 +15,7 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { Link } from "gatsby";
 import { css } from "styled-components";
 
+import BlockQuote from "./components/BlockQuote";
 import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
@@ -81,6 +82,8 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
     {children}
   </ol>
 );
+
+export const blockquote = BlockQuote;
 
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
   <Table>{children}</Table>

@@ -18,6 +18,5 @@ export const StyledWrapperDesktop = styled.div`
   ${mediaQueries.desktop(css`
     display: block;
     flex-shrink: 0;
-    margin-top: -6px;
   `)}
 `;

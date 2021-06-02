@@ -49,6 +49,7 @@ const StyledFrame = styled(Frame)`
     width: 100%;
     min-height: ${minHeight}px;
     height: ${Number(height) + BOARD_HEIGHT}px;
+    padding: 0 16px;
     ${getBackground(background)};
   `};
 `;

@@ -15,6 +15,10 @@
         "border-color": {
           "type": "color",
           "value": "{foundation.palette.cloud.normal}"
+        },
+        "border-size": {
+          "type": "size",
+          "value": 1
         }
       },
       "action": {

@@ -7,6 +7,7 @@
 - badge (deprecated)
 - button
 - button-link
+- card (deprecated)
 - form-box
 - form-element
 - heading

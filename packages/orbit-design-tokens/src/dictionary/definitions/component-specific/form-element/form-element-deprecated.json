@@ -1,0 +1,12 @@
+{
+  "component": {
+    "border-style": {
+      "input": {
+        "type": "border-style",
+        "value": "solid",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

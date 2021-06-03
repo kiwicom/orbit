@@ -1,0 +1,13 @@
+{
+  "component": {
+    "border-color": {
+      "modal": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.border-color}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

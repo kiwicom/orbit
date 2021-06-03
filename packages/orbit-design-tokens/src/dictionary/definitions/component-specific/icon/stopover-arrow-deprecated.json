@@ -1,0 +1,13 @@
+{
+  "component": {
+    "color": {
+      "stopover-arrow": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.foreground.secondary}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

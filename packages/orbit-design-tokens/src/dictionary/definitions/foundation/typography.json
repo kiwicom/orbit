@@ -25,6 +25,11 @@
       }
     },
     "line-height": {
+      "standard": {
+        "type": "size",
+        "value": 1.4,
+        "internal": true
+      },
       "small": {
         "type": "size",
         "value": 16,

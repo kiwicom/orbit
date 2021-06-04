@@ -21,6 +21,8 @@ export const isSpacing = (prop: Property): boolean => isTypeOf(prop, "spacing");
 
 export const isDuration = (prop: Property): boolean => isTypeOf(prop, "duration");
 
+export const isOpacity = (prop: Property): boolean => isTypeOf(prop, "opacity");
+
 export const isInternal = ({ internal }: Property): boolean => !!internal;
 
 export const isNotInternal = (token: Property): boolean => !isInternal(token);

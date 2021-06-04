@@ -7,6 +7,7 @@ import {
   isBreakpoint,
   isModifier,
   isDuration,
+  isOpacity,
 } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 import { stringify, pixelized } from "../../utils/string";
@@ -72,6 +73,7 @@ export const valueJavascript = {
     if (isBorderRadius(prop)) return borderRadiusJavascript.transformer(prop);
     if (isDuration(prop)) return durationJavascript.transformer(prop);
     if (isZIndex(prop) || isBreakpoint(prop) || isModifier(prop)) return Number(prop.value);
+    if (isOpacity(prop)) return stringify(Number(prop.value) / 100);
     return stringify(prop.value);
   },
 };

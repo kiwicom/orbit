@@ -1,0 +1,23 @@
+{
+  "component": {
+    "button": {
+      "disabled": {
+        "opacity": {
+          "type": "opacity",
+          "value": 30
+        }
+      }
+    },
+    "opacity": {
+      "button": {
+        "disabled": {
+          "type": "opacity",
+          "value": 30,
+          "deprecated": true,
+          "deprecated-replace": "{component.button.disabled.opacity}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

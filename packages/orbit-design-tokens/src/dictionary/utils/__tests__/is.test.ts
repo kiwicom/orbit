@@ -12,6 +12,7 @@ import {
   isBoxShadow,
   isModifier,
   isDuration,
+  isOpacity,
 } from "../is";
 
 const tokenPlaceholder = ({ type, internal }) => ({
@@ -62,6 +63,10 @@ describe("is utils", () => {
   it("isDuration should return expected", () => {
     expect(isDuration(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
     expect(isDuration(tokenPlaceholder({ type: "duration", internal: false }))).toEqual(true);
+  });
+  it("isOpacity should return expected", () => {
+    expect(isOpacity(tokenPlaceholder({ type: "color", internal: true }))).toEqual(false);
+    expect(isOpacity(tokenPlaceholder({ type: "opacity", internal: false }))).toEqual(true);
   });
   it("isInternal should return expected", () => {
     expect(isInternal(tokenPlaceholder({ type: "color", internal: true }))).toBe(true);

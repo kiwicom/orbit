@@ -1,0 +1,135 @@
+{
+  "component": {
+    "form-element": {
+      "foreground": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "comment": "Should be used for the text when they value is not filled."
+      },
+      "foreground-filled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}"
+      },
+      "foreground-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}"
+      },
+      "label": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        },
+        "foreground-filled": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}"
+        }
+      },
+      "prefix": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.light}"
+        }
+      }
+    },
+    "color": {
+      "form-label": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.label.foreground}",
+        "deprecated-version": "1.0.0"
+      },
+      "form-label-filled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.label.foreground-filled}",
+        "deprecated-version": "1.0.0"
+      },
+      "icon-checkbox-radio": {
+        "type": "color",
+        "value": "{foundation.palette.product.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "icon-checkbox-radio-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "icon-input": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-replace": "{component.icon.foreground.tertiary}",
+        "deprecated-version": "1.0.0"
+      },
+      "icon-radio-button": {
+        "type": "color",
+        "value": "{foundation.palette.product.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "icon-radio-button-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "info-check-box-radio": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-replace": "{component.text.foreground.secondary}",
+        "deprecated-version": "1.0.0"
+      },
+      "placeholder-input": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.foreground}",
+        "deprecated-version": "1.0.0"
+      },
+      "placeholder-input-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "placeholder-input-file": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "placeholder-input-file-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "text-input": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.foreground-filled}",
+        "deprecated-version": "1.0.0"
+      },
+      "text-input-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.foreground-disabled}",
+        "deprecated-version": "1.0.0"
+      },
+      "text-input-prefix": {
+        "type": "color",
+        "value": "{foundation.palette.ink.light}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.prefix.foreground}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

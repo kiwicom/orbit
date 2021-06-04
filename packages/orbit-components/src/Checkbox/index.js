@@ -42,9 +42,6 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const tokens = {
     [TOKENS.background]: getBackground(),
     [TOKENS.borderColor]: resolveBorderColor(),
-    [TOKENS.iconColor]: disabled
-      ? theme.orbit.paletteCloudNormal
-      : theme.orbit.colorIconCheckboxRadio,
   };
 
   return tokens[name];
@@ -181,7 +178,6 @@ export const Label: any = styled(({ className, children, dataTest }) => (
   position: relative;
 
   ${IconContainer} {
-    color: ${getToken(TOKENS.iconColor)};
     border: 2px solid ${getToken(TOKENS.borderColor)};
   }
 

@@ -7,6 +7,14 @@
         "deprecated": true,
         "deprecated-version": "1.0.0"
       }
+    },
+    "margin-top": {
+      "form-feedback": {
+        "type": "size",
+        "value": "{foundation.space.half-x}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
     }
   }
 }

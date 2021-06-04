@@ -73,7 +73,7 @@
     "@svgr/plugin-svgo": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/react-hooks": "^5.1.1",
+    "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^13.1.1",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.9.0",

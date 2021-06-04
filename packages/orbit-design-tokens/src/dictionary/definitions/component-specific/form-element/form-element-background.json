@@ -1,0 +1,30 @@
+{
+  "component": {
+    "form-element": {
+      "background": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}"
+      },
+      "background-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}"
+      }
+    },
+    "background": {
+      "input": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.background}",
+        "deprecated-version": "1.0.0"
+      },
+      "input-disabled": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{component.form-element.background-disabled}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

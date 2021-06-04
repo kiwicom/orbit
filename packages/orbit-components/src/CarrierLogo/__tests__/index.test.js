@@ -19,10 +19,10 @@ describe("CarrierLogo", () => {
     expect(screen.getByTitle("Ryanair")).toBeInTheDocument();
     const img = screen.getByRole("img");
     expect(img.getAttribute("src")).toMatchInlineSnapshot(
-      `"//images.kiwi.com/airlines/32/FR.png?default=airline.png"`,
+      `"//images.kiwi.com/airlines/32x32/FR.png?default=airline.png"`,
     );
     expect(img.getAttribute("srcset")).toMatchInlineSnapshot(
-      `"//images.kiwi.com/airlines/64/FR.png?default=airline.png 2x"`,
+      `"//images.kiwi.com/airlines/64x64/FR.png?default=airline.png 2x"`,
     );
   });
 
@@ -30,10 +30,10 @@ describe("CarrierLogo", () => {
     render(<CarrierLogo carriers={[{ code: "TO", name: "Transavia France", type: "bus" }]} />);
     const img = screen.getByRole("img");
     expect(img.getAttribute("src")).toMatchInlineSnapshot(
-      `"//images.kiwi.com/airlines/32/TO.png?default=bus.png"`,
+      `"//images.kiwi.com/airlines/32x32/TO.png?default=bus.png"`,
     );
     expect(img.getAttribute("srcset")).toMatchInlineSnapshot(
-      `"//images.kiwi.com/airlines/64/TO.png?default=bus.png 2x"`,
+      `"//images.kiwi.com/airlines/64x64/TO.png?default=bus.png 2x"`,
     );
   });
 });

@@ -48,8 +48,8 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
   const urlSizes =
     carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
   return {
-    src: `${BASE_URL}/airlines/${urlSizes.base}/${code}.png?default=${carrierType}.png`,
-    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+    src: `${BASE_URL}/airlines/${urlSizes.base}x${urlSizes.base}/${code}.png?default=${carrierType}.png`,
+    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
   };
 })`
   background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};

@@ -60,15 +60,22 @@ export const attributeNOVCamelCase = {
   name: "attribute/nov/camelCase",
   type: "attribute",
   transformer: ({ attributes }: Property): Attributes => {
-    const camelCased = {};
+    const camelCased: Attributes = {};
+    const tempAttrs: Attributes = {};
     for (let i = 0; i < NOV_STRUCTURE.length; i += 1) {
       const key = NOV_STRUCTURE[i];
       if (attributes[key]) {
         camelCased[key] = _.camelCase(String(attributes[key]));
+        tempAttrs[key] = String(attributes[key]);
       }
     }
 
-    return { ...attributes, ...camelCased };
+    const { object, variant, subVariant } = tempAttrs;
+    const name = _.camelCase(
+      Object.values({ object, variant, subVariant }).filter(Boolean).join(" "),
+    );
+
+    return { ...attributes, ...camelCased, name };
   },
 };
 

@@ -94,10 +94,11 @@ const typescriptFactory = allProperties => {
         attributes: { "box-shadow": boxShadow },
       } = prop;
       const boxShadowDefinition = boxShadow.map(
-        ({ x, y, blur, spread, color, opacity: colorOpacity }) => {
+        ({ x, y, blur, spread, color, inset = false, opacity: colorOpacity }) => {
           const definition = {
             def: [x, y, blur, spread],
             color: `transparentColor(${getValue(color)}, ${colorOpacity})`,
+            inset,
           };
           const values = Object.keys(definition).map(key => {
             const val = Array.isArray(definition[key])

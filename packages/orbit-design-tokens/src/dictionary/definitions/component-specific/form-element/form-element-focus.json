@@ -1,0 +1,58 @@
+{
+  "component": {
+    "form-element": {
+      "focus": {
+        "type": "box-shadow",
+        "value": "{foundation.palette.blue.normal}",
+        "attributes": {
+          "box-shadow": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 1,
+              "color": "{foundation.palette.blue.normal}",
+              "opacity": 100,
+              "inset": true
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 3,
+              "color": "{foundation.palette.blue.normal}",
+              "opacity": 15,
+              "inset": true
+            }
+          ]
+        }
+      },
+      "error-focus": {
+        "type": "box-shadow",
+        "value": "{foundation.palette.red.normal}",
+        "attributes": {
+          "box-shadow": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 1,
+              "color": "{foundation.palette.red.normal}",
+              "opacity": 100,
+              "inset": true
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 3,
+              "color": "{foundation.palette.red.normal}",
+              "opacity": 15,
+              "inset": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

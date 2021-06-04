@@ -103,6 +103,20 @@
         "deprecated-replace": "{component.form-element.border-color-hover}",
         "deprecated-version": "1.0.0"
       }
+    },
+    "border-width": {
+      "input": {
+        "type": "size",
+        "value": 1,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "input-focus": {
+        "type": "size",
+        "value": 2,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
     }
   }
 }

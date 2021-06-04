@@ -117,16 +117,19 @@ export const attributeBoxShadowJavascript = {
       ? boxShadowDefinition
       : [boxShadowDefinition];
 
-    const boxShadowValues = (boxShadowArray as []).map(({ x, y, blur, spread, color, opacity }) => {
-      return {
-        x: pixelized(x),
-        y: pixelized(y),
-        blur: falsyString(blur != null, pixelized(blur)),
-        spread: falsyString(spread != null, pixelized(spread)),
-        color,
-        opacity,
-      };
-    });
+    const boxShadowValues = (boxShadowArray as []).map(
+      ({ x, y, blur, spread, color, opacity, inset }) => {
+        return {
+          x: pixelized(x),
+          y: pixelized(y),
+          blur: falsyString(blur != null, pixelized(blur)),
+          spread: falsyString(spread != null, pixelized(spread)),
+          color,
+          opacity,
+          inset,
+        };
+      },
+    );
 
     return { ...attributes, "box-shadow": boxShadowValues };
   },

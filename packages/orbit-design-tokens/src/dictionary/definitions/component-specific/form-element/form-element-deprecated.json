@@ -15,6 +15,16 @@
         "deprecated": true,
         "deprecated-version": "1.0.0"
       }
+    },
+    "modifier-scale": {
+      "checkbox-radio": {
+        "active": {
+          "type": "modifier",
+          "value": 0.95,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
     }
   }
 }

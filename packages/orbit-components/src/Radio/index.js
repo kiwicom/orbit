@@ -170,6 +170,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
 
     &:active ${IconContainer} {
       border-color: ${disabled ? getBorderColor : theme.orbit.paletteBlueNormal};
+      // TODO: we can get rid of it completely, there won't be token replacement
       transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
     }
 

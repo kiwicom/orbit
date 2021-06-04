@@ -1,0 +1,45 @@
+{
+  "component": {
+    "button": {
+      "font-size": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.font-size.small}"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.font-size.large}"
+        }
+      }
+    },
+    "font-size": {
+      "button": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.font-size.small}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.font-size.small}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.font-size.normal}",
+          "deprecated-version": "1.0.0"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.font-size.large}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.font-size.large}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

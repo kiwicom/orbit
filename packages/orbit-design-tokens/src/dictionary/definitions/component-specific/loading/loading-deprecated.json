@@ -7,6 +7,14 @@
         "deprecated": true,
         "deprecated-version": "1.0.0"
       }
+    },
+    "color-text": {
+      "loading": {
+        "type": "color",
+        "value": "{foundation.palette.ink.lighter}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
     }
   }
 }

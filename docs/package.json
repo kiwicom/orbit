@@ -32,7 +32,7 @@
     "copy-to-clipboard": "^3.3.1",
     "dedent": "^0.7.0",
     "downshift": "^6.0.10",
-    "gatsby": "^2.32.3",
+    "gatsby": "^3.6.2",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-mdx": "^2.3.0",

@@ -1,6 +1,6 @@
 name: Compressed Size
 
-on: [pull_request]
+on: [pull_request_target]
 
 env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands

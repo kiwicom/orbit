@@ -133,7 +133,7 @@ Therefore, the implementation of `foundation.space.one-x` design token will be f
 
 ## List of values for variant attributes
 
-TODO
+For all the variants (and sub-variants) we use predefined set of possible names, so we can ensure consistent and good developer/designer experience through the whole design system.
 
 ### Proportion scale for spacing
 

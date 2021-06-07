@@ -31,7 +31,7 @@
           "value": "{foundation.palette.ink.light}",
           "opacity": 30
         },
-        "icon-color": {
+        "icon-foreground": {
           "type": "color",
           "value": "#3B5998"
         }

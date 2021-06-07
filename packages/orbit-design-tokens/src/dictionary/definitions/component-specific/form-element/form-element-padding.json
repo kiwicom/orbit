@@ -1,8 +1,8 @@
 {
   "component": {
     "form-element": {
-      "padding": {
-        "small": {
+      "small": {
+        "padding": {
           "type": "size",
           "category": "spacing",
           "value": null,
@@ -12,8 +12,10 @@
               "left-right": "{foundation.space.three-x}"
             }
           }
-        },
-        "normal": {
+        }
+      },
+      "normal": {
+        "padding": {
           "type": "size",
           "category": "spacing",
           "value": null,
@@ -39,7 +41,7 @@
             }
           },
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.padding.small}",
+          "deprecated-replace": "{component.form-element.small.padding}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
@@ -53,7 +55,7 @@
             }
           },
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.padding.normal}",
+          "deprecated-replace": "{component.form-element.normal.padding}",
           "deprecated-version": "1.0.0"
         }
       }

@@ -1,29 +1,39 @@
 {
   "component": {
     "icon": {
-      "size": {
-        "extra-extra-small": {
+      "extra-extra-small": {
+        "size": {
           "type": "size",
           "value": 12
-        },
-        "extra-small": {
+        }
+      },
+      "extra-small": {
+        "size": {
           "type": "size",
           "value": "{foundation.size.small}",
           "internal-comment": "In the future we want to bump the size of small icons from 16 to 20 pixels, so it's more aligned with text sizes. Therefore this extra-small variant is temporary solution."
-        },
-        "small": {
+        }
+      },
+      "small": {
+        "size": {
           "type": "size",
           "value": 20
-        },
-        "medium": {
+        }
+      },
+      "medium": {
+        "size": {
           "type": "size",
           "value": "{foundation.size.medium}"
-        },
-        "large": {
+        }
+      },
+      "large": {
+        "size": {
           "type": "size",
           "value": "{foundation.size.large}"
-        },
-        "extra-large": {
+        }
+      },
+      "extra-large": {
+        "size": {
           "type": "size",
           "value": 48
         }
@@ -35,21 +45,21 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-replace": "{component.icon.extra-small.size}",
           "deprecated-version": "1.0.0"
         },
         "medium": {
           "type": "size",
           "value": "{foundation.size.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-replace": "{component.icon.medium.size}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.large}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.large}",
+          "deprecated-replace": "{component.icon.large.size}",
           "deprecated-version": "1.0.0"
         }
       },
@@ -58,7 +68,7 @@
           "type": "size",
           "value": "{foundation.size.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-replace": "{component.icon.medium.size}",
           "deprecated-version": "1.0.0"
         }
       },
@@ -66,14 +76,14 @@
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-replace": "{component.icon.small.size}",
         "deprecated-version": "1.0.0"
       },
       "radio-button": {
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-replace": "{component.icon.small.size}",
         "deprecated-version": "1.0.0"
       },
       "stopover-arrow": {
@@ -85,9 +95,9 @@
       },
       "country-flag": {
         "type": "size",
-        "value": "{component.icon.size.medium}",
+        "value": "{foundation.size.medium}",
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.medium}",
+        "deprecated-replace": "{component.icon.medium.size}",
         "deprecated-version": "1.0.0"
       }
     },
@@ -97,21 +107,21 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-replace": "{component.icon.extra-small.size}",
           "deprecated-version": "1.0.0"
         },
         "medium": {
           "type": "size",
           "value": "{foundation.size.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-replace": "{component.icon.medium.size}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.large}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.large}",
+          "deprecated-replace": "{component.icon.large.size}",
           "deprecated-version": "1.0.0"
         }
       },
@@ -119,21 +129,21 @@
         "type": "size",
         "value": "{foundation.size.medium}",
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.medium}",
+        "deprecated-replace": "{component.icon.medium.size}",
         "deprecated-version": "1.0.0"
       },
       "checkbox": {
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-replace": "{component.icon.small.size}",
         "deprecated-version": "1.0.0"
       },
       "radio-button": {
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.icon.size.small}",
+        "deprecated-replace": "{component.icon.small.size}",
         "deprecated-version": "1.0.0"
       },
       "stopover-arrow": {
@@ -155,21 +165,21 @@
           "type": "size",
           "value": 12,
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.extra-extra-small}",
+          "deprecated-replace": "{component.icon.extra-extra-small.size}",
           "deprecated-version": "1.0.0"
         },
         "medium": {
           "type": "size",
           "value": "{foundation.size.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-replace": "{component.icon.medium.size}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": 48,
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.extra-large}",
+          "deprecated-replace": "{component.icon.extra-large.size}",
           "deprecated-version": "1.0.0"
         }
       },
@@ -184,14 +194,14 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.extra-small}",
+          "deprecated-replace": "{component.icon.extra-small.size}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.size.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.icon.size.medium}",
+          "deprecated-replace": "{component.icon.medium.size}",
           "deprecated-version": "1.0.0"
         }
       }

@@ -1,16 +1,20 @@
 {
   "component": {
     "button": {
-      "font-size": {
-        "small": {
+      "small": {
+        "font-size": {
           "type": "size",
           "value": "{foundation.font-size.small}"
-        },
-        "normal": {
+        }
+      },
+      "normal": {
+        "font-size": {
           "type": "size",
           "value": "{foundation.font-size.normal}"
-        },
-        "large": {
+        }
+      },
+      "large": {
+        "font-size": {
           "type": "size",
           "value": "{foundation.font-size.large}"
         }
@@ -22,21 +26,21 @@
           "type": "size",
           "value": "{foundation.font-size.small}",
           "deprecated": true,
-          "deprecated-replace": "{component.button.font-size.small}",
+          "deprecated-replace": "{component.button.small.font-size}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.font-size.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.button.font-size.normal}",
+          "deprecated-replace": "{component.button.normal.font-size}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.font-size.large}",
           "deprecated": true,
-          "deprecated-replace": "{component.button.font-size.large}",
+          "deprecated-replace": "{component.button.large.font-size}",
           "deprecated-version": "1.0.0"
         }
       }

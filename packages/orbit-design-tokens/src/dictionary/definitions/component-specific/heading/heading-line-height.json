@@ -1,32 +1,44 @@
 {
   "component": {
     "heading": {
-      "line-height": {
-        "display": {
+      "display": {
+        "line-height": {
           "type": "size",
           "value": 44
-        },
-        "display-subtitle": {
+        }
+      },
+      "display-subtitle": {
+        "line-height": {
           "type": "size",
           "value": 28
-        },
-        "title-1": {
+        }
+      },
+      "title-1": {
+        "line-height": {
           "type": "size",
           "value": 36
-        },
-        "title-2": {
+        }
+      },
+      "title-2": {
+        "line-height": {
           "type": "size",
           "value": 28
-        },
-        "title-3": {
+        }
+      },
+      "title-3": {
+        "line-height": {
           "type": "size",
           "value": 24
-        },
-        "title-4": {
+        }
+      },
+      "title-4": {
+        "line-height": {
           "type": "size",
           "value": 20
-        },
-        "title-5": {
+        }
+      },
+      "title-5": {
+        "line-height": {
           "type": "size",
           "value": 20
         }
@@ -42,49 +54,49 @@
         "type": "size",
         "value": 44,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.display}",
+        "deprecated-replace": "{component.heading.display.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-display-subtitle": {
         "type": "size",
         "value": 28,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.display-subtitle}",
+        "deprecated-replace": "{component.heading.display-subtitle.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-title-1": {
         "type": "size",
         "value": 36,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.title-1}",
+        "deprecated-replace": "{component.heading.title-1.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-title-2": {
         "type": "size",
         "value": 28,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.title-2}",
+        "deprecated-replace": "{component.heading.title-2.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-title-3": {
         "type": "size",
         "value": 24,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.title-3}",
+        "deprecated-replace": "{component.heading.title-3.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-title-4": {
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.title-4}",
+        "deprecated-replace": "{component.heading.title-4.line-height}",
         "deprecated-version": "1.0.0"
       },
       "heading-title-5": {
         "type": "size",
         "value": 20,
         "deprecated": true,
-        "deprecated-replace": "{component.heading.line-height.title-5}",
+        "deprecated-replace": "{component.heading.title-5.line-height}",
         "deprecated-version": "1.0.0"
       }
     }

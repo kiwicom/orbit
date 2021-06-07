@@ -5,9 +5,11 @@
         "type": "color",
         "value": "{foundation.palette.white.normal}"
       },
-      "background-disabled": {
-        "type": "color",
-        "value": "{foundation.palette.cloud.normal}"
+      "disabled": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal}"
+        }
       }
     },
     "background": {
@@ -22,7 +24,7 @@
         "type": "color",
         "value": "{foundation.palette.cloud.normal}",
         "deprecated": true,
-        "deprecated-replace": "{component.form-element.background-disabled}",
+        "deprecated-replace": "{component.form-element.disabled.background}",
         "deprecated-version": "1.0.0"
       }
     }

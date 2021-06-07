@@ -1,12 +1,14 @@
 {
   "component": {
     "form-element": {
-      "font-size": {
-        "small": {
+      "small": {
+        "font-size": {
           "type": "size",
           "value": "{foundation.font-size.normal}"
-        },
-        "normal": {
+        }
+      },
+      "normal": {
+        "font-size": {
           "type": "size",
           "value": "{foundation.font-size.normal}"
         }
@@ -18,14 +20,14 @@
           "type": "size",
           "value": "{foundation.font-size.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.font-size.small}",
+          "deprecated-replace": "{component.form-element.small.font-size}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.font-size.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.font-size.normal}",
+          "deprecated-replace": "{component.form-element.normal.font-size}",
           "deprecated-version": "1.0.0"
         }
       },

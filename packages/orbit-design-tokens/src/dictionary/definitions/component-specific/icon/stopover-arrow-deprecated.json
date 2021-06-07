@@ -5,7 +5,7 @@
         "type": "color",
         "value": "{foundation.palette.ink.light}",
         "deprecated": true,
-        "deprecated-replace": "{component.icon.foreground.secondary}",
+        "deprecated-replace": "{component.icon.secondary.foreground}",
         "deprecated-version": "1.0.0"
       }
     }

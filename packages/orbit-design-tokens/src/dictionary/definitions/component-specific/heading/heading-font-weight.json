@@ -1,32 +1,44 @@
 {
   "component": {
     "heading": {
-      "font-weight": {
-        "display": {
+      "display": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}"
-        },
-        "display-subtitle": {
+        }
+      },
+      "display-subtitle": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.normal}"
-        },
-        "title-1": {
+        }
+      },
+      "title-1": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}"
-        },
-        "title-2": {
+        }
+      },
+      "title-2": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}"
-        },
-        "title-3": {
+        }
+      },
+      "title-3": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}"
-        },
-        "title-4": {
+        }
+      },
+      "title-4": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}"
-        },
-        "title-5": {
+        }
+      },
+      "title-5": {
+        "font-weight": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}"
         }
@@ -38,49 +50,49 @@
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.display}",
+          "deprecated-replace": "{component.heading.display.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "display-subtitle": {
           "type": "font-weight",
           "value": "{foundation.font-weight.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.display-subtitle}",
+          "deprecated-replace": "{component.heading.display-subtitle.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "title-1": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.title-1}",
+          "deprecated-replace": "{component.heading.title-1.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "title-2": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.title-2}",
+          "deprecated-replace": "{component.heading.title-2.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "title-3": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.title-3}",
+          "deprecated-replace": "{component.heading.title-3.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "title-4": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.title-4}",
+          "deprecated-replace": "{component.heading.title-4.font-weight}",
           "deprecated-version": "1.0.0"
         },
         "title-5": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
-          "deprecated-replace": "{component.heading.font-weight.title-5}",
+          "deprecated-replace": "{component.heading.title-5.font-weight}",
           "deprecated-version": "1.0.0"
         }
       }

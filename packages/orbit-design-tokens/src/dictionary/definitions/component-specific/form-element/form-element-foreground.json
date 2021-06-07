@@ -6,22 +6,28 @@
         "value": "{foundation.palette.ink.lighter}",
         "comment": "Should be used for the text when they value is not filled."
       },
-      "foreground-filled": {
-        "type": "color",
-        "value": "{foundation.palette.ink.normal}"
+      "filled": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        }
       },
-      "foreground-disabled": {
-        "type": "color",
-        "value": "{foundation.palette.ink.lighter}"
+      "disabled": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.lighter}"
+        }
       },
       "label": {
         "foreground": {
           "type": "color",
           "value": "{foundation.palette.ink.normal}"
         },
-        "foreground-filled": {
-          "type": "color",
-          "value": "{foundation.palette.ink.light}"
+        "filled": {
+          "foreground": {
+            "type": "color",
+            "value": "{foundation.palette.ink.light}"
+          }
         }
       },
       "prefix": {
@@ -43,7 +49,7 @@
         "type": "color",
         "value": "{foundation.palette.ink.light}",
         "deprecated": true,
-        "deprecated-replace": "{component.form-element.label.foreground-filled}",
+        "deprecated-replace": "{component.form-element.label.filled.foreground}",
         "deprecated-version": "1.0.0"
       },
       "icon-checkbox-radio": {
@@ -62,7 +68,7 @@
         "type": "color",
         "value": "{foundation.palette.ink.lighter}",
         "deprecated": true,
-        "deprecated-replace": "{component.icon.foreground.tertiary}",
+        "deprecated-replace": "{component.icon.tertiary.foreground}",
         "deprecated-version": "1.0.0"
       },
       "icon-radio-button": {
@@ -81,7 +87,7 @@
         "type": "color",
         "value": "{foundation.palette.ink.light}",
         "deprecated": true,
-        "deprecated-replace": "{component.text.foreground.secondary}",
+        "deprecated-replace": "{component.text.secondary.foreground}",
         "deprecated-version": "1.0.0"
       },
       "placeholder-input": {
@@ -113,14 +119,14 @@
         "type": "color",
         "value": "{foundation.palette.ink.normal}",
         "deprecated": true,
-        "deprecated-replace": "{component.form-element.foreground-filled}",
+        "deprecated-replace": "{component.form-element.filled.foreground}",
         "deprecated-version": "1.0.0"
       },
       "text-input-disabled": {
         "type": "color",
         "value": "{foundation.palette.ink.lighter}",
         "deprecated": true,
-        "deprecated-replace": "{component.form-element.foreground-disabled}",
+        "deprecated-replace": "{component.form-element.disabled.foreground}",
         "deprecated-version": "1.0.0"
       },
       "text-input-prefix": {

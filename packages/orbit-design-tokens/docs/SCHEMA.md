@@ -54,11 +54,11 @@ The `object` is an attribute to specify either the name of some component (compo
 
 ### Variant
 
-The `variant` level exists to be able to specify more exact contextual usage. In most cases, value of some of supported [variants](#list-of-variants) or [palette shades](#palette-shades) will be used.
+The `variant` level exists to be able to specify more exact contextual usage. In most cases, value of some of supported [variants](#list-of-values-for-variant-attributes) or [palette shades](#list-of-values-for-variant-and-sub-variant-attributes-of-palette-shades) will be used.
 
 ### Property (or either sub-variant)
 
-Following after the `variant` attribute, there is a need to specify either `property` (e.g. `height`) or sometimes allowed sub-variants for some objects. This is especially handy when the token is more complex and has more specificity, like [additional palette shades](#palette-shades).
+Following after the `variant` attribute, there is a need to specify either `property` (e.g. `height`) or sometimes allowed sub-variants for some objects. This is especially handy when the token is more complex and has more specificity, like [additional palette shades](#list-of-values-for-variant-and-sub-variant-attributes-of-palette-shades).
 
 ## Design token definition types
 
@@ -111,7 +111,7 @@ For instance, if we want to deprecate the `component.button.large.height` design
 
 ### Internal token
 
-We take advantage of how style-dictionary is handling aliases for the meeting the goal of providing theme-able design system. This is done by separate and doubled implementation of the foundation visual elements. You can read more about the theming in separate [document](#link).
+We take advantage of how style-dictionary is handling aliases for the meeting the goal of providing theme-able design system. This is done by separate and doubled implementation of the foundation visual elements. You can read more about the theming in separate [document](#missing-link).
 
 The whole foundation visual language is defined and stored in the `foundation` namespace and then referenced via aliases into `global` namespace. Since we don't want to have the same design tokens twice in the generated output, we need to mark them with `internal` additional boolean attribute.
 
@@ -218,7 +218,7 @@ For typography, we use combination of the [sizing scale](#sizing-scale) and scal
 
 ### Elevation scale
 
-Based on our [elevation system](https://orbit.kiwi/foundation/elevation-hierarchy/), we use only following naming variants for the defition of them:
+Based on our [elevation system](https://orbit.kiwi/foundation/elevation-hierarchy/), we use only following naming variants for the definition of them:
 
 - suppressed
 - flat

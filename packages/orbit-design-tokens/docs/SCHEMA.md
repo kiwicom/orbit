@@ -179,14 +179,14 @@ Status types:
 – success
 
 - warning
-  – critical
+– critical
 - neutral
 
 Ordered importance types:
 
 - primary
-  – secondary
-  – tertiary
+– secondary
+– tertiary
 
 We also use additional types connected to some specific behaviour, such as:
 
@@ -206,7 +206,6 @@ For transitioning, we use simple scale of three values that represents relative 
 
 – slow
 – normal
-
 - fast
 
 ### Typography scale

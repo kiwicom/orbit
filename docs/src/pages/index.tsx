@@ -122,7 +122,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Components"
             linkContent="See our components"
-            href="/components/action/button/"
+            href="/components"
             icon={<PuzzleIcon />}
           >
             Our components are a collection of interface elements that can be reused across the
@@ -131,7 +131,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Patterns"
             linkContent="See our patterns"
-            href="/design-patterns/progressive-disclosure/"
+            href="/design-patterns"
             icon={<ModulePuzzleIcon />}
           >
             Missing description for patterns card.

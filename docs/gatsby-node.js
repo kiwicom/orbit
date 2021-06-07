@@ -4,6 +4,7 @@ const yaml = require("js-yaml");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
+const { createOverviewPages } = require("./services/overview-pages");
 
 exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
@@ -148,7 +149,6 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
           url: node.fields.slug,
         });
       }
-
       createNodeField({
         node,
         name: "trail",
@@ -166,6 +166,7 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
+  // createOverviewPages();
   const result = await graphql(`
     query DocumentationQuery {
       allMdx(filter: { fields: { collection: { eq: "documentation" } } }) {
@@ -179,10 +180,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `);
+
+  const renderOverviewPages = allPages => {
+    allPages.forEach(page => {
+      const { pages, slug } = page;
+      if (!pages) return undefined;
+
+      createPage({
+        path: slug,
+        component: `${process.cwd()}/src/templates/Overview.tsx`,
+        context: { slug, pages },
+      });
+
+      return renderOverviewPages(pages);
+    });
+  };
+
+  renderOverviewPages(await createOverviewPages());
+
   if (result.errors) {
     reporter.panicOnBuild(`Error when querying guides.`);
     return;
   }
+
   result.data.allMdx.nodes.forEach(({ id, fields }) => {
     createPage({
       path: fields.slug,

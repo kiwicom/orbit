@@ -1,0 +1,121 @@
+{
+  "component": {
+    "background": {
+      "tag": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.light}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-hover": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.light-secondary}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-active": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.light-tertiary}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-selected": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-selected-hover": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal-secondary}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-selected-active": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal-tertiary}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "border-color": {
+      "tag": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-focus": {
+        "type": "color",
+        "value": "{foundation.palette.blue.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "color-text": {
+      "tag": {
+        "type": "color",
+        "value": "{foundation.palette.ink.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-selected": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "padding": {
+      "tag": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top-bottom": 6,
+            "left-right": "{foundation.space.two-x}"
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-removable": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top": 6,
+            "right": 6,
+            "bottom": 6,
+            "left": "{foundation.space.two-x}"
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-removable-with-icon": {
+        "type": "size",
+        "value": 6,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "tag-with-icon": {
+        "type": "size",
+        "category": "spacing",
+        "value": null,
+        "attributes": {
+          "spacing": {
+            "top": 6,
+            "right": "{foundation.space.two-x}",
+            "bottom": 6,
+            "left": 6
+          }
+        },
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

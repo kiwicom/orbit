@@ -1,24 +1,32 @@
 {
   "component": {
     "illustration": {
-      "height": {
-        "extra-small": {
+      "extra-small": {
+        "height": {
           "type": "size",
           "value": 90
-        },
-        "small": {
+        }
+      },
+      "small": {
+        "height": {
           "type": "size",
           "value": 120
-        },
-        "medium": {
+        }
+      },
+      "medium": {
+        "height": {
           "type": "size",
           "value": 200
-        },
-        "large": {
+        }
+      },
+      "large": {
+        "height": {
           "type": "size",
           "value": 280
-        },
-        "display": {
+        }
+      },
+      "display": {
+        "height": {
           "type": "size",
           "value": 460
         }
@@ -30,14 +38,14 @@
           "type": "size",
           "value": 90,
           "deprecated": true,
-          "deprecated-replace": "{component.illustration.height.extra-small}",
+          "deprecated-replace": "{component.illustration.extra-small.height}",
           "deprecated-version": "1.0.0"
         },
         "medium": {
           "type": "size",
           "value": 200,
           "deprecated": true,
-          "deprecated-replace": "{component.illustration.height.medium}",
+          "deprecated-replace": "{component.illustration.medium.height}",
           "deprecated-version": "1.0.0"
         }
       }

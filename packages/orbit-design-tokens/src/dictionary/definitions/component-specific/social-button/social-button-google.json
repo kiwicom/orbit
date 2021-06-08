@@ -31,7 +31,7 @@
           "value": "{foundation.palette.ink.light}",
           "opacity": 50
         },
-        "icon-color": {
+        "icon-foreground": {
           "type": "color",
           "value": "currentColor",
           "internal-comment": "Google icon has specific style with own colors, therefore we don't have to define it."

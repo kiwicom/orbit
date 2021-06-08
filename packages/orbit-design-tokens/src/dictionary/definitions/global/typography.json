@@ -56,27 +56,31 @@
         "value": "{foundation.line-height.large}"
       },
       "text": {
-        "small": {
-          "type": "size",
-          "value": "{foundation.line-height.small}",
-          "deprecated": true,
-          "deprecated-replace": "{global.line-height.small}",
-          "deprecated-version": "1.0.0"
-        },
-        "normal": {
-          "type": "size",
-          "value": "{foundation.line-height.normal}",
-          "deprecated": true,
-          "deprecated-replace": "{global.line-height.normal}",
-          "deprecated-version": "1.0.0"
-        },
-        "large": {
-          "type": "size",
-          "value": "{foundation.line-height.large}",
-          "deprecated": true,
-          "deprecated-replace": "{global.line-height.large}",
-          "deprecated-version": "1.0.0"
-        }
+        "type": "size",
+        "value": 1.4,
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "text-small": {
+        "type": "size",
+        "value": "{foundation.line-height.small}",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.small}",
+        "deprecated-version": "1.0.0"
+      },
+      "text-normal": {
+        "type": "size",
+        "value": "{foundation.line-height.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.normal}",
+        "deprecated-version": "1.0.0"
+      },
+      "text-large": {
+        "type": "size",
+        "value": "{foundation.line-height.large}",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.large}",
+        "deprecated-version": "1.0.0"
       }
     },
     "font-weight": {

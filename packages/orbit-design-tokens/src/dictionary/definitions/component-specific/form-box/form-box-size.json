@@ -1,16 +1,20 @@
 {
   "component": {
-    "form-element": {
-      "height": {
-        "small": {
+    "form-box": {
+      "small": {
+        "height": {
           "type": "size",
           "value": "{foundation.size.large}"
-        },
-        "normal": {
+        }
+      },
+      "normal": {
+        "height": {
           "type": "size",
           "value": "{foundation.size.extra-large}"
-        },
-        "large": {
+        }
+      },
+      "large": {
+        "height": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}"
         }
@@ -22,21 +26,21 @@
           "type": "size",
           "value": "{foundation.size.large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.small}",
+          "deprecated-replace": "{component.form-box.small.height}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.size.extra-large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.normal}",
+          "deprecated-replace": "{component.form-box.normal.height}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.large}",
+          "deprecated-replace": "{component.form-box.large.height}",
           "deprecated-version": "1.0.0"
         }
       },
@@ -45,21 +49,21 @@
           "type": "size",
           "value": "{foundation.size.large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.small}",
+          "deprecated-replace": "{component.form-box.small.height}",
           "deprecated-version": "1.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.size.extra-large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.normal}",
+          "deprecated-replace": "{component.form-box.normal.height}",
           "deprecated-version": "1.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.height.large}",
+          "deprecated-replace": "{component.form-box.large.height}",
           "deprecated-version": "1.0.0"
         }
       }

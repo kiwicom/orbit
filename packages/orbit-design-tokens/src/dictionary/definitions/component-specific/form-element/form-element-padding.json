@@ -1,0 +1,64 @@
+{
+  "component": {
+    "form-element": {
+      "small": {
+        "padding": {
+          "type": "size",
+          "category": "spacing",
+          "value": null,
+          "attributes": {
+            "spacing": {
+              "top-bottom": 0,
+              "left-right": "{foundation.space.three-x}"
+            }
+          }
+        }
+      },
+      "normal": {
+        "padding": {
+          "type": "size",
+          "category": "spacing",
+          "value": null,
+          "attributes": {
+            "spacing": {
+              "top-bottom": 0,
+              "left-right": "{foundation.space.three-x}"
+            }
+          }
+        }
+      }
+    },
+    "padding": {
+      "input": {
+        "small": {
+          "type": "size",
+          "category": "spacing",
+          "value": null,
+          "attributes": {
+            "spacing": {
+              "top-bottom": 0,
+              "left-right": "{foundation.space.three-x}"
+            }
+          },
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.small.padding}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "category": "spacing",
+          "value": null,
+          "attributes": {
+            "spacing": {
+              "top-bottom": 0,
+              "left-right": "{foundation.space.three-x}"
+            }
+          },
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.normal.padding}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
 {
   "component": {
     "text-link": {
-      "foreground": {
-        "primary": {
+      "primary": {
+        "foreground": {
           "type": "color",
           "value": "{foundation.palette.product.dark}"
-        },
-        "secondary": {
+        }
+      },
+      "secondary": {
+        "foreground": {
           "type": "color",
           "value": "{foundation.palette.ink.normal}"
         }
@@ -34,7 +36,7 @@
           "type": "color",
           "value": "{foundation.palette.product.dark}",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.foreground.primary}",
+          "deprecated-replace": "{component.text-link.primary.foreground}",
           "deprecated-version": "1.0.0"
         },
         "primary-hover": {
@@ -48,7 +50,7 @@
           "type": "color",
           "value": "{foundation.palette.ink.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.foreground.secondary}",
+          "deprecated-replace": "{component.text-link.secondary.foreground}",
           "deprecated-version": "1.0.0"
         },
         "secondary-hover": {

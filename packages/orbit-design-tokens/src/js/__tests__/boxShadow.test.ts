@@ -4,8 +4,11 @@ describe("boxShadow", () => {
   it("should create box-shadow properly", () => {
     expect(boxShadow({ def: ["0px", "0px"], color: "black" })).toBe("0px 0px black");
     expect(boxShadow({ def: ["1px", "3px", "2px"], color: "black" })).toBe("1px 3px 2px black");
-    expect(boxShadow({ def: ["1px", "3px", "2px", "4px"], color: "black" })).toBe(
+    expect(boxShadow({ def: ["1px", "3px", "2px", "4px"], color: "black", inset: false })).toBe(
       "1px 3px 2px 4px black",
+    );
+    expect(boxShadow({ def: ["1px", "3px", "2px", "4px"], color: "black", inset: true })).toBe(
+      "inset 1px 3px 2px 4px black",
     );
     expect(
       boxShadow([

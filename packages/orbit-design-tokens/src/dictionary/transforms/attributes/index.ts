@@ -60,15 +60,22 @@ export const attributeNOVCamelCase = {
   name: "attribute/nov/camelCase",
   type: "attribute",
   transformer: ({ attributes }: Property): Attributes => {
-    const camelCased = {};
+    const camelCased: Attributes = {};
+    const tempAttrs: Attributes = {};
     for (let i = 0; i < NOV_STRUCTURE.length; i += 1) {
       const key = NOV_STRUCTURE[i];
       if (attributes[key]) {
         camelCased[key] = _.camelCase(String(attributes[key]));
+        tempAttrs[key] = String(attributes[key]);
       }
     }
 
-    return { ...attributes, ...camelCased };
+    const { object, variant, subVariant } = tempAttrs;
+    const name = _.camelCase(
+      Object.values({ object, variant, subVariant }).filter(Boolean).join(" "),
+    );
+
+    return { ...attributes, ...camelCased, name };
   },
 };
 
@@ -117,16 +124,19 @@ export const attributeBoxShadowJavascript = {
       ? boxShadowDefinition
       : [boxShadowDefinition];
 
-    const boxShadowValues = (boxShadowArray as []).map(({ x, y, blur, spread, color, opacity }) => {
-      return {
-        x: pixelized(x),
-        y: pixelized(y),
-        blur: falsyString(blur != null, pixelized(blur)),
-        spread: falsyString(spread != null, pixelized(spread)),
-        color,
-        opacity,
-      };
-    });
+    const boxShadowValues = (boxShadowArray as []).map(
+      ({ x, y, blur, spread, color, opacity, inset }) => {
+        return {
+          x: pixelized(x),
+          y: pixelized(y),
+          blur: falsyString(blur != null, pixelized(blur)),
+          spread: falsyString(spread != null, pixelized(spread)),
+          color,
+          opacity,
+          inset,
+        };
+      },
+    );
 
     return { ...attributes, "box-shadow": boxShadowValues };
   },

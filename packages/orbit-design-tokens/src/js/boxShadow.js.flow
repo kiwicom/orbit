@@ -2,6 +2,7 @@
 type BoxShadowDefinition = {|
   def: Array<string>,
   color: string,
+  inset?: boolean,
 |};
 
 export type BoxShadow = (Array<BoxShadowDefinition> | BoxShadowDefinition) => string;

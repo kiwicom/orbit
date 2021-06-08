@@ -15,6 +15,10 @@
         "border-color": {
           "type": "color",
           "value": "{foundation.palette.cloud.normal}"
+        },
+        "border-size": {
+          "type": "size",
+          "value": 1
         }
       },
       "action": {
@@ -425,6 +429,14 @@
         },
         "deprecated": true,
         "deprecated-replace": "{global.elevation.raised-reverse.box-shadow}",
+        "deprecated-version": "1.0.0"
+      }
+    },
+    "opacity": {
+      "overlay": {
+        "type": "opacity",
+        "value": 80,
+        "deprecated": true,
         "deprecated-version": "1.0.0"
       }
     }

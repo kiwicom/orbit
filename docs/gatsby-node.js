@@ -3,15 +3,9 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const {
-  omitNumbers,
-  getDocumentUrl,
-  metaFileDataMap,
-  getParentUrl,
-  getDocumentTrail,
-} = require("./utils/document");
+const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
 
-exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
+exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
     node.internal.type === "Directory" &&
     node.sourceInstanceName === "documentation" &&
@@ -30,7 +24,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
             : node.absolutePath
         }", every directory in "src/documentation" should have one`,
       );
-      metaFileDataMap.set(url, {});
+      await cache.set(url, {});
       return;
     }
 
@@ -58,7 +52,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       );
     }
 
-    metaFileDataMap.set(url, metaFileData);
+    await cache.set(url, metaFileData);
 
     return;
   }
@@ -68,7 +62,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
     const parent = getNode(node.parent);
     const fileUrl = createFilePath({ node, getNode, basePath: `pages` });
     const { dir } = path.parse(fileUrl);
-    const metaFileData = metaFileDataMap.get(getParentUrl(omitNumbers(fileUrl))) || {};
+    const metaFileData = (await cache.get(getParentUrl(omitNumbers(fileUrl)))) || {};
     const hasTabs = metaFileData.type === "tabs";
 
     createNodeField({
@@ -132,9 +126,9 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       let documentTrail;
 
       if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
-        documentTrail = getDocumentTrail(node.fields.slug);
+        documentTrail = await getDocumentTrail(cache, node.fields.slug);
       } else {
-        documentTrail = getDocumentTrail(getParentUrl(node.fields.slug));
+        documentTrail = await getDocumentTrail(cache, getParentUrl(node.fields.slug));
         documentTrail.push({
           name: node.frontmatter.title,
           url: node.fields.slug,

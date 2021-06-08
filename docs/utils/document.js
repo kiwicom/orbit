@@ -15,20 +15,17 @@ function getParentUrl(url) {
   return path.join(path.dirname(url), "/");
 }
 
-const metaFileDataMap = new Map();
-
-function getDocumentTrail(url, trail = []) {
+async function getDocumentTrail(cache, url, trail = []) {
   if (url === "/") {
     return trail;
   }
-  const { title } = metaFileDataMap.get(url);
-  return getDocumentTrail(getParentUrl(url), [{ name: title, url }, ...trail]);
+  const { title } = await cache.get(url);
+  return getDocumentTrail(cache, getParentUrl(url), [{ name: title, url }, ...trail]);
 }
 
 module.exports = {
   omitNumbers,
   getDocumentUrl,
-  metaFileDataMap,
   getParentUrl,
   getDocumentTrail,
 };

@@ -7,7 +7,6 @@ const { uniq } = require("lodash");
 const fsx = require("fs-extra");
 
 const { onCreateNode } = require("../gatsby-node");
-const { metaFileDataMap } = require("../utils/document");
 
 jest.mock("fs", () => require("memfs").fs);
 jest.mock("gatsby-source-filesystem", () => {
@@ -43,16 +42,22 @@ function getMdxNode(relativePath, frontmatter) {
   };
 }
 
+const cacheMap = new Map();
+const cache = {
+  get: async key => cacheMap.get(key),
+  set: async (key, value) => cacheMap.set(key, value),
+};
+
 afterEach(() => {
-  metaFileDataMap.clear();
+  cacheMap.clear();
 });
 
 describe("gatsby-node", () => {
   describe("registering documents", () => {
-    it("should report missing meta.yml files", () => {
+    it("should report missing meta.yml files", async () => {
       const node = getDirectoryNode("01-getting-started");
       const reporter = { panicOnBuild: jest.fn() };
-      onCreateNode({ node, reporter });
+      await onCreateNode({ cache, node, reporter });
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [
@@ -62,7 +67,7 @@ describe("gatsby-node", () => {
       `);
     });
 
-    it("should report missing fields in meta.yml", () => {
+    it("should report missing fields in meta.yml", async () => {
       vol.fromJSON(
         {
           "./01-getting-started/meta.yml": dedent`
@@ -73,7 +78,7 @@ describe("gatsby-node", () => {
       );
       const node = getDirectoryNode("01-getting-started");
       const reporter = { panicOnBuild: jest.fn() };
-      onCreateNode({ node, reporter });
+      await onCreateNode({ cache, node, reporter });
       // first time for "title", second fror "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
@@ -84,7 +89,7 @@ describe("gatsby-node", () => {
       `);
     });
 
-    it("should report incorrect type value in meta.yml", () => {
+    it("should report incorrect type value in meta.yml", async () => {
       vol.fromJSON(
         {
           "./01-getting-started/meta.yml": dedent`
@@ -96,7 +101,7 @@ describe("gatsby-node", () => {
       );
       const node = getDirectoryNode("01-getting-started");
       const reporter = { panicOnBuild: jest.fn() };
-      onCreateNode({ node, reporter });
+      await onCreateNode({ cache, node, reporter });
       // first time for "title", second fror "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
@@ -107,7 +112,7 @@ describe("gatsby-node", () => {
       `);
     });
 
-    it("should create trail nodes", () => {
+    it("should create trail nodes", async () => {
       vol.fromJSON(
         {
           "./01-getting-started/meta.yml": dedent`
@@ -174,21 +179,25 @@ describe("gatsby-node", () => {
       const files = globby.sync(ROOT);
       const dirs = uniq(files.map(file => path.dirname(file)));
 
-      dirs.forEach(dir => {
-        const node = getDirectoryNode(path.relative(ROOT, dir));
-        onCreateNode({ node, getNode, actions });
-      });
+      await Promise.all(
+        dirs.map(async dir => {
+          const node = getDirectoryNode(path.relative(ROOT, dir));
+          await onCreateNode({ cache, node, getNode, actions });
+        }),
+      );
 
-      const trails = files
-        .filter(file => !file.endsWith("meta.yml"))
-        .sort()
-        .map(file => {
-          const relativePath = path.relative(ROOT, file);
-          const content = fsx.readFileSync(file);
-          const node = getMdxNode(relativePath, matter(content).data);
-          onCreateNode({ node, getNode, actions });
-          return { file: relativePath, trail: node.fields.trail };
-        });
+      const trails = await Promise.all(
+        files
+          .filter(file => !file.endsWith("meta.yml"))
+          .sort()
+          .map(async file => {
+            const relativePath = path.relative(ROOT, file);
+            const content = fsx.readFileSync(file);
+            const node = getMdxNode(relativePath, matter(content).data);
+            await onCreateNode({ cache, node, getNode, actions });
+            return { file: relativePath, trail: node.fields.trail };
+          }),
+      );
 
       expect(trails).toMatchSnapshot();
     });

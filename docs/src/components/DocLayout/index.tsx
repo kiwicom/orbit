@@ -11,7 +11,7 @@ import {
 } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import theme from "../../theme";
 import * as components from "../../mdx-components";
@@ -43,7 +43,12 @@ import StyledDocNavigationWidth from "./primitives/StyledDocNavigationWidth";
 import StyledDocNavigationWrapper from "./primitives/StyledDocNavigationWrapper";
 import StyledTocWrapper from "./primitives/StyledTocWrapper";
 import StyledProse from "./primitives/StyledProse";
+import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
+
+const StyledDescription = styled.div`
+  line-height: 22px;
+`;
 
 interface Props {
   children: React.ReactNode;
@@ -132,7 +137,7 @@ export default function DocLayout({
                   ) : (
                     <>
                       {trail && <Breadcrumbs trail={trail} />}
-                      <Box padding={{ bottom: "XLarge" }}>
+                      <Box padding={{ bottom: "medium" }}>
                         <Stack inline align="center" spaceAfter="small">
                           <AddBookmark />
                           <div
@@ -149,7 +154,9 @@ export default function DocLayout({
                         </Stack>
                         {description && (
                           <Box padding={{ left: "XXLarge" }}>
-                            <Text>{description}</Text>
+                            <Text>
+                              <StyledDescription>{description}</StyledDescription>
+                            </Text>
                           </Box>
                         )}
                       </Box>
@@ -162,12 +169,7 @@ export default function DocLayout({
                             tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
                           >
                             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                            {headerLink && (
-                              // align with tabs
-                              <Box padding={{ bottom: "XXSmall" }}>
-                                <HeaderLink href={headerLink} />
-                              </Box>
-                            )}
+                            {headerLink && <HeaderLink href={headerLink} />}
                           </Box>
                         )}
                         <Grid
@@ -193,9 +195,11 @@ export default function DocLayout({
                             elevation={noElevation ? undefined : "raised"}
                           >
                             {tocHasItems && (
-                              <Hide on={["tablet", "desktop", "largeDesktop"]}>
-                                <Collapse label="Table of contents">{Toc}</Collapse>
-                              </Hide>
+                              <StyledMobileTocWrapper>
+                                <Hide on={["tablet", "desktop", "largeDesktop"]}>
+                                  <Collapse label="Table of contents">{Toc}</Collapse>
+                                </Hide>
+                              </StyledMobileTocWrapper>
                             )}
                             <MDXProvider
                               components={{

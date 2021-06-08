@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { StyledAnchorWrapper } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
-  ${({ theme }) => css`
+  ${({ theme, elevation }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     ${mediaQueries.tablet(css`
       border-radius: ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium} 0 0;
@@ -47,6 +47,10 @@ const StyledProse = styled(Box)`
     h2:first-child {
       margin-top: 0;
     }
+    ${elevation === "raised" &&
+    `
+      box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    `}
   `}
 `;
 

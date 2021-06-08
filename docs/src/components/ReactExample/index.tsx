@@ -17,9 +17,10 @@ interface Props {
 
 const StyledExampleWrapper = styled.div`
   ${({ theme }) => `
-    box-shadow: ${theme.orbit.boxShadowRaised};
-    border-radius: ${theme.orbit.borderRadiusLarge};
-  `}
+    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    border-radius: 12px;
+    overflow: hidden;
+  `};
 `;
 
 const StyledEditor = styled(LiveEditor)`

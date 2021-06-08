@@ -14,7 +14,6 @@ import {
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
 
 import Modal from "../Modal";
-import { capitalize } from "../../utils/common";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
@@ -29,8 +28,12 @@ interface QueryResponse {
     nodes: Array<{
       fields: {
         slug: string;
+        trail: Array<{
+          name: string;
+        }>;
       };
       frontmatter: {
+        title: string;
         description: string;
       };
     }>;
@@ -71,8 +74,12 @@ export default function SearchModal({ onClose }: Props) {
         nodes {
           fields {
             slug
+            trail {
+              name
+            }
           }
           frontmatter {
+            title
             description
           }
         }
@@ -82,13 +89,7 @@ export default function SearchModal({ onClose }: Props) {
   const documents = React.useMemo<SearchResult[]>(
     () =>
       data.allMdx.nodes.map(node => {
-        const breadcrumbs = node.fields.slug
-          .split("/")
-          .filter(Boolean)
-          .map(part => {
-            if (part === "code-kiwi-com") return "code.kiwi.com";
-            return capitalize(part.replace(/-/g, " "));
-          });
+        const breadcrumbs = node.fields.trail.map(({ name }) => name);
         return {
           name: breadcrumbs.join(" "),
           breadcrumbs,
@@ -176,8 +177,8 @@ export default function SearchModal({ onClose }: Props) {
                 `}
               >
                 {isOpen && (
-                  <Text as="p" size="large">
-                    We found <b>{results.length} generic results</b> matching your results
+                  <Text as="p">
+                    We found <b>{results.length} results</b> matching your search
                   </Text>
                 )}
               </div>
@@ -189,9 +190,9 @@ export default function SearchModal({ onClose }: Props) {
                     <StyledMenuItem key={item.path} {...getItemProps({ item, index: itemIndex })}>
                       <div>
                         <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
-                        <Text size="large">{item.description}</Text>
+                        <div>{item.description}</div>
                       </div>
-                      <ChevronRight size="large" />
+                      <ChevronRight size="medium" />
                     </StyledMenuItem>
                   ))}
                 </>

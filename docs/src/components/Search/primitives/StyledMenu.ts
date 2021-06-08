@@ -8,7 +8,7 @@ export const StyledMenu = styled.ul<{ hasResults?: boolean }>`
 
 export const StyledMenuItemTitle = styled.div`
   ${({ theme }) => `
-    font-size: 22px;
+    font-size: 18px;
     font-weight: ${theme.orbit.fontWeightMedium};
     color: ${theme.orbit.paletteProductDark};
     text-decoration: underline;

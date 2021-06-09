@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
@@ -151,7 +151,7 @@ const Input = styled.input`
       }`};
     box-shadow: 0 0 0 3px
       ${({ theme, error }) =>
-        convertHexToRgba(
+        transparentColor(
           error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};

@@ -1,5 +1,5 @@
 // @flow
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetButtonTypeToken } from "./getButtonTypeToken";
@@ -31,10 +31,10 @@ const getButtonTypeToken: GetButtonTypeToken = (name, type, theme) => {
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedLightActive,
     },
     [TOKENS.backgroundButtonFocus]: {
-      [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 10),
-      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 10),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedNormal, 10),
-      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.paletteWhite, 20),
+      [TYPE_OPTIONS.PRIMARY]: transparentColor(theme.orbit.paletteProductNormal, 10),
+      [TYPE_OPTIONS.SECONDARY]: transparentColor(theme.orbit.paletteInkLight, 10),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedNormal, 10),
+      [TYPE_OPTIONS.WHITE]: transparentColor(theme.orbit.paletteWhite, 20),
       [TYPE_OPTIONS.PRIMARY_SUBTLE]: theme.orbit.paletteProductLight,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedLight,
     },
@@ -63,13 +63,13 @@ const getButtonTypeToken: GetButtonTypeToken = (name, type, theme) => {
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedDark,
     },
     [TOKENS.borderColorButtonFocus]: {
-      [TYPE_OPTIONS.PRIMARY]: convertHexToRgba(theme.orbit.paletteProductNormal, 50),
-      [TYPE_OPTIONS.SECONDARY]: convertHexToRgba(theme.orbit.paletteInkLight, 30),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
+      [TYPE_OPTIONS.PRIMARY]: transparentColor(theme.orbit.paletteProductNormal, 50),
+      [TYPE_OPTIONS.SECONDARY]: transparentColor(theme.orbit.paletteInkLight, 30),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedNormal, 50),
       // because it's not possible to see outline on the white bg, we use active token
-      [TYPE_OPTIONS.WHITE]: convertHexToRgba(theme.orbit.paletteWhiteActive, 50),
-      [TYPE_OPTIONS.PRIMARY_SUBTLE]: convertHexToRgba(theme.orbit.paletteProductNormal, 50),
-      [TYPE_OPTIONS.CRITICAL_SUBTLE]: convertHexToRgba(theme.orbit.paletteRedNormal, 50),
+      [TYPE_OPTIONS.WHITE]: transparentColor(theme.orbit.paletteWhiteActive, 50),
+      [TYPE_OPTIONS.PRIMARY_SUBTLE]: transparentColor(theme.orbit.paletteProductNormal, 50),
+      [TYPE_OPTIONS.CRITICAL_SUBTLE]: transparentColor(theme.orbit.paletteRedNormal, 50),
     },
   };
   return tokens[name][type];

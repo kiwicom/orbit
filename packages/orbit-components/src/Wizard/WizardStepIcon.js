@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import Text from "../Text";
 import CheckCircle from "../icons/CheckCircle";
@@ -34,7 +34,7 @@ const StyledCircle = styled.div`
     ${active &&
     hasGlow &&
     css`
-      box-shadow: 0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
+      box-shadow: 0 0 0 4px ${transparentColor(theme.orbit.paletteProductNormal, 20)};
     `}
   `}
 `;

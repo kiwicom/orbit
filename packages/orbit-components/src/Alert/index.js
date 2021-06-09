@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 
 import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
@@ -57,10 +57,10 @@ const getTypeToken = name => ({ theme, type }) => {
     },
     // TODO: create token
     [TOKENS.colorTextLinkAlertFocus]: {
-      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueDarkHover, 10),
-      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenDarkHover, 10),
-      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeDarkHover, 10),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
+      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueDarkHover, 10),
+      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenDarkHover, 10),
+      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeDarkHover, 10),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedDarkActive, 10),
     },
     [TOKENS.colorBorderAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightHover,

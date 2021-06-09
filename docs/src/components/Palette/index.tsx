@@ -1,5 +1,5 @@
 import React from "react";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Grid, Stack } from "@kiwicom/orbit-components";
@@ -8,7 +8,7 @@ import ColorContainer from "./ColorContainer";
 import Switch from "../Switch";
 
 export const isLight = (hex: string) => {
-  const { red, green, blue } = convertHexToRgba(hex, 100).match(
+  const { red, green, blue } = transparentColor(hex, 100).match(
     /\((?<red>\d+), (?<green>\d+), (?<blue>\d+)/,
   ).groups;
 

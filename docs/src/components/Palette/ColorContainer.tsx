@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import { Stack } from "@kiwicom/orbit-components";
 
 import CopyButton from "./CopyButton";
@@ -124,13 +124,13 @@ const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps
     >
       <ColorNameHolder isMain={isNormal(color.name)}>{color.name}</ColorNameHolder>
       <ColorHexHolder>{color.value}</ColorHexHolder>
-      <ColorOtherTextHolder>{convertHexToRgba(color.value, 100)}</ColorOtherTextHolder>
+      <ColorOtherTextHolder>{transparentColor(color.value, 100)}</ColorOtherTextHolder>
       <ColorOtherTextHolder>{color.tokenName}</ColorOtherTextHolder>
       <CopyWrapper colorValue={color.value}>
         <Stack direction="column" spacing="XXSmall" align="end">
           <CopyButton textToCopy={color.value} colorValue={color.value} buttonText="Hex" />
           <CopyButton
-            textToCopy={convertHexToRgba(color.value, 100)}
+            textToCopy={transparentColor(color.value, 100)}
             colorValue={color.value}
             buttonText="RGB"
           />

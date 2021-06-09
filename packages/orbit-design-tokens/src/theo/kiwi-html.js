@@ -2,7 +2,6 @@
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 // @noflow
-/* eslint-disable import/no-extraneous-dependencies */
 const groupBy = require("lodash/groupBy");
 const camelCase = require("lodash/camelCase");
 const upperfirst = require("lodash/upperFirst");

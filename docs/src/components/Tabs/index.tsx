@@ -4,7 +4,7 @@ import { Popover, mediaQueries } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown, ChevronRight } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 import FontFaceObserver from "fontfaceobserver";
-import debounce from "debounce";
+import debounce from "lodash/debounce";
 
 import Tab, { TabObject } from "./Tab";
 import {

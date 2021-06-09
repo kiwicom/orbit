@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build:dictionary": "ts-node ./src/dictionary/build.ts",
-    "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5",
+    "build:lib": "tsc src/*.ts --outDir lib --declaration --target ES5 --esModuleInterop true",
     "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "prebuild": "rimraf lib 'src/js/createTokens.*' 'src/js/defaultFoundation.*'",

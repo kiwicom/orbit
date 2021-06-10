@@ -3,7 +3,6 @@ const { vol } = require("memfs");
 const dedent = require("dedent");
 const matter = require("gray-matter");
 const globby = require("globby");
-const { uniq } = require("lodash");
 const fsx = require("fs-extra");
 
 const { onCreateNode } = require("../gatsby-node");
@@ -25,6 +24,17 @@ function getDirectoryNode(relativePath) {
     sourceInstanceName: "documentation",
     relativePath,
     absolutePath: `${ROOT}/${relativePath}`,
+  };
+}
+
+function getMetaFileNode(relativePath) {
+  return {
+    internal: { type: "File" },
+    sourceInstanceName: "documentation",
+    relativePath,
+    relativeDirectory: path.dirname(relativePath),
+    absolutePath: `${ROOT}/${relativePath}`,
+    base: path.basename("meta.yml"),
   };
 }
 
@@ -76,7 +86,7 @@ describe("gatsby-node", () => {
         },
         ROOT,
       );
-      const node = getDirectoryNode("01-getting-started");
+      const node = getMetaFileNode("01-getting-started/meta.yml");
       const reporter = { panicOnBuild: jest.fn() };
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second fror "type"
@@ -99,7 +109,7 @@ describe("gatsby-node", () => {
         },
         ROOT,
       );
-      const node = getDirectoryNode("01-getting-started");
+      const node = getMetaFileNode("01-getting-started/meta.yml");
       const reporter = { panicOnBuild: jest.fn() };
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second fror "type"
@@ -169,21 +179,16 @@ describe("gatsby-node", () => {
         ROOT,
       );
       const getNode = n => n; // not really, but good enough
-      const actions = {
-        createNodeField: ({ node: n, name, value }) => {
-          // eslint-disable-next-line no-param-reassign
-          n.fields[name] = value;
-        },
-      };
 
       const files = globby.sync(ROOT);
-      const dirs = uniq(files.map(file => path.dirname(file)));
 
       await Promise.all(
-        dirs.map(async dir => {
-          const node = getDirectoryNode(path.relative(ROOT, dir));
-          await onCreateNode({ cache, node, getNode, actions });
-        }),
+        files
+          .filter(file => file.endsWith("meta.yml"))
+          .map(async metaFile => {
+            const node = getMetaFileNode(path.relative(ROOT, metaFile));
+            await onCreateNode({ cache, node, getNode });
+          }),
       );
 
       const trails = await Promise.all(
@@ -194,6 +199,12 @@ describe("gatsby-node", () => {
             const relativePath = path.relative(ROOT, file);
             const content = fsx.readFileSync(file);
             const node = getMdxNode(relativePath, matter(content).data);
+            const actions = {
+              createNodeField: ({ node: n, name, value }) => {
+                // eslint-disable-next-line no-param-reassign
+                n.fields[name] = value;
+              },
+            };
             await onCreateNode({ cache, node, getNode, actions });
             return { file: relativePath, trail: node.fields.trail };
           }),

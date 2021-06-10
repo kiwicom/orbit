@@ -13,7 +13,6 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
     !node.relativePath.startsWith("assets")
   ) {
     const metaFilePath = path.join(node.absolutePath, "meta.yml");
-    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
     const url = omitNumbers(path.join("/", node.relativePath, "/"));
 
     if (!fs.existsSync(metaFilePath)) {
@@ -25,9 +24,26 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
         }", every directory in "src/documentation" should have one`,
       );
       await cache.set(url, {});
-      return;
     }
+  }
 
+  /**
+   * TODO: updating meta.yml files should update document navigation and breadcrumbs,
+   * an obvious solution for this is to compute `trail` on frontend rather than here,
+   * but we wanted to avoid large and repetitive GraphQL queries.
+   *
+   * A temporary and clumsy way to see meta.yml updates appears to be editing an MDX file
+   * within the same directory.
+   */
+
+  if (
+    node.internal.type === "File" &&
+    node.base === "meta.yml" &&
+    node.sourceInstanceName === "documentation"
+  ) {
+    const metaFilePath = node.absolutePath;
+    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
+    const url = omitNumbers(path.join("/", node.relativeDirectory, "/"));
     const metaFileData = yaml.load(fs.readFileSync(metaFilePath));
     const missingFields = [];
 
@@ -53,8 +69,6 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
     }
 
     await cache.set(url, metaFileData);
-
-    return;
   }
 
   if (node.internal.type === "Mdx") {

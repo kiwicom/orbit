@@ -36,7 +36,7 @@
     "downshift": "^6.0.10",
     "gatsby": "^2.32.3",
     "gatsby-image": "^3.3.0",
-    "gatsby-plugin-lodash": "^4.7.0",
+    "gatsby-plugin-lodash": "^4.7.1",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-mdx": "^2.3.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",

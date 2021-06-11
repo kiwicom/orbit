@@ -166,7 +166,6 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-  // createOverviewPages();
   const result = await graphql(`
     query DocumentationQuery {
       allMdx(filter: { fields: { collection: { eq: "documentation" } } }) {

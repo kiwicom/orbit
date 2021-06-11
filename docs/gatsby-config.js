@@ -117,5 +117,6 @@ module.exports = {
         snippets: path.join(__dirname, "src/snippets"),
       },
     },
+    "gatsby-plugin-lodash",
   ],
 };

@@ -24,7 +24,7 @@ import Guideline from "../Guidelines";
 import InlineToken from "../InlineToken";
 import GuidelinesSideBySide, { Do, Dont } from "../Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "../Guidelines/GuidelineImages";
-import HeaderLink from "../HeaderLink";
+import { HeaderButton, HeaderButtonLink } from "../HeaderLink";
 import ImageContainer from "../ImageContainer";
 import Navbar from "../Navbar";
 import { BookmarkProvider } from "../../services/bookmarks";
@@ -169,7 +169,11 @@ export default function DocLayout({
                             tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
                           >
                             {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                            {headerLink && <HeaderLink href={headerLink} />}
+                            {headerLink && (
+                              <Hide on={["smallMobile", "mediumMobile"]}>
+                                <HeaderButtonLink href={headerLink} />
+                              </Hide>
+                            )}
                           </Box>
                         )}
                         <Grid
@@ -194,6 +198,11 @@ export default function DocLayout({
                             }
                             elevation={noElevation ? undefined : "raised"}
                           >
+                            {headerLink && (
+                              <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
+                                <HeaderButton href={headerLink} />
+                              </Hide>
+                            )}
                             {tocHasItems && (
                               <StyledMobileTocWrapper>
                                 <Hide on={["tablet", "desktop", "largeDesktop"]}>

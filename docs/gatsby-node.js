@@ -3,15 +3,9 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const {
-  omitNumbers,
-  getDocumentUrl,
-  metaFileDataMap,
-  getParentUrl,
-  getDocumentTrail,
-} = require("./utils/document");
+const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
 
-exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
+exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
     node.internal.type === "Directory" &&
     node.sourceInstanceName === "documentation" &&
@@ -19,7 +13,6 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
     !node.relativePath.startsWith("assets")
   ) {
     const metaFilePath = path.join(node.absolutePath, "meta.yml");
-    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
     const url = omitNumbers(path.join("/", node.relativePath, "/"));
 
     if (!fs.existsSync(metaFilePath)) {
@@ -30,10 +23,27 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
             : node.absolutePath
         }", every directory in "src/documentation" should have one`,
       );
-      metaFileDataMap.set(url, {});
-      return;
+      await cache.set(url, {});
     }
+  }
 
+  /**
+   * TODO: updating meta.yml files should update document navigation and breadcrumbs,
+   * an obvious solution for this is to compute `trail` on frontend rather than here,
+   * but we wanted to avoid large and repetitive GraphQL queries.
+   *
+   * A temporary and clumsy way to see meta.yml updates appears to be editing an MDX file
+   * within the same directory.
+   */
+
+  if (
+    node.internal.type === "File" &&
+    node.base === "meta.yml" &&
+    node.sourceInstanceName === "documentation"
+  ) {
+    const metaFilePath = node.absolutePath;
+    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
+    const url = omitNumbers(path.join("/", node.relativeDirectory, "/"));
     const metaFileData = yaml.load(fs.readFileSync(metaFilePath));
     const missingFields = [];
 
@@ -58,9 +68,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       );
     }
 
-    metaFileDataMap.set(url, metaFileData);
-
-    return;
+    await cache.set(url, metaFileData);
   }
 
   if (node.internal.type === "Mdx") {
@@ -68,7 +76,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
     const parent = getNode(node.parent);
     const fileUrl = createFilePath({ node, getNode, basePath: `pages` });
     const { dir } = path.parse(fileUrl);
-    const metaFileData = metaFileDataMap.get(getParentUrl(omitNumbers(fileUrl))) || {};
+    const metaFileData = (await cache.get(getParentUrl(omitNumbers(fileUrl)))) || {};
     const hasTabs = metaFileData.type === "tabs";
 
     createNodeField({
@@ -132,9 +140,9 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       let documentTrail;
 
       if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
-        documentTrail = getDocumentTrail(node.fields.slug);
+        documentTrail = await getDocumentTrail(cache, node.fields.slug);
       } else {
-        documentTrail = getDocumentTrail(getParentUrl(node.fields.slug));
+        documentTrail = await getDocumentTrail(cache, getParentUrl(node.fields.slug));
         documentTrail.push({
           name: node.frontmatter.title,
           url: node.fields.slug,

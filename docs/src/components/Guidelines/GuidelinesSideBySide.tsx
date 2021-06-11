@@ -24,6 +24,10 @@ const StyledContainer = styled.div`
     background-color: ${theme.orbit.paletteCloudLight};
     border-radius: 16px;
     width: 100%;
+
+    p + p {
+      margin-top: ${theme.orbit.spaceSmall};
+    }
   `}
 `;
 

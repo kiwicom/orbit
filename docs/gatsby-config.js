@@ -111,6 +111,7 @@ module.exports = {
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
+    "gatsby-plugin-lodash",
     {
       resolve: "gatsby-plugin-root-import",
       options: {

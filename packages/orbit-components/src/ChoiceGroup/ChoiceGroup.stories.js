@@ -95,22 +95,34 @@ WithError.story = {
 };
 
 export const RenderProp = (): React.Node => {
+  const boxShadowSize = "3px";
   return (
     <ChoiceGroup label="What was the reason for your cancellation?" onChange={() => {}}>
       {({ Container, Item, spacing }) => (
         <FixedSizeList
+          outerElementType={({ style, ...props }) => (
+            <div
+              style={{
+                // account for extra padding
+                top: `-${boxShadowSize}`,
+                left: `-${boxShadowSize}`,
+                ...style,
+              }}
+              {...props}
+            />
+          )}
           innerElementType={Container}
           height={150}
           itemCount={500}
           // computed height + top padding + spacing between items
-          itemSize={20 + 3 + parseInt(spacing, 10)}
+          itemSize={20 + parseInt(spacing, 10)}
         >
           {({ style, index }) => (
             <div
               style={{
-                // don't cut box shadow
-                paddingTop: "3px",
-                paddingLeft: "3px",
+                // don't cut focus box shadow
+                paddingTop: boxShadowSize,
+                paddingLeft: boxShadowSize,
                 ...style,
               }}
             >

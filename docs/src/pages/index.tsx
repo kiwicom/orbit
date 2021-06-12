@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack, Button } from "@kiwicom/orbit-components";
+import { Heading, Inline, Stack, Button, Grid } from "@kiwicom/orbit-components";
 import { NewWindow, Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
@@ -95,7 +95,7 @@ export default function Home({ location, path }: Props) {
                 iconRight={<ArrowRight />}
                 // @ts-expect-error asComponent has wrong type declaration
                 asComponent={GatsbyLinkToButton}
-                href="/getting-started/for-designers/"
+                href="/getting-started/"
               >
                 Get started
               </Button>
@@ -146,7 +146,7 @@ export default function Home({ location, path }: Props) {
           `}
         >
           <Heading as="h2">Foundation</Heading>
-          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+          <Grid columns="1fr" rowGap="2rem" columnGap="1rem" tablet={{ columns: "repeat(3, 1fr)" }}>
             <Tile
               title="Colors"
               linkContent="Learn more"
@@ -155,13 +155,82 @@ export default function Home({ location, path }: Props) {
             >
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more" icon={<TypograhpyIcon />}>
+            <Tile
+              title="Typography"
+              href="/foundation/typography/"
+              linkContent="Learn more"
+              icon={<TypograhpyIcon />}
+            >
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
-            <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
+            <Tile
+              title="Spacings"
+              href="/foundation/spacing/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
-          </Stack>
+            <Tile
+              title="Orbit principles"
+              href="/foundation/principles/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              How we create Orbit as an open-source design system for travel projects.
+            </Tile>
+            <Tile
+              title="Icons"
+              href="/foundation/icons/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              Use icons to draw an attention to specific actions.
+            </Tile>
+            <Tile
+              title="Overview"
+              href="/foundation/accessibility/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              We build Orbit to ensure all users have the most pleasant experience possible, with
+              basic accessibility support automatically in your project by following the Web Content
+              Accessibility Guidelines.
+            </Tile>
+            <Tile
+              title="Border radiuses"
+              href="/foundation/border-radiuses/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              What border radiuses are used within Orbit.
+            </Tile>
+            <Tile
+              title="Design tokens"
+              href="/foundation/design-tokens/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              Design tokens store visual design attributes. They help us make our UI more consistent
+              and support custom themes.
+            </Tile>
+            <Tile
+              title="Elevation"
+              href="/foundation/elevation/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              Use shadows to bring the content closer to users.
+            </Tile>
+            <Tile
+              title="Illustrations"
+              href="/foundation/illustrations/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
+              Illustrations should support the overall message, not just be visual ornaments.
+            </Tile>
+          </Grid>
           <div
             css={css`
               display: flex;
@@ -182,11 +251,11 @@ export default function Home({ location, path }: Props) {
           `}
         >
           <Heading as="h2">Content</Heading>
-          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+          <Grid columns="1fr" rowGap="2rem" columnGap="1rem" tablet={{ columns: "repeat(3, 1fr)" }}>
             <Tile
               title="Voice & tone"
               linkContent="Learn more"
-              href="/kiwi-use/content/specific-areas/social-media/"
+              href="/kiwi-use/content/voice-and-tone/"
               icon={<LoveItTextIcon />}
             >
               How we write at Kiwi.com.
@@ -208,7 +277,13 @@ export default function Home({ location, path }: Props) {
             >
               A list of most used words and phrases in Kiwi.com products.
             </Tile>
-          </Stack>
+            <Tile
+              title="Specific areas"
+              linkContent="Learn more"
+              href="/kiwi-use/content/specific-areas/"
+              icon={<ArrangeLetterIcon />}
+            />
+          </Grid>
           <div
             css={css`
               display: flex;

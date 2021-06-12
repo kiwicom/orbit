@@ -182,13 +182,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const renderOverviewPages = allPages => {
     allPages.forEach(page => {
-      const { pages, slug } = page;
+      const { pages, slug, title } = page;
       if (!pages) return undefined;
 
       createPage({
         path: slug,
         component: `${process.cwd()}/src/templates/Overview.tsx`,
-        context: { slug, pages },
+        context: { ...page },
       });
 
       return renderOverviewPages(pages);

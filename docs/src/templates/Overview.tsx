@@ -24,12 +24,9 @@ const Overview = ({ location, pageContext }) => {
           tablet={{ columns: "repeat(3, 1fr)" }}
         >
           {pages.map(({ title, description, slug: pageSlug }) => {
+            console.log(pageSlug);
             return (
-              <Tile
-                key={pageSlug}
-                title={title}
-                href={pageSlug.split("/").slice(1, pageSlug.length).join("/")}
-              >
+              <Tile key={pageSlug} title={title} href={pageSlug.split("/").slice(-1).join("/")}>
                 {description}
               </Tile>
             );

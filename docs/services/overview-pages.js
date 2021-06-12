@@ -25,7 +25,7 @@ function createPages(obj, slug) {
         };
       }
 
-      const pages = createPages(value, key).filter(Boolean);
+      const pages = createPages(value, entirePath).filter(Boolean);
 
       if (pages.length > 0) {
         return {

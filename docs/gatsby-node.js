@@ -4,7 +4,7 @@ const yaml = require("js-yaml");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
-const { createOverviewPages } = require("./services/overview-pages");
+const { createOverviewPages, renderOverviewPages } = require("./services/overview-pages");
 
 exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
@@ -180,22 +180,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
-  const renderOverviewPages = allPages => {
-    allPages.forEach(page => {
-      const { pages, slug, title } = page;
-      if (!pages) return undefined;
-
-      createPage({
-        path: slug,
-        component: `${process.cwd()}/src/templates/Overview.tsx`,
-        context: { ...page },
-      });
-
-      return renderOverviewPages(pages);
-    });
-  };
-
-  renderOverviewPages(await createOverviewPages());
+  renderOverviewPages(await createOverviewPages(), createPage);
 
   if (result.errors) {
     reporter.panicOnBuild(`Error when querying guides.`);

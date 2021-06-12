@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Heading, Inline, Stack, Button, Grid } from "@kiwicom/orbit-components";
+import Slide from "@kiwicom/orbit-components/lib/utils/Slide";
+import useBoundingRect from "@kiwicom/orbit-components/lib/hooks/useBoundingRect";
 import { NewWindow, Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
@@ -43,6 +45,15 @@ function GatsbyLinkToButton({ href, ...props }: { href: string }) {
 
 export default function Home({ location, path }: Props) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
+  const [isExpandedFoundation, setExpandedFoundation] = React.useState(false);
+  const [isExpandedContent, setExpandedContent] = React.useState(false);
+  const [{ height: foundationHeight }, foundationRef] = useBoundingRect({
+    height: isExpandedFoundation ? null : 0,
+  });
+  const [{ height: contentHeight }, contentRef] = useBoundingRect({
+    height: isExpandedFoundation ? null : 0,
+  });
+
   return (
     <Layout
       location={location}
@@ -171,73 +182,89 @@ export default function Home({ location, path }: Props) {
             >
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
-            <Tile
-              title="Orbit principles"
-              href="/foundation/principles/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              How we create Orbit as an open-source design system for travel projects.
-            </Tile>
-            <Tile
-              title="Icons"
-              href="/foundation/icons/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              Use icons to draw an attention to specific actions.
-            </Tile>
-            <Tile
-              title="Overview"
-              href="/foundation/accessibility/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              We build Orbit to ensure all users have the most pleasant experience possible, with
-              basic accessibility support automatically in your project by following the Web Content
-              Accessibility Guidelines.
-            </Tile>
-            <Tile
-              title="Border radiuses"
-              href="/foundation/border-radiuses/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              What border radiuses are used within Orbit.
-            </Tile>
-            <Tile
-              title="Design tokens"
-              href="/foundation/design-tokens/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              Design tokens store visual design attributes. They help us make our UI more consistent
-              and support custom themes.
-            </Tile>
-            <Tile
-              title="Elevation"
-              href="/foundation/elevation/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              Use shadows to bring the content closer to users.
-            </Tile>
-            <Tile
-              title="Illustrations"
-              href="/foundation/illustrations/"
-              linkContent="Learn more"
-              icon={<ExpandDiagonalIcon />}
-            >
-              Illustrations should support the overall message, not just be visual ornaments.
-            </Tile>
           </Grid>
+          <Slide maxHeight={foundationHeight} expanded={isExpandedFoundation}>
+            <div ref={foundationRef as React.RefObject<HTMLDivElement>}>
+              <Grid
+                columns="1fr"
+                rowGap="2rem"
+                columnGap="1rem"
+                tablet={{ columns: "repeat(3, 1fr)" }}
+              >
+                <Tile
+                  title="Orbit principles"
+                  href="/foundation/principles/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  How we create Orbit as an open-source design system for travel projects.
+                </Tile>
+                <Tile
+                  title="Icons"
+                  href="/foundation/icons/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  Use icons to draw an attention to specific actions.
+                </Tile>
+                <Tile
+                  title="Overview"
+                  href="/foundation/accessibility/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  We build Orbit to ensure all users have the most pleasant experience possible,
+                  with basic accessibility support automatically in your project by following the
+                  Web Content Accessibility Guidelines.
+                </Tile>
+                <Tile
+                  title="Border radiuses"
+                  href="/foundation/border-radiuses/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  What border radiuses are used within Orbit.
+                </Tile>
+                <Tile
+                  title="Design tokens"
+                  href="/foundation/design-tokens/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  Design tokens store visual design attributes. They help us make our UI more
+                  consistent and support custom themes.
+                </Tile>
+                <Tile
+                  title="Elevation"
+                  href="/foundation/elevation/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  Use shadows to bring the content closer to users.
+                </Tile>
+                <Tile
+                  title="Illustrations"
+                  href="/foundation/illustrations/"
+                  linkContent="Learn more"
+                  icon={<ExpandDiagonalIcon />}
+                >
+                  Illustrations should support the overall message, not just be visual ornaments.
+                </Tile>
+              </Grid>
+            </div>
+          </Slide>
           <div
             css={css`
               display: flex;
               justify-content: flex-end;
             `}
           >
-            <Button size="large" circled type="primarySubtle">
+            <Button
+              size="large"
+              onClick={() => setExpandedFoundation(prev => !prev)}
+              circled
+              type="primarySubtle"
+            >
               Show all items
             </Button>
           </div>
@@ -255,7 +282,7 @@ export default function Home({ location, path }: Props) {
             <Tile
               title="Voice & tone"
               linkContent="Learn more"
-              href="/kiwi-use/content/voice-and-tone/"
+              href="/kiwi-use/content/voice-and-tone"
               icon={<LoveItTextIcon />}
             >
               How we write at Kiwi.com.
@@ -277,20 +304,79 @@ export default function Home({ location, path }: Props) {
             >
               A list of most used words and phrases in Kiwi.com products.
             </Tile>
-            <Tile
-              title="Specific areas"
-              linkContent="Learn more"
-              href="/kiwi-use/content/specific-areas/"
-              icon={<ArrangeLetterIcon />}
-            />
           </Grid>
+          <Slide maxHeight={contentHeight} expanded={isExpandedContent}>
+            <div ref={contentRef as React.RefObject<HTMLDivElement>}>
+              <Grid
+                columns="1fr"
+                rowGap="2rem"
+                columnGap="1rem"
+                tablet={{ columns: "repeat(3, 1fr)" }}
+              >
+                <Tile
+                  title="Social media"
+                  linkContent="Learn more"
+                  href="/kiwi-use/content/specific-areas/social-media/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  How we write and use images in social media.
+                </Tile>
+                <Tile
+                  title="Technical content"
+                  linkContent="Learn more"
+                  href="/kiwi-use/content/specific-areas/technical-content/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  How we produce technical content at Kiwi.com.
+                </Tile>
+                <Tile
+                  title="Brand guidelines"
+                  linkContent="Learn more"
+                  href="/kiwi-use/brand/brand-guidelines/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  Basic brand guidelines and assets to help with your designs.
+                </Tile>
+                <Tile
+                  title="Biz Dev assets"
+                  linkContent="Learn more"
+                  href="/kiwi-use/guides/bizdev/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  Lists of assets created for GoodData reports by Biz Dev.
+                </Tile>
+                <Tile
+                  title="Preparing carrier logos"
+                  linkContent="Learn more"
+                  href="/kiwi-use/guides/preparing-carrier-logos/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  Guidelines for preparing carrier logo at a high quality.
+                </Tile>
+                <Tile
+                  title="Figma"
+                  linkContent="Learn more"
+                  href="kiwi-use/guides/working-with-figma/"
+                  icon={<ArrangeLetterIcon />}
+                >
+                  Learn how to work with Figma, structure your design files, and collaborate on
+                  deliverables.{" "}
+                </Tile>
+              </Grid>
+            </div>
+          </Slide>
           <div
             css={css`
               display: flex;
               justify-content: flex-end;
             `}
           >
-            <Button size="large" circled type="primarySubtle">
+            <Button
+              size="large"
+              onClick={() => setExpandedContent(prev => !prev)}
+              circled
+              type="primarySubtle"
+            >
               Show all items
             </Button>
           </div>

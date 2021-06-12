@@ -1,6 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { mediaQueries as mq, Heading, Grid } from "@kiwicom/orbit-components";
+import styled from "styled-components";
+import { Heading, Grid } from "@kiwicom/orbit-components";
 import Tile from "../components/Tile";
 import Layout from "../components/Layout";
 
@@ -11,10 +11,10 @@ const Container = styled.div`
 `;
 
 const Overview = ({ location, pageContext }) => {
-  const { slug, title, pages, redirect_from } = pageContext;
+  const { slug, title, pages } = pageContext;
 
   return (
-    <Layout location={location} path={slug} title={slug}>
+    <Layout location={location} path={slug} title={title}>
       <Container>
         <Heading spaceAfter="largest">{title}</Heading>
         <Grid
@@ -23,10 +23,9 @@ const Overview = ({ location, pageContext }) => {
           largeMobile={{ columns: "repeat(2, 1fr)" }}
           tablet={{ columns: "repeat(3, 1fr)" }}
         >
-          {pages.map(({ title, description, slug: pageSlug }) => {
-            console.log(pageSlug);
+          {pages.map(({ title: pageTitle, description, slug: pageSlug }) => {
             return (
-              <Tile key={pageSlug} title={title} href={pageSlug.split("/").slice(-1).join("/")}>
+              <Tile key={pageSlug} title={pageTitle} href={pageSlug.split("/").slice(-1).join("/")}>
                 {description}
               </Tile>
             );

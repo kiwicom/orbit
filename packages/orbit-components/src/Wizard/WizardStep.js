@@ -112,20 +112,23 @@ StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonWrapper = styled.div.attrs({ tabIndex: 0, role: "button" })`
-  ${({ theme }) => css`
+const StyledButtonWrapper = styled.div`
+  ${({ theme, active }) => css`
     cursor: pointer;
     padding: 0 ${theme.orbit.spaceXSmall};
 
-    &:hover,
-    &:focus {
-      ${StyledLabel} {
-        span {
-          text-decoration: underline;
-          color: ${theme.orbit.colorTextPrimary};
+    ${!active &&
+    css`
+      &:hover,
+      &:focus {
+        ${StyledLabel} {
+          span {
+            text-decoration: underline;
+            color: ${theme.orbit.colorTextPrimary};
+          }
         }
       }
-    }
+    `}
   `}
 `;
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -196,10 +199,13 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
       <StyledProgressBar status={status} nextStepStatus={nextStepStatus} />
       <StyledContent>
         <Stack flex direction="column" align="center">
-          {isActive || status === "disabled" ? (
+          {status === "disabled" ? (
             step
           ) : (
             <StyledButtonWrapper
+              active={isActive}
+              role="button"
+              tabIndex={0}
               aria-current={isActive ? "step" : "false"}
               onClick={event => {
                 event.currentTarget.blur();

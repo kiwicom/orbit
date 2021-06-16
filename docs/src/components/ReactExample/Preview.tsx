@@ -7,6 +7,7 @@ import { Stack } from "@kiwicom/orbit-components";
 type BgType = "white" | "dark" | "grid";
 interface Props {
   background?: BgType;
+  maxHeight?: number;
   minHeight?: number;
   width: number;
 }
@@ -45,9 +46,10 @@ const getBackground = (type: BgType) => ({ theme }) => {
 };
 
 const StyledFrame = styled(Frame)`
-  ${({ background, height, minHeight }) => css`
+  ${({ background, height, maxHeight, minHeight }) => css`
     width: 100%;
     min-height: ${minHeight}px;
+    ${maxHeight && `max-height: ${maxHeight}px`};
     height: ${Number(height) + BOARD_HEIGHT}px;
     padding: 0 16px;
     ${getBackground(background)};
@@ -63,7 +65,7 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
   `};
 `;
 
-const Preview = ({ background = "white", width, minHeight }: Props) => {
+const Preview = ({ background = "white", width, maxHeight, minHeight }: Props) => {
   const [loaded, setLoad] = React.useState(false);
   const [height, setHeight] = React.useState(0);
 
@@ -80,6 +82,7 @@ const Preview = ({ background = "white", width, minHeight }: Props) => {
     <StyledFrame
       background={background}
       height={height}
+      maxHeight={maxHeight}
       minHeight={minHeight}
       onLoad={() => setLoad(true)}
     >

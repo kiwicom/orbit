@@ -9,9 +9,7 @@ export default {
       liverpool: { present: true, selected: false },
     });
 
-    type Cities = "london" | "manchester" | "liverpool";
-
-    const addTag = (name: Cities) => {
+    const addTag = name => {
       const newTags = { ...tags };
       return (
         <Tag
@@ -44,8 +42,7 @@ export default {
     );
   },
   info: {
-    title: "Tags in input fields",
-    description:
-      "Tags can be used to show selections in input fields, such as possible destinations.",
+    title: "",
+    description: "",
   },
 };

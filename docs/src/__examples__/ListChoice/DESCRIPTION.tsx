@@ -6,6 +6,7 @@ export default {
     const [choice, setChoice] = React.useState("");
     return (
       <Popover
+        renderInPortal={false}
         content={
           <>
             <ListChoice

@@ -1,15 +1,26 @@
 import * as React from "react";
-import { Truncate } from "@kiwicom/orbit-components";
+import { Button, Stack, Text, Truncate } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Truncate>
-      When you&apos;re using progressive disclosure, you might have text that you&apos;ve decided is
-      too long to display all at once. You don&apos;t want to overwhelm your users, so you want to
-      keep it hidden but accessible. Use a Truncate component to make sure your text fits within its
-      parent and doesn&apos;t take over your designs.
-    </Truncate>
-  ),
+  Example: () => {
+    const [showAll, setShowAll] = React.useState(false);
+    const textToShow = `When you\u0027re using progressive disclosure, you might have text that you\u0027ve
+    decided is too long to display all at once. You don\u0027t want to overwhelm your users,
+    so you want to keep it hidden but accessible. Use a Truncate component to make sure your
+    text fits within its parent and doesn\u0027t take over your designs.`;
+    return (
+      <Stack>
+        {showAll ? (
+          <Text>{textToShow}</Text>
+        ) : (
+          <Truncate>
+            <Text>{textToShow}</Text>
+          </Truncate>
+        )}
+        <Button onClick={() => setShowAll(!showAll)}>{showAll ? "Hide" : "Show"} all text</Button>
+      </Stack>
+    );
+  },
   info: {
     title: "Default truncate",
     description:

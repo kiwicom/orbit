@@ -5,10 +5,10 @@ import { Inline, Stack, Text } from "@kiwicom/orbit-components";
 export default {
   Example: () => (
     <Stack>
-      <Inline>
+      <Inline align="center">
         <Passengers ariaLabel="Passengers" /> <Text>4</Text>
       </Inline>
-      <Inline>
+      <Inline align="center">
         <Airplane ariaHidden /> <Text>Flights</Text>
       </Inline>
     </Stack>

@@ -10,12 +10,15 @@ import SupportProgressiveDisclosureSnippet from "snippets/support-progressive-di
 
 ## When to use
 
-- To present multiple options that can be selected.
+- To present multiple options that can each be selected.
+- To offer help or error handling for simple settings.
+- For changes that require confirmation after selection.
 
 ### When not to use
 
-- When only one option can be selected---use a [radio](/components/input/radio/).
+- When only one of multiple options can be selected---use a [radio](/components/input/radio/).
 - You want to group multiple options together into a single basic choice---use a [choice group](/components/input/choicegroup/).
+- For single on/off settings with an instant response---use a [switch](/components/interaction/switch/).
 
 ## Component status
 
@@ -29,13 +32,25 @@ import SupportProgressiveDisclosureSnippet from "snippets/support-progressive-di
 
 <SupportProgressiveDisclosureSnippet />
 
-<Guideline type="do" title="Progressive disclosure">
+<GuidelineImages>
+
+<DoImage>
 
 ![A checkbox with additional info with a link to descriptions.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:76%3A1005)
 
+Present only absolutely necessary information with interactions to offer more.
+
+</DoImage>
+
+<DontImage>
+
 ![A checkbox with a very, very long paragraph of description as additional info.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:77%3A0)
 
-</Guideline>
+Don't overwhelm users with too much information at once.
+
+</DontImage>
+
+</GuidelineImages>
 
 ## Content
 

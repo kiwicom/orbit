@@ -15,7 +15,7 @@ import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 
 ### When not to use
 
-- When there are already many on a page. Don't overwhelm the user.
+- When there are already many on the screen. Don't overwhelm the user.
 - For messages that shouldn't interrupt the flow---consider [heading](/components/text/heading/)
   and [text](/components/text/text/).
 - For temporary messages that don't draw much attention---use a [toast](/components/information/toast/).
@@ -58,7 +58,7 @@ and the user needs to take additional steps to resolve the problem or get additi
 In such cases, provide additional actions for your message.
 Alerts use special status buttons to match the button color with the alert color.
 
-There should be no more than two actions in each Alert:
+Use _at most_ two actions in each Alert:
 one primary and one subtle.
 See more on [the styles of the actions](/design-patterns/action-components/#alert-buttons)
 and how [they should be aligned](/design-patterns/action-components/#button-alignment-in-alert).
@@ -80,15 +80,27 @@ For longer messages, use a title for quick info.
 The user sees the title first when scanning the message.
 You can also provide additional context for the alert by adding a description.
 For more complex messages,
-let users access more information through an action button.
+let users access more information through an [action button](#follow-up-with-actions).
 
-<Guideline type="do" title="Provide context for your messages">
+<GuidelineImages>
+
+<DoImage>
 
 ![Airline refunds apply. Message: This ticket is covered by airline refund policies. If the airline denies your application, your economy tickets will receive little or no refund.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:364%3A1687)
 
+Provide context for your messages.
+
+</DoImage>
+
+<DontImage>
+
 ![Message: If the airline denies your application, your economy tickets will receive little or no refund.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:364%3A1688)
 
-</Guideline>
+Don't include only details with no context.
+
+</DontImage>
+
+</GuidelineImages>
 
 ## Look & feel
 
@@ -96,7 +108,7 @@ let users access more information through an action button.
 
 There are four types of alerts: _informational_, _success_, _warning_, and _critical_.
 
-### Informational alert
+#### Informational alert
 
 Informational alerts are the most common alerts.
 Use them to **guide a user's attention to relevant details**,
@@ -107,7 +119,7 @@ Baggage, clocks, or other symbols strengthen the informative nature of your mess
 
 <ReactExample exampleId="Alert-info_type" />
 
-### Success alert
+#### Success alert
 
 Success alerts confirm that an instruction from the user,
 such as to make a payment or request a refund, was processed successfully.
@@ -119,7 +131,7 @@ For such actions, use an informational alert instead.
 
 <ReactExample exampleId="Alert-success_type" />
 
-### Warning alert
+#### Warning alert
 
 Use warning alerts when you need to inform users about a **potentially unfavorable situation**
 that requires eventual action from them.
@@ -127,7 +139,7 @@ If the issue requires immediate attention, use a critical alert.
 
 <ReactExample exampleId="Alert-warning_type" />
 
-### Critical alert
+#### Critical alert
 
 Use critical alerts when something is **blocking** users from continuing
 or an issue needs to be resolved **immediately**.
@@ -137,25 +149,27 @@ The alert should offer a solution to the problem.
 
 A critical alert should provide some form of solution for their problem.
 If something is **important for users to solve as soon as possible**,
-it's worth considering automatically opening a modal window.
+it's worth considering automatically opening a [modal](/components/overlay/modal/).
 
 ### Mobile vs. desktop
 
-The alert component's content should be the same on all platforms,
+The alert's _content_ should be the same on all platforms,
 but there's more space to play with on the desktop.
 That's why the desktop versions have larger fonts, icons, and inner padding.
 
 For native or responsive views,
 the design is much more compact to avoid filling the screen with the message.
 
-<FigmaFile
-  file="4QJZqvBvRrLu6t9mwObCkA"
-  node=""
-  alt="On mobile platforms, everything is more compact."
-  caption="On mobile platforms, everything is more compact."
-/>
+<ImageContainer size="medium">
 
-![On desktop platforms, things can breathe](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:555%3A0 "On desktop platforms, things can breathe")
+![GATSBY_EMPTY_ALT](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:1436%3A116 "On mobile platforms, everything is more compact.")
+
+</ImageContainer>
+<ImageContainer size="medium">
+
+![GATSBY_EMPTY_ALT](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:1436%3A128 "On desktop platforms, things can breathe")
+
+</ImageContainer>
 
 ### Cascading visual hierarchy
 

@@ -1,45 +1,37 @@
 import * as React from "react";
-import {
-  Button,
-  Portal,
-  Text,
-  TextLink,
-  Modal,
-  ModalHeader,
-  ModalSection,
-} from "@kiwicom/orbit-components";
+import { Button, Portal, Stack, Text, TextLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
-    const [showModal, setShowModal] = React.useState(false);
+    const [showContent, setShowContent] = React.useState(false);
     return (
       <>
-        <Portal>
-          {showModal && (
-            <Modal
-              onClose={() => {
-                setShowModal(false);
-              }}
-            >
-              <ModalHeader title="More about portals" />
-              <ModalSection>
-                <Text>
-                  For more on portals and how they work, read the{" "}
-                  <TextLink href="https://reactjs.org/docs/portals.html" external>
-                    React docs on portals.
-                  </TextLink>
-                </Text>
-              </ModalSection>
-            </Modal>
+        <Portal renderInto="docs-example">
+          {showContent && (
+            <Stack>
+              <Text>
+                For more on portals and how they work, read the{" "}
+                <TextLink href="https://reactjs.org/docs/portals.html" external>
+                  React docs on portals.
+                </TextLink>
+              </Text>
+              <Button
+                onClick={() => {
+                  setShowContent(false);
+                }}
+              >
+                Hide content
+              </Button>
+            </Stack>
           )}
         </Portal>
-        {!showModal && (
+        {!showContent && (
           <Button
             onClick={() => {
-              setShowModal(true);
+              setShowContent(true);
             }}
           >
-            Show modal
+            Show content
           </Button>
         )}
       </>

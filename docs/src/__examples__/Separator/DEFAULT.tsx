@@ -4,18 +4,18 @@ import { Separator, LinkList, TextLink } from "@kiwicom/orbit-components";
 export default {
   Example: () => (
     <LinkList>
-      <TextLink href="https://orbit.kiwi/components/separator/" external type="secondary">
+      <TextLink href="https://orbit.kiwi/components/structure/separator/" external type="secondary">
         Guidelines
       </TextLink>
-      <TextLink href="https://orbit.kiwi/components/separator/react/" external type="secondary">
-        React API
-      </TextLink>
-      <Separator />
       <TextLink
-        href="https://orbit.kiwi/getting-started/channels/team-and-contributors/"
+        href="https://orbit.kiwi/components/structure/separator/react/"
         external
         type="secondary"
       >
+        React API
+      </TextLink>
+      <Separator />
+      <TextLink href="https://orbit.kiwi/getting-started/support/team/" external type="secondary">
         About us
       </TextLink>
       <TextLink href="https://code.kiwi.com/" external type="secondary">

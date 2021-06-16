@@ -30,13 +30,15 @@ This leads to them getting **overwhelmed** by information
 (known as [information overload](https://en.wikipedia.org/wiki/Information_overload))
 and increases the chance that **they don't do anything**.
 
-![A long page with buttons in 3 different configurations: 1. everything primary, 2. one primary and the rest secondary, 3. everything secondary.](fileId:uK3xATJqPZwNwV5KT7igBG;nodeId:3%3A5 "On the left, we can see that when everything is important, nothing is. To fix this, either highlight the one most important action (the middle option) or make them all less distinct (the option on the right).")
+![A long page with buttons in 3 different configurations: 1. everything primary, 2. one primary
+  and the rest secondary, 3. everything secondary.](fileId:uK3xATJqPZwNwV5KT7igBG;nodeId:3%3A5 "On
+  the left, we can see that when everything is important, nothing is. To fix this, either highlight
+  the one most important action (the middle option) or make them all less distinct (the option on
+  the right).")
 
-To help users through this,
-you want to **simplify** your designs to highlight what's important.
-It's important to remember to make it clear
-that the secondary choices are still available
-and how users can get to them if they want.
+To help users through this, you want to **simplify** your designs to highlight what's important. It's
+important to remember to make it clear that the secondary choices are still available and how users can
+get to them if they want.
 
 The idea of user desire is important because you don't want
 users to think they can't do something that they actually can.
@@ -97,17 +99,35 @@ in the process of adding destinations in [Nomad](https://www.kiwi.com/nomad),
 a Kiwi.com tool for exploring the world with a flexible itinerary.
 When you first try to add a place, all you see is a list of potential destinations.
 
-![An input field with the text 'Add place' and some suggested destinations.](../../images/design-patterns/NomadAddDestination.png)
+<ImageContainer size="medium">
+
+![An input field with the text 'Add place'
+  and some suggested destinations
+  .](../../images/design-patterns/NomadAddDestination.png)
+
+</ImageContainer>
 
 Your choices are limited to the primary option: the place.
 Once you have chosen a place, it's added to your list along with a standard length to stay.
 This length is highlighted in the UI as a place where there are additional options.
 
-![The text 'London' and 'Stay 3--5 nights', with the length of stay underlined and an edit button next to it.](../../images/design-patterns/NomadHoverLength.png)
+<ImageContainer size="medium">
+
+![The text 'London' and 'Stay 3--5 nights',
+  with the length of stay underlined and an edit button next to it
+  .](../../images/design-patterns/NomadHoverLength.png)
+
+</ImageContainer>
 
 If you select this, you see additional options for the length of stay.
 
-![The same text as before, now with a slider underneath to select the length of stay from 1 to 60 nights.](../../images/design-patterns/NomadChangeLength.png)
+<ImageContainer size="medium">
+
+![The same text as before,
+  now with a slider underneath to select the length of stay from 1 to 60 nights
+  .](../../images/design-patterns/NomadChangeLength.png)
+
+</ImageContainer>
 
 Even here, there is only one primary action:
 a slider to choose a length of stay.
@@ -131,7 +151,7 @@ The text is present on the page, but hidden by default.
 This lets you show various amounts of text based on user actions or at various sizes,
 as in the example below.
 
-<ReactExample exampleId="Truncate-default" />
+<ReactExample exampleId="Truncate-default" minHeight={200} />
 
 ### Collapse
 
@@ -146,7 +166,7 @@ The example below could be used to hide options for filtering a search
 where most people would want to get to their destination in any way possible,
 but some people only want certain options.
 
-<ReactExample exampleId="Collapse-search_filter" />
+<ReactExample exampleId="Collapse-search_filter" minHeight={200} />
 
 ### Popover
 
@@ -160,7 +180,7 @@ When it's clicked, additional options for adding or removing passengers can be s
 This is an action that wouldn't happen repeatedly during a flow,
 so it's best to hide it when it's not being used.
 
-<ReactExample exampleId="Popover-passengers" />
+<ReactExample exampleId="Popover-passengers" minHeight={240} />
 
 ### Tooltip
 
@@ -189,4 +209,4 @@ The most important information can be shown as the section title,
 so people can see the names at a glance,
 and then anything else is just a quick expand away.
 
-<ReactExample exampleId="Card-expand_uncontrolled" />
+<ReactExample exampleId="Card-expand_uncontrolled" minHeight={400} />

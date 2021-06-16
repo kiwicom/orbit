@@ -4,6 +4,7 @@ redirect_from:
   - /components/button/
 ---
 
+import ActionableTextSnippet from "snippets/actionable-text.mdx";
 import ButtonSizeSnippet from "snippets/button-size.mdx";
 
 <ReactExample exampleId="Button-default" />
@@ -80,17 +81,7 @@ such as with a [tooltip](/components/overlay/tooltip/).
 
 ## Content
 
-### Use actionable text
-
-It should be clear from the button text exactly what will happen
-when the user interacts with it.
-The labels should be actionable, such as "Add passenger" and "Book for (price)".
-
-Avoid long explanations in the button text.
-The text should be short and clear.
-If additional explanation is needed, add it above the button as text.
-
-See [examples for how to make actions clear](/kiwi-use/content/voice-and-tone/straightforward/#make-every-action-clear).
+<ActionableTextSnippet />
 
 ## Look & feel
 
@@ -169,11 +160,16 @@ add a proper label to communicate the purpose.
 
 All of our buttons use a consistently defined set of states.
 
-![](../../../../images/components/action/button-interactions.png)
+<ImageContainer size="medium">
+
+![All buttons, include primary, secondary, and critical buttons, have these states.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:470%3A4671)
+
+</ImageContainer>
 
 - **Hover** -- We change the background of a button to its :_hover_ color.
 - **Active** -- We scale down the button with the <InlineToken name="modifierScaleButtonActive" />
   design token and also change the background to its _:active_ color.
-- **Focus** -- The background stays same but we create a light blue border around the button.
+- **Focus** -- The background stays same but the button gets a box shadow
+  with the color and opacity determined by the button type.
 - **Disabled** -- We change the button opacity with the <InlineToken name="opacityButtonDisabled" />
   design token. This deactivates all the states listed above.

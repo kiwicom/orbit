@@ -18,12 +18,12 @@ export default {
             <Stack>
               <Tile
                 title="Drawer guidelines"
-                href="https://orbit.kiwi/components/drawer/"
+                href="https://orbit.kiwi/components/overlay/drawer/"
                 external
               />
               <Tile
                 title="Drawer React API"
-                href="https://orbit.kiwi/components/drawer/react/"
+                href="https://orbit.kiwi/components/overlay/drawer/react/"
                 external
               />
               <Tile

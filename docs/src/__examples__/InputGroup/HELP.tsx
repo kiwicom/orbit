@@ -77,7 +77,7 @@ export default {
         <InputField
           help="This text is not displayed"
           placeholder="YYYY"
-          minValue={2020}
+          minValue={2022}
           type="number"
         />
       </InputGroup>

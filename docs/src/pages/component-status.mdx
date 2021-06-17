@@ -4,14 +4,14 @@ import useMdxPageTableofContents from "../hooks/useMdxPageTableofContents";
 
 <!-- vale off -->
 
-export default ({ children, location, path }) => {
+export default ({ children, location }) => {
   const tableOfContents = useMdxPageTableofContents("component-status");
   return (
     <DocLayout
       description="A detailed breakdown of our components and the status of their implementation."
       title="Component status 🚀"
       location={location}
-      path={path}
+      path="/component-status/"
       tableOfContents={tableOfContents}
     >
       {children}

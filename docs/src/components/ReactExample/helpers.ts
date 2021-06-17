@@ -15,10 +15,9 @@ export const rangeAppend = ({ middle, callback, idx, arr }) => {
 
 export const rangeDelete = ({ middle, callback, idx, arr }) => {
   if (idx === middle) return callback(BASE_ACTIVE);
-  const offset = idx > middle ? idx - middle : middle - idx;
   const newArr = arr.map((el, i) => {
-    if (i <= middle - offset) return 0;
-    if (i > middle && i >= middle + offset) return 0;
+    if (idx > i) return 0;
+    if (i === arr.length - idx) return 0;
 
     return el;
   });

@@ -48,7 +48,7 @@ export default function Home({ location, path }: Props) {
       location={location}
       title="Orbit design system"
       description="An open source design system for your next travel project."
-      path={path}
+      path="/"
       isHome
     >
       <RocketImage />

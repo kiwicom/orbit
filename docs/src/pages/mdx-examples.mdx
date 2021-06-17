@@ -6,14 +6,14 @@ import Palette from "../components/Palette";
 
 <!-- vale off -->
 
-export default ({ children, location, path }) => {
+export default ({ children, location }) => {
   const tableOfContents = useMdxPageTableofContents("mdx-examples");
   return (
     <DocLayout
       description="Examples of our components shared across MDX docs files."
       title="MDX examples"
       location={location}
-      path={path}
+      path="mdx-examples"
       tableOfContents={tableOfContents}
     >
       {children}

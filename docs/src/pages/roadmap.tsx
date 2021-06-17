@@ -6,13 +6,13 @@ import DocLayout from "../components/DocLayout";
 import HeadingWithLink from "../components/HeadingWithLink";
 import Roadmap from "../components/Roadmap";
 
-export default ({ location, path }) => (
+export default ({ location }) => (
   <DocLayout
     description="All our planning under one roof."
     title="Roadmap"
     location={location}
     noElevation
-    path={path}
+    path="roadmap"
     tableOfContents={[]}
   >
     <Text>

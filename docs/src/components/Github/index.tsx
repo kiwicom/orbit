@@ -1,8 +1,9 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { Alert, Text } from "@kiwicom/orbit-components";
+import { Alert, Text, Heading } from "@kiwicom/orbit-components";
 
+import OrbitTeam from "./OrbitTeam";
 import Contributor from "./Contributor";
 
 const Grid = styled.div`
@@ -12,13 +13,16 @@ const Grid = styled.div`
 `;
 
 export interface Contributor {
-  name?: string;
-  id?: string;
-  avatar_url?: string;
-  bio?: string;
-  blog?: string;
-  twitter_username?: string;
-  html_url?: string;
+  id: string | number;
+  active: boolean;
+  name: string;
+  position: string;
+  avatar_url: string;
+  info: string;
+  website?: string;
+  twitter?: string;
+  dribbble?: string;
+  github?: string;
 }
 
 const ContributorsComponent = () => {
@@ -28,42 +32,64 @@ const ContributorsComponent = () => {
         allContributor {
           nodes {
             id
-            avatar_url
-            bio
-            html_url
-            blog
-            twitter_username
             name
-            url
+            info
+            active
+            position
+            error
+            dribbble
+            avatar_url
+            github
+            twitter
+            website
           }
         }
       }
     `,
   );
 
-  const githubDocs = (
-    <a
-      href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token"
-      aria-label="creating-a-personal-access-token"
-    >
-      Please create one
-    </a>
+  const { core, all, error } = allContributor.nodes.reduce(
+    (acc, cur) => {
+      if (cur.error) acc.error = cur.error;
+      if (cur.id.match("-")) {
+        acc.all.push(cur);
+      } else {
+        acc.core.push(cur);
+      }
+
+      return acc;
+    },
+    { core: [], all: [], error: "" },
   );
 
-  return allContributor.nodes && allContributor.nodes.length > 0 ? (
-    <Grid>
-      {allContributor.nodes.map(({ id, ...info }) => (
-        <Contributor key={id} id={id} {...info} />
-      ))}
-    </Grid>
-  ) : (
-    <Alert type="warning">
+  return (
+    <>
+      <OrbitTeam contributors={core} />
+      <Heading type="title2" as="h2">
+        All contributors
+      </Heading>
       <Text>
-        Contributors component is not shown, because you are missing github personal access token
-        {githubDocs}
-        Check the terminal where you started the site for more details.
+        From small reviews or additions to contributions of whole components. We really appreciate
+        all your efforts when helping us to make Orbit better 👏
       </Text>
-    </Alert>
+      <Heading type="title3" as="h3">
+        React components
+      </Heading>
+      <Text>
+        Thanks to all these folks for caring, your contribution helps to all Orbit consumers.
+      </Text>
+      {error ? (
+        <Alert type="warning">
+          <Text>{error}</Text>
+        </Alert>
+      ) : (
+        <Grid>
+          {all.map(contributor => (
+            <Contributor {...contributor} />
+          ))}
+        </Grid>
+      )}
+    </>
   );
 };
 

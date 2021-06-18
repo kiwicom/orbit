@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Dribbble, Github } from "@icons-pack/react-simple-icons";
 import { Twitter, Link as LinkIcon } from "@kiwicom/orbit-components/icons";
 
-import { Member } from "./OrbitTeam";
+import { Contributor } from ".";
 
 const StyledHeading = styled.h4`
   color: ${({ theme }) => theme.orbit.colorHeading};
@@ -29,11 +29,11 @@ const StyledInfo = styled.div`
   color: ${({ theme }) => theme.orbit.colorTextPrimary};
 `;
 
-interface Props extends Member {
+interface Props extends Contributor {
   image: React.ReactNode;
 }
 
-const TeamMember = ({ position, info, name, twitter, website, dribbble, github, image }: Props) => {
+const TeamMember = ({ position, image, info, twitter, website, dribbble, github, name }: Props) => {
   const links = [
     { url: twitter, icon: <Twitter /> },
     { url: website, icon: <LinkIcon /> },

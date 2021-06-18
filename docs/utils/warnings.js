@@ -8,21 +8,25 @@ const throwInCI = varName => {
 const warnMissingAccessToken = error => {
   if (typeof error.missing === "undefined") {
     console.error(error);
-    console.info(
-      "You may have forgotten to include the repo and read:org scopes for your GitHub access token.",
-    );
-    return;
+    const msg =
+      "You may have forgotten to include the repo and read:org scopes for your GitHub access token.";
+    console.info(msg);
+    return msg;
   }
+
   if (error.missing.includes("GH_TOKEN")) {
     throwInCI("GH_TOKEN");
-    console.warn("Missing an access token for GitHub. Please create one.");
-    console.info(
-      "The token is needed to display the Contributors component, which is based on the GitHub API.",
-      "Create a personal access token: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token",
-      "Don't forget to include the required scopes for the token: all repo scopes and read:org.",
-      "After creating a token in GitHub, add it to a .env file in the root folder with GH_TOKEN=<YOUR TOKEN>",
-    );
+    const warn = "Missing an access token for GitHub. Please create one.";
+    const info = `The token is needed to display the Contributors component, which is based on the GitHub API.",
+    "Create a personal access token: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token",
+    "Don't forget to include the required scopes for the token: all repo scopes and read:org.",
+    "After creating a token in GitHub, add it to a .env file in the root folder with GH_TOKEN=<YOUR TOKEN>`;
+    console.warn(warn);
+    console.info(info);
+    return warn.concat(info).join("\n");
   }
+
+  return "";
 };
 
 const warnMissingFigmaToken = error => {

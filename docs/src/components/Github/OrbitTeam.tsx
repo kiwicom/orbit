@@ -5,34 +5,19 @@ import Img from "gatsby-image";
 import { Heading, Stack } from "@kiwicom/orbit-components";
 
 import Member from "./TeamMember";
-import team from "./data.json";
 
-const CURRENT_CONTRIBUTORS = [
-  "Victor Genaev",
-  "Luděk Vepřek",
-  "Aaron Collier",
-  "Matija Marohnić",
-  "William Kolmačka",
-  "Milan Seitler",
-];
-
-export interface Member {
-  id: string;
-  name: string;
-  position: string;
-  info: string;
-  website?: string;
-  twitter?: string;
-  dribbble?: string;
-  github?: string;
-}
+import { Contributor } from ".";
 
 interface AllMembers {
-  current: Member[];
-  previous: Member[];
+  current: Contributor[];
+  previous: Contributor[];
 }
 
-const OrbitTeam = () => {
+interface Props {
+  contributors: Contributor[];
+}
+
+const OrbitTeam = ({ contributors }: Props) => {
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { regex: "/team/" } }) {
@@ -60,9 +45,9 @@ const OrbitTeam = () => {
       .filter(Boolean)
       .find(n => n.originalName.includes(id));
 
-  const splittedMembers = team.reduce<AllMembers>(
+  const splittedMembers = contributors.reduce<AllMembers>(
     (acc, cur) => {
-      if (CURRENT_CONTRIBUTORS.includes(cur.name)) {
+      if (cur.active) {
         acc.current.push(cur);
       } else {
         acc.previous.push(cur);

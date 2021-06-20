@@ -28,9 +28,9 @@ describe("Wizard", () => {
         );
       };
       render(<MyApp />);
-      const customizeYourTripStep = screen.getByRole("button", { name: "Customize your trip" });
+      const customizeYourTripStep = screen.getByRole("button", { name: /Customize your trip/ });
       expect(customizeYourTripStep).toHaveAttribute("aria-current", "step");
-      const ticketFareStep = screen.getByRole("button", { name: "Ticket fare" });
+      const ticketFareStep = screen.getByRole("button", { name: /Ticket fare/ });
       userEvent.click(ticketFareStep);
       expect(ticketFareStep).toHaveAttribute("aria-current", "step");
     });

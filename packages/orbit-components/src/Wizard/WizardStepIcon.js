@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
   ${({ theme, disabled, glow }) => css`
     width: ${theme.orbit.widthIconSmall};
     height: ${theme.orbit.heightIconSmall};
-    border-radius: 50%;
+    border-radius: ${theme.orbit.borderRadiusCircle};
     background: ${theme.orbit.paletteProductNormal};
     ${disabled &&
     css`

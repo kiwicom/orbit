@@ -97,7 +97,7 @@ WithError.story = {
 export const RenderProp = (): React.Node => {
   const boxShadowSize = "3px";
   return (
-    <ChoiceGroup label="What was the reason for your cancellation?" onChange={() => {}}>
+    <ChoiceGroup label="What was the reason for your cancellation?" onChange={action("onChange")}>
       {({ Container, Item, spacing }) => (
         <FixedSizeList
           outerElementType={({ style, ...props }) => (

@@ -49,7 +49,6 @@ const StyledFrame = styled(Frame)`
     width: 100%;
     min-height: ${minHeight}px;
     height: ${Number(height) + BOARD_HEIGHT}px;
-    padding: 0 16px;
     ${getBackground(background)};
   `};
 `;
@@ -59,7 +58,7 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
     max-width: ${width}px;
     width: 100%;
     overflow: scroll;
-    padding-top: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall};
   `};
 `;
 

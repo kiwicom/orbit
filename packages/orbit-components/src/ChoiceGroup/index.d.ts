@@ -11,7 +11,13 @@ type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6";
 
 export interface Props extends Common.Global {
-  readonly children: React.ReactNode;
+  readonly children:
+    | React.ReactNode
+    | ((args: {
+        readonly Container: "div";
+        readonly Item: React.ComponentType<{ readonly children: React.ReactNode }>;
+        readonly spacing: string;
+      }) => React.ReactNode);
   readonly label?: Common.Translation;
   readonly labelSize?: Size;
   readonly labelAs?: Element;

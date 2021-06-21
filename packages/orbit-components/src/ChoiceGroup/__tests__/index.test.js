@@ -46,4 +46,21 @@ describe("ChoiceGroup", () => {
     userEvent.click(screen.getByText("Only"));
     expect(onOnlySelection).toHaveBeenCalled();
   });
+
+  it("render prop", () => {
+    const onChange = jest.fn();
+    render(
+      <ChoiceGroup onChange={onChange}>
+        {({ Container, Item, spacing }) => (
+          <Container style={{ display: "flex", flexDirection: "column", gap: spacing }}>
+            <Item>
+              <Radio value="option" label="Option" />
+            </Item>
+          </Container>
+        )}
+      </ChoiceGroup>,
+    );
+    userEvent.click(screen.getByRole("radio", { name: "Option" }));
+    expect(onChange).toHaveBeenCalled();
+  });
 });

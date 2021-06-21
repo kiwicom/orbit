@@ -9,6 +9,7 @@ import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
 import randomID from "../utils/randomID";
+import useTheme from "../hooks/useTheme";
 
 import type { Props } from "./index";
 
@@ -50,12 +51,18 @@ const ChoiceGroup = ({
   onChange,
 }: Props): React.Node => {
   const groupID = React.useMemo(() => randomID("choiceGroupID"), []);
+  const theme = useTheme();
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     ev.persist();
     if (onChange) {
       onChange(ev);
     }
+  };
+
+  const itemProps = {
+    onChange: handleChange,
+    hasError: Boolean(error),
   };
 
   return (
@@ -65,31 +72,43 @@ const ChoiceGroup = ({
           {label}
         </Heading>
       )}
-      <Stack direction="column" spacing={filter ? "none" : "XSmall"}>
-        {React.Children.map(children, child => {
-          return !filter ? (
-            <>
-              {React.cloneElement(child, {
-                onChange: handleChange,
-                hasError: Boolean(error),
-              })}
-            </>
-          ) : (
-            <FilterWrapper
-              child={child}
-              onOnlySelection={onOnlySelection}
-              onlySelectionText={onlySelectionText}
-            >
-              <>
-                {React.cloneElement(child, {
-                  onChange: handleChange,
-                  hasError: Boolean(error),
-                })}
-              </>
-            </FilterWrapper>
-          );
-        })}
-      </Stack>
+      {typeof children === "function" ? (
+        children({
+          // for now a plain <div> is all we need, but we're reserving this space in the API
+          // in case we'll need something more in the future
+          Container: "div",
+          Item: ({ children: itemChildren }) => {
+            return !filter ? (
+              React.cloneElement(React.Children.only(itemChildren), itemProps)
+            ) : (
+              <FilterWrapper
+                child={React.Children.only(itemChildren)}
+                onOnlySelection={onOnlySelection}
+                onlySelectionText={onlySelectionText}
+              >
+                {React.cloneElement(React.Children.only(itemChildren), itemProps)}
+              </FilterWrapper>
+            );
+          },
+          spacing: filter ? "0px" : theme.orbit.spaceXSmall,
+        })
+      ) : (
+        <Stack direction="column" spacing={filter ? "none" : "XSmall"}>
+          {React.Children.map(children, child => {
+            return !filter ? (
+              React.cloneElement(child, itemProps)
+            ) : (
+              <FilterWrapper
+                child={child}
+                onOnlySelection={onOnlySelection}
+                onlySelectionText={onlySelectionText}
+              >
+                {React.cloneElement(child, itemProps)}
+              </FilterWrapper>
+            );
+          })}
+        </Stack>
+      )}
       <FormFeedback error={error} />
     </StyledChoiceGroup>
   );

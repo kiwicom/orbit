@@ -13,7 +13,13 @@ type LabelAs = "h2" | "h3" | "h4" | "h5" | "h6";
 export type Filters = {| label: string, value: string |};
 export type Props = {|
   ...Globals,
-  children: React.Node,
+  children:
+    | React.Node
+    | (({|
+        Container: "div",
+        Item: React.ComponentType<{| children: React.Node |}>,
+        spacing: string,
+      |}) => React.Node),
   label?: Translation,
   labelSize?: LabelSize,
   labelAs?: LabelAs,

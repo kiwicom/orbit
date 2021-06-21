@@ -2,6 +2,7 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
+import { FixedSizeList } from "react-window";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
@@ -90,6 +91,56 @@ WithError.story = {
   parameters: {
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const RenderProp = (): React.Node => {
+  const boxShadowSize = "3px";
+  return (
+    <ChoiceGroup label="What was the reason for your cancellation?" onChange={action("onChange")}>
+      {({ Container, Item, spacing }) => (
+        <FixedSizeList
+          outerElementType={({ style, ...props }) => (
+            <div
+              style={{
+                // account for extra padding
+                top: `-${boxShadowSize}`,
+                left: `-${boxShadowSize}`,
+                ...style,
+              }}
+              {...props}
+            />
+          )}
+          innerElementType={Container}
+          height={150}
+          itemCount={500}
+          // computed height + top padding + spacing between items
+          itemSize={20 + parseInt(spacing, 10)}
+        >
+          {({ style, index }) => (
+            <div
+              style={{
+                // don't cut focus box shadow
+                paddingTop: boxShadowSize,
+                paddingLeft: boxShadowSize,
+                ...style,
+              }}
+            >
+              <Item>
+                <Radio label={`Option ${index}`} value={index} />
+              </Item>
+            </div>
+          )}
+        </FixedSizeList>
+      )}
+    </ChoiceGroup>
+  );
+};
+
+RenderProp.story = {
+  name: "Render prop",
+  parameters: {
+    info: "A virtual list, demonstrating a use case for passing function as children",
   },
 };
 

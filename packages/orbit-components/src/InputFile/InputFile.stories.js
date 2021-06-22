@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, array, select } from "@storybook/addon-knobs";
+import { text, array, select, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -121,6 +121,7 @@ export const Playground = (): React.Node => {
   const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
   const dataTest = text("dataTest", "test");
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const required = boolean("required", false);
 
   return (
     <InputFile
@@ -131,6 +132,7 @@ export const Playground = (): React.Node => {
       fileName={fileName}
       error={error}
       help={help}
+      required={required}
       dataTest={dataTest}
       allowedFileTypes={allowedFileTypes}
       onChange={action("onChange")}

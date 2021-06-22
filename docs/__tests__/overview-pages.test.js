@@ -1,10 +1,30 @@
 const path = require("path");
-const globby = require("globby");
+const { vol } = require("memfs");
+const dedent = require("dedent");
 
-const { createOverviewPages, renderOverviewPages } = require("../services/overview-pages");
+const { createOverviewPages } = require("../services/overview-pages");
 const { createPages } = require("../gatsby-node");
 
-jest.mock("globby");
+jest.mock("fs", () => require("memfs").fs);
+
+const ROOT = path.resolve(__dirname, "../src/documentation");
+
+const json = {
+  "./03-components/meta.yml": dedent`
+      title: Components
+      type: folder
+  `,
+  "./03-components/action/meta.yml": dedent`
+      title: Action
+      type: folder
+      description: Action folder
+  `,
+  "./03-components/action/button/meta.yml": dedent`
+      title: Button
+      description: Displays a single important action a user can take.
+      type: tabs
+  `,
+};
 
 describe("overview-pages", () => {
   it("it should render overview-pages", async () => {
@@ -18,48 +38,58 @@ describe("overview-pages", () => {
       }),
     );
 
-    const files = [
-      path.join(__dirname, "../src/documentation/01-getting-started/meta.yml"),
-      path.join(__dirname, "../src/documentation/01-getting-started/01-for-designers/meta.yml"),
-      path.join(__dirname, "../src/documentation/01-getting-started/04-support/meta.yml"),
-      path.join(__dirname, "../src/documentation/01-getting-started/03-github.mdx"),
-    ];
-
-    globby.mockResolvedValue(files);
+    vol.fromJSON(json, ROOT);
 
     const createPage = jest.fn();
-    createPages({ graphql, actions: { createPage } });
+    await createPages({ graphql, actions: { createPage } });
 
-    const pages = await createOverviewPages();
+    await createOverviewPages(page =>
+      createPage({
+        path: page.slug,
+        component: path.join(__dirname, "../src/templates/Overview.tsx"),
+        context: { ...page },
+      }),
+    );
 
-    renderOverviewPages(pages, createPage);
-
-    expect(pages).toMatchSnapshot();
-    expect(createPage).toHaveBeenCalledWith({
-      component: path.join(__dirname, "../../src/templates/Overview.tsx"),
+    expect(createPage).toHaveBeenNthCalledWith(1, {
+      component: path.join(__dirname, "../src/templates/Overview.tsx"),
       context: {
         pages: [
           {
-            description: "Everything you need to start designing with the Orbit UI kit.",
-            slug: "/getting-started/for-designers",
-            title: "For designers",
-          },
-          {
-            description: "A list of all channels for reporting bugs and requesting new features.",
-            slug: "/getting-started/support",
-            title: "Support",
-          },
-          {
-            description: "A list of repositories related to the Orbit design system.",
-            redirect_from: ["/getting-started/github-repos-resources/"],
-            slug: "/getting-started/github",
-            title: "GitHub repos & resources",
+            description: "Action folder",
+            pages: [
+              {
+                description: "Displays a single important action a user can take.",
+                slug: "/components/action/button",
+                title: "Button",
+              },
+            ],
+            slug: "/components/action",
+            title: "Action",
           },
         ],
-        slug: "/getting-started",
-        title: "Getting started",
+        description: undefined,
+        slug: "/components",
+        title: "Components",
       },
-      path: "/getting-started",
+      path: "/components",
+    });
+
+    expect(createPage).toHaveBeenNthCalledWith(2, {
+      component: path.join(__dirname, "../src/templates/Overview.tsx"),
+      context: {
+        pages: [
+          {
+            description: "Displays a single important action a user can take.",
+            slug: "/components/action/button",
+            title: "Button",
+          },
+        ],
+        description: "Action folder",
+        slug: "/components/action",
+        title: "Action",
+      },
+      path: "/components/action",
     });
   });
 });

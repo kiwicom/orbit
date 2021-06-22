@@ -1,9 +1,9 @@
 const globby = require("globby");
 const fs = require("fs");
-const path = require("path");
 const yaml = require("js-yaml");
 const matter = require("gray-matter");
 const _ = require("lodash");
+const path = require("path");
 
 const { omitNumbers } = require("../utils/document");
 
@@ -51,45 +51,39 @@ function createPages(obj, slug) {
   });
 }
 
-async function createOverviewPages() {
-  const structure = {};
-
-  const files = await globby("src/documentation/**/*.{yml,mdx}");
-
-  files.forEach(file => {
-    const entirePath = omitNumbers(file).split("/");
-    const p = entirePath.slice(entirePath.indexOf("documentation") + 1, entirePath.length);
-
-    if (p.includes("meta.yml")) {
-      const { title, type, description } = yaml.load(fs.readFileSync(file));
-      const metaPath = p.map(n => n.replace(".yml", ""));
-      _.set(structure, metaPath, { title, type, description });
-    } else {
-      const filePath = p.map(n => n.replace(".mdx", ""));
-      const { data } = matter(fs.readFileSync(file, "utf-8"));
-      _.set(structure, filePath, data);
-    }
-  });
-
-  return createPages(structure);
-}
-
 const renderOverviewPages = (allPages, callback) => {
   allPages.forEach(page => {
-    const { pages, slug } = page;
+    const { pages } = page;
     if (!pages) return undefined;
-
-    callback({
-      path: slug,
-      component: `${process.cwd()}/src/templates/Overview.tsx`,
-      context: { ...page },
-    });
-
+    callback(page);
     return renderOverviewPages(pages, callback);
   });
 };
 
+async function createOverviewPages(callback) {
+  const structure = {};
+
+  const files = await globby(path.join(__dirname, "../src/documentation/**/*.{yml,mdx}"));
+
+  files.forEach(file => {
+    const wholePath = omitNumbers(file)
+      .replace(/\.[^/.]+$/, "")
+      .split("/");
+
+    const ommitedPath = wholePath.slice(wholePath.indexOf("documentation") + 1, wholePath.length);
+
+    if (ommitedPath.includes("meta")) {
+      const { title, type, description } = yaml.load(fs.readFileSync(file));
+      _.set(structure, ommitedPath, { title, type, description });
+    } else {
+      const { data } = matter(fs.readFileSync(file, "utf-8"));
+      _.set(structure, ommitedPath, data);
+    }
+  });
+
+  return renderOverviewPages(createPages(structure), callback);
+}
+
 module.exports = {
   createOverviewPages,
-  renderOverviewPages,
 };

@@ -24,6 +24,9 @@ import Modal from "./Modal";
 import { useBookmarks } from "../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { useKeyboard } = require("../services/KeyboardProvider");
+
 const StyledWrapper = styled.header`
   position: relative;
   z-index: 10;
@@ -97,7 +100,7 @@ interface Props {
 }
 
 const Navbar = ({ location, docNavigation }: Props) => {
-  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
+  const { isSearchOpened, setSearchOpened } = useKeyboard();
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
@@ -136,10 +139,10 @@ const Navbar = ({ location, docNavigation }: Props) => {
               circled
               title="Search…"
               iconLeft={<SearchIcon />}
-              onClick={() => setSearchOpen(true)}
+              onClick={() => setSearchOpened(true)}
             />
           )}
-          {searchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
+          {isSearchOpened && !isHome && <Search onClose={() => setSearchOpened(false)} />}
           {docNavigation ? (
             <>
               <Hide block on={["largeDesktop"]}>

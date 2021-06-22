@@ -59,6 +59,7 @@
     "rehype-stringify": "^8.0.0",
     "remark-deflist": "^0.3.0",
     "tailwindcss": "^2.1.1",
+    "tinykeys": "^1.2.0",
     "to-vfile": "^6.1.0",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3",

@@ -32,6 +32,9 @@ import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { useKeyboard } = require("../services/KeyboardProvider");
+
 interface Props {
   location: WindowLocation;
   path: string;
@@ -42,7 +45,8 @@ function GatsbyLinkToButton({ href, ...props }: { href: string }) {
 }
 
 export default function Home({ location, path }: Props) {
-  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
+  const { isSearchOpened, setSearchOpened } = useKeyboard();
+
   return (
     <Layout
       location={location}
@@ -104,11 +108,11 @@ export default function Home({ location, path }: Props) {
                 circled
                 iconLeft={<SearchIcon />}
                 type="primarySubtle"
-                onClick={() => setSearchOpen(true)}
+                onClick={() => setSearchOpened(true)}
               >
                 Search
               </Button>
-              {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
+              {isSearchOpened && <Search onClose={() => setSearchOpened(false)} />}
             </Inline>
           </div>
         </>

@@ -1,15 +1,14 @@
 import React from "react";
-import styled from "styled-components";
-import { Heading, Grid } from "@kiwicom/orbit-components";
+import { Grid } from "@kiwicom/orbit-components";
+
 import DocLayout from "../components/DocLayout";
 import Tile from "../components/Tile";
-import Layout from "../components/Layout";
 
 const Overview = ({ location, pageContext }) => {
   const { slug, title, pages } = pageContext;
 
   return (
-    <DocLayout location={location} path={slug} title={title}>
+    <DocLayout location={location} path={slug} title={title} noElevation>
       <Grid
         columns="1fr"
         gap="2rem"

@@ -212,9 +212,11 @@ Suffix.defaultProps = {
 };
 
 export const Input: any = styled(
-  React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
-    <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
-  )),
+  React.forwardRef(
+    ({ type, size, theme, error, help, inlineLabel, dataAttrs, required, ...props }, ref) => (
+      <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} aria-required={required} />
+    ),
+  ),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
@@ -390,6 +392,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
           autoFocus={autoFocus}
           id={forID}
           inputMode={inputMode}
+          required={required}
           dataAttrs={dataAttrs}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}

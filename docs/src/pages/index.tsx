@@ -15,6 +15,7 @@ import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-b
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
 import ReadArt from "@streamlinehq/streamlinehq/img/streamline-light/read-art-DeGKsX.svg";
 
+import SearchButton from "../components/Search/SearchButton";
 import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
@@ -31,9 +32,7 @@ import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { useKeyboard } = require("../services/KeyboardProvider");
+import { useKeyboard } from "../services/KeyboardProvider";
 
 interface Props {
   location: WindowLocation;
@@ -45,7 +44,7 @@ function GatsbyLinkToButton({ href, ...props }: { href: string }) {
 }
 
 export default function Home({ location, path }: Props) {
-  const { isSearchOpened, setSearchOpened } = useKeyboard();
+  const [isSearchOpen, setSearchOpen] = useKeyboard();
 
   return (
     <Layout
@@ -103,16 +102,8 @@ export default function Home({ location, path }: Props) {
               >
                 Get started
               </Button>
-              <Button
-                size="large"
-                circled
-                iconLeft={<SearchIcon />}
-                type="primarySubtle"
-                onClick={() => setSearchOpened(true)}
-              >
-                Search
-              </Button>
-              {isSearchOpened && <Search onClose={() => setSearchOpened(false)} />}
+              <SearchButton onClick={() => setSearchOpen(true)} />
+              {isSearchOpen && <Search onClose={() => setSearchOpen(false)} />}
             </Inline>
           </div>
         </>

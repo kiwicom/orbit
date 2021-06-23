@@ -2,25 +2,25 @@
 import * as React from "react";
 import tinykeys from "tinykeys";
 
-export const KeyboardContext = React.createContext({
-  isSearchOpened: false,
-  setSearchOpened: {},
-});
+export const KeyboardContext = React.createContext<[boolean, (val: boolean) => void]>([
+  false,
+  () => {},
+]);
 
 export const KeyboardContextProvider = ({ children }) => {
-  const [isSearchOpened, setSearchOpened] = React.useState(false);
+  const [isSearchOpen, setSearchOpen] = React.useState(false);
 
   React.useEffect(() => {
     const unsubscribe = tinykeys(window, {
       "$mod+KeyK": () => {
-        setSearchOpened(prev => !prev);
+        setSearchOpen(prev => !prev);
       },
     });
     return () => unsubscribe();
-  }, [setSearchOpened]);
+  }, [setSearchOpen]);
 
   return (
-    <KeyboardContext.Provider value={{ isSearchOpened, setSearchOpened }}>
+    <KeyboardContext.Provider value={[isSearchOpen, setSearchOpen]}>
       {children}
     </KeyboardContext.Provider>
   );

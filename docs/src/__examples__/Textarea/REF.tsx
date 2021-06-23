@@ -6,7 +6,7 @@ export default {
     const ref = React.useRef<HTMLTextAreaElement | null>(null);
 
     React.useEffect(() => {
-      if (ref && ref.current) {
+      if (ref.current) {
         ref.current.focus();
       }
     });

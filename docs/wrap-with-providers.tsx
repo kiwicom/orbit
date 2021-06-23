@@ -9,11 +9,11 @@ import { KeyboardContextProvider } from "./src/services/KeyboardProvider";
 export default function wrapWithProviders({ element }: { element: React.ReactNode }) {
   return (
     <ThemeProvider theme={theme}>
-      <DevModeProvider>
-        <KeyboardContextProvider>
+      <KeyboardContextProvider>
+        <DevModeProvider>
           <TableOfContentsProvider>{element}</TableOfContentsProvider>
-        </KeyboardContextProvider>
-      </DevModeProvider>
+        </DevModeProvider>
+      </KeyboardContextProvider>
     </ThemeProvider>
   );
 }

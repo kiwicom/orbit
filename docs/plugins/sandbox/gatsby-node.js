@@ -42,3 +42,48 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
     });
   }
 };
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query ExamplesQuery {
+      allFile {
+        nodes {
+          id
+          fields {
+            example
+            example_id
+            scope {
+              name
+              path
+              default
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error when querying examples.`);
+  }
+
+  result.data.allFile.nodes.forEach(({ id, fields }) => {
+    if (!fields) return;
+
+    const { example_id, example, scope } = fields;
+
+    createPage({
+      path: `examples/${example_id.toLowerCase()}`,
+      component: `${process.cwd()}/src/templates/Sandbox.tsx`,
+      context: { id, example, example_id, scope },
+    });
+
+    createPage({
+      path: `examples/${id}`,
+      component: `${process.cwd()}/src/templates/Sandbox.tsx`,
+      context: { id, example, example_id, scope, pure: true },
+    });
+  });
+};

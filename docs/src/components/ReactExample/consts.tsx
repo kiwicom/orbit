@@ -12,3 +12,5 @@ export const QUERIES = {
   desktop: 992,
   largeDesktop: 1200,
 };
+
+export const PREVIEW_ID = "preview-wrapper";

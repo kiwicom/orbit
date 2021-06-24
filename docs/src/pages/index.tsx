@@ -15,7 +15,7 @@ import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-
 import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
 
-import TypograhpyIcon from "../components/icons/Typography";
+import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
 import GitHubIcon from "../components/icons/GitHub";
@@ -155,7 +155,7 @@ export default function Home({ location, path }: Props) {
             >
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more" icon={<TypograhpyIcon />}>
+            <Tile title="Typography" linkContent="Learn more" icon={<TypographyIcon />}>
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
             <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
@@ -168,7 +168,7 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button size="large" circled type="primarySubtle">
+            <Button href="/foundation/" size="large" circled type="primarySubtle">
               Show all items
             </Button>
           </div>
@@ -215,7 +215,7 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button size="large" circled type="primarySubtle">
+            <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
               Show all items
             </Button>
           </div>

@@ -10,7 +10,7 @@ const toVFile = require("to-vfile");
 const reporter = require("vfile-reporter");
 const fsx = require("fs-extra");
 
-const { warnMissingAccessToken } = require("./warnings");
+const { warnMissingAccessToken } = require("../utils/warnings");
 
 try {
   require("dotenv-safe").config({

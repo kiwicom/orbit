@@ -1,14 +1,14 @@
-import * as React from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
 import { Editor } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 
+import Frame from "./Frame";
 import Board from "./Board";
-import { PREVIEW_ID } from "./consts";
 
-type BgType = "white" | "dark" | "grid";
+export type BgType = "white" | "dark" | "grid";
 
 interface Props {
   exampleId: string;
@@ -16,39 +16,6 @@ interface Props {
   background: BgType;
   minHeight?: number;
 }
-
-const BOARD_HEIGHT = 90;
-
-const getBackground = (type: BgType) => ({ theme }) => {
-  if (type === "grid") {
-    return `
-      background:
-      linear-gradient(-90deg, rgba(0,0,0,.08) 1px, transparent 1px),
-      linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
-      linear-gradient(-90deg, rgba(0, 0, 0, .06) 1px, transparent 1px),
-      linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
-      linear-gradient(transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
-      linear-gradient(-90deg, ${theme.orbit.paletteInkNormal} 1px, transparent 1px),
-      linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
-      linear-gradient(${theme.orbit.paletteInkNormal} 1px, transparent 1px),
-      #f2f2f2;
-
-    background-size:
-        20px 20px,
-        20px 20px,
-        80px 80px,
-        80px 80px,
-        80px 80px,
-        80px 80px,
-        80px 80px,
-        80px 80px;
-    `;
-  }
-
-  if (type === "dark") return `background: ${theme.orbit.paletteInkNormal}`;
-
-  return `background: ${theme.orbit.paletteWhite}`;
-};
 
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
@@ -58,20 +25,10 @@ const StyledWrapper = styled.div`
   `};
 `;
 
-const StyledFrame = styled.iframe<{ minHeight?: number; background: BgType; height?: number }>`
-  ${({ background, height, minHeight }) => css`
-    width: 100%;
-    min-height: ${minHeight}px;
-    height: ${Number(height) + BOARD_HEIGHT}px;
-    ${getBackground(background)};
-  `};
-`;
-
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
-  const [height, setHeight] = React.useState(0);
-  const [loaded, setLoaded] = React.useState(false);
   const [code, setCode] = React.useState("");
   const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [origin, setOrigin] = React.useState("");
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -82,6 +39,11 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
             fields {
               example
               example_id
+              scope {
+                name
+                path
+                default
+              }
             }
           }
         }
@@ -91,56 +53,42 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
 
   React.useEffect(() => {
     const key = exampleId.toLowerCase();
-    if (code) {
-      window.localStorage.setItem(key, code);
-    }
+    if (code) window.localStorage.setItem(key, code);
+    setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
-  }, [setCode, code]);
-
-  const measuredRef = React.useCallback(
-    n => {
-      if (n !== null && loaded) {
-        const innerDocument: Document = n.contentWindow.document;
-        const preview = innerDocument.getElementById(PREVIEW_ID);
-
-        if (preview) {
-          setHeight(preview?.getBoundingClientRect().height);
-        }
-      }
-    },
-    [loaded],
-  );
+  }, [setCode, code, exampleId, setOrigin]);
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!example) return <Text>{`Could not find example with the id: ${exampleId}`}</Text>;
+  if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
-  // const scopeOutput = example.fields.scope
-  //   .map(({ path, name: moduleName, default: isDefault }) => {
-  //     if (isDefault) return `import ${moduleName} from ${path}`;
-  //     return `import { ${moduleName} }  from ${path}`;
-  //   })
-  //   .join("\n");
+  const scopeOutput = example.fields.scope
+    .map(({ path, name: moduleName, default: isDefault }) => {
+      if (isDefault) return `import ${moduleName} from ${path}`;
+      return `import { ${moduleName} } from "${path}"`;
+    })
+    .join("\n");
+
+  const codeWithImports = [scopeOutput, example.fields.example].join("\n");
 
   return (
     <StyledWrapper>
-      <StyledFrame
-        background={background}
-        title={exampleId}
+      <Frame
+        origin={origin}
+        pageId={example.id}
+        exampleId={exampleId}
         minHeight={minHeight}
-        height={height}
-        onLoad={() => setLoaded(true)}
-        ref={measuredRef}
-        src={`${window.location.origin}/examples/${example.id}`}
+        maxHeight={maxHeight}
+        background={background}
       />
-
       <Board
+        exampleId={exampleId}
         isEditorOpened={isEditorOpened}
         onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-        code={example}
+        code={codeWithImports}
+        origin={origin}
       />
-
       {isEditorOpened && (
         <Editor
           style={{ margin: 0, borderRadius: "0 0 12px 12px" }}

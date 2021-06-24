@@ -3,6 +3,7 @@ import { Stack, ButtonLink, Tooltip } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import styled from "styled-components";
 
+import NewWindow from "../../images/new-window.svg";
 import Copy from "../../images/copy.svg";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
@@ -15,12 +16,14 @@ const StyledBoard = styled.div`
 `;
 
 interface Props {
+  exampleId?: string;
   code: string;
+  origin?: string;
   isEditorOpened: boolean;
   onOpenEditor: () => void;
 }
 
-const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
+const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
 
   return (
@@ -35,25 +38,29 @@ const Board = ({ code, isEditorOpened, onOpenEditor }: Props) => {
           >
             Code
           </ButtonLink>
-          {/* <ButtonLink
-            onClick={onOpenEditor}
-            type="secondary"
-            ariaExpanded={isEditorOpened}
-            iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
-          >
-            Playground
-          </ButtonLink> */}
         </Stack>
-        <Stack inline justify="end" align="center">
+        <Stack inline justify="end" align="center" spacing="none">
           <Tooltip
             preferredPosition="top"
             preferredAlign="center"
-            content={isCopied ? "copied" : "copy to clipboard"}
+            content={isCopied ? "copied" : "Copy to clipboard"}
           >
             <ButtonLink onClick={() => copy(code)} type="secondary" title="Copy to clipboard">
               <Copy />
             </ButtonLink>
           </Tooltip>
+          {exampleId && (
+            <Tooltip preferredPosition="top" preferredAlign="center" content="Open in a new tab">
+              <ButtonLink
+                type="secondary"
+                external
+                title="Open in a new tab"
+                href={`${origin}/examples/${exampleId?.toLowerCase()}`}
+              >
+                <NewWindow />
+              </ButtonLink>
+            </Tooltip>
+          )}
         </Stack>
       </Stack>
     </StyledBoard>

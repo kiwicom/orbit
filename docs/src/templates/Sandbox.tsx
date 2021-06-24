@@ -8,11 +8,11 @@ import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 import Board from "../components/ReactExample/Board";
 import ViewportsRuler from "../components/ReactExample/ViewportsRuler";
-import { PREVIEW_ID, EDITOR_ID } from "../components/ReactExample/consts";
+import { PREVIEW_ID } from "../components/ReactExample/consts";
 
 const StyledWrapper = styled.div`
-  min-height: 100%;
   display: grid;
+  min-height: 100%;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
 `;
@@ -21,7 +21,7 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
   ${({ theme, width }) => css`
     max-width: ${width}px;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
     padding: ${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall};
   `};
 `;
@@ -38,13 +38,15 @@ const GlobalStyle = createGlobalStyle`
 
 const Sandbox = ({ pathContext }) => {
   const { example, example_id, scope, pure } = pathContext;
-  const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [isEditorOpened, setOpenEditor] = React.useState(!!pure);
   const [width, setPreviewWidth] = React.useState(0);
   const [code, setCode] = React.useState("");
 
   React.useEffect(() => {
+    const exp = example_id.toLowerCase();
+    setCode(window.localStorage.getItem(exp) || "");
     const handleStorage = (ev: StorageEvent) => {
-      if (ev.key === example_id.toLowerCase() && ev.newValue) {
+      if (ev.key === exp && ev.newValue) {
         setCode(ev.newValue);
       }
     };
@@ -71,7 +73,7 @@ const Sandbox = ({ pathContext }) => {
   const scopeOutput = scope
     .map(({ path, name: moduleName, default: isDefault }) => {
       if (isDefault) return `import ${moduleName} from ${path}`;
-      return `import { ${moduleName} }  from ${path}`;
+      return `import { ${moduleName} } from "${path}"`;
     })
     .join("\n");
 
@@ -87,13 +89,15 @@ const Sandbox = ({ pathContext }) => {
             </StyledPreviewWrapper>
           </Components.Stack>
           {!pure && (
-            <Board
-              isEditorOpened={isEditorOpened}
-              onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-              code={[scopeOutput, example].join("\n\n")}
-            />
+            <>
+              <Board
+                isEditorOpened={isEditorOpened}
+                onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+                code={[scopeOutput, example].join("\n\n")}
+              />
+              {isEditorOpened && <LiveEditor />}
+            </>
           )}
-          {!pure && isEditorOpened && <LiveEditor id={EDITOR_ID} />}
         </StyledWrapper>
       </LiveProvider>
     </ThemeProvider>

@@ -67,6 +67,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(`Error when querying examples.`);
+    return;
   }
 
   result.data.allFile.nodes.forEach(({ id, fields }) => {

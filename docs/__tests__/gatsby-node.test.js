@@ -89,7 +89,7 @@ describe("gatsby-node", () => {
       const node = getMetaFileNode("01-getting-started/meta.yml");
       const reporter = { panicOnBuild: jest.fn() };
       await onCreateNode({ cache, node, reporter });
-      // first time for "title", second fror "type"
+      // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [
@@ -112,7 +112,7 @@ describe("gatsby-node", () => {
       const node = getMetaFileNode("01-getting-started/meta.yml");
       const reporter = { panicOnBuild: jest.fn() };
       await onCreateNode({ cache, node, reporter });
-      // first time for "title", second fror "type"
+      // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
         Array [
           Array [

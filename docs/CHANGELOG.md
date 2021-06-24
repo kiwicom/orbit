@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.13.0...@kiwicom/orbit.kiwi@0.14.0) (2021-06-24)
+
+
+### Bug Fixes
+
+* **sandbox:** prettify the output code ([#2987](https://github.com/kiwicom/orbit/issues/2987)) ([ef9ac0d](https://github.com/kiwicom/orbit/commit/ef9ac0d91d6518f0b35508d4a998f85b2148c238))
+* add label for screen readers ([8fd09cd](https://github.com/kiwicom/orbit/commit/8fd09cd13f0db275a8679313b991046528c7994d))
+* add type definition for react-scrollspy ([1c5ee2a](https://github.com/kiwicom/orbit/commit/1c5ee2adb8da9710c5967621c7c0afa8583e23be))
+* adjust ButtonLink and improve consistency ([e1cfa62](https://github.com/kiwicom/orbit/commit/e1cfa6232c6a73cb4e7eecc00363659e778d713c))
+* adjust text and font size of missing results ([da55da4](https://github.com/kiwicom/orbit/commit/da55da4589e5c1007e30c1c3ada91b7d362120f7))
+* apply fixes after design review ([6530877](https://github.com/kiwicom/orbit/commit/653087721012dc4166934769e2edac5d5fc8f3bc))
+* avoid achieving result with invalid CSS ([381505a](https://github.com/kiwicom/orbit/commit/381505af7806d5c15551a78e637b6d5d8ca2b96b))
+* avoid invalid HTML ([3ca3b64](https://github.com/kiwicom/orbit/commit/3ca3b645df4920c76838d76de3c22049259d6d90))
+* avoid reimplementing buttons ([3f78973](https://github.com/kiwicom/orbit/commit/3f78973355ceece9dba73f5d89c444a195fcab78))
+* decrease font size of table of contents ([e0419b1](https://github.com/kiwicom/orbit/commit/e0419b1ab3d17e4c22cd14fd72bb6accca9694e0))
+* fix checking attribution ([90530a8](https://github.com/kiwicom/orbit/commit/90530a890eaea74d34d112184ad3758128d17d97))
+* fix search results case ([f1d2df7](https://github.com/kiwicom/orbit/commit/f1d2df7f3e804d0ad9af62d06f60b62bceed7839))
+* improve accessibility of external links ([bba9215](https://github.com/kiwicom/orbit/commit/bba9215e6d2ecbb5b585650807cf0a0faf5ca315))
+* increase font weight of blockquotes ([f374869](https://github.com/kiwicom/orbit/commit/f37486970d928b96c3fb3ee65110ea9fd2754c8e))
+* increase tabs padding and don't rely on JS ([acc085e](https://github.com/kiwicom/orbit/commit/acc085e36d9ae5e25f99c22053105972447f651a))
+* prevent unnecessary overflow ([beccfd4](https://github.com/kiwicom/orbit/commit/beccfd4a59793b4348b2837fd4ac1e7055c199ca))
+* remove unused and nonexistent import ([84ceb8c](https://github.com/kiwicom/orbit/commit/84ceb8c807df64bec0fc18815e1391f3f8e34eae))
+* reposition footer ([27e9f9e](https://github.com/kiwicom/orbit/commit/27e9f9e87491fb4c736b900b14e1f39131b450b0))
+* store URL metadata in Gatsby cache ([22428dc](https://github.com/kiwicom/orbit/commit/22428dc22c9779c6892f5015aaa0aabe46265487))
+* use default theme for examples ([b639628](https://github.com/kiwicom/orbit/commit/b639628fbe6113903f123201692d1d300c593b39))
+* wrap breadcrumbs ([f1170c8](https://github.com/kiwicom/orbit/commit/f1170c8c920f3924ca0bff1075f997cd00bea107))
+* **docs:** updates for Figma images ([a2f3099](https://github.com/kiwicom/orbit/commit/a2f3099072c03de74cf0bf39dd5035321a9ec4a8))
+
+
+### Features
+
+* collapse overflowing tabs ([295e0ef](https://github.com/kiwicom/orbit/commit/295e0ef43fc4a161a41402ba713780862eeecd34))
+* mark up blockquotes dynamically + a11y ([d5bba61](https://github.com/kiwicom/orbit/commit/d5bba61019f4c4ae82f42172a22c0c44c0d8160b))
+* raise tiles on hover ([1fbbf47](https://github.com/kiwicom/orbit/commit/1fbbf47fd3e361f327a17873a1d0cf9a627a7288))
+* store repeating box shadow in a new token ([7b153db](https://github.com/kiwicom/orbit/commit/7b153dbbfbdbf453f6922f81a76eecc0f50fbd6f))
+
+
+
+
+
 # [0.13.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.12.0...@kiwicom/orbit.kiwi@0.13.0) (2021-05-27)
 
 

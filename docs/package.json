@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -16,7 +16,7 @@
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "^2.4.0",
-    "@kiwicom/orbit-design-tokens": "^0.13.7",
+    "@kiwicom/orbit-design-tokens": "^0.13.8",
     "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -64,7 +64,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-components": "^0.115.0",
+    "@kiwicom/orbit-components": "^0.116.0",
     "@streamlinehq/streamlinehq": "^2.1.0",
     "@types/lodash": "^4.14.170",
     "@types/react-helmet": "^6.1.1",

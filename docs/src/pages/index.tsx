@@ -95,7 +95,7 @@ export default function Home({ location, path }: Props) {
                 iconRight={<ArrowRight />}
                 // @ts-expect-error asComponent has wrong type declaration
                 asComponent={GatsbyLinkToButton}
-                href="/getting-started/for-designers/"
+                href="/getting-started/"
               >
                 Get started
               </Button>
@@ -122,7 +122,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Components"
             linkContent="See our components"
-            href="/components/action/button/"
+            href="/components/"
             icon={<PuzzleIcon />}
           >
             Our components are a collection of interface elements that can be reused across the
@@ -131,7 +131,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Patterns"
             linkContent="See our patterns"
-            href="/design-patterns/progressive-disclosure/"
+            href="/design-patterns/"
             icon={<ModulePuzzleIcon />}
           >
             Missing description for patterns card.
@@ -155,10 +155,20 @@ export default function Home({ location, path }: Props) {
             >
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more" icon={<TypographyIcon />}>
+            <Tile
+              title="Typography"
+              linkContent="Learn more"
+              href="foundation/typography/"
+              icon={<TypographyIcon />}
+            >
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
-            <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
+            <Tile
+              title="Spacings"
+              href="foundation/spacing/"
+              linkContent="Learn more"
+              icon={<ExpandDiagonalIcon />}
+            >
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
           </Stack>
@@ -186,7 +196,7 @@ export default function Home({ location, path }: Props) {
             <Tile
               title="Voice & tone"
               linkContent="Learn more"
-              href="/kiwi-use/content/specific-areas/social-media/"
+              href="/kiwi-use/content/voice-and-tone/"
               icon={<LoveItTextIcon />}
             >
               How we write at Kiwi.com.

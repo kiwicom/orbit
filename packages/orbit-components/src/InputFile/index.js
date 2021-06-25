@@ -117,6 +117,7 @@ const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwar
       spaceAfter,
       name,
       error,
+      required,
       help,
       onChange,
       onFocus,
@@ -140,10 +141,15 @@ const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwar
           onFocus={onFocus}
           onBlur={onBlur}
           accept={allowedFileTypes}
+          aria-required={required}
           ref={ref}
           tabIndex={tabIndex}
         />
-        {label && <FormLabel filled={Boolean(fileName)}>{label}</FormLabel>}
+        {label && (
+          <FormLabel filled={Boolean(fileName)} required={required}>
+            {label}
+          </FormLabel>
+        )}
         <FakeInput error={error}>
           {/* <button> doesn't trigger the input so we're setting the tag to <div> */}
           <Button

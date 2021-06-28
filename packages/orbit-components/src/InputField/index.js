@@ -212,9 +212,13 @@ Suffix.defaultProps = {
 };
 
 export const Input: any = styled(
-  React.forwardRef(({ type, size, theme, error, help, inlineLabel, dataAttrs, ...props }, ref) => (
-    <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} />
-  )),
+  React.forwardRef(
+    ({ type, size, theme, error, help, inlineLabel, dataAttrs, required, ...props }, ref) => (
+      // aria-required is passed to make the field required for screen-reader
+      // we do not pass required field by reason, to avoid native browser message
+      <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} aria-required={required} />
+    ),
+  ),
 )`
   appearance: none;
   -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
@@ -390,6 +394,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
           autoFocus={autoFocus}
           id={forID}
           inputMode={inputMode}
+          required={required}
           dataAttrs={dataAttrs}
         />
         {suffix && <Suffix size={size}>{suffix}</Suffix>}

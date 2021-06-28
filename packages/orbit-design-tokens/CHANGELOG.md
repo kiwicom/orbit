@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.8](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.7...@kiwicom/orbit-design-tokens@0.13.8) (2021-06-24)
+
+**Note:** Version bump only for package @kiwicom/orbit-design-tokens
+
+
+
+
+
 ## [0.13.7](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.6...@kiwicom/orbit-design-tokens@0.13.7) (2021-05-27)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

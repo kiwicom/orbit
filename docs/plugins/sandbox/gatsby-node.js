@@ -1,3 +1,6 @@
+const { format } = require("prettier");
+const parserTypeScript = require("prettier/parser-typescript");
+
 const { getScope, omitTypes } = require("./helpers");
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
@@ -15,6 +18,11 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
 
     const scope = getScope(content);
 
+    const code = format(omitTypes(example[0]), {
+      parser: "typescript",
+      plugins: [parserTypeScript],
+    });
+
     createNodeField({
       node,
       name: "scope",
@@ -24,7 +32,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
     createNodeField({
       node,
       name: "example",
-      value: example ? omitTypes(example[0]) : "",
+      value: example ? code : "",
     });
 
     createNodeField({
@@ -34,43 +42,3 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
     });
   }
 };
-
-/* TODO: This is might be useful for the future sandbox integration,
-  for current sandbox-examples we decided to left simple iframe with react components inside
-  no need for external page right now.
- */
-
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions;
-
-//   const result = await graphql(`
-//     query {
-//       allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
-//         nodes {
-//           id
-//           relativePath
-//           fields {
-//             example_id
-//             example
-//             scope {
-//               name
-//               path
-//               default
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `);
-
-//   result.data.allFile.nodes.forEach(({ id, fields }) => {
-//     createPage({
-//       path: `examples/${fields.example_id}`.toLowerCase(),
-//       component: path.resolve(path.resolve(__dirname, "../../src/templates/Example/index.tsx")),
-//       context: {
-//         fields,
-//         id,
-//       },
-//     });
-//   });
-// };

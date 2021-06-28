@@ -2,7 +2,7 @@ import * as React from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import styled, { StyleSheetManager, css } from "styled-components";
 import { LivePreview } from "react-live";
-import { Stack } from "@kiwicom/orbit-components";
+import { Stack, ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 type BgType = "white" | "dark" | "grid";
 interface Props {
@@ -51,7 +51,6 @@ const StyledFrame = styled(Frame)`
     ${$minHeight && `min-height: ${$minHeight}px`};
     ${$maxHeight && `max-height: ${$maxHeight}px`};
     height: ${Number(height) + BOARD_HEIGHT}px;
-    padding: 0 16px;
     ${getBackground(background)};
   `};
 `;
@@ -61,7 +60,7 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
     max-width: ${width}px;
     width: 100%;
     overflow: scroll;
-    padding-top: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall};
   `};
 `;
 
@@ -92,7 +91,9 @@ const Preview = ({ background = "white", width, maxHeight, minHeight }: Props) =
             <StyleSheetManager target={document.head}>
               <Stack justify="center" align="center">
                 <StyledPreviewWrapper ref={measuredRef} width={width}>
-                  <LivePreview />
+                  <ThemeProvider theme={defaultTheme}>
+                    <LivePreview />
+                  </ThemeProvider>
                 </StyledPreviewWrapper>
               </Stack>
             </StyleSheetManager>

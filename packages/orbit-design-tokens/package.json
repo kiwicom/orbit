@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.13.7",
+  "version": "0.13.8",
   "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
   "private": false,
@@ -41,7 +41,7 @@
   "devDependencies": {
     "babylon": "^6.18.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "memfs": "^3.2.0",
     "optimist": "^0.6.1",
     "theo": "^8.1.5",

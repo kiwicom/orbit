@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.116.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.115.0...@kiwicom/orbit-components@0.116.0) (2021-06-24)
+
+
+### Bug Fixes
+
+* **CarrierLogo:** redirects ([#2972](https://github.com/kiwicom/orbit/issues/2972)) ([59287d9](https://github.com/kiwicom/orbit/commit/59287d9e198701934c099be45278a5f2cb3c8f6e))
+* **Wizard:** increase clickable area of steps ([#2988](https://github.com/kiwicom/orbit/issues/2988)) ([1c55aaa](https://github.com/kiwicom/orbit/commit/1c55aaac9723e3acfef274e0e935efffb9247a99))
+
+
+### Features
+
+* **ChoiceGroup:** increase rendering flexibility ([#2983](https://github.com/kiwicom/orbit/issues/2983)) ([9c2625b](https://github.com/kiwicom/orbit/commit/9c2625b5efd4d8de5bee8fc50492cfaee05ddf2e))
+
+
+
+
+
 # [0.115.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.2...@kiwicom/orbit-components@0.115.0) (2021-05-27)
 
 

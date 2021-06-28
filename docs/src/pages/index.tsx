@@ -15,7 +15,7 @@ import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-
 import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
 
-import TypograhpyIcon from "../components/icons/Typography";
+import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
 import GitHubIcon from "../components/icons/GitHub";
@@ -95,7 +95,7 @@ export default function Home({ location, path }: Props) {
                 iconRight={<ArrowRight />}
                 // @ts-expect-error asComponent has wrong type declaration
                 asComponent={GatsbyLinkToButton}
-                href="/getting-started/for-designers/"
+                href="/getting-started/"
               >
                 Get started
               </Button>
@@ -122,7 +122,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Components"
             linkContent="See our components"
-            href="/components/action/button/"
+            href="/components/"
             icon={<PuzzleIcon />}
           >
             Our components are a collection of interface elements that can be reused across the
@@ -131,7 +131,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Patterns"
             linkContent="See our patterns"
-            href="/design-patterns/progressive-disclosure/"
+            href="/design-patterns/"
             icon={<ModulePuzzleIcon />}
           >
             Make the most of our components by using our design patterns to address common design
@@ -159,15 +159,15 @@ export default function Home({ location, path }: Props) {
             <Tile
               title="Typography"
               linkContent="See our typography"
-              href="/foundation/typography/"
-              icon={<TypograhpyIcon />}
+              href="foundation/typography/"
+              icon={<TypographyIcon />}
             >
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
             <Tile
               title="Spacing"
               linkContent="See our spacing"
-              href="/foundation/spacing/"
+              href="foundation/spacing/"
               icon={<ExpandDiagonalIcon />}
             >
               Consistent spacing makes an interface more clear and easy to scan.
@@ -179,14 +179,7 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button
-              size="large"
-              circled
-              type="primarySubtle"
-              href="/foundation/"
-              // @ts-expect-error asComponent has wrong type declaration
-              asComponent={GatsbyLinkToButton}
-            >
+            <Button href="/foundation/" size="large" circled type="primarySubtle">
               See all items
             </Button>
           </div>
@@ -204,7 +197,7 @@ export default function Home({ location, path }: Props) {
             <Tile
               title="Voice & tone"
               linkContent="See our voice"
-              href="/kiwi-use/content/specific-areas/social-media/"
+              href="/kiwi-use/content/voice-and-tone/"
               icon={<LoveItTextIcon />}
             >
               How we write at Kiwi.com.
@@ -232,14 +225,7 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button
-              size="large"
-              circled
-              type="primarySubtle"
-              href="/content/"
-              // @ts-expect-error asComponent has wrong type declaration
-              asComponent={GatsbyLinkToButton}
-            >
+            <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
               See all items
             </Button>
           </div>

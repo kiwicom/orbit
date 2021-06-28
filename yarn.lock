@@ -12455,10 +12455,10 @@ gatsby-page-utils@^0.9.1:
     lodash "^4.17.20"
     micromatch "^4.0.2"
 
-gatsby-plugin-lodash@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-4.7.0.tgz#b045bdba250a34b823811b833621d60c05891870"
-  integrity sha512-ZqchbzvVTtMrDB3jNuNk+tMqAKlKrGGEKqAi42DT0s7J6c3sTsOIrTJ3CHvAdx4DHD/K2YslAkJVM3UMPQla4Q==
+gatsby-plugin-lodash@^4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-4.7.1.tgz#82050f576eb8d744a06143e2648c60921bda3dc3"
+  integrity sha512-IRsBMDRJqZ4SAcMPyJfOr0s+vvSdyZ6KRCXsZsZfaX2y37MxzLxMrbTxK6mloZtnpvIeYGUygWDMJ888mLlXcA==
   dependencies:
     "@babel/runtime" "^7.14.0"
     babel-plugin-lodash "^3.3.4"
@@ -17608,7 +17608,7 @@ memfs@^3.1.2, memfs@^3.2.0:
   dependencies:
     fs-monkey "1.0.3"
 
-memoize-one@^5.0.0:
+"memoize-one@>=3.1.1 <6", memoize-one@^5.0.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
@@ -21350,6 +21350,14 @@ react-transition-group@^4.3.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-window@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/react-window/-/react-window-1.8.6.tgz#d011950ac643a994118632665aad0c6382e2a112"
+  integrity sha512-8VwEEYyjz6DCnGBsd+MgkD0KJ2/OXFULyDtorIiTz+QzwoP94tBoA7CnbtyXMm+cCeAUER5KJcPtWl9cpKbOBg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    memoize-one ">=3.1.1 <6"
 
 react@^16.14.0, react@^16.8.3:
   version "16.14.0"

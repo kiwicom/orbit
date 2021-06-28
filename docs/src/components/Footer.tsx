@@ -104,8 +104,6 @@ export default function Footer({ hasGradient }: Props) {
               <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
-              <Dot />
-              <StyledFooterLink to="#">Changelog</StyledFooterLink>
             </Stack>
             <Stack
               inline

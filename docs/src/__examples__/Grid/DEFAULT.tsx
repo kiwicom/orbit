@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Text, Grid } from "@kiwicom/orbit-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { CSSProperties } from "styled-components";
 
 export default {
   Example: () => {
-    const divStyle: CSSProperties = {
+    const divStyle: React.CSSProperties = {
       backgroundColor: `${defaultTheme.orbit.paletteCloudDark}`,
       border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
       boxSizing: "border-box",

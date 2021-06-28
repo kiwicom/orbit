@@ -4,13 +4,13 @@ import { Button, Checkbox, Stack } from "@kiwicom/orbit-components";
 export default {
   Example: () => {
     const [checked, setChecked] = React.useState(false);
-    const [saved, setSaved] = React.useState(false);
+    const [saving, setSaving] = React.useState(false);
 
     React.useEffect(() => {
       let timeout;
-      if (saved) timeout = setTimeout(() => setSaved(false), 1500);
+      if (saving) timeout = setTimeout(() => setSaving(false), 1500);
       return () => clearTimeout(timeout);
-    }, [saved]);
+    }, [saving]);
 
     return (
       <Stack>
@@ -19,8 +19,8 @@ export default {
           checked={checked}
           onChange={() => setChecked(!checked)}
         />
-        <Button disabled={saved} onClick={() => setSaved(true)}>
-          {saved ? "Saving" : "Save settings"}
+        <Button disabled={saving} onClick={() => setSaving(true)}>
+          {saving ? "Saving" : "Save settings"}
         </Button>
       </Stack>
     );

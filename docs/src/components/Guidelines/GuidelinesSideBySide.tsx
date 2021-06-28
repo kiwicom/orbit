@@ -25,6 +25,8 @@ const StyledContainer = styled.div`
     border-radius: 16px;
     width: 100%;
 
+    // Guidelines don't inherit spacing from Prose
+    // So otherwise adjacent p elements are right next to each other
     p + p {
       margin-top: ${theme.orbit.spaceSmall};
     }

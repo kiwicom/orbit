@@ -12,7 +12,7 @@ export default ({ location }) => (
     title="Roadmap"
     location={location}
     noElevation
-    path="roadmap"
+    path="/roadmap/"
     tableOfContents={[]}
   >
     <Text>

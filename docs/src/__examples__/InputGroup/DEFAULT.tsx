@@ -73,7 +73,7 @@ export default {
         <InputField
           label="This text is not displayed"
           placeholder="YYYY"
-          minValue={2022}
+          minValue={new Date().getFullYear()}
           type="number"
         />
       </InputGroup>

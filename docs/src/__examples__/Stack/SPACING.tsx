@@ -1,12 +1,11 @@
 import * as React from "react";
 import { Stack, Heading } from "@kiwicom/orbit-components";
 import { Spacing } from "@kiwicom/orbit-components/lib/Stack";
-import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle: CSSProperties = {
+    const divStyle: React.CSSProperties = {
       width: "160px",
       height: "40px",
       backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,

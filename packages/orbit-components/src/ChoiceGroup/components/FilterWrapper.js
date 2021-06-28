@@ -18,6 +18,7 @@ const hoverAndFocus = () => css`
 `;
 
 const StyledContentWrapper = styled.div`
+  box-sizing: border-box;
   width: 100%;
   padding-left: 4px;
   border-radius: 4px;

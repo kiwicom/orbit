@@ -58,7 +58,7 @@ export default {
             </>
           }
         />
-        <div style={{ maxWidth: "10em" }}>
+        <div style={{ maxWidth: "10em", paddingTop: "1em" }}>
           <Stack spacing="XXSmall">
             {!tags.london.present && getAddInfo("london")}
             {!tags.manchester.present && getAddInfo("manchester")}

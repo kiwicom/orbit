@@ -77,7 +77,7 @@ export default function DocLayout({
   tableOfContents = [],
   tabs,
   title,
-  trail,
+  trail = title ? [{ name: title, url: path }] : undefined,
   custom,
 }: Props) {
   const Toc = <TableOfContents items={tableOfContents} />;

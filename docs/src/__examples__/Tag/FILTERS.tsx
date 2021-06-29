@@ -47,6 +47,7 @@ export default {
         </Stack>
         <Stack direction="row" spacing="small">
           <Popover
+            renderInPortal={false}
             content={
               <Stack>
                 <Stack justify="center" grow>
@@ -89,6 +90,7 @@ export default {
             </Tag>
           </Popover>
           <Popover
+            renderInPortal={false}
             content={
               <ChoiceGroup label="Stops" onChange={event => setStops(event.currentTarget.name)}>
                 <Radio name="non" label="Any" checked={stops === "any" || false} />
@@ -112,6 +114,7 @@ export default {
             </Tag>
           </Popover>
           <Popover
+            renderInPortal={false}
             content={
               <ChoiceGroup
                 label="Transport"

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Tag, InputField } from "@kiwicom/orbit-components";
+import { ButtonLink, InputField, Stack, Tag, Text } from "@kiwicom/orbit-components";
+import { Plus } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => {
@@ -9,9 +10,10 @@ export default {
       liverpool: { present: true, selected: false },
     });
 
-    type Cities = "london" | "manchester" | "liverpool";
+    const getFirstLetterUppercase = string =>
+      `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
 
-    const addTag = (name: Cities) => {
+    const addTag = name => {
       const newTags = { ...tags };
       return (
         <Tag
@@ -25,27 +27,49 @@ export default {
             setTags(newTags);
           }}
         >
-          {`${name.slice(0, 1).toUpperCase()}${name.slice(1)}`}
+          {getFirstLetterUppercase(name)}
         </Tag>
       );
     };
+
+    const getAddInfo = name => (
+      <Stack align="center" justify="between">
+        <Text>{getFirstLetterUppercase(name)}</Text>
+        <ButtonLink
+          onClick={() => {
+            const newTags = { ...tags };
+            newTags[name] = { present: true };
+            setTags(newTags);
+          }}
+          iconLeft={<Plus ariaLabel="Add" />}
+        />
+      </Stack>
+    );
     return (
-      <InputField
-        label="Destination"
-        value=""
-        tags={
-          <>
-            {tags.london.present && addTag("london")}
-            {tags.manchester.present && addTag("manchester")}
-            {tags.liverpool.present && addTag("liverpool")}
-          </>
-        }
-      />
+      <>
+        <InputField
+          label="Destination"
+          value=""
+          tags={
+            <>
+              {tags.london.present && addTag("london")}
+              {tags.manchester.present && addTag("manchester")}
+              {tags.liverpool.present && addTag("liverpool")}
+            </>
+          }
+        />
+        <div style={{ maxWidth: "10em", paddingTop: "1em" }}>
+          <Stack spacing="XXSmall">
+            {!tags.london.present && getAddInfo("london")}
+            {!tags.manchester.present && getAddInfo("manchester")}
+            {!tags.liverpool.present && getAddInfo("liverpool")}
+          </Stack>
+        </div>
+      </>
     );
   },
   info: {
-    title: "Tags in input fields",
-    description:
-      "Tags can be used to show selections in input fields, such as possible destinations.",
+    title: "",
+    description: "",
   },
 };

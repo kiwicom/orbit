@@ -5,7 +5,7 @@ import { Visibility } from "@kiwicom/orbit-components/icons";
 export default {
   Example: () => (
     <Tile
-      href="https://orbit.kiwi/guides/progressive-disclosure/"
+      href="https://orbit.kiwi/design-patterns/progressive-disclosure/"
       icon={<Visibility />}
       title="Read more about progressive disclosure"
     />

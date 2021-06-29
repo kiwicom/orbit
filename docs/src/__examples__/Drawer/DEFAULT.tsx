@@ -15,11 +15,15 @@ export default {
             shown={showDrawer}
           >
             <LinkList>
-              <TextLink href="https://orbit.kiwi/components/drawer/" external type="secondary">
+              <TextLink
+                href="https://orbit.kiwi/components/overlay/drawer/"
+                external
+                type="secondary"
+              >
                 Drawer guidelines
               </TextLink>
               <TextLink
-                href="https://orbit.kiwi/components/drawer/react/"
+                href="https://orbit.kiwi/components/overlay/drawer/react/"
                 external
                 type="secondary"
               >

@@ -46,7 +46,7 @@ import StyledProse from "./primitives/StyledProse";
 import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
 
-const StyledDescription = styled.div`
+const StyledDescription = styled.span`
   line-height: 22px;
 `;
 

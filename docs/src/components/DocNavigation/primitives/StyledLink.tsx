@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-const StyledLink = styled(Link)<{ active: boolean; level: number }>`
-  ${({ theme, active, level }) => `
+const StyledLink = styled(Link)<{ $active: boolean; level: number }>`
+  ${({ theme, $active, level }) => `
     position: relative;
     display: block;
     padding-top: 3px;
@@ -21,14 +21,14 @@ const StyledLink = styled(Link)<{ active: boolean; level: number }>`
       `
     }
     ${
-      active &&
+      $active &&
       `
         font-weight: 500;
         color: ${theme.orbit.paletteProductNormal};
       `
     }
     ${
-      active &&
+      $active &&
       level === 3 &&
       `
         border-left-color: ${theme.orbit.paletteProductNormal};

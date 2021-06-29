@@ -10,7 +10,7 @@ export default {
           <Stack>
             <Text>Inherited color</Text>
             <Text type="success">
-              <Inline>
+              <Inline align="center">
                 <Airplane ariaLabel="Airplane" /> Price alerts
               </Inline>
             </Text>
@@ -27,7 +27,7 @@ export default {
           <Airplane color="secondary" ariaLabel="Airplane" />
         </Stack>
         <Stack>
-          <Text>Teriary</Text>
+          <Text>Tertiary</Text>
           <Airplane color="tertiary" ariaLabel="Airplane" />
         </Stack>
         <Stack>

@@ -4,14 +4,24 @@ redirect_from:
   - /utilities/portal/
 ---
 
+import StyledDiv from "./StyledDiv";
+
 <ReactExample exampleId="Portal-default" />
+
+Content appears here:
+
+<!-- eslint-disable orbit-components/unique-id -->
+
+<StyledDiv id="docs-example" />
+
+<!-- eslint-enable orbit-components/unique-id -->
 
 ## When to use
 
 - To place components at a given place within the DOM tree.
 - To allow components to have different positions with the same logic.
 - Within [progressive disclosure](/design-patterns/progressive-disclosure/)
-  for content that doesn't fit the current screen
+  for content that doesn't fit the current screen.
 
 ## Component status
 

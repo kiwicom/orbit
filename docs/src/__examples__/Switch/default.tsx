@@ -17,7 +17,7 @@ export default {
             : defaultTheme.orbit.paletteCloudLight,
         }}
       >
-        <Stack flex>
+        <Stack align="center">
           <Switch ariaLabelledby="darkmode" checked={darkMode} onChange={handleChange} />
           <Text id="darkmode" type={darkMode ? "white" : "primary"}>
             Dark mode

@@ -47,7 +47,11 @@ const checkForDeadUrls = async () => {
   const processor = await unified()
     .use(parse)
     .use(inspectUrls, {
-      inspectEach({ file, url }) {
+      inspectEach({ file, node, url }) {
+        // filter out preconnect links: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect
+        // Otherwise was failing on preconnect links to fonts.gstatic.com (to prepare to load fonts)
+        if (node.tagName === "link" && node.properties.rel.find(e => e === "preconnect")) return;
+
         if (!urls.has(url)) {
           urls.set(url, { sources: [file] });
         } else {

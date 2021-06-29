@@ -21,7 +21,7 @@ export default {
       <TableBody>
         <TableRow>
           <TableCell>
-            <Inline>
+            <Inline align="center">
               <BaggageCabin /> Cabin baggage
             </Inline>
           </TableCell>
@@ -29,7 +29,7 @@ export default {
         </TableRow>
         <TableRow>
           <TableCell>
-            <Inline>
+            <Inline align="center">
               <BaggageChecked30 /> Checked baggage
             </Inline>
           </TableCell>

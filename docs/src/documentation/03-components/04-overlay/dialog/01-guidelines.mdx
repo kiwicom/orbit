@@ -4,7 +4,7 @@ redirect_from:
   - /components/dialog/
 ---
 
-<ReactExample exampleId="Dialog-default" />
+<ReactExample exampleId="Dialog-default" minHeight={200} />
 
 ## When to use
 
@@ -15,7 +15,7 @@ redirect_from:
 
 - You have more complex or structured information---use a [modal](/components/overlay/modal/).
 - To keep current screen in focus or not block content on wide screens---use a [popover](/components/overlay/popover).
-- For temporary messages without actions---use a [modal](/components/information/toast/).
+- For temporary messages without actions---use a [toast](/components/information/toast/).
 
 ## Component status
 
@@ -44,26 +44,50 @@ There are situations that all users need to complete before continuing
 (like accepting terms for an additional service),
 but it should still be possible to go back to the previous point in the flow.
 
-<Guideline type="do" title="Give a cancel option">
+<GuidelineImages>
 
-![A dialog with two buttons: agree and cancel.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A631)
+<DoImage>
 
-![A dialog with only one option: agree. There is no way to close/cancel the dialog.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A631)
+![A dialog with two buttons: agree and cancel.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:35%3A627)
 
-</Guideline>
+Give a cancel option.
+
+</DoImage>
+
+<DontImage>
+
+![A dialog with only one option: agree. There is no way to close/cancel the dialog.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:35%3A639)
+
+Don't force users to accept only one option.
+
+</DontImage>
+
+</GuidelineImages>
 
 ### Warn about destructive actions
 
 If the action related to the dialog is irreversible or removes something,
 use a critical button to make the consequences clear to users.
 
-<Guideline type="do" title="Warn about destructive actions">
+<GuidelineImages>
 
-![A dialog with a warning in the description stating 'You can't do this' and the button is marked as critical (meaning a destructive action).](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:38%3A665)
+<DoImage>
 
-![A dialog with no description and actions as normal (even though they are destructive -- asking to remove a traveler).](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:38%3A665)
+![A dialog with a warning in the description stating 'You can't do this' and the button is marked as critical (meaning a destructive action).](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:38%3A667)
 
-</Guideline>
+Warn about destructive actions.
+
+</DoImage>
+
+<DontImage>
+
+![A dialog with no description and actions as normal (even though they are destructive – asking to remove a traveler).](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:38%3A666)
+
+Don't offer destruction choices with no warning about the consequences.
+
+</DontImage>
+
+</GuidelineImages>
 
 ## Content
 
@@ -77,9 +101,9 @@ Don't overwhelm your users with information.
 
 If more information is absolutely necessary, consider adding a [text link](/components/action/textlink/).
 
-![A dialog with a short title and description.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A652)
+![A dialog with a short title and description.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A680)
 
-![A dialog with an title covering three lines and a description with three separate paragraphs.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A652)
+![A dialog with an title covering three lines and a description with three separate paragraphs.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:37%3A653)
 
 </Guideline>
 

@@ -48,7 +48,7 @@ export default function Home({ location, path }: Props) {
       location={location}
       title="Orbit design system"
       description="An open source design system for your next travel project."
-      path={path}
+      path="/"
       isHome
     >
       <RocketImage />
@@ -134,7 +134,8 @@ export default function Home({ location, path }: Props) {
             href="/design-patterns/"
             icon={<ModulePuzzleIcon />}
           >
-            Missing description for patterns card.
+            Make the most of our components by using our design patterns to address common design
+            problems.
           </Tile>
         </Stack>
 
@@ -149,24 +150,24 @@ export default function Home({ location, path }: Props) {
           <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
             <Tile
               title="Colors"
-              linkContent="Learn more"
+              linkContent="See our colors"
               href="/foundation/color/"
               icon={<ColorBrushIcon />}
             >
-              Color is used to signal structure on a page, to highlight or emphasize...
+              Color is used to signal structure, highlight importance, and display different states.
             </Tile>
             <Tile
               title="Typography"
-              linkContent="Learn more"
+              linkContent="See our typography"
               href="foundation/typography/"
               icon={<TypographyIcon />}
             >
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
             <Tile
-              title="Spacings"
+              title="Spacing"
+              linkContent="See our spacing"
               href="foundation/spacing/"
-              linkContent="Learn more"
               icon={<ExpandDiagonalIcon />}
             >
               Consistent spacing makes an interface more clear and easy to scan.
@@ -179,7 +180,7 @@ export default function Home({ location, path }: Props) {
             `}
           >
             <Button href="/foundation/" size="large" circled type="primarySubtle">
-              Show all items
+              See all items
             </Button>
           </div>
         </div>
@@ -195,7 +196,7 @@ export default function Home({ location, path }: Props) {
           <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
             <Tile
               title="Voice & tone"
-              linkContent="Learn more"
+              linkContent="See our voice"
               href="/kiwi-use/content/voice-and-tone/"
               icon={<LoveItTextIcon />}
             >
@@ -203,20 +204,19 @@ export default function Home({ location, path }: Props) {
             </Tile>
             <Tile
               title="Grammar & mechanics"
-              linkContent="Learn more"
+              linkContent="See our standards"
               href="/kiwi-use/content/grammar-and-mechanics/"
               icon={<SpellingCheckIcon />}
             >
-              Typography is critical for communicating the hierarchy of a page.Basic grammar
-              guidelines for writing with Orbit.
+              Basic grammar guidelines for writing with Orbit.
             </Tile>
             <Tile
               title="Glossary"
-              linkContent="Learn more"
+              linkContent="See our terms"
               href="/kiwi-use/content/glossary/"
               icon={<ArrangeLetterIcon />}
             >
-              A list of most used words and phrases in Kiwi.com products.
+              A list of commonly used words and phrases in Kiwi.com products.
             </Tile>
           </Stack>
           <div
@@ -226,7 +226,7 @@ export default function Home({ location, path }: Props) {
             `}
           >
             <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
-              Show all items
+              See all items
             </Button>
           </div>
         </div>
@@ -253,8 +253,8 @@ export default function Home({ location, path }: Props) {
                   secondary: "#515C6C",
                 }}
               >
-                If you found any bugs in our components, report them on Github and we’ll fix them
-                asap. It’s the highest priority to have Orbit working as expected.
+                If you find any bugs in our components, report them on Github and we’ll fix them as
+                soon as possible. It’s our highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
                 title="Engage with us"
@@ -268,8 +268,8 @@ export default function Home({ location, path }: Props) {
                 }}
               >
                 We aim to provide the best possible support for all designers and developers using
-                Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform to
-                get feedback from you.
+                Orbit. That’s why we have an Orbit community on Spectrum – an open discussion
+                platform to get feedback from you.
               </BrandedTile>
             </Stack>
             <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
@@ -277,15 +277,15 @@ export default function Home({ location, path }: Props) {
                 title="Follow us on Twitter"
                 icon={<LoveBirdIcon />}
                 href="https://twitter.com/OrbitKiwi"
-                linkContent="Go to Orbit.kiwi’s Twitter"
+                linkContent="Follow Orbit on Twitter"
                 logo={<TwitterLogo />}
                 color={{
                   primary: "#0989CF",
                   secondary: "#179CE3",
                 }}
               >
-                Twitter is one of the main platform for sharing, everything important that is
-                happening around Orbit is published on Twitter
+                Twitter is one of our main platforms for sharing. Everything important that is
+                happening around Orbit is published on Twitter.
               </BrandedTile>
               <BrandedTile
                 title="Connect Orbit to Tequila"

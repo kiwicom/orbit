@@ -34,7 +34,7 @@ export default {
     switch (article) {
       case "cabin":
         title = "Cabin baggage";
-        content = "Cabin baggage is mall baggage you take into the plane with you.";
+        content = "Cabin baggage is small baggage you take into the plane with you.";
         tiles = (
           <Stack>
             {transferTile}

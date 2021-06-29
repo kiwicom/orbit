@@ -6,11 +6,11 @@ import { Trip as TripIcon, Search as SearchIcon } from "@kiwicom/orbit-component
 import DocLayout from "../components/DocLayout";
 import Search from "../components/Search";
 
-export default function PageNotFound({ location, path }: PageProps) {
+export default function PageNotFound({ location }: PageProps) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
 
   return (
-    <DocLayout custom noElevation title="Page not found" location={location} path={path}>
+    <DocLayout custom noElevation title="Page not found" location={location} path="/">
       <Stack flex>
         <Stack spacing="XLarge">
           <Stack spacing="small">

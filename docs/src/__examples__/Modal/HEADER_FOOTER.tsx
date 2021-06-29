@@ -15,7 +15,7 @@ export default {
             <ModalHeader
               title="Priority boarding"
               description="Skip the line and board in peace. Only $25!"
-              illustration={<Illustration name="PriorityBoarding" />}
+              illustration={<Illustration size="small" name="PriorityBoarding" />}
             />
             <ModalFooter>
               <Button>Add priority boarding</Button>

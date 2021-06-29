@@ -44,7 +44,7 @@ export default {
           </BadgeListItem>
           <BadgeListItem icon={<BaggageSet />}>
             You must collect and recheck{" "}
-            <Tooltip content="This applies to checked baggage">
+            <Tooltip content="This applies to checked baggage" renderInPortal={false}>
               <Text>your baggage</Text>
             </Tooltip>
           </BadgeListItem>

@@ -4,6 +4,9 @@ redirect_from:
   - /components/icon/
 ---
 
+import { Close, Plus } from "@kiwicom/orbit-components/icons";
+
+import IconHolder from "./IconHolder";
 import IconList from "../../../../components/IconList";
 
 import IconColorsSnippet from "snippets/icon-colors.mdx";
@@ -34,7 +37,8 @@ import IconColorsSnippet from "snippets/icon-colors.mdx";
 
 ### Use interactive icons for interactions
 
-Some icons (like plus \[+\] and close \[×\])
+Some icons (like plus <IconHolder><Plus size="small" /></IconHolder>
+and close <IconHolder><Close size="small" /></IconHolder>)
 work well to show users that an interaction is possible (like adding an option or closing a dialog).
 Users are used to interacting with these icons, so they work well inside buttons.
 

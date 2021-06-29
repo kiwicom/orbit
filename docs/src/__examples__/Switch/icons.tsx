@@ -18,7 +18,13 @@ export default {
           ariaLabelledby="label"
           checked={notifications}
           onChange={handleChange}
-          icon={notifications ? <NotificationOn /> : <NotificationOff />}
+          icon={
+            notifications ? (
+              <NotificationOn ariaLabel="Notifications are on" />
+            ) : (
+              <NotificationOff ariaLabel="Notifications are off" />
+            )
+          }
         />
       </Stack>
     );

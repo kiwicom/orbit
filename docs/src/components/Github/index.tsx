@@ -70,13 +70,13 @@ const ContributorsComponent = () => {
       </Heading>
       <Text>
         From small reviews or additions to contributions of whole components. We really appreciate
-        all your efforts when helping us to make Orbit better 👏
+        all your efforts when helping us make Orbit better. 👏
       </Text>
       <Heading type="title3" as="h3">
         React components
       </Heading>
       <Text>
-        Thanks to all these folks for caring, your contribution helps to all Orbit consumers.
+        Thanks to all these folks for caring! Your contributions have helped all Orbit consumers.
       </Text>
       {error ? (
         <Alert type="warning">

@@ -27,9 +27,9 @@ For most of our colors[^note], the following points should apply:
   Text in the _Dark_ shade should be readable on the _Light_ background of its color.
 - No _Dark_ shade should be used as a background.
 - Every non-_Dark_ color has **two additional shades** defined:
-  :active and :hover.
-  These additional shades should **only be used** for very specific cases.
-- All of our colors are also defined as **design tokens**,
+  `:active` and `:hover`.
+  These additional shades should **only** be used for **very specific** cases.
+- All of our colors are also defined as [design tokens](/foundation/design-tokens/),
   so non-Orbit components can use Orbit colors directly
   and they don't need to define colors again in their local codebase.
 
@@ -104,10 +104,11 @@ and only use the additional shades when needed to create more depth or interacti
 
 <Callout type="warning">
 
-We're aware of a **slight contrast issue with Kiwi.com's Product Normal color**
+We're aware of a slight contrast issue with our Product Normal color
 and the issues when using it for Primary buttons.
 We're exploring possible solutions.
-We highly recommend against using it for text and we recommend using darker shades, if possible.
+We highly recommend against using it for text
+and we recommend using darker shades when possible.
 
 </Callout>
 
@@ -186,7 +187,7 @@ There, follow best practices and use gray for input backgrounds.
 
 #### Cloud guidelines
 
-Cloud colors are generally used for backgrounds or borders.
+_Cloud_ colors are generally used for backgrounds or borders.
 
 <Guideline type="do" title="Use Cloud Light for the page background">
 
@@ -201,7 +202,7 @@ and it works well with white Cards and sections for content.
 
 If an input is used on a non-white background, the border isn't be visible.
 
-Use <InlineToken name="colorInputBorder" alternateName/> instead.
+Use <InlineToken name="borderColorInput" /> instead.
 
 ![Inputs with Cloud borders don't stand out](../../../images/foundation/color-cloud-input.png)
 
@@ -220,7 +221,7 @@ For more information about usage, see [Typography](/foundation/typography/) and 
 
 #### Ink guidelines
 
-Ink colors are generally used for typography and icons.
+_Ink_ colors are generally used for typography and icons.
 
 <Guideline type="do" title="Use Ink Normal as the main text color">
 
@@ -249,7 +250,8 @@ We like our interface light and this would really mess with visual priorities.
 
 <Guideline type="do" title="Use Green to communicate success">
 
-We have several components in Orbit that do this---Alert, Badge, and Text all have a success type.
+We have several components in Orbit that do this---[Alert](/components/information/alert/),
+[Badge](/components/information/badge/), and [Text](/components/text/text/) all have a success type.
 
 ![Green shows success without drawing too much attention](../../../images/foundation/color-green-success.png)
 
@@ -277,7 +279,8 @@ Only use success buttons if you need actions in a success alert.
 
 <Guideline type="do" title="Use Orange for warning states">
 
-We have several components in Orbit that do this---Alert, Badge, and Text all have a warning type.
+We have several components in Orbit that do this---[Alert](/components/information/alert/),
+[Badge](/components/information/badge/), and [Text](/components/text/text/) all have a warning type.
 Be sure that you explain clearly what you're warning users about.
 
 ![Orange draws enough attention to the warning without being overwhelming](../../../images/foundation/color-orange-warning.png)
@@ -307,7 +310,7 @@ and informing users about critical states of their actions.
 
 </Guideline>
 
-<Guideline type="do" title="Use Red for destructive buttons">
+<Guideline type="do" title="Use Red for destructive actions">
 
 It communicates that something important and negative will happen when triggered.
 
@@ -353,9 +356,9 @@ Orbit uses Product Normal for such elements.
 
 #### Social guidelines
 
-<Guideline type="do" title="Use Facebook color only for Facebook-related content">
+<Guideline type="do" title="Use the Facebook color only for Facebook-related content">
 
-That basically means that we use the Facebook color only in [Facebook login buttons](/components/action/socialbutton/).
+That basically means that we use the Facebook color only for [Facebook login buttons](/components/action/socialbutton/).
 
 ![The Facebook color is strongly connected to the Facebook brand](../../../images/foundation/color-facebook.png)
 

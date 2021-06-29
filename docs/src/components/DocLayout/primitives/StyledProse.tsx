@@ -28,6 +28,8 @@ const StyledProse = styled(Box)`
     }
     > p {
       font-size: 1rem;
+    }
+    p {
       line-height: 1.5;
     }
     > ul > li + li,

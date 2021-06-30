@@ -16,6 +16,7 @@ const getColor = ({ theme, type }) => {
     [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
     [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
   };
 
   return tokens[type];
@@ -29,6 +30,7 @@ const getHoverColor = ({ type, theme }) => {
     [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
     [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
   return tokens[type];
 };

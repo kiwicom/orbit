@@ -8,6 +8,7 @@ import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import { TYPE_OPTIONS as TEXT_TYPES } from "../Text/consts";
 import * as Icons from "../icons";
 import Text from "../Text";
+import Box from "../Box";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TextLink from "./index";
@@ -120,23 +121,29 @@ export const Playground = (): React.Node => {
   const standAlone = boolean("standAlone", false);
   const noUnderline = boolean("noUnderline", false);
   return (
-    <TextLink
-      external={external}
-      onClick={action("clicked")}
-      href={href}
-      type={type}
-      size={size}
-      rel={validate(rel)}
-      iconRight={IconRight && <IconRight />}
-      iconLeft={IconLeft && <IconLeft />}
-      dataTest={dataTest}
-      tabIndex={tabIndex}
-      stopPropagation={stopPropagation}
-      standAlone={standAlone}
-      noUnderline={noUnderline}
+    <Box
+      padding="small"
+      borderRadius="normal"
+      background={type === TYPE_OPTIONS.WHITE ? "inkLight" : "cloudNormal"}
     >
-      {children}
-    </TextLink>
+      <TextLink
+        external={external}
+        onClick={action("clicked")}
+        href={href}
+        type={type}
+        size={size}
+        rel={validate(rel)}
+        iconRight={IconRight && <IconRight />}
+        iconLeft={IconLeft && <IconLeft />}
+        dataTest={dataTest}
+        tabIndex={tabIndex}
+        stopPropagation={stopPropagation}
+        standAlone={standAlone}
+        noUnderline={noUnderline}
+      >
+        {children}
+      </TextLink>
+    </Box>
   );
 };
 

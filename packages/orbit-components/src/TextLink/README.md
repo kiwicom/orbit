@@ -46,6 +46,7 @@ Table below contains all types of the props available in TextLink component.
 | `"success"`   |
 | `"warning"`   |
 | `"critical"`  |
+| `"white"`     |
 
 ## Functional specs
 

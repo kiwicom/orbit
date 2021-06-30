@@ -13,7 +13,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
   try {
     // eslint-disable-next-line import/no-extraneous-dependencies
     require("dotenv").config({
-      path: path.join(process.cwd(), `.env`),
+      path: path.join(process.cwd(), `../.env`),
     });
 
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });

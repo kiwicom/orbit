@@ -1,6 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 const path = require("path");
 const fs = require("fs-extra");
+const prettier = require("prettier");
 
 const { warnMissingAccessToken } = require("../../utils/warnings");
 
@@ -47,7 +48,11 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
         }),
       );
 
-      await fs.writeFile(path.join(__dirname, "fetchedUsers.json"), JSON.stringify(users));
+      const fetchedUsersContent = await prettier.format(JSON.stringify(users), {
+        ...(await prettier.resolveConfig(__dirname)),
+        parser: "json",
+      });
+      await fs.writeFile(path.join(__dirname, "fetchedUsers.json"), fetchedUsersContent);
 
       staticData.concat(users).forEach(u => {
         return createNode({

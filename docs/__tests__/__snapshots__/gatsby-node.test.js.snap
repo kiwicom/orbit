@@ -16,23 +16,6 @@ Array [
     ],
   },
   Object {
-    "file": "01-getting-started/01-for-designers/02-open-source.mdx",
-    "trail": Array [
-      Object {
-        "name": "Getting started",
-        "url": "/getting-started/",
-      },
-      Object {
-        "name": "For designers",
-        "url": "/getting-started/for-designers/",
-      },
-      Object {
-        "name": "For open-source",
-        "url": "/getting-started/for-designers/open-source/",
-      },
-    ],
-  },
-  Object {
     "file": "01-getting-started/02-for-developers.mdx",
     "trail": Array [
       Object {
@@ -42,66 +25,6 @@ Array [
       Object {
         "name": "For developers",
         "url": "/getting-started/for-developers/",
-      },
-    ],
-  },
-  Object {
-    "file": "01-getting-started/03-github.mdx",
-    "trail": Array [
-      Object {
-        "name": "Getting started",
-        "url": "/getting-started/",
-      },
-      Object {
-        "name": "GitHub repos & resources",
-        "url": "/getting-started/github/",
-      },
-    ],
-  },
-  Object {
-    "file": "01-getting-started/04-support/01-kiwi.mdx",
-    "trail": Array [
-      Object {
-        "name": "Getting started",
-        "url": "/getting-started/",
-      },
-      Object {
-        "name": "Support",
-        "url": "/getting-started/support/",
-      },
-    ],
-  },
-  Object {
-    "file": "01-getting-started/04-support/02-open-source.mdx",
-    "trail": Array [
-      Object {
-        "name": "Getting started",
-        "url": "/getting-started/",
-      },
-      Object {
-        "name": "Support",
-        "url": "/getting-started/support/",
-      },
-      Object {
-        "name": "For open source",
-        "url": "/getting-started/support/open-source/",
-      },
-    ],
-  },
-  Object {
-    "file": "01-getting-started/04-support/03-team.mdx",
-    "trail": Array [
-      Object {
-        "name": "Getting started",
-        "url": "/getting-started/",
-      },
-      Object {
-        "name": "Support",
-        "url": "/getting-started/support/",
-      },
-      Object {
-        "name": "Team & contributors",
-        "url": "/getting-started/support/team/",
       },
     ],
   },

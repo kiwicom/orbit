@@ -1,6 +1,6 @@
 const path = require("path");
 
-const rePathNumbers = new RegExp(`(${path.sep})\\d+-`, "g");
+const rePathNumbers = new RegExp(`(^|${path.sep})\\d+-`, "g");
 const omitNumbers = filePath => filePath.replace(rePathNumbers, "$1");
 
 function getDocumentUrl(fileUrl, hasTabs) {

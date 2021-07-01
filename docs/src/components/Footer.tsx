@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Text, Desktop, Stack, mediaQueries } from "@kiwicom/orbit-components";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Switch from "./Switch";
 import GitHub from "../images/logos/github-circle.svg";
@@ -90,6 +90,31 @@ interface Props {
 
 export default function Footer({ hasGradient }: Props) {
   const [devMode, setDevMode] = useDevMode();
+
+  const data: {
+    site: {
+      siteMetadata: {
+        version: {
+          components: number;
+          tokens: number;
+        };
+      };
+    };
+  } = useStaticQuery(graphql`
+    query PackageVersions {
+      site {
+        siteMetadata {
+          version {
+            components
+            tokens
+          }
+        }
+      }
+    }
+  `);
+
+  const pkgVersion = data.site.siteMetadata.version;
+
   return (
     <StyledFooter hasGradient={hasGradient}>
       <StyledContainer color="paletteCloudLight">
@@ -145,7 +170,7 @@ export default function Footer({ hasGradient }: Props) {
                   Design tokens
                 </Text>
                 <Text as="div" type="secondary">
-                  v0.11.0
+                  v{pkgVersion.tokens}
                 </Text>
               </Stack>
               <Dot />
@@ -154,7 +179,7 @@ export default function Footer({ hasGradient }: Props) {
                   React components
                 </Text>
                 <Text as="div" type="secondary">
-                  v0.11.0
+                  v{pkgVersion.components}
                 </Text>
               </Stack>
               <Dot />

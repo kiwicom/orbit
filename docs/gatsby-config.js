@@ -1,4 +1,6 @@
 const path = require("path");
+const componentsPkg = require("@kiwicom/orbit-components/package.json");
+const tokensPkg = require("@kiwicom/orbit-design-tokens/package.json");
 
 module.exports = {
   siteMetadata: {
@@ -6,6 +8,10 @@ module.exports = {
     description: "Open source design system for your next travel project.",
     siteUrl: "https://orbit.kiwi/",
     author: "Kiwi.com",
+    version: {
+      components: componentsPkg.version,
+      tokens: tokensPkg.version,
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",

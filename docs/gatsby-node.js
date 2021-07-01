@@ -4,7 +4,9 @@ const yaml = require("js-yaml");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
-const { createOverviewPages } = require("./services/overview-pages");
+const { getOverviewPages } = require("./services/overview-pages");
+
+const ROOT = path.resolve(__dirname, "..");
 
 exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
@@ -20,7 +22,7 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
       reporter.panicOnBuild(
         `Expected meta.yml file to exist in "${
           process.env.NODE_ENV === "test"
-            ? path.relative(process.cwd(), node.absolutePath)
+            ? path.relative(ROOT, node.absolutePath)
             : node.absolutePath
         }", every directory in "src/documentation" should have one`,
       );
@@ -43,7 +45,7 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
     node.sourceInstanceName === "documentation"
   ) {
     const metaFilePath = node.absolutePath;
-    const metaFilePathRelative = path.relative(process.cwd(), metaFilePath);
+    const metaFilePathRelative = path.relative(ROOT, metaFilePath);
     const url = omitNumbers(path.join("/", node.relativeDirectory, "/"));
     const metaFileData = yaml.load(fs.readFileSync(metaFilePath));
     const missingFields = [];
@@ -164,7 +166,7 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter, cache }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query DocumentationQuery {
@@ -180,13 +182,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
-  await createOverviewPages(page => {
-    createPage({
-      path: page.slug,
-      component: path.join(__dirname, "src/templates/Overview.tsx"),
-      context: { ...page },
-    });
-  });
+  const overviewPages = await getOverviewPages();
+  await Promise.all(
+    overviewPages.map(async page => {
+      const trail = await getDocumentTrail(cache, page.slug);
+      const overviewPath = path.join(__dirname, "src/templates/Overview.tsx");
+      createPage({
+        path: page.slug,
+        component:
+          process.env.NODE_ENV === "test" ? path.relative(ROOT, overviewPath) : overviewPath,
+        context: { ...page, trail },
+      });
+    }),
+  );
 
   if (result.errors) {
     reporter.panicOnBuild(`Error when querying guides.`);

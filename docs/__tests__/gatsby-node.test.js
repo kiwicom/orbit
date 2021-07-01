@@ -5,7 +5,7 @@ const matter = require("gray-matter");
 const globby = require("globby");
 const fsx = require("fs-extra");
 
-const { onCreateNode } = require("../gatsby-node");
+const { onCreateNode, createPages } = require("../gatsby-node");
 
 jest.mock("fs", () => require("memfs").fs);
 jest.mock("gatsby-source-filesystem", () => {
@@ -17,6 +17,8 @@ jest.mock("gatsby-source-filesystem", () => {
 });
 
 const ROOT = path.resolve(__dirname, "../src/documentation");
+
+const getNode = n => n; // not really, but good enough
 
 function getDirectoryNode(relativePath) {
   return {
@@ -58,8 +60,43 @@ const cache = {
   set: async (key, value) => cacheMap.set(key, value),
 };
 
+async function createTrails() {
+  const files = globby.sync(ROOT);
+
+  await Promise.all(
+    files
+      .filter(file => file.endsWith("meta.yml"))
+      .map(async metaFile => {
+        const node = getMetaFileNode(path.relative(ROOT, metaFile));
+        await onCreateNode({ cache, node, getNode });
+      }),
+  );
+
+  const trails = await Promise.all(
+    files
+      .filter(file => !file.endsWith("meta.yml"))
+      .sort()
+      .map(async file => {
+        const relativePath = path.relative(ROOT, file);
+        const content = fsx.readFileSync(file);
+        const node = getMdxNode(relativePath, matter(content).data);
+        const actions = {
+          createNodeField: ({ node: n, name, value }) => {
+            // eslint-disable-next-line no-param-reassign
+            n.fields[name] = value;
+          },
+        };
+        await onCreateNode({ cache, node, getNode, actions });
+        return { file: relativePath, trail: node.fields.trail };
+      }),
+  );
+
+  return trails;
+}
+
 afterEach(() => {
   cacheMap.clear();
+  vol.reset();
 });
 
 describe("gatsby-node", () => {
@@ -138,9 +175,37 @@ describe("gatsby-node", () => {
             title: For Kiwi.com employees
             ---
           `,
-          "./01-getting-started/01-for-designers/02-open-source.mdx": dedent`
+          "./01-getting-started/02-for-developers.mdx": dedent`
             ---
-            title: For open-source
+            title: For developers
+            description: Our components are served as an npm package.
+            ---
+          `,
+        },
+        ROOT,
+      );
+
+      expect(await createTrails()).toMatchSnapshot();
+    });
+  });
+
+  describe("overview pages", () => {
+    it("should create overview pages", async () => {
+      const createPage = jest.fn();
+
+      vol.fromJSON(
+        {
+          "./01-getting-started/meta.yml": dedent`
+            title: Getting started
+            type: folder
+          `,
+          "./01-getting-started/01-for-designers/meta.yml": dedent`
+            title: For designers
+            type: tabs
+          `,
+          "./01-getting-started/01-for-designers/01-kiwi.mdx": dedent`
+            ---
+            title: For Kiwi.com employees
             ---
           `,
           "./01-getting-started/02-for-developers.mdx": dedent`
@@ -149,68 +214,127 @@ describe("gatsby-node", () => {
             description: Our components are served as an npm package.
             ---
           `,
-          "./01-getting-started/03-github.mdx": dedent`
-            ---
-            title: GitHub repos & resources
-            description: List of repositories related to Orbit design system.
-            ---
+          "./03-components/meta.yml": dedent`
+            title: Components
+            type: folder
           `,
-          "./01-getting-started/04-support/meta.yml": dedent`
-            title: Support
-            description: A list of all channels where to report any bug or request new features.
+          "./03-components/04-overlay/meta.yml": dedent`
+            title: Overlay
+            type: folder
+          `,
+          "./03-components/04-overlay/dialog/meta.yml": dedent`
+            title: Dialog
+            description: Prompts users to take or complete an action.
             type: tabs
           `,
-          "./01-getting-started/04-support/01-kiwi.mdx": dedent`
+          "./03-components/04-overlay/dialog/01-guidelines.mdx": dedent`
             ---
-            title: For Kiwi.com
-            ---
-          `,
-          "./01-getting-started/04-support/02-open-source.mdx": dedent`
-            ---
-            title: For open source
-            ---
-          `,
-          "./01-getting-started/04-support/03-team.mdx": dedent`
-            ---
-            title: Team & contributors
+            title: Guidelines
             ---
           `,
         },
         ROOT,
       );
-      const getNode = n => n; // not really, but good enough
 
-      const files = globby.sync(ROOT);
-
-      await Promise.all(
-        files
-          .filter(file => file.endsWith("meta.yml"))
-          .map(async metaFile => {
-            const node = getMetaFileNode(path.relative(ROOT, metaFile));
-            await onCreateNode({ cache, node, getNode });
-          }),
-      );
-
-      const trails = await Promise.all(
-        files
-          .filter(file => !file.endsWith("meta.yml"))
-          .sort()
-          .map(async file => {
-            const relativePath = path.relative(ROOT, file);
-            const content = fsx.readFileSync(file);
-            const node = getMdxNode(relativePath, matter(content).data);
-            const actions = {
-              createNodeField: ({ node: n, name, value }) => {
-                // eslint-disable-next-line no-param-reassign
-                n.fields[name] = value;
+      await createTrails();
+      await createPages({
+        graphql: () =>
+          Promise.resolve({
+            data: {
+              allMdx: {
+                nodes: [],
               },
-            };
-            await onCreateNode({ cache, node, getNode, actions });
-            return { file: relativePath, trail: node.fields.trail };
+            },
           }),
-      );
+        actions: { createPage },
+        cache,
+      });
 
-      expect(trails).toMatchSnapshot();
+      expect(createPage.mock.calls).toMatchInlineSnapshot(`
+        Array [
+          Array [
+            Object {
+              "component": "docs/src/templates/Overview.tsx",
+              "context": Object {
+                "description": undefined,
+                "pages": Array [
+                  Object {
+                    "description": "Our components are served as an npm package.",
+                    "slug": "/getting-started/for-developers/",
+                    "title": "For developers",
+                  },
+                  Object {
+                    "description": undefined,
+                    "slug": "/getting-started/for-designers/",
+                    "title": "For designers",
+                  },
+                ],
+                "slug": "/getting-started/",
+                "title": "Getting started",
+                "trail": Array [
+                  Object {
+                    "name": "Getting started",
+                    "url": "/getting-started/",
+                  },
+                ],
+              },
+              "path": "/getting-started/",
+            },
+          ],
+          Array [
+            Object {
+              "component": "docs/src/templates/Overview.tsx",
+              "context": Object {
+                "description": undefined,
+                "pages": Array [
+                  Object {
+                    "description": undefined,
+                    "slug": "/components/overlay/",
+                    "title": "Overlay",
+                  },
+                ],
+                "slug": "/components/",
+                "title": "Components",
+                "trail": Array [
+                  Object {
+                    "name": "Components",
+                    "url": "/components/",
+                  },
+                ],
+              },
+              "path": "/components/",
+            },
+          ],
+          Array [
+            Object {
+              "component": "docs/src/templates/Overview.tsx",
+              "context": Object {
+                "description": undefined,
+                "pages": Array [
+                  Object {
+                    "description": "Prompts users to take or complete an action.",
+                    "slug": "/components/overlay/dialog/",
+                    "title": "Dialog",
+                  },
+                ],
+                "slug": "/components/overlay/",
+                "title": "Overlay",
+                "trail": Array [
+                  Object {
+                    "name": "Components",
+                    "url": "/components/",
+                  },
+                  Object {
+                    "name": "Overlay",
+                    "url": "/components/overlay/",
+                  },
+                ],
+              },
+              "path": "/components/overlay/",
+            },
+          ],
+        ]
+      `);
     });
   });
 });

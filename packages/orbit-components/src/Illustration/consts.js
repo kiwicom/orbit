@@ -26,6 +26,7 @@ export const NAMES = [
   "EnjoyApp",
   "Error",
   "Error404",
+  "ExclusiveOffers",
   "FastTrack",
   "Feedback",
   "Help",

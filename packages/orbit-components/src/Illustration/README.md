@@ -53,6 +53,7 @@ Table below contains all types of the props available in Illustration component.
 | `"EnjoyApp"`                    |
 | `"Error"`                       |
 | `"Error404"`                    |
+| `"ExclusiveOffers"`             |
 | `"FastTrack"`                   |
 | `"Feedback"`                    |
 | `"Help"`                        |

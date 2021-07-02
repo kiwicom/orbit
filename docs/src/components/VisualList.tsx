@@ -108,12 +108,13 @@ const VisualList = ({ actions, exampleCode, getImgSource, list, smallVisual }: V
   const allVisualNames = Object.keys(list);
   const [openedVisual, setOpenedVisual] = useState("");
   const [filter, setFilter] = useState("");
+  const filterRe = new RegExp(filter, "i");
 
   useEffect(() => {
     if (typeof window !== "undefined") setOpenedVisual(window.location.hash.replace("#", ""));
   }, []);
 
-  const filteredVisualNames = allVisualNames.filter(name => name.includes(filter.toLowerCase()));
+  const filteredVisualNames = allVisualNames.filter(name => filterRe.test(name));
 
   return (
     <Stack spacing="large">

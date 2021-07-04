@@ -8,6 +8,7 @@ import BaseStyles from "./BaseStyles";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Head from "./Head";
+import { DevModeProvider } from "../hooks/useDevMode";
 import { CONTENT_PADDING } from "../consts";
 
 const StyledWrapper = styled.div`
@@ -39,10 +40,12 @@ export default function Layout({ children, location, title, description, path, i
       <Head title={title} hasSiteName={!isHome} description={description} path={path} />
       <ThemeProvider theme={theme}>
         <StyledWrapper>
-          <BaseStyles />
-          <Navbar location={location} />
-          <StyledMain>{children}</StyledMain>
-          <Footer />
+          <DevModeProvider>
+            <BaseStyles />
+            <Navbar location={location} />
+            <StyledMain>{children}</StyledMain>
+            <Footer />
+          </DevModeProvider>
         </StyledWrapper>
       </ThemeProvider>
     </>

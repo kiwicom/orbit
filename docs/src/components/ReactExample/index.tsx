@@ -1,40 +1,34 @@
 import React from "react";
-import { LiveProvider, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
+import { Text } from "@kiwicom/orbit-components";
+import { Editor } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
-import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
 
+import Frame from "./Frame";
 import Board from "./Board";
-import Preview from "./Preview";
-import ViewportsRuler from "./ViewportsRuler";
+
+export type BgType = "white" | "dark" | "grid";
 
 interface Props {
   exampleId: string;
   maxHeight?: number;
+  background: BgType;
   minHeight?: number;
 }
 
-const StyledExampleWrapper = styled.div`
-  ${({ theme }) => `
+const StyledWrapper = styled.div`
+  ${({ theme }) => css`
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     border-radius: 12px;
     overflow: hidden;
   `};
 `;
 
-const StyledEditor = styled(LiveEditor)`
-  ${({ theme }) => `
-    border-radius: 0 0 ${theme.orbit.borderRadiusLarge} ${theme.orbit.borderRadiusLarge};
-  `};
-`;
-
-const ReactExample = ({ exampleId, maxHeight, minHeight }: Props) => {
+const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
+  const [code, setCode] = React.useState("");
   const [isEditorOpened, setOpenEditor] = React.useState(false);
-  const [width, setPreviewWidth] = React.useState(0);
-
-  const getCurrentWidth = React.useCallback(size => setPreviewWidth(size), []);
+  const [origin, setOrigin] = React.useState("");
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -42,10 +36,9 @@ const ReactExample = ({ exampleId, maxHeight, minHeight }: Props) => {
         allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
           nodes {
             id
-            relativePath
             fields {
-              example_id
               example
+              example_id
               scope {
                 name
                 path
@@ -58,47 +51,54 @@ const ReactExample = ({ exampleId, maxHeight, minHeight }: Props) => {
     `,
   );
 
+  React.useEffect(() => {
+    const key = exampleId.toLowerCase();
+    if (code) window.localStorage.setItem(key, code);
+    setOrigin(window.location.origin);
+
+    return () => window.localStorage.removeItem(key);
+  }, [setCode, code, exampleId, setOrigin]);
+
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
 
-  if (!example)
-    return <Components.Text>{`Could not find example with the id: ${exampleId}`}</Components.Text>;
+  if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
-  const { fields } = example;
-
-  const modules = fields.scope.reduce((acc, { name: moduleName, path }) => {
-    if (path.match(/@kiwicom\/orbit-components\/icons/)) {
-      return {
-        ...acc,
-        [moduleName]: Icons[moduleName],
-      };
-    }
-
-    return {
-      ...acc,
-      [moduleName]: Components[moduleName],
-    };
-  }, {});
-
-  const scopeOutput = fields.scope
+  const scopeOutput = example.fields.scope
     .map(({ path, name: moduleName, default: isDefault }) => {
       if (isDefault) return `import ${moduleName} from ${path}`;
-      return `import { ${moduleName} }  from ${path}`;
+      return `import { ${moduleName} } from "${path}"`;
     })
     .join("\n");
 
+  const codeWithImports = [scopeOutput, example.fields.example].join("\n");
+
   return (
-    <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
-      <StyledExampleWrapper>
-        <ViewportsRuler onChangeSize={getCurrentWidth} />
-        <Preview width={width} minHeight={minHeight} maxHeight={maxHeight} />
-        <Board
-          isEditorOpened={isEditorOpened}
-          onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-          code={[scopeOutput, fields.example].join("\n\n")}
+    <StyledWrapper>
+      <Frame
+        origin={origin}
+        pageId={example.id}
+        exampleId={exampleId}
+        minHeight={minHeight}
+        maxHeight={maxHeight}
+        background={background}
+      />
+      <Board
+        exampleId={exampleId}
+        isEditorOpened={isEditorOpened}
+        onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+        code={codeWithImports}
+        origin={origin}
+      />
+      {isEditorOpened && (
+        <Editor
+          style={{ margin: 0, borderRadius: "0 0 12px 12px" }}
+          theme={dracula}
+          onChange={str => setCode(str)}
+          language="jsx"
+          code={example.fields.example}
         />
-        {isEditorOpened && <StyledEditor />}
-      </StyledExampleWrapper>
-    </LiveProvider>
+      )}
+    </StyledWrapper>
   );
 };
 

@@ -62,6 +62,7 @@
     "to-vfile": "^6.1.0",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3",
+    "uuid": "^8.3.2",
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
@@ -70,6 +71,7 @@
     "@types/lodash": "^4.14.170",
     "@types/react-helmet": "^6.1.1",
     "@types/react-scrollspy": "^3.3.3",
+    "@types/uuid": "^8.3.1",
     "body-scroll-lock": "^3.1.5",
     "eslint-plugin-orbit-components": "^0.5.2",
     "fontfaceobserver": "^2.1.0",

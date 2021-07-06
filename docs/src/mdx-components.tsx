@@ -12,6 +12,8 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
+import type { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
+import type { Type } from "@kiwicom/orbit-components/lib/Heading";
 import { Link } from "gatsby";
 import { css } from "styled-components";
 
@@ -19,6 +21,8 @@ import BlockQuote from "./components/BlockQuote";
 import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
+import { getTextFromChildren } from "./utils/common";
+import { useTableOfContentsRegister } from "./components/TableOfContents";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
@@ -26,45 +30,32 @@ export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
 
 export const h1 = () => null;
 
-export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="normal">
-    <Heading as="h2" type="title2">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="small">
-    <Heading as="h3" type="title3">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+function createHeadingComponent(tag: HeadingTag, { type, spaceAfter }: { type: Type } & SpaceAfter) {
+  const HeadingComponent = ({ children }: { children: React.ReactNode }) => {
+    useTableOfContentsRegister({
+      title: getTextFromChildren(children),
+      level: Number(tag.slice(1)) - 2
+    })
 
-export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="smallest">
-    <Heading as="h4" type="title4">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+    return (
+      <HeadingWithLink spaceAfter={spaceAfter}>
+        <Heading as={tag} type={type}>
+          {children}
+        </Heading>
+      </HeadingWithLink>
+    );
+  };
+  HeadingComponent.displayName = `TOC(${tag})`;
+  return HeadingComponent;
+}
 
-export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink>
-    <Heading as="h5" type="title5">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
-
-export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink>
-    <Heading as="h6" type="title5">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "normal" });
+export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "small" });
+export const h4 = createHeadingComponent("h4", { type: "title4", spaceAfter: "smallest" });
+export const h5 = createHeadingComponent("h5", { type: "title5" });
+export const h6 = createHeadingComponent("h6", { type: "title5" });
 
 export const hr = () => <Separator spaceAfter="largest" />;
 

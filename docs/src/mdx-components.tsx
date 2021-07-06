@@ -32,12 +32,15 @@ export const h1 = () => null;
 
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-function createHeadingComponent(tag: HeadingTag, { type, spaceAfter }: { type: Type } & SpaceAfter) {
+function createHeadingComponent(
+  tag: HeadingTag,
+  { type, spaceAfter }: { type: Type } & SpaceAfter,
+) {
   const HeadingComponent = ({ children }: { children: React.ReactNode }) => {
     useTableOfContentsRegister({
       title: getTextFromChildren(children),
-      level: Number(tag.slice(1)) - 2
-    })
+      level: Number(tag.slice(1)) - 2,
+    });
 
     return (
       <HeadingWithLink spaceAfter={spaceAfter}>

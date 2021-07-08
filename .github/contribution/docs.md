@@ -7,6 +7,7 @@ It's efforts like yours that help keep our docs useful.
 
 - [Location](#location)
 - [Running the docs locally](#running-the-docs-locally)
+- [Creating new component docs](#creating-new-component-docs)
 - [Code style](#code-style)
 - [Prose style](#prose-style)
 
@@ -14,13 +15,13 @@ It's efforts like yours that help keep our docs useful.
 
 Our docs live mostly in two places.
 
-Basic details (props tables and such) for each component
-live in ReadMe files next to the component
-([example button ReadMe](https://github.com/kiwicom/orbit/blob/master/packages/orbit-components/src/Button/README.md)).
-
-More general guidelines and anything more complex lives in the [docs folder](../../docs),
+General guidelines are in the [docs folder](../../docs),
 mostly in MDX files in the [documentation folder](../../docs/src/documentation).
 The structure of that folder matches the structure on [our built docs site](https://orbit.kiwi).
+
+The basic API (props tables and such) for each component
+is in ReadMe files next to the component
+([example button ReadMe](https://github.com/kiwicom/orbit/blob/master/packages/orbit-components/src/Button/README.md)).
 
 ## Running the docs locally
 
@@ -55,6 +56,15 @@ Your site is now running at `http://localhost:8000`.
 Now you can make a change to a file in `docs/src/` (such as the docs in `docs/src/documentation/`)
 and your site updates automatically.
 
+## Creating new component docs
+
+To create new guidelines for a component,
+follow the [template for components](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/03-components/component.md.template).
+Place it in the right category for the component.
+
+If the component has a React API already defined,
+put it in a folder with a `meta.yml` file as with most other components.
+
 ## Code style
 
 To keep the files used to build our docs clear, we enforce standard Markdown code styling.
@@ -74,6 +84,7 @@ or run `yarn eslint:docs` from a terminal.
 In addition to the automatic fixes,
 we also prefer it when lines are no longer than 80 characters.
 This helps ensure the code is readable even in narrow spaces.
+It's known as [semantic line breaks](https://sembr.org/)
 
 But we don't enforce a strict limit to line length.
 If we did, automatic tools would rearrange lines at any change.

@@ -74,7 +74,7 @@ module.exports = (props, pluginOptions) => {
     function onError(err) {
       const triesLeft = tries - 1;
       if (!triesLeft) {
-        throw err;
+        return { data: { err } };
       }
       return wait(delay).then(() => fetchRetry(url, delay, triesLeft));
     }
@@ -115,7 +115,10 @@ module.exports = (props, pluginOptions) => {
       fetchNode(fileId, nodeId).then(({ data }) => {
         const { images, err } = data;
         if (err) {
-          reporter.error("An error occurred", err);
+          reporter.error(
+            `The Figma image with a file ID of ${fileId} and a node ID of ${nodeId} was not found.\nThe specific error was: ${err}.`,
+          );
+          return;
         }
         const result = Object.values(images);
         if (result.length !== 1 || err) {

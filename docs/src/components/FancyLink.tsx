@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Figma, Github, ReactJs, Spectrum, Storybook } from "@icons-pack/react-simple-icons";
+import Figma from "@icons-pack/react-simple-icons/lib/components/Figma";
+import Storybook from "@icons-pack/react-simple-icons/lib/components/Storybook";
+import Spectrum from "@icons-pack/react-simple-icons/lib/components/Spectrum";
+import ReactJs from "@icons-pack/react-simple-icons/lib/components/ReactJs";
+import Github from "@icons-pack/react-simple-icons/lib/components/Github";
 import { ColorPicker, Download, FlightDirect, Google, Tips } from "@kiwicom/orbit-components/icons";
 import { Tile } from "@kiwicom/orbit-components";
 

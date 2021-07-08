@@ -1,0 +1,75 @@
+---
+title: Guidelines
+---
+
+<ReactExample exampleId="Component-default" />
+
+Start with an example.
+The example should show a basic case where the component would be used.
+It should be simple enough to understand,
+but still show something that might really be used.
+
+Examples can be found within `docs/src/__examples__`.
+
+## When to use
+
+- Put in use cases when this component should be used.
+- Use short fragments ("To achieve X goal").
+
+### When not to use
+
+- Briefly describes cases when this component should **_not_** be used.
+- Link to components to use instead in these cases---use an [other component name](/components/category/othercomponentname/).
+
+## Component status
+
+<ComponentStatus component="Component" />
+
+## Content structure
+
+![Alt text: any words that are in the structure in Figma](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:)
+
+Fill in the alt text and node ID for the specific structure in Figma.
+
+## Behavior
+
+Include any guidance about how the component behaves.
+This includes:
+
+- Interactions (like how to show more of the component's content)
+- Next steps
+- Specific use cases (more details on when to use)
+- Responsive behavior (different content on different screen sizes)
+
+### Create guidance in sections
+
+Separate guidance into sections focused on one particular aspect.
+This is true for all major sections.
+
+Label the sections with short imperatives: _Do this_.
+Remember to try to [keep the language positive](/kiwi-use/content/voice-tone/passionate/#use-positive-language)
+(focus on what to do, not what not to do).
+
+<Guideline type="do" title="Use our docs components">
+
+To make the message clear, use any of the components you can see at our [sample page](/mdx-examples/).
+
+</Guideline>
+
+## Content
+
+Include any guidance on what content the component should include.
+This includes:
+
+- Calls to action
+- Labels
+- Help and error messages
+
+## Look & feel
+
+This section should focus on how the component appears
+It can include documentation of design decisions that might not be immediately obvious.
+
+- Types
+- Sizes
+- Differences between apps and web

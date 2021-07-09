@@ -10,6 +10,7 @@ const BOARD_HEIGHT = 100;
 interface Props {
   pageId: string;
   background: BgType;
+  fullHeight?: boolean;
   minHeight?: number;
   maxHeight?: number;
   exampleId: string;
@@ -47,22 +48,25 @@ const getBackground = (type: BgType) => ({ theme }) => {
   return `background: ${theme.orbit.paletteWhite}`;
 };
 
-const StyledFrame = styled.iframe<{
-  minHeight?: number;
-  maxHeight?: number;
-  background: BgType;
-  height?: number;
-}>`
-  ${({ background, height, minHeight, maxHeight }) => css`
+const StyledFrame = styled.iframe<Partial<Props>>`
+  ${({ background, height, fullHeight, minHeight, maxHeight }) => css`
     width: 100%;
     min-height: ${minHeight && `${minHeight}px`};
     max-height: ${maxHeight && `${maxHeight}px`};
-    height: ${Number(height) + BOARD_HEIGHT}px;
-    ${getBackground(background)};
+    height: ${fullHeight ? `100%` : `${Number(height) + BOARD_HEIGHT}px`};
+    ${background && getBackground(background)};
   `};
 `;
 
-const Frame = ({ background, exampleId, minHeight, pageId, origin, maxHeight }: Props) => {
+const Frame = ({
+  background,
+  exampleId,
+  minHeight,
+  pageId,
+  origin,
+  maxHeight,
+  fullHeight,
+}: Props) => {
   const [height, setHeight] = React.useState(0);
   const [loaded, setLoaded] = React.useState(false);
 
@@ -83,6 +87,7 @@ const Frame = ({ background, exampleId, minHeight, pageId, origin, maxHeight }: 
   return (
     <StyledFrame
       background={background}
+      fullHeight={fullHeight}
       title={exampleId}
       minHeight={minHeight}
       maxHeight={maxHeight}

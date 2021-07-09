@@ -77,14 +77,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: `examples/${example_id.toLowerCase()}`,
-      component: `${process.cwd()}/src/templates/Sandbox.tsx`,
+      component: `${process.cwd()}/src/templates/sandbox/index.tsx`,
       context: { id, example, example_id, scope },
     });
 
     createPage({
       path: `examples/${id}`,
-      component: `${process.cwd()}/src/templates/Sandbox.tsx`,
-      context: { id, example, example_id, scope, pure: true },
+      component: `${process.cwd()}/src/templates/sandbox/PureSandbox.tsx`,
+      context: { id, example, example_id, scope },
     });
   });
 };

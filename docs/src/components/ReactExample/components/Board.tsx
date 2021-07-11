@@ -21,11 +21,22 @@ interface Props {
   code: string;
   origin?: string;
   isFullPage?: boolean;
+  isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
+  onOpenPlayground: () => void;
   onOpenEditor: () => void;
 }
 
-const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin, isFullPage }: Props) => {
+const Board = ({
+  isFullPage,
+  exampleId,
+  code,
+  isEditorOpened,
+  isPlaygroundOpened,
+  onOpenPlayground,
+  onOpenEditor,
+  origin,
+}: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
   const { isLargeMobile } = useMediaQuery();
 
@@ -40,6 +51,14 @@ const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin, isFullPa
             iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
           >
             Code editor
+          </ButtonLink>
+          <ButtonLink
+            onClick={onOpenPlayground}
+            type="secondary"
+            ariaExpanded={isPlaygroundOpened}
+            iconRight={isPlaygroundOpened ? <ChevronUp /> : <ChevronDown />}
+          >
+            Playground
           </ButtonLink>
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">

@@ -4,7 +4,9 @@ import styled, { css } from "styled-components";
 import Editor from "./components/Editor";
 import Frame from "./components/Frame";
 import Board from "./components/Board";
+import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
+import { transform } from "./helpers";
 
 import { Props as InitialProps } from ".";
 
@@ -27,19 +29,28 @@ const StyledWrapperFrame = styled.div<{ width: number }>`
   `}
 `;
 
+export interface Knob {
+  component: string;
+  defaultValue: string;
+  name: string;
+  type: string;
+}
+
 interface Props extends InitialProps {
   code: string;
-  origin: string;
+  example: string;
   fullPageExampleId?: string;
   isFullPage?: boolean;
+  knobs: Knob[];
   onChangeCode: (code: string) => void;
-  example: string;
+  origin: string;
 }
 
 const Example = ({
   code,
   origin,
   exampleId,
+  knobs,
   fullPageExampleId,
   minHeight,
   maxHeight,
@@ -49,8 +60,16 @@ const Example = ({
   example,
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+
+  const handleKnobChange = React.useCallback(
+    knob => {
+      onChangeCode(transform(example, knob));
+    },
+    [example, onChangeCode],
+  );
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
@@ -68,12 +87,21 @@ const Example = ({
       <Board
         exampleId={fullPageExampleId}
         isEditorOpened={isEditorOpened}
+        isPlaygroundOpened={isPlaygroundOpened}
         isFullPage={isFullPage}
-        onOpenEditor={() => setOpenEditor(prev => !prev)}
+        onOpenEditor={() => {
+          setOpenEditor(prev => !prev);
+          setPlaygroundOpened(false);
+        }}
+        onOpenPlayground={() => {
+          setOpenEditor(false);
+          setPlaygroundOpened(prev => !prev);
+        }}
         code={code}
         origin={origin}
       />
       {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
+      {isPlaygroundOpened && <Playground onChange={handleKnobChange} knobs={knobs} />}
     </StyledWrapper>
   );
 };

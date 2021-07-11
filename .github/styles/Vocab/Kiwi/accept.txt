@@ -1,6 +1,7 @@
 Autoflow
 bitz
 [C|c]allout
+CDN
 Cmd
 composable
 composability
@@ -33,6 +34,7 @@ overcomplicate
 Pantone
 [Pp]escatarian
 Photoshop
+PNG|png
 px
 radiuses
 repos

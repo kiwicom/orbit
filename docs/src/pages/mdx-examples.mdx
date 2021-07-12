@@ -1,20 +1,17 @@
 import { Meal } from "@kiwicom/orbit-components/icons";
 
-import useMdxPageTableofContents from "../hooks/useMdxPageTableofContents";
 import DocLayout from "../components/DocLayout";
 import Palette from "../components/Palette";
 
 <!-- vale off -->
 
 export default ({ children, location }) => {
-  const tableOfContents = useMdxPageTableofContents("mdx-examples");
   return (
     <DocLayout
       description="Examples of our components shared across MDX docs files."
       title="MDX examples"
       location={location}
       path="/mdx-examples/"
-      tableOfContents={tableOfContents}
     >
       {children}
     </DocLayout>

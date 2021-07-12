@@ -2,11 +2,7 @@ import React from "react";
 import Scrollspy from "react-scrollspy";
 import styled, { css } from "styled-components";
 
-export interface TocItemObject {
-  title: string;
-  url: string;
-  items?: TocItemObject[];
-}
+import { TableOfContentsItem, useTableOfContents } from "../services/table-of-contents";
 
 interface StyledAnchorProps {
   level: number;
@@ -69,48 +65,27 @@ const StyledTocListItem = styled.li<{ level: number }>`
   `};
 `;
 
-const stripOctothorpe = (string?: string) => {
-  if (!string) return "";
-  return string.replace("#", "");
-};
-
-const getTocList = (array: TocItemObject[], level = 0, activeScrollSpy: string) => {
-  const nextLevel = level + 1;
-  if (typeof array === "undefined") {
-    return [];
-  }
-  return array.map(item => (
-    <StyledTocListItem key={item.url} level={level}>
-      <StyledAnchor
-        level={level}
-        href={item.url}
-        active={activeScrollSpy === stripOctothorpe(item.url)}
-      >
-        {item.title}
-      </StyledAnchor>
-      {item.items && <ul>{getTocList(item.items, nextLevel, activeScrollSpy)}</ul>}
-    </StyledTocListItem>
-  ));
-};
-
-const getTocIds = array => {
-  return array
-    .reduce((idArray, item) => {
-      const kids = item.props.children;
-      idArray.push(stripOctothorpe(kids[0].props.href));
-      if (kids[1]) {
-        idArray.push(getTocIds(kids[1].props.children));
-      }
-      return idArray;
-    }, [])
-    .flat();
-};
-
-interface Props {
-  items: TocItemObject[];
+interface TableOfContentsTreeItem extends TableOfContentsItem {
+  items: TableOfContentsTreeItem[];
 }
 
-const TableOfContents = ({ items }: Props) => {
+const getTocContent = (tree: TableOfContentsTreeItem[], level = 0, activeScrollSpy: string) => {
+  const nextLevel = level + 1;
+  return tree.map(item => {
+    const nestedContent = getTocContent(item.items, nextLevel, activeScrollSpy);
+    return (
+      <StyledTocListItem key={item.id} level={level}>
+        <StyledAnchor level={level} href={`#${item.slug}`} active={activeScrollSpy === item.slug}>
+          {item.title}
+        </StyledAnchor>
+        {item.items && React.Children.count(nestedContent) > 0 && <ul>{nestedContent}</ul>}
+      </StyledTocListItem>
+    );
+  });
+};
+
+const TableOfContents = () => {
+  const items = useTableOfContents();
   // Set scroll state
   const [activeScrollSpy, setActiveScrollSpy] = React.useState("");
 
@@ -120,19 +95,33 @@ const TableOfContents = ({ items }: Props) => {
     }
   };
 
-  const TocContent = getTocList(items, 0, activeScrollSpy);
-  if (TocContent.length === 0) {
+  const tree = items
+    .map<TableOfContentsTreeItem>(item => ({ ...item, items: [] }))
+    .reduce<TableOfContentsTreeItem[]>((result, treeItem, index, treeItems) => {
+      const fromIndex = index + 1;
+      const toIndex = treeItems.findIndex((it, i) => i > index && it.level <= treeItem.level);
+      // eslint-disable-next-line no-param-reassign
+      treeItem.items = treeItems
+        .slice(fromIndex, toIndex === -1 ? treeItems.length : toIndex)
+        .filter(it => it.level === treeItem.level + 1);
+      if (treeItem.level === 0) result.push(treeItem);
+      return result;
+    }, []);
+
+  const tocContent = getTocContent(tree, 0, activeScrollSpy);
+
+  if (React.Children.count(tocContent) === 0) {
     return null;
   }
-  const tocIds = getTocIds(TocContent);
+
   return (
     <Scrollspy
       componentTag="div"
-      items={tocIds}
+      items={items.map(item => item.slug)}
       onUpdate={handleScrollSpyUpdate}
       currentClassName=""
     >
-      <StyledTocList>{TocContent}</StyledTocList>
+      <StyledTocList>{tocContent}</StyledTocList>
     </Scrollspy>
   );
 };

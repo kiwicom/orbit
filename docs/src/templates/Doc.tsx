@@ -4,7 +4,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import DocLayout from "../components/DocLayout";
 import { TabObject } from "../components/Tabs";
-import { TocItemObject } from "../components/TableOfContents";
 
 interface Props extends PageRendererProps {
   data: {
@@ -20,7 +19,6 @@ interface Props extends PageRendererProps {
         }>;
       };
       body: string;
-      tableOfContents: { items: TocItemObject[] };
     };
     tabs: {
       nodes: {
@@ -37,7 +35,7 @@ interface Props extends PageRendererProps {
 }
 
 export default function Doc({ data, location }: Props) {
-  const { fields, body, tableOfContents } = data.mdx;
+  const { fields, body } = data.mdx;
   const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
   const usedTabs: TabObject[] = tabs.map(tab => ({
     slug: tab.fields.slug,
@@ -50,7 +48,6 @@ export default function Doc({ data, location }: Props) {
       headerLink={fields.headerLink}
       location={location}
       path={fields.slug}
-      tableOfContents={tableOfContents.items}
       tabs={usedTabs}
       title={fields.title}
       trail={fields.trail}
@@ -74,7 +71,6 @@ export const query = graphql`
         }
       }
       body
-      tableOfContents
     }
     tabs: allMdx(
       filter: { fields: { tabCollection: { eq: $tabs } } }

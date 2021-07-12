@@ -1,9 +1,9 @@
 import React from "react";
-import { Table, TableBody, Heading } from "@kiwicom/orbit-components";
+import { Table, TableBody } from "@kiwicom/orbit-components";
 
-import HeadingWithLink from "../HeadingWithLink";
 import StatusTableHead from "./StatusTableHead";
 import StatusTableRow from "./StatusTableRow";
+import { h2 as H2 } from "../../mdx-components";
 import ComponentStatusData from "../../data/component-status.yaml";
 
 export enum Statuses {
@@ -63,11 +63,7 @@ export const ComponentStatusList = () => (
   <>
     {Object.values(Groups).map(group => (
       <React.Fragment key={group}>
-        <HeadingWithLink>
-          <Heading as="h2" type="title2">
-            {group}
-          </Heading>
-        </HeadingWithLink>
+        <H2>{group}</H2>
         <Table>
           <StatusTableHead group={group} />
           <TableBody>

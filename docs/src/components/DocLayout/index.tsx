@@ -65,7 +65,7 @@ export default function DocLayout({
   path,
   tabs,
   title,
-  trail,
+  trail = title ? [{ name: title, url: path }] : undefined,
   custom,
 }: Props) {
   const tableOfContents = useTableOfContents();

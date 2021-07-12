@@ -4,6 +4,7 @@ export type NavigationItem =
   | {
       type: "branch";
       name: string;
+      url: string;
       status?: NavigationItemStatus;
       items: Navigation;
     }

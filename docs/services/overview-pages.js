@@ -1,5 +1,5 @@
 const globby = require("globby");
-const fs = require("fs");
+const fsx = require("fs-extra");
 const yaml = require("js-yaml");
 const matter = require("gray-matter");
 const _ = require("lodash");
@@ -7,29 +7,33 @@ const path = require("path");
 
 const { omitNumbers } = require("../utils/document");
 
-function createPages(obj, slug) {
+const DOCUMENTATION_PATH = path.resolve(__dirname, "../src/documentation");
+
+// derive pages with nested pages from given object structure
+// this function can probably be simplified further
+function createPages(obj, slugPiece = "/") {
   return Object.entries(obj).map(([key, value]) => {
     if (typeof value === "object") {
-      const entirePath = [slug, key].join("/");
+      const slug = path.join(slugPiece, key, "/");
 
       if (!value.meta) {
-        if (value.type) return "";
-        return { slug: entirePath, ...value };
+        if (value.type) return null;
+        return { slug, ...value };
       }
 
       if (value.meta.type === "tabs") {
         return {
-          slug: entirePath,
+          slug,
           title: value.meta.title,
           description: value.meta.description,
         };
       }
 
-      const pages = createPages(value, entirePath).filter(Boolean);
+      const pages = createPages(value, slug).filter(Boolean);
 
       if (pages.length > 0) {
         return {
-          slug: entirePath,
+          slug,
           title: value.meta.title,
           description: value.meta.description,
           pages,
@@ -41,7 +45,7 @@ function createPages(obj, slug) {
         .filter(k => k !== "meta");
 
       return {
-        slug: entirePath,
+        slug,
         title: value.meta.title,
         pages: parsePages,
       };
@@ -51,39 +55,49 @@ function createPages(obj, slug) {
   });
 }
 
-const renderOverviewPages = (allPages, callback) => {
-  allPages.forEach(page => {
-    const { pages } = page;
-    if (!pages) return undefined;
-    callback(page);
-    return renderOverviewPages(pages, callback);
-  });
-};
-
-async function createOverviewPages(callback) {
+async function getOverviewPages() {
   const structure = {};
 
-  const files = await globby(path.join(__dirname, "../src/documentation/**/*.{yml,mdx}"));
+  // from these files we'll generate a list of pages containing nested pages in two stages
+  const files = await globby(path.join(DOCUMENTATION_PATH, "**/*.{yml,mdx}"));
 
-  files.forEach(file => {
-    const wholePath = omitNumbers(file)
-      .replace(/\.[^/.]+$/, "")
-      .split("/");
+  // first stage
+  await Promise.all(
+    files.map(async file => {
+      const { dir, name } = path.parse(file);
+      const relativePath = omitNumbers(path.relative(DOCUMENTATION_PATH, path.join(dir, name)));
 
-    const ommitedPath = wholePath.slice(wholePath.indexOf("documentation") + 1, wholePath.length);
+      if (name === "meta") {
+        const { title, type, description } = yaml.load(await fsx.readFile(file, "utf-8"));
+        _.set(structure, relativePath.split(path.sep), { title, type, description });
+      } else {
+        const { data } = matter(await fsx.readFile(file, "utf-8"));
+        _.set(structure, relativePath.split(path.sep), data);
+      }
+    }),
+  );
 
-    if (ommitedPath.includes("meta")) {
-      const { title, type, description } = yaml.load(fs.readFileSync(file));
-      _.set(structure, ommitedPath, { title, type, description });
-    } else {
-      const { data } = matter(fs.readFileSync(file, "utf-8"));
-      _.set(structure, ommitedPath, data);
-    }
-  });
+  // second stage
+  const allPages = createPages(structure);
 
-  return renderOverviewPages(createPages(structure), callback);
+  // derive overview pages by recursively looping through pages that have nested pages
+  // this way we're essentially flattening the pages to be only one level deep
+  const overviewPages = (function reduceNestedPages(pages, acc) {
+    pages.forEach(page => {
+      if (!page.pages) return;
+      acc.push({
+        ...page,
+        // keep pages nested only one level deep
+        pages: page.pages.map(p => _.omit(p, ["pages"])),
+      });
+      reduceNestedPages(page.pages, acc);
+    });
+    return acc;
+  })(allPages, []);
+
+  return overviewPages;
 }
 
 module.exports = {
-  createOverviewPages,
+  getOverviewPages,
 };

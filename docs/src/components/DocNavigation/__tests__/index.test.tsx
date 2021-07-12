@@ -48,6 +48,7 @@ describe("DocNavigation", () => {
         {
           \\"type\\": \\"branch\\",
           \\"name\\": \\"Getting started\\",
+          \\"url\\": \\"/getting-started/\\",
           \\"items\\": [
             {
               \\"type\\": \\"leaf\\",
@@ -72,10 +73,12 @@ describe("DocNavigation", () => {
         {
           \\"type\\": \\"branch\\",
           \\"name\\": \\"Components\\",
+          \\"url\\": \\"/components/\\",
           \\"items\\": [
             {
               \\"type\\": \\"branch\\",
               \\"name\\": \\"Action\\",
+              \\"url\\": \\"/components/action/\\",
               \\"items\\": [
                 {
                   \\"type\\": \\"leaf\\",
@@ -90,10 +93,12 @@ describe("DocNavigation", () => {
         {
           \\"type\\": \\"branch\\",
           \\"name\\": \\"For Kiwi.com use\\",
+          \\"url\\": \\"/kiwi-use/\\",
           \\"items\\": [
             {
               \\"type\\": \\"branch\\",
               \\"name\\": \\"Brand\\",
+              \\"url\\": \\"/kiwi-use/brand/\\",
               \\"items\\": [
                 {
                   \\"type\\": \\"leaf\\",
@@ -106,10 +111,12 @@ describe("DocNavigation", () => {
             {
               \\"type\\": \\"branch\\",
               \\"name\\": \\"Content\\",
+              \\"url\\": \\"/kiwi-use/content/\\",
               \\"items\\": [
                 {
                   \\"type\\": \\"branch\\",
                   \\"name\\": \\"Specific areas\\",
+                  \\"url\\": \\"/kiwi-use/content/specific-areas/\\",
                   \\"items\\": [
                     {
                       \\"type\\": \\"leaf\\",

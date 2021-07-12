@@ -39,7 +39,7 @@ export function groupTrails(trails: Trail[]): Navigation {
       if (!acc[name]) {
         acc[name] = { result: [] };
         if (index < trail.length - 1) {
-          acc.result.push({ type: "branch", name, items: acc[name].result });
+          acc.result.push({ type: "branch", name, url, items: acc[name].result });
         } else {
           acc.result.push({ type: "leaf", name, url, hasReactTab });
         }

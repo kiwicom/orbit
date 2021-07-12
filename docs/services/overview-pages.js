@@ -55,19 +55,6 @@ function createPages(obj, slugPiece = "/") {
   });
 }
 
-const forEachNestedPage = (pages, callback) => {
-  pages
-    .filter(page => page.pages)
-    .forEach(page => {
-      callback({
-        ...page,
-        // keep pages nested only one level deep
-        pages: page.pages.map(p => _.omit(p, ["pages"])),
-      });
-      forEachNestedPage(page.pages, callback);
-    });
-};
-
 async function getOverviewPages() {
   const structure = {};
 
@@ -93,13 +80,20 @@ async function getOverviewPages() {
   // second stage
   const allPages = createPages(structure);
 
-  const overviewPages = [];
-
   // derive overview pages by recursively looping through pages that have nested pages
   // this way we're essentially flattening the pages to be only one level deep
-  forEachNestedPage(allPages, page => {
-    overviewPages.push(page);
-  });
+  const overviewPages = (function reduceNestedPages(pages, acc) {
+    pages.forEach(page => {
+      if (!page.pages) return;
+      acc.push({
+        ...page,
+        // keep pages nested only one level deep
+        pages: page.pages.map(p => _.omit(p, ["pages"])),
+      });
+      reduceNestedPages(page.pages, acc);
+    });
+    return acc;
+  })(allPages, []);
 
   return overviewPages;
 }

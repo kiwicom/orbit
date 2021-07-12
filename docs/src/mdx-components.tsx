@@ -22,7 +22,7 @@ import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 import { getTextFromChildren } from "./utils/common";
-import { useTableOfContentsRegister } from "./components/TableOfContents";
+import { useTableOfContentsRegister } from "./services/table-of-contents";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>

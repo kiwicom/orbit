@@ -3,7 +3,8 @@ import { render, screen } from "@testing-library/react";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 import MatchMediaMock from "jest-matchmedia-mock";
 
-import TableOfContents, { TableOfContentsProvider } from "../TableOfContents";
+import TableOfContents from "../TableOfContents";
+import { TableOfContentsProvider } from "../../services/table-of-contents";
 import { h2 as H2, h3 as H3, h4 as H4, h5 as H5 } from "../../mdx-components";
 
 jest.mock("react-scrollspy", () => ({ children }) => children);

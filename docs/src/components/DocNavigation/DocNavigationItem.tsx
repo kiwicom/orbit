@@ -38,14 +38,7 @@ interface Props {
 }
 
 export default function DocNavigationItem({ devMode, currentUrl, level, item, onCollapse }: Props) {
-  const initialExpanded =
-    level === 1 &&
-    item.type === "branch" &&
-    item.items.some(it =>
-      it.type === "leaf"
-        ? currentUrl.startsWith(it.url)
-        : it.items.some(i => i.type === "leaf" && currentUrl.startsWith(i.url)),
-    );
+  const initialExpanded = level === 1 && item.type === "branch" && currentUrl.startsWith(item.url);
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const theme = useTheme();
   const firstRenderRef = React.useRef<boolean>(true);

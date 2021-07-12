@@ -1,21 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Collapse,
-  Grid,
-  Heading,
-  Hide,
-  Stack,
-  Text,
-  ThemeProvider,
-} from "@kiwicom/orbit-components";
+import { Box, Collapse, Grid, Heading, Hide, Stack, Text } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 import styled, { css } from "styled-components";
 
-import theme from "../../theme";
 import * as components from "../../mdx-components";
-import { DevModeProvider } from "../../hooks/useDevMode";
 import Head from "../Head";
 import BaseStyles from "../BaseStyles";
 import AddBookmark from "../AddBookmark";
@@ -31,7 +20,8 @@ import { BookmarkProvider } from "../../services/bookmarks";
 import DocNavigation from "../DocNavigation";
 import Breadcrumbs from "../Breadcrumbs";
 import ComponentStatus from "../ComponentStatus";
-import TableOfContents, { TocItemObject } from "../TableOfContents";
+import TableOfContents from "../TableOfContents";
+import { useTableOfContents } from "../../services/table-of-contents";
 import Tabs, { TabObject } from "../Tabs";
 import ReactExample from "../ReactExample";
 import Footer from "../Footer";
@@ -57,7 +47,6 @@ interface Props {
   location: WindowLocation;
   noElevation?: boolean;
   path: string;
-  tableOfContents?: TocItemObject[];
   tabs?: TabObject[];
   title?: string;
   trail?: Array<{
@@ -74,14 +63,13 @@ export default function DocLayout({
   location,
   noElevation,
   path,
-  tableOfContents = [],
   tabs,
   title,
   trail,
   custom,
 }: Props) {
-  const Toc = <TableOfContents items={tableOfContents} />;
-  const tocHasItems = tableOfContents?.length > 0;
+  const tableOfContents = useTableOfContents();
+  const tocHasItems = tableOfContents.length > 0;
   return (
     <>
       <Head
@@ -90,157 +78,151 @@ export default function DocLayout({
         description={description}
         path={path}
       />
-      <ThemeProvider theme={theme}>
-        <DevModeProvider>
-          <BookmarkProvider page={path} location={location}>
-            <BaseStyles />
-            <StyledWrapper>
-              <Navbar
-                location={location}
-                docNavigation={
-                  <DocNavigation
-                    currentUrl={path}
-                    onCollapse={() => {
-                      // hack for when collapsing an overflowing DocNavigationItem in Modal
-                      // causes the fixed ModalFooter to be stuck at the bottom of the screen
-                      setTimeout(() => {
-                        // causing Modal to reposition ModalFooter
-                        window.dispatchEvent(new Event("resize"));
-                      }, 70); // not sure why, but this delay is necessary (the exact threshold is 62)
-                    }}
-                  />
-                }
+      <BookmarkProvider page={path} location={location}>
+        <BaseStyles />
+        <StyledWrapper>
+          <Navbar
+            location={location}
+            docNavigation={
+              <DocNavigation
+                currentUrl={path}
+                onCollapse={() => {
+                  // hack for when collapsing an overflowing DocNavigationItem in Modal
+                  // causes the fixed ModalFooter to be stuck at the bottom of the screen
+                  setTimeout(() => {
+                    // causing Modal to reposition ModalFooter
+                    window.dispatchEvent(new Event("resize"));
+                  }, 70); // not sure why, but this delay is necessary (the exact threshold is 62)
+                }}
               />
-              <StyledMiddle>
-                <Hide
-                  block
-                  on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+            }
+          />
+          <StyledMiddle>
+            <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
+              <StyledDocNavigationWidth>
+                <StyledDocNavigationWrapper>
+                  <DocNavigation currentUrl={path} />
+                </StyledDocNavigationWrapper>
+              </StyledDocNavigationWidth>
+            </Hide>
+            <StyledMain>
+              {custom ? (
+                <StyledProse
+                  padding={
+                    noElevation
+                      ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                      : { top: "XLarge", bottom: "XXLarge", left: "XLarge", right: "XLarge" }
+                  }
+                  elevation={noElevation ? undefined : "raised"}
                 >
-                  <StyledDocNavigationWidth>
-                    <StyledDocNavigationWrapper>
-                      <DocNavigation currentUrl={path} />
-                    </StyledDocNavigationWrapper>
-                  </StyledDocNavigationWidth>
-                </Hide>
-                <StyledMain>
-                  {custom ? (
-                    <StyledProse
-                      padding={
-                        noElevation
-                          ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
-                          : { top: "XLarge", bottom: "XXLarge", left: "XLarge", right: "XLarge" }
-                      }
-                      elevation={noElevation ? undefined : "raised"}
-                    >
-                      {children}
-                    </StyledProse>
-                  ) : (
-                    <>
-                      {trail && <Breadcrumbs trail={trail} />}
-                      <Box padding={{ bottom: "medium" }}>
-                        <Stack inline align="center" spaceAfter="small">
-                          <AddBookmark />
-                          <div
-                            css={css`
-                              /* align with the bookmark icon */
-                              position: relative;
-                              top: 1px;
-                            `}
-                          >
-                            <Heading as="h1" type="title1">
-                              {title}
-                            </Heading>
-                          </div>
-                        </Stack>
-                        {description && (
-                          <Box padding={{ left: "XXLarge" }}>
-                            <Text>
-                              <StyledDescription>{description}</StyledDescription>
-                            </Text>
-                          </Box>
+                  {children}
+                </StyledProse>
+              ) : (
+                <>
+                  {trail && <Breadcrumbs trail={trail} />}
+                  <Box padding={{ bottom: "medium" }}>
+                    <Stack inline align="center" spaceAfter="small">
+                      <AddBookmark />
+                      <div
+                        css={css`
+                          /* align with the bookmark icon */
+                          position: relative;
+                          top: 1px;
+                        `}
+                      >
+                        <Heading as="h1" type="title1">
+                          {title}
+                        </Heading>
+                      </div>
+                    </Stack>
+                    {description && (
+                      <Box padding={{ left: "XXLarge" }}>
+                        <Text>
+                          <StyledDescription>{description}</StyledDescription>
+                        </Text>
+                      </Box>
+                    )}
+                  </Box>
+                  <StyledMobileOutdent>
+                    {(tabs || headerLink) && (
+                      <Box
+                        display="flex"
+                        align="end"
+                        justify={tabs && tabs.length > 0 ? "between" : "end"}
+                        tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
+                      >
+                        {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+                        {headerLink && (
+                          <Hide on={["smallMobile", "mediumMobile"]}>
+                            <HeaderButtonLink href={headerLink} />
+                          </Hide>
                         )}
                       </Box>
-                      <StyledMobileOutdent>
-                        {(tabs || headerLink) && (
-                          <Box
-                            display="flex"
-                            align="end"
-                            justify={tabs && tabs.length > 0 ? "between" : "end"}
-                            tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
-                          >
-                            {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                            {headerLink && (
-                              <Hide on={["smallMobile", "mediumMobile"]}>
-                                <HeaderButtonLink href={headerLink} />
-                              </Hide>
-                            )}
-                          </Box>
+                    )}
+                    <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
+                      {tocHasItems && (
+                        <StyledTocWrapper>
+                          <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+                            <TableOfContents />
+                          </Hide>
+                        </StyledTocWrapper>
+                      )}
+                      <StyledProse
+                        padding={
+                          noElevation
+                            ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                            : {
+                                top: "XLarge",
+                                bottom: "XXLarge",
+                                left: "XLarge",
+                                right: "XLarge",
+                              }
+                        }
+                        elevation={noElevation ? undefined : "raised"}
+                      >
+                        {headerLink && (
+                          <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
+                            <HeaderButton href={headerLink} />
+                          </Hide>
                         )}
-                        <Grid
-                          columns="1fr"
-                          tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}
+                        {tocHasItems && (
+                          <StyledMobileTocWrapper>
+                            <Hide on={["tablet", "desktop", "largeDesktop"]}>
+                              <Collapse label="Table of contents">
+                                <TableOfContents />
+                              </Collapse>
+                            </Hide>
+                          </StyledMobileTocWrapper>
+                        )}
+                        <MDXProvider
+                          components={{
+                            ...components,
+                            ComponentStatus,
+                            FancyLink,
+                            Guideline,
+                            GuidelineImages,
+                            DoImage,
+                            DontImage,
+                            GuidelinesSideBySide,
+                            Do,
+                            Dont,
+                            ImageContainer,
+                            InlineToken,
+                            ReactExample,
+                          }}
                         >
-                          {tocHasItems && (
-                            <StyledTocWrapper>
-                              <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>{Toc}</Hide>
-                            </StyledTocWrapper>
-                          )}
-                          <StyledProse
-                            padding={
-                              noElevation
-                                ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
-                                : {
-                                    top: "XLarge",
-                                    bottom: "XXLarge",
-                                    left: "XLarge",
-                                    right: "XLarge",
-                                  }
-                            }
-                            elevation={noElevation ? undefined : "raised"}
-                          >
-                            {headerLink && (
-                              <Hide on={["largeMobile", "tablet", "desktop", "largeDesktop"]}>
-                                <HeaderButton href={headerLink} />
-                              </Hide>
-                            )}
-                            {tocHasItems && (
-                              <StyledMobileTocWrapper>
-                                <Hide on={["tablet", "desktop", "largeDesktop"]}>
-                                  <Collapse label="Table of contents">{Toc}</Collapse>
-                                </Hide>
-                              </StyledMobileTocWrapper>
-                            )}
-                            <MDXProvider
-                              components={{
-                                ...components,
-                                ComponentStatus,
-                                FancyLink,
-                                Guideline,
-                                GuidelineImages,
-                                DoImage,
-                                DontImage,
-                                GuidelinesSideBySide,
-                                Do,
-                                Dont,
-                                ImageContainer,
-                                InlineToken,
-                                ReactExample,
-                              }}
-                            >
-                              {children}
-                            </MDXProvider>
-                          </StyledProse>
-                        </Grid>
-                      </StyledMobileOutdent>
-                    </>
-                  )}
-                </StyledMain>
-              </StyledMiddle>
-              <Footer hasGradient={!noElevation} />
-            </StyledWrapper>
-          </BookmarkProvider>
-        </DevModeProvider>
-      </ThemeProvider>
+                          {children}
+                        </MDXProvider>
+                      </StyledProse>
+                    </Grid>
+                  </StyledMobileOutdent>
+                </>
+              )}
+            </StyledMain>
+          </StyledMiddle>
+          <Footer hasGradient={!noElevation} />
+        </StyledWrapper>
+      </BookmarkProvider>
     </>
   );
 }

@@ -24,7 +24,7 @@ export const slugify = (str: string) => {
   return "";
 };
 
-export const getTextFromChildren = (children?: React.ReactNode) => {
+export const getTextFromChildren = (children?: React.ReactNode): string => {
   if (typeof children === "string") return children;
   if (typeof children === "number") return children.toString();
   if (Array.isArray(children)) return children.map(child => getTextFromChildren(child)).join(" ");

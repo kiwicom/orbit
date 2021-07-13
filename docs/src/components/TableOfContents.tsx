@@ -85,7 +85,7 @@ const getTocContent = (tree: TableOfContentsTreeItem[], level = 0, activeScrollS
 };
 
 const TableOfContents = () => {
-  const items = useTableOfContents();
+  const [tableOfContents, setTableOfContents] = useTableOfContents();
   // Set scroll state
   const [activeScrollSpy, setActiveScrollSpy] = React.useState("");
 
@@ -95,7 +95,7 @@ const TableOfContents = () => {
     }
   };
 
-  const tree = items
+  const tree = tableOfContents
     .map<TableOfContentsTreeItem>(item => ({ ...item, items: [] }))
     .reduce<TableOfContentsTreeItem[]>((result, treeItem, index, treeItems) => {
       const fromIndex = index + 1;
@@ -110,6 +110,12 @@ const TableOfContents = () => {
 
   const tocContent = getTocContent(tree, 0, activeScrollSpy);
 
+  React.useEffect(() => {
+    return () => {
+      setTableOfContents([]);
+    };
+  }, [setTableOfContents]);
+
   if (React.Children.count(tocContent) === 0) {
     return null;
   }
@@ -117,7 +123,7 @@ const TableOfContents = () => {
   return (
     <Scrollspy
       componentTag="div"
-      items={items.map(item => item.slug)}
+      items={tableOfContents.map(item => item.slug)}
       onUpdate={handleScrollSpyUpdate}
       currentClassName=""
     >

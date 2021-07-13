@@ -30,8 +30,7 @@ export function TableOfContentsProvider({ children }: { children: React.ReactNod
 }
 
 export function useTableOfContents() {
-  const [tableOfContents] = React.useContext(TableOfContentsContext);
-  return tableOfContents;
+  return React.useContext(TableOfContentsContext);
 }
 
 export function useTableOfContentsRegister({ title, level }: { title: string; level: number }) {

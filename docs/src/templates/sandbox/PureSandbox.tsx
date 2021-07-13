@@ -2,11 +2,11 @@ import * as React from "react";
 import { LiveProvider, LivePreview } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
-import * as Components from "@kiwicom/orbit-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 import useSandbox from "./useSandbox";
 import { getModules } from "../../components/ReactExample/helpers";
+import { PREVIEW_ID } from "../../components/ReactExample/consts";
 
 const GlobalStyle = createGlobalStyle`
   body,
@@ -27,15 +27,14 @@ const PureSandbox = ({ pathContext }) => {
     <ThemeProvider theme={defaultTheme}>
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
-        <Components.Stack justify="center" align="center">
-          <section
-            css={css`
-              padding: 30px 0;
-            `}
-          >
-            <LivePreview />
-          </section>
-        </Components.Stack>
+        <section
+          id={PREVIEW_ID}
+          css={css`
+            padding: 30px 10px;
+          `}
+        >
+          <LivePreview />
+        </section>
       </LiveProvider>
     </ThemeProvider>
   );

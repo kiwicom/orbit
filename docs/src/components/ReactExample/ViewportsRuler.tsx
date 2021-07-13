@@ -1,11 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { DEFAULT_ACTIVE, MIDDLE_CELL_IDX, MIN_WIDTH, CELL_HEIGHT } from "./consts";
-import { rangeAppend, rangeDelete, updateViewportName, isAllActive } from "./helpers";
-
-/* eslint-disable no-return-assign */
-/* eslint-disable react/no-array-index-key */
+import { QUERIES, CELL_HEIGHT } from "./consts";
 
 interface Props {
   onChangeSize: (width: number) => void;
@@ -13,62 +9,96 @@ interface Props {
 
 const StyledViewports = styled.div`
   ${({ theme }) => `
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr 320px 1fr 2fr 2fr;
+    position: relative;
+    overflow: hidden;
+    height: ${CELL_HEIGHT}px;
     border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
-    span:last-child {
+    button:first-child {
+      border-left: none;
       border-right: none;
     }
   `}
 `;
 
-const StyledCell = styled.span<{ active?: boolean; currentWidth?: number }>`
-  ${({ theme, active }) => css`
-    display: flex;
+const StyledCell = styled.button<{
+  active?: boolean;
+  currentWidth?: number;
+  width: number;
+  index: number;
+}>`
+  ${({ theme, active, width, index }) => css`
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     background: ${active && theme.orbit.paletteCloudLight};
     color: ${theme.orbit.paletteInkNormal};
-    align-items: center;
     cursor: pointer;
-    justify-content: center;
-    height: ${CELL_HEIGHT}px;
+    z-index: ${index};
+    width: ${width}px;
+    height: ${CELL_HEIGHT - 1}px;
     border-right: 1px solid ${theme.orbit.paletteCloudDark};
+    border-left: 1px solid ${theme.orbit.paletteCloudDark};
+    span {
+      visibility: ${active ? "visible" : "hidden"};
+    }
+    &:focus {
+      outline: none;
+      box-shadow: ${theme.orbit.boxShadowFixed};
+    }
   `};
 `;
 
 const ViewportsRuler = ({ onChangeSize }: Props) => {
-  const [currentWidth, setCurrentWidth] = React.useState<number>(MIN_WIDTH);
-  const [activeItems, setActiveItems] = React.useState<number[]>(DEFAULT_ACTIVE);
+  const [windowWidth, setWindowWidth] = React.useState(0);
+  const [activeIdx, setActiveIdx] = React.useState<number | null>(null);
+  const [viewports, setViewports] = React.useState<[string, number][]>([]);
+  const [visibleValue, setVisibleValue] = React.useState("smallMobile (320)");
 
-  const { current: cellsWidths } = React.useRef<number[]>([]);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const setRuler = React.useCallback(() => {
+    const currentViews = Object.entries(QUERIES)
+      .filter(([, value]) => value <= windowWidth)
+      .concat([["fullWidth", windowWidth]])
+      .reverse();
+
+    setActiveIdx(currentViews.length - 1);
+
+    setViewports(currentViews);
+  }, [setViewports, windowWidth]);
 
   React.useEffect(() => {
-    const sum = cellsWidths.filter((c, i) => activeItems[i]).reduce((a, b) => a + b, 1);
-    setCurrentWidth(sum);
-    if (onChangeSize) onChangeSize(currentWidth);
-  }, [currentWidth, onChangeSize, activeItems]);
+    if (ref && ref.current) setWindowWidth(ref.current?.clientWidth);
 
-  const updateCurr = idx => {
-    if (!activeItems[idx]) {
-      rangeAppend({ idx, callback: setActiveItems, middle: MIDDLE_CELL_IDX, arr: activeItems });
-    } else {
-      rangeDelete({ idx, callback: setActiveItems, middle: MIDDLE_CELL_IDX, arr: activeItems });
-    }
+    onChangeSize(320);
+    setRuler();
+
+    window.addEventListener("resize", setRuler);
+    return () => window.removeEventListener("resize", setRuler);
+  }, [setRuler, onChangeSize]);
+
+  const handleClick = (size: number, idx: number) => {
+    onChangeSize(size);
+    setActiveIdx(idx);
   };
 
   return (
-    <StyledViewports>
-      {new Array(7).fill(null).map((_, i) =>
-        React.createElement(
-          StyledCell,
-          {
-            key: i,
-            ref: r => (cellsWidths[i] = r && r.clientWidth),
-            onClick: () => updateCurr(i),
-            active: activeItems[i],
-          },
-          i === MIDDLE_CELL_IDX && updateViewportName(currentWidth, isAllActive(activeItems)),
-        ),
-      )}
+    <StyledViewports ref={ref}>
+      {viewports.map(([name, value], i) => (
+        <StyledCell
+          active={activeIdx === i}
+          key={name}
+          width={value}
+          index={i}
+          onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
+          onClick={() => handleClick(value, i)}
+        >
+          <span>{visibleValue}</span>
+        </StyledCell>
+      ))}
     </StyledViewports>
   );
 };

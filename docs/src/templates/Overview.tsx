@@ -30,7 +30,7 @@ const Overview = ({ location, pageContext }: Props) => {
         columns="1fr"
         gap="2rem"
         largeMobile={{ columns: "repeat(2, 1fr)" }}
-        desktop={{columns: "repeat(3, 1fr)" }}
+        desktop={{ columns: "repeat(3, 1fr)" }}
         largeDesktop={{ columns: "repeat(2, 1fr)" }}
       >
         {pages.map(page => (

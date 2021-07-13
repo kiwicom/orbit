@@ -1,7 +1,5 @@
 import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
-
-import { QUERIES } from "./consts";
+import * as Icons from "@kiwicom/orbit-components/icons";
 
 interface Scope {
   path: string;

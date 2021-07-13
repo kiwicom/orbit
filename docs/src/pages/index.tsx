@@ -11,9 +11,9 @@ import LoveItTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/love
 import SpellingCheckIcon from "@streamlinehq/streamlinehq/img/streamline-light/spelling-check-9ULReF.svg";
 import ArrangeLetterIcon from "@streamlinehq/streamlinehq/img/streamline-light/arrange-letter-4pQIv2.svg";
 import ComputerBugIcon from "@streamlinehq/streamlinehq/img/streamline-light/computer-bug-rjtzBu.svg";
-import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/conversation-chat-text-jUAzcc.svg";
 import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
+import ReadArt from "@streamlinehq/streamlinehq/img/streamline-light/read-art-DeGKsX.svg";
 
 import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
@@ -26,7 +26,7 @@ import RocketImage from "../components/RocketImage";
 import Tile from "../components/Tile";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
-import SpectrumLogo from "../images/spectrum.svg";
+import FigmaLogo from "../images/figma-logo.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
@@ -36,11 +36,9 @@ interface Props {
   location: WindowLocation;
   path: string;
 }
-
 function GatsbyLinkToButton({ href, ...props }: { href: string }) {
   return <Link to={href} {...props} />;
 }
-
 export default function Home({ location, path }: Props) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   return (
@@ -48,7 +46,7 @@ export default function Home({ location, path }: Props) {
       location={location}
       title="Orbit design system"
       description="An open source design system for your next travel project."
-      path="/"
+      path={path}
       isHome
     >
       <RocketImage />
@@ -59,7 +57,6 @@ export default function Home({ location, path }: Props) {
           width: 100%;
           max-width: ${MAX_CONTENT_WIDTH};
           margin: 0 auto;
-
           > * + * {
             margin-top: 5.25rem;
           }
@@ -77,7 +74,6 @@ export default function Home({ location, path }: Props) {
               Open source design system for your next travel project.
             </div>
           </Heading>
-
           <div
             css={css`
               margin-top: 3rem;
@@ -95,7 +91,7 @@ export default function Home({ location, path }: Props) {
                 iconRight={<ArrowRight />}
                 // @ts-expect-error asComponent has wrong type declaration
                 asComponent={GatsbyLinkToButton}
-                href="/getting-started/"
+                href="/getting-started/for-designers/"
               >
                 Get started
               </Button>
@@ -112,7 +108,6 @@ export default function Home({ location, path }: Props) {
             </Inline>
           </div>
         </>
-
         <Stack
           flex
           direction="column"
@@ -122,7 +117,7 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Components"
             linkContent="See our components"
-            href="/components/"
+            href="/components/action/button/"
             icon={<PuzzleIcon />}
           >
             Our components are a collection of interface elements that can be reused across the
@@ -131,14 +126,12 @@ export default function Home({ location, path }: Props) {
           <Tile
             title="Patterns"
             linkContent="See our patterns"
-            href="/design-patterns/"
+            href="/design-patterns/progressive-disclosure/"
             icon={<ModulePuzzleIcon />}
           >
-            Make the most of our components by using our design patterns to address common design
-            problems.
+            Missing description for patterns card.
           </Tile>
         </Stack>
-
         <div
           css={css`
             > * + * {
@@ -150,26 +143,16 @@ export default function Home({ location, path }: Props) {
           <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
             <Tile
               title="Colors"
-              linkContent="See our colors"
+              linkContent="Learn more"
               href="/foundation/color/"
               icon={<ColorBrushIcon />}
             >
-              Color is used to signal structure, highlight importance, and display different states.
+              Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile
-              title="Typography"
-              linkContent="See our typography"
-              href="foundation/typography/"
-              icon={<TypographyIcon />}
-            >
+            <Tile title="Typography" linkContent="Learn more" icon={<TypographyIcon />}>
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
-            <Tile
-              title="Spacing"
-              linkContent="See our spacing"
-              href="foundation/spacing/"
-              icon={<ExpandDiagonalIcon />}
-            >
+            <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
               Consistent spacing makes an interface more clear and easy to scan.
             </Tile>
           </Stack>
@@ -179,8 +162,8 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button href="/foundation/" size="large" circled type="primarySubtle">
-              See all items
+            <Button size="large" circled type="primarySubtle">
+              Show all items
             </Button>
           </div>
         </div>
@@ -196,27 +179,28 @@ export default function Home({ location, path }: Props) {
           <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
             <Tile
               title="Voice & tone"
-              linkContent="See our voice"
-              href="/kiwi-use/content/voice-and-tone/"
+              linkContent="Learn more"
+              href="/kiwi-use/content/specific-areas/social-media/"
               icon={<LoveItTextIcon />}
             >
               How we write at Kiwi.com.
             </Tile>
             <Tile
               title="Grammar & mechanics"
-              linkContent="See our standards"
+              linkContent="Learn more"
               href="/kiwi-use/content/grammar-and-mechanics/"
               icon={<SpellingCheckIcon />}
             >
-              Basic grammar guidelines for writing with Orbit.
+              Typography is critical for communicating the hierarchy of a page.Basic grammar
+              guidelines for writing with Orbit.
             </Tile>
             <Tile
               title="Glossary"
-              linkContent="See our terms"
+              linkContent="Learn more"
               href="/kiwi-use/content/glossary/"
               icon={<ArrangeLetterIcon />}
             >
-              A list of commonly used words and phrases in Kiwi.com products.
+              A list of most used words and phrases in Kiwi.com products.
             </Tile>
           </Stack>
           <div
@@ -225,12 +209,11 @@ export default function Home({ location, path }: Props) {
               justify-content: flex-end;
             `}
           >
-            <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
-              See all items
+            <Button size="large" circled type="primarySubtle">
+              Show all items
             </Button>
           </div>
         </div>
-
         <div
           css={css`
             margin-top: 0;
@@ -253,23 +236,22 @@ export default function Home({ location, path }: Props) {
                   secondary: "#515C6C",
                 }}
               >
-                If you find any bugs in our components, report them on Github and we’ll fix them as
-                soon as possible. It’s our highest priority to have Orbit working as expected.
+                If you found any bugs in our components, report them on Github and we'll fix them
+                asap. It's the highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
-                title="Engage with us"
-                icon={<ConversationChatTextIcon />}
-                href="https://spectrum.chat/orbit"
-                linkContent="Go to Spectrum chat"
-                logo={<SpectrumLogo />}
+                title="Get the Figma library"
+                icon={<ReadArt />}
+                href="https://www.figma.com/@orbitbykiwi"
+                linkContent="Go to Figma profile"
+                logo={<FigmaLogo />}
                 color={{
-                  primary: "#330B94",
-                  secondary: "#7441F1",
+                  primary: "#F24E1E",
+                  secondary: "#F86D5F",
                 }}
               >
-                We aim to provide the best possible support for all designers and developers using
-                Orbit. That’s why we have an Orbit community on Spectrum – an open discussion
-                platform to get feedback from you.
+                Visit our community profile and download all of our libraries and resources for
+                free.
               </BrandedTile>
             </Stack>
             <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
@@ -277,15 +259,15 @@ export default function Home({ location, path }: Props) {
                 title="Follow us on Twitter"
                 icon={<LoveBirdIcon />}
                 href="https://twitter.com/OrbitKiwi"
-                linkContent="Follow Orbit on Twitter"
+                linkContent="Go to Orbit.kiwi's Twitter"
                 logo={<TwitterLogo />}
                 color={{
                   primary: "#0989CF",
                   secondary: "#179CE3",
                 }}
               >
-                Twitter is one of our main platforms for sharing. Everything important that is
-                happening around Orbit is published on Twitter.
+                Twitter is one of the main platform for sharing, everything important that is
+                happening around Orbit is published on Twitter
               </BrandedTile>
               <BrandedTile
                 title="Connect Orbit to Tequila"
@@ -301,7 +283,6 @@ export default function Home({ location, path }: Props) {
             </Stack>
           </Stack>
         </div>
-
         <div
           css={css`
             > * + * {

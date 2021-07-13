@@ -25,7 +25,7 @@ interface Props extends PageRendererProps {
 const Overview = ({ location, pageContext }: Props) => {
   const { slug, title, trail, pages } = pageContext;
 
-  const [tableOfContents] = useTableOfContents()
+  const tableOfContents = useTableOfContents()
 
   return (
     <DocLayout location={location} path={slug} title={title} trail={trail} noElevation>

@@ -236,8 +236,8 @@ export default function Home({ location, path }: Props) {
                   secondary: "#515C6C",
                 }}
               >
-                If you found any bugs in our components, report them on Github and we'll fix them
-                asap. It's the highest priority to have Orbit working as expected.
+                If you found any bugs in our components, report them on Github and we will fix them
+                asap. It is the highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
                 title="Get the Figma library"

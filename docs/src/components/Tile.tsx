@@ -209,7 +209,7 @@ export default function Tile({
             <TileTitle>{title}</TileTitle>
             <div
               css={css`
-                margin: 0.5rem 0 ${href ? "1.5rem" : "0"};
+                margin: 0.5rem 0 ${href ? (linkContent && "1.5rem") || "0.5rem" : "0"};
               `}
             >
               {/* wrap plain strings in a p tag and otherwise render children */}

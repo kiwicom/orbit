@@ -11,9 +11,9 @@ import LoveItTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/love
 import SpellingCheckIcon from "@streamlinehq/streamlinehq/img/streamline-light/spelling-check-9ULReF.svg";
 import ArrangeLetterIcon from "@streamlinehq/streamlinehq/img/streamline-light/arrange-letter-4pQIv2.svg";
 import ComputerBugIcon from "@streamlinehq/streamlinehq/img/streamline-light/computer-bug-rjtzBu.svg";
-import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/conversation-chat-text-jUAzcc.svg";
 import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
+import ReadArt from "@streamlinehq/streamlinehq/img/streamline-light/read-art-DeGKsX.svg";
 
 import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
@@ -26,7 +26,7 @@ import RocketImage from "../components/RocketImage";
 import Tile from "../components/Tile";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
-import SpectrumLogo from "../images/spectrum.svg";
+import FigmaLogo from "../images/figma-logo.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
@@ -257,19 +257,18 @@ export default function Home({ location, path }: Props) {
                 soon as possible. It’s our highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
-                title="Engage with us"
-                icon={<ConversationChatTextIcon />}
-                href="https://spectrum.chat/orbit"
-                linkContent="Go to Spectrum chat"
-                logo={<SpectrumLogo />}
+                title="Get the Figma library"
+                icon={<ReadArt />}
+                href="https://www.figma.com/@orbitbykiwi"
+                linkContent="Go to Figma profile"
+                logo={<FigmaLogo />}
                 color={{
-                  primary: "#330B94",
-                  secondary: "#7441F1",
+                  primary: "#D1431A",
+                  secondary: "#EC685A",
                 }}
               >
-                We aim to provide the best possible support for all designers and developers using
-                Orbit. That’s why we have an Orbit community on Spectrum – an open discussion
-                platform to get feedback from you.
+                Visit our community profile and download all of our libraries and resources for
+                free.
               </BrandedTile>
             </Stack>
             <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">

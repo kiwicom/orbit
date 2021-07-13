@@ -36,7 +36,7 @@ const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props)
             ariaExpanded={isEditorOpened}
             iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
           >
-            Code
+            Editor
           </ButtonLink>
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">

@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
   display: grid;
   min-height: 100%;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
 `;
 
 const StyledPreviewWrapper = styled.div<{ width: number }>`

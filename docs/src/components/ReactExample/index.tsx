@@ -30,7 +30,7 @@ const StyledWrapper = styled.div`
 const StyledWrapperFrame = styled.div<{ width: number }>`
   ${({ width }) => css`
     margin: 0 auto;
-    width: ${width && `${width}px`};
+    width: ${width}px;
   `}
 `;
 
@@ -70,7 +70,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   }, [setCode, code, exampleId, setOrigin]);
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
-  const getCurrentWidth = React.useCallback(size => setPreviewWidth(size), []);
+  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
@@ -79,7 +79,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
 
   return (
     <StyledWrapper>
-      <ViewportsRuler onChangeSize={getCurrentWidth} />
+      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
       <StyledWrapperFrame width={width}>
         <Frame
           origin={origin}

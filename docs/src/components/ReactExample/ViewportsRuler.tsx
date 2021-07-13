@@ -71,7 +71,7 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   }, [setViewports, windowWidth]);
 
   React.useEffect(() => {
-    if (ref && ref.current) setWindowWidth(ref.current?.clientWidth);
+    if (ref.current) setWindowWidth(ref.current?.clientWidth);
 
     onChangeSize(320);
     setRuler();

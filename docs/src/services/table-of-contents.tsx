@@ -14,7 +14,7 @@ export interface TableOfContentsItem {
 
 type SetTableOfContents = React.Dispatch<React.SetStateAction<TableOfContentsItem[]>>;
 
-const TableOfContentsContext = React.createContext<[Array<TableOfContentsItem>, SetTableOfContents]>([
+const TableOfContentsContext = React.createContext<[TableOfContentsItem[], SetTableOfContents]>([
   [],
   () => {},
 ]);

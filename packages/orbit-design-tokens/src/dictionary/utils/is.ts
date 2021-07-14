@@ -29,6 +29,14 @@ export const isNotInternal = (token: Property): boolean => !isInternal(token);
 
 export const isDeprecated = ({ deprecated }: Property): boolean => deprecated != null;
 
+export const isNotDeprecated = (prop: Property): boolean => !isDeprecated(prop);
+
+export const isGlobal = ({ attributes: { namespace } }: Property): boolean =>
+  namespace === "global";
+
+export const isComponentSpecific = ({ attributes: { namespace } }: Property): boolean =>
+  namespace === "component";
+
 const getSpacingArray = spaceArray => {
   const array = spaceArray.sort();
   return [array, array.length];

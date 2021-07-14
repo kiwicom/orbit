@@ -194,17 +194,3 @@ export const attributeJavascript = {
     return attributes;
   },
 };
-
-export const attributeDocs = {
-  name: "attribute/docs-platforms",
-  type: "attribute",
-  transformer: (prop: Property): Attributes => {
-    const { attributes } = prop;
-    const javascript = {
-      name: nameNOVCamel.transformer(prop),
-      value: valueJavascript.transformer(prop),
-    };
-    const docsPlatforms = { javascript };
-    return { docsPlatforms, ...attributes };
-  },
-};

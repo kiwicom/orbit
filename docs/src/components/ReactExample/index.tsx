@@ -7,6 +7,8 @@ import dracula from "prism-react-renderer/themes/dracula";
 
 import Frame from "./Frame";
 import Board from "./Board";
+import ViewportsRuler from "./ViewportsRuler";
+import { copyImports } from "./helpers";
 
 export type BgType = "white" | "dark" | "grid";
 
@@ -25,10 +27,18 @@ const StyledWrapper = styled.div`
   `};
 `;
 
+const StyledWrapperFrame = styled.div<{ width: number }>`
+  ${({ width }) => css`
+    margin: 0 auto;
+    width: ${width}px;
+  `}
+`;
+
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [origin, setOrigin] = React.useState("");
+  const [width, setPreviewWidth] = React.useState(0);
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -60,28 +70,26 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   }, [setCode, code, exampleId, setOrigin]);
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
+  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
-  const scopeOutput = example.fields.scope
-    .map(({ path, name: moduleName, default: isDefault }) => {
-      if (isDefault) return `import ${moduleName} from ${path}`;
-      return `import { ${moduleName} } from "${path}"`;
-    })
-    .join("\n");
-
-  const codeWithImports = [scopeOutput, example.fields.example].join("\n");
+  const imports = copyImports(example.fields.scope);
+  const codeWithImports = [imports, example.fields.example].join("\n");
 
   return (
     <StyledWrapper>
-      <Frame
-        origin={origin}
-        pageId={example.id}
-        exampleId={exampleId}
-        minHeight={minHeight}
-        maxHeight={maxHeight}
-        background={background}
-      />
+      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
+      <StyledWrapperFrame width={width}>
+        <Frame
+          origin={origin}
+          pageId={example.id}
+          exampleId={exampleId}
+          minHeight={minHeight}
+          maxHeight={maxHeight}
+          background={background}
+        />
+      </StyledWrapperFrame>
       <Board
         exampleId={exampleId}
         isEditorOpened={isEditorOpened}

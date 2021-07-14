@@ -15,6 +15,7 @@ import {
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
 
+import GitHubButton from "react-github-btn";
 import Logo from "../images/orbit-logo.svg";
 import Glyph from "../images/orbit-glyph.svg";
 import Bookmarks from "./Bookmarks";
@@ -107,10 +108,27 @@ const Navbar = ({ location, docNavigation }: Props) => {
   return (
     <StyledWrapper>
       <StyledInner>
-        <Link to="/" aria-label="Back to home page">
-          <StyledLogo width={192} height={44} />
-          <StyledLogoGlyph width={44} height={44} />
-        </Link>
+        <Stack inline shrink align="center">
+          <Link to="/" aria-label="Back to home page">
+            <StyledLogo width={192} height={44} />
+            <StyledLogoGlyph width={44} height={44} />
+          </Link>
+          <span>&sdot;</span>
+          <div
+            css={css`
+              height: 22px;
+            `}
+          >
+            <GitHubButton
+              href="https://github.com/kiwicom/orbit"
+              data-show-count
+              data-icon="star"
+              title="kiwicom/orbit"
+              aria-label="orbit github"
+            />
+          </div>
+        </Stack>
+
         <StyledRight>
           {!isHome && (
             <Button

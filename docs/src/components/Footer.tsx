@@ -25,7 +25,7 @@ const StyledFooter = styled.footer<{ hasGradient?: boolean }>`
         height: 52px;
         top: -52px;
         pointer-events: none;
-        background-image: linear-gradient(to top, #fff, transparent);
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
       }
   `}
 `;

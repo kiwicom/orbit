@@ -65,9 +65,7 @@ export const hr = () => <Separator spaceAfter="largest" />;
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
-      list-style-position: outside;
-      list-style-image: none;
-      list-style-type: decimal;
+      list-style: decimal none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {

@@ -108,26 +108,22 @@ export default function SearchModal({ onClose }: Props) {
     return item.breadcrumbs.join(" / ");
   }
 
-  const {
-    isOpen,
-    getMenuProps,
-    getInputProps,
-    getComboboxProps,
-    getItemProps,
-  } = useCombobox<SearchResult>({
-    items: results,
-    itemToString: item => (item ? getItemTitle(item) : ""),
-    defaultHighlightedIndex: 0,
-    onInputValueChange: changes => {
-      setResults(filter(documents, changes.inputValue, { key: "name" }));
+  const { getMenuProps, getInputProps, getComboboxProps, getItemProps } = useCombobox<SearchResult>(
+    {
+      items: results,
+      itemToString: item => (item ? getItemTitle(item) : ""),
+      defaultHighlightedIndex: 0,
+      onInputValueChange: changes => {
+        setResults(filter(documents, changes.inputValue, { key: "name" }));
+      },
+      onSelectedItemChange: async changes => {
+        if (changes.selectedItem) {
+          await navigate(changes.selectedItem.path);
+          onClose();
+        }
+      },
     },
-    onSelectedItemChange: async changes => {
-      if (changes.selectedItem) {
-        await navigate(changes.selectedItem.path);
-        onClose();
-      }
-    },
-  });
+  );
 
   // autofocus
   const inputRef = React.useRef<HTMLInputElement | null>(null);
@@ -176,27 +172,23 @@ export default function SearchModal({ onClose }: Props) {
                   left: 0;
                 `}
               >
-                {isOpen && (
+                {results.length > 0 && (
                   <Text as="p">
                     We found <b>{results.length} results</b> matching your search
                   </Text>
                 )}
               </div>
             </div>
-            <StyledMenu {...getMenuProps()} hasResults={isOpen && results.length > 0}>
-              {isOpen && (
-                <>
-                  {results.map((item, itemIndex) => (
-                    <StyledMenuItem key={item.path} {...getItemProps({ item, index: itemIndex })}>
-                      <div>
-                        <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
-                        <div>{item.description}</div>
-                      </div>
-                      <ChevronRight size="medium" />
-                    </StyledMenuItem>
-                  ))}
-                </>
-              )}
+            <StyledMenu {...getMenuProps()} hasResults={results.length > 0}>
+              {results.map((item, itemIndex) => (
+                <StyledMenuItem key={item.path} {...getItemProps({ item, index: itemIndex })}>
+                  <div>
+                    <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
+                    <div>{item.description}</div>
+                  </div>
+                  <ChevronRight size="medium" />
+                </StyledMenuItem>
+              ))}
             </StyledMenu>
           </ModalSection>
         </Modal>

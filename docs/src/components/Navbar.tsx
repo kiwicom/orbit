@@ -14,8 +14,8 @@ import {
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
-
 import GitHubButton from "react-github-btn";
+
 import Logo from "../images/orbit-logo.svg";
 import Glyph from "../images/orbit-glyph.svg";
 import Bookmarks from "./Bookmarks";
@@ -103,7 +103,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const isHome = location && location.pathname === "/";
   const { bookmarks } = useBookmarks();
   const [editingBookmarks, setEditingBookmarks] = React.useState<boolean>(false);
-  const [selectedBookmarks, setSelectedBookmarks] = React.useState<string[]>([]);
+  const [selectedBookmarks] = React.useState<string[]>([]);
 
   return (
     <StyledWrapper>

@@ -52,6 +52,7 @@
     "gatsby-transformer-sharp": "^3.3.0",
     "js-yaml": "^4.0.0",
     "lodash": "^4.17.21",
+    "react-github-btn": "^1.2.0",
     "react-live": "^2.2.3",
     "react-scrollspy": "^3.4.3",
     "rehype-parse": "^7.0.1",

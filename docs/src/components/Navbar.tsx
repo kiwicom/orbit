@@ -293,7 +293,8 @@ const Navbar = ({ location, docNavigation }: Props) => {
                       </ModalSection>
                     </>
                   )}
-                  <ModalFooter>
+                  {/* hiding this feature for now, we'll fully implement it later according to the design */}
+                  {/* <ModalFooter>
                     <Hide block on={["largeDesktop"]}>
                       {activeTab === "bookmarks" && editingBookmarks ? (
                         <>
@@ -352,7 +353,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         </Stack>
                       )}
                     </Hide>
-                  </ModalFooter>
+                  </ModalFooter> */}
                 </Modal>
               </div>
             </Portal>

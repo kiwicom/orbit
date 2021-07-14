@@ -14,14 +14,16 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "UA-118988244-1", // Google Analytics / GA
-        ],
-      },
-    },
+    ...(process.env.CLOUDFLARE_BUILD_ENV === "preview"
+      ? []
+      : [
+          {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+              trackingIds: ["UA-118988244-1"],
+            },
+          },
+        ]),
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",

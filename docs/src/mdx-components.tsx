@@ -122,9 +122,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
-      list-style-position: outside;
-      list-style-image: none;
-      list-style-type: disc;
+      list-style: disc none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {

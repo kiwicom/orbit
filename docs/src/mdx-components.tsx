@@ -65,7 +65,7 @@ export const hr = () => <Separator spaceAfter="largest" />;
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
-      list-style: outside none decimal;
+      list-style: decimal none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {
@@ -122,7 +122,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
-      list-style: outside none disc;
+      list-style: disc none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { rtlSpacing } from "@kiwicom/orbit-components/lib/utils/rtl";
 
-const StyledPreffix = styled.div`
+const StyledPrefix = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
@@ -16,4 +16,4 @@ const StyledPreffix = styled.div`
   }
 `;
 
-export default StyledPreffix;
+export default StyledPrefix;

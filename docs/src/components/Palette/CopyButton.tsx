@@ -1,6 +1,5 @@
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Stack, Text } from "@kiwicom/orbit-components";
 
 import CopyIcon from "../../images/icons/CopyIcon.svg";
@@ -16,16 +15,16 @@ interface CopyButtonProps {
 }
 
 const StyledButton = styled.button<ColorValueShape>`
-  ${({ colorValue }) => css`
+  ${({ colorValue, theme }) => css`
     background: ${isLight(colorValue)
-      ? defaultTokens.paletteInkNormal
-      : defaultTokens.paletteWhite};
-    padding: 0 ${defaultTokens.spaceXSmall};
-    border-radius: ${defaultTokens.borderRadiusBadge};
+      ? theme.orbit.paletteInkNormal
+      : theme.orbit.paletteWhiteNormal};
+    padding: 0 ${theme.orbit.spaceTwoX};
+    border-radius: 12px;
     text-transform: uppercase;
 
-    svg path {
-      fill: ${isLight(colorValue) ? defaultTokens.paletteWhite : defaultTokens.paletteInkNormal};
+    svg {
+      color: ${isLight(colorValue) ? theme.orbit.paletteWhiteNormal : theme.orbit.paletteInkNormal};
     }
   `}
 `;

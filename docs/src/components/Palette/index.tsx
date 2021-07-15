@@ -1,11 +1,12 @@
-import React from "react";
+import * as React from "react";
 import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Grid, Stack } from "@kiwicom/orbit-components";
 
 import ColorContainer from "./ColorContainer";
 import Switch from "../Switch";
+import findTokenAttributes from "../DesignTokens/findTokenAttributes";
+import upperFirst from "../../utils/upperFirst";
 
 export const isLight = (hex: string) => {
   const { red, green, blue } = transparentColor(hex, 100).match(
@@ -15,49 +16,54 @@ export const isLight = (hex: string) => {
   // HSP equation from http://alienryderflex.com/hsp.html
   const hsp = Math.sqrt(0.299 * (red * red) + 0.587 * (green * green) + 0.114 * (blue * blue));
 
-  if (hsp > 140) {
-    return true;
-  }
-  return false;
+  return hsp > 140;
 };
 
-export type tokenString = keyof typeof defaultTokens;
-
 interface PaletteProps {
-  colors: tokenString[];
+  colors: Array<string>;
   allowAdditional: boolean;
 }
 
-const normalizeName = (tokenName: string) =>
-  tokenName
-    .replace(/^palette/, "")
-    .replace(/^color/, "")
-    .replace(/([a-z])([A-Z])/, "$1 $2")
-    .replace("Hover", ":hover")
-    .replace("Active", ":active");
+const normalizeName = (name: Array<string>) => name.map(v => upperFirst(String(v))).join(" ");
+
+const getAdditionalColor = (name, additionalName) => {
+  const tokenName = `${name}${upperFirst(additionalName)}`;
+  const {
+    schema: { variant, subVariant },
+    value,
+  } = findTokenAttributes(tokenName);
+  return {
+    name: normalizeName([
+      variant,
+      subVariant ? normalizeName(subVariant.split("-").filter(Boolean)) : null,
+    ]),
+    tokenName,
+    value,
+  };
+};
 
 const Palette = ({ colors, allowAdditional }: PaletteProps) => {
   const [showAdditional, setShowAdditional] = React.useState(false);
   const { isTablet } = useMediaQuery();
   const switchShowAdditional = () => {
-    setShowAdditional(!showAdditional);
+    setShowAdditional(prev => !prev);
   };
 
-  const colorsWithToken = colors.map(color => ({
-    name: normalizeName(color),
-    tokenName: color,
-    value: defaultTokens[color],
-    hover: {
-      name: normalizeName(`${color}Hover`),
-      tokenName: `${color}Hover`,
-      value: defaultTokens[`${color}Hover`],
-    },
-    active: {
-      name: normalizeName(`${color}Active`),
-      tokenName: `${color}Active`,
-      value: defaultTokens[`${color}Active`],
-    },
-  }));
+  const colorsWithToken = colors.map(color => {
+    const {
+      schema: { variant, subVariant },
+      value,
+    } = findTokenAttributes(color);
+
+    return {
+      name: normalizeName([variant, subVariant]),
+      tokenName: color,
+      value,
+      secondary: getAdditionalColor(color, "secondary"),
+      tertiary: getAdditionalColor(color, "tertiary"),
+    };
+  });
+
   return (
     <Stack spacing="none">
       {allowAdditional && (
@@ -72,25 +78,22 @@ const Palette = ({ colors, allowAdditional }: PaletteProps) => {
           if (indexNumber === allColors.length - 1) return "last";
           return "middle";
         };
-        const hasAdditional = obj => {
-          if (obj.hover.value || obj.active.value) return true;
-          return false;
-        };
+
         return (
           <Grid
             key={color.tokenName}
-            columns={showAdditional && color.hover.value && isTablet ? "1fr 1fr 1fr" : "1fr"}
+            columns={showAdditional && color.secondary.value && isTablet ? "1fr 1fr 1fr" : "1fr"}
           >
             <ColorContainer
               color={color}
               order={determineOrder(index)}
-              full={!showAdditional || !hasAdditional(color)}
+              full={!showAdditional || !(color?.secondary?.value || color?.tertiary.value)}
               left={showAdditional}
             />
-            {showAdditional && color.hover.value && <ColorContainer color={color.hover} />}
-            {showAdditional && color.active.value && (
+            {showAdditional && color.secondary.value && <ColorContainer color={color.secondary} />}
+            {showAdditional && color.tertiary.value && (
               <ColorContainer
-                color={color.active}
+                color={color.tertiary}
                 order={determineOrder(index)}
                 right={showAdditional}
               />

@@ -5,7 +5,7 @@ import { Stack } from "@kiwicom/orbit-components";
 
 import CopyButton from "./CopyButton";
 
-import { isLight, tokenString } from ".";
+import { isLight } from ".";
 
 interface BorderingProps {
   order?: "first" | "middle" | "last" | "only";
@@ -23,8 +23,8 @@ const CopyWrapper = styled.div<ColorValueShape>`
     background: linear-gradient(90deg, transparent, ${colorValue} 27%);
     position: absolute;
     bottom: 20px;
-    right: ${theme.orbit.spaceLarge};
-    padding-left: ${theme.orbit.spaceXLarge};
+    right: ${theme.orbit.spaceSixX};
+    padding-left: ${theme.orbit.spaceEightX};
   `}
 `;
 
@@ -33,8 +33,10 @@ type ColorContainerWrapperProps = ColorValueShape & BorderingProps;
 const ColorContainerWrapper = styled.div<ColorContainerWrapperProps>`
   ${({ colorValue, full, left, order, right, theme }) => css`
     background-color: ${colorValue};
-    color: ${isLight(colorValue) ? theme.orbit.colorTextPrimary : theme.orbit.paletteWhite};
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
+    color: ${isLight(colorValue)
+      ? theme.orbit.textPrimaryForeground
+      : theme.orbit.paletteWhiteNormal};
+    padding: ${theme.orbit.spaceFourX} ${theme.orbit.spaceSixX};
     transition: ${theme.orbit.durationFast};
     position: relative;
 
@@ -46,7 +48,7 @@ const ColorContainerWrapper = styled.div<ColorContainerWrapperProps>`
     :focus,
     :active {
       transform: scale(1.01);
-      box-shadow: ${theme.orbit.boxShadowRaised};
+      box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
 
       ${CopyWrapper} {
         visibility: visible;
@@ -72,25 +74,25 @@ interface ColorNameHolderProps {
 const ColorNameHolder = styled.div<ColorNameHolderProps>`
   ${({ isMain, theme }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
-    font-size: ${theme.orbit.fontSizeTextLarge};
-    padding-bottom: ${isMain ? theme.orbit.spaceLarge : theme.orbit.spaceXSmall};
+    font-size: ${theme.orbit.fontSizeLarge};
+    padding-bottom: ${isMain ? theme.orbit.spaceSixX : theme.orbit.spaceTwoX};
   `}
 `;
 
 const ColorHexHolder = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightMedium};
-    padding-bottom: ${theme.orbit.spaceXXSmall};
+    padding-bottom: ${theme.orbit.spaceOneX};
   `}
 `;
 
 const ColorOtherTextHolder = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceOneX};
 `;
 interface ColorObjectShape {
   value: string | number;
   name: string;
-  tokenName: tokenString;
+  tokenName: string;
 }
 
 interface ColorObjectAdditionalShape {
@@ -104,12 +106,7 @@ interface ColorContainerProps extends BorderingProps {
 }
 
 const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps) => {
-  const isNormal = (name: string) => {
-    if (name.match("Normal")) {
-      return true;
-    }
-    return false;
-  };
+  const isNormal = (name: string) => !!name.match("Normal");
 
   if (typeof color.value !== "string") return null;
 

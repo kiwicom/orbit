@@ -1,7 +1,7 @@
 import * as React from "react";
 import tokensList from "@kiwicom/orbit-design-tokens/lib/docs-tokens.json";
 import componentCategories from "@kiwicom/orbit-design-tokens/lib/docs-components.json";
-import { Separator, Select, InputField, Stack, Box, Checkbox } from "@kiwicom/orbit-components";
+import { Separator, Select, InputField, Stack, Box } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
 import DesignTokensTable from "./components/DesignTokensTable";

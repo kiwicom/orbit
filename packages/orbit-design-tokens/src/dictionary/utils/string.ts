@@ -20,7 +20,7 @@ const addStringified = (condition: boolean, value: string) =>
   Second parameter is required boolean if it's needed to attach additional double quotes or not.
  */
 export const pixelized = (value: string | number, stringified = true): string => {
-  if (/^[0-9]*$/g.test(String(value)) && String(value) !== "0") {
+  if (/^[-0-9]*$/g.test(String(value)) && String(value) !== "0") {
     return addStringified(stringified, `${value}px`);
   }
   return addStringified(stringified, String(value));
@@ -33,9 +33,10 @@ export const pixelized = (value: string | number, stringified = true): string =>
 export const flattenSpacing = (
   name: string,
   spacing: { [key: string]: Property },
+  valueGetter: (prop: Property) => Value = getValue,
 ): Array<Value> => {
   const spaceArr = Object.keys(spacing).sort();
-  const spacingValues = spaceArr.map(k => getValue(spacing[k]));
+  const spacingValues = spaceArr.map(k => valueGetter(spacing[k]));
   if (isSpacingWithTwoValues(spaceArr)) {
     const [leftRight, topBottom] = spacingValues;
     return [topBottom, leftRight];

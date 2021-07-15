@@ -8,19 +8,23 @@
     "font-size": {
       "small": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.font-size.small}"
       },
       "normal": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.font-size.normal}"
       },
       "large": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.font-size.large}"
       },
       "text": {
         "small": {
           "type": "size",
+          "category": "typography",
           "value": "{foundation.font-size.small}",
           "deprecated": true,
           "deprecated-replace": "{global.font-size.small}",
@@ -28,6 +32,7 @@
         },
         "normal": {
           "type": "size",
+          "category": "typography",
           "value": "{foundation.font-size.normal}",
           "deprecated": true,
           "deprecated-replace": "{global.font-size.normal}",
@@ -35,6 +40,7 @@
         },
         "large": {
           "type": "size",
+          "category": "typography",
           "value": "{foundation.font-size.large}",
           "deprecated": true,
           "deprecated-replace": "{global.font-size.large}",
@@ -45,24 +51,29 @@
     "line-height": {
       "small": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.small}"
       },
       "normal": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.normal}"
       },
       "large": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.large}"
       },
       "text": {
         "type": "size",
+        "category": "typography",
         "value": 1.4,
         "deprecated": true,
         "deprecated-version": "1.0.0"
       },
       "text-small": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.small}",
         "deprecated": true,
         "deprecated-replace": "{global.line-height.small}",
@@ -70,6 +81,7 @@
       },
       "text-normal": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.normal}",
         "deprecated": true,
         "deprecated-replace": "{global.line-height.normal}",
@@ -77,6 +89,7 @@
       },
       "text-large": {
         "type": "size",
+        "category": "typography",
         "value": "{foundation.line-height.large}",
         "deprecated": true,
         "deprecated-replace": "{global.line-height.large}",
@@ -86,14 +99,17 @@
     "font-weight": {
       "normal": {
         "type": "font-weight",
+        "category": "typography",
         "value": "{foundation.font-weight.normal}"
       },
       "medium": {
         "type": "font-weight",
+        "category": "typography",
         "value": "{foundation.font-weight.medium}"
       },
       "bold": {
         "type": "font-weight",
+        "category": "typography",
         "value": "{foundation.font-weight.bold}"
       }
     }

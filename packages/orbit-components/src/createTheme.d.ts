@@ -1,3 +1,5 @@
 import type { CreateTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
 
-export default CreateTheme;
+declare const createTheme: CreateTheme;
+
+export default createTheme;

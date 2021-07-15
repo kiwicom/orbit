@@ -3,7 +3,14 @@ import _ from "lodash";
 
 import registerTransforms from "./transforms";
 import registerFormatters from "./formatters";
-import { isInternal, isNotInternal, isDeprecated } from "./utils/is";
+import {
+  isInternal,
+  isNotInternal,
+  isDeprecated,
+  isNotDeprecated,
+  isGlobal,
+  isComponentSpecific,
+} from "./utils/is";
 
 const build = () => {
   registerFormatters(StyleDictionary);
@@ -38,7 +45,7 @@ const build = () => {
   });
   StyleDictionary.registerTransformGroup({
     name: "json/documentation-tokens",
-    transforms: ["attribute/nov", "name/nov/camel", "attribute/docs-platforms"],
+    transforms: ["attribute/nov", "name/nov/camel"],
   });
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],
@@ -62,6 +69,16 @@ const build = () => {
             destination: "docs-tokens.json",
             format: "json/documentation-tokens",
             filter: isNotInternal,
+          },
+          {
+            destination: "docs-categories.json",
+            format: "json/documentation-categories",
+            filter: _.overEvery([isNotInternal, isNotDeprecated, isGlobal]),
+          },
+          {
+            destination: "docs-components.json",
+            format: "json/documentation-categories",
+            filter: _.overEvery([isNotInternal, isNotDeprecated, isComponentSpecific]),
           },
         ],
       },

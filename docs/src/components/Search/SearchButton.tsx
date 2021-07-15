@@ -36,7 +36,7 @@ const KeyboardShortcuts = () => {
       <Stack inline spacing="XXSmall" align="center">
         <StyledIcon>{os === "mac" ? <>&#8984;</> : "Alt"}</StyledIcon>
         <span>+</span>
-        <StyledIcon>&#107;</StyledIcon>
+        <StyledIcon>&#75;</StyledIcon>
       </Stack>
     </StyledWrapper>
   );

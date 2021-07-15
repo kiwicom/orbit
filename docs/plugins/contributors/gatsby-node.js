@@ -52,7 +52,12 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
         ...(await prettier.resolveConfig(__dirname)),
         parser: "json",
       });
-      await fs.writeFile(path.join(__dirname, "fetchedUsers.json"), fetchedUsersContent);
+
+      const fetched = path.join(__dirname, "fetchedUsers.json");
+
+      if (JSON.stringify(users) !== fs.readFileSync(fetched, "utf-8")) {
+        await fs.writeFile(fetched, fetchedUsersContent);
+      }
 
       staticData.concat(users).forEach(u => {
         return createNode({

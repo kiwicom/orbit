@@ -20,6 +20,7 @@ import onlyIE from "../utils/onlyIE";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
+import useLockScrolling from "../hooks/useLockScrolling";
 
 import type { Instance, Props } from "./index";
 
@@ -384,6 +385,9 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       },
       [scrollingElementRef],
     );
+
+    useLockScrolling(scrollingElement);
+
     const modalContentRef = React.useCallback(
       node => {
         modalContent.current = node;

@@ -84,7 +84,7 @@ const build = () => {
       },
       "json/old-output": {
         transformGroup: "json/documentation-tokens",
-        buildPath: "output/",
+        buildPath: "src/theo/",
         files: [
           {
             destination: "theo-spec.json",

@@ -82,6 +82,17 @@ const build = () => {
           },
         ],
       },
+      "json/old-output": {
+        transformGroup: "json/documentation-tokens",
+        buildPath: "output/",
+        files: [
+          {
+            destination: "theo-spec.json",
+            format: "json/old-output",
+            filter: isNotInternal,
+          },
+        ],
+      },
       "javascript/foundation": {
         transformGroup: "javascript/foundation",
         buildPath: "src/js/",

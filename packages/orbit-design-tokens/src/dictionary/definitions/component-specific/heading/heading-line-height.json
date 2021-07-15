@@ -47,6 +47,7 @@
     "line-height": {
       "heading": {
         "value": 1.2,
+        "type": "line-height",
         "deprecated": true,
         "deprecated-version": "1.0.0"
       },

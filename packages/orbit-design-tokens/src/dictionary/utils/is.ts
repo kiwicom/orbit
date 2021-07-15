@@ -23,6 +23,8 @@ export const isDuration = (prop: Property): boolean => isTypeOf(prop, "duration"
 
 export const isOpacity = (prop: Property): boolean => isTypeOf(prop, "opacity");
 
+export const isTextDecoration = (prop: Property): boolean => isTypeOf(prop, "text-decoration");
+
 export const isInternal = ({ internal }: Property): boolean => !!internal;
 
 export const isNotInternal = (token: Property): boolean => !isInternal(token);

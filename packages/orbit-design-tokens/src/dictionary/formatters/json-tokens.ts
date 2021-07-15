@@ -197,11 +197,12 @@ const jsonOldOutput = {
   name: "json/old-output",
   formatter: ({ allProperties }: { allProperties: Property[] }): string => {
     const props = allProperties.map(prop => {
-      const { type, name } = prop;
+      const { name } = prop;
+      const value = resolveJavascriptValue(prop);
       return {
         [name]: {
-          value: resolveJavascriptValue(prop),
-          type,
+          value,
+          type: typeof value,
           category: getTokenCategory(prop),
         },
       };

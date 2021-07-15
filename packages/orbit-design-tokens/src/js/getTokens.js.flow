@@ -1,0 +1,7 @@
+// @flow
+import type { Tokens } from "./createTokens.js.flow";
+import type { CustomFoundation } from "./defaultFoundation.js.flow";
+
+export type GetTokens = (foundation: CustomFoundation) => Tokens;
+
+declare export default GetTokens;

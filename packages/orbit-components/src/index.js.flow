@@ -1,5 +1,7 @@
 // @flow
-import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
+import type { GetTokens } from "@kiwicom/orbit-design-tokens/lib/js/getTokens";
+import type { CreateTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
+import type { FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/js/fromPlainObject";
 
 import type { Theme } from "./defaultTheme";
 import typeof AccordionSectionType from "./Accordion/AccordionSection";
@@ -260,6 +262,7 @@ declare export var Translate: TranslateType;
 declare export var defaultTheme: Theme;
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
+declare export var createTheme: CreateTheme;
 
 declare export var mediaQueries: mediaQueriesType;
 declare export var useMediaQuery: useMediaQueryType;

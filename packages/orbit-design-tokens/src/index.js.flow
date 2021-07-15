@@ -1,8 +1,13 @@
 // @flow
 import type { CreateTheme } from "./js/createTheme.js.flow";
+import type { GetTokens } from "./js/getTokens.js.flow";
 import type { FromPlainObject } from "./js/fromPlainObject.js.flow";
 import type { Tokens } from "./js/createTokens.js.flow";
+import type { ConvertHexToRgba } from "./js/convertHexToRgba.js.flow";
 
 declare export var fromPlainObject: FromPlainObject;
 declare export var createTheme: CreateTheme;
+declare export var getTokens: GetTokens;
+declare export var convertHexToRgba: ConvertHexToRgba;
 declare export var defaultTheme: Tokens;
+declare export var defaultTokens: Tokens;

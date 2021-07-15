@@ -220,7 +220,7 @@ export default function DocLayout({
               )}
             </StyledMain>
           </StyledMiddle>
-          <Footer hasGradient={!noElevation} />
+          <Footer hasGradient />
         </StyledWrapper>
       </BookmarkProvider>
     </>

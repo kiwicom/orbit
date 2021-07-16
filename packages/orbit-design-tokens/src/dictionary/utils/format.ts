@@ -4,6 +4,9 @@ const getParserOption = platform => {
   if (platform === "typescript") {
     return "typescript";
   }
+  if (platform === "css") {
+    return "css";
+  }
   // https://prettier.io/docs/en/options.html#parser
   // doesn't matter for flow or javascript
   return "babel";

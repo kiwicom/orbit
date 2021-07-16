@@ -7,55 +7,19 @@ import {
   isBoxShadow,
   isBreakpoint,
   isColor,
-  isDuration,
-  isOpacity,
   isSize,
   isSpacing,
   isZIndex,
   isTextDecoration,
 } from "../utils/is";
 import { falsyString, flattenSpacing, pixelized } from "../utils/string";
-import transparentColor from "../../js/transparentColor";
+import { resolveValue } from "./helpers";
 
 const getDeprecatedToken = deprecatedToken => {
   if (deprecatedToken) {
     return deprecatedToken.name;
   }
   return null;
-};
-
-const resolveJavascriptValue = prop => {
-  const { name, attributes, value } = prop;
-  if (isSpacing(prop)) {
-    const { spacing } = attributes;
-    return flattenSpacing(name, spacing)
-      .map(v => pixelized(v, false))
-      .join(" ");
-  }
-  if (isBoxShadow(prop)) {
-    /*
-      TODO: this could be united, doubled implementation on more places (how to get the values, and how to flatten them)
-     */
-    const { "box-shadow": boxShadow } = attributes;
-    const boxShadowArray = Array.isArray(boxShadow) ? boxShadow : [boxShadow];
-    return boxShadowArray
-      .map(def => {
-        const { x, y, blur, spread, color, opacity, inset } = def;
-        const dimensions = [x, y, blur, spread].map(val => pixelized(val, false));
-        const colorValue = opacity ? transparentColor(String(getValue(color)), opacity) : color;
-        return [inset && "inset", ...dimensions, colorValue].filter(Boolean).join(" ");
-      })
-      .join(", ");
-  }
-  const finalValue = getValue(prop);
-  /*
-    TODO: we could maybe use transformers here, so it's not doubled
-   */
-  if (isSize(prop)) return pixelized(finalValue, false);
-  if (isOpacity(prop)) return String(Number(finalValue) / 100);
-  if (isDuration(prop)) return String(`${Number(finalValue) / 1000}s`);
-  if (isBorderRadius(prop)) return pixelized(finalValue, false);
-  return getValue(value);
 };
 
 const foundationAliasValueGetter = (value: Property) => {
@@ -115,13 +79,15 @@ const resolveFoundationValue = prop => {
   return "none";
 };
 
-const getAndResolveValue = (platform, prop) => {
-  if (platform === "javascript") return resolveJavascriptValue(prop);
+const getAndResolveValue = (prop, platform) => {
   if (platform === "foundation") return resolveFoundationValue(prop);
-  return null;
+  return resolveValue(prop, platform);
 };
 
-const resolvePlatformName = prop => {
+const resolvePlatformName = (prop, platform) => {
+  if (platform === "scss") {
+    return `$${_.kebabCase(prop.name)}`;
+  }
   return prop.name;
 };
 
@@ -193,12 +159,12 @@ const getTokenCategory = prop => {
   return null;
 };
 
-const jsonOldOutput = {
-  name: "json/old-output",
+const jsonOld = {
+  name: "json/old",
   formatter: ({ allProperties }: { allProperties: Property[] }): string => {
     const props = allProperties.map(prop => {
       const { name } = prop;
-      const value = resolveJavascriptValue(prop);
+      const value = resolveValue(prop, "javascript");
       return {
         [name]: {
           value,
@@ -208,6 +174,20 @@ const jsonOldOutput = {
       };
     });
     return JSON.stringify({ props: Object.assign({}, ...props) }, null, 2);
+  },
+};
+
+const jsonOutputOld = {
+  name: "json/output-old",
+  formatter: ({ allProperties }: { allProperties: Property[] }): string => {
+    const props = allProperties.map(prop => {
+      const { name } = prop;
+      const value = resolveValue(prop, "javascript");
+      return {
+        [name]: value,
+      };
+    });
+    return JSON.stringify(Object.assign({}, ...props), null, 2);
   },
 };
 
@@ -223,12 +203,12 @@ const docsTokens = {
         deprecated,
         attributes: { namespace, object, variant, subVariant },
       } = prop;
-      const docsPlatforms = ["javascript", "foundation"];
+      const docsPlatforms = ["javascript", "foundation", "scss"];
       const platforms = docsPlatforms.map(platform => {
         return {
           [platform]: {
-            name: resolvePlatformName(prop),
-            value: getAndResolveValue(platform, prop),
+            name: resolvePlatformName(prop, platform),
+            value: getAndResolveValue(prop, platform),
           },
         };
       });
@@ -259,4 +239,4 @@ const docsCategories = {
   },
 };
 
-export default { jsonDeprecatedTokens, docsTokens, docsCategories, jsonOldOutput };
+export default { jsonDeprecatedTokens, docsTokens, docsCategories, jsonOld, jsonOutputOld };

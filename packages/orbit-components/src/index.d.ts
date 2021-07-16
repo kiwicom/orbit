@@ -118,5 +118,8 @@ export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive/index"
 export { LinkList } from "./LinkList/index";
 export { default as Wizard, WizardStep } from "./Wizard";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
+export { default as getTokens } from "@kiwicom/orbit-design-tokens/lib/js/getTokens";
+export { default as createTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
+export { default as fromPlainObject } from "@kiwicom/orbit-design-tokens/lib/js/fromPlainObject";
 
 export { Icon } from "./Icon/index";

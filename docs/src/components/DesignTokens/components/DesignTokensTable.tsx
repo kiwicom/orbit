@@ -68,9 +68,7 @@ const DesignTokensTable = ({
   const filteredTokens = tokens
     .filter(({ name }) => name.toLowerCase().includes(filter))
     .filter(({ value }) => {
-      if (showDeprecated) {
-        return true;
-      }
+      if (showDeprecated) return true;
       return !value.deprecated;
     })
     .filter(({ value }) => {

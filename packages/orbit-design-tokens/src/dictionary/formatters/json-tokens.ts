@@ -2,7 +2,18 @@ import { Property } from "style-dictionary";
 import * as _ from "lodash";
 
 import { getValue } from "../utils/get";
-import { isBorderRadius, isBoxShadow, isDuration, isOpacity, isSize, isSpacing } from "../utils/is";
+import {
+  isBorderRadius,
+  isBoxShadow,
+  isBreakpoint,
+  isColor,
+  isDuration,
+  isOpacity,
+  isSize,
+  isSpacing,
+  isZIndex,
+  isTextDecoration,
+} from "../utils/is";
 import { falsyString, flattenSpacing, pixelized } from "../utils/string";
 import transparentColor from "../../js/transparentColor";
 
@@ -11,6 +22,107 @@ const getDeprecatedToken = deprecatedToken => {
     return deprecatedToken.name;
   }
   return null;
+};
+
+const resolveJavascriptValue = prop => {
+  const { name, attributes, value } = prop;
+  if (isSpacing(prop)) {
+    const { spacing } = attributes;
+    return flattenSpacing(name, spacing)
+      .map(v => pixelized(v, false))
+      .join(" ");
+  }
+  if (isBoxShadow(prop)) {
+    /*
+      TODO: this could be united, doubled implementation on more places (how to get the values, and how to flatten them)
+     */
+    const { "box-shadow": boxShadow } = attributes;
+    const boxShadowArray = Array.isArray(boxShadow) ? boxShadow : [boxShadow];
+    return boxShadowArray
+      .map(def => {
+        const { x, y, blur, spread, color, opacity, inset } = def;
+        const dimensions = [x, y, blur, spread].map(val => pixelized(val, false));
+        const colorValue = opacity ? transparentColor(String(getValue(color)), opacity) : color;
+        return [inset && "inset", ...dimensions, colorValue].filter(Boolean).join(" ");
+      })
+      .join(", ");
+  }
+  const finalValue = getValue(prop);
+  /*
+    TODO: we could maybe use transformers here, so it's not doubled
+   */
+  if (isSize(prop)) return pixelized(finalValue, false);
+  if (isOpacity(prop)) return String(Number(finalValue) / 100);
+  if (isDuration(prop)) return String(`${Number(finalValue) / 1000}s`);
+  if (isBorderRadius(prop)) return pixelized(finalValue, false);
+  return getValue(value);
+};
+
+const foundationAliasValueGetter = (value: Property) => {
+  if (typeof value === "object") {
+    const { namespace, object, variant, subVariant } = value.attributes;
+    return [namespace, object, variant, subVariant]
+      .filter(Boolean)
+      .map(val => _.camelCase(String(val)))
+      .join(".");
+  }
+  return getValue(value);
+};
+
+const resolveFoundationValue = prop => {
+  const { attributes } = prop;
+  if (isSpacing(prop)) {
+    const { spacing } = attributes;
+    return flattenSpacing(prop.name, spacing, foundationAliasValueGetter)
+      .map(val =>
+        !/[\d]+px/g.test(String(val)) && String(val) !== "0" ? pixelized(val, false) : val,
+      )
+      .join(" ");
+  }
+  if (isBoxShadow(prop)) {
+    const { "box-shadow": boxShadow } = attributes;
+    const boxShadowArray = Array.isArray(boxShadow) ? boxShadow : [boxShadow];
+    return boxShadowArray
+      .map(def => {
+        const { x, y, blur, spread, color, opacity, inset } = def;
+        const dimensions = [x, y, blur, spread].map(val => pixelized(val, false));
+        const colorAlias = [
+          "color",
+          "(",
+          foundationAliasValueGetter(color),
+          falsyString(opacity, `, opacity: `),
+          opacity,
+          ")",
+        ]
+          .filter(Boolean)
+          .join("");
+        return [inset && "inset", ...dimensions, colorAlias].filter(Boolean).join(" ");
+      })
+      .join(", ");
+  }
+  /*
+    TODO: this might be replaced by different solution, getting from attributes
+    Because we parse etc. everything but because of attribute/nov it's already there everything
+   */
+  if (prop.original && prop.original.value && /[{}]+/g.test(prop.original.value)) {
+    return prop.original.value
+      .match(/[^{}]+/g)[0]
+      .split(".")
+      .filter(Boolean)
+      .map(val => _.camelCase(val))
+      .join(".");
+  }
+  return "none";
+};
+
+const getAndResolveValue = (platform, prop) => {
+  if (platform === "javascript") return resolveJavascriptValue(prop);
+  if (platform === "foundation") return resolveFoundationValue(prop);
+  return null;
+};
+
+const resolvePlatformName = prop => {
+  return prop.name;
 };
 
 const jsonDeprecatedTokens = {
@@ -31,109 +143,77 @@ const jsonDeprecatedTokens = {
   },
 };
 
+const getTokenCategory = prop => {
+  const { name, category } = prop;
+  if (isColor(prop) && name.startsWith("background")) {
+    return "Background colors";
+  }
+  if (isColor(prop) && name.startsWith("borderColor")) {
+    return "Border color";
+  }
+  if (isColor(prop) && name.startsWith("palette")) {
+    return "Color palette";
+  }
+  if (name.startsWith("opacity")) {
+    return "Opacity";
+  }
+  if (isSize(prop) && category === "typography") {
+    return "Font size";
+  }
+  if (name.startsWith("fontWeight") && category === "typography") {
+    return "Font weight";
+  }
+  if (name.startsWith("lineHeight") && category === "typography") {
+    return "Line height";
+  }
+  if (isTextDecoration(prop)) {
+    return "Text decoration";
+  }
+  if (isSpacing(prop)) {
+    return "Spacing";
+  }
+  if (isBorderRadius(prop)) {
+    return "Border radius";
+  }
+  if (isZIndex(prop)) {
+    return "Z Index";
+  }
+  if (isBoxShadow(prop)) {
+    return "Box shadow";
+  }
+  if (isSize(prop)) {
+    return "Size (width, height)";
+  }
+  if (isBreakpoint(prop)) {
+    return "Breakpoints";
+  }
+  if (isColor(prop)) {
+    return "Colors";
+  }
+  return null;
+};
+
+const jsonOldOutput = {
+  name: "json/old-output",
+  formatter: ({ allProperties }: { allProperties: Property[] }): string => {
+    const props = allProperties.map(prop => {
+      const { name } = prop;
+      const value = resolveJavascriptValue(prop);
+      return {
+        [name]: {
+          value,
+          type: typeof value,
+          category: getTokenCategory(prop),
+        },
+      };
+    });
+    return JSON.stringify({ props: Object.assign({}, ...props) }, null, 2);
+  },
+};
+
 const docsTokens = {
   name: "json/documentation-tokens",
   formatter: ({ allProperties }: { allProperties: Property[] }): string => {
-    const resolveJavascriptValue = prop => {
-      const { name, attributes, value } = prop;
-      if (isSpacing(prop)) {
-        const { spacing } = attributes;
-        return flattenSpacing(name, spacing)
-          .map(v => pixelized(v, false))
-          .join(" ");
-      }
-      if (isBoxShadow(prop)) {
-        /*
-          TODO: this could be united, doubled implementation on more places (how to get the values, and how to flatten them)
-         */
-        const { "box-shadow": boxShadow } = attributes;
-        const boxShadowArray = Array.isArray(boxShadow) ? boxShadow : [boxShadow];
-        return boxShadowArray
-          .map(def => {
-            const { x, y, blur, spread, color, opacity, inset } = def;
-            const dimensions = [x, y, blur, spread].map(val => pixelized(val, false));
-            const colorValue = opacity ? transparentColor(String(getValue(color)), opacity) : color;
-            return [inset && "inset", ...dimensions, colorValue].filter(Boolean).join(" ");
-          })
-          .join(", ");
-      }
-      const finalValue = getValue(prop);
-      /*
-        TODO: we could maybe use transformers here, so it's not doubled
-       */
-      if (isSize(prop)) return pixelized(finalValue, false);
-      if (isOpacity(prop)) return String(Number(finalValue) / 100);
-      if (isDuration(prop)) return String(`${Number(finalValue) / 1000}s`);
-      if (isBorderRadius(prop)) return pixelized(finalValue, false);
-      return getValue(value);
-    };
-
-    const foundationAliasValueGetter = (value: Property) => {
-      if (typeof value === "object") {
-        const { namespace, object, variant, subVariant } = value.attributes;
-        return [namespace, object, variant, subVariant]
-          .filter(Boolean)
-          .map(val => _.camelCase(String(val)))
-          .join(".");
-      }
-      return getValue(value);
-    };
-
-    const resolveFoundationValue = prop => {
-      const { attributes } = prop;
-      if (isSpacing(prop)) {
-        const { spacing } = attributes;
-        return flattenSpacing(prop.name, spacing, foundationAliasValueGetter)
-          .map(val =>
-            !/[\d]+px/g.test(String(val)) && String(val) !== "0" ? pixelized(val, false) : val,
-          )
-          .join(" ");
-      }
-      if (isBoxShadow(prop)) {
-        const { "box-shadow": boxShadow } = attributes;
-        const boxShadowArray = Array.isArray(boxShadow) ? boxShadow : [boxShadow];
-        return boxShadowArray
-          .map(def => {
-            const { x, y, blur, spread, color, opacity, inset } = def;
-            const dimensions = [x, y, blur, spread].map(val => pixelized(val, false));
-            const colorAlias = [
-              "color",
-              "(",
-              foundationAliasValueGetter(color),
-              falsyString(opacity, `, opacity: `),
-              opacity,
-              ")",
-            ]
-              .filter(Boolean)
-              .join("");
-            return [inset && "inset", ...dimensions, colorAlias].filter(Boolean).join(" ");
-          })
-          .join(", ");
-      }
-      /*
-        TODO: this might be replaced by different solution, getting from attributes
-        Because we parse etc. everything but because of attribute/nov it's already there everything
-       */
-      if (prop.original && prop.original.value && /[{}]+/g.test(prop.original.value)) {
-        return prop.original.value
-          .match(/[^{}]+/g)[0]
-          .split(".")
-          .filter(Boolean)
-          .map(val => _.camelCase(val))
-          .join(".");
-      }
-      return "none";
-    };
-
-    const getAndResolveValue = (platform, prop) => {
-      if (platform === "javascript") return resolveJavascriptValue(prop);
-      if (platform === "foundation") return resolveFoundationValue(prop);
-      return null;
-    };
-
-    const resolvePlatformName = prop => {
-      return prop.name;
-    };
     const tokens = allProperties.map(prop => {
       const {
         type,
@@ -179,4 +259,4 @@ const docsCategories = {
   },
 };
 
-export default { jsonDeprecatedTokens, docsTokens, docsCategories };
+export default { jsonDeprecatedTokens, docsTokens, docsCategories, jsonOldOutput };

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import styled from "styled-components";
 import { Truncate, Tooltip } from "@kiwicom/orbit-components";
 import { Check } from "@kiwicom/orbit-components/icons";

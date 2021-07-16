@@ -20,7 +20,7 @@ export const isLight = (hex: string) => {
 };
 
 interface PaletteProps {
-  colors: Array<string>;
+  colors: string[];
   allowAdditional: boolean;
 }
 

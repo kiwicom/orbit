@@ -62,7 +62,7 @@ const GlobalDesignTokens = () => {
   const [filter, setFilter] = React.useState<string>("");
   const [showDeprecated, setShowDeprecated] = React.useState<boolean>(false);
   const [platform, setPlatform] = React.useState<keyof typeof Platforms>("javascript");
-  const [selectedCategories, setSelectedCategories] = React.useState<Array<string>>([]);
+  const [selectedCategories, setSelectedCategories] = React.useState<string[]>([]);
 
   const handleSelectCategory = name => {
     if (selectedCategories.includes(name)) {
@@ -114,8 +114,7 @@ const GlobalDesignTokens = () => {
         onChange={handleSelectCategory}
       />
       <Separator />
-      {Object.keys(globalTokens).map(category => {
-        const value = globalTokens[category];
+      {Object.entries(globalTokens).map(([category, value]) => {
         if (
           Array.isArray(value) &&
           category in GlobalCategories &&

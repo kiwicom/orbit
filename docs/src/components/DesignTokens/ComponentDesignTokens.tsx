@@ -43,7 +43,7 @@ const componentTokens = Object.assign(
   }),
 );
 
-const GlobalDesignTokens = () => {
+const ComponentDesignTokens = () => {
   const [filter, setFilter] = React.useState<string>("");
   const [platform, setPlatform] = React.useState<keyof typeof Platforms>("javascript");
   const debouncedFilter = useDebounce(filter, 300);
@@ -73,8 +73,7 @@ const GlobalDesignTokens = () => {
         </Box>
       </Stack>
       <Separator />
-      {Object.keys(componentTokens).map(category => {
-        const value = componentTokens[category];
+      {Object.entries(componentTokens).map(([category, value]) => {
         if (Array.isArray(value)) {
           const name = `${camelCase(category)} tokens`;
           return (
@@ -93,4 +92,4 @@ const GlobalDesignTokens = () => {
   );
 };
 
-export default GlobalDesignTokens;
+export default ComponentDesignTokens;

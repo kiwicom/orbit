@@ -133,7 +133,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
 
       if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
         documentTrail = getDocumentTrail(node.fields.slug);
-      } else if (node?.fields?.slug) {
+      } else {
         documentTrail = getDocumentTrail(getParentUrl(node.fields.slug));
         documentTrail.push({
           name: node.frontmatter.title,

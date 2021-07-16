@@ -9,7 +9,7 @@ import camelCase from "../../utils/camelCase";
 import { Platforms, Token } from "./typings";
 
 // @ts-expect-error force type because Object.entries makes the value unknown
-const allTokens: Array<Token> = Object.entries(tokensList).map(([name, value]) => ({
+const allTokens: Token[] = Object.entries(tokensList).map(([name, value]) => ({
   name,
   value,
 }));

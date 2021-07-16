@@ -42,7 +42,7 @@ const DesignTokensTable = ({
   tableName,
   showVariantColumn,
 }: {
-  tokens: Array<Token>;
+  tokens: Token[];
   filter: string;
   platform: keyof typeof Platforms;
   showDeprecated?: boolean;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { Grid, Stack } from "@kiwicom/orbit-components";

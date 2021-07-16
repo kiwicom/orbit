@@ -1,6 +1,7 @@
 // @noflow
 
 module.exports = {
+  diffingEngine: "looks-same",
   configurations: {
     "chrome.laptop": {
       target: "chrome.docker",

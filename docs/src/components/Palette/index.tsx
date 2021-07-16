@@ -24,7 +24,7 @@ interface PaletteProps {
   allowAdditional: boolean;
 }
 
-const normalizeName = (name: Array<string>) => name.map(v => upperFirst(String(v))).join(" ");
+const normalizeName = (name: string[]) => name.map(v => upperFirst(String(v))).join(" ");
 
 const getAdditionalColor = (name, additionalName) => {
   const tokenName = `${name}${upperFirst(additionalName)}`;

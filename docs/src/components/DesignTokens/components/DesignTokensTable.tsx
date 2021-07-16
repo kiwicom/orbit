@@ -49,7 +49,7 @@ const DesignTokensTable = ({
   tableName: string;
   showVariantColumn?: boolean;
 }) => {
-  const [variantFilterValue, setVariantFilterValue] = React.useState<Array<string>>([]);
+  const [variantFilterValue, setVariantFilterValue] = React.useState<string[]>([]);
 
   const handleVariantSelection = name => {
     if (variantFilterValue.includes(name)) {

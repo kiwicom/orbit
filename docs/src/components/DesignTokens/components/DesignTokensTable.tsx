@@ -66,7 +66,7 @@ const DesignTokensTable = ({
     .map(v => ({ key: v, name: camelCase(v) }));
 
   const filteredTokens = tokens
-    .filter(({ name }) => name.toLowerCase().indexOf(filter) !== -1)
+    .filter(({ name }) => name.toLowerCase().includes(filter))
     .filter(({ value }) => {
       if (showDeprecated) {
         return true;

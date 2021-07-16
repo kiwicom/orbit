@@ -7,7 +7,7 @@ const OptionsFilter = ({
   label,
   onChange,
 }: {
-  value: Array<string>;
+  value: string[];
   label?: string;
   options: Array<{ key: string; name: string }>;
   onChange: (key: string) => void;

@@ -2,6 +2,7 @@
 import * as React from "react";
 import { css } from "styled-components";
 
+import getSpacingToken from "../../../common/getSpacingToken/index";
 import getViewportIEGridStyles from "./getViewportIEGridStyles";
 import getDisplay from "./getDisplay";
 import type { GetViewportGridStyles } from "./getViewportGridStyles";
@@ -10,7 +11,12 @@ import type { GetViewportGridStyles } from "./getViewportGridStyles";
   in some mediaQuery, so we need to render IE compatible format once again and we need to know to gaps
   Also we want to render only own gaps into CSS
  */
-const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices }) => props => {
+const getViewportGridStyles: GetViewportGridStyles = ({
+  viewport,
+  index,
+  devices,
+  theme,
+}) => props => {
   if (props[viewport]) {
     const { inline, maxWidth, gap, columnGap, rowGap, rows, columns, width } = props[viewport];
     const compatibleIE = getViewportIEGridStyles(
@@ -29,6 +35,7 @@ const getViewportGridStyles: GetViewportGridStyles = ({ viewport, index, devices
       grid-column-gap: ${columnGap};
       grid-row-gap: ${rowGap};
       grid-gap: ${gap};
+      margin-bottom: ${getSpacingToken({ spaceAfter: props.spaceAfter, theme })};
       ${compatibleIE};
     `;
   }

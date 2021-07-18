@@ -47,6 +47,14 @@ const build = () => {
     name: "json/documentation-tokens",
     transforms: ["attribute/nov", "name/nov/camel"],
   });
+  StyleDictionary.registerTransformGroup({
+    name: "json/documentation-tokens-output",
+    transforms: ["attribute/nov", "name/nov/camel", "value/color/rgb"],
+  });
+  StyleDictionary.registerTransformGroup({
+    name: "css/tokens",
+    transforms: ["attribute/nov", "name/nov/kebab", "value/color/rgb"],
+  });
   const StyleDictionaryExtended = StyleDictionary.extend({
     source: ["src/dictionary/definitions/**/*.json"],
     platforms: {
@@ -82,13 +90,35 @@ const build = () => {
           },
         ],
       },
-      "json/old-output": {
+      "json/old": {
         transformGroup: "json/documentation-tokens",
         buildPath: "src/theo/",
         files: [
           {
             destination: "theo-spec.json",
-            format: "json/old-output",
+            format: "json/old",
+            filter: isNotInternal,
+          },
+        ],
+      },
+      "json/output-old": {
+        transformGroup: "json/documentation-tokens-output",
+        buildPath: "output/",
+        files: [
+          {
+            destination: "theo-spec.json",
+            format: "json/output-old",
+            filter: isNotInternal,
+          },
+        ],
+      },
+      "css/output-old": {
+        transformGroup: "css/tokens",
+        buildPath: "output/",
+        files: [
+          {
+            destination: "theo-spec.scss",
+            format: "css/tokens",
             filter: isNotInternal,
           },
         ],

@@ -13,6 +13,7 @@ import {
   isModifier,
   isDuration,
   isOpacity,
+  isHex,
 } from "../is";
 
 const tokenPlaceholder = ({ type, internal }) => ({
@@ -75,6 +76,10 @@ describe("is utils", () => {
   it("isNotInternal should return expected", () => {
     expect(isNotInternal(tokenPlaceholder({ type: "color", internal: true }))).toBe(false);
     expect(isNotInternal(tokenPlaceholder({ type: "color", internal: false }))).toBe(true);
+  });
+  it("isHex should return expected", () => {
+    expect(isHex("#FF00FF")).toBe(true);
+    expect(isHex("rgb(0, 0, 0)")).toBe(false);
   });
   it("isSpacingWithTwoValues should return expected", () => {
     expect(isSpacingWithTwoValues(["top-bottom", "left-right"])).toBe(true);

@@ -39,6 +39,8 @@ export const isGlobal = ({ attributes: { namespace } }: Property): boolean =>
 export const isComponentSpecific = ({ attributes: { namespace } }: Property): boolean =>
   namespace === "component";
 
+export const isHex = (value: string | number): boolean => /^#[A-F0-9]+$/i.test(String(value));
+
 const getSpacingArray = spaceArray => {
   const array = spaceArray.sort();
   return [array, array.length];

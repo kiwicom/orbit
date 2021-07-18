@@ -1,4 +1,5 @@
 import { Property, Value } from "style-dictionary";
+import { parseToRgba } from "color2k";
 
 import {
   isBorderRadius,
@@ -8,6 +9,8 @@ import {
   isModifier,
   isDuration,
   isOpacity,
+  isColor,
+  isHex,
 } from "../../utils/is";
 import { errorTransform } from "../../utils/errorMessage";
 import { stringify, pixelized } from "../../utils/string";
@@ -84,6 +87,18 @@ export const valueXML = {
   matcher: ({ attributes: { aliased } }: Property): boolean => !aliased,
   transformer: (prop: Property): Value => {
     if (isSize(prop)) return sizeJavascript.transformer(prop);
+    return prop.value;
+  },
+};
+
+export const valueColorRgb = {
+  name: "value/color/rgb",
+  type: "value",
+  transformer: (prop: Property): Value => {
+    if (isColor(prop) && isHex(prop.value)) {
+      const [R, G, B] = parseToRgba(String(prop.value));
+      return `rgb(${R}, ${G}, ${B})`;
+    }
     return prop.value;
   },
 };

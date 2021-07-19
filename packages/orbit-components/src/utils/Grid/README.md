@@ -22,25 +22,26 @@ Then you can use it:
 
 The table below contains all of the props available in the Grid component.
 
-| Name         | Type                       | Default | Description                                                                                       |
-| :----------- | :------------------------- | :------ | :------------------------------------------------------------------------------------------------ |
-| **children** | `React.Node`               |         | The content of the Grid. [See Usage](#usage)                                                      |
-| className    | `string`                   |         | If needed, you can extend the Grid component with `styled` and add your own styles.               |
-| columns      | `string`                   | `"1fr"` | Property alias for `grid-template-columns`, [see known limitations](#known-template-limitations). |
-| columnGap    | `string`                   |         | Gap size for `columns`.                                                                           |
-| dataTest     | `string`                   |         | Optional prop for testing purposes.                                                               |
-| desktop      | [`Object`](#media-queries) |         | Object for properties for desktop viewports. [See Media queries](#media-queries)                  |
-| as           | `string`                   | `"div"` | The valid DOM element used for the root node.                                                     |
-| gap          | `string`                   |         | Gap size for `columns` and `rows`.                                                                |
-| inline       | `boolean`                  | `false` | If `true`, the Grid will have `display: inline-grid`; otherwise it will be `display: grid`.       |
-| tablet       | [`Object`](#media-queries) |         | Object for setting up properties for tablet viewports. [See Media queries](#media-queries)        |
-| largeDesktop | [`Object`](#media-queries) |         | Object for setting up properties for largeDesktop viewports. [See Media queries](#media-queries)  |
-| largeMobile  | [`Object`](#media-queries) |         | Object for setting up properties for largeMobile viewports. [See Media queries](#media-queries)   |
-| maxWidth     | `string`                   |         | Alias for the `max-width` property of the Grid component.                                         |
-| mediumMobile | [`Object`](#media-queries) |         | Object for setting up properties for mediumMobile viewports. [See Media queries](#media-queries)  |
-| rows         | `string`                   | `"1fr"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).    |
-| rowGap       | `string`                   |         | The gap size for `rows`.                                                                          |
-| width        | `string`                   |         | Alias for the `width` property of the Grid component.                                             |
+| Name         | Type                       | Default | Description                                                                                                                                                    |
+| :----------- | :------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children** | `React.Node`               |         | The content of the Grid. [See Usage](#usage)                                                                                                                   |
+| className    | `string`                   |         | If needed, you can extend the Grid component with `styled` and add your own styles.                                                                            |
+| columns      | `string`                   | `"1fr"` | Property alias for `grid-template-columns`, [see known limitations](#known-template-limitations).                                                              |
+| columnGap    | `string`                   |         | Gap size for `columns`.                                                                                                                                        |
+| dataTest     | `string`                   |         | Optional prop for testing purposes.                                                                                                                            |
+| desktop      | [`Object`](#media-queries) |         | Object for properties for desktop viewports. [See Media queries](#media-queries)                                                                               |
+| as           | `string`                   | `"div"` | The valid DOM element used for the root node.                                                                                                                  |
+| gap          | `string`                   |         | Gap size for `columns` and `rows`.                                                                                                                             |
+| inline       | `boolean`                  | `false` | If `true`, the Grid will have `display: inline-grid`; otherwise it will be `display: grid`.                                                                    |
+| tablet       | [`Object`](#media-queries) |         | Object for setting up properties for tablet viewports. [See Media queries](#media-queries)                                                                     |
+| largeDesktop | [`Object`](#media-queries) |         | Object for setting up properties for largeDesktop viewports. [See Media queries](#media-queries)                                                               |
+| largeMobile  | [`Object`](#media-queries) |         | Object for setting up properties for largeMobile viewports. [See Media queries](#media-queries)                                                                |
+| maxWidth     | `string`                   |         | Alias for the `max-width` property of the Grid component.                                                                                                      |
+| mediumMobile | [`Object`](#media-queries) |         | Object for setting up properties for mediumMobile viewports. [See Media queries](#media-queries)                                                               |
+| rows         | `string`                   | `"1fr"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).                                                                 |
+| rowGap       | `string`                   |         | The gap size for `rows`.                                                                                                                                       |
+| width        | `string`                   |         | Alias for the `width` property of the Grid component.                                                                                                          |
+| spaceAfter   | `enum`                     |         | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ### Media Queries
 
@@ -48,16 +49,17 @@ When you need to specify specific behaviours for the Grid component on different
 The component has `mediumMobile`, `largeMobile`, `tablet`, `desktop`, and `largeDesktop`, which behave the same as [mediaQuery](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/mediaQuery) functions.
 All of the object for these properties have the same properties and none is required.
 
-| Name      | Type      | Default  | Description                                                                                       |
-| :-------- | :-------- | :------- | :------------------------------------------------------------------------------------------------ |
-| columns   | `string`  | `"none"` | Property alias for `grid-template-columns`, [see known limitations](#known-template-limitations). |
-| columnGap | `string`  |          | Gap size for `columns`.                                                                           |
-| gap       | `string`  |          | Gap size for `columns` and `rows`.                                                                |
-| inline    | `boolean` | `false`  | If `true`, the grid will have `display: inline-grid`; otherwise `display: grid`.                  |
-| maxWidth  | `string`  |          | Alias for the `max-width` property of the Grid component.                                         |
-| rows      | `string`  | `"none"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).    |
-| rowGap    | `string`  |          | Gap size for `rows`.                                                                              |
-| width     | `string`  |          | Alias for the `width` property of the Grid component.                                             |
+| Name       | Type      | Default  | Description                                                                                                                                                    |
+| :--------- | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| columns    | `string`  | `"none"` | Property alias for `grid-template-columns`, [see known limitations](#known-template-limitations).                                                              |
+| columnGap  | `string`  |          | Gap size for `columns`.                                                                                                                                        |
+| gap        | `string`  |          | Gap size for `columns` and `rows`.                                                                                                                             |
+| inline     | `boolean` | `false`  | If `true`, the grid will have `display: inline-grid`; otherwise `display: grid`.                                                                               |
+| maxWidth   | `string`  |          | Alias for the `max-width` property of the Grid component.                                                                                                      |
+| rows       | `string`  | `"none"` | Property alias for `grid-template-rows`, [see known limitations](#known-template-limitations).                                                                 |
+| rowGap     | `string`  |          | Gap size for `rows`.                                                                                                                                           |
+| width      | `string`  |          | Alias for the `width` property of the Grid component.                                                                                                          |
+| spaceAfter | `enum`    |          | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ## Why you should use this component
 

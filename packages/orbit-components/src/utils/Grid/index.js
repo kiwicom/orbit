@@ -19,15 +19,21 @@ const StyledGrid = styled(({ className, children, dataTest }) => (
     Just apply all mediaQueries (from devices map)
     smallMobile - default values are not mediaQuery and needs to be rendered differently
    */
-  ${props =>
+  ${({ theme, spaceAfter, ...props }) =>
     DEVICES.map((viewport, index, devices) =>
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
-            ${isDefined(props[viewport]) && getViewportGridStyles({ viewport, index, devices })};
+            ${isDefined(props[viewport]) &&
+            getViewportGridStyles({
+              viewport,
+              index,
+              theme,
+              devices,
+            })};
           `)
         : viewport === "smallMobile" &&
           css`
-            ${getViewportGridStyles({ viewport, index, devices })};
+            ${getViewportGridStyles({ viewport, index, devices, theme })};
           `,
     )};
   // for IE it needs to be explicitly set for children columns/rows

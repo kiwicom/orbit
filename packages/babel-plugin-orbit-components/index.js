@@ -59,6 +59,7 @@ const pathOverwrites = {
   SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
+  useLockScrolling: "hooks/useLockScrolling",
 };
 
 const parsedImportPaths = [

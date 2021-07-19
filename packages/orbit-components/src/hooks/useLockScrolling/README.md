@@ -12,7 +12,7 @@ Then you can use it:
 
 ```jsx
 const Component = (props: Props) => {
-  const scrollableElementRef = (useRef < HTMLELement) | (null > null);
+  const scrollableElementRef = (useRef < HTMLElement) | (null > null);
 
   // locks the scrolling only to ScrollableContainer
   useLockScrolling(scollableElementRef);

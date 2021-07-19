@@ -1,7 +1,9 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
-import { text, boolean, number, object } from "@storybook/addon-knobs";
+import { text, boolean, number, object, select } from "@storybook/addon-knobs";
+
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 import Grid from "./index";
 
@@ -24,7 +26,7 @@ export const Playground = (): React.Node => {
   const rowGap = text("rowGap", "10px");
   const as = text("as", "div");
   const dataTest = text("dataTest", "test");
-  const DivsCount = number("DivsCount", 8);
+  const divsCount = number("divsCount", 8);
   const mediumMobile = object("mediumMobile", {
     rowGap: "0",
   });
@@ -45,9 +47,11 @@ export const Playground = (): React.Node => {
     columns: "repeat(8, minmax(10px, 1fr))",
     rows: "40px",
   });
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER));
   return (
     <Grid
       inline={inline}
+      spaceAfter={spaceAfter}
       maxWidth={maxWidth}
       width={width}
       columns={columns}
@@ -63,7 +67,7 @@ export const Playground = (): React.Node => {
       desktop={desktop}
       largeDesktop={largeDesktop}
     >
-      {Array(...Array(DivsCount)).map((_, key) => (
+      {Array(...Array(divsCount)).map((_, key) => (
         // eslint-disable-next-line
         <CustomDiv key={key} />
       ))}

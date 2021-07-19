@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 
+import type { spaceAfter } from "../../common/getSpacingToken/index";
 import type { Globals } from "../../common/common.js.flow";
 
 export type BasicProps = {|
@@ -12,6 +13,7 @@ export type BasicProps = {|
   +columnGap?: string,
   +maxWidth?: string,
   +width?: string,
+  ...spaceAfter,
 |};
 
 export type MediaQuery = {|

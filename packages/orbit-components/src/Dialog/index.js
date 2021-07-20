@@ -9,6 +9,7 @@ import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
 import Text, { StyledText } from "../Text";
 import Stack from "../Stack";
+import useLockScrolling from "../hooks/useLockScrolling";
 import mq from "../utils/mediaQuery";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
@@ -118,6 +119,8 @@ const Dialog = ({
   renderInPortal = true,
   illustration,
 }: Props): React.Node => {
+  const wrapperRef = React.useRef<HTMLElement | null>(null);
+  useLockScrolling(wrapperRef);
   const ref = React.useRef(null);
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
@@ -157,6 +160,7 @@ const Dialog = ({
 
   const dialog = (
     <StyledDialog
+      ref={wrapperRef}
       data-test={dataTest}
       shown={shown}
       onClick={handleClose}

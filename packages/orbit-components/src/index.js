@@ -140,6 +140,7 @@ export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
+export { default as useLockScrolling } from "./hooks/useLockScrolling";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";

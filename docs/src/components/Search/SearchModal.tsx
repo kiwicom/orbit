@@ -5,6 +5,7 @@ import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
 import {
   Portal,
+  Modal,
   ModalHeader,
   ModalSection,
   Text,
@@ -13,7 +14,6 @@ import {
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
 
-import Modal from "../Modal";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";

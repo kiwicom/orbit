@@ -28,7 +28,7 @@ Table below contains all types of the props available in the Text component.
 | spaceAfter    | `enum`          |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | **type**      | [`enum`](#enum) | `"primary"` | The color type of the Text.                                                                                                                                    |
 | uppercase     | `boolean`       | `false`     | If `true`, the Text will be in uppercase style.                                                                                                                |
-| strikeThrough | `boolean`       | `false`     | If `true`, the Text will have `text-decoration: line-through`.                                                                                                 |
+| strikeThrough | `boolean`       | `false`     | If `true`, the Text will have `text-transform: line-through`.                                                                                                  |
 | **weight**    | [`enum`](#enum) | `"regular"` | The weight of the Text.                                                                                                                                        |
 
 ### enum

@@ -63,6 +63,7 @@ export const StyledText: any = styled(
     </TextElement>
   ),
 )`
+<<<<<<< HEAD
   ${({ theme, align, uppercase, strikeThrough, type, italic }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-size: ${getSizeToken};
@@ -75,6 +76,19 @@ export const StyledText: any = styled(
     font-style: ${italic && `italic`};
     margin: 0;
     margin-bottom: ${getSpacingToken};
+=======
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
+  font-size: ${getSizeToken};
+  font-weight: ${getWeightToken};
+  color: ${getTypeToken};
+  line-height: ${getLineHeightToken};
+  text-align: ${({ align }) => textAlign(align)};
+  text-transform: ${({ uppercase }) => uppercase && `uppercase`};
+  text-decoration: ${({ strikeThrough }) => strikeThrough && `line-through`};
+  font-style: ${({ italic }) => italic && `italic`};
+  margin: 0;
+  margin-bottom: ${getSpacingToken};
+>>>>>>> 1d13f6fd1 (feat(Text): add line-through)
 
     a:not(${StyledTextLink}) {
       // TextLink in Text always win
@@ -94,8 +108,9 @@ const Text = ({
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
   as = ELEMENT_OPTIONS.P,
-  uppercase = false,
-  italic = false,
+  uppercase,
+  italic,
+  strikeThrough,
   dataTest,
   spaceAfter,
   children,
@@ -106,6 +121,7 @@ const Text = ({
       id={id}
       type={type}
       size={size}
+      strikeThrough={strikeThrough}
       weight={weight}
       align={align}
       element={as}

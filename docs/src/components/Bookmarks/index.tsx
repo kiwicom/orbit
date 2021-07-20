@@ -29,15 +29,18 @@ const Bookmarks = () => {
   return bookmarks && Object.keys(bookmarks).length > 0 ? (
     <>
       {Object.entries(bookmarks).map(
-        ([key, slug]) =>
+        ([key, slug], index) =>
           slug && (
-            <StyledLink key={key} to={slug}>
-              {String(slug)
-                .split("/")
-                .filter(Boolean)
-                .map(s => s[0].toUpperCase().concat(s.slice(1)))
-                .join(" / ")}
-            </StyledLink>
+            <React.Fragment key={key}>
+              {index !== 0 ? <br /> : null}
+              <StyledLink to={slug}>
+                {String(slug)
+                  .split("/")
+                  .filter(Boolean)
+                  .map(s => s[0].toUpperCase().concat(s.slice(1)))
+                  .join(" / ")}
+              </StyledLink>
+            </React.Fragment>
           ),
       )}
     </>

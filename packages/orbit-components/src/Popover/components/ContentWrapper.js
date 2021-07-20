@@ -17,6 +17,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
+import useLockScrolling from "../../hooks/useLockScrolling";
 import { ModalContext } from "../../Modal/ModalContext";
 import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
@@ -181,9 +182,11 @@ const PopoverContentWrapper = ({
   actions,
 }: Props): React.Node => {
   const { isInsideModal } = React.useContext(ModalContext);
-  const { isTablet } = useMediaQuery();
+  const { isLargeMobile, isTablet } = useMediaQuery();
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const scrollingElementRef = React.useRef<HTMLElement | null>(null);
+  useLockScrolling(scrollingElementRef, !isLargeMobile);
   const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = React.useMemo(() => getScrollableParent(containerRef.current), [
@@ -265,6 +268,7 @@ const PopoverContentWrapper = ({
       >
         <StyledPopoverContent ref={content}>
           <StyledContentWrapper
+            ref={scrollingElementRef}
             actionsHeight={actionsDimensions ? actionsDimensions.height : 0}
             windowHeight={windowHeight}
           >

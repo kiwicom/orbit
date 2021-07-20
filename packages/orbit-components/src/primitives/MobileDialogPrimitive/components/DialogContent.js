@@ -11,6 +11,7 @@ import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
 import type { Props } from "./DialogContent.flow";
+import useLockScrolling from "../../../hooks/useLockScrolling";
 
 const StyledDialog = styled.div`
   width: 100%;
@@ -101,7 +102,8 @@ StyledDialogOverlay.defaultProps = {
 
 const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props): React.Node => {
   const overlay = React.useRef(null);
-  const dialog = React.useRef(null);
+  const dialog = React.useRef<HTMLElement | null>(null);
+  useLockScrolling(dialog);
   const handleClickOutside = React.useCallback(
     ev => {
       ev.stopPropagation();

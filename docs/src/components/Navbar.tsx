@@ -11,6 +11,7 @@ import {
   ModalSection,
   ModalFooter,
   Badge,
+  Modal,
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
@@ -20,7 +21,6 @@ import Logo from "../images/orbit-logo.svg";
 import Glyph from "../images/orbit-glyph.svg";
 import Bookmarks from "./Bookmarks";
 import Search from "./Search";
-import Modal from "./Modal";
 import { useBookmarks } from "../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import { useKeyboard } from "../services/KeyboardProvider";

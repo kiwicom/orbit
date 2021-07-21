@@ -78,11 +78,15 @@ jobs:
       - name: Get PR_NUMBER
         run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
 
+      - name: Get DOMAIN
+        # we're adding to the domain name the username of the current owner of SURGE_TOKEN
+        run: echo "DOMAIN=https://orbit-silvenon-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
+
       - name: Publish
-        run: yarn orbit-components deploy:surge https://orbit-${BRANCH_URL}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: yarn orbit-components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Update description
-        run: yarn orbit-components deploy:updateURL ${PR_NUMBER} https://orbit-${BRANCH_URL}.surge.sh ${{ secrets.OCTO_TOKEN }} Storybook
+        run: yarn orbit-components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
 
   deploy_master:
     needs: build

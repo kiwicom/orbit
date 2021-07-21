@@ -26,7 +26,6 @@ export default {
           </ButtonLink>
         </Stack>
       }
-      preferredPosition="bottom"
     >
       <Button iconRight={<ChevronDown />} type="secondary">
         Learn more

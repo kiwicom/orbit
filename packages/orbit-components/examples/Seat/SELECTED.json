@@ -1,8 +1,5 @@
 {
   "imports": "import Seat from \"@kiwicom/orbit-components/lib/Seat\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport useMediaQuery from \"@kiwicom/orbit-components/lib/useMediaQuery\";",
   "example": "() => {\n  const { isTablet } = useMediaQuery()\n  return (\n    <Stack>\n      <Stack spacing=\"XXSmall\">\n        <Stack direction=\"row\">\n          <Seat type=\"default\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat selected type=\"default\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n          <Seat selected type=\"legroom\" size={isTablet ? \"medium\" : \"small\"} />\n        </Stack>\n      </Stack>\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Selected",
-    "description": "Seats can be selected."
-  }
+  "info": { "title": "Selected", "description": "Seats can be selected." }
 }

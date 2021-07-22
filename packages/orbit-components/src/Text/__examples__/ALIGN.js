@@ -10,10 +10,11 @@ export default {
       <Text>Text aligned to the left</Text>
       <Text align="center">Text aligned in the center</Text>
       <Text align="right">Text aligned to the right</Text>
+      <Text align="justify">Justified text</Text>
     </Stack>
   ),
   info: {
     title: "Text alignment",
-    description: "You can align text to the left, center, or right.",
+    description: "You can align text to the left, center, right, or justify it.",
   },
 };

@@ -24,6 +24,7 @@ export const ALIGN_OPTIONS = {
   LEFT: "left",
   CENTER: "center",
   RIGHT: "right",
+  JUSTIFY: "justify",
 };
 
 export const ELEMENT_OPTIONS = {

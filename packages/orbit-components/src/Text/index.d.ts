@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Text";
 
-type Align = "left" | "center" | "right";
+type Align = "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
 type Type =
   | "primary"

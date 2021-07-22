@@ -3,6 +3,69 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.14.0...@kiwicom/orbit.kiwi@0.15.0) (2021-07-22)
+
+
+### Bug Fixes
+
+* always add footer gradient in document layout ([#3026](https://github.com/kiwicom/orbit/issues/3026)) ([8c2b5f5](https://github.com/kiwicom/orbit/commit/8c2b5f5635071666c6162c94f3c4551dfdc46267))
+* **bookmarks:** hide UI for managing bookmarks ([a419808](https://github.com/kiwicom/orbit/commit/a419808c9ca135ce175a5ae898292f5037c5cf1d))
+* **bookmarks:** list bookmarks vertically ([d6ed09a](https://github.com/kiwicom/orbit/commit/d6ed09a72808028c3b3de128ebe93511efd261da))
+* **contributors:** write only if changed ([0bdd096](https://github.com/kiwicom/orbit/commit/0bdd096ef620d76dc5a1d8614c3c4249cdc3f2de))
+* **docs:** don't use Google Analytics in preview ([#3027](https://github.com/kiwicom/orbit/issues/3027)) ([a1a55e1](https://github.com/kiwicom/orbit/commit/a1a55e17b1339abf43dfffe450da860aadaaac15))
+* **docs:** fix iframe width and add button states frame ([#3025](https://github.com/kiwicom/orbit/issues/3025)) ([c0c6cbf](https://github.com/kiwicom/orbit/commit/c0c6cbf9383637f184ea86d711847468ed5e4ee1))
+* **docs:** keyboard shortcut visual change ([47c523c](https://github.com/kiwicom/orbit/commit/47c523c19aededaa613ecae19552f7f05c589ca7))
+* **docs:** navbar imports order ([cc9917d](https://github.com/kiwicom/orbit/commit/cc9917d27aaf9f2cdfaeea7544e337e9bdad2775))
+* **docs:** overview-pages slug ([310fe18](https://github.com/kiwicom/orbit/commit/310fe18d31894f2bfccd5807f6a0de393323616e))
+* **docs:** put specific content areas in sidebar ([501a813](https://github.com/kiwicom/orbit/commit/501a813ed838e5fdfe03ac6e0a560e4848c1f2ef))
+* **docs:** use real package versions ([#3010](https://github.com/kiwicom/orbit/issues/3010)) ([20cff18](https://github.com/kiwicom/orbit/commit/20cff18294cb006dd6cd58d3137f0928407497c8))
+* **sandbox:** major fix, separate pages, components ([f421eda](https://github.com/kiwicom/orbit/commit/f421eda12ed0ee0ff933aaf1dee8664a69a5214c))
+* **sandbox:** rename Code to Code editor ([9abec83](https://github.com/kiwicom/orbit/commit/9abec8392d08c9c88ae3d8140f06dffb55f05a78))
+* clarifications after review ([db612fc](https://github.com/kiwicom/orbit/commit/db612fc6ae276ff4ece9c9b9b80abd91fc754822))
+* clean table of contents between pages ([#3021](https://github.com/kiwicom/orbit/issues/3021)) ([3e133c8](https://github.com/kiwicom/orbit/commit/3e133c8c853c030efbe09ec8aa1b5955eb0bb0e6))
+* **docs:** reduce bundle size ([#3016](https://github.com/kiwicom/orbit/issues/3016)) ([d1fc731](https://github.com/kiwicom/orbit/commit/d1fc7318f8e0ae74a2f4dcdc9d2de8bf4579eec7))
+* **sandbox:** open in a new tab ([c1a5b9e](https://github.com/kiwicom/orbit/commit/c1a5b9e0b944d93d8bb2606ad2b73514a8ad10b0))
+* **sandbox:** range delete ([a295623](https://github.com/kiwicom/orbit/commit/a2956239c23dc933414650f34e6140886fd3b8fd))
+* **sandbox:** viewport preview ([64ccbd8](https://github.com/kiwicom/orbit/commit/64ccbd849b0a5a1282deb52cbc49034e13069592))
+* **sandbox:** viewport ruler implementation ([3d8d196](https://github.com/kiwicom/orbit/commit/3d8d1961df27c3f0272d41269faae743fa4e8b3a))
+* contraction linting ([8e62c94](https://github.com/kiwicom/orbit/commit/8e62c94700828f11b6009292a0f53b0454c20755))
+* don't break build for misconfigured Figma ([61b798d](https://github.com/kiwicom/orbit/commit/61b798d966e5a76c2440f96c291fec5c55ecedee))
+* don't check preconnect links ([84b4887](https://github.com/kiwicom/orbit/commit/84b48873668230f89bb3d8efa447b4641d707194))
+* fix searching illustrations and icons ([2503185](https://github.com/kiwicom/orbit/commit/25031859a76f991c51d422f881573aa1c937d186))
+* generate table of contents dynamically ([#3015](https://github.com/kiwicom/orbit/issues/3015)) ([acd9142](https://github.com/kiwicom/orbit/commit/acd9142629da7c752769e43aabbd0b0f687b1ed2))
+* get rid of errors in console ([debeefd](https://github.com/kiwicom/orbit/commit/debeefd11972627189a9e71e5cd6cca0089cc349))
+* improved wording after review ([aba40ad](https://github.com/kiwicom/orbit/commit/aba40ad7441e0d61bab6cfcae75342ca355ac598))
+* make Portal example clearer ([09f6657](https://github.com/kiwicom/orbit/commit/09f6657e8a976161ce66e6c7c8da7dc4fc2f4610))
+* open navigation in overview pages ([37af2a3](https://github.com/kiwicom/orbit/commit/37af2a314b1f10b7495a17bc07bcec40ef6b75c6))
+* pass path as string for pages in pages dir ([4f76de4](https://github.com/kiwicom/orbit/commit/4f76de4324d7eadbfb73a8af6b6fd6de15ac2150))
+* proofreading ([692cd51](https://github.com/kiwicom/orbit/commit/692cd514e575a7aed85958a6b60e74e6560610f3))
+* proofreading ([2502bc8](https://github.com/kiwicom/orbit/commit/2502bc82ce2216c671328d9126a6776f07c94786))
+* proper nesting of elements ([19198ae](https://github.com/kiwicom/orbit/commit/19198ae81d2aeef9e99d5bddcb62a9fefd66f7c0))
+* quick fix links on main page ([58ec67d](https://github.com/kiwicom/orbit/commit/58ec67d9cc716a4fff10538bd10063371ba45d2e))
+* remove type from example to render ([e321a09](https://github.com/kiwicom/orbit/commit/e321a093adc7848e60ade2b7e9bf0e2cae927440))
+* set line height for other p elements ([b4378ec](https://github.com/kiwicom/orbit/commit/b4378ec8eb50fd25e8764afdb017ee0dc18fe6de))
+* spacing for p tags in guidelines ([961ca14](https://github.com/kiwicom/orbit/commit/961ca149ea3306d0da6ca64e5f5a8de329b50f44))
+* use React CSSProperities for examples ([81b38e2](https://github.com/kiwicom/orbit/commit/81b38e2feb00efeb7c3fb615ed6680dc6b99fe13))
+
+
+### Features
+
+* lock scrolling in components with overlay ([#3036](https://github.com/kiwicom/orbit/issues/3036)) ([b6c87ae](https://github.com/kiwicom/orbit/commit/b6c87aec9e3005fb76752390c9b4f909bc12f087))
+* **docs:** add max height for react examples ([299abc0](https://github.com/kiwicom/orbit/commit/299abc0d642a1e6f40e876ce2aca68fe5f592478))
+* **docs:** don't hide search results when out of focus ([#3030](https://github.com/kiwicom/orbit/issues/3030)) ([a9754a5](https://github.com/kiwicom/orbit/commit/a9754a52fdba1ac1334d411780813b336d54601c))
+* **docs:** landing page content section ([795b502](https://github.com/kiwicom/orbit/commit/795b5027dbc60c3ba621427508d73a6f7a9da77f))
+* **docs:** open search by keyboard ([5e51957](https://github.com/kiwicom/orbit/commit/5e51957a7ee15156cd13fcf27da1995ef528226a))
+* **docs:** overview pages ([f9ae2e9](https://github.com/kiwicom/orbit/commit/f9ae2e9d00542c0d4324ffd0cdea280df1bd6673))
+* **sandbox:** github stars button ([#3034](https://github.com/kiwicom/orbit/issues/3034)) ([bce8608](https://github.com/kiwicom/orbit/commit/bce8608455d113dd7308cc483febfe13bc380bcf))
+* add descriptions for overview pages ([136c031](https://github.com/kiwicom/orbit/commit/136c031eeb7c2b5c828865c142b59a3f9d49977d))
+* fix and polish generating overview pages ([69398c9](https://github.com/kiwicom/orbit/commit/69398c9c628eb8b7bec5b52915c9890a0a97550b))
+* track with Google Analytics ([cfea3fa](https://github.com/kiwicom/orbit/commit/cfea3fa7c33016737676dbfb63c15fe05491ff63))
+* **docs:** update landing page ([8423247](https://github.com/kiwicom/orbit/commit/8423247ce658dae32c23da04b146acd3b9cf2292))
+
+
+
+
+
 # [0.14.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.13.0...@kiwicom/orbit.kiwi@0.14.0) (2021-06-24)
 
 

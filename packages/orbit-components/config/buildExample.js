@@ -171,7 +171,10 @@ async function readFileAndCreateJSON(pathToFile) {
     const info = await getInfo(ast.program.body);
     await writeFile(
       generatePath(componentName, fileName),
-      JSON.stringify({ imports, example, info }, null, "\t"),
+      prettier.format(JSON.stringify({ imports, example, info }), {
+        ...(await prettier.resolveConfig(__dirname)),
+        parser: "json",
+      }),
     );
   });
 }

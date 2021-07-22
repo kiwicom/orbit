@@ -1,7 +1,5 @@
 import "styled-components";
-import { defaultTheme } from "@kiwicom/orbit-components";
-
-type Theme = typeof defaultTheme;
+import { Theme } from "@kiwicom/orbit-components";
 
 // https://styled-components.com/docs/api#typescript
 

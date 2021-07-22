@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.117.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.116.0...@kiwicom/orbit-components@0.117.0) (2021-07-22)
+
+
+### Bug Fixes
+
+* **ChoiceGroup:** use correct box sizing ([68c2303](https://github.com/kiwicom/orbit/commit/68c2303f0357435d9e5dfdb97e48c19a1c6a54cb))
+* **InputField:** add aria-required ([7d7f5ef](https://github.com/kiwicom/orbit/commit/7d7f5ef1cff154e88185f204990de5230c75742d))
+
+
+### Features
+
+* **Text:** allow `justify` value for `align` prop ([#3050](https://github.com/kiwicom/orbit/issues/3050)) ([c7704b2](https://github.com/kiwicom/orbit/commit/c7704b2ee0050d5964572cb4e44b5aa87e060d8b))
+* add lockScrolling prop ([#3045](https://github.com/kiwicom/orbit/issues/3045)) ([461139d](https://github.com/kiwicom/orbit/commit/461139df3ace314c04e11d01a7a5e4495a35e97f))
+* lock scrolling in components with overlay ([#3036](https://github.com/kiwicom/orbit/issues/3036)) ([b6c87ae](https://github.com/kiwicom/orbit/commit/b6c87aec9e3005fb76752390c9b4f909bc12f087))
+* **Grid:** add spaceAfter utility prop ([#3043](https://github.com/kiwicom/orbit/issues/3043)) ([c65ba9a](https://github.com/kiwicom/orbit/commit/c65ba9a86bcadb378c424c447c23694e67de6ac4))
+* **InputFile:** add aria-required ([ef47042](https://github.com/kiwicom/orbit/commit/ef470429c5c1748757d8e85bc7f9eca689162a49))
+* **TextLink:** add type "white" ([#3000](https://github.com/kiwicom/orbit/issues/3000)) ([6a101f1](https://github.com/kiwicom/orbit/commit/6a101f1a8dd5daae1e3a55315f6b4eab1617eb06))
+
+
+
+
+
 # [0.116.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.115.0...@kiwicom/orbit-components@0.116.0) (2021-06-24)
 
 

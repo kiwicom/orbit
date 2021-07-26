@@ -40,7 +40,8 @@ describe("InputGroup", () => {
     );
 
     const input = screen.getByRole("textbox");
-    fireEvent.focus(input);
+    // $FlowFixMe
+    userEvent.tab(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", () => {
@@ -51,7 +52,8 @@ describe("InputGroup", () => {
     );
 
     const input = screen.getByRole("textbox");
-    fireEvent.focus(input);
+    // $FlowFixMe
+    userEvent.tab(input);
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
 

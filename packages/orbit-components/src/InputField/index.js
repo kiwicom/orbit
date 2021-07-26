@@ -18,7 +18,6 @@ import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -351,8 +350,6 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
 
   const forID = useRandomId();
 
-  const inputRef = React.useRef<HTMLElement | null>(null);
-
   const {
     tooltipShown,
     tooltipShownHover,
@@ -447,7 +444,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             maxLength={maxLength}
             size={size}
             error={insideInputGroup ? undefined : error}
-            ref={mergeRefs([ref, inputRef])}
+            ref={ref}
             tabIndex={tabIndex}
             inlineLabel={inlineLabel}
             readOnly={readOnly}

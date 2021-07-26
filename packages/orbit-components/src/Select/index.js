@@ -14,7 +14,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -45,7 +44,7 @@ type StyledSelectType = Props & {|
   error: boolean,
 |};
 
-const StyledSelect = styled(
+const StyledSelect: React.AbstractComponent<any, any> = styled(
   React.forwardRef<StyledSelectType, HTMLSelectElement>(
     (
       {
@@ -304,7 +303,6 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
     handleFocus,
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
-  const inputRef = React.useRef(null);
 
   return (
     <Label spaceAfter={spaceAfter}>
@@ -351,7 +349,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={mergeRefs([inputRef, ref])}
+          ref={ref}
           dataAttrs={dataAttrs}
         >
           {placeholder && (

@@ -15,7 +15,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -106,9 +105,9 @@ StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
+const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<
   Props,
-  HTMLInputElement,
+  HTMLDivElement,
 >((props, ref) => {
   const {
     placeholder = "No file selected",
@@ -139,8 +138,6 @@ const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwar
     handleFocus,
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
-
-  const inputRef = React.useRef(null);
 
   return (
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
@@ -184,7 +181,7 @@ const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwar
         >
           {buttonLabel}
         </Button>
-        <StyledFileInput fileName={fileName} error={error} ref={mergeRefs([inputRef, ref])}>
+        <StyledFileInput fileName={fileName} error={error} ref={ref}>
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (

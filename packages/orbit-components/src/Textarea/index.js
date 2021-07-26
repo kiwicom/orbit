@@ -12,7 +12,6 @@ import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -156,8 +155,6 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
-  const inputRef = React.useRef(null);
-
   return (
     <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={labelRef}>
       {label && (
@@ -192,7 +189,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         resize={resize}
         tabIndex={tabIndex}
         readOnly={readOnly}
-        ref={mergeRefs([ref, inputRef])}
+        ref={ref}
       />
       <TooltipForm
         help={help}

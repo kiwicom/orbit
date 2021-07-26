@@ -16,7 +16,7 @@ import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "../hooks/useDimensions";
 import { POSITIONS, SIDE_NUDGE, SIZE_OPTIONS } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getToken = ({ theme, inputSize }) => {
   const tokens = {

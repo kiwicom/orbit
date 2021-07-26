@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import boundingClientRect from "../../utils/boundingClientRect";
-import type { UseDimensions } from "./useDimensions.js.flow";
+import type { UseDimensions } from "./useDimensions";
 
 const defaultPositions = {
   bottom: 0,

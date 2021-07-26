@@ -7,7 +7,7 @@ import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import { rtlSpacing } from "../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledAsterisk = styled.span`
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};

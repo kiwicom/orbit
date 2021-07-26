@@ -3,7 +3,7 @@ import * as React from "react";
 
 import Tooltip from "./Tooltip";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const TooltipForm = ({
   iconRef,

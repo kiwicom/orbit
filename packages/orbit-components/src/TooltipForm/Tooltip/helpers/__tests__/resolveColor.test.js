@@ -9,9 +9,9 @@ const params = isHelp => ({
 
 describe("resolveColor", () => {
   it("isHelp true", () => {
-    expect(resolveColor(params(true))).toEqual(defaultTheme.orbit.paletteBlueDark);
+    expect(resolveColor(params(true))).toBe(defaultTheme.orbit.paletteBlueDark);
   });
   it("isHelp false", () => {
-    expect(resolveColor(params(false))).toEqual(defaultTheme.orbit.paletteRedNormal);
+    expect(resolveColor(params(false))).toBe(defaultTheme.orbit.paletteRedNormal);
   });
 });

@@ -2,7 +2,7 @@
 import { css } from "styled-components";
 
 import { left } from "../../utils/rtl";
-import type { ResolveTooltipPosition } from "./resolveTooltipPosition.js.flow";
+import type { ResolveTooltipPosition } from "./resolveTooltipPosition";
 
 const resolveLeft = ({ theme, inlineLabel, iconBounding }) => {
   if (iconBounding && inlineLabel) {

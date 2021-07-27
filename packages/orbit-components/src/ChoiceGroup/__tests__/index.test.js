@@ -63,4 +63,14 @@ describe("ChoiceGroup", () => {
     userEvent.click(screen.getByRole("radio", { name: "Option" }));
     expect(onChange).toHaveBeenCalled();
   });
+
+  it("should have error", () => {
+    render(
+      <ChoiceGroup dataTest="test" onChange={() => {}} labelSize={LABEL_SIZES.LARGE} error="kek">
+        <Radio value="option" label="Option" />
+      </ChoiceGroup>,
+    );
+
+    expect(screen.getByText("kek")).toBeInTheDocument();
+  });
 });

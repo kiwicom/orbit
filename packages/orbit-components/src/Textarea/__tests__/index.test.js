@@ -16,8 +16,6 @@ describe("Textarea", () => {
     const maxLength = 200;
     const fullHeight = true;
     const onChange = jest.fn();
-    const onFocus = jest.fn();
-    const onBlur = jest.fn();
     const spaceAfter = SPACINGS_AFTER.NORMAL;
 
     render(
@@ -31,8 +29,6 @@ describe("Textarea", () => {
         maxLength={maxLength}
         help={<div>Something useful.</div>}
         onChange={onChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
         dataTest={dataTest}
         spaceAfter={spaceAfter}
       />,
@@ -53,18 +49,20 @@ describe("Textarea", () => {
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
 
-    fireEvent.blur(textarea);
-    expect(onBlur).toHaveBeenCalled();
     userEvent.type(textarea, "kek");
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have focus", () => {
+  it("should have focus and blur", () => {
     const onFocus = jest.fn();
-    render(<Textarea onFocus={onFocus} />);
+    const onBlur = jest.fn();
+
+    render(<Textarea onFocus={onFocus} onBlur={onBlur} />);
     // $FlowFixMe
     userEvent.tab(screen.getByRole("textbox"));
     expect(onFocus).toHaveBeenCalled();
+    fireEvent.blur(screen.getByRole("textbox"));
+    expect(onBlur).toHaveBeenCalled();
   });
 
   it("should have error", () => {

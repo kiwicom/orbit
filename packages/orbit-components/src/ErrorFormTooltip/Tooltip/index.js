@@ -174,13 +174,13 @@ const FormFeedbackTooltip = ({
 
       if (inputRef && inputRef.current === ev.target) {
         onShow(ev);
-      } else {
+      } else if (!isHelp) {
         onClose(ev);
       }
     };
 
     const handleTab = ev => {
-      if (ev.keyCode === KEY_CODE_MAP.TAB && onClose && !isHelp) {
+      if (ev.keyCode === KEY_CODE_MAP.TAB && !isHelp) {
         onClose(ev);
       }
     };

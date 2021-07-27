@@ -202,6 +202,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         inputRef={inputRef}
         labelRef={labelRef}
         onClose={handleBlur}
+        onShow={handleFocus}
         tooltipShown={shown}
       />
     </Field>

@@ -145,7 +145,8 @@ const FormFeedbackTooltip = ({
   shown = true,
   children,
   isHelp = false,
-  onClick,
+  onClose,
+  onShow,
   inlineLabel,
 }: Props): React.Node => {
   const contentRef = React.useRef(null);
@@ -167,20 +168,20 @@ const FormFeedbackTooltip = ({
 
   React.useEffect(() => {
     const handleClick = ev => {
-      ev.preventDefault();
-      if (
-        inputRef &&
-        inputRef.current !== ev.target &&
-        ev.target !== contentRef.current &&
-        onClick
-      ) {
-        onClick(ev);
+      if (ev.target === contentRef.current) {
+        onShow(ev);
+      }
+
+      if (inputRef && inputRef.current === ev.target) {
+        onShow(ev);
+      } else {
+        onClose(ev);
       }
     };
 
     const handleTab = ev => {
-      if (ev.keyCode === KEY_CODE_MAP.TAB && onClick && !isHelp) {
-        onClick(ev);
+      if (ev.keyCode === KEY_CODE_MAP.TAB && onClose && !isHelp) {
+        onClose(ev);
       }
     };
 
@@ -210,10 +211,10 @@ const FormFeedbackTooltip = ({
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO
-          onKeyDown={handleKeyDown(onClick)}
+          onKeyDown={handleKeyDown(onClose)}
           onClick={ev => {
             ev.preventDefault();
-            if (onClick) onClick(ev);
+            if (onClose) onClose(ev);
           }}
         >
           <CloseIc size="small" />

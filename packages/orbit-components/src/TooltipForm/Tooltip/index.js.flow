@@ -12,7 +12,8 @@ export type Props = {|
   inputSize?: "small" | "normal",
   iconBoundingRef?: RefType,
   inlineLabel?: boolean,
-  +onClick?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onClose: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onShow: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
 |};
 

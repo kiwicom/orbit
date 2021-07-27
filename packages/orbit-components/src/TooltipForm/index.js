@@ -10,6 +10,7 @@ const TooltipForm = ({
   inputRef,
   inputSize = "normal",
   onClose,
+  onShow,
   labelRef,
   tooltipShown,
   dataTest,
@@ -22,10 +23,12 @@ const TooltipForm = ({
       {help && !error && (
         <Tooltip
           dataTest={dataTest}
+          inputRef={inputRef}
           iconBoundingRef={iconRef}
           inputSize={inputSize}
           boundingRef={labelRef}
-          onClick={onClose}
+          onClose={onClose}
+          onShow={onShow}
           isHelp
           inlineLabel={inlineLabel}
           shown={tooltipShown}
@@ -39,7 +42,8 @@ const TooltipForm = ({
           inputRef={inputRef}
           iconBoundingRef={iconRef}
           inputSize={inputSize}
-          onClick={onClose}
+          onClose={onClose}
+          onShow={onShow}
           boundingRef={labelRef}
           inlineLabel={inlineLabel}
           shown={tooltipShown}

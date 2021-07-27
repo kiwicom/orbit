@@ -13,7 +13,8 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly help?: React.ReactNode;
   readonly tooltipShown?: boolean;
   readonly inputRef?: Common.Ref;
-  readonly onClose?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
+  readonly onClose: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
+  readonly onShown: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
   readonly labelRef?: Common.Ref;
   readonly iconRef?: Common.Ref;
   readonly inlineLabel?: boolean;

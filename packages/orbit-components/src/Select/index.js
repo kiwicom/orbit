@@ -384,6 +384,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           labelRef={labelRef}
           inputSize={size}
           onClose={handleBlur}
+          onShow={handleFocus}
           tooltipShown={shown}
         />
       )}

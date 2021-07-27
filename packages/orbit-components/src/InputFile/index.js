@@ -20,7 +20,7 @@ import mergeRefs from "../utils/mergeRefs";
 import type { Props } from ".";
 
 const Field = styled.label`
-  font-family: ${({ theme }) => theme.orbit.fontfamily};
+  font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: block;
   position: relative;
   width: 100%;
@@ -210,6 +210,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           inputRef={inputRef}
           labelRef={labelRef}
           onClose={handleBlur}
+          onShow={handleFocus}
           tooltipShown={shown}
         />
       )}

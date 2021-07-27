@@ -305,6 +305,7 @@ const InputGroup = ({
         iconRef={iconRef}
         labelRef={labelRef}
         onClose={handleBlur}
+        onShow={handleFocus}
         inputSize={size}
         tooltipShown={tooltipShown || tooltipShownHover}
       />

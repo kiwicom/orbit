@@ -15,7 +15,7 @@ describe("ErrorFormTooltip", () => {
         onShow={() => {}}
         dataTest="test"
         tooltipShown
-        error={<div data-test="error">error</div>}
+        error="error"
       />,
     );
 
@@ -23,7 +23,7 @@ describe("ErrorFormTooltip", () => {
     expect(onClose).toHaveBeenCalled();
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
-    expect(screen.getByTestId("error")).toBeInTheDocument();
+    expect(screen.getByText("error")).toBeInTheDocument();
   });
 
   it("should have help", () => {
@@ -35,7 +35,7 @@ describe("ErrorFormTooltip", () => {
         onShow={() => {}}
         dataTest="test"
         tooltipShown
-        help={<div data-test="help">help</div>}
+        help="help"
       />,
     );
 
@@ -43,6 +43,6 @@ describe("ErrorFormTooltip", () => {
     expect(onClose).toHaveBeenCalled();
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
-    expect(screen.getByTestId("help")).toBeInTheDocument();
+    expect(screen.getByText("help")).toBeInTheDocument();
   });
 });

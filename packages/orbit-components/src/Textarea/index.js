@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import TooltipForm from "../ErrorFormTooltip";
+import ErrorFormTooltip from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
@@ -195,7 +195,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         readOnly={readOnly}
         ref={mergeRefs([ref, inputRef])}
       />
-      <TooltipForm
+      <ErrorFormTooltip
         help={help}
         error={error}
         iconRef={iconRef}

@@ -139,6 +139,7 @@ StyledCloseButton.defaultProps = {
 
 const FormFeedbackTooltip = ({
   boundingRef,
+  dataTest,
   inputSize,
   inputRef,
   iconBoundingRef,
@@ -203,6 +204,7 @@ const FormFeedbackTooltip = ({
       position={preferredPosition}
       shown={shown && dimensions.set}
       isHelp={isHelp}
+      data-test={dataTest}
       inlineLabel={inlineLabel}
       aria-live="polite"
     >
@@ -217,7 +219,7 @@ const FormFeedbackTooltip = ({
             if (onClose) onClose(ev);
           }}
         >
-          <CloseIc size="small" />
+          <CloseIc ariaLabel="close" size="small" />
         </StyledCloseButton>
       )}
     </StyledFormFeedbackTooltip>

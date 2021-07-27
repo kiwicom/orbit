@@ -26,5 +26,5 @@ export interface Dimensions {
   readonly iconBounding: PositionRaw;
 }
 
-declare const TooltipForm: React.FC<Props>;
-export { TooltipForm, TooltipForm as default };
+declare const ErrorFormTooltip: React.FC<Props>;
+export { ErrorFormTooltip, ErrorFormTooltip as default };

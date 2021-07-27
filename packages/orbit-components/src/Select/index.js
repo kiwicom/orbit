@@ -6,7 +6,7 @@ import type { DataAttrs } from "../common/common.js.flow";
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
-import TooltipForm from "../ErrorFormTooltip";
+import ErrorFormTooltip from "../ErrorFormTooltip";
 import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
@@ -376,7 +376,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
         </SelectSuffix>
       </SelectContainer>
       {!insideInputGroup && (
-        <TooltipForm
+        <ErrorFormTooltip
           help={help}
           error={error}
           iconRef={iconRef}

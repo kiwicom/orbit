@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
-import TooltipForm from "../ErrorFormTooltip";
+import ErrorFormTooltip from "../ErrorFormTooltip";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import { rtlSpacing } from "../utils/rtl";
@@ -203,7 +203,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         )}
       </FakeInput>
       {!insideInputGroup && (
-        <TooltipForm
+        <ErrorFormTooltip
           help={help}
           error={error}
           iconRef={iconRef}

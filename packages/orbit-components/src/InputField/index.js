@@ -10,7 +10,7 @@ import InputTags from "./InputTags";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useRandomId from "../hooks/useRandomId";
-import TooltipForm from "../ErrorFormTooltip";
+import ErrorFormTooltip from "../ErrorFormTooltip";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
@@ -463,7 +463,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
           <FakeInput size={size} disabled={disabled} error={error} />
         </InputContainer>
         {!insideInputGroup && (
-          <TooltipForm
+          <ErrorFormTooltip
             help={help}
             error={error}
             inputSize={size}

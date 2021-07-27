@@ -5,25 +5,25 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { css } from "styled-components";
 
-import { SIZE_OPTIONS } from "../InputField/consts";
-import Stack from "../Stack";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Tag from "../Tag";
-import InputField from "../InputField";
-import Textarea from "../Textarea";
-import Select from "../Select";
-import InputFile from "../InputFile";
-import InputGroup from "../InputGroup";
-import Button from "../Button";
-import Text from "../Text";
-import ChevronLeft from "../icons/ChevronLeft";
-import Card from "../Card";
-import CountryFlag from "../CountryFlag";
-import Airplane from "../icons/Airplane";
-import TextLink from "../TextLink";
-import Checkbox from "../Checkbox";
-import Radio from "../Radio";
-import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
+import { SIZE_OPTIONS } from "./InputField/consts";
+import Stack from "./Stack";
+import RenderInRtl from "./utils/rtl/RenderInRtl";
+import Tag from "./Tag";
+import InputField from "./InputField";
+import Textarea from "./Textarea";
+import Select from "./Select";
+import InputFile from "./InputFile";
+import InputGroup from "./InputGroup";
+import Button from "./Button";
+import Text from "./Text";
+import ChevronLeft from "./icons/ChevronLeft";
+import Card from "./Card";
+import CountryFlag from "./CountryFlag";
+import Airplane from "./icons/Airplane";
+import TextLink from "./TextLink";
+import Checkbox from "./Checkbox";
+import Radio from "./Radio";
+import Modal, { ModalHeader, ModalSection, ModalFooter } from "./Modal";
 
 const objectOptions = [
   { value: 0, label: "Zero-th item" },
@@ -33,7 +33,7 @@ const objectOptions = [
 ];
 
 export default {
-  title: "FormErrors Kitchensink",
+  title: "ErrorForms Kitchensink",
 };
 
 export const Error = (): React.Node => {

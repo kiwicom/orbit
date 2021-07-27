@@ -14,6 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -304,6 +305,9 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
+  const inputRef = React.useRef(null);
+  const shown = tooltipShown || tooltipShownHover;
+
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
@@ -341,7 +345,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           prefix={prefix}
           name={name}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          onBlur={shown ? undefined : handleBlur}
           onChange={onChange}
           filled={filled}
           customValueText={customValueText}
@@ -349,7 +353,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={ref}
+          ref={mergeRefs([ref, inputRef])}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -376,6 +380,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           help={help}
           error={error}
           iconRef={iconRef}
+          inputRef={inputRef}
           labelRef={labelRef}
           inputSize={size}
           onClose={handleBlur}

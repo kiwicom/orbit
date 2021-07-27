@@ -2,12 +2,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-// import handleKeyDown from "../../utils/handleKeyDown";
+import KEY_CODE_MAP from "../../common/keyMaps";
+import handleKeyDown from "../../utils/handleKeyDown";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledText } from "../../Text";
 import { Item } from "../../List/ListItem";
-// import CloseIc from "../../icons/Close";
+import CloseIc from "../../icons/Close";
 import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
 import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
@@ -86,6 +87,9 @@ StyledFormFeedbackTooltip.defaultProps = {
 
 const StyledTooltipContent = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    height: 100%;
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
     font-weight: ${theme.orbit.fontWeightNormal};
@@ -136,16 +140,19 @@ StyledCloseButton.defaultProps = {
 const FormFeedbackTooltip = ({
   boundingRef,
   inputSize,
+  inputRef,
   iconBoundingRef,
   shown = true,
   children,
   isHelp = false,
+  onClick,
   inlineLabel,
-}: // onClick,
-Props): React.Node => {
+}: Props): React.Node => {
   const contentRef = React.useRef(null);
+  const tooltipRef = React.useRef(null);
+
   const dimensions = useDimensions(
-    { boundingRef, contentRef, iconBoundingRef },
+    { boundingRef, contentRef: tooltipRef, iconBoundingRef },
     children,
     inlineLabel,
   );
@@ -158,9 +165,36 @@ Props): React.Node => {
     [dimensions.bounding.top, dimensions.contentBounding.height],
   );
 
+  React.useEffect(() => {
+    const handleClick = ev => {
+      ev.preventDefault();
+      if (
+        inputRef &&
+        inputRef.current !== ev.target &&
+        ev.target !== contentRef.current &&
+        onClick
+      ) {
+        onClick(ev);
+      }
+    };
+
+    const handleTab = ev => {
+      if (ev.keyCode === KEY_CODE_MAP.TAB && onClick) {
+        onClick(ev);
+      }
+    };
+
+    window.addEventListener("keydown", handleTab);
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("keydown", handleTab);
+      window.removeEventListener("click", handleClick);
+    };
+  }, []);
+
   return (
     <StyledFormFeedbackTooltip
-      ref={contentRef}
+      ref={tooltipRef}
       inputSize={inputSize}
       contentBounding={dimensions.contentBounding}
       bounding={dimensions.bounding}
@@ -171,8 +205,8 @@ Props): React.Node => {
       inlineLabel={inlineLabel}
       aria-live="polite"
     >
-      <StyledTooltipContent>{children}</StyledTooltipContent>
-      {/* {isHelp && (
+      <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
+      {isHelp && (
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO
@@ -184,7 +218,7 @@ Props): React.Node => {
         >
           <CloseIc size="small" />
         </StyledCloseButton>
-      )} */}
+      )}
     </StyledFormFeedbackTooltip>
   );
 };

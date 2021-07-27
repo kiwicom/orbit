@@ -15,6 +15,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -139,6 +140,9 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
+  const inputRef = React.useRef(null);
+  const shown = tooltipShown || tooltipShownHover;
+
   return (
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
@@ -154,7 +158,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         error={error}
         onChange={onChange}
         onFocus={handleFocus}
-        onBlur={handleBlur}
+        onBlur={shown ? undefined : handleBlur}
         accept={allowedFileTypes}
         tabIndex={tabIndex}
       />
@@ -181,7 +185,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         >
           {buttonLabel}
         </Button>
-        <StyledFileInput fileName={fileName} error={error} ref={ref}>
+        <StyledFileInput fileName={fileName} error={error} ref={mergeRefs([ref, inputRef])}>
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (
@@ -203,9 +207,10 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           help={help}
           error={error}
           iconRef={iconRef}
+          inputRef={inputRef}
           labelRef={labelRef}
           onClose={handleBlur}
-          tooltipShown={tooltipShown || tooltipShownHover}
+          tooltipShown={shown}
         />
       )}
     </Field>

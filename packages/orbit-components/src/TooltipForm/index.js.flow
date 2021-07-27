@@ -9,6 +9,7 @@ export type Props = {|
   +error?: React.Node,
   +help?: React.Node,
   +iconRef?: RefType,
+  +inputRef?: RefType,
   +inputSize?: "small" | "normal",
   +onClose?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +labelRef?: RefType,

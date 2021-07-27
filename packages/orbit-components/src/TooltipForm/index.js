@@ -7,6 +7,7 @@ import type { Props } from ".";
 
 const TooltipForm = ({
   iconRef,
+  inputRef,
   inputSize = "normal",
   onClose,
   labelRef,
@@ -35,8 +36,10 @@ const TooltipForm = ({
       {error && (
         <Tooltip
           dataTest={dataTest}
+          inputRef={inputRef}
           iconBoundingRef={iconRef}
           inputSize={inputSize}
+          onClick={onClose}
           boundingRef={labelRef}
           inlineLabel={inlineLabel}
           shown={tooltipShown}

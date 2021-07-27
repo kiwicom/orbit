@@ -45,7 +45,7 @@ describe("InputField", () => {
         }}
       />,
     );
-    const input = screen.getByRole("textbox", { name: /Label/ });
+    const input: any = screen.getByRole("textbox", { name: /Label/ });
     expect(ref.current).toEqual(input);
     expect(input).toHaveAttribute("name", "name");
     expect(input).toHaveAttribute("value", "value");
@@ -62,7 +62,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    fireEvent.focus(input);
+    userEvent.tab(input);
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
@@ -76,7 +76,7 @@ describe("InputField", () => {
     const onMouseDown = jest.fn();
     const onKeyDown = jest.fn();
     const onKeyUp = jest.fn();
-    render(
+    const { debug } = render(
       <InputField
         onChange={onChange}
         onFocus={onFocus}
@@ -100,6 +100,7 @@ describe("InputField", () => {
     fireEvent.select(input);
     expect(onSelect).toHaveBeenCalled();
     fireEvent.blur(input);
+    debug();
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -129,11 +130,12 @@ describe("InputField", () => {
           error={<div data-test="error">Something went wrong.</div>}
         />,
       );
-      const input = screen.getByRole("spinbutton");
+      const input: any = screen.getByRole("spinbutton");
       expect(input).toHaveAttribute("min", "1");
       expect(input).toHaveAttribute("max", "5");
       expect(input).toHaveAttribute("data-state", "error");
-      fireEvent.focus(input);
+
+      userEvent.tab(input);
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
     });

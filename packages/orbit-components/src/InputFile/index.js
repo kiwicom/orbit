@@ -158,7 +158,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         error={error}
         onChange={onChange}
         onFocus={handleFocus}
-        onBlur={shown ? undefined : handleBlur}
+        onBlur={help || error ? undefined : handleBlur}
         accept={allowedFileTypes}
         tabIndex={tabIndex}
       />

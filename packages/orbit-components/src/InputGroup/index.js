@@ -283,7 +283,8 @@ const InputGroup = ({
         {React.Children.toArray(children).map((item, key) => {
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (
-            <StyledChild flex={childFlex || "0 1 auto"}>
+            // eslint-disable-next-line react/no-array-index-key
+            <StyledChild key={key} flex={childFlex || "0 1 auto"}>
               {React.cloneElement(item, {
                 disabled: item.props.disabled || disabled,
                 size,

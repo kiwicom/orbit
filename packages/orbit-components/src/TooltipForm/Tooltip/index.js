@@ -179,7 +179,7 @@ const FormFeedbackTooltip = ({
     };
 
     const handleTab = ev => {
-      if (ev.keyCode === KEY_CODE_MAP.TAB && onClick) {
+      if (ev.keyCode === KEY_CODE_MAP.TAB && onClick && !isHelp) {
         onClick(ev);
       }
     };

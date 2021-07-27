@@ -3,12 +3,12 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import TooltipForm from "../TooltipForm";
+import TooltipForm from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
+import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";

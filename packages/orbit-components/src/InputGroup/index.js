@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
-import TooltipForm from "../TooltipForm";
+import TooltipForm from "../ErrorFormTooltip";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";

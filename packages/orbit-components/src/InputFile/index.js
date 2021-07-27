@@ -6,14 +6,14 @@ import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
-import TooltipForm from "../TooltipForm";
+import TooltipForm from "../ErrorFormTooltip";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
-import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
+import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
 import mergeRefs from "../utils/mergeRefs";
 

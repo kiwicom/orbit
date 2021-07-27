@@ -5,7 +5,7 @@ import Tooltip from "./Tooltip";
 
 import type { Props } from ".";
 
-const TooltipForm = ({
+const ErrorFormTooltip = ({
   iconRef,
   inputRef,
   inputSize = "normal",
@@ -55,4 +55,4 @@ const TooltipForm = ({
   );
 };
 
-export default TooltipForm;
+export default ErrorFormTooltip;

@@ -18108,10 +18108,10 @@ moniker@0.1.2:
   resolved "https://registry.yarnpkg.com/moniker/-/moniker-0.1.2.tgz#872dfba575dcea8fa04a5135b13d5f24beccc97e"
   integrity sha1-hy37pXXc6o+gSlE1sT1fJL7MyX4=
 
-monstra@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/monstra/-/monstra-0.9.1.tgz#0f126e2ce0d19567ecd0ff6c07d4368dc83f2758"
-  integrity sha512-9/zUsHsJBQtOGYt8kEOWEPbXJlv4tv8Kl8N0nmfOwbZNJtWmQAdq41kyUoBuxbYCi09dhZjtJ0UVEau2u9YfMg==
+monstra@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/monstra/-/monstra-0.9.2.tgz#01f75fe23bb9bd948badabdc37882a53d85dcd41"
+  integrity sha512-t5GBi229oVCx6nObjCEUPAPCanGyQNyQ139L0oCKZDbJsfmrVFKZWeSVDMDfBYK85Xnh16HqtebWAd9jB0lnjA==
   dependencies:
     chalk "^4.1.0"
     fast-glob "^3.2.5"

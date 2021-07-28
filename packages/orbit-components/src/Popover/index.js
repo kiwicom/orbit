@@ -1,14 +1,12 @@
 // @flow
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import useTheme from "../hooks/useTheme";
 import { PLACEMENTS } from "./consts";
 import PopoverContent from "./components/ContentWrapper";
-import mq from "../utils/mediaQuery";
 import Portal from "../Portal";
-import defaultTheme from "../defaultTheme";
 import handleKeyDown from "../utils/handleKeyDown";
 
 import type { Props } from ".";
@@ -16,25 +14,6 @@ import type { Props } from ".";
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
-
-const StyledPopoverContent = styled.div`
-  ${({ theme }) => css`
-    overflow: auto;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    width: 100%;
-    background-color: ${theme.orbit.paletteWhite};
-  `}
-
-  ${mq.largeMobile(css`
-    border-radius: 3px;
-  `)}
-`;
-
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledPopoverContent.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Popover = ({
   children,
@@ -53,7 +32,7 @@ const Popover = ({
   overlapped,
   dataTest,
 }: Props): React.Node => {
-  const ref: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const ref = React.useRef<HTMLElement | null>(null);
 
   const theme = useTheme();
 
@@ -82,9 +61,10 @@ const Popover = ({
   );
 
   const handleOut = React.useCallback(
-    ev => {
+    (ev: SyntheticEvent<HTMLElement>) => {
       // If open prop is present ignore custom handler
-      if (ref && !ref.current.contains(ev.target)) {
+      // $FlowFixMe: TODO
+      if (ref.current && !ref.current.contains(ev.target)) {
         if (typeof opened === "undefined") {
           setShown(false);
           clearShownTimeout();

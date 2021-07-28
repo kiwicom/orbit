@@ -409,7 +409,7 @@ export const Playground = (): React.Node => {
   const width = text("width", "350px");
   const noPadding = boolean("noPadding", false);
   const overlapped = boolean("overlapped", false);
-  const opened = boolean("opened", false);
+  const opened = boolean("opened", true);
   const offset = object("offset", { top: 0, left: 0 });
 
   return (

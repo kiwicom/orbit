@@ -18,8 +18,8 @@ import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 
-const mobileTop = theme => theme.orbit.spaceXLarge;
-const popoverPadding = ({ theme }) => () => theme.orbit.spaceMedium;
+const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
+const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;
 
 const StyledContentWrapper = styled.div`
   ${({ theme, windowHeight, actionsHeight }) => css`
@@ -103,7 +103,7 @@ const StyledPopoverParent = styled.div`
     box-sizing: border-box;
     box-shadow: ${theme.orbit.boxShadowRaisedReverse};
     background-color: ${theme.orbit.backgroundModal};
-    max-height: ${`calc(100% - ${mobileTop(theme)})`};
+    max-height: calc(100% - ${mobileTop});
     transform: translateY(${shownMobile ? "0%" : "100%"});
     transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
     &:focus {
@@ -201,11 +201,11 @@ const PopoverContentWrapper = ({
   const { isInsideModal } = React.useContext(ModalContext);
   const { isLargeMobile, isTablet } = useMediaQuery();
 
-  const content: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const content = React.useRef<?HTMLElement | null>(null);
   const scrollingElementRef = React.useRef<HTMLElement | null>(null);
   useLockScrolling(scrollingElementRef, lockScrolling && !isLargeMobile);
 
-  const popoverRef: {| current: React.ElementRef<*> |} = React.useRef(null);
+  const popoverRef = React.useRef<HTMLElement | null>(null);
   const intervalRef = React.useRef(null);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 

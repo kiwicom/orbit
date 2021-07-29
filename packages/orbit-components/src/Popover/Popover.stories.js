@@ -412,6 +412,7 @@ export const Playground = (): React.Node => {
   const opened = boolean("opened", true);
   const offset = object("offset", { top: 0, left: 0 });
   const noFlip = boolean("noFlip", false);
+  const allowOverflow = boolean("allowOverflow", false);
 
   return (
     <Stack justify="center">
@@ -422,6 +423,7 @@ export const Playground = (): React.Node => {
         content={content}
         placement={placement}
         noPadding={noPadding}
+        allowOverflow={allowOverflow}
         opened={opened}
         noFlip={noFlip}
         actions={

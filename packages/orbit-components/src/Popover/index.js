@@ -27,6 +27,7 @@ const Popover = ({
   fixed,
   lockScrolling,
   noFlip,
+  allowOverflow,
   noPadding,
   width,
   actions,
@@ -137,6 +138,7 @@ const Popover = ({
       overlapped={overlapped}
       fixed={fixed}
       noFlip={noFlip}
+      allowOverflow={allowOverflow}
       lockScrolling={lockScrolling}
       noPadding={noPadding}
       actions={actions}

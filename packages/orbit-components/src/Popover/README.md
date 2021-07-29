@@ -36,6 +36,7 @@ Table below contains all types of the props available in the Popover component.
 | placement      | [`placement](#placement) | `bottom-start`      | 12 different placements to choose from                                                                                                           |
 | lockScrolling  | `boolean`                | `true`              | Whether to prevent scrolling of the rest of the page while Popover is open on mobile. This is on by default to provide a better user experience. |
 | noFlip         | `boolean`                | `false`             | Turns off automatic flipping of the Popover when there is not enough space                                                                       |
+| allowOverflow  | `boolean`                | `false`             | Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.                                                        |
 
 ## enum
 

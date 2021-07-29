@@ -132,9 +132,7 @@ StyledPopoverParent.defaultProps = {
 };
 
 const StyledPopoverPadding = styled.div`
-  padding: ${({ noPadding }) =>
-    // $FlowFixMe: TODO
-    noPadding ? 0 : popoverPadding};
+  padding: ${({ noPadding }) => (noPadding ? 0 : popoverPadding)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -195,6 +193,7 @@ const PopoverContentWrapper = ({
   overlapped,
   shown,
   fixed,
+  allowOverflow,
   lockScrolling = true,
   actions,
 }: Props): React.Node => {
@@ -225,6 +224,7 @@ const PopoverContentWrapper = ({
         name: "flip",
         enabled: !noFlip,
       },
+      { name: "preventOverflow", enabled: !allowOverflow },
     ],
   });
 

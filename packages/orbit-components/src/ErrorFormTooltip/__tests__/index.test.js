@@ -10,16 +10,19 @@ describe("ErrorFormTooltip", () => {
     const onClose = jest.fn();
 
     render(
-      <ErrorFormTooltip
-        onClose={onClose}
-        onShow={() => {}}
-        dataTest="test"
-        tooltipShown
-        error="error"
-      />,
+      <div data-test="background">
+        <ErrorFormTooltip
+          onClose={onClose}
+          onShow={() => {}}
+          dataTest="test"
+          tooltipShown
+          error="error"
+        />
+        ,
+      </div>,
     );
 
-    userEvent.click((document.body: any));
+    userEvent.click(screen.getByTestId("background"));
     expect(onClose).toHaveBeenCalled();
 
     expect(screen.getByTestId("test")).toBeInTheDocument();

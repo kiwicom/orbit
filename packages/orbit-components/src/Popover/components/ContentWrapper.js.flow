@@ -11,6 +11,7 @@ export type Props = {|
   +referenceElement: HTMLElement | null,
   +placement: Placement,
   +width?: string,
+  +noFlip?: boolean,
   +noPadding?: boolean,
   +overlapped?: boolean,
   +shown: boolean,

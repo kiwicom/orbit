@@ -20,6 +20,7 @@ export type Props = {|
   +placement?: Placement,
   +opened?: boolean,
   +width?: string,
+  +noFlip?: boolean,
   +noPadding?: boolean,
   +overlapped?: boolean,
   +fixed?: boolean,

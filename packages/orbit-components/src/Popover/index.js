@@ -26,6 +26,7 @@ const Popover = ({
   placement = PLACEMENTS.BOTTOM_START,
   fixed,
   lockScrolling,
+  noFlip,
   noPadding,
   width,
   actions,
@@ -135,6 +136,7 @@ const Popover = ({
       dataTest={dataTest}
       overlapped={overlapped}
       fixed={fixed}
+      noFlip={noFlip}
       lockScrolling={lockScrolling}
       noPadding={noPadding}
       actions={actions}

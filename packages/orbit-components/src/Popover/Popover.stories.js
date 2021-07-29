@@ -411,6 +411,7 @@ export const Playground = (): React.Node => {
   const overlapped = boolean("overlapped", false);
   const opened = boolean("opened", true);
   const offset = object("offset", { top: 0, left: 0 });
+  const noFlip = boolean("noFlip", false);
 
   return (
     <Stack justify="center">
@@ -422,6 +423,7 @@ export const Playground = (): React.Node => {
         placement={placement}
         noPadding={noPadding}
         opened={opened}
+        noFlip={noFlip}
         actions={
           <Stack direction="row" justify="between">
             <Button type="secondary" size="small">

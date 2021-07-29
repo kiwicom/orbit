@@ -186,6 +186,7 @@ const PopoverContentWrapper = ({
   children,
   onClose,
   width,
+  noFlip,
   offset = { top: 4, left: 0 },
   referenceElement,
   dataTest,
@@ -222,7 +223,7 @@ const PopoverContentWrapper = ({
       },
       {
         name: "flip",
-        enabled: !overlapped,
+        enabled: !noFlip,
       },
     ],
   });

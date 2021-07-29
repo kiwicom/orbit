@@ -20,6 +20,7 @@ export interface Props extends Common.Global {
   readonly opened?: boolean;
   readonly width?: string;
   readonly noPadding?: boolean;
+  readonly noFlip?: boolean;
   readonly overlapped?: boolean;
   readonly fixed?: boolean;
   readonly actions?: React.ReactNode;

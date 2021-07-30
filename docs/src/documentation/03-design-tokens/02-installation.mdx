@@ -3,7 +3,9 @@ title: Installation
 ---
 
 If you're already using `@kiwicom/orbit-components`,
-you don't need to install the tokens because they're included as a dependency to ensure compatibility, see []()
+you don't need to install the tokens
+because they're included as a dependency to ensure compatibility,
+see [usage with `@kiwicom/orbit-components`](#usage-with-kiwicomorbit-components).
 
 If not, you can install the package on its own.
 
@@ -17,13 +19,16 @@ yarn add @kiwicom/orbit-design-tokens
 
 ## Usage without @kiwicom/orbit-components
 
-Once installed in your codebase, you can use our design tokens in JavaScript environment with simply importing them.
+Once installed in your codebase,
+you can use our design tokens in JavaScript environment
+by simply importing them.
 
 ```js
 import { defaultTheme } from "@kiwicom/orbit-design-tokens";
 ```
 
-The `defaultTheme` object contains all design tokens that are available for every usage.
+The `defaultTheme` object contains all design tokens
+that are available for every usage.
 
 ```js
 /*
@@ -39,17 +44,21 @@ The `defaultTheme` object contains all design tokens that are available for ever
 }
 ```
 
-We recommend this specified usage only for cases when you don't need to work also with `@kiwicom/orbit-components`.
+Use this only in cases when you don't need to also work with `@kiwicom/orbit-components`.
 
 ## Usage with @kiwicom/orbit-components
 
-To be able to use our design tokens together with Orbit React components, we highly recommend using import from them, instead of from design tokens.
+To be able to use our design tokens together with Orbit React components,
+we highly recommend using import from the components package,
+instead of from design tokens.
 
 ```js
 import { defaultTheme } from "@kiwicom/orbit-components";
 ```
 
-There is only small minor change. The `defaultTheme` contains more various data that we use for creating more advanced and scale-able user interfaces.
+There is one minor difference:
+`defaultTheme` contains a few more things
+that we use for creating more advanced and scalable user interfaces.
 
 ```js
 /*
@@ -68,11 +77,14 @@ There is only small minor change. The `defaultTheme` contains more various data 
 }
 ```
 
-> You can read more the support of right-to-left languages [here](/development/utilities/rtl-languages).
+> You can read more about the [support of right-to-left languages](/development/utilities/rtl-languages).
 
-Since `@kiwicom/orbit-components` is build upon `styled-components` CSS-in-JS library, it's necessary to work with a theming (styling) context across the whole application.
+Since `@kiwicom/orbit-components` is build upon the `styled-components` CSS-in-JS library,
+it's necessary to work with a theming (styling) context across the whole application.
 
-To be able to use the same `theme` context object with same value across the whole application we encourage users to wrap the whole application into Orbits' `ThemeProvider`.
+To be able to use the same `theme` context object with same value
+across the whole application
+we encourage users to wrap the whole application into Orbit's `ThemeProvider`.
 
 ```js
 import * as React from "react";
@@ -83,7 +95,9 @@ const App = ({ children }) => {
 };
 ```
 
-And, most importantly consuming the `theme` by accessing the context object directly inside `styled-components`.
+And, most importantly consuming the `theme`
+by accessing the context object
+directly inside `styled-components`.
 
 ```jsx
 import * as React from "react";
@@ -94,6 +108,10 @@ export const CustomStyled = styled.div`
 `;
 ```
 
-This approach enables easier consistency how to work and consume the Orbit's foundation, tokenized by `@kiwicom/orbit-design-tokens`.
-Lastly, it also provides a better and easier way how to enable custom theming for your application. To read more about theming possibilities and implementation,
+This approach enables easier consistency
+when working and consuming Orbit's foundation,
+tokenized by `@kiwicom/orbit-design-tokens`.
+Lastly, it also provides a better and easier way
+of adding a custom theme to your application.
+To read more about theming possibilities and implementation,
 please check the [theming](/design-tokens/theming) page.

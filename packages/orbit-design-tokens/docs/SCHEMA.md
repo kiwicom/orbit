@@ -1,8 +1,8 @@
 # Schema of @kiwicom/orbit-design-tokens
 
-Orbit design tokens could be considered as a simple way how to describe, document and use the visual language of Orbit design system, but there are multiple requirements that it needs to meet and support.
+Orbit design tokens could be considered as a simple way to describe, document and use the visual language of Orbit design system, but there are multiple requirements that it needs to meet and support.
 
-Therefore, we use structured and standardized way how Orbit design tokens are being created, stored and how we work with them.
+Therefore, we use structured and standardized way Orbit design tokens are being created, stored and how we work with them.
 
 ## Namespace / Object / Variant / Property
 
@@ -179,14 +179,14 @@ Status types:
 – success
 
 - warning
-– critical
+  – critical
 - neutral
 
 Ordered importance types:
 
 - primary
-– secondary
-– tertiary
+  – secondary
+  – tertiary
 
 We also use additional types connected to some specific behaviour, such as:
 
@@ -206,6 +206,7 @@ For transitioning, we use simple scale of three values that represents relative 
 
 – slow
 – normal
+
 - fast
 
 ### Typography scale

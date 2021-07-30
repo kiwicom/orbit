@@ -310,7 +310,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </StyledDestinationCardHiddenContent>
             </StyledDestinationCardContent>
           </StyledDestinationCard>
-        )}{" "}
+        )}
       </UID>
     );
   }

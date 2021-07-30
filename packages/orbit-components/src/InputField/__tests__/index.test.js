@@ -12,6 +12,8 @@ import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import { INPUTMODE } from "../consts";
 import defaultTheme from "../../defaultTheme";
 
+jest.mock("../../hooks/useRandomId", () => name => name);
+
 describe("InputField", () => {
   it("should have expected DOM output", () => {
     const ref = React.createRef();

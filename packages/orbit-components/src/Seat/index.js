@@ -5,7 +5,7 @@ import * as React from "react";
 import SeatLegend from "./components/SeatLegend";
 import Stack from "../Stack";
 import Text from "../Text";
-import randomID from "../utils/randomID";
+import useRandomID from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import SeatNormal, {
   StyledPath as StyledPathNormal,
@@ -105,8 +105,8 @@ const Seat = ({
   title = "Seat",
   description = "Presents options for seating",
 }: Props): React.Node => {
-  const titleId = React.useMemo(() => randomID("title"), []);
-  const descrId = React.useMemo(() => randomID("descr"), []);
+  const titleId = useRandomID("title");
+  const descrId = useRandomID("descr");
   const clickable = type !== TYPES.UNAVAILABLE;
 
   return (

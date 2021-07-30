@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { UID } from "react-uid";
 
 import defaultTheme from "../../defaultTheme";
 import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
@@ -17,7 +18,6 @@ import { right, rtlSpacing } from "../../utils/rtl";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import Slide from "../../utils/Slide";
 import Truncate from "../../Truncate";
-import randomID from "../../utils/randomID";
 
 import type { Props, State, ExpandedType } from ".";
 
@@ -270,8 +270,6 @@ const MilestoneIcon = ({ type }) => {
 class TripSegment extends React.PureComponent<Props, State> {
   node: {| current: null | HTMLDivElement |} = React.createRef<HTMLDivElement>();
 
-  tripSegmentID: string = randomID("tripSegmentID");
-
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -333,59 +331,63 @@ class TripSegment extends React.PureComponent<Props, State> {
     const { expanded, contentHeight } = this.state;
 
     return (
-      <StyledTripSegment
-        dataTest={dataTest}
-        tabIndex={tabIndex}
-        role="button"
-        aria-expanded={expanded}
-        onKeyDown={this.handleOnKeyDown}
-      >
-        <StyledTripSegmentMilestone onClick={this.handleToggle}>
-          <MilestoneIcon type={carrier.type || CARRIER_TYPE_OPTIONS.AIRLINE} />
-          <StyledTripSegmentMilestoneArrow />
-        </StyledTripSegmentMilestone>
-        <StyledTripSegmentContent>
-          <StyledTripSegmentOverviewWrapper
-            onClick={this.handleToggle}
-            aria-controls={this.tripSegmentID}
+      <UID>
+        {id => (
+          <StyledTripSegment
+            dataTest={dataTest}
+            tabIndex={tabIndex}
+            role="button"
+            aria-expanded={expanded}
+            onKeyDown={this.handleOnKeyDown}
           >
-            <StyledTripSegmentOverview>
-              <StyledTripSegmentOverviewColumn>
-                <StyledTripSegmentOverviewTime>
-                  <Text as="div" align="right">
-                    {departureTime}
+            <StyledTripSegmentMilestone onClick={this.handleToggle}>
+              <MilestoneIcon type={carrier.type || CARRIER_TYPE_OPTIONS.AIRLINE} />
+              <StyledTripSegmentMilestoneArrow />
+            </StyledTripSegmentMilestone>
+            <StyledTripSegmentContent>
+              <StyledTripSegmentOverviewWrapper
+                onClick={this.handleToggle}
+                aria-controls={id("tripSegmentId")}
+              >
+                <StyledTripSegmentOverview>
+                  <StyledTripSegmentOverviewColumn>
+                    <StyledTripSegmentOverviewTime>
+                      <Text as="div" align="right">
+                        {departureTime}
+                      </Text>
+                    </StyledTripSegmentOverviewTime>
+                    <StyledTripSegmentOverviewTime>
+                      <Text as="div" align="right">
+                        {arrivalTime}
+                      </Text>
+                    </StyledTripSegmentOverviewTime>
+                  </StyledTripSegmentOverviewColumn>
+                  <StyledTripSegmentOverviewColumn grow>
+                    <Text as="div" type="primary">
+                      <Truncate>{departure}</Truncate>
+                    </Text>
+                    <Text as="div" type="primary">
+                      <Truncate>{arrival}</Truncate>
+                    </Text>
+                  </StyledTripSegmentOverviewColumn>
+                </StyledTripSegmentOverview>
+                <StyledTripSegmentCarrier>
+                  <Text as="div" type="secondary" size="small">
+                    {duration}
                   </Text>
-                </StyledTripSegmentOverviewTime>
-                <StyledTripSegmentOverviewTime>
-                  <Text as="div" align="right">
-                    {arrivalTime}
-                  </Text>
-                </StyledTripSegmentOverviewTime>
-              </StyledTripSegmentOverviewColumn>
-              <StyledTripSegmentOverviewColumn grow>
-                <Text as="div" type="primary">
-                  <Truncate>{departure}</Truncate>
-                </Text>
-                <Text as="div" type="primary">
-                  <Truncate>{arrival}</Truncate>
-                </Text>
-              </StyledTripSegmentOverviewColumn>
-            </StyledTripSegmentOverview>
-            <StyledTripSegmentCarrier>
-              <Text as="div" type="secondary" size="small">
-                {duration}
-              </Text>
-              <CarrierLogo size="medium" carriers={[carrier]} />
-              <Chevrons expanded={expanded} />
-            </StyledTripSegmentCarrier>
-          </StyledTripSegmentOverviewWrapper>
-          <Slide maxHeight={contentHeight} expanded={expanded} id={this.tripSegmentID}>
-            <StyledTripSegmentChildren expanded={expanded}>
-              <div ref={this.node}>{children}</div>
-            </StyledTripSegmentChildren>
-          </Slide>
-        </StyledTripSegmentContent>
-      </StyledTripSegment>
+                  <CarrierLogo size="medium" carriers={[carrier]} />
+                  <Chevrons expanded={expanded} />
+                </StyledTripSegmentCarrier>
+              </StyledTripSegmentOverviewWrapper>
+              <Slide maxHeight={contentHeight} expanded={expanded} id={id("tripSegmentId")}>
+                <StyledTripSegmentChildren expanded={expanded}>
+                  <div ref={this.node}>{children}</div>
+                </StyledTripSegmentChildren>
+              </Slide>
+            </StyledTripSegmentContent>
+          </StyledTripSegment>
+        )}
+      </UID>
     );
   }
 }

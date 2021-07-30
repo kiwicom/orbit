@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { UID } from "react-uid";
 
 import Heading from "../../Heading";
 import Stack from "../../Stack";
@@ -10,7 +11,6 @@ import FlightDirectIcon from "../../icons/FlightDirect";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../../LazyImage";
 import Text from "../../Text";
-import randomID from "../../utils/randomID";
 import handleKeyDown from "../../utils/handleKeyDown";
 
 import type { Props, State } from ".";
@@ -186,8 +186,6 @@ class DestinationCard extends React.PureComponent<Props, State> {
 
   hiddenContent: {| current: any | HTMLDivElement |} = React.createRef();
 
-  cardID: string = randomID("destinationCardID");
-
   componentDidMount() {
     this.setHeight();
   }
@@ -227,89 +225,93 @@ class DestinationCard extends React.PureComponent<Props, State> {
     const image = this.props.image.toLowerCase();
 
     return (
-      <StyledDestinationCard
-        data-test={dataTest}
-        onClick={onClick}
-        onKeyDown={handleKeyDown(onClick)}
-        height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
-        tabIndex={tabIndex}
-        role="link"
-        aria-labelledby={this.cardID}
-      >
-        <LazyImage
-          original={{
-            webp: ` ${BASE_URL}/photos/385x320/${image}.webp`,
-            jpg: `${BASE_URL}/photos/385x320/${image}.jpg`,
-          }}
-          placeholder={{
-            webp: ` ${BASE_URL}/photos/30x30/${image}.webp`,
-            jpg: `${BASE_URL}/photos/30x30/${image}.jpg`,
-          }} // Add that to images kiwi
-          name={destinationCity}
-        />
-        <StyledOverlay />
-        <StyledOverlayHover />
-        <StyledDestinationCardContent hiddenContentHeight={hiddenContentHeight}>
-          <StyledDestinationCardHeader id={this.cardID}>
-            <Shown>
-              <Stack flex align="center" justify="start" spacing="XXXSmall">
+      <UID>
+        {cardID => (
+          <StyledDestinationCard
+            data-test={dataTest}
+            onClick={onClick}
+            onKeyDown={handleKeyDown(onClick)}
+            height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
+            tabIndex={tabIndex}
+            role="link"
+            aria-labelledby={cardID("cardID")}
+          >
+            <LazyImage
+              original={{
+                webp: ` ${BASE_URL}/photos/385x320/${image}.webp`,
+                jpg: `${BASE_URL}/photos/385x320/${image}.jpg`,
+              }}
+              placeholder={{
+                webp: ` ${BASE_URL}/photos/30x30/${image}.webp`,
+                jpg: `${BASE_URL}/photos/30x30/${image}.jpg`,
+              }} // Add that to images kiwi
+              name={destinationCity}
+            />
+            <StyledOverlay />
+            <StyledOverlayHover />
+            <StyledDestinationCardContent hiddenContentHeight={hiddenContentHeight}>
+              <StyledDestinationCardHeader id={cardID("cardID")}>
+                <Shown>
+                  <Stack flex align="center" justify="start" spacing="XXXSmall">
+                    <Heading type="title3" inverted>
+                      {departureCity}
+                    </Heading>
+                    <ArrowUp customColor="#fff" size="small" />
+                  </Stack>
+                </Shown>
+                <StyledDestination>
+                  <Heading type="title1" inverted>
+                    {destinationCity}
+                  </Heading>
+                </StyledDestination>
+                <Shown>
+                  <Heading type="title4" inverted>
+                    {destinationCountry}
+                  </Heading>
+                </Shown>
+              </StyledDestinationCardHeader>
+              <Stack flex justify="between" spaceAfter="small" align="end">
                 <Heading type="title3" inverted>
-                  {departureCity}
+                  {price}
                 </Heading>
-                <ArrowUp customColor="#fff" size="small" />
-              </Stack>
-            </Shown>
-            <StyledDestination>
-              <Heading type="title1" inverted>
-                {destinationCity}
-              </Heading>
-            </StyledDestination>
-            <Shown>
-              <Heading type="title4" inverted>
-                {destinationCountry}
-              </Heading>
-            </Shown>
-          </StyledDestinationCardHeader>
-          <Stack flex justify="between" spaceAfter="small" align="end">
-            <Heading type="title3" inverted>
-              {price}
-            </Heading>
-            {timeOfStay && (
-              <Heading type="title4" inverted>
-                {timeOfStay}
-              </Heading>
-            )}
-          </Stack>
-          <StyledDestinationCardHiddenContent ref={this.hiddenContent}>
-            <Stack direction="row" justify="between">
-              <SmallHeading>
-                {outbound.text ? (
-                  outbound.text
-                ) : (
-                  <>
-                    <FlightDirect size="small" />
-                    {outbound.date}
-                  </>
+                {timeOfStay && (
+                  <Heading type="title4" inverted>
+                    {timeOfStay}
+                  </Heading>
                 )}
-              </SmallHeading>
-              <SmallHeading>
-                {outbound.type}&nbsp;•&nbsp;{outbound.duration}
-              </SmallHeading>
-            </Stack>
-            {inbound && (
-              <Stack direction="row" justify="between">
-                <SmallHeading>
-                  <FlightDirect size="small" isReturn />
-                  {inbound.date}
-                </SmallHeading>
-                <SmallHeading>
-                  {inbound.type}&nbsp;•&nbsp;{inbound.duration}
-                </SmallHeading>
               </Stack>
-            )}
-          </StyledDestinationCardHiddenContent>
-        </StyledDestinationCardContent>
-      </StyledDestinationCard>
+              <StyledDestinationCardHiddenContent ref={this.hiddenContent}>
+                <Stack direction="row" justify="between">
+                  <SmallHeading>
+                    {outbound.text ? (
+                      outbound.text
+                    ) : (
+                      <>
+                        <FlightDirect size="small" />
+                        {outbound.date}
+                      </>
+                    )}
+                  </SmallHeading>
+                  <SmallHeading>
+                    {outbound.type}&nbsp;•&nbsp;{outbound.duration}
+                  </SmallHeading>
+                </Stack>
+                {inbound && (
+                  <Stack direction="row" justify="between">
+                    <SmallHeading>
+                      <FlightDirect size="small" isReturn />
+                      {inbound.date}
+                    </SmallHeading>
+                    <SmallHeading>
+                      {inbound.type}&nbsp;•&nbsp;{inbound.duration}
+                    </SmallHeading>
+                  </Stack>
+                )}
+              </StyledDestinationCardHiddenContent>
+            </StyledDestinationCardContent>
+          </StyledDestinationCard>
+        )}{" "}
+      </UID>
     );
   }
 }

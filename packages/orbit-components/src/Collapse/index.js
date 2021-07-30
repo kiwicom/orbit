@@ -8,7 +8,7 @@ import ButtonLink from "../ButtonLink";
 import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
-import randomID from "../utils/randomID";
+import useRandomId from "../hooks/useRandomId";
 import useBoundingRect from "../hooks/useBoundingRect";
 
 import type { Props } from ".";
@@ -85,8 +85,8 @@ const Collapse = ({
   const expanded = isControlledComponent ? expandedProp : expandedState;
   const [{ height }, node] = useBoundingRect({ height: expanded ? null : 0 });
 
-  const slideID = React.useMemo(() => randomID("slideID"), []);
-  const labelID = React.useMemo(() => randomID("labelID"), []);
+  const slideID = useRandomId("slideID");
+  const labelID = useRandomId("labelID");
 
   const handleClick = React.useCallback(
     event => {

@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import randomID from "../../utils/randomID";
+import useRandomId from "../../hooks/useRandomId";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";
@@ -28,7 +28,7 @@ const MobileDialog = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
   const [shown, setshown, setshownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
-  const mobileDialogID = React.useMemo(() => randomID("mobileDialogID"), []);
+  const mobileDialogID = useRandomId("mobileDialogID");
 
   const handleInMobile = React.useCallback(
     ev => {

@@ -1,14 +1,14 @@
 // @flow
 import * as React from "react";
 
-import randomID from "../../utils/randomID";
+import useRandomId from "../../hooks/useRandomId";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "..";
 
 const SmartPassV2 = ({ primary, secondary, ...props }: Props): React.Node => {
-  const randomIDLinear = React.useMemo(() => randomID("linear1"), []);
-  const randomIDLinear2 = React.useMemo(() => randomID("linear2"), []);
-  const randomIDLinear3 = React.useMemo(() => randomID("linear3"), []);
+  const RandomIDLinear = useRandomId("linear1");
+  const RandomIDLinear2 = useRandomId("linear2");
+  const RandomIDLinear3 = useRandomId("linear3");
 
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1300">
@@ -28,21 +28,21 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props): React.Node => {
         <path d="M1118.77 667.3V252.59L1156.7 233.28V648.74L1118.77 667.3Z" fill="#CAD5DF" />
         <path
           d="M2025 1160.04L818.54 562.63L885.25 523.06L553.67 516.07L587.62 699.59L662.83 654.98L1868.35 1252.44L2025 1160.04Z"
-          fill={`url(#${randomIDLinear})`}
+          fill={`url(#${RandomIDLinear})`}
         />
         <path
           opacity="0.3"
           fillRule="evenodd"
           clipRule="evenodd"
           d="M1990.93 1050.13L1948.62 1068.13L1118.9 667.3L1156.83 648.74L1990.93 1050.13Z"
-          fill={`url(#${randomIDLinear2})`}
+          fill={`url(#${RandomIDLinear2})`}
         />
         <g opacity="0.5">
           <g opacity="0.5">
             <path
               opacity="0.5"
               d="M257.49 564.6L1633.34 1243.95L1564.1 1278.36L172.83 591.14L257.49 564.6Z"
-              fill={`url(#${randomIDLinear3})`}
+              fill={`url(#${RandomIDLinear3})`}
             />
           </g>
         </g>
@@ -159,7 +159,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props): React.Node => {
       </g>
       <defs>
         <linearGradient
-          id={randomIDLinear}
+          id={RandomIDLinear}
           x1="379.62"
           y1="376.22"
           x2="1725.26"
@@ -170,7 +170,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props): React.Node => {
           <stop offset="1" stopColor="#01A891" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id={randomIDLinear2}
+          id={RandomIDLinear2}
           x1="1194.65"
           y1="676.19"
           x2="1883.42"
@@ -182,7 +182,7 @@ const SmartPassV2 = ({ primary, secondary, ...props }: Props): React.Node => {
           <stop offset="1" stopColor="#BAC7D5" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id={randomIDLinear3}
+          id={RandomIDLinear3}
           x1="1367.86"
           y1="1160.68"
           x2="347.63"

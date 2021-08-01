@@ -12,7 +12,7 @@ export interface Dimensions {
 }
 
 declare const BoundingClientRect: (
-  ref: { current: HTMLElement } | null | undefined,
+  ref?: { current: HTMLElement } | null | undefined,
 ) => Dimensions | null | undefined;
 
 export { BoundingClientRect, BoundingClientRect as default };

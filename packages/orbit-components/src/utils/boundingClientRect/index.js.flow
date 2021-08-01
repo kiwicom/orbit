@@ -1,4 +1,6 @@
 // @flow
+import type { RefType } from "../../common/common.js.flow";
+
 export type Dimensions = {|
   top: number,
   right: number,
@@ -12,6 +14,6 @@ export type Dimensions = {|
   pureBottom: number,
 |};
 
-export type BoundingClientRect = (ref: ?{| current: ?HTMLElement |}) => ?Dimensions;
+export type BoundingClientRect = (ref?: RefType) => ?Dimensions;
 
 declare export default BoundingClientRect;

@@ -1,6 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import * as React from "react";
+import React from "react";
 
 import * as Common from "../common/common";
 import { Dimensions as PositionRaw } from "../utils/boundingClientRect";
@@ -22,8 +22,8 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 export interface Dimensions {
   readonly set: boolean;
-  readonly bounding: PositionRaw;
-  readonly iconBounding: PositionRaw;
+  readonly labelRef: PositionRaw;
+  readonly iconRef: PositionRaw;
 }
 
 declare const ErrorFormTooltip: React.FC<Props>;

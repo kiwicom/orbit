@@ -137,12 +137,12 @@ StyledCloseButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormFeedbackTooltip = ({
-  boundingRef,
+const ErrorFormTooltip = ({
+  labelRef,
   dataTest,
   inputSize,
   inputRef,
-  iconBoundingRef,
+  iconRef,
   shown = true,
   children,
   isHelp = false,
@@ -154,7 +154,7 @@ const FormFeedbackTooltip = ({
   const tooltipRef = React.useRef(null);
 
   const dimensions = useDimensions(
-    { boundingRef, contentRef: tooltipRef, iconBoundingRef },
+    { labelRef, contentRef: tooltipRef, iconRef },
     children,
     inlineLabel,
   );
@@ -191,7 +191,7 @@ const FormFeedbackTooltip = ({
       window.removeEventListener("keydown", handleTab);
       window.removeEventListener("click", handleClick);
     };
-  }, [isHelp]);
+  }, [isHelp, onClose, onShow]);
 
   return (
     <StyledFormFeedbackTooltip
@@ -225,4 +225,4 @@ const FormFeedbackTooltip = ({
   );
 };
 
-export default FormFeedbackTooltip;
+export default ErrorFormTooltip;

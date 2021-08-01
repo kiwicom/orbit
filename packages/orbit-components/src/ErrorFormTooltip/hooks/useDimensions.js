@@ -17,11 +17,7 @@ const defaultPositions = {
   pureBottom: 0,
 };
 
-const useDimensions: UseDimensions = (
-  { boundingRef, contentRef, iconBoundingRef },
-  children,
-  inlineLabel,
-) => {
+const useDimensions: UseDimensions = ({ labelRef, contentRef, iconRef }, children, inlineLabel) => {
   const [dimensions, setDimensions] = useState({
     set: false,
     bounding: defaultPositions,
@@ -31,9 +27,9 @@ const useDimensions: UseDimensions = (
 
   useEffect(() => {
     const calculateDimensions = () => {
-      const bounding = boundingClientRect(boundingRef);
+      const bounding = boundingClientRect(labelRef);
       const contentBounding = boundingClientRect(contentRef);
-      const iconBounding = boundingClientRect(iconBoundingRef);
+      const iconBounding = boundingClientRect(iconRef);
       if (bounding && contentBounding) {
         setDimensions({
           set: true,
@@ -50,7 +46,7 @@ const useDimensions: UseDimensions = (
     return () => {
       window.removeEventListener("resize", calculateDimensions);
     };
-  }, [boundingRef, contentRef, iconBoundingRef, children, inlineLabel]);
+  }, [labelRef, contentRef, iconRef, children, inlineLabel]);
 
   return dimensions;
 };

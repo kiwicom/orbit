@@ -24,9 +24,9 @@ const ErrorFormTooltip = ({
         <Tooltip
           dataTest={dataTest}
           inputRef={inputRef}
-          iconBoundingRef={iconRef}
+          iconRef={iconRef}
+          labelRef={labelRef}
           inputSize={inputSize}
-          boundingRef={labelRef}
           onClose={onClose}
           onShow={onShow}
           isHelp
@@ -40,11 +40,11 @@ const ErrorFormTooltip = ({
         <Tooltip
           dataTest={dataTest}
           inputRef={inputRef}
-          iconBoundingRef={iconRef}
+          labelRef={labelRef}
+          iconRef={iconRef}
           inputSize={inputSize}
           onClose={onClose}
           onShow={onShow}
-          boundingRef={labelRef}
           inlineLabel={inlineLabel}
           shown={tooltipShown}
         >

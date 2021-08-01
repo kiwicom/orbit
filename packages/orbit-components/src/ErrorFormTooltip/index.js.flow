@@ -9,11 +9,11 @@ export type Props = {|
   +error?: React.Node,
   +help?: React.Node,
   +iconRef?: RefType,
+  +labelRef?: RefType,
   +inputRef?: RefType,
   +inputSize?: "small" | "normal",
   +onClose: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onShow: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  +labelRef?: RefType,
   +inlineLabel?: boolean,
   ...Globals,
 |};

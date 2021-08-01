@@ -8,15 +8,23 @@ import ErrorFormTooltip from "..";
 describe("ErrorFormTooltip", () => {
   it("should have error", () => {
     const onClose = jest.fn();
+    const ref = React.createRef();
 
-    render(
-      <div data-test="background">
-        <ErrorFormTooltip onClose={onClose} onShow={() => {}} dataTest="test" shown error="error" />
-        ,
-      </div>,
+    const { container } = render(
+      <>
+        <input ref={ref} />
+        <ErrorFormTooltip
+          onClose={onClose}
+          inputRef={ref}
+          onShow={() => {}}
+          dataTest="test"
+          shown
+          error="error"
+        />
+      </>,
     );
 
-    userEvent.click(screen.getByTestId("background"));
+    userEvent.click(container);
     expect(onClose).toHaveBeenCalled();
 
     expect(screen.getByTestId("test")).toBeInTheDocument();

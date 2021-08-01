@@ -109,7 +109,7 @@
     "error": "",
     "twitter": "fallion",
     "website": "https://fallion.net/",
-    "info": "Founder of @aevea. Ex-@kiwicom.\r\n\r\nExcited about Go and Elixir.\r\n\r\n",
+    "info": "Founder of @aevea. Ex-@kiwicom. Excited about Go and Elixir. ",
     "active": false,
     "dribble": "",
     "avatar_url": "https://avatars.githubusercontent.com/u/683286?v=4",
@@ -128,19 +128,6 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/2174629?v=4",
     "position": "",
     "github": "https://github.com/jaroslav-kubicek"
-  },
-  {
-    "id": "85437f36-ffa2-5506-8d6d-8242fb786dbe",
-    "name": "williamkolmacka",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
-    "position": "",
-    "github": "https://github.com/williamkolmacka"
   },
   {
     "id": "ba763709-e0a9-5345-a157-dd93f9d213b8",
@@ -167,6 +154,19 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/1737335?v=4",
     "position": "",
     "github": "https://github.com/PetrSnobelt"
+  },
+  {
+    "id": "85437f36-ffa2-5506-8d6d-8242fb786dbe",
+    "name": "williamkolmacka",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
+    "position": "",
+    "github": "https://github.com/williamkolmacka"
   },
   {
     "id": "5f9fcbde-6948-558c-8ea6-dc06f01ba081",
@@ -239,7 +239,7 @@
     "error": "",
     "twitter": null,
     "website": "www.albertalises.me",
-    "info": "Leading Engineering at @olivahealth | MSc. in Computational Biomedical Engineering. 🧠💻\r\n\r\n> https://oliva.health.com",
+    "info": "Leading Engineering at @olivahealth | MSc. in Computational Biomedical Engineering. 🧠💻 > https://oliva.health.com",
     "active": false,
     "dribble": "",
     "avatar_url": "https://avatars.githubusercontent.com/u/11021461?v=4",
@@ -278,7 +278,7 @@
     "error": "",
     "twitter": "RobinCsl",
     "website": "https://www.robincussol.com",
-    "info": "Staff Engineer, Frontend Platform @kiwicom\r\n\r\nReact/React Native Developer",
+    "info": "Staff Engineer, Frontend Platform @kiwicom React/React Native Developer",
     "active": false,
     "dribble": "",
     "avatar_url": "https://avatars.githubusercontent.com/u/22741774?v=4",

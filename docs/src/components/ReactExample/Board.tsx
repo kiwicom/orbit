@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, ButtonLink, Tooltip } from "@kiwicom/orbit-components";
+import { Stack, ButtonLink, Tooltip, useMediaQuery } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import styled from "styled-components";
 
@@ -25,6 +25,7 @@ interface Props {
 
 const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
+  const { isLargeMobile } = useMediaQuery();
 
   return (
     <StyledBoard>
@@ -49,18 +50,26 @@ const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props)
               <Copy />
             </ButtonLink>
           </Tooltip>
-          {exampleId && (
-            <Tooltip preferredPosition="top" preferredAlign="center" content="Open in a new tab">
+          {exampleId &&
+            (isLargeMobile ? (
+              <Tooltip preferredPosition="top" preferredAlign="center" content="Open in a new tab">
+                <ButtonLink
+                  type="secondary"
+                  external
+                  href={`${origin}/examples/${exampleId?.toLowerCase()}`}
+                >
+                  <NewWindow />
+                </ButtonLink>
+              </Tooltip>
+            ) : (
               <ButtonLink
                 type="secondary"
                 external
-                title="Open in a new tab"
                 href={`${origin}/examples/${exampleId?.toLowerCase()}`}
               >
                 <NewWindow />
               </ButtonLink>
-            </Tooltip>
-          )}
+            ))}
         </Stack>
       </Stack>
     </StyledBoard>

@@ -302,6 +302,7 @@ const InputGroup = ({
         help={helpReal}
         error={errorReal}
         iconRef={iconRef}
+        inputRef={labelRef}
         labelRef={labelRef}
         onClose={handleBlur}
         onShow={handleFocus}

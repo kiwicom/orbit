@@ -169,14 +169,13 @@ const FormFeedbackTooltip = ({
 
   React.useEffect(() => {
     const handleClick = ev => {
-      if (ev.target === contentRef.current) {
-        onShow(ev);
+      // $FlowFixMe: TODO
+      if (!isHelp && inputRef && !inputRef.current.contains(ev.target)) {
+        onClose(ev);
       }
 
-      if (inputRef && inputRef.current === ev.target) {
+      if (ev.target === contentRef.current) {
         onShow(ev);
-      } else if (!isHelp) {
-        onClose(ev);
       }
     };
 
@@ -192,7 +191,7 @@ const FormFeedbackTooltip = ({
       window.removeEventListener("keydown", handleTab);
       window.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [isHelp]);
 
   return (
     <StyledFormFeedbackTooltip

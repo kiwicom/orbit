@@ -8,8 +8,8 @@ export type ResolveTooltipArrowPosition = ({|
   theme: Theme,
   position: string,
   inlineLabel: boolean,
-  contentBounding: PositionRaw,
-  iconBounding?: PositionRaw,
+  content: PositionRaw,
+  icon?: PositionRaw,
 |}) => CSSRules;
 
 declare export default ResolveTooltipArrowPosition;

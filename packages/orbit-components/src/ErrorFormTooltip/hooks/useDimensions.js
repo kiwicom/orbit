@@ -20,22 +20,23 @@ const defaultPositions = {
 const useDimensions: UseDimensions = ({ labelRef, contentRef, iconRef, children, inlineLabel }) => {
   const [dimensions, setDimensions] = useState({
     set: false,
-    bounding: defaultPositions,
-    contentBounding: defaultPositions,
-    iconBounding: defaultPositions,
+    label: defaultPositions,
+    content: defaultPositions,
+    icon: defaultPositions,
   });
 
   useEffect(() => {
     const calculateDimensions = () => {
-      const bounding = boundingClientRect(labelRef);
-      const contentBounding = boundingClientRect(contentRef);
-      const iconBounding = boundingClientRect(iconRef);
-      if (bounding && contentBounding) {
+      const label = boundingClientRect(labelRef);
+      const content = boundingClientRect(contentRef);
+      const icon = boundingClientRect(iconRef);
+
+      if (label && content) {
         setDimensions({
           set: true,
-          bounding,
-          contentBounding,
-          iconBounding,
+          label,
+          content,
+          icon,
         });
       }
     };

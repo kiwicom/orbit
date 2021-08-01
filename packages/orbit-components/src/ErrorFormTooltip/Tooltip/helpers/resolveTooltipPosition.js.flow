@@ -7,7 +7,7 @@ import type { Dimensions as PositionRaw } from "../../../utils/boundingClientRec
 export type ResolveTooltipPosition = ({|
   theme: Theme,
   position: string,
-  contentBounding: PositionRaw,
+  content: PositionRaw,
   inlineLabel: boolean,
 |}) => CSSRules;
 

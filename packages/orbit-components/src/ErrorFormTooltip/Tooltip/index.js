@@ -144,7 +144,7 @@ const ErrorFormTooltip = ({
   inputRef,
   iconRef,
   children,
-  shown = true,
+  shown,
   isHelp = false,
   onClose,
   onShow,
@@ -155,18 +155,15 @@ const ErrorFormTooltip = ({
 
   const dimensions = useDimensions({
     labelRef,
-    contentRef: tooltipRef,
     iconRef,
+    contentRef: tooltipRef,
     children,
     inlineLabel,
   });
 
   const preferredPosition = React.useMemo(
-    () =>
-      dimensions.bounding.top - dimensions.contentBounding.height > 0
-        ? POSITIONS.TOP
-        : POSITIONS.BOTTOM,
-    [dimensions.bounding.top, dimensions.contentBounding.height],
+    () => (dimensions.label.top - dimensions.content.height > 0 ? POSITIONS.TOP : POSITIONS.BOTTOM),
+    [dimensions.label.top, dimensions.content.height],
   );
 
   React.useEffect(() => {
@@ -199,15 +196,13 @@ const ErrorFormTooltip = ({
     <StyledFormFeedbackTooltip
       ref={tooltipRef}
       inputSize={inputSize}
-      contentBounding={dimensions.contentBounding}
-      bounding={dimensions.bounding}
-      iconBounding={dimensions.iconBounding}
       position={preferredPosition}
       shown={shown && dimensions.set}
       isHelp={isHelp}
       data-test={dataTest}
       inlineLabel={inlineLabel}
       aria-live="polite"
+      {...dimensions}
     >
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
       {isHelp && (

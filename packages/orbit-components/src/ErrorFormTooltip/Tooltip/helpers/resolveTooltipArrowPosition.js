@@ -8,15 +8,14 @@ import { left } from "../../../utils/rtl";
 const resolveTooltipArrowPosition: ResolveTooltipArrowPosition = ({
   theme: { rtl },
   position,
-  contentBounding,
-  iconBounding,
+  content,
+  icon,
   inlineLabel,
 }) => {
-  if (iconBounding) {
-    const whenInline = SIDE_NUDGE + iconBounding.width / 2 - ARROW_SIZE;
-    const leftPos = iconBounding.left - contentBounding.left + iconBounding.width / 2 - ARROW_SIZE;
-    const rightPos =
-      contentBounding.right - iconBounding.right + iconBounding.width / 2 - ARROW_SIZE;
+  if (icon) {
+    const whenInline = SIDE_NUDGE + icon.width / 2 - ARROW_SIZE;
+    const leftPos = icon.left - content.left + icon.width / 2 - ARROW_SIZE;
+    const rightPos = content.right - icon.right + icon.width / 2 - ARROW_SIZE;
 
     const rtlPosition = rtl ? rightPos : leftPos;
     const positionToApply = inlineLabel ? rtlPosition : whenInline;

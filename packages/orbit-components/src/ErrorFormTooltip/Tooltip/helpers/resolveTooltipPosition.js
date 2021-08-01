@@ -15,16 +15,12 @@ const resolveLeftPosition = (isInline, sideOffset) => {
   return `-${sideOffset}px`;
 };
 
-const resolveTooltipPosition: ResolveTooltipPosition = ({
-  position,
-  contentBounding,
-  inlineLabel,
-}) => {
+const resolveTooltipPosition: ResolveTooltipPosition = ({ position, content, inlineLabel }) => {
   const pos = {
     top: css`
       top: ${resolveTopPosition(
         inlineLabel,
-        contentBounding.height,
+        content.height,
         VERTICAL_NUDGE,
         SIDE_NUDGE,
         ARROW_SIZE,
@@ -33,7 +29,7 @@ const resolveTooltipPosition: ResolveTooltipPosition = ({
       ${left}: ${resolveLeftPosition(inlineLabel, SIDE_NUDGE)};
     `,
     bottom: css`
-      bottom: ${-contentBounding.height - ARROW_SIZE - VERTICAL_NUDGE}px;
+      bottom: ${-content.height - ARROW_SIZE - VERTICAL_NUDGE}px;
       ${left}: ${`-${SIDE_NUDGE}px`};
     `,
   };

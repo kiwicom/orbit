@@ -18,12 +18,12 @@ const defaultPositions = {
 
 const resolveWithRTLFunction = string => string.replace("__position__", left.toString());
 
-const params = ({ position, contentBounding, iconBounding, inlineLabel }) => ({
+const params = ({ position, content, icon, inlineLabel }) => ({
   position,
   theme: defaultTheme,
   inlineLabel,
-  contentBounding,
-  iconBounding,
+  content,
+  icon,
 });
 
 describe("resolveTooltipArrowPosition", () => {
@@ -32,8 +32,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "top",
-          contentBounding: defaultPositions,
-          iconBounding: defaultPositions,
+          content: defaultPositions,
+          icon: defaultPositions,
           inlineLabel: false,
         }),
       ).join(""),
@@ -44,8 +44,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "bottom",
-          contentBounding: defaultPositions,
-          iconBounding: defaultPositions,
+          content: defaultPositions,
+          icon: defaultPositions,
           inlineLabel: false,
         }),
       ).join(""),
@@ -56,8 +56,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "bottom",
-          contentBounding: defaultPositions,
-          iconBounding: defaultPositions,
+          content: defaultPositions,
+          icon: defaultPositions,
           inlineLabel: true,
         }),
       ).join(""),
@@ -68,8 +68,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "top",
-          contentBounding: defaultPositions,
-          iconBounding: defaultPositions,
+          content: defaultPositions,
+          icon: defaultPositions,
           inlineLabel: true,
         }),
       ).join(""),
@@ -80,8 +80,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "top",
-          contentBounding: defaultPositions,
-          iconBounding: undefined,
+          content: defaultPositions,
+          icon: undefined,
           inlineLabel: true,
         }),
       ).join(""),
@@ -92,8 +92,8 @@ describe("resolveTooltipArrowPosition", () => {
       resolveTooltipArrowPosition(
         params({
           position: "bottom",
-          contentBounding: defaultPositions,
-          iconBounding: undefined,
+          content: defaultPositions,
+          icon: undefined,
           inlineLabel: true,
         }),
       ).join(""),

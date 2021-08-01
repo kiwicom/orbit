@@ -20,9 +20,9 @@ export type Props = {|
 
 export type Dimensions = {|
   set: boolean,
-  bounding: PositionRaw,
-  contentBounding: PositionRaw,
-  iconBounding: ?PositionRaw,
+  label: PositionRaw,
+  content: PositionRaw,
+  icon: ?PositionRaw,
 |};
 
 declare export default React.ComponentType<Props>;

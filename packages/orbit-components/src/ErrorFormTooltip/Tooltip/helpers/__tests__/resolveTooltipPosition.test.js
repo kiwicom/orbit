@@ -18,11 +18,11 @@ const defaultPositions = {
 
 const resolveWithRTLFunction = string => string.replace("__position__", right.toString());
 
-const params = ({ position, contentBounding, inlineLabel }) => ({
+const params = ({ position, content, inlineLabel }) => ({
   position,
   theme: defaultTheme,
   inlineLabel,
-  contentBounding,
+  content,
 });
 
 describe("resolveTooltipPosition", () => {
@@ -31,7 +31,7 @@ describe("resolveTooltipPosition", () => {
       resolveTooltipPosition(
         params({
           position: "top",
-          contentBounding: defaultPositions,
+          content: defaultPositions,
           inlineLabel: false,
         }),
       ).join(""),
@@ -42,7 +42,7 @@ describe("resolveTooltipPosition", () => {
       resolveTooltipPosition(
         params({
           position: "bottom",
-          contentBounding: defaultPositions,
+          content: defaultPositions,
           inlineLabel: false,
         }),
       ).join(""),

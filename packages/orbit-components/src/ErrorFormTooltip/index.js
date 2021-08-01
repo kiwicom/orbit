@@ -12,7 +12,7 @@ const ErrorFormTooltip = ({
   onClose,
   onShow,
   labelRef,
-  tooltipShown,
+  shown,
   dataTest,
   error,
   help,
@@ -31,7 +31,7 @@ const ErrorFormTooltip = ({
           onShow={onShow}
           isHelp
           inlineLabel={inlineLabel}
-          shown={tooltipShown}
+          shown={shown}
         >
           {help}
         </Tooltip>
@@ -46,7 +46,7 @@ const ErrorFormTooltip = ({
           onClose={onClose}
           onShow={onShow}
           inlineLabel={inlineLabel}
-          shown={tooltipShown}
+          shown={shown}
         >
           {error}
         </Tooltip>

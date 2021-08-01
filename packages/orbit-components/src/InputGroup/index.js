@@ -307,7 +307,7 @@ const InputGroup = ({
         onClose={handleBlur}
         onShow={handleFocus}
         inputSize={size}
-        tooltipShown={tooltipShown || tooltipShownHover}
+        shown={tooltipShown || tooltipShownHover}
       />
     </StyledInputGroup>
   );

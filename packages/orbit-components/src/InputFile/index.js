@@ -211,7 +211,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           labelRef={labelRef}
           onClose={handleBlur}
           onShow={handleFocus}
-          tooltipShown={shown}
+          shown={shown}
         />
       )}
     </Field>

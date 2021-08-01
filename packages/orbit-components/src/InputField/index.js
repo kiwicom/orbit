@@ -472,7 +472,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             iconRef={iconRef}
             labelRef={labelRef}
             inputRef={inputRef}
-            tooltipShown={shown}
+            shown={shown}
             inlineLabel={!tags && inlineLabel}
           />
         )}

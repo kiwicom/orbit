@@ -2,9 +2,8 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
-import { Editor } from "react-live";
-import dracula from "prism-react-renderer/themes/dracula";
 
+import Editor from "./Editor";
 import Frame from "./Frame";
 import Board from "./Board";
 import ViewportsRuler from "./ViewportsRuler";
@@ -100,9 +99,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       {isEditorOpened && (
         <Editor
           style={{ margin: 0, borderRadius: "0 0 12px 12px" }}
-          theme={dracula}
           onChange={str => setCode(str)}
-          language="jsx"
           code={example.fields.example}
         />
       )}

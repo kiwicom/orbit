@@ -1,9 +1,10 @@
 import * as React from "react";
-import { LiveProvider, LiveEditor } from "react-live";
+import { LiveProvider } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme, Stack } from "@kiwicom/orbit-components";
 
+import Editor from "../../components/ReactExample/Editor";
 import { getModules, copyImports } from "../../components/ReactExample/helpers";
 import Board from "../../components/ReactExample/Board";
 import ViewportsRuler from "../../components/ReactExample/ViewportsRuler";
@@ -41,12 +42,19 @@ const Sandbox = ({ pathContext }) => {
   const { example, id, example_id, scope } = pathContext;
   const [isEditorOpened, setOpenEditor] = React.useState(true);
   const [width, setPreviewWidth] = React.useState(0);
-  const { code, origin } = useSandbox(example_id);
+  const { code, origin, setCode } = useSandbox(example_id);
 
   const getCurrentWidth = React.useCallback(size => setPreviewWidth(size), []);
 
   const modules = getModules(scope);
   const imports = copyImports(scope);
+
+  React.useEffect(() => {
+    const key = example_id.toLowerCase();
+    if (code) window.localStorage.setItem(key, code);
+
+    return () => window.localStorage.removeItem(key);
+  }, [setCode, code, example_id]);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -67,10 +75,10 @@ const Sandbox = ({ pathContext }) => {
           </Stack>
           <Board
             isEditorOpened={isEditorOpened}
-            onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+            onOpenEditor={() => setOpenEditor(prev => !prev)}
             code={[imports, example].join("\n\n")}
           />
-          {isEditorOpened && <LiveEditor />}
+          {isEditorOpened && <Editor code={code || example} onChange={c => setCode(c)} />}
         </StyledWrapper>
       </LiveProvider>
     </ThemeProvider>

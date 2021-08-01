@@ -17,7 +17,7 @@ const defaultPositions = {
   pureBottom: 0,
 };
 
-const useDimensions: UseDimensions = ({ labelRef, contentRef, iconRef }, children, inlineLabel) => {
+const useDimensions: UseDimensions = ({ labelRef, contentRef, iconRef, children, inlineLabel }) => {
   const [dimensions, setDimensions] = useState({
     set: false,
     bounding: defaultPositions,

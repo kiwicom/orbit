@@ -153,11 +153,13 @@ const ErrorFormTooltip = ({
   const contentRef = React.useRef(null);
   const tooltipRef = React.useRef(null);
 
-  const dimensions = useDimensions(
-    { labelRef, contentRef: tooltipRef, iconRef },
+  const dimensions = useDimensions({
+    labelRef,
+    contentRef: tooltipRef,
+    iconRef,
     children,
     inlineLabel,
-  );
+  });
 
   const preferredPosition = React.useMemo(
     () =>

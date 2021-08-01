@@ -3,14 +3,12 @@ import * as React from "react";
 
 import type { Dimensions } from "..";
 
-export type UseDimensions = (
-  {|
-    labelRef: ?React.ElementRef<*>,
-    contentRef: ?React.ElementRef<*>,
-    iconRef: ?React.ElementRef<*>,
-  |},
+export type UseDimensions = ({|
+  labelRef: ?React.ElementRef<*>,
+  contentRef: ?React.ElementRef<*>,
+  iconRef: ?React.ElementRef<*>,
   children: React.Node,
   inlineLabel: ?boolean,
-) => Dimensions;
+|}) => Dimensions;
 
 declare export default UseDimensions;

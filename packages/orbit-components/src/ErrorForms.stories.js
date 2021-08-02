@@ -49,6 +49,14 @@ export const Error = (): React.Node => {
     <Stack>
       <InputField
         size={size}
+        error={<TextLink>{error}</TextLink>}
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+      <InputField
+        size={size}
         error={error}
         label={label}
         value={value}

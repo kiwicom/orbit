@@ -106,12 +106,15 @@ const StyledTooltipContent = styled.div`
       font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
 
-      & ${StyledText}, ${Item}, a {
+      ${StyledText}, ${Item}, a {
         color: ${theme.orbit.paletteWhite};
         font-weight: ${theme.orbit.fontWeightMedium};
         font-size: ${theme.orbit.fontSizeTextSmall};
       }
-      & a:hover {
+      a:hover {
+        color: ${theme.orbit.paletteWhite};
+      }
+      a:focus {
         color: ${theme.orbit.paletteWhite};
       }
     `)};
@@ -150,7 +153,7 @@ const ErrorFormTooltip = ({
   onShow,
   inlineLabel,
 }: Props): React.Node => {
-  const contentRef = React.useRef(null);
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
   const tooltipRef = React.useRef(null);
 
   const dimensions = useDimensions({
@@ -179,7 +182,12 @@ const ErrorFormTooltip = ({
     };
 
     const handleTab = ev => {
-      if (ev.keyCode === KEY_CODE_MAP.TAB && !isHelp) {
+      if (
+        ev.keyCode === KEY_CODE_MAP.TAB &&
+        !isHelp &&
+        // focus, if the TextLink inside
+        !contentRef.current?.innerHTML.includes("a")
+      ) {
         onClose(ev);
       }
     };

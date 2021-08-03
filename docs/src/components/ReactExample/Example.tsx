@@ -8,8 +8,12 @@ import ViewportsRuler from "./components/ViewportsRuler";
 
 import { Props as InitialProps } from ".";
 
-const StyledWrapper = styled.div`
-  ${({ theme }) => css`
+const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
+  ${({ theme, isFullPage }) => css`
+    display: grid;
+    min-height: ${isFullPage && `100%`};
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     border-radius: 12px;
   `};
@@ -52,7 +56,7 @@ const Example = ({
   width,
 }: Props) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper isFullPage={isFullPage}>
       <ViewportsRuler onChangeSize={onChangeSize} />
       <StyledWrapperFrame width={width}>
         <Frame
@@ -72,13 +76,7 @@ const Example = ({
         code={code}
         origin={origin}
       />
-      {isEditorOpened && (
-        <Editor
-          style={{ margin: 0, borderRadius: "0 0 12px 12px" }}
-          onChange={onChangeCode}
-          code={example}
-        />
-      )}
+      {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
     </StyledWrapper>
   );
 };

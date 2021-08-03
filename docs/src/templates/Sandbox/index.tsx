@@ -8,13 +8,6 @@ import { getModules, copyImports } from "../../components/ReactExample/helpers";
 import useSandbox from "./useSandbox";
 import Example from "../../components/ReactExample/Example";
 
-const StyledWrapper = styled.div`
-  display: grid;
-  min-height: 100%;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr;
-`;
-
 const GlobalStyle = createGlobalStyle`
   body,
   html,
@@ -47,20 +40,18 @@ const Sandbox = ({ pathContext }) => {
     <ThemeProvider theme={defaultTheme}>
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
-        <StyledWrapper>
-          <Example
-            onChangeSize={handleChangeRulerSize}
-            code={codeWithImports}
-            exampleId={id}
-            isFullPage
-            example={example}
-            origin={origin}
-            isEditorOpened={isEditorOpened}
-            width={width}
-            onChangeCode={c => setCode(c)}
-            onOpenEditor={() => setOpenEditor(prev => !prev)}
-          />
-        </StyledWrapper>
+        <Example
+          onChangeSize={handleChangeRulerSize}
+          code={codeWithImports}
+          exampleId={id}
+          isFullPage
+          example={example}
+          origin={origin}
+          isEditorOpened={isEditorOpened}
+          width={width}
+          onChangeCode={c => setCode(c)}
+          onOpenEditor={() => setOpenEditor(prev => !prev)}
+        />
       </LiveProvider>
     </ThemeProvider>
   );

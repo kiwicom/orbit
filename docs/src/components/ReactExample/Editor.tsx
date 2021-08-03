@@ -1,17 +1,23 @@
 import React from "react";
 import { Editor } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import CSS from "csstype";
 
 interface Props {
-  style?: CSS.Properties;
+  isFullPage?: boolean;
   onChange: (code: string) => void;
   code: string;
 }
 
-const SandboxEditor = ({ style, onChange, code }: Props) => {
-  return <Editor style={style} theme={dracula} onChange={onChange} language="jsx" code={code} />;
+const SandboxEditor = ({ isFullPage, onChange, code }: Props) => {
+  return (
+    <Editor
+      style={!isFullPage ? { margin: 0, borderRadius: "0 0 12px 12px" } : undefined}
+      theme={dracula}
+      onChange={onChange}
+      language="jsx"
+      code={code}
+    />
+  );
 };
 
 export default SandboxEditor;

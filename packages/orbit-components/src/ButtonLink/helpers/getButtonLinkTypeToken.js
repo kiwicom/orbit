@@ -20,18 +20,18 @@ const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
       [TYPES.CRITICAL]: theme.orbit.paletteRedLightActive,
     },
     [TOKENS.foreground]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductNormal,
-      [TYPES.SECONDARY]: theme.orbit.paletteInkNormal,
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
       [TYPES.CRITICAL]: theme.orbit.paletteRedNormal,
     },
     [TOKENS.foregroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalHover,
-      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalHover,
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
       [TYPES.CRITICAL]: theme.orbit.paletteRedNormalHover,
     },
     [TOKENS.foregroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalActive,
-      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalActive,
+      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
+      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
       [TYPES.CRITICAL]: theme.orbit.paletteRedNormalActive,
     },
   };

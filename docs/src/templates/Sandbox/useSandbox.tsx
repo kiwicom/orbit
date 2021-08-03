@@ -18,7 +18,7 @@ const useSandbox = (exampleId: string) => {
     return () => window.removeEventListener("storage", handleStorage);
   }, [exampleId]);
 
-  return { code, origin };
+  return { code, origin, setCode };
 };
 
 export default useSandbox;

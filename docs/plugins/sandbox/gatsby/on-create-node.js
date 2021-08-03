@@ -14,7 +14,7 @@ module.exports = async ({ node, actions, reporter }) => {
       createNodeField({
         node,
         name: "knobs",
-        value: JSON.parse({ component: path.parse(path.dirname(absolutePath)).name, ...data }),
+        value: JSON.parse(data) || [],
       });
     } catch {
       reporter.panicOnBuild(`${example_id} should have KNOBS.json`);

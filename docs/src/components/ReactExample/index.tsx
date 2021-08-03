@@ -32,7 +32,6 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
             }
             fields {
               knobs {
-                component
                 name
                 defaultValue
                 type
@@ -81,7 +80,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}
-      example={example.fields.example}
+      example={example.example}
       onChangeCode={c => setCode(c)}
 <<<<<<< HEAD
 =======

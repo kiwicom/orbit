@@ -16,12 +16,6 @@ module.exports = ({ actions, schema }) => {
 
   createTypes([
     `
-    type Knob {
-      name: String!
-      type: String!
-      defaultValue: String!
-    }
-
     type ExampleScope {
       name: String!
       default: String!

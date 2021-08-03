@@ -13,6 +13,13 @@ module.exports = async ({ graphql, actions, reporter }) => {
             path
             default
           }
+          fields {
+            knobs {
+              name
+              defaultValue
+              type
+            }
+          }
         }
       }
     }
@@ -23,19 +30,19 @@ module.exports = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  result.data.allExample.nodes.forEach(({ id, example, example_id, scope }) => {
+  result.data.allExample.nodes.forEach(({ id, example, example_id, scope, fields }) => {
     if (!example) return;
 
     createPage({
       path: `examples/${example_id.toLowerCase()}`,
       component: `${process.cwd()}/src/templates/Sandbox/index.tsx`,
-      context: { id, example, example_id, scope },
+      context: { id, example, example_id, scope, knobs: fields.knobs },
     });
 
     createPage({
       path: `examples/${id}`,
       component: `${process.cwd()}/src/templates/Sandbox/PureSandbox.tsx`,
-      context: { id, example, example_id, scope },
+      context: { id, example, example_id, scope, knobs: fields.knobs },
     });
   });
 };

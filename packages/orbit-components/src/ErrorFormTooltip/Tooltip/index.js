@@ -15,18 +15,9 @@ import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
 import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "../hooks/useDimensions";
-import { POSITIONS, SIDE_NUDGE, SIZE_OPTIONS } from "./consts";
+import { POSITIONS, SIDE_NUDGE } from "./consts";
 
 import type { Props } from ".";
-
-const getToken = ({ theme, inputSize }) => {
-  const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-  };
-
-  return tokens[inputSize];
-};
 
 const StyledFormFeedbackTooltip = styled.div`
   ${({ theme, isHelp, shown }) => css`
@@ -37,9 +28,8 @@ const StyledFormFeedbackTooltip = styled.div`
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};
-    padding: 0 ${theme.orbit.spaceSmall};
+    padding: ${theme.orbit.spaceSmall};
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
-    height: ${getToken};
     z-index: 10;
     max-height: none;
     overflow: visible;

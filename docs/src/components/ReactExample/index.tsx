@@ -15,9 +15,7 @@ export interface Props {
 
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
-  const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [origin, setOrigin] = React.useState("");
-  const [width, setPreviewWidth] = React.useState(0);
 
   const { allFile } = useStaticQuery(
     graphql`
@@ -49,7 +47,6 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   }, [setCode, code, exampleId, setOrigin]);
 
   const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
-  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
@@ -58,19 +55,15 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
 
   return (
     <Example
-      isEditorOpened={isEditorOpened}
       minHeight={minHeight}
       maxHeight={maxHeight}
       background={background}
       origin={origin}
-      width={width}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}
       example={example.fields.example}
       onChangeCode={c => setCode(c)}
-      onChangeSize={handleChangeRulerSize}
-      onOpenEditor={() => setOpenEditor(prev => !prev)}
     />
   );
 };

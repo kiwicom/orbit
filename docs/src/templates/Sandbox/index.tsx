@@ -20,11 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Sandbox = ({ pathContext }) => {
   const { example, id, example_id, scope } = pathContext;
-  const [isEditorOpened, setOpenEditor] = React.useState(true);
-  const [width, setPreviewWidth] = React.useState(0);
   const { code, origin, setCode } = useSandbox(example_id);
-
-  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   const modules = getModules(scope);
   const codeWithImports = copyImports(scope);
@@ -41,16 +37,12 @@ const Sandbox = ({ pathContext }) => {
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
         <Example
-          onChangeSize={handleChangeRulerSize}
           code={codeWithImports}
           exampleId={id}
           isFullPage
           example={example}
           origin={origin}
-          isEditorOpened={isEditorOpened}
-          width={width}
           onChangeCode={c => setCode(c)}
-          onOpenEditor={() => setOpenEditor(prev => !prev)}
         />
       </LiveProvider>
     </ThemeProvider>

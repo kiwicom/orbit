@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import Editor from "./Editor";
+import Editor from "./components/Editor";
 import Frame from "./components/Frame";
 import Board from "./components/Board";
 import ViewportsRuler from "./components/ViewportsRuler";
@@ -22,21 +22,18 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
 const StyledWrapperFrame = styled.div<{ width: number }>`
   ${({ width }) => css`
     margin: 0 auto;
-    width: ${width}px;
+    max-width: ${width}px;
+    width: 100%;
   `}
 `;
 
 interface Props extends InitialProps {
   code: string;
   origin: string;
-  isEditorOpened: boolean;
   fullPageExampleId?: string;
   isFullPage?: boolean;
   onChangeCode: (code: string) => void;
-  onChangeSize: (width: number) => void;
-  onOpenEditor: () => void;
   example: string;
-  width: number;
 }
 
 const Example = ({
@@ -47,17 +44,17 @@ const Example = ({
   minHeight,
   maxHeight,
   background,
-  isEditorOpened,
   isFullPage,
   onChangeCode,
-  onChangeSize,
-  onOpenEditor,
   example,
-  width,
 }: Props) => {
+  const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [width, setPreviewWidth] = React.useState(0);
+  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+
   return (
     <StyledWrapper isFullPage={isFullPage}>
-      <ViewportsRuler onChangeSize={onChangeSize} />
+      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
       <StyledWrapperFrame width={width}>
         <Frame
           origin={origin}
@@ -72,7 +69,7 @@ const Example = ({
         exampleId={fullPageExampleId}
         isEditorOpened={isEditorOpened}
         isFullPage={isFullPage}
-        onOpenEditor={onOpenEditor}
+        onOpenEditor={() => setOpenEditor(prev => !prev)}
         code={code}
         origin={origin}
       />

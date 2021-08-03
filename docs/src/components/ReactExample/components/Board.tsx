@@ -3,9 +3,9 @@ import { Stack, ButtonLink, Tooltip, useMediaQuery } from "@kiwicom/orbit-compon
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import styled from "styled-components";
 
-import NewWindow from "../../images/new-window.svg";
-import Copy from "../../images/copy.svg";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard";
+import NewWindow from "../../../images/new-window.svg";
+import Copy from "../../../images/copy.svg";
+import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 
 const StyledBoard = styled.div`
   ${({ theme }) => `
@@ -19,11 +19,12 @@ interface Props {
   exampleId?: string;
   code: string;
   origin?: string;
+  isFullPage?: boolean;
   isEditorOpened: boolean;
   onOpenEditor: () => void;
 }
 
-const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props) => {
+const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin, isFullPage }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
   const { isLargeMobile } = useMediaQuery();
 
@@ -51,6 +52,7 @@ const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props)
             </ButtonLink>
           </Tooltip>
           {exampleId &&
+            !isFullPage &&
             (isLargeMobile ? (
               <Tooltip preferredPosition="top" preferredAlign="center" content="Open in a new tab">
                 <ButtonLink

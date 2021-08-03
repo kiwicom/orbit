@@ -1,37 +1,17 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import styled, { css } from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
 
-import Editor from "./Editor";
-import Frame from "./Frame";
-import Board from "./Board";
-import ViewportsRuler from "./ViewportsRuler";
 import { copyImports } from "./helpers";
+import Example from "./Example";
 
 export type BgType = "white" | "dark" | "grid";
-
-interface Props {
+export interface Props {
   exampleId: string;
   maxHeight?: number;
-  background: BgType;
+  background?: BgType;
   minHeight?: number;
 }
-
-const StyledWrapper = styled.div`
-  ${({ theme }) => css`
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
-    border-radius: 12px;
-    overflow: hidden;
-  `};
-`;
-
-const StyledWrapperFrame = styled.div<{ width: number }>`
-  ${({ width }) => css`
-    margin: 0 auto;
-    width: ${width}px;
-  `}
-`;
 
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
@@ -77,33 +57,21 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   const codeWithImports = [imports, example.fields.example].join("\n");
 
   return (
-    <StyledWrapper>
-      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
-      <StyledWrapperFrame width={width}>
-        <Frame
-          origin={origin}
-          pageId={example.id}
-          exampleId={exampleId}
-          minHeight={minHeight}
-          maxHeight={maxHeight}
-          background={background}
-        />
-      </StyledWrapperFrame>
-      <Board
-        exampleId={exampleId}
-        isEditorOpened={isEditorOpened}
-        onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-        code={codeWithImports}
-        origin={origin}
-      />
-      {isEditorOpened && (
-        <Editor
-          style={{ margin: 0, borderRadius: "0 0 12px 12px" }}
-          onChange={str => setCode(str)}
-          code={example.fields.example}
-        />
-      )}
-    </StyledWrapper>
+    <Example
+      isEditorOpened={isEditorOpened}
+      minHeight={minHeight}
+      maxHeight={maxHeight}
+      background={background}
+      origin={origin}
+      width={width}
+      code={codeWithImports}
+      exampleId={example.id}
+      fullPageExampleId={exampleId.toLowerCase()}
+      example={example.fields.example}
+      onChangeCode={c => setCode(c)}
+      onChangeSize={handleChangeRulerSize}
+      onOpenEditor={() => setOpenEditor(prev => !prev)}
+    />
   );
 };
 

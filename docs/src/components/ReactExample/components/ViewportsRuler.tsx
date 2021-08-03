@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { QUERIES, CELL_HEIGHT } from "./consts";
+import { QUERIES, CELL_HEIGHT } from "../consts";
 
 interface Props {
   onChangeSize: (width: number) => void;

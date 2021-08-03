@@ -3,7 +3,7 @@
     "id": "72476864-1028-5c35-a87d-51923e44f28a",
     "name": "vepor",
     "error": "",
-    "twitter": null,
+    "twitter": "ludekveprek",
     "website": "",
     "info": null,
     "active": false,
@@ -130,6 +130,19 @@
     "github": "https://github.com/jaroslav-kubicek"
   },
   {
+    "id": "85437f36-ffa2-5506-8d6d-8242fb786dbe",
+    "name": "williamkolmacka",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
+    "position": "",
+    "github": "https://github.com/williamkolmacka"
+  },
+  {
     "id": "ba763709-e0a9-5345-a157-dd93f9d213b8",
     "name": "git-toni",
     "error": "",
@@ -154,19 +167,6 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/1737335?v=4",
     "position": "",
     "github": "https://github.com/PetrSnobelt"
-  },
-  {
-    "id": "85437f36-ffa2-5506-8d6d-8242fb786dbe",
-    "name": "williamkolmacka",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
-    "position": "",
-    "github": "https://github.com/williamkolmacka"
   },
   {
     "id": "5f9fcbde-6948-558c-8ea6-dc06f01ba081",

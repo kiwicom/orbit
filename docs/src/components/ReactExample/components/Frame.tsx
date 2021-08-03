@@ -1,15 +1,14 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { PREVIEW_ID } from "./consts";
-
-import { BgType } from ".";
+import { PREVIEW_ID } from "../consts";
+import { BgType } from "..";
 
 const BOARD_HEIGHT = 100;
 
 interface Props {
   pageId: string;
-  background: BgType;
+  background?: BgType;
   fullHeight?: boolean;
   minHeight?: number;
   maxHeight?: number;

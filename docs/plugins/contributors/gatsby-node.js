@@ -2,6 +2,7 @@ const { Octokit } = require("@octokit/rest");
 const path = require("path");
 const fs = require("fs-extra");
 const prettier = require("prettier");
+const _ = require("lodash");
 
 const { warnMissingAccessToken } = require("../../utils/warnings");
 
@@ -55,7 +56,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
 
       const fetched = path.join(__dirname, "fetchedUsers.json");
 
-      if (JSON.stringify(users) !== fs.readFileSync(fetched, "utf-8")) {
+      if (!_.isEqual(users, fs.readFileSync(fetched, "utf-8"))) {
         await fs.writeFile(fetched, fetchedUsersContent);
       }
 

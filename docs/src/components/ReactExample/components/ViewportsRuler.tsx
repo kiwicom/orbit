@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { QUERIES, CELL_HEIGHT } from "./consts";
+import { QUERIES, CELL_HEIGHT } from "../consts";
 
 interface Props {
   onChangeSize: (width: number) => void;
@@ -20,12 +20,11 @@ const StyledViewports = styled.div`
   `}
 `;
 
-const StyledCell = styled.button<{
-  active?: boolean;
-  currentWidth?: number;
-  width: number;
-  index: number;
-}>`
+const StyledCell = styled(({ className, children, onClick }) => (
+  <button type="button" className={className} onClick={onClick}>
+    {children}
+  </button>
+))`
   ${({ theme, active, width, index }) => css`
     position: absolute;
     margin-left: auto;
@@ -48,7 +47,7 @@ const StyledCell = styled.button<{
       outline: none;
       box-shadow: ${theme.orbit.boxShadowFixed};
     }
-  `};
+  `}
 `;
 
 const ViewportsRuler = ({ onChangeSize }: Props) => {

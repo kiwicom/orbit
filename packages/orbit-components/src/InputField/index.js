@@ -221,7 +221,8 @@ export const Input: any = styled(
   ),
 )`
   appearance: none;
-  -webkit-text-fill-color: ${({ disabled }) => disabled && "inherit"};
+  -webkit-text-fill-color: ${({ disabled, theme }) =>
+    disabled && theme.orbit.colorTextInputDisabled};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   border: none;
   padding: ${getPadding()};

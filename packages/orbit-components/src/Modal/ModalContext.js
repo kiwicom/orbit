@@ -9,6 +9,7 @@ export const ModalContext: ModalContextType = React.createContext({
   removeHasModalSection: () => {},
   callContextFunctions: () => {},
   hasModalSection: false,
+  hasMobileHeader: true,
   isMobileFullPage: false,
   isInsideModal: false,
   closable: false,

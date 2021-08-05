@@ -38,6 +38,7 @@ export type Props = {|
   +isMobileFullPage?: boolean,
   +preventOverlayClose?: boolean,
   +hasCloseButton?: boolean,
+  +mobileHeader?: boolean,
   +disableAnimation?: boolean,
   ...Globals,
 |};

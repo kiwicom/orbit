@@ -436,6 +436,7 @@ export const FullPreview = (): React.Node => {
   const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
   const dataTest = text("dataTest", "test");
   const isMobileFullPage = boolean("isMobileFullPage", false);
+  const mobileHeader = boolean("mobileHeader", true);
   const showBack = boolean("showBackButton", true);
   const preventOverlayClose = boolean("preventOverlayClose", false);
 
@@ -450,6 +451,7 @@ export const FullPreview = (): React.Node => {
     >
       <ModalHeader
         title={title}
+        mobileHeader={mobileHeader}
         illustration={illustration && <Illustration name={illustration} size="small" />}
         description={description}
         suppressed={suppressed}

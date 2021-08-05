@@ -19,6 +19,7 @@ export interface Props extends Common.Global {
     React.KeyboardEvent<HTMLDivElement> | React.SyntheticEvent<HTMLButtonElement> | React.MouseEvent
   >;
   readonly fixedFooter?: boolean;
+  readonly mobileHeader?: boolean;
   readonly isMobileFullPage?: boolean;
   readonly preventOverlayClose?: boolean;
   readonly hasCloseButton?: boolean;

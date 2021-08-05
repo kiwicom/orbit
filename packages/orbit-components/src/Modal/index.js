@@ -347,6 +347,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       isMobileFullPage = false,
       preventOverlayClose = false,
       hasCloseButton = true,
+      mobileHeader = true,
       disableAnimation = false,
       dataTest,
       lockScrolling = true,
@@ -638,7 +639,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       }
     }, [children, prevChildren]);
 
-    const hasCloseContainer = hasModalTitle || (onClose && hasCloseButton);
+    const hasCloseContainer = mobileHeader && (hasModalTitle || (onClose && hasCloseButton));
 
     return (
       <ModalBody
@@ -696,6 +697,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
                 removeHasModalSection: () => setHasModalSection(false),
                 callContextFunctions,
                 hasModalSection,
+                hasMobileHeader: mobileHeader,
                 isMobileFullPage,
                 closable: Boolean(onClose),
                 isInsideModal: true,

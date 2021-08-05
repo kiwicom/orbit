@@ -153,6 +153,7 @@ const StyledModalHeaderContent = styled.div`
 
 const ModalHeader = ({
   illustration,
+  mobileHeader = true,
   suppressed,
   children,
   description,
@@ -195,7 +196,9 @@ const ModalHeader = ({
       {children && (
         <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
       )}
-      {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
+      {title && mobileHeader && (
+        <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>
+      )}
     </StyledModalHeader>
   );
 };

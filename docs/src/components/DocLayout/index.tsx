@@ -24,6 +24,7 @@ import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
 import Tabs, { TabObject } from "../Tabs";
 import ReactExample from "../ReactExample";
+import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
 import StyledWrapper from "./primitives/StyledWrapper";
 import StyledMiddle from "./primitives/StyledMiddle";
@@ -209,6 +210,7 @@ export default function DocLayout({
                             ImageContainer,
                             InlineToken,
                             ReactExample,
+                            FigmaIframe,
                           }}
                         >
                           {children}

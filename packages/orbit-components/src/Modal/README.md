@@ -151,14 +151,15 @@ import Modal, { ModalHeader } from "@kiwicom/orbit-components/lib/Modal";
 
 Table below contains all types of the props in the ModalHeader component.
 
-| Name         | Type                                 | Default | Description                                            |
-| :----------- | :----------------------------------- | :------ | :----------------------------------------------------- |
-| children     | `React.Node`                         |         | The content of the ModalHeader.                        |
-| dataTest     | `string`                             |         | Optional prop for testing purposes.                    |
-| description  | `React.Node`                         |         | The displayed description of the ModalHeader.          |
-| illustration | `React.Element<typeof Illustration>` |         | The displayed Illustration of the ModalHeader.         |
-| suppressed   | `boolean`                            | `false` | If `true` the ModalHeader will have cloudy background. |
-| title        | `React.Node`                         |         | The displayed title of the ModalHeader.                |
+| Name         | Type                                 | Default | Description                                                                    |
+| :----------- | :----------------------------------- | :------ | :----------------------------------------------------------------------------- |
+| children     | `React.Node`                         |         | The content of the ModalHeader.                                                |
+| dataTest     | `string`                             |         | Optional prop for testing purposes.                                            |
+| description  | `React.Node`                         |         | The displayed description of the ModalHeader.                                  |
+| illustration | `React.Element<typeof Illustration>` |         | The displayed Illustration of the ModalHeader.                                 |
+| suppressed   | `boolean`                            | `false` | If `true` the ModalHeader will have cloudy background.                         |
+| mobileHeader | `boolean`                            | `true`  | If `false` the ModalHeader will not have MobileHeader which appears on scroll. |
+| title        | `React.Node`                         |         | The displayed title of the ModalHeader.                                        |
 
 ### ModalFooter
 

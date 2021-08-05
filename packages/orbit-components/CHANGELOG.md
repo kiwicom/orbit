@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.118.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.0...@kiwicom/orbit-components@0.118.1) (2021-08-05)
+
+
+### Bug Fixes
+
+* **Modal:** hide closeContainer with mobileHeader set to false ([#3065](https://github.com/kiwicom/orbit/issues/3065)) ([78c1a55](https://github.com/kiwicom/orbit/commit/78c1a5537a3c028521b72eb91f6a983be9f3201b))
+
+
+
+
+
 # [0.118.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.117.0...@kiwicom/orbit-components@0.118.0) (2021-08-05)
 
 

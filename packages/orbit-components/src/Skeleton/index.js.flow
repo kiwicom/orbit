@@ -1,0 +1,30 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/separator/
+*/
+import * as React from "react";
+
+import type { ColorTokens } from "../Box";
+import type { spaceAfter } from "../common/getSpacingToken";
+
+export type Props = {|
+  +animate?: boolean,
+  +animationInterval?: number,
+  +animationSpeed?: number,
+  +backgroundColor?: ColorTokens,
+  +backgroundOpacity?: number,
+  +children?: React.Node,
+  +foregroundColor?: ColorTokens,
+  +foregroundOpacity?: number,
+  +gradientRatio?: number,
+  +height?: number,
+  +rowHeight?: number,
+  +rowOffset?: number,
+  +rows?: number,
+  +title?: string,
+  +viewBox?: string,
+  +width?: number,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

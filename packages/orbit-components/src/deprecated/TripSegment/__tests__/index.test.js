@@ -5,6 +5,12 @@ import userEvent from "@testing-library/user-event";
 
 import TripSegment from "..";
 
+const UID = ({ children }) => children(id => id);
+
+jest.mock("react-uid", () => ({
+  UID,
+}));
+
 describe("TripSegment", () => {
   it("should have expected DOM output", async () => {
     const duration = "2h";

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.119.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.1...@kiwicom/orbit-components@0.119.0) (2021-08-10)
+
+
+### Features
+
+* **Wizard:** add lockScrolling prop ([#3070](https://github.com/kiwicom/orbit/issues/3070)) ([38b6456](https://github.com/kiwicom/orbit/commit/38b6456610c37507278f776dcfe20e43ed2329d9))
+
+
+
+
+
 ## [0.118.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.0...@kiwicom/orbit-components@0.118.1) (2021-08-05)
 
 

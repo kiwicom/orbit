@@ -7,6 +7,7 @@ import typeof WizardStepComponent from "./WizardStep";
 export type Props = {|
   ...Globals,
   +id: string,
+  +lockScrolling?: boolean,
   +completedSteps: number,
   +activeStep: number,
   +onChangeStep?: (stepIndex: number) => void | Promise<any>,

@@ -11,6 +11,14 @@ export default {
   title: "Skeleton",
 };
 
+const PRESETS = {
+  List: "List",
+  Image: "Image",
+  Card: "Card",
+  Button: "Button",
+  Text: "Text",
+};
+
 const COLORS = [
   "blueDark",
   "blueDarkActive",
@@ -96,21 +104,22 @@ Default.story = {
 };
 
 export const Playground = (): React.Node => {
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
-  const rows = number("rows", 10);
-  const rowOffset = number("rowOffset", 25);
-  const rowHeight = number("rowHeight", 15);
-  const viewBox = text("viewBox", "");
-  const backgroundColor = select("backgroundColor", COLORS, "cloudNormal");
-  const foregroundColor = select("foregroundColor", COLORS, "cloudDark");
-  const backgroundOpacity = number("backgroundOpacity", 1);
-  const foregroundOpacity = number("foregroundOpacity", 1);
   const animate = boolean("animate", true);
-  const animationSpeed = number("animationSpeed", 2);
   const animationInterval = number("animationInterval", 0.2);
+  const animationSpeed = number("animationSpeed", 2);
+  const backgroundColor = select("backgroundColor", COLORS, "cloudNormal");
+  const backgroundOpacity = number("backgroundOpacity", 1);
+  const foregroundColor = select("foregroundColor", COLORS, "cloudDark");
+  const foregroundOpacity = number("foregroundOpacity", 1);
   const gradientRatio = number("gradientRatio", 2);
-  const height = number("height", undefined);
-  const width = number("width", undefined);
+  const height = number("height", 0);
+  const rowBorderRadius = number("rowBorderRadius", 3);
+  const rowHeight = number("rowHeight", 21);
+  const rowOffset = number("rowOffset", 30);
+  const rows = number("rows", 10);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
+  const viewBox = text("viewBox", "");
+  const width = number("width", 0);
 
   return (
     <Skeleton
@@ -123,6 +132,7 @@ export const Playground = (): React.Node => {
       foregroundOpacity={foregroundOpacity}
       gradientRatio={gradientRatio}
       height={height}
+      rowBorderRadius={rowBorderRadius}
       rowHeight={rowHeight}
       rowOffset={rowOffset}
       rows={rows}
@@ -135,14 +145,14 @@ export const Playground = (): React.Node => {
 
 export const RTL = (): React.Node => (
   <RenderInRtl>
-    <Skeleton rows={10} rowOffset={20} />
+    <Skeleton rows={5} rowOffset={30} />
   </RenderInRtl>
 );
 
 export const Custom = (): React.Node => {
   const height = number("height", 100);
-  const width = number("width", undefined);
-  const viewBox = text("viewBox", "");
+  const viewBox = text("viewBox", "0 0 500 100");
+  const width = number("width", 500);
 
   return (
     <Skeleton height={height} width={width} viewBox={viewBox}>
@@ -154,6 +164,11 @@ export const Custom = (): React.Node => {
       <circle cx="20" cy="20" r="20" />
     </Skeleton>
   );
+};
+
+export const Presets = (): React.Node => {
+  const presets = select("preset", PRESETS, PRESETS.List);
+  return <Skeleton preset={presets} />;
 };
 
 Playground.story = {

@@ -7,6 +7,7 @@ import * as React from "react";
 import type { ColorTokens } from "../Box";
 import type { spaceAfter } from "../common/getSpacingToken";
 
+type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 export type Props = {|
   +animate?: boolean,
   +animationInterval?: number,
@@ -18,6 +19,8 @@ export type Props = {|
   +foregroundOpacity?: number,
   +gradientRatio?: number,
   +height?: number,
+  +preset?: Preset,
+  +rowBorderRadius?: number,
   +rowHeight?: number,
   +rowOffset?: number,
   +rows?: number,

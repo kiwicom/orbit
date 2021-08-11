@@ -28,9 +28,17 @@ StyledSvg.defaultProps = {
   theme: defaultTheme,
 };
 
-const Rows = ({ count, height, offset }) => {
+const Rows = ({ count, height, offset, rowBorderRadius }) => {
   return [...Array(count).keys()].map(el => (
-    <rect y={`${el * offset}px`} x="0" width="100%" height={height} />
+    <rect
+      key={el}
+      y={`${el * offset}px`}
+      x="0"
+      rx={rowBorderRadius}
+      ry={rowBorderRadius}
+      width="100%"
+      height={height}
+    />
   ));
 };
 
@@ -46,9 +54,10 @@ const Svg = ({
   foregroundColor = "cloudDark",
   foregroundOpacity = 1,
   gradientRatio = 2,
-  rowHeight = 15,
-  rowOffset = 15,
+  rowBorderRadius = 3,
+  rowHeight = 21,
   rows = 1,
+  rowOffset = 0,
   spaceAfter,
   title,
   viewBox,
@@ -93,7 +102,14 @@ const Svg = ({
             />
             <defs>
               <clipPath id={idClip}>
-                {children || <Rows count={rows} height={rowHeight} offset={rowOffset} />}
+                {children || (
+                  <Rows
+                    count={rows}
+                    height={rowHeight}
+                    offset={rowOffset}
+                    rowBorderRadius={rowBorderRadius}
+                  />
+                )}
               </clipPath>
             </defs>
             <linearGradient id={idGradient}>

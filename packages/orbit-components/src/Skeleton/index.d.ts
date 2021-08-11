@@ -7,6 +7,8 @@ import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Skeleton";
 
+type Preset = "List" | "Image" | "Card" | "Button" | "Text";
+
 interface Props extends Common.SpaceAfter {
   readonly animate?: boolean;
   readonly animationInterval?: number;
@@ -18,10 +20,12 @@ interface Props extends Common.SpaceAfter {
   readonly foregroundOpacity?: number;
   readonly gradientRatio?: number;
   readonly height?: number;
+  readonly rowBorderRadius?: number;
   readonly rowHeight?: number;
   readonly rowOffset?: number;
   readonly rows?: number;
   readonly title?: string;
+  readonly variant?: Preset;
   readonly viewBox?: string;
   readonly width?: number;
 }

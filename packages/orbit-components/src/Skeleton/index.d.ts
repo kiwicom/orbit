@@ -9,10 +9,11 @@ declare module "@kiwicom/orbit-components/lib/Skeleton";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
-interface Props extends Common.SpaceAfter {
+interface Props extends Common.SpaceAfter, Common.Global {
   readonly animate?: boolean;
   readonly animationInterval?: number;
   readonly animationSpeed?: number;
+  readonly ariaLabelledby?: string;
   readonly backgroundColor?: ColorTokens;
   readonly backgroundOpacity?: number;
   readonly children?: React.ReactNode;

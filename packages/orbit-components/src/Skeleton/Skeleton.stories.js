@@ -120,6 +120,7 @@ export const Playground = (): React.Node => {
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
   const viewBox = text("viewBox", "");
   const width = number("width", 0);
+  const title = text("title", "Loading");
 
   return (
     <Skeleton
@@ -132,6 +133,7 @@ export const Playground = (): React.Node => {
       foregroundOpacity={foregroundOpacity}
       gradientRatio={gradientRatio}
       height={height}
+      title={title}
       rowBorderRadius={rowBorderRadius}
       rowHeight={rowHeight}
       rowOffset={rowOffset}

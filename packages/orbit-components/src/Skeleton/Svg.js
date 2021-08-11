@@ -10,8 +10,14 @@ import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from ".";
 
-const StyledSvg = styled(({ className, children, ariaLabelledby, viewBox }) => (
-  <svg className={className} role="img" aria-labelledby={ariaLabelledby} viewBox={viewBox}>
+const StyledSvg = styled(({ className, children, ariaLabelledby, viewBox, dataTest }) => (
+  <svg
+    aria-labelledby={ariaLabelledby}
+    data-test={dataTest}
+    className={className}
+    role="img"
+    viewBox={viewBox}
+  >
     {children}
   </svg>
 ))`
@@ -46,21 +52,23 @@ const Svg = ({
   animate = true,
   animationInterval = 0.2,
   animationSpeed = 2,
+  ariaLabelledby,
   backgroundColor = "cloudNormal",
   backgroundOpacity = 1,
   children,
-  height,
-  width,
+  dataTest,
   foregroundColor = "cloudDark",
   foregroundOpacity = 1,
   gradientRatio = 2,
+  height,
   rowBorderRadius = 3,
   rowHeight = 21,
-  rows = 1,
   rowOffset = 0,
+  rows = 1,
   spaceAfter,
   title,
   viewBox,
+  width,
 }: Props): React.Node => {
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
   const { rtl } = useTheme();
@@ -75,12 +83,14 @@ const Svg = ({
 
   return (
     <UID>
-      {id => {
+      {uid => {
+        const id = ariaLabelledby || uid;
         const idClip = `${id}-clip`;
         const idGradient = `${id}-animate`;
 
         return (
           <StyledSvg
+            dataTest={dataTest}
             ariaLabelledby={id}
             role="img"
             rtl={rtl}

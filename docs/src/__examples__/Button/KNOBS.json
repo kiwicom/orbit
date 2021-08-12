@@ -1,14 +1,13 @@
 [
-  { "name": "children", "type": "textfield", "defaultValue": "Click me" },
+  { "name": "external", "type": "checkbox", "defaultValue": "false" },
+  { "name": "disabled", "type": "checkbox", "defaultValue": "false" },
+  { "name": "circled", "type": "checkbox", "defaultValue": "false" },
+  { "name": "fullWidth", "type": "checkbox", "defaultValue": "false" },
+  { "name": "loading", "type": "checkbox", "defaultValue": "false" },
   {
-    "name": "dataTest",
-    "type": "textfield",
-    "defaultValue": "test"
-  },
-  {
-    "name": "href",
-    "type": "textfield",
-    "defaultValue": ""
-  },
-  { "name": "external", "type": "checkbox", "defaultValue": "false" }
+    "name": "size",
+    "type": "select",
+    "defaultValue": "normal",
+    "options": ["small", "normal", "large"]
+  }
 ]

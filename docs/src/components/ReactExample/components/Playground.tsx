@@ -2,6 +2,8 @@ import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { InputField, Text } from "@kiwicom/orbit-components";
 
+import BooleanKnob from "./knobs/Boolean";
+import Select from "./knobs/Select";
 import { Knob } from "../Example";
 
 interface Props {
@@ -11,7 +13,7 @@ interface Props {
 
 const StyledWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto 1fr;
   grid-gap: 20px;
   align-items: center;
   padding: 20px;
@@ -25,35 +27,50 @@ const Playground = ({ knobs, onChange }: Props) => {
 
   const [values, setValues] = React.useState(defaultVals);
 
-  const handleChange = (ev: SyntheticEvent<HTMLInputElement>) => {
-    const { name, value } = ev.currentTarget;
+  const handleChange = (ev: SyntheticEvent<HTMLElement, Event>) => {
+    const { name, value, checked } = ev.target as HTMLInputElement;
 
     setValues({
-      ...values,
-      [name]: value,
+      ...defaultVals,
+      [name]: String(value || checked),
     });
-
-    onChange(values);
   };
+
+  React.useEffect(() => {
+    if (onChange) onChange(values);
+  }, [onChange, values]);
 
   return (
     <StyledWrapper>
-      {knobs.map(({ type, name }) => {
-        if (type === "textfield")
+      {knobs.map(({ type, name, options, defaultValue }) => {
+        if (type === "textfield") {
           return (
-            <>
+            <React.Fragment key={name}>
               <Text weight="bold" size="small" type="secondary">
                 {name}
               </Text>
-              <InputField
-                size="small"
-                name={name}
-                placeholder={values[name]}
-                value={values[name]}
-                onChange={handleChange}
-              />
-            </>
+              <InputField size="small" value={values[name]} onChange={handleChange} />
+            </React.Fragment>
           );
+        }
+
+        if (type === "checkbox") {
+          return (
+            <BooleanKnob key={name} checked={values[name]} onChange={handleChange} name={name} />
+          );
+        }
+
+        if (type === "select")
+          return (
+            <Select
+              key={name}
+              value={defaultValue}
+              onChange={handleChange}
+              name={name}
+              options={options}
+            />
+          );
+
         return null;
       })}
     </StyledWrapper>

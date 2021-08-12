@@ -30,10 +30,10 @@ const StyledWrapperFrame = styled.div<{ width: number }>`
 `;
 
 export interface Knob {
-  component: string;
   defaultValue: string;
   name: string;
   type: string;
+  options?: string[];
 }
 
 interface Props extends InitialProps {

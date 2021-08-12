@@ -35,6 +35,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
                 name
                 defaultValue
                 type
+                options
               }
             }
           }
@@ -49,17 +50,13 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
     if (window.localStorage.getItem(key)) {
       setCode(window.localStorage.getItem(key) || "");
     }
+
     setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
   }, [setCode, code, exampleId, setOrigin]);
 
-<<<<<<< HEAD
-  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
-=======
   const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
-  const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
->>>>>>> 9acd6e90b... feat(sandbox): knobs
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
@@ -72,20 +69,12 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       maxHeight={maxHeight}
       background={background}
       origin={origin}
-<<<<<<< HEAD
-=======
-      width={width}
       knobs={example.fields.knobs}
->>>>>>> 9acd6e90b... feat(sandbox): knobs
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}
       example={example.example}
       onChangeCode={c => setCode(c)}
-<<<<<<< HEAD
-=======
-      onChangeSize={handleChangeRulerSize}
->>>>>>> 9acd6e90b... feat(sandbox): knobs
     />
   );
 };

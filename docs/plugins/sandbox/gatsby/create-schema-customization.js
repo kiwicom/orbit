@@ -5,17 +5,23 @@ module.exports = ({ actions, schema }) => {
     name: "Example",
     interfaces: [`Node`],
     fields: {
-      example: { type: `String!` },
-      example_id: { type: `String!` },
-      absolutePath: { type: `String!` },
-      scope: {
-        type: `[ExampleScope]`,
-      },
+      example: `String!`,
+      example_id: `String!`,
+      absolutePath: `String!`,
+      scope: `[ExampleScope]`,
+      knobs: `[Knob]`,
     },
   });
 
   createTypes([
     `
+    type Knob {
+      name: String
+      type: String
+      defaultValue: String
+      options: String
+    }
+
     type ExampleScope {
       name: String!
       default: String!

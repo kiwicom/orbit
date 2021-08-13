@@ -1,9 +1,11 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
-import { InputField, Text } from "@kiwicom/orbit-components";
+import * as Icons from "@kiwicom/orbit-components/icons";
 
 import BooleanKnob from "./knobs/Boolean";
 import Select from "./knobs/Select";
+import Text from "./knobs/Text";
+import Icon from "./knobs/Icon";
 import { Knob } from "../Example";
 
 interface Props {
@@ -27,40 +29,35 @@ const Playground = ({ knobs, onChange }: Props) => {
 
   const [values, setValues] = React.useState(defaultVals);
 
-  const handleChange = (ev: SyntheticEvent<HTMLElement, Event>) => {
+  const handleChange = React.useCallback((ev: SyntheticEvent<HTMLElement, Event>) => {
     const { name, value, checked } = ev.target as HTMLInputElement;
 
-    setValues({
-      ...defaultVals,
-      [name]: String(value || checked),
-    });
-  };
+    if (checked) {
+      setValues(prev => ({ ...prev, [name]: String(checked) }));
+    } else if (name.includes("icon")) {
+      setValues(prev => ({ ...prev, [name]: `${value}-icon` }));
+    } else {
+      setValues(prev => ({
+        ...prev,
+        [name]: String(value),
+      }));
+    }
+  }, []);
 
   React.useEffect(() => {
     if (onChange) onChange(values);
-  }, [onChange, values]);
+  }, [values]);
 
   return (
     <StyledWrapper>
       {knobs.map(({ type, name, options, defaultValue }) => {
-        if (type === "textfield") {
-          return (
-            <React.Fragment key={name}>
-              <Text weight="bold" size="small" type="secondary">
-                {name}
-              </Text>
-              <InputField size="small" value={values[name]} onChange={handleChange} />
-            </React.Fragment>
-          );
-        }
-
         if (type === "checkbox") {
           return (
             <BooleanKnob key={name} checked={values[name]} onChange={handleChange} name={name} />
           );
         }
 
-        if (type === "select")
+        if (type === "select") {
           return (
             <Select
               key={name}
@@ -70,6 +67,15 @@ const Playground = ({ knobs, onChange }: Props) => {
               options={options}
             />
           );
+        }
+
+        if (type === "text") {
+          return <Text key={name} value={values[name]} onChange={handleChange} name={name} />;
+        }
+
+        if (type === "icon") {
+          return <Icon value={values[name]} name={name} onChange={handleChange} />;
+        }
 
         return null;
       })}

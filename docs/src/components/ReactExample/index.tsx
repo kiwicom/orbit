@@ -30,13 +30,11 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
               path
               default
             }
-            fields {
-              knobs {
-                name
-                defaultValue
-                type
-                options
-              }
+            knobs {
+              name
+              defaultValue
+              type
+              options
             }
           }
         }
@@ -69,7 +67,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       maxHeight={maxHeight}
       background={background}
       origin={origin}
-      knobs={example.fields.knobs}
+      knobs={example.knobs}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}

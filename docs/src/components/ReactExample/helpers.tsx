@@ -54,42 +54,55 @@ export const transform = (example: string, knobs: Record<string, string>) => {
         })
         .filter(Boolean);
 
-      if (!_.has(knobs, attrs)) {
+      if (_.has(knobs, attrs)) {
         Object.entries(knobs).forEach(([prop, value]) => {
-          if (prop !== "children") {
+          if (prop !== "children" && value && !value.includes("icon")) {
             path.node.attributes.push(
               t.jsxAttribute(t.jsxIdentifier(prop), t.stringLiteral(value)),
             );
           }
+
+          if (value.includes("icon")) {
+            const name = value.split("-icon")[0];
+            const node = t.jsxExpressionContainer(
+              t.jsxElement(
+                t.jsxOpeningElement(t.jsxIdentifier(["Icons.", name].join("")), [], true),
+                null,
+                [],
+                true,
+              ),
+            );
+
+            path.node.attributes.push(t.jsxAttribute(t.jsxIdentifier(prop), node));
+          }
         });
       }
     },
-    JSXElement: path => {
-      if (knobs.children) {
-        if (path.node.children.length > 0) {
-          path.node.children = [t.jsxText(knobs.children)];
-        }
-      }
-    },
+
     JSXAttribute: path => {
-      if (t.isJSXIdentifier(path.node.name)) {
-        if (_.has(knobs, [path.node.name.name])) {
-          if (t.isStringLiteral(path.node.value)) {
-            const knob = knobs[path.node.name.name];
-            const { value } = path.node;
+      const namePath = path.node.name;
+      const valuePath = path.get("value");
 
-            if (knob === "true") {
-              path.node.value = null;
-            }
+      if (t.isJSXIdentifier(namePath)) {
+        if (valuePath.isStringLiteral()) {
+          const knob = knobs[namePath.name];
 
-            if (knob === "false") {
-              path.node.value = t.jsxExpressionContainer(t.booleanLiteral(false));
-            }
-
-            if (value) {
-              value.value = knobs[path.node.name.name];
-            }
+          if (knob === "true") {
+            path.node.value = null;
           }
+
+          if (knob === "false") {
+            path.node.value = t.jsxExpressionContainer(t.booleanLiteral(false));
+          }
+
+          // if (valuePath.node.value.includes("icon")) {
+          //   const name = valuePath.node.value.split("-icon")[0];
+          //   const node = t.jsxExpressionContainer(
+          //     t.jsxElement(t.jsxOpeningElement(t.jsxIdentifier(name), [], true), null, [], true),
+          //   );
+
+          //   valuePath.replaceWith(node);
+          // }
         }
       }
     },

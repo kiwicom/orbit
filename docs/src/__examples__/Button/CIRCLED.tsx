@@ -16,9 +16,5 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Circled button",
-    description:
-      "Circled buttons should be used only with an icon or a single number. If using only an icon, remember to include a title.",
-  },
+  knobs: [{ name: "circled", type: "checkbox", defaultValue: "false" }],
 };

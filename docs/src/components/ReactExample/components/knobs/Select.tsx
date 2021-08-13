@@ -8,7 +8,7 @@ interface Props extends Pick<Knob, "name" | "options"> {
   onChange: (ev: React.SyntheticEvent<HTMLSelectElement, Event>) => void;
 }
 
-const BooleanKnob = ({ value, name, onChange, options }: Props) => {
+const SelectKnob = ({ value, name, onChange, options }: Props) => {
   if (!options) return null;
   return (
     <>
@@ -25,4 +25,4 @@ const BooleanKnob = ({ value, name, onChange, options }: Props) => {
   );
 };
 
-export default BooleanKnob;
+export default SelectKnob;

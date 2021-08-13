@@ -32,6 +32,24 @@ const getScope = example => {
   return scope;
 };
 
+const getByName = (code, name) => {
+  const output = [];
+
+  getCode(code).program.body.forEach(n => {
+    if (t.isExportDefaultDeclaration(n)) {
+      n.declaration.properties.forEach(prop => {
+        if (t.isObjectProperty(prop)) {
+          if (t.isIdentifier(prop.key) && prop.key.name === name) {
+            output.push(generate(prop.value).code);
+          }
+        }
+      });
+    }
+  });
+
+  return output;
+};
+
 /* react-live can't have types inside example, this helper removes the types for react-live */
 const omitTypes = example => {
   const ast = getCode(example);
@@ -52,5 +70,6 @@ const omitTypes = example => {
 
 module.exports = {
   getScope,
+  getByName,
   omitTypes,
 };

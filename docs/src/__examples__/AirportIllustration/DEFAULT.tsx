@@ -3,9 +3,31 @@ import { AirportIllustration } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <AirportIllustration name="BUDFastTrack" />,
-  info: {
-    title: "Default airport illustration",
-    description:
-      "Airport illustrations by default come in medium. By default, the name of the illustration is used for alt text. Especailly for airport illustrations, this is often not meaningful so include meaningful alt text when appropriate. If the same text is present next to the illustration, use an empty string for the alt prop.",
-  },
+  knobs: [
+    {
+      name: "size",
+      type: "select",
+      options: ["extraSmall", "small", "medium", "large", "displays"],
+      defaultValue: "",
+    },
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+    {
+      name: "name",
+      type: "select",
+      defaultValue: "",
+      options: [
+        "BGYFastTrack",
+        "BUDFastTrack",
+        "MRSSmartPass",
+        "NCEFastTrack",
+        "PRGSmartPass",
+        "VCESmartPass",
+      ],
+    },
+  ],
 };

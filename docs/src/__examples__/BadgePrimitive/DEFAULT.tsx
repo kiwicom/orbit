@@ -16,8 +16,21 @@ export default {
       </BadgePrimitive>
     </Stack>
   ),
-  info: {
-    title: "Default badge primitives",
-    description: "By default, badge primitives have padding with no background and ink text.",
-  },
+  knobs: [
+    {
+      name: "icon",
+      type: "icon",
+      defaultValue: "",
+    },
+    {
+      name: "background",
+      type: "text",
+      defaultValue: "linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)",
+    },
+    {
+      name: "foregroundColor",
+      type: "text",
+      defaultValue: "#fff",
+    },
+  ],
 };

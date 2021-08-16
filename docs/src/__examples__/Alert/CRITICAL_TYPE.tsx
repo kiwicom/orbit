@@ -18,9 +18,4 @@ export default {
       </Stack>
     </Alert>
   ),
-  info: {
-    title: "Critical alert",
-    description:
-      "Use critical alerts when something is blocking users from continuing or an issue needs to be resolved immediately. The alert should offer a solution to the problem.",
-  },
 };

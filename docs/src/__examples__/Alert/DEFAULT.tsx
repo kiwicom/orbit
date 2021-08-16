@@ -3,9 +3,28 @@ import { Alert } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <Alert icon title="You've got mail" />,
-  info: {
-    title: "Default Alert",
-    description:
-      "The recommended default use for an Alert is to have an icon and a title no longer than one line. To use a different icon, pass it as a React element to the icon prop.",
-  },
+  knobs: [
+    {
+      name: "type",
+      type: "select",
+      defaultValue: "info",
+      options: ["info", "success", "warning", "critical"],
+    },
+    {
+      name: "closable",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "icon",
+      type: "icon",
+      defaultValue: "",
+    },
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+  ],
 };

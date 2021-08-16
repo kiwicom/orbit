@@ -14,9 +14,4 @@ export default {
       </Stack>
     </Alert>
   ),
-  info: {
-    title: "Informational alert",
-    description:
-      "Informational alerts are the most common alerts. Use them to guide a user's attention to relevant details, but keep it focused and related to the topic on the screen.",
-  },
 };

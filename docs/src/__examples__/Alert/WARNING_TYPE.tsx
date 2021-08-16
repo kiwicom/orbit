@@ -27,9 +27,4 @@ export default {
       </Stack>
     </Alert>
   ),
-  info: {
-    title: "Warning alert",
-    description:
-      "Use warning alerts when you need to inform users about a potentially unfavorable situation that requires eventual but not immediate action from them.",
-  },
 };

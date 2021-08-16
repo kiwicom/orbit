@@ -46,9 +46,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Actions",
-    description:
-      "Alerts have the possibility to include actions with the message. Use special buttons to match the button color with the alert color.",
-  },
 };

@@ -16,9 +16,17 @@ export default {
       <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>
     </Breadcrumbs>
   ),
-  info: {
-    title: "Default breadcrumbs",
-    description:
-      "Breadcrumbs items by default navigation to their provided href and list all necessary metadata so you don't have to set it up yourself.",
-  },
+  knobs: [
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+    {
+      name: "href",
+      type: "text",
+      defaultValue: "",
+    },
+  ],
 };

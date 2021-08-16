@@ -18,9 +18,38 @@ export default {
       </Button>
     </ButtonGroup>
   ),
-  info: {
-    title: "Default button group",
-    description:
-      "Button groups visually join their children to show related actions as a single unit.",
-  },
+  knobs: [
+    {
+      name: "circled",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "fullWidth",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "loading",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "size",
+      type: "select",
+      defaultValue: "normal",
+      options: ["small", "normal", "large"],
+    },
+    {
+      name: "type",
+      type: "select",
+      defaultValue: "primary",
+      options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+    },
+  ],
 };

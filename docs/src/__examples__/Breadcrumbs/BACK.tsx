@@ -16,9 +16,22 @@ export default {
       <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>
     </Breadcrumbs>
   ),
-  info: {
-    title: "Breadcrumbs with back button",
-    description:
-      "If you add onGoBack to the breadcrumbs, it will have a back button. The title for the button is available for translation through the goBackTitle prop.",
-  },
+  knobs: [
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+    {
+      name: "backHref",
+      type: "text",
+      defaultValue: "",
+    },
+    {
+      name: "href",
+      type: "text",
+      defaultValue: "",
+    },
+  ],
 };

@@ -12,9 +12,24 @@ export default {
       </Badge>
     </Stack>
   ),
-  info: {
-    title: "Default badges",
-    description:
-      "Badges should present simple and short static information. They can be just text, just an icon, or an icon and text.",
-  },
+  knobs: [
+    { name: "icon", type: "icon", defaultValue: "" },
+    {
+      name: "type",
+      type: "select",
+      defaultValue: "",
+      options: [
+        "neutral",
+        "dark",
+        "info",
+        "success",
+        "critical",
+        "warning",
+        "infoInverted",
+        "criticalInverted",
+        "successInverted",
+        "warningInverted",
+      ],
+    },
+  ],
 };

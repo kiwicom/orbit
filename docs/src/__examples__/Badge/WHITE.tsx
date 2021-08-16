@@ -19,9 +19,4 @@ export default {
       </Badge>
     </PictureCard>
   ),
-  info: {
-    title: "White badges",
-    description:
-      "White badges are useful when presenting neutral information within a dark context.",
-  },
 };

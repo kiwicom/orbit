@@ -10,8 +10,4 @@ export default {
       </BadgeListItem>
     </BadgeList>
   ),
-  info: {
-    title: "Critical badge list item",
-    description: "",
-  },
 };

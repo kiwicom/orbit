@@ -14,8 +14,4 @@ export default {
       <BadgeListItem icon={<Clock />}>3h 20min layover</BadgeListItem>
     </BadgeList>
   ),
-  info: {
-    title: "Default badge list",
-    description: "",
-  },
 };

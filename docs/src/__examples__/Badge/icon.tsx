@@ -14,8 +14,4 @@ export default {
       </Badge>
     </Tooltip>
   ),
-  info: {
-    title: "",
-    description: "",
-  },
 };

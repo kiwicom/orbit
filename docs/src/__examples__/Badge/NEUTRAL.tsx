@@ -9,9 +9,4 @@ export default {
       <Badge type="dark" ariaLabel="Train" icon={<Train />} />
     </Stack>
   ),
-  info: {
-    title: "Neutral badges",
-    description:
-      "Neutral badges present information without adding any emotion. They’re useful when the information is not so important to the user’s main flow.",
-  },
 };

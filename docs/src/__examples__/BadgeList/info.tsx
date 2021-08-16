@@ -10,8 +10,4 @@ export default {
       </BadgeListItem>
     </BadgeList>
   ),
-  info: {
-    title: "Info badge list items",
-    description: "",
-  },
 };

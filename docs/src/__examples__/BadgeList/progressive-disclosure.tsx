@@ -52,8 +52,4 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default badge list",
-    description: "",
-  },
 };

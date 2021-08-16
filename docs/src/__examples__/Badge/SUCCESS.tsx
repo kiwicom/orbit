@@ -13,9 +13,4 @@ export default {
       </Badge>
     </Stack>
   ),
-  info: {
-    title: "Success badges",
-    description:
-      "Success badges help to highlight something desirable has happened or will happen. You can use them in situations like a confirmation of a user action (such as booking a trip) or potentially attractive options (such as free baggage).",
-  },
 };

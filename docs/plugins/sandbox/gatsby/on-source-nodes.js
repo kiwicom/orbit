@@ -19,9 +19,11 @@ module.exports = async ({ actions, createNodeId, createContentDigest }, { path: 
       const id = [exampleFolder, "-", name.toLowerCase()].join("");
       const scope = getScope(content);
       const example = getByName(content, "Example");
-      const knobs = getByName(content, "knobs");
+      const knobCode = getByName(content, "knobs");
+      // eslint-disable-next-line no-eval
+      const knobs = knobCode ? eval(knobCode) : [];
 
-      const code = format(omitTypes(example[0]), {
+      const code = format(omitTypes(example), {
         parser: "typescript",
         plugins: [parserTypeScript],
       });
@@ -31,7 +33,7 @@ module.exports = async ({ actions, createNodeId, createContentDigest }, { path: 
         example: code,
         absolutePath: file,
         scope,
-        knobs: knobs[0] || [],
+        knobs,
       };
 
       createNode({

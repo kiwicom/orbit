@@ -16,5 +16,5 @@ export default {
       </Stack>
     </Stack>
   ),
-  knobs: [{ name: "circled", type: "checkbox", defaultValue: "false" }],
+  knobs: [{ name: "leftIcon", type: "icon", defaultValue: false }],
 };

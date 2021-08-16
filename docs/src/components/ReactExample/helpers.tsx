@@ -46,63 +46,38 @@ export const transform = (example: string, knobs: Record<string, string>) => {
   const ast = getCode(example);
 
   traverse(ast, {
-    JSXOpeningElement: path => {
-      const attrs = path.node.attributes
-        .map(attr => {
-          if (t.isJSXAttribute(attr) && t.isJSXIdentifier(attr.name)) return attr.name.name;
-          return "";
-        })
-        .filter(Boolean);
-
-      if (_.has(knobs, attrs)) {
-        Object.entries(knobs).forEach(([prop, value]) => {
-          if (prop !== "children" && value && !value.includes("icon")) {
-            path.node.attributes.push(
-              t.jsxAttribute(t.jsxIdentifier(prop), t.stringLiteral(value)),
-            );
-          }
-
-          if (value.includes("icon")) {
-            const name = value.split("-icon")[0];
-            const node = t.jsxExpressionContainer(
-              t.jsxElement(
-                t.jsxOpeningElement(t.jsxIdentifier(["Icons.", name].join("")), [], true),
-                null,
-                [],
-                true,
-              ),
-            );
-
-            path.node.attributes.push(t.jsxAttribute(t.jsxIdentifier(prop), node));
-          }
-        });
-      }
-    },
-
     JSXAttribute: path => {
-      const namePath = path.node.name;
-      const valuePath = path.get("value");
+      if (t.isJSXIdentifier(path.node.name)) {
+        const { name } = path.node.name;
+        if (_.has(knobs, [name])) {
+          const knob = knobs[name];
+          const { value } = path.node;
 
-      if (t.isJSXIdentifier(namePath)) {
-        if (valuePath.isStringLiteral()) {
-          const knob = knobs[namePath.name];
-
-          if (knob === "true") {
-            path.node.value = null;
+          if (t.isJSXExpressionContainer(value)) {
+            if (knob.includes("-icon")) {
+              const iconName = ["Icons.", knob.split("-icon")[0]].join("");
+              path.node.value = t.jsxExpressionContainer(
+                t.jsxElement(
+                  t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
+                  null,
+                  [],
+                  true,
+                ),
+              );
+            }
           }
 
-          if (knob === "false") {
-            path.node.value = t.jsxExpressionContainer(t.booleanLiteral(false));
+          if (t.isStringLiteral(value)) {
+            if (knob === "true") {
+              path.node.value = null;
+            }
+
+            if (knob === "false") {
+              path.node.value = t.jsxExpressionContainer(t.booleanLiteral(false));
+            }
+
+            if (value) value.value = knobs[path.node.name.name];
           }
-
-          // if (valuePath.node.value.includes("icon")) {
-          //   const name = valuePath.node.value.split("-icon")[0];
-          //   const node = t.jsxExpressionContainer(
-          //     t.jsxElement(t.jsxOpeningElement(t.jsxIdentifier(name), [], true), null, [], true),
-          //   );
-
-          //   valuePath.replaceWith(node);
-          // }
         }
       }
     },

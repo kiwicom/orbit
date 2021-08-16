@@ -33,14 +33,23 @@ const getScope = example => {
 };
 
 const getByName = (code, name) => {
-  const output = [];
+  let output;
 
   getCode(code).program.body.forEach(n => {
     if (t.isExportDefaultDeclaration(n)) {
       n.declaration.properties.forEach(prop => {
         if (t.isObjectProperty(prop)) {
           if (t.isIdentifier(prop.key) && prop.key.name === name) {
-            output.push(generate(prop.value).code);
+            output = generate(prop.value, {
+              jsonCompatibleStrings: true,
+              minified: true,
+              jsescOption: {
+                json: true,
+                quotes: "double",
+                minimal: true,
+                escapeEverything: true,
+              },
+            }).code;
           }
         }
       });

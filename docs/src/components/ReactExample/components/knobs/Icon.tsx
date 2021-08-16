@@ -6,7 +6,7 @@ import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name"> {
   value: string;
-  onChange: (ev: React.SyntheticEvent<HTMLInputElement, Event>) => void;
+  onChange: (ev: React.SyntheticEvent<HTMLSelectElement, Event>) => void;
 }
 
 const Icon = ({ name, value, onChange }: Props) => {

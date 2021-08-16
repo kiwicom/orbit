@@ -9,8 +9,4 @@ export default {
       <Button size="large">Large button</Button>
     </Stack>
   ),
-  info: {
-    title: "Button sizes",
-    description: "Buttons come in three sizes: small, normal, and large.",
-  },
 };

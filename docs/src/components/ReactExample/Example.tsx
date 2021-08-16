@@ -97,11 +97,14 @@ const Example = ({
           setOpenEditor(false);
           setPlaygroundOpened(prev => !prev);
         }}
+        knobsCount={knobs.length}
         code={code}
         origin={origin}
       />
       {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
-      {isPlaygroundOpened && <Playground onChange={handleKnobChange} knobs={knobs} />}
+      {isPlaygroundOpened && knobs && knobs.length > 0 && (
+        <Playground onChange={handleKnobChange} knobs={knobs} />
+      )}
     </StyledWrapper>
   );
 };

@@ -1,11 +1,10 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
 
 import BooleanKnob from "./knobs/Boolean";
-import Select from "./knobs/Select";
-import Text from "./knobs/Text";
-import Icon from "./knobs/Icon";
+import SelectKnob from "./knobs/Select";
+import TextKnob from "./knobs/Text";
+import IconKnob from "./knobs/Icon";
 import { Knob } from "../Example";
 
 interface Props {
@@ -39,7 +38,7 @@ const Playground = ({ knobs, onChange }: Props) => {
     } else {
       setValues(prev => ({
         ...prev,
-        [name]: String(value),
+        [name]: value,
       }));
     }
   }, []);
@@ -51,7 +50,7 @@ const Playground = ({ knobs, onChange }: Props) => {
   return (
     <StyledWrapper>
       {knobs.map(({ type, name, options, defaultValue }) => {
-        if (type === "checkbox") {
+        if (type === "boolean") {
           return (
             <BooleanKnob key={name} checked={values[name]} onChange={handleChange} name={name} />
           );
@@ -59,7 +58,7 @@ const Playground = ({ knobs, onChange }: Props) => {
 
         if (type === "select") {
           return (
-            <Select
+            <SelectKnob
               key={name}
               value={defaultValue}
               onChange={handleChange}
@@ -69,15 +68,11 @@ const Playground = ({ knobs, onChange }: Props) => {
           );
         }
 
-        if (type === "text") {
-          return <Text key={name} value={values[name]} onChange={handleChange} name={name} />;
-        }
-
         if (type === "icon") {
-          return <Icon value={values[name]} name={name} onChange={handleChange} />;
+          return <IconKnob key={name} value={values[name]} name={name} onChange={handleChange} />;
         }
 
-        return null;
+        return <TextKnob key={name} value={values[name]} onChange={handleChange} name={name} />;
       })}
     </StyledWrapper>
   );

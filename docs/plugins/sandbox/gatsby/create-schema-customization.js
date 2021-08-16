@@ -19,7 +19,7 @@ module.exports = ({ actions, schema }) => {
       name: String
       type: String
       defaultValue: String
-      options: String
+      options: [String]
     }
 
     type ExampleScope {

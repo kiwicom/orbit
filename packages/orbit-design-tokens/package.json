@@ -29,7 +29,9 @@
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "clean": "rimraf lib es pages output",
-    "prepublishOnly": "yarn build"
+    "postinstall": "yarn build:lib",
+    "prepublishOnly": "yarn build && pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "author": "Kiwi.com",
   "license": "MIT",

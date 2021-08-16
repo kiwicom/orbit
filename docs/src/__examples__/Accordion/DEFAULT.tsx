@@ -111,9 +111,13 @@ export default {
       </Accordion>
     );
   },
-  info: {
-    title: "Default accordion",
-    description:
-      "Accordions default to having at most one section open at a time. The section that is opened is controlled through the section's id and callbacks on the Accordion.",
-  },
+  knobs: [
+    { name: "loading", type: "boolean", defaultValue: false },
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+  ],
 };

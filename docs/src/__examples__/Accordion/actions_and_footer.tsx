@@ -137,9 +137,4 @@ export default {
       </Accordion>
     );
   },
-  info: {
-    title: "Section actions",
-    description:
-      "To override the open button and add your own actions in the section heading, use the <code>actions</code> property of the section.",
-  },
 };

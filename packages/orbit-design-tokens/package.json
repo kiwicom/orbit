@@ -26,11 +26,10 @@
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
     "prebuild": "rimraf lib src/js",
     "build": "yarn clean && yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
-    "quickbuild": "yarn build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "clean": "rimraf lib es pages output",
-    "postinstall": "yarn quickbuild",
+    "postinstall": "yarn build:lib",
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable"
   },

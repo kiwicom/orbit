@@ -18,8 +18,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Button link types",
-    description: "Button links come in three types: primary, secondary, and critical.",
-  },
 };

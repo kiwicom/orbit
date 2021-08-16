@@ -3,8 +3,45 @@ import { ButtonLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <ButtonLink>Click me</ButtonLink>,
-  info: {
-    title: "Default button link",
-    description: "The default button link is a primary button link with its children as its text.",
-  },
+  knobs: [
+    { name: "iconLeft", type: "icon", defaultValue: "" },
+    { name: "iconRight", type: "icon", defaultValue: "" },
+    {
+      name: "compact",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "circled",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "fullWidth",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "loading",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "size",
+      type: "select",
+      defaultValue: "normal",
+      options: ["small", "normal", "large"],
+    },
+    {
+      name: "type",
+      type: "select",
+      defaultValue: "primary",
+      options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+    },
+  ],
 };

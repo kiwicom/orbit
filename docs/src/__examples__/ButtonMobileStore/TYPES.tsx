@@ -32,8 +32,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Types",
-    description: "Mobile store buttons can be either dark (the default) or light.",
-  },
 };

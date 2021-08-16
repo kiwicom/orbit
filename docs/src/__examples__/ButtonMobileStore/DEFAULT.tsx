@@ -9,8 +9,9 @@ export default {
       type="googlePlay"
     />
   ),
-  info: {
-    title: "Default mobile store button",
-    description: "For mobile store buttons, you only need to select the type.",
-  },
+  knobs: [
+    { name: "href", type: "text", defaultValue: "" },
+    { name: "type", type: "select", defaultValue: "", options: ["appStore", "googlePlay"] },
+    { name: "variant", type: "select", defaultValue: "", options: ["dark", "light"] },
+  ],
 };

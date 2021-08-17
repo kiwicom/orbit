@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InformationCircle, NewWindow } from "@kiwicom/orbit-components/icons";
 import { CallOutBanner, Button, Stack, TextLink, Illustration } from "@kiwicom/orbit-components";
 

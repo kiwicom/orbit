@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Stack, Text, Alert, AlertButton } from "@kiwicom/orbit-components";
 import { AlertCircle, Reload } from "@kiwicom/orbit-components/icons";
 

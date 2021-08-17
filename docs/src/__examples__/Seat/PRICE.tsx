@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Seat } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 

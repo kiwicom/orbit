@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { AlertCircle, BaggageSet, Clock } from "@kiwicom/orbit-components/icons";
 import { BadgeList, BadgeListItem } from "@kiwicom/orbit-components";
 

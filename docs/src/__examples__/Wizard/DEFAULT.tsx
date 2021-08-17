@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Heading, Stack, WizardStep, Wizard, Box, Text } from "@kiwicom/orbit-components";
 
 export default {

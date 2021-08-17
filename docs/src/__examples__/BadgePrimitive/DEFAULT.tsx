@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import BadgePrimitive from "@kiwicom/orbit-components/lib/primitives/BadgePrimitive";
 import { Stack } from "@kiwicom/orbit-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Card, CardSection, Stack, Text } from "@kiwicom/orbit-components";
 import { GenderMan, GenderWoman } from "@kiwicom/orbit-components/icons";
 

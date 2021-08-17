@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Check } from "@kiwicom/orbit-components/icons";
 import { Stack, Badge } from "@kiwicom/orbit-components";
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Table, Stack, TableCell, TableBody, TableRow, TableHead } from "@kiwicom/orbit-components";
 import { BaggageCabin, BaggageChecked30 } from "@kiwicom/orbit-components/icons";
 

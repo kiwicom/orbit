@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { BaggageSet, KiwicomGuarantee } from "@kiwicom/orbit-components/icons";
 import {
   BadgeList,

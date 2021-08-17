@@ -64,8 +64,9 @@ export default {
       </PricingTableItem>
     </PricingTable>
   ),
-  info: {
-    title: "Pricing table",
-    description: "A table with extra information disclosed progressively.",
-  },
+  knobs: [
+    { name: "activeElement", type: "text", defaultValue: "" },
+    { name: "hasError", type: "boolean", defaultValue: false },
+    { name: "desktopRadio", type: "boolean", defaultValue: false },
+  ],
 };

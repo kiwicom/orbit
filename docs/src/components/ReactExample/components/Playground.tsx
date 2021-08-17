@@ -49,7 +49,7 @@ const Playground = ({ knobs, onChange }: Props) => {
 
   return (
     <StyledWrapper>
-      {knobs.map(({ type, name, options, defaultValue }) => {
+      {knobs.map(({ type, name, options }) => {
         if (type === "boolean") {
           return (
             <BooleanKnob key={name} checked={values[name]} onChange={handleChange} name={name} />
@@ -60,7 +60,7 @@ const Playground = ({ knobs, onChange }: Props) => {
           return (
             <SelectKnob
               key={name}
-              value={defaultValue}
+              value={values[name]}
               onChange={handleChange}
               name={name}
               options={options}

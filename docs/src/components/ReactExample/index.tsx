@@ -54,6 +54,8 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
     return () => window.localStorage.removeItem(key);
   }, [setCode, code, exampleId, setOrigin]);
 
+  console.log(code);
+
   const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;

@@ -9,9 +9,9 @@ export default {
       type="googlePlay"
     />
   ),
-  knobs: [
-    { name: "href", type: "text", defaultValue: "" },
-    { name: "type", type: "select", defaultValue: "appStore", options: ["appStore", "googlePlay"] },
-    { name: "variant", type: "select", defaultValue: "dark", options: ["dark", "light"] },
-  ],
+  info: {
+    title: "Accessibility",
+    description:
+      "To set your own alternative text for the mobile store image (and so the action text for the button, use the <code>alt</alt> prop.",
+  },
 };

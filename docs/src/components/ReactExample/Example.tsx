@@ -66,7 +66,7 @@ const Example = ({
 
   const handleKnobChange = React.useCallback(
     knob => {
-      onChangeCode(transform(example, knob));
+      onChangeCode(transform(example, knob, fullPageExampleId?.split("-")[0]));
     },
     [example, onChangeCode],
   );

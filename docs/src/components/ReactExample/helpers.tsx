@@ -36,7 +36,7 @@ export const copyImports = (scope: Scope[]) =>
     })
     .join("\n");
 
-export const transform = (example: string, knobs: Record<string, string>) => {
+export const transform = (example: string, knobs: Record<string, string>, id?: string) => {
   const getCode = str =>
     parse(str, {
       sourceType: "module",
@@ -44,8 +44,45 @@ export const transform = (example: string, knobs: Record<string, string>) => {
     });
 
   const ast = getCode(example);
-
   traverse(ast, {
+    JSXOpeningElement: path => {
+      const namePath = path.node.name;
+      if (t.isJSXIdentifier(namePath)) {
+        if (namePath.name.toLowerCase() === id) {
+          const current = path.node.attributes
+            .map(attr => (t.isJSXAttribute(attr) ? attr.name.name : ""))
+            .filter(Boolean);
+
+          // TODO: refactor it
+          Object.entries(knobs).forEach(([name, value]) => {
+            if (!current.includes(name)) {
+              if (value === "true") {
+                path.node.attributes.push(t.jsxAttribute(t.jsxIdentifier(name), null));
+              } else if (value.includes("-icon")) {
+                const iconName = `Icons.${value.split("-icon")[0]}`;
+                path.node.attributes.push(
+                  t.jsxAttribute(
+                    t.jsxIdentifier(name),
+                    t.jsxExpressionContainer(
+                      t.jsxElement(
+                        t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
+                        null,
+                        [],
+                        true,
+                      ),
+                    ),
+                  ),
+                );
+              } else {
+                path.node.attributes.push(
+                  t.jsxAttribute(t.jsxIdentifier(name), t.stringLiteral(value)),
+                );
+              }
+            }
+          });
+        }
+      }
+    },
     JSXAttribute: path => {
       if (t.isJSXIdentifier(path.node.name)) {
         const { name } = path.node.name;
@@ -55,7 +92,7 @@ export const transform = (example: string, knobs: Record<string, string>) => {
 
           if (t.isJSXExpressionContainer(value)) {
             if (knob.includes("-icon")) {
-              const iconName = ["Icons.", knob.split("-icon")[0]].join("");
+              const iconName = `Icons.${knob.split("-icon")[0]}`;
               path.node.value = t.jsxExpressionContainer(
                 t.jsxElement(
                   t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
@@ -67,6 +104,7 @@ export const transform = (example: string, knobs: Record<string, string>) => {
             }
           }
 
+          // TODO: refactor it
           if (t.isStringLiteral(value)) {
             if (knob === "true") {
               path.node.value = null;

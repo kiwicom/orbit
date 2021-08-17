@@ -6,7 +6,7 @@ import ScreenReaderText from "./ScreenReaderText";
 
 const StyledLabel = styled.label`
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
 `;
 
 const StyledSwitchContainer = styled.div`

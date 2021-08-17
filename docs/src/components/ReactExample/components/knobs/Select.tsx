@@ -10,6 +10,7 @@ interface Props extends Pick<Knob, "name" | "options"> {
 
 const SelectKnob = ({ value, name, onChange, options }: Props) => {
   if (!options) return null;
+
   return (
     <>
       <Text weight="bold" size="small" type="secondary">

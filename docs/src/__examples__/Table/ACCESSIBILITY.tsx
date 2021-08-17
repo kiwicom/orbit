@@ -48,9 +48,4 @@ export default {
       </Table>
     </Stack>
   ),
-  info: {
-    title: "Accessibility",
-    description:
-      "Tables can be very accessible provided you use their semantic features. Render headers as th elements (not just in bold) and use scope to define which cells the header covers.",
-  },
 };

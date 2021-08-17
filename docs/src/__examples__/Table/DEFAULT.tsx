@@ -38,9 +38,37 @@ export default {
       </TableBody>
     </Table>
   ),
-  info: {
-    title: "Default table",
-    description:
-      "Tables require at least a few kinds of children. By default, the cells are center aligned and the rows alternate background colors.",
-  },
+  knobs: [
+    { name: "compact", type: "boolean", defaultValue: false },
+    { name: "type", type: "select", defaultValue: "primary", options: ["primary", "secondary"] },
+    {
+      name: "scope",
+      type: "select",
+      defaultValue: "",
+      options: ["col", "row", "colgroup", "rowgroup"],
+      component: "TableCell",
+    },
+    {
+      name: "verticalAlign",
+      type: "select",
+      defaultValue: "",
+      options: ["baseline", "middle", "top", "bottom"],
+      component: "TableCell",
+    },
+    {
+      name: "whiteSpace",
+      type: "select",
+      defaultValue: "",
+      options: ["nowrap", "pre", "pre-line", "normal"],
+      component: "TableCell",
+    },
+    { name: "as", type: "select", defaultValue: "", options: ["th", "td"], component: "TableCell" },
+    {
+      name: "align",
+      type: "select",
+      defaultValue: "",
+      options: ["left", "center", "right"],
+      component: "TableCell",
+    },
+  ],
 };

@@ -1,20 +1,21 @@
-module.exports = ({ actions, schema }) => {
-  const { createTypes } = actions;
+module.exports = ({ actions, schema, reporter }) => {
+  try {
+    const { createTypes } = actions;
 
-  const exampleType = schema.buildObjectType({
-    name: "Example",
-    interfaces: [`Node`],
-    fields: {
-      example: `String!`,
-      example_id: `String!`,
-      absolutePath: `String!`,
-      scope: `[ExampleScope]`,
-      exampleKnobs: `[ExampleKnobs]`,
-    },
-  });
+    const exampleType = schema.buildObjectType({
+      name: "Example",
+      interfaces: [`Node`],
+      fields: {
+        example: `String!`,
+        example_id: `String!`,
+        absolutePath: `String!`,
+        scope: `[ExampleScope]`,
+        exampleKnobs: `[ExampleKnobs]`,
+      },
+    });
 
-  createTypes([
-    `
+    createTypes([
+      `
     type Knob {
       name: String
       type: String
@@ -33,6 +34,9 @@ module.exports = ({ actions, schema }) => {
       path: String!
     }
   `,
-    exampleType,
-  ]);
+      exampleType,
+    ]);
+  } catch (err) {
+    reporter.panicOnBuild(err);
+  }
 };

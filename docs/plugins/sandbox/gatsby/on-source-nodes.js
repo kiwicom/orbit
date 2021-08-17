@@ -6,7 +6,10 @@ const parserTypeScript = require("prettier/parser-typescript");
 
 const { getScope, omitTypes, getByName } = require("./helpers");
 
-module.exports = async ({ actions, createNodeId, createContentDigest }, { path: folder }) => {
+module.exports = async (
+  { actions, createNodeId, createContentDigest, reporter },
+  { path: folder },
+) => {
   try {
     const { createNode } = actions;
     const files = await globby(`${folder}/**/*.tsx`);
@@ -49,6 +52,6 @@ module.exports = async ({ actions, createNodeId, createContentDigest }, { path: 
       });
     });
   } catch (err) {
-    console.error(err);
+    reporter.panicOnBuild(err);
   }
 };

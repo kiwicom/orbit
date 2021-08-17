@@ -16,21 +16,26 @@ export default {
       </BadgePrimitive>
     </Stack>
   ),
-  knobs: [
+  exampleKnobs: [
     {
-      name: "icon",
-      type: "icon",
-      defaultValue: "",
-    },
-    {
-      name: "background",
-      type: "text",
-      defaultValue: "linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)",
-    },
-    {
-      name: "foregroundColor",
-      type: "text",
-      defaultValue: "#fff",
+      component: "BadgePrimitive",
+      knobs: [
+        {
+          name: "icon",
+          type: "icon",
+          defaultValue: "",
+        },
+        {
+          name: "background",
+          type: "text",
+          defaultValue: "linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)",
+        },
+        {
+          name: "foregroundColor",
+          type: "text",
+          defaultValue: "#fff",
+        },
+      ],
     },
   ],
 };

@@ -4,7 +4,6 @@ import { calculateCountOf, Slider } from "@kiwicom/orbit-components";
 export default {
   Example: () => {
     // the numbers are just random so no need to make them pretty
-    // eslint-disable-next-line prettier/prettier
     const availableFlights = [
       5,
       29,
@@ -52,10 +51,5 @@ export default {
         }}
       />
     );
-  },
-  info: {
-    title: "Histogram",
-    description:
-      "To let users see how much is contained within their selected range, use a histogram to display it visually. Just remember to include non-visual information as well. Use <code>calculatedCountOf</code> to help generate the selected results.",
   },
 };

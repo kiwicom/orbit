@@ -64,9 +64,14 @@ export default {
       </PricingTableItem>
     </PricingTable>
   ),
-  knobs: [
-    { name: "activeElement", type: "text", defaultValue: "" },
-    { name: "hasError", type: "boolean", defaultValue: false },
-    { name: "desktopRadio", type: "boolean", defaultValue: false },
+  exampleKnobs: [
+    {
+      component: "PricingTable",
+      knobs: [
+        { name: "activeElement", type: "text", defaultValue: "" },
+        { name: "hasError", type: "boolean", defaultValue: false },
+        { name: "desktopRadio", type: "boolean", defaultValue: false },
+      ],
+    },
   ],
 };

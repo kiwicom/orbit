@@ -30,12 +30,17 @@ export default {
       </TextLink>
     </LinkList>
   ),
-  knobs: [
+  exampleKnobs: [
     {
-      name: "spaceAfter",
-      type: "select",
-      defaultValue: "none",
-      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+      component: "Separator",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+      ],
     },
   ],
 };

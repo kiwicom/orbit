@@ -12,23 +12,28 @@ export default {
       </Badge>
     </Stack>
   ),
-  knobs: [
-    { name: "icon", type: "icon", defaultValue: "" },
+  exampleKnobs: [
     {
-      name: "type",
-      type: "select",
-      defaultValue: "",
-      options: [
-        "neutral",
-        "dark",
-        "info",
-        "success",
-        "critical",
-        "warning",
-        "infoInverted",
-        "criticalInverted",
-        "successInverted",
-        "warningInverted",
+      component: "Badge",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "",
+          options: [
+            "neutral",
+            "dark",
+            "info",
+            "success",
+            "critical",
+            "warning",
+            "infoInverted",
+            "criticalInverted",
+            "successInverted",
+            "warningInverted",
+          ],
+        },
       ],
     },
   ],

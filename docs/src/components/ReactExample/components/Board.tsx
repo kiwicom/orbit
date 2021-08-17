@@ -23,7 +23,7 @@ interface Props {
   isFullPage?: boolean;
   isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
-  knobsCount: number;
+  knobs: boolean;
   onOpenPlayground: () => void;
   onOpenEditor: () => void;
 }
@@ -36,7 +36,7 @@ const Board = ({
   isPlaygroundOpened,
   onOpenPlayground,
   onOpenEditor,
-  knobsCount,
+  knobs,
   origin,
 }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
@@ -54,7 +54,7 @@ const Board = ({
           >
             Code editor
           </ButtonLink>
-          {knobsCount > 0 && (
+          {knobs && (
             <ButtonLink
               onClick={onOpenPlayground}
               type="secondary"

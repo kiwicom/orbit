@@ -17,9 +17,9 @@ module.exports = ({ actions, schema, reporter }) => {
     createTypes([
       `
     type Knob {
-      name: String
-      type: String
-      defaultValue: String
+      name: String!
+      type: String!
+      defaultValue: String!
       options: [String]
     }
 

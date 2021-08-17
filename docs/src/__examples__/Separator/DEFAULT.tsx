@@ -30,8 +30,12 @@ export default {
       </TextLink>
     </LinkList>
   ),
-  info: {
-    title: "Default separator",
-    description: "Separators present a visual and semantic break between groups of content.",
-  },
+  knobs: [
+    {
+      name: "spaceAfter",
+      type: "select",
+      defaultValue: "none",
+      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+    },
+  ],
 };

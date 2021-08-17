@@ -9,9 +9,10 @@ export default {
       <ListItem>Automobiles</ListItem>
     </List>
   ),
-  info: {
-    title: "Default list",
-    description:
-      "Default lists display their items in primary color with small circles for each item.",
-  },
+  knobs: [
+    { name: "label", type: "text", defaultValue: "" },
+    { name: "icon", type: "icon", defaultValue: "CircleSmall" },
+    { name: "size", type: "select", defaultValue: "normal", options: ["small", "normal", "large"] },
+    { name: "type", type: "select", defaultValue: "primary", options: ["primary", "secondary"] },
+  ],
 };

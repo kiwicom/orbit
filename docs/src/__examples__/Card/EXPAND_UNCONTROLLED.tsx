@@ -19,9 +19,19 @@ export default {
       </CardSection>
     </Card>
   ),
-  info: {
-    title: "Expandable sections – uncontrolled",
-    description:
-      "Card sections can be set to expand and close on user input without your needing to control the state yourself. It's enough to make the sections expandable.",
-  },
+  knobs: [
+    { name: "icon", type: "icon", defaultValue: "" },
+    { name: "loading", type: "boolean", defaultValue: false },
+    { name: "noSeparator", type: "boolean", defaultValue: false },
+    { name: "initialExpanded", type: "boolean", defaultValue: false },
+    { name: "expandable", type: "boolean", defaultValue: false },
+    { name: "title", type: "text", defaultValue: "" },
+    { name: "description", type: "text", defaultValue: "" },
+    {
+      name: "titleAs",
+      type: "select",
+      defaultValue: "h2",
+      options: ["h1", "h2", "h3", "h4", "h5", "h6", "div"],
+    },
+  ],
 };

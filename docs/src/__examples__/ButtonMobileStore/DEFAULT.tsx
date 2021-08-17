@@ -9,9 +9,19 @@ export default {
       type="googlePlay"
     />
   ),
-  knobs: [
-    { name: "href", type: "text", defaultValue: "" },
-    { name: "type", type: "select", defaultValue: "appStore", options: ["appStore", "googlePlay"] },
-    { name: "variant", type: "select", defaultValue: "dark", options: ["dark", "light"] },
+  exampleKnobs: [
+    {
+      component: "ButtonMobileStore",
+      knobs: [
+        { name: "href", type: "text", defaultValue: "" },
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "appStore",
+          options: ["appStore", "googlePlay"],
+        },
+        { name: "variant", type: "select", defaultValue: "dark", options: ["dark", "light"] },
+      ],
+    },
   ],
 };

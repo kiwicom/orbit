@@ -9,10 +9,25 @@ export default {
       <ListItem>Automobiles</ListItem>
     </List>
   ),
-  knobs: [
-    { name: "label", type: "text", defaultValue: "" },
-    { name: "icon", type: "icon", defaultValue: "CircleSmall" },
-    { name: "size", type: "select", defaultValue: "normal", options: ["small", "normal", "large"] },
-    { name: "type", type: "select", defaultValue: "primary", options: ["primary", "secondary"] },
+  exampleKnobs: [
+    {
+      component: "List",
+      knobs: [
+        { name: "label", type: "text", defaultValue: "" },
+        { name: "icon", type: "icon", defaultValue: "CircleSmall" },
+        {
+          name: "size",
+          type: "select",
+          defaultValue: "normal",
+          options: ["small", "normal", "large"],
+        },
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "primary",
+          options: ["primary", "secondary"],
+        },
+      ],
+    },
   ],
 };

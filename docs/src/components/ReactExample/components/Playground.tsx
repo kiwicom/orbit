@@ -43,14 +43,17 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
 
     if (checked) {
       setValues(prev => ({
+        ...prev,
         [component]: { ...prev[component], [field]: String(checked) },
       }));
     } else if (name.includes("icon")) {
       setValues(prev => ({
+        ...prev,
         [component]: { ...prev[component], [field]: `${value}-icon` },
       }));
     } else {
       setValues(prev => ({
+        ...prev,
         [component]: {
           ...prev[component],
           [field]: value,

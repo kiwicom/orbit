@@ -42,7 +42,7 @@ const Sandbox = ({ pathContext }) => {
           isFullPage
           example={example}
           origin={origin}
-          knobs={knobs}
+          exampleKnobs={knobs}
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>

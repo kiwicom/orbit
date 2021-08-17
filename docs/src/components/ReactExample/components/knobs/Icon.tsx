@@ -13,7 +13,7 @@ const Icon = ({ name, value, onChange }: Props) => {
   return (
     <>
       <Text weight="bold" size="small" type="secondary">
-        {name}
+        {name.split("-")[1]}
       </Text>
       <Select
         name={name}

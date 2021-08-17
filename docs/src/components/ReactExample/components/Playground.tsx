@@ -1,28 +1,37 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
+import { Text } from "@kiwicom/orbit-components";
 
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
-import { Knob } from "../Example";
+import { ExampleKnob } from "../Example";
 
 interface Props {
-  knobs: Knob[];
+  exampleKnobs: ExampleKnob[];
   onChange: (val) => void;
 }
 
 const StyledWrapper = styled.div`
+  padding: 20px;
+`;
+
+const StyledKnobsWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto 1fr;
   grid-gap: 20px;
   align-items: center;
-  padding: 20px;
 `;
 
-const Playground = ({ knobs, onChange }: Props) => {
-  const defaultVals = knobs.reduce((acc, { name, defaultValue }) => {
-    acc[name] = defaultValue;
+const Playground = ({ exampleKnobs, onChange }: Props) => {
+  const defaultVals = exampleKnobs.reduce((acc, { component, knobs }) => {
+    acc[component] = knobs.reduce((knobAcc, { defaultValue, name }) => {
+      // eslint-disable-next-line no-param-reassign
+      knobAcc[name] = defaultValue;
+      return knobAcc;
+    }, {});
+
     return acc;
   }, {});
 
@@ -30,15 +39,22 @@ const Playground = ({ knobs, onChange }: Props) => {
 
   const handleChange = React.useCallback((ev: SyntheticEvent<HTMLElement, Event>) => {
     const { name, value, checked } = ev.target as HTMLInputElement;
+    const [component, field] = name.split("-");
 
     if (checked) {
-      setValues(prev => ({ ...prev, [name]: String(checked) }));
+      setValues(prev => ({
+        [component]: { ...prev[component], [field]: String(checked) },
+      }));
     } else if (name.includes("icon")) {
-      setValues(prev => ({ ...prev, [name]: `${value}-icon` }));
+      setValues(prev => ({
+        [component]: { ...prev[component], [field]: `${value}-icon` },
+      }));
     } else {
       setValues(prev => ({
-        ...prev,
-        [name]: value,
+        [component]: {
+          ...prev[component],
+          [field]: value,
+        },
       }));
     }
   }, []);
@@ -48,34 +64,64 @@ const Playground = ({ knobs, onChange }: Props) => {
   }, [values]);
 
   return (
-    <StyledWrapper>
-      {knobs.map(({ type, name, options }) => {
-        if (type === "boolean") {
-          return (
-            <BooleanKnob key={name} checked={values[name]} onChange={handleChange} name={name} />
-          );
-        }
+    <>
+      {exampleKnobs.map(({ component, knobs }) => {
+        return (
+          <StyledWrapper key={component}>
+            <Text weight="bold" spaceAfter="medium">
+              {component}
+            </Text>
+            <StyledKnobsWrapper>
+              {knobs.map(({ type, name, options }) => {
+                const fieldName = `${component}-${name}`;
+                if (type === "boolean") {
+                  return (
+                    <BooleanKnob
+                      key={name}
+                      checked={values[component][name]}
+                      onChange={handleChange}
+                      name={fieldName}
+                    />
+                  );
+                }
 
-        if (type === "select") {
-          return (
-            <SelectKnob
-              key={name}
-              value={values[name]}
-              onChange={handleChange}
-              name={name}
-              options={options}
-            />
-          );
-        }
+                if (type === "select") {
+                  return (
+                    <SelectKnob
+                      key={name}
+                      value={values[component][name]}
+                      onChange={handleChange}
+                      name={fieldName}
+                      options={options}
+                    />
+                  );
+                }
 
-        if (type === "icon") {
-          return <IconKnob key={name} value={values[name]} name={name} onChange={handleChange} />;
-        }
+                if (type === "icon") {
+                  return (
+                    <IconKnob
+                      key={name}
+                      value={values[component][name]}
+                      name={fieldName}
+                      onChange={handleChange}
+                    />
+                  );
+                }
 
-        return <TextKnob key={name} value={values[name]} onChange={handleChange} name={name} />;
+                return (
+                  <TextKnob
+                    key={name}
+                    value={values[component][name]}
+                    onChange={handleChange}
+                    name={fieldName}
+                  />
+                );
+              })}
+            </StyledKnobsWrapper>
+          </StyledWrapper>
+        );
       })}
-    </StyledWrapper>
+    </>
   );
 };
-
 export default Playground;

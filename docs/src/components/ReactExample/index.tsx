@@ -30,11 +30,14 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
               path
               default
             }
-            knobs {
-              name
-              defaultValue
-              type
-              options
+            exampleKnobs {
+              component
+              knobs {
+                defaultValue
+                options
+                name
+                type
+              }
             }
           }
         }
@@ -54,8 +57,6 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
     return () => window.localStorage.removeItem(key);
   }, [setCode, code, exampleId, setOrigin]);
 
-  console.log(code);
-
   const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
@@ -69,7 +70,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       maxHeight={maxHeight}
       background={background}
       origin={origin}
-      knobs={example.knobs}
+      exampleKnobs={example.exampleKnobs}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}

@@ -39,8 +39,13 @@ export default {
       </Stack>
     </Stack>
   ),
-  knobs: [
-    { name: "iconLeft", type: "icon", defaultValue: "" },
-    { name: "iconRight", type: "icon", defaultValue: "" },
+  exampleKnobs: [
+    {
+      component: "Button",
+      knobs: [
+        { name: "iconLeft", type: "icon", defaultValue: "" },
+        { name: "iconRight", type: "icon", defaultValue: "" },
+      ],
+    },
   ],
 };

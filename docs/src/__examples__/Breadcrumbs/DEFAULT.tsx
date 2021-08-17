@@ -16,17 +16,22 @@ export default {
       <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>
     </Breadcrumbs>
   ),
-  knobs: [
+  exampleKnobs: [
     {
-      name: "spaceAfter",
-      type: "select",
-      defaultValue: "none",
-      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
-    },
-    {
-      name: "href",
-      type: "text",
-      defaultValue: "",
+      component: "Breadcrumbs",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+        {
+          name: "href",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
     },
   ],
 };

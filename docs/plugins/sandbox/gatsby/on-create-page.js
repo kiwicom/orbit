@@ -13,11 +13,14 @@ module.exports = async ({ graphql, actions, reporter }) => {
             path
             default
           }
-          knobs {
-            defaultValue
-            name
-            type
-            options
+          exampleKnobs {
+            component
+            knobs {
+              defaultValue
+              options
+              name
+              type
+            }
           }
         }
       }

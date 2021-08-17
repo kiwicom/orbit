@@ -19,7 +19,7 @@ module.exports = async ({ actions, createNodeId, createContentDigest }, { path: 
       const id = [exampleFolder, "-", name.toLowerCase()].join("");
       const scope = getScope(content);
       const example = getByName(content, "Example");
-      const knobCode = getByName(content, "knobs");
+      const knobCode = getByName(content, "exampleKnobs");
       // eslint-disable-next-line no-eval
       const knobs = knobCode ? eval(knobCode) : [];
 
@@ -29,11 +29,11 @@ module.exports = async ({ actions, createNodeId, createContentDigest }, { path: 
       });
 
       const data = {
+        absolutePath: file,
         example_id: id,
         example: code,
-        absolutePath: file,
+        exampleKnobs: knobs,
         scope,
-        knobs,
       };
 
       createNode({

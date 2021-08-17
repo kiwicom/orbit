@@ -9,7 +9,7 @@ module.exports = ({ actions, schema }) => {
       example_id: `String!`,
       absolutePath: `String!`,
       scope: `[ExampleScope]`,
-      knobs: `[Knob]`,
+      exampleKnobs: `[ExampleKnobs]`,
     },
   });
 
@@ -20,6 +20,11 @@ module.exports = ({ actions, schema }) => {
       type: String
       defaultValue: String
       options: [String]
+    }
+
+    type ExampleKnobs {
+      component: String!
+      knobs: [Knob]
     }
 
     type ExampleScope {

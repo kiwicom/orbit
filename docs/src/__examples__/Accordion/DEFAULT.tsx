@@ -111,13 +111,18 @@ export default {
       </Accordion>
     );
   },
-  knobs: [
-    { name: "loading", type: "boolean", defaultValue: false },
+  exampleKnobs: [
     {
-      name: "spaceAfter",
-      type: "select",
-      defaultValue: "none",
-      options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+      component: "Accordion",
+      knobs: [
+        { name: "loading", type: "boolean", defaultValue: false },
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+      ],
     },
   ],
 };

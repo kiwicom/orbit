@@ -36,12 +36,17 @@ export interface Knob {
   options?: string[];
 }
 
+export interface ExampleKnob {
+  component: string;
+  knobs: Knob[];
+}
+
 interface Props extends InitialProps {
   code: string;
   example: string;
   fullPageExampleId?: string;
   isFullPage?: boolean;
-  knobs: Knob[];
+  exampleKnobs: ExampleKnob[];
   onChangeCode: (code: string) => void;
   origin: string;
 }
@@ -50,7 +55,7 @@ const Example = ({
   code,
   origin,
   exampleId,
-  knobs,
+  exampleKnobs,
   fullPageExampleId,
   minHeight,
   maxHeight,
@@ -66,7 +71,7 @@ const Example = ({
 
   const handleKnobChange = React.useCallback(
     knob => {
-      onChangeCode(transform(example, knob, fullPageExampleId?.split("-")[0]));
+      onChangeCode(transform(example, knob));
     },
     [example, onChangeCode],
   );
@@ -97,13 +102,13 @@ const Example = ({
           setOpenEditor(false);
           setPlaygroundOpened(prev => !prev);
         }}
-        knobsCount={knobs.length}
+        knobsCount={exampleKnobs.length}
         code={code}
         origin={origin}
       />
       {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
-      {isPlaygroundOpened && knobs && knobs.length > 0 && (
-        <Playground onChange={handleKnobChange} knobs={knobs} />
+      {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
+        <Playground onChange={handleKnobChange} exampleKnobs={exampleKnobs} />
       )}
     </StyledWrapper>
   );

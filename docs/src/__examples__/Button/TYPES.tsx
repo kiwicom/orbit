@@ -49,12 +49,17 @@ export default {
       </Stack>
     </Stack>
   ),
-  knobs: [
+  exampleKnobs: [
     {
-      name: "type",
-      type: "select",
-      defaultValue: "primary",
-      options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+      component: "Button",
+      knobs: [
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "primary",
+          options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+        },
+      ],
     },
   ],
 };

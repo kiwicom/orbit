@@ -15,7 +15,7 @@ const BooleanKnob = ({ checked, name, onChange }: Props) => {
   return (
     <>
       <Text weight="bold" size="small" type="secondary">
-        {name}
+        {name.split("-")[1]}
       </Text>
       <Switch name={name} checked={parseBool(checked)} onChange={onChange} />
     </>

@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@kiwicom/orbit-components": "^0.119.0",
-    "@streamlinehq/streamlinehq": "^2.1.0",
+    "@streamlinehq/streamlinehq": "^3.0.3",
     "@types/lodash": "^4.14.170",
     "@types/react-helmet": "^6.1.1",
     "@types/react-scrollspy": "^3.3.3",

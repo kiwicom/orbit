@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, array, select } from "@storybook/addon-knobs";
+import { text, array, select, boolean } from "@storybook/addon-knobs";
 
 import InputField from "../InputField";
 import Select from "../Select";
@@ -189,6 +189,20 @@ WithError.story = {
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+export const Disabled = (): React.Node => {
+  const disabled = boolean("Disabled", true);
+  return (
+    <InputGroup disabled={disabled} label="Disabled">
+      <InputField placeholder="a" maxLength={11} />
+      <InputField placeholder="b" maxLength={11} />
+    </InputGroup>
+  );
+};
+
+Disabled.story = {
+  name: "Disabled",
 };
 
 export const Playground = (): React.Node => {

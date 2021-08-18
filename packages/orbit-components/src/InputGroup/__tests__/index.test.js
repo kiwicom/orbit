@@ -75,4 +75,12 @@ describe("InputGroup", () => {
     fireEvent.blur(input);
     expect(onBlur).toHaveBeenCalled();
   });
+  it("should be able to disable children", () => {
+    render(
+      <InputGroup disabled>
+        <InputField />
+      </InputGroup>,
+    );
+    expect(screen.getByRole("textbox")).toBeDisabled();
+  });
 });

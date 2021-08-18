@@ -37,6 +37,7 @@ export const Sizes = (): React.Node => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Title", "I'm lovely description");
+  const mobileHeader = boolean("mobileHeader", true);
 
   const onClose = action("onClose");
   const content = text(
@@ -44,7 +45,7 @@ export const Sizes = (): React.Node => {
     "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   );
   return (
-    <Modal size={size} onClose={onClose}>
+    <Modal size={size} onClose={onClose} mobileHeader={mobileHeader}>
       <ModalHeader title={title}>{description}</ModalHeader>
       <ModalSection>
         <Text>{content}</Text>
@@ -436,12 +437,14 @@ export const FullPreview = (): React.Node => {
   const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
   const dataTest = text("dataTest", "test");
   const isMobileFullPage = boolean("isMobileFullPage", false);
+  const mobileHeader = boolean("mobileHeader", true);
   const showBack = boolean("showBackButton", true);
   const preventOverlayClose = boolean("preventOverlayClose", false);
 
   return (
     <Modal
       onClose={onClose}
+      mobileHeader={mobileHeader}
       size={size}
       fixedFooter={fixed}
       dataTest={dataTest}

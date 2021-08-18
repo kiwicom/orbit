@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit.kiwi",
-  "version": "0.15.0",
+  "version": "0.15.3",
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
@@ -67,7 +67,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-components": "^0.117.0",
+    "@kiwicom/orbit-components": "^0.119.0",
     "@streamlinehq/streamlinehq": "^3.0.3",
     "@types/lodash": "^4.14.170",
     "@types/react-helmet": "^6.1.1",

@@ -1,15 +1,12 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { PREVIEW_ID } from "./consts";
-
-import { BgType } from ".";
-
-const BOARD_HEIGHT = 100;
+import { PREVIEW_ID } from "../consts";
+import { BgType } from "..";
 
 interface Props {
   pageId: string;
-  background: BgType;
+  background?: BgType;
   fullHeight?: boolean;
   minHeight?: number;
   maxHeight?: number;
@@ -53,7 +50,7 @@ const StyledFrame = styled.iframe<Partial<Props>>`
     width: 100%;
     min-height: ${minHeight && `${minHeight}px`};
     max-height: ${maxHeight && `${maxHeight}px`};
-    height: ${fullHeight ? `100%` : `${Number(height) + BOARD_HEIGHT}px`};
+    height: ${fullHeight ? `100%` : `${Number(height)}px`};
     ${background && getBackground(background)};
   `};
 `;
@@ -61,10 +58,10 @@ const StyledFrame = styled.iframe<Partial<Props>>`
 const Frame = ({
   background,
   exampleId,
-  minHeight,
+  minHeight = 100,
+  maxHeight,
   pageId,
   origin,
-  maxHeight,
   fullHeight,
 }: Props) => {
   const [height, setHeight] = React.useState(0);

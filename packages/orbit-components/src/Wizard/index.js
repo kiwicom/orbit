@@ -25,6 +25,7 @@ const unstyledList = css`
 
 const Wizard = ({
   dataTest,
+  lockScrolling = true,
   id,
   completedSteps,
   activeStep,
@@ -108,6 +109,7 @@ const Wizard = ({
             {open && (
               <Modal
                 hasCloseButton={false}
+                lockScrolling={lockScrolling}
                 onClose={() => {
                   setOpen(false);
                 }}

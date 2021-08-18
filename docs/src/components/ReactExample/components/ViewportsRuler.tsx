@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { QUERIES, CELL_HEIGHT } from "./consts";
+import { QUERIES, CELL_HEIGHT } from "../consts";
 
 interface Props {
   onChangeSize: (width: number) => void;
@@ -20,12 +20,11 @@ const StyledViewports = styled.div`
   `}
 `;
 
-const StyledCell = styled.button<{
-  active?: boolean;
-  currentWidth?: number;
-  width: number;
-  index: number;
-}>`
+const StyledCell = styled(({ className, children, onClick, onMouseEnter }) => (
+  <button type="button" className={className} onClick={onClick} onMouseEnter={onMouseEnter}>
+    {children}
+  </button>
+))`
   ${({ theme, active, width, index }) => css`
     position: absolute;
     margin-left: auto;
@@ -48,16 +47,16 @@ const StyledCell = styled.button<{
       outline: none;
       box-shadow: ${theme.orbit.boxShadowFixed};
     }
-  `};
+  `}
 `;
 
 const ViewportsRuler = ({ onChangeSize }: Props) => {
-  const [windowWidth, setWindowWidth] = React.useState(0);
+  const [windowWidth, setWindowWidth] = React.useState(QUERIES.smallMobile);
   const [activeIdx, setActiveIdx] = React.useState<number | null>(null);
   const [viewports, setViewports] = React.useState<[string, number][]>([]);
   const [visibleValue, setVisibleValue] = React.useState("smallMobile (320)");
 
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLDivElement | null>(null);
 
   const setRuler = React.useCallback(() => {
     const currentViews = Object.entries(QUERIES)
@@ -68,17 +67,23 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
     setActiveIdx(currentViews.length - 1);
 
     setViewports(currentViews);
-  }, [setViewports, windowWidth]);
+  }, [windowWidth, setViewports]);
+
+  const handleResize = React.useCallback(() => {
+    onChangeSize(QUERIES.smallMobile);
+    setRuler();
+    setVisibleValue("smallMobile (320)");
+    if (ref.current) setWindowWidth(ref.current?.clientWidth);
+  }, [onChangeSize, setRuler]);
 
   React.useEffect(() => {
-    if (ref.current) setWindowWidth(ref.current?.clientWidth);
+    handleResize();
 
-    onChangeSize(320);
-    setRuler();
-
-    window.addEventListener("resize", setRuler);
-    return () => window.removeEventListener("resize", setRuler);
-  }, [setRuler, onChangeSize]);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   const handleClick = (size: number, idx: number) => {
     onChangeSize(size);

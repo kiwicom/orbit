@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
 
+import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
 import defaultTheme from "../defaultTheme";
@@ -128,6 +129,7 @@ StyledDrawerHeader.defaultProps = {
 const Drawer = ({
   children,
   onClose,
+  lockScrolling = true,
   shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,
@@ -142,10 +144,12 @@ const Drawer = ({
   const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,
   ]);
+
   const [overlayShown, setOverlayShown, setOverlayShownWithTimeout] = useStateWithTimeout<boolean>(
     shown,
     timeoutLength,
   );
+
   const handleOnClose = React.useCallback(
     ev => {
       if (onClose && ev.target === overlayRef.current) {
@@ -154,6 +158,8 @@ const Drawer = ({
     },
     [onClose],
   );
+
+  useLockScrolling(overlayRef, lockScrolling && overlayShown);
 
   React.useEffect(() => {
     if (overlayShown !== shown) {

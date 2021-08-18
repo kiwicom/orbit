@@ -159,7 +159,7 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props): React.Node => {
-  const { setHasModalTitle, isMobileFullPage } = React.useContext(ModalContext);
+  const { setHasModalTitle, hasMobileHeader, isMobileFullPage } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 
@@ -195,7 +195,9 @@ const ModalHeader = ({
       {children && (
         <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
       )}
-      {title && <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>}
+      {title && hasMobileHeader && (
+        <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>
+      )}
     </StyledModalHeader>
   );
 };

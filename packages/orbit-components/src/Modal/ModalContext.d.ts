@@ -13,6 +13,7 @@ export interface Props {
   readonly removeHasModalSection?: () => void;
   readonly manageFocus?: () => void;
   readonly hasModalSection?: boolean;
+  readonly hasMobileHeader?: boolean;
   readonly isMobileFullPage?: boolean;
   readonly isInsideModal?: boolean;
   readonly closable?: boolean;

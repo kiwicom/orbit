@@ -8,15 +8,16 @@ export type OnClose = () => void | Promise<any>;
 export type Position = "left" | "right";
 
 export type Props = {|
+  +actions?: React.Node,
   +children: React.Node,
-  +onClose?: OnClose,
-  +shown: boolean,
-  +width?: string,
-  +position?: Position,
+  +lockScrolling?: boolean,
   +noPadding?: boolean,
+  +onClose?: OnClose,
+  +position?: Position,
+  +shown: boolean,
   +suppressed?: boolean,
   +title?: Translation,
-  +actions?: React.Node,
+  +width?: string,
   ...Globals,
 |};
 

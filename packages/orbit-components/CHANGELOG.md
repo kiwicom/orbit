@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.119.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.1...@kiwicom/orbit-components@0.119.0) (2021-08-10)
+
+
+### Features
+
+* **Wizard:** add lockScrolling prop ([#3070](https://github.com/kiwicom/orbit/issues/3070)) ([38b6456](https://github.com/kiwicom/orbit/commit/38b6456610c37507278f776dcfe20e43ed2329d9))
+
+
+
+
+
+## [0.118.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.0...@kiwicom/orbit-components@0.118.1) (2021-08-05)
+
+
+### Bug Fixes
+
+* **Modal:** hide closeContainer with mobileHeader set to false ([#3065](https://github.com/kiwicom/orbit/issues/3065)) ([78c1a55](https://github.com/kiwicom/orbit/commit/78c1a5537a3c028521b72eb91f6a983be9f3201b))
+
+
+
+
+
+# [0.118.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.117.0...@kiwicom/orbit-components@0.118.0) (2021-08-05)
+
+
+### Bug Fixes
+
+* **ButtonLink:** use proper design tokens ([#3060](https://github.com/kiwicom/orbit/issues/3060)) ([2e035be](https://github.com/kiwicom/orbit/commit/2e035be52a6423e36ab4723886245a9d96cc9ad2))
+* **InputField:** value color in Safari ([#3062](https://github.com/kiwicom/orbit/issues/3062)) ([2c12957](https://github.com/kiwicom/orbit/commit/2c1295770d5c952ccd8c0b12520c6a53b21057c3))
+
+
+### Features
+
+* **Modal:** add mobileHeader prop ([#3063](https://github.com/kiwicom/orbit/issues/3063)) ([61065ef](https://github.com/kiwicom/orbit/commit/61065efaaacb623f190766268dde10bcc70a8df4))
+
+
+
+
+
 # [0.117.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.116.0...@kiwicom/orbit-components@0.117.0) (2021-07-22)
 
 

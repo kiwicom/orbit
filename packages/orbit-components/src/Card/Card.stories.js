@@ -4,8 +4,6 @@ import { text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../deprecated/TripSector";
-import TripSegment from "../deprecated/TripSegment";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Text from "../Text";
@@ -14,7 +12,6 @@ import Badge from "../Badge";
 import Clock from "../icons/Clock";
 import CardSection from "./CardSection";
 import * as Icons from "../icons";
-import List, { ListItem } from "../List";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import Card from ".";
@@ -301,37 +298,6 @@ LoadingCard.story = {
   parameters: {
     info:
       "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-export const TripSectorCard = (): React.Node => (
-  <Card>
-    <CardSection expandable initialExpanded title="Expandable dynamic height of Card">
-      <TripSector dataTest="test">
-        <TripDate>Mon 22 Oct</TripDate>
-        <TripSegment
-          carrier={{ code: "FR", type: "airline", name: "Ryanair" }}
-          duration="2h"
-          departure="Barcelona BCN"
-          departureTime="6:30"
-          arrival="Paris BVA"
-          arrivalTime="8:30"
-        >
-          <List size="small" type="secondary">
-            <ListItem>Airline: Ryanair</ListItem>
-            <ListItem>Flight no: D8 1762</ListItem>
-          </List>
-        </TripSegment>
-      </TripSector>
-    </CardSection>
-  </Card>
-);
-
-TripSectorCard.story = {
-  name: "TripSector Card",
-
-  parameters: {
-    info: "TripSector in expandable Card to test if Whole TripSector is visible after expand",
   },
 };
 

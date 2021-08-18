@@ -5,7 +5,6 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
 import { StyledCard } from "../../Card";
-import { StyledCard as DeprecatedStyledCard } from "../../deprecated/Card";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
@@ -16,7 +15,7 @@ const StyledColumn = styled.div`
 
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledCard}, ${DeprecatedStyledCard} {
+    ${StyledCard} {
       margin-right: -${({ theme }) => theme.orbit.spaceMedium};
       margin-left: -${({ theme }) => theme.orbit.spaceMedium};
       width: auto;

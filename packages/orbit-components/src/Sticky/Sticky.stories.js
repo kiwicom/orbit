@@ -3,9 +3,7 @@ import * as React from "react";
 import { select, number } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import Card from "../Card";
-import CardHeader from "../deprecated/Card/CardHeader";
-import CardSection from "../deprecated/Card/CardSection";
+import Card, { CardSection } from "../Card";
 
 import FloatingCard from ".";
 
@@ -23,11 +21,9 @@ export const Playground = (): React.Element<"div"> => {
     <div style={{ height: "800px" }}>
       <FloatingCard offset={offset}>
         <Card>
-          <CardHeader
-            icon={<Icon />}
-            title="FloatingCard title"
-            subTitle="This is a floating card"
-          />
+          <CardSection icon={<Icon />} title="FloadingCard title">
+            This is a floating card
+          </CardSection>
           <CardSection>Card</CardSection>
           <CardSection>Card</CardSection>
           <CardSection>CardHeader</CardSection>

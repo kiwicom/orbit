@@ -23,7 +23,6 @@ export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
 export { default as Desktop } from "./Desktop";
-export { default as DestinationHeader } from "./deprecated/DestinationHeader";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as NotificationBadge } from "./NotificationBadge";
@@ -35,11 +34,6 @@ export { default as WizardStep } from "./Wizard/WizardStep";
 export { default as Card } from "./Card";
 export { default as CardSection } from "./Card/CardSection";
 export { default as Coupon } from "./Coupon";
-export { default as DeprecatedCardHeader } from "./deprecated/Card/CardHeader";
-export { default as DeprecatedCard } from "./deprecated/Card";
-export { default as DeprecatedCardSection } from "./deprecated/Card/CardSection";
-export { default as DeprecatedSeat } from "./deprecated/Seat";
-export { default as DestinationCard } from "./deprecated/DestinationCard";
 export { default as Sticky } from "./Sticky";
 
 // Accordion
@@ -127,10 +121,6 @@ export { default as Timeline } from "./Timeline";
 export { default as TimelineStep } from "./Timeline/TimelineStep";
 export { default as Tooltip } from "./Tooltip";
 export { default as Translate } from "./Translate";
-export { default as TripDate } from "./deprecated/TripSector/TripDate";
-export { default as TripLayover } from "./deprecated/TripSector/TripLayover";
-export { default as TripSector } from "./deprecated/TripSector";
-export { default as TripSegment } from "./deprecated/TripSegment";
 export { default as Truncate } from "./Truncate";
 
 // tokens

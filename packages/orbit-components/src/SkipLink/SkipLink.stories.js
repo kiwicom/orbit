@@ -5,7 +5,7 @@ import { array, text } from "@storybook/addon-knobs";
 
 import Heading from "../Heading";
 import Text from "../Text";
-import Card, { CardSection } from "../Card";
+import Card, { CardSection } from "../deprecated/Card";
 import Stack from "../Stack";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
 import Button from "../Button";
@@ -13,6 +13,7 @@ import Illustration from "../Illustration";
 import ChevronLeft from "../icons/ChevronLeft";
 import FlightDirect from "../icons/FlightDirect";
 import { CarrierLogo } from "..";
+import CardSectionHeader from "../deprecated/Card/CardSection/CardSectionHeader";
 import Tooltip from "../Tooltip";
 
 import SkipLink from ".";
@@ -105,71 +106,74 @@ export const WithinModal = (): React.Node => (
           </Text>
         </Tooltip>
         <Card>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
         </Card>
       </Stack>
@@ -180,71 +184,74 @@ export const WithinModal = (): React.Node => (
           INBOUND
         </Text>
         <Card>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
-          <CardSection
-            expandable
-            actions={
-              <Button type="secondary" size="small">
-                Edit
-              </Button>
-            }
-          >
-            <Stack direction="row" align="center" justify="between" spacing="XSmall">
-              <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
-              <Stack spacing="XXSmall">
-                <Text size="small" type="secondary">
-                  Sat, Mar 31 Trip length: 1h55m
-                </Text>
-                <Stack direction="row" spacing="XXSmall" align="center">
-                  <Text weight="bold">London LHR</Text>
-                  <FlightDirect size="small" />
-                  <Text weight="bold">Prague PRG</Text>
+          <CardSection expandable>
+            <CardSectionHeader
+              actions={
+                <Button type="secondary" size="small">
+                  Edit
+                </Button>
+              }
+            >
+              <Stack direction="row" align="center" justify="between" spacing="XSmall">
+                <CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />
+                <Stack spacing="XXSmall">
+                  <Text size="small" type="secondary">
+                    Sat, Mar 31 Trip length: 1h55m
+                  </Text>
+                  <Stack direction="row" spacing="XXSmall" align="center">
+                    <Text weight="bold">London LHR</Text>
+                    <FlightDirect size="small" />
+                    <Text weight="bold">Prague PRG</Text>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
+            </CardSectionHeader>
           </CardSection>
         </Card>
       </Stack>

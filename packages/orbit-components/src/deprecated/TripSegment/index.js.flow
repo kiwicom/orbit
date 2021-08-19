@@ -1,0 +1,36 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tripsegment/
+*/
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { Carrier } from "../../CarrierLogo";
+import type { Globals, Translation } from "../../common/common.js.flow";
+
+export type ExpandedType = {|
+  expanded: boolean,
+|};
+
+export type State = {|
+  contentHeight: number | null,
+  ...ExpandedType,
+|};
+
+export type Props = {|
+  ...Globals,
+  +children: React.Node,
+  +carrier: Carrier,
+  +departure: Translation,
+  +departureTime: Translation,
+  +arrival: Translation,
+  +arrivalTime: Translation,
+  +duration: Translation,
+  +initialExpanded?: boolean,
+  +tabIndex?: string | number,
+  +onClick?: () => void | Promise<any>,
+|};
+
+declare export default React.ComponentType<Props>;
+declare export var StyledTripSegment: StyledComponent<any, any, HTMLElement>;
+declare export var StyledTripSegmentMilestone: StyledComponent<any, any, HTMLElement>;

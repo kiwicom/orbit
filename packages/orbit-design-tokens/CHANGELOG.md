@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.10](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.9...@kiwicom/orbit-design-tokens@0.13.10) (2021-08-19)
+
+
+### Bug Fixes
+
+* update Orange Dark value ([#3079](https://github.com/kiwicom/orbit-design-tokens/issues/3079)) ([d86fdac](https://github.com/kiwicom/orbit-design-tokens/commit/d86fdac691a4eda5af4a558dfb51123a065e3eff))
+
+
+
+
+
 ## [0.13.9](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.8...@kiwicom/orbit-design-tokens@0.13.9) (2021-07-22)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

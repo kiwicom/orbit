@@ -3,16 +3,16 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-import * as Icons from "../icons";
-import Stack from "../Stack";
-import Text from "../Text";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import TripSector, { TripDate } from "../deprecated/TripSector";
-import TripSegment from "../deprecated/TripSegment";
-import List, { ListItem } from "../List";
-import Badge from "../Badge";
-import Heading from "../Heading";
-import CountryFlag from "../CountryFlag";
+import * as Icons from "../../icons";
+import Stack from "../../Stack";
+import Text from "../../Text";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
+import TripSector, { TripDate } from "../TripSector";
+import TripSegment from "../TripSegment";
+import List, { ListItem } from "../../List";
+import Badge from "../../Badge";
+import Heading from "../../Heading";
+import CountryFlag from "../../CountryFlag";
 
 import Tile from ".";
 
@@ -20,77 +20,40 @@ const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], de
 const getIcon = source => Icons[source];
 
 export default {
-  title: "Tile",
+  title: "Deprecated Tile",
 };
 
-export const DefaultJustWrapper = (): React.Node => {
-  const content = text("content", "Lorem ipsum dolor sit amet");
-  const noPadding = boolean("noPadding", false);
-  return (
-    <Tile onClick={action("clicked")} noPadding={noPadding}>
-      {content}
-    </Tile>
-  );
+export const Default = (): React.Node => {
+  const title = text("Title", "Default");
+  return <Tile onClick={action("clicked")} title={title} />;
 };
 
-DefaultJustWrapper.story = {
-  name: "Default - just wrapper",
-
+Default.story = {
   parameters: {
     info: "This is the default configuration of this component.",
   },
 };
 
-export const DefaultWithHeaderProps = (): React.Node => {
+export const Expandable = (): React.Node => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   );
   const Icon = getIcon(getIcons("Airplane"));
-  const noHeaderIcon = boolean("noHeaderIcon", false);
   return (
     <Tile
       onClick={action("clicked")}
       icon={Icon && <Icon />}
       title={title}
       description={description}
-      noHeaderIcon={noHeaderIcon}
-    />
+    >
+      This is example of expanded content
+    </Tile>
   );
 };
 
-DefaultWithHeaderProps.story = {
-  name: "Default - with header props",
-
-  parameters: {
-    info: "This is the default configuration of this component.",
-  },
-};
-
-export const DefaultWithHeaderPropsAsHref = (): React.Node => {
-  const title = text("Title", "Expandable");
-  const description = text(
-    "Description",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  );
-  const Icon = getIcon(getIcons("Airplane"));
-  const href = text("href", "#");
-  const external = boolean("external", false);
-  return (
-    <Tile
-      icon={Icon && <Icon />}
-      title={title}
-      description={description}
-      href={href}
-      external={external}
-    />
-  );
-};
-
-DefaultWithHeaderPropsAsHref.story = {
-  name: "Default - with header props, as href",
-
+Expandable.story = {
   parameters: {
     info: "This is the default configuration of this component.",
   },
@@ -100,7 +63,6 @@ export const TripSectorTile = (): React.Node => (
   <Tile
     title="Dynamic Tile height"
     description="This is a example of dynamic Tile height with TripSector"
-    expandable
   >
     <TripSector dataTest="test">
       <TripDate>Mon 22 Oct</TripDate>
@@ -137,9 +99,8 @@ export const ExpandableWithCustomDescription = (): React.Node => {
     <Tile
       icon={Icon && <Icon />}
       onClick={action("clicked")}
-      expandable
-      header={
-        <Stack justify="between" align="center" direction="row" shrink>
+      description={
+        <Stack justify="between" align="center" direction="row">
           <Stack spacing="none" direction="column" shrink>
             <Stack direction="row" align="center" spacing="XSmall">
               <Heading type="title4" as="h4">
@@ -186,13 +147,7 @@ export const Playground = (): React.Node => {
     "Description",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   );
-  const header = text("header", null);
-  const expandable = boolean("expandable", false);
-  const initialExpanded = boolean("initialExpanded", false);
-  const noPadding = boolean("noPadding", false);
   const dataTest = text("dataTest", "test");
-  const children = text("children", null);
-  const htmlTitle = text("htmlTitle", "Title for more info");
 
   return (
     <Tile
@@ -201,16 +156,9 @@ export const Playground = (): React.Node => {
       icon={Icon && <Icon />}
       title={title}
       description={description}
-      header={header}
       external={external}
-      expandable={expandable}
-      initialExpanded={initialExpanded}
-      noPadding={noPadding}
       dataTest={dataTest}
-      htmlTitle={htmlTitle}
-    >
-      {children}
-    </Tile>
+    />
   );
 };
 
@@ -230,7 +178,6 @@ export const Rtl = (): React.Node => (
           <Text>20 kg</Text>
         </Stack>
       }
-      expandable
     >
       This is example of expanded content
     </Tile>

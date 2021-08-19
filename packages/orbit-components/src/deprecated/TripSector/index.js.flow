@@ -1,0 +1,19 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tripsector/
+*/
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+import typeof TripDateType from "./TripDate";
+import typeof TripLayoverType from "./TripLayover";
+
+export type Props = {|
+  ...Globals,
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var TripDate: TripDateType;
+declare export var TripLayover: TripLayoverType;

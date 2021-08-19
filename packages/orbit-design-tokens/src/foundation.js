@@ -45,7 +45,7 @@ const palette = {
     normal: "#E98305",
     normalHover: "#DC7C05",
     normalActive: "#CD7304",
-    dark: "#A25100",
+    dark: "#AE5700",
     darkHover: "#8F4700",
     darkActive: "#753A00",
     darker: "#803F00",

@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertWarning": {
-      "value": "#A25100",
+      "value": "#AE5700",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -3501,7 +3501,7 @@
       }
     },
     "paletteOrangeDark": {
-      "value": "#A25100",
+      "value": "#AE5700",
       "type": "color",
       "category": "Color palette",
       "meta": {

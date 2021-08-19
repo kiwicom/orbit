@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.15.3...@kiwicom/orbit.kiwi@0.15.4) (2021-08-19)
+
+**Note:** Version bump only for package @kiwicom/orbit.kiwi
+
+
+
+
+
 ## [0.15.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.15.2...@kiwicom/orbit.kiwi@0.15.3) (2021-08-10)
 
 **Note:** Version bump only for package @kiwicom/orbit.kiwi

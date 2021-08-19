@@ -172,6 +172,7 @@ const InputGroup = ({
   size = SIZE_OPTIONS.NORMAL,
   help,
   error,
+  disabled,
   dataTest,
   spaceAfter,
   onFocus,
@@ -241,6 +242,7 @@ const InputGroup = ({
           return (
             <StyledChild flex={childFlex}>
               {React.cloneElement(item, {
+                disabled: item.props.disabled || disabled,
                 size,
                 label: undefined,
                 help: undefined,

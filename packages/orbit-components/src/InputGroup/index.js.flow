@@ -16,6 +16,7 @@ export type Props = {|
   +help?: React.Node,
   +children: React.Node,
   +error?: React.Node,
+  +disabled?: boolean,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,

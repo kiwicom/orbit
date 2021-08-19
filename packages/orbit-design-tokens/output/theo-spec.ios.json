@@ -1480,7 +1480,7 @@
       "name": "fontSizeHeadingDisplay"
     },
     {
-      "value": "rgb(162, 81, 0)",
+      "value": "rgb(174, 87, 0)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertWarning"
@@ -2831,7 +2831,7 @@
       "name": "paletteRedNormalHover"
     },
     {
-      "value": "rgb(162, 81, 0)",
+      "value": "rgb(174, 87, 0)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteOrangeDark"

@@ -248,7 +248,7 @@
 @value color-text-button-success-bordered-hover: rgb(35, 139, 49);
 @value background-tag-hover: rgb(229, 234, 239);
 @value font-size-heading-display: 40px;
-@value color-text-alert-warning: rgb(162, 81, 0);
+@value color-text-alert-warning: rgb(174, 87, 0);
 @value text-decoration-text-link-secondary: "underline";
 @value padding-button-small-with-icons: 0 8px;
 @value color-text-badge-success: rgb(40, 161, 56);
@@ -474,6 +474,6 @@
 @value background-modal: rgb(255, 255, 255);
 @value color-text-button-secondary-bordered-hover: rgb(24, 27, 32);
 @value palette-red-normal-hover: rgb(185, 25, 25);
-@value palette-orange-dark: rgb(162, 81, 0);
+@value palette-orange-dark: rgb(174, 87, 0);
 @value line-height-text-small: 16px;
 @value margin-button-group: 0 1px 0 0;

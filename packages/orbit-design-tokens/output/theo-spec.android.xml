@@ -246,7 +246,7 @@
   <color name="COLORTEXTBUTTONSUCCESSBORDEREDHOVER" category="Colors">#ff238b31</color>
   <color name="BACKGROUNDTAGHOVER" category="Background colors">#ffe5eaef</color>
   <dimen name="FONTSIZEHEADINGDISPLAY" category="Font size">40dp</dimen>
-  <color name="COLORTEXTALERTWARNING" category="Colors">#ffa25100</color>
+  <color name="COLORTEXTALERTWARNING" category="Colors">#ffae5700</color>
   <string name="TEXTDECORATIONTEXTLINKSECONDARY" category="Text decoration">underline</string>
   <dimen name="PADDINGBUTTONSMALLWITHICONS" category="Spacing">0 8dp</dimen>
   <color name="COLORTEXTBADGESUCCESS" category="Colors">#ff28a138</color>
@@ -471,7 +471,7 @@
   <color name="BACKGROUNDMODAL" category="Background colors">#ffffffff</color>
   <color name="COLORTEXTBUTTONSECONDARYBORDEREDHOVER" category="Colors">#ff181b20</color>
   <color name="PALETTEREDNORMALHOVER" category="Color palette">#ffb91919</color>
-  <color name="PALETTEORANGEDARK" category="Color palette">#ffa25100</color>
+  <color name="PALETTEORANGEDARK" category="Color palette">#ffae5700</color>
   <dimen name="LINEHEIGHTTEXTSMALL" category="Line height">16dp</dimen>
   <dimen name="MARGINBUTTONGROUP" category="Spacing">0 1px 0 0</dimen>
 </resources>

@@ -248,7 +248,7 @@ module.exports = {
   colorTextButtonSuccessBorderedHover: "rgb(35, 139, 49)",
   backgroundTagHover: "rgb(229, 234, 239)",
   fontSizeHeadingDisplay: "40px",
-  colorTextAlertWarning: "rgb(162, 81, 0)",
+  colorTextAlertWarning: "rgb(174, 87, 0)",
   textDecorationTextLinkSecondary: "underline",
   paddingButtonSmallWithIcons: "0 8px",
   colorTextBadgeSuccess: "rgb(40, 161, 56)",
@@ -474,7 +474,7 @@ module.exports = {
   backgroundModal: "rgb(255, 255, 255)",
   colorTextButtonSecondaryBorderedHover: "rgb(24, 27, 32)",
   paletteRedNormalHover: "rgb(185, 25, 25)",
-  paletteOrangeDark: "rgb(162, 81, 0)",
+  paletteOrangeDark: "rgb(174, 87, 0)",
   lineHeightTextSmall: "16px",
   marginButtonGroup: "0 1px 0 0",
 };

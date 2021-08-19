@@ -58,7 +58,7 @@ const TooltipPrimitive = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
 
-  const tooltipId = useRandomId("TooltipID");
+  const tooltipId = useRandomId()("TooltipID");
   const container = React.useRef(null);
   const handleIn = React.useCallback(() => {
     setRender(true);

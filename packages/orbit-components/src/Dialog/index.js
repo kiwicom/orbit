@@ -157,7 +157,7 @@ const Dialog = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  const dialogID = useRandomId("dialog");
+  const dialogID = useRandomId()("dialog");
 
   const dialog = (
     <StyledDialog

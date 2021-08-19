@@ -6,9 +6,10 @@ import type { Props } from "..";
 import IllustrationWrapper from "./IllustrationWrapper";
 
 const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props): React.Node => {
-  const randomIDLinear = useRandomId("linear1");
-  const randomIDLinear2 = useRandomId("linear2");
-  const randomIDLinear3 = useRandomId("linear3");
+  const randomId = useRandomId();
+  const randomIDLinear = randomId("linear1");
+  const randomIDLinear2 = randomId("linear2");
+  const randomIDLinear3 = randomId("linear2");
 
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1300">

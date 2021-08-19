@@ -1,2 +1,2 @@
-declare const useRandomID: (value: string) => string;
-export { useRandomID, useRandomID as default };
+declare const useRandomID: () => (id: string) => string;
+export { useRandomID as default };

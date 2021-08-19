@@ -28,7 +28,7 @@ const MobileDialog = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
   const [shown, setshown, setshownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
-  const mobileDialogID = useRandomId("mobileDialogID");
+  const mobileDialogID = useRandomId()("mobileDialogID");
 
   const handleInMobile = React.useCallback(
     ev => {

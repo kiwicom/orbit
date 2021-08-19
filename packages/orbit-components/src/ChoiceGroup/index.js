@@ -50,7 +50,7 @@ const ChoiceGroup = ({
   onlySelectionText,
   onChange,
 }: Props): React.Node => {
-  const groupID = useRandomId("choiceGroupID");
+  const groupID = useRandomId()("choiceGroup");
   const theme = useTheme();
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {

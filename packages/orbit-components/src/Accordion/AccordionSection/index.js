@@ -23,7 +23,7 @@ const AccordionSection = ({
 }: Props): React.Node => {
   const { expanded, onExpand, loading } = useAccordion();
 
-  const slideID = useRandomId("slideID");
+  const slideID = useRandomId();
   const isExpanded = expandable && expanded;
 
   const [{ height }, ref] = useBoundingRect({ height: isExpanded ? null : 0 });
@@ -43,7 +43,12 @@ const AccordionSection = ({
           </SectionHeader>
         )}
 
-        <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={slideID}>
+        <Slide
+          maxHeight={height}
+          expanded={isExpanded}
+          id={slideID("slideID")}
+          ariaLabelledBy={slideID("slideID")}
+        >
           <div ref={ref}>
             {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
             {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}

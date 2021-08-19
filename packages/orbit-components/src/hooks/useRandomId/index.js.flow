@@ -1,4 +1,4 @@
 // @flow
-export type useRandomID = (value: string) => string;
+export type useRandomID = () => (id: string) => string;
 
 declare export default useRandomID;

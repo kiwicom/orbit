@@ -332,7 +332,7 @@ class TripSegment extends React.PureComponent<Props, State> {
 
     return (
       <UID>
-        {id => (
+        {(_, id) => (
           <StyledTripSegment
             dataTest={dataTest}
             tabIndex={tabIndex}

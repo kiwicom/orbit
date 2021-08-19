@@ -181,7 +181,7 @@ const InputGroup = ({
 }: Props): React.Node => {
   const [active, setActive] = React.useState(false);
   const [filled, setFilled] = React.useState(false);
-  const inputID = useRandomID("inputGroupID");
+  const inputID = useRandomID()("inputGroupID");
 
   const isFilled = React.useCallback(
     () =>

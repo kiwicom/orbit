@@ -369,7 +369,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
 
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
-    const modalID = useRandomId("modalID");
+    const modalID = useRandomId()("modalID");
 
     const { isLargeMobile } = useMediaQuery();
     const scrollingElement = React.useRef<HTMLElement | null>(null);

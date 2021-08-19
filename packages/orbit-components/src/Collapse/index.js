@@ -85,8 +85,8 @@ const Collapse = ({
   const expanded = isControlledComponent ? expandedProp : expandedState;
   const [{ height }, node] = useBoundingRect({ height: expanded ? null : 0 });
 
-  const slideID = useRandomId("slideID");
-  const labelID = useRandomId("labelID");
+  const slideID = useRandomId()("slideID");
+  const labelID = useRandomId()("labelID");
 
   const handleClick = React.useCallback(
     event => {

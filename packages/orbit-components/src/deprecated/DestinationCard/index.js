@@ -226,7 +226,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
 
     return (
       <UID>
-        {cardID => (
+        {(_, cardID) => (
           <StyledDestinationCard
             data-test={dataTest}
             onClick={onClick}

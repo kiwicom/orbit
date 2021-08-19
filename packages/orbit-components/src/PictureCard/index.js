@@ -229,7 +229,7 @@ const PictureCard = ({
     }
   }, []);
 
-  const cardID = useRandomId("pictureCardID");
+  const cardID = useRandomId()("pictureCardID");
 
   const {
     name,

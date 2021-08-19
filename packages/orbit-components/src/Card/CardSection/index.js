@@ -84,7 +84,7 @@ const CardSection = ({
     }
   };
 
-  const slideID = useRandomId("slideID");
+  const slideID = useRandomId()("slideID");
 
   return (
     <CardWrapper

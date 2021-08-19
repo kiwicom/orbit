@@ -48,8 +48,9 @@ const Stops = ({ stops }: Props) => {
 };
 
 const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
-  const titleId = useRandomId("title");
-  const descrId = useRandomId("descr");
+  const randomId = useRandomId();
+  const titleId = randomId("title");
+  const descrId = randomId("descr");
 
   return (
     <StyledArrow

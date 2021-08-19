@@ -5,12 +5,6 @@ import userEvent from "@testing-library/user-event";
 
 import DestinationCard from "..";
 
-const UID = ({ children }) => children(id => id);
-
-jest.mock("react-uid", () => ({
-  UID,
-}));
-
 describe("DestinationCard", () => {
   it("should have expected DOM output", () => {
     const dataTest = "test";

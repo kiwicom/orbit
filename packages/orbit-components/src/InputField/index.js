@@ -345,10 +345,14 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
     dataAttrs,
   } = props;
 
-  const forID = useRandomId("inputFieldID");
+  const forID = useRandomId()("inputFieldID");
 
   return (
-    <Field component={label ? "label" : "div"} spaceAfter={spaceAfter} htmlFor={id || forID}>
+    <Field
+      component={label ? "label" : "div"}
+      spaceAfter={spaceAfter}
+      htmlFor={label ? id || forID : undefined}
+    >
       {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
       <InputContainer size={size} disabled={disabled} error={error}>
         {prefix && <Prefix size={size}>{prefix}</Prefix>}

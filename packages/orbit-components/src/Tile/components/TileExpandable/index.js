@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import Slide from "../../../utils/Slide";
-import useRandomID from "../../../hooks/useRandomId";
+import useRandomId from "../../../hooks/useRandomId";
 import TileContent from "../TileContent";
 import TileWrapper from "../TileWrapper";
 import TileHeader from "../TileHeader";
@@ -34,9 +34,9 @@ const TileExpandable = ({
   };
 
   const hasHeader = !!(title || description || icon || header);
-
-  const slideID = useRandomID("slideID");
-  const labelID = useRandomID("labelID");
+  const randomId = useRandomId();
+  const slideID = randomId("slideID");
+  const labelID = randomId("labelID");
   return (
     <TileWrapper
       onClick={handleClick}

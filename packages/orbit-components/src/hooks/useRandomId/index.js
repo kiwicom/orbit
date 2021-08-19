@@ -3,8 +3,8 @@ import { useUIDSeed } from "react-uid";
 
 import type { useRandomID } from "./index.js.flow";
 
-const useRandomId: useRandomID = (name: string) => {
-  return useUIDSeed()(name);
+const useRandomId: useRandomID = () => {
+  return useUIDSeed();
 };
 
 export default useRandomId;

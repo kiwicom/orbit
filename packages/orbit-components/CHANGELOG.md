@@ -11,26 +11,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **useLockScrolling:** fix body positioning on iOS ([b780fde](https://github.com/kiwicom/orbit/commit/b780fde9deb8d93073a9a93e445814066aaddc70))
 
 
-### Code Refactoring
-
-* delete deprecated components ([#3076](https://github.com/kiwicom/orbit/issues/3076)) ([6d933bf](https://github.com/kiwicom/orbit/commit/6d933bff3973b284c854af0a5acabefb00d7b5a6))
-
-
 ### Features
 
 * **Drawer:** add lockScrolling ([#3072](https://github.com/kiwicom/orbit/issues/3072)) ([bdc4e58](https://github.com/kiwicom/orbit/commit/bdc4e5873ea3b5183243bae6cc929702cfadcbff))
 * **InputGroup:** add `disabled` prop ([61a7f01](https://github.com/kiwicom/orbit/commit/61a7f0124eb593b0f3997a3861147b676c576c86))
-
-
-### Reverts
-
-* bring back deprecated components ([3081eb6](https://github.com/kiwicom/orbit/commit/3081eb6f25fbccfdf9c60e8211115b302c09bec3))
-
-
-### BREAKING CHANGES
-
-* deletes deprecated components, their usage should be
-replaced with better existing or upcoming alternatives.
 
 
 

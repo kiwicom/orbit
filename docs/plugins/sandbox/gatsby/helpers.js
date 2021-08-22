@@ -40,16 +40,7 @@ const getByName = (code, name) => {
       n.declaration.properties.forEach(prop => {
         if (t.isObjectProperty(prop)) {
           if (t.isIdentifier(prop.key) && prop.key.name === name) {
-            output = generate(prop.value, {
-              jsonCompatibleStrings: true,
-              minified: true,
-              jsescOption: {
-                json: true,
-                quotes: "double",
-                minimal: true,
-                escapeEverything: true,
-              },
-            }).code;
+            output = generate(prop.value).code;
           }
         }
       });

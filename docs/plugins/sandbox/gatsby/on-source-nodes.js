@@ -6,6 +6,8 @@ const parserTypeScript = require("prettier/parser-typescript");
 
 const { getScope, omitTypes, getByName } = require("./helpers");
 
+const parseKnobs = str => JSON.parse(JSON.parse(JSON.stringify(str.replace(/\r?\n|\r|\s|/gm, ""))));
+
 module.exports = async (
   { actions, createNodeId, createContentDigest, reporter },
   { path: folder },
@@ -23,8 +25,9 @@ module.exports = async (
       const scope = getScope(content);
       const example = getByName(content, "Example");
       const knobCode = getByName(content, "exampleKnobs");
-      // eslint-disable-next-line no-eval
-      const knobs = knobCode ? eval(knobCode) : [];
+      const knobs = knobCode
+        ? parseKnobs(format(knobCode, { parser: "json-stringify", quoteProps: "consistent" }))
+        : [];
 
       const code = format(omitTypes(example), {
         parser: "typescript",
@@ -52,6 +55,7 @@ module.exports = async (
       });
     });
   } catch (err) {
+    console.error(err);
     reporter.panicOnBuild(err);
   }
 };

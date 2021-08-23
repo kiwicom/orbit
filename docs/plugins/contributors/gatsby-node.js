@@ -56,7 +56,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
 
       const fetched = path.join(__dirname, "fetchedUsers.json");
 
-      if (!_.isEqual(users, fs.readFileSync(fetched, "utf-8"))) {
+      if (!_.isEqual(users, JSON.parse(fs.readFileSync(fetched, "utf-8")))) {
         await fs.writeFile(fetched, fetchedUsersContent);
       }
 

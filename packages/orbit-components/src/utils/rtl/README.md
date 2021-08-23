@@ -8,7 +8,7 @@ If you need to enable `rtl` inside `orbit-components`, set it inside `ThemeProvi
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "@kiwicom/orbit-components";
 
-<ThemeProvider theme={{ orbit: defaultTheme, rtl: true }}>
+<ThemeProvider theme={{ ...defaultTheme, rtl: true }}>
   <App />
 </ThemeProvider>;
 ```

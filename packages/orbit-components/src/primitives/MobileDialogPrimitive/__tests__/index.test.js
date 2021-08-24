@@ -5,8 +5,6 @@ import userEvent from "@testing-library/user-event";
 
 import MobileDialog from "..";
 
-jest.mock("../../../utils/randomID", () => name => name);
-
 let dialogs: HTMLElement;
 
 beforeAll(() => {

@@ -39,13 +39,16 @@ Label.defaultProps = {
 };
 
 type StyledSelectType = Props & {|
-  ...DataAttrs,
   className: string,
   children: React.Node,
   error: boolean,
+  ...DataAttrs,
 |};
 
-const StyledSelect: React.AbstractComponent<any, any> = styled(
+const StyledSelect: React.AbstractComponent<
+  any,
+  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
+> = styled(
   React.forwardRef<StyledSelectType, HTMLSelectElement>(
     (
       {
@@ -184,7 +187,7 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer: any = styled.div`
+export const SelectContainer: React.AbstractComponent<any, HTMLDivElement> = styled.div`
   position: relative;
   display: flex;
   align-items: center;

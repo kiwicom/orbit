@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
 
-import useRandomId from "../../hooks/useRandomId";
+import { useRandomIdSeed } from "../../hooks/useRandomId";
 import type { Props } from "..";
 import IllustrationWrapper from "./IllustrationWrapper";
 
 const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props): React.Node => {
-  const randomId = useRandomId();
+  const randomId = useRandomIdSeed();
   const randomIDLinear = randomId("linear1");
   const randomIDLinear2 = randomId("linear2");
   const randomIDLinear3 = randomId("linear2");

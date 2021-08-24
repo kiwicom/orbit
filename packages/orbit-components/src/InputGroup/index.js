@@ -10,7 +10,7 @@ import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import useRandomID from "../hooks/useRandomId";
+import { useRandomId } from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
@@ -181,7 +181,7 @@ const InputGroup = ({
 }: Props): React.Node => {
   const [active, setActive] = React.useState(false);
   const [filled, setFilled] = React.useState(false);
-  const inputID = useRandomID()("inputGroupID");
+  const inputID = useRandomId();
 
   const isFilled = React.useCallback(
     () =>

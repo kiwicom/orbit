@@ -12,7 +12,7 @@ import InputTags from "./InputTags";
 import type { Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
-import useRandomId from "../hooks/useRandomId";
+import { useRandomId } from "../hooks/useRandomId";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
@@ -345,7 +345,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
     dataAttrs,
   } = props;
 
-  const forID = useRandomId()("inputFieldID");
+  const forID = useRandomId();
 
   return (
     <Field

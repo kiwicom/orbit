@@ -8,7 +8,7 @@ import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
-import useRandomId from "../hooks/useRandomId";
+import { useRandomId } from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
 
 import type { Props } from ".";
@@ -50,7 +50,7 @@ const ChoiceGroup = ({
   onlySelectionText,
   onChange,
 }: Props): React.Node => {
-  const groupID = useRandomId()("choiceGroup");
+  const groupID = useRandomId();
   const theme = useTheme();
 
   const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {

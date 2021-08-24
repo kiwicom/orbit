@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import useRandomId from "../hooks/useRandomId";
+import { useRandomIdSeed } from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
 
@@ -48,7 +48,7 @@ const Stops = ({ stops }: Props) => {
 };
 
 const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
-  const randomId = useRandomId();
+  const randomId = useRandomIdSeed();
   const titleId = randomId("title");
   const descrId = randomId("descr");
 

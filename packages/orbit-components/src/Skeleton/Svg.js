@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { UID } from "react-uid";
+import { useUID } from "react-uid";
 import styled, { css } from "styled-components";
 
 import { getColor, resolveHeight } from "./helpers";
@@ -76,93 +76,85 @@ const Svg = ({
   const foreground = getColor(foregroundColor);
   const keyTimes = `0; ${animationInterval}; 1`;
   const duration = `${animationSpeed}s`;
+  const uid = useUID();
+  const id = ariaLabelledby || uid;
+  const idClip = `${id}-clip`;
+  const idGradient = `${id}-animate`;
 
   React.useEffect(() => {
     if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
   }, [rowOffset, rows, setCalculatedHeight]);
 
   return (
-    <UID>
-      {uid => {
-        const id = ariaLabelledby || uid;
-        const idClip = `${id}-clip`;
-        const idGradient = `${id}-animate`;
-
-        return (
-          <StyledSvg
-            dataTest={dataTest}
-            ariaLabelledby={id}
-            role="img"
-            rtl={rtl}
-            viewBox={viewBox}
-            height={height}
-            width={width}
-            calculatedHeight={calculatedHeight}
-            spaceAfter={spaceAfter}
-          >
-            {title && <title id={id}>{title}</title>}
-            <rect
-              role="presentation"
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              clipPath={`url(#${idClip})`}
-              style={{ fill: `url(#${idGradient})` }}
+    <StyledSvg
+      dataTest={dataTest}
+      ariaLabelledby={id}
+      role="img"
+      rtl={rtl}
+      viewBox={viewBox}
+      height={height}
+      width={width}
+      calculatedHeight={calculatedHeight}
+      spaceAfter={spaceAfter}
+    >
+      {title && <title id={id}>{title}</title>}
+      <rect
+        role="presentation"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        clipPath={`url(#${idClip})`}
+        style={{ fill: `url(#${idGradient})` }}
+      />
+      <defs>
+        <clipPath id={idClip}>
+          {children || (
+            <Rows
+              count={rows}
+              height={rowHeight}
+              offset={rowOffset}
+              rowBorderRadius={rowBorderRadius}
             />
-            <defs>
-              <clipPath id={idClip}>
-                {children || (
-                  <Rows
-                    count={rows}
-                    height={rowHeight}
-                    offset={rowOffset}
-                    rowBorderRadius={rowBorderRadius}
-                  />
-                )}
-              </clipPath>
-            </defs>
-            <linearGradient id={idGradient}>
-              <stop offset="0%" stopColor={background} stopOpacity={backgroundOpacity}>
-                {animate && (
-                  <animate
-                    attributeName="offset"
-                    values={`${-gradientRatio}; ${-gradientRatio}; 1`}
-                    keyTimes={keyTimes}
-                    dur={duration}
-                    repeatCount="indefinite"
-                  />
-                )}
-              </stop>
-              <stop offset="50%" stopColor={foreground} stopOpacity={foregroundOpacity}>
-                {animate && (
-                  <animate
-                    attributeName="offset"
-                    values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${
-                      1 + gradientRatio / 2
-                    }`}
-                    keyTimes={keyTimes}
-                    dur={duration}
-                    repeatCount="indefinite"
-                  />
-                )}
-              </stop>
-              <stop offset="100%" stopColor={background} stopOpacity={backgroundOpacity}>
-                {animate && (
-                  <animate
-                    attributeName="offset"
-                    values={`0; 0; ${1 + gradientRatio}`}
-                    keyTimes={keyTimes}
-                    dur={duration}
-                    repeatCount="indefinite"
-                  />
-                )}
-              </stop>
-            </linearGradient>
-          </StyledSvg>
-        );
-      }}
-    </UID>
+          )}
+        </clipPath>
+      </defs>
+      <linearGradient id={idGradient}>
+        <stop offset="0%" stopColor={background} stopOpacity={backgroundOpacity}>
+          {animate && (
+            <animate
+              attributeName="offset"
+              values={`${-gradientRatio}; ${-gradientRatio}; 1`}
+              keyTimes={keyTimes}
+              dur={duration}
+              repeatCount="indefinite"
+            />
+          )}
+        </stop>
+        <stop offset="50%" stopColor={foreground} stopOpacity={foregroundOpacity}>
+          {animate && (
+            <animate
+              attributeName="offset"
+              values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 + gradientRatio / 2}`}
+              keyTimes={keyTimes}
+              dur={duration}
+              repeatCount="indefinite"
+            />
+          )}
+        </stop>
+        <stop offset="100%" stopColor={background} stopOpacity={backgroundOpacity}>
+          {animate && (
+            <animate
+              attributeName="offset"
+              values={`0; 0; ${1 + gradientRatio}`}
+              keyTimes={keyTimes}
+              dur={duration}
+              repeatCount="indefinite"
+            />
+          )}
+        </stop>
+      </linearGradient>
+    </StyledSvg>
   );
 };
 

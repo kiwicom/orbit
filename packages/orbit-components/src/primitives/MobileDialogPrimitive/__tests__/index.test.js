@@ -16,7 +16,6 @@ beforeAll(() => {
 afterAll(() => {
   document.body?.removeChild(dialogs);
 });
-
 describe("MobileDialogPrimitive", () => {
   it("should have expected DOM output", () => {
     render(

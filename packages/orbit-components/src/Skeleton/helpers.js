@@ -2,10 +2,8 @@
 import defaultTheme from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
 
-export const getColor = (token?: string): string | null => {
-  if (token) return defaultTheme.orbit[`palette${firstToUpper(token)}`];
-  return null;
-};
+export const getColor = (token?: string): string | null =>
+  token ? defaultTheme.orbit[`palette${firstToUpper(token)}`] : null;
 
 export const resolveHeight = ({
   calculatedHeight,

@@ -4,12 +4,6 @@ import { render, screen } from "@testing-library/react";
 
 import Skeleton from "..";
 
-const UID = ({ children }) => children("154");
-
-jest.mock("react-uid", () => ({
-  UID,
-}));
-
 describe("Skeleton", () => {
   it("it should expected DOM output", () => {
     const dataTest = "test";
@@ -30,7 +24,6 @@ describe("Skeleton", () => {
 
   it("should have rows", () => {
     render(<Skeleton dataTest="test" rows={6} />);
-    const clipPath = document.getElementById("154-clip");
-    expect(clipPath?.childNodes).toHaveLength(6);
+    expect(document.querySelectorAll("clipPath > *")).toHaveLength(6);
   });
 });

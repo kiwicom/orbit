@@ -1,7 +1,6 @@
 // @flow
 import defaultTheme from "../defaultTheme";
-
-const firstToUpper = string => string.charAt(0).toUpperCase() + string.slice(1);
+import { firstToUpper } from "../utils/common";
 
 export const getColor = (token?: string): string | null => {
   if (token) return defaultTheme.orbit[`palette${firstToUpper(token)}`];

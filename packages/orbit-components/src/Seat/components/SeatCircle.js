@@ -23,8 +23,9 @@ export const StyledCirclePath: any = styled.path``;
 
 const SeatCircle = ({ size, type }: Props): React.Node => {
   const theme = useTheme();
-  const circleSmallId = useRandomId()("circleSmallId");
-  const circleNormalId = useRandomId()("circleNormalId");
+  const randomId = useRandomId();
+  const circleSmallId = randomId("circleSmallId");
+  const circleNormalId = randomId("circleNormalId");
 
   return (
     <StyledCircleWrapper size={size}>

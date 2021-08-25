@@ -3,4 +3,4 @@ export type useRandomIdSeedType = () => (id: string) => string;
 export type useRandomIdType = () => string;
 
 declare export var useRandomIdSeed: useRandomIdSeedType;
-declare export var useRandomId: useRandomIdType;
+declare export default useRandomIdType;

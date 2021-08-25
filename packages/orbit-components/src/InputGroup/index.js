@@ -10,7 +10,7 @@ import FormFeedback from "../FormFeedback";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import { useRandomId } from "../hooks/useRandomId";
+import useRandomId from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 

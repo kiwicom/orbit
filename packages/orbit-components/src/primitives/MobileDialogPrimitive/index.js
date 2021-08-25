@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { useRandomId } from "../../hooks/useRandomId";
+import useRandomId from "../../hooks/useRandomId";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";

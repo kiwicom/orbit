@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import { useAccordion } from "../AccordionContext";
-import { useRandomId } from "../../hooks/useRandomId";
+import useRandomId from "../../hooks/useRandomId";
 import useBoundingRect from "../../hooks/useBoundingRect";
 import Slide from "../../utils/Slide";
 import Loading from "../../Loading";

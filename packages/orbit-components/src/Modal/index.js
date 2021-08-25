@@ -15,7 +15,7 @@ import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
-import { useRandomId } from "../hooks/useRandomId";
+import useRandomId from "../hooks/useRandomId";
 import onlyIE from "../utils/onlyIE";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";

@@ -13,7 +13,7 @@ import useLockScrolling from "../hooks/useLockScrolling";
 import mq from "../utils/mediaQuery";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
-import { useRandomId } from "../hooks/useRandomId";
+import useRandomId from "../hooks/useRandomId";
 import { left } from "../utils/rtl";
 
 import type { Props } from ".";

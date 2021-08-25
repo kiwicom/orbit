@@ -9,7 +9,7 @@ import defaultTheme from "../defaultTheme";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../utils/rtl";
-import { useRandomId } from "../hooks/useRandomId";
+import useRandomId from "../hooks/useRandomId";
 import handleKeyDown from "../utils/handleKeyDown";
 
 import type { Props } from ".";

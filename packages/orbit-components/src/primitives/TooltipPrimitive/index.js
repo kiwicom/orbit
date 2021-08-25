@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { SIZE_OPTIONS } from "./consts";
 import { StyledText } from "../../Text";
 import Portal from "../../Portal";
-import { useRandomId } from "../../hooks/useRandomId";
+import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 

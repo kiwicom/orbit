@@ -7,6 +7,8 @@ export const useRandomIdSeed: useRandomIdSeedType = () => {
   return useUIDSeed();
 };
 
-export const useRandomId: useRandomIdType = () => {
+const useRandomId: useRandomIdType = () => {
   return useUID();
 };
+
+export default useRandomId;

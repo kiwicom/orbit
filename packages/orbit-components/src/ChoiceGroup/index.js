@@ -8,7 +8,7 @@ import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
 import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
-import { useRandomId } from "../hooks/useRandomId";
+import useRandomId from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
 
 import type { Props } from ".";

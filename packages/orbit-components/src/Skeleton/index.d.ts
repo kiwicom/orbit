@@ -94,4 +94,5 @@ interface Props extends Common.SpaceAfter, Common.Global {
 }
 
 declare const Skeleton: React.FunctionComponent<Props>;
-export { Skeleton, Skeleton as default };
+
+export default Skeleton;

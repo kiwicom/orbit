@@ -105,8 +105,8 @@ Default.story = {
 
 export const Playground = (): React.Node => {
   const animate = boolean("animate", true);
-  const animationInterval = number("animationInterval", 0.2);
-  const animationSpeed = number("animationSpeed", 2);
+  const animationInterval = number("animationInterval", 0.5);
+  const animationSpeed = number("animationSpeed", 3);
   const backgroundColor = select("backgroundColor", COLORS, "cloudNormal");
   const backgroundOpacity = number("backgroundOpacity", 1);
   const foregroundColor = select("foregroundColor", COLORS, "cloudDark");

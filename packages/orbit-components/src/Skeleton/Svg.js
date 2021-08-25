@@ -3,7 +3,7 @@ import * as React from "react";
 import { useUID } from "react-uid";
 import styled, { css } from "styled-components";
 
-import { getColor, resolveHeight } from "./helpers";
+import { getAnimationValue, getColor, resolveHeight } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
@@ -50,8 +50,8 @@ const Rows = ({ count, height, offset, rowBorderRadius }) => {
 
 const Svg = ({
   animate = true,
-  animationInterval = 0.2,
-  animationSpeed = 2,
+  animationInterval = 0.5,
+  animationSpeed = 3,
   ariaLabelledby,
   backgroundColor = "cloudNormal",
   backgroundOpacity = 1,
@@ -80,6 +80,7 @@ const Svg = ({
   const id = ariaLabelledby || uid;
   const idClip = `${id}-clip`;
   const idGradient = `${id}-animate`;
+  const setAnimationValue = getAnimationValue(gradientRatio);
 
   React.useEffect(() => {
     if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
@@ -124,7 +125,18 @@ const Svg = ({
           {animate && (
             <animate
               attributeName="offset"
-              values={`${-gradientRatio}; ${-gradientRatio}; 1`}
+              values={setAnimationValue(0)}
+              keyTimes={keyTimes}
+              dur={duration}
+              repeatCount="indefinite"
+            />
+          )}
+        </stop>
+        <stop offset="25%" stopColor={foreground} stopOpacity={foregroundOpacity}>
+          {animate && (
+            <animate
+              attributeName="offset"
+              values={setAnimationValue(0.25)}
               keyTimes={keyTimes}
               dur={duration}
               repeatCount="indefinite"
@@ -135,7 +147,18 @@ const Svg = ({
           {animate && (
             <animate
               attributeName="offset"
-              values={`${-gradientRatio / 2}; ${-gradientRatio / 2}; ${1 + gradientRatio / 2}`}
+              values={setAnimationValue(0.5)}
+              keyTimes={keyTimes}
+              dur={duration}
+              repeatCount="indefinite"
+            />
+          )}
+        </stop>
+        <stop offset="75%" stopColor={foreground} stopOpacity={foregroundOpacity}>
+          {animate && (
+            <animate
+              attributeName="offset"
+              values={setAnimationValue(0.75)}
               keyTimes={keyTimes}
               dur={duration}
               repeatCount="indefinite"
@@ -146,7 +169,7 @@ const Svg = ({
           {animate && (
             <animate
               attributeName="offset"
-              values={`0; 0; ${1 + gradientRatio}`}
+              values={setAnimationValue(1)}
               keyTimes={keyTimes}
               dur={duration}
               repeatCount="indefinite"

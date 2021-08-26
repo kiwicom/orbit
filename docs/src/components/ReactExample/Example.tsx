@@ -59,6 +59,7 @@ const Example = ({
         <Frame
           origin={origin}
           pageId={exampleId}
+          fullHeight={isFullPage}
           exampleId={exampleId}
           minHeight={minHeight}
           maxHeight={maxHeight}

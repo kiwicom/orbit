@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { warning } from "@adeira/js";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme from "../defaultTheme";
 import { baseURL, CODES, SIZES, TOKENS } from "./consts";

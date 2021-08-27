@@ -8,6 +8,9 @@ import type {
   StatusColor,
   WhiteColor,
 } from "./foundation";
+import type { ConvertHexToRgba } from "./convertHexToRgba";
+
+declare export var convertHexToRgba: ConvertHexToRgba;
 
 export type Tokens = {|
   colorTextPrimary: string,

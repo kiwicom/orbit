@@ -8,9 +8,16 @@ import ColorContainer from "./ColorContainer";
 import Switch from "../Switch";
 
 export const isLight = (hex: string) => {
-  const { red, green, blue } = convertHexToRgba(hex, 100).match(
-    /\((?<red>\d+), (?<green>\d+), (?<blue>\d+)/,
-  ).groups;
+  const rgba = convertHexToRgba(hex, 100);
+  const found = rgba.match(/\((?<red>\d+), (?<green>\d+), (?<blue>\d+)/);
+
+  if (!found || !found.groups) {
+    throw new Error("Could not parse color");
+  }
+
+  const red = Number(found.groups.red);
+  const green = Number(found.groups.green);
+  const blue = Number(found.groups.blue);
 
   // HSP equation from http://alienryderflex.com/hsp.html
   const hsp = Math.sqrt(0.299 * (red * red) + 0.587 * (green * green) + 0.114 * (blue * blue));

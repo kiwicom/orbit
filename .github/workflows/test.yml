@@ -24,7 +24,9 @@ jobs:
       - name: Restore lerna
         uses: actions/cache@v2
         with:
-          path: "**/node_modules"
+          path: |
+            **/node_modules
+            ~/.cache/Cypress
           key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
           restore-keys: |
             node-modules-${{ github.ref}}-
@@ -37,10 +39,10 @@ jobs:
         run: yarn bootstrap:ci
 
       - name: Compile design tokens
-        run: yarn tokens build:lib
+        run: yarn tokens build
 
       - name: Compile components
-        run: yarn components build:lib
+        run: yarn components build
 
       - name: Check icons
         run: npx lerna run --scope @kiwicom/orbit-components check:icons
@@ -49,7 +51,7 @@ jobs:
         run: yarn flow:check
 
       - name: TypeScript
-        run: npx tsc
+        run: yarn check-types
 
       - name: Lint
         run: |
@@ -58,6 +60,13 @@ jobs:
 
       - name: Test
         run: yarn test-ci
+
+      - name: Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          working-directory: packages/orbit-components
+          start: yarn cy:dev
 
   docs:
     runs-on: ubuntu-latest

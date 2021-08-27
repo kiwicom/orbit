@@ -33,6 +33,7 @@ module.exports = {
           "**/*.test.js",
           "**/__tests__/**",
           "**/__testfixtures__/**",
+          "**/cypress/**",
           "**/*.stories.js",
           "**/*.config.js",
           "**/stories/**",
@@ -95,7 +96,7 @@ module.exports = {
         "prettier/@typescript-eslint",
       ],
       parserOptions: {
-        project: "./tsconfig.json",
+        project: ["./tsconfig.json", "./packages/orbit-components/cypress/tsconfig.json"],
         ecmaVersion: 2018,
         sourceType: "module",
       },
@@ -134,7 +135,7 @@ module.exports = {
         // React components
         "**/[A-Z]*.ts?(x)",
         "**/[A-Z]*/index.ts?(x)",
-        "**/__typetests__/*.ts?(x)",
+        "**/__typetests__/**",
         "**/__testfixtures__/**",
         // other
         "docs/**",

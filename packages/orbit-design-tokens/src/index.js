@@ -6,7 +6,7 @@ import convertHexToRgba from "./convertHexToRgba";
 
 import type { GetTokens, FromPlainObject, Tokens } from ".";
 
-export { convertHexToRgba };
+export { foundation, convertHexToRgba };
 
 export const getTokens: GetTokens = customFoundation => {
   // By default it takes base foundation config

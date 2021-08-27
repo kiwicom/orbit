@@ -266,7 +266,7 @@ module.exports = {
     {
       files: [
         "packages/orbit-components/{src,es,lib}/**/*.js",
-        "packages/orbit-design-tokens/{src,lib}/**/*.js",
+        "packages/orbit-design-tokens/{src,es,lib}/**/*.js",
         "*.js.flow",
       ],
       rules: {

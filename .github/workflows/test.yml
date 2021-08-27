@@ -37,10 +37,10 @@ jobs:
         run: yarn bootstrap:ci
 
       - name: Compile design tokens
-        run: yarn orbit-design-tokens build:lib
+        run: yarn tokens build:lib
 
       - name: Compile components
-        run: yarn orbit-components build:lib
+        run: yarn components build:lib
 
       - name: Check icons
         run: npx lerna run --scope @kiwicom/orbit-components check:icons

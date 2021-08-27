@@ -8,4 +8,5 @@ module.exports = {
   transform: {
     "\\.[jt]sx?$": ["babel-jest", { root: __dirname }],
   },
+  testPathIgnorePatterns: ["/node_modules/", "/cypress/"],
 };

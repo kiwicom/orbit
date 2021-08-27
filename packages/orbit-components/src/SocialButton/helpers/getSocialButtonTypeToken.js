@@ -1,5 +1,5 @@
 // @flow
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import type { GetSocialButtonTypeToken } from "./getSocialButtonTypeToken";

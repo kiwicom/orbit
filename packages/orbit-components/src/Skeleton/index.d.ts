@@ -86,7 +86,7 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** Add text for svg accessible name element  */
   readonly title?: string;
   /** You can pick one of predefined presets  */
-  readonly variant?: Preset;
+  readonly preset?: Preset;
   /** Set viewBox for Svg element */
   readonly viewBox?: string;
   /** Width of Svg element */

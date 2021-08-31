@@ -27,7 +27,7 @@ or if you need to render only rect, you can use the `row` property like:
 or you can pick one from our predefined presets:
 
 ```jsx
-<Skeleton variant="Button" />
+<Skeleton preset="Button" />
 ```
 
 ## Props

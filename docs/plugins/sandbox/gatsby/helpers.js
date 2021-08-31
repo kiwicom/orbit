@@ -35,6 +35,16 @@ const getScope = example => {
 const getByName = (ast, name) => {
   let output;
 
+  traverse(ast, {
+    TSTypeAnnotation: path => {
+      path.remove();
+    },
+
+    TSTypeParameterInstantiation: path => {
+      path.remove();
+    },
+  });
+
   ast.program.body.forEach(n => {
     if (t.isExportDefaultDeclaration(n)) {
       n.declaration.properties.forEach(prop => {
@@ -45,16 +55,6 @@ const getByName = (ast, name) => {
         }
       });
     }
-  });
-
-  traverse(ast, {
-    TSTypeAnnotation: path => {
-      path.remove();
-    },
-
-    TSTypeParameterInstantiation: path => {
-      path.remove();
-    },
   });
 
   return output;

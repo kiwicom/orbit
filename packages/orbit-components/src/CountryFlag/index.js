@@ -75,13 +75,13 @@ StyledShadow.defaultProps = {
   theme: defaultTheme,
 };
 
-function getCountryProps(code: ?string, name: ?string): {| code: string, name: ?string |} {
-  const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "ANYWHERE";
+function getCountryProps(code?: string, name?: string): {| code: string, name?: string |} {
+  const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "UNDEFINED";
   const countryCodeExists = codeNormalized in CODES;
 
   warning(countryCodeExists, "Country code not supported: %s", code);
-  const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.ANYWHERE;
-  const countryName = countryCode === CODES.ANYWHERE && !name ? "Anywhere" : name;
+  const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.UNDEFINED;
+  const countryName = countryCode === CODES.UNDEFINED && !name ? "Undefined" : name;
   return { code: countryCode, name: countryName };
 }
 

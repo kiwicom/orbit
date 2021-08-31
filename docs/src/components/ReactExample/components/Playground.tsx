@@ -1,7 +1,7 @@
-import React, { SyntheticEvent } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
-import { set } from "lodash";
+import { set, sortBy } from "lodash";
 
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
@@ -66,7 +66,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
               {component}
             </Text>
             <StyledKnobsWrapper>
-              {knobs.map(({ type, name, options }) => {
+              {sortBy(knobs, ["type"]).map(({ type, name, options }) => {
                 const fieldName = `${component}-${name}`;
                 if (type === "boolean") {
                   return (

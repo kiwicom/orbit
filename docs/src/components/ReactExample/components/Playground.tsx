@@ -2,6 +2,7 @@ import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
 import { set } from "lodash";
+
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";

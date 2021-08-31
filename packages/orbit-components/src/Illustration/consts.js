@@ -25,6 +25,7 @@ export const NAMES = [
   "DesktopSearch",
   "EnjoyApp",
   "Error",
+  "EVisa",
   "Error404",
   "FastTrack",
   "Feedback",

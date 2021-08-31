@@ -16,6 +16,7 @@ export interface Props {
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
   const [origin, setOrigin] = React.useState("");
+  const key = exampleId.toLowerCase();
 
   const { allExample } = useStaticQuery(
     graphql`
@@ -46,16 +47,18 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   );
 
   React.useEffect(() => {
-    const key = exampleId.toLowerCase();
     if (code) window.localStorage.setItem(key, code);
-    if (window.localStorage.getItem(key)) {
-      setCode(window.localStorage.getItem(key) || "");
-    }
 
     setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
-  }, [setCode, code, exampleId, setOrigin]);
+  }, [code, exampleId, setOrigin]);
+
+  React.useEffect(() => {
+    if (window.localStorage.getItem(key)) {
+      setCode(window.localStorage.getItem(key) || "");
+    }
+  }, [setCode]);
 
   const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 

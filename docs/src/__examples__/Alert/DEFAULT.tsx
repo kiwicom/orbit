@@ -23,12 +23,6 @@ export default {
           type: "icon",
           defaultValue: "",
         },
-        {
-          name: "spaceAfter",
-          type: "select",
-          defaultValue: "none",
-          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
-        },
       ],
     },
   ],

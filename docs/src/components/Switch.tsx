@@ -90,10 +90,10 @@ interface Props {
   name?: string;
   value?: string;
   children?: React.ReactNode;
-  onFocus?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
-  onBlur?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
-  onChange?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
-  onKeyPress?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
+  onFocus?: (ev: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (ev: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress?: (ev: React.KeyboardEvent<HTMLInputElement>) => void;
   checked?: boolean;
   ariaLabelledby?: string;
   hideLabel?: boolean;

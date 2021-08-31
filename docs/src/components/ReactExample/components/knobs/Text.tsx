@@ -5,7 +5,7 @@ import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name"> {
   value: string;
-  onChange: (ev: React.SyntheticEvent<HTMLInputElement, Event>) => void;
+  onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextKnob = ({ value, name, onChange }: Props) => {
@@ -14,6 +14,7 @@ const TextKnob = ({ value, name, onChange }: Props) => {
       <Text weight="bold" size="small" type="secondary">
         {name.split("-")[1]}
       </Text>
+      {/* @ts-expect-error: fix in orbit */}
       <InputField name={name} value={value} onChange={onChange} />
     </>
   );

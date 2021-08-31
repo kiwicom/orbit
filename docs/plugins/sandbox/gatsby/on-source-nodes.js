@@ -4,7 +4,7 @@ const path = require("path");
 const { format } = require("prettier");
 const parserTypeScript = require("prettier/parser-typescript");
 
-const { getScope, omitTypes, getByName } = require("./helpers");
+const { getScope, getByName, getAst } = require("./helpers");
 
 const parseKnobs = str => JSON.parse(JSON.parse(JSON.stringify(str.replace(/\r?\n|\r|\s|/gm, ""))));
 
@@ -18,18 +18,20 @@ module.exports = async (
 
     files.forEach(file => {
       const { name } = path.parse(file);
+      const getProperty = (content, prop) => getByName(getAst(content), prop);
 
       const exampleFolder = path.dirname(file).split("/").slice(-1).join("").toLowerCase();
       const content = fs.readFileSync(file, "utf-8");
       const id = [exampleFolder, "-", name.toLowerCase()].join("");
       const scope = getScope(content);
-      const example = getByName(content, "Example");
-      const knobCode = getByName(content, "exampleKnobs");
+      const example = getProperty(content, "Example");
+      const knobCode = getProperty(content, "exampleKnobs");
+
       const knobs = knobCode
         ? parseKnobs(format(knobCode, { parser: "json-stringify", quoteProps: "consistent" }))
         : [];
 
-      const code = format(omitTypes(example), {
+      const code = format(example, {
         parser: "typescript",
         plugins: [parserTypeScript],
       });

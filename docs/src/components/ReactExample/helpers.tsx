@@ -1,5 +1,5 @@
 import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import * as Icons from "@kiwicom/orbit-components/icons";
 import { types as t, traverse } from "@babel/core";
 import { parse } from "@babel/parser";
 import generate from "@babel/generator";
@@ -12,6 +12,16 @@ interface Scope {
   name: string;
   default: boolean;
 }
+
+const getAttribute = (value: string, name: string) => {
+  if (value === "true") return t.jsxAttribute(t.jsxIdentifier(name), null);
+
+  if (value === "false") {
+    return t.jsxAttribute(t.jsxIdentifier(name), t.jsxExpressionContainer(t.booleanLiteral(false)));
+  }
+
+  return t.jsxAttribute(t.jsxIdentifier(name), t.stringLiteral(value));
+};
 
 export const getModules = (scope: Scope[]) =>
   scope.reduce((acc, { name: moduleName, path }) => {
@@ -54,12 +64,13 @@ export const transform = (example: string, knobs: Record<string, string>) => {
               .map(attr => (t.isJSXAttribute(attr) ? attr.name.name : ""))
               .filter(Boolean);
 
-            // TODO: refactor it
-            Object.entries(knobsObj).forEach(([name, value]) => {
+            Object.entries(knobsObj).forEach(([name, val]) => {
               if (!current.includes(name)) {
-                if (value === "true") {
-                  path.node.attributes.push(t.jsxAttribute(t.jsxIdentifier(name), null));
-                } else if (value.includes("-icon")) {
+                const value = val.toString();
+
+                path.node.attributes.push(getAttribute(value, name));
+
+                if (value.includes("-icon")) {
                   const iconName = `Icons.${value.split("-icon")[0]}`;
                   path.node.attributes.push(
                     t.jsxAttribute(
@@ -73,10 +84,6 @@ export const transform = (example: string, knobs: Record<string, string>) => {
                         ),
                       ),
                     ),
-                  );
-                } else {
-                  path.node.attributes.push(
-                    t.jsxAttribute(t.jsxIdentifier(name), t.stringLiteral(value)),
                   );
                 }
               }
@@ -93,8 +100,8 @@ export const transform = (example: string, knobs: Record<string, string>) => {
             const knob = knobsObj[name];
             const { value } = path.node;
 
-            if (t.isJSXExpressionContainer(value)) {
-              if (knob.includes("-icon")) {
+            if (t.isJSXExpressionContainer(value) || name.includes("icon")) {
+              if (knob.toString().includes("-icon")) {
                 const iconName = `Icons.${knob.split("-icon")[0]}`;
                 path.node.value = t.jsxExpressionContainer(
                   t.jsxElement(
@@ -105,19 +112,6 @@ export const transform = (example: string, knobs: Record<string, string>) => {
                   ),
                 );
               }
-            }
-
-            // TODO: refactor it
-            if (t.isStringLiteral(value)) {
-              if (knob === "true") {
-                path.node.value = null;
-              }
-
-              if (knob === "false") {
-                path.node.value = t.jsxExpressionContainer(t.booleanLiteral(false));
-              }
-
-              if (value) value.value = knobsObj[path.node.name.name];
             }
           }
         }

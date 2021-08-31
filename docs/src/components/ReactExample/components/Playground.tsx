@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
-
+import { set } from "lodash";
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
@@ -25,46 +25,36 @@ const StyledKnobsWrapper = styled.div`
 `;
 
 const Playground = ({ exampleKnobs, onChange }: Props) => {
-  const defaultVals = exampleKnobs.reduce((acc, { component, knobs }) => {
-    acc[component] = knobs.reduce((knobAcc, { defaultValue, name }) => {
-      // eslint-disable-next-line no-param-reassign
-      knobAcc[name] = defaultValue;
-      return knobAcc;
-    }, {});
+  const defaultVals = {};
 
-    return acc;
-  }, {});
+  exampleKnobs.forEach(({ component, knobs }) => {
+    knobs.forEach(({ defaultValue, name }) => {
+      set(defaultVals, [component, name], defaultValue);
+    });
+  });
 
-  const [values, setValues] = React.useState(defaultVals);
+  const [values, setValues] = React.useState(() => defaultVals);
 
-  const handleChange = React.useCallback((ev: SyntheticEvent<HTMLElement, Event>) => {
-    const { name, value, checked } = ev.target as HTMLInputElement;
-    const [component, field] = name.split("-");
-
-    if (checked) {
-      setValues(prev => ({
-        ...prev,
-        [component]: { ...prev[component], [field]: String(checked) },
-      }));
-    } else if (name.includes("-icon")) {
-      setValues(prev => ({
-        ...prev,
-        [component]: { ...prev[component], [field]: `${value}-icon` },
-      }));
-    } else {
-      setValues(prev => ({
-        ...prev,
-        [component]: {
-          ...prev[component],
-          [field]: value,
-        },
-      }));
-    }
-  }, []);
+  const changeKnob = ({
+    component,
+    name,
+    value,
+  }: {
+    component: string;
+    name: string;
+    value: string | boolean;
+  }) =>
+    setValues(prev => ({
+      ...prev,
+      [component]: {
+        ...prev[component],
+        [name]: value,
+      },
+    }));
 
   React.useEffect(() => {
     if (onChange) onChange(values);
-  }, [values]);
+  }, [values, onChange]);
 
   return (
     <>
@@ -82,7 +72,13 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                     <BooleanKnob
                       key={name}
                       checked={values[component][name]}
-                      onChange={handleChange}
+                      onChange={ev =>
+                        changeKnob({
+                          component,
+                          name,
+                          value: ev.target.checked,
+                        })
+                      }
                       name={fieldName}
                     />
                   );
@@ -93,7 +89,13 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                     <SelectKnob
                       key={name}
                       value={values[component][name]}
-                      onChange={handleChange}
+                      onChange={ev =>
+                        changeKnob({
+                          component,
+                          name,
+                          value: ev.target.value,
+                        })
+                      }
                       name={fieldName}
                       options={options}
                     />
@@ -106,7 +108,13 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                       key={name}
                       value={values[component][name]}
                       name={fieldName}
-                      onChange={handleChange}
+                      onChange={ev =>
+                        changeKnob({
+                          component,
+                          name,
+                          value: `${ev.target.value}-icon`,
+                        })
+                      }
                     />
                   );
                 }
@@ -115,7 +123,13 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                   <TextKnob
                     key={name}
                     value={values[component][name]}
-                    onChange={handleChange}
+                    onChange={ev =>
+                      changeKnob({
+                        component,
+                        name,
+                        value: ev.target.value,
+                      })
+                    }
                     name={fieldName}
                   />
                 );

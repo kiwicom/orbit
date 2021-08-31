@@ -6,10 +6,8 @@ import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name"> {
   checked: boolean;
-  onChange: (ev: React.SyntheticEvent<HTMLInputElement, Event>) => void;
+  onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
-const parseBool = b => !/^(false|0)$/i.test(b) && !!b;
 
 const BooleanKnob = ({ checked, name, onChange }: Props) => {
   return (
@@ -17,7 +15,7 @@ const BooleanKnob = ({ checked, name, onChange }: Props) => {
       <Text weight="bold" size="small" type="secondary">
         {name.split("-")[1]}
       </Text>
-      <Switch name={name} checked={parseBool(checked)} onChange={onChange} />
+      <Switch name={name} checked={checked} onChange={onChange} />
     </>
   );
 };

@@ -1,42 +1,43 @@
-module.exports = ({ actions, schema, reporter }) => {
+const { DefaultValue } = require("./resolvers");
+
+module.exports = ({ actions, schema }) => {
   try {
     const { createTypes } = actions;
+    const { buildScalarType } = schema;
 
-    const exampleType = schema.buildObjectType({
-      name: "Example",
-      interfaces: [`Node`],
-      fields: {
-        example: `String!`,
-        example_id: `String!`,
-        absolutePath: `String!`,
-        scope: `[ExampleScope]`,
-        exampleKnobs: `[ExampleKnobs]`,
-      },
-    });
-
-    createTypes([
+    const typeDefs = [
       `
-    type Knob {
-      name: String!
-      type: String!
-      defaultValue: String!
-      options: [String]
-    }
+      type Example implements Node {
+        example: String!
+        example_id: String!
+        absolutePath: String!
+        scope: [ExampleScope]
+        exampleKnobs: [ExampleKnobs]
+      }
 
-    type ExampleKnobs {
-      component: String!
-      knobs: [Knob]
-    }
+      type Knob {
+        name: String!
+        type: String!
+        defaultValue: DefaultValue
+        options: [String]
+      }
 
-    type ExampleScope {
-      name: String!
-      default: String!
-      path: String!
-    }
-  `,
-      exampleType,
-    ]);
+      type ExampleKnobs {
+        component: String!
+        knobs: [Knob]
+      }
+
+      type ExampleScope {
+        name: String!
+        default: String!
+        path: String!
+      }
+    `,
+      buildScalarType(DefaultValue),
+    ];
+
+    createTypes(typeDefs);
   } catch (err) {
-    reporter.panicOnBuild(err);
+    console.error(err);
   }
 };

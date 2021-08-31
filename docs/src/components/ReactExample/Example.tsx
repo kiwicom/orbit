@@ -69,13 +69,6 @@ const Example = ({
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
-  const handleKnobChange = React.useCallback(
-    knob => {
-      onChangeCode(transform(example, knob));
-    },
-    [example, onChangeCode],
-  );
-
   return (
     <StyledWrapper isFullPage={isFullPage}>
       <ViewportsRuler onChangeSize={handleChangeRulerSize} />
@@ -108,7 +101,10 @@ const Example = ({
       />
       {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
-        <Playground onChange={handleKnobChange} exampleKnobs={exampleKnobs} />
+        <Playground
+          onChange={knob => onChangeCode(transform(example, knob))}
+          exampleKnobs={exampleKnobs}
+        />
       )}
     </StyledWrapper>
   );

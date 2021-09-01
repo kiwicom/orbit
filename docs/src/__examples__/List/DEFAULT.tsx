@@ -3,7 +3,7 @@ import { ListItem, List } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <List>
+    <List size="normal" type="primary">
       <ListItem>Planes</ListItem>
       <ListItem>Trains</ListItem>
       <ListItem>Automobiles</ListItem>
@@ -13,8 +13,6 @@ export default {
     {
       component: "List",
       knobs: [
-        { name: "label", type: "text", defaultValue: "" },
-        { name: "icon", type: "icon", defaultValue: "CircleSmall" },
         {
           name: "size",
           type: "select",
@@ -27,6 +25,13 @@ export default {
           defaultValue: "primary",
           options: ["primary", "secondary"],
         },
+      ],
+    },
+    {
+      component: "ListItem",
+      knobs: [
+        { name: "label", type: "text", defaultValue: "" },
+        { name: "icon", type: "icon", defaultValue: "" },
       ],
     },
   ],

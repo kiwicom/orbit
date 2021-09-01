@@ -7,6 +7,7 @@ import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
+import NumberKnob from "./knobs/Number";
 import { ExampleKnob } from "../Example";
 
 interface Props {
@@ -26,15 +27,17 @@ const StyledKnobsWrapper = styled.div`
 `;
 
 const Playground = ({ exampleKnobs, onChange }: Props) => {
-  const defaultVals = {};
+  const [values, setValues] = React.useState(() => {
+    const defaultVals = {};
 
-  exampleKnobs.forEach(({ component, knobs }) => {
-    knobs.forEach(({ defaultValue, name }) => {
-      set(defaultVals, [component, name], defaultValue);
+    exampleKnobs.forEach(({ component, knobs }) => {
+      knobs.forEach(({ defaultValue, name }) => {
+        set(defaultVals, [component, name], defaultValue);
+      });
     });
-  });
 
-  const [values, setValues] = React.useState(() => defaultVals);
+    return defaultVals;
+  });
 
   const changeKnob = ({
     component,
@@ -114,6 +117,23 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                           component,
                           name,
                           value: `${ev.target.value}-icon`,
+                        })
+                      }
+                    />
+                  );
+                }
+
+                if (type === "number") {
+                  return (
+                    <NumberKnob
+                      key={name}
+                      value={values[component][name]}
+                      name={fieldName}
+                      onChange={ev =>
+                        changeKnob({
+                          component,
+                          name,
+                          value: ev.target.value,
                         })
                       }
                     />

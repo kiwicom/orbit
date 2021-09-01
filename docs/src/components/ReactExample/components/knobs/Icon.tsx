@@ -6,7 +6,7 @@ import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name"> {
   value: string;
-  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
 const Icon = ({ name, value, onChange }: Props) => {
@@ -17,8 +17,7 @@ const Icon = ({ name, value, onChange }: Props) => {
       </Text>
       <Select
         name={name}
-        value={value}
-        /* @ts-expect-error: fix in orbit */
+        value={value.split("-")[0]}
         onChange={onChange}
         options={Object.keys(Icons)
           .filter(n => n !== "__esModule")

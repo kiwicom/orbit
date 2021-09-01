@@ -68,9 +68,9 @@ export default {
     {
       component: "PricingTable",
       knobs: [
-        { name: "activeElement", type: "text", defaultValue: "" },
+        { name: "activeElement", type: "number", defaultValue: 0 },
         { name: "hasError", type: "boolean", defaultValue: false },
-        { name: "desktopRadio", type: "boolean", defaultValue: false },
+        { name: "desktopRatio", type: "boolean", defaultValue: false },
       ],
     },
   ],

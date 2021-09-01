@@ -3,7 +3,7 @@ import { Breadcrumbs, BreadcrumbsItem } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Breadcrumbs>
+    <Breadcrumbs onGoBack={event => event.preventDefault()} goBackTitle="Back">
       <BreadcrumbsItem href="https://orbit.kiwi/" onClick={event => event.preventDefault()}>
         Orbit.kiwi
       </BreadcrumbsItem>

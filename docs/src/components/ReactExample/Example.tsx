@@ -95,7 +95,7 @@ const Example = ({
           setOpenEditor(false);
           setPlaygroundOpened(prev => !prev);
         }}
-        knobs={!!exampleKnobs}
+        knobs={exampleKnobs.length > 0}
         code={code}
         origin={origin}
       />

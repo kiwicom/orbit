@@ -22,7 +22,7 @@ export default {
         {
           name: "name",
           type: "select",
-          defaultValue: "",
+          defaultValue: "BUDFastTrack",
           options: [
             "BGYFastTrack",
             "BUDFastTrack",

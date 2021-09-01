@@ -52,13 +52,13 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
     setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
-  }, [code, exampleId, setOrigin]);
+  }, [code, exampleId, setOrigin, key]);
 
   React.useEffect(() => {
     if (window.localStorage.getItem(key)) {
       setCode(window.localStorage.getItem(key) || "");
     }
-  }, [setCode]);
+  }, [setCode, key]);
 
   const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 

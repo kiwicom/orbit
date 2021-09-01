@@ -1,23 +1,23 @@
 import React from "react";
-import { Text } from "@kiwicom/orbit-components";
+import { Text, InputField } from "@kiwicom/orbit-components";
 
-import Switch from "../../../Switch";
 import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name"> {
-  checked: boolean;
+  value: number;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const BooleanKnob = ({ checked, name, onChange }: Props) => {
+const NumberKnob = ({ value, name, onChange }: Props) => {
   return (
     <>
       <Text weight="bold" size="small" type="secondary">
         {name.split("-")[1]}
       </Text>
-      <Switch name={name} checked={checked} onChange={onChange} />
+      {/* @ts-expect-error: todo */}
+      <InputField type="number" inputMode="numeric" name={name} value={value} onChange={onChange} />
     </>
   );
 };
 
-export default BooleanKnob;
+export default NumberKnob;

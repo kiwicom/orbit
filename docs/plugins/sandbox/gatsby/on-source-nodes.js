@@ -6,7 +6,7 @@ const parserTypeScript = require("prettier/parser-typescript");
 
 const { getScope, getByName, getAst } = require("./helpers");
 
-const parseKnobs = str => JSON.parse(JSON.parse(JSON.stringify(str.replace(/\r?\n|\r|\s|/gm, ""))));
+const parseKnobs = str => JSON.parse(JSON.parse(JSON.stringify(str.replace(/\r?\n|\r|/gm, ""))));
 
 module.exports = async (
   { actions, createNodeId, createContentDigest, reporter },

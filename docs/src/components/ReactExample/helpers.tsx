@@ -60,59 +60,33 @@ export const transform = (example: string, knobs: Record<string, string>) => {
       Object.entries(knobs).forEach(([id, knobsObj]) => {
         if (t.isJSXIdentifier(namePath)) {
           if (namePath.name.toLowerCase() === id.toLowerCase()) {
-            const current = path.node.attributes
-              .map(attr => (t.isJSXAttribute(attr) ? attr.name.name : ""))
-              .filter(Boolean);
+            const attributes: t.JSXAttribute[] = [];
 
             Object.entries(knobsObj).forEach(([name, val]) => {
-              if (!current.includes(name)) {
-                const value = val.toString();
+              const value = val.toString();
+              if (value === "") return;
 
-                path.node.attributes.push(getAttribute(value, name));
-
-                if (value.includes("-icon")) {
-                  const iconName = `Icons.${value.split("-icon")[0]}`;
-                  path.node.attributes.push(
-                    t.jsxAttribute(
-                      t.jsxIdentifier(name),
-                      t.jsxExpressionContainer(
-                        t.jsxElement(
-                          t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
-                          null,
-                          [],
-                          true,
-                        ),
+              if (value.includes("-icon")) {
+                const iconName = `Icons.${value.split("-icon")[0]}`;
+                attributes.push(
+                  t.jsxAttribute(
+                    t.jsxIdentifier(name),
+                    t.jsxExpressionContainer(
+                      t.jsxElement(
+                        t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
+                        null,
+                        [],
+                        true,
                       ),
                     ),
-                  );
-                }
-              }
-            });
-          }
-        }
-      });
-    },
-    JSXAttribute: path => {
-      Object.entries(knobs).forEach(([, knobsObj]) => {
-        if (t.isJSXIdentifier(path.node.name)) {
-          const { name } = path.node.name;
-          if (_.has(knobsObj, [name])) {
-            const knob = knobsObj[name];
-            const { value } = path.node;
-
-            if (t.isJSXExpressionContainer(value) || name.includes("icon")) {
-              if (knob.toString().includes("-icon")) {
-                const iconName = `Icons.${knob.split("-icon")[0]}`;
-                path.node.value = t.jsxExpressionContainer(
-                  t.jsxElement(
-                    t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
-                    null,
-                    [],
-                    true,
                   ),
                 );
+              } else {
+                attributes.push(getAttribute(value, name));
               }
-            }
+            });
+
+            path.node.attributes = _.uniq(attributes);
           }
         }
       });

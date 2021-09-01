@@ -5,7 +5,7 @@ import { Knob } from "../../Example";
 
 interface Props extends Pick<Knob, "name" | "options"> {
   value: string;
-  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
 const SelectKnob = ({ value, name, onChange, options }: Props) => {
@@ -19,7 +19,6 @@ const SelectKnob = ({ value, name, onChange, options }: Props) => {
       <Select
         name={name}
         value={value}
-        /* @ts-expect-error: fix in orbit */
         onChange={onChange}
         options={options?.map(opt => ({ label: opt, key: opt, value: opt }))}
       />

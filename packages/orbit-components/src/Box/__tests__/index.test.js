@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { getJustify, getAlign } from "../../utils/layout";
 import theme from "../../defaultTheme";

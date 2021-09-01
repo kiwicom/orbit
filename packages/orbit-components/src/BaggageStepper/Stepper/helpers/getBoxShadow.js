@@ -1,5 +1,5 @@
 // @flow
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import type { Theme } from "../../../defaultTheme";
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";

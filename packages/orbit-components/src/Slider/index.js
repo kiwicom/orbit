@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
+import type { Tokens } from "@kiwicom/orbit-design-tokens";
 
-import type { Tokens } from "../../../orbit-design-tokens/lib";
 import transition from "../utils/transition";
 import Text from "../Text";
 import Heading from "../Heading";

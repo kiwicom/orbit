@@ -13,5 +13,6 @@
     "packages/orbit-design-tokens/**/*",
     "packages/eslint-plugin-orbit-components/**/*",
     "docs/**/*"
-  ]
+  ],
+  "exclude": ["packages/orbit-components/cypress/**/*.test.*"]
 }

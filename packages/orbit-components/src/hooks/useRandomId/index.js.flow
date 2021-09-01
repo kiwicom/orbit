@@ -1,0 +1,6 @@
+// @flow
+export type useRandomIdSeedType = () => (id: string) => string;
+export type useRandomIdType = () => string;
+
+declare export var useRandomIdSeed: useRandomIdSeedType;
+declare export default useRandomIdType;

@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";

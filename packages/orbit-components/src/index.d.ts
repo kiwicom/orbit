@@ -118,5 +118,6 @@ export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
 export { LinkList } from "./LinkList";
 export { default as Wizard, WizardStep } from "./Wizard";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
+export { default as useLockScrolling } from "./hooks/useLockScrolling";
 
 export { Icon } from "./Icon";

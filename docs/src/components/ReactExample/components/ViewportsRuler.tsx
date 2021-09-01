@@ -91,24 +91,22 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
     setActiveIdx(idx);
   };
 
-  return (
-    isLargeMobile && (
-      <StyledViewports ref={ref}>
-        {viewports.map(([name, value], i) => (
-          <StyledCell
-            active={activeIdx === i}
-            key={name}
-            width={value}
-            index={i}
-            onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
-            onClick={() => handleClick(value, i)}
-          >
-            <span>{visibleValue}</span>
-          </StyledCell>
-        ))}
-      </StyledViewports>
-    )
-  );
+  return isLargeMobile ? (
+    <StyledViewports ref={ref}>
+      {viewports.map(([name, value], i) => (
+        <StyledCell
+          active={activeIdx === i}
+          key={name}
+          width={value}
+          index={i}
+          onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
+          onClick={() => handleClick(value, i)}
+        >
+          <span>{visibleValue}</span>
+        </StyledCell>
+      ))}
+    </StyledViewports>
+  ) : null;
 };
 
 export default ViewportsRuler;

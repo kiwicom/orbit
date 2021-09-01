@@ -18,6 +18,7 @@ const Icon = ({ name, value, onChange }: Props) => {
       <Select
         name={name}
         value={value.split("-")[0]}
+        /* @ts-expect-error: todo */
         onChange={onChange}
         options={Object.keys(Icons)
           .filter(n => n !== "__esModule")

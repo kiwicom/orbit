@@ -19,6 +19,7 @@ const SelectKnob = ({ value, name, onChange, options }: Props) => {
       <Select
         name={name}
         value={value}
+        /* @ts-expect-error: todo */
         onChange={onChange}
         options={options?.map(opt => ({ label: opt, key: opt, value: opt }))}
       />

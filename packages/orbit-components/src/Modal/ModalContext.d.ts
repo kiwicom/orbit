@@ -11,6 +11,7 @@ export interface Props {
   readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;
   readonly setHasModalSection?: () => void;
   readonly removeHasModalSection?: () => void;
+  readonly setFooterHeight?: React.Dispatch<React.SetStateAction<number>>;
   readonly manageFocus?: () => void;
   readonly hasModalSection?: boolean;
   readonly hasMobileHeader?: boolean;

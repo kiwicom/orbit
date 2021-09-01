@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 import { QUERIES, CELL_HEIGHT } from "../consts";
 
@@ -55,8 +56,8 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   const [activeIdx, setActiveIdx] = React.useState<number | null>(null);
   const [viewports, setViewports] = React.useState<[string, number][]>([]);
   const [visibleValue, setVisibleValue] = React.useState("smallMobile (320)");
-
   const ref = React.useRef<HTMLDivElement | null>(null);
+  const { isLargeMobile } = useMediaQuery();
 
   const setRuler = React.useCallback(() => {
     const currentViews = Object.entries(QUERIES)
@@ -91,20 +92,22 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   };
 
   return (
-    <StyledViewports ref={ref}>
-      {viewports.map(([name, value], i) => (
-        <StyledCell
-          active={activeIdx === i}
-          key={name}
-          width={value}
-          index={i}
-          onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
-          onClick={() => handleClick(value, i)}
-        >
-          <span>{visibleValue}</span>
-        </StyledCell>
-      ))}
-    </StyledViewports>
+    isLargeMobile && (
+      <StyledViewports ref={ref}>
+        {viewports.map(([name, value], i) => (
+          <StyledCell
+            active={activeIdx === i}
+            key={name}
+            width={value}
+            index={i}
+            onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
+            onClick={() => handleClick(value, i)}
+          >
+            <span>{visibleValue}</span>
+          </StyledCell>
+        ))}
+      </StyledViewports>
+    )
   );
 };
 

@@ -51,6 +51,7 @@ Table below contains all types of the props available in Illustration component.
 | `"CompassSaveOnBooking"`        |
 | `"DesktopSearch"`               |
 | `"EnjoyApp"`                    |
+| `"EVisa"`                       |
 | `"Error"`                       |
 | `"Error404"`                    |
 | `"FastTrack"`                   |

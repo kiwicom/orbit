@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import { useAccordion } from "../AccordionContext";
-import randomID from "../../utils/randomID";
+import useRandomId from "../../hooks/useRandomId";
 import useBoundingRect from "../../hooks/useBoundingRect";
 import Slide from "../../utils/Slide";
 import Loading from "../../Loading";
@@ -23,7 +23,7 @@ const AccordionSection = ({
 }: Props): React.Node => {
   const { expanded, onExpand, loading } = useAccordion();
 
-  const slideID = React.useMemo(() => randomID("slideID"), []);
+  const slideId = useRandomId();
   const isExpanded = expandable && expanded;
 
   const [{ height }, ref] = useBoundingRect({ height: isExpanded ? null : 0 });
@@ -43,7 +43,7 @@ const AccordionSection = ({
           </SectionHeader>
         )}
 
-        <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={slideID}>
+        <Slide maxHeight={height} expanded={isExpanded} id={slideId} ariaLabelledBy={slideId}>
           <div ref={ref}>
             {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
             {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}

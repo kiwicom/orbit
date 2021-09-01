@@ -6,7 +6,7 @@ import CardWrapper from "../components/CardWrapper";
 import { useCard } from "../CardContext";
 import SectionHeader from "./components/SectionHeader";
 import SectionContent from "./components/SectionContent";
-import randomID from "../../utils/randomID";
+import useRandomId from "../../hooks/useRandomId";
 import { ELEMENT_OPTIONS } from "../../Heading/consts";
 
 import type { Props } from ".";
@@ -84,7 +84,7 @@ const CardSection = ({
     }
   };
 
-  const slideID = React.useMemo(() => randomID("slideID"), []);
+  const slideID = useRandomId();
 
   return (
     <CardWrapper

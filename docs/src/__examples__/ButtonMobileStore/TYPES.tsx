@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ButtonMobileStore, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -32,8 +32,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Types",
-    description: "Mobile store buttons can be either dark (the default) or light.",
-  },
 };

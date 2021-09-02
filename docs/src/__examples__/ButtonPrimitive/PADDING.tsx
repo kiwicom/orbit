@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Stack } from "@kiwicom/orbit-components";
 import ButtonPrimitive from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Tile, TileGroup } from "@kiwicom/orbit-components";
 import { BaggageChecked30, Child, Meal } from "@kiwicom/orbit-components/icons";
 

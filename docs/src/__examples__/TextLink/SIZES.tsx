@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Text, TextLink } from "@kiwicom/orbit-components";
 
 export default {
@@ -69,9 +69,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Sizes",
-    description:
-      "By default, text links inherit the size of their parent. If you are using them outside a Text component and need to specify the size, there are three available: small, normal, and large.",
-  },
 };

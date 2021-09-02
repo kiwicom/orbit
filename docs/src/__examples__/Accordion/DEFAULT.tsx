@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Accordion,
   AccordionSection,
@@ -111,9 +111,10 @@ export default {
       </Accordion>
     );
   },
-  info: {
-    title: "Default accordion",
-    description:
-      "Accordions default to having at most one section open at a time. The section that is opened is controlled through the section's id and callbacks on the Accordion.",
-  },
+  exampleKnobs: [
+    {
+      component: "Accordion",
+      knobs: [{ name: "loading", type: "boolean", defaultValue: false }],
+    },
+  ],
 };

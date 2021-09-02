@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Airplane } from "@kiwicom/orbit-components/icons";
 
 export default {

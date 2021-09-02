@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Button } from "@kiwicom/orbit-components";
 import {
   ChevronDown,
@@ -39,9 +39,13 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Buttons with icons",
-    description:
-      "Buttons with icons draw more attention to the action. Left icons are flexible, especially useful when adding an item. Right icons should only be directional, such as to show expansion or that they will take the user elsewhere. If using only an icon, leave the children empty and make sure to include a title.",
-  },
+  exampleKnobs: [
+    {
+      component: "Button",
+      knobs: [
+        { name: "iconLeft", type: "icon", defaultValue: "" },
+        { name: "iconRight", type: "icon", defaultValue: "" },
+      ],
+    },
+  ],
 };

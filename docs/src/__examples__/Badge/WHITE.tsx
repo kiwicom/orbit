@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Passengers } from "@kiwicom/orbit-components/icons";
 import { PictureCard, Badge } from "@kiwicom/orbit-components";
 
@@ -19,9 +19,4 @@ export default {
       </Badge>
     </PictureCard>
   ),
-  info: {
-    title: "White badges",
-    description:
-      "White badges are useful when presenting neutral information within a dark context.",
-  },
 };

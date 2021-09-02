@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Button } from "@kiwicom/orbit-components";
 
 export default {
@@ -49,9 +49,17 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Button types",
-    description:
-      "Buttons come in four types (primary, secondary, critical, and white). Two of these types (primary and critical) also have subtle versions in lighter shades to show actions that won't draw as much attention.",
-  },
+  exampleKnobs: [
+    {
+      component: "Button",
+      knobs: [
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "primary",
+          options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+        },
+      ],
+    },
+  ],
 };

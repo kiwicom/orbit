@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { HorizontalScroll, Inline, Stack, Text, Tile } from "@kiwicom/orbit-components";
 import { BaggageCabin, BaggageChecked30, BaggagePersonal } from "@kiwicom/orbit-components/icons";
 

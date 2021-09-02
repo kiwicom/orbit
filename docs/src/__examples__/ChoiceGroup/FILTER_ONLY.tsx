@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ChoiceGroup, List, ListItem, Stack, Checkbox } from "@kiwicom/orbit-components";
 import { Airplane, Car, Train } from "@kiwicom/orbit-components/icons";
 

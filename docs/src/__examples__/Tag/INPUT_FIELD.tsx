@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ButtonLink, InputField, Stack, Tag, Text } from "@kiwicom/orbit-components";
 import { Plus } from "@kiwicom/orbit-components/icons";
 

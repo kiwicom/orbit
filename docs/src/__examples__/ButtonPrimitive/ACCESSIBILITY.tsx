@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
 import { Edit } from "@kiwicom/orbit-components/icons";
 import ButtonPrimitive from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";

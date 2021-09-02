@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { Breadcrumbs, BreadcrumbsItem } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Breadcrumbs>
+    <Breadcrumbs onGoBack={event => event.preventDefault()} goBackTitle="Back">
       <BreadcrumbsItem href="https://orbit.kiwi/" onClick={event => event.preventDefault()}>
         Orbit.kiwi
       </BreadcrumbsItem>
@@ -16,9 +16,22 @@ export default {
       <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>
     </Breadcrumbs>
   ),
-  info: {
-    title: "Default breadcrumbs",
-    description:
-      "Breadcrumbs items by default navigation to their provided href and list all necessary metadata so you don't have to set it up yourself.",
-  },
+  exampleKnobs: [
+    {
+      component: "Breadcrumbs",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+        {
+          name: "href",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

@@ -6,7 +6,7 @@ import ScreenReaderText from "./ScreenReaderText";
 
 const StyledLabel = styled.label`
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
 `;
 
 const StyledSwitchContainer = styled.div`
@@ -87,11 +87,13 @@ const StyledContent = styled.span`
 `;
 
 interface Props {
+  name?: string;
+  value?: string;
   children?: React.ReactNode;
-  onFocus?: () => any;
-  onBlur?: () => any;
-  onChange?: () => any;
-  onKeyPress?: () => any;
+  onFocus?: (ev: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (ev: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress?: (ev: React.KeyboardEvent<HTMLInputElement>) => void;
   checked?: boolean;
   ariaLabelledby?: string;
   hideLabel?: boolean;
@@ -99,6 +101,8 @@ interface Props {
 }
 
 const InputSwitch = ({
+  name,
+  value,
   children,
   onFocus,
   onBlur,
@@ -120,6 +124,8 @@ const InputSwitch = ({
       >
         <StyledSwitchContainer>
           <StyledInput
+            name={name}
+            value={value}
             type="checkbox"
             tabIndex={0}
             aria-labelledby={ariaLabelledby}

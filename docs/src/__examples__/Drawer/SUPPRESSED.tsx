@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Drawer, Stack, Tile } from "@kiwicom/orbit-components";
 import { MenuHamburger } from "@kiwicom/orbit-components/icons";
 

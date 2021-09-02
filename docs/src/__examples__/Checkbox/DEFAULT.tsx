@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Checkbox, Stack } from "@kiwicom/orbit-components";
 
 export default {

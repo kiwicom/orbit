@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputGroup, InputField, Stack } from "@kiwicom/orbit-components";
 
 export default {

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { PictureCard, Stack, Text } from "@kiwicom/orbit-components";
 
 export default {

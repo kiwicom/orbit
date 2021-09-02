@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Separator, LinkList, TextLink } from "@kiwicom/orbit-components";
 
 export default {
@@ -30,8 +30,17 @@ export default {
       </TextLink>
     </LinkList>
   ),
-  info: {
-    title: "Default separator",
-    description: "Separators present a visual and semantic break between groups of content.",
-  },
+  exampleKnobs: [
+    {
+      component: "Separator",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+      ],
+    },
+  ],
 };

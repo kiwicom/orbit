@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Stack, Heading, Stepper } from "@kiwicom/orbit-components";
 
 export default {

@@ -2,7 +2,7 @@ const { types: t, traverse } = require("@babel/core");
 const { parse } = require("@babel/parser");
 const { default: generate } = require("@babel/generator");
 
-const getCode = str =>
+const getAst = str =>
   parse(str, {
     sourceType: "module",
     plugins: ["typescript", "jsx"],
@@ -11,7 +11,7 @@ const getCode = str =>
 const getScope = example => {
   const scope = [];
 
-  getCode(example).program.body.forEach(n => {
+  getAst(example).program.body.forEach(n => {
     if (t.isImportDeclaration(n)) {
       const p = n.source.value;
       if (n.source.value.match(/@kiwicom\/orbit-components|styled-components/)) {
@@ -32,9 +32,8 @@ const getScope = example => {
   return scope;
 };
 
-/* react-live can't have types inside example, this helper removes the types for react-live */
-const omitTypes = example => {
-  const ast = getCode(example);
+const getByName = (ast, name) => {
+  let output;
 
   traverse(ast, {
     TSTypeAnnotation: path => {
@@ -46,11 +45,23 @@ const omitTypes = example => {
     },
   });
 
-  const { code } = generate(ast);
-  return code;
+  ast.program.body.forEach(n => {
+    if (t.isExportDefaultDeclaration(n)) {
+      n.declaration.properties.forEach(prop => {
+        if (t.isObjectProperty(prop)) {
+          if (t.isIdentifier(prop.key) && prop.key.name === name) {
+            output = generate(prop.value).code;
+          }
+        }
+      });
+    }
+  });
+
+  return output;
 };
 
 module.exports = {
   getScope,
-  omitTypes,
+  getByName,
+  getAst,
 };

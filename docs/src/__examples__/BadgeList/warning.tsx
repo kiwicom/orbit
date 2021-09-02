@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { AlertCircle } from "@kiwicom/orbit-components/icons";
 import { BadgeList, BadgeListItem } from "@kiwicom/orbit-components";
 
@@ -10,8 +10,4 @@ export default {
       </BadgeListItem>
     </BadgeList>
   ),
-  info: {
-    title: "Warning badge list item",
-    description: "",
-  },
 };

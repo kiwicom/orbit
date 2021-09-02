@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ButtonGroup, Button } from "@kiwicom/orbit-components";
 
 export default {
@@ -18,9 +18,4 @@ export default {
       </Button>
     </ButtonGroup>
   ),
-  info: {
-    title: "Default button group",
-    description:
-      "Button groups visually join their children to show related actions as a single unit.",
-  },
 };

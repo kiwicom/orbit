@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Breadcrumbs, BreadcrumbsItem } from "@kiwicom/orbit-components";
 
 export default {
@@ -16,9 +16,27 @@ export default {
       <BreadcrumbsItem>Breadcrumbs</BreadcrumbsItem>
     </Breadcrumbs>
   ),
-  info: {
-    title: "Breadcrumbs with back button",
-    description:
-      "If you add onGoBack to the breadcrumbs, it will have a back button. The title for the button is available for translation through the goBackTitle prop.",
-  },
+  exampleKnobs: [
+    {
+      component: "Breadcrumbs",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+        {
+          name: "backHref",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "href",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

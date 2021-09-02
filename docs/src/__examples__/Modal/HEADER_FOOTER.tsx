@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Illustration, Modal, ModalFooter, ModalHeader } from "@kiwicom/orbit-components";
 
 export default {

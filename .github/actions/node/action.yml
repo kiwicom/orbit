@@ -19,6 +19,5 @@ runs:
           node-modules-
 
     - name: Install dependencies
-      # npx to install lerna if it's missing from node_modules
-      run: yarn bootstrap:ci
+      run: yarn install --frozen-lockfile
       shell: bash

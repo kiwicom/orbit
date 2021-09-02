@@ -89,7 +89,6 @@ const StyledTooltipContent = styled.div`
     & ${StyledText}, ${Item}, a {
       color: ${theme.orbit.paletteWhite};
       font-weight: ${theme.orbit.fontWeightNormal};
-      color: ${theme.orbit.paletteInkNormal};
     }
 
     ${media.largeMobile(css`
@@ -97,7 +96,6 @@ const StyledTooltipContent = styled.div`
       font-weight: ${theme.orbit.fontWeightMedium};
 
       ${StyledText}, ${Item}, a {
-        color: ${theme.orbit.paletteWhite};
         font-weight: ${theme.orbit.fontWeightMedium};
         font-size: ${theme.orbit.fontSizeTextSmall};
       }

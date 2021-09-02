@@ -1,0 +1,24 @@
+name: Node
+description: "Installs and caches Node dependencies and Cypress"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "16"
+
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          **/node_modules
+          ~/.cache/Cypress
+        key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+        restore-keys: |
+          node-modules-${{ github.ref}}-
+          node-modules-
+
+    - name: Install dependencies
+      # npx to install lerna if it's missing from node_modules
+      run: yarn bootstrap:ci
+      shell: bash

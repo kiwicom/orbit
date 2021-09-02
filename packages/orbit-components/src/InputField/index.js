@@ -454,7 +454,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             readOnly={readOnly}
             autoComplete={autoComplete}
             autoFocus={autoFocus}
-            id={forID}
+            id={id || forID}
             inputMode={inputMode}
             dataAttrs={dataAttrs}
           />

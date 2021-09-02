@@ -170,12 +170,12 @@ const ErrorFormTooltip = ({
     };
 
     const handleTab = ev => {
-      if (
-        ev.keyCode === KEY_CODE_MAP.TAB &&
-        !isHelp &&
-        // focus, if the TextLink inside
-        !contentRef.current?.innerHTML.includes("a")
-      ) {
+      const hasTextLink = contentRef.current?.querySelector("a");
+      if (ev.keyCode === KEY_CODE_MAP.TAB && !isHelp && !hasTextLink) {
+        onClose(ev);
+      }
+
+      if (shown && document.activeElement === hasTextLink) {
         onClose(ev);
       }
     };
@@ -186,7 +186,7 @@ const ErrorFormTooltip = ({
       window.removeEventListener("keydown", handleTab);
       window.removeEventListener("click", handleClick);
     };
-  }, [isHelp, onClose, onShow]);
+  }, [isHelp, onClose, onShow, shown]);
 
   return (
     <StyledFormFeedbackTooltip

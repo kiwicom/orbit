@@ -139,4 +139,27 @@ describe("InputField", () => {
       expect(screen.getByTestId("error")).toBeInTheDocument();
     });
   });
+
+  describe("error forms", () => {
+    it("should close tooltip when tabbing away from content", () => {
+      render(
+        <>
+          <InputField error="First" />
+          <InputField error={<a href="/">Second</a>} />
+          <InputField error="Third" />
+        </>,
+      );
+      expect(screen.queryByText("First")).not.toBeVisible();
+      userEvent.tab();
+      expect(screen.getByText("First")).toBeVisible();
+      userEvent.tab();
+      expect(screen.queryByText("First")).not.toBeVisible();
+      expect(screen.getByText("Second")).toBeVisible();
+      userEvent.tab();
+      expect(screen.getByText("Second")).toHaveFocus();
+      userEvent.tab();
+      expect(screen.queryByText("Second")).not.toBeVisible();
+      expect(screen.getByText("Third")).toBeVisible();
+    });
+  });
 });

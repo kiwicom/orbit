@@ -7,6 +7,14 @@ const logStep = msg => {
 };
 
 (async () => {
+  if (argv.size) {
+    console.log(
+      chalk.magentaBright(
+        `\nThe --size flag is on, meaning that we're building only what is necessary for measuring size.`,
+      ),
+    );
+  }
+
   logStep("Cleanup");
 
   await $`rimraf lib es umd "src/icons/*.{js?(x),js?(x).flow,d.ts}" orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
@@ -14,10 +22,13 @@ const logStep = msg => {
   logStep("Building icons");
 
   await $`babel-node config/buildIcons.js`;
-  await $`babel-node config/createSVGFont.js`;
-  await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;
-  await $`zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg`;
-  await $`zip -r orbit-icons-font.zip orbit-icons-font`;
+
+  if (!argv.size) {
+    await $`babel-node config/createSVGFont.js`;
+    await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;
+    await $`zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg`;
+    await $`zip -r orbit-icons-font.zip orbit-icons-font`;
+  }
 
   logStep("Compiling source");
 
@@ -32,10 +43,10 @@ const logStep = msg => {
     ],
   });
 
-  for (const [name, dir, options] of [
-    ["CommonJS", "lib", await babel.loadOptions()],
-    ["ES Modules", "es", await babel.loadOptions({ envName: "esm" })],
-  ]) {
+  const commonJs = ["CommonJS", "lib", await babel.loadOptions()];
+  const esModules = ["ES Modules", "es", await babel.loadOptions({ envName: "esm" })];
+
+  for (const [name, dir, options] of argv.size ? [commonJs] : [commonJs, esModules]) {
     const spinner = ora(name).start();
     for (const file of files) {
       const result = await babel.transformFileAsync(`src/${file}`, options);
@@ -44,20 +55,33 @@ const logStep = msg => {
     spinner.succeed(`${name} → ${dir}`);
   }
 
-  await $`webpack --mode=production`;
+  if (!argv.size) {
+    const spinner = ora("UMD").start();
+    $.verbose = false;
+    await $`webpack --mode=production`;
+    $.verbose = true;
+    spinner.succeed(`UMD → umd`);
 
-  logStep("Type declarations");
+    logStep("Type declarations");
 
-  await $`babel-node config/typeFiles.js`;
-  await $`cpy "**/*.{js?(x).flow,d.ts}" ../lib --cwd src --parents`;
-  await $`cpy "**/*.{js?(x).flow,d.ts}" ../es --cwd src --parents`;
+    await $`babel-node config/typeFiles.js`;
+    await $`cpy "**/*.{js?(x).flow,d.ts}" ../lib --cwd src --parents`;
+    await $`cpy "**/*.{js?(x).flow,d.ts}" ../es --cwd src --parents`;
 
-  for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
-    await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));
+    for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
+      await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));
+    }
   }
 
-  logStep("Miscellaneous");
+  if (argv.size) {
+    logStep("Copying dictionaries");
 
-  await $`cpy "**/*.{md,json}" ../lib --cwd src --parents`;
-  await $`cpy "**/*.{md,json}" ../es --cwd src --parents`;
+    await $`cpy "**/*.json" ../lib --cwd src --parents`;
+    await $`cpy "**/*.json" ../es --cwd src --parents`;
+  } else {
+    logStep("Copying dictionaries and documentation");
+
+    await $`cpy "**/*.{md,json}" ../lib --cwd src --parents`;
+    await $`cpy "**/*.{md,json}" ../es --cwd src --parents`;
+  }
 })();

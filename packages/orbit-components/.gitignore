@@ -1,6 +1,7 @@
 /lib
 /umd
 /es
+/size
 .out
 .cache
 .DS_STORE

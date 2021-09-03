@@ -77,12 +77,14 @@ describe("Select", () => {
 
   it("should have error message", () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
+    userEvent.tab();
 
     expect(screen.getByText("error")).toBeInTheDocument();
   });
 
   it("should have help message", () => {
     render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
+    userEvent.tab();
 
     expect(screen.getByText("help")).toBeInTheDocument();
   });

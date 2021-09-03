@@ -142,11 +142,9 @@ describe("InputField", () => {
 
   describe("error forms", () => {
     it("should close tooltip when tabbing away from content", () => {
-      const ref = React.createRef();
-
       render(
         <>
-          <InputField ref={ref} error="First" />
+          <InputField error="First" />
           <InputField error={<a href="/">Second</a>} />
           <InputField error="Third" />
         </>,

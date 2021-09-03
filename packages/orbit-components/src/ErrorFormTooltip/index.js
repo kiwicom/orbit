@@ -5,52 +5,22 @@ import Tooltip from "./Tooltip";
 
 import type { Props } from ".";
 
-const ErrorFormTooltip = ({
-  id,
-  iconRef,
-  inputRef,
-  inputSize = "normal",
-  onClose,
-  onShow,
-  labelRef,
-  shown,
-  dataTest,
-  error,
-  help,
-  inlineLabel,
-}: Props): React.Node => {
+const ErrorFormTooltip = ({ shown, error, help, ...props }: Props): React.Node => {
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    if (shown) setVisible(true);
+  }, [shown]);
+
   return (
     <>
-      {help && !error && (
-        <Tooltip
-          id={id}
-          dataTest={dataTest}
-          inputRef={inputRef}
-          iconRef={iconRef}
-          labelRef={labelRef}
-          inputSize={inputSize}
-          onClose={onClose}
-          onShow={onShow}
-          isHelp
-          inlineLabel={inlineLabel}
-          shown={shown}
-        >
+      {visible && help && !error && (
+        <Tooltip isHelp visible={visible} onShow={() => setVisible(prev => !prev)} {...props}>
           {help}
         </Tooltip>
       )}
-      {error && (
-        <Tooltip
-          id={id}
-          dataTest={dataTest}
-          inputRef={inputRef}
-          labelRef={labelRef}
-          iconRef={iconRef}
-          inputSize={inputSize}
-          onClose={onClose}
-          onShow={onShow}
-          inlineLabel={inlineLabel}
-          shown={shown}
-        >
+      {visible && error && (
+        <Tooltip visible={visible} onShow={value => setVisible(value)} {...props}>
           {error}
         </Tooltip>
       )}

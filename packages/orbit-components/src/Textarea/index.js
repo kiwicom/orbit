@@ -189,7 +189,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         onChange={onChange}
         rows={rows}
         onFocus={handleFocus}
-        onBlur={help || error ? undefined : handleBlur}
+        onBlur={handleBlur}
         resize={resize}
         tabIndex={tabIndex}
         readOnly={readOnly}
@@ -201,8 +201,6 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         iconRef={iconRef}
         inputRef={inputRef}
         labelRef={labelRef}
-        onClose={handleBlur}
-        onShow={handleFocus}
         shown={shown}
       />
     </Field>

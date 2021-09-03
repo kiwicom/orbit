@@ -13,8 +13,6 @@ export type Props = {|
   +labelRef?: RefType,
   +inputRef?: RefType,
   +inputSize?: "small" | "normal",
-  +onClose: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
-  +onShow: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +inlineLabel?: boolean,
   ...Globals,
 |};

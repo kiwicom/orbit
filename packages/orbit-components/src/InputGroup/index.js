@@ -10,7 +10,7 @@ import ErrorFormTooltip from "../ErrorFormTooltip";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import useRandomId from "../hooks/useRandomId";
+import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
@@ -205,6 +205,7 @@ const InputGroup = ({
 
   const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
   const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
+  const randomId = useRandomIdSeed();
 
   const isFilled = React.useCallback(
     () => setFilled(findPropInChild("value", children).length > 0),
@@ -283,7 +284,7 @@ const InputGroup = ({
         {React.Children.toArray(children).map((item, key) => {
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (
-            <StyledChild flex={childFlex || "0 1 auto"}>
+            <StyledChild flex={childFlex || "0 1 auto"} key={randomId(String(key))}>
               {React.cloneElement(item, {
                 disabled: item.props.disabled || disabled,
                 size,
@@ -304,8 +305,6 @@ const InputGroup = ({
         iconRef={iconRef}
         inputRef={labelRef}
         labelRef={labelRef}
-        onClose={handleBlur}
-        onShow={handleFocus}
         inputSize={size}
         shown={tooltipShown || tooltipShownHover}
       />

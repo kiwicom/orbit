@@ -13,7 +13,7 @@ import { INPUTMODE } from "../consts";
 import defaultTheme from "../../defaultTheme";
 
 describe("InputField", () => {
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     const ref = React.createRef();
     const { container } = render(
       <InputField
@@ -62,7 +62,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    userEvent.tab();
+    fireEvent.focus(input);
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
@@ -142,23 +142,26 @@ describe("InputField", () => {
 
   describe("error forms", () => {
     it("should close tooltip when tabbing away from content", () => {
+      const ref = React.createRef();
+
       render(
         <>
-          <InputField error="First" />
+          <InputField ref={ref} error="First" />
           <InputField error={<a href="/">Second</a>} />
           <InputField error="Third" />
         </>,
       );
-      expect(screen.queryByText("First")).not.toBeVisible();
+
+      expect(screen.queryByText("First")).not.toBeInTheDocument();
       userEvent.tab();
       expect(screen.getByText("First")).toBeVisible();
       userEvent.tab();
-      expect(screen.queryByText("First")).not.toBeVisible();
+      expect(screen.queryByText("First")).not.toBeInTheDocument();
       expect(screen.getByText("Second")).toBeVisible();
       userEvent.tab();
       expect(screen.getByText("Second")).toHaveFocus();
       userEvent.tab();
-      expect(screen.queryByText("Second")).not.toBeVisible();
+      expect(screen.queryByText("Second")).not.toBeInTheDocument();
       expect(screen.getByText("Third")).toBeVisible();
     });
   });

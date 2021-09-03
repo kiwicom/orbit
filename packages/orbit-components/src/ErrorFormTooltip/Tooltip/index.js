@@ -16,11 +16,12 @@ import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "../hooks/useDimensions";
 import { POSITIONS, SIDE_NUDGE } from "./consts";
+import useIsMountedRef from "../../hooks/useIsMountedRef";
 
 import type { Props } from ".";
 
 const StyledFormFeedbackTooltip = styled.div`
-  ${({ theme, isHelp, shown }) => css`
+  ${({ theme, isHelp, visible, inputSize }) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,15 +29,15 @@ const StyledFormFeedbackTooltip = styled.div`
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};
-    padding: ${theme.orbit.spaceSmall};
+    padding: ${inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall};
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
     z-index: 10;
     max-height: none;
     overflow: visible;
     width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
     background-color: ${resolveColor};
-    visibility: ${shown ? "visible" : "hidden"};
-    opacity: ${shown ? "1" : "0"};
+    visibility: ${visible ? "visible" : "hidden"};
+    opacity: ${visible ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
       visibility ${theme.orbit.durationFast} ease-in-out;
 
@@ -129,21 +130,21 @@ StyledCloseButton.defaultProps = {
 };
 
 const ErrorFormTooltip = ({
+  onShow,
   labelRef,
   dataTest,
   inputSize,
-  inputRef,
   iconRef,
   children,
-  shown,
+  inputRef,
+  visible,
   isHelp = false,
-  onClose,
-  onShow,
   inlineLabel,
   id,
 }: Props): React.Node => {
   const contentRef = React.useRef<HTMLDivElement | null>(null);
-  const tooltipRef = React.useRef(null);
+  const tooltipRef = React.useRef<HTMLElement | null>(null);
+  const isMountedRef = useIsMountedRef();
 
   const dimensions = useDimensions({
     labelRef,
@@ -159,25 +160,26 @@ const ErrorFormTooltip = ({
   );
 
   React.useEffect(() => {
+    const hasTextLink = tooltipRef.current?.querySelector("a");
+
     const handleClick = ev => {
       // $FlowFixMe: TODO
-      if (!isHelp && inputRef && !inputRef.current.contains(ev.target)) {
-        onClose(ev);
-      }
-
-      if (ev.target === contentRef.current) {
-        onShow(ev);
+      if (isMountedRef.current && !isHelp && inputRef && !inputRef.current?.contains(ev.target)) {
+        onShow(false);
       }
     };
 
     const handleTab = ev => {
-      const hasTextLink = contentRef.current?.querySelector("a");
-      if (ev.keyCode === KEY_CODE_MAP.TAB && !isHelp && !hasTextLink) {
-        onClose(ev);
-      }
-
-      if (shown && document.activeElement === hasTextLink) {
-        onClose(ev);
+      if (isHelp) return;
+      if (isMountedRef.current) {
+        if (ev.keyCode === KEY_CODE_MAP.TAB && hasTextLink) {
+          onShow(true);
+          if (document.activeElement === hasTextLink) {
+            onShow(false);
+          }
+        } else {
+          onShow(false);
+        }
       }
     };
 
@@ -185,16 +187,16 @@ const ErrorFormTooltip = ({
     window.addEventListener("click", handleClick);
     return () => {
       window.removeEventListener("keydown", handleTab);
-      window.removeEventListener("click", handleClick);
+      window.addEventListener("click", handleClick);
     };
-  }, [isHelp, onClose, onShow, shown]);
+  }, [onShow, isHelp, isMountedRef]);
 
   return (
     <StyledFormFeedbackTooltip
       ref={tooltipRef}
       inputSize={inputSize}
       position={preferredPosition}
-      shown={shown && dimensions.set}
+      visible={visible && dimensions.set}
       isHelp={isHelp}
       data-test={dataTest}
       inlineLabel={inlineLabel}
@@ -207,10 +209,10 @@ const ErrorFormTooltip = ({
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO
-          onKeyDown={handleKeyDown(onClose)}
+          onKeyDown={handleKeyDown(onShow)}
           onClick={ev => {
             ev.preventDefault();
-            if (onClose) onClose(ev);
+            if (onShow && visible) onShow();
           }}
         >
           <CloseIc ariaLabel="close" size="small" />

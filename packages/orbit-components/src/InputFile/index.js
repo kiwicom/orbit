@@ -158,7 +158,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         error={error}
         onChange={onChange}
         onFocus={handleFocus}
-        onBlur={help || error ? undefined : handleBlur}
+        onBlur={handleBlur}
         accept={allowedFileTypes}
         tabIndex={tabIndex}
       />
@@ -209,8 +209,6 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           iconRef={iconRef}
           inputRef={inputRef}
           labelRef={labelRef}
-          onClose={handleBlur}
-          onShow={handleFocus}
           shown={shown}
         />
       )}

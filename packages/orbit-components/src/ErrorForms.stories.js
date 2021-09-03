@@ -49,7 +49,7 @@ export const Error = (): React.Node => {
     <Stack>
       <InputField
         size={size}
-        error={<TextLink>{error}</TextLink>}
+        error={<TextLink tabIndex={0}>{error}</TextLink>}
         label={label}
         value={value}
         placeholder={placeholder}
@@ -92,6 +92,7 @@ export const Error = (): React.Node => {
       <InputField
         label={label}
         inlineLabel
+        readOnly
         tags={
           <>
             <Tag selected onRemove={action("onRemove")}>
@@ -117,9 +118,10 @@ export const Error = (): React.Node => {
         placeholder={placeholder}
         required={required}
         error={error}
+        readOnly
       />
-      <Textarea label={label} placeholder={placeholder} error={error} value={value} />
-      <Textarea placeholder={placeholder} error={error} value={value} />
+      <Textarea label={label} placeholder={placeholder} error={error} value={value} readOnly />
+      <Textarea placeholder={placeholder} error={error} value={value} readOnly />
       <Select
         label={label}
         options={objectOptions}
@@ -131,14 +133,14 @@ export const Error = (): React.Node => {
       <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
       <InputFile error={error} onRemoveFile={action("removeFile")} />
       <InputGroup label={label}>
-        <InputField error={error} placeholder="DD" />
+        <InputField error={error} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" readOnly />
       </InputGroup>
       <InputGroup>
-        <InputField error={error} placeholder="DD" />
+        <InputField error={error} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" readOnly />
       </InputGroup>
     </Stack>
   );
@@ -198,6 +200,7 @@ export const Help = (): React.Node => {
       <InputField
         label={label}
         inlineLabel
+        readOnly
         tags={
           <div>
             <Tag selected onRemove={action("onRemove")}>
@@ -219,13 +222,14 @@ export const Help = (): React.Node => {
       />
       <InputField
         label={label}
+        readOnly
         value={value}
         placeholder={placeholder}
         required={required}
         help={help}
       />
-      <Textarea label={label} placeholder={placeholder} help={help} value={value} />
-      <Textarea placeholder={placeholder} help={help} value={value} />
+      <Textarea readOnly label={label} placeholder={placeholder} help={help} value={value} />
+      <Textarea placeholder={placeholder} help={help} value={value} readOnly />
       <Select
         label={label}
         options={objectOptions}
@@ -237,14 +241,14 @@ export const Help = (): React.Node => {
       <InputFile label={label} help={help} onRemoveFile={action("removeFile")} />
       <InputFile help={help} onRemoveFile={action("removeFile")} />
       <InputGroup label={label}>
-        <InputField help={help} placeholder="DD" />
+        <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" readOnly />
       </InputGroup>
       <InputGroup>
-        <InputField help={help} placeholder="DD" />
+        <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" readOnly />
       </InputGroup>
     </Stack>
   );
@@ -434,21 +438,21 @@ export const AdvancedExample = (): React.Node => {
   const [focused, setFocused] = React.useState({});
 
   const validate = (value: string) => {
-    return value.length === 0 ? "This field is required" : "";
+    return !value || value.length === 0 ? "This field is required" : "";
   };
 
   const handleChange = ev => {
     const { name, value } = ev.target;
 
-    setValues({
-      ...values,
+    setValues(prev => ({
+      ...prev,
       [name]: value,
-    });
+    }));
 
-    setFocused({
-      ...focused,
+    setFocused(prev => ({
+      ...prev,
       [name]: true,
-    });
+    }));
   };
 
   const handleSubmit = ev => {
@@ -458,11 +462,11 @@ export const AdvancedExample = (): React.Node => {
       (acc, [key, value]) => {
         // $FlowFixMe: mixed
         const newError = validate(value);
-        const newFocused = { [key.toString()]: true };
+        const newFocused = { [key]: true };
         return {
           errors: {
             ...acc.errors,
-            ...(newError && { [key.toString()]: newError }),
+            [key]: newError,
           },
           focused: {
             ...acc.focused,
@@ -482,13 +486,12 @@ export const AdvancedExample = (): React.Node => {
 
   const handleBlur = evt => {
     const { name, value } = evt.target;
-    const { [name]: removedError, ...rest } = errors;
     const error = validate(value);
 
-    setErrors({
-      ...rest,
-      ...(error && { [name]: focused[name] && error }),
-    });
+    setErrors(prev => ({
+      ...prev,
+      [name]: focused[name] && error,
+    }));
   };
 
   return (

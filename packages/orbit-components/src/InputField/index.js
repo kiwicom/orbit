@@ -386,15 +386,14 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
-  const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
+  const inputRef = React.useRef<HTMLElement | null>(null);
 
   return (
     <>
       <Field
         component={label ? "label" : "div"}
         spaceAfter={spaceAfter}
-        aria-labelledby={`${inputId}-${error ? "error" : "hint"}`}
         htmlFor={label ? inputId : undefined}
       >
         {label && !inlineLabel && (
@@ -457,7 +456,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             }
             onChange={onChange}
             onFocus={handleFocus}
-            onBlur={help || error ? undefined : handleBlur}
+            onBlur={handleBlur}
             onKeyUp={onKeyUp}
             onKeyDown={onKeyDown}
             onSelect={onSelect}
@@ -494,12 +493,10 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             help={help}
             id={inputId}
             error={error}
+            inputRef={inputRef}
             inputSize={size}
-            onClose={handleBlur}
-            onShow={handleFocus}
             iconRef={iconRef}
             labelRef={labelRef}
-            inputRef={inputRef}
             shown={shown}
             inlineLabel={!tags && inlineLabel}
           />

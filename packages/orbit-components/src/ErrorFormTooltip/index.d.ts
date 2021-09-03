@@ -9,6 +9,7 @@ type Position = "right" | "left" | "top" | "bottom";
 type Align = "center" | "start" | "end";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
+  readonly id?: string;
   readonly error?: React.ReactNode;
   readonly help?: React.ReactNode;
   readonly tooltipShown?: boolean;

@@ -223,11 +223,35 @@ Suffix.defaultProps = {
 
 export const Input: any = styled(
   React.forwardRef(
-    ({ type, size, theme, error, help, inlineLabel, dataAttrs, required, ...props }, ref) => (
-      // aria-required is passed to make the field required for screen-reader
-      // we do not pass required field by reason, to avoid native browser message
-      <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} aria-required={required} />
-    ),
+    (
+      {
+        type,
+        size,
+        theme,
+        error,
+        help,
+        inlineLabel,
+        dataAttrs,
+        required,
+        ariaLabelledby,
+        ...props
+      },
+      ref,
+    ) => {
+      return (
+        <input
+          type={getDOMType(type)}
+          {...props}
+          {...dataAttrs}
+          ref={ref}
+          // aria-required is passed to make the field required for screen-reader
+          // we do not pass required field by reason, to avoid native browser message
+          aria-required={required}
+          // in case when there is no label
+          aria-labelledby={ariaLabelledby}
+        />
+      );
+    },
   ),
 )`
   appearance: none;
@@ -350,6 +374,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
   }: Props = props;
 
   const forID = useRandomId();
+  const inputId = id || forID;
 
   const {
     tooltipShown,
@@ -369,7 +394,8 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
       <Field
         component={label ? "label" : "div"}
         spaceAfter={spaceAfter}
-        htmlFor={label ? id || forID : undefined}
+        aria-labelledby={`${inputId}-${error ? "error" : "hint"}`}
+        htmlFor={label ? inputId : undefined}
       >
         {label && !inlineLabel && (
           <FormLabel
@@ -450,11 +476,12 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             error={insideInputGroup ? undefined : error}
             ref={mergeRefs([ref, inputRef])}
             tabIndex={tabIndex}
+            ariaLabelledby={!label && inputId}
             inlineLabel={inlineLabel}
             readOnly={readOnly}
             autoComplete={autoComplete}
             autoFocus={autoFocus}
-            id={id || forID}
+            id={inputId}
             inputMode={inputMode}
             dataAttrs={dataAttrs}
           />
@@ -465,6 +492,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
         {!insideInputGroup && (
           <ErrorFormTooltip
             help={help}
+            id={inputId}
             error={error}
             inputSize={size}
             onClose={handleBlur}

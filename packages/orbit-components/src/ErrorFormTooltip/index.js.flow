@@ -5,6 +5,7 @@ import type { Globals, RefType } from "../common/common.js.flow";
 import type { Dimensions as PositionRaw } from "../utils/boundingClientRect";
 
 export type Props = {|
+  +id?: string,
   +shown: boolean,
   +error?: React.Node,
   +help?: React.Node,

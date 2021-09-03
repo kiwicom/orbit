@@ -140,6 +140,7 @@ const ErrorFormTooltip = ({
   onClose,
   onShow,
   inlineLabel,
+  id,
 }: Props): React.Node => {
   const contentRef = React.useRef<HTMLDivElement | null>(null);
   const tooltipRef = React.useRef(null);
@@ -198,6 +199,7 @@ const ErrorFormTooltip = ({
       data-test={dataTest}
       inlineLabel={inlineLabel}
       aria-live="polite"
+      id={id}
       {...dimensions}
     >
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>

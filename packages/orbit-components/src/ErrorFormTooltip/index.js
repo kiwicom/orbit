@@ -6,6 +6,7 @@ import Tooltip from "./Tooltip";
 import type { Props } from ".";
 
 const ErrorFormTooltip = ({
+  id,
   iconRef,
   inputRef,
   inputSize = "normal",
@@ -22,6 +23,7 @@ const ErrorFormTooltip = ({
     <>
       {help && !error && (
         <Tooltip
+          id={id}
           dataTest={dataTest}
           inputRef={inputRef}
           iconRef={iconRef}
@@ -38,6 +40,7 @@ const ErrorFormTooltip = ({
       )}
       {error && (
         <Tooltip
+          id={id}
           dataTest={dataTest}
           inputRef={inputRef}
           labelRef={labelRef}

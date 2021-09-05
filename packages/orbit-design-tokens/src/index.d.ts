@@ -27,6 +27,8 @@ export type StatusColor = {
   darkHover: string;
   darkActive: string;
   darker: string;
+  darkerHover: string;
+  darkerActive: string;
 };
 
 export type WhiteColor = {

@@ -13,7 +13,7 @@ import media from "../utils/mediaQuery";
 import type { Props } from ".";
 
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
-  if (disabled) return theme.orbit.paletteInkLighter;
+  if (disabled) return theme.orbit.paletteCloudDarker;
   if (checked) return theme.orbit.paletteBlueNormal;
   if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
 
@@ -21,7 +21,7 @@ const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
 };
 
 const getBackground = () => ({ theme, disabled, checked }) => {
-  if (disabled && checked) return theme.orbit.paletteInkLighter;
+  if (disabled && checked) return theme.orbit.paletteCloudDarker;
   if (disabled && !checked) return theme.orbit.paletteCloudNormal;
 
   return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;

@@ -19,7 +19,7 @@
   <color name="PALETTEBLUENORMALHOVER" category="Color palette">#ff0161ac</color>
   <color name="COLORTEXTBUTTONCRITICAL" category="Colors">#ffffffff</color>
   <string name="ZINDEXSTICKY" category="Z Index">100</string>
-  <color name="BORDERCOLORCHECKBOXRADIO" category="Border color">#ff697d95</color>
+  <color name="BORDERCOLORCHECKBOXRADIO" category="Border color">#ffbac7d5</color>
   <color name="PALETTEBLUELIGHT" category="Color palette">#ffe8f4fd</color>
   <dimen name="BOXSHADOWACTION" category="Box shadow">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
   <color name="COLORTEXTBADGEINFO" category="Colors">#ff0172cb</color>
@@ -98,7 +98,7 @@
   <dimen name="MARGINBOTTOMSELECTSUFFIX" category="Spacing">2dp</dimen>
   <color name="COLORICONPRIMARY" category="Colors">#ff252a31</color>
   <color name="PALETTECLOUDNORMALACTIVE" category="Color palette">#ffcad4de</color>
-  <string name="BACKGROUNDTABLESHADOWLEFT" category="Background colors">linear-gradient(to left, transparent, rgba(105, 125, 149, 0.23))</string>
+  <string name="BACKGROUNDTABLESHADOWLEFT" category="Background colors">linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))</string>
   <dimen name="WIDTHRADIOBUTTON" category="Size (width, height)">20dp</dimen>
   <color name="COLORTEXTBUTTONSUCCESSACTIVE" category="Colors">#ffffffff</color>
   <color name="BORDERCOLORCHECKBOXRADIOERROR" category="Border color">#ffd21c1c</color>
@@ -196,7 +196,7 @@
   <color name="COLORTEXTBUTTONLINKPRIMARYACTIVE" category="Colors">#ff008f7b</color>
   <color name="BACKGROUNDTAG" category="Background colors">#fff5f7f9</color>
   <color name="BACKGROUNDBUTTONFACEBOOKACTIVE" category="Background colors">#ff354f88</color>
-  <color name="COLORTEXTLOADING" category="Colors">#ff697d95</color>
+  <color name="COLORTEXTLOADING" category="Colors">#ffbac7d5</color>
   <dimen name="HEIGHTSTOPOVERARROW" category="Size (width, height)">7dp</dimen>
   <color name="BORDERCOLORBUTTONGOOGLEBORDERED" category="Border color">#ff252a31</color>
   <color name="BACKGROUNDTAGSELECTEDACTIVE" category="Background colors">#ff0b0c0f</color>
@@ -225,10 +225,10 @@
   <color name="PALETTEWHITE" category="Color palette">#ffffffff</color>
   <dimen name="FONTSIZEHEADINGTITLE4" category="Font size">14dp</dimen>
   <color name="COLORPLACEHOLDERINPUTERROR" category="Colors">#ffd21c1c</color>
-  <color name="COLORICONINPUT" category="Colors">#ff697d95</color>
+  <color name="COLORICONINPUT" category="Colors">#ffbac7d5</color>
   <color name="BACKGROUNDBUTTONINFO" category="Background colors">#ff0172cb</color>
   <color name="BACKGROUNDALERTWARNING" category="Background colors">#fffdf0e3</color>
-  <color name="COLORICONTERTIARY" category="Colors">#ff697d95</color>
+  <color name="COLORICONTERTIARY" category="Colors">#ffbac7d5</color>
   <color name="BACKGROUNDBUTTONINFOHOVER" category="Background colors">#ff0161ac</color>
   <color name="BACKGROUNDBADGESUCCESS" category="Background colors">#ffebf4ec</color>
   <dimen name="HEIGHTSERVICELOGOMEDIUM" category="Size (width, height)">24dp</dimen>
@@ -306,7 +306,7 @@
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDACTIVE" category="Border color">#ff0b0c0f</color>
   <dimen name="LINEHEIGHTTEXTLARGE" category="Line height">22dp</dimen>
   <color name="COLORTEXTSUCCESS" category="Colors">#ff28a138</color>
-  <color name="BORDERCOLORINPUT" category="Border color">#ff697d95</color>
+  <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>
   <color name="PALETTEORANGELIGHTACTIVE" category="Color palette">#fff8d3ab</color>
   <string name="FONTWEIGHTHEADINGTITLE1" category="Font weight">700</string>
   <color name="COLORHEADINGINVERTED" category="Colors">#ffffffff</color>
@@ -361,7 +361,7 @@
   <color name="BACKGROUNDSEPARATOR" category="Background colors">#ffeff2f5</color>
   <color name="COLORTEXTBUTTONWARNINGBORDEREDHOVER" category="Colors">#ffdc7c05</color>
   <color name="PALETTEPRODUCTDARKER" category="Color palette">#ff005c4e</color>
-  <color name="BORDERCOLORTABLEHEAD" category="Border color">#ff697d95</color>
+  <color name="BORDERCOLORTABLEHEAD" category="Border color">#ffbac7d5</color>
   <color name="COLORTEXTALERTSUCCESS" category="Colors">#ff2b7336</color>
   <dimen name="PADDINGBUTTONLARGEWITHRIGHTICON" category="Spacing">0 16 0 28dp</dimen>
   <color name="BORDERCOLORTABLE" category="Border color">#ffeff2f5</color>
@@ -381,13 +381,13 @@
   <color name="COLORTEXTBUTTONLINKSECONDARY" category="Colors">#ff252a31</color>
   <color name="COLORTEXTLINKPRIMARY" category="Colors">#ff007f6d</color>
   <color name="COLORTEXTBUTTONWHITEBORDEREDACTIVE" category="Colors">#ffffffff</color>
-  <color name="COLORICONCHECKBOXRADIODISABLED" category="Colors">#ff697d95</color>
+  <color name="COLORICONCHECKBOXRADIODISABLED" category="Colors">#ffbac7d5</color>
   <dimen name="FONTSIZEBUTTONLARGE" category="Font size">16dp</dimen>
   <color name="BACKGROUNDBUTTONGOOGLE" category="Background colors">#fff5f7f9</color>
   <color name="BORDERCOLORINPUTACTIVE" category="Border color">#ff4a617c</color>
   <string name="OPACITYBUTTONDISABLED" category="Opacity">0.3</string>
   <color name="BACKGROUNDBUTTONSUCCESSHOVER" category="Background colors">#ff238b31</color>
-  <color name="BORDERCOLORTABLECELL" category="Border color">#ff697d95</color>
+  <color name="BORDERCOLORTABLECELL" category="Border color">#ffbac7d5</color>
   <dimen name="FONTSIZEFORMFEEDBACK" category="Font size">12dp</dimen>
   <color name="BORDERCOLORBUTTONCRITICALBORDEREDACTIVE" category="Border color">#ff9d1515</color>
   <color name="COLORTEXTBUTTONFACEBOOKBORDEREDACTIVE" category="Colors">#ff354f88</color>
@@ -427,7 +427,7 @@
   <color name="PALETTECLOUDLIGHT" category="Color palette">#fff5f7f9</color>
   <color name="COLORICONCHECKBOXRADIO" category="Colors">#ff00a991</color>
   <dimen name="PADDINGTEXTAREASMALL" category="Spacing">8 12dp</dimen>
-  <string name="BACKGROUNDTABLESHADOWRIGHT" category="Background colors">linear-gradient(to right, transparent, rgba(105, 125, 149, 0.23))</string>
+  <string name="BACKGROUNDTABLESHADOWRIGHT" category="Background colors">linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</string>
   <color name="BACKGROUNDBUTTONWARNING" category="Background colors">#ffe98305</color>
   <color name="BACKGROUNDTABLEHOVER" category="Background colors">#ffeff2f5</color>
   <string name="FONTWEIGHTMEDIUM" category="Font weight">500</string>

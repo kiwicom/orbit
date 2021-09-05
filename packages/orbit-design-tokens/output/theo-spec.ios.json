@@ -115,7 +115,7 @@
       "name": "zIndexSticky"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorCheckboxRadio"
@@ -590,7 +590,7 @@
       "name": "paletteCloudNormalActive"
     },
     {
-      "value": "linear-gradient(to left, transparent, rgba(105, 125, 149, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "Background colors",
       "name": "backgroundTableShadowLeft"
@@ -1179,7 +1179,7 @@
       "name": "backgroundButtonFacebookActive"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextLoading"
@@ -1354,7 +1354,7 @@
       "name": "colorPlaceholderInputError"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconInput"
@@ -1372,7 +1372,7 @@
       "name": "backgroundAlertWarning"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconTertiary"
@@ -1840,7 +1840,7 @@
       "name": "colorTextSuccess"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInput"
@@ -2170,7 +2170,7 @@
       "name": "paletteProductDarker"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorTableHead"
@@ -2290,7 +2290,7 @@
       "name": "colorTextButtonWhiteBorderedActive"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconCheckboxRadioDisabled"
@@ -2326,7 +2326,7 @@
       "name": "backgroundButtonSuccessHover"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorTableCell"
@@ -2566,7 +2566,7 @@
       "name": "paddingTextareaSmall"
     },
     {
-      "value": "linear-gradient(to right, transparent, rgba(105, 125, 149, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "Background colors",
       "name": "backgroundTableShadowRight"

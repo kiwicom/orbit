@@ -19,7 +19,7 @@ const StyledSwitchBase = styled.div`
     cursor: ${!disabled && "pointer"};
     width: 50px;
     height: 28px;
-    background-color: ${theme.orbit.paletteInkLighter};
+    background-color: ${theme.orbit.paletteCloudDarker};
     border-radius: 100px;
     position: relative;
     transition: background-color ${theme.orbit.durationFast};
@@ -55,7 +55,7 @@ const StyledSwitchButton = styled.div`
     svg {
       height: ${theme.orbit.heightIconSmall};
       width: ${theme.orbit.heightIconSmall};
-      color: ${hasCustomIcon ? theme.orbit.paletteInkLight : theme.orbit.paletteInkLighter};
+      color: ${hasCustomIcon ? theme.orbit.paletteInkLight : theme.orbit.paletteCloudDarker};
     }
     ${checked &&
     css`

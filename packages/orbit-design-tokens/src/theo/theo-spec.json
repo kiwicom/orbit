@@ -81,7 +81,7 @@
       }
     },
     "colorIconTertiary": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -825,7 +825,7 @@
       }
     },
     "colorTextLoading": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -857,7 +857,7 @@
       }
     },
     "colorIconInput": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -929,7 +929,7 @@
       }
     },
     "colorIconCheckboxRadioDisabled": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1449,7 +1449,7 @@
       }
     },
     "backgroundTableShadowLeft": {
-      "value": "linear-gradient(to left, transparent, rgba(105, 125, 149, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "Background colors",
       "meta": {
@@ -1457,7 +1457,7 @@
       }
     },
     "backgroundTableShadowRight": {
-      "value": "linear-gradient(to right, transparent, rgba(105, 125, 149, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "Background colors",
       "meta": {
@@ -2093,7 +2093,7 @@
       }
     },
     "borderColorInput": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2149,7 +2149,7 @@
       }
     },
     "borderColorTableCell": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2389,7 +2389,7 @@
       }
     },
     "borderColorCheckboxRadio": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2437,7 +2437,7 @@
       }
     },
     "borderColorTableHead": {
-      "value": "#697D95",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "Border color",
       "meta": {

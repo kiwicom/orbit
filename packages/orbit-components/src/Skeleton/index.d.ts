@@ -9,6 +9,8 @@ declare module "@kiwicom/orbit-components/lib/Skeleton";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
+type Animation = "wave" | "pulse" | "animation";
+
 /**  DOCS:
 Skeleton component display a placeholder preview before the data gets loaded.
 
@@ -42,9 +44,7 @@ or you can pick one from our predefined presets:
 */
 
 interface Props extends Common.SpaceAfter, Common.Global {
-  /** Turn on or off animation  */
-  /** default: true */
-  readonly animate?: boolean;
+  readonly animation?: Animation;
   /** Set animation interval */
   /** default: `0.2`  */
   readonly animationInterval?: number;
@@ -53,22 +53,7 @@ interface Props extends Common.SpaceAfter, Common.Global {
   readonly animationSpeed?: number;
   /** Optional prop for a11y element */
   readonly ariaLabelledby?: string;
-  /** Set background-color for svg */
-  /** default: `cloudNormal` */
-  readonly backgroundColor?: ColorTokens;
-  /** Set opacity for background  */
-  /** default: `1` */
-  readonly backgroundOpacity?: number;
   readonly children?: React.ReactNode;
-  /** Set color for foreground rect */
-  /** default: `cloudDark` */
-  readonly foregroundColor?: ColorTokens;
-  /** Set opacity for foreground  */
-  /** default: `1` */
-  readonly foregroundOpacity?: number;
-  /** Set gradientRatio for svg animate element  */
-  /** default: `2` */
-  readonly gradientRatio?: number;
   /** Set height for Svg element */
   readonly height?: number;
   /** Border-radius for row rect elements */

@@ -1,16 +1,20 @@
 // @flow
 import * as React from "react";
-import { useUID } from "react-uid";
 import styled, { css } from "styled-components";
 
-import { getAnimationValue, getColor, resolveHeight } from "./helpers";
+import useRandomId from "../hooks/useRandomId";
+import { resolveHeight, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from ".";
 
-const StyledSvg = styled(({ className, children, ariaLabelledby, viewBox, dataTest }) => (
+const StyledWrapper = styled.div`
+  position: relative;
+`;
+
+const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, viewBox }) => (
   <svg
     aria-labelledby={ariaLabelledby}
     data-test={dataTest}
@@ -26,6 +30,7 @@ const StyledSvg = styled(({ className, children, ariaLabelledby, viewBox, dataTe
     transform: ${rtl && `scaleX(-1)`};
     width: ${width ? `${width}px` : "100%"};
     margin-bottom: ${getSpacingToken};
+    ${resolvePulseAnimation}
   `}
 `;
 
@@ -49,135 +54,90 @@ const Rows = ({ count, height, offset, rowBorderRadius }) => {
 };
 
 const Svg = ({
-  animate = true,
+  animation = "pulse",
+  animationDuration = 2,
   animationInterval = 0.5,
-  animationSpeed = 3,
   ariaLabelledby,
-  backgroundColor = "cloudNormal",
-  backgroundOpacity = 1,
   children,
-  dataTest,
-  foregroundColor = "cloudDark",
-  foregroundOpacity = 1,
-  gradientRatio = 2,
-  height,
   rowBorderRadius = 3,
   rowHeight = 21,
-  rowOffset = 0,
+  rowOffset = 20,
   rows = 1,
-  spaceAfter,
   title,
   viewBox,
-  width,
+  ...props
 }: Props): React.Node => {
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
-  const { rtl } = useTheme();
-  const background = getColor(backgroundColor);
-  const foreground = getColor(foregroundColor);
-  const keyTimes = `0; ${animationInterval}; 1`;
-  const duration = `${animationSpeed}s`;
-  const uid = useUID();
+  const { rtl, orbit } = useTheme();
+  const duration = `${animationDuration}s`;
+  const interval = `${animationInterval}s`;
+  const uid = useRandomId();
   const id = ariaLabelledby || uid;
   const idClip = `${id}-clip`;
   const idGradient = `${id}-animate`;
-  const setAnimationValue = getAnimationValue(gradientRatio);
+  const fillColor = animation === "wave" ? `url(#${idGradient})` : orbit.paletteCloudDark;
 
   React.useEffect(() => {
     if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
   }, [rowOffset, rows, setCalculatedHeight]);
 
   return (
-    <StyledSvg
-      dataTest={dataTest}
-      ariaLabelledby={id}
-      role="img"
-      rtl={rtl}
-      viewBox={viewBox}
-      height={height}
-      width={width}
-      calculatedHeight={calculatedHeight}
-      spaceAfter={spaceAfter}
-    >
-      {title && <title id={id}>{title}</title>}
-      <rect
-        role="presentation"
-        x="0"
-        y="0"
-        width="100%"
-        height="100%"
-        clipPath={`url(#${idClip})`}
-        style={{ fill: `url(#${idGradient})` }}
-      />
-      <defs>
-        <clipPath id={idClip}>
-          {children || (
-            <Rows
-              count={rows}
-              height={rowHeight}
-              offset={rowOffset}
-              rowBorderRadius={rowBorderRadius}
-            />
+    <StyledWrapper>
+      <StyledSvg
+        ariaLabelledby={id}
+        role="img"
+        rtl={rtl}
+        viewBox={viewBox}
+        calculatedHeight={calculatedHeight}
+        duration={duration}
+        interval={interval}
+        animation={animation}
+        {...props}
+      >
+        {title && <title id={id}>{title}</title>}
+        <rect
+          role="presentation"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          clipPath={`url(#${idClip})`}
+          style={{ fill: fillColor }}
+        />
+        <defs>
+          <clipPath id={idClip}>
+            {children || (
+              <Rows
+                count={rows}
+                height={rowHeight}
+                offset={rowOffset}
+                rowBorderRadius={rowBorderRadius}
+              />
+            )}
+          </clipPath>
+          {animation === "wave" && (
+            <linearGradient id={idGradient} x1="0" y1="0%">
+              <stop offset="0%">
+                <animate
+                  attributeName="stop-color"
+                  values={`${orbit.paletteInkLighter}; ${orbit.paletteCloudDark}`}
+                  dur={animationDuration}
+                  repeatCount="indefinite"
+                />
+              </stop>
+              <stop offset="100%" stopColor={orbit.paletteCloudNormal}>
+                <animate
+                  attributeName="offset"
+                  values="0;.20;.40;.60;.80;.99"
+                  dur={animationDuration}
+                  repeatCount="indefinite"
+                />
+              </stop>
+            </linearGradient>
           )}
-        </clipPath>
-      </defs>
-      <linearGradient id={idGradient}>
-        <stop offset="0%" stopColor={background} stopOpacity={backgroundOpacity}>
-          {animate && (
-            <animate
-              attributeName="offset"
-              values={setAnimationValue(0)}
-              keyTimes={keyTimes}
-              dur={duration}
-              repeatCount="indefinite"
-            />
-          )}
-        </stop>
-        <stop offset="25%" stopColor={foreground} stopOpacity={foregroundOpacity}>
-          {animate && (
-            <animate
-              attributeName="offset"
-              values={setAnimationValue(0.25)}
-              keyTimes={keyTimes}
-              dur={duration}
-              repeatCount="indefinite"
-            />
-          )}
-        </stop>
-        <stop offset="50%" stopColor={foreground} stopOpacity={foregroundOpacity}>
-          {animate && (
-            <animate
-              attributeName="offset"
-              values={setAnimationValue(0.5)}
-              keyTimes={keyTimes}
-              dur={duration}
-              repeatCount="indefinite"
-            />
-          )}
-        </stop>
-        <stop offset="75%" stopColor={foreground} stopOpacity={foregroundOpacity}>
-          {animate && (
-            <animate
-              attributeName="offset"
-              values={setAnimationValue(0.75)}
-              keyTimes={keyTimes}
-              dur={duration}
-              repeatCount="indefinite"
-            />
-          )}
-        </stop>
-        <stop offset="100%" stopColor={background} stopOpacity={backgroundOpacity}>
-          {animate && (
-            <animate
-              attributeName="offset"
-              values={setAnimationValue(1)}
-              keyTimes={keyTimes}
-              dur={duration}
-              repeatCount="indefinite"
-            />
-          )}
-        </stop>
-      </linearGradient>
-    </StyledSvg>
+        </defs>
+      </StyledSvg>
+    </StyledWrapper>
   );
 };
 

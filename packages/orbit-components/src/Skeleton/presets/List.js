@@ -4,9 +4,9 @@ import * as React from "react";
 import type { Props } from "..";
 import Svg from "../Svg";
 
-const List = (props: Props): React.Node => {
+const List = ({ height = 80, ...props }: Props): React.Node => {
   return (
-    <Svg {...props}>
+    <Svg {...props} height={height}>
       <rect x="35" y="0" width="100%" height="20" />
       <rect x="35" y="30" width="100%" height="20" />
       <rect x="35" y="60" width="100%" height="20" />

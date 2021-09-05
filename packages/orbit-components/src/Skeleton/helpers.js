@@ -1,11 +1,15 @@
 // @flow
-import defaultTheme from "../defaultTheme";
-import { firstToUpper } from "../utils/common";
+import { keyframes, css } from "styled-components";
+import type { CSSRules } from "styled-components";
 
-type GetAnimationValue = (ration: number) => (frame: number) => string;
+import type { Animation } from ".";
 
-export const getColor = (token?: string): string | null =>
-  token ? defaultTheme.orbit[`palette${firstToUpper(token)}`] : null;
+type ResolveAnimation = ({|
+  duration: string,
+  interval: string,
+  animation: Animation,
+  color?: string,
+|}) => CSSRules | null;
 
 export const resolveHeight = ({
   calculatedHeight,
@@ -19,11 +23,24 @@ export const resolveHeight = ({
   return "100%";
 };
 
-export const getAnimationValue: GetAnimationValue = ratio => frame => {
-  if (frame === 0) return `${-ratio}; ${-ratio}; 0`;
-  if (frame === 0.25) return `${-ratio / 2.5}; ${-ratio / 2.5}; ${1 + ratio / 2.5}`;
-  if (frame === 0.5) return `${-ratio / 2}; ${-ratio / 2}; ${1 + ratio / 2}`;
-  if (frame === 0.75) return `${-ratio / 1.5}; ${-ratio / 1.5}; ${1 + ratio / 1.5}`;
+const pulseAnimation = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
-  return `0; 0; ${1 + ratio}`;
+export const resolvePulseAnimation: ResolveAnimation = ({ animation, duration, interval }) => {
+  if (animation === "pulse") {
+    return css`
+      animation: ${pulseAnimation} ${duration} ease-in-out ${interval} infinite;
+    `;
+  }
+
+  return null;
 };

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { select, number, text, boolean } from "@storybook/addon-knobs";
+import { select, number, text } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -19,81 +19,6 @@ const PRESETS = {
   Text: "Text",
 };
 
-const COLORS = [
-  "blueDark",
-  "blueDarkActive",
-  "blueDarker",
-  "blueDarkHover",
-  "blueLight",
-  "blueLightActive",
-  "blueLightHover",
-  "blueNormal",
-  "blueNormalActive",
-  "blueNormalHover",
-  "cloudDark",
-  "cloudLight",
-  "cloudLightActive",
-  "cloudLightHover",
-  "cloudNormal",
-  "cloudNormalActive",
-  "cloudNormalHover",
-  "greenDark",
-  "greenDarkActive",
-  "greenDarker",
-  "greenDarkHover",
-  "greenLight",
-  "greenLightActive",
-  "greenLightHover",
-  "greenNormal",
-  "greenNormalActive",
-  "greenNormalHover",
-  "inkLight",
-  "inkLightActive",
-  "inkLighter",
-  "inkLighterActive",
-  "inkLighterHover",
-  "inkLightHover",
-  "inkNormal",
-  "inkNormalActive",
-  "inkNormalHover",
-  "orangeDark",
-  "orangeDarkActive",
-  "orangeDarker",
-  "orangeDarkHover",
-  "orangeLight",
-  "orangeLightActive",
-  "orangeLightHover",
-  "orangeNormal",
-  "orangeNormalActive",
-  "orangeNormalHover",
-  "productDark",
-  "productDarkActive",
-  "productDarker",
-  "productDarkHover",
-  "productLight",
-  "productLightActive",
-  "productLightHover",
-  "productNormal",
-  "productNormalActive",
-  "productNormalHover",
-  "redDark",
-  "redDarkActive",
-  "redDarker",
-  "redDarkHover",
-  "redLight",
-  "redLightActive",
-  "redLightHover",
-  "redNormal",
-  "redNormalActive",
-  "redNormalHover",
-  "socialFacebook",
-  "socialFacebookActive",
-  "socialFacebookHover",
-  "white",
-  "whiteActive",
-  "whiteHover",
-];
-
 export const Default = (): React.Node => <Skeleton />;
 
 Default.story = {
@@ -104,34 +29,24 @@ Default.story = {
 };
 
 export const Playground = (): React.Node => {
-  const animate = boolean("animate", true);
+  const animation = select("animation", ["wave", "pulse", "none"], "pulse");
   const animationInterval = number("animationInterval", 0.5);
   const animationSpeed = number("animationSpeed", 3);
-  const backgroundColor = select("backgroundColor", COLORS, "cloudNormal");
-  const backgroundOpacity = number("backgroundOpacity", 1);
-  const foregroundColor = select("foregroundColor", COLORS, "cloudDark");
-  const foregroundOpacity = number("foregroundOpacity", 1);
-  const gradientRatio = number("gradientRatio", 2);
   const height = number("height", 0);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
   const rowOffset = number("rowOffset", 30);
   const rows = number("rows", 10);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
-  const viewBox = text("viewBox", "");
+  const viewBox = text("viewBox", undefined);
   const width = number("width", 0);
   const title = text("title", "Loading");
 
   return (
     <Skeleton
-      animate={animate}
+      animation={animation}
       animationInterval={animationInterval}
       animationSpeed={animationSpeed}
-      backgroundColor={backgroundColor}
-      backgroundOpacity={backgroundOpacity}
-      foregroundColor={foregroundColor}
-      foregroundOpacity={foregroundOpacity}
-      gradientRatio={gradientRatio}
       height={height}
       title={title}
       rowBorderRadius={rowBorderRadius}

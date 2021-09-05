@@ -4,22 +4,18 @@
 */
 import * as React from "react";
 
-import type { ColorTokens } from "../Box";
 import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
+
+export type Animation = "pulse" | "wave" | "none";
 export type Props = {|
-  +animate?: boolean,
+  +animation?: Animation,
   +animationInterval?: number,
   +animationSpeed?: number,
   +ariaLabelledby?: string,
-  +backgroundColor?: ColorTokens,
-  +backgroundOpacity?: number,
   +children?: React.Node,
-  +foregroundColor?: ColorTokens,
-  +foregroundOpacity?: number,
-  +gradientRatio?: number,
   +height?: number,
   +preset?: Preset,
   +rowBorderRadius?: number,

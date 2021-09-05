@@ -27,8 +27,6 @@ export type StatusColor = {
   darkHover: string;
   darkActive: string;
   darker: string;
-  darkerHover: string;
-  darkerActive: string;
 };
 
 export type WhiteColor = {
@@ -45,6 +43,8 @@ export type CloudColor = {
   normalHover: string;
   normalActive: string;
   dark: string;
+  darkerHover: string;
+  darkerActive: string;
 };
 
 export type InkColor = {
@@ -537,6 +537,9 @@ export type Tokens = {
   paletteCloudNormalHover: string;
   paletteCloudNormalActive: string;
   paletteCloudDark: string;
+  paletteCloudDarker: string;
+  paletteCloudDarkerHover: string;
+  paletteCloudDarkerActive: string;
   paletteInkLighter: string;
   paletteInkLighterHover: string;
   paletteInkLighterActive: string;

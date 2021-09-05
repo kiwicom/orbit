@@ -115,7 +115,7 @@
       "name": "zIndexSticky"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorCheckboxRadio"
@@ -301,6 +301,12 @@
       "name": "boxShadowRaised"
     },
     {
+      "value": "rgb(148, 168, 190)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarkerActive"
+    },
+    {
       "value": "rgb(232, 244, 253)",
       "type": "color",
       "category": "Background colors",
@@ -349,7 +355,7 @@
       "name": "paddingButtonSmall"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextSecondary"
@@ -379,7 +385,7 @@
       "name": "paletteGreenDarkActive"
     },
     {
-      "value": "rgb(166, 182, 200)",
+      "value": "rgb(93, 115, 142)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighterHover"
@@ -584,7 +590,7 @@
       "name": "paletteCloudNormalActive"
     },
     {
-      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(105, 125, 149, 0.23))",
       "type": "string",
       "category": "Background colors",
       "name": "backgroundTableShadowLeft"
@@ -650,7 +656,7 @@
       "name": "backgroundBadgeWarning"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorInfoCheckBoxRadio"
@@ -782,7 +788,7 @@
       "name": "colorTextBadgeDark"
     },
     {
-      "value": "rgb(166, 182, 200)",
+      "value": "rgb(93, 115, 142)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputHover"
@@ -987,7 +993,7 @@
       "name": "backgroundBadgeDark"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLight"
@@ -1125,7 +1131,7 @@
       "name": "colorTextButtonCriticalBordered"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextInputPrefix"
@@ -1173,7 +1179,7 @@
       "name": "backgroundButtonFacebookActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextLoading"
@@ -1209,7 +1215,7 @@
       "name": "colorFormLabel"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconRadioButtonDisabled"
@@ -1348,7 +1354,7 @@
       "name": "colorPlaceholderInputError"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconInput"
@@ -1366,7 +1372,7 @@
       "name": "backgroundAlertWarning"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconTertiary"
@@ -1408,7 +1414,7 @@
       "name": "backgroundButtonLinkPrimaryActive"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorFormLabelFilled"
@@ -1552,7 +1558,7 @@
       "name": "heightIllustrationSmall"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorStopoverArrow"
@@ -1648,13 +1654,13 @@
       "name": "colorIconRadioButton"
     },
     {
-      "value": "rgb(70, 85, 103)",
+      "value": "rgb(50, 66, 86)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLightActive"
     },
     {
-      "value": "rgb(82, 100, 122)",
+      "value": "rgb(62, 78, 99)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLightHover"
@@ -1834,7 +1840,7 @@
       "name": "colorTextSuccess"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInput"
@@ -2056,7 +2062,7 @@
       "name": "colorTextButtonLinkPrimaryHover"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorPlaceholderInputFile"
@@ -2104,7 +2110,7 @@
       "name": "colorTextButtonGoogleBorderedHover"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextInputDisabled"
@@ -2164,7 +2170,7 @@
       "name": "paletteProductDarker"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorTableHead"
@@ -2242,13 +2248,13 @@
       "name": "heightInputLarge"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighter"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconSecondary"
@@ -2284,7 +2290,7 @@
       "name": "colorTextButtonWhiteBorderedActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconCheckboxRadioDisabled"
@@ -2302,7 +2308,7 @@
       "name": "backgroundButtonGoogle"
     },
     {
-      "value": "rgb(148, 168, 190)",
+      "value": "rgb(74, 97, 124)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputActive"
@@ -2320,7 +2326,7 @@
       "name": "backgroundButtonSuccessHover"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorTableCell"
@@ -2428,7 +2434,7 @@
       "name": "backgroundButtonSecondaryActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorPlaceholderInput"
@@ -2470,7 +2476,7 @@
       "name": "paletteBlueLightHover"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorCheckboxRadioHover"
@@ -2560,7 +2566,7 @@
       "name": "paddingTextareaSmall"
     },
     {
-      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(105, 125, 149, 0.23))",
       "type": "string",
       "category": "Background colors",
       "name": "backgroundTableShadowRight"
@@ -2681,6 +2687,12 @@
       "name": "widthBreakpointTablet"
     },
     {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarker"
+    },
+    {
       "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "Colors",
@@ -2747,7 +2759,7 @@
       "name": "paddingButtonLargeWithLeftIcon"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextTable"
@@ -2771,7 +2783,7 @@
       "name": "fontSizeTextLarge"
     },
     {
-      "value": "rgb(148, 168, 190)",
+      "value": "rgb(74, 97, 124)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighterActive"
@@ -2829,6 +2841,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteRedNormalHover"
+    },
+    {
+      "value": "rgb(166, 182, 200)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarkerHover"
     },
     {
       "value": "rgb(174, 87, 0)",

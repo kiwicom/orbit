@@ -7,6 +7,7 @@ export const ModalContext: ModalContextType = React.createContext({
   setHasModalTitle: () => {},
   setHasModalSection: () => {},
   removeHasModalSection: () => {},
+  setFooterHeight: () => {},
   callContextFunctions: () => {},
   hasModalSection: false,
   hasMobileHeader: true,

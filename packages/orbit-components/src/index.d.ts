@@ -3,6 +3,8 @@
 
 declare module "@kiwicom/orbit-components";
 
+export * as Icons from "./icons";
+
 export { Alert } from "./Alert";
 export { Accordion } from "./Accordion";
 export { AccordionSection } from "./Accordion/AccordionSection";

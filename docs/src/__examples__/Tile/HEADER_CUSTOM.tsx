@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Text, Badge, Tile, CountryFlag } from "@kiwicom/orbit-components";
 import { GenderWoman } from "@kiwicom/orbit-components/icons";
 

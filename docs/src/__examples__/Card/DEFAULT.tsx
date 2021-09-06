@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Card, CardSection, Inline } from "@kiwicom/orbit-components";
 import { GenderWoman } from "@kiwicom/orbit-components/icons";
 
@@ -13,9 +13,31 @@ export default {
       </CardSection>
     </Card>
   ),
-  info: {
-    title: "Default card",
-    description:
-      "Cards can have titles and descriptions that cover all of their contents plus sections for organization.",
-  },
+  exampleKnobs: [
+    {
+      component: "Card",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "loading", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "Passenger info" },
+        { name: "description", type: "text", defaultValue: "All passengers in this itinerary" },
+      ],
+    },
+    {
+      component: "CardSection",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "noSeparator", type: "boolean", defaultValue: false },
+        { name: "initialExpanded", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "" },
+        { name: "description", type: "text", defaultValue: "" },
+        {
+          name: "titleAs",
+          type: "select",
+          defaultValue: "h2",
+          options: ["h1", "h2", "h3", "h4", "h5", "h6", "div"],
+        },
+      ],
+    },
+  ],
 };

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, ButtonLink, Heading, Stack, Popover, Text } from "@kiwicom/orbit-components";
 import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 

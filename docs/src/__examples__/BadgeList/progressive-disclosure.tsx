@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { BaggageSet, KiwicomGuarantee } from "@kiwicom/orbit-components/icons";
 import {
   BadgeList,
@@ -51,9 +51,5 @@ export default {
         </BadgeList>
       </>
     );
-  },
-  info: {
-    title: "Default badge list",
-    description: "",
   },
 };

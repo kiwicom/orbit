@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { SIZE_OPTIONS } from "./consts";
 import { StyledText } from "../../Text";
 import Portal from "../../Portal";
-import randomID from "../../utils/randomID";
+import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
@@ -58,7 +58,7 @@ const TooltipPrimitive = ({
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
 
-  const tooltipId = React.useMemo(() => randomID("TooltipID"), []);
+  const tooltipId = useRandomId();
   const container = React.useRef(null);
   const handleIn = React.useCallback(() => {
     setRender(true);

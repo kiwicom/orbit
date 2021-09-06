@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Check, InformationCircle } from "@kiwicom/orbit-components/icons";
 import {
   CallOutBanner,

@@ -16,20 +16,28 @@ export interface Props {
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
   const [origin, setOrigin] = React.useState("");
+  const key = exampleId.toLowerCase();
 
-  const { allFile } = useStaticQuery(
+  const { allExample } = useStaticQuery(
     graphql`
       query ExamplesQuery {
-        allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
+        allExample {
           nodes {
             id
-            fields {
-              example
-              example_id
-              scope {
+            example
+            example_id
+            scope {
+              name
+              path
+              default
+            }
+            exampleKnobs {
+              component
+              knobs {
+                defaultValue
+                options
                 name
-                path
-                default
+                type
               }
             }
           }
@@ -39,19 +47,25 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   );
 
   React.useEffect(() => {
-    const key = exampleId.toLowerCase();
     if (code) window.localStorage.setItem(key, code);
+
     setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
-  }, [setCode, code, exampleId, setOrigin]);
+  }, [code, exampleId, setOrigin, key]);
 
-  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
+  React.useEffect(() => {
+    if (window.localStorage.getItem(key)) {
+      setCode(window.localStorage.getItem(key) || "");
+    }
+  }, [setCode, key]);
+
+  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
-  const imports = copyImports(example.fields.scope);
-  const codeWithImports = [imports, example.fields.example].join("\n");
+  const imports = copyImports(example.scope);
+  const codeWithImports = [imports, code].join("\n");
 
   return (
     <Example
@@ -59,10 +73,11 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       maxHeight={maxHeight}
       background={background}
       origin={origin}
+      exampleKnobs={example.exampleKnobs}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}
-      example={example.fields.example}
+      example={example.example}
       onChangeCode={c => setCode(c)}
     />
   );

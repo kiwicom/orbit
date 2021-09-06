@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Airplane, Passengers } from "@kiwicom/orbit-components/icons";
 import { Inline, Stack, Text } from "@kiwicom/orbit-components";
 

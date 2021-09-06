@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Sandbox = ({ pathContext }) => {
-  const { example, id, example_id, scope } = pathContext;
+  const { example, id, example_id, scope, exampleKnobs } = pathContext;
   const { code, origin, setCode } = useSandbox(example_id);
 
   const modules = getModules(scope);
@@ -42,6 +42,7 @@ const Sandbox = ({ pathContext }) => {
           isFullPage
           example={example}
           origin={origin}
+          exampleKnobs={exampleKnobs}
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>

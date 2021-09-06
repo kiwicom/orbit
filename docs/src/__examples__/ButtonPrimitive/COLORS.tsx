@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Stack, Heading, Text } from "@kiwicom/orbit-components";
 import { AirplaneTakeoff } from "@kiwicom/orbit-components/icons";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Badge, Tooltip } from "@kiwicom/orbit-components";
 import { InformationCircle } from "@kiwicom/orbit-components/icons";
 
@@ -14,8 +14,4 @@ export default {
       </Badge>
     </Tooltip>
   ),
-  info: {
-    title: "",
-    description: "",
-  },
 };

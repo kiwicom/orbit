@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Stack, Popover, Stepper, Text } from "@kiwicom/orbit-components";
 import { ChevronDown, Passengers } from "@kiwicom/orbit-components/icons";
 

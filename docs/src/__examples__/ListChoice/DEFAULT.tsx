@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ListChoice, Popover, InputField } from "@kiwicom/orbit-components";
 
 export default {

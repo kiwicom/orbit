@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputStepperStateless } from "@kiwicom/orbit-components";
 import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecrement";
 import validateIncrement from "@kiwicom/orbit-components/lib/utils/validateIncrement";

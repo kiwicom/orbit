@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ChoiceGroup, Checkbox, Radio, Stack } from "@kiwicom/orbit-components";
 
 export default {

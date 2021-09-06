@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import randomID from "../../utils/randomID";
+import { useRandomIdSeed } from "../../hooks/useRandomId";
 import useTheme from "../../hooks/useTheme";
 import { SIZE_OPTIONS } from "../consts";
 import type { Type, Size } from "..";
@@ -23,8 +23,9 @@ export const StyledCirclePath: any = styled.path``;
 
 const SeatCircle = ({ size, type }: Props): React.Node => {
   const theme = useTheme();
-  const circleSmallId = React.useMemo(() => randomID("circleSmallId"), []);
-  const circleNormalId = React.useMemo(() => randomID("circleNormalId"), []);
+  const randomId = useRandomIdSeed();
+  const circleSmallId = randomId("circleSmallId");
+  const circleNormalId = randomId("circleNormalId");
 
   return (
     <StyledCircleWrapper size={size}>

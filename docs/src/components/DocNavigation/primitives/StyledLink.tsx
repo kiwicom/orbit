@@ -5,8 +5,8 @@ const StyledLink = styled(Link)<{ $active: boolean; level: number }>`
   ${({ theme, $active, level }) => `
     position: relative;
     display: block;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     color: ${theme.orbit.paletteInkNormal};
     transition: all ${theme.orbit.durationFast};
     &:hover,

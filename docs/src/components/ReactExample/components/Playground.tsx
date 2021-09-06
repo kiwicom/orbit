@@ -46,15 +46,16 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
   }: {
     component: string;
     name: string;
-    value: string | boolean;
-  }) =>
-    setValues(prev => ({
+    value: number | string | boolean;
+  }) => {
+    return setValues(prev => ({
       ...prev,
       [component]: {
         ...prev[component],
         [name]: value,
       },
     }));
+  };
 
   React.useEffect(() => {
     if (onChange) onChange(values);
@@ -133,7 +134,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                         changeKnob({
                           component,
                           name,
-                          value: ev.target.value,
+                          value: parseInt(ev.target.value, 10),
                         })
                       }
                     />

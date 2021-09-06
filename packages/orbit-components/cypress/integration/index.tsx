@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { ThemeProvider, defaultTheme } from "../..";
 import LockScrolling from "./pages/lock-scrolling";
+import ModalFooter from "./pages/modal-footer";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <Switch>
           <Route path="/lock-scrolling">
             <LockScrolling />
+          </Route>
+          <Route path="/modal-footer">
+            <ModalFooter />
           </Route>
           <Route>
             <div>404</div>

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledCollapseWrapper = styled.div`
+  padding: 1px;
   > * {
     border-bottom: 0;
   }

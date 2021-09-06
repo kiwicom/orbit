@@ -1,4 +1,3 @@
-import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 export const StyledCollapseWrapper = styled.div`
@@ -24,10 +23,6 @@ export const StyledCollapseContent = styled.div<{ hasCategories: boolean }>`
           > * {
             padding-left: 0.5rem;
             padding-right: 0.5rem;
-            ${mediaQueries.desktop(css`
-              padding-left: 0;
-              padding-right: 0;
-            `)};
           }
         `}
   `};

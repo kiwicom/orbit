@@ -24,10 +24,6 @@ export const StyledCollapseContent = styled.div<{ hasCategories: boolean }>`
           > * {
             padding-left: 0.5rem;
             padding-right: 0.5rem;
-            ${mediaQueries.desktop(css`
-              padding-left: 0;
-              padding-right: 0;
-            `)};
           }
         `}
   `};

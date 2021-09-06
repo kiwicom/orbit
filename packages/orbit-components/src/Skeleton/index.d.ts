@@ -50,7 +50,7 @@ interface Props extends Common.SpaceAfter, Common.Global {
   readonly animationInterval?: number;
   /** Set animation speed  */
   /** default: `2` */
-  readonly animationSpeed?: number;
+  readonly animationDuration?: number;
   /** Optional prop for a11y element */
   readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;

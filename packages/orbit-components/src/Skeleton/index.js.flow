@@ -13,7 +13,7 @@ export type Animation = "pulse" | "wave" | "none";
 export type Props = {|
   +animation?: Animation,
   +animationInterval?: number,
-  +animationSpeed?: number,
+  +animationDuration?: number,
   +ariaLabelledby?: string,
   +children?: React.Node,
   +height?: number,

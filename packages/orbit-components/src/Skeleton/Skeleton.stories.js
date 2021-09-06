@@ -31,7 +31,7 @@ Default.story = {
 export const Playground = (): React.Node => {
   const animation = select("animation", ["wave", "pulse", "none"], "pulse");
   const animationInterval = number("animationInterval", 0.5);
-  const animationSpeed = number("animationSpeed", 3);
+  const animationDuration = number("animationDuration", 3);
   const height = number("height", 0);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
@@ -46,7 +46,7 @@ export const Playground = (): React.Node => {
     <Skeleton
       animation={animation}
       animationInterval={animationInterval}
-      animationSpeed={animationSpeed}
+      animationDuration={animationDuration}
       height={height}
       title={title}
       rowBorderRadius={rowBorderRadius}

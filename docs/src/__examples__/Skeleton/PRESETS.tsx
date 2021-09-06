@@ -1,8 +1,6 @@
 import React from "react";
 import { Skeleton } from "@kiwicom/orbit-components";
 
-const PRESETS = ["List", "Text", "Card", "Button", "Image"];
-
 export default {
   Example: () => <Skeleton preset="List" />,
   exampleKnobs: [
@@ -12,7 +10,7 @@ export default {
         {
           name: "preset",
           type: "select",
-          options: PRESETS,
+          options: ["List", "Text", "Card", "Button", "Image"],
           defaultValue: "List",
         },
       ],

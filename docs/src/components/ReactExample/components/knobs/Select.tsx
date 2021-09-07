@@ -13,9 +13,7 @@ const SelectKnob = ({ value, name, onChange, options }: Props) => {
 
   return (
     <>
-      <Text weight="bold" size="small" type="secondary">
-        {name.split("-")[1]}
-      </Text>
+      <Text size="small">{name.split("-")[1]}</Text>
       <Select
         name={name}
         value={value}

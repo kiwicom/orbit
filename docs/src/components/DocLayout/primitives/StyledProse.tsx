@@ -1,5 +1,6 @@
 import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
+
 import { boxShadowDefault } from "../../mixins";
 import { StyledAnchorWrapper } from "../../HeadingWithLink";
 

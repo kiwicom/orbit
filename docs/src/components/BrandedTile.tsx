@@ -3,6 +3,7 @@ import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-compo
 import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
+
 import { boxShadowDefault, boxShadowActive } from "./mixins";
 import { getBgColor, getBgColorHover, getBgColorActive } from "../utils/dark-button";
 import { ICON_SIZE } from "./Tile";

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
+
 import { boxShadowDefault, boxShadowActive } from "./mixins";
 import ArrowRight from "./ArrowRight";
 import useIsUrlExternal from "../hooks/useIsUrlExternal";

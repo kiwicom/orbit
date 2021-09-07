@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-
+import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
 import defaultTheme from "../../defaultTheme";
@@ -21,7 +21,7 @@ import useIsMountedRef from "../../hooks/useIsMountedRef";
 import type { Props } from ".";
 
 const StyledFormFeedbackTooltip = styled.div`
-  ${({ theme, isHelp, visible, inputSize }) => css`
+  ${({ theme, isHelp, shown, inputSize }) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,8 +36,8 @@ const StyledFormFeedbackTooltip = styled.div`
     overflow: visible;
     width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
     background-color: ${resolveColor};
-    visibility: ${visible ? "visible" : "hidden"};
-    opacity: ${visible ? "1" : "0"};
+    visibility: ${shown ? "visible" : "hidden"};
+    opacity: ${shown ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
       visibility ${theme.orbit.durationFast} ease-in-out;
 
@@ -130,21 +130,20 @@ StyledCloseButton.defaultProps = {
 };
 
 const ErrorFormTooltip = ({
-  onShow,
+  onShown,
   labelRef,
   dataTest,
   inputSize,
   iconRef,
   children,
   inputRef,
-  visible,
+  shown,
   isHelp = false,
   inlineLabel,
   id,
 }: Props): React.Node => {
-  const contentRef = React.useRef<HTMLDivElement | null>(null);
+  const contentRef = React.useRef(null);
   const tooltipRef = React.useRef<HTMLElement | null>(null);
-  const isMountedRef = useIsMountedRef();
 
   const dimensions = useDimensions({
     labelRef,
@@ -159,44 +158,38 @@ const ErrorFormTooltip = ({
     [dimensions.label.top, dimensions.content.height],
   );
 
-  React.useEffect(() => {
-    const hasTextLink = tooltipRef.current?.querySelector("a");
+  useClickOutside(contentRef, () => {
+    if (!isHelp) onShown(false);
+  });
 
-    const handleClick = ev => {
-      // $FlowFixMe: TODO
-      if (isMountedRef.current && !isHelp && inputRef && !inputRef.current?.contains(ev.target)) {
-        onShow(false);
-      }
-    };
+  React.useEffect(() => {
+    // $FlowFixMe: TODO
+    const link = tooltipRef.current?.querySelector("a");
 
     const handleTab = ev => {
       if (isHelp) return;
-      if (isMountedRef.current) {
-        if (ev.keyCode === KEY_CODE_MAP.TAB && hasTextLink) {
-          onShow(true);
-          if (document.activeElement === hasTextLink) {
-            onShow(false);
-          }
-        } else {
-          onShow(false);
+      if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
+        onShown(true);
+        if (document.activeElement === link) {
+          onShown(false);
         }
+      } else {
+        onShown(false);
       }
     };
 
     window.addEventListener("keydown", handleTab);
-    window.addEventListener("click", handleClick);
     return () => {
       window.removeEventListener("keydown", handleTab);
-      window.addEventListener("click", handleClick);
     };
-  }, [onShow, isHelp, isMountedRef]);
+  }, [onShown, isHelp]);
 
   return (
     <StyledFormFeedbackTooltip
       ref={tooltipRef}
       inputSize={inputSize}
       position={preferredPosition}
-      visible={visible && dimensions.set}
+      shown={shown && dimensions.set}
       isHelp={isHelp}
       data-test={dataTest}
       inlineLabel={inlineLabel}
@@ -209,10 +202,10 @@ const ErrorFormTooltip = ({
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO
-          onKeyDown={handleKeyDown(onShow)}
+          onKeyDown={handleKeyDown(onShown)}
           onClick={ev => {
             ev.preventDefault();
-            if (onShow && visible) onShow();
+            if (shown) onShown(false);
           }}
         >
           <CloseIc ariaLabel="close" size="small" />

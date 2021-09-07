@@ -379,12 +379,12 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
   const {
     tooltipShown,
     tooltipShownHover,
+    setTooltipShown,
     setTooltipShownHover,
     labelRef,
     iconRef,
     handleFocus,
-    handleBlur,
-  } = useErrorTooltip({ onFocus, onBlur });
+  } = useErrorTooltip({ onFocus });
 
   const shown = tooltipShown || tooltipShownHover;
   const inputRef = React.useRef<HTMLElement | null>(null);
@@ -456,7 +456,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             }
             onChange={onChange}
             onFocus={handleFocus}
-            onBlur={handleBlur}
+            onBlur={onBlur}
             onKeyUp={onKeyUp}
             onKeyDown={onKeyDown}
             onSelect={onSelect}
@@ -492,12 +492,13 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
           <ErrorFormTooltip
             help={help}
             id={inputId}
+            shown={shown}
+            onShown={setTooltipShown}
             error={error}
             inputRef={inputRef}
             inputSize={size}
             iconRef={iconRef}
             labelRef={labelRef}
-            shown={shown}
             inlineLabel={!tags && inlineLabel}
           />
         )}

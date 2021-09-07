@@ -6,14 +6,14 @@ import type { Globals, RefType } from "../../common/common.js.flow";
 export type Props = {|
   +id?: string,
   +children: React.Node,
-  +visible?: boolean,
+  +shown?: boolean,
   +isHelp?: boolean,
   +labelRef?: RefType,
   +inputRef?: RefType,
   +inputSize?: "small" | "normal",
   +iconRef?: RefType,
   +inlineLabel?: boolean,
-  +onShow: (state?: boolean) => void,
+  +onShown: ((boolean => boolean) | boolean) => void,
   ...Globals,
 |};
 

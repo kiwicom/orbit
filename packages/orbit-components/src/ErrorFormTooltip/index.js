@@ -5,22 +5,16 @@ import Tooltip from "./Tooltip";
 
 import type { Props } from ".";
 
-const ErrorFormTooltip = ({ shown, error, help, ...props }: Props): React.Node => {
-  const [visible, setVisible] = React.useState(false);
-
-  React.useEffect(() => {
-    if (shown) setVisible(true);
-  }, [shown]);
-
+const ErrorFormTooltip = ({ shown, onShown, error, help, ...props }: Props): React.Node => {
   return (
     <>
-      {visible && help && !error && (
-        <Tooltip isHelp visible={visible} onShow={() => setVisible(prev => !prev)} {...props}>
+      {shown && help && !error && (
+        <Tooltip isHelp shown={shown} onShown={() => onShown(prev => !prev)} {...props}>
           {help}
         </Tooltip>
       )}
-      {visible && error && (
-        <Tooltip visible={visible} onShow={value => setVisible(value)} {...props}>
+      {shown && error && (
+        <Tooltip shown={shown} onShown={value => onShown(value)} {...props}>
           {error}
         </Tooltip>
       )}

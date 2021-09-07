@@ -149,12 +149,12 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
   const {
     tooltipShown,
     tooltipShownHover,
+    setTooltipShown,
     setTooltipShownHover,
     labelRef,
     iconRef,
     handleFocus,
-    handleBlur,
-  } = useErrorTooltip({ onFocus, onBlur });
+  } = useErrorTooltip({ onFocus });
 
   const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
@@ -189,7 +189,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         onChange={onChange}
         rows={rows}
         onFocus={handleFocus}
-        onBlur={handleBlur}
+        onBlur={onBlur}
         resize={resize}
         tabIndex={tabIndex}
         readOnly={readOnly}
@@ -201,6 +201,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         iconRef={iconRef}
         inputRef={inputRef}
         labelRef={labelRef}
+        onShown={setTooltipShown}
         shown={shown}
       />
     </Field>

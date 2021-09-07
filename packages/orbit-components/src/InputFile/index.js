@@ -133,12 +133,12 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
   const {
     tooltipShown,
     tooltipShownHover,
+    setTooltipShown,
     setTooltipShownHover,
     labelRef,
     iconRef,
     handleFocus,
-    handleBlur,
-  } = useErrorTooltip({ onFocus, onBlur });
+  } = useErrorTooltip({ onFocus });
 
   const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
@@ -158,7 +158,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         error={error}
         onChange={onChange}
         onFocus={handleFocus}
-        onBlur={handleBlur}
+        onBlur={onBlur}
         accept={allowedFileTypes}
         tabIndex={tabIndex}
       />
@@ -210,6 +210,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           inputRef={inputRef}
           labelRef={labelRef}
           shown={shown}
+          onShown={setTooltipShown}
         />
       )}
     </Field>

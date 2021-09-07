@@ -304,9 +304,9 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
     setTooltipShownHover,
     labelRef,
     iconRef,
+    setTooltipShown,
     handleFocus,
-    handleBlur,
-  } = useErrorTooltip({ onFocus, onBlur });
+  } = useErrorTooltip({ onFocus });
 
   const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
@@ -348,7 +348,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           prefix={prefix}
           name={name}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          onBlur={onBlur}
           onChange={onChange}
           filled={filled}
           customValueText={customValueText}
@@ -387,6 +387,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           labelRef={labelRef}
           inputSize={size}
           shown={shown}
+          onShown={setTooltipShown}
         />
       )}
     </Label>

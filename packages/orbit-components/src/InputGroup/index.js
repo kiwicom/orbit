@@ -226,7 +226,6 @@ const InputGroup = ({
   const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
     isFilled();
     setActive(false);
-    setTooltipShown(false);
     if (onBlur) onBlur(ev);
     if (callBack) callBack(ev);
   };
@@ -306,6 +305,7 @@ const InputGroup = ({
         inputRef={labelRef}
         labelRef={labelRef}
         inputSize={size}
+        onShown={setTooltipShown}
         shown={tooltipShown || tooltipShownHover}
       />
     </StyledInputGroup>

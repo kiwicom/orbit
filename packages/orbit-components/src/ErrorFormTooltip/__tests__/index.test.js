@@ -7,19 +7,25 @@ import ErrorFormTooltip from "..";
 
 describe("ErrorFormTooltip", () => {
   it("should have error", () => {
-    render(<ErrorFormTooltip dataTest="test" shown error="error" />);
+    const onShown = jest.fn();
+    const { container } = render(
+      <ErrorFormTooltip dataTest="test" onShown={onShown} shown error="error" />,
+    );
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("error")).toBeInTheDocument();
+    userEvent.click(container);
+    expect(onShown).toHaveBeenCalled();
   });
 
   it("should have help", () => {
-    render(<ErrorFormTooltip dataTest="test" shown help="help" />);
+    const onShown = jest.fn();
+    render(<ErrorFormTooltip dataTest="test" onShown={onShown} shown help="help" />);
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("help")).toBeInTheDocument();
 
     userEvent.click(screen.getByLabelText("close"));
-    expect(screen.queryByText("help")).not.toBeInTheDocument();
+    expect(onShown).toHaveBeenCalled();
   });
 });

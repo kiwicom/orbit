@@ -298,6 +298,7 @@ export default function Home({ location, path }: Props) {
 
         <div
           css={css`
+            margin-bottom: 4rem;
             > * + * {
               margin-top: 2rem;
             }

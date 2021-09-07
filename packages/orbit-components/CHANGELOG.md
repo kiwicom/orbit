@@ -10,7 +10,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **Badge:** add border to type white ([#3085](https://github.com/kiwicom/orbit/issues/3085)) ([70264ee](https://github.com/kiwicom/orbit/commit/70264ee7160e55293b63babc28ad6067b127bd59))
 * **CountryFlag:** disallow `code` value null ([481b36c](https://github.com/kiwicom/orbit/commit/481b36cbbbd2814f9fd1d6202402003ac4af2ea6))
-* **CountryFlag:** set "undefined" as default code ([546da2a](https://github.com/kiwicom/orbit/commit/546da2a7e76a75d4dbba042ea558d76449f9f453))
 * **Drawer:** fix iOS bug with scrolling content ([92827ab](https://github.com/kiwicom/orbit/commit/92827abcff5ab7e9938c0e5252cfa3c1e7233ffe))
 * **Modal:** fix bug with detached footer ([#3093](https://github.com/kiwicom/orbit/issues/3093)) ([d552b78](https://github.com/kiwicom/orbit/commit/d552b7826bdfd3687ac06a255ec8a0d7c4a06beb))
 * add missing TS definitions in ESM build ([90ec51a](https://github.com/kiwicom/orbit/commit/90ec51a5bfdf34b5d844c9e73278ca70a2207217))
@@ -23,18 +22,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Illustration:** add EVisa image ([#3091](https://github.com/kiwicom/orbit/issues/3091)) ([23d0ecd](https://github.com/kiwicom/orbit/commit/23d0ecd3278061e98d49ff34350082ae596a2983))
 
 
-### Reverts
-
-* **CountryFlag:** set anywhere as default code ([007a20b](https://github.com/kiwicom/orbit/commit/007a20bde656f992304be8494830500e0e4e8607))
-
-
 ### BREAKING CHANGES
 
 * **CountryFlag:** Flow and TypeScript type definitions no longer allow
 `null` as value for `CountryFlag`'s `code`.
-* **CountryFlag:** The default code for CountryFlag is now `"undefined"`
-rather than `"anywhere"`, a gray flag with a question mark. This code is
-also used if the given code isn't supported.
 
 
 

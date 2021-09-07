@@ -16,8 +16,8 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     min-height: ${isFullPage && `100%`};
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     border-radius: 12px;
+    border: 1px solid ${theme.orbit.paletteCloudDark};
   `};
 `;
 

@@ -7,7 +7,7 @@ const StyledProse = styled(Box)`
   ${({ theme, elevation }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     ${mediaQueries.tablet(css`
-      border-radius: ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium} 0 0;
+      border-radius: ${theme.orbit.spaceMedium};
     `)};
     > * + * {
       margin-top: 16px;

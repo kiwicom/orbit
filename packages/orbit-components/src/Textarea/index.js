@@ -12,7 +12,6 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -156,7 +155,6 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
-  const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
 
   return (
@@ -193,13 +191,12 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         resize={resize}
         tabIndex={tabIndex}
         readOnly={readOnly}
-        ref={mergeRefs([ref, inputRef])}
+        ref={ref}
       />
       <ErrorFormTooltip
         help={help}
         error={error}
         iconRef={iconRef}
-        inputRef={inputRef}
         labelRef={labelRef}
         onShown={setTooltipShown}
         shown={shown}

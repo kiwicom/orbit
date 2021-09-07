@@ -15,7 +15,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -140,7 +139,6 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
-  const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
 
   return (
@@ -185,7 +183,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         >
           {buttonLabel}
         </Button>
-        <StyledFileInput fileName={fileName} error={error} ref={mergeRefs([ref, inputRef])}>
+        <StyledFileInput fileName={fileName} error={error} ref={ref}>
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (
@@ -207,7 +205,6 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           help={help}
           error={error}
           iconRef={iconRef}
-          inputRef={inputRef}
           labelRef={labelRef}
           shown={shown}
           onShown={setTooltipShown}

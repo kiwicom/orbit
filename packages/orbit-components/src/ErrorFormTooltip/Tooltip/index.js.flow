@@ -9,7 +9,6 @@ export type Props = {|
   +shown?: boolean,
   +isHelp?: boolean,
   +labelRef?: RefType,
-  +inputRef?: RefType,
   +inputSize?: "small" | "normal",
   +iconRef?: RefType,
   +inlineLabel?: boolean,

@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -16,7 +17,6 @@ import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "../hooks/useDimensions";
 import { POSITIONS, SIDE_NUDGE } from "./consts";
-import useIsMountedRef from "../../hooks/useIsMountedRef";
 
 import type { Props } from ".";
 
@@ -136,7 +136,6 @@ const ErrorFormTooltip = ({
   inputSize,
   iconRef,
   children,
-  inputRef,
   shown,
   isHelp = false,
   inlineLabel,

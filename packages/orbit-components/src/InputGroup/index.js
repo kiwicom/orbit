@@ -302,7 +302,6 @@ const InputGroup = ({
         help={helpReal}
         error={errorReal}
         iconRef={iconRef}
-        inputRef={labelRef}
         labelRef={labelRef}
         inputSize={size}
         onShown={setTooltipShown}

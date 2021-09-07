@@ -14,7 +14,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -49,7 +48,7 @@ const StyledSelect: React.AbstractComponent<
   any,
   React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
 > = styled(
-  React.forwardRef<StyledSelectType, HTMLSelectElement>(
+  React.forwardRef(
     (
       {
         className,
@@ -268,10 +267,10 @@ StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardRef<
+const Select: React.AbstractComponent<
   Props,
-  HTMLSelectElement,
->((props, ref) => {
+  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
+> = React.forwardRef((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,
@@ -308,7 +307,6 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
-  const inputRef = React.useRef(null);
   const shown = tooltipShown || tooltipShownHover;
 
   return (
@@ -356,7 +354,7 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={mergeRefs([ref, inputRef])}
+          ref={ref}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -383,7 +381,6 @@ const Select: React.AbstractComponent<Props, HTMLSelectElement> = React.forwardR
           help={help}
           error={error}
           iconRef={iconRef}
-          inputRef={inputRef}
           labelRef={labelRef}
           inputSize={size}
           shown={shown}

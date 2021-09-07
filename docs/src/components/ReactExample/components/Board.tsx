@@ -12,6 +12,7 @@ const StyledBoard = styled.div`
     margin-top: 0;
     border-radius: 0 0 12px 12px;
     padding: ${theme.orbit.spaceXSmall};
+    border-top: 1px solid ${theme.orbit.paletteCloudDark};
     background: ${theme.orbit.paletteCloudLight};
   `};
 `;

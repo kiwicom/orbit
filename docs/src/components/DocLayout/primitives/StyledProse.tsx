@@ -1,6 +1,6 @@
 import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
-
+import { boxShadowDefault } from "../../mixins";
 import { StyledAnchorWrapper } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
@@ -50,8 +50,8 @@ const StyledProse = styled(Box)`
       margin-top: 0;
     }
     ${elevation === "raised" &&
-    `
-      box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    css`
+      ${boxShadowDefault}
     `}
   `}
 `;

@@ -2,12 +2,10 @@
 import { keyframes, css } from "styled-components";
 import type { CSSRules } from "styled-components";
 
-import type { Animation } from ".";
-
 type ResolveAnimation = ({|
   duration: string,
   interval: string,
-  animation: Animation,
+  animate: boolean,
   color?: string,
 |}) => CSSRules | null;
 
@@ -35,8 +33,8 @@ const pulseAnimation = keyframes`
   }
 `;
 
-export const resolvePulseAnimation: ResolveAnimation = ({ animation, duration, interval }) => {
-  if (animation === "pulse") {
+export const resolvePulseAnimation: ResolveAnimation = ({ animate, duration, interval }) => {
+  if (animate) {
     return css`
       animation: ${pulseAnimation} ${duration} ease-in-out ${interval} infinite;
     `;

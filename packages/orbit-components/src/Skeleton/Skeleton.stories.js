@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { select, number, text } from "@storybook/addon-knobs";
+import { select, number, text, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -29,7 +29,7 @@ Default.story = {
 };
 
 export const Playground = (): React.Node => {
-  const animation = select("animation", ["wave", "pulse", "none"], "pulse");
+  const animate = boolean("animate", true);
   const animationInterval = number("animationInterval", 0.5);
   const animationDuration = number("animationDuration", 3);
   const height = number("height", 0);
@@ -44,7 +44,7 @@ export const Playground = (): React.Node => {
 
   return (
     <Skeleton
-      animation={animation}
+      animate={animate}
       animationInterval={animationInterval}
       animationDuration={animationDuration}
       height={height}

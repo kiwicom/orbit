@@ -54,7 +54,7 @@ const Rows = ({ count, height, offset, rowBorderRadius }) => {
 };
 
 const Svg = ({
-  animation = "pulse",
+  animate = true,
   animationDuration = 2,
   animationInterval = 0.5,
   ariaLabelledby,
@@ -74,8 +74,6 @@ const Svg = ({
   const uid = useRandomId();
   const id = ariaLabelledby || uid;
   const idClip = `${id}-clip`;
-  const idGradient = `${id}-animate`;
-  const fillColor = animation === "wave" ? `url(#${idGradient})` : orbit.paletteCloudDark;
 
   React.useEffect(() => {
     if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
@@ -91,7 +89,7 @@ const Svg = ({
         calculatedHeight={calculatedHeight}
         duration={duration}
         interval={interval}
-        animation={animation}
+        animate={animate}
         {...props}
       >
         {title && <title id={id}>{title}</title>}
@@ -102,7 +100,7 @@ const Svg = ({
           width="100%"
           height="100%"
           clipPath={`url(#${idClip})`}
-          style={{ fill: fillColor }}
+          style={{ fill: orbit.paletteCloudDark }}
         />
         <defs>
           <clipPath id={idClip}>
@@ -115,26 +113,6 @@ const Svg = ({
               />
             )}
           </clipPath>
-          {animation === "wave" && (
-            <linearGradient id={idGradient} x1="0" y1="0%">
-              <stop offset="0%">
-                <animate
-                  attributeName="stop-color"
-                  values={`${orbit.paletteInkLighter}; ${orbit.paletteCloudDark}`}
-                  dur={animationDuration}
-                  repeatCount="indefinite"
-                />
-              </stop>
-              <stop offset="100%" stopColor={orbit.paletteCloudNormal}>
-                <animate
-                  attributeName="offset"
-                  values="0;.20;.40;.60;.80;.99"
-                  dur={animationDuration}
-                  repeatCount="indefinite"
-                />
-              </stop>
-            </linearGradient>
-          )}
         </defs>
       </StyledSvg>
     </StyledWrapper>

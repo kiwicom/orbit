@@ -2,14 +2,11 @@
 // Project: http://github.com/kiwicom/orbit
 import React from "react";
 
-import { ColorTokens } from "../Box";
 import * as Common from "../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Skeleton";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
-
-type Animation = "wave" | "pulse" | "animation";
 
 /**  DOCS:
 Skeleton component display a placeholder preview before the data gets loaded.
@@ -44,7 +41,7 @@ or you can pick one from our predefined presets:
 */
 
 interface Props extends Common.SpaceAfter, Common.Global {
-  readonly animation?: Animation;
+  readonly animate?: boolean;
   /** Set animation interval */
   /** default: `0.2`  */
   readonly animationInterval?: number;

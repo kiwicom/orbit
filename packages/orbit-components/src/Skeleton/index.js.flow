@@ -9,9 +9,8 @@ import type { Globals } from "../common/common.js.flow";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
-export type Animation = "pulse" | "wave" | "none";
 export type Props = {|
-  +animation?: Animation,
+  +animate?: boolean,
   +animationInterval?: number,
   +animationDuration?: number,
   +ariaLabelledby?: string,

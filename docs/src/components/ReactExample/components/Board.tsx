@@ -1,11 +1,20 @@
 import React from "react";
-import { Stack, ButtonLink, Tooltip, useMediaQuery } from "@kiwicom/orbit-components";
+import {
+  Stack,
+  ButtonLink,
+  Tooltip,
+  useMediaQuery,
+  Popover,
+  Radio,
+} from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 
+import DarkMode from "../../../images/darkmode.svg";
 import NewWindow from "../../../images/new-window.svg";
 import Copy from "../../../images/copy.svg";
 import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
+import { BgType } from "..";
 
 const StyledBoard = styled.div<{ isOpened: boolean }>`
   ${({ theme, isOpened }) => css`
@@ -25,6 +34,8 @@ interface Props {
   isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
   knobs: boolean;
+  background: BgType;
+  onSelectBackground: (value: BgType) => void;
   onOpenPlayground: () => void;
   onOpenEditor: () => void;
 }
@@ -32,16 +43,36 @@ interface Props {
 const Board = ({
   isFullPage,
   exampleId,
+  background,
   code,
   isEditorOpened,
   isPlaygroundOpened,
   onOpenPlayground,
   onOpenEditor,
+  onSelectBackground,
   knobs,
   origin,
 }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
   const { isLargeMobile } = useMediaQuery();
+
+  const defaultValues = {
+    white: false,
+    dark: false,
+    grid: false,
+  };
+
+  const [active, setActive] = React.useState(defaultValues);
+
+  React.useEffect(() => {
+    setActive(prev => ({ ...prev, [background]: true }));
+  }, [background, setActive]);
+
+  const handleBackground = ev => {
+    const { name, value } = ev.target;
+    setActive({ ...defaultValues, [name]: value });
+    onSelectBackground(ev.target.name);
+  };
 
   return (
     <StyledBoard isOpened={isEditorOpened || isPlaygroundOpened}>
@@ -76,6 +107,37 @@ const Board = ({
               <Copy />
             </ButtonLink>
           </Tooltip>
+          <Popover
+            content={
+              <Stack>
+                <Radio
+                  name="white"
+                  checked={active.white}
+                  label="white"
+                  value="white"
+                  onChange={handleBackground}
+                />
+                <Radio
+                  name="dark"
+                  checked={active.dark}
+                  value="dark"
+                  label="dark"
+                  onChange={handleBackground}
+                />
+                <Radio
+                  name="grid"
+                  checked={active.grid}
+                  value="grid"
+                  label="grid"
+                  onChange={handleBackground}
+                />
+              </Stack>
+            }
+          >
+            <ButtonLink type="secondary">
+              <DarkMode />
+            </ButtonLink>
+          </Popover>
           {exampleId &&
             !isFullPage &&
             (isLargeMobile ? (

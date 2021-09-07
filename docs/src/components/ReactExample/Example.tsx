@@ -8,7 +8,7 @@ import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
 import { transform } from "./helpers";
 
-import { Props as InitialProps } from ".";
+import { BgType, Props as InitialProps } from ".";
 
 const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
   ${({ theme, isFullPage }) => css`
@@ -66,8 +66,13 @@ const Example = ({
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
+  const [bg, setBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+
+  React.useEffect(() => {
+    if (background) setBackground(background);
+  }, [background, setBackground]);
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
@@ -80,14 +85,16 @@ const Example = ({
           exampleId={exampleId}
           minHeight={minHeight}
           maxHeight={maxHeight}
-          background={background}
+          background={bg}
         />
       </StyledWrapperFrame>
       <Board
+        background={bg}
         exampleId={fullPageExampleId}
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}
         isFullPage={isFullPage}
+        onSelectBackground={value => setBackground(value)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);

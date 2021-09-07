@@ -65,11 +65,7 @@ function Dot() {
   return <Desktop>·</Desktop>;
 }
 
-interface Props {
-  hasGradient?: boolean;
-}
-
-export default function Footer({ hasGradient }: Props) {
+export default function Footer() {
   const [devMode, setDevMode] = useDevMode();
 
   const data: {

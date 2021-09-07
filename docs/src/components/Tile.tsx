@@ -111,11 +111,10 @@ const StyledIcon = styled.div`
     svg {
       width: 20px;
       height: 20px;
-    }
-
-    [stroke] {
       stroke: currentColor;
     }
+
+
   `}
 `;
 

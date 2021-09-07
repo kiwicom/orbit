@@ -73,9 +73,6 @@ const StyledIcon = styled.div<{ secondary: string }>`
     svg {
       width: 20px;
       height: 20px;
-    }
-
-    [stroke] {
       stroke: currentColor;
     }
   `}

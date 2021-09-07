@@ -10,7 +10,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * use @kiwicom/orbit-design-tokens's ESM build ([a85a521](https://github.com/kiwicom/orbit/commit/a85a5210dce433f52b08d63c504316c847ff6178))
 * **convertHexToRgba:** add TypeScript definition ([271cf9c](https://github.com/kiwicom/orbit/commit/271cf9c1af684747aa2ef15550f8c21c7f618623))
-* **CountryFlag:** set "undefined" as default code ([546da2a](https://github.com/kiwicom/orbit/commit/546da2a7e76a75d4dbba042ea558d76449f9f453))
 * **sandbox:** height in fullPage mode ([4c44c50](https://github.com/kiwicom/orbit/commit/4c44c508a562727e582d5ff10f0a25bd6f4e3249))
 
 
@@ -18,18 +17,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * implement sandbox knobs ([#3033](https://github.com/kiwicom/orbit/issues/3033)) ([bc8e426](https://github.com/kiwicom/orbit/commit/bc8e4268c559a678488ac5e4bebef9394b5cc54b))
 * new SSR-friendly useRandomId hook ([#3055](https://github.com/kiwicom/orbit/issues/3055)) ([1220d8f](https://github.com/kiwicom/orbit/commit/1220d8fd285103b191949caaca910a3ab122eeeb))
-
-
-### Reverts
-
-* **CountryFlag:** set anywhere as default code ([007a20b](https://github.com/kiwicom/orbit/commit/007a20bde656f992304be8494830500e0e4e8607))
-
-
-### BREAKING CHANGES
-
-* **CountryFlag:** The default code for CountryFlag is now `"undefined"`
-rather than `"anywhere"`, a gray flag with a question mark. This code is
-also used if the given code isn't supported.
 
 
 

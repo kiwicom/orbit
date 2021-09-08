@@ -66,13 +66,13 @@ const Example = ({
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
-  const [bg, setBackground] = React.useState<BgType>("white");
+  const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   React.useEffect(() => {
-    if (background) setBackground(background);
-  }, [background, setBackground]);
+    if (background) setSelectedBackground(background);
+  }, [background, setSelectedBackground]);
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
@@ -85,16 +85,16 @@ const Example = ({
           exampleId={exampleId}
           minHeight={minHeight}
           maxHeight={maxHeight}
-          background={bg}
+          background={selectedBackground}
         />
       </StyledWrapperFrame>
       <Board
-        background={bg}
+        background={selectedBackground}
         exampleId={fullPageExampleId}
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}
         isFullPage={isFullPage}
-        onSelectBackground={value => setBackground(value)}
+        onSelectBackground={value => setSelectedBackground(value)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);

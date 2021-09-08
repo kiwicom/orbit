@@ -14,7 +14,7 @@ export interface TabObject {
 
 const commonStyle = css`
   ${({ theme }) => css`
-    font-size: ${theme.orbit.fontSizeTextLarge};
+    font-size: ${theme.orbit.fontSizeTextNormal};
     font-weight: ${theme.orbit.fontWeightMedium};
     padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
       ${theme.orbit.spaceMedium};

@@ -58,3 +58,5 @@ Table below contains all types of the props available in InputGroup component.
 - If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
 
 - Define `size` only for the **InputGroup**, it will set up the proper styling for everything automatically.
+
+- `onBlurGroup`: In comparison to onBlur, which is triggered by every blur event of InputGroup's children, onBlurGroup treats children as a single field, and fires only when a child loses focus and no child gains focus, for example clicking out of InputGroup.

@@ -1,25 +1,39 @@
 import { Link } from "gatsby";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const StyledLink = styled(Link)<{ $active: boolean }>`
-  ${({ theme, $active }) => css`
+const StyledLink = styled(Link)<{ $active: boolean; level: number }>`
+  ${({ theme, $active, level }) => `
     position: relative;
     display: block;
-    padding: 6px 0px 6px 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     color: ${theme.orbit.paletteInkNormal};
     transition: all ${theme.orbit.durationFast};
-    line-height: 1.37;
-    border-left: 2px solid
-      ${$active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudDark};
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormal};
     }
-    ${$active &&
-    css`
-      font-weight: 500;
-      color: ${theme.orbit.paletteProductNormal};
-    `}
+    ${
+      level === 3 &&
+      `
+        padding-left: 12px;
+        border-left: 2px solid transparent;
+      `
+    }
+    ${
+      $active &&
+      `
+        font-weight: 500;
+        color: ${theme.orbit.paletteProductNormal};
+      `
+    }
+    ${
+      $active &&
+      level === 3 &&
+      `
+        border-left-color: ${theme.orbit.paletteProductNormal};
+      `
+    }
   `}
 `;
 

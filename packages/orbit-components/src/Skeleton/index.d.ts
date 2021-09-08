@@ -42,12 +42,6 @@ or you can pick one from our predefined presets:
 
 interface Props extends Common.SpaceAfter, Common.Global {
   readonly animate?: boolean;
-  /** Set animation interval */
-  /** default: `0.2`  */
-  readonly animationInterval?: number;
-  /** Set animation speed  */
-  /** default: `2` */
-  readonly animationDuration?: number;
   /** Optional prop for a11y element */
   readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;
@@ -60,7 +54,7 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** default: `21` */
   readonly rowHeight?: number;
   /** Set offset between rect elements  */
-  /** default: `0` */
+  /** default: `20` */
   readonly rowOffset?: number;
   /** Number of rect elements */
   /** default: `1` */

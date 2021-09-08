@@ -30,8 +30,6 @@ Default.story = {
 
 export const Playground = (): React.Node => {
   const animate = boolean("animate", true);
-  const animationInterval = number("animationInterval", 0.5);
-  const animationDuration = number("animationDuration", 3);
   const height = number("height", 0);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
@@ -45,8 +43,6 @@ export const Playground = (): React.Node => {
   return (
     <Skeleton
       animate={animate}
-      animationInterval={animationInterval}
-      animationDuration={animationDuration}
       height={height}
       title={title}
       rowBorderRadius={rowBorderRadius}

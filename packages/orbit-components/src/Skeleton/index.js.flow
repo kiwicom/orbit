@@ -11,8 +11,6 @@ type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
 export type Props = {|
   +animate?: boolean,
-  +animationInterval?: number,
-  +animationDuration?: number,
   +ariaLabelledby?: string,
   +children?: React.Node,
   +height?: number,

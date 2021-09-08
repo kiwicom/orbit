@@ -1,6 +1,10 @@
 import React from "react";
 
-import { StyledCategoryContainer, StyledCategoryName } from "./primitives/StyledCategory";
+import {
+  StyledCategoryContainer,
+  StyledCategoryName,
+  StyledCategoryItems,
+} from "./primitives/StyledCategory";
 
 interface Props {
   name: React.ReactNode;
@@ -11,7 +15,7 @@ export default function Category({ name, children }: Props) {
   return (
     <StyledCategoryContainer>
       <StyledCategoryName>{name}</StyledCategoryName>
-      {children}
+      <StyledCategoryItems>{children}</StyledCategoryItems>
     </StyledCategoryContainer>
   );
 }

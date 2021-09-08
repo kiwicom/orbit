@@ -55,8 +55,6 @@ const Rows = ({ count, height, offset, rowBorderRadius }) => {
 
 const Svg = ({
   animate = true,
-  animationDuration = 2,
-  animationInterval = 0.5,
   ariaLabelledby,
   children,
   rowBorderRadius = 3,
@@ -69,8 +67,8 @@ const Svg = ({
 }: Props): React.Node => {
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
   const { rtl, orbit } = useTheme();
-  const duration = `${animationDuration}s`;
-  const interval = `${animationInterval}s`;
+  const duration = `${2}s`;
+  const interval = `${0.5}s`;
   const uid = useRandomId();
   const id = ariaLabelledby || uid;
   const idClip = `${id}-clip`;

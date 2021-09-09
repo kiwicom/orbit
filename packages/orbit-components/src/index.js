@@ -101,6 +101,7 @@ export { default as Radio } from "./Radio";
 export { default as RatingStars } from "./RatingStars";
 export { default as Seat, SeatLegend } from "./Seat";
 export { default as Select } from "./Select";
+export { default as Skeleton } from "./Skeleton";
 export { default as Separator } from "./Separator";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as SkipLink } from "./SkipLink";

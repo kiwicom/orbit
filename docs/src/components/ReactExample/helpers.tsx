@@ -13,14 +13,18 @@ interface Scope {
   default: boolean;
 }
 
-const getAttribute = (value: string, name: string) => {
-  if (value === "true") return t.jsxAttribute(t.jsxIdentifier(name), null);
+const getAttribute = (value: string | number, name: string) => {
+  if (value.toString() === "true") return t.jsxAttribute(t.jsxIdentifier(name), null);
 
-  if (value === "false") {
+  if (value.toString() === "false") {
     return t.jsxAttribute(t.jsxIdentifier(name), t.jsxExpressionContainer(t.booleanLiteral(false)));
   }
 
-  return t.jsxAttribute(t.jsxIdentifier(name), t.stringLiteral(value));
+  if (typeof value === "number") {
+    return t.jsxAttribute(t.jsxIdentifier(name), t.jsxExpressionContainer(t.numericLiteral(value)));
+  }
+
+  return t.jsxAttribute(t.jsxIdentifier(name), t.stringLiteral(value.toString()));
 };
 
 export const getModules = (scope: Scope[]) =>
@@ -82,7 +86,7 @@ export const transform = (example: string, knobs: Record<string, string>) => {
                   ),
                 );
               } else {
-                attributes.push(getAttribute(value, name));
+                attributes.push(getAttribute(val, name));
               }
             });
 

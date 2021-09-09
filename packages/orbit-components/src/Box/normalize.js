@@ -2,6 +2,7 @@
 import { WIDTH_AND_HEIGHT } from "./consts";
 import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
+import { firstToUpper } from "../utils/common";
 import {
   getJustify,
   getAlign,
@@ -14,8 +15,6 @@ import {
 } from "../utils/layout";
 
 import type { MediaQueryObject, Elevation } from ".";
-
-const firstToUpper = string => string.charAt(0).toUpperCase() + string.slice(1);
 
 const normalizeSpacing = (el, property, theme: Theme): string[] => {
   if (typeof el === "object") {

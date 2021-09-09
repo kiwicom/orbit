@@ -1,0 +1,2 @@
+// @flow
+declare export var firstToUpper: (str: string) => string;

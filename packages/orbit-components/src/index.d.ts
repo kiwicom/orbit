@@ -65,6 +65,7 @@ export { RatingStars } from "./RatingStars";
 export { default as Seat, SeatLegend } from "./Seat";
 export { Select } from "./Select";
 export { Stack } from "./Stack";
+export { default as Skeleton } from "./Skeleton";
 export { Sticky } from "./Sticky";
 export { Separator } from "./Separator";
 export { SkipNavigation } from "./SkipNavigation";

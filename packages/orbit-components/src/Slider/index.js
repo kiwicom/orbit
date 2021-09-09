@@ -2,7 +2,6 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
-import type { Tokens } from "@kiwicom/orbit-design-tokens";
 
 import transition from "../utils/transition";
 import Text from "../Text";
@@ -75,7 +74,7 @@ const StyledSliderInput = styled.div`
 export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   bar: {| current: ?HTMLElement |} = React.createRef<?HTMLElement>();
 
-  static defaultProps: {| theme: {| +orbit: Tokens, +rtl?: boolean, +transitions?: boolean |} |} = {
+  static defaultProps: {| theme: typeof defaultTheme |} = {
     theme: defaultTheme,
   };
 

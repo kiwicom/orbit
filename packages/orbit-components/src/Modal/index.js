@@ -388,7 +388,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       [scrollingElementRef],
     );
 
-    useLockScrolling(scrollingElement, lockScrolling);
+    useLockScrolling(scrollingElement, lockScrolling, [isLargeMobile]);
 
     const modalContentRef = React.useCallback(
       node => {

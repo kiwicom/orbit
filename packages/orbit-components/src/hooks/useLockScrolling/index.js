@@ -2,6 +2,8 @@
 import { useLayoutEffect } from "react";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
+import useTheme from "../useTheme";
+
 import typeof UseLockScrolling from ".";
 
 function lockScrolling(el: HTMLElement): void {
@@ -24,18 +26,18 @@ function unlockScrolling() {
 }
 
 const useLockScrolling: UseLockScrolling = (ref, lock = true) => {
+  const theme = useTheme();
+
   useLayoutEffect(() => {
-    if (ref.current) {
-      if (lock) {
-        lockScrolling(ref.current);
-      } else {
-        unlockScrolling();
-      }
+    if (ref.current && lock && theme.lockScrolling) {
+      lockScrolling(ref.current);
     }
     return () => {
       unlockScrolling();
     };
-  }, [ref, lock]);
+    // the rule doesn't know that "ref" is a ref object
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lock, theme.lockScrolling]);
 };
 
 export default useLockScrolling;

@@ -31,7 +31,13 @@ function App() {
   switch (page.route) {
     case "lockScrolling":
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider
+          theme={{
+            ...defaultTheme,
+            // eslint-disable-next-line no-restricted-globals
+            lockScrolling: location.search !== "?disabled",
+          }}
+        >
           <LockScrolling />
         </ThemeProvider>
       );

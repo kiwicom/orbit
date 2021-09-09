@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.122.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.121.0...@kiwicom/orbit-components@0.122.0) (2021-09-09)
+
+
+### Features
+
+* **Skeleton:** introduce Skeleton component ([#3071](https://github.com/kiwicom/orbit/issues/3071)) ([6a3cf3d](https://github.com/kiwicom/orbit/commit/6a3cf3d6c45945ff1e3a988a675d919da8fc757e))
+* **useLockScrolling:** allow specifying additional dependencies ([aac39f0](https://github.com/kiwicom/orbit/commit/aac39f0bcd20e92df1f09e3565b0315a024f95e2))
+* add `lockScrolling` theme flag ([abfe92c](https://github.com/kiwicom/orbit/commit/abfe92c2f50299f9d731c66a9ff2b424f53d060d))
+
+
+
+
+
 # [0.121.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.120.0...@kiwicom/orbit-components@0.121.0) (2021-09-07)
 
 

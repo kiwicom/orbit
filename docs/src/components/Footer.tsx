@@ -93,7 +93,11 @@ export default function Footer() {
   const pkgVersion = data.site.siteMetadata.version;
 
   return (
-    <footer>
+    <footer
+      css={css`
+        position: relative;
+      `}
+    >
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
           <Stack flex align="center" justify="between">

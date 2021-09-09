@@ -8,6 +8,7 @@ declare module "@kiwicom/orbit-components/theme";
 export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;
+  readonly lockScrolling?: boolean;
   readonly rtl?: boolean;
 }
 

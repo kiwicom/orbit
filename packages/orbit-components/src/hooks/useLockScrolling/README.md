@@ -25,7 +25,8 @@ const Component = (props: Props) => {
 
 The table below contains all parameters available to the `useLockScrolling` hook.
 
-| Name | Type                          | Default | Description                                                                                                |
-| :--- | :---------------------------- | ------- | :--------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| ref  | `React.ElementRef<HTMLELement | null>`  |                                                                                                            | Reference object of the scrollable container. |
-| lock | `boolean`                     | `true`  | Whether to lock scrolling or not. This is useful for example if locking scrolling depends on a breakpoint. |
+| Name         | Type                               | Default | Description                                                                                                     |
+| :----------- | :--------------------------------- | ------- | :-------------------------------------------------------------------------------------------------------------- |
+| ref          | `{ current: HTMLElement \| null }` |         | Reference object of the scrollable container.                                                                   |
+| lock         | `boolean`                          | `true`  | Whether to lock scrolling or not. This is useful for example if locking scrolling depends on a breakpoint.      |
+| dependencies | `any[]`                            | `[]`    | Dependencies that affect the value of `ref.current`, in case it's not always assigned to the same HTML element. |

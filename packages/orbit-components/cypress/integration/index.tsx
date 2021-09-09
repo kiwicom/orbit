@@ -1,29 +1,49 @@
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createRouter } from "@nanostores/router";
+import { useStore } from "nanostores/react";
 
 import { ThemeProvider, defaultTheme } from "../..";
 import LockScrolling from "./pages/lock-scrolling";
 import ModalFooter from "./pages/modal-footer";
 
+interface Routes {
+  lockScrolling: void;
+  modalFooter: void;
+}
+
+const router = createRouter<Routes>({
+  lockScrolling: "/lock-scrolling",
+  modalFooter: "/modal-footer",
+});
+
+function PageNotFound() {
+  return <div>404</div>;
+}
+
 function App() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <Router>
-        <Switch>
-          <Route path="/lock-scrolling">
-            <LockScrolling />
-          </Route>
-          <Route path="/modal-footer">
-            <ModalFooter />
-          </Route>
-          <Route>
-            <div>404</div>
-          </Route>
-        </Switch>
-      </Router>
-    </ThemeProvider>
-  );
+  const page = useStore(router);
+
+  if (!page) {
+    return <PageNotFound />;
+  }
+
+  switch (page.route) {
+    case "lockScrolling":
+      return (
+        <ThemeProvider theme={defaultTheme}>
+          <LockScrolling />
+        </ThemeProvider>
+      );
+    case "modalFooter":
+      return (
+        <ThemeProvider theme={defaultTheme}>
+          <ModalFooter />
+        </ThemeProvider>
+      );
+    default:
+      return <PageNotFound />;
+  }
 }
 
 render(<App />, document.querySelector("#app"));

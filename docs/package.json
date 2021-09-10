@@ -15,8 +15,8 @@
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
-    "@kiwicom/babel-plugin-orbit-components": "^2.5.0",
-    "@kiwicom/orbit-design-tokens": "^0.14.0",
+    "@kiwicom/babel-plugin-orbit-components": "*",
+    "@kiwicom/orbit-design-tokens": "*",
     "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -67,7 +67,7 @@
     "vfile-reporter": "^6.0.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-components": "^0.122.0",
+    "@kiwicom/orbit-components": "*",
     "@streamlinehq/streamlinehq": "^3.0.3",
     "@types/lodash": "^4.14.170",
     "@types/react-helmet": "^6.1.1",

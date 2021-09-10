@@ -13,6 +13,9 @@ const StyledMobileOutdent = styled.div`
 
   > *:last-child {
     flex: 1;
+    ${mediaQueries.tablet(css`
+      margin-bottom: 3rem;
+    `)}
   }
 `;
 

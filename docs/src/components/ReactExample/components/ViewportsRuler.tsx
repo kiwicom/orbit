@@ -77,7 +77,7 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
     if (ref.current) setWindowWidth(ref.current?.clientWidth);
   }, [onChangeSize, setRuler]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     handleResize();
 
     window.addEventListener("resize", handleResize);

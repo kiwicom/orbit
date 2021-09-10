@@ -1,31 +1,34 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { Stack, Text } from "@kiwicom/orbit-components";
 
 import CopyIcon from "../../images/icons/CopyIcon.svg";
-import { ColorValueShape } from "./ColorContainer";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-
-import { isLight } from ".";
+import { isLight } from "./helpers";
 
 interface CopyButtonProps {
   buttonText: string;
-  colorValue: string;
-  textToCopy: string;
+  colorValue?: string;
+  textToCopy?: string;
 }
 
-const StyledButton = styled.button<ColorValueShape>`
-  ${({ colorValue }) => css`
-    background: ${isLight(colorValue)
-      ? defaultTokens.paletteInkNormal
-      : defaultTokens.paletteWhite};
-    padding: 0 ${defaultTokens.spaceXSmall};
-    border-radius: ${defaultTokens.borderRadiusBadge};
+const StyledButton = styled.button<{ colorValue?: string }>`
+  ${({ colorValue, theme }) => css`
+    background: ${colorValue && isLight(colorValue)
+      ? theme.orbit.paletteInkNormal
+      : theme.orbit.paletteWhite};
+    padding: 0 ${theme.orbit.spaceXSmall};
+    border-radius: ${theme.orbit.borderRadiusBadge};
     text-transform: uppercase;
+    transition: transform ${theme.orbit.durationFast} ease-in;
 
     svg path {
-      fill: ${isLight(colorValue) ? defaultTokens.paletteWhite : defaultTokens.paletteInkNormal};
+      fill: ${colorValue && isLight(colorValue)
+        ? theme.orbit.paletteWhite
+        : theme.orbit.paletteInkNormal};
+    }
+    &:hover {
+      transform: translateX(-2px);
     }
   `}
 `;
@@ -34,9 +37,13 @@ const CopyButton = ({ buttonText, colorValue, textToCopy }: CopyButtonProps) => 
   const [copied, copy] = useCopyToClipboard();
 
   return (
-    <StyledButton colorValue={colorValue} type="button" onClick={() => copy(textToCopy)}>
+    <StyledButton
+      colorValue={colorValue}
+      type="button"
+      onClick={() => textToCopy && copy(textToCopy)}
+    >
       <Stack direction="row" spacing="XXSmall" align="center">
-        <Text type={isLight(colorValue) ? "white" : "primary"}>
+        <Text type={colorValue && isLight(colorValue) ? "white" : "primary"}>
           {copied ? "copied" : buttonText}
         </Text>
         {!copied && <CopyIcon />}

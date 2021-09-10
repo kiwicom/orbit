@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Stack, Hide, mediaQueries as mq, TextLink } from "@kiwicom/orbit-components";
+import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
+import { boxShadowDefault, boxShadowActive } from "./mixins";
 import ArrowRight from "./ArrowRight";
 import useIsUrlExternal from "../hooks/useIsUrlExternal";
 
@@ -40,37 +41,31 @@ interface StyledContainerProps extends Pick<Props, "fullWidth"> {
 }
 
 const StyledWrapper = styled.div<StyledContainerProps>`
-  ${({ theme, fullWidth, href, to, hasContent }) => `
+  ${({ theme, fullWidth, href, to, hasContent }) => css`
     padding: 2rem;
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
-    ${
-      fullWidth &&
-      `
-        width: 100%;
-      `
-    };
-    ${
-      hasContent
-        ? css`
-            flex-direction: column;
-          `
-        : css`
-            align-items: center;
-            justify-content: space-between;
-          `
-    }
-    ${
-      (href || to) &&
-      `
-        &:hover {
-          box-shadow: ${theme.orbit.boxShadowRaised};
-        }
-      `
-    };
+    ${boxShadowDefault};
+    ${fullWidth &&
+    css`
+      width: 100%;
+    `};
+    ${hasContent
+      ? css`
+          flex-direction: column;
+        `
+      : css`
+          align-items: center;
+          justify-content: space-between;
+        `}
+    ${(href || to) &&
+    css`
+      &:hover {
+        ${boxShadowActive};
+      }
+    `};
   `}
 `;
 
@@ -111,11 +106,10 @@ const StyledIcon = styled.div`
     svg {
       width: 20px;
       height: 20px;
-    }
-
-    [stroke] {
       stroke: currentColor;
     }
+
+
   `}
 `;
 

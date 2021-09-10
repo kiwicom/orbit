@@ -1,111 +1,112 @@
 import React from "react";
-import { convertHexToRgba, defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
-import { Grid, Stack } from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
 
-import ColorContainer from "./ColorContainer";
+import { normalizeName, determineOrder } from "./helpers";
 import Switch from "../Switch";
-
-export const isLight = (hex: string) => {
-  const rgba = convertHexToRgba(hex, 100);
-  const found = rgba.match(/\((?<red>\d+), (?<green>\d+), (?<blue>\d+)/);
-
-  if (!found || !found.groups) {
-    throw new Error("Could not parse color");
-  }
-
-  const red = Number(found.groups.red);
-  const green = Number(found.groups.green);
-  const blue = Number(found.groups.blue);
-
-  // HSP equation from http://alienryderflex.com/hsp.html
-  const hsp = Math.sqrt(0.299 * (red * red) + 0.587 * (green * green) + 0.114 * (blue * blue));
-
-  if (hsp > 140) {
-    return true;
-  }
-  return false;
-};
+import ColorContainer from "./ColorContainer";
 
 export type tokenString = keyof typeof defaultTokens;
+
+const Grid = styled.div<{ isTablet?: boolean | null; hasAdditional: boolean }>`
+  ${({ isTablet, hasAdditional }) => css`
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: ${isTablet && hasAdditional ? "1fr 1fr 1fr" : "1fr"};
+  `}
+`;
 
 interface PaletteProps {
   colors: tokenString[];
   allowAdditional: boolean;
 }
 
-const normalizeName = (tokenName: string) =>
-  tokenName
-    .replace(/^palette/, "")
-    .replace(/^color/, "")
-    .replace(/([a-z])([A-Z])/, "$1 $2")
-    .replace("Hover", ":hover")
-    .replace("Active", ":active");
+interface Token {
+  name?: string;
+  tokenName?: tokenString;
+  value?: string | number;
+}
+
+export interface PaletteToken extends Token {
+  hover?: Token;
+  active?: Token;
+}
 
 const Palette = ({ colors, allowAdditional }: PaletteProps) => {
   const [showAdditional, setShowAdditional] = React.useState(false);
   const { isTablet } = useMediaQuery();
-  const switchShowAdditional = () => {
-    setShowAdditional(!showAdditional);
+
+  const getToken = (token: tokenString): Token | undefined => {
+    if (!defaultTokens[token]) return undefined;
+
+    return {
+      name: normalizeName(token),
+      tokenName: token,
+      value: defaultTokens[token],
+    };
   };
 
-  const colorsWithToken = colors.map(color => ({
-    name: normalizeName(color),
-    tokenName: color,
-    value: defaultTokens[color],
-    hover: {
-      name: normalizeName(`${color}Hover`),
-      tokenName: `${color}Hover`,
-      value: defaultTokens[`${color}Hover`],
-    },
-    active: {
-      name: normalizeName(`${color}Active`),
-      tokenName: `${color}Active`,
-      value: defaultTokens[`${color}Active`],
-    },
-  }));
+  const colorsWithToken = colors
+    .map(color => {
+      if (!defaultTokens[color]) return undefined;
+
+      const hover = getToken(`${color}Hover` as tokenString) && {
+        ...getToken(`${color}Hover` as tokenString),
+      };
+
+      const active = getToken(`${color}Active` as tokenString) && {
+        ...getToken(`${color}Active` as tokenString),
+      };
+
+      return {
+        ...getToken(color),
+        hover,
+        active,
+      };
+    })
+    .filter(Boolean);
+
   return (
-    <Stack spacing="none">
+    <>
       {allowAdditional && (
-        <Switch onChange={switchShowAdditional} checked={showAdditional} reverseLabel>
+        <Switch
+          onChange={() => setShowAdditional(prev => !prev)}
+          checked={showAdditional}
+          reverseLabel
+        >
           Show additional shades
         </Switch>
       )}
-      {colorsWithToken.map((color, index, allColors) => {
-        const determineOrder = indexNumber => {
-          if (allColors.length === 1) return "only";
-          if (indexNumber === 0) return "first";
-          if (indexNumber === allColors.length - 1) return "last";
-          return "middle";
-        };
-        const hasAdditional = obj => {
-          if (obj.hover.value || obj.active.value) return true;
-          return false;
-        };
-        return (
-          <Grid
-            key={color.tokenName}
-            columns={showAdditional && color.hover.value && isTablet ? "1fr 1fr 1fr" : "1fr"}
-          >
-            <ColorContainer
-              color={color}
-              order={determineOrder(index)}
-              full={!showAdditional || !hasAdditional(color)}
-              left={showAdditional}
-            />
-            {showAdditional && color.hover.value && <ColorContainer color={color.hover} />}
-            {showAdditional && color.active.value && (
-              <ColorContainer
-                color={color.active}
-                order={determineOrder(index)}
-                right={showAdditional}
-              />
-            )}
-          </Grid>
-        );
-      })}
-    </Stack>
+      <div>
+        <Grid isTablet={isTablet} hasAdditional={showAdditional}>
+          {colorsWithToken.map((token, idx, arr) => {
+            const props = {
+              order: determineOrder(idx, arr),
+              isExpanded: showAdditional,
+              isFullBottom: token && showAdditional && !token.hover && !token.active,
+            };
+
+            return (
+              <>
+                <ColorContainer
+                  color={token}
+                  {...props}
+                  isFull={!showAdditional}
+                  isLeft={showAdditional}
+                />
+                {showAdditional && (
+                  <ColorContainer color={token && token.hover} {...props} isMiddle />
+                )}
+                {showAdditional && (
+                  <ColorContainer color={token && token.active} {...props} isRight />
+                )}
+              </>
+            );
+          })}
+        </Grid>
+      </div>
+    </>
   );
 };
-
 export default Palette;

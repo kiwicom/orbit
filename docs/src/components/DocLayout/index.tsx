@@ -222,7 +222,7 @@ export default function DocLayout({
               )}
             </StyledMain>
           </StyledMiddle>
-          <Footer hasGradient />
+          <Footer />
         </StyledWrapper>
       </BookmarkProvider>
     </>

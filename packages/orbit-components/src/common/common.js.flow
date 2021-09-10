@@ -11,7 +11,7 @@ export type DataAttrs = {|
   +dataAttrs?: { [key: string]: ?string | ?boolean },
 |};
 
-export type RefType = { current: null | HTMLElement } | ((null | HTMLElement) => mixed);
+export type RefType = ?{ current: null | HTMLElement } | ((null | HTMLElement) => mixed);
 
 export type Ref = {|
   +ref?: RefType,

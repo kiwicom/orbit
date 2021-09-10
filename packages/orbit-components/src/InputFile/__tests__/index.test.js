@@ -13,10 +13,10 @@ describe("InputFile", () => {
     const name = "name";
     const placeholder = "Not file has been selected";
     const dataTest = "test";
-    const tabIndex = "-1";
     const allowedFileTypes = [".png", ".jpg", ".pdf"];
     const onChange = jest.fn();
-    const onBlur = jest.fn();
+    const onFocus = jest.fn();
+    const tabIndex = "-1";
     const spaceAfter = SPACINGS_AFTER.NORMAL;
     const file = new File(["blin"], "blin.png", { type: "image/png" });
 
@@ -32,7 +32,7 @@ describe("InputFile", () => {
         help="help"
         tabIndex={tabIndex}
         onChange={onChange}
-        onBlur={onBlur}
+        onFocus={onFocus}
       />,
     );
 
@@ -40,13 +40,10 @@ describe("InputFile", () => {
     screen.getByText(placeholder);
     screen.getByText(label);
 
-    const input = screen.getByTestId(dataTest);
+    const input: any = screen.getByTestId(dataTest);
     expect(input).toHaveAttribute("name", name);
     expect(input).toHaveAttribute("tabindex", "-1");
     expect(input).toHaveAttribute("accept", ".png,.jpg,.pdf");
-
-    fireEvent.blur(input);
-    expect(onBlur).toHaveBeenCalled();
 
     userEvent.upload(input, file);
     expect(onChange).toHaveBeenCalled();
@@ -64,17 +61,21 @@ describe("InputFile", () => {
 
   it("should have error", () => {
     const onFocus = jest.fn();
+    const onBlur = jest.fn();
 
     render(
       <InputFile
         dataTest="test"
         onFocus={onFocus}
+        onBlur={onBlur}
         error="chuck norris counted to infinity twice"
       />,
     );
 
     userEvent.tab((screen.getByTestId("test"): any));
     expect(onFocus).toHaveBeenCalled();
+    fireEvent.blur((screen.getByTestId("test"): any));
+    expect(onBlur).toHaveBeenCalled();
     screen.getByText("chuck norris counted to infinity twice");
   });
 });

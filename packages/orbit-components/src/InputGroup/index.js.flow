@@ -11,12 +11,15 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
   +label?: Translation,
-  +flex?: string | Array<string>,
+  +flex?: string | string[],
   +size?: "small" | "normal",
   +help?: React.Node,
   +children: React.Node,
   +error?: React.Node,
   +disabled?: boolean,
+  +onBlurGroup?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
   +onChange?: (
     ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
   ) => void | Promise<any>,

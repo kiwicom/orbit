@@ -28,11 +28,11 @@ Table below contains all types of the props available in InputGroup component.
 | error        | `React.Node`                |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)                                                                         |
 | disabled     | `boolean`                   |              | Whether to disable all nested fields.                                                                                                                          |
 | flex         | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                                                                |
-| help         | `React.Node`                |              | The help to display beneath the InputGroup.                                                                                                                    |
 | label        | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                                                                        |
 | onChange     | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                                                                 |
 | onFocus      | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                                                                 |
-| onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event. [See Functional specs](#functional-specs)                                                                                  |
+| onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs)                                            |
+| onBlurGroup  | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)                                                         |
 | size         | [`enum`](#enum)             | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)                                                                                          |
 | spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
@@ -45,6 +45,8 @@ Table below contains all types of the props available in InputGroup component.
 
 ## Functional specs
 
+- `error` or `help` defined on children will be displayed to user from left to right, only one error at a time will be displayed until resolved.
+
 - The `error` prop overwrites the `help` prop, due to higher priority.
 
 - Define `error` or `help` only for the **InputGroup**. Any `error` or `help` in InputField or Select won't be displayed.
@@ -56,3 +58,5 @@ Table below contains all types of the props available in InputGroup component.
 - If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
 
 - Define `size` only for the **InputGroup**, it will set up the proper styling for everything automatically.
+
+- `onBlurGroup`: In comparison to onBlur, which is triggered by every blur event of InputGroup's children, onBlurGroup treats children as a single field, and fires only when a child loses focus and no child gains focus, for example clicking out of InputGroup.

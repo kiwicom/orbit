@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.122.0...@kiwicom/orbit-components@1.0.0) (2021-09-10)
+
+
+### Code Refactoring
+
+* **Popover:** replace calculate logic with popper.js ([#3046](https://github.com/kiwicom/orbit/issues/3046)) ([9b4852d](https://github.com/kiwicom/orbit/commit/9b4852d531f1a9e25a7c1efc2c3f0faaa122f84b))
+* delete deprecated components ([#3084](https://github.com/kiwicom/orbit/issues/3084)) ([ee75f02](https://github.com/kiwicom/orbit/commit/ee75f0203f5c8afbf389d798db677c4e59d88706))
+
+
+### Features
+
+* error forms ([#2350](https://github.com/kiwicom/orbit/issues/2350)) ([480d565](https://github.com/kiwicom/orbit/commit/480d5652433758cbe7d024073c2a39a9088207ec))
+* update colour palette ([#3095](https://github.com/kiwicom/orbit/issues/3095)) ([acddb14](https://github.com/kiwicom/orbit/commit/acddb14bc0e371568fb53fc74977f0ad9617bd80)), closes [#BAC7D5](https://github.com/kiwicom/orbit/issues/BAC7D5) [#697D95](https://github.com/kiwicom/orbit/issues/697D95) [#4F5E71](https://github.com/kiwicom/orbit/issues/4F5E71)
+
+
+### BREAKING CHANGES
+
+* **Popover:** preferredPosition and preferredAlign are replaced by single prop `placement`.
+Which can have one of the following values: "top-start" | "top-end" | "bottom-start" | "bottom-end" | "right-start" | "right-end" | "left-start" | "left-end" "auto" | "auto-start" | "auto-end";
+
+[More info here](https://popper.js.org/docs/v2/constructors/#placement)
+
+Extended by two props:
+ `noFlip`:  Turns off automatic flipping of the Popover when there is not enough space
+ `allowOverflow`: Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.
+
+* fix(Popover): fixes after review
+
+* feat(Popover): noFlip prop
+
+* feat(Popover): allowOverflow prop
+* changes in Ink Palette:
+* deletes deprecated components, their usage should be
+replaced with better existing or upcoming alternatives.
+
+
+
+
+
 # [0.122.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.121.0...@kiwicom/orbit-components@0.122.0) (2021-09-09)
 
 

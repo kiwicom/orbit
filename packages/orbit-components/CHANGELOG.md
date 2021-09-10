@@ -20,21 +20,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### BREAKING CHANGES
 
-* **Popover:** preferredPosition and preferredAlign are replaced by single prop `placement`.
-Which can have one of the following values: "top-start" | "top-end" | "bottom-start" | "bottom-end" | "right-start" | "right-end" | "left-start" | "left-end" "auto" | "auto-start" | "auto-end";
+* **Popover:**
+  - props `preferredPosition` and `preferredAlign` are replaced by single prop `placement`, which same as [popper.js's placement](https://popper.js.org/docs/v2/constructors/#placement) can have one of the following values:
+    - `"top-start"`
+    - `"top-end"`
+    - `"bottom-start"`
+    - `"bottom-end"`
+    - `"right-start"`
+    - `"right-end"`
+    - `"left-start"`
+    - `"left-end"`
+    - `"auto"`
+    - `"auto-start"`
+    - `"auto-end"`
 
-[More info here](https://popper.js.org/docs/v2/constructors/#placement)
+  - extended by two props:
+    - `noFlip`:  Turns off automatic flipping of the Popover when there is not enough space
+    - `allowOverflow`: Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.
 
-Extended by two props:
- `noFlip`:  Turns off automatic flipping of the Popover when there is not enough space
- `allowOverflow`: Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.
-
-* fix(Popover): fixes after review
-
-* feat(Popover): noFlip prop
-
-* feat(Popover): allowOverflow prop
-* changes in Ink Palette:
 * deletes deprecated components, their usage should be
 replaced with better existing or upcoming alternatives.
 

@@ -14,6 +14,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### BREAKING CHANGES
 
 * changes in Ink Palette:
+  - new color Cloud Darker was created, it has the same value as current Ink Lighter (`#BAC7D5`)
+  - Ink Lighter is now a bit darker (`#697D95`)
+  - Ink Light is now a bit darker (`#4F5E71`)
 
 
 

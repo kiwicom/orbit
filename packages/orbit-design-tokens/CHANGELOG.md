@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.14.0...@kiwicom/orbit-design-tokens@1.0.0) (2021-09-10)
+
+
+### Features
+
+* update colour palette ([#3095](https://github.com/kiwicom/orbit-design-tokens/issues/3095)) ([acddb14](https://github.com/kiwicom/orbit-design-tokens/commit/acddb14bc0e371568fb53fc74977f0ad9617bd80)), closes [#BAC7D5](https://github.com/kiwicom/orbit-design-tokens/issues/BAC7D5) [#697D95](https://github.com/kiwicom/orbit-design-tokens/issues/697D95) [#4F5E71](https://github.com/kiwicom/orbit-design-tokens/issues/4F5E71)
+
+
+### BREAKING CHANGES
+
+* changes in Ink Palette:
+
+
+
+
+
 # [0.14.0](https://github.com/kiwicom/orbit-design-tokens/compare/@kiwicom/orbit-design-tokens@0.13.10...@kiwicom/orbit-design-tokens@0.14.0) (2021-09-07)
 
 

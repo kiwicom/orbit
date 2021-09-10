@@ -11,7 +11,7 @@ export default {
         </Heading>
         <Popover
           renderInPortal={false}
-          preferredPosition="bottom"
+          placement="bottom-start"
           content={
             <Stack spacing="small">
               <ButtonLink
@@ -42,7 +42,7 @@ export default {
         </Heading>
         <Popover
           renderInPortal={false}
-          preferredPosition="top"
+          placement="bottom-start"
           content={
             <Stack spacing="small">
               <ButtonLink

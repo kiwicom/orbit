@@ -8,19 +8,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Code Refactoring
 
-* delete deprecated components ([#3076](https://github.com/kiwicom/orbit/issues/3076)) ([6d933bf](https://github.com/kiwicom/orbit/commit/6d933bff3973b284c854af0a5acabefb00d7b5a6))
 * delete deprecated components ([#3084](https://github.com/kiwicom/orbit/issues/3084)) ([ee75f02](https://github.com/kiwicom/orbit/commit/ee75f0203f5c8afbf389d798db677c4e59d88706))
-
-
-### Reverts
-
-* bring back deprecated components ([3081eb6](https://github.com/kiwicom/orbit/commit/3081eb6f25fbccfdf9c60e8211115b302c09bec3))
 
 
 ### BREAKING CHANGES
 
-* deletes deprecated components, their usage should be
-replaced with better existing or upcoming alternatives.
 * deletes deprecated components, their usage should be
 replaced with better existing or upcoming alternatives.
 

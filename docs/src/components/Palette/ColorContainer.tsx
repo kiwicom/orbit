@@ -4,21 +4,24 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import { Stack } from "@kiwicom/orbit-components";
 
 import CopyButton from "./CopyButton";
+import { isLight, resolveBorders, Order } from "./helpers";
 
-import { isLight, tokenString } from ".";
+import { PaletteToken } from ".";
 
-interface BorderingProps {
-  order?: "first" | "middle" | "last" | "only";
-  full?: boolean;
-  left?: boolean;
-  right?: boolean;
+export interface BorderProps {
+  isFull?: boolean;
+  isFullBottom?: boolean;
+  isMiddle?: boolean;
+  isRight?: boolean;
+  isLeft?: boolean;
+  isExpanded: boolean;
+  order: Order;
+}
+interface Props extends BorderProps {
+  color?: PaletteToken;
 }
 
-export interface ColorValueShape {
-  colorValue: string;
-}
-
-const CopyWrapper = styled.div<ColorValueShape>`
+const StyledCopyWrapper = styled.div<{ colorValue: string }>`
   ${({ colorValue, theme }) => css`
     background: linear-gradient(90deg, transparent, ${colorValue} 27%);
     position: absolute;
@@ -28,17 +31,31 @@ const CopyWrapper = styled.div<ColorValueShape>`
   `}
 `;
 
-type ColorContainerWrapperProps = ColorValueShape & BorderingProps;
-
-const ColorContainerWrapper = styled.div<ColorContainerWrapperProps>`
-  ${({ colorValue, full, left, order, right, theme }) => css`
-    background-color: ${colorValue};
-    color: ${isLight(colorValue) ? theme.orbit.colorTextPrimary : theme.orbit.paletteWhite};
+export const StyledColorContainerWrapper = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  ${({ colorValue, theme, isFullBottom }) => css`
+    display: flex;
+    flex-direction: column;
+    background: ${colorValue};
+    color: ${colorValue && isLight(colorValue)
+      ? theme.orbit.colorTextPrimary
+      : theme.orbit.paletteWhite};
     padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
-    transition: ${theme.orbit.durationFast};
+    transition: transform ${theme.orbit.durationFast} ease-in;
     position: relative;
+    min-width: 0;
+    overflow: hidden;
+    cursor: pointer;
+    grid-row: auto;
+    ${resolveBorders};
+    ${isFullBottom &&
+    css`
+      grid-column: auto / span 3;
+      grid-row: auto / span 3;
+    `}
 
-    ${CopyWrapper} {
+    ${StyledCopyWrapper} {
       visibility: hidden;
     }
 
@@ -48,85 +65,45 @@ const ColorContainerWrapper = styled.div<ColorContainerWrapperProps>`
       transform: scale(1.01);
       box-shadow: ${theme.orbit.boxShadowRaised};
 
-      ${CopyWrapper} {
+      ${StyledCopyWrapper} {
         visibility: visible;
       }
     }
-    ${order === "only" && `border-radius: ${theme.orbit.borderRadiusLarge}`}
-    ${order === "first" &&
-    full &&
-    `border-radius: ${theme.orbit.borderRadiusLarge} ${theme.orbit.borderRadiusLarge} 0 0;`}
-      ${order === "first" && left && `border-top-left-radius: ${theme.orbit.borderRadiusLarge}`}
-      ${order === "first" && right && `border-top-right-radius: ${theme.orbit.borderRadiusLarge}`}
-    ${order === "last" &&
-    full &&
-    `border-radius: 0 0 ${theme.orbit.borderRadiusLarge} ${theme.orbit.borderRadiusLarge};`}
-      ${order === "last" && left && `border-bottom-left-radius: ${theme.orbit.borderRadiusLarge}`}
-      ${order === "last" && right && `border-bottom-right-radius: ${theme.orbit.borderRadiusLarge}`}
   `}
 `;
-interface ColorNameHolderProps {
-  isMain: boolean;
-}
 
-const ColorNameHolder = styled.div<ColorNameHolderProps>`
+const StyledColorNameHolder = styled.div<{ isMain?: boolean }>`
   ${({ isMain, theme }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
+    height: 100%;
     font-size: ${theme.orbit.fontSizeTextLarge};
     padding-bottom: ${isMain ? theme.orbit.spaceLarge : theme.orbit.spaceXSmall};
   `}
 `;
 
-const ColorHexHolder = styled.div`
+const StyledColorHexHolder = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightMedium};
     padding-bottom: ${theme.orbit.spaceXXSmall};
   `}
 `;
 
-const ColorOtherTextHolder = styled.div`
+const StyledColorOtherTextHolder = styled.div`
   padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
 `;
-interface ColorObjectShape {
-  value: string | number;
-  name: string;
-  tokenName: tokenString;
-}
 
-interface ColorObjectAdditionalShape {
-  value: string;
-  name: string;
-  tokenName: string;
-}
+const ColorContainer = ({ color, ...props }: Props) => {
+  const isNormal = (name?: string): boolean => String(name).includes("Normal");
 
-interface ColorContainerProps extends BorderingProps {
-  color: ColorObjectShape | ColorObjectAdditionalShape;
-}
-
-const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps) => {
-  const isNormal = (name: string) => {
-    if (name.match("Normal")) {
-      return true;
-    }
-    return false;
-  };
-
-  if (typeof color.value !== "string") return null;
+  if (!color || typeof color.value !== "string") return null;
 
   return (
-    <ColorContainerWrapper
-      tabIndex={0}
-      colorValue={color.value}
-      order={order}
-      full={full}
-      left={left}
-      right={right}
-    >
-      <ColorNameHolder isMain={isNormal(color.name)}>{color.name}</ColorNameHolder>
-      <ColorHexHolder>{color.value}</ColorHexHolder>
-      <ColorOtherTextHolder>{convertHexToRgba(color.value, 100)}</ColorOtherTextHolder>
-      <ColorOtherTextHolder>{color.tokenName}</ColorOtherTextHolder>
-      <CopyWrapper colorValue={color.value}>
+    <StyledColorContainerWrapper colorValue={color.value} {...props}>
+      <StyledColorNameHolder isMain={isNormal(color.name)}>{color.name}</StyledColorNameHolder>
+      <StyledColorHexHolder>{color.value}</StyledColorHexHolder>
+      <StyledColorOtherTextHolder>{convertHexToRgba(color.value, 100)}</StyledColorOtherTextHolder>
+      <StyledColorOtherTextHolder>{color.tokenName}</StyledColorOtherTextHolder>
+      <StyledCopyWrapper colorValue={color.value}>
         <Stack direction="column" spacing="XXSmall" align="end">
           <CopyButton textToCopy={color.value} colorValue={color.value} buttonText="Hex" />
           <CopyButton
@@ -136,8 +113,8 @@ const ColorContainer = ({ color, full, left, order, right }: ColorContainerProps
           />
           <CopyButton textToCopy={color.tokenName} colorValue={color.value} buttonText="Token" />
         </Stack>
-      </CopyWrapper>
-    </ColorContainerWrapper>
+      </StyledCopyWrapper>
+    </StyledColorContainerWrapper>
   );
 };
 

@@ -11,25 +11,6 @@ import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import useDevMode from "../hooks/useDevMode";
 
-const StyledFooter = styled.footer<{ hasGradient?: boolean }>`
-  position: relative; /* so it's on top of elements like the rocket image and content card shadow */
-
-  ${({ hasGradient }) =>
-    hasGradient &&
-    `
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 52px;
-        top: -52px;
-        pointer-events: none;
-        background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-      }
-  `}
-`;
-
 const StyledContainer = styled.div<{ color: string }>`
   ${({ theme, color }) => `
     background: ${theme.orbit[color]};
@@ -84,11 +65,7 @@ function Dot() {
   return <Desktop>·</Desktop>;
 }
 
-interface Props {
-  hasGradient?: boolean;
-}
-
-export default function Footer({ hasGradient }: Props) {
+export default function Footer() {
   const [devMode, setDevMode] = useDevMode();
 
   const data: {
@@ -116,7 +93,11 @@ export default function Footer({ hasGradient }: Props) {
   const pkgVersion = data.site.siteMetadata.version;
 
   return (
-    <StyledFooter hasGradient={hasGradient}>
+    <footer
+      css={css`
+        position: relative;
+      `}
+    >
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
           <Stack flex align="center" justify="between">
@@ -223,6 +204,6 @@ export default function Footer({ hasGradient }: Props) {
           </Stack>
         </StyledInner>
       </StyledContainer>
-    </StyledFooter>
+    </footer>
   );
 }

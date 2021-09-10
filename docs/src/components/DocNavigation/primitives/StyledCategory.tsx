@@ -16,20 +16,3 @@ export const StyledCategoryName = styled.div`
     color: ${theme.orbit.paletteInkLight};
   `}
 `;
-
-export const StyledCategoryItems = styled.div`
-  ${({ theme }) => `
-    position: relative;
-    &::before {
-      content: "";
-      display: block;
-      width: 2px;
-      border-radius: 2px;
-      background: ${theme.orbit.paletteCloudDark};
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-    }
-  `}
-`;

@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 import StackOfTabs, { StyledWrapper as StyledStackWrapper } from "./StackOfTabs";
 import { TAB_HEIGHT, BORDER_RADIUS, SHADOW_PADDING_TOP } from "./consts";
+import { boxShadowDefault } from "../mixins";
 
 export interface TabObject {
   slug: string;
@@ -13,7 +14,7 @@ export interface TabObject {
 
 const commonStyle = css`
   ${({ theme }) => css`
-    font-size: ${theme.orbit.fontSizeTextLarge};
+    font-size: ${theme.orbit.fontSizeTextNormal};
     font-weight: ${theme.orbit.fontWeightMedium};
     padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
       ${theme.orbit.spaceMedium};
@@ -39,7 +40,7 @@ export const commonTabStyle = css`
     height: calc(${TAB_HEIGHT} - ${SHADOW_PADDING_TOP});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    ${boxShadowDefault};
     background: ${theme.orbit.paletteWhite};
   `};
 `;

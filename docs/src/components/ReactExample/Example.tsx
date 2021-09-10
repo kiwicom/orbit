@@ -8,7 +8,7 @@ import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
 import { transform } from "./helpers";
 
-import { Props as InitialProps } from ".";
+import { BgType, Props as InitialProps } from ".";
 
 const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
   ${({ theme, isFullPage }) => css`
@@ -16,8 +16,8 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     min-height: ${isFullPage && `100%`};
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     border-radius: 12px;
+    border: 1px solid ${theme.orbit.paletteCloudDark};
   `};
 `;
 
@@ -66,8 +66,13 @@ const Example = ({
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
+  const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+
+  React.useEffect(() => {
+    if (background) setSelectedBackground(background);
+  }, [background, setSelectedBackground]);
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
@@ -80,14 +85,16 @@ const Example = ({
           exampleId={exampleId}
           minHeight={minHeight}
           maxHeight={maxHeight}
-          background={background}
+          background={selectedBackground}
         />
       </StyledWrapperFrame>
       <Board
+        background={selectedBackground}
         exampleId={fullPageExampleId}
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}
         isFullPage={isFullPage}
+        onSelectBackground={value => setSelectedBackground(value)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);

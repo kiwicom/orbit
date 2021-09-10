@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { SocialButton, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -10,8 +10,4 @@ export default {
       <SocialButton type="twitter">Sign in with Twitter </SocialButton>
     </Stack>
   ),
-  info: {
-    title: "Types",
-    description: "Social buttons automatically display the logo for the selected service.",
-  },
 };

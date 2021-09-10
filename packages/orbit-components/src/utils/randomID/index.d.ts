@@ -1,2 +1,3 @@
-declare const RandomID: (value: string) => string;
-export { RandomID, RandomID as default };
+/** Generates randomID, does not support SSR  */
+declare const randomID: (value: string) => string;
+export { randomID, randomID as default };

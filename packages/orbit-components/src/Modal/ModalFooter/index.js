@@ -99,12 +99,26 @@ const wrappedChildren = (children, flex = "0 1 auto") => {
 };
 
 const ModalFooter = ({ dataTest, children, flex }: Props): React.Node => {
-  const { isMobileFullPage } = React.useContext(ModalContext);
+  const { isMobileFullPage, setFooterHeight } = React.useContext(ModalContext);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
 
   useModalContextFunctions();
 
+  React.useEffect(() => {
+    function transitionEndHandler() {
+      if (setFooterHeight && containerRef.current) {
+        setFooterHeight(containerRef.current.clientHeight);
+      }
+    }
+    const containerEl = containerRef.current;
+    containerEl?.addEventListener("transitionend", transitionEndHandler);
+    return () => {
+      containerEl?.removeEventListener("transitionend", transitionEndHandler);
+    };
+  }, [setFooterHeight]);
+
   return (
-    <StyledModalFooter data-test={dataTest} isMobileFullPage={isMobileFullPage}>
+    <StyledModalFooter ref={containerRef} data-test={dataTest} isMobileFullPage={isMobileFullPage}>
       {wrappedChildren(children, flex)}
     </StyledModalFooter>
   );

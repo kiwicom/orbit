@@ -15,7 +15,7 @@ import media, { getBreakpointWidth } from "../utils/mediaQuery";
 import { QUERIES } from "../utils/mediaQuery/consts";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
-import randomID from "../utils/randomID";
+import useRandomId from "../hooks/useRandomId";
 import onlyIE from "../utils/onlyIE";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
@@ -369,7 +369,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
 
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
-    const modalID = React.useMemo(() => randomID("modalID"), []);
+    const modalID = useRandomId();
 
     const { isLargeMobile } = useMediaQuery();
     const scrollingElement = React.useRef<HTMLElement | null>(null);
@@ -388,7 +388,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       [scrollingElementRef],
     );
 
-    useLockScrolling(scrollingElement, lockScrolling);
+    useLockScrolling(scrollingElement, lockScrolling, [isLargeMobile]);
 
     const modalContentRef = React.useCallback(
       node => {
@@ -696,6 +696,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
                 setHasModalSection: () => setHasModalSection(true),
                 removeHasModalSection: () => setHasModalSection(false),
                 callContextFunctions,
+                setFooterHeight,
                 hasModalSection,
                 hasMobileHeader: mobileHeader,
                 isMobileFullPage,

@@ -3,4 +3,5 @@
 declare export default function useLockScrolling(
   ref: {| current: HTMLElement | null |},
   lock?: boolean,
+  dependencies?: mixed[],
 ): void;

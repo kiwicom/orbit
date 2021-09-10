@@ -65,15 +65,7 @@ async function previewChangelog(done) {
 function publishPackages() {
   return spawn(
     "yarn",
-    [
-      "lerna",
-      "publish",
-      "--ignore",
-      "@kiwicom/orbit.kiwi",
-      "--conventional-commits",
-      "--create-release",
-      "github",
-    ],
+    ["lerna", "publish", "--conventional-commits", "--create-release", "github"],
     { stdio: "inherit" },
   );
 }

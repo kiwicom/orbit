@@ -6,6 +6,7 @@ export type ModalContextProps = {|
   +setHasModalSection?: () => void,
   +removeHasModalSection?: () => void,
   +callContextFunctions?: () => void,
+  +setFooterHeight?: ((number => number) | number) => void,
   +hasModalSection?: boolean,
   +hasMobileHeader?: boolean,
   +isMobileFullPage?: boolean,

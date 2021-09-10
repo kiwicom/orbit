@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { Card, CardSection, Stack, Text } from "@kiwicom/orbit-components";
-import { GenderMan, GenderWoman } from "@kiwicom/orbit-components/icons";
+import { GenderWoman } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -11,17 +11,34 @@ export default {
           <Text type="secondary">yas.karenth@example.com</Text>
         </Stack>
       </CardSection>
-      <CardSection expandable title="Robin Kask" icon={<GenderMan ariaLabel="male" />}>
-        <Stack direction="column" spacing="XSmall">
-          <Text type="secondary">June 11, 1985</Text>
-          <Text type="secondary">robin2fly@example.com</Text>
-        </Stack>
-      </CardSection>
     </Card>
   ),
-  info: {
-    title: "Expandable sections – uncontrolled",
-    description:
-      "Card sections can be set to expand and close on user input without your needing to control the state yourself. It's enough to make the sections expandable.",
-  },
+  exampleKnobs: [
+    {
+      component: "Card",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "loading", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "" },
+        { name: "description", type: "text", defaultValue: "" },
+      ],
+    },
+    {
+      component: "CardSection",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "noSeparator", type: "boolean", defaultValue: false },
+        { name: "initialExpanded", type: "boolean", defaultValue: false },
+        { name: "expandable", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "Yasmin Karenth" },
+        { name: "description", type: "text", defaultValue: "" },
+        {
+          name: "titleAs",
+          type: "select",
+          defaultValue: "h2",
+          options: ["h1", "h2", "h3", "h4", "h5", "h6", "div"],
+        },
+      ],
+    },
+  ],
 };

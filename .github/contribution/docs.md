@@ -125,4 +125,4 @@ Any broken link prevents a pull request from being merged.
 
 To check for yourself,
 run `yarn check-links` from a terminal at the root of this repository.
-Note that you need to have built the site first (run `yarn orbit-kiwi build`).
+Note that you need to have built the site first (run `yarn docs build`).

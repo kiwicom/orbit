@@ -3,6 +3,7 @@ import { LiveProvider, LivePreview } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import * as Icons from "@kiwicom/orbit-components/icons";
 
 import useSandbox from "./useSandbox";
 import { getModules } from "../../components/ReactExample/helpers";
@@ -25,7 +26,11 @@ const PureSandbox = ({ pathContext }) => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
+      <LiveProvider
+        code={code || example}
+        scope={{ ...modules, styled, Icons, css }}
+        theme={dracula}
+      >
         <GlobalStyle />
         <section
           id={PREVIEW_ID}

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { LinkList, Stack, TextLink } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 

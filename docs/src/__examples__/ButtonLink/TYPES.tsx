@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, ButtonLink } from "@kiwicom/orbit-components";
 
 export default {
@@ -18,8 +18,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Button link types",
-    description: "Button links come in three types: primary, secondary, and critical.",
-  },
 };

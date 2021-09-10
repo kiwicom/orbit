@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import convertHexToRgba from "@kiwicom/orbit-design-tokens/lib/convertHexToRgba";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
@@ -54,9 +54,11 @@ StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ...props }) => (
-  <aside {...props} />
-))`
+const StyledDrawerSide = styled(
+  React.forwardRef(({ theme, width, position, shown, suppressed, ...props }, ref) => (
+    <aside ref={ref} {...props} />
+  )),
+)`
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -141,6 +143,7 @@ const Drawer = ({
 }: Props): React.Node => {
   const theme = useTheme();
   const overlayRef = React.useRef(null);
+  const scrollableRef = React.useRef<HTMLElement | null>(null);
   const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,
   ]);
@@ -159,7 +162,7 @@ const Drawer = ({
     [onClose],
   );
 
-  useLockScrolling(overlayRef, lockScrolling && overlayShown);
+  useLockScrolling(scrollableRef, lockScrolling && overlayShown);
 
   React.useEffect(() => {
     if (overlayShown !== shown) {
@@ -180,7 +183,9 @@ const Drawer = ({
       aria-hidden={!shown}
       ref={overlayRef}
     >
+      {/* $FlowFixMe: problem with ref object */}
       <StyledDrawerSide
+        ref={scrollableRef}
         shown={shown}
         width={width}
         position={position}

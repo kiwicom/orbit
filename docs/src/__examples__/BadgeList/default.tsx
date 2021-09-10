@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { AlertCircle, BaggageSet, Clock } from "@kiwicom/orbit-components/icons";
 import { BadgeList, BadgeListItem } from "@kiwicom/orbit-components";
 
@@ -14,8 +14,4 @@ export default {
       <BadgeListItem icon={<Clock />}>3h 20min layover</BadgeListItem>
     </BadgeList>
   ),
-  info: {
-    title: "Default badge list",
-    description: "",
-  },
 };

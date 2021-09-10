@@ -1,16 +1,17 @@
 // @flow
 import * as React from "react";
 
-import randomID from "../../utils/randomID";
+import { useRandomIdSeed } from "../../hooks/useRandomId";
 import IllustrationWrapper from "./IllustrationWrapper";
 import type { Props } from "..";
 
 const SmartPassV3 = ({ primary, secondary, ...props }: Props): React.Node => {
-  const randomIDLinear = React.useMemo(() => randomID("linear1"), []);
-  const randomIDLinear2 = React.useMemo(() => randomID("linear2"), []);
-  const randomIDLinear3 = React.useMemo(() => randomID("linear3"), []);
-  const randomIDLinear4 = React.useMemo(() => randomID("linear4"), []);
-  const randomIDLinear5 = React.useMemo(() => randomID("linear5"), []);
+  const randomId = useRandomIdSeed();
+  const randomIDLinear = randomId("linear1");
+  const randomIDLinear2 = randomId("linear2");
+  const randomIDLinear3 = randomId("linear3");
+  const randomIDLinear4 = randomId("linear4");
+  const randomIDLinear5 = randomId("linear5");
 
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1521">

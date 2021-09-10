@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { NavigationBar, ButtonLink, Stack, CountryFlag } from "@kiwicom/orbit-components";
 import {
   Accommodation,

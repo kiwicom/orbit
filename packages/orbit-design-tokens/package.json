@@ -1,8 +1,9 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "0.13.10",
+  "version": "0.14.0",
   "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "private": false,
   "repository": {
     "type": "git",
@@ -10,6 +11,7 @@
   },
   "files": [
     "lib/*",
+    "es/*",
     "package.json",
     "README.md",
     "output/*",
@@ -21,17 +23,14 @@
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:lib": "babel --out-dir lib --ignore **/*.test.js,src/theo/* src && yarn copy:lib",
-    "build:es": "babel --config-file ./.babel-es --no-babelrc --out-dir es --ignore **/*.test.js,src/theo/* src && yarn copy:es",
+    "build:lib": "babel src --out-dir lib --ignore **/*.test.js,src/theo/* && yarn copy:lib",
+    "build:es": "babel src --out-dir es --ignore **/*.test.js,src/theo/* --env-name esm && yarn copy:es",
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
     "prebuild": "rimraf lib src/js",
-    "build": "yarn clean && yarn run build:lib && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
+    "build": "yarn clean && yarn run build:lib && yarn run build:es && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
-    "clean": "rimraf lib es pages output",
-    "postinstall": "yarn build:lib",
-    "prepublishOnly": "yarn build && pinst --disable",
-    "postpublish": "pinst --enable"
+    "clean": "rimraf lib es pages output"
   },
   "author": "Kiwi.com",
   "license": "MIT",

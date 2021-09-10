@@ -3,6 +3,8 @@
 
 declare module "@kiwicom/orbit-components";
 
+export * as Icons from "./icons";
+
 export { Alert } from "./Alert";
 export { Accordion } from "./Accordion";
 export { AccordionSection } from "./Accordion/AccordionSection";
@@ -56,6 +58,7 @@ export { RatingStars } from "./RatingStars";
 export { default as Seat, SeatLegend } from "./Seat";
 export { Select } from "./Select";
 export { Stack } from "./Stack";
+export { default as Skeleton } from "./Skeleton";
 export { Sticky } from "./Sticky";
 export { Separator } from "./Separator";
 export { SkipNavigation } from "./SkipNavigation";
@@ -108,5 +111,6 @@ export { IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
 export { LinkList } from "./LinkList";
 export { default as Wizard, WizardStep } from "./Wizard";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
+export { default as useLockScrolling } from "./hooks/useLockScrolling";
 
 export { Icon } from "./Icon";

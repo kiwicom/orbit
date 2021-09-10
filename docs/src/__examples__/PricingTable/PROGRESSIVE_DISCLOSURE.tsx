@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   PricingTable,
   PricingTableItem,
@@ -64,8 +64,14 @@ export default {
       </PricingTableItem>
     </PricingTable>
   ),
-  info: {
-    title: "Pricing table",
-    description: "A table with extra information disclosed progressively.",
-  },
+  exampleKnobs: [
+    {
+      component: "PricingTable",
+      knobs: [
+        { name: "activeElement", type: "number", defaultValue: 0 },
+        { name: "hasError", type: "boolean", defaultValue: false },
+        { name: "desktopRatio", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

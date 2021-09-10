@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.16.0...@kiwicom/orbit.kiwi@0.17.0) (2021-09-09)
+
+
+### Features
+
+* **Skeleton:** introduce Skeleton component ([#3071](https://github.com/kiwicom/orbit/issues/3071)) ([6a3cf3d](https://github.com/kiwicom/orbit/commit/6a3cf3d6c45945ff1e3a988a675d919da8fc757e))
+* add `lockScrolling` theme flag ([abfe92c](https://github.com/kiwicom/orbit/commit/abfe92c2f50299f9d731c66a9ff2b424f53d060d))
+
+
+
+
+
+# [0.16.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.15.4...@kiwicom/orbit.kiwi@0.16.0) (2021-09-07)
+
+
+### Bug Fixes
+
+* use @kiwicom/orbit-design-tokens's ESM build ([a85a521](https://github.com/kiwicom/orbit/commit/a85a5210dce433f52b08d63c504316c847ff6178))
+* **convertHexToRgba:** add TypeScript definition ([271cf9c](https://github.com/kiwicom/orbit/commit/271cf9c1af684747aa2ef15550f8c21c7f618623))
+* **sandbox:** height in fullPage mode ([4c44c50](https://github.com/kiwicom/orbit/commit/4c44c508a562727e582d5ff10f0a25bd6f4e3249))
+
+
+### Features
+
+* implement sandbox knobs ([#3033](https://github.com/kiwicom/orbit/issues/3033)) ([bc8e426](https://github.com/kiwicom/orbit/commit/bc8e4268c559a678488ac5e4bebef9394b5cc54b))
+* new SSR-friendly useRandomId hook ([#3055](https://github.com/kiwicom/orbit/issues/3055)) ([1220d8f](https://github.com/kiwicom/orbit/commit/1220d8fd285103b191949caaca910a3ab122eeeb))
+
+
+
+
+
 ## [0.15.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit.kiwi@0.15.3...@kiwicom/orbit.kiwi@0.15.4) (2021-08-19)
 
 **Note:** Version bump only for package @kiwicom/orbit.kiwi

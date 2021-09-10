@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
   Accordion,
@@ -136,10 +136,5 @@ export default {
         </AccordionSection>
       </Accordion>
     );
-  },
-  info: {
-    title: "Section actions",
-    description:
-      "To override the open button and add your own actions in the section heading, use the <code>actions</code> property of the section.",
   },
 };

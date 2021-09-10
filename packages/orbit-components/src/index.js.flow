@@ -1,5 +1,5 @@
 // @flow
-import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
+import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens";
 
 import type { Theme } from "./defaultTheme";
 import typeof AccordionSectionType from "./Accordion/AccordionSection";
@@ -71,6 +71,7 @@ import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SeatType, { SeatLegend as SeatLegendType } from "./Seat";
 import typeof SelectType from "./Select";
+import typeof SkeletonType from "./Skeleton";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof SkipNavigationType from "./SkipNavigation";
@@ -220,6 +221,7 @@ declare export var SmartPassV3: SmartPassV3Type;
 declare export var SmartPassV4: SmartPassV4Type;
 declare export var SmartPassV5: SmartPassV5Type;
 declare export var SocialButton: SocialButtonType;
+declare export var Skeleton: SkeletonType;
 declare export var Stack: StackType;
 declare export var Stepper: StepperType;
 declare export var StepperStateless: StepperStatelessType;

@@ -42,7 +42,7 @@ const getTypeToken = ({ name, theme, type }) => {
       [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightHover,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
       [TYPE_OPTIONS.DARK]: null,
-      [TYPE_OPTIONS.WHITE]: null,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteCloudDark,
       [TYPE_OPTIONS.INFO_INVERTED]: null,
       [TYPE_OPTIONS.CRITICAL_INVERTED]: null,
       [TYPE_OPTIONS.SUCCESS_INVERTED]: null,

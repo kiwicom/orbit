@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Text, Tooltip, Alert } from "@kiwicom/orbit-components";
 import { CheckCircle, Visa } from "@kiwicom/orbit-components/icons";
 

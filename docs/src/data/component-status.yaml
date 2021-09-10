@@ -432,6 +432,13 @@
   android: n/a
   docs: Released
   group: Input
+- component: Skeleton
+  figma: n/a
+  react: Released
+  ios: n/a
+  android: n/a
+  docs: Released
+  group: Progress indicators
 - component: Separator
   figma: Released
   react: Released

@@ -1,9 +1,10 @@
 // @flow
-import type { Tokens } from "@kiwicom/orbit-design-tokens/lib/index";
+import type { Tokens } from "@kiwicom/orbit-design-tokens";
 
 export type Theme = {|
   +orbit: Tokens,
   +transitions?: boolean,
+  +lockScrolling?: boolean,
   +rtl?: boolean,
 |};
 

@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.122.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.121.0...@kiwicom/orbit-components@0.122.0) (2021-09-09)
+
+
+### Features
+
+* **Skeleton:** introduce Skeleton component ([#3071](https://github.com/kiwicom/orbit/issues/3071)) ([6a3cf3d](https://github.com/kiwicom/orbit/commit/6a3cf3d6c45945ff1e3a988a675d919da8fc757e))
+* **useLockScrolling:** allow specifying additional dependencies ([aac39f0](https://github.com/kiwicom/orbit/commit/aac39f0bcd20e92df1f09e3565b0315a024f95e2))
+* add `lockScrolling` theme flag ([abfe92c](https://github.com/kiwicom/orbit/commit/abfe92c2f50299f9d731c66a9ff2b424f53d060d))
+
+
+
+
+
+# [0.121.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.120.0...@kiwicom/orbit-components@0.121.0) (2021-09-07)
+
+
+### Bug Fixes
+
+* **Badge:** add border to type white ([#3085](https://github.com/kiwicom/orbit/issues/3085)) ([70264ee](https://github.com/kiwicom/orbit/commit/70264ee7160e55293b63babc28ad6067b127bd59))
+* **CountryFlag:** disallow `code` value null ([481b36c](https://github.com/kiwicom/orbit/commit/481b36cbbbd2814f9fd1d6202402003ac4af2ea6))
+* **Drawer:** fix iOS bug with scrolling content ([92827ab](https://github.com/kiwicom/orbit/commit/92827abcff5ab7e9938c0e5252cfa3c1e7233ffe))
+* **Modal:** fix bug with detached footer ([#3093](https://github.com/kiwicom/orbit/issues/3093)) ([d552b78](https://github.com/kiwicom/orbit/commit/d552b7826bdfd3687ac06a255ec8a0d7c4a06beb))
+* add missing TS definitions in ESM build ([90ec51a](https://github.com/kiwicom/orbit/commit/90ec51a5bfdf34b5d844c9e73278ca70a2207217))
+* use @kiwicom/orbit-design-tokens's ESM build ([a85a521](https://github.com/kiwicom/orbit/commit/a85a5210dce433f52b08d63c504316c847ff6178))
+
+
+### Features
+
+* new SSR-friendly useRandomId hook ([#3055](https://github.com/kiwicom/orbit/issues/3055)) ([1220d8f](https://github.com/kiwicom/orbit/commit/1220d8fd285103b191949caaca910a3ab122eeeb))
+* **Illustration:** add EVisa image ([#3091](https://github.com/kiwicom/orbit/issues/3091)) ([23d0ecd](https://github.com/kiwicom/orbit/commit/23d0ecd3278061e98d49ff34350082ae596a2983))
+
+
+### BREAKING CHANGES
+
+* **CountryFlag:** Flow and TypeScript type definitions no longer allow
+`null` as value for `CountryFlag`'s `code`.
+
+
+
+
+
 # [0.120.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.119.0...@kiwicom/orbit-components@0.120.0) (2021-08-19)
 
 

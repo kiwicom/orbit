@@ -5,8 +5,6 @@ import userEvent from "@testing-library/user-event";
 
 import MobileDialog from "..";
 
-jest.mock("../../../utils/randomID", () => name => name);
-
 let dialogs: HTMLElement;
 
 beforeAll(() => {
@@ -18,7 +16,6 @@ beforeAll(() => {
 afterAll(() => {
   document.body?.removeChild(dialogs);
 });
-
 describe("MobileDialogPrimitive", () => {
   it("should have expected DOM output", () => {
     render(

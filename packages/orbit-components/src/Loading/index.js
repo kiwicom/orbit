@@ -95,7 +95,7 @@ export const StyledSpinner: any = styled.svg`
 const StyledSpinnerCircle = styled.circle`
   fill: transparent;
   stroke: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteInkLighter};
+    type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDarker};
   stroke-width: 3px;
   stroke-linecap: round;
   stroke-dasharray: 128px;
@@ -118,7 +118,7 @@ const StyledLoaderCircle = styled.div`
   height: 8px;
   border-radius: 50%;
   margin-${right}: 6px;
-  background: ${({ theme }) => theme.orbit.paletteInkLighter};
+  background: ${({ theme }) => theme.orbit.paletteCloudDarker};
   animation: ${LoaderAnimation} 1.25s infinite ease-in-out;
   &:nth-child(2) {
     animation-delay: 0.1s;

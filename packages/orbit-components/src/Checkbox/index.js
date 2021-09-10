@@ -17,7 +17,7 @@ import type { Props } from ".";
 const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const resolveBorderColor = () => {
     if (disabled) {
-      return theme.orbit.paletteInkLighter;
+      return theme.orbit.paletteCloudDarker;
     }
     if (checked) {
       return theme.orbit.paletteBlueNormal;
@@ -31,7 +31,7 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
 
   const getBackground = () => {
     if (disabled && checked) {
-      return theme.orbit.paletteInkLighter;
+      return theme.orbit.paletteCloudDarker;
     }
     if (disabled && !checked) {
       return theme.orbit.paletteCloudNormal;

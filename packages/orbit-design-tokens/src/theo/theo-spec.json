@@ -9,7 +9,7 @@
       }
     },
     "colorTextSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -73,7 +73,7 @@
       }
     },
     "colorIconSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -753,7 +753,7 @@
       }
     },
     "colorTextInputPrefix": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -761,7 +761,7 @@
       }
     },
     "colorTextInputDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -833,7 +833,7 @@
       }
     },
     "colorTextTable": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -865,7 +865,7 @@
       }
     },
     "colorPlaceholderInput": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -881,7 +881,7 @@
       }
     },
     "colorPlaceholderInputFile": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -905,7 +905,7 @@
       }
     },
     "colorFormLabelFilled": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -913,7 +913,7 @@
       }
     },
     "colorInfoCheckBoxRadio": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -945,7 +945,7 @@
       }
     },
     "colorIconRadioButtonDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -953,7 +953,7 @@
       }
     },
     "colorStopoverArrow": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -2101,7 +2101,7 @@
       }
     },
     "borderColorInputHover": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2109,7 +2109,7 @@
       }
     },
     "borderColorInputActive": {
-      "value": "#94A8BE",
+      "value": "#4A617C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2405,7 +2405,7 @@
       }
     },
     "borderColorCheckboxRadioHover": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -3380,7 +3380,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighter": {
+    "paletteCloudDarker": {
       "value": "#BAC7D5",
       "type": "color",
       "category": "Color palette",
@@ -3388,7 +3388,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighterHover": {
+    "paletteCloudDarkerHover": {
       "value": "#A6B6C8",
       "type": "color",
       "category": "Color palette",
@@ -3396,7 +3396,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighterActive": {
+    "paletteCloudDarkerActive": {
       "value": "#94A8BE",
       "type": "color",
       "category": "Color palette",
@@ -3404,8 +3404,32 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
+    "paletteInkLighter": {
+      "value": "#697D95",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteInkLighterHover": {
+      "value": "#5D738E",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteInkLighterActive": {
+      "value": "#4A617C",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
     "paletteInkLight": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3413,7 +3437,7 @@
       }
     },
     "paletteInkLightHover": {
-      "value": "#52647A",
+      "value": "#3E4E63",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3421,7 +3445,7 @@
       }
     },
     "paletteInkLightActive": {
-      "value": "#465567",
+      "value": "#324256",
       "type": "color",
       "category": "Color palette",
       "meta": {

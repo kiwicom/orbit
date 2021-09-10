@@ -47,7 +47,7 @@ export const StyledBarPart: any = styled(({ width, left, theme, active, ...props
   top: 10px;
   border-radius: 4px;
   background-color: ${({ theme, active }) =>
-    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteInkLighter};
+    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDarker};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

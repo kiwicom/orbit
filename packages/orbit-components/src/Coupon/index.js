@@ -12,7 +12,7 @@ const StyledCoupon = styled.mark`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  border: 1px dashed ${({ theme }) => theme.orbit.paletteInkLighter};
+  border: 1px dashed ${({ theme }) => theme.orbit.paletteCloudDarker};
   padding: 2px ${({ theme }) => theme.orbit.spaceXXSmall};
   line-height: inherit;
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};

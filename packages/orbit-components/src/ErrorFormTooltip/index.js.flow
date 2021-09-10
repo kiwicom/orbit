@@ -1,0 +1,27 @@
+// @flow
+import * as React from "react";
+
+import type { Globals, RefType } from "../common/common.js.flow";
+import type { Dimensions as PositionRaw } from "../utils/boundingClientRect";
+
+export type Props = {|
+  +id?: string,
+  +shown: boolean,
+  +error?: React.Node,
+  +help?: React.Node,
+  +iconRef?: RefType,
+  +labelRef?: RefType,
+  +inputSize?: "small" | "normal",
+  +onShown: ((boolean => boolean) | boolean) => void,
+  +inlineLabel?: boolean,
+  ...Globals,
+|};
+
+export type Dimensions = {|
+  set: boolean,
+  label: PositionRaw,
+  content: PositionRaw,
+  icon: ?PositionRaw,
+|};
+
+declare export default React.ComponentType<Props>;

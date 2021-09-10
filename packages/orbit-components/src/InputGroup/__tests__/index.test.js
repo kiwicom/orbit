@@ -38,6 +38,10 @@ describe("InputGroup", () => {
         <InputField />
       </InputGroup>,
     );
+
+    const input = screen.getByRole("textbox");
+    // $FlowFixMe
+    userEvent.tab(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", () => {
@@ -46,19 +50,13 @@ describe("InputGroup", () => {
         <InputField />
       </InputGroup>,
     );
+
+    const input = screen.getByRole("textbox");
+    // $FlowFixMe
+    userEvent.tab(input);
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
-  it("should remove labels, help and error messages from child inputs", () => {
-    render(
-      <InputGroup>
-        <InputField label="Label" help="help message" />
-        <InputField error="error message" />
-      </InputGroup>,
-    );
-    expect(screen.queryByLabelText("Label")).not.toBeInTheDocument();
-    expect(screen.queryByText("help message")).not.toBeInTheDocument();
-    expect(screen.queryByText("error message")).not.toBeInTheDocument();
-  });
+
   it("should pass event handlers to child inputs", () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();

@@ -75,6 +75,20 @@ describe("Select", () => {
     expect(screen.getByText("blin")).toBeInTheDocument();
   });
 
+  it("should have error message", () => {
+    render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
+    userEvent.tab();
+
+    expect(screen.getByText("error")).toBeInTheDocument();
+  });
+
+  it("should have help message", () => {
+    render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
+    userEvent.tab();
+
+    expect(screen.getByText("help")).toBeInTheDocument();
+  });
+
   it("should be disabled", () => {
     render(<Select options={[{ value: "1", label: "One" }]} readOnly disabled />);
     expect(screen.getByRole("combobox")).toBeDisabled();

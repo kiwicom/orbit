@@ -6,11 +6,12 @@ import type { DataAttrs } from "../common/common.js.flow";
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
-import FormFeedback from "../FormFeedback";
+import ErrorFormTooltip from "../ErrorFormTooltip";
 import SIZE_OPTIONS from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
+import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
@@ -37,14 +38,17 @@ Label.defaultProps = {
 };
 
 type StyledSelectType = Props & {|
-  ...DataAttrs,
   className: string,
   children: React.Node,
   error: boolean,
+  ...DataAttrs,
 |};
 
-const StyledSelect = styled(
-  React.forwardRef<StyledSelectType, HTMLSelectElement>(
+const StyledSelect: React.AbstractComponent<
+  any,
+  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
+> = styled(
+  React.forwardRef(
     (
       {
         className,
@@ -175,7 +179,6 @@ const StyledSelect = styled(
       -webkit-text-fill-color: transparent;
     }
   `}
-  color: ${({ customValueText }) => customValueText && "transparent !important"};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -183,9 +186,7 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer: any = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
+export const SelectContainer: React.AbstractComponent<any, HTMLDivElement> = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -200,9 +201,7 @@ SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectPrefix = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
+const SelectPrefix = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
@@ -218,9 +217,7 @@ SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectSuffix = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
-))`
+const SelectSuffix = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -273,94 +270,126 @@ StyledCustomValue.defaultProps = {
 const Select: React.AbstractComponent<
   Props,
   React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
-> = React.forwardRef<Props, React.AbstractComponent<StyledSelectType, HTMLSelectElement>>(
-  (props, ref) => {
-    const {
-      size = SIZE_OPTIONS.NORMAL,
-      label,
-      placeholder,
-      value,
-      disabled = false,
-      error,
-      help,
-      name,
-      onChange,
-      onBlur,
-      onFocus,
-      options,
-      tabIndex,
-      id,
-      required,
-      dataTest,
-      prefix,
-      spaceAfter,
-      customValueText,
-      dataAttrs,
-      readOnly,
-    } = props;
-    const filled = !(value == null || value === "");
-    return (
-      <Label spaceAfter={spaceAfter}>
-        {label && (
-          <FormLabel filled={filled} disabled={disabled} required={required}>
-            {label}
-          </FormLabel>
+> = React.forwardRef((props, ref) => {
+  const {
+    size = SIZE_OPTIONS.NORMAL,
+    label,
+    placeholder,
+    value,
+    disabled = false,
+    error,
+    help,
+    name,
+    onChange,
+    onBlur,
+    onFocus,
+    options,
+    tabIndex,
+    id,
+    required,
+    dataTest,
+    prefix,
+    spaceAfter,
+    customValueText,
+    insideInputGroup,
+    dataAttrs,
+    readOnly,
+  } = props;
+  const filled = !(value == null || value === "");
+
+  const {
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    setTooltipShown,
+    handleFocus,
+  } = useErrorTooltip({ onFocus });
+
+  const shown = tooltipShown || tooltipShownHover;
+
+  return (
+    <Label spaceAfter={spaceAfter}>
+      {label && (
+        <FormLabel
+          filled={!!filled}
+          error={!!error}
+          help={!!help}
+          disabled={disabled}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+          required={required}
+        >
+          {label}
+        </FormLabel>
+      )}
+      <SelectContainer ref={label ? null : labelRef}>
+        {prefix && (
+          <SelectPrefix prefix={prefix} size={size}>
+            {prefix}
+          </SelectPrefix>
         )}
-        <SelectContainer disabled={disabled}>
-          {prefix && (
-            <SelectPrefix prefix={prefix} size={size}>
-              {prefix}
-            </SelectPrefix>
+        {customValueText && (
+          <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
+            {customValueText}
+          </StyledCustomValue>
+        )}
+        <StyledSelect
+          dataTest={dataTest}
+          size={size}
+          disabled={disabled}
+          error={error}
+          value={value == null ? "" : value}
+          prefix={prefix}
+          name={name}
+          onFocus={handleFocus}
+          onBlur={onBlur}
+          onChange={onChange}
+          filled={filled}
+          customValueText={customValueText}
+          tabIndex={tabIndex}
+          id={id}
+          readOnly={readOnly}
+          required={required}
+          ref={ref}
+          dataAttrs={dataAttrs}
+        >
+          {placeholder && (
+            <option label={placeholder} value="">
+              {placeholder}
+            </option>
           )}
-          {customValueText && (
-            <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
-              {customValueText}
-            </StyledCustomValue>
-          )}
-          <StyledSelect
-            dataTest={dataTest}
-            size={size}
-            disabled={disabled}
-            error={error}
-            value={value == null ? "" : value}
-            prefix={prefix}
-            name={name}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            onChange={onChange}
-            filled={filled}
-            customValueText={customValueText}
-            tabIndex={tabIndex}
-            id={id}
-            readOnly={readOnly}
-            required={required}
-            ref={ref}
-            dataAttrs={dataAttrs}
-          >
-            {placeholder && (
-              <option label={placeholder} value="">
-                {placeholder}
-              </option>
-            )}
-            {options.map(option => (
-              <option
-                key={`option-${option.key || option.value}`}
-                value={option.value}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </option>
-            ))}
-          </StyledSelect>
-          <SelectSuffix size={size} disabled={disabled}>
-            <ChevronDown />
-          </SelectSuffix>
-        </SelectContainer>
-        <FormFeedback error={error} help={help} />
-      </Label>
-    );
-  },
-);
+          {options.map(option => (
+            <option
+              key={`option-${option.key || option.value}`}
+              value={option.value}
+              disabled={option.disabled}
+            >
+              {option.label}
+            </option>
+          ))}
+        </StyledSelect>
+        <SelectSuffix size={size} disabled={disabled}>
+          <ChevronDown />
+        </SelectSuffix>
+      </SelectContainer>
+      {!insideInputGroup && (
+        <ErrorFormTooltip
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          inputSize={size}
+          shown={shown}
+          onShown={setTooltipShown}
+        />
+      )}
+    </Label>
+  );
+});
 
 // otherwise Unknown in storybook
 Select.displayName = "Select";

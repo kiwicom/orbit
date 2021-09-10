@@ -4,15 +4,17 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
-import FormFeedback from "../FormFeedback";
-import DefaultFormLabel from "../FormLabel";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
-import type { Translation } from "../common/common.js.flow";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useRandomId from "../hooks/useRandomId";
+import ErrorFormTooltip from "../ErrorFormTooltip";
+import AlertCircle from "../icons/AlertCircle";
+import InformationCircle from "../icons/InformationCircle";
+import FormLabel from "../FormLabel";
+import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
@@ -65,7 +67,6 @@ const Field = styled(
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
   display: block;
-  z-index: 2;
   flex: 1 1 100%;
   width: 100%;
   margin-bottom: ${getSpacingToken};
@@ -106,8 +107,10 @@ FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const InputContainer: any = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+export const InputContainer: any = styled(({ children, className, labelRef }) => (
+  <div ref={labelRef} className={className}>
+    {children}
+  </div>
 ))`
   display: flex;
   position: relative;
@@ -142,9 +145,9 @@ const StyledInlineLabel = styled.div`
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXXSmall}`)};
 
-  ${DefaultFormLabel} {
+  ${FormLabel} {
     margin-bottom: 0;
     font-size: ${getToken(TOKENS.fontSizeInput)};
     line-height: normal;
@@ -158,8 +161,10 @@ StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Prefix: any = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+export const Prefix: any = styled(({ children, className, iconRef }) => (
+  <div className={className} ref={iconRef}>
+    {children}
+  </div>
 ))`
   height: 100%;
   color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
@@ -171,9 +176,13 @@ export const Prefix: any = styled(({ children, className }) => (
   z-index: 3;
 
   & > svg {
+    color: ${({ theme }) => theme.orbit.colorIconInput};
+  }
+
+  & * svg,
+  & > svg {
     width: ${getToken(TOKENS.iconSize)};
     height: ${getToken(TOKENS.iconSize)};
-    color: ${({ theme }) => theme.orbit.colorIconInput};
   }
 
   ${StyledButtonPrimitiveIconContainer} {
@@ -213,11 +222,35 @@ Suffix.defaultProps = {
 
 export const Input: any = styled(
   React.forwardRef(
-    ({ type, size, theme, error, help, inlineLabel, dataAttrs, required, ...props }, ref) => (
-      // aria-required is passed to make the field required for screen-reader
-      // we do not pass required field by reason, to avoid native browser message
-      <input type={getDOMType(type)} {...props} {...dataAttrs} ref={ref} aria-required={required} />
-    ),
+    (
+      {
+        type,
+        size,
+        theme,
+        error,
+        help,
+        inlineLabel,
+        dataAttrs,
+        required,
+        ariaLabelledby,
+        ...props
+      },
+      ref,
+    ) => {
+      return (
+        <input
+          type={getDOMType(type)}
+          {...props}
+          {...dataAttrs}
+          ref={ref}
+          // aria-required is passed to make the field required for screen-reader
+          // we do not pass required field by reason, to avoid native browser message
+          aria-required={required}
+          // in case when there is no label
+          aria-labelledby={ariaLabelledby}
+        />
+      );
+    },
   ),
 )`
   appearance: none;
@@ -238,6 +271,9 @@ export const Input: any = styled(
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   z-index: 2;
+
+  // FIREFOX Applies a box-shadow when err is present from HTML validation
+  box-shadow: none;
 
   // FIREFOX flexbox bug: the input doesn't shrink properly
   min-width: 0;
@@ -289,19 +325,9 @@ Input.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormLabel = ({
-  label,
-  isFilled,
-  required,
-}: {|
-  label: Translation,
-  isFilled: boolean,
-  required?: boolean,
-|}) => (
-  <DefaultFormLabel filled={isFilled} required={required}>
-    {label}
-  </DefaultFormLabel>
-);
+const StyledIconWrapper = styled.span`
+  display: flex;
+`;
 
 const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
   Props,
@@ -342,64 +368,139 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
     spaceAfter,
     id,
     inputMode,
+    insideInputGroup,
     dataAttrs,
-  } = props;
+  }: Props = props;
 
   const forID = useRandomId();
+  const inputId = id || forID;
+
+  const {
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShown,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+  } = useErrorTooltip({ onFocus });
+
+  const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Field
-      component={label ? "label" : "div"}
-      spaceAfter={spaceAfter}
-      htmlFor={label ? id || forID : undefined}
-    >
-      {label && !inlineLabel && <FormLabel label={label} isFilled={!!value} required={required} />}
-      <InputContainer size={size} disabled={disabled} error={error}>
-        {prefix && <Prefix size={size}>{prefix}</Prefix>}
-        {label && inlineLabel && (
-          <StyledInlineLabel size={size}>
-            <FormLabel label={label} isFilled={!!value} required={required} />
-          </StyledInlineLabel>
+    <>
+      <Field
+        component={label ? "label" : "div"}
+        spaceAfter={spaceAfter}
+        htmlFor={label ? inputId : undefined}
+      >
+        {label && !inlineLabel && (
+          <FormLabel
+            inlineLabel={inlineLabel}
+            filled={!!value}
+            required={required}
+            error={!!error}
+            help={!!help}
+            labelRef={labelRef}
+            iconRef={iconRef}
+            onMouseEnter={() => setTooltipShownHover(true)}
+            onMouseLeave={() => setTooltipShownHover(false)}
+          >
+            {label}
+          </FormLabel>
         )}
-        {tags && <InputTags>{tags}</InputTags>}
-        <Input
-          data-test={dataTest}
-          data-state={getFieldDataState(!!error)}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onKeyUp={onKeyUp}
-          onKeyDown={onKeyDown}
-          onSelect={onSelect}
-          onMouseUp={onMouseUp}
-          onMouseDown={onMouseDown}
-          name={name}
-          type={type}
-          value={value}
-          placeholder={placeholder}
-          disabled={disabled}
-          min={minValue}
-          max={maxValue}
-          minLength={minLength}
-          maxLength={maxLength}
+        <InputContainer
           size={size}
+          disabled={disabled}
           error={error}
-          ref={ref}
-          tabIndex={tabIndex}
-          inlineLabel={inlineLabel}
-          readOnly={readOnly}
-          autoComplete={autoComplete}
-          autoFocus={autoFocus}
-          id={id || forID}
-          inputMode={inputMode}
-          required={required}
-          dataAttrs={dataAttrs}
-        />
-        {suffix && <Suffix size={size}>{suffix}</Suffix>}
-        <FakeInput size={size} disabled={disabled} error={error} />
-      </InputContainer>
-      <FormFeedback help={help} error={error} />
-    </Field>
+          labelRef={label ? null : labelRef}
+        >
+          {inlineLabel && !tags && (error || help) ? (
+            <Prefix size={size}>
+              {help && !error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <InformationCircle color="secondary" size="small" />
+                </StyledIconWrapper>
+              )}
+              {error && (
+                <StyledIconWrapper ref={iconRef}>
+                  <AlertCircle color="critical" size="small" />
+                </StyledIconWrapper>
+              )}
+            </Prefix>
+          ) : (
+            prefix && <Prefix size={size}>{prefix}</Prefix>
+          )}
+          {label && inlineLabel && (
+            <StyledInlineLabel ref={labelRef} size={size}>
+              <FormLabel
+                filled={!!value}
+                required={required}
+                error={!!error}
+                help={!!help}
+                inlineLabel={inlineLabel}
+              >
+                {label}
+              </FormLabel>
+            </StyledInlineLabel>
+          )}
+          <Input
+            data-test={dataTest}
+            required={required}
+            data-state={
+              insideInputGroup && typeof error === "undefined"
+                ? undefined
+                : getFieldDataState(!!error)
+            }
+            onChange={onChange}
+            onFocus={handleFocus}
+            onBlur={onBlur}
+            onKeyUp={onKeyUp}
+            onKeyDown={onKeyDown}
+            onSelect={onSelect}
+            onMouseUp={onMouseUp}
+            onMouseDown={onMouseDown}
+            name={name}
+            type={type}
+            value={value}
+            placeholder={placeholder}
+            disabled={disabled}
+            min={minValue}
+            max={maxValue}
+            minLength={minLength}
+            maxLength={maxLength}
+            size={size}
+            error={insideInputGroup ? undefined : error}
+            ref={ref}
+            tabIndex={tabIndex}
+            ariaLabelledby={!label && inputId}
+            inlineLabel={inlineLabel}
+            readOnly={readOnly}
+            autoComplete={autoComplete}
+            autoFocus={autoFocus}
+            id={inputId}
+            inputMode={inputMode}
+            dataAttrs={dataAttrs}
+          />
+          {tags && <InputTags>{tags}</InputTags>}
+          {suffix && <Suffix size={size}>{suffix}</Suffix>}
+          <FakeInput size={size} disabled={disabled} error={error} />
+        </InputContainer>
+        {!insideInputGroup && (
+          <ErrorFormTooltip
+            help={help}
+            id={inputId}
+            shown={shown}
+            onShown={setTooltipShown}
+            error={error}
+            inputSize={size}
+            iconRef={iconRef}
+            labelRef={labelRef}
+            inlineLabel={!tags && inlineLabel}
+          />
+        )}
+      </Field>
+    </>
   );
 });
 

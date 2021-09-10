@@ -72,7 +72,7 @@ const StyledSliderInput = styled.div`
 `;
 
 export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
-  bar: {| current: ?HTMLElement |} = React.createRef<?HTMLElement>();
+  bar: {| current: HTMLElement | null |} = React.createRef<HTMLElement | null>();
 
   static defaultProps: {| theme: typeof defaultTheme |} = {
     theme: defaultTheme,

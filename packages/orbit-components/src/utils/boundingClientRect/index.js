@@ -8,6 +8,7 @@ const boundingClientRect: BoundingClientRect = ref => {
     typeof ref.current.getBoundingClientRect === "function" &&
     typeof window !== "undefined"
   ) {
+    // $FlowFixMe: TODO
     const { height, width, top, left, right, bottom } = ref.current.getBoundingClientRect();
     return {
       top: top + (window.scrollY || window.pageYOffset),

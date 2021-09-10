@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { mediaQueries } from "@kiwicom/orbit-components";
 
 export const StyledCollapseWrapper = styled.div`
   padding: 1px;

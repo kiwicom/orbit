@@ -204,8 +204,8 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         <ErrorFormTooltip
           help={help}
           error={error}
-          iconRef={iconRef}
-          labelRef={labelRef}
+          inputSize="normal"
+          referenceElement={label ? iconRef.current : labelRef.current}
           shown={shown}
           onShown={setTooltipShown}
         />

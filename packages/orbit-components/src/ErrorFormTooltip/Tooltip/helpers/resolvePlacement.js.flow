@@ -1,0 +1,11 @@
+// @flow
+import type { CSSRules } from "styled-components";
+
+import type { Theme } from "../../../defaultTheme";
+
+export type ResolvePlacement = ({|
+  inputSize: "small" | "normal",
+  theme: Theme,
+|}) => CSSRules;
+
+declare export default ResolvePlacement;

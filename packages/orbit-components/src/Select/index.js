@@ -14,6 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -307,6 +308,8 @@ const Select: React.AbstractComponent<
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
+  const inputRef = React.useRef(null);
+
   const shown = tooltipShown || tooltipShownHover;
 
   return (
@@ -354,7 +357,7 @@ const Select: React.AbstractComponent<
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={ref}
+          ref={mergeRefs([ref, inputRef])}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -380,11 +383,10 @@ const Select: React.AbstractComponent<
         <ErrorFormTooltip
           help={help}
           error={error}
-          iconRef={iconRef}
-          labelRef={labelRef}
           inputSize={size}
           shown={shown}
           onShown={setTooltipShown}
+          referenceElement={label ? iconRef.current : inputRef.current}
         />
       )}
     </Label>

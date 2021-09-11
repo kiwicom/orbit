@@ -200,6 +200,8 @@ const InputGroup = ({
   const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
   const labelRef = React.useRef(null);
   const iconRef = React.useRef(null);
+  const inputRef = React.useRef(null);
+
   const foundErrors = React.useMemo(() => findPropInChild("error", children), [children]);
   const foundHelp = React.useMemo(() => findPropInChild("help", children), [children]);
 
@@ -279,7 +281,7 @@ const InputGroup = ({
         </FormLabel>
       )}
 
-      <StyledChildren onBlur={handleBlurGroup}>
+      <StyledChildren onBlur={handleBlurGroup} ref={inputRef}>
         {React.Children.toArray(children).map((item, key) => {
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (
@@ -301,11 +303,10 @@ const InputGroup = ({
       <ErrorFormTooltip
         help={helpReal}
         error={errorReal}
-        iconRef={iconRef}
-        labelRef={labelRef}
         inputSize={size}
         onShown={setTooltipShown}
         shown={tooltipShown || tooltipShownHover}
+        referenceElement={label ? iconRef.current : inputRef.current}
       />
     </StyledInputGroup>
   );

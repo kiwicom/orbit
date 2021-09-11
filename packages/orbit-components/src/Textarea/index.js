@@ -195,11 +195,11 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
       />
       <ErrorFormTooltip
         help={help}
+        inputSize={size}
         error={error}
-        iconRef={iconRef}
-        labelRef={labelRef}
         onShown={setTooltipShown}
         shown={shown}
+        referenceElement={labelRef.current}
       />
     </Field>
   );

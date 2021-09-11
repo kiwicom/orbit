@@ -55,14 +55,16 @@ const getDOMType = type => {
   return type;
 };
 
-const Field = styled(
-  ({ component: Component, className, children, spaceAfter, theme, ...props }) => {
-    return (
-      <Component className={className} {...props}>
-        {children}
-      </Component>
-    );
-  },
+const Field: any = styled(
+  React.forwardRef(
+    ({ component: Component, className, children, spaceAfter, theme, ...props }, ref) => {
+      return (
+        <Component className={className} ref={ref} {...props}>
+          {children}
+        </Component>
+      );
+    },
+  ),
 )`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   position: relative;
@@ -329,10 +331,10 @@ const StyledIconWrapper = styled.span`
   display: flex;
 `;
 
-const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
+const InputField: React.AbstractComponent<
   Props,
-  HTMLInputElement,
->((props, ref) => {
+  React.AbstractComponent<Props, HTMLInputElement>,
+> = React.forwardRef((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,
@@ -386,12 +388,14 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
   } = useErrorTooltip({ onFocus });
 
   const shown = tooltipShown || tooltipShownHover;
+  const fieldRef = React.useRef<HTMLElement | null>(null);
 
   return (
     <>
       <Field
         component={label ? "label" : "div"}
         spaceAfter={spaceAfter}
+        ref={fieldRef}
         htmlFor={label ? inputId : undefined}
       >
         {label && !inlineLabel && (
@@ -494,9 +498,8 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             onShown={setTooltipShown}
             error={error}
             inputSize={size}
-            iconRef={iconRef}
-            labelRef={labelRef}
-            inlineLabel={!tags && inlineLabel}
+            inlineLabel={inlineLabel}
+            referenceElement={!tags && (label || inlineLabel) ? iconRef.current : fieldRef.current}
           />
         )}
       </Field>

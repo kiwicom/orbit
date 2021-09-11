@@ -1,19 +1,18 @@
 // @flow
 import * as React from "react";
 
-import type { Globals, RefType } from "../../common/common.js.flow";
+import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +id?: string,
   +children: React.Node,
   +shown?: boolean,
   +isHelp?: boolean,
-  +labelRef?: RefType,
+  +referenceElement?: HTMLElement | null,
   +inputSize?: "small" | "normal",
-  +iconRef?: RefType,
   +inlineLabel?: boolean,
   +onShown: ((boolean => boolean) | boolean) => void,
   ...Globals,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

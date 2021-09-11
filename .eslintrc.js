@@ -96,7 +96,11 @@ module.exports = {
         "prettier/@typescript-eslint",
       ],
       parserOptions: {
-        project: ["./tsconfig.json", "./packages/orbit-components/cypress/tsconfig.json"],
+        project: [
+          "./tsconfig.json",
+          "./docs/tsconfig.json",
+          "./packages/orbit-components/cypress/tsconfig.json",
+        ],
         ecmaVersion: 2018,
         sourceType: "module",
       },

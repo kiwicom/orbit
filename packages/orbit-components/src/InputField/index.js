@@ -19,6 +19,7 @@ import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
 
+import typeof InputFieldType from ".";
 import type { Props } from ".";
 
 const getToken = name => ({ theme, size }) => {
@@ -331,10 +332,7 @@ const StyledIconWrapper = styled.span`
   display: flex;
 `;
 
-const InputField: React.AbstractComponent<
-  Props,
-  React.AbstractComponent<Props, HTMLInputElement>,
-> = React.forwardRef((props, ref) => {
+const InputField: InputFieldType = React.forwardRef((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,

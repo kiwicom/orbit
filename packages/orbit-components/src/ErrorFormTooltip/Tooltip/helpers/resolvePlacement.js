@@ -1,8 +1,14 @@
 // @flow
 import { css } from "styled-components";
+import type { CSSRules } from "styled-components";
 
+import type { Theme } from "../../../defaultTheme";
 import { left } from "../../../utils/rtl";
-import type { ResolvePlacement } from "./resolvePlacement.js.flow";
+
+export type ResolvePlacement = ({|
+  inputSize: "small" | "normal",
+  theme: Theme,
+|}) => CSSRules;
 
 const resolvePlacement: ResolvePlacement = ({ inputSize, theme }) => {
   if (inputSize === "normal") {

@@ -15,4 +15,4 @@ export type Props = {|
   ...Globals,
 |};
 
-declare export default React.AbstractComponent<Props, HTMLDivElement>;
+declare export default React.ComponentType<Props>;

@@ -28,7 +28,7 @@ const StyledArrow = styled(
     left: ${left};
     right: ${popperRight};
     bottom: ${bottom};
-    &::before {
+    &:before {
       content: "";
       background: ${resolveColor};
       width: 0.6rem;
@@ -193,6 +193,7 @@ const ErrorFormTooltip = ({
           element: arrowRef,
         },
       },
+      { name: "flip", enabled: false },
       {
         name: "eventListeners",
         options: {
@@ -229,7 +230,6 @@ const ErrorFormTooltip = ({
   }, [onShown, isHelp, shown, tooltipRef, update]);
 
   return (
-    /* $FlowFixMe: https://github.com/popperjs/react-popper/issues/318 */
     <StyledFormFeedbackTooltip
       id={id}
       ref={setTooltipRef}
@@ -239,10 +239,22 @@ const ErrorFormTooltip = ({
       data-test={dataTest}
       aria-live="polite"
       placement={attrs.popper && attrs.popper["data-popper-placement"]}
-      {...popper}
+      position={popper.position}
+      top={popper.top}
+      left={popper.left}
+      right={popper.right}
+      bottom={popper.bottom}
+      transform={popper.transform}
     >
-      {/* $FlowFixMe: https://github.com/popperjs/react-popper/issues/318 */}
-      <StyledArrow isHelp={isHelp} ref={setArrowRef} {...arrow} />
+      <StyledArrow
+        isHelp={isHelp}
+        ref={setArrowRef}
+        position={popper.position}
+        top={arrow.top}
+        left={arrow.left}
+        right={arrow.right}
+        bottom={arrow.bottom}
+      />
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
       {isHelp && (
         <StyledCloseButton

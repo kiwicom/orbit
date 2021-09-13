@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.0...@kiwicom/orbit-components@1.0.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* **InputField:** remove aria-labelledby when label is provided ([#3103](https://github.com/kiwicom/orbit/issues/3103)) ([724163b](https://github.com/kiwicom/orbit/commit/724163bd70f52b35bafa381f4c4241b600fba12f))
+
+
+
+
+
 # [1.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.122.0...@kiwicom/orbit-components@1.0.0) (2021-09-10)
 
 

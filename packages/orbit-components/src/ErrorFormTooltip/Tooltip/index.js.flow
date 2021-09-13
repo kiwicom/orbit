@@ -8,7 +8,7 @@ export type Props = {|
   +children: React.Node,
   +shown?: boolean,
   +isHelp?: boolean,
-  +referenceElement?: HTMLElement | null,
+  +referenceElement?: {| current: HTMLElement | null |},
   +inputSize?: "small" | "normal",
   +inlineLabel?: boolean,
   +onShown: ((boolean => boolean) | boolean) => void,

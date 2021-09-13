@@ -199,7 +199,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         error={error}
         onShown={setTooltipShown}
         shown={shown}
-        referenceElement={labelRef.current}
+        referenceElement={labelRef}
       />
     </Field>
   );

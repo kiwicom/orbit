@@ -497,7 +497,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             error={error}
             inputSize={size}
             inlineLabel={inlineLabel}
-            referenceElement={!tags && (label || inlineLabel) ? iconRef.current : fieldRef.current}
+            referenceElement={!tags && (label || inlineLabel) ? iconRef : fieldRef}
           />
         )}
       </Field>

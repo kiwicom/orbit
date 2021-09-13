@@ -205,7 +205,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
           help={help}
           error={error}
           inputSize="normal"
-          referenceElement={label ? iconRef.current : labelRef.current}
+          referenceElement={label ? iconRef : labelRef}
           shown={shown}
           onShown={setTooltipShown}
         />

@@ -178,7 +178,7 @@ const ErrorFormTooltip = ({
     return [rtl ? 10 : -10, 7];
   };
 
-  const { styles, attributes: attrs, update } = usePopper(referenceElement, tooltipRef, {
+  const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {
     placement: rtl ? "top-end" : "top-start",
     modifiers: [
       {

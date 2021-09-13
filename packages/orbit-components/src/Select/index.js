@@ -386,7 +386,7 @@ const Select: React.AbstractComponent<
           inputSize={size}
           shown={shown}
           onShown={setTooltipShown}
-          referenceElement={label ? iconRef.current : inputRef.current}
+          referenceElement={label ? iconRef : inputRef}
         />
       )}
     </Label>

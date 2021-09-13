@@ -112,6 +112,9 @@ import typeof TruncateType from "./Truncate";
 import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
 import typeof useMediaQueryType from "./hooks/useMediaQuery";
 import typeof useLockScrollingType from "./hooks/useLockScrolling";
+import typeof useRandomIdType, {
+  useRandomIdSeed as useRandomIdSeedType,
+} from "./hooks/useRandomId";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -247,6 +250,8 @@ declare export var fromPlainObject: FromPlainObject;
 declare export var mediaQueries: mediaQueriesType;
 declare export var useMediaQuery: useMediaQueryType;
 declare export var useLockScrolling: useLockScrollingType;
+declare export var useRandomId: useRandomIdType;
+declare export var useRandomIdSeed: useRandomIdSeedType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

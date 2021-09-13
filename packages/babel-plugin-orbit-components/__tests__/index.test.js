@@ -43,7 +43,7 @@ test.each([
   ['import { ListItem } from "@kiwicom/orbit-components";'],
   [
     // mixed
-    `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
+    `import { Alert, ModalSection, mediaQueries, useRandomIdSeed } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 import { Accommodation } from "@kiwicom/orbit-components/icons";`,
   ],

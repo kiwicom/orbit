@@ -45,6 +45,7 @@ describe("InputField", () => {
         }}
       />,
     );
+    expect(screen.getByLabelText(/Label/)).toBeInTheDocument();
     const input = screen.getByRole("textbox", { name: /Label/ });
     expect(ref.current).toEqual(input);
     expect(input).toHaveAttribute("name", "name");

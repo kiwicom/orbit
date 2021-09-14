@@ -200,7 +200,6 @@ const InputGroup = ({
   const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
   const labelRef = React.useRef(null);
   const iconRef = React.useRef(null);
-  const inputRef = React.useRef(null);
 
   const foundErrors = React.useMemo(() => findPropInChild("error", children), [children]);
   const foundHelp = React.useMemo(() => findPropInChild("help", children), [children]);
@@ -281,7 +280,7 @@ const InputGroup = ({
         </FormLabel>
       )}
 
-      <StyledChildren onBlur={handleBlurGroup} ref={inputRef}>
+      <StyledChildren onBlur={handleBlurGroup}>
         {React.Children.toArray(children).map((item, key) => {
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (

@@ -171,13 +171,13 @@ const ErrorFormTooltip = ({
   const [tooltipRef, setTooltipRef] = React.useState(null);
   const [arrowRef, setArrowRef] = React.useState(null);
 
-  const resolveOffset = () => {
+  const resolveOffset = React.useCallback(() => {
     if (inlineLabel) {
       if (inputSize === "small") return [rtl ? 10 : -14, 7];
       return [rtl ? 6 : -6, 6];
     }
     return [rtl ? 10 : -10, 7];
-  };
+  }, [inlineLabel, inputSize, rtl]);
 
   const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {
     placement: rtl ? "top-end" : "top-start",
@@ -185,7 +185,7 @@ const ErrorFormTooltip = ({
       {
         name: "offset",
         options: {
-          offset: resolveOffset(),
+          offset: resolveOffset,
         },
       },
       {
@@ -211,6 +211,9 @@ const ErrorFormTooltip = ({
 
   React.useEffect(() => {
     if (update) update();
+  }, [update, resolveOffset, shown]);
+
+  React.useEffect(() => {
     const link = tooltipRef?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
@@ -227,7 +230,7 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp, shown, tooltipRef, update]);
+  }, [onShown, isHelp, tooltipRef]);
 
   return (
     <StyledFormFeedbackTooltip

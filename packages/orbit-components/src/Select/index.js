@@ -14,7 +14,6 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -313,7 +312,7 @@ const Select: React.AbstractComponent<
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Label spaceAfter={spaceAfter}>
+    <Label spaceAfter={spaceAfter} ref={inputRef}>
       {label && (
         <FormLabel
           filled={!!filled}
@@ -357,7 +356,7 @@ const Select: React.AbstractComponent<
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={mergeRefs([ref, inputRef])}
+          ref={ref}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -386,7 +385,7 @@ const Select: React.AbstractComponent<
           inputSize={size}
           shown={shown}
           onShown={setTooltipShown}
-          referenceElement={label ? iconRef : inputRef}
+          referenceElement={inputRef}
         />
       )}
     </Label>

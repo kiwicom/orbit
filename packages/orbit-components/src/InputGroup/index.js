@@ -306,7 +306,7 @@ const InputGroup = ({
         inputSize={size}
         onShown={setTooltipShown}
         shown={tooltipShown || tooltipShownHover}
-        referenceElement={label ? iconRef : inputRef}
+        referenceElement={labelRef}
       />
     </StyledInputGroup>
   );

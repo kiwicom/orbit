@@ -22,12 +22,13 @@ import type { Props } from ".";
 const StyledArrow = styled(
   React.forwardRef(({ className }, ref) => <div className={className} ref={ref} />),
 )`
-  ${({ position, top, left, bottom, right: popperRight }) => css`
+  ${({ position, top, left, bottom, right: popperRight, transform }) => css`
     position: ${position};
     top: ${top};
     left: ${left};
     right: ${popperRight};
     bottom: ${bottom};
+    transform: ${transform};
     &:before {
       content: "";
       background: ${resolveColor};
@@ -193,7 +194,6 @@ const ErrorFormTooltip = ({
           element: arrowRef,
         },
       },
-      { name: "flip", enabled: false },
       {
         name: "eventListeners",
         options: {
@@ -250,6 +250,7 @@ const ErrorFormTooltip = ({
         isHelp={isHelp}
         ref={setArrowRef}
         position={popper.position}
+        placement={attrs.popper && attrs.popper["data-popper-placement"]}
         top={arrow.top}
         left={arrow.left}
         right={arrow.right}

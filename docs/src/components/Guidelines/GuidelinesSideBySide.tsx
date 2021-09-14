@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import { Stack } from "@kiwicom/orbit-components";
+import { Stack, Grid, Text } from "@kiwicom/orbit-components";
+
+import { resolveBorders } from "./helpers";
 
 import { GuidelineType } from ".";
 
@@ -10,20 +12,19 @@ interface GuidelineItemProps extends GuidelineType {
   type: "do" | "dont";
 }
 
-const Wrapper = styled.div<GuidelineType>`
-  ${({ theme, type }) => css`
-    border-top: 4px solid
-      ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium};
+const StyledWrapper = styled.div`
+  ${({ theme }) => css`
+    padding-top: ${theme.orbit.spaceLarge};
   `}
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
   ${({ theme }) => css`
-    padding: 0 ${theme.orbit.spaceLarge};
-    background-color: ${theme.orbit.paletteCloudLight};
-    border-radius: 16px;
+    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
+    background: ${theme.orbit.paletteCloudLight};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     width: 100%;
+    ${resolveBorders};
 
     // Guidelines don't inherit spacing from Prose
     // So otherwise adjacent p elements are right next to each other
@@ -33,25 +34,47 @@ const StyledContainer = styled.div`
   `}
 `;
 
+const GuidelineIcons = ({ type }) =>
+  type === "do" ? (
+    <CheckCircle color="success" ariaLabel="Do" />
+  ) : (
+    <CloseCircle color="critical" ariaLabel="Don't" />
+  );
+
 const GuidelineItem = ({ children, type }: GuidelineItemProps) => (
-  <Stack direction="row" spacing="small" spaceAfter="small">
-    {type === "do" ? (
-      <CheckCircle color="success" ariaLabel="Do" />
-    ) : (
-      <CloseCircle color="critical" ariaLabel="Don't" />
-    )}
+  <Stack flex spacing="small" spaceAfter="small">
+    <GuidelineIcons type={type} />
     <div>{children}</div>
   </Stack>
 );
 
 const GuidelineContainer = ({ children, type }) => {
   return (
-    <StyledContainer>
-      <Wrapper type={type}>
+    <StyledContainer type={type} coloredBorder>
+      <Stack
+        flex
+        direction="row-reverse"
+        tablet={{ direction: "row", justify: "start" }}
+        spacing="XSmall"
+        justify="between"
+        align="center"
+      >
+        <GuidelineIcons type={type} />
+        {type === "do" ? (
+          <Text type="success" weight="bold">
+            Do
+          </Text>
+        ) : (
+          <Text type="critical" weight="bold">
+            Don&apos;t
+          </Text>
+        )}
+      </Stack>
+      <StyledWrapper>
         {React.Children.map(children.props?.children, child => (
           <GuidelineItem type={type}>{child.props.children}</GuidelineItem>
         )) || <GuidelineItem type={type}>{children.props?.children.props?.children}</GuidelineItem>}
-      </Wrapper>
+      </StyledWrapper>
     </StyledContainer>
   );
 };
@@ -64,8 +87,8 @@ export const Dont = ({ children }) => (
 
 export default function GuidelinesSideBySide({ children }) {
   return (
-    <Stack direction="column" tablet={{ direction: "row" }}>
+    <Grid columns="1fr" gap="1rem" tablet={{ columns: "repeat(2, 1fr)" }}>
       {children}
-    </Stack>
+    </Grid>
   );
 }

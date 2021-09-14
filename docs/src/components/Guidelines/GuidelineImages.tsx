@@ -1,15 +1,17 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Stack } from "@kiwicom/orbit-components";
+import { Stack, Grid } from "@kiwicom/orbit-components";
+
+import { resolveBorders } from "./helpers";
 
 import { DoDontHeader, GuidelineType } from ".";
 
-const GuidelineContainer = styled.div`
+const GuidelineContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceXLarge};
     width: 100%;
-    padding-top: 0;
-    background-color: ${theme.orbit.paletteCloudLight};
+    ${resolveBorders};
+    background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.spaceMedium};
   `}
 `;
@@ -21,19 +23,9 @@ interface ImageContainerProps {
 const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
-    max-width: 360px;
-    background-color: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.spaceMedium};
+    background: ${theme.orbit.paletteWhite};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     padding: ${theme.orbit.spaceXLarge};
-  `}
-`;
-
-const Border = styled.div<GuidelineType>`
-  ${({ theme, type }) => css`
-    border-top: 4px solid
-      ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding-top: ${theme.orbit.spaceXLarge};
-    height: 100%;
   `}
 `;
 
@@ -43,16 +35,14 @@ const GuidelineWithImage = ({ children, type }: GuidelineWithImageProps) => {
   const image = children[0];
   const content = children.slice(1, children.length);
   return (
-    <GuidelineContainer>
-      <Border type={type}>
-        <Stack>
-          <ImageContainer>{image}</ImageContainer>
-          <Stack spacing="small">
-            <DoDontHeader type={type} />
-            {content}
-          </Stack>
+    <GuidelineContainer type={type} coloredBorder>
+      <Stack>
+        <Stack spacing="small">
+          <DoDontHeader type={type} />
+          {content}
         </Stack>
-      </Border>
+        <ImageContainer>{image}</ImageContainer>
+      </Stack>
     </GuidelineContainer>
   );
 };
@@ -75,8 +65,8 @@ interface GuidelineImagesProps {
 
 export default function GuidelineImages({ children }: GuidelineImagesProps) {
   return (
-    <Stack direction="column" desktop={{ direction: "row" }}>
+    <Grid columns="1fr" gap="1rem" tablet={{ columns: "repeat(2, 1fr)" }}>
       {children}
-    </Stack>
+    </Grid>
   );
 }

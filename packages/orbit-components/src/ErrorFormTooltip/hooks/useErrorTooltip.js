@@ -7,7 +7,7 @@ const useErrorTooltip: UseErrorTooltip = ({ onFocus }) => {
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
   const labelRef = useRef(null);
-  const iconRef = useRef(null);
+  const iconRef: {| current: HTMLElement | null |} = useRef(null);
 
   const handleFocus = useCallback(
     ev => {

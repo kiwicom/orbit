@@ -200,6 +200,7 @@ const InputGroup = ({
   const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
   const labelRef = React.useRef(null);
   const iconRef = React.useRef(null);
+
   const foundErrors = React.useMemo(() => findPropInChild("error", children), [children]);
   const foundHelp = React.useMemo(() => findPropInChild("help", children), [children]);
 
@@ -301,11 +302,10 @@ const InputGroup = ({
       <ErrorFormTooltip
         help={helpReal}
         error={errorReal}
-        iconRef={iconRef}
-        labelRef={labelRef}
         inputSize={size}
         onShown={setTooltipShown}
         shown={tooltipShown || tooltipShownHover}
+        referenceElement={labelRef}
       />
     </StyledInputGroup>
   );

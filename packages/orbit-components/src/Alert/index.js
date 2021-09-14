@@ -10,7 +10,7 @@ import AlertTriangle from "../icons/Alert";
 import AlertCircle from "../icons/AlertCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
-import { StyledTextLink } from "../TextLink";
+import { StyledTextLink, getLinkStyle } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import { rtlSpacing, right } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
@@ -197,16 +197,9 @@ const Content = styled(StyledDiv)`
   display: block;
   width: ${({ inlineActions }) => !inlineActions && "100%"};
 
-  & a,
+  & a:not([class]),
   & ${StyledTextLink} {
-    color: ${getTypeToken(TOKENS.colorTextAlert)};
-    font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-    &:hover,
-    &:focus,
-    &:active {
-      color: ${getTypeToken(TOKENS.colorTextLinkAlertHover)};
-    }
+    ${getLinkStyle};
   }
   & ${Item}, ${StyledText}, ${StyledHeading} {
     color: ${getTypeToken(TOKENS.colorTextAlert)};

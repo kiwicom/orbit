@@ -307,10 +307,12 @@ const Select: React.AbstractComponent<
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
+  const inputRef = React.useRef(null);
+
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Label spaceAfter={spaceAfter}>
+    <Label spaceAfter={spaceAfter} ref={inputRef}>
       {label && (
         <FormLabel
           filled={!!filled}
@@ -380,11 +382,10 @@ const Select: React.AbstractComponent<
         <ErrorFormTooltip
           help={help}
           error={error}
-          iconRef={iconRef}
-          labelRef={labelRef}
           inputSize={size}
           shown={shown}
           onShown={setTooltipShown}
+          referenceElement={inputRef}
         />
       )}
     </Label>

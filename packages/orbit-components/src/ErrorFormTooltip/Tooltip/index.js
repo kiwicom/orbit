@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { usePopper } from "react-popper";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
@@ -12,20 +13,49 @@ import { Item } from "../../List/ListItem";
 import CloseIc from "../../icons/Close";
 import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
-import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
-import resolveTooltipArrowPosition from "./helpers/resolveTooltipArrowPosition";
-import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
-import useDimensions from "../hooks/useDimensions";
-import { POSITIONS, SIDE_NUDGE } from "./consts";
+import resolvePlacement from "./helpers/resolvePlacement";
+import { SIDE_NUDGE } from "./consts";
+import useTheme from "../../hooks/useTheme";
 
 import type { Props } from ".";
 
+const StyledArrow = styled(
+  React.forwardRef(({ className }, ref) => <div className={className} ref={ref} />),
+)`
+  ${({ position, top, left, bottom, right: popperRight, transform }) => css`
+    position: ${position};
+    top: ${top};
+    left: ${left};
+    right: ${popperRight};
+    bottom: ${bottom};
+    transform: ${transform};
+    &:before {
+      content: "";
+      background: ${resolveColor};
+      width: 0.6rem;
+      height: 0.6rem;
+      transform: translate(-50%, -50%) rotate(45deg);
+      position: absolute;
+    }
+  `}
+`;
+
 const StyledFormFeedbackTooltip = styled.div`
-  ${({ theme, isHelp, shown, inputSize }) => css`
+  ${({
+    theme,
+    isHelp,
+    shown,
+    inputSize,
+    top,
+    left,
+    position,
+    bottom,
+    right: popperRight,
+    transform,
+  }) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};
@@ -35,41 +65,37 @@ const StyledFormFeedbackTooltip = styled.div`
     max-height: none;
     overflow: visible;
     width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
-    background-color: ${resolveColor};
+    background: ${resolveColor};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
       visibility ${theme.orbit.durationFast} ease-in-out;
 
-    /* prevent position, IEs don't have initial YAY */
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    position: ${position};
+    top: ${top};
+    left: ${left};
+    bottom: ${bottom};
+    right: ${popperRight};
+    transform: ${transform};
 
     img {
       max-width: 100%;
     }
 
-    &::after {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      content: " ";
-      display: block;
-      position: absolute;
-
-      ${tooltipArrowStyle};
-      ${resolveTooltipArrowPosition};
+    ${StyledArrow} {
+      ${resolvePlacement};
     }
 
     ${media.largeMobile(css`
       width: auto;
     `)};
-
-    ${resolveTooltipPosition};
 `}
 `;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledArrow.defaultProps = {
+  theme: defaultTheme,
+};
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFormFeedbackTooltip.defaultProps = {
@@ -131,40 +157,64 @@ StyledCloseButton.defaultProps = {
 
 const ErrorFormTooltip = ({
   onShown,
-  labelRef,
   dataTest,
   inputSize,
-  iconRef,
   children,
   shown,
-  isHelp = false,
+  referenceElement,
   inlineLabel,
+  isHelp = false,
   id,
 }: Props): React.Node => {
   const contentRef = React.useRef(null);
-  const tooltipRef = React.useRef<HTMLElement | null>(null);
+  const { rtl } = useTheme();
+  const [tooltipRef, setTooltipRef] = React.useState(null);
+  const [arrowRef, setArrowRef] = React.useState(null);
 
-  const dimensions = useDimensions({
-    labelRef,
-    iconRef,
-    contentRef: tooltipRef,
-    children,
-    inlineLabel,
+  const resolveOffset = React.useCallback(() => {
+    if (inlineLabel) {
+      if (inputSize === "small") return [rtl ? 10 : -14, 7];
+      return [rtl ? 6 : -6, 6];
+    }
+    return [rtl ? 10 : -10, 7];
+  }, [inlineLabel, inputSize, rtl]);
+
+  const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {
+    placement: rtl ? "top-end" : "top-start",
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset: resolveOffset,
+        },
+      },
+      {
+        name: "arrow",
+        options: {
+          element: arrowRef,
+        },
+      },
+      {
+        name: "eventListeners",
+        options: {
+          scroll: false,
+        },
+      },
+    ],
   });
 
-  const preferredPosition = React.useMemo(
-    () => (dimensions.label.top - dimensions.content.height > 0 ? POSITIONS.TOP : POSITIONS.BOTTOM),
-    [dimensions.label.top, dimensions.content.height],
-  );
+  const { popper, arrow } = styles;
 
   useClickOutside(contentRef, () => {
     if (!isHelp) onShown(false);
   });
 
   React.useEffect(() => {
-    // $FlowFixMe: TODO
-    const link = tooltipRef.current?.querySelector("a");
+    if (update) update();
+  }, [update, resolveOffset, shown]);
 
+  React.useEffect(() => {
+    const link = tooltipRef?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
       if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
@@ -176,26 +226,40 @@ const ErrorFormTooltip = ({
         onShown(false);
       }
     };
-
     window.addEventListener("keydown", handleTab);
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp]);
+  }, [onShown, isHelp, tooltipRef]);
 
   return (
     <StyledFormFeedbackTooltip
-      ref={tooltipRef}
+      id={id}
+      ref={setTooltipRef}
       inputSize={inputSize}
-      position={preferredPosition}
-      shown={shown && dimensions.set}
+      shown={shown}
       isHelp={isHelp}
       data-test={dataTest}
-      inlineLabel={inlineLabel}
       aria-live="polite"
-      id={id}
-      {...dimensions}
+      inlineLabel={inlineLabel}
+      placement={attrs.popper && attrs.popper["data-popper-placement"]}
+      position={popper.position}
+      top={popper.top}
+      left={popper.left}
+      right={popper.right}
+      bottom={popper.bottom}
+      transform={popper.transform}
     >
+      <StyledArrow
+        isHelp={isHelp}
+        ref={setArrowRef}
+        position={popper.position}
+        placement={attrs.popper && attrs.popper["data-popper-placement"]}
+        top={arrow.top}
+        left={arrow.left}
+        right={arrow.right}
+        bottom={arrow.bottom}
+      />
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
       {isHelp && (
         <StyledCloseButton

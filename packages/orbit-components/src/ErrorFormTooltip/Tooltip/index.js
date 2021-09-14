@@ -238,6 +238,7 @@ const ErrorFormTooltip = ({
       isHelp={isHelp}
       data-test={dataTest}
       aria-live="polite"
+      inlineLabel={inlineLabel}
       placement={attrs.popper && attrs.popper["data-popper-placement"]}
       position={popper.position}
       top={popper.top}

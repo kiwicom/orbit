@@ -9,9 +9,10 @@ export type ResolvePlacement = ({|
   inputSize: "small" | "normal",
   theme: Theme,
   placement: string,
+  inlineLabel: boolean,
 |}) => CSSRules;
 
-const resolvePlacement: ResolvePlacement = ({ inputSize, theme, placement }) => {
+const resolvePlacement: ResolvePlacement = ({ inputSize, theme, placement, inlineLabel }) => {
   const vertical = placement === "top-start" || placement === "top-end" ? "bottom" : "top";
 
   if (inputSize === "normal") {
@@ -36,7 +37,7 @@ const resolvePlacement: ResolvePlacement = ({ inputSize, theme, placement }) => 
 
   return css`
     ${vertical}: 0;
-    ${left}: 22px;
+    ${left}: ${inlineLabel ? "22px" : "18px"};
   `;
 };
 

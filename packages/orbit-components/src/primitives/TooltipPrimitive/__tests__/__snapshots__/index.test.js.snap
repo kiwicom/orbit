@@ -2,6 +2,7 @@
 
 exports[`Tooltip it should match snapshot 1`] = `
 .c1 {
+  display: inline-block;
   width: 24px;
   height: 24px;
   -webkit-flex-shrink: 0;

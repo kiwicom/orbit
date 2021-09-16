@@ -44,9 +44,26 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default dialog",
-    description:
-      "Dialogs present a simple choice for users. They're displayed after users take action.",
-  },
+  exampleKnobs: [
+    {
+      component: "Dialog",
+      knobs: [
+        {
+          name: "description",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "lockScrolling",
+          type: "boolean",
+          defaultValue: false,
+        },
+      ],
+    },
+  ],
 };

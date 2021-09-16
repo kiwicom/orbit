@@ -28,9 +28,16 @@ export default {
       />
     </TileGroup>
   ),
-  info: {
-    title: "Default tile group",
-    description:
-      "Tile groups can contain many things. To keep the proper styling, don't include any DOM elements other than tiles.",
-  },
+  exampleKnobs: [
+    {
+      component: "Tile",
+      knobs: [
+        { name: "noHeaderIcon", type: "boolean", defaultValue: false },
+        { name: "external", type: "boolean", defaultValue: false },
+        { name: "noPadding", type: "boolean", defaultValue: false },
+        { name: "initialExpanded", type: "boolean", defaultValue: false },
+        { name: "expandable", type: "boolean", defaultValue: true },
+      ],
+    },
+  ],
 };

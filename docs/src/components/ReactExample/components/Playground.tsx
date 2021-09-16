@@ -46,7 +46,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
   }: {
     component: string;
     name: string;
-    value: number | string | boolean;
+    value: number | string | boolean | null;
   }) => {
     return setValues(prev => ({
       ...prev,
@@ -113,13 +113,15 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                       key={name}
                       value={values[component][name]}
                       name={fieldName}
-                      onChange={ev =>
+                      onChange={ev => {
+                        const { value } = ev.target;
+                        const val = value !== "null" ? `${value}-icon` : null;
                         changeKnob({
                           component,
                           name,
-                          value: `${ev.target.value}-icon`,
-                        })
-                      }
+                          value: val,
+                        });
+                      }}
                     />
                   );
                 }

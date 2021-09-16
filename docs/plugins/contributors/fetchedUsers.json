@@ -260,19 +260,6 @@
     "github": "https://github.com/jakubzaba"
   },
   {
-    "id": "6098a1aa-64f7-5682-a15a-33ca16371a79",
-    "name": "janpanschab",
-    "error": "",
-    "twitter": null,
-    "website": "https://webtones.dev",
-    "info": null,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/179061?v=4",
-    "position": "",
-    "github": "https://github.com/janpanschab"
-  },
-  {
     "id": "ad9daf4d-5e13-577e-9abc-5325178b5234",
     "name": "RobinCsl",
     "error": "",
@@ -284,6 +271,19 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/22741774?v=4",
     "position": "",
     "github": "https://github.com/RobinCsl"
+  },
+  {
+    "id": "6098a1aa-64f7-5682-a15a-33ca16371a79",
+    "name": "janpanschab",
+    "error": "",
+    "twitter": null,
+    "website": "https://webtones.dev",
+    "info": null,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/179061?v=4",
+    "position": "",
+    "github": "https://github.com/janpanschab"
   },
   {
     "id": "8f026e28-18df-5b7d-9b8e-5307fd153f6a",

@@ -49,8 +49,42 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default drawer",
-    description: "Drawers should appear on a user action and be closable.",
-  },
+  exampleKnobs: [
+    {
+      component: "Dialog",
+      knobs: [
+        {
+          name: "width",
+          type: "text",
+          defaultValue: "320px",
+        },
+        {
+          name: "position",
+          type: "select",
+          options: ["right", "left"],
+          defaultValue: "right",
+        },
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "shown",
+          type: "boolean",
+          defaultValue: true,
+        },
+        {
+          name: "suppressed",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "lockScrolling",
+          type: "boolean",
+          defaultValue: false,
+        },
+      ],
+    },
+  ],
 };

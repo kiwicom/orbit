@@ -25,8 +25,17 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default checkbox",
-    description: "A default checkbox should have a label to make it clear what it relates to.",
-  },
+  exampleKnobs: [
+    {
+      component: "Checkbox",
+      knobs: [
+        { name: "checked", type: "boolean", defaultValue: false },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "hasError", type: "boolean", defaultValue: false },
+        { name: "info", type: "text", defaultValue: "" },
+        { name: "label", type: "text", defaultValue: "Allow notifications" },
+        { name: "value", type: "text", defaultValue: "" },
+      ],
+    },
+  ],
 };

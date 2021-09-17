@@ -166,9 +166,50 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Modal with fixed footer",
-    description:
-      "When you have longer structure within the modal and an action that applies to it all, use a fixed footer to keep the action available even during scrolling.",
-  },
+  exampleKnobs: [
+    {
+      component: "Modal",
+      knobs: [
+        { name: "lockScrolling", type: "boolean", defaultValue: false },
+        { name: "isMobileFullPage", type: "boolean", defaultValue: false },
+        { name: "fixedFooter", type: "boolean", defaultValue: true },
+        { name: "hasCloseButton", type: "boolean", defaultValue: true },
+        { name: "mobileHeader", type: "boolean", defaultValue: true },
+        { name: "disableAnimation", type: "boolean", defaultValue: false },
+        { name: "autoFocus", type: "boolean", defaultValue: true },
+        { name: "preventOverlayClose", type: "boolean", defaultValue: false },
+        {
+          name: "size",
+          type: "select",
+          options: ["extraSmall", "small", "normal", "large", "extraLarge"],
+        },
+      ],
+    },
+    {
+      component: "ModalSection",
+      knobs: [{ name: "suppressed", type: "boolean", defaultValue: false }],
+    },
+    {
+      component: "ModalHeader",
+      knobs: [
+        { name: "suppressed", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "Enjoy a meal while you travel" },
+        {
+          name: "description",
+          type: "text",
+          defaultValue: "See what’s available for each segment of your trip.",
+        },
+      ],
+    },
+    {
+      component: "ModalFooter",
+      knobs: [
+        {
+          name: "flex",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

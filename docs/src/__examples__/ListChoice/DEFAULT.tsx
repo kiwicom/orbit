@@ -29,8 +29,17 @@ export default {
       </Popover>
     );
   },
-  info: {
-    title: "Default list choice",
-    description: "List choices require only titles to display options for users to choose.",
-  },
+  exampleKnobs: [
+    {
+      component: "ListChoice",
+      knobs: [
+        { name: "title", type: "text", defaultValue: "Oslo, Norway" },
+        { name: "description", type: "text", defaultValue: "" },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "selectable", type: "boolean", defaultValue: false },
+        { name: "selected", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

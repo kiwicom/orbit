@@ -26,8 +26,21 @@ export default {
       }
     />
   ),
-  info: {
-    title: "Default callout banner",
-    description: "Callout banners use illustrations and titles to draw attention to actions.",
-  },
+  exampleKnobs: [
+    {
+      component: "CallOutBanner",
+      knobs: [
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "Accommodation in Warsaw",
+        },
+        {
+          name: "description",
+          type: "text",
+          defaultValue: "Select the perfect place to rest during your stay in Warsaw.",
+        },
+      ],
+    },
+  ],
 };

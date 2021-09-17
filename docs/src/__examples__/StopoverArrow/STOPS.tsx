@@ -10,8 +10,4 @@ export default {
       <StopoverArrow stops="3" />
     </Stack>
   ),
-  info: {
-    title: "Stops",
-    description: "Stopover arrows can display from 0 to 3 stops.",
-  },
 };

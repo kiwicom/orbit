@@ -31,9 +31,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Errors",
-    description:
-      "When passed an error string, choice groups will display the string for the whole group and turn empty choices red. Note that this overrides any errors on individual choices.",
-  },
 };

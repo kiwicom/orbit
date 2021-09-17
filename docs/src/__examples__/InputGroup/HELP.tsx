@@ -83,9 +83,4 @@ export default {
       </InputGroup>
     );
   },
-  info: {
-    title: "Input field help",
-    description:
-      "Help text can guide users to entering proper data. Only help text for the input group is shown, not help for any child. Note that an error message will override the help text.",
-  },
 };

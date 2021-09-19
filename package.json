@@ -31,7 +31,7 @@
     "dev": "yarn components storybook",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:build": "yarn bootstrap:ci && yarn tokens build:lib && yarn components build:lib && yarn docs build",
+    "orbit-kiwi:build": "yarn bootstrap:ci && yarn tokens build && yarn components build && yarn docs build",
     "prepare": "husky install"
   },
   "engines": {

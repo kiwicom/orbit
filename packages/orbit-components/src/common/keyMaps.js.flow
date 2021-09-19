@@ -1,0 +1,14 @@
+// @flow
+type Key =
+  | "TAB"
+  | "ENTER"
+  | "SPACE"
+  | "ARROW_UP"
+  | "ARROW_DOWN"
+  | "ARROW_LEFT"
+  | "ARROW_RIGHT"
+  | "HOME"
+  | "END"
+  | "ESC";
+
+declare export default { [key: Key]: number };

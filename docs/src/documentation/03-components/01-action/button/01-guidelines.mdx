@@ -4,6 +4,8 @@ redirect_from:
   - /components/button/
 ---
 
+import WebStructureImage from "../../../../images/component-structure/web/button.svg";
+
 import ActionableTextSnippet from "snippets/actionable-text.mdx";
 import ButtonSizeSnippet from "snippets/button-size.mdx";
 
@@ -27,9 +29,29 @@ check out our [interactive guide on action components](/guides/using-button-type
 
 <ComponentStatus component="Button" />
 
-## Content structure
+## Component structure
 
-![IconLeft: visually supports button visibility; label: describes the main action and works best when short; icon right: shows additional options for the button (expandable, link, etc.).](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:289%3A14)
+<ComponentStructure
+  component="Button"
+  web={{
+    Image: WebStructureImage,
+    imageWidth: 124,
+    parts: [
+      {
+        name: "IconLeft",
+        description: "Optionally visually supports button visibility.",
+      },
+      {
+        name: "Label",
+        description: "Describes main action. Works best when short.",
+      },
+      {
+        name: "IconRight",
+        description: "Optionally shows the action for the button (expandable, link, etc.).",
+      },
+    ],
+  }}
+/>
 
 ## Behavior
 

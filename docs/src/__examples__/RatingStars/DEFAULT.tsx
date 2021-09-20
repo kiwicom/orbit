@@ -20,7 +20,7 @@ export default {
           defaultValue: "small",
         },
         {
-          name: "number",
+          name: "rating",
           type: "number",
           defaultValue: "",
         },

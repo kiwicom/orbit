@@ -21,7 +21,7 @@ export default {
         {
           name: "iconLeft",
           type: "icon",
-          defaultValue: "AirplaneTakeoff",
+          defaultValue: "",
         },
         {
           name: "iconRight",

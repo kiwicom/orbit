@@ -9,9 +9,16 @@ export default {
       </Sticky>
     </div>
   ),
-  info: {
-    title: "Default sticky",
-    description:
-      "By default, sticky components elevate their children and keep them at the top of the screen.",
-  },
+  exampleKnobs: [
+    {
+      component: "Sticky",
+      knobs: [
+        {
+          name: "offset",
+          type: "number",
+          defaultValue: 10,
+        },
+      ],
+    },
+  ],
 };

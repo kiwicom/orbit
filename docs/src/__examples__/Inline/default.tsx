@@ -18,8 +18,45 @@ export default {
       </Inline>
     );
   },
-  info: {
-    title: "",
-    description: "",
-  },
+  exampleKnobs: [
+    {
+      component: "Inline",
+      knobs: [
+        {
+          name: "as",
+          type: "text",
+          defaultValue: "div",
+        },
+        {
+          name: "justify",
+          type: "select",
+          options: ["start", "end", "center", "between", "around"],
+          defaultValue: "",
+        },
+        {
+          name: "align",
+          type: "select",
+          options: ["start", "end", "center"],
+          defaultValue: "",
+        },
+        {
+          name: "spacing",
+          type: "select",
+          options: [
+            "none",
+            "XXXSmall",
+            "XXSmall",
+            "XSmall",
+            "small",
+            "medium",
+            "large",
+            "XLarge",
+            "XXLarge",
+            "XXXLarge",
+          ],
+          defaultValue: "none",
+        },
+      ],
+    },
+  ],
 };

@@ -141,7 +141,7 @@ export default {
           defaultValue: "",
         },
         {
-          name: "spacingToken",
+          name: "spacing",
           type: "select",
           options: [
             "none",

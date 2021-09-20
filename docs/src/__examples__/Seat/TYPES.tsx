@@ -34,8 +34,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Types",
-    description: "The types of seats indicate information about the possible options.",
-  },
 };

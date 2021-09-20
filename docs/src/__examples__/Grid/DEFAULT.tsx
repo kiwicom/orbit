@@ -28,9 +28,51 @@ export default {
       </Grid>
     );
   },
-  info: {
-    title: "Default grid",
-    description:
-      "By default, grids are displayed as block elements and display their columns and rows without any gaps",
-  },
+  exampleKnobs: [
+    {
+      component: "Grid",
+      knobs: [
+        {
+          name: "as",
+          type: "text",
+          defaultValue: "div",
+        },
+        {
+          name: "gap",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "rows",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "rowGap",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "width",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "inline",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "columns",
+          type: "text",
+          defaultValue: "1fr",
+        },
+        {
+          name: "columnGap",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

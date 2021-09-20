@@ -37,9 +37,4 @@ export default {
       </Layout>
     );
   },
-  info: {
-    title: "Custom layouts",
-    description:
-      "Customize your layouts by defining when the columns are hidden. You can also create the columns as any HTML element using the <code>as</code> prop.",
-  },
 };

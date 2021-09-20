@@ -32,8 +32,4 @@ export default {
       </Stack>
     </NavigationBar>
   ),
-  info: {
-    title: "Default drawer",
-    description: "Drawers should appear on a user action and be closable.",
-  },
 };

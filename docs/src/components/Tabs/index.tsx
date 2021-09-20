@@ -3,10 +3,10 @@ import { Link } from "gatsby";
 import { Popover, mediaQueries } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown, ChevronRight } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
-import FontFaceObserver from "fontfaceobserver";
 import debounce from "lodash/debounce";
 
 import Tab, { TabObject } from "./Tab";
+import useFontLoaded from "../../hooks/useFontLoaded";
 import {
   TAB_HEIGHT,
   SHADOW_PADDING_TOP,
@@ -107,13 +107,6 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
   }
 
   React.useEffect(() => {
-    // wait until the font is loaded before calculating whether tabs wrap
-    // because the width of DocNavigation changes, changing the width of the main container as well
-    const dmSans = new FontFaceObserver("DM Sans");
-    dmSans.load().then(() => {
-      collapseIfTabsWrapped();
-    });
-
     const collapseIfTabsWrappedListener = debounce(() => {
       setCollapsed(prevCollapsed => {
         if (!prevCollapsed) {
@@ -131,6 +124,13 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
       window.removeEventListener("resize", collapseIfTabsWrappedListener);
     };
   }, []);
+
+  const fontLoaded = useFontLoaded();
+  React.useEffect(() => {
+    if (fontLoaded) {
+      collapseIfTabsWrapped();
+    }
+  }, [fontLoaded]);
 
   // if children happen to change, check if we need to (un)collapse tabs,
   // children chaning is highly unlikely, but we want to be ready for that

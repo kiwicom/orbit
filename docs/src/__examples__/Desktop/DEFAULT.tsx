@@ -10,8 +10,4 @@ export default {
       </Desktop>
     </Stack>
   ),
-  info: {
-    title: "Default desktop",
-    description: "Desktop components hide their children on small screens (tablet and below).",
-  },
 };

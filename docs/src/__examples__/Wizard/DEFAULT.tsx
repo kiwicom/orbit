@@ -68,9 +68,36 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default wizard",
-    description:
-      "Wizards show where users are in a specific process and allow them to navigate back to previous steps.",
-  },
+  exampleKnobs: [
+    {
+      component: "Wizard",
+      knobs: [
+        {
+          name: "activeStep",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "lockScrolling",
+          type: "boolean",
+          defaultValue: true,
+        },
+        {
+          name: "completedSteps",
+          type: "number",
+          defaultValue: "",
+        },
+      ],
+    },
+    {
+      component: "WizardStep",
+      knobs: [
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

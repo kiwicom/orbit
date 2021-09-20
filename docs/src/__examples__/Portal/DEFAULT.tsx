@@ -37,9 +37,4 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default portal",
-    description:
-      "By default, portal inserts its children into a separate div created for the purpose. Events on a child still bubble to the React parent (even thought it's not a child in the DOM).",
-  },
 };

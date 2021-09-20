@@ -3,8 +3,33 @@ import { RatingStars } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <RatingStars rating={4} />,
-  info: {
-    title: "Default rating stars",
-    description: "By default, the stars will be small and only the positive rating will be shown.",
-  },
+  exampleKnobs: [
+    {
+      component: "RatingStars",
+      knobs: [
+        {
+          name: "color",
+          type: "select",
+          options: ["primary", "secondary"],
+          defaultValue: "primary",
+        },
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "medium", "large"],
+          defaultValue: "small",
+        },
+        {
+          name: "number",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "showEmpty",
+          type: "boolean",
+          defaultValue: false,
+        },
+      ],
+    },
+  ],
 };

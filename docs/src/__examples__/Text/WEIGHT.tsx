@@ -8,8 +8,4 @@ export default {
       <Text weight="bold">Bold text</Text>
     </Stack>
   ),
-  info: {
-    title: "Text weight",
-    description: "There are only two possible weights for text: normal and bold",
-  },
 };

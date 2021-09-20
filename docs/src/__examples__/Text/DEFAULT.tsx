@@ -3,9 +3,46 @@ import { Text } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <Text>Orbit is an open source design system for your next travel project.</Text>,
-  info: {
-    title: "Default text",
-    description:
-      "By default, Text components render their children in <p> tags with the proper font family and styling applied.",
-  },
+  exampleKnobs: [
+    {
+      component: "Text",
+      knobs: [
+        {
+          name: "as",
+          type: "select",
+          options: ["p", "span", "div"],
+          defaultValue: "p",
+        },
+        {
+          name: "type",
+          type: "select",
+          options: ["primary", "secondary", "info", "success", "warning", "critical", "white"],
+          defaultValue: "primary",
+        },
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "normal", "large"],
+          defaultValue: "normal",
+        },
+        {
+          name: "align",
+          type: "select",
+          options: ["left", "center", "right", "justify"],
+          defaultValue: "left",
+        },
+        {
+          name: "uppercase",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "weight",
+          type: "select",
+          options: ["normal", "bold"],
+          defaultValue: "normal",
+        },
+      ],
+    },
+  ],
 };

@@ -23,7 +23,7 @@ export default {
         {
           name: "icon",
           type: "icon",
-          defaultValue: "",
+          defaultValue: "AirplaneTakeoff",
         },
         {
           name: "background",

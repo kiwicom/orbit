@@ -7,14 +7,13 @@ export default {
     const divStyle: React.CSSProperties = {
       width: "160px",
       height: "40px",
-      backgroundColor: `${defaultTheme.orbit.paletteInkLight}`,
     };
 
     return (
       <Stack>
-        <div style={divStyle} />
-        <div style={divStyle} />
-        <div style={divStyle} />
+        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighter }} />
+        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighterHover }} />
+        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighterActive }} />
       </Stack>
     );
   },

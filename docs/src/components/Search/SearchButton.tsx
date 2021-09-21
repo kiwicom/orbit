@@ -44,14 +44,11 @@ const KeyboardShortcuts = () => {
 
 const SearchButton = ({ onClick }: Props) => {
   return (
-    <Button
-      type="primarySubtle"
-      circled
-      iconLeft={<SearchIcon />}
-      iconRight={<KeyboardShortcuts />}
-      onClick={onClick}
-    >
-      Search
+    <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
+      <Stack inline align="center" spacing="XSmall">
+        <p>Search</p>
+        <KeyboardShortcuts />
+      </Stack>
     </Button>
   );
 };

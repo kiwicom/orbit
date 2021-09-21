@@ -30,14 +30,8 @@ export default {
   ),
   exampleKnobs: [
     {
-      component: "Tile",
-      knobs: [
-        { name: "noHeaderIcon", type: "boolean", defaultValue: false },
-        { name: "external", type: "boolean", defaultValue: false },
-        { name: "noPadding", type: "boolean", defaultValue: false },
-        { name: "initialExpanded", type: "boolean", defaultValue: false },
-        { name: "expandable", type: "boolean", defaultValue: true },
-      ],
+      component: "TileGroup",
+      knobs: [{ name: "dataTest", type: "text", defaultValue: "" }],
     },
   ],
 };

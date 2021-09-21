@@ -3,7 +3,7 @@ import { Sticky, Text } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <div style={{ height: "240px" }}>
+    <div style={{ height: "400px", overflow: "scroll" }}>
       <Sticky>
         <Text>Scroll down and see this text stick to the top of the screen.</Text>
       </Sticky>

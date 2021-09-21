@@ -265,6 +265,7 @@ describe("gatsby-node", () => {
                   },
                   Object {
                     "description": undefined,
+                    "hasReactTab": false,
                     "slug": "/getting-started/for-designers/",
                     "title": "For designers",
                   },
@@ -313,6 +314,7 @@ describe("gatsby-node", () => {
                 "pages": Array [
                   Object {
                     "description": "Prompts users to take or complete an action.",
+                    "hasReactTab": false,
                     "slug": "/components/overlay/dialog/",
                     "title": "Dialog",
                   },

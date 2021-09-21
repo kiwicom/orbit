@@ -3,40 +3,42 @@ import { Stack, Button } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 
+import useOs from "../../hooks/useOs";
+
 interface Props {
   onClick: () => void;
 }
 
-const StyledWrapper = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.orbit.paletteProductNormal};
+type Type = "primary" | "secondary";
+
+const StyledWrapper = styled.div<{ type: Type }>`
+  ${({ theme, type }) => css`
+    color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
   `}
 `;
 
-const StyledIcon = styled.span`
-  ${({ theme }) => css`
+export const StyledIcon = styled.span<{ type: Type }>`
+  ${({ theme, type }) => css`
     padding: 3px 5px;
     display: flex;
     justify-content: center;
-    background: ${theme.orbit.paletteProductLightActive};
+    transition: background ${theme.orbit.durationFast} ease-in;
+    background: ${type === "primary"
+      ? theme.orbit.paletteProductLightActive
+      : theme.orbit.paletteCloudDark};
     border-radius: ${theme.orbit.borderRadiusNormal};
   `}
 `;
 
-const KeyboardShortcuts = () => {
-  const [os, setOs] = React.useState("mac");
-
-  React.useEffect(() => {
-    if (window.navigator.appVersion.includes("Mac")) setOs("mac");
-    if (window.navigator.appVersion.includes("Windows")) setOs("win");
-  }, []);
+export const KeyboardShortcuts = ({ type = "primary" }: { type: Type }) => {
+  const os = useOs();
 
   return (
-    <StyledWrapper>
+    <StyledWrapper type={type}>
       <Stack inline spacing="XXSmall" align="center">
-        <StyledIcon>{os === "mac" ? <>&#8984;</> : "Alt"}</StyledIcon>
+        <StyledIcon type={type}>{os === "mac" ? <>&#8984;</> : "Alt"}</StyledIcon>
         <span>+</span>
-        <StyledIcon>&#75;</StyledIcon>
+        <StyledIcon type={type}>&#75;</StyledIcon>
       </Stack>
     </StyledWrapper>
   );
@@ -47,7 +49,7 @@ const SearchButton = ({ onClick }: Props) => {
     <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
       <Stack inline align="center" spacing="XSmall">
         <p>Search</p>
-        <KeyboardShortcuts />
+        <KeyboardShortcuts type="primary" />
       </Stack>
     </Button>
   );

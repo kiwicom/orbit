@@ -39,8 +39,8 @@ export default {
         {
           name: "direction",
           type: "select",
-          defaultValue: "row",
-          options: ["row", "coliumn"],
+          defaultValue: "column",
+          options: ["row", "column"],
         },
         {
           name: "spacing",

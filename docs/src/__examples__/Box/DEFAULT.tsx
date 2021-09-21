@@ -103,7 +103,7 @@ export default {
         {
           name: "background",
           type: "text",
-          defaultValue: "",
+          defaultValue: "blueDarker",
         },
         {
           name: "color",

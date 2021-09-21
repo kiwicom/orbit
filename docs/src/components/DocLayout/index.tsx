@@ -71,6 +71,7 @@ export default function DocLayout({
 }: Props) {
   const [tableOfContents] = useTableOfContents();
   const tocHasItems = tableOfContents.length > 0;
+
   return (
     <>
       <Head

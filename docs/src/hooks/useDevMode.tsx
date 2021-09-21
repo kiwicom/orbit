@@ -9,9 +9,11 @@ const DevMode = React.createContext<[Enabled, SetEnabled]>([false, () => {}]);
 
 export function DevModeProvider({ children }: { children: React.ReactNode }) {
   const [enabled, setEnabled] = React.useState<boolean>(false);
+
   React.useEffect(() => {
     if (load("devMode") === "enabled") setEnabled(true);
   }, []);
+
   return (
     <DevMode.Provider
       value={[

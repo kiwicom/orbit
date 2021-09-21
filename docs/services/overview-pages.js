@@ -26,6 +26,7 @@ function createPages(obj, slugPiece = "/") {
           slug,
           title: value.meta.title,
           description: value.meta.description,
+          hasReactTab: value.meta.hasReactTab,
         };
       }
 
@@ -69,9 +70,18 @@ async function getOverviewPages() {
 
       if (name === "meta") {
         const { title, type, description } = yaml.load(await fsx.readFile(file, "utf-8"));
-        _.set(structure, relativePath.split(path.sep), { title, type, description });
+        const metaFolder = await fsx.readdir(file.split("/").slice(0, -1).join("/"), "utf-8");
+        const hasReactTab = metaFolder.filter(v => v.match(/react.mdx/)).length;
+
+        _.set(structure, relativePath.split(path.sep), {
+          title,
+          type,
+          description,
+          hasReactTab: hasReactTab > 0,
+        });
       } else {
         const { data } = matter(await fsx.readFile(file, "utf-8"));
+
         _.set(structure, relativePath.split(path.sep), data);
       }
     }),

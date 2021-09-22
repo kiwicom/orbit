@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.1...@kiwicom/orbit-components@1.1.0) (2021-09-22)
+
+
+### Bug Fixes
+
+* **Icon:** explicitly set expected `display` ([5babd1a](https://github.com/kiwicom/orbit/commit/5babd1a6babc426249eec4b2e569cae7d47e53ee))
+* **useLockScrolling:** ensure that scroll is locked by default ([bb2da46](https://github.com/kiwicom/orbit/commit/bb2da464bb18cef49ff7768c6343cdeb6e66f60e))
+
+
+### Features
+
+* **Alert:** properly style links in Alert ([8d3fff5](https://github.com/kiwicom/orbit/commit/8d3fff53ee8ade47727e55b54e46b2775d6f2745))
+
+
+
+
+
 ## [1.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.0...@kiwicom/orbit-components@1.0.1) (2021-09-13)
 
 

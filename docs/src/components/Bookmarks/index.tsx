@@ -2,16 +2,18 @@ import React from "react";
 import { Link } from "gatsby";
 import { Text } from "@kiwicom/orbit-components";
 import { StarEmpty } from "@kiwicom/orbit-components/icons";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { useBookmarks } from "../../services/bookmarks";
 
 const StyledLink = styled(Link)`
-  cursor: pointer;
-  color: ${({ theme }) => theme.orbit.colorTextSecondary};
-  &:hover {
-    color: ${({ theme }) => theme.orbit.colorTextLinkPrimary};
-  }
+  ${({ theme }) => css`
+    cursor: pointer;
+    color: ${theme.orbit.colorTextSecondary};
+    &:hover {
+      color: ${theme.orbit.colorTextLinkPrimary};
+    }
+  `}
 `;
 
 const StarIcon = styled(StarEmpty)`

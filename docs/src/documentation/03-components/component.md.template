@@ -16,7 +16,7 @@ Examples can be found within `docs/src/__examples__`.
 - Put in use cases when this component should be used.
 - Use short fragments ("To achieve X goal").
 
-### When not to use
+## When not to use
 
 - Briefly describes cases when this component should **_not_** be used.
 - Link to components to use instead in these cases---use an [other component name](/components/category/othercomponentname/).

@@ -4,6 +4,7 @@ import { Grid } from "@kiwicom/orbit-components";
 
 import DocLayout from "../components/DocLayout";
 import Tile from "../components/Tile";
+import useDevMode from "../hooks/useDevMode";
 
 interface Props extends PageRendererProps {
   pageContext: {
@@ -15,6 +16,7 @@ interface Props extends PageRendererProps {
     }>;
     pages: Array<{
       title: string;
+      hasReactTab: boolean;
       description?: string;
       slug: string;
     }>;
@@ -23,6 +25,7 @@ interface Props extends PageRendererProps {
 
 const Overview = ({ location, pageContext }: Props) => {
   const { slug, title, trail, pages } = pageContext;
+  const [devMode] = useDevMode();
 
   return (
     <DocLayout location={location} path={slug} title={title} trail={trail} noElevation>
@@ -33,11 +36,17 @@ const Overview = ({ location, pageContext }: Props) => {
         desktop={{ columns: "repeat(3, 1fr)" }}
         largeDesktop={{ columns: "repeat(2, 1fr)" }}
       >
-        {pages.map(page => (
-          <Tile key={page.slug} title={page.title} href={page.slug}>
-            {page.description}
-          </Tile>
-        ))}
+        {pages.map(({ title: pageTitle, slug: pageSlug, description, hasReactTab }) => {
+          return (
+            <Tile
+              key={pageSlug}
+              title={pageTitle}
+              href={hasReactTab && devMode ? `${pageSlug}react/` : pageSlug}
+            >
+              {description}
+            </Tile>
+          );
+        })}
       </Grid>
     </DocLayout>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Button, Grid, mediaQueries as mq } from "@kiwicom/orbit-components";
 import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
@@ -80,18 +80,12 @@ const StyledIcon = styled.div<{ secondary: string }>`
 `;
 
 const StyledHeading = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 1;
   h3 {
-    margin-top: 0;
     line-height: ${ICON_SIZE};
   }
 `;
 
 const StyledContent = styled.div`
-  display: flex;
-  flex-shrink: 1;
   height: 100%;
   margin: 0.5rem 0 1.5rem;
 `;
@@ -121,40 +115,44 @@ export default function BrandedTile({
       primary={colorPrimary}
       {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
     >
-      <Stack inline>
-        <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
+      <Stack flex shrink direction="column" justify="between">
         <StyledHeading>
-          <Heading inverted type="title2" as="h3">
-            {title}
-          </Heading>
-          <StyledContent>{content}</StyledContent>
+          <Stack inline align="center">
+            <StyledIcon secondary={colorSecondary}>{icon}</StyledIcon>
+            <Heading inverted type="title2" as="h3">
+              {title}
+            </Heading>
+          </Stack>
         </StyledHeading>
-      </Stack>
-      <Stack
-        inline
-        direction="column"
-        desktop={{ direction: "row" }}
-        align="center"
-        justify="between"
-      >
-        <Button
-          size="large"
-          circled
-          // interactive elements shouldn't be nested, so we're making this a click-through div
-          asComponent="div"
-          {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+        <StyledContent>{content}</StyledContent>
+        <Stack
+          flex
+          shrink
+          direction="column"
+          align="center"
+          justify="between"
+          spacing="small"
+          tablet={{ direction: "row" }}
         >
-          {linkContent}
-        </Button>
-        <div
-          css={css`
-            img {
-              max-width: none;
-            }
-          `}
-        >
-          {logo}
-        </div>
+          <Button
+            size="large"
+            circled
+            // interactive elements shouldn't be nested, so we're making this a click-through div
+            asComponent="div"
+            {...(color === "product" ? { type: "primary" } : { color: colorSecondary })}
+          >
+            {linkContent}
+          </Button>
+          <div
+            css={css`
+              img {
+                max-width: none;
+              }
+            `}
+          >
+            {logo}
+          </div>
+        </Stack>
       </Stack>
     </StyledWrapper>
   );

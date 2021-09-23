@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack, Button } from "@kiwicom/orbit-components";
+import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
@@ -238,65 +238,61 @@ export default function Home({ location, path }: Props) {
             `}
           >
             <Heading as="h2">Support</Heading>
-            <Stack flex direction="column">
-              <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
-                <BrandedTile
-                  title="Report a bug"
-                  icon={<ComputerBugIcon />}
-                  href="https://github.com/kiwicom/orbit/issues/new/choose"
-                  linkContent="Report bug on GitHub"
-                  logo={<GitHubLogo />}
-                  color={{
-                    primary: "#252A31",
-                    secondary: "#515C6C",
-                  }}
-                >
-                  If you find any bugs in our components, report them on Github and we’ll fix them
-                  as soon as possible. It’s our highest priority to have Orbit working as expected.
-                </BrandedTile>
-                <BrandedTile
-                  title="Get the Figma library"
-                  icon={<ReadArt />}
-                  href="https://www.figma.com/@orbitbykiwi"
-                  linkContent="Go to Figma profile"
-                  logo={<FigmaLogo />}
-                  color={{
-                    primary: "#D1431A",
-                    secondary: "#EC685A",
-                  }}
-                >
-                  Visit our community profile and download all of our libraries and resources for
-                  free.
-                </BrandedTile>
-              </Stack>
-              <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
-                <BrandedTile
-                  title="Follow us on Twitter"
-                  icon={<LoveBirdIcon />}
-                  href="https://twitter.com/OrbitKiwi"
-                  linkContent="Follow Orbit on Twitter"
-                  logo={<TwitterLogo />}
-                  color={{
-                    primary: "#0989CF",
-                    secondary: "#179CE3",
-                  }}
-                >
-                  Twitter is one of our main platforms for sharing. Everything important that is
-                  happening around Orbit is published on Twitter.
-                </BrandedTile>
-                <BrandedTile
-                  title="Connect Orbit to Tequila"
-                  icon={<StartupLaunchIcon />}
-                  href="https://partners.kiwi.com"
-                  linkContent="Explore Tequila possibilities"
-                  logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
-                  color="product"
-                >
-                  Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
-                  our content, technology, and services.
-                </BrandedTile>
-              </Stack>
-            </Stack>
+            <Grid columns="1fr" gap="1rem" desktop={{ columns: "1fr 1fr" }}>
+              <BrandedTile
+                title="Report a bug"
+                icon={<ComputerBugIcon />}
+                href="https://github.com/kiwicom/orbit/issues/new/choose"
+                linkContent="Report bug on GitHub"
+                logo={<GitHubLogo />}
+                color={{
+                  primary: "#252A31",
+                  secondary: "#515C6C",
+                }}
+              >
+                If you find any bugs in our components, report them on Github and we’ll fix them as
+                soon as possible. It’s our highest priority to have Orbit working as expected.
+              </BrandedTile>
+              <BrandedTile
+                title="Get the Figma library"
+                icon={<ReadArt />}
+                href="https://www.figma.com/@orbitbykiwi"
+                linkContent="Go to Figma profile"
+                logo={<FigmaLogo />}
+                color={{
+                  primary: "#D1431A",
+                  secondary: "#EC685A",
+                }}
+              >
+                Visit our community profile and download all of our libraries and resources for
+                free.
+              </BrandedTile>
+              <BrandedTile
+                title="Follow us on Twitter"
+                icon={<LoveBirdIcon />}
+                href="https://twitter.com/OrbitKiwi"
+                linkContent="Follow Orbit on Twitter"
+                logo={<TwitterLogo />}
+                color={{
+                  primary: "#0989CF",
+                  secondary: "#179CE3",
+                }}
+              >
+                Twitter is one of our main platforms for sharing. Everything important that is
+                happening around Orbit is published on Twitter.
+              </BrandedTile>
+              <BrandedTile
+                title="Connect Orbit to Tequila"
+                icon={<StartupLaunchIcon />}
+                href="https://partners.kiwi.com"
+                linkContent="Explore Tequila possibilities"
+                logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
+                color="product"
+              >
+                Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
+                our content, technology, and services.
+              </BrandedTile>
+            </Grid>
           </div>
 
           <div

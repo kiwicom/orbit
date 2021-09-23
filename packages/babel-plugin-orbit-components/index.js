@@ -49,6 +49,7 @@ const pathOverwrites = {
   SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
+  useTheme: "hooks/useTheme",
   useLockScrolling: "hooks/useLockScrolling",
 };
 

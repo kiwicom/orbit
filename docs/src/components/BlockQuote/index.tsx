@@ -1,22 +1,22 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledWrapper = styled.div`
-  ${({ theme }) => `
-    padding: ${theme.orbit.spaceMedium} 0;
-    background-color: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.spaceMedium};
+  ${({ theme }) => css`
+    border-left: 3px solid ${theme.orbit.paletteInkLight};
+    padding: ${theme.orbit.spaceMedium};
+    background: ${theme.orbit.paletteCloudLight};
+    border-radius: ${theme.orbit.borderRadiusLarge};
   `};
 `;
 
 const StyledContent = styled.div`
-  ${({ theme }) => `
-    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceXSmall}
-      ${theme.orbit.spaceMedium};
-    border-left: 4px solid ${theme.orbit.paletteInkLight};
+  ${({ theme }) => css`
     font-style: italic;
     font-weight: 500;
-
+    blockquote p {
+      font-size: 18px;
+    }
     blockquote > * + *,
     figcaption {
       margin-top: ${theme.orbit.spaceXSmall};
@@ -25,8 +25,8 @@ const StyledContent = styled.div`
 `;
 
 const StyledAuthor = styled.p`
-  ${({ theme }) => `
-    color: ${theme.orbit.paletteInkLight}
+  ${({ theme }) => css`
+    color: ${theme.orbit.paletteInkLight};
   `}
 `;
 

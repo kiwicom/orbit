@@ -50,6 +50,7 @@ function createHeadingComponent(
       </HeadingWithLink>
     );
   };
+
   HeadingComponent.displayName = `TOC(${tag})`;
   return HeadingComponent;
 }
@@ -175,33 +176,15 @@ export const a = function Anchor({
   const isExternal = useIsUrlExternal(href);
   const useExternalIcon = isExternal && typeof children === "string";
   return (
-    <span
-      css={css`
-        a {
-          /* TextLink's line-height affects nested elements like <code> */
-          line-height: normal;
-          /* TextLink's display as inline-flex cause long links to break paragraphs */
-          display: inherit;
-          /* Ensure the icon stays inline */
-          span {
-            display: inline;
-            svg {
-              display: inline;
-            }
-          }
-        }
-      `}
+    <TextLink
+      // @ts-expect-error type declaration is not permissive enough
+      asComponent={isExternal ? "a" : LinkForOrbitTextLink}
+      href={href}
+      external={isExternal}
+      iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
     >
-      <TextLink
-        // @ts-expect-error type declaration is not permissive enough
-        asComponent={isExternal ? "a" : LinkForOrbitTextLink}
-        href={href}
-        external={isExternal}
-        iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
-      >
-        {children}
-      </TextLink>
-    </span>
+      {children}
+    </TextLink>
   );
 };
 

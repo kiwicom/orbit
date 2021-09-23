@@ -297,12 +297,12 @@ export default {
         {
           name: "bottom",
           type: "text",
-          defaultValue: "300px",
+          defaultValue: "",
         },
         {
           name: "maxWidth",
           type: "text",
-          defaultValue: "",
+          defaultValue: "300px",
         },
         {
           name: "spacing",

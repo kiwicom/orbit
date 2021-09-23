@@ -55,7 +55,7 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   const [windowWidth, setWindowWidth] = React.useState(QUERIES.smallMobile);
   const [activeIdx, setActiveIdx] = React.useState<number | null>(null);
   const [viewports, setViewports] = React.useState<[string, number][]>([]);
-  const [visibleValue, setVisibleValue] = React.useState("smallMobile (320)");
+  const [visibleValue, setVisibleValue] = React.useState("smallMobile (320px)");
   const ref = React.useRef<HTMLDivElement | null>(null);
   const { isLargeMobile } = useMediaQuery();
 
@@ -73,7 +73,7 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
   const handleResize = React.useCallback(() => {
     onChangeSize(QUERIES.smallMobile);
     setRuler();
-    setVisibleValue("smallMobile (320)");
+    setVisibleValue("smallMobile (320px)");
     if (ref.current) setWindowWidth(ref.current?.clientWidth);
   }, [onChangeSize, setRuler]);
 
@@ -99,7 +99,7 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
           key={name}
           width={value}
           index={i}
-          onMouseEnter={() => setVisibleValue(`${name} (${value})`)}
+          onMouseEnter={() => setVisibleValue(`${name} (${value}px)`)}
           onClick={() => handleClick(value, i)}
         >
           <span>{visibleValue}</span>

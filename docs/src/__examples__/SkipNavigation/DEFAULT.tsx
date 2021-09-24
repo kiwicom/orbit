@@ -59,9 +59,4 @@ export default {
       </Stack>
     </>
   ),
-  info: {
-    title: "Default skip navigation",
-    description:
-      "By default, the SkipNavigation scans the page for elements with a <code>dataA11ySection</code> and presents links to them as a list of links hidden to most visitors and visible on focus. If there are no such elements, the component <strong>does not work</strong>.",
-  },
 };

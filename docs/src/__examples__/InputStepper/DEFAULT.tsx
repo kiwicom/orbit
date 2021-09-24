@@ -14,9 +14,23 @@ export default {
       />
     </div>
   ),
-  info: {
-    title: "Default input stepper",
-    description:
-      "By default, input steppers allow users to go up to their maximums and down to their minimum and then disables the buttons. It displays the <code>defaultValue</code> on initial mount.",
-  },
+  exampleKnobs: [
+    {
+      component: "InputStepper",
+      knobs: [
+        { name: "defaultValue", type: "number", defaultValue: 2 },
+        { name: "minValue", type: "number", defaultValue: 1 },
+        { name: "maxValue", type: "number", defaultValue: 10 },
+        { name: "step", type: "number", defaultValue: 1 },
+        { name: "error", type: "text", defaultValue: "" },
+        { name: "titleIncrement", type: "text", defaultValue: "Add a traveler" },
+        { name: "titleDecrement", type: "text", defaultValue: "Remove a traveler" },
+        { name: "help", type: "text", defaultValue: "" },
+        { name: "label", type: "text", defaultValue: "Travelers" },
+        { name: "required", type: "boolean", defaultValue: false },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "size", type: "select", options: ["small", "normal"], defaultValue: "normal" },
+      ],
+    },
+  ],
 };

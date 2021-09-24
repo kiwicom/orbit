@@ -4,6 +4,7 @@ import { Button, Dialog } from "@kiwicom/orbit-components";
 export default {
   Example: () => {
     const [showDialog, setShowDialog] = React.useState(false);
+
     return (
       <>
         {showDialog && (
@@ -44,9 +45,21 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default dialog",
-    description:
-      "Dialogs present a simple choice for users. They're displayed after users take action.",
-  },
+  exampleKnobs: [
+    {
+      component: "Dialog",
+      knobs: [
+        {
+          name: "description",
+          type: "text",
+          defaultValue: "Stay up to date with all travel possibilities",
+        },
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "Accept notifications?",
+        },
+      ],
+    },
+  ],
 };

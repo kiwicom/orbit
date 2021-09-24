@@ -21,9 +21,16 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default truncate",
-    description:
-      "By default, truncate components will limit their children to 100% of the parent width.",
-  },
+  exampleKnobs: [
+    {
+      component: "Truncate",
+      knobs: [
+        {
+          name: "maxWidth",
+          type: "text",
+          defaultValue: "100%",
+        },
+      ],
+    },
+  ],
 };

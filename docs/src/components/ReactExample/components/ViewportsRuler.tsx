@@ -77,14 +77,14 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
     if (ref.current) setWindowWidth(ref.current?.clientWidth);
   }, [onChangeSize, setRuler]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleResize]);
+  }, [handleResize, windowWidth]);
 
   const handleClick = (size: number, idx: number) => {
     onChangeSize(size);

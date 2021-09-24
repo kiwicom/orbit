@@ -29,7 +29,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default Switch",
-  },
 };

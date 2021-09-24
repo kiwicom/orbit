@@ -12,19 +12,20 @@ export default {
         </Stack>
       </Heading>
       <div style={{ maxWidth: "8em" }}>
-        <Stepper
-          defaultValue={2}
-          maxValue={10}
-          minValue={1}
-          titleIncrement="Add a traveler"
-          titleDecrement="Remove a traveler"
-        />
+        <Stepper defaultValue={2} maxValue={10} minValue={1} />
       </div>
     </Stack>
   ),
-  info: {
-    title: "Default stepper",
-    description:
-      "By default, steppers allow users to go up to their maximums and down to their minimum and then disables the buttons. It displays the <code>defaultValue</code> on initial mount.",
-  },
+  exampleKnobs: [
+    {
+      component: "Stepper",
+      knobs: [
+        { name: "defaultValue", type: "number", defaultValue: 2 },
+        { name: "minValue", type: "number", defaultValue: 1 },
+        { name: "maxValue", type: "number", defaultValue: 10 },
+        { name: "step", type: "number", defaultValue: 1 },
+        { name: "disabled", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

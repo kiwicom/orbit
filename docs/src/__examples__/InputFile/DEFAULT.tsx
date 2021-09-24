@@ -19,9 +19,19 @@ export default {
       />
     );
   },
-  info: {
-    title: "Default input file",
-    description:
-      "By default, input files offer a place to select files from their devices. Labels and help messages help guide users with what to select. Button labels and placeholders help prompt action.",
-  },
+  exampleKnobs: [
+    {
+      component: "InputFile",
+      knobs: [
+        { name: "error", type: "text", defaultValue: "" },
+        { name: "help", type: "text", defaultValue: "" },
+        { name: "fileName", type: "text", defaultValue: "" },
+        { name: "required", type: "boolean", defaultValue: false },
+        { name: "buttonLabel", type: "text", defaultValue: "Select photo" },
+        { name: "label", type: "text", defaultValue: "" },
+        { name: "placeholder", type: "text", defaultValue: "No photo selected" },
+        { name: "allowFileType", type: "text", defaultValue: ".png,.jpg,.jpeg,.webp" },
+      ],
+    },
+  ],
 };

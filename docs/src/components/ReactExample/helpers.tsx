@@ -67,7 +67,7 @@ export const transform = (example: string, knobs: Record<string, string>) => {
             const attributes: t.JSXAttribute[] = [];
 
             Object.entries(knobsObj).forEach(([name, val]) => {
-              const value = val.toString();
+              const value = val !== null ? val.toString() : "";
               if (value === "") return;
 
               if (value.includes("-icon")) {

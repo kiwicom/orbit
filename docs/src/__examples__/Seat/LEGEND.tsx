@@ -19,8 +19,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Legend",
-    description: "Including an explanation can help users quickly scan the available options.",
-  },
 };

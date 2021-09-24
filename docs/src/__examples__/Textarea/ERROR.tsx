@@ -15,9 +15,4 @@ export default {
       />
     );
   },
-  info: {
-    title: "Error messages",
-    description:
-      "Include error messages when validation isn't passed, either on change in focus or form submission. Note that an error message will override any help text.",
-  },
 };

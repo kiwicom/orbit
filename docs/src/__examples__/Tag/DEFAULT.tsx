@@ -3,8 +3,13 @@ import { Tag } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <Tag>Bags</Tag>,
-  info: {
-    title: "Default tag",
-    description: "By default, tags are not selected and cannot be removed.",
-  },
+  exampleKnobs: [
+    {
+      component: "Tag",
+      knobs: [
+        { name: "selected", type: "boolean", defaultValue: false },
+        { name: "size", type: "select", options: ["small", "normal"], defaultValue: "normal" },
+      ],
+    },
+  ],
 };

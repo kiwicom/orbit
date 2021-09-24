@@ -14,9 +14,4 @@ export default {
       <Heading type="title5">Title 5</Heading>
     </Stack>
   ),
-  info: {
-    title: "Heading types",
-    description:
-      "Headings are split based on size and appearance into seven different types. These types represent a visual hierarchy from most important to least.",
-  },
 };

@@ -33,9 +33,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Button labels",
-    description:
-      "In addition to the overall label, match the label on the upload button to the action users should take using the <code>buttonLabel</code> prop.",
-  },
 };

@@ -30,9 +30,40 @@ export default {
       <Button circled title="Help" iconLeft={<QuestionCircle />} />
     </Popover>
   ),
-  info: {
-    title: "Default popover",
-    description:
-      "By default, popovers will open on a click of their trigger with a preference for aligning with the start of and underneath their child.",
-  },
+  exampleKnobs: [
+    {
+      component: "Popover",
+      knobs: [
+        { name: "overlapped", type: "boolean", defaultValue: false },
+        { name: "opened", type: "boolean", defaultValue: false },
+        { name: "renderInPortal", type: "boolean", defaultValue: false },
+        { name: "overlapped", type: "boolean", defaultValue: false },
+        { name: "allowOverflow", type: "boolean", defaultValue: false },
+        { name: "noPadding", type: "boolean", defaultValue: false },
+        { name: "fixed", type: "boolean", defaultValue: false },
+        { name: "width", type: "text", defaultValue: "" },
+        {
+          name: "placement",
+          type: "select",
+          options: [
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "top-start",
+            "top-end",
+            "left-start",
+            "left-end",
+            "right-start",
+            "right-end",
+            "auto",
+            "auto-start",
+            "auto-end",
+            "bottom-start",
+            "bottom-end",
+          ],
+        },
+      ],
+    },
+  ],
 };

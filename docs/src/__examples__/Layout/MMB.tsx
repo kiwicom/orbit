@@ -18,9 +18,4 @@ export default {
       </Layout>
     );
   },
-  info: {
-    title: "MMB layout",
-    description:
-      "The MMB layout is a one-column layout with the same visibility no matter the screen size.",
-  },
 };

@@ -16,8 +16,4 @@ export default {
       />
     );
   },
-  info: {
-    title: "",
-    description: "",
-  },
 };

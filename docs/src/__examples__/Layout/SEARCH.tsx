@@ -34,9 +34,4 @@ export default {
       </Layout>
     );
   },
-  info: {
-    title: "Search layout",
-    description:
-      "The Search layout is a three-column layout with one column always visible and the others variable.",
-  },
 };

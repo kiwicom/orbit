@@ -73,5 +73,15 @@ export default {
         { name: "desktopRatio", type: "boolean", defaultValue: false },
       ],
     },
+    {
+      component: "PricingTableItem",
+      knobs: [
+        { name: "active", type: "boolean", defaultValue: false },
+        { name: "mobileDescription", type: "text", defaultValue: "" },
+        { name: "name", type: "text", defaultValue: "" },
+        { name: "price", type: "text", defaultValue: "" },
+        { name: "featureIcon", type: "icon", defaultValue: "" },
+      ],
+    },
   ],
 };

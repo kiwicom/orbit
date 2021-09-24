@@ -32,9 +32,4 @@ export default {
       </Button>
     </Popover>
   ),
-  info: {
-    title: "Clear trigger",
-    description:
-      "Popovers hide information from the initial screen, so make it clear to users how they can get that information, such as with a button with a chevron down icon on the right.",
-  },
 };

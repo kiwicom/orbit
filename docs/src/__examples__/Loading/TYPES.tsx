@@ -60,8 +60,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Types",
-    description: "Each loading type is useful in specific circumstances.",
-  },
 };

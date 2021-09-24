@@ -24,8 +24,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Sizes",
-    description: "The stars can be small (the default), medium, or large.",
-  },
 };

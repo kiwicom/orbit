@@ -63,9 +63,4 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Menu",
-    description:
-      "To add a menu button (such as to hold multiple options on smaller screens), use <code>onMenuOpen</code> to handle clicks on the menu button. Without this prop, the menu button does not appear.",
-  },
 };

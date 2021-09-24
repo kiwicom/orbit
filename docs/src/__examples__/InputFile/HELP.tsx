@@ -19,9 +19,4 @@ export default {
       />
     );
   },
-  info: {
-    title: "Help messages",
-    description:
-      "Help text can guide users to selecting the proper file. Note that an error message will override the help text.",
-  },
 };

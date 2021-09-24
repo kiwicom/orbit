@@ -41,8 +41,43 @@ export default {
       </Tile>
     </HorizontalScroll>
   ),
-  info: {
-    title: "Default icon",
-    description: "By default, icons are primary unless they inherit a different color.",
-  },
+  exampleKnobs: [
+    {
+      component: "HorizontalScroll",
+      knobs: [
+        {
+          name: "minHeight",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "scrollPadding",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "scrollSnap",
+          type: "select",
+          options: ["mandatory", "proximity", "inline", "none"],
+          defaultValue: "none",
+        },
+        {
+          name: "spacing",
+          type: "select",
+          options: [
+            "none",
+            "XXXSmall",
+            "XXSmall",
+            "XSmall",
+            "small",
+            "medium",
+            "large",
+            "XLarge",
+            "XXLarge",
+          ],
+          defaultValue: "none",
+        },
+      ],
+    },
+  ],
 };

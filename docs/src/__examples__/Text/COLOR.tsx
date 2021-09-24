@@ -8,9 +8,4 @@ export default {
       <Text type="secondary">Secondary text</Text>
     </Stack>
   ),
-  info: {
-    title: "Text color",
-    description:
-      "There are two main colors to work with: primary (Ink / Normal) and secondary (Ink / Light).",
-  },
 };

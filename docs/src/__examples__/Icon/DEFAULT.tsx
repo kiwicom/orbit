@@ -3,8 +3,28 @@ import { Airplane } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => <Airplane ariaLabel="Airplane" />,
-  info: {
-    title: "Default icon",
-    description: "By default, icons are primary unless they inherit a different color.",
-  },
+  exampleKnobs: [
+    {
+      component: "Airplane",
+      knobs: [
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "medium", "large"],
+          defaultValue: "small",
+        },
+        {
+          name: "customColor",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "color",
+          type: "select",
+          options: ["primary", "secondary", "tertiary", "info", "success", "warning", "critical"],
+          defaultValue: "primary",
+        },
+      ],
+    },
+  ],
 };

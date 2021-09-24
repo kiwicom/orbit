@@ -82,9 +82,4 @@ export default {
       </InputGroup>
     );
   },
-  info: {
-    title: "Error messages",
-    description:
-      "Include error messages when validation isn't passed, either on change in focus or form submission. Only error messages for the input group are shown, not those for any child. Note that an error message will override any help text.",
-  },
 };

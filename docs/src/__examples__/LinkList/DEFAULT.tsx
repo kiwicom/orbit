@@ -31,9 +31,34 @@ export default {
       </TextLink>
     </LinkList>
   ),
-  info: {
-    title: "Default link list",
-    description:
-      "By default, link lists show their children in a column with no indent and medium spacing.",
-  },
+  exampleKnobs: [
+    {
+      component: "LinkList",
+      knobs: [
+        { name: "indent", type: "boolean", defaultValue: false },
+        {
+          name: "direction",
+          type: "select",
+          defaultValue: "column",
+          options: ["row", "column"],
+        },
+        {
+          name: "spacing",
+          type: "select",
+          defaultValue: "medium",
+          options: [
+            "none",
+            "XXXSmall",
+            "XXSmall",
+            "XSmall",
+            "small",
+            "medium",
+            "large",
+            "XLarge",
+            "XXLarge",
+          ],
+        },
+      ],
+    },
+  ],
 };

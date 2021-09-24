@@ -10,8 +10,4 @@ export default {
       </Mobile>
     </Stack>
   ),
-  info: {
-    title: "Default mobile",
-    description: "Mobile components hide their children on wide screens (desktop and above).",
-  },
 };

@@ -18,6 +18,7 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     grid-template-columns: 1fr;
     border-radius: 12px;
     border: 1px solid ${theme.orbit.paletteCloudDark};
+    overflow: hidden;
   `};
 `;
 

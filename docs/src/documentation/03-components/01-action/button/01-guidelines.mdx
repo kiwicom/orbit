@@ -1,5 +1,5 @@
 ---
-title: Guidelines
+title: Design
 redirect_from:
   - /components/button/
 ---
@@ -9,25 +9,48 @@ import WebStructureImage from "../../../../images/component-structure/web/button
 import ActionableTextSnippet from "snippets/actionable-text.mdx";
 import ButtonSizeSnippet from "snippets/button-size.mdx";
 
-<ReactExample exampleId="Button-default" />
+## Overview
 
-## When to use
-
-If you're unsure what component or type to use for actions,
-check out our [interactive guide on action components](/guides/using-button-type-components/).
-
-- To offer the most important actions users can take.
-
-## When not to use
-
-- When you have many actions at once---use a [button link](/components/action/buttonlink/).
-- You want to offer a less important action---use a [button link](/components/action/buttonlink/).
-- To make text inside paragraphs or lists actionable---use a [text link](/components/action/textlink/).
-- So users can sign in using a social service---use a [SocialButton](/components/action/socialbutton/).
+Buttons communicate actions that users can take.
+They are typically placed throughout your UI, in places like: Dialogs, Forms, Toolbars, etc.
 
 ## Component status
 
 <ComponentStatus component="Button" />
+
+## Component preview
+
+<FigmaIframe
+  title="Component preview"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D6693%253A873"
+/>
+
+<Usage>
+
+<UsageUse>
+
+- To display several details about a single idea like a transfer at an airport.
+
+- To use common visual cues (icons and colors) to help users scan the details.
+
+</UsageUse>
+<UsageDontUse>
+
+- When you have many actions at once---use a [button link](/components/action/buttonlink/).
+
+- You want to offer a less important action---use a [button link](/components/action/buttonlink/).
+
+- To make text inside paragraphs or lists actionable---use a [text link](/components/action/textlink/).
+
+- So users can sign in using a social service---use a [SocialButton](/components/action/socialbutton/).
+
+</UsageDontUse>
+
+</Usage>
+
+## Component playground
+
+<ReactExample exampleId="Button-default" />
 
 ## Component structure
 
@@ -53,7 +76,7 @@ check out our [interactive guide on action components](/guides/using-button-type
   }}
 />
 
-## Behavior
+## Guidelines
 
 ### Identify the most important actions
 
@@ -64,8 +87,12 @@ check out our [interactive guide on action components](/guides/using-button-type
 Users need to be certain of what action to take next.
 You need to know which actions are the most important within a given section of the user flow.
 
+<!-- validate-links disable -->
+
 Once you've identified which actions are the most important at the moment,
-you can indicate importance through [size, type, and variation](#look--feel).
+you can indicate importance through [size, type, and variation](#mobile-vs-desktop-size).
+
+<!-- validate-links enable -->
 
 <Guideline type="do" title="Have one primary action">
 
@@ -101,11 +128,7 @@ If you need to use a disabled button,
 always make it clear how users can activate it,
 such as with a [tooltip](/components/overlay/tooltip/).
 
-## Content
-
 <ActionableTextSnippet />
-
-## Look & feel
 
 <ButtonSizeSnippet />
 
@@ -118,9 +141,17 @@ to show actions that don't draw as much attention.
 
 Primary buttons are best for the [single primary action](#identify-the-most-important-actions) on the screen.
 Critical buttons work for destructive actions---actions users can't take back.
-All remaining actions can be secondary buttons or [another component](#when-to-use).
 
-<ReactExample exampleId="Button-types" />
+<!-- lint disable validate-links -->
+
+All remaining actions can be secondary buttons or [another component](#usage-of-the-component).
+
+<!-- lint enable validate-links -->
+
+<FigmaIframe
+  title="Button types"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D6693%253A796"
+/>
 
 <Guideline type="do" title="Use secondary small buttons for additional actions on the page">
 
@@ -154,7 +185,7 @@ Icons add additional context and makes the buttons more easy to scan.
 But it's essential to not overuse these buttons.
 If everything is grabbing attention, things usually get messy.
 
-<ReactExample exampleId="Button-icons" />
+<ReactExample exampleId="Button-icons" responsive={false} />
 
 <Guideline type="do" title="Use a left icon when the button adds another item">
 
@@ -178,23 +209,7 @@ add a proper label to communicate the purpose.
 
 </Guideline>
 
-### Button states
-
-All of our buttons use a consistently defined set of states.
-
-<iframe
+<FigmaIframe
   title="Button states"
-  style={{ border: "1px solid rgba(0, 0, 0, 0.1)", maxWidth: "700px", height: "350px" }}
-  src="https://www.figma.com/embed?embed_host=share&amp;url=https://www.figma.com/file/TnS9DSwI8Om2bpkTL9ZMFz/Documentation-frames?node-id=1%3A2%26scaling%3Dmin-zoom&amp;chrome=DOCUMENTATION"
-  allowFullScreen
-  width="100%"
-  height="600px"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D1%253A2"
 />
-
-- **Hover** -- We change the background of a button to its :_hover_ color.
-- **Active** -- We scale down the button with the <InlineToken name="modifierScaleButtonActive" />
-  design token and also change the background to its _:active_ color.
-- **Focus** -- The background stays same but the button gets a box shadow
-  with the color and opacity determined by the button type.
-- **Disabled** -- We change the button opacity with the <InlineToken name="opacityButtonDisabled" />
-  design token. This deactivates all the states listed above.

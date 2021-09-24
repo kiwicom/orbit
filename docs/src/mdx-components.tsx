@@ -172,13 +172,17 @@ const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
 export const a = function Anchor({
   children,
   href,
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  orbitType,
+}: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  orbitType?: React.ComponentProps<typeof TextLink>["type"];
+}) {
   const isExternal = useIsUrlExternal(href);
   const useExternalIcon = isExternal && typeof children === "string";
   return (
     <TextLink
       // @ts-expect-error type declaration is not permissive enough
       asComponent={isExternal ? "a" : LinkForOrbitTextLink}
+      type={orbitType}
       href={href}
       external={isExternal}
       iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}

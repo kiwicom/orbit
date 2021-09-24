@@ -20,7 +20,7 @@
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",
     "check-types": "tsc && tsc --project docs && tsc --project packages/orbit-components/cypress",
     "check-links": "yarn check-links:src && yarn check-links:dist",
-    "check-links:src": "remark -e '.mdx' -fq -u validate-links docs/src/documentation --no-config",
+    "check-links:src": "remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config",
     "check-links:dist": "node docs/services/check-links.js",
     "flow:check": "flow check",
     "test": "jest",

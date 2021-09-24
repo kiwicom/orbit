@@ -6,10 +6,12 @@ import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
 
 import { getTextFromChildren, slugify } from "../utils/common";
 
+const StyledLinkIcon = styled.div``;
+
 export const StyledAnchor = styled.a`
   ${({ theme }) => css`
     display: block;
-    svg {
+    ${StyledLinkIcon} svg {
       opacity: 0;
       transition: fill ${theme.orbit.durationFast} ease-in;
     }
@@ -17,7 +19,7 @@ export const StyledAnchor = styled.a`
     :active,
     :focus {
       outline: none;
-      svg {
+      ${StyledLinkIcon} svg {
         opacity: 1;
         fill: ${theme.orbit.paletteProductNormal};
       }
@@ -38,7 +40,9 @@ const HeadingWithLink = ({ children, noId, spaceAfter = "none" }: Props) => {
     <StyledAnchor id={noId ? "" : slug} href={`#${slug}`} title={`Link to heading: ${headingText}`}>
       <Stack inline spacing="XSmall" align="center" spaceAfter={spaceAfter}>
         {children}
-        <LinkIcon />
+        <StyledLinkIcon>
+          <LinkIcon />
+        </StyledLinkIcon>
       </Stack>
     </StyledAnchor>
   );

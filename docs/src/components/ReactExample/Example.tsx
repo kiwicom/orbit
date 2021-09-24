@@ -22,11 +22,17 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
   `};
 `;
 
-const StyledWrapperFrame = styled.div<{ width: number }>`
+const StyledWrapperFrame = styled.div<{ width: number | null }>`
   ${({ width }) => css`
     margin: 0 auto;
-    max-width: ${width}px;
     width: 100%;
+    ${width === null
+      ? css`
+          padding: 0 14px;
+        `
+      : css`
+          max-width: ${width}px;
+        `}
   `}
 `;
 
@@ -43,6 +49,7 @@ export interface ExampleKnob {
 }
 
 interface Props extends InitialProps {
+  responsive?: boolean;
   code: string;
   example: string;
   fullPageExampleId?: string;
@@ -53,6 +60,7 @@ interface Props extends InitialProps {
 }
 
 const Example = ({
+  responsive = true,
   code,
   origin,
   exampleId,
@@ -77,8 +85,8 @@ const Example = ({
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
-      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
-      <StyledWrapperFrame width={width}>
+      {responsive && <ViewportsRuler onChangeSize={handleChangeRulerSize} />}
+      <StyledWrapperFrame width={responsive ? width : null}>
         <Frame
           origin={origin}
           pageId={exampleId}

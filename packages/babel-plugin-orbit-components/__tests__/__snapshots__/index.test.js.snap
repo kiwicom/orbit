@@ -81,10 +81,11 @@ import ListItem from "@kiwicom/orbit-components/lib/List/ListItem";
 
 exports[`transform imports as expected 11 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
-import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
+import { Alert, ModalSection, mediaQueries, useRandomIdSeed } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 import { Accommodation } from "@kiwicom/orbit-components/icons";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import { useRandomIdSeed } from "@kiwicom/orbit-components/lib/hooks/useRandomId";
 import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 import Alert from "@kiwicom/orbit-components/lib/Alert";

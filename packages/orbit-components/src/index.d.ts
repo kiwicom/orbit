@@ -113,5 +113,6 @@ export { default as Wizard, WizardStep } from "./Wizard";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
 export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
+export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 
 export { Icon } from "./Icon";

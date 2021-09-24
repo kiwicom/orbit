@@ -1,6 +1,7 @@
 // @flow
+import typeof KeyCode from "./keyMaps";
 
-export default {
+const KEY_CODE: KeyCode = {
   TAB: 9,
   ENTER: 13,
   SPACE: 32,
@@ -12,3 +13,5 @@ export default {
   END: 35,
   ESC: 27,
 };
+
+export default KEY_CODE;

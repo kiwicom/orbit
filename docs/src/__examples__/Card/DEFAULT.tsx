@@ -23,8 +23,8 @@ export default {
         { name: "icon", type: "icon", defaultValue: "" },
         { name: "noSeparator", type: "boolean", defaultValue: false },
         { name: "initialExpanded", type: "boolean", defaultValue: false },
-        { name: "title", type: "text", defaultValue: "" },
-        { name: "description", type: "text", defaultValue: "" },
+        { name: "title", type: "text", defaultValue: "Yasmin Karenth" },
+        { name: "description", type: "text", defaultValue: "1st class" },
         {
           name: "titleAs",
           type: "select",

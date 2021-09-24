@@ -19,11 +19,6 @@ export default {
           options: ["display", "displaySubtitle", "title1", "title2", "title3", "title4", "title5"],
           defaultValue: "div",
         },
-        {
-          name: "inverted",
-          type: "boolean",
-          defaultValue: false,
-        },
       ],
     },
   ],

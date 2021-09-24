@@ -12,13 +12,7 @@ export default {
         </Stack>
       </Heading>
       <div style={{ maxWidth: "8em" }}>
-        <Stepper
-          defaultValue={2}
-          maxValue={10}
-          minValue={1}
-          titleIncrement="Add a traveler"
-          titleDecrement="Remove a traveler"
-        />
+        <Stepper defaultValue={2} maxValue={10} minValue={1} />
       </div>
     </Stack>
   ),
@@ -30,8 +24,6 @@ export default {
         { name: "minValue", type: "number", defaultValue: 1 },
         { name: "maxValue", type: "number", defaultValue: 10 },
         { name: "step", type: "number", defaultValue: 1 },
-        { name: "titleIncrement", type: "text", defaultValue: "Add a traveler" },
-        { name: "titleDecrement", type: "text", defaultValue: "Remove a traveler" },
         { name: "disabled", type: "boolean", defaultValue: false },
       ],
     },

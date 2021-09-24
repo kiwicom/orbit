@@ -43,7 +43,7 @@ export default {
             "Zooz",
             "Elo",
           ],
-          defaultValue: "",
+          defaultValue: "NewYorkTimes",
         },
         {
           name: "size",

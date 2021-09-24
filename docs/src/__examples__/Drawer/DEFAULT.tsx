@@ -51,7 +51,7 @@ export default {
   },
   exampleKnobs: [
     {
-      component: "Dialog",
+      component: "Drawer",
       knobs: [
         {
           name: "width",
@@ -70,17 +70,7 @@ export default {
           defaultValue: "",
         },
         {
-          name: "shown",
-          type: "boolean",
-          defaultValue: true,
-        },
-        {
           name: "suppressed",
-          type: "boolean",
-          defaultValue: false,
-        },
-        {
-          name: "lockScrolling",
           type: "boolean",
           defaultValue: false,
         },

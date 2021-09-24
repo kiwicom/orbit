@@ -51,27 +51,7 @@ export default {
         {
           name: "height",
           type: "text",
-          defaultValue: "",
-        },
-        {
-          name: "boxShadow",
-          type: "text",
-          defaultValue: "",
-        },
-        {
-          name: "boxShadowHover",
-          type: "text",
-          defaultValue: "",
-        },
-        {
-          name: "boxShadowActive",
-          type: "text",
-          defaultValue: "",
-        },
-        {
-          name: "boxShadowFocus",
-          type: "text",
-          defaultValue: "",
+          defaultValue: "46px",
         },
         {
           name: "contentWidth",

@@ -7,13 +7,10 @@ export default {
     {
       component: "Slider",
       knobs: [
-        { name: "ariaLabel", type: "text", defaultValue: "Volume" },
-        { name: "ariaValueText", type: "text", defaultValue: "" },
         { name: "histogramLoading", type: "boolean", defaultValue: false },
         { name: "histogramLoadingText", type: "text", defaultValue: "" },
         { name: "minValue", type: "number", defaultValue: 0 },
         { name: "maxValue", type: "number", defaultValue: 100 },
-        { name: "valueDescription", type: "text", defaultValue: "" },
       ],
     },
   ],

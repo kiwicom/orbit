@@ -5,18 +5,13 @@ export default {
   Example: () => <Airplane ariaLabel="Airplane" />,
   exampleKnobs: [
     {
-      component: "Icon",
+      component: "Airplane",
       knobs: [
         {
           name: "size",
           type: "select",
           options: ["small", "medium", "large"],
           defaultValue: "small",
-        },
-        {
-          name: "reverseOnRtl",
-          type: "boolean",
-          defaultValue: false,
         },
         {
           name: "customColor",

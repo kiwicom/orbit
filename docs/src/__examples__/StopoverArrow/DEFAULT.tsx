@@ -9,8 +9,9 @@ export default {
       knobs: [
         {
           name: "stops",
-          type: "text",
-          defaultValue: "",
+          type: "select",
+          defaultValue: "2",
+          options: ["0", "1", "2", "3"],
         },
       ],
     },

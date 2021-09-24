@@ -34,7 +34,6 @@ export default {
         { name: "hasError", type: "boolean", defaultValue: false },
         { name: "info", type: "text", defaultValue: "" },
         { name: "label", type: "text", defaultValue: "Allow notifications" },
-        { name: "value", type: "text", defaultValue: "" },
       ],
     },
   ],

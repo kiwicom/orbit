@@ -11,9 +11,6 @@ export default {
     {
       component: "Tooltip",
       knobs: [
-        { name: "stopPropagation", type: "boolean", defaultValue: false },
-        { name: "lockScrolling", type: "boolean", defaultValue: true },
-        { name: "renderInPortal", type: "boolean", defaultValue: false },
         { name: "block", type: "boolean", defaultValue: false },
         { name: "removeUnderlinedText", type: "boolean", defaultValue: false },
         { name: "enabled", type: "boolean", defaultValue: true },

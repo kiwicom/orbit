@@ -31,12 +31,12 @@ export default {
         {
           name: "label",
           type: "text",
-          defaultValue: "",
+          defaultValue: "Booked",
         },
         {
           name: "subLabel",
           type: "text",
-          defaultValue: "",
+          defaultValue: "January 3, 10:43",
         },
       ],
     },

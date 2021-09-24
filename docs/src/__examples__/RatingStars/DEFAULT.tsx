@@ -22,12 +22,12 @@ export default {
         {
           name: "rating",
           type: "number",
-          defaultValue: "",
+          defaultValue: 4,
         },
         {
           name: "showEmpty",
           type: "boolean",
-          defaultValue: false,
+          defaultValue: true,
         },
       ],
     },

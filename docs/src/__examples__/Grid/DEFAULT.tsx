@@ -12,7 +12,7 @@ export default {
     };
 
     return (
-      <Grid columns="repeat(2, 1fr)" rows="repeat(2, 1fr)">
+      <Grid columns="repeat(2, 1fr)" rows="repeat(2, 1fr)" rowGap="10px" columnGap="10px">
         <div style={divStyle}>
           <Text>Column 1, Row 1</Text>
         </div>
@@ -50,7 +50,7 @@ export default {
         {
           name: "rowGap",
           type: "text",
-          defaultValue: "",
+          defaultValue: "10px",
         },
         {
           name: "width",
@@ -70,7 +70,7 @@ export default {
         {
           name: "columnGap",
           type: "text",
-          defaultValue: "",
+          defaultValue: "10px",
         },
       ],
     },

@@ -78,14 +78,9 @@ export default {
           defaultValue: "",
         },
         {
-          name: "lockScrolling",
-          type: "boolean",
-          defaultValue: true,
-        },
-        {
           name: "completedSteps",
           type: "number",
-          defaultValue: "",
+          defaultValue: 2,
         },
       ],
     },

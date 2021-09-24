@@ -18,11 +18,6 @@ export default {
           type: "text",
           defaultValue: "",
         },
-        {
-          name: "loading",
-          type: "boolean",
-          defaultValue: false,
-        },
       ],
     },
   ],

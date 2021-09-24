@@ -33,12 +33,6 @@ export default {
         { name: "error", type: "text", defaultValue: "" },
         { name: "filter", type: "boolean", defaultValue: false },
         { name: "label", type: "text", defaultValue: "Transport to search" },
-        {
-          name: "labelAs",
-          type: "select",
-          options: ["h2", "h3", "h4", "h5", "h6"],
-          defaultValue: "h4",
-        },
         { name: "labelSize", type: "select", options: ["normal", "large"], defaultValue: "normal" },
       ],
     },

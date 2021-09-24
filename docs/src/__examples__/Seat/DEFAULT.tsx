@@ -1,11 +1,16 @@
 import React from "react";
-import { Seat } from "@kiwicom/orbit-components";
+import { Seat, SeatLegend } from "@kiwicom/orbit-components";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 
 export default {
   Example: () => {
     const { isTablet } = useMediaQuery();
-    return <Seat type="default" size={isTablet ? "medium" : "small"} />;
+    return (
+      <>
+        <Seat type="default" size={isTablet ? "medium" : "small"} />
+        <SeatLegend type="default" label="Standard ($ 5.99 – $ 12.98)" />
+      </>
+    );
   },
   exampleKnobs: [
     {
@@ -51,7 +56,7 @@ export default {
         {
           name: "label",
           type: "text",
-          defaultValue: "",
+          defaultValue: "Standard ($ 5.99 – $ 12.98)",
         },
         {
           name: "type",

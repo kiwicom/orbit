@@ -4,16 +4,29 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle: React.CSSProperties = {
-      width: "160px",
+    const height: React.CSSProperties = {
       height: "40px",
     };
 
     return (
       <Inline spacing="medium">
-        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighter }} />
-        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighterHover }} />
-        <div style={{ ...divStyle, background: defaultTheme.orbit.paletteInkLighterActive }} />
+        <div
+          style={{ ...height, width: "140px", background: defaultTheme.orbit.paletteInkLighter }}
+        />
+        <div
+          style={{
+            ...height,
+            width: "160px",
+            background: defaultTheme.orbit.paletteInkLighterHover,
+          }}
+        />
+        <div
+          style={{
+            ...height,
+            width: "180px",
+            background: defaultTheme.orbit.paletteInkLighterActive,
+          }}
+        />
       </Inline>
     );
   },

@@ -37,7 +37,6 @@ export default {
         { name: "overlapped", type: "boolean", defaultValue: false },
         { name: "opened", type: "boolean", defaultValue: false },
         { name: "renderInPortal", type: "boolean", defaultValue: false },
-        { name: "lockScrolling", type: "boolean", defaultValue: true },
         { name: "overlapped", type: "boolean", defaultValue: false },
         { name: "allowOverflow", type: "boolean", defaultValue: false },
         { name: "noPadding", type: "boolean", defaultValue: false },

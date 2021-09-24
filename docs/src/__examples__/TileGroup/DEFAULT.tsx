@@ -28,10 +28,4 @@ export default {
       />
     </TileGroup>
   ),
-  exampleKnobs: [
-    {
-      component: "TileGroup",
-      knobs: [{ name: "dataTest", type: "text", defaultValue: "" }],
-    },
-  ],
 };

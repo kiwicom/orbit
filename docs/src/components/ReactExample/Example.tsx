@@ -18,13 +18,14 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     grid-template-columns: 1fr;
     border-radius: 12px;
     border: 1px solid ${theme.orbit.paletteCloudDark};
+    overflow: hidden;
   `};
 `;
 
-const StyledWrapperFrame = styled.div<{ width: number }>`
+const StyledWrapperFrame = styled.div<{ width: number | string }>`
   ${({ width }) => css`
     margin: 0 auto;
-    max-width: ${width}px;
+    max-width: ${typeof width === "number" ? `${width}px` : width};
     width: 100%;
   `}
 `;
@@ -78,7 +79,7 @@ const Example = ({
     exampleVariants[0]?.name ?? null,
   );
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
-  const [width, setPreviewWidth] = React.useState(0);
+  const [width, setPreviewWidth] = React.useState<number | string>(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
   React.useEffect(() => {

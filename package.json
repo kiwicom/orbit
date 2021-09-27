@@ -14,7 +14,7 @@
     "build": "yarn tokens build && yarn components build",
     "build-ci": "lerna bootstrap && yarn tokens build && yarn components build",
     "preinstall": "node scripts/ci-streamline-env.js",
-    "postinstall": "lerna run postinstall --stream",
+    "postinstall": "lerna run postinstall --stream && node node_modules/@streamlinehq/streamlinehq/build/install.js",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",

@@ -22,17 +22,15 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
   `};
 `;
 
-const StyledWrapperFrame = styled.div<{ width: number | null }>`
-  ${({ width }) => css`
+const StyledWrapperFrame = styled.div<{ width: number; responsive: boolean }>`
+  ${({ width, responsive }) => css`
     margin: 0 auto;
+    max-width: ${width}px;
     width: 100%;
-    ${width === null
-      ? css`
-          padding: 0 14px;
-        `
-      : css`
-          max-width: ${width}px;
-        `}
+    ${!responsive &&
+    css`
+      padding: 0 14px;
+    `};
   `}
 `;
 
@@ -86,7 +84,7 @@ const Example = ({
   return (
     <StyledWrapper isFullPage={isFullPage}>
       {responsive && <ViewportsRuler onChangeSize={handleChangeRulerSize} />}
-      <StyledWrapperFrame width={responsive ? width : null}>
+      <StyledWrapperFrame width={width} responsive={responsive}>
         <Frame
           origin={origin}
           pageId={exampleId}

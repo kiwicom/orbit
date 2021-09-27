@@ -110,6 +110,8 @@ export default function Footer() {
               <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="https://old.orbit.kiwi">Old orbit.kiwi</StyledFooterLink>
             </Stack>
             <Stack
               inline

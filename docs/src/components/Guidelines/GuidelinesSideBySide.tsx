@@ -22,7 +22,7 @@ const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean
   ${({ theme }) => css`
     padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
     width: 100%;
     ${resolveBorders};
 

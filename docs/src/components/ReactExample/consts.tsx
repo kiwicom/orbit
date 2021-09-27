@@ -7,6 +7,7 @@ export const QUERIES = {
   tablet: 768,
   desktop: 992,
   largeDesktop: 1200,
+  fullWidth: "100%",
 };
 
 export const PREVIEW_ID = "preview-wrapper";

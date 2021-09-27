@@ -78,7 +78,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       background={background}
       origin={origin}
       exampleKnobs={example.exampleKnobs}
-      exampleVariants={example.exampleVariants}
+      exampleVariants={example.exampleVariants || []}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}

@@ -43,7 +43,7 @@ const Sandbox = ({ pathContext }) => {
           example={example}
           origin={origin}
           exampleKnobs={exampleKnobs}
-          exampleVariants={exampleVariants}
+          exampleVariants={exampleVariants || []}
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>

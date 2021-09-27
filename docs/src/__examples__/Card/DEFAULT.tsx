@@ -1,16 +1,10 @@
 import React from "react";
-import { Card, CardSection, Inline } from "@kiwicom/orbit-components";
-import { GenderWoman } from "@kiwicom/orbit-components/icons";
+import { Card, CardSection } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Card title="Passenger info" description="All passengers in this itinerary">
-      <CardSection>
-        <Inline>
-          <GenderWoman ariaLabel="female" />
-          Yasmin Karenth
-        </Inline>
-      </CardSection>
+      <CardSection title="Yasmin Karenth" description="1st class" />
     </Card>
   ),
   exampleKnobs: [
@@ -29,8 +23,8 @@ export default {
         { name: "icon", type: "icon", defaultValue: "" },
         { name: "noSeparator", type: "boolean", defaultValue: false },
         { name: "initialExpanded", type: "boolean", defaultValue: false },
-        { name: "title", type: "text", defaultValue: "" },
-        { name: "description", type: "text", defaultValue: "" },
+        { name: "title", type: "text", defaultValue: "Yasmin Karenth" },
+        { name: "description", type: "text", defaultValue: "1st class" },
         {
           name: "titleAs",
           type: "select",

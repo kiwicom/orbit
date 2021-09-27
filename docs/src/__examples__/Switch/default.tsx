@@ -26,7 +26,15 @@ export default {
       </div>
     );
   },
-  info: {
-    title: "Default Switch",
-  },
+  exampleKnobs: [
+    {
+      component: "Switch",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "checked", type: "boolean", defaultValue: false },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "ariaLabelledby", type: "text", defaultValue: "darkmode" },
+      ],
+    },
+  ],
 };

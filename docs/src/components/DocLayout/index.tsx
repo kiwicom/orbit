@@ -20,7 +20,7 @@ import Navbar from "../Navbar";
 import { BookmarkProvider } from "../../services/bookmarks";
 import DocNavigation from "../DocNavigation";
 import Breadcrumbs from "../Breadcrumbs";
-import ComponentStatus from "../ComponentStatus";
+import { ComponentStatus } from "../ComponentStatus";
 import ComponentStructure from "../ComponentStructure";
 import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";

@@ -115,6 +115,7 @@ const StyledPopoverParent = styled.div`
       bottom: ${bottom};
       right: ${right};
       transform: ${transform};
+      transition: ${transition(["opacity"], "fast", "ease-in-out")};
       position: ${position};
       z-index: ${isInsideModal ? "1000" : "600"};
       width: ${width ? `${width}` : "auto"};

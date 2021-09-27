@@ -9,9 +9,4 @@ export default {
       <Text size="small">Small text</Text>
     </Stack>
   ),
-  info: {
-    title: "Text size",
-    description:
-      "Text components can come in three possible sizes (small, normal, and large). These sizes should give you a clear hierarchy for all your text.",
-  },
 };

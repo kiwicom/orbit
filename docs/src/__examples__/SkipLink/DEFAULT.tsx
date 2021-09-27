@@ -60,9 +60,4 @@ export default {
       </Stack>
     </>
   ),
-  info: {
-    title: "Default skip link",
-    description:
-      "By default, the SkipLink component presents a list of links hidden to most visitors and visible on focus.",
-  },
 };

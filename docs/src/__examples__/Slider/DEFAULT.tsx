@@ -3,9 +3,15 @@ import { Slider } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <Slider label="Volume" minValue={0} maxValue={100} defaultValue={33} />,
-  info: {
-    title: "Default slider",
-    description:
-      "A default slider presents a range in between given minimum and maximum values. Always include a label.",
-  },
+  exampleKnobs: [
+    {
+      component: "Slider",
+      knobs: [
+        { name: "histogramLoading", type: "boolean", defaultValue: false },
+        { name: "histogramLoadingText", type: "text", defaultValue: "" },
+        { name: "minValue", type: "number", defaultValue: 0 },
+        { name: "maxValue", type: "number", defaultValue: 100 },
+      ],
+    },
+  ],
 };

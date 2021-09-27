@@ -18,9 +18,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Colors",
-    description:
-      "Ratings stars come in two colors (based on text): primary (the default) and secondary.",
-  },
 };

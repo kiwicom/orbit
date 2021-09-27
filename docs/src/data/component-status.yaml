@@ -1,22 +1,22 @@
 - component: Accordion
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: AirportIllustration
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Alert
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Information
 - component: Badge
@@ -29,57 +29,57 @@
 - component: BadgeList
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Information
 - component: BadgePrimitive
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Primitives
 - component: Box
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Layout
 - component: Breadcrumbs
   figma: Released
   react: Developing
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Navigation
 - component: ButtonGroup
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Action
 - component: ButtonLink
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Action
 - component: ButtonMobileStore
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Action
 - component: ButtonPrimitive
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Primitives
 - component: Button
@@ -92,421 +92,421 @@
 - component: CallOutBanner
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Card
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: CarrierLogo
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Checkbox
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: ChoiceGroup
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: ChoiceTile
   figma: Designing
   react: Planned
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Waiting
   group: Structure
 - component: Collapse
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Interaction
 - component: CountryFlag
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Coupon
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Desktop
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Responsive
 - component: DestinationCard
-  figma: n/a
+  figma: N/A
   react: Deprecated
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Structure
 - component: DestinationHeader
-  figma: n/a
+  figma: N/A
   react: Deprecated
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Structure
 - component: Dialog
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Overlay
 - component: Drawer
-  figma: On hold
+  figma: Postponed
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Overlay
 - component: EmptyState
   figma: Released
   react: Planned
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Progress indicators
 - component: FeatureIcon
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Grid
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Planned
   group: Layout
 - component: Heading
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Text
 - component: Hide
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Responsive
 - component: HorizontalScroll
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Writing
   group: Layout
 - component: Icon
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: IllustrationPrimitive
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Primitives
 - component: Illustration
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Inline
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Layout
 - component: InputField
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: InputFile
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: InputGroup
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: InputStepper
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: ItinerarySector
   figma: Planned
   react: Waiting
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Waiting
   group: Structure
 - component: ItinerarySegment
   figma: Planned
   react: Waiting
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Waiting
   group: Structure
 - component: Layout
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Layout
 - component: LinkList
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Navigation
 - component: ListChoice
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: List
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: Loading
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Progress indicators
 - component: Mobile
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Responsive
 - component: Modal
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Overlay
 - component: NavigationBar
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Navigation
 - component: NavigationList
-  figma: n/a
+  figma: N/A
   react: Deprecated
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Navigation
 - component: NotificationBadge
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Information
 - component: Pagination
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Navigation
 - component: PictureCard
   figma: Designing
   react: Developing
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Popover
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Overlay
 - component: Portal
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Utility
 - component: PricingTable
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Structure
 - component: Radio
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: RatingStars
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Seat
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Select
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: Skeleton
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Progress indicators
 - component: Separator
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: ServiceLogo
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: SkipLink
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Accessibility
 - component: SkipNavigation
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Accessibility
 - component: Slider
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Interaction
 - component: SocialButton
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Action
 - component: Stack
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Planned
   group: Layout
 - component: Stepper
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Interaction
 - component: Sticky
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Utility
 - component: StopoverArrow
-  figma: Not doing
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Visuals
 - component: Switch
@@ -518,7 +518,7 @@
   group: Interaction
 - component: TabBar
   figma: Released
-  react: n/a
+  react: N/A
   ios: Waiting
   android: Waiting
   docs: Waiting
@@ -526,106 +526,106 @@
 - component: Table
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: Tabs
   figma: Released
   react: Planned
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: Tag
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Interaction
 - component: TextLink
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Action
 - component: Text
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Text
 - component: Textarea
   figma: Planned
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Input
 - component: TileGroup
   figma: Planned
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: Tile
   figma: Planned
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Structure
 - component: Timeline
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Progress indicators
 - component: Toast
   figma: Designing
   react: Planned
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Information
 - component: Tooltip
   figma: Released
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Overlay
 - component: TripSector
-  figma: Not doing
+  figma: N/A
   react: Deprecated
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Structure
   noDocs: true
 - component: TripSegment
-  figma: Not doing
+  figma: N/A
   react: Deprecated
-  ios: n/a
-  android: n/a
-  docs: Not doing
+  ios: N/A
+  android: N/A
+  docs: N/A
   group: Structure
 - component: Truncate
-  figma: n/a
+  figma: N/A
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Utility
 - component: Wizard
   figma: Designing
   react: Released
-  ios: n/a
-  android: n/a
+  ios: N/A
+  android: N/A
   docs: Released
   group: Progress indicators

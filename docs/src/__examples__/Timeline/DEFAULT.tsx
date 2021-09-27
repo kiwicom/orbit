@@ -18,9 +18,27 @@ export default {
       </TimelineStep>
     </Timeline>
   ),
-  info: {
-    title: "Default timeline",
-    description:
-      "Timelines show where users are in a specific process that they can't control. So it's not possible to move among steps in a timeline.",
-  },
+  exampleKnobs: [
+    {
+      component: "TimelineStep",
+      knobs: [
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "success",
+          options: ["success", "warning", "critical"],
+        },
+        {
+          name: "label",
+          type: "text",
+          defaultValue: "Booked",
+        },
+        {
+          name: "subLabel",
+          type: "text",
+          defaultValue: "January 3, 10:43",
+        },
+      ],
+    },
+  ],
 };

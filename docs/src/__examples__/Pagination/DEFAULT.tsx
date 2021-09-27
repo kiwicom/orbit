@@ -12,8 +12,32 @@ export default {
       />
     );
   },
-  info: {
-    title: "Default pagination",
-    description: "By default, all pages up to 7 are displayed as buttons on large screens.",
-  },
+  exampleKnobs: [
+    {
+      component: "Pagination",
+      knobs: [
+        {
+          name: "pageCount",
+          type: "number",
+          defaultValue: 7,
+        },
+        {
+          name: "selectedPage",
+          type: "number",
+          defaultValue: 2,
+        },
+        {
+          name: "hideLabels",
+          type: "boolean",
+          defaultValue: true,
+        },
+        {
+          name: "size",
+          type: "select",
+          defaultValue: "normal",
+          options: ["small", "normal"],
+        },
+      ],
+    },
+  ],
 };

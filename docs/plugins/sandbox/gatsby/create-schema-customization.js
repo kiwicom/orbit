@@ -13,6 +13,12 @@ module.exports = ({ actions, schema }) => {
         absolutePath: String!
         scope: [ExampleScope]
         exampleKnobs: [ExampleKnobs]
+        exampleVariants: [Variant]
+      }
+
+      type Variant {
+        name: String
+        code: String
       }
 
       type Knob {

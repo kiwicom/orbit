@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Sandbox = ({ pathContext }) => {
-  const { example, id, example_id, scope, exampleKnobs } = pathContext;
+  const { example, id, example_id, scope, exampleKnobs, exampleVariants } = pathContext;
   const { code, origin, setCode } = useSandbox(example_id);
 
   const modules = getModules(scope);
@@ -43,6 +43,7 @@ const Sandbox = ({ pathContext }) => {
           example={example}
           origin={origin}
           exampleKnobs={exampleKnobs}
+          exampleVariants={exampleVariants || []}
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>

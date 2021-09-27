@@ -31,5 +31,7 @@ export interface Props extends Common.Global {
   readonly renderInPortal?: boolean;
   readonly onClose?: Common.Callback;
 }
-declare class Popover extends React.Component<Props> {}
+
+declare const Popover: React.FunctionComponent<Props>;
+
 export { Popover, Popover as default };

@@ -18,9 +18,4 @@ export default {
       </TimelineStep>
     </Timeline>
   ),
-  info: {
-    title: "Step types",
-    description:
-      "Timeline steps can be one of four types: success, warning, critical, and default.",
-  },
 };

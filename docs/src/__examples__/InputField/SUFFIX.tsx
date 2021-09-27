@@ -33,9 +33,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Suffixes",
-    description:
-      "You can add context to an input field with a text suffix. To add an action, use a button link as the suffix.",
-  },
 };

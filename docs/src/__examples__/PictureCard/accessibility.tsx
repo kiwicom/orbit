@@ -37,8 +37,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Accessibility",
-    description: "See the best practices to make your picture cards accessibile.",
-  },
 };

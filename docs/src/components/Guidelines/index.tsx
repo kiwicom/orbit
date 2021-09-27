@@ -39,7 +39,7 @@ interface ImageContainerProps extends GuidelineType {
 const StyledComponent = styled.div<GuidelineComponent>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
     padding: ${theme.orbit.spaceMedium};
     ${resolveBorders};
   `}

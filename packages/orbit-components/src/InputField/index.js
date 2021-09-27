@@ -148,7 +148,10 @@ const StyledInlineLabel = styled.div`
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXXSmall}`)};
+  padding: ${({ theme, hasTags, hasFeedback }) =>
+    rtlSpacing(
+      `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
+    )};
 
   ${FormLabel} {
     margin-bottom: 0;
@@ -434,7 +437,12 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             prefix && <Prefix size={size}>{prefix}</Prefix>
           )}
           {label && inlineLabel && (
-            <StyledInlineLabel ref={labelRef} size={size}>
+            <StyledInlineLabel
+              hasTags={!!tags}
+              hasFeedback={!!(error || help)}
+              ref={labelRef}
+              size={size}
+            >
               <FormLabel
                 filled={!!value}
                 required={required}
@@ -446,6 +454,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
               </FormLabel>
             </StyledInlineLabel>
           )}
+          {tags && <InputTags>{tags}</InputTags>}
           <Input
             data-test={dataTest}
             required={required}
@@ -484,7 +493,6 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             inputMode={inputMode}
             dataAttrs={dataAttrs}
           />
-          {tags && <InputTags>{tags}</InputTags>}
           {suffix && <Suffix size={size}>{suffix}</Suffix>}
           <FakeInput size={size} disabled={disabled} error={error} />
         </InputContainer>

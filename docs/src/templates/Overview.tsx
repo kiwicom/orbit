@@ -27,7 +27,6 @@ interface Props extends PageRendererProps {
 const Overview = ({ location, pageContext }: Props) => {
   const { slug, title, trail, pages } = pageContext;
   const [devMode] = useDevMode();
-  console.log(pages);
 
   return (
     <DocLayout location={location} path={slug} title={title} trail={trail} noElevation>

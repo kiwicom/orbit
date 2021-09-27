@@ -1,6 +1,7 @@
 import React from "react";
 import { PageRendererProps } from "gatsby";
 import { Grid } from "@kiwicom/orbit-components";
+import { sortBy } from "lodash";
 
 import DocLayout from "../components/DocLayout";
 import Tile from "../components/Tile";
@@ -26,6 +27,7 @@ interface Props extends PageRendererProps {
 const Overview = ({ location, pageContext }: Props) => {
   const { slug, title, trail, pages } = pageContext;
   const [devMode] = useDevMode();
+  console.log(pages);
 
   return (
     <DocLayout location={location} path={slug} title={title} trail={trail} noElevation>
@@ -36,17 +38,19 @@ const Overview = ({ location, pageContext }: Props) => {
         desktop={{ columns: "repeat(3, 1fr)" }}
         largeDesktop={{ columns: "repeat(2, 1fr)" }}
       >
-        {pages.map(({ title: pageTitle, slug: pageSlug, description, hasReactTab }) => {
-          return (
-            <Tile
-              key={pageSlug}
-              title={pageTitle}
-              href={hasReactTab && devMode ? `${pageSlug}react/` : pageSlug}
-            >
-              {description}
-            </Tile>
-          );
-        })}
+        {sortBy(pages, ["idx"]).map(
+          ({ title: pageTitle, slug: pageSlug, description, hasReactTab }) => {
+            return (
+              <Tile
+                key={pageSlug}
+                title={pageTitle}
+                href={hasReactTab && devMode ? `${pageSlug}react/` : pageSlug}
+              >
+                {description}
+              </Tile>
+            );
+          },
+        )}
       </Grid>
     </DocLayout>
   );

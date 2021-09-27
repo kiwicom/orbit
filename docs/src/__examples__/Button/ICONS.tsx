@@ -1,51 +1,26 @@
 import React from "react";
-import { Heading, Stack, Button } from "@kiwicom/orbit-components";
-import {
-  ChevronDown,
-  ChevronRight,
-  Edit,
-  PlusCircle,
-  Visibility,
-} from "@kiwicom/orbit-components/icons";
+import { Button } from "@kiwicom/orbit-components";
+import { ChevronRight } from "@kiwicom/orbit-components/icons";
 
 export default {
-  Example: () => (
-    <Stack direction="column" spacing="XLarge">
-      <Stack direction="column" spacing="XSmall">
-        <Heading type="title4">With right icon</Heading>
-        <Stack flex>
-          <Button iconRight={<ChevronRight />}>Continue to payment</Button>
-          <Button iconRight={<ChevronDown />}>Show more options</Button>
-        </Stack>
-      </Stack>
-      <Stack direction="column" spacing="XSmall">
-        <Heading type="title4">With left icon</Heading>
-        <Stack flex>
-          <Button iconLeft={<PlusCircle />}>Add item</Button>
-          <Button type="secondary" iconLeft={<Edit />}>
-            Add item
-          </Button>
-        </Stack>
-      </Stack>
-      <Stack direction="column" spacing="XSmall">
-        <Heading type="title4">With both icons</Heading>
-        <Button iconLeft={<Visibility />} iconRight={<ChevronRight />}>
-          Read more
-        </Button>
-      </Stack>
-      <Stack direction="column" spacing="XSmall">
-        <Heading type="title4">Only icon</Heading>
-        <Button iconLeft={<Edit />} title="Edit this page" />
-      </Stack>
-    </Stack>
-  ),
-  exampleKnobs: [
+  Example: () => <Button iconRight={<ChevronRight />}>Add item</Button>,
+  exampleVariants: [
     {
-      component: "Button",
-      knobs: [
-        { name: "iconLeft", type: "icon", defaultValue: "" },
-        { name: "iconRight", type: "icon", defaultValue: "" },
-      ],
+      name: "With right icon",
+      code: "() => <Button iconRight={<Icons.ChevronRight />}>Add item</Button>",
+    },
+    {
+      name: "With left icon",
+      code: "() => <Button iconLeft={<Icons.ChevronLeft />}>Add item</Button>",
+    },
+    {
+      name: "With both icons",
+      code:
+        "() => <Button iconRight={<Icons.ChevronRight />} iconLeft={<Icons.ChevronLeft />}>Add item</Button>",
+    },
+    {
+      name: "With only icon",
+      code: "() => <Button iconRight={<Icons.ChevronRight />} />",
     },
   ],
 };

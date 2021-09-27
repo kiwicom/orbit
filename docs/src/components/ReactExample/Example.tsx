@@ -41,12 +41,18 @@ export interface ExampleKnob {
   knobs: Knob[];
 }
 
+export interface Variant {
+  name: string;
+  code: string;
+}
+
 interface Props extends InitialProps {
   code: string;
   example: string;
   fullPageExampleId?: string;
   isFullPage?: boolean;
   exampleKnobs: ExampleKnob[];
+  exampleVariants: Variant[];
   onChangeCode: (code: string) => void;
   origin: string;
 }
@@ -56,6 +62,7 @@ const Example = ({
   origin,
   exampleId,
   exampleKnobs,
+  exampleVariants,
   fullPageExampleId,
   minHeight,
   maxHeight,
@@ -66,6 +73,10 @@ const Example = ({
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
+  const [isVariantsOpened, setVariantsOpened] = React.useState(false);
+  const [currentVariant, setCurrentVariant] = React.useState<string | null>(
+    exampleVariants[0]?.name ?? null,
+  );
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
@@ -94,16 +105,25 @@ const Example = ({
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}
         isFullPage={isFullPage}
+        isVariantsOpened={isVariantsOpened}
         onSelectBackground={value => setSelectedBackground(value)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);
+          setVariantsOpened(false);
         }}
         onOpenPlayground={() => {
           setOpenEditor(false);
           setPlaygroundOpened(prev => !prev);
         }}
         knobs={exampleKnobs.length > 0}
+        variants={exampleVariants}
+        currentVariant={currentVariant}
+        onChangeVariant={variant => {
+          setCurrentVariant(variant);
+          const variantCode = exampleVariants.find(({ name }) => name === variant)?.code;
+          if (variantCode) onChangeCode(variantCode);
+        }}
         code={code}
         origin={origin}
       />

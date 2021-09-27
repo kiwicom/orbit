@@ -35,13 +35,14 @@ interface Props {
   isFullPage?: boolean;
   isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
+  currentVariant: string | null;
   isVariantsOpened: boolean;
   knobs: boolean;
   variants: Variant[];
   background: BgType;
   onSelectBackground: (value: BgType) => void;
   onOpenPlayground: () => void;
-  onChangeVariant: (code: string) => void;
+  onChangeVariant: (variant: string) => void;
   onOpenEditor: () => void;
 }
 
@@ -51,6 +52,7 @@ const Board = ({
   background,
   code,
   variants,
+  currentVariant,
   isVariantsOpened,
   isEditorOpened,
   isPlaygroundOpened,
@@ -108,7 +110,13 @@ const Board = ({
             <Popover
               noFlip
               renderInPortal={false}
-              content={<Variants exampleVariants={variants} onChange={onChangeVariant} />}
+              content={
+                <Variants
+                  exampleVariants={variants}
+                  currentVariant={currentVariant}
+                  onChange={onChangeVariant}
+                />
+              }
             >
               <ButtonLink
                 type="secondary"

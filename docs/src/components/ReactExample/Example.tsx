@@ -74,6 +74,9 @@ const Example = ({
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
   const [isVariantsOpened, setVariantsOpened] = React.useState(false);
+  const [currentVariant, setCurrentVariant] = React.useState<string | null>(
+    exampleVariants[0]?.name ?? null,
+  );
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
@@ -115,7 +118,12 @@ const Example = ({
         }}
         knobs={exampleKnobs.length > 0}
         variants={exampleVariants}
-        onChangeVariant={onChangeCode}
+        currentVariant={currentVariant}
+        onChangeVariant={variant => {
+          setCurrentVariant(variant);
+          const variantCode = exampleVariants.find(({ name }) => name === variant)?.code;
+          if (variantCode) onChangeCode(variantCode);
+        }}
         code={code}
         origin={origin}
       />

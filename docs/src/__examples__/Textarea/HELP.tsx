@@ -9,9 +9,4 @@ export default {
       placeholder="What I liked about booking with Kiwi.com was ..."
     />
   ),
-  info: {
-    title: "Help",
-    description:
-      "Help text can guide users to entering proper data. Note that an error message will override the help text.",
-  },
 };

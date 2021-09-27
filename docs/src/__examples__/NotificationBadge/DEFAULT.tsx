@@ -3,8 +3,29 @@ import { NotificationBadge } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <NotificationBadge type="info">3</NotificationBadge>,
-  info: {
-    title: "Default notification badges",
-    description: "Notification badges should be only an icon or a number up to 2 digits.",
-  },
+  exampleKnobs: [
+    {
+      component: "NotificationBadge",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: null },
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "",
+          options: [
+            "neutral",
+            "dark",
+            "info",
+            "success",
+            "critical",
+            "warning",
+            "infoInverted",
+            "criticalInverted",
+            "successInverted",
+            "warningInverted",
+          ],
+        },
+      ],
+    },
+  ],
 };

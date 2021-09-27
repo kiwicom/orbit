@@ -28,9 +28,4 @@ export default {
       />
     </TileGroup>
   ),
-  info: {
-    title: "Default tile group",
-    description:
-      "Tile groups can contain many things. To keep the proper styling, don't include any DOM elements other than tiles.",
-  },
 };

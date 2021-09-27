@@ -9,8 +9,4 @@ export default {
       <Text align="right">Text aligned to the right</Text>
     </Stack>
   ),
-  info: {
-    title: "Text alignment",
-    description: "You can align text to the left, center, or right.",
-  },
 };

@@ -28,9 +28,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Sizes",
-    description:
-      "Seats can be either small or medium (the default). We recommend using the medium size for desktop screens and small for mobiles.",
-  },
 };

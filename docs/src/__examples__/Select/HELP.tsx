@@ -21,9 +21,4 @@ export default {
       />
     );
   },
-  info: {
-    title: "Help",
-    description:
-      "Help text can guide users to making the right selection. Note that an error message will override the help text.",
-  },
 };

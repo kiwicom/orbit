@@ -12,9 +12,4 @@ export default {
       />
     );
   },
-  info: {
-    title: "Many pages",
-    description:
-      "When there are 8 or more pages, some pages are hidden behind ellipses on large screens for a more clear view.",
-  },
 };

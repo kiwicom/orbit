@@ -9,8 +9,4 @@ export default {
       <Loading type="inlineLoader" text="Finding the best routes to get you there" />
     </Stack>
   ),
-  info: {
-    title: "Text",
-    description: "Use text to set user expectations.",
-  },
 };

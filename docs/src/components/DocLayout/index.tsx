@@ -20,6 +20,7 @@ import { BookmarkProvider } from "../../services/bookmarks";
 import DocNavigation from "../DocNavigation";
 import Breadcrumbs from "../Breadcrumbs";
 import { ComponentStatus } from "../ComponentStatus";
+import ComponentStructure from "../ComponentStructure";
 import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
 import Tabs, { TabObject } from "../Tabs";
@@ -71,6 +72,7 @@ export default function DocLayout({
 }: Props) {
   const [tableOfContents] = useTableOfContents();
   const tocHasItems = tableOfContents.length > 0;
+
   return (
     <>
       <Head
@@ -199,6 +201,7 @@ export default function DocLayout({
                           components={{
                             ...components,
                             ComponentStatus,
+                            ComponentStructure,
                             FancyLink,
                             Guideline,
                             GuidelineImages,

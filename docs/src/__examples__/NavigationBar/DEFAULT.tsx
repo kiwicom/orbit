@@ -27,8 +27,4 @@ export default {
       </Stack>
     </NavigationBar>
   ),
-  info: {
-    title: "Default navigation bar",
-    description: "Drawers should appear on a user action and be closable.",
-  },
 };

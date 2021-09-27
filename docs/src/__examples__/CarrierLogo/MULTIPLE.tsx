@@ -72,8 +72,4 @@ export default {
       />
     </Stack>
   ),
-  info: {
-    title: "Multiple carriers",
-    description: "Carrier logos can include up to four carriers.",
-  },
 };

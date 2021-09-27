@@ -14,9 +14,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Types",
-    description:
-      "Notification badges have two basic types. Use critical badges when user action is required and info badges when it's not required.",
-  },
 };

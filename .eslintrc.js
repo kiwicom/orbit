@@ -227,6 +227,7 @@ module.exports = {
         // Ignore components added as shortcodes so they don't get marked as undefined
         Callout: false,
         ComponentStatus: false,
+        ComponentStructure: false,
         Do: false,
         Dont: false,
         DoImage: false,

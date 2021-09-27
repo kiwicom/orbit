@@ -2,7 +2,7 @@ import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 import { boxShadowDefault } from "../../mixins";
-import { StyledAnchorWrapper } from "../../HeadingWithLink";
+import { StyledAnchor } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
   ${({ theme, elevation }) => css`
@@ -37,7 +37,7 @@ const StyledProse = styled(Box)`
     > ol > li + li {
       margin-top: 12px;
     }
-    > ${StyledAnchorWrapper} {
+    > ${StyledAnchor} {
       margin-top: ${theme.orbit.spaceLarge};
 
       /* Handle spacing after headings through the heading,

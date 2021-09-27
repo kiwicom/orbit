@@ -12,9 +12,4 @@ export default {
       </Hide>
     </Stack>
   ),
-  info: {
-    title: "Default hide",
-    description:
-      "Hide components hide their children on all screens listed in the <code>on</code> prop. By default, the display is <code>inline-block</code>.",
-  },
 };

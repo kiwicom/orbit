@@ -204,8 +204,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Filters",
-    description: "Use tags to show categories of filters that can and/or have been applied.",
-  },
 };

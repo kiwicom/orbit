@@ -35,7 +35,7 @@ function App() {
           theme={{
             ...defaultTheme,
             // eslint-disable-next-line no-restricted-globals
-            lockScrolling: location.search !== "?disabled",
+            lockScrolling: location.search === "?disabled" ? false : undefined,
           }}
         >
           <LockScrolling />

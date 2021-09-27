@@ -9,12 +9,12 @@ import {
   Portal,
   ModalHeader,
   ModalSection,
-  ModalFooter,
+  // ModalFooter,
   Badge,
   Modal,
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
-import { Search as SearchIcon, MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
+import { MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
 import GitHubButton from "react-github-btn";
 
 import Logo from "../images/orbit-logo.svg";
@@ -24,6 +24,7 @@ import Search from "./Search";
 import { useBookmarks } from "../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import { useKeyboard } from "../services/KeyboardProvider";
+import SearchNavbarButton from "./Search/SearchNavbarButton";
 
 const StyledWrapper = styled.header`
   position: relative;
@@ -103,8 +104,9 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
   const { bookmarks } = useBookmarks();
-  const [editingBookmarks, setEditingBookmarks] = React.useState<boolean>(false);
-  const [selectedBookmarks] = React.useState<string[]>([]);
+
+  // const [editingBookmarks, setEditingBookmarks] = React.useState<boolean>(false);
+  // const [selectedBookmarks] = React.useState<string[]>([]);
 
   return (
     <StyledWrapper>
@@ -131,15 +133,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
         </Stack>
 
         <StyledRight>
-          {!isHome && (
-            <Button
-              type="white"
-              circled
-              title="Search…"
-              iconLeft={<SearchIcon />}
-              onClick={() => setSearchOpen(true)}
-            />
-          )}
+          {!isHome && <SearchNavbarButton onClick={() => setSearchOpen(true)} />}
           {isSearchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
           {docNavigation ? (
             <>

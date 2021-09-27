@@ -101,9 +101,4 @@ export default {
       </>
     );
   },
-  info: {
-    title: "State",
-    description:
-      "If the content of your drawer might change, keep the most recent state active even on open and close.",
-  },
 };

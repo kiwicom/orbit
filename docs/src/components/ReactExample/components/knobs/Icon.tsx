@@ -10,6 +10,7 @@ interface Props extends Pick<Knob, "name"> {
 }
 
 const Icon = ({ name, value, onChange }: Props) => {
+  const val = value ? value.split("-")[0] : "";
   return (
     <>
       <Text size="small" type="secondary">
@@ -17,16 +18,19 @@ const Icon = ({ name, value, onChange }: Props) => {
       </Text>
       <Select
         name={name}
-        value={value.split("-")[0]}
+        value={val}
         /* @ts-expect-error: todo */
         onChange={onChange}
-        options={Object.keys(Icons)
-          .filter(n => n !== "__esModule")
-          .map(key => ({
-            label: key,
-            value: key,
-            key,
-          }))}
+        options={[
+          { label: "null", value: "null" },
+          ...Object.keys(Icons)
+            .filter(n => n !== "__esModule")
+            .map(key => ({
+              label: key,
+              value: key,
+              key,
+            })),
+        ]}
       />
     </>
   );

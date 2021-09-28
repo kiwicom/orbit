@@ -11,6 +11,7 @@ import AddBookmark from "../AddBookmark";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
 import InlineToken from "../InlineToken";
+import Usage, { UsageUse, UsageDontUse } from "../Usage";
 import GuidelinesSideBySide, { Do, Dont } from "../Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "../Guidelines/GuidelineImages";
 import { HeaderButton, HeaderButtonLink } from "../HeaderLink";
@@ -203,6 +204,9 @@ export default function DocLayout({
                             ComponentStatus,
                             ComponentStructure,
                             FancyLink,
+                            Usage,
+                            UsageUse,
+                            UsageDontUse,
                             Guideline,
                             GuidelineImages,
                             DoImage,

@@ -36,14 +36,15 @@ function createHeadingComponent(
   tag: HeadingTag,
   { type, spaceAfter }: { type: Type } & SpaceAfter,
 ) {
-  const HeadingComponent = ({ children }: { children: React.ReactNode }) => {
+  const HeadingComponent = ({ noId, children }: { noId?: boolean; children: React.ReactNode }) => {
+    const level = Number(tag.slice(1)) - 2;
     useTableOfContentsRegister({
       title: getTextFromChildren(children),
-      level: Number(tag.slice(1)) - 2,
+      level,
     });
 
     return (
-      <HeadingWithLink spaceAfter={spaceAfter}>
+      <HeadingWithLink level={level} noId={noId} spaceAfter={spaceAfter}>
         <Heading as={tag} type={type}>
           {children}
         </Heading>
@@ -55,8 +56,8 @@ function createHeadingComponent(
   return HeadingComponent;
 }
 
-export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "normal" });
-export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "small" });
+export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "small" });
+export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "normal" });
 export const h4 = createHeadingComponent("h4", { type: "title4", spaceAfter: "smallest" });
 export const h5 = createHeadingComponent("h5", { type: "title5" });
 export const h6 = createHeadingComponent("h6", { type: "title5" });
@@ -172,13 +173,17 @@ const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
 export const a = function Anchor({
   children,
   href,
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  orbitType,
+}: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  orbitType?: React.ComponentProps<typeof TextLink>["type"];
+}) {
   const isExternal = useIsUrlExternal(href);
   const useExternalIcon = isExternal && typeof children === "string";
   return (
     <TextLink
       // @ts-expect-error type declaration is not permissive enough
       asComponent={isExternal ? "a" : LinkForOrbitTextLink}
+      type={orbitType}
       href={href}
       external={isExternal}
       iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}

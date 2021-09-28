@@ -8,11 +8,10 @@ import {
   Stack,
   Text,
   Tile,
-  Heading,
 } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
-import HeadingWithLink from "./HeadingWithLink";
+import { h3 as H3 } from "../mdx-components";
 import { IllustrationObjectShape } from "./IllustrationList";
 import { IconObjectShape } from "./IconList";
 import { CodeBlock } from "./Code";
@@ -85,11 +84,7 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <HeadingWithLink noId>
-                <Heading as="h3" type="title3">
-                  {visualName}
-                </Heading>
-              </HeadingWithLink>
+              <H3 noId>{visualName}</H3>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, copy)}
             </Stack>

@@ -1,12 +1,20 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import { StyledAnchor } from "../HeadingWithLink";
+
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
     border-left: 3px solid ${theme.orbit.paletteInkLight};
     padding: ${theme.orbit.spaceMedium};
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadiusLarge};
+    ${StyledAnchor} + & {
+      margin-top: ${theme.orbit.spaceXXSmall} !important;
+    }
+    & + p {
+      margin-top: ${theme.orbit.spaceLarge} !important;
+    }
   `};
 `;
 

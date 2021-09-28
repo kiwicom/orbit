@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
 import Frame from "./components/Frame";
 import Board from "./components/Board";
@@ -19,14 +20,30 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     border-radius: 12px;
     border: 1px solid ${theme.orbit.paletteCloudDark};
     overflow: hidden;
+
+    ${StyledAnchor} + & {
+      margin-top: ${theme.orbit.spaceMedium} !important;
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge} !important;
+    }
+    & + :not(${StyledAnchor}) {
+      margin-top: ${theme.orbit.spaceLarge} !important;
+    }
   `};
 `;
 
-const StyledWrapperFrame = styled.div<{ width: number | string }>`
-  ${({ width }) => css`
+const StyledWrapperFrame = styled.div<{ width: number | string; responsive: boolean }>`
+  ${({ width, responsive }) => css`
     margin: 0 auto;
-    max-width: ${typeof width === "number" ? `${width}px` : width};
     width: 100%;
+    ${responsive
+      ? css`
+          max-width: ${typeof width === "number" ? `${width}px` : width};
+        `
+      : css`
+          padding: 0 14px;
+        `};
   `}
 `;
 
@@ -48,6 +65,7 @@ export interface Variant {
 }
 
 interface Props extends InitialProps {
+  responsive?: boolean;
   code: string;
   example: string;
   fullPageExampleId?: string;
@@ -59,6 +77,7 @@ interface Props extends InitialProps {
 }
 
 const Example = ({
+  responsive = true,
   code,
   origin,
   exampleId,
@@ -88,8 +107,8 @@ const Example = ({
 
   return (
     <StyledWrapper isFullPage={isFullPage}>
-      <ViewportsRuler onChangeSize={handleChangeRulerSize} />
-      <StyledWrapperFrame width={width}>
+      {responsive && <ViewportsRuler onChangeSize={handleChangeRulerSize} />}
+      <StyledWrapperFrame width={width} responsive={responsive}>
         <Frame
           origin={origin}
           pageId={exampleId}

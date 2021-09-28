@@ -25,12 +25,14 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
 const StyledWrapperFrame = styled.div<{ width: number | string; responsive: boolean }>`
   ${({ width, responsive }) => css`
     margin: 0 auto;
-    max-width: ${typeof width === "number" ? `${width}px` : width};
     width: 100%;
-    ${!responsive &&
-    css`
-      padding: 0 14px;
-    `};
+    ${responsive
+      ? css`
+          max-width: ${typeof width === "number" ? `${width}px` : width};
+        `
+      : css`
+          padding: 0 14px;
+        `};
   `}
 `;
 

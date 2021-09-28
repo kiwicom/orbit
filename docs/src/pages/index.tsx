@@ -4,17 +4,18 @@ import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components"
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
-import ModulePuzzleIcon from "@streamlinehq/streamlinehq/img/streamline-light/programing-apps-websites/plugins-modules/module-puzzle.svg";
-import ColorBrushIcon from "@streamlinehq/streamlinehq/img/streamline-light/design/colors-painting/color-brush.svg";
-import ExpandDiagonalIcon from "@streamlinehq/streamlinehq/img/streamline-light/interface-essential/resize/expand-diagonal-1.svg";
-import LoveItTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/social-medias-rewards-rating/love-it/love-it-text.svg";
-import SpellingCheckIcon from "@streamlinehq/streamlinehq/img/streamline-light/interface-essential/text-options/spelling-check.svg";
-import ArrangeLetterIcon from "@streamlinehq/streamlinehq/img/streamline-light/interface-essential/text-options/arrange-letter.svg";
-import ComputerBugIcon from "@streamlinehq/streamlinehq/img/streamline-light/programing-apps-websites/bug-security/computer-bug.svg";
-import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/romance/love/love-bird.svg";
-import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/business-products/product-launch/startup-launch-1.svg";
-import ReadArt from "@streamlinehq/streamlinehq/img/streamline-light/school-learning/library-reading/read-art.svg";
 
+// temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
+import ModulePuzzleIcon from "../images/streamline-light/module-puzzle.svg";
+import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
+import ExpandDiagonalIcon from "../images/streamline-light/expand-diagonal-1.svg";
+import LoveItTextIcon from "../images/streamline-light/love-it-text.svg";
+import SpellingCheckIcon from "../images/streamline-light/spelling-check.svg";
+import ArrangeLetterIcon from "../images/streamline-light/arrange-letter.svg";
+import ComputerBugIcon from "../images/streamline-light/computer-bug.svg";
+import LoveBirdIcon from "../images/streamline-light/love-bird.svg";
+import StartupLaunchIcon from "../images/streamline-light/startup-launch-1.svg";
+import ReadArt from "../images/streamline-light/read-art.svg";
 import SearchButton from "../components/Search/SearchButton";
 import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";

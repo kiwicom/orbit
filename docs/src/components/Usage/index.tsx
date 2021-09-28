@@ -4,6 +4,7 @@ import { Check, Close } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 
+import { StyledAnchor } from "../HeadingWithLink";
 import * as components from "../../mdx-components";
 import docsTheme from "../../theme";
 
@@ -23,6 +24,12 @@ const StyledContainer = styled.div`
     ${mq.desktop(css`
       flex-direction: row;
     `)};
+    ${StyledAnchor} + & {
+      margin-top: ${theme.orbit.spaceXSmall} !important;
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge} !important;
+    }
   `};
 `;
 

@@ -8,8 +8,8 @@ import { getTextFromChildren, slugify } from "../utils/common";
 
 const StyledLinkIcon = styled.div``;
 
-export const StyledAnchor = styled.a`
-  ${({ theme }) => css`
+export const StyledAnchor = styled.a<{ $level: number }>`
+  ${({ theme, $level }) => css`
     display: block;
     ${StyledLinkIcon} svg {
       opacity: 0;
@@ -24,20 +24,38 @@ export const StyledAnchor = styled.a`
         fill: ${theme.orbit.paletteProductNormal};
       }
     }
+    & + p {
+      margin-top: 0;
+    }
+    & + & {
+      margin-top: ${theme.orbit.spaceSmall} !important;
+    }
+    ${$level === 1 &&
+    css`
+      p + & {
+        margin-top: ${theme.orbit.spaceXLarge};
+      }
+    `};
   `}
 `;
 
 interface Props extends SpaceAfter {
+  level: number;
   children?: React.ReactNode;
   noId?: boolean;
 }
 
-const HeadingWithLink = ({ children, noId, spaceAfter = "none" }: Props) => {
+const HeadingWithLink = ({ level, children, noId, spaceAfter = "none" }: Props) => {
   const headingText = getTextFromChildren(children);
   const slug = slugify(headingText);
 
   return (
-    <StyledAnchor id={noId ? "" : slug} href={`#${slug}`} title={`Link to heading: ${headingText}`}>
+    <StyledAnchor
+      $level={level}
+      id={noId ? "" : slug}
+      href={`#${slug}`}
+      title={`Link to heading: ${headingText}`}
+    >
       <Stack inline spacing="XSmall" align="center" spaceAfter={spaceAfter}>
         {children}
         <StyledLinkIcon>

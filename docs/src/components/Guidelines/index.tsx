@@ -4,6 +4,7 @@ import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
 import { Stack, Text, Grid, useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
+import { StyledAnchor } from "../HeadingWithLink";
 import { h3 as H3 } from "../../mdx-components";
 import { slugify } from "../../utils/common";
 import { extractContent, resolveBorders } from "./helpers";
@@ -35,6 +36,12 @@ const StyledComponent = styled.div<GuidelineComponent>`
     border-radius: ${theme.orbit.borderRadiusNormal};
     padding: ${theme.orbit.spaceMedium};
     ${resolveBorders};
+    p + & {
+      margin-top: ${theme.orbit.spaceLarge};
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge};
+    }
   `}
 `;
 

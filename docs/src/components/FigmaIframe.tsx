@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import { StyledAnchor } from "./HeadingWithLink";
+
 interface Props {
   border?: string;
   height?: number;
@@ -8,11 +10,21 @@ interface Props {
 }
 
 const StyledIframe = styled.iframe<Props>`
-  ${({ border, height, maxWidth }) => css`
+  ${({ theme, border, height, maxWidth }) => css`
     width: 100%;
     height: ${height && `${height}px`};
     max-width: ${maxWidth && `${maxWidth}px`};
     border: ${border || `1px solid rgba(0, 0, 0, 0.1)`};
+
+    *:not(${StyledAnchor}) + & {
+      margin-top: ${theme.orbit.spaceLarge} !important;
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge} !important;
+    }
+    & + :not(${StyledAnchor}) {
+      margin-top: ${theme.orbit.spaceLarge} !important;
+    }
   `}
 `;
 

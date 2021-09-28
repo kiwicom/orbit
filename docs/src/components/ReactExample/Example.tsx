@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
 import Frame from "./components/Frame";
 import Board from "./components/Board";
@@ -19,6 +20,16 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     border-radius: 12px;
     border: 1px solid ${theme.orbit.paletteCloudDark};
     overflow: hidden;
+
+    ${StyledAnchor} + & {
+      margin-top: ${theme.orbit.spaceMedium} !important;
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge} !important;
+    }
+    & + :not(${StyledAnchor}) {
+      margin-top: ${theme.orbit.spaceLarge} !important;
+    }
   `};
 `;
 

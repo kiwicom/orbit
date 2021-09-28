@@ -234,6 +234,7 @@ module.exports = {
         DontImage: false,
         FancyLink: false,
         FigmaFile: false,
+        FigmaIframe: false,
         GitHubContributors: false,
         GuidelineImages: false,
         Guideline: false,
@@ -241,7 +242,9 @@ module.exports = {
         ImageContainer: false,
         InlineToken: false,
         ReactExample: false,
-        FigmaIframe: false,
+        Usage: false,
+        UsageUse: false,
+        UsageDontUse: false,
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them

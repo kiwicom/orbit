@@ -3,10 +3,23 @@ import styled, { css } from "styled-components";
 import { Grid, Text, useRandomIdSeed, mediaQueries as mq } from "@kiwicom/orbit-components";
 import KEY_CODE from "@kiwicom/orbit-components/lib/common/keyMaps";
 
+import { StyledAnchor } from "../HeadingWithLink";
 import docsTheme from "../../theme";
 
 // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role
 // https://dev.to/eevajonnapanula/keyboard-accessible-tabs-with-react-5ch4
+
+const StyledContainer = styled.div`
+  ${({ theme }) => css`
+    ${StyledAnchor} + & {
+      margin-top: ${theme.orbit.spaceXSmall} !important;
+    }
+    & + ${StyledAnchor} {
+      margin-top: ${theme.orbit.spaceXLarge} !important;
+    }
+  `}
+`;
+StyledContainer.defaultProps = { theme: docsTheme };
 
 const StyledTabList = styled.div`
   display: flex;
@@ -212,7 +225,7 @@ export default function ComponentStructure({ component, web, ios, android }: Pro
   }, [tabsCount]);
 
   return (
-    <>
+    <StyledContainer>
       {tabsCount > 1 && (
         <StyledTabList
           role="tablist"
@@ -235,6 +248,6 @@ export default function ComponentStructure({ component, web, ios, android }: Pro
         </StyledTabList>
       )}
       {items.map(({ panel }) => panel)}
-    </>
+    </StyledContainer>
   );
 }

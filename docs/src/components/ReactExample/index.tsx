@@ -8,12 +8,19 @@ import Example from "./Example";
 export type BgType = "white" | "dark" | "grid";
 export interface Props {
   exampleId: string;
+  responsive?: boolean;
   maxHeight?: number;
   background?: BgType;
   minHeight?: number;
 }
 
-const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
+const ReactExample = ({
+  exampleId,
+  responsive = true,
+  background = "white",
+  minHeight,
+  maxHeight,
+}: Props) => {
   const [code, setCode] = React.useState("");
   const [origin, setOrigin] = React.useState("");
   const key = exampleId.toLowerCase();
@@ -73,6 +80,7 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
 
   return (
     <Example
+      responsive={responsive}
       minHeight={minHeight}
       maxHeight={maxHeight}
       background={background}

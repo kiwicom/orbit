@@ -1,17 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import {
-  Stack,
-  Text,
-  Heading,
-  Grid,
-  useMediaQuery,
-  mediaQueries as mq,
-} from "@kiwicom/orbit-components";
+import { Stack, Text, Grid, useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
-import HeadingWithLink from "../HeadingWithLink";
+import { h3 as H3 } from "../../mdx-components";
 import { slugify } from "../../utils/common";
 import { extractContent, resolveBorders } from "./helpers";
 
@@ -103,11 +96,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
                 <CloseCircle color="critical" ariaLabel="Don't" />
               ))}
             <Stack>
-              <HeadingWithLink noId>
-                <Heading as="h3" type="title3">
-                  {title}
-                </Heading>
-              </HeadingWithLink>
+              <H3 noId>{title}</H3>
               {content}
             </Stack>
           </Stack>

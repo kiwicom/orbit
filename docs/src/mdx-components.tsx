@@ -36,14 +36,14 @@ function createHeadingComponent(
   tag: HeadingTag,
   { type, spaceAfter }: { type: Type } & SpaceAfter,
 ) {
-  const HeadingComponent = ({ children }: { children: React.ReactNode }) => {
+  const HeadingComponent = ({ noId, children }: { noId?: boolean; children: React.ReactNode }) => {
     useTableOfContentsRegister({
       title: getTextFromChildren(children),
       level: Number(tag.slice(1)) - 2,
     });
 
     return (
-      <HeadingWithLink spaceAfter={spaceAfter}>
+      <HeadingWithLink noId={noId} spaceAfter={spaceAfter}>
         <Heading as={tag} type={type}>
           {children}
         </Heading>

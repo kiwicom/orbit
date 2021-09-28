@@ -39,7 +39,7 @@ interface ImageContainerProps extends GuidelineType {
 const StyledComponent = styled.div<GuidelineComponent>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
     padding: ${theme.orbit.spaceMedium};
     ${resolveBorders};
   `}
@@ -81,12 +81,12 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
   const { images, content } = extractContent(children);
   const typeOpposite = type === "do" ? "dont" : "do";
   const theme = useTheme();
-  const { isDesktop } = useMediaQuery();
 
   return (
     <StyledComponent id={slugify(title)} type={type} coloredBorder={!(images.length > 1)}>
       <Grid
-        columns={isDesktop ? `repeat(${images.length + 1}, 1fr)` : "1fr"}
+        columns="1fr"
+        desktop={{ columns: `repeat(${images.length + 1}, 1fr)` }}
         gap={theme.orbit.spaceXLarge}
       >
         <Stack flex shrink direction="column">

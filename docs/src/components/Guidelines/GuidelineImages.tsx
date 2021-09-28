@@ -24,7 +24,7 @@ const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
     background: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
     padding: ${theme.orbit.spaceXLarge};
   `}
 `;

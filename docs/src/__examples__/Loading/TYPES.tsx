@@ -1,63 +1,28 @@
 import React from "react";
-import {
-  Loading,
-  Button,
-  Heading,
-  Stack,
-  Text,
-  Card,
-  CardSection,
-} from "@kiwicom/orbit-components";
+import { Loading } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack>
-      <Stack spacing="XXXSmall">
-        <Heading as="h3" type="title3">
-          Page loader
-        </Heading>
-        <Text>Useful when an entire page is loading.</Text>
-        <Loading />
-      </Stack>
-      <Stack spacing="XXXSmall">
-        <Heading as="h3" type="title3">
-          Box loader
-        </Heading>
-        <Text>Useful when content in boxes like cards and card sections is being loaded.</Text>
-        <Card loading title="Interesting facts">
-          <CardSection>Interesting facts about travel</CardSection>
-        </Card>
-        <Card title="Interesting facts">
-          <CardSection>
-            <Loading type="boxLoader" loading>
-              Interesting facts about travel
-            </Loading>
-          </CardSection>
-        </Card>
-      </Stack>
-      <Stack spacing="XXXSmall">
-        <Heading as="h3" type="title3">
-          Button loader
-        </Heading>
-        <Text>
-          Useful when a user has interacted with a button to show that something is happening.
-        </Text>
-        <Button loading>Save</Button>
-      </Stack>
-      <Stack spacing="XXXSmall">
-        <Heading as="h3" type="title3">
-          Inline loader
-        </Heading>
-        <Text>Useful when content in paragraphs and other inline elements is being loaded.</Text>
-        <Loading type="inlineLoader" />
-      </Stack>
-      <Stack spacing="XXXSmall">
-        <Heading as="h3" type="title3">
-          Search loader
-        </Heading>
-        <Text>Useful when waiting for the results of a search.</Text>
-        <Loading type="searchLoader" />
-      </Stack>
-    </Stack>
-  ),
+  Example: () => <Loading type="buttonLoader" />,
+  exampleVariants: [
+    {
+      name: "ButtonLoader",
+      code: `() => <Button loading>Useful when a user has interacted with a button to show that something is happening.</Button>`,
+    },
+    {
+      name: "SearchLoader",
+      code: `() => <Loading type="searchLoader">Useful when waiting for the results of a search.</Loading>`,
+    },
+    {
+      name: "BoxLoader",
+      code: `() => <Loading type="boxLoader">Useful when content in boxes like cards and card sections is being loaded.</Loading>`,
+    },
+    {
+      name: "pageLoader",
+      code: `() => <Loading>Useful when an entire page is loading.</Loading>`,
+    },
+    {
+      name: "InlineLoader",
+      code: `() => <Loading type="inlineLoader">Useful when content in paragraphs and other inline elements is being loaded.</Loading>`,
+    },
+  ],
 };

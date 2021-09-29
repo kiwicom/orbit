@@ -8,7 +8,7 @@ const StyledWrapper = styled.div`
     border-left: 3px solid ${theme.orbit.paletteInkLight};
     padding: ${theme.orbit.spaceMedium};
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
     ${StyledAnchor} + & {
       margin-top: ${theme.orbit.spaceXXSmall} !important;
     }

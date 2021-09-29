@@ -2,15 +2,8 @@ import React from "react";
 import { ListChoice } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => {
-    return (
-      <>
-        <ListChoice title="Oslo, Norway" />
-        <ListChoice title="Prague, Czechia" />
-        <ListChoice title="Milan, Italy" />
-      </>
-    );
-  },
+  Example: () => <ListChoice title="Oslo, Norway" />,
+
   exampleKnobs: [
     {
       component: "ListChoice",

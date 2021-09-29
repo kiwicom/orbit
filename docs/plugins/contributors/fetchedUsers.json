@@ -13,19 +13,6 @@
     "github": "https://github.com/vepor"
   },
   {
-    "id": "386454a7-5556-5c34-abc2-0ded73cb8f20",
-    "name": "tomashapl",
-    "error": "",
-    "twitter": null,
-    "website": "https://tomashapl.cz",
-    "info": "Senior FrontEnd engineer",
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/7850592?v=4",
-    "position": "",
-    "github": "https://github.com/tomashapl"
-  },
-  {
     "id": "c4cd7602-c096-5772-a2a7-2e7f4e475e71",
     "name": "silvenon",
     "error": "",
@@ -37,6 +24,19 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/471278?v=4",
     "position": "",
     "github": "https://github.com/silvenon"
+  },
+  {
+    "id": "386454a7-5556-5c34-abc2-0ded73cb8f20",
+    "name": "tomashapl",
+    "error": "",
+    "twitter": null,
+    "website": "https://tomashapl.cz",
+    "info": "Senior FrontEnd engineer",
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/7850592?v=4",
+    "position": "",
+    "github": "https://github.com/tomashapl"
   },
   {
     "id": "be076ef9-13cc-51b9-b752-5d1931ac5797",

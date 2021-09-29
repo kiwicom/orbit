@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import { Stack, Text, Grid, useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Stack, Text, Grid, mediaQueries as mq } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
 import { StyledAnchor } from "../HeadingWithLink";
@@ -16,8 +16,9 @@ export interface Content {
   images: React.ReactNode[];
   content: React.ReactNode;
 }
-interface GuidelineProps extends GuidelineType {
+interface Props extends GuidelineType {
   title: string;
+  svgs: React.ComponentType<unknown>[];
   children: React.ReactNode;
 }
 
@@ -51,7 +52,9 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
     border-radius: ${theme.orbit.borderRadiusNormal};
     border-top: 3px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding: 30px 20%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
     ${mq.desktop(css`
       padding: ${theme.orbit.spaceMedium};
     `)};
@@ -60,6 +63,9 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
 
 const StyledImage = styled.div`
   height: 100%;
+  svg {
+    max-width: 100%;
+  }
 `;
 
 export const DoDontHeader = ({ type }: GuidelineType) => (
@@ -77,16 +83,20 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
   </Stack>
 );
 
-export default function Guideline({ type = "do", title, children }: GuidelineProps) {
+export default function Guideline({ type = "do", title, svgs = [], children }: Props) {
   const { images, content } = extractContent(children);
   const typeOpposite = type === "do" ? "dont" : "do";
   const theme = useTheme();
+
+  const vectors =
+    svgs.length > 0 ? svgs.map((Component: React.ComponentType<unknown>) => <Component />) : [];
+  const allImages = [...vectors, ...images];
 
   return (
     <StyledComponent id={slugify(title)} type={type} coloredBorder={!(images.length > 1)}>
       <Grid
         columns="1fr"
-        desktop={{ columns: `repeat(${images.length + 1}, 1fr)` }}
+        desktop={{ columns: `repeat(${allImages.length + 1}, 1fr)` }}
         gap={theme.orbit.spaceXLarge}
       >
         <Stack flex shrink direction="column">
@@ -96,7 +106,7 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
             spacing="XSmall"
             tablet={{ direction: "row", justify: "start" }}
           >
-            {images.length < 2 &&
+            {allImages.length < 2 &&
               (type === "do" ? (
                 <CheckCircle color="success" ariaLabel="Do" />
               ) : (
@@ -108,23 +118,23 @@ export default function Guideline({ type = "do", title, children }: GuidelinePro
             </Stack>
           </Stack>
         </Stack>
-        {images.length === 1 && (
+        {allImages.length === 1 && (
           <StyledImageContainer type={type} middleAlign>
-            {images}
+            {allImages[0]}
           </StyledImageContainer>
         )}
-        {images.length > 1 && (
+        {allImages.length > 1 && (
           <>
             <Stack shrink direction="column" spacing="XSmall">
               <DoDontHeader type={type} />
               <StyledImageContainer type={type}>
-                <StyledImage>{images[0]}</StyledImage>
+                <StyledImage>{allImages[0]}</StyledImage>
               </StyledImageContainer>
             </Stack>
             <Stack shrink direction="column" spacing="XSmall">
               <DoDontHeader type={typeOpposite} />
               <StyledImageContainer type={typeOpposite}>
-                <StyledImage>{images[1]}</StyledImage>
+                <StyledImage>{allImages[1]}</StyledImage>
               </StyledImageContainer>
             </Stack>
           </>

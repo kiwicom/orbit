@@ -12,7 +12,7 @@ const GuidelineContainer = styled.div<{ type: "do" | "dont"; coloredBorder: bool
     width: 100%;
     ${resolveBorders};
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.spaceMedium};
+    border-radius: ${theme.orbit.borderRadiusNormal};
   `}
 `;
 

@@ -15,9 +15,4 @@ export default {
       />
     </div>
   ),
-  info: {
-    title: "Help",
-    description:
-      "Help text can guide users to making the right choice. Note that an error message will override the help text.",
-  },
 };

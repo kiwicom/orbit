@@ -65,7 +65,7 @@ export default {
         {
           name: "columns",
           type: "text",
-          defaultValue: "1fr",
+          defaultValue: "repeat(2, 1fr)",
         },
         {
           name: "columnGap",

@@ -30,7 +30,12 @@ export default {
             if (declaration.init.properties.length > 0) {
               if (t.isIdentifier(declaration.id)) {
                 variables[declaration.id.name] = declaration.init.properties.map(property => {
-                  if (t.isProperty(property) && t.isIdentifier(property.key)) {
+                  if (
+                    (t.isProperty(property) ||
+                      // @ts-expect-error @babel/eslint-parser uses "Property" instead of "ObjectProperty"
+                      property.type === "Property") &&
+                    t.isIdentifier(property.key)
+                  ) {
                     return property.key.name;
                   }
                   return null;

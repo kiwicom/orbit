@@ -42,14 +42,6 @@ This is a monorepo containing a few Orbit packages:
 
 # How to develop
 
-We're using Lerna for managing the monorepo, so in order to link local packages together and install dependencies run:
-
-```sh
-npx lerna bootstrap
-```
-
-You usually only need to do this once, or if a a new workspaces has been added.
-
 For developing Orbit components run:
 
 ```sh

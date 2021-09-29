@@ -27,9 +27,7 @@
   "scripts": {
     "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
     "clean": "rimraf dist",
-    "postinstall": "yarn build",
-    "prepublishOnly": "yarn build && pinst --disable",
-    "postpublish": "pinst --enable"
+    "prepack": "yarn build"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"
@@ -39,11 +37,14 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
-    "@babel/types": "^7.13.0",
+    "@mdx-js/react": "^1.6.22",
     "@types/eslint": "^7.2.10",
+    "@types/mdx-js__react": "^1",
+    "@types/react": "^17.0.26",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
+    "eslint": "^7.32.0",
     "pinst": "^2.1.4",
+    "react": "^17.0.2",
     "rimraf": "^3.0.2"
   }
 }

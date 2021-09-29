@@ -30,7 +30,8 @@
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.10",
-    "@kiwicom/orbit-components": "*",
+    "@babel/preset-env": "^7.15.6",
+    "@kiwicom/orbit-components": "workspace:*",
     "prettier": "^2.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -21,22 +21,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-            ~/.cache/Cypress
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
-          restore-keys: |
-            node-modules-${{ github.ref}}-
-            node-modules-
+          cache: "yarn"
 
       - name: Install dependencies
         env:
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
           STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
-        run: yarn bootstrap:ci
+        run: yarn install
 
       - name: Compile design tokens
         run: yarn tokens build
@@ -45,7 +36,7 @@ jobs:
         run: yarn components build
 
       - name: Check icons
-        run: npx lerna run --scope @kiwicom/orbit-components check:icons
+        run: yarn components run check:icons
 
       - name: Flow
         run: yarn flow:check
@@ -75,14 +66,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
-          restore-keys: |
-            node-modules-${{ github.ref}}-
-            node-modules-
+          cache: "yarn"
 
       - name: Restore Gatsby cache
         uses: actions/cache@v2

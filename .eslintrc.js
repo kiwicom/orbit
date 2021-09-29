@@ -215,7 +215,7 @@ module.exports = {
             extensions: [".ts", ".tsx"],
           },
           alias: {
-            map: [["snippets", "./docs/src/snippets"]],
+            map: [["snippets", `${__dirname}/docs/src/snippets`]],
           },
         },
       },
@@ -288,6 +288,30 @@ module.exports = {
       files: "docs/plugins/**",
       rules: {
         "import/no-extraneous-dependencies": ["error", { packageDir: `${__dirname}/docs` }],
+      },
+    },
+    {
+      files: "**/{config,scripts}/**/*.js",
+      // these globals are provided by zx when running the script with the executable,
+      // we can't call zx directly because PnP doesn't support ESM yet
+      globals: {
+        $: false,
+        cd: false,
+        chalk: false,
+        fs: false,
+        globby: false,
+        os: false,
+        path: false,
+      },
+      rules: {
+        "consistent-return": "off",
+        "func-names": "off",
+        "global-require": "off",
+        "no-console": "off",
+        "no-restricted-syntax": "off",
+        "no-void": "off",
+        "import/no-unresolved": "off",
+        "import/no-dynamic-require": "off",
       },
     },
   ],

@@ -24,14 +24,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          cache: "yarn"
 
       - name: Install dependencies
-        run: yarn bootstrap:ci
+        run: yarn install
 
       - name: Compile design tokens
         run: yarn tokens build:lib
@@ -57,14 +53,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          cache: "yarn"
 
       - name: Install dependencies
-        run: yarn bootstrap:ci
+        run: yarn install
 
       - name: Restore storybook artifacts
         uses: actions/download-artifact@v2
@@ -99,14 +91,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+          cache: "yarn"
 
       - name: Install dependencies
-        run: yarn bootstrap:ci
+        run: yarn install
 
       - name: Restore storybook artifacts
         uses: actions/download-artifact@v2

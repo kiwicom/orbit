@@ -1,4 +1,6 @@
 // @noflow
+const PnpWebpackPlugin = require("pnp-webpack-plugin");
+
 module.exports = {
   output: {
     path: `${__dirname}/umd`,
@@ -26,5 +28,12 @@ module.exports = {
   externals: {
     react: "React",
     "react-dom": "reactDOM",
+  },
+
+  resolve: {
+    plugins: [PnpWebpackPlugin],
+  },
+  resolveLoader: {
+    plugins: [PnpWebpackPlugin.moduleLoader(module)],
   },
 };

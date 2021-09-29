@@ -6,6 +6,7 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 // @noflow
+const PnpWebpackPlugin = require("pnp-webpack-plugin");
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -18,6 +19,9 @@ module.exports = ({ config }) => {
     ],
     exclude: /node_modules\/(?!(loki)\/).*/, // Loki is not transpilled, throws error in IE 11
   });
+
+  config.resolve.plugins.push(PnpWebpackPlugin);
+  config.resolveLoader.plugins.push(PnpWebpackPlugin.moduleLoader(module));
 
   return config;
 };

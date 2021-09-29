@@ -40,8 +40,13 @@ const rtlUtils: Rule.RuleModule = {
                       if (e.body.test.property.name === "rtl") {
                         const { consequent } = e.body;
                         // if it's literal value of which matches patterns
-                        // @ts-expect-error babel-types
-                        if (t.isLiteral(consequent) && consequent.value) {
+                        if (
+                          (t.isLiteral(consequent) ||
+                            // @ts-expect-error @babel/eslint-parser uses "Literal"
+                            consequent.type === "Literal") &&
+                          // @ts-expect-error babel-types
+                          consequent.value
+                        ) {
                           const regexWithProp = new RegExp(
                             /left|right|margin-left|margin-right|padding-left|padding-right/g,
                           );

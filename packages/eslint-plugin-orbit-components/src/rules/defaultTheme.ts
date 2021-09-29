@@ -55,7 +55,8 @@ const defaultThemeRule: Rule.RuleModule = {
           if (t.isVariableDeclarator(n)) {
             if (t.isObjectExpression(n.init)) {
               n.init.properties.forEach(p => {
-                if (t.isProperty(p)) {
+                // @ts-expect-error @babel/eslint-parser uses "Property" instead of "ObjectProperty"
+                if (t.isProperty(p) || p.type === "Property") {
                   if (t.isMemberExpression(p.value)) {
                     if (
                       t.isMemberExpression(p.value.object) &&

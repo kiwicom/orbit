@@ -1,6 +1,6 @@
 // @flow
 
 module.exports = {
-  presets: ['@babel/preset-env'],
-  plugins: ["@kiwicom/orbit-components"],
+  presets: [require.resolve('@babel/preset-env')],
+  plugins: [require.resolve(".")],
 };

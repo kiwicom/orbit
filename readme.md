@@ -8,8 +8,6 @@
 
 <div align="center">
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
 <strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
 
 </div>

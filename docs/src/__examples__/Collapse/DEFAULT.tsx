@@ -18,7 +18,7 @@ export default {
     {
       component: "Collapse",
       knobs: [
-        { name: "label", type: "text", defaultValue: "Transport to search" },
+        { name: "label", type: "text", defaultValue: "Principle for collapses" },
         { name: "initialExpanded", type: "boolean", defaultValue: false },
       ],
     },

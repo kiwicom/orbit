@@ -35,8 +35,4 @@ export default {
       </Popover>
     );
   },
-  info: {
-    title: "Descriptions",
-    description: "The descriptions for list choices add additional context to the choices.",
-  },
 };

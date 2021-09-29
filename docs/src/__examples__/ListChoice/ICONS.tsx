@@ -43,8 +43,4 @@ export default {
       </Popover>
     );
   },
-  info: {
-    title: "Icons",
-    description: "List choices require only titles to display options for users to choose.",
-  },
 };

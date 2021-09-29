@@ -13,11 +13,15 @@ export default {
     {
       component: "ButtonMobileStore",
       knobs: [
-        { name: "href", type: "text", defaultValue: "" },
+        {
+          name: "href",
+          type: "text",
+          defaultValue: "https://play.google.com/store/apps/details?id=com.skypicker.main",
+        },
         {
           name: "type",
           type: "select",
-          defaultValue: "appStore",
+          defaultValue: "googlePlay",
           options: ["appStore", "googlePlay"],
         },
         { name: "variant", type: "select", defaultValue: "dark", options: ["dark", "light"] },

@@ -3,8 +3,8 @@ import { Button, Text, Tooltip } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Tooltip renderInPortal={false} content={<Text>Select a flight before continuing.</Text>}>
-      <Button disabled>Book</Button>
+    <Tooltip content={<Text>Select a flight before continuing.</Text>}>
+      <Button>Book</Button>
     </Tooltip>
   ),
   exampleKnobs: [

@@ -152,7 +152,7 @@ export default {
     );`,
     },
     {
-      name: "help",
+      name: "Help",
       code: `
     (
       <InputGroup
@@ -161,6 +161,7 @@ export default {
         help="Select a month and enter a day and year for your departure"
       >
         <Select
+          help="Select a month and enter a day and year for your departure"
           placeholder="Month"
           value="May"
           options={[

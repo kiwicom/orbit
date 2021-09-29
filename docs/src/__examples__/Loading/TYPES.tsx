@@ -6,23 +6,23 @@ export default {
   exampleVariants: [
     {
       name: "ButtonLoader",
-      code: `() => <Button loading>Useful when a user has interacted with a button to show that something is happening.</Button>`,
+      code: `() => <Button loading />`,
     },
     {
       name: "SearchLoader",
-      code: `() => <Loading type="searchLoader">Useful when waiting for the results of a search.</Loading>`,
+      code: `() => <Loading loading type="searchLoader" text="Useful when waiting for the results of a search" />`,
     },
     {
       name: "BoxLoader",
-      code: `() => <Loading type="boxLoader">Useful when content in boxes like cards and card sections is being loaded.</Loading>`,
+      code: `() => <Loading loading type="boxLoader" text="Useful when content in boxes like cards and card sections is being loaded." />`,
     },
     {
       name: "pageLoader",
-      code: `() => <Loading>Useful when an entire page is loading.</Loading>`,
+      code: `() => <Loading loading text="Useful when an entire page is loading." />`,
     },
     {
       name: "InlineLoader",
-      code: `() => <Loading type="inlineLoader">Useful when content in paragraphs and other inline elements is being loaded.</Loading>`,
+      code: `() => <Loading loading type="inlineLoader" text="Useful when content in paragraphs and other inline elements is being loaded." />`,
     },
   ],
 };

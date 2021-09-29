@@ -5,6 +5,9 @@ redirect_from:
 ---
 
 import WebStructureImage from "../../../../images/component-structure/web/button.svg";
+import ButtonPrimaryActionDo from "../../../../images/button-primary-action-do.svg";
+import ButtonPrimaryActionDont from "../../../../images/button-primary-action-dont.svg";
+import ButtonShowHierarchy from "../../../../images/button-show-hierarchy.svg";
 
 import ActionableTextSnippet from "snippets/actionable-text.mdx";
 import ButtonSizeSnippet from "snippets/button-size.mdx";
@@ -90,23 +93,17 @@ You need to know which actions are the most important within a given section of 
 Once you've identified which actions are the most important at the moment,
 you can indicate importance through [size, type, and variation](#mobile-vs-desktop-size).
 
-<Guideline type="do" title="Have one primary action">
+<Guideline type="do" title="Have one primary action" svgs={[ButtonPrimaryActionDo, ButtonPrimaryActionDont]}>
 
 Every screen should have only one button that represents the most important action.
 It leads the user to the next step.
 
-![One primary button on a screen stands out.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1406)
-
-![Too many primary buttons confuse users.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1666)
-
 </Guideline>
 
-<Guideline type="do" title="Show importance hierarchy">
+<Guideline type="do" title="Show importance hierarchy" svgs={[ButtonShowHierarchy]}>
 
 If you have multiple actions on one screen,
 use different button types and sizes to show different levels of importance.
-
-![One primary button on a screen stands out.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:10%3A1406)
 
 </Guideline>
 

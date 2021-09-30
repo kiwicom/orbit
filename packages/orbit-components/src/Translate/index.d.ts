@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Translate";
-
 type Values = {
   [key: string]: string | number;
 };

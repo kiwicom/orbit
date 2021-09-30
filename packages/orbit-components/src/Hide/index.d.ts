@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Hide";
-
 type Device =
   | "largeDesktop"
   | "desktop"

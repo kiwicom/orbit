@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Collapse";
-
 export interface Props extends Common.Global {
   readonly initialExpanded?: boolean;
   readonly expanded?: boolean;

@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Tooltip";
-
 type Size = "small" | "medium";
 type Position = "right" | "left" | "top" | "bottom";
 type Align = "center" | "start" | "end";

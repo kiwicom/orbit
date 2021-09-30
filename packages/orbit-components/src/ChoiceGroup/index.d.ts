@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/ChoiceGroup";
-
 type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6";
 

@@ -6,8 +6,6 @@ import * as React from "react";
 import AccordionSection from "./AccordionSection";
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Accordion";
-
 /*
   DOCS:
   To implement Accordion component into your project you'll need to the import the Accordion and the [AccordionSection](#Accordionsection):

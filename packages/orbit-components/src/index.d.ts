@@ -1,8 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: https://github.com/kiwicom/orbit/
 
-declare module "@kiwicom/orbit-components";
-
 export * as Icons from "./icons";
 
 export { Alert } from "./Alert";

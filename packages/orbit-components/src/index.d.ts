@@ -26,7 +26,7 @@ export { ChoiceGroup } from "./ChoiceGroup";
 export { CountryFlag } from "./CountryFlag";
 export { Collapse } from "./Collapse";
 export { CarrierLogo } from "./CarrierLogo";
-export { default as defaultTheme } from "./defaultTheme";
+export { default as defaultTheme, Theme } from "./defaultTheme";
 export { Desktop } from "./Desktop";
 export { Dialog } from "./Dialog";
 export { FeatureIcon } from "./FeatureIcon";

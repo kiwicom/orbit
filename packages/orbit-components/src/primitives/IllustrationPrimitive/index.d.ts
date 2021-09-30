@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
-
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: string;

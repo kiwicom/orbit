@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/InputField";
-
 type Type = "text" | "number" | "email" | "password" | "passportid";
 type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
 // InputEvent

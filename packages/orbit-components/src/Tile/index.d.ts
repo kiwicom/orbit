@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Tile";
-
 interface Props extends Common.Global {
   readonly title?: React.ReactNode;
   readonly description?: React.ReactNode;

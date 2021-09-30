@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Checkbox";
-
 export interface Props extends Common.Global, Common.Ref {
   readonly label?: React.ReactNode;
   readonly value?: string;

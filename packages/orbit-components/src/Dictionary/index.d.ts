@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Dictionary";
-
 export type Translations = {
   [key: string]: string;
 };

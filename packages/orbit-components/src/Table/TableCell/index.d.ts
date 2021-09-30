@@ -3,8 +3,6 @@
 
 import { SharedProps } from "..";
 
-declare module "@kiwicom/orbit-components/lib/Table/TableCell";
-
 type Align = "left" | "center" | "right";
 type As = "th" | "td";
 type Scope = "col" | "row" | "colgroup" | "rowgroup";

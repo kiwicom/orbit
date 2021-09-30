@@ -1,11 +1,10 @@
 import React from "react";
-import { Text, Stack } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack flex>
-      <Text>Normal text</Text>
-      <Text weight="bold">Bold text</Text>
-    </Stack>
-  ),
+  Example: () => <Text>Normal text</Text>,
+  exampleVariants: [
+    { name: "Normal", code: "() => <Text>Normal text</Text>" },
+    { name: "Bold", code: `() => <Text weight="bold">Bold text</Text>` },
+  ],
 };

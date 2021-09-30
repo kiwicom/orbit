@@ -1,12 +1,20 @@
 import React from "react";
-import { Text, Stack } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack flex align="end">
-      <Text size="large">Large text</Text>
-      <Text>Normal text</Text>
-      <Text size="small">Small text</Text>
-    </Stack>
-  ),
+  Example: () => <Text size="small">Small text</Text>,
+  exampleVariants: [
+    {
+      name: "Small",
+      code: `() => <Text size="small>Small text</Text>`,
+    },
+    {
+      name: "Medium",
+      code: `() => <Text size="medium">Medium text</Text>`,
+    },
+    {
+      name: "Large",
+      code: `() => <Text size="large">Large text</Text>`,
+    },
+  ],
 };

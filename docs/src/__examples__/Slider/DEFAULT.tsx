@@ -9,6 +9,7 @@ export default {
       knobs: [
         { name: "histogramLoading", type: "boolean", defaultValue: false },
         { name: "histogramLoadingText", type: "text", defaultValue: "" },
+        { name: "defaultValue", type: "number", defaultValue: 33 },
         { name: "minValue", type: "number", defaultValue: 0 },
         { name: "maxValue", type: "number", defaultValue: 100 },
       ],

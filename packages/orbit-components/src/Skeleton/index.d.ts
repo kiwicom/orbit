@@ -40,11 +40,7 @@ or you can pick one from our predefined presets:
 
 interface Props extends Common.SpaceAfter, Common.Global {
   readonly animate?: boolean;
-  /** Optional prop for a11y element */
-  readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;
-  /** Set height for Svg element */
-  readonly height?: number;
   /** Border-radius for row rect elements */
   /** default: `3` */
   readonly rowBorderRadius?: number;
@@ -64,7 +60,9 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** Set viewBox for Svg element */
   readonly viewBox?: string;
   /** Width of Svg element */
-  readonly width?: number;
+  readonly width?: number | string;
+  /** Set height for Svg element */
+  readonly height?: number | string;
 }
 
 declare const Skeleton: React.FunctionComponent<Props>;

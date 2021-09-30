@@ -11,9 +11,7 @@ type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
 export type Props = {|
   +animate?: boolean,
-  +ariaLabelledby?: string,
   +children?: React.Node,
-  +height?: number,
   +preset?: Preset,
   +rowBorderRadius?: number,
   +rowHeight?: number,
@@ -21,7 +19,8 @@ export type Props = {|
   +rows?: number,
   +title?: string,
   +viewBox?: string,
-  +width?: number,
+  +width?: number | string,
+  +height?: number | string,
   ...spaceAfter,
   ...Globals,
 |};

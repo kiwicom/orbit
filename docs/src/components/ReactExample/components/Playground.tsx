@@ -4,6 +4,7 @@ import { Text } from "@kiwicom/orbit-components";
 import { set, sortBy } from "lodash";
 
 import BooleanKnob from "./knobs/Boolean";
+import ObjectKnob from "./knobs/Object";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
@@ -39,7 +40,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
     return defaultVals;
   });
 
-  const changeKnob = ({
+  const handleChangeKnob = ({
     component,
     name,
     value,
@@ -71,20 +72,24 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
             </Text>
             <StyledKnobsWrapper>
               {sortBy(knobs, ["type"]).map(({ type, name, options }) => {
-                const fieldName = `${component}-${name}`;
+                const baseKnobProps = {
+                  key: name,
+                  name: `${component}-${name}`,
+                  value: values[component][name],
+                };
+
                 if (type === "boolean") {
                   return (
                     <BooleanKnob
-                      key={name}
                       checked={values[component][name]}
                       onChange={ev =>
-                        changeKnob({
+                        handleChangeKnob({
                           component,
                           name,
                           value: ev.target.checked,
                         })
                       }
-                      name={fieldName}
+                      {...baseKnobProps}
                     />
                   );
                 }
@@ -92,17 +97,15 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "select") {
                   return (
                     <SelectKnob
-                      key={name}
-                      value={values[component][name]}
                       onChange={ev =>
-                        changeKnob({
+                        handleChangeKnob({
                           component,
                           name,
                           value: ev.target.value,
                         })
                       }
-                      name={fieldName}
                       options={options}
+                      {...baseKnobProps}
                     />
                   );
                 }
@@ -110,18 +113,16 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "icon") {
                   return (
                     <IconKnob
-                      key={name}
-                      value={values[component][name]}
-                      name={fieldName}
                       onChange={ev => {
                         const { value } = ev.target;
                         const val = value !== "null" ? `${value}-icon` : null;
-                        changeKnob({
+                        handleChangeKnob({
                           component,
                           name,
                           value: val,
                         });
                       }}
+                      {...baseKnobProps}
                     />
                   );
                 }
@@ -129,32 +130,43 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "number") {
                   return (
                     <NumberKnob
-                      key={name}
-                      value={values[component][name]}
-                      name={fieldName}
                       onChange={ev =>
-                        changeKnob({
+                        handleChangeKnob({
                           component,
                           name,
                           value: parseInt(ev.target.value, 10),
                         })
                       }
+                      {...baseKnobProps}
+                    />
+                  );
+                }
+
+                if (type === "object") {
+                  return (
+                    <ObjectKnob
+                      onChange={ev =>
+                        handleChangeKnob({
+                          component,
+                          name,
+                          value: ev.target.value,
+                        })
+                      }
+                      {...baseKnobProps}
                     />
                   );
                 }
 
                 return (
                   <TextKnob
-                    key={name}
-                    value={values[component][name]}
-                    onChange={ev =>
-                      changeKnob({
+                    {...baseKnobProps}
+                    onChange={ev => {
+                      handleChangeKnob({
                         component,
                         name,
                         value: ev.target.value,
-                      })
-                    }
-                    name={fieldName}
+                      });
+                    }}
                   />
                 );
               })}

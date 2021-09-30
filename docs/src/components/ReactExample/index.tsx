@@ -57,6 +57,8 @@ const ReactExample = ({
     `,
   );
 
+  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
+
   React.useEffect(() => {
     if (code) window.localStorage.setItem(key, code);
 
@@ -70,8 +72,6 @@ const ReactExample = ({
       setCode(window.localStorage.getItem(key) || "");
     }
   }, [setCode, key]);
-
-  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 

@@ -62,8 +62,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Sizes",
-    description: "Illustrations come in a variety of sizes.",
-  },
 };

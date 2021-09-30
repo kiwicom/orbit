@@ -8,18 +8,16 @@ describe("Skeleton", () => {
   it("it should expected DOM output", () => {
     const dataTest = "test";
     const children = "kek";
-    const ariaLabelledby = "bur";
 
     render(
-      <Skeleton dataTest={dataTest} title="Loading" ariaLabelledby={ariaLabelledby}>
+      <Skeleton dataTest={dataTest} title="title">
         <rect>{children}</rect>
       </Skeleton>,
     );
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(children)).toBeInTheDocument();
-    expect(screen.getByRole("img")).toHaveAttribute("aria-labelledby", ariaLabelledby);
-    expect(screen.getByText("Loading")).toBeInTheDocument();
+    expect(screen.getByText("title")).toBeInTheDocument();
   });
 
   it("should have custom width and height", () => {

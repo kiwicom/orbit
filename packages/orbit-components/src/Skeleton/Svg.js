@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import useRandomId from "../hooks/useRandomId";
+import { useRandomIdSeed } from "../hooks/useRandomId";
 import { resolveHeight, resolveWidth, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
@@ -55,65 +55,70 @@ const Rows = ({ count, height, offset, rowBorderRadius }) => {
 
 const Svg = ({
   animate = true,
-  ariaLabelledby,
   children,
   rowBorderRadius = 3,
   rowHeight = 21,
   rowOffset = 20,
   rows = 1,
-  title,
+  title = "loading",
   viewBox,
   ...props
 }: Props): React.Node => {
+  const [loaded, setLoaded] = React.useState(false);
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
   const { rtl, orbit } = useTheme();
   const duration = `${2}s`;
   const interval = `${0.5}s`;
-  const uid = useRandomId();
-  const id = ariaLabelledby || uid;
-  const idClip = `${id}-clip`;
+  const id = useRandomIdSeed();
+  const idClip = `${id("clip")}-clip`;
+  const titleId = id("title");
 
   React.useEffect(() => {
-    if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
-  }, [rowOffset, rows, setCalculatedHeight]);
+    setLoaded(true);
+    if (loaded) {
+      if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
+    }
+  }, [rowOffset, rows, setCalculatedHeight, setLoaded, loaded]);
 
   return (
-    <StyledWrapper>
-      <StyledSvg
-        ariaLabelledby={id}
-        role="img"
-        rtl={rtl}
-        viewBox={viewBox}
-        calculatedHeight={calculatedHeight}
-        duration={duration}
-        interval={interval}
-        animate={animate}
-        {...props}
-      >
-        {title && <title id={id}>{title}</title>}
-        <rect
-          role="presentation"
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          clipPath={`url(#${idClip})`}
-          style={{ fill: orbit.paletteCloudDark }}
-        />
-        <defs>
-          <clipPath id={idClip}>
-            {children || (
-              <Rows
-                count={rows}
-                height={rowHeight}
-                offset={rowOffset}
-                rowBorderRadius={rowBorderRadius}
-              />
-            )}
-          </clipPath>
-        </defs>
-      </StyledSvg>
-    </StyledWrapper>
+    loaded && (
+      <StyledWrapper>
+        <StyledSvg
+          ariaLabelledby={titleId}
+          role="img"
+          rtl={rtl}
+          viewBox={viewBox}
+          calculatedHeight={calculatedHeight}
+          duration={duration}
+          interval={interval}
+          animate={animate}
+          {...props}
+        >
+          <title id={titleId}>{title}</title>
+          <rect
+            role="presentation"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            clipPath={`url(#${idClip})`}
+            style={{ fill: orbit.paletteCloudDark }}
+          />
+          <defs>
+            <clipPath id={idClip}>
+              {children || (
+                <Rows
+                  count={rows}
+                  height={rowHeight}
+                  offset={rowOffset}
+                  rowBorderRadius={rowBorderRadius}
+                />
+              )}
+            </clipPath>
+          </defs>
+        </StyledSvg>
+      </StyledWrapper>
+    )
   );
 };
 

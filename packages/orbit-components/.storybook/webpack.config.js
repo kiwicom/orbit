@@ -13,7 +13,7 @@ module.exports = ({ config }) => {
     use: [
       {
         options: { envName: "esm" },
-        loader: "babel-loader",
+        loader: require.resolve("babel-loader"),
       },
     ],
     exclude: /node_modules\/(?!(loki)\/).*/, // Loki is not transpilled, throws error in IE 11

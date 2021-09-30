@@ -7,6 +7,7 @@ packages/babel-plugin-orbit-components/dist/
 packages/babel-plugin-orbit-components/__fixtures__/
 packages/eslint-plugin-orbit-components/dist
 !.storybook
+!.remarkrc.js
 
 # from gitignore
 packages/orbit-components/src/icons/*.js

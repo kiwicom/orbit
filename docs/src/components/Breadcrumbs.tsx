@@ -1,21 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 
 const StyledList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  ${({ theme }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    margin-bottom: ${theme.orbit.spaceMedium};
+  `}
 `;
 
 const StyledListItem = styled.li<{ current: boolean }>`
-  a,
-  span {
-    color: ${({ theme, current }) =>
-      current ? theme.orbit.colorTextLinkPrimary : theme.orbit.colorTextSecondary};
-    margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
-  }
+  ${({ theme, current }) => css`
+    a,
+    span {
+      color: ${current ? theme.orbit.colorTextLinkPrimary : theme.orbit.colorTextSecondary};
+      margin-right: ${theme.orbit.spaceXSmall};
+    }
+  `}
 `;
 
 interface Props {

@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import useRandomId from "../hooks/useRandomId";
-import { resolveHeight, resolvePulseAnimation } from "./helpers";
+import { resolveHeight, resolveWidth, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
@@ -25,10 +25,10 @@ const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, viewB
     {children}
   </svg>
 ))`
-  ${({ rtl, width }) => css`
+  ${({ rtl }) => css`
     height: ${resolveHeight};
+    width: ${resolveWidth};
     transform: ${rtl && `scaleX(-1)`};
-    width: ${width ? `${width}px` : "100%"};
     margin-bottom: ${getSpacingToken};
     ${resolvePulseAnimation}
   `}

@@ -30,14 +30,14 @@ Default.story = {
 
 export const Playground = (): React.Node => {
   const animate = boolean("animate", true);
-  const height = number("height", 0);
+  const height = number("height", undefined);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
   const rowOffset = number("rowOffset", 30);
   const rows = number("rows", 10);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
   const viewBox = text("viewBox", undefined);
-  const width = number("width", 0);
+  const width = number("width", undefined);
   const title = text("title", "Loading");
 
   return (

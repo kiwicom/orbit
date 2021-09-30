@@ -7,6 +7,9 @@ import mkdirp from "mkdirp";
 import glob from "glob";
 import svgr from "@svgr/core";
 import * as t from "@babel/types";
+import svgoPlugin from "@svgr/plugin-svgo";
+import jsxPlugin from "@svgr/plugin-jsx";
+import prettierPlugin from "@svgr/plugin-prettier";
 
 import { getProperty, getHTMLComments } from "./checkIcons";
 import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts";
@@ -79,7 +82,7 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
   svgr(
     content.outerHTML,
     {
-      plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx", "@svgr/plugin-prettier"],
+      plugins: [svgoPlugin, jsxPlugin, prettierPlugin],
       svgProps: { viewBox: getViewBox(content.attributes) },
       template,
     },

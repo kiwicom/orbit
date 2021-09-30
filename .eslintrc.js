@@ -1,6 +1,4 @@
 // @noflow
-const path = require("path");
-
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
@@ -20,19 +18,11 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       {
-        packageDir: [
-          __dirname,
-          path.join(__dirname, "packages/babel-plugin-orbit-components"),
-          path.join(__dirname, "packages/eslint-plugin-orbit-components"),
-          path.join(__dirname, "packages/orbit-components"),
-          path.join(__dirname, "packages/orbit-design-tokens"),
-          path.join(__dirname, "docs/plugins/gatsby-remark-figma-images"),
-          path.join(__dirname, "docs"),
-        ],
         devDependencies: [
           "**/*.test.js",
           "**/__tests__/**",
           "**/__testfixtures__/**",
+          "**/__examples__/**",
           "**/cypress/**",
           "**/*.stories.js",
           "**/*.config.js",
@@ -40,10 +30,12 @@ module.exports = {
           "**/tasks/**",
           "docs/**",
           "packages/eslint-plugin-orbit-components/**",
+          "packages/orbit-design-tokens/src/theo/**",
           "packages/*/.storybook/**",
           "**/config/**",
           "**/scripts/**",
           "gulpfile.js",
+          "**/.remarkrc.js",
         ],
       },
     ],
@@ -51,6 +43,10 @@ module.exports = {
       "error",
       {
         groups: [["builtin", "external"], ["parent", "sibling"], "index"],
+        pathGroups: [
+          { pattern: "@kiwicom/**", group: "external" },
+          { pattern: "eslint-plugin-orbit-components", group: "external" },
+        ],
         "newlines-between": "always",
       },
     ],
@@ -280,6 +276,18 @@ module.exports = {
       ],
       rules: {
         "flowtype/require-valid-file-annotation": ["error", "always"],
+      },
+    },
+    {
+      files: ["**/*.config.js", "**/.remarkrc.js"],
+      rules: {
+        "global-require": "off",
+      },
+    },
+    {
+      files: "docs/plugins/**",
+      rules: {
+        "import/no-extraneous-dependencies": ["error", { packageDir: `${__dirname}/docs` }],
       },
     },
   ],

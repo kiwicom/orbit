@@ -9,11 +9,12 @@ const stringify = require("rehype-stringify");
 const toVFile = require("to-vfile");
 const reporter = require("vfile-reporter");
 const fsx = require("fs-extra");
+const dotenv = require("dotenv-safe");
 
 const { warnMissingAccessToken } = require("../utils/warnings");
 
 try {
-  require("dotenv-safe").config({
+  dotenv.config({
     example: path.resolve(__dirname, `../../.env.example`),
     path: path.resolve(__dirname, `../../.env`),
     allowEmptyValues: true,

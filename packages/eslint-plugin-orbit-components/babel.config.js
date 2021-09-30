@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 module.exports = {
-  presets: ["@babel/preset-env", "@babel/preset-typescript"],
+  presets: [require.resolve("@babel/preset-env"), require.resolve("@babel/preset-typescript")],
 };

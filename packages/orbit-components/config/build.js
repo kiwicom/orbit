@@ -111,9 +111,7 @@ const flow = `// @flow
 import * as React from "react";\n\n`;
 
 const TSHeader = `// Type definitions for @kiwicom/orbit-components
-// Project: https://github.com/kiwicom/orbit/
-
-declare module "@kiwicom/orbit-components/lib/icons";\n\n`;
+// Project: https://github.com/kiwicom/orbit/\n`;
 
 const iconMapper = interpolation =>
   names.map(({ functionName }) => interpolation(functionName)).join("");

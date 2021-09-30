@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/ThemeProvider/QueryContext";
-
 export interface Props {
   readonly isLargeDesktop: boolean | undefined | null;
   readonly isDesktop: boolean | undefined | null;

@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Modal";
-
 export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;

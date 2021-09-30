@@ -7,8 +7,6 @@ import CardSection from "./CardSection";
 import * as Common from "../common/common";
 import { As } from "../Heading";
 
-declare module "@kiwicom/orbit-components/lib/Card";
-
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children?: React.ReactNode;
   readonly title?: React.ReactNode;

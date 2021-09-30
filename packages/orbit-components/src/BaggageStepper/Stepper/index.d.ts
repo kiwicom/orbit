@@ -6,8 +6,6 @@ import * as React from "react";
 import * as Common from "../../common/common";
 import { SharedProps, Event } from "..";
 
-declare module "@kiwicom/orbit-components/lib/StepperStateless";
-
 type InputEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 export interface Props extends SharedProps {
   readonly value?: number | string | (() => string);

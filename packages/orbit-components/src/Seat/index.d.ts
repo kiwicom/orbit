@@ -6,8 +6,6 @@ import * as React from "react";
 import * as Common from "../common/common";
 import SeatLegend from "./components/SeatLegend";
 
-declare module "@kiwicom/orbit-components/lib/Seat";
-
 type Size = "small" | "medium";
 type Type = "default" | "legroom" | "unavailable";
 

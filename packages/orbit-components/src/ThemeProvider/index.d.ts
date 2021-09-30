@@ -6,8 +6,6 @@ import * as React from "react";
 import { Translations } from "../Dictionary";
 import { Theme } from "../defaultTheme";
 
-declare module "@kiwicom/orbit-components/lib/ThemeProvider";
-
 interface Props {
   readonly theme: Theme;
   readonly dictionary?: Translations;

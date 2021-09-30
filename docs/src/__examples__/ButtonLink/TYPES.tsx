@@ -1,21 +1,20 @@
 import React from "react";
-import { Heading, Stack, ButtonLink } from "@kiwicom/orbit-components";
+import { ButtonLink } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack flex>
-      <Stack shrink direction="column" spacing="XSmall">
-        <Heading type="title3">Type: Primary</Heading>
-        <ButtonLink>Add passenger</ButtonLink>
-      </Stack>
-      <Stack shrink direction="column" spacing="XSmall">
-        <Heading type="title3">Type: Secondary</Heading>
-        <ButtonLink type="secondary">Cancel</ButtonLink>
-      </Stack>
-      <Stack shrink direction="column" spacing="XSmall">
-        <Heading type="title3">Type: Critical</Heading>
-        <ButtonLink type="critical">Cancel</ButtonLink>
-      </Stack>
-    </Stack>
-  ),
+  Example: () => <ButtonLink>Primary</ButtonLink>,
+  exampleVariants: [
+    {
+      name: "Primary",
+      code: `() => <ButtonLink>Primary</ButtonLink>`,
+    },
+    {
+      name: "Secondary",
+      code: `() => <ButtonLink type="secondary">Secondary</ButtonLink>`,
+    },
+    {
+      name: "Critical",
+      code: `() => <ButtonLink type="critical">Critical</ButtonLink>`,
+    },
+  ],
 };

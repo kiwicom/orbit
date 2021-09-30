@@ -23,8 +23,6 @@ export default {
         { name: "maxValue", type: "number", defaultValue: 10 },
         { name: "step", type: "number", defaultValue: 1 },
         { name: "error", type: "text", defaultValue: "" },
-        { name: "titleIncrement", type: "text", defaultValue: "Add a traveler" },
-        { name: "titleDecrement", type: "text", defaultValue: "Remove a traveler" },
         { name: "help", type: "text", defaultValue: "" },
         { name: "label", type: "text", defaultValue: "Travelers" },
         { name: "required", type: "boolean", defaultValue: false },

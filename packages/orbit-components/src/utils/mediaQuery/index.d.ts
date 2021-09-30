@@ -5,8 +5,6 @@ import type { Interpolation } from "styled-components";
 import { Theme } from "../../defaultTheme";
 import { Devices } from "./consts";
 
-declare module "@kiwicom/orbit-components/lib/utils/mediaQuery";
-
 type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
 declare const MediaQuery: { [key in Devices]: QueryFunction };

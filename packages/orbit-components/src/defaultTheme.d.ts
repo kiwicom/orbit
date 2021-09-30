@@ -3,8 +3,6 @@
 
 import { Tokens } from "@kiwicom/orbit-design-tokens";
 
-declare module "@kiwicom/orbit-components/theme";
-
 export interface Theme {
   readonly orbit: Tokens;
   readonly transitions?: boolean;

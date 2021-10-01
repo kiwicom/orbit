@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.1.0...@kiwicom/orbit-components@1.2.0) (2021-10-01)
+
+
+### Bug Fixes
+
+* **storybook:** logo url ([#3127](https://github.com/kiwicom/orbit/issues/3127)) ([455ded0](https://github.com/kiwicom/orbit/commit/455ded075bf366a2f702fd83037c134492a85bd6))
+* remove unnecessary declare module statements ([#3124](https://github.com/kiwicom/orbit/issues/3124)) ([32805a8](https://github.com/kiwicom/orbit/commit/32805a8ac51eec5a955ba6627b361c506fd35846))
+* **InputField:** label before tags ([c25ba7a](https://github.com/kiwicom/orbit/commit/c25ba7ad0afe213bd78104a20c7fb7dd3fbc72f9))
+* **Popover:** transform and transition ([33f73ad](https://github.com/kiwicom/orbit/commit/33f73ad87aa8bb9a1bb8c1716c0095dd96bdccb0))
+* **Popover:** ts type definition ([1e61a81](https://github.com/kiwicom/orbit/commit/1e61a8125dd87d576a048031a0b7ef39fe803f8c))
+
+
+### Features
+
+* **Skeleton:** allow string values for height and width ([43f51bb](https://github.com/kiwicom/orbit/commit/43f51bb1ab64ae129d5119e379808933a707c02f))
+* add component structure component ([8cacce0](https://github.com/kiwicom/orbit/commit/8cacce077e561b71b2419dea7a24ed6b2d68a587))
+* export `useRandomId` and `useRandomIdSeed` from root ([cf4dd14](https://github.com/kiwicom/orbit/commit/cf4dd1477492a908ab49c018250956f1b1ee57c6))
+* export useTheme hook from root ([a622f6d](https://github.com/kiwicom/orbit/commit/a622f6d4bc3f4a5c8b998404a18730a16cac0a2c))
+
+
+
+
+
 # [1.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.1...@kiwicom/orbit-components@1.1.0) (2021-09-22)
 
 

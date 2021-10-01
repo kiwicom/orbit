@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.0.1...@kiwicom/babel-plugin-orbit-components@3.1.0) (2021-10-01)
+
+
+### Features
+
+* export `useRandomId` and `useRandomIdSeed` from root ([cf4dd14](https://github.com/kiwicom/orbit/commit/cf4dd1477492a908ab49c018250956f1b1ee57c6))
+* export useTheme hook from root ([a622f6d](https://github.com/kiwicom/orbit/commit/a622f6d4bc3f4a5c8b998404a18730a16cac0a2c))
+
+
+
+
+
 ## [3.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.0.0...@kiwicom/babel-plugin-orbit-components@3.0.1) (2021-09-13)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

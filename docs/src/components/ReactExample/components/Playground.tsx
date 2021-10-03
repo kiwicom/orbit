@@ -4,7 +4,6 @@ import { Text } from "@kiwicom/orbit-components";
 import { set, sortBy } from "lodash";
 
 import BooleanKnob from "./knobs/Boolean";
-import ObjectKnob from "./knobs/Object";
 import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
@@ -135,21 +134,6 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                           component,
                           name,
                           value: parseInt(ev.target.value, 10),
-                        })
-                      }
-                      {...baseKnobProps}
-                    />
-                  );
-                }
-
-                if (type === "object") {
-                  return (
-                    <ObjectKnob
-                      onChange={ev =>
-                        handleChangeKnob({
-                          component,
-                          name,
-                          value: ev.target.value,
                         })
                       }
                       {...baseKnobProps}

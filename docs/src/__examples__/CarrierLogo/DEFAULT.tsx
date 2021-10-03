@@ -1,7 +1,6 @@
 import React from "react";
 import { CarrierLogo } from "@kiwicom/orbit-components";
 
-/* prettier-ignore */
 export default {
   Example: () => (
     <CarrierLogo
@@ -14,20 +13,4 @@ export default {
       ]}
     />
   ),
-  exampleKnobs: [
-    {
-      component: "CarrierLogo",
-      knobs: [
-        {
-          name: "carriers",
-          type: "object",
-          defaultValue: [{
-            "code": "OK",
-            "type": "airline",
-            "name": "Czech Airlines",
-          }],
-        },
-      ],
-    },
-  ],
 };

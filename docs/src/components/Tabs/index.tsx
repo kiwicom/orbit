@@ -28,7 +28,6 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     display: flex;
     flex-wrap: wrap; /* so that we can detect whether tabs wrap, and in that case collapse them */
     padding-top: ${SHADOW_PADDING_TOP};
-    padding-left: ${theme.orbit.spaceXLarge}; /* same as main content padding */
     padding-right: ${SHADOW_PADDING_RIGHT};
     /* prevents box shadow and tabs stack from overflowing at the bottom in order to */
     /* achieve the effect of attached tabs, also prevents wrapped tabs from showing */

@@ -72,7 +72,6 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
             <StyledKnobsWrapper>
               {sortBy(knobs, ["type"]).map(({ type, name, options }) => {
                 const baseKnobProps = {
-                  key: name,
                   name: `${component}-${name}`,
                   value: values[component][name],
                 };
@@ -80,6 +79,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "boolean") {
                   return (
                     <BooleanKnob
+                      key={name}
                       checked={values[component][name]}
                       onChange={ev =>
                         handleChangeKnob({
@@ -96,6 +96,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "select") {
                   return (
                     <SelectKnob
+                      key={name}
                       onChange={ev =>
                         handleChangeKnob({
                           component,
@@ -112,6 +113,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "icon") {
                   return (
                     <IconKnob
+                      key={name}
                       onChange={ev => {
                         const { value } = ev.target;
                         const val = value !== "null" ? `${value}-icon` : null;
@@ -129,6 +131,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
                 if (type === "number") {
                   return (
                     <NumberKnob
+                      key={name}
                       onChange={ev =>
                         handleChangeKnob({
                           component,
@@ -143,6 +146,7 @@ const Playground = ({ exampleKnobs, onChange }: Props) => {
 
                 return (
                   <TextKnob
+                    key={name}
                     {...baseKnobProps}
                     onChange={ev => {
                       handleChangeKnob({

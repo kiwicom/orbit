@@ -5,26 +5,12 @@ export const SIZE_OPTIONS = {
   MEDIUM: "medium",
 };
 
-// order of positions or aligns is important, the first possible value will be applied
-export const POSITIONS = {
-  RIGHT: "right",
-  LEFT: "left",
-  TOP: "top",
-  BOTTOM: "bottom",
-};
-
 // the default order on RTL needs to be changed
 export const RTL_POSITIONS = {
   LEFT: "left",
   RIGHT: "right",
   TOP: "top",
   BOTTOM: "bottom",
-};
-
-export const ALIGNS = {
-  CENTER: "center",
-  START: "start",
-  END: "end",
 };
 
 export const POSITION_DIRECTIONS = {

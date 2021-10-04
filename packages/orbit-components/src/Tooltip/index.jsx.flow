@@ -3,6 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/tooltip/
 */
 import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import type { Globals } from "../common/common.js.flow";
 
@@ -45,8 +46,7 @@ export type Props = {|
   +size?: Sizes,
   +renderInPortal?: boolean,
   +stopPropagation?: boolean,
-  +preferredPosition?: Positions,
-  +preferredAlign?: Aligns,
+  +placement?: Placement,
   +enabled?: boolean,
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,

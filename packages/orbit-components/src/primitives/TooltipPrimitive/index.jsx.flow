@@ -4,34 +4,9 @@
 */
 import type { StyledComponent } from "styled-components";
 import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import type { Globals } from "../../common/common.js.flow";
-
-export type Dimensions = {|
-  containerTop: number,
-  containerLeft: number,
-  containerHeight: number,
-  containerWidth: number,
-  tooltipHeight: number,
-  tooltipWidth: number,
-  contentHeight: number,
-  windowWidth: number,
-  windowHeight: number,
-  containerTopPure: number,
-  containerLeftPure: number,
-|};
-
-export type Aligns = "center" | "start" | "end";
-
-export type Align = {|
-  align: Aligns,
-|};
-
-export type Positions = "right" | "left" | "top" | "bottom";
-
-export type Position = {|
-  position: Positions,
-|};
 
 export type Sizes = "small" | "medium";
 
@@ -47,14 +22,14 @@ export type Props = {|
   +error?: boolean,
   +help?: boolean,
   +stopPropagation?: boolean,
-  +preferredPosition?: Positions,
-  +preferredAlign?: Aligns,
   +renderInPortal?: boolean,
   +tooltipShown?: boolean,
   +enabled?: boolean,
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
   +block?: boolean,
+  +offset?: [number, number],
+  +placement?: Placement,
 |};
 
 declare export var StyledTooltipChildren: StyledComponent<any, any, HTMLElement>;

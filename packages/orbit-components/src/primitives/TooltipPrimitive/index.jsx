@@ -47,13 +47,14 @@ const TooltipPrimitive = ({
   content,
   error,
   help,
-  preferredPosition,
-  preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
+  ...popper
 }: Props): void | React.Node => {
   const [shown, setShown] = React.useState(false);
+  const [referenceElement, setReferenceElement] = React.useState(null);
+
   const [
     render,
     setRender,
@@ -62,7 +63,6 @@ const TooltipPrimitive = ({
   ] = useStateWithTimeout<boolean>(false, 200);
 
   const tooltipId = useRandomId();
-  const container = React.useRef(null);
   const handleIn = React.useCallback(() => {
     setRender(true);
     setShown(true);
@@ -108,9 +108,8 @@ const TooltipPrimitive = ({
       onClose={handleOut}
       onCloseMobile={handleOutMobile}
       onEnter={handleIn}
-      preferredPosition={preferredPosition}
-      preferredAlign={preferredAlign}
-      containerRef={container}
+      {...popper}
+      referenceElement={referenceElement}
     >
       {content}
     </TooltipContent>
@@ -125,7 +124,7 @@ const TooltipPrimitive = ({
         onClick={handleClick}
         onFocus={handleIn}
         onBlur={handleOut}
-        ref={container}
+        ref={setReferenceElement}
         aria-describedby={enabled ? tooltipId : undefined}
         tabIndex={enabled ? tabIndex : undefined}
         enabled={enabled}

@@ -3,7 +3,7 @@ import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../../icons";
-import { POSITIONS, SIZE_OPTIONS, ALIGNS } from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import Stack from "../../Stack";
 import Alert from "../../Alert";
 import Text from "../../Text";
@@ -13,6 +13,7 @@ import ListItem from "../../List/ListItem";
 import Heading from "../../Heading";
 import Button from "../../Button";
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
+import { PLACEMENTS } from "../../common/consts";
 
 import TooltipPrimitive from ".";
 
@@ -38,7 +39,7 @@ export const TooltipPrimitiveOnInlineElement = (): React.Node => {
             <TextLink>Clickable element.</TextLink>
           </div>
         }
-        preferredPosition="left"
+        placement="left"
       >
         <TextLink>Cras elementum.</TextLink>
       </TooltipPrimitive>{" "}
@@ -106,11 +107,11 @@ TooltipPrimitiveOnDisabledElement.story = {
 
 export const PreferredPosition = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   const content = text("content", "Write your text here.");
   return (
     <Stack justify="center">
-      <TooltipPrimitive preferredPosition={preferredPosition} size={size} content={content}>
+      <TooltipPrimitive placement={placement} size={size} content={content}>
         <Icons.Airplane />
       </TooltipPrimitive>
     </Stack>
@@ -128,10 +129,10 @@ PreferredPosition.story = {
 
 export const WithImageInside = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   return (
     <TooltipPrimitive
-      preferredPosition={preferredPosition}
+      placement={placement}
       size={size}
       content={
         <Stack>
@@ -178,22 +179,22 @@ export const Playground = (): React.Node => {
   const tabIndex = text("TabIndex", "0");
   const enabled = boolean("enabled", true);
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
-  const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
 
   return (
-    <TooltipPrimitive
-      preferredPosition={preferredPosition}
-      preferredAlign={preferredAlign}
-      size={size}
-      content={content}
-      dataTest={dataTest}
-      tabIndex={tabIndex}
-      enabled={enabled}
-      removeUnderlinedText={removeUnderlinedText}
-    >
-      <Icon />
-    </TooltipPrimitive>
+    <Stack flex justify="center">
+      <TooltipPrimitive
+        placement={placement}
+        size={size}
+        content={content}
+        dataTest={dataTest}
+        tabIndex={tabIndex}
+        enabled={enabled}
+        removeUnderlinedText={removeUnderlinedText}
+      >
+        <Icon />
+      </TooltipPrimitive>
+    </Stack>
   );
 };
 
@@ -210,7 +211,7 @@ export const Rtl = (): React.Node => {
       <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
         eget mollis sed, tempor sed magna.
-        <TooltipPrimitive content="Write your text here." preferredPosition="left">
+        <TooltipPrimitive content="Write your text here." placement="left">
           <TextLink>Cras elementum.</TextLink>
         </TooltipPrimitive>{" "}
         Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui

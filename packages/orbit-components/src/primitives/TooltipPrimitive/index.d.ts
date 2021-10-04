@@ -2,13 +2,11 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import * as Common from "../../common/common";
 
 type Size = "small" | "medium";
-type Position = "right" | "left" | "top" | "bottom";
-type Align = "center" | "start" | "end";
-
 interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
@@ -16,14 +14,15 @@ interface Props extends Common.Global {
   readonly error?: boolean;
   readonly help?: boolean;
   readonly stopPropagation?: boolean;
-  readonly preferredPosition?: Position;
-  readonly preferredAlign?: Align;
   readonly enabled?: boolean;
   readonly tabIndex?: string | number;
   readonly tooltipShown?: boolean;
   readonly removeUnderlinedText?: boolean;
   readonly block?: boolean;
   readonly renderInPortal?: boolean;
+  readonly placement?: Placement;
+  readonly noFlip?: boolean;
+  readonly offset?: [number, number];
 }
 
 declare const Tooltip: React.FunctionComponent<Props>;

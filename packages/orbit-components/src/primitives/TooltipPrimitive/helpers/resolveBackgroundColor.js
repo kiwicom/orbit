@@ -1,5 +1,15 @@
 // @flow
-import type { ResolveBackgroundColor } from "./resolveBackgroundColor";
+import type { InterpolationBase } from "styled-components";
+
+import type { Theme } from "../../../defaultTheme";
+
+export type Props = {|
+  help: boolean,
+  error: boolean,
+  theme: Theme,
+|};
+
+type ResolveBackgroundColor = Props => InterpolationBase;
 
 const backgroundColor: ResolveBackgroundColor = ({ theme, error, help }) => {
   if (error) return theme.orbit.paletteRedNormal;

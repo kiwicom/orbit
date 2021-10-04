@@ -15,7 +15,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import useLockScrolling from "../../hooks/useLockScrolling";
 import { ModalContext } from "../../Modal/ModalContext";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
-import { PLACEMENTS } from "../consts";
+import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 
 const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;

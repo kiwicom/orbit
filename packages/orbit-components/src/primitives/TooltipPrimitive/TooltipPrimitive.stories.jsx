@@ -105,7 +105,7 @@ TooltipPrimitiveOnDisabledElement.story = {
   },
 };
 
-export const PreferredPosition = (): React.Node => {
+export const Placement = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   const content = text("content", "Write your text here.");
@@ -118,8 +118,8 @@ export const PreferredPosition = (): React.Node => {
   );
 };
 
-PreferredPosition.story = {
-  name: "Preferred position",
+Placement.story = {
+  name: "Placement",
 
   parameters: {
     info:

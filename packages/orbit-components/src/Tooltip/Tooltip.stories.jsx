@@ -114,7 +114,7 @@ export const Block = (): React.Node => {
   );
 };
 
-export const PreferredPosition = (): React.Node => {
+export const Placement = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   const content = text("content", "Write your text here.");
@@ -127,12 +127,12 @@ export const PreferredPosition = (): React.Node => {
   );
 };
 
-PreferredPosition.story = {
-  name: "Preferred position",
+Placement.story = {
+  name: "Placement",
 
   parameters: {
     info:
-      "If you want to, you can specify one preferred position. If it won't be possible to use it, the defaults will be used.",
+      "If you want to, you can specify one preferred placement. If it won't be possible to use it, the defaults will be used.",
   },
 };
 

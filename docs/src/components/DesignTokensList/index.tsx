@@ -33,7 +33,7 @@ const DesignToken = ({ value }: { value: TokenValueType }) => {
       <span>Copied!</span>
     </Stack>
   ) : (
-    <Tooltip content="Click to copy" preferredPosition="bottom" preferredAlign="center">
+    <Tooltip content="Click to copy">
       <Stack inline spacing="XSmall" shrink align="center">
         <DesignTokenIcon value={value} />
         <button type="button" onClick={() => copy(String(value))} title={String(value)}>

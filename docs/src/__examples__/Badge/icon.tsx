@@ -7,7 +7,7 @@ export default {
     <Tooltip
       renderInPortal={false}
       content="Get more points by traveling more"
-      preferredPosition="right"
+      placement="top-right"
     >
       <Badge type="neutral">
         2,435 pts <InformationCircle size="small" ariaLabel="More information" />

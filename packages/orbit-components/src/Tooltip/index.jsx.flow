@@ -7,32 +7,6 @@ import * as React from "react";
 import type { Popper } from "../primitives/TooltipPrimitive";
 import type { Globals } from "../common/common.js.flow";
 
-export type Dimensions = {|
-  containerTop: number,
-  containerLeft: number,
-  containerHeight: number,
-  containerWidth: number,
-  tooltipHeight: number,
-  tooltipWidth: number,
-  contentHeight: number,
-  windowWidth: number,
-  windowHeight: number,
-  containerTopPure: number,
-  containerLeftPure: number,
-|};
-
-export type Aligns = "center" | "start" | "end";
-
-export type Align = {|
-  align: Aligns,
-|};
-
-export type Positions = "right" | "left" | "top" | "bottom";
-
-export type Position = {|
-  position: Positions,
-|};
-
 export type Sizes = "small" | "medium";
 
 export type Size = {|

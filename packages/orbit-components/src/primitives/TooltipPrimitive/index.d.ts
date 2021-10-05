@@ -7,7 +7,13 @@ import type { Placement } from "@popperjs/core/lib/enums";
 import * as Common from "../../common/common";
 
 type Size = "small" | "medium";
-interface Props extends Common.Global {
+
+export interface Popper {
+  readonly placement?: Placement;
+  readonly noFlip?: boolean;
+  readonly offset?: [number, number];
+}
+interface Props extends Common.Global, Popper {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;
@@ -20,9 +26,6 @@ interface Props extends Common.Global {
   readonly removeUnderlinedText?: boolean;
   readonly block?: boolean;
   readonly renderInPortal?: boolean;
-  readonly placement?: Placement;
-  readonly noFlip?: boolean;
-  readonly offset?: [number, number];
 }
 
 declare const Tooltip: React.FunctionComponent<Props>;

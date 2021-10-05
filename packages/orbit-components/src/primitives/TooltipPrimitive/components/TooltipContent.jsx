@@ -20,9 +20,7 @@ const StyledTooltip = styled.div`
   width: 100%;
 `;
 
-const StyledTooltipArrow = styled(
-  React.forwardRef(({ className }, ref) => <div className={className} ref={ref} />),
-)`
+const StyledTooltipArrow = styled.div`
   ${({ transform, position }) => css`
     position: ${position};
     transform: ${transform};
@@ -44,14 +42,9 @@ StyledTooltipArrow.defaultProps = {
 };
 
 const StyledTooltipWrapper = styled.div`
-  ${({ theme, shown, top, left, right, bottom, transform, position }) => css`
+  ${({ theme, shown, popper }) => css`
     display: block;
-    position: ${position};
-    top: ${top};
-    left: ${left};
-    right: ${right};
-    bottom: ${bottom};
-    transform: ${transform};
+    ${popper};
     width: auto;
     max-width: ${tooltipSize};
     box-sizing: border-box;
@@ -115,7 +108,7 @@ const TooltipContent = ({
   onCloseMobile,
   onEnter,
   placement = PLACEMENTS.AUTO,
-  noFlip = false,
+  noFlip,
   offset = [0, 5],
   referenceElement,
 }: Props): React.Node => {
@@ -180,12 +173,7 @@ const TooltipContent = ({
         onMouseLeave={onClose}
         contentHeight={contentHeight}
         onClick={handleInnerClick}
-        top={popper.top}
-        left={popper.left}
-        right={popper.right}
-        bottom={popper.bottom}
-        position={popper.position}
-        transform={popper.transform}
+        popper={{ ...popper }}
       >
         <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
         <StyledTooltipArrow
@@ -194,10 +182,6 @@ const TooltipContent = ({
           transform={arrow.transform}
           contentHeight={contentHeight}
           placement={attrs.popper && attrs.popper["data-popper-placement"]}
-          top={arrow.top}
-          left={arrow.left}
-          right={arrow.right}
-          bottom={arrow.bottom}
         />
       </StyledTooltipWrapper>
     </StyledTooltip>

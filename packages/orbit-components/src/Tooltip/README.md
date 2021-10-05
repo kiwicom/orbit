@@ -18,31 +18,51 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Tooltip component.
 
-| Name                 | Type            | Default | Description                                                                                                                                      |
-| :------------------- | :-------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children**         | `React.Node`    |         | The reference element where the Tooltip will appear.                                                                                             |
-| **content**          | `React.Node`    |         | The content to display in the Tooltip.                                                                                                           |
-| dataTest             | `string`        |         | Optional prop for testing purposes.                                                                                                              |
-| enabled              | `boolean`       | `true`  | Enable render of tooltip                                                                                                                         |
-| block                | `boolean`       | `false` | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.                                |
-| preferredAlign       | [`enum`](#enum) |         | The preferred align to choose [See Functional specs](#functional-specs)                                                                          |
-| preferredPosition    | [`enum`](#enum) |         | The preferred position to choose [See Functional specs](#functional-specs)                                                                       |
-| removeUnderlinedText | `boolean`       |         | Removes underline on child component, when underline is not desired.                                                                             |
-| size                 | [`enum`](#enum) |         | The maximum possible size of the Tooltip.                                                                                                        |
-| stopPropagation      | `boolean`       |         | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element.                                |
-| lockScrolling        | `boolean`       | `true`  | Whether to prevent scrolling of the rest of the page while Tooltip is open on mobile. This is on by default to provide a better user experience. |
-| renderInPortal       | `boolean`       | `true`  | Optional prop, set it to `false` if you're rendering Tooltip inside a custom portal, defaults to `true`                                          |
+| Name                 | Type                      | Default  | Description                                                                                                                                      |
+| :------------------- | :------------------------ | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children**         | `React.Node`              |          | The reference element where the Tooltip will appear.                                                                                             |
+| **content**          | `React.Node`              |          | The content to display in the Tooltip.                                                                                                           |
+| dataTest             | `string`                  |          | Optional prop for testing purposes.                                                                                                              |
+| enabled              | `boolean`                 | `true`   | Enable render of tooltip                                                                                                                         |
+| block                | `boolean`                 | `false`  | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.                                |
+| removeUnderlinedText | `boolean`                 |          | Removes underline on child component, when underline is not desired.                                                                             |
+| size                 | [`size`](#size)           |          | The maximum possible size of the Tooltip.                                                                                                        |
+| stopPropagation      | `boolean`                 |          | If `true` the click event on children won't bubble. Useful when you use Tooltip inside another clickable element.                                |
+| lockScrolling        | `boolean`                 | `true`   | Whether to prevent scrolling of the rest of the page while Tooltip is open on mobile. This is on by default to provide a better user experience. |
+| renderInPortal       | `boolean`                 | `true`   | Optional prop, set it to `false` if you're rendering Tooltip inside a custom portal, defaults to `true`                                          |
+| placement            | [`placement`](#placement) | `auto`   | 12 different placements to choose from                                                                                                           |
+| noFlip               | `boolean`                 | `false`  | Turns off automatic flipping of the Tooltip when there is not enough space                                                                       |
+| offset               | `[number, number]`        | `[0, 5]` | Set offset `[vertical, horizontal]` for Tooltip                                                                                                  |
 
 | tabIndex | `string \| number` | `"0"` | Specifies the tab order of an element |
 
 ## enum
 
-| preferredPosition | preferredAlign | size       |
-| :---------------- | :------------- | :--------- |
-| `"right"`         | `"center"`     | `"small"`  |
-| `"left"`          | `"start"`      | `"medium"` |
-| `"top"`           | `"end"`        |
-| `"bottom"`        |
+| size       |
+| :--------- |
+| `"small"`  |
+| `"medium"` |
+
+## placement
+
+| Placement        |
+| :--------------- |
+| `"top"`          |
+| `"right"`        |
+| `"bottom"`       |
+| `"left"`         |
+| `"top-start"`    |
+| `"top-end"`      |
+| `"right-start"`  |
+| `"right-end"`    |
+| `"bottom-start"` |
+| `"bottom-end"`   |
+| `"left-start"`   |
+| `"left-end"`     |
+| `"auto"`         |
+| `"auto-start"`   |
+| `"auto-end"`     |
+| `"bottom"`       |
 
 ## Functional specs
 

@@ -14,6 +14,12 @@ export type Size = {|
   size: Sizes,
 |};
 
+export type Popper = {|
+  +offset?: [number, number],
+  +placement?: Placement,
+  +noFlip?: boolean,
+|};
+
 export type Props = {|
   ...Globals,
   +children?: React.Node,
@@ -28,8 +34,7 @@ export type Props = {|
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
   +block?: boolean,
-  +offset?: [number, number],
-  +placement?: Placement,
+  ...Popper,
 |};
 
 declare export var StyledTooltipChildren: StyledComponent<any, any, HTMLElement>;

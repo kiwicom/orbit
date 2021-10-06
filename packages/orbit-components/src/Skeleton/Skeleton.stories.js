@@ -20,10 +20,7 @@ const PRESETS = {
 };
 
 export const Default = (): React.Node => {
-  const height = text("height", `100px`);
-  const width = text("width", `500px`);
-
-  return <Skeleton height={height} width={width} />;
+  return <Skeleton height="150px" width="500px" />;
 };
 
 Default.story = {
@@ -36,6 +33,7 @@ Default.story = {
 export const Playground = (): React.Node => {
   const animate = boolean("animate", true);
   const height = text("height", undefined);
+  const maxHeight = text("maxHeight", undefined);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
   const rowOffset = number("rowOffset", 30);
@@ -49,6 +47,7 @@ export const Playground = (): React.Node => {
     <Skeleton
       animate={animate}
       height={height}
+      maxHeight={maxHeight}
       title={title}
       rowBorderRadius={rowBorderRadius}
       rowHeight={rowHeight}

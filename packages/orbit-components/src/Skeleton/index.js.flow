@@ -21,6 +21,7 @@ export type Props = {|
   +viewBox?: string,
   +width?: number | string,
   +height?: number | string,
+  +maxHeight?: number | string,
   ...spaceAfter,
   ...Globals,
 |};

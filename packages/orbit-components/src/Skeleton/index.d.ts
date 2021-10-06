@@ -51,7 +51,6 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** default: `20` */
   readonly rowOffset?: number;
   /** Number of rect elements */
-  /** default: `1` */
   readonly rows?: number;
   /** Add text for svg accessible name element  */
   readonly title?: string;
@@ -63,6 +62,8 @@ interface Props extends Common.SpaceAfter, Common.Global {
   readonly width?: number | string;
   /** Set height for Svg element */
   readonly height?: number | string;
+  /** Set max-height for Svg element */
+  readonly maxHeight?: number | string;
 }
 
 declare const Skeleton: React.FunctionComponent<Props>;

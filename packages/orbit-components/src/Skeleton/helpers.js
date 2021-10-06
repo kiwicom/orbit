@@ -9,11 +9,17 @@ type ResolveAnimation = ({|
   color?: string,
 |}) => CSSRules | null;
 
-type ResolveWidth = ({| width: string | number |}) => string;
-type ResolveHeight = ({| calculatedHeight: number, height: number | string |}) => string;
+type ResolveWidth = ({| width: string | number, isDefault: boolean |}) => string;
+type ResolveHeight = ({|
+  calculatedHeight: number,
+  isDefault: boolean,
+  height: number | string,
+|}) => string;
 
-export const resolveHeight: ResolveHeight = ({ calculatedHeight, height }): string => {
+export const resolveHeight: ResolveHeight = ({ calculatedHeight, height, isDefault }): string => {
+  if (isDefault) return `100%`;
   if (calculatedHeight) return `${calculatedHeight}px`;
+
   if (height) {
     if (typeof height === "number") return `${height}px`;
     if (typeof height === "string") return height;
@@ -22,7 +28,8 @@ export const resolveHeight: ResolveHeight = ({ calculatedHeight, height }): stri
   return "100%";
 };
 
-export const resolveWidth: ResolveWidth = ({ width }): string => {
+export const resolveWidth: ResolveWidth = ({ width, isDefault }): string => {
+  if (isDefault) return `100%`;
   if (typeof width === "number") return `${width}px`;
   if (typeof width === "string") return width;
 

@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://orbit.kiwi" target="_blank">
-    <img alt="orbit-components" src="https://orbit.kiwi/files/orbit-components.png" srcset="https://orbit.kiwi/files/orbit-components@2x.png 2x" height="150px" />
+    <img alt="orbit-components" src="https://images.kiwi.com/common/orbit-logo-full.png" srcset="https://images.kiwi.com/common/orbit-logo-full@2x.png 2x" />
   </a>
 </div>
 

@@ -59,9 +59,11 @@ const Svg = ({
   rowBorderRadius = 3,
   rowHeight = 21,
   rowOffset = 20,
-  rows = 1,
+  rows,
   title = "loading",
   viewBox,
+  height,
+  width = "100%",
   ...props
 }: Props): React.Node => {
   const [loaded, setLoaded] = React.useState(false);
@@ -92,6 +94,9 @@ const Svg = ({
           duration={duration}
           interval={interval}
           animate={animate}
+          height={height}
+          width={width}
+          isDefault={!rows && !children}
           {...props}
         >
           <title id={titleId}>{title}</title>
@@ -106,14 +111,24 @@ const Svg = ({
           />
           <defs>
             <clipPath id={idClip}>
-              {children || (
-                <Rows
-                  count={rows}
-                  height={rowHeight}
-                  offset={rowOffset}
-                  rowBorderRadius={rowBorderRadius}
-                />
-              )}
+              {children ||
+                (rows ? (
+                  <Rows
+                    count={rows}
+                    height={rowHeight}
+                    offset={rowOffset}
+                    rowBorderRadius={rowBorderRadius}
+                  />
+                ) : (
+                  <rect
+                    x="0"
+                    y="0"
+                    rx={rowBorderRadius}
+                    ry={rowBorderRadius}
+                    height={height}
+                    width={width}
+                  />
+                ))}
             </clipPath>
           </defs>
         </StyledSvg>

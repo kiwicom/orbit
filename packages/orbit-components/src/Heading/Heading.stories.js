@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean, object } from "@storybook/addon-knobs";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
@@ -177,6 +177,27 @@ export const Playground = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+
+  const mediumMobile = object("mediumMobile", {
+    type,
+  });
+
+  const largeMobile = object("largeMobile", {
+    type,
+  });
+
+  const tablet = object("tablet", {
+    type,
+  });
+
+  const desktop = object("desktop", {
+    type,
+  });
+
+  const largeDesktop = object("largeDesktop", {
+    type,
+  });
+
   return (
     <Heading
       id={id}
@@ -185,6 +206,11 @@ export const Playground = (): React.Node => {
       type={type}
       dataTest={dataTest}
       spaceAfter={spaceAfter}
+      mediumMobile={mediumMobile}
+      largeMobile={largeMobile}
+      tablet={tablet}
+      desktop={desktop}
+      largeDesktop={largeDesktop}
     >
       {customTitle}
     </Heading>

@@ -19,7 +19,12 @@ const PRESETS = {
   Text: "Text",
 };
 
-export const Default = (): React.Node => <Skeleton />;
+export const Default = (): React.Node => {
+  const height = text("height", `100px`);
+  const width = text("width", `500px`);
+
+  return <Skeleton height={height} width={width} />;
+};
 
 Default.story = {
   parameters: {
@@ -30,14 +35,14 @@ Default.story = {
 
 export const Playground = (): React.Node => {
   const animate = boolean("animate", true);
-  const height = number("height", undefined);
+  const height = text("height", undefined);
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
   const rowOffset = number("rowOffset", 30);
   const rows = number("rows", 10);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
   const viewBox = text("viewBox", undefined);
-  const width = number("width", undefined);
+  const width = text("width", undefined);
   const title = text("title", "Loading");
 
   return (
@@ -63,9 +68,9 @@ export const RTL = (): React.Node => (
 );
 
 export const Custom = (): React.Node => {
-  const height = number("height", 100);
+  const height = text("height", `100px`);
   const viewBox = text("viewBox", "0 0 500 100");
-  const width = number("width", 500);
+  const width = text("width", `500px`);
 
   return (
     <Skeleton height={height} width={width} viewBox={viewBox}>

@@ -9,14 +9,12 @@ packages/eslint-plugin-orbit-components/dist
 !.storybook
 
 # from gitignore
-packages/orbit-components/src/icons/*.js
-packages/orbit-components/src/icons/*.js.flow
-packages/orbit-components/src/icons/*.ts
+packages/orbit-components/src/icons/*
 
-packages/orbit-components/src/Illustration/index.js.flow
-packages/orbit-components/src/AirportIllustration/index.js.flow
-packages/orbit-components/src/ServiceLogo/index.js.flow
-packages/orbit-components/src/FeatureIcon/index.js.flow
+packages/orbit-components/src/Illustration/index.*.flow
+packages/orbit-components/src/AirportIllustration/index.*.flow
+packages/orbit-components/src/ServiceLogo/index.*.flow
+packages/orbit-components/src/FeatureIcon/index.*.flow
 packages/orbit-components/src/Illustration/index.d.ts
 packages/orbit-components/src/AirportIllustration/index.d.ts
 packages/orbit-components/src/ServiceLogo/index.d.ts

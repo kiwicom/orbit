@@ -163,7 +163,10 @@ export default function DocLayout({
                         )}
                       </Box>
                     )}
-                    <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
+                    <Grid
+                      columns="100%"
+                      tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}
+                    >
                       {tocHasItems && (
                         <StyledTocWrapper>
                           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>

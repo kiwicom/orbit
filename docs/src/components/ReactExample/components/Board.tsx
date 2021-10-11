@@ -25,6 +25,7 @@ const StyledBoard = styled.div<{ isOpened: boolean }>`
     padding: ${theme.orbit.spaceXSmall};
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
     background: ${theme.orbit.paletteCloudLight};
+    overflow-x: auto;
   `};
 `;
 

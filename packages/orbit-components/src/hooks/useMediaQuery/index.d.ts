@@ -1,5 +1,5 @@
-import { Props as Media } from "../../ThemeProvider/QueryContext";
+import { useQuery } from "../../ThemeProvider/QueryContext";
 
-declare const UseMediaQuery: () => Media;
+declare const UseMediaQuery: typeof useQuery;
 
 export { UseMediaQuery, UseMediaQuery as default };

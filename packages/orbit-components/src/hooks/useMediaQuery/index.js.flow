@@ -1,6 +1,4 @@
 // @flow
-import type { Media } from "../../ThemeProvider/QueryContext";
+import typeof { useQuery as UseQueryType } from "../../ThemeProvider/QueryContext";
 
-export type UseMediaQuery = () => Media;
-
-declare export default UseMediaQuery;
+declare export default UseQueryType;

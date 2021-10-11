@@ -1,15 +1,17 @@
 // @flow
 import * as React from "react";
 
-export type Media = {|
-  +isLargeDesktop: ?boolean,
-  +isDesktop: ?boolean,
-  +isLargeMobile: ?boolean,
-  +isMediumMobile: ?boolean,
-  +isTablet: ?boolean,
-  +prefersReducedMotion: ?boolean,
+type Context = {|
+  +isMediumMobile: boolean | null,
+  +isLargeMobile: boolean | null,
+  +isTablet: boolean | null,
+  +isDesktop: boolean | null,
+  +isLargeDesktop: boolean | null,
+  +prefersReducedMotion: boolean | null,
 |};
 
-export type QueryContextType = React.Context<Media>;
+declare var QueryContext: React.Context<Context>;
+declare export var QueryContextProvider: React.ComponentType<{| children: React.Node |}>;
+declare export function useQuery(): Context;
 
-declare export default QueryContextType;
+export default QueryContext;

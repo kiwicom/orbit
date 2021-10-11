@@ -1,18 +1,8 @@
 // @flow
-import * as React from "react";
+import { useQuery } from "../../ThemeProvider/QueryContext";
 
-import QueryContext from "../../ThemeProvider/QueryContext";
-import useMediaQueryContext from "../../ThemeProvider/QueryContext/useMediaQueryContext";
+import typeof UseMediaQuery from ".";
 
-import type { UseMediaQuery } from ".";
-
-const useMediaQuery: UseMediaQuery = () => {
-  const media = React.useContext(QueryContext);
-  const value = useMediaQueryContext();
-  if (media != null && Object.values(media).some(v => v != null)) {
-    return media;
-  }
-  return value;
-};
+const useMediaQuery: UseMediaQuery = useQuery;
 
 export default useMediaQuery;

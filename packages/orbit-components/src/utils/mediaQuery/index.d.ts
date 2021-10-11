@@ -7,7 +7,11 @@ import { Devices } from "./consts";
 
 type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
-declare const MediaQuery: { [key in Devices]: QueryFunction };
-declare const getBreakpointWidth: (name: string, theme: ThemeShape, pure?: boolean) => string;
+declare const MediaQuery: Record<Devices, QueryFunction>;
+declare const getBreakpointWidth: (
+  name: Devices,
+  theme: ThemeShape,
+  pure?: boolean,
+) => number | string;
 
 export { MediaQuery, MediaQuery as default, getBreakpointWidth };

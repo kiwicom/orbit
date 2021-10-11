@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
-import Frame from "./components/Frame";
+import Frame, { StyledFrame } from "./components/Frame";
 import Board from "./components/Board";
 import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
@@ -13,13 +13,15 @@ import { BgType, Props as InitialProps } from ".";
 
 const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
   ${({ theme, isFullPage }) => css`
+    resize: vertical;
     display: grid;
     min-height: ${isFullPage && `100%`};
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr min-content;
     grid-template-columns: 1fr;
     border-radius: 12px;
     border: 1px solid ${theme.orbit.paletteCloudDark};
     overflow: hidden;
+    overflow-y: auto;
 
     ${StyledAnchor} + & {
       margin-top: ${theme.orbit.spaceMedium} !important;
@@ -29,6 +31,10 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     }
     & + :not(${StyledAnchor}) {
       margin-top: ${theme.orbit.spaceLarge} !important;
+    }
+
+    &[style*="height"] ${StyledFrame} {
+      height: 100%;
     }
   `};
 `;
@@ -84,8 +90,7 @@ const Example = ({
   exampleKnobs,
   exampleVariants,
   fullPageExampleId,
-  minHeight,
-  maxHeight,
+  height,
   background,
   isFullPage,
   onChangeCode,
@@ -112,10 +117,8 @@ const Example = ({
         <Frame
           origin={origin}
           pageId={exampleId}
-          fullHeight={isFullPage}
           exampleId={exampleId}
-          minHeight={minHeight}
-          maxHeight={maxHeight}
+          height={height}
           background={selectedBackground}
         />
       </StyledWrapperFrame>

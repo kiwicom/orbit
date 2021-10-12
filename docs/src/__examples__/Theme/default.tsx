@@ -28,9 +28,4 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default text link",
-    description:
-      "The default text link is a primary link with its children as its text that inherits its size from its parent.",
-  },
 };

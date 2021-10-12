@@ -7,7 +7,7 @@ import Frame from "./components/Frame";
 import Board from "./components/Board";
 import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
-import { transform } from "./helpers";
+import { transform } from "./transform";
 
 import { BgType, Props as InitialProps } from ".";
 

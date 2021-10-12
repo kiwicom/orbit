@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LiveProvider } from "react-live";
+import { LiveProvider, LiveError } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
@@ -36,6 +36,7 @@ const Sandbox = ({ pathContext }) => {
     <ThemeProvider theme={defaultTheme}>
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
+        <LiveError />
         <Example
           code={codeWithImports}
           exampleId={id}

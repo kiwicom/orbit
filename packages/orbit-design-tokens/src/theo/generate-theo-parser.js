@@ -1,5 +1,4 @@
 // @noflow
-// eslint-disable-next-line import/no-extraneous-dependencies
 const parser = require("@babel/parser");
 const fs = require("fs");
 const path = require("path");

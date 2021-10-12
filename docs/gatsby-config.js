@@ -18,13 +18,13 @@ module.exports = {
       ? []
       : [
           {
-            resolve: `gatsby-plugin-google-gtag`,
+            resolve: require.resolve("gatsby-plugin-google-gtag"),
             options: {
               trackingIds: ["UA-118988244-1"],
             },
           },
         ]),
-    "gatsby-plugin-react-helmet",
+    require.resolve("gatsby-plugin-react-helmet"),
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -33,15 +33,15 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: require.resolve("gatsby-source-filesystem"),
       options: {
         name: "pages",
         path: `${__dirname}/src/pages`,
       },
     },
-    "gatsby-remark-images",
+    require.resolve("gatsby-remark-images"),
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: require.resolve("gatsby-plugin-mdx"),
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
@@ -54,7 +54,7 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: require.resolve("gatsby-remark-images"),
             options: {
               linkImagesToOriginal: false,
               // The base for generating different image widths
@@ -65,13 +65,13 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`,
+            resolve: require.resolve(`gatsby-remark-copy-linked-files`),
             options: {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`, `md`, `mdx`],
             },
           },
           {
-            resolve: `gatsby-remark-smartypants`,
+            resolve: require.resolve(`gatsby-remark-smartypants`),
             options: {
               backticks: false,
               dashes: `oldschool`,
@@ -82,10 +82,10 @@ module.exports = {
         rehypePlugins: [],
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    require.resolve("gatsby-transformer-sharp"),
+    require.resolve("gatsby-plugin-sharp"),
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: require.resolve(`gatsby-plugin-manifest`),
       options: {
         icon: path.resolve(__dirname, "src/images/orbit-glyph.svg"),
         icons: [
@@ -103,13 +103,13 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: require.resolve("gatsby-source-filesystem"),
       options: {
         path: `${__dirname}/src/images`,
       },
     },
     {
-      resolve: "gatsby-redirect-from",
+      resolve: require.resolve("gatsby-redirect-from"),
       options: {
         query: "allMdx",
       },
@@ -128,11 +128,11 @@ module.exports = {
         path: path.join(__dirname, "src/__examples__"),
       },
     },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-meta-redirect",
-    "gatsby-plugin-lodash",
+    require.resolve("gatsby-plugin-styled-components"),
+    require.resolve("gatsby-plugin-meta-redirect"),
+    require.resolve("gatsby-plugin-lodash"),
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: require.resolve("gatsby-plugin-root-import"),
       options: {
         snippets: path.join(__dirname, "src/snippets"),
       },

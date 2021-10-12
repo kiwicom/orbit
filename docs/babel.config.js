@@ -1,9 +1,9 @@
 module.exports = {
-  presets: ["gatsby", "@babel/preset-typescript"],
+  presets: [require.resolve("babel-preset-gatsby"), require.resolve("@babel/preset-typescript")],
   plugins: [
-    "styled-components",
+    require.resolve("babel-plugin-styled-components"),
     [
-      "inline-react-svg",
+      require.resolve("babel-plugin-inline-react-svg"),
       {
         svgo: {
           // keep IDs as-is, so that there are no duplicates

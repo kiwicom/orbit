@@ -1,6 +1,6 @@
-// @flow
+// @noflow
 module.exports = {
-  extends: ["@commitlint/config-conventional"],
+  extends: [require.resolve("@commitlint/config-conventional")],
   rules: {
     "scope-case": [0],
     "footer-max-line-length": [2, "always", 150],

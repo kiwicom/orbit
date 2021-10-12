@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs-extra");
 const prettier = require("prettier");
 const _ = require("lodash");
+const dotenv = require("dotenv-safe");
 
 const { warnMissingAccessToken } = require("../../utils/warnings");
 
@@ -13,11 +14,33 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
   const staticData = JSON.parse(fs.readFileSync(path.join(__dirname, "./users.json")));
 
   try {
-    // eslint-disable-next-line import/no-extraneous-dependencies
-    require("dotenv").config({
+    dotenv.config({
       path: path.join(process.cwd(), `../.env`),
+      example: path.join(process.cwd(), `../.env.example`),
     });
+  } catch (error) {
+    if (error.missing.includes("GH_TOKEN")) {
+      staticData.forEach(user => {
+        createNode({
+          ...user,
+          error: warnMissingAccessToken(error),
+          avatar_url: "",
+          parent: null,
+          children: [],
+          internal: {
+            type: NODE,
+            content: JSON.stringify(user),
+            contentDigest: createContentDigest(user),
+          },
+        });
+      });
+      console.error(error);
+      warnMissingAccessToken(error);
+      return;
+    }
+  }
 
+  try {
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     const names = [];
 
@@ -93,22 +116,10 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
       });
     }
   } catch (error) {
-    staticData.forEach(user => {
-      createNode({
-        ...user,
-        error: warnMissingAccessToken(error),
-        avatar_url: "",
-        parent: null,
-        children: [],
-        internal: {
-          type: NODE,
-          content: JSON.stringify(user),
-          contentDigest: createContentDigest(user),
-        },
-      });
-    });
     console.error(error);
-    warnMissingAccessToken(error);
+    console.info(
+      "You may have forgotten to include the repo and read:org scopes for your GitHub access token.",
+    );
   }
 };
 

@@ -16,7 +16,7 @@ import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from ".";
 
 const getModalHeading = (type, token) => ({ theme }) => {
-  return getHeadingToken(token)({ theme, type });
+  return getHeadingToken(token, type)({ theme });
 };
 
 export const ModalHeading: any = styled.div`

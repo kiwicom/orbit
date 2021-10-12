@@ -12,6 +12,11 @@ import type { ThemeProps } from "../defaultTheme";
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
 
+export type MediaQuery = {|
+  +type?: Type,
+  ...spaceAfter,
+|};
+
 export type Props = {|
   ...Globals,
   ...spaceAfter,
@@ -21,9 +26,14 @@ export type Props = {|
   +inverted?: boolean,
   +dataA11ySection?: string,
   +id?: string,
+  +mediumMobile?: MediaQuery,
+  +largeMobile?: MediaQuery,
+  +tablet?: MediaQuery,
+  +desktop?: MediaQuery,
+  +largeDesktop?: MediaQuery,
 |};
 
-export type GetHeadingToken = (name: string) => ({| ...ThemeProps, type: Type |}) => string;
+export type GetHeadingToken = (name: string, type: Type) => ({| ...ThemeProps |}) => string;
 
 declare export default React.ComponentType<Props>;
 

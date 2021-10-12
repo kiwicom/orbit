@@ -34,10 +34,11 @@ describe("Heading with every media query", () => {
     render(
       <Heading
         dataTest={dataTest}
-        mediumMobile={{ type: TYPE_OPTIONS.TITLE1 }}
-        largeMobile={{ type: TYPE_OPTIONS.TITLE4 }}
+        type={TYPE_OPTIONS.TITLE5}
+        mediumMobile={{ type: TYPE_OPTIONS.TITLE4 }}
+        largeMobile={{ type: TYPE_OPTIONS.TITLE3 }}
         tablet={{ type: TYPE_OPTIONS.TITLE2 }}
-        desktop={{ type: TYPE_OPTIONS.TITLE3 }}
+        desktop={{ type: TYPE_OPTIONS.TITLE1 }}
         largeDesktop={{ type: TYPE_OPTIONS.DISPLAY }}
       >
         Heading
@@ -46,13 +47,13 @@ describe("Heading with every media query", () => {
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle1,
+      theme.orbit.fontSizeHeadingTitle4,
       { media: getBreakpointWidth("mediumMobile", theme) },
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle4,
+      theme.orbit.fontSizeHeadingTitle3,
       { media: getBreakpointWidth("largeMobile", theme) },
     );
 
@@ -64,7 +65,7 @@ describe("Heading with every media query", () => {
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle3,
+      theme.orbit.fontSizeHeadingTitle1,
       { media: getBreakpointWidth("desktop", theme) },
     );
 

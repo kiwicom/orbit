@@ -46,9 +46,8 @@ Table below contains all types of the props available in Heading component.
 
 ### Media Queries
 
-When you need to specify some different behaviour of the Heading component on different viewport, you can use properties for it.
-There are `mediumMobile`, `largeMobile`, `tablet`, `desktop` and `largeDesktop` available and it behaves the same as [mediaQueries](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/mediaQuery) functions.
-All this properties - objects have the some own properties and none is required.
+To make Heading responsive you can use props `mediumMobile`, `largeMobile`, `tablet`, `desktop` and `largeDesktop`,
+which match the [mediaQueries](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/mediaQuery) functions and contain the following properties:
 
 | Name       | Type            | Default    | Description                                                                                                                                                    |
 | :--------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |

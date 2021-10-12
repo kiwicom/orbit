@@ -9,7 +9,7 @@ const logStep = msg => {
 (async () => {
   logStep("Cleanup");
 
-  await $`rimraf lib es umd src/icons/*.{js?(x),js?(x).flow,d.ts} orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
+  await $`rimraf lib es umd "src/icons/*.{js?(x),js?(x).flow,d.ts}" orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
 
   logStep("Building icons");
 

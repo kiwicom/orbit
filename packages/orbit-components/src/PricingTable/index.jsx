@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
-import type { Props } from "./index.js.flow";
+import type { Props } from ".";
 import { StyledListWrapper } from "./PricingTableItem";
 import PricingTableContext from "./PricingTableContext";
 

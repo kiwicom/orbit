@@ -50,8 +50,8 @@ const logStep = msg => {
   logStep("Type declarations");
 
   await $`babel-node config/typeFiles.js`;
-  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" lib --cwd src --parent`;
-  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" es --cwd src --parents`;
+  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" ../lib --cwd src --parents`;
+  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" ../es --cwd src --parents`;
 
   for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
     await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));
@@ -59,6 +59,6 @@ const logStep = msg => {
 
   logStep("Miscellaneous");
 
-  await $`cpy "**/*.{md,json}" lib --cwd src --parents`;
-  await $`cpy "**/*.{md,json}" es --cwd src --parents`;
+  await $`cpy "**/*.{md,json}" ../lib --cwd src --parents`;
+  await $`cpy "**/*.{md,json}" ../es --cwd src --parents`;
 })();

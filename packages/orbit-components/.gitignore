@@ -1,6 +1,6 @@
-lib
-umd
-es
+/lib
+/umd
+/es
 .out
 .cache
 .DS_STORE

@@ -9,7 +9,7 @@ import Radio from "../../Radio";
 import Badge from "../../Badge";
 import { StyledBadge } from "../../primitives/BadgePrimitive";
 import media from "../../utils/mediaQuery";
-import type { Props } from "./index.js.flow";
+import type { Props } from ".";
 import STATES from "./consts";
 import { IconContainer, Item as ListItem } from "../../List/ListItem";
 import { rtlSpacing } from "../../utils/rtl";

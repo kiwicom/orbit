@@ -3,7 +3,7 @@ import * as React from "react";
 import type { Placement } from "@popperjs/core/lib/enums";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { Offset } from "../index.js.flow";
+import type { Offset } from "..";
 
 export type Props = {|
   +children: React.Node,

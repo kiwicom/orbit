@@ -2,10 +2,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import type { Props } from ".";
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
+
+import type { Props } from ".";
 
 const StyledSwitch = styled.label`
   display: inline-block;

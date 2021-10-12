@@ -29,7 +29,7 @@ const MasonryLayout = ({ columns = 2, gap = 24, children }: Props) => {
   const masonryColumns = isTablet ? columns : 1;
 
   const columnWrapper: Record<string, Array<React.ReactNode>> = {};
-  React.Children.forEach(children, (child, index) => {
+  React.Children.toArray(children).forEach((child, index) => {
     const columnIndex = index % masonryColumns;
     if (!Object.prototype.hasOwnProperty.call(columnWrapper, `column${columnIndex}`)) {
       columnWrapper[`column${columnIndex}`] = [];

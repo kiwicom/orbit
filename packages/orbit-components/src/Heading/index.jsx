@@ -1,14 +1,15 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
+import mediaQueries from "../utils/mediaQuery";
 
 import type { GetHeadingToken, Props } from ".";
 
-export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
+export const getHeadingToken: GetHeadingToken = (name, type) => ({ theme }) => {
   const tokens = {
     [TOKENS.weightHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
@@ -54,15 +55,28 @@ export const StyledHeading: any = styled(
     </Component>
   ),
 )`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${getHeadingToken(TOKENS.sizeHeading)};
-  font-weight: ${getHeadingToken(TOKENS.weightHeading)};
-  color: ${({ theme, inverted }) =>
-    inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
-  line-height: ${getHeadingToken(TOKENS.lineHeight)};
-  text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && "uppercase"};
-  margin: 0;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, inverted, viewports, type }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    text-transform: ${type === TYPE_OPTIONS.TITLE5 && "uppercase"};
+    color: ${inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
+    margin: 0;
+    font-size: ${getHeadingToken(TOKENS.sizeHeading, type)};
+    font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
+    line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
+    margin-bottom: ${getSpacingToken};
+    ${Object.keys(viewports).map(viewport => {
+      const { type: value, spaceAfter } = viewports[viewport];
+      return (
+        viewport in mediaQueries &&
+        mediaQueries[viewport](css`
+          font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+          font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
+          line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
+          margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
+        `)
+      );
+    })}
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -79,6 +93,7 @@ const Heading = ({
   spaceAfter,
   dataA11ySection,
   id,
+  ...viewports
 }: Props): React.Node => (
   <StyledHeading
     id={id}
@@ -88,6 +103,7 @@ const Heading = ({
     dataTest={dataTest}
     spaceAfter={spaceAfter}
     dataA11ySection={dataA11ySection}
+    viewports={viewports}
   >
     {children}
   </StyledHeading>

@@ -9,7 +9,7 @@ const logStep = msg => {
 (async () => {
   logStep("Cleanup");
 
-  await $`rimraf lib es umd src/icons/*.{js,js.flow,jsx,jsx.flow,d.ts} orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
+  await $`rimraf lib es umd src/icons/*.{js?(x),js?(x).flow,d.ts} orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
 
   logStep("Building icons");
 
@@ -21,7 +21,7 @@ const logStep = msg => {
 
   logStep("Compiling source");
 
-  const files = await globby("**/*.{js,jsx}", {
+  const files = await globby("**/*.js?(x)", {
     cwd: "src",
     ignore: [
       "**/__tests__/**",
@@ -50,8 +50,8 @@ const logStep = msg => {
   logStep("Type declarations");
 
   await $`babel-node config/typeFiles.js`;
-  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" ../lib --cwd src --parents`;
-  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" ../es --cwd src --parents`;
+  await $`cpy "**/*.{js?(x).flow,d.ts}" ../lib --cwd src --parents`;
+  await $`cpy "**/*.{js?(x).flow,d.ts}" ../es --cwd src --parents`;
 
   for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
     await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));

@@ -75,9 +75,10 @@ export default function Home({ location, path }: Props) {
             <Heading type="display">
               <div
                 css={css`
-                  max-width: 20ch;
+                  max-width: 43rem;
                   font-size: 3rem;
                   line-height: 1.3;
+                  text-shadow: 0 0 10px white, 0 0 10px white;
                 `}
               >
                 Open source design system for your next travel project.

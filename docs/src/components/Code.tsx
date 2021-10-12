@@ -33,24 +33,31 @@ export const CodeBlock = ({ children, className }: CodeBlockProps) => {
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <div
           css={css`
-            padding: 1em;
             border-radius: 0.5em;
             /* monospace typefaces appear a bit larger */
             font-size: calc(1em - 2px);
+            overflow-x: auto;
           `}
           style={style}
         >
-          {tokens
-            .filter(line => line.some(token => !token.empty)) // remove mysterious empty lines
-            .map((line, i) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+          <div
+            css={css`
+              display: inline-block;
+              margin: 1rem;
+            `}
+          >
+            {tokens
+              .filter(line => line.some(token => !token.empty)) // remove mysterious empty lines
+              .map((line, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+          </div>
         </div>
       )}
     </Highlight>

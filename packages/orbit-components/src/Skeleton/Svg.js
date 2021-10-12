@@ -64,7 +64,6 @@ const Svg = ({
   width = "100%",
   ...props
 }: Props): React.Node => {
-  const [loaded, setLoaded] = React.useState(false);
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
   const { rtl, orbit } = useTheme();
   const duration = `${2}s`;
@@ -74,63 +73,57 @@ const Svg = ({
   const titleId = id("title");
 
   React.useEffect(() => {
-    setLoaded(true);
-
-    if (loaded) {
-      if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
-    }
-  }, [rowOffset, rows, setCalculatedHeight, setLoaded, loaded, maxHeight]);
+    if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
+  }, [rowOffset, rows, setCalculatedHeight, maxHeight]);
 
   return (
-    loaded && (
-      <StyledSvg
-        ariaLabelledby={titleId}
-        maxHeight={maxHeight}
-        role="img"
-        rtl={rtl}
-        viewBox={viewBox}
-        calculatedHeight={calculatedHeight}
-        duration={duration}
-        interval={interval}
-        animate={animate}
-        height={height}
-        width={width}
-        {...props}
-      >
-        <title id={titleId}>{title}</title>
-        <rect
-          role="presentation"
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          clipPath={`url(#${idClip})`}
-          style={{ fill: orbit.paletteCloudDark }}
-        />
-        <defs>
-          <clipPath id={idClip}>
-            {children ||
-              (rows ? (
-                <Rows
-                  count={rows}
-                  height={rowHeight}
-                  offset={rowOffset}
-                  rowBorderRadius={rowBorderRadius}
-                />
-              ) : (
-                <rect
-                  x="0"
-                  y="0"
-                  rx={rowBorderRadius}
-                  ry={rowBorderRadius}
-                  height="100%"
-                  width="100%"
-                />
-              ))}
-          </clipPath>
-        </defs>
-      </StyledSvg>
-    )
+    <StyledSvg
+      ariaLabelledby={titleId}
+      maxHeight={maxHeight}
+      role="img"
+      rtl={rtl}
+      viewBox={viewBox}
+      calculatedHeight={calculatedHeight}
+      duration={duration}
+      interval={interval}
+      animate={animate}
+      height={height}
+      width={width}
+      {...props}
+    >
+      <title id={titleId}>{title}</title>
+      <rect
+        role="presentation"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        clipPath={`url(#${idClip})`}
+        style={{ fill: orbit.paletteCloudDark }}
+      />
+      <defs>
+        <clipPath id={idClip}>
+          {children ||
+            (rows ? (
+              <Rows
+                count={rows}
+                height={rowHeight}
+                offset={rowOffset}
+                rowBorderRadius={rowBorderRadius}
+              />
+            ) : (
+              <rect
+                x="0"
+                y="0"
+                rx={rowBorderRadius}
+                ry={rowBorderRadius}
+                height="100%"
+                width="100%"
+              />
+            ))}
+        </clipPath>
+      </defs>
+    </StyledSvg>
   );
 };
 

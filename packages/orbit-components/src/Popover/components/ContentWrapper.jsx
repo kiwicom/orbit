@@ -7,7 +7,7 @@ import { usePopper } from "react-popper";
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 import Button from "../../Button";
-import type { Props } from "./ContentWrapper.js.flow";
+import type { Props } from "./ContentWrapper";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";

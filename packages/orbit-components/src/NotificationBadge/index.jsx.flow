@@ -6,7 +6,7 @@
 import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
-import type { Type } from "../Badge/index.js.flow";
+import type { Type } from "../Badge";
 
 export type Props = {|
   +children?: React.Node,

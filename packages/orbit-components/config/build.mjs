@@ -8,9 +8,11 @@ const logStep = msg => {
 
 (async () => {
   logStep("Cleanup");
+
   await $`rimraf lib es umd src/icons/*.{js,js.flow,jsx,jsx.flow,d.ts} orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
 
   logStep("Building icons");
+
   await $`babel-node config/buildIcons.js`;
   await $`babel-node config/createSVGFont.js`;
   await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;
@@ -18,6 +20,7 @@ const logStep = msg => {
   await $`zip -r orbit-icons-font.zip orbit-icons-font`;
 
   logStep("Compiling source");
+
   const files = await globby("**/*.{js,jsx}", {
     cwd: "src",
     ignore: [
@@ -29,6 +32,7 @@ const logStep = msg => {
       "**/*.stories.*",
     ],
   });
+
   for (const [name, dir, options] of [
     ["CommonJS", "lib", await babel.loadOptions()],
     ["ES Modules", "es", await babel.loadOptions({ envName: "esm" })],
@@ -40,17 +44,21 @@ const logStep = msg => {
     }
     spinner.succeed(`${name} → ${dir}`);
   }
+
   await $`webpack --mode=production`;
 
   logStep("Type declarations");
+
   await $`babel-node config/typeFiles.js`;
-  await $`cpy src/**/*.{js.flow,jsx.flow,d.ts} lib`;
-  await $`cpy src/**/*.{js.flow,jsx.flow,d.ts} es`;
+  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" lib --cwd src --parent`;
+  await $`cpy "**/*.{js.flow,jsx.flow,d.ts}" es --cwd src --parents`;
+
   for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
     await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));
   }
 
   logStep("Miscellaneous");
-  await $`cpy "src/**/*.{md,json}" lib`;
-  await $`cpy "src/**/*.{md,json}" es`;
+
+  await $`cpy "**/*.{md,json}" lib --cwd src --parents`;
+  await $`cpy "**/*.{md,json}" es --cwd src --parents`;
 })();

@@ -282,5 +282,12 @@ module.exports = {
         "flowtype/require-valid-file-annotation": ["error", "always"],
       },
     },
+    {
+      files: "**/config/**",
+      rules: {
+        "no-restricted-syntax": "off",
+        "no-console": "off",
+      },
+    },
   ],
 };

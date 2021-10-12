@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.1...@kiwicom/orbit-components@1.2.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* **Skeleton:** fix default height ([cc02dd3](https://github.com/kiwicom/orbit/commit/cc02dd3a1bc060a81f38bd5b469f763acbb3ad33))
+
+
+
+
+
+## [1.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.0...@kiwicom/orbit-components@1.2.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* **Card:** set description Text default as div ([#3132](https://github.com/kiwicom/orbit/issues/3132)) ([df60e73](https://github.com/kiwicom/orbit/commit/df60e7303ef63feaa70c80024039ed1802e79e69))
+* **Skeleton:** default as single rect ([#3134](https://github.com/kiwicom/orbit/issues/3134)) ([9e0bf27](https://github.com/kiwicom/orbit/commit/9e0bf270e2cb9562edeed20e90ab4be94d5eb9c1))
+
+
+
+
+
 # [1.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.1.0...@kiwicom/orbit-components@1.2.0) (2021-10-01)
 
 

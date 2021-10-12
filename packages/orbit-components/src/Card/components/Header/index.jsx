@@ -79,7 +79,7 @@ const Header = ({
             </Heading>
           )}
         </Stack>
-        {description && <Text>{description}</Text>}
+        {description && <Text as="div">{description}</Text>}
       </Stack>
     )}
     {header && icon}

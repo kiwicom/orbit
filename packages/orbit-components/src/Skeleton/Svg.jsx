@@ -3,16 +3,12 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { useRandomIdSeed } from "../hooks/useRandomId";
-import { resolveHeight, resolveWidth, resolvePulseAnimation } from "./helpers";
+import { resolveHeight, resolveValue, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from ".";
-
-const StyledWrapper = styled.div`
-  position: relative;
-`;
 
 const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, viewBox }) => (
   <svg
@@ -25,9 +21,10 @@ const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, viewB
     {children}
   </svg>
 ))`
-  ${({ rtl }) => css`
+  ${({ rtl, width, maxHeight }) => css`
     height: ${resolveHeight};
-    width: ${resolveWidth};
+    max-height: ${resolveValue(maxHeight)};
+    width: ${resolveValue(width)};
     transform: ${rtl && `scaleX(-1)`};
     margin-bottom: ${getSpacingToken};
     ${resolvePulseAnimation}
@@ -59,9 +56,12 @@ const Svg = ({
   rowBorderRadius = 3,
   rowHeight = 21,
   rowOffset = 20,
-  rows = 1,
+  rows,
   title = "loading",
   viewBox,
+  height,
+  maxHeight,
+  width = "100%",
   ...props
 }: Props): React.Node => {
   const [loaded, setLoaded] = React.useState(false);
@@ -75,49 +75,61 @@ const Svg = ({
 
   React.useEffect(() => {
     setLoaded(true);
+
     if (loaded) {
       if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
     }
-  }, [rowOffset, rows, setCalculatedHeight, setLoaded, loaded]);
+  }, [rowOffset, rows, setCalculatedHeight, setLoaded, loaded, maxHeight]);
 
   return (
     loaded && (
-      <StyledWrapper>
-        <StyledSvg
-          ariaLabelledby={titleId}
-          role="img"
-          rtl={rtl}
-          viewBox={viewBox}
-          calculatedHeight={calculatedHeight}
-          duration={duration}
-          interval={interval}
-          animate={animate}
-          {...props}
-        >
-          <title id={titleId}>{title}</title>
-          <rect
-            role="presentation"
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            clipPath={`url(#${idClip})`}
-            style={{ fill: orbit.paletteCloudDark }}
-          />
-          <defs>
-            <clipPath id={idClip}>
-              {children || (
+      <StyledSvg
+        ariaLabelledby={titleId}
+        maxHeight={maxHeight}
+        role="img"
+        rtl={rtl}
+        viewBox={viewBox}
+        calculatedHeight={calculatedHeight}
+        duration={duration}
+        interval={interval}
+        animate={animate}
+        height={height}
+        width={width}
+        {...props}
+      >
+        <title id={titleId}>{title}</title>
+        <rect
+          role="presentation"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          clipPath={`url(#${idClip})`}
+          style={{ fill: orbit.paletteCloudDark }}
+        />
+        <defs>
+          <clipPath id={idClip}>
+            {children ||
+              (rows ? (
                 <Rows
                   count={rows}
                   height={rowHeight}
                   offset={rowOffset}
                   rowBorderRadius={rowBorderRadius}
                 />
-              )}
-            </clipPath>
-          </defs>
-        </StyledSvg>
-      </StyledWrapper>
+              ) : (
+                <rect
+                  x="0"
+                  y="0"
+                  rx={rowBorderRadius}
+                  ry={rowBorderRadius}
+                  height="100%"
+                  width="100%"
+                />
+              ))}
+          </clipPath>
+        </defs>
+      </StyledSvg>
     )
   );
 };

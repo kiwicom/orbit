@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LiveProvider, LivePreview } from "react-live";
+import { LiveProvider, LiveError, LivePreview } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
@@ -31,6 +31,7 @@ const PureSandbox = ({ pathContext }) => {
         scope={{ ...modules, styled, Icons, css }}
         theme={dracula}
       >
+        <LiveError />
         <GlobalStyle />
         <section
           id={PREVIEW_ID}

@@ -7,12 +7,12 @@ import { BgType } from "..";
 interface Props {
   pageId: string;
   background?: BgType;
-  fullHeight?: boolean;
-  minHeight?: number;
-  maxHeight?: number;
+  height?: number;
   exampleId: string;
   origin: string;
 }
+
+const DEFAULT_HEIGHT = 100;
 
 const getBackground = (type: BgType) => ({ theme }) => {
   if (type === "grid") {
@@ -45,26 +45,15 @@ const getBackground = (type: BgType) => ({ theme }) => {
   return `background: ${theme.orbit.paletteWhite}`;
 };
 
-const StyledFrame = styled.iframe<Partial<Props>>`
-  ${({ background, height, fullHeight, minHeight, maxHeight }) => css`
+export const StyledFrame = styled.iframe<Partial<Props>>`
+  ${({ background }) => css`
     width: 100%;
-    min-height: ${minHeight && `${minHeight}px`};
-    max-height: ${maxHeight && `${maxHeight}px`};
-    height: ${fullHeight ? `100%` : `${Number(height)}px`};
     ${background && getBackground(background)};
   `};
 `;
 
-const Frame = ({
-  background,
-  exampleId,
-  minHeight = 100,
-  maxHeight,
-  pageId,
-  origin,
-  fullHeight,
-}: Props) => {
-  const [height, setHeight] = React.useState(0);
+const Frame = ({ background, exampleId, height, pageId, origin }: Props) => {
+  const [measuredHeight, setMeasuredHeight] = React.useState<number>(0);
   const [loaded, setLoaded] = React.useState(false);
 
   const measuredRef = React.useCallback(
@@ -74,7 +63,7 @@ const Frame = ({
         const preview = innerDocument.getElementById(PREVIEW_ID);
 
         if (preview) {
-          setHeight(preview?.getBoundingClientRect().height);
+          setMeasuredHeight(preview?.getBoundingClientRect().height);
         }
       }
     },
@@ -84,11 +73,8 @@ const Frame = ({
   return (
     <StyledFrame
       background={background}
-      fullHeight={fullHeight}
       title={exampleId}
-      minHeight={minHeight}
-      maxHeight={maxHeight}
-      height={height}
+      height={height || measuredHeight || DEFAULT_HEIGHT}
       loading="lazy"
       allow="allow-popups allow-modals allow-same-origin allow-scripts"
       onLoad={() => setLoaded(true)}

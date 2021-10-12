@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-type Context = {|
+export type Context = {|
   +isMediumMobile: boolean | null,
   +isLargeMobile: boolean | null,
   +isTablet: boolean | null,
@@ -12,6 +12,5 @@ type Context = {|
 
 declare var QueryContext: React.Context<Context>;
 declare export var QueryContextProvider: React.ComponentType<{| children: React.Node |}>;
-declare export function useQuery(): Context;
 
 export default QueryContext;

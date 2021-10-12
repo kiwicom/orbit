@@ -4,7 +4,7 @@ import * as React from "react";
 import useTheme from "../../hooks/useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 
-import typeof ContextType, { QueryContextProvider as ProviderType, useQuery as HookType } from ".";
+import typeof ContextType, { QueryContextProvider as ProviderType } from ".";
 
 const initialValue = {
   isLargeDesktop: null,
@@ -72,7 +72,5 @@ export const QueryContextProvider: ProviderType = ({ children }) => {
 
   return <QueryContext.Provider value={value}>{children}</QueryContext.Provider>;
 };
-
-export const useQuery: HookType = () => React.useContext(QueryContext);
 
 export default QueryContext;

@@ -1,5 +1,5 @@
-import { useQuery } from "../../ThemeProvider/QueryContext";
+import type { Context } from "../../ThemeProvider/QueryContext";
 
-declare const UseMediaQuery: typeof useQuery;
+declare function useMediaQuery(): Context;
 
-export { UseMediaQuery, UseMediaQuery as default };
+export default useMediaQuery;

@@ -16,6 +16,5 @@ declare const QueryContext: React.Context<Context>;
 export declare const QueryContextProvider: React.FunctionComponent<{
   readonly children?: React.ReactNode;
 }>;
-export declare function useQuery(): Context;
 
 export default QueryContext;

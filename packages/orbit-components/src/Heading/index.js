@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
+import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 
@@ -55,11 +55,12 @@ export const StyledHeading: any = styled(
     </Component>
   ),
 )`
-  ${({ theme, inverted, viewports, type }) => css`
+  ${({ theme, inverted, viewports, type, align }) => css`
     font-family: ${theme.orbit.fontFamily};
     text-transform: ${type === TYPE_OPTIONS.TITLE5 && "uppercase"};
     color: ${inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
     margin: 0;
+    text-align: ${align};
     font-size: ${getHeadingToken(TOKENS.sizeHeading, type)};
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
@@ -87,6 +88,7 @@ StyledHeading.defaultProps = {
 const Heading = ({
   children,
   type = TYPE_OPTIONS.TITLE1,
+  align = ALIGN.START,
   as = ELEMENT_OPTIONS.DIV,
   dataTest,
   inverted = false,
@@ -97,6 +99,7 @@ const Heading = ({
 }: Props): React.Node => (
   <StyledHeading
     id={id}
+    align={align}
     type={type}
     element={as}
     inverted={inverted}

@@ -10,8 +10,9 @@ import type { spaceAfter } from "../common/getSpacingToken";
 import type { ThemeProps } from "../defaultTheme";
 
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
-type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
 
+type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
+type Align = "start" | "center" | "end" | "justify";
 export type MediaQuery = {|
   +type?: Type,
   ...spaceAfter,
@@ -21,6 +22,7 @@ export type Props = {|
   ...Globals,
   ...spaceAfter,
   +as?: As,
+  +align?: Align,
   +type?: Type,
   +children: React.Node,
   +inverted?: boolean,

@@ -13,7 +13,10 @@ export type Type =
   | "title3"
   | "title4"
   | "title5";
+
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+
+type Align = "start" | "center" | "end" | "justify";
 
 interface MediaQuery extends Common.SpaceAfter {
   readonly type?: Type;
@@ -22,6 +25,7 @@ interface MediaQuery extends Common.SpaceAfter {
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly as?: As;
   readonly type?: Type;
+  readonly align?: Align;
   readonly children: React.ReactNode;
   readonly inverted?: boolean;
   readonly dataA11ySection?: string;

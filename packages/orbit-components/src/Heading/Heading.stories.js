@@ -2,7 +2,7 @@
 import * as React from "react";
 import { text, select, boolean, object } from "@storybook/addon-knobs";
 
-import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
+import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -177,6 +177,7 @@ export const Playground = (): React.Node => {
   const customTitle = text("Title", "Orbit design system");
   const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const align = select("align", [null, ...Object.values(ALIGN)]);
 
   const mediumMobile = object("mediumMobile", {
     type,
@@ -204,6 +205,7 @@ export const Playground = (): React.Node => {
       as={as}
       dataA11ySection={dataA11ySection}
       type={type}
+      align={align}
       dataTest={dataTest}
       spaceAfter={spaceAfter}
       mediumMobile={mediumMobile}

@@ -21,6 +21,7 @@ Table below contains all types of the props available in Heading component.
 | as              | [`enum`](#enum)            | `"div"`    | The element used for the root node.                                                                                                                            |
 | children        | `React.Node`               |            | The content of the Heading.                                                                                                                                    |
 | dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                                                                            |
+| align           | [`enum`](#enum)            | `left`     | `text-align` of `Heading` component                                                                                                                            |
 | dataA11ySection | `string`                   |            | ID for a `<SkipNavigation>` component.                                                                                                                         |
 | id              | `string`                   |            | Adds `id` HTML attribute to an element. Expects a unique ID.                                                                                                   |
 | inverted        | `boolean`                  |            | The `true`, the Heading color will be white.                                                                                                                   |
@@ -34,15 +35,15 @@ Table below contains all types of the props available in Heading component.
 
 ### enum
 
-| as      | type                |
-| :------ | :------------------ |
-| `"h1"`  | `"display"`         |
-| `"h2"`  | `"displaySubtitle"` |
-| `"h3"`  | `"title1"`          |
-| `"h4"`  | `"title2"`          |
-| `"h5"`  | `"title3"`          |
-| `"h6"`  | `"title4"`          |
-| `"div"` | `"title5"`          |
+| as      | type                | align     |
+| :------ | :------------------ | :-------- |
+| `"h1"`  | `"display"`         | `start`   |
+| `"h2"`  | `"displaySubtitle"` | `end`     |
+| `"h3"`  | `"title1"`          | `center`  |
+| `"h4"`  | `"title2"`          | `justify` |
+| `"h5"`  | `"title3"`          |           |
+| `"h6"`  | `"title4"`          |           |
+| `"div"` | `"title5"`          |           |
 
 ### Media Queries
 

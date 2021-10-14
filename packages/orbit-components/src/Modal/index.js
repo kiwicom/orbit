@@ -369,7 +369,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
 
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
-    const modalID = useRandomId();
+    const modalTitleID = useRandomId();
 
     const { isLargeMobile } = useMediaQuery();
     const scrollingElement = React.useRef<HTMLElement | null>(null);
@@ -652,14 +652,13 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
         role="dialog"
         autoFocus={autoFocus}
         aria-modal="true"
-        aria-labelledby={modalID}
+        aria-labelledby={hasModalTitle ? modalTitleID : null}
       >
         <ModalWrapper
           size={size}
           loaded={loaded}
           onScroll={handleMobileScroll}
           fixedFooter={fixedFooter}
-          id={modalID}
           isMobileFullPage={isMobileFullPage}
           disableAnimation={disableAnimation}
         >
@@ -702,6 +701,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
                 isMobileFullPage,
                 closable: Boolean(onClose),
                 isInsideModal: true,
+                titleID: modalTitleID,
               }}
             >
               {children}

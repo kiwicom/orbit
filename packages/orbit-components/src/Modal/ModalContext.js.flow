@@ -12,6 +12,7 @@ export type ModalContextProps = {|
   +isMobileFullPage?: boolean,
   +isInsideModal?: boolean,
   +closable?: boolean,
+  +titleID?: string,
 |};
 
 export type ModalContextType = React.Context<ModalContextProps>;

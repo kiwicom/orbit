@@ -6,7 +6,7 @@ import * as React from "react";
 
 import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
-import typeof AccordionSectionType from "./AccordionSection/index.js.flow";
+import typeof AccordionSectionType from "./AccordionSection";
 
 export type Props = {|
   +children?: React.Node,

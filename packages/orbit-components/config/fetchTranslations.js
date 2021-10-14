@@ -100,7 +100,6 @@ const flatten = (obj = {}, keyPrefix = "") =>
 
     // PhraseApp has limits on parallel requests
     // that's why we process requests in sequence
-    // eslint-disable-next-line no-restricted-syntax
     for (const locale of allLocales) {
       const translation = await fetchJSON(
         `${SINGLE_LOCAL_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,

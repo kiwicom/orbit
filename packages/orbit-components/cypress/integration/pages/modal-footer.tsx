@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Modal, ModalSection, ModalFooter, Button } from "../../..";
+import { Modal, ModalSection, ModalFooter, Button } from "../../../src";
 
 export default function TestModalFooter() {
   const [height, setHeight] = React.useState<"tall" | "short">("tall");

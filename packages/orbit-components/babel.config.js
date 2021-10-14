@@ -21,10 +21,16 @@ module.exports = {
   env: {
     esm: {
       presets: [[require.resolve("@babel/preset-env"), { modules: false, bugfixes: true }]],
-      plugins: [[require.resolve("@babel/plugin-transform-runtime"), { useESModules: true }]],
+      plugins: [
+        require.resolve("babel-plugin-styled-components"),
+        [require.resolve("@babel/plugin-transform-runtime"), { useESModules: true }],
+      ],
     },
     test: {
-      plugins: [require.resolve("babel-plugin-require-context-hook")],
+      plugins: [
+        require.resolve("babel-plugin-styled-components"),
+        require.resolve("babel-plugin-require-context-hook"),
+      ],
     },
   },
 };

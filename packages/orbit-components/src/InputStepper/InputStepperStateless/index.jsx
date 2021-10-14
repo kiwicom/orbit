@@ -9,7 +9,8 @@ import ButtonLink from "../../ButtonLink";
 import InputField, { Input, Prefix } from "../../InputField";
 import defaultTheme from "../../defaultTheme";
 import getSpacingToken from "../../common/getSpacingToken";
-import type { StateLessProps } from "./index.js.flow";
+
+import type { StateLessProps } from ".";
 
 const StyledInputStepper = styled.div`
   width: 100%;

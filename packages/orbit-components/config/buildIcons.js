@@ -20,7 +20,7 @@ const files = glob.sync("src/icons/svg/*.svg");
 const names = files.map(inputFileName => {
   const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
   const functionName = capitalize(camelcase(baseName), true);
-  const outputComponentFileName = `${functionName}.js`;
+  const outputComponentFileName = `${functionName}.jsx`;
 
   return {
     inputFileName,
@@ -44,6 +44,7 @@ const template = (code, opts, { componentName, jsx }) => {
     // @flow
     /* eslint-disable */
     import * as React from "react";
+
     import createIcon from "../Icon/createIcon";
 
     export default createIcon(PATH, VIEWBOX, NAME)

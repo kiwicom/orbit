@@ -12,6 +12,9 @@
 .*/node_modules/devtools-timeline-model/.*
 .*/node_modules/chrome-devtools-frontend/.*
 .*/node_modules/elasticlunr/test/fixtures/.*
+
+.*\.mjs
+
 [include]
 
 [libs]

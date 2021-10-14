@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import type { Props } from "./Feedback.js.flow";
+import type { Props } from "./Feedback";
 
 export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <div {...props} />)`
   ${({ theme }) => css`

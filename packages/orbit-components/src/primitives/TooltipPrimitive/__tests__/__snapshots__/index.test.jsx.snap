@@ -23,14 +23,6 @@ exports[`Tooltip it should match snapshot 1`] = `
   outline: none;
 }
 
-.c0 .Text__StyledText-sc-19qtt4y-0 {
-  display: inline-block;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  -webkit-text-decoration: underline currentColor dotted;
-  text-decoration: underline currentColor dotted;
-}
-
 .c0 [disabled] {
   pointer-events: none;
 }

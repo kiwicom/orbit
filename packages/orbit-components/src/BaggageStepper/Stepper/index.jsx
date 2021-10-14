@@ -6,7 +6,8 @@ import Button from "./Button";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
-import type { StateLessProps } from "./index.js.flow";
+
+import type { StateLessProps } from ".";
 
 const StyledStepper = styled.div`
   display: flex;

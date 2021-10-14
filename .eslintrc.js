@@ -19,13 +19,13 @@ module.exports = {
       "error",
       {
         devDependencies: [
-          "**/*.test.js",
+          "**/*.test.*",
           "**/__tests__/**",
           "**/__testfixtures__/**",
           "**/__examples__/**",
           "**/cypress/**",
-          "**/*.stories.js",
-          "**/*.config.js",
+          "**/*.stories.*",
+          "**/*.config.*",
           "**/stories/**",
           "**/tasks/**",
           "docs/**",
@@ -59,7 +59,7 @@ module.exports = {
     "react/no-multi-comp": "off",
     "react/prop-types": "off",
     "react/require-default-props": "off", // Optional props can be undefined.
-    "react/jsx-filename-extension": ["error", { extensions: [".js"] }], // Don't use jsx
+    "react/jsx-filename-extension": ["error", { extensions: [".jsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-fragments": ["error", "syntax"],
     "react/state-in-constructor": "off",
@@ -74,7 +74,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.js", "*.js.flow"],
+      files: ["*.js?(x)", "*.js?(x).flow"],
       extends: ["plugin:flowtype/recommended", "prettier/flowtype"],
       plugins: ["adeira"],
       rules: {
@@ -257,25 +257,32 @@ module.exports = {
       },
     },
     {
-      files: "**/__examples__/**/*.js",
+      files: "**/__examples__/**/*.*",
       rules: {
         "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
       },
     },
     {
-      files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
+      files: ["*.stories.*", "**/__examples__/**", "*.test.*"],
       rules: {
         "orbit-components/unique-id": "off",
       },
     },
     {
       files: [
-        "packages/orbit-components/{src,es,lib}/**/*.js",
-        "packages/orbit-design-tokens/{src,es,lib}/**/*.js",
-        "*.js.flow",
+        "packages/orbit-components/{src,es,lib}/**/*.js?(x)",
+        "packages/orbit-design-tokens/{src,es,lib}/**/*.js?(x)",
+        "*.js?(x).flow",
       ],
       rules: {
         "flowtype/require-valid-file-annotation": ["error", "always"],
+      },
+    },
+    {
+      files: "**/config/**",
+      rules: {
+        "no-restricted-syntax": "off",
+        "no-console": "off",
       },
     },
     {

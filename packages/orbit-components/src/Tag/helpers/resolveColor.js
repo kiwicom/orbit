@@ -1,5 +1,5 @@
 // @flow
-import type { ResolveColor } from "./resolveColor.js.flow";
+import type { ResolveColor } from "./resolveColor";
 
 const resolveColor: ResolveColor = ({
   removable: removableColor,

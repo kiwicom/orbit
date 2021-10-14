@@ -1,7 +1,7 @@
 // @flow
 import { useRef, useState, useCallback } from "react";
 
-import type { UseErrorTooltip } from "./useErrorTooltip.js.flow";
+import type { UseErrorTooltip } from "./useErrorTooltip";
 
 const useErrorTooltip: UseErrorTooltip = ({ onFocus }) => {
   const [tooltipShown, setTooltipShown] = useState(false);

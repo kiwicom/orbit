@@ -7,7 +7,7 @@ import type { StyledComponent } from "styled-components";
 
 import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
-import typeof CardSectionType from "./CardSection/index.js.flow";
+import typeof CardSectionType from "./CardSection";
 import type { As } from "../Heading";
 
 export type Props = {|

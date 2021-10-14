@@ -9,12 +9,13 @@ import Radio from "../../Radio";
 import Badge from "../../Badge";
 import { StyledBadge } from "../../primitives/BadgePrimitive";
 import media from "../../utils/mediaQuery";
-import type { Props } from "./index.js.flow";
 import STATES from "./consts";
 import { IconContainer, Item as ListItem } from "../../List/ListItem";
 import { rtlSpacing } from "../../utils/rtl";
 import PricingTableContext from "../PricingTableContext";
 import useMediaQuery from "../../hooks/useMediaQuery";
+
+import type { Props } from ".";
 
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {

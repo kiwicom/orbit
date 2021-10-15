@@ -348,10 +348,10 @@ export const Playground = (): React.Node => {
   const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
   const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const width = select("width", Object.values(WIDTH_AND_HEIGHT), WIDTH_AND_HEIGHT.AUTO);
+  const width = text("width", WIDTH_AND_HEIGHT.FULL);
   const minWidth = text("min-width", "");
-  const maxWidth = text("max-width", "100px");
-  const height = select("height", Object.values(WIDTH_AND_HEIGHT), WIDTH_AND_HEIGHT.AUTO);
+  const maxWidth = text("max-width", "300px");
+  const height = text("height", WIDTH_AND_HEIGHT.AUTO);
   const maxHeight = text("max-height", "100px");
   const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
   const borderRadius = select("border-radius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);

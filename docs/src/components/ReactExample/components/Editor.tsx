@@ -11,7 +11,9 @@ interface Props {
 const SandboxEditor = ({ isFullPage, onChange, code }: Props) => {
   return (
     <Editor
-      style={!isFullPage ? { margin: 0, borderRadius: "0 0 12px 12px" } : undefined}
+      style={
+        !isFullPage ? { margin: 0, borderRadius: "0 0 12px 12px", overflowY: "scroll" } : undefined
+      }
       theme={theme}
       onChange={onChange}
       language="jsx"

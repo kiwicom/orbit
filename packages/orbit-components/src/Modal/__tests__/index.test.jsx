@@ -46,10 +46,8 @@ describe("Modal", () => {
     expect(screen.getByTestId("section")).toBeInTheDocument();
     expect(screen.getByTestId("footer")).toBeInTheDocument();
     expect(screen.getByTestId("illustration")).toBeInTheDocument();
-    // title appears twice in the DOM, the second one is for the sticky header,
-    // which is initially hidden and appears on scroll
-    // when original title is out from the viewport
-    expect(screen.getAllByText("modal title")).toHaveLength(2);
+    expect(screen.getByLabelText("modal title")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "modal title" })).toBeInTheDocument();
     expect(screen.getByText("modal description")).toBeInTheDocument();
     expect(screen.getByText("header content")).toBeInTheDocument();
     expect(screen.getByText("section content")).toBeInTheDocument();

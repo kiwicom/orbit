@@ -110,6 +110,7 @@ const Board = ({
           {variants.length > 0 && (
             <Popover
               noFlip
+              placement={isFullPage ? "top-start" : "bottom-start"}
               renderInPortal={false}
               content={
                 <Variants

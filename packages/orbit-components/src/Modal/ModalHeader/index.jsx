@@ -19,7 +19,7 @@ const getModalHeading = (type, token) => ({ theme }) => {
   return getHeadingToken(token, type)({ theme });
 };
 
-export const ModalHeading: any = styled.div`
+export const ModalHeading: any = styled.h2`
   font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
   font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
   line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
@@ -159,7 +159,9 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props): React.Node => {
-  const { setHasModalTitle, hasMobileHeader, isMobileFullPage } = React.useContext(ModalContext);
+  const { setHasModalTitle, hasMobileHeader, isMobileFullPage, titleID } = React.useContext(
+    ModalContext,
+  );
 
   useModalContextFunctions();
 
@@ -182,7 +184,7 @@ const ModalHeader = ({
       {illustration}
       {hasHeader && (
         <ModalTitle illustration={!!illustration}>
-          {title && <ModalHeading>{title}</ModalHeading>}
+          {title && <ModalHeading id={titleID}>{title}</ModalHeading>}
           {description && (
             <ModalDescription>
               <Text size="large" as="div">
@@ -196,7 +198,9 @@ const ModalHeader = ({
         <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
       )}
       {title && hasMobileHeader && (
-        <MobileHeader isMobileFullPage={isMobileFullPage}>{title}</MobileHeader>
+        <MobileHeader role="presentation" isMobileFullPage={isMobileFullPage}>
+          {title}
+        </MobileHeader>
       )}
     </StyledModalHeader>
   );

@@ -122,10 +122,10 @@ export interface Props extends Common.Global {
   readonly shrink?: 0 | 1;
   readonly grow?: 0 | 1;
   readonly direction?: "row" | "column" | "row-reverse" | "column-reverse";
-  readonly width?: "full" | "auto";
+  readonly width?: string;
   readonly minWidth?: string;
   readonly maxWidth?: string;
-  readonly height?: "full" | "auto";
+  readonly height?: string;
   readonly maxHeight?: string;
   readonly position?: "absolute" | "relative" | "fixed";
   readonly left?: string;

@@ -24,3 +24,10 @@ export const TOKENS = {
   sizeHeading: "sizeHeading",
   lineHeight: "lineHeight",
 };
+
+export const ALIGN = {
+  START: "start",
+  CENTER: "center",
+  END: "end",
+  JUSTIFY: "justify",
+};

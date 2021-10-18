@@ -1,11 +1,10 @@
 // @noflow
 
-module.exports = api => {
-  api.assertVersion(7);
-  return {
-    presets: [
-      ["@babel/preset-env", { modules: api.env("esm") ? false : "cjs" }],
-      "@babel/preset-flow",
-    ],
-  };
+module.exports = {
+  presets: [require.resolve("@babel/preset-env"), require.resolve("@babel/preset-flow")],
+  env: {
+    esm: {
+      presets: [[require.resolve("@babel/preset-env"), { modules: false }]],
+    },
+  },
 };

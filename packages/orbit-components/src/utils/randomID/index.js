@@ -1,5 +1,5 @@
 // @flow
-import type { randomID } from "./index.js.flow";
+import type { randomID } from ".";
 
 /** Generates randomID, does not support SSR  */
 const randomId: randomID = (name: string) => {

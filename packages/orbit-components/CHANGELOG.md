@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.0...@kiwicom/orbit-components@1.3.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* **Box:** fix width and height types ([#3145](https://github.com/kiwicom/orbit/issues/3145)) ([c60308a](https://github.com/kiwicom/orbit/commit/c60308a4f809a002512c27c26d6ce6e6e5e8c712))
+* **Modal:** improve accessibility and testability ([#3143](https://github.com/kiwicom/orbit/issues/3143)) ([c4c7bcb](https://github.com/kiwicom/orbit/commit/c4c7bcb198658abe64bacd2b648424a6837d9b7f))
+
+
+
+
+
+# [1.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.2...@kiwicom/orbit-components@1.3.0) (2021-10-14)
+
+
+### Bug Fixes
+
+* **useRandomId:** fix missing UIDReset ([d2e0ec8](https://github.com/kiwicom/orbit/commit/d2e0ec8c2ad158df747173f6dd468a69ca929b38))
+
+
+### Features
+
+* **Heading:** add align prop ([#3141](https://github.com/kiwicom/orbit/issues/3141)) ([7dcf2bf](https://github.com/kiwicom/orbit/commit/7dcf2bf5f640b0545ee5000e3f4fef572dce2fa8))
+* **Heading:** add mediaQuery properties ([#3135](https://github.com/kiwicom/orbit/issues/3135)) ([1ecaf64](https://github.com/kiwicom/orbit/commit/1ecaf649eb8fdb4b1c0ec4afb1f366e0fed0765e))
+
+
+
+
+
 ## [1.2.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.1...@kiwicom/orbit-components@1.2.2) (2021-10-06)
 
 

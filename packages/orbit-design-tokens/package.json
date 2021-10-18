@@ -1,10 +1,9 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit",
@@ -27,11 +26,10 @@
     "build:lib": "babel src --out-dir lib --ignore **/*.test.js,src/theo/* && yarn copy:lib",
     "build:es": "babel src --out-dir es --ignore **/*.test.js,src/theo/* --env-name esm && yarn copy:es",
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
-    "prebuild": "rimraf lib src/js",
     "build": "yarn clean && yarn run build:lib && yarn run build:es && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
-    "clean": "rimraf lib es pages output"
+    "clean": "rimraf src/js lib es pages output"
   },
   "author": "Kiwi.com",
   "license": "MIT",
@@ -41,8 +39,15 @@
     "design"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.14.2",
+    "@babel/parser": "^7.13.13",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-flow": "^7.12.13",
     "babylon": "^6.18.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "copyfiles": "^2.4.0",
+    "fs-extra": "^9.0.1",
     "lodash": "^4.17.21",
     "memfs": "^3.2.0",
     "optimist": "^0.6.1",
@@ -50,6 +55,7 @@
     "xml": "^1.0.1"
   },
   "dependencies": {
-    "ramda": "^0.27.1"
+    "ramda": "^0.27.1",
+    "rimraf": "^3.0.2"
   }
 }

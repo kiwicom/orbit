@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Tag from \"@kiwicom/orbit-components/lib/Tag\";",
-  "example": "() => {\n  const [tag, setTag] = React.useState(true)\n  return (\n    <>\n      {tag && <Tag onRemove={() => setTag(false)}>Bags</Tag>}\n      {!tag && <Button onClick={() => setTag(true)}>Bring tag back</Button>}\n    </>\n  )\n}\n",
-  "info": {
-    "title": "Removing tags",
-    "description": "Passing a function in <code>onRemove</code> adds a close button to the tag."
-  }
-}

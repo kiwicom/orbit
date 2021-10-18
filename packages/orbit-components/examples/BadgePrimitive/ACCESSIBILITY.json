@@ -1,8 +1,0 @@
-{
-  "imports": "import BadgePrimitive from \"@kiwicom/orbit-components/lib/BadgePrimitive\";\nimport defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Passengers from \"@kiwicom/orbit-components/lib/icons/Passengers\";",
-  "example": "() => (\n  <BadgePrimitive\n    background={defaultTheme.orbit.backgroundBody}\n    foregroundColor={defaultTheme.orbit.colorTextPrimary}\n    ariaLabel=\"4 passengers\"\n    icon={<Icons.Passengers />}\n  >\n    4\n  </BadgePrimitive>\n)\n",
-  "info": {
-    "title": "Badge primitive accessibility",
-    "description": "To make sure their meaning is clear to everyone, badge primitives can have an aria-label to help people who can't see their visual cues."
-  }
-}

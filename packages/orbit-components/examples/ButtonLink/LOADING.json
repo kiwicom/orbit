@@ -1,8 +1,0 @@
-{
-  "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
-  "example": "() => <ButtonLink loading>Click me</ButtonLink>\n",
-  "info": {
-    "title": "Loading nutton link",
-    "description": "Loading button links are useful when content needs to be loaded before the user can take an action."
-  }
-}

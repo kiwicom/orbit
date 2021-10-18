@@ -1,8 +1,0 @@
-{
-  "imports": "import Slider from \"@kiwicom/orbit-components/lib/Slider\";",
-  "example": "() => {\n  const [priceRange, setPriceRange] = React.useState([0, 250])\n  return (\n    <Slider\n      defaultValue={[0, 250]}\n      ariaLabel={[\"Minimum price\", \"Maximum price\"]}\n      label=\"Price\"\n      minValue={0}\n      maxValue={1000}\n      valueDescription={`$${priceRange[0]}–$${priceRange[1]}`}\n      onChange={(sliderValue) => {\n        if (typeof sliderValue === \"object\") setPriceRange(sliderValue)\n      }}\n    />\n  )\n}\n",
-  "info": {
-    "title": "Two handles",
-    "description": "To let users select a range of values, pass an array to the <code>defaultValue</code>. Label both ends by passing an array of strings to <code>ariaLabel</code>."
-  }
-}

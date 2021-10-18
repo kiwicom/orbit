@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Edit from \"@kiwicom/orbit-components/lib/icons/Edit\";",
-  "example": "() => (\n  <Stack spacing=\"XLarge\">\n    <Button iconLeft={<Icons.Edit />} circled title=\"Edit this page\" />\n    <Stack spacing=\"XSmall\">\n      <Text>How much do you like Orbit?</Text>\n      <Stack direction=\"row\">\n        <Button type=\"primarySubtle\" circled iconLeft=\"1\" />\n        <Button type=\"primarySubtle\" circled iconLeft=\"2\" />\n        <Button type=\"primarySubtle\" circled iconLeft=\"3\" />\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Circled button",
-    "description": "Circled buttons should be used only with an icon or a single number. If using only an icon, remember to include a title."
-  }
-}

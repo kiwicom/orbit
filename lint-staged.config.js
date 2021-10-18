@@ -7,5 +7,4 @@ module.exports = {
   "**/!(snippets)/*.mdx": "remark -q -u validate-links --no-config",
   "packages/orbit-components/**/*.svg": "yarn components check:icons",
   ".browserslistrc": () => ["yarn update-supported-browsers"],
-  "**/__examples__/**/*.js?(x)": () => ["yarn components build:examples"],
 };

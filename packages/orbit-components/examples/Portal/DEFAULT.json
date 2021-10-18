@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Modal from \"@kiwicom/orbit-components/lib/Modal\";\nimport ModalHeader from \"@kiwicom/orbit-components/lib/ModalHeader\";\nimport ModalSection from \"@kiwicom/orbit-components/lib/ModalSection\";\nimport Portal from \"@kiwicom/orbit-components/lib/Portal\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";",
-  "example": "() => {\n  const [showModal, setShowModal] = React.useState(false)\n  return (\n    <>\n      <Portal>\n        {showModal && (\n          <Modal\n            onClose={() => {\n              setShowModal(false)\n            }}\n          >\n            <ModalHeader title=\"More about portals\" />\n            <ModalSection>\n              <Text>\n                For more on portals and how they work, read the{\" \"}\n                <TextLink href=\"https://reactjs.org/docs/portals.html\" external>\n                  React docs on portals.\n                </TextLink>\n              </Text>\n            </ModalSection>\n          </Modal>\n        )}\n      </Portal>\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
-  "info": {
-    "title": "Default portal",
-    "description": "By default, portal inserts its children into a separate div created for the purpose. Events on a child still bubble to the React parent (even thought it's not a child in the DOM)."
-  }
-}

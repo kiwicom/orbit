@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => {\n  const [checked, setChecked] = React.useState(false)\n  return (\n    <Stack>\n      <Radio\n        label=\"Cabin bag\"\n        checked={checked}\n        onChange={() => setChecked(!checked)}\n        info=\"56 × 45 × 25 cm, 8 kg\"\n        hasError\n      />\n      <Button type=\"secondary\" onClick={() => setChecked(false)}>\n        Clear\n      </Button>\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Errors",
-    "description": "Show users there is an error with a radio by passing the hasError prop. Note that the radio will show the error only when checked and disabled are false."
-  }
-}

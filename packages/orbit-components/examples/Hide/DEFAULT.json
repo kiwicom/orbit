@@ -1,8 +1,0 @@
-{
-  "imports": "import Hide from \"@kiwicom/orbit-components/lib/Hide\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack>\n    <Text>This text appears all of the time. Resize to change other text.</Text>\n    <Hide on={[\"largeMobile\", \"tablet\"]}>\n      <Text>\n        This text appears on small and wide screens&mdash;not large mobile and\n        table screens.\n      </Text>\n    </Hide>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Default hide",
-    "description": "Hide components hide their children on all screens listed in the <code>on</code> prop. By default, the display is <code>inline-block</code>."
-  }
-}

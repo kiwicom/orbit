@@ -1,8 +1,0 @@
-{
-  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "() => (\n  <Stack>\n    <Heading type=\"display\" as=\"h1\">\n      Orbit design system\n    </Heading>\n    <Heading type=\"title2\" as=\"h2\">\n      Components\n    </Heading>\n    <Text>Orbit offers many components to create travel apps.</Text>\n    <Heading type=\"title2\" as=\"h2\">\n      Utilities\n    </Heading>\n    <Text>There are also utilities to simplify development.</Text>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Heading elements",
-    "description": "When adding structure to your content, it's important that it's not represented only visually. Make the structure accessible to everyone by rendering your headings as elements in the proper hierarchy."
-  }
-}

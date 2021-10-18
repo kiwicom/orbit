@@ -1,8 +1,0 @@
-{
-  "imports": "import Table from \"@kiwicom/orbit-components/lib/Table\";\nimport TableCell from \"@kiwicom/orbit-components/lib/TableCell\";\nimport TableBody from \"@kiwicom/orbit-components/lib/TableBody\";\nimport TableHead from \"@kiwicom/orbit-components/lib/TableHead\";\nimport TableFooter from \"@kiwicom/orbit-components/lib/TableFooter\";\nimport TableRow from \"@kiwicom/orbit-components/lib/TableRow\";\nimport FlightReturn from \"@kiwicom/orbit-components/lib/icons/FlightReturn\";",
-  "example": "() => (\n  <Table>\n    <TableHead>\n      <TableRow>\n        <TableCell align=\"left\" as=\"th\">\n          Trip\n        </TableCell>\n        <TableCell align=\"left\" as=\"th\">\n          Cost\n        </TableCell>\n      </TableRow>\n    </TableHead>\n    <TableBody>\n      <TableRow>\n        <TableCell align=\"left\">\n          Madrid <Icons.FlightReturn /> Moscow\n        </TableCell>\n        <TableCell align=\"left\">€197</TableCell>\n      </TableRow>\n      <TableRow>\n        <TableCell align=\"left\">\n          Barcelona <Icons.FlightReturn /> Istanbul\n        </TableCell>\n        <TableCell align=\"left\">€184</TableCell>\n      </TableRow>\n      <TableRow>\n        <TableCell align=\"left\">\n          Valencia <Icons.FlightReturn /> Dubai\n        </TableCell>\n        <TableCell align=\"left\">€475</TableCell>\n      </TableRow>\n    </TableBody>\n    <TableFooter>\n      <TableRow>\n        <TableCell align=\"left\">Total</TableCell>\n        <TableCell align=\"left\">€856</TableCell>\n      </TableRow>\n    </TableFooter>\n  </Table>\n)\n",
-  "info": {
-    "title": "Footer",
-    "description": "When including numeric data in tables, footers can provide a clear place for a summary."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import NotificationBadge from \"@kiwicom/orbit-components/lib/NotificationBadge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <Stack flex>\n      <NotificationBadge type=\"critical\">3</NotificationBadge>\n      <NotificationBadge type=\"criticalInverted\">3</NotificationBadge>\n    </Stack>\n    <Stack flex>\n      <NotificationBadge type=\"info\">3</NotificationBadge>\n      <NotificationBadge type=\"infoInverted\">3</NotificationBadge>\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Types",
-    "description": "Notification badges have two basic types. Use critical badges when user action is required and info badges when it's not required."
-  }
-}

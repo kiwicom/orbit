@@ -26,6 +26,10 @@ function configureGitHubToken(done) {
   }
 }
 
+function installDependencies() {
+  return spawn("yarn", ["install"], { stdio: "inherit" });
+}
+
 async function previewChangelog(done) {
   const packages = await getPackages();
   const streams = packages
@@ -73,5 +77,5 @@ function publishPackages() {
 }
 
 module.exports = {
-  publish: series(configureGitHubToken, previewChangelog, publishPackages),
+  publish: series(configureGitHubToken, installDependencies, previewChangelog, publishPackages),
 };

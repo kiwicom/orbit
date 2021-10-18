@@ -1,8 +1,0 @@
-{
-  "imports": "import Coupon from \"@kiwicom/orbit-components/lib/Coupon\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "() => (\n  <Text>\n    Use\n    <Coupon>Baggagefree</Coupon>\n    when booking to add free baggage.\n  </Text>\n)\n",
-  "info": {
-    "title": "Default coupon",
-    "description": "Coupons render their child text as a <code>&lt;mark&gt;</code> element styled as all caps."
-  }
-}

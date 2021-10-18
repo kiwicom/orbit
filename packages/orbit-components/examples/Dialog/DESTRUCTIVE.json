@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Dialog from \"@kiwicom/orbit-components/lib/Dialog\";",
-  "example": "() => {\n  const [showDialog, setShowDialog] = React.useState(false)\n  return (\n    <>\n      {showDialog && (\n        <Dialog\n          title=\"Remove traveler?\"\n          description=\"You can't undo this.\"\n          primaryAction={\n            <Button\n              onClick={() => {\n                setShowDialog(false)\n              }}\n              type=\"critical\"\n            >\n              Remove\n            </Button>\n          }\n          secondaryAction={\n            <Button\n              type=\"secondary\"\n              onClick={() => {\n                setShowDialog(false)\n              }}\n            >\n              Cancel\n            </Button>\n          }\n        />\n      )}\n      {!showDialog && (\n        <Button\n          onClick={() => {\n            setShowDialog(true)\n          }}\n        >\n          Show dialog\n        </Button>\n      )}\n    </>\n  )\n}\n",
-  "info": {
-    "title": "Destructive dialog",
-    "description": "Make sure to warn users about destructive actions."
-  }
-}

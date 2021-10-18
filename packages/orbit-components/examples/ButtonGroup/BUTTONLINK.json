@@ -1,8 +1,0 @@
-{
-  "imports": "import ButtonGroup from \"@kiwicom/orbit-components/lib/ButtonGroup\";\nimport ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
-  "example": "() => (\n  <ButtonGroup>\n    <ButtonLink\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=aircraft\"\n    >\n      Check flights\n    </ButtonLink>\n    <ButtonLink\n      external\n      href=\"https://www.kiwi.com/en/search/results/london-united-kingdom/paris-france/anytime/anytime?bags=1.0&transport=bus\"\n    >\n      Check buses\n    </ButtonLink>\n  </ButtonGroup>\n)\n",
-  "info": {
-    "title": "Button group with button links",
-    "description": "Button groups can join together less important actions as button links."
-  }
-}

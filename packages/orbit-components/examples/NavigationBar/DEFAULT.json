@@ -1,8 +1,0 @@
-{
-  "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport LinkList from \"@kiwicom/orbit-components/lib/LinkList\";\nimport NavigationBar from \"@kiwicom/orbit-components/lib/NavigationBar\";\nimport TextLink from \"@kiwicom/orbit-components/lib/TextLink\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <NavigationBar>\n    <Stack direction=\"row\" align=\"center\" justify=\"center\">\n      <ButtonLink href=\"https://orbit.kiwi\">\n        <img\n          src=\"https://orbit.kiwi/files/2019/08/cropped-OrbitLogo-1.png\"\n          alt=\"Orbit by Kiwi.com\"\n          height=\"40px\"\n        />\n      </ButtonLink>\n      <LinkList direction=\"row\">\n        <TextLink type=\"secondary\">Travel</TextLink>\n        <TextLink type=\"secondary\">Rooms</TextLink>\n        <TextLink type=\"secondary\">Careers</TextLink>\n      </LinkList>\n      <Stack inline>\n        <LinkList direction=\"row\">\n          <TextLink type=\"secondary\">English</TextLink>\n          <TextLink type=\"secondary\">Help</TextLink>\n          <TextLink type=\"secondary\">My account</TextLink>\n        </LinkList>\n      </Stack>\n    </Stack>\n  </NavigationBar>\n)\n",
-  "info": {
-    "title": "Default navigation bar",
-    "description": "Drawers should appear on a user action and be closable."
-  }
-}

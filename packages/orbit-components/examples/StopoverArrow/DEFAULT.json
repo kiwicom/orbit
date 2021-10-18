@@ -1,8 +1,0 @@
-{
-  "imports": "import StopoverArrow from \"@kiwicom/orbit-components/lib/StopoverArrow\";",
-  "example": "() => <StopoverArrow stops=\"2\" />\n",
-  "info": {
-    "title": "Default stopover arrow",
-    "description": "Stopover arrows only require the number of stops."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import CarrierLogo from \"@kiwicom/orbit-components/lib/CarrierLogo\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OK\",\n          type: \"airline\",\n          name: \"Czech Airlines\",\n        },\n      ]}\n    />\n    <Stack direction=\"row\" spacing=\"XXSmall\" align=\"center\">\n      <CarrierLogo\n        carriers={[\n          {\n            code: \"OK\",\n            type: \"airline\",\n            name: \"\",\n          },\n        ]}\n      />\n      <Text>Czech Airlines</Text>\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Accessibility",
-    "description": "When the logo is used alone, include the name of the carrier for people who won't see the logo. If the carrier name is present in the text, include a blank name so as not to unnecessarily repeat it."
-  }
-}

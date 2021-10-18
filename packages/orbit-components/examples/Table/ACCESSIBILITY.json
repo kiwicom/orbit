@@ -1,8 +1,0 @@
-{
-  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Table from \"@kiwicom/orbit-components/lib/Table\";\nimport TableCell from \"@kiwicom/orbit-components/lib/TableCell\";\nimport TableBody from \"@kiwicom/orbit-components/lib/TableBody\";\nimport TableHead from \"@kiwicom/orbit-components/lib/TableHead\";\nimport TableRow from \"@kiwicom/orbit-components/lib/TableRow\";",
-  "example": "() => (\n  <Stack>\n    <Heading as=\"h3\" type=\"title3\">\n      Passengers\n    </Heading>\n    <Table>\n      <TableHead>\n        <TableRow>\n          <TableCell as=\"th\" scope=\"col\">\n            Name\n          </TableCell>\n          <TableCell as=\"th\" scope=\"col\">\n            Age\n          </TableCell>\n          <TableCell as=\"th\" scope=\"col\">\n            Email\n          </TableCell>\n        </TableRow>\n      </TableHead>\n      <TableBody>\n        <TableRow>\n          <TableCell as=\"th\" scope=\"row\">\n            Nicolás Pérez\n          </TableCell>\n          <TableCell>34</TableCell>\n          <TableCell>nic-p@example.com</TableCell>\n        </TableRow>\n        <TableRow>\n          <TableCell as=\"th\" scope=\"row\">\n            Freja Møller\n          </TableCell>\n          <TableCell>39</TableCell>\n          <TableCell>freja21@example.com</TableCell>\n        </TableRow>\n      </TableBody>\n    </Table>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Accessibility",
-    "description": "Tables can be very accessible provided you use their semantic features. Render headers as th elements (not just in bold) and use scope to define which cells the header covers."
-  }
-}

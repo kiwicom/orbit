@@ -1,8 +1,0 @@
-{
-  "imports": "import Accordion from \"@kiwicom/orbit-components/lib/Accordion\";\nimport AccordionSection from \"@kiwicom/orbit-components/lib/AccordionSection\";",
-  "example": "() => (\n  <Accordion loading>\n    <AccordionSection>Seat map outbound</AccordionSection>\n    <AccordionSection>Seat map inbound</AccordionSection>\n  </Accordion>\n)\n",
-  "info": {
-    "title": "Loading accordion",
-    "description": "Pass the loading prop if you need to wait for data to load before displaying the accordion."
-  }
-}

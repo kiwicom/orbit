@@ -1,8 +1,0 @@
-{
-  "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport Check from \"@kiwicom/orbit-components/lib/icons/Check\";",
-  "example": "() => (\n  <Alert\n    icon={<Icons.Check />}\n    title=\"Your payment was successful.\"\n    type=\"success\"\n  />\n)\n",
-  "info": {
-    "title": "Success alert",
-    "description": "Success alerts confirm that an instruction from the user, such as to make a payment or request a refund, was processed successfully. Usually used without an action button."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <Text>Primary text</Text>\n    <Text type=\"secondary\">Secondary text</Text>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Text color",
-    "description": "There are two main colors to work with: primary (Ink / Normal) and secondary (Ink / Light)."
-  }
-}

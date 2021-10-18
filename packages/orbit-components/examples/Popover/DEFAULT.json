@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Popover from \"@kiwicom/orbit-components/lib/Popover\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport QuestionCircle from \"@kiwicom/orbit-components/lib/icons/QuestionCircle\";",
-  "example": "() => (\n  <Popover\n    content={\n      <Stack spacing=\"small\">\n        <ButtonLink\n          external\n          type=\"secondary\"\n          fullWidth\n          href=\"https://orbit.kiwi/components/popover/react/\"\n        >\n          Reference\n        </ButtonLink>\n        <ButtonLink\n          external\n          type=\"secondary\"\n          fullWidth\n          href=\"https://orbit.kiwi/components/popover/\"\n        >\n          Guidelines\n        </ButtonLink>\n      </Stack>\n    }\n  >\n    <Button circled title=\"Help\" iconLeft={<Icons.QuestionCircle />} />\n  </Popover>\n)\n",
-  "info": {
-    "title": "Default popover",
-    "description": "By default, popovers will open on a click of their trigger with a preference for aligning with the start of and underneath their child."
-  }
-}

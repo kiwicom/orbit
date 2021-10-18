@@ -1,8 +1,0 @@
-{
-  "imports": "import CarrierLogo from \"@kiwicom/orbit-components/lib/CarrierLogo\";\nimport List from \"@kiwicom/orbit-components/lib/List\";\nimport ListItem from \"@kiwicom/orbit-components/lib/ListItem\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport InformationCircle from \"@kiwicom/orbit-components/lib/icons/InformationCircle\";\nimport Airplane from \"@kiwicom/orbit-components/lib/icons/Airplane\";",
-  "example": "() => (\n  <Stack>\n    <List>\n      <ListItem icon={<Icons.Check color=\"success\" />}>\n        Download boarding passes\n      </ListItem>\n      <ListItem icon={<Icons.Check color=\"success\" />}>\n        Get exclusive deals\n      </ListItem>\n      <ListItem icon={<Icons.Check color=\"success\" />}>\n        Book in one click\n      </ListItem>\n    </List>\n    <List>\n      <ListItem\n        icon={\n          <CarrierLogo\n            carriers={[\n              {\n                code: \"FR\",\n                name: \"Ryanair\",\n              },\n            ]}\n          />\n        }\n      >\n        Airline: Ryanair\n      </ListItem>\n      <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>\n      <ListItem icon={<Icons.Airplane />}>Plane: Airbus A320</ListItem>\n    </List>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Lists with icons",
-    "description": "To make the lists more engaging, you can use other icons or carrier logos in place of the circles for the items."
-  }
-}

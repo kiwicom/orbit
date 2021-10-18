@@ -1,8 +1,0 @@
-{
-  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport BadgePrimitive from \"@kiwicom/orbit-components/lib/BadgePrimitive\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport AirplaneTakeoff from \"@kiwicom/orbit-components/lib/icons/AirplaneTakeoff\";",
-  "example": "() => (\n  <Stack flex>\n    <BadgePrimitive\n      icon={<Icons.AirplaneTakeoff />}\n      background=\"linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)\"\n      foregroundColor={defaultTheme.orbit.colorTextWhite}\n    >\n      Orbit\n    </BadgePrimitive>\n    <BadgePrimitive\n      icon={<Icons.AirplaneTakeoff />}\n      background=\"url(https://images.kiwi.com/photos/60x60/paris_fr.jpg)\"\n      foregroundColor={defaultTheme.orbit.colorTextWhite}\n    >\n      Orbit\n    </BadgePrimitive>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Colors",
-    "description": "You can set the background and foreground color. Backgrounds can be any CSS property, including gradients and images. For the forground, only colors are available and affect both text and icon."
-  }
-}

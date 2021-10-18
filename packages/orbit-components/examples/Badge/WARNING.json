@@ -1,8 +1,0 @@
-{
-  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <Badge type=\"warning\" icon={<Icons.Alert ariaLabel=\"Warning\" />}>\n      Not yet confirmed\n    </Badge>\n    <Badge type=\"warningInverted\" icon={<Icons.Alert ariaLabel=\"Warning\" />}>\n      Not yet confirmed\n    </Badge>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Warning badges",
-    "description": "Warning badges highlight information that might have a negative impact on the user but isn’t critical. They are associated with negative emotions so only use them occasionally to stop potential problems before they happen."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <Badge\n      type=\"critical\"\n      icon={<Icons.AlertCircle ariaLabel=\"Critical alert\" />}\n    >\n      No connection to internet\n    </Badge>\n    <Badge\n      type=\"criticalInverted\"\n      icon={<Icons.AlertCircle ariaLabel=\"Critical alert\" />}\n    >\n      No connection to internet\n    </Badge>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Critical badges",
-    "description": "Critical badges call attention to problems that require immediate attention from the user. These badges create feelings of stress so only use them for issues where they’re truly necessary."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack>\n    <Text>Text aligned to the left</Text>\n    <Text align=\"center\">Text aligned in the center</Text>\n    <Text align=\"right\">Text aligned to the right</Text>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Text alignment",
-    "description": "You can align text to the left, center, or right."
-  }
-}

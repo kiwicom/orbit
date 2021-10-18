@@ -48,6 +48,7 @@ const getBackground = (type: BgType) => ({ theme }) => {
 export const StyledFrame = styled.iframe<Partial<Props>>`
   ${({ background }) => css`
     width: 100%;
+    height: 100%;
     ${background && getBackground(background)};
   `};
 `;

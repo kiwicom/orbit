@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.0...@kiwicom/orbit-components@1.3.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* **Box:** fix width and height types ([#3145](https://github.com/kiwicom/orbit/issues/3145)) ([c60308a](https://github.com/kiwicom/orbit/commit/c60308a4f809a002512c27c26d6ce6e6e5e8c712))
+* **Modal:** improve accessibility and testability ([#3143](https://github.com/kiwicom/orbit/issues/3143)) ([c4c7bcb](https://github.com/kiwicom/orbit/commit/c4c7bcb198658abe64bacd2b648424a6837d9b7f))
+
+
+
+
+
 # [1.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.2...@kiwicom/orbit-components@1.3.0) (2021-10-14)
 
 

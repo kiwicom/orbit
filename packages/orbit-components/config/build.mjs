@@ -27,7 +27,6 @@ const logStep = msg => {
       "**/__tests__/**",
       "**/*.test.*",
       "**/__typetests__/**",
-      "**/__examples__/**",
       "**/examples.*",
       "**/*.stories.*",
     ],

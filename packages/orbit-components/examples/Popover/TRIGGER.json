@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Popover from \"@kiwicom/orbit-components/lib/Popover\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport ChevronDown from \"@kiwicom/orbit-components/lib/icons/ChevronDown\";",
-  "example": "() => (\n  <Popover\n    content={\n      <Stack spacing=\"small\">\n        <ButtonLink\n          external\n          type=\"secondary\"\n          fullWidth\n          href=\"https://orbit.kiwi/components/popover/react/\"\n        >\n          Reference\n        </ButtonLink>\n        <ButtonLink\n          external\n          type=\"secondary\"\n          fullWidth\n          href=\"https://orbit.kiwi/components/popover/\"\n        >\n          Guidelines\n        </ButtonLink>\n      </Stack>\n    }\n    preferredPosition=\"bottom\"\n  >\n    <Button iconRight={<Icons.ChevronDown />} type=\"secondary\">\n      Learn more\n    </Button>\n  </Popover>\n)\n",
-  "info": {
-    "title": "Clear trigger",
-    "description": "Popovers hide information from the initial screen, so make it clear to users how they can get that information, such as with a button with a chevron down icon on the right."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import ServiceLogo from \"@kiwicom/orbit-components/lib/ServiceLogo\";",
-  "example": "() => <ServiceLogo name=\"NewYorkTimes\" />\n",
-  "info": {
-    "title": "Default service logo",
-    "description": "By default, carrier logos present a medium version of a logo. The name of the service is included as the alternative text."
-  }
-}

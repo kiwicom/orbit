@@ -1,8 +1,0 @@
-{
-  "imports": "import Tag from \"@kiwicom/orbit-components/lib/Tag\";",
-  "example": "() => {\n  const [selected, setSelected] = React.useState(false)\n  return (\n    <Tag selected={selected} onClick={() => setSelected(!selected)}>\n      Bags\n    </Tag>\n  )\n}\n",
-  "info": {
-    "title": "Selected",
-    "description": "To show tags that users have selected, use the <code>selected</code> prop. Often best combined with <code>onClick</code>."
-  }
-}

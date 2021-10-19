@@ -1,8 +1,0 @@
-{
-  "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <SocialButton type=\"apple\">Sign in with Apple </SocialButton>\n    <SocialButton type=\"facebook\">Sign in with Facebook </SocialButton>\n    <SocialButton type=\"google\">Sign in with Google </SocialButton>\n    <SocialButton type=\"twitter\">Sign in with Twitter </SocialButton>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Types",
-    "description": "Social buttons automatically display the logo for the selected service."
-  }
-}

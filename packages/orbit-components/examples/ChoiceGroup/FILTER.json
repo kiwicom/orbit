@@ -1,8 +1,0 @@
-{
-  "imports": "import ChoiceGroup from \"@kiwicom/orbit-components/lib/ChoiceGroup\";\nimport Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";\nimport Radio from \"@kiwicom/orbit-components/lib/Radio\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => {\n  const [checked, setChecked] = React.useState({\n    plane: false,\n    train: false,\n    auto: false,\n  })\n  const [radio, setRadio] = React.useState(\"\")\n  return (\n    <Stack>\n      <ChoiceGroup\n        label=\"Transport to search\"\n        filter\n        onChange={(event) => {\n          const { name } = event.target\n          setChecked((prevState) => ({ ...prevState, [name]: !checked[name] }))\n        }}\n      >\n        <Checkbox name=\"plane\" label=\"Planes\" checked={checked.plane} />\n        <Checkbox name=\"train\" label=\"Trains\" checked={checked.train} />\n        <Checkbox name=\"auto\" label=\"Automobiles\" checked={checked.auto} />\n      </ChoiceGroup>\n      <ChoiceGroup\n        filter\n        label=\"Number of stops\"\n        onChange={(event) => setRadio(event.target.name)}\n      >\n        <Radio name=\"non\" label=\"Nonstop\" checked={radio === \"non\" || false} />\n        <Radio\n          name=\"1stop\"\n          label=\"Up to 1 stop\"\n          checked={radio === \"1stop\" || false}\n        />\n        <Radio\n          name=\"2stop\"\n          label=\"Up to 2 stops\"\n          checked={radio === \"2stop\" || false}\n        />\n      </ChoiceGroup>\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Choice groups as filters",
-    "description": "When used as filters, choice groups change their children by adding a background to hover and adding additional padding."
-  }
-}

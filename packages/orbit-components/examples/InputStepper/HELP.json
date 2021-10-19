@@ -1,8 +1,0 @@
-{
-  "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
-  "example": "() => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      label=\"Travelers\"\n      minValue={1}\n      defaultValue={2}\n      maxValue={10}\n      titleIncrement=\"Add a traveler\"\n      titleDecrement=\"Remove a traveler\"\n      help=\"At least 1 and no more than 10 travelers\"\n    />\n  </div>\n)\n",
-  "info": {
-    "title": "Help",
-    "description": "Help text can guide users to making the right choice. Note that an error message will override the help text."
-  }
-}

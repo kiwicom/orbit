@@ -1,8 +1,0 @@
-{
-  "imports": "import InputStepper from \"@kiwicom/orbit-components/lib/InputStepper\";",
-  "example": "() => (\n  <div\n    style={{\n      maxWidth: \"11em\",\n    }}\n  >\n    <InputStepper\n      step={15}\n      defaultValue={30}\n      maxValue={180}\n      minValue={15}\n      label=\"Minutes between journeys\"\n      titleIncrement=\"Add 15 minutes\"\n      titleDecrement=\"Subtract 15 minutes\"\n    />\n  </div>\n)\n",
-  "info": {
-    "title": "Step",
-    "description": "To increment by a number other than 1, use the <code>step</code> prop."
-  }
-}

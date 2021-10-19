@@ -1,8 +1,0 @@
-{
-  "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";",
-  "example": "() => <ButtonLink>Click me</ButtonLink>\n",
-  "info": {
-    "title": "Default button link",
-    "description": "The default button link is a primary button link with its children as its text."
-  }
-}

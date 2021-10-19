@@ -1,8 +1,0 @@
-{
-  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport ButtonPrimitive from \"@kiwicom/orbit-components/lib/ButtonPrimitive\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <ButtonPrimitive\n      padding={defaultTheme.orbit.paddingButtonSmall}\n      background={defaultTheme.orbit.backgroundButtonSecondary}\n      foreground={defaultTheme.orbit.colorTextPrimary}\n    >\n      Click me\n    </ButtonPrimitive>\n    <ButtonPrimitive\n      padding={defaultTheme.orbit.paddingButtonNormal}\n      background={defaultTheme.orbit.backgroundButtonSecondary}\n      foreground={defaultTheme.orbit.colorTextPrimary}\n    >\n      Click me\n    </ButtonPrimitive>\n    <ButtonPrimitive\n      padding={defaultTheme.orbit.paddingButtonLarge}\n      background={defaultTheme.orbit.backgroundButtonSecondary}\n      foreground={defaultTheme.orbit.colorTextPrimary}\n    >\n      Click me\n    </ButtonPrimitive>\n    <ButtonPrimitive\n      padding=\"16px 8px\"\n      background={defaultTheme.orbit.backgroundButtonSecondary}\n      foreground={defaultTheme.orbit.colorTextPrimary}\n    >\n      Click me\n    </ButtonPrimitive>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Padding",
-    "description": "You can set the padding within the button as you wish."
-  }
-}

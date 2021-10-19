@@ -1,8 +1,0 @@
-{
-  "imports": "import SocialButton from \"@kiwicom/orbit-components/lib/SocialButton\";",
-  "example": "() => {\n  const ref = React.useRef(null)\n  return (\n    <SocialButton\n      ref={ref}\n      href=\"https://reactjs.org/docs/refs-and-the-dom.html\"\n      external\n    >\n      Read more\n    </SocialButton>\n  )\n}\n",
-  "info": {
-    "title": "Refs",
-    "description": "See how to implement refs with buttons. Click the button to read more about when and how to use refs."
-  }
-}

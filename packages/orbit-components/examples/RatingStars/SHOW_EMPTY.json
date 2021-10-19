@@ -1,8 +1,0 @@
-{
-  "imports": "import RatingStars from \"@kiwicom/orbit-components/lib/RatingStars\";",
-  "example": "() => <RatingStars rating={3} showEmpty />\n",
-  "info": {
-    "title": "Show empty stars",
-    "description": "To display stars that were not given, use the <code>showEmpty</code> prop."
-  }
-}

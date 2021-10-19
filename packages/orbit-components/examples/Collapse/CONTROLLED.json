@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Collapse from \"@kiwicom/orbit-components/lib/Collapse\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Slider from \"@kiwicom/orbit-components/lib/Slider\";",
-  "example": "() => {\n  const [collapsed, setCollapsed] = React.useState(false)\n  return (\n    <Stack>\n      <Button onClick={() => setCollapsed(!collapsed)}>\n        {collapsed ? \"Close\" : \"Open\"} collapse\n      </Button>\n      <Collapse\n        expanded={collapsed}\n        label=\"Duration\"\n        onClick={() => setCollapsed(!collapsed)}\n      >\n        <Slider\n          label=\"Travel time\"\n          defaultValue={[0, 5]}\n          maxValue={24}\n          minValue={0}\n        />\n      </Collapse>\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Controlled component",
-    "description": "When passed the expanded prop, the collapse becomes a controlled component. You can then control the state using the onClick prop on the collapse or any other action."
-  }
-}

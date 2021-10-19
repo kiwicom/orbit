@@ -13,7 +13,6 @@
     "check:icons": "babel-node config/checkIconsCli.js",
     "build:iconsPng": "node config/generatePngIcons.js",
     "build:storybook": "babel-node config/buildIcons.js && build-storybook -c .storybook -o .out -s ./static",
-    "build:examples": "babel-node config/buildExample.js 'src/**/__examples__/*'",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "fetch-translations": "babel-node config/fetchTranslations.js",
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",

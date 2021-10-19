@@ -1,8 +1,0 @@
-{
-  "imports": "import Textarea from \"@kiwicom/orbit-components/lib/Textarea\";",
-  "example": "() => {\n  const [value, setValue] = React.useState(\"\")\n  return (\n    <Textarea\n      error={value ? \"\" : \"Please enter some feedback\"}\n      value={value}\n      onChange={(event) => setValue(event.target.value)}\n      help=\"Tell us what you liked about your booking experience and what could change.\"\n      label=\"Your feedback\"\n      placeholder=\"What I liked about booking with Kiwi.com was ...\"\n    />\n  )\n}\n",
-  "info": {
-    "title": "Error messages",
-    "description": "Include error messages when validation isn't passed, either on change in focus or form submission. Note that an error message will override any help text."
-  }
-}

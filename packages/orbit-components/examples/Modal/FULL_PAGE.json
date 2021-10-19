@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Modal from \"@kiwicom/orbit-components/lib/Modal\";\nimport ModalSection from \"@kiwicom/orbit-components/lib/ModalSection\";",
-  "example": "() => {\n  const [showModal, setShowModal] = React.useState(true)\n  return (\n    <>\n      {showModal && (\n        <Modal\n          isMobileFullPage\n          onClose={() => {\n            setShowModal(false)\n          }}\n        >\n          <ModalSection>\n            This modal will cover the entire screen when the window width is\n            small.\n          </ModalSection>\n        </Modal>\n      )}\n      {!showModal && (\n        <Button\n          onClick={() => {\n            setShowModal(true)\n          }}\n        >\n          Show modal\n        </Button>\n      )}\n    </>\n  )\n}\n",
-  "info": {
-    "title": "Full page modal",
-    "description": "If you have lots to show users and the context isn't as important, set isModalFullPage to true and the modal will cover the whole screen on small devices."
-  }
-}

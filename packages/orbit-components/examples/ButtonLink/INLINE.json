@@ -1,8 +1,0 @@
-{
-  "imports": "import ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport BaggageCabin from \"@kiwicom/orbit-components/lib/icons/BaggageCabin\";",
-  "example": "() => (\n  <Stack direction=\"column\" spacing=\"condensed\">\n    <Heading as=\"h3\" type=\"title3\">\n      Baggage\n    </Heading>\n    <Stack flex spacing=\"condensed\">\n      <Icons.BaggageCabin />\n      <Stack direction=\"column\" basis=\"160px\" spacing=\"extraTight\">\n        <Text>Cabin bag</Text>\n        <Text type=\"secondary\">65 × 45 × 25 cm, 10 kg</Text>\n      </Stack>\n\n      <Stack direction=\"column\" spacing=\"none\">\n        <Text>$16.48</Text>\n        <ButtonLink type=\"inline\" compact>\n          Change\n        </ButtonLink>\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Inline button links",
-    "description": "Inline button links work for actions outside paragraphs. They provide enough of a vertical target area so users can interact with them. Make them compact so they don't have horizontal padding and they're useful in small spaces."
-  }
-}

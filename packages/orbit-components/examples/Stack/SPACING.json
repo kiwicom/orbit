@@ -1,8 +1,0 @@
-{
-  "imports": "import SPACINGS from \"@kiwicom/orbit-components/lib/SPACINGS/SPACINGS\";\nimport defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => {\n  const divStyle = {\n    width: \"40px\",\n    height: \"40px\",\n    backgroundColor: defaultTheme.orbit.paletteInkLight,\n  }\n  return (\n    <Stack>\n      {Object.values(SPACINGS).map((spacing) => (\n        <Stack key={spacing}>\n          <Heading as=\"h3\" type=\"title3\">\n            <code>{spacing}</code>{\" \"}\n            {spacing === SPACINGS.MEDIUM && `(the default) `}\n          </Heading>\n          <Stack flex spacing={spacing}>\n            <div style={divStyle} />\n            <div style={divStyle} />\n            <div style={divStyle} />\n          </Stack>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Spacing",
-    "description": "Stacks offer a variety of options for spacing between children."
-  }
-}

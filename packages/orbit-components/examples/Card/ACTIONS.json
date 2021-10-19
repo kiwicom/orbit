@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonLink from \"@kiwicom/orbit-components/lib/ButtonLink\";\nimport Card from \"@kiwicom/orbit-components/lib/Card\";\nimport CardSection from \"@kiwicom/orbit-components/lib/CardSection\";\nimport Dialog from \"@kiwicom/orbit-components/lib/Dialog\";",
-  "example": "() => {\n  const [showDialog, setShowDialog] = React.useState(false)\n  return (\n    <>\n      <Card\n        title=\"Passenger info\"\n        actions={\n          <ButtonLink\n            size=\"small\"\n            onClick={() => {\n              setShowDialog(true)\n            }}\n          >\n            Edit list\n          </ButtonLink>\n        }\n      >\n        <CardSection>Yasmin Karenth</CardSection>\n      </Card>\n      {showDialog && (\n        <Dialog\n          title=\"Here you could edit this list\"\n          primaryAction={\n            <Button\n              onClick={() => {\n                setShowDialog(false)\n              }}\n            >\n              Close\n            </Button>\n          }\n        />\n      )}\n    </>\n  )\n}\n",
-  "info": {
-    "title": "Card actions",
-    "description": "Cards and card sections can have actions associated with the card or section. Note that a title is required to display the actions."
-  }
-}

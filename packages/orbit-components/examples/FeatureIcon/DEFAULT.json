@@ -1,8 +1,0 @@
-{
-  "imports": "import FeatureIcon from \"@kiwicom/orbit-components/lib/FeatureIcon\";",
-  "example": "() => <FeatureIcon name=\"TicketStandard\" />\n",
-  "info": {
-    "title": "Default feature icon",
-    "description": "By default, the icon is displayed with the name of the feature as the alternative text."
-  }
-}

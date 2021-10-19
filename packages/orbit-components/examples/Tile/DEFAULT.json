@@ -1,8 +1,0 @@
-{
-  "imports": "import Tile from \"@kiwicom/orbit-components/lib/Tile\";",
-  "example": "() => (\n  <Tile\n    onClick={() => {\n      window.location = \"https://orbit.kiwi/guides/progressive-disclosure/\"\n    }}\n  >\n    Read more about progressive disclosure\n  </Tile>\n)\n",
-  "info": {
-    "title": "Default tile",
-    "description": "By default, tiles act as a wrapper to add an action to content."
-  }
-}

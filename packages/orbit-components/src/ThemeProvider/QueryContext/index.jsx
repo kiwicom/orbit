@@ -5,6 +5,7 @@ import useTheme from "../../hooks/useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 
 import typeof ContextType, { QueryContextProvider as ProviderType } from ".";
+import type { QueryMap, Context } from ".";
 
 const initialValue = {
   isLargeDesktop: null,
@@ -18,16 +19,9 @@ const initialValue = {
 const QueryContext: ContextType = React.createContext(initialValue);
 QueryContext.displayName = "QueryOrbitContext";
 
-type Query = $Keys<typeof initialValue>;
+type Query = $Keys<Context>;
 
 const QUERIES: Query[] = Object.keys(initialValue);
-const DEVICE = {
-  isMediumMobile: "mediumMobile",
-  isLargeMobile: "largeMobile",
-  isTablet: "tablet",
-  isDesktop: "desktop",
-  isLargeDesktop: "largeDesktop",
-};
 
 export const QueryContextProvider: ProviderType = ({ children }) => {
   const theme = useTheme();
@@ -35,38 +29,42 @@ export const QueryContextProvider: ProviderType = ({ children }) => {
   const [value, setValue] = React.useState(initialValue);
 
   React.useEffect(() => {
-    const mqLists: Array<{|
-      query: Query,
-      mqList: MediaQueryList,
-    |}> = [];
+    let mqListMap: QueryMap<MediaQueryList>;
 
-    const queryChangeHandler = () => {
+    const listener = () => {
       setValue(prev => {
         const result = { ...prev };
-        mqLists.forEach(({ query, mqList }) => {
-          result[query] = mqList.matches;
+        QUERIES.forEach(query => {
+          result[query] = mqListMap[query].matches;
         });
         return result;
       });
     };
 
     if (window !== "undefined") {
-      QUERIES.forEach(query => {
-        const mqList = window.matchMedia(
-          query === "prefersReducedMotion"
-            ? `(prefers-reduced-motion: reduce)`
-            : getBreakpointWidth(DEVICE[query], theme),
-        );
-        mqLists.push({ query, mqList });
-        mqList.addListener(queryChangeHandler);
-      });
+      const createMqList = (mediaQuery: string): MediaQueryList => {
+        const mqList = window.matchMedia(mediaQuery);
+        mqList.addListener(listener);
+        return mqList;
+      };
+
+      mqListMap = {
+        isMediumMobile: createMqList(getBreakpointWidth("mediumMobile", theme)),
+        isLargeMobile: createMqList(getBreakpointWidth("largeMobile", theme)),
+        isTablet: createMqList(getBreakpointWidth("tablet", theme)),
+        isDesktop: createMqList(getBreakpointWidth("desktop", theme)),
+        isLargeDesktop: createMqList(getBreakpointWidth("largeDesktop", theme)),
+        prefersReducedMotion: createMqList("(prefers-reduced-motion: reduce)"),
+      };
+
+      // initialize
+      listener();
     }
 
-    // initialize
-    queryChangeHandler();
-
     return () => {
-      mqLists.forEach(({ mqList }) => mqList.removeListener(queryChangeHandler));
+      QUERIES.forEach(query => {
+        mqListMap[query].removeListener(listener);
+      });
     };
   }, [theme]);
 

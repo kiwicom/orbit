@@ -1,7 +1,6 @@
-/*
-/*/
-!/svg/
-!readme.md
-!.gitignore
-!.eslintrc
-!.npmignore
+/*.js
+/*.jsx
+/*.ts
+/*.tsx
+/*.flow
+/*.d.ts

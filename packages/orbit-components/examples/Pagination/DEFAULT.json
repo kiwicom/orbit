@@ -1,8 +1,0 @@
-{
-  "imports": "import Pagination from \"@kiwicom/orbit-components/lib/Pagination\";",
-  "example": "() => {\n  const [currentPage, setCurrentPage] = React.useState(2)\n  return (\n    <Pagination\n      pageCount={7}\n      onPageChange={(selectedPage) => setCurrentPage(selectedPage)}\n      selectedPage={currentPage}\n    />\n  )\n}\n",
-  "info": {
-    "title": "Default pagination",
-    "description": "By default, all pages up to 7 are displayed as buttons on large screens."
-  }
-}

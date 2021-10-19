@@ -1,8 +1,0 @@
-{
-  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Layout from \"@kiwicom/orbit-components/lib/Layout\";\nimport LayoutColumn from \"@kiwicom/orbit-components/lib/LayoutColumn\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "() => {\n  const style = {\n    minHeight: defaultTheme.orbit.heightIllustrationMedium,\n    background: defaultTheme.orbit.backgroundBody,\n  }\n  return (\n    <Layout type=\"MMB\">\n      <LayoutColumn>\n        <div style={style}>\n          <Text>\n            This column is designed for the main content. It&apos;s always\n            visible.\n          </Text>\n        </div>\n      </LayoutColumn>\n    </Layout>\n  )\n}\n",
-  "info": {
-    "title": "MMB layout",
-    "description": "The MMB layout is a one-column layout with the same visibility no matter the screen size."
-  }
-}

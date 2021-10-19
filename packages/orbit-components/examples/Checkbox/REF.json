@@ -1,8 +1,0 @@
-{
-  "imports": "import Checkbox from \"@kiwicom/orbit-components/lib/Checkbox\";",
-  "example": "() => {\n  const ref = React.useRef(null)\n  React.useEffect(() => {\n    if (ref.current) {\n      ref.current.focus()\n    }\n  })\n  return <Checkbox label=\"Allow notifications\" ref={ref} readOnly />\n}\n",
-  "info": {
-    "title": "References",
-    "description": "For actions like automatically focusing on a checkbox, use the ref prop."
-  }
-}

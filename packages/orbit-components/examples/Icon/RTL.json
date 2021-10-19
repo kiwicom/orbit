@@ -1,8 +1,0 @@
-{
-  "imports": "import RenderInRtl from \"@kiwicom/orbit-components/lib/RenderInRtl\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <RenderInRtl>\n      <Icons.Airplane ariaLabel=\"Airplane\" />\n    </RenderInRtl>\n    <RenderInRtl>\n      <Icons.Airplane reverseOnRtl ariaLabel=\"Airplane\" />\n    </RenderInRtl>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Right-to-left icons",
-    "description": "Within right-to-left settings, icons will also reverse direction if they are passed the reverseOnRtl prop."
-  }
-}

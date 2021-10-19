@@ -7,6 +7,7 @@ import { BgType } from "..";
 interface Props {
   pageId: string;
   background?: BgType;
+  isFullPage?: boolean;
   height?: number;
   exampleId: string;
   origin: string;
@@ -46,14 +47,14 @@ const getBackground = (type: BgType) => ({ theme }) => {
 };
 
 export const StyledFrame = styled.iframe<Partial<Props>>`
-  ${({ background }) => css`
+  ${({ background, isFullPage }) => css`
     width: 100%;
-    height: 100%;
+    height: ${isFullPage && `100%`};
     ${background && getBackground(background)};
   `};
 `;
 
-const Frame = ({ background, exampleId, height, pageId, origin }: Props) => {
+const Frame = ({ background, isFullPage, exampleId, height, pageId, origin }: Props) => {
   const [measuredHeight, setMeasuredHeight] = React.useState<number>(0);
   const [loaded, setLoaded] = React.useState(false);
 
@@ -73,6 +74,7 @@ const Frame = ({ background, exampleId, height, pageId, origin }: Props) => {
 
   return (
     <StyledFrame
+      isFullPage={isFullPage}
       background={background}
       title={exampleId}
       height={height || measuredHeight || DEFAULT_HEIGHT}

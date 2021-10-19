@@ -1,8 +1,0 @@
-{
-  "imports": "import Tile from \"@kiwicom/orbit-components/lib/Tile\";\nimport TileGroup from \"@kiwicom/orbit-components/lib/TileGroup\";\nimport BaggageChecked30 from \"@kiwicom/orbit-components/lib/icons/BaggageChecked30\";\nimport Child from \"@kiwicom/orbit-components/lib/icons/Child\";\nimport Meal from \"@kiwicom/orbit-components/lib/icons/Meal\";",
-  "example": "() => (\n  <TileGroup>\n    <Tile\n      icon={<Icons.BaggageChecked30 />}\n      href=\"https://www.kiwi.com/en/?help=%2Ffaq%2Fbaggage-131\"\n      external\n      title=\"Baggage\"\n      description=\"Everything you need to know about your baggage allowance.\"\n    />\n    <Tile\n      icon={<Icons.Child />}\n      href=\"https://www.kiwi.com/?help=%2Ffaq%2Ftraveling-with-children-120\"\n      external\n      title=\"Traveling with children\"\n      description=\"How to bring your family with you.\"\n    />\n    <Tile\n      icon={<Icons.Meal />}\n      href=\"https://www.kiwi.com/en/?help=%2Ffaq%2Fseats-meals-and-pets-133%2Farticle%2Fhow-do-i-pre-book-my-meals-3\"\n      external\n      title=\"Meals\"\n      description=\"Choose a tasty meal to enjoy on your trip.\"\n    />\n  </TileGroup>\n)\n",
-  "info": {
-    "title": "Default tile group",
-    "description": "Tile groups can contain many things. To keep the proper styling, don't include any DOM elements other than tiles."
-  }
-}

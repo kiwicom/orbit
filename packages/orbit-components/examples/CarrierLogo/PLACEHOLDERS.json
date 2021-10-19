@@ -1,8 +1,0 @@
-{
-  "imports": "import CarrierLogo from \"@kiwicom/orbit-components/lib/CarrierLogo\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OrbitAir\",\n          type: \"airline\",\n          name: \"Orbit Airlines\",\n        },\n      ]}\n    />\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OrbitBus\",\n          type: \"bus\",\n          name: \"Orbit Bus\",\n        },\n      ]}\n    />\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OrbitFerry\",\n          type: \"ferry\",\n          name: \"Orbit Ferry Lines\",\n        },\n      ]}\n    />\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OrbitPriv\",\n          type: \"private_transfer\",\n          name: \"Orbit Private Transport\",\n        },\n      ]}\n    />\n    <CarrierLogo\n      carriers={[\n        {\n          code: \"OrbitTrain\",\n          type: \"train\",\n          name: \"Orbit Rail\",\n        },\n      ]}\n    />\n  </Stack>\n)\n",
-  "info": {
-    "title": "Placeholders",
-    "description": "Define the type of carrier so that the proper placeholder image can be displayed if no logo is returned."
-  }
-}

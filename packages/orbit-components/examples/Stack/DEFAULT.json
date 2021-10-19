@@ -1,8 +1,0 @@
-{
-  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => {\n  const divStyle = {\n    width: \"160px\",\n    height: \"40px\",\n    backgroundColor: defaultTheme.orbit.paletteInkLight,\n  }\n  return (\n    <Stack>\n      <div style={divStyle} />\n      <div style={divStyle} />\n      <div style={divStyle} />\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Default stack",
-    "description": "By default, stacks display columns of their children with medium spacing between them. They are also not flexbox containers without a flex property being defined."
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Popover from \"@kiwicom/orbit-components/lib/Popover\";\nimport Slider from \"@kiwicom/orbit-components/lib/Slider\";",
-  "example": "() => (\n  <Popover\n    content={\n      <Slider label=\"Volume\" minValue={0} maxValue={100} defaultValue={33} />\n    }\n    width=\"320px\"\n  >\n    <Button iconRight={<Icons.ChevronDown ariaLabel=\"Open slider\" />}>\n      Volume\n    </Button>\n  </Popover>\n)\n",
-  "info": {
-    "title": "Sliders on mobile devices",
-    "description": "Whenever you use a slider for a mobile device, wrap it in a Popover."
-  }
-}

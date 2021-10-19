@@ -119,6 +119,7 @@ const Example = ({
           pageId={exampleId}
           exampleId={exampleId}
           height={height}
+          isFullPage={isFullPage}
           background={selectedBackground}
         />
       </StyledWrapperFrame>

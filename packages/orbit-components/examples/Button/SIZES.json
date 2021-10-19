@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack flex>\n    <Button size=\"small\">Small button</Button>\n    <Button>Normal button</Button>\n    <Button size=\"large\">Large button</Button>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Button sizes",
-    "description": "Buttons come in three sizes: small, normal, and large."
-  }
-}

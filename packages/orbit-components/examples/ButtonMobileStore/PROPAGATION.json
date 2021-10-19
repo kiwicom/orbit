@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport ButtonMobileStore from \"@kiwicom/orbit-components/lib/ButtonMobileStore\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Tile from \"@kiwicom/orbit-components/lib/Tile\";",
-  "example": "() => {\n  const [text, setText] = React.useState(\"\")\n  return (\n    <Stack>\n      <Tile\n        title=\"Clickable container\"\n        description=\"Click me to see the actions below.\"\n        onClick={() => setText((prevText) => `${prevText} clicked card`)}\n      >\n        <Stack direction=\"column\">\n          <Stack>\n            <Heading as=\"h3\" type=\"title3\">\n              Button that will not propagate\n            </Heading>\n            <ButtonMobileStore stopPropagation type=\"googlePlay\" />\n          </Stack>\n          <Stack>\n            <Heading as=\"h3\" type=\"title3\">\n              Button that will propagate\n            </Heading>\n            <ButtonMobileStore type=\"googlePlay\" />\n          </Stack>\n        </Stack>\n      </Tile>\n      {text && (\n        <Stack direction=\"column\">\n          <Button onClick={() => setText(\"\")} type=\"secondary\">\n            Clear actions\n          </Button>\n          <Text>{text}</Text>\n        </Stack>\n      )}\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Propagation",
-    "description": "To have clicks on mobile store buttons not bubble up to their containers, use the <code>stopPropagation</code> prop. Otherwise, clicks will propagation and affect both parent and child components."
-  }
-}

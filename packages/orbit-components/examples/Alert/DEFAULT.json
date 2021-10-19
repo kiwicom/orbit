@@ -1,8 +1,0 @@
-{
-  "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";",
-  "example": "() => <Alert icon title=\"You've got mail\" />\n",
-  "info": {
-    "title": "Default Alert",
-    "description": "The recommended default use for an Alert is to have an icon and a title no longer than one line. To use a different icon, pass it as a React element to the icon prop."
-  }
-}

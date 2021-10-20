@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.1...@kiwicom/orbit-components@1.4.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* **ModalHeader:** remove margins from title ([e9ae04d](https://github.com/kiwicom/orbit/commit/e9ae04d2d5ca0098a12e38b37078e453992d31f9))
+
+
+### Features
+
+* export Theme type from root ([#3125](https://github.com/kiwicom/orbit/issues/3125)) ([0531faa](https://github.com/kiwicom/orbit/commit/0531faa9a34c628eefb3cb9619770b0d43380bd9))
+
+
+
+
+
 ## [1.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.0...@kiwicom/orbit-components@1.3.1) (2021-10-18)
 
 

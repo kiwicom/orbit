@@ -25,7 +25,7 @@ const Popover = ({
   offset,
   placement = PLACEMENTS.BOTTOM_START,
   fixed,
-  lockScrolling,
+  lockScrolling = true,
   noFlip,
   allowOverflow,
   noPadding,

@@ -20,6 +20,7 @@ const getModalHeading = (type, token) => ({ theme }) => {
 };
 
 export const ModalHeading: any = styled.h2`
+  margin: 0;
   font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
   font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
   line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};

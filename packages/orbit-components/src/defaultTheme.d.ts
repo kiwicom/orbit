@@ -3,16 +3,16 @@
 
 import { Tokens } from "@kiwicom/orbit-design-tokens";
 
-export interface Theme {
+export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;
   readonly lockScrolling?: boolean;
   readonly rtl?: boolean;
 }
 
-export interface ThemeProps {
-  theme: Theme;
-}
+export type ThemeType = {
+  theme: ThemeShape;
+};
 
-declare const defaultTheme: Theme;
-export default defaultTheme;
+declare const Theme: ThemeShape;
+export default Theme;

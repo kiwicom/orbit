@@ -1,5 +1,5 @@
-import { Theme } from "../../defaultTheme";
+import { ThemeShape } from "../../defaultTheme";
 
-declare const useTheme: () => Theme;
+declare const useTheme: () => ThemeShape;
 
 export { useTheme, useTheme as default };

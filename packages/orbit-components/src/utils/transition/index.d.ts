@@ -1,11 +1,11 @@
-import { ThemeProps } from "../../defaultTheme";
+import { ThemeType } from "../../defaultTheme";
 
 export type TransitionDuration = "slow" | "normal" | "fast";
 
-export declare const transition: (
+export declare const Transition: (
   properties: string[],
   duration: TransitionDuration,
   timingFunction: string,
-) => (options: ThemeProps) => string | null;
+) => (theme: ThemeType) => string | null;
 
-export default transition;
+export default Transition;

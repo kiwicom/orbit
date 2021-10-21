@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import { createRouter } from "@nanostores/router";
 import { useStore } from "nanostores/react";
+import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
-import { ThemeProvider, defaultTheme } from "../../src";
 import LockScrolling from "./pages/lock-scrolling";
 import ModalFooter from "./pages/modal-footer";
 

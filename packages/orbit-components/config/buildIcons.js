@@ -94,14 +94,14 @@ names.forEach(async ({ inputFileName, outputComponentFileName, functionName }) =
     })
     .catch(err => console.error(err));
 
-  // write .js.flow for every icon
+  // write Flow declaration for every icon
   fs.writeFileSync(
     path.join(componentPath, `${outputComponentFileName}.flow`),
     flowTemplate(functionName),
   );
-  // write .d.ts for every icon
+  // write TypeScript declaration for every icon
   fs.writeFileSync(
-    path.join(componentPath, `${outputComponentFileName.replace(".js", "")}.d.ts`),
+    path.join(componentPath, `${outputComponentFileName.replace(/\.jsx?/, "")}.d.ts`),
     typescriptTemplate(functionName),
   );
 });

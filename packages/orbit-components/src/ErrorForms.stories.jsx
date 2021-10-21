@@ -154,7 +154,7 @@ Error.story = {
 
 export const Help = (): React.Node => {
   const label = text("Label", "Label");
-  const help = text("Error", "Something is not quite right");
+  const help = text("Help", "Is the spelling correct?");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
   const prefix = text("Prefix", "$");
@@ -165,7 +165,7 @@ export const Help = (): React.Node => {
     <Stack>
       <InputField
         size={size}
-        help={help}
+        help={<TextLink>{help}</TextLink>}
         label={label}
         value={value}
         placeholder={placeholder}

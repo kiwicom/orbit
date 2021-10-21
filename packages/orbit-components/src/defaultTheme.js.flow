@@ -8,6 +8,9 @@ export type Theme = {|
   +rtl?: boolean,
 |};
 
+// backwards compatibility
+export type { Theme as ThemeShape };
+
 export type ThemeProps = {|
   theme: Theme,
 |};

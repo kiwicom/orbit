@@ -10,6 +10,9 @@ export interface Theme {
   readonly rtl?: boolean;
 }
 
+// backwards compatibility
+export { Theme as ThemeShape };
+
 export interface ThemeProps {
   theme: Theme;
 }

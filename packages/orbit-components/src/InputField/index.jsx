@@ -72,7 +72,7 @@ const Field: any = styled(
     position: relative;
     display: block;
     flex: 1 1 100%;
-    width: ${$width || "100%"};
+    width: ${$width};
     margin-bottom: ${getSpacingToken};
   `}
 `;
@@ -372,7 +372,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
     autoFocus,
     spaceAfter,
     id,
-    width,
+    width = "100%",
     inputMode,
     insideInputGroup,
     dataAttrs,

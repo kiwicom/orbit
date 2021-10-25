@@ -23,7 +23,7 @@ const Field = styled.label`
     font-family: ${theme.orbit.fontFamily};
     display: block;
     position: relative;
-    width: ${$width || `100%`};
+    width: ${$width};
     margin-bottom: ${getSpacingToken};
   `}
 `;
@@ -118,7 +118,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     onRemoveFile,
     dataTest,
     spaceAfter,
-    width,
+    width = "100%",
     help,
     error,
     onFocus,

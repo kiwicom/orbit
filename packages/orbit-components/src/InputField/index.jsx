@@ -67,12 +67,14 @@ const Field: any = styled(
     },
   ),
 )`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  position: relative;
-  display: block;
-  flex: 1 1 100%;
-  width: 100%;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, $width }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    position: relative;
+    display: block;
+    flex: 1 1 100%;
+    width: ${$width || "100%"};
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -370,6 +372,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
     autoFocus,
     spaceAfter,
     id,
+    width,
     inputMode,
     insideInputGroup,
     dataAttrs,
@@ -395,6 +398,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
     <>
       <Field
         component={label ? "label" : "div"}
+        $width={width}
         spaceAfter={spaceAfter}
         ref={fieldRef}
         htmlFor={label ? inputId : undefined}

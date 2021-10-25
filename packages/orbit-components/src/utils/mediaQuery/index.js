@@ -25,16 +25,16 @@ export const getBreakpointWidth: GetBreakpointWidth = (name, theme, pure) => {
   return pure ? theme.orbit[TOKEN[name]] : `(min-width: ${theme.orbit[TOKEN[name]]}px)`;
 };
 
-const mediaQueries: MediaQueries = {};
 // https://davidwalsh.name/flow-object-values
 const devices: $Values<typeof QUERIES>[] = [...(Object.values(QUERIES): any)];
 
-devices.forEach(device => {
-  mediaQueries[device] = style => css`
+const mediaQueries: MediaQueries = devices.reduce((acc, device) => {
+  acc[device] = style => css`
     @media ${({ theme }) => getBreakpointWidth(device, theme)} {
       ${style};
     }
   `;
-});
+  return acc;
+}, {});
 
 export default mediaQueries;

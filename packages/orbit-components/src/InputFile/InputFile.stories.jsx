@@ -122,6 +122,7 @@ export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
   const required = boolean("required", false);
+  const width = text("width", "");
 
   return (
     <InputFile
@@ -130,6 +131,7 @@ export const Playground = (): React.Node => {
       name={name}
       placeholder={placeholder}
       fileName={fileName}
+      width={width}
       error={error}
       help={help}
       required={required}

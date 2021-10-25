@@ -19,7 +19,7 @@ export type Props = {|
   +allowedFileTypes?: string | string[],
   +insideInputGroup?: boolean,
   +help?: React.Node,
-  +width?: string;
+  +width?: string,
   +error?: React.Node,
   tabIndex?: string | number,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

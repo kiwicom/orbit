@@ -1,6 +1,6 @@
 // @noflow
 const browserslist = require("browserslist");
-const caniuse = require("caniuse-db/data.json").agents;
+const caniuse = require("caniuse-lite").agents;
 
 module.exports = {
   transforms: {

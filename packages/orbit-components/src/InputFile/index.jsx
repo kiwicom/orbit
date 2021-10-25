@@ -19,11 +19,13 @@ import mq from "../utils/mediaQuery";
 import type { Props } from ".";
 
 const Field = styled.label`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: block;
-  position: relative;
-  width: 100%;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, $width }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: block;
+    position: relative;
+    width: ${$width || `100%`};
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -116,6 +118,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     onRemoveFile,
     dataTest,
     spaceAfter,
+    width,
     help,
     error,
     onFocus,
@@ -142,7 +145,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
+    <Field spaceAfter={spaceAfter} ref={label ? null : labelRef} $width={width}>
       <Input
         data-test={dataTest}
         aria-required={required}

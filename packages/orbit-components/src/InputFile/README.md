@@ -35,6 +35,7 @@ Table below contains all types of the props available in the InputFile component
 | ref              | `func`                     |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)                                                                             |
 | spaceAfter       | `enum`                     |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
+| width            | `string`                   | `100%`               | Specifies width of InputFile                                                                                                                                   |
 
 ## Functional specs
 

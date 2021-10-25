@@ -9,7 +9,7 @@ type QueryFunction = (style: CSSRules) => CSSRules;
 declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: false): string;
 // https://flow.org/en/docs/types/intersections/#declaring-overloaded-functions
 // eslint-disable-next-line no-redeclare
-declare function getBreakpointWidth(name: Devices, theme: Theme, pure: true): number;
+declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: boolean): number | string;
 
 declare var mediaQueries: { [key: Devices]: QueryFunction };
 

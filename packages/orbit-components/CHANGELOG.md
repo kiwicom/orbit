@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.4.0...@kiwicom/orbit-components@1.5.0) (2021-10-21)
+
+
+### Bug Fixes
+
+* bring back missing icon Flow declarations ([9c0dcac](https://github.com/kiwicom/orbit/commit/9c0dcacde636535371d48600cc3cbf32485908e8))
+* **ErrorForms:** fix font-size ([#3151](https://github.com/kiwicom/orbit/issues/3151)) ([323c480](https://github.com/kiwicom/orbit/commit/323c480e9de6a1232c4da9325eb093ec5659fe6c))
+* **useLockScrolling:** support nested scroll locks ([#3149](https://github.com/kiwicom/orbit/issues/3149)) ([8215c85](https://github.com/kiwicom/orbit/commit/8215c85c6ef237ff65cbcbe14e69d46b8e9af5d5))
+
+
+### Features
+
+* add new icon: deals v2 ([08edbf9](https://github.com/kiwicom/orbit/commit/08edbf921f6f59b38466f34326070c76270d6e28))
+
+
+### Reverts
+
+* Revert "feat: export Theme type from root (#3125)" ([c0754d9](https://github.com/kiwicom/orbit/commit/c0754d985f8a38e7fb434e884b9ebe987a689374)), closes [#3125](https://github.com/kiwicom/orbit/issues/3125)
+
+
+
+
+
+# [1.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.1...@kiwicom/orbit-components@1.4.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* **ModalHeader:** remove margins from title ([e9ae04d](https://github.com/kiwicom/orbit/commit/e9ae04d2d5ca0098a12e38b37078e453992d31f9))
+
+
+### Features
+
+* export Theme type from root ([#3125](https://github.com/kiwicom/orbit/issues/3125)) ([0531faa](https://github.com/kiwicom/orbit/commit/0531faa9a34c628eefb3cb9619770b0d43380bd9))
+
+
+
+
+
 ## [1.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.0...@kiwicom/orbit-components@1.3.1) (2021-10-18)
 
 

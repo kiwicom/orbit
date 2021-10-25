@@ -245,7 +245,6 @@ declare export var ThemeProvider: ThemeProviderType;
 declare export var Translate: TranslateType;
 
 declare export var defaultTheme: Theme;
-export type { Theme };
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 

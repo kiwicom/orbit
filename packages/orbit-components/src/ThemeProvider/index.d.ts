@@ -4,10 +4,10 @@
 import * as React from "react";
 
 import { Translations } from "../Dictionary";
-import { Theme } from "../defaultTheme";
+import { ThemeShape } from "../defaultTheme";
 
 interface Props {
-  readonly theme: Theme;
+  readonly theme: ThemeShape;
   readonly dictionary?: Translations;
   readonly children: React.ReactNode;
 }

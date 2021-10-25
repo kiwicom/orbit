@@ -115,7 +115,12 @@ const StyledTooltipContent = styled.div`
 
     & ${StyledText}, ${Item}, a {
       color: ${theme.orbit.paletteWhite};
+      font-size: ${theme.orbit.fontSizeTextNormal};
       font-weight: ${theme.orbit.fontWeightNormal};
+      &:hover,
+      &:focus {
+        color: ${theme.orbit.paletteWhite};
+      }
     }
 
     ${media.largeMobile(css`
@@ -125,12 +130,6 @@ const StyledTooltipContent = styled.div`
       ${StyledText}, ${Item}, a {
         font-weight: ${theme.orbit.fontWeightMedium};
         font-size: ${theme.orbit.fontSizeTextSmall};
-      }
-      a:hover {
-        color: ${theme.orbit.paletteWhite};
-      }
-      a:focus {
-        color: ${theme.orbit.paletteWhite};
       }
     `)};
   `}

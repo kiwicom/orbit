@@ -2,12 +2,16 @@
 // Project: http://github.com/kiwicom/orbit
 import type { Interpolation } from "styled-components";
 
-import { Theme } from "../../defaultTheme";
+import { ThemeShape } from "../../defaultTheme";
 import { Devices } from "./consts";
 
 type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
 declare const MediaQuery: Record<Devices, QueryFunction>;
-declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: boolean): number | string;
+declare function getBreakpointWidth(
+  name: Devices,
+  theme: ThemeShape,
+  pure?: boolean,
+): number | string;
 
 export { MediaQuery, MediaQuery as default, getBreakpointWidth };

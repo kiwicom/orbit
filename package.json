@@ -10,7 +10,6 @@
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "docs": "yarn workspace @kiwicom/orbit.kiwi",
     "size:build": "yarn tokens size:build && yarn components size:build",
-    "build-ci": "yarn size:build",
     "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",

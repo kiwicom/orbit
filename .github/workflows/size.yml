@@ -1,4 +1,4 @@
-name: Compressed Size
+name: Size
 
 on: [pull_request]
 
@@ -10,13 +10,19 @@ env: # Set environment variables for every job and step in this workflow
   STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
 
 jobs:
-  build:
+  measure:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: preactjs/compressed-size-action@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Size limit
+        uses: andresz1/size-limit-action@v1
         with:
-          build-script: build-ci
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          pattern: "packages/orbit-components/lib/**/*.js"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_step: install
+          build_script: size:build

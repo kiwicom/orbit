@@ -44,7 +44,7 @@ export const QueryContextProvider: ProviderType = ({ children }) => {
     if (window !== "undefined") {
       const createMqList = (mediaQuery: string): MediaQueryList => {
         const mqList = window.matchMedia(mediaQuery);
-        mqList.addListener(listener);
+        mqList.addEventListener("change", listener);
         return mqList;
       };
 

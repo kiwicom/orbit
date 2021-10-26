@@ -49,6 +49,12 @@ describe("InputFile", () => {
     expect(onChange).toHaveBeenCalled();
   });
 
+  it("should have passed width", () => {
+    const width = "100px";
+    render(<InputFile width={width} label="label" />);
+    expect(document.querySelector("Label")).toHaveStyle({ width });
+  });
+
   it("should have filename, onRemoveFile", () => {
     const onRemoveFile = jest.fn();
 

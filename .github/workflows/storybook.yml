@@ -16,9 +16,8 @@ env: # Set environment variables for every job and step in this workflow
   STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    name: Build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -32,68 +31,25 @@ jobs:
       - name: Build Storybook
         run: yarn components build:storybook
 
-      - name: Upload storybook artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifacts
-          path: packages/orbit-components/.out
-          retention-days: 5
-
-  deploy_branch:
-    needs: build
-    # do not run on master branch
-    if: github.ref != 'refs/heads/master'
-    runs-on: ubuntu-latest
-    name: Deploy branch
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Node
-        uses: ./.github/actions/node
-
-      - name: Restore storybook artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build-artifacts
-          path: packages/orbit-components/.out
-
       - name: Get BRANCH_URL
         run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
 
-      - name: Get PR_NUMBER
-        run: echo "PR_NUMBER=${{github.event.number}}" >> $GITHUB_ENV
-
       - name: Get DOMAIN
-        # we're adding to the domain name the username of the current owner of SURGE_TOKEN
         run: echo "DOMAIN=https://orbit-silvenon-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
 
-      - name: Publish
-        run: yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+      - name: Deploy to staging
+        # do not run on master branch
+        if: github.ref != 'refs/heads/master'
+        # we're adding to the domain name the username of the current owner of SURGE_TOKEN
+        run: |
+          yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+          yarn components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
+        env:
+          PR_NUMBER: ${{ github.event.number }}
 
-      - name: Update description
-        run: yarn components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
-
-  deploy_master:
-    needs: build
-    # run on master branch
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    name: Deploy to GitHub Pages
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Node
-        uses: ./.github/actions/node
-
-      - name: Restore storybook artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build-artifacts
-          path: packages/orbit-components/.out
-
-      - name: Deploy storybook
+      - name: Deploy to production
+        # run on master branch
+        if: github.ref == 'refs/heads/master'
         run: yarn components deploy:storybook --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

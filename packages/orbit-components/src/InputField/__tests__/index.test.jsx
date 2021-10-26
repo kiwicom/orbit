@@ -107,7 +107,7 @@ describe("InputField", () => {
   it("should have passed width", () => {
     const width = "100px";
     render(<InputField width={width} label="label" />);
-    expect(document.querySelector("Label")).toHaveStyle({ width });
+    expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
   describe("compact", () => {

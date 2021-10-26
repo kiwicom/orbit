@@ -52,7 +52,7 @@ describe("InputFile", () => {
   it("should have passed width", () => {
     const width = "100px";
     render(<InputFile width={width} label="label" />);
-    expect(document.querySelector("Label")).toHaveStyle({ width });
+    expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
   it("should have filename, onRemoveFile", () => {

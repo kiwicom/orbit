@@ -10,6 +10,8 @@
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
+[![minified and gzipped size](https://img.shields.io/bundlephobia/minzip/@kiwicom/orbit-components@latest)](https://bundlephobia.com/package/@kiwicom/orbit-components)
+
 <strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
 
 </div>

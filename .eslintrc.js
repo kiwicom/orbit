@@ -280,6 +280,9 @@ module.exports = {
     },
     {
       files: "**/config/**",
+      globals: {
+        argv: false,
+      },
       rules: {
         "no-restricted-syntax": "off",
         "no-console": "off",

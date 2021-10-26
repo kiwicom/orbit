@@ -9,6 +9,7 @@
     "components": "yarn workspace @kiwicom/orbit-components",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "docs": "yarn workspace @kiwicom/orbit.kiwi",
+    "size": "yarn size:build && size-limit",
     "size:build": "yarn tokens size:build && yarn components size:build",
     "build-ci": "yarn size:build",
     "preinstall": "node scripts/ci-streamline-env.js",

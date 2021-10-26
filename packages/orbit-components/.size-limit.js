@@ -1,34 +1,48 @@
-const globby = require("globby");
-const path = require("path");
+/* eslint-disable no-restricted-syntax */
+const { fs } = require("zx");
+const _ = require("lodash");
+
+const { peerDependencies } = require("./package.json");
+
+const exportMatches = fs
+  .readFileSync(`${__dirname}/src/index.js`)
+  .toString()
+  .matchAll(
+    /export (\{ (default as )?(?<importedModules>.*) \}|\* as (?<importNamespace>.*)) from "(?<modulePath>.*)"/g,
+  );
+
+const entries = [];
+
+for (const {
+  groups: { importedModules, importNamespace, modulePath },
+} of exportMatches) {
+  const name = modulePath.startsWith(".")
+    ? modulePath.replace(/^\.\//, "").split("/").slice(-1)[0]
+    : modulePath;
+  entries.push({
+    name,
+    path: `${__dirname}/es/index.js`,
+    import: `{ ${importedModules || importNamespace} }`,
+  });
+}
 
 module.exports = [
   {
-    name: "Orbit",
+    name: "Orbit ESM",
+    path: `${__dirname}/es/size-measurer.js`,
+    import: "{ Orbit }",
+    limit: "185 kB",
+  },
+  {
+    name: "Orbit CJS",
     path: `${__dirname}/lib/index.js`,
+    import: "{ Orbit }",
     limit: "210 kB",
   },
-  ...globby
-    .sync([`${__dirname}/lib/*/index.js`, `${__dirname}/lib/primitives/*/index.js`])
-    .map(file => ({
-      name: path.basename(path.dirname(file)),
-      path: file,
-    })),
-  {
-    name: "icons",
-    path: `${__dirname}/lib/icons/index.js`,
-  },
-  // hooks we have documented + hooks that should probably be exposed as well
-  ...["useFocusTrap", "useLockScrolling", "useMediaQuery", "useRandomId", "useTheme"].map(hook => ({
-    name: hook,
-    path: `${__dirname}/lib/hooks/${hook}/index.js`,
-  })),
-  ...["mediaQuery", "rtl"].map(utility => ({
-    name: utility,
-    path: `${__dirname}/lib/utils/${utility}/index.js`,
-  })),
-].map(part => ({
-  ...part,
-  ignore: ["react", "react-dom", "styled-components"],
+  ..._.sortBy(entries, "name"),
+].map(entry => ({
+  ...entry,
+  ignore: Object.keys(peerDependencies),
   modifyWebpackConfig(config) {
     // eslint-disable-next-line no-param-reassign
     config.resolve = {

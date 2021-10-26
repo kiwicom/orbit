@@ -53,6 +53,7 @@ const pathOverwrites = {
   useLockScrolling: "hooks/useLockScrolling",
   useRandomId: "hooks/useRandomId",
   useRandomIdSeed: { path: "hooks/useRandomId", named: true },
+  useFocusTrap: "hooks/useFocusTrap",
 };
 
 const parsedImportPaths = [

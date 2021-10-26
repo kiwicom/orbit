@@ -124,6 +124,7 @@
     "dotenv-safe": "^8.2.0",
     "fs-extra": "^9.0.1",
     "glob": "^7.1.2",
+    "globby": "^11.0.4",
     "isomorphic-unfetch": "^3.1.0",
     "jest-matchmedia-mock": "^1.1.0",
     "jest-styled-components": "^7.0.5",

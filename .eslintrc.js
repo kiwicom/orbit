@@ -36,6 +36,7 @@ module.exports = {
           "**/scripts/**",
           "gulpfile.js",
           "**/.remarkrc.js",
+          "**/.size-limit.js",
         ],
       },
     ],

@@ -17,7 +17,7 @@ export type Props = {|
   +info?: React.Node,
   +readOnly?: boolean,
   +tabIndex?: string | number,
-  +tooltip?: ?React.Element<typeof Tooltip>,
+  +tooltip?: React.Element<typeof Tooltip>,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   ...Globals,
 |};

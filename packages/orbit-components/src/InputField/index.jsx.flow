@@ -32,6 +32,7 @@ export type Props = {|
   +disabled?: boolean,
   +maxValue?: number,
   +minValue?: number,
+  +width?: string,
   +maxLength?: number,
   +minLength?: number,
   required?: boolean,

@@ -57,6 +57,7 @@ const InputStepperStateless = ({
   onDecrement,
   onIncrement,
   disabledIncrement,
+  width,
   disabledDecrement,
   titleIncrement,
   titleDecrement,
@@ -67,6 +68,7 @@ const InputStepperStateless = ({
         dataTest={dataTest}
         size={size}
         label={label}
+        width={width}
         disabled={disabled}
         required={required}
         readOnly={readOnly}

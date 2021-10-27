@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.0...@kiwicom/orbit-components@1.6.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* **cloneWithTooltip:** wrong type declaration ([52c2418](https://github.com/kiwicom/orbit/commit/52c2418c06fbd4f8ea4aae6765e29ff48c1b2963))
+
+
+
+
+
 # [1.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.5.0...@kiwicom/orbit-components@1.6.0) (2021-10-27)
 
 

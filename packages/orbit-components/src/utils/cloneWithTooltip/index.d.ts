@@ -1,7 +1,7 @@
 import * as React from "react";
 
 declare const CloneWithTooltip: (
-  tooltip: Record<string, string>,
+  tooltip: React.ReactElement<any>,
   children: React.ReactElement<any>,
 ) => React.ReactElement<any>;
 

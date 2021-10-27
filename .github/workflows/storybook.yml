@@ -31,14 +31,18 @@ jobs:
       - name: Build Storybook
         run: yarn components build:storybook
 
+      # TODO: find an alternative to using "if" statements for so many steps
+
       - name: Get BRANCH_URL
+        # do not run on master branch
+        if: github.ref != 'refs/heads/master'
         run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
 
       - name: Get DOMAIN
+        if: github.ref != 'refs/heads/master'
         run: echo "DOMAIN=https://orbit-silvenon-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
 
       - name: Deploy to staging
-        # do not run on master branch
         if: github.ref != 'refs/heads/master'
         # we're adding to the domain name the username of the current owner of SURGE_TOKEN
         run: |

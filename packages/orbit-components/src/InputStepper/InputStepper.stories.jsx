@@ -150,6 +150,7 @@ export const Playground = (): React.Node => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
   const readOnly = boolean("readOnly", false);
+  const width = text("width", "");
 
   return (
     <InputStepper
@@ -160,6 +161,7 @@ export const Playground = (): React.Node => {
       error={error}
       help={help}
       name={name}
+      width={width}
       maxValue={max}
       minValue={min}
       disabled={disabled}

@@ -821,7 +821,7 @@ function App() {
 
 * **Modal:** size prop is changed, added new value
 CODEMODE: jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js
-<pathToYourCode> --parser=flow|ts
+pathToYourCode --parser=flow|ts
 
 
 

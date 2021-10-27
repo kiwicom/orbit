@@ -1,0 +1,11 @@
+import Changelog from "@kiwicom/orbit-components/CHANGELOG.md";
+
+import DocLayout from "../components/DocLayout";
+
+export default ({ location }) => {
+  return (
+    <DocLayout location={location} noElevation path="/changelog/">
+      <Changelog />
+    </DocLayout>
+  );
+};

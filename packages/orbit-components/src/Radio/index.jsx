@@ -218,12 +218,13 @@ const Radio: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Prop
           readOnly={readOnly}
           hasError={hasError}
         />
-        {cloneWithTooltip(
-          tooltip,
-          <IconContainer disabled={disabled} checked={checked}>
-            <Glyph disabled={disabled} />
-          </IconContainer>,
-        )}
+        {tooltip &&
+          cloneWithTooltip(
+            tooltip,
+            <IconContainer disabled={disabled} checked={checked}>
+              <Glyph disabled={disabled} />
+            </IconContainer>,
+          )}
         {(label || info) && (
           <TextContainer>
             {label && <LabelText>{label}</LabelText>}

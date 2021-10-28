@@ -90,7 +90,7 @@ const ContributorsComponent = () => {
             // exclude robots 😅
             .filter(contributor => !contributor.username?.includes("dependabot"))
             .map(contributor => (
-              <Contributor {...contributor} />
+              <Contributor key={contributor.username} {...contributor} />
             ))}
         </Grid>
       )}

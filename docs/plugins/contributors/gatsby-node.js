@@ -55,10 +55,10 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
       const reqs = names.map(username => octokit.users.getByUsername({ username }));
       const users = await Promise.all(reqs).then(all =>
         all.map(n => {
-          const { login, twitter_username, blog, bio, avatar_url, html_url } = n.data;
+          const { login, name, twitter_username, blog, bio, avatar_url, html_url } = n.data;
           return {
             id: createNodeId(`${NODE}-contributor-${login}`),
-            name: login,
+            name,
             error: "",
             twitter: twitter_username,
             website: blog,

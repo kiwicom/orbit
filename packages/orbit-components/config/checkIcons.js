@@ -9,6 +9,7 @@ This script checks the validity of a given set of icons. They need to:
 import path from "path";
 import { JSDOM } from "jsdom";
 import glob from "glob";
+import dedent from "dedent";
 
 // Default icon size to enforce in px
 const DEFAULT_ICON_SIZE = "24";
@@ -61,16 +62,24 @@ function checkCharacterValues(comments, baseName, allCharacters) {
 function checkFillAttributes(comments, content, name) {
   // only check icons that don't have replacement for icon font
   if (comments && comments.iconFont !== "false" && comments.customColor == null) {
-    const prohibitedAttributes = ["fill", "fill-rule"];
-    const phrase = attrName =>
-      `${attrName} attribute found on ${name} SVG icon. Please delete the ${attrName} or redraw the icon. Otherwise the icon font will be broken.`;
-
     const findAttrAndThrowErr = node => {
-      prohibitedAttributes.forEach(n => {
-        if (getProperty(node.attributes, n)) {
-          throw new Error(phrase(n));
-        }
-      });
+      if (getProperty(node.attributes, "fill")) {
+        throw new Error(
+          `${name} contains the "fill" attribute, please delete it, otherwise this icon will look broken in the icon font`,
+        );
+      }
+      if (getProperty(node.attributes, "fill-rule") === "evenodd") {
+        throw new Error(
+          dedent`
+            ${name} contains the "fill-rule" attribute with the value "evenodd".
+            You must redraw the icon in a way that converts this attribute to its default value, "nonzero", otherwise this icon will look broken in the icon font.
+
+            Thankfully, there's a Figma plugin that helps you do exactly that, Fill Rule Editor:
+
+            https://www.figma.com/community/plugin/771155994770327940/Fill-Rule-Editor
+          `,
+        );
+      }
     };
     // For the main DOM element
     findAttrAndThrowErr(content);

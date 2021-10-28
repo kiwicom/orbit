@@ -16,6 +16,7 @@ export interface Contributor {
   id: string | number;
   active: boolean;
   name: string;
+  username: string;
   position: string;
   avatar_url: string;
   info: string;
@@ -33,6 +34,7 @@ const ContributorsComponent = () => {
           nodes {
             id
             name
+            username
             info
             active
             position
@@ -84,9 +86,12 @@ const ContributorsComponent = () => {
         </Alert>
       ) : (
         <Grid>
-          {all.map(contributor => (
-            <Contributor {...contributor} />
-          ))}
+          {all
+            // exclude robots 😅
+            .filter(contributor => !contributor.username?.includes("dependabot"))
+            .map(contributor => (
+              <Contributor {...contributor} />
+            ))}
         </Grid>
       )}
     </>

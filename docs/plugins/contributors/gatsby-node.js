@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
 
   try {
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });
-    const names = [];
+    const usernames = [];
 
     if (process.env.NODE_ENV === "development") {
       await octokit.repos
@@ -50,15 +50,16 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
           owner,
           repo,
         })
-        .then(c => names.push(...c.data.map(({ login }) => login)));
+        .then(c => usernames.push(...c.data.map(({ login }) => login)));
 
-      const reqs = names.map(username => octokit.users.getByUsername({ username }));
-      const users = await Promise.all(reqs).then(all =>
-        all.map(n => {
-          const { login, twitter_username, blog, bio, avatar_url, html_url } = n.data;
+      const reqs = usernames.map(username => octokit.users.getByUsername({ username }));
+      const users = _.sortBy(
+        (await Promise.all(reqs)).map(n => {
+          const { login, name, twitter_username, blog, bio, avatar_url, html_url } = n.data;
           return {
             id: createNodeId(`${NODE}-contributor-${login}`),
-            name: login,
+            name,
+            username: login,
             error: "",
             twitter: twitter_username,
             website: blog,
@@ -70,6 +71,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
             github: html_url,
           };
         }),
+        "name",
       );
 
       const fetchedUsersContent = await prettier.format(JSON.stringify(users), {

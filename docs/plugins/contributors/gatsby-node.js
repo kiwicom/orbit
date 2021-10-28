@@ -59,6 +59,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
           return {
             id: createNodeId(`${NODE}-contributor-${login}`),
             name,
+            username: login,
             error: "",
             twitter: twitter_username,
             website: blog,

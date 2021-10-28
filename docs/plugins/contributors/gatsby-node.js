@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
 
   try {
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });
-    const names = [];
+    const usernames = [];
 
     if (process.env.NODE_ENV === "development") {
       await octokit.repos
@@ -50,9 +50,9 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
           owner,
           repo,
         })
-        .then(c => names.push(...c.data.map(({ login }) => login)));
+        .then(c => usernames.push(...c.data.map(({ login }) => login)));
 
-      const reqs = names.map(username => octokit.users.getByUsername({ username }));
+      const reqs = usernames.map(username => octokit.users.getByUsername({ username }));
       const users = _.sortBy(
         (await Promise.all(reqs)).map(n => {
           const { login, name, twitter_username, blog, bio, avatar_url, html_url } = n.data;

@@ -107,6 +107,7 @@ const InputStepper: React.AbstractComponent<Props, HTMLElement> = React.forwardR
     maxValue,
     tabIndex,
     spaceAfter,
+    width = "100%",
     titleIncrement,
     titleDecrement,
   } = props;
@@ -120,6 +121,7 @@ const InputStepper: React.AbstractComponent<Props, HTMLElement> = React.forwardR
       required={required}
       readOnly={readOnly}
       name={name}
+      width={width}
       error={error}
       help={help}
       onChange={handleChange}

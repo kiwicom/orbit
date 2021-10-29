@@ -6,13 +6,11 @@
     "docs"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:ci": "npx --yes lerna bootstrap -- --frozen-lockfile",
     "components": "yarn workspace @kiwicom/orbit-components",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "docs": "yarn workspace @kiwicom/orbit.kiwi",
-    "build": "yarn tokens build && yarn components build",
-    "build-ci": "lerna bootstrap && yarn tokens build && yarn components build",
+    "size:build": "yarn tokens size:build && yarn components size:build",
+    "build-ci": "yarn size:build",
     "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",
@@ -31,7 +29,7 @@
     "dev": "yarn components storybook",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "publish-packages": "gulp publish",
-    "orbit-kiwi:build": "yarn bootstrap:ci && yarn tokens build && yarn components build && yarn docs build",
+    "orbit-kiwi:build": "yarn && yarn tokens build && yarn components build && yarn docs build",
     "prepare": "husky install"
   },
   "engines": {
@@ -40,6 +38,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "resolutions": {
+    "@types/eslint": "^7.28.2",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9"
   },
@@ -49,6 +48,8 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@lerna/project": "^3.21.0",
+    "@size-limit/file": "^6.0.3",
+    "@size-limit/webpack": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.23.0",
     "babel-eslint": "^10.1.0",
@@ -96,6 +97,7 @@
     "remark-preset-lint-recommended": "^5.0.0",
     "remark-preset-prettier": "^0.4.0",
     "remark-validate-links": "^10.0.2",
+    "size-limit": "^6.0.3",
     "styled-components": "^5.3.1",
     "through2": "^4.0.2",
     "typescript": "^4.2.4"

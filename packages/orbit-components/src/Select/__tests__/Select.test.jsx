@@ -75,6 +75,12 @@ describe("Select", () => {
     expect(screen.getByText("blin")).toBeInTheDocument();
   });
 
+  it("should have passed width", () => {
+    const width = "100px";
+    render(<Select width={width} label="label" options={[{ value: "1", label: "One" }]} />);
+    expect(document.querySelector("label")).toHaveStyle({ width });
+  });
+
   it("should have error message", () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();

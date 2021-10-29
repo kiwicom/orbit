@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Design tokens for Kiwi.com.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -27,6 +27,7 @@
     "build:es": "babel src --out-dir es --ignore **/*.test.js,src/theo/* --env-name esm && yarn copy:es",
     "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
     "build": "yarn clean && yarn run build:lib && yarn run build:es && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
+    "size:build": "yarn run build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "clean": "rimraf src/js lib es pages output"

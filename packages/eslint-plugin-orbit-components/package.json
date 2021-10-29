@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-orbit-components",
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "Kiwi.com",
   "main": "dist/index.js",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/types": "^7.13.0",
-    "@types/eslint": "^7.2.10",
+    "@types/eslint": "^7.28.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "pinst": "^2.1.4",

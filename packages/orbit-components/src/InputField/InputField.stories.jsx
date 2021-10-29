@@ -565,6 +565,7 @@ export const Playground = (): React.Node => {
   const help = text("Help", undefined);
   const error = text("Error", undefined);
   const disabled = boolean("Disabled", false);
+  const width = text("width", "");
   const maxValue = number("maxValue", undefined);
   const minValue = number("minValue", undefined);
   const required = boolean("required", false);
@@ -582,6 +583,7 @@ export const Playground = (): React.Node => {
     <InputField
       size={size}
       type={type}
+      width={width}
       name={name}
       label={label}
       inlineLabel={inlineLabel}

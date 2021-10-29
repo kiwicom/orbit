@@ -36,6 +36,7 @@ module.exports = {
           "**/scripts/**",
           "gulpfile.js",
           "**/.remarkrc.js",
+          "**/.size-limit.js",
         ],
       },
     ],
@@ -280,6 +281,9 @@ module.exports = {
     },
     {
       files: "**/config/**",
+      globals: {
+        argv: false,
+      },
       rules: {
         "no-restricted-syntax": "off",
         "no-console": "off",

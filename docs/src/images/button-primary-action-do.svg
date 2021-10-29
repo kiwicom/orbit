@@ -1,0 +1,34 @@
+<svg width="166" height="158" viewBox="0 0 166 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect x="15" y="4" width="17" height="4" rx="1" fill="#00A991"/>
+<rect x="64" y="3" width="38" height="6" rx="1" fill="#252A31"/>
+<path d="M12.1694 8.72593C12.4154 8.94846 12.435 9.32886 12.213 9.57556C11.9911 9.82226 11.6117 9.84186 11.3656 9.61932L7.83093 6.4225C7.56615 6.18303 7.56688 5.76624 7.83249 5.5277L11.3363 2.38102C11.5832 2.15935 11.9625 2.18027 12.1836 2.42775C12.4047 2.67523 12.3838 3.05556 12.137 3.27723L9.35049 5.77968C9.24091 5.87808 9.23186 6.04668 9.33026 6.15626C9.33643 6.16312 9.34295 6.16966 9.34979 6.17586L12.1694 8.72593Z" fill="#00A991"/>
+<rect x="4" y="26" width="97" height="20" rx="3" fill="#F5F7F9"/>
+<rect x="9.5" y="31.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="22" y="34" width="26" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="4" y="50" width="158" height="20" rx="3" fill="#F5F7F9"/>
+<rect x="9.5" y="55.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="22" y="58" width="8" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="32" y="58" width="29" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="4" y="74" width="158" height="20" rx="3" fill="#F5F7F9"/>
+<rect x="9.5" y="79.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="22" y="82" width="10" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="34" y="82" width="22" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="4" y="98" width="158" height="20" rx="3" fill="#F5F7F9"/>
+<rect x="9.5" y="103.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="22" y="106" width="26" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="50" y="106" width="35" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="4" y="130" width="158" height="20" rx="3" fill="#00A991"/>
+<rect x="65" y="138" width="36" height="4" rx="1" fill="white"/>
+<rect x="105" y="26" width="57" height="20" rx="3" fill="#F5F7F9"/>
+<rect x="112.5" y="31.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="137.5" y="31.5" width="9" height="9" rx="3" fill="#BAC7D5"/>
+<rect x="125" y="34" width="6" height="4" rx="1" fill="#BAC7D5"/>
+<rect x="150" y="34" width="6" height="4" rx="1" fill="#BAC7D5"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="166" height="158" fill="white"/>
+</clipPath>
+</defs>
+</svg>

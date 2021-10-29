@@ -1,6 +1,6 @@
 import React from "react";
 import { Editor } from "react-live";
-import dracula from "prism-react-renderer/themes/dracula";
+import theme from "prism-react-renderer/themes/oceanicNext";
 
 interface Props {
   isFullPage?: boolean;
@@ -11,8 +11,10 @@ interface Props {
 const SandboxEditor = ({ isFullPage, onChange, code }: Props) => {
   return (
     <Editor
-      style={!isFullPage ? { margin: 0, borderRadius: "0 0 12px 12px" } : undefined}
-      theme={dracula}
+      style={
+        !isFullPage ? { margin: 0, borderRadius: "0 0 12px 12px", overflowY: "scroll" } : undefined
+      }
+      theme={theme}
       onChange={onChange}
       language="jsx"
       code={code}

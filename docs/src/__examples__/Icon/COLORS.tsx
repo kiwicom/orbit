@@ -60,9 +60,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Icon colors",
-    description:
-      "By default, icons inherit the color of their parent. You can also set the color to one of our three ink colors, one of our four status colors, or any other color you want.",
-  },
 };

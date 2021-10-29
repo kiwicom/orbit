@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Mobile";
-
 export interface Props {
   readonly children: React.ReactNode;
 }

@@ -7,7 +7,7 @@ import { Contributor as ContributorData } from ".";
 const StyledImageWrapper = styled(({ url, children, ...props }) => {
   const Component = url ? "a" : "div";
   return (
-    <Component href={url} {...props}>
+    <Component href={url} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </Component>
   );

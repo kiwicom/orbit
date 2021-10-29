@@ -1,7 +1,7 @@
 // @flow
 import { useUIDSeed, useUID } from "react-uid";
 
-import type { useRandomIdSeedType, useRandomIdType } from "./index.js.flow";
+import type { useRandomIdSeedType, useRandomIdType } from ".";
 
 export const useRandomIdSeed: useRandomIdSeedType = () => {
   return useUIDSeed();

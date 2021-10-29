@@ -26,6 +26,8 @@ function createPages(obj, slugPiece = "/") {
           slug,
           title: value.meta.title,
           description: value.meta.description,
+          idx: value.meta.idx,
+          hasReactTab: value.meta.hasReactTab,
         };
       }
 
@@ -35,6 +37,7 @@ function createPages(obj, slugPiece = "/") {
         return {
           slug,
           title: value.meta.title,
+          idx: value.meta.idx,
           description: value.meta.description,
           pages,
         };
@@ -65,14 +68,30 @@ async function getOverviewPages() {
   await Promise.all(
     files.map(async file => {
       const { dir, name } = path.parse(file);
-      const relativePath = omitNumbers(path.relative(DOCUMENTATION_PATH, path.join(dir, name)));
+      const folderPath = path.relative(DOCUMENTATION_PATH, path.join(dir, name));
+      const relativePath = omitNumbers(folderPath);
 
       if (name === "meta") {
         const { title, type, description } = yaml.load(await fsx.readFile(file, "utf-8"));
-        _.set(structure, relativePath.split(path.sep), { title, type, description });
+        const metaFolder = await fsx.readdir(file.split("/").slice(0, -1).join("/"), "utf-8");
+        const hasReactTab = metaFolder.filter(v => v.match(/react.mdx/)).length;
+        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0], 10);
+
+        _.set(structure, relativePath.split(path.sep), {
+          title,
+          type,
+          idx: Number.isNaN(idx) ? 0 : idx,
+          description,
+          hasReactTab: hasReactTab > 0,
+        });
       } else {
         const { data } = matter(await fsx.readFile(file, "utf-8"));
-        _.set(structure, relativePath.split(path.sep), data);
+        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0], 10);
+
+        _.set(structure, relativePath.split(path.sep), {
+          ...data,
+          idx: Number.isNaN(idx) ? 0 : idx,
+        });
       }
     }),
   );

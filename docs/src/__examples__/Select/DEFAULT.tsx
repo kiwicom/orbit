@@ -20,9 +20,18 @@ export default {
       />
     );
   },
-  info: {
-    title: "Default select",
-    description:
-      "By default, selects offer users choices among listen options with an associated label to guide them.",
-  },
+  exampleKnobs: [
+    {
+      component: "Select",
+      knobs: [
+        { name: "label", type: "text", defaultValue: "Nationality" },
+        { name: "value", type: "text", defaultValue: "" },
+        { name: "error", type: "text", defaultValue: "" },
+        { name: "help", type: "text", defaultValue: "" },
+        { name: "required", type: "boolean", defaultValue: false },
+        { name: "placeholder", type: "text", defaultValue: "Choose your country" },
+        { name: "disabled", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

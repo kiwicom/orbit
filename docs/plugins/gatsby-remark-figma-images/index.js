@@ -6,6 +6,7 @@ const fs = require("fs");
 const chalk = require("chalk");
 const axios = require("axios");
 const { createFileNode } = require("gatsby-source-filesystem/create-file-node");
+const dotenv = require("dotenv-safe");
 
 const { warnMissingFigmaToken } = require("../../utils/warnings");
 
@@ -31,7 +32,7 @@ module.exports = (props, pluginOptions) => {
   }
 
   try {
-    require("dotenv-safe").config({
+    dotenv.config({
       example: path.resolve(__dirname, `../../../.env.example`),
       path: path.resolve(__dirname, `../../../.env`),
       allowEmptyValues: true,

@@ -11,9 +11,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Accessibility",
-    description:
-      "When the flag is used alone, include the name of the country for people who won't see the flag. If the country name is present in the text, include a blank name to make it clear it's just decoration.",
-  },
 };

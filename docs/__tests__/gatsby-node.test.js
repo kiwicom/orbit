@@ -257,14 +257,18 @@ describe("gatsby-node", () => {
               "component": "docs/src/templates/Overview.tsx",
               "context": Object {
                 "description": undefined,
+                "idx": 1,
                 "pages": Array [
                   Object {
                     "description": "Our components are served as an npm package.",
+                    "idx": 1,
                     "slug": "/getting-started/for-developers/",
                     "title": "For developers",
                   },
                   Object {
                     "description": undefined,
+                    "hasReactTab": false,
+                    "idx": 1,
                     "slug": "/getting-started/for-designers/",
                     "title": "For designers",
                   },
@@ -286,9 +290,11 @@ describe("gatsby-node", () => {
               "component": "docs/src/templates/Overview.tsx",
               "context": Object {
                 "description": undefined,
+                "idx": 3,
                 "pages": Array [
                   Object {
                     "description": undefined,
+                    "idx": 4,
                     "slug": "/components/overlay/",
                     "title": "Overlay",
                   },
@@ -310,9 +316,12 @@ describe("gatsby-node", () => {
               "component": "docs/src/templates/Overview.tsx",
               "context": Object {
                 "description": undefined,
+                "idx": 4,
                 "pages": Array [
                   Object {
                     "description": "Prompts users to take or complete an action.",
+                    "hasReactTab": false,
+                    "idx": 0,
                     "slug": "/components/overlay/dialog/",
                     "title": "Dialog",
                   },

@@ -1,0 +1,29 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/separator/
+*/
+import * as React from "react";
+
+import type { spaceAfter } from "../common/getSpacingToken";
+import type { Globals } from "../common/common.js.flow";
+
+type Preset = "List" | "Image" | "Card" | "Button" | "Text";
+
+export type Props = {|
+  +animate?: boolean,
+  +children?: React.Node,
+  +preset?: Preset,
+  +rowBorderRadius?: number,
+  +rowHeight?: number,
+  +rowOffset?: number,
+  +rows?: number,
+  +title?: string,
+  +viewBox?: string,
+  +width?: number | string,
+  +height?: number | string,
+  +maxHeight?: number | string,
+  ...spaceAfter,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

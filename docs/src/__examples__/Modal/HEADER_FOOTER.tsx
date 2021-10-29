@@ -34,9 +34,4 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Modal with header and footer",
-    description:
-      "Modals can have structured headers, with an illustration and title, and footers, with a space for actions.",
-  },
 };

@@ -1,5 +1,5 @@
 // @flow
-import type { MergeRefs } from "./index.js.flow";
+import type { MergeRefs } from ".";
 
 const mergeRefs: MergeRefs<any> = refs => {
   return (value: any): any => {

@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Pagination";
-
 interface Props extends Common.Global {
   readonly onPageChange: (page: number) => void;
   readonly pageCount: number;

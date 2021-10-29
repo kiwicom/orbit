@@ -1,22 +1,18 @@
 import React from "react";
-import { Heading, Stack, Separator } from "@kiwicom/orbit-components";
+import { Heading } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack>
-      <Heading type="display">Display title</Heading>
-      <Heading type="displaySubtitle">Display subtitle</Heading>
-      <Separator />
-      <Heading type="title1">Title 1</Heading>
-      <Heading type="title2">Title 2</Heading>
-      <Heading type="title3">Title 3</Heading>
-      <Heading type="title4">Title 4</Heading>
-      <Heading type="title5">Title 5</Heading>
-    </Stack>
-  ),
-  info: {
-    title: "Heading types",
-    description:
-      "Headings are split based on size and appearance into seven different types. These types represent a visual hierarchy from most important to least.",
-  },
+  Example: () => <Heading type="display">Display title</Heading>,
+  exampleVariants: [
+    { name: "Display", code: `() => <Heading type="display">Display title</Heading>` },
+    {
+      name: "DisplaySubtitle",
+      code: `() => <Heading type="displaySubtitle">DisplaySubtitle title</Heading>`,
+    },
+    { name: "Title1", code: `() => <Heading type="title1">Title1 title</Heading>` },
+    { name: "Title2", code: `() => <Heading type="title2">Title2 title</Heading>` },
+    { name: "Title3", code: `() => <Heading type="title3">Title3 title</Heading>` },
+    { name: "Title4", code: `() => <Heading type="title4">Title4 title</Heading>` },
+    { name: "Title5", code: `() => <Heading type="title5">Title5 title</Heading>` },
+  ],
 };

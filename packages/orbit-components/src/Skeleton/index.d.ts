@@ -4,8 +4,6 @@ import React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Skeleton";
-
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 
 /**  DOCS:
@@ -42,11 +40,7 @@ or you can pick one from our predefined presets:
 
 interface Props extends Common.SpaceAfter, Common.Global {
   readonly animate?: boolean;
-  /** Optional prop for a11y element */
-  readonly ariaLabelledby?: string;
   readonly children?: React.ReactNode;
-  /** Set height for Svg element */
-  readonly height?: number;
   /** Border-radius for row rect elements */
   /** default: `3` */
   readonly rowBorderRadius?: number;
@@ -57,7 +51,6 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** default: `20` */
   readonly rowOffset?: number;
   /** Number of rect elements */
-  /** default: `1` */
   readonly rows?: number;
   /** Add text for svg accessible name element  */
   readonly title?: string;
@@ -66,7 +59,11 @@ interface Props extends Common.SpaceAfter, Common.Global {
   /** Set viewBox for Svg element */
   readonly viewBox?: string;
   /** Width of Svg element */
-  readonly width?: number;
+  readonly width?: number | string;
+  /** Set height for Svg element */
+  readonly height?: number | string;
+  /** Set max-height for Svg element */
+  readonly maxHeight?: number | string;
 }
 
 declare const Skeleton: React.FunctionComponent<Props>;

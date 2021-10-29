@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Modal";
-
 export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
@@ -18,6 +16,7 @@ export interface Props {
   readonly isMobileFullPage?: boolean;
   readonly isInsideModal?: boolean;
   readonly closable?: boolean;
+  readonly titleID?: string;
 }
 
 export const ModalContext: React.Context<Props>;

@@ -14,9 +14,13 @@ export default {
       </Text>
     </Collapse>
   ),
-  info: {
-    title: "Default collapse",
-    description:
-      "A collapse requires a label to describe what it's hiding and children to hide. By default, it is closed on initial load.",
-  },
+  exampleKnobs: [
+    {
+      component: "Collapse",
+      knobs: [
+        { name: "label", type: "text", defaultValue: "Principle for collapses" },
+        { name: "initialExpanded", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

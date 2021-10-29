@@ -5,8 +5,6 @@ import * as React from "react";
 
 import { ButtonCommonProps } from "../../primitives/ButtonPrimitive";
 
-declare module "@kiwicom/orbit-components/lib/Alert/AlertButton";
-
 type Type =
   | "info"
   | "success"

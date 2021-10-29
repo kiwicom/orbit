@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import { createRouter } from "@nanostores/router";
 import { useStore } from "nanostores/react";
+import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
-import { ThemeProvider, defaultTheme } from "../..";
 import LockScrolling from "./pages/lock-scrolling";
 import ModalFooter from "./pages/modal-footer";
 
@@ -35,7 +35,7 @@ function App() {
           theme={{
             ...defaultTheme,
             // eslint-disable-next-line no-restricted-globals
-            lockScrolling: location.search !== "?disabled",
+            lockScrolling: location.search === "?disabled" ? false : undefined,
           }}
         >
           <LockScrolling />

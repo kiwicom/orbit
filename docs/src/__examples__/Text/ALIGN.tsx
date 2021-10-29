@@ -1,16 +1,15 @@
 import React from "react";
-import { Stack, Text } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => (
-    <Stack>
-      <Text>Text aligned to the left</Text>
-      <Text align="center">Text aligned in the center</Text>
-      <Text align="right">Text aligned to the right</Text>
-    </Stack>
-  ),
-  info: {
-    title: "Text alignment",
-    description: "You can align text to the left, center, or right.",
-  },
+  Example: () => <Text>Text aligned to the left</Text>,
+  exampleVariants: [
+    { name: "Left", code: "() => <Text>Text aligned to the left</Text>" },
+    { name: "Center", code: `() => <Text align="center">Centered text</Text>` },
+    { name: "Right", code: `() => <Text align="right">Text aligned to the right</Text>` },
+    {
+      name: "Justify",
+      code: `() => <Text align="justify">Stretches the text on the whole width</Text>`,
+    },
+  ],
 };

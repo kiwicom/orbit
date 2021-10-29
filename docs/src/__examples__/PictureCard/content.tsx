@@ -53,9 +53,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Content",
-    description:
-      "You can add content to the card in various places. Including any of them makes the card focusable and creates an effect on hover/focus.",
-  },
 };

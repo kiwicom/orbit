@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LiveProvider } from "react-live";
+import { LiveProvider, LiveError } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Sandbox = ({ pathContext }) => {
-  const { example, id, example_id, scope, exampleKnobs } = pathContext;
+  const { example, id, example_id, scope, exampleKnobs, exampleVariants } = pathContext;
   const { code, origin, setCode } = useSandbox(example_id);
 
   const modules = getModules(scope);
@@ -36,6 +36,7 @@ const Sandbox = ({ pathContext }) => {
     <ThemeProvider theme={defaultTheme}>
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
+        <LiveError />
         <Example
           code={codeWithImports}
           exampleId={id}
@@ -43,6 +44,7 @@ const Sandbox = ({ pathContext }) => {
           example={example}
           origin={origin}
           exampleKnobs={exampleKnobs}
+          exampleVariants={exampleVariants || []}
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>

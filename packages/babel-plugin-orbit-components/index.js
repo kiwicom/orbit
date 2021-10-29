@@ -49,7 +49,10 @@ const pathOverwrites = {
   SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
+  useTheme: "hooks/useTheme",
   useLockScrolling: "hooks/useLockScrolling",
+  useRandomId: "hooks/useRandomId",
+  useRandomIdSeed: { path: "hooks/useRandomId", named: true },
 };
 
 const parsedImportPaths = [
@@ -90,8 +93,16 @@ module.exports = function orbitComponents(babel) {
             }
 
             if (pathOverwrites[importedName] && !isIcon) {
-              // Currently there are only overrides for non icons
-              importedPath += `/${pathOverwrites[importedName]}`;
+              if (pathOverwrites[importedName].named) {
+                spec = t.importSpecifier(
+                  t.identifier(spec.local.name),
+                  t.identifier(spec.local.name),
+                );
+                importedPath += `/${pathOverwrites[importedName].path}`;
+              } else {
+                // Currently there are only overrides for non icons
+                importedPath += `/${pathOverwrites[importedName]}`;
+              }
             } else {
               importedPath += `/${importedName}`;
             }

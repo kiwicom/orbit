@@ -8,12 +8,12 @@ import Example from "./Example";
 export type BgType = "white" | "dark" | "grid";
 export interface Props {
   exampleId: string;
-  maxHeight?: number;
+  responsive?: boolean;
+  height?: number;
   background?: BgType;
-  minHeight?: number;
 }
 
-const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
+const ReactExample = ({ exampleId, responsive = true, background = "white", height }: Props) => {
   const [code, setCode] = React.useState("");
   const [origin, setOrigin] = React.useState("");
   const key = exampleId.toLowerCase();
@@ -30,6 +30,10 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
               name
               path
               default
+            }
+            exampleVariants {
+              name
+              code
             }
             exampleKnobs {
               component
@@ -69,11 +73,12 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
 
   return (
     <Example
-      minHeight={minHeight}
-      maxHeight={maxHeight}
+      responsive={responsive}
+      height={height}
       background={background}
       origin={origin}
       exampleKnobs={example.exampleKnobs}
+      exampleVariants={example.exampleVariants}
       code={codeWithImports}
       exampleId={example.id}
       fullPageExampleId={exampleId.toLowerCase()}

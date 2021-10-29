@@ -1,0 +1,25 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/radio/
+*/
+import * as React from "react";
+
+import Tooltip from "../Tooltip";
+import type { Globals } from "../common/common.js.flow";
+
+export type Props = {|
+  +label?: React.Node,
+  +value?: string,
+  +hasError?: boolean,
+  +disabled?: boolean,
+  +name?: string,
+  +checked?: boolean,
+  +info?: React.Node,
+  +readOnly?: boolean,
+  +tabIndex?: string | number,
+  +tooltip?: React.Element<typeof Tooltip>,
+  +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  ...Globals,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLElement>;

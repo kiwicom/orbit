@@ -1,8 +1,0 @@
-{
-  "imports": "import InputFile from \"@kiwicom/orbit-components/lib/InputFile\";",
-  "example": "() => {\n  const [fileName, setFileName] = React.useState(\"\")\n  const fileTypes = \".png,.jpg,.jpeg,.webp\"\n  return (\n    <InputFile\n      label=\"Profile photo\"\n      fileName={fileName}\n      placeholder=\"No photo selected\"\n      buttonLabel=\"Select photo\"\n      allowedFileTypes={fileTypes}\n      help={`Select a photo in one of the following types: ${fileTypes}`}\n      onChange={(event) => setFileName(event.target.files[0].name)}\n      onRemoveFile={() => setFileName(\"\")}\n    />\n  )\n}\n",
-  "info": {
-    "title": "Default input file",
-    "description": "By default, input files offer a place to select files from their devices. Labels and help messages help guide users with what to select. Button labels and placeholders help prompt action."
-  }
-}

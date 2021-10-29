@@ -6,7 +6,6 @@ import * as React from "react";
 import * as Common from "../../common/common";
 import { SharedProps, Event } from "..";
 
-declare module "@kiwicom/orbit-components/lib/InputStepperStateless";
 export type ButtonEvent = Common.Event<
   React.SyntheticEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
 >;

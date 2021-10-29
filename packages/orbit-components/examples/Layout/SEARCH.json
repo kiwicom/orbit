@@ -1,8 +1,0 @@
-{
-  "imports": "import defaultTheme from \"@kiwicom/orbit-components/lib/defaultTheme\";\nimport Layout from \"@kiwicom/orbit-components/lib/Layout\";\nimport LayoutColumn from \"@kiwicom/orbit-components/lib/LayoutColumn\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";",
-  "example": "() => {\n  const divStyle = {\n    minHeight: defaultTheme.orbit.heightIllustrationMedium,\n    background: defaultTheme.orbit.backgroundBody,\n  }\n  return (\n    <Layout type=\"Search\">\n      <LayoutColumn>\n        <div style={divStyle}>\n          <Text>\n            This column is designed for filters. It&apos;s hidden on{\" \"}\n            <code>largeMobile</code> and smaller screens.\n          </Text>\n        </div>\n      </LayoutColumn>\n      <LayoutColumn>\n        <div style={divStyle}>\n          <Text>\n            This column is designed for the main content. It&apos;s always\n            visible.\n          </Text>\n        </div>\n      </LayoutColumn>\n      <LayoutColumn>\n        <div style={divStyle}>\n          <Text>\n            This column is designed for promotions. It&apos;s hidden on{\" \"}\n            <code>desktop</code> and smaller screens.\n          </Text>\n        </div>\n      </LayoutColumn>\n    </Layout>\n  )\n}\n",
-  "info": {
-    "title": "Search layout",
-    "description": "The Search layout is a three-column layout with one column always visible and the others variable."
-  }
-}

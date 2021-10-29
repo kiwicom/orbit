@@ -1,8 +1,0 @@
-{
-  "imports": "import Alert from \"@kiwicom/orbit-components/lib/Alert\";\nimport AlertButton from \"@kiwicom/orbit-components/lib/Alert/AlertButton\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport AlertCircle from \"@kiwicom/orbit-components/lib/icons/AlertCircle\";\nimport Reload from \"@kiwicom/orbit-components/lib/icons/Reload\";",
-  "example": "() => (\n  <Alert icon={<Icons.AlertCircle />} title=\"No results loaded\" type=\"critical\">\n    <Stack spacing=\"small\">\n      <Text>\n        There was an error while processing your request. Refresh the page to\n        load the results.\n      </Text>\n      <Stack flex spacing=\"small\">\n        <AlertButton iconLeft={<Icons.Reload />} type=\"critical\">\n          Refresh page\n        </AlertButton>\n        <AlertButton type=\"criticalSubtle\">Contact support</AlertButton>\n      </Stack>\n    </Stack>\n  </Alert>\n)\n",
-  "info": {
-    "title": "Critical alert",
-    "description": "Use critical alerts when something is blocking users from continuing or an issue needs to be resolved immediately. The alert should offer a solution to the problem."
-  }
-}

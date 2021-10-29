@@ -5,8 +5,6 @@ import * as React from "react";
 
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-declare module "@kiwicom/orbit-components/lib/Button";
-
 type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle" | "white";
 
 export interface Props extends ButtonCommonProps {

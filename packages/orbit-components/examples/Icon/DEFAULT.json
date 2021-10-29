@@ -1,8 +1,0 @@
-{
-  "imports": "",
-  "example": "() => <Icons.Airplane ariaLabel=\"Airplane\" />\n",
-  "info": {
-    "title": "Default icon",
-    "description": "By default, icons are primary unless they inherit a different color."
-  }
-}

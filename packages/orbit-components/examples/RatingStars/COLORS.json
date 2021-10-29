@@ -1,8 +1,0 @@
-{
-  "imports": "import Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport RatingStars from \"@kiwicom/orbit-components/lib/RatingStars\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Primary\n      </Heading>\n      <RatingStars rating={3} showEmpty />\n    </Stack>\n    <Stack direction=\"column\">\n      <Heading type=\"title3\" as=\"h3\">\n        Secondary\n      </Heading>\n      <RatingStars color=\"secondary\" rating={3} showEmpty />\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Colors",
-    "description": "Ratings stars come in two colors (based on text): primary (the default) and secondary."
-  }
-}

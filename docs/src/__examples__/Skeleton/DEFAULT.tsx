@@ -2,25 +2,20 @@ import React from "react";
 import { Skeleton } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <Skeleton rowOffset={30} rowHeight={21} />,
+  Example: () => <Skeleton width={300} height={100} />,
   exampleKnobs: [
     {
       component: "Skeleton",
       knobs: [
         {
-          name: "rows",
+          name: "width",
           type: "number",
-          defaultValue: 1,
+          defaultValue: 300,
         },
         {
-          name: "rowOffset",
+          name: "height",
           type: "number",
-          defaultValue: 30,
-        },
-        {
-          name: "rowHeight",
-          type: "number",
-          defaultValue: 21,
+          defaultValue: 100,
         },
       ],
     },

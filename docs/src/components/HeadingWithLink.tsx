@@ -1,45 +1,68 @@
 import React from "react";
-import styled from "styled-components";
-import { ButtonLink, Stack } from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
+import { Stack } from "@kiwicom/orbit-components";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
 import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
 
 import { getTextFromChildren, slugify } from "../utils/common";
 
-export const StyledAnchorWrapper = styled.div`
-  margin-top: -10px;
+const StyledLinkIcon = styled.div``;
 
-  svg {
-    opacity: 0;
-    transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in;
-  }
-
-  &:hover svg {
-    opacity: 1;
-  }
+export const StyledAnchor = styled.a<{ $level: number }>`
+  ${({ theme, $level }) => css`
+    display: block;
+    ${StyledLinkIcon} svg {
+      opacity: 0;
+      transition: fill ${theme.orbit.durationFast} ease-in;
+    }
+    :hover,
+    :active,
+    :focus {
+      outline: none;
+      ${StyledLinkIcon} svg {
+        opacity: 1;
+        fill: ${theme.orbit.paletteProductNormal};
+      }
+    }
+    & + p {
+      margin-top: 0;
+    }
+    & + & {
+      margin-top: ${theme.orbit.spaceSmall} !important;
+    }
+    ${$level === 1 &&
+    css`
+      p + & {
+        margin-top: ${theme.orbit.spaceXLarge};
+      }
+    `};
+  `}
 `;
 
 interface Props extends SpaceAfter {
+  level: number;
   children?: React.ReactNode;
   noId?: boolean;
 }
 
-const HeadingWithLink = ({ children, noId, spaceAfter = "none" }: Props) => {
+const HeadingWithLink = ({ level, children, noId, spaceAfter = "none" }: Props) => {
   const headingText = getTextFromChildren(children);
-  const slugifiedText = slugify(headingText);
+  const slug = slugify(headingText);
+
   return (
-    <StyledAnchorWrapper id={noId ? "" : slugifiedText}>
-      <Stack flex spacing="XXXSmall" align="center" spaceAfter={spaceAfter}>
+    <StyledAnchor
+      $level={level}
+      id={noId ? "" : slug}
+      href={`#${slug}`}
+      title={`Link to heading: ${headingText}`}
+    >
+      <Stack inline spacing="XSmall" align="center" spaceAfter={spaceAfter}>
         {children}
-        <ButtonLink
-          iconLeft={<LinkIcon />}
-          title={`Link to heading: ${headingText}`}
-          href={`#${slugifiedText}`}
-          type="secondary"
-          compact
-        />
+        <StyledLinkIcon>
+          <LinkIcon />
+        </StyledLinkIcon>
       </Stack>
-    </StyledAnchorWrapper>
+    </StyledAnchor>
   );
 };
 

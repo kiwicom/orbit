@@ -91,7 +91,7 @@ All this properties - objects have the some own properties and none is required.
 | :--------------- | :---------- | :----------------- | :---------- | :--------- | :----- | :------- | :------- |
 | `"none"`         | `"start"`   | `"row"`            | `"start"`   | `"nowrap"` | `0`    | `"full"` | `"full"` |
 | `"flex"`         | `"end"`     | `"column"`         | `"end"`     | `"wrap"`   | `1`    | `"auto"` | `"auto"` |
-| `"inline-flex"`  | `"center"`  | `"row-reverse"`    | `"center"`  |            |        |          |          |
+| `"inline-flex"`  | `"center"`  | `"row-reverse"`    | `"center"`  |            |        | `string` | `string` |
 | `"block"`        | `"between"` | `"column-reverse"` | `"stretch"` |            |        |          |          |
 | `"inline"`       | `"around"`  |                    |             |            |        |          |          |
 | `"inline-block"` |             |                    |             |            |        |          |          |

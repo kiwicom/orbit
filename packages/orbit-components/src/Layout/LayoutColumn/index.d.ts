@@ -6,8 +6,6 @@ import * as React from "react";
 import * as Common from "../../common/common";
 import { Devices } from "../../utils/mediaQuery/consts";
 
-declare module "@kiwicom/orbit-components/lib/LayoutColumn";
-
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly as?: string;

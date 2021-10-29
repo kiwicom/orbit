@@ -28,9 +28,4 @@ export default {
       </Layout>
     );
   },
-  info: {
-    title: "Booking layout",
-    description:
-      "The Booking layout is a two-column layout on larger screens. On smaller screens, the second column is placed underneath the first.",
-  },
 };

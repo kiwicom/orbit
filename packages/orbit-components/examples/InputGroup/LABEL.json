@@ -1,8 +1,0 @@
-{
-  "imports": "import InputField from \"@kiwicom/orbit-components/lib/InputField\";\nimport InputGroup from \"@kiwicom/orbit-components/lib/InputGroup\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => {\n  const [month, setMonth] = React.useState(12)\n  const [year, setYear] = React.useState(new Date().getFullYear())\n  return (\n    <Stack>\n      <InputGroup flex={[\"1 1 4em\"]} label=\"Expiration date\">\n        <InputField placeholder=\"MM\" maxValue={12} minValue={1} type=\"number\" />\n        <InputField placeholder=\"YYYY\" type=\"number\" />\n      </InputGroup>\n      <InputGroup flex={[\"1 1 4em\"]} label=\"Expiration date\">\n        <InputField\n          placeholder=\"MM\"\n          value={month}\n          maxValue={12}\n          minValue={1}\n          onChange={(event) => setMonth(event.target.value)}\n          type=\"number\"\n        />\n        <InputField\n          placeholder=\"YYYY\"\n          value={year}\n          onChange={(event) => setYear(event.target.value)}\n          type=\"number\"\n        />\n      </InputGroup>\n    </Stack>\n  )\n}\n",
-  "info": {
-    "title": "Label color",
-    "description": "When all fields within the group have a value, the group's label will be lightened to show that it is not as important anymore."
-  }
-}

@@ -1,0 +1,18 @@
+// @flow
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +id?: string,
+  +children: React.Node,
+  +shown?: boolean,
+  +isHelp?: boolean,
+  +referenceElement?: {| current: HTMLElement | null |},
+  +inputSize?: "small" | "normal",
+  +inlineLabel?: boolean,
+  +onShown: ((boolean => boolean) | boolean) => void,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

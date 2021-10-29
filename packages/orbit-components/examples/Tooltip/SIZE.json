@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Tooltip from \"@kiwicom/orbit-components/lib/Tooltip\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <Tooltip\n      size=\"small\"\n      content={\n        <Text>\n          In order to book a trip, you first need to select an itinerary. Select\n          the trip that works for you.\n        </Text>\n      }\n    >\n      <Button disabled>Book</Button>\n    </Tooltip>\n    <Tooltip\n      size=\"medium\"\n      content={\n        <Text>\n          In order to book a trip, you first need to select an itinerary. Select\n          the trip that works for you.\n        </Text>\n      }\n    >\n      <Button disabled>Book</Button>\n    </Tooltip>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Size",
-    "description": "You can control the maximum width that the tooltip will have on larger screens. By default, the maximum width is medium, but you can constrain it to small for smaller spaces."
-  }
-}

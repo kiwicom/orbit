@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/InputStepper";
-
 type Title = string | ((...params: readonly any[]) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
@@ -25,6 +23,7 @@ export interface SharedProps extends Common.Global, Common.Ref, Common.SpaceAfte
   readonly readOnly?: boolean;
   readonly tabIndex?: string | number;
   readonly titleIncrement?: Title;
+  readonly width?: string;
   readonly titleDecrement?: Title;
   readonly onFocus?: Event;
   readonly onBlur?: Event;

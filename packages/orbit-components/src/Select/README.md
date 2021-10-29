@@ -40,6 +40,7 @@ Table below contains all types of the props available in the Select component.
 | spaceAfter      | `enum`                     |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tabIndex        | `string \| number`         |            | Specifies the tab order of an element                                                                                                                          |
 | value           | `string`                   | `""`       | The value of the Select.                                                                                                                                       |
+| width           | `string`                   | `100%`     | Specifies width of the Select                                                                                                                                  |
 
 ## Option
 

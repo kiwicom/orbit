@@ -1,13 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import Figma from "@icons-pack/react-simple-icons/lib/components/Figma";
 import Github from "@icons-pack/react-simple-icons/lib/components/Github";
 import { Button, ButtonLink } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-
-const StyledContainer = styled.div`
-  padding: 0 20px;
-`;
 
 interface Props {
   href: string;
@@ -64,8 +59,4 @@ const HeaderLink = ({
 };
 
 export const HeaderButton = (props: Props) => <HeaderLink as={Button} {...props} />;
-export const HeaderButtonLink = (props: Props) => (
-  <StyledContainer>
-    <HeaderLink as={ButtonLink} {...props} />
-  </StyledContainer>
-);
+export const HeaderButtonLink = (props: Props) => <HeaderLink as={ButtonLink} {...props} />;

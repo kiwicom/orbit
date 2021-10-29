@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Select";
-
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
 
@@ -25,6 +23,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly value?: string | number;
   readonly disabled?: boolean;
   readonly name?: string;
+  readonly width?: string;
   readonly error?: React.ReactNode;
   readonly help?: React.ReactNode;
   readonly tabIndex?: string | number;

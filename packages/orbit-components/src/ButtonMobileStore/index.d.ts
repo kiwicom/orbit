@@ -6,8 +6,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/ButtonMobileStore";
-
 type Type = "appStore" | "googlePlay";
 type Variant = "light" | "dark";
 

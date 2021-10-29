@@ -6,8 +6,6 @@ import * as React from "react";
 import ListItem from "./ListItem";
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/List";
-
 type Type = "primary" | "secondary" | "separated";
 
 interface Props extends Common.Global, Common.SpaceAfter {

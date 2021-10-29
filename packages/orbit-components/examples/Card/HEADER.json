@@ -1,8 +1,0 @@
-{
-  "imports": "import Badge from \"@kiwicom/orbit-components/lib/Badge\";\nimport Card from \"@kiwicom/orbit-components/lib/Card\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";\nimport Text from \"@kiwicom/orbit-components/lib/Text\";\nimport Check from \"@kiwicom/orbit-components/lib/icons/Check\";",
-  "example": "() => (\n  <Card\n    icon={<Icons.Airplane ariaLabel=\"Flight\" />}\n    header={\n      <Stack align=\"center\" inline justify=\"end\">\n        <Text type=\"secondary\">Trip length: 1h 55min</Text>\n        <Badge icon={<Icons.Check />} type=\"success\">\n          Checked in\n        </Badge>\n      </Stack>\n    }\n  />\n)\n",
-  "info": {
-    "title": "Card with custom header",
-    "description": "If you need a different header layout than title and description, you can add it as a custom header."
-  }
-}

@@ -1,0 +1,28 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/table/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import typeof TableBodyType from "./TableBody";
+import typeof TableCellType from "./TableCell";
+import typeof TableHeadType from "./TableHead";
+import typeof TableRowType from "./TableRow";
+import typeof TableFooterType from "./TableFooter";
+
+export type Props = {|
+  +type?: "primary" | "secondary",
+  +striped?: boolean,
+  +compact?: boolean,
+  +children: React.Node,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var TableBody: TableBodyType;
+declare export var TableCell: TableCellType;
+declare export var TableHead: TableHeadType;
+declare export var TableRow: TableRowType;
+declare export var TableFooter: TableFooterType;

@@ -3,10 +3,10 @@ import { Link } from "gatsby";
 import { Popover, mediaQueries } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown, ChevronRight } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
-import FontFaceObserver from "fontfaceobserver";
 import debounce from "lodash/debounce";
 
 import Tab, { TabObject } from "./Tab";
+import useFontLoaded from "../../hooks/useFontLoaded";
 import {
   TAB_HEIGHT,
   SHADOW_PADDING_TOP,
@@ -28,7 +28,6 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     display: flex;
     flex-wrap: wrap; /* so that we can detect whether tabs wrap, and in that case collapse them */
     padding-top: ${SHADOW_PADDING_TOP};
-    padding-left: ${theme.orbit.spaceXLarge}; /* same as main content padding */
     padding-right: ${SHADOW_PADDING_RIGHT};
     /* prevents box shadow and tabs stack from overflowing at the bottom in order to */
     /* achieve the effect of attached tabs, also prevents wrapped tabs from showing */
@@ -107,13 +106,6 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
   }
 
   React.useEffect(() => {
-    // wait until the font is loaded before calculating whether tabs wrap
-    // because the width of DocNavigation changes, changing the width of the main container as well
-    const dmSans = new FontFaceObserver("DM Sans");
-    dmSans.load().then(() => {
-      collapseIfTabsWrapped();
-    });
-
     const collapseIfTabsWrappedListener = debounce(() => {
       setCollapsed(prevCollapsed => {
         if (!prevCollapsed) {
@@ -131,6 +123,13 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
       window.removeEventListener("resize", collapseIfTabsWrappedListener);
     };
   }, []);
+
+  const fontLoaded = useFontLoaded();
+  React.useEffect(() => {
+    if (fontLoaded) {
+      collapseIfTabsWrapped();
+    }
+  }, [fontLoaded]);
 
   // if children happen to change, check if we need to (un)collapse tabs,
   // children chaning is highly unlikely, but we want to be ready for that

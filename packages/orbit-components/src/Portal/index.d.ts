@@ -3,8 +3,6 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Portal";
-
 export interface Props {
   readonly renderInto?: string;
   readonly children: React.ReactNode;

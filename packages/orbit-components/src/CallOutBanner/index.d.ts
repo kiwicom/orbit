@@ -6,8 +6,6 @@ import * as React from "react";
 import * as Common from "../common/common";
 import Illustration from "../Illustration";
 
-declare module "@kiwicom/orbit-components/lib/CallOutBanner";
-
 export interface Props {
   readonly tabIndex?: string | number;
   readonly onClick?: Common.Callback;

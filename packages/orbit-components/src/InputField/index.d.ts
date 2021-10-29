@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/InputField";
-
 type Type = "text" | "number" | "email" | "password" | "passportid";
 type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
 // InputEvent
@@ -32,6 +30,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly minValue?: number;
   readonly maxLength?: number;
   readonly minLength?: number;
+  readonly width?: string;
   readonly required?: boolean;
   readonly tabIndex?: string | number;
   readonly readOnly?: boolean;

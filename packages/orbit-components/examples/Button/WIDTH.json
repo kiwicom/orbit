@@ -1,8 +1,0 @@
-{
-  "imports": "import Button from \"@kiwicom/orbit-components/lib/Button\";\nimport Heading from \"@kiwicom/orbit-components/lib/Heading\";\nimport Stack from \"@kiwicom/orbit-components/lib/Stack\";",
-  "example": "() => (\n  <Stack direction=\"column\">\n    <Stack flex>\n      <Stack shrink direction=\"column\" spacing=\"XSmall\">\n        <Heading type=\"title3\">Full width</Heading>\n        <Button fullWidth>Save</Button>\n      </Stack>\n      <Stack shrink direction=\"column\" spacing=\"XSmall\">\n        <Heading type=\"title3\">Half width</Heading>\n        <Button width=\"50%\">Save</Button>\n      </Stack>\n    </Stack>\n    <Stack flex>\n      <Stack shrink direction=\"column\" spacing=\"XSmall\">\n        <Heading type=\"title3\">Fixed width</Heading>\n        <Button width=\"120px\">Save</Button>\n      </Stack>\n      <Stack shrink direction=\"column\" spacing=\"XSmall\">\n        <Heading type=\"title3\">Normal width</Heading>\n        <Button>Save</Button>\n      </Stack>\n    </Stack>\n  </Stack>\n)\n",
-  "info": {
-    "title": "Button widths",
-    "description": "Buttons can take up space relative to their containers or have fixed widths."
-  }
-}

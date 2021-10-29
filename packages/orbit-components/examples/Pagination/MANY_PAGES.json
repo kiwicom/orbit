@@ -1,8 +1,0 @@
-{
-  "imports": "import Pagination from \"@kiwicom/orbit-components/lib/Pagination\";",
-  "example": "() => {\n  const [currentPage, setCurrentPage] = React.useState(6)\n  return (\n    <Pagination\n      pageCount={12}\n      onPageChange={(selectedPage) => setCurrentPage(selectedPage)}\n      selectedPage={currentPage}\n    />\n  )\n}\n",
-  "info": {
-    "title": "Many pages",
-    "description": "When there are 8 or more pages, some pages are hidden behind ellipses on large screens for a more clear view."
-  }
-}

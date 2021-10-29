@@ -14,11 +14,6 @@ export default {
           options: ["apple", "facebook", "twitter", "google"],
         },
         {
-          name: "circled",
-          type: "boolean",
-          defaultValue: false,
-        },
-        {
           name: "fullWidth",
           type: "boolean",
           defaultValue: false,

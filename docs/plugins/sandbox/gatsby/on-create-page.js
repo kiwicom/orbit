@@ -22,6 +22,10 @@ module.exports = async ({ graphql, actions, reporter }) => {
               type
             }
           }
+          exampleVariants {
+            name
+            code
+          }
         }
       }
     }

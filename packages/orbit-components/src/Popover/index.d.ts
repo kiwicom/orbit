@@ -6,8 +6,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Popover";
-
 type Offset = {
   top?: number;
   left?: number;
@@ -31,5 +29,7 @@ export interface Props extends Common.Global {
   readonly renderInPortal?: boolean;
   readonly onClose?: Common.Callback;
 }
-declare class Popover extends React.Component<Props> {}
+
+declare const Popover: React.FunctionComponent<Props>;
+
 export { Popover, Popover as default };

@@ -10,11 +10,13 @@ import {
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 
+import Variants from "./Variants";
 import DarkMode from "../../../images/darkmode.svg";
 import NewWindow from "../../../images/new-window.svg";
 import Copy from "../../../images/copy.svg";
 import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 import { BgType } from "..";
+import { Variant } from "../Example";
 
 const StyledBoard = styled.div<{ isOpened: boolean }>`
   ${({ theme, isOpened }) => css`
@@ -23,6 +25,7 @@ const StyledBoard = styled.div<{ isOpened: boolean }>`
     padding: ${theme.orbit.spaceXSmall};
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
     background: ${theme.orbit.paletteCloudLight};
+    overflow-x: auto;
   `};
 `;
 
@@ -33,10 +36,14 @@ interface Props {
   isFullPage?: boolean;
   isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
+  currentVariant: string | null;
+  isVariantsOpened: boolean;
   knobs: boolean;
+  variants: Variant[];
   background: BgType;
   onSelectBackground: (value: BgType) => void;
   onOpenPlayground: () => void;
+  onChangeVariant: (variant: string) => void;
   onOpenEditor: () => void;
 }
 
@@ -45,9 +52,13 @@ const Board = ({
   exampleId,
   background,
   code,
+  variants,
+  currentVariant,
+  isVariantsOpened,
   isEditorOpened,
   isPlaygroundOpened,
   onOpenPlayground,
+  onChangeVariant,
   onOpenEditor,
   onSelectBackground,
   knobs,
@@ -95,6 +106,29 @@ const Board = ({
             >
               Playground
             </ButtonLink>
+          )}
+          {variants.length > 0 && (
+            <Popover
+              noFlip
+              placement={isFullPage ? "top-start" : "bottom-start"}
+              renderInPortal={false}
+              content={
+                <Variants
+                  exampleVariants={variants}
+                  currentVariant={currentVariant}
+                  onChange={onChangeVariant}
+                />
+              }
+            >
+              <ButtonLink
+                type="secondary"
+                asComponent="button"
+                ariaExpanded={isVariantsOpened}
+                iconRight={isVariantsOpened ? <ChevronUp /> : <ChevronDown />}
+              >
+                Variants
+              </ButtonLink>
+            </Popover>
           )}
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">

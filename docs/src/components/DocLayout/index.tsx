@@ -1,5 +1,14 @@
 import React from "react";
-import { Box, Collapse, Grid, Heading, Hide, Stack, Text } from "@kiwicom/orbit-components";
+import {
+  Box,
+  Collapse,
+  Grid,
+  Heading,
+  Hide,
+  Stack,
+  Text,
+  ButtonLink,
+} from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 import styled, { css } from "styled-components";
@@ -11,6 +20,7 @@ import AddBookmark from "../AddBookmark";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
 import InlineToken from "../InlineToken";
+import Usage, { UsageUse, UsageDontUse } from "../Usage";
 import GuidelinesSideBySide, { Do, Dont } from "../Guidelines/GuidelinesSideBySide";
 import GuidelineImages, { DoImage, DontImage } from "../Guidelines/GuidelineImages";
 import { HeaderButton, HeaderButtonLink } from "../HeaderLink";
@@ -19,7 +29,8 @@ import Navbar from "../Navbar";
 import { BookmarkProvider } from "../../services/bookmarks";
 import DocNavigation from "../DocNavigation";
 import Breadcrumbs from "../Breadcrumbs";
-import ComponentStatus from "../ComponentStatus";
+import { ComponentStatus } from "../ComponentStatus";
+import ComponentStructure from "../ComponentStructure";
 import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
 import Tabs, { TabObject } from "../Tabs";
@@ -36,9 +47,21 @@ import StyledTocWrapper from "./primitives/StyledTocWrapper";
 import StyledProse from "./primitives/StyledProse";
 import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
+import StorybookLogo from "../../images/storybook-logo.svg";
 
 const StyledDescription = styled.span`
+  display: flex;
   line-height: 22px;
+`;
+
+const StyledTopWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 ${theme.orbit.spaceXLarge};
+  `}
 `;
 
 interface Props {
@@ -71,6 +94,7 @@ export default function DocLayout({
 }: Props) {
   const [tableOfContents] = useTableOfContents();
   const tocHasItems = tableOfContents.length > 0;
+
   return (
     <>
       <Head
@@ -152,15 +176,32 @@ export default function DocLayout({
                         justify={tabs && tabs.length > 0 ? "between" : "end"}
                         tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
                       >
-                        {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-                        {headerLink && (
-                          <Hide on={["smallMobile", "mediumMobile"]}>
-                            <HeaderButtonLink href={headerLink} />
-                          </Hide>
-                        )}
+                        <StyledTopWrapper>
+                          {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+                          {headerLink && (
+                            <Hide on={["smallMobile", "mediumMobile"]}>
+                              <Stack flex spacing="XXSmall">
+                                <HeaderButtonLink href={headerLink} />
+                                {title && (
+                                  <ButtonLink
+                                    type="secondary"
+                                    iconRight={<StorybookLogo />}
+                                    external
+                                    href={`https://kiwicom.github.io/orbit/?path=/story/${title.toLowerCase()}`}
+                                  >
+                                    Storybook
+                                  </ButtonLink>
+                                )}
+                              </Stack>
+                            </Hide>
+                          )}
+                        </StyledTopWrapper>
                       </Box>
                     )}
-                    <Grid columns="1fr" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
+                    <Grid
+                      columns="100%"
+                      tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}
+                    >
                       {tocHasItems && (
                         <StyledTocWrapper>
                           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
@@ -199,7 +240,11 @@ export default function DocLayout({
                           components={{
                             ...components,
                             ComponentStatus,
+                            ComponentStructure,
                             FancyLink,
+                            Usage,
+                            UsageUse,
+                            UsageDontUse,
                             Guideline,
                             GuidelineImages,
                             DoImage,

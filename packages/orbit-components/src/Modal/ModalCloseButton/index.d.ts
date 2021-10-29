@@ -4,8 +4,6 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Modal/ModalCloseButton";
-
 export interface Props extends Common.Global {
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
 }

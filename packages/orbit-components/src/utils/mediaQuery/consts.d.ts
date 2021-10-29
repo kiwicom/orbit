@@ -1,5 +1,3 @@
-declare module "@kiwicom/orbit-components/lib/utils/mediaQuery/consts";
-
 export type Devices =
   | "largeDesktop"
   | "desktop"

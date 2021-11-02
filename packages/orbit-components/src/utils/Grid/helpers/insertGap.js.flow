@@ -1,4 +1,0 @@
-// @flow
-export type InsertGap = (values: ?string, gap: string) => ?string;
-
-declare export default InsertGap;

@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.1...@kiwicom/orbit-components@2.0.0) (2021-11-02)
+
+
+### Bug Fixes
+
+* **CountryFlag:** set "undefined" as default code ([#3100](https://github.com/kiwicom/orbit/issues/3100)) ([3e841c5](https://github.com/kiwicom/orbit/commit/3e841c526326c68140215e9e6afdec7bcb4cc29a))
+* refactor and properly initialize media queries ([#3138](https://github.com/kiwicom/orbit/issues/3138)) ([b566699](https://github.com/kiwicom/orbit/commit/b566699c00f0ca0e0c15e315f41121302b99cd69)), closes [#3149](https://github.com/kiwicom/orbit/issues/3149)
+
+
+### Code Refactoring
+
+* **TooltipPrimitive:** use Popper instead of custom logic ([#3129](https://github.com/kiwicom/orbit/issues/3129)) ([0e2271f](https://github.com/kiwicom/orbit/commit/0e2271f7389fd78ec541c60ec540668dff7b7351))
+
+
+### BREAKING CHANGES
+
+* **TooltipPrimitive:** replace props `preferredAlign` and `preferredPosition`
+with `placement`, and add new props `noFlip` and `offset`.
+* **CountryFlag:** The default code for CountryFlag is now `"undefined"`
+rather than `"anywhere"`, a gray flag with a question mark. This code is
+also used if the given code isn't supported.
+* media queries in `useMediaQuery` are now being
+properly initialized, in `useEffect` rather than directly in render, which
+should prevent some cryptic bugs, but there is a tiny chance that it will
+break code for those who have been relying on previous behavior, so it's
+important to be aware of this change.
+
+
+
+
+
 ## [1.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.0...@kiwicom/orbit-components@1.6.1) (2021-10-27)
 
 

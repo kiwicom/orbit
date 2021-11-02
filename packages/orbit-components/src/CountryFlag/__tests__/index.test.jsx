@@ -17,12 +17,12 @@ describe("CountryFlag", () => {
   it("should support omitting code and name", () => {
     let flag;
     render(<CountryFlag />);
-    flag = screen.getByRole("img", { name: "Anywhere" });
-    expect(flag).toHaveAttribute("src", expect.stringContaining("anywhere"));
+    flag = screen.getByRole("img", { name: "Undefined" });
+    expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
     cleanup();
     render(<CountryFlag name="Country" />);
     flag = screen.getByRole("img", { name: "Country" });
-    expect(flag).toHaveAttribute("src", expect.stringContaining("anywhere"));
+    expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
     cleanup();
     render(<CountryFlag code="us" />);
     flag = screen.getByRole("img");
@@ -34,7 +34,7 @@ describe("CountryFlag", () => {
     const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
     render(<CountryFlag code="404" name="Country" />);
     const flag = screen.getByRole("img", { name: "Country" });
-    expect(flag).toHaveAttribute("src", expect.stringContaining("anywhere"));
+    expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
     expect(consoleSpy).toHaveBeenCalledWith("Country code not supported: 404");
     consoleSpy.mockRestore();
   });

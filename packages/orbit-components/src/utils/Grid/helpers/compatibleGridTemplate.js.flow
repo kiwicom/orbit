@@ -1,4 +1,0 @@
-// @flow
-export type CompatibleGridTemplate = (cells: ?string, gap: ?string) => ?string;
-
-declare export default CompatibleGridTemplate;

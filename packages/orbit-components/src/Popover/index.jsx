@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import useTheme from "../hooks/useTheme";
-import { PLACEMENTS } from "./consts";
+import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";

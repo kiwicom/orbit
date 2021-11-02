@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 
+import type { Popper, Sizes } from "..";
 import type { Globals } from "../../../common/common.js.flow";
-import type { Aligns, Positions, Sizes } from "..";
 
 export type Props = {|
   shown: boolean,
@@ -15,10 +15,9 @@ export type Props = {|
   onClose: () => void,
   onCloseMobile: () => void,
   onEnter: () => void,
-  preferredPosition: ?Positions,
-  preferredAlign: ?Aligns,
-  containerRef: React.ElementRef<*>,
+  referenceElement: HTMLElement | null,
   ...Globals,
+  ...Popper,
 |};
 
 declare export default React.ComponentType<Props>;

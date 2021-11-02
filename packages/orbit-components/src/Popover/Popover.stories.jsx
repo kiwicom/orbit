@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 
 import Tooltip from "../Tooltip";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { PLACEMENTS } from "./consts";
+import { PLACEMENTS } from "../common/consts";
 import Stack from "../Stack";
 import Button from "../Button";
 import Stepper from "../Stepper";

@@ -4,16 +4,13 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { UIDReset, UIDFork } from "react-uid";
 
 import Dictionary from "../Dictionary";
-import QueryContext from "./QueryContext";
-import useMediaQueryContext from "./QueryContext/useMediaQueryContext";
+import { QueryContextProvider } from "./QueryContext";
 
 import type { Props } from ".";
 
 const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
-  const media = useMediaQueryContext();
-
   return (
-    <QueryContext.Provider value={media}>
+    <QueryContextProvider>
       <UIDReset>
         <UIDFork>
           <StyledThemeProvider theme={theme}>
@@ -25,7 +22,7 @@ const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
           </StyledThemeProvider>
         </UIDFork>
       </UIDReset>
-    </QueryContext.Provider>
+    </QueryContextProvider>
   );
 };
 

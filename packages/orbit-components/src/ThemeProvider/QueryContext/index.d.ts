@@ -3,14 +3,18 @@
 
 import * as React from "react";
 
-export interface Props {
-  readonly isLargeDesktop: boolean | undefined | null;
-  readonly isDesktop: boolean | undefined | null;
-  readonly isLargeMobile: boolean | undefined | null;
-  readonly isMediumMobile: boolean | undefined | null;
-  readonly isTablet: boolean | undefined | null;
-  readonly prefersReducedMotion: boolean | undefined | null;
+export interface Context {
+  readonly isMediumMobile: boolean | null;
+  readonly isLargeMobile: boolean | null;
+  readonly isTablet: boolean | null;
+  readonly isDesktop: boolean | null;
+  readonly isLargeDesktop: boolean | null;
+  readonly prefersReducedMotion: boolean | null;
 }
 
-declare const QueryContext: React.Context<Props>;
-export { QueryContext, QueryContext as default };
+declare const QueryContext: React.Context<Context>;
+export declare const QueryContextProvider: React.FunctionComponent<{
+  readonly children?: React.ReactNode;
+}>;
+
+export default QueryContext;

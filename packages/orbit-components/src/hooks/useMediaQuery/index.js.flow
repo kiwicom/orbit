@@ -1,6 +1,6 @@
 // @flow
-import type { Media } from "../../ThemeProvider/QueryContext";
+import type { Context } from "../../ThemeProvider/QueryContext";
 
-export type UseMediaQuery = () => Media;
+declare function useMediaQuery(): Context;
 
-declare export default UseMediaQuery;
+export default useMediaQuery;

@@ -1,0 +1,18 @@
+// @flow
+import * as React from "react";
+
+export type QueryMap<T> = {|
+  +isMediumMobile: T,
+  +isLargeMobile: T,
+  +isTablet: T,
+  +isDesktop: T,
+  +isLargeDesktop: T,
+  +prefersReducedMotion: T,
+|};
+
+export type Context = QueryMap<boolean | null>;
+
+declare var QueryContext: React.Context<Context>;
+declare export var QueryContextProvider: React.ComponentType<{| children: React.Node |}>;
+
+export default QueryContext;

@@ -91,10 +91,7 @@ export const WithTooltip = (): React.Node => {
       value="one"
       disabled
       tooltip={
-        <Tooltip
-          content="There are no results available with this option"
-          preferredPosition="top"
-        />
+        <Tooltip content="There are no results available with this option" placement="top" />
       }
     />
   );

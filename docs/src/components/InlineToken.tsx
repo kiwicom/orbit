@@ -123,8 +123,7 @@ const InlineToken = ({ size, alternateName, name }: Props) => {
             {alternateName && <Text>Token name: {name}</Text>}
           </>
         }
-        preferredPosition="top"
-        preferredAlign="center"
+        placement="bottom"
       >
         <StyledInlineToken size={size}>
           <DesignTokenIcon size={size} value={tokenValue} />

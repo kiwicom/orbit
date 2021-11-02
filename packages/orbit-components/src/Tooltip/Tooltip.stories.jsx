@@ -2,8 +2,9 @@
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
+import { PLACEMENTS } from "../common/consts";
 import * as Icons from "../icons";
-import { POSITIONS, SIZE_OPTIONS, ALIGNS } from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
 import Alert from "../Alert";
 import Text from "../Text";
@@ -38,7 +39,7 @@ export const TooltipOnInlineElement = (): React.Node => {
             <TextLink>Clickable element.</TextLink>
           </div>
         }
-        preferredPosition="left"
+        placement="left"
       >
         <TextLink>Cras elementum.</TextLink>
       </Tooltip>{" "}
@@ -113,34 +114,34 @@ export const Block = (): React.Node => {
   );
 };
 
-export const PreferredPosition = (): React.Node => {
+export const Placement = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   const content = text("content", "Write your text here.");
   return (
     <Stack justify="center">
-      <Tooltip preferredPosition={preferredPosition} size={size} content={content}>
+      <Tooltip placement={placement} size={size} content={content}>
         <Icons.Airplane />
       </Tooltip>
     </Stack>
   );
 };
 
-PreferredPosition.story = {
-  name: "Preferred position",
+Placement.story = {
+  name: "Placement",
 
   parameters: {
     info:
-      "If you want to, you can specify one preferred position. If it won't be possible to use it, the defaults will be used.",
+      "If you want to, you can specify one preferred placement. If it won't be possible to use it, the defaults will be used.",
   },
 };
 
 export const WithImageInside = (): React.Node => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   return (
     <Tooltip
-      preferredPosition={preferredPosition}
+      placement={placement}
       size={size}
       content={
         <Stack>
@@ -187,13 +188,11 @@ export const Playground = (): React.Node => {
   const tabIndex = text("TabIndex", "0");
   const enabled = boolean("enabled", true);
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
-  const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
 
   return (
     <Tooltip
-      preferredPosition={preferredPosition}
-      preferredAlign={preferredAlign}
+      placement={placement}
       size={size}
       content={content}
       dataTest={dataTest}
@@ -219,7 +218,7 @@ export const Rtl = (): React.Node => {
       <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
         eget mollis sed, tempor sed magna.
-        <Tooltip content="Write your text here." preferredPosition="left">
+        <Tooltip content="Write your text here." placement="left">
           <TextLink>Cras elementum.</TextLink>
         </Tooltip>{" "}
         Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui

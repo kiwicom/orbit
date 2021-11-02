@@ -20,26 +20,20 @@ const StyledGrid = styled(({ className, children, dataTest }) => (
     smallMobile - default values are not mediaQuery and needs to be rendered differently
    */
   ${({ theme, spaceAfter, ...props }) =>
-    DEVICES.map((viewport, index, devices) =>
+    DEVICES.map(viewport =>
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) &&
             getViewportGridStyles({
               viewport,
-              index,
               theme,
-              devices,
             })};
           `)
         : viewport === "smallMobile" &&
           css`
-            ${getViewportGridStyles({ viewport, index, devices, theme })};
+            ${getViewportGridStyles({ viewport, theme })};
           `,
     )};
-  // for IE it needs to be explicitly set for children columns/rows
-  & > * {
-    display: block;
-  }
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

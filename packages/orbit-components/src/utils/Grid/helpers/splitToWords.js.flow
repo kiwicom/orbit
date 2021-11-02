@@ -1,4 +1,0 @@
-// @flow
-export type SplitToWords = (value: ?string) => ?(string[]);
-
-declare export default SplitToWords;

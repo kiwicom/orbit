@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.0...@kiwicom/orbit-components@2.0.1) (2021-11-03)
+
+
+### Bug Fixes
+
+* missing storybook provider ([#3173](https://github.com/kiwicom/orbit/issues/3173)) ([4967fb7](https://github.com/kiwicom/orbit/commit/4967fb7dc2f34a716db7fda30c48952992979562))
+* **useToggle:** make typings reflect initial param is optional ([95821c5](https://github.com/kiwicom/orbit/commit/95821c514e8ccf970ec606de219eff301309f914))
+
+
+
+
+
 # [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.1...@kiwicom/orbit-components@2.0.0) (2021-11-02)
 
 

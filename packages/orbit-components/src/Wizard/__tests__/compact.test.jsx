@@ -43,6 +43,7 @@ describe("Wizard", () => {
     });
 
     it("can navigate through steps", () => {
+      const onClickStep = jest.fn();
       const MyApp = () => {
         const [activeStep, setActiveStep] = React.useState(3);
         return (
@@ -54,7 +55,7 @@ describe("Wizard", () => {
           >
             <WizardStep title="Search" />
             <WizardStep title="Passenger details" />
-            <WizardStep title="Ticket fare" />
+            <WizardStep title="Ticket fare" onClick={onClickStep} />
             <WizardStep title="Customize your trip" />
             <WizardStep title="Overview & payment" />
           </Wizard>
@@ -66,7 +67,7 @@ describe("Wizard", () => {
         name: /Ticket fare/,
       });
       userEvent.click(ticketFareStep);
-      expect(ticketFareStep).toHaveAttribute("aria-current", "step");
+      expect(onClickStep).toHaveBeenCalled();
     });
 
     it("cannot select disabled steps", () => {

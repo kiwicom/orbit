@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.0...@kiwicom/orbit-components@2.0.1) (2021-11-03)
+
+#### Bug Fixes
+
+*   missing storybook provider ([#3173](https://github.com/kiwicom/orbit/issues/3173)) ([4967fb7](https://github.com/kiwicom/orbit/commit/4967fb7dc2f34a716db7fda30c48952992979562))
+*   **useToggle:** make typings reflect initial param is optional ([95821c5](https://github.com/kiwicom/orbit/commit/95821c514e8ccf970ec606de219eff301309f914))
+
+## [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.1...@kiwicom/orbit-components@2.0.0) (2021-11-02)
+
+#### Bug Fixes
+
+*   **CountryFlag:** set "undefined" as default code ([#3100](https://github.com/kiwicom/orbit/issues/3100)) ([3e841c5](https://github.com/kiwicom/orbit/commit/3e841c526326c68140215e9e6afdec7bcb4cc29a))
+*   refactor and properly initialize media queries ([#3138](https://github.com/kiwicom/orbit/issues/3138)) ([b566699](https://github.com/kiwicom/orbit/commit/b566699c00f0ca0e0c15e315f41121302b99cd69)), closes [#3149](https://github.com/kiwicom/orbit/issues/3149)
+
+#### Code Refactoring
+
+*   **TooltipPrimitive:** use Popper instead of custom logic ([#3129](https://github.com/kiwicom/orbit/issues/3129)) ([0e2271f](https://github.com/kiwicom/orbit/commit/0e2271f7389fd78ec541c60ec540668dff7b7351))
+
+#### BREAKING CHANGES
+
+*   **TooltipPrimitive:** replace props `preferredAlign` and `preferredPosition`
+    with `placement`, and add new props `noFlip` and `offset`.
+*   **CountryFlag:** The default code for CountryFlag is now `"undefined"`
+    rather than `"anywhere"`, a gray flag with a question mark. This code is
+    also used if the given code isn't supported.
+*   media queries in `useMediaQuery` are now being
+    properly initialized, in `useEffect` rather than directly in render, which
+    should prevent some cryptic bugs, but there is a tiny chance that it will
+    break code for those who have been relying on previous behavior, so it's
+    important to be aware of this change.
+
+### [1.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.0...@kiwicom/orbit-components@1.6.1) (2021-10-27)
+
+#### Bug Fixes
+
+*   **cloneWithTooltip:** wrong type declaration ([52c2418](https://github.com/kiwicom/orbit/commit/52c2418c06fbd4f8ea4aae6765e29ff48c1b2963))
+
+## [1.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.5.0...@kiwicom/orbit-components@1.6.0) (2021-10-27)
+
+#### Features
+
+*   **InputField:** add width prop ([2a2fe0f](https://github.com/kiwicom/orbit/commit/2a2fe0f437a396cfc6c153d19546e3c039dd55d2))
+*   **InputFile:** add width prop ([70d1d39](https://github.com/kiwicom/orbit/commit/70d1d397fce90d9160e44a4bc7147170a93414be))
+*   **InputStepper:** add width prop ([c479f41](https://github.com/kiwicom/orbit/commit/c479f414370adb9f0f728d9d51d997cbdb02ca43))
+*   **Select:** add width prop ([865d690](https://github.com/kiwicom/orbit/commit/865d690bfeaa97844601114bc8db95de2ab9c307))
+*   **TextLink:** add active and focus colors ([3df1647](https://github.com/kiwicom/orbit/commit/3df1647bfa94bbd269e57b7b88b7f44c53b25ad0))
+
 ## [1.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.4.0...@kiwicom/orbit-components@1.5.0) (2021-10-21)
 
 #### Bug Fixes
@@ -528,8 +575,7 @@ function App() {
 #### BREAKING CHANGES
 
 *   **Modal:** size prop is changed, added new value
-    CODEMODE: jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js
-    pathToYourCode --parser=flow|ts
+    CODEMODE: `jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js <pathToYourCode> --parser=flow|t`
 
 ## [0.102.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.101.0...@kiwicom/orbit-components@0.102.0) (2020-12-01)
 

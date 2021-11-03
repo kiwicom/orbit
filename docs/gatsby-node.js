@@ -5,6 +5,7 @@ const yaml = require("js-yaml");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
 const { getOverviewPages } = require("./services/overview-pages");
+const parseChangelog = require("./services/changelog");
 
 const ROOT = path.resolve(__dirname, "..");
 
@@ -183,6 +184,8 @@ exports.createPages = async ({ graphql, actions, reporter, cache }) => {
   `);
 
   const overviewPages = await getOverviewPages();
+  await parseChangelog();
+
   await Promise.all(
     overviewPages.map(async page => {
       const trail = await getDocumentTrail(cache, page.slug);

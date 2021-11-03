@@ -28,32 +28,30 @@
     "github": "https://github.com/aalises"
   },
   {
-    "id": "5f9fcbde-6948-558c-8ea6-dc06f01ba081",
-    "name": "Boris",
-    "username": "oreqizer",
+    "id": "be076ef9-13cc-51b9-b752-5d1931ac5797",
+    "name": "mainframev",
     "error": "",
     "twitter": null,
-    "website": "https://oreqizer.com",
-    "info": "I lift and I know things",
+    "website": "",
+    "info": "Frontend developer",
     "active": false,
     "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/11172408?v=4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/14054752?v=4",
     "position": "",
-    "github": "https://github.com/oreqizer"
+    "github": "https://github.com/mainframev"
   },
   {
-    "id": "7a0b4c04-35e4-54ac-aff5-16f774730e3f",
-    "name": "Daniel Spitzer",
-    "username": "sampi",
+    "id": "386454a7-5556-5c34-abc2-0ded73cb8f20",
+    "name": "tomashapl",
     "error": "",
-    "twitter": "dnsp",
-    "website": "http://sampi.io",
-    "info": null,
+    "twitter": null,
+    "website": "https://tomashapl.cz",
+    "info": "Senior FrontEnd engineer",
     "active": false,
     "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/524272?v=4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/7850592?v=4",
     "position": "",
-    "github": "https://github.com/sampi"
+    "github": "https://github.com/tomashapl"
   },
   {
     "id": "497761b8-5e51-5734-b771-504e1ec927b6",

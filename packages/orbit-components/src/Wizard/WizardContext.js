@@ -11,5 +11,6 @@ export const WizardStepContext: React.Context<WizardStepContextValue> = React.cr
     isCompact: false,
     isActive: false,
     onChangeStep: () => {},
+    onClose: () => {},
   },
 );

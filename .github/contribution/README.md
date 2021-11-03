@@ -29,18 +29,29 @@
 
 ### Starting with development
 
-For local development you can use:
+First, you need to build tokens:
 
-- `yarn workspace @kiwicom/orbit-components storybook`
+```
+yarn tokens build
+```
 
-In case you want to develop in your current project:
+You only need to do this once if you don't plan on changing tokens. Next, run Storybook:
 
-- `yarn add @kiwicom/orbit-components`
-- in current folder `yarn watch`
-- in current folder `yarn link`
-- in the project where you want to use this project `yarn link @kiwicom/orbit-components`
+```sh
+yarn dev
+```
 
-See [Yarn Link](https://yarnpkg.com/lang/en/docs/cli/link/) documentation for more information.
+If you want to test `@kiwicom/orbit-components` in your own project:
+
+```sh
+yarn global add yalc
+cd packages/orbit-components
+yalc publish
+cd /path/to/your/project
+yalc add @kiwicom/orbit-components
+```
+
+This should get you started. If want to see new changes in `@kiwicom/orbit-components` reflected in your project, read [yalc documentation](https://github.com/wclr/yalc) to find a workflow that works for you.
 
 ### Testing
 

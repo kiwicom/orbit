@@ -10,6 +10,7 @@ export type WizardStepContextValue = {|
   +isCompact: boolean,
   +isActive: boolean,
   +onChangeStep?: (stepIndex: number) => void | Promise<any>,
+  +onClose: () => void,
 |};
 
 declare export var WizardStepContext: React.Context<WizardStepContextValue>;

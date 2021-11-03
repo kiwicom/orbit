@@ -58,6 +58,7 @@ const Wizard = ({
         isCompact,
         isActive: activeStep === index,
         onChangeStep,
+        onClose: () => setOpen(false),
       }}
     >
       {step}

@@ -1,7 +1,21 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
+import { mediaQueries as mq } from "@kiwicom/orbit-components";
+
+const StyledImageWrapper = styled.div`
+  display: none;
+  ${mq.desktop(css`
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  `)}
+`;
 
 export default function RocketImage() {
   const data: {
@@ -26,16 +40,7 @@ export default function RocketImage() {
   `);
 
   return (
-    <div
-      css={css`
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      `}
-    >
+    <StyledImageWrapper>
       <Img
         css={css`
           top: 0;
@@ -48,7 +53,7 @@ export default function RocketImage() {
         style={{ position: "absolute" }} // to override gatsby-image's position
         fluid={data.file.childImageSharp.fluid}
       />
-    </div>
+    </StyledImageWrapper>
   );
 }
 

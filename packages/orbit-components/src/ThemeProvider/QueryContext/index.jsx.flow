@@ -1,18 +1,10 @@
 // @flow
 import * as React from "react";
 
-export type QueryMap<T> = {|
-  +isMediumMobile: T,
-  +isLargeMobile: T,
-  +isTablet: T,
-  +isDesktop: T,
-  +isLargeDesktop: T,
-  +prefersReducedMotion: T,
-|};
+import type { QueryMap } from "../../hooks/useMediaQuery";
 
-export type Context = QueryMap<boolean | null>;
+declare export var initialValue: QueryMap<null>;
 
-declare var QueryContext: React.Context<Context>;
-declare export var QueryContextProvider: React.ComponentType<{| children: React.Node |}>;
+declare var QueryContext: React.Context<QueryMap<boolean | null>>;
 
 export default QueryContext;

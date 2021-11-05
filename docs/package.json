@@ -43,7 +43,7 @@
     "@types/react-scrollspy": "^3.3.3",
     "@types/styled-components": "^5.1.15",
     "@types/uuid": "^8.3.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^1.13.2",
     "babel-preset-gatsby": "^1.3.0",

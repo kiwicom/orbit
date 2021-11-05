@@ -1,12 +1,22 @@
 // @flow
 import * as React from "react";
-import { render } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
 import ThemeProvider from "../../../ThemeProvider";
-import theme from "../../../defaultTheme";
+import defaultTheme from "../../../defaultTheme";
 import useMediaQuery from "..";
+
+/**
+ * With jest-matchmedia-mock it wasn't possible to fully test changing viewport sizes,
+ * only initialization, because it triggers MediaQueryList listeners only query matches,
+ * not when it stops matching, so we're testing this aspect with Cypresss.
+ */
+
+const theme = { ...defaultTheme };
+
+const mediumMobileQuery = `(min-width: ${theme.orbit.widthBreakpointMediumMobile}px)`;
 
 function MediaQuery({ onChange }) {
   const query = useMediaQuery();
@@ -30,7 +40,7 @@ describe("useMediaQuery", () => {
 
     function App() {
       return (
-        <ThemeProvider theme={{ ...theme }}>
+        <ThemeProvider theme={theme}>
           <MediaQuery
             onChange={query => {
               result = query;
@@ -64,7 +74,6 @@ describe("useMediaQuery", () => {
      * that's why we'll test only initialization here and leave the rest to e2e tests
      */
 
-    const mediumMobileQuery = `(min-width: ${theme.orbit.widthBreakpointMediumMobile}px)`;
     matchMedia.useMediaQuery(mediumMobileQuery);
 
     const { unmount } = render(<App />, { container, hydrate: true });
@@ -89,5 +98,159 @@ describe("useMediaQuery", () => {
     // destroying instead of clearing until fix for matchMedia.clear() gets published
     // https://github.com/dyakovk/jest-matchmedia-mock/pull/12
     matchMedia.destroy();
+  });
+
+  it("should support custom breakpoint", () => {
+    let result;
+
+    const widthBreakpointMediumMobile = theme.orbit.widthBreakpointMediumMobile - 100;
+
+    const matchMedia = new MatchMediaMock();
+
+    matchMedia.useMediaQuery(`(min-width: ${widthBreakpointMediumMobile}px)`);
+
+    render(
+      <ThemeProvider
+        theme={{
+          ...theme,
+          orbit: {
+            ...theme.orbit,
+            widthBreakpointMediumMobile,
+          },
+        }}
+      >
+        <MediaQuery
+          onChange={query => {
+            result = query;
+          }}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(result).toMatchInlineSnapshot(`
+      Array [
+        "isMediumMobile: true",
+        "isLargeMobile: false",
+        "isTablet: false",
+        "isDesktop: false",
+        "isLargeDesktop: false",
+        "prefersReducedMotion: false",
+      ]
+    `);
+  });
+
+  it("should work without context", () => {
+    let result;
+    const matchMedia = new MatchMediaMock();
+    matchMedia.useMediaQuery(mediumMobileQuery);
+    render(
+      <MediaQuery
+        onChange={query => {
+          result = query;
+        }}
+      />,
+    );
+    expect(result).toMatchInlineSnapshot(`
+      Array [
+        "isMediumMobile: true",
+        "isLargeMobile: false",
+        "isTablet: false",
+        "isDesktop: false",
+        "isLargeDesktop: false",
+        "prefersReducedMotion: false",
+      ]
+    `);
+  });
+
+  describe("should update query object expected number of times", () => {
+    it("with context", () => {
+      let updateCount = 0;
+
+      function UpdateCounter() {
+        const query = useMediaQuery();
+        React.useEffect(() => {
+          updateCount += 1;
+        }, [query]);
+        return null;
+      }
+
+      const matchMedia = new MatchMediaMock();
+
+      const { rerender } = render(
+        <ThemeProvider theme={theme}>
+          <UpdateCounter />
+        </ThemeProvider>,
+      );
+
+      expect(updateCount).toBe(2);
+
+      rerender(
+        // change theme object reference to trigger re-render
+        <ThemeProvider theme={{ ...theme }}>
+          <UpdateCounter />
+        </ThemeProvider>,
+      );
+
+      // nothing changed, so query object shouldn't either
+      expect(updateCount).toBe(2);
+
+      act(() => {
+        matchMedia.useMediaQuery(mediumMobileQuery);
+      });
+
+      rerender(
+        <ThemeProvider theme={{ ...theme }}>
+          <UpdateCounter />
+        </ThemeProvider>,
+      );
+
+      // viewport changed, query object should have updated
+      expect(updateCount).toBe(3);
+
+      rerender(
+        <ThemeProvider
+          theme={{
+            ...theme,
+            orbit: {
+              ...theme.orbit,
+              widthBreakpointMediumMobile: theme.orbit.widthBreakpointMediumMobile + 1,
+            },
+          }}
+        >
+          <UpdateCounter />
+        </ThemeProvider>,
+      );
+
+      // breakpoint no longer matches the viewport, query object should have updated
+      expect(updateCount).toBe(4);
+
+      matchMedia.destroy();
+    });
+
+    it("without context", () => {
+      let updateCount = 0;
+
+      function UpdateCounter() {
+        const query = useMediaQuery();
+        React.useEffect(() => {
+          updateCount += 1;
+        }, [query]);
+        return null;
+      }
+
+      const matchMedia = new MatchMediaMock();
+
+      render(<UpdateCounter />);
+
+      expect(updateCount).toBe(2);
+
+      act(() => {
+        matchMedia.useMediaQuery(mediumMobileQuery);
+      });
+
+      expect(updateCount).toBe(3);
+
+      matchMedia.destroy();
+    });
   });
 });

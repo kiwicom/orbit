@@ -1,6 +1,14 @@
 // @flow
-import type { Context } from "../../ThemeProvider/QueryContext";
 
-declare function useMediaQuery(): Context;
+export type QueryMap<T> = {|
+  +isMediumMobile: T,
+  +isLargeMobile: T,
+  +isTablet: T,
+  +isDesktop: T,
+  +isLargeDesktop: T,
+  +prefersReducedMotion: T,
+|};
+
+declare function useMediaQuery(): QueryMap<null | boolean>;
 
 export default useMediaQuery;

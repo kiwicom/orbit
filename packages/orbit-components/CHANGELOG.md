@@ -8,7 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **useMediaQuery:** optimize, support custom breakpoints, and make it work without context ([8a734fd](https://github.com/kiwicom/orbit/commit/8a734fd9d8db7d14725bf1c86b40652f50eeaf33)), closes [#3138](https://github.com/kiwicom/orbit/issues/3138) [#1659](https://github.com/kiwicom/orbit/issues/1659) [#1982](https://github.com/kiwicom/orbit/issues/1982) [#3138](https://github.com/kiwicom/orbit/issues/3138)
+* **useMediaQuery:** optimize, support custom breakpoints, and make it work without context ([8a734fd](https://github.com/kiwicom/orbit/commit/8a734fd9d8db7d14725bf1c86b40652f50eeaf33))
 
 
 ### Features

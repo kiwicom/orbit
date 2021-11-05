@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.1...@kiwicom/orbit-components@2.1.0) (2021-11-05)
+
+
+### Bug Fixes
+
+* **useMediaQuery:** optimize, support custom breakpoints, and make it work without context ([8a734fd](https://github.com/kiwicom/orbit/commit/8a734fd9d8db7d14725bf1c86b40652f50eeaf33)), closes [#3138](https://github.com/kiwicom/orbit/issues/3138) [#1659](https://github.com/kiwicom/orbit/issues/1659) [#1982](https://github.com/kiwicom/orbit/issues/1982) [#3138](https://github.com/kiwicom/orbit/issues/3138)
+
+
+### Features
+
+* **Wizard:** close after click on WizardStep in compact ([#3176](https://github.com/kiwicom/orbit/issues/3176)) ([247e7ae](https://github.com/kiwicom/orbit/commit/247e7ae43a8e6983c183bd100806d64c3636b0a7))
+
+
+
+
+
 ## [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.0...@kiwicom/orbit-components@2.0.1) (2021-11-03)
 
 

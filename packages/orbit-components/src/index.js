@@ -117,6 +117,7 @@ export { default as Textarea } from "./Textarea";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./ThemeProvider";
 export { default as Tile } from "./Tile";
+export { default as Toast } from "./Toast";
 export { default as TileGroup } from "./TileGroup";
 export { default as Timeline } from "./Timeline";
 export { default as TimelineStep } from "./Timeline/TimelineStep";

@@ -48,6 +48,7 @@ export { PricingTableItem } from "./PricingTable/PricingTableItem";
 export { Text } from "./Text";
 export { TextLink } from "./TextLink";
 export { Tile } from "./Tile";
+export { Toast } from "./Toast";
 export { TileGroup } from "./TileGroup";
 export { Tooltip } from "./Tooltip";
 export { Truncate } from "./Truncate";

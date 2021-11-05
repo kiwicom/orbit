@@ -1,0 +1,20 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/toast/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken";
+
+export type Props = {|
+  +children: React.Node,
+  +animate?: boolean,
+  +iconLeft?: React.Node,
+  +offsetX?: string,
+  +offsetY?: string,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

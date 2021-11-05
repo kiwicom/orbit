@@ -3,18 +3,10 @@
 
 import * as React from "react";
 
-export interface Context {
-  readonly isMediumMobile: boolean | null;
-  readonly isLargeMobile: boolean | null;
-  readonly isTablet: boolean | null;
-  readonly isDesktop: boolean | null;
-  readonly isLargeDesktop: boolean | null;
-  readonly prefersReducedMotion: boolean | null;
-}
+import type { QueryMap } from "../../hooks/useMediaQuery";
 
-declare const QueryContext: React.Context<Context>;
-export declare const QueryContextProvider: React.FunctionComponent<{
-  readonly children?: React.ReactNode;
-}>;
+export declare const initialValue: QueryMap<null>;
+
+declare const QueryContext: React.Context<QueryMap<null | boolean>>;
 
 export default QueryContext;

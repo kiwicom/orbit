@@ -246,17 +246,16 @@ const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<P
           readOnly={readOnly}
           error={hasError}
         />
-        {tooltip &&
-          cloneWithTooltip(
-            tooltip,
-            <IconContainer
-              disabled={disabled}
-              checked={checked}
-              onClick={readOnly ? preventOnClick : null}
-            >
-              <Check customColor="white" />
-            </IconContainer>,
-          )}
+        {cloneWithTooltip(
+          tooltip,
+          <IconContainer
+            disabled={disabled}
+            checked={checked}
+            onClick={readOnly ? preventOnClick : null}
+          >
+            <Check customColor="white" />
+          </IconContainer>,
+        )}
         {(label || info) && (
           <TextContainer>
             {label && <LabelText>{label}</LabelText>}

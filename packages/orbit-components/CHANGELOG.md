@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.0...@kiwicom/orbit-components@2.1.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* remove uneccessary condition ([#3181](https://github.com/kiwicom/orbit/issues/3181)) ([e79baab](https://github.com/kiwicom/orbit/commit/e79baabc51531a88796100a14efaf2495730e41b))
+
+
+
+
+
 # [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.1...@kiwicom/orbit-components@2.1.0) (2021-11-05)
 
 

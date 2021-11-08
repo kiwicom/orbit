@@ -16,7 +16,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Information
 - component: Badge
@@ -65,7 +65,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Action
 - component: ButtonMobileStore
@@ -114,14 +114,14 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: ChoiceGroup
   figma: Designing
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: ChoiceTile
@@ -212,7 +212,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Text
 - component: Hide
@@ -233,7 +233,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: IllustrationPrimitive
@@ -247,7 +247,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: Inline
@@ -261,7 +261,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: InputFile
@@ -408,7 +408,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: RatingStars
@@ -443,7 +443,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Structure
 - component: ServiceLogo
@@ -492,7 +492,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Interaction
 - component: Sticky
@@ -541,7 +541,7 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Interaction
 - component: TextLink
@@ -555,14 +555,14 @@
   figma: Released
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Text
 - component: Textarea
   figma: Planned
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: TileGroup
@@ -576,7 +576,7 @@
   figma: Planned
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Structure
 - component: Timeline

@@ -30,7 +30,8 @@
     "size:build": "yarn run build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
-    "clean": "rimraf src/js lib es pages output"
+    "clean": "rimraf src/js lib es pages output",
+    "prepublishOnly": "yarn build"
   },
   "author": "Kiwi.com",
   "license": "MIT",

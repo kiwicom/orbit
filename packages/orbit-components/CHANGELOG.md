@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.2...@kiwicom/orbit-components@2.1.3) (2021-11-09)
+
+
+### Bug Fixes
+
+* **Heading:** fix error when passing unsupported props ([b52bcdb](https://github.com/kiwicom/orbit/commit/b52bcdb2984e92fb925e361a957a1d8717b938b8))
+
+
+
+
+
 ## [2.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.1...@kiwicom/orbit-components@2.1.2) (2021-11-09)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

@@ -10,16 +10,16 @@ import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
 
 const StyledContainer = styled.div`
-  ${({ theme, disabled, glow }) => css`
+  ${({ theme, $disabled, $glow }) => css`
     width: ${theme.orbit.widthIconSmall};
     height: ${theme.orbit.heightIconSmall};
     border-radius: ${theme.orbit.borderRadiusCircle};
     background: ${theme.orbit.paletteProductNormal};
-    ${disabled &&
+    ${$disabled &&
     css`
       background: ${theme.orbit.paletteCloudNormalHover};
     `}
-    ${glow &&
+    ${$glow &&
     css`
       box-shadow: 0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
     `};
@@ -40,7 +40,7 @@ const WizardStepIcon = (): React.Node => {
   const theme = useTheme();
 
   return (
-    <StyledContainer disabled={status === "disabled"} glow={isActive && !isCompact}>
+    <StyledContainer $disabled={status === "disabled"} $glow={isActive && !isCompact}>
       {status === "completed" ? (
         <CheckCircle
           ariaLabel="completed"

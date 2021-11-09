@@ -65,18 +65,20 @@ export const StyledHeading: any = styled(
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
     margin-bottom: ${getSpacingToken};
-    ${Object.keys(viewports).map(viewport => {
-      const { type: value, spaceAfter } = viewports[viewport];
-      return (
-        viewport in mediaQueries &&
-        mediaQueries[viewport](css`
-          font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
-          font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
-          line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
-          margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
-        `)
-      );
-    })}
+    ${Object.keys(viewports)
+      .filter(viewport => mediaQueries[viewport])
+      .map(viewport => {
+        const { type: value, spaceAfter } = viewports[viewport];
+        return (
+          viewport in mediaQueries &&
+          mediaQueries[viewport](css`
+            font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+            font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
+            line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
+            margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
+          `)
+        );
+      })}
   `}
 `;
 

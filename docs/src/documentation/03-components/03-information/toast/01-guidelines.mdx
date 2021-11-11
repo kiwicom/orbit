@@ -1,22 +1,30 @@
 ---
-title: Toast
+title: Guidelines
 redirect_from:
   - /components/toast/
 ---
 
-import MoreThanColorSnippet from "snippets/more-than-color.mdx";
+<ReactExample exampleId="Toast-default" />
 
-## When to use
+Toast shows a brief message that’s clear & understandable.
+It’s shown temporarily, which means that it shouldn’t be used for error messages that block the user in continuing the flow.
+Toast component is used for feedback from the app to the users for informing or warning them about different states.
+Toast should only be used if there are no other ways of providing the feedback.
 
-- To display temporary short messages.
-- To react to user input (let users know something is happening).
+<UsageUse>
 
-## When not to use
+- Keep the text very short to make it easy for users to read it.
+- Use Toast if it’s the only way of providing feedback.
 
-- If the message should stay on the screen---use an [alert](/components/information/alert/).
-- When you want to include an action---use an [alert](/components/information/alert/).
-- When an action is necessary before continuing---use a [modal](/components/overlay/modal/)
-  or [dialog](/components/overlay/dialog/).
+</UsageUse>
+
+<UsageDontUse>
+
+- If the message should stay on the screen
+- When you want to include an action
+- When an action is necessary before continuing
+
+</UsageDontUse>
 
 ## Component status
 
@@ -52,8 +60,6 @@ If there are actions associated with the message,
 use an [alert](/components/information/alert/).
 Otherwise, use [buttons and other action components](/guides/using-button-type-components/).
 
-<MoreThanColorSnippet component="toast" />{" "}
-
 ## Content
 
 ### Keep it short
@@ -66,30 +72,3 @@ Aim for shorter if possible.
 If more information is necessary,
 use a [text link](/components/action/textlink/)
 to a more detailed description (don't truncate the toast itself).
-
-## Look & feel
-
-### Toast types
-
-#### Success
-
-Success toasts confirm that a user's action was processed.
-Use them to show success when the screen doesn't change.
-
-#### Warning
-
-Warning toasts warn the user about situations that might be unfavorable.
-Use them for general travel warnings.
-Don't use them for any critical information that should break the user's flow.
-
-#### Informational
-
-Informational toasts present general content
-without an associated positive (success) or negative (warning) emotion.
-
-### Positioning
-
-This component can be in different positions that are commonly used on websites,
-such as a corner of the screen.
-For mobile devices, the component is located at the top of the screen
-and is stretched to cover the entire screen width.

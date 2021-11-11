@@ -65,6 +65,7 @@ const StyledFormFeedbackTooltip = styled.div`
     max-height: none;
     overflow: visible;
     width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
+    width: min(${`calc(100% + ${SIDE_NUDGE * 2}px)`}, 100vw);
     background: ${resolveColor};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
@@ -175,7 +176,7 @@ const ErrorFormTooltip = ({
       if (inputSize === "small") return [rtl ? 10 : -14, 7];
       return [rtl ? 6 : -6, 6];
     }
-    return [rtl ? 10 : -10, 7];
+    return [rtl ? SIDE_NUDGE : -SIDE_NUDGE, 7];
   }, [inlineLabel, inputSize, rtl]);
 
   const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {

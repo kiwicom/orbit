@@ -26,7 +26,7 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
 
   React.useEffect(() => {
     if (firstRender.current) {
-      if (appear && show && firstRender.current) {
+      if (appear && show) {
         setMounted(true);
       }
     }
@@ -56,17 +56,19 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
   React.useEffect(() => {
     let listener;
     const el = ref.current;
-    if (!firstRender.current && mounted) {
-      // reading from properties like scrollTop forces a repaint, which we need
-      // to make transition work immediately after mount
-      // eslint-disable-next-line babel/no-unused-expressions
-      ref.current?.scrollTop;
-      setEnter(true);
-      setDone(false);
-      listener = () => {
-        setDone(true);
-      };
-      el?.addEventListener("transitionend", listener);
+    if (!firstRender.current) {
+      if (mounted) {
+        // reading from properties like scrollTop forces a repaint, which we need
+        // to make transition work immediately after mount
+        // eslint-disable-next-line babel/no-unused-expressions
+        ref.current?.scrollTop;
+        setEnter(true);
+        setDone(false);
+        listener = () => {
+          setDone(true);
+        };
+        el?.addEventListener("transitionend", listener);
+      }
     }
     return () => {
       el?.removeEventListener("transitionend", listener);

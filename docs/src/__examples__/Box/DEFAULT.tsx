@@ -64,14 +64,12 @@ export default {
         },
         {
           name: "shrink",
-          type: "select",
-          options: ["0", "1"],
+          type: "number",
           defaultValue: "0",
         },
         {
           name: "grow",
-          type: "select",
-          options: ["0", "1"],
+          type: "number",
           defaultValue: "0",
         },
         {

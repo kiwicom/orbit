@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text, select, object } from "@storybook/addon-knobs";
+import { text, select, object, number } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { WIDTH_AND_HEIGHT } from "./consts";
@@ -26,10 +26,6 @@ const DIRECTION = {
   "ROW-REVERSE": "row-reverse",
   "COLUMN-REVERSE": "column-reverse",
 };
-
-const SHRINK = [0, 1];
-
-const GROW = [0, 1];
 
 const POSITION = { ABSOLUTE: "absolute", RELATIVE: "relative", FIXED: "fixed" };
 
@@ -317,8 +313,8 @@ export const Flex = (): React.Node => {
   const align = select("align", Object.values(ALIGN), ALIGN.START);
   const justify = select("justify", Object.values(JUSTIFY), "start");
   const wrap = select("wrap", Object.values(WRAP), WRAP[0]);
-  const shrink = select("shrink", Object.values(SHRINK), SHRINK[0]);
-  const grow = select("grow", Object.values(GROW), GROW[0]);
+  const shrink = number("shrink", 0);
+  const grow = number("grow", 0);
 
   return (
     <Box
@@ -342,8 +338,8 @@ export const Playground = (): React.Node => {
   const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
   const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.VISIBLE);
   const wrap = select("wrap", Object.values(WRAP), WRAP[0]);
-  const shrink = select("shrink", SHRINK, SHRINK[0]);
-  const grow = select("grow", GROW, GROW[0]);
+  const shrink = number("shrink", 0);
+  const grow = number("grow", 0);
   const align = select("align", Object.values(ALIGN), ALIGN.START);
   const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);

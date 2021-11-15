@@ -52,15 +52,23 @@ const getTypeToken = ({ name, theme, type }) => {
   return tokens[name][type];
 };
 
-const Badge = (props: Props): React.Node => {
+const Badge = ({
+  type = TYPE_OPTIONS.NEUTRAL,
+  border = true,
+  icon,
+  children,
+  ariaLabel,
+  dataTest,
+  carriers,
+}: Props): React.Node => {
   const theme = useTheme();
-  const { type = TYPE_OPTIONS.NEUTRAL, icon, children, ariaLabel, dataTest } = props;
 
   return (
     <BadgePrimitive
+      carriers={carriers}
       background={getTypeToken({ name: TOKENS.background, theme, type })}
       foregroundColor={getTypeToken({ name: TOKENS.color, theme, type })}
-      borderColor={getTypeToken({ name: TOKENS.border, theme, type })}
+      borderColor={border ? getTypeToken({ name: TOKENS.border, theme, type }) : "transparent"}
       icon={icon}
       ariaLabel={ariaLabel}
       dataTest={dataTest}

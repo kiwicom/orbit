@@ -3,6 +3,7 @@
 
 import * as React from "react";
 
+import { Carrier } from "../CarrierLogo";
 import * as Common from "../common/common";
 
 export type Type =
@@ -21,6 +22,8 @@ export type Type =
 export interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly type?: Type;
+  readonly border?: boolean;
+  readonly carriers?: Carrier[];
   readonly icon?: React.ReactNode;
   readonly ariaLabel?: string;
 }

@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StyledCarrierLogo } from "../../CarrierLogo";
+import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
 import defaultTheme from "../../defaultTheme";
 import { rtlSpacing, left } from "../../utils/rtl";
 
@@ -45,14 +45,16 @@ StyledBadge.defaultProps = {
 const IconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
-  display: flex;
-  flex-shrink: 0;
-  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
+  ${({ theme, hasContent }) => css`
+    display: flex;
+    flex-shrink: 0;
+    margin: ${hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
 
-  svg {
-    height: ${({ theme }) => theme.orbit.widthIconSmall};
-    width: ${({ theme }) => theme.orbit.heightIconSmall};
-  }
+    svg {
+      height: ${theme.orbit.widthIconSmall};
+      width: ${theme.orbit.heightIconSmall};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -75,9 +77,16 @@ StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const BadgePrimitive = (props: Props): React.Node => {
-  const { icon, children, ariaLabel, dataTest, background, foregroundColor, borderColor } = props;
-
+const BadgePrimitive = ({
+  icon,
+  children,
+  ariaLabel,
+  dataTest,
+  background,
+  foregroundColor,
+  borderColor,
+  carriers,
+}: Props): React.Node => {
   return (
     <StyledBadge
       background={background}
@@ -86,8 +95,11 @@ const BadgePrimitive = (props: Props): React.Node => {
       ariaLabel={ariaLabel}
       borderColor={borderColor}
     >
+      {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
       {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}
-      <StyledBadgeContent>{children}</StyledBadgeContent>
+      <StyledBadgeContent $isCarrier={carriers && carriers.length > 0}>
+        {children}
+      </StyledBadgeContent>
     </StyledBadge>
   );
 };

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
@@ -52,13 +52,15 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
     srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
   };
 })`
-  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  height: ${getCarrierLogoSize};
-  width: ${getCarrierLogoSize};
-  &:last-child {
-    align-self: flex-end;
-  }
+  ${({ theme, rounded }) => css`
+    background-color: ${theme.orbit.backgroundCarrierLogo};
+    border-radius: ${rounded ? theme.orbit.borderRadiusCircle : theme.orbit.borderRadiusNormal};
+    height: ${getCarrierLogoSize};
+    width: ${getCarrierLogoSize};
+    &:last-child {
+      align-self: flex-end;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -67,16 +69,20 @@ StyledImage.defaultProps = {
 };
 
 export const StyledCarrierLogo: any = styled.div`
-  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
-  height: ${({ theme, carriers, size }) =>
-    carriers.length > 1 ? theme.orbit.heightIconLarge : `${getRenderSize({ theme, size })}px`};
-  width: ${({ theme, carriers, size }) =>
-    carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
-  display: flex;
-  flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
-  flex-wrap: ${({ carriers }) => carriers.length > 2 && "wrap"};
-  align-content: space-between;
-  justify-content: space-between;
+  ${({ theme, carriers, size }) => css`
+    background-color: ${theme.orbit.backgroundCarrierLogo};
+    height: ${carriers.length > 1
+      ? theme.orbit.heightIconLarge
+      : `${getRenderSize({ theme, size })}px`};
+    width: ${carriers.length > 1
+      ? theme.orbit.widthIconLarge
+      : `${getRenderSize({ theme, size })}px`};
+    display: flex;
+    flex-direction: ${carriers.length > 1 ? "column" : "row"};
+    flex-wrap: ${carriers.length > 2 && "wrap"};
+    align-content: space-between;
+    justify-content: space-between;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -84,11 +90,17 @@ StyledCarrierLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest }: Props): React.Node => (
+const CarrierLogo = ({
+  size = SIZE_OPTIONS.LARGE,
+  carriers,
+  dataTest,
+  rounded,
+}: Props): React.Node => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage
         key={carrierImage.code}
+        rounded={rounded}
         carrierType={carrierImage.type}
         carriersLength={carriers.length}
         code={carrierImage.code}

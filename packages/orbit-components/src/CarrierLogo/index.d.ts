@@ -7,8 +7,15 @@ import * as Common from "../common/common";
 
 type Size = "small" | "medium" | "large";
 
+export interface Carrier {
+  code: string;
+  name: string;
+  type?: "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
+}
+
 export interface Props extends Common.Global {
   readonly size?: Size;
+  readonly rounded?: boolean;
   readonly carriers: Common.Carrier[];
 }
 

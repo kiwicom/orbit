@@ -32,6 +32,7 @@ const getTypeToken = ({ theme, type }) => {
 const getWeightToken = ({ theme, weight }) => {
   const weightTokens = {
     [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
+    [WEIGHT_OPTIONS.MEDIUM]: theme.orbit.fontWeightMedium,
     [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
   };
   return weightTokens[weight];

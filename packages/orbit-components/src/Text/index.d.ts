@@ -16,7 +16,7 @@ type Type =
   | "warning"
   | "critical"
   | "white";
-type Weight = "normal" | "bold";
+type Weight = "normal" | "medium" | "bold";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;

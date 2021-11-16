@@ -12,7 +12,7 @@ type Align = "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
 type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
 type Size = "large" | "normal" | "small";
-type Weight = "normal" | "bold";
+type Weight = "normal" | "medium" | "bold";
 
 export type Props = {|
   +type?: Type,

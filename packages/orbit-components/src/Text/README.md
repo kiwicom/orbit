@@ -36,8 +36,8 @@ Table below contains all types of the props available in the Text component.
 | type          | align       | as       | size       | weight     |
 | :------------ | :---------- | :------- | :--------- | :--------- |
 | `"primary"`   | `"left"`    | `"p"`    | `"small"`  | `"normal"` |
-| `"secondary"` | `"center"`  | `"span"` | `"normal"` | `"bold"`   |
-| `"info"`      | `"right"`   | `"div"`  | `"large"`  |            |
+| `"secondary"` | `"center"`  | `"span"` | `"normal"` | `"medium"` |
+| `"info"`      | `"right"`   | `"div"`  | `"large"`  | `"bold"`   |
 | `"success"`   | `"justify"` |          |            |            |
 | `"warning"`   |             |          |            |            |
 | `"critical"`  |             |          |            |            |

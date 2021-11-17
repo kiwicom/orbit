@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Textarea from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
     const value = "value";
@@ -42,7 +42,7 @@ describe("Textarea", () => {
 
     const textbox: any = screen.getByRole("textbox");
     userEvent.tab(textbox);
-    expect(screen.getByText("Something useful.")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("Something useful.")).toBeInTheDocument());
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
     expect(textarea).toHaveAttribute("name", name);
@@ -65,11 +65,11 @@ describe("Textarea", () => {
     expect(onBlur).toHaveBeenCalled();
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     render(<Textarea error="error" size="small" />);
     const textbox: any = screen.getByRole("textbox");
     userEvent.tab(textbox);
-    expect(screen.getByText("error")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("error")).toBeInTheDocument());
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
   });
 });

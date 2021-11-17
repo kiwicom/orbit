@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputStepper from "..";
@@ -40,17 +40,17 @@ describe("InputStepper", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
-  it("should render help message", () => {
+  it("should render help message", async () => {
     render(<InputStepper label="Label" help="help message" />);
     const input = screen.getByRole("spinbutton", { name: /Label/ });
     fireEvent.focus(input);
-    expect(screen.getByText("help message")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("help message")).toBeInTheDocument());
   });
-  it("should render error message", () => {
+  it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
     const input = screen.getByRole("spinbutton", { name: /Label/ });
     fireEvent.focus(input);
-    expect(screen.getByText("error message")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("error message")).toBeInTheDocument());
   });
   it("should not be able to change value by typing", () => {
     const onChange = jest.fn();

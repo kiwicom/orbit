@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Select from "..";
@@ -77,22 +77,24 @@ describe("Select", () => {
 
   it("should have passed width", () => {
     const width = "100px";
-    render(<Select width={width} label="label" options={[{ value: "1", label: "One" }]} />);
+    render(
+      <Select width={width} label="label" readOnly options={[{ value: "1", label: "One" }]} />,
+    );
     expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
-  it("should have error message", () => {
+  it("should have error message", async () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
 
-    expect(screen.getByText("error")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("error")).toBeInTheDocument());
   });
 
-  it("should have help message", () => {
+  it("should have help message", async () => {
     render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
 
-    expect(screen.getByText("help")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("help")).toBeInTheDocument());
   });
 
   it("should be disabled", () => {

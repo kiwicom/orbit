@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputGroup from "..";
@@ -32,7 +32,7 @@ describe("InputGroup", () => {
     );
     expect(screen.getByRole("group")).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
-  it("should render help message", () => {
+  it("should render help message", async () => {
     render(
       <InputGroup help="help message">
         <InputField />
@@ -42,9 +42,9 @@ describe("InputGroup", () => {
     const input = screen.getByRole("textbox");
     // $FlowFixMe
     userEvent.tab(input);
-    expect(screen.getByText("help message")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("help message")).toBeInTheDocument());
   });
-  it("should render error message", () => {
+  it("should render error message", async () => {
     render(
       <InputGroup error="error message">
         <InputField />
@@ -54,7 +54,7 @@ describe("InputGroup", () => {
     const input = screen.getByRole("textbox");
     // $FlowFixMe
     userEvent.tab(input);
-    expect(screen.getByText("error message")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("error message")).toBeInTheDocument());
   });
 
   it("should pass event handlers to child inputs", () => {

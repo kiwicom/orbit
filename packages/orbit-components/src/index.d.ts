@@ -66,6 +66,7 @@ export { Textarea } from "./Textarea";
 export { Card } from "./Card";
 export { CardSection } from "./Card/CardSection";
 export { Coupon } from "./Coupon";
+export * as rtl from "./utils/rtl";
 export { default as mediaQueries } from "./utils/mediaQuery";
 export { Portal } from "./Portal";
 export { Pagination } from "./Pagination";

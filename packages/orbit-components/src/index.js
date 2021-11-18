@@ -130,6 +130,7 @@ export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";
+export * as rtl from "./utils/rtl";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
 export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";

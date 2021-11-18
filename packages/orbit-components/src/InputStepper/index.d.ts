@@ -36,3 +36,4 @@ export interface Props extends SharedProps {
 
 declare const InputStepper: React.FunctionComponent<Props>;
 export { InputStepper, InputStepper as default };
+export { default as InputStepperStateless } from "./InputStepperStateless";

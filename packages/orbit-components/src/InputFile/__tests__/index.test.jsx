@@ -29,7 +29,6 @@ describe("InputFile", () => {
         dataTest={dataTest}
         allowedFileTypes={allowedFileTypes}
         spaceAfter={spaceAfter}
-        help="help"
         tabIndex={tabIndex}
         onChange={onChange}
         onFocus={onFocus}
@@ -65,7 +64,7 @@ describe("InputFile", () => {
     expect(onRemoveFile).toHaveBeenCalled();
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
 
@@ -82,6 +81,7 @@ describe("InputFile", () => {
     expect(onFocus).toHaveBeenCalled();
     fireEvent.blur((screen.getByTestId("test"): any));
     expect(onBlur).toHaveBeenCalled();
-    screen.getByText("chuck norris counted to infinity twice");
+
+    expect(screen.getByText("chuck norris counted to infinity twice")).toBeInTheDocument();
   });
 });

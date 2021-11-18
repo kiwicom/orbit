@@ -32,7 +32,7 @@ describe("InputGroup", () => {
     );
     expect(screen.getByRole("group")).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
-  it("should render help message", () => {
+  it("should render help message", async () => {
     render(
       <InputGroup help="help message">
         <InputField />
@@ -44,7 +44,7 @@ describe("InputGroup", () => {
     userEvent.tab(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
-  it("should render error message", () => {
+  it("should render error message", async () => {
     render(
       <InputGroup error="error message">
         <InputField />

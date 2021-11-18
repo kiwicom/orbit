@@ -40,13 +40,13 @@ describe("InputStepper", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
-  it("should render help message", () => {
+  it("should render help message", async () => {
     render(<InputStepper label="Label" help="help message" />);
     const input = screen.getByRole("spinbutton", { name: /Label/ });
     fireEvent.focus(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
-  it("should render error message", () => {
+  it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
     const input = screen.getByRole("spinbutton", { name: /Label/ });
     fireEvent.focus(input);

@@ -53,6 +53,7 @@ import typeof ListChoiceType from "./ListChoice";
 import typeof ListItemType from "./List/ListItem";
 import typeof ListType from "./List";
 import typeof LoadingType from "./Loading";
+import typeof * as rtlType from "./utils/rtl";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof MobileType from "./Mobile";
 import typeof ModalFooterType from "./Modal/ModalFooter";
@@ -249,6 +250,7 @@ declare export var defaultTheme: Theme;
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
+declare export var rtl: rtlType;
 declare export var mediaQueries: mediaQueriesType;
 declare export var useMediaQuery: useMediaQueryType;
 declare export var useTheme: useThemeType;

@@ -7,7 +7,7 @@ import Textarea from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
     const value = "value";
@@ -65,7 +65,7 @@ describe("Textarea", () => {
     expect(onBlur).toHaveBeenCalled();
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     render(<Textarea error="error" size="small" />);
     const textbox: any = screen.getByRole("textbox");
     userEvent.tab(textbox);

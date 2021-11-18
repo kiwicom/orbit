@@ -195,6 +195,14 @@ describe("gatsby-node", () => {
 
       vol.fromJSON(
         {
+          [`${__dirname}/../../packages/orbit-components/CHANGELOG.md`]: dedent`
+            # Changelog
+            ...
+          `,
+          [`${__dirname}/../src/data/CHANGELOG.md`]: dedent`
+            # Changelog
+            ...
+          `,
           "./01-getting-started/meta.yml": dedent`
             title: Getting started
             type: folder

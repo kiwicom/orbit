@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 
 import StackOfTabs, { StyledWrapper as StyledStackWrapper } from "./StackOfTabs";
-import { TAB_HEIGHT, BORDER_RADIUS, SHADOW_PADDING_TOP } from "./consts";
+import { TAB_HEIGHT, BORDER_RADIUS, SHADOW_TOP } from "./consts";
 import { boxShadowDefault } from "../mixins";
 
 export interface TabObject {
@@ -26,7 +26,7 @@ const StyledTabLink = styled(Link)`
   ${({ theme }) => css`
     display: flex;
     align-items: center; /* align text so it matches StyledTab */
-    height: calc(${TAB_HEIGHT} - ${SHADOW_PADDING_TOP});
+    height: calc(${TAB_HEIGHT} - ${SHADOW_TOP});
     color: ${theme.orbit.paletteInkLight};
     transition: color ${theme.orbit.durationFast};
     &:hover {
@@ -37,7 +37,7 @@ const StyledTabLink = styled(Link)`
 
 export const commonTabStyle = css`
   ${({ theme }) => `
-    height: calc(${TAB_HEIGHT} - ${SHADOW_PADDING_TOP});
+    height: calc(${TAB_HEIGHT} - ${SHADOW_TOP});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
     ${boxShadowDefault};

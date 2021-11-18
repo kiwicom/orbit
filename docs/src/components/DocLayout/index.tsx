@@ -33,7 +33,7 @@ import { ComponentStatus } from "../ComponentStatus";
 import ComponentStructure from "../ComponentStructure";
 import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
-import Tabs, { TabObject } from "../Tabs";
+import Tabs, { TabObject, SHADOW_LEFT as TAB_SHADOW_LEFT } from "../Tabs";
 import ReactExample from "../ReactExample";
 import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
@@ -54,13 +54,18 @@ const StyledDescription = styled.span`
   line-height: 22px;
 `;
 
-const StyledTopWrapper = styled.div`
-  ${({ theme }) => css`
+const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
+  ${({ theme, $hasTabs }) => css`
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: end;
     padding: 0 ${theme.orbit.spaceXLarge};
+    ${$hasTabs &&
+    // maintain alignment of tabs with the content
+    css`
+      padding-left: calc(${theme.orbit.spaceXLarge} - ${TAB_SHADOW_LEFT});
+    `};
   `}
 `;
 
@@ -176,7 +181,7 @@ export default function DocLayout({
                         justify={tabs && tabs.length > 0 ? "between" : "end"}
                         tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
                       >
-                        <StyledTopWrapper>
+                        <StyledTopWrapper $hasTabs={Boolean(tabs)}>
                           {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
                           {headerLink && (
                             <Hide on={["smallMobile", "mediumMobile"]}>

@@ -19,9 +19,7 @@ import useTheme from "../../hooks/useTheme";
 
 import type { Props } from ".";
 
-const StyledArrow = styled(
-  React.forwardRef(({ className }, ref) => <div className={className} ref={ref} />),
-)`
+const StyledArrow = styled.div`
   ${({ position, top, left, bottom, right: popperRight, transform }) => css`
     position: ${position};
     top: ${top};
@@ -168,7 +166,7 @@ const ErrorFormTooltip = ({
 }: Props): React.Node => {
   const contentRef = React.useRef(null);
   const { rtl } = useTheme();
-  const [tooltipRef, setTooltipRef] = React.useState(null);
+  const tooltipRef = React.useRef(null);
   const [arrowRef, setArrowRef] = React.useState(null);
 
   const resolveOffset = React.useCallback(() => {
@@ -179,29 +177,33 @@ const ErrorFormTooltip = ({
     return [rtl ? SIDE_NUDGE : -SIDE_NUDGE, 7];
   }, [inlineLabel, inputSize, rtl]);
 
-  const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {
-    placement: rtl ? "top-end" : "top-start",
-    modifiers: [
-      {
-        name: "offset",
-        options: {
-          offset: resolveOffset,
+  const { styles, attributes: attrs, update } = usePopper(
+    referenceElement?.current,
+    tooltipRef.current,
+    {
+      placement: rtl ? "top-end" : "top-start",
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset: resolveOffset,
+          },
         },
-      },
-      {
-        name: "arrow",
-        options: {
-          element: arrowRef,
+        {
+          name: "arrow",
+          options: {
+            element: arrowRef,
+          },
         },
-      },
-      {
-        name: "eventListeners",
-        options: {
-          scroll: false,
+        {
+          name: "eventListeners",
+          options: {
+            scroll: false,
+          },
         },
-      },
-    ],
-  });
+      ],
+    },
+  );
 
   const { popper, arrow } = styles;
 
@@ -214,7 +216,7 @@ const ErrorFormTooltip = ({
   }, [update, resolveOffset, shown]);
 
   React.useEffect(() => {
-    const link = tooltipRef?.querySelector("a");
+    const link = tooltipRef.current?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
       if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
@@ -230,12 +232,12 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp, tooltipRef]);
+  }, [onShown, isHelp]);
 
   return (
     <StyledFormFeedbackTooltip
       id={id}
-      ref={setTooltipRef}
+      ref={tooltipRef}
       inputSize={inputSize}
       shown={shown}
       isHelp={isHelp}

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Textarea from "..";
@@ -42,7 +42,7 @@ describe("Textarea", () => {
 
     const textbox: any = screen.getByRole("textbox");
     userEvent.tab(textbox);
-    await waitFor(() => expect(screen.getByText("Something useful.")).toBeInTheDocument());
+    expect(screen.getByText("Something useful.")).toBeInTheDocument();
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
     expect(textarea).toHaveAttribute("name", name);
@@ -69,7 +69,7 @@ describe("Textarea", () => {
     render(<Textarea error="error" size="small" />);
     const textbox: any = screen.getByRole("textbox");
     userEvent.tab(textbox);
-    await waitFor(() => expect(screen.getByText("error")).toBeInTheDocument());
+    expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
   });
 });

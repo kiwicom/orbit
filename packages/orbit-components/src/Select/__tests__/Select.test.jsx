@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Select from "..";
@@ -87,14 +87,14 @@ describe("Select", () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
 
-    await waitFor(() => expect(screen.getByText("error")).toBeInTheDocument());
+    expect(screen.getByText("error")).toBeInTheDocument();
   });
 
   it("should have help message", async () => {
     render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
 
-    await waitFor(() => expect(screen.getByText("help")).toBeInTheDocument());
+    expect(screen.getByText("help")).toBeInTheDocument();
   });
 
   it("should be disabled", () => {

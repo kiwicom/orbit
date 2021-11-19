@@ -21,5 +21,3 @@ runs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
       shell: bash
-      env:
-        STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}

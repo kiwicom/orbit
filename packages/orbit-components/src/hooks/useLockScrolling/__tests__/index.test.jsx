@@ -14,6 +14,10 @@ beforeAll(() => {
   matchMedia = new MatchMediaMock();
 });
 
+beforeEach(() => {
+  document.body?.style.removeProperty("overflow");
+});
+
 afterEach(() => {
   matchMedia.clear();
 });
@@ -44,7 +48,39 @@ describe("useLockScrolling", () => {
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     unmount();
-    expect(document.body).not.toHaveStyle({ overflow: "hidden" });
+  });
+
+  // some projects have their own implementation of locking scrolling
+  // we need to warn people to use this hook instead to avoid conflicts
+  it("should log an error for unexpected (un)locked scroll", () => {
+    const log = jest.spyOn(console, "error").mockImplementation(() => {});
+    function Lock({ children }: {| children?: React.Node |}) {
+      const ref = React.useRef(null);
+      useLockScrolling(ref);
+      return <div ref={ref}>{children}</div>;
+    }
+
+    const { rerender, unmount } = render(<Lock />);
+    unmount();
+    expect(log).not.toHaveBeenCalled();
+
+    document.body?.style.setProperty("overflow", "hidden");
+    rerender(
+      <Lock>
+        <Lock />
+      </Lock>,
+    );
+    expect(log).toHaveBeenCalledWith(expect.stringContaining("already locked"));
+
+    log.mockClear();
+    rerender(<Lock />);
+    expect(log).not.toHaveBeenCalled();
+
+    document.body?.style.removeProperty("overflow");
+    unmount();
+    expect(log).toHaveBeenCalledWith(expect.stringContaining("already unlocked"));
+
+    log.mockRestore();
   });
 
   it("should survive stress testing 😈", () => {

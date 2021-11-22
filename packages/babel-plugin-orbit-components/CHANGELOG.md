@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.12](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.11...@kiwicom/babel-plugin-orbit-components@3.1.12) (2021-11-22)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
 ## [3.1.11](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.10...@kiwicom/babel-plugin-orbit-components@3.1.11) (2021-11-09)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.2.0...@kiwicom/orbit-components@2.3.0) (2021-11-23)
+
+
+### Features
+
+* **Badge:** add border and carriers props ([e538b53](https://github.com/kiwicom/orbit/commit/e538b535418d2b76fb63b4279cf87d36a4b2b2b9))
+* **BadgePrimitive:** add carriers prop ([274795c](https://github.com/kiwicom/orbit/commit/274795ca8b6440ac14acda58472dabac5a7bca25))
+* **CarrierLogo:** add rounded prop ([55aaf50](https://github.com/kiwicom/orbit/commit/55aaf50d1f1c82626c83773b935d69765b988ac3))
+* **Itinerary:** init ([3a0d40e](https://github.com/kiwicom/orbit/commit/3a0d40e7bf9f63ed577519dd00535039713ca8c3))
+* **Text:** add font-weight medium ([1a361f2](https://github.com/kiwicom/orbit/commit/1a361f27edf166e52b59fbd840deee942573235f))
+* **Text:** add line-through ([2a74e2d](https://github.com/kiwicom/orbit/commit/2a74e2dec4d1bd37345178b07b527bd91310f6df))
+
+
+
+
+
 # [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.3...@kiwicom/orbit-components@2.2.0) (2021-11-22)
 
 

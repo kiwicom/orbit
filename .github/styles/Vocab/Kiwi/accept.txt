@@ -54,3 +54,4 @@ Toman
 viewport
 Vueling
 svgs
+grayscale

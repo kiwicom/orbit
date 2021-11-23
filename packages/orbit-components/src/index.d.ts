@@ -40,6 +40,14 @@ export { List } from "./List";
 export { ListItem } from "./List/ListItem";
 export { ListChoice } from "./ListChoice";
 export { InputFile } from "./InputFile";
+export {
+  default as Itinerary,
+  ItinerarySegment,
+  ItineraryStatus,
+  ItineraryBadgeList,
+  ItinerarySegmentDetail,
+  ItinerarySegmentStop,
+} from "./Itinerary";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading";
 export { Popover } from "./Popover";

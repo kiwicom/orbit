@@ -17,6 +17,7 @@ export const SIZE_OPTIONS = {
 
 export const WEIGHT_OPTIONS = {
   NORMAL: "normal",
+  MEDIUM: "medium",
   BOLD: "bold",
 };
 

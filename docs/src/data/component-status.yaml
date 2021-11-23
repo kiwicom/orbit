@@ -285,19 +285,12 @@
   android: N/A
   docs: Released
   group: Input
-- component: ItinerarySector
-  figma: Planned
-  react: Waiting
+- component: Itinerary
+  figma: Released
+  react: Released
   ios: N/A
   android: N/A
-  docs: Waiting
-  group: Structure
-- component: ItinerarySegment
-  figma: Planned
-  react: Waiting
-  ios: N/A
-  android: N/A
-  docs: Waiting
+  docs: Released
   group: Structure
 - component: Layout
   figma: N/A

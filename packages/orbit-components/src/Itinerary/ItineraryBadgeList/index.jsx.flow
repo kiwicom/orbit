@@ -1,0 +1,13 @@
+// @flow
+import * as React from "react";
+
+import type { spaceAfter } from "../../common/getSpacingToken";
+import type { Props as BadgeListProps } from "../../BadgeList";
+
+export type Props = {|
+  +children: React.Node,
+  ...BadgeListProps,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

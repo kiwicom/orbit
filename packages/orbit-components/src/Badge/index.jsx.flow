@@ -3,8 +3,8 @@
   DOCUMENTATION: https://orbit.kiwi/components/badge/
 */
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
+import type { Carrier } from "../CarrierLogo";
 import type { Globals } from "../common/common.js.flow";
 
 export type Type =
@@ -19,14 +19,15 @@ export type Type =
   | "criticalInverted"
   | "successInverted"
   | "warningInverted";
+
 export type Props = {|
   +children?: React.Node,
+  +carriers?: Carrier[],
+  +border?: boolean,
   +type?: Type,
   +icon?: React.Node,
   +ariaLabel?: string,
   ...Globals,
 |};
-
-declare export var StyledBadge: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;

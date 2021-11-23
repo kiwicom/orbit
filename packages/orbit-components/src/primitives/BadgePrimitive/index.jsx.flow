@@ -5,11 +5,13 @@
 import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
+import type { Carrier } from "../../CarrierLogo";
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   +children?: React.Node,
   +icon?: React.Node,
+  +carriers?: Carrier[],
   +ariaLabel?: string,
   +background?: ?string,
   +foregroundColor?: ?string,

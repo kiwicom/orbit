@@ -1,8 +1,15 @@
 /* eslint-disable no-restricted-syntax */
 const { fs } = require("zx");
-const _ = require("lodash");
 
 const { peerDependencies } = require("./package.json");
+
+const sortBy = key => {
+  return (a, b) => {
+    if (a[key] > b[key]) return 1;
+    if (b[key] > a[key]) return -1;
+    return 0;
+  };
+};
 
 const exportMatches = fs
   .readFileSync(`${__dirname}/src/index.js`)
@@ -39,7 +46,7 @@ module.exports = [
     import: "{ Orbit }",
     limit: "210 kB",
   },
-  ..._.sortBy(entries, "name"),
+  ...entries.sort(sortBy("name")),
 ].map(entry => ({
   ...entry,
   ignore: Object.keys(peerDependencies),

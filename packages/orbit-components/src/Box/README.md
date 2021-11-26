@@ -95,6 +95,7 @@ All this properties - objects have the some own properties and none is required.
 | `"block"`        | `"between"` | `"column-reverse"` | `"stretch"` |            |          |          |
 | `"inline"`       | `"around"`  |                    |             |            |          |          |
 | `"inline-block"` |             |                    |             |            |          |          |
+| `"list-item"`    |             |                    |             |            |          |          |
 
 ### position
 

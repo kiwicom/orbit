@@ -33,7 +33,7 @@ import { ComponentStatus } from "../ComponentStatus";
 import ComponentStructure from "../ComponentStructure";
 import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
-import Tabs, { TabObject, SHADOW_LEFT as TAB_SHADOW_LEFT } from "../Tabs";
+import Tabs, { TabObject, getTabShadowReachLeft } from "../Tabs";
 import ReactExample from "../ReactExample";
 import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
@@ -64,7 +64,7 @@ const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
     ${$hasTabs &&
     // maintain alignment of tabs with the content
     css`
-      padding-left: calc(${theme.orbit.spaceXLarge} - ${TAB_SHADOW_LEFT});
+      padding-left: calc(${theme.orbit.spaceXLarge} - ${getTabShadowReachLeft(theme)});
     `};
   `}
 `;

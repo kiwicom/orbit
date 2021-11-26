@@ -55,6 +55,7 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
     display: flex;
     justify-content: center;
     padding: 20px;
+    height: 100%;
     ${mq.desktop(css`
       padding: ${theme.orbit.spaceMedium};
     `)};
@@ -63,6 +64,8 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
 
 const StyledImage = styled.div`
   height: 100%;
+  width: 100%;
+
   svg {
     max-width: 100%;
   }
@@ -120,18 +123,18 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
         </Stack>
         {allImages.length === 1 && (
           <StyledImageContainer type={type} middleAlign>
-            {allImages[0]}
+            <StyledImage>{allImages[0]}</StyledImage>
           </StyledImageContainer>
         )}
         {allImages.length > 1 && (
           <>
-            <Stack shrink direction="column" spacing="XSmall">
+            <Stack shrink align="stretch" direction="column" spacing="XSmall">
               <DoDontHeader type={type} />
               <StyledImageContainer type={type}>
                 <StyledImage>{allImages[0]}</StyledImage>
               </StyledImageContainer>
             </Stack>
-            <Stack shrink direction="column" spacing="XSmall">
+            <Stack shrink align="stretch" direction="column" spacing="XSmall">
               <DoDontHeader type={typeOpposite} />
               <StyledImageContainer type={typeOpposite}>
                 <StyledImage>{allImages[1]}</StyledImage>

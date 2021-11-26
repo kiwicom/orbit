@@ -38,7 +38,7 @@ module.exports = [
     name: "Orbit ESM",
     path: `${__dirname}/es/size-measurer.js`,
     import: "{ Orbit }",
-    limit: "185 kB",
+    limit: "190 kB",
   },
   {
     name: "Orbit CJS",

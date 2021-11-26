@@ -17,6 +17,7 @@ type Size = "small" | "medium" | "large";
 
 export type Props = {|
   +size?: Size,
+  +rounded?: boolean,
   +carriers: Carrier[],
   ...Globals,
 |};

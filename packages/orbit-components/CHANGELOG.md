@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.2.0...@kiwicom/orbit-components@2.3.0) (2021-11-23)
+
+
+### Features
+
+* **Badge:** add border and carriers props ([e538b53](https://github.com/kiwicom/orbit/commit/e538b535418d2b76fb63b4279cf87d36a4b2b2b9))
+* **BadgePrimitive:** add carriers prop ([274795c](https://github.com/kiwicom/orbit/commit/274795ca8b6440ac14acda58472dabac5a7bca25))
+* **CarrierLogo:** add rounded prop ([55aaf50](https://github.com/kiwicom/orbit/commit/55aaf50d1f1c82626c83773b935d69765b988ac3))
+* **Itinerary:** init ([3a0d40e](https://github.com/kiwicom/orbit/commit/3a0d40e7bf9f63ed577519dd00535039713ca8c3))
+* **Text:** add font-weight medium ([1a361f2](https://github.com/kiwicom/orbit/commit/1a361f27edf166e52b59fbd840deee942573235f))
+* **Text:** add line-through ([2a74e2d](https://github.com/kiwicom/orbit/commit/2a74e2dec4d1bd37345178b07b527bd91310f6df))
+
+
+
+
+
+# [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.3...@kiwicom/orbit-components@2.2.0) (2021-11-22)
+
+
+### Bug Fixes
+
+* **Box:** flex-grow and flex-shrink, allow any number ([#3190](https://github.com/kiwicom/orbit/issues/3190)) ([0243bfa](https://github.com/kiwicom/orbit/commit/0243bfa8dac814f5edad292b21e4a19d825ee86e))
+* **Popover:** useClickOutside after isLargeMobile ([#3189](https://github.com/kiwicom/orbit/issues/3189)) ([02b1487](https://github.com/kiwicom/orbit/commit/02b14876bf69839d248d9ff846e86a3a6a4cf063))
+* prevent form tooltip from falling off-screen ([8c8a0a8](https://github.com/kiwicom/orbit/commit/8c8a0a8751daa8efb81ca7355a523170a4438c9f))
+* **SmartPassIllustration:** fix double id ([ada7a0b](https://github.com/kiwicom/orbit/commit/ada7a0b3c82272abea5665808ad454dad701b095))
+* **WizardStepIcon:** fix transient props ([#3184](https://github.com/kiwicom/orbit/issues/3184)) ([a560e0f](https://github.com/kiwicom/orbit/commit/a560e0f99ef9d084e3602fe428eec005c1849893))
+
+
+### Features
+
+* **icons:** added new icons ([#3199](https://github.com/kiwicom/orbit/issues/3199)) ([28f7575](https://github.com/kiwicom/orbit/commit/28f7575a93fc37d81d3f0d7c258ee107a8f92d16))
+
+
+
+
+
 ## [2.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.2...@kiwicom/orbit-components@2.1.3) (2021-11-09)
 
 

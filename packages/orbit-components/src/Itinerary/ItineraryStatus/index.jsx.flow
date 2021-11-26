@@ -1,0 +1,15 @@
+// @flow
+import * as React from "react";
+
+import type { spaceAfter } from "../../common/getSpacingToken";
+import type { Status } from "..";
+
+export type Props = {|
+  +label?: React.Node,
+  +offset?: number,
+  +type: Status,
+  +children: React.Node,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

@@ -1,0 +1,28 @@
+// @flow
+import * as React from "react";
+
+export type Context = {|
+  +isNextHidden: boolean,
+  +noElevation: boolean,
+  +isHidden: boolean,
+  +index: number,
+  +opened: boolean,
+  +toggleOpened: () => void,
+  +last: boolean,
+  +count: number,
+|};
+
+export type ProviderProps = {|
+  +children: React.Node,
+  +noElevation: boolean,
+  +isNextHidden: boolean,
+  +isHidden: boolean,
+  +index: number,
+  +opened: boolean,
+  +toggleOpened: () => void,
+  +last: boolean,
+  +count: number,
+|};
+
+declare export var ItinerarySegmentContext: React.Context<Context>;
+declare export function usePart(): Context;

@@ -16,13 +16,25 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in Badge component.
 
-| Name      | Type            | Default     | Description                                                          |
-| :-------- | :-------------- | :---------- | :------------------------------------------------------------------- |
-| children  | `React.Node`    |             | The content of the Badge.                                            |
-| dataTest  | `string`        |             | Optional prop for testing purposes.                                  |
-| icon      | `React.Node`    |             | The displayed icon on the left.                                      |
-| type      | [`enum`](#enum) | `"neutral"` | The color type of the Badge.                                         |
-| ariaLabel | `string`        |             | Adds prop adds `aria-label` to an element, useful for screenreaders. |
+| Name         | Type                    | Default     | Description                                                          |
+| :----------- | :---------------------- | :---------- | :------------------------------------------------------------------- |
+| children     | `React.Node`            |             | The content of the Badge.                                            |
+| dataTest     | `string`                |             | Optional prop for testing purposes.                                  |
+| icon         | `React.Node`            |             | The displayed icon on the left.                                      |
+| type         | [`enum`](#enum)         | `"neutral"` | The color type of the Badge.                                         |
+| ariaLabel    | `string`                |             | Adds prop adds `aria-label` to an element, useful for screenreaders. |
+| border       | `boolean`               | `true`      | Show or hide border around Badge                                     |
+| **carriers** | [`Carrier[]`](#carrier) |             | The content of the CarrierLogo, passed as array of objects.          |
+
+### Carrier
+
+Table below contains all types of the props available for object in Carrier array.
+
+| Name     | Type            | Description                                                                                   |
+| :------- | :-------------- | :-------------------------------------------------------------------------------------------- |
+| **code** | `string`        | The code of the Carrier, defines which logo will be rendered.                                 |
+| name     | `string`        | The name of the Carrier, mainly for information.                                              |
+| type     | [`enum`](#enum) | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs) |
 
 ### enum
 

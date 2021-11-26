@@ -66,6 +66,14 @@ export { default as InputField } from "./InputField";
 export { default as InputFile } from "./InputFile";
 export { default as InputGroup } from "./InputGroup";
 export { default as InputStepper, InputStepperStateless } from "./InputStepper";
+export {
+  default as Itinerary,
+  ItinerarySegment,
+  ItineraryStatus,
+  ItineraryBadgeList,
+  ItinerarySegmentStop,
+  ItinerarySegmentDetail,
+} from "./Itinerary";
 export { default as List, ListItem } from "./List";
 export { default as ListChoice } from "./ListChoice";
 export { default as Loading } from "./Loading";

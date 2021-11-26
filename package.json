@@ -12,7 +12,6 @@
     "size": "yarn size:build && size-limit",
     "size:build": "yarn tokens size:build && yarn components size:build",
     "build-ci": "yarn size:build",
-    "preinstall": "node scripts/ci-streamline-env.js",
     "postinstall": "lerna run postinstall --stream",
     "prettier:test": "prettier --check '**/*.md'",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",

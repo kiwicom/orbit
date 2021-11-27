@@ -58,6 +58,8 @@ const pathOverwrites = {
   useLockScrolling: "hooks/useLockScrolling",
   useRandomId: "hooks/useRandomId",
   useRandomIdSeed: { path: "hooks/useRandomId", named: true },
+  useFocusTrap: "hooks/useFocusTrap",
+  rtl: { path: `utils/rtl`, namespace: true },
 };
 
 const parsedImportPaths = [
@@ -103,6 +105,9 @@ module.exports = function orbitComponents(babel) {
                   t.identifier(spec.local.name),
                   t.identifier(spec.local.name),
                 );
+                importedPath += `/${pathOverwrites[importedName].path}`;
+              } else if (pathOverwrites[importedName].namespace) {
+                spec = t.importNamespaceSpecifier(t.identifier(spec.local.name));
                 importedPath += `/${pathOverwrites[importedName].path}`;
               } else {
                 // Currently there are only overrides for non icons

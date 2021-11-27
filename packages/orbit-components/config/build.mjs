@@ -1,6 +1,7 @@
 import { $, chalk, globby, fs } from "zx";
 import * as babel from "@babel/core";
 import ora from "ora";
+import dedent from "dedent";
 
 const logStep = msg => {
   console.log(`\n${chalk.yellow.underline(msg)}`);
@@ -46,13 +47,26 @@ const logStep = msg => {
   const commonJs = ["CommonJS", "lib", await babel.loadOptions()];
   const esModules = ["ES Modules", "es", await babel.loadOptions({ envName: "esm" })];
 
-  for (const [name, dir, options] of argv.size ? [commonJs] : [commonJs, esModules]) {
+  for (const [name, dir, options] of [commonJs, esModules]) {
     const spinner = ora(name).start();
     for (const file of files) {
       const result = await babel.transformFileAsync(`src/${file}`, options);
       await fs.outputFile(`${dir}/${file.replace(/\.jsx$/, ".js")}`, result.code);
     }
     spinner.succeed(`${name} → ${dir}`);
+  }
+
+  if (argv.size) {
+    // https://github.com/ai/size-limit/issues/265
+    await fs.outputFile(
+      `es/size-measurer.js`,
+      dedent`
+        import * as Orbit from ".";
+        import * as rtl from "./utils/rtl";
+
+        export { Orbit, rtl };
+      `,
+    );
   }
 
   if (!argv.size) {

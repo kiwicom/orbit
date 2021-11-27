@@ -59,6 +59,7 @@ import typeof ListChoiceType from "./ListChoice";
 import typeof ListItemType from "./List/ListItem";
 import typeof ListType from "./List";
 import typeof LoadingType from "./Loading";
+import typeof * as rtlType from "./utils/rtl";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof MobileType from "./Mobile";
 import typeof ModalFooterType from "./Modal/ModalFooter";
@@ -122,6 +123,7 @@ import typeof useLockScrollingType from "./hooks/useLockScrolling";
 import typeof useRandomIdType, {
   useRandomIdSeed as useRandomIdSeedType,
 } from "./hooks/useRandomId";
+import typeof useFocusTrapType from "./hooks/useFocusTrap";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -260,12 +262,14 @@ declare export var defaultTheme: Theme;
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
+declare export var rtl: rtlType;
 declare export var mediaQueries: mediaQueriesType;
 declare export var useMediaQuery: useMediaQueryType;
 declare export var useTheme: useThemeType;
 declare export var useLockScrolling: useLockScrollingType;
 declare export var useRandomId: useRandomIdType;
 declare export var useRandomIdSeed: useRandomIdSeedType;
+declare export var useFocusTrap: useFocusTrapType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

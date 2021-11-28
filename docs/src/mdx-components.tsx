@@ -28,8 +28,6 @@ export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
 
-export const h1 = () => null;
-
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 function createHeadingComponent(
@@ -56,6 +54,7 @@ function createHeadingComponent(
   return HeadingComponent;
 }
 
+export const h1 = createHeadingComponent("h1", { type: "title1", spaceAfter: "small" });
 export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "small" });
 export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "normal" });
 export const h4 = createHeadingComponent("h4", { type: "title4", spaceAfter: "smallest" });

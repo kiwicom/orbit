@@ -15,7 +15,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import useLockScrolling from "../../hooks/useLockScrolling";
 import { ModalContext } from "../../Modal/ModalContext";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
-import { PLACEMENTS } from "../consts";
+import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 
 const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
@@ -200,7 +200,7 @@ const PopoverContentWrapper = ({
 }: Props): React.Node => {
   const [actionsDimensions, setActionsDimensions] = React.useState(0);
   const { isInsideModal } = React.useContext(ModalContext);
-  const { isLargeMobile, isTablet } = useMediaQuery();
+  const { isLargeMobile } = useMediaQuery();
 
   const content = React.useRef<?HTMLElement | null>(null);
   const scrollingElementRef = React.useRef<HTMLElement | null>(null);
@@ -263,7 +263,7 @@ const PopoverContentWrapper = ({
   );
 
   useClickOutside(content, ev => {
-    if (isTablet) onClose(ev);
+    if (isLargeMobile) onClose(ev);
   });
 
   const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {

@@ -1,6 +1,10 @@
 // @flow
 import { SIZE_OPTIONS } from "../consts";
-import type { Props } from "./tooltipSize";
+import type { Size } from "..";
+
+export type Props = {|
+  ...Size,
+|};
 
 const tooltipSize = ({ size }: Props): string => {
   const sizes = {

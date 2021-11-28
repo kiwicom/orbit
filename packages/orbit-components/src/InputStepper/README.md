@@ -38,6 +38,7 @@ Table below contains all types of the props available in InputStepper component.
 | tabIndex       | `string \| number`          |                   | Specifies the tab order of an element                                                                                                                          |
 | titleDecrement | `string \| (any => string)` | `Decrement value` | Specifies `title` property on decrement `Button`.                                                                                                              |
 | titleIncrement | `string \| (any => string)` | `Increment value` | Specifies `title` property on increment `Button`.                                                                                                              |
+| width          | `string`                    | `100%`            | Specifies width of InputStepper                                                                                                                                |
 
 ### enum
 

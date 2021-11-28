@@ -29,7 +29,6 @@ describe("InputFile", () => {
         dataTest={dataTest}
         allowedFileTypes={allowedFileTypes}
         spaceAfter={spaceAfter}
-        help="help"
         tabIndex={tabIndex}
         onChange={onChange}
         onFocus={onFocus}
@@ -49,6 +48,12 @@ describe("InputFile", () => {
     expect(onChange).toHaveBeenCalled();
   });
 
+  it("should have passed width", () => {
+    const width = "100px";
+    render(<InputFile width={width} label="label" />);
+    expect(document.querySelector("label")).toHaveStyle({ width });
+  });
+
   it("should have filename, onRemoveFile", () => {
     const onRemoveFile = jest.fn();
 
@@ -59,7 +64,7 @@ describe("InputFile", () => {
     expect(onRemoveFile).toHaveBeenCalled();
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
 
@@ -76,6 +81,7 @@ describe("InputFile", () => {
     expect(onFocus).toHaveBeenCalled();
     fireEvent.blur((screen.getByTestId("test"): any));
     expect(onBlur).toHaveBeenCalled();
-    screen.getByText("chuck norris counted to infinity twice");
+
+    expect(screen.getByText("chuck norris counted to infinity twice")).toBeInTheDocument();
   });
 });

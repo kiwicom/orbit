@@ -161,6 +161,7 @@ export const Playground = (): React.Node => {
   const id = text("ID", "select-id");
   const required = boolean("Required", false);
   const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
+  const width = text("width", "");
 
   return (
     <Select
@@ -168,6 +169,7 @@ export const Playground = (): React.Node => {
       required={required}
       placeholder={placeholder}
       size={size}
+      width={width}
       options={option}
       disabled={disabled}
       name={name}

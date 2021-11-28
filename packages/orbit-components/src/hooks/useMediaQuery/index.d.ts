@@ -1,5 +1,12 @@
-import { Props as Media } from "../../ThemeProvider/QueryContext";
+export interface QueryMap<T> {
+  readonly isMediumMobile: T;
+  readonly isLargeMobile: T;
+  readonly isTablet: T;
+  readonly isDesktop: T;
+  readonly isLargeDesktop: T;
+  readonly prefersReducedMotion: T;
+}
 
-declare const UseMediaQuery: () => Media;
+declare function useMediaQuery(): QueryMap<boolean | null>;
 
-export { UseMediaQuery, UseMediaQuery as default };
+export default useMediaQuery;

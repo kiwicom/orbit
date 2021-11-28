@@ -190,4 +190,9 @@ describe("#Box", () => {
     expect(testEl(2)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowRaised) });
     expect(testEl(3)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowOverlay) });
   });
+
+  it("should have display list-item", () => {
+    render(<Box dataTest="box" display="list-item" />);
+    expect(screen.getByTestId("box")).toHaveStyle({ display: "list-item" });
+  });
 });

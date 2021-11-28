@@ -132,11 +132,7 @@ const Board = ({
           )}
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">
-          <Tooltip
-            preferredPosition="top"
-            preferredAlign="center"
-            content={isCopied ? "copied" : "Copy to clipboard"}
-          >
+          <Tooltip content={isCopied ? "copied" : "Copy to clipboard"}>
             <ButtonLink onClick={() => copy(code)} type="secondary" title="Copy to clipboard">
               <Copy />
             </ButtonLink>
@@ -175,7 +171,7 @@ const Board = ({
           {exampleId &&
             !isFullPage &&
             (isLargeMobile ? (
-              <Tooltip preferredPosition="top" preferredAlign="center" content="Open in a new tab">
+              <Tooltip placement="top-start" content="Open in a new tab">
                 <ButtonLink
                   type="secondary"
                   external

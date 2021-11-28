@@ -8,7 +8,7 @@ import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
 import type { Props, GetLinkStyleProps } from ".";
 
-const getColor = ({ theme, type }) => {
+const getColor = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
@@ -22,10 +22,10 @@ const getColor = ({ theme, type }) => {
   return tokens[type];
 };
 
-const getHoverColor = ({ type, theme }) => {
+const getHoverColor = ({ type }) => ({ theme }) => {
   const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductNormalHover,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductNormalHover,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
     [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
     [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
     [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
@@ -34,6 +34,20 @@ const getHoverColor = ({ type, theme }) => {
   };
   return tokens[type];
 };
+
+const getActiveColor = ({ type }) => ({ theme }) => {
+  const tokens = {
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
+    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
+  };
+  return tokens[type];
+};
+
 const getSizeToken = () => ({ theme, size }) => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
@@ -46,13 +60,15 @@ const getSizeToken = () => ({ theme, size }) => {
 const StyledIconContainer = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
 
-  & svg {
-    width: ${({ theme }) => theme.orbit.widthIconSmall};
-    height: ${({ theme }) => theme.orbit.heightIconSmall};
-  }
+    svg {
+      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.heightIconSmall};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -67,23 +83,28 @@ const resolveUnderline = ({ type, theme, noUnderline }) => {
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
-export const getLinkStyle = ({ theme, type }: GetLinkStyleProps): any => css`
+export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
   // Common styles for TextLink and "a" in Text
 
   &,
   &:link,
   &:visited {
-    color: ${getColor({ theme, type })};
+    color: ${getColor};
     text-decoration: ${resolveUnderline};
     font-weight: ${theme.orbit.fontWeightLinks};
   }
 
-  :hover,
-  :active,
-  :focus {
+  &:hover {
     outline: none;
     text-decoration: none;
-    color: ${getHoverColor({ theme, type })};
+    color: ${getHoverColor};
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: ${getActiveColor};
   }
 `;
 
@@ -92,15 +113,17 @@ export const StyledTextLink: any = styled(
     <Component {...props}>{props.children}</Component>
   ),
 )`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightLinks};
-  font-size: ${getSizeToken};
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  height: ${({ standAlone, theme }) => standAlone && theme.orbit.heightButtonNormal};
-  ${getLinkStyle};
+  ${({ theme, standAlone }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightLinks};
+    font-size: ${getSizeToken};
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: color ${theme.orbit.durationFast} ease-in-out;
+    height: ${standAlone && theme.orbit.heightButtonNormal};
+    ${getLinkStyle};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

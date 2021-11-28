@@ -6,10 +6,12 @@ import type { Theme } from "../../defaultTheme";
 
 type QueryFunction = (style: CSSRules) => CSSRules;
 
-export type MediaQueries = { [key: Devices]: QueryFunction };
+declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: false): string;
+// https://flow.org/en/docs/types/intersections/#declaring-overloaded-functions
+// eslint-disable-next-line no-redeclare
+declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: boolean): number | string;
 
-export type GetBreakpointWidth = (name: string, theme: Theme, pure?: boolean) => string;
+declare var mediaQueries: { [key: Devices]: QueryFunction };
 
-declare export default MediaQueries;
-
-declare export var getBreakpointWidth: GetBreakpointWidth;
+export { getBreakpointWidth };
+export default mediaQueries;

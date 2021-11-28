@@ -124,3 +124,10 @@ import { Grid } from '@kiwicom/orbit-components/icons'
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import Grid from "@kiwicom/orbit-components/lib/icons/Grid";
 `;
+
+exports[`transform imports as expected 16 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+import { rtl } from "@kiwicom/orbit-components";
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+import * as rtl from "@kiwicom/orbit-components/lib/utils/rtl";
+`;

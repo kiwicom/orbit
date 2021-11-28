@@ -5,15 +5,18 @@ import { useStore } from "nanostores/react";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 import LockScrolling from "./pages/lock-scrolling";
+import MediaQueries from "./pages/media-queries";
 import ModalFooter from "./pages/modal-footer";
 
 interface Routes {
   lockScrolling: void;
+  mediaQueries: void;
   modalFooter: void;
 }
 
 const router = createRouter<Routes>({
   lockScrolling: "/lock-scrolling",
+  mediaQueries: "/media-queries",
   modalFooter: "/modal-footer",
 });
 
@@ -39,6 +42,12 @@ function App() {
           }}
         >
           <LockScrolling />
+        </ThemeProvider>
+      );
+    case "mediaQueries":
+      return (
+        <ThemeProvider theme={defaultTheme}>
+          <MediaQueries />
         </ThemeProvider>
       );
     case "modalFooter":

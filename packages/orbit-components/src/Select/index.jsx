@@ -26,10 +26,12 @@ const getSelectSize = ({ theme, size }) => {
 };
 
 const Label = styled.label`
-  position: relative;
-  display: block;
-  width: 100%;
-  margin-bottom: ${getSpacingToken};
+  ${({ $width }) => css`
+    position: relative;
+    display: block;
+    width: ${$width};
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -283,6 +285,7 @@ const Select: React.AbstractComponent<
     onChange,
     onBlur,
     onFocus,
+    width = "100%",
     options,
     tabIndex,
     id,
@@ -312,7 +315,7 @@ const Select: React.AbstractComponent<
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Label spaceAfter={spaceAfter} ref={inputRef}>
+    <Label spaceAfter={spaceAfter} ref={inputRef} $width={width}>
       {label && (
         <FormLabel
           filled={!!filled}

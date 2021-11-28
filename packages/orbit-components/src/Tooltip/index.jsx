@@ -15,10 +15,9 @@ const Tooltip = ({
   dataTest,
   size = SIZE_OPTIONS.SMALL,
   content,
-  preferredPosition,
+  placement,
   lockScrolling,
   renderInPortal = true,
-  preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
@@ -32,8 +31,7 @@ const Tooltip = ({
       content={content}
       size={size}
       renderInPortal={renderInPortal}
-      preferredPosition={preferredPosition}
-      preferredAlign={preferredAlign}
+      placement={placement}
       stopPropagation={stopPropagation}
       removeUnderlinedText={removeUnderlinedText}
       block={block}

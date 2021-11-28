@@ -3,6 +3,157 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.2.0...@kiwicom/orbit-components@2.3.0) (2021-11-23)
+
+
+### Features
+
+* **Badge:** add border and carriers props ([e538b53](https://github.com/kiwicom/orbit/commit/e538b535418d2b76fb63b4279cf87d36a4b2b2b9))
+* **BadgePrimitive:** add carriers prop ([274795c](https://github.com/kiwicom/orbit/commit/274795ca8b6440ac14acda58472dabac5a7bca25))
+* **CarrierLogo:** add rounded prop ([55aaf50](https://github.com/kiwicom/orbit/commit/55aaf50d1f1c82626c83773b935d69765b988ac3))
+* **Itinerary:** init ([3a0d40e](https://github.com/kiwicom/orbit/commit/3a0d40e7bf9f63ed577519dd00535039713ca8c3))
+* **Text:** add font-weight medium ([1a361f2](https://github.com/kiwicom/orbit/commit/1a361f27edf166e52b59fbd840deee942573235f))
+* **Text:** add line-through ([2a74e2d](https://github.com/kiwicom/orbit/commit/2a74e2dec4d1bd37345178b07b527bd91310f6df))
+
+
+
+
+
+# [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.3...@kiwicom/orbit-components@2.2.0) (2021-11-22)
+
+
+### Bug Fixes
+
+* **Box:** flex-grow and flex-shrink, allow any number ([#3190](https://github.com/kiwicom/orbit/issues/3190)) ([0243bfa](https://github.com/kiwicom/orbit/commit/0243bfa8dac814f5edad292b21e4a19d825ee86e))
+* **Popover:** useClickOutside after isLargeMobile ([#3189](https://github.com/kiwicom/orbit/issues/3189)) ([02b1487](https://github.com/kiwicom/orbit/commit/02b14876bf69839d248d9ff846e86a3a6a4cf063))
+* prevent form tooltip from falling off-screen ([8c8a0a8](https://github.com/kiwicom/orbit/commit/8c8a0a8751daa8efb81ca7355a523170a4438c9f))
+* **SmartPassIllustration:** fix double id ([ada7a0b](https://github.com/kiwicom/orbit/commit/ada7a0b3c82272abea5665808ad454dad701b095))
+* **WizardStepIcon:** fix transient props ([#3184](https://github.com/kiwicom/orbit/issues/3184)) ([a560e0f](https://github.com/kiwicom/orbit/commit/a560e0f99ef9d084e3602fe428eec005c1849893))
+
+
+### Features
+
+* **icons:** added new icons ([#3199](https://github.com/kiwicom/orbit/issues/3199)) ([28f7575](https://github.com/kiwicom/orbit/commit/28f7575a93fc37d81d3f0d7c258ee107a8f92d16))
+
+
+
+
+
+## [2.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.2...@kiwicom/orbit-components@2.1.3) (2021-11-09)
+
+
+### Bug Fixes
+
+* **Heading:** fix error when passing unsupported props ([b52bcdb](https://github.com/kiwicom/orbit/commit/b52bcdb2984e92fb925e361a957a1d8717b938b8))
+
+
+
+
+
+## [2.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.1...@kiwicom/orbit-components@2.1.2) (2021-11-09)
+
+**Note:** Version bump only for package @kiwicom/orbit-components
+
+
+
+
+
+## [2.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.0...@kiwicom/orbit-components@2.1.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* remove uneccessary condition ([#3181](https://github.com/kiwicom/orbit/issues/3181)) ([e79baab](https://github.com/kiwicom/orbit/commit/e79baabc51531a88796100a14efaf2495730e41b))
+
+
+
+
+
+# [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.1...@kiwicom/orbit-components@2.1.0) (2021-11-05)
+
+
+### Bug Fixes
+
+* **useMediaQuery:** optimize, support custom breakpoints, and make it work without context ([8a734fd](https://github.com/kiwicom/orbit/commit/8a734fd9d8db7d14725bf1c86b40652f50eeaf33))
+
+
+### Features
+
+* **Wizard:** close after click on WizardStep in compact ([#3176](https://github.com/kiwicom/orbit/issues/3176)) ([247e7ae](https://github.com/kiwicom/orbit/commit/247e7ae43a8e6983c183bd100806d64c3636b0a7))
+
+
+
+
+
+## [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.0...@kiwicom/orbit-components@2.0.1) (2021-11-03)
+
+
+### Bug Fixes
+
+* missing storybook provider ([#3173](https://github.com/kiwicom/orbit/issues/3173)) ([4967fb7](https://github.com/kiwicom/orbit/commit/4967fb7dc2f34a716db7fda30c48952992979562))
+* **useToggle:** make typings reflect initial param is optional ([95821c5](https://github.com/kiwicom/orbit/commit/95821c514e8ccf970ec606de219eff301309f914))
+
+
+
+
+
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.1...@kiwicom/orbit-components@2.0.0) (2021-11-02)
+
+
+### Bug Fixes
+
+* **CountryFlag:** set "undefined" as default code ([#3100](https://github.com/kiwicom/orbit/issues/3100)) ([3e841c5](https://github.com/kiwicom/orbit/commit/3e841c526326c68140215e9e6afdec7bcb4cc29a))
+* refactor and properly initialize media queries ([#3138](https://github.com/kiwicom/orbit/issues/3138)) ([b566699](https://github.com/kiwicom/orbit/commit/b566699c00f0ca0e0c15e315f41121302b99cd69)), closes [#3149](https://github.com/kiwicom/orbit/issues/3149)
+
+
+### Code Refactoring
+
+* **TooltipPrimitive:** use Popper instead of custom logic ([#3129](https://github.com/kiwicom/orbit/issues/3129)) ([0e2271f](https://github.com/kiwicom/orbit/commit/0e2271f7389fd78ec541c60ec540668dff7b7351))
+
+
+### BREAKING CHANGES
+
+* **TooltipPrimitive:** replace props `preferredAlign` and `preferredPosition`
+with `placement`, and add new props `noFlip` and `offset`.
+* **CountryFlag:** The default code for CountryFlag is now `"undefined"`
+rather than `"anywhere"`, a gray flag with a question mark. This code is
+also used if the given code isn't supported.
+* media queries in `useMediaQuery` are now being
+properly initialized, in `useEffect` rather than directly in render, which
+should prevent some cryptic bugs, but there is a tiny chance that it will
+break code for those who have been relying on previous behavior, so it's
+important to be aware of this change.
+
+
+
+
+
+## [1.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.0...@kiwicom/orbit-components@1.6.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* **cloneWithTooltip:** wrong type declaration ([52c2418](https://github.com/kiwicom/orbit/commit/52c2418c06fbd4f8ea4aae6765e29ff48c1b2963))
+
+
+
+
+
+# [1.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.5.0...@kiwicom/orbit-components@1.6.0) (2021-10-27)
+
+
+### Features
+
+* **InputField:** add width prop ([2a2fe0f](https://github.com/kiwicom/orbit/commit/2a2fe0f437a396cfc6c153d19546e3c039dd55d2))
+* **InputFile:** add width prop ([70d1d39](https://github.com/kiwicom/orbit/commit/70d1d397fce90d9160e44a4bc7147170a93414be))
+* **InputStepper:** add width prop ([c479f41](https://github.com/kiwicom/orbit/commit/c479f414370adb9f0f728d9d51d997cbdb02ca43))
+* **Select:** add width prop ([865d690](https://github.com/kiwicom/orbit/commit/865d690bfeaa97844601114bc8db95de2ab9c307))
+* **TextLink:** add active and focus colors ([3df1647](https://github.com/kiwicom/orbit/commit/3df1647bfa94bbd269e57b7b88b7f44c53b25ad0))
+
+
+
+
+
 # [1.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.4.0...@kiwicom/orbit-components@1.5.0) (2021-10-21)
 
 
@@ -751,8 +902,8 @@ function App() {
 ### BREAKING CHANGES
 
 * **Modal:** size prop is changed, added new value
-CODEMODE: jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js
-<pathToYourCode> --parser=flow|ts
+CODEMODE: `jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js <pathToYourCode> --parser=flow|t`
+
 
 
 

@@ -19,6 +19,7 @@ export type SharedProps = {|
   +name?: string,
   +disabled?: boolean,
   +maxValue?: number,
+  +width?: string,
   +minValue?: number,
   +required?: boolean,
   +readOnly?: boolean,
@@ -36,3 +37,4 @@ export type Props = {|
 |};
 
 declare export default React.AbstractComponent<Props, HTMLElement>;
+export { default as InputStepperStateless } from "./InputStepperStateless";

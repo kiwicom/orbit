@@ -1,9 +1,0 @@
-// @flow
-import type { Dimensions, Positions } from "..";
-
-export type CalculateTooltipPosition = (
-  positions: Positions[],
-  dimensions: Dimensions,
-) => ?Positions;
-
-declare export default CalculateTooltipPosition;

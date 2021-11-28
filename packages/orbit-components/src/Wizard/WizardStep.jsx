@@ -138,13 +138,20 @@ StyledButtonWrapper.defaultProps = {
 
 const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   const theme = useTheme();
-  const { index, status, nextStepStatus, isCompact, isActive, onChangeStep } = React.useContext(
-    WizardStepContext,
-  );
+  const {
+    index,
+    status,
+    nextStepStatus,
+    isCompact,
+    isActive,
+    onChangeStep,
+    onClose,
+  } = React.useContext(WizardStepContext);
 
   const handleClick = (event: SyntheticEvent<HTMLElement>) => {
     if (onClick) onClick(event);
     if (onChangeStep) onChangeStep(index);
+    onClose();
   };
 
   if (isCompact) {

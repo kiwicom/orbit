@@ -19,9 +19,7 @@ import useTheme from "../../hooks/useTheme";
 
 import type { Props } from ".";
 
-const StyledArrow = styled(
-  React.forwardRef(({ className }, ref) => <div className={className} ref={ref} />),
-)`
+const StyledArrow = styled.div`
   ${({ position, top, left, bottom, right: popperRight, transform }) => css`
     position: ${position};
     top: ${top};
@@ -65,6 +63,7 @@ const StyledFormFeedbackTooltip = styled.div`
     max-height: none;
     overflow: visible;
     width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
+    width: min(${`calc(100% + ${SIDE_NUDGE * 2}px)`}, 100vw);
     background: ${resolveColor};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
@@ -167,7 +166,7 @@ const ErrorFormTooltip = ({
 }: Props): React.Node => {
   const contentRef = React.useRef(null);
   const { rtl } = useTheme();
-  const [tooltipRef, setTooltipRef] = React.useState(null);
+  const tooltipRef = React.useRef(null);
   const [arrowRef, setArrowRef] = React.useState(null);
 
   const resolveOffset = React.useCallback(() => {
@@ -175,32 +174,36 @@ const ErrorFormTooltip = ({
       if (inputSize === "small") return [rtl ? 10 : -14, 7];
       return [rtl ? 6 : -6, 6];
     }
-    return [rtl ? 10 : -10, 7];
+    return [rtl ? SIDE_NUDGE : -SIDE_NUDGE, 7];
   }, [inlineLabel, inputSize, rtl]);
 
-  const { styles, attributes: attrs, update } = usePopper(referenceElement?.current, tooltipRef, {
-    placement: rtl ? "top-end" : "top-start",
-    modifiers: [
-      {
-        name: "offset",
-        options: {
-          offset: resolveOffset,
+  const { styles, attributes: attrs, update } = usePopper(
+    referenceElement?.current,
+    tooltipRef.current,
+    {
+      placement: rtl ? "top-end" : "top-start",
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset: resolveOffset,
+          },
         },
-      },
-      {
-        name: "arrow",
-        options: {
-          element: arrowRef,
+        {
+          name: "arrow",
+          options: {
+            element: arrowRef,
+          },
         },
-      },
-      {
-        name: "eventListeners",
-        options: {
-          scroll: false,
+        {
+          name: "eventListeners",
+          options: {
+            scroll: false,
+          },
         },
-      },
-    ],
-  });
+      ],
+    },
+  );
 
   const { popper, arrow } = styles;
 
@@ -213,7 +216,7 @@ const ErrorFormTooltip = ({
   }, [update, resolveOffset, shown]);
 
   React.useEffect(() => {
-    const link = tooltipRef?.querySelector("a");
+    const link = tooltipRef.current?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
       if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
@@ -229,12 +232,12 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp, tooltipRef]);
+  }, [onShown, isHelp]);
 
   return (
     <StyledFormFeedbackTooltip
       id={id}
-      ref={setTooltipRef}
+      ref={tooltipRef}
       inputSize={inputSize}
       shown={shown}
       isHelp={isHelp}

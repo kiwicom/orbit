@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+type Detail = {|
+  +icon: React.Node,
+  +name: React.Node,
+  +value: React.Node,
+|};
+
+type ContentItem = {|
+  +title: React.Node,
+  +items: Detail[],
+|};
+
+export type Props = {|
+  +icon?: React.Node,
+  +summary: React.Node,
+  +duration: string,
+  +content: ContentItem[],
+|};
+
+declare export default React.ComponentType<Props>;
+declare export var StyledChevron: StyledComponent<any, any, HTMLDivElement>;

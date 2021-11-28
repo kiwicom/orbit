@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.3...@kiwicom/orbit-design-tokens@1.0.4) (2021-11-09)
+
+
+### Bug Fixes
+
+* restore missing ESM build ([#3185](https://github.com/kiwicom/orbit/issues/3185)) ([b589a2f](https://github.com/kiwicom/orbit/commit/b589a2f8e44ab23d40c5e7a1d1c3b29a778a5a67))
+
+
+
+
+
+## [1.0.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.2...@kiwicom/orbit-design-tokens@1.0.3) (2021-10-27)
+
+**Note:** Version bump only for package @kiwicom/orbit-design-tokens
+
+
+
+
+
 ## [1.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.1...@kiwicom/orbit-design-tokens@1.0.2) (2021-10-14)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

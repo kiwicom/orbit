@@ -117,10 +117,17 @@ export interface Props extends Common.Global {
   readonly as?: string;
   readonly padding?: SpacingObject | SpacingToken;
   readonly margin?: SpacingObject | SpacingToken;
-  readonly display?: "none" | "flex" | "inline-flex" | "block" | "inline" | "inline-block";
+  readonly display?:
+    | "none"
+    | "flex"
+    | "inline-flex"
+    | "block"
+    | "inline"
+    | "inline-block"
+    | "list-item";
   readonly wrap?: "wrap" | "nowrap";
-  readonly shrink?: 0 | 1;
-  readonly grow?: 0 | 1;
+  readonly shrink?: number;
+  readonly grow?: number;
   readonly direction?: "row" | "column" | "row-reverse" | "column-reverse";
   readonly width?: string;
   readonly minWidth?: string;

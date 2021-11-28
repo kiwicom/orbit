@@ -25,6 +25,17 @@ describe("Heading", () => {
     expect(heading.tagName.toLowerCase()).toBe("h2");
     expect(heading).toHaveAttribute("id", "id");
   });
+
+  it("should ignore unsupported props", () => {
+    render(
+      // className has to be undefined to reproduce the error
+      // $FlowExpectedError
+      <Heading as="h1" type="display" className={undefined}>
+        My lovely heading
+      </Heading>,
+    );
+    expect(screen.getByRole("heading", { name: "My lovely heading" }));
+  });
 });
 
 describe("Heading with every media query", () => {

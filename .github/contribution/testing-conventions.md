@@ -130,22 +130,23 @@ This part of testing is often abandoned by people, but we are aware of how impor
 
 <!-- AUTO-GENERATED-CONTENT:START (SUPPORTED_BROWSERS) -->
 
-- Chrome for Android 90
-- Chrome 90
-- Chrome 89
-- Chrome 88
-- Chrome 87
-- Edge 90
-- Edge 89
-- Firefox 88
-- Firefox 87
-- IE 11
+- Chrome for Android 94
+- Chrome 94
+- Chrome 93
+- Chrome 92
+- Chrome 91
+- Edge 94
+- Edge 93
+- Edge 92
+- Firefox 92
+- Firefox 91
+- Safari on iOS 15
+- Safari on iOS 14.5-14.8
 - Safari on iOS 14.0-14.4
-- Safari on iOS 13.4-13.7
-- Opera 75
-- Safari 14
+- Safari on iOS 12.2-12.5
+- Opera 78
+- Safari 14.1
 - Safari 13.1
-- Samsung Internet 14.0
-- Samsung Internet 13.0
+- Samsung Internet 15.0
 
 <!-- AUTO-GENERATED-CONTENT:END -->

@@ -9,7 +9,7 @@ const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props
   const randomId = useRandomIdSeed();
   const randomIDLinear = randomId("linear1");
   const randomIDLinear2 = randomId("linear2");
-  const randomIDLinear3 = randomId("linear2");
+  const randomIDLinear3 = randomId("linear3");
 
   return (
     <IllustrationWrapper {...props} viewBox="0 0 2200 1300">

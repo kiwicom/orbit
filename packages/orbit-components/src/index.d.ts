@@ -3,17 +3,14 @@
 
 export * as Icons from "./icons";
 
-export { Alert } from "./Alert";
-export { Accordion } from "./Accordion";
-export { AccordionSection } from "./Accordion/AccordionSection";
-export { AlertButton } from "./Alert/AlertButton";
+export { Alert, AlertButton } from "./Alert";
+export { Accordion, AccordionSection } from "./Accordion";
 export { AirportIllustration } from "./AirportIllustration";
 export { Badge } from "./Badge";
 export { BadgeList, BadgeListItem } from "./BadgeList";
 export { Box } from "./Box";
 export { NotificationBadge } from "./NotificationBadge";
-export { Breadcrumbs } from "./Breadcrumbs";
-export { BreadcrumbsItem } from "./Breadcrumbs/BreadcrumbsItem";
+export { Breadcrumbs, BreadcrumbsItem } from "./Breadcrumbs";
 export { ButtonMobileStore } from "./ButtonMobileStore";
 export { Button } from "./Button";
 export { ButtonLink } from "./ButtonLink";
@@ -33,18 +30,23 @@ export { Hide } from "./Hide";
 export { HorizontalScroll } from "./HorizontalScroll";
 export { InputField } from "./InputField";
 export { InputGroup } from "./InputGroup";
-export { InputStepper } from "./InputStepper";
-export { InputStepperStateless } from "./InputStepper/InputStepperStateless";
+export { InputStepper, InputStepperStateless } from "./InputStepper";
 export { Illustration } from "./Illustration";
-export { List } from "./List";
-export { ListItem } from "./List/ListItem";
+export { List, ListItem } from "./List";
 export { ListChoice } from "./ListChoice";
 export { InputFile } from "./InputFile";
+export {
+  default as Itinerary,
+  ItinerarySegment,
+  ItineraryStatus,
+  ItineraryBadgeList,
+  ItinerarySegmentDetail,
+  ItinerarySegmentStop,
+} from "./Itinerary";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading";
 export { Popover } from "./Popover";
-export { PricingTable } from "./PricingTable";
-export { PricingTableItem } from "./PricingTable/PricingTableItem";
+export { PricingTable, PricingTableItem } from "./PricingTable";
 export { Text } from "./Text";
 export { TextLink } from "./TextLink";
 export { Tile } from "./Tile";
@@ -63,41 +65,32 @@ export { SkipNavigation } from "./SkipNavigation";
 export { SkipLink } from "./SkipLink";
 export { ServiceLogo } from "./ServiceLogo";
 export { Textarea } from "./Textarea";
-export { Card } from "./Card";
-export { CardSection } from "./Card/CardSection";
+export { Card, CardSection } from "./Card";
 export { Coupon } from "./Coupon";
+export * as rtl from "./utils/rtl";
 export { default as mediaQueries } from "./utils/mediaQuery";
 export { Portal } from "./Portal";
 export { Pagination } from "./Pagination";
-export { Modal } from "./Modal";
+export { Modal, ModalHeader, ModalSection, ModalFooter } from "./Modal";
 export { Mobile } from "./Mobile";
-export { ModalHeader } from "./Modal/ModalHeader";
-export { ModalSection } from "./Modal/ModalSection";
-export { ModalFooter } from "./Modal/ModalFooter";
 export { Slider } from "./Slider";
 export { default as calculateCountOf } from "./Slider/utils/calculateCountOf";
 export { ClickOutside } from "./ClickOutside";
 export { Tag } from "./Tag";
-export { Table } from "./Table";
-export { TableBody } from "./Table/TableBody";
-export { TableCell } from "./Table/TableCell";
-export { TableHead } from "./Table/TableHead";
-export { TableRow } from "./Table/TableRow";
-export { TableFooter } from "./Table/TableFooter";
-export { Timeline } from "./Timeline";
-export { TimelineStep } from "./Timeline/TimelineStep";
-export { Layout } from "./Layout";
-export { LayoutColumn } from "./Layout/LayoutColumn";
+export { Table, TableBody, TableCell, TableHead, TableRow, TableFooter } from "./Table";
+export { Timeline, TimelineStep } from "./Timeline";
+export { Layout, LayoutColumn } from "./Layout";
 export { Grid } from "./utils/Grid";
-export { Stepper } from "./Stepper";
-export { StepperStateless } from "./Stepper/StepperStateless";
+export { Stepper, StepperStateless } from "./Stepper";
 export { SocialButton } from "./SocialButton";
 export { StopoverArrow } from "./StopoverArrow";
-export { SmartPassV1 } from "./SmartPassIllustrations";
-export { SmartPassV2 } from "./SmartPassIllustrations";
-export { SmartPassV3 } from "./SmartPassIllustrations";
-export { SmartPassV4 } from "./SmartPassIllustrations";
-export { SmartPassV5 } from "./SmartPassIllustrations";
+export {
+  SmartPassV1,
+  SmartPassV2,
+  SmartPassV3,
+  SmartPassV4,
+  SmartPassV5,
+} from "./SmartPassIllustrations";
 export { Switch } from "./Switch";
 export { ThemeProvider } from "./ThemeProvider";
 export { Translate } from "./Translate";
@@ -112,5 +105,6 @@ export { default as useMediaQuery } from "./hooks/useMediaQuery";
 export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
+export { default as useFocusTrap } from "./hooks/useFocusTrap";
 
 export { Icon } from "./Icon";

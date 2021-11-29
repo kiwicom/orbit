@@ -58,7 +58,7 @@ const getDOMType = type => {
 
 const Field: any = styled(
   React.forwardRef(
-    ({ component: Component, className, children, spaceAfter, theme, ...props }, ref) => {
+    ({ component: Component, className, children, spaceAfter, theme, $width, ...props }, ref) => {
       return (
         <Component className={className} ref={ref} {...props}>
           {children}

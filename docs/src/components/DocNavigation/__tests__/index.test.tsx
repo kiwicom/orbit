@@ -17,6 +17,11 @@ describe("DocNavigation", () => {
       ],
       [
         { name: "Components", url: "/components/", hasReactTab: false },
+        { name: "Information", url: "/components/information/", hasReactTab: false },
+        { name: "Toast", url: "/components/information/toast/", hasReactTab: true },
+      ],
+      [
+        { name: "Components", url: "/components/", hasReactTab: false },
         { name: "Action", url: "/components/action/", hasReactTab: false },
         { name: "Button", url: "/components/action/button/", hasReactTab: true },
       ],
@@ -76,17 +81,16 @@ describe("DocNavigation", () => {
           \\"url\\": \\"/components/\\",
           \\"items\\": [
             {
-              \\"type\\": \\"branch\\",
-              \\"name\\": \\"Action\\",
-              \\"url\\": \\"/components/action/\\",
-              \\"items\\": [
-                {
-                  \\"type\\": \\"leaf\\",
-                  \\"name\\": \\"Button\\",
-                  \\"url\\": \\"/components/action/button/\\",
-                  \\"hasReactTab\\": true
-                }
-              ]
+              \\"type\\": \\"leaf\\",
+              \\"name\\": \\"Button\\",
+              \\"url\\": \\"/components/action/button/\\",
+              \\"hasReactTab\\": true
+            },
+            {
+              \\"type\\": \\"leaf\\",
+              \\"name\\": \\"Toast\\",
+              \\"url\\": \\"/components/information/toast/\\",
+              \\"hasReactTab\\": true
             }
           ]
         },

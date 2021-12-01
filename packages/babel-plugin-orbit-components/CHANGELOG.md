@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.2.0...@kiwicom/babel-plugin-orbit-components@3.3.0) (2021-12-01)
+
+
+### Bug Fixes
+
+* **useFocusTrap:** export from root ([1df0f8f](https://github.com/kiwicom/orbit/commit/1df0f8f1e034fed20824260dfbb572e7a474a52f))
+
+
+### Features
+
+* export RTL utilities from root as `rtl` ([10f8d1f](https://github.com/kiwicom/orbit/commit/10f8d1f81a6c88a23ac47ee3740d388d3f23e6ff))
+
+
+
+
+
 # [3.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.12...@kiwicom/babel-plugin-orbit-components@3.2.0) (2021-11-23)
 
 

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.3.0...@kiwicom/orbit-components@2.4.0) (2021-12-01)
+
+
+### Bug Fixes
+
+* **InputField:** fix warning caused by the invalid `$width` attribute ([1afc9d2](https://github.com/kiwicom/orbit/commit/1afc9d293a4d359d8f6c071b1ccc76c8c989683e))
+* **InputStepper:** fix type definitions to export InputStepperStateless ([36549da](https://github.com/kiwicom/orbit/commit/36549da8122892eb09876d3b256263157030b565))
+* update `peerDependencies` to support both `styled-components` v4 and v5 ([f420ff8](https://github.com/kiwicom/orbit/commit/f420ff8b082e918d3c26a6d5c1783022e8704a0f))
+* **useFocusTrap:** export from root ([1df0f8f](https://github.com/kiwicom/orbit/commit/1df0f8f1e034fed20824260dfbb572e7a474a52f))
+
+
+### Features
+
+* **Box:** support `display="list-item"` ([b42662a](https://github.com/kiwicom/orbit/commit/b42662a3e66542d4ecc3b831c24966a3f8780b83))
+* export RTL utilities from root as `rtl` ([10f8d1f](https://github.com/kiwicom/orbit/commit/10f8d1f81a6c88a23ac47ee3740d388d3f23e6ff))
+
+
+
+
+
 # [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.2.0...@kiwicom/orbit-components@2.3.0) (2021-11-23)
 
 

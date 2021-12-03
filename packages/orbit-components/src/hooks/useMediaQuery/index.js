@@ -47,7 +47,12 @@ const useMediaQuery: UseMediaQuery = () => {
             return next;
           });
         };
-        mqList.addEventListener("change", listenerMap[query]);
+        if (typeof mqList.addEventListener === "function") {
+          mqList.addEventListener("change", listenerMap[query]);
+        } else {
+          // for browsers like Safari 13
+          mqList.addListener(listenerMap[query]);
+        }
         return mqList;
       };
 
@@ -76,7 +81,12 @@ const useMediaQuery: UseMediaQuery = () => {
     return () => {
       if (mqListMap) {
         QUERIES.forEach(query => {
-          mqListMap[query].removeListener(listenerMap[query]);
+          if (typeof mqListMap[query].removeEventListener === "function") {
+            mqListMap[query].removeEventListener("change", listenerMap[query]);
+          } else {
+            // for browsers like Safari 13
+            mqListMap[query].removeListener(listenerMap[query]);
+          }
         });
       }
     };

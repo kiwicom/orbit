@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.0...@kiwicom/orbit-components@2.4.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* **useMediaQuery:** add a fallback for older browsers ([3f51a3c](https://github.com/kiwicom/orbit/commit/3f51a3c22edcee80d55c077d9c688ee6aaeec47f))
+
+
+
+
+
 # [2.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.3.0...@kiwicom/orbit-components@2.4.0) (2021-12-01)
 
 

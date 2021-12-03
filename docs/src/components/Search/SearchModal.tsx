@@ -38,6 +38,9 @@ interface QueryResponse {
       };
     }>;
   };
+  allSitePage: {
+    nodes: Array<{ id: string; path: string }>;
+  };
 }
 
 interface SearchResult {
@@ -84,21 +87,43 @@ export default function SearchModal({ onClose }: Props) {
           }
         }
       }
+      allSitePage(
+        filter: {
+          path: {
+            in: ["/changelog/", "/roadmap/", "/dashboard/", "/component-status/", "/components"]
+          }
+        }
+      ) {
+        nodes {
+          id
+          path
+        }
+      }
     }
   `);
-  const documents = React.useMemo<SearchResult[]>(
-    () =>
-      data.allMdx.nodes.map(node => {
-        const breadcrumbs = node.fields ? node.fields.trail.map(({ name }) => name) : [];
-        return {
-          name: breadcrumbs.join(" "),
-          breadcrumbs,
-          description: node.frontmatter.description,
-          path: node.fields.slug,
-        };
-      }),
-    [data],
-  );
+
+  const documents = React.useMemo<SearchResult[]>(() => {
+    const mdxPages = data.allMdx.nodes.map(node => {
+      const breadcrumbs = node.fields ? node.fields.trail.map(({ name }) => name) : [];
+      return {
+        name: breadcrumbs.join(" "),
+        breadcrumbs,
+        description: node.frontmatter.description,
+        path: node.fields.slug,
+      };
+    });
+
+    const restPages = data.allSitePage.nodes.map(node => {
+      return {
+        name: node.path.split("/")[1],
+        description: "",
+        breadcrumbs: [node.path],
+        path: node.path,
+      };
+    });
+
+    return [...mdxPages, ...restPages];
+  }, [data]);
 
   const { isTablet } = useMediaQuery();
   // so it doesn't cause horizontal overflow

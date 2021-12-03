@@ -19,6 +19,7 @@ async function getDocumentTrail(cache, url, trail = []) {
   if (url === "/") {
     return trail;
   }
+
   const { title } = await cache.get(url);
   return getDocumentTrail(cache, getParentUrl(url), [{ name: title, url }, ...trail]);
 }

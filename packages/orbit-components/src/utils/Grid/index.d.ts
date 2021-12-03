@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-export type BasicProps = {
+export interface BasicProps {
   readonly inline?: boolean;
   readonly rows?: string;
   readonly columns?: string;
@@ -15,7 +15,7 @@ export type BasicProps = {
   readonly maxWidth?: string;
   readonly width?: string;
   readonly spaceAfter?: Common.SpaceAfter;
-};
+}
 
 interface Props extends Common.Global, BasicProps {
   readonly as?: string;

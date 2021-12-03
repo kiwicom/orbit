@@ -128,6 +128,7 @@ module.exports = {
         path: path.join(__dirname, "src/__examples__"),
       },
     },
+    require.resolve("./plugins/dashboard"),
     require.resolve("gatsby-plugin-styled-components"),
     require.resolve("gatsby-plugin-meta-redirect"),
     require.resolve("gatsby-plugin-lodash"),

@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import * as _ from "lodash";
 
 import StyledWrapper, {
   StyledWrapperDesktop,
@@ -7,7 +8,7 @@ import StyledWrapper, {
 } from "./primitives/StyledWrapper";
 import DocNavigationItem, { getItemKey } from "./DocNavigationItem";
 import useDevMode from "../../hooks/useDevMode";
-import { Navigation } from "./types";
+import { Navigation, NavigationItem } from "./types";
 
 type Trail = Array<{
   name: string;
@@ -30,15 +31,16 @@ interface QueryData {
   };
 }
 
-export function groupTrails(trails: Trail[]): Navigation {
+export function groupTrails(trails: { components: Trail; content: Trail[] }): Navigation {
   // https://stackoverflow.com/a/57344801/1247274
   const result: Navigation = [];
   const level = { result };
-  trails.forEach(trail => {
-    trail.reduce((acc, { name, url, hasReactTab }, index) => {
+
+  trails.content.forEach(content => {
+    content.reduce((acc, { name, url, hasReactTab }, index) => {
       if (!acc[name]) {
         acc[name] = { result: [] };
-        if (index < trail.length - 1) {
+        if (index < content.length - 1) {
           acc.result.push({ type: "branch", name, url, items: acc[name].result });
         } else {
           acc.result.push({ type: "leaf", name, url, hasReactTab });
@@ -47,6 +49,21 @@ export function groupTrails(trails: Trail[]): Navigation {
       return acc[name];
     }, level);
   });
+
+  const componentItems: NavigationItem[] = trails.components.map(({ name, url, hasReactTab }) => ({
+    type: "leaf",
+    name,
+    url,
+    hasReactTab,
+  }));
+
+  result.splice(2, 0, {
+    type: "branch",
+    name: "Components",
+    url: "/components/",
+    items: _.sortBy(componentItems, ["name"]),
+  });
+
   return result;
 }
 
@@ -98,6 +115,14 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
         }
         return t;
       }),
+    )
+    .reduce(
+      (acc: { content: Trail[]; components: Trail }, cur: Trail) => {
+        if (cur[0].name === "Components") acc.components.push(cur.slice(-1)[0]);
+        else acc.content.push(cur);
+        return acc;
+      },
+      { content: [], components: [] },
     );
 
   const navigation = (

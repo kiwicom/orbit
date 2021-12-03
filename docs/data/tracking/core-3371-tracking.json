@@ -1,0 +1,2737 @@
+{
+  "name": "core",
+  "description": "Frontend platform monorepo. Nitro + Overlord + Shared cypress tests\r\n\r\n:fire: NITRO Storybook:  https://go.kiwi.com/PFF1pCY0h",
+  "createdAt": "2021-12-02T15:57:07.216Z",
+  "lastCommit": {
+    "sha": "2278b457b99b8017b6eeff17de7b04d80aed632b",
+    "title": "fix(nitro): use form in RegionalSettings modal",
+    "webUrl": "https://gitlab.skypicker.com/frontend/core/-/commit/2278b457b99b8017b6eeff17de7b04d80aed632b"
+  },
+  "members": {
+    "owners": [],
+    "maintainers": [
+      {
+        "name": "Alexandra Stanova",
+        "avatarUrl": "https://secure.gravatar.com/avatar/9f5cc450b66fa47dc0100c72a20fdddb?s=80&d=identicon",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/alexandra.stanova",
+        "publicEmail": "alexandra.stanova@kiwi.com",
+        "webPath": "/alexandra.stanova",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13551"
+      },
+      {
+        "name": "Cedric Kisema",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/cedric.kisema",
+        "publicEmail": "cedric.kisema@kiwi.com",
+        "webPath": "/cedric.kisema",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13382"
+      },
+      {
+        "name": "Matej Kňazík",
+        "avatarUrl": "https://secure.gravatar.com/avatar/6063a8a4ed717a446d4646da8203a533?s=80&d=identicon",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/matej.knazik",
+        "publicEmail": "matej.knazik@kiwi.com",
+        "webPath": "/matej.knazik",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13314"
+      },
+      {
+        "name": "Daniel Alonso Montane",
+        "avatarUrl": "https://secure.gravatar.com/avatar/3a4594fd9bdda35562eb204ffe00918c?s=80&d=identicon",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/daniel.montane",
+        "publicEmail": "daniel.montane@kiwi.com",
+        "webPath": "/daniel.montane",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13301"
+      },
+      {
+        "name": "Ondřej Hepnar",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/ondrej.hepnar",
+        "publicEmail": "ondrej.hepnar@kiwi.com",
+        "webPath": "/ondrej.hepnar",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13255"
+      },
+      {
+        "name": "Matus Stastny",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/matus.stastny",
+        "publicEmail": "matus.stastny@kiwi.com",
+        "webPath": "/matus.stastny",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13058"
+      },
+      {
+        "name": "Josip Colak",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/josip.colak",
+        "publicEmail": "josip.colak@kiwi.com",
+        "webPath": "/josip.colak",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/13038"
+      },
+      {
+        "name": "David Germ",
+        "avatarUrl": "https://secure.gravatar.com/avatar/86ba59e274360dd72b9921301d143e07?s=80&d=identicon",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/david.germ",
+        "publicEmail": "david.germ@kiwi.com",
+        "webPath": "/david.germ",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/12798"
+      },
+      {
+        "name": "David Seidler",
+        "avatarUrl": "https://secure.gravatar.com/avatar/c2e963018f4301c54b9e1d78fa29635d?s=80&d=identicon",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/david.seidler",
+        "publicEmail": "david.seidler@kiwi.com",
+        "webPath": "/david.seidler",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/12785"
+      },
+      {
+        "name": "Vedran Blazenka",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/vedran.blazenka",
+        "publicEmail": "vedran.blazenka@kiwi.com",
+        "webPath": "/vedran.blazenka",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/12273"
+      },
+      {
+        "name": "Nikola Novak",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/nikola.novak",
+        "publicEmail": "nikola.novak@kiwi.com",
+        "webPath": "/nikola.novak",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/12247"
+      },
+      {
+        "name": "Radek Palisa",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/radek.palisa",
+        "publicEmail": "radek.palisa@kiwi.com",
+        "webPath": "/radek.palisa",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/11398"
+      },
+      {
+        "name": "Frontend Core Bot",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/frontend_core_bot",
+        "publicEmail": "frontend-platform+core@kiwi.com",
+        "webPath": "/frontend_core_bot",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/11324"
+      },
+      {
+        "name": "Adam Olser",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/adam.olser",
+        "publicEmail": "adam.olser@kiwi.com",
+        "webPath": "/adam.olser",
+        "status": {
+          "message": "🍇💣💣",
+          "availability": "NOT_SET"
+        },
+        "id": "gid://gitlab/ProjectMember/11298"
+      },
+      {
+        "name": "Dino Trojak",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/dinodsaurus",
+        "publicEmail": "dino.trojak@kiwi.com",
+        "webPath": "/dinodsaurus",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/11157"
+      },
+      {
+        "name": "Boris Petrenko",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/oreqizer",
+        "publicEmail": "boris@kiwi.com",
+        "webPath": "/oreqizer",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/11156"
+      },
+      {
+        "name": "Robin Cussol",
+        "avatarUrl": "",
+        "bot": false,
+        "state": "active",
+        "webUrl": "https://gitlab.skypicker.com/robin.cussol",
+        "publicEmail": "robin.cussol@kiwi.com",
+        "webPath": "/robin.cussol",
+        "status": null,
+        "id": "gid://gitlab/ProjectMember/11155"
+      }
+    ]
+  },
+  "url": "https://gitlab.skypicker.com/frontend/core.git",
+  "orbitVersion": "1.0.1",
+  "trackedData": [
+    {
+      "name": "Stack",
+      "instances": 57,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L108",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L112",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/components/Cookie.tsx#L30",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/components/Cookie.tsx#L36",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L79",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L92",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L114",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L133",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Currency/components/Current/index.tsx#L38",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Currency/components/List/index.tsx#L99",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/components/Link/index.tsx#L21",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/components/Links/index.tsx#L60",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/IconText/index.tsx#L10",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/PasswordValidationBox/index.tsx#L24",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L87",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L104",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L60",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L96",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L106",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Intro/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Intro/index.tsx#L76",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L65",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/NoAccountFound/index.tsx#L25",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/OldBookings/index.tsx#L26",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L71",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L71",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L205",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L229",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/index.tsx#L109",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/index.tsx#L114",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/index.tsx#L122",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/AccountButton.tsx#L107",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/NavRightLinks.tsx#L52",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/NavRightLinks.tsx#L61",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/index.tsx#L85",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L27",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L42",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L51",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L60",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L74",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelTop.tsx#L14",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelTop.tsx#L17",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/PanelTop.tsx#L35",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/PanelTop.tsx#L48",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L263",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/InputField.stories.tsx#L63",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/MagicLogin.stories.tsx#L33",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/Tabs.stories.tsx#L10",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L31",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L40",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L44",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L23",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L61",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L74",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L85"
+      ],
+      "props": [
+        {
+          "name": "direction",
+          "used": 22,
+          "values": [
+            {
+              "name": "row",
+              "used": 12
+            },
+            {
+              "name": "column",
+              "used": 10
+            }
+          ]
+        },
+        {
+          "name": "spacing",
+          "used": 22,
+          "values": [
+            {
+              "name": "none",
+              "used": 6
+            },
+            {
+              "name": "small",
+              "used": 5
+            },
+            {
+              "name": "XXSmall",
+              "used": 4
+            },
+            {
+              "name": "large",
+              "used": 4
+            },
+            {
+              "name": "medium",
+              "used": 2
+            },
+            {
+              "name": "XSmall",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "align",
+          "used": 21,
+          "values": [
+            {
+              "name": "center",
+              "used": 21
+            }
+          ]
+        },
+        {
+          "name": "justify",
+          "used": 18,
+          "values": [
+            {
+              "name": "between",
+              "used": 10
+            },
+            {
+              "name": "end",
+              "used": 5
+            },
+            {
+              "name": "center",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "flex",
+          "used": 11,
+          "values": [
+            {
+              "name": "null",
+              "used": 11
+            }
+          ]
+        },
+        {
+          "name": "spaceAfter",
+          "used": 10,
+          "values": [
+            {
+              "name": "large",
+              "used": 4
+            },
+            {
+              "name": "medium",
+              "used": 3
+            },
+            {
+              "name": "normal",
+              "used": 2
+            },
+            {
+              "name": "none",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "inline",
+          "used": 7,
+          "values": [
+            {
+              "name": "null",
+              "used": 7
+            }
+          ]
+        },
+        {
+          "name": "tablet",
+          "used": 3,
+          "values": [
+            {
+              "name": "(ObjectExpression)",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 2,
+          "values": [
+            {
+              "name": "HeaderLinks",
+              "used": 1
+            },
+            {
+              "name": "NavBar",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "largeMobile",
+          "used": 2,
+          "values": [
+            {
+              "name": "(ObjectExpression)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "mediumMobile",
+          "used": 2,
+          "values": [
+            {
+              "name": "(ObjectExpression)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "grow",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "shrink",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "wrap",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "layout",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Button",
+      "instances": 18,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L128",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L133",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L139",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L53",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L58",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L71",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L75",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/NoAccountFound/index.tsx#L29",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/OldBookings/index.tsx#L30",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L75",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/NavRightLinks.tsx#L29",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/PanelTop.tsx#L45",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/InputField.stories.tsx#L75",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/LogUnmount.stories.tsx#L25",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/MagicLogin.stories.tsx#L35",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L75",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L92",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L104"
+      ],
+      "props": [
+        {
+          "name": "onClick",
+          "used": 16,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 12
+            },
+            {
+              "name": "(ArrowFunctionExpression)",
+              "used": 4
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 10,
+          "values": [
+            {
+              "name": "small",
+              "used": 9
+            },
+            {
+              "name": "large",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 10,
+          "values": [
+            {
+              "name": "secondary",
+              "used": 7
+            },
+            {
+              "name": "primary",
+              "used": 2
+            },
+            {
+              "name": "primarySubtle",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "fullWidth",
+          "used": 6,
+          "values": [
+            {
+              "name": "null",
+              "used": 6
+            }
+          ]
+        },
+        {
+          "name": "data-test",
+          "used": 1,
+          "values": [
+            {
+              "name": "CookiesPopup-Accept",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "NavBar-SingInButton",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "iconLeft",
+          "used": 1,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "submit",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "action",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Separator",
+      "instances": 14,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/components/Cookie.tsx#L41",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L72",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L76",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L226",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L234",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L260",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L297",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L343",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L83",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelTop.tsx#L25",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L106",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L135",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L150",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L111"
+      ],
+      "props": [
+        {
+          "name": "spaceAfter",
+          "used": 8,
+          "values": [
+            {
+              "name": "large",
+              "used": 5
+            },
+            {
+              "name": "normal",
+              "used": 2
+            },
+            {
+              "name": "medium",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "structure",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Text",
+      "instances": 14,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L135",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L44",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Currency/components/List/index.tsx#L109",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L73",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/MenuGroup.tsx#L25",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SignInButton/index.tsx#L64",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TextNode/index.tsx#L18",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/AccountButton.tsx#L109",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelTop.tsx#L21",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/PanelTop.tsx#L37",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L139",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L53",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L60"
+      ],
+      "props": [
+        {
+          "name": "spaceAfter",
+          "used": 6,
+          "values": [
+            {
+              "name": "large",
+              "used": 2
+            },
+            {
+              "name": "normal",
+              "used": 2
+            },
+            {
+              "name": "small",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 6,
+          "values": [
+            {
+              "name": "secondary",
+              "used": 5
+            },
+            {
+              "name": "primary",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "as",
+          "used": 3,
+          "values": [
+            {
+              "name": "span",
+              "used": 2
+            },
+            {
+              "name": "p",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 3,
+          "values": [
+            {
+              "name": "small",
+              "used": 2
+            },
+            {
+              "name": "large",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "italic",
+          "used": 2,
+          "values": [
+            {
+              "name": "null",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "weight",
+          "used": 2,
+          "values": [
+            {
+              "name": "bold",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "align",
+          "used": 1,
+          "values": [
+            {
+              "name": "center",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "uppercase",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "text",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ModalSection",
+      "instances": 12,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L62",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CheckEmail/index.tsx#L43",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/EmailLogin/index.tsx#L34",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Intro/index.tsx#L46",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L45",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Password/index.tsx#L50",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L59",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L48",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L388",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/RegionalSettings/index.tsx#L69",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L287"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 6,
+          "values": [
+            {
+              "name": "MagicLogin-CheckEmail",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-CreateAccount",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-Email-Screen",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-Intro",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-Password",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-RequiredLogin",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ModalHeader",
+      "instances": 9,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/Header/Header.tsx#L15",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CheckEmail/index.tsx#L39",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L56",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L54",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L40",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/NoAccountFound/index.tsx#L20",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/OldBookings/index.tsx#L21",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L54",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L43"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "used": 9,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 8
+            },
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "description",
+          "used": 8,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 6
+            },
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            },
+            {
+              "name": "(LogicalExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "illustration",
+          "used": 6,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 6
+            }
+          ]
+        }
+      ],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ButtonLink",
+      "instances": 8,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesConsent/components/CookiesBanner/index.tsx#L83",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L142",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SignInButton/index.tsx#L52",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SignInButton/index.tsx#L59",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/AccountButton.tsx#L91",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/NavRightLinks.tsx#L83",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/index.tsx#L88",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/SidePanelButtonLink.tsx#L22"
+      ],
+      "props": [
+        {
+          "name": "type",
+          "used": 6,
+          "values": [
+            {
+              "name": "secondary",
+              "used": 6
+            }
+          ]
+        },
+        {
+          "name": "onClick",
+          "used": 5,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 5
+            }
+          ]
+        },
+        {
+          "name": "compact",
+          "used": 4,
+          "values": [
+            {
+              "name": "null",
+              "used": 4
+            }
+          ]
+        },
+        {
+          "name": "ariaControls",
+          "used": 3,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "Open Help",
+              "used": 1
+            },
+            {
+              "name": "Open sidebar",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 3,
+          "values": [
+            {
+              "name": "NavBar-SideNav-Open",
+              "used": 1
+            },
+            {
+              "name": "NavbarHelpButton",
+              "used": 1
+            },
+            {
+              "name": "SidePanelButtonLink",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "used": 2,
+          "values": [
+            {
+              "name": "(BinaryExpression)",
+              "used": 1
+            },
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "href",
+          "used": 2,
+          "values": [
+            {
+              "name": "undefined",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "iconLeft",
+          "used": 2,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "iconRight",
+          "used": 2,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "rel",
+          "used": 2,
+          "values": [
+            {
+              "name": "nofollow",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 2,
+          "values": [
+            {
+              "name": "small",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "used": 1,
+          "values": [
+            {
+              "name": "Open sidebar",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "action",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Alert",
+      "instances": 6,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/IataPicker/components/AirportListData.tsx#L44",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/PasswordValidationBox/index.tsx#L41",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L70",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/LinkBookings/index.tsx#L49",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Password/index.tsx#L54",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L52"
+      ],
+      "props": [
+        {
+          "name": "type",
+          "used": 6,
+          "values": [
+            {
+              "name": "critical",
+              "used": 5
+            },
+            {
+              "name": "info",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "used": 4,
+          "values": [
+            {
+              "name": "null",
+              "used": 4
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 2,
+          "values": [
+            {
+              "name": "MagicLogin-CreateAccountAlert",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-PasswordAlert",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "used": 1,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "information",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "InputField",
+      "instances": 6,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/IataPicker/index.tsx#L96",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/InputEmail/index.tsx#L66",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/InputField/index.tsx#L63",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/EmailLogin/index.tsx#L41",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/GetSingleBooking/index.tsx#L68",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/VerifyEmail/index.tsx#L57"
+      ],
+      "props": [
+        {
+          "name": "error",
+          "used": 6,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 3
+            },
+            {
+              "name": "(LogicalExpression)",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "used": 6,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 2
+            },
+            {
+              "name": "(ConditionalExpression)",
+              "used": 2
+            },
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onChange",
+          "used": 6,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 5
+            },
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "placeholder",
+          "used": 6,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 4
+            },
+            {
+              "name": "(ConditionalExpression)",
+              "used": 1
+            },
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "used": 6,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 6
+            }
+          ]
+        },
+        {
+          "name": "onBlur",
+          "used": 4,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 4
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 3,
+          "values": [
+            {
+              "name": "MagicLogin-BookingId",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-Email",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-OtpPasscode",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "help",
+          "used": 3,
+          "values": [
+            {
+              "name": "(ConditionalExpression)",
+              "used": 1
+            },
+            {
+              "name": "(LogicalExpression)",
+              "used": 1
+            },
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "inputMode",
+          "used": 3,
+          "values": [
+            {
+              "name": "email",
+              "used": 2
+            },
+            {
+              "name": "decimal",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "used": 3,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "code",
+              "used": 1
+            },
+            {
+              "name": "email",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "autoComplete",
+          "used": 2,
+          "values": [
+            {
+              "name": "email",
+              "used": 1
+            },
+            {
+              "name": "username",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "id",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "onFocus",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "spaceAfter",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "large",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "autoFocus",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "inlineLabel",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onKeyDown",
+          "used": 1,
+          "values": [
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "prefix",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "suffix",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "tabIndex",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "number",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "input",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Modal",
+      "instances": 5,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L39",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/index.tsx#L265",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L394",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/RegionalSettings/index.tsx#L63",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L279"
+      ],
+      "props": [
+        {
+          "name": "onClose",
+          "used": 5,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 4
+            },
+            {
+              "name": "(ConditionalExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 2,
+          "values": [
+            {
+              "name": "MagicLogin",
+              "used": 1
+            },
+            {
+              "name": "RegionalSettingsModal",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 2,
+          "values": [
+            {
+              "name": "extraSmall",
+              "used": 1
+            },
+            {
+              "name": "small",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "disableAnimation",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "hasCloseButton",
+          "used": 1,
+          "values": [
+            {
+              "name": "(UnaryExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "preventOverlayClose",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "CountryFlag",
+      "instances": 4,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/IataPicker/components/AirportResult.tsx#L58",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Language/components/LanguageCurrent.tsx#L20",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Language/components/LanguageName.tsx#L53",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/components/RegionalSettingsButton.tsx#L33"
+      ],
+      "props": [
+        {
+          "name": "code",
+          "used": 4,
+          "values": [
+            {
+              "name": "(MemberExpression)",
+              "used": 2
+            },
+            {
+              "name": "(CallExpression)",
+              "used": 1
+            },
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "used": 3,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            },
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            },
+            {
+              "name": "undefined",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "visuals",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "LinkList",
+      "instances": 4,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L127",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L158",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L183",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L217"
+      ],
+      "props": [
+        {
+          "name": "indent",
+          "used": 3,
+          "values": [
+            {
+              "name": "null",
+              "used": 3
+            }
+          ]
+        }
+      ],
+      "category": "navigation",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Select",
+      "instances": 4,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CountrySelect/index.tsx#L42",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/DateInput/index.tsx#L149",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/RegionalSettings/components/CurrencySelect/index.tsx#L29",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/RegionalSettings/components/LanguageSelect/index.tsx#L35"
+      ],
+      "props": [
+        {
+          "name": "options",
+          "used": 4,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 3
+            },
+            {
+              "name": "(CallExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 3,
+          "values": [
+            {
+              "name": "CurrencySelect",
+              "used": 1
+            },
+            {
+              "name": "DateInput-Month",
+              "used": 1
+            },
+            {
+              "name": "LanguageSelect",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "used": 3,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "used": 2,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "onChange",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "prefix",
+          "used": 2,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "used": 1,
+          "values": [
+            {
+              "name": "month",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "placeholder",
+          "used": 1,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "input",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "AirplaneUp",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/index.tsx#L96",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/records/mocks.tsx#L24",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/records/mocks.tsx#L77"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "Card",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L69",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L87",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/[language]/index.tsx#L99"
+      ],
+      "props": [
+        {
+          "name": "actions",
+          "used": 3,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "description",
+          "used": 3,
+          "values": [
+            {
+              "name": "Sample how to open SmartFAQ",
+              "used": 1
+            },
+            {
+              "name": "Sample of using Tequila flag",
+              "used": 1
+            },
+            {
+              "name": "Sample of using Webview flag (can also activate adding ?ui=webview query param)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "used": 3,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 3
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "used": 3,
+          "values": [
+            {
+              "name": "Opening Help (card is not translated)",
+              "used": 1
+            },
+            {
+              "name": "Tequila Flag",
+              "used": 1
+            },
+            {
+              "name": "WebView Flag",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "structure",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Heading",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L41",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/index.tsx#L59",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L46"
+      ],
+      "props": [
+        {
+          "name": "as",
+          "used": 2,
+          "values": [
+            {
+              "name": "h2",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "spaceAfter",
+          "used": 1,
+          "values": [
+            {
+              "name": "medium",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "title2",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "text",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Loading",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/LoginViaSocials/index.tsx#L26",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/PriceFormat/index.tsx#L25",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/LazySmartFaqSidebar.tsx#L41"
+      ],
+      "props": [
+        {
+          "name": "type",
+          "used": 2,
+          "values": [
+            {
+              "name": "boxLoader",
+              "used": 1
+            },
+            {
+              "name": "inlineLoader",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "PriceFormat-CurrencyLoader",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "loading",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "progress_indicators",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "OrbitText",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/CreateAccount/PasswordValidationBox/index.tsx#L32",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Password/index.tsx#L69",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/Password/index.tsx#L90"
+      ],
+      "props": [
+        {
+          "name": "weight",
+          "used": 2,
+          "values": [
+            {
+              "name": "bold",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "align",
+          "used": 1,
+          "values": [
+            {
+              "name": "center",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "MagicLogin-PasswordValidationStrengthLabel",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "unknown",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Portal",
+      "instances": 3,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L386",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/SideBar/components/Core/index.tsx#L105",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L285"
+      ],
+      "props": [
+        {
+          "name": "renderInto",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 2
+            }
+          ]
+        }
+      ],
+      "category": "utility",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ButtonGroup",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesBanner/index.tsx#L122",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesPopup/index.tsx#L51"
+      ],
+      "props": [],
+      "category": "action",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Collapse",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L176",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L210"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "used": 2,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 2
+            }
+          ]
+        }
+      ],
+      "category": "interaction",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Radio",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L100",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/CookiesPopup/components/CookiesCustomize/index.tsx#L122"
+      ],
+      "props": [
+        {
+          "name": "checked",
+          "used": 2,
+          "values": [
+            {
+              "name": "(UnaryExpression)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "used": 2,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "used": 2,
+          "values": [
+            {
+              "name": "analytics",
+              "used": 1
+            },
+            {
+              "name": "marketing",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onChange",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "used": 2,
+          "values": [
+            {
+              "name": "0",
+              "used": 2
+            }
+          ]
+        }
+      ],
+      "category": "input",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "SocialButton",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/LoginViaSocials/index.tsx#L34",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/LoginViaSocials/index.tsx#L50"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 2,
+          "values": [
+            {
+              "name": "MagicLogin-LoginViaApple",
+              "used": 1
+            },
+            {
+              "name": "MagicLogin-LoginViaFacebook",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "fullWidth",
+          "used": 2,
+          "values": [
+            {
+              "name": "null",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "onClick",
+          "used": 2,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 2
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 2,
+          "values": [
+            {
+              "name": "apple",
+              "used": 1
+            },
+            {
+              "name": "facebook",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "action",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "TextLink",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/MagicLogin/components/screens/RequiredLogin/index.tsx#L79",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L52"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "MagicLogin-GuestTextLink",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "href",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "iconRight",
+          "used": 1,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onClick",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 1,
+          "values": [
+            {
+              "name": "normal",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "secondary",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "action",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Trip",
+      "instances": 2,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/records/mocks.tsx#L60",
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/services/links/stories.tsx#L24"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "Badge",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/LoggedPanel/LoggedPanelLinks.tsx#L36"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "UnreadMessagesBadge",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "criticalInverted",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "information",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ButtonOrbit",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Button/index.tsx#L17"
+      ],
+      "props": [],
+      "category": "unknown",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "CallOutBanner",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/InputField.stories.tsx#L52"
+      ],
+      "props": [
+        {
+          "name": "description",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "used": 1,
+          "values": [
+            {
+              "name": "Set new password",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "visuals",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "CarRental",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/records/mocks.tsx#L40"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "CardSection",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L25"
+      ],
+      "props": [
+        {
+          "name": "expandable",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "header",
+          "used": 1,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "used": 1,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "structure",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ChevronRight",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L207"
+      ],
+      "props": [
+        {
+          "name": "customColor",
+          "used": 1,
+          "values": [
+            {
+              "name": "(LogicalExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "used": 1,
+          "values": [
+            {
+              "name": "small",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "Deals",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/services/links/deals.tsx#L29"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "Desktop",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/index.tsx#L106"
+      ],
+      "props": [],
+      "category": "responsive",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Drawer",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/SidePanel/index.tsx#L95"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "NavBar-SideNav",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onClose",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "shown",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "width",
+          "used": 1,
+          "values": [
+            {
+              "name": "420px",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Faq",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/Help/index.tsx#L25"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "InformationCircle",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L32"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "InputGroup",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/DateInput/index.tsx#L132"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "DateInput",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "used": 1,
+          "values": [
+            {
+              "name": "(LogicalExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "error",
+          "used": 1,
+          "values": [
+            {
+              "name": "(LogicalExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "flex",
+          "used": 1,
+          "values": [
+            {
+              "name": "(ArrayExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "used": 1,
+          "values": [
+            {
+              "name": "(CallExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onBlur",
+          "used": 1,
+          "values": [
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "onChange",
+          "used": 1,
+          "values": [
+            {
+              "name": "(MemberExpression)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "input",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Layout",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/ErrorScreen.tsx#L28"
+      ],
+      "props": [
+        {
+          "name": "type",
+          "used": 1,
+          "values": [
+            {
+              "name": "MMB",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "layout",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "LayoutColumn",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/template/pages/index.tsx#L59"
+      ],
+      "props": [],
+      "category": "layout",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ListItem",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/stories/InputField.stories.tsx#L54"
+      ],
+      "props": [],
+      "category": "structure",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "MenuHamburger",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/NavBar/components/SideNav/index.tsx#L199"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "Mobile",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/index.tsx#L84"
+      ],
+      "props": [],
+      "category": "responsive",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ModalFooter",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/RegionalSettings/index.tsx#L75"
+      ],
+      "props": [],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "NavigationBar",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/index.tsx#L72"
+      ],
+      "props": [
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "NavBar",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "navigation",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Popover",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/TopNav/Navbar/AccountButton.tsx#L99"
+      ],
+      "props": [
+        {
+          "name": "content",
+          "used": 1,
+          "values": [
+            {
+              "name": "(JSXElement)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "dataTest",
+          "used": 1,
+          "values": [
+            {
+              "name": "AccountMenuPopover",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "fixed",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "offset",
+          "used": 1,
+          "values": [
+            {
+              "name": "(ObjectExpression)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "overlapped",
+          "used": 1,
+          "values": [
+            {
+              "name": "null",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "renderInPortal",
+          "used": 1,
+          "values": [
+            {
+              "name": "false",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "overlay",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "Sightseeing",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/HeaderLinks/services/links/activities.tsx#L18"
+      ],
+      "props": [],
+      "category": "icons",
+      "isDeprecated": false,
+      "icon": true
+    },
+    {
+      "name": "TextOrbit",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/nitro/src/components/Text/index.tsx#L17"
+      ],
+      "props": [],
+      "category": "unknown",
+      "isDeprecated": false,
+      "icon": false
+    },
+    {
+      "name": "ThemeProvider",
+      "instances": 1,
+      "sources": [
+        "https:/gitlab.skypicker.com/frontend/core/-/blob/master/packages/overlord/src/components/OverlordProvider.tsx#L110"
+      ],
+      "props": [
+        {
+          "name": "dictionary",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        },
+        {
+          "name": "theme",
+          "used": 1,
+          "values": [
+            {
+              "name": "(Identifier)",
+              "used": 1
+            }
+          ]
+        }
+      ],
+      "category": "unknown",
+      "isDeprecated": false,
+      "icon": false
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import DocNavigationItem, { getItemKey } from "./DocNavigationItem";
 import useDevMode from "../../hooks/useDevMode";
 import { Navigation } from "./types";
 
-type Trail = Array<{
+export type Trail = Array<{
   name: string;
   url: string;
   hasReactTab: boolean;

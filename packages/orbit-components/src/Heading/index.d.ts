@@ -2,8 +2,11 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
+import DefaultTheme from "../defaultTheme";
+import { Devices } from "../utils/mediaQuery/consts";
 
 export type Type =
   | "display"
@@ -39,3 +42,10 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 declare const Heading: React.FunctionComponent<Props>;
 export { Heading, Heading as default };
+
+interface StyledProps extends Omit<Props, "as" | Devices> {
+  readonly element?: Props["as"];
+  readonly viewports: Pick<Props, Exclude<Devices, "smallMobile">>;
+}
+
+export declare const StyledHeading: StyledComponent<"div", typeof DefaultTheme, StyledProps>;

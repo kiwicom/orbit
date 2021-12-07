@@ -6,6 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
+import { DEVICES } from "../utils/mediaQuery/consts";
 
 import type { GetHeadingToken, Props } from ".";
 
@@ -65,20 +66,18 @@ export const StyledHeading: any = styled(
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
     margin-bottom: ${getSpacingToken};
-    ${Object.keys(viewports)
-      .filter(viewport => mediaQueries[viewport])
-      .map(viewport => {
+    ${
+      // temporary fix until we figure out how come `viewports` ended up being `undefined`
+      DEVICES.filter(viewport => viewports && viewports[viewport]).map(viewport => {
         const { type: value, spaceAfter } = viewports[viewport];
-        return (
-          viewport in mediaQueries &&
-          mediaQueries[viewport](css`
-            font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
-            font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
-            line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
-            margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
-          `)
-        );
-      })}
+        return mediaQueries[viewport](css`
+          font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+          font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
+          line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
+          margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
+        `);
+      })
+    }
   `}
 `;
 

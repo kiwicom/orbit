@@ -10,7 +10,7 @@ const transform = require("through2").obj;
 const path = require("path");
 const dotenv = require("dotenv-safe");
 
-function configureGitHubToken(done) {
+async function configureGitHubToken(done) {
   try {
     dotenv.config({
       allowEmptyValues: true,

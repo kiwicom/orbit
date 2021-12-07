@@ -6,6 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
+import { DEVICES } from "../utils/mediaQuery/consts";
 
 import type { GetHeadingToken, Props } from ".";
 
@@ -65,20 +66,18 @@ export const StyledHeading: any = styled(
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
     margin-bottom: ${getSpacingToken};
-    ${Object.keys(viewports)
-      .filter(viewport => mediaQueries[viewport])
-      .map(viewport => {
+    ${
+      // temporary fix until we figure out how come `viewports` ended up being `undefined`
+      DEVICES.filter(viewport => viewports && viewports[viewport]).map(viewport => {
         const { type: value, spaceAfter } = viewports[viewport];
-        return (
-          viewport in mediaQueries &&
-          mediaQueries[viewport](css`
-            font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
-            font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
-            line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
-            margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
-          `)
-        );
-      })}
+        return mediaQueries[viewport](css`
+          font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+          font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
+          line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
+          margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
+        `);
+      })
+    }
   `}
 `;
 
@@ -97,21 +96,28 @@ const Heading = ({
   spaceAfter,
   dataA11ySection,
   id,
-  ...viewports
-}: Props): React.Node => (
-  <StyledHeading
-    id={id}
-    align={align}
-    type={type}
-    element={as}
-    inverted={inverted}
-    dataTest={dataTest}
-    spaceAfter={spaceAfter}
-    dataA11ySection={dataA11ySection}
-    viewports={viewports}
-  >
-    {children}
-  </StyledHeading>
-);
+  mediumMobile,
+  largeMobile,
+  tablet,
+  desktop,
+  largeDesktop,
+}: Props): React.Node => {
+  const viewports = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
+  return (
+    <StyledHeading
+      id={id}
+      align={align}
+      type={type}
+      element={as}
+      inverted={inverted}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+      dataA11ySection={dataA11ySection}
+      viewports={viewports}
+    >
+      {children}
+    </StyledHeading>
+  );
+};
 
 export default Heading;

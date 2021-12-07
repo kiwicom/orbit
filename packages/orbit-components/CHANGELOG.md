@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.1...@kiwicom/orbit-components@2.5.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* **getBreakpointWidth:** improve typings through overloading ([069cf86](https://github.com/kiwicom/orbit/commit/069cf8628f3f1e39fcefce72d0f8d702d23320f5))
+* **Heading:** add missing TypeScript definition for StyledHeading ([7bdb6e2](https://github.com/kiwicom/orbit/commit/7bdb6e27bbf78916fc5faf64c8ffe17a47c0ba1e))
+* **Heading:** temporary fix for `viewports` being `undefined` ([#3212](https://github.com/kiwicom/orbit/issues/3212)) ([4f3fb8d](https://github.com/kiwicom/orbit/commit/4f3fb8d2d03d84825898a2a0d28c7eb94033e465))
+* **Tooltip:** export interface ([#3210](https://github.com/kiwicom/orbit/issues/3210)) ([d393f9a](https://github.com/kiwicom/orbit/commit/d393f9ac321336bcdd3fbba54f9c92be8ac3b170))
+
+
+### Features
+
+* add tracking ([#3180](https://github.com/kiwicom/orbit/issues/3180)) ([29d01be](https://github.com/kiwicom/orbit/commit/29d01be68cd661254479e4dad1b49d36ba5abd47))
+
+
+
+
+
 ## [2.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.0...@kiwicom/orbit-components@2.4.1) (2021-12-03)
 
 

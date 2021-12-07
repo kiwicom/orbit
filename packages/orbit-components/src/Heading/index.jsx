@@ -96,21 +96,28 @@ const Heading = ({
   spaceAfter,
   dataA11ySection,
   id,
-  ...viewports
-}: Props): React.Node => (
-  <StyledHeading
-    id={id}
-    align={align}
-    type={type}
-    element={as}
-    inverted={inverted}
-    dataTest={dataTest}
-    spaceAfter={spaceAfter}
-    dataA11ySection={dataA11ySection}
-    viewports={viewports}
-  >
-    {children}
-  </StyledHeading>
-);
+  mediumMobile,
+  largeMobile,
+  tablet,
+  desktop,
+  largeDesktop,
+}: Props): React.Node => {
+  const viewports = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
+  return (
+    <StyledHeading
+      id={id}
+      align={align}
+      type={type}
+      element={as}
+      inverted={inverted}
+      dataTest={dataTest}
+      spaceAfter={spaceAfter}
+      dataA11ySection={dataA11ySection}
+      viewports={viewports}
+    >
+      {children}
+    </StyledHeading>
+  );
+};
 
 export default Heading;

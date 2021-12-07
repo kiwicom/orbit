@@ -55,7 +55,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.1",
     "browserslist": "^4.16.6",
-    "caniuse-lite": "^1.0.30001271",
     "conventional-changelog": "^3.1.24",
     "cross-env": "^7.0.2",
     "dotenv-safe": "^8.2.0",

@@ -7,7 +7,7 @@ import { Popper } from "../primitives/TooltipPrimitive";
 import * as Common from "../common/common";
 
 type Size = "small" | "medium";
-interface Props extends Common.Global, Popper {
+export interface Props extends Common.Global, Popper {
   readonly children: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;

@@ -23,9 +23,9 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     z-index: 1; /* place tabs above the main container */
     display: flex;
     flex-wrap: wrap; /* so that we can detect whether tabs wrap, and in that case collapse them */
-    padding-top: ${getTabShadowReachTop(theme)};
-    padding-left: ${getTabShadowReachLeft(theme)};
-    padding-right: ${getTabShadowReachRight(theme)};
+    padding-top: ${getTabShadowReachTop};
+    padding-left: ${getTabShadowReachLeft};
+    padding-right: ${getTabShadowReachRight};
     /* prevents box shadow and tabs stack from overflowing at the bottom in order to */
     /* achieve the effect of attached tabs, also prevents wrapped tabs from showing */
     overflow: hidden;

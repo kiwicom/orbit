@@ -10,7 +10,7 @@ function parseBoxShadow(boxShadow: string): number[][] {
     .map(s => s.map(v => parseInt(v, 10)));
 }
 
-export function getTabShadowReachTop(theme: DefaultTheme) {
+export function getTabShadowReachTop({ theme }: { theme: DefaultTheme }) {
   const result = parseBoxShadow(theme.orbit[TAB_ACTIVE_SHADOW_TOKEN])
     .map(s => {
       const [, offsetY = 0, blurRadius = 0, spreadRadius = 0] = s;
@@ -24,7 +24,7 @@ export function getTabShadowReachTop(theme: DefaultTheme) {
   return `${result}px`;
 }
 
-export function getTabShadowReachLeft(theme: DefaultTheme) {
+export function getTabShadowReachLeft({ theme }: { theme: DefaultTheme }) {
   const result = parseBoxShadow(theme.orbit[TAB_ACTIVE_SHADOW_TOKEN])
     .map(s => {
       const [offsetX = 0, , blurRadius = 0, spreadRadius = 0] = s;
@@ -38,7 +38,7 @@ export function getTabShadowReachLeft(theme: DefaultTheme) {
   return `${result}px`;
 }
 
-export function getTabShadowReachRight(theme: DefaultTheme) {
+export function getTabShadowReachRight({ theme }: { theme: DefaultTheme }) {
   const result = parseBoxShadow(theme.orbit[TAB_ACTIVE_SHADOW_TOKEN])
     .map(s => {
       const [offsetX = 0, , blurRadius = 0, spreadRadius = 0] = s;

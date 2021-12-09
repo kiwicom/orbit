@@ -27,7 +27,7 @@ const StyledTabLink = styled(Link)`
   ${({ theme }) => css`
     display: flex;
     align-items: center; /* align text so it matches StyledTab */
-    height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop(theme)});
+    height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop});
     color: ${theme.orbit.paletteInkLight};
     transition: color ${theme.orbit.durationFast};
     &:hover {
@@ -38,7 +38,7 @@ const StyledTabLink = styled(Link)`
 
 export const commonTabStyle = css`
   ${({ theme }) => `
-    height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop(theme)});
+    height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
     ${boxShadowDefault};

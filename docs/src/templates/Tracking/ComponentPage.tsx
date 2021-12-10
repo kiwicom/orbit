@@ -118,10 +118,9 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
             }}
           />
         )}
-
         {allSources.length < 15 ? (
           allSources.map(source => (
-            <TextLink size="small" href={source} external>
+            <TextLink key={source} size="small" href={source}>
               <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
             </TextLink>
           ))
@@ -129,7 +128,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
           <>
             <Button onClick={() => setExpanded(prev => !prev)}>Toggle all sources</Button>
             {allSources.slice(0, 15).map(source => (
-              <TextLink size="small" href={source} external>
+              <TextLink key={source} size="small" href={source}>
                 <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
               </TextLink>
             ))}
@@ -137,7 +136,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
               <div ref={measureRef}>
                 <Stack inline direction="column">
                   {allSources.slice(15, allSources.length).map(source => (
-                    <TextLink size="small" href={source} external>
+                    <TextLink key={source} size="small" href={source}>
                       <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
                     </TextLink>
                   ))}

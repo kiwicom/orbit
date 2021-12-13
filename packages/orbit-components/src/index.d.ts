@@ -52,6 +52,7 @@ export { TextLink } from "./TextLink";
 export { Tile } from "./Tile";
 export { TileGroup } from "./TileGroup";
 export { Tooltip } from "./Tooltip";
+export { default as ToastInit, createToast, createToastPromise } from "./Toast";
 export { Truncate } from "./Truncate";
 export { Radio } from "./Radio";
 export { RatingStars } from "./RatingStars";

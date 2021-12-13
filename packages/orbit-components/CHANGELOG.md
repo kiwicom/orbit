@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.0...@kiwicom/orbit-components@2.5.1) (2021-12-13)
+
+
+### Bug Fixes
+
+* remove norefferer from links ([#3217](https://github.com/kiwicom/orbit/issues/3217)) ([67353f0](https://github.com/kiwicom/orbit/commit/67353f083f84c96e68887b30008ea72211020938))
+* **Skeleton:** set fixed height for Text preset ([#3214](https://github.com/kiwicom/orbit/issues/3214)) ([c7a35c5](https://github.com/kiwicom/orbit/commit/c7a35c51ed5532955edff2b518f8567b0758ab4a))
+
+
+
+
+
 # [2.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.1...@kiwicom/orbit-components@2.5.0) (2021-12-07)
 
 

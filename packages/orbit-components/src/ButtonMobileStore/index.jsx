@@ -55,7 +55,7 @@ const ButtonMobileStore = ({
     <StyledButtonMobileStore
       href={href}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       onClick={onClickHandler}
       data-test={dataTest}
     >

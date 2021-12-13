@@ -35,5 +35,5 @@ Table below contains all types of the props available in Tile component.
 
 ## Functional specs
 
-- When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+- When the `external` is specified, `noopener` value will be automatically added to attribute `rel` for security reason.
 - By passing the `href` prop into Tile, it will render into `a` element.

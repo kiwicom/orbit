@@ -50,6 +50,6 @@ Table below contains all types of the props available in TextLink component.
 
 ## Functional specs
 
-- When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+- When the `external` is specified, `noopener` value will be automatically added to attribute `rel` for security reason. Read more about it [here](https://web.dev/external-anchors-use-rel-noopener/).
 
 - The default size of the `TextLink` is inherited from parent element, e.g. `TextLink` is wrapped in `Text` component. Use `size` prop only when you need to set it explicitly.

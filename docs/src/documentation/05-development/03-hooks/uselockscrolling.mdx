@@ -1,0 +1,25 @@
+---
+title: useLockScrolling
+description: Prevent scrolling the page and only allow it for the given element, usually an overlay.
+---
+
+import UseLockScrollingReadMe from "@kiwicom/orbit-components/src/hooks/useLockScrolling/README.md";
+import { Alert } from "@kiwicom/orbit-components";
+import { MDXProvider } from "@mdx-js/react";
+
+export default function Layout() {
+  return (
+    <MDXProvider
+      components={{
+        h1: () => null, // we're already have the title
+        Warning: ({ children }) => (
+          <Alert type="warning" icon title="Important!">
+            {children}
+          </Alert>
+        ),
+      }}
+    >
+      <UseLockScrollingReadMe />
+    </MDXProvider>
+  );
+}

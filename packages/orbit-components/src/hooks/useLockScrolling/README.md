@@ -1,6 +1,12 @@
 # useLockScrolling
 
-The `useLockScrolling` hook is useful when you want to lock scrolling to a given element, for example when a modal is open you want only its content to be scrollable, not the entire page.
+The `useLockScrolling` hook is useful when you want to lock scrolling to a given element, for example when a modal is open you want only its content to be scrollable, not the entire page (i.e. the "content in the background").
+
+<Warning>
+
+Locking scrolling is a global functionality – there is only one `<body>` element, so you should use `useLockScrolling` for all your (page) lock scrolling needs. It's keeping track of how many components are using it at the moment to know when to actually unlock scrolling, so if your application is using this hook alongside other implementations of locking scrolling, you might run into bugs where scrolling is not locked when it should be, or much worse, locked when it shouldn't be!
+
+</Warning>
 
 To implement the `useLockScrolling` hook in your component, add the import:
 

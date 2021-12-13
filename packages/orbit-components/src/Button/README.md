@@ -56,7 +56,7 @@ Table below contains all types of the props available in Button component.
 
 ## Functional specs
 
-- When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+- When the `external` is specified, `noopener` value will be automatically added to attribute `rel` for security reason. Read more about it [here](https://web.dev/external-anchors-use-rel-noopener/).
 
 * By passing the `href` prop into Button, it will render into `a` element. If you pass `asComponent` prop it will override this logic.
 

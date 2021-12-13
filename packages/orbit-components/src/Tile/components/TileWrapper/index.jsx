@@ -52,7 +52,7 @@ const TileWrapper = ({
 }: Props): React.Node => (
   <StyledTileWrapper
     target={href && external ? "_blank" : undefined}
-    rel={href && external ? "noopener noreferrer" : undefined}
+    rel={href && external ? "noopener" : undefined}
     href={href || undefined}
     data-test={dataTest}
     onClick={onClick}

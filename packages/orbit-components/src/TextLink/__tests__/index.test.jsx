@@ -69,7 +69,6 @@ describe("#TextLink", () => {
     );
     const link = screen.getByText(title).closest("a");
     expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
-    expect(link).toHaveAttribute("rel", expect.stringContaining("noreferrer"));
     expect(link).toHaveAttribute("rel", expect.stringContaining(rel));
     expect(link).toHaveAttribute("target", "_blank");
   });

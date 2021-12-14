@@ -110,7 +110,7 @@ const ComponentStatus = ({ component: componentName }: Props) => {
   const component = componentStatusData.find(item => item.component === componentName);
 
   if (!component) {
-    return "This component has not yet been started.";
+    return <Text>This component has not yet been started.</Text>;
   }
 
   return (

@@ -81,7 +81,7 @@ const StyledDuration = styled.div`
 
 const StyledExpandable = styled.div`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceSmall} 0;
+    padding-top: ${theme.orbit.spaceSmall};
   `}
 `;
 
@@ -92,7 +92,7 @@ StyledExpandable.defaultProps = {
 
 const StyledExpandableContent = styled.div`
   ${({ $offset, theme }) => css`
-    padding: ${theme.orbit.spaceSmall};
+    padding: 0 ${theme.orbit.spaceSmall};
     position: relative;
     z-index: 1;
     margin-${left}: ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px;
@@ -116,7 +116,7 @@ const StyledIcon = styled.div`
       content: "";
       position: absolute;
       width: 100%;
-      height: 200%;
+      height: 100%;
       left: 0;
       background: ${theme.orbit.paletteWhite};
       ${isFirst &&
@@ -180,11 +180,15 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
                   // eslint-disable-next-line react/no-array-index-key
                   <React.Fragment key={idx}>
                     <StyledHeadingOffset>
-                      <Text weight="medium" spaceAfter="medium">
+                      <Text size="small" weight="medium" spaceAfter="small">
                         {title}
                       </Text>
                     </StyledHeadingOffset>
-                    <Stack direction="column" spacing="XSmall" spaceAfter="medium">
+                    <Stack
+                      direction="column"
+                      spacing="none"
+                      spaceAfter={idx === content.length - 1 ? "none" : "medium"}
+                    >
                       {items.map(({ icon: itemIcon, name, value }, id) => {
                         return (
                           // eslint-disable-next-line react/no-array-index-key
@@ -193,8 +197,10 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
                               {itemIcon}
                             </StyledIcon>
                             <Stack inline justify="between">
-                              <Text>{name}</Text>
-                              <Text weight="bold">{value}</Text>
+                              <Text size="small">{name}</Text>
+                              <Text size="small" weight="medium">
+                                {value}
+                              </Text>
                             </Stack>
                           </Stack>
                         );

@@ -20,7 +20,7 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
-  ToastInit: "Toast",
+  ToastProvider: "Toast",
   createToast: "Toast",
   createToastPromise: "Toast",
   calculateCountOf: "Slider/utils/calculateCountOf",

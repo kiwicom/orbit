@@ -1,10 +1,10 @@
 // @flow
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     savedCallback.current = callback;
   }, [callback]);
 

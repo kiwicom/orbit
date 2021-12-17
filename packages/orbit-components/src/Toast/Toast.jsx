@@ -13,13 +13,11 @@ import mergeRefs from "../utils/mergeRefs";
 
 import type { Toast as Props } from ".";
 
-const StyledWrapper: any = styled(
-  React.forwardRef(({ className, children, dataTest, ariaLive, role }, ref) => (
-    <div className={className} data-test={dataTest} aria-live={ariaLive} role={role} ref={ref}>
-      {children}
-    </div>
-  )),
-)`
+const StyledWrapper: any = styled(({ className, children, dataTest, ariaLive, role }) => (
+  <div className={className} data-test={dataTest} aria-live={ariaLive} role={role}>
+    {children}
+  </div>
+))`
   ${({ theme, placement, offsetY, offsetX, opacity }) => css`
     z-index: ${theme.orbit.zIndexOnTheTop};
     will-change: transform;
@@ -47,10 +45,8 @@ const StyledInnerWrapper = styled.div`
     overflow: hidden;
     will-change: transform;
     pointer-events: ${visible ? "auto" : "none"};
-    ${css`
-      animation: ${visible ? fadeIn : fadeOut} ${theme.orbit.durationNormal} forwards;
-      animation-play-state: ${isPaused ? "paused" : "running"};
-    `}
+    animation: ${visible ? fadeIn : fadeOut} ${theme.orbit.durationNormal} forwards;
+    animation-play-state: ${isPaused ? "paused" : "running"};
 
     svg {
       min-height: 20px;
@@ -118,7 +114,6 @@ const Toast: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
       <StyledWrapper
         ariaLive={ariaLive}
         role={role}
-        ref={innerRef}
         opacity={swipeOpacity}
         visible={visible}
         offsetY={offset}

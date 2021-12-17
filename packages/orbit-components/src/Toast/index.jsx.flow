@@ -24,8 +24,8 @@ export type Toast = {|
   +onDismiss: () => void,
   +placement: Placement,
   +offset?: number,
-  +ariaLive?: string,
-  +role?: string,
+  +ariaLive: "polite" | "assertive",
+  +role: string,
 |};
 
 export type Props = {|

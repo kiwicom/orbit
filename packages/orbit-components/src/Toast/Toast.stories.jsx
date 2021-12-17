@@ -4,8 +4,9 @@ import { text, select, number } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import Notification from "../icons/Notification";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import ToastInit, { createToast, createToastPromise } from ".";
+import ToastProvider, { createToast, createToastPromise } from ".";
 
 export default {
   title: "Toast",
@@ -41,7 +42,7 @@ export const Default = (): React.Node => {
   return (
     <>
       <Button onClick={toast}>Add toast</Button>
-      <ToastInit
+      <ToastProvider
         placement={placement}
         dismissTimeout={dismissTimeout}
         topOffset={topOffset}
@@ -55,22 +56,43 @@ export const Default = (): React.Node => {
 };
 
 export const WithPromise = (): React.Node => {
-  const promise = new Promise((res, rej) => {
-    setTimeout(Math.random() > 0.5 ? res : rej, 3000);
-  });
+  const notify = () => {
+    const promise = new Promise((res, rej) => {
+      setTimeout(Math.random() > 0.5 ? res : rej, 3000);
+    });
 
-  const notify = () =>
     createToastPromise(promise, {
       icon: <Notification />,
       loading: "...Loading",
       success: "Freddy Krueger has nightmares about Chuck Norris!",
       error: "Chuck did not come",
     });
+  };
 
   return (
     <>
       <Button onClick={notify}>Add toast</Button>
-      <ToastInit />
+      <ToastProvider />
     </>
+  );
+};
+
+export const RTL = (): React.Node => {
+  const toast = () =>
+    createToast(
+      text(
+        "message",
+        "When the Tooth fairy comes to your house she takes your tooth and gives you money. When Chuck Norris comes to your house he breaks your tooth and takes your money.",
+      ),
+      { icon: <Notification /> },
+    );
+
+  return (
+    <RenderInRtl>
+      <>
+        <Button onClick={toast}>Add toast</Button>
+        <ToastProvider />
+      </>
+    </RenderInRtl>
   );
 };

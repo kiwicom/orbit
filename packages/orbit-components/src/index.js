@@ -103,7 +103,7 @@ export { default as Stepper, StepperStateless } from "./Stepper";
 export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";
 export { default as Text } from "./Text";
-export { default as ToastInit, createToast, createToastPromise } from "./Toast";
+export { default as ToastProvider, createToast, createToastPromise } from "./Toast";
 export { default as Textarea } from "./Textarea";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./ThemeProvider";

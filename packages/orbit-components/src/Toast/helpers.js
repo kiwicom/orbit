@@ -2,14 +2,17 @@
 import { keyframes, css } from "styled-components";
 import type { InterpolationBase, CSSRules } from "styled-components";
 
+import type { ThemeProps } from "../defaultTheme";
+import { translate3d } from "../utils/rtl";
+
 import type { Placement } from ".";
 
-export const lightAnimation: InterpolationBase = keyframes`
+export const lightAnimation = ({ theme }: ThemeProps): InterpolationBase => keyframes`
   0% {
-    transform: translateX(-100%);
+    transform: ${translate3d("-100%, 0, 0")({ theme })};
   }
   100% {
-    transform: translateX(0%);
+    transform: ${translate3d("0%, 0, 0")({ theme })};
   }
 `;
 

@@ -1,14 +1,16 @@
 # Toast
 
-To implement Toast component into your project you'll need to add the import:
+The Toast component consists of `ToastProvider` and `createToast`/`createToastPromise`:
 
 ```jsx
-import ToastInit, { createToast } from "@kiwicom/orbit-components/lib/Toast";
+import ToastProvider, { createToast } from "@kiwicom/orbit-components/lib/Toast";
 ```
 
-It's better to use ToastInit at the root of your application once and you can use `createToast` from anywhere after
+It's better to use ToastProvider once at the root of your application with your other context providers and you can use `createToast` from anywhere after
 
 ```jsx
+import React from "react";
+import ToastProvider, { createToast } from "@kiwicom/orbit-components/lib/Toast";
 import Notification from "@kiwicom/orbit-components/lib/icons/Notification";
 
 const notify = () => createToast("Here is your toast", { icon: <Notification /> });
@@ -17,13 +19,13 @@ const App = () => {
   return (
     <div>
       <button onClick={notify}>Make me a toast</button>
-      <ToastInit />
+      <ToastProvider />
     </div>
   );
 };
 ```
 
-You can also use `createPromiseToast` function, notification will be updated automatically, when promise will be resolved or rejected
+You can also use `createToastPromise` function, notification will be updated automatically, when promise will be resolved or rejected
 
 ```jsx
 const notify = () =>
@@ -37,7 +39,7 @@ const notify = () =>
 
 ## Props
 
-Table below contains all types of the props available for `ToastInit` component
+Table below contains all types of the props available for `ToastProvider` component
 
 | Name           | Type                      | Default | Description                           |
 | :------------- | :------------------------ | :------ | :------------------------------------ |

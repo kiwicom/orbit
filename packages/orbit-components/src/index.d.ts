@@ -107,5 +107,6 @@ export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 export { default as useFocusTrap } from "./hooks/useFocusTrap";
+export { default as useInterval } from "./hooks/useInterval";
 
 export { Icon } from "./Icon";

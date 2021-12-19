@@ -128,6 +128,7 @@ import typeof useRandomIdType, {
   useRandomIdSeed as useRandomIdSeedType,
 } from "./hooks/useRandomId";
 import typeof useFocusTrapType from "./hooks/useFocusTrap";
+import typeof useIntervalType from "./hooks/useInterval";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -277,6 +278,7 @@ declare export var useLockScrolling: useLockScrollingType;
 declare export var useRandomId: useRandomIdType;
 declare export var useRandomIdSeed: useRandomIdSeedType;
 declare export var useFocusTrap: useFocusTrapType;
+declare export var useInterval: useIntervalType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

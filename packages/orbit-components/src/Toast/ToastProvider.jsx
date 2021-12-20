@@ -3,6 +3,7 @@ import * as React from "react";
 import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";
 
+import { createRectRef } from "./helpers";
 import Toast from "./Toast";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
@@ -57,12 +58,11 @@ const ToastProvider = ({
           gutter,
         });
 
-        const ref = el => {
-          if (el && !toast.height) {
-            const { height } = el.getBoundingClientRect();
-            updateHeight(toast.id, height);
-          }
-        };
+        const ref = toast.height
+          ? undefined
+          : createRectRef(({ height }) => {
+              updateHeight(id, height);
+            });
 
         return (
           <Toast
@@ -75,7 +75,6 @@ const ToastProvider = ({
             onMouseEnter={startPause}
             onMouseLeave={endPause}
             placement={placement}
-            role={ariaProps.role}
             onDismiss={() => notify.dismiss(id)}
             ariaLive={ariaProps["aria-live"]}
           >

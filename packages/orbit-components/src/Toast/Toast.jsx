@@ -13,8 +13,8 @@ import mergeRefs from "../utils/mergeRefs";
 
 import type { Toast as Props } from ".";
 
-const StyledWrapper: any = styled(({ className, children, dataTest, ariaLive, role }) => (
-  <div className={className} data-test={dataTest} aria-live={ariaLive} role={role}>
+const StyledWrapper: any = styled(({ className, children, dataTest, ariaLive }) => (
+  <div className={className} data-test={dataTest} aria-live={ariaLive} role="status">
     {children}
   </div>
 ))`
@@ -96,7 +96,6 @@ const Toast: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
       children,
       offset,
       ariaLive,
-      role,
     },
     ref,
   ): React.Node => {
@@ -113,7 +112,6 @@ const Toast: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
     return (
       <StyledWrapper
         ariaLive={ariaLive}
-        role={role}
         opacity={swipeOpacity}
         visible={visible}
         offsetY={offset}

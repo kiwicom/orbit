@@ -58,6 +58,7 @@ const pathOverwrites = {
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
   useTheme: "hooks/useTheme",
+  useInterval: "hooks/useInterval",
   useLockScrolling: "hooks/useLockScrolling",
   useRandomId: "hooks/useRandomId",
   useRandomIdSeed: { path: "hooks/useRandomId", named: true },

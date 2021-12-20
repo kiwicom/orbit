@@ -22,6 +22,13 @@ interface Props extends Common.Global {
   readonly placement?: Placement;
 }
 
+interface Options {
+  readonly icon?: React.ReactElement<unknown>;
+  readonly loading?: React.ReactNode;
+  readonly success?: string | ((data: unknown) => string);
+  readonly error?: string | ((err: unknown) => string);
+}
+
 declare const Toast: React.FunctionComponent<Props>;
 
 declare function createToast(
@@ -32,12 +39,7 @@ declare function createToast(
 declare function createToastPromise(
   // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
   promise: Promise<unknown>,
-  options: {
-    readonly icon?: React.ReactElement<unknown>;
-    readonly loading?: React.ReactNode;
-    readonly success?: string | ((data: unknown) => string);
-    readonly error?: string | ((err: unknown) => string);
-  },
+  options: Options,
 ): void;
 
 export default Toast;

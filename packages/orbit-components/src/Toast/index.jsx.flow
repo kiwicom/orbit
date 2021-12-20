@@ -25,7 +25,6 @@ export type Toast = {|
   +placement: Placement,
   +offset?: number,
   +ariaLive: "polite" | "assertive",
-  +role: string,
 |};
 
 export type Props = {|
@@ -39,16 +38,15 @@ export type Props = {|
   ...Globals,
 |};
 
+type Options = {|
+  icon?: React.Element<any>,
+  loading?: React.Node,
+  success?: string | ((data: any) => string),
+  error?: string | ((err: any) => string),
+|};
+
 export type createToastType = (message: string, options: {| icon?: React.Element<any> |}) => void;
-export type createToastPromiseType = (
-  promise: Promise<void>,
-  options: {|
-    icon?: React.Element<any>,
-    loading?: React.Node,
-    success?: string | ((data: any) => string),
-    error?: string | ((err: any) => string),
-  |},
-) => void;
+export type createToastPromiseType = (promise: Promise<void>, options: Options) => void;
 
 declare export default React.ComponentType<Props>;
 declare export var createToast: createToastType;

@@ -3,8 +3,10 @@ import * as React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import ToastProvider, { createToast } from "..";
 import { Airplane } from "../../icons";
 import Toast from "../Toast";
+import Button from "../../Button";
 
 describe("Toast", () => {
   it("should have expected DOM output", async () => {
@@ -18,7 +20,6 @@ describe("Toast", () => {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ariaLive="polite"
-        role="status"
         visible
         onDismiss={onDismiss}
         placement="bottom-center"
@@ -44,5 +45,32 @@ describe("Toast", () => {
     expect(screen.getByTestId("airplane")).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveAttribute("aria-live", "polite");
     expect(screen.getByRole("status")).toHaveStyle({ bottom: 0, justifyContent: "center" });
+  });
+
+  it("should have expected DOM output with ToastInit", () => {
+    render(
+      <>
+        <ToastProvider
+          dataTest="test"
+          leftOffset={10}
+          rightOffset={20}
+          topOffset={30}
+          bottomOffset={40}
+        />
+        <Button onClick={() => createToast("kek", { icon: <Airplane /> })}>Add toast</Button>
+      </>,
+    );
+
+    userEvent.click(screen.getByRole("button"));
+
+    expect(screen.getByTestId("test")).toHaveStyle({
+      top: "30px",
+      left: "10px",
+      right: "20px",
+      bottom: "40px",
+      position: "fixed",
+    });
+
+    expect(screen.getByRole("status")).toBeInTheDocument();
   });
 });

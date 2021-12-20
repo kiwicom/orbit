@@ -55,3 +55,15 @@ export const getPositionStyle = (placement: Placement): CSSRules => {
     ${placement.includes("top") ? "top: 0" : "bottom: 0"};
   `;
 };
+
+type createReactRef = (onRect: (rect: ClientRect) => void) => (el: HTMLElement | null) => void;
+
+// https://github.com/timolins/react-hot-toast/blob/main/src/components/toaster.tsx#L100
+export const createRectRef: createReactRef = onRect => (el: HTMLElement | null) => {
+  if (el) {
+    setTimeout(() => {
+      const boundingRect = el.getBoundingClientRect();
+      onRect(boundingRect);
+    });
+  }
+};

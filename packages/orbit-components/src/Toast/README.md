@@ -1,16 +1,16 @@
 # Toast
 
-The Toast component consists of `ToastProvider` and `createToast`/`createToastPromise`:
+The Toast component consists of `ToastRoot` and `createToast`/`createToastPromise`:
 
 ```jsx
-import ToastProvider, { createToast } from "@kiwicom/orbit-components/lib/Toast";
+import ToastRoot, { createToast } from "@kiwicom/orbit-components/lib/Toast";
 ```
 
-It's better to use ToastProvider once at the root of your application with your other context providers and you can use `createToast` from anywhere after
+It's better to use ToastRoot once at the root of your application with your other context providers and you can use `createToast` from anywhere after
 
 ```jsx
 import React from "react";
-import ToastProvider, { createToast } from "@kiwicom/orbit-components/lib/Toast";
+import ToastRoot, { createToast } from "@kiwicom/orbit-components/lib/Toast";
 import Notification from "@kiwicom/orbit-components/lib/icons/Notification";
 
 const notify = () => createToast("Here is your toast", { icon: <Notification /> });
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div>
       <button onClick={notify}>Make me a toast</button>
-      <ToastProvider />
+      <ToastRoot />
     </div>
   );
 };
@@ -39,7 +39,7 @@ const notify = () =>
 
 ## Props
 
-Table below contains all types of the props available for `ToastProvider` component
+Table below contains all types of the props available for `ToastRoot` component
 
 | Name           | Type                      | Default | Description                           |
 | :------------- | :------------------------ | :------ | :------------------------------------ |

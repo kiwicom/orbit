@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ToastProvider, { createToast } from "..";
+import ToastRoot, { createToast } from "..";
 import { Airplane } from "../../icons";
 import Toast from "../Toast";
 import Button from "../../Button";
@@ -50,7 +50,7 @@ describe("Toast", () => {
   it("should have expected DOM output with ToastInit", () => {
     render(
       <>
-        <ToastProvider
+        <ToastRoot
           dataTest="test"
           leftOffset={10}
           rightOffset={20}

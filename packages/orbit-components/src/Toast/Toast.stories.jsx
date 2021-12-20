@@ -6,7 +6,7 @@ import Button from "../Button";
 import Notification from "../icons/Notification";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import ToastProvider, { createToast, createToastPromise } from ".";
+import ToastRoot, { createToast, createToastPromise } from ".";
 
 export default {
   title: "Toast",
@@ -42,7 +42,7 @@ export const Default = (): React.Node => {
   return (
     <>
       <Button onClick={toast}>Add toast</Button>
-      <ToastProvider
+      <ToastRoot
         placement={placement}
         dismissTimeout={dismissTimeout}
         topOffset={topOffset}
@@ -72,7 +72,7 @@ export const WithPromise = (): React.Node => {
   return (
     <>
       <Button onClick={notify}>Add toast</Button>
-      <ToastProvider />
+      <ToastRoot />
     </>
   );
 };
@@ -91,7 +91,7 @@ export const RTL = (): React.Node => {
     <RenderInRtl>
       <>
         <Button onClick={toast}>Add toast</Button>
-        <ToastProvider />
+        <ToastRoot />
       </>
     </RenderInRtl>
   );

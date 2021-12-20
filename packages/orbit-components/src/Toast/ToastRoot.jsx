@@ -27,7 +27,7 @@ StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const ToastProvider = ({
+const ToastRoot = ({
   dataTest,
   topOffset = 8,
   leftOffset = 8,
@@ -86,4 +86,4 @@ const ToastProvider = ({
   );
 };
 
-export default ToastProvider;
+export default ToastRoot;

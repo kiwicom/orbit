@@ -13,9 +13,7 @@ const packageJson = fs.readJsonSync(`${process.cwd()}/package.json`);
 
 dotEnvConfig({
   allowEmptyValues: true,
-  example: process.env.CI
-    ? path.resolve(__dirname, "../.env.ci.example")
-    : path.resolve(process.cwd(), "../../.env.example"),
+  example: path.resolve(__dirname, "../.env.example"),
 });
 
 sade("orbit-tracking", true)

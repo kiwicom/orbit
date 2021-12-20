@@ -26,9 +26,7 @@ interface ApiCallArgs extends BaseArgs {
 
 dotEnvConfig({
   allowEmptyValues: true,
-  example: process.env.CI
-    ? path.resolve(__dirname, "../.env.ci.example")
-    : path.resolve(process.cwd(), "../../.env.example"),
+  example: path.resolve(__dirname, "../.env.example"),
 });
 
 export const request = <T>(
@@ -84,7 +82,7 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
             const orbitVersion = await getVersions(projectFolder);
 
             return command(
-              `npx react-scanner-orbit --yes -c ${
+              `yarn react-scanner-orbit -c ${
                 config || path.resolve(__dirname, "../", "dist", "react-scanner.config.js")
               } -p ${projectFolder}`,
               { env: { REPO_URL: url, OUTPUT_DIR: projectFolder } },
@@ -97,7 +95,7 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
                     ...data,
                     url,
                     orbitVersion,
-                    trackedData: JSON.parse(stdout),
+                    trackedData: JSON.parse(stdout.substring(stdout.indexOf("["))),
                   },
                   null,
                   2,

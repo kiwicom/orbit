@@ -6,7 +6,7 @@ import Button from "../Button";
 import Notification from "../icons/Notification";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import ToastRoot, { createToast, createToastPromise } from ".";
+import { ToastRoot, createToast, createToastPromise } from ".";
 
 export default {
   title: "Toast",

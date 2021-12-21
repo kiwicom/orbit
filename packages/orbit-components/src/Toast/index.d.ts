@@ -29,18 +29,17 @@ interface Options {
   readonly error?: string | ((err: unknown) => string);
 }
 
-declare const Toast: React.FunctionComponent<Props>;
+declare const ToastRoot: React.FunctionComponent<Props>;
 
 declare function createToast(
   message: string,
-  options: { readonly icon?: React.ReactElement<unknown> },
+  options?: { readonly icon?: React.ReactElement<unknown> },
 ): void;
 
 declare function createToastPromise(
   // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
   promise: Promise<unknown>,
-  options: Options,
+  options?: Options,
 ): void;
 
-export default Toast;
-export { createToast, createToastPromise };
+export { ToastRoot, createToast, createToastPromise };

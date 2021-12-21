@@ -9,5 +9,4 @@ const createToast: createToastType = (content, options) => toast(content, { ...o
 const createToastPromise: createToastPromiseType = (content, options) =>
   toast.promise(content, { ...options });
 
-export default ToastRoot;
-export { createToast, createToastPromise };
+export { ToastRoot, createToast, createToastPromise };

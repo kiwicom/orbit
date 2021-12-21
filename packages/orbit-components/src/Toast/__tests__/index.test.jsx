@@ -3,9 +3,9 @@ import * as React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ToastRoot, { createToast } from "..";
+import { ToastRoot, createToast } from "..";
 import { Airplane } from "../../icons";
-import Toast from "../Toast";
+import Toast from "../ToastMessage";
 import Button from "../../Button";
 
 describe("Toast", () => {

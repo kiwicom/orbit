@@ -114,7 +114,8 @@ import typeof TileType from "./Tile";
 import typeof TimelineStepType from "./Timeline/TimelineStep";
 import typeof TimelineType from "./Timeline";
 import typeof TooltipType from "./Tooltip";
-import typeof ToastType, {
+import typeof {
+  ToastRoot as ToastRootType,
   createToast as createToastType,
   createToastPromise as createToastPromiseType,
 } from "./Toast";
@@ -256,7 +257,7 @@ declare export var TileGroup: TileGroupType;
 declare export var Timeline: TimelineType;
 declare export var TimelineStep: TimelineStepType;
 declare export var Tooltip: TooltipType;
-declare export var Toast: ToastType;
+declare export var ToastRoot: ToastRootType;
 declare export var createToast: createToastType;
 declare export var createToastPromise: createToastPromiseType;
 declare export var Truncate: TruncateType;

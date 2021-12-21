@@ -83,7 +83,7 @@ StyledInnerWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Toast: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
+const ToastMessage: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
   (
     {
       onMouseEnter,
@@ -144,4 +144,4 @@ const Toast: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
   },
 );
 
-export default Toast;
+export default ToastMessage;

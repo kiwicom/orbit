@@ -57,7 +57,9 @@ const StyledFormFeedbackTooltip = styled.div`
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};
-    padding: ${inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall};
+    padding: ${theme.orbit.spaceXSmall} ${
+    inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall
+  };
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
     z-index: 10;
     max-height: none;

@@ -20,6 +20,9 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  ToastRoot: "Toast",
+  createToast: "Toast",
+  createToastPromise: "Toast",
   calculateCountOf: "Slider/utils/calculateCountOf",
   AccordionSection: "Accordion/AccordionSection",
   Grid: "utils/Grid",
@@ -55,6 +58,7 @@ const pathOverwrites = {
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
   useTheme: "hooks/useTheme",
+  useInterval: "hooks/useInterval",
   useLockScrolling: "hooks/useLockScrolling",
   useRandomId: "hooks/useRandomId",
   useRandomIdSeed: { path: "hooks/useRandomId", named: true },

@@ -1,0 +1,43 @@
+---
+title: Guidelines
+redirect_from:
+  - /components/toast/
+---
+
+<ReactExample exampleId="Toast-default" />
+
+## When to use
+
+- To display temporary short messages.
+- To react to user input (let users know something is happening).
+
+## When not to use
+
+- If the message should stay on the screen—use an alert.
+- When you want to include an action—use an alert.
+- When an action is necessary before continuing—use a modal or dialog.
+
+## Component status
+
+<ComponentStatus component="Toast" />
+
+## Behavior
+
+### Use for non-critical messages
+
+Toasts usually disappear on their own. So any critical messages or errors that would block a user’s flow don’t get enough attention.
+For errors and other critical messages, place the message in the screen itself. If the message is important but doesn’t block the flow, use an alert.
+If the user should be blocked, use a modal or dialog.
+
+### Not actionable
+
+Toasts are built for messages only, not actions. They can include links to additional information, but nothing that would be required. Toasts can disappear, meaning the actions would too.
+Make the actions available directly on the screen. If there are actions associated with the message, use an alert. Otherwise, use buttons and other action components.
+
+## Content
+
+Toast shows a brief message that’s clear & understandable. It’s shown temporarily, which means that it shouldn’t be used for error messages that block the user in continuing the flow.
+Toast component is used for feedback from the app to the users for informing or warning them about different states.
+Toast should only be used if there are no other ways of providing the feedback.
+
+Toast shows a brief message that’s clear & understandable. It’s shown temporarily, which means that it shouldn’t be used for error messages that block the user in continuing the flow. Toast component is used for feedback from the app to the users for informing or warning them about different states. Toast should only be used if there are no other ways of providing the feedback.

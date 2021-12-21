@@ -114,6 +114,11 @@ import typeof TileType from "./Tile";
 import typeof TimelineStepType from "./Timeline/TimelineStep";
 import typeof TimelineType from "./Timeline";
 import typeof TooltipType from "./Tooltip";
+import typeof {
+  ToastRoot as ToastRootType,
+  createToast as createToastType,
+  createToastPromise as createToastPromiseType,
+} from "./Toast";
 import typeof TranslateType from "./Translate";
 import typeof TruncateType from "./Truncate";
 import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
@@ -124,6 +129,7 @@ import typeof useRandomIdType, {
   useRandomIdSeed as useRandomIdSeedType,
 } from "./hooks/useRandomId";
 import typeof useFocusTrapType from "./hooks/useFocusTrap";
+import typeof useIntervalType from "./hooks/useInterval";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -251,6 +257,9 @@ declare export var TileGroup: TileGroupType;
 declare export var Timeline: TimelineType;
 declare export var TimelineStep: TimelineStepType;
 declare export var Tooltip: TooltipType;
+declare export var ToastRoot: ToastRootType;
+declare export var createToast: createToastType;
+declare export var createToastPromise: createToastPromiseType;
 declare export var Truncate: TruncateType;
 declare export var Wizard: WizardType;
 declare export var WizardStep: WizardStepType;
@@ -270,6 +279,7 @@ declare export var useLockScrolling: useLockScrollingType;
 declare export var useRandomId: useRandomIdType;
 declare export var useRandomIdSeed: useRandomIdSeedType;
 declare export var useFocusTrap: useFocusTrapType;
+declare export var useInterval: useIntervalType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

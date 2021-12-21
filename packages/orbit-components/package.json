@@ -67,6 +67,7 @@
     "@kiwicom/orbit-design-tokens": "^1.0.4",
     "@popperjs/core": "^2.9.2",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "react-hot-toast": "^2.1.1",
     "react-popper": "^2.2.5",
     "react-uid": "^2.3.1"
   },

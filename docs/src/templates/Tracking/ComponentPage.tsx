@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { upperFirst } from "lodash";
 import {
   Heading,
@@ -17,6 +17,7 @@ import {
 } from "@kiwicom/orbit-components";
 import Slide from "@kiwicom/orbit-components/lib/utils/Slide";
 
+import { isLoggedIn } from "../../services/auth";
 import DocLayout from "../../components/DocLayout";
 
 import { Props as PageProps } from ".";
@@ -25,6 +26,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
   const [allSources, setAllSources] = React.useState<string[]>([]);
   const [height, setHeight] = React.useState(0);
   const [expanded, setExpanded] = React.useState(false);
+  const [render, setRender] = React.useState(false);
 
   const { name, trail } = pageContext;
   const {
@@ -38,8 +40,13 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
   )[0];
 
   React.useEffect(() => {
-    setAllSources(sources);
-  }, [sources, setAllSources]);
+    if (!isLoggedIn()) {
+      navigate(`/dashboard/login/`);
+    } else {
+      setRender(true);
+      setAllSources(sources);
+    }
+  }, [sources, setAllSources, setRender]);
 
   // support only primitives for now
   const FILTERED_NAMES = [
@@ -61,92 +68,99 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
   }, []);
 
   return (
-    <DocLayout location={location} title={upperFirst(name)} path={location.pathname} trail={trail}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Category</TableCell>
-            <TableCell>Instances</TableCell>
-            <TableCell>Deprecated</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <TableCell>{category}</TableCell>
-            <TableCell>{instances}</TableCell>
-            <TableCell>{isDeprecated}</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Property name</TableCell>
-            <TableCell>Instances</TableCell>
-            <TableCell>Properties</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.map(({ name: propName, used, values }) => (
-            <TableRow key={propName}>
-              <TableCell>{propName}</TableCell>
-              <TableCell>{used}</TableCell>
-              <TableCell>
-                {values
-                  .filter(value => !FILTERED_NAMES.includes(value.name))
-                  .map(({ name: valueName, used: valueInstances }) => (
-                    <Text size="small" key={valueName}>
-                      {valueName}: <b>{valueInstances}</b>
-                    </Text>
-                  ))}
-              </TableCell>
+    render && (
+      <DocLayout
+        location={location}
+        title={upperFirst(name)}
+        path={location.pathname}
+        trail={trail}
+      >
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Category</TableCell>
+              <TableCell>Instances</TableCell>
+              <TableCell>Deprecated</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Heading>Sources</Heading>
-      <Stack direction="column">
-        {sources.length > 15 && (
-          <InputField
-            placeholder="filter sources"
-            onChange={ev => {
-              if (ev.currentTarget.value.length === 0) {
-                setAllSources(sources);
-              } else {
-                setAllSources(allSources.filter(el => el.includes(ev.currentTarget.value)));
-              }
-            }}
-          />
-        )}
-        {allSources.length < 15 ? (
-          allSources.map(source => (
-            <TextLink key={source} size="small" href={source}>
-              <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
-            </TextLink>
-          ))
-        ) : (
-          <>
-            <Button onClick={() => setExpanded(prev => !prev)}>Toggle all sources</Button>
-            {allSources.slice(0, 15).map(source => (
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>{category}</TableCell>
+              <TableCell>{instances}</TableCell>
+              <TableCell>{isDeprecated}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Property name</TableCell>
+              <TableCell>Instances</TableCell>
+              <TableCell>Properties</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.map(({ name: propName, used, values }) => (
+              <TableRow key={propName}>
+                <TableCell>{propName}</TableCell>
+                <TableCell>{used}</TableCell>
+                <TableCell>
+                  {values
+                    .filter(value => !FILTERED_NAMES.includes(value.name))
+                    .map(({ name: valueName, used: valueInstances }) => (
+                      <Text size="small" key={valueName}>
+                        {valueName}: <b>{valueInstances}</b>
+                      </Text>
+                    ))}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        <Heading>Sources</Heading>
+        <Stack direction="column">
+          {sources.length > 15 && (
+            <InputField
+              placeholder="filter sources"
+              onChange={ev => {
+                if (ev.currentTarget.value.length === 0) {
+                  setAllSources(sources);
+                } else {
+                  setAllSources(allSources.filter(el => el.includes(ev.currentTarget.value)));
+                }
+              }}
+            />
+          )}
+          {allSources.length < 15 ? (
+            allSources.map(source => (
               <TextLink key={source} size="small" href={source}>
                 <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
               </TextLink>
-            ))}
-            <Slide maxHeight={height} expanded={expanded}>
-              <div ref={measureRef}>
-                <Stack inline direction="column">
-                  {allSources.slice(15, allSources.length).map(source => (
-                    <TextLink key={source} size="small" href={source}>
-                      <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
-                    </TextLink>
-                  ))}
-                </Stack>
-              </div>
-            </Slide>
-          </>
-        )}
-      </Stack>
-    </DocLayout>
+            ))
+          ) : (
+            <>
+              <Button onClick={() => setExpanded(prev => !prev)}>Toggle all sources</Button>
+              {allSources.slice(0, 15).map(source => (
+                <TextLink key={source} size="small" href={source}>
+                  <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
+                </TextLink>
+              ))}
+              <Slide maxHeight={height} expanded={expanded}>
+                <div ref={measureRef}>
+                  <Stack inline direction="column">
+                    {allSources.slice(15, allSources.length).map(source => (
+                      <TextLink key={source} size="small" href={source}>
+                        <Truncate maxWidth="887px">{source.split("master")[1]}</Truncate>
+                      </TextLink>
+                    ))}
+                  </Stack>
+                </div>
+              </Slide>
+            </>
+          )}
+        </Stack>
+      </DocLayout>
+    )
   );
 };
 

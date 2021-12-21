@@ -1,1 +1,1 @@
-exports.createPages = require("./gatsby/on-create-page");
+exports.createPages = require("./gatsby/on-create-pages");

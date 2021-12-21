@@ -22,6 +22,7 @@ export default ({ location }) => {
       {/* @ts-expect-error: router type */}
       <NotFound default />
       <PrivateRoute path="/dashboard/" component={Dashboard} location={location} />
+      <PrivateRoute path="/dashboard/:slug" component={Dashboard} location={location} />
       <Login path="/dashboard/login/" location={location} />
     </Router>
   );

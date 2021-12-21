@@ -1,8 +1,9 @@
 import React from "react";
 import { Heading, TextLink, Stack, Text } from "@kiwicom/orbit-components";
 import { upperFirst } from "lodash";
-import { graphql, PageRendererProps } from "gatsby";
+import { graphql, PageRendererProps, navigate } from "gatsby";
 
+import { isLoggedIn } from "../../services/auth";
 import DocLayout from "../../components/DocLayout";
 import Members from "./components/Members";
 import ComponentList from "./components/ComponentList";
@@ -76,6 +77,15 @@ export interface Props extends PageRendererProps {
 export default function Tracking({ pageContext, location, data }: Props) {
   const { name: pageName, trail } = pageContext;
   const { url, members, orbitVersion, trackedData, lastCommit } = data.allTrackingJson.nodes[0];
+  const [render, setRender] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isLoggedIn()) {
+      navigate(`/dashboard/login/`);
+    } else {
+      setRender(true);
+    }
+  }, [setRender]);
 
   const components = trackedData
     .filter(({ icon }) => !icon)
@@ -88,26 +98,28 @@ export default function Tracking({ pageContext, location, data }: Props) {
     }));
 
   return (
-    <DocLayout
-      location={location}
-      title={upperFirst(pageName)}
-      path={location.pathname}
-      trail={trail}
-    >
-      <Stack flex direction="column">
-        <TextLink href={url}>Gitlab repository</TextLink>
-        <Heading type="title3">Orbit version: {orbitVersion}</Heading>
-      </Stack>
+    render && (
+      <DocLayout
+        location={location}
+        title={upperFirst(pageName)}
+        path={location.pathname}
+        trail={trail}
+      >
+        <Stack flex direction="column">
+          <TextLink href={url}>Gitlab repository</TextLink>
+          <Heading type="title3">Orbit version: {orbitVersion}</Heading>
+        </Stack>
 
-      <Stack inline spacing="XSmall">
-        <Text>Last commit:</Text>
-        <TextLink href={lastCommit.webUrl}>{lastCommit.title}</TextLink>
-      </Stack>
+        <Stack inline spacing="XSmall">
+          <Text>Last commit:</Text>
+          <TextLink href={lastCommit.webUrl}>{lastCommit.title}</TextLink>
+        </Stack>
 
-      <Members members={members} />
-      <ComponentList components={components} />
-      <UsageByCategory components={components} />
-    </DocLayout>
+        <Members members={members} />
+        <ComponentList components={components} />
+        <UsageByCategory components={components} />
+      </DocLayout>
+    )
   );
 }
 

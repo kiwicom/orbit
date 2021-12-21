@@ -4,7 +4,7 @@ import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";
 
 import { createRectRef } from "./helpers";
-import Toast from "./Toast";
+import ToastMessage from "./ToastMessage";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
 
@@ -65,7 +65,7 @@ const ToastRoot = ({
             });
 
         return (
-          <Toast
+          <ToastMessage
             key={id}
             ref={ref}
             dismissTimeout={dismissTimeout}
@@ -79,7 +79,7 @@ const ToastRoot = ({
             ariaLive={ariaProps["aria-live"]}
           >
             {message}
-          </Toast>
+          </ToastMessage>
         );
       })}
     </StyledWrapper>

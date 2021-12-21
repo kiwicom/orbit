@@ -103,6 +103,7 @@ export { default as Stepper, StepperStateless } from "./Stepper";
 export { default as StopoverArrow } from "./StopoverArrow";
 export { default as Tag } from "./Tag";
 export { default as Text } from "./Text";
+export { ToastRoot, createToast, createToastPromise } from "./Toast";
 export { default as Textarea } from "./Textarea";
 export { default as TextLink } from "./TextLink";
 export { default as ThemeProvider } from "./ThemeProvider";
@@ -125,6 +126,7 @@ export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 export { default as useFocusTrap } from "./hooks/useFocusTrap";
+export { default as useInterval } from "./hooks/useInterval";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";

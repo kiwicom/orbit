@@ -52,6 +52,7 @@ export { TextLink } from "./TextLink";
 export { Tile } from "./Tile";
 export { TileGroup } from "./TileGroup";
 export { Tooltip } from "./Tooltip";
+export { ToastRoot, createToast, createToastPromise } from "./Toast";
 export { Truncate } from "./Truncate";
 export { Radio } from "./Radio";
 export { RatingStars } from "./RatingStars";
@@ -106,5 +107,6 @@ export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 export { default as useFocusTrap } from "./hooks/useFocusTrap";
+export { default as useInterval } from "./hooks/useInterval";
 
 export { Icon } from "./Icon";

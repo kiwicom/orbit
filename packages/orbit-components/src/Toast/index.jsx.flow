@@ -1,0 +1,53 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/toast/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+export type Placement =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-center"
+  | "bottom-right";
+
+export type Toast = {|
+  +icon?: React.Element<any>,
+  +visible?: boolean,
+  +children: React.Node,
+  +dismissTimeout?: number,
+  +onMouseEnter: () => void,
+  +onMouseLeave: () => void,
+  +onDismiss: () => void,
+  +placement: Placement,
+  +offset?: number,
+  +ariaLive: "polite" | "assertive",
+|};
+
+export type Props = {|
+  +topOffset?: number,
+  +leftOffset?: number,
+  +rightOffset?: number,
+  +bottomOffset?: number,
+  +gutter?: number,
+  +dismissTimeout?: number,
+  +placement?: Placement,
+  ...Globals,
+|};
+
+type Options = {|
+  icon?: React.Element<any>,
+  loading?: React.Node,
+  success?: string | ((data: any) => string),
+  error?: string | ((err: any) => string),
+|};
+
+export type createToastType = (message: string, options?: {| icon?: React.Element<any> |}) => void;
+export type createToastPromiseType = (promise: Promise<void>, options?: Options) => void;
+
+declare export var ToastRoot: React.ComponentType<Props>;
+declare export var createToast: createToastType;
+declare export var createToastPromise: createToastPromiseType;

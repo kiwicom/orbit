@@ -1,25 +1,43 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import mq from "../utils/mediaQuery";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
 import Text from "../Text";
 import useTheme from "../hooks/useTheme";
-import WizardStepIcon from "./WizardStepIcon";
+import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
 import { WizardStepContext } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
 import type { Props } from "./WizardStep";
 
+const StyledBorder = styled.div`
+  ${({ theme }) => css`
+    border-top: 1px solid ${theme.orbit.paletteCloudDark};
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 40px;
+  `}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledBorder.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledContainer = styled.li`
-  ${({ theme, isCompact, status }) =>
-    isCompact &&
+  ${({ theme, isCompact, status }) => css`
+    position: relative;
+    ${isCompact &&
     css`
-      position: relative;
       button {
         border-radius: 0;
       }
+
       ${status === "disabled" &&
       css`
         background: ${theme.orbit.paletteCloudLight};
@@ -27,9 +45,21 @@ const StyledContainer = styled.li`
           /* to make coloring more precise in disabled state */
           opacity: 1;
         }
-      `};
+      `}
     `}
+
+    ${mq.desktop(css`
+      &:hover {
+        ${StyledStepIconContainer} {
+          transition: box-shadow ${theme.orbit.durationFast} ease-in;
+          box-shadow: ${status !== "disabled" &&
+          `0 0 0 6px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)}`};
+        }
+      }
+    `)}
+  `}
 `;
+
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContainer.defaultProps = {
   theme: defaultTheme,
@@ -51,6 +81,8 @@ const StyledActiveMarker = styled.div`
     ${left}: 0;
     bottom: 0;
     width: 2px;
+    border-top-${right}-radius: ${theme.orbit.borderRadiusNormal};
+    border-bottom-${right}-radius: ${theme.orbit.borderRadiusNormal};
     background: ${theme.orbit.paletteProductNormal};
     pointer-events: none;
   `}
@@ -158,6 +190,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
     return (
       <StyledContainer data-test={dataTest} isCompact={isCompact} status={status}>
         {isActive && <StyledActiveMarker />}
+        <StyledBorder />
         <ButtonLink
           disabled={status === "disabled"}
           type="secondary"
@@ -179,7 +212,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   }
 
   const step = (
-    <Stack direction="column" align="center" spacing="XSmall">
+    <Stack flex direction="column" align="center" spacing="XSmall">
       <WizardStepIcon />
       <div
         css={css`

@@ -23,6 +23,7 @@ type Align = "start" | "center" | "end" | "justify";
 
 interface MediaQuery extends Common.SpaceAfter {
   readonly type?: Type;
+  readonly align?: Align;
 }
 
 export interface Props extends Common.Global, Common.SpaceAfter {

@@ -9,20 +9,20 @@ import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
 
-const StyledContainer = styled.div`
+export const StyledStepIconContainer = styled.div`
   ${({ theme, $disabled, $glow }) => css`
-    width: ${theme.orbit.widthIconSmall};
-    height: ${theme.orbit.heightIconSmall};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
     border-radius: ${theme.orbit.borderRadiusCircle};
-    background: ${theme.orbit.paletteProductNormal};
-    ${$disabled &&
-    css`
-      background: ${theme.orbit.paletteCloudNormalHover};
-    `}
-    ${$glow &&
-    css`
-      box-shadow: 0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)};
-    `};
+    background: ${$disabled
+      ? theme.orbit.paletteCloudNormalHover
+      : theme.orbit.paletteProductNormal};
+    box-shadow: ${$glow && `0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)}`};
+    position: relative;
+    top: -2px;
 
     svg {
       display: block;
@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledContainer.defaultProps = {
+StyledStepIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -40,7 +40,7 @@ const WizardStepIcon = (): React.Node => {
   const theme = useTheme();
 
   return (
-    <StyledContainer $disabled={status === "disabled"} $glow={isActive && !isCompact}>
+    <StyledStepIconContainer $disabled={status === "disabled"} $glow={isActive && !isCompact}>
       {status === "completed" ? (
         <CheckCircle
           ariaLabel="completed"
@@ -57,7 +57,7 @@ const WizardStepIcon = (): React.Node => {
           {typeof index === "number" ? index + 1 : null}
         </Text>
       )}
-    </StyledContainer>
+    </StyledStepIconContainer>
   );
 };
 

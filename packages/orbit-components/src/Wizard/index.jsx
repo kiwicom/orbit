@@ -12,12 +12,11 @@ import Portal from "../Portal";
 import Modal from "../Modal";
 import { CardSection } from "../Card";
 import useMediaQuery from "../hooks/useMediaQuery";
-import useTheme from "../hooks/useTheme";
 import useTranslate from "../hooks/useTranslate";
 
 import type { Props } from ".";
 
-const unstyledList = css`
+const unstyledListMixin = css`
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -33,7 +32,6 @@ const Wizard = ({
   onChangeStep,
 }: Props): React.Node | React.Element<"nav"> => {
   const { isLargeMobile } = useMediaQuery();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const toggle = React.useRef<React.ElementRef<typeof ButtonLink> | null>(null);
   const translate = useTranslate();
@@ -68,43 +66,34 @@ const Wizard = ({
   if (isCompact) {
     return (
       <>
-        <div
-          css={css`
-            button {
-              /* it's intended to go from edge to edge */
-              border-radius: 0;
-            }
-          `}
+        <Button
+          ref={toggle}
+          dataTest={dataTest}
+          ariaControls={id}
+          ariaExpanded={open}
+          type="secondary"
+          fullWidth
+          iconRight={<ChevronDown />}
+          onClick={() => {
+            setOpen(true);
+          }}
         >
-          <ButtonLink
-            ref={toggle}
-            dataTest={dataTest}
-            ariaControls={id}
-            ariaExpanded={open}
-            type="secondary"
-            fullWidth
-            iconRight={<ChevronDown />}
-            onClick={() => {
-              setOpen(true);
-            }}
-          >
-            <Stack as="span" inline>
-              <b>
-                {translate("wizard_progress", {
-                  number: activeStep + 1,
-                  total: stepsCount,
-                })}
-              </b>{" "}
-              <span
-                css={css`
-                  font-weight: normal;
-                `}
-              >
-                {activeStepTitle}
-              </span>
-            </Stack>
-          </ButtonLink>
-        </div>
+          <Stack as="span" inline>
+            <b>
+              {translate("wizard_progress", {
+                number: activeStep + 1,
+                total: stepsCount,
+              })}
+            </b>{" "}
+            <span
+              css={css`
+                font-weight: normal;
+              `}
+            >
+              {activeStepTitle}
+            </span>
+          </Stack>
+        </Button>
         <Portal>
           <div id={id}>
             {open && (
@@ -123,10 +112,7 @@ const Wizard = ({
                 >
                   <ul
                     css={css`
-                      ${unstyledList};
-                      > * + * {
-                        border-top: 1px solid ${theme.orbit.paletteCloudDark};
-                      }
+                      ${unstyledListMixin};
                     `}
                   >
                     {steps}
@@ -157,7 +143,7 @@ const Wizard = ({
     <nav>
       <ul
         css={css`
-          ${unstyledList};
+          ${unstyledListMixin};
           display: flex;
           li {
             flex: 1 1 0%;

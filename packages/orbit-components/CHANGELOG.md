@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.1...@kiwicom/orbit-components@2.6.0) (2021-12-22)
+
+
+### Bug Fixes
+
+* **Checkbox:** fix design discrepancies in border width and radius ([24b9af2](https://github.com/kiwicom/orbit/commit/24b9af2b96ae6f0dd0d10e376fbd9e2adc6bf400))
+* fix background color for help tooltip in form components ([8ce16bd](https://github.com/kiwicom/orbit/commit/8ce16bdc9a00157a6c79a0e8eb4de4119ae2f3ba))
+* fix tooltip's padding in form components ([c7496c8](https://github.com/kiwicom/orbit/commit/c7496c8a0a78c23e148606f26079a49eba643d88))
+* increase font weight of labels in form components ([56fcaeb](https://github.com/kiwicom/orbit/commit/56fcaeb4a86a6e8162ac89380db4dc4d14a1bddd))
+* **Itinerary:** fix to match design ([#3222](https://github.com/kiwicom/orbit/issues/3222)) ([80fa090](https://github.com/kiwicom/orbit/commit/80fa090c0186789a99e73bd45d152bd659927262))
+* **Radio:** lower focus glow amount ([2a7012f](https://github.com/kiwicom/orbit/commit/2a7012f46ce068e7703a2cbe44f861db142f1614))
+
+
+### Features
+
+* **Toast:** introduce toast component ([#3216](https://github.com/kiwicom/orbit/issues/3216)) ([8157669](https://github.com/kiwicom/orbit/commit/8157669e30b89bf2f207287e410ba952509d6f98))
+
+
+
+
+
 ## [2.5.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.0...@kiwicom/orbit-components@2.5.1) (2021-12-13)
 
 

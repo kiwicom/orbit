@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.3...@kiwicom/babel-plugin-orbit-components@3.4.0) (2021-12-22)
+
+
+### Features
+
+* **Toast:** introduce toast component ([#3216](https://github.com/kiwicom/orbit/issues/3216)) ([8157669](https://github.com/kiwicom/orbit/commit/8157669e30b89bf2f207287e410ba952509d6f98))
+
+
+
+
+
 ## [3.3.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.2...@kiwicom/babel-plugin-orbit-components@3.3.3) (2021-12-13)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

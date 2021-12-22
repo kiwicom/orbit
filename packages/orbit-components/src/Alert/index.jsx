@@ -31,10 +31,10 @@ type IconProps = {|
 const getTypeToken = name => ({ theme, type }) => {
   const tokens = {
     [TOKENS.colorIconAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
     },
     [TOKENS.backgroundAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
@@ -110,36 +110,36 @@ const StyledDiv = ({
 );
 
 const StyledAlert = styled(StyledDiv)`
-  position: relative;
-  display: flex;
-  width: 100%;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
+  ${({ theme, closable }) => css`
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-radius: ${theme.orbit.borderRadiusLarge};
 
-  border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
-  background: ${getTypeToken(TOKENS.backgroundAlert)};
-  color: ${getTypeToken(TOKENS.colorTextAlert)};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  box-sizing: border-box;
-  margin-bottom: ${getSpacingToken};
+    border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
+    background: ${getTypeToken(TOKENS.backgroundAlert)};
+    color: ${getTypeToken(TOKENS.colorTextAlert)};
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    box-sizing: border-box;
+    margin-bottom: ${getSpacingToken};
 
-  padding: ${({ theme, closable }) =>
-    closable
+    padding: ${closable
       ? rtlSpacing(
           `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
         )
       : theme.orbit.spaceSmall};
 
-  ${media.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    padding: ${({ theme, closable }) =>
-      closable
+    ${media.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+      padding: ${closable
         ? rtlSpacing(
             `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
           )
         : theme.orbit.paddingAlert};
-  `)}
+    `)}
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -148,20 +148,22 @@ StyledAlert.defaultProps = {
 };
 
 const IconContainer = styled(StyledDiv)`
-  flex-shrink: 0;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  color: ${getTypeToken(TOKENS.colorIconAlert)};
-  display: ${({ inlineActions }) => inlineActions && "flex"};
-  align-items: ${({ inlineActions }) => inlineActions && "center"};
+  ${({ theme, inlineActions }) => css`
+    flex-shrink: 0;
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+    color: ${getTypeToken(TOKENS.colorIconAlert)};
+    display: ${inlineActions && "flex"};
+    align-items: ${inlineActions && "center"};
 
-  ${media.tablet(css`
-    margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+    ${media.tablet(css`
+      margin: ${rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
 
-    ${StyledIcon} {
-      width: ${({ theme }) => theme.orbit.widthIconMedium};
-      height: ${({ theme }) => theme.orbit.heightIconMedium};
-    }
-  `)}
+      ${StyledIcon} {
+        width: ${theme.orbit.widthIconMedium};
+        height: ${theme.orbit.heightIconMedium};
+      }
+    `)}
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -170,22 +172,25 @@ IconContainer.defaultProps = {
 };
 
 const ContentWrapper = styled(StyledDiv)`
-  flex: 1; // IE wrapping fix
-  display: flex;
-  flex-direction: ${({ title, inlineActions }) => title && (inlineActions ? "row" : "column")};
-  align-items: ${({ title }) => !title && "center"};
-  justify-content: ${({ inlineActions }) => inlineActions && "space-between"};
+  ${({ title, inlineActions }) => css`
+    flex: 1; // IE wrapping fix
+    display: flex;
+    flex-direction: ${title && inlineActions ? "row" : "column"};
+    align-items: ${!title && "center"};
+    justify-content: ${inlineActions && "space-between"};
+  `}
 `;
 
 const Title = styled(StyledDiv)`
-  color: ${getTypeToken(TOKENS.colorIconAlert)};
-  display: flex;
-  align-items: center;
-  margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
-    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
-  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
-  min-height: ${({ theme }) => theme.orbit.heightIconMedium};
+  ${({ theme, hasChildren, inlineActions }) => css`
+    color: ${getTypeToken(TOKENS.colorIconAlert)};
+    display: flex;
+    align-items: center;
+    margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
+    font-weight: ${theme.orbit.fontWeightBold};
+    line-height: ${theme.orbit.lineHeightHeading};
+    min-height: ${theme.orbit.heightIconMedium};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -194,16 +199,19 @@ Title.defaultProps = {
 };
 
 const Content = styled(StyledDiv)`
-  display: block;
-  width: ${({ inlineActions }) => !inlineActions && "100%"};
+  ${({ inlineActions }) => css`
+    display: block;
+    width: ${!inlineActions && "100%"};
 
-  & a:not([class]),
-  & ${StyledTextLink} {
-    ${getLinkStyle};
-  }
-  & ${Item}, ${StyledText}, ${StyledHeading} {
-    color: ${getTypeToken(TOKENS.colorTextAlert)};
-  }
+    & a:not([class]),
+    & ${StyledTextLink} {
+      ${getLinkStyle};
+    }
+
+    & ${Item}, ${StyledText}, ${StyledHeading} {
+      color: ${getTypeToken(TOKENS.colorTextAlert)};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -212,11 +220,13 @@ Content.defaultProps = {
 };
 
 const CloseContainer = styled(StyledDiv)`
-  position: absolute;
-  top: ${({ hasChildren }) => (hasChildren ? 0 : "50%")};
-  margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
-  ${right}: 0;
-  margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
+  ${({ theme, hasChildren }) => css`
+    position: absolute;
+    top: ${hasChildren ? 0 : "50%"};
+    margin-top: ${!hasChildren && `-${theme.orbit.widthIconSmall}`};
+    ${right}: 0;
+    margin-${right}: ${!hasChildren && theme.orbit.spaceXSmall};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

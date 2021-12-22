@@ -78,7 +78,7 @@ const IconContainer = styled.div`
       checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
   }
 
-  ${media.tablet(css`
+  ${media.desktop(css`
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   `)}
 `;
@@ -182,7 +182,7 @@ export const Label: any = styled(({ className, children, dataTest }) => (
 
   ${IconContainer} {
     color: ${getToken(TOKENS.iconColor)};
-    border: 2px solid ${getToken(TOKENS.borderColor)};
+    border: 1px solid ${getToken(TOKENS.borderColor)};
   }
 
   &:hover ${IconContainer} {
@@ -197,12 +197,6 @@ export const Label: any = styled(({ className, children, dataTest }) => (
     transform: ${({ disabled, theme }) =>
       !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
   }
-
-  ${media.largeMobile(css`
-    ${IconContainer} {
-      border-width: 1px;
-    }
-  `)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

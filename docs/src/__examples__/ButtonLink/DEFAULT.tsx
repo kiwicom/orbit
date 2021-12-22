@@ -39,7 +39,7 @@ export default {
           name: "type",
           type: "select",
           defaultValue: "primary",
-          options: ["primary", "secondary", "critical", "primarySubtle", "criticalSubtle", "white"],
+          options: ["primary", "secondary", "critical"],
         },
       ],
     },

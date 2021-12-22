@@ -14,6 +14,7 @@ export interface SharedProps extends Common.Global {
   readonly disabled?: boolean;
   readonly maxValue?: number;
   readonly minValue?: number;
+  readonly size?: "small" | "normal" | "large";
   // Deviation from other stepper properties
   readonly titleIncrement?: Title;
   readonly titleDecrement?: Title;

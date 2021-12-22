@@ -25,6 +25,12 @@ export default {
         { name: "maxValue", type: "number", defaultValue: 10 },
         { name: "step", type: "number", defaultValue: 1 },
         { name: "disabled", type: "boolean", defaultValue: false },
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "normal", "large"],
+          defaultValue: "small",
+        },
       ],
     },
   ],

@@ -13,6 +13,7 @@ export interface Props extends SharedProps {
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: InputEvent;
+  readonly size?: "small" | "normal" | "large";
   readonly onDecrement?: Event;
   readonly onIncrement?: Event;
   readonly onChange?: InputEvent;

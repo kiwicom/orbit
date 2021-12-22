@@ -47,6 +47,7 @@ const StepperStateless = ({
   dataTest,
   value,
   name,
+  size = "small",
   minValue,
   maxValue,
   onKeyDown,
@@ -67,7 +68,7 @@ const StepperStateless = ({
         }
         iconLeft={<Minus />}
         type="secondary"
-        size="small"
+        size={size}
         onClick={ev => {
           if (onDecrement && !disabled) {
             onDecrement(ev);

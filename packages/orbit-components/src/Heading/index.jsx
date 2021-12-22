@@ -69,9 +69,10 @@ export const StyledHeading: any = styled(
     ${
       // temporary fix until we figure out how come `viewports` ended up being `undefined`
       DEVICES.filter(viewport => viewports && viewports[viewport]).map(viewport => {
-        const { type: value, spaceAfter } = viewports[viewport];
+        const { type: value, spaceAfter, align: textAlign } = viewports[viewport];
         return mediaQueries[viewport](css`
           font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+          text-align: ${textAlign};
           font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
           line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
           margin-bottom: ${getSpacingToken({ spaceAfter, theme })};

@@ -174,7 +174,11 @@ const Dialog = ({
         <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
           {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
           <Stack spacing="XSmall" spaceAfter="medium">
-            {title && <Heading type="title3">{title}</Heading>}
+            {title && (
+              <Heading type="title3" align="center" largeMobile={{ align: "start" }}>
+                {title}
+              </Heading>
+            )}
             {description && <Text type="secondary">{description}</Text>}
           </Stack>
           <Stack

@@ -26,9 +26,12 @@ jobs:
         uses: ./.github/actions/node
 
       - name: Build
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
           yarn tokens build
           yarn components build
+          yarn tracking build
 
       - name: Check icons
         run: yarn components check:icons

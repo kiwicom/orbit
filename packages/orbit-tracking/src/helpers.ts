@@ -32,8 +32,8 @@ export const filterMembers = (members: ProjectMember[]) =>
   );
 
 export const getOutputPath = (p: string, name: string) => {
-  if (p) return path.resolve(p, `${name}-tracking.json`);
-  return path.resolve(process.cwd(), `${name}-tracking.json`);
+  if (p) return path.resolve(p, `tracking-${name}.json`);
+  return path.resolve(process.cwd(), `tracking-${name}.json`);
 };
 
 export const getVersions = async (pathToFolder: string) => {
@@ -62,4 +62,12 @@ export const getCategory = (name: string) => {
   }
 
   return "unknown";
+};
+
+export const timestamp = () => {
+  const date = new Date().getDate();
+  const month = new Date().getMonth() + 1;
+  const year = new Date().getFullYear();
+
+  return `${date}-${month}-${year}`;
 };

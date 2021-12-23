@@ -35,7 +35,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
     sources,
     instances,
     isDeprecated,
-  } = data.allTrackingJson.nodes[0].trackedData.filter(
+  } = data.allTracking.nodes[0].trackedData.filter(
     ({ name: componentName }) => componentName === name,
   )[0];
 
@@ -166,7 +166,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
 
 export const query = graphql`
   query TrackingComponentQuery($repoName: String!) {
-    allTrackingJson(filter: { name: { eq: $repoName } }) {
+    allTracking(filter: { name: { eq: $repoName } }) {
       nodes {
         name
         trackedData {

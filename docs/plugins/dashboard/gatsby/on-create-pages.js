@@ -9,7 +9,7 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
 
     const result = await graphql(`
       query TrackingDataQuery {
-        allTrackingJson {
+        allTracking {
           nodes {
             name
             trackedData {
@@ -25,7 +25,7 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
       return;
     }
 
-    const data = result.data.allTrackingJson.nodes;
+    const data = result.data.allTracking.nodes;
 
     const pages = data.map(({ name }) => {
       const url = `/dashboard/tracking/${name.toLowerCase()}`;

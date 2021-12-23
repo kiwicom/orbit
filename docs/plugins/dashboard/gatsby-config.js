@@ -3,6 +3,12 @@ const path = require("path");
 module.exports = {
   plugins: [
     {
+      resolve: require.resolve(`gatsby-transformer-json`),
+      options: {
+        typeName: `Tracking`,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "data",
@@ -12,9 +18,6 @@ module.exports = {
     {
       resolve: require.resolve(`gatsby-plugin-create-client-paths`),
       options: { prefixes: [`/dashboard/*`] },
-    },
-    {
-      resolve: require.resolve(`gatsby-transformer-json`),
     },
   ],
 };

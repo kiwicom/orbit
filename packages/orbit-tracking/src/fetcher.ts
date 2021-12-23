@@ -5,7 +5,7 @@ import chalk from "chalk";
 import fs from "fs-extra";
 import { command } from "execa";
 
-import { filterMembers, getOutputPath, getVersions } from "./helpers";
+import { filterMembers, getOutputPath, getVersions, timestamp } from "./helpers";
 import { ProjectsQuery, Scope } from "./interfaces";
 import { PROJECTS, BASE_URL, TMP_FOLDER } from "./consts";
 import queries from "./queries";
@@ -49,16 +49,10 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
 
   if (response) {
     const commands = response.data.projects.nodes.map(
-      ({
-        id,
-        sshUrlToRepo: ssh,
-        httpUrlToRepo: url,
-        name,
-        projectMembers,
-        description,
-        repository,
-      }) => {
+      ({ id, sshUrlToRepo: ssh, httpUrlToRepo: url, projectMembers, description, repository }) => {
         const projectId = id.replace(/^\D+/g, "");
+        // retrieve name from url, because repository name can be the same twice (balkan has just `Frontend`)
+        const name = url.split("/").slice(-1)[0].replace(".git", "");
         return {
           cmd: `git clone -b master ${ssh} --depth=1 --single-branch ${folder}/${name}-${projectId}`,
           name,
@@ -87,26 +81,22 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
               } -p ${projectFolder}`,
               { env: { REPO_URL: url, OUTPUT_DIR: projectFolder } },
             ).then(({ stdout }) => {
-              fs.writeFile(
-                getOutputPath(outputPath, projectId),
-                JSON.stringify(
-                  {
-                    name,
-                    ...data,
-                    url,
-                    orbitVersion,
-                    trackedData: JSON.parse(stdout.substring(stdout.indexOf("["))),
-                  },
-                  null,
-                  2,
-                ),
-                "utf8",
-              );
+              console.info(chalk.bold.green(`parsed: ${name}`));
+              return {
+                name,
+                ...data,
+                url,
+                orbitVersion,
+                trackedData: JSON.parse(stdout.substring(stdout.indexOf("["))),
+              };
             });
           });
       }),
-    ).then(() => {
-      console.log(chalk.bold.magenta("Successfully created orbit-tracking.json file in the root"));
+    ).then(result => {
+      fs.writeFile(getOutputPath(outputPath, timestamp()), JSON.stringify(result, null, 2), "utf8");
+      console.info(
+        chalk.bold.magenta(`Successfully created ${timestamp()}.json file in the ${outputPath}`),
+      );
     });
   }
 

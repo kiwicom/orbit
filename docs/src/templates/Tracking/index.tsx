@@ -68,7 +68,7 @@ export interface Props extends PageRendererProps {
     trail: Trail;
   };
   data: {
-    allTrackingJson: {
+    allTracking: {
       nodes: TrackingNode[];
     };
   };
@@ -76,7 +76,7 @@ export interface Props extends PageRendererProps {
 
 export default function Tracking({ pageContext, location, data }: Props) {
   const { name: pageName, trail } = pageContext;
-  const { url, members, orbitVersion, trackedData, lastCommit } = data.allTrackingJson.nodes[0];
+  const { url, members, orbitVersion, trackedData, lastCommit } = data.allTracking.nodes[0];
   const [render, setRender] = React.useState(false);
 
   React.useEffect(() => {
@@ -125,7 +125,7 @@ export default function Tracking({ pageContext, location, data }: Props) {
 
 export const query = graphql`
   query TrackingDataQuery($name: String!) {
-    allTrackingJson(filter: { name: { eq: $name } }) {
+    allTracking(filter: { name: { eq: $name } }) {
       nodes {
         id
         name

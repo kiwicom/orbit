@@ -2,6 +2,8 @@ es
 umd
 flow-typed
 lib
+dist
+bin
 node_modules
 packages/babel-plugin-orbit-components/dist/
 packages/babel-plugin-orbit-components/__fixtures__/

@@ -18,7 +18,6 @@ import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
 import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
-import { isLoggedIn } from "../../services/auth";
 
 interface Props {
   onClose: () => void;
@@ -88,29 +87,10 @@ export default function SearchModal({ onClose }: Props) {
           }
         }
       }
-
-      allTracking {
-        nodes {
-          id
-          trackedData {
-            props {
-              name
-            }
-          }
-        }
-      }
-
       allSitePage(
         filter: {
           path: {
-            in: [
-              "/changelog/"
-              "/roadmap/"
-              "/dashboard/"
-              "/component-status/"
-              "/components"
-              "/dashboard/tracking"
-            ]
+            in: ["/changelog/", "/roadmap/", "/dashboard/", "/component-status/", "/components"]
           }
         }
       ) {
@@ -121,8 +101,6 @@ export default function SearchModal({ onClose }: Props) {
       }
     }
   `);
-
-  const trackingData = isLoggedIn() ? data.allTracking.nodes : [];
 
   const documents = React.useMemo<SearchResult[]>(() => {
     const mdxPages = data.allMdx.nodes.map(node => {
@@ -135,8 +113,6 @@ export default function SearchModal({ onClose }: Props) {
       };
     });
 
-    console.log(trackingData);
-
     const restPages = data.allSitePage.nodes.map(node => {
       return {
         name: node.path.split("/")[1],
@@ -147,7 +123,7 @@ export default function SearchModal({ onClose }: Props) {
     });
 
     return [...mdxPages, ...restPages];
-  }, [trackingData]);
+  }, [data]);
 
   const { isTablet } = useMediaQuery();
   // so it doesn't cause horizontal overflow

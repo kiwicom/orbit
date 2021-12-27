@@ -20,16 +20,18 @@ const getModalHeading = (type, token) => ({ theme }) => {
 };
 
 export const ModalHeading: any = styled.h2`
-  margin: 0;
-  font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
-  font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
-  line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
-  color: ${({ theme }) => theme.orbit.colorHeading};
-  ${media.largeMobile(css`
-    font-size: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.sizeHeading)};
-    font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.weightHeading)};
-    line-height: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.lineHeight)};
-  `)};
+  ${({ theme }) => css`
+    margin: 0;
+    font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
+    font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
+    line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
+    color: ${theme.orbit.colorHeading};
+    ${media.largeMobile(css`
+      font-size: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.sizeHeading)};
+      font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.weightHeading)};
+      line-height: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.lineHeight)};
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -39,16 +41,19 @@ ModalHeading.defaultProps = {
 
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
-  margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
+  ${({ theme, illustration }) => css`
+    margin-top: ${illustration && theme.orbit.spaceMedium};
 
-  ${ModalHeading} {
-    padding-${right}: ${({ theme }) => theme.orbit.spaceXLarge};
-  }
-  ${media.desktop(css`
     ${ModalHeading} {
-      padding: 0;
+      padding-${right}: ${theme.orbit.spaceXLarge};
     }
-  `)};
+
+    ${media.desktop(css`
+      ${ModalHeading} {
+        padding: 0;
+      }
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -68,42 +73,42 @@ ModalDescription.defaultProps = {
 const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
   if (desktop) {
     if (suppressed) {
-      return theme.orbit.spaceXXLarge;
+      return theme.orbit.spaceXLarge;
     }
-    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceXXLarge}`;
+    return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceXLarge}`;
   }
   if (suppressed) {
-    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceMedium}`;
+    return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium}`;
   }
   return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
 };
 
 export const StyledModalHeader: any = styled.div`
-  width: 100%;
-  display: block;
-  padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
-  border-top-left-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "12px"};
-  border-top-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "12px"};
-  box-sizing: border-box;
-  background-color: ${({ suppressed, theme }) =>
-    suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
-
-  & ~ ${StyledModalSection}:first-of-type {
-    border-top: ${({ suppressed, theme }) =>
-      suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-top: ${({ suppressed }) => suppressed && "0!important"};
-  }
-
-  ${media.largeMobile(css`
-    padding: ${props => rtlSpacing(getModalHeaderPadding(true)(props))};
+  ${({ theme, suppressed, isMobileFullPage }) => css`
+    width: 100%;
+    display: block;
+    padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
+    border-top-left-radius: ${!isMobileFullPage && "12px"};
+    border-top-right-radius: ${!isMobileFullPage && "12px"};
+    box-sizing: border-box;
+    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
 
     & ~ ${StyledModalSection}:first-of-type {
+      border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+      margin-top: ${suppressed && "0!important"};
     }
-  `)};
+
+    ${media.largeMobile(css`
+      padding: ${props => rtlSpacing(getModalHeaderPadding(true)(props))};
+
+      & ~ ${StyledModalSection}:first-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -112,35 +117,37 @@ StyledModalHeader.defaultProps = {
 };
 
 export const MobileHeader: any = styled.div`
-  display: inline-block;
-  position: fixed;
-  visibility: hidden;
-  height: 52px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  // TODO use token for 52px
-  top: ${({ isMobileFullPage }) => (isMobileFullPage ? "0" : "16px")};
-  ${right}: 48px;
-  ${left}: 0;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightHeadingDisplay};
-  // TODO create token
-  font-size: 18px;
-  color: ${({ theme }) => theme.orbit.colorHeading};
-  // TODO use token for 52px
-  line-height: 52px;
-  box-sizing: border-box;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
-  opacity: 0;
-  transition: ${transition(["top", "opacity", "visibility"], "fast", "ease-in-out")};
-  z-index: 800;
+  ${({ theme, isMobileFullPage }) => css`
+    display: inline-block;
+    position: fixed;
+    visibility: hidden;
+    height: 52px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    // TODO use token for 52px
+    top: ${isMobileFullPage ? "0" : "16px"};
+    ${right}: 48px;
+    ${left}: 0;
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightHeadingDisplay};
+    // TODO create token
+    font-size: 18px;
+    color: ${theme.orbit.colorHeading};
+    // TODO use token for 52px
+    line-height: 52px;
+    box-sizing: border-box;
+    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
+    opacity: 0;
+    transition: ${transition(["top", "opacity", "visibility"], "fast", "ease-in-out")};
+    z-index: 800;
 
-  ${media.largeMobile(css`
-    left: auto;
-    right: auto;
-    padding: 0;
-  `)};
+    ${media.largeMobile(css`
+      left: auto;
+      right: auto;
+      padding: 0;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

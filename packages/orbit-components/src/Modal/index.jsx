@@ -37,27 +37,29 @@ const getSizeToken: any = () => ({ size, theme }) => {
 };
 
 const ModalBody = styled.div`
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: ${({ theme }) => theme.orbit.zIndexModalOverlay};
-  box-sizing: border-box;
-  outline: none;
-  overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  -webkit-overflow-scrolling: auto;
-  ${media.largeMobile(css`
-    overflow-y: auto;
-    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
-  `)};
-  ${onlyIE(css`
-    position: -ms-page;
-  `)};
+  ${({ theme }) => css`
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: ${theme.orbit.zIndexModalOverlay};
+    box-sizing: border-box;
+    outline: none;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: ${theme.orbit.fontFamily};
+    -webkit-overflow-scrolling: auto;
+    ${media.largeMobile(css`
+      overflow-y: auto;
+      padding: ${theme.orbit.spaceXXLarge};
+    `)};
+    ${onlyIE(css`
+      position: -ms-page;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -66,19 +68,17 @@ ModalBody.defaultProps = {
 };
 
 const ModalWrapper = styled.div`
-  box-sizing: border-box;
-  min-height: 100%;
-  display: flex;
-  align-items: flex-start;
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
-  border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  ${({ disableAnimation, loaded, isMobileFullPage }) =>
-    disableAnimation
+  ${({ isMobileFullPage, disableAnimation, loaded }) => css`
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    ${disableAnimation
       ? css`
           top: ${!isMobileFullPage && "32px"};
         `
@@ -86,18 +86,19 @@ const ModalWrapper = styled.div`
           transition: ${transition(["top"], "normal", "ease-in-out")};
           top: ${loaded ? !isMobileFullPage && "32px" : "100%"};
         `}
-  ${onlyIE(css`
-    /* IE flex bug, the content won't be centered if there is not 'height' property
-    https://github.com/philipwalton/flexbugs/issues/231 */
-    height: 1px;
-  `)};
+    ${onlyIE(css`
+      /* IE flex bug, the content won't be centered if there is not 'height' property
+  https://github.com/philipwalton/flexbugs/issues/231 */
+      height: 1px;
+    `)};
 
-  ${media.largeMobile(css`
-    position: relative;
-    top: 0;
-    max-width: ${getSizeToken};
-    align-items: center;
-  `)};
+    ${media.largeMobile(css`
+      position: relative;
+      top: 0;
+      max-width: ${getSizeToken};
+      align-items: center;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -106,72 +107,73 @@ ModalWrapper.defaultProps = {
 };
 
 const CloseContainer = styled.div`
-  display: flex;
-  // -ms-page needs to set up for IE on max largeMobile
-  ${({ scrolled, fixedClose, theme }) =>
-    fixedClose || scrolled
-      ? css`
-          position: fixed;
-          ${onlyIE(
-            css`
-              position: -ms-page;
-            `,
-            `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
-          )};
-        `
-      : css`
-          position: absolute;
-        `};
-  position: ${({ scrolled, fixedClose }) => (fixedClose || scrolled ? "fixed" : "absolute")};
-  top: ${({ scrolled, fixedClose, isMobileFullPage }) =>
-    !isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
-  right: 0;
-  z-index: 800;
-  justify-content: flex-end;
-  align-items: center;
-  box-sizing: border-box;
-  // TODO create tokens
-  height: 52px;
-  width: 100%;
-  max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
-  box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.boxShadowFixed};
-  background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
-  border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
-  pointer-events: none;
+  ${({ theme, scrolled, fixedClose, isMobileFullPage, modalWidth }) => css`
+    display: flex;
+    // -ms-page needs to set up for IE on max largeMobile
+    ${
+      fixedClose || scrolled
+        ? css`
+            position: fixed;
+            ${onlyIE(
+              css`
+                position: -ms-page;
+              `,
+              `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
+            )};
+          `
+        : css`
+            position: absolute;
+          `
+    };
+    position: ${fixedClose || scrolled ? "fixed" : "absolute"};
+    top: ${!isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
+    right: 0;
+    z-index: 800;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    // TODO create tokens
+    height: 52px;
+    width: 100%;
+    max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
+    box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
+    background-color: ${scrolled && theme.orbit.paletteWhite};
+    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
+    pointer-events: none;
 
 
-  ${media.largeMobile(css`
-    top: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "0"};
-    right: ${({ scrolled, fixedClose }) => (fixedClose || scrolled) && "auto"};
-    border-radius: 0;
-  `)};
+    ${media.largeMobile(css`
+      top: ${(fixedClose || scrolled) && "0"};
+      right: ${(fixedClose || scrolled) && "auto"};
+      border-radius: 0;
+    `)};
 
-  & + ${StyledModalSection}:first-of-type {
-    padding-top: 52px;
-    border-top: 0;
-    margin: 0;
-  }
-
-  ${StyledButtonPrimitive} {
-    pointer-events: auto;
-    margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
-
-    & svg {
-      transition: ${transition(["color"], "fast", "ease-in-out")};
-      color: ${({ theme }) => theme.orbit.paletteInkLight};
-    }
-    &:hover svg {
-      color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+    & + ${StyledModalSection}:first-of-type {
+      padding-top: 52px;
+      border-top: 0;
+      margin: 0;
     }
 
-    &:active svg {
-      color: ${({ theme }) => theme.orbit.paletteInkLightActive};
+    ${StyledButtonPrimitive} {
+      pointer-events: auto;
+      margin-${right}: ${theme.orbit.spaceXXSmall};
+
+      & svg {
+        transition: ${transition(["color"], "fast", "ease-in-out")};
+        color: ${theme.orbit.paletteInkLight};
+      }
+
+      &:hover svg {
+        color: ${theme.orbit.paletteInkLightHover};
+      }
+
+      &:active svg {
+        color: ${theme.orbit.paletteInkLightActive};
+      }
     }
-  }
+`}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -180,17 +182,24 @@ CloseContainer.defaultProps = {
 };
 
 const ModalWrapperContent = styled.div`
-  position: absolute;
-  box-sizing: border-box;
-  border-top-left-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  border-top-right-radius: ${({ isMobileFullPage }) =>
-    !isMobileFullPage && "12px"}; // TODO: create token
-  background-color: ${({ theme }) => theme.orbit.backgroundModal};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  width: 100%;
-  ${({ theme, fixedFooter, footerHeight, isMobileFullPage }) =>
-    isMobileFullPage
+  ${({
+    theme,
+    isMobileFullPage,
+    fixedFooter,
+    footerHeight,
+    fullyScrolled,
+    scrolled,
+    modalWidth,
+    hasModalSection,
+  }) => css`
+    position: absolute;
+    box-sizing: border-box;
+    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    background-color: ${theme.orbit.backgroundModal};
+    font-family: ${theme.orbit.fontFamily};
+    width: 100%;
+    ${isMobileFullPage
       ? css`
           max-height: 100%;
           top: 0;
@@ -201,17 +210,15 @@ const ModalWrapperContent = styled.div`
               ${`${fixedFooter && Boolean(footerHeight) ? footerHeight : 0}px`}
           );
         `};
-  bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
-    `${
+    bottom: ${`${
       (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
       (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
     }px`};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
-  overflow-y: auto;
-  overflow-x: hidden;
+    box-shadow: ${theme.orbit.boxShadowOverlay};
+    overflow-y: auto;
+    overflow-x: hidden;
 
-  ${({ fixedFooter, theme, footerHeight, fullyScrolled }) =>
-    fixedFooter &&
+    ${fixedFooter &&
     footerHeight &&
     css`
       ${StyledModalFooter} {
@@ -229,103 +236,69 @@ const ModalWrapperContent = styled.div`
       }
     `};
 
-  ${MobileHeader} {
-    top: ${({ scrolled, theme, isMobileFullPage }) =>
-      !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
-    opacity: ${({ scrolled }) => scrolled && "1"};
-    visibility: ${({ scrolled }) => scrolled && "visible"};
-    transition: ${({ scrolled }) =>
-      scrolled &&
+    ${MobileHeader} {
+      top: ${!isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
+      opacity: ${scrolled && "1"};
+      visibility: ${scrolled && "visible"};
+      transition: ${scrolled &&
       css`
         ${transition(["top"], "normal", "ease-in-out")},
         ${transition(["opacity", "visibility"], "fast", "ease-in-out")}
       `};
 
-    ${({ scrolled }) =>
-      scrolled &&
+      ${scrolled &&
       onlyIE(css`
         ${MobileHeader} {
           position: -ms-page;
         }
       `)}
-  }
-
-  ${StyledModalHeader} {
-    margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};
-  }
-
-  ${media.largeMobile(css`
-    position: relative;
-    bottom: auto;
-    border-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "9px"};
-    padding-bottom: 0;
-    height: auto;
-    overflow: visible;
-    max-height: 100%;
-    ${StyledModalSection}:last-of-type {
-      padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
-      margin-bottom: ${({ fixedFooter, footerHeight }) =>
-        fixedFooter ? `${footerHeight}px` : "0"};
-      &::after {
-        content: none;
-      }
     }
+
     ${StyledModalHeader} {
-      margin-bottom: ${({ hasModalSection, fixedFooter, footerHeight }) =>
-        !hasModalSection && fixedFooter ? `${footerHeight}px` : "0"};
+      margin-bottom: ${!hasModalSection && theme.orbit.spaceXLarge};
     }
-    ${StyledModalFooter} {
-      padding: ${({ theme, fixedFooter }) =>
-        fixedFooter
+
+    ${media.largeMobile(css`
+      position: relative;
+      bottom: auto;
+      border-radius: ${!isMobileFullPage && "9px"};
+      padding-bottom: 0;
+      height: auto;
+      overflow: visible;
+      max-height: 100%;
+      ${StyledModalSection}:last-of-type {
+        padding-bottom: ${theme.orbit.spaceXXLarge};
+        margin-bottom: ${fixedFooter ? `${footerHeight}px` : "0"};
+        &::after {
+          content: none;
+        }
+      }
+      ${StyledModalHeader} {
+        margin-bottom: ${!hasModalSection && fixedFooter ? `${footerHeight}px` : "0"};
+      }
+      ${StyledModalFooter} {
+        padding: ${fixedFooter
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
           : theme.orbit.spaceXXLarge};
-      max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
-      position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
-      box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
-    }
-    ${MobileHeader} {
-      top: ${({ scrolled, theme }) => (scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`)};
-      width: ${({ modalWidth, theme }) =>
-        `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
-    }
-  `)};
-
-  ${onlyIE(
-    css`
-      ${StyledModalFooter} {
-        // -ms-page must be used for mobile devices
-        position: ${({ fixedFooter }) => fixedFooter && "-ms-page"};
+        max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
+        position: ${fixedFooter && fullyScrolled && "absolute"};
+        box-shadow: ${fullyScrolled && "none"};
       }
-    `,
-  )};
+      ${MobileHeader} {
+        top: ${scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`};
+        width: ${`calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
+      }
+    `)};
 
-  ${({ theme }) =>
-    onlyIE(
+    ${onlyIE(
       css`
         ${StyledModalFooter} {
-          // we need to apply static position for IE only when fullyScrolled and fixedFooter
-          // or fixed when fixedFooter (overwrite -ms-page)
-          position: ${({ fullyScrolled, fixedFooter }) =>
-            (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
-          // for IE there's need to be added inset box-shadow with same background as footer has
-          box-shadow: ${({ fixedFooter }) =>
-            !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
+          // -ms-page must be used for mobile devices
+          position: ${fixedFooter && "-ms-page"};
         }
-        // also we need to clear not wanted margins
-        ${({ fullyScrolled, fixedFooter }) =>
-          fullyScrolled &&
-          fixedFooter &&
-          css`
-            ${StyledModalSection}:last-of-type {
-              margin-bottom: 0;
-            }
-            ${StyledModalHeader} {
-              margin-bottom: ${({ hasModalSection }) => !hasModalSection && "0"};
-            }
-          `};
       `,
-      getBreakpointWidth(QUERIES.LARGEMOBILE, theme),
     )};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

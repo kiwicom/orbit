@@ -9,7 +9,7 @@ import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
 
-export const StyledStepIconContainer = styled.div`
+export const StyledStepIconContainer: any = styled.div`
   ${({ theme, $disabled, $glow }) => css`
     display: flex;
     align-items: center;

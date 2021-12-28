@@ -48,7 +48,7 @@ describe("#Breadcrumbs", () => {
       userEvent.click(backBtn);
     }
 
-    expect(onGoBack).toHaveBeenCalledTimes(2);
+    expect(onGoBack).toHaveBeenCalledTimes(1);
   });
 
   it("should render as a link when backHref is passed", () => {

@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 import { useStaticQuery, graphql, navigate } from "gatsby";
 import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
+import type { DebouncedFunc } from "lodash";
+import { debounce } from "lodash";
 import {
   Portal,
   Modal,
@@ -18,10 +20,13 @@ import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
 import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
+import { isLoggedIn, isBrowser } from "../../services/auth";
 
 interface Props {
   onClose: () => void;
 }
+
+type LodashDebounceFunc = DebouncedFunc<(downshiftInput: { inputValue?: string }) => void>;
 
 interface QueryResponse {
   allMdx: {
@@ -40,6 +45,13 @@ interface QueryResponse {
   };
   allSitePage: {
     nodes: Array<{ id: string; path: string }>;
+  };
+  allTracking: {
+    nodes: Array<{
+      id: string;
+      name: string;
+      trackedData: Array<{ name: string; props: Array<{ name: string; used: number }> }>;
+    }>;
   };
 }
 
@@ -71,6 +83,8 @@ const StyledSearchWrapper = styled.div`
 
 export default function SearchModal({ onClose }: Props) {
   const [results, setResults] = React.useState<SearchResult[]>([]);
+  const debounceUserInput = React.useRef<LodashDebounceFunc | null>(null);
+
   const data: QueryResponse = useStaticQuery(graphql`
     query Documents {
       allMdx(filter: { fileAbsolutePath: { regex: "/documentation/" } }) {
@@ -84,6 +98,19 @@ export default function SearchModal({ onClose }: Props) {
           frontmatter {
             title
             description
+          }
+        }
+      }
+      allTracking {
+        nodes {
+          id
+          name
+          trackedData {
+            name
+            props {
+              name
+              used
+            }
           }
         }
       }
@@ -113,6 +140,28 @@ export default function SearchModal({ onClose }: Props) {
       };
     });
 
+    const trackingPages =
+      isLoggedIn() && isBrowser && window.location.pathname.includes("dashboard")
+        ? data.allTracking.nodes.map(({ name: repoName, trackedData }) => {
+            const pages: SearchResult[] = [];
+
+            trackedData.forEach(({ name: componentName, props }) => {
+              props.forEach(({ name: propName }) => {
+                const fullPath = `${repoName}/${componentName.toLowerCase()}/${propName}`;
+
+                pages.push({
+                  name: fullPath.split("/").join(" "),
+                  path: `/dashboard/tracking/${repoName}/${componentName.toLowerCase()}/#${propName}`,
+                  breadcrumbs: fullPath.split("/"),
+                  description: "",
+                });
+              });
+            });
+
+            return pages;
+          })
+        : [];
+
     const restPages = data.allSitePage.nodes.map(node => {
       return {
         name: node.path.split("/")[1],
@@ -122,7 +171,7 @@ export default function SearchModal({ onClose }: Props) {
       };
     });
 
-    return [...mdxPages, ...restPages];
+    return [...mdxPages, ...restPages].concat(...trackingPages);
   }, [data]);
 
   const { isTablet } = useMediaQuery();
@@ -133,14 +182,20 @@ export default function SearchModal({ onClose }: Props) {
     return item.breadcrumbs.join(" / ");
   }
 
+  const setUserInput = (downshiftInput: { inputValue: string }) => {
+    setResults(filter(documents, downshiftInput.inputValue, { key: "name" }));
+  };
+
+  if (!debounceUserInput.current) {
+    debounceUserInput.current = debounce(setUserInput, 500);
+  }
+
   const { getMenuProps, getInputProps, getComboboxProps, getItemProps } = useCombobox<SearchResult>(
     {
       items: results,
       itemToString: item => (item ? getItemTitle(item) : ""),
       defaultHighlightedIndex: 0,
-      onInputValueChange: changes => {
-        setResults(filter(documents, changes.inputValue, { key: "name" }));
-      },
+      onInputValueChange: debounceUserInput.current,
       onSelectedItemChange: async changes => {
         if (changes.selectedItem) {
           await navigate(changes.selectedItem.path);
@@ -152,6 +207,7 @@ export default function SearchModal({ onClose }: Props) {
 
   // autofocus
   const inputRef = React.useRef<HTMLInputElement | null>(null);
+
   React.useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();

@@ -14,6 +14,7 @@ jobs:
 
       - name: Get timestamp
         uses: gerred/actions/current-time@master
+        id: current-time
 
       - name: Node
         uses: ./.github/actions/node
@@ -44,9 +45,13 @@ jobs:
           token: ${{ secrets.PAT }}
           commit-message: New tracking data
           delete-branch: true
-          title: "chore(tracking): new tracking data ${{ steps.current-time.outputs.time }}"
+          title: "chore(tracking): new tracking data"
           body: |
-            Updated tracking data for ${{ steps.current-time.outputs.time }}
+            - Automatically generated PR.
+            - Updated tracking data for ${{ steps.current-time.outputs.time }}
+          labels: |
+            tracking
+            Documentation
           assignees: mainframev
           reviewers: mainframev
           draft: false

@@ -37,9 +37,19 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
       };
     });
 
+    pages.push({
+      slug: "/dashboard/tracking/allrepositories",
+      title: "All Repositories",
+      hasReactTab: false,
+    });
+
     await cache.set(`/`, { title: "Orbit.kiwi", slug: "/" });
     await cache.set(`/dashboard/`, { title: "Dashboard", slug: "/dashboard/" });
     await cache.set(`/dashboard/tracking/`, { title: `Tracking`, slug: `/dashboard/tracking/` });
+    await cache.set(`/dashboard/tracking/allrepositories`, {
+      title: `All Repositories`,
+      slug: `/dashboard/tracking/allrepositories`,
+    });
 
     createPage({
       path: "dashboard/tracking",
@@ -50,6 +60,17 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
         slug: `dashboard/tracking`,
         title: "Tracking",
         trail: await getDocumentTrail(cache, `/dashboard/tracking/`),
+      },
+    });
+
+    createPage({
+      path: "dashboard/tracking/allrepositories",
+      matchPath: "dashboard/tracking/allrepositories",
+      component: path.resolve(__dirname, "../../../src/templates/Tracking/AllRepositories.tsx"),
+      context: {
+        slug: `dashboard/tracking/allrepositories`,
+        title: "All Repositories",
+        trail: await getDocumentTrail(cache, `/dashboard/tracking/allrepositories`),
       },
     });
 

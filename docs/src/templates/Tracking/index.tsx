@@ -43,9 +43,9 @@ interface TrackedData {
   category: string;
   isDeprecated: boolean;
   props: TrackingProp[];
-  sources: string[];
+  sources: Array<{ url: string; props: string[] }>;
 }
-interface TrackingNode {
+export interface TrackingNode {
   id: string;
   name: string;
   url: string;
@@ -151,7 +151,10 @@ export const query = graphql`
         }
         trackedData {
           icon
-          sources
+          sources {
+            url
+            props
+          }
           instances
           category
           isDeprecated

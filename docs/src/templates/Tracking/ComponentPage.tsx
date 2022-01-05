@@ -39,14 +39,16 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
     ({ name: componentName }) => componentName === name,
   )[0];
 
+  const sourceLinks = sources.map(({ url }) => url);
+
   React.useEffect(() => {
     if (!isLoggedIn()) {
       navigate(`/dashboard/login/`);
     } else {
       setRender(true);
-      setAllSources(sources);
+      setAllSources(sourceLinks);
     }
-  }, [sources, setAllSources, setRender]);
+  }, [sources, setAllSources, setRender, sourceLinks]);
 
   // support only primitives for now
   const FILTERED_NAMES = [
@@ -124,7 +126,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
               placeholder="filter sources"
               onChange={ev => {
                 if (ev.currentTarget.value.length === 0) {
-                  setAllSources(sources);
+                  setAllSources(sourceLinks);
                 } else {
                   setAllSources(allSources.filter(el => el.includes(ev.currentTarget.value)));
                 }
@@ -183,7 +185,10 @@ export const query = graphql`
               used
             }
           }
-          sources
+          sources {
+            url
+            props
+          }
         }
       }
     }

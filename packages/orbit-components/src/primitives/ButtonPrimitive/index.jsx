@@ -134,6 +134,9 @@ export const StyledButtonPrimitive: any = styled(
     margin-bottom: ${getSpacingToken};
     width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
     box-shadow: ${boxShadow};
+    & > * {
+      vertical-align: middle;
+    }
 
     ${mq.tablet(css`
       border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};

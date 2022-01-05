@@ -1,0 +1,10 @@
+// @flow
+import type { Theme } from "../../defaultTheme";
+
+export type ResolveCircleColor = () => ({|
+  theme: Theme,
+  type: "primary" | "secondary",
+  selected: boolean,
+|}) => string;
+
+declare export default ResolveCircleColor;

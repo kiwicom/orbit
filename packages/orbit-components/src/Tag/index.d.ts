@@ -7,6 +7,7 @@ import * as Common from "../common/common";
 
 interface Props extends Common.Global, Common.Ref {
   readonly children: React.ReactNode;
+  readonly type?: "primary" | "secondary";
   readonly selected?: boolean;
   readonly size?: Common.InputSize;
   readonly onRemove?: Common.Callback;

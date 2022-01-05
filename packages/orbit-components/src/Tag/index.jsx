@@ -5,9 +5,10 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { rtlSpacing, left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
-import { SIZES, STATES } from "./consts";
+import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
+import resolveCircleColor from "./helpers/resolveCircleColor";
 
 import type { Props } from ".";
 
@@ -20,43 +21,63 @@ const getFontSize = ({ theme, size }) => {
   return tokens[size];
 };
 
-const getBackgroundColor = state => () => {
+const getBackgroundColor = state => ({ type }) => {
   const states = {
-    [STATES.DEFAULT]: resolveColor({
-      selected: "paletteBlueNormal",
-      removable: "paletteBlueLight",
-      normal: "paletteCloudDark",
-    }),
-    [STATES.HOVER]: resolveColor({
-      selected: "paletteBlueNormalHover",
-      removable: "paletteBlueLightHover",
-      normal: "paletteCloudNormalHover",
-    }),
-    [STATES.ACTIVE]: resolveColor({
-      selected: "paletteBlueNormalActive",
-      removable: "paletteBlueLightActive",
-      normal: "paletteCloudNormalHover",
-    }),
+    [TYPES.PRIMARY]: {
+      [STATES.DEFAULT]: resolveColor({
+        selected: "paletteBlueNormal",
+        removable: "paletteBlueLight",
+        normal: "paletteBlueLight",
+      }),
+      [STATES.HOVER]: resolveColor({
+        selected: "paletteBlueNormalHover",
+        removable: "paletteBlueLightHover",
+        normal: "paletteBlueLightHover",
+      }),
+      [STATES.ACTIVE]: resolveColor({
+        selected: "paletteBlueNormalActive",
+        removable: "paletteBlueLightActive",
+        normal: "paletteBlueLightActive",
+      }),
+    },
+    [TYPES.SECONDARY]: {
+      [STATES.DEFAULT]: resolveColor({
+        selected: "paletteInkLighterHover",
+        removable: "paletteCloudDark",
+        normal: "paletteCloudDark",
+      }),
+      [STATES.HOVER]: resolveColor({
+        selected: "paletteInkLighterActive",
+        removable: "paletteCloudNormalHover",
+        normal: "paletteCloudNormalHover",
+      }),
+      [STATES.ACTIVE]: resolveColor({
+        selected: "paletteInkLightHover",
+        removable: "paletteCloudNormalActive",
+        normal: "paletteCloudNormalActive",
+      }),
+    },
   };
-  return states[state];
+  return states[type][state];
 };
 
 const CloseContainer = styled.div`
-  display: flex;
-  margin-${left}: 8px;
-  opacity: 0.5;
-  color: ${resolveColor({
-    selected: "paletteWhite",
-    removable: "paletteBlueDarker",
-    normal: "paletteInkLink",
-  })};
-  cursor: ${({ actionable }) => actionable && `pointer`};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  ${({ theme, actionable, type }) => css`
+    display: flex;
+    margin-${left}: 8px;
+    opacity: 0.5;
+    color: ${resolveColor({
+      selected: "paletteWhite",
+      removable: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
+      normal: "paletteInkLink",
+    })};
+    cursor: ${actionable && `pointer`};
+    transition: all ${theme.orbit.durationFast} ease-in-out;
 
-  &:active {
-    color: ${({ theme, selected }) =>
-      selected ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
-  }
+    &:active {
+      color: ${resolveCircleColor};
+    }
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -65,16 +86,15 @@ CloseContainer.defaultProps = {
 };
 
 export const StyledTag: any = styled.div`
-  ${({ theme, actionable }) => css`
+  ${({ theme, actionable, type }) => css`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
       selected: "paletteWhite",
-      removable: "paletteBlueDarker",
-      normal: "colorTextTag",
+      removable: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
+      normal: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
     })};
     background: ${getBackgroundColor(STATES.DEFAULT)};
     display: inline-flex;
-
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
@@ -99,19 +119,12 @@ export const StyledTag: any = styled.div`
         box-shadow: none;
       }
 
+      &:focus,
       &:active {
         ${CloseContainer} {
           opacity: 1;
         }
         background: ${getBackgroundColor(STATES.ACTIVE)};
-        box-shadow: none;
-      }
-
-      &:focus {
-        ${CloseContainer} {
-          opacity: 1;
-        }
-        background: ${getBackgroundColor(STATES.HOVER)};
         box-shadow: none;
         outline: 0;
       }
@@ -133,9 +146,7 @@ const StyledClose = styled.div`
       opacity: 1;
     }
     outline: none;
-    box-shadow: 0 0 0 2px
-      ${({ theme, selected, removable }) =>
-        selected && !removable ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
+    box-shadow: 0 0 0 2px;
   }
 `;
 
@@ -154,14 +165,17 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
 };
 
 const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>(
-  (props, ref) => {
-    const { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest } = props;
+  (
+    { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest, type = TYPES.PRIMARY },
+    ref,
+  ) => {
     return (
       <StyledTag
         actionable={onClick || onRemove}
         data-test={dataTest}
         size={size}
         ref={ref}
+        type={type}
         onClick={onClick}
         removable={!!onRemove}
         selected={selected}
@@ -174,6 +188,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
           <CloseContainer
             selected={selected}
             removable={!!onRemove}
+            type={type}
             onClick={ev => {
               ev.stopPropagation();
               if (onRemove) onRemove();

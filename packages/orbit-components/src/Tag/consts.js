@@ -9,3 +9,8 @@ export const STATES = {
   HOVER: "hover",
   ACTIVE: "active",
 };
+
+export const TYPES = {
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+};

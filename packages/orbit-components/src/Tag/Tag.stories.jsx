@@ -4,8 +4,10 @@ import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import Heading from "../Heading";
+import Stack from "../Stack";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { SIZES } from "./consts";
+import { SIZES, TYPES } from "./consts";
 
 import Tag from ".";
 
@@ -14,24 +16,35 @@ export default {
 };
 
 export const Default = (): React.Node => {
-  const content = text("Content", "Brno");
-
-  return <Tag onClick={action("onClick")}>{content}</Tag>;
+  return (
+    <Stack direction="column">
+      <Heading type="title2">Primary</Heading>
+      <Stack inline>
+        <Tag>Non actionable</Tag>
+        <Tag onClick={action("onClick")}>Default</Tag>
+        <Tag selected onClick={action("onClick")}>
+          Selected
+        </Tag>
+        <Tag onRemove={action("onRemove")}>Removable</Tag>
+      </Stack>
+      <Heading type="title2">Secondary</Heading>
+      <Stack inline>
+        <Tag type="secondary">Non actionable</Tag>
+        <Tag type="secondary" onClick={action("onClick")}>
+          Default
+        </Tag>
+        <Tag type="secondary" selected onClick={action("onClick")}>
+          Selected
+        </Tag>
+        <Tag type="secondary" onRemove={action("onRemove")}>
+          Removable
+        </Tag>
+      </Stack>
+    </Stack>
+  );
 };
 
 Default.story = {
-  parameters: {
-    info: "Check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-export const Nonactionable = (): React.Node => {
-  const content = text("Content", "Brno");
-
-  return <Tag>{content}</Tag>;
-};
-
-Nonactionable.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -42,10 +55,12 @@ export const Playground = (): React.Node => {
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
   const selected = boolean("selected", true);
   const dataTest = text("dataTest", "test");
+  const type = select("type", Object.values(TYPES), TYPES.PRIMARY);
 
   return (
     <Tag
       size={size}
+      type={type}
       selected={selected}
       onClick={action("onClick")}
       onRemove={action("onRemove")}

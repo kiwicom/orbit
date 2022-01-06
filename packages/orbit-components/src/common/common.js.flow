@@ -19,6 +19,6 @@ export type Ref = {|
 
 export type Translation = React.Element<React.ComponentType<any>> | string;
 
-export type TranslationString = string;
+export type TranslationString = React.Node;
 
 export type Component = string | (() => React.Element<any>);

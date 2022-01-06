@@ -127,7 +127,6 @@ export const StyledButtonPrimitive: any = styled(
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
     font-size: ${fontSize};
-    line-height: 1.4; // preventing inheriting with safe value
     cursor: ${disabled ? "not-allowed" : "pointer"};
     transition: all ${theme.orbit.durationFast} ease-in-out !important;
     outline: 0;

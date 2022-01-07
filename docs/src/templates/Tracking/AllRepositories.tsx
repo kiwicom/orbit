@@ -149,8 +149,10 @@ const AllRepositories = ({ location, pageContext, data }: Props) => {
 
 export const query = graphql`
   query AllRepositoriesTracking {
-    allTracking {
+    # get only the latest
+    allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
       nodes {
+        createdAt
         trackedData {
           instances
           category

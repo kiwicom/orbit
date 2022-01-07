@@ -168,8 +168,13 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
 
 export const query = graphql`
   query TrackingComponentQuery($repoName: String!) {
-    allTracking(filter: { name: { eq: $repoName } }) {
+    allTracking(
+      sort: { fields: createdAt, order: DESC }
+      limit: 8
+      filter: { name: { eq: $repoName } }
+    ) {
       nodes {
+        createdAt
         name
         trackedData {
           icon

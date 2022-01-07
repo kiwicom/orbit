@@ -9,9 +9,10 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
 
     const result = await graphql(`
       query TrackingDataQuery {
-        allTracking {
+        allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
           nodes {
             name
+            createdAt
             trackedData {
               name
             }

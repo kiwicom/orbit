@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.0...@kiwicom/orbit-components@2.6.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** remove line-height ([ea54b4e](https://github.com/kiwicom/orbit/commit/ea54b4ee5dd61dcb34451146f60b0ad0440c37f3))
+* **InputField:** fix placeholder type ([42a6244](https://github.com/kiwicom/orbit/commit/42a62445e2e536502d379eb73a55777075c234b6))
+
+
+
+
+
 # [2.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.1...@kiwicom/orbit-components@2.6.0) (2021-12-22)
 
 

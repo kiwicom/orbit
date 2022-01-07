@@ -7,7 +7,7 @@ import * as React from "react";
 Common types used in @kiwicom/orbit-component declarations
 */
 
-export type Translation = string | React.ReactNode;
+export type Translation = React.ReactNode;
 export type Callback = () => void | Promise<void>;
 // Parameter event is not optional
 // @see https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#optional-parameters-in-callbacks

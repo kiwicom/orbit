@@ -12,7 +12,7 @@ import {
 
 interface Source {
   url: string;
-  props: string[];
+  props: Array<{ name: string | null; value: string | number | null }>;
 }
 
 export interface OutputInstance {
@@ -48,7 +48,11 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
             "-/blob/master",
             `${path.relative(OUTPUT_DIR, instance.location.file)}#L${instance.location.start.line}`,
           ),
-          props: Object.keys(instance.props),
+          // value cannot be empty, because gatsby will not generate the field
+          props: Object.entries(instance.props).map(([k, v]) => ({
+            name: k,
+            value: v === null ? "null" : v,
+          })),
         })),
         // @ts-expect-error TODO
         props: {},

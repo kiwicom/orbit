@@ -14,6 +14,7 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
             name
             createdAt
             trackedData {
+              icon
               name
             }
           }
@@ -73,6 +74,34 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
         title: "All Repositories",
         trail: await getDocumentTrail(cache, `/dashboard/tracking/allrepositories`),
       },
+    });
+
+    const allUsedComponents = result.data.allTracking.nodes.reduce((acc, cur) => {
+      cur.trackedData.forEach(({ name, icon }) => {
+        if (!icon) {
+          if (!acc.includes(name)) {
+            acc.push(name);
+          }
+        }
+      });
+
+      return acc;
+    }, []);
+
+    allUsedComponents.forEach(async component => {
+      createPage({
+        path: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+        matchPath: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+        component: path.resolve(
+          __dirname,
+          "../../../src/templates/Tracking/AllRepositoriesComponent.tsx",
+        ),
+        context: {
+          slug: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+          title: component,
+          trail: await getDocumentTrail(cache, `/dashboard/tracking/allrepositories`),
+        },
+      });
     });
 
     await Promise.all(

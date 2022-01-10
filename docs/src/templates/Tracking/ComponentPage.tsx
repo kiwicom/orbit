@@ -50,19 +50,6 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
     }
   }, [sources, setAllSources, setRender, sourceLinks]);
 
-  // support only primitives for now
-  const FILTERED_NAMES = [
-    "null",
-    "(Identifier)",
-    "(ObjectExpression)",
-    "(CallExpression)",
-    "(ConditionalExpression)",
-    "(MemberExpression)",
-    "(ArrowFunctionExpression)",
-    "(LogicalExpression)",
-    "(JSXElement)",
-  ];
-
   const measureRef = React.useCallback(n => {
     if (n) {
       setHeight(n.getBoundingClientRect().height);
@@ -107,13 +94,11 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
                 <TableCell>{propName}</TableCell>
                 <TableCell>{used}</TableCell>
                 <TableCell>
-                  {values
-                    .filter(value => !FILTERED_NAMES.includes(value.name))
-                    .map(({ name: valueName, used: valueInstances }) => (
-                      <Text size="small" key={valueName}>
-                        {valueName}: <b>{valueInstances}</b>
-                      </Text>
-                    ))}
+                  {values.map(({ name: valueName, used: valueInstances }) => (
+                    <Text size="small" key={valueName}>
+                      {valueName}: <b>{valueInstances}</b>
+                    </Text>
+                  ))}
                 </TableCell>
               </TableRow>
             ))}
@@ -192,7 +177,10 @@ export const query = graphql`
           }
           sources {
             url
-            props
+            props {
+              name
+              value
+            }
           }
         }
       }

@@ -11,11 +11,11 @@ import UsageByCategory from "./components/UsageByCategory";
 import { Trail } from "../../components/DocNavigation";
 
 // TODO: use types from tracking cli tool after move to monorepo
-interface TrackingProperty {
+export interface TrackingProperty {
   name: string;
   used: number;
 }
-interface TrackingProp {
+export interface TrackingProp {
   used: number;
   name: string;
   values: TrackingProperty[];
@@ -36,7 +36,7 @@ interface Maintainer {
   };
 }
 
-interface TrackedData {
+export interface TrackedData {
   name: string;
   icon: boolean;
   instances: number;
@@ -153,7 +153,10 @@ export const query = graphql`
           icon
           sources {
             url
-            props
+            props {
+              name
+              value
+            }
           }
           instances
           category

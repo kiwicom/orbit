@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
@@ -12,6 +12,11 @@ import type { Props } from ".";
 
 const StyledColumn = styled.div`
   ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};
+  ${({ spanEntireRow }) =>
+    spanEntireRow &&
+    css`
+      grid-column: 1 / -1;
+    `};
 
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
@@ -28,9 +33,15 @@ StyledColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const LayoutColumn = ({ children, hideOn, as = "div", dataTest }: Props): React.Node => {
+const LayoutColumn = ({
+  children,
+  hideOn,
+  as = "div",
+  spanEntireRow = false,
+  dataTest,
+}: Props): React.Node => {
   return (
-    <StyledColumn data-test={dataTest} hideOn={hideOn} as={as}>
+    <StyledColumn data-test={dataTest} hideOn={hideOn} as={as} spanEntireRow={spanEntireRow}>
       {children}
     </StyledColumn>
   );

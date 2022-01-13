@@ -9,6 +9,7 @@ export const LAYOUT_SETTINGS: {|
   Booking: {|
     columnGap: string,
     columns: string,
+    rowGap: string,
     desktop: {| columnGap: string |},
     layoutColumns: { ... },
     maxWidth: string,
@@ -63,6 +64,7 @@ export const LAYOUT_SETTINGS: {|
   [LAYOUT_OPTIONS.BOOKING]: {
     columns: "1fr",
     columnGap: "16px",
+    rowGap: "16px",
     maxWidth: "1200px",
     tablet: {
       columns: "7fr minmax(272px, 3fr)",
@@ -73,10 +75,14 @@ export const LAYOUT_SETTINGS: {|
     layoutColumns: {
       // $FlowIssue
       0: {
-        as: "main",
+        spanEntireRow: true,
       },
       // $FlowIssue
       1: {
+        as: "main",
+      },
+      // $FlowIssue
+      2: {
         as: "aside",
       },
     },

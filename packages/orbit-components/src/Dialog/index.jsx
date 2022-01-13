@@ -19,27 +19,29 @@ import { left } from "../utils/rtl";
 import type { Props } from ".";
 
 const StyledDialog = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
-  z-index: ${({ theme }) => theme.orbit.zIndexModalOverlay};
-  box-sizing: border-box;
-  outline: none;
-  overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  ${mq.largeMobile(css`
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `)};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: ${theme.orbit.spaceMedium};
+    z-index: ${theme.orbit.zIndexModalOverlay};
+    box-sizing: border-box;
+    outline: none;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity ${theme.orbit.durationFast} ease-in-out;
+    ${mq.largeMobile(css`
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -54,28 +56,29 @@ const StyledDialogCenterWrapper = styled.div`
 `;
 
 const StyledDialogContent = styled.div`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: ${({ theme }) =>
-    `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-  background: ${({ theme }) => theme.orbit.paletteWhite};
-  border-radius: 12px;
-  bottom: ${({ shown }) => (shown ? "0" : "-100%")};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
-  text-align: center;
-  ${StyledText} {
+  ${({ theme }) => css`
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
+    background: ${theme.orbit.paletteWhite};
+    border-radius: 12px;
+    bottom: ${({ shown }) => (shown ? "0" : "-100%")};
+    box-shadow: ${theme.orbit.boxShadowOverlay};
     text-align: center;
-  }
-  ${mq.largeMobile(css`
-    min-width: ${({ theme }) => theme.orbit.widthModalSmall};
-    border-radius: 9px;
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-    text-align: ${left};
     ${StyledText} {
-      text-align: ${left};
+      text-align: center;
     }
-  `)};
+    ${mq.largeMobile(css`
+      min-width: ${theme.orbit.widthModalSmall};
+      border-radius: 9px;
+      padding: ${theme.orbit.spaceLarge};
+      text-align: ${left};
+      ${StyledText} {
+        text-align: ${left};
+      }
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

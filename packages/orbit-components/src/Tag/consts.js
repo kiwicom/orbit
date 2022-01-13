@@ -11,6 +11,6 @@ export const STATES = {
 };
 
 export const TYPES = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
+  COLORED: "colored",
+  NEUTRAL: "neutral",
 };

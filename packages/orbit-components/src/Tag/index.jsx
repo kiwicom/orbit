@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { rtlSpacing, left } from "../utils/rtl";
+import { left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
 import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
@@ -21,38 +21,38 @@ const getFontSize = ({ theme, size }) => {
   return tokens[size];
 };
 
-const getBackgroundColor = state => ({ type }) => {
+const getBackgroundColor = state => ({ type, dateTag }) => {
   const states = {
-    [TYPES.PRIMARY]: {
+    [TYPES.COLORED]: {
       [STATES.DEFAULT]: resolveColor({
-        selected: "paletteBlueNormal",
+        selected: dateTag ? "paletteInkLighterHover" : "paletteBlueNormal",
         removable: "paletteBlueLight",
         normal: "paletteBlueLight",
       }),
       [STATES.HOVER]: resolveColor({
-        selected: "paletteBlueNormalHover",
+        selected: dateTag ? "paletteInkLighterActive" : "paletteBlueNormalHover",
         removable: "paletteBlueLightHover",
         normal: "paletteBlueLightHover",
       }),
       [STATES.ACTIVE]: resolveColor({
-        selected: "paletteBlueNormalActive",
+        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
         removable: "paletteBlueLightActive",
         normal: "paletteBlueLightActive",
       }),
     },
-    [TYPES.SECONDARY]: {
+    [TYPES.NEUTRAL]: {
       [STATES.DEFAULT]: resolveColor({
-        selected: "paletteInkLighterHover",
+        selected: dateTag ? "paletteInkLighterHover" : "paletteBlueNormal",
         removable: "paletteCloudDark",
         normal: "paletteCloudDark",
       }),
       [STATES.HOVER]: resolveColor({
-        selected: "paletteInkLighterActive",
+        selected: dateTag ? "paletteInkLighterActive" : "paletteBlueNormalHover",
         removable: "paletteCloudNormalHover",
         normal: "paletteCloudNormalHover",
       }),
       [STATES.ACTIVE]: resolveColor({
-        selected: "paletteInkLightHover",
+        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
         removable: "paletteCloudNormalActive",
         normal: "paletteCloudNormalActive",
       }),
@@ -64,11 +64,11 @@ const getBackgroundColor = state => ({ type }) => {
 const CloseContainer = styled.div`
   ${({ theme, actionable, type }) => css`
     display: flex;
-    margin-${left}: 8px;
+    margin-${left}: ${theme.orbit.spaceXSmall};
     opacity: 0.5;
     color: ${resolveColor({
       selected: "paletteWhite",
-      removable: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
+      removable: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
       normal: "paletteInkLink",
     })};
     cursor: ${actionable && `pointer`};
@@ -90,8 +90,8 @@ export const StyledTag: any = styled.div`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
       selected: "paletteWhite",
-      removable: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
-      normal: type === TYPES.PRIMARY ? "paletteBlueDarker" : "paletteInkNormal",
+      removable: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
+      normal: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
     })};
     background: ${getBackgroundColor(STATES.DEFAULT)};
     display: inline-flex;
@@ -101,7 +101,7 @@ export const StyledTag: any = styled.div`
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${rtlSpacing(theme.orbit.paddingTag)};
+    padding: ${theme.orbit.spaceXSmall};
     transition: color ${theme.orbit.durationFast} ease-in-out,
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;
@@ -166,13 +166,23 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
 
 const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>(
   (
-    { selected, children, size = SIZES.NORMAL, onClick, onRemove, dataTest, type = TYPES.PRIMARY },
+    {
+      selected,
+      children,
+      size = SIZES.NORMAL,
+      onClick,
+      onRemove,
+      dataTest,
+      type = TYPES.NEUTRAL,
+      dateTag,
+    },
     ref,
   ) => {
     return (
       <StyledTag
         actionable={onClick || onRemove}
         data-test={dataTest}
+        dateTag={dateTag}
         size={size}
         ref={ref}
         type={type}

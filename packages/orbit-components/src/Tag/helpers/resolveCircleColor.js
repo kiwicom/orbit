@@ -4,7 +4,7 @@ import { TYPES } from "../consts";
 
 const resolveColor: ResolveCircleColor = () => ({ theme, selected, type }) => {
   if (selected) return theme.orbit.paletteWhite;
-  return type === TYPES.PRIMARY ? theme.orbit.paletteBlueDarker : theme.orbit.paletteInkNormal;
+  return type === TYPES.NEUTRAL ? theme.orbit.paletteInkNormal : theme.orbit.paletteBlueDarker;
 };
 
 export default resolveColor;

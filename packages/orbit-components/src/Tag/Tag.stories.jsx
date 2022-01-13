@@ -18,7 +18,7 @@ export default {
 export const Default = (): React.Node => {
   return (
     <Stack direction="column">
-      <Heading type="title2">Primary</Heading>
+      <Heading type="title2">Neutral</Heading>
       <Stack inline>
         <Tag>Non actionable</Tag>
         <Tag onClick={action("onClick")}>Default</Tag>
@@ -26,20 +26,30 @@ export const Default = (): React.Node => {
           Selected
         </Tag>
         <Tag onRemove={action("onRemove")}>Removable</Tag>
+        <Tag selected onRemove={action("onRemove")} onClick={action("onClick")}>
+          Selected Removable
+        </Tag>
       </Stack>
-      <Heading type="title2">Secondary</Heading>
+      <Heading type="title2">Colored</Heading>
       <Stack inline>
-        <Tag type="secondary">Non actionable</Tag>
-        <Tag type="secondary" onClick={action("onClick")}>
+        <Tag type="colored">Non actionable</Tag>
+        <Tag type="colored" onClick={action("onClick")}>
           Default
         </Tag>
-        <Tag type="secondary" selected onClick={action("onClick")}>
+        <Tag type="colored" selected onClick={action("onClick")}>
           Selected
         </Tag>
-        <Tag type="secondary" onRemove={action("onRemove")}>
+        <Tag type="colored" onRemove={action("onRemove")}>
           Removable
         </Tag>
+        <Tag type="colored" selected onRemove={action("onRemove")} onClick={action("onClick")}>
+          Selected Removable
+        </Tag>
       </Stack>
+      <Heading>dateTag</Heading>
+      <Tag type="colored" dateTag selected onClick={action("onClick")}>
+        with dateTag selected color is Ink
+      </Tag>
     </Stack>
   );
 };
@@ -54,13 +64,15 @@ export const Playground = (): React.Node => {
   const content = text("Content", "Transport");
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
   const selected = boolean("selected", true);
+  const dateTag = boolean("dateTag", false);
   const dataTest = text("dataTest", "test");
-  const type = select("type", Object.values(TYPES), TYPES.PRIMARY);
+  const type = select("type", Object.values(TYPES), TYPES.NEUTRAL);
 
   return (
     <Tag
       size={size}
       type={type}
+      dateTag={dateTag}
       selected={selected}
       onClick={action("onClick")}
       onRemove={action("onRemove")}

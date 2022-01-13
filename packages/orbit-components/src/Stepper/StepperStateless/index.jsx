@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Button from "../../Button";
 import Minus from "../../icons/Minus";
@@ -16,25 +16,29 @@ const StyledStepper = styled.div`
 `;
 
 const StyledStepperInput = styled.input`
-  width: 100%;
-  height: 32px; // TODO: create token sizeStepper
-  padding: 0;
-  border: 0;
-  font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  text-align: center;
-  min-width: 0;
+  ${({ theme, size }) => css`
+    width: 100%;
+    height: ${size === "small" ? "32px" : "44px"};
+    padding: 0;
+    border: 0;
+    font-size: ${size === "small"
+      ? theme.orbit.fontSizeInputNormal
+      : theme.orbit.fontSizeTextLarge};
+    font-weight: ${theme.orbit.fontWeightBold};
+    color: ${theme.orbit.paletteInkNormal};
+    text-align: center;
+    min-width: 0;
 
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+      outline: none;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -80,6 +84,7 @@ const StepperStateless = ({
         name={name}
         disabled={disabled}
         type="text"
+        size={size}
         value={value || 0}
         min={minValue}
         max={maxValue}
@@ -97,8 +102,8 @@ const StepperStateless = ({
           disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue)
         }
         iconLeft={<Plus />}
+        size={size}
         type="secondary"
-        size="small"
         onClick={ev => {
           if (onIncrement && !disabled) {
             onIncrement(ev);

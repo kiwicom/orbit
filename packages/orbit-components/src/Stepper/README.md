@@ -38,7 +38,6 @@ Table below contains all types of the props available in Stepper component.
 | :--------- |
 | `"small"`  |
 | `"normal"` |
-| `"large"`  |
 
 ## Functional specs
 

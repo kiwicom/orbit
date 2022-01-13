@@ -55,6 +55,7 @@ Table below contains all types of the props available in Illustration component.
 | `"Error"`                       |
 | `"Error404"`                    |
 | `"FastTrack"`                   |
+| `"FastTrackMan"`                |
 | `"Feedback"`                    |
 | `"Help"`                        |
 | `"Improve"`                     |
@@ -85,6 +86,7 @@ Table below contains all types of the props available in Illustration component.
 | `"PlaceholderHotel"`            |
 | `"PlaceholderTours"`            |
 | `"PlaneAndMoney"`               |
+| `"PlaneDelayed"`                |
 | `"PriorityBoarding"`            |
 | `"Rating"`                      |
 | `"ReferAFriend"`                |

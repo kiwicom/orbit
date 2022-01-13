@@ -32,7 +32,7 @@ interface Options {
 declare const ToastRoot: React.FunctionComponent<Props>;
 
 declare function createToast(
-  message: string,
+  message: React.ReactNode,
   options?: { readonly icon?: React.ReactElement<unknown> },
 ): void;
 

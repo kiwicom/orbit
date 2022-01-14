@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.1...@kiwicom/orbit-components@2.7.0) (2022-01-14)
+
+
+### Bug Fixes
+
+* **Toast:** fix message type ([#3235](https://github.com/kiwicom/orbit/issues/3235)) ([75c2a5d](https://github.com/kiwicom/orbit/commit/75c2a5d444ce60232efa0a2a8ec4ed2cb85a3da0))
+
+
+### Features
+
+* **Illustration:** add new illustrations ([#3234](https://github.com/kiwicom/orbit/issues/3234)) ([f90da39](https://github.com/kiwicom/orbit/commit/f90da394dd2cf384ee65b859333d7fcb69aa2280))
+* **Layout:** accommodate breadcrumbs on booking ([cedef08](https://github.com/kiwicom/orbit/commit/cedef08607ba6f3136dec1924ceb06aeb0ef5c98))
+
+
+
+
+
 ## [2.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.0...@kiwicom/orbit-components@2.6.1) (2022-01-07)
 
 

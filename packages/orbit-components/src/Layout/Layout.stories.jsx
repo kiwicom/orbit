@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Card, { CardSection } from "../Card";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Wizard, { WizardStep } from "../Wizard";
 
 import Layout, { LayoutColumn } from ".";
 
@@ -45,6 +46,15 @@ export const Search = (): React.Node => (
 export const Booking = (): React.Node => {
   return (
     <Layout type="Booking">
+      <LayoutColumn>
+        <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={() => {}}>
+          <WizardStep title="Search" />
+          <WizardStep title="Passenger details" />
+          <WizardStep title="Ticket fare" />
+          <WizardStep title="Customize your trip" />
+          <WizardStep title="Overview & Payment" />
+        </Wizard>
+      </LayoutColumn>
       <LayoutColumn>
         <Card>
           <CardSection>

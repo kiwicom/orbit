@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
@@ -11,16 +11,21 @@ import { QUERIES } from "../../utils/mediaQuery/consts";
 import type { Props } from ".";
 
 const StyledColumn = styled.div`
-  ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};
+  ${({ theme, spanEntireRow, hideOn }) => css`
+    ${!!hideOn && getViewportHideStyles(hideOn)};
+    ${spanEntireRow &&
+    css`
+      grid-column: 1 / -1;
+    `};
 
-  @media (max-width: ${({ theme }) =>
-      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledCard} {
-      margin-right: -${({ theme }) => theme.orbit.spaceMedium};
-      margin-left: -${({ theme }) => theme.orbit.spaceMedium};
-      width: auto;
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+      ${StyledCard} {
+        margin-right: -${theme.orbit.spaceMedium};
+        margin-left: -${theme.orbit.spaceMedium};
+        width: auto;
+      }
     }
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -28,9 +33,15 @@ StyledColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const LayoutColumn = ({ children, hideOn, as = "div", dataTest }: Props): React.Node => {
+const LayoutColumn = ({
+  children,
+  hideOn,
+  as = "div",
+  spanEntireRow,
+  dataTest,
+}: Props): React.Node => {
   return (
-    <StyledColumn data-test={dataTest} hideOn={hideOn} as={as}>
+    <StyledColumn data-test={dataTest} hideOn={hideOn} as={as} spanEntireRow={spanEntireRow}>
       {children}
     </StyledColumn>
   );

@@ -9,6 +9,7 @@ export type Props = {|
   +children: React.Node,
   +as?: string,
   +hideOn?: Devices[],
+  +spanEntireRow?: boolean,
 |};
 
 declare export default React.ComponentType<Props>;

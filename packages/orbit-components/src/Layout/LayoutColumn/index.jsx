@@ -11,21 +11,21 @@ import { QUERIES } from "../../utils/mediaQuery/consts";
 import type { Props } from ".";
 
 const StyledColumn = styled.div`
-  ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};
-  ${({ spanEntireRow }) =>
-    spanEntireRow &&
+  ${({ theme, spanEntireRow, hideOn }) => css`
+    ${!!hideOn && getViewportHideStyles(hideOn)};
+    ${spanEntireRow &&
     css`
       grid-column: 1 / -1;
     `};
 
-  @media (max-width: ${({ theme }) =>
-      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledCard} {
-      margin-right: -${({ theme }) => theme.orbit.spaceMedium};
-      margin-left: -${({ theme }) => theme.orbit.spaceMedium};
-      width: auto;
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+      ${StyledCard} {
+        margin-right: -${theme.orbit.spaceMedium};
+        margin-left: -${theme.orbit.spaceMedium};
+        width: auto;
+      }
     }
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

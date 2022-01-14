@@ -37,7 +37,7 @@ const LayoutColumn = ({
   children,
   hideOn,
   as = "div",
-  spanEntireRow = false,
+  spanEntireRow,
   dataTest,
 }: Props): React.Node => {
   return (

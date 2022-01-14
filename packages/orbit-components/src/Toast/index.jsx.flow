@@ -45,7 +45,10 @@ type Options = {|
   error?: string | ((err: any) => string),
 |};
 
-export type createToastType = (message: string, options?: {| icon?: React.Element<any> |}) => void;
+export type createToastType = (
+  message: React.Node,
+  options?: {| icon?: React.Element<any> |},
+) => void;
 export type createToastPromiseType = (promise: Promise<void>, options?: Options) => void;
 
 declare export var ToastRoot: React.ComponentType<Props>;

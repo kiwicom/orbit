@@ -18,7 +18,7 @@ const StyledBorder = styled.div`
   ${({ theme }) => css`
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     width: 100%;
     left: 40px;
   `}
@@ -190,7 +190,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
     return (
       <StyledContainer data-test={dataTest} isCompact={isCompact} status={status}>
         {isActive && <StyledActiveMarker />}
-        <StyledBorder />
+        {status !== "disabled" && <StyledBorder />}
         <ButtonLink
           disabled={status === "disabled"}
           type="secondary"

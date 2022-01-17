@@ -157,17 +157,6 @@ export const StyledButtonPrimitive: any = styled(
       `};
     }
 
-    &:active {
-      ${!disabled &&
-      css`
-        background: ${backgroundActive};
-        box-shadow: ${boxShadowActive};
-        color: ${foregroundActive}!important;
-        text-decoration: none;
-        ${iconContainerColor(icons && icons.foregroundActive)};
-      `};
-    }
-
     :focus {
       box-shadow: ${boxShadowFocus};
       background: ${backgroundFocus};
@@ -191,7 +180,24 @@ export const StyledButtonPrimitive: any = styled(
       text-decoration: none;
       ${iconContainerColor(icons && icons.foregroundFocus)};
     }
-  `}};
+
+    // prevent :focus styles from overriding :hover and :active styles
+
+    &:hover:focus {
+      background: ${backgroundHover};
+    }
+    &:active,
+    &:active:focus {
+      ${!disabled &&
+      css`
+        background: ${backgroundActive};
+        box-shadow: ${boxShadowActive};
+        color: ${foregroundActive}!important;
+        text-decoration: none;
+        ${iconContainerColor(icons && icons.foregroundActive)};
+      `};
+    }
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

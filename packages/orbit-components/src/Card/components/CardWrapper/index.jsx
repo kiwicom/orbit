@@ -41,54 +41,67 @@ bottomBorderRadius.defaultProps = {
 };
 
 const StyledCardWrapper = styled.div`
-  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceMedium};
-  cursor: ${({ onClick }) => onClick && `pointer`};
-  ${CardElement};
-  ${({ bottomBorder }) => bottomBorder && bottomBorderRadius};
-  border-bottom: ${({ roundedBottom, bottomBorder }) =>
-    (roundedBottom || bottomBorder) && getBorder};
-  transition: ${transition(["margin"], "fast", "ease-in-out")};
-  ${({ noBorderTop, expandable }) =>
-    noBorderTop && !expandable && `border-top: 1px solid transparent; padding-top: 0 !important;`};
+  ${({
+    theme,
+    expandable,
+    expanded,
+    noPadding,
+    noBorderTop,
+    bottomBorder,
+    roundedTop,
+    roundedBottom,
+    onClick,
+  }) => css`
+    padding: ${!noPadding && theme.orbit.spaceMedium};
+    cursor: ${onClick && `pointer`};
+    ${CardElement};
+    ${bottomBorder && bottomBorderRadius};
+    border-bottom: ${(roundedBottom || bottomBorder) && getBorder};
+    transition: ${transition(["margin"], "fast", "ease-in-out")};
+    ${noBorderTop &&
+    !expandable &&
+    `
+      border-top: 1px solid transparent;
+      padding-top: 0 !important;
+    `};
 
-  ${({ expanded }) =>
-    expanded &&
-    css`
-      margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
+    ${expanded &&
+    `
+      margin: ${theme.orbit.spaceXSmall} 0;
       border: 1px solid transparent;
     `};
 
-  ${({ roundedTop }) => roundedTop && topBorderRadius};
-  ${({ roundedBottom }) => roundedBottom && bottomBorderRadius}
+    ${roundedTop && topBorderRadius};
+    ${roundedBottom && bottomBorderRadius}
 
-  &:last-of-type {
-    ${({ expanded }) =>
-      !expanded &&
+    &:last-of-type {
+      ${!expanded &&
       css`
         border-bottom: ${getBorder};
       `}
-  }
-
-  ${mq.largeMobile(css`
-    &:first-of-type {
-      ${topBorderRadius};
     }
 
-    &:last-of-type {
-      ${bottomBorderRadius};
+    ${mq.largeMobile(css`
+      &:first-of-type {
+        ${topBorderRadius};
+      }
+
+      &:last-of-type {
+        ${bottomBorderRadius};
+      }
+
+      padding: ${!noPadding && theme.orbit.spaceLarge};
+    `)}
+
+    &:focus {
+      outline: 0;
+      background: ${theme.orbit.paletteWhiteHover};
     }
 
-    padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
-  `)}
-
-  &:focus {
-    outline: 0;
-    background: ${({ theme }) => theme.orbit.paletteWhiteHover};
-  }
-
-  &:hover {
-    background: ${({ theme, onClick }) => onClick && theme.orbit.paletteWhiteHover};
-  }
+    &:hover {
+      background: ${onClick && theme.orbit.paletteWhiteHover};
+    }
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

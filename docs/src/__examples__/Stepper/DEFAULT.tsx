@@ -4,7 +4,7 @@ import { Passengers } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <Stack align="center">
+    <Stack align="center" spacing="medium" desktop={{ spacing: "large" }}>
       <Heading type="title4">
         <Stack align="center">
           <Passengers />
@@ -28,7 +28,7 @@ export default {
         {
           name: "size",
           type: "select",
-          options: ["small", "normal", "large"],
+          options: ["small", "normal"],
           defaultValue: "small",
         },
       ],

@@ -16,7 +16,7 @@ const StyledStepper = styled.div`
 `;
 
 const StyledStepperInput = styled.input`
-  ${({ theme, size }) => css`
+  ${({ theme, size, disabled }) => css`
     width: 100%;
     height: ${size === "small" ? "32px" : "44px"};
     padding: 0;
@@ -28,6 +28,8 @@ const StyledStepperInput = styled.input`
     color: ${theme.orbit.paletteInkNormal};
     text-align: center;
     min-width: 0;
+    opacity: ${disabled ? "0.5" : "1"};
+    background-color: ${disabled && "transparent"};
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {

@@ -18,7 +18,7 @@ const StyledBorder = styled.div`
   ${({ theme }) => css`
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
     position: absolute;
-    bottom: 1px;
+    bottom: 0px;
     width: 100%;
     left: 40px;
   `}
@@ -32,6 +32,7 @@ StyledBorder.defaultProps = {
 const StyledContainer = styled.li`
   ${({ theme, isCompact, status }) => css`
     position: relative;
+    margin: -1px 0;
     ${isCompact &&
     css`
       button {
@@ -77,9 +78,9 @@ StyledContent.defaultProps = {
 const StyledActiveMarker = styled.div`
   ${({ theme }) => css`
     position: absolute;
-    top: 0;
+    top: 1px;
     ${left}: 0;
-    bottom: 0;
+    bottom: 1px;
     width: 2px;
     border-top-${right}-radius: ${theme.orbit.borderRadiusNormal};
     border-bottom-${right}-radius: ${theme.orbit.borderRadiusNormal};
@@ -189,8 +190,6 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   if (isCompact) {
     return (
       <StyledContainer data-test={dataTest} isCompact={isCompact} status={status}>
-        {isActive && <StyledActiveMarker />}
-        {status !== "disabled" && <StyledBorder />}
         <ButtonLink
           disabled={status === "disabled"}
           type="secondary"
@@ -207,6 +206,8 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
             title
           )}
         </ButtonLink>
+        {isActive && <StyledActiveMarker />}
+        {status !== "disabled" && <StyledBorder />}
       </StyledContainer>
     );
   }

@@ -4,6 +4,7 @@ import * as React from "react";
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
 import getIconContainer from "../primitives/ButtonPrimitive/common/getIconContainer";
 import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps";
+import ChevronRightIcon from "../icons/ChevronRight";
 import useTheme from "../hooks/useTheme";
 import getSocialButtonStyles from "./helpers/getSocialButtonStyles";
 import getSocialButtonIconForeground from "./helpers/getSocialButtonIconForeground";
@@ -34,7 +35,7 @@ const SocialButton: React.AbstractComponent<Props, HTMLButtonElement> = React.fo
       {...icons}
       disabled={disabled}
       iconLeft={iconLeft}
-      iconRight={null}
+      iconRight={<ChevronRightIcon color="primary" />}
       circled={false}
     />
   );

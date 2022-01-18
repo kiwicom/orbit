@@ -16,6 +16,7 @@ export type Props = {|
   +placeholder?: TranslationString,
   +fileName?: string,
   +required?: boolean,
+  +helpClosable?: boolean,
   +allowedFileTypes?: string | string[],
   +insideInputGroup?: boolean,
   +help?: React.Node,

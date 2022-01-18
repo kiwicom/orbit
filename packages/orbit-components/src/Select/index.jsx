@@ -290,6 +290,7 @@ const Select: React.AbstractComponent<
     tabIndex,
     id,
     required,
+    helpClosable = true,
     dataTest,
     prefix,
     spaceAfter,
@@ -386,6 +387,7 @@ const Select: React.AbstractComponent<
           help={help}
           error={error}
           inputSize={size}
+          helpClosable={helpClosable}
           shown={shown}
           onShown={setTooltipShown}
           referenceElement={inputRef}

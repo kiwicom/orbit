@@ -364,6 +364,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
     maxLength,
     suffix,
     help,
+    helpClosable = true,
     value,
     tags,
     tabIndex,
@@ -505,6 +506,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             help={help}
             id={inputId}
             shown={shown}
+            helpClosable={helpClosable}
             onShown={setTooltipShown}
             error={error}
             inputSize={size}

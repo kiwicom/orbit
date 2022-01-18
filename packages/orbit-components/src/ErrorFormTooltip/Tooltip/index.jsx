@@ -158,6 +158,7 @@ StyledCloseButton.defaultProps = {
 const ErrorFormTooltip = ({
   onShown,
   dataTest,
+  helpClosable,
   inputSize,
   children,
   shown,
@@ -210,7 +211,7 @@ const ErrorFormTooltip = ({
   const { popper, arrow } = styles;
 
   useClickOutside(contentRef, () => {
-    if (!isHelp) onShown(false);
+    if (!isHelp || !helpClosable) onShown(false);
   });
 
   React.useEffect(() => {
@@ -234,7 +235,7 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp]);
+  }, [onShown, isHelp, helpClosable]);
 
   return (
     <StyledFormFeedbackTooltip
@@ -265,7 +266,7 @@ const ErrorFormTooltip = ({
         bottom={arrow.bottom}
       />
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
-      {isHelp && (
+      {isHelp && helpClosable && (
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO

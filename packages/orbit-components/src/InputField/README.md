@@ -55,7 +55,7 @@ Table below contains all types of the props available in InputField component.
 | tabIndex     | `string \| number`          |            | Specifies the tab order of an element                                                                                                                                            |
 | **type**     | [`enum`](#enum)             | `"text"`   | The type of the InputField.                                                                                                                                                      |
 | value        | `string`                    |            | Specifies the value of the InputField.                                                                                                                                           |
-| helpClosable | `boolean`                   | `true`     | Responsible for hiding tooltip with help message by clicking on close button or automatically onBlur                                                                             |
+| helpClosable | `boolean`                   | `true`     | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                                   |
 
 ### enum
 

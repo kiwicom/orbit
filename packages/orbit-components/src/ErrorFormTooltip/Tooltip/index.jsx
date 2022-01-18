@@ -53,7 +53,6 @@ const StyledFormFeedbackTooltip = styled.div`
   }) => css`
     display: flex;
     justify-content: space-between;
-    align-items: center;
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};

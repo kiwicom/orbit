@@ -41,7 +41,7 @@ Table below contains all types of the props available in the Select component.
 | tabIndex        | `string \| number`         |            | Specifies the tab order of an element                                                                                                                          |
 | value           | `string`                   | `""`       | The value of the Select.                                                                                                                                       |
 | width           | `string`                   | `100%`     | Specifies width of the Select                                                                                                                                  |
-| helpClosable    | `boolean`                  | `true`     | Responsible for hiding tooltip with help message by clicking on close button or automatically onBlur                                                           |
+| helpClosable    | `boolean`                  | `true`     | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 
 ## Option
 

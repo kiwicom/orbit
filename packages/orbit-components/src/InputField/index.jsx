@@ -429,7 +429,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             <Prefix size={size}>
               {help && !error && (
                 <StyledIconWrapper ref={iconRef}>
-                  <InformationCircle color="secondary" size="small" />
+                  <InformationCircle color="info" size="small" />
                 </StyledIconWrapper>
               )}
               {error && (

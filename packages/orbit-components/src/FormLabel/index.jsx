@@ -58,7 +58,7 @@ const FormLabel: any = styled(
           onMouseLeave={onMouseLeave}
         >
           {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
-          {!error && help && <InformationCircle ariaLabel="help" color="secondary" size="small" />}
+          {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
         </StyledInputErrorIcWrapper>
       )}
 

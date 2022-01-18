@@ -135,6 +135,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
     name,
     error,
     placeholder,
+    helpClosable = true,
     maxLength,
     onChange,
     onFocus,
@@ -196,6 +197,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
       <ErrorFormTooltip
         help={help}
         inputSize={size}
+        helpClosable={helpClosable}
         error={error}
         onShown={setTooltipShown}
         shown={shown}

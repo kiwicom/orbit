@@ -36,7 +36,7 @@ Table below contains all types of the props available in the InputFile component
 | spaceAfter       | `enum`                     |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
 | width            | `string`                   | `100%`               | Specifies width of InputFile                                                                                                                                   |
-| helpClosable     | `boolean`                  | `true`               | Responsible for hiding tooltip with help message by clicking on close button or automatically onBlur                                                           |
+| helpClosable     | `boolean`                  | `true`               | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 
 ## Functional specs
 

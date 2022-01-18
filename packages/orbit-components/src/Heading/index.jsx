@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import { textAlign } from "../utils/rtl";
 import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
@@ -61,7 +62,7 @@ export const StyledHeading: any = styled(
     text-transform: ${type === TYPE_OPTIONS.TITLE5 && "uppercase"};
     color: ${inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
     margin: 0;
-    text-align: ${align};
+    text-align: ${textAlign(align)};
     font-size: ${getHeadingToken(TOKENS.sizeHeading, type)};
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
@@ -69,9 +70,10 @@ export const StyledHeading: any = styled(
     ${
       // temporary fix until we figure out how come `viewports` ended up being `undefined`
       DEVICES.filter(viewport => viewports && viewports[viewport]).map(viewport => {
-        const { type: value, spaceAfter } = viewports[viewport];
+        const { type: value, spaceAfter, align: txtAlign } = viewports[viewport];
         return mediaQueries[viewport](css`
           font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
+          text-align: ${textAlign(txtAlign)};
           font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
           line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
           margin-bottom: ${getSpacingToken({ spaceAfter, theme })};

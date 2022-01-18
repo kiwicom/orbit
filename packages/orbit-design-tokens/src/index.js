@@ -406,7 +406,7 @@ export const getTokens: GetTokens = customFoundation => {
     paddingLoading: theme.base.spaceSm,
     paddingTable: `${theme.base.spaceSm} ${theme.base.spaceMd}`,
     paddingTableCompact: `${theme.base.spaceXs} ${theme.base.spaceSm}`,
-    paddingTag: `6px ${theme.base.spaceXs}`,
+    paddingTag: `${theme.base.spaceXs}`,
     paddingTagWithIcon: `6px ${theme.base.spaceXs} 6px 6px`,
     paddingTagRemovable: `6px 6px 6px ${theme.base.spaceXs}`,
     paddingTagRemovableWithIcon: "6px",

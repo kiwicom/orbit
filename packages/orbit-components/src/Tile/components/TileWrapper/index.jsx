@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader";
@@ -9,25 +9,27 @@ import defaultTheme from "../../../defaultTheme";
 import type { Props } from ".";
 
 export const StyledTileWrapper: any = styled.div`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  text-decoration: none;
-  background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
+  ${({ theme }) => css`
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: ${theme.orbit.fontFamily};
+    color: ${theme.orbit.paletteInkNormal};
+    text-decoration: none;
+    background: ${theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    box-shadow: ${theme.orbit.boxShadowAction};
+    transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
 
-  :hover,
-  :focus {
-    outline: none;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
-    ${StyledIconRight} {
-      color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+    :hover,
+    :focus {
+      outline: none;
+      box-shadow: ${theme.orbit.boxShadowActionActive};
+      ${StyledIconRight} {
+        color: ${theme.orbit.paletteInkLightHover};
+      }
     }
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

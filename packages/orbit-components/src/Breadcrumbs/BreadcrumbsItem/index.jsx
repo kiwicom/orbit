@@ -18,15 +18,14 @@ const StyledBreadcrumbsItemAnchor = styled(
     return <Component {...props}>{children}</Component>;
   },
 )`
-  font-weight: ${({ active, theme }) =>
-    active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  text-decoration: ${({ isClickable, active }) => (isClickable && !active ? "underline" : "none")};
+  ${({ theme, active, isClickable }) => css`
+    font-weight: ${active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
+    color: ${theme.orbit.paletteInkNormal};
+    text-decoration: ${isClickable && !active ? "underline" : "none"};
 
-  ${({ isClickable }) =>
-    isClickable &&
+    ${isClickable &&
     css`
-      transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+      transition: color ${theme.orbit.durationFast} ease-in-out;
       cursor: pointer;
 
       &:hover,
@@ -35,12 +34,13 @@ const StyledBreadcrumbsItemAnchor = styled(
         text-decoration: none;
       }
       &:hover {
-        color: ${({ theme }) => theme.orbit.paletteProductNormalHover};
+        color: ${theme.orbit.paletteProductNormalHover};
       }
       :focus {
-        color: ${({ theme }) => theme.orbit.paletteProductNormalActive};
+        color: ${theme.orbit.paletteProductNormalActive};
       }
     `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -49,7 +49,9 @@ StyledBreadcrumbsItemAnchor.defaultProps = {
 };
 
 const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
-  margin: 0 ${({ theme }) => theme.orbit.spaceXXSmall};
+  ${({ theme }) => css`
+    margin: 0 ${theme.orbit.spaceXXSmall};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

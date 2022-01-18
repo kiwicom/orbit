@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dialog } from "@kiwicom/orbit-components";
+import { Button, Dialog, ButtonLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
@@ -22,14 +22,14 @@ export default {
               </Button>
             }
             secondaryAction={
-              <Button
+              <ButtonLink
                 type="secondary"
                 onClick={() => {
                   setShowDialog(false);
                 }}
               >
                 Cancel
-              </Button>
+              </ButtonLink>
             }
           />
         )}

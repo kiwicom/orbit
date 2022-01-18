@@ -15,6 +15,7 @@ type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "ti
 type Align = "start" | "center" | "end" | "justify";
 export type MediaQuery = {|
   +type?: Type,
+  +align?: Align,
   ...spaceAfter,
 |};
 

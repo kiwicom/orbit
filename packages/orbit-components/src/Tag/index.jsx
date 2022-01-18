@@ -194,7 +194,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
         onKeyDown={buttonClickEmulation(onClick)}
       >
         {children}
-        {!!onRemove && (
+        {onRemove && (
           <CloseContainer
             selected={selected}
             removable={!!onRemove}

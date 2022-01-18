@@ -5,6 +5,7 @@ import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
+import ButtonLink from "../ButtonLink";
 import Illustration from "../Illustration";
 import { NAMES } from "../Illustration/consts";
 
@@ -47,7 +48,7 @@ export const Playground = (): React.Node => {
       dataTest={dataTest}
       onClose={action("onClose")}
       primaryAction={<Button type="critical">Log out</Button>}
-      secondaryAction={<Button type="secondary">Cancel</Button>}
+      secondaryAction={<ButtonLink type="secondary">Cancel</ButtonLink>}
     />
   );
 };

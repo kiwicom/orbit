@@ -6,6 +6,7 @@ import type { SharedProps } from "..";
 export type StateLessProps = {|
   ...SharedProps,
   +value: number | string | (() => string),
+  +size?: "small" | "normal",
   +disabledIncrement?: boolean,
   +disabledDecrement?: boolean,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,

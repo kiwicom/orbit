@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation } from "../common/common.js.flow";
 
@@ -9,4 +10,5 @@ export type Props = {|
   +onClick?: (SyntheticEvent<HTMLElement>) => void | Promise<any>,
 |};
 
+declare export var StyledStepIconContainer: StyledComponent<any, any, HTMLElement>;
 declare export default React.ComponentType<Props>;

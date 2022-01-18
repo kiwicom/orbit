@@ -4,7 +4,7 @@ import { Passengers } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <Stack align="center">
+    <Stack align="center" spacing="medium" desktop={{ spacing: "large" }}>
       <Heading type="title4">
         <Stack align="center">
           <Passengers />
@@ -25,6 +25,12 @@ export default {
         { name: "maxValue", type: "number", defaultValue: 10 },
         { name: "step", type: "number", defaultValue: 1 },
         { name: "disabled", type: "boolean", defaultValue: false },
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "normal"],
+          defaultValue: "small",
+        },
       ],
     },
   ],

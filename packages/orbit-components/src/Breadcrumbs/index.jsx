@@ -1,9 +1,8 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import Button from "../Button";
 import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
@@ -14,9 +13,11 @@ import Hide from "../Hide";
 import type { Props } from ".";
 
 const StyledBreadcrumbs = styled.nav`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
-  margin-bottom: ${getSpacingToken};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextSmall};
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -33,29 +34,14 @@ const StyledBreadcrumbsList = styled.ol`
 `;
 
 const StyledBackButtonWrapper = styled.span`
-  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  ${({ theme }) => css`
+    margin-${right}: ${theme.orbit.spaceSmall};
+`};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
-};
-
-const GoBackButton = ({ onClick, backHref }) => {
-  const translate = useTranslate();
-  return (
-    <StyledBackButtonWrapper>
-      <Button
-        iconLeft={<ChevronLeft reverseOnRtl />}
-        circled
-        type="secondary"
-        size="small"
-        onClick={onClick}
-        href={backHref}
-        title={translate("breadcrumbs_back")}
-      />
-    </StyledBackButtonWrapper>
-  );
 };
 
 const Breadcrumbs = (props: Props): React.Node => {
@@ -73,7 +59,6 @@ const Breadcrumbs = (props: Props): React.Node => {
       <Hide on={["smallMobile", "mediumMobile"]}>
         <StyledBreadcrumbs aria-label="Breadcrumb" data-test={dataTest} spaceAfter={spaceAfter}>
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
-            {onGoBack || backHref ? <GoBackButton backHref={backHref} onClick={onGoBack} /> : null}
             {React.Children.map(children, (item, key) => {
               if (React.isValidElement(item)) {
                 return React.cloneElement(item, {
@@ -90,6 +75,7 @@ const Breadcrumbs = (props: Props): React.Node => {
         {onGoBack || backHref ? (
           <TextLink
             standAlone
+            type="secondary"
             iconLeft={<ChevronLeft reverseOnRtl />}
             dataTest="BreadcrumbsBack"
             onClick={onGoBack}

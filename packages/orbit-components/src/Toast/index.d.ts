@@ -40,6 +40,6 @@ declare function createToastPromise(
   // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
   promise: Promise<unknown>,
   options?: Options,
-): void;
+): Promise<void>;
 
 export { ToastRoot, createToast, createToastPromise };

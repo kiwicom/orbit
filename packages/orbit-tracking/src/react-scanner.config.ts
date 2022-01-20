@@ -5,7 +5,7 @@ module.exports = {
   crawlFrom: TMP_FOLDER,
   includeSubComponents: true,
   deprecated: [],
-  importedFrom: /@kiwicom\/orbit-components/g,
+  importedFrom: /@kiwicom\/orbit-components/,
   exclude: [
     "node_modules",
     "__fixtures__",

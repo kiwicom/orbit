@@ -40,6 +40,7 @@ export type Props = {|
   +readOnly?: boolean,
   +autoComplete?: string,
   +autoFocus?: boolean,
+  +helpClosable?: boolean,
   +id?: string,
   +insideInputGroup?: boolean,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

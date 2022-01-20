@@ -160,6 +160,7 @@ export const Help = (): React.Node => {
   const prefix = text("Prefix", "$");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const required = boolean("required", true);
+  const helpClosable = boolean("helpClosable", true);
 
   return (
     <Stack>
@@ -167,6 +168,7 @@ export const Help = (): React.Node => {
         size={size}
         help={<TextLink>{help}</TextLink>}
         label={label}
+        helpClosable={helpClosable}
         value={value}
         placeholder={placeholder}
         onChange={action("change")}
@@ -175,6 +177,7 @@ export const Help = (): React.Node => {
         size={size}
         help={help}
         value={value}
+        helpClosable={helpClosable}
         placeholder={placeholder}
         onChange={action("change")}
       />
@@ -183,6 +186,7 @@ export const Help = (): React.Node => {
         help={help}
         inlineLabel
         label={label}
+        helpClosable={helpClosable}
         value={value}
         placeholder={placeholder}
         onChange={action("change")}
@@ -192,6 +196,7 @@ export const Help = (): React.Node => {
         help={help}
         inlineLabel
         prefix={prefix}
+        helpClosable={helpClosable}
         label={label}
         value={value}
         placeholder={placeholder}
@@ -200,6 +205,7 @@ export const Help = (): React.Node => {
       <InputField
         label={label}
         inlineLabel
+        helpClosable={helpClosable}
         readOnly
         tags={
           <div>
@@ -224,28 +230,54 @@ export const Help = (): React.Node => {
         label={label}
         readOnly
         value={value}
+        helpClosable={helpClosable}
         placeholder={placeholder}
         required={required}
         help={help}
       />
-      <Textarea readOnly label={label} placeholder={placeholder} help={help} value={value} />
-      <Textarea placeholder={placeholder} help={help} value={value} readOnly />
+      <Textarea
+        helpClosable={helpClosable}
+        readOnly
+        label={label}
+        placeholder={placeholder}
+        help={help}
+        value={value}
+      />
+      <Textarea
+        helpClosable={helpClosable}
+        placeholder={placeholder}
+        help={help}
+        value={value}
+        readOnly
+      />
       <Select
         label={label}
         options={objectOptions}
         value={1}
+        helpClosable={helpClosable}
         help={help}
         onChange={action("onChange")}
       />
-      <Select options={objectOptions} help={help} value={1} onChange={action("onChange")} />
-      <InputFile label={label} help={help} onRemoveFile={action("removeFile")} />
-      <InputFile help={help} onRemoveFile={action("removeFile")} />
-      <InputGroup label={label}>
+      <Select
+        helpClosable={helpClosable}
+        options={objectOptions}
+        help={help}
+        value={1}
+        onChange={action("onChange")}
+      />
+      <InputFile
+        helpClosable={helpClosable}
+        label={label}
+        help={help}
+        onRemoveFile={action("removeFile")}
+      />
+      <InputFile helpClosable={helpClosable} help={help} onRemoveFile={action("removeFile")} />
+      <InputGroup helpClosable={helpClosable} label={label}>
         <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
         <InputField placeholder="YYYY" readOnly />
       </InputGroup>
-      <InputGroup>
+      <InputGroup helpClosable={helpClosable}>
         <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
         <InputField placeholder="YYYY" readOnly />
@@ -422,7 +454,7 @@ export const withModal = (): React.Node => {
   );
 };
 
-export const AdvancedExample = (): React.Node => {
+export const AdvancedErrorExample = (): React.Node => {
   const defaultValues = {
     name: "",
     surname: "",
@@ -601,6 +633,154 @@ export const AdvancedExample = (): React.Node => {
               placeholder="YYYY"
             />
           </InputGroup>
+        </Stack>
+        <Button type="primary" submit>
+          Continue
+        </Button>
+      </form>
+    </>
+  );
+};
+
+export const AdvancedHelpExample = (): React.Node => {
+  const defaultValues = {
+    name: "",
+    iban: "",
+    swift: "",
+    bank: "",
+  };
+
+  const helpMessages = {
+    name:
+      "Use the full name of the account holder. It’s either you or the person receiving the funds",
+    iban: "Use the international format of your account number, e.g. IBAN if you're from the EU",
+    swift: "This is the code of your bank. You can search for it online or check with your bank",
+    bank:
+      "If your bank doesn’t accept international transfers, we’ll need the code of their correspondent bank. Otherwise, you can leave this blank.",
+  };
+
+  const [values, setValues] = React.useState(defaultValues);
+  const [messages, setMessages] = React.useState(defaultValues);
+  const [errors, setErrors] = React.useState(defaultValues);
+  const [focused, setFocused] = React.useState({});
+
+  const validate = (value: string) => {
+    return !value || value.length <= 2 ? "This field is required" : "";
+  };
+
+  const handleChange = ev => {
+    const { name, value } = ev.target;
+    const error = validate(value);
+
+    setValues(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors(prev => ({
+      ...prev,
+      [name]: focused[name] && error,
+    }));
+
+    setFocused(prev => ({
+      ...prev,
+      [name]: true,
+    }));
+
+    setMessages(prev => ({
+      ...prev,
+      [name]: helpMessages[name],
+    }));
+  };
+
+  const handleSubmit = ev => {
+    ev.preventDefault();
+
+    const formValidation = Object.entries(values).reduce(
+      (acc, [key, value]) => {
+        // $FlowFixMe: mixed
+        const newError = validate(value);
+        const newFocused = { [key]: true };
+
+        return {
+          errors: {
+            ...acc.errors,
+            [key]: newError,
+          },
+          focused: {
+            ...acc.focused,
+            ...newFocused,
+          },
+        };
+      },
+      {
+        errors: { ...errors },
+        focused: { ...focused },
+      },
+    );
+
+    setErrors(formValidation.errors);
+    setFocused(formValidation.focused);
+  };
+
+  const handleBlur = evt => {
+    const { name, value } = evt.target;
+    const error = validate(value);
+
+    setErrors(prev => ({
+      ...prev,
+      [name]: focused[name] && error,
+    }));
+  };
+
+  return (
+    <>
+      <form
+        onSubmit={handleSubmit}
+        css={css`
+          max-width: 600px;
+          padding: 20px 0;
+        `}
+      >
+        <Stack flex direction="column" spaceAfter="large">
+          <InputField
+            name="name"
+            value={values.name}
+            help={messages.name}
+            error={errors.name}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            label="Account holder name"
+            placeholder="e.g. Harry James"
+          />
+          <InputField
+            name="iban"
+            value={values.iban}
+            error={errors.iban}
+            help={messages.iban}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="IBAN/account number"
+          />
+          <InputField
+            name="swift"
+            value={values.swift}
+            error={errors.swift}
+            help={messages.swift}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="SWIFT/BIC code"
+          />
+          <InputField
+            name="bank"
+            value={values.bank}
+            error={errors.bank}
+            help={messages.bank}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="Correspondent bank SWIFT/BIC code"
+            placeholder="This field is optional"
+          />
         </Stack>
         <Button type="primary" submit>
           Continue

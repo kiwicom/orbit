@@ -35,6 +35,7 @@ Table below contains all types of the props available in InputGroup component.
 | onBlurGroup  | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)                                                         |
 | size         | [`enum`](#enum)             | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)                                                                                          |
 | spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| helpClosable | `boolean`                   | `true`       | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 
 ### enum
 

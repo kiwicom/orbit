@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.7.0...@kiwicom/orbit-components@2.8.0) (2022-01-20)
+
+
+### Bug Fixes
+
+* **components:** fixes after design reviews ([#3226](https://github.com/kiwicom/orbit/issues/3226)) ([281bea7](https://github.com/kiwicom/orbit/commit/281bea7b3a093316964385eb6f549ec6283f720f))
+* **ErrorFormTooltip:** close icon on top ([65b3a0f](https://github.com/kiwicom/orbit/commit/65b3a0fbee8a3731bef5eae7e827b74284c66d71))
+* **FormLabel:** change color from secondary to info ([a1c3e7d](https://github.com/kiwicom/orbit/commit/a1c3e7d56c7021f94e52361d457013e6cbf69b17))
+* **InputField:** inlineLabel color from secondary to info ([0b1b03a](https://github.com/kiwicom/orbit/commit/0b1b03ae54cb4bf08a246acdbbf73c68d666ea64))
+* **Toast:** align implementation with type declarations ([5d6fdb9](https://github.com/kiwicom/orbit/commit/5d6fdb950de779863e43c7977f08c4b608b5f933))
+* **Toast:** fix infinite loop in unit tests ([4fdbe0e](https://github.com/kiwicom/orbit/commit/4fdbe0e214ff6f3a19335dad0b469b3464033729)), closes [/github.com/timolins/react-hot-toast/issues/107#issuecomment-1017213020](https://github.com//github.com/timolins/react-hot-toast/issues/107/issues/issuecomment-1017213020)
+
+
+### Features
+
+* **ErrorForms:** add helpClosable prop ([f5a73cc](https://github.com/kiwicom/orbit/commit/f5a73cccfd0d5dc0a507e93cb21062edf3aff451))
+* **Tag:** add new colors and props ([#3232](https://github.com/kiwicom/orbit/issues/3232)) ([a896127](https://github.com/kiwicom/orbit/commit/a8961277967360a60045b0fdf8dd1534afb8e799))
+
+
+
+
+
 # [2.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.1...@kiwicom/orbit-components@2.7.0) (2022-01-14)
 
 

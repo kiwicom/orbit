@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.4...@kiwicom/orbit-design-tokens@1.0.5) (2022-01-20)
+
+
+### Bug Fixes
+
+* **components:** fixes after design reviews ([#3226](https://github.com/kiwicom/orbit/issues/3226)) ([281bea7](https://github.com/kiwicom/orbit/commit/281bea7b3a093316964385eb6f549ec6283f720f))
+
+
+
+
+
 ## [1.0.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.3...@kiwicom/orbit-design-tokens@1.0.4) (2021-11-09)
 
 

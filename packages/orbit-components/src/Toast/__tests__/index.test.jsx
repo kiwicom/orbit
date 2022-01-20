@@ -9,20 +9,23 @@ import Toast from "../ToastMessage";
 import Button from "../../Button";
 import { EXPIRE_DISMISS_DELAY, SWIPE_DISMISS_DELAY } from "../consts";
 
-beforeEach(() => {
-  // reset mocks before each test
-  jest.useFakeTimers();
-});
-
-afterEach(() => {
-  jest.runOnlyPendingTimers();
-});
-
-afterAll(() => {
-  jest.useRealTimers();
-});
-
 describe("Toast", () => {
+  beforeEach(() => {
+    // reset mocks before each test
+    jest.useFakeTimers();
+  });
+
+  afterEach(done => {
+    act(() => {
+      jest.runAllTimers();
+      done();
+    });
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   it("should have expected DOM output", async () => {
     const onMouseEnter = jest.fn();
     const onMouseLeave = jest.fn();

@@ -7,11 +7,15 @@ import { ToastRoot, createToast } from "..";
 import { Airplane } from "../../icons";
 import Toast from "../ToastMessage";
 import Button from "../../Button";
-import { SWIPE_DISMISS_DELAY } from "../hooks/useSwipe";
+import { EXPIRE_DISMISS_DELAY, SWIPE_DISMISS_DELAY } from "../consts";
 
 beforeEach(() => {
   // reset mocks before each test
   jest.useFakeTimers();
+});
+
+afterEach(() => {
+  jest.runOnlyPendingTimers();
 });
 
 afterAll(() => {
@@ -26,7 +30,9 @@ describe("Toast", () => {
 
     render(
       <Toast
+        id="1"
         icon={<Airplane dataTest="airplane" />}
+        onUpdateHeight={() => {}}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ariaLive="polite"
@@ -68,7 +74,13 @@ describe("Toast", () => {
           topOffset={30}
           bottomOffset={40}
         />
-        <Button onClick={() => createToast("kek", { icon: <Airplane /> })}>Add toast</Button>
+        <Button
+          onClick={() => {
+            createToast("kek", { icon: <Airplane /> });
+          }}
+        >
+          Add toast
+        </Button>
       </>,
     );
 
@@ -83,5 +95,14 @@ describe("Toast", () => {
     });
 
     expect(screen.getByRole("status")).toBeInTheDocument();
+  });
+
+  it("should be removed from DOM on dismiss", () => {
+    const dismissTimeout = 300;
+    render(<ToastRoot dismissTimeout={dismissTimeout} />);
+    act(() => createToast("kek", { icon: <Airplane /> }));
+    // TODO: find out why it needs an additional millisecond
+    act(() => jest.advanceTimersByTime(dismissTimeout + EXPIRE_DISMISS_DELAY + 1));
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });
 });

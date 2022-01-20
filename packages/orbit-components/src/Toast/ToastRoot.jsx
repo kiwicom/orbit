@@ -3,7 +3,6 @@ import * as React from "react";
 import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";
 
-import { createRectRef } from "./helpers";
 import ToastMessage from "./ToastMessage";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
@@ -42,6 +41,8 @@ const ToastRoot = ({
   });
 
   const { startPause, endPause, calculateOffset, updateHeight } = handlers;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleUpdateHeight = React.useCallback(updateHeight, []);
 
   return (
     <StyledWrapper
@@ -58,24 +59,19 @@ const ToastRoot = ({
           gutter,
         });
 
-        const ref = toast.height
-          ? undefined
-          : createRectRef(({ height }) => {
-              updateHeight(id, height);
-            });
-
         return (
           <ToastMessage
             key={id}
-            ref={ref}
+            id={id}
             dismissTimeout={dismissTimeout}
             visible={visible}
             icon={icon}
             offset={offset}
+            onUpdateHeight={handleUpdateHeight}
             onMouseEnter={startPause}
             onMouseLeave={endPause}
             placement={placement}
-            onDismiss={() => notify.dismiss(id)}
+            onDismiss={notify.dismiss}
             ariaLive={ariaProps["aria-live"]}
           >
             {message}

@@ -1,7 +1,7 @@
 // @flow
 import { useCallback, useEffect, useState } from "react";
 
-export const SWIPE_DISMISS_DELAY = 300;
+import { SWIPE_DISMISS_DELAY } from "../consts";
 
 export default function useSwipeToDismiss(
   ref: {| current: HTMLElement | null |},

@@ -6,7 +6,7 @@ import mq from "../utils/mediaQuery";
 import Stack from "../Stack";
 import defaultTheme from "../defaultTheme";
 import Text from "../Text";
-import { fadeIn, fadeOut, lightAnimation, getPositionStyle } from "./helpers";
+import { fadeIn, fadeOut, lightAnimation, getPositionStyle, createRectRef } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import useSwipe from "./hooks/useSwipe";
 import mergeRefs from "../utils/mergeRefs";
@@ -83,65 +83,69 @@ StyledInnerWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const ToastMessage: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
-  (
-    {
-      onMouseEnter,
-      onMouseLeave,
-      visible,
-      onDismiss,
-      dismissTimeout,
-      placement,
-      icon,
-      children,
-      offset,
-      ariaLive,
-    },
-    ref,
-  ): React.Node => {
-    const theme = useTheme();
-    const innerRef = React.useRef(null);
-    const [isPaused, setPaused] = React.useState(false);
-    const { swipeOffset, swipeOpacity } = useSwipe(
-      innerRef,
-      onDismiss,
-      50,
-      placement.match(/right|center/) ? "right" : "left",
-    );
+const ToastMessage = ({
+  id,
+  onUpdateHeight,
+  onMouseEnter,
+  onMouseLeave,
+  visible,
+  onDismiss,
+  dismissTimeout,
+  placement,
+  icon,
+  children,
+  offset,
+  ariaLive,
+}: Props): React.Node => {
+  const theme = useTheme();
+  const measurerRef = React.useMemo(
+    () => createRectRef(({ height }) => onUpdateHeight(id, height)),
+    // it's safer to include children as well because if they change then we need to remeasure
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [onUpdateHeight, id, children],
+  );
+  const innerRef = React.useRef(null);
+  const mergedRef = React.useMemo(() => mergeRefs([measurerRef, innerRef]), [measurerRef]);
+  const [isPaused, setPaused] = React.useState(false);
+  const { swipeOffset, swipeOpacity } = useSwipe(
+    innerRef,
+    onDismiss,
+    50,
+    placement.match(/right|center/) ? "right" : "left",
+  );
 
-    return (
-      <StyledWrapper
-        ariaLive={ariaLive}
-        opacity={swipeOpacity}
+  return (
+    <StyledWrapper
+      ariaLive={ariaLive}
+      opacity={swipeOpacity}
+      visible={visible}
+      offsetY={offset}
+      offsetX={swipeOffset}
+      placement={placement}
+    >
+      <StyledInnerWrapper
         visible={visible}
-        offsetY={offset}
-        offsetX={swipeOffset}
-        placement={placement}
+        ref={mergedRef}
+        isPaused={isPaused}
+        duration={dismissTimeout}
+        onMouseEnter={() => {
+          onMouseEnter();
+          setPaused(true);
+        }}
+        onMouseLeave={() => {
+          onMouseLeave();
+          setPaused(false);
+        }}
       >
-        <StyledInnerWrapper
-          visible={visible}
-          ref={mergeRefs([ref, innerRef])}
-          isPaused={isPaused}
-          duration={dismissTimeout}
-          onMouseEnter={() => {
-            onMouseEnter();
-            setPaused(true);
-          }}
-          onMouseLeave={() => {
-            onMouseLeave();
-            setPaused(false);
-          }}
-        >
-          <Stack flex shrink spacing="XSmall">
-            {icon &&
-              React.isValidElement(icon) &&
-              React.cloneElement(icon, { size: "small", customColor: theme.orbit.paletteWhite })}
-            <Text type="white">{children}</Text>
-          </Stack>
-        </StyledInnerWrapper>
-      </StyledWrapper>
-    );
-  },
-);
+        <Stack flex shrink spacing="XSmall">
+          {icon &&
+            React.isValidElement(icon) &&
+            React.cloneElement(icon, { size: "small", customColor: theme.orbit.paletteWhite })}
+          <Text type="white">{children}</Text>
+        </Stack>
+      </StyledInnerWrapper>
+    </StyledWrapper>
+  );
+};
 
 export default ToastMessage;

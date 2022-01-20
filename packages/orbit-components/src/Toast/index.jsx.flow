@@ -15,10 +15,12 @@ export type Placement =
   | "bottom-right";
 
 export type Toast = {|
+  +id: string,
   +icon?: React.Element<any>,
   +visible?: boolean,
   +children: React.Node,
   +dismissTimeout?: number,
+  +onUpdateHeight: (id: string, height: number) => void,
   +onMouseEnter: () => void,
   +onMouseLeave: () => void,
   +onDismiss: () => void,
@@ -49,7 +51,7 @@ export type createToastType = (
   message: React.Node,
   options?: {| icon?: React.Element<any> |},
 ) => void;
-export type createToastPromiseType = (promise: Promise<void>, options?: Options) => void;
+export type createToastPromiseType = (promise: Promise<void>, options?: Options) => Promise<void>;
 
 declare export var ToastRoot: React.ComponentType<Props>;
 declare export var createToast: createToastType;

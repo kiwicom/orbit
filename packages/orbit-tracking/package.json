@@ -40,7 +40,7 @@
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.2",
     "@types/sade": "^1.7.4",
-    "ts-jest": "^26.5.6"
+    "ts-jest": "^27.1.3"
   },
   "dependencies": {
     "react-scanner-orbit": "^1.3.3",

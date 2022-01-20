@@ -49,7 +49,7 @@ export type createToastType = (
   message: React.Node,
   options?: {| icon?: React.Element<any> |},
 ) => void;
-export type createToastPromiseType = (promise: Promise<void>, options?: Options) => void;
+export type createToastPromiseType = (promise: Promise<void>, options?: Options) => Promise<void>;
 
 declare export var ToastRoot: React.ComponentType<Props>;
 declare export var createToast: createToastType;

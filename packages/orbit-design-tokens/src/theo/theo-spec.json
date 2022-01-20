@@ -2877,7 +2877,7 @@
       }
     },
     "paddingTag": {
-      "value": "6px 8px",
+      "value": "8px",
       "type": "size",
       "category": "Spacing",
       "meta": {

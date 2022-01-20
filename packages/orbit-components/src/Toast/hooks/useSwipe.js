@@ -1,6 +1,8 @@
 // @flow
 import { useCallback, useEffect, useState } from "react";
 
+export const SWIPE_DISMISS_DELAY = 300;
+
 export default function useSwipeToDismiss(
   ref: {| current: HTMLElement | null |},
   onDismiss: () => void,
@@ -16,7 +18,7 @@ export default function useSwipeToDismiss(
   const remove = useCallback(() => {
     setTimeout(() => {
       onDismiss();
-    }, 300);
+    }, SWIPE_DISMISS_DELAY);
   }, [onDismiss]);
 
   const onMouseUp = useCallback(() => {

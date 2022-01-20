@@ -1,12 +1,22 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { ToastRoot, createToast } from "..";
 import { Airplane } from "../../icons";
 import Toast from "../ToastMessage";
 import Button from "../../Button";
+import { SWIPE_DISMISS_DELAY } from "../hooks/useSwipe";
+
+beforeEach(() => {
+  // reset mocks before each test
+  jest.useFakeTimers();
+});
+
+afterAll(() => {
+  jest.useRealTimers();
+});
 
 describe("Toast", () => {
   it("should have expected DOM output", async () => {
@@ -36,18 +46,19 @@ describe("Toast", () => {
     userEvent.unhover(toast);
     expect(onMouseLeave).toHaveBeenCalled();
 
+    // test dismiss on swipe
     fireEvent.mouseDown(toast, { screenX: 10 });
     fireEvent.mouseMove(toast, { screenX: 300 });
     fireEvent.mouseUp(toast);
-
-    await waitFor(() => expect(onDismiss).toHaveBeenCalled(), { timeout: 1000 });
+    act(() => jest.advanceTimersByTime(SWIPE_DISMISS_DELAY));
+    expect(onDismiss).toHaveBeenCalled();
 
     expect(screen.getByTestId("airplane")).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveAttribute("aria-live", "polite");
     expect(screen.getByRole("status")).toHaveStyle({ bottom: 0, justifyContent: "center" });
   });
 
-  it("should have expected DOM output with ToastInit", () => {
+  it(`should have expected DOM output with ToastRoot`, () => {
     render(
       <>
         <ToastRoot

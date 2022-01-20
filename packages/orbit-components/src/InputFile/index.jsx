@@ -117,6 +117,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     required,
     onRemoveFile,
     dataTest,
+    helpClosable = true,
     spaceAfter,
     width = "100%",
     help,
@@ -207,6 +208,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         <ErrorFormTooltip
           help={help}
           error={error}
+          helpClosable={helpClosable}
           inputSize="normal"
           referenceElement={label ? iconRef : labelRef}
           shown={shown}

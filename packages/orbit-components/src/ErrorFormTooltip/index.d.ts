@@ -12,6 +12,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly inlineLabel?: boolean;
   readonly referenceElement: HTMLElement | null;
   readonly inputSize?: "small" | "normal";
+  readonly helpClosable?: boolean;
   readonly onShown?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

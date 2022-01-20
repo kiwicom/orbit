@@ -188,6 +188,7 @@ const InputGroup = ({
   disabled,
   dataTest,
   spaceAfter,
+  helpClosable = true,
   onFocus,
   onBlur,
   onChange,
@@ -302,6 +303,7 @@ const InputGroup = ({
       <ErrorFormTooltip
         help={helpReal}
         error={errorReal}
+        helpClosable={helpClosable}
         inputSize={size}
         onShown={setTooltipShown}
         shown={tooltipShown || tooltipShownHover}

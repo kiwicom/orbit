@@ -15,6 +15,7 @@ export type Props = {|
   +size?: "small" | "normal",
   +help?: React.Node,
   +children: React.Node,
+  +helpClosable?: boolean,
   +error?: React.Node,
   +disabled?: boolean,
   +onBlurGroup?: (

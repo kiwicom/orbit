@@ -7,6 +7,7 @@ export type Props = {|
   +id?: string,
   +children: React.Node,
   +shown?: boolean,
+  +helpClosable: boolean,
   +isHelp?: boolean,
   +referenceElement?: {| current: HTMLElement | null |},
   +inputSize?: "small" | "normal",

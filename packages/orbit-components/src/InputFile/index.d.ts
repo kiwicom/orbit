@@ -19,6 +19,7 @@ export interface Props extends Common.Global, Common.SpaceAfter, Common.Ref {
   readonly error?: React.ReactNode;
   readonly width?: string;
   readonly required?: boolean;
+  readonly helpClosable?: boolean;
   readonly tabIndex?: string | number;
   readonly onChange?: Event;
   readonly onFocus?: Event;

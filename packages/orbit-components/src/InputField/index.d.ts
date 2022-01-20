@@ -38,6 +38,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly autoFocus?: boolean;
   readonly id?: string;
   readonly insideInputGroup?: boolean;
+  readonly helpClosable?: boolean;
   readonly onChange?: InputEvent;
   readonly onFocus?: InputEvent;
   readonly onBlur?: InputEvent;

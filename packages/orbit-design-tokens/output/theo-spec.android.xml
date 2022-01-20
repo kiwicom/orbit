@@ -132,7 +132,7 @@
   <dimen name="BORDERWIDTHINPUTFOCUS" category="Border style">2dp</dimen>
   <color name="COLORTEXTBADGEDARK" category="Colors">#ffffffff</color>
   <color name="BORDERCOLORINPUTHOVER" category="Border color">#ff5d738e</color>
-  <dimen name="PADDINGTAG" category="Spacing">6 8dp</dimen>
+  <dimen name="PADDINGTAG" category="Spacing">8dp</dimen>
   <color name="COLORTEXTBADGEWARNING" category="Colors">#ffe98305</color>
   <color name="BACKGROUNDBUTTONWHITE" category="Background colors">#ffffffff</color>
   <dimen name="SPACEXLARGE" category="Spacing">32dp</dimen>

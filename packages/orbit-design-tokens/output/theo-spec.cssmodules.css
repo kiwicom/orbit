@@ -132,7 +132,7 @@
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
 @value border-color-input-hover: rgb(93, 115, 142);
-@value padding-tag: 6px 8px;
+@value padding-tag: 8px;
 @value color-text-badge-warning: rgb(233, 131, 5);
 @value background-button-white: rgb(255, 255, 255);
 @value space-x-large: 32px;

@@ -132,7 +132,7 @@ module.exports = {
   borderWidthInputFocus: "2px",
   colorTextBadgeDark: "rgb(255, 255, 255)",
   borderColorInputHover: "rgb(93, 115, 142)",
-  paddingTag: "6px 8px",
+  paddingTag: "8px",
   colorTextBadgeWarning: "rgb(233, 131, 5)",
   backgroundButtonWhite: "rgb(255, 255, 255)",
   spaceXLarge: "32px",

@@ -209,8 +209,8 @@ const ErrorFormTooltip = ({
 
   const { popper, arrow } = styles;
 
-  useClickOutside(contentRef, () => {
-    if (!isHelp || !helpClosable) onShown(false);
+  useClickOutside(tooltipRef, () => {
+    onShown(false);
   });
 
   React.useEffect(() => {
@@ -230,6 +230,7 @@ const ErrorFormTooltip = ({
         onShown(false);
       }
     };
+
     window.addEventListener("keydown", handleTab);
     return () => {
       window.removeEventListener("keydown", handleTab);

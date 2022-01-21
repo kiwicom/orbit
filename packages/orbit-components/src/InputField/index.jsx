@@ -85,26 +85,28 @@ Field.defaultProps = {
 export const FakeInput: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  height: ${getToken(TOKENS.heightInput)};
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
+  ${({ theme, error, disabled }) => css`
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: ${getToken(TOKENS.heightInput)};
+    box-shadow: inset 0 0 0
+      ${`${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
       }`};
-  background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-  font-size: ${getToken(TOKENS.fontSizeInput)};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    background-color: ${disabled
+      ? theme.orbit.backgroundInputDisabled
+      : theme.orbit.backgroundInput};
+    font-size: ${getToken(TOKENS.fontSizeInput)};
+    transition: all ${theme.orbit.durationFast} ease-in-out;
+    border-radius: 6px;
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -117,26 +119,26 @@ export const InputContainer: any = styled(({ children, className, labelRef }) =>
     {children}
   </div>
 ))`
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  height: ${getToken(TOKENS.heightInput)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${getToken(TOKENS.fontSizeInput)};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
+  ${({ theme, disabled, error }) => css`
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: ${getToken(TOKENS.heightInput)};
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    font-size: ${getToken(TOKENS.fontSizeInput)};
+    cursor: ${disabled ? "not-allowed" : "text"};
 
-  &:hover > ${FakeInput} {
-    ${({ disabled, theme, error }) =>
-      !disabled &&
+    &:hover > ${FakeInput} {
+      ${!disabled &&
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
-  }
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -145,23 +147,24 @@ InputContainer.defaultProps = {
 };
 
 const StyledInlineLabel = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  justify-content: center;
-  padding: ${({ theme, hasTags, hasFeedback }) =>
-    rtlSpacing(
+  ${({ theme, hasTags, hasFeedback }) => css`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+    padding: ${rtlSpacing(
       `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
     )};
 
-  ${FormLabel} {
-    margin-bottom: 0;
-    font-size: ${getToken(TOKENS.fontSizeInput)};
-    line-height: normal;
-    z-index: 3;
-    white-space: nowrap;
-  }
+    ${FormLabel} {
+      margin-bottom: 0;
+      font-size: ${getToken(TOKENS.fontSizeInput)};
+      line-height: normal;
+      z-index: 3;
+      white-space: nowrap;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -174,28 +177,30 @@ export const Prefix: any = styled(({ children, className, iconRef }) => (
     {children}
   </div>
 ))`
-  height: 100%;
-  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  z-index: 3;
+  ${({ theme }) => css`
+    height: 100%;
+    color: ${theme.orbit.colorTextInputPrefix};
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+    z-index: 3;
 
-  & > svg {
-    color: ${({ theme }) => theme.orbit.colorIconInput};
-  }
+    & > svg {
+      color: ${theme.orbit.colorIconInput};
+    }
 
-  & * svg,
-  & > svg {
-    width: ${getToken(TOKENS.iconSize)};
-    height: ${getToken(TOKENS.iconSize)};
-  }
+    & * svg,
+    & > svg {
+      width: ${getToken(TOKENS.iconSize)};
+      height: ${getToken(TOKENS.iconSize)};
+    }
 
-  ${StyledButtonPrimitiveIconContainer} {
-    color: ${({ theme }) => theme.orbit.colorIconSecondary};
-  }
+    ${StyledButtonPrimitiveIconContainer} {
+      color: ${theme.orbit.colorIconSecondary};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -204,23 +209,25 @@ Prefix.defaultProps = {
 };
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
-  height: ${getToken(TOKENS.heightInput)};
-  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  pointer-events: ${({ disabled }) => disabled && "none"};
-  z-index: 3;
+  ${({ theme }) => css`
+    height: ${getToken(TOKENS.heightInput)};
+    color: ${theme.orbit.colorTextInputPrefix};
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    pointer-events: ${({ disabled }) => disabled && "none"};
+    z-index: 3;
 
-  ${StyledButtonPrimitiveIconContainer} {
-    color: ${({ theme }) => theme.orbit.colorIconSecondary};
-  }
+    ${StyledButtonPrimitiveIconContainer} {
+      color: ${theme.orbit.colorIconSecondary};
+    }
 
-  ${StyledServiceLogo} {
-    height: 16px;
-    padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
-  }
+    ${StyledServiceLogo} {
+      height: 16px;
+      padding: ${rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -261,71 +268,71 @@ export const Input: any = styled(
     },
   ),
 )`
-  appearance: none;
-  -webkit-text-fill-color: ${({ disabled, theme }) =>
-    disabled && theme.orbit.colorTextInputDisabled};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  border: none;
-  padding: ${getPadding()};
-  font-size: inherit;
-  font-weight: ${({ inlineLabel, theme }) =>
-    inlineLabel ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-  color: inherit;
-  background-color: transparent;
-  cursor: inherit;
-  flex: 1 1 20%;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  z-index: 2;
+  ${({ theme, disabled, inlineLabel, type }) => css`
+    appearance: none;
+    -webkit-text-fill-color: ${disabled && theme.orbit.colorTextInputDisabled};
+    font-family: ${theme.orbit.fontFamily};
+    border: none;
+    padding: ${getPadding()};
+    font-size: inherit;
+    font-weight: ${inlineLabel ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
+    color: inherit;
+    background-color: transparent;
+    cursor: inherit;
+    flex: 1 1 20%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    z-index: 2;
 
-  // FIREFOX Applies a box-shadow when err is present from HTML validation
-  box-shadow: none;
+    // FIREFOX Applies a box-shadow when err is present from HTML validation
+    box-shadow: none;
 
-  // FIREFOX flexbox bug: the input doesn't shrink properly
-  min-width: 0;
+    // FIREFOX flexbox bug: the input doesn't shrink properly
+    min-width: 0;
 
-  font-variant-numeric: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
-  letter-spacing: ${({ type }) => type === TYPE_OPTIONS.PASSPORTID && "2px"};
+    font-variant-numeric: ${type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
+    letter-spacing: ${type === TYPE_OPTIONS.PASSPORTID && "2px"};
 
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &[data-com-onepassword-filled] {
-    background-color: inherit !important;
-  }
-
-  &:focus {
-    outline: none;
-    & ~ ${FakeInput} {
-      ${formElementFocus}
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
-  }
 
-  &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
-    /* Firefox */
-    opacity: 1;
-  }
+    &[data-com-onepassword-filled] {
+      background-color: inherit !important;
+    }
 
-  /* Internet Explorer 10-11 */
-  &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
-  }
+    &:focus {
+      outline: none;
+      & ~ ${FakeInput} {
+        ${formElementFocus}
+      }
+    }
 
-  /* Microsoft Edge */
-  &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
-  }
+    &::placeholder {
+      color: ${theme.orbit.colorPlaceholderInput};
+      /* Firefox */
+      opacity: 1;
+    }
 
-  &::-ms-clear,
-  &::-ms-reveal {
-    display: none;
-  }
+    /* Internet Explorer 10-11 */
+    &:-ms-input-placeholder {
+      color: ${theme.orbit.colorPlaceholderInput};
+    }
+
+    /* Microsoft Edge */
+    &::-ms-input-placeholder {
+      color: ${theme.orbit.colorPlaceholderInput};
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

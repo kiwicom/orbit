@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import Truncate from "../../../Truncate";
 import { StyledBadge } from "../../../primitives/BadgePrimitive";
 import { left, rtlSpacing } from "../../../utils/rtl";
 import ChevronUp from "../../../icons/ChevronUp";
@@ -196,12 +197,14 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
                             <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
                               {itemIcon}
                             </StyledIcon>
-                            <Stack inline justify="between">
+                            <Truncate>
                               <Text size="small">{name}</Text>
-                              <Text size="small" weight="medium">
+                            </Truncate>
+                            <Truncate>
+                              <Text size="small" weight="medium" align="right">
                                 {value}
                               </Text>
-                            </Stack>
+                            </Truncate>
                           </Stack>
                         );
                       })}

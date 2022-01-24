@@ -15,7 +15,7 @@
 - component: Alert
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Information
@@ -29,7 +29,7 @@
 - component: BadgeList
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Information
@@ -64,7 +64,7 @@
 - component: ButtonLink
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Action
@@ -99,7 +99,7 @@
 - component: Card
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Structure
@@ -113,7 +113,7 @@
 - component: Checkbox
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Input
@@ -127,7 +127,7 @@
 - component: ChoiceTile
   figma: Designing
   react: Planned
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Waiting
   group: Structure
@@ -141,7 +141,7 @@
 - component: CountryFlag
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Visuals
@@ -176,7 +176,7 @@
 - component: Dialog
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Overlay
@@ -197,7 +197,7 @@
 - component: FeatureIcon
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Visuals
@@ -211,7 +211,7 @@
 - component: Heading
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Text
@@ -232,7 +232,7 @@
 - component: Icon
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Visuals
@@ -246,7 +246,7 @@
 - component: Illustration
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Visuals
@@ -260,7 +260,7 @@
 - component: InputField
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Input
@@ -288,7 +288,7 @@
 - component: Itinerary
   figma: Released
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Structure
@@ -309,21 +309,21 @@
 - component: ListChoice
   figma: Released
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Input
 - component: List
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Structure
 - component: Loading
   figma: Released
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Progress indicators
@@ -344,7 +344,7 @@
 - component: NavigationBar
   figma: Released
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Navigation
@@ -400,7 +400,7 @@
 - component: Radio
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Input
@@ -421,21 +421,21 @@
 - component: Select
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Input
 - component: Skeleton
   figma: N/A
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Progress indicators
 - component: Separator
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Structure
@@ -470,7 +470,7 @@
 - component: SocialButton
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Action
@@ -533,21 +533,21 @@
 - component: Tag
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Interaction
 - component: TextLink
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Action
 - component: Text
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Text
@@ -561,21 +561,21 @@
 - component: TileGroup
   figma: Planned
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Structure
 - component: Tile
   figma: Planned
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Structure
 - component: Timeline
   figma: Designing
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Progress indicators

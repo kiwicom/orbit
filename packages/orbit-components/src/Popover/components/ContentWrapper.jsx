@@ -35,7 +35,7 @@ const StyledContentWrapper = styled.div`
 
     ${mq.largeMobile(css`
       max-height: 100%;
-      border-radius: 3px;
+      border-radius: ${theme.orbit.borderRadiusNormal};
       bottom: auto;
       left: auto;
       position: relative;
@@ -66,6 +66,8 @@ const StyledActions = styled.div`
       position: relative;
       bottom: auto;
       left: auto;
+      border-bottom-left-radius: ${theme.orbit.borderRadiusNormal};
+      border-bottom-right-radius: 3px;
       ${StyledButtonPrimitive} {
         width: auto;
         flex-grow: 0;

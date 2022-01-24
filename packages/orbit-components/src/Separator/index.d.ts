@@ -5,7 +5,10 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Props = Common.SpaceAfter;
+interface Props extends Common.SpaceAfter {
+  indent?: "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
+  align?: "left" | "right" | "center";
+}
 
 declare const Separator: React.FunctionComponent<Props>;
 export { Separator, Separator as default };

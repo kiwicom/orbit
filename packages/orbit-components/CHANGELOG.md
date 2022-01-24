@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.8.1...@kiwicom/orbit-components@2.9.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** preserve `:hover` and `:active` styles ([6b67b24](https://github.com/kiwicom/orbit/commit/6b67b24ac1c6406d86f289a12f8e475d0ca2bcaa))
+* **ErrorFormTooltip:** help closable onBlur ([#3246](https://github.com/kiwicom/orbit/issues/3246)) ([9a0c04d](https://github.com/kiwicom/orbit/commit/9a0c04df8a1947448ba58d91c7f9d261516b7031))
+* **Itinerary:** truncate possible long texts ([#3247](https://github.com/kiwicom/orbit/issues/3247)) ([740c798](https://github.com/kiwicom/orbit/commit/740c798773e8761cdc3fdfa858d4f8afae162a12))
+* **Popover:** ensure rounded bottom corners when `actions` are defined ([f8f6e39](https://github.com/kiwicom/orbit/commit/f8f6e3982e1a5d5fb178398b1f9c6366589fedb6))
+
+
+### Features
+
+* **Separator:** add props `indent` and `align` ([e8f5bcb](https://github.com/kiwicom/orbit/commit/e8f5bcb067b05208c44981cc9bc113cf269daec3))
+* **SocialButton:** add chevron icons ([538a28a](https://github.com/kiwicom/orbit/commit/538a28a5806d83812528d0e384341b7c065fda98))
+
+
+
+
+
 ## [2.8.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.8.0...@kiwicom/orbit-components@2.8.1) (2022-01-20)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

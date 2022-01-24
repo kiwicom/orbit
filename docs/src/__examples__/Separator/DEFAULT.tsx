@@ -40,6 +40,18 @@ export default {
           defaultValue: "none",
           options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
         },
+        {
+          name: "indent",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+        },
+        {
+          name: "align",
+          type: "select",
+          defaultValue: "right",
+          options: ["left", "right", "center"],
+        },
       ],
     },
   ],

@@ -6,8 +6,12 @@ import * as React from "react";
 
 import type { spaceAfter } from "../common/getSpacingToken";
 
+export type Indent = "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
+
 export type Props = {|
   ...spaceAfter,
+  indent?: Indent,
+  align?: "left" | "right" | "center",
 |};
 
 declare export default React.ComponentType<Props>;

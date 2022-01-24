@@ -2,7 +2,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
-
+import { useFloating, shift, flip, offset, arrow } from "@floating-ui/react-dom";
+import { left } from "../../utils/rtl";
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -16,22 +17,19 @@ import resolveColor from "./helpers/resolveColor";
 import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
+import resolvePosition from "./helpers/resolvePosition";
 
 import type { Props } from ".";
 
 const StyledArrow = styled.div`
-  ${({ position, top, left, bottom, right: popperRight, transform }) => css`
-    position: ${position};
-    top: ${top};
-    left: ${left};
-    right: ${popperRight};
-    bottom: ${bottom};
-    transform: ${transform};
+  ${({ position, top, left: floatingLeft }) => css`
+    position: absolute;
+    ${resolvePlacement};
     &:before {
       content: "";
       background: ${resolveColor};
-      width: 0.6rem;
-      height: 0.6rem;
+      width: 8px;
+      height: 8px;
       transform: translate(-50%, -50%) rotate(45deg);
       position: absolute;
     }
@@ -39,18 +37,7 @@ const StyledArrow = styled.div`
 `;
 
 const StyledFormFeedbackTooltip = styled.div`
-  ${({
-    theme,
-    isHelp,
-    shown,
-    inputSize,
-    top,
-    left,
-    position,
-    bottom,
-    right: popperRight,
-    transform,
-  }) => css`
+  ${({ theme, isHelp, shown, inputSize, top, position, inlineLabel }) => css`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -63,7 +50,6 @@ const StyledFormFeedbackTooltip = styled.div`
     z-index: 10;
     max-height: none;
     overflow: visible;
-    width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
     width: min(${`calc(100% + ${SIDE_NUDGE * 2}px)`}, 100vw);
     background: ${resolveColor};
     visibility: ${shown ? "visible" : "hidden"};
@@ -72,18 +58,11 @@ const StyledFormFeedbackTooltip = styled.div`
       visibility ${theme.orbit.durationFast} ease-in-out;
 
     position: ${position};
-    top: ${top};
-    left: ${left};
-    bottom: ${bottom};
-    right: ${popperRight};
-    transform: ${transform};
+    top: ${top}px;
+    ${left}: ${resolvePosition};
 
     img {
       max-width: 100%;
-    }
-
-    ${StyledArrow} {
-      ${resolvePlacement};
     }
 
     ${media.largeMobile(css`
@@ -163,62 +142,30 @@ const ErrorFormTooltip = ({
   shown,
   referenceElement,
   inlineLabel,
-  isHelp = false,
+  isHelp,
   id,
 }: Props): React.Node => {
   const contentRef = React.useRef(null);
+  const arrowRef = React.useRef(null);
   const { rtl } = useTheme();
-  const tooltipRef = React.useRef(null);
-  const [arrowRef, setArrowRef] = React.useState(null);
 
-  const resolveOffset = React.useCallback(() => {
-    if (inlineLabel) {
-      if (inputSize === "small") return [rtl ? 10 : -14, 7];
-      return [rtl ? 6 : -6, 6];
-    }
-    return [rtl ? SIDE_NUDGE : -SIDE_NUDGE, 7];
-  }, [inlineLabel, inputSize, rtl]);
+  const { x, y, reference, floating, strategy, middlewareData, refs } = useFloating({
+    placement: "top-start",
+    middleware: [shift(), flip(), offset(3)],
+  });
 
-  const { styles, attributes: attrs, update } = usePopper(
-    referenceElement?.current,
-    tooltipRef.current,
-    {
-      placement: rtl ? "top-end" : "top-start",
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: resolveOffset,
-          },
-        },
-        {
-          name: "arrow",
-          options: {
-            element: arrowRef,
-          },
-        },
-        {
-          name: "eventListeners",
-          options: {
-            scroll: false,
-          },
-        },
-      ],
-    },
-  );
+  const isTOP = y > 0;
 
-  const { popper, arrow } = styles;
+  React.useEffect(() => {
+    if (referenceElement) reference(referenceElement.current);
+  }, [referenceElement]);
 
-  useClickOutside(tooltipRef, () => {
+  useClickOutside(refs.floating, () => {
     onShown(false);
   });
 
   React.useEffect(() => {
-    if (update) update();
-  }, [update, resolveOffset, shown]);
-
-  React.useEffect(() => {
-    const link = tooltipRef.current?.querySelector("a");
+    const link = refs.floating.current?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
       if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
@@ -240,31 +187,18 @@ const ErrorFormTooltip = ({
   return (
     <StyledFormFeedbackTooltip
       id={id}
-      ref={tooltipRef}
+      ref={floating}
       inputSize={inputSize}
       shown={shown}
       isHelp={isHelp}
       data-test={dataTest}
-      aria-live="polite"
       inlineLabel={inlineLabel}
-      placement={attrs.popper && attrs.popper["data-popper-placement"]}
-      position={popper.position}
-      top={popper.top}
-      left={popper.left}
-      right={popper.right}
-      bottom={popper.bottom}
-      transform={popper.transform}
+      aria-live="polite"
+      position={strategy}
+      top={y}
+      left={x}
     >
-      <StyledArrow
-        isHelp={isHelp}
-        ref={setArrowRef}
-        position={popper.position}
-        placement={attrs.popper && attrs.popper["data-popper-placement"]}
-        top={arrow.top}
-        left={arrow.left}
-        right={arrow.right}
-        bottom={arrow.bottom}
-      />
+      <StyledArrow isHelp={isHelp} isTop={isTOP} inlineLabel={inlineLabel} inputSize={inputSize} />
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
       {isHelp && helpClosable && (
         <StyledCloseButton

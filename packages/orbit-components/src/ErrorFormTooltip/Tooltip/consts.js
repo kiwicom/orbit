@@ -1,3 +1,3 @@
 // @flow
 
-export const SIDE_NUDGE = 10;
+export const SIDE_NUDGE = 12;

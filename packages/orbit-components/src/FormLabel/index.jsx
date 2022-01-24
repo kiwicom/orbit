@@ -72,7 +72,7 @@ const FormLabel: any = styled(
   ),
 )`
   ${({ theme, filled, disabled }) => css`
-    display: flex;
+    display: inline-flex;
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeFormLabel};
     font-weight: ${theme.orbit.fontWeightMedium};

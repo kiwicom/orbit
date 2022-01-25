@@ -39,27 +39,16 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
     ({ name: componentName }) => componentName === name,
   )[0];
 
+  const sourceLinks = sources.map(({ url }) => url);
+
   React.useEffect(() => {
     if (!isLoggedIn()) {
       navigate(`/dashboard/login/`);
     } else {
       setRender(true);
-      setAllSources(sources);
+      setAllSources(sourceLinks);
     }
-  }, [sources, setAllSources, setRender]);
-
-  // support only primitives for now
-  const FILTERED_NAMES = [
-    "null",
-    "(Identifier)",
-    "(ObjectExpression)",
-    "(CallExpression)",
-    "(ConditionalExpression)",
-    "(MemberExpression)",
-    "(ArrowFunctionExpression)",
-    "(LogicalExpression)",
-    "(JSXElement)",
-  ];
+  }, [sources, setAllSources, setRender, sourceLinks]);
 
   const measureRef = React.useCallback(n => {
     if (n) {
@@ -105,13 +94,11 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
                 <TableCell>{propName}</TableCell>
                 <TableCell>{used}</TableCell>
                 <TableCell>
-                  {values
-                    .filter(value => !FILTERED_NAMES.includes(value.name))
-                    .map(({ name: valueName, used: valueInstances }) => (
-                      <Text size="small" key={valueName}>
-                        {valueName}: <b>{valueInstances}</b>
-                      </Text>
-                    ))}
+                  {values.map(({ name: valueName, used: valueInstances }) => (
+                    <Text size="small" key={valueName}>
+                      {valueName}: <b>{valueInstances}</b>
+                    </Text>
+                  ))}
                 </TableCell>
               </TableRow>
             ))}
@@ -124,7 +111,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
               placeholder="filter sources"
               onChange={ev => {
                 if (ev.currentTarget.value.length === 0) {
-                  setAllSources(sources);
+                  setAllSources(sourceLinks);
                 } else {
                   setAllSources(allSources.filter(el => el.includes(ev.currentTarget.value)));
                 }
@@ -166,8 +153,13 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
 
 export const query = graphql`
   query TrackingComponentQuery($repoName: String!) {
-    allTracking(filter: { name: { eq: $repoName } }) {
+    allTracking(
+      sort: { fields: createdAt, order: DESC }
+      limit: 8
+      filter: { name: { eq: $repoName } }
+    ) {
       nodes {
+        createdAt
         name
         trackedData {
           icon
@@ -183,7 +175,13 @@ export const query = graphql`
               used
             }
           }
-          sources
+          sources {
+            url
+            props {
+              name
+              value
+            }
+          }
         }
       }
     }

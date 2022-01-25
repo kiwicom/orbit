@@ -9,10 +9,12 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
 
     const result = await graphql(`
       query TrackingDataQuery {
-        allTracking {
+        allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
           nodes {
             name
+            createdAt
             trackedData {
+              icon
               name
             }
           }
@@ -37,9 +39,19 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
       };
     });
 
+    pages.push({
+      slug: "/dashboard/tracking/allrepositories",
+      title: "All Repositories",
+      hasReactTab: false,
+    });
+
     await cache.set(`/`, { title: "Orbit.kiwi", slug: "/" });
     await cache.set(`/dashboard/`, { title: "Dashboard", slug: "/dashboard/" });
     await cache.set(`/dashboard/tracking/`, { title: `Tracking`, slug: `/dashboard/tracking/` });
+    await cache.set(`/dashboard/tracking/allrepositories`, {
+      title: `All Repositories`,
+      slug: `/dashboard/tracking/allrepositories`,
+    });
 
     createPage({
       path: "dashboard/tracking",
@@ -51,6 +63,45 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
         title: "Tracking",
         trail: await getDocumentTrail(cache, `/dashboard/tracking/`),
       },
+    });
+
+    createPage({
+      path: "dashboard/tracking/allrepositories",
+      matchPath: "dashboard/tracking/allrepositories",
+      component: path.resolve(__dirname, "../../../src/templates/Tracking/AllRepositories.tsx"),
+      context: {
+        slug: `dashboard/tracking/allrepositories`,
+        title: "All Repositories",
+        trail: await getDocumentTrail(cache, `/dashboard/tracking/allrepositories`),
+      },
+    });
+
+    const allUsedComponents = result.data.allTracking.nodes.reduce((acc, cur) => {
+      cur.trackedData.forEach(({ name, icon }) => {
+        if (!icon) {
+          if (!acc.includes(name)) {
+            acc.push(name);
+          }
+        }
+      });
+
+      return acc;
+    }, []);
+
+    allUsedComponents.forEach(async component => {
+      createPage({
+        path: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+        matchPath: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+        component: path.resolve(
+          __dirname,
+          "../../../src/templates/Tracking/AllRepositoriesComponent.tsx",
+        ),
+        context: {
+          slug: `dashboard/tracking/allrepositories/${component.toLowerCase()}`,
+          title: component,
+          trail: await getDocumentTrail(cache, `/dashboard/tracking/allrepositories`),
+        },
+      });
     });
 
     await Promise.all(

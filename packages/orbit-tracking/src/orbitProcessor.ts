@@ -10,9 +10,14 @@ import {
   OutputComponentInfo,
 } from "./interfaces";
 
+interface Source {
+  url: string;
+  props: Array<{ name: string | null; value: string | number | null }>;
+}
+
 export interface OutputInstance {
   instances: number;
-  sources: string[];
+  sources: Source[];
   category: string;
   icon: boolean;
   props: Prop;
@@ -37,13 +42,18 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
 
       result[name] = {
         instances: instances.length,
-        sources: instances.map(instance =>
-          path.join(
+        sources: instances.map(instance => ({
+          url: path.join(
             REPO_URL.replace(/\.git$/, ""),
             "-/blob/master",
             `${path.relative(OUTPUT_DIR, instance.location.file)}#L${instance.location.start.line}`,
           ),
-        ),
+          // value cannot be empty, because gatsby will not generate the field
+          props: Object.entries(instance.props).map(([k, v]) => ({
+            name: k,
+            value: v === null ? "null" : v,
+          })),
+        })),
         // @ts-expect-error TODO
         props: {},
         category: getCategory(name),
@@ -124,6 +134,7 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
       });
     }
 
+    // @ts-expect-error TODO
     outputData.push({ name, ...value, props: properties });
   }
 

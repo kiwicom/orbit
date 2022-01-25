@@ -48,7 +48,7 @@ const Overview = ({ location, pageContext }: Props) => {
           desktop={{ columns: "repeat(3, 1fr)" }}
           largeDesktop={{ columns: "repeat(2, 1fr)" }}
         >
-          {sortBy(pages, ["idx"]).map(
+          {sortBy(pages, ["title"]).map(
             ({ title: pageTitle, slug: pageSlug, description, hasReactTab }) => {
               return (
                 <Tile

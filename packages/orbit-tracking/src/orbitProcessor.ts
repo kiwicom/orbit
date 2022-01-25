@@ -43,11 +43,15 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
       result[name] = {
         instances: instances.length,
         sources: instances.map(instance => ({
-          url: path.join(
-            REPO_URL.replace(/\.git$/, ""),
-            "-/blob/master",
-            `${path.relative(OUTPUT_DIR, instance.location.file)}#L${instance.location.start.line}`,
-          ),
+          url: path
+            .join(
+              REPO_URL.replace(/\.git$/, ""),
+              "-/blob/master",
+              `${path.relative(OUTPUT_DIR, instance.location.file)}#L${
+                instance.location.start.line
+              }`,
+            )
+            .replace("https:/", "https://"),
           // value cannot be empty, because gatsby will not generate the field
           props: Object.entries(instance.props).map(([k, v]) => ({
             name: k,

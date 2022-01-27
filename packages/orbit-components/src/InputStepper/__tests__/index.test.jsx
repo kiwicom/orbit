@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputStepper from "..";
@@ -44,11 +44,13 @@ describe("InputStepper", () => {
     render(<InputStepper label="Label" help="help message" />);
     userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
+    await act(async () => {});
   });
   it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
     userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
+    await act(async () => {});
   });
   it("should not be able to change value by typing", () => {
     const onChange = jest.fn();

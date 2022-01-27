@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputGroup from "..";
@@ -41,6 +41,7 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
+    await act(async () => {});
   });
   it("should render error message", async () => {
     render(
@@ -51,6 +52,7 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
+    await act(async () => {});
   });
 
   it("should pass event handlers to child inputs", () => {

@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Textarea from "..";
@@ -68,5 +68,6 @@ describe("Textarea", () => {
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
+    await act(async () => {});
   });
 });

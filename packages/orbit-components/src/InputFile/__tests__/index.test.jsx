@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputFile from "..";
@@ -83,5 +83,7 @@ describe("InputFile", () => {
 
     userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
+
+    await act(async () => {});
   });
 });

@@ -1,6 +1,7 @@
-export const available = () => "localStorage" in window && window.localStorage;
+export const available = () =>
+  typeof window !== "undefined" && "localStorage" in window && window.localStorage;
 
-type Storage = "bookmarks" | "devMode" | "googleUser";
+type Storage = "bookmarks" | "devMode" | "googleUser" | "viewport";
 
 export const load = (key: Storage): string | null =>
   available() ? window.localStorage.getItem(key) : null;

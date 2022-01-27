@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { useMediaQuery, Text } from "@kiwicom/orbit-components";
 import useResizeObserver from "use-resize-observer";
 
+import { load, save } from "../../../utils/storage";
 import { QUERIES, CELL_HEIGHT } from "../consts";
 
 interface Props {
@@ -62,7 +63,9 @@ const StyledLabel = styled.div`
 `;
 
 const ViewportsRuler = ({ onChangeSize }: Props) => {
-  const [activeViewport, setActiveViewport] = React.useState<string>("smallMobile");
+  const [activeViewport, setActiveViewport] = React.useState<string>(
+    () => load("viewport") || "smallMobile",
+  );
   const [targetViewport, setTargetViewport] = React.useState<string | null>(null);
   const [viewports, setViewports] = React.useState<string[]>(Object.keys(QUERIES));
   const { ref: containerRef, width: containerWidth } = useResizeObserver<HTMLDivElement>();
@@ -79,10 +82,13 @@ const ViewportsRuler = ({ onChangeSize }: Props) => {
     setViewports(prevViewports =>
       prevViewports.length === newViewports.length ? prevViewports : newViewports,
     );
+
     setActiveViewport(prevActive =>
       newViewports.includes(prevActive) ? prevActive : newViewports[newViewports.length - 1],
     );
-  }, [containerWidth]);
+
+    save("viewport", activeViewport);
+  }, [containerWidth, activeViewport]);
 
   React.useEffect(() => {
     onChangeSize(QUERIES[activeViewport]);

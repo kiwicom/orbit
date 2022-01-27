@@ -18,26 +18,27 @@ const resolvePlacement: ResolvePlacement = ({ inputSize, theme, placement, inlin
   if (inputSize === "normal") {
     if (theme.rtl) {
       return css`
-        ${vertical}: 0;
-        ${left}: 8px;
+        ${vertical}: 2px;
+        ${left}: ${inlineLabel ? "4px" : "0px"}
       `;
     }
+
     return css`
-      ${vertical}: 0;
-      ${left}: 18px;
+      ${vertical}: 2px;
+      ${left}: ${inlineLabel ? "12px" : "8px"};
     `;
   }
 
   if (theme.rtl) {
     return css`
-      ${vertical}: 0;
-      ${left}: 8px;
+      ${vertical}: 2px;
+      ${left}: 0px;
     `;
   }
 
   return css`
-    ${vertical}: 0;
-    ${left}: ${inlineLabel ? "22px" : "18px"};
+    ${vertical}: 2px;
+    ${left}: ${inlineLabel ? "8px" : "8px"};
   `;
 };
 

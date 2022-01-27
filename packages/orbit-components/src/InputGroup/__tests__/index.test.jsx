@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputGroup from "..";
@@ -39,9 +39,7 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    const input = screen.getByRole("textbox");
-    // $FlowFixMe
-    userEvent.tab(input);
+    userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", async () => {
@@ -51,9 +49,7 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    const input = screen.getByRole("textbox");
-    // $FlowFixMe
-    userEvent.tab(input);
+    userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
 
@@ -70,7 +66,7 @@ describe("InputGroup", () => {
     userEvent.type(input, "text");
     expect(onChange).toHaveBeenCalled();
     expect(onFocus).toHaveBeenCalled();
-    fireEvent.blur(input);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
   it("should be able to disable children", () => {

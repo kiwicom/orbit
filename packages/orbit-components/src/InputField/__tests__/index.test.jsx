@@ -63,7 +63,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    fireEvent.focus(input);
+    fireEvent.focus(input); // userEvent.tab() doesn't work because of tabIndex="-1"
     await waitFor(() => expect(screen.getByTestId("help")).toBeInTheDocument());
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
@@ -98,9 +98,8 @@ describe("InputField", () => {
     expect(onMouseUp).toHaveBeenCalled();
     expect(onKeyDown).toHaveBeenCalled();
     expect(onKeyUp).toHaveBeenCalled();
-    fireEvent.select(input);
     expect(onSelect).toHaveBeenCalled();
-    fireEvent.blur(input);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 

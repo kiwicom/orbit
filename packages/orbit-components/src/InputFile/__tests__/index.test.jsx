@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputFile from "..";
@@ -39,7 +39,7 @@ describe("InputFile", () => {
     screen.getByText(placeholder);
     screen.getByText(label);
 
-    const input: any = screen.getByTestId(dataTest);
+    const input = screen.getByTestId(dataTest);
     expect(input).toHaveAttribute("name", name);
     expect(input).toHaveAttribute("tabindex", "-1");
     expect(input).toHaveAttribute("accept", ".png,.jpg,.pdf");
@@ -70,18 +70,18 @@ describe("InputFile", () => {
 
     render(
       <InputFile
-        dataTest="test"
         onFocus={onFocus}
         onBlur={onBlur}
         error="chuck norris counted to infinity twice"
       />,
     );
 
-    userEvent.tab((screen.getByTestId("test"): any));
+    userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
-    fireEvent.blur((screen.getByTestId("test"): any));
-    expect(onBlur).toHaveBeenCalled();
 
     expect(screen.getByText("chuck norris counted to infinity twice")).toBeInTheDocument();
+
+    userEvent.tab();
+    expect(onBlur).toHaveBeenCalled();
   });
 });

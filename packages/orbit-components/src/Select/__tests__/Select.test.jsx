@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Select from "..";
@@ -50,7 +50,7 @@ describe("Select", () => {
       />,
     );
 
-    const select: any = screen.getByRole("combobox");
+    const select = screen.getByRole("combobox");
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(select).toHaveAttribute("id", id);
@@ -64,9 +64,9 @@ describe("Select", () => {
 
     userEvent.selectOptions(select, screen.getByText("One"));
     expect(onChange).toHaveBeenCalled();
-    userEvent.tab(select);
+    userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
-    fireEvent.blur(select);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 

@@ -48,7 +48,7 @@ const ComponentPage = ({ data, location, pageContext }: PageProps) => {
       setRender(true);
       setAllSources(sourceLinks);
     }
-  }, [sources, setAllSources, setRender, sourceLinks]);
+  }, [setRender]);
 
   const measureRef = React.useCallback(n => {
     if (n) {

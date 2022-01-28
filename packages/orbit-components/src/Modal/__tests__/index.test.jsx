@@ -65,8 +65,7 @@ describe("Modal", () => {
       jest.runOnlyPendingTimers();
     });
     expect(screen.getByRole("dialog")).toHaveFocus();
-    // $FlowFixMe
-    userEvent.tab(screen.getByRole("dialog"));
+    userEvent.tab();
     act(() => {
       jest.runOnlyPendingTimers();
     });

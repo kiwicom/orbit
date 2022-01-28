@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputStepper from "..";
@@ -42,15 +42,15 @@ describe("InputStepper", () => {
   });
   it("should render help message", async () => {
     render(<InputStepper label="Label" help="help message" />);
-    const input = screen.getByRole("spinbutton", { name: /Label/ });
-    fireEvent.focus(input);
+    userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
+    await act(async () => {});
   });
   it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
-    const input = screen.getByRole("spinbutton", { name: /Label/ });
-    fireEvent.focus(input);
+    userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
+    await act(async () => {});
   });
   it("should not be able to change value by typing", () => {
     const onChange = jest.fn();
@@ -76,10 +76,9 @@ describe("InputStepper", () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
     render(<InputStepper onFocus={onFocus} onBlur={onBlur} />);
-    const input = screen.getByRole("spinbutton");
-    fireEvent.focus(input);
+    userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
-    fireEvent.blur(input);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
   it("should not work if disabled", () => {

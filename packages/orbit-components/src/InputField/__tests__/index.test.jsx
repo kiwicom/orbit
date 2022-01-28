@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputField from "..";
@@ -63,9 +63,10 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    fireEvent.focus(input);
-    await waitFor(() => expect(screen.getByTestId("help")).toBeInTheDocument());
+    fireEvent.focus(input); // userEvent.tab() doesn't work because of tabIndex="-1"
+    expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
+    await act(async () => {});
   });
 
   it("should trigger given event handlers", () => {
@@ -98,9 +99,8 @@ describe("InputField", () => {
     expect(onMouseUp).toHaveBeenCalled();
     expect(onKeyDown).toHaveBeenCalled();
     expect(onKeyUp).toHaveBeenCalled();
-    fireEvent.select(input);
     expect(onSelect).toHaveBeenCalled();
-    fireEvent.blur(input);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -142,8 +142,9 @@ describe("InputField", () => {
       expect(input).toHaveAttribute("data-state", "error");
 
       userEvent.tab();
-      await waitFor(() => expect(screen.queryByTestId("help")).not.toBeInTheDocument());
-      await waitFor(() => expect(screen.getByTestId("error")).toBeInTheDocument());
+      expect(screen.queryByTestId("help")).not.toBeInTheDocument();
+      expect(screen.getByTestId("error")).toBeInTheDocument();
+      await act(async () => {});
     });
   });
 
@@ -159,15 +160,16 @@ describe("InputField", () => {
 
       expect(screen.queryByText("First")).not.toBeInTheDocument();
       userEvent.tab();
-      await waitFor(() => expect(screen.getByText("First")).toBeVisible());
+      expect(screen.getByText("First")).toBeVisible();
       userEvent.tab();
       expect(screen.queryByText("First")).not.toBeInTheDocument();
-      await waitFor(() => expect(screen.getByText("Second")).toBeVisible());
+      expect(screen.getByText("Second")).toBeVisible();
       userEvent.tab();
-      await waitFor(() => expect(screen.getByText("Second")).toHaveFocus());
+      expect(screen.getByText("Second")).toHaveFocus();
       userEvent.tab();
       expect(screen.queryByText("Second")).not.toBeInTheDocument();
-      await waitFor(() => expect(screen.getByText("Third")).toBeVisible());
+      expect(screen.getByText("Third")).toBeVisible();
+      await act(async () => {});
     });
   });
 });

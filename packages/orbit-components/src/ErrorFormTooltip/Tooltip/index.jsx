@@ -20,22 +20,16 @@ import useTheme from "../../hooks/useTheme";
 import type { Props } from ".";
 
 const StyledArrow = styled.div`
-  ${({ position, top, left, bottom, right: popperRight, transform }) => css`
-    position: ${position};
-    top: ${top};
-    left: ${left};
-    right: ${popperRight};
-    bottom: ${bottom};
-    transform: ${transform};
-    &:before {
-      content: "";
-      background: ${resolveColor};
-      width: 0.6rem;
-      height: 0.6rem;
-      transform: translate(-50%, -50%) rotate(45deg);
-      position: absolute;
-    }
-  `}
+  position: absolute;
+  ${resolvePlacement};
+  &:before {
+    content: "";
+    background: ${resolveColor};
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+  }
 `;
 
 const StyledFormFeedbackTooltip = styled.div`
@@ -80,10 +74,6 @@ const StyledFormFeedbackTooltip = styled.div`
 
     img {
       max-width: 100%;
-    }
-
-    ${StyledArrow} {
-      ${resolvePlacement};
     }
 
     ${media.largeMobile(css`
@@ -173,11 +163,10 @@ const ErrorFormTooltip = ({
 
   const resolveOffset = React.useCallback(() => {
     if (inlineLabel) {
-      if (inputSize === "small") return [rtl ? 10 : -14, 7];
-      return [rtl ? 6 : -6, 6];
+      if (inputSize === "small") return [0, 4];
     }
-    return [rtl ? SIDE_NUDGE : -SIDE_NUDGE, 7];
-  }, [inlineLabel, inputSize, rtl]);
+    return [0, 3];
+  }, [inlineLabel, inputSize]);
 
   const { styles, attributes: attrs, update } = usePopper(
     referenceElement?.current,
@@ -207,7 +196,7 @@ const ErrorFormTooltip = ({
     },
   );
 
-  const { popper, arrow } = styles;
+  const { popper } = styles;
 
   useClickOutside(tooltipRef, () => {
     onShown(false);
@@ -258,12 +247,9 @@ const ErrorFormTooltip = ({
       <StyledArrow
         isHelp={isHelp}
         ref={setArrowRef}
-        position={popper.position}
+        inputSize={inputSize}
+        inlineLabel={inlineLabel}
         placement={attrs.popper && attrs.popper["data-popper-placement"]}
-        top={arrow.top}
-        left={arrow.left}
-        right={arrow.right}
-        bottom={arrow.bottom}
       />
       <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
       {isHelp && helpClosable && (

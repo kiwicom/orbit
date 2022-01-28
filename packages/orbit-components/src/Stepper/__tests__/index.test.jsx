@@ -49,10 +49,9 @@ describe("Stepper", () => {
     userEvent.click(screen.getByLabelText(DecrementLabel));
     expect(onDecrement).toHaveBeenCalled();
 
-    // $FlowFixMe
-    userEvent.tab(input);
+    userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
-    fireEvent.blur(input);
+    userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 

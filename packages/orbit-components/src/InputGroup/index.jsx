@@ -34,44 +34,44 @@ const getToken = name => ({ theme, size }) => {
 
 const getFakeGroupMarginTop = ({ label, theme }) => {
   if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
+  return theme.orbit.spaceXXSmall;
 };
 
 const FakeGroup = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  width: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  box-sizing: border-box;
-  height: ${getToken(TOKENS.height)};
-  box-shadow: ${({ theme }) =>
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
-  box-shadow: ${({ theme, error }) =>
-    error &&
+  ${({ theme, labelOffset, error, disabled }) => css`
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: ${labelOffset}px;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    height: ${getToken(TOKENS.height)};
+    box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
+    box-shadow: ${error &&
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
-  ${({ active }) => active && formElementFocus}; // Active state
-  background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-  font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  margin-top: ${getFakeGroupMarginTop};
+    ${({ active }) => active && formElementFocus}; // Active state
+    background-color: ${disabled
+      ? theme.orbit.backgroundInputDisabled
+      : theme.orbit.backgroundInput};
+    font-size: ${theme.orbit.fontSizeInputNormal};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    margin-top: ${getFakeGroupMarginTop};
 
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    border-radius: 6px;
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
+    &:hover {
+      box-shadow: inset 0 0 0
+        ${`${theme.orbit.borderWidthInput} ${
           error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
         }`};
-  }
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -196,6 +196,7 @@ const InputGroup = ({
 }: Props): React.Node => {
   const [active, setActive] = React.useState(false);
   const [filled, setFilled] = React.useState(false);
+  const [labelOffset, setLabelOffset] = React.useState(null);
   const inputID = useRandomId();
   const [tooltipShown, setTooltipShown] = React.useState(false);
   const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
@@ -214,9 +215,12 @@ const InputGroup = ({
     [children],
   );
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
+    if (label && labelRef.current) {
+      setLabelOffset(labelRef.current.offsetHeight);
+    }
     isFilled();
-  }, [isFilled]);
+  }, [isFilled, label]);
 
   const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
     setActive(true);
@@ -265,12 +269,12 @@ const InputGroup = ({
       spaceAfter={spaceAfter}
       role="group"
       ariaLabelledby={label && inputID}
-      labelRef={labelRef}
     >
       {label && (
         <FormLabel
           filled={filled}
           id={inputID}
+          labelRef={labelRef}
           error={!!errorReal}
           help={!!helpReal}
           iconRef={iconRef}
@@ -299,7 +303,13 @@ const InputGroup = ({
           );
         })}
       </StyledChildren>
-      <FakeGroup label={label} error={errorReal} active={active} size={size} />
+      <FakeGroup
+        labelOffset={labelOffset}
+        label={label}
+        error={errorReal}
+        active={active}
+        size={size}
+      />
       <ErrorFormTooltip
         help={helpReal}
         error={errorReal}

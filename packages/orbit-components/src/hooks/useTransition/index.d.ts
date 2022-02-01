@@ -6,6 +6,6 @@ export declare function useTransition(options: {
 }): {
   ref: React.MutableRefObject<HTMLElement | null>;
   mounted: boolean;
-  enter: boolean;
+  state: "enter" | "leave";
   done: boolean;
 };

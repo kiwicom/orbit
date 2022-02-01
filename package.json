@@ -81,7 +81,7 @@
     "husky": "^6.0.0",
     "jest": "^27.4.7",
     "lerna": "4.0.0",
-    "lint-staged": "^11.0.0",
+    "lint-staged": "^12.3.2",
     "markdown-chalk": "^2.1.0",
     "markdown-magic": "^2.5.2",
     "merge-stream": "^2.0.0",

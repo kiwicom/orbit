@@ -1,0 +1,13 @@
+// @flow
+
+declare function useTransition(options: {|
+  +show: boolean,
+  +appear?: boolean,
+|}): {|
+  ref: {| current: HTMLElement | null |},
+  mounted: boolean,
+  enter: boolean,
+  done: boolean,
+|};
+
+export default useTransition;

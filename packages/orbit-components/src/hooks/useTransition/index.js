@@ -6,7 +6,7 @@ import typeof UseTransitionType from ".";
 const useTransition: UseTransitionType = ({ show, appear = false }) => {
   // if appear is true, we want to start from unmounted state, so that we can transition in
   const [mounted, setMounted] = React.useState(!appear && show);
-  const [enter, setEnter] = React.useState(!appear && show);
+  const [state, setState] = React.useState(!appear && show ? "enter" : "leave");
   const [done, setDone] = React.useState(!appear || !show);
   const ref = React.useRef(null);
   const firstRender = React.useRef(true);
@@ -39,7 +39,7 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
       if (show) {
         setMounted(true);
       } else {
-        setEnter(false);
+        setState("leave");
         setDone(false);
         listener = () => {
           setMounted(false);
@@ -62,7 +62,7 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
         // to make transition work immediately after mount
         // eslint-disable-next-line babel/no-unused-expressions
         ref.current?.scrollTop;
-        setEnter(true);
+        setState("enter");
         setDone(false);
         listener = () => {
           setDone(true);
@@ -79,7 +79,7 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
     firstRender.current = false;
   }, []);
 
-  return { ref, mounted, enter, done };
+  return { ref, mounted, state, done };
 };
 
 export default useTransition;

@@ -36,7 +36,7 @@ npm install @kiwicom/orbit-components
 yarn add @kiwicom/orbit-components
 ```
 
-Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
+Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/)
 
 ## Usage
 

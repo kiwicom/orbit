@@ -18,7 +18,7 @@ function App(props: {| show: boolean, appear: boolean |}) {
           ref={transition.ref}
           css={`
             transition: opacity 0.5s ease-in-out;
-            opacity: ${transition.enter ? 1 : 0};
+            opacity: ${transition.state === "enter" ? 1 : 0};
           `}
         >
           Test

@@ -6,7 +6,7 @@ declare function useTransition(options: {|
 |}): {|
   ref: {| current: HTMLElement | null |},
   mounted: boolean,
-  enter: boolean,
+  state: "enter" | "leave",
   done: boolean,
 |};
 

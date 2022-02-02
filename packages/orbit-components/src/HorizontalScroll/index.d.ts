@@ -39,6 +39,8 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly scrollSnap?: ScrollSnap;
   readonly scrollPadding?: number;
+  readonly overflowElevation?: boolean;
+  readonly elevationColor?: string;
 }
 
 declare const HorizontalScroll: React.FunctionComponent<Props>;

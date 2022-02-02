@@ -2,26 +2,57 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import useTheme from "../hooks/useTheme";
+import defaultTheme from "../defaultTheme";
 import useScrollBox from "./useScroll";
 import Stack from "../Stack";
 
 import type { Props, ScrollSnap } from ".";
 
+const shadowMixin = css`
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+`;
+
 const StyledWrapper = styled.div`
-  ${({ isDragging, minHeight }) => css`
+  ${({ isDragging, $minHeight, direction, elevationColor, overflowElevation }) => css`
     position: relative;
     width: 100%;
-    min-height: ${minHeight}px;
+    min-height: ${$minHeight && `${$minHeight}px`};
     cursor: ${isDragging ? "grabbing" : "grab"};
     overflow: hidden;
+    ${overflowElevation &&
+    (direction < 0
+      ? css`
+          &:before {
+            ${shadowMixin};
+            left: 0;
+            box-shadow: 5px 0px 20px 20px ${elevationColor};
+          }
+        `
+      : css`
+          &:after {
+            ${shadowMixin};
+            right: 0;
+            box-shadow: -5px 0px 20px 20px ${elevationColor};
+          }
+        `)}
   `}
 `;
 
-const getSnap = ({ scrollSnap }: {| scrollSnap: ScrollSnap |}) => {
-  if (scrollSnap === "mandatory") return "x mandatory";
-  if (scrollSnap === "proximity") return "x proximity";
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
-  return scrollSnap;
+const getSnap = ({ $scrollSnap }: {| $scrollSnap: ScrollSnap |}) => {
+  if ($scrollSnap === "mandatory") return "x mandatory";
+  if ($scrollSnap === "proximity") return "x proximity";
+
+  return $scrollSnap;
 };
 
 const StyledOverflow = styled.div`
@@ -45,6 +76,7 @@ const StyledOverflow = styled.div`
 const StyledContainer = styled.div`
   ${({ isDragging }) => css`
     height: 100%;
+    width: 100%;
     display: inline-flex;
     pointer-events: ${isDragging && "none"};
   `}
@@ -54,19 +86,30 @@ const HorizontalScroll = ({
   children,
   spacing = "small",
   scrollSnap = "none",
+  elevationColor = "paletteCloudDark",
+  overflowElevation,
   scrollPadding,
   dataTest,
   minHeight,
   ...props
 }: Props): React.Node => {
   const scrollWrapper = React.useRef(null);
-  const { isDragging } = useScrollBox(scrollWrapper);
+  const { isDragging, direction } = useScrollBox(scrollWrapper);
+  const theme = useTheme();
 
   return (
-    <StyledWrapper {...props} isDragging={isDragging} minHeight={minHeight} data-test={dataTest}>
+    <StyledWrapper
+      {...props}
+      isDragging={isDragging}
+      $minHeight={minHeight}
+      overflowElevation={overflowElevation}
+      data-test={dataTest}
+      elevationColor={theme.orbit[elevationColor]}
+      direction={direction}
+    >
       <StyledOverflow
         ref={scrollWrapper}
-        scrollSnap={scrollSnap}
+        $scrollSnap={scrollSnap}
         scrollPadding={scrollPadding}
         isDragging={isDragging}
       >

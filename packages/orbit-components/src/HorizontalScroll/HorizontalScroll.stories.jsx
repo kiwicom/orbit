@@ -21,7 +21,7 @@ export const Default = (): React.Node => {
           display="flex"
           justify="center"
           minWidth="150px"
-          background="cloudDark"
+          background="cloudLight"
           height="full"
         >
           <Text size="large" weight="bold" as="div">

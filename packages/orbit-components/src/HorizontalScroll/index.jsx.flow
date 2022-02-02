@@ -13,6 +13,8 @@ export type Props = {|
   +children: React.Node,
   +scrollSnap?: ScrollSnap,
   +scrollPadding?: number,
+  +overflowElevation?: boolean,
+  +elevationColor?: string,
 |};
 
 declare export default React.ComponentType<Props>;

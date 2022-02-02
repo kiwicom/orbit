@@ -123,6 +123,7 @@ const StyledIcon = styled.div`
       width: 100%;
       height: 100%;
       left: 0;
+      z-index: -1;
       background: ${theme.orbit.paletteWhite};
       ${isFirst &&
       css`
@@ -132,7 +133,6 @@ const StyledIcon = styled.div`
       css`
         border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
       `}
-      z-index: -1;
     }
   `}
 `;
@@ -170,7 +170,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
-          <StyledSummary opened={opened}>
+          <StyledSummary opened={opened} onClick={ev => ev.stopPropagation()}>
             <HorizontalScroll
               overflowElevation={hovered}
               elevationColor="paletteCloudLight"

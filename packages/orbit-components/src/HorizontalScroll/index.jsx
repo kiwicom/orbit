@@ -60,7 +60,7 @@ const StyledOverflow = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: ${isDragging ? "none" : getSnap};
     scroll-padding: ${scrollPadding && `${scrollPadding}px`};
     box-sizing: border-box;
@@ -82,45 +82,51 @@ const StyledContainer = styled.div`
   `}
 `;
 
-const HorizontalScroll = ({
-  children,
-  spacing = "small",
-  scrollSnap = "none",
-  elevationColor = "paletteCloudDark",
-  overflowElevation,
-  scrollPadding,
-  dataTest,
-  minHeight,
-  ...props
-}: Props): React.Node => {
-  const scrollWrapper = React.useRef(null);
-  const { isDragging, direction } = useScrollBox(scrollWrapper);
-  const theme = useTheme();
+const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
+  (
+    {
+      children,
+      spacing = "small",
+      scrollSnap = "none",
+      elevationColor = "paletteCloudDark",
+      overflowElevation,
+      scrollPadding,
+      dataTest,
+      minHeight,
+      ...props
+    },
+    ref,
+  ): React.Node => {
+    const scrollWrapper = React.useRef(null);
+    const { isDragging, direction } = useScrollBox(scrollWrapper);
+    const theme = useTheme();
 
-  return (
-    <StyledWrapper
-      {...props}
-      isDragging={isDragging}
-      $minHeight={minHeight}
-      overflowElevation={overflowElevation}
-      data-test={dataTest}
-      elevationColor={theme.orbit[elevationColor]}
-      direction={direction}
-    >
-      <StyledOverflow
-        ref={scrollWrapper}
-        $scrollSnap={scrollSnap}
-        scrollPadding={scrollPadding}
+    return (
+      <StyledWrapper
+        {...props}
+        ref={ref}
         isDragging={isDragging}
+        $minHeight={minHeight}
+        overflowElevation={overflowElevation}
+        data-test={dataTest}
+        elevationColor={theme.orbit[elevationColor]}
+        direction={direction}
       >
-        <StyledContainer isDragging={isDragging}>
-          <Stack inline spacing={spacing}>
-            {children}
-          </Stack>
-        </StyledContainer>
-      </StyledOverflow>
-    </StyledWrapper>
-  );
-};
+        <StyledOverflow
+          ref={scrollWrapper}
+          $scrollSnap={scrollSnap}
+          scrollPadding={scrollPadding}
+          isDragging={isDragging}
+        >
+          <StyledContainer isDragging={isDragging}>
+            <Stack inline spacing={spacing}>
+              {children}
+            </Stack>
+          </StyledContainer>
+        </StyledOverflow>
+      </StyledWrapper>
+    );
+  },
+);
 
 export default HorizontalScroll;

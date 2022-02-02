@@ -17,4 +17,4 @@ export type Props = {|
   +elevationColor?: string,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

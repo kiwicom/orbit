@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.9.0...@kiwicom/orbit-components@2.10.0) (2022-02-02)
+
+
+### Bug Fixes
+
+* **InputGroup:** fix issue with long labels ([#3256](https://github.com/kiwicom/orbit/issues/3256)) ([9690e1e](https://github.com/kiwicom/orbit/commit/9690e1ec7b379d90cbc0688c91f12c5209c330d6))
+* **useTransition:** replace `enter` API with `state` ([ab239d4](https://github.com/kiwicom/orbit/commit/ab239d44dd7dbb0e5ede7791f6a6fc97dfddc47d))
+
+
+### Features
+
+* add new experimental hook `useTransition` ([#3191](https://github.com/kiwicom/orbit/issues/3191)) ([3758af5](https://github.com/kiwicom/orbit/commit/3758af591f0b8b63b722e93571276485ec0ea010))
+* **icons:** add new flash icon ([#3260](https://github.com/kiwicom/orbit/issues/3260)) ([574299e](https://github.com/kiwicom/orbit/commit/574299ee5a59d18f6635e29727d496b44c17131c))
+
+
+
+
+
 # [2.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.8.1...@kiwicom/orbit-components@2.9.0) (2022-01-24)
 
 

@@ -18,28 +18,29 @@ const shadowMixin = css`
 `;
 
 const StyledWrapper = styled.div`
-  ${({ isDragging, $minHeight, direction, elevationColor, overflowElevation }) => css`
+  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart }) => css`
     position: relative;
     width: 100%;
     min-height: ${$minHeight && `${$minHeight}px`};
     cursor: ${isDragging ? "grabbing" : "grab"};
     overflow: hidden;
     ${overflowElevation &&
-    (direction < 0
-      ? css`
-          &:before {
-            ${shadowMixin};
-            left: 0;
-            box-shadow: 5px 0px 20px 20px ${elevationColor};
-          }
-        `
-      : css`
-          &:after {
-            ${shadowMixin};
-            right: 0;
-            box-shadow: -5px 0px 20px 20px ${elevationColor};
-          }
-        `)}
+    !isStart &&
+    css`
+      &:before {
+        ${shadowMixin};
+        left: 0;
+        box-shadow: 5px 0px 20px 20px ${elevationColor};
+      }
+    `}
+    ${overflowElevation &&
+    css`
+      &:after {
+        ${shadowMixin};
+        right: 0;
+        box-shadow: -5px 0px 20px 20px ${elevationColor};
+      }
+    `}
   `}
 `;
 
@@ -98,19 +99,19 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
     ref,
   ): React.Node => {
     const scrollWrapper = React.useRef(null);
-    const { isDragging, direction } = useScrollBox(scrollWrapper);
+    const { isDragging, reachedStart } = useScrollBox(scrollWrapper);
     const theme = useTheme();
 
     return (
       <StyledWrapper
         {...props}
         ref={ref}
-        isDragging={isDragging}
         $minHeight={minHeight}
         overflowElevation={overflowElevation}
         data-test={dataTest}
+        isDragging={isDragging}
+        isStart={reachedStart}
         elevationColor={theme.orbit[elevationColor]}
-        direction={direction}
       >
         <StyledOverflow
           ref={scrollWrapper}

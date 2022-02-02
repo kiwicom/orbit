@@ -50,6 +50,8 @@ export default {
           type: "number",
           defaultValue: "",
         },
+        { name: "overflowElevation", type: "boolean", defaultValue: false },
+        { name: "elevationColor", type: "string", defaultValue: "paletteCloudDark" },
         {
           name: "scrollPadding",
           type: "number",

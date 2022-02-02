@@ -118,6 +118,21 @@ export const Placement = (): React.Node => {
   );
 };
 
+export const PlacementRtl = (): React.Node => {
+  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
+  const content = text("content", "Write your text here.");
+  return (
+    <RenderInRtl>
+      <Stack justify="center">
+        <TooltipPrimitive placement={placement} size={size} content={content}>
+          <Icons.Airplane />
+        </TooltipPrimitive>
+      </Stack>
+    </RenderInRtl>
+  );
+};
+
 Placement.story = {
   name: "Placement",
 

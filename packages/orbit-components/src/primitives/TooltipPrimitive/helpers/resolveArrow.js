@@ -3,7 +3,7 @@ import { css } from "styled-components";
 import type { Placement } from "@popperjs/core/lib/enums";
 import type { CSSRules } from "styled-components";
 
-import type { ThemeProps } from "../../../defaultTheme";
+import type { Theme, ThemeProps } from "../../../defaultTheme";
 
 export type ResolveColor = ({| error?: boolean, help?: boolean, ...ThemeProps |}) => string;
 
@@ -20,17 +20,21 @@ export type Props = {|
   ...ThemeProps,
 |};
 
-const BORDER_SIZE = 7;
+const BORDER_SIZE = 6;
 
 export const resolveArrowPlacement = ({
   placement,
+  theme,
 }: {|
   placement: Placement,
+  theme: Theme,
 |}): CSSRules | null => {
+  const horizontalPlacement = theme.rtl ? `${BORDER_SIZE}px` : `-${BORDER_SIZE}px`;
+
   if (placement) {
     if (placement.includes("top")) {
       return css`
-        left: -${BORDER_SIZE}px;
+        left: ${horizontalPlacement};
         bottom: 0;
       `;
     }
@@ -38,19 +42,19 @@ export const resolveArrowPlacement = ({
     if (placement.includes("left")) {
       return css`
         top: -${BORDER_SIZE}px;
-        right: 0;
+        right: ${theme.rtl ? `-${BORDER_SIZE}px` : `1px`};
       `;
     }
 
     if (placement.includes("right")) {
       return css`
         top: -${BORDER_SIZE}px;
-        left: -${BORDER_SIZE}px; ;
+        left: ${theme.rtl ? `0px` : `-${BORDER_SIZE}px`};
       `;
     }
 
     return css`
-      left: -${BORDER_SIZE}px;
+      left: ${horizontalPlacement};
       top: -${BORDER_SIZE}px;
     `;
   }

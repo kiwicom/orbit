@@ -1,0 +1,41 @@
+name: Tracking remove
+
+on:
+  schedule:
+    # Once in a year at 08:00 on 1st of January.
+    - cron: "0 8 1 1 *"
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Setup git identity
+        uses: fregante/setup-git-user@v1
+
+      - name: Remove old data
+        run: yarn tracking:clean
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: master
+          branch: chore/remove-tracking-data
+          token: ${{ secrets.PAT }}
+          commit-message: Remove old tracking data
+          delete-branch: true
+          title: "chore(tracking): remove old tracking data"
+          body: |
+            - Automatically generated PR.
+            - Remove redundant tracking data from previous year
+          labels: |
+            tracking
+            Documentation
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

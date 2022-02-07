@@ -5,8 +5,8 @@ import type { Type } from "..";
 import type { Background, BoxShadow, Foreground } from "../../primitives/ButtonPrimitive";
 
 export type GetButtonStyles = ({|
-  disabled: boolean,
   type: Type,
+  disabled?: boolean,
   ...ThemeProps,
 |}) => {|
   ...Background,

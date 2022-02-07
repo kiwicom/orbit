@@ -4,11 +4,11 @@ import type { Theme } from "../../defaultTheme";
 
 type State = "default" | "focus" | "active" | "hover";
 
-export type GetButtonBoxShadow = (
+export type GetButtonBoxShadow = ({|
   state: State,
-  disabled: boolean,
+  disabled?: boolean,
   theme: Theme,
   type: Type,
-) => ?string;
+|}) => ?string;
 
 declare export default GetButtonBoxShadow;

@@ -6,8 +6,8 @@ import getButtonBoxShadow from "./getButtonBoxShadow";
 import type { GetButtonStyles } from "./getButtonStyles";
 
 const getButtonStyles: GetButtonStyles = ({ disabled, theme, type }) => {
-  const wrappedBoxShadow = state => getButtonBoxShadow(state, disabled, theme, type);
-  const wrappedTypeToken = name => getButtonTypeToken(name, type, theme);
+  const wrappedBoxShadow = state => getButtonBoxShadow({ state, disabled, theme, type });
+  const wrappedTypeToken = name => getButtonTypeToken({ name, type, theme });
   const boxShadow = {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
     boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),

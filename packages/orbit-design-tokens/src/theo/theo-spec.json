@@ -1224,6 +1224,78 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
+    "backgroundButtonBundleBasic": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleBasicHover": {
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleBasicActive": {
+      "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMedium": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMediumHover": {
+      "value": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMediumActive": {
+      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTop": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTopHover": {
+      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTopActive": {
+      "value": "linear-gradient(to top right, #101011 0%, #51575C)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
     "backgroundButtonBordered": {
       "value": "transparent",
       "type": "string",
@@ -1419,6 +1491,30 @@
     "backgroundBadgeWhite": {
       "value": "#FFFFFF",
       "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleBasic": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleMedium": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleTop": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
       "category": "Background colors",
       "meta": {
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."

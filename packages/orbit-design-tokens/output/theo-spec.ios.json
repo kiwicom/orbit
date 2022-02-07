@@ -482,6 +482,12 @@
       "name": "colorTextButtonWarningBordered"
     },
     {
+      "value": "linear-gradient(to top right, #2D1393 0, #7343AA 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMediumHover"
+    },
+    {
       "value": "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
       "type": "size",
       "category": "Box shadow",
@@ -792,6 +798,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputHover"
+    },
+    {
+      "value": "linear-gradient(to top right, #171718 0, #51575C 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTopHover"
     },
     {
       "value": "8px",
@@ -1137,6 +1149,12 @@
       "name": "colorTextInputPrefix"
     },
     {
+      "value": "linear-gradient(to top right, #3719AB 0, #8539DB 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleMedium"
+    },
+    {
       "value": "rgb(233, 131, 5)",
       "type": "color",
       "category": "Colors",
@@ -1153,6 +1171,12 @@
       "type": "size",
       "category": "Font size",
       "name": "fontSizeHeadingTitle2"
+    },
+    {
+      "value": "linear-gradient(to top right, #E13E3B 0, #E87E09 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasic"
     },
     {
       "value": "700",
@@ -1492,6 +1516,12 @@
       "name": "colorTextAlertWarning"
     },
     {
+      "value": "linear-gradient(to top right, #BD2825 0, #D67000 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasicHover"
+    },
+    {
       "value": "underline",
       "type": "string",
       "category": "Text decoration",
@@ -1690,6 +1720,12 @@
       "name": "colorTextPrimary"
     },
     {
+      "value": "linear-gradient(to top right, #9F1816 0, #C36802 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasicActive"
+    },
+    {
       "value": "rgb(245, 247, 249)",
       "type": "color",
       "category": "Background colors",
@@ -1838,6 +1874,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextSuccess"
+    },
+    {
+      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTop"
     },
     {
       "value": "rgb(186, 199, 213)",
@@ -2128,6 +2170,12 @@
       "name": "borderColorCheckboxRadioFocus"
     },
     {
+      "value": "linear-gradient(to top right, #3719AB 0, #8539DB 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMedium"
+    },
+    {
       "value": "14px",
       "type": "size",
       "category": "Font size",
@@ -2180,6 +2228,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertSuccess"
+    },
+    {
+      "value": "linear-gradient(to top right, #E13E3B 0, #E87E09 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleBasic"
     },
     {
       "value": "0 16px 0 28px",
@@ -2300,6 +2354,12 @@
       "type": "size",
       "category": "Font size",
       "name": "fontSizeButtonLarge"
+    },
+    {
+      "value": "linear-gradient(to top right, #101011 0, #51575C)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTopActive"
     },
     {
       "value": "rgb(245, 247, 249)",
@@ -2675,6 +2735,12 @@
       "name": "paddingTable"
     },
     {
+      "value": "linear-gradient(to top right, #250F79 0, #5A3485 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMediumActive"
+    },
+    {
       "value": "rgb(185, 25, 25)",
       "type": "color",
       "category": "Background colors",
@@ -2739,6 +2805,12 @@
       "type": "string",
       "category": "Text decoration",
       "name": "textDecorationTextLinkPrimary"
+    },
+    {
+      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleTop"
     },
     {
       "value": "none",

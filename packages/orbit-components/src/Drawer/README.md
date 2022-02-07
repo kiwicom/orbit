@@ -29,6 +29,7 @@ Table below contains all types of the props available in the Drawer component.
 | title         | `Translation`           |           | Title of the Drawer that will be rendered in the Drawer's header.                                                                     |
 | width         | `string`                | `"320px"` | The width of the Drawer.                                                                                                              |
 | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
+| fixedHeader   | `boolean`               |           | If `true` the DrawerHeader will be fixed to the top.                                                                                  |
 
 ### enum
 

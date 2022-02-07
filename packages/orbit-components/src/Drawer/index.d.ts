@@ -13,6 +13,7 @@ export interface Props extends Common.Global {
   readonly lockScrolling?: boolean;
   readonly noPadding?: boolean;
   readonly onClose?: Common.Callback;
+  readonly fixedHeader?: boolean;
   readonly position?: Position;
   readonly shown: boolean;
   readonly suppressed?: boolean;

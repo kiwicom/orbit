@@ -29,11 +29,14 @@ export const SideNavigation = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <Drawer
       dataTest={dataTest}
       width={width}
       shown={shown}
+      fixedHeader={fixedHeader}
       onClose={action("onClose")}
       actions={
         <Stack direction="row" justify="between" spacing="XSmall">
@@ -87,11 +90,14 @@ export const SmartFaq = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
   const width = text("width", "480px");
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <Drawer
       shown={shown}
       width={width}
       position={position}
+      fixedHeader={fixedHeader}
       dataTest={dataTest}
       onClose={action("onClose")}
     >
@@ -126,12 +132,15 @@ export const Suppressed = (): React.Node => {
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
   const width = text("width", "480px");
   const suppressed = boolean("suppressed", true);
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <Drawer
       shown={shown}
       width={width}
       position={position}
       dataTest={dataTest}
+      fixedHeader={fixedHeader}
       onClose={action("onClose")}
       suppressed={suppressed}
     >
@@ -176,12 +185,15 @@ export const WithTitle = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const title = text("Title", "Title");
   const width = text("width", "320px");
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <Drawer
       title={title}
       dataTest={dataTest}
       width={width}
       shown={shown}
+      fixedHeader={fixedHeader}
       onClose={action("onClose")}
     >
       <Collapse label="Discover" initialExpanded>
@@ -229,6 +241,8 @@ export const SmartFaqSearch = (): React.Node => {
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
   const width = text("width", "480px");
   const suppressed = boolean("suppressed", true);
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <Drawer
       shown={shown}
@@ -237,6 +251,7 @@ export const SmartFaqSearch = (): React.Node => {
       dataTest={dataTest}
       onClose={action("onClose")}
       suppressed={suppressed}
+      fixedHeader={fixedHeader}
       title="Help"
       actions={
         <Button type="secondary" size="small">
@@ -287,12 +302,15 @@ export const SideNavigationInRtl = (): React.Node => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <RenderInRtl>
       <Drawer
         dataTest={dataTest}
         width={width}
         shown={shown}
+        fixedHeader={fixedHeader}
         onClose={action("onClose")}
         actions={
           <Stack direction="row" justify="between" spacing="XSmall">
@@ -349,6 +367,8 @@ export const SmartFaqInRtl = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
   const width = text("width", "480px");
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <RenderInRtl>
       <Drawer
@@ -356,6 +376,7 @@ export const SmartFaqInRtl = (): React.Node => {
         width={width}
         position={position}
         dataTest={dataTest}
+        fixedHeader={fixedHeader}
         onClose={action("onClose")}
       >
         <Stack>
@@ -390,6 +411,8 @@ export const SmartFaqSearchInRtl = (): React.Node => {
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
   const width = text("width", "480px");
   const suppressed = boolean("suppressed", true);
+  const fixedHeader = boolean("fixedHeader", false);
+
   return (
     <RenderInRtl>
       <Drawer
@@ -399,6 +422,7 @@ export const SmartFaqSearchInRtl = (): React.Node => {
         dataTest={dataTest}
         onClose={action("onClose")}
         suppressed={suppressed}
+        fixedHeader={fixedHeader}
         title="Help"
         actions={
           <Button type="secondary" size="small">

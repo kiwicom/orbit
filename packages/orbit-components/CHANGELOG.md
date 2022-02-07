@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.10.0...@kiwicom/orbit-components@2.11.0) (2022-02-07)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentDetail:** fix overflowing badges ([5a4bea7](https://github.com/kiwicom/orbit/commit/5a4bea77bda557d666fd42bbd54640300fba67f8))
+
+
+### Features
+
+* **Badge:** add new bundle type ([1c92c62](https://github.com/kiwicom/orbit/commit/1c92c6276bd4871f794724e5e2eb1011dc085feb))
+* **Button:** add new bundle type ([ad7c435](https://github.com/kiwicom/orbit/commit/ad7c435ecfdf17e0cac3db3985b06e4bb07da56b))
+* **HorizontalScroll:** add elevationOverflow and elevationColor props ([8c7ce02](https://github.com/kiwicom/orbit/commit/8c7ce02a7ec5436cdc069bb3d0f4d3e4c5ea36bf))
+
+
+
+
+
 # [2.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.9.0...@kiwicom/orbit-components@2.10.0) (2022-02-02)
 
 

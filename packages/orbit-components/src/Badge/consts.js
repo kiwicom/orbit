@@ -11,6 +11,9 @@ export const TYPE_OPTIONS = {
   CRITICAL_INVERTED: "criticalInverted",
   SUCCESS_INVERTED: "successInverted",
   WARNING_INVERTED: "warningInverted",
+  BUNDLE_BASIC: "bundleBasic",
+  BUNDLE_MEDIUM: "bundleMedium",
+  BUNDLE_TOP: "bundleTop",
 };
 
 export const TOKENS = {

@@ -50,6 +50,9 @@ Table below contains all types of the props available for object in Carrier arra
 | `"criticalInverted"` |
 | `"successInverted"`  |
 | `"warningInverted"`  |
+| `"bundleBasic"`      |
+| `"bundleMedium"`     |
+| `"bundleTop"`        |
 
 ## Functional specs
 

@@ -5,7 +5,16 @@ import * as React from "react";
 
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle" | "white";
+type Type =
+  | "primary"
+  | "secondary"
+  | "critical"
+  | "primarySubtle"
+  | "criticalSubtle"
+  | "white"
+  | "bundleBasic"
+  | "bundleMedium"
+  | "bundleTop";
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;

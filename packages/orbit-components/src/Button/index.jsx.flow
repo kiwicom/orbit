@@ -12,7 +12,10 @@ export type Type =
   | "critical"
   | "primarySubtle"
   | "criticalSubtle"
-  | "white";
+  | "white"
+  | "bundleBasic"
+  | "bundleMedium"
+  | "bundleTop";
 
 export type Props = {|
   +type?: Type,

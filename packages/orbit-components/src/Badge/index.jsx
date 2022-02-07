@@ -21,6 +21,9 @@ const getTypeToken = ({ name, theme, type }) => {
       [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteRedNormal,
       [TYPE_OPTIONS.SUCCESS_INVERTED]: theme.orbit.paletteGreenNormal,
       [TYPE_OPTIONS.WARNING_INVERTED]: theme.orbit.paletteOrangeNormal,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.backgroundBadgeBundleBasic,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.backgroundBadgeBundleMedium,
+      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.backgroundBadgeBundleTop,
     },
     [TOKENS.color]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteInkNormal,
@@ -34,6 +37,9 @@ const getTypeToken = ({ name, theme, type }) => {
       [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteWhite,
       [TYPE_OPTIONS.SUCCESS_INVERTED]: theme.orbit.paletteWhite,
       [TYPE_OPTIONS.WARNING_INVERTED]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.paletteWhite,
     },
     [TOKENS.border]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteCloudDark,
@@ -47,6 +53,9 @@ const getTypeToken = ({ name, theme, type }) => {
       [TYPE_OPTIONS.CRITICAL_INVERTED]: null,
       [TYPE_OPTIONS.SUCCESS_INVERTED]: null,
       [TYPE_OPTIONS.WARNING_INVERTED]: null,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: null,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: null,
+      [TYPE_OPTIONS.BUNDLE_TOP]: null,
     },
   };
   return tokens[name][type];

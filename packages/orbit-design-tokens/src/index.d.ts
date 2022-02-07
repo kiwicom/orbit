@@ -274,6 +274,15 @@ export type Tokens = {
   backgroundButtonWhiteBordered: string;
   backgroundButtonWhiteBorderedHover: string;
   backgroundButtonWhiteBorderedActive: string;
+  backgroundButtonBundleBasic: string;
+  backgroundButtonBundleBasicHover: string;
+  backgroundButtonBundleBasicActive: string;
+  backgroundButtonBundleMedium: string;
+  backgroundButtonBundleMediumHover: string;
+  backgroundButtonBundleMediumActive: string;
+  backgroundButtonBundleTop: string;
+  backgroundButtonBundleTopHover: string;
+  backgroundButtonBundleTopActive: string;
   backgroundButtonLinkPrimary: string;
   backgroundButtonLinkPrimaryHover: string;
   backgroundButtonLinkPrimaryActive: string;
@@ -293,6 +302,9 @@ export type Tokens = {
   backgroundBadgeCritical: string;
   backgroundBadgeDark: string;
   backgroundBadgeWhite: string;
+  backgroundBadgeBundleBasic: string;
+  backgroundBadgeBundleMedium: string;
+  backgroundBadgeBundleTop: string;
   backgroundServiceLogo: string;
   backgroundIllustration: string;
   backgroundSeparator: string;

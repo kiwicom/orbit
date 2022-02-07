@@ -23,5 +23,17 @@ export default {
       name: "warningInverted",
       code: `() => <Badge type="warningInverted">WarningInverted</Badge>`,
     },
+    {
+      name: "bundleBasic",
+      code: `() => <Badge type="bundleBasic">BundleBasic</Badge>`,
+    },
+    {
+      name: "bundleMedium",
+      code: `() => <Badge type="bundleMedium">BundleMedium</Badge>`,
+    },
+    {
+      name: "bundleTop",
+      code: `() => <Badge type="bundleTop">BundleTop</Badge>`,
+    },
   ],
 };

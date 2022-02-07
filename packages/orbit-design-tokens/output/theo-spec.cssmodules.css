@@ -80,6 +80,7 @@
 @value border-radius-normal: 3px;
 @value border-radius-badge: 12px;
 @value color-text-button-warning-bordered: rgb(233, 131, 5);
+@value background-button-bundle-medium-hover: "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)";
 @value box-shadow-overlay: 0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32);
 @value color-text-tag-selected: rgb(239, 242, 245);
 @value border-color-button-success-bordered: rgb(40, 161, 56);
@@ -132,6 +133,7 @@
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
 @value border-color-input-hover: rgb(93, 115, 142);
+@value background-button-bundle-top-hover: "linear-gradient(to top right, #171718 0%, #51575C 100%)";
 @value padding-tag: 8px;
 @value color-text-badge-warning: rgb(233, 131, 5);
 @value background-button-white: rgb(255, 255, 255);
@@ -190,9 +192,11 @@
 @value color-text-button-google-bordered-active: rgb(11, 12, 15);
 @value color-text-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-input-prefix: rgb(79, 94, 113);
+@value background-badge-bundle-medium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)";
 @value color-text-warning: rgb(233, 131, 5);
 @value height-illustration-medium: 200px;
 @value font-size-heading-title2: 22px;
+@value background-button-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value font-weight-bold: "700";
 @value color-text-button-link-primary-active: rgb(0, 143, 123);
 @value background-tag: rgb(245, 247, 249);
@@ -250,6 +254,7 @@
 @value background-tag-hover: rgb(229, 234, 239);
 @value font-size-heading-display: 40px;
 @value color-text-alert-warning: rgb(174, 87, 0);
+@value background-button-bundle-basic-hover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)";
 @value text-decoration-text-link-secondary: "underline";
 @value padding-button-small-with-icons: 0 8px;
 @value color-text-badge-success: rgb(40, 161, 56);
@@ -283,6 +288,7 @@
 @value palette-ink-normal: rgb(37, 42, 49);
 @value font-weight-links: "500";
 @value color-text-primary: rgb(37, 42, 49);
+@value background-button-bundle-basic-active: "linear-gradient(to top right, #9F1816 0%, #C36802 100%)";
 @value background-badge-neutral: rgb(245, 247, 249);
 @value width-modal-extra-large: 1280px;
 @value padding-tag-removable: 6px 6px 6px 8px;
@@ -308,6 +314,7 @@
 @value border-color-button-google-bordered-active: rgb(11, 12, 15);
 @value line-height-text-large: 22px;
 @value color-text-success: rgb(40, 161, 56);
+@value background-button-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
 @value border-color-input: rgb(186, 199, 213);
 @value palette-orange-light-active: rgb(248, 211, 171);
 @value font-weight-heading-title1: "700";
@@ -356,6 +363,7 @@
 @value color-text-input-disabled: rgb(105, 125, 149);
 @value background-button-facebook-hover: rgb(56, 84, 144);
 @value border-color-checkbox-radio-focus: rgb(1, 114, 203);
+@value background-button-bundle-medium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)";
 @value font-size-message: 14px;
 @value font-weight-heading-title4: "500";
 @value border-color-button-success-bordered-hover: rgb(35, 139, 49);
@@ -365,6 +373,7 @@
 @value palette-product-darker: rgb(0, 92, 78);
 @value border-color-table-head: rgb(186, 199, 213);
 @value color-text-alert-success: rgb(43, 115, 54);
+@value background-badge-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value padding-button-large-with-right-icon: 0 16px 0 28px;
 @value border-color-table: rgb(239, 242, 245);
 @value width-breakpoint-large-desktop: 1200;
@@ -385,6 +394,7 @@
 @value color-text-button-white-bordered-active: rgb(255, 255, 255);
 @value color-icon-checkbox-radio-disabled: rgb(186, 199, 213);
 @value font-size-button-large: 16px;
+@value background-button-bundle-top-active: "linear-gradient(to top right, #101011 0%, #51575C)";
 @value background-button-google: rgb(245, 247, 249);
 @value border-color-input-active: rgb(74, 97, 124);
 @value opacity-button-disabled: "0.3";
@@ -448,6 +458,7 @@
 /* use for big elements like modal and large buttons */
 @value border-radius-large: 6px;
 @value padding-table: 12px 16px;
+@value background-button-bundle-medium-active: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)";
 @value background-button-critical-hover: rgb(185, 25, 25);
 @value width-breakpoint-tablet: 768;
 @value palette-cloud-darker: rgb(186, 199, 213);
@@ -459,6 +470,7 @@
 @value background-illustration: "transparent";
 @value height-input-group-separator-small: 16px;
 @value text-decoration-text-link-primary: "underline";
+@value background-badge-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
 @value text-decoration-text-link-primary-hover: "none";
 @value border-color-button-warning-bordered-hover: rgb(220, 124, 5);
 @value padding-button-large-with-left-icon: 0 28px 0 16px;

@@ -28,5 +28,17 @@ export default {
       name: "CriticalSubtle",
       code: `() => <Button type="criticalSubtle">CriticalSubtle</Button>`,
     },
+    {
+      name: "BundleBasic",
+      code: `() => <Button type="bundleBasic">BundleBasic</Button>`,
+    },
+    {
+      name: "BundleMedium",
+      code: `() => <Button type="bundleMedium">BundleMedium</Button>`,
+    },
+    {
+      name: "BundleTop",
+      code: `() => <Button type="bundleTop">BundleTop</Button>`,
+    },
   ],
 };

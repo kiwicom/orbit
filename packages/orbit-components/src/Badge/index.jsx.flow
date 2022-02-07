@@ -18,7 +18,10 @@ export type Type =
   | "infoInverted"
   | "criticalInverted"
   | "successInverted"
-  | "warningInverted";
+  | "warningInverted"
+  | "bundleBasic"
+  | "bundleMedium"
+  | "bundleTop";
 
 export type Props = {|
   +children?: React.Node,

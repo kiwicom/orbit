@@ -53,6 +53,9 @@ Table below contains all types of the props available in Button component.
 | `"white"`          |            |
 | `"primarySubtle"`  |            |
 | `"criticalSubtle"` |            |
+| `"bundleBasic"`    |            |
+| `"bundleMedium"`   |            |
+| `"bundleTop"`      |            |
 
 ## Functional specs
 

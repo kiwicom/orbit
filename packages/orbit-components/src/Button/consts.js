@@ -6,6 +6,9 @@ export const TYPE_OPTIONS = {
   WHITE: "white",
   PRIMARY_SUBTLE: "primarySubtle",
   CRITICAL_SUBTLE: "criticalSubtle",
+  BUNDLE_BASIC: "bundleBasic",
+  BUNDLE_MEDIUM: "bundleMedium",
+  BUNDLE_TOP: "bundleTop",
 };
 
 export const SIZE_OPTIONS = {

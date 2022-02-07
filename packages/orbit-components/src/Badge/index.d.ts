@@ -17,7 +17,10 @@ export type Type =
   | "infoInverted"
   | "criticalInverted"
   | "successInverted"
-  | "warningInverted";
+  | "warningInverted"
+  | "bundleBasic"
+  | "bundleMedium"
+  | "bundleTop";
 
 export interface Props extends Common.Global {
   readonly children?: React.ReactNode;

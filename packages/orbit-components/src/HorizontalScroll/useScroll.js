@@ -15,6 +15,7 @@ type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
   momentum: number,
   speed: number,
   lastScrollX: number,
+  reachedStart: boolean,
 |};
 
 const useScroll: UseScroll = ref => {
@@ -25,6 +26,7 @@ const useScroll: UseScroll = ref => {
   const [momentum, setMomentum] = useState(0);
   const [lastScrollX, setLastScrollX] = useState(0);
   const [speed, setSpeed] = useState(0);
+  const [reachedStart, setReachedStart] = useState(false);
 
   const scrollWrapperCurrent = ref.current;
 
@@ -74,11 +76,17 @@ const useScroll: UseScroll = ref => {
           }
         }
       };
+
       const handleDragEnd = () => {
         if (isDragging && clickStartX !== undefined) {
           setClickStartX(undefined);
           setScrollStartX(undefined);
           setIsDragging(false);
+          if (ref.current?.scrollLeft === 0) {
+            setReachedStart(true);
+          } else {
+            setReachedStart(false);
+          }
         }
       };
 
@@ -96,7 +104,16 @@ const useScroll: UseScroll = ref => {
     }
   }, [scrollWrapperCurrent, clickStartX, isDragging, scrollStartX, handleLastScrollX, lastScrollX]);
 
-  return { clickStartX, scrollStartX, isDragging, direction, momentum, lastScrollX, speed };
+  return {
+    clickStartX,
+    scrollStartX,
+    isDragging,
+    direction,
+    momentum,
+    lastScrollX,
+    speed,
+    reachedStart,
+  };
 };
 
 export default useScroll;

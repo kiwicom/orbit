@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { select, number } from "@storybook/addon-knobs";
+import { select, number, boolean, text } from "@storybook/addon-knobs";
 
 import Box from "../Box";
 import Text from "../Text";
@@ -21,7 +21,7 @@ export const Default = (): React.Node => {
           display="flex"
           justify="center"
           minWidth="150px"
-          background="cloudDark"
+          background="cloudLight"
           height="full"
         >
           <Text size="large" weight="bold" as="div">
@@ -49,9 +49,16 @@ export const withScrollSnap = (): React.Node => {
     "mandatory",
   );
   const scrollPadding = number("scrollPadding", 0);
+  const overflowElevation = boolean("overflowElevation", false);
+  const elevationColor = text("elevationColor", "paletteCloudDarker");
 
   return (
-    <HorizontalScroll scrollSnap={scrollSnap} scrollPadding={scrollPadding}>
+    <HorizontalScroll
+      scrollSnap={scrollSnap}
+      scrollPadding={scrollPadding}
+      overflowElevation={overflowElevation}
+      elevationColor={elevationColor}
+    >
       {Array(...Array(10)).map((_, key) => (
         <div
           style={{

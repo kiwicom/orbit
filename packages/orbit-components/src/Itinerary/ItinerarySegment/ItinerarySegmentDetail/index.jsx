@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import HorizontalScroll from "../../../HorizontalScroll";
 import Truncate from "../../../Truncate";
 import { StyledBadge } from "../../../primitives/BadgePrimitive";
 import { left, rtlSpacing } from "../../../utils/rtl";
@@ -61,6 +62,9 @@ export const StyledSummary: any = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
+    border-radius: ${theme.orbit.borderRadiusBadge};
+    width: 100%;
+    overflow: hidden;
     ${StyledBadge} {
       background: ${opened && theme.orbit.paletteWhite};
     }
@@ -119,6 +123,7 @@ const StyledIcon = styled.div`
       width: 100%;
       height: 100%;
       left: 0;
+      z-index: -1;
       background: ${theme.orbit.paletteWhite};
       ${isFirst &&
       css`
@@ -128,7 +133,6 @@ const StyledIcon = styled.div`
       css`
         border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
       `}
-      z-index: -1;
     }
   `}
 `;
@@ -148,9 +152,14 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
   const randomId = useRandomIdSeed();
+  const [hovered, setHovered] = React.useState(false);
 
   return (
-    <StyledWrapper opened={opened}>
+    <StyledWrapper
+      opened={opened}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -161,9 +170,15 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
-          <Stack justify="center" shrink direction="column" spacing={opened ? "medium" : "none"}>
-            <StyledSummary opened={opened}>{summary}</StyledSummary>
-          </Stack>
+          <StyledSummary opened={opened} onClick={ev => ev.stopPropagation()}>
+            <HorizontalScroll
+              overflowElevation={hovered}
+              elevationColor="paletteCloudLight"
+              scrollSnap="mandatory"
+            >
+              {summary}
+            </HorizontalScroll>
+          </StyledSummary>
           {opened ? <ChevronUp /> : <ChevronDown />}
         </Stack>
       </StyledInnerWrapper>

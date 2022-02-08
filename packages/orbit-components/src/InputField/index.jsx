@@ -410,6 +410,9 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
         spaceAfter={spaceAfter}
         ref={fieldRef}
         htmlFor={label ? inputId : undefined}
+        // enable tooltip on hover, if it's disabled
+        onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
+        onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
       >
         {label && !inlineLabel && (
           <FormLabel

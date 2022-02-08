@@ -164,12 +164,14 @@ export const Playground = (): React.Node => {
   const closable = boolean("Closable", false);
   const Icon = getIcon(getIcons("Airplane"));
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const suppressed = boolean("suppressed", false);
 
   return (
     <Alert
       type={type}
       icon={Icon && <Icon />}
       title={title}
+      suppressed={suppressed}
       closable={closable}
       onClose={action("Close")}
       dataTest={dataTest}
@@ -189,9 +191,7 @@ export const Playground = (): React.Node => {
           <AlertButton type={type} href="#">
             {button}
           </AlertButton>
-          {/*
-           $FlowExpectedError
-           */}
+          {/* $FlowExpectedError */}
           <AlertButton type={`${type}Subtle`} href="#">
             {button}
           </AlertButton>

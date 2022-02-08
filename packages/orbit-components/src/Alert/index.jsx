@@ -28,7 +28,7 @@ type IconProps = {|
   className: string,
 |};
 
-const getTypeToken = name => ({ theme, type }) => {
+const getTypeToken = name => ({ theme, type, suppressed }) => {
   const tokens = {
     [TOKENS.colorIconAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
@@ -37,10 +37,18 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
     },
     [TOKENS.backgroundAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundAlertCritical,
+      [TYPE_OPTIONS.INFO]: suppressed
+        ? theme.orbit.paletteCloudLight
+        : theme.orbit.backgroundAlertInfo,
+      [TYPE_OPTIONS.SUCCESS]: suppressed
+        ? theme.orbit.paletteCloudLight
+        : theme.orbit.backgroundAlertSuccess,
+      [TYPE_OPTIONS.WARNING]: suppressed
+        ? theme.orbit.paletteCloudLight
+        : theme.orbit.backgroundAlertWarning,
+      [TYPE_OPTIONS.CRITICAL]: suppressed
+        ? theme.orbit.paletteCloudLight
+        : theme.orbit.backgroundAlertCritical,
     },
     [TOKENS.colorTextAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.colorTextAlertInfo,
@@ -63,10 +71,18 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
     },
     [TOKENS.colorBorderAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLightHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
+      [TYPE_OPTIONS.INFO]: suppressed
+        ? theme.orbit.paletteCloudDark
+        : theme.orbit.paletteBlueLightHover,
+      [TYPE_OPTIONS.SUCCESS]: suppressed
+        ? theme.orbit.paletteCloudDark
+        : theme.orbit.paletteGreenLightHover,
+      [TYPE_OPTIONS.WARNING]: suppressed
+        ? theme.orbit.paletteCloudDark
+        : theme.orbit.paletteOrangeLightHover,
+      [TYPE_OPTIONS.CRITICAL]: suppressed
+        ? theme.orbit.paletteCloudDark
+        : theme.orbit.paletteRedLightHover,
     },
   };
   return tokens[name][type];
@@ -115,7 +131,6 @@ const StyledAlert = styled(StyledDiv)`
     display: flex;
     width: 100%;
     border-radius: ${theme.orbit.borderRadiusLarge};
-
     border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
     background: ${getTypeToken(TOKENS.backgroundAlert)};
     color: ${getTypeToken(TOKENS.colorTextAlert)};
@@ -260,12 +275,14 @@ const Alert = (props: Props): React.Node => {
     children,
     dataTest,
     spaceAfter,
+    suppressed,
     inlineActions = false,
   } = props;
   return (
     <StyledAlert
       type={type}
       icon={icon}
+      suppressed={suppressed}
       closable={closable}
       dataTest={dataTest}
       spaceAfter={spaceAfter}

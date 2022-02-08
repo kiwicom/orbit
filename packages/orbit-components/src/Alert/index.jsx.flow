@@ -16,6 +16,7 @@ export type Props = {|
   +title?: Translation,
   +icon?: React.Element<any> | boolean,
   +closable?: boolean,
+  +suppressed?: boolean,
   +inlineActions?: React.Node,
   +onClose?: () => void | Promise<any>,
   ...Globals,

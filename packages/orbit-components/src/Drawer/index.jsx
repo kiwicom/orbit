@@ -101,26 +101,30 @@ StyledDrawerContent.defaultProps = {
 };
 
 const StyledDrawerHeader = styled.div`
-  display: flex;
-  justify-content: ${({ onlyIcon }) => (onlyIcon ? "flex-end" : "space-between")};
-  align-items: center;
-  background: ${({ suppressed, bordered, theme }) =>
-    suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
-  height: 64px;
-  box-sizing: border-box;
-  ${({ bordered, theme }) =>
-    bordered &&
+  ${({ theme, fixedHeader, suppressed, bordered, noPadding, onlyIcon }) => css`
+    display: flex;
+    ${fixedHeader &&
     css`
-      border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    `};
-  ${({ noPadding, theme }) =>
-    !noPadding &&
+      position: sticky;
+      top: 0;
+      z-index: ${theme.orbit.zIndexSticky};
+    `}
+    justify-content: ${onlyIcon ? "flex-end" : "space-between"};
+    align-items: center;
+    background: ${suppressed && !bordered
+      ? theme.orbit.paletteCloudLight
+      : theme.orbit.paletteWhite};
+    height: 64px;
+    box-sizing: border-box;
+    border-bottom: ${bordered && `1px solid ${theme.orbit.paletteCloudNormal}`};
+    ${!noPadding &&
     css`
       padding: 0 ${theme.orbit.spaceMedium};
       ${mq.largeMobile(css`
         padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
       `)};
     `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -132,6 +136,7 @@ const Drawer = ({
   children,
   onClose,
   lockScrolling = true,
+  fixedHeader,
   shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,
@@ -197,6 +202,7 @@ const Drawer = ({
             onlyIcon={!title && !actions}
             bordered={title || actions}
             suppressed={suppressed}
+            fixedHeader={fixedHeader}
           >
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (

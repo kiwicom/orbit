@@ -59,6 +59,11 @@ export default {
           defaultValue: "320px",
         },
         {
+          name: "fixedHeader",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
           name: "position",
           type: "select",
           options: ["right", "left"],

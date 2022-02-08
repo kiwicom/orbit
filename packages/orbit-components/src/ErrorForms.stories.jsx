@@ -57,6 +57,16 @@ export const Error = (): React.Node => {
       />
       <InputField
         size={size}
+        disabled
+        inlineLabel
+        error={<TextLink tabIndex={0}>{error}</TextLink>}
+        label={label}
+        value={value}
+        placeholder={placeholder}
+        onChange={action("change")}
+      />
+      <InputField
+        size={size}
         error={error}
         label={label}
         value={value}

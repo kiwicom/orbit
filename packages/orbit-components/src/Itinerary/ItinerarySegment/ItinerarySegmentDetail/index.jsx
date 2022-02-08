@@ -59,7 +59,6 @@ StyledInnerWrapper.defaultProps = {
 
 export const StyledSummary: any = styled.div`
   ${({ theme, opened }) => css`
-    cursor: pointer;
     display: flex;
     align-items: center;
     border-radius: ${theme.orbit.borderRadiusBadge};
@@ -152,14 +151,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
   const randomId = useRandomIdSeed();
-  const [hovered, setHovered] = React.useState(false);
 
   return (
-    <StyledWrapper
-      opened={opened}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <StyledWrapper opened={opened}>
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -172,7 +166,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           </StyledDetailsIcon>
           <StyledSummary opened={opened} onClick={ev => ev.stopPropagation()}>
             <HorizontalScroll
-              overflowElevation={hovered}
+              overflowElevation
               elevationColor="paletteCloudLight"
               scrollSnap="mandatory"
             >

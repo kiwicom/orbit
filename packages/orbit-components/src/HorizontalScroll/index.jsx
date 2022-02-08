@@ -2,10 +2,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import useTheme from "../hooks/useTheme";
-import defaultTheme from "../defaultTheme";
-import useScrollBox from "./useScroll";
 import Stack from "../Stack";
+import mergeRefs from "../utils/mergeRefs";
+import defaultTheme from "../defaultTheme";
+import useTheme from "../hooks/useTheme";
+import useScrollBox from "./useScroll";
 
 import type { Props, ScrollSnap } from ".";
 
@@ -18,13 +19,14 @@ const shadowMixin = css`
 `;
 
 const StyledWrapper = styled.div`
-  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart }) => css`
+  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart, isOverflowing }) => css`
     position: relative;
     width: 100%;
     min-height: ${$minHeight && `${$minHeight}px`};
-    cursor: ${isDragging ? "grabbing" : "grab"};
+    cursor: ${isOverflowing && (isDragging ? "grabbing" : "grab")};
     overflow: hidden;
-    ${overflowElevation &&
+    ${isOverflowing &&
+    overflowElevation &&
     !isStart &&
     css`
       &:before {
@@ -33,7 +35,8 @@ const StyledWrapper = styled.div`
         box-shadow: 5px 0px 20px 20px ${elevationColor};
       }
     `}
-    ${overflowElevation &&
+    ${isOverflowing &&
+    overflowElevation &&
     css`
       &:after {
         ${shadowMixin};
@@ -98,26 +101,48 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
     },
     ref,
   ): React.Node => {
-    const scrollWrapper = React.useRef(null);
-    const { isDragging, reachedStart } = useScrollBox(scrollWrapper);
+    const scrollWrapperRef = React.useRef<HTMLElement | null>(null);
+    const containerRef = React.useRef<HTMLElement | null>(null);
+    const { isDragging, reachedStart } = useScrollBox(scrollWrapperRef);
     const theme = useTheme();
+    const [isOverflowing, setOverflowing] = React.useState(false);
+
+    const handleOverflow = React.useCallback(() => {
+      if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
+        const { scrollWidth: containerScrollWidth } = scrollWrapperRef.current;
+        const { offsetWidth } = containerRef.current;
+
+        if (containerScrollWidth > offsetWidth) {
+          setOverflowing(true);
+        } else {
+          setOverflowing(false);
+        }
+      }
+    }, []);
+
+    React.useEffect(() => {
+      handleOverflow();
+      window.addEventListener("resize", handleOverflow);
+      return () => window.addEventListener("resize", handleOverflow);
+    }, [handleOverflow]);
 
     return (
       <StyledWrapper
         {...props}
-        ref={ref}
         $minHeight={minHeight}
         overflowElevation={overflowElevation}
         data-test={dataTest}
         isDragging={isDragging}
         isStart={reachedStart}
+        isOverflowing={isOverflowing}
+        ref={mergeRefs([ref, containerRef])}
         elevationColor={theme.orbit[elevationColor]}
       >
         <StyledOverflow
-          ref={scrollWrapper}
           $scrollSnap={scrollSnap}
           scrollPadding={scrollPadding}
           isDragging={isDragging}
+          ref={scrollWrapperRef}
         >
           <StyledContainer isDragging={isDragging}>
             <Stack inline spacing={spacing}>

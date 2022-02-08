@@ -12,7 +12,7 @@ import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { StyledTextLink, getLinkStyle } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import { rtlSpacing, right } from "../utils/rtl";
+import { rtlSpacing, right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
@@ -50,12 +50,6 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
         ? theme.orbit.paletteCloudLight
         : theme.orbit.backgroundAlertCritical,
     },
-    [TOKENS.colorTextAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextAlertCritical,
-    },
     // TODO: create token
     [TOKENS.colorTextLinkAlertHover]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
@@ -83,6 +77,12 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
       [TYPE_OPTIONS.CRITICAL]: suppressed
         ? theme.orbit.paletteCloudDark
         : theme.orbit.paletteRedLightHover,
+    },
+    [TOKENS.colorAccentBorder]: {
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
     },
   };
   return tokens[name][type];
@@ -133,18 +133,24 @@ const StyledAlert = styled(StyledDiv)`
     border-radius: ${theme.orbit.borderRadiusLarge};
     border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
     background: ${getTypeToken(TOKENS.backgroundAlert)};
-    color: ${getTypeToken(TOKENS.colorTextAlert)};
+    color: ${theme.orbit.paletteInkNormal};
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
     line-height: ${theme.orbit.lineHeightTextNormal};
     box-sizing: border-box;
     margin-bottom: ${getSpacingToken};
+    border-top: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
 
     padding: ${closable
       ? rtlSpacing(
           `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
         )
       : theme.orbit.spaceSmall};
+
+    ${media.largeMobile(css`
+      border-top: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
+      border-${left}: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
+    `)}
 
     ${media.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
@@ -198,7 +204,7 @@ const ContentWrapper = styled(StyledDiv)`
 
 const Title = styled(StyledDiv)`
   ${({ theme, hasChildren, inlineActions }) => css`
-    color: ${getTypeToken(TOKENS.colorIconAlert)};
+    color: ${theme.orbit.paletteInkNormal};
     display: flex;
     align-items: center;
     margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
@@ -214,7 +220,7 @@ Title.defaultProps = {
 };
 
 const Content = styled(StyledDiv)`
-  ${({ inlineActions }) => css`
+  ${({ inlineActions, theme }) => css`
     display: block;
     width: ${!inlineActions && "100%"};
 
@@ -224,7 +230,7 @@ const Content = styled(StyledDiv)`
     }
 
     & ${Item}, ${StyledText}, ${StyledHeading} {
-      color: ${getTypeToken(TOKENS.colorTextAlert)};
+      color: ${theme.orbit.paletteInkNormal};
     }
   `}
 `;
@@ -271,12 +277,12 @@ const Alert = (props: Props): React.Node => {
     title,
     icon,
     closable,
-    onClose = () => {},
+    onClose,
     children,
     dataTest,
     spaceAfter,
     suppressed,
-    inlineActions = false,
+    inlineActions,
   } = props;
   return (
     <StyledAlert
@@ -294,17 +300,13 @@ const Alert = (props: Props): React.Node => {
       )}
       <ContentWrapper title={title} inlineActions={inlineActions}>
         {title && (
-          <Title type={type} hasChildren={children} inlineActions={inlineActions}>
+          <Title hasChildren={children} inlineActions={inlineActions}>
             {title}
           </Title>
         )}
-        {children && !inlineActions && (
-          <Content title={title} type={type}>
-            {children}
-          </Content>
-        )}
+        {children && !inlineActions && <Content title={title}>{children}</Content>}
         {inlineActions && (
-          <Content title={title} type={type} inlineActions={inlineActions}>
+          <Content title={title} inlineActions={inlineActions}>
             {inlineActions}
           </Content>
         )}

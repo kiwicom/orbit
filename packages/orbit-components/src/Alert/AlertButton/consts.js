@@ -8,6 +8,7 @@ export const TYPE_OPTIONS = {
   SUCCESS_SUBTLE: "successSubtle",
   WARNING_SUBTLE: "warningSubtle",
   CRITICAL_SUBTLE: "criticalSubtle",
+  SECONDARY: "secondary",
 };
 
 export const TOKENS = {

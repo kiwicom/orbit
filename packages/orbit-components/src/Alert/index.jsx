@@ -31,10 +31,10 @@ type IconProps = {|
 const getTypeToken = name => ({ theme, type, suppressed }) => {
   const tokens = {
     [TOKENS.colorIconAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
     },
     [TOKENS.backgroundAlert]: {
       [TYPE_OPTIONS.INFO]: suppressed
@@ -136,7 +136,6 @@ const StyledAlert = styled(StyledDiv)`
     color: ${theme.orbit.paletteInkNormal};
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
-    line-height: ${theme.orbit.lineHeightTextNormal};
     box-sizing: border-box;
     margin-bottom: ${getSpacingToken};
     border-top: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
@@ -154,11 +153,6 @@ const StyledAlert = styled(StyledDiv)`
 
     ${media.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
-      padding: ${closable
-        ? rtlSpacing(
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
-          )
-        : theme.orbit.paddingAlert};
     `)}
   `}
 `;
@@ -168,7 +162,7 @@ StyledAlert.defaultProps = {
   theme: defaultTheme,
 };
 
-const IconContainer = styled(StyledDiv)`
+const StyledIconContainer = styled(StyledDiv)`
   ${({ theme, inlineActions }) => css`
     flex-shrink: 0;
     margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
@@ -177,22 +171,22 @@ const IconContainer = styled(StyledDiv)`
     align-items: ${inlineActions && "center"};
 
     ${media.tablet(css`
-      margin: ${rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+      margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 
       ${StyledIcon} {
-        width: ${theme.orbit.widthIconMedium};
-        height: ${theme.orbit.heightIconMedium};
+        width: 20px;
+        height: 20px;
       }
     `)}
   `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-IconContainer.defaultProps = {
+StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ContentWrapper = styled(StyledDiv)`
+const StyledContentWrapper = styled(StyledDiv)`
   ${({ title, inlineActions }) => css`
     flex: 1; // IE wrapping fix
     display: flex;
@@ -202,24 +196,23 @@ const ContentWrapper = styled(StyledDiv)`
   `}
 `;
 
-const Title = styled(StyledDiv)`
+const StyledTitle = styled(StyledDiv)`
   ${({ theme, hasChildren, inlineActions }) => css`
     color: ${theme.orbit.paletteInkNormal};
     display: flex;
     align-items: center;
+    min-height: 20px;
     margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
     font-weight: ${theme.orbit.fontWeightBold};
-    line-height: ${theme.orbit.lineHeightHeading};
-    min-height: ${theme.orbit.heightIconMedium};
   `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-Title.defaultProps = {
+StyledTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const Content = styled(StyledDiv)`
+const StyledContent = styled(StyledDiv)`
   ${({ inlineActions, theme }) => css`
     display: block;
     width: ${!inlineActions && "100%"};
@@ -236,7 +229,7 @@ const Content = styled(StyledDiv)`
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-Content.defaultProps = {
+StyledContent.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -294,23 +287,23 @@ const Alert = (props: Props): React.Node => {
       spaceAfter={spaceAfter}
     >
       {icon && (
-        <IconContainer type={type} inlineActions={inlineActions}>
+        <StyledIconContainer type={type} inlineActions={inlineActions}>
           <StyledIcon type={type} icon={icon} />
-        </IconContainer>
+        </StyledIconContainer>
       )}
-      <ContentWrapper title={title} inlineActions={inlineActions}>
+      <StyledContentWrapper title={title} inlineActions={inlineActions}>
         {title && (
-          <Title hasChildren={children} inlineActions={inlineActions}>
+          <StyledTitle hasChildren={children} inlineActions={inlineActions}>
             {title}
-          </Title>
+          </StyledTitle>
         )}
-        {children && !inlineActions && <Content title={title}>{children}</Content>}
+        {children && !inlineActions && <StyledContent title={title}>{children}</StyledContent>}
         {inlineActions && (
-          <Content title={title} inlineActions={inlineActions}>
+          <StyledContent title={title} inlineActions={inlineActions}>
             {inlineActions}
-          </Content>
+          </StyledContent>
         )}
-      </ContentWrapper>
+      </StyledContentWrapper>
       {closable && (
         <AlertCloseButton
           hasChildren={children}

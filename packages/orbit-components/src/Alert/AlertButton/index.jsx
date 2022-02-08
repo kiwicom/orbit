@@ -24,6 +24,7 @@ const AlertButton: React.AbstractComponent<Props, HTMLButtonElement> = React.for
     ...propsWithTheme,
     iconForeground: getAlertButtonIconForeground({ type, theme }),
   });
+
   return (
     <ButtonPrimitive
       ref={ref}

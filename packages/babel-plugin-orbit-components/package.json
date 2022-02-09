@@ -1,7 +1,7 @@
 {
   "name": "@kiwicom/babel-plugin-orbit-components",
   "description": "A babel plugin for transforming destructured imports to granular ones.",
-  "version": "3.4.7",
+  "version": "3.4.8",
   "author": "kiwicom",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.10",
-    "@kiwicom/orbit-components": "^2.11.0",
+    "@kiwicom/orbit-components": "^2.12.0",
     "prettier": "^2.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

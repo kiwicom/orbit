@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.11.0...@kiwicom/orbit-components@2.12.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **InputField:** enable tooltip on hover when disabled ([#3274](https://github.com/kiwicom/orbit/issues/3274)) ([cb61420](https://github.com/kiwicom/orbit/commit/cb61420c5e826a8bdda86d9c661cf73cfe49d7a6))
+* **Itinerary:** fix overflowing badges ([#3275](https://github.com/kiwicom/orbit/issues/3275)) ([e894fce](https://github.com/kiwicom/orbit/commit/e894fcef7b5dae6ea2015ed15997b6361ecd7a6e))
+
+
+### Features
+
+* **Drawer:** add fixedHeader prop ([#3269](https://github.com/kiwicom/orbit/issues/3269)) ([a6658a4](https://github.com/kiwicom/orbit/commit/a6658a454614adbf0e65affceb6988c2aea66799))
+
+
+
+
+
 # [2.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.10.0...@kiwicom/orbit-components@2.11.0) (2022-02-07)
 
 

@@ -216,6 +216,7 @@ const StyledContent = styled(StyledDiv)`
   ${({ inlineActions, theme }) => css`
     display: block;
     width: ${!inlineActions && "100%"};
+    line-height: ${theme.orbit.lineHeightText};
 
     & a:not([class]),
     & ${StyledTextLink} {
@@ -297,9 +298,13 @@ const Alert = (props: Props): React.Node => {
             {title}
           </StyledTitle>
         )}
-        {children && !inlineActions && <StyledContent title={title}>{children}</StyledContent>}
+        {children && !inlineActions && (
+          <StyledContent title={title} type={type}>
+            {children}
+          </StyledContent>
+        )}
         {inlineActions && (
-          <StyledContent title={title} inlineActions={inlineActions}>
+          <StyledContent title={title} type={type} inlineActions={inlineActions}>
             {inlineActions}
           </StyledContent>
         )}

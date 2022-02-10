@@ -27,6 +27,7 @@ The table below contains all types of the props available in Alert component.
 | spaceAfter    | `enum`                          |          | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | title         | `Translation`                   |          | The title of the Alert.                                                                                                                                        |
 | **type**      | [`enum`](#enum)                 | `"info"` | The type of Alert.                                                                                                                                             |
+| suppressed    | `boolean`                       |          | If `suppressed` is on, Alert will not have colored background                                                                                                  |
 
 ### enum
 

@@ -16,6 +16,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly closable?: boolean;
   readonly inlineActions?: React.ReactNode;
   readonly onClose?: Common.Callback;
+  readonly suppressed?: boolean;
 }
 
 declare const Alert: React.FunctionComponent<Props>;

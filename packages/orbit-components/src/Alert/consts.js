@@ -9,10 +9,10 @@ export const TYPE_OPTIONS = {
 export const TOKENS = {
   backgroundAlert: "backgroundAlert",
   colorIconAlert: "colorIconAlert",
-  colorTextAlert: "colorTextAlert",
   colorTextLinkAlertHover: "colorTextLinkAlertHover",
   colorTextLinkAlertFocus: "colorTextLinkAlertFocus",
   colorBorderAlert: "colorBorderAlert",
+  colorAccentBorder: "colorAccentBorder",
 };
 
 export const CLOSE_BUTTON_DATA_TEST = "AlertCloseButton";

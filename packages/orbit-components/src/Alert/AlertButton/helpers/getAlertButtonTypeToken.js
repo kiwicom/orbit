@@ -15,6 +15,7 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.paletteGreenLightHover,
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeLightHover,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedLightHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.backgroundButtonSecondary,
     },
     [TOKENS.backgroundButtonHover]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.backgroundButtonInfoHover,
@@ -55,6 +56,7 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.paletteGreenDark,
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeDark,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedDark,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.borderColorButtonFocus]: {
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueNormal, 50),

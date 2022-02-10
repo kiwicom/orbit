@@ -5,6 +5,7 @@ import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
+import { TYPE_OPTIONS as BUTTON_TYPE_OPTIONS } from "./AlertButton/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import List from "../List";
@@ -33,6 +34,12 @@ Default.story = {
     info:
       "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
+};
+
+export const Button = (): React.Node => {
+  const type = select("type", Object.values(BUTTON_TYPE_OPTIONS), BUTTON_TYPE_OPTIONS.INFO);
+
+  return <AlertButton type={type}>AlertButton</AlertButton>;
 };
 
 export const InfoAlert = (): React.Node => {
@@ -164,12 +171,14 @@ export const Playground = (): React.Node => {
   const closable = boolean("Closable", false);
   const Icon = getIcon(getIcons("Airplane"));
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const suppressed = boolean("suppressed", false);
 
   return (
     <Alert
       type={type}
       icon={Icon && <Icon />}
       title={title}
+      suppressed={suppressed}
       closable={closable}
       onClose={action("Close")}
       dataTest={dataTest}
@@ -189,10 +198,8 @@ export const Playground = (): React.Node => {
           <AlertButton type={type} href="#">
             {button}
           </AlertButton>
-          {/*
-           $FlowExpectedError
-           */}
-          <AlertButton type={`${type}Subtle`} href="#">
+          {/* $FlowExpectedError */}
+          <AlertButton type={suppressed ? "secondary" : `${type}Subtle`} href="#">
             {button}
           </AlertButton>
         </Stack>

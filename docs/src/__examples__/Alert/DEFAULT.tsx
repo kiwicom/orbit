@@ -24,6 +24,11 @@ export default {
           defaultValue: false,
         },
         {
+          name: "suppressed",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
           name: "icon",
           type: "icon",
           defaultValue: "",

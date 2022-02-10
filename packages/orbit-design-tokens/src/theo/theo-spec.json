@@ -3828,6 +3828,22 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
+    "paletteBundleBasic": {
+      "value": "#D7331C",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteBundleMedium": {
+      "value": "#3B1EB0",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
     "paletteBlueLightActive": {
       "value": "#B4DBF8",
       "type": "color",

@@ -558,6 +558,8 @@ export const getTokens: GetTokens = customFoundation => {
     paletteGreenDarker: theme.palette.green.darker,
     paletteBlueLight: theme.palette.blue.light,
     paletteBlueLightHover: theme.palette.blue.lightHover,
+    paletteBundleBasic: theme.palette.bundle.basic,
+    paletteBundleMedium: theme.palette.bundle.medium,
     paletteBlueLightActive: theme.palette.blue.lightActive,
     paletteBlueNormal: theme.palette.blue.normal,
     paletteBlueNormalHover: theme.palette.blue.normalHover,

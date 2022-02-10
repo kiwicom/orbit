@@ -65,6 +65,11 @@ export type SocialColor = {
   facebookActive: string;
 };
 
+export type BundleColor = {
+  basic: string;
+  medium: string;
+};
+
 export type Palette = {
   product: ProductColor;
   white: WhiteColor;
@@ -75,6 +80,7 @@ export type Palette = {
   green: StatusColor;
   blue: StatusColor;
   social: SocialColor;
+  bundle: BundleColor;
 };
 
 export type Base = {
@@ -601,6 +607,8 @@ export type Tokens = {
   paletteBlueDarkHover: string;
   paletteBlueDarkActive: string;
   paletteBlueDarker: string;
+  paletteBundleBasic: string;
+  paletteBundleMedium: string;
   paletteSocialFacebook: string;
   paletteSocialFacebookHover: string;
   paletteSocialFacebookActive: string;
@@ -629,7 +637,9 @@ type CustomPalette = {
   green?: Partial<StatusColor>;
   blue?: Partial<StatusColor>;
   social?: Partial<SocialColor>;
+  bundle?: Partial<BundleColor>;
 };
+
 type CustomBase = Partial<Base>;
 
 type CustomFoundation = Partial<{

@@ -7,6 +7,7 @@ import type {
   SocialColor,
   StatusColor,
   WhiteColor,
+  BundleColor,
 } from "./foundation";
 import type { ConvertHexToRgba } from "./convertHexToRgba";
 
@@ -492,6 +493,8 @@ export type Tokens = {|
   paletteBlueLight: string,
   paletteBlueLightHover: string,
   paletteBlueLightActive: string,
+  paletteBundleBasic: string,
+  paletteBundleMedium: string,
   paletteBlueNormal: string,
   paletteBlueNormalHover: string,
   paletteBlueNormalActive: string,
@@ -527,7 +530,9 @@ type CustomPalette = {|
   green?: $Shape<StatusColor>,
   blue?: $Shape<StatusColor>,
   social?: $Shape<SocialColor>,
+  bundle?: $Shape<BundleColor>,
 |};
+
 type CustomBase = $Shape<Base>;
 
 type CustomFoundation = $Shape<{|

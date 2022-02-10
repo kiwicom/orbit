@@ -1690,6 +1690,12 @@
       "name": "paletteInkLightActive"
     },
     {
+      "value": "rgb(215, 51, 28)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBundleBasic"
+    },
+    {
       "value": "rgb(62, 78, 99)",
       "type": "color",
       "category": "Color palette",
@@ -1718,6 +1724,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextPrimary"
+    },
+    {
+      "value": "rgb(59, 30, 176)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBundleMedium"
     },
     {
       "value": "linear-gradient(to top right, #9F1816 0, #C36802 1)",

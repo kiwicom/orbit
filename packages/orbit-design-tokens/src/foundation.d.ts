@@ -58,6 +58,11 @@ export type SocialColor = {
   facebookActive: string;
 };
 
+export type BundleColor = {
+  basic: string;
+  medium: string;
+};
+
 export type Palette = {
   product: ProductColor;
   white: WhiteColor;
@@ -68,6 +73,7 @@ export type Palette = {
   green: StatusColor;
   blue: StatusColor;
   social: SocialColor;
+  bundle: BundleColor;
 };
 
 export type Base = {

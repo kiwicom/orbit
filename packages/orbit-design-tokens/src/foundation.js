@@ -94,6 +94,10 @@ const palette = {
     facebookHover: "#385490",
     facebookActive: "#354F88",
   },
+  bundle: {
+    basic: "#D7331C",
+    medium: "#3B1EB0",
+  },
 };
 
 const base = {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.12.0...@kiwicom/orbit-components@2.13.0) (2022-02-10)
+
+
+### Features
+
+* **Alert:** visual alert component updates ([#3277](https://github.com/kiwicom/orbit/issues/3277)) ([b68b4a2](https://github.com/kiwicom/orbit/commit/b68b4a23c02707e8307547962b13eaf777191cfd))
+
+
+
+
+
 # [2.12.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.11.0...@kiwicom/orbit-components@2.12.0) (2022-02-09)
 
 

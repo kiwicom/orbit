@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.1.0...@kiwicom/orbit-design-tokens@1.2.0) (2022-02-10)
+
+
+### Features
+
+* **tokens:** add new bundle tokens ([#3278](https://github.com/kiwicom/orbit/issues/3278)) ([c5458a8](https://github.com/kiwicom/orbit/commit/c5458a8fb887e3da5efe267d162678bb803160fb))
+
+
+
+
+
 # [1.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.0.6...@kiwicom/orbit-design-tokens@1.1.0) (2022-02-07)
 
 

@@ -10,7 +10,7 @@
     "github": "https://github.com/CollierCZ",
     "twitter": "",
     "website": "https://collier.cz/",
-    "active": true
+    "active": false
   },
   {
     "id": "will",
@@ -49,7 +49,7 @@
     "github": "https://github.com/vepor",
     "twitter": "https://twitter.com/elvepor",
     "website": "",
-    "active": true
+    "active": false
   },
   {
     "id": "viktr",
@@ -74,7 +74,7 @@
     "dribbble": "",
     "twitter": "https://twitter.com/silvenon",
     "website": "https://silvenon.com/",
-    "active": true
+    "active": false
   },
   {
     "id": "filip",

@@ -30,14 +30,14 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Released
   group: Information
 - component: BadgePrimitive
   figma: N/A
   react: Released
   ios: N/A
-  android: N/A
+  android: Planned
   docs: Released
   group: Primitives
 - component: Box
@@ -79,7 +79,7 @@
   figma: N/A
   react: Released
   ios: N/A
-  android: N/A
+  android: Planned
   docs: Released
   group: Primitives
 - component: Button
@@ -100,7 +100,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Partially
   docs: Released
   group: Structure
 - component: CarrierLogo
@@ -134,7 +134,7 @@
 - component: Collapse
   figma: Designing
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Interaction
@@ -142,7 +142,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Released
   group: Visuals
 - component: Coupon
@@ -190,14 +190,14 @@
 - component: EmptyState
   figma: Released
   react: Planned
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Progress indicators
 - component: FeatureIcon
   figma: Released
   react: Released
-  ios: Released
+  ios: Planned
   android: N/A
   docs: Released
   group: Visuals
@@ -225,7 +225,7 @@
 - component: HorizontalScroll
   figma: N/A
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Writing
   group: Layout
@@ -281,7 +281,7 @@
 - component: InputStepper
   figma: N/A
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Input
@@ -309,7 +309,7 @@
 - component: ListChoice
   figma: Released
   react: Released
-  ios: Planned
+  ios: Released
   android: N/A
   docs: Released
   group: Input
@@ -415,14 +415,14 @@
   figma: Designing
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: Select
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: Skeleton
@@ -463,7 +463,7 @@
 - component: Slider
   figma: Designing
   react: Released
-  ios: N/A
+  ios: Planned
   android: N/A
   docs: Released
   group: Interaction
@@ -484,7 +484,7 @@
 - component: Stepper
   figma: Released
   react: Released
-  ios: N/A
+  ios: Planned
   android: Released
   docs: Released
   group: Interaction

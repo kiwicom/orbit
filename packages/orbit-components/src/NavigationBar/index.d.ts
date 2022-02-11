@@ -9,6 +9,7 @@ export interface Props extends Common.Global {
   readonly onShow?: Common.Callback;
   readonly onHide?: Common.Callback;
   readonly children: React.ReactNode;
+  readonly hideOnScroll?: boolean;
 }
 
 declare const NavigationBar: React.FunctionComponent<Props>;

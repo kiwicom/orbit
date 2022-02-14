@@ -705,7 +705,7 @@
       }
     },
     "colorTextButtonLinkPrimaryHover": {
-      "value": "#009882",
+      "value": "#007060",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -713,7 +713,7 @@
       }
     },
     "colorTextButtonLinkPrimaryActive": {
-      "value": "#008F7B",
+      "value": "#006657",
       "type": "color",
       "category": "Colors",
       "meta": {

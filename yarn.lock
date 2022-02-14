@@ -5216,10 +5216,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nanostores/router@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@nanostores/router/-/router-0.1.1.tgz#2384b6a744ea8411f4c749cbe7bca41f05e4f7f3"
-  integrity sha512-WKFKfJ81S/QNWgGH+56uOuXEUW+fUjdGhkc2W0fHyGUPLejUrMOTdvBvYHXDsVx1TwFUej5KfxbkOGZHxOCH9Q==
+"@nanostores/router@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@nanostores/router/-/router-0.3.1.tgz#1124825c2cdf9029b4b69e34473bea93c3ec241c"
+  integrity sha512-aFFbdiJh1ClLPHkaNugqBQEzOntWqTGE3c1c+WLXBskeSkYhhhmylBhSenZm9yUtyM+zKT2am+Kbp5ZcU2jdHg==
 
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"
@@ -23238,10 +23238,10 @@ nanospinner@^0.3.0:
   dependencies:
     picocolors "^1.0.0"
 
-nanostores@^0.4.8:
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.4.8.tgz#991f936a2537007912a198fdb2e0e52694cf6b42"
-  integrity sha512-98Lg1qKD+zBp9fccQIv5q2umLEZUiH+o+dBick4X7G93jWYTzfdJaMi3UDPkE4UiAX/KlQbZ0qi1z8YoUIBNBA==
+nanostores@^0.5.10:
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.5.10.tgz#16488776f01fa288b09c026400ff535da55c3583"
+  integrity sha512-8Y7C8sF8PsHGpLVJochWT+ytEY34XrNRDA30hDqgvLcl5Ih4d/IFb7gUSFIwmgFAaht1pLwKZHTeFoJrNz88RQ==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"

@@ -31,3 +31,4 @@ Table below contains all types of the props available in the NavigationBar compo
 | onMenuOpen   | `() => void \| Promise` |         | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear. |
 | onHide       | `() => void \| Promise` |         | Function for handling event when the NavigationBar disappears.                                        |
 | onShow       | `() => void \| Promise` |         | Function for handling event when the NavigationBar appears.                                           |
+| hideOnScroll | `boolean`               | `true`  | Turn on or off hiding navigation bar on scroll                                                        |

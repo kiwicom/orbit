@@ -1,8 +1,9 @@
 // @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
 import LinkList from "../LinkList";
@@ -20,11 +21,14 @@ export default {
 
 export const NavBarUpToTablet = (): React.Element<"div"> => {
   const dataTest = text("dataTest", "test");
+  const hideOnScroll = boolean("hideOnScroll", true);
+
   return (
     <div style={{ height: "1000px" }}>
       <NavigationBar
         onMenuOpen={action("onMenuOpen")}
         onShow={action("onShow")}
+        hideOnScroll={hideOnScroll}
         onHide={action("onHide")}
         dataTest={dataTest}
       >
@@ -53,12 +57,15 @@ NavBarUpToTablet.story = {
 
 export const NavBarDesktop = (): React.Element<"div"> => {
   const dataTest = text("dataTest", "test");
+  const hideOnScroll = boolean("hideOnScroll", true);
+
   return (
     <div style={{ height: "1000px" }}>
       <NavigationBar
         onMenuOpen={action("onMenuOpen")}
         onShow={action("onShow")}
         onHide={action("onHide")}
+        hideOnScroll={hideOnScroll}
         dataTest={dataTest}
       >
         <Stack flex align="center" justify="between" spacing="none">
@@ -76,6 +83,37 @@ export const NavBarDesktop = (): React.Element<"div"> => {
         </Stack>
       </NavigationBar>
     </div>
+  );
+};
+
+export const RTL = (): React.Node => {
+  const hideOnScroll = boolean("hideOnScroll", true);
+
+  return (
+    <RenderInRtl>
+      <div style={{ height: "1000px" }}>
+        <NavigationBar
+          onMenuOpen={action("onMenuOpen")}
+          onShow={action("onShow")}
+          onHide={action("onHide")}
+          hideOnScroll={hideOnScroll}
+        >
+          <Stack flex align="center" justify="between" spacing="none">
+            <LinkList direction="row">
+              <TextLink type="secondary">Flights</TextLink>
+              <TextLink type="secondary">Flights</TextLink>
+              <TextLink type="secondary">Flights</TextLink>
+              <TextLink type="secondary">Flights</TextLink>
+            </LinkList>
+            <Stack direction="row" spacing="XXSmall" justify="end" shrink>
+              <ButtonLink type="secondary">Starred</ButtonLink>
+              <ButtonLink type="secondary">Help</ButtonLink>
+              <ButtonLink type="secondary">Account</ButtonLink>
+            </Stack>
+          </Stack>
+        </NavigationBar>
+      </div>
+    </RenderInRtl>
   );
 };
 

@@ -198,7 +198,7 @@
 @value font-size-heading-title2: 22px;
 @value background-button-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value font-weight-bold: "700";
-@value color-text-button-link-primary-active: rgb(0, 143, 123);
+@value color-text-button-link-primary-active: rgb(0, 102, 87);
 @value background-tag: rgb(245, 247, 249);
 @value background-button-facebook-active: rgb(53, 79, 136);
 @value color-text-loading: rgb(186, 199, 213);
@@ -353,7 +353,7 @@
 @value background-tag-selected-hover: rgb(24, 27, 32);
 @value background-alert-success: rgb(235, 244, 236);
 @value padding-input-file: 0 0 0 6px;
-@value color-text-button-link-primary-hover: rgb(0, 152, 130);
+@value color-text-button-link-primary-hover: rgb(0, 112, 96);
 @value color-placeholder-input-file: rgb(79, 94, 113);
 @value font-weight-heading-title3: "500";
 @value color-text-button-info-active: rgb(255, 255, 255);

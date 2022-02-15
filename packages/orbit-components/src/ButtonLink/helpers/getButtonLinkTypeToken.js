@@ -27,12 +27,12 @@ const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
     [TOKENS.foregroundHover]: {
       [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
       [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalHover,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkHover,
     },
     [TOKENS.foregroundActive]: {
       [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
       [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalActive,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkActive,
     },
   };
   return tokens[name][type];

@@ -7,6 +7,7 @@ const defaultTheme: DefaultTheme = {
   orbit: defaultTokens,
   transitions: true,
   lockScrolling: true,
+  lockScrollingBarGap: false,
   rtl: false,
 };
 

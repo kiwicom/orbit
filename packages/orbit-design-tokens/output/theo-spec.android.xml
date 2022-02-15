@@ -197,7 +197,7 @@
   <dimen name="FONTSIZEHEADINGTITLE2" category="Font size">22dp</dimen>
   <string name="BACKGROUNDBUTTONBUNDLEBASIC" category="Background colors">linear-gradient(to top right, #E13E3B 0, #E87E09 1)</string>
   <string name="FONTWEIGHTBOLD" category="Font weight">700</string>
-  <color name="COLORTEXTBUTTONLINKPRIMARYACTIVE" category="Colors">#ff008f7b</color>
+  <color name="COLORTEXTBUTTONLINKPRIMARYACTIVE" category="Colors">#ff006657</color>
   <color name="BACKGROUNDTAG" category="Background colors">#fff5f7f9</color>
   <color name="BACKGROUNDBUTTONFACEBOOKACTIVE" category="Background colors">#ff354f88</color>
   <color name="COLORTEXTLOADING" category="Colors">#ffbac7d5</color>
@@ -351,7 +351,7 @@
   <color name="BACKGROUNDTAGSELECTEDHOVER" category="Background colors">#ff181b20</color>
   <color name="BACKGROUNDALERTSUCCESS" category="Background colors">#ffebf4ec</color>
   <dimen name="PADDINGINPUTFILE" category="Spacing">0 0 0 6dp</dimen>
-  <color name="COLORTEXTBUTTONLINKPRIMARYHOVER" category="Colors">#ff009882</color>
+  <color name="COLORTEXTBUTTONLINKPRIMARYHOVER" category="Colors">#ff007060</color>
   <color name="COLORPLACEHOLDERINPUTFILE" category="Colors">#ff4f5e71</color>
   <string name="FONTWEIGHTHEADINGTITLE3" category="Font weight">500</string>
   <color name="COLORTEXTBUTTONINFOACTIVE" category="Colors">#ffffffff</color>

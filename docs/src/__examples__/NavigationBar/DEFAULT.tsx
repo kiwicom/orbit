@@ -27,4 +27,10 @@ export default {
       </Stack>
     </NavigationBar>
   ),
+  exampleKnobs: [
+    {
+      component: "NavigationBar",
+      knobs: [{ name: "hideOnScroll", type: "boolean", defaultValue: true }],
+    },
+  ],
 };

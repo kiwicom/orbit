@@ -1,8 +1,9 @@
 // @flow
 import * as React from "react";
-import { text } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import { LANGUAGE } from "./consts";
 import Stack from "../Stack";
 
 import ButtonMobileStore from ".";
@@ -13,6 +14,7 @@ export default {
 
 export const Default = (): React.Node => {
   const href = text("href", "#");
+  const lang = select("lang", Object.values(LANGUAGE), "EN");
 
   return (
     <>
@@ -20,12 +22,14 @@ export const Default = (): React.Node => {
         <ButtonMobileStore
           onClick={action("clicked")}
           href={href}
+          lang={lang}
           type="appStore"
           alt="Download on the App Store"
         />
         <ButtonMobileStore
           onClick={action("clicked")}
           href={href}
+          lang={lang}
           type="googlePlay"
           alt="Download on the Google Play"
         />
@@ -35,37 +39,6 @@ export const Default = (): React.Node => {
 };
 
 Default.story = {
-  parameters: {
-    info: "This is the default configuration of this component.",
-  },
-};
-
-export const Light = (): React.Node => {
-  const href = text("href", "#");
-
-  return (
-    <>
-      <Stack flex>
-        <ButtonMobileStore
-          onClick={action("clicked")}
-          href={href}
-          type="appStore"
-          variant="light"
-          alt="Download on the App Store"
-        />
-        <ButtonMobileStore
-          onClick={action("clicked")}
-          href={href}
-          type="googlePlay"
-          variant="light"
-          alt="Download on the Google Play"
-        />
-      </Stack>
-    </>
-  );
-};
-
-Light.story = {
   parameters: {
     info: "This is the default configuration of this component.",
   },

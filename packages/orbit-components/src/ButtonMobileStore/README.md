@@ -24,11 +24,30 @@ Table below contains all types of the props available in the ButtonMobileStore c
 | onClick         | `event => void \| Promise` |         | Function for handling onClick event.                                                                            |
 | stopPropagation | `boolean`                  |         | If `true` the click event won't bubble. Useful when you use ButtonMobileStore inside another clickable element. |
 | **type**        | [`enum`](#enum)            |         | The type of the ButtonMobileStore.                                                                              |
-| variant         | [`enum`](#enum)            | `dark`  | The type of variant                                                                                             |
+| lang            | [`enum`](#enum)            | `EN`    | The language of button                                                                                          |
 
 ### enum
 
-| type           | variant   |
-| :------------- | :-------- |
-| `"appStore"`   | `"dark"`  |
-| `"googlePlay"` | `"light"` |
+| type           | lang   |
+| :------------- | :----- |
+| `"appStore"`   | `"EN"` |
+| `"googlePlay"` | `"ZH"` |
+|                | `"BG"` |
+|                | `"CS"` |
+|                | `"DA"` |
+|                | `"DE"` |
+|                | `"ES"` |
+|                | `"FI"` |
+|                | `"FR"` |
+|                | `"HU"` |
+|                | `"IT"` |
+|                | `"JA"` |
+|                | `"KO"` |
+|                | `"NL"` |
+|                | `"PL"` |
+|                | `"PT"` |
+|                | `"RO"` |
+|                | `"RU"` |
+|                | `"SK"` |
+|                | `"SR"` |
+|                | `"SV"` |

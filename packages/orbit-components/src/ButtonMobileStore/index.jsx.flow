@@ -5,9 +5,9 @@ import type { Globals } from "../common/common.js.flow";
 
 export type Props = {|
   type: "appStore" | "googlePlay",
-  variant?: "light" | "dark",
   stopPropagation?: boolean,
   href?: string,
+  lang?: string,
   alt?: string,
   onClick?: () => void | Promise<any>,
   ...Globals,

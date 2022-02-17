@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { TYPE_OPTIONS, HEIGHT, TYPE_VARIANT } from "./consts";
+import { HEIGHT, TYPE_OPTIONS, LANGUAGE } from "./consts";
 
 import type { Props } from ".";
 
@@ -19,24 +19,15 @@ StyledButtonMobileStore.defaultProps = {
   theme: defaultTheme,
 };
 
-const src = {
-  [TYPE_VARIANT.DARK]: {
-    appStore:
-      "https://images.kiwi.com/common/AppStoreGrayButton.png, https://images.kiwi.com/common/AppStoreGrayButton@2x.png 2x",
-    googlePlay:
-      "https://images.kiwi.com/common/GooglePlayGrayButton.png, https://images.kiwi.com/common/GooglePlayGrayButton@2x.png 2x",
-  },
-  [TYPE_VARIANT.LIGHT]: {
-    appStore:
-      "https://images.kiwi.com/common/AppStoreLightButton.png, https://images.kiwi.com/common/AppStoreLightButton@2x.png 2x",
-    googlePlay:
-      "https://images.kiwi.com/common/GooglePlayLightButton.png, https://images.kiwi.com/common/GooglePlayLightButton@2x.png 2x",
-  },
+const getSrc = (type, lang) => {
+  if (type === "appStore")
+    return `https://images.kiwi.com/common/AppStoreButton${lang}.png, https://images.kiwi.com/common/AppStoreButton${lang}@2x.png 2x`;
+  return `https://images.kiwi.com/common/GooglePlayButton${lang}.png, https://images.kiwi.com/common/GooglePlayButton${lang}@2x.png 2x`;
 };
 
 const ButtonMobileStore = ({
   type = TYPE_OPTIONS.APPSTORE,
-  variant = TYPE_VARIANT.DARK,
+  lang = LANGUAGE.EN,
   href,
   onClick,
   dataTest,
@@ -59,7 +50,7 @@ const ButtonMobileStore = ({
       onClick={onClickHandler}
       data-test={dataTest}
     >
-      <img srcSet={src[variant][type]} height={HEIGHT} alt={alt} />
+      <img srcSet={getSrc(type, lang)} height={HEIGHT} alt={alt} />
     </StyledButtonMobileStore>
   );
 };

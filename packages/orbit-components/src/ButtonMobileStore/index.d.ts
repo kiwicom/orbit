@@ -7,14 +7,12 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 type Type = "appStore" | "googlePlay";
-type Variant = "light" | "dark";
-
 export interface Props extends Common.Global {
   readonly type?: Type;
-  readonly variant?: Variant;
   readonly stopPropagation?: boolean;
   readonly href?: string;
   readonly alt?: string;
+  readonly lang?: string;
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
 }
 

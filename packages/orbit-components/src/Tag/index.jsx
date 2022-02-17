@@ -108,6 +108,7 @@ export const StyledTag: any = styled.div`
 
     &:focus {
       outline: 0;
+      box-shadow: none;
     }
 
     ${actionable &&
@@ -119,14 +120,20 @@ export const StyledTag: any = styled.div`
         box-shadow: none;
       }
 
-      &:focus,
-      &:active {
+      &:focus {
+        background: ${getBackgroundColor(STATES.DEFAULT)};
+      }
+
+      &:focus:not(:focus-visible):not(:active) {
+        background: ${getBackgroundColor(STATES.DEFAULT)};
+      }
+
+      &:active,
+      &:focus-visible {
         ${CloseContainer} {
           opacity: 1;
         }
         background: ${getBackgroundColor(STATES.ACTIVE)};
-        box-shadow: none;
-        outline: 0;
       }
     `};
   `}

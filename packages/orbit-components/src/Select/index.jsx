@@ -379,7 +379,7 @@ const Select: React.AbstractComponent<
           ))}
         </StyledSelect>
         <SelectSuffix size={size} disabled={disabled}>
-          <ChevronDown />
+          <ChevronDown color="secondary" />
         </SelectSuffix>
       </SelectContainer>
       {!insideInputGroup && (

@@ -84,7 +84,7 @@ const Header = ({
     )}
     {header && icon}
     {header}
-    {expandable && !actions && <ChevronIcon expanded={expanded} color="secondary" />}
+    {expandable && !actions && <ChevronIcon color="secondary" expanded={expanded} />}
     {actions && (
       <Stack inline grow={false} justify="end">
         {actions}

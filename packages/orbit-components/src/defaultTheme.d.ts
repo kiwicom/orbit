@@ -7,6 +7,7 @@ export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;
   readonly lockScrolling?: boolean;
+  readonly lockScrollingBarGap?: boolean;
   readonly rtl?: boolean;
 }
 

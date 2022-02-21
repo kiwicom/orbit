@@ -8,6 +8,15 @@
  * https://github.com/willmcpo/body-scroll-lock/issues/235
  */
 
+type BodyScrollOptions = {|
+  reserveScrollBarGap?: boolean,
+|};
+
+type Lock = {|
+  targetElement: HTMLElement,
+  options?: BodyScrollOptions,
+|};
+
 // Older browsers don't support event options, feature detect it.
 let hasPassiveEvents = false;
 if (typeof window !== "undefined") {
@@ -29,7 +38,7 @@ const isIosDevice =
     (window.navigator.platform === "MacIntel" && window.navigator.maxTouchPoints > 1));
 type HandleScrollEvent = TouchEvent;
 
-let locks: HTMLElement[] = [];
+let locks: Lock[] = [];
 let documentListenerAdded: boolean = false;
 let initialClientY: number = -1;
 let previousBodyOverflowSetting;
@@ -52,18 +61,20 @@ const preventDefault = (rawEvent: HandleScrollEvent): boolean => {
   return false;
 };
 
-const setOverflowHidden = () => {
+const setOverflowHidden = (options?: BodyScrollOptions) => {
   if (!document.body || !document.documentElement) return;
 
   // If previousBodyPaddingRight is already set, don't set it again.
   if (previousBodyPaddingRight === undefined) {
     const scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
+    const reserveScrollBarGap = !!options && options.reserveScrollBarGap === true;
 
-    if (scrollBarGap > 0) {
+    if (reserveScrollBarGap && scrollBarGap > 0) {
       const computedBodyPaddingRight = parseInt(
         window.getComputedStyle(document.body).getPropertyValue("padding-right"),
         10,
       );
+
       if (document.body) {
         previousBodyPaddingRight = document.body.style.paddingRight;
         document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarGap}px`;
@@ -181,20 +192,23 @@ const handleScroll = (event: HandleScrollEvent, targetElement: any): boolean => 
   return true;
 };
 
-export const disableBodyScroll = (targetElement: HTMLElement): void => {
+export const disableBodyScroll = (
+  targetElement: HTMLElement,
+  options?: BodyScrollOptions,
+): void => {
   // disableBodyScroll must not have been called on this targetElement before
   if (locks.some(lock => lock === targetElement)) {
     return;
   }
 
-  const lock = targetElement;
+  const lock = { targetElement, options };
 
   locks = [...locks, lock];
 
   if (isIosDevice) {
     setPositionFixed();
   } else {
-    setOverflowHidden();
+    setOverflowHidden(options);
   }
 
   if (isIosDevice) {
@@ -257,7 +271,7 @@ export const clearAllBodyScrollLocks = (): void => {
 };
 
 export const enableBodyScroll = (targetElement: any): void => {
-  locks = locks.filter(lock => lock !== targetElement);
+  locks = locks.filter(lock => lock.targetElement !== targetElement);
 
   if (isIosDevice) {
     targetElement.ontouchstart = null;

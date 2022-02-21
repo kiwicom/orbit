@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.2.0...@kiwicom/orbit-design-tokens@1.3.0) (2022-02-21)
+
+
+### Features
+
+* **tokens:** add new zIndexDrawer token ([719f65e](https://github.com/kiwicom/orbit/commit/719f65e53b01570591771b04eea36733c83506aa))
+
+
+
+
+
 # [1.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.1.0...@kiwicom/orbit-design-tokens@1.2.0) (2022-02-10)
 
 

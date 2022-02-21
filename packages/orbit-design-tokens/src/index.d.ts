@@ -352,6 +352,7 @@ export type Tokens = {
   borderRadiusBadge: string;
   zIndexDefault: string;
   zIndexSticky: string;
+  zIndexDrawer: string;
   zIndexModalOverlay: string;
   zIndexModal: string;
   zIndexOnTheTop: string;

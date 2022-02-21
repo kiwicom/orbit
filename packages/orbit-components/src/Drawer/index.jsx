@@ -33,20 +33,20 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
 };
 
 const StyledDrawer = styled.div`
-  display: flex;
-  visibility: ${({ overlayShown }) => (overlayShown ? "visible" : "hidden")};
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ${({ theme, shown }) =>
-    shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
-  // TODO: use z-index framework
-  z-index: 825;
-  transition: ${transition(["background-color"], "fast", "ease-in-out")};
+  ${({ theme, overlayShown, shown }) => css`
+    display: flex;
+    visibility: ${overlayShown ? "visible" : "hidden"};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
+    z-index: ${theme.orbit.zIndexDrawer};
+    transition: ${transition(["background-color"], "fast", "ease-in-out")};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -59,26 +59,27 @@ const StyledDrawerSide = styled(
     <aside ref={ref} {...props} />
   )),
 )`
-  display: block;
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  overflow-y: auto;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
-  background: ${({ theme, suppressed }) =>
-    suppressed
+  ${({ theme, suppressed, width }) => css`
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: ${theme.orbit.fontFamily};
+    overflow-y: auto;
+    box-shadow: ${theme.orbit.boxShadowRaised};
+    background: ${suppressed
       ? theme.orbit.paletteCloudLight
       : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
-  transition: ${transition(["transform"], "normal", "ease-in-out")};
-  width: 100%;
-  ${mq.largeMobile(css`
-    max-width: ${({ width }) => width};
-  `)};
-  ${getPosition};
-  ${getTransitionAnimation};
+    transition: ${transition(["transform"], "normal", "ease-in-out")};
+    width: 100%;
+    ${mq.largeMobile(css`
+      max-width: ${width};
+    `)};
+    ${getPosition};
+    ${getTransitionAnimation};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -89,10 +90,11 @@ StyledDrawerSide.defaultProps = {
 const StyledDrawerContent = styled(
   ({ theme, type, hasTopPadding, noPadding, hasClose, ...props }) => <div {...props} />,
 )`
-  ${getPadding};
-  margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceLarge};
-  margin-top: ${({ hasClose, theme, noPadding }) =>
-    !hasClose && noPadding && theme.orbit.spaceLarge};
+  ${({ theme, noPadding, hasClose }) => css`
+    ${getPadding};
+    margin-bottom: ${noPadding && theme.orbit.spaceLarge};
+    margin-top: ${!hasClose && noPadding && theme.orbit.spaceLarge};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

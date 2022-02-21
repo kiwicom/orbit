@@ -140,6 +140,7 @@
   "zIndexDefault": "1",
   "backgroundButtonSuccessActive": "rgb(29, 114, 40)",
   "boxShadowFixed": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)",
+  "zIndexDrawer": "815",
   "widthCheckbox": "20px",
   "colorTextButtonFacebookBorderedHover": "rgb(56, 84, 144)",
   "borderColorButtonCriticalBorderedHover": "rgb(185, 25, 25)",

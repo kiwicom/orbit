@@ -135,6 +135,11 @@ const StyledPopoverContent = styled.div`
     transform: translateY(${shownMobile ? "0%" : "100%"});
     will-change: transform;
     transition: ${transition(["opacity, transform"], "fast", "ease-in-out")};
+
+    ${mq.largeMobile(css`
+      transform: none;
+      transition: none;
+    `)}
   `}
 `;
 

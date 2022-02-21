@@ -265,6 +265,7 @@ export const getTokens: GetTokens = customFoundation => {
     // description:Use layers to show depth of page.
     zIndexDefault: "1",
     zIndexSticky: "100",
+    zIndexDrawer: "815",
     zIndexModalOverlay: "800",
     zIndexModal: "825",
     zIndexOnTheTop: "900",

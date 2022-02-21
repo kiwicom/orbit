@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.0...@kiwicom/orbit-components@2.14.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **Popover:** remove animation on desktop ([1b5d613](https://github.com/kiwicom/orbit/commit/1b5d613a4ae3a634a13ac019776d0b520cf6c04b))
+
+
+
+
+
 # [2.14.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.13.0...@kiwicom/orbit-components@2.14.0) (2022-02-21)
 
 

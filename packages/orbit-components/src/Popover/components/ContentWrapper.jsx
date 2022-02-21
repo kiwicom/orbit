@@ -24,8 +24,8 @@ const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;
 const StyledContentWrapper = styled.div`
   ${({ theme, windowHeight, actionsHeight }) => css`
     overflow: auto;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: ${theme.orbit.spaceSmall};
+    border-top-right-radius: ${theme.orbit.spaceSmall};
     position: absolute;
     left: 0;
     width: 100%;
@@ -82,19 +82,7 @@ StyledActions.defaultProps = {
 };
 
 const StyledPopoverParent = styled.div`
-  ${({
-    isInsideModal,
-    width,
-    shown,
-    theme,
-    transform,
-    top,
-    left,
-    bottom,
-    right,
-    position,
-    shownMobile,
-  }) => css`
+  ${({ isInsideModal, width, shown, theme, transform, top, left, bottom, right, position }) => css`
     position: fixed;
     bottom: 0;
     left: 0;
@@ -106,11 +94,10 @@ const StyledPopoverParent = styled.div`
     box-shadow: ${theme.orbit.boxShadowRaisedReverse};
     background-color: ${theme.orbit.backgroundModal};
     max-height: calc(100% - ${mobileTop});
-    transform: translateY(${shownMobile ? "0%" : "100%"});
-    transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
     &:focus {
       outline: 0;
     }
+
     ${mq.largeMobile(css`
       top: ${top};
       left: ${left};
@@ -143,7 +130,18 @@ StyledPopoverPadding.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverContent = styled.div``;
+const StyledPopoverContent = styled.div`
+  ${({ shownMobile }) => css`
+    transform: translateY(${shownMobile ? "0%" : "100%"});
+    will-change: transform;
+    transition: ${transition(["opacity, transform"], "fast", "ease-in-out")};
+  `}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledPopoverContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledOverlay = styled.div`
   ${({ theme, shown }) => css`
@@ -156,7 +154,7 @@ const StyledOverlay = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
-    transition: ${transition(["opacity"], "normal", "ease-in-out")};
+    transition: ${transition(["opacity", "transform"], "normal", "ease-in-out")};
     z-index: 999;
 
     ${mq.largeMobile(css`
@@ -200,16 +198,15 @@ const PopoverContentWrapper = ({
   lockScrolling = true,
   actions,
 }: Props): React.Node => {
-  const [actionsDimensions, setActionsDimensions] = React.useState(0);
+  const [actionsHeight, setActionsHeight] = React.useState(null);
   const { isInsideModal } = React.useContext(ModalContext);
   const { isLargeMobile } = useMediaQuery();
-
+  const actionsRef = React.useRef<HTMLElement | null>(null);
   const content = React.useRef<?HTMLElement | null>(null);
   const scrollingElementRef = React.useRef<HTMLElement | null>(null);
   useLockScrolling(scrollingElementRef, lockScrolling && !isLargeMobile);
 
   const popoverRef = React.useRef<HTMLElement | null>(null);
-  const intervalRef = React.useRef(null);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
   const { styles, update } = usePopper(referenceElement, popoverRef.current, {
@@ -242,27 +239,14 @@ const PopoverContentWrapper = ({
 
     if (update) update();
 
+    if (actionsRef.current) {
+      setActionsHeight(boundingClientRect({ current: actionsRef.current })?.height);
+    }
+
     return () => {
       clearTimeout(timer);
-      clearTimeout(intervalRef.current);
     };
-  }, [update]);
-
-  const measuredRef = React.useCallback(
-    node => {
-      if (node !== null) {
-        const timer = setTimeout(() => {
-          setActionsDimensions(boundingClientRect({ current: node }));
-        }, 15);
-
-        intervalRef.current = timer;
-      }
-    },
-    // this measures the element that's containing actions
-    // so it needs to be re-measured every time actions change
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [actions],
-  );
+  }, [update, actions, setActionsHeight]);
 
   useClickOutside(content, ev => {
     if (isLargeMobile) onClose(ev);
@@ -277,7 +261,6 @@ const PopoverContentWrapper = ({
       <StyledOverlay shown={shown} isInsideModal={isInsideModal} onMouseDown={onClose} />
       {/* $FlowFixMe: https://github.com/popperjs/react-popper/issues/318 */}
       <StyledPopoverParent
-        shownMobile={shown}
         width={width}
         ref={popoverRef}
         tabIndex="0"
@@ -291,9 +274,9 @@ const PopoverContentWrapper = ({
         isInsideModal={isInsideModal}
         {...popper}
       >
-        <StyledPopoverContent ref={content}>
+        <StyledPopoverContent ref={content} shownMobile={shown}>
           <StyledContentWrapper
-            actionsHeight={actionsDimensions ? actionsDimensions.height : 0}
+            actionsHeight={actionsHeight}
             ref={scrollingElementRef}
             windowHeight={windowHeight}
           >
@@ -301,9 +284,9 @@ const PopoverContentWrapper = ({
           </StyledContentWrapper>
 
           {actions ? (
-            <StyledActions ref={measuredRef}>{actions}</StyledActions>
+            <StyledActions ref={actionsRef}>{actions}</StyledActions>
           ) : (
-            <StyledPopoverClose ref={measuredRef}>
+            <StyledPopoverClose ref={actionsRef}>
               <Button type="secondary" fullWidth onClick={onClose}>
                 <Translate tKey="button_close" />
               </Button>

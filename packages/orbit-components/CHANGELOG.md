@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.13.0...@kiwicom/orbit-components@2.14.0) (2022-02-21)
+
+
+### Bug Fixes
+
+* **Card:** change chevron icon color to secondary ([813c02f](https://github.com/kiwicom/orbit/commit/813c02fb04ab2d7e6252bcb469479909de8a40ce))
+* **Collapse:** change icon color to secondary ([ccc945b](https://github.com/kiwicom/orbit/commit/ccc945befffa0663717aee14009f8d2c72e043fc))
+* **Drawer:** new z-index value ([df4a571](https://github.com/kiwicom/orbit/commit/df4a5715fcb55e1a86eeeed3ca8960c53a760831))
+* **Drawer:** use new z-index value ([#3292](https://github.com/kiwicom/orbit/issues/3292)) ([b0c5a6d](https://github.com/kiwicom/orbit/commit/b0c5a6da773c74060842b299ec5b1a2518d091f6))
+* **ItinerarySegmentDetail:** change chevron to secondary color ([8b05f16](https://github.com/kiwicom/orbit/commit/8b05f165730c98495f3351a8435f42e08a48d47b))
+* **Select:** change icon color to InkLight ([4467e53](https://github.com/kiwicom/orbit/commit/4467e539ba2f047b3db6acd81403f73600d71255))
+* **Tag:** fix persistant focus ([#3287](https://github.com/kiwicom/orbit/issues/3287)) ([286088e](https://github.com/kiwicom/orbit/commit/286088ed81f25200d3aab94e103ec5b5d5dbde42))
+* **Tile:** change chevon icon color to secondary ([68cb181](https://github.com/kiwicom/orbit/commit/68cb181c31a5b390e2841e8163c955a2178697bc))
+* **useScrollLock:** return reserveScrollBarGap option ([#3286](https://github.com/kiwicom/orbit/issues/3286)) ([118a9cb](https://github.com/kiwicom/orbit/commit/118a9cb0956bda40625d5bb7f8cbe34609728d69))
+
+
+### Features
+
+* **NavigationBar:** add hideOnScroll prop ([#3282](https://github.com/kiwicom/orbit/issues/3282)) ([c253f23](https://github.com/kiwicom/orbit/commit/c253f23b46040af1917f71527037019e6a57c7a8))
+
+
+
+
+
 # [2.13.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.12.0...@kiwicom/orbit-components@2.13.0) (2022-02-10)
 
 

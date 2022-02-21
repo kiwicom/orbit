@@ -173,7 +173,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
               {summary}
             </HorizontalScroll>
           </StyledSummary>
-          {opened ? <ChevronUp /> : <ChevronDown />}
+          {opened ? <ChevronUp color="secondary" /> : <ChevronDown color="secondary" />}
         </Stack>
       </StyledInnerWrapper>
       <Slide

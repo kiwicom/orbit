@@ -14,12 +14,14 @@ import useBoundingRect from "../hooks/useBoundingRect";
 import type { Props } from ".";
 
 const AnimatedIcon = styled(ChevronDown)`
-  transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  ${({ expanded }) =>
-    expanded &&
-    css`
-      transform: rotate(180deg);
-    `};
+  ${({ theme }) => css`
+    transition: transform ${theme.orbit.durationFast} ease-in-out;
+    ${({ expanded }) =>
+      expanded &&
+      css`
+        transform: rotate(180deg);
+      `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -27,16 +29,18 @@ AnimatedIcon.defaultProps = {
   theme: defaultTheme,
 };
 const StyledCollapse = styled.div`
-  width: 100%;
-  display: block;
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall};
-  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
-  :last-child,
-  :only-child {
-    border: 0;
-    margin: 0;
-  }
+  ${({ theme }) => css`
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
+    padding-bottom: ${theme.orbit.spaceSmall};
+    margin-bottom: ${theme.orbit.spaceMedium};
+    :last-child,
+    :only-child {
+      border: 0;
+      margin: 0;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -56,7 +60,9 @@ StyledCollapseLabel.defaultProps = {
 };
 
 const StyledCollapseChildren = styled.div`
-  margin: ${({ theme }) => theme.orbit.spaceSmall} 0;
+  ${({ theme }) => css`
+    margin: ${theme.orbit.spaceSmall} 0;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -119,7 +125,7 @@ const Collapse = ({
               {actions}
             </StyledActionsWrapper>
             <ButtonLink
-              iconLeft={<AnimatedIcon expanded={expanded} />}
+              iconLeft={<AnimatedIcon color="secondary" expanded={expanded} />}
               size="small"
               type="secondary"
               ariaLabelledby={labelID}

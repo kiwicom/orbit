@@ -5,6 +5,7 @@ export type Theme = {|
   +orbit: Tokens,
   +transitions?: boolean,
   +lockScrolling?: boolean,
+  +lockScrollingBarGap?: boolean,
   +rtl?: boolean,
 |};
 

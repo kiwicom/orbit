@@ -141,6 +141,7 @@
   <string name="ZINDEXDEFAULT" category="Z Index">1</string>
   <color name="BACKGROUNDBUTTONSUCCESSACTIVE" category="Background colors">#ff1d7228</color>
   <dimen name="BOXSHADOWFIXED" category="Box shadow">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
+  <string name="ZINDEXDRAWER" category="Z Index">815</string>
   <dimen name="WIDTHCHECKBOX" category="Size (width, height)">20dp</dimen>
   <color name="COLORTEXTBUTTONFACEBOOKBORDEREDHOVER" category="Colors">#ff385490</color>
   <color name="BORDERCOLORBUTTONCRITICALBORDEREDHOVER" category="Border color">#ffb91919</color>

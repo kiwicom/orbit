@@ -1852,6 +1852,14 @@
         "categoryDescription": "Use layers to show depth of page."
       }
     },
+    "zIndexDrawer": {
+      "value": "815",
+      "type": "string",
+      "category": "Z Index",
+      "meta": {
+        "categoryDescription": "Use layers to show depth of page."
+      }
+    },
     "zIndexModalOverlay": {
       "value": "800",
       "type": "string",

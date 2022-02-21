@@ -848,6 +848,12 @@
       "name": "boxShadowFixed"
     },
     {
+      "value": "815",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexDrawer"
+    },
+    {
       "value": "20px",
       "type": "size",
       "category": "Size (width, height)",

@@ -33,4 +33,4 @@ export type Props = {|
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

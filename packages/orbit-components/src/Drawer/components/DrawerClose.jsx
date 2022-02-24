@@ -18,18 +18,22 @@ StyledDrawerClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const DrawerClose = ({ onClick }: Props): React.Node => {
-  const translate = useTranslate();
-  return (
-    <StyledDrawerClose>
-      <ButtonLink
-        onClick={onClick}
-        iconLeft={<Close />}
-        type="secondary"
-        title={translate("drawer_hide")}
-      />
-    </StyledDrawerClose>
-  );
-};
+const DrawerClose: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef(
+  ({ onClick }, ref): React.Node => {
+    const translate = useTranslate();
+
+    return (
+      <StyledDrawerClose>
+        <ButtonLink
+          onClick={onClick}
+          iconLeft={<Close />}
+          ref={ref}
+          type="secondary"
+          title={translate("drawer_hide")}
+        />
+      </StyledDrawerClose>
+    );
+  },
+);
 
 export default DrawerClose;

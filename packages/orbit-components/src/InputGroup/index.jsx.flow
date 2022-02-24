@@ -32,4 +32,4 @@ export type Props = {|
   ) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

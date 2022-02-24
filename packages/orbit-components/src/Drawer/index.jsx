@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
@@ -169,6 +170,7 @@ const Drawer = ({
     [onClose],
   );
 
+  useFocusTrap(scrollableRef);
   useLockScrolling(scrollableRef, lockScrolling && overlayShown);
 
   React.useEffect(() => {

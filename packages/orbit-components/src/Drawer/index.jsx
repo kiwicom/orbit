@@ -3,6 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import KEY_CODE_MAP from "../common/keyMaps";
 import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
@@ -181,7 +182,17 @@ const Drawer = ({
         setOverlayShownWithTimeout(false);
       }
     }
-  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown]);
+
+    const handleKeyDown = ev => {
+      if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown, onClose]);
+
   return (
     <StyledDrawer
       role="button"

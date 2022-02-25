@@ -3,6 +3,8 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import KEY_CODE_MAP from "../common/keyMaps";
+import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
@@ -150,6 +152,7 @@ const Drawer = ({
 }: Props): React.Node => {
   const theme = useTheme();
   const overlayRef = React.useRef(null);
+  const closeButtonRef = React.useRef<HTMLElement | null>(null);
   const scrollableRef = React.useRef<HTMLElement | null>(null);
   const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,
@@ -169,9 +172,12 @@ const Drawer = ({
     [onClose],
   );
 
+  useFocusTrap(scrollableRef);
   useLockScrolling(scrollableRef, lockScrolling && overlayShown);
 
   React.useEffect(() => {
+    closeButtonRef.current?.focus();
+
     if (overlayShown !== shown) {
       if (shown) {
         setOverlayShown(true);
@@ -179,7 +185,17 @@ const Drawer = ({
         setOverlayShownWithTimeout(false);
       }
     }
-  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown]);
+
+    const handleKeyDown = ev => {
+      if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown, onClose]);
+
   return (
     <StyledDrawer
       role="button"
@@ -212,7 +228,7 @@ const Drawer = ({
                 {actions}
               </Stack>
             )}
-            {onClose && <DrawerClose onClick={onClose} />}
+            {onClose && <DrawerClose onClick={onClose} ref={closeButtonRef} />}
           </StyledDrawerHeader>
         )}
         <StyledDrawerContent

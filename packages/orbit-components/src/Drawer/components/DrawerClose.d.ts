@@ -9,5 +9,5 @@ export interface Props {
   readonly onClick?: Common.Callback;
 }
 
-declare const DrawerClose: React.FunctionComponent<Props>;
+declare const DrawerClose: React.ForwardRefRenderFunction<HTMLButtonElement, Props>;
 export { DrawerClose, DrawerClose as default };

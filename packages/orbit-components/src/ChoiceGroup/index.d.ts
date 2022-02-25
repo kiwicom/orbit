@@ -31,5 +31,5 @@ export interface Props extends Common.Global {
   readonly onChange: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 }
 
-declare const ChoiceGroup: React.FunctionComponent<Props>;
+declare const ChoiceGroup: React.ForwardRefRenderFunction<HTMLDivElement, Props>;
 export { ChoiceGroup, ChoiceGroup as default };

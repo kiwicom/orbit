@@ -23,5 +23,5 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly onBlur?: Event;
 }
 
-declare const InputGroup: React.FC<Props>;
+declare const InputGroup: React.ForwardRefRenderFunction<HTMLDivElement, Props>;
 export { InputGroup, InputGroup as default };

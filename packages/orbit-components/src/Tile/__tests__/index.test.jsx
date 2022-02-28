@@ -52,6 +52,11 @@ describe("Tile", () => {
     expect(screen.getByRole("link")).toHaveAttribute("target", "_blank");
   });
 
+  it("should be a list", () => {
+    render(<Tile href="#" external as="li" />);
+    expect(screen.getByRole("listitem")).toBeInTheDocument();
+  });
+
   it("should be expandable", () => {
     render(<Tile expandable initialExpanded />);
     expect(screen.getByRole("button")).toHaveAttribute("aria-expanded");

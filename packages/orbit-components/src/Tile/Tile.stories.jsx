@@ -23,8 +23,10 @@ export default {
 export const DefaultJustWrapper = (): React.Node => {
   const content = text("content", "Lorem ipsum dolor sit amet");
   const noPadding = boolean("noPadding", false);
+  const as = text("as", "");
+
   return (
-    <Tile onClick={action("clicked")} noPadding={noPadding}>
+    <Tile as={as} onClick={action("clicked")} noPadding={noPadding}>
       {content}
     </Tile>
   );

@@ -9,7 +9,7 @@ describe("Tile clickable", () => {
   it("should have expected DOM output", () => {
     const dataTest = "test";
     render(
-      <TileGroup dataTest={dataTest}>
+      <TileGroup dataTest={dataTest} as="ul">
         <Tile title="title" onClick={() => {}}>
           kek
         </Tile>
@@ -21,5 +21,6 @@ describe("Tile clickable", () => {
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getAllByText("kek")).toHaveLength(2);
+    expect(screen.getByRole("list")).toBeInTheDocument();
   });
 });

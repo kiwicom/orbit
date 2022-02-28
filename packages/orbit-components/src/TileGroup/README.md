@@ -22,6 +22,7 @@ Table below contains all types of the props available in TileGroup component.
 
 | Name     | Type         | Default | Description                                                                                       |
 | :------- | :----------- | :------ | :------------------------------------------------------------------------------------------------ |
+| as       | `string`     | `"div"` | The element used for the root node.                                                               |
 | dataTest | `string`     |         | Optional prop for testing purposes.                                                               |
 | children | `React.Node` |         | Content of the TileGroup - normally the Tile component. [See functional specs](#functional-specs) |
 

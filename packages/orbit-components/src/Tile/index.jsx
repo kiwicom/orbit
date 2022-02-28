@@ -24,6 +24,7 @@ const Tile = ({
   noHeaderIcon = false,
   htmlTitle,
   onClick,
+  as,
 }: Props): React.Node => {
   if (expandable) {
     return (
@@ -51,7 +52,7 @@ const Tile = ({
       dataTest={dataTest}
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
-      as={href ? "a" : "div"}
+      as={as || (href ? "a" : "div")}
       tabIndex={!href ? "0" : undefined}
       role={href ? undefined : "button"}
       htmlTitle={htmlTitle}

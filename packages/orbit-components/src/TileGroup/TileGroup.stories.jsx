@@ -23,10 +23,11 @@ export default {
 
 export const DefaultJustWrapper = (): React.Node => {
   const dataTest = text("dataTest", "test");
+  const as = text("as", "");
 
   const content = text("content", "Lorem ipsum dolor sit amet");
   return (
-    <TileGroup dataTest={dataTest}>
+    <TileGroup as={as} dataTest={dataTest}>
       <Tile onClick={action("clicked")}>{content}</Tile>
       <Tile onClick={action("clicked")}>{content}</Tile>
       <Tile onClick={action("clicked")}>{content}</Tile>

@@ -19,6 +19,7 @@ Table below contains all types of the props available in Tile component.
 | Name            | Type                       | Default | Description                                                                                                                  |
 | :-------------- | :------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------- |
 | children        | `React.Node`               |         | Content of expandable Tile.                                                                                                  |
+| as              | `string`                   | `"div"` | The element used for the root node.                                                                                          |
 | dataTest        | `string`                   |         | Optional prop for testing purposes.                                                                                          |
 | description     | `React.Node`               |         | The description of the Tile.                                                                                                 |
 | expandable      | `boolean`                  | `false` | If `true`, the Tile will be expandable.                                                                                      |

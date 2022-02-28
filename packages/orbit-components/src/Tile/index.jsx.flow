@@ -11,6 +11,7 @@ export type TileOnClick = (
 ) => void | Promise<any>;
 
 export type Props = {|
+  +as?: string,
   +title?: React.Node,
   +description?: React.Node,
   +icon?: React.Node,

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.1...@kiwicom/orbit-components@2.14.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* **Alert:** fix content line-height ([485b67f](https://github.com/kiwicom/orbit/commit/485b67f54661da9e201201eece014bb24a6fe3fd))
+* **ChoiceGroup:** add forwardRef ([3158068](https://github.com/kiwicom/orbit/commit/3158068029efb48263fb1c3ed5bc5ae843a1b31a))
+* **Drawer:** autofocus close button when opened ([39dc39c](https://github.com/kiwicom/orbit/commit/39dc39c2cbf80ff978ef1e353ea703ee076d7b7e))
+* **Drawer:** close on ESC ([0de54ee](https://github.com/kiwicom/orbit/commit/0de54eea5c72e2847f1a9a455ad037dae4c0e9ee))
+* **Drawer:** use focus trap ([8291bd3](https://github.com/kiwicom/orbit/commit/8291bd3539905c97f407d72c02950e0a75850524))
+* **InputGroup:** add forwardRef ([78ff5f7](https://github.com/kiwicom/orbit/commit/78ff5f76ac93a98f65f8db53e24d0d025280496e))
+
+
+
+
+
 ## [2.14.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.0...@kiwicom/orbit-components@2.14.1) (2022-02-21)
 
 

@@ -36,6 +36,11 @@ Default.story = {
   },
 };
 
+export const Content = (): React.Node => {
+  const message = "The quick, brown fox jumps over a lazy dog.";
+  return <Alert icon>{message}</Alert>;
+};
+
 export const Button = (): React.Node => {
   const type = select("type", Object.values(BUTTON_TYPE_OPTIONS), BUTTON_TYPE_OPTIONS.INFO);
 

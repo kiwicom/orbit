@@ -214,9 +214,10 @@ StyledTitle.defaultProps = {
 
 const StyledContent = styled(StyledDiv)`
   ${({ inlineActions, theme }) => css`
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 20px;
     width: ${!inlineActions && "100%"};
-    line-height: ${theme.orbit.lineHeightText};
 
     & a:not([class]),
     & ${StyledTextLink} {

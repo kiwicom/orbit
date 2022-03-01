@@ -45,20 +45,22 @@ const getIconSizeFromType = ({ theme, type }) => {
 };
 
 export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />)`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  flex-direction: row;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    flex-direction: row;
+    margin-bottom: ${theme.orbit.spaceXXSmall};
 
-  &:last-child,
-  &:last-of-type {
-    margin: 0;
-  }
+    &:last-child,
+    &:last-of-type {
+      margin: 0;
+    }
 
-  ${StyledText} {
-    line-height: inherit;
-    font-size: inherit;
-  }
+    ${StyledText} {
+      line-height: inherit;
+      font-size: inherit;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -67,22 +69,24 @@ Item.defaultProps = {
 };
 
 export const IconContainer: any = styled.div`
-  display: flex;
-  align-items: center;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  flex: 0 0 auto;
-  height: ${({ theme, size }) => getLineHeightToken({ theme, size })};
+  ${({ theme, size }) => css`
+    display: flex;
+    align-items: center;
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+    flex: 0 0 auto;
+    height: ${getLineHeightToken({ theme, size })};
 
-  ${StyledCarrierLogo} {
-    ${getIconSizeFromType};
-    img {
+    ${StyledCarrierLogo} {
+      ${getIconSizeFromType};
+      img {
+        ${getIconSizeFromType};
+      }
+    }
+    // Icons
+    svg {
       ${getIconSizeFromType};
     }
-  }
-  // Icons
-  svg {
-    ${getIconSizeFromType};
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -91,10 +95,12 @@ IconContainer.defaultProps = {
 };
 
 const StyledLabel = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  color: ${({ theme }) => theme.orbit.colorTextSecondary};
-  font-size: ${getSizeTokenLabel};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightNormal};
+    color: ${theme.orbit.colorTextSecondary};
+    font-size: ${getSizeTokenLabel};
+  `}
 `;
 
 const StyledSpan = styled.span`
@@ -110,9 +116,11 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props):
   const { size, type } = React.useContext(ListContext);
   return (
     <Item data-test={dataTest} type={type}>
-      <IconContainer type={type} size={size}>
-        {icon}
-      </IconContainer>
+      {icon && (
+        <IconContainer type={type} size={size}>
+          {icon}
+        </IconContainer>
+      )}
       <StyledSpan>
         {label && <StyledLabel size={size}>{label}</StyledLabel>}
         {children}

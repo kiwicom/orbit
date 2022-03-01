@@ -41,6 +41,7 @@ export interface Props extends Common.Global {
   readonly scrollPadding?: number;
   readonly overflowElevation?: boolean;
   readonly elevationColor?: string;
+  readonly onOverflow?: () => void;
 }
 
 declare const HorizontalScroll: React.ForwardRefRenderFunction<HTMLDivElement, Props>;

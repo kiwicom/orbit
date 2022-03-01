@@ -92,6 +92,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
       children,
       spacing = "small",
       scrollSnap = "none",
+      onOverflow,
       elevationColor = "paletteCloudDark",
       overflowElevation,
       scrollPadding,
@@ -114,11 +115,12 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
 
         if (containerScrollWidth > offsetWidth) {
           setOverflowing(true);
+          if (onOverflow) onOverflow();
         } else {
           setOverflowing(false);
         }
       }
-    }, []);
+    }, [onOverflow]);
 
     React.useEffect(() => {
       handleOverflow();

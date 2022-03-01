@@ -151,6 +151,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
   const randomId = useRandomIdSeed();
+  const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
     <StyledWrapper opened={opened}>
@@ -164,9 +165,15 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
-          <StyledSummary opened={opened} onClick={ev => ev.stopPropagation()}>
+          <StyledSummary
+            opened={opened}
+            onClick={ev => {
+              if (isOverflowed && opened) ev.stopPropagation();
+            }}
+          >
             <HorizontalScroll
               overflowElevation
+              onOverflow={() => setOverflowed(true)}
               elevationColor="paletteCloudLight"
               scrollSnap="mandatory"
             >

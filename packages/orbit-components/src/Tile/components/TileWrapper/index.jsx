@@ -37,6 +37,27 @@ StyledTileWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledTileAnchor = styled.a`
+  ${({ theme }) => css`
+    display: block;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    &:focus {
+      outline: none;
+      box-shadow: ${theme.orbit.boxShadowActionActive};
+      ${StyledIconRight} {
+        color: ${theme.orbit.paletteInkLightHover};
+      }
+    }
+  `}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledTileAnchor.defaultProps = {
+  theme: defaultTheme,
+};
+
 const TileWrapper = ({
   href,
   external,
@@ -53,9 +74,6 @@ const TileWrapper = ({
   htmlTitle,
 }: Props): React.Node => (
   <StyledTileWrapper
-    target={href && external ? "_blank" : undefined}
-    rel={href && external ? "noopener" : undefined}
-    href={href || undefined}
     data-test={dataTest}
     onClick={onClick}
     onKeyDown={onKeyDown}
@@ -65,9 +83,19 @@ const TileWrapper = ({
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}
     id={id}
-    title={htmlTitle}
   >
-    {children}
+    {href ? (
+      <StyledTileAnchor
+        target={href && external ? "_blank" : undefined}
+        rel={href && external ? "noopener" : undefined}
+        href={href || undefined}
+        title={htmlTitle}
+      >
+        {children}
+      </StyledTileAnchor>
+    ) : (
+      children
+    )}
   </StyledTileWrapper>
 );
 

@@ -26,6 +26,7 @@ const StyledTileHeader = styled.div`
   :focus {
     outline: none;
   }
+
   ${mq.largeMobile(css`
     padding: ${({ theme }) => theme.orbit.spaceLarge};
   `)}

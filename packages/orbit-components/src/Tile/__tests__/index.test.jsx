@@ -14,7 +14,6 @@ describe("Tile", () => {
     const title = "title";
     const description = "description";
     const onClick = jest.fn();
-    const htmlTitle = "title";
 
     render(
       <Tile
@@ -23,7 +22,6 @@ describe("Tile", () => {
         title={title}
         description={description}
         onClick={onClick}
-        htmlTitle={htmlTitle}
       >
         kek
       </Tile>,
@@ -33,7 +31,6 @@ describe("Tile", () => {
     expect(screen.getByRole("button")).toBeInTheDocument();
     expect(screen.getByText(title)).toBeInTheDocument();
     expect(screen.getByText(description)).toBeInTheDocument();
-    expect(screen.getByTitle(htmlTitle)).toBeInTheDocument();
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
     expect(screen.getByText("kek")).toHaveStyle({ padding: "16px" });
     expect(screen.getByText("kek")).toHaveStyle({
@@ -48,13 +45,18 @@ describe("Tile", () => {
   });
 
   it("should be link", () => {
-    render(<Tile href="#" external />);
+    const htmlTitle = "title";
+    render(<Tile href="#" external htmlTitle={htmlTitle} />);
+
+    expect(screen.getByTitle(htmlTitle)).toBeInTheDocument();
     expect(screen.getByRole("link")).toHaveAttribute("target", "_blank");
   });
 
   it("should be a list", () => {
     render(<Tile href="#" external as="li" />);
+
     expect(screen.getByRole("listitem")).toBeInTheDocument();
+    expect(screen.getByRole("link")).toBeInTheDocument();
   });
 
   it("should be expandable", () => {

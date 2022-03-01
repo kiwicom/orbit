@@ -26,10 +26,8 @@ const TileExpandable = ({
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
 
-  const handleClick = event => {
-    if (onClick) {
-      onClick(event);
-    }
+  const handleClick = ev => {
+    if (onClick) onClick(ev);
     setExpanded(prevExpanded => !prevExpanded);
   };
 
@@ -37,6 +35,7 @@ const TileExpandable = ({
   const randomId = useRandomIdSeed();
   const slideID = randomId("slideID");
   const labelID = randomId("labelID");
+
   return (
     <TileWrapper
       onClick={handleClick}

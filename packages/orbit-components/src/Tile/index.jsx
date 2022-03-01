@@ -52,9 +52,9 @@ const Tile = ({
       dataTest={dataTest}
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
-      as={as || (href ? "a" : "div")}
+      as={as}
       tabIndex={!href ? "0" : undefined}
-      role={href ? undefined : "button"}
+      role={onClick ? "button" : undefined}
       htmlTitle={htmlTitle}
     >
       {hasHeader && (

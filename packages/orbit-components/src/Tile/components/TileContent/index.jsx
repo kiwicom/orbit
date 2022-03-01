@@ -31,19 +31,19 @@ const getPadding = ({ noPadding, useMargins, theme }) => {
   `;
 };
 const StyledTileContent = styled.div`
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  ${({ withPointer }) =>
-    withPointer &&
+  ${({ theme, withBorder, withPointer }) => css`
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    ${withPointer &&
     css`
       cursor: pointer;
     `};
-  ${({ withBorder, theme }) =>
-    withBorder &&
+    ${withBorder &&
     css`
       border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     `};
-  ${getPadding};
+    ${getPadding};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

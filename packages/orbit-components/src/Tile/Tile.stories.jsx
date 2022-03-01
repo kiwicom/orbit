@@ -76,6 +76,7 @@ export const DefaultWithHeaderPropsAsHref = (): React.Node => {
   const Icon = getIcon(getIcons("Airplane"));
   const href = text("href", "#");
   const external = boolean("external", false);
+
   return (
     <Tile
       icon={Icon && <Icon />}
@@ -159,10 +160,12 @@ export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const children = text("children", null);
   const htmlTitle = text("htmlTitle", "Title for more info");
+  const as = text("as", "");
 
   return (
     <Tile
       href={href}
+      as={as}
       onClick={action("clicked")}
       icon={Icon && <Icon />}
       title={title}

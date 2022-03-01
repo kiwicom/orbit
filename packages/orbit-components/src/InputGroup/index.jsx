@@ -97,10 +97,10 @@ StyledChild.defaultProps = {
 };
 
 const StyledInputGroup = styled(
-  ({ children, className, dataTest, role, ariaLabelledby, ref, dataState }) => (
+  ({ children, className, dataTest, role, ariaLabelledby, forwardRef, dataState }) => (
     <div
       data-state={dataState}
-      ref={ref}
+      ref={forwardRef}
       className={className}
       data-test={dataTest}
       role={role}
@@ -269,7 +269,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
         error={errorReal}
         active={active}
         size={size}
-        ref={ref}
+        forwardRef={ref}
         dataTest={dataTest}
         dataState={getFieldDataState(!!errorReal)}
         spaceAfter={spaceAfter}

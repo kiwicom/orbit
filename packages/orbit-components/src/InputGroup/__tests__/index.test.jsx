@@ -77,6 +77,19 @@ describe("InputGroup", () => {
         <InputField />
       </InputGroup>,
     );
+
     expect(screen.getByRole("textbox")).toBeDisabled();
+  });
+
+  it("should have ref", () => {
+    const ref = React.createRef();
+
+    render(
+      <InputGroup ref={ref}>
+        <InputField />
+      </InputGroup>,
+    );
+
+    expect(ref.current).toBeDefined();
   });
 });

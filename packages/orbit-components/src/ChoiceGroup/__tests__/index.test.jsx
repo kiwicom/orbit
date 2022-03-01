@@ -73,4 +73,16 @@ describe("ChoiceGroup", () => {
 
     expect(screen.getByText("kek")).toBeInTheDocument();
   });
+
+  it("should have ref", () => {
+    const ref = React.createRef();
+
+    render(
+      <ChoiceGroup ref={ref} onChange={() => {}}>
+        <Radio value="option" label="Option" />
+      </ChoiceGroup>,
+    );
+
+    expect(ref.current).toBeDefined();
+  });
 });

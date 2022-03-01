@@ -44,7 +44,7 @@ export const getVersions = async (pathToFolder: string) => {
     const data = await fs.readFile(lock, "utf-8");
 
     const ver = data.match(
-      /https:\/\/registry.yarnpkg.com\/@kiwicom\/orbit-components\/-\/orbit-components-[~^]?([\dvx*]+(?:[-.](?:[\dx*]+|alpha|beta))*)/g,
+      /https:\/\/registry.(yarnpkg.com|npmjs.org)\/@kiwicom\/orbit-components\/-\/orbit-components-[~^]?([\dvx*]+(?:[-.](?:[\dx*]+|alpha|beta))*)/g,
     );
 
     // eslint-disable-next-line prefer-destructuring

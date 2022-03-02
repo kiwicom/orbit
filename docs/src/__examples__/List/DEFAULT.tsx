@@ -3,7 +3,7 @@ import { ListItem, List } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <List size="normal" type="primary">
+    <List size="normal">
       <ListItem>Planes</ListItem>
       <ListItem>Trains</ListItem>
       <ListItem>Automobiles</ListItem>

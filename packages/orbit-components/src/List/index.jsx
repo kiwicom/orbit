@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
@@ -33,17 +33,19 @@ const StyledList = styled(({ className, children, dataTest }) => (
     {children}
   </ul>
 ))`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  font-family: ${({ theme }) => theme.orbit.fontfamily};
-  font-size: ${getSizeToken};
-  line-height: ${getLineHeightToken};
-  color: ${getTypeToken};
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme }) => css`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${getSizeToken};
+    line-height: ${getLineHeightToken};
+    color: ${getTypeToken};
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

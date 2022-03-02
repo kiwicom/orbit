@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.2...@kiwicom/orbit-components@2.15.0) (2022-03-02)
+
+
+### Bug Fixes
+
+* **InputGroup:** pass and test forwardRef ([c1ef417](https://github.com/kiwicom/orbit/commit/c1ef41729822bacd07adafd2004cf3c9bbf727a1))
+* **ItinerarySegmentDetail:** fix click event for badges ([99305ae](https://github.com/kiwicom/orbit/commit/99305aef6344908fa5b6f2e27c4ccc8ceb4e95b8))
+* **List:** remove additional spacing ([#3299](https://github.com/kiwicom/orbit/issues/3299)) ([be2ac7c](https://github.com/kiwicom/orbit/commit/be2ac7c6b80d1aa079b22cf19f38b20a97cc8f48))
+
+
+### Features
+
+* **HorizontalScroll:** add onOverflow prop ([ec04d31](https://github.com/kiwicom/orbit/commit/ec04d319484a0d92bf7e1b486a5d6547c66bf533))
+
+
+
+
+
 ## [2.14.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.1...@kiwicom/orbit-components@2.14.2) (2022-02-28)
 
 

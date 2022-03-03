@@ -5,9 +5,8 @@ module.exports = {
   extends: [
     "airbnb",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
     "plugin:orbit-components/internal",
-    "prettier/react",
+    "plugin:prettier/recommended",
   ],
   plugins: ["babel"],
   rules: {
@@ -76,7 +75,7 @@ module.exports = {
   overrides: [
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
-      extends: ["plugin:flowtype/recommended", "prettier/flowtype"],
+      extends: ["plugin:flowtype/recommended", "prettier"],
       plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -90,7 +89,7 @@ module.exports = {
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
+        "prettier",
       ],
       parserOptions: {
         project: [

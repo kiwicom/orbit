@@ -2,7 +2,7 @@
 
 module.exports = {
   presets: [
-    [require.resolve("@babel/preset-env"), { loose: true, bugfixes: true }],
+    [require.resolve("@babel/preset-env"), { bugfixes: true }],
     [require.resolve("@babel/preset-react"), { runtime: "classic" }],
     require.resolve("@babel/preset-flow"),
   ],

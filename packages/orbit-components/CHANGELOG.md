@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.0...@kiwicom/orbit-components@2.15.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* **Tile:** fix tile anchor ([#3302](https://github.com/kiwicom/orbit/issues/3302)) ([68c0bfa](https://github.com/kiwicom/orbit/commit/68c0bfae3391fd22d70bef9d4b384dc638c2e049))
+
+
+
+
+
 # [2.15.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.2...@kiwicom/orbit-components@2.15.0) (2022-03-02)
 
 

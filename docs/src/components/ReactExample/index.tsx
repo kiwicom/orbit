@@ -81,6 +81,7 @@ const ReactExample = ({ exampleId, responsive = true, background = "white", heig
       exampleVariants={example.exampleVariants}
       code={codeWithImports}
       exampleId={example.id}
+      exampleName={exampleId}
       fullPageExampleId={exampleId.toLowerCase()}
       example={example.example}
       onChangeCode={c => setCode(c)}

@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const PureSandbox = ({ pathContext }) => {
-  const { example, example_id, scope } = pathContext;
+const PureSandbox = ({ pageContext }) => {
+  const { example, example_id, scope } = pageContext;
   const { code } = useSandbox(example_id);
   const modules = getModules(scope);
 

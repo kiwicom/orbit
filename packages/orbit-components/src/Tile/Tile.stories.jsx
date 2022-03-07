@@ -3,6 +3,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
+import TileGroup from "../TileGroup";
 import * as Icons from "../icons";
 import Stack from "../Stack";
 import Text from "../Text";
@@ -142,6 +143,25 @@ ExpandableWithCustomDescription.story = {
   parameters: {
     info: "This is the playground configuration of this component.",
   },
+};
+
+export const Group = (): React.Node => {
+  return (
+    <TileGroup as="ul">
+      <Tile as="li" href="#">
+        List Item
+      </Tile>
+      <Tile as="li" href="#">
+        List Item
+      </Tile>
+      <Tile as="li" href="#">
+        List Item
+      </Tile>
+      <Tile as="li" href="#">
+        List Item
+      </Tile>
+    </TileGroup>
+  );
 };
 
 export const Playground = (): React.Node => {

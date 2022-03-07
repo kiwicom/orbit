@@ -41,6 +41,9 @@
     "library",
     "component"
   ],
+  "browserslist": [
+    "extends @kiwicom/browserslist-config"
+  ],
   "files": [
     "es",
     "lib",

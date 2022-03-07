@@ -43,12 +43,19 @@ const StyledTileAnchor = styled.a`
     height: 100%;
     width: 100%;
     outline: none;
+    text-decoration: none;
+    color: ${theme.orbit.paletteInkNormal};
     &:focus {
       outline: none;
       box-shadow: ${theme.orbit.boxShadowActionActive};
       ${StyledIconRight} {
         color: ${theme.orbit.paletteInkLightHover};
       }
+    }
+    &:link,
+    &:visited {
+      color: ${theme.orbit.paletteInkNormal};
+      font-weight: ${theme.orbit.fontWeightLinks};
     }
   `}
 `;

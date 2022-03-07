@@ -76,6 +76,7 @@ interface Props extends InitialProps {
   example: string;
   fullPageExampleId?: string;
   isFullPage?: boolean;
+  exampleName: string;
   exampleKnobs: ExampleKnob[];
   exampleVariants: Variant[];
   onChangeCode: (code: string) => void;
@@ -88,6 +89,7 @@ const Example = ({
   origin,
   exampleId,
   exampleKnobs,
+  exampleName,
   exampleVariants,
   fullPageExampleId,
   height,
@@ -154,7 +156,7 @@ const Example = ({
       {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
         <Playground
-          onChange={knob => onChangeCode(transform(example, knob))}
+          onChange={knob => onChangeCode(transform(exampleName, example, knob))}
           exampleKnobs={exampleKnobs}
         />
       )}

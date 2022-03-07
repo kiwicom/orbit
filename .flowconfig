@@ -13,6 +13,7 @@
 .*/node_modules/chrome-devtools-frontend/.*
 .*/node_modules/elasticlunr/test/fixtures/.*
 .*/node_modules/rechoir/node_modules/resolve/test/resolver/malformed_package_json/.*
+.*/node_modules/resolve/test/resolver/malformed_package_json/.*
 
 .*\.mjs
 
@@ -28,3 +29,4 @@ unnecessary-optional-chain=error
 emoji=true
 esproposal.optional_chaining=enable
 server.max_workers=2
+sharedmemory.hash_table_pow=21

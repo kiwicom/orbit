@@ -2,6 +2,8 @@
   "extends": "../tsconfig.json",
   "include": ["**/*"],
   "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "node",
     "skipLibCheck": true
   },
   "exclude": []

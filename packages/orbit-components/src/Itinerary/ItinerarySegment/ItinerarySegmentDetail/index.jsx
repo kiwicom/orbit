@@ -180,57 +180,60 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
               {summary}
             </HorizontalScroll>
           </StyledSummary>
-          {opened ? <ChevronUp color="secondary" /> : <ChevronDown color="secondary" />}
+          {content &&
+            (opened ? <ChevronUp color="secondary" /> : <ChevronDown color="secondary" />)}
         </Stack>
       </StyledInnerWrapper>
-      <Slide
-        maxHeight={slideHeight}
-        expanded={opened}
-        id={randomId("slide")}
-        ariaLabelledBy={randomId("slide")}
-      >
-        <StyledExpandable ref={slideRef} onClick={toggleOpened}>
-          <StyledExpandableContent $offset={calculatedWidth}>
-            {content &&
-              content.map(({ title, items }, idx) => {
-                return (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <React.Fragment key={idx}>
-                    <StyledHeadingOffset>
-                      <Text size="small" weight="medium" spaceAfter="small">
-                        {title}
-                      </Text>
-                    </StyledHeadingOffset>
-                    <Stack
-                      direction="column"
-                      spacing="none"
-                      spaceAfter={idx === content.length - 1 ? "none" : "medium"}
-                    >
-                      {items.map(({ icon: itemIcon, name, value }, id) => {
-                        return (
-                          // eslint-disable-next-line react/no-array-index-key
-                          <Stack flex grow={false} align="center" key={id}>
-                            <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
-                              {itemIcon}
-                            </StyledIcon>
-                            <Truncate>
-                              <Text size="small">{name}</Text>
-                            </Truncate>
-                            <Truncate>
-                              <Text size="small" weight="medium" align="right">
-                                {value}
-                              </Text>
-                            </Truncate>
-                          </Stack>
-                        );
-                      })}
-                    </Stack>
-                  </React.Fragment>
-                );
-              })}
-          </StyledExpandableContent>
-        </StyledExpandable>
-      </Slide>
+      {content && (
+        <Slide
+          maxHeight={slideHeight}
+          expanded={opened}
+          id={randomId("slide")}
+          ariaLabelledBy={randomId("slide")}
+        >
+          <StyledExpandable ref={slideRef} onClick={toggleOpened}>
+            <StyledExpandableContent $offset={calculatedWidth}>
+              {content &&
+                content.map(({ title, items }, idx) => {
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <React.Fragment key={idx}>
+                      <StyledHeadingOffset>
+                        <Text size="small" weight="medium" spaceAfter="small">
+                          {title}
+                        </Text>
+                      </StyledHeadingOffset>
+                      <Stack
+                        direction="column"
+                        spacing="none"
+                        spaceAfter={idx === content.length - 1 ? "none" : "medium"}
+                      >
+                        {items.map(({ icon: itemIcon, name, value }, id) => {
+                          return (
+                            // eslint-disable-next-line react/no-array-index-key
+                            <Stack flex grow={false} align="center" key={id}>
+                              <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
+                                {itemIcon}
+                              </StyledIcon>
+                              <Truncate>
+                                <Text size="small">{name}</Text>
+                              </Truncate>
+                              <Truncate>
+                                <Text size="small" weight="medium" align="right">
+                                  {value}
+                                </Text>
+                              </Truncate>
+                            </Stack>
+                          );
+                        })}
+                      </Stack>
+                    </React.Fragment>
+                  );
+                })}
+            </StyledExpandableContent>
+          </StyledExpandable>
+        </Slide>
+      )}
     </StyledWrapper>
   );
 };

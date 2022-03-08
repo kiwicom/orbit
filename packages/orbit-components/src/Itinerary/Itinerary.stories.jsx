@@ -19,6 +19,7 @@ import {
 } from "../icons";
 import Stack from "../Stack";
 import Badge from "../Badge";
+import Heading from "../Heading";
 import { BadgeListItem } from "../BadgeList";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -146,23 +147,43 @@ const content = [
 
 export const Segment = (): React.Node => {
   return (
-    <Itinerary>
-      <ItinerarySegment>
-        <ItinerarySegmentStop
-          city="Prague"
-          station="Václav Havel Airport Prague (PRG)"
-          date="Fri, 19.10"
-          time="14:05"
-        />
-        <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
-        <ItinerarySegmentStop
-          city="Milan"
-          station="Milan Bergamo International Airport (BGY)"
-          date="Fri, 19.10"
-          time="16:35"
-        />
-      </ItinerarySegment>
-    </Itinerary>
+    <Stack spacing="large">
+      <Itinerary>
+        <ItinerarySegment>
+          <ItinerarySegmentStop
+            city="Prague"
+            station="Václav Havel Airport Prague (PRG)"
+            date="Fri, 19.10"
+            time="14:05"
+          />
+          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
+          <ItinerarySegmentStop
+            city="Milan"
+            station="Milan Bergamo International Airport (BGY)"
+            date="Fri, 19.10"
+            time="16:35"
+          />
+        </ItinerarySegment>
+      </Itinerary>
+      <Heading type="title2">Without ItinerarySegmentDetail content</Heading>
+      <Itinerary>
+        <ItinerarySegment>
+          <ItinerarySegmentStop
+            city="Prague"
+            station="Václav Havel Airport Prague (PRG)"
+            date="Fri, 19.10"
+            time="14:05"
+          />
+          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} />
+          <ItinerarySegmentStop
+            city="Milan"
+            station="Milan Bergamo International Airport (BGY)"
+            date="Fri, 19.10"
+            time="16:35"
+          />
+        </ItinerarySegment>
+      </Itinerary>
+    </Stack>
   );
 };
 

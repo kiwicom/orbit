@@ -47,6 +47,7 @@ Table below contains all types of the props available in Illustration component.
 | `"CompassEmailPromotedCaptain"` |
 | `"CompassEmailScout"`           |
 | `"CompassPoints"`               |
+| `"Chatbot"`                     |
 | `"CompassTravelPlan"`           |
 | `"CompassSaveOnBooking"`        |
 | `"DesktopSearch"`               |
@@ -55,6 +56,8 @@ Table below contains all types of the props available in Illustration component.
 | `"Error"`                       |
 | `"Error404"`                    |
 | `"FastTrack"`                   |
+| `"FareLock"`                    |
+| `"FareLockSuccess"`             |
 | `"FastTrackMan"`                |
 | `"Feedback"`                    |
 | `"Help"`                        |

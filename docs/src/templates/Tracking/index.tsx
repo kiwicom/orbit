@@ -125,7 +125,7 @@ export default function Tracking({ pageContext, location, data }: Props) {
 
 export const query = graphql`
   query TrackingDataQuery($name: String!) {
-    allTracking(filter: { name: { eq: $name } }) {
+    allTracking(sort: { fields: createdAt, order: DESC }, filter: { name: { eq: $name } }) {
       nodes {
         id
         name

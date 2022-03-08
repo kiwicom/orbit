@@ -16,7 +16,7 @@ export interface Props {
   /** The content of ItineraryDetail component, when it's not expanded */
   readonly summary: React.ReactNode;
   /** The content of ItineraryDetail component, shown when it's expanded */
-  readonly content: ContentItem[];
+  readonly content?: ContentItem[];
   /** The duration between two Itinerary parts  */
   readonly duration: string;
   /** default: <Airplane /> */

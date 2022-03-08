@@ -17,7 +17,7 @@ export type Props = {|
   +icon?: React.Node,
   +summary: React.Node,
   +duration: string,
-  +content: ContentItem[],
+  +content?: ContentItem[],
 |};
 
 declare export default React.ComponentType<Props>;

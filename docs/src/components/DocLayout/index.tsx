@@ -16,7 +16,7 @@ import styled, { css } from "styled-components";
 import * as components from "../../mdx-components";
 import Head from "../Head";
 import BaseStyles from "../BaseStyles";
-import AddBookmark from "../AddBookmark";
+import { AddBookmark } from "../Bookmarks";
 import FancyLink from "../FancyLink";
 import Guideline from "../Guidelines";
 import InlineToken from "../InlineToken";
@@ -152,7 +152,7 @@ export default function DocLayout({
                   {trail && <Breadcrumbs trail={trail} />}
                   <Box padding={{ bottom: "medium" }}>
                     <Stack inline align="center" spaceAfter="small">
-                      <AddBookmark />
+                      <AddBookmark title={title} description={description} />
                       <div
                         css={css`
                           /* align with the bookmark icon */

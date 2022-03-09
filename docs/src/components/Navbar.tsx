@@ -274,17 +274,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                               {docNavigation}
                             </div>
                           )}
-                          {activeTab === "bookmarks" && (
-                            <div
-                              tabIndex={0}
-                              role="tabpanel"
-                              // eslint-disable-next-line orbit-components/unique-id
-                              id="navbar-tabpanel-navigation"
-                              aria-labelledby="navbar-tab-navigation"
-                            >
-                              <Bookmarks />
-                            </div>
-                          )}
+                          {activeTab === "bookmarks" && <Bookmarks />}
                         </Hide>
                         <Hide
                           block

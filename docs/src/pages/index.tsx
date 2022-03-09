@@ -5,6 +5,7 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
 
+import { RecentBookmarks } from "../components/Bookmarks";
 // temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
 import ModulePuzzleIcon from "../images/streamline-light/module-puzzle.svg";
 import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
@@ -49,7 +50,7 @@ export default function Home({ location, path }: Props) {
   const [isSearchOpen, setSearchOpen] = useKeyboard();
 
   return (
-    <BookmarkProvider location={location} page={path}>
+    <BookmarkProvider page={path} location={location}>
       <Layout
         location={location}
         title="Orbit design system"
@@ -110,7 +111,7 @@ export default function Home({ location, path }: Props) {
               </Inline>
             </div>
           </>
-
+          <RecentBookmarks />
           <Stack
             flex
             direction="column"

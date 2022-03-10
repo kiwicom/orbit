@@ -4,10 +4,17 @@ import { PageRendererProps } from "gatsby";
 import { load, save } from "../utils/storage";
 
 interface BookmarksCtx {
-  bookmarks: Record<string, string>;
-  toggleBookmark: () => void;
+  bookmarks: Record<string, { title: string; description: string; href: string }>;
+  toggleBookmark: ({ title, description }) => void;
+  removeBookmark: (page: string) => void;
   setAdded: React.Dispatch<React.SetStateAction<boolean>>;
   isAdded: boolean;
+}
+
+interface Bookmark {
+  title: string;
+  description: string;
+  href: string;
 }
 
 interface Props extends PageRendererProps {
@@ -18,6 +25,7 @@ interface Props extends PageRendererProps {
 const defaultBookmarks = {
   bookmarks: {},
   toggleBookmark: () => {},
+  removeBookmark: () => {},
   setAdded: () => {},
   isAdded: false,
 };
@@ -25,7 +33,7 @@ const defaultBookmarks = {
 export const BookmarksContext = React.createContext<BookmarksCtx>(defaultBookmarks);
 
 export const BookmarkProvider = ({ children, page, location }: Props) => {
-  const [bookmarks, setBookmarks] = React.useState({});
+  const [bookmarks, setBookmarks] = React.useState<Record<string, Bookmark>>({});
   const [isAdded, setAdded] = React.useState(false);
 
   React.useEffect(() => {
@@ -34,23 +42,34 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
   }, [setBookmarks]);
 
   React.useEffect(() => {
-    if (Object.values(bookmarks).includes(location.pathname)) setAdded(true);
+    if (Object.keys(bookmarks).includes(location.pathname)) setAdded(true);
   }, [setAdded, bookmarks, location.pathname]);
 
-  const toggleBookmark = () => {
-    const pg = { [page]: location.pathname };
+  const removeBookmark = (p: string) => {
+    delete bookmarks[p];
+    setBookmarks({ ...bookmarks });
+    save("bookmarks", JSON.stringify({ ...bookmarks }));
+  };
+
+  const toggleBookmark = ({ title, description }) => {
+    const pg = {
+      [page]: {
+        title: title || location.pathname,
+        description,
+        href: page,
+      },
+    };
 
     if (!isAdded) {
       setBookmarks({ ...bookmarks, ...pg });
       save("bookmarks", JSON.stringify({ ...bookmarks, ...pg }));
-    } else {
-      setBookmarks({ ...bookmarks, ...{ [page]: "" } });
-      save("bookmarks", JSON.stringify({ ...bookmarks, ...{ [page]: "" } }));
-    }
+    } else removeBookmark(page);
   };
 
   return (
-    <BookmarksContext.Provider value={{ bookmarks, toggleBookmark, isAdded, setAdded }}>
+    <BookmarksContext.Provider
+      value={{ bookmarks, toggleBookmark, isAdded, setAdded, removeBookmark }}
+    >
       {children}
     </BookmarksContext.Provider>
   );

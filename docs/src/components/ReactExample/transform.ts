@@ -43,12 +43,16 @@ export const transform = (
               if (value === "") return null;
 
               if (value.includes("-icon")) {
-                const iconName = `Icons.${value.split("-icon")[0]}`;
+                const iconName = `${value.split("-icon")[0]}`;
                 return t.jsxAttribute(
                   t.jsxIdentifier(name),
                   t.jsxExpressionContainer(
                     t.jsxElement(
-                      t.jsxOpeningElement(t.jsxIdentifier(iconName), [], true),
+                      t.jsxOpeningElement(
+                        t.jsxMemberExpression(t.jsxIdentifier("Icons"), t.jsxIdentifier(iconName)),
+                        [],
+                        true,
+                      ),
                       null,
                       [],
                       true,

@@ -84,20 +84,6 @@ describe("sandbox transform", () => {
     `);
   });
 
-  it("should transform icon", () => {
-    expect(
-      transform(
-        "TEST.tsx",
-        `() => <Component iconRight={<Icons.Visibility />}>kek</Component>;`,
-        setKnob("iconRight", "<Accommodation-icon />"),
-      ),
-    ).toMatchInlineSnapshot(`
-      "() => /*#__PURE__*/React.createElement(Component, {
-        iconRight: /*#__PURE__*/React.createElement(\\"Icons.<Accommodation\\", null)
-      }, \\"kek\\");"
-    `);
-  });
-
   it("should adjust default props", () => {
     expect(
       transform(

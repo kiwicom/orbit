@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.1...@kiwicom/orbit-components@2.16.0) (2022-03-11)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentDetail:** expandable, only if content is provided ([#3303](https://github.com/kiwicom/orbit/issues/3303)) ([d840627](https://github.com/kiwicom/orbit/commit/d840627294a5744838da2adb3beed4f5e50c2a3c))
+
+
+### Features
+
+* **Illustrations:** add new Chatbot, FareLock illustrations ([#3304](https://github.com/kiwicom/orbit/issues/3304)) ([31d5d82](https://github.com/kiwicom/orbit/commit/31d5d82e77e33204fcc2fc817af03afebc1a4e1b))
+
+
+
+
+
 ## [2.15.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.0...@kiwicom/orbit-components@2.15.1) (2022-03-07)
 
 

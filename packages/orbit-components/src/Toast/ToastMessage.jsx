@@ -41,7 +41,6 @@ const StyledInnerWrapper = styled.div`
     background: ${theme.orbit.paletteInkNormal};
     padding: ${theme.orbit.spaceXSmall};
     width: 100%;
-    min-width: 360px;
     overflow: hidden;
     will-change: transform;
     pointer-events: ${visible ? "auto" : "none"};

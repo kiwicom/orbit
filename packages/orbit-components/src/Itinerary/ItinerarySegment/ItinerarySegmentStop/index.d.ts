@@ -11,11 +11,11 @@ export interface Props {
   /** The date of ItineraryPartPlace */
   readonly date: string;
   /** The time of ItineraryPartPlace */
-  readonly time: string;
+  readonly time: React.ReactNode;
   /** The city of ItineraryPartPlace */
-  readonly city: string;
+  readonly city: React.ReactNode;
   /** The place of ItineraryPartPlace */
-  readonly station: string;
+  readonly station: React.ReactNode;
   /** ItineraryPartPlace which status is HiddenCity */
   readonly hidden?: boolean;
   /** Changes the icon of current ItineraryPartPlace, if there is some important information for user */

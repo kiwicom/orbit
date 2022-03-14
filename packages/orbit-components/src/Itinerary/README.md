@@ -67,9 +67,9 @@ ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two loc
 | Name     | Type                | Required           | Default | Description                                              |
 | -------- | ------------------- | ------------------ | ------- | -------------------------------------------------------- |
 | date     | `string`            | :heavy_check_mark: |         | The date of ItinerarySegmentStop                         |
-| time     | `string`            | :heavy_check_mark: |         | The time of ItinerarySegmentStop                         |
-| city     | `string`            | :heavy_check_mark: |         | The city of ItinerarySegmentStop                         |
-| station  | `string`            | :heavy_check_mark: |         | The station of ItinerarySegmentStop                      |
+| time     | `React.Node`        | :heavy_check_mark: |         | The time of ItinerarySegmentStop                         |
+| city     | `React.Node`        | :heavy_check_mark: |         | The city of ItinerarySegmentStop                         |
+| station  | `React.Node`        | :heavy_check_mark: |         | The station of ItinerarySegmentStop                      |
 | hidden   | `boolean`           |                    |         | ItinerarySegmentStop which status is hidden              |
 | icon     | `React.Node`        |                    |         | ItinerarySegmentStop custom icon                         |
 | canceled | `boolean`           |                    |         | Shows segment stop as canceled with striked through Text |

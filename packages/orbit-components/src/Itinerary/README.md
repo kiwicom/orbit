@@ -57,6 +57,7 @@ ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegment
 | dataTest    | `string`          |                    |         | Optional prop for testing purposes.                                                                                                                            |
 | noElevation | `boolean`         |                    |         | Turn off elevation (box-shadow) for a segment.                                                                                                                 |
 | spaceAfter  | `enum`            |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| actionable  | `boolean`         |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper                                                                                                         |
 
 ## ItinerarySegmentStop
 

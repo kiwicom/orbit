@@ -167,7 +167,7 @@ export const Segment = (): React.Node => {
       </Itinerary>
       <Heading type="title2">Without ItinerarySegmentDetail content</Heading>
       <Itinerary>
-        <ItinerarySegment>
+        <ItinerarySegment actionable={false}>
           <ItinerarySegmentStop
             city="Prague"
             station="Václav Havel Airport Prague (PRG)"

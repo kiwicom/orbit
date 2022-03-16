@@ -11,17 +11,20 @@ import handleKeyDown from "../../utils/handleKeyDown";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, noElevation }) => css`
-    cursor: pointer;
+  ${({ theme, noElevation, actionable }) => css`
+    cursor: ${actionable && "pointer"};
     margin-bottom: ${getSpacingToken};
     box-shadow: ${!noElevation && theme.orbit.boxShadowFixed};
     border-radius: ${theme.orbit.borderRadiusLarge};
     padding: ${theme.orbit.spaceSmall} 0;
-    &:hover,
-    &:focus {
-      box-shadow: ${!noElevation && theme.orbit.boxShadowActionActive};
-      outline: none;
-    }
+    ${actionable &&
+    css`
+      &:hover,
+      &:focus {
+        box-shadow: ${!noElevation && theme.orbit.boxShadowActionActive};
+        outline: none;
+      }
+    `}
   `}
 `;
 
@@ -35,6 +38,7 @@ const ItinerarySegment = ({
   spaceAfter,
   dataTest,
   noElevation,
+  actionable = true,
   onClick,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
@@ -70,6 +74,7 @@ const ItinerarySegment = ({
 
   return (
     <StyledWrapper
+      actionable={actionable}
       spaceAfter={spaceAfter}
       data-test={dataTest}
       tabIndex={0}

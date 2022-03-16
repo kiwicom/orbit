@@ -13,19 +13,21 @@ import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from ".";
 
 const StyledListChoiceIcon = styled.div`
-  display: flex;
-  align-self: flex-start;
-  flex: 0 0 auto;
-  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
-  height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  ${({ theme }) => css`
+    display: flex;
+    align-self: flex-start;
+    flex: 0 0 auto;
+    margin-${right}: ${theme.orbit.spaceXSmall};
+    height: ${theme.orbit.lineHeightTextNormal};
 
-  svg {
-    align-self: center;
-    width: ${getSize("small")};
-    height: ${getSize("small")};
-    color: ${({ theme }) => theme.orbit.colorIconPrimary};
-    transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  }
+    svg {
+      align-self: center;
+      width: ${getSize("medium")};
+      height: ${getSize("medium")};
+      color: ${theme.orbit.colorIconPrimary};
+      transition: color ${theme.orbit.durationFast} ease-in-out;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -34,36 +36,40 @@ StyledListChoiceIcon.defaultProps = {
 };
 
 const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...props} />)`
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  padding: ${({ theme }) => `${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
-  transition: background-color 0.15s ease-in-out;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  ${({ theme, disabled }) => css`
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: ${`${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
+    background-color: ${theme.orbit.paletteWhite};
+    transition: background-color 0.15s ease-in-out;
+    cursor: ${disabled ? "not-allowed" : "pointer"};
 
-  &:last-child {
-    border: none;
-  }
+    &:last-child {
+      border: none;
+    }
 
-  &:focus,
-  &:hover {
-    outline: none;
-    ${({ disabled, theme }) =>
-      !disabled &&
+    &:focus,
+    &:hover {
+      outline: none;
+      button {
+        background: none;
+      }
+      ${!disabled &&
       css`
-        background-color: ${theme.orbit.paletteCloudLight};
+        background: ${theme.orbit.paletteCloudLight};
         ${StyledListChoiceIcon} svg {
           color: ${theme.orbit.colorIconPrimary};
         }
       `};
-  }
+    }
 
-  ${Label} {
-    width: auto;
-  }
+    ${Label} {
+      width: auto;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -72,11 +78,13 @@ StyledListChoice.defaultProps = {
 };
 
 const StyledListChoiceContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  padding-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-${right}: ${theme.orbit.spaceSmall};
+`}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -87,6 +95,7 @@ StyledListChoiceContent.defaultProps = {
 const ListChoice = ({
   dataTest,
   icon,
+  action,
   title,
   description,
   selectable,
@@ -119,6 +128,7 @@ const ListChoice = ({
         )}
       </StyledListChoiceContent>
       {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex="-1" />}
+      {!selectable && action}
     </StyledListChoice>
   );
 };

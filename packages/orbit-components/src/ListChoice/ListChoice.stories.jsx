@@ -4,6 +4,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 
+import Button from "../Button";
 import * as Icons from "../icons";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -71,6 +72,33 @@ MultipleChoices.story = {
   parameters: {
     info: "Some description about this type of ListChoice in general.",
   },
+};
+
+export const WithAction = (): React.Node => {
+  const title = text("title", "Choice Title");
+  const description = text("description", "Further description");
+  const disabled = boolean("disabled", false);
+  const Icon = getIcon(getIcons("icon", "Accommodation"));
+  const dataTest = text("dataTest", "test");
+
+  return (
+    <ListChoice
+      title={title}
+      description={description}
+      disabled={disabled}
+      icon={Icon && <Icon />}
+      action={
+        <Button
+          onClick={action("onClick")}
+          iconLeft={<Icons.Plus />}
+          size="small"
+          type="primarySubtle"
+        />
+      }
+      onClick={action("onClick")}
+      dataTest={dataTest}
+    />
+  );
 };
 
 export const Playground = (): React.Node => {

@@ -3,12 +3,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { left, rtlSpacing } from "../../utils/rtl";
-import {
-  AlertOctagon,
-  AlertCircle as Warning,
-  InformationCircle as Info,
-  CheckCircle as Check,
-} from "../../icons";
 import Text from "../../Text";
 import Stack from "../../Stack";
 import defaultTheme from "../../defaultTheme";
@@ -16,6 +10,10 @@ import type { ThemeProps } from "../../defaultTheme";
 import { STATUS } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { Status } from "..";
+import AlertOctagon from "../../icons/AlertOctagon";
+import Warning from "../../icons/AlertCircle";
+import Info from "../../icons/InformationCircle";
+import Check from "../../icons/CheckCircle";
 
 import type { Props } from ".";
 

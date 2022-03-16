@@ -21,14 +21,14 @@ import ItineraryIcon from "../ItineraryIcon";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, opened }) => css`
+  ${({ theme, opened, isContent }) => css`
     width: 100%;
     position: relative;
     padding: ${theme.orbit.spaceSmall} 0;
     box-sizing: border-box;
-    background: ${opened && theme.orbit.paletteCloudLight};
+    background: ${isContent ? opened && theme.orbit.paletteCloudLight : "none"};
     &:hover {
-      background: ${theme.orbit.paletteCloudLight};
+      background: ${isContent ? theme.orbit.paletteCloudLight : "none"};
       ${StyledBadge} {
         background: ${theme.orbit.paletteWhite};
       }
@@ -58,14 +58,14 @@ StyledInnerWrapper.defaultProps = {
 };
 
 export const StyledSummary: any = styled.div`
-  ${({ theme, opened }) => css`
+  ${({ theme, opened, isContent }) => css`
     display: flex;
     align-items: center;
     border-radius: ${theme.orbit.borderRadiusBadge};
     width: 100%;
     overflow: hidden;
     ${StyledBadge} {
-      background: ${opened && theme.orbit.paletteWhite};
+      background: ${isContent ? opened && theme.orbit.paletteWhite : "none"};
     }
   `}
 `;
@@ -154,7 +154,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <StyledWrapper opened={opened}>
+    <StyledWrapper opened={opened} isContent={content}>
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -167,6 +167,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           </StyledDetailsIcon>
           <StyledSummary
             opened={opened}
+            isContent={content}
             onClick={ev => {
               if (isOverflowed && opened) ev.stopPropagation();
             }}
@@ -193,43 +194,42 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
         >
           <StyledExpandable ref={slideRef} onClick={toggleOpened}>
             <StyledExpandableContent $offset={calculatedWidth}>
-              {content &&
-                content.map(({ title, items }, idx) => {
-                  return (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <React.Fragment key={idx}>
-                      <StyledHeadingOffset>
-                        <Text size="small" weight="medium" spaceAfter="small">
-                          {title}
-                        </Text>
-                      </StyledHeadingOffset>
-                      <Stack
-                        direction="column"
-                        spacing="none"
-                        spaceAfter={idx === content.length - 1 ? "none" : "medium"}
-                      >
-                        {items.map(({ icon: itemIcon, name, value }, id) => {
-                          return (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <Stack flex grow={false} align="center" key={id}>
-                              <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
-                                {itemIcon}
-                              </StyledIcon>
-                              <Truncate>
-                                <Text size="small">{name}</Text>
-                              </Truncate>
-                              <Truncate>
-                                <Text size="small" weight="medium" align="right">
-                                  {value}
-                                </Text>
-                              </Truncate>
-                            </Stack>
-                          );
-                        })}
-                      </Stack>
-                    </React.Fragment>
-                  );
-                })}
+              {content.map(({ title, items }, idx) => {
+                return (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <React.Fragment key={idx}>
+                    <StyledHeadingOffset>
+                      <Text size="small" weight="medium" spaceAfter="small">
+                        {title}
+                      </Text>
+                    </StyledHeadingOffset>
+                    <Stack
+                      direction="column"
+                      spacing="none"
+                      spaceAfter={idx === content.length - 1 ? "none" : "medium"}
+                    >
+                      {items.map(({ icon: itemIcon, name, value }, id) => {
+                        return (
+                          // eslint-disable-next-line react/no-array-index-key
+                          <Stack flex grow={false} align="center" key={id}>
+                            <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
+                              {itemIcon}
+                            </StyledIcon>
+                            <Truncate>
+                              <Text size="small">{name}</Text>
+                            </Truncate>
+                            <Truncate>
+                              <Text size="small" weight="medium" align="right">
+                                {value}
+                              </Text>
+                            </Truncate>
+                          </Stack>
+                        );
+                      })}
+                    </Stack>
+                  </React.Fragment>
+                );
+              })}
             </StyledExpandableContent>
           </StyledExpandable>
         </Slide>

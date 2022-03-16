@@ -20,6 +20,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
   /** Removes the box-shadow  */
   readonly noElevation?: boolean;
+  readonly actionable?: boolean;
 }
 
 declare const ItinerarySegment: React.FunctionComponent<Props>;

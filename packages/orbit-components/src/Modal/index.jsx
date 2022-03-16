@@ -278,8 +278,8 @@ const ModalWrapperContent = styled.div`
       }
       ${StyledModalFooter} {
         padding: ${fixedFooter
-          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
-          : theme.orbit.spaceXXLarge};
+          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge}!important`
+          : theme.orbit.spaceXLarge};
         max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
         position: ${fixedFooter && fullyScrolled && "absolute"};
         box-shadow: ${fullyScrolled && "none"};

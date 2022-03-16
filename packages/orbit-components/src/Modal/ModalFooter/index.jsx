@@ -14,13 +14,15 @@ import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import type { Props } from ".";
 
 const StyledChild = styled.div`
-  flex: ${({ flex }) => flex};
-  box-sizing: border-box;
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  ${({ theme, flex }) => css`
+    flex: ${flex};
+    box-sizing: border-box;
+    padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
 
-  ${media.largeMobile(css`
-    flex: none;
-  `)};
+    ${media.largeMobile(css`
+      flex: none;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -29,35 +31,34 @@ StyledChild.defaultProps = {
 };
 
 export const StyledModalFooter: any = styled.div`
-  display: flex;
-  z-index: 800; // TODO: use z-index framework
-  width: 100%;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
-  // TODO: create token paddingModalFooter
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
-  box-sizing: border-box;
-  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-  @media (max-width: ${({ theme }) =>
-      +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-    ${StyledButtonPrimitive} {
-      font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
-      height: ${({ theme }) => theme.orbit.heightButtonNormal};
+  ${({ theme, children, isMobileFullPage }) => css`
+    display: flex;
+    z-index: 800; // TODO: use z-index framework
+    width: 100%;
+    background-color: ${theme.orbit.paletteWhite};
+    padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
+    box-sizing: border-box;
+    transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+      ${StyledButtonPrimitive} {
+        font-size: ${theme.orbit.fontSizeButtonNormal};
+        height: ${theme.orbit.heightButtonNormal};
+      }
     }
-  }
 
-  ${media.largeMobile(css`
-    justify-content: ${({ children }) => (children.length > 1 ? "space-between" : "flex-end")};
-    ${({ isMobileFullPage }) =>
-      !isMobileFullPage &&
+    ${media.largeMobile(css`
+      justify-content: ${children.length > 1 ? "space-between" : "flex-end"};
+      ${!isMobileFullPage &&
       css`
         border-bottom-left-radius: 9px;
         border-bottom-right-radius: 9px;
       `};
-  `)};
+    `)};
 
-  ${StyledChild}:last-of-type {
-    padding: 0;
-  }
+    ${StyledChild}:last-of-type {
+      padding: 0;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

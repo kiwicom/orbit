@@ -62,10 +62,10 @@ const getBackgroundColor = state => ({ type, dateTag }) => {
 };
 
 const CloseContainer = styled.div`
-  ${({ theme, actionable, type }) => css`
+  ${({ theme, actionable, type, selected }) => css`
     display: flex;
     margin-${left}: ${theme.orbit.spaceXSmall};
-    opacity: 0.5;
+    opacity: ${selected ? "1" : "0.5"};
     color: ${resolveColor({
       selected: "paletteWhite",
       removable: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",

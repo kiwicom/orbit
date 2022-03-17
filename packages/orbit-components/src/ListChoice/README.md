@@ -26,3 +26,4 @@ Table below contains all types of the props available in the ListChoice componen
 | selectable  | `boolean`                  | `false` | If `true`, the check box glyph appears on the right size and it will be possible to select the ListChoice.                                      |
 | selected    | `boolean`                  | `false` | If `true`, the check box glyph will be checked.                                                                                                 |
 | **title**   | `Translation`              |         | The title of the ListChoice.                                                                                                                    |
+| action      | `React.Node`               |         | Area for action elements, like Button                                                                                                           |

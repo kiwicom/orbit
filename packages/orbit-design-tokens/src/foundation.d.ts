@@ -38,6 +38,9 @@ export type CloudColor = {
   normalHover: string;
   normalActive: string;
   dark: string;
+  darker: string;
+  darkerHover: string;
+  darkerActive: string;
 };
 
 export type InkColor = {

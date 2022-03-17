@@ -14,6 +14,7 @@ export type Props = {|
   +selected?: boolean,
   +disabled?: boolean,
   +icon?: React.Node,
+  +action?: React.Node,
   +onClick?: (
     e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,
   ) => void | Promise<any>,

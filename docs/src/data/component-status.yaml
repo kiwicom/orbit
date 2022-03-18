@@ -79,7 +79,7 @@
   figma: N/A
   react: Released
   ios: N/A
-  android: Planned
+  android: Released
   docs: Released
   group: Primitives
 - component: Button
@@ -345,7 +345,7 @@
   figma: Released
   react: Released
   ios: Planned
-  android: N/A
+  android: Released
   docs: Released
   group: Navigation
 - component: NavigationList

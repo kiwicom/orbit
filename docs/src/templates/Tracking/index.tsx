@@ -66,6 +66,7 @@ export interface Props extends PageRendererProps {
     name: string;
     repoName?: string;
     trail: Trail;
+    diff?: string;
   };
   data: {
     allTracking: {

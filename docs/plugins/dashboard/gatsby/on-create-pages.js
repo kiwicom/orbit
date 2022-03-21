@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const path = require("path");
 
+const { getDataDiff } = require("../compare");
 const { getDocumentTrail } = require("../../../utils/document");
 
 module.exports = async ({ graphql, actions, reporter, cache }) => {
@@ -45,12 +46,18 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
       hasReactTab: false,
     });
 
+    const dataDiff = await getDataDiff();
+
     await cache.set(`/`, { title: "Orbit.kiwi", slug: "/" });
     await cache.set(`/dashboard/`, { title: "Dashboard", slug: "/dashboard/" });
     await cache.set(`/dashboard/tracking/`, { title: `Tracking`, slug: `/dashboard/tracking/` });
     await cache.set(`/dashboard/tracking/allrepositories`, {
       title: `All Repositories`,
       slug: `/dashboard/tracking/allrepositories`,
+    });
+    await cache.set(`/dashboard/tracking/difference`, {
+      title: "Tracking data difference",
+      slug: `/dashboard/tracking/difference`,
     });
 
     createPage({
@@ -62,6 +69,18 @@ module.exports = async ({ graphql, actions, reporter, cache }) => {
         slug: `dashboard/tracking`,
         title: "Tracking",
         trail: await getDocumentTrail(cache, `/dashboard/tracking/`),
+      },
+    });
+
+    createPage({
+      path: "dashboard/tracking/difference",
+      matchPath: `dashboard/tracking/difference`,
+      component: path.resolve(__dirname, "../../../src/templates/Tracking/Difference.tsx"),
+      context: {
+        pages,
+        diff: dataDiff,
+        slug: `dashboard/tracking/difference`,
+        title: "Tracking data difference",
       },
     });
 

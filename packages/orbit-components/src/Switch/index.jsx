@@ -12,14 +12,19 @@ const StyledSwitch = styled.label`
   display: inline-block;
 `;
 
+const StyledCircle = styled(Circle)`
+  height: 8px !important;
+  width: 8px !important;
+`;
+
 const StyledSwitchBase = styled.div`
   ${({ theme, checked, disabled }) => css`
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: ${!disabled && "pointer"};
-    width: 50px;
-    height: 28px;
+    width: 40px;
+    height: 20px;
     background-color: ${theme.orbit.paletteCloudDarker};
     border-radius: 100px;
     position: relative;
@@ -40,10 +45,9 @@ const StyledSwitchButton = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -1px;
     left: -3px;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: ${theme.orbit.borderRadiusCircle};
     background: ${theme.orbit.paletteWhite};
     transition: ${theme.orbit.durationFast};
@@ -58,6 +62,7 @@ const StyledSwitchButton = styled.div`
       width: ${theme.orbit.heightIconSmall};
       color: ${hasCustomIcon ? theme.orbit.paletteInkLight : theme.orbit.paletteCloudDarker};
     }
+
     ${checked &&
     css`
       left: calc(100% + 2px);
@@ -123,7 +128,7 @@ const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRe
           data-test={dataTest}
         />
         <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
-          {icon || <Circle />}
+          {icon || <StyledCircle />}
         </StyledSwitchButton>
       </StyledSwitchBase>
     </StyledSwitch>

@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.16.0...@kiwicom/orbit-components@2.17.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* **FormLabel:** add missing types ([#3310](https://github.com/kiwicom/orbit/issues/3310)) ([b764dbb](https://github.com/kiwicom/orbit/commit/b764dbbfc0cfc728a8aa127341201c3eaead64a0))
+* **ItinerarySegmentStop:** time, station, city as React.Node ([08b7ec5](https://github.com/kiwicom/orbit/commit/08b7ec595ffc7bb3a45796cef8dc36c17892b546))
+* **ItineraryStatus:** fix icon import ([#3312](https://github.com/kiwicom/orbit/issues/3312)) ([d3d9e67](https://github.com/kiwicom/orbit/commit/d3d9e6778999e3ce6165cabb4527d698ae6c7216))
+* **ModalFooter:** fix padding ([#3311](https://github.com/kiwicom/orbit/issues/3311)) ([b4dc950](https://github.com/kiwicom/orbit/commit/b4dc950b381f3f1a6f0ee23edc6c4e8b5a0d0f11))
+* **Tag:** selected circle color ([#3314](https://github.com/kiwicom/orbit/issues/3314)) ([33e8b77](https://github.com/kiwicom/orbit/commit/33e8b7747bd999a80ad2ba3065378378d979d673))
+* **Toast:** remove min-width for mobile ([#3306](https://github.com/kiwicom/orbit/issues/3306)) ([c242c1f](https://github.com/kiwicom/orbit/commit/c242c1ff04d6d74aa5f35dab0f3c3216a7e1baaa))
+
+
+### Features
+
+* **icons:** android icon ([5d05f50](https://github.com/kiwicom/orbit/commit/5d05f5091f8eefa527a4c1a49cd866937cc8f6a8))
+* **icons:** dashboard, admin, ai icons ([72aedc6](https://github.com/kiwicom/orbit/commit/72aedc6b8b9501f9021fa364edd24ba5ca9583a6))
+* **icons:** social networks icons ([b5a537c](https://github.com/kiwicom/orbit/commit/b5a537c40059b0568e11dfaf0166af9f76ce56ab))
+* **ItinerarySegment:** actionable prop ([#3309](https://github.com/kiwicom/orbit/issues/3309)) ([efa18ff](https://github.com/kiwicom/orbit/commit/efa18ff7f457c578066c6ebaf85ccc25ae364751))
+* **ListChoice:** action prop ([#3313](https://github.com/kiwicom/orbit/issues/3313)) ([bac197f](https://github.com/kiwicom/orbit/commit/bac197fb1c7614fbc8b2f4f03886d48e4bea4fc1))
+
+
+
+
+
 # [2.16.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.1...@kiwicom/orbit-components@2.16.0) (2022-03-11)
 
 

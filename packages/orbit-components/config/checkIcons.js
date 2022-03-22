@@ -59,8 +59,10 @@ function checkCharacterValues(comments, baseName, allCharacters) {
 }
 
 // Checks if the fill attributes are present on the icons and throw an error if so
+// eslint-disable-next-line consistent-return
 function checkFillAttributes(comments, content, name) {
   // only check icons that don't have replacement for icon font
+  if (name.includes("colored")) return undefined;
   if (comments && comments.iconFont !== "false" && comments.customColor == null) {
     const findAttrAndThrowErr = node => {
       if (getProperty(node.attributes, "fill")) {

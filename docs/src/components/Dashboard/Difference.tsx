@@ -1,10 +1,9 @@
 import React from "react";
-import { upperFirst } from "lodash";
+// import { upperFirst } from "lodash";
 import styled from "styled-components";
+import { PageRendererProps } from "gatsby";
 
-import DocLayout from "../../components/DocLayout";
-
-import { Props as PageProps } from ".";
+// import DocLayout from "../DocLayout";
 
 const StyledWrapper = styled.div`
   .jsondiffpatch-annotated-delta {
@@ -53,16 +52,17 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const DataDiffPage = ({ location, pageContext }: PageProps) => {
-  const { diff, name, trail } = pageContext;
+const DataDiffPage = ({ location }: PageRendererProps) => {
+  // const { diff, name, trail } = pageContext;
+  return <div>kek</div>;
 
-  return (
-    <DocLayout location={location} title={upperFirst(name)} path={location.pathname} trail={trail}>
-      <StyledWrapper>
-        <div dangerouslySetInnerHTML={{ __html: diff }} />
-      </StyledWrapper>
-    </DocLayout>
-  );
+  // return (
+  //   <DocLayout location={location} title={upperFirst(name)} path={location.pathname} trail={trail}>
+  //     <StyledWrapper>
+  //       <div dangerouslySetInnerHTML={{ __html: diff }} />
+  //     </StyledWrapper>
+  //   </DocLayout>
+  // );
 };
 
 export default DataDiffPage;

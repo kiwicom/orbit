@@ -23,13 +23,7 @@ const PLACEMENTS = [
 
 export const Default = (): React.Node => {
   const toast = () =>
-    createToast(
-      text(
-        "message",
-        "When the Tooth fairy comes to your house she takes your tooth and gives you money. When Chuck Norris comes to your house he breaks your tooth and takes your money.",
-      ),
-      { icon: <Notification /> },
-    );
+    createToast(text("message", "Thank you for feedback"), { icon: <Notification /> });
 
   const placement = select("placement", PLACEMENTS, "top-center");
   const topOffset = number("topOffset", 8);

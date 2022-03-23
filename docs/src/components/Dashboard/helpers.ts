@@ -1,4 +1,4 @@
-import { TrackingProp, TrackingProperty } from ".";
+import { TrackingProp, TrackingProperty } from "./interfaces";
 
 const sumVals = (arr: TrackingProperty[]) =>
   Object.values(

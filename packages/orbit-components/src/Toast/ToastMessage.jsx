@@ -53,6 +53,7 @@ const StyledInnerWrapper = styled.div`
 
     ${mq.largeMobile(css`
       max-width: 360px;
+      width: initial;
       padding: ${theme.orbit.spaceSmall};
     `)}
     }

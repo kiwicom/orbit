@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.0...@kiwicom/orbit-components@2.17.1) (2022-03-23)
+
+
+### Bug Fixes
+
+* **icons:** colored-whatsapp icon name ([6706b68](https://github.com/kiwicom/orbit/commit/6706b684c5c3aa734dcfcaec82652bccaff029e3))
+
+
+
+
+
 # [2.17.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.16.0...@kiwicom/orbit-components@2.17.0) (2022-03-22)
 
 

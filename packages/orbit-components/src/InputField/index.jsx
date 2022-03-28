@@ -160,7 +160,7 @@ const StyledInlineLabel = styled.div`
     ${FormLabel} {
       margin-bottom: 0;
       font-size: ${getToken(TOKENS.fontSizeInput)};
-      line-height: normal;
+      line-height: ${theme.orbit.lineHeightTextNormal};
       z-index: 3;
       white-space: nowrap;
     }

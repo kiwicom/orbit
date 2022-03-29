@@ -1,6 +1,6 @@
-const { DefaultValue } = require("./resolvers");
+import DefaultValue from "./resolvers";
 
-module.exports = ({ actions, schema }) => {
+export default ({ actions, schema }) => {
   try {
     const { createTypes } = actions;
     const { buildScalarType } = schema;

@@ -1,9 +1,9 @@
-const axios = require("axios");
-const yaml = require("js-yaml");
-const path = require("path");
-const fs = require("fs-extra");
-const chalk = require("chalk");
-const _ = require("lodash");
+import axios from "axios";
+import yaml from "js-yaml";
+import path from "path";
+import fs from "fs-extra";
+import chalk from "chalk";
+import _ from "lodash";
 
 const IOS_URL = `https://raw.githubusercontent.com/kiwicom/orbit-swiftui/main/component-status.yaml`;
 const ANDROID_URL = `https://raw.githubusercontent.com/kiwicom/orbit-compose/main/component-status.yaml`;
@@ -63,6 +63,4 @@ const updateStatuses = async () => {
   }
 };
 
-module.exports = {
-  updateStatuses,
-};
+export default updateStatuses;

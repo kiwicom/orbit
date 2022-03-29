@@ -1,15 +1,16 @@
-const path = require("path");
-const fs = require("fs");
-const yaml = require("js-yaml");
+import path from "path";
+import fs from "fs";
+import yaml from "js-yaml";
+import { createFilePath } from "gatsby-source-filesystem";
+import type { GatsbyNode } from "gatsby";
 
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } = require("./utils/document");
-const { getOverviewPages } = require("./services/overview-pages");
-const parseChangelog = require("./services/changelog");
+import { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } from "./utils/document";
+import getOverviewPages from "./services/overviewPages";
+import parseChangelog from "./services/changelog";
 
 const ROOT = path.resolve(__dirname, "..");
 
-exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
+export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   if (
     node.internal.type === "Directory" &&
     node.sourceInstanceName === "documentation" &&
@@ -52,9 +53,11 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
     const missingFields = [];
 
     if (typeof metaFileData.title === "undefined") {
+      // @ts-expect-error TODO
       missingFields.push("title");
     }
     if (typeof metaFileData.type === "undefined") {
+      // @ts-expect-error TODO
       missingFields.push("type");
     } else if (!["folder", "tabs"].includes(metaFileData.type)) {
       reporter.panicOnBuild(
@@ -167,7 +170,12 @@ exports.onCreateNode = async ({ cache, node, getNode, actions, reporter }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions, reporter, cache }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+  reporter,
+  cache,
+}) => {
   const { createPage } = actions;
   const result = await graphql(`
     query DocumentationQuery {
@@ -189,7 +197,7 @@ exports.createPages = async ({ graphql, actions, reporter, cache }) => {
   await Promise.all(
     overviewPages.map(async page => {
       const trail = await getDocumentTrail(cache, page.slug);
-      const overviewPath = path.join(__dirname, "src/templates/Overview.tsx");
+      const overviewPath = path.join(__dirname, "../../src/templates/Overview.tsx");
       createPage({
         path: page.slug,
         component:
@@ -204,6 +212,7 @@ exports.createPages = async ({ graphql, actions, reporter, cache }) => {
     return;
   }
 
+  // @ts-expect-error TODO
   result.data.allMdx.nodes.forEach(({ id, fields }) => {
     createPage({
       path: fields.slug,
@@ -213,7 +222,7 @@ exports.createPages = async ({ graphql, actions, reporter, cache }) => {
   });
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
   actions.createTypes(
     `
     type Mdx implements Node {

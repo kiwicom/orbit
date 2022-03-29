@@ -1,4 +1,4 @@
-module.exports = async ({ graphql, actions, reporter }) => {
+export default async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   const result = await graphql(`

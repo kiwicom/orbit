@@ -1,18 +1,42 @@
-const globby = require("globby");
-const fsx = require("fs-extra");
-const yaml = require("js-yaml");
-const matter = require("gray-matter");
-const _ = require("lodash");
-const path = require("path");
+import globby from "globby";
+import fsx from "fs-extra";
+import yaml from "js-yaml";
+import matter from "gray-matter";
+import _ from "lodash";
+import path from "path";
 
-const { omitNumbers } = require("../utils/document");
+import { omitNumbers } from "../utils/document";
 
-const DOCUMENTATION_PATH = path.resolve(__dirname, "../src/documentation");
+interface OverviewPage {
+  slug: string;
+  title: string;
+  description: string;
+  idx: number;
+  hasReactTab: boolean;
+  pages?: OverviewPage[];
+}
+
+const DOCUMENTATION_PATH = path.resolve(__dirname, "../../src/documentation");
 
 // derive pages with nested pages from given object structure
 // this function can probably be simplified further
-function createPages(obj, slugPiece = "/") {
-  return Object.entries(obj).map(([key, value]) => {
+function createPages(
+  pageObj: Record<
+    string,
+    Record<
+      string,
+      {
+        title: string;
+        idx: string;
+        hasReactTab: boolean;
+        description: string;
+        type: "folder" | "Components" | "tabs";
+      }
+    >
+  >,
+  slugPiece = "/",
+) {
+  return Object.entries(pageObj).map(([key, value]) => {
     if (typeof value === "object") {
       const slug = path.join(slugPiece, key, "/");
 
@@ -31,6 +55,7 @@ function createPages(obj, slugPiece = "/") {
         };
       }
 
+      // @ts-expect-error TODO
       const pages = createPages(value, slug).filter(Boolean);
 
       if (pages.length > 0) {
@@ -45,7 +70,7 @@ function createPages(obj, slugPiece = "/") {
 
       const parsePages = Object.keys(value)
         .map(k => ({ title: _.startCase(_.toLower(k)) }))
-        .filter(k => k !== "meta");
+        .filter(k => k.title !== "meta");
 
       return {
         slug,
@@ -58,7 +83,7 @@ function createPages(obj, slugPiece = "/") {
   });
 }
 
-async function getOverviewPages() {
+export default async function getOverviewPages() {
   const structure = {};
 
   // from these files we'll generate a list of pages containing nested pages in two stages
@@ -75,7 +100,7 @@ async function getOverviewPages() {
         const { title, type, description } = yaml.load(await fsx.readFile(file, "utf-8"));
         const metaFolder = await fsx.readdir(file.split("/").slice(0, -1).join("/"), "utf-8");
         const hasReactTab = metaFolder.filter(v => v.match(/react.mdx/)).length;
-        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0], 10);
+        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0]);
 
         _.set(structure, relativePath.split(path.sep), {
           title,
@@ -85,8 +110,8 @@ async function getOverviewPages() {
           hasReactTab: hasReactTab > 0,
         });
       } else {
-        const { data } = matter(await fsx.readFile(file, "utf-8"));
-        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0], 10);
+        const { data } = matter(fsx.readFileSync(file, "utf-8"));
+        const idx = parseFloat(folderPath.split("/").slice(0, -1).slice(-1)[0]);
 
         _.set(structure, relativePath.split(path.sep), {
           ...data,
@@ -98,10 +123,9 @@ async function getOverviewPages() {
 
   // second stage
   const allPages = createPages(structure);
-
   // derive overview pages by recursively looping through pages that have nested pages
   // this way we're essentially flattening the pages to be only one level deep
-  const overviewPages = (function reduceNestedPages(pages, acc) {
+  const overviewPages = (function reduceNestedPages(pages: OverviewPage[], acc: OverviewPage[]) {
     pages.forEach(page => {
       if (!page.pages) return;
       acc.push({
@@ -116,7 +140,3 @@ async function getOverviewPages() {
 
   return overviewPages;
 }
-
-module.exports = {
-  getOverviewPages,
-};

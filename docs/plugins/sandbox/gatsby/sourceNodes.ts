@@ -1,12 +1,12 @@
-const globby = require("globby");
-const fs = require("fs-extra");
-const path = require("path");
-const { format } = require("prettier");
-const parserTypeScript = require("prettier/parser-typescript");
+import globby from "globby";
+import fs from "fs-extra";
+import path from "path";
+import { format } from "prettier";
+import parserTypescript from "prettier/parser-typescript";
 
-const { getScope, getByName, getAst } = require("./helpers");
+import { getScope, getByName, getAst } from "./helpers";
 
-module.exports = async (
+export default async (
   { actions, createNodeId, createContentDigest, reporter },
   { path: folder },
 ) => {
@@ -33,7 +33,7 @@ module.exports = async (
 
       const code = format(example, {
         parser: "typescript",
-        plugins: [parserTypeScript],
+        plugins: [parserTypescript],
       });
 
       const data = {

@@ -38,9 +38,16 @@ const Tracking = ({ location }: PageRendererProps) => {
   });
 
   pages.push({
-    slug: "/dashboard/tracking/allrepositories",
+    slug: "/dashboard/tracking/allrepositories/",
     title: "All Repositories",
     description: "Combined data from all repositories on single page",
+    hasReactTab: false,
+  });
+
+  pages.push({
+    slug: "/dashboard/tracking/difference/",
+    title: "Tracking difference",
+    description: "Shows difference between the first and last tracked data",
     hasReactTab: false,
   });
 

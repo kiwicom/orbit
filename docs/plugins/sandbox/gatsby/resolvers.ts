@@ -1,4 +1,4 @@
-const { graphql } = require("gatsby");
+import { graphql } from "gatsby";
 
 const DefaultValue = {
   name: "DefaultValue",
@@ -19,10 +19,13 @@ const DefaultValue = {
   },
   parseLiteral(ast) {
     switch (ast.kind) {
+      // @ts-expect-error TODO
       case graphql.Kind.INT:
         return parseInt(ast.value, 10);
+      // @ts-expect-error TODO
       case graphql.Kind.STRING:
         return ast.value;
+      // @ts-expect-error TODO
       case graphql.Kind.BOOLEAN:
         return ast.value;
       default:
@@ -31,6 +34,4 @@ const DefaultValue = {
   },
 };
 
-module.exports = {
-  DefaultValue,
-};
+export default DefaultValue;

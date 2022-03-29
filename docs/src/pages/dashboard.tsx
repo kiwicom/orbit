@@ -1,18 +1,18 @@
-import React from "react";
 import { Router } from "@reach/router";
 import { navigate } from "gatsby";
+import React from "react";
 
-import NotFound from "./404";
 import Dashboard, {
   AllRepositories,
   AllRepositoriesComponent,
-  Repository,
-  Tracking,
-  RepositoryComponent,
   Difference,
+  Repository,
+  RepositoryComponent,
+  Tracking,
 } from "../components/Dashboard";
-import { isLoggedIn, isBrowser } from "../services/auth";
 import Login from "../components/Login";
+import { isBrowser, isLoggedIn } from "../services/auth";
+import NotFound from "./404";
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
   if (!isLoggedIn() && location.pathname !== `/dashboard/login/` && isBrowser) {

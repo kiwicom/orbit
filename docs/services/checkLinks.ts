@@ -1,17 +1,17 @@
-const globby = require("globby");
-const server = require("browser-sync").create();
-const checkLinks = require("check-links");
-const path = require("path");
-const unified = require("unified");
-const parse = require("rehype-parse");
-const inspectUrls = require("@jsdevtools/rehype-url-inspector");
-const stringify = require("rehype-stringify");
-const toVFile = require("to-vfile");
-const reporter = require("vfile-reporter");
-const fsx = require("fs-extra");
-const dotenv = require("dotenv-safe");
+import globby from "globby";
+import server from "browser-sync";
+import checkLinks from "check-links";
+import path from "path";
+import unified from "unified";
+import parse from "rehype-parse";
+import inspectUrls from "@jsdevtools/rehype-url-inspector";
+import stringify from "rehype-stringify";
+import reporter from "vfile-reporter";
+import fsx from "fs-extra";
+import dotenv from "dotenv-safe";
+import toVFile from "to-vfile";
 
-const { warnMissingAccessToken } = require("../utils/warnings");
+import { warnMissingAccessToken } from "../utils/warnings";
 
 try {
   dotenv.config({
@@ -31,7 +31,7 @@ const checkForDeadUrls = async () => {
   const files = await globby("docs/public/**/*.html");
 
   await new Promise(resolve => {
-    server.init(
+    server.create().init(
       {
         logLevel: "silent",
         open: false,
@@ -51,6 +51,7 @@ const checkForDeadUrls = async () => {
       inspectEach({ file, node, url }) {
         // filter out preconnect links: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect
         // Otherwise was failing on preconnect links to fonts.gstatic.com (to prepare to load fonts)
+        // @ts-expect-error unknown
         if (node.tagName === "link" && node.properties.rel.find(e => e === "preconnect")) return;
 
         if (!urls.has(url)) {
@@ -107,14 +108,14 @@ const checkForDeadUrls = async () => {
 
   const results = { ...notGithubResults, ...githubResults };
 
-  server.exit();
+  server.create().exit();
 
   const deadUrls = Object.keys(results).filter(url => results[url].status === "dead");
 
   if (deadUrls.length > 0) {
     const completeMap = new Map([...urlsWithLocal, ...githubUrls]);
 
-    const filesWithMessages = [];
+    const filesWithMessages: toVFile.VFile[] = [];
     deadUrls.forEach(deadUrl => {
       completeMap.get(deadUrl).sources.forEach(file => {
         file.message(`Broken link: ${deadUrl}`);

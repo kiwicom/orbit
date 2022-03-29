@@ -1,17 +1,21 @@
-const { Octokit } = require("@octokit/rest");
-const path = require("path");
-const fs = require("fs-extra");
-const prettier = require("prettier");
-const _ = require("lodash");
-const dotenv = require("dotenv-safe");
+import { Octokit } from "@octokit/rest";
+import path from "path";
+import fs from "fs-extra";
+import prettier from "prettier";
+import _ from "lodash";
+import dotenv from "dotenv-safe";
+import type { GatsbyNode } from "gatsby";
 
-const { warnMissingAccessToken } = require("../../utils/warnings");
+import { warnMissingAccessToken } from "../../utils/warnings";
 
 const NODE = `contributor`;
 
-exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { repo, owner }) => {
+export const sourceNodes = async (
+  { actions, createContentDigest, createNodeId },
+  { repo, owner },
+) => {
   const { createNode } = actions;
-  const staticData = JSON.parse(fs.readFileSync(path.join(__dirname, "./users.json")));
+  const staticData = JSON.parse(fs.readFileSync(path.join(__dirname, "./users.json"), "utf8"));
 
   try {
     dotenv.config({
@@ -19,6 +23,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
       example: path.join(process.cwd(), `../.env.example`),
     });
   } catch (error) {
+    // @ts-expect-error TODO
     if (error.missing.includes("GH_TOKEN")) {
       staticData.forEach(user => {
         createNode({
@@ -42,7 +47,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
 
   try {
     const octokit = new Octokit({ auth: process.env.GH_TOKEN });
-    const usernames = [];
+    const usernames: string[] = [];
 
     if (process.env.NODE_ENV === "development") {
       await octokit.repos
@@ -50,7 +55,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
           owner,
           repo,
         })
-        .then(c => usernames.push(...c.data.map(({ login }) => login)));
+        .then(c => usernames.push(...c.data.map(({ login }) => login).filter(Boolean)));
 
       const reqs = usernames.map(username => octokit.users.getByUsername({ username }));
       const users = _.sortBy(
@@ -100,7 +105,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
         });
       });
     } else {
-      const users = await fs.readFile(path.join(__dirname, "fetchedUsers.json"));
+      const users = await fs.readFile(path.join(__dirname, "fetchedUsers.json"), "utf8");
 
       staticData.concat(JSON.parse(users)).forEach(u => {
         return createNode({
@@ -125,7 +130,7 @@ exports.sourceNodes = async ({ actions, createContentDigest, createNodeId }, { r
   }
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
   const { createTypes } = actions;
 
   const typeDefs = `

@@ -5,7 +5,7 @@ const throwInCI = varName => {
     );
 };
 
-const warnMissingAccessToken = error => {
+export const warnMissingAccessToken = error => {
   if (typeof error.missing === "undefined") {
     console.error(error);
     const msg =
@@ -23,13 +23,14 @@ const warnMissingAccessToken = error => {
     "After creating a token in GitHub, add it to a .env file in the root folder with GH_TOKEN=<YOUR TOKEN>`;
     console.warn(warn);
     console.info(info);
+    // @ts-expect-error TODO
     return warn.concat(info).join("\n");
   }
 
   return "";
 };
 
-const warnMissingFigmaToken = error => {
+export const warnMissingFigmaToken = error => {
   if (error.missing.includes("FIGMA_TOKEN")) {
     throwInCI("FIGMA_TOKEN");
     console.warn("Missing an access token for Figma files API. Please create one.");
@@ -40,5 +41,3 @@ const warnMissingFigmaToken = error => {
     );
   }
 };
-
-module.exports = { warnMissingAccessToken, warnMissingFigmaToken };

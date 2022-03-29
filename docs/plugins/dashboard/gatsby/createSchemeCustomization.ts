@@ -1,4 +1,4 @@
-module.exports = ({ actions, schema }) => {
+export default function scheme({ actions, schema }) {
   try {
     const { createTypes } = actions;
     const typeDefs = [
@@ -93,4 +93,4 @@ module.exports = ({ actions, schema }) => {
   } catch (err) {
     console.error(err);
   }
-};
+}

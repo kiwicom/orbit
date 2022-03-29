@@ -1,11 +1,15 @@
-const fsx = require("fs-extra");
-const path = require("path");
-const dedent = require("dedent");
+/**
+ * @jest-environment node
+ */
+import fsx from "fs-extra";
+import path from "path";
+import dedent from "dedent";
 
-const { getDocumentUrl } = require("../document");
+import { getDocumentUrl } from "../document";
 
 const ROOT = path.resolve(__dirname, "../../src/documentation");
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 jest.mock("fs", () => require("memfs").fs);
 
 describe("document utils", () => {
@@ -30,7 +34,7 @@ describe("document utils", () => {
   });
   describe(getDocumentUrl.name, () => {
     it("should return URL path based on document's file path", async () => {
-      expect(getDocumentUrl("/01-getting-started/01-for-developers.mdx")).toBe(
+      expect(getDocumentUrl("/01-getting-started/01-for-developers.mdx", false)).toBe(
         "/getting-started/for-developers/",
       );
       expect(getDocumentUrl("/01-getting-started/02-for-designers/01-kiwi.mdx", true)).toBe(

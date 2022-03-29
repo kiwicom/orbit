@@ -1,9 +1,8 @@
 import React from "react";
-// import { upperFirst } from "lodash";
 import styled from "styled-components";
 import { PageRendererProps } from "gatsby";
 
-// import DocLayout from "../DocLayout";
+import DocLayout from "../DocLayout";
 
 const StyledWrapper = styled.div`
   .jsondiffpatch-annotated-delta {
@@ -54,15 +53,20 @@ const StyledWrapper = styled.div`
 
 const DataDiffPage = ({ location }: PageRendererProps) => {
   // const { diff, name, trail } = pageContext;
-  return <div>kek</div>;
 
-  // return (
-  //   <DocLayout location={location} title={upperFirst(name)} path={location.pathname} trail={trail}>
-  //     <StyledWrapper>
-  //       <div dangerouslySetInnerHTML={{ __html: diff }} />
-  //     </StyledWrapper>
-  //   </DocLayout>
-  // );
+  return (
+    <DocLayout
+      location={location}
+      title="Tracking difference page"
+      description="Shows difference between the first and last tracked data"
+      path={location.pathname}
+    >
+      <StyledWrapper>
+        kek
+        {/* <div dangerouslySetInnerHTML={{ __html: diff }} /> */}
+      </StyledWrapper>
+    </DocLayout>
+  );
 };
 
 export default DataDiffPage;

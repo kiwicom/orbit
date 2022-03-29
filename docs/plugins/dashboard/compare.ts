@@ -1,9 +1,8 @@
-// @noflow
-const jsonDiff = require("jsondiffpatch");
-const fs = require("fs-extra");
-const path = require("path");
-const _ = require("lodash");
-const fp = require("lodash/fp");
+import jsonDiff from "jsondiffpatch";
+import fs from "fs-extra";
+import path from "path";
+import _ from "lodash";
+import fp from "lodash/fp";
 
 const DATA_DIR = path.resolve(path.join(__dirname, "../../data/tracking"));
 const readFile = file => fs.readFileSync(path.join(DATA_DIR, file), "utf-8");
@@ -65,12 +64,11 @@ const getDataDiff = async () => {
 
     const delta = diffPatch.diff(dataFirst, dataLast);
 
+    // @ts-expect-error TODO
     return jsonDiff.formatters.annotated.format(delta);
   }
 
   return null;
 };
 
-module.exports = {
-  getDataDiff,
-};
+export default getDataDiff;

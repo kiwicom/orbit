@@ -1,15 +1,21 @@
-const { types: t, traverse } = require("@babel/core");
-const { parse } = require("@babel/parser");
-const { default: generate } = require("@babel/generator");
+import { types as t, traverse } from "@babel/core";
+import { parse } from "@babel/parser";
+import generate from "@babel/generator";
 
-const getAst = str =>
+interface Scope {
+  name: string;
+  path: string;
+  default: boolean;
+}
+
+export const getAst = str =>
   parse(str, {
     sourceType: "module",
     plugins: ["typescript", "jsx"],
   });
 
-const getScope = example => {
-  const scope = [];
+export const getScope = example => {
+  const scope: Scope[] = [];
 
   getAst(example).program.body.forEach(n => {
     if (t.isImportDeclaration(n)) {
@@ -32,7 +38,7 @@ const getScope = example => {
   return scope;
 };
 
-const getByName = (ast, name) => {
+export const getByName = (ast, name) => {
   let output;
 
   traverse(ast, {
@@ -47,6 +53,7 @@ const getByName = (ast, name) => {
 
   ast.program.body.forEach(n => {
     if (t.isExportDefaultDeclaration(n)) {
+      // @ts-expect-error TODO
       n.declaration.properties.forEach(prop => {
         if (t.isObjectProperty(prop)) {
           if (t.isIdentifier(prop.key) && prop.key.name === name) {
@@ -58,10 +65,4 @@ const getByName = (ast, name) => {
   });
 
   return output;
-};
-
-module.exports = {
-  getScope,
-  getByName,
-  getAst,
 };

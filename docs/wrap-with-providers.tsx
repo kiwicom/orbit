@@ -1,12 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "@kiwicom/orbit-components";
+import type { GatsbyBrowser } from "gatsby";
 
 import { DevModeProvider } from "./src/hooks/useDevMode";
 import { TableOfContentsProvider } from "./src/services/table-of-contents";
 import theme from "./src/theme";
 import { KeyboardContextProvider } from "./src/services/KeyboardProvider";
 
-export default function wrapWithProviders({ element }: { element: React.ReactNode }) {
+export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
       <KeyboardContextProvider>
@@ -16,4 +17,6 @@ export default function wrapWithProviders({ element }: { element: React.ReactNod
       </KeyboardContextProvider>
     </ThemeProvider>
   );
-}
+};
+
+export default wrapPageElement;

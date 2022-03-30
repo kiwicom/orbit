@@ -38,7 +38,7 @@ or you can pick one from our predefined presets:
 ```
 */
 
-interface Props extends Common.SpaceAfter, Common.Global {
+export interface Props extends Common.SpaceAfter, Common.Global {
   readonly animate?: boolean;
   readonly children?: React.ReactNode;
   /** Border-radius for row rect elements */

@@ -25,7 +25,9 @@ const preferSingleDestructure: Rule.RuleModule = {
       ImportDeclaration(node: t.ImportDeclaration) {
         if (node.source.value === "styled-components") {
           const def = node.specifiers.filter(s => t.isImportDefaultSpecifier(s));
-          specifier = def[0].local.name;
+          if (def.length > 0) {
+            specifier = def[0].local.name;
+          }
         }
       },
 

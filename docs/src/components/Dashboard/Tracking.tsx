@@ -45,7 +45,7 @@ const Tracking = ({ location }: PageRendererProps) => {
   });
 
   pages.push({
-    slug: "/dashboard/tracking/difference/",
+    slug: "/dashboard/difference/",
     title: "Tracking difference",
     description: "Shows difference between the first and last tracked data",
     hasReactTab: false,

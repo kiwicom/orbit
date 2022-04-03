@@ -10,7 +10,6 @@ import AllRepositories from "./AllRepositories";
 import AllRepositoriesComponent from "./AllRepositoriesComponent";
 import Repository from "./Repository";
 import RepositoryComponent from "./RepositoryComponent";
-import Difference from "./Difference";
 
 interface Props {
   path: string;
@@ -31,11 +30,4 @@ const Dashboard = ({ path = "/dashboard/", location }: Props) => {
 };
 
 export default Dashboard;
-export {
-  Tracking,
-  AllRepositories,
-  AllRepositoriesComponent,
-  Repository,
-  RepositoryComponent,
-  Difference,
-};
+export { Tracking, AllRepositories, AllRepositoriesComponent, Repository, RepositoryComponent };

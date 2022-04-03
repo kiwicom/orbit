@@ -23,7 +23,6 @@ export const sourceNodes = async (
       example: path.join(process.cwd(), `../.env.example`),
     });
   } catch (error) {
-    // @ts-expect-error TODO
     if (error.missing.includes("GH_TOKEN")) {
       staticData.forEach(user => {
         createNode({

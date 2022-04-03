@@ -5,7 +5,6 @@ import React from "react";
 import Dashboard, {
   AllRepositories,
   AllRepositoriesComponent,
-  Difference,
   Repository,
   RepositoryComponent,
   Tracking,
@@ -31,11 +30,7 @@ export default ({ location }) => {
       <PrivateRoute path="/dashboard/" component={Dashboard} location={location} />
       <PrivateRoute path="/dashboard/tracking/" component={Tracking} location={location} />
       <PrivateRoute path="/dashboard/tracking/:slug/" component={Repository} location={location} />
-      <PrivateRoute
-        path="/dashboard/tracking/difference/"
-        component={Difference}
-        location={location}
-      />
+
       <PrivateRoute
         path="/dashboard/tracking/*/*/"
         component={RepositoryComponent}

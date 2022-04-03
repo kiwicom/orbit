@@ -1,3 +1,3 @@
-import wrapWithProviders from "./wrap-with-providers";
+import wrapWithProviders from "./wrapWithProviders";
 
 export const wrapRootElement = wrapWithProviders;

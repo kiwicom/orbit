@@ -1,13 +1,40 @@
-import jsonDiff from "jsondiffpatch";
+import { formatters, create, Delta } from "jsondiffpatch";
 import fs from "fs-extra";
 import path from "path";
 import _ from "lodash";
 import fp from "lodash/fp";
 
-const DATA_DIR = path.resolve(path.join(__dirname, "../../data/tracking"));
-const readFile = file => fs.readFileSync(path.join(DATA_DIR, file), "utf-8");
+interface Value {
+  name: string;
+  used: number;
+}
 
-const collectProps = props =>
+interface Prop extends Value {
+  name: string;
+  used: number;
+  values?: Value[];
+}
+interface ComponentData {
+  name: string;
+  props: Prop[];
+  instances: number;
+}
+
+interface DiffInstance {
+  instances: {
+    before: number;
+    after: number;
+  };
+}
+
+export interface DiffOutputItem extends DiffInstance {
+  props: Record<string, DiffInstance>;
+}
+
+const DATA_DIR = path.resolve(path.join(__dirname, "../../data/tracking"));
+const readFile = (file: string) => fs.readFileSync(path.join(DATA_DIR, file), "utf-8");
+
+const collectProps = (props: Prop[]) =>
   props.reduce((acc, cur) => {
     const { name, used } = cur;
     if (!acc[name]) acc[name] = { ...cur };
@@ -20,7 +47,7 @@ const collectProps = props =>
     return acc;
   }, {});
 
-const collectComponents = components =>
+const collectComponents = (components: ComponentData[]) =>
   components.reduce((acc, { name, props, instances }) => {
     if (!acc[name]) {
       acc[name] = { name, instances, props: props.map(obj => _.omit(obj, ["values"])) };
@@ -29,7 +56,7 @@ const collectComponents = components =>
         name,
         instances: acc[name].instances + instances,
         props: Object.values(
-          collectProps([...acc[name].props, ...props].map(obj => _.omit(obj, ["values"]))),
+          collectProps([...acc[name].props, ...props].map((obj: Prop) => _.omit(obj, ["values"]))),
         ),
       };
     }
@@ -37,7 +64,7 @@ const collectComponents = components =>
     return acc;
   }, {});
 
-const mapData = file =>
+const mapData = (file: string) =>
   fp.compose(
     fp.sortBy("name"),
     fp.values,
@@ -48,6 +75,34 @@ const mapData = file =>
     JSON.parse,
   )(readFile(file));
 
+export const mapDiff = (
+  data: ComponentData[],
+  diff: Delta,
+): Record<string, DiffOutputItem> | null => {
+  if (!data || !diff) return null;
+
+  const keys = Object.keys(diff);
+  const result = {};
+
+  keys.forEach(key => {
+    if (data[key]) {
+      const { name } = data[key];
+      const quantity = diff[key].instances || diff[key].used;
+
+      if (diff[key] && quantity) {
+        const [before, after] = quantity;
+
+        result[name] = {
+          instances: { before, after },
+          props: mapDiff(data[key].props, diff[key].props),
+        };
+      }
+    }
+  });
+
+  return result;
+};
+
 const getDataDiff = async () => {
   const data = await fs.readdir(DATA_DIR);
 
@@ -55,17 +110,24 @@ const getDataDiff = async () => {
     const first = _.head(data);
     const last = _.last(data);
 
-    const dataFirst = mapData(first);
-    const dataLast = mapData(last);
+    if (first && last) {
+      const dataFirst = mapData(first);
+      const dataLast = mapData(last);
 
-    const diffPatch = jsonDiff.create({
-      objectHash: obj => obj.name,
-    });
+      const diffPatch = create({
+        objectHash: obj => obj.name,
+      });
 
-    const delta = diffPatch.diff(dataFirst, dataLast);
+      const delta = diffPatch.diff(dataFirst, dataLast);
 
-    // @ts-expect-error TODO
-    return jsonDiff.formatters.annotated.format(delta);
+      if (delta)
+        return {
+          diff: mapDiff(dataLast, delta),
+          annotated: formatters.annotated.format(delta, {}),
+        };
+
+      return null;
+    }
   }
 
   return null;

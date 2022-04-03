@@ -120,5 +120,8 @@
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.4"
+  },
+  "devDependencies": {
+    "@types/resize-observer-browser": "^0.1.7"
   }
 }

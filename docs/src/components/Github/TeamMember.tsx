@@ -56,7 +56,7 @@ const TeamMember = ({ position, image, info, twitter, website, dribbble, github,
           {name}, {position}
         </StyledHeading>
         <StyledInfo>{info}</StyledInfo>
-        <Stack inline spacing="medium">
+        <Stack inline spacing="medium" align="center">
           {links.map(({ icon, url }) => {
             return (
               url && (

@@ -6,10 +6,10 @@
 
 ```bash
 # NPM
-npm install --save-dev orbit-tracking
+npm install --save-dev @kiwicom/orbit-tracking
 
 # Yarn
-yarn add -D orbit-tracking
+yarn add -D @kiwicom/orbit-tracking
 ```
 
 _Packages requires gitlab api token, you have to add it to `.env` file:_

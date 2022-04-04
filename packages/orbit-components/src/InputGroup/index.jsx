@@ -34,17 +34,17 @@ const getToken = name => ({ theme, size }) => {
 
 const getFakeGroupMarginTop = ({ label, theme }) => {
   if (!label) return false;
-  return theme.orbit.spaceXXSmall;
+  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
 };
 
 const FakeGroup = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  ${({ theme, labelOffset, error, disabled }) => css`
+  ${({ theme, error, disabled }) => css`
     width: 100%;
     display: block;
     position: absolute;
-    top: ${labelOffset}px;
+    top: 0px;
     left: 0;
     z-index: 1;
     box-sizing: border-box;
@@ -201,7 +201,6 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
   ): React.Node => {
     const [active, setActive] = React.useState(false);
     const [filled, setFilled] = React.useState(false);
-    const [labelOffset, setLabelOffset] = React.useState(null);
     const inputID = useRandomId();
     const [tooltipShown, setTooltipShown] = React.useState(false);
     const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
@@ -220,10 +219,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
       [children],
     );
 
-    React.useLayoutEffect(() => {
-      if (label && labelRef.current) {
-        setLabelOffset(labelRef.current.offsetHeight);
-      }
+    React.useEffect(() => {
       isFilled();
     }, [isFilled, label]);
 
@@ -310,13 +306,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
             );
           })}
         </StyledChildren>
-        <FakeGroup
-          labelOffset={labelOffset}
-          label={label}
-          error={errorReal}
-          active={active}
-          size={size}
-        />
+        <FakeGroup label={label} error={errorReal} active={active} size={size} />
         <ErrorFormTooltip
           help={helpReal}
           error={errorReal}

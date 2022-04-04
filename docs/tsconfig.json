@@ -3,8 +3,11 @@
   "include": ["**/*"],
   "compilerOptions": {
     "target": "ESNext",
+    "module": "esnext",
     "moduleResolution": "node",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": false
   },
   "exclude": []
 }

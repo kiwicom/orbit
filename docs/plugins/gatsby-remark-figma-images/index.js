@@ -8,7 +8,7 @@ const axios = require("axios");
 const { createFileNode } = require("gatsby-source-filesystem/create-file-node");
 const dotenv = require("dotenv-safe");
 
-const { warnMissingFigmaToken } = require("../../utils/warnings");
+// const { warnMissingFigmaToken } = require("../../utils/warnings");
 
 const ALLOWED_ATTRS = ["fileId", "nodeId"];
 
@@ -38,7 +38,7 @@ module.exports = (props, pluginOptions) => {
       allowEmptyValues: true,
     });
   } catch (error) {
-    warnMissingFigmaToken(error);
+    // warnMissingFigmaToken(error);
   }
 
   const checkNodeContent = (content, filePath) => {

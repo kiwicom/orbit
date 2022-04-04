@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build-ci": "yarn size:build",
-    "check-links:dist": "node docs/services/check-links.js",
+    "check-links:dist": "ts-node -p docs/tsconfig.json docs/services/checkLinks.ts",
     "check-links:src": "remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config",
     "check-links": "yarn check-links:src && yarn check-links:dist",
     "check-types": "tsc && tsc --project docs && tsc --project packages/orbit-components/cypress",
@@ -102,6 +102,7 @@
     "size-limit": "^6.0.3",
     "styled-components": "^5.3.1",
     "through2": "^4.0.2",
-    "typescript": "^4.2.4"
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   }
 }

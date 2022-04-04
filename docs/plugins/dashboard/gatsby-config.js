@@ -1,23 +1,4 @@
-const path = require("path");
+const { useGatsbyConfig } = require("gatsby-plugin-ts-config");
 
-module.exports = {
-  plugins: [
-    {
-      resolve: require.resolve(`gatsby-transformer-json`),
-      options: {
-        typeName: `Tracking`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "data",
-        path: path.resolve(__dirname, "../../data"),
-      },
-    },
-    {
-      resolve: require.resolve(`gatsby-plugin-create-client-paths`),
-      options: { prefixes: [`/dashboard/*`] },
-    },
-  ],
-};
+// eslint-disable-next-line react-hooks/rules-of-hooks
+module.exports = useGatsbyConfig(() => require("./gatsby-config.ts"));

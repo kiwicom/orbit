@@ -1,11 +1,17 @@
-import React from "react";
 import { Router } from "@reach/router";
 import { navigate } from "gatsby";
+import React from "react";
 
-import NotFound from "./404";
-import Dashboard from "../components/Dashboard";
-import { isLoggedIn, isBrowser } from "../services/auth";
+import Dashboard, {
+  AllRepositories,
+  AllRepositoriesComponent,
+  Repository,
+  RepositoryComponent,
+  Tracking,
+} from "../components/Dashboard";
 import Login from "../components/Login";
+import { isBrowser, isLoggedIn } from "../services/auth";
+import NotFound from "./404";
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
   if (!isLoggedIn() && location.pathname !== `/dashboard/login/` && isBrowser) {
@@ -19,10 +25,27 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
 export default ({ location }) => {
   return (
     <Router>
-      {/* @ts-expect-error: router type */}
+      {/* @ts-expect-error TODO */}
       <NotFound default />
       <PrivateRoute path="/dashboard/" component={Dashboard} location={location} />
-      <PrivateRoute path="/dashboard/:slug" component={Dashboard} location={location} />
+      <PrivateRoute path="/dashboard/tracking/" component={Tracking} location={location} />
+      <PrivateRoute path="/dashboard/tracking/:slug/" component={Repository} location={location} />
+
+      <PrivateRoute
+        path="/dashboard/tracking/*/*/"
+        component={RepositoryComponent}
+        location={location}
+      />
+      <PrivateRoute
+        path="/dashboard/tracking/allrepositories/"
+        component={AllRepositories}
+        location={location}
+      />
+      <PrivateRoute
+        path="/dashboard/tracking/allrepositories/:slug/"
+        component={AllRepositoriesComponent}
+        location={location}
+      />
       <Login path="/dashboard/login/" location={location} />
     </Router>
   );

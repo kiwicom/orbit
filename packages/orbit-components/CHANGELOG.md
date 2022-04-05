@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.1...@kiwicom/orbit-components@2.17.2) (2022-04-05)
+
+
+### Bug Fixes
+
+* **ErrorFormTooltip:** fix overflowing tooltip ([#3328](https://github.com/kiwicom/orbit/issues/3328)) ([e57dbea](https://github.com/kiwicom/orbit/commit/e57dbeae304124bb9a460665f09ed769c763003a))
+* **InputField:** use line-height token ([#3319](https://github.com/kiwicom/orbit/issues/3319)) ([de0f878](https://github.com/kiwicom/orbit/commit/de0f87858fe45637fd00ebf39702b4621154e1df))
+* **Toast:** desktop width set to initial ([#3322](https://github.com/kiwicom/orbit/issues/3322)) ([529c9b1](https://github.com/kiwicom/orbit/commit/529c9b120bf0fbb8c6340c26888ee089a6691030))
+
+
+
+
+
 ## [2.17.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.0...@kiwicom/orbit-components@2.17.1) (2022-03-23)
 
 

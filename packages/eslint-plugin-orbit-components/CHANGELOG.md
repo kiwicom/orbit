@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.4...eslint-plugin-orbit-components@0.5.5) (2022-04-05)
+
+
+### Bug Fixes
+
+* **eslint:** fix preferSingleDestructure rule ([#3323](https://github.com/kiwicom/orbit/issues/3323)) ([ffab639](https://github.com/kiwicom/orbit/commit/ffab6390e4e149a6d3ced3b8a6572bc2bb9657b8))
+
+
+
+
+
 ## [0.5.4](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.3...eslint-plugin-orbit-components@0.5.4) (2021-10-27)
 
 **Note:** Version bump only for package eslint-plugin-orbit-components

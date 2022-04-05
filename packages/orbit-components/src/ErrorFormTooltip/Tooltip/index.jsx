@@ -57,8 +57,7 @@ const StyledFormFeedbackTooltip = styled.div`
     z-index: 10;
     max-height: none;
     overflow: visible;
-    width: ${`calc(100% + ${SIDE_NUDGE * 2}px)`};
-    width: min(${`calc(100% + ${SIDE_NUDGE * 2}px)`}, 100vw);
+    width: min(${`calc(100% - ${SIDE_NUDGE * 2}px)`}, 100vw);
     background: ${resolveColor};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};

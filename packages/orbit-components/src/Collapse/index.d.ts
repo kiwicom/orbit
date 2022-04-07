@@ -8,9 +8,10 @@ import * as Common from "../common/common";
 export interface Props extends Common.Global {
   readonly initialExpanded?: boolean;
   readonly expanded?: boolean;
-  readonly label: Common.Translation;
+  readonly label?: Common.Translation;
   readonly children: React.ReactNode;
   readonly actions?: React.ReactNode;
+  readonly customLabel?: React.ReactNode;
   readonly onClick?: (
     // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
     e: React.SyntheticEvent<HTMLDivElement>,

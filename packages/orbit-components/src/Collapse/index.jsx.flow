@@ -6,7 +6,8 @@ import type { Translation, Globals } from "../common/common.js.flow";
 export type Props = {|
   initialExpanded?: boolean,
   expanded?: boolean,
-  label: Translation,
+  label?: Translation,
+  customLabel?: React.Node,
   children: React.Node,
   actions?: React.Node,
   onClick?: (e: SyntheticEvent<HTMLDivElement>, state: boolean) => void | Promise<any>,

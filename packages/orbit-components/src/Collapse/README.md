@@ -26,4 +26,5 @@ Table below contains all types of the props available in the Collapse component.
 | expanded        | `boolean`                           |         | If you pass either `true` or `false` the Collapse component will controlled component and you will have to manage the state via `onClick`. |
 | initialExpanded | `boolean`                           | `false` | If `true` the Collapse component will be expanded on the initial render.                                                                   |
 | **label**       | `Translation`                       |         | The rendered label of the Collapse.                                                                                                        |
+| **customLabel** | `React.Node`                        |         | The rendered custom label of the Collapse.                                                                                                 |
 | onClick         | `(event, state) => void \| Promise` |         | Callback for handling onClick event.                                                                                                       |

@@ -77,6 +77,7 @@ const StyledActionsWrapper = styled.div`
 
 const Collapse = ({
   initialExpanded = false,
+  customLabel,
   expanded: expandedProp,
   label,
   children,
@@ -114,7 +115,8 @@ const Collapse = ({
     <StyledCollapse data-test={dataTest}>
       <StyledCollapseLabel onClick={handleClick} role="button" id={labelID}>
         <Stack justify="between" align="center">
-          <Heading type="title4">{label}</Heading>
+          {label && !customLabel && <Heading type="title4">{label}</Heading>}
+          {customLabel}
           {/* TODO: dictionary for title */}
           <Stack inline grow={false} align="center" spacing="small">
             <StyledActionsWrapper

@@ -3,6 +3,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
 
+import Badge from "../Badge";
 import ChoiceGroup from "../ChoiceGroup";
 import Checkbox from "../Checkbox";
 import Slider from "../Slider";
@@ -62,6 +63,55 @@ Default.story = {
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+export const WithCustomLabel = (): React.Node => {
+  return (
+    <Collapse
+      customLabel={
+        <Stack inline spacing="large" align="center">
+          <Badge>Custom label </Badge>
+          <Badge>Custom label </Badge>
+          <Badge>Custom label </Badge>
+          <Badge>Custom label </Badge>
+        </Stack>
+      }
+    >
+      <Slider
+        label="Max travel time"
+        valueDescription="00:00 - 24:00"
+        defaultValue={[1, 12]}
+        histogramData={[
+          11,
+          25,
+          37,
+          5,
+          21,
+          27,
+          24,
+          33,
+          16,
+          21,
+          22,
+          2,
+          11,
+          25,
+          37,
+          5,
+          21,
+          27,
+          24,
+          33,
+          16,
+          21,
+          22,
+          2,
+        ]}
+        minValue={1}
+        maxValue={24}
+      />
+    </Collapse>
+  );
 };
 
 export const OpenedByDefault = (): React.Node => {

@@ -5,7 +5,6 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Switch from "./Switch";
 import GitHub from "../images/logos/github-circle.svg";
-import Spectrum from "../images/logos/spectrum-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";
 import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
@@ -124,9 +123,6 @@ export default function Footer() {
             >
               <StyledIconLink href="https://github.com/kiwicom/orbit" aria-label="GitHub">
                 <GitHub />
-              </StyledIconLink>
-              <StyledIconLink href="https://spectrum.chat/orbit" aria-label="Spectrum">
-                <Spectrum />
               </StyledIconLink>
               <StyledIconLink href="https://twitter.com/OrbitKiwi" aria-label="Twitter">
                 <Twitter />

@@ -22,6 +22,15 @@ describe("Collapse", () => {
     expect(screen.getByText("Collapse")).toBeInTheDocument();
   });
 
+  it("should have customLabel", () => {
+    render(
+      <Collapse customLabel="customLabel">
+        <div>children</div>
+      </Collapse>,
+    );
+    expect(screen.getByText("customLabel")).toBeInTheDocument();
+  });
+
   it.each(toggleButtons)("should trigger click handler when clicking on %s", buttonIndex => {
     const onClick = jest.fn();
     render(

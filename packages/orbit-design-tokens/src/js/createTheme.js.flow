@@ -4,6 +4,6 @@ import type { CustomFoundation } from "./defaultFoundation.js.flow";
 
 type Overrides = $Shape<Tokens>;
 
-export type CreateTheme = (foundation: CustomFoundation, overrides: Overrides) => Tokens;
+export type CreateTheme = (foundation?: CustomFoundation, overrides?: Overrides) => Tokens;
 
 declare export default CreateTheme;

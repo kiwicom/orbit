@@ -21,9 +21,9 @@ const getTypeToken = ({ name, theme, type }) => {
       [TYPE_OPTIONS.CRITICAL_INVERTED]: theme.orbit.paletteRedNormal,
       [TYPE_OPTIONS.SUCCESS_INVERTED]: theme.orbit.paletteGreenNormal,
       [TYPE_OPTIONS.WARNING_INVERTED]: theme.orbit.paletteOrangeNormal,
-      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.backgroundBadgeBundleBasic,
-      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.backgroundBadgeBundleMedium,
-      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.backgroundBadgeBundleTop,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.badgeBundleBasicBackground,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.badgeBundleMediumBackground,
+      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.badgeBundleTopBackground,
     },
     [TOKENS.color]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteInkNormal,

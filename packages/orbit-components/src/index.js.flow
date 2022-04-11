@@ -1,6 +1,7 @@
 // @flow
-import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens";
+import type { GetTokens } from "@kiwicom/orbit-design-tokens/lib/js/getTokens";
 import type { CreateTheme } from "@kiwicom/orbit-design-tokens/lib/js/createTheme";
+import type { FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/js/fromPlainObject";
 
 import type { Theme } from "./defaultTheme";
 import typeof AccordionSectionType from "./Accordion/AccordionSection";

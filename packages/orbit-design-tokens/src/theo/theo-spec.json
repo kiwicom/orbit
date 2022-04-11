@@ -1859,6 +1859,21 @@
       "type": "string",
       "category": "Border radius"
     },
+    "badgeBundleBasicBackground": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "badgeBundleMediumBackground": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "badgeBundleTopBackground": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
     "marginBadgeIcon": {
       "value": "0 4px 0 0",
       "type": "string",
@@ -1971,6 +1986,51 @@
     },
     "buttonLinkSecondaryForegroundActive": {
       "value": "#0B0C0F",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleBasicBackground": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleBasicBackgroundHover": {
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleBasicBackgroundActive": {
+      "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleMediumBackground": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleMediumBackgroundHover": {
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleMediumBackgroundActive": {
+      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleTopBackground": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleTopBackgroundHover": {
+      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+      "type": "string",
+      "category": "Colors"
+    },
+    "buttonBundleTopBackgroundActive": {
+      "value": "linear-gradient(to top right, #101011 0%, #51575C)",
       "type": "string",
       "category": "Colors"
     },

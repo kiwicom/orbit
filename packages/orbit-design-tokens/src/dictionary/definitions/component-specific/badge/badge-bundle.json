@@ -1,0 +1,24 @@
+{
+  "component": {
+    "badge": {
+      "bundleBasic": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)"
+        }
+      },
+      "bundleMedium": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
+        }
+      },
+      "bundleTop": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
+        }
+      }
+    }
+  }
+}

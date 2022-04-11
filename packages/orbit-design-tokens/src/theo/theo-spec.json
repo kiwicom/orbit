@@ -1260,12 +1260,12 @@
       "category": "Colors"
     },
     "colorTextLoading": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
     "colorTextTable": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -1420,7 +1420,7 @@
       "category": "Border color"
     },
     "borderColorCheckboxRadio": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Border color"
     },
@@ -1440,17 +1440,17 @@
       "category": "Border color"
     },
     "borderColorCheckboxRadioHover": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Border color"
     },
     "borderColorInput": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Border color"
     },
     "borderColorInputActive": {
-      "value": "#94A8BE",
+      "value": "#4A617C",
       "type": "string",
       "category": "Border color"
     },
@@ -1475,7 +1475,7 @@
       "category": "Border color"
     },
     "borderColorInputHover": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "string",
       "category": "Border color"
     },
@@ -1490,12 +1490,12 @@
       "category": "Border color"
     },
     "borderColorTableCell": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Border color"
     },
     "borderColorTableHead": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Border color"
     },
@@ -1675,7 +1675,7 @@
       "category": "Colors"
     },
     "colorFormLabelFilled": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -1685,12 +1685,12 @@
       "category": "Colors"
     },
     "colorIconCheckboxRadioDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
     "colorIconInput": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -1700,17 +1700,17 @@
       "category": "Colors"
     },
     "colorIconRadioButtonDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
     "colorInfoCheckBoxRadio": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
     "colorPlaceholderInput": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -1720,7 +1720,7 @@
       "category": "Colors"
     },
     "colorPlaceholderInputFile": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -1735,12 +1735,12 @@
       "category": "Colors"
     },
     "colorTextInputDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
     "colorTextInputPrefix": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -1760,12 +1760,12 @@
       "category": "Colors"
     },
     "colorIconSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
     "colorIconTertiary": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -1790,7 +1790,7 @@
       "category": "Colors"
     },
     "colorStopoverArrow": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -1820,7 +1820,7 @@
       "category": "Colors"
     },
     "colorTextSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -2290,7 +2290,7 @@
       "category": "Colors"
     },
     "buttonSecondaryBorderColorFocus": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -2595,7 +2595,7 @@
       "category": "Colors"
     },
     "formElementDisabledForeground": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -2605,12 +2605,12 @@
       "category": null
     },
     "formElementBorderColor": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
     "formElementBorderColorHover": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "string",
       "category": "Colors"
     },
@@ -2655,7 +2655,7 @@
       "category": "Spacing"
     },
     "formElementForeground": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -2670,12 +2670,12 @@
       "category": "Colors"
     },
     "formElementLabelFilled": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
     "formElementPrefixForeground": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -2890,12 +2890,12 @@
       "category": "Colors"
     },
     "iconSecondaryForeground": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
     "iconTertiaryForeground": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Colors"
     },
@@ -3100,7 +3100,7 @@
       "category": "Colors"
     },
     "socialButtonAppleBorderColorFocus": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -3140,7 +3140,7 @@
       "category": "Colors"
     },
     "socialButtonFacebookBorderColorFocus": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -3180,7 +3180,7 @@
       "category": "Colors"
     },
     "socialButtonGoogleBorderColorFocus": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -3220,7 +3220,7 @@
       "category": "Colors"
     },
     "socialButtonTwitterBorderColorFocus": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -3285,7 +3285,7 @@
       "category": "Colors"
     },
     "textSecondaryForeground": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Colors"
     },
@@ -3669,6 +3669,21 @@
       "type": "string",
       "category": "Color palette"
     },
+    "paletteCloudDarker": {
+      "value": "#BAC7D5",
+      "type": "string",
+      "category": "Color palette"
+    },
+    "paletteCloudDarkerHover": {
+      "value": "#A6B6C8",
+      "type": "string",
+      "category": "Color palette"
+    },
+    "paletteCloudDarkerActive": {
+      "value": "#94A8BE",
+      "type": "string",
+      "category": "Color palette"
+    },
     "paletteGreenLight": {
       "value": "#EBF4EC",
       "type": "string",
@@ -3750,52 +3765,52 @@
       "category": "Color palette"
     },
     "paletteInkLighter": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLighterHover": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLighterSecondary": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLighterActive": {
-      "value": "#94A8BE",
+      "value": "#4A617C",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLighterTertiary": {
-      "value": "#94A8BE",
+      "value": "#4A617C",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLight": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLightHover": {
-      "value": "#52647A",
+      "value": "#3E4E63",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLightSecondary": {
-      "value": "#52647A",
+      "value": "#3E4E63",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLightActive": {
-      "value": "#465567",
+      "value": "#324256",
       "type": "string",
       "category": "Color palette"
     },
     "paletteInkLightTertiary": {
-      "value": "#465567",
+      "value": "#324256",
       "type": "string",
       "category": "Color palette"
     },

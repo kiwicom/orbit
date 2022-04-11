@@ -57,9 +57,20 @@
         "dark": {
           "type": "color",
           "value": "{foundation.palette.cloud.dark}"
+        },
+        "darker": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.darker}"
+        },
+        "darker-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.darker-secondary}"
+        },
+        "darker-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.darker-tertiary}"
         }
       }
     }
   }
 }
-

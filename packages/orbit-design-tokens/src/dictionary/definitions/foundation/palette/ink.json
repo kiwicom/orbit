@@ -4,32 +4,32 @@
       "ink": {
         "lighter": {
           "type": "color",
-          "value": "#BAC7D5",
+          "value": "#697D95",
           "internal": true
         },
         "lighter-secondary": {
           "type": "color",
-          "value": "#A6B6C8",
+          "value": "#5D738E",
           "internal": true
         },
         "lighter-tertiary": {
           "type": "color",
-          "value": "#94A8BE",
+          "value": "#4A617C",
           "internal": true
         },
         "light": {
           "type": "color",
-          "value": "#5F738C",
+          "value": "#4F5E71",
           "internal": true
         },
         "light-secondary": {
           "type": "color",
-          "value": "#52647A",
+          "value": "#3E4E63",
           "internal": true
         },
         "light-tertiary": {
           "type": "color",
-          "value": "#465567",
+          "value": "#324256",
           "internal": true
         },
         "normal": {

@@ -36,6 +36,21 @@
           "type": "color",
           "value": "#E8EDF1",
           "internal": true
+        },
+        "darker": {
+          "type": "color",
+          "value": "#BAC7D5",
+          "internal": true
+        },
+        "darker-secondary": {
+          "type": "color",
+          "value": "#A6B6C8",
+          "internal": true
+        },
+        "darker-tertiary": {
+          "type": "color",
+          "value": "#94A8BE",
+          "internal": true
         }
       }
     }

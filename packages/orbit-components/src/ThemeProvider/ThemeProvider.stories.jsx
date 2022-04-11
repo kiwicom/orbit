@@ -34,7 +34,8 @@ DictionaryContext.story = {
   name: "Dictionary context",
 
   parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info:
+      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -53,7 +54,8 @@ WithoutTransitions.story = {
   name: "Without transitions",
 
   parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info:
+      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -86,6 +88,7 @@ OwnTheme.story = {
   name: "Own theme",
 
   parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info:
+      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };

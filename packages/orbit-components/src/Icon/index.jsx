@@ -18,13 +18,13 @@ export const getSize: GetSize = size => ({ theme }) => {
 
 const getColor = () => ({ theme, color }) => {
   const tokens = {
-    [ICON_COLORS.PRIMARY]: theme.orbit.iconForegroundPrimary,
-    [ICON_COLORS.SECONDARY]: theme.orbit.iconForegroundSecondary,
-    [ICON_COLORS.TERTIARY]: theme.orbit.iconForegroundTertiary,
-    [ICON_COLORS.INFO]: theme.orbit.iconForegroundInfo,
-    [ICON_COLORS.SUCCESS]: theme.orbit.iconForegroundSuccess,
-    [ICON_COLORS.WARNING]: theme.orbit.iconForegroundWarning,
-    [ICON_COLORS.CRITICAL]: theme.orbit.iconForegroundCritical,
+    [ICON_COLORS.PRIMARY]: theme.orbit.iconPrimaryForeground,
+    [ICON_COLORS.SECONDARY]: theme.orbit.iconSecondaryForeground,
+    [ICON_COLORS.TERTIARY]: theme.orbit.iconTertiaryForeground,
+    [ICON_COLORS.INFO]: theme.orbit.iconInfoForeground,
+    [ICON_COLORS.SUCCESS]: theme.orbit.iconSuccessForeground,
+    [ICON_COLORS.WARNING]: theme.orbit.iconWarningForeground,
+    [ICON_COLORS.CRITICAL]: theme.orbit.iconCriticalForeground,
   };
   return tokens[color];
 };

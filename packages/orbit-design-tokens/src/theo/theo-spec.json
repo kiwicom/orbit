@@ -4319,6 +4319,11 @@
       "type": "number",
       "category": "Z Index"
     },
+    "zIndexDrawer": {
+      "value": 815,
+      "type": "number",
+      "category": "Z Index"
+    },
     "zIndexModal": {
       "value": 825,
       "type": "number",

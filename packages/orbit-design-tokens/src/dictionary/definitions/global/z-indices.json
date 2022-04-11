@@ -13,6 +13,10 @@
         "type": "z-index",
         "value": 800
       },
+      "drawer": {
+        "type": "z-index",
+        "value": 815
+      },
       "modal": {
         "type": "z-index",
         "value": 825

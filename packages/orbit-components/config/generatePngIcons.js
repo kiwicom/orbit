@@ -2,19 +2,19 @@
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
-const { defaultTheme } = require("@kiwicom/orbit-design-tokens");
+const { defaultTokens } = require("@kiwicom/orbit-design-tokens");
 
 const DIR = path.join(__dirname, "../orbit-email-icons");
 const sizesToGenerate = [32, 48];
 const colors = [
-  ["white", defaultTheme.paletteWhiteNormal],
-  ["secondary", defaultTheme.paletteInkLight],
-  ["tertiary", defaultTheme.paletteInkLighter],
-  ["primary", defaultTheme.paletteInkNormal],
-  ["warning", defaultTheme.paletteOrangeNormal],
-  ["error", defaultTheme.paletteRedNormal],
-  ["success", defaultTheme.paletteGreenNormal],
-  ["info", defaultTheme.paletteBlueNormal],
+  ["white", defaultTokens.paletteWhite],
+  ["secondary", defaultTokens.paletteInkLight],
+  ["tertiary", defaultTokens.paletteInkLighter],
+  ["primary", defaultTokens.paletteInkNormal],
+  ["warning", defaultTokens.paletteOrangeNormal],
+  ["error", defaultTokens.paletteRedNormal],
+  ["success", defaultTokens.paletteGreenNormal],
+  ["info", defaultTokens.paletteBlueNormal],
 ];
 
 async function readFile(pathToFile) {

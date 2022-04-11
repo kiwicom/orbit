@@ -6,8 +6,8 @@ import { TokenSchema } from "./typings";
 const findTokenAttributes = (
   name: string,
 ): {
-  type: string;
-  value: string;
+  type: string | null;
+  value: string | null;
   schema: TokenSchema;
 } => {
   const tokenValue = name in tokensList ? tokensList[name] : "";

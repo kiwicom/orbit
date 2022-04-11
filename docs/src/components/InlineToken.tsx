@@ -2,10 +2,8 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { Text, Tooltip } from "@kiwicom/orbit-components";
 
-import DesignTokenIcon from "./DesignTokens/components/DesignTokenIcon";
 import upperFirst from "../utils/upperFirst";
-import { TokenSchema } from "./DesignTokens/typings";
-import findTokenAttributes from "./DesignTokens/findTokenAttributes";
+import { findTokenAttributes, TokenSchema, DesignTokenIcon } from "./DesignTokens";
 
 const StyledInlineTokenWrapper = styled.span`
   flex-shrink: 1;
@@ -124,7 +122,7 @@ const InlineToken = ({ size, alternateName, name }: Props) => {
             {alternateName && <Text>Token name: {name}</Text>}
           </>
         }
-        placement="bottom"
+        placement="top"
       >
         <StyledInlineToken size={size}>
           <DesignTokenIcon size={size === "medium" ? "small" : size} value={value} type={type} />

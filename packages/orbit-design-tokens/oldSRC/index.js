@@ -4,7 +4,9 @@ import mergeDeepRight from "ramda/src/mergeDeepRight";
 import foundation from "./foundation";
 import convertHexToRgba from "./convertHexToRgba";
 
-import type { GetTokens, FromPlainObject } from "./index";
+import type { GetTokens, FromPlainObject, Tokens } from ".";
+
+export { foundation, convertHexToRgba };
 
 export const getTokens: GetTokens = customFoundation => {
   // By default it takes base foundation config
@@ -22,7 +24,7 @@ export const getTokens: GetTokens = customFoundation => {
     colorTextWhite: theme.palette.white.normal,
     colorIconPrimary: theme.palette.ink.normal,
     colorIconSecondary: theme.palette.ink.light,
-    colorIconTertiary: theme.palette.ink.lighter,
+    colorIconTertiary: theme.palette.cloud.darker,
     colorIconInfo: theme.palette.blue.normal,
     colorIconSuccess: theme.palette.green.normal,
     colorIconWarning: theme.palette.orange.normal,
@@ -100,8 +102,8 @@ export const getTokens: GetTokens = customFoundation => {
     colorTextButtonWhiteBorderedHover: theme.palette.white.normal,
     colorTextButtonWhiteBorderedActive: theme.palette.white.normal,
     colorTextButtonLinkPrimary: theme.palette.product.normal,
-    colorTextButtonLinkPrimaryHover: theme.palette.product.normalHover,
-    colorTextButtonLinkPrimaryActive: theme.palette.product.normalActive,
+    colorTextButtonLinkPrimaryHover: theme.palette.product.darkHover,
+    colorTextButtonLinkPrimaryActive: theme.palette.product.darkActive,
     colorTextButtonLinkSecondary: theme.palette.ink.normal,
     colorTextButtonLinkSecondaryHover: theme.palette.ink.normalHover,
     colorTextButtonLinkSecondaryActive: theme.palette.ink.normalActive,
@@ -117,11 +119,11 @@ export const getTokens: GetTokens = customFoundation => {
     colorTextBadgeCritical: theme.palette.red.normal,
     colorTextBadgeDark: theme.palette.white.normal,
     colorTextBadgeWhite: theme.palette.ink.normal,
-    colorTextLoading: theme.palette.ink.lighter,
+    colorTextLoading: theme.palette.cloud.darker,
     colorTextTable: theme.palette.ink.light,
     colorTextTag: theme.palette.ink.normal,
     colorTextTagSelected: theme.palette.cloud.normal,
-    colorIconInput: theme.palette.ink.lighter,
+    colorIconInput: theme.palette.cloud.darker,
     colorPlaceholderInput: theme.palette.ink.lighter,
     colorPlaceholderInputError: theme.palette.red.normal,
     colorPlaceholderInputFile: theme.palette.ink.light,
@@ -130,7 +132,7 @@ export const getTokens: GetTokens = customFoundation => {
     colorFormLabelFilled: theme.palette.ink.light,
     colorInfoCheckBoxRadio: theme.palette.ink.light,
     colorIconCheckboxRadio: theme.palette.product.normal,
-    colorIconCheckboxRadioDisabled: theme.palette.ink.lighter,
+    colorIconCheckboxRadioDisabled: theme.palette.cloud.darker,
     colorIconRadioButton: theme.palette.product.normal,
     colorIconRadioButtonDisabled: theme.palette.ink.lighter,
     colorStopoverArrow: theme.palette.ink.light,
@@ -171,6 +173,15 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundButtonWhite: theme.palette.white.normal,
     backgroundButtonWhiteHover: theme.palette.cloud.light,
     backgroundButtonWhiteActive: theme.palette.cloud.lightHover,
+    backgroundButtonBundleBasic: `linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)`,
+    backgroundButtonBundleBasicHover: `linear-gradient(to top right, #BD2825 0%, #D67000 100%)`,
+    backgroundButtonBundleBasicActive: `linear-gradient(to top right, #9F1816 0%, #C36802 100%)`,
+    backgroundButtonBundleMedium: `linear-gradient(to top right, #3719AB 0%, #8539DB 100%)`,
+    backgroundButtonBundleMediumHover: `linear-gradient(to top right, #2D1393 0%, #7343AA 100%)`,
+    backgroundButtonBundleMediumActive: `linear-gradient(to top right, #250F79 0%, #5A3485 100%)`,
+    backgroundButtonBundleTop: `linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)`,
+    backgroundButtonBundleTopHover: `linear-gradient(to top right, #171718 0%, #51575C 100%)`,
+    backgroundButtonBundleTopActive: `linear-gradient(to top right, #101011 0%, #51575C)`,
     backgroundButtonBordered: "transparent",
     backgroundButtonBorderedHover: theme.palette.cloud.light,
     backgroundButtonBorderedActive: theme.palette.cloud.light,
@@ -196,15 +207,18 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundBadgeCritical: theme.palette.red.light,
     backgroundBadgeDark: theme.palette.ink.normal,
     backgroundBadgeWhite: theme.palette.white.normal,
+    backgroundBadgeBundleBasic: `linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)`,
+    backgroundBadgeBundleMedium: `linear-gradient(to top right, #3719AB 0%, #8539DB 100%)`,
+    backgroundBadgeBundleTop: `linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)`,
     backgroundServiceLogo: "transparent",
     backgroundIllustration: "transparent",
     backgroundSeparator: theme.palette.cloud.normal,
     backgroundTableShadowLeft: `linear-gradient(to left, transparent, ${convertHexToRgba(
-      theme.palette.ink.lighter,
+      theme.palette.cloud.darker,
       23,
     )})`,
     backgroundTableShadowRight: `linear-gradient(to right, transparent, ${convertHexToRgba(
-      theme.palette.ink.lighter,
+      theme.palette.cloud.darker,
       23,
     )})`,
     backgroundTable: theme.palette.white.normal,
@@ -253,6 +267,7 @@ export const getTokens: GetTokens = customFoundation => {
     // description:Use layers to show depth of page.
     zIndexDefault: "1",
     zIndexSticky: "100",
+    zIndexDrawer: "815",
     zIndexModalOverlay: "800",
     zIndexModal: "825",
     zIndexOnTheTop: "900",
@@ -288,7 +303,8 @@ export const getTokens: GetTokens = customFoundation => {
     heightInputGroupSeparatorNormal: theme.base.sizeMd,
     widthModalSmall: "540px",
     widthModalNormal: "740px",
-    widthModalLarge: "1280px",
+    widthModalLarge: "900px",
+    widthModalExtraLarge: "1280px",
     widthStopoverArrow: "36px",
     heightStopoverArrow: "7px",
     // category:Breakpoints
@@ -299,14 +315,14 @@ export const getTokens: GetTokens = customFoundation => {
     widthBreakpointLargeDesktop: 1200,
     // category:Border color
     // description:
-    borderColorInput: theme.palette.ink.lighter,
+    borderColorInput: theme.palette.cloud.darker,
     borderColorInputHover: theme.palette.ink.lighterHover,
     borderColorInputActive: theme.palette.ink.lighterActive,
     borderColorInputFocus: theme.palette.blue.normal,
     borderColorInputError: theme.palette.red.normal,
     borderColorInputErrorHover: theme.palette.red.normalHover,
     borderColorInputErrorFocus: theme.palette.red.normal,
-    borderColorTableCell: theme.palette.ink.lighter,
+    borderColorTableCell: theme.palette.cloud.darker,
     borderColorCard: theme.palette.cloud.normal,
     borderColorModal: theme.palette.cloud.normal,
     borderColorButtonPrimaryBordered: theme.palette.product.normal,
@@ -336,13 +352,13 @@ export const getTokens: GetTokens = customFoundation => {
     borderColorButtonWhiteBordered: theme.palette.white.normal,
     borderColorButtonWhiteBorderedHover: theme.palette.white.normal,
     borderColorButtonWhiteBorderedActive: theme.palette.white.normal,
-    borderColorCheckboxRadio: theme.palette.ink.lighter,
+    borderColorCheckboxRadio: theme.palette.cloud.darker,
     borderColorCheckboxRadioError: theme.palette.red.normal,
     borderColorCheckboxRadioHover: theme.palette.ink.light,
     borderColorCheckboxRadioActive: theme.palette.ink.normal,
     borderColorCheckboxRadioFocus: theme.palette.blue.normal,
     borderColorTable: theme.palette.cloud.normal,
-    borderColorTableHead: theme.palette.ink.lighter,
+    borderColorTableHead: theme.palette.cloud.darker,
     borderColorTag: theme.palette.cloud.normal,
     borderColorTagFocus: theme.palette.blue.normal,
     // category:Border style
@@ -405,7 +421,7 @@ export const getTokens: GetTokens = customFoundation => {
     paddingLoading: theme.base.spaceSm,
     paddingTable: `${theme.base.spaceSm} ${theme.base.spaceMd}`,
     paddingTableCompact: `${theme.base.spaceXs} ${theme.base.spaceSm}`,
-    paddingTag: `6px ${theme.base.spaceXs}`,
+    paddingTag: `${theme.base.spaceXs}`,
     paddingTagWithIcon: `6px ${theme.base.spaceXs} 6px 6px`,
     paddingTagRemovable: `6px 6px 6px ${theme.base.spaceXs}`,
     paddingTagRemovableWithIcon: "6px",
@@ -501,6 +517,9 @@ export const getTokens: GetTokens = customFoundation => {
     paletteCloudNormalHover: theme.palette.cloud.normalHover,
     paletteCloudNormalActive: theme.palette.cloud.normalActive,
     paletteCloudDark: theme.palette.cloud.dark,
+    paletteCloudDarker: theme.palette.cloud.darker,
+    paletteCloudDarkerHover: theme.palette.cloud.darkerHover,
+    paletteCloudDarkerActive: theme.palette.cloud.darkerActive,
     paletteInkLighter: theme.palette.ink.lighter,
     paletteInkLighterHover: theme.palette.ink.lighterHover,
     paletteInkLighterActive: theme.palette.ink.lighterActive,
@@ -542,6 +561,8 @@ export const getTokens: GetTokens = customFoundation => {
     paletteGreenDarker: theme.palette.green.darker,
     paletteBlueLight: theme.palette.blue.light,
     paletteBlueLightHover: theme.palette.blue.lightHover,
+    paletteBundleBasic: theme.palette.bundle.basic,
+    paletteBundleMedium: theme.palette.bundle.medium,
     paletteBlueLightActive: theme.palette.blue.lightActive,
     paletteBlueNormal: theme.palette.blue.normal,
     paletteBlueNormalHover: theme.palette.blue.normalHover,
@@ -556,7 +577,7 @@ export const getTokens: GetTokens = customFoundation => {
   };
 };
 
-export const defaultTokens = getTokens();
+export const defaultTokens: Tokens = getTokens();
 
 export const fromPlainObject: FromPlainObject = themePaletteColors => {
   const theme = {

@@ -549,3 +549,4 @@ declare export var createTheme: CreateTheme;
 declare export var getTokens: GetTokens;
 declare export var convertHexToRgba: ConvertHexToRgba;
 declare export var defaultTheme: Tokens;
+declare export var defaultTokens: Tokens;

@@ -1,8 +1,8 @@
 export interface TokenSchema {
-  namespace: string;
-  object: string;
-  variant: string;
-  subVariant: string | undefined;
+  namespace: string | null;
+  object: string | null;
+  variant: string | null;
+  subVariant: string | null;
 }
 
 export enum GlobalCategories {

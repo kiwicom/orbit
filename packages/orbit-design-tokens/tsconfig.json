@@ -1,8 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["**/*"],
+  "include": ["src/*.ts"],
   "compilerOptions": {
+    "strict": true,
     "skipLibCheck": true,
+    "allowJs": true,
+    "outDir": "lib",
+    "target": "ES2015",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": false
   },

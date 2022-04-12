@@ -36,12 +36,6 @@
     "tokens"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.14.2",
-    "@babel/parser": "^7.13.13",
-    "@babel/preset-env": "^7.14.0",
-    "@babel/preset-flow": "^7.12.13",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.181",
     "@types/ramda": "^0.27.1",

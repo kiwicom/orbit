@@ -1,4 +1,0 @@
-// @flow
-export type ConvertHexToRgba = (color: string, opacity: number) => string;
-
-declare export default ConvertHexToRgba;

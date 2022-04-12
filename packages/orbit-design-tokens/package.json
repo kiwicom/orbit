@@ -21,7 +21,7 @@
     "build:dictionary": "ts-node ./src/dictionary/build.ts",
     "build:lib": "tsc",
     "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
-    "size:build": "yarn run build:lib",
+    "size:build": "yarn build:dictionary && yarn build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
     "clean": "rimraf src/js lib es pages output",

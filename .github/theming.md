@@ -43,9 +43,10 @@ const App = () => (
 
 Table below contains all types of the props available in the ThemeProvider component.
 
-| Name          | Type      | Default | Description                                                                                  |
-| :------------ | :-------- | :------ | :------------------------------------------------------------------------------------------- |
-| **orbit**     | `Object`  |         | Return of the `getTokens` function`.                                                         |
-| rtl           | `boolean` | `false` | If `true` functions inside `orbit-components` will return RTL compliant values.              |
-| transitions   | `boolean` | `true`  | If `false` most of the components won't perform any transitions. Useful for low-end devices. |
-| lockScrolling | `boolean` | `true`  | If `false` components with overlays like Modal won't lock scrolling when open.               |
+| Name                | Type      | Default | Description                                                                                            |
+| :------------------ | :-------- | :------ | :----------------------------------------------------------------------------------------------------- |
+| **orbit**           | `Object`  |         | Return of the `getTokens` function`.                                                                   |
+| rtl                 | `boolean` | `false` | If `true` functions inside `orbit-components` will return RTL compliant values.                        |
+| transitions         | `boolean` | `true`  | If `false` most of the components won't perform any transitions. Useful for low-end devices.           |
+| lockScrolling       | `boolean` | `true`  | If `false` components with overlays like Modal won't lock scrolling when open.                         |
+| lockScrollingBarGap | `boolean` | `false` | If the `lockScrollingBarGap` option is set, this gap is filled by a padding-right on the body element. |
